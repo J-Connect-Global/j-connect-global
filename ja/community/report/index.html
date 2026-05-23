@@ -26,7 +26,18 @@ a{text-decoration:none;color:inherit}
     form{background:#fff;border:1px solid #ddd;border-radius:16px;padding:18px}
     input,textarea,select{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:10px}
     button{padding:12px 18px;border:none;border-radius:10px;background:#111;color:#fff}
-  </style>
+  
+/* Shared header dropdown/menu support */
+.header-category-menu{position:relative;display:flex;align-items:center;}
+.header-category-menu::before{content:"";position:absolute;left:0;top:100%;width:100%;height:12px;}
+.header-category-trigger{border:none;background:transparent;color:var(--text,#16202a);font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px;}
+.header-category-menu::after{content:"▾";font-size:24px;line-height:1;color:var(--muted,#5f6b76);margin-top:1px;pointer-events:none;}
+.category-dropdown{position:absolute;top:calc(100% + 8px);left:0;min-width:220px;background:#fff;border:1px solid var(--line,#e6eaf0);border-radius:14px;box-shadow:0 16px 30px rgba(19,35,58,.14);padding:8px;display:none;z-index:20;}
+.header-category-menu:hover .category-dropdown,.header-category-menu:focus-within .category-dropdown{display:grid;gap:2px;}
+.category-dropdown a{text-decoration:none;font-size:13px;color:#2f3e4c;padding:8px 10px;border-radius:10px;}
+.category-dropdown a:hover{background:var(--hover-pink-bg,#fff4f7);border:1px solid var(--hover-pink,#f3c8d4);color:var(--brand,#d84b6a);transform:translateY(-1px);}
+
+</style>
 <script>
 (function () {
   var segments = location.pathname.split('/').filter(Boolean);
@@ -54,14 +65,59 @@ a{text-decoration:none;color:inherit}
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="../">
-        <img class="brand-logo" src="../../../assets/images/brand/nihon-gateway-logo.png" alt="Nihon Gateway Germany">
-        <div><span class="brand-title">NIHON GATEWAY GERMANY</span><span class="brand-sub">Community Board</span></div>
-      </a>
-      <nav class="header-nav"><a href="../">掲示板トップへ戻る</a></nav>
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Nihon Gateway Germany ホーム">
+      <img class="brand-logo" src="../../../assets/images/brand/logo_header.png" alt="Nihon Gateway Germany ヘッダーロゴ">
+      <span class="brand-copy">
+        <span class="brand-title">NIHON GATEWAY GERMANY</span>
+        <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <a href="../../">ホーム</a>
+        <a href="../../about/">このサイトについて</a>
+      </nav>
+
+      <div class="header-category header-category-menu" aria-label="カテゴリ選択">
+        <button type="button" class="header-category-trigger">カテゴリ</button>
+        <div class="category-dropdown">
+          <a href="../../guides/">手続き・制度</a>
+          <a href="../../living/">住まい・生活</a>
+          <a href="../../jobs/" data-base="jobs">仕事・求人</a>
+          <a href="../../medical/" data-base="medical">医療・緊急</a>
+          <a href="../../eat/" data-base="eat">グルメ・飲食</a>
+          <a href="../../shopping/" data-base="shopping">買い物・サービス</a>
+          <a href="../../community/" data-base="community">交流・掲示板</a>
+          <a href="../../events/" data-base="events">おでかけ・イベント</a>
+          <a href="../../learn-german/">ドイツ語・学び</a>
+          <a href="../../news/">ニュース・読みもの</a>
+        </div>
+      </div>
+
+      <form class="header-search" action="../../search/" method="get" role="search">
+        <label class="search-box" aria-label="サイト内検索">
+          <span>⌕</span>
+          <input type="search" name="q" placeholder="検索">
+        </label>
+        <button class="search-btn" type="submit" aria-label="検索">⌕</button>
+      </form>
+
+      <label class="header-language" aria-label="言語切り替え">
+        <span>Language</span>
+        <select id="languageSelect">
+          <option value="../../">日本語</option>
+          <option value="../../../">English</option>
+          <option value="../../../de/">Deutsch</option>
+          <option value="../../../zh/">中文</option>
+          <option value="../../../ko/">한국어</option>
+          <option value="../../../es/">Espanol</option>
+        </select>
+      </label>
     </div>
-  </header>
+  </div>
+</header>
 
   <a href="../">← 掲示板一覧へ戻る</a>
   <h1>投稿を通報する</h1>

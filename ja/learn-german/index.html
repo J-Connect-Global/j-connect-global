@@ -9,91 +9,54 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/site.css">
 
   <style>
-    :root {
-      --bg: #f7f4ef;
-      --surface: rgba(255, 255, 255, 0.92);
-      --surface-strong: #ffffff;
-      --line: rgba(91, 72, 51, 0.16);
-      --line-strong: rgba(91, 72, 51, 0.28);
-      --text: #2f261d;
-      --muted: #75685b;
-      --muted-2: #9a8b7a;
-      --brand: #b98246;
-      --brand-dark: #7b4d25;
-      --hover-pink: #d85c8a;
-      --hover-pink-bg: rgba(216, 92, 138, 0.10);
-      --accent: #1f7a63;
-      --shadow: 0 18px 45px rgba(67, 49, 30, 0.10);
-      --radius-lg: 28px;
-      --radius-md: 18px;
-      --radius-sm: 12px;
-    }
+/* Page-specific styles. Shared site styles live in the common site stylesheet. */
+:root{
+  --bg: #f7f4ef;
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface-strong: #ffffff;
+  --line: rgba(91, 72, 51, 0.16);
+  --line-strong: rgba(91, 72, 51, 0.28);
+  --text: #2f261d;
+  --muted: #75685b;
+  --muted-2: #9a8b7a;
+  --brand: #b98246;
+  --brand-dark: #7b4d25;
+  --hover-pink: #d85c8a;
+  --hover-pink-bg: rgba(216, 92, 138, 0.10);
+  --accent: #1f7a63;
+  --shadow: 0 18px 45px rgba(67, 49, 30, 0.10);
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+}
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      color: var(--text);
-      font-family: "Inter", "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background:
-        linear-gradient(rgba(247, 244, 239, 0.88), rgba(247, 244, 239, 0.92)),
-        url("../../assets/images/brand/site-bg.jpg") center / cover fixed;
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-.logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-    }
-
-    .logo img {
+.logo img{
       height: 42px;
       width: auto;
       display: block;
     }
 
-    .nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--muted);
-    }
-
-    .nav a {
+.nav a{
       padding: 8px 10px;
       border-radius: 999px;
       transition: 0.2s ease;
     }
 
-    .nav a:hover {
+.nav a:hover{
       color: var(--hover-pink);
       background: var(--hover-pink-bg);
     }
 
-    .page {
+.page{
       max-width: 1180px;
       margin: 0 auto;
       padding: 34px 22px 72px;
     }
 
-    .hero {
+.hero{
       min-height: 360px;
       padding: 54px 42px;
       border: 1px solid var(--line);
@@ -108,11 +71,11 @@
       overflow: hidden;
     }
 
-    .hero-content {
+.hero-content{
       max-width: 760px;
     }
 
-    .hero-kicker {
+.hero-kicker{
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -125,25 +88,25 @@
       margin-bottom: 14px;
     }
 
-    .hero h1 {
+.hero h1{
       margin: 0;
       font-size: clamp(34px, 5vw, 58px);
       line-height: 1.15;
       letter-spacing: 0.02em;
     }
 
-    .hero p {
+.hero p{
       margin: 18px 0 0;
       font-size: clamp(15px, 2vw, 19px);
       max-width: 700px;
       color: rgba(255, 255, 255, 0.92);
     }
 
-    .section {
+.section{
       margin-top: 42px;
     }
 
-    .section-head {
+.section-head{
       display: flex;
       justify-content: space-between;
       align-items: end;
@@ -151,25 +114,25 @@
       margin-bottom: 18px;
     }
 
-    .section h2 {
+.section h2{
       margin: 0;
       font-size: clamp(24px, 3vw, 34px);
       line-height: 1.25;
     }
 
-    .section-lead {
+.section-lead{
       margin: 8px 0 0;
       color: var(--muted);
       max-width: 780px;
     }
 
-    .entry-grid {
+.entry-grid{
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 18px;
     }
 
-    .entry-card {
+.entry-card{
       position: relative;
       min-height: 190px;
       padding: 22px;
@@ -181,7 +144,7 @@
       overflow: hidden;
     }
 
-    .entry-card::before {
+.entry-card::before{
       content: "";
       position: absolute;
       inset: 0;
@@ -190,22 +153,22 @@
       transition: 0.2s ease;
     }
 
-    .entry-card:hover {
+.entry-card:hover{
       transform: translateY(-4px);
       border-color: var(--line-strong);
       box-shadow: var(--shadow);
     }
 
-    .entry-card:hover::before {
+.entry-card:hover::before{
       opacity: 1;
     }
 
-    .entry-card > * {
+.entry-card > *{
       position: relative;
       z-index: 1;
     }
 
-    .entry-card__icon {
+.entry-card__icon{
       width: 44px;
       height: 44px;
       border-radius: 15px;
@@ -216,18 +179,18 @@
       margin-bottom: 16px;
     }
 
-    .entry-card h3 {
+.entry-card h3{
       margin: 0 0 8px;
       font-size: 19px;
     }
 
-    .entry-card p {
+.entry-card p{
       margin: 0;
       color: var(--muted);
       font-size: 14px;
     }
 
-    .level-bar {
+.level-bar{
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -238,7 +201,7 @@
       box-shadow: 0 10px 26px rgba(67, 49, 30, 0.06);
     }
 
-    .pill-btn {
+.pill-btn{
       border: 1px solid var(--line-strong);
       background: #fff;
       color: var(--text);
@@ -250,37 +213,37 @@
       transition: 0.2s ease;
     }
 
-    .pill-btn:hover {
+.pill-btn:hover{
       color: var(--hover-pink);
       background: var(--hover-pink-bg);
       border-color: rgba(216, 92, 138, 0.35);
     }
 
-    .route-grid {
+.route-grid{
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 14px;
     }
 
-    .route-card {
+.route-card{
       padding: 18px;
       border-radius: var(--radius-md);
       border: 1px solid var(--line);
       background: var(--surface);
     }
 
-    .route-card h3 {
+.route-card h3{
       margin: 0 0 8px;
       font-size: 17px;
     }
 
-    .route-card p {
+.route-card p{
       margin: 0;
       color: var(--muted);
       font-size: 14px;
     }
 
-    .topic-section {
+.topic-section{
       padding: 24px;
       border-radius: var(--radius-lg);
       border: 1px solid var(--line);
@@ -288,18 +251,18 @@
       margin-top: 20px;
     }
 
-    .topic-section h3 {
+.topic-section h3{
       margin: 0 0 14px;
       font-size: 22px;
     }
 
-    .topic-grid {
+.topic-grid{
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 14px;
     }
 
-    .topic-card {
+.topic-card{
       border: 1px solid var(--line);
       background: #fff;
       border-radius: var(--radius-md);
@@ -308,24 +271,24 @@
       transition: 0.2s ease;
     }
 
-    .topic-card:hover {
+.topic-card:hover{
       transform: translateY(-3px);
       border-color: var(--line-strong);
       box-shadow: 0 12px 26px rgba(67, 49, 30, 0.08);
     }
 
-    .topic-card strong {
+.topic-card strong{
       display: block;
       margin-bottom: 5px;
       font-size: 16px;
     }
 
-    .topic-card span {
+.topic-card span{
       color: var(--muted);
       font-size: 13px;
     }
 
-    .filter-panel {
+.filter-panel{
       padding: 22px;
       border-radius: var(--radius-lg);
       border: 1px solid var(--line);
@@ -337,8 +300,8 @@
       margin-bottom: 18px;
     }
 
-    .filter-panel input,
-    .filter-panel select {
+.filter-panel input,
+    .filter-panel select{
       width: 100%;
       border: 1px solid var(--line-strong);
       border-radius: 999px;
@@ -348,13 +311,13 @@
       color: var(--text);
     }
 
-    .resource-grid {
+.resource-grid{
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
     }
 
-    .resource-card {
+.resource-card{
       padding: 20px;
       border-radius: var(--radius-md);
       background: var(--surface-strong);
@@ -362,14 +325,14 @@
       box-shadow: 0 10px 26px rgba(67, 49, 30, 0.06);
     }
 
-    .resource-card__badges {
+.resource-card__badges{
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
       margin-bottom: 12px;
     }
 
-    .resource-card__badges span {
+.resource-card__badges span{
       display: inline-flex;
       align-items: center;
       border-radius: 999px;
@@ -381,41 +344,41 @@
       border: 1px solid rgba(185, 130, 70, 0.20);
     }
 
-    .resource-card h3 {
+.resource-card h3{
       margin: 0 0 8px;
       font-size: 20px;
     }
 
-    .resource-card p {
+.resource-card p{
       margin: 0 0 14px;
       color: var(--muted);
       font-size: 14px;
     }
 
-    .resource-card__meta {
+.resource-card__meta{
       display: grid;
       gap: 8px;
       margin: 0 0 16px;
     }
 
-    .resource-card__meta div {
+.resource-card__meta div{
       display: grid;
       grid-template-columns: 80px 1fr;
       gap: 8px;
       font-size: 13px;
     }
 
-    .resource-card__meta dt {
+.resource-card__meta dt{
       color: var(--muted-2);
       font-weight: 800;
     }
 
-    .resource-card__meta dd {
+.resource-card__meta dd{
       margin: 0;
       color: var(--text);
     }
 
-    .resource-card__link {
+.resource-card__link{
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -428,11 +391,11 @@
       transition: 0.2s ease;
     }
 
-    .resource-card__link:hover {
+.resource-card__link:hover{
       background: var(--hover-pink);
     }
 
-    .resource-empty {
+.resource-empty{
       grid-column: 1 / -1;
       padding: 24px;
       border-radius: var(--radius-md);
@@ -440,47 +403,45 @@
       border: 1px solid var(--line);
       color: var(--muted);
     }
-@media (max-width: 980px) {
-      .entry-grid,
-      .topic-grid {
+
+@media (max-width: 980px){
+.entry-grid,
+      .topic-grid{
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .route-grid {
+.route-grid{
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .filter-panel {
+.filter-panel{
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .resource-grid {
+.resource-grid{
         grid-template-columns: 1fr;
       }
-    }
+}
 
-    @media (max-width: 640px) {
-.hero {
+@media (max-width: 640px){
+.hero{
         padding: 38px 24px;
         min-height: 320px;
       }
 
-      .entry-grid,
+.entry-grid,
       .topic-grid,
       .route-grid,
-      .filter-panel {
+      .filter-panel{
         grid-template-columns: 1fr;
       }
 
-      .section-head {
+.section-head{
         display: block;
       }
-    }
-
-
+}
 </style>
-  <link rel="stylesheet" href="../../assets/css/ja-header-footer.css">
-</head>
+  </head>
 
 <body>
   <header class="site-header">

@@ -9,6 +9,9 @@
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://yoshi1234567890.github.io/nihon-gateway-germany/ja/contact/" />
   <link rel="icon" type="image/jpeg" href="../../assets/images/brand/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Contact | Nihon Gateway Germany" />
   <meta property="og:description" content="Nihon Gateway Germanyへのお問い合わせはこちら。内容に応じて使いやすいフォームをご用意しています。" />
@@ -43,11 +46,7 @@
       display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;
       background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1)
     }
-    .site-header{
-      position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);
-      background:rgba(253,248,242,.82);border-bottom:1px solid rgba(237,229,224,.9)
-    }
-    .nav{
+.nav{
       max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;
       padding:16px 18px;gap:16px
     }
@@ -105,10 +104,7 @@
     .status-success{border-color:#cfe9d8;background:#f4fbf6;color:#1d5c33}
     .status-error{border-color:#f3d0d6;background:#fff6f7;color:#9d2235}
     .footer{max-width:var(--max);margin:0 auto 32px;padding:0 18px}
-    .footer-inner{background:#1d1217;color:#fff;border-radius:28px;padding:26px;border:1px solid rgba(255,255,255,.06)}
-    .footer-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .footer-links a{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.08);font-size:14px}
-    @media (max-width:960px){
+@media (max-width:960px){
       .hero,.content,.form-grid,.quick-grid{grid-template-columns:1fr}
       .nav{align-items:flex-start;flex-direction:column}
       .nav-links{justify-content:flex-start}
@@ -122,40 +118,11 @@
         url('../../assets/images/brand/site-bg.jpg') center top / cover fixed no-repeat,
         var(--cream);
     }
-    .site-header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.84);backdrop-filter:blur(12px);border-bottom:1px solid rgba(230,234,240,.92)}
-    .header-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
-    .brand-logo{width:120px;height:70px;border-radius:14px;object-fit:contain;background:transparent;border:none;box-shadow:none}
-    .brand-copy{min-width:0}
-    .brand-title{display:block;font-size:14px;font-weight:800;letter-spacing:.08em;line-height:1.1}
-    .brand-sub{display:block;margin-top:4px;font-size:12px;color:var(--muted)}
-    .header-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:flex-end}
-    .header-nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-    .header-nav a{text-decoration:none;font-size:14px;font-weight:600;color:#34414d;padding:8px 12px;border-radius:999px;border:1px solid #dce4ee;background:rgba(255,255,255,.74);transition:all .18s ease}
-    .header-nav a.active,.header-nav a:hover{color:#d84b6a;border-color:#f3c8d4;background:#fff4f7}
+@media (max-width:960px){
+}
 
-    .page-footer{margin:34px auto 32px;padding:0 18px;max-width:var(--max)}
-    .footer-inner{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;background:#122033;color:#f4f7fb;border-radius:24px;padding:24px;border:1px solid rgba(255,255,255,.06)}
-    .footer-left{display:flex;gap:14px;align-items:center}
-    .footer-logo{width:130px;height:72px;object-fit:contain;background:transparent;border:none;box-shadow:none}
-    .footer-copy{display:grid;gap:4px}
-    .footer-title{font-size:14px;font-weight:800;letter-spacing:.08em}
-    .footer-sub{font-size:12px;color:#b6c1cc}
-    .footer-meta{font-size:12px;color:#8ea0b2;margin-top:2px}
-    .footer-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-    .footer-links a{text-decoration:none;color:#d5e2f2;font-size:13px;font-weight:600;padding:8px 12px;border-radius:999px;border:1px solid rgba(143,175,209,.38);background:rgba(26,45,70,.62);transition:all .18s ease}
-    .footer-links a:hover{background:#fff4f7;color:#d84b6a;border-color:#f3c8d4}
 
-    @media (max-width:960px){
-      .header-inner{align-items:flex-start;flex-direction:column;padding:10px 0}
-      .header-actions{width:100%;justify-content:flex-start}
-      .header-nav{justify-content:flex-start}
-      .footer-inner{align-items:flex-start}
-      .footer-left,.footer-links{width:100%}
-      .footer-links{justify-content:flex-start}
-    }
-
-  </style>
+</style>
 <script>
 (function () {
   var segments = location.pathname.split('/').filter(Boolean);
@@ -180,11 +147,12 @@
   document.head.appendChild(js);
 })();
 </script>
+  <link rel="stylesheet" href="../../assets/css/ja-header-footer.css">
 </head>
 <body>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/nihon-gateway-germany/ja/" aria-label="Nihon Gateway Germany ホーム">
+    <a class="brand" href="../" aria-label="Nihon Gateway Germany ホーム">
       <img class="brand-logo" src="../../assets/images/brand/logo_header.png" alt="Nihon Gateway Germany ヘッダーロゴ">
       <span class="brand-copy">
         <span class="brand-title">NIHON GATEWAY GERMANY</span>
@@ -194,13 +162,45 @@
 
     <div class="header-actions">
       <nav class="header-nav" aria-label="メインナビゲーション">
-        <a href="/nihon-gateway-germany/ja/">ホーム</a>
-        <a href="/nihon-gateway-germany/ja/about/">このサイトについて</a>
-        <a href="/nihon-gateway-germany/ja/contact/" class="active">お問い合わせ</a>
-        <a href="/nihon-gateway-germany/ja/terms/">利用規約</a>
-        <a href="/nihon-gateway-germany/ja/privacy/">プライバシー</a>
-        <a href="/nihon-gateway-germany/ja/impressum/">運営者情報</a>
+        <a href="../" class="active">ホーム</a>
+        <a href="../about/">このサイトについて</a>
       </nav>
+
+      <div class="header-category header-category-menu" aria-label="カテゴリ選択">
+        <button type="button" class="header-category-trigger">カテゴリ</button>
+        <div class="category-dropdown">
+          <a href="../guides/">手続き・制度</a>
+          <a href="../living/">住まい・生活</a>
+          <a href="../jobs/" data-base="jobs">仕事・求人</a>
+          <a href="../medical/" data-base="medical">医療・緊急</a>
+          <a href="../eat/" data-base="eat">グルメ・飲食</a>
+          <a href="../shopping/" data-base="shopping">買い物・サービス</a>
+          <a href="../community/" data-base="community">交流・掲示板</a>
+          <a href="../events/" data-base="events">おでかけ・イベント</a>
+          <a href="../learn-german/">ドイツ語・学び</a>
+          <a href="../news/">ニュース・読みもの</a>
+        </div>
+      </div>
+
+      <form class="header-search" action="../search/" method="get" role="search">
+        <label class="search-box" aria-label="サイト内検索">
+          <span>⌕</span>
+          <input type="search" name="q" placeholder="検索">
+        </label>
+        <button class="search-btn" type="submit" aria-label="検索">⌕</button>
+      </form>
+
+      <label class="header-language" aria-label="言語切り替え">
+        <span>Language</span>
+        <select id="languageSelect">
+          <option value="../">日本語</option>
+          <option value="../../">English</option>
+          <option value="../../de/">Deutsch</option>
+          <option value="../../zh/">中文</option>
+          <option value="../../ko/">한국어</option>
+          <option value="../../es/">Espanol</option>
+        </select>
+      </label>
     </div>
   </div>
 </header>
@@ -313,25 +313,25 @@
   </main>
 
   <footer class="page-footer">
-  <div class="footer-inner">
-    <div class="footer-left">
-      <img class="footer-logo" src="../../assets/images/brand/logo_footer.png" alt="Nihon Gateway Germany フッターロゴ">
-      <div class="footer-copy">
-        <div class="footer-title">NIHON GATEWAY GERMANY</div>
-        <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
-        <div class="footer-meta">© 2026 Nihon Gateway Germany</div>
-      </div>
-    </div>
+      <div class="footer-inner">
+        <div class="footer-left">
+<img class="footer-logo" src="../../assets/images/brand/logo_footer.png" alt="Nihon Gateway Germany フッターロゴ">
+          <div class="footer-copy">
+            <div class="footer-title">NIHON GATEWAY GERMANY</div>
+            <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+            <div class="footer-meta">© 2026 Nihon Gateway Germany</div>
+          </div>
+        </div>
 
-    <div class="footer-links">
-      <a href="/nihon-gateway-germany/ja/about/">このサイトについて</a>
-      <a href="/nihon-gateway-germany/ja/contact/">お問い合わせ</a>
-      <a href="/nihon-gateway-germany/ja/terms/">利用規約</a>
-      <a href="/nihon-gateway-germany/ja/privacy/">プライバシー</a>
-      <a href="/nihon-gateway-germany/ja/impressum/">運営者情報</a>
-    </div>
-  </div>
-</footer>
+        <div class="footer-links">
+          <a href="../about/">このサイトについて</a>
+          <a href="../contact/">お問い合わせ</a>
+          <a href="../terms/">利用規約</a>
+          <a href="../privacy/">プライバシー</a>
+          <a href="../impressum/">運営者情報</a>
+        </div>
+      </div>
+    </footer>
 
   <script>
     const form = document.getElementById('contactForm');
@@ -375,5 +375,6 @@
       }
     });
   </script>
+<script src="../../assets/js/main.js"></script>
 </body>
 </html>

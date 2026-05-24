@@ -30,30 +30,68 @@
 *{box-sizing:border-box}
 body{margin:0;font-family:'Outfit','Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif;background:linear-gradient(rgba(247,248,250,.78), rgba(247,248,250,.82)),url("../../../assets/images/brand/site-bg.jpg") center top / cover fixed no-repeat,var(--cream);color:var(--ink);line-height:1.6}
 a{text-decoration:none;color:inherit}
-.site-header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.84);backdrop-filter:blur(12px);border-bottom:1px solid rgba(230,234,240,.92)}
-.container{width:min(1280px,calc(100% - 32px));margin:0 auto}
-.header-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:12px}.brand-logo{width:120px;height:70px;object-fit:contain}.brand-title{font-size:14px;font-weight:800;letter-spacing:.08em}.brand-sub{font-size:12px;color:var(--muted)}
-.header-nav a{font-size:14px;font-weight:600;color:#34414d;padding:8px 12px;border-radius:999px;border:1px solid #dce4ee;background:rgba(255,255,255,.74)}
 .wrap{max-width:980px;margin:0 auto;padding:28px 18px 60px}
 .panel{background:#fff;border:1px solid var(--border);border-radius:22px;box-shadow:var(--card);padding:22px}
-.page-footer{margin:24px auto 0;max-width:980px;border:1px solid #dce4ee;border-radius:20px;background:linear-gradient(135deg,#fbfdff,#f6f9fc);box-shadow:0 16px 34px rgba(19,35,58,.10);padding:24px}
-.footer-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:22px;flex-wrap:wrap}.footer-left{display:flex;gap:16px;align-items:flex-start}.footer-logo{width:112px;height:112px;object-fit:contain}
-.footer-title{font-size:14px;font-weight:800;letter-spacing:.08em}.footer-sub,.footer-meta{color:var(--muted);font-size:13px}
-.footer-links{display:flex;gap:8px;flex-wrap:wrap}.footer-links a{font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.72);border:1px solid #e2e8f0}
 
-  </style>
+
+</style>
+  <link rel="stylesheet" href="../../../assets/css/ja-header-footer.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="../">
-        <img class="brand-logo" src="../../../assets/images/brand/nihon-gateway-logo.png" alt="Nihon Gateway Germany">
-        <div><span class="brand-title">NIHON GATEWAY GERMANY</span><span class="brand-sub">Community Board</span></div>
-      </a>
-      <nav class="header-nav"><a href="../">掲示板トップへ戻る</a></nav>
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="Nihon Gateway Germany ホーム">
+      <img class="brand-logo" src="../../../assets/images/brand/logo_header.png" alt="Nihon Gateway Germany ヘッダーロゴ">
+      <span class="brand-copy">
+        <span class="brand-title">NIHON GATEWAY GERMANY</span>
+        <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <a href="../../" class="active">ホーム</a>
+        <a href="../../about/">このサイトについて</a>
+      </nav>
+
+      <div class="header-category header-category-menu" aria-label="カテゴリ選択">
+        <button type="button" class="header-category-trigger">カテゴリ</button>
+        <div class="category-dropdown">
+          <a href="../../guides/">手続き・制度</a>
+          <a href="../../living/">住まい・生活</a>
+          <a href="../../jobs/" data-base="jobs">仕事・求人</a>
+          <a href="../../medical/" data-base="medical">医療・緊急</a>
+          <a href="../../eat/" data-base="eat">グルメ・飲食</a>
+          <a href="../../shopping/" data-base="shopping">買い物・サービス</a>
+          <a href="../../community/" data-base="community">交流・掲示板</a>
+          <a href="../../events/" data-base="events">おでかけ・イベント</a>
+          <a href="../../learn-german/">ドイツ語・学び</a>
+          <a href="../../news/">ニュース・読みもの</a>
+        </div>
+      </div>
+
+      <form class="header-search" action="../../search/" method="get" role="search">
+        <label class="search-box" aria-label="サイト内検索">
+          <span>⌕</span>
+          <input type="search" name="q" placeholder="検索">
+        </label>
+        <button class="search-btn" type="submit" aria-label="検索">⌕</button>
+      </form>
+
+      <label class="header-language" aria-label="言語切り替え">
+        <span>Language</span>
+        <select id="languageSelect">
+          <option value="../../">日本語</option>
+          <option value="../../../">English</option>
+          <option value="../../../de/">Deutsch</option>
+          <option value="../../../zh/">中文</option>
+          <option value="../../../ko/">한국어</option>
+          <option value="../../../es/">Espanol</option>
+        </select>
+      </label>
     </div>
-  </header>
+  </div>
+</header>
 
   <h1>投稿削除</h1>
   <p id="msg">処理中...</p>
@@ -77,14 +115,26 @@ a{text-decoration:none;color:inherit}
   </script>
 
   <footer class="page-footer">
-    <div class="footer-inner">
-      <div class="footer-left">
-        <img class="footer-logo" src="../../../assets/images/brand/nihon-gateway-logo.png" alt="Nihon Gateway Germany">
-        <div><p class="footer-title">NIHON GATEWAY GERMANY</p><p class="footer-sub">日本人コミュニティのための情報ハブ</p><p class="footer-meta">© Nihon Gateway Germany</p></div>
-      </div>
-      <div class="footer-links"><a href="../../about/">運営情報</a><a href="../../contact/">お問い合わせ</a></div>
-    </div>
-  </footer>
+      <div class="footer-inner">
+        <div class="footer-left">
+<img class="footer-logo" src="../../../assets/images/brand/logo_footer.png" alt="Nihon Gateway Germany フッターロゴ">
+          <div class="footer-copy">
+            <div class="footer-title">NIHON GATEWAY GERMANY</div>
+            <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+            <div class="footer-meta">© 2026 Nihon Gateway Germany</div>
+          </div>
+        </div>
 
+        <div class="footer-links">
+          <a href="../../about/">このサイトについて</a>
+          <a href="../../contact/">お問い合わせ</a>
+          <a href="../../terms/">利用規約</a>
+          <a href="../../privacy/">プライバシー</a>
+          <a href="../../impressum/">運営者情報</a>
+        </div>
+      </div>
+    </footer>
+
+<script src="../../../assets/js/main.js"></script>
 </body>
 </html>

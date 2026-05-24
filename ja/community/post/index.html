@@ -694,6 +694,7 @@ button,input,select,textarea{font:inherit}
   .hero{background-position:64% center}
 }
 </style>
+  <link rel="stylesheet" href="../../../assets/css/ja-header-footer.css">
 </head>
 
 <body>
@@ -709,7 +710,7 @@ button,input,select,textarea{font:inherit}
 
     <div class="header-actions">
       <nav class="header-nav" aria-label="メインナビゲーション">
-        <a href="../../">ホーム</a>
+        <a href="../../" class="active">ホーム</a>
         <a href="../../about/">このサイトについて</a>
       </nav>
 
@@ -718,12 +719,12 @@ button,input,select,textarea{font:inherit}
         <div class="category-dropdown">
           <a href="../../guides/">手続き・制度</a>
           <a href="../../living/">住まい・生活</a>
-          <a href="../../jobs/">仕事・求人</a>
-          <a href="../../medical/">医療・緊急</a>
-          <a href="../../eat/">グルメ・飲食</a>
-          <a href="../../shopping/">買い物・サービス</a>
-          <a href="../">交流・掲示板</a>
-          <a href="../../events/">おでかけ・イベント</a>
+          <a href="../../jobs/" data-base="jobs">仕事・求人</a>
+          <a href="../../medical/" data-base="medical">医療・緊急</a>
+          <a href="../../eat/" data-base="eat">グルメ・飲食</a>
+          <a href="../../shopping/" data-base="shopping">買い物・サービス</a>
+          <a href="../../community/" data-base="community">交流・掲示板</a>
+          <a href="../../events/" data-base="events">おでかけ・イベント</a>
           <a href="../../learn-german/">ドイツ語・学び</a>
           <a href="../../news/">ニュース・読みもの</a>
         </div>
@@ -737,11 +738,15 @@ button,input,select,textarea{font:inherit}
         <button class="search-btn" type="submit" aria-label="検索">⌕</button>
       </form>
 
-      <label class="header-language" aria-label="表示言語">
-        <span>言語</span>
-        <select onchange="if(this.value) location.href=this.value;">
-          <option value="../../" selected>日本語</option>
+      <label class="header-language" aria-label="言語切り替え">
+        <span>Language</span>
+        <select id="languageSelect">
+          <option value="../../">日本語</option>
+          <option value="../../../">English</option>
           <option value="../../../de/">Deutsch</option>
+          <option value="../../../zh/">中文</option>
+          <option value="../../../ko/">한국어</option>
+          <option value="../../../es/">Espanol</option>
         </select>
       </label>
     </div>
@@ -894,29 +899,21 @@ button,input,select,textarea{font:inherit}
     <footer class="page-footer">
       <div class="footer-inner">
         <div class="footer-left">
-          <img class="footer-logo" src="../../../assets/images/brand/logo_header.png" alt="Nihon Gateway Germany フッターロゴ">
+<img class="footer-logo" src="../../../assets/images/brand/logo_footer.png" alt="Nihon Gateway Germany フッターロゴ">
           <div class="footer-copy">
-            <p class="footer-title">NIHON GATEWAY GERMANY</p>
-            <p class="footer-sub">ドイツと日本をつなぐ総合ポータル</p>
-            <p class="footer-meta">© Nihon Gateway Germany</p>
+            <div class="footer-title">NIHON GATEWAY GERMANY</div>
+            <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+            <div class="footer-meta">© 2026 Nihon Gateway Germany</div>
           </div>
         </div>
 
-        <nav class="footer-links" aria-label="フッターリンク">
-          <a href="../../">ホーム</a>
+        <div class="footer-links">
           <a href="../../about/">このサイトについて</a>
           <a href="../../contact/">お問い合わせ</a>
-          <a href="../../guides/">手続き・制度</a>
-          <a href="../../living/">住まい・生活</a>
-          <a href="../../jobs/">仕事・求人</a>
-          <a href="../../medical/">医療・緊急</a>
-          <a href="../../eat/">グルメ・飲食</a>
-          <a href="../../shopping/">買い物・サービス</a>
-          <a href="../">交流・掲示板</a>
-          <a href="../../events/">イベント</a>
-          <a href="../../learn-german/">ドイツ語</a>
-          <a href="../../news/">ニュース</a>
-        </nav>
+          <a href="../../terms/">利用規約</a>
+          <a href="../../privacy/">プライバシー</a>
+          <a href="../../impressum/">運営者情報</a>
+        </div>
       </div>
     </footer>
   </div>
@@ -1128,5 +1125,6 @@ document.getElementById('postForm').addEventListener('submit', submitForm);
 
 loadCategories();
 </script>
+<script src="../../../assets/js/main.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
   <meta name="description" content="ドイツ在住日本人向けの交流掲示板。公開閲覧 + 投稿フォーム + 管理者承認型。" />
   <link rel="icon" type="image/jpeg" href="../../assets/images/brand/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
   <style>
     :root{
       --red:#e8002d;
@@ -45,46 +45,7 @@
     }
     a{text-decoration:none;color:inherit}
     button,input,select{font:inherit}
-
-    .site-header{
-      position:sticky;
-      top:0;
-      z-index:200;
-      background:rgba(255,255,255,.84);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(230,234,240,.92);
-    }
-    .container{width:min(var(--max), calc(100% - 32px));margin:0 auto;}
-    .header-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
-    .brand{display:flex;align-items:center;gap:12px;min-width:0;}
-    .brand-logo{width:120px;height:70px;border-radius:14px;object-fit:contain;background:transparent;border:none;box-shadow:none;}
-    .brand-copy{min-width:0;}
-    .brand-title{display:block;font-size:14px;font-weight:800;letter-spacing:.08em;line-height:1.1;}
-    .brand-sub{display:block;margin-top:4px;font-size:12px;color:var(--muted);}
-    .header-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:flex-end}
-    .header-city,.header-category,.header-language{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid #e6eaf0;background:#fff;color:var(--muted);font-size:13px;transition:all .18s ease}
-    .header-category:hover,.header-language:hover{border-color:#f3c8d4;background:#fff4f7;transform:translateY(-1px)}
-    .header-category-menu{position:relative;display:flex;align-items:center}
-    .header-category-menu::before{content:"";position:absolute;left:0;top:100%;width:100%;height:12px}
-    .header-category-trigger{border:none;background:transparent;color:var(--ink);font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px}
-    .header-category-menu::after{content:"▾";font-size:24px;line-height:1;color:var(--muted);margin-top:1px;pointer-events:none}
-    .category-dropdown{position:absolute;top:calc(100% + 8px);left:0;min-width:220px;background:#fff;border:1px solid #e6eaf0;border-radius:14px;box-shadow:0 16px 30px rgba(19,35,58,.14);padding:8px;display:none;z-index:20}
-    .header-category-menu:hover .category-dropdown,.header-category-menu:focus-within .category-dropdown{display:grid;gap:2px}
-    .category-dropdown a{text-decoration:none;font-size:13px;color:#2f3e4c;padding:8px 10px;border-radius:10px}
-    .category-dropdown a:hover{background:#fff4f7;border:1px solid #f3c8d4;color:#d84b6a;transform:translateY(-1px)}
-    .header-search{display:flex;align-items:center;gap:8px}
-    .search-box{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.96);border:1px solid #d9e0e8;border-radius:14px;padding:0 14px}
-    .search-box span{color:#7d8893;font-size:18px}
-    .search-box input{flex:1;border:none;outline:none;background:transparent;color:var(--ink)}
-    .header-search .search-box{min-width:220px;height:42px;border-radius:999px;padding:0 12px}
-    .header-search .search-box span{font-size:19px}
-    .header-search .search-box input{font-size:13px}
-    .header-search .search-btn{display:flex;align-items:center;justify-content:center;height:42px;border-radius:999px;padding:0 14px;font-size:24px;line-height:1;color:#1f5fbf;background:rgba(47,128,237,.20);border:1px solid rgba(47,128,237,.32);cursor:pointer}
-    .header-city select,.header-category select,.header-language select{border:none;background:transparent;color:var(--ink);font-weight:700;outline:none}
-    .header-nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-    .header-nav a{text-decoration:none;font-size:14px;font-weight:600;color:#34414d;padding:8px 12px;border-radius:999px;border:1px solid #dce4ee;background:rgba(255,255,255,.74);transition:all .18s ease}
-    .header-nav a.active{color:#34414d;border-color:#dce4ee;background:rgba(255,255,255,.74);transform:none}
-    .header-nav a:hover{color:#d84b6a;border-color:#f3c8d4;background:#fff4f7;transform:translateY(-1px)}
+.container{width:min(var(--max), calc(100% - 32px));margin:0 auto;}
 
     .hero{max-width:var(--max);margin:0 auto;padding:36px 20px 20px;}
     .hero-box{
@@ -157,50 +118,11 @@
     .mini-btn{border:none;border-radius:12px;min-height:38px;padding:0 14px;font:inherit;font-weight:700;cursor:pointer;background:#fff;border:1px solid #dce4ee;display:inline-flex;align-items:center;justify-content:center}
     .mini-btn.primary{background:#1f2d3d;color:#fff;border-color:#1f2d3d}
     .empty{padding:24px;text-align:center;color:var(--muted)}
-
-    .page-footer{margin-top:24px;border:1px solid #dce4ee;border-radius:20px;background:linear-gradient(135deg,#fbfdff,#f6f9fc);box-shadow:0 16px 34px rgba(19,35,58,.10);padding:24px}
-    .footer-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:22px;flex-wrap:wrap}
-    .footer-left{display:flex;gap:16px;align-items:flex-start;min-width:280px}
-    .footer-logo{width:112px;height:112px;object-fit:contain;border-radius:14px;background:transparent;border:none;box-shadow:none}
-    .footer-title{font-size:14px;font-weight:800;letter-spacing:.08em}
-    .footer-sub,.footer-meta{color:var(--muted);font-size:13px}
-.footer-links{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  flex-wrap:wrap;
-  justify-content:flex-end;
-  overflow-y:visible;
-  padding:4px 0;
-}
-
-.footer-links a{
-  font-size:12px;
-  color:#34414d;
-  text-decoration:none;
-  padding:6px 10px;
-  border-radius:999px;
-  background:rgba(255,255,255,.72);
-  border:1px solid #e2e8f0;
-  transition:all .18s ease;
-}
-.footer-links a:hover{
-  color:var(--brand);
-  border-color:var(--hover-pink);
-  background:var(--hover-pink-bg);
-  transform:translateY(-1px);
-}
-    @media (max-width:980px){
+@media (max-width:980px){
       .hero-box,.board-layout{grid-template-columns:1fr}
     }
     @media (max-width:760px){
-      .header-inner{min-height:auto;padding:14px 0;align-items:flex-start;flex-direction:column}
-      .header-actions{width:100%;justify-content:flex-start}
-      .header-search{width:100%}
-      .header-search .search-box{flex:1 1 auto}
-      .header-actions .header-category,.header-actions .header-language{width:max-content}
-      .header-nav{width:100%;justify-content:flex-start}
-      .hero{padding:24px 16px 12px}
+.hero{padding:24px 16px 12px}
       .hero-box{padding:24px 18px}
       .wrap{width:calc(100% - 24px)}
     }
@@ -229,59 +151,63 @@
   document.head.appendChild(js);
 })();
 </script>
+  <link rel="stylesheet" href="../../assets/css/ja-header-footer.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/nihon-gateway-germany/ja/" aria-label="Nihon Gateway Germany ホーム">
-        <img class="brand-logo" src="../../assets/images/brand/logo_header.png" alt="Nihon Gateway Germany ヘッダーロゴ" />
-        <span class="brand-copy">
-          <span class="brand-title">NIHON GATEWAY GERMANY</span>
-          <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
-        </span>
-      </a>
+  <div class="container header-inner">
+    <a class="brand" href="../" aria-label="Nihon Gateway Germany ホーム">
+      <img class="brand-logo" src="../../assets/images/brand/logo_header.png" alt="Nihon Gateway Germany ヘッダーロゴ">
+      <span class="brand-copy">
+        <span class="brand-title">NIHON GATEWAY GERMANY</span>
+        <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
+      </span>
+    </a>
 
-      <div class="header-actions">
-        <nav class="header-nav" aria-label="メインナビゲーション">
-          <a href="/nihon-gateway-germany/ja/">ホーム</a>
-          <a href="/nihon-gateway-germany/ja/about/">このサイトについて</a>
-        </nav>
+    <div class="header-actions">
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <a href="../" class="active">ホーム</a>
+        <a href="../about/">このサイトについて</a>
+      </nav>
 
-        <div class="header-category header-category-menu" aria-label="カテゴリ選択">
-          <button type="button" class="header-category-trigger">カテゴリ</button>
-          <div class="category-dropdown">
-            <a href="/nihon-gateway-germany/ja/guides/">手続き・制度</a>
-            <a href="/nihon-gateway-germany/ja/living/">住まい・生活</a>
-            <a href="/nihon-gateway-germany/ja/jobs/">仕事・求人</a>
-            <a href="/nihon-gateway-germany/ja/medical/">医療・緊急</a>
-            <a href="/nihon-gateway-germany/ja/eat/">食べる</a>
-            <a href="/nihon-gateway-germany/ja/shopping/">買い物・サービス</a>
-            <a href="/nihon-gateway-germany/ja/community/">交流・掲示板</a>
-            <a href="/nihon-gateway-germany/ja/events/">おでかけ・イベント</a>
-            <a href="/nihon-gateway-germany/ja/learn-german/">ドイツ語・学び</a>
-            <a href="/nihon-gateway-germany/ja/news/">ニュース・読みもの</a>
-          </div>
+      <div class="header-category header-category-menu" aria-label="カテゴリ選択">
+        <button type="button" class="header-category-trigger">カテゴリ</button>
+        <div class="category-dropdown">
+          <a href="../guides/">手続き・制度</a>
+          <a href="../living/">住まい・生活</a>
+          <a href="../jobs/" data-base="jobs">仕事・求人</a>
+          <a href="../medical/" data-base="medical">医療・緊急</a>
+          <a href="../eat/" data-base="eat">グルメ・飲食</a>
+          <a href="../shopping/" data-base="shopping">買い物・サービス</a>
+          <a href="../community/" data-base="community">交流・掲示板</a>
+          <a href="../events/" data-base="events">おでかけ・イベント</a>
+          <a href="../learn-german/">ドイツ語・学び</a>
+          <a href="../news/">ニュース・読みもの</a>
         </div>
-
-        <form class="header-search" action="/nihon-gateway-germany/ja/search/" method="get" role="search">
-          <label class="search-box" aria-label="サイト内検索">
-            <span>⌕</span>
-            <input type="search" name="q" placeholder="検索" />
-          </label>
-          <button class="search-btn" type="submit" aria-label="検索">⌕</button>
-        </form>
-
-        <label class="header-language" aria-label="言語切り替え">
-          <span>Language</span>
-          <select id="languageSelect">
-            <option value="/nihon-gateway-germany/ja/">日本語</option>
-            <option value="/nihon-gateway-germany/">English</option>
-            <option value="/nihon-gateway-germany/de/">Deutsch</option>
-          </select>
-        </label>
       </div>
+
+      <form class="header-search" action="../search/" method="get" role="search">
+        <label class="search-box" aria-label="サイト内検索">
+          <span>⌕</span>
+          <input type="search" name="q" placeholder="検索">
+        </label>
+        <button class="search-btn" type="submit" aria-label="検索">⌕</button>
+      </form>
+
+      <label class="header-language" aria-label="言語切り替え">
+        <span>Language</span>
+        <select id="languageSelect">
+          <option value="../">日本語</option>
+          <option value="../../">English</option>
+          <option value="../../de/">Deutsch</option>
+          <option value="../../zh/">中文</option>
+          <option value="../../ko/">한국어</option>
+          <option value="../../es/">Espanol</option>
+        </select>
+      </label>
     </div>
-  </header>
+  </div>
+</header>
 
   <section class="hero">
     <div class="hero-box">
@@ -341,25 +267,25 @@
   </main>
 
   <footer class="page-footer">
-    <div class="footer-inner">
-      <div class="footer-left">
-        <img class="footer-logo" src="../../assets/images/brand/logo_footer.png" alt="Nihon Gateway Germany フッターロゴ" />
-        <div class="footer-copy">
-          <div class="footer-title">NIHON GATEWAY GERMANY</div>
-          <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
-          <div class="footer-meta">© 2026 Nihon Gateway Germany</div>
+      <div class="footer-inner">
+        <div class="footer-left">
+<img class="footer-logo" src="../../assets/images/brand/logo_footer.png" alt="Nihon Gateway Germany フッターロゴ">
+          <div class="footer-copy">
+            <div class="footer-title">NIHON GATEWAY GERMANY</div>
+            <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+            <div class="footer-meta">© 2026 Nihon Gateway Germany</div>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="../about/">このサイトについて</a>
+          <a href="../contact/">お問い合わせ</a>
+          <a href="../terms/">利用規約</a>
+          <a href="../privacy/">プライバシー</a>
+          <a href="../impressum/">運営者情報</a>
         </div>
       </div>
-
-      <div class="footer-links">
-        <a href="/nihon-gateway-germany/ja/about/">このサイトについて</a>
-        <a href="/nihon-gateway-germany/ja/contact/">お問い合わせ</a>
-        <a href="/nihon-gateway-germany/ja/terms/">利用規約</a>
-        <a href="/nihon-gateway-germany/ja/privacy/">プライバシー</a>
-        <a href="/nihon-gateway-germany/ja/impressum/">運営者情報</a>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
   <script>
     const GAS_URL = 'https://script.google.com/macros/s/AKfycbwvGmCKVjbWak1xmqU3li33sS_eSx-g5eZU9NUPUYA_9YD7E2NmwUHe9a0SrG6YFBZt/exec';
@@ -516,5 +442,6 @@
 
     loadPosts();
   </script>
+<script src="../../assets/js/main.js"></script>
 </body>
 </html>

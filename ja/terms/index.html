@@ -32,7 +32,8 @@
     .legacy-footer{max-width:var(--max);margin:0 auto 32px;padding:0 18px}.legacy-footer-inner{background:#1d1217;color:#fff;border-radius:28px;padding:26px;border:1px solid rgba(255,255,255,.06)} .legacy-footer-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.legacy-footer-links a{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.08);font-size:14px}.note{font-size:13px;color:var(--muted)}
     @media (max-width:980px){.layout{grid-template-columns:1fr}.toc{position:static}.nav{align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start}}
 
-  </style>
+
+</style>
 <script>
 (function () {
   var segments = location.pathname.split('/').filter(Boolean);
@@ -57,6 +58,7 @@
   document.head.appendChild(js);
 })();
 </script>
+  <link rel="stylesheet" href="../../assets/css/ja-header-footer.css">
 </head>
 <body>
 <header class="site-header">
@@ -71,8 +73,8 @@
 
     <div class="header-actions">
       <nav class="header-nav" aria-label="メインナビゲーション">
-        <a href="../">ホーム</a>
-        <a href="../about/" class="active">このサイトについて</a>
+        <a href="../" class="active">ホーム</a>
+        <a href="../about/">このサイトについて</a>
       </nav>
 
       <div class="header-category header-category-menu" aria-label="カテゴリ選択">
@@ -80,12 +82,12 @@
         <div class="category-dropdown">
           <a href="../guides/">手続き・制度</a>
           <a href="../living/">住まい・生活</a>
-          <a href="../jobs/">仕事・求人</a>
-          <a href="../medical/">医療・緊急</a>
-          <a href="../eat/">グルメ・飲食</a>
-          <a href="../shopping/">買い物・サービス</a>
-          <a href="../community/">交流・掲示板</a>
-          <a href="../events/">おでかけ・イベント</a>
+          <a href="../jobs/" data-base="jobs">仕事・求人</a>
+          <a href="../medical/" data-base="medical">医療・緊急</a>
+          <a href="../eat/" data-base="eat">グルメ・飲食</a>
+          <a href="../shopping/" data-base="shopping">買い物・サービス</a>
+          <a href="../community/" data-base="community">交流・掲示板</a>
+          <a href="../events/" data-base="events">おでかけ・イベント</a>
           <a href="../learn-german/">ドイツ語・学び</a>
           <a href="../news/">ニュース・読みもの</a>
         </div>
@@ -102,7 +104,7 @@
       <label class="header-language" aria-label="言語切り替え">
         <span>Language</span>
         <select id="languageSelect">
-          <option value="../">日本語</option>
+          <option value="../../">日本語</option>
           <option value="../../">English</option>
           <option value="../../de/">Deutsch</option>
           <option value="../../zh/">中文</option>
@@ -139,25 +141,25 @@
     </div>
   </main>
   <footer class="page-footer">
-  <div class="footer-inner">
-    <div class="footer-left">
-      <img class="footer-logo" src="../../assets/images/brand/logo_footer.png" alt="Nihon Gateway Germany フッターロゴ">
-      <div class="footer-copy">
-        <div class="footer-title">NIHON GATEWAY GERMANY</div>
-        <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
-        <div class="footer-meta">© 2026 Nihon Gateway Germany</div>
-      </div>
-    </div>
+      <div class="footer-inner">
+        <div class="footer-left">
+<img class="footer-logo" src="../../assets/images/brand/logo_footer.png" alt="Nihon Gateway Germany フッターロゴ">
+          <div class="footer-copy">
+            <div class="footer-title">NIHON GATEWAY GERMANY</div>
+            <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+            <div class="footer-meta">© 2026 Nihon Gateway Germany</div>
+          </div>
+        </div>
 
-    <div class="footer-links">
-      <a href="../about/">このサイトについて</a>
-      <a href="../contact/">お問い合わせ</a>
-      <a href="../terms/">利用規約</a>
-      <a href="../privacy/">プライバシー</a>
-      <a href="../impressum/">運営者情報</a>
-    </div>
-  </div>
-</footer>
+        <div class="footer-links">
+          <a href="../about/">このサイトについて</a>
+          <a href="../contact/">お問い合わせ</a>
+          <a href="../terms/">利用規約</a>
+          <a href="../privacy/">プライバシー</a>
+          <a href="../impressum/">運営者情報</a>
+        </div>
+      </div>
+    </footer>
 <script>
 const languageSelect = document.getElementById('languageSelect');
 if (languageSelect) {
@@ -167,5 +169,6 @@ if (languageSelect) {
   });
 }
 </script>
+<script src="../../assets/js/main.js"></script>
 </body>
 </html>

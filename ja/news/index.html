@@ -101,68 +101,63 @@
     @media (max-width:960px){.header-inner{padding:10px 0}.header-actions{width:100%;justify-content:flex-start}.header-nav{width:100%}}
     @media (max-width:720px){.header-inner{flex-direction:column;align-items:flex-start}.header-search{width:100%}.header-search .search-box{min-width:0;flex:1}.news-grid{grid-template-columns:1fr}.news-controls{grid-template-columns:1fr}}
   </style>
+  <link rel="stylesheet" href="../../assets/css/ja-header-footer.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="../">
-        <img class="brand-logo" src="../../assets/images/brand/logo_header.png" alt="Nihon Gateway Germany" />
-        <span class="brand-copy">
-          <span class="brand-title">NIHON GATEWAY GERMANY</span>
-          <span class="brand-sub">日本語生活ガイド</span>
-        </span>
-      </a>
+  <div class="container header-inner">
+    <a class="brand" href="../" aria-label="Nihon Gateway Germany ホーム">
+      <img class="brand-logo" src="../../assets/images/brand/logo_header.png" alt="Nihon Gateway Germany ヘッダーロゴ">
+      <span class="brand-copy">
+        <span class="brand-title">NIHON GATEWAY GERMANY</span>
+        <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
+      </span>
+    </a>
 
-      <div class="header-actions">
-        <label class="header-city" for="citySelect">
-          都市
-          <select id="citySelect" aria-label="都市を選択">
-            <option selected>Düsseldorf</option>
-          </select>
-        </label>
+    <div class="header-actions">
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <a href="../" class="active">ホーム</a>
+        <a href="../about/">このサイトについて</a>
+      </nav>
 
-        <div class="header-category header-category-menu">
-          <button class="header-category-trigger" type="button" aria-haspopup="true" aria-expanded="false">カテゴリ</button>
-          <div class="category-dropdown" role="menu" aria-label="カテゴリ選択">
-            <a href="../guides/" role="menuitem">手続きガイド</a>
-            <a href="../living/" role="menuitem">住まい</a>
-            <a href="../jobs/" role="menuitem">仕事</a>
-            <a href="../medical/" role="menuitem">医療</a>
-            <a href="../eat/" role="menuitem">食</a>
-            <a href="../shopping/" role="menuitem">買い物</a>
-            <a href="../community/" role="menuitem">コミュニティ</a>
-            <a href="../events/" role="menuitem">イベント</a>
-            <a href="../learn-german/" role="menuitem">ドイツ語学習</a>
-            <a href="./" role="menuitem">ニュース</a>
-          </div>
+      <div class="header-category header-category-menu" aria-label="カテゴリ選択">
+        <button type="button" class="header-category-trigger">カテゴリ</button>
+        <div class="category-dropdown">
+          <a href="../guides/">手続き・制度</a>
+          <a href="../living/">住まい・生活</a>
+          <a href="../jobs/" data-base="jobs">仕事・求人</a>
+          <a href="../medical/" data-base="medical">医療・緊急</a>
+          <a href="../eat/" data-base="eat">グルメ・飲食</a>
+          <a href="../shopping/" data-base="shopping">買い物・サービス</a>
+          <a href="../community/" data-base="community">交流・掲示板</a>
+          <a href="../events/" data-base="events">おでかけ・イベント</a>
+          <a href="../learn-german/">ドイツ語・学び</a>
+          <a href="../news/">ニュース・読みもの</a>
         </div>
-
-        <div class="header-language" aria-label="language selector">
-          言語
-          <select id="languageSelect" aria-label="言語を選択">
-            <option selected>日本語</option>
-            <option value="../../">English</option>
-            <option value="../../de/">Deutsch</option>
-          </select>
-        </div>
-
-        <div class="header-search" role="search">
-          <label class="search-box" for="siteSearch">
-            <span>⌕</span>
-            <input id="siteSearch" type="search" placeholder="サイト内検索" />
-          </label>
-          <button class="search-btn" type="button" aria-label="検索">⌕</button>
-        </div>
-
-        <nav class="header-nav" aria-label="主要ナビゲーション">
-          <a href="../">ホーム</a>
-          <a href="../community/">コミュニティ</a>
-          <a href="../about/">運営情報</a>
-          <a href="../contact/">お問い合わせ</a>
-        </nav>
       </div>
+
+      <form class="header-search" action="../search/" method="get" role="search">
+        <label class="search-box" aria-label="サイト内検索">
+          <span>⌕</span>
+          <input type="search" name="q" placeholder="検索">
+        </label>
+        <button class="search-btn" type="submit" aria-label="検索">⌕</button>
+      </form>
+
+      <label class="header-language" aria-label="言語切り替え">
+        <span>Language</span>
+        <select id="languageSelect">
+          <option value="../../">日本語</option>
+          <option value="../../">English</option>
+          <option value="../../de/">Deutsch</option>
+          <option value="../../zh/">中文</option>
+          <option value="../../ko/">한국어</option>
+          <option value="../../es/">Espanol</option>
+        </select>
+      </label>
     </div>
-  </header>
+  </div>
+</header>
 
   <main>
     <section class="hero">
@@ -188,20 +183,32 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <a class="footer-brand" href="../">
-        <img src="../../assets/images/brand/logo_footer.png" alt="Nihon Gateway Germany" />
-        <span>Nihon Gateway Germany</span>
-      </a>
-      <p>© <span id="year"></span> Nihon Gateway Germany. All rights reserved.</p>
-    </div>
-  </footer>
+  <footer class="page-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+<img class="footer-logo" src="../../assets/images/brand/logo_footer.png" alt="Nihon Gateway Germany フッターロゴ">
+          <div class="footer-copy">
+            <div class="footer-title">NIHON GATEWAY GERMANY</div>
+            <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+            <div class="footer-meta">© 2026 Nihon Gateway Germany</div>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="../about/">このサイトについて</a>
+          <a href="../contact/">お問い合わせ</a>
+          <a href="../terms/">利用規約</a>
+          <a href="../privacy/">プライバシー</a>
+          <a href="../impressum/">運営者情報</a>
+        </div>
+      </div>
+    </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     document.getElementById('languageSelect').addEventListener('change', (e)=>{ if(e.target.value) window.location.href = e.target.value; });
   </script>
   <script src="../../assets/js/news.js"></script>
+<script src="../../assets/js/main.js"></script>
 </body>
 </html>

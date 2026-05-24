@@ -27,10 +27,11 @@
       --radius-lg:20px;
       --radius-md:14px;
       --radius-sm:10px;
-      --max:1280px;
+      --max:1380px;
       --brand:#d84b6a;
 --hover-pink:#f3c8d4;
 --hover-pink-bg:#fff4f7;
+      --sticky-offset:92px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
@@ -81,50 +82,356 @@
     .quick strong{display:block;font-size:.92rem;margin-bottom:2px}
     .quick span{display:block;color:var(--muted);font-size:.82rem;line-height:1.55}
 
-    .wrap{width:min(var(--max), calc(100% - 32px));margin:0 auto;padding:20px 0 58px}
-    .panel,.post-card{background:#fff;border:1px solid #dce4ee;border-radius:20px;box-shadow:var(--card-shadow)}
-    .panel{padding:20px}
-    .intro{margin-bottom:20px}
-    .intro-copy p{color:var(--muted);line-height:1.85}
-    .section-head{display:flex;align-items:center;gap:12px;margin:0 0 14px}
-    .section-tag{padding:5px 12px;border-radius:999px;background:linear-gradient(135deg,#2f6df5,#00b4a6);color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
-    .section-line{flex:1;height:1px;background:linear-gradient(90deg,#dce4ee,transparent)}
-
-    .board-layout{display:grid;grid-template-columns:330px 1fr;gap:18px;align-items:start}
-    .sidebar,.main-col{display:grid;gap:18px}
-    .filter-grid{display:grid;gap:10px}
-    input,select{width:100%;border:1px solid #d9e0e8;background:#fff;border-radius:14px;padding:12px 13px;font:inherit;color:var(--ink);outline:none}
-    input:focus,select:focus{border-color:#a9bdd8;box-shadow:0 0 0 3px rgba(47,109,245,.1)}
-
-    .toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
-    .muted{color:var(--muted)}
-    .posts{display:grid;gap:14px}
-    .post-card{padding:18px;transition:.18s ease}
-    .post-card:hover{transform:translateY(-2px)}
-    .post-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px;flex-wrap:wrap}
-    .badges{display:flex;gap:8px;flex-wrap:wrap}
-    .badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 10px;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .layout{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:20px 20px 80px;
+      display:grid;
+      grid-template-columns:280px 240px minmax(0,1fr);
+      gap:22px;
+      align-items:start;
+    }
+    .panel{
+      background:var(--paper);
+      border:1px solid var(--border);
+      border-radius:var(--radius-xl);
+      box-shadow:var(--card-shadow);
+    }
+    .filters{
+      position:sticky;
+      top:var(--sticky-offset);
+      padding:20px;
+    }
+    .field{margin-bottom:14px}
+    .label{
+      display:block;
+      font-size:13px;
+      font-weight:800;
+      color:#4c404c;
+      margin-bottom:8px;
+    }
+    .input,
+    .select{
+      width:100%;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:#fff;
+      padding:13px 14px;
+      outline:none;
+      color:var(--ink);
+    }
+    .input:focus,
+    .select:focus{
+      border-color:#a9bdd8;
+      box-shadow:0 0 0 3px rgba(47,109,245,.1);
+    }
+    .reset-btn{
+      border:none;
+      background:transparent;
+      color:var(--blue);
+      font-weight:800;
+      cursor:pointer;
+    }
+    .filter-action{
+      width:100%;
+      margin-top:4px;
+    }
+    .panel-title-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:16px;
+    }
+    .panel-title{
+      font-size:18px;
+      font-weight:900;
+    }
+    .content{min-width:0}
+    .toolbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+    .results-title{
+      font-size:24px;
+      font-weight:900;
+      letter-spacing:-.02em;
+    }
+    .results-sub{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:999px;
+      padding:8px 12px;
+      font-size:13px;
+      font-weight:800;
+      color:#4e424e;
+    }
+    .cards{
+      display:grid;
+      gap:10px;
+    }
+    .card{
+      position:relative;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      box-shadow:var(--card-shadow);
+      padding:10px 12px;
+      cursor:pointer;
+      transition:.18s ease;
+      min-width:0;
+    }
+    .card,
+    .card *{
+      overflow-wrap:anywhere;
+      word-break:break-word;
+    }
+    .card:hover{transform:translateY(-2px)}
+    .card:focus-visible{
+      outline:3px solid rgba(47,109,245,.26);
+      outline-offset:2px;
+    }
+    .card.active{
+      border-color:var(--blue);
+      box-shadow:0 0 0 3px rgba(47,109,245,.14),var(--card-shadow);
+    }
+    .card-head{
+      display:block;
+      padding-right:84px;
+      min-width:0;
+    }
+    .company{
+      font-size:14px;
+      font-weight:950;
+      line-height:1.2;
+    }
+    .position{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:2px;
+      line-height:1.25;
+    }
+    .company,
+    .position,
+    .meta dd{
+      display:-webkit-box;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+    }
+    .company,
+    .position,
+    .meta dd:not(.summary){
+      -webkit-line-clamp:1;
+      line-clamp:1;
+    }
+    .badge{
+      position:absolute;
+      top:10px;
+      right:10px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:10px;
+      font-weight:900;
+      line-height:1;
+      padding:5px 7px;
+      border-radius:999px;
+      background:#fff4f7;
+      color:#b83355;
+      border:1px solid #f2c8d4;
+      white-space:nowrap;
+      max-width:76px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      word-break:normal;
+      overflow-wrap:normal;
+    }
     .b-teal{background:rgba(0,180,166,.12);color:var(--teal)}
     .b-blue{background:rgba(47,109,245,.12);color:var(--blue)}
     .b-pink{background:rgba(244,114,182,.12);color:#c54890}
     .b-orange{background:rgba(255,107,43,.12);color:#d75b22}
-    .post-date{font-size:.78rem;color:#8a7f87}
-    .post-card h3{margin:0 0 8px;font-size:1.07rem;line-height:1.4}
-    .meta{display:flex;gap:14px;flex-wrap:wrap;font-size:.82rem;color:#7a6c76;margin-bottom:10px}
-    .post-card p{margin:0;color:var(--muted);line-height:1.78;font-size:.93rem}
-    .thumbs{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .thumbs img{width:110px;height:110px;object-fit:cover;border-radius:14px;border:1px solid var(--border)}
-    .post-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .mini-btn{border:none;border-radius:12px;min-height:38px;padding:0 14px;font:inherit;font-weight:700;cursor:pointer;background:#fff;border:1px solid #dce4ee;display:inline-flex;align-items:center;justify-content:center}
-    .mini-btn.primary{background:#1f2d3d;color:#fff;border-color:#1f2d3d}
-    .empty{padding:24px;text-align:center;color:var(--muted)}
-@media (max-width:980px){
-      .hero-box,.board-layout{grid-template-columns:1fr}
+    .meta{
+      margin-top:8px;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:3px;
+      font-size:12px;
+    }
+    .meta-row{
+      display:grid;
+      grid-template-columns:48px minmax(0,1fr);
+      gap:6px;
+      align-items:start;
+      min-width:0;
+    }
+    .meta dt{
+      font-weight:900;
+      color:#433744;
+      line-height:1.35;
+    }
+    .meta dd{
+      color:#564a55;
+      min-width:0;
+      overflow-wrap:anywhere;
+      word-break:break-word;
+      line-height:1.35;
+    }
+    .meta dd.summary{
+      -webkit-line-clamp:2;
+      line-clamp:2;
+    }
+    .detail-wrap{
+      position:sticky;
+      top:var(--sticky-offset);
+      align-self:start;
+    }
+    .detail{
+      padding:30px;
+      min-width:0;
+    }
+    .detail,
+    .detail *{
+      overflow-wrap:anywhere;
+      word-break:break-word;
+    }
+    .detail h3{
+      font-size:34px;
+      font-weight:950;
+      line-height:1.15;
+    }
+    .detail .sub{
+      margin-top:6px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:16px;
+    }
+    .detail-grid{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .detail-item{
+      display:grid;
+      grid-template-columns:120px minmax(0,1fr);
+      gap:8px;
+      font-size:14px;
+      border:1px solid #eee6e2;
+      background:#fff;
+      border-radius:16px;
+      padding:13px;
+    }
+    .detail-item .k{
+      font-weight:900;
+      color:#433744;
+    }
+    .detail-sec{
+      margin-top:20px;
+      border:1px solid #eee6e2;
+      background:#fff;
+      border-radius:18px;
+      padding:18px;
+    }
+    .detail-sec h4{
+      font-size:15px;
+      font-weight:900;
+      margin-bottom:8px;
+    }
+    .detail-sec p{
+      font-size:14px;
+      color:#4f4350;
+      white-space:pre-wrap;
+    }
+    .detail-media{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+      gap:10px;
+      margin-top:12px;
+    }
+    .detail-media img{
+      width:100%;
+      aspect-ratio:1;
+      object-fit:cover;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:#fff;
+    }
+    .detail-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:20px;
+    }
+    .empty-box{
+      padding:22px;
+      border-radius:24px;
+      border:1px dashed #d8ccc7;
+      background:#fffdfa;
+      color:var(--muted);
+    }
+    @media (max-width:1200px){
+      .layout{
+        grid-template-columns:250px 220px minmax(0,1fr);
+      }
+      .detail-grid{
+        grid-template-columns:1fr;
+      }
+      .detail h3{
+        font-size:30px;
+      }
+    }
+    @media (max-width:980px){
+      .hero-box{
+        grid-template-columns:1fr;
+      }
+      .layout{
+        grid-template-columns:280px minmax(0,1fr);
+      }
+      .detail-wrap{
+        grid-column:1/-1;
+        position:static;
+      }
     }
     @media (max-width:760px){
-.hero{padding:24px 16px 12px}
+      .hero{padding:24px 16px 12px}
       .hero-box{padding:24px 18px}
-      .wrap{width:calc(100% - 24px)}
+      .layout{
+        grid-template-columns:1fr;
+        padding:12px 12px 58px;
+      }
+      .filters{
+        position:static;
+      }
+      .detail-item{
+        grid-template-columns:1fr;
+      }
+      .detail h3{
+        font-size:26px;
+      }
+    }
+    @media (max-width:420px){
+      .card-head{
+        padding-right:0;
+      }
+      .badge{
+        display:none;
+      }
     }
   </style>
 <script>
@@ -232,38 +539,55 @@
     </div>
   </section>
 
-  <main class="wrap">
-    <section class="intro">
-      <div class="panel intro-copy">
-        <div class="section-head"><h2>使い方・利用上の注意</h2><div class="section-line"></div></div>
-        <p>一覧は誰でも閲覧できます。投稿する場合は専用フォームから送信し、投稿は一度保留となった後、管理者承認後に掲示板へ公開されます。連絡先は掲示板上に直接表示されず、閲覧者は「この投稿者に連絡する」ボタンから連絡できます。やり取り時は個人情報（氏名・住所・電話番号・口座情報など）の取り扱いに十分注意し、詐欺やなりすまし、不審な送金依頼には応じないでください。取引や連絡はご自身の判断と責任で行ってください。</p>
+  <main class="layout" id="board">
+    <aside class="panel filters">
+      <div class="panel-title-row">
+        <h2 class="panel-title">検索フィルター</h2>
+        <button class="reset-btn" id="resetFilters" type="button">リセット</button>
       </div>
-    </section>
 
-    <section id="board">
+      <div class="field">
+        <label class="label" for="searchInput">キーワード</label>
+        <input id="searchInput" class="input" type="text" placeholder="タイトル・本文・地域・価格" />
+      </div>
 
-      <div class="board-layout">
-        <aside class="sidebar">
-          <div class="panel">
-            <h3>検索・絞り込み</h3>
-            <div class="filter-grid">
-              <input id="searchInput" type="text" placeholder="キーワードで検索（例：デュッセルドルフ、ソファ、サブレット）" />
-              <select id="filterCategory"><option value="">すべてのカテゴリ</option></select>
-              <select id="filterRegion"><option value="">すべての地域</option></select>
-              <button class="btn btn-secondary" id="resetFilters" type="button">絞り込みをリセット</button>
-            </div>
-          </div>
-        </aside>
+      <div class="field">
+        <label class="label" for="filterCategory">カテゴリ</label>
+        <select id="filterCategory" class="select">
+          <option value="">すべて</option>
+        </select>
+      </div>
 
-        <div class="main-col">
-          <div class="toolbar">
-            <div class="muted" id="resultText">投稿を読み込み中...</div>
-            <a class="btn btn-secondary" href="./post/">新しく投稿する</a>
-          </div>
-          <div class="posts" id="posts"></div>
+      <div class="field">
+        <label class="label" for="filterRegion">地域</label>
+        <select id="filterRegion" class="select">
+          <option value="">すべて</option>
+        </select>
+      </div>
+
+      <a class="btn btn-secondary filter-action" href="./post/">新しく投稿する</a>
+    </aside>
+
+    <section class="content">
+      <div class="toolbar">
+        <div>
+          <h2 class="results-title">交流・掲示板</h2>
+          <div class="results-sub" id="resultText">投稿を読み込み中...</div>
         </div>
+
+        <div class="chips" id="chips"></div>
       </div>
+
+      <div id="cards" class="cards" aria-live="polite"></div>
+      <div id="emptyBox" class="empty-box" style="display:none;">現在、条件に一致する投稿はありません。</div>
     </section>
+
+    <aside class="detail-wrap">
+      <div class="panel detail" id="detailPanel">
+        <h3>投稿を読み込み中...</h3>
+        <p class="sub">掲示板データを取得しています。</p>
+      </div>
+    </aside>
   </main>
 
   <footer class="page-footer">
@@ -289,10 +613,15 @@
 
   <script>
     const GAS_URL = 'https://script.google.com/macros/s/AKfycbwvGmCKVjbWak1xmqU3li33sS_eSx-g5eZU9NUPUYA_9YD7E2NmwUHe9a0SrG6YFBZt/exec';
+    const BOARD_NOTICE = '一覧は誰でも閲覧できます。投稿する場合は専用フォームから送信し、投稿は一度保留となった後、管理者承認後に掲示板へ公開されます。連絡先は掲示板上に直接表示されず、閲覧者は「この投稿者に連絡する」ボタンから連絡できます。やり取り時は個人情報（氏名・住所・電話番号・口座情報など）の取り扱いに十分注意し、詐欺やなりすまし、不審な送金依頼には応じないでください。取引や連絡はご自身の判断と責任で行ってください。';
     let posts = [];
+    let selectedId = null;
 
     const els = {
-      posts: document.getElementById('posts'),
+      cards: document.getElementById('cards'),
+      detailPanel: document.getElementById('detailPanel'),
+      emptyBox: document.getElementById('emptyBox'),
+      chips: document.getElementById('chips'),
       resultText: document.getElementById('resultText'),
       searchInput: document.getElementById('searchInput'),
       filterCategory: document.getElementById('filterCategory'),
@@ -301,12 +630,16 @@
     };
 
     function escapeHtml(str) {
-      return String(str || '')
+      return String(str ?? '')
         .replaceAll('&', '&amp;')
         .replaceAll('<', '&lt;')
         .replaceAll('>', '&gt;')
         .replaceAll('"', '&quot;')
         .replaceAll("'", '&#39;');
+    }
+
+    function normalize(str) {
+      return String(str ?? '').trim().toLowerCase();
     }
 
     function badgeClass(category) {
@@ -322,14 +655,27 @@
       return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
     }
 
+    function dateValue(value) {
+      const d = new Date(value);
+      return Number.isNaN(d.getTime()) ? 0 : d.getTime();
+    }
+
     async function fetchJson(url, options = {}) {
       const res = await fetch(url, options);
       if (!res.ok) throw new Error('Network error');
       return await res.json();
     }
 
+    function getLocation(post) {
+      return [post.city, post.region].filter(Boolean).join(' / ') || '未設定';
+    }
+
+    function getPostId(post, index) {
+      return String(post.post_id || post.id || `community-${index + 1}`);
+    }
+
     function uniqueRegions() {
-      return [...new Set(posts.map((p) => p.region).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+      return [...new Set(posts.flatMap((p) => [p.region, p.city]).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ja'));
     }
 
     function uniqueCategories() {
@@ -342,94 +688,268 @@
       const currentCategory = els.filterCategory.value;
       const currentRegion = els.filterRegion.value;
 
-      els.filterCategory.innerHTML = '<option value="">すべてのカテゴリ</option>' + categories.map((c) => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
-      els.filterRegion.innerHTML = '<option value="">すべての地域</option>' + regions.map((r) => `<option value="${escapeHtml(r)}">${escapeHtml(r)}</option>`).join('');
+      els.filterCategory.innerHTML = '<option value="">すべて</option>' + categories.map((c) => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
+      els.filterRegion.innerHTML = '<option value="">すべて</option>' + regions.map((r) => `<option value="${escapeHtml(r)}">${escapeHtml(r)}</option>`).join('');
 
       if (categories.includes(currentCategory)) els.filterCategory.value = currentCategory;
       if (regions.includes(currentRegion)) els.filterRegion.value = currentRegion;
     }
 
     function filteredPosts() {
-      const q = els.searchInput.value.trim().toLowerCase();
+      const q = normalize(els.searchInput.value);
       const category = els.filterCategory.value;
       const region = els.filterRegion.value;
 
       return [...posts]
-        .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+        .sort((a, b) => dateValue(b.created_at) - dateValue(a.created_at))
         .filter((post) => {
-          const searchable = [post.title, post.category1, post.category2, post.region, post.city, post.nickname, post.body, post.price].join(' ').toLowerCase();
+          const searchable = normalize([post.title, post.category1, post.category2, post.region, post.city, post.nickname, post.body, post.price].join(' '));
 
           const matchesQuery = !q || searchable.includes(q);
           const matchesCategory = !category || post.category1 === category;
-          const matchesRegion = !region || post.region === region;
+          const matchesRegion = !region || post.region === region || post.city === region;
           return matchesQuery && matchesCategory && matchesRegion;
         });
     }
 
-    function renderPosts() {
-      const list = filteredPosts();
+    function renderSummary(list) {
       els.resultText.textContent = `全 ${posts.length} 件中 ${list.length} 件を表示`;
+    }
 
+    function renderChips() {
+      const chips = [];
+      const keyword = els.searchInput.value.trim();
+
+      if (keyword) chips.push(`キーワード: ${escapeHtml(keyword)}`);
+      if (els.filterCategory.value) chips.push(`カテゴリ: ${escapeHtml(els.filterCategory.value)}`);
+      if (els.filterRegion.value) chips.push(`地域: ${escapeHtml(els.filterRegion.value)}`);
+
+      els.chips.innerHTML = chips.map((chip) => `<span class="chip">${chip}</span>`).join('');
+    }
+
+    function syncSelected(list) {
+      if (!list.some((post) => String(post._id) === String(selectedId))) {
+        selectedId = list[0]?._id || null;
+      }
+    }
+
+    function renderCards(list) {
       if (!list.length) {
-        els.posts.innerHTML = '<div class="panel empty">現在、条件に一致する投稿はありません。</div>';
+        els.cards.innerHTML = '';
+        els.emptyBox.style.display = 'block';
         return;
       }
 
-      els.posts.innerHTML = list.map((post) => `
-        <article class="post-card">
-          <div class="post-top">
-            <div class="badges">
-              <span class="badge ${badgeClass(post.category1)}">${escapeHtml(post.category1)}</span>
-              <span class="badge b-blue">${escapeHtml(post.category2)}</span>
-              <span class="badge b-orange">${escapeHtml(post.city || post.region || '')}</span>
+      els.emptyBox.style.display = 'none';
+
+      els.cards.innerHTML = list.map((post) => {
+        const title = post.title || 'タイトル未設定';
+        const category = post.category1 || 'カテゴリ未設定';
+        const subCategory = post.category2 || '詳細カテゴリ未設定';
+        const location = getLocation(post);
+        const price = post.price || '未設定';
+        const author = post.nickname || '匿名';
+        const summary = post.body || '本文は未設定です。';
+        const date = formatDate(post.created_at) || '未設定';
+
+        return `
+          <article class="card ${String(post._id) === String(selectedId) ? 'active' : ''}" data-id="${escapeHtml(post._id)}" role="button" tabindex="0" aria-pressed="${String(post._id) === String(selectedId) ? 'true' : 'false'}">
+            <div class="card-head">
+              <div>
+                <h3 class="company">${escapeHtml(title)}</h3>
+                <p class="position">${escapeHtml(subCategory)}</p>
+              </div>
+              <span class="badge ${badgeClass(category)}">${escapeHtml(category)}</span>
             </div>
-            <div class="post-date">${formatDate(post.created_at)}</div>
-          </div>
-          <h3>${escapeHtml(post.title)}</h3>
-          <div class="meta">
-            <span>投稿者: ${escapeHtml(post.nickname || '匿名')}</span>
-            <span>地域: ${escapeHtml([post.city, post.region].filter(Boolean).join(' / ') || '未設定')}</span>
-            <span>価格: ${escapeHtml(post.price || '未設定')}</span>
-          </div>
-          <p>${escapeHtml(post.body).replaceAll('\n', '<br>')}</p>
-          <div class="thumbs">
-            ${post.image_url_1 ? `<img src="${escapeHtml(post.image_url_1)}" alt="">` : ''}
-            ${post.image_url_2 ? `<img src="${escapeHtml(post.image_url_2)}" alt="">` : ''}
-            ${post.image_url_3 ? `<img src="${escapeHtml(post.image_url_3)}" alt="">` : ''}
-          </div>
-          <div class="post-actions">
-            <a class="mini-btn primary" href="./contact/?post_id=${encodeURIComponent(post.post_id)}">この投稿者に連絡する</a>
-          </div>
-        </article>
-      `).join('');
+
+            <dl class="meta">
+              <div class="meta-row">
+                <dt>地域</dt>
+                <dd>${escapeHtml(location)}</dd>
+              </div>
+
+              <div class="meta-row">
+                <dt>価格</dt>
+                <dd>${escapeHtml(price)}</dd>
+              </div>
+
+              <div class="meta-row">
+                <dt>投稿者</dt>
+                <dd>${escapeHtml(author)}</dd>
+              </div>
+
+              <div class="meta-row">
+                <dt>日付</dt>
+                <dd>${escapeHtml(date)}</dd>
+              </div>
+
+              <div class="meta-row">
+                <dt>概要</dt>
+                <dd class="summary">${escapeHtml(summary)}</dd>
+              </div>
+            </dl>
+          </article>
+        `;
+      }).join('');
+
+      els.cards.querySelectorAll('.card').forEach((card) => {
+        const selectCard = () => {
+          selectedId = card.dataset.id;
+          renderBoard();
+        };
+
+        card.addEventListener('click', selectCard);
+        card.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            selectCard();
+          }
+        });
+      });
     }
 
-    function renderAll() {
-      renderFilters();
-      renderPosts();
+    function renderDetail(list) {
+      const post = list.find((item) => String(item._id) === String(selectedId));
+
+      if (!post) {
+        els.detailPanel.innerHTML = `
+          <h3>投稿を選択してください</h3>
+          <p class="sub">条件に一致する投稿がない場合は、検索条件を変更してください。</p>
+          <section class="detail-sec">
+            <h4>利用上の注意</h4>
+            <p>${escapeHtml(BOARD_NOTICE)}</p>
+          </section>
+        `;
+        return;
+      }
+
+      const title = post.title || 'タイトル未設定';
+      const category = post.category1 || 'カテゴリ未設定';
+      const subCategory = post.category2 || '詳細カテゴリ未設定';
+      const location = getLocation(post);
+      const price = post.price || '未設定';
+      const author = post.nickname || '匿名';
+      const date = formatDate(post.created_at) || '未設定';
+      const body = post.body || '本文は未設定です。';
+      const contactId = post.post_id || post._id || '';
+      const contactHref = contactId ? `./contact/?post_id=${encodeURIComponent(contactId)}` : './contact/';
+      const images = [post.image_url_1, post.image_url_2, post.image_url_3].filter(Boolean);
+
+      els.detailPanel.innerHTML = `
+        <h3>${escapeHtml(title)}</h3>
+        <p class="sub">${escapeHtml(category)} / ${escapeHtml(subCategory)}</p>
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <div class="k">カテゴリ</div>
+            <div>${escapeHtml(category)}</div>
+          </div>
+
+          <div class="detail-item">
+            <div class="k">地域</div>
+            <div>${escapeHtml(location)}</div>
+          </div>
+
+          <div class="detail-item">
+            <div class="k">価格</div>
+            <div>${escapeHtml(price)}</div>
+          </div>
+
+          <div class="detail-item">
+            <div class="k">投稿者</div>
+            <div>${escapeHtml(author)}</div>
+          </div>
+
+          <div class="detail-item">
+            <div class="k">投稿日</div>
+            <div>${escapeHtml(date)}</div>
+          </div>
+
+          <div class="detail-item">
+            <div class="k">投稿ID</div>
+            <div>${escapeHtml(contactId || '未設定')}</div>
+          </div>
+        </div>
+
+        <section class="detail-sec">
+          <h4>本文</h4>
+          <p>${escapeHtml(body)}</p>
+        </section>
+
+        ${
+          images.length
+            ? `
+              <section class="detail-sec">
+                <h4>画像</h4>
+                <div class="detail-media">
+                  ${images.map((src, index) => `<img src="${escapeHtml(src)}" alt="${escapeHtml(title)} 画像${index + 1}">`).join('')}
+                </div>
+              </section>
+            `
+            : ''
+        }
+
+        <div class="detail-actions">
+          <a class="btn btn-primary" href="${escapeHtml(contactHref)}">この投稿者に連絡する</a>
+          <a class="btn btn-secondary" href="./post/">新しく投稿する</a>
+        </div>
+
+        <section class="detail-sec">
+          <h4>利用上の注意</h4>
+          <p>${escapeHtml(BOARD_NOTICE)}</p>
+        </section>
+      `;
+    }
+
+    function renderBoard() {
+      const list = filteredPosts();
+      syncSelected(list);
+      renderSummary(list);
+      renderChips();
+      renderCards(list);
+      renderDetail(list);
     }
 
     async function loadPosts() {
       try {
         const data = await fetchJson(GAS_URL + '?action=getPosts');
-        posts = data.posts || [];
-        renderAll();
+        posts = (data.posts || []).map((post, index) => ({
+          ...post,
+          _id: getPostId(post, index)
+        }));
+        renderFilters();
+        renderBoard();
       } catch (e) {
+        console.error('掲示板データの読み込みに失敗しました:', e);
+        posts = [];
+        selectedId = null;
         els.resultText.textContent = '読み込みに失敗しました';
-        els.posts.innerHTML = '<div class="panel empty">投稿の読み込みに失敗しました。GASの公開設定とURLを確認してください。</div>';
+        els.chips.innerHTML = '';
+        els.cards.innerHTML = '';
+        els.emptyBox.style.display = 'block';
+        els.emptyBox.textContent = '投稿の読み込みに失敗しました。GASの公開設定とURLを確認してください。';
+        els.detailPanel.innerHTML = `
+          <h3>読み込みエラー</h3>
+          <p class="sub">掲示板データを取得できませんでした。</p>
+          <section class="detail-sec">
+            <h4>確認ポイント</h4>
+            <p>GASの公開設定とURLを確認してください。</p>
+          </section>
+        `;
       }
     }
 
     [els.searchInput, els.filterCategory, els.filterRegion].forEach((el) => {
-      el.addEventListener('input', renderPosts);
-      el.addEventListener('change', renderPosts);
+      el.addEventListener('input', renderBoard);
+      el.addEventListener('change', renderBoard);
     });
 
     els.resetFilters.addEventListener('click', () => {
       els.searchInput.value = '';
       els.filterCategory.value = '';
       els.filterRegion.value = '';
-      renderAll();
+      selectedId = null;
+      renderBoard();
     });
 
     const languageSelect = document.getElementById('languageSelect');

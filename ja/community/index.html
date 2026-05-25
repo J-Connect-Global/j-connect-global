@@ -38,6 +38,7 @@
         url("../../assets/images/brand/site-bg.jpg") center top / cover fixed no-repeat,
         var(--community-bg);
       color:var(--community-ink);
+      overflow-x:hidden;
     }
 
     a{text-decoration:none}
@@ -58,17 +59,18 @@
       padding:18px;
     }
 
-    .hero-grid{display:grid;grid-template-columns:minmax(540px,1fr) minmax(360px,.72fr);gap:18px;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;align-items:center}
     .hero-copy{min-width:0}
     .hero-kicker{display:flex;align-items:center;gap:8px;color:var(--community-brand);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
     .hero-kicker::before{content:"";width:8px;height:8px;border-radius:999px;background:var(--community-brand)}
     .hero-title{font-size:clamp(26px,3.35vw,38px);line-height:1.12;letter-spacing:0;font-weight:900;margin-top:7px;max-width:760px}
     .hero-desc{max-width:760px;margin-top:7px;color:#465360;font-size:14px;line-height:1.65}
-    .hero-search{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;margin-top:13px;max-width:820px}
+    .hero-search{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;margin-top:13px;max-width:760px}
     .search-control{position:relative}
-    .search-control input{width:100%;height:48px;border:1.5px solid var(--community-line-strong);border-radius:16px;background:#fff;padding:0 16px 0 44px;outline:none;box-shadow:0 8px 20px rgba(25,39,52,.05)}
+    .search-control input{width:100%;height:48px;border:1.5px solid var(--community-line-strong);border-radius:16px;background:#fff;padding:0 44px 0 44px;outline:none;box-shadow:0 8px 20px rgba(25,39,52,.05)}
     .search-control input:focus{border-color:var(--community-blue);box-shadow:0 0 0 4px rgba(37,99,235,.13)}
     .search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:#7c8794;font-weight:900}
+    .search-clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:32px;height:32px;border:none;border-radius:999px;background:#f2f5f8;color:#52606e;font-weight:900}
     .hero-actions{display:flex;gap:10px}
     .btn{
       min-height:46px;
@@ -88,13 +90,8 @@
     .btn-primary{background:var(--community-ink);color:#fff;box-shadow:0 10px 22px rgba(23,32,42,.18)}
     .btn-secondary{background:#fff;color:#24313d;border-color:var(--community-line-strong)}
     .btn-soft{background:#f7fafc;color:#24313d;border-color:var(--community-line)}
+    .hero-helper{margin-top:7px;color:#5d6975;font-size:12px;font-weight:800}
 
-    .vitality-strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:0;align-self:end}
-    .vitality-item{background:rgba(255,255,255,.84);border:1px solid var(--community-line);border-radius:14px;padding:9px 11px;min-width:0}
-    .vitality-label{font-size:11px;font-weight:800;color:var(--community-muted)}
-    .vitality-value{font-size:15px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-
-    .quick-rail{display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin;padding:10px 1px 0}
     .chip-button{
       border:1px solid var(--community-line);
       background:#fff;
@@ -125,16 +122,26 @@
       box-shadow:0 12px 26px rgba(25,39,52,.08);
       padding:10px;
     }
-    .filter-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center}
-    .filter-rail{display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin;padding:2px}
-    .filter-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+    .filter-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+    .filter-row{display:flex;align-items:center;gap:10px;min-width:0;overflow:hidden}
+    .filter-label{font-size:12px;font-weight:900;color:#627080;white-space:nowrap}
+    .filter-rail,.utility-rail,.sort-segment{display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin;padding:2px;min-width:0;max-width:100%;flex:1 1 auto}
+    .filter-controls{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center}
     .select{height:40px;border:1px solid var(--community-line);background:#fff;border-radius:999px;padding:0 12px;color:#283541;font-weight:800;outline:none}
     .toggle-chip{position:relative}
     .toggle-chip input{position:absolute;opacity:0;inset:0}
     .toggle-chip span{border:1px solid var(--community-line);background:#fff;border-radius:999px;min-height:40px;padding:0 12px;display:inline-flex;align-items:center;font-size:13px;font-weight:900;color:#2f3a45}
     .toggle-chip input:checked + span{background:#eaf3ff;border-color:#b8d3ff;color:#1953b8}
+    .sort-button{min-height:40px;border:1px solid var(--community-line);background:#fff;color:#34414d;border-radius:999px;padding:0 12px;font-size:13px;font-weight:900;white-space:nowrap}
+    .sort-button.active{background:#17202a;color:#fff;border-color:#17202a}
+    .activity-bar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0 0}
+    .activity-card{background:#fff;border:1px solid var(--community-line);border-radius:14px;padding:10px 12px;min-width:0;box-shadow:0 8px 18px rgba(25,39,52,.05)}
+    .activity-label{font-size:11px;font-weight:900;color:#697684}
+    .activity-value{font-size:14px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .search-suggestions{display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin;margin-top:10px;padding:1px;max-width:100%}
+    .suggestion-button{border:1px solid var(--community-line);background:#fff;border-radius:999px;min-height:34px;padding:0 11px;font-size:12px;font-weight:900;color:#4a5866;white-space:nowrap}
 
-    .content-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:20px 0 12px}
+    .content-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:20px 0 12px;max-width:100%;overflow:hidden}
     .content-title{font-size:24px;font-weight:900;letter-spacing:0}
     .result-text{color:var(--community-muted);font-size:14px;margin-top:3px}
     .active-filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
@@ -146,21 +153,20 @@
       background:#fff;
       border-radius:18px;
       box-shadow:0 10px 24px rgba(25,39,52,.07);
-      overflow:hidden;
       min-width:0;
-      display:flex;
-      flex-direction:column;
       color:inherit;
       transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+      position:relative;
     }
     .card:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(25,39,52,.12);border-color:#c8d4df}
+    .card-link{color:inherit;display:flex;flex-direction:column;height:100%;overflow:hidden}
     .card-media{position:relative;aspect-ratio:4/3;background:#eef3f6;overflow:hidden}
     .card-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;background:#eef3f6}
     .placeholder-art{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(135deg,#f7fbff 0%,#eef5f0 100%);color:#3d4a56}
     .placeholder-art::before{content:attr(data-icon);width:62px;height:62px;border-radius:18px;display:grid;place-items:center;background:#fff;border:1px solid rgba(205,216,227,.9);box-shadow:0 10px 22px rgba(25,39,52,.08);font-size:30px}
     .image-count{position:absolute;right:9px;bottom:9px;z-index:3;background:rgba(23,32,42,.78);color:#fff;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:900}
     .card-body{padding:12px;display:flex;flex-direction:column;gap:8px;min-height:178px}
-    .card-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-right:38px}
     .category-badge,.price-badge,.trust-badge{display:inline-flex;align-items:center;border-radius:999px;font-size:11px;font-weight:900;line-height:1;padding:6px 8px;max-width:100%;white-space:nowrap}
     .category-badge{background:#edf7f5;color:#067366}
     .price-badge{background:#fff5d7;color:#7b5000}
@@ -172,6 +178,9 @@
     .trust-badge{background:#f2f5f8;color:#536170}
     .trust-badge.urgent{background:#fff0e7;color:#a54912}
     .trust-badge.japanese{background:#fff1f5;color:#a83252}
+    .save-button{position:absolute;right:10px;top:10px;z-index:5;width:36px;height:36px;border-radius:999px;border:1px solid rgba(205,216,227,.9);background:rgba(255,255,255,.94);box-shadow:0 8px 18px rgba(25,39,52,.10);font-size:18px;line-height:1;color:#52606e}
+    .save-button.saved{background:#17202a;color:#fff;border-color:#17202a}
+    .save-button.inline{position:static;width:auto;min-height:46px;padding:0 14px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:900}
 
     .skeleton{pointer-events:none}
     .skeleton .card-media,.skeleton-line{background:linear-gradient(90deg,#edf2f7 0%,#f8fafc 46%,#edf2f7 92%);background-size:220% 100%;animation:skeleton 1.15s linear infinite}
@@ -205,7 +214,7 @@
       left:50%;
       top:50%;
       transform:translate(-50%,-50%);
-      width:min(980px, calc(100% - 32px));
+      width:min(1040px, calc(100% - 32px));
       max-height:min(88vh, 820px);
       overflow:auto;
       background:#fff;
@@ -214,20 +223,24 @@
       box-shadow:0 24px 70px rgba(13,23,32,.28);
     }
     .modal-close{position:sticky;top:12px;float:right;margin:12px 12px 0 0;z-index:2;width:40px;height:40px;border-radius:999px;border:1px solid var(--community-line);background:#fff;font-size:24px;line-height:1;color:#293541}
-    .detail-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:0;clear:both}
-    .detail-gallery{background:#f2f5f8;min-height:100%;padding:14px;display:grid;gap:10px;align-content:start}
-    .detail-main-image{position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#e9eff5}
-    .detail-main-image img{width:100%;height:100%;object-fit:cover}
-    .detail-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-    .detail-thumbs img,.detail-thumb-placeholder{width:100%;aspect-ratio:1;border-radius:12px;object-fit:cover;background:#e9eff5;border:1px solid #dfe6ee}
+    .detail-layout{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);gap:0;clear:both}
+    .detail-gallery{background:linear-gradient(180deg,#f8fafc 0%,#eef3f6 100%);min-height:100%;padding:16px;display:grid;gap:10px;align-content:start}
+    .detail-main-image{position:relative;aspect-ratio:4/3;border-radius:18px;overflow:hidden;background:#dfe7ef;display:grid;place-items:center}
+    .detail-main-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .detail-placeholder{width:min(150px,42%);aspect-ratio:1;border-radius:28px;display:grid;place-items:center;background:#fff;border:1px solid rgba(205,216,227,.95);box-shadow:0 16px 32px rgba(25,39,52,.08);font-size:42px;font-weight:900;color:#3d4a56}
+    .detail-thumbs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin;padding:2px}
+    .detail-thumb-button{flex:0 0 78px;border:2px solid transparent;border-radius:13px;padding:0;background:transparent;overflow:hidden}
+    .detail-thumb-button.active{border-color:#17202a}
+    .detail-thumb-button img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;background:#e9eff5;display:block}
+    .detail-thumbs[hidden]{display:none}
     .detail-content{padding:26px 24px 24px;min-width:0}
     .detail-content h2{font-size:clamp(24px,3.4vw,36px);line-height:1.18;font-weight:900;letter-spacing:0}
     .detail-meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
     .detail-body{white-space:pre-wrap;color:#394653;line-height:1.8;margin-top:12px}
-    .detail-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}
-    .fact{background:#f7fafc;border:1px solid var(--community-line);border-radius:12px;padding:10px}
+    .detail-facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .fact{background:#f7fafc;border:1px solid var(--community-line);border-radius:999px;padding:7px 10px;display:inline-flex;align-items:center;gap:6px}
     .fact-label{font-size:11px;color:var(--community-muted);font-weight:900}
-    .fact-value{font-weight:900;margin-top:2px;overflow-wrap:anywhere}
+    .fact-value{font-weight:900;overflow-wrap:anywhere;font-size:13px}
     .detail-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
     .related-box{margin-top:16px;border-top:1px solid var(--community-line);padding-top:14px}
     .related-box h3{font-size:15px;margin-bottom:8px}
@@ -240,7 +253,6 @@
     @media (max-width:1180px){
       .board-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
       .hero-grid{grid-template-columns:1fr}
-      .vitality-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
 
     @media (max-width:860px){
@@ -249,11 +261,13 @@
       .hero-search{grid-template-columns:1fr 1fr}
       .hero-search .search-control{grid-column:1/-1}
       .hero-actions{display:grid;grid-template-columns:1fr 1fr}
-      .vitality-strip{display:flex;overflow-x:auto;scrollbar-width:thin;gap:8px}
-      .vitality-item{min-width:148px;padding:8px 10px}
       .filter-bar{top:0;border-radius:0;margin-left:-12px;margin-right:-12px;border-left:none;border-right:none}
       .filter-grid{grid-template-columns:1fr}
-      .filter-controls{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding:2px}
+      .filter-controls{grid-template-columns:1fr;gap:8px}
+      .filter-row{align-items:flex-start}
+      .filter-controls .filter-row:last-child{display:grid;grid-template-columns:minmax(0,1fr) auto}
+      .select{min-width:0;width:100%}
+      .utility-rail,.sort-segment{overflow-x:auto}
       .content-head{align-items:flex-start;flex-direction:column}
       .active-filters{justify-content:flex-start}
       .board-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
@@ -279,16 +293,17 @@
       .hero-search{margin-top:10px;gap:8px}
       .search-control input{height:46px}
       .hero-search .btn{min-height:42px;padding:0 10px}
-      .quick-rail{padding-top:8px}
-      .vitality-strip{display:none}
-      .vitality-item{padding:8px}
-      .vitality-value{font-size:13px}
       .board-grid{grid-template-columns:1fr}
       .card{border-radius:16px}
       .card-media{aspect-ratio:16/10}
       .safety-list,.detail-facts{grid-template-columns:1fr}
       .detail-content{padding:20px 16px 18px}
       .detail-gallery{padding:10px}
+      .activity-bar{grid-template-columns:1fr 1fr}
+      .activity-card{padding:8px 10px}
+      .activity-value{font-size:12px}
+      .detail-main-image{aspect-ratio:1.08}
+      .detail-thumb-button{flex-basis:68px}
     }
   </style>
 </head>
@@ -356,45 +371,57 @@
         <div class="hero-copy">
           <div class="hero-kicker">Japanese life infrastructure in Germany</div>
           <h1 id="communityTitle" class="hero-title">ドイツ生活の探す・譲る・つながるを最短で。</h1>
-          <p class="hero-desc">家具、部屋、無料譲渡、イベント、質問、アルバイトまで。日本語で安心して見つけられる、実用第一のコミュニティマーケットです。</p>
+          <p class="hero-desc">家具、部屋、無料譲渡、イベント、質問、アルバイトまで。日本語で迷わず見つけられる、実用第一のコミュニティマーケットです。</p>
           <div class="hero-search" role="search">
-            <label class="search-control" for="communitySearch">
+            <div class="search-control">
               <span class="search-icon" aria-hidden="true">⌕</span>
-              <input id="communitySearch" type="search" autocomplete="off" placeholder="家具、Berlin、部屋、無料、ビザ相談などで検索" />
-            </label>
+              <input id="communitySearch" type="search" autocomplete="off" placeholder="家具、Berlin、無料、部屋" aria-label="投稿を検索" />
+              <button class="search-clear" id="clearSearch" type="button" aria-label="検索をクリア">×</button>
+            </div>
             <a class="btn btn-primary" href="./post/">投稿する</a>
-            <a class="btn btn-secondary" href="#communityBoard" id="latestLink">最新を見る</a>
           </div>
-          <div class="quick-rail" aria-label="カテゴリショートカット" id="heroChips"></div>
-        </div>
-
-        <div class="vitality-strip" aria-label="コミュニティ状況">
-          <div class="vitality-item"><div class="vitality-label">本日</div><div class="vitality-value" id="todayCount">確認中</div></div>
-          <div class="vitality-item"><div class="vitality-label">人気</div><div class="vitality-value" id="popularCategory">家具・部屋</div></div>
-          <div class="vitality-item"><div class="vitality-label">注目地域</div><div class="vitality-value" id="popularArea">Berlin / NRW</div></div>
-          <div class="vitality-item"><div class="vitality-label">安心</div><div class="vitality-value">日本語OK優先</div></div>
+          <p class="hero-helper">30秒で投稿・写真だけでもOK・日本語で簡単</p>
         </div>
       </div>
     </section>
 
+    <section class="activity-bar" aria-label="コミュニティの動き">
+      <div class="activity-card"><div class="activity-label">本日</div><div class="activity-value" id="todayCount">確認中</div></div>
+      <div class="activity-card"><div class="activity-label">人気カテゴリ</div><div class="activity-value" id="popularCategory">集計中</div></div>
+      <div class="activity-card"><div class="activity-label">注目地域</div><div class="activity-value" id="popularArea">集計中</div></div>
+      <div class="activity-card"><div class="activity-label">保存済み</div><div class="activity-value" id="savedCount">0件</div></div>
+    </section>
+
     <section class="filter-bar" aria-label="検索と絞り込み">
       <div class="filter-grid">
-        <div class="filter-rail" id="filterRail" aria-label="カテゴリフィルター"></div>
+        <div class="filter-row">
+          <span class="filter-label">カテゴリ</span>
+          <div class="filter-rail" id="filterRail" aria-label="カテゴリフィルター"></div>
+        </div>
         <div class="filter-controls">
-          <select class="select" id="areaFilter" aria-label="地域で絞り込み">
-            <option value="">地域</option>
-          </select>
-          <select class="select" id="sortSelect" aria-label="並び替え">
-            <option value="recommended">おすすめ</option>
-            <option value="newest">新着</option>
-            <option value="urgent">急募</option>
-            <option value="free">無料</option>
-            <option value="popular">人気</option>
-          </select>
-          <label class="toggle-chip"><input type="checkbox" id="freeOnly" /><span>無料</span></label>
-          <label class="toggle-chip"><input type="checkbox" id="urgentOnly" /><span>急募</span></label>
-          <label class="toggle-chip"><input type="checkbox" id="photoOnly" /><span>写真あり</span></label>
-          <button class="chip-button" type="button" id="clearFilters">リセット</button>
+          <div class="filter-row">
+            <span class="filter-label">条件</span>
+            <div class="utility-rail" aria-label="便利フィルター">
+              <label class="toggle-chip"><input type="checkbox" id="freeOnly" /><span>無料</span></label>
+              <label class="toggle-chip"><input type="checkbox" id="urgentOnly" /><span>急募</span></label>
+              <label class="toggle-chip"><input type="checkbox" id="photoOnly" /><span>写真あり</span></label>
+              <label class="toggle-chip"><input type="checkbox" id="savedOnly" /><span>保存済み</span></label>
+            </div>
+          </div>
+          <div class="filter-row">
+            <span class="filter-label">並び替え</span>
+            <div class="sort-segment" id="sortSegment" role="group" aria-label="並び替え">
+              <button class="sort-button active" type="button" data-sort="recommended">おすすめ</button>
+              <button class="sort-button" type="button" data-sort="newest">新着</button>
+              <button class="sort-button" type="button" data-sort="popular">人気</button>
+            </div>
+          </div>
+          <div class="filter-row">
+            <select class="select" id="areaFilter" aria-label="地域で絞り込み">
+              <option value="">地域</option>
+            </select>
+            <button class="chip-button" type="button" id="clearFilters">リセット</button>
+          </div>
         </div>
       </div>
     </section>
@@ -404,6 +431,7 @@
         <div>
           <h2 id="boardTitle" class="content-title">コミュニティ投稿</h2>
           <p class="result-text" id="resultText">投稿を読み込んでいます。</p>
+          <div class="search-suggestions" id="searchSuggestions" aria-label="検索候補"></div>
         </div>
         <div class="active-filters" id="activeFilters" aria-label="適用中の条件"></div>
       </div>
@@ -459,8 +487,9 @@
   </div>
 
   <div class="mobile-action-bar" aria-label="主要アクション">
-    <a class="btn btn-primary" href="./post/">投稿する</a>
     <a class="btn btn-secondary" href="#communityBoard">探す</a>
+    <a class="btn btn-primary" href="./post/">投稿</a>
+    <button class="btn btn-secondary" type="button" id="mobileSavedButton">保存</button>
   </div>
 
   <footer class="page-footer">
@@ -486,6 +515,7 @@
   <script>
     const GAS_URL = "https://script.google.com/macros/s/AKfycbwvGmCKVjbWak1xmqU3li33sS_eSx-g5eZU9NUPUYA_9YD7E2NmwUHe9a0SrG6YFBZt/exec";
     const CATEGORIES = ["すべて", "家具", "部屋", "売ります", "譲ります", "イベント", "質問", "アルバイト", "日本語OK"];
+    const STORAGE_KEY = "ngg-community-saved-posts";
     const CATEGORY_ICONS = {
       "家具": "椅",
       "部屋": "室",
@@ -508,27 +538,32 @@
       freeOnly: false,
       urgentOnly: false,
       photoOnly: false,
+      savedOnly: false,
+      saved: new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]")),
       loading: true
     };
 
     const els = {
       search: document.getElementById("communitySearch"),
-      heroChips: document.getElementById("heroChips"),
+      clearSearch: document.getElementById("clearSearch"),
       filterRail: document.getElementById("filterRail"),
       areaFilter: document.getElementById("areaFilter"),
-      sortSelect: document.getElementById("sortSelect"),
+      sortSegment: document.getElementById("sortSegment"),
       freeOnly: document.getElementById("freeOnly"),
       urgentOnly: document.getElementById("urgentOnly"),
       photoOnly: document.getElementById("photoOnly"),
+      savedOnly: document.getElementById("savedOnly"),
       clearFilters: document.getElementById("clearFilters"),
       cards: document.getElementById("cards"),
       resultText: document.getElementById("resultText"),
       activeFilters: document.getElementById("activeFilters"),
+      searchSuggestions: document.getElementById("searchSuggestions"),
       emptyState: document.getElementById("emptyState"),
       emptyClear: document.getElementById("emptyClear"),
       todayCount: document.getElementById("todayCount"),
       popularCategory: document.getElementById("popularCategory"),
       popularArea: document.getElementById("popularArea"),
+      savedCount: document.getElementById("savedCount"),
       modal: document.getElementById("detailModal"),
       detailContent: document.getElementById("detailContent")
     };
@@ -557,7 +592,7 @@
       if (!value) return [];
       if (Array.isArray(value)) return value.flatMap(splitMediaValue);
       if (typeof value === "object") return Object.values(value).flatMap(splitMediaValue);
-      return String(value).split(/[\n,]/).map((item) => item.trim()).filter(Boolean);
+      return String(value).split(/[\n,;]/).map((item) => item.trim()).filter(Boolean);
     }
 
     function normalizeImageSrc(src) {
@@ -661,11 +696,32 @@
       };
     }
 
+    function isSaved(postId) {
+      return state.saved.has(String(postId));
+    }
+
+    function persistSaved() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify([...state.saved]));
+      if (els.savedCount) els.savedCount.textContent = `${state.saved.size}件`;
+    }
+
+    function toggleSaved(postId) {
+      const id = String(postId);
+      if (state.saved.has(id)) state.saved.delete(id);
+      else state.saved.add(id);
+      persistSaved();
+      renderCards();
+      renderActiveFilters();
+      if (els.modal.classList.contains("open")) {
+        const post = postByHash();
+        if (post) openDetail(post);
+      }
+    }
+
     function renderRails() {
       const chipHtml = CATEGORIES.map((category) => (
         `<button class="chip-button ${state.category === category ? "active" : ""}" type="button" data-category="${escapeHtml(category)}">${escapeHtml(category)}</button>`
       )).join("");
-      els.heroChips.innerHTML = chipHtml;
       els.filterRail.innerHTML = chipHtml;
 
       document.querySelectorAll("[data-category]").forEach((button) => {
@@ -673,6 +729,12 @@
           state.category = button.dataset.category || "すべて";
           applyFilters();
         });
+      });
+    }
+
+    function renderSortButtons() {
+      els.sortSegment.querySelectorAll("[data-sort]").forEach((button) => {
+        button.classList.toggle("active", button.dataset.sort === state.sort);
       });
     }
 
@@ -711,30 +773,29 @@
     function applyFilters() {
       state.query = els.search.value.trim();
       state.area = els.areaFilter.value;
-      state.sort = els.sortSelect.value;
       state.freeOnly = els.freeOnly.checked;
       state.urgentOnly = els.urgentOnly.checked;
       state.photoOnly = els.photoOnly.checked;
+      state.savedOnly = els.savedOnly.checked;
 
       const query = normalize(state.query);
       const list = state.posts.filter((post) => {
-        const searchable = normalize([post._title, post._body, post._category, post._categoryRaw, post._location, post._price, post.nickname].join(" "));
+        const searchable = normalize([post._title, post._body, post._category, post._categoryRaw, post._location, post._price, post.nickname, post.tags, post.city, post.region].join(" "));
         const categoryOk = state.category === "すべて" || post._category === state.category || (state.category === "日本語OK" && post._japaneseOk);
         const areaOk = !state.area || [post.city, post.region, post.area, post._location].filter(Boolean).some((area) => String(area) === state.area);
         const queryOk = !query || searchable.includes(query);
-        return categoryOk && areaOk && queryOk && (!state.freeOnly || post._free) && (!state.urgentOnly || post._urgent) && (!state.photoOnly || post._images.length);
+        return categoryOk && areaOk && queryOk && (!state.freeOnly || post._free) && (!state.urgentOnly || post._urgent) && (!state.photoOnly || post._images.length) && (!state.savedOnly || isSaved(post._id));
       });
 
       list.sort((a, b) => {
         if (state.sort === "newest") return dateValue(b._date) - dateValue(a._date);
-        if (state.sort === "urgent") return Number(b._urgent) - Number(a._urgent) || dateValue(b._date) - dateValue(a._date);
-        if (state.sort === "free") return Number(b._free) - Number(a._free) || dateValue(b._date) - dateValue(a._date);
         if (state.sort === "popular") return scorePost(b) - scorePost(a);
         return scorePost(b) - scorePost(a);
       });
 
       state.filtered = list;
       renderRails();
+      renderSortButtons();
       renderCards();
       renderSummary();
       renderActiveFilters();
@@ -754,34 +815,46 @@
         const category = post._category || "その他";
         const priceText = post._free ? "無料" : (post._price || "価格相談");
         const contactDate = formatDate(post._date);
+        const saved = isSaved(post._id);
         return `
-          <a class="card" href="#post-${encodeURIComponent(post._id)}" data-post-id="${escapeHtml(post._id)}" aria-label="${escapeHtml(post._title)}の詳細を開く">
-            <div class="card-media">
-              <div class="placeholder-art" data-icon="${escapeHtml(CATEGORY_ICONS[category] || CATEGORY_ICONS["その他"])}"></div>
-              ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(post._title)}の写真" loading="lazy" decoding="async" onerror="this.remove()">` : ""}
-              ${post._images.length > 1 ? `<span class="image-count">写真 ${post._images.length}</span>` : ""}
-            </div>
-            <div class="card-body">
-              <div class="card-top">
-                <span class="category-badge">${escapeHtml(category)}</span>
-                <span class="price-badge ${post._free ? "free" : ""}">${escapeHtml(priceText)}</span>
+          <article class="card" data-post-id="${escapeHtml(post._id)}">
+            <button class="save-button ${saved ? "saved" : ""}" type="button" data-save-id="${escapeHtml(post._id)}" aria-label="${saved ? "保存を解除" : "保存する"}">${saved ? "★" : "☆"}</button>
+            <a class="card-link" href="#post-${encodeURIComponent(post._id)}" aria-label="${escapeHtml(post._title)}の詳細を開く">
+              <div class="card-media">
+                <div class="placeholder-art" data-icon="${escapeHtml(CATEGORY_ICONS[category] || CATEGORY_ICONS["その他"])}"></div>
+                ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(post._title)}の写真" loading="lazy" decoding="async" onerror="this.remove()">` : ""}
+                ${post._images.length > 1 ? `<span class="image-count">写真 ${post._images.length}</span>` : ""}
               </div>
-              <h3 class="card-title">${escapeHtml(post._title)}</h3>
-              <div class="card-meta">
-                <span>${escapeHtml(post._location)}</span>
-                <span>${escapeHtml(contactDate)}</span>
+              <div class="card-body">
+                <div class="card-top">
+                  <span class="category-badge">${escapeHtml(category)}</span>
+                  <span class="price-badge ${post._free ? "free" : ""}">${escapeHtml(priceText)}</span>
+                </div>
+                <h3 class="card-title">${escapeHtml(post._title)}</h3>
+                <div class="card-meta">
+                  <span>${escapeHtml(post._location)}</span>
+                  <span>${escapeHtml(contactDate)}</span>
+                </div>
+                <p class="card-excerpt">${escapeHtml(post._body || "詳細は投稿ページで確認してください。")}</p>
+                <div class="trust-row">
+                  ${post._urgent ? `<span class="trust-badge urgent">急募</span>` : ""}
+                  ${post._japaneseOk ? `<span class="trust-badge japanese">日本語OK</span>` : ""}
+                  ${post._images.length ? `<span class="trust-badge">写真あり</span>` : ""}
+                  <span class="trust-badge">${escapeHtml(post._categoryRaw || "生活")}</span>
+                </div>
               </div>
-              <p class="card-excerpt">${escapeHtml(post._body || "詳細は投稿ページで確認してください。")}</p>
-              <div class="trust-row">
-                ${post._urgent ? `<span class="trust-badge urgent">急募</span>` : ""}
-                ${post._japaneseOk ? `<span class="trust-badge japanese">日本語OK</span>` : ""}
-                ${post._images.length ? `<span class="trust-badge">写真あり</span>` : ""}
-                <span class="trust-badge">${escapeHtml(post._categoryRaw || "生活")}</span>
-              </div>
-            </div>
-          </a>
+            </a>
+          </article>
         `;
       }).join("");
+
+      els.cards.querySelectorAll("[data-save-id]").forEach((button) => {
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          toggleSaved(button.dataset.saveId);
+        });
+      });
     }
 
     function renderSummary() {
@@ -797,6 +870,21 @@
       const byArea = countBy(state.posts, "_location");
       els.popularCategory.textContent = topKey(byCategory) || "家具・部屋";
       els.popularArea.textContent = topKey(byArea) || "Berlin / NRW";
+      persistSaved();
+      renderSearchSuggestions();
+    }
+
+    function renderSearchSuggestions() {
+      const category = topKey(countBy(state.posts, "_category")) || "家具";
+      const area = topKey(countBy(state.posts, "_location")) || "Berlin";
+      const suggestions = [...new Set([category, area.split(" / ")[0], "無料", "部屋", "写真あり"].filter(Boolean))].slice(0, 5);
+      els.searchSuggestions.innerHTML = suggestions.map((item) => `<button class="suggestion-button" type="button" data-suggest="${escapeHtml(item)}">${escapeHtml(item)}</button>`).join("");
+      els.searchSuggestions.querySelectorAll("[data-suggest]").forEach((button) => {
+        button.addEventListener("click", () => {
+          els.search.value = button.dataset.suggest || "";
+          applyFilters();
+        });
+      });
     }
 
     function renderActiveFilters() {
@@ -807,6 +895,7 @@
       if (state.freeOnly) filters.push("無料");
       if (state.urgentOnly) filters.push("急募");
       if (state.photoOnly) filters.push("写真あり");
+      if (state.savedOnly) filters.push("保存済み");
       els.activeFilters.innerHTML = filters.map((filter) => `<span class="active-pill">${escapeHtml(filter)}</span>`).join("");
     }
 
@@ -825,10 +914,11 @@
     function clearFilters() {
       els.search.value = "";
       els.areaFilter.value = "";
-      els.sortSelect.value = "recommended";
+      state.sort = "recommended";
       els.freeOnly.checked = false;
       els.urgentOnly.checked = false;
       els.photoOnly.checked = false;
+      els.savedOnly.checked = false;
       state.category = "すべて";
       applyFilters();
     }
@@ -851,19 +941,25 @@
         .slice(0, 3);
       const images = post._images.length ? post._images : [];
       const mainImage = images[0];
+      const saved = isSaved(post._id);
       const contactHref = post._id ? `./contact/?post_id=${encodeURIComponent(post._id)}` : "./contact/";
       const reportHref = post._id ? `./report/?post_id=${encodeURIComponent(post._id)}` : "./report/";
 
       els.detailContent.innerHTML = `
         <div class="detail-layout">
           <div class="detail-gallery">
-            <div class="detail-main-image">
-              <div class="placeholder-art" data-icon="${escapeHtml(CATEGORY_ICONS[post._category] || CATEGORY_ICONS["その他"])}"></div>
-              ${mainImage ? `<img src="${escapeHtml(mainImage)}" alt="${escapeHtml(post._title)}の大きな写真" loading="eager" decoding="async" onerror="this.remove()">` : ""}
+            <div class="detail-main-image" id="detailMainImage">
+              ${mainImage
+                ? `<img id="detailMainPhoto" src="${escapeHtml(mainImage)}" alt="${escapeHtml(post._title)}の写真" loading="eager" decoding="async" onerror="this.remove(); document.getElementById('detailMainPlaceholder')?.removeAttribute('hidden');">`
+                : ""}
+              <div id="detailMainPlaceholder" class="detail-placeholder" ${mainImage ? "hidden" : ""}>${escapeHtml(CATEGORY_ICONS[post._category] || CATEGORY_ICONS["その他"])}</div>
             </div>
-            <div class="detail-thumbs">
-              ${images.slice(1, 4).map((src, index) => `<img src="${escapeHtml(src)}" alt="${escapeHtml(post._title)}の写真 ${index + 2}" loading="lazy" decoding="async" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'detail-thumb-placeholder'}))">`).join("")}
-              ${!images.length ? `<div class="detail-thumb-placeholder"></div><div class="detail-thumb-placeholder"></div><div class="detail-thumb-placeholder"></div>` : ""}
+            <div class="detail-thumbs" id="detailThumbs" ${images.length <= 1 ? "hidden" : ""}>
+              ${images.map((src, index) => `
+                <button class="detail-thumb-button ${index === 0 ? "active" : ""}" type="button" data-image-src="${escapeHtml(src)}" aria-label="写真${index + 1}を表示">
+                  <img src="${escapeHtml(src)}" alt="${escapeHtml(post._title)}の写真 ${index + 1}" loading="lazy" decoding="async" onerror="this.closest('button')?.remove()">
+                </button>
+              `).join("")}
             </div>
           </div>
           <div class="detail-content">
@@ -879,12 +975,12 @@
               <div class="fact"><div class="fact-label">地域</div><div class="fact-value">${escapeHtml(post._location)}</div></div>
               <div class="fact"><div class="fact-label">投稿日</div><div class="fact-value">${escapeHtml(formatDate(post._date))}</div></div>
               <div class="fact"><div class="fact-label">カテゴリ</div><div class="fact-value">${escapeHtml(post._categoryRaw || post._category)}</div></div>
-              <div class="fact"><div class="fact-label">投稿ID</div><div class="fact-value">${escapeHtml(post._id)}</div></div>
             </div>
             <p class="detail-body">${escapeHtml(post._body || "詳細本文は未設定です。")}</p>
             <div class="detail-actions">
               <a class="btn btn-primary" href="${escapeHtml(contactHref)}">投稿者に連絡</a>
               <button class="btn btn-secondary" type="button" id="copyShareUrl">URLをコピー</button>
+              <button class="save-button inline ${saved ? "saved" : ""}" type="button" id="detailSaveButton">${saved ? "★ 保存済み" : "☆ 保存"}</button>
               <a class="btn btn-soft" href="${escapeHtml(reportHref)}">通報</a>
             </div>
             <div class="related-box">
@@ -900,6 +996,19 @@
       els.modal.classList.add("open");
       document.body.style.overflow = "hidden";
       document.querySelector(".modal-card").focus();
+      els.detailContent.querySelectorAll(".detail-thumb-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const img = document.getElementById("detailMainPhoto");
+          const placeholder = document.getElementById("detailMainPlaceholder");
+          if (img) {
+            img.src = button.dataset.imageSrc || "";
+            img.hidden = false;
+          }
+          if (placeholder) placeholder.hidden = true;
+          els.detailContent.querySelectorAll(".detail-thumb-button").forEach((item) => item.classList.toggle("active", item === button));
+        });
+      });
+      document.getElementById("detailSaveButton")?.addEventListener("click", () => toggleSaved(post._id));
       document.getElementById("copyShareUrl")?.addEventListener("click", async () => {
         try {
           await navigator.clipboard.writeText(location.href);
@@ -947,13 +1056,29 @@
     }
 
     els.search.addEventListener("input", applyFilters);
+    els.clearSearch.addEventListener("click", () => {
+      els.search.value = "";
+      applyFilters();
+      els.search.focus();
+    });
     els.areaFilter.addEventListener("change", applyFilters);
-    els.sortSelect.addEventListener("change", applyFilters);
     els.freeOnly.addEventListener("change", applyFilters);
     els.urgentOnly.addEventListener("change", applyFilters);
     els.photoOnly.addEventListener("change", applyFilters);
+    els.savedOnly.addEventListener("change", applyFilters);
     els.clearFilters.addEventListener("click", clearFilters);
     els.emptyClear.addEventListener("click", clearFilters);
+    els.sortSegment.querySelectorAll("[data-sort]").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.sort = button.dataset.sort || "recommended";
+        applyFilters();
+      });
+    });
+    document.getElementById("mobileSavedButton")?.addEventListener("click", () => {
+      els.savedOnly.checked = !els.savedOnly.checked;
+      document.getElementById("communityBoard").scrollIntoView({ behavior: "smooth", block: "start" });
+      applyFilters();
+    });
     document.querySelectorAll("[data-query]").forEach((button) => {
       button.addEventListener("click", () => {
         els.search.value = button.dataset.query || "";

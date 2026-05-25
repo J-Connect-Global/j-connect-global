@@ -1,128 +1,784 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ライフスタイル | Nihon Gateway</title>
-  <meta name="description" content="ドイツでの暮らしに関する読み物を掲載します。">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://yoshi1234567890.github.io/nihon-gateway/ja/lifestyle/">
-  <link rel="icon" type="image/jpeg" href="../../assets/images/brand/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>お出かけ・イベント | Nihon Gateway Germany</title>
+  <meta name="description" content="ドイツで家族と楽しめるお出かけ、季節のイベント、地域の交流イベント、週末の過ごし方を探すためのNihon Gateway Germanyイベントページです。" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://yoshi1234567890.github.io/nihon-gateway-germany/ja/events/" />
+  <link rel="icon" type="image/jpeg" href="../../assets/images/brand/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/site.css" />
+  <style>
+    :root{
+      --events-teal:#14b8a6;
+      --events-blue:#2f80ed;
+      --events-yellow:#f5b83b;
+      --events-pink:#d84b6a;
+      --events-ink:#16202a;
+      --events-muted:#5f6b76;
+      --events-border:#d9e0e8;
+      --events-paper:#fffdfb;
+      --events-soft:#f8fbfb;
+    }
+
+    .events-hero{
+      position:relative;
+      overflow:hidden;
+      width:100%;
+      max-width:100%;
+      border:1px solid rgba(210,218,228,.95);
+      border-radius:28px;
+      box-shadow:
+        0 14px 34px rgba(19,35,58,.12),
+        0 0 0 1px rgba(255,255,255,.5) inset;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.55) 0%, rgba(255,255,255,.42) 42%, rgba(255,255,255,.22) 68%, rgba(255,255,255,.1) 100%),
+        url("../../assets/images/hero/top-hero.jpg") center center / cover no-repeat,
+        #fff;
+    }
+
+    .events-hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.08));
+    }
+
+    .events-hero-grid{
+      position:relative;
+      z-index:1;
+      width:100%;
+      min-width:0;
+      max-width:100%;
+      display:grid;
+      grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);
+      gap:24px;
+      align-items:stretch;
+      min-height:330px;
+      padding:30px;
+    }
+
+    .events-hero-main{
+      width:100%;
+      min-width:0;
+      max-width:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:18px;
+    }
+
+    .events-kicker{
+      display:inline-flex;
+      width:max-content;
+      max-width:100%;
+      align-items:center;
+      gap:9px;
+      padding:7px 12px;
+      border:1px solid rgba(216,75,106,.25);
+      border-radius:999px;
+      background:rgba(255,255,255,.74);
+      color:var(--brand);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .events-dot{
+      width:9px;
+      height:9px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--events-pink),var(--events-teal));
+    }
+
+    .events-hero-title{
+      max-width:12ch;
+      font-size:clamp(2.25rem, 5vw, 3.75rem);
+      line-height:1.08;
+      font-weight:800;
+      letter-spacing:0;
+    }
+
+    .events-hero-title span{
+      color:var(--brand);
+      white-space:nowrap;
+    }
+
+    .events-hero-desc{
+      max-width:64ch;
+      color:#485664;
+      font-size:15px;
+      line-height:1.9;
+      overflow-wrap:anywhere;
+    }
+
+    .events-hero-panel{
+      width:100%;
+      min-width:0;
+      max-width:100%;
+      align-self:stretch;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:18px;
+      padding:20px;
+      border:1.5px solid rgba(205,215,226,.95);
+      border-radius:20px;
+      background:rgba(255,255,255,.62);
+      backdrop-filter:blur(6px);
+    }
+
+    .events-hero-panel h2{
+      font-size:17px;
+      line-height:1.45;
+      overflow-wrap:anywhere;
+    }
+
+    .events-hero-panel p{
+      margin-top:8px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.75;
+      overflow-wrap:anywhere;
+    }
+
+    .events-status-list{
+      display:grid;
+      gap:10px;
+    }
+
+    .events-status-item{
+      min-width:0;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:12px;
+      border:1px solid rgba(156,156,156,.42);
+      border-radius:14px;
+      background:rgba(255,255,255,.6);
+    }
+
+    .events-status-mark{
+      width:28px;
+      height:28px;
+      flex:0 0 28px;
+      display:grid;
+      place-items:center;
+      border-radius:10px;
+      background:rgba(20,184,166,.12);
+      color:#0f766e;
+      font-weight:800;
+    }
+
+    .events-status-item > div:last-child{
+      min-width:0;
+    }
+
+    .events-status-item strong{
+      display:block;
+      font-size:14px;
+      overflow-wrap:anywhere;
+    }
+
+    .events-status-item span{
+      display:block;
+      margin-top:2px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.55;
+      overflow-wrap:anywhere;
+    }
+
+    .events-section{
+      margin-top:24px;
+    }
+
+    .events-section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:14px;
+    }
+
+    .events-section-kicker{
+      color:var(--brand);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .events-section-title{
+      margin-top:4px;
+      font-size:24px;
+      line-height:1.25;
+      font-weight:800;
+    }
+
+    .events-section-desc{
+      max-width:58ch;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.75;
+    }
+
+    .events-category-grid{
+      min-width:0;
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+    }
+
+    .event-card{
+      position:relative;
+      min-width:0;
+      overflow:hidden;
+      min-height:252px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:18px;
+      padding:18px;
+      border:1px solid var(--events-border);
+      border-radius:22px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.72)),
+        var(--events-paper);
+      box-shadow:var(--shadow);
+    }
+
+    .event-card::before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto;
+      height:4px;
+      background:var(--card-accent,var(--events-teal));
+    }
+
+    .event-card::after{
+      content:"";
+      position:absolute;
+      right:-36px;
+      bottom:-42px;
+      width:128px;
+      height:128px;
+      border-radius:999px;
+      background:rgba(var(--card-rgb,20,184,166),.12);
+    }
+
+    .event-card > *{
+      position:relative;
+      z-index:1;
+    }
+
+    .event-card-label{
+      display:inline-flex;
+      width:max-content;
+      max-width:100%;
+      padding:6px 10px;
+      border:1px solid rgba(var(--card-rgb,20,184,166),.22);
+      border-radius:999px;
+      background:rgba(var(--card-rgb,20,184,166),.1);
+      color:var(--card-dark,#115e59);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .event-card h3{
+      margin-top:14px;
+      color:var(--card-dark,#115e59);
+      font-size:22px;
+      line-height:1.28;
+      font-weight:800;
+    }
+
+    .event-card p{
+      margin-top:10px;
+      color:var(--events-muted);
+      font-size:14px;
+      line-height:1.75;
+      overflow-wrap:anywhere;
+    }
+
+    .event-card ul{
+      display:grid;
+      gap:7px;
+      padding-left:18px;
+      color:#485664;
+      font-size:13px;
+      line-height:1.6;
+      overflow-wrap:anywhere;
+    }
+
+    .event-card.season{--card-accent:#14b8a6;--card-rgb:20,184,166;--card-dark:#115e59;}
+    .event-card.family{--card-accent:#2f80ed;--card-rgb:47,128,237;--card-dark:#1e40af;}
+    .event-card.community{--card-accent:#d84b6a;--card-rgb:216,75,106;--card-dark:#9f2846;}
+    .event-card.weekend{--card-accent:#f5b83b;--card-rgb:245,184,59;--card-dark:#7a4507;}
+
+    .events-feature-grid{
+      min-width:0;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(280px,.78fr);
+      gap:14px;
+    }
+
+    .events-notice,
+    .events-cta{
+      min-width:0;
+      border:1px solid var(--events-border);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      background:rgba(255,255,255,.78);
+      backdrop-filter:blur(4px);
+    }
+
+    .events-notice{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 220px;
+      gap:18px;
+      align-items:center;
+      padding:24px;
+    }
+
+    .events-notice h2,
+    .events-cta h2{
+      font-size:24px;
+      line-height:1.25;
+      font-weight:800;
+    }
+
+    .events-notice p,
+    .events-cta p{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.8;
+    }
+
+    .events-timeline{
+      display:grid;
+      gap:10px;
+    }
+
+    .events-timeline-item{
+      padding:12px 14px;
+      border:1px solid #e2e8f0;
+      border-radius:16px;
+      background:#fff;
+    }
+
+    .events-timeline-item strong{
+      display:block;
+      color:var(--events-ink);
+      font-size:13px;
+    }
+
+    .events-timeline-item span{
+      display:block;
+      margin-top:2px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.55;
+    }
+
+    .events-cta{
+      padding:24px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.86), rgba(255,244,247,.82)),
+        #fff;
+    }
+
+    .events-cta-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin-top:16px;
+      min-height:44px;
+      padding:0 18px;
+      border:1px solid rgba(216,75,106,.22);
+      border-radius:999px;
+      background:var(--brand);
+      color:#fff;
+      text-decoration:none;
+      font-size:14px;
+      font-weight:800;
+      transition:transform .18s ease, background .18s ease;
+    }
+
+    .events-cta-link:hover{
+      transform:translateY(-2px);
+      background:var(--brand-dark);
+    }
+
+    .events-mini-grid{
+      min-width:0;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+    }
+
+    .events-mini{
+      min-width:0;
+      padding:18px;
+      border:1px solid var(--events-border);
+      border-radius:20px;
+      background:rgba(255,255,255,.76);
+      box-shadow:0 10px 26px rgba(19,35,58,.08);
+    }
+
+    .events-mini strong{
+      display:block;
+      color:#24313d;
+      font-size:15px;
+    }
+
+    .events-mini span{
+      display:block;
+      margin-top:8px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.65;
+      overflow-wrap:anywhere;
+    }
+
+    @media (max-width:1050px){
+      .events-hero-grid,
+      .events-feature-grid{
+        grid-template-columns:1fr;
+      }
+
+      .events-category-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+
+    @media (max-width:780px){
+      .events-hero-grid{
+        min-height:auto;
+        padding:22px;
+      }
+
+      .events-hero-title{
+        max-width:100%;
+        font-size:clamp(2rem, 10vw, 3rem);
+      }
+
+      .events-section-head{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .events-notice{
+        grid-template-columns:1fr;
+      }
+
+      .events-mini-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:560px){
+      .events-hero{
+        background-position:64% center;
+      }
+
+      .events-kicker{
+        width:auto;
+      }
+
+      .events-category-grid{
+        grid-template-columns:1fr;
+      }
+
+      .event-card{
+        min-height:auto;
+      }
+    }
+  </style>
   <script>
-(function () {
-  var segments = location.pathname.split('/').filter(Boolean);
-  if (segments.length && /\.html$/i.test(segments[segments.length - 1])) segments.pop();
+    (function () {
+      var segments = location.pathname.split('/').filter(Boolean);
+      if (segments.length && /\.html$/i.test(segments[segments.length - 1])) segments.pop();
 
-  var localeIndex = -1;
-  for (var i = 0; i < segments.length; i++) {
-    if (segments[i] === 'ja' || segments[i] === 'de') { localeIndex = i; break; }
-  }
+      var localeIndex = -1;
+      for (var i = 0; i < segments.length; i++) {
+        if (segments[i] === 'ja' || segments[i] === 'de') { localeIndex = i; break; }
+      }
 
-  var depth = localeIndex >= 0 ? (segments.length - localeIndex) : Math.max(segments.length - 1, 0);
-  var prefix = depth === 0 ? './' : '../'.repeat(depth);
+      var depth = localeIndex >= 0 ? (segments.length - localeIndex) : Math.max(segments.length - 1, 0);
+      var prefix = depth === 0 ? './' : '../'.repeat(depth);
 
-  var css = document.createElement('link');
-  css.rel = 'stylesheet';
-  css.href = prefix + 'assets/css/cookie-consent.css';
-  document.head.appendChild(css);
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = prefix + 'assets/css/cookie-consent.css';
+      document.head.appendChild(css);
 
-  var js = document.createElement('script');
-  js.src = prefix + 'assets/js/cookie-consent.js';
-  js.defer = true;
-  document.head.appendChild(js);
-})();
-</script>
-<link rel="stylesheet" href="../../assets/css/site.css">
-  </head>
+      var js = document.createElement('script');
+      js.src = prefix + 'assets/js/cookie-consent.js';
+      js.defer = true;
+      document.head.appendChild(js);
+    })();
+  </script>
+</head>
 
 <body>
   <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="../" aria-label="Nihon Gateway Germany ホーム">
-      <img class="brand-logo" src="../../assets/images/brand/logo_header.png" alt="Nihon Gateway Germany ヘッダーロゴ">
-      <span class="brand-copy">
-        <span class="brand-title">NIHON GATEWAY GERMANY</span>
-        <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
-      </span>
-    </a>
+    <div class="container header-inner">
+      <a class="brand" href="../" aria-label="Nihon Gateway Germany ホーム">
+        <img class="brand-logo" src="../../assets/images/brand/logo_header.png" alt="Nihon Gateway Germany ヘッダーロゴ">
+        <span class="brand-copy">
+          <span class="brand-title">NIHON GATEWAY GERMANY</span>
+          <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
+        </span>
+      </a>
 
-    <div class="header-actions">
-      <nav class="header-nav" aria-label="メインナビゲーション">
-        <a href="../" class="active">ホーム</a>
-        <a href="../about/">このサイトについて</a>
-      </nav>
+      <div class="header-actions">
+        <nav class="header-nav" aria-label="メインナビゲーション">
+          <a href="../" class="active">ホーム</a>
+          <a href="../about/">このサイトについて</a>
+        </nav>
 
-      <div class="header-category header-category-menu" aria-label="カテゴリ選択">
-        <button type="button" class="header-category-trigger">カテゴリ</button>
-        <div class="category-dropdown">
-          <a href="../guides/">手続き・制度</a>
-          <a href="../living/">住まい・生活</a>
-          <a href="../jobs/" data-base="jobs">仕事・求人</a>
-          <a href="../medical/" data-base="medical">医療・緊急</a>
-          <a href="../eat/" data-base="eat">グルメ・飲食</a>
-          <a href="../shopping/" data-base="shopping">買い物・サービス</a>
-          <a href="../community/" data-base="community">交流・掲示板</a>
-          <a href="../events/" data-base="events">おでかけ・イベント</a>
-          <a href="../learn-german/">ドイツ語・学び</a>
-          <a href="../news/">ニュース・読みもの</a>
+        <div class="header-category header-category-menu" aria-label="カテゴリ選択">
+          <button type="button" class="header-category-trigger">カテゴリ</button>
+          <div class="category-dropdown">
+            <a href="../guides/">手続き・制度</a>
+            <a href="../living/">住まい・生活</a>
+            <a href="../jobs/" data-base="jobs">仕事・求人</a>
+            <a href="../medical/" data-base="medical">医療・緊急</a>
+            <a href="../eat/" data-base="eat">グルメ・飲食</a>
+            <a href="../shopping/" data-base="shopping">買い物・サービス</a>
+            <a href="../community/" data-base="community">交流・掲示板</a>
+            <a href="../events/" data-base="events">おでかけ・イベント</a>
+            <a href="../learn-german/">ドイツ語・学び</a>
+            <a href="../news/">ニュース・読みもの</a>
+          </div>
         </div>
-      </div>
 
-      <form class="header-search" action="../search/" method="get" role="search">
-        <label class="search-box" aria-label="サイト内検索">
-          <span>⌕</span>
-          <input type="search" name="q" placeholder="検索">
+        <form class="header-search" action="../search/" method="get" role="search">
+          <label class="search-box" aria-label="サイト内検索">
+            <span>⌕</span>
+            <input type="search" name="q" placeholder="検索">
+          </label>
+          <button class="search-btn" type="submit" aria-label="検索">⌕</button>
+        </form>
+
+        <label class="header-language" aria-label="言語切り替え">
+          <span>Language</span>
+          <select id="languageSelect">
+            <option value="../">日本語</option>
+            <option value="../../">English</option>
+            <option value="../../de/">Deutsch</option>
+            <option value="../../zh/">中文</option>
+            <option value="../../ko/">한국어</option>
+            <option value="../../es/">Espanol</option>
+          </select>
         </label>
-        <button class="search-btn" type="submit" aria-label="検索">⌕</button>
-      </form>
-
-      <label class="header-language" aria-label="言語切り替え">
-        <span>Language</span>
-        <select id="languageSelect">
-          <option value="../../">日本語</option>
-          <option value="../../">English</option>
-          <option value="../../de/">Deutsch</option>
-          <option value="../../zh/">中文</option>
-          <option value="../../ko/">한국어</option>
-          <option value="../../es/">Espanol</option>
-        </select>
-      </label>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-  <main class="container">
-    <div class="content-box">
-      <p>このページのコンテンツは準備中です。</p>
-      <ul class="nav-links">
-        <li><a href="../index.html">日本語トップへ戻る</a></li>
-      </ul>
+  <main class="main">
+    <div class="container">
+      <section class="events-hero">
+        <div class="events-hero-grid">
+          <div class="events-hero-main">
+            <div class="events-kicker"><span class="events-dot"></span> Events & Outings</div>
+            <h1 class="events-hero-title">お出かけ・<span>イベント</span></h1>
+            <p class="events-hero-desc">
+              ドイツで暮らす日本語ユーザーが、家族で行きやすいお出かけ先、季節のイベント、地域の交流情報、週末の小さなアイデアを見つけやすくするためのページです。
+              まずは静的な案内ページとして、今後追加されるイベント情報の入口を整えています。
+            </p>
+          </div>
+
+          <aside class="events-hero-panel" aria-label="ページの使い方">
+            <div>
+              <h2>暮らしの予定に、少し楽しみを足すために。</h2>
+              <p>
+                大きな観光情報だけでなく、子どもと行きやすい場所、日本語で参加しやすい交流、季節ごとのマーケットや地域行事も扱える形にしていきます。
+              </p>
+            </div>
+
+            <div class="events-status-list">
+              <div class="events-status-item">
+                <div class="events-status-mark">1</div>
+                <div><strong>家族で使いやすい情報</strong><span>子連れ、雨の日、短時間のお出かけなど生活目線で整理します。</span></div>
+              </div>
+              <div class="events-status-item">
+                <div class="events-status-mark">2</div>
+                <div><strong>地域情報を少しずつ追加</strong><span>デュッセルドルフを中心に、他都市の情報も増やせる構成です。</span></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="events-section" aria-labelledby="events-categories-title">
+        <div class="events-section-head">
+          <div>
+            <div class="events-section-kicker">Explore</div>
+            <h2 class="events-section-title" id="events-categories-title">探し方のカテゴリ</h2>
+          </div>
+          <p class="events-section-desc">
+            実際のイベント掲載が始まる前でも、どんな情報を集めていくページか分かるように、使い道ごとに入口を用意しています。
+          </p>
+        </div>
+
+        <div class="events-category-grid">
+          <article class="event-card season">
+            <div>
+              <span class="event-card-label">季節ごと</span>
+              <h3>季節のイベント</h3>
+              <p>春の花まつり、夏祭り、秋のマーケット、冬のクリスマスマルクトなど、季節を感じられる催しを紹介していく予定です。</p>
+            </div>
+            <ul>
+              <li>週末に行きやすいイベント</li>
+              <li>雨の日でも楽しめる屋内企画</li>
+              <li>日本文化・国際交流に関する催し</li>
+            </ul>
+          </article>
+
+          <article class="event-card family">
+            <div>
+              <span class="event-card-label">子連れ・家族</span>
+              <h3>親子で行けるお出かけ</h3>
+              <p>公園、博物館、動物園、屋内遊び場など、子どもと一緒に無理なく出かけられる場所をまとめていきます。</p>
+            </div>
+            <ul>
+              <li>ベビーカーで行きやすい場所</li>
+              <li>半日で楽しめる近場スポット</li>
+              <li>年齢別に選びやすい体験</li>
+            </ul>
+          </article>
+
+          <article class="event-card community">
+            <div>
+              <span class="event-card-label">つながり</span>
+              <h3>地域の交流イベント</h3>
+              <p>日本人コミュニティ、国際交流、親子会、学びの集まりなど、生活圏で人とつながるきっかけを扱います。</p>
+            </div>
+            <ul>
+              <li>初参加しやすい小さな集まり</li>
+              <li>日本語で相談しやすい交流</li>
+              <li>趣味や学びを通じた出会い</li>
+            </ul>
+          </article>
+
+          <article class="event-card weekend">
+            <div>
+              <span class="event-card-label">暮らしのヒント</span>
+              <h3>週末のアイデア</h3>
+              <p>予定を立てきれない週末に、近場でできる過ごし方や、買い物・食事と組み合わせやすい外出案を紹介します。</p>
+            </div>
+            <ul>
+              <li>午前だけ・午後だけの外出</li>
+              <li>買い物ついでに寄れる場所</li>
+              <li>友人や家族を案内しやすい定番</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="events-section" aria-labelledby="events-preparing-title">
+        <div class="events-feature-grid">
+          <div class="events-notice">
+            <div>
+              <div class="events-section-kicker">Coming Soon</div>
+              <h2 id="events-preparing-title">掲載予定・準備中</h2>
+              <p>
+                現在、イベント情報は順次追加していく準備中です。まずはカテゴリごとの入口を整え、今後は開催日、地域、対象年齢、参加方法などを分かりやすく確認できる形にしていきます。
+              </p>
+            </div>
+
+            <div class="events-timeline">
+              <div class="events-timeline-item">
+                <strong>第1段階</strong>
+                <span>季節イベントと週末向けの情報を追加</span>
+              </div>
+              <div class="events-timeline-item">
+                <strong>第2段階</strong>
+                <span>親子向け、地域交流、都市別の情報を拡充</span>
+              </div>
+              <div class="events-timeline-item">
+                <strong>第3段階</strong>
+                <span>掲載依頼やおすすめ情報を反映</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="events-cta">
+            <div class="events-section-kicker">Contribution</div>
+            <h2>おすすめイベントがあればお問い合わせください。</h2>
+            <p>
+              地域の催し、親子向けイベント、日本文化に関する企画、在独日本語コミュニティの集まりなど、掲載したい情報がありましたらお知らせください。
+            </p>
+            <a class="events-cta-link" href="../contact/">お問い合わせへ</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="events-section" aria-labelledby="events-use-title">
+        <div class="events-section-head">
+          <div>
+            <div class="events-section-kicker">How It Helps</div>
+            <h2 class="events-section-title" id="events-use-title">こんな場面で使えます</h2>
+          </div>
+        </div>
+
+        <div class="events-mini-grid">
+          <div class="events-mini">
+            <strong>週末の予定を決めたいとき</strong>
+            <span>家の近くで無理なく出かけられる候補を探し、買い物や食事と組み合わせて予定を立てやすくします。</span>
+          </div>
+          <div class="events-mini">
+            <strong>子どもと行ける場所を探すとき</strong>
+            <span>年齢、天気、移動距離を考えながら、親子で安心して楽しめる選択肢を増やしていきます。</span>
+          </div>
+          <div class="events-mini">
+            <strong>地域のつながりを作りたいとき</strong>
+            <span>初めての街でも参加しやすい集まりや、日本語で情報交換しやすい機会を見つけるきっかけになります。</span>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 
   <footer class="page-footer">
-      <div class="footer-inner">
-        <div class="footer-left">
-<img class="footer-logo" src="../../assets/images/brand/logo_footer.png" alt="Nihon Gateway Germany フッターロゴ">
-          <div class="footer-copy">
-            <div class="footer-title">NIHON GATEWAY GERMANY</div>
-            <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
-            <div class="footer-meta">© 2026 Nihon Gateway Germany</div>
-          </div>
-        </div>
-
-        <div class="footer-links">
-          <a href="../about/">このサイトについて</a>
-          <a href="../contact/">お問い合わせ</a>
-          <a href="../terms/">利用規約</a>
-          <a href="../privacy/">プライバシー</a>
-          <a href="../impressum/">運営者情報</a>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <img class="footer-logo" src="../../assets/images/brand/logo_footer.png" alt="Nihon Gateway Germany フッターロゴ">
+        <div class="footer-copy">
+          <div class="footer-title">NIHON GATEWAY GERMANY</div>
+          <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+          <div class="footer-meta">© 2026 Nihon Gateway Germany</div>
         </div>
       </div>
-    </footer>
 
+      <div class="footer-links">
+        <a href="../about/">このサイトについて</a>
+        <a href="../contact/">お問い合わせ</a>
+        <a href="../terms/">利用規約</a>
+        <a href="../privacy/">プライバシー</a>
+        <a href="../impressum/">運営者情報</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const languageSelect = document.getElementById('languageSelect');
+    if (languageSelect) {
+      languageSelect.addEventListener('change', (event) => {
+        const target = event.target.value;
+        if (target) window.location.href = target;
+      });
+    }
+  </script>
   <script src="../../assets/js/main.js"></script>
 </body>
-
 </html>

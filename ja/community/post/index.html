@@ -293,6 +293,11 @@
   align-items:start;
 }
 
+.detail-shell.no-image{
+  display:block;
+  max-width:860px;
+}
+
 .detail-gallery,
 .detail-panel,
 .related-panel,
@@ -339,6 +344,21 @@
   font-size:44px;
   font-weight:800;
   color:#3d4a56;
+}
+
+.detail-compact-marker{
+  width:64px;
+  height:64px;
+  border-radius:20px;
+  background:#f7fafc;
+  border:1px solid var(--line);
+  box-shadow:0 12px 24px rgba(25,39,52,.07);
+  display:grid;
+  place-items:center;
+  font-size:28px;
+  font-weight:800;
+  color:#3d4a56;
+  margin-bottom:14px;
 }
 
 .detail-thumbs{
@@ -744,7 +764,7 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbwvGmCKVjbWak1xmqU3li33
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const detailPostId = new URLSearchParams(location.search).get('id');
 const DETAIL_STORAGE_KEY = 'ngg-community-saved-posts';
-const POST_TYPES = ['すべて', '売ります', '買います', '譲ります', '探しています', '友達募集', 'イベント', '教えます', '質問', 'アルバイト'];
+const POST_TYPES = ['すべて', '売ります', '買います', '譲ります', '探しています', '友達募集', 'イベント', 'レッスン', '質問', 'アルバイト'];
 const SUBCATEGORIES = ['すべて', '家具', '家電', '部屋', 'ドイツ語', '日本語', '手続き', '生活', '交通', '食事', '子育て', 'その他'];
 const CATEGORY_ICONS = {
   '家具': '椅',
@@ -760,6 +780,7 @@ const CATEGORY_ICONS = {
   '売ります': '売',
   '譲ります': '譲',
   'イベント': '会',
+  'レッスン': '学',
   '質問': '問',
   'アルバイト': '働',
   'その他': '街'
@@ -913,6 +934,13 @@ function getPostId(post, index) {
   return String(field(post, ['post_id', 'postId', 'id', '_id']) || 'community-' + (index + 1));
 }
 
+function getDisplayCategoryRaw(post) {
+  return [post.category1, post.category2]
+    .filter(Boolean)
+    .join(' / ')
+    .replace(/教えます/g, 'レッスン');
+}
+
 function getLocation(post) {
   return [field(post, ['city', 'town']), field(post, ['region', 'state', 'area'])].filter(Boolean).join(' / ') || '地域未設定';
 }
@@ -946,10 +974,11 @@ function inferPostType(post) {
     return '探しています';
   }
   if (text.includes('友達') || text.includes('仲間') || text.includes('カフェ')) return '友達募集';
-  if (text.includes('イベント') || text.includes('交流会') || text.includes('会')) return 'イベント';
-  if (text.includes('教えます') || text.includes('レッスン') || text.includes('講座')) return '教えます';
+  if (text.includes('教えます') || text.includes('レッスン') || text.includes('講座')) return 'レッスン';
+  if (text.includes('イベント') || text.includes('交流会')) return 'イベント';
   if (text.includes('アルバイト') || text.includes('求人') || text.includes('仕事') || text.includes('バイト')) return 'アルバイト';
   if (text.includes('質問') || text.includes('相談') || text.includes('教えて')) return '質問';
+  if (explicit === '教えます') return 'レッスン';
   return POST_TYPES.includes(explicit) ? explicit : '質問';
 }
 
@@ -989,9 +1018,10 @@ function normalizePost(post, index) {
     _title: field(post, ['title', 'name', 'subject']) || 'タイトル未設定',
     _body: field(post, ['body', 'description', 'message', 'content']) || '',
     _postType: postType,
+    _postTypeSearch: postType === 'レッスン' ? 'レッスン 教えます' : postType,
     _subcategory: subcategory,
     _category: subcategory,
-    _categoryRaw: [post.category1, post.category2].filter(Boolean).join(' / '),
+    _categoryRaw: getDisplayCategoryRaw(post),
     _location: getLocation(post),
     _date: field(post, ['created_at', 'createdAt', 'date', 'timestamp', 'updated_at']),
     _price: getPrice(post),
@@ -1050,6 +1080,7 @@ function renderStandaloneDetail(post, posts) {
   const detailMode = document.getElementById('detailMode');
   const images = post._images || [];
   const mainImage = images[0];
+  const hasImages = images.length > 0;
   const priceText = post._free ? '無料' : (post._price || '価格相談');
   const saved = isSaved(post._id);
   const contactHref = '../contact/?post_id=' + encodeURIComponent(post._id);
@@ -1061,18 +1092,12 @@ function renderStandaloneDetail(post, posts) {
     .sort(function(a, b) { return b.score - a.score; })
     .slice(0, 4)
     .map(function(entry) { return entry.item; });
-
-  document.title = post._title + ' | Nihon Gateway Germany';
-  detailMode.innerHTML = `
-    <div class="hero-actions">
-      <a class="pill-link" href="../">← 掲示板一覧へ戻る</a>
-      <a class="pill-link" href="./">投稿する</a>
-    </div>
-    <section class="detail-shell" aria-labelledby="detailTitle">
+  const marker = escapeHtml(CATEGORY_ICONS[post._subcategory] || CATEGORY_ICONS[post._postType] || CATEGORY_ICONS['その他']);
+  const galleryHtml = hasImages ? `
       <div class="detail-gallery">
         <div class="detail-main-image" id="detailMainImage">
-          ${mainImage ? `<img id="detailMainPhoto" src="${escapeHtml(mainImage)}" alt="${escapeHtml(post._title)}の写真" loading="eager" decoding="async" onerror="this.remove(); document.getElementById('detailMainPlaceholder')?.removeAttribute('hidden');">` : ''}
-          <div id="detailMainPlaceholder" class="detail-placeholder" ${mainImage ? 'hidden' : ''}>${escapeHtml(CATEGORY_ICONS[post._subcategory] || CATEGORY_ICONS[post._postType] || CATEGORY_ICONS['その他'])}</div>
+          <img id="detailMainPhoto" src="${escapeHtml(mainImage)}" alt="${escapeHtml(post._title)}の写真" loading="eager" decoding="async" onerror="this.remove(); document.getElementById('detailMainPlaceholder')?.removeAttribute('hidden');">
+          <div id="detailMainPlaceholder" class="detail-placeholder" hidden>${marker}</div>
         </div>
         <div class="detail-thumbs" id="detailThumbs" ${images.length <= 1 ? 'hidden' : ''}>
           ${images.map(function(src, index) {
@@ -1081,9 +1106,19 @@ function renderStandaloneDetail(post, posts) {
             </button>`;
           }).join('')}
         </div>
-      </div>
+      </div>` : '';
+
+  document.title = post._title + ' | Nihon Gateway Germany';
+  detailMode.innerHTML = `
+    <div class="hero-actions">
+      <a class="pill-link" href="../">← 掲示板一覧へ戻る</a>
+      <a class="pill-link" href="./">投稿する</a>
+    </div>
+    <section class="detail-shell ${hasImages ? '' : 'no-image'}" aria-labelledby="detailTitle">
+      ${galleryHtml}
 
       <article class="detail-panel">
+        ${hasImages ? '' : `<div class="detail-compact-marker" aria-hidden="true">${marker}</div>`}
         <p class="detail-kicker">COMMUNITY POST</p>
         <h1 id="detailTitle" class="detail-title">${escapeHtml(post._title)}</h1>
         <div class="badge-row">

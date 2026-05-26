@@ -182,6 +182,8 @@
     .card:active{transform:translateY(0)}
     .card-link{color:inherit;display:flex;min-height:168px;overflow:hidden;padding:0 112px 0 0}
     .card-media{position:relative;flex:0 0 220px;min-height:168px;background:#eef3f6;overflow:hidden}
+    .card.no-image .card-media{flex-basis:132px}
+    .card.no-image .placeholder-art::before{width:52px;height:52px;border-radius:16px;font-size:24px}
     .card-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;background:#eef3f6}
     .placeholder-art{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(135deg,#f7fbff 0%,#eef5f0 100%);color:#3d4a56}
     .placeholder-art::before{content:attr(data-icon);width:62px;height:62px;border-radius:18px;display:grid;place-items:center;background:#fff;border:1px solid rgba(205,216,227,.9);box-shadow:0 10px 22px rgba(25,39,52,.08);font-size:30px}
@@ -250,6 +252,7 @@
     }
     .modal-close{position:sticky;top:12px;float:right;margin:12px 12px 0 0;z-index:2;width:40px;height:40px;border-radius:999px;border:1px solid var(--community-line);background:#fff;font-size:24px;line-height:1;color:#293541}
     .detail-layout{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);gap:0;clear:both}
+    .detail-layout.no-image{display:block;max-width:760px;margin:0 auto;clear:both}
     .detail-gallery{background:linear-gradient(180deg,#f8fafc 0%,#eef3f6 100%);min-height:100%;padding:16px;display:grid;gap:10px;align-content:start}
     .detail-main-image{position:relative;aspect-ratio:4/3;border-radius:18px;overflow:hidden;background:#dfe7ef;display:grid;place-items:center}
     .detail-main-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -260,6 +263,8 @@
     .detail-thumb-button img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;background:#e9eff5;display:block}
     .detail-thumbs[hidden]{display:none}
     .detail-content{padding:26px 24px 24px;min-width:0}
+    .detail-layout.no-image .detail-content{padding:30px}
+    .detail-compact-marker{width:58px;height:58px;border-radius:18px;background:#f7fafc;border:1px solid var(--community-line);box-shadow:0 12px 24px rgba(25,39,52,.07);display:grid;place-items:center;font-size:26px;font-weight:900;color:#3d4a56;margin-bottom:12px}
     .detail-content h2{font-size:clamp(24px,3.4vw,36px);line-height:1.18;font-weight:900;letter-spacing:0}
     .detail-meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
     .detail-body{white-space:pre-wrap;color:#394653;line-height:1.8;margin-top:12px}
@@ -331,7 +336,8 @@
       .hero-search .btn{min-height:42px;padding:0 10px}
       .card{border-radius:16px}
       .card-link{flex-direction:column;padding:0}
-      .card-media{flex-basis:auto;min-height:0;aspect-ratio:16/10}
+      .card-media,.card.no-image .card-media{flex-basis:auto;min-height:0;aspect-ratio:16/10}
+      .card.no-image .card-media{aspect-ratio:4/1.45}
       .card-actions{position:static;display:flex;justify-content:flex-end;padding:0 12px 12px}
       .save-button{top:9px;right:9px}
       .safety-list,.detail-facts{grid-template-columns:1fr}
@@ -571,7 +577,7 @@
 
   <script>
     const GAS_URL = "https://script.google.com/macros/s/AKfycbwvGmCKVjbWak1xmqU3li33sS_eSx-g5eZU9NUPUYA_9YD7E2NmwUHe9a0SrG6YFBZt/exec";
-    const POST_TYPES = ["すべて", "売ります", "買います", "譲ります", "探しています", "友達募集", "イベント", "教えます", "質問", "アルバイト"];
+    const POST_TYPES = ["すべて", "売ります", "買います", "譲ります", "探しています", "友達募集", "イベント", "レッスン", "質問", "アルバイト"];
     const SUBCATEGORIES = ["すべて", "家具", "家電", "部屋", "ドイツ語", "日本語", "手続き", "生活", "交通", "食事", "子育て", "その他"];
     const RELEVANT_SUBCATEGORIES = {
       "売ります": ["家具", "家電", "生活", "交通", "その他"],
@@ -580,7 +586,7 @@
       "探しています": ["部屋", "生活", "手続き", "その他"],
       "友達募集": ["食事", "生活", "子育て", "その他"],
       "イベント": ["食事", "日本語", "ドイツ語", "子育て", "その他"],
-      "教えます": ["ドイツ語", "日本語", "手続き", "その他"],
+      "レッスン": ["ドイツ語", "日本語", "手続き", "その他"],
       "質問": ["手続き", "生活", "交通", "ドイツ語", "その他"],
       "アルバイト": ["日本語", "ドイツ語", "生活", "その他"]
     };
@@ -599,6 +605,7 @@
       "売ります": "売",
       "譲ります": "譲",
       "イベント": "会",
+      "レッスン": "学",
       "質問": "問",
       "アルバイト": "働",
       "その他": "街"
@@ -736,6 +743,13 @@
       return String(field(post, ["post_id", "postId", "id", "_id"]) || `community-${index + 1}`);
     }
 
+    function getDisplayCategoryRaw(post) {
+      return [post.category1, post.category2]
+        .filter(Boolean)
+        .join(" / ")
+        .replace(/教えます/g, "レッスン");
+    }
+
     function getLocation(post) {
       return [field(post, ["city", "town"]), field(post, ["region", "state", "area"])].filter(Boolean).join(" / ") || "地域未設定";
     }
@@ -769,10 +783,11 @@
         return "探しています";
       }
       if (text.includes("友達") || text.includes("仲間") || text.includes("カフェ")) return "友達募集";
-      if (text.includes("イベント") || text.includes("交流会") || text.includes("会")) return "イベント";
-      if (text.includes("教えます") || text.includes("レッスン") || text.includes("講座")) return "教えます";
+      if (text.includes("教えます") || text.includes("レッスン") || text.includes("講座")) return "レッスン";
+      if (text.includes("イベント") || text.includes("交流会")) return "イベント";
       if (text.includes("アルバイト") || text.includes("求人") || text.includes("仕事") || text.includes("バイト")) return "アルバイト";
       if (text.includes("質問") || text.includes("相談") || text.includes("教えて")) return "質問";
+      if (explicit === "教えます") return "レッスン";
       return POST_TYPES.includes(explicit) ? explicit : "質問";
     }
 
@@ -802,9 +817,10 @@
         _title: field(post, ["title", "name", "subject"]) || "タイトル未設定",
         _body: field(post, ["body", "description", "message", "content"]) || "",
         _postType: postType,
+        _postTypeSearch: postType === "レッスン" ? "レッスン 教えます" : postType,
         _subcategory: subcategory,
         _category: subcategory,
-        _categoryRaw: [post.category1, post.category2].filter(Boolean).join(" / "),
+        _categoryRaw: getDisplayCategoryRaw(post),
         _location: getLocation(post),
         _date: field(post, ["created_at", "createdAt", "date", "timestamp", "updated_at"]),
         _price: getPrice(post),
@@ -868,13 +884,11 @@
 
     function setPostType(postType) {
       state.postType = postType || "すべて";
-      document.getElementById("communityBoard").scrollIntoView({ behavior: "smooth", block: "start" });
       applyFilters();
     }
 
     function setSubcategory(subcategory) {
       state.subcategory = subcategory || "すべて";
-      document.getElementById("communityBoard").scrollIntoView({ behavior: "smooth", block: "start" });
       applyFilters();
     }
 
@@ -885,8 +899,16 @@
         state.subcategory = "すべて";
       }
       els.areaFilter.value = area;
-      document.getElementById("communityBoard").scrollIntoView({ behavior: "smooth", block: "start" });
       applyFilters();
+    }
+
+    function focusWithoutScroll(element) {
+      if (!element) return;
+      try {
+        element.focus({ preventScroll: true });
+      } catch (error) {
+        element.focus();
+      }
     }
 
     function renderAreas() {
@@ -931,7 +953,7 @@
 
       const query = normalize(state.query);
       const list = state.posts.filter((post) => {
-        const searchable = normalize([post._title, post._body, post._postType, post._subcategory, post._categoryRaw, post._location, post._price, post.nickname, post.tags, post.city, post.region].join(" "));
+        const searchable = normalize([post._title, post._body, post._postTypeSearch, post._subcategory, post._categoryRaw, post._location, post._price, post.nickname, post.tags, post.city, post.region].join(" "));
         const postTypeOk = state.postType === "すべて" || post._postType === state.postType;
         const subcategoryOk = state.subcategory === "すべて" || post._subcategory === state.subcategory;
         const areaOk = !state.area || [post.city, post.region, post.area, post._location].filter(Boolean).some((area) => String(area) === state.area);
@@ -971,7 +993,7 @@
         const saved = isSaved(post._id);
         const shareHref = detailUrl(post);
         return `
-          <article class="card" data-post-id="${escapeHtml(post._id)}">
+          <article class="card ${image ? "" : "no-image"}" data-post-id="${escapeHtml(post._id)}">
             <button class="save-button ${saved ? "saved" : ""}" type="button" data-save-id="${escapeHtml(post._id)}" aria-label="${saved ? "保存を解除" : "保存する"}">${saved ? "★" : "☆"}</button>
             <a class="card-link" href="#post-${encodeURIComponent(post._id)}" aria-label="${escapeHtml(post._title)}の詳細を開く">
               <div class="card-media">
@@ -1145,15 +1167,13 @@
       const contactHref = post._id ? `./contact/?post_id=${encodeURIComponent(post._id)}` : "./contact/";
       const reportHref = post._id ? `./report/?post_id=${encodeURIComponent(post._id)}` : "./report/";
       const shareHref = detailUrl(post);
-
-      els.detailContent.innerHTML = `
-        <div class="detail-layout">
+      const hasImages = images.length > 0;
+      const marker = escapeHtml(CATEGORY_ICONS[post._subcategory] || CATEGORY_ICONS[post._postType] || CATEGORY_ICONS["その他"]);
+      const galleryHtml = hasImages ? `
           <div class="detail-gallery">
             <div class="detail-main-image" id="detailMainImage">
-              ${mainImage
-                ? `<img id="detailMainPhoto" src="${escapeHtml(mainImage)}" alt="${escapeHtml(post._title)}の写真" loading="eager" decoding="async" onerror="this.remove(); document.getElementById('detailMainPlaceholder')?.removeAttribute('hidden');">`
-                : ""}
-              <div id="detailMainPlaceholder" class="detail-placeholder" ${mainImage ? "hidden" : ""}>${escapeHtml(CATEGORY_ICONS[post._subcategory] || CATEGORY_ICONS[post._postType] || CATEGORY_ICONS["その他"])}</div>
+              <img id="detailMainPhoto" src="${escapeHtml(mainImage)}" alt="${escapeHtml(post._title)}の写真" loading="eager" decoding="async" onerror="this.remove(); document.getElementById('detailMainPlaceholder')?.removeAttribute('hidden');">
+              <div id="detailMainPlaceholder" class="detail-placeholder" hidden>${marker}</div>
             </div>
             <div class="detail-thumbs" id="detailThumbs" ${images.length <= 1 ? "hidden" : ""}>
               ${images.map((src, index) => `
@@ -1162,8 +1182,13 @@
                 </button>
               `).join("")}
             </div>
-          </div>
+          </div>` : "";
+
+      els.detailContent.innerHTML = `
+        <div class="detail-layout ${hasImages ? "" : "no-image"}">
+          ${galleryHtml}
           <div class="detail-content">
+            ${hasImages ? "" : `<div class="detail-compact-marker" aria-hidden="true">${marker}</div>`}
             <span class="category-badge">${escapeHtml(post._postType)}</span>
             <span class="subcategory-badge">${escapeHtml(post._subcategory)}</span>
             <h2 id="detailTitle">${escapeHtml(post._title)}</h2>
@@ -1200,7 +1225,7 @@
 
       els.modal.classList.add("open");
       document.body.style.overflow = "hidden";
-      document.querySelector(".modal-card").focus();
+      focusWithoutScroll(document.querySelector(".modal-card"));
       els.detailContent.querySelectorAll(".detail-thumb-button").forEach((button) => {
         button.addEventListener("click", () => {
           const img = document.getElementById("detailMainPhoto");
@@ -1265,7 +1290,7 @@
     els.clearSearch.addEventListener("click", () => {
       els.search.value = "";
       applyFilters();
-      els.search.focus();
+      focusWithoutScroll(els.search);
     });
     els.areaFilter.addEventListener("change", applyFilters);
     els.freeOnly.addEventListener("change", applyFilters);
@@ -1284,25 +1309,21 @@
     els.areaActivity.addEventListener("click", () => setArea(state.popularArea, { clearCategory: true }));
     els.savedActivity.addEventListener("click", () => {
       els.savedOnly.checked = true;
-      document.getElementById("communityBoard").scrollIntoView({ behavior: "smooth", block: "start" });
       applyFilters();
     });
     els.todayActivity.addEventListener("click", () => {
       state.sort = "newest";
-      document.getElementById("communityBoard").scrollIntoView({ behavior: "smooth", block: "start" });
       applyFilters();
     });
     els.heroAreaButton.addEventListener("click", () => setArea(state.popularArea, { clearCategory: true }));
     document.getElementById("mobileSavedButton")?.addEventListener("click", () => {
       els.savedOnly.checked = !els.savedOnly.checked;
-      document.getElementById("communityBoard").scrollIntoView({ behavior: "smooth", block: "start" });
       applyFilters();
     });
     document.querySelectorAll("[data-query]").forEach((button) => {
       button.addEventListener("click", () => {
         els.search.value = button.dataset.query || "";
         applyFilters();
-        document.getElementById("communityBoard").scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
     document.querySelectorAll(".onboarding-chips [data-subcategory], .onboarding-chips [data-category]").forEach((button) => {

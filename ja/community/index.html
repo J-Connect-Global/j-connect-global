@@ -121,6 +121,7 @@
     .chip-button:hover{transform:translateY(-1px);border-color:#c5d2df}
     .chip-button.active{background:#17202a;color:#fff;border-color:#17202a}
     .chip-button.suggested:not(.active){border-color:#bde9cd;background:#f3fbf6;color:#166534}
+    .chip-skeleton{display:block;width:100%;height:36px;border-radius:10px;background:linear-gradient(90deg,#edf2f7 0%,#f8fafc 46%,#edf2f7 92%);background-size:220% 100%;animation:skeleton 1.15s linear infinite}
     .filter-bar .chip-button{width:100%;justify-content:flex-start;border-radius:10px}
     .filter-panel-heading .chip-button{width:auto;justify-content:center}
 
@@ -129,6 +130,10 @@
       position:sticky;
       top:88px;
       z-index:80;
+      max-height:calc(100vh - 108px);
+      overflow-y:auto;
+      overscroll-behavior:contain;
+      scrollbar-gutter:stable;
       background:#fff;
       border:1px solid var(--community-line);
       border-radius:18px;
@@ -142,6 +147,7 @@
     .filter-row{display:block;min-width:0}
     .filter-label{display:block;font-size:12px;font-weight:900;color:#627080;white-space:nowrap;margin-bottom:7px}
     .filter-rail,.subcategory-rail,.utility-rail,.sort-segment{display:flex;flex-direction:column;gap:7px;overflow:visible;padding:0;min-width:0;max-width:100%}
+    .subcategory-toggle{width:100%;min-height:34px;border:1px dashed #cbd8e4;background:#f8fafc;color:#465461;border-radius:10px;font-size:12px;font-weight:900}
     .filter-controls{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;align-items:start}
     .select{width:100%;height:38px;border:1px solid var(--community-line);background:#fff;border-radius:10px;padding:0 11px;color:#283541;font-weight:800;outline:none;font-size:13px}
     .toggle-chip{position:relative}
@@ -218,7 +224,7 @@
     .skeleton-line.long{width:86%}
     @keyframes skeleton{to{background-position:-220% 0}}
 
-    .empty-state,.support-panel{
+    .empty-state{
       border:1px solid var(--community-line);
       background:#fff;
       border-radius:18px;
@@ -228,13 +234,12 @@
     .empty-state{text-align:center;display:none}
     .empty-state h2{font-size:20px}
     .empty-state p{color:var(--community-muted);margin:6px auto 14px;max-width:560px}
-    .support-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:14px;margin-top:18px}
-    .onboarding-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
     .safety-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
     .safety-list li{list-style:none;background:#f7fafc;border:1px solid var(--community-line);border-radius:12px;padding:9px 10px;color:#44515e;font-size:13px;font-weight:700}
     .safety-summary{display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:900;cursor:pointer}
-    .support-panel details{margin-top:8px;border-top:1px solid var(--community-line);padding-top:10px}
-    .support-panel p{color:var(--community-muted)}
+    .safety-strip{margin-top:16px;border:1px solid var(--community-line);background:rgba(255,255,255,.94);border-radius:16px;box-shadow:0 8px 18px rgba(25,39,52,.05);padding:12px 14px}
+    .safety-strip .safety-summary{font-size:15px}
+    .safety-strip .safety-list{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:10px}
 
     .modal-shell{position:fixed;inset:0;z-index:300;display:none}
     .modal-shell.open{display:block}
@@ -299,7 +304,7 @@
       .hero-search .search-control{grid-column:1/-1}
       .hero-actions{display:grid;grid-template-columns:1fr 1fr}
       .hero-insight{display:none}
-      .filter-bar{top:0;border-radius:0;margin:0 -12px 14px;border-left:none;border-right:none;padding:8px;background:rgba(247,248,250,.92);backdrop-filter:blur(14px)}
+      .filter-bar{top:0;max-height:none;overflow:visible;overscroll-behavior:auto;border-radius:0;margin:0 -12px 14px;border-left:none;border-right:none;padding:8px;background:rgba(247,248,250,.92);backdrop-filter:blur(14px)}
       .filter-panel-heading{margin-bottom:8px}
       .filter-panel-heading h2{font-size:16px}
       .filter-grid{grid-template-columns:1fr}
@@ -307,6 +312,8 @@
       .filter-row{display:flex;align-items:flex-start;gap:8px;overflow:hidden}
       .filter-label{margin:10px 0 0}
       .filter-rail,.subcategory-rail,.utility-rail,.sort-segment{flex-direction:row;gap:7px;overflow-x:auto;scrollbar-width:thin;flex:1 1 auto;padding:1px}
+      .chip-skeleton{width:84px;min-width:84px;border-radius:999px}
+      .subcategory-toggle{width:auto;min-width:max-content;border-radius:999px;padding:0 12px}
       .chip-button,.filter-bar .chip-button{width:auto;justify-content:center;border-radius:999px;min-height:36px;font-size:12px}
       .toggle-chip span{border-radius:999px;min-height:36px;font-size:12px;white-space:nowrap}
       .sort-button{border-radius:999px;min-height:36px;font-size:12px;text-align:center}
@@ -314,7 +321,7 @@
       .select{min-width:0;width:100%;border-radius:999px;height:36px;font-size:12px}
       .content-head{align-items:flex-start;flex-direction:column}
       .active-filters{justify-content:flex-start}
-      .support-grid{grid-template-columns:1fr}
+      .safety-strip .safety-list{grid-template-columns:repeat(2,minmax(0,1fr))}
       .detail-layout{grid-template-columns:1fr}
       .modal-card{inset:auto 0 0 0;left:0;top:auto;transform:none;width:100%;max-height:94vh;border-radius:22px 22px 0 0}
       .mobile-action-bar{display:flex}
@@ -342,7 +349,7 @@
       .card.no-image .card-media{aspect-ratio:4/1.45}
       .card-actions{position:static;display:flex;justify-content:flex-end;padding:0 12px 12px}
       .save-button{top:9px;right:9px}
-      .safety-list,.detail-facts{grid-template-columns:1fr}
+      .safety-list,.detail-facts,.safety-strip .safety-list{grid-template-columns:1fr}
       .detail-content{padding:20px 16px 18px}
       .detail-gallery{padding:10px}
       .activity-bar{grid-template-columns:1fr 1fr}
@@ -456,11 +463,19 @@
         <div class="filter-grid">
           <div class="filter-row">
             <span class="filter-label">投稿タイプ</span>
-            <div class="filter-rail" id="postTypeRail" aria-label="投稿タイプフィルター"></div>
+            <div class="filter-rail" id="postTypeRail" aria-label="投稿タイプフィルター">
+              <span class="chip-skeleton" aria-hidden="true"></span>
+              <span class="chip-skeleton" aria-hidden="true"></span>
+              <span class="chip-skeleton" aria-hidden="true"></span>
+            </div>
           </div>
           <div class="filter-row">
             <span class="filter-label">サブカテゴリ</span>
-            <div class="subcategory-rail" id="subcategoryRail" aria-label="サブカテゴリフィルター"></div>
+            <div class="subcategory-rail" id="subcategoryRail" aria-label="サブカテゴリフィルター">
+              <span class="chip-skeleton" aria-hidden="true"></span>
+              <span class="chip-skeleton" aria-hidden="true"></span>
+              <span class="chip-skeleton" aria-hidden="true"></span>
+            </div>
           </div>
           <div class="filter-controls">
             <div class="filter-row">
@@ -513,33 +528,17 @@
       </section>
     </div>
 
-    <section class="support-grid" aria-label="安心して使うための情報">
-      <div class="support-panel">
-        <h2 class="content-title">こんな人にすぐ役立ちます</h2>
-        <p>大きな説明より、今の目的に近い入口を並べました。</p>
-        <div class="onboarding-chips">
-          <button class="chip-button" type="button" data-query="留学生">留学生歓迎</button>
-          <button class="chip-button" type="button" data-query="ワーホリ">ワーホリ</button>
-          <button class="chip-button" type="button" data-query="初めて">初めてのドイツ</button>
-          <button class="chip-button" type="button" data-subcategory="家具">家具探し</button>
-          <button class="chip-button" type="button" data-subcategory="部屋">部屋探し</button>
-          <button class="chip-button" type="button" data-query="日本語OK">日本語で相談</button>
-        </div>
-      </div>
-
-      <div class="support-panel">
-        <h2 class="content-title">安心の目安</h2>
+    <section class="safety-strip" aria-label="安心して使うために">
+      <details>
+        <summary class="safety-summary">安心して使うために <span>利用上の注意を見る</span></summary>
         <ul class="safety-list">
           <li>個人情報は必要最小限に</li>
           <li>受け渡しは公共の場所推奨</li>
-          <li>不審投稿は通報</li>
+          <li>不審な投稿は通報</li>
           <li>金銭取引は自己責任で確認</li>
         </ul>
-        <details>
-          <summary class="safety-summary">利用上の注意 <span>開く</span></summary>
-          <p>投稿内容や取引の成立をサイトが保証するものではありません。連絡先、住所、口座情報などの扱いに注意し、条件や受け渡し方法を相手と十分に確認してください。</p>
-        </details>
-      </div>
+        <p class="result-text">投稿内容や取引の成立をサイトが保証するものではありません。条件や受け渡し方法を相手と十分に確認してください。</p>
+      </details>
     </section>
   </main>
 
@@ -581,6 +580,7 @@
     const GAS_URL = "https://script.google.com/macros/s/AKfycbwvGmCKVjbWak1xmqU3li33sS_eSx-g5eZU9NUPUYA_9YD7E2NmwUHe9a0SrG6YFBZt/exec";
     const POST_TYPES = ["すべて", "売ります", "買います", "譲ります", "探しています", "友達募集", "イベント", "レッスン", "質問", "アルバイト"];
     const SUBCATEGORIES = ["すべて", "家具", "家電", "部屋", "ドイツ語", "日本語", "手続き", "生活", "交通", "食事", "子育て", "その他"];
+    const COLLAPSED_SUBCATEGORY_COUNT = 8;
     const RELEVANT_SUBCATEGORIES = {
       "売ります": ["家具", "家電", "生活", "交通", "その他"],
       "買います": ["家具", "家電", "生活", "交通", "その他"],
@@ -629,7 +629,11 @@
       popularCategory: "",
       popularArea: "",
       spotlightId: "",
-      loading: true
+      loading: true,
+      filtersReady: false,
+      evaluationComplete: false,
+      loadError: false,
+      showAllSubcategories: false
     };
 
     const els = {
@@ -855,16 +859,32 @@
       }
     }
 
-    function renderRails() {
+    function orderedSubcategories() {
       const relevant = new Set(RELEVANT_SUBCATEGORIES[state.postType] || []);
+      const primary = ["すべて", ...SUBCATEGORIES.filter((item) => item !== "すべて" && relevant.has(item))];
+      const secondary = SUBCATEGORIES.filter((item) => !primary.includes(item));
+      return { relevant, items: [...primary, ...secondary] };
+    }
+
+    function visibleSubcategories(items) {
+      if (state.showAllSubcategories || items.length <= COLLAPSED_SUBCATEGORY_COUNT) return items;
+      const visible = items.slice(0, COLLAPSED_SUBCATEGORY_COUNT);
+      if (!visible.includes(state.subcategory)) visible.push(state.subcategory);
+      return [...new Set(visible)];
+    }
+
+    function renderRails() {
+      const { relevant, items } = orderedSubcategories();
+      const visibleItems = visibleSubcategories(items);
       const postTypeHtml = POST_TYPES.map((postType) => (
         `<button class="chip-button ${state.postType === postType ? "active" : ""}" type="button" data-post-type="${escapeHtml(postType)}">${escapeHtml(postType)}</button>`
       )).join("");
-      const subcategoryHtml = SUBCATEGORIES.map((subcategory) => (
+      const subcategoryHtml = visibleItems.map((subcategory) => (
         `<button class="chip-button ${state.subcategory === subcategory ? "active" : ""} ${relevant.has(subcategory) ? "suggested" : ""}" type="button" data-subcategory="${escapeHtml(subcategory)}">${escapeHtml(subcategory)}</button>`
       )).join("");
       els.postTypeRail.innerHTML = postTypeHtml;
-      els.subcategoryRail.innerHTML = subcategoryHtml;
+      els.subcategoryRail.innerHTML = `${subcategoryHtml}${items.length > COLLAPSED_SUBCATEGORY_COUNT ? `<button class="subcategory-toggle" type="button" id="subcategoryToggle">${state.showAllSubcategories ? "少なく表示" : "すべて表示"}</button>` : ""}`;
+      state.filtersReady = true;
 
       els.postTypeRail.querySelectorAll("[data-post-type]").forEach((button) => {
         button.addEventListener("click", () => {
@@ -876,6 +896,10 @@
           setSubcategory(button.dataset.subcategory || "すべて");
         });
       });
+      document.getElementById("subcategoryToggle")?.addEventListener("click", () => {
+        state.showAllSubcategories = !state.showAllSubcategories;
+        renderRails();
+      });
     }
 
     function renderSortButtons() {
@@ -886,6 +910,7 @@
 
     function setPostType(postType) {
       state.postType = postType || "すべて";
+      state.showAllSubcategories = false;
       applyFilters();
     }
 
@@ -959,6 +984,15 @@
       state.photoOnly = els.photoOnly.checked;
       state.savedOnly = els.savedOnly.checked;
 
+      renderRails();
+      renderSortButtons();
+
+      if (state.loading || !state.filtersReady) {
+        state.evaluationComplete = false;
+        renderSkeletons();
+        return;
+      }
+
       const query = normalize(state.query);
       const list = state.posts.filter((post) => {
         const searchable = normalize([post._title, post._body, post._postTypeSearch, post._subcategory, post._categoryRaw, post._location, post._price, post.nickname, post.tags, post.city, post.region].join(" "));
@@ -976,8 +1010,7 @@
       });
 
       state.filtered = list;
-      renderRails();
-      renderSortButtons();
+      state.evaluationComplete = true;
       renderCards();
       renderSummary();
       renderActiveFilters();
@@ -985,6 +1018,10 @@
     }
 
     function renderCards() {
+      if (state.loading || !state.evaluationComplete) {
+        renderSkeletons();
+        return;
+      }
       if (!state.filtered.length) {
         els.cards.innerHTML = "";
         els.emptyState.style.display = "block";
@@ -1292,6 +1329,7 @@
         const data = await fetchJson(`${GAS_URL}?action=getPosts`);
         state.posts = (data.posts || []).map(normalizePost);
         state.loading = false;
+        state.loadError = false;
         renderAreas();
         applyFilters();
       } catch (error) {
@@ -1299,6 +1337,8 @@
         state.posts = [];
         state.filtered = [];
         state.loading = false;
+        state.loadError = true;
+        state.evaluationComplete = true;
         els.cards.innerHTML = "";
         els.resultText.classList.remove("loading-lines");
         els.resultText.textContent = "現在、投稿を表示できません";
@@ -1351,11 +1391,6 @@
       button.addEventListener("click", () => {
         els.search.value = button.dataset.query || "";
         applyFilters();
-      });
-    });
-    document.querySelectorAll(".onboarding-chips [data-subcategory], .onboarding-chips [data-category]").forEach((button) => {
-      button.addEventListener("click", () => {
-        setSubcategory(button.dataset.subcategory || button.dataset.category || "すべて");
       });
     });
     document.querySelectorAll("[data-close-modal]").forEach((item) => item.addEventListener("click", () => closeDetail(true)));

@@ -1125,13 +1125,35 @@ function toggleDetailSaved(postId) {
   return saved.has(id);
 }
 
-function scoreRelated(post, current) {
-  return (post._postType === current._postType && post._subcategory === current._subcategory ? 12 : 0) +
-    (post._postType === current._postType ? 8 : 0) +
-    (post._subcategory === current._subcategory ? 6 : 0) +
-    (post._location === current._location ? 4 : 0) +
-    (post._free ? 2 : 0) +
-    Math.min(3, dateValue(post._date) / 1000000000000);
+function relationBucket(post, current) {
+  const sameType = post._postType === current._postType;
+  const sameSubcategory = post._subcategory === current._subcategory;
+  const sameRegion = post._location === current._location;
+  if (sameType && sameSubcategory && sameRegion) return 7;
+  if (sameType && sameSubcategory) return 6;
+  if (sameType && sameRegion) return 5;
+  if (sameSubcategory && sameRegion) return 4;
+  if (sameType) return 3;
+  if (sameSubcategory) return 2;
+  return 1;
+}
+
+function comparablePosts(posts, current, limit) {
+  const ranked = posts
+    .filter(function(item) { return item._id !== current._id; })
+    .map(function(item) {
+      return {
+        item: item,
+        bucket: relationBucket(item, current),
+        date: dateValue(item._date)
+      };
+    })
+    .sort(function(a, b) { return (b.bucket - a.bucket) || (b.date - a.date); })
+    .slice(0, limit);
+  return {
+    items: ranked.map(function(entry) { return entry.item; }),
+    label: ranked.some(function(entry) { return entry.bucket >= 2; }) ? '関連投稿' : '最近の投稿'
+  };
 }
 
 function renderNotFound() {
@@ -1159,12 +1181,8 @@ function renderStandaloneDetail(post, posts) {
   const contactHref = '../contact/?post_id=' + encodeURIComponent(post._id);
   const reportHref = '../report/?post_id=' + encodeURIComponent(post._id);
   const shareHref = detailUrl(post);
-  const related = posts
-    .filter(function(item) { return item._id !== post._id; })
-    .map(function(item) { return { item: item, score: scoreRelated(item, post) }; })
-    .sort(function(a, b) { return b.score - a.score; })
-    .slice(0, 4)
-    .map(function(entry) { return entry.item; });
+  const relatedGroup = comparablePosts(posts, post, 4);
+  const related = relatedGroup.items;
   const marker = escapeHtml(CATEGORY_ICONS[post._subcategory] || CATEGORY_ICONS[post._postType] || CATEGORY_ICONS['その他']);
   const galleryHtml = hasImages ? `
       <div class="detail-gallery">
@@ -1220,7 +1238,7 @@ function renderStandaloneDetail(post, posts) {
     </section>
 
     <section class="related-panel" aria-labelledby="relatedTitle">
-      <h2 id="relatedTitle" class="section-title">関連投稿</h2>
+      <h2 id="relatedTitle" class="section-title">${escapeHtml(relatedGroup.label)}</h2>
       <div class="related-list">
         ${related.length ? related.map(function(item) {
           return `<a class="related-link" href="${escapeHtml(detailUrl(item))}"><span>${escapeHtml(item._title)}</span><span>${escapeHtml(item._location)}</span></a>`;

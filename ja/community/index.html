@@ -95,8 +95,8 @@
     .hero-insight-label{font-size:11px;font-weight:900;color:#697684}
     .hero-insight-title{font-size:15px;font-weight:900;margin-top:4px;line-height:1.35}
     .hero-insight-meta{font-size:12px;color:#5c6975;font-weight:800;margin-top:4px}
-    .hero-insight-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
-    .mini-link{border:1px solid var(--community-line);background:#fff;border-radius:999px;min-height:34px;padding:0 11px;font-size:12px;font-weight:900;color:#34414d}
+    .hero-insight-actions{display:flex;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap}
+    .mini-link{border:1px solid var(--community-line);background:#fff;border-radius:999px;min-height:34px;padding:0 11px;display:inline-flex;align-items:center;justify-content:center;line-height:1;font-family:inherit;text-decoration:none;font-size:12px;font-weight:900;color:#34414d}
     .loading-lines{display:grid;gap:7px}
     .skeleton-text{display:block;height:12px;border-radius:999px;background:linear-gradient(90deg,#edf2f7 0%,#f8fafc 46%,#edf2f7 92%);background-size:220% 100%;animation:skeleton 1.15s linear infinite}
     .skeleton-text.title{height:18px;width:min(100%,260px)}
@@ -261,7 +261,7 @@
     .empty-state p{color:var(--community-muted);margin:6px auto 14px;max-width:560px}
     .safety-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
     .safety-list li{list-style:none;background:#f7fafc;border:1px solid var(--community-line);border-radius:12px;padding:9px 10px;color:#44515e;font-size:13px;font-weight:700}
-    .safety-summary{display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:900;cursor:pointer}
+    .safety-summary{display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:900}
     .safety-strip{margin-top:16px;border:1px solid var(--community-line);background:rgba(255,255,255,.94);border-radius:16px;box-shadow:0 8px 18px rgba(25,39,52,.05);padding:12px 14px}
     .safety-strip .safety-summary{font-size:15px}
     .safety-strip .safety-list{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:10px}
@@ -561,16 +561,14 @@
     </div>
 
     <section class="safety-strip" aria-label="安心して使うために">
-      <details>
-        <summary class="safety-summary">安心して使うために <span>利用上の注意を見る</span></summary>
-        <ul class="safety-list">
-          <li>個人情報は必要最小限に</li>
-          <li>受け渡しは公共の場所推奨</li>
-          <li>不審な投稿は通報</li>
-          <li>金銭取引は自己責任で確認</li>
-        </ul>
-        <p class="result-text">投稿内容や取引の成立をサイトが保証するものではありません。条件や受け渡し方法を相手と十分に確認してください。</p>
-      </details>
+      <div class="safety-summary">安心して使うために</div>
+      <ul class="safety-list">
+        <li>個人情報は必要最小限に</li>
+        <li>受け渡しは公共の場所推奨</li>
+        <li>不審な投稿は通報</li>
+        <li>金銭取引は自己責任で確認</li>
+      </ul>
+      <p class="result-text">投稿内容や取引の成立をサイトが保証するものではありません。条件や受け渡し方法を相手と十分に確認してください。</p>
     </section>
   </main>
 

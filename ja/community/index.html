@@ -61,9 +61,7 @@
 
     .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.48fr);gap:14px;align-items:center}
     .hero-copy{min-width:0}
-    .hero-kicker{display:flex;align-items:center;gap:8px;color:var(--community-brand);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
-    .hero-kicker::before{content:"";width:8px;height:8px;border-radius:999px;background:var(--community-brand)}
-    .hero-title{font-size:clamp(26px,3.1vw,36px);line-height:1.12;letter-spacing:0;font-weight:900;margin-top:7px;max-width:760px}
+    .hero-title{font-size:clamp(26px,3.1vw,36px);line-height:1.12;letter-spacing:0;font-weight:900;max-width:760px}
     .hero-desc{max-width:760px;margin-top:7px;color:#465360;font-size:14px;line-height:1.6}
     .hero-search{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;margin-top:13px;max-width:760px}
     .search-control{position:relative}
@@ -92,12 +90,12 @@
     .hero-search .btn-primary:hover{box-shadow:0 16px 28px rgba(216,75,106,.26)}
     .btn-secondary{background:#fff;color:#24313d;border-color:var(--community-line-strong)}
     .btn-soft{background:#f7fafc;color:#24313d;border-color:var(--community-line)}
-    .hero-insight{border:1px solid var(--community-line);background:rgba(255,255,255,.88);border-radius:18px;padding:12px;box-shadow:0 8px 18px rgba(25,39,52,.05)}
+    .hero-insight{border:1px solid var(--community-line);background:rgba(255,255,255,.88);border-radius:18px;padding:10px;box-shadow:0 8px 18px rgba(25,39,52,.05)}
     .hero-safety{align-self:stretch;display:flex;flex-direction:column;justify-content:center}
     .hero-safety .safety-summary{font-size:15px;color:#243246}
-    .hero-safety .safety-list{grid-template-columns:1fr;gap:7px;margin-top:10px}
-    .hero-safety .safety-list li{font-size:12px;padding:8px 9px}
-    .hero-safety .result-text{font-size:12px;line-height:1.55;margin-top:10px}
+    .hero-safety .safety-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:8px}
+    .hero-safety .safety-list li{font-size:12px;line-height:1.35;padding:7px 8px}
+    .hero-safety .result-text{font-size:12px;line-height:1.5;margin-top:8px}
     .hero-insight-label{font-size:11px;font-weight:900;color:#697684}
     .hero-insight-title{font-size:15px;font-weight:900;margin-top:4px;line-height:1.35}
     .hero-insight-meta{font-size:12px;color:#5c6975;font-weight:800;margin-top:4px}
@@ -157,8 +155,9 @@
     .filter-row{display:block;min-width:0}
     .filter-label{display:block;font-size:11px;font-weight:900;color:#627080;white-space:nowrap;margin-bottom:6px}
     .filter-row:first-child .filter-label{color:#243246}
-    .filter-rail,.subcategory-rail{display:flex;flex-direction:column;gap:6px;overflow:visible;padding:0;min-width:0;max-width:100%}
-    .subcategory-rail .chip-button{min-height:30px;font-size:11px}
+    .filter-rail,.subcategory-rail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;overflow:visible;padding:0;min-width:0;max-width:100%}
+    .filter-rail .chip-button,.subcategory-rail .chip-button{min-width:0;white-space:normal;text-align:left;line-height:1.25;padding:6px 9px}
+    .subcategory-rail .chip-button{min-height:32px;font-size:11px}
     .select{width:100%;height:34px;border:1px solid var(--community-line);background:#fff;border-radius:10px;padding:0 10px;color:#283541;font-weight:800;outline:none;font-size:12px}
     .search-suggestions{display:flex;gap:8px;overflow-x:auto;scrollbar-width:thin;margin-top:10px;padding:1px;max-width:100%}
 
@@ -317,11 +316,11 @@
       .filter-panel-heading{margin-bottom:8px}
       .filter-panel-heading h2{font-size:16px}
       .filter-grid{grid-template-columns:1fr}
-      .filter-row{display:flex;align-items:flex-start;gap:8px;overflow:hidden}
-      .filter-label{margin:10px 0 0}
-      .filter-rail,.subcategory-rail{flex-direction:row;gap:7px;overflow-x:auto;scrollbar-width:thin;flex:1 1 auto;padding:1px}
-      .chip-skeleton{width:84px;min-width:84px;border-radius:999px}
-      .chip-button,.filter-bar .chip-button{width:auto;justify-content:center;border-radius:999px;min-height:36px;font-size:12px}
+      .filter-row{display:block;overflow:visible}
+      .filter-label{margin:0 0 6px}
+      .filter-rail,.subcategory-rail{grid-template-columns:1fr;gap:7px;overflow:visible;padding:1px}
+      .chip-skeleton{width:100%;min-width:0;border-radius:10px}
+      .filter-bar .chip-button{width:100%;justify-content:flex-start;border-radius:10px;min-height:36px;font-size:12px}
       .area-filter-row{display:grid;grid-template-columns:auto minmax(0,1fr)}
       .select{min-width:0;width:100%;border-radius:999px;height:36px;font-size:12px}
       .content-head{align-items:flex-start;flex-direction:column}
@@ -354,7 +353,7 @@
       .card.no-image .card-media{aspect-ratio:4/1.45}
       .card-actions{position:static;display:flex;justify-content:flex-end;padding:0 12px 12px}
       .save-button{top:9px;right:9px}
-      .safety-list,.detail-facts{grid-template-columns:1fr}
+      .hero-safety .safety-list,.safety-list,.detail-facts{grid-template-columns:1fr}
       .detail-content{padding:20px 16px 18px}
       .detail-gallery{padding:10px}
       .detail-main-image{aspect-ratio:1.08}
@@ -424,9 +423,8 @@
     <section class="community-hero" aria-labelledby="communityTitle">
       <div class="hero-grid">
         <div class="hero-copy">
-          <div class="hero-kicker">Japanese life infrastructure in Germany</div>
-          <h1 id="communityTitle" class="hero-title">ドイツ生活の探す・譲る・つながるを最短で。</h1>
-          <p class="hero-desc">家具、部屋、無料譲渡、イベント、質問、アルバイトまで。日本語で迷わず見つけられる、実用第一のコミュニティマーケットです。</p>
+          <h1 id="communityTitle" class="hero-title">ドイツ生活の掲示板</h1>
+          <p class="hero-desc">家具、部屋、無料譲渡、イベント、質問、アルバイトまで。ドイツ在住者同士で使える掲示板です。</p>
           <div class="hero-search" role="search">
             <div class="search-control">
               <span class="search-icon" aria-hidden="true">⌕</span>

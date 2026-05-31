@@ -699,16 +699,16 @@
           <div id="messageBox" class="message"></div>
 
           <div class="form-field">
-            <label for="category1">カテゴリ1<span class="required-mark">*</span></label>
+            <label for="category1">投稿の種類<span class="required-mark">*</span></label>
             <select name="category1" id="category1" required>
-              <option value="">選択してください</option>
+              <option value="">投稿の種類を選択してください</option>
             </select>
           </div>
 
           <div class="form-field">
-            <label for="category2">カテゴリ2<span class="required-mark">*</span></label>
+            <label for="category2">詳しい内容<span class="required-mark">*</span></label>
             <select name="category2" id="category2" required>
-              <option value="">カテゴリ1を選択してください</option>
+              <option value="">先に投稿の種類を選択してください</option>
             </select>
           </div>
 
@@ -837,19 +837,61 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbwvGmCKVjbWak1xmqU3li33
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const detailPostId = new URLSearchParams(location.search).get('id');
 const DETAIL_STORAGE_KEY = 'ngg-community-saved-posts';
-const POST_TYPES = ['すべて', '売ります', '買います', '譲ります', '探しています', '友達募集', 'イベント', 'レッスン', '質問', 'アルバイト'];
-const SUBCATEGORIES = ['すべて', '家具', '家電', '部屋', 'ドイツ語', '日本語', '手続き', '生活', '交通', '食事', '子育て', 'その他'];
+const SUBCATEGORY_OPTIONS = {
+  '売ります': ['帰国売り', '家具・家電', '生活用品', '子ども用品', '本・教材', '車・自転車', 'その他'],
+  '買います': ['家具・家電', '生活用品', '子ども用品', '本・教材', '車・自転車', 'その他'],
+  '譲ります': ['家具・家電', '生活用品', '子ども用品', '食品・日用品', '本・教材', 'その他'],
+  '探しています': ['部屋・住まい', '引っ越し・運搬', '家具・家電', '人・サービス', '情報', 'その他'],
+  '友達募集': ['友達', 'ママ友・パパ友', '言語交換', '趣味仲間', '地域交流', 'その他'],
+  'イベント': ['交流会', '食事会', '子ども向け', '勉強会', 'オンライン', 'その他'],
+  'レッスン': ['ドイツ語', '日本語', '英語', '音楽', 'スポーツ', '家庭教師', 'その他'],
+  '質問': ['ビザ・滞在許可', '住民登録・役所', '保険', '税金', '病院・医療', '妊娠・出産', 'Kita・学校', '生活一般', 'その他'],
+  'アルバイト': ['飲食', '販売', 'ベビーシッター', '家庭教師', '通訳・翻訳', '単発', 'リモート', 'その他']
+};
+const POST_TYPES = ['すべて', ...Object.keys(SUBCATEGORY_OPTIONS)];
+const SUBCATEGORIES = ['すべて', ...new Set(Object.values(SUBCATEGORY_OPTIONS).flat())];
 const CATEGORY_ICONS = {
-  '家具': '椅',
-  '家電': '電',
-  '部屋': '室',
+  '帰国売り': '帰',
+  '家具・家電': '具',
+  '生活用品': '暮',
+  '子ども用品': '子',
+  '本・教材': '本',
+  '車・自転車': '車',
+  '食品・日用品': '食',
+  '部屋・住まい': '室',
+  '引っ越し・運搬': '運',
+  '人・サービス': '人',
+  '情報': '情',
+  '友達': '友',
+  'ママ友・パパ友': '親',
+  '言語交換': '話',
+  '趣味仲間': '趣',
+  '地域交流': '街',
+  '交流会': '会',
+  '食事会': '食',
+  '子ども向け': '子',
+  '勉強会': '学',
+  'オンライン': '網',
   'ドイツ語': '独',
   '日本語': '日',
-  '手続き': '書',
-  '生活': '暮',
-  '交通': '輪',
-  '食事': '食',
-  '子育て': '育',
+  '英語': '英',
+  '音楽': '音',
+  'スポーツ': '運',
+  '家庭教師': '教',
+  'ビザ・滞在許可': '在',
+  '住民登録・役所': '役',
+  '保険': '保',
+  '税金': '税',
+  '病院・医療': '医',
+  '妊娠・出産': '産',
+  'Kita・学校': '校',
+  '生活一般': '暮',
+  '飲食': '飲',
+  '販売': '販',
+  'ベビーシッター': '守',
+  '通訳・翻訳': '訳',
+  '単発': '短',
+  'リモート': '宅',
   '売ります': '売',
   '譲ります': '譲',
   'イベント': '会',
@@ -859,17 +901,7 @@ const CATEGORY_ICONS = {
   'その他': '街'
 };
 
-const fallbackCategories = [
-  { category1: '売ります・買います', category2: '家具・家電' },
-  { category1: '売ります・買います', category2: '本・教材' },
-  { category1: '住まい', category2: '部屋探し' },
-  { category1: '住まい', category2: '入居者募集' },
-  { category1: 'イベント', category2: '交流会' },
-  { category1: '質問・相談', category2: '生活相談' },
-  { category1: '仲間募集', category2: '友達・趣味' }
-];
-
-let categoryMap = {};
+let categoryMap = SUBCATEGORY_OPTIONS;
 
 function showMessage(type, text) {
   const box = document.getElementById('messageBox');
@@ -892,27 +924,15 @@ async function fetchJson(url, options) {
 }
 
 function buildCategoryMap(rows) {
-  categoryMap = {};
-
-  rows.forEach(function(row) {
-    if (!row.category1 || !row.category2) return;
-
-    if (!categoryMap[row.category1]) {
-      categoryMap[row.category1] = [];
-    }
-
-    if (!categoryMap[row.category1].includes(row.category2)) {
-      categoryMap[row.category1].push(row.category2);
-    }
-  });
+  categoryMap = SUBCATEGORY_OPTIONS;
 }
 
 function renderCategory1() {
   const cat1 = document.getElementById('category1');
-  const values = Object.keys(categoryMap);
+  const values = Object.keys(SUBCATEGORY_OPTIONS);
 
   cat1.innerHTML =
-    '<option value="">選択してください</option>' +
+    '<option value="">投稿の種類を選択してください</option>' +
     values.map(function(value) {
       return '<option value="' + escapeHtml(value) + '">' + escapeHtml(value) + '</option>';
     }).join('');
@@ -920,24 +940,18 @@ function renderCategory1() {
 
 function renderCategory2(selectedCategory1) {
   const cat2 = document.getElementById('category2');
-  const values = categoryMap[selectedCategory1] || [];
+  const values = SUBCATEGORY_OPTIONS[selectedCategory1] || [];
+  const placeholder = selectedCategory1 ? '詳しい内容を選択してください' : '先に投稿の種類を選択してください';
 
   cat2.innerHTML =
-    '<option value="">選択してください</option>' +
+    '<option value="">' + escapeHtml(placeholder) + '</option>' +
     values.map(function(value) {
       return '<option value="' + escapeHtml(value) + '">' + escapeHtml(value) + '</option>';
     }).join('');
 }
 
 async function loadCategories() {
-  try {
-    const data = await fetchJson(GAS_URL + '?action=getCategories');
-    const rows = data.categories || [];
-    buildCategoryMap(rows.length ? rows : fallbackCategories);
-  } catch (error) {
-    buildCategoryMap(fallbackCategories);
-  }
-
+  buildCategoryMap();
   renderCategory1();
   renderCategory2('');
 }
@@ -1025,7 +1039,7 @@ function getPrice(post) {
 function isFree(post) {
   const price = normalize(getPrice(post));
   const text = normalize([post.title, post.body, post.category1, post.category2].join(' '));
-  return (!price && text.includes('譲')) || ['0', '0円', '0 eur', '0€', 'free', '無料'].some(function(word) { return price.includes(word); }) || text.includes('無料');
+  return (!price && text.includes('譲')) || ['0', '0円', '0 eur', '0€', 'free', 'gratis', 'kostenlos', '無料'].some(function(word) { return price.includes(word); }) || text.includes('無料');
 }
 
 function isUrgent(post) {
@@ -1055,19 +1069,57 @@ function inferPostType(post) {
   return POST_TYPES.includes(explicit) ? explicit : '質問';
 }
 
+function knownSubcategory(value) {
+  const text = String(value || '').trim();
+  if (!text) return '';
+  return SUBCATEGORIES.includes(text) ? text : '';
+}
+
 function inferSubcategory(post) {
   const explicit = field(post, ['subcategory', 'topic']);
+  const explicitCategory = knownSubcategory(explicit) || knownSubcategory(post.category2);
+  if (explicitCategory) return explicitCategory;
   const text = normalize([explicit, post.category1, post.category2, post.title, post.body, post.tags].join(' '));
-  if (text.includes('家電') || text.includes('冷蔵庫') || text.includes('洗濯機') || text.includes('電子レンジ')) return '家電';
-  if (text.includes('家具') || text.includes('ソファ') || text.includes('ベッド')) return '家具';
-  if (text.includes('部屋') || text.includes('住まい') || text.includes('wg') || text.includes('家探し') || text.includes('物件')) return '部屋';
+  if (text.includes('帰国売り')) return '帰国売り';
+  if (text.includes('家電') || text.includes('家具') || text.includes('冷蔵庫') || text.includes('洗濯機') || text.includes('電子レンジ') || text.includes('ソファ') || text.includes('ベッド')) return '家具・家電';
+  if (text.includes('生活用品') || text.includes('日用品') || text.includes('暮らし')) return '生活用品';
+  if (text.includes('子ども用品') || text.includes('子育て') || text.includes('幼稚園')) return '子ども用品';
+  if (text.includes('本') || text.includes('教材')) return '本・教材';
+  if (text.includes('車') || text.includes('自転車') || text.includes('交通')) return '車・自転車';
+  if (text.includes('部屋') || text.includes('住まい') || text.includes('wg') || text.includes('家探し') || text.includes('物件')) return '部屋・住まい';
+  if (text.includes('引っ越し') || text.includes('引越') || text.includes('運搬')) return '引っ越し・運搬';
+  if (text.includes('サービス') || text.includes('人探し')) return '人・サービス';
+  if (text.includes('情報')) return '情報';
+  if (text.includes('ママ友') || text.includes('パパ友')) return 'ママ友・パパ友';
+  if (text.includes('言語交換')) return '言語交換';
+  if (text.includes('趣味')) return '趣味仲間';
+  if (text.includes('地域交流')) return '地域交流';
+  if (text.includes('友達') || text.includes('仲間')) return '友達';
+  if (text.includes('交流会')) return '交流会';
+  if (text.includes('食事会')) return '食事会';
+  if (text.includes('子ども向け')) return '子ども向け';
+  if (text.includes('勉強会')) return '勉強会';
+  if (text.includes('オンライン')) return 'オンライン';
   if (text.includes('ドイツ語') || text.includes('deutsch') || text.includes('german')) return 'ドイツ語';
   if (text.includes('日本語') || text.includes('japanese')) return '日本語';
-  if (text.includes('手続') || text.includes('ビザ') || text.includes('保険') || text.includes('役所')) return '手続き';
-  if (text.includes('交通') || text.includes('電車') || text.includes('自転車') || text.includes('車')) return '交通';
-  if (text.includes('食') || text.includes('レストラン') || text.includes('カフェ')) return '食事';
-  if (text.includes('子育て') || text.includes('学校') || text.includes('幼稚園')) return '子育て';
-  if (text.includes('生活') || text.includes('暮らし')) return '生活';
+  if (text.includes('英語') || text.includes('english')) return '英語';
+  if (text.includes('音楽')) return '音楽';
+  if (text.includes('スポーツ')) return 'スポーツ';
+  if (text.includes('家庭教師')) return '家庭教師';
+  if (text.includes('ビザ') || text.includes('滞在許可')) return 'ビザ・滞在許可';
+  if (text.includes('住民登録') || text.includes('役所')) return '住民登録・役所';
+  if (text.includes('保険')) return '保険';
+  if (text.includes('税金')) return '税金';
+  if (text.includes('病院') || text.includes('医療')) return '病院・医療';
+  if (text.includes('妊娠') || text.includes('出産')) return '妊娠・出産';
+  if (text.includes('kita') || text.includes('学校')) return 'Kita・学校';
+  if (text.includes('生活') || text.includes('手続')) return '生活一般';
+  if (text.includes('飲食') || text.includes('レストラン') || text.includes('カフェ')) return '飲食';
+  if (text.includes('販売')) return '販売';
+  if (text.includes('ベビーシッター')) return 'ベビーシッター';
+  if (text.includes('通訳') || text.includes('翻訳')) return '通訳・翻訳';
+  if (text.includes('単発')) return '単発';
+  if (text.includes('リモート')) return 'リモート';
   return SUBCATEGORIES.includes(explicit) ? explicit : 'その他';
 }
 
@@ -1176,7 +1228,7 @@ function renderStandaloneDetail(post, posts) {
   const images = post._images || [];
   const mainImage = images[0];
   const hasImages = images.length > 0;
-  const priceText = post._free ? '無料' : (post._price || '価格相談');
+  const priceText = post._free ? '無料' : post._price;
   const saved = isSaved(post._id);
   const contactHref = '../contact/?post_id=' + encodeURIComponent(post._id);
   const reportHref = '../report/?post_id=' + encodeURIComponent(post._id);
@@ -1215,7 +1267,7 @@ function renderStandaloneDetail(post, posts) {
         <div class="badge-row">
           <span class="badge category">${escapeHtml(post._postType)}</span>
           <span class="badge subcategory">${escapeHtml(post._subcategory)}</span>
-          <span class="badge ${post._free ? 'free' : ''}">${escapeHtml(priceText)}</span>
+          ${priceText ? `<span class="badge ${post._free ? 'free' : ''}">${escapeHtml(priceText)}</span>` : ''}
           ${post._urgent ? '<span class="badge urgent">急募</span>' : ''}
           ${post._japaneseOk ? '<span class="badge japanese">日本語OK</span>' : ''}
           ${images.length ? '<span class="badge">写真あり</span>' : ''}
@@ -1223,8 +1275,8 @@ function renderStandaloneDetail(post, posts) {
         <div class="fact-row">
           <span class="fact">地域: ${escapeHtml(post._location)}</span>
           <span class="fact">投稿日: ${escapeHtml(formatDate(post._date))}</span>
-          <span class="fact">投稿タイプ: ${escapeHtml(post._postType)}</span>
-          <span class="fact">サブカテゴリ: ${escapeHtml(post._subcategory)}</span>
+          <span class="fact">投稿の種類: ${escapeHtml(post._postType)}</span>
+          <span class="fact">詳しい内容: ${escapeHtml(post._subcategory)}</span>
           <span class="fact">元カテゴリ: ${escapeHtml(post._categoryRaw || '未設定')}</span>
         </div>
         <p class="detail-body">${escapeHtml(post._body || '詳細本文は未設定です。')}</p>

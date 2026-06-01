@@ -25,7 +25,7 @@ body{
   line-height:1.6;
   background:
     linear-gradient(rgba(247,248,250,.78), rgba(247,248,250,.82)),
-    url('/nihon-gateway-germany/assets/images/brand/site-bg.jpg') center top / cover fixed no-repeat,
+    url('/assets/images/brand/site-bg.jpg') center top / cover fixed no-repeat,
     var(--bg);
 }
 
@@ -421,7 +421,7 @@ button,input,select{font:inherit;}
   body{
     background:
       linear-gradient(rgba(247,248,250,.96), rgba(247,248,250,.98)),
-      url('/nihon-gateway-germany/assets/images/brand/site-bg.jpg') center top / cover no-repeat,
+      url('/assets/images/brand/site-bg.jpg') center top / cover no-repeat,
       var(--bg);
   }
 }

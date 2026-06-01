@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Jobs | 仕事・求人 | J-Connect Germany</title>
+  <meta name="description" content="ドイツで働く日本語話者向けの求人情報を、会社名・給与・都市・職務概要で見やすく整理。カード選択で詳細もすぐ確認できます。" />
+  <meta name="theme-color" content="#f7f3ee" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://j-connect-global.com/germany/ja/jobs/" />
+  <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png" />
+
+  <meta property="og:title" content="Jobs | 仕事・求人 | J-Connect Germany" />
+  <meta property="og:description" content="企業掲載型の求人を日本語で見やすく一覧化。カードを選ぶと職務詳細・要件・連絡先を確認できます。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://j-connect-global.com/germany/ja/jobs/" />
+  <meta property="og:locale" content="ja_JP" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+
+  <style>
+    :root{
+      --red:#e8002d;
+      --orange:#ff6b2b;
+      --cream:#fdf8f2;
+      --paper:#fffdf9;
+      --ink:#1a1014;
+      --muted:#6b5e68;
+      --border:#ede5e0;
+      --blue:#2f6df5;
+      --brand:#d84b6a;
+      --hover-pink:#f3c8d4;
+      --hover-pink-bg:#fff4f7;
+      --card-shadow:0 10px 30px rgba(26,16,20,.07);
+      --radius-xl:28px;
+      --max:1380px;
+      --sticky-offset:92px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    body{
+      font-family:'Inter','Noto Sans JP','Hiragino Sans','Yu Gothic UI',sans-serif;
+      background:
+        linear-gradient(rgba(247,248,250,.78), rgba(247,248,250,.82)),
+        url("/assets/images/brand/site-bg.jpg") center top / cover fixed no-repeat,
+        var(--cream);
+      color:var(--ink);
+      line-height:1.6;
+    }
+
+    a{text-decoration:none;color:inherit}
+    button,input,select{font:inherit}
+
+    .container{
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:200;
+      background:rgba(255,255,255,.84);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(230,234,240,.92);
+    }
+
+    .header-inner{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .brand-logo{
+      width:136px;
+      height:34px;
+      object-fit:contain;
+    }
+
+    .brand-title{
+      display:block;
+      font-size:14px;
+      font-weight:800;
+      letter-spacing:.08em;
+    }
+
+    .brand-sub{
+      display:block;
+      margin-top:4px;
+      font-size:12px;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+
+    .header-actions{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .header-nav{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .header-nav a,
+    .header-category,
+    .header-language{
+      font-size:13px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid #dce4ee;
+      background:rgba(255,255,255,.74);
+      transition:.18s;
+    }
+
+    .header-nav a:hover,
+    .footer-links a:hover{
+      border-color:var(--hover-pink);
+      background:var(--hover-pink-bg);
+      color:var(--brand);
+      transform:translateY(-1px);
+    }
+
+    .header-category-menu{
+      position:relative;
+      display:flex;
+      align-items:center;
+    }
+
+    .header-category-trigger{
+      border:none;
+      background:transparent;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .category-dropdown{
+      position:absolute;
+      top:calc(100% + 8px);
+      left:0;
+      min-width:220px;
+      background:#fff;
+      border:1px solid #e6eaf0;
+      border-radius:14px;
+      box-shadow:0 16px 30px rgba(19,35,58,.14);
+      padding:8px;
+      display:none;
+      z-index:20;
+    }
+
+    .header-category-menu:hover .category-dropdown,
+    .header-category-menu:focus-within .category-dropdown{
+      display:grid;
+      gap:2px;
+    }
+
+    .category-dropdown a{
+      font-size:13px;
+      color:#2f3e4c;
+      padding:8px 10px;
+      border-radius:10px;
+    }
+
+    .category-dropdown a:hover{
+      background:#fff4f7;
+    }
+
+    .header-search{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .search-box{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      background:rgba(255,255,255,.96);
+      border:1px solid #d9e0e8;
+      border-radius:999px;
+      padding:0 12px;
+      height:42px;
+      min-width:220px;
+    }
+
+    .search-box input{
+      border:none;
+      outline:none;
+      background:transparent;
+    }
+
+    .search-btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:42px;
+      border-radius:999px;
+      padding:0 14px;
+      font-size:24px;
+      color:#1f5fbf;
+      background:rgba(47,128,237,.20);
+      border:1px solid rgba(47,128,237,.32);
+      cursor:pointer;
+    }
+
+    .header-language select{
+      border:none;
+      background:transparent;
+      outline:none;
+    }
+
+    .hero{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:36px 20px 18px;
+    }
+
+.hero-box{
+      position:relative;
+      overflow:hidden;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.42) 0%, rgba(255,255,255,.32) 42%, rgba(255,255,255,.12) 100%),
+        url("/assets/images/hero/top-hero.jpg") center center / cover no-repeat,
+        #fff;
+      border:1px solid #d9e0e8;
+      border-radius:34px;
+      padding:32px 28px 26px;
+      box-shadow:var(--card-shadow);
+    }
+
+.eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--red);
+      margin-bottom:14px;
+    }
+
+.eyebrow-dot{
+      width:9px;
+      height:9px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--red),var(--orange));
+    }
+
+.hero h1{
+      font-size:clamp(30px,4vw,54px);
+      line-height:1.05;
+      font-weight:950;
+      letter-spacing:-.03em;
+      max-width:900px;
+    }
+
+.hero p{
+      margin-top:12px;
+      max-width:880px;
+      font-size:16px;
+      color:var(--muted);
+    }
+
+.hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
+    }
+
+.hero-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:12px 18px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:900;
+      border:1px solid transparent;
+      transition:.18s;
+    }
+
+.hero-btn:hover{
+      transform:translateY(-1px);
+    }
+
+.hero-btn-primary{
+      color:#fff;
+      background:linear-gradient(135deg,var(--red),var(--orange));
+      box-shadow:0 12px 24px rgba(232,0,45,.18);
+    }
+
+.hero-btn-secondary{
+      color:#1f4f98;
+      background:#fff;
+      border-color:#cfd9e8;
+    }
+
+.hero-notice{
+      margin-top:18px;
+      max-width:900px;
+      border:1px solid #f0cf9d;
+      background:rgba(255,249,235,.94);
+      border-radius:18px;
+      padding:14px 16px;
+      color:#6d4d14;
+      font-size:14px;
+    }
+
+.layout{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 20px 80px;
+      display:grid;
+      grid-template-columns:280px 220px minmax(0,1fr);
+      gap:22px;
+      align-items:start;
+    }
+
+.panel{
+      background:var(--paper);
+      border:1px solid var(--border);
+      border-radius:var(--radius-xl);
+      box-shadow:var(--card-shadow);
+    }
+
+.filters{
+      position:sticky;
+      top:var(--sticky-offset);
+      padding:20px;
+    }
+
+.field{
+      margin-bottom:14px;
+    }
+
+.label{
+      display:block;
+      font-size:13px;
+      font-weight:800;
+      color:#4c404c;
+      margin-bottom:8px;
+    }
+
+.input,
+    .select{
+      width:100%;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:#fff;
+      padding:13px 14px;
+      outline:none;
+    }
+
+.salary-range{
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:14px 12px 12px;
+      background:#fff;
+    }
+
+.salary-range-values{
+      display:flex;
+      justify-content:space-between;
+      color:#4360a4;
+      font-weight:700;
+      margin-bottom:10px;
+      font-size:12px;
+    }
+
+.salary-range-input{
+      width:100%;
+      accent-color:#54c8d4;
+      margin-bottom:8px;
+    }
+
+.salary-range-current{
+      text-align:center;
+      color:#33579f;
+      font-size:14px;
+      font-weight:700;
+    }
+
+.reset-btn{
+      border:none;
+      background:transparent;
+      color:var(--blue);
+      font-weight:800;
+      cursor:pointer;
+    }
+
+.panel-title-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:16px;
+    }
+
+.panel-title{
+      font-size:18px;
+      font-weight:900;
+    }
+
+.content{
+      min-width:0;
+    }
+
+.toolbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+
+.results-title{
+      font-size:24px;
+      font-weight:900;
+      letter-spacing:-.02em;
+    }
+
+.results-sub{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+.chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+.chip{
+      display:inline-flex;
+      align-items:center;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:999px;
+      padding:8px 12px;
+      font-size:13px;
+      font-weight:800;
+      color:#4e424e;
+    }
+
+.cards{
+      display:grid;
+      gap:10px;
+    }
+
+.card{
+      position:relative;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      box-shadow:var(--card-shadow);
+      padding:10px 12px;
+      cursor:pointer;
+      transition:.18s;
+      min-width:0;
+    }
+
+.card,
+    .card *{
+      overflow-wrap:anywhere;
+      word-break:break-word;
+    }
+
+.card:hover{
+      transform:translateY(-2px);
+    }
+
+.card.active{
+      border-color:var(--blue);
+      box-shadow:0 0 0 3px rgba(47,109,245,.14),var(--card-shadow);
+    }
+
+.card-head{
+      display:block;
+      padding-right:84px;
+      min-width:0;
+    }
+
+.company{
+      font-size:14px;
+      font-weight:950;
+      line-height:1.2;
+    }
+
+.position{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:2px;
+      line-height:1.25;
+    }
+
+.company,
+    .position,
+    .meta dd{
+      display:-webkit-box;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+    }
+
+.company,
+    .position,
+    .meta dd:not(.summary){
+      -webkit-line-clamp:1;
+      line-clamp:1;
+    }
+
+.badge{
+      position:absolute;
+      top:10px;
+      right:10px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:10px;
+      font-weight:900;
+      line-height:1;
+      padding:5px 7px;
+      border-radius:999px;
+      background:#fff4f7;
+      color:#b83355;
+      border:1px solid #f2c8d4;
+      white-space:nowrap;
+      max-width:76px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      word-break:normal;
+      overflow-wrap:normal;
+    }
+
+.meta{
+      margin-top:8px;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:3px;
+      font-size:12px;
+    }
+
+.meta-row{
+      display:grid;
+      grid-template-columns:36px minmax(0,1fr);
+      gap:6px;
+      align-items:start;
+      min-width:0;
+    }
+
+.meta dt{
+      font-weight:900;
+      color:#433744;
+      line-height:1.35;
+    }
+
+.meta dd{
+      color:#564a55;
+      min-width:0;
+      overflow-wrap:anywhere;
+      word-break:break-word;
+      line-height:1.35;
+    }
+
+.meta dd.summary{
+      -webkit-line-clamp:2;
+      line-clamp:2;
+    }
+
+    .detail-wrap{
+      position:sticky;
+      top:var(--sticky-offset);
+      align-self:start;
+    }
+
+    .detail{
+      padding:30px;
+      min-width:0;
+    }
+
+.detail,
+    .detail *{
+      overflow-wrap:anywhere;
+      word-break:break-word;
+    }
+
+.detail h3{
+      font-size:36px;
+      font-weight:950;
+      line-height:1.15;
+    }
+
+.detail .sub{
+      margin-top:6px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:16px;
+    }
+
+.detail-logo{
+      margin-top:18px;
+      border:1px solid #eee6e2;
+      background:#fff;
+      border-radius:18px;
+      padding:16px;
+    }
+
+.detail-logo img{
+      max-width:180px;
+      max-height:90px;
+      object-fit:contain;
+    }
+
+.detail-grid{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+.detail-item{
+      display:grid;
+      grid-template-columns:145px minmax(0,1fr);
+      gap:8px;
+      font-size:14px;
+      border:1px solid #eee6e2;
+      background:#fff;
+      border-radius:16px;
+      padding:13px;
+    }
+
+.detail-item .k{
+      font-weight:900;
+      color:#433744;
+    }
+
+.detail-item.full{
+      grid-column:1/-1;
+    }
+
+.detail-sec{
+      margin-top:20px;
+      border:1px solid #eee6e2;
+      background:#fff;
+      border-radius:18px;
+      padding:18px;
+    }
+
+.detail-sec h4{
+      font-size:15px;
+      font-weight:900;
+      margin-bottom:8px;
+    }
+
+.detail-sec p,
+    .detail-sec li{
+      font-size:14px;
+      color:#4f4350;
+      white-space:pre-wrap;
+    }
+
+.detail ul{
+      padding-left:18px;
+      display:grid;
+      gap:4px;
+    }
+
+.empty-box{
+      padding:22px;
+      border-radius:24px;
+      border:1px dashed #d8ccc7;
+      background:#fffdfa;
+      color:var(--muted);
+    }
+
+@media (max-width:1200px){
+.layout{
+        grid-template-columns:250px 200px minmax(0,1fr);
+      }
+
+.detail-grid{
+        grid-template-columns:1fr;
+      }
+
+.detail h3{
+        font-size:30px;
+      }
+}
+
+@media (max-width:980px){
+.layout{
+        grid-template-columns:280px minmax(0,1fr);
+      }
+
+.detail-wrap{
+        grid-column:1/-1;
+        position:static;
+      }
+}
+
+@media (max-width:780px){
+.layout{
+        grid-template-columns:1fr;
+      }
+
+.filters{
+        position:static;
+      }
+
+.meta,
+      .detail-item{
+        grid-template-columns:1fr;
+      }
+
+.detail-grid{
+        grid-template-columns:1fr;
+      }
+
+.detail h3{
+        font-size:26px;
+      }
+}
+
+@media (max-width:420px){
+.card-head{
+        padding-right:0;
+      }
+
+.badge{
+        display:none;
+      }
+}
+</style>
+
+<script>
+(function () {
+  var segments = location.pathname.split('/').filter(Boolean);
+  if (segments.length && /\.html$/i.test(segments[segments.length - 1])) segments.pop();
+
+  var localeIndex = -1;
+  for (var i = 0; i < segments.length; i++) {
+    if (segments[i] === 'ja' || segments[i] === 'de') { localeIndex = i; break; }
+  }
+
+  var depth = localeIndex >= 0 ? (segments.length - localeIndex) : Math.max(segments.length - 1, 0);
+  var prefix = depth === 0 ? './' : '../'.repeat(depth);
+
+  var css = document.createElement('link');
+  css.rel = 'stylesheet';
+  css.href = '/assets/css/cookie-consent.css';
+  document.head.appendChild(css);
+
+  var js = document.createElement('script');
+  js.src = '/assets/js/cookie-consent.js';
+  js.defer = true;
+  document.head.appendChild(js);
+})();
+</script>
+  </head>
+
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../" aria-label="J-Connect Germany ホーム">
+      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany ヘッダーロゴ">
+      <span class="brand-copy">
+        <span class="brand-title">J-CONNECT GERMANY</span>
+        <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <a href="../" class="active">ホーム</a>
+        <a href="../about/">このサイトについて</a>
+      </nav>
+
+      <div class="header-category header-category-menu" aria-label="カテゴリ選択">
+        <button type="button" class="header-category-trigger">カテゴリ</button>
+        <div class="category-dropdown">
+          <a href="../guides/">手続き・制度</a>
+          <a href="../living/">住まい・生活</a>
+          <a href="../jobs/" data-base="jobs">仕事・求人</a>
+          <a href="../medical/" data-base="medical">医療・緊急</a>
+          <a href="../eat/" data-base="eat">グルメ・飲食</a>
+          <a href="../shopping/" data-base="shopping">買い物・サービス</a>
+          <a href="../community/" data-base="community">交流・掲示板</a>
+          <a href="../events/" data-base="events">おでかけ・イベント</a>
+          <a href="../learn-german/">ドイツ語・学び</a>
+          <a href="../news/">ニュース・読みもの</a>
+        </div>
+      </div>
+
+      <form class="header-search" action="../search/" method="get" role="search">
+        <label class="search-box" aria-label="サイト内検索">
+          <span>⌕</span>
+          <input type="search" name="q" placeholder="検索">
+        </label>
+        <button class="search-btn" type="submit" aria-label="検索">⌕</button>
+      </form>
+
+      <label class="header-language" aria-label="言語切り替え">
+        <span>Language</span>
+        <select id="languageSelect">
+          <option value="../../">日本語</option>
+          <option value="../../">English</option>
+          <option value="../../de/">Deutsch</option>
+          <option value="../../zh/">中文</option>
+          <option value="../../ko/">한국어</option>
+          <option value="../../es/">Espanol</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</header>
+
+  <section class="hero">
+    <div class="hero-box">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        仕事・求人ガイド
+      </div>
+      <h1>日本語で探せる、<br>企業掲載型のドイツ求人</h1>
+      <p>会社名・ポジション・給与・都市で絞り込み可能。カードをクリックすると右側（モバイルは下側）に職務詳細、必要要件、連絡先メールを表示します。</p>
+
+      <div class="hero-actions">
+        <a class="hero-btn hero-btn-primary" href="/germany/ja/jobs/posting/">求人掲載希望の企業様へ</a>
+        <a class="hero-btn hero-btn-secondary" href="#cards">掲載中の求人を見る</a>
+      </div>
+
+      <div class="hero-notice">
+        現在、掲載件数拡大のため求人掲載を無料で受け付けています。無料掲載は予告なく終了・変更される場合があります。
+      </div>
+    </div>
+  </section>
+
+  <main class="layout">
+    <aside class="panel filters">
+      <div class="panel-title-row">
+        <h2 class="panel-title">検索フィルター</h2>
+        <button class="reset-btn" id="resetBtn" type="button">リセット</button>
+      </div>
+
+      <div class="field">
+        <label class="label" for="keywordInput">キーワード</label>
+        <input id="keywordInput" class="input" type="text" placeholder="会社名・職種・概要・都市" />
+      </div>
+
+      <div class="field">
+        <label class="label" for="citySelect">都市</label>
+        <select id="citySelect" class="select">
+          <option value="">すべて</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="label" for="positionSelect">職種</label>
+        <select id="positionSelect" class="select">
+          <option value="">すべて</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="label" for="salaryRange">給与下限</label>
+        <div class="salary-range">
+          <div class="salary-range-values">
+            <span id="salaryMinLabel">€10,000</span>
+            <span id="salaryMaxLabel">€100,000</span>
+          </div>
+          <input id="salaryRange" class="salary-range-input" type="range" min="0" max="90000" step="5000" value="0" />
+          <div id="salaryCurrentLabel" class="salary-range-current">すべて</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label" for="visaSelect">ビザサポート</label>
+        <select id="visaSelect" class="select">
+          <option value="">すべて</option>
+          <option value="yes">あり</option>
+          <option value="no">なし</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="label" for="typeSelect">雇用形態</label>
+        <select id="typeSelect" class="select">
+          <option value="">すべて</option>
+        </select>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div class="toolbar">
+        <div>
+          <h2 class="results-title">仕事・求人</h2>
+          <div class="results-sub" id="resultsSummary">読み込み中...</div>
+        </div>
+
+        <div class="chips" id="chips"></div>
+      </div>
+
+      <div id="cards" class="cards" aria-live="polite"></div>
+      <div id="emptyBox" class="empty-box" style="display:none;">条件に一致する求人が見つかりませんでした。条件を変更してください。</div>
+    </section>
+
+    <aside class="detail-wrap">
+      <div class="panel detail" id="detailPanel">
+        <h3>読み込み中...</h3>
+        <p class="sub">Spreadsheetから求人データを取得しています。</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="page-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+<img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany フッターロゴ">
+          <div class="footer-copy">
+            <div class="footer-title">J-CONNECT GERMANY</div>
+            <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+            <div class="footer-meta">© 2026 J-Connect Germany</div>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="../about/">このサイトについて</a>
+          <a href="../contact/">お問い合わせ</a>
+          <a href="../terms/">利用規約</a>
+          <a href="../privacy/">プライバシー</a>
+          <a href="../impressum/">運営者情報</a>
+        </div>
+      </div>
+    </footer>
+
+  <script>
+    const SHEET_ID = '1oX4Go3yqxZyFkyRTio-YSxE9wZaXy6mfwai42Zot4AU';
+    const SHEET_GID = '1253259572';
+    const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?gid=${SHEET_GID}&tqx=out:json`;
+
+    let jobs = [];
+    let filtered = [];
+    let selectedId = null;
+
+    const els = {
+      keywordInput: document.getElementById('keywordInput'),
+      citySelect: document.getElementById('citySelect'),
+      positionSelect: document.getElementById('positionSelect'),
+      salaryRange: document.getElementById('salaryRange'),
+      salaryMinLabel: document.getElementById('salaryMinLabel'),
+      salaryMaxLabel: document.getElementById('salaryMaxLabel'),
+      salaryCurrentLabel: document.getElementById('salaryCurrentLabel'),
+      visaSelect: document.getElementById('visaSelect'),
+      typeSelect: document.getElementById('typeSelect'),
+      resetBtn: document.getElementById('resetBtn'),
+      cards: document.getElementById('cards'),
+      detailPanel: document.getElementById('detailPanel'),
+      chips: document.getElementById('chips'),
+      resultsSummary: document.getElementById('resultsSummary'),
+      emptyBox: document.getElementById('emptyBox')
+    };
+
+    const languageSelect = document.getElementById('languageSelect');
+
+    if (languageSelect) {
+      languageSelect.addEventListener('change', e => {
+        if (e.target.value) window.location.href = e.target.value;
+      });
+    }
+
+    function escapeHtml(value){
+      return String(value ?? '')
+        .replace(/&/g,'&amp;')
+        .replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;')
+        .replace(/"/g,'&quot;')
+        .replace(/'/g,'&#039;');
+    }
+
+    function normalize(value){
+      return String(value ?? '').trim().toLowerCase();
+    }
+
+    function clean(value){
+      return String(value ?? '').trim();
+    }
+
+    function toNumber(value){
+      if (value === null || value === undefined || value === '') return 0;
+      const cleaned = String(value).replace(/[^\d.-]/g, '');
+      const n = Number(cleaned);
+      return Number.isFinite(n) ? n : 0;
+    }
+
+    function getValue(row, ...keys){
+      for (const key of keys) {
+        if (row[key] !== undefined && row[key] !== null && String(row[key]).trim() !== '') {
+          return clean(row[key]);
+        }
+      }
+      return '';
+    }
+
+    function getRowsFromGvizResponse(rawText){
+      const start = rawText.indexOf('{');
+      const end = rawText.lastIndexOf('}');
+      if (start < 0 || end < 0) return [];
+
+      const json = JSON.parse(rawText.slice(start, end + 1));
+      const table = json.table || {};
+      const headers = (table.cols || []).map(col => clean(col.label || col.id));
+
+      return (table.rows || []).map(row => {
+        const obj = {};
+        headers.forEach((header, index) => {
+          const cell = row.c?.[index]?.v;
+          obj[header] = cell ?? '';
+        });
+        return obj;
+      });
+    }
+
+    function normalizeJob(row, index){
+      const id = getValue(row, 'id') || `job-${index + 1}`;
+
+      return {
+        id: id,
+        status: getValue(row, 'status') || 'Inactive',
+        priority: toNumber(getValue(row, 'priority')) || 999,
+
+        company_name: getValue(row, 'company_name'),
+        position_title: getValue(row, 'position_title'),
+        employment_type: getValue(row, 'employment_type'),
+        city: getValue(row, 'city'),
+
+        salary_min_eur: toNumber(getValue(row, 'salary_min_eur')),
+        salary_max_eur: toNumber(getValue(row, 'salary_max_eur')),
+        salary_label: getValue(row, 'salary_label'),
+
+        summary: getValue(row, 'summary'),
+        job_details: getValue(row, 'job_details'),
+        requirements: getValue(row, 'requirements'),
+
+        contact_email: getValue(row, 'contact_email'),
+
+        free_comment: getValue(row, 'free_comment'),
+        free_comment_en: getValue(row, 'free_comment_en'),
+
+        visa_support: getValue(row, 'visa_support'),
+
+        updated_at: getValue(row, 'updated_at'),
+        published_at: getValue(row, 'published_at'),
+        expires_at: getValue(row, 'expires_at'),
+
+        company_logo_url: getValue(row, 'company_logo_url')
+      };
+    }
+
+    function getSalaryLabel(job){
+      if (job.salary_label) return job.salary_label;
+
+      if (job.salary_min_eur && job.salary_max_eur) {
+        return `年収 ${job.salary_min_eur.toLocaleString()}€〜${job.salary_max_eur.toLocaleString()}€`;
+      }
+
+      if (job.salary_min_eur) {
+        return `年収 ${job.salary_min_eur.toLocaleString()}€〜`;
+      }
+
+      if (job.salary_max_eur) {
+        return `〜${job.salary_max_eur.toLocaleString()}€`;
+      }
+
+      return '給与情報なし';
+    }
+
+    function isVisaYes(job){
+      const value = normalize(job.visa_support);
+      return value.includes('あり') ||
+             value.includes('yes') ||
+             value.includes('available') ||
+             value.includes('有') ||
+             value === 'true';
+    }
+
+    function resetSelectOptions(selectEl){
+      selectEl.innerHTML = '<option value="">すべて</option>';
+    }
+
+    function initFilters(){
+      resetSelectOptions(els.citySelect);
+      resetSelectOptions(els.positionSelect);
+      resetSelectOptions(els.typeSelect);
+
+      const citySet = [...new Set(jobs.map(j => j.city).filter(Boolean))]
+        .sort((a,b) => a.localeCompare(b,'ja'));
+
+      const positionSet = [...new Set(jobs.map(j => j.position_title).filter(Boolean))]
+        .sort((a,b) => a.localeCompare(b,'ja'));
+
+      const typeSet = [...new Set(jobs.map(j => j.employment_type).filter(Boolean))]
+        .sort((a,b) => a.localeCompare(b,'ja'));
+
+      els.citySelect.innerHTML += citySet
+        .map(city => `<option value="${escapeHtml(city)}">${escapeHtml(city)}</option>`)
+        .join('');
+
+      els.positionSelect.innerHTML += positionSet
+        .map(position => `<option value="${escapeHtml(position)}">${escapeHtml(position)}</option>`)
+        .join('');
+
+      els.typeSelect.innerHTML += typeSet
+        .map(type => `<option value="${escapeHtml(type)}">${escapeHtml(type)}</option>`)
+        .join('');
+    }
+
+    async function loadJobs(){
+      els.resultsSummary.textContent = '読み込み中...';
+      els.detailPanel.innerHTML = '<h3>読み込み中...</h3><p class="sub">Spreadsheetから求人データを取得しています。</p>';
+
+      try {
+        const res = await fetch(SHEET_URL, { cache: 'no-store' });
+
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+
+        const raw = await res.text();
+        const rows = getRowsFromGvizResponse(raw);
+
+        jobs = rows
+          .map(normalizeJob)
+          .filter(job => normalize(job.status) === 'active')
+          .filter(job => normalize([
+            job.company_name,
+            job.position_title,
+            job.city,
+            job.summary,
+            job.job_details
+          ].join('')).length > 0)
+          .sort((a,b) => {
+            if (a.priority !== b.priority) return a.priority - b.priority;
+            return String(a.company_name).localeCompare(String(b.company_name), 'ja');
+          });
+
+        selectedId = jobs[0]?.id || null;
+
+        initFilters();
+        filterJobs();
+
+      } catch (error) {
+        console.error('求人データの読み込みに失敗しました:', error);
+
+        jobs = [];
+        filtered = [];
+        selectedId = null;
+
+        els.cards.innerHTML = '';
+        els.chips.innerHTML = '';
+        els.emptyBox.style.display = 'block';
+        els.emptyBox.textContent = '求人データを読み込めませんでした。Spreadsheetの公開設定とシート構成を確認してください。';
+        els.resultsSummary.textContent = '読み込みエラー';
+
+        els.detailPanel.innerHTML = `
+          <h3>読み込みエラー</h3>
+          <p class="sub">Spreadsheet APIに接続できませんでした。</p>
+          <section class="detail-sec">
+            <h4>確認ポイント</h4>
+            <ul>
+              <li>Spreadsheetが公開または読み取り可能になっているか</li>
+              <li>SHEET_IDとSHEET_GIDが正しいか</li>
+              <li>1行目の列名が新しい列名になっているか</li>
+              <li>status が Active の求人が存在するか</li>
+            </ul>
+          </section>
+        `;
+      }
+    }
+
+    function filterJobs(){
+      const keyword = normalize(els.keywordInput.value);
+      const city = els.citySelect.value;
+      const position = els.positionSelect.value;
+      const salaryMin = Number(els.salaryRange.value) + 10000;
+      const visa = els.visaSelect.value;
+      const type = els.typeSelect.value;
+
+      filtered = jobs.filter(job => {
+        const text = normalize([
+          job.company_name,
+          job.position_title,
+          job.summary,
+          job.job_details,
+          job.requirements,
+          job.city,
+          job.free_comment,
+          job.free_comment_en,
+          job.employment_type,
+          job.contact_email,
+          job.visa_support
+        ].join(' '));
+
+        const matchKeyword = !keyword || text.includes(keyword);
+        const matchCity = !city || job.city === city;
+        const matchPosition = !position || job.position_title === position;
+        const matchType = !type || job.employment_type === type;
+
+        const matchVisa =
+          !visa ||
+          (visa === 'yes' && isVisaYes(job)) ||
+          (visa === 'no' && !isVisaYes(job));
+
+        const matchSalary = Number(els.salaryRange.value) === 0 || job.salary_min_eur >= salaryMin;
+
+        return matchKeyword && matchCity && matchPosition && matchType && matchVisa && matchSalary;
+      });
+
+      if (!filtered.some(j => String(j.id) === String(selectedId))) {
+        selectedId = filtered[0]?.id || null;
+      }
+
+      renderSummary();
+      renderChips();
+      renderCards();
+      renderDetail();
+    }
+
+    function renderSummary(){
+      els.resultsSummary.textContent = `${filtered.length}件を表示中 / 全${jobs.length}件`;
+    }
+
+    function renderChips(){
+      const chips = [];
+
+      if (els.keywordInput.value.trim()) {
+        chips.push(`キーワード: ${escapeHtml(els.keywordInput.value.trim())}`);
+      }
+
+      if (els.citySelect.value) {
+        chips.push(`都市: ${escapeHtml(els.citySelect.value)}`);
+      }
+
+      if (els.positionSelect.value) {
+        chips.push(`職種: ${escapeHtml(els.positionSelect.value)}`);
+      }
+
+      if (Number(els.salaryRange.value) > 0) {
+        const salaryMin = Number(els.salaryRange.value) + 10000;
+        chips.push(`給与下限: 年収 ${salaryMin.toLocaleString()}€ 以上`);
+      }
+
+      if (els.visaSelect.value) {
+        chips.push(`ビザサポート: ${escapeHtml(els.visaSelect.options[els.visaSelect.selectedIndex].text)}`);
+      }
+
+      if (els.typeSelect.value) {
+        chips.push(`雇用形態: ${escapeHtml(els.typeSelect.value)}`);
+      }
+
+      els.chips.innerHTML = chips
+        .map(c => `<span class="chip">${c}</span>`)
+        .join('');
+    }
+
+    function renderCards(){
+      if (!filtered.length) {
+        els.cards.innerHTML = '';
+        els.emptyBox.style.display = 'block';
+        els.emptyBox.textContent = '条件に一致する求人が見つかりませんでした。条件を変更してください。';
+        return;
+      }
+
+      els.emptyBox.style.display = 'none';
+
+      els.cards.innerHTML = filtered.map(job => {
+        const company = job.company_name || '会社名未設定';
+        const position = job.position_title || '職種未設定';
+        const type = job.employment_type || '雇用形態未設定';
+        const salary = getSalaryLabel(job);
+        const city = job.city || '勤務地未設定';
+        const summary = job.summary || '概要は準備中です。';
+
+        return `
+          <article class="card ${String(job.id) === String(selectedId) ? 'active' : ''}" data-id="${escapeHtml(job.id)}">
+            <div class="card-head">
+              <div>
+                <h3 class="company">${escapeHtml(company)}</h3>
+                <p class="position">${escapeHtml(position)}</p>
+              </div>
+              <span class="badge">${escapeHtml(type)}</span>
+            </div>
+
+            <dl class="meta">
+              <div class="meta-row">
+                <dt>給与</dt>
+                <dd>${escapeHtml(salary)}</dd>
+              </div>
+
+              <div class="meta-row">
+                <dt>都市</dt>
+                <dd>${escapeHtml(city)}</dd>
+              </div>
+
+              <div class="meta-row">
+                <dt>職種</dt>
+                <dd>${escapeHtml(position)}</dd>
+              </div>
+
+              <div class="meta-row">
+                <dt>概要</dt>
+                <dd class="summary">${escapeHtml(summary)}</dd>
+              </div>
+            </dl>
+          </article>
+        `;
+      }).join('');
+
+      els.cards.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', () => {
+          selectedId = card.dataset.id;
+          renderCards();
+          renderDetail();
+        });
+      });
+    }
+
+    function splitRequirements(value){
+      return String(value || '')
+        .split(/\/|、|,|;|；|\n/)
+        .map(v => v.trim())
+        .filter(Boolean);
+    }
+
+    function renderSalaryRangeLabel(){
+      const min = 10000;
+      const max = 100000;
+      const current = Number(els.salaryRange.value) + min;
+      els.salaryMinLabel.textContent = `€${min.toLocaleString()}`;
+      els.salaryMaxLabel.textContent = `€${max.toLocaleString()}`;
+      els.salaryCurrentLabel.textContent = Number(els.salaryRange.value) === 0
+        ? 'すべて'
+        : `年収 ${current.toLocaleString()}€ 以上`;
+    }
+
+    function renderDetail(){
+      const job = filtered.find(j => String(j.id) === String(selectedId));
+
+      if (!job){
+        els.detailPanel.innerHTML = `
+          <h3>求人を選択してください</h3>
+          <p class="sub">カードをクリックすると詳細を表示します。</p>
+        `;
+        return;
+      }
+
+      const company = job.company_name || '会社名未設定';
+      const position = job.position_title || '職種未設定';
+      const type = job.employment_type || '雇用形態未設定';
+      const salary = getSalaryLabel(job);
+      const city = job.city || '勤務地未設定';
+      const visa = job.visa_support || '未記載';
+      const updated = job.updated_at || '未記載';
+      const published = job.published_at || '未記載';
+      const expires = job.expires_at || '未記載';
+      const email = job.contact_email || '';
+      const summary = job.summary || '概要は準備中です。';
+      const details = job.job_details || summary || '職務詳細は準備中です。';
+      const requirementsRaw = job.requirements || '';
+      const requirements = splitRequirements(requirementsRaw);
+      const comment = job.free_comment || '';
+      const commentEn = job.free_comment_en || '';
+      const logoUrl = job.company_logo_url || '';
+
+      els.detailPanel.innerHTML = `
+        <h3>${escapeHtml(company)}</h3>
+        <p class="sub">${escapeHtml(position)}</p>
+
+        ${
+          logoUrl
+            ? `
+              <div class="detail-logo">
+                <img src="${escapeHtml(logoUrl)}" alt="${escapeHtml(company)} ロゴ">
+              </div>
+            `
+            : ''
+        }
+
+        <div class="detail-grid">
+          <div class="detail-item">
+            <div class="k">雇用形態</div>
+            <div>${escapeHtml(type)}</div>
+          </div>
+
+          <div class="detail-item">
+            <div class="k">給与</div>
+            <div>${escapeHtml(salary)}</div>
+          </div>
+
+          <div class="detail-item">
+            <div class="k">勤務地</div>
+            <div>${escapeHtml(city)}</div>
+          </div>
+
+          <div class="detail-item">
+            <div class="k">ビザサポート</div>
+            <div>${escapeHtml(visa)}</div>
+          </div>
+
+          <div class="detail-item">
+            <div class="k">更新日</div>
+            <div>${escapeHtml(updated)}</div>
+          </div>
+
+          <div class="detail-item">
+            <div class="k">掲載開始</div>
+            <div>${escapeHtml(published)}</div>
+          </div>
+
+          <div class="detail-item">
+            <div class="k">掲載期限</div>
+            <div>${escapeHtml(expires)}</div>
+          </div>
+
+          <div class="detail-item">
+            <div class="k">連絡先</div>
+            <div>
+              ${email ? `<a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a>` : '未記載'}
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <div class="k">Job ID</div>
+            <div>${escapeHtml(job.id || '未記載')}</div>
+          </div>
+        </div>
+
+        <section class="detail-sec">
+          <h4>概要</h4>
+          <p>${escapeHtml(summary)}</p>
+        </section>
+
+        <section class="detail-sec">
+          <h4>職務詳細</h4>
+          <p>${escapeHtml(details)}</p>
+        </section>
+
+        <section class="detail-sec">
+          <h4>必要要件・歓迎条件</h4>
+          ${
+            requirements.length
+              ? `<ul>${requirements.map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ul>`
+              : `<p>未記載</p>`
+          }
+        </section>
+
+        ${
+          comment
+            ? `
+              <section class="detail-sec">
+                <h4>自由コメント</h4>
+                <p>${escapeHtml(comment)}</p>
+              </section>
+            `
+            : ''
+        }
+
+        ${
+          commentEn
+            ? `
+              <section class="detail-sec">
+                <h4>追加コメント</h4>
+                <p>${escapeHtml(commentEn)}</p>
+              </section>
+            `
+            : ''
+        }
+      `;
+    }
+
+    function attachEvents(){
+      els.keywordInput.addEventListener('input', filterJobs);
+      els.citySelect.addEventListener('change', filterJobs);
+      els.positionSelect.addEventListener('change', filterJobs);
+      els.salaryRange.addEventListener('input', () => {
+        renderSalaryRangeLabel();
+        filterJobs();
+      });
+      els.visaSelect.addEventListener('change', filterJobs);
+      els.typeSelect.addEventListener('change', filterJobs);
+
+      els.resetBtn.addEventListener('click', () => {
+        els.keywordInput.value = '';
+        els.citySelect.value = '';
+        els.positionSelect.value = '';
+        els.salaryRange.value = '0';
+        els.visaSelect.value = '';
+        els.typeSelect.value = '';
+        renderSalaryRangeLabel();
+        filterJobs();
+      });
+    }
+
+    attachEvents();
+    renderSalaryRangeLabel();
+    loadJobs();
+  </script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

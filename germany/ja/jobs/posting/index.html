@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>求人掲載希望の企業様へ | J-Connect Germany</title>
+<meta name="description" content="J-Connect Germanyでは、ドイツ在住の日本語話者向け求人掲載を受付中です。現在は掲載件数拡大のため、求人掲載を無料で受け付けています。">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#f7f3ee">
+<link rel="canonical" href="https://j-connect-global.com/germany/ja/jobs/posting/">
+<link rel="icon" type="image/jpeg" href="/assets/images/brand/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="求人掲載希望の企業様へ | J-Connect Germany">
+<meta property="og:description" content="ドイツ在住の日本語話者向け求人掲載を受付中。現在は掲載件数拡大のため無料掲載を実施しています。">
+<meta property="og:url" content="https://j-connect-global.com/germany/ja/jobs/posting/">
+<meta property="og:site_name" content="J-Connect Germany">
+<meta property="og:locale" content="ja_JP">
+<link rel="stylesheet" href="/assets/css/site.css">
+
+<style>
+/* Page-specific styles. Shared site styles live in the common site stylesheet. */
+:root{
+  --surface:#ffffff;
+  --green:#17845b;
+  --warning:#8a5a00;
+  --warning-bg:#fff8e7;
+  --danger:#b42318;
+  --danger-bg:#fff3f1;
+  --radius-xl:28px;
+  --radius-lg:22px;
+  --radius-md:16px;
+}
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(210,218,228,.95);
+  border-radius:28px;
+  box-shadow:
+    0 14px 34px rgba(19,35,58,.12),
+    0 0 0 1px rgba(255,255,255,.5) inset;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.50) 0%, rgba(255,255,255,.38) 44%, rgba(255,255,255,.18) 68%, rgba(255,255,255,.08) 100%),
+    url('/assets/images/hero/top-hero.jpg') center center / cover no-repeat,
+    #fff;
+}
+
+.hero-grid{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:24px;
+  align-items:stretch;
+  min-height:360px;
+  padding:30px;
+}
+
+.hero-main{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:18px;
+}
+
+.kicker{
+  display:inline-flex;
+  width:max-content;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.78);
+  border:1px solid var(--line);
+  color:var(--brand);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.hero-title{
+  font-size:clamp(2rem, 4vw, 3.2rem);
+  line-height:1.08;
+  letter-spacing:-.03em;
+  font-weight:800;
+}
+
+.hero-title .brand-word{
+  color:var(--brand);
+}
+
+.hero-desc{
+  max-width:78ch;
+  color:#485664;
+  font-size:15px;
+  line-height:1.8;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:12px 18px;
+  border-radius:999px;
+  border:1px solid transparent;
+  font-size:14px;
+  font-weight:800;
+  cursor:pointer;
+  transition:all .18s ease;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+}
+
+.btn-primary{
+  background:linear-gradient(90deg,var(--brand),#ff6b2b);
+  color:#fff;
+  box-shadow:0 12px 24px rgba(216,75,106,.22);
+}
+
+.btn-secondary{
+  background:#fff;
+  color:#1f5fbf;
+  border-color:#cfd9e8;
+}
+
+.btn[disabled]{
+  opacity:.55;
+  cursor:not-allowed;
+  transform:none;
+}
+
+.hero-side{
+  display:grid;
+  gap:14px;
+  align-content:center;
+}
+
+.info-panel{
+  background:rgba(255,255,255,.68);
+  border:1.5px solid rgba(205,215,226,.95);
+  border-radius:20px;
+  padding:18px;
+  backdrop-filter:blur(6px);
+}
+
+.info-panel h2{
+  font-size:16px;
+  margin-bottom:8px;
+}
+
+.info-panel p,
+.info-panel li{
+  color:#53606c;
+  font-size:14px;
+}
+
+.info-panel ul{
+  padding-left:20px;
+  display:grid;
+  gap:6px;
+}
+
+.section{
+  margin-top:24px;
+}
+
+.section-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:14px;
+}
+
+.section-kicker{
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  color:var(--brand);
+  text-transform:uppercase;
+}
+
+.section-title{
+  font-size:24px;
+  line-height:1.2;
+  font-weight:800;
+}
+
+.section-desc{
+  font-size:14px;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+.panel{
+  background:rgba(255,255,255,.86);
+  border:1px solid var(--line);
+  border-radius:var(--radius-xl);
+  box-shadow:var(--shadow);
+  padding:24px;
+}
+
+.panel h2{
+  font-size:24px;
+  line-height:1.25;
+  margin-bottom:12px;
+}
+
+.panel h3{
+  font-size:18px;
+  margin:20px 0 8px;
+}
+
+.panel p,
+.panel li{
+  color:#40353d;
+}
+
+.panel ul{
+  padding-left:20px;
+  display:grid;
+  gap:8px;
+}
+
+.notice{
+  border:1px solid #f0cf9d;
+  background:rgba(255,249,235,.94);
+  border-radius:18px;
+  padding:14px 16px;
+  color:#6d4d14;
+  font-size:14px;
+}
+
+.free-notice{
+  display:grid;
+  gap:8px;
+  border:2px solid #f0cf9d;
+  background:linear-gradient(135deg,#fff7dd,#ffffff);
+}
+
+.free-notice strong{
+  display:block;
+  font-size:21px;
+  color:var(--green);
+  font-weight:950;
+  line-height:1.35;
+}
+
+.free-notice span{
+  color:#6d4d14;
+}
+
+.policy-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+
+.policy-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:18px;
+}
+
+.policy-card strong{
+  display:block;
+  font-size:16px;
+  margin-bottom:6px;
+}
+
+.policy-card span{
+  display:block;
+  font-size:14px;
+  color:var(--muted);
+}
+
+.form-preview-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr);
+  gap:22px;
+  align-items:start;
+}
+
+.job-form{
+  display:grid;
+  gap:16px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field label{
+  font-size:14px;
+  font-weight:800;
+}
+
+.required{
+  color:var(--brand);
+}
+
+.input,
+.select,
+.textarea{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#fff;
+  color:var(--text);
+  padding:13px 14px;
+  outline:none;
+}
+
+.textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+.input::placeholder,
+.textarea::placeholder{
+  color:#a3adb8;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus{
+  border-color:#a9c8f5;
+  box-shadow:0 0 0 3px rgba(47,128,237,.13);
+}
+
+.field.has-error .input,
+.field.has-error .select,
+.field.has-error .textarea{
+  border-color:#f2a39a;
+  background:var(--danger-bg);
+  box-shadow:0 0 0 3px rgba(180,35,24,.08);
+}
+
+.help{
+  font-size:12px;
+  color:var(--muted-2);
+}
+
+.counter{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  font-size:12px;
+  color:var(--muted-2);
+}
+
+.counter.over{
+  color:var(--danger);
+  font-weight:800;
+}
+
+.error-message{
+  display:none;
+  color:var(--danger);
+  background:var(--danger-bg);
+  border:1px solid #ffd2cd;
+  border-radius:12px;
+  padding:8px 10px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.field.has-error .error-message{
+  display:block;
+}
+
+.validation-note{
+  border:1px solid #dce4ee;
+  background:#fbfdff;
+  border-radius:16px;
+  padding:14px;
+  color:#53606c;
+  font-size:13px;
+}
+
+.status-box{
+  display:none;
+  padding:14px 16px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  background:#fff;
+  font-size:14px;
+}
+
+.status-box.show{display:block;}
+
+.status-success{
+  border-color:#cfe9d8;
+  background:#f4fbf6;
+  color:#1d5c33;
+}
+
+.status-error{
+  border-color:#f3d0d6;
+  background:#fff6f7;
+  color:#9d2235;
+}
+
+.preview-wrap{
+  position:sticky;
+  top:96px;
+}
+
+.preview-label{
+  margin-bottom:12px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.preview-block{
+  margin-top:18px;
+}
+
+.preview-block:first-of-type{
+  margin-top:0;
+}
+
+.preview-block-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:10px;
+  padding:10px 12px;
+  border-radius:16px;
+  background:#f5f8fc;
+  border:1px solid #dce4ee;
+}
+
+.preview-block-title strong{
+  font-size:15px;
+}
+
+.preview-block-title span{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.job-preview-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  padding:18px;
+}
+
+.job-preview-card.small-preview{
+  border:2px solid #cfe0f8;
+  background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%);
+}
+
+.job-preview-card.detail-preview-card{
+  border:2px solid #f3c8d4;
+  background:linear-gradient(180deg,#ffffff 0%,#fffafd 100%);
+}
+
+.job-preview-card,
+.job-preview-card *{
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+
+.card-head{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:flex-start;
+}
+
+.company{
+  font-size:20px;
+  font-weight:950;
+  line-height:1.15;
+}
+
+.position{
+  font-size:14px;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+.badge{
+  font-size:12px;
+  font-weight:900;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#fff4f7;
+  color:#b83355;
+  border:1px solid #f2c8d4;
+  white-space:normal;
+  max-width:160px;
+}
+
+.meta{
+  margin-top:14px;
+  display:grid;
+  grid-template-columns:112px minmax(0,1fr);
+  gap:8px 10px;
+  font-size:14px;
+}
+
+.meta dt{
+  font-weight:900;
+  color:#433744;
+}
+
+.meta dd{
+  color:#564a55;
+  min-width:0;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+
+.detail-preview-card h3{
+  font-size:22px;
+  font-weight:950;
+  line-height:1.15;
+}
+
+.detail-preview-card .sub{
+  margin-top:4px;
+  color:var(--muted);
+  font-weight:700;
+}
+
+.detail-grid{
+  margin-top:16px;
+  display:grid;
+  gap:10px;
+}
+
+.detail-item{
+  display:grid;
+  grid-template-columns:132px minmax(0,1fr);
+  gap:8px;
+  font-size:14px;
+}
+
+.detail-item .k{
+  font-weight:900;
+  color:#433744;
+}
+
+.detail-item div,
+.detail-sec p,
+.detail-sec li{
+  min-width:0;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+
+.detail-sec{
+  margin-top:16px;
+}
+
+.detail-sec h4{
+  font-size:14px;
+  font-weight:900;
+  margin-bottom:6px;
+}
+
+.detail-sec p,
+.detail-sec li{
+  font-size:14px;
+  color:#4f4350;
+}
+
+.detail-sec ul{
+  padding-left:18px;
+  display:grid;
+  gap:4px;
+}
+
+.optional-preview{
+  display:none;
+}
+
+@media (max-width:1100px){
+.hero-grid,
+  .form-preview-grid{
+    grid-template-columns:1fr;
+  }
+
+.preview-wrap{
+    position:static;
+  }
+
+.policy-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:780px){
+.hero-grid{
+    min-height:auto;
+    padding:22px;
+  }
+
+.form-grid{
+    grid-template-columns:1fr;
+  }
+
+.field.full{
+    grid-column:auto;
+  }
+
+.meta,
+  .detail-item{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:560px){
+.hero{
+    background-position:64% center;
+  }
+}
+</style>
+
+<script>
+(function () {
+  var segments = location.pathname.split('/').filter(Boolean);
+  if (segments.length && /\.html$/i.test(segments[segments.length - 1])) segments.pop();
+
+  var localeIndex = -1;
+  for (var i = 0; i < segments.length; i++) {
+    if (segments[i] === 'ja' || segments[i] === 'de') { localeIndex = i; break; }
+  }
+
+  var depth = localeIndex >= 0 ? (segments.length - localeIndex) : Math.max(segments.length - 1, 0);
+  var prefix = depth === 0 ? './' : '../'.repeat(depth);
+
+  var css = document.createElement('link');
+  css.rel = 'stylesheet';
+  css.href = '/assets/css/cookie-consent.css';
+  document.head.appendChild(css);
+
+  var js = document.createElement('script');
+  js.src = '/assets/js/cookie-consent.js';
+  js.defer = true;
+  document.head.appendChild(js);
+})();
+</script>
+  </head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../" aria-label="J-Connect Germany ホーム">
+      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany ヘッダーロゴ">
+      <span class="brand-copy">
+        <span class="brand-title">J-CONNECT GERMANY</span>
+        <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <a href="../../" class="active">ホーム</a>
+        <a href="../../about/">このサイトについて</a>
+      </nav>
+
+      <div class="header-category header-category-menu" aria-label="カテゴリ選択">
+        <button type="button" class="header-category-trigger">カテゴリ</button>
+        <div class="category-dropdown">
+          <a href="../../guides/">手続き・制度</a>
+          <a href="../../living/">住まい・生活</a>
+          <a href="../../jobs/" data-base="jobs">仕事・求人</a>
+          <a href="../../medical/" data-base="medical">医療・緊急</a>
+          <a href="../../eat/" data-base="eat">グルメ・飲食</a>
+          <a href="../../shopping/" data-base="shopping">買い物・サービス</a>
+          <a href="../../community/" data-base="community">交流・掲示板</a>
+          <a href="../../events/" data-base="events">おでかけ・イベント</a>
+          <a href="../../learn-german/">ドイツ語・学び</a>
+          <a href="../../news/">ニュース・読みもの</a>
+        </div>
+      </div>
+
+      <form class="header-search" action="../../search/" method="get" role="search">
+        <label class="search-box" aria-label="サイト内検索">
+          <span>⌕</span>
+          <input type="search" name="q" placeholder="検索">
+        </label>
+        <button class="search-btn" type="submit" aria-label="検索">⌕</button>
+      </form>
+
+      <label class="header-language" aria-label="言語切り替え">
+        <span>Language</span>
+        <select id="languageSelect">
+          <option value="../../">日本語</option>
+          <option value="../../../">English</option>
+          <option value="../../../de/">Deutsch</option>
+          <option value="../../../zh/">中文</option>
+          <option value="../../../ko/">한국어</option>
+          <option value="../../../es/">Espanol</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="container">
+
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="kicker">For Companies</div>
+          <h1 class="hero-title">
+            求人掲載希望の<br>
+            <span class="brand-word">企業様へ</span>
+          </h1>
+          <p class="hero-desc">
+            J-Connect Germanyでは、ドイツで働きたい方、日本語話者、日本に関心のある求職者へ向けた求人情報を掲載しています。
+            現在は掲載件数拡大のため、求人掲載を無料で受け付けています。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#postingForm">掲載フォーマットを入力する</a>
+            <a class="btn btn-secondary" href="/germany/ja/jobs/">掲載中の求人を見る</a>
+          </div>
+        </div>
+
+        <aside class="hero-side">
+          <section class="info-panel">
+            <h2>現在の掲載料金</h2>
+            <p>
+              求人掲載数の拡大とサービス改善のため、現在は通常掲載を無料で受け付けています。
+              掲載内容は確認後に公開されます。
+            </p>
+          </section>
+
+          <section class="info-panel">
+            <h2>掲載内容のイメージ</h2>
+            <ul>
+              <li>ドイツで働きたい方、ドイツ在住者、日本語話者に関連する求人</li>
+              <li>日本語、英語、ドイツ語などを活かせる仕事</li>
+              <li>正社員、パート、アルバイト、学生向け、ワーキングホリデー向けなど幅広い雇用形態</li>
+              <li>業種・職種は問いません。内容を確認のうえ掲載可否を判断します。</li>
+            </ul>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="notice free-notice">
+        <strong>現在、求人掲載は無料です。</strong>
+        <span>
+          掲載件数拡大のため、求人掲載を無料で受け付けています。
+          無料掲載は予告なく終了・変更される場合があります。
+          掲載可否、掲載期間、表示順位、内容修正については運営側の判断により調整される場合があります。
+        </span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Posting Form</div>
+          <h2 class="section-title">求人掲載フォーマット</h2>
+          <p class="section-desc">
+            左側のフォーマットに入力すると、右側に求人一覧ページと同じ雰囲気のプレビューが表示されます。
+            小カード用の項目は、一覧画面で見やすくするため文字数を制限しています。
+          </p>
+        </div>
+      </div>
+
+      <div class="form-preview-grid">
+        <section class="panel">
+          <form id="postingForm" class="job-form" action="https://formspree.io/f/xlgojvar" method="POST">
+            <input type="hidden" name="_subject" value="[J-Connect Germany] 求人掲載希望 / Job Posting Request">
+            <input type="hidden" name="_language" value="ja">
+            <input type="hidden" name="inquiry_type" value="求人掲載希望 / Job Posting Request">
+            <input type="text" name="_gotcha" style="display:none">
+
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="company_name">会社名 / Company Name <span class="required">*</span></label>
+                <input class="input js-preview" id="company_name" name="会社名 / Company Name" type="text" placeholder="Sakura GmbH" required>
+              </div>
+
+              <div class="field">
+                <label for="contact_name">担当者名 / Contact Person <span class="required">*</span></label>
+                <input class="input js-preview" id="contact_name" name="担当者名 / Contact Person" type="text" placeholder="Taro Yamada" required>
+              </div>
+
+              <div class="field">
+                <label for="contact_email">連絡先メールアドレス / Contact Email <span class="required">*</span></label>
+                <input class="input js-preview" id="contact_email" name="連絡先メールアドレス / Contact Email" type="email" placeholder="example@company.com" required>
+              </div>
+
+              <div class="field">
+                <label for="company_url">会社URL / Company Website</label>
+                <input class="input js-preview" id="company_url" name="会社URL / Company Website" type="url" placeholder="https://example.com">
+              </div>
+
+              <div class="field" data-limit-field="position">
+                <label for="position_title">求人タイトル / Job Title <span class="required">*</span></label>
+                <input class="input js-preview js-limit" id="position_title" name="求人タイトル / Job Title" type="text" placeholder="営業アシスタント / Sales Assistant" required>
+                <div class="counter">
+                  <span id="positionCounter">0 / 25</span>
+                  <span>小カード表示用 / For small card</span>
+                </div>
+                <div class="error-message" id="positionError">長すぎます。日本語は約12文字、英数字中心は約25文字を目安に短くしてください。</div>
+              </div>
+
+              <div class="field" data-limit-field="city">
+                <label for="city">勤務地・都市名 / Location・City <span class="required">*</span></label>
+                <input class="input js-preview js-limit" id="city" name="勤務地・都市名 / Location・City" type="text" placeholder="Düsseldorf" required>
+                <div class="counter">
+                  <span id="cityCounter">0 / 25</span>
+                  <span>小カード表示用 / For small card</span>
+                </div>
+                <div class="error-message" id="cityError">長すぎます。日本語は約12文字、英数字中心は約25文字を目安に短くしてください。</div>
+              </div>
+
+              <div class="field">
+                <label for="employment_type">雇用形態 / Employment Type <span class="required">*</span></label>
+                <select class="select js-preview" id="employment_type" name="雇用形態 / Employment Type" required>
+                  <option value="">選択してください / Please select</option>
+                  <option>正社員 / Full-time</option>
+                  <option>契約社員 / Contract</option>
+                  <option>パート・アルバイト / Part-time</option>
+                  <option>インターン / Internship</option>
+                  <option>学生向け / Student job</option>
+                  <option>ワーキングホリデー向け / Working holiday</option>
+                  <option>フリーランス / Freelance</option>
+                  <option>その他 / Other</option>
+                </select>
+              </div>
+
+              <div class="field" data-limit-field="salary">
+                <label for="salary">給与目安 / Salary Range</label>
+                <input class="input js-preview js-limit" id="salary" name="給与目安 / Salary Range" type="text" placeholder="年収 35,000€〜45,000€ / €35,000–€45,000 per year">
+                <div class="counter">
+                  <span id="salaryCounter">0 / 25</span>
+                  <span>小カード表示用 / For small card</span>
+                </div>
+                <div class="error-message" id="salaryError">長すぎます。日本語は約12文字、英数字中心は約25文字を目安に短くしてください。</div>
+              </div>
+
+              <div class="field">
+                <label for="visa_support">ビザサポート有無 / Visa Support</label>
+                <select class="select js-preview" id="visa_support" name="ビザサポート有無 / Visa Support">
+                  <option value="">選択してください / Please select</option>
+                  <option>あり / Available</option>
+                  <option>なし / Not available</option>
+                  <option>応相談 / Negotiable</option>
+                  <option>職種・条件による / Depends on position and conditions</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="start_date">勤務開始時期 / Start Date</label>
+                <input class="input js-preview" id="start_date" name="勤務開始時期 / Start Date" type="text" placeholder="2026年7月以降 / From July 2026">
+              </div>
+
+              <div class="field">
+                <label for="publish_date">掲載希望開始日 / Preferred Publishing Date</label>
+                <input class="input js-preview" id="publish_date" name="掲載希望開始日 / Preferred Publishing Date" type="text" placeholder="できるだけ早く / As soon as possible">
+              </div>
+
+              <div class="field">
+                <label for="apply_method">応募方法 / Application Method</label>
+                <input class="input js-preview" id="apply_method" name="応募方法 / Application Method" type="text" placeholder="メール応募 / Apply by email">
+              </div>
+
+              <div class="field full" data-limit-field="summary">
+                <label for="summary">求人概要 / Job Summary <span class="required">*</span></label>
+                <textarea class="textarea js-preview js-limit" id="summary" name="求人概要 / Job Summary" placeholder="営業事務・受発注管理・問い合わせ対応 / Sales admin, order management, and customer inquiries." required></textarea>
+                <div class="counter">
+                  <span id="summaryCounter">0 / 25</span>
+                  <span>小カード表示用 / For small card</span>
+                </div>
+                <div class="error-message" id="summaryError">長すぎます。小カードでは日本語約12文字、英数字中心約25文字を目安に短くしてください。詳細は「職務詳細」に記入できます。</div>
+              </div>
+
+              <div class="field full">
+                <label for="job_details">職務詳細 / Job Details <span class="required">*</span></label>
+                <textarea class="textarea js-preview" id="job_details" name="職務詳細 / Job Details" placeholder="顧客対応、見積作成、受発注管理、社内調整など。 / Customer support, quotations, order management, and internal coordination." required></textarea>
+              </div>
+
+              <div class="field full">
+                <label for="requirements">必要要件・歓迎条件 / Requirements・Preferred Skills <span class="required">*</span></label>
+                <textarea class="textarea js-preview" id="requirements" name="必要要件・歓迎条件 / Requirements・Preferred Skills" placeholder="日本語ネイティブレベル、英語またはドイツ語での業務経験。 / Native-level Japanese and business experience in English or German." required></textarea>
+                <div class="help">複数ある場合は改行、読点、カンマで区切るとプレビューで見やすく表示されます。</div>
+              </div>
+
+              <div class="field full">
+                <label for="free_comment">自由コメント / Additional Comment</label>
+                <textarea class="textarea js-preview" id="free_comment" name="自由コメント / Additional Comment" placeholder="未経験者歓迎、勤務時間応相談、リモート勤務一部可。 / Beginners welcome, flexible working hours, partial remote work possible."></textarea>
+              </div>
+
+              <div class="field full">
+                <label for="logo_url">会社ロゴ画像URL / Company Logo URL</label>
+                <input class="input js-preview" id="logo_url" name="会社ロゴ画像URL / Company Logo URL" type="url" placeholder="https://example.com/logo.png">
+              </div>
+            </div>
+
+            <button class="btn btn-primary" id="submitButton" type="submit">掲載希望を送信する / Submit Posting Request</button>
+            <div class="status-box" id="formStatus" aria-live="polite"></div>
+          </form>
+        </section>
+
+        <aside class="panel preview-wrap" aria-label="求人プレビュー ">
+          <h2>求人プレビュー / Job Preview</h2>
+          <p class="preview-label">
+            実際の求人ページに近い形式で確認できます。上が一覧用の小カード、下が詳細表示用の大きいカードです。
+          </p>
+
+          <div class="preview-block">
+            <div class="preview-block-title">
+              <strong>小カード</strong>
+              <span>求人一覧に表示される短い情報</span>
+            </div>
+
+            <article class="job-preview-card small-preview">
+              <div class="card-head">
+                <div>
+                  <h3 class="company" id="previewCompany">会社名未設定 / Company not set</h3>
+                  <p class="position" id="previewPosition">職種未設定 / Job title not set</p>
+                </div>
+                <span class="badge" id="previewType">雇用形態未設定 / Type not set</span>
+              </div>
+
+              <dl class="meta">
+                <dt>給与 / Salary</dt>
+                <dd id="previewSalary">給与情報なし / Salary not specified</dd>
+
+                <dt>都市 / City</dt>
+                <dd id="previewCity">勤務地未設定 / Location not set</dd>
+
+                <dt>職種 / Job Title</dt>
+                <dd id="previewPositionMeta">職種未設定 / Job title not set</dd>
+
+                <dt>概要 / Summary</dt>
+                <dd id="previewSummary">概要は準備中です。 / Summary not set.</dd>
+              </dl>
+            </article>
+          </div>
+
+          <div class="preview-block">
+            <div class="preview-block-title">
+              <strong>詳細カード</strong>
+              <span>求人を選択した後に表示される詳しい情報</span>
+            </div>
+
+            <article class="job-preview-card detail-preview-card">
+              <h3 id="previewCompanyDetail">会社名未設定 / Company not set</h3>
+              <p class="sub" id="previewPositionDetail">職種未設定 / Job title not set</p>
+
+              <div class="detail-grid">
+                <div class="detail-item">
+                  <div class="k">雇用形態 / Employment Type</div>
+                  <div id="previewTypeDetail">雇用形態未設定 / Type not set</div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="k">給与 / Salary</div>
+                  <div id="previewSalaryDetail">給与情報なし / Salary not specified</div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="k">勤務地 / Location</div>
+                  <div id="previewCityDetail">勤務地未設定 / Location not set</div>
+                </div>
+
+                <div class="detail-item optional-preview" id="previewContactNameRow">
+                  <div class="k">担当者名 / Contact Person</div>
+                  <div id="previewContactName"></div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="k">連絡先 / Contact Email</div>
+                  <div id="previewEmail">未記載 / Not specified</div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="k">ビザサポート / Visa Support</div>
+                  <div id="previewVisa">未記載 / Not specified</div>
+                </div>
+
+                <div class="detail-item optional-preview" id="previewCompanyUrlRow">
+                  <div class="k">会社URL / Company Website</div>
+                  <div id="previewCompanyUrl"></div>
+                </div>
+
+                <div class="detail-item optional-preview" id="previewStartDateRow">
+                  <div class="k">勤務開始時期 / Start Date</div>
+                  <div id="previewStartDate"></div>
+                </div>
+
+                <div class="detail-item optional-preview" id="previewPublishDateRow">
+                  <div class="k">掲載希望開始日 / Preferred Publishing Date</div>
+                  <div id="previewPublishDate"></div>
+                </div>
+
+                <div class="detail-item optional-preview" id="previewApplyMethodRow">
+                  <div class="k">応募方法 / Application Method</div>
+                  <div id="previewApplyMethod"></div>
+                </div>
+
+                <div class="detail-item optional-preview" id="previewLogoUrlRow">
+                  <div class="k">会社ロゴURL / Company Logo URL</div>
+                  <div id="previewLogoUrl"></div>
+                </div>
+              </div>
+
+              <section class="detail-sec">
+                <h4>職務詳細 / Job Details</h4>
+                <p id="previewDetails">職務詳細は準備中です。 / Job details not set.</p>
+              </section>
+
+              <section class="detail-sec">
+                <h4>必要要件・歓迎条件 / Requirements・Preferred Skills</h4>
+                <ul id="previewRequirements">
+                  <li>未記載 / Not specified</li>
+                </ul>
+              </section>
+
+              <section class="detail-sec optional-preview" id="previewCommentSection">
+                <h4>自由コメント / Additional Comment</h4>
+                <p id="previewComment"></p>
+              </section>
+            </article>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Guidelines</div>
+          <h2 class="section-title">掲載条件と運用について</h2>
+        </div>
+      </div>
+
+      <div class="policy-grid">
+        <div class="policy-card">
+          <strong>現在は無料掲載</strong>
+          <span>
+            求人掲載数の拡大とサービス改善のため、現在は通常掲載を無料で受け付けています。
+            無料掲載は予告なく終了・変更される場合があります。
+          </span>
+        </div>
+
+        <div class="policy-card">
+          <strong>掲載前に内容確認</strong>
+          <span>
+            送信内容は運営側で確認後に掲載します。
+            内容が不明確な場合やサイト方針に合わない場合は、掲載できないことがあります。
+          </span>
+        </div>
+
+        <div class="policy-card">
+          <strong>削除・修正依頼</strong>
+          <span>
+            掲載後の修正・削除希望はいつでも受け付けます。
+            削除希望については、原則として受付後2週間以内を目安に対応します。
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel">
+        <h2>将来の有料化について</h2>
+        <p>
+          将来的に、通常掲載、掲載延長、上位表示、SNS告知、企業紹介記事などの有料プランを導入する可能性があります。
+          有料化または掲載条件を変更する場合は、原則として少なくとも1か月前までに通知し、掲載延長および支払い希望の有無を確認します。
+        </p>
+        <p>
+          延長や有料掲載を希望されない場合、または通知後にご返信がない場合は、通知から1か月経過後を目安に該当求人の掲載を終了・削除する場合があります。
+          あらかじめご了承ください。
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel">
+        <h2>掲載できない可能性がある内容</h2>
+        <ul>
+          <li>違法性のある求人、または法令遵守が確認できない求人</li>
+          <li>給与、勤務条件、勤務地、雇用形態が極端に不明確な求人</li>
+          <li>過度な成果報酬のみの求人</li>
+          <li>差別的、攻撃的、誤解を招く表現を含む求人</li>
+          <li>実態確認が難しい事業者、または連絡先が不明確な求人</li>
+          <li>求職者に不利益を与える可能性が高いと運営側が判断した求人</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+<img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany フッターロゴ">
+          <div class="footer-copy">
+            <div class="footer-title">J-CONNECT GERMANY</div>
+            <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+            <div class="footer-meta">© 2026 J-Connect Germany</div>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="../../about/">このサイトについて</a>
+          <a href="../../contact/">お問い合わせ</a>
+          <a href="../../terms/">利用規約</a>
+          <a href="../../privacy/">プライバシー</a>
+          <a href="../../impressum/">運営者情報</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</main>
+
+<script>
+const languageSelect = document.getElementById('languageSelect');
+
+if (languageSelect) {
+  languageSelect.addEventListener('change', e => {
+    if (e.target.value) window.location.href = e.target.value;
+  });
+}
+
+const form = document.getElementById('postingForm');
+const statusBox = document.getElementById('formStatus');
+const submitButton = document.getElementById('submitButton');
+
+const fields = {
+  company: document.getElementById('company_name'),
+  contactName: document.getElementById('contact_name'),
+  position: document.getElementById('position_title'),
+  type: document.getElementById('employment_type'),
+  salary: document.getElementById('salary'),
+  city: document.getElementById('city'),
+  visa: document.getElementById('visa_support'),
+  email: document.getElementById('contact_email'),
+  companyUrl: document.getElementById('company_url'),
+  startDate: document.getElementById('start_date'),
+  publishDate: document.getElementById('publish_date'),
+  applyMethod: document.getElementById('apply_method'),
+  logoUrl: document.getElementById('logo_url'),
+  summary: document.getElementById('summary'),
+  details: document.getElementById('job_details'),
+  requirements: document.getElementById('requirements'),
+  comment: document.getElementById('free_comment')
+};
+
+const preview = {
+  company: document.getElementById('previewCompany'),
+  companyDetail: document.getElementById('previewCompanyDetail'),
+  position: document.getElementById('previewPosition'),
+  positionMeta: document.getElementById('previewPositionMeta'),
+  positionDetail: document.getElementById('previewPositionDetail'),
+  type: document.getElementById('previewType'),
+  typeDetail: document.getElementById('previewTypeDetail'),
+  salary: document.getElementById('previewSalary'),
+  salaryDetail: document.getElementById('previewSalaryDetail'),
+  city: document.getElementById('previewCity'),
+  cityDetail: document.getElementById('previewCityDetail'),
+  visa: document.getElementById('previewVisa'),
+  email: document.getElementById('previewEmail'),
+  summary: document.getElementById('previewSummary'),
+  details: document.getElementById('previewDetails'),
+  requirements: document.getElementById('previewRequirements'),
+  commentSection: document.getElementById('previewCommentSection'),
+  comment: document.getElementById('previewComment'),
+  contactNameRow: document.getElementById('previewContactNameRow'),
+  contactName: document.getElementById('previewContactName'),
+  companyUrlRow: document.getElementById('previewCompanyUrlRow'),
+  companyUrl: document.getElementById('previewCompanyUrl'),
+  startDateRow: document.getElementById('previewStartDateRow'),
+  startDate: document.getElementById('previewStartDate'),
+  publishDateRow: document.getElementById('previewPublishDateRow'),
+  publishDate: document.getElementById('previewPublishDate'),
+  applyMethodRow: document.getElementById('previewApplyMethodRow'),
+  applyMethod: document.getElementById('previewApplyMethod'),
+  logoUrlRow: document.getElementById('previewLogoUrlRow'),
+  logoUrl: document.getElementById('previewLogoUrl')
+};
+
+const limitRules = {
+  salary: {
+    input: fields.salary,
+    counter: document.getElementById('salaryCounter'),
+    max: 25
+  },
+  city: {
+    input: fields.city,
+    counter: document.getElementById('cityCounter'),
+    max: 25
+  },
+  position: {
+    input: fields.position,
+    counter: document.getElementById('positionCounter'),
+    max: 25
+  },
+  summary: {
+    input: fields.summary,
+    counter: document.getElementById('summaryCounter'),
+    max: 25
+  }
+};
+
+function escapeHtml(value){
+  return String(value || '')
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;')
+    .replace(/'/g,'&#039;');
+}
+
+function valueOf(field, fallback){
+  const value = field.value.trim();
+  return value || fallback;
+}
+
+function splitRequirements(value){
+  return String(value || '')
+    .split(/\n|、|,|;|；/)
+    .map(item => item.trim())
+    .filter(Boolean);
+}
+
+function visualLength(value){
+  let length = 0;
+  const chars = Array.from(String(value || ''));
+
+  chars.forEach(char => {
+    if (/[\u3000-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uff00-\uffef]/.test(char)) {
+      length += 2;
+    } else {
+      length += 1;
+    }
+  });
+
+  return length;
+}
+
+function validateLimits(){
+  let hasError = false;
+
+  Object.keys(limitRules).forEach(key => {
+    const rule = limitRules[key];
+    const input = rule.input;
+    const value = input.value.trim();
+    const length = visualLength(value);
+    const field = input.closest('.field');
+    const counterWrap = field.querySelector('.counter');
+
+    rule.counter.textContent = `${length} / ${rule.max}`;
+
+    if (length > rule.max) {
+      hasError = true;
+      field.classList.add('has-error');
+      counterWrap.classList.add('over');
+    } else {
+      field.classList.remove('has-error');
+      counterWrap.classList.remove('over');
+    }
+  });
+
+  submitButton.disabled = hasError;
+  return !hasError;
+}
+
+function updateOptional(row, target, value){
+  const cleaned = String(value || '').trim();
+
+  if (cleaned) {
+    row.style.display = 'grid';
+    target.textContent = cleaned;
+  } else {
+    row.style.display = 'none';
+    target.textContent = '';
+  }
+}
+
+function updatePreview(){
+  const company = valueOf(fields.company, '会社名未設定 / Company not set');
+  const position = valueOf(fields.position, '職種未設定 / Job title not set');
+  const type = valueOf(fields.type, '雇用形態未設定 / Type not set');
+  const salary = valueOf(fields.salary, '給与情報なし / Salary not specified');
+  const city = valueOf(fields.city, '勤務地未設定 / Location not set');
+  const visa = valueOf(fields.visa, '未記載 / Not specified');
+  const email = valueOf(fields.email, '未記載 / Not specified');
+  const summary = valueOf(fields.summary, '概要は準備中です。 / Summary not set.');
+  const details = valueOf(fields.details, '職務詳細は準備中です。 / Job details not set.');
+  const comment = fields.comment.value.trim();
+
+  preview.company.textContent = company;
+  preview.companyDetail.textContent = company;
+  preview.position.textContent = position;
+  preview.positionMeta.textContent = position;
+  preview.positionDetail.textContent = position;
+  preview.type.textContent = type;
+  preview.typeDetail.textContent = type;
+  preview.salary.textContent = salary;
+  preview.salaryDetail.textContent = salary;
+  preview.city.textContent = city;
+  preview.cityDetail.textContent = city;
+  preview.visa.textContent = visa;
+  preview.email.textContent = email;
+  preview.summary.textContent = summary;
+  preview.details.textContent = details;
+
+  updateOptional(preview.contactNameRow, preview.contactName, fields.contactName.value);
+  updateOptional(preview.companyUrlRow, preview.companyUrl, fields.companyUrl.value);
+  updateOptional(preview.startDateRow, preview.startDate, fields.startDate.value);
+  updateOptional(preview.publishDateRow, preview.publishDate, fields.publishDate.value);
+  updateOptional(preview.applyMethodRow, preview.applyMethod, fields.applyMethod.value);
+  updateOptional(preview.logoUrlRow, preview.logoUrl, fields.logoUrl.value);
+
+  const requirements = splitRequirements(fields.requirements.value);
+  if (requirements.length) {
+    preview.requirements.innerHTML = requirements
+      .map(item => `<li>${escapeHtml(item)}</li>`)
+      .join('');
+  } else {
+    preview.requirements.innerHTML = '<li>未記載 / Not specified</li>';
+  }
+
+  if (comment) {
+    preview.commentSection.style.display = 'block';
+    preview.comment.textContent = comment;
+  } else {
+    preview.commentSection.style.display = 'none';
+    preview.comment.textContent = '';
+  }
+
+  validateLimits();
+}
+
+document.querySelectorAll('.js-preview').forEach(input => {
+  input.addEventListener('input', updatePreview);
+  input.addEventListener('change', updatePreview);
+});
+
+updatePreview();
+
+form.addEventListener('submit', async function(event) {
+  event.preventDefault();
+
+  if (!validateLimits()) {
+    statusBox.className = 'status-box show status-error';
+    statusBox.textContent = '入力が長すぎる項目があります。赤く表示された項目を短くしてから送信してください。';
+    return;
+  }
+
+  statusBox.className = 'status-box';
+  statusBox.textContent = '';
+  submitButton.disabled = true;
+  submitButton.textContent = '送信中... / Sending...';
+
+  const formData = new FormData(form);
+
+  const previewText = [
+    '--- 求人プレビュー / Job Preview ---',
+    '会社名 / Company Name：' + fields.company.value.trim(),
+    '担当者名 / Contact Person：' + fields.contactName.value.trim(),
+    '連絡先メールアドレス / Contact Email：' + fields.email.value.trim(),
+    '会社URL / Company Website：' + fields.companyUrl.value.trim(),
+    '求人タイトル / Job Title：' + fields.position.value.trim(),
+    '勤務地・都市名 / Location・City：' + fields.city.value.trim(),
+    '雇用形態 / Employment Type：' + fields.type.value.trim(),
+    '給与目安 / Salary Range：' + fields.salary.value.trim(),
+    'ビザサポート有無 / Visa Support：' + fields.visa.value.trim(),
+    '勤務開始時期 / Start Date：' + fields.startDate.value.trim(),
+    '掲載希望開始日 / Preferred Publishing Date：' + fields.publishDate.value.trim(),
+    '応募方法 / Application Method：' + fields.applyMethod.value.trim(),
+    '会社ロゴ画像URL / Company Logo URL：' + fields.logoUrl.value.trim(),
+    '',
+    '求人概要 / Job Summary：',
+    fields.summary.value.trim(),
+    '',
+    '職務詳細 / Job Details：',
+    fields.details.value.trim(),
+    '',
+    '必要要件・歓迎条件 / Requirements・Preferred Skills：',
+    fields.requirements.value.trim(),
+    '',
+    '自由コメント / Additional Comment：',
+    fields.comment.value.trim()
+  ].join('\n');
+
+  formData.append('求人プレビュー / Job Preview', previewText);
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      form.reset();
+      updatePreview();
+      statusBox.className = 'status-box show status-success';
+      statusBox.textContent = '送信が完了しました。求人掲載希望を受け付けました。内容確認後、必要に応じてご連絡します。';
+    } else {
+      const data = await response.json().catch(() => ({}));
+      statusBox.className = 'status-box show status-error';
+      statusBox.textContent = data.errors?.[0]?.message || '送信に失敗しました。しばらくしてから再度お試しください。';
+    }
+  } catch (error) {
+    statusBox.className = 'status-box show status-error';
+    statusBox.textContent = '通信エラーが発生しました。時間をおいて再度お試しください。';
+  } finally {
+    validateLimits();
+    submitButton.disabled = false;
+    submitButton.textContent = '掲載希望を送信する / Submit Posting Request';
+  }
+});
+</script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

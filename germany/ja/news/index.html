@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News | ニュース | J-Connect Germany</title>
+  <meta name="description" content="ドイツ在住日本人向けに、生活・行政・交通・安全などのニュースを出典リンク付きで整理した一覧ページです。" />
+  <meta name="theme-color" content="#f7f3ee" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://j-connect-global.com/germany/ja/news/" />
+  <link rel="icon" type="image/jpeg" href="/assets/images/brand/favicon.png" />
+<link rel="stylesheet" href="/assets/css/site.css">
+
+  <style>
+/* Page-specific styles. Shared site styles live in the common site stylesheet. */
+:root{
+  --red:#e8002d;
+  --orange:#ff6b2b;
+  --cream:#fdf8f2;
+  --paper:#fffdf9;
+  --ink:#1a1014;
+  --muted:#6b5e68;
+  --border:#ede5e0;
+  --card-shadow:0 10px 30px rgba(26,16,20,.07);
+  --radius-xl:28px;
+  --radius-lg:20px;
+  --radius-md:14px;
+  --radius-sm:10px;
+  --max:1280px;
+}
+
+.hero{max-width:var(--max);margin:0 auto;padding:36px 20px 20px}
+
+.hero-box{position:relative;overflow:hidden;background:linear-gradient(90deg, rgba(255,255,255,.42) 0%, rgba(255,255,255,.32) 42%, rgba(255,255,255,.18) 60%, rgba(255,255,255,.08) 100%),url("/assets/images/hero/top-hero.jpg") center center / cover no-repeat,#fff;border:1px solid #d9e0e8;border-radius:34px;padding:32px 28px 26px;box-shadow:var(--card-shadow)}
+
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+
+.eyebrow-dot{width:9px;height:9px;border-radius:999px;background:linear-gradient(135deg,var(--red),var(--orange));flex:0 0 auto}
+
+.hero h1{font-size:clamp(32px,5vw,58px);line-height:1.08;margin-bottom:8px;letter-spacing:.02em}
+
+.hero p{max-width:780px;color:#4a3d46;font-size:15px}
+
+.news-section{padding:8px 0 60px}
+
+.news-disclaimer{margin:0 0 16px;padding:14px 16px;border-radius:14px;background:#fff4f7;border:1px solid #f3c8d4;color:#6e3b4a;font-size:13px}
+
+.news-controls{display:grid;grid-template-columns:2fr repeat(4, minmax(130px,1fr));gap:12px;padding:20px;background:rgba(255,255,255,.88);border:1px solid #e5ebf2;border-radius:22px;box-shadow:var(--card-shadow);margin-bottom:18px}
+
+.news-controls input,.news-controls select{height:46px;border-radius:14px;border:1px solid #d9e0e8;background:#fff;padding:0 14px;font-size:14px;color:#2f3e4c;outline:none;transition:all .18s ease}
+
+.news-controls input:focus,.news-controls select:focus{border-color:#f3c8d4;box-shadow:0 0 0 3px rgba(243,200,212,.28)}
+
+.news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+
+.news-card{display:flex;flex-direction:column;gap:12px;padding:18px;background:rgba(255,255,255,.94);border:1px solid #e5ebf2;border-radius:18px;box-shadow:var(--card-shadow);transition:all .2s ease}
+
+.news-card:hover{transform:translateY(-3px);border-color:#f3c8d4;box-shadow:0 16px 30px rgba(216,75,106,.12)}
+
+.news-card h2{font-size:20px;line-height:1.35}
+
+.news-card p{color:#4f4450;font-size:14px}
+
+.news-card a{align-self:flex-start;color:#c83354;font-weight:700}
+
+.news-card__badges{display:flex;flex-wrap:wrap;gap:8px}
+
+.news-card__badges span{font-size:12px;padding:4px 10px;border-radius:999px;background:#fff4f7;border:1px solid #f3c8d4;color:#a93250}
+
+.news-card__meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:#6f6270;border-top:1px dashed #eadce2;padding-top:8px}
+
+.news-error,.news-empty{grid-column:1 / -1;padding:24px;border-radius:16px;text-align:center;background:#fff;border:1px solid #e5ebf2;color:#6b5e68}
+
+.footer-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#2f3e4c}
+
+.footer-brand img{width:84px;height:50px;object-fit:contain;border-radius:10px;background:transparent;border:none;box-shadow:none}
+
+@media (max-width:1080px){
+.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+.news-controls{grid-template-columns:1fr 1fr}
+}
+
+@media (max-width:720px){
+.news-grid{grid-template-columns:1fr}
+
+.news-controls{grid-template-columns:1fr}
+}
+</style>
+  </head>
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../" aria-label="J-Connect Germany ホーム">
+      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany ヘッダーロゴ">
+      <span class="brand-copy">
+        <span class="brand-title">J-CONNECT GERMANY</span>
+        <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <a href="../" class="active">ホーム</a>
+        <a href="../about/">このサイトについて</a>
+      </nav>
+
+      <div class="header-category header-category-menu" aria-label="カテゴリ選択">
+        <button type="button" class="header-category-trigger">カテゴリ</button>
+        <div class="category-dropdown">
+          <a href="../guides/">手続き・制度</a>
+          <a href="../living/">住まい・生活</a>
+          <a href="../jobs/" data-base="jobs">仕事・求人</a>
+          <a href="../medical/" data-base="medical">医療・緊急</a>
+          <a href="../eat/" data-base="eat">グルメ・飲食</a>
+          <a href="../shopping/" data-base="shopping">買い物・サービス</a>
+          <a href="../community/" data-base="community">交流・掲示板</a>
+          <a href="../events/" data-base="events">おでかけ・イベント</a>
+          <a href="../learn-german/">ドイツ語・学び</a>
+          <a href="../news/">ニュース・読みもの</a>
+        </div>
+      </div>
+
+      <form class="header-search" action="../search/" method="get" role="search">
+        <label class="search-box" aria-label="サイト内検索">
+          <span>⌕</span>
+          <input type="search" name="q" placeholder="検索">
+        </label>
+        <button class="search-btn" type="submit" aria-label="検索">⌕</button>
+      </form>
+
+      <label class="header-language" aria-label="言語切り替え">
+        <span>Language</span>
+        <select id="languageSelect">
+          <option value="../../">日本語</option>
+          <option value="../../">English</option>
+          <option value="../../de/">Deutsch</option>
+          <option value="../../zh/">中文</option>
+          <option value="../../ko/">한국어</option>
+          <option value="../../es/">Espanol</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-box">
+        <span class="eyebrow"><span class="eyebrow-dot"></span>News</span>
+        <h1>ドイツ生活ニュース一覧</h1>
+        <p>生活・行政・交通・安全に関するニュースを、出典元へのリンク付きで確認できます。</p>
+      </div>
+    </section>
+
+    <section class="news-section">
+      <div class="container">
+        <p class="news-disclaimer">このページは外部ニュース・公式情報へのリンクをもとに、ドイツ在住日本人向けに整理したニュース一覧です。正確な内容は必ず各出典元をご確認ください。</p>
+        <section class="news-controls">
+          <input id="newsSearch" type="search" placeholder="キーワードで検索" />
+          <select id="countryFilter"><option value="all">すべての国</option><option value="germany">ドイツ</option><option value="japan">日本</option><option value="eu">EU</option></select>
+          <select id="cityFilter"><option value="all">すべての都市</option><option value="duesseldorf">Düsseldorf</option><option value="nrw">NRW</option><option value="berlin">Berlin</option><option value="frankfurt">Frankfurt</option><option value="nationwide">全国</option></select>
+          <select id="categoryFilter"><option value="all">すべてのカテゴリ</option><option value="life">生活</option><option value="transport">交通</option><option value="visa">ビザ・行政</option><option value="law">法律</option><option value="work">仕事・経済</option><option value="medical">医療</option><option value="travel">観光・イベント</option><option value="safety">災害・安全</option></select>
+          <select id="importanceFilter"><option value="all">すべての重要度</option><option value="important">重要</option><option value="impact">生活影響あり</option><option value="check">要確認</option><option value="normal">通常</option></select>
+        </section>
+        <section id="newsGrid" class="news-grid"></section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+<img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany フッターロゴ">
+          <div class="footer-copy">
+            <div class="footer-title">J-CONNECT GERMANY</div>
+            <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+            <div class="footer-meta">© 2026 J-Connect Germany</div>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="../about/">このサイトについて</a>
+          <a href="../contact/">お問い合わせ</a>
+          <a href="../terms/">利用規約</a>
+          <a href="../privacy/">プライバシー</a>
+          <a href="../impressum/">運営者情報</a>
+        </div>
+      </div>
+    </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('languageSelect').addEventListener('change', (e)=>{ if(e.target.value) window.location.href = e.target.value; });
+  </script>
+  <script src="/assets/js/news.js"></script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

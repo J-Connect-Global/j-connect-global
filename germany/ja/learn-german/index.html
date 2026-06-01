@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ドイツ語・学び | J-Connect Germany</title>
+  <meta name="description" content="ドイツ在住日本人向けのドイツ語学習ハブ。日常、仕事、試験、アプリ、AI、動画、先生、コミュニティまで目的別に学べます。">
+  <link rel="icon" href="/assets/images/brand/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+
+  <style>
+/* Page-specific styles. Shared site styles live in the common site stylesheet. */
+:root{
+  --bg: #f7f4ef;
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface-strong: #ffffff;
+  --line: rgba(91, 72, 51, 0.16);
+  --line-strong: rgba(91, 72, 51, 0.28);
+  --text: #2f261d;
+  --muted: #75685b;
+  --muted-2: #9a8b7a;
+  --brand: #b98246;
+  --brand-dark: #7b4d25;
+  --hover-pink: #d85c8a;
+  --hover-pink-bg: rgba(216, 92, 138, 0.10);
+  --accent: #1f7a63;
+  --shadow: 0 18px 45px rgba(67, 49, 30, 0.10);
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+}
+
+.logo img{
+      height: 42px;
+      width: auto;
+      display: block;
+    }
+
+.nav a{
+      padding: 8px 10px;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+.nav a:hover{
+      color: var(--hover-pink);
+      background: var(--hover-pink-bg);
+    }
+
+.page{
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 22px 72px;
+    }
+
+.hero{
+      min-height: 360px;
+      padding: 54px 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(120deg, rgba(47, 38, 29, 0.70), rgba(47, 38, 29, 0.35)),
+        url("/assets/images/hero/top-hero.jpg") center / cover;
+      color: #fff;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+.hero-content{
+      max-width: 760px;
+    }
+
+.hero-kicker{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+.hero h1{
+      margin: 0;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+    }
+
+.hero p{
+      margin: 18px 0 0;
+      font-size: clamp(15px, 2vw, 19px);
+      max-width: 700px;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+.section{
+      margin-top: 42px;
+    }
+
+.section-head{
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+
+.section h2{
+      margin: 0;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.25;
+    }
+
+.section-lead{
+      margin: 8px 0 0;
+      color: var(--muted);
+      max-width: 780px;
+    }
+
+.entry-grid{
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+.entry-card{
+      position: relative;
+      min-height: 190px;
+      padding: 22px;
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 30px rgba(67, 49, 30, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      overflow: hidden;
+    }
+
+.entry-card::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(185, 130, 70, 0.14), rgba(31, 122, 99, 0.08));
+      opacity: 0;
+      transition: 0.2s ease;
+    }
+
+.entry-card:hover{
+      transform: translateY(-4px);
+      border-color: var(--line-strong);
+      box-shadow: var(--shadow);
+    }
+
+.entry-card:hover::before{
+      opacity: 1;
+    }
+
+.entry-card > *{
+      position: relative;
+      z-index: 1;
+    }
+
+.entry-card__icon{
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      background: rgba(185, 130, 70, 0.14);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+.entry-card h3{
+      margin: 0 0 8px;
+      font-size: 19px;
+    }
+
+.entry-card p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+.level-bar{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: 0 10px 26px rgba(67, 49, 30, 0.06);
+    }
+
+.pill-btn{
+      border: 1px solid var(--line-strong);
+      background: #fff;
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 15px;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+.pill-btn:hover{
+      color: var(--hover-pink);
+      background: var(--hover-pink-bg);
+      border-color: rgba(216, 92, 138, 0.35);
+    }
+
+.route-grid{
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+.route-card{
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+.route-card h3{
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+.route-card p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+.topic-section{
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.74);
+      margin-top: 20px;
+    }
+
+.topic-section h3{
+      margin: 0 0 14px;
+      font-size: 22px;
+    }
+
+.topic-grid{
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+.topic-card{
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 17px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+.topic-card:hover{
+      transform: translateY(-3px);
+      border-color: var(--line-strong);
+      box-shadow: 0 12px 26px rgba(67, 49, 30, 0.08);
+    }
+
+.topic-card strong{
+      display: block;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+.topic-card span{
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+.filter-panel{
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: 0 12px 30px rgba(67, 49, 30, 0.07);
+      display: grid;
+      grid-template-columns: 1.4fr repeat(6, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+.filter-panel input,
+    .filter-panel select{
+      width: 100%;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      padding: 12px 14px;
+      font: inherit;
+      background: #fff;
+      color: var(--text);
+    }
+
+.resource-grid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+.resource-card{
+      padding: 20px;
+      border-radius: var(--radius-md);
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 26px rgba(67, 49, 30, 0.06);
+    }
+
+.resource-card__badges{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 12px;
+    }
+
+.resource-card__badges span{
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--brand-dark);
+      background: rgba(185, 130, 70, 0.13);
+      border: 1px solid rgba(185, 130, 70, 0.20);
+    }
+
+.resource-card h3{
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+.resource-card p{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+.resource-card__meta{
+      display: grid;
+      gap: 8px;
+      margin: 0 0 16px;
+    }
+
+.resource-card__meta div{
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 8px;
+      font-size: 13px;
+    }
+
+.resource-card__meta dt{
+      color: var(--muted-2);
+      font-weight: 800;
+    }
+
+.resource-card__meta dd{
+      margin: 0;
+      color: var(--text);
+    }
+
+.resource-card__link{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 10px 14px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+.resource-card__link:hover{
+      background: var(--hover-pink);
+    }
+
+.resource-empty{
+      grid-column: 1 / -1;
+      padding: 24px;
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+@media (max-width: 980px){
+.entry-grid,
+      .topic-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+.route-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+.filter-panel{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+.resource-grid{
+        grid-template-columns: 1fr;
+      }
+}
+
+@media (max-width: 640px){
+.hero{
+        padding: 38px 24px;
+        min-height: 320px;
+      }
+
+.entry-grid,
+      .topic-grid,
+      .route-grid,
+      .filter-panel{
+        grid-template-columns: 1fr;
+      }
+
+.section-head{
+        display: block;
+      }
+}
+</style>
+  </head>
+
+<body>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../" aria-label="J-Connect Germany ホーム">
+      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany ヘッダーロゴ">
+      <span class="brand-copy">
+        <span class="brand-title">J-CONNECT GERMANY</span>
+        <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <a href="../" class="active">ホーム</a>
+        <a href="../about/">このサイトについて</a>
+      </nav>
+
+      <div class="header-category header-category-menu" aria-label="カテゴリ選択">
+        <button type="button" class="header-category-trigger">カテゴリ</button>
+        <div class="category-dropdown">
+          <a href="../guides/">手続き・制度</a>
+          <a href="../living/">住まい・生活</a>
+          <a href="../jobs/" data-base="jobs">仕事・求人</a>
+          <a href="../medical/" data-base="medical">医療・緊急</a>
+          <a href="../eat/" data-base="eat">グルメ・飲食</a>
+          <a href="../shopping/" data-base="shopping">買い物・サービス</a>
+          <a href="../community/" data-base="community">交流・掲示板</a>
+          <a href="../events/" data-base="events">おでかけ・イベント</a>
+          <a href="../learn-german/">ドイツ語・学び</a>
+          <a href="../news/">ニュース・読みもの</a>
+        </div>
+      </div>
+
+      <form class="header-search" action="../search/" method="get" role="search">
+        <label class="search-box" aria-label="サイト内検索">
+          <span>⌕</span>
+          <input type="search" name="q" placeholder="検索">
+        </label>
+        <button class="search-btn" type="submit" aria-label="検索">⌕</button>
+      </form>
+
+      <label class="header-language" aria-label="言語切り替え">
+        <span>Language</span>
+        <select id="languageSelect">
+          <option value="../">日本語</option>
+          <option value="../../">English</option>
+          <option value="../../de/">Deutsch</option>
+          <option value="../../zh/">中文</option>
+          <option value="../../ko/">한국어</option>
+          <option value="../../es/">Espanol</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</header>
+
+  <main class="page">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-kicker">Deutsch lernen in Deutschland</div>
+        <h1>ドイツ語・学び</h1>
+        <p>日常生活、仕事、試験、AI、アプリ、動画、先生、コミュニティまで。ドイツ在住日本人が続けやすい学習ルートをまとめました。</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="entry-title">
+      <div class="section-head">
+        <div>
+          <h2 id="entry-title">目的から探す</h2>
+          <p class="section-lead">まずは今の目的に近い入口を選んでください。細かい教材は下部でレベル別にも探せます。</p>
+        </div>
+      </div>
+
+      <div class="entry-grid">
+        <a class="entry-card" href="#roadmap" data-layer-shortcut="roadmap">
+          <div class="entry-card__icon">🧭</div>
+          <h3>ロードマップ</h3>
+          <p>完全初心者からC1/C2まで、何をどの順番で学ぶか整理します。</p>
+        </a>
+
+        <a class="entry-card" href="#daily" data-layer-shortcut="daily">
+          <div class="entry-card__icon">🏠</div>
+          <h3>日常ドイツ語</h3>
+          <p>病院、外人局、住居、電話、メールなど生活で使う表現。</p>
+        </a>
+
+        <a class="entry-card" href="#business" data-layer-shortcut="business">
+          <div class="entry-card__icon">💼</div>
+          <h3>ビジネスドイツ語</h3>
+          <p>メール、会議、面接、IT、Supply Chain、職場表現。</p>
+        </a>
+
+        <a class="entry-card" href="#exam" data-layer-shortcut="exam">
+          <div class="entry-card__icon">🎓</div>
+          <h3>試験対策 A1-C2</h3>
+          <p>Goethe、telc、DTZ、TestDaF、永住・帰化向け対策。</p>
+        </a>
+
+        <a class="entry-card" href="#apps-ai" data-layer-shortcut="apps-ai">
+          <div class="entry-card__icon">🤖</div>
+          <h3>アプリ・AIで学ぶ</h3>
+          <p>Duolingo、Anki、ChatGPT、MyGPT、DeepL Writeなど。</p>
+        </a>
+
+        <a class="entry-card" href="#media" data-layer-shortcut="media">
+          <div class="entry-card__icon">🎧</div>
+          <h3>動画・音声で学ぶ</h3>
+          <p>DW、Nicos Weg、YouTube、Podcast、Netflix、Spotify。</p>
+        </a>
+
+        <a class="entry-card" href="#speaking" data-layer-shortcut="speaking">
+          <div class="entry-card__icon">🗣️</div>
+          <h3>会話練習・先生</h3>
+          <p>Tandem、HelloTalk、VHS、1on1先生、会話イベント。</p>
+        </a>
+
+        <a class="entry-card" href="#community" data-layer-shortcut="community">
+          <div class="entry-card__icon">🌱</div>
+          <h3>コミュニティ</h3>
+          <p>J-Connect Germanyで質問、添削、学習報告、仲間探し。</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="level-title">
+      <h2 id="level-title">レベルから探す</h2>
+      <p class="section-lead">B2に必要なものを全部見たい、A1から始めたい、という場合はこちらから絞り込めます。</p>
+      <div class="level-bar">
+        <button class="pill-btn" type="button" data-level-shortcut="A1">A1</button>
+        <button class="pill-btn" type="button" data-level-shortcut="A2">A2</button>
+        <button class="pill-btn" type="button" data-level-shortcut="B1">B1</button>
+        <button class="pill-btn" type="button" data-level-shortcut="B2">B2</button>
+        <button class="pill-btn" type="button" data-level-shortcut="C1">C1</button>
+        <button class="pill-btn" type="button" data-level-shortcut="C2">C2</button>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="route-title">
+      <h2 id="route-title">おすすめの始め方</h2>
+      <p class="section-lead">迷ったら、まずは自分の状況に近いルートを選んでください。</p>
+      <div class="route-grid">
+        <div class="route-card">
+          <h3>完全初心者</h3>
+          <p>ロードマップ → DW Nicos Weg → Anki → 日常フレーズ</p>
+        </div>
+        <div class="route-card">
+          <h3>生活で困っている</h3>
+          <p>日常ドイツ語 → 電話・メール → AI練習 → 外人局/病院</p>
+        </div>
+        <div class="route-card">
+          <h3>B1試験</h3>
+          <p>試験対策 → B1 → Schreiben/Sprechen → 模擬練習</p>
+        </div>
+        <div class="route-card">
+          <h3>仕事で必要</h3>
+          <p>ビジネス → メール/会議 → DeepL Write → MyGPT練習</p>
+        </div>
+        <div class="route-card">
+          <h3>話せるようになりたい</h3>
+          <p>会話練習 → Tandem/HelloTalk → ロールプレイ → 先生</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="topics-title">
+      <h2 id="topics-title">テーマから探す</h2>
+      <p class="section-lead">各カテゴリの中で、具体的な学習テーマを選べます。</p>
+
+      <div class="topic-section" id="daily">
+        <h3>日常ドイツ語</h3>
+        <div class="topic-grid">
+          <button class="topic-card" data-layer-shortcut="daily"><strong>外人局</strong><span>滞在許可、Fiktionsbescheinigung、予約確認</span></button>
+          <button class="topic-card" data-layer-shortcut="daily"><strong>病院</strong><span>予約、受付、症状説明、薬</span></button>
+          <button class="topic-card" data-layer-shortcut="daily"><strong>電話・メール</strong><span>問い合わせ、催促、キャンセル、苦情</span></button>
+          <button class="topic-card" data-layer-shortcut="daily"><strong>学校・Kita</strong><span>欠席連絡、面談、行事、小児科</span></button>
+        </div>
+      </div>
+
+      <div class="topic-section" id="business">
+        <h3>ビジネスドイツ語</h3>
+        <div class="topic-grid">
+          <button class="topic-card" data-layer-shortcut="business"><strong>メール</strong><span>依頼、確認、催促、謝罪、日程調整</span></button>
+          <button class="topic-card" data-layer-shortcut="business"><strong>会議</strong><span>意見、質問、反対、合意、議事録</span></button>
+          <button class="topic-card" data-layer-shortcut="business"><strong>IT・Salesforce</strong><span>要件、チケット、権限、レポート</span></button>
+          <button class="topic-card" data-layer-shortcut="business"><strong>Supply Chain</strong><span>在庫、納期、発注、物流、サプライヤー</span></button>
+        </div>
+      </div>
+
+      <div class="topic-section" id="exam">
+        <h3>試験対策 A1-C2</h3>
+        <div class="topic-grid">
+          <button class="topic-card" data-level-shortcut="A1"><strong>A1</strong><span>自己紹介、簡単な手紙、口頭試験</span></button>
+          <button class="topic-card" data-level-shortcut="B1"><strong>B1</strong><span>telc、Goethe、DTZ、永住・帰化</span></button>
+          <button class="topic-card" data-level-shortcut="B2"><strong>B2</strong><span>仕事、大学準備、作文、議論</span></button>
+          <button class="topic-card" data-level-shortcut="C1"><strong>C1/C2</strong><span>大学、専門職、論述、高度表現</span></button>
+        </div>
+      </div>
+
+      <div class="topic-section" id="apps-ai">
+        <h3>アプリ・AIで学ぶ</h3>
+        <div class="topic-grid">
+          <button class="topic-card" data-layer-shortcut="apps-ai"><strong>総合アプリ</strong><span>Duolingo、Babbel、Busuu、Memrise</span></button>
+          <button class="topic-card" data-layer-shortcut="apps-ai"><strong>単語・暗記</strong><span>Anki、Quizlet、Drops、Clozemaster</span></button>
+          <button class="topic-card" data-layer-shortcut="apps-ai"><strong>AI添削</strong><span>ChatGPT、MyGPT、DeepL Write、LanguageTool</span></button>
+          <button class="topic-card" data-layer-shortcut="apps-ai"><strong>プロンプト集</strong><span>メール、作文、会話、試験練習</span></button>
+        </div>
+      </div>
+
+      <div class="topic-section" id="media">
+        <h3>動画・音声で学ぶ</h3>
+        <div class="topic-grid">
+          <button class="topic-card" data-layer-shortcut="media"><strong>DW・Nicos Weg</strong><span>A1-B1の定番無料教材</span></button>
+          <button class="topic-card" data-layer-shortcut="media"><strong>YouTube</strong><span>Easy German、Anja、YourGermanTeacher</span></button>
+          <button class="topic-card" data-layer-shortcut="media"><strong>Podcast</strong><span>Slow German、Coffee Break German</span></button>
+          <button class="topic-card" data-layer-shortcut="media"><strong>Netflix・Song</strong><span>字幕学習、Spotify、Original Song</span></button>
+        </div>
+      </div>
+
+      <div class="topic-section" id="speaking">
+        <h3>会話練習・先生</h3>
+        <div class="topic-grid">
+          <button class="topic-card" data-layer-shortcut="speaking"><strong>タンデム</strong><span>Tandem、HelloTalk、地域タンデム</span></button>
+          <button class="topic-card" data-layer-shortcut="speaking"><strong>1on1先生</strong><span>italki、Preply、個人先生紹介</span></button>
+          <button class="topic-card" data-layer-shortcut="speaking"><strong>VHS・語学学校</strong><span>地域クラス、統合コース、オンライン</span></button>
+          <button class="topic-card" data-layer-shortcut="speaking"><strong>ロールプレイ</strong><span>病院、面接、会議、電話</span></button>
+        </div>
+      </div>
+
+      <div class="topic-section" id="community">
+        <h3>コミュニティ</h3>
+        <div class="topic-grid">
+          <button class="topic-card" data-layer-shortcut="community"><strong>質問部屋</strong><span>文法、単語、メール添削</span></button>
+          <button class="topic-card" data-layer-shortcut="community"><strong>レベル別部屋</strong><span>A1、A2、B1、B2、C1</span></button>
+          <button class="topic-card" data-layer-shortcut="community"><strong>学習チャレンジ</strong><span>30日、90日、毎日投稿</span></button>
+          <button class="topic-card" data-layer-shortcut="community"><strong>体験談</strong><span>試験合格記、教材レビュー、先生情報</span></button>
+        </div>
+      </div>
+
+      <div class="topic-section" id="roadmap">
+        <h3>ロードマップ</h3>
+        <div class="topic-grid">
+          <button class="topic-card" data-layer-shortcut="roadmap"><strong>完全初心者</strong><span>発音、冠詞、基本文法、学習習慣</span></button>
+          <button class="topic-card" data-layer-shortcut="roadmap"><strong>レベル別</strong><span>A1からC2までの学習順</span></button>
+          <button class="topic-card" data-layer-shortcut="roadmap"><strong>目的別</strong><span>生活、仕事、試験、子育て、永住</span></button>
+          <button class="topic-card" data-layer-shortcut="roadmap"><strong>30日・90日</strong><span>短期集中プランと学習ログ</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resources" aria-labelledby="resources-title">
+      <h2 id="resources-title">教材・リソース一覧</h2>
+      <p class="section-lead">J-Connect Germanyオリジナル教材、AI練習、外部教材、アプリ、先生・クラスを横断して探せます。</p>
+
+      <div class="filter-panel">
+        <input id="resourceSearch" type="search" placeholder="キーワード検索：外人局、B1、メール、Duolingo...">
+
+        <select id="levelFilter">
+          <option value="all">すべてのレベル</option>
+          <option value="A0">A0</option>
+          <option value="A1">A1</option>
+          <option value="A2">A2</option>
+          <option value="B1">B1</option>
+          <option value="B2">B2</option>
+          <option value="C1">C1</option>
+          <option value="C2">C2</option>
+        </select>
+
+        <select id="layerFilter">
+          <option value="all">すべての目的</option>
+          <option value="roadmap">ロードマップ</option>
+          <option value="daily">日常</option>
+          <option value="business">ビジネス</option>
+          <option value="exam">試験</option>
+          <option value="apps-ai">アプリ・AI</option>
+          <option value="media">動画・音声</option>
+          <option value="speaking">会話・先生</option>
+          <option value="community">コミュニティ</option>
+        </select>
+
+        <select id="formatFilter">
+          <option value="all">すべての形式</option>
+          <option value="article">記事</option>
+          <option value="template">テンプレ</option>
+          <option value="phrases">フレーズ</option>
+          <option value="dialogue">会話</option>
+          <option value="video">動画</option>
+          <option value="app">アプリ</option>
+          <option value="ai">AI</option>
+          <option value="prompt">プロンプト</option>
+          <option value="course">コース</option>
+          <option value="class">クラス</option>
+          <option value="flashcard">単語カード</option>
+        </select>
+
+
+        <select id="purposeFilter">
+          <option value="all">すべての目的タグ</option>
+          <option value="daily-life">生活</option>
+          <option value="work">仕事</option>
+          <option value="exam">試験</option>
+          <option value="conversation">会話</option>
+          <option value="vocabulary">単語</option>
+          <option value="ai">AI学習</option>
+          <option value="community">コミュニティ</option>
+        </select>
+
+        <select id="typeFilter">
+          <option value="all">すべての種別</option>
+          <option value="original">Original</option>
+          <option value="external">External</option>
+          <option value="ai_tool">AI Tool</option>
+          <option value="community">Community</option>
+          <option value="teacher_class">Teacher/Class</option>
+        </select>
+
+        <select id="priceFilter">
+          <option value="all">すべての料金</option>
+          <option value="free">無料</option>
+          <option value="freemium">一部無料</option>
+          <option value="paid">有料</option>
+        </select>
+      </div>
+
+      <div id="resourceGrid" class="resource-grid"></div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+<img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany フッターロゴ">
+          <div class="footer-copy">
+            <div class="footer-title">J-CONNECT GERMANY</div>
+            <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+            <div class="footer-meta">© 2026 J-Connect Germany</div>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="../about/">このサイトについて</a>
+          <a href="../contact/">お問い合わせ</a>
+          <a href="../terms/">利用規約</a>
+          <a href="../privacy/">プライバシー</a>
+          <a href="../impressum/">運営者情報</a>
+        </div>
+      </div>
+    </footer>
+
+  <script src="/assets/js/learn-german.js"></script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 // ===============================
-// Nihon Gateway Cookie Consent
+// J-Connect Cookie Consent
 // ===============================
 
 (function () {

@@ -71,6 +71,52 @@ h1{font-size:clamp(32px,4.5vw,54px);line-height:1.08;letter-spacing:-.03em;margi
 
 .toc{position:static}
 }
+
+/* PR3 static/support polish: align legal pages with the Community visual system. */
+.wrap{max-width:1120px;padding:24px 16px 56px}
+
+.hero{
+  background:rgba(255,255,255,.94);
+  border-color:var(--line);
+  border-radius:22px;
+  box-shadow:0 10px 24px rgba(30,58,95,.07);
+}
+
+.eyebrow{
+  color:var(--site-navy);
+  border-color:var(--line);
+  background:var(--site-sakura);
+  font-weight:900;
+}
+
+h1{color:var(--site-navy);letter-spacing:0}
+
+.lead{color:var(--muted);line-height:1.7}
+
+.toc,
+.article{
+  background:rgba(255,255,255,.94);
+  border-color:var(--line);
+  border-radius:22px;
+  box-shadow:0 8px 18px rgba(30,58,95,.06);
+}
+
+.toc a{color:#34414d;text-decoration:none}
+
+.toc a:hover{background:var(--site-sakura);color:var(--site-navy)}
+
+.article h2{color:var(--site-navy);letter-spacing:0}
+
+.article p,
+.article li{line-height:1.8;color:#34414d}
+
+@media (max-width:640px){
+  .wrap{padding:18px 12px 44px}
+  .hero,.toc,.article{border-radius:18px;padding:18px}
+  h1{font-size:clamp(28px,9vw,36px)}
+  .lead{font-size:15px}
+  .article h2{font-size:22px}
+}
 </style>
 <script>
 (function () {

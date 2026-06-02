@@ -75,6 +75,58 @@ h1{font-size:clamp(32px,4.5vw,54px);line-height:1.08;letter-spacing:-.03em;margi
 
 .toc{position:static}
 }
+
+/* PR3 static/support polish: align legal pages with the Community visual system. */
+.wrap{max-width:1120px;padding:24px 16px 56px}
+
+.hero{
+  background:rgba(255,255,255,.94);
+  border-color:var(--line);
+  border-radius:22px;
+  box-shadow:0 10px 24px rgba(30,58,95,.07);
+}
+
+.eyebrow{
+  color:var(--site-navy);
+  border-color:var(--line);
+  background:var(--site-sakura);
+  font-weight:900;
+}
+
+h1{color:var(--site-navy);letter-spacing:0}
+
+.lead{color:var(--muted);line-height:1.7}
+
+.toc,
+.article{
+  background:rgba(255,255,255,.94);
+  border-color:var(--line);
+  border-radius:22px;
+  box-shadow:0 8px 18px rgba(30,58,95,.06);
+}
+
+.toc a{color:#34414d;text-decoration:none}
+
+.toc a:hover{background:var(--site-sakura);color:var(--site-navy)}
+
+.article h2{color:var(--site-navy);letter-spacing:0}
+
+.article p,
+.article li{line-height:1.8;color:#34414d}
+
+.callout{
+  background:#f8fafc;
+  border-color:var(--line);
+  color:#34414d;
+}
+
+@media (max-width:640px){
+  .wrap{padding:18px 12px 44px}
+  .hero,.toc,.article{border-radius:18px;padding:18px}
+  h1{font-size:clamp(28px,9vw,36px)}
+  .lead{font-size:15px}
+  .article h2{font-size:22px}
+}
 </style>
 <script>
 (function () {
@@ -161,13 +213,13 @@ h1{font-size:clamp(32px,4.5vw,54px);line-height:1.08;letter-spacing:-.03em;margi
         <section id="p1"><h2>1. 基本方針</h2><p>本サイトは、利用者のプライバシーを尊重し、適用される法令および合理的な実務基準に従って情報を取り扱います。本サイトはドイツおよびEU圏の利用を想定しており、Cookieや解析ツールの利用に関しては、必要に応じて同意取得を前提とした運用を行います。</p></section>
         <section id="p2"><h2>2. 取得する情報</h2><p>本サイトでは、以下の情報を取得する場合があります。</p><ul><li>お問い合わせ時に入力または送信される氏名、メールアドレス、件名、本文等</li><li>会員登録時の登録情報、ログイン情報、プロフィール情報等</li><li>投稿・掲載依頼・レビュー・コメント・アップロードデータ等</li><li>アクセス日時、閲覧ページ、参照元、端末情報、ブラウザ情報、IPアドレス、Cookie識別子、広告識別子等</li><li>Google Analytics 等を通じて収集される利用状況データ</li></ul></section>
         <section id="p3"><h2>3. 利用目的</h2><p>取得した情報は、以下の目的で利用します。</p><ul><li>お問い合わせ対応、本人確認、返信のため</li><li>掲載依頼、修正依頼、削除依頼への対応のため</li><li>会員機能、投稿機能、保存機能等の提供および改善のため</li><li>サイトの品質改善、利便性向上、UI/UX改善、アクセス解析のため</li><li>不正利用防止、セキュリティ確保、利用規約違反対応のため</li><li>広告、提携、求人掲載等に関連する連絡や運営のため</li></ul></section>
-        <section id="p4"><h2>4. Cookie 等の利用</h2><p>本サイトでは、利便性向上、アクセス解析、設定保持、将来的な会員機能・広告機能の提供のため、Cookie やこれに類する技術を利用する場合があります。法令上必要な場合、解析用・広告用・機能拡張用 Cookie 等については、同意管理ツール（Cookie Banner / Consent Management Platform）を通じて事前同意を取得したうえで有効化する運用を行います。</p><div class="callout"><strong>実装の考え方</strong><br>Google Analytics を EU/ドイツ向けに安全寄りで運用する場合は、同意前には GA4 を読み込まない構成にするのが実務上わかりやすいです。Cookie バナーで「同意する」を押した後にだけ GA4 スクリプトを発火させる形がおすすめです。</div></section>
+        <section id="p4"><h2>4. Cookie 等の利用</h2><p>本サイトでは、利便性向上、アクセス解析、設定保持、将来的な会員機能・広告機能の提供のため、Cookie やこれに類する技術を利用する場合があります。法令上必要な場合、解析用・広告用・機能拡張用 Cookie 等については、同意管理ツール（Cookie Banner / Consent Management Platform）を通じて事前同意を取得したうえで有効化する運用を行います。</p></section>
         <section id="p5"><h2>5. Google Analytics の利用</h2><p>本サイトでは、Google が提供する Google Analytics を利用する場合があります。Google Analytics は Cookie 等を用いて、利用者による本サイトの利用状況を分析する仕組みです。収集される情報、Google による利用方法、Google のプライバシーポリシー等については Google の案内をご確認ください。</p><p>本サイトでは、必要に応じて IP 匿名化相当の配慮、内部トラフィック除外、テスト環境除外、同意取得後のみの計測開始等の措置を講じることがあります。</p></section>
         <section id="p6"><h2>6. 外部サービスの利用</h2><h3>GitHub Pages</h3><p>本サイトは GitHub Pages 上で配信される場合があります。配信基盤として GitHub 側でアクセスログその他の技術情報が処理される可能性があります。</p><h3>Google Apps Script / Google Sheets</h3><p>本サイトでは、データ取得や表示のために Google Apps Script、Google Sheets 等を利用する場合があります。</p><h3>Google Maps / YouTube / SNS 埋め込み</h3><p>地図、動画、投稿埋め込み等の表示にあたり、Google Maps、YouTube、各種SNS等の外部サービスを利用することがあります。これらの埋め込みは、表示時または操作時に第三者サービスへ通信が発生する場合があります。</p></section>
         <section id="p7"><h2>7. 会員機能・投稿機能</h2><p>本サイトでは、現在または将来的に会員登録、保存機能、コメント、レビュー、掲示板、掲載依頼、投稿機能等を提供する場合があります。利用者が送信・投稿した内容は、公開表示、編集、審査、削除、保管、違反対応、サービス改善等のために利用されることがあります。個人情報や公開範囲については、機能ごとの案内または設定に従うものとします。</p></section>
         <section id="p8"><h2>8. 情報共有・第三者提供</h2><p>本サイトは、法令上認められる場合を除き、利用者の個人情報を本人の同意なく第三者に提供しません。ただし、ホスティング、メール対応、解析、フォーム処理、埋め込み配信、技術運用等に必要な範囲で、委託先または外部サービス提供者を利用することがあります。</p></section>
         <section id="p9"><h2>9. 保管期間</h2><p>本サイトは、取得した情報を利用目的に必要な期間、または法令上必要な期間に限り保管します。不要となった情報については、合理的な範囲で削除または匿名化を行います。</p></section>
-        <section id="p10"><h2>10. 利用者の権利</h2><p>適用法令により認められる範囲で、利用者は、自己に関する個人情報について、開示、訂正、削除、利用停止、同意撤回等を求めることができます。具体的な申請は Contact ページまたは下記メールアドレスまでご連絡ください。</p></section>
+        <section id="p10"><h2>10. 利用者の権利</h2><p>適用法令により認められる範囲で、利用者は、自己に関する個人情報について、開示、訂正、削除、利用停止、同意撤回等を求めることができます。具体的な申請は Contact ページからご連絡ください。</p></section>
         <section id="p11"><h2>11. 国際移転</h2><p>本サイトで利用する外部サービスの一部は、EU域外の国・地域に所在する事業者により提供される場合があります。その場合、当該サービス提供者の仕組みに従って情報が域外移転される可能性があります。</p></section>
         <section id="p12"><h2>12. お問い合わせ</h2><p>本ポリシーに関するお問い合わせ、個人情報に関するご相談、削除・訂正・利用停止等の申請は、Contact ページからご連絡ください。</p><p class="note">Last updated: 2026-03-29</p></section>
       </article>

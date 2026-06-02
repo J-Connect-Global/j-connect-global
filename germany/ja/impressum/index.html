@@ -58,6 +58,51 @@ h1{font-size:clamp(32px,4.5vw,52px);line-height:1.08;letter-spacing:-.03em;margi
 @media (max-width:840px){
 .info{grid-template-columns:1fr}
 }
+
+/* PR3 static/support polish: align legal pages with the Community visual system. */
+.wrap{max-width:960px;padding:24px 16px 56px}
+
+.hero,
+.panel{
+  background:rgba(255,255,255,.94);
+  border-color:var(--line);
+  border-radius:22px;
+  box-shadow:0 8px 18px rgba(30,58,95,.06);
+}
+
+.hero{box-shadow:0 10px 24px rgba(30,58,95,.07)}
+
+.eyebrow{
+  color:var(--site-navy);
+  border-color:var(--line);
+  background:var(--site-sakura);
+  font-weight:900;
+}
+
+h1,
+.panel h2{color:var(--site-navy);letter-spacing:0}
+
+.lead,
+.panel p,
+.panel li{line-height:1.8;color:#34414d}
+
+.info{
+  border-color:var(--line);
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.info div:nth-child(odd){
+  background:#f8fafc;
+  color:var(--site-navy);
+}
+
+@media (max-width:640px){
+  .wrap{padding:18px 12px 44px}
+  .hero,.panel{border-radius:18px;padding:18px}
+  h1{font-size:clamp(28px,9vw,36px)}
+  .lead{font-size:15px}
+}
 </style>
 <script>
 (function () {

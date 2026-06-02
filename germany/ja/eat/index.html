@@ -559,6 +559,253 @@
         text-align:center;
       }
 }
+
+/* PR2 listing visual standardization: Community-aligned page surface */
+:root{
+  --listing-bg:#FAFBFC;
+  --listing-paper:#FFFFFF;
+  --listing-ink:#1F2937;
+  --listing-muted:#64748B;
+  --listing-line:#E5E7EB;
+  --listing-line-strong:#CBD5E1;
+  --listing-navy:#1E3A5F;
+  --listing-navy-hover:#16304E;
+  --listing-sakura:#E8A2B8;
+  --listing-sakura-light:#FCEFF4;
+  --listing-shadow:0 6px 14px rgba(30,58,95,.04);
+  --listing-shadow-hover:0 12px 24px rgba(30,58,95,.08);
+  --listing-radius:16px;
+  --listing-max:1320px;
+}
+
+body{
+  background:
+    linear-gradient(rgba(250,251,252,.96), rgba(250,251,252,.985)),
+    url("/assets/images/brand/site-bg.jpg") center top / cover fixed no-repeat,
+    var(--listing-bg);
+  color:var(--listing-ink);
+}
+
+:root{
+  --red:var(--listing-navy);
+  --orange:var(--listing-sakura);
+  --cream:var(--listing-bg);
+  --paper:var(--listing-paper);
+  --ink:var(--listing-ink);
+  --muted:var(--listing-muted);
+  --border:var(--listing-line);
+  --blue:var(--listing-navy);
+  --purple:var(--listing-navy);
+  --card-shadow:var(--listing-shadow);
+  --radius-xl:var(--listing-radius);
+  --radius-lg:14px;
+  --radius-md:12px;
+}
+
+.hero{
+  max-width:var(--listing-max);
+  padding:18px 20px 14px;
+}
+
+.hero-box{
+  border:1px solid var(--listing-line);
+  border-radius:22px;
+  background:
+    linear-gradient(110deg, rgba(255,255,255,.98) 0%, rgba(250,251,252,.95) 60%, rgba(252,239,244,.82) 100%),
+    url("/assets/images/cards/eat.jpg") right center / min(42vw, 520px) auto no-repeat,
+    #fff;
+  box-shadow:0 10px 24px rgba(30,58,95,.07);
+  padding:22px;
+}
+
+.eyebrow{
+  color:var(--listing-navy);
+  letter-spacing:.06em;
+  margin-bottom:10px;
+}
+
+.eyebrow-dot{
+  background:var(--listing-sakura);
+}
+
+.hero h1{
+  max-width:760px;
+  color:var(--listing-navy);
+  font-size:clamp(28px, 3.5vw, 42px);
+  letter-spacing:0;
+  line-height:1.12;
+}
+
+.hero p{
+  max-width:760px;
+  color:var(--listing-muted);
+  font-size:15px;
+  line-height:1.7;
+}
+
+.view-toggle-wrap{
+  max-width:var(--listing-max);
+  padding:0 20px 10px;
+}
+
+.view-toggle{
+  border-color:var(--listing-line);
+  border-radius:999px;
+  padding:3px;
+  box-shadow:0 6px 14px rgba(25,39,52,.05);
+}
+
+.view-btn{
+  min-height:32px;
+  padding:0 13px;
+  color:#4d5b68;
+}
+
+.view-btn.active{
+  background:var(--listing-navy);
+  color:#fff;
+}
+
+.layout{
+  max-width:var(--listing-max);
+  padding:8px 20px 80px;
+  gap:16px;
+}
+
+.layout.map-mode{
+  padding:8px 20px 80px;
+  gap:16px;
+}
+
+.panel,
+.filter-panel,
+.card,
+.map-shell,
+.status-box,
+.empty-box{
+  border-color:var(--listing-line);
+  background:#fff;
+  border-radius:16px;
+  box-shadow:var(--listing-shadow);
+}
+
+.filter-panel{
+  padding:16px;
+}
+
+.panel-title,
+.results-title{
+  color:var(--listing-navy);
+  letter-spacing:0;
+}
+
+.reset-btn{
+  color:var(--listing-navy);
+}
+
+.input,
+.select{
+  border-color:var(--listing-line);
+  border-radius:12px;
+}
+
+.input:focus,
+.select:focus{
+  border-color:var(--listing-navy);
+  box-shadow:0 0 0 4px rgba(30,58,95,.12);
+}
+
+.chips{
+  gap:8px;
+}
+
+.chip{
+  border-color:var(--listing-line);
+  background:#fff;
+  color:#384552;
+  border-radius:999px;
+}
+
+.cards{
+  gap:12px;
+}
+
+.card{
+  overflow:hidden;
+}
+
+.card:hover{
+  transform:translateY(-1px);
+  border-color:var(--listing-line-strong);
+  box-shadow:var(--listing-shadow-hover);
+}
+
+.card.active-map-item{
+  border-color:var(--listing-navy);
+  box-shadow:0 0 0 3px rgba(30,58,95,.13), var(--listing-shadow);
+}
+
+.card-body{
+  padding:16px;
+  gap:10px;
+}
+
+.card-title{
+  color:var(--listing-ink);
+  font-size:19px;
+  letter-spacing:0;
+}
+
+.card-subtitle,
+.meta-value,
+.results-sub{
+  color:var(--listing-muted);
+}
+
+.meta-label{
+  color:var(--listing-navy);
+}
+
+.btn{
+  border-radius:12px;
+}
+
+.btn-primary{
+  background:var(--listing-navy);
+  color:#fff;
+}
+
+.btn-primary:hover{
+  background:var(--listing-navy-hover);
+  box-shadow:0 10px 22px rgba(30,58,95,.16);
+}
+
+.btn-secondary{
+  border-color:var(--listing-line);
+  color:var(--listing-navy);
+}
+
+.map-shell{
+  border-radius:16px;
+}
+
+@media (max-width:780px){
+  .hero{
+    padding:16px 12px 12px;
+  }
+
+  .hero-box{
+    padding:20px;
+  }
+
+  .view-toggle-wrap,
+  .layout,
+  .layout.map-mode{
+    padding-left:12px;
+    padding-right:12px;
+  }
+}
+
 </style>
 
 <script>

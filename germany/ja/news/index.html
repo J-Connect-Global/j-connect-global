@@ -86,6 +86,155 @@
 
 .news-controls{grid-template-columns:1fr}
 }
+
+/* PR2 listing visual standardization: Community-aligned page surface */
+:root{
+  --listing-bg:#FAFBFC;
+  --listing-paper:#FFFFFF;
+  --listing-ink:#1F2937;
+  --listing-muted:#64748B;
+  --listing-line:#E5E7EB;
+  --listing-line-strong:#CBD5E1;
+  --listing-navy:#1E3A5F;
+  --listing-navy-hover:#16304E;
+  --listing-sakura:#E8A2B8;
+  --listing-sakura-light:#FCEFF4;
+  --listing-shadow:0 6px 14px rgba(30,58,95,.04);
+  --listing-shadow-hover:0 12px 24px rgba(30,58,95,.08);
+  --listing-radius:16px;
+  --listing-max:1320px;
+}
+
+body{
+  background:
+    linear-gradient(rgba(250,251,252,.96), rgba(250,251,252,.985)),
+    url("/assets/images/brand/site-bg.jpg") center top / cover fixed no-repeat,
+    var(--listing-bg);
+  color:var(--listing-ink);
+}
+
+:root{
+  --red:var(--listing-navy);
+  --orange:var(--listing-sakura);
+  --cream:var(--listing-bg);
+  --paper:var(--listing-paper);
+  --ink:var(--listing-ink);
+  --muted:var(--listing-muted);
+  --border:var(--listing-line);
+  --card-shadow:var(--listing-shadow);
+  --radius-xl:var(--listing-radius);
+}
+
+.hero{
+  max-width:var(--listing-max);
+  padding:18px 20px 14px;
+}
+
+.hero-box{
+  border:1px solid var(--listing-line);
+  border-radius:22px;
+  background:
+    linear-gradient(110deg, rgba(255,255,255,.98) 0%, rgba(250,251,252,.95) 60%, rgba(252,239,244,.82) 100%),
+    url("/assets/images/cards/news.jpg") right center / min(42vw, 520px) auto no-repeat,
+    #fff;
+  box-shadow:0 10px 24px rgba(30,58,95,.07);
+  padding:22px;
+}
+
+.eyebrow{
+  color:var(--listing-navy);
+  letter-spacing:.06em;
+  margin-bottom:10px;
+}
+
+.eyebrow-dot{
+  background:var(--listing-sakura);
+}
+
+.hero h1{
+  color:var(--listing-navy);
+  font-size:clamp(28px, 3.5vw, 42px);
+  letter-spacing:0;
+}
+
+.hero p{
+  max-width:760px;
+  color:var(--listing-muted);
+  line-height:1.7;
+}
+
+.news-section{
+  padding:8px 0 60px;
+}
+
+.news-disclaimer,
+.news-controls,
+.news-card,
+.news-error,
+.news-empty{
+  border-color:var(--listing-line);
+  background:#fff;
+  border-radius:16px;
+  box-shadow:var(--listing-shadow);
+}
+
+.news-controls{
+  padding:16px;
+  gap:10px;
+}
+
+.news-controls input,
+.news-controls select{
+  border-color:var(--listing-line);
+  border-radius:12px;
+}
+
+.news-controls input:focus,
+.news-controls select:focus{
+  border-color:var(--listing-navy);
+  box-shadow:0 0 0 4px rgba(30,58,95,.12);
+}
+
+.news-card{
+  gap:10px;
+  padding:16px;
+}
+
+.news-card:hover{
+  transform:translateY(-1px);
+  border-color:var(--listing-line-strong);
+  box-shadow:var(--listing-shadow-hover);
+}
+
+.news-card h2{
+  color:var(--listing-ink);
+}
+
+.news-card p,
+.news-card__meta{
+  color:var(--listing-muted);
+}
+
+.news-card a{
+  color:var(--listing-navy);
+}
+
+.news-card__badges span{
+  background:var(--listing-sakura-light);
+  border-color:var(--listing-line);
+  color:var(--listing-navy);
+}
+
+@media (max-width:720px){
+  .hero{
+    padding:16px 12px 12px;
+  }
+
+  .hero-box{
+    padding:20px;
+  }
+}
+
 </style>
   </head>
 <body>
@@ -219,8 +368,10 @@
 </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('languageSelect').addEventListener('change', (e)=>{ if(e.target.value) window.location.href = e.target.value; });
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+    const languageSelect = document.getElementById('languageSelect');
+    if (languageSelect) languageSelect.addEventListener('change', (e)=>{ if(e.target.value) window.location.href = e.target.value; });
   </script>
   <script src="/assets/js/news.js"></script>
 <script src="/assets/js/main.js"></script>

@@ -510,6 +510,101 @@
         text-align:center;
       }
 }
+
+/* PR3 final consistency audit: keep Medical functionality while aligning the page surface. */
+.hero{padding:22px 16px 10px}
+
+.hero-box{
+  background:rgba(255,255,255,.94);
+  border-color:var(--line);
+  border-radius:22px;
+  box-shadow:0 10px 24px rgba(30,58,95,.07);
+}
+
+.hero-box::before{background:linear-gradient(90deg,rgba(255,255,255,.98),rgba(255,255,255,.86))}
+
+.eyebrow{
+  color:var(--site-navy);
+  border-color:var(--line);
+  background:var(--site-sakura);
+}
+
+.eyebrow-dot{background:var(--brand)}
+
+.hero h1{color:var(--site-navy);letter-spacing:0}
+
+.hero p{color:var(--muted);line-height:1.7}
+
+.view-toggle,
+.panel,
+.card,
+.map-shell,
+.empty-state{
+  background:rgba(255,255,255,.94);
+  border-color:var(--line);
+  border-radius:18px;
+  box-shadow:0 8px 18px rgba(30,58,95,.06);
+}
+
+.view-btn{
+  border-radius:14px;
+  color:var(--site-navy);
+  font-weight:900;
+}
+
+.view-btn.active{
+  background:var(--site-navy);
+  color:#fff;
+}
+
+.panel-title,
+.card-title{color:var(--site-navy);letter-spacing:0}
+
+.input,
+.select{
+  border-color:var(--line);
+  border-radius:14px;
+}
+
+.input:focus,
+.select:focus{
+  border-color:var(--site-navy);
+  outline:none;
+  box-shadow:var(--site-focus-ring);
+}
+
+.reset-btn,
+.btn{
+  border-radius:14px;
+  font-weight:900;
+  text-decoration:none;
+}
+
+.btn-primary,
+.reset-btn{
+  background:var(--site-navy);
+  color:#fff;
+  border-color:var(--site-navy);
+}
+
+.btn-secondary{
+  background:#fff;
+  color:var(--site-navy);
+  border-color:var(--line);
+}
+
+.chip,
+.active-chip{
+  border-color:var(--line);
+  background:var(--site-sakura);
+  color:var(--site-navy);
+}
+
+@media (max-width:780px){
+  .hero{padding:18px 12px 8px}
+  .hero-box,.panel,.card,.map-shell{border-radius:18px}
+  .hero h1{font-size:clamp(28px,9vw,38px)}
+}
 </style>
 
   <script>

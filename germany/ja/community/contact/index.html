@@ -21,16 +21,81 @@
 
 body > p,
     body > h1,
-    body > form{max-width:760px;margin-left:auto;margin-right:auto;font-family:Arial,sans-serif}
+    body > form{width:min(760px, calc(100% - 32px));margin-left:auto;margin-right:auto}
 
 body > p:first-of-type{margin-top:24px}
 
-body > form{background:#fff;border:1px solid #ddd;border-radius:16px;padding:18px}
+body > p a{
+  display:inline-flex;
+  min-height:38px;
+  align-items:center;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:#fff;
+  color:var(--site-navy);
+  padding:0 14px;
+  font-weight:800;
+  text-decoration:none;
+}
+
+body > h1{
+  margin-top:18px;
+  color:var(--site-navy);
+  font-size:clamp(28px,5vw,42px);
+  letter-spacing:0;
+}
+
+body > form{
+  background:rgba(255,255,255,.94);
+  border:1px solid var(--line);
+  border-radius:22px;
+  box-shadow:0 8px 18px rgba(30,58,95,.06);
+  padding:22px;
+}
+
+body > form label{
+  display:block;
+  margin-top:14px;
+  color:var(--site-navy);
+  font-weight:900;
+}
 
 body > form input,
-    body > form textarea{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:10px}
+    body > form textarea{
+  width:100%;
+  padding:12px 14px;
+  margin:8px 0 0;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+}
 
-body > form button{padding:12px 18px;border:none;border-radius:10px;background:#111;color:#fff}
+body > form input:focus,
+body > form textarea:focus{
+  border-color:var(--site-navy);
+  outline:none;
+  box-shadow:var(--site-focus-ring);
+}
+
+body > form textarea{min-height:150px;resize:vertical}
+
+body > form button{
+  min-height:44px;
+  margin-top:16px;
+  padding:0 18px;
+  border:none;
+  border-radius:14px;
+  background:var(--site-navy);
+  color:#fff;
+  font-weight:900;
+}
+
+@media (max-width:640px){
+  body > p,
+  body > h1,
+  body > form{width:min(100% - 24px, 760px)}
+  body > form{border-radius:18px;padding:18px}
+}
 </style>
 <script>
 (function () {
@@ -110,7 +175,7 @@ body > form button{padding:12px 18px;border:none;border-radius:10px;background:#
   </div>
 </header>
 
-  <p><a href="./index.html">← 掲示板へ戻る</a></p>
+  <p><a href="../">← 掲示板へ戻る</a></p>
   <h1>投稿者に連絡する</h1>
   <form id="contactForm">
     <input name="action" type="hidden" value="submitInquiry">
@@ -129,7 +194,7 @@ body > form button{padding:12px 18px;border:none;border-radius:10px;background:#
       const fd = new FormData(e.target);
       const res = await fetch(GAS_URL, { method:'POST', body: fd });
       const data = await res.json();
-      if (data.ok) location.href = './thanks.html';
+      if (data.ok) location.href = '../thanks/';
       else alert('送信に失敗しました');
     });
   </script>

@@ -122,6 +122,73 @@ textarea{min-height:180px;resize:vertical}
 @media (max-width:960px){
 .hero,.content,.form-grid,.quick-grid{grid-template-columns:1fr}
 }
+
+/* PR3 static/support polish: align support pages with the Community visual system. */
+.wrap{max-width:1120px;padding:24px 16px 56px}
+
+.hero,
+.content{gap:16px}
+
+.hero-main,
+.hero-side,
+.panel,
+.mini{
+  background:rgba(255,255,255,.94);
+  border-color:var(--line);
+  border-radius:22px;
+  box-shadow:0 8px 18px rgba(30,58,95,.06);
+}
+
+.hero-main{box-shadow:0 10px 24px rgba(30,58,95,.07)}
+
+.eyebrow{
+  color:var(--site-navy);
+  border-color:var(--line);
+  background:var(--site-sakura);
+  font-weight:900;
+}
+
+h1,
+.panel h2,
+.panel h3,
+.hero-side h2,
+.mini strong,
+label{color:var(--site-navy);letter-spacing:0}
+
+.lead,
+.panel p,
+.panel li,
+.mini{line-height:1.8;color:#34414d}
+
+.input,
+select,
+textarea{
+  border-color:var(--line);
+  border-radius:14px;
+  color:var(--text);
+}
+
+.input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--site-navy);
+  outline:none;
+  box-shadow:var(--site-focus-ring);
+}
+
+.submit{
+  min-height:44px;
+  background:var(--site-navy);
+  box-shadow:0 10px 22px rgba(30,58,95,.18);
+}
+
+@media (max-width:640px){
+  .wrap{padding:18px 12px 44px}
+  .hero-main,.hero-side,.panel{border-radius:18px;padding:18px}
+  h1{font-size:clamp(28px,9vw,36px)}
+  .lead{font-size:15px}
+  .hero-side h2,.panel h2{font-size:22px}
+}
 </style>
 <script>
 (function () {

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
@@ -501,7 +501,116 @@
         min-height:auto;
       }
     }
-  </style>
+
+/* PR2 listing visual standardization: Community-aligned page surface */
+:root{
+  --listing-bg:#FAFBFC;
+  --listing-paper:#FFFFFF;
+  --listing-ink:#1F2937;
+  --listing-muted:#64748B;
+  --listing-line:#E5E7EB;
+  --listing-line-strong:#CBD5E1;
+  --listing-navy:#1E3A5F;
+  --listing-navy-hover:#16304E;
+  --listing-sakura:#E8A2B8;
+  --listing-sakura-light:#FCEFF4;
+  --listing-shadow:0 6px 14px rgba(30,58,95,.04);
+  --listing-shadow-hover:0 12px 24px rgba(30,58,95,.08);
+  --listing-radius:16px;
+  --listing-max:1320px;
+}
+
+body{
+  background:
+    linear-gradient(rgba(250,251,252,.96), rgba(250,251,252,.985)),
+    url("/assets/images/brand/site-bg.jpg") center top / cover fixed no-repeat,
+    var(--listing-bg);
+  color:var(--listing-ink);
+}
+
+:root{
+  --events-teal:var(--listing-navy);
+  --events-blue:var(--listing-navy);
+  --events-pink:#d84b6a;
+  --events-ink:var(--listing-ink);
+  --events-muted:var(--listing-muted);
+  --events-border:var(--listing-line);
+  --events-paper:#fff;
+  --events-soft:#f8fafc;
+}
+
+.events-hero{
+  border-color:var(--listing-line);
+  border-radius:22px;
+  background:
+    linear-gradient(110deg, rgba(255,255,255,.98) 0%, rgba(250,251,252,.95) 60%, rgba(252,239,244,.82) 100%),
+    url("/assets/images/cards/events.jpg") right center / min(42vw, 520px) auto no-repeat,
+    #fff;
+  box-shadow:0 10px 24px rgba(30,58,95,.07);
+}
+
+.events-hero-grid{
+  min-height:0;
+  padding:22px;
+  gap:16px;
+}
+
+.events-kicker{
+  color:var(--listing-navy);
+  background:#fff;
+  border-color:var(--listing-line);
+}
+
+.events-dot{
+  background:var(--listing-sakura);
+}
+
+.events-hero-title{
+  color:var(--listing-navy);
+  font-size:clamp(28px, 3.5vw, 42px);
+}
+
+.events-hero-desc,
+.events-hero-panel p,
+.events-status-item span,
+.events-section-desc{
+  color:var(--listing-muted);
+}
+
+.events-hero-panel,
+.events-status-item,
+.event-card{
+  border-color:var(--listing-line);
+  background:rgba(255,255,255,.92);
+  border-radius:16px;
+  box-shadow:var(--listing-shadow);
+}
+
+.event-card{
+  min-height:220px;
+  padding:16px;
+}
+
+.event-card:hover{
+  transform:translateY(-1px);
+  border-color:var(--listing-line-strong);
+  box-shadow:var(--listing-shadow-hover);
+}
+
+.event-chip,
+.events-status-mark{
+  background:var(--listing-sakura-light);
+  color:var(--listing-navy);
+}
+
+@media (max-width:780px){
+  .events-hero-grid{
+    grid-template-columns:1fr;
+    padding:20px;
+  }
+}
+
+</style>
   <script>
     (function () {
       var segments = location.pathname.split('/').filter(Boolean);

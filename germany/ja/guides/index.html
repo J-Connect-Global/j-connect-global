@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -399,7 +399,117 @@
         grid-template-columns:1fr;
       }
     }
-  </style>
+
+/* PR2 listing visual standardization: Community-aligned page surface */
+:root{
+  --listing-bg:#FAFBFC;
+  --listing-paper:#FFFFFF;
+  --listing-ink:#1F2937;
+  --listing-muted:#64748B;
+  --listing-line:#E5E7EB;
+  --listing-line-strong:#CBD5E1;
+  --listing-navy:#1E3A5F;
+  --listing-navy-hover:#16304E;
+  --listing-sakura:#E8A2B8;
+  --listing-sakura-light:#FCEFF4;
+  --listing-shadow:0 6px 14px rgba(30,58,95,.04);
+  --listing-shadow-hover:0 12px 24px rgba(30,58,95,.08);
+  --listing-radius:16px;
+  --listing-max:1320px;
+}
+
+body{
+  background:
+    linear-gradient(rgba(250,251,252,.96), rgba(250,251,252,.985)),
+    url("/assets/images/brand/site-bg.jpg") center top / cover fixed no-repeat,
+    var(--listing-bg);
+  color:var(--listing-ink);
+}
+
+.guide-hero{
+  border-color:var(--listing-line);
+  border-radius:22px;
+  background:
+    linear-gradient(110deg, rgba(255,255,255,.98) 0%, rgba(250,251,252,.95) 60%, rgba(252,239,244,.82) 100%),
+    url("/assets/images/cards/guides.jpg") right center / min(42vw, 520px) auto no-repeat,
+    #fff;
+  box-shadow:0 10px 24px rgba(30,58,95,.07);
+}
+
+.guide-hero-inner{
+  min-height:0;
+  padding:22px;
+  gap:16px;
+}
+
+.guide-kicker,
+.guide-section-kicker{
+  color:var(--listing-navy);
+}
+
+.guide-kicker{
+  background:#fff;
+  border-color:var(--listing-line);
+}
+
+.guide-hero h1{
+  color:var(--listing-navy);
+  font-size:clamp(28px, 3.5vw, 42px);
+}
+
+.guide-hero p,
+.guide-note span,
+.guide-section-desc,
+.guide-panel p,
+.guide-card p,
+.guide-disclaimer p{
+  color:var(--listing-muted);
+}
+
+.guide-note,
+.guide-panel,
+.guide-card,
+.guide-checklist,
+.guide-disclaimer,
+.guide-cta{
+  border-color:var(--listing-line);
+  background:rgba(255,255,255,.92);
+  border-radius:16px;
+  box-shadow:var(--listing-shadow);
+}
+
+.guide-card{
+  min-height:220px;
+  padding:18px;
+}
+
+.guide-card:hover{
+  transform:translateY(-1px);
+  border-color:var(--listing-line-strong);
+  box-shadow:var(--listing-shadow-hover);
+}
+
+.guide-tag{
+  border-color:var(--listing-line);
+  background:#fff;
+  color:#384552;
+}
+
+.guide-action{
+  border-color:var(--listing-line);
+  background:var(--listing-navy);
+  color:#fff;
+  border-radius:12px;
+}
+
+@media (max-width:780px){
+  .guide-hero-inner{
+    grid-template-columns:1fr;
+    padding:20px;
+  }
+}
+
+</style>
 </head>
 
 <body>

@@ -732,6 +732,7 @@ body{
 
 .card{
   overflow:hidden;
+  cursor:pointer;
 }
 
 .card:hover{
@@ -789,20 +790,207 @@ body{
   border-radius:16px;
 }
 
+.hero h1,
+.hero p{
+  overflow-wrap:anywhere;
+}
+
+.layout.list-mode .cards{
+  grid-template-columns:1fr;
+}
+
+.layout.grid-mode .cards{
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:14px;
+}
+
+.layout.grid-mode .meta-item{
+  grid-template-columns:1fr;
+  gap:3px;
+}
+
+.listing-modal[hidden]{
+  display:none;
+}
+
+.listing-modal{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+}
+
+.listing-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(30,58,95,.34);
+  backdrop-filter:blur(4px);
+}
+
+.listing-modal-dialog{
+  position:relative;
+  width:min(760px, calc(100vw - 32px));
+  max-height:calc(100vh - 48px);
+  overflow:auto;
+  margin:24px auto;
+  background:#fff;
+  border:1px solid var(--listing-line);
+  border-radius:22px;
+  box-shadow:0 24px 70px rgba(30,58,95,.22);
+}
+
+.listing-modal-content{
+  padding:24px;
+}
+
+.listing-modal-close{
+  position:sticky;
+  top:12px;
+  float:right;
+  z-index:2;
+  width:38px;
+  height:38px;
+  margin:12px 12px 0 0;
+  border:1px solid var(--listing-line);
+  border-radius:999px;
+  background:#fff;
+  color:var(--listing-navy);
+  cursor:pointer;
+  font-size:24px;
+  line-height:1;
+  box-shadow:0 8px 18px rgba(30,58,95,.1);
+}
+
+.listing-detail-title{
+  margin:0;
+  color:var(--listing-navy);
+  font-size:clamp(24px, 3vw, 34px);
+  line-height:1.2;
+}
+
+.listing-detail-subtitle{
+  margin:8px 0 0;
+  color:var(--muted);
+  font-weight:700;
+}
+
+.listing-detail-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:10px;
+  margin:20px 0;
+}
+
+.listing-detail-item{
+  border:1px solid var(--listing-line);
+  border-radius:14px;
+  background:var(--listing-soft);
+  padding:12px;
+}
+
+.listing-detail-label{
+  color:var(--listing-navy);
+  font-size:12px;
+  font-weight:900;
+  margin-bottom:4px;
+}
+
+.listing-detail-section{
+  border-top:1px solid var(--listing-line);
+  padding-top:16px;
+  margin-top:16px;
+}
+
+.listing-detail-section h4{
+  color:var(--listing-navy);
+  margin:0 0 8px;
+}
+
+.listing-modal-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+
+body.modal-open{
+  overflow:hidden;
+}
+
 @media (max-width:780px){
+  html,
+  body{
+    overflow-x:hidden;
+  }
+
   .hero{
     padding:16px 12px 12px;
+    width:100%;
+    max-width:100vw;
   }
 
   .hero-box{
     padding:20px;
+    max-width:100%;
+    min-width:0;
+  }
+
+  .hero h1{
+    max-width:100%;
+    white-space:normal;
+    word-break:break-all;
+    font-size:clamp(24px, 7vw, 28px);
+    line-height:1.12;
+  }
+
+  .hero p{
+    max-width:100%;
+  }
+
+  .view-toggle{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    width:100%;
+    min-width:0;
+    gap:3px;
+    overflow:hidden;
+  }
+
+  .view-btn{
+    min-width:0;
+    padding:0 2px;
+    font-size:13px;
+    white-space:nowrap;
   }
 
   .view-toggle-wrap,
   .layout,
   .layout.map-mode{
+    width:100%;
+    max-width:100vw;
     padding-left:12px;
     padding-right:12px;
+  }
+
+  .panel,
+  .content,
+  .filter-panel{
+    max-width:100%;
+    min-width:0;
+  }
+
+  .listing-detail-grid{
+    grid-template-columns:1fr;
+  }
+
+  .listing-modal-dialog{
+    width:calc(100vw - 20px);
+    max-height:calc(100vh - 20px);
+    margin:10px auto;
+    border-radius:18px;
+  }
+
+  .listing-modal-content{
+    padding:20px 16px;
   }
 }
 
@@ -899,12 +1087,13 @@ body{
 
   <div class="view-toggle-wrap">
     <div class="view-toggle" role="tablist" aria-label="表示切替">
-      <button id="cardViewBtn" class="view-btn active" type="button" aria-pressed="true">カード表示</button>
-      <button id="mapViewBtn" class="view-btn" type="button" aria-pressed="false">地図表示</button>
+      <button id="cardViewBtn" class="view-btn active" type="button" aria-pressed="true">リスト</button>
+      <button id="gridViewBtn" class="view-btn" type="button" aria-pressed="false">グリッド</button>
+      <button id="mapViewBtn" class="view-btn" type="button" aria-pressed="false">マップ</button>
     </div>
   </div>
 
-  <main class="layout" id="mainLayout">
+  <main class="layout list-mode" id="mainLayout">
     <aside class="filters">
       <div class="panel filter-panel">
         <div class="panel-title-row">
@@ -986,6 +1175,14 @@ body{
       </div>
     </aside>
   </main>
+
+  <div class="listing-modal" id="listingModal" hidden>
+    <div class="listing-modal-backdrop" data-modal-close></div>
+    <article class="listing-modal-dialog" role="dialog" aria-modal="true" aria-label="店舗詳細">
+      <button class="listing-modal-close" id="listingModalClose" type="button" aria-label="閉じる">×</button>
+      <div class="listing-modal-content" id="listingModalContent"></div>
+    </article>
+  </div>
 
   <footer class="page-footer">
   <div class="footer-inner">
@@ -1080,14 +1277,18 @@ body{
       cards: document.getElementById("cards"),
       mainLayout: document.getElementById("mainLayout"),
       cardViewBtn: document.getElementById("cardViewBtn"),
+      gridViewBtn: document.getElementById("gridViewBtn"),
       mapViewBtn: document.getElementById("mapViewBtn"),
-      mapPanel: document.getElementById("mapPanel")
+      mapPanel: document.getElementById("mapPanel"),
+      listingModal: document.getElementById("listingModal"),
+      listingModalContent: document.getElementById("listingModalContent"),
+      listingModalClose: document.getElementById("listingModalClose")
     };
 
     let rawItems = [];
     let filteredItems = [];
     let categoryMap = {};
-    let currentView = "card";
+    let currentView = "list";
 
     let map = null;
     let markerLayer = null;
@@ -1406,6 +1607,8 @@ function buildAddress(item) {
 
     function bindCardInteractions() {
       els.cards.querySelectorAll(".card").forEach(card => {
+        card.setAttribute("role", "button");
+        card.setAttribute("tabindex", "0");
         card.addEventListener("click", (e) => {
           if (e.target.closest("a, button")) return;
           const itemId = card.getAttribute("data-item-id");
@@ -1419,8 +1622,85 @@ function buildAddress(item) {
             map.flyTo(marker.getLatLng(), 16, { duration: 0.6 });
             marker.openPopup();
           }
+
+          openListingModal(item);
+        });
+
+        card.addEventListener("keydown", (event) => {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          const itemId = card.getAttribute("data-item-id");
+          const item = filteredItems.find(x => x.__id === itemId);
+          if (!item) return;
+          highlightItem(itemId);
+          openListingModal(item);
         });
       });
+    }
+
+    function detailRow(label, value) {
+      if (!value) return "";
+      return `
+        <div class="listing-detail-item">
+          <div class="listing-detail-label">${escapeHtml(label)}</div>
+          <div>${escapeHtml(value)}</div>
+        </div>
+      `;
+    }
+
+    function buildListingDetailHtml(item) {
+      const displayName = getDisplayNameParts(item);
+      const category1 = getCategory1(item);
+      const category2 = getCategory2(item);
+      const price = getField(item, "price_range", "price");
+      const address = buildAddress(item);
+      const phone = getField(item, "phone", "telephone", "tel");
+      const website = getField(item, "website");
+      const mapUrl = getField(item, "url", "map_url");
+      const description = getField(item, "description_ja", "description");
+      const hours = getField(item, "opening_hours", "openingHours", "hours");
+      const ratingHtml = getCardRatingHtml(item);
+
+      return `
+        <h3 class="listing-detail-title">${escapeHtml(displayName.title)}</h3>
+        ${displayName.subtitle ? `<p class="listing-detail-subtitle">${escapeHtml(displayName.subtitle)}</p>` : ""}
+        ${ratingHtml}
+
+        <div class="listing-detail-grid">
+          ${detailRow("カテゴリ", category1)}
+          ${detailRow("詳細カテゴリ", category2)}
+          ${detailRow("価格", price)}
+          ${detailRow("住所", address)}
+          ${detailRow("電話", phone)}
+          ${detailRow("営業時間", hours)}
+        </div>
+
+        ${description ? `
+          <section class="listing-detail-section">
+            <h4>説明</h4>
+            <p>${escapeHtml(description)}</p>
+          </section>
+        ` : ""}
+
+        <div class="listing-modal-actions">
+          ${website ? `<a class="btn btn-primary" href="${escapeHtml(website)}" target="_blank" rel="noopener noreferrer">公式サイト</a>` : ""}
+          ${mapUrl ? `<a class="btn btn-secondary" href="${escapeHtml(mapUrl)}" target="_blank" rel="noopener noreferrer">地図を見る</a>` : ""}
+        </div>
+      `;
+    }
+
+    function openListingModal(item) {
+      if (!els.listingModal || !els.listingModalContent) return;
+      els.listingModalContent.innerHTML = buildListingDetailHtml(item);
+      els.listingModal.hidden = false;
+      document.body.classList.add("modal-open");
+      els.listingModalClose.focus({ preventScroll:true });
+    }
+
+    function closeListingModal() {
+      if (!els.listingModal) return;
+      els.listingModal.hidden = true;
+      document.body.classList.remove("modal-open");
     }
 
     function resetFilters() {
@@ -1624,10 +1904,15 @@ function setViewMode(mode) {
   currentView = mode;
 
   const isMap = mode === "map";
+  const isGrid = mode === "grid";
   els.mainLayout.classList.toggle("map-mode", isMap);
-  els.cardViewBtn.classList.toggle("active", !isMap);
+  els.mainLayout.classList.toggle("grid-mode", isGrid);
+  els.mainLayout.classList.toggle("list-mode", !isMap && !isGrid);
+  els.cardViewBtn.classList.toggle("active", !isMap && !isGrid);
+  els.gridViewBtn.classList.toggle("active", isGrid);
   els.mapViewBtn.classList.toggle("active", isMap);
-  els.cardViewBtn.setAttribute("aria-pressed", String(!isMap));
+  els.cardViewBtn.setAttribute("aria-pressed", String(!isMap && !isGrid));
+  els.gridViewBtn.setAttribute("aria-pressed", String(isGrid));
   els.mapViewBtn.setAttribute("aria-pressed", String(isMap));
 
   if (isMap) {
@@ -1706,9 +1991,20 @@ rawItems.forEach(preloadCoordinatesFromFields);
     els.starRatingSelect.addEventListener("change", filterItems);
     els.resetFiltersBtn.addEventListener("click", resetFilters);
 
-    els.cardViewBtn.addEventListener("click", () => setViewMode("card"));
+    els.cardViewBtn.addEventListener("click", () => setViewMode("list"));
+    els.gridViewBtn.addEventListener("click", () => setViewMode("grid"));
     els.mapViewBtn.addEventListener("click", () => setViewMode("map"));
+    els.listingModalClose.addEventListener("click", closeListingModal);
+    els.listingModal.addEventListener("click", event => {
+      if (event.target.matches("[data-modal-close]")) closeListingModal();
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && els.listingModal && !els.listingModal.hidden) {
+        closeListingModal();
+      }
+    });
 
+    setViewMode(currentView);
     loadData();
   </script>
 

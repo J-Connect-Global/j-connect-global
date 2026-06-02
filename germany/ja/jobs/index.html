@@ -60,172 +60,6 @@
       margin:0 auto;
     }
 
-    .site-header{
-      position:sticky;
-      top:0;
-      z-index:200;
-      background:rgba(255,255,255,.84);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(230,234,240,.92);
-    }
-
-    .header-inner{
-      min-height:72px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-
-    .brand-logo{
-      width:136px;
-      height:34px;
-      object-fit:contain;
-    }
-
-    .brand-title{
-      display:block;
-      font-size:14px;
-      font-weight:800;
-      letter-spacing:.08em;
-    }
-
-    .brand-sub{
-      display:block;
-      margin-top:4px;
-      font-size:12px;
-      color:var(--muted);
-      white-space:nowrap;
-    }
-
-    .header-actions{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-
-    .header-nav{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-
-    .header-nav a,
-    .header-category,
-    .header-language{
-      font-size:13px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid #dce4ee;
-      background:rgba(255,255,255,.74);
-      transition:.18s;
-    }
-
-    .header-nav a:hover,
-    .footer-links a:hover{
-      border-color:var(--hover-pink);
-      background:var(--hover-pink-bg);
-      color:var(--brand);
-      transform:translateY(-1px);
-    }
-
-    .header-category-menu{
-      position:relative;
-      display:flex;
-      align-items:center;
-    }
-
-    .header-category-trigger{
-      border:none;
-      background:transparent;
-      font-weight:700;
-      cursor:pointer;
-    }
-
-    .category-dropdown{
-      position:absolute;
-      top:calc(100% + 8px);
-      left:0;
-      min-width:220px;
-      background:#fff;
-      border:1px solid #e6eaf0;
-      border-radius:14px;
-      box-shadow:0 16px 30px rgba(19,35,58,.14);
-      padding:8px;
-      display:none;
-      z-index:20;
-    }
-
-    .header-category-menu:hover .category-dropdown,
-    .header-category-menu:focus-within .category-dropdown{
-      display:grid;
-      gap:2px;
-    }
-
-    .category-dropdown a{
-      font-size:13px;
-      color:#2f3e4c;
-      padding:8px 10px;
-      border-radius:10px;
-    }
-
-    .category-dropdown a:hover{
-      background:#fff4f7;
-    }
-
-    .header-search{
-      display:flex;
-      align-items:center;
-      gap:8px;
-    }
-
-    .search-box{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      background:rgba(255,255,255,.96);
-      border:1px solid #d9e0e8;
-      border-radius:999px;
-      padding:0 12px;
-      height:42px;
-      min-width:220px;
-    }
-
-    .search-box input{
-      border:none;
-      outline:none;
-      background:transparent;
-    }
-
-    .search-btn{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      height:42px;
-      border-radius:999px;
-      padding:0 14px;
-      font-size:24px;
-      color:#1f5fbf;
-      background:rgba(47,128,237,.20);
-      border:1px solid rgba(47,128,237,.32);
-      cursor:pointer;
-    }
-
-    .header-language select{
-      border:none;
-      background:transparent;
-      outline:none;
-    }
-
     .hero{
       max-width:var(--max);
       margin:0 auto;
@@ -929,25 +763,57 @@
   </main>
 
   <footer class="page-footer">
-      <div class="footer-inner">
-        <div class="footer-left">
-<img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany フッターロゴ">
-          <div class="footer-copy">
-            <div class="footer-title">J-CONNECT GERMANY</div>
-            <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
-            <div class="footer-meta">© 2026 J-Connect Germany</div>
-          </div>
-        </div>
-
-        <div class="footer-links">
-          <a href="../about/">このサイトについて</a>
-          <a href="../contact/">お問い合わせ</a>
-          <a href="../terms/">利用規約</a>
-          <a href="../privacy/">プライバシー</a>
-          <a href="../impressum/">運営者情報</a>
-        </div>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany フッターロゴ">
+      <div class="footer-copy">
+        <div class="footer-title">J-CONNECT GERMANY</div>
+        <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+        <div class="footer-meta">© 2026 J-Connect Germany</div>
       </div>
-    </footer>
+    </div>
+    <div class="footer-links" aria-label="フッターサイトマップ">
+      <div class="footer-group">
+        <div class="footer-heading">サイト案内</div>
+        <a href="/germany/ja/">ホーム</a>
+        <a href="/germany/ja/about/">このサイトについて</a>
+        <a href="/germany/ja/news/">ニュース・読みもの</a>
+        <a href="/germany/ja/events/">おでかけ・イベント</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">仕事</div>
+        <a href="/germany/ja/jobs/">仕事・求人</a>
+        <a href="/germany/ja/jobs/posting/">求人掲載希望の企業様へ</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">掲示板 / コミュニティ</div>
+        <a href="/germany/ja/community/">掲示板トップ</a>
+        <a href="/germany/ja/community/post/">投稿する</a>
+        <a href="/germany/ja/community/contact/">投稿者に連絡</a>
+        <a href="/germany/ja/community/report/">投稿を通報</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">暮らし</div>
+        <a href="/germany/ja/living/">住まい・生活</a>
+        <a href="/germany/ja/medical/">医療・緊急</a>
+        <a href="/germany/ja/shopping/">買い物・サービス</a>
+        <a href="/germany/ja/eat/">グルメ・飲食</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">学ぶ / 情報</div>
+        <a href="/germany/ja/guides/">手続き・制度</a>
+        <a href="/germany/ja/learn-german/">ドイツ語の学び</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">サポート</div>
+        <a href="/germany/ja/contact/">お問い合わせ</a>
+        <a href="/germany/ja/terms/">利用規約</a>
+        <a href="/germany/ja/privacy/">プライバシー</a>
+        <a href="/germany/ja/impressum/">運営者情報</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
   <script>
     const SHEET_ID = '1oX4Go3yqxZyFkyRTio-YSxE9wZaXy6mfwai42Zot4AU';

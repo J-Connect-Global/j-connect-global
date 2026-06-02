@@ -820,6 +820,118 @@ body{
   border-radius:16px;
 }
 
+.view-toggle-wrap{
+  max-width:var(--listing-max);
+  margin:0 auto;
+  padding:0 20px 12px;
+}
+
+.view-toggle{
+  display:inline-flex;
+  gap:6px;
+  background:#fff;
+  border:1px solid var(--listing-line);
+  border-radius:999px;
+  padding:3px;
+  box-shadow:0 10px 22px rgba(30,58,95,.06);
+}
+
+.view-btn{
+  border:0;
+  border-radius:999px;
+  background:transparent;
+  color:var(--muted);
+  cursor:pointer;
+  font-weight:800;
+  padding:9px 16px;
+}
+
+.view-btn.active{
+  background:var(--listing-navy);
+  color:#fff;
+}
+
+.layout{
+  grid-template-columns:280px minmax(0,1fr);
+}
+
+.detail-wrap{
+  display:none;
+}
+
+.card{
+  cursor:pointer;
+}
+
+.layout.grid-mode .cards{
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:14px;
+}
+
+.layout.grid-mode .card-head{
+  align-items:flex-start;
+}
+
+.layout.grid-mode .meta-row{
+  grid-template-columns:1fr;
+  gap:3px;
+}
+
+.listing-modal[hidden]{
+  display:none;
+}
+
+.listing-modal{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+}
+
+.listing-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(30,58,95,.34);
+  backdrop-filter:blur(4px);
+}
+
+.listing-modal-dialog{
+  position:relative;
+  width:min(760px, calc(100vw - 32px));
+  max-height:calc(100vh - 48px);
+  overflow:auto;
+  margin:24px auto;
+  background:#fff;
+  border:1px solid var(--listing-line);
+  border-radius:22px;
+  box-shadow:0 24px 70px rgba(30,58,95,.22);
+}
+
+.listing-modal-content{
+  padding:24px;
+}
+
+.listing-modal-close{
+  position:sticky;
+  top:12px;
+  float:right;
+  z-index:2;
+  width:38px;
+  height:38px;
+  margin:12px 12px 0 0;
+  border:1px solid var(--listing-line);
+  border-radius:999px;
+  background:#fff;
+  color:var(--listing-navy);
+  cursor:pointer;
+  font-size:24px;
+  line-height:1;
+  box-shadow:0 8px 18px rgba(30,58,95,.1);
+}
+
+body.modal-open{
+  overflow:hidden;
+}
+
 @media (max-width:1100px){
   .layout{
     grid-template-columns:280px minmax(0,1fr);
@@ -845,6 +957,29 @@ body{
 
   .filters{
     position:static;
+  }
+
+  .view-toggle-wrap{
+    padding:0 12px 12px;
+  }
+
+  .view-toggle{
+    width:100%;
+  }
+
+  .view-btn{
+    flex:1 1 0;
+  }
+
+  .listing-modal-dialog{
+    width:calc(100vw - 20px);
+    max-height:calc(100vh - 20px);
+    margin:10px auto;
+    border-radius:18px;
+  }
+
+  .listing-modal-content{
+    padding:20px 16px;
   }
 }
 
@@ -936,7 +1071,7 @@ body{
         仕事・求人ガイド
       </div>
       <h1>日本語で探せる、<br>企業掲載型のドイツ求人</h1>
-      <p>会社名・ポジション・給与・都市で絞り込み可能。カードをクリックすると右側（モバイルは下側）に職務詳細、必要要件、連絡先メールを表示します。</p>
+      <p>会社名・ポジション・給与・都市で絞り込み可能。カードをクリックすると職務詳細、必要要件、連絡先メールをポップアップで表示します。</p>
 
       <div class="hero-actions">
         <a class="hero-btn hero-btn-primary" href="/germany/ja/jobs/posting/">求人掲載希望の企業様へ</a>
@@ -949,7 +1084,14 @@ body{
     </div>
   </section>
 
-  <main class="layout">
+  <div class="view-toggle-wrap">
+    <div class="view-toggle" role="group" aria-label="表示切替">
+      <button id="listViewBtn" class="view-btn active" type="button" aria-pressed="true">リスト</button>
+      <button id="gridViewBtn" class="view-btn" type="button" aria-pressed="false">グリッド</button>
+    </div>
+  </div>
+
+  <main class="layout list-mode" id="mainLayout">
     <aside class="panel filters">
       <div class="panel-title-row">
         <h2 class="panel-title">検索フィルター</h2>
@@ -1026,6 +1168,14 @@ body{
     </aside>
   </main>
 
+  <div class="listing-modal" id="listingModal" hidden>
+    <div class="listing-modal-backdrop" data-modal-close></div>
+    <article class="listing-modal-dialog" role="dialog" aria-modal="true" aria-label="求人詳細">
+      <button class="listing-modal-close" id="listingModalClose" type="button" aria-label="閉じる">×</button>
+      <div class="listing-modal-content" id="listingModalContent"></div>
+    </article>
+  </div>
+
   <footer class="page-footer">
   <div class="footer-inner">
     <div class="footer-left">
@@ -1087,6 +1237,7 @@ body{
     let jobs = [];
     let filtered = [];
     let selectedId = null;
+    let currentView = 'list';
 
     const els = {
       keywordInput: document.getElementById('keywordInput'),
@@ -1101,6 +1252,12 @@ body{
       resetBtn: document.getElementById('resetBtn'),
       cards: document.getElementById('cards'),
       detailPanel: document.getElementById('detailPanel'),
+      mainLayout: document.getElementById('mainLayout'),
+      listViewBtn: document.getElementById('listViewBtn'),
+      gridViewBtn: document.getElementById('gridViewBtn'),
+      listingModal: document.getElementById('listingModal'),
+      listingModalContent: document.getElementById('listingModalContent'),
+      listingModalClose: document.getElementById('listingModalClose'),
       chips: document.getElementById('chips'),
       resultsSummary: document.getElementById('resultsSummary'),
       emptyBox: document.getElementById('emptyBox')
@@ -1462,10 +1619,21 @@ body{
       }).join('');
 
       els.cards.querySelectorAll('.card').forEach(card => {
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
         card.addEventListener('click', () => {
           selectedId = card.dataset.id;
           renderCards();
           renderDetail();
+          openListingModal();
+        });
+        card.addEventListener('keydown', event => {
+          if (event.key !== 'Enter' && event.key !== ' ') return;
+          event.preventDefault();
+          selectedId = card.dataset.id;
+          renderCards();
+          renderDetail();
+          openListingModal();
         });
       });
     }
@@ -1623,6 +1791,32 @@ body{
       `;
     }
 
+    function setViewMode(mode){
+      currentView = mode === 'grid' ? 'grid' : 'list';
+      const isGrid = currentView === 'grid';
+
+      els.mainLayout.classList.toggle('grid-mode', isGrid);
+      els.mainLayout.classList.toggle('list-mode', !isGrid);
+      els.listViewBtn.classList.toggle('active', !isGrid);
+      els.gridViewBtn.classList.toggle('active', isGrid);
+      els.listViewBtn.setAttribute('aria-pressed', String(!isGrid));
+      els.gridViewBtn.setAttribute('aria-pressed', String(isGrid));
+    }
+
+    function openListingModal(){
+      if (!els.listingModal || !els.listingModalContent || !els.detailPanel) return;
+      els.listingModalContent.innerHTML = els.detailPanel.innerHTML;
+      els.listingModal.hidden = false;
+      document.body.classList.add('modal-open');
+      els.listingModalClose.focus({ preventScroll:true });
+    }
+
+    function closeListingModal(){
+      if (!els.listingModal) return;
+      els.listingModal.hidden = true;
+      document.body.classList.remove('modal-open');
+    }
+
     function attachEvents(){
       els.keywordInput.addEventListener('input', filterJobs);
       els.citySelect.addEventListener('change', filterJobs);
@@ -1644,9 +1838,22 @@ body{
         renderSalaryRangeLabel();
         filterJobs();
       });
+
+      els.listViewBtn.addEventListener('click', () => setViewMode('list'));
+      els.gridViewBtn.addEventListener('click', () => setViewMode('grid'));
+      els.listingModalClose.addEventListener('click', closeListingModal);
+      els.listingModal.addEventListener('click', event => {
+        if (event.target.matches('[data-modal-close]')) closeListingModal();
+      });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && els.listingModal && !els.listingModal.hidden) {
+          closeListingModal();
+        }
+      });
     }
 
     attachEvents();
+    setViewMode(currentView);
     renderSalaryRangeLabel();
     loadJobs();
   </script>

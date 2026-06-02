@@ -600,10 +600,158 @@
   color:var(--site-navy);
 }
 
+.hero h1,
+.hero p{
+  overflow-wrap:anywhere;
+}
+
+.layout.list-mode .cards{
+  grid-template-columns:1fr;
+}
+
+.layout.grid-mode .cards{
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:14px;
+}
+
+.layout.grid-mode .meta-item{
+  grid-template-columns:1fr;
+  gap:3px;
+}
+
+.map-panel{
+  display:none;
+}
+
+.card{
+  cursor:pointer;
+}
+
+.listing-modal[hidden]{
+  display:none;
+}
+
+.listing-modal{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+}
+
+.listing-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(30,58,95,.34);
+  backdrop-filter:blur(4px);
+}
+
+.listing-modal-dialog{
+  position:relative;
+  width:min(760px, calc(100vw - 32px));
+  max-height:calc(100vh - 48px);
+  overflow:auto;
+  margin:24px auto;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  box-shadow:0 24px 70px rgba(30,58,95,.22);
+}
+
+.listing-modal-content{
+  padding:24px;
+}
+
+.listing-modal-close{
+  position:sticky;
+  top:12px;
+  float:right;
+  z-index:2;
+  width:38px;
+  height:38px;
+  margin:12px 12px 0 0;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:#fff;
+  color:var(--site-navy);
+  cursor:pointer;
+  font-size:24px;
+  line-height:1;
+  box-shadow:0 8px 18px rgba(30,58,95,.1);
+}
+
+.listing-detail-title{
+  margin:0;
+  color:var(--site-navy);
+  font-size:clamp(24px, 3vw, 34px);
+  line-height:1.2;
+}
+
+.listing-detail-subtitle{
+  margin:8px 0 0;
+  color:var(--muted);
+  font-weight:700;
+}
+
+.listing-detail-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:10px;
+  margin:20px 0;
+}
+
+.listing-detail-item{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:var(--site-sakura);
+  padding:12px;
+}
+
+.listing-detail-label{
+  color:var(--site-navy);
+  font-size:12px;
+  font-weight:900;
+  margin-bottom:4px;
+}
+
+.listing-detail-section{
+  border-top:1px solid var(--line);
+  padding-top:16px;
+  margin-top:16px;
+}
+
+.listing-detail-section h4{
+  color:var(--site-navy);
+  margin:0 0 8px;
+}
+
+.listing-modal-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+
+body.modal-open{
+  overflow:hidden;
+}
+
 @media (max-width:780px){
+  html,body{overflow-x:hidden}
   .hero{padding:18px 12px 8px}
+  .hero,.view-toggle-wrap,.layout,.layout.map-mode{width:100%;max-width:100vw}
   .hero-box,.panel,.card,.map-shell{border-radius:18px}
-  .hero h1{font-size:clamp(28px,9vw,38px)}
+  .hero-box,.panel,.content,.filter-panel{max-width:100%;min-width:0}
+  .hero h1{max-width:100%;white-space:normal;word-break:break-all;font-size:clamp(24px,7vw,28px);line-height:1.12}
+  .hero p{max-width:100%}
+  .view-toggle{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .view-btn{min-width:0;padding:0 8px;font-size:14px;white-space:nowrap}
+  .listing-detail-grid{grid-template-columns:1fr}
+  .listing-modal-dialog{
+    width:calc(100vw - 20px);
+    max-height:calc(100vh - 20px);
+    margin:10px auto;
+    border-radius:18px;
+  }
+  .listing-modal-content{padding:20px 16px}
 }
 </style>
 
@@ -698,12 +846,12 @@
 
   <div class="view-toggle-wrap">
     <div class="view-toggle" role="tablist" aria-label="表示切替">
-      <button id="cardViewBtn" class="view-btn active" type="button" aria-pressed="true">カード表示</button>
-      <button id="mapViewBtn" class="view-btn" type="button" aria-pressed="false">地図表示</button>
+      <button id="cardViewBtn" class="view-btn active" type="button" aria-pressed="true">リスト</button>
+      <button id="gridViewBtn" class="view-btn" type="button" aria-pressed="false">グリッド</button>
     </div>
   </div>
 
-  <main class="layout" id="mainLayout">
+  <main class="layout list-mode" id="mainLayout">
     <aside class="filters">
       <div class="panel filter-panel">
         <div class="panel-title-row">
@@ -762,6 +910,14 @@
       </div>
     </aside>
   </main>
+
+  <div class="listing-modal" id="listingModal" hidden>
+    <div class="listing-modal-backdrop" data-modal-close></div>
+    <article class="listing-modal-dialog" role="dialog" aria-modal="true" aria-label="医療リソース詳細">
+      <button class="listing-modal-close" id="listingModalClose" type="button" aria-label="閉じる">×</button>
+      <div class="listing-modal-content" id="listingModalContent"></div>
+    </article>
+  </div>
 
   <footer class="page-footer">
   <div class="footer-inner">
@@ -866,7 +1022,10 @@
       cards: document.getElementById("cards"),
       mainLayout: document.getElementById("mainLayout"),
       cardViewBtn: document.getElementById("cardViewBtn"),
-      mapViewBtn: document.getElementById("mapViewBtn")
+      gridViewBtn: document.getElementById("gridViewBtn"),
+      listingModal: document.getElementById("listingModal"),
+      listingModalContent: document.getElementById("listingModalContent"),
+      listingModalClose: document.getElementById("listingModalClose")
     };
 
     let rawItems = [];
@@ -937,6 +1096,8 @@
         tags,
         address: item.address || "",
         postcode: item.postcode || "",
+        phone: item.phone || item.telephone || item.tel || "",
+        hours: item.opening_hours || item.openingHours || item.hours || "",
         website: item.website || "",
         mapUrl: item.map_url || "",
         lat: item.lat ? Number(item.lat) : null,
@@ -1096,6 +1257,11 @@
                 <div class="meta-label">住所</div>
                 <div class="meta-value">${escapeHtml(item.address || "-")}</div>
               </div>
+              ${item.phone ? `
+              <div class="meta-item">
+                <div class="meta-label">電話</div>
+                <div class="meta-value">${escapeHtml(item.phone)}</div>
+              </div>` : ""}
               ${item.postcode ? `
               <div class="meta-item">
                 <div class="meta-label">郵便番号</div>
@@ -1117,13 +1283,82 @@
 
         card.addEventListener("click", event => {
           if (event.target.closest("a")) return;
-          focusOnMap(item.id, true);
+          activeId = item.id;
+          renderCards();
+          openListingModal(item);
+        });
+
+        card.setAttribute("role", "button");
+        card.setAttribute("tabindex", "0");
+        card.addEventListener("keydown", event => {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          activeId = item.id;
+          renderCards();
+          openListingModal(item);
         });
 
         frag.appendChild(card);
       });
 
       els.cards.appendChild(frag);
+    }
+
+    function detailRow(label, value) {
+      if (!value) return "";
+      return `
+        <div class="listing-detail-item">
+          <div class="listing-detail-label">${escapeHtml(label)}</div>
+          <div>${escapeHtml(value)}</div>
+        </div>
+      `;
+    }
+
+    function buildListingDetailHtml(item) {
+      const mapUrl = mapUrlFor(item);
+      const tags = item.tags.map(tagLabel).filter(Boolean).join(" / ");
+      const address = [item.address, item.postcode, item.city].filter(Boolean).join(", ");
+
+      return `
+        <h3 class="listing-detail-title">${escapeHtml(item.title)}</h3>
+        ${item.subtitle && item.subtitle !== item.title ? `<p class="listing-detail-subtitle">${escapeHtml(item.subtitle)}</p>` : ""}
+
+        <div class="listing-detail-grid">
+          ${detailRow("カテゴリ", item.category)}
+          ${detailRow("地域", item.city)}
+          ${detailRow("エリア", item.area)}
+          ${detailRow("住所", address)}
+          ${detailRow("電話", item.phone)}
+          ${detailRow("営業時間", item.hours)}
+          ${detailRow("タグ", tags)}
+        </div>
+
+        ${item.description ? `
+          <section class="listing-detail-section">
+            <h4>説明</h4>
+            <p>${escapeHtml(item.description)}</p>
+          </section>
+        ` : ""}
+
+        <div class="listing-modal-actions">
+          ${mapUrl ? `<a class="btn btn-primary" href="${escapeHtml(mapUrl)}" target="_blank" rel="noopener">地図を見る</a>` : ""}
+          ${item.website ? `<a class="btn btn-secondary" href="${escapeHtml(item.website)}" target="_blank" rel="noopener">公式サイト</a>` : ""}
+        </div>
+      `;
+    }
+
+    function openListingModal(item) {
+      if (!els.listingModal || !els.listingModalContent) return;
+      els.listingModalContent.innerHTML = buildListingDetailHtml(item);
+      els.listingModal.hidden = false;
+      document.body.classList.add("modal-open");
+      els.listingModalClose.focus({ preventScroll:true });
+    }
+
+    function closeListingModal() {
+      if (!els.listingModal) return;
+      els.listingModal.hidden = true;
+      document.body.classList.remove("modal-open");
     }
 
     function ensureMap() {
@@ -1223,7 +1458,7 @@
       activeId = id;
 
       if (switchToMap && !els.mainLayout.classList.contains("map-mode")) {
-        setView("map");
+        setView("grid");
       }
 
       renderCards();
@@ -1236,21 +1471,15 @@
     }
 
     function setView(view) {
-      const isMap = view === "map";
+      const isGrid = view === "grid";
 
-      els.mainLayout.classList.toggle("map-mode", isMap);
-      els.cardViewBtn.classList.toggle("active", !isMap);
-      els.mapViewBtn.classList.toggle("active", isMap);
-      els.cardViewBtn.setAttribute("aria-pressed", String(!isMap));
-      els.mapViewBtn.setAttribute("aria-pressed", String(isMap));
-
-      if (isMap) {
-        ensureMap();
-        setTimeout(() => {
-          map.invalidateSize();
-          renderMarkers();
-        }, 80);
-      }
+      els.mainLayout.classList.remove("map-mode");
+      els.mainLayout.classList.toggle("grid-mode", isGrid);
+      els.mainLayout.classList.toggle("list-mode", !isGrid);
+      els.cardViewBtn.classList.toggle("active", !isGrid);
+      els.gridViewBtn.classList.toggle("active", isGrid);
+      els.cardViewBtn.setAttribute("aria-pressed", String(!isGrid));
+      els.gridViewBtn.setAttribute("aria-pressed", String(isGrid));
     }
 
     function resetFilters() {
@@ -1273,12 +1502,22 @@
       els.category1Select.addEventListener("change", applyFilters);
       els.areaSelect.addEventListener("change", applyFilters);
       els.resetFiltersBtn.addEventListener("click", resetFilters);
-      els.cardViewBtn.addEventListener("click", () => setView("card"));
-      els.mapViewBtn.addEventListener("click", () => setView("map"));
+      els.cardViewBtn.addEventListener("click", () => setView("list"));
+      els.gridViewBtn.addEventListener("click", () => setView("grid"));
+      els.listingModalClose.addEventListener("click", closeListingModal);
+      els.listingModal.addEventListener("click", event => {
+        if (event.target.matches("[data-modal-close]")) closeListingModal();
+      });
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && els.listingModal && !els.listingModal.hidden) {
+          closeListingModal();
+        }
+      });
     }
 
     async function init() {
       bindEvents();
+      setView("list");
       setStatus("データを読み込んでいます...");
 
       try {

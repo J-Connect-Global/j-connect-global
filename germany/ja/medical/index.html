@@ -593,6 +593,39 @@
   border-color:var(--line);
 }
 
+.filter-chip-group{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+.filter-chip{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:32px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:#fff;
+  color:#4b5563;
+  padding:6px 10px;
+  font-size:12px;
+  font-weight:900;
+  cursor:pointer;
+  line-height:1.2;
+  box-shadow:0 6px 14px rgba(25,39,52,.04);
+}
+
+.filter-chip.active{
+  background:var(--site-navy);
+  border-color:var(--site-navy);
+  color:#fff;
+}
+
+.field.is-empty{
+  display:none;
+}
+
 .chip,
 .active-chip{
   border-color:var(--line);
@@ -615,12 +648,86 @@
 }
 
 .layout.grid-mode .meta-item{
-  grid-template-columns:1fr;
-  gap:3px;
+  display:flex;
+  gap:6px;
+  align-items:baseline;
+  grid-template-columns:none;
+  font-size:12px;
 }
 
 .map-panel{
   display:none;
+}
+
+.layout.map-mode .map-panel{
+  display:block;
+}
+
+.layout.list-mode .card-body{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(240px,.72fr);
+  gap:16px;
+  align-items:start;
+}
+
+.card-main{
+  display:grid;
+  gap:9px;
+  min-width:0;
+}
+
+.card-desc{
+  margin:0;
+  color:#4d5b68;
+  font-size:13px;
+  line-height:1.58;
+}
+
+.medical-tags,
+.listing-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.medical-tag,
+.listing-tag{
+  display:inline-flex;
+  align-items:center;
+  min-height:24px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:#fff;
+  color:#384552;
+  padding:3px 8px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.list-detail-comment{
+  display:none;
+  border-left:1px solid var(--line);
+  padding-left:14px;
+  color:#4d5b68;
+  font-size:13px;
+  line-height:1.62;
+}
+
+.layout.list-mode .list-detail-comment{
+  display:block;
+}
+
+.layout.grid-mode .list-detail-comment,
+.layout.map-mode .list-detail-comment{
+  display:none;
+}
+
+.detail-comment-label{
+  display:block;
+  color:var(--site-navy);
+  font-size:12px;
+  font-weight:900;
+  margin-bottom:5px;
 }
 
 .card{
@@ -742,8 +849,10 @@ body.modal-open{
   .hero-box,.panel,.content,.filter-panel{max-width:100%;min-width:0}
   .hero h1{max-width:100%;white-space:normal;word-break:break-all;font-size:clamp(24px,7vw,28px);line-height:1.12}
   .hero p{max-width:100%}
-  .view-toggle{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .view-toggle{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
   .view-btn{min-width:0;padding:0 8px;font-size:14px;white-space:nowrap}
+  .layout.list-mode .card-body{grid-template-columns:1fr;gap:10px}
+  .list-detail-comment{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:10px}
   .listing-detail-grid{grid-template-columns:1fr}
   .listing-modal-dialog{
     width:calc(100vw - 20px);
@@ -848,6 +957,7 @@ body.modal-open{
     <div class="view-toggle" role="tablist" aria-label="表示切替">
       <button id="cardViewBtn" class="view-btn active" type="button" aria-pressed="true">リスト</button>
       <button id="gridViewBtn" class="view-btn" type="button" aria-pressed="false">グリッド</button>
+      <button id="mapViewBtn" class="view-btn" type="button" aria-pressed="false">マップ</button>
     </div>
   </div>
 
@@ -865,28 +975,28 @@ body.modal-open{
         </div>
 
         <div class="field">
-          <label class="label" for="citySelect">都市</label>
-          <select id="citySelect" class="select">
-            <option value="">すべて</option>
-            <option value="duesseldorf">デュッセルドルフ</option>
-            <option value="frankfurt">フランクフルト</option>
-            <option value="muenchen">ミュンヘン</option>
-            <option value="berlin">ベルリン</option>
-          </select>
+          <div class="label">地域</div>
+          <div class="filter-chip-group" id="regionChipGroup" role="group" aria-label="地域で絞り込み"></div>
         </div>
 
         <div class="field">
-          <label class="label" for="category1Select">カテゴリ</label>
-          <select id="category1Select" class="select">
-            <option value="">すべて</option>
-          </select>
+          <div class="label">カテゴリ</div>
+          <div class="filter-chip-group" id="categoryChipGroup" role="group" aria-label="カテゴリで絞り込み"></div>
         </div>
 
-        <div class="field">
-          <label class="label" for="areaSelect">エリア</label>
-          <select id="areaSelect" class="select">
-            <option value="">すべて</option>
-          </select>
+        <div class="field" id="detailCategoryField">
+          <div class="label">詳細カテゴリ</div>
+          <div class="filter-chip-group" id="detailCategoryChipGroup" role="group" aria-label="詳細カテゴリで絞り込み"></div>
+        </div>
+
+        <div class="field" id="ratingField">
+          <div class="label">評価</div>
+          <div class="filter-chip-group" id="ratingChipGroup" role="group" aria-label="評価で絞り込み"></div>
+        </div>
+
+        <div class="field" id="languageField">
+          <div class="label">言語対応</div>
+          <div class="filter-chip-group" id="languageChipGroup" role="group" aria-label="言語対応で絞り込み"></div>
         </div>
       </div>
     </aside>
@@ -1012,9 +1122,11 @@ body.modal-open{
     const els = {
       languageSelect: document.getElementById("languageSelect"),
       keywordInput: document.getElementById("keywordInput"),
-      citySelect: document.getElementById("citySelect"),
-      category1Select: document.getElementById("category1Select"),
-      areaSelect: document.getElementById("areaSelect"),
+      regionChipGroup: document.getElementById("regionChipGroup"),
+      categoryChipGroup: document.getElementById("categoryChipGroup"),
+      detailCategoryChipGroup: document.getElementById("detailCategoryChipGroup"),
+      ratingChipGroup: document.getElementById("ratingChipGroup"),
+      languageChipGroup: document.getElementById("languageChipGroup"),
       resetFiltersBtn: document.getElementById("resetFiltersBtn"),
       resultsSummary: document.getElementById("resultsSummary"),
       activeChips: document.getElementById("activeChips"),
@@ -1023,6 +1135,8 @@ body.modal-open{
       mainLayout: document.getElementById("mainLayout"),
       cardViewBtn: document.getElementById("cardViewBtn"),
       gridViewBtn: document.getElementById("gridViewBtn"),
+      mapViewBtn: document.getElementById("mapViewBtn"),
+      mapPanel: document.getElementById("mapPanel"),
       listingModal: document.getElementById("listingModal"),
       listingModalContent: document.getElementById("listingModalContent"),
       listingModalClose: document.getElementById("listingModalClose")
@@ -1035,6 +1149,21 @@ body.modal-open{
     let markerMap = new Map();
     let geocodeCache = new Map();
     let activeId = null;
+    let currentView = "list";
+    const filterState = {
+      region: "",
+      category: "",
+      detailCategory: "",
+      rating: "",
+      language: ""
+    };
+
+    const RATING_OPTIONS = [
+      { value: "4.5", label: "★4.5以上" },
+      { value: "4.0", label: "★4.0以上" },
+      { value: "3.5", label: "★3.5以上" },
+      { value: "3.0", label: "★3.0以上" }
+    ];
 
     function escapeHtml(value) {
       return String(value ?? "")
@@ -1063,9 +1192,23 @@ body.modal-open{
     function parseTags(value) {
       if (Array.isArray(value)) return value.map(v => String(v).trim()).filter(Boolean);
       return String(value || "")
-        .split(/[、,]/)
+        .split(/\n|,|、|;|；|\||\/|#/)
         .map(v => v.trim())
         .filter(Boolean);
+    }
+
+    function getField(item, ...keys) {
+      for (const key of keys) {
+        if (item[key] !== undefined && item[key] !== null && String(item[key]).trim() !== "") {
+          return String(item[key]).trim();
+        }
+      }
+      return "";
+    }
+
+    function parseNumber(value) {
+      const n = Number(String(value ?? "").replace(/[^\d.-]/g, ""));
+      return Number.isFinite(n) ? n : null;
     }
 
     function normalizePayload(payload) {
@@ -1078,30 +1221,47 @@ body.modal-open{
     }
 
     function parseItem(item, index) {
-      const categoryRaw = item.category || "";
-      const tags = parseTags(item.tags);
+      const categoryRaw = getField(item, "category", "category1", "categoryName");
+      const detailCategory = getField(item, "detail_category", "category2", "subcategory", "area");
+      const tags = parseTags(getField(item, "tags", "keywords"));
+      const title = getField(item, "title", "name", "name_en", "name_ja");
+      const nameJa = getField(item, "name_ja");
+      const region = getField(item, "region", "area", "city");
+      const rating = getField(item, "rating", "totalScore", "score");
+      const shortDescription = getField(item, "short_description", "description_ja", "description", "notes");
+      const detailComment = getField(item, "detail_comment", "long_description", "comment", "description", "notes");
+      const languageSupport = getField(item, "language_support", "language", "languages");
+      const officialUrl = getField(item, "official_url", "website", "site_url", "homepage");
+      const mapUrl = getField(item, "map_url", "url", "google_map_url");
+      const lat = parseFloat(getField(item, "latitude", "lat", "location/lat"));
+      const lng = parseFloat(getField(item, "longitude", "lng", "lon", "location/lng"));
 
       return {
-        id: item.slug || item.id || `medical-${index}`,
-        nameJa: item.name_ja || "",
-        nameEn: item.name_en || "",
-        title: item.name_en || item.name_ja || "名称未設定",
-        subtitle: item.name_ja || item.name_en || "",
-        description: item.description_ja || item.description_en || "",
-        descriptionEn: item.description_en || "",
+        id: getField(item, "slug", "id") || `medical-${index}`,
+        nameJa,
+        nameEn: getField(item, "name_en"),
+        title: title || "名称未設定",
+        subtitle: nameJa && nameJa !== title ? nameJa : "",
+        description: shortDescription,
+        detailComment,
+        descriptionEn: getField(item, "description_en"),
         categoryRaw,
         category: categoryLabel(categoryRaw),
-        city: item.city || "",
-        area: item.area || "",
+        detailCategory,
+        city: getField(item, "city"),
+        region,
+        area: getField(item, "area"),
+        rating,
+        languageSupport,
         tags,
-        address: item.address || "",
-        postcode: item.postcode || "",
-        phone: item.phone || item.telephone || item.tel || "",
-        hours: item.opening_hours || item.openingHours || item.hours || "",
-        website: item.website || "",
-        mapUrl: item.map_url || "",
-        lat: item.lat ? Number(item.lat) : null,
-        lng: item.lng ? Number(item.lng) : null
+        address: getField(item, "address", "street"),
+        postcode: getField(item, "postcode", "postalCode", "Postal Code"),
+        phone: getField(item, "phone", "telephone", "tel"),
+        hours: getField(item, "opening_hours", "openingHours", "hours"),
+        website: officialUrl,
+        mapUrl,
+        lat: Number.isFinite(lat) ? lat : null,
+        lng: Number.isFinite(lng) ? lng : null
       };
     }
 
@@ -1121,8 +1281,12 @@ body.modal-open{
         item.descriptionEn,
         item.category,
         item.categoryRaw,
+        item.detailCategory,
         item.city,
+        item.region,
         item.area,
+        item.languageSupport,
+        item.rating,
         item.address,
         item.postcode,
         ...item.tags,
@@ -1142,50 +1306,64 @@ body.modal-open{
       els.statusBox.innerHTML = "";
     }
 
-    function populateFilters() {
-      const categories = Array.from(new Set(rawItems.map(i => i.category).filter(Boolean))).sort((a,b)=>a.localeCompare(b,"ja"));
-      const areas = Array.from(new Set(rawItems.map(i => i.area).filter(Boolean))).sort((a,b)=>a.localeCompare(b,"ja"));
-
-      els.category1Select.innerHTML =
-        '<option value="">すべて</option>' +
-        categories.map(v => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join("");
-
-      els.areaSelect.innerHTML =
-        '<option value="">すべて</option>' +
-        areas.map(v => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join("");
+    function optionList(values) {
+      return [...new Set(values.filter(Boolean))]
+        .sort((a,b) => a.localeCompare(b, "ja"))
+        .map(value => ({ value, label: value }));
     }
 
-    function activeFilters() {
-      return {
-        keyword: normalizeText(els.keywordInput.value),
-        city: normalizeText(els.citySelect.value),
-        category: els.category1Select.value,
-        area: els.areaSelect.value
-      };
+    function renderChipGroup(container, options, stateKey, hideWhenEmpty = true) {
+      if (!container) return;
+      const available = options.filter(option => option.value);
+      const allOptions = [{ value: "", label: "すべて" }, ...available];
+      container.closest(".field")?.classList.toggle("is-empty", hideWhenEmpty && available.length === 0);
+      container.innerHTML = allOptions.map(option => {
+        const active = filterState[stateKey] === option.value;
+        return `<button class="filter-chip ${active ? "active" : ""}" type="button" data-value="${escapeHtml(option.value)}" aria-pressed="${active ? "true" : "false"}">${escapeHtml(option.label)}</button>`;
+      }).join("");
+      container.querySelectorAll(".filter-chip").forEach(button => {
+        button.addEventListener("click", () => {
+          filterState[stateKey] = button.dataset.value || "";
+          applyFilters();
+        });
+      });
+    }
+
+    function renderFilterChips() {
+      renderChipGroup(els.regionChipGroup, optionList(rawItems.map(i => i.region || i.city || i.area)), "region", false);
+      renderChipGroup(els.categoryChipGroup, optionList(rawItems.map(i => i.category)), "category");
+      renderChipGroup(els.detailCategoryChipGroup, optionList(rawItems.map(i => i.detailCategory)), "detailCategory");
+      renderChipGroup(els.ratingChipGroup, RATING_OPTIONS, "rating", false);
+      renderChipGroup(els.languageChipGroup, optionList(rawItems.map(i => i.languageSupport)), "language");
     }
 
     function applyFilters() {
-      const f = activeFilters();
+      const keyword = normalizeText(els.keywordInput.value);
 
       filteredItems = rawItems.filter(item => {
-        if (f.city && normalizeText(item.city) !== f.city) return false;
-        if (f.category && item.category !== f.category) return false;
-        if (f.area && item.area !== f.area) return false;
-        if (f.keyword && !itemSearchText(item).includes(f.keyword)) return false;
+        const regionValue = item.region || item.city || item.area;
+        const itemRating = parseNumber(item.rating);
+        if (filterState.region && normalizeText(regionValue) !== normalizeText(filterState.region)) return false;
+        if (filterState.category && item.category !== filterState.category) return false;
+        if (filterState.detailCategory && item.detailCategory !== filterState.detailCategory) return false;
+        if (filterState.language && item.languageSupport !== filterState.language) return false;
+        if (filterState.rating && (itemRating === null || itemRating < Number(filterState.rating))) return false;
+        if (keyword && !itemSearchText(item).includes(keyword)) return false;
         return true;
       });
 
       filteredItems.sort((a,b) => {
-        const c = a.category.localeCompare(b.category, "ja");
+        const c = (a.category || "").localeCompare(b.category || "", "ja");
         if (c !== 0) return c;
         return a.title.localeCompare(b.title, "ja");
       });
 
+      renderFilterChips();
       renderSummary();
-      renderChips(f);
+      renderChips();
       renderCards();
 
-      if (els.mainLayout.classList.contains("map-mode")) {
+      if (currentView === "map") {
         renderMarkers();
       }
     }
@@ -1194,12 +1372,16 @@ body.modal-open{
       els.resultsSummary.textContent = `${filteredItems.length} 件 / 全 ${rawItems.length} 件`;
     }
 
-    function renderChips(f) {
+    function renderChips() {
       const chips = [];
-      if (f.keyword) chips.push(`検索: ${f.keyword}`);
-      if (f.city) chips.push(`都市: ${f.city}`);
-      if (f.category) chips.push(`カテゴリ: ${f.category}`);
-      if (f.area) chips.push(`エリア: ${f.area}`);
+      const keyword = normalizeText(els.keywordInput.value);
+      const ratingLabel = RATING_OPTIONS.find(option => option.value === filterState.rating)?.label;
+      if (keyword) chips.push(`検索: ${els.keywordInput.value.trim()}`);
+      if (filterState.region) chips.push(`地域: ${filterState.region}`);
+      if (filterState.category) chips.push(`カテゴリ: ${filterState.category}`);
+      if (filterState.detailCategory) chips.push(`詳細カテゴリ: ${filterState.detailCategory}`);
+      if (ratingLabel) chips.push(`評価: ${ratingLabel}`);
+      if (filterState.language) chips.push(`言語対応: ${filterState.language}`);
 
       els.activeChips.innerHTML = chips
         .map(v => `<span class="chip">${escapeHtml(v)}</span>`)
@@ -1230,72 +1412,92 @@ body.modal-open{
         if (item.id === activeId) card.classList.add("active-map-item");
         card.dataset.id = item.id;
 
-        const tagsText = item.tags.slice(0, 3).map(tagLabel).join(" / ");
         const mapUrl = mapUrlFor(item);
+        const categoryText = [item.category, item.detailCategory].filter(Boolean).join(" / ");
+        const regionText = item.region || item.city || item.area;
+        const tagsHtml = item.tags.slice(0, 4)
+          .map(tag => `<span class="medical-tag">${escapeHtml(tagLabel(tag))}</span>`)
+          .join("");
 
         card.innerHTML = `
           <div class="card-body">
-            <div>
-              <h3 class="card-title">${escapeHtml(item.title)}</h3>
-              ${item.subtitle && item.subtitle !== item.title ? `<p class="card-subtitle">${escapeHtml(item.subtitle)}</p>` : ""}
+            <div class="card-main">
+              <div>
+                <h3 class="card-title">${escapeHtml(item.title)}</h3>
+                ${item.subtitle && item.subtitle !== item.title ? `<p class="card-subtitle">${escapeHtml(item.subtitle)}</p>` : ""}
+              </div>
+
+              ${tagsHtml ? `<div class="medical-tags">${tagsHtml}</div>` : ""}
+
+              <div class="meta-list">
+                ${categoryText ? `
+                <div class="meta-item">
+                  <div class="meta-label">カテゴリ</div>
+                  <div class="meta-value">${escapeHtml(categoryText)}</div>
+                </div>` : ""}
+                ${regionText ? `
+                <div class="meta-item">
+                  <div class="meta-label">地域</div>
+                  <div class="meta-value">${escapeHtml(regionText)}</div>
+                </div>` : ""}
+                ${item.rating ? `
+                <div class="meta-item">
+                  <div class="meta-label">評価</div>
+                  <div class="meta-value">★ ${escapeHtml(item.rating)}</div>
+                </div>` : ""}
+                ${item.languageSupport ? `
+                <div class="meta-item">
+                  <div class="meta-label">言語対応</div>
+                  <div class="meta-value">${escapeHtml(item.languageSupport)}</div>
+                </div>` : ""}
+                ${item.phone ? `
+                <div class="meta-item">
+                  <div class="meta-label">電話</div>
+                  <div class="meta-value">${escapeHtml(item.phone)}</div>
+                </div>` : ""}
+                ${item.hours ? `
+                <div class="meta-item">
+                  <div class="meta-label">時間</div>
+                  <div class="meta-value">${escapeHtml(item.hours)}</div>
+                </div>` : ""}
+              </div>
+
+              ${item.description ? `<p class="card-desc">${escapeHtml(item.description)}</p>` : ""}
+
+              <div class="link-row">
+                <button class="btn btn-secondary" type="button" data-detail>詳細を見る</button>
+                ${item.website ? `<a class="btn btn-secondary" href="${escapeHtml(item.website)}" target="_blank" rel="noopener">公式サイト</a>` : ""}
+                ${mapUrl ? `<a class="btn btn-primary" href="${escapeHtml(mapUrl)}" target="_blank" rel="noopener">地図を見る</a>` : ""}
+              </div>
             </div>
 
-            <div class="meta-list">
-              <div class="meta-item">
-                <div class="meta-label">カテゴリ</div>
-                <div class="meta-value">${escapeHtml(item.category || "-")}</div>
-              </div>
-              <div class="meta-item">
-                <div class="meta-label">エリア</div>
-                <div class="meta-value">${escapeHtml(item.area || "-")}</div>
-              </div>
-              <div class="meta-item">
-                <div class="meta-label">説明</div>
-                <div class="meta-value">${escapeHtml(item.description || "-")}</div>
-              </div>
-              <div class="meta-item">
-                <div class="meta-label">住所</div>
-                <div class="meta-value">${escapeHtml(item.address || "-")}</div>
-              </div>
-              ${item.phone ? `
-              <div class="meta-item">
-                <div class="meta-label">電話</div>
-                <div class="meta-value">${escapeHtml(item.phone)}</div>
-              </div>` : ""}
-              ${item.postcode ? `
-              <div class="meta-item">
-                <div class="meta-label">郵便番号</div>
-                <div class="meta-value">${escapeHtml(item.postcode)}</div>
-              </div>` : ""}
-              ${tagsText ? `
-              <div class="meta-item">
-                <div class="meta-label">タグ</div>
-                <div class="meta-value">${escapeHtml(tagsText)}</div>
-              </div>` : ""}
-            </div>
-
-            <div class="link-row">
-              ${mapUrl ? `<a class="btn btn-primary" href="${escapeHtml(mapUrl)}" target="_blank" rel="noopener">地図を見る</a>` : ""}
-              ${item.website ? `<a class="btn btn-secondary" href="${escapeHtml(item.website)}" target="_blank" rel="noopener">公式サイト</a>` : ""}
-            </div>
+            ${item.detailComment ? `
+            <aside class="list-detail-comment">
+              <div class="detail-comment-label">詳細コメント</div>
+              <p>${escapeHtml(item.detailComment)}</p>
+            </aside>` : ""}
           </div>
         `;
 
-        card.addEventListener("click", event => {
-          if (event.target.closest("a")) return;
+        const openCurrent = () => {
           activeId = item.id;
           renderCards();
           openListingModal(item);
+        };
+
+        card.addEventListener("click", event => {
+          if (event.target.closest("a,button")) return;
+          openCurrent();
         });
+
+        card.querySelector("[data-detail]")?.addEventListener("click", openCurrent);
 
         card.setAttribute("role", "button");
         card.setAttribute("tabindex", "0");
         card.addEventListener("keydown", event => {
           if (event.key !== "Enter" && event.key !== " ") return;
           event.preventDefault();
-          activeId = item.id;
-          renderCards();
-          openListingModal(item);
+          openCurrent();
         });
 
         frag.appendChild(card);
@@ -1317,17 +1519,19 @@ body.modal-open{
     function buildListingDetailHtml(item) {
       const mapUrl = mapUrlFor(item);
       const tags = item.tags.map(tagLabel).filter(Boolean).join(" / ");
-      const address = [item.address, item.postcode, item.city].filter(Boolean).join(", ");
+      const address = [item.address, item.postcode, item.city || item.region].filter(Boolean).join(", ");
+      const categoryText = [item.category, item.detailCategory].filter(Boolean).join(" / ");
+      const regionText = item.region || item.city || item.area;
 
       return `
         <h3 class="listing-detail-title">${escapeHtml(item.title)}</h3>
         ${item.subtitle && item.subtitle !== item.title ? `<p class="listing-detail-subtitle">${escapeHtml(item.subtitle)}</p>` : ""}
 
         <div class="listing-detail-grid">
-          ${detailRow("カテゴリ", item.category)}
-          ${detailRow("地域", item.city)}
-          ${detailRow("エリア", item.area)}
-          ${detailRow("住所", address)}
+          ${detailRow("カテゴリ", categoryText)}
+          ${detailRow("地域", regionText)}
+          ${detailRow("評価", item.rating ? `★ ${item.rating}` : "")}
+          ${detailRow("言語対応", item.languageSupport)}
           ${detailRow("電話", item.phone)}
           ${detailRow("営業時間", item.hours)}
           ${detailRow("タグ", tags)}
@@ -1337,6 +1541,20 @@ body.modal-open{
           <section class="listing-detail-section">
             <h4>説明</h4>
             <p>${escapeHtml(item.description)}</p>
+          </section>
+        ` : ""}
+
+        ${item.detailComment ? `
+          <section class="listing-detail-section">
+            <h4>詳細コメント</h4>
+            <p>${escapeHtml(item.detailComment)}</p>
+          </section>
+        ` : ""}
+
+        ${address ? `
+          <section class="listing-detail-section">
+            <h4>所在地</h4>
+            <p>${escapeHtml(address)}</p>
           </section>
         ` : ""}
 
@@ -1400,12 +1618,13 @@ body.modal-open{
 
     function popupHtml(item) {
       const mapUrl = mapUrlFor(item);
+      const regionText = item.region || item.city || item.area || "-";
 
       return `
         <div class="map-popup">
           <div class="map-popup-title">${escapeHtml(item.title)}</div>
           ${item.subtitle && item.subtitle !== item.title ? `<div class="map-popup-sub">${escapeHtml(item.subtitle)}</div>` : ""}
-          <div class="map-popup-line">${escapeHtml(item.category)} / ${escapeHtml(item.area || "-")}</div>
+          <div class="map-popup-line">${escapeHtml(item.category)} / ${escapeHtml(regionText)}</div>
           <div class="map-popup-line">${escapeHtml(item.address || "-")}</div>
           <div class="map-popup-actions">
             ${mapUrl ? `<a class="map-popup-btn" href="${escapeHtml(mapUrl)}" target="_blank" rel="noopener">地図</a>` : ""}
@@ -1458,7 +1677,7 @@ body.modal-open{
       activeId = id;
 
       if (switchToMap && !els.mainLayout.classList.contains("map-mode")) {
-        setView("grid");
+        setView("map");
       }
 
       renderCards();
@@ -1471,22 +1690,35 @@ body.modal-open{
     }
 
     function setView(view) {
+      currentView = view;
+      const isList = view === "list";
       const isGrid = view === "grid";
+      const isMap = view === "map";
 
-      els.mainLayout.classList.remove("map-mode");
+      els.mainLayout.classList.toggle("list-mode", isList);
       els.mainLayout.classList.toggle("grid-mode", isGrid);
-      els.mainLayout.classList.toggle("list-mode", !isGrid);
-      els.cardViewBtn.classList.toggle("active", !isGrid);
+      els.mainLayout.classList.toggle("map-mode", isMap);
+      els.cardViewBtn.classList.toggle("active", isList);
       els.gridViewBtn.classList.toggle("active", isGrid);
-      els.cardViewBtn.setAttribute("aria-pressed", String(!isGrid));
+      els.mapViewBtn.classList.toggle("active", isMap);
+      els.cardViewBtn.setAttribute("aria-pressed", String(isList));
       els.gridViewBtn.setAttribute("aria-pressed", String(isGrid));
+      els.mapViewBtn.setAttribute("aria-pressed", String(isMap));
+
+      if (isMap) {
+        ensureMap();
+        requestAnimationFrame(() => {
+          if (map) map.invalidateSize();
+          renderMarkers();
+        });
+      }
     }
 
     function resetFilters() {
       els.keywordInput.value = "";
-      els.citySelect.value = "";
-      els.category1Select.value = "";
-      els.areaSelect.value = "";
+      Object.keys(filterState).forEach(key => {
+        filterState[key] = "";
+      });
       applyFilters();
     }
 
@@ -1498,12 +1730,10 @@ body.modal-open{
       }
 
       els.keywordInput.addEventListener("input", applyFilters);
-      els.citySelect.addEventListener("change", applyFilters);
-      els.category1Select.addEventListener("change", applyFilters);
-      els.areaSelect.addEventListener("change", applyFilters);
       els.resetFiltersBtn.addEventListener("click", resetFilters);
       els.cardViewBtn.addEventListener("click", () => setView("list"));
       els.gridViewBtn.addEventListener("click", () => setView("grid"));
+      els.mapViewBtn.addEventListener("click", () => setView("map"));
       els.listingModalClose.addEventListener("click", closeListingModal);
       els.listingModal.addEventListener("click", event => {
         if (event.target.matches("[data-modal-close]")) closeListingModal();
@@ -1528,7 +1758,7 @@ body.modal-open{
 
         rawItems = rows.map(parseItem).filter(item => item.title && item.title !== "名称未設定");
 
-        populateFilters();
+        renderFilterChips();
         applyFilters();
 
         if (!rawItems.length) {

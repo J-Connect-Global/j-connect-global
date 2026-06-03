@@ -713,18 +713,6 @@ body{
   border-radius:12px;
 }
 
-.select-chip-enhanced .select{
-  position:absolute;
-  width:1px;
-  height:1px;
-  padding:0;
-  margin:-1px;
-  overflow:hidden;
-  clip:rect(0 0 0 0);
-  white-space:nowrap;
-  border:0;
-}
-
 .filter-chip-group{
   display:flex;
   flex-wrap:wrap;
@@ -1273,56 +1261,34 @@ body.modal-open{
           <input id="keywordInput" class="input" type="text" placeholder="店名・説明・タグ・住所など" />
         </div>
 
-        <div class="field select-chip-enhanced">
-          <label class="label" for="citySelect">地域</label>
-          <select id="citySelect" class="select">
-            <option value="">すべて</option>
-            <option value="duesseldorf">デュッセルドルフ</option>
-            <option value="frankfurt">フランクフルト</option>
-            <option value="muenchen">ミュンヘン</option>
-            <option value="berlin">ベルリン</option>
-          </select>
+        <div class="field">
+          <div class="label">地域</div>
           <div class="filter-chip-group" id="regionChipGroup" role="group" aria-label="地域で絞り込み"></div>
         </div>
 
-        <div class="field select-chip-enhanced">
-          <label class="label" for="category1Select">カテゴリ</label>
-          <select id="category1Select" class="select">
-            <option value="">すべて</option>
-          </select>
+        <div class="field">
+          <div class="label">カテゴリ</div>
           <div class="filter-chip-group" id="categoryChipGroup" role="group" aria-label="カテゴリで絞り込み"></div>
         </div>
 
-        <div class="field select-chip-enhanced">
-          <label class="label" for="category2Select">詳細カテゴリ</label>
-          <select id="category2Select" class="select" disabled>
-            <option value="">まずカテゴリを選択</option>
-          </select>
+        <div class="field" id="detailCategoryField">
+          <div class="label">詳細カテゴリ</div>
           <div class="filter-chip-group" id="detailCategoryChipGroup" role="group" aria-label="詳細カテゴリで絞り込み"></div>
         </div>
 
-        <div class="field select-chip-enhanced">
-          <label class="label" for="ratingSelect">レビューの評価数</label>
-          <select id="ratingSelect" class="select">
-            <option value="">すべて</option>
-            <option value="1000">1000件以上</option>
-            <option value="500">500件以上</option>
-            <option value="100">100件以上</option>
-            <option value="50">50件以上</option>
-          </select>
+        <div class="field">
+          <div class="label">評価</div>
+          <div class="filter-chip-group" id="starChipGroup" role="group" aria-label="星評価で絞り込み"></div>
+        </div>
+
+        <div class="field">
+          <div class="label">レビュー数</div>
           <div class="filter-chip-group" id="reviewChipGroup" role="group" aria-label="レビュー数で絞り込み"></div>
         </div>
 
-        <div class="field select-chip-enhanced">
-          <label class="label" for="starRatingSelect">星評価</label>
-          <select id="starRatingSelect" class="select">
-            <option value="">すべて</option>
-            <option value="4.5">★★★★☆以上</option>
-            <option value="4.0">★★★★以上</option>
-            <option value="3.5">★★★☆以上</option>
-            <option value="3.0">★★★以上</option>
-          </select>
-          <div class="filter-chip-group" id="starChipGroup" role="group" aria-label="星評価で絞り込み"></div>
+        <div class="field" id="priceField">
+          <div class="label">価格</div>
+          <div class="filter-chip-group" id="priceChipGroup" role="group" aria-label="価格帯で絞り込み"></div>
         </div>
 
       </div>
@@ -1437,16 +1403,12 @@ body.modal-open{
 
     const els = {
       keywordInput: document.getElementById("keywordInput"),
-      citySelect: document.getElementById("citySelect"),
-      category1Select: document.getElementById("category1Select"),
-      category2Select: document.getElementById("category2Select"),
-      ratingSelect: document.getElementById("ratingSelect"),
-      starRatingSelect: document.getElementById("starRatingSelect"),
       regionChipGroup: document.getElementById("regionChipGroup"),
       categoryChipGroup: document.getElementById("categoryChipGroup"),
       detailCategoryChipGroup: document.getElementById("detailCategoryChipGroup"),
       reviewChipGroup: document.getElementById("reviewChipGroup"),
       starChipGroup: document.getElementById("starChipGroup"),
+      priceChipGroup: document.getElementById("priceChipGroup"),
       resetFiltersBtn: document.getElementById("resetFiltersBtn"),
       resultsSummary: document.getElementById("resultsSummary"),
       activeChips: document.getElementById("activeChips"),
@@ -1466,6 +1428,35 @@ body.modal-open{
     let filteredItems = [];
     let categoryMap = {};
     let currentView = "list";
+    const filterState = {
+      region: "",
+      category: "",
+      detailCategory: "",
+      reviews: "",
+      rating: "",
+      price: ""
+    };
+
+    const REGION_OPTIONS = [
+      { value: "duesseldorf", label: "デュッセルドルフ" },
+      { value: "frankfurt", label: "フランクフルト" },
+      { value: "muenchen", label: "ミュンヘン" },
+      { value: "berlin", label: "ベルリン" }
+    ];
+
+    const REVIEW_OPTIONS = [
+      { value: "1000", label: "1000件以上" },
+      { value: "500", label: "500件以上" },
+      { value: "100", label: "100件以上" },
+      { value: "50", label: "50件以上" }
+    ];
+
+    const RATING_OPTIONS = [
+      { value: "4.5", label: "★4.5以上" },
+      { value: "4.0", label: "★4.0以上" },
+      { value: "3.5", label: "★3.5以上" },
+      { value: "3.0", label: "★3.0以上" }
+    ];
 
     let map = null;
     let markerLayer = null;
@@ -1669,62 +1660,43 @@ function buildAddress(item) {
       return result;
     }
 
-    function fillCategory1Options() {
-      const categories = Object.keys(categoryMap);
-      els.category1Select.innerHTML = `
-        <option value="">すべて</option>
-        ${categories.map(cat => `<option value="${escapeHtml(cat)}">${escapeHtml(cat)}</option>`).join("")}
-      `;
+    function optionList(values) {
+      return [...new Set(values.filter(Boolean))]
+        .sort((a,b) => a.localeCompare(b, "ja"))
+        .map(value => ({ value, label: value }));
     }
 
-    function updateCategory2Options() {
-      const selectedCat1 = els.category1Select.value;
-      if (!selectedCat1) {
-        els.category2Select.innerHTML = `<option value="">まずカテゴリを選択</option>`;
-        els.category2Select.disabled = true;
-        els.category2Select.value = "";
-        return;
-      }
-      const options = categoryMap[selectedCat1] || [];
-      els.category2Select.innerHTML = `
-        <option value="">すべて</option>
-        ${options.map(cat => `<option value="${escapeHtml(cat)}">${escapeHtml(cat)}</option>`).join("")}
-      `;
-      els.category2Select.disabled = false;
-      if (!options.includes(els.category2Select.value)) els.category2Select.value = "";
-    }
-
-    function renderChipGroup(container, selectEl, onSelect) {
-      if (!container || !selectEl) return;
-      const options = Array.from(selectEl.options);
-      const disabled = selectEl.disabled && options.length <= 1;
-
-      container.innerHTML = options.map(option => {
-        const active = option.value === selectEl.value;
-        return `
-          <button class="filter-chip ${active ? "active" : ""}" type="button" data-value="${escapeHtml(option.value)}" aria-pressed="${active ? "true" : "false"}" ${disabled ? "disabled" : ""}>
-            ${escapeHtml(option.textContent || option.value)}
-          </button>
-        `;
+    function renderChipGroup(container, options, stateKey, hideWhenEmpty = true) {
+      if (!container) return;
+      const available = options.filter(option => option.value);
+      const allOptions = [{ value: "", label: "すべて" }, ...available];
+      container.closest(".field")?.classList.toggle("is-empty", hideWhenEmpty && available.length === 0);
+      container.innerHTML = allOptions.map(option => {
+        const active = filterState[stateKey] === option.value;
+        return `<button class="filter-chip ${active ? "active" : ""}" type="button" data-value="${escapeHtml(option.value)}" aria-pressed="${active ? "true" : "false"}">${escapeHtml(option.label)}</button>`;
       }).join("");
-
       container.querySelectorAll(".filter-chip").forEach(button => {
         button.addEventListener("click", () => {
-          selectEl.value = button.dataset.value || "";
-          onSelect();
+          filterState[stateKey] = button.dataset.value || "";
+          if (stateKey === "category") filterState.detailCategory = "";
+          filterItems();
         });
       });
     }
 
     function renderFilterChips() {
-      renderChipGroup(els.regionChipGroup, els.citySelect, filterItems);
-      renderChipGroup(els.categoryChipGroup, els.category1Select, () => {
-        updateCategory2Options();
-        filterItems();
-      });
-      renderChipGroup(els.detailCategoryChipGroup, els.category2Select, filterItems);
-      renderChipGroup(els.reviewChipGroup, els.ratingSelect, filterItems);
-      renderChipGroup(els.starChipGroup, els.starRatingSelect, filterItems);
+      const categoryOptions = optionList(Object.keys(categoryMap));
+      const detailOptions = filterState.category
+        ? optionList(categoryMap[filterState.category] || [])
+        : [];
+      const priceOptions = optionList(rawItems.map(item => getField(item, "price_range", "price")));
+
+      renderChipGroup(els.regionChipGroup, REGION_OPTIONS, "region", false);
+      renderChipGroup(els.categoryChipGroup, categoryOptions, "category");
+      renderChipGroup(els.detailCategoryChipGroup, detailOptions, "detailCategory");
+      renderChipGroup(els.starChipGroup, RATING_OPTIONS, "rating", false);
+      renderChipGroup(els.reviewChipGroup, REVIEW_OPTIONS, "reviews", false);
+      renderChipGroup(els.priceChipGroup, priceOptions, "price");
     }
 
     function getItemId(item, index = 0) {
@@ -1736,22 +1708,20 @@ function buildAddress(item) {
 
     function filterItems() {
       const keyword = normalize(els.keywordInput.value);
-      const city = els.citySelect.value;
-      const category1 = els.category1Select.value;
-      const category2 = els.category2Select.value;
-      const minReviews = parseNumber(els.ratingSelect.value) || 0;
-      const minStarRating = parseFloat(els.starRatingSelect.value) || 0;
+      const minReviews = parseNumber(filterState.reviews) || 0;
+      const minStarRating = parseFloat(filterState.rating) || 0;
 
       filteredItems = rawItems.filter(item => {
         const matchesKeyword = !keyword || buildSearchText(item).includes(keyword);
-        const matchesCity = !city || normalizeCity(getRegion(item)) === city;
-        const matchesCategory1 = !category1 || getCategory1(item) === category1;
-        const matchesCategory2 = !category2 || getCategory2(item) === category2;
+        const matchesCity = !filterState.region || normalizeCity(getRegion(item)) === filterState.region;
+        const matchesCategory1 = !filterState.category || getCategory1(item) === filterState.category;
+        const matchesCategory2 = !filterState.detailCategory || getCategory2(item) === filterState.detailCategory;
+        const matchesPrice = !filterState.price || getField(item, "price_range", "price") === filterState.price;
         const reviews = parseNumber(getField(item, "reviewsCount", "review_count", "reviews")) || 0;
         const matchesReviews = !minReviews || reviews >= minReviews;
         const score = parseFloat(getField(item, "rating", "totalScore", "score")) || 0;
         const matchesStarRating = !minStarRating || score >= minStarRating;
-        return matchesKeyword && matchesCity && matchesCategory1 && matchesCategory2 && matchesReviews && matchesStarRating;
+        return matchesKeyword && matchesCity && matchesCategory1 && matchesCategory2 && matchesPrice && matchesReviews && matchesStarRating;
       }).map((item, index) => ({
         ...item,
         __id: getItemId(item, index)
@@ -1770,12 +1740,14 @@ function buildAddress(item) {
 
     function renderActiveChips() {
       const chips = [];
+      const optionLabel = (options, value) => options.find(option => option.value === value)?.label || value;
       if (els.keywordInput.value.trim()) chips.push(`キーワード: ${escapeHtml(els.keywordInput.value.trim())}`);
-      if (els.citySelect.value) chips.push(`地域: ${escapeHtml(els.citySelect.options[els.citySelect.selectedIndex].text)}`);
-      if (els.category1Select.value) chips.push(`カテゴリ: ${escapeHtml(els.category1Select.value)}`);
-      if (els.category2Select.value) chips.push(`詳細カテゴリ: ${escapeHtml(els.category2Select.value)}`);
-      if (els.ratingSelect.value) chips.push(`レビュー数: ${escapeHtml(els.ratingSelect.options[els.ratingSelect.selectedIndex].text)}`);
-      if (els.starRatingSelect.value) chips.push(`星評価: ${escapeHtml(els.starRatingSelect.options[els.starRatingSelect.selectedIndex].text)}`);
+      if (filterState.region) chips.push(`地域: ${escapeHtml(optionLabel(REGION_OPTIONS, filterState.region))}`);
+      if (filterState.category) chips.push(`カテゴリ: ${escapeHtml(filterState.category)}`);
+      if (filterState.detailCategory) chips.push(`詳細カテゴリ: ${escapeHtml(filterState.detailCategory)}`);
+      if (filterState.rating) chips.push(`評価: ${escapeHtml(optionLabel(RATING_OPTIONS, filterState.rating))}`);
+      if (filterState.reviews) chips.push(`レビュー数: ${escapeHtml(optionLabel(REVIEW_OPTIONS, filterState.reviews))}`);
+      if (filterState.price) chips.push(`価格: ${escapeHtml(filterState.price)}`);
       els.activeChips.innerHTML = chips.map(c => `<span class="chip">${c}</span>`).join("");
     }
 
@@ -1969,12 +1941,7 @@ function buildAddress(item) {
 
     function resetFilters() {
       els.keywordInput.value = "";
-      els.citySelect.value = "";
-      els.category1Select.value = "";
-      els.category2Select.value = "";
-      els.ratingSelect.value = "";
-      els.starRatingSelect.value = "";
-      updateCategory2Options();
+      Object.keys(filterState).forEach(key => { filterState[key] = ""; });
       filterItems();
     }
 
@@ -2223,8 +2190,6 @@ rawItems = sortItems(items).map((item, index) => ({
 rawItems.forEach(preloadCoordinatesFromFields);
 
         categoryMap = buildCategoryMap(rawItems);
-        fillCategory1Options();
-        updateCategory2Options();
         filterItems();
       } catch (error) {
         console.error(error);
@@ -2240,19 +2205,14 @@ rawItems.forEach(preloadCoordinatesFromFields);
 
     try {
       const savedCity = localStorage.getItem("ngg_selected_city");
-      if (savedCity && Array.from(els.citySelect.options).some(option => option.value === savedCity)) {
-        els.citySelect.value = savedCity;
+      if (savedCity && REGION_OPTIONS.some(option => option.value === savedCity)) {
+        filterState.region = savedCity;
       }
     } catch (error) {
       console.warn("Failed to load selected city from localStorage.", error);
     }
 
     els.keywordInput.addEventListener("input", filterItems);
-    els.citySelect.addEventListener("change", filterItems);
-    els.category1Select.addEventListener("change", () => { updateCategory2Options(); filterItems(); });
-    els.category2Select.addEventListener("change", filterItems);
-    els.ratingSelect.addEventListener("change", filterItems);
-    els.starRatingSelect.addEventListener("change", filterItems);
     els.resetFiltersBtn.addEventListener("click", resetFilters);
 
     els.cardViewBtn.addEventListener("click", () => setViewMode("list"));

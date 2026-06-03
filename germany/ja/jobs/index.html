@@ -421,12 +421,6 @@
       line-clamp:2;
     }
 
-    .detail-wrap{
-      position:sticky;
-      top:var(--sticky-offset);
-      align-self:start;
-    }
-
     .detail{
       padding:30px;
       min-width:0;
@@ -544,11 +538,6 @@
 @media (max-width:980px){
 .layout{
         grid-template-columns:280px minmax(0,1fr);
-      }
-
-.detail-wrap{
-        grid-column:1/-1;
-        position:static;
       }
 }
 
@@ -725,6 +714,35 @@ body{
 
 .field.is-empty{
   display:none;
+}
+
+.filter-chip-group{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+.filter-chip{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:32px;
+  border:1px solid var(--listing-line);
+  border-radius:999px;
+  background:#fff;
+  color:#4b5563;
+  padding:6px 10px;
+  font-size:12px;
+  font-weight:900;
+  cursor:pointer;
+  line-height:1.2;
+  box-shadow:0 6px 14px rgba(25,39,52,.04);
+}
+
+.filter-chip.active{
+  background:var(--listing-navy);
+  border-color:var(--listing-navy);
+  color:#fff;
 }
 
 .panel-title{
@@ -1045,10 +1063,6 @@ body{
   grid-template-columns:280px minmax(0,1fr);
 }
 
-.detail-wrap{
-  display:none;
-}
-
 .card{
   cursor:pointer;
 }
@@ -1314,31 +1328,23 @@ body.modal-open{
       </div>
 
       <div class="field">
-        <label class="label" for="citySelect">地域</label>
-        <select id="citySelect" class="select">
-          <option value="">すべて</option>
-        </select>
+        <div class="label">地域</div>
+        <div class="filter-chip-group" id="regionChipGroup" role="group" aria-label="地域で絞り込み"></div>
       </div>
 
       <div class="field">
-        <label class="label" for="positionSelect">職種</label>
-        <select id="positionSelect" class="select">
-          <option value="">すべて</option>
-        </select>
+        <div class="label">職種</div>
+        <div class="filter-chip-group" id="positionChipGroup" role="group" aria-label="職種で絞り込み"></div>
       </div>
 
       <div class="field" id="categoryField">
-        <label class="label" for="categorySelect">カテゴリ</label>
-        <select id="categorySelect" class="select">
-          <option value="">すべて</option>
-        </select>
+        <div class="label">カテゴリ</div>
+        <div class="filter-chip-group" id="categoryChipGroup" role="group" aria-label="カテゴリで絞り込み"></div>
       </div>
 
       <div class="field" id="detailCategoryField">
-        <label class="label" for="detailCategorySelect">詳細カテゴリ</label>
-        <select id="detailCategorySelect" class="select">
-          <option value="">すべて</option>
-        </select>
+        <div class="label">詳細カテゴリ</div>
+        <div class="filter-chip-group" id="detailCategoryChipGroup" role="group" aria-label="詳細カテゴリで絞り込み"></div>
       </div>
 
       <div class="field">
@@ -1354,33 +1360,23 @@ body.modal-open{
       </div>
 
       <div class="field">
-        <label class="label" for="visaSelect">ビザサポート</label>
-        <select id="visaSelect" class="select">
-          <option value="">すべて</option>
-          <option value="yes">あり</option>
-          <option value="no">なし</option>
-        </select>
+        <div class="label">ビザサポート</div>
+        <div class="filter-chip-group" id="visaChipGroup" role="group" aria-label="ビザサポートで絞り込み"></div>
       </div>
 
       <div class="field">
-        <label class="label" for="typeSelect">雇用形態</label>
-        <select id="typeSelect" class="select">
-          <option value="">すべて</option>
-        </select>
+        <div class="label">雇用形態</div>
+        <div class="filter-chip-group" id="employmentChipGroup" role="group" aria-label="雇用形態で絞り込み"></div>
       </div>
 
       <div class="field" id="workStyleField">
-        <label class="label" for="workStyleSelect">勤務形態</label>
-        <select id="workStyleSelect" class="select">
-          <option value="">すべて</option>
-        </select>
+        <div class="label">勤務形態</div>
+        <div class="filter-chip-group" id="workStyleChipGroup" role="group" aria-label="勤務形態で絞り込み"></div>
       </div>
 
       <div class="field" id="jobLanguageField">
-        <label class="label" for="jobLanguageSelect">言語</label>
-        <select id="jobLanguageSelect" class="select">
-          <option value="">すべて</option>
-        </select>
+        <div class="label">言語</div>
+        <div class="filter-chip-group" id="jobLanguageChipGroup" role="group" aria-label="言語で絞り込み"></div>
       </div>
     </aside>
 
@@ -1398,12 +1394,6 @@ body.modal-open{
       <div id="emptyBox" class="empty-box" style="display:none;">条件に一致する求人が見つかりませんでした。条件を変更してください。</div>
     </section>
 
-    <aside class="detail-wrap">
-      <div class="panel detail" id="detailPanel">
-        <h3>読み込み中...</h3>
-        <p class="sub">Spreadsheetから求人データを取得しています。</p>
-      </div>
-    </aside>
   </main>
 
   <div class="listing-modal" id="listingModal" hidden>
@@ -1476,24 +1466,33 @@ body.modal-open{
     let filtered = [];
     let selectedId = null;
     let currentView = 'list';
+    const filterState = {
+      region: '',
+      position: '',
+      category: '',
+      detailCategory: '',
+      visa: '',
+      employment: '',
+      workStyle: '',
+      language: ''
+    };
 
     const els = {
       keywordInput: document.getElementById('keywordInput'),
-      citySelect: document.getElementById('citySelect'),
-      positionSelect: document.getElementById('positionSelect'),
-      categorySelect: document.getElementById('categorySelect'),
-      detailCategorySelect: document.getElementById('detailCategorySelect'),
+      regionChipGroup: document.getElementById('regionChipGroup'),
+      positionChipGroup: document.getElementById('positionChipGroup'),
+      categoryChipGroup: document.getElementById('categoryChipGroup'),
+      detailCategoryChipGroup: document.getElementById('detailCategoryChipGroup'),
       salaryRange: document.getElementById('salaryRange'),
       salaryMinLabel: document.getElementById('salaryMinLabel'),
       salaryMaxLabel: document.getElementById('salaryMaxLabel'),
       salaryCurrentLabel: document.getElementById('salaryCurrentLabel'),
-      visaSelect: document.getElementById('visaSelect'),
-      typeSelect: document.getElementById('typeSelect'),
-      workStyleSelect: document.getElementById('workStyleSelect'),
-      jobLanguageSelect: document.getElementById('jobLanguageSelect'),
+      visaChipGroup: document.getElementById('visaChipGroup'),
+      employmentChipGroup: document.getElementById('employmentChipGroup'),
+      workStyleChipGroup: document.getElementById('workStyleChipGroup'),
+      jobLanguageChipGroup: document.getElementById('jobLanguageChipGroup'),
       resetBtn: document.getElementById('resetBtn'),
       cards: document.getElementById('cards'),
-      detailPanel: document.getElementById('detailPanel'),
       mainLayout: document.getElementById('mainLayout'),
       listViewBtn: document.getElementById('listViewBtn'),
       gridViewBtn: document.getElementById('gridViewBtn'),
@@ -1613,19 +1612,39 @@ body.modal-open{
       else saved.add(key);
       setSavedJobs(saved);
       renderCards();
-      renderDetail();
       syncOpenModalContent();
     }
 
-    function populateSelect(selectEl, values, hideWhenEmpty = true){
-      if (!selectEl) return;
+    function renderFilterChipGroup(container, values, stateKey, hideWhenEmpty = true, labels = {}){
+      if (!container) return;
       const cleanValues = uniqueSorted(values);
-      selectEl.innerHTML = '<option value="">すべて</option>' + cleanValues
-        .map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`)
+      const options = ['', ...cleanValues];
+      container.innerHTML = options
+        .map(value => {
+          const active = filterState[stateKey] === value;
+          const label = value ? (labels[value] || value) : 'すべて';
+          return `<button class="filter-chip ${active ? 'active' : ''}" type="button" data-value="${escapeHtml(value)}" aria-pressed="${active ? 'true' : 'false'}">${escapeHtml(label)}</button>`;
+        })
         .join('');
 
-      const field = selectEl.closest('.field');
-      if (field && hideWhenEmpty) field.classList.toggle('is-empty', cleanValues.length === 0);
+      container.closest('.field')?.classList.toggle('is-empty', hideWhenEmpty && cleanValues.length === 0);
+      container.querySelectorAll('.filter-chip').forEach(button => {
+        button.addEventListener('click', () => {
+          filterState[stateKey] = button.dataset.value || '';
+          filterJobs();
+        });
+      });
+    }
+
+    function renderFilterChips(){
+      renderFilterChipGroup(els.regionChipGroup, jobs.map(j => j.region || j.city), 'region', false);
+      renderFilterChipGroup(els.positionChipGroup, jobs.map(j => j.position_title), 'position', false);
+      renderFilterChipGroup(els.categoryChipGroup, jobs.map(j => j.category), 'category');
+      renderFilterChipGroup(els.detailCategoryChipGroup, jobs.map(j => j.detail_category), 'detailCategory');
+      renderFilterChipGroup(els.visaChipGroup, ['yes', 'no'], 'visa', false, { yes: 'あり', no: 'なし' });
+      renderFilterChipGroup(els.employmentChipGroup, jobs.map(j => j.employment_type), 'employment', false);
+      renderFilterChipGroup(els.workStyleChipGroup, jobs.map(j => j.work_style), 'workStyle');
+      renderFilterChipGroup(els.jobLanguageChipGroup, jobs.map(j => j.language), 'language');
     }
 
     function getRowsFromGvizResponse(rawText){
@@ -1731,31 +1750,13 @@ body.modal-open{
              value === 'true';
     }
 
-    function resetSelectOptions(selectEl){
-      selectEl.innerHTML = '<option value="">すべて</option>';
-    }
-
     function initFilters(){
-      resetSelectOptions(els.citySelect);
-      resetSelectOptions(els.positionSelect);
-      resetSelectOptions(els.categorySelect);
-      resetSelectOptions(els.detailCategorySelect);
-      resetSelectOptions(els.typeSelect);
-      resetSelectOptions(els.workStyleSelect);
-      resetSelectOptions(els.jobLanguageSelect);
-
-      populateSelect(els.citySelect, jobs.map(j => j.region || j.city), false);
-      populateSelect(els.positionSelect, jobs.map(j => j.position_title), false);
-      populateSelect(els.categorySelect, jobs.map(j => j.category));
-      populateSelect(els.detailCategorySelect, jobs.map(j => j.detail_category));
-      populateSelect(els.typeSelect, jobs.map(j => j.employment_type), false);
-      populateSelect(els.workStyleSelect, jobs.map(j => j.work_style));
-      populateSelect(els.jobLanguageSelect, jobs.map(j => j.language));
+      Object.keys(filterState).forEach(key => { filterState[key] = ''; });
+      renderFilterChips();
     }
 
     async function loadJobs(){
       els.resultsSummary.textContent = '読み込み中...';
-      els.detailPanel.innerHTML = '<h3>読み込み中...</h3><p class="sub">Spreadsheetから求人データを取得しています。</p>';
 
       try {
         const res = await fetch(SHEET_URL, { cache: 'no-store' });
@@ -1806,34 +1807,12 @@ body.modal-open{
         els.emptyBox.style.display = 'block';
         els.emptyBox.textContent = '求人データを読み込めませんでした。Spreadsheetの公開設定とシート構成を確認してください。';
         els.resultsSummary.textContent = '読み込みエラー';
-
-        els.detailPanel.innerHTML = `
-          <h3>読み込みエラー</h3>
-          <p class="sub">Spreadsheet APIに接続できませんでした。</p>
-          <section class="detail-sec">
-            <h4>確認ポイント</h4>
-            <ul>
-              <li>Spreadsheetが公開または読み取り可能になっているか</li>
-              <li>SHEET_IDとSHEET_GIDが正しいか</li>
-              <li>1行目の列名が新しい列名になっているか</li>
-              <li>status が Active の求人が存在するか</li>
-            </ul>
-          </section>
-        `;
       }
     }
 
     function filterJobs(){
       const keyword = normalize(els.keywordInput.value);
-      const city = els.citySelect.value;
-      const position = els.positionSelect.value;
-      const category = els.categorySelect.value;
-      const detailCategory = els.detailCategorySelect.value;
       const salaryMin = Number(els.salaryRange.value) + 10000;
-      const visa = els.visaSelect.value;
-      const type = els.typeSelect.value;
-      const workStyle = els.workStyleSelect.value;
-      const language = els.jobLanguageSelect.value;
 
       filtered = jobs.filter(job => {
         const text = normalize([
@@ -1859,18 +1838,18 @@ body.modal-open{
         ].join(' '));
 
         const matchKeyword = !keyword || text.includes(keyword);
-        const matchCity = !city || job.region === city || job.city === city;
-        const matchPosition = !position || job.position_title === position;
-        const matchCategory = !category || job.category === category;
-        const matchDetailCategory = !detailCategory || job.detail_category === detailCategory;
-        const matchType = !type || job.employment_type === type;
-        const matchWorkStyle = !workStyle || job.work_style === workStyle;
-        const matchLanguage = !language || job.language === language;
+        const matchCity = !filterState.region || job.region === filterState.region || job.city === filterState.region;
+        const matchPosition = !filterState.position || job.position_title === filterState.position;
+        const matchCategory = !filterState.category || job.category === filterState.category;
+        const matchDetailCategory = !filterState.detailCategory || job.detail_category === filterState.detailCategory;
+        const matchType = !filterState.employment || job.employment_type === filterState.employment;
+        const matchWorkStyle = !filterState.workStyle || job.work_style === filterState.workStyle;
+        const matchLanguage = !filterState.language || job.language === filterState.language;
 
         const matchVisa =
-          !visa ||
-          (visa === 'yes' && isVisaYes(job)) ||
-          (visa === 'no' && !isVisaYes(job));
+          !filterState.visa ||
+          (filterState.visa === 'yes' && isVisaYes(job)) ||
+          (filterState.visa === 'no' && !isVisaYes(job));
 
         const matchSalary = Number(els.salaryRange.value) === 0 || job.salary_min_eur >= salaryMin;
 
@@ -1883,8 +1862,8 @@ body.modal-open{
 
       renderSummary();
       renderChips();
+      renderFilterChips();
       renderCards();
-      renderDetail();
     }
 
     function renderSummary(){
@@ -1898,20 +1877,20 @@ body.modal-open{
         chips.push(`キーワード: ${escapeHtml(els.keywordInput.value.trim())}`);
       }
 
-      if (els.citySelect.value) {
-        chips.push(`地域: ${escapeHtml(els.citySelect.value)}`);
+      if (filterState.region) {
+        chips.push(`地域: ${escapeHtml(filterState.region)}`);
       }
 
-      if (els.positionSelect.value) {
-        chips.push(`職種: ${escapeHtml(els.positionSelect.value)}`);
+      if (filterState.position) {
+        chips.push(`職種: ${escapeHtml(filterState.position)}`);
       }
 
-      if (els.categorySelect.value) {
-        chips.push(`カテゴリ: ${escapeHtml(els.categorySelect.value)}`);
+      if (filterState.category) {
+        chips.push(`カテゴリ: ${escapeHtml(filterState.category)}`);
       }
 
-      if (els.detailCategorySelect.value) {
-        chips.push(`詳細カテゴリ: ${escapeHtml(els.detailCategorySelect.value)}`);
+      if (filterState.detailCategory) {
+        chips.push(`詳細カテゴリ: ${escapeHtml(filterState.detailCategory)}`);
       }
 
       if (Number(els.salaryRange.value) > 0) {
@@ -1919,20 +1898,20 @@ body.modal-open{
         chips.push(`給与下限: 年収 ${salaryMin.toLocaleString()}€ 以上`);
       }
 
-      if (els.visaSelect.value) {
-        chips.push(`ビザサポート: ${escapeHtml(els.visaSelect.options[els.visaSelect.selectedIndex].text)}`);
+      if (filterState.visa) {
+        chips.push(`ビザサポート: ${filterState.visa === 'yes' ? 'あり' : 'なし'}`);
       }
 
-      if (els.typeSelect.value) {
-        chips.push(`雇用形態: ${escapeHtml(els.typeSelect.value)}`);
+      if (filterState.employment) {
+        chips.push(`雇用形態: ${escapeHtml(filterState.employment)}`);
       }
 
-      if (els.workStyleSelect.value) {
-        chips.push(`勤務形態: ${escapeHtml(els.workStyleSelect.value)}`);
+      if (filterState.workStyle) {
+        chips.push(`勤務形態: ${escapeHtml(filterState.workStyle)}`);
       }
 
-      if (els.jobLanguageSelect.value) {
-        chips.push(`言語: ${escapeHtml(els.jobLanguageSelect.value)}`);
+      if (filterState.language) {
+        chips.push(`言語: ${escapeHtml(filterState.language)}`);
       }
 
       els.chips.innerHTML = chips
@@ -2003,7 +1982,6 @@ body.modal-open{
           if (event.target.closest('a, button')) return;
           selectedId = card.dataset.id;
           renderCards();
-          renderDetail();
           openListingModal();
         });
         card.addEventListener('keydown', event => {
@@ -2011,7 +1989,6 @@ body.modal-open{
           event.preventDefault();
           selectedId = card.dataset.id;
           renderCards();
-          renderDetail();
           openListingModal();
         });
       });
@@ -2021,7 +1998,6 @@ body.modal-open{
           event.stopPropagation();
           selectedId = button.dataset.detailId;
           renderCards();
-          renderDetail();
           openListingModal();
         });
       });
@@ -2083,15 +2059,12 @@ body.modal-open{
         : `年収 ${current.toLocaleString()}€ 以上`;
     }
 
-    function renderDetail(){
-      const job = filtered.find(j => String(j.id) === String(selectedId));
-
+    function buildJobDetailHtml(job){
       if (!job){
-        els.detailPanel.innerHTML = `
+        return `
           <h3>求人を選択してください</h3>
           <p class="sub">カードをクリックすると詳細を表示します。</p>
         `;
-        return;
       }
 
       const company = job.company_name || '会社名未設定';
@@ -2117,7 +2090,7 @@ body.modal-open{
         ...tags
       ].filter(Boolean);
 
-      els.detailPanel.innerHTML = `
+      return `
         <div class="job-detail-head">
           <div class="job-detail-company">${escapeHtml(company)}</div>
           <h3 class="job-detail-title">${escapeHtml(position)}</h3>
@@ -2209,8 +2182,9 @@ body.modal-open{
     }
 
     function openListingModal(){
-      if (!els.listingModal || !els.listingModalContent || !els.detailPanel) return;
-      els.listingModalContent.innerHTML = els.detailPanel.innerHTML;
+      if (!els.listingModal || !els.listingModalContent) return;
+      const job = filtered.find(j => String(j.id) === String(selectedId));
+      els.listingModalContent.innerHTML = buildJobDetailHtml(job);
       bindDetailActions(els.listingModalContent);
       els.listingModal.hidden = false;
       document.body.classList.add('modal-open');
@@ -2218,8 +2192,9 @@ body.modal-open{
     }
 
     function syncOpenModalContent(){
-      if (!els.listingModal || els.listingModal.hidden || !els.listingModalContent || !els.detailPanel) return;
-      els.listingModalContent.innerHTML = els.detailPanel.innerHTML;
+      if (!els.listingModal || els.listingModal.hidden || !els.listingModalContent) return;
+      const job = filtered.find(j => String(j.id) === String(selectedId));
+      els.listingModalContent.innerHTML = buildJobDetailHtml(job);
       bindDetailActions(els.listingModalContent);
     }
 
@@ -2249,30 +2224,15 @@ body.modal-open{
 
     function attachEvents(){
       els.keywordInput.addEventListener('input', filterJobs);
-      els.citySelect.addEventListener('change', filterJobs);
-      els.positionSelect.addEventListener('change', filterJobs);
-      els.categorySelect.addEventListener('change', filterJobs);
-      els.detailCategorySelect.addEventListener('change', filterJobs);
       els.salaryRange.addEventListener('input', () => {
         renderSalaryRangeLabel();
         filterJobs();
       });
-      els.visaSelect.addEventListener('change', filterJobs);
-      els.typeSelect.addEventListener('change', filterJobs);
-      els.workStyleSelect.addEventListener('change', filterJobs);
-      els.jobLanguageSelect.addEventListener('change', filterJobs);
 
       els.resetBtn.addEventListener('click', () => {
         els.keywordInput.value = '';
-        els.citySelect.value = '';
-        els.positionSelect.value = '';
-        els.categorySelect.value = '';
-        els.detailCategorySelect.value = '';
+        Object.keys(filterState).forEach(key => { filterState[key] = ''; });
         els.salaryRange.value = '0';
-        els.visaSelect.value = '';
-        els.typeSelect.value = '';
-        els.workStyleSelect.value = '';
-        els.jobLanguageSelect.value = '';
         renderSalaryRangeLabel();
         filterJobs();
       });

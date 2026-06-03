@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Jobs | 仕事・求人 | J-Connect Germany</title>
-  <meta name="description" content="ドイツで働く日本語話者向けの求人情報を、会社名・給与・都市・職務概要で見やすく整理。カード選択で詳細もすぐ確認できます。" />
+  <meta name="description" content="ドイツで働く日本語話者向けの求人情報を、会社名・給与・地域・職務概要で見やすく整理。カード選択で詳細もすぐ確認できます。" />
   <meta name="theme-color" content="#f7f3ee" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/jobs/" />
@@ -627,7 +627,7 @@ body{
 
 .hero{
   max-width:var(--listing-max);
-  padding:18px 20px 16px;
+  padding:16px 20px 12px;
 }
 
 .hero-box{
@@ -638,7 +638,7 @@ body{
     url("/assets/images/cards/jobs.jpg") right center / min(42vw, 520px) auto no-repeat,
     #fff;
   box-shadow:0 10px 24px rgba(30,58,95,.07);
-  padding:22px;
+  padding:18px;
 }
 
 .eyebrow{
@@ -654,7 +654,7 @@ body{
 .hero h1{
   max-width:760px;
   color:var(--listing-navy);
-  font-size:clamp(28px, 3.5vw, 42px);
+  font-size:clamp(26px, 3.1vw, 36px);
   letter-spacing:0;
   line-height:1.12;
 }
@@ -662,16 +662,16 @@ body{
 .hero p{
   max-width:760px;
   color:var(--listing-muted);
-  font-size:15px;
-  line-height:1.7;
+  font-size:14px;
+  line-height:1.62;
 }
 
 .hero-actions{
-  margin-top:18px;
+  margin-top:12px;
 }
 
 .hero-btn{
-  min-height:44px;
+  min-height:42px;
   border-radius:14px;
 }
 
@@ -690,11 +690,14 @@ body{
 }
 
 .hero-notice{
+  margin-top:12px;
   max-width:760px;
   border-color:var(--listing-line);
   background:rgba(255,255,255,.92);
   color:#536170;
   border-radius:14px;
+  padding:11px 12px;
+  font-size:13px;
 }
 
 .layout{
@@ -720,12 +723,20 @@ body{
   padding:16px;
 }
 
+.field.is-empty{
+  display:none;
+}
+
 .panel-title{
   color:var(--listing-navy);
 }
 
 .reset-btn{
   color:var(--listing-navy);
+  border:1px solid var(--listing-line-strong);
+  background:var(--listing-sakura-light);
+  border-radius:999px;
+  padding:6px 10px;
 }
 
 .input,
@@ -788,6 +799,185 @@ body{
 .card.active{
   border-color:var(--listing-navy);
   box-shadow:0 0 0 3px rgba(30,58,95,.13), var(--listing-shadow);
+}
+
+.job-card{
+  padding:0;
+  overflow:hidden;
+}
+
+.job-card-body{
+  display:grid;
+  gap:8px;
+  padding:14px 52px 14px 14px;
+}
+
+.job-card-kicker{
+  color:var(--listing-muted);
+  font-size:12px;
+  font-weight:900;
+  line-height:1.25;
+}
+
+.job-title{
+  color:var(--listing-ink);
+  font-size:clamp(17px, 2vw, 21px);
+  font-weight:950;
+  line-height:1.22;
+  letter-spacing:0;
+  margin:0;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  line-clamp:2;
+  overflow:hidden;
+}
+
+.job-meta-line{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 12px;
+  color:#4e5d6b;
+  font-size:12px;
+  font-weight:800;
+  line-height:1.35;
+}
+
+.job-meta-line span{
+  display:inline-flex;
+  align-items:center;
+  min-width:0;
+}
+
+.job-chip-row,
+.detail-chip-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.job-chip{
+  display:inline-flex;
+  align-items:center;
+  min-height:24px;
+  border:1px solid var(--listing-line);
+  border-radius:999px;
+  background:#fff;
+  color:#384552;
+  padding:3px 8px;
+  font-size:11px;
+  font-weight:900;
+  line-height:1.2;
+}
+
+.job-chip.primary{
+  border-color:rgba(30,58,95,.2);
+  background:#f8fafc;
+  color:var(--listing-navy);
+}
+
+.job-summary{
+  color:var(--listing-muted);
+  font-size:13px;
+  line-height:1.55;
+  margin:0;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  line-clamp:2;
+  overflow:hidden;
+}
+
+.job-card-actions,
+.detail-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:2px;
+}
+
+.card-action{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  border:1px solid var(--listing-line-strong);
+  border-radius:10px;
+  background:#fff;
+  color:var(--listing-navy);
+  padding:0 10px;
+  font-size:12px;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 6px 14px rgba(25,39,52,.04);
+}
+
+.card-action.primary{
+  border-color:var(--listing-navy);
+  background:var(--listing-navy);
+  color:#fff;
+}
+
+.save-button{
+  position:absolute;
+  right:10px;
+  top:10px;
+  z-index:3;
+  width:34px;
+  height:34px;
+  border:1px solid rgba(205,216,227,.9);
+  border-radius:999px;
+  background:rgba(255,255,255,.94);
+  box-shadow:0 8px 18px rgba(25,39,52,.1);
+  color:#52606e;
+  cursor:pointer;
+  font-size:17px;
+  line-height:1;
+}
+
+.save-button.saved{
+  background:var(--listing-navy);
+  border-color:var(--listing-navy);
+  color:#fff;
+}
+
+.save-button.inline{
+  position:static;
+  width:auto;
+  min-height:38px;
+  padding:0 12px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:13px;
+  font-weight:900;
+}
+
+.job-detail-head{
+  display:grid;
+  gap:8px;
+  padding-right:36px;
+}
+
+.job-detail-company{
+  color:var(--listing-muted);
+  font-size:14px;
+  font-weight:900;
+}
+
+.job-detail-title{
+  color:var(--listing-navy);
+  font-size:clamp(24px, 3vw, 34px);
+  font-weight:950;
+  line-height:1.18;
+  margin:0;
+}
+
+.job-detail-summary{
+  color:#4f5f6e;
+  font-size:14px;
+  line-height:1.65;
+  margin:0;
 }
 
 .badge{
@@ -877,6 +1067,19 @@ body{
   gap:3px;
 }
 
+.layout.grid-mode .job-card-body{
+  padding:13px 50px 13px 13px;
+}
+
+.layout.grid-mode .job-meta-line{
+  gap:5px 9px;
+}
+
+.layout.grid-mode .job-summary{
+  -webkit-line-clamp:3;
+  line-clamp:3;
+}
+
 .listing-modal[hidden]{
   display:none;
 }
@@ -944,7 +1147,7 @@ body.modal-open{
   }
 
   .hero-box{
-    padding:20px;
+    padding:18px;
     background:
       linear-gradient(110deg, rgba(255,255,255,.98) 0%, rgba(250,251,252,.96) 100%),
       #fff;
@@ -969,6 +1172,14 @@ body.modal-open{
 
   .view-btn{
     flex:1 1 0;
+  }
+
+  .job-card-body{
+    padding:13px 48px 13px 13px;
+  }
+
+  .job-card-actions .card-action{
+    flex:1 1 auto;
   }
 
   .listing-modal-dialog{
@@ -1071,11 +1282,10 @@ body.modal-open{
         仕事・求人ガイド
       </div>
       <h1>日本語で探せる、<br>企業掲載型のドイツ求人</h1>
-      <p>会社名・ポジション・給与・都市で絞り込み可能。カードをクリックすると職務詳細、必要要件、連絡先メールをポップアップで表示します。</p>
+      <p>会社名・ポジション・給与・地域で絞り込み可能。カードをクリックすると職務詳細、必要要件、連絡先メールをポップアップで表示します。</p>
 
       <div class="hero-actions">
         <a class="hero-btn hero-btn-primary" href="/germany/ja/jobs/posting/">求人掲載希望の企業様へ</a>
-        <a class="hero-btn hero-btn-secondary" href="#cards">掲載中の求人を見る</a>
       </div>
 
       <div class="hero-notice">
@@ -1100,11 +1310,11 @@ body.modal-open{
 
       <div class="field">
         <label class="label" for="keywordInput">キーワード</label>
-        <input id="keywordInput" class="input" type="text" placeholder="会社名・職種・概要・都市" />
+        <input id="keywordInput" class="input" type="text" placeholder="会社名・職種・概要・地域" />
       </div>
 
       <div class="field">
-        <label class="label" for="citySelect">都市</label>
+        <label class="label" for="citySelect">地域</label>
         <select id="citySelect" class="select">
           <option value="">すべて</option>
         </select>
@@ -1113,6 +1323,20 @@ body.modal-open{
       <div class="field">
         <label class="label" for="positionSelect">職種</label>
         <select id="positionSelect" class="select">
+          <option value="">すべて</option>
+        </select>
+      </div>
+
+      <div class="field" id="categoryField">
+        <label class="label" for="categorySelect">カテゴリ</label>
+        <select id="categorySelect" class="select">
+          <option value="">すべて</option>
+        </select>
+      </div>
+
+      <div class="field" id="detailCategoryField">
+        <label class="label" for="detailCategorySelect">詳細カテゴリ</label>
+        <select id="detailCategorySelect" class="select">
           <option value="">すべて</option>
         </select>
       </div>
@@ -1141,6 +1365,20 @@ body.modal-open{
       <div class="field">
         <label class="label" for="typeSelect">雇用形態</label>
         <select id="typeSelect" class="select">
+          <option value="">すべて</option>
+        </select>
+      </div>
+
+      <div class="field" id="workStyleField">
+        <label class="label" for="workStyleSelect">勤務形態</label>
+        <select id="workStyleSelect" class="select">
+          <option value="">すべて</option>
+        </select>
+      </div>
+
+      <div class="field" id="jobLanguageField">
+        <label class="label" for="jobLanguageSelect">言語</label>
+        <select id="jobLanguageSelect" class="select">
           <option value="">すべて</option>
         </select>
       </div>
@@ -1243,12 +1481,16 @@ body.modal-open{
       keywordInput: document.getElementById('keywordInput'),
       citySelect: document.getElementById('citySelect'),
       positionSelect: document.getElementById('positionSelect'),
+      categorySelect: document.getElementById('categorySelect'),
+      detailCategorySelect: document.getElementById('detailCategorySelect'),
       salaryRange: document.getElementById('salaryRange'),
       salaryMinLabel: document.getElementById('salaryMinLabel'),
       salaryMaxLabel: document.getElementById('salaryMaxLabel'),
       salaryCurrentLabel: document.getElementById('salaryCurrentLabel'),
       visaSelect: document.getElementById('visaSelect'),
       typeSelect: document.getElementById('typeSelect'),
+      workStyleSelect: document.getElementById('workStyleSelect'),
+      jobLanguageSelect: document.getElementById('jobLanguageSelect'),
       resetBtn: document.getElementById('resetBtn'),
       cards: document.getElementById('cards'),
       detailPanel: document.getElementById('detailPanel'),
@@ -1262,6 +1504,8 @@ body.modal-open{
       resultsSummary: document.getElementById('resultsSummary'),
       emptyBox: document.getElementById('emptyBox')
     };
+
+    const SAVED_JOBS_KEY = 'jconnect:germany:jobs:saved';
 
     const languageSelect = document.getElementById('languageSelect');
 
@@ -1304,6 +1548,86 @@ body.modal-open{
       return '';
     }
 
+    function uniqueSorted(values){
+      return [...new Set(values.map(clean).filter(Boolean))]
+        .sort((a,b) => a.localeCompare(b,'ja'));
+    }
+
+    function splitList(value){
+      return String(value || '')
+        .split(/\n|,|、|;|；|\||\/|#/)
+        .map(v => v.trim())
+        .filter(Boolean);
+    }
+
+    function getSavedJobs(){
+      try {
+        const saved = JSON.parse(localStorage.getItem(SAVED_JOBS_KEY) || '[]');
+        return new Set(Array.isArray(saved) ? saved.map(String) : []);
+      } catch (error) {
+        return new Set();
+      }
+    }
+
+    function setSavedJobs(saved){
+      try {
+        localStorage.setItem(SAVED_JOBS_KEY, JSON.stringify([...saved]));
+      } catch (error) {
+        console.warn('Failed to save job bookmark state.', error);
+      }
+    }
+
+    function isJobSaved(id){
+      return getSavedJobs().has(String(id));
+    }
+
+    function getJobDetailUrl(job){
+      const base = `${location.origin}${location.pathname}${location.search}`;
+      return `${base}#job-${encodeURIComponent(job.id)}`;
+    }
+
+    async function copyText(text){
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+      } catch (error) {}
+
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.setAttribute('readonly', '');
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-9999px';
+      document.body.appendChild(textArea);
+      textArea.select();
+      const copied = document.execCommand('copy');
+      textArea.remove();
+      return copied;
+    }
+
+    function toggleJobSaved(id){
+      const saved = getSavedJobs();
+      const key = String(id);
+      if (saved.has(key)) saved.delete(key);
+      else saved.add(key);
+      setSavedJobs(saved);
+      renderCards();
+      renderDetail();
+      syncOpenModalContent();
+    }
+
+    function populateSelect(selectEl, values, hideWhenEmpty = true){
+      if (!selectEl) return;
+      const cleanValues = uniqueSorted(values);
+      selectEl.innerHTML = '<option value="">すべて</option>' + cleanValues
+        .map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`)
+        .join('');
+
+      const field = selectEl.closest('.field');
+      if (field && hideWhenEmpty) field.classList.toggle('is-empty', cleanValues.length === 0);
+    }
+
     function getRowsFromGvizResponse(rawText){
       const start = rawText.indexOf('{');
       const end = rawText.lastIndexOf('}');
@@ -1325,35 +1649,56 @@ body.modal-open{
 
     function normalizeJob(row, index){
       const id = getValue(row, 'id') || `job-${index + 1}`;
+      const positionTitle = getValue(row, 'position_title', 'job_title', 'title', 'role', 'position');
+      const companyName = getValue(row, 'company_name', 'company', 'company_ja', 'company_name_ja');
+      const region = getValue(row, 'region', 'location', 'area', 'city', 'work_location');
+      const summary = getValue(row, 'short_description', 'summary', 'description_short');
+      const details = getValue(row, 'full_description', 'description', 'job_details');
+      const applyUrl = getValue(row, 'apply_url', 'application_url', 'source_url', 'official_url', 'url');
+      const sourceUrl = getValue(row, 'source_url', 'official_url', 'url', 'website');
+      const tags = getValue(row, 'tags', 'skills', 'skill_tags', 'requirements_tags');
 
       return {
         id: id,
         status: getValue(row, 'status') || 'Inactive',
         priority: toNumber(getValue(row, 'priority')) || 999,
 
-        company_name: getValue(row, 'company_name'),
-        position_title: getValue(row, 'position_title'),
-        employment_type: getValue(row, 'employment_type'),
-        city: getValue(row, 'city'),
+        company_name: companyName,
+        position_title: positionTitle,
+        employment_type: getValue(row, 'employment_type', 'employment', 'type'),
+        city: region,
+        region: region,
+        location: getValue(row, 'location', 'work_location', 'office_location', 'city'),
+        work_style: getValue(row, 'work_style', 'workstyle', 'remote_type', 'remote', 'working_style'),
+        language: getValue(row, 'language', 'languages', 'required_language', 'language_requirement'),
+        category: getValue(row, 'category', 'job_category', 'occupation_category'),
+        detail_category: getValue(row, 'detail_category', 'subcategory', 'sub_category', 'occupation_detail'),
+        tags: tags,
+        skills: getValue(row, 'skills', 'skill_tags') || tags,
 
         salary_min_eur: toNumber(getValue(row, 'salary_min_eur')),
         salary_max_eur: toNumber(getValue(row, 'salary_max_eur')),
-        salary_label: getValue(row, 'salary_label'),
+        salary_label: getValue(row, 'salary_label', 'salary', 'salary_range'),
 
-        summary: getValue(row, 'summary'),
-        job_details: getValue(row, 'job_details'),
+        summary: summary,
+        short_description: summary,
+        job_details: details,
+        description: details,
         requirements: getValue(row, 'requirements'),
 
         contact_email: getValue(row, 'contact_email'),
+        apply_url: applyUrl,
+        source_url: sourceUrl,
+        source_name: getValue(row, 'source_name', 'source', 'publisher'),
 
         free_comment: getValue(row, 'free_comment'),
         free_comment_en: getValue(row, 'free_comment_en'),
 
         visa_support: getValue(row, 'visa_support'),
 
-        updated_at: getValue(row, 'updated_at'),
-        published_at: getValue(row, 'published_at'),
-        expires_at: getValue(row, 'expires_at'),
+        updated_at: getValue(row, 'updated_at', 'updated'),
+        published_at: getValue(row, 'published_at', 'posted_at', 'posted_date', 'published'),
+        expires_at: getValue(row, 'expires_at', 'deadline', 'application_deadline'),
 
         company_logo_url: getValue(row, 'company_logo_url')
       };
@@ -1393,28 +1738,19 @@ body.modal-open{
     function initFilters(){
       resetSelectOptions(els.citySelect);
       resetSelectOptions(els.positionSelect);
+      resetSelectOptions(els.categorySelect);
+      resetSelectOptions(els.detailCategorySelect);
       resetSelectOptions(els.typeSelect);
+      resetSelectOptions(els.workStyleSelect);
+      resetSelectOptions(els.jobLanguageSelect);
 
-      const citySet = [...new Set(jobs.map(j => j.city).filter(Boolean))]
-        .sort((a,b) => a.localeCompare(b,'ja'));
-
-      const positionSet = [...new Set(jobs.map(j => j.position_title).filter(Boolean))]
-        .sort((a,b) => a.localeCompare(b,'ja'));
-
-      const typeSet = [...new Set(jobs.map(j => j.employment_type).filter(Boolean))]
-        .sort((a,b) => a.localeCompare(b,'ja'));
-
-      els.citySelect.innerHTML += citySet
-        .map(city => `<option value="${escapeHtml(city)}">${escapeHtml(city)}</option>`)
-        .join('');
-
-      els.positionSelect.innerHTML += positionSet
-        .map(position => `<option value="${escapeHtml(position)}">${escapeHtml(position)}</option>`)
-        .join('');
-
-      els.typeSelect.innerHTML += typeSet
-        .map(type => `<option value="${escapeHtml(type)}">${escapeHtml(type)}</option>`)
-        .join('');
+      populateSelect(els.citySelect, jobs.map(j => j.region || j.city), false);
+      populateSelect(els.positionSelect, jobs.map(j => j.position_title), false);
+      populateSelect(els.categorySelect, jobs.map(j => j.category));
+      populateSelect(els.detailCategorySelect, jobs.map(j => j.detail_category));
+      populateSelect(els.typeSelect, jobs.map(j => j.employment_type), false);
+      populateSelect(els.workStyleSelect, jobs.map(j => j.work_style));
+      populateSelect(els.jobLanguageSelect, jobs.map(j => j.language));
     }
 
     async function loadJobs(){
@@ -1437,7 +1773,14 @@ body.modal-open{
           .filter(job => normalize([
             job.company_name,
             job.position_title,
+            job.region,
             job.city,
+            job.employment_type,
+            job.work_style,
+            job.language,
+            job.category,
+            job.detail_category,
+            job.tags,
             job.summary,
             job.job_details
           ].join('')).length > 0)
@@ -1484,9 +1827,13 @@ body.modal-open{
       const keyword = normalize(els.keywordInput.value);
       const city = els.citySelect.value;
       const position = els.positionSelect.value;
+      const category = els.categorySelect.value;
+      const detailCategory = els.detailCategorySelect.value;
       const salaryMin = Number(els.salaryRange.value) + 10000;
       const visa = els.visaSelect.value;
       const type = els.typeSelect.value;
+      const workStyle = els.workStyleSelect.value;
+      const language = els.jobLanguageSelect.value;
 
       filtered = jobs.filter(job => {
         const text = normalize([
@@ -1495,18 +1842,30 @@ body.modal-open{
           job.summary,
           job.job_details,
           job.requirements,
+          job.region,
           job.city,
+          job.location,
           job.free_comment,
           job.free_comment_en,
           job.employment_type,
+          job.work_style,
+          job.language,
+          job.category,
+          job.detail_category,
+          job.tags,
+          job.skills,
           job.contact_email,
           job.visa_support
         ].join(' '));
 
         const matchKeyword = !keyword || text.includes(keyword);
-        const matchCity = !city || job.city === city;
+        const matchCity = !city || job.region === city || job.city === city;
         const matchPosition = !position || job.position_title === position;
+        const matchCategory = !category || job.category === category;
+        const matchDetailCategory = !detailCategory || job.detail_category === detailCategory;
         const matchType = !type || job.employment_type === type;
+        const matchWorkStyle = !workStyle || job.work_style === workStyle;
+        const matchLanguage = !language || job.language === language;
 
         const matchVisa =
           !visa ||
@@ -1515,7 +1874,7 @@ body.modal-open{
 
         const matchSalary = Number(els.salaryRange.value) === 0 || job.salary_min_eur >= salaryMin;
 
-        return matchKeyword && matchCity && matchPosition && matchType && matchVisa && matchSalary;
+        return matchKeyword && matchCity && matchPosition && matchCategory && matchDetailCategory && matchType && matchWorkStyle && matchLanguage && matchVisa && matchSalary;
       });
 
       if (!filtered.some(j => String(j.id) === String(selectedId))) {
@@ -1540,11 +1899,19 @@ body.modal-open{
       }
 
       if (els.citySelect.value) {
-        chips.push(`都市: ${escapeHtml(els.citySelect.value)}`);
+        chips.push(`地域: ${escapeHtml(els.citySelect.value)}`);
       }
 
       if (els.positionSelect.value) {
         chips.push(`職種: ${escapeHtml(els.positionSelect.value)}`);
+      }
+
+      if (els.categorySelect.value) {
+        chips.push(`カテゴリ: ${escapeHtml(els.categorySelect.value)}`);
+      }
+
+      if (els.detailCategorySelect.value) {
+        chips.push(`詳細カテゴリ: ${escapeHtml(els.detailCategorySelect.value)}`);
       }
 
       if (Number(els.salaryRange.value) > 0) {
@@ -1558,6 +1925,14 @@ body.modal-open{
 
       if (els.typeSelect.value) {
         chips.push(`雇用形態: ${escapeHtml(els.typeSelect.value)}`);
+      }
+
+      if (els.workStyleSelect.value) {
+        chips.push(`勤務形態: ${escapeHtml(els.workStyleSelect.value)}`);
+      }
+
+      if (els.jobLanguageSelect.value) {
+        chips.push(`言語: ${escapeHtml(els.jobLanguageSelect.value)}`);
       }
 
       els.chips.innerHTML = chips
@@ -1578,42 +1953,45 @@ body.modal-open{
       els.cards.innerHTML = filtered.map(job => {
         const company = job.company_name || '会社名未設定';
         const position = job.position_title || '職種未設定';
-        const type = job.employment_type || '雇用形態未設定';
         const salary = getSalaryLabel(job);
-        const city = job.city || '勤務地未設定';
-        const summary = job.summary || '概要は準備中です。';
+        const region = job.region || job.city || '勤務地未設定';
+        const summary = job.short_description || job.summary || job.description || job.job_details || '概要は準備中です。';
+        const saved = isJobSaved(job.id);
+        const chipValues = [
+          { label: job.employment_type, primary: true },
+          { label: job.work_style },
+          { label: job.language },
+          { label: job.category },
+          { label: job.detail_category }
+        ].filter(chip => chip.label);
+        const tags = splitList(job.tags || job.skills).slice(0, 3);
 
         return `
-          <article class="card ${String(job.id) === String(selectedId) ? 'active' : ''}" data-id="${escapeHtml(job.id)}">
-            <div class="card-head">
-              <div>
-                <h3 class="company">${escapeHtml(company)}</h3>
-                <p class="position">${escapeHtml(position)}</p>
+          <article class="card job-card ${String(job.id) === String(selectedId) ? 'active' : ''}" data-id="${escapeHtml(job.id)}">
+            <button class="save-button ${saved ? 'saved' : ''}" type="button" data-save-id="${escapeHtml(job.id)}" aria-label="${saved ? '保存を解除' : '保存する'}">${saved ? '★' : '☆'}</button>
+            <div class="job-card-body">
+              <div class="job-card-kicker">${escapeHtml(company)}</div>
+              <h3 class="job-title">${escapeHtml(position)}</h3>
+
+              <div class="job-meta-line">
+                <span>${escapeHtml(region)}</span>
+                <span>${escapeHtml(salary)}</span>
+                ${job.published_at ? `<span>掲載 ${escapeHtml(job.published_at)}</span>` : ''}
               </div>
-              <span class="badge">${escapeHtml(type)}</span>
+
+              <div class="job-chip-row">
+                ${chipValues.map(chip => `<span class="job-chip ${chip.primary ? 'primary' : ''}">${escapeHtml(chip.label)}</span>`).join('')}
+                ${tags.map(tag => `<span class="job-chip">${escapeHtml(tag)}</span>`).join('')}
+              </div>
+
+              <p class="job-summary">${escapeHtml(summary)}</p>
+
+              <div class="job-card-actions">
+                <button class="card-action primary" type="button" data-detail-id="${escapeHtml(job.id)}">詳細を見る</button>
+                <button class="card-action" type="button" data-copy-id="${escapeHtml(job.id)}">URLコピー</button>
+                ${job.apply_url ? `<a class="card-action" href="${escapeHtml(job.apply_url)}" target="_blank" rel="noopener noreferrer">応募・掲載元</a>` : ''}
+              </div>
             </div>
-
-            <dl class="meta">
-              <div class="meta-row">
-                <dt>給与</dt>
-                <dd>${escapeHtml(salary)}</dd>
-              </div>
-
-              <div class="meta-row">
-                <dt>都市</dt>
-                <dd>${escapeHtml(city)}</dd>
-              </div>
-
-              <div class="meta-row">
-                <dt>職種</dt>
-                <dd>${escapeHtml(position)}</dd>
-              </div>
-
-              <div class="meta-row">
-                <dt>概要</dt>
-                <dd class="summary">${escapeHtml(summary)}</dd>
-              </div>
-            </dl>
           </article>
         `;
       }).join('');
@@ -1621,7 +1999,8 @@ body.modal-open{
       els.cards.querySelectorAll('.card').forEach(card => {
         card.setAttribute('role', 'button');
         card.setAttribute('tabindex', '0');
-        card.addEventListener('click', () => {
+        card.addEventListener('click', event => {
+          if (event.target.closest('a, button')) return;
           selectedId = card.dataset.id;
           renderCards();
           renderDetail();
@@ -1636,6 +2015,34 @@ body.modal-open{
           openListingModal();
         });
       });
+
+      els.cards.querySelectorAll('[data-detail-id]').forEach(button => {
+        button.addEventListener('click', event => {
+          event.stopPropagation();
+          selectedId = button.dataset.detailId;
+          renderCards();
+          renderDetail();
+          openListingModal();
+        });
+      });
+
+      els.cards.querySelectorAll('[data-save-id]').forEach(button => {
+        button.addEventListener('click', event => {
+          event.stopPropagation();
+          toggleJobSaved(button.dataset.saveId);
+        });
+      });
+
+      els.cards.querySelectorAll('[data-copy-id]').forEach(button => {
+        button.addEventListener('click', async event => {
+          event.stopPropagation();
+          const job = filtered.find(j => String(j.id) === String(button.dataset.copyId));
+          if (!job) return;
+          const copied = await copyText(getJobDetailUrl(job));
+          button.textContent = copied ? 'コピー済み' : 'URLを選択';
+          setTimeout(() => { button.textContent = 'URLコピー'; }, 1600);
+        });
+      });
     }
 
     function splitRequirements(value){
@@ -1643,6 +2050,26 @@ body.modal-open{
         .split(/\/|、|,|;|；|\n/)
         .map(v => v.trim())
         .filter(Boolean);
+    }
+
+    function detailItem(label, value){
+      if (!value) return '';
+      return `
+        <div class="detail-item">
+          <div class="k">${escapeHtml(label)}</div>
+          <div>${escapeHtml(value)}</div>
+        </div>
+      `;
+    }
+
+    function detailSection(title, value){
+      if (!value) return '';
+      return `
+        <section class="detail-sec">
+          <h4>${escapeHtml(title)}</h4>
+          <p>${escapeHtml(value)}</p>
+        </section>
+      `;
     }
 
     function renderSalaryRangeLabel(){
@@ -1669,25 +2096,44 @@ body.modal-open{
 
       const company = job.company_name || '会社名未設定';
       const position = job.position_title || '職種未設定';
-      const type = job.employment_type || '雇用形態未設定';
       const salary = getSalaryLabel(job);
-      const city = job.city || '勤務地未設定';
-      const visa = job.visa_support || '未記載';
-      const updated = job.updated_at || '未記載';
-      const published = job.published_at || '未記載';
-      const expires = job.expires_at || '未記載';
+      const region = job.region || job.city || '勤務地未設定';
       const email = job.contact_email || '';
-      const summary = job.summary || '概要は準備中です。';
-      const details = job.job_details || summary || '職務詳細は準備中です。';
+      const summary = job.short_description || job.summary || '概要は準備中です。';
+      const details = job.description || job.job_details || summary || '職務詳細は準備中です。';
       const requirementsRaw = job.requirements || '';
       const requirements = splitRequirements(requirementsRaw);
       const comment = job.free_comment || '';
       const commentEn = job.free_comment_en || '';
       const logoUrl = job.company_logo_url || '';
+      const saved = isJobSaved(job.id);
+      const tags = splitList(job.tags || job.skills);
+      const chips = [
+        job.employment_type,
+        job.work_style,
+        job.language,
+        job.category,
+        job.detail_category,
+        ...tags
+      ].filter(Boolean);
 
       els.detailPanel.innerHTML = `
-        <h3>${escapeHtml(company)}</h3>
-        <p class="sub">${escapeHtml(position)}</p>
+        <div class="job-detail-head">
+          <div class="job-detail-company">${escapeHtml(company)}</div>
+          <h3 class="job-detail-title">${escapeHtml(position)}</h3>
+          <p class="job-detail-summary">${escapeHtml(summary)}</p>
+
+          <div class="detail-chip-row">
+            ${chips.map(chip => `<span class="job-chip">${escapeHtml(chip)}</span>`).join('')}
+          </div>
+
+          <div class="detail-actions">
+            ${job.apply_url ? `<a class="card-action primary" href="${escapeHtml(job.apply_url)}" target="_blank" rel="noopener noreferrer">応募・掲載元を開く</a>` : ''}
+            ${email ? `<a class="card-action" href="mailto:${escapeHtml(email)}">メールで問い合わせ</a>` : ''}
+            <button class="card-action" type="button" data-detail-copy-id="${escapeHtml(job.id)}">URLをコピー</button>
+            <button class="save-button inline ${saved ? 'saved' : ''}" type="button" data-detail-save-id="${escapeHtml(job.id)}">${saved ? '★ 保存済み' : '☆ 保存'}</button>
+          </div>
+        </div>
 
         ${
           logoUrl
@@ -1700,63 +2146,22 @@ body.modal-open{
         }
 
         <div class="detail-grid">
-          <div class="detail-item">
-            <div class="k">雇用形態</div>
-            <div>${escapeHtml(type)}</div>
-          </div>
-
-          <div class="detail-item">
-            <div class="k">給与</div>
-            <div>${escapeHtml(salary)}</div>
-          </div>
-
-          <div class="detail-item">
-            <div class="k">勤務地</div>
-            <div>${escapeHtml(city)}</div>
-          </div>
-
-          <div class="detail-item">
-            <div class="k">ビザサポート</div>
-            <div>${escapeHtml(visa)}</div>
-          </div>
-
-          <div class="detail-item">
-            <div class="k">更新日</div>
-            <div>${escapeHtml(updated)}</div>
-          </div>
-
-          <div class="detail-item">
-            <div class="k">掲載開始</div>
-            <div>${escapeHtml(published)}</div>
-          </div>
-
-          <div class="detail-item">
-            <div class="k">掲載期限</div>
-            <div>${escapeHtml(expires)}</div>
-          </div>
-
-          <div class="detail-item">
-            <div class="k">連絡先</div>
-            <div>
-              ${email ? `<a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a>` : '未記載'}
-            </div>
-          </div>
-
-          <div class="detail-item">
-            <div class="k">Job ID</div>
-            <div>${escapeHtml(job.id || '未記載')}</div>
-          </div>
+          ${detailItem('地域', region)}
+          ${detailItem('雇用形態', job.employment_type)}
+          ${detailItem('勤務形態', job.work_style)}
+          ${detailItem('給与', salary)}
+          ${detailItem('言語', job.language)}
+          ${detailItem('カテゴリ', job.category)}
+          ${detailItem('詳細カテゴリ', job.detail_category)}
+          ${detailItem('ビザサポート', job.visa_support)}
+          ${detailItem('掲載開始', job.published_at)}
+          ${detailItem('応募期限', job.expires_at)}
+          ${detailItem('更新日', job.updated_at)}
+          ${detailItem('掲載元', job.source_name || job.source_url)}
+          ${detailItem('Job ID', job.id)}
         </div>
 
-        <section class="detail-sec">
-          <h4>概要</h4>
-          <p>${escapeHtml(summary)}</p>
-        </section>
-
-        <section class="detail-sec">
-          <h4>職務詳細</h4>
-          <p>${escapeHtml(details)}</p>
-        </section>
+        ${detailSection('職務詳細', details)}
 
         <section class="detail-sec">
           <h4>必要要件・歓迎条件</h4>
@@ -1806,9 +2211,34 @@ body.modal-open{
     function openListingModal(){
       if (!els.listingModal || !els.listingModalContent || !els.detailPanel) return;
       els.listingModalContent.innerHTML = els.detailPanel.innerHTML;
+      bindDetailActions(els.listingModalContent);
       els.listingModal.hidden = false;
       document.body.classList.add('modal-open');
       els.listingModalClose.focus({ preventScroll:true });
+    }
+
+    function syncOpenModalContent(){
+      if (!els.listingModal || els.listingModal.hidden || !els.listingModalContent || !els.detailPanel) return;
+      els.listingModalContent.innerHTML = els.detailPanel.innerHTML;
+      bindDetailActions(els.listingModalContent);
+    }
+
+    function bindDetailActions(scope){
+      scope.querySelectorAll('[data-detail-save-id]').forEach(button => {
+        button.addEventListener('click', () => {
+          toggleJobSaved(button.dataset.detailSaveId);
+        });
+      });
+
+      scope.querySelectorAll('[data-detail-copy-id]').forEach(button => {
+        button.addEventListener('click', async () => {
+          const job = filtered.find(j => String(j.id) === String(button.dataset.detailCopyId));
+          if (!job) return;
+          const copied = await copyText(getJobDetailUrl(job));
+          button.textContent = copied ? 'コピーしました' : 'URLを選択してコピー';
+          setTimeout(() => { button.textContent = 'URLをコピー'; }, 1800);
+        });
+      });
     }
 
     function closeListingModal(){
@@ -1821,20 +2251,28 @@ body.modal-open{
       els.keywordInput.addEventListener('input', filterJobs);
       els.citySelect.addEventListener('change', filterJobs);
       els.positionSelect.addEventListener('change', filterJobs);
+      els.categorySelect.addEventListener('change', filterJobs);
+      els.detailCategorySelect.addEventListener('change', filterJobs);
       els.salaryRange.addEventListener('input', () => {
         renderSalaryRangeLabel();
         filterJobs();
       });
       els.visaSelect.addEventListener('change', filterJobs);
       els.typeSelect.addEventListener('change', filterJobs);
+      els.workStyleSelect.addEventListener('change', filterJobs);
+      els.jobLanguageSelect.addEventListener('change', filterJobs);
 
       els.resetBtn.addEventListener('click', () => {
         els.keywordInput.value = '';
         els.citySelect.value = '';
         els.positionSelect.value = '';
+        els.categorySelect.value = '';
+        els.detailCategorySelect.value = '';
         els.salaryRange.value = '0';
         els.visaSelect.value = '';
         els.typeSelect.value = '';
+        els.workStyleSelect.value = '';
+        els.jobLanguageSelect.value = '';
         renderSalaryRangeLabel();
         filterJobs();
       });

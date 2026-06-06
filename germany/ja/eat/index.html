@@ -1049,14 +1049,7 @@ function setViewMode(mode) {
 }
 
     function fetchJsonWithTimeout(url) {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), DATA_TIMEOUT_MS);
-      return fetch(url, { signal: controller.signal })
-        .then(response => {
-          if (!response.ok) throw new Error(`HTTP ${response.status}`);
-          return response.json();
-        })
-        .finally(() => clearTimeout(timeoutId));
+      return DATA_SOURCES.fetchJsonWithTimeout(url, DATA_TIMEOUT_MS);
     }
 
     function setLoadingStatus() {
@@ -1087,12 +1080,7 @@ function setViewMode(mode) {
         setLoadingStatus();
         const json = await fetchJsonWithTimeout(API_URL);
 
-        let items = [];
-        if (Array.isArray(json)) items = json;
-        else if (Array.isArray(json.data)) items = json.data;
-        else if (Array.isArray(json.items)) items = json.items;
-        else if (json.ok && Array.isArray(json.rows)) items = json.rows;
-        else if (json.ok && Array.isArray(json.data)) items = json.data;
+        const items = DATA_SOURCES.normalizePayload(json);
 
 rawItems = sortItems(items).map((item, index) => ({
   ...item,
@@ -1104,7 +1092,7 @@ rawItems.forEach(preloadCoordinatesFromFields);
         categoryMap = buildCategoryMap(rawItems);
         filterItems();
       } catch (error) {
-        console.error(error);
+        console.error("Eat data load failed:", API_URL, error);
         rawItems = [];
         filteredItems = [];
         renderDataLoadError();

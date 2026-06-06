@@ -228,7 +228,7 @@
   <script src="/assets/js/data-sources.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
-    const GAS_URL = DATA_SOURCES.communityDataEndpoint;
+    const COMMUNITY_POSTS_URL = DATA_SOURCES.buildCommunityUrl({ action: "getPosts" });
     const DATA_TIMEOUT_MS = 12000;
     const SUBCATEGORY_OPTIONS = {
       "売ります": ["帰国売り", "家具・家電", "生活用品", "子ども用品", "本・教材", "車・自転車", "その他"],
@@ -527,8 +527,14 @@
       const images = getImages(post);
       const postType = inferPostType(post);
       const subcategory = inferSubcategory(post);
+      const {
+        contact_email_private,
+        contact_phone_private,
+        delete_token,
+        ...publicPost
+      } = post;
       return {
-        ...post,
+        ...publicPost,
         _id: getPostId(post, index),
         _title: field(post, ["title", "name", "subject"]) || "タイトル未設定",
         _body: field(post, ["body", "description", "message", "content"]) || "",
@@ -1007,15 +1013,7 @@
     }
 
     async function fetchJson(url) {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), DATA_TIMEOUT_MS);
-      try {
-        const response = await fetch(url, { signal: controller.signal });
-        if (!response.ok) throw new Error("Network error");
-        return response.json();
-      } finally {
-        clearTimeout(timeoutId);
-      }
+      return DATA_SOURCES.fetchJsonWithTimeout(url, DATA_TIMEOUT_MS);
     }
 
     function renderEmptyActions(mode = "filters") {
@@ -1047,14 +1045,14 @@
       els.resultText.innerHTML = '<span class="skeleton-text medium"></span>';
       renderSkeletons();
       try {
-        const data = await fetchJson(`${GAS_URL}?action=getPosts`);
-        state.posts = (data.posts || []).map(normalizePost);
+        const data = await fetchJson(COMMUNITY_POSTS_URL);
+        state.posts = DATA_SOURCES.normalizePayload(data).map(normalizePost);
         state.loading = false;
         state.loadError = false;
         renderAreas();
         applyFilters();
       } catch (error) {
-        console.error("コミュニティ投稿を取得できませんでした:", error);
+        console.error("Community posts load failed:", COMMUNITY_POSTS_URL, error);
         state.posts = [];
         state.filtered = [];
         state.loading = false;

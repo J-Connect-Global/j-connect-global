@@ -472,11 +472,7 @@
     }
 
     function normalizePayload(payload){
-      if (Array.isArray(payload)) return payload;
-      if (Array.isArray(payload?.data)) return payload.data;
-      if (Array.isArray(payload?.items)) return payload.items;
-      if (Array.isArray(payload?.rows)) return payload.rows;
-      return [];
+      return DATA_SOURCES.normalizePayload(payload);
     }
 
     function normalizeJob(row, index){
@@ -603,13 +599,7 @@
       setJobsLoading();
 
       try {
-        const res = await fetchWithTimeout(JOBS_API_URL, { cache: 'no-store' });
-
-        if (!res.ok) {
-          throw new Error(`HTTP ${res.status}`);
-        }
-
-        const payload = await res.json();
+        const payload = await DATA_SOURCES.fetchJsonWithTimeout(JOBS_API_URL, DATA_TIMEOUT_MS);
         const rows = normalizePayload(payload);
 
         jobs = rows
@@ -640,7 +630,7 @@
         filterJobs();
 
       } catch (error) {
-        console.error('求人データの読み込みに失敗しました:', error);
+        console.error('Jobs data load failed:', JOBS_API_URL, error);
 
         jobs = [];
         filtered = [];

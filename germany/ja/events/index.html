@@ -597,6 +597,14 @@ body{
   box-shadow:var(--listing-shadow-hover);
 }
 
+.event-card-image{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  border-radius:14px;
+  border:1px solid var(--listing-line);
+}
+
 .event-chip,
 .events-status-mark{
   background:var(--listing-sakura-light);
@@ -723,6 +731,18 @@ body{
             </div>
           </aside>
         </div>
+      </section>
+
+      <section class="events-section" id="eventsDynamicSection" aria-labelledby="events-dynamic-title" hidden>
+        <div class="events-section-head">
+          <div>
+            <div class="events-section-kicker">Latest</div>
+            <h2 class="events-section-title" id="events-dynamic-title">掲載中のイベント</h2>
+          </div>
+          <p class="events-section-desc" id="eventsDynamicSummary"></p>
+        </div>
+
+        <div class="events-category-grid" id="eventsDynamicCards" aria-live="polite"></div>
       </section>
 
       <section class="events-section" aria-labelledby="events-categories-title">
@@ -908,7 +928,16 @@ body{
   </div>
 </footer>
 
+  <script src="/assets/js/data-sources.js"></script>
   <script>
+    const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
+    const EVENTS_API_URL = DATA_SOURCES.buildDirectoryUrl({
+      sheet: DATA_SOURCES.directorySheets.events,
+      lang: "ja",
+      status: "active"
+    });
+    const DATA_TIMEOUT_MS = 12000;
+
     const languageSelect = document.getElementById('languageSelect');
     if (languageSelect) {
       languageSelect.addEventListener('change', (event) => {
@@ -916,6 +945,71 @@ body{
         if (target) window.location.href = target;
       });
     }
+
+    const eventsDynamicSection = document.getElementById("eventsDynamicSection");
+    const eventsDynamicSummary = document.getElementById("eventsDynamicSummary");
+    const eventsDynamicCards = document.getElementById("eventsDynamicCards");
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function getField(item, ...keys) {
+      for (const key of keys) {
+        const value = item?.[key];
+        if (value !== undefined && value !== null && String(value).trim() !== "") {
+          return String(value).trim();
+        }
+      }
+      return "";
+    }
+
+    function renderDynamicEvents(rows) {
+      if (!eventsDynamicSection || !eventsDynamicCards || !rows.length) return;
+
+      eventsDynamicSummary.textContent = `${rows.length}件のイベントを表示しています。`;
+      eventsDynamicCards.innerHTML = rows.map((item) => {
+        const title = getField(item, "title", "name") || "イベント名未設定";
+        const date = getField(item, "date", "event_date", "start_date");
+        const city = getField(item, "city", "region", "area");
+        const venue = getField(item, "venue", "location", "address");
+        const description = getField(item, "description", "short_description", "detail_comment") || "詳細は準備中です。";
+        const url = getField(item, "url", "website", "official_url");
+        const image = getField(item, "image", "image_url", "thumbnail");
+        const meta = [date, city, venue].filter(Boolean).join(" / ");
+
+        return `
+          <article class="event-card">
+            <div>
+              ${image ? `<img class="event-card-image" src="${escapeHtml(image)}" alt="${escapeHtml(title)}" loading="lazy" decoding="async" onerror="this.remove()">` : ""}
+              <span class="event-card-label">${escapeHtml(date || city || "イベント")}</span>
+              <h3>${escapeHtml(title)}</h3>
+              ${meta ? `<p>${escapeHtml(meta)}</p>` : ""}
+              <p>${escapeHtml(description)}</p>
+            </div>
+            ${url ? `<a class="events-cta-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">詳細を見る</a>` : ""}
+          </article>
+        `;
+      }).join("");
+      eventsDynamicSection.hidden = false;
+    }
+
+    async function loadDynamicEvents() {
+      try {
+        const payload = await DATA_SOURCES.fetchJsonWithTimeout(EVENTS_API_URL, DATA_TIMEOUT_MS);
+        const rows = DATA_SOURCES.normalizePayload(payload);
+        renderDynamicEvents(rows);
+      } catch (error) {
+        console.error("Events data load failed:", EVENTS_API_URL, error);
+      }
+    }
+
+    loadDynamicEvents();
   </script>
   <script src="/assets/js/main.js"></script>
 </body>

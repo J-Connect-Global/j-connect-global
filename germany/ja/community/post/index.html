@@ -867,6 +867,7 @@
 <script>
 const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
 const GAS_URL = DATA_SOURCES.communityDataEndpoint;
+const COMMUNITY_POSTS_URL = DATA_SOURCES.buildCommunityUrl({ action: 'getPosts' });
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const detailPostId = new URLSearchParams(location.search).get('id');
 const DETAIL_STORAGE_KEY = 'ngg-community-saved-posts';
@@ -949,9 +950,13 @@ function clearMessage() {
 }
 
 async function fetchJson(url, options) {
+  if (!options) {
+    return DATA_SOURCES.fetchJsonWithTimeout(url, 12000);
+  }
+
   const res = await fetch(url, options || {});
   if (!res.ok) {
-    throw new Error('Network error');
+    throw new Error('Network error for ' + url);
   }
   return await res.json();
 }
@@ -1170,8 +1175,14 @@ function formatDate(value) {
 function normalizePost(post, index) {
   const postType = inferPostType(post);
   const subcategory = inferSubcategory(post);
+  const {
+    contact_email_private,
+    contact_phone_private,
+    delete_token,
+    ...publicPost
+  } = post;
   return {
-    ...post,
+    ...publicPost,
     _id: getPostId(post, index),
     _title: field(post, ['title', 'name', 'subject']) || 'タイトル未設定',
     _body: field(post, ['body', 'description', 'message', 'content']) || '',
@@ -1377,8 +1388,8 @@ async function loadStandaloneDetail(id) {
   document.getElementById('detailMode').hidden = false;
 
   try {
-    const data = await fetchJson(GAS_URL + '?action=getPosts');
-    const posts = (data.posts || []).map(normalizePost);
+    const data = await fetchJson(COMMUNITY_POSTS_URL);
+    const posts = DATA_SOURCES.normalizePayload(data).map(normalizePost);
     const post = posts.find(function(item) { return String(item._id) === String(id); });
     if (!post) {
       renderNotFound();
@@ -1386,7 +1397,7 @@ async function loadStandaloneDetail(id) {
     }
     renderStandaloneDetail(post, posts);
   } catch (error) {
-    console.error('投稿詳細を取得できませんでした:', error);
+    console.error('Community detail load failed:', COMMUNITY_POSTS_URL, error);
     renderNotFound();
   }
 }
@@ -1486,6 +1497,7 @@ async function submitForm(event) {
     renderCategory2('');
 
   } catch (error) {
+    console.error('Community post submit failed:', GAS_URL, error);
     showMessage('error', error.message || '送信に失敗しました。時間を置いて再度お試しください。');
   } finally {
     submitButton.disabled = false;

@@ -130,7 +130,6 @@ body > p#msg{
   <script src="/assets/js/data-sources.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
-    const GAS_URL = DATA_SOURCES.communityDataEndpoint;
     (async function() {
       const token = new URLSearchParams(location.search).get('token') || '';
       const el = document.getElementById('msg');
@@ -138,11 +137,15 @@ body > p#msg{
         el.textContent = '無効なリンクです。';
         return;
       }
+      const deleteUrl = DATA_SOURCES.buildCommunityUrl({
+        action: 'deletePostByToken',
+        token: token
+      });
       try {
-        const res = await fetch(GAS_URL + '?action=deletePostByToken&token=' + encodeURIComponent(token));
-        const data = await res.json();
+        const data = await DATA_SOURCES.fetchJsonWithTimeout(deleteUrl, 12000);
         el.textContent = data.ok ? '投稿を削除しました。' : '削除に失敗しました。';
       } catch (e) {
+        console.error('Community delete failed:', deleteUrl, e);
         el.textContent = '削除に失敗しました。';
       }
     })();

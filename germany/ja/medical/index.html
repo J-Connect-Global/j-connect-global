@@ -380,12 +380,7 @@
     }
 
     function normalizePayload(payload) {
-      if (!payload) return [];
-      if (Array.isArray(payload)) return payload;
-      if (Array.isArray(payload.data)) return payload.data;
-      if (Array.isArray(payload.items)) return payload.items;
-      if (Array.isArray(payload.results)) return payload.results;
-      return [];
+      return DATA_SOURCES.normalizePayload(payload);
     }
 
     function parseItem(item, index) {
@@ -906,14 +901,7 @@
     }
 
     function fetchJsonWithTimeout(url) {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), DATA_TIMEOUT_MS);
-      return fetch(url, { signal: controller.signal })
-        .then(response => {
-          if (!response.ok) throw new Error(`HTTP ${response.status}`);
-          return response.json();
-        })
-        .finally(() => clearTimeout(timeoutId));
+      return DATA_SOURCES.fetchJsonWithTimeout(url, DATA_TIMEOUT_MS);
     }
 
     function renderMedicalLoadError() {
@@ -945,7 +933,7 @@
           setStatus("現在表示できる医療機関データがありません。緊急の場合は公的機関・救急窓口を優先してください。", true);
         }
       } catch (error) {
-        console.error(error);
+        console.error("Medical data load failed:", API_URL, error);
         rawItems = [];
         filteredItems = [];
         renderSummary();

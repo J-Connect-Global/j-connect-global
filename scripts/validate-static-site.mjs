@@ -39,8 +39,15 @@ const searchIndexCandidates = [
   'assets/data/search-index.json',
 ];
 
+const requiredAssetPaths = [
+  'assets/css/search.css',
+  'assets/js/search-page.js',
+  'assets/js/search-index.js',
+];
+
 const faviconIcoPath = path.join(root, 'favicon.ico');
 const faviconPreviewPath = path.join(root, 'favicon-preview.png');
+const searchPagePath = path.join(root, 'germany/ja/search/index.html');
 
 const blockedTerms = [
   '検索機能は準備中です',
@@ -156,6 +163,37 @@ for (const required of requiredPages) {
   }
 }
 
+for (const asset of requiredAssetPaths) {
+  const target = path.join(root, asset);
+  if (!fs.existsSync(target) || !fs.statSync(target).isFile()) {
+    problems.push(`Missing required asset: ${asset}`);
+  }
+}
+
+if (fs.existsSync(searchPagePath)) {
+  const searchPageHtml = fs.readFileSync(searchPagePath, 'utf8');
+  const inlineStyleBlocks = searchPageHtml.match(/<style\b[\s\S]*?<\/style>/gi) || [];
+  if (inlineStyleBlocks.length) {
+    problems.push('/germany/ja/search/index.html should not contain inline search-page CSS.');
+  }
+
+  const inlineScriptBlocks = [...searchPageHtml.matchAll(/<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi)];
+  const hasInlineSearchScript = inlineScriptBlocks.some((match) => (
+    /JCONNECT_SEARCH_INDEX|categoryLinks|renderSearchPage|scoreItem|searchIndex/.test(match[1])
+  ));
+  if (hasInlineSearchScript) {
+    problems.push('/germany/ja/search/index.html should not contain the main search-page JavaScript inline.');
+  }
+
+  if (!/href=["']\/assets\/css\/search\.css["']/i.test(searchPageHtml)) {
+    problems.push('/germany/ja/search/index.html must load /assets/css/search.css.');
+  }
+
+  if (!/src=["']\/assets\/js\/search-page\.js["']/i.test(searchPageHtml)) {
+    problems.push('/germany/ja/search/index.html must load /assets/js/search-page.js.');
+  }
+}
+
 const searchIndexRel = searchIndexCandidates.find((candidate) => fs.existsSync(path.join(root, candidate)));
 if (!searchIndexRel) {
   problems.push(`Missing search index file: ${searchIndexCandidates.join(' or ')}`);
@@ -199,7 +237,9 @@ if (!searchIndexRel) {
   }
 }
 
-if (fs.existsSync(faviconIcoPath) && fs.statSync(faviconIcoPath).size === 0) {
+if (!fs.existsSync(faviconIcoPath)) {
+  problems.push('Missing root favicon.ico.');
+} else if (fs.statSync(faviconIcoPath).size === 0) {
   problems.push('Root favicon.ico exists but is empty.');
 }
 

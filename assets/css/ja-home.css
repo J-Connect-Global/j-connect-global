@@ -1,5 +1,4 @@
 :root{
-  --cat-guides:#f59e0b;
   --cat-living:#10b981;
   --cat-jobs:#3b82f6;
   --cat-medical:#06b6d4;
@@ -65,7 +64,7 @@
 
 .hero-title .brand-word{
   color:var(--brand);
-  white-space:nowrap;
+  white-space:normal;
 }
 
 .hero-desc{
@@ -293,7 +292,6 @@
   width:100%;
 }
 
-.cat-guides{ --cat-heading:#7a4507; --cat-color:var(--cat-guides); --cat-rgb:245,158,11; --cat-dark-rgb:122,69,7; background-image:url('/assets/images/cards/guides.jpg'); }
 .cat-living{ --cat-heading:#065f46; --cat-color:var(--cat-living); --cat-rgb:16,185,129; --cat-dark-rgb:6,94,66; background-image:url('/assets/images/cards/living.jpg'); }
 .cat-jobs{ --cat-heading:#1e40af; --cat-color:var(--cat-jobs); --cat-rgb:59,130,246; --cat-dark-rgb:30,64,175; background-image:url('/assets/images/cards/jobs.jpg'); }
 .cat-medical{ --cat-heading:#0c4a6e; --cat-color:var(--cat-medical); --cat-rgb:6,182,212; --cat-dark-rgb:12,74,110; background-image:url('/assets/images/cards/medical.jpg'); }

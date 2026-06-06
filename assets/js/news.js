@@ -1,4 +1,4 @@
-const NEWS_DATA_URL = "../../assets/data/news.json";
+const NEWS_DATA_URL = "/assets/data/news.json";
 
 const newsGrid = document.getElementById("newsGrid");
 const searchInput = document.getElementById("newsSearch");

@@ -3,32 +3,74 @@
 // ===============================
 
 (function () {
-  const STORAGE_KEY = "ng_cookie_consent"; // accepted / denied
+  const GA_MEASUREMENT_ID = "G-BSKBFKQY19";
+  const STORAGE_KEY = "jconnect_cookie_consent"; // accepted / denied
+  const LEGACY_STORAGE_KEY = "ng_cookie_consent";
+  const IS_GERMANY_JA_PAGE = location.pathname === "/germany/ja" || location.pathname.indexOf("/germany/ja/") === 0;
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () {
+    window.dataLayer.push(arguments);
+  };
+
+  window.gtag("consent", "default", {
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    analytics_storage: "denied"
+  });
 
   // -------------------------------
   // GA4 Loader（同意後のみ実行）
   // -------------------------------
   function loadGA() {
-    if (window.GA_LOADED) return;
-    window.GA_LOADED = true;
+    if (!IS_GERMANY_JA_PAGE) return;
 
-    const script = document.createElement("script");
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-0300YC5NF8";
-    script.async = true;
-    document.head.appendChild(script);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    window.gtag = gtag;
-
-    gtag("js", new Date());
-
-    // IP匿名化など最低限設定
-    gtag("config", "G-0300YC5NF8", {
-      anonymize_ip: true,
+    window.gtag("consent", "update", {
       ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
       analytics_storage: "granted"
     });
+
+    if (window.JCONNECT_GA_LOADED) return;
+    window.JCONNECT_GA_LOADED = true;
+
+    if (!document.querySelector('script[data-jconnect-ga4="true"]')) {
+      const script = document.createElement("script");
+      script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_MEASUREMENT_ID);
+      script.async = true;
+      script.dataset.jconnectGa4 = "true";
+      document.head.appendChild(script);
+    }
+
+    window.gtag("js", new Date());
+    window.gtag("config", GA_MEASUREMENT_ID, {
+      anonymize_ip: true,
+      allow_ad_personalization_signals: false,
+      allow_google_signals: false
+    });
+  }
+
+  function denyGA() {
+    window.gtag("consent", "update", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "denied"
+    });
+  }
+
+  function getConsent() {
+    const consent = localStorage.getItem(STORAGE_KEY);
+    const legacyConsent = localStorage.getItem(LEGACY_STORAGE_KEY);
+
+    if (consent === null && legacyConsent !== null) {
+      localStorage.setItem(STORAGE_KEY, legacyConsent);
+      return legacyConsent;
+    }
+
+    return consent;
   }
 
   // -------------------------------
@@ -54,12 +96,15 @@
 
     document.getElementById("cookie-accept").onclick = function () {
       localStorage.setItem(STORAGE_KEY, "accepted");
+      localStorage.setItem(LEGACY_STORAGE_KEY, "accepted");
       loadGA();
       removeBanner();
     };
 
     document.getElementById("cookie-decline").onclick = function () {
       localStorage.setItem(STORAGE_KEY, "denied");
+      localStorage.setItem(LEGACY_STORAGE_KEY, "denied");
+      denyGA();
       removeBanner();
     };
   }
@@ -69,17 +114,24 @@
     if (banner) banner.remove();
   }
 
-  // -------------------------------
-  // 初期処理
-  // -------------------------------
-  document.addEventListener("DOMContentLoaded", function () {
-    const consent = localStorage.getItem(STORAGE_KEY);
+  function initCookieConsent() {
+    const consent = getConsent();
 
     if (consent === "accepted") {
       loadGA();
     } else if (consent === null) {
       createBanner();
+    } else {
+      denyGA();
     }
-    // denied の場合は何もしない
-  });
+  }
+
+  // -------------------------------
+  // 初期処理
+  // -------------------------------
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCookieConsent);
+  } else {
+    initCookieConsent();
+  }
 })();

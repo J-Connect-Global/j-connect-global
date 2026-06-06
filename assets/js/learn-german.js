@@ -1,4 +1,4 @@
-const LEARN_GERMAN_DATA_URL = "../../assets/data/learn-german.json";
+const LEARN_GERMAN_DATA_URL = "/assets/data/learn-german.json";
 
 const resourceGrid = document.getElementById("resourceGrid");
 const searchInput = document.getElementById("resourceSearch");

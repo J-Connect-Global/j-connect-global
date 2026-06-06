@@ -1,7 +1,6 @@
 /* Page-specific styles. Shared site styles live in the common site stylesheet. */
 :root{
   --surface:#ffffff;
-  --cat-guides:#f59e0b;
   --cat-living:#10b981;
   --cat-jobs:#3b82f6;
   --cat-medical:#06b6d4;
@@ -67,7 +66,7 @@
 
 .hero-title .brand-word{
   color:var(--brand);
-  white-space:nowrap;
+  white-space:normal;
 }
 
 .hero-desc{
@@ -312,9 +311,7 @@
   font-size:14px;
   line-height:1.7;
   text-align:center;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  overflow-wrap:anywhere;
   width:100%;
 }
 
@@ -337,10 +334,6 @@
   color:#fff;
   font-size:17px;
   border:1px solid rgba(255,255,255,.18);
-}
-
-.cat-guides{
-  --cat-heading:#7a4507;
 }
 
 .cat-living{
@@ -377,13 +370,6 @@
 
 .cat-news{
   --cat-heading:#1e293b;
-}
-
-.cat-guides{
-  --cat-color:var(--cat-guides);
-  --cat-rgb:245, 158, 11;
-  --cat-dark-rgb:122, 69, 7;
-  background-image:url('/assets/images/cards/guides.jpg');
 }
 
 .cat-living{

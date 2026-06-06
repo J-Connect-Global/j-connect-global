@@ -30,7 +30,7 @@
       "checklist"
     ],
     "content_type": "original",
-    "source_type": "nihon-gateway",
+    "source_type": "j-connect",
     "price": "free",
     "url": "#",
     "cta_label": "準備中",
@@ -64,7 +64,7 @@
       "phrases"
     ],
     "content_type": "original",
-    "source_type": "nihon-gateway",
+    "source_type": "j-connect",
     "price": "free",
     "url": "#",
     "cta_label": "準備中",
@@ -100,7 +100,7 @@
       "dialogue"
     ],
     "content_type": "original",
-    "source_type": "nihon-gateway",
+    "source_type": "j-connect",
     "price": "free",
     "url": "#",
     "cta_label": "準備中",
@@ -134,7 +134,7 @@
       "phrases"
     ],
     "content_type": "original",
-    "source_type": "nihon-gateway",
+    "source_type": "j-connect",
     "price": "free",
     "url": "#",
     "cta_label": "準備中",
@@ -167,7 +167,7 @@
       "dialogue"
     ],
     "content_type": "original",
-    "source_type": "nihon-gateway",
+    "source_type": "j-connect",
     "price": "free",
     "url": "#",
     "cta_label": "準備中",
@@ -199,7 +199,7 @@
       "phrases"
     ],
     "content_type": "original",
-    "source_type": "nihon-gateway",
+    "source_type": "j-connect",
     "price": "free",
     "url": "#",
     "cta_label": "準備中",
@@ -344,7 +344,7 @@
       "prompt"
     ],
     "content_type": "ai_tool",
-    "source_type": "nihon-gateway",
+    "source_type": "j-connect",
     "price": "free",
     "url": "#",
     "cta_label": "準備中",

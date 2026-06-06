@@ -1,63 +1,29 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deutsch | J-Connect Germany</title>
-  <meta name="description" content="Portal für Japan-Interessierte in Deutschland.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://j-connect-global.com/de/">
-  <script>
-(function () {
-  var segments = location.pathname.split('/').filter(Boolean);
-  if (segments.length && /\.html$/i.test(segments[segments.length - 1])) segments.pop();
-
-  var localeIndex = -1;
-  for (var i = 0; i < segments.length; i++) {
-    if (segments[i] === 'ja' || segments[i] === 'de') { localeIndex = i; break; }
-  }
-
-  var depth = localeIndex >= 0 ? (segments.length - localeIndex) : Math.max(segments.length - 1, 0);
-  var prefix = depth === 0 ? './' : '../'.repeat(depth);
-
-  var css = document.createElement('link');
-  css.rel = 'stylesheet';
-  css.href = prefix + 'assets/css/cookie-consent.css';
-  document.head.appendChild(css);
-
-  var js = document.createElement('script');
-  js.src = prefix + 'assets/js/cookie-consent.js';
-  js.defer = true;
-  document.head.appendChild(js);
-})();
-</script>
-<link rel="stylesheet" href="../assets/css/site.css">
+  <meta name="description" content="Die deutsche Version von J-Connect Germany ist bald verfügbar." />
+  <meta name="robots" content="noindex, follow" />
+  <meta http-equiv="refresh" content="0; url=/germany/de/coming-soon/" />
+  <link rel="canonical" href="https://j-connect-global.com/germany/de/coming-soon/" />
+  <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
 </head>
-
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1>Deutsch</h1>
-      <p>Japan in Deutschland</p>
-    </div>
-  </header>
-
-  <main class="container">
-    <div class="content-box">
-      <ul class="nav-links">
-        <li><a href="../index.html">Zur Startseite</a></li>
-      </ul>
-    </div>
+  <main class="main">
+    <section class="site-shell">
+      <div class="site-hero">
+        <p class="site-badge">Coming soon</p>
+        <h1>Deutsche Version bald verfügbar</h1>
+        <p>Die deutsche Version ist noch in Vorbereitung.</p>
+        <p><a class="site-button" href="/germany/de/coming-soon/">Zur Coming-Soon-Seite</a></p>
+      </div>
+    </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 J-Connect Germany</p>
-    </div>
-  </footer>
-
-  <script src="../assets/js/main.js"></script>
+  <script>
+    window.location.replace('/germany/de/coming-soon/');
+  </script>
 </body>
-
 </html>

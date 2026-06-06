@@ -1,75 +1,29 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J-Connect Germany | 日本とドイツをつなぐポータル</title>
-    <meta name="description" content="ドイツ在住日本人向け生活情報と、日本に興味のあるドイツ人向け情報をまとめたポータルサイト。">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://j-connect-global.com/">
-
-    <script>
-(function () {
-  var segments = location.pathname.split('/').filter(Boolean);
-  if (segments.length && /\.html$/i.test(segments[segments.length - 1])) segments.pop();
-
-  var localeIndex = -1;
-  for (var i = 0; i < segments.length; i++) {
-    if (segments[i] === 'ja' || segments[i] === 'de') { localeIndex = i; break; }
-  }
-
-  var depth = localeIndex >= 0 ? (segments.length - localeIndex) : Math.max(segments.length - 1, 0);
-  var prefix = depth === 0 ? './' : '../'.repeat(depth);
-
-  var css = document.createElement('link');
-  css.rel = 'stylesheet';
-  css.href = prefix + 'assets/css/cookie-consent.css';
-  document.head.appendChild(css);
-
-  var js = document.createElement('script');
-  js.src = prefix + 'assets/js/cookie-consent.js';
-  js.defer = true;
-  document.head.appendChild(js);
-})();
-</script>
-<link rel="stylesheet" href="assets/css/site.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J-Connect Germany</title>
+  <meta name="description" content="J-Connect Germany の日本語サイトは /germany/ja/ で公開しています。" />
+  <meta name="robots" content="noindex, follow" />
+  <meta http-equiv="refresh" content="0; url=/germany/ja/" />
+  <link rel="canonical" href="https://j-connect-global.com/germany/ja/" />
+  <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
 </head>
-
 <body>
-    <header class="site-header">
-        <div class="container">
-            <h1 class="logo">J-Connect Germany</h1>
-            <p class="tagline">日本とドイツをつなぐポータル</p>
-        </div>
-    </header>
-
-    <main class="container">
-        <section class="hero">
-            <h2>Welcome</h2>
-            <p>ドイツ在住日本人向け生活情報と、日本に興味のあるドイツ人向け情報をまとめるサイトです。</p>
-        </section>
-
-        <section class="cards">
-            <a class="card" href="./germany/ja/">
-                <h3>日本語</h3>
-                <p>生活情報、手続き、都市別ガイド</p>
-            </a>
-
-            <a class="card" href="./de/">
-                <h3>Deutsch</h3>
-                <p>Japan in Deutschland, Kultur, Events</p>
-            </a>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p>© 2026 J-Connect Germany</p>
-        </div>
-    </footer>
-
-    <script src="./assets/js/main.js"></script>
+  <main class="main">
+    <section class="site-shell">
+      <div class="site-hero">
+        <p class="site-badge">J-Connect Germany</p>
+        <h1>日本語サイトへ移動します</h1>
+        <p>J-Connect Germany の現在の公開版は日本語サイトです。</p>
+        <p><a class="site-button" href="/germany/ja/">/germany/ja/ へ移動する</a></p>
+      </div>
+    </section>
+  </main>
+  <script>
+    window.location.replace('/germany/ja/');
+  </script>
 </body>
-
 </html>

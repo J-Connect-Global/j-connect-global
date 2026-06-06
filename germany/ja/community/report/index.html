@@ -197,8 +197,10 @@ body > form button{
     <label>あなたのメール（任意）</label><input name="reporter_email" type="email">
     <button type="submit">送信する</button>
   </form>
+  <script src="/assets/js/data-sources.js"></script>
   <script>
-    const GAS_URL = 'https://script.google.com/macros/s/AKfycbwvGmCKVjbWak1xmqU3li33sS_eSx-g5eZU9NUPUYA_9YD7E2NmwUHe9a0SrG6YFBZt/exec';
+    const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
+    const GAS_URL = DATA_SOURCES.communityDataEndpoint;
     document.getElementById('post_id').value = new URLSearchParams(location.search).get('post_id') || '';
     document.getElementById('reportForm').addEventListener('submit', async (e) => {
       e.preventDefault();

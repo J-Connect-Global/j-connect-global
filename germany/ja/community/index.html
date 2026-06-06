@@ -225,8 +225,10 @@
   </div>
 </footer>
 
+  <script src="/assets/js/data-sources.js"></script>
   <script>
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbwvGmCKVjbWak1xmqU3li33sS_eSx-g5eZU9NUPUYA_9YD7E2NmwUHe9a0SrG6YFBZt/exec";
+    const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
+    const GAS_URL = DATA_SOURCES.communityDataEndpoint;
     const DATA_TIMEOUT_MS = 12000;
     const SUBCATEGORY_OPTIONS = {
       "売ります": ["帰国売り", "家具・家電", "生活用品", "子ども用品", "本・教材", "車・自転車", "その他"],

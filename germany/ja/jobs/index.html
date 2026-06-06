@@ -264,10 +264,14 @@
   </div>
 </footer>
 
+  <script src="/assets/js/data-sources.js"></script>
   <script>
-    const SHEET_ID = '1oX4Go3yqxZyFkyRTio-YSxE9wZaXy6mfwai42Zot4AU';
-    const SHEET_GID = '1253259572';
-    const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?gid=${SHEET_GID}&tqx=out:json`;
+    const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
+    const JOBS_API_URL = DATA_SOURCES.buildDirectoryUrl({
+      sheet: DATA_SOURCES.directorySheets.jobs,
+      lang: 'ja',
+      status: 'active'
+    });
     const DATA_TIMEOUT_MS = 12000;
 
     let jobs = [];
@@ -467,23 +471,12 @@
       renderFilterChipGroup(els.jobLanguageChipGroup, jobs.map(j => j.language), 'language');
     }
 
-    function getRowsFromGvizResponse(rawText){
-      const start = rawText.indexOf('{');
-      const end = rawText.lastIndexOf('}');
-      if (start < 0 || end < 0) return [];
-
-      const json = JSON.parse(rawText.slice(start, end + 1));
-      const table = json.table || {};
-      const headers = (table.cols || []).map(col => clean(col.label || col.id));
-
-      return (table.rows || []).map(row => {
-        const obj = {};
-        headers.forEach((header, index) => {
-          const cell = row.c?.[index]?.v;
-          obj[header] = cell ?? '';
-        });
-        return obj;
-      });
+    function normalizePayload(payload){
+      if (Array.isArray(payload)) return payload;
+      if (Array.isArray(payload?.data)) return payload.data;
+      if (Array.isArray(payload?.items)) return payload.items;
+      if (Array.isArray(payload?.rows)) return payload.rows;
+      return [];
     }
 
     function normalizeJob(row, index){
@@ -610,14 +603,14 @@
       setJobsLoading();
 
       try {
-        const res = await fetchWithTimeout(SHEET_URL, { cache: 'no-store' });
+        const res = await fetchWithTimeout(JOBS_API_URL, { cache: 'no-store' });
 
         if (!res.ok) {
           throw new Error(`HTTP ${res.status}`);
         }
 
-        const raw = await res.text();
-        const rows = getRowsFromGvizResponse(raw);
+        const payload = await res.json();
+        const rows = normalizePayload(payload);
 
         jobs = rows
           .map(normalizeJob)

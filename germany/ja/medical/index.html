@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Medical | 医療・病院 | J-Connect Germany</title>
-  <meta name="description" content="デュッセルドルフの病院、クリニック、家庭医などの医療情報を日本語で見やすく整理。カテゴリ、エリア、住所、公式サイト、地図リンクをまとめて確認できます。" />
+  <title>医療・緊急 | ドイツの病院・クリニック情報 | J-Connect Germany</title>
+  <meta name="description" content="ドイツの病院、クリニック、家庭医、薬局などの医療情報を日本語で整理。地域、カテゴリ、言語対応、地図リンクを確認できます。" />
   <meta name="theme-color" content="#f7f3ee" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/medical/" />
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
 
-  <meta property="og:title" content="Medical | 医療・病院 | J-Connect Germany" />
-  <meta property="og:description" content="病院、クリニック、家庭医などの医療情報を日本語で見やすく一覧化。" />
+  <meta property="og:title" content="医療・緊急 | ドイツの病院・クリニック情報 | J-Connect Germany" />
+  <meta property="og:description" content="ドイツの病院、クリニック、家庭医、薬局などの医療情報を日本語で整理。地域、カテゴリ、言語対応、地図リンクを確認できます。" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://j-connect-global.com/germany/ja/medical/" />
   <meta property="og:locale" content="ja_JP" />
@@ -252,6 +252,7 @@
 
   <script>
     const API_URL = "https://script.google.com/macros/s/AKfycbzpVvPrboEPZaFQHf87Q1LPhiU40J03ntX1JicNoA4NOo6ngNWh8knFwJ_9IVkKgTKx/exec?sheet=medical&city=duesseldorf";
+    const DATA_TIMEOUT_MS = 12000;
 
     const CATEGORY_LABELS = {
       hospital: "病院",
@@ -458,6 +459,7 @@
 
     function setStatus(message, isError = false) {
       els.statusBox.style.display = "block";
+      els.statusBox.className = isError ? "status-box error" : "status-box";
       els.statusBox.style.borderColor = isError ? "#f2b8b8" : "#d8ccc7";
       els.statusBox.style.color = isError ? "#9f3c3c" : "var(--muted)";
       els.statusBox.innerHTML = message;
@@ -465,6 +467,7 @@
 
     function clearStatus() {
       els.statusBox.style.display = "none";
+      els.statusBox.className = "status-box";
       els.statusBox.innerHTML = "";
     }
 
@@ -560,7 +563,7 @@
       els.cards.innerHTML = "";
 
       if (!filteredItems.length) {
-        setStatus("条件に一致する医療リソースがありません。フィルターを変更してください。");
+        setStatus("条件に一致する結果がありません。フィルターを変更してください。");
         return;
       }
 
@@ -897,15 +900,35 @@
       });
     }
 
-    async function init() {
-      bindEvents();
-      setView("list");
+    function fetchJsonWithTimeout(url) {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), DATA_TIMEOUT_MS);
+      return fetch(url, { signal: controller.signal })
+        .then(response => {
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          return response.json();
+        })
+        .finally(() => clearTimeout(timeoutId));
+    }
+
+    function renderMedicalLoadError() {
+      setStatus(`
+        <span class="status-title">医療機関データを取得できませんでした。</span>
+        <div>緊急の場合は公的機関・救急窓口を優先してください。</div>
+        <div>このサイトは緊急医療サービスではありません。</div>
+        <div class="status-actions">
+          <button class="btn btn-primary" type="button" data-retry-load>再読み込み</button>
+          <a class="btn btn-secondary" href="/germany/ja/">トップページへ戻る</a>
+        </div>
+      `, true);
+      els.statusBox.querySelector("[data-retry-load]")?.addEventListener("click", loadMedicalData);
+    }
+
+    async function loadMedicalData() {
       setStatus("データを読み込んでいます...");
 
       try {
-        const res = await fetch(API_URL);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const payload = await res.json();
+        const payload = await fetchJsonWithTimeout(API_URL);
         const rows = normalizePayload(payload);
 
         rawItems = rows.map(parseItem).filter(item => item.title && item.title !== "名称未設定");
@@ -914,7 +937,7 @@
         applyFilters();
 
         if (!rawItems.length) {
-          setStatus("表示できるmedicalデータがありません。Spreadsheetのmedicalシートを確認してください。", true);
+          setStatus("現在表示できる医療機関データがありません。緊急の場合は公的機関・救急窓口を優先してください。", true);
         }
       } catch (error) {
         console.error(error);
@@ -922,8 +945,14 @@
         filteredItems = [];
         renderSummary();
         renderCards();
-        setStatus("データの読み込みに失敗しました。API URL、Apps Script、medicalシートを確認してください。", true);
+        renderMedicalLoadError();
       }
+    }
+
+    function init() {
+      bindEvents();
+      setView("list");
+      loadMedicalData();
     }
 
     init();

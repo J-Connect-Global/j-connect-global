@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shopping | 買い物・サービス | J-Connect Germany</title>
-  <meta name="description" content="デュッセルドルフの食材店、スーパー、ドラッグストア、薬局、日用品店などの買い物情報を日本語で見やすく整理。カテゴリ、地域、評価、地図リンクをまとめて確認できます。" />
+  <title>買い物・サービス | ドイツ生活の店舗・サービス情報 | J-Connect Germany</title>
+  <meta name="description" content="ドイツ生活に必要なスーパー、食材店、薬局、日用品店、生活サービスを日本語で整理。地域、カテゴリ、評価、地図リンクから探せます。" />
   <meta name="theme-color" content="#f7f3ee" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/shopping/" />
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
 
-  <meta property="og:title" content="Shopping | 買い物・サービス | J-Connect Germany" />
-  <meta property="og:description" content="食材店、スーパー、ドラッグストア、薬局などの買い物情報を日本語で見やすく一覧化。" />
+  <meta property="og:title" content="買い物・サービス | ドイツ生活の店舗・サービス情報 | J-Connect Germany" />
+  <meta property="og:description" content="ドイツ生活に必要なスーパー、食材店、薬局、日用品店、生活サービスを日本語で整理。地域、カテゴリ、評価、地図リンクから探せます。" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://j-connect-global.com/germany/ja/shopping/" />
   <meta property="og:locale" content="ja_JP" />
@@ -252,6 +252,7 @@
 
   <script>
     const API_URL = "https://script.google.com/macros/s/AKfycbzpVvPrboEPZaFQHf87Q1LPhiU40J03ntX1JicNoA4NOo6ngNWh8knFwJ_9IVkKgTKx/exec?sheet=shopping&lang=ja&city=duesseldorf&status=active";
+    const DATA_TIMEOUT_MS = 12000;
 
     const languageSelect = document.getElementById("languageSelect");
     if (languageSelect) {
@@ -612,7 +613,7 @@ function buildAddress(item) {
         els.cards.innerHTML = "";
         els.statusBox.className = "status-box";
         els.statusBox.style.display = "block";
-        els.statusBox.textContent = "データがまだありません。Spreadsheet または API の内容を確認してください。";
+        els.statusBox.textContent = "現在表示できる買い物・サービスデータがありません。";
         return;
       }
 
@@ -620,7 +621,7 @@ function buildAddress(item) {
         els.cards.innerHTML = "";
         els.statusBox.className = "empty-box";
         els.statusBox.style.display = "block";
-        els.statusBox.innerHTML = "条件に一致する店舗が見つかりませんでした。キーワードやカテゴリを変更してみてください。";
+        els.statusBox.textContent = "条件に一致する結果がありません。フィルターを変更してください。";
         return;
       }
 
@@ -1011,15 +1012,44 @@ function setViewMode(mode) {
   }
 }
 
+    function fetchJsonWithTimeout(url) {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), DATA_TIMEOUT_MS);
+      return fetch(url, { signal: controller.signal })
+        .then(response => {
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          return response.json();
+        })
+        .finally(() => clearTimeout(timeoutId));
+    }
+
+    function setLoadingStatus() {
+      els.statusBox.style.display = "block";
+      els.statusBox.className = "status-box";
+      els.statusBox.textContent = "データを読み込んでいます...";
+      els.resultsSummary.textContent = "読み込み中...";
+    }
+
+    function renderDataLoadError() {
+      els.cards.innerHTML = "";
+      els.resultsSummary.textContent = "読み込みエラー";
+      els.statusBox.style.display = "block";
+      els.statusBox.className = "status-box error";
+      els.statusBox.innerHTML = `
+        <span class="status-title">データを取得できませんでした。</span>
+        <div>時間をおいて再読み込みしてください。</div>
+        <div class="status-actions">
+          <button class="btn btn-primary" type="button" data-retry-load>再読み込み</button>
+          <a class="btn btn-secondary" href="/germany/ja/">トップページへ戻る</a>
+        </div>
+      `;
+      els.statusBox.querySelector("[data-retry-load]")?.addEventListener("click", loadData);
+    }
+
     async function loadData() {
       try {
-        els.statusBox.style.display = "block";
-        els.statusBox.className = "status-box";
-        els.statusBox.textContent = "データを読み込んでいます...";
-
-        const response = await fetch(API_URL);
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const json = await response.json();
+        setLoadingStatus();
+        const json = await fetchJsonWithTimeout(API_URL);
 
         let items = [];
         if (Array.isArray(json)) items = json;
@@ -1042,11 +1072,7 @@ rawItems = sortItems(items).map((item, index) => ({
         console.error(error);
         rawItems = [];
         filteredItems = [];
-        els.cards.innerHTML = "";
-        els.resultsSummary.textContent = "0件を表示中 / 全0件";
-        els.statusBox.style.display = "block";
-        els.statusBox.className = "status-box";
-        els.statusBox.innerHTML = "データの読み込みに失敗しました。<br>API URL、Apps Script の公開設定、sheet=shopping のデータ構造を確認してください。";
+        renderDataLoadError();
       }
     }
 

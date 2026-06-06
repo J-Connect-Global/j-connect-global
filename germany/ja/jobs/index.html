@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Jobs | 仕事・求人 | J-Connect Germany</title>
-  <meta name="description" content="ドイツで働く日本語話者向けの求人情報を、会社名・給与・地域・職務概要で見やすく整理。カード選択で詳細もすぐ確認できます。" />
+  <title>仕事・求人 | ドイツの日本語求人情報 | J-Connect Germany</title>
+  <meta name="description" content="ドイツで働きたい日本語話者向けに、求人、転職、アルバイト、勤務形態、ビザサポートなどの仕事情報を整理しています。" />
   <meta name="theme-color" content="#f7f3ee" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/jobs/" />
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png" />
 
-  <meta property="og:title" content="Jobs | 仕事・求人 | J-Connect Germany" />
-  <meta property="og:description" content="企業掲載型の求人を日本語で見やすく一覧化。カードを選ぶと職務詳細・要件・連絡先を確認できます。" />
+  <meta property="og:title" content="仕事・求人 | ドイツの日本語求人情報 | J-Connect Germany" />
+  <meta property="og:description" content="ドイツで働きたい日本語話者向けに、求人、転職、アルバイト、勤務形態、ビザサポートなどの仕事情報を整理しています。" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://j-connect-global.com/germany/ja/jobs/" />
   <meta property="og:locale" content="ja_JP" />
@@ -268,6 +268,7 @@
     const SHEET_ID = '1oX4Go3yqxZyFkyRTio-YSxE9wZaXy6mfwai42Zot4AU';
     const SHEET_GID = '1253259572';
     const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?gid=${SHEET_GID}&tqx=out:json`;
+    const DATA_TIMEOUT_MS = 12000;
 
     let jobs = [];
     let filtered = [];
@@ -574,11 +575,42 @@
       renderFilterChips();
     }
 
-    async function loadJobs(){
+    function fetchWithTimeout(url, options = {}){
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), DATA_TIMEOUT_MS);
+      return fetch(url, { ...options, signal: controller.signal })
+        .finally(() => clearTimeout(timeoutId));
+    }
+
+    function setJobsLoading(){
       els.resultsSummary.textContent = '読み込み中...';
+      els.emptyBox.style.display = 'none';
+      els.emptyBox.className = 'empty-box';
+      els.emptyBox.innerHTML = '';
+    }
+
+    function renderJobsLoadError(){
+      els.cards.innerHTML = '';
+      els.chips.innerHTML = '';
+      els.resultsSummary.textContent = '読み込みエラー';
+      els.emptyBox.style.display = 'block';
+      els.emptyBox.className = 'empty-box error';
+      els.emptyBox.innerHTML = `
+        <span class="status-title">求人データを取得できませんでした。</span>
+        <div>時間をおいて再読み込みしてください。</div>
+        <div class="status-actions">
+          <button class="btn btn-primary" type="button" data-retry-load>再読み込み</button>
+          <a class="btn btn-secondary" href="/germany/ja/">トップページへ戻る</a>
+        </div>
+      `;
+      els.emptyBox.querySelector('[data-retry-load]')?.addEventListener('click', loadJobs);
+    }
+
+    async function loadJobs(){
+      setJobsLoading();
 
       try {
-        const res = await fetch(SHEET_URL, { cache: 'no-store' });
+        const res = await fetchWithTimeout(SHEET_URL, { cache: 'no-store' });
 
         if (!res.ok) {
           throw new Error(`HTTP ${res.status}`);
@@ -621,11 +653,7 @@
         filtered = [];
         selectedId = null;
 
-        els.cards.innerHTML = '';
-        els.chips.innerHTML = '';
-        els.emptyBox.style.display = 'block';
-        els.emptyBox.textContent = '求人データを読み込めませんでした。Spreadsheetの公開設定とシート構成を確認してください。';
-        els.resultsSummary.textContent = '読み込みエラー';
+        renderJobsLoadError();
       }
     }
 
@@ -742,11 +770,13 @@
       if (!filtered.length) {
         els.cards.innerHTML = '';
         els.emptyBox.style.display = 'block';
-        els.emptyBox.textContent = '条件に一致する求人が見つかりませんでした。条件を変更してください。';
+        els.emptyBox.className = 'empty-box';
+        els.emptyBox.textContent = '条件に一致する結果がありません。フィルターを変更してください。';
         return;
       }
 
       els.emptyBox.style.display = 'none';
+      els.emptyBox.className = 'empty-box';
 
       els.cards.innerHTML = filtered.map(job => {
         const company = job.company_name || '会社名未設定';

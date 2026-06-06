@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import vm from 'node:vm';
 
 const root = process.cwd();
 const scriptPath = path.relative(root, fileURLToPath(import.meta.url));
@@ -33,7 +34,18 @@ const requiredPages = [
   '/germany/ja/search/',
 ];
 
+const searchIndexCandidates = [
+  'assets/js/search-index.js',
+  'assets/data/search-index.json',
+];
+
+const faviconIcoPath = path.join(root, 'favicon.ico');
+const faviconPreviewPath = path.join(root, 'favicon-preview.png');
+
 const blockedTerms = [
+  '検索機能は準備中です',
+  'サイト内検索は現在準備中です',
+  '日本語トップ',
   '\u8868\u793a\u90fd\u5e02\u3092\u5207\u308a\u66ff\u3048\u308b',
   '\u73fe\u5728\u306e\u90fd\u5e02',
   'city' + 'Config',
@@ -92,6 +104,23 @@ function localTargetExists(targetPath) {
   return fs.existsSync(`${targetPath}.html`);
 }
 
+function readSearchIndex(searchIndexPath) {
+  const ext = path.extname(searchIndexPath);
+  const text = fs.readFileSync(searchIndexPath, 'utf8');
+
+  if (ext === '.json') {
+    return JSON.parse(text);
+  }
+
+  const sandbox = { window: {} };
+  vm.runInNewContext(text, sandbox, {
+    filename: path.relative(root, searchIndexPath),
+    timeout: 1000,
+  });
+
+  return sandbox.window.JCONNECT_SEARCH_INDEX;
+}
+
 function resolveInternalUrl(urlValue, file) {
   if (!urlValue || urlValue.startsWith('#')) return null;
   if (urlValue.includes('${')) return null;
@@ -125,6 +154,57 @@ for (const required of requiredPages) {
   if (!localTargetExists(target)) {
     problems.push(`Missing required page: ${required}`);
   }
+}
+
+const searchIndexRel = searchIndexCandidates.find((candidate) => fs.existsSync(path.join(root, candidate)));
+if (!searchIndexRel) {
+  problems.push(`Missing search index file: ${searchIndexCandidates.join(' or ')}`);
+} else {
+  const searchIndexPath = path.join(root, searchIndexRel);
+  try {
+    const searchIndex = readSearchIndex(searchIndexPath);
+
+    if (!Array.isArray(searchIndex) || searchIndex.length === 0) {
+      problems.push(`Search index must be a non-empty array: ${searchIndexRel}`);
+    } else {
+      for (const [index, item] of searchIndex.entries()) {
+        const label = `${searchIndexRel}[${index}]`;
+        if (!item || typeof item !== 'object') {
+          problems.push(`Invalid search index item: ${label}`);
+          continue;
+        }
+
+        for (const key of ['title', 'description', 'url', 'category']) {
+          if (typeof item[key] !== 'string' || !item[key].trim()) {
+            problems.push(`Search index item missing ${key}: ${label}`);
+          }
+        }
+
+        if (!Array.isArray(item.tags) || item.tags.length === 0) {
+          problems.push(`Search index item missing tags: ${label}`);
+        }
+
+        if (typeof item.url === 'string' && item.url.startsWith('/')) {
+          const target = path.join(root, item.url.slice(1));
+          if (!localTargetExists(target)) {
+            problems.push(`Search index URL does not resolve: ${item.url}`);
+          }
+        } else {
+          problems.push(`Search index URL must be root-relative: ${label}`);
+        }
+      }
+    }
+  } catch (error) {
+    problems.push(`Unable to parse search index ${searchIndexRel}: ${error.message}`);
+  }
+}
+
+if (fs.existsSync(faviconIcoPath) && fs.statSync(faviconIcoPath).size === 0) {
+  problems.push('Root favicon.ico exists but is empty.');
+}
+
+if (fs.existsSync(faviconPreviewPath)) {
+  problems.push('favicon-preview.png should not be committed.');
 }
 
 for (const file of textFiles) {

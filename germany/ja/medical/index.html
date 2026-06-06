@@ -250,8 +250,13 @@
     crossorigin=""
   ></script>
 
+  <script src="/assets/js/data-sources.js"></script>
   <script>
-    const API_URL = "https://script.google.com/macros/s/AKfycbzpVvPrboEPZaFQHf87Q1LPhiU40J03ntX1JicNoA4NOo6ngNWh8knFwJ_9IVkKgTKx/exec?sheet=medical&city=duesseldorf";
+    const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
+    const API_URL = DATA_SOURCES.buildDirectoryUrl({
+      sheet: DATA_SOURCES.directorySheets.medical,
+      city: "duesseldorf"
+    });
     const DATA_TIMEOUT_MS = 12000;
 
     const CATEGORY_LABELS = {

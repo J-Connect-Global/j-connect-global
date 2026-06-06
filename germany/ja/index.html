@@ -119,56 +119,6 @@
   line-height:1.7;
 }
 
-.city-switch{
-  display:grid;
-  gap:12px;
-}
-
-.current-city{
-  display:inline-flex;
-  width:max-content;
-  align-items:center;
-  gap:8px;
-  padding:7px 12px;
-  border-radius:999px;
-  background:#eef1f4;
-  border:1px solid #d8dee6;
-  color:var(--text);
-  font-size:13px;
-  font-weight:700;
-}
-
-.city-pill-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.city-pill{
-  appearance:none;
-  border:1px solid var(--line-strong);
-  background:#fff;
-  color:#24313d;
-  border-radius:999px;
-  padding:10px 14px;
-  cursor:pointer;
-  font-size:14px;
-  font-weight:700;
-  transition:all .18s ease;
-}
-
-.city-pill:hover{
-  border-color:var(--hover-pink);
-  background:var(--hover-pink-bg);
-  transform:translateY(-1px);
-}
-
-.city-pill.is-active{
-  background:var(--brand);
-  border-color:var(--brand);
-  color:#fff;
-}
-
 .utility-list{
   display:grid;
   grid-template-columns:repeat(3, minmax(0, 1fr));
@@ -319,7 +269,7 @@
   backdrop-filter:blur(4px);
 }
 
-.cat-badges{display:flex;}
+.cat-badges{display:none;}
 
 .badge{
   display:inline-flex;
@@ -334,17 +284,6 @@
   background:rgba(255,255,255,.12);
   backdrop-filter:blur(4px);
 }
-
-.badge.city{
-  display:none;
-  color:rgba(var(--cat-dark-rgb), .95);
-  background:rgba(255,255,255,.66);
-  border-color:rgba(var(--cat-dark-rgb), .28);
-}
-
-.cat-card.city-dependent .badge.city{display:inline-flex;}
-
-.cat-card:not(.city-dependent) .cat-badges{display:none;}
 
 .cat-content{
   position:absolute;
@@ -525,14 +464,6 @@
   background-image:url('/assets/images/cards/news.jpg');
 }
 
-.city-switch-head{
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-  gap:14px;
-  flex-wrap:wrap;
-}
-
 @media (max-width:1100px){
 .hero-grid{grid-template-columns:1fr;}
 
@@ -559,12 +490,6 @@
 @media (max-width:560px){
 .hero{
     background-position:64% center;
-  }
-
-.city-pill-row{
-    flex-wrap:nowrap;
-    overflow-x:auto;
-    padding-bottom:4px;
   }
 
 .utility-list{grid-template-columns:1fr;}
@@ -605,7 +530,7 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="./" aria-label="J-Connect Germany ホーム">
+    <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
       <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany ヘッダーロゴ">
       <span class="brand-copy">
         <span class="brand-title">J-CONNECT GERMANY</span>
@@ -615,27 +540,27 @@
 
     <div class="header-actions">
       <nav class="header-nav" aria-label="メインナビゲーション">
-        <a href="./" class="active">ホーム</a>
-        <a href="./about/">このサイトについて</a>
+        <a href="/germany/ja/" class="active" aria-current="page">ホーム</a>
+        <a href="/germany/ja/about/">このサイトについて</a>
       </nav>
 
       <div class="header-category header-category-menu" aria-label="カテゴリ選択">
         <button type="button" class="header-category-trigger">カテゴリ</button>
         <div class="category-dropdown">
-          <a href="./guides/">手続き・制度</a>
-          <a href="./living/">住まい・生活</a>
-          <a href="./jobs/" data-base="jobs">仕事・求人</a>
-          <a href="./medical/" data-base="medical">医療・緊急</a>
-          <a href="./eat/" data-base="eat">グルメ・飲食</a>
-          <a href="./shopping/" data-base="shopping">買い物・サービス</a>
-          <a href="./community/" data-base="community">交流・掲示板</a>
-          <a href="./events/" data-base="events">おでかけ・イベント</a>
-          <a href="./learn-german/">ドイツ語・学び</a>
-          <a href="./news/">ニュース・読みもの</a>
+          <a href="/germany/ja/guides/">手続き・制度</a>
+          <a href="/germany/ja/living/">住まい・生活</a>
+          <a href="/germany/ja/jobs/">仕事・求人</a>
+          <a href="/germany/ja/medical/">医療・緊急</a>
+          <a href="/germany/ja/eat/">グルメ・飲食</a>
+          <a href="/germany/ja/shopping/">買い物・サービス</a>
+          <a href="/germany/ja/community/">交流・掲示板</a>
+          <a href="/germany/ja/events/">おでかけ・イベント</a>
+          <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+          <a href="/germany/ja/news/">ニュース・読みもの</a>
         </div>
       </div>
 
-      <form class="header-search" action="./search/" method="get" role="search">
+      <form class="header-search" action="/germany/ja/search/" method="get" role="search">
         <label class="search-box" aria-label="サイト内検索">
           <span>⌕</span>
           <input type="search" name="q" placeholder="検索">
@@ -646,9 +571,9 @@
       <label class="header-language" aria-label="言語切り替え">
         <span>Language</span>
         <select id="languageSelect">
-          <option value="./">日本語</option>
-          <option value="../">English</option>
-          <option value="../de/">Deutsch</option>
+          <option value="/germany/ja/">日本語</option>
+          <option value="/germany/en/coming-soon/">English</option>
+          <option value="/germany/de/coming-soon/">Deutsch</option>
         </select>
       </label>
     </div>
@@ -667,40 +592,22 @@
           </h1>
 
           <p class="hero-desc">
-  　食、仕事、交流、学びまで。ドイツ生活に必要な情報を、都市別・目的別に迷わず探せます。
+  　食、仕事、交流、学びまで。ドイツ生活に必要な情報を、地域・目的別に迷わず探せます。
           </p>
 
         </div>
 
         <aside class="hero-side">
-          <section class="info-panel city-switch" aria-label="都市切替">
-  <div class="city-switch-head">
-    <h2>表示都市を切り替える</h2>
-    <div class="current-city" id="currentCityBadge">現在の都市：デュッセルドルフ</div>
-  </div>
-            <p>
-              仕事・求人、医療・緊急、グルメ・飲食、買い物・サービス、交流・掲示板、おでかけ・イベントは、
-              選択した都市に合わせてリンク先が切り替わります。
-            </p>
-
-            <div class="city-pill-row" role="tablist" aria-label="都市選択">
-              <button class="city-pill is-active" type="button" data-city="duesseldorf">デュッセルドルフ</button>
-              <button class="city-pill" type="button" data-city="frankfurt">フランクフルト</button>
-              <button class="city-pill" type="button" data-city="muenchen">ミュンヘン</button>
-              <button class="city-pill" type="button" data-city="berlin">ベルリン</button>
-            </div>
-          </section>
-
-          <section class="info-panel">
+<section class="info-panel">
             <h2>このサイトでできること</h2>
             <div class="utility-list">
               <div class="utility-item">
                 <div>📍</div>
-                <div><strong>都市ごとに探せる</strong><span>ローカル情報を都市別に切り替え</span></div>
+                <div><strong>ドイツ生活を探せる</strong><span>ドイツ在住日本人向けの情報を整理</span></div>
               </div>
               <div class="utility-item">
                 <div>🧭</div>
-                <div><strong>目的別に迷わず探せる</strong><span>生活の場面ごとにカテゴリ整理</span></div>
+                <div><strong>地域・目的別に探せる</strong><span>生活の場面ごとにカテゴリ整理</span></div>
               </div>
               <div class="utility-item">
                 <div>📱</div>
@@ -722,13 +629,11 @@
       </div>
 
       <div class="category-grid">
-        <a class="cat-card featured cat-eat city-dependent" href="./eat/" data-base="eat">
+        <a class="cat-card featured cat-eat" href="/germany/ja/eat/">
           <div class="cat-card-body">
             <div class="cat-top">
               <div class="cat-icon">🍜</div>
-              <div class="cat-badges">
-                <span class="badge city">デュッセルドルフ</span>
-              </div>
+              <div class="cat-badges"></div>
             </div>
             <div class="cat-content">
               <div class="cat-kicker">Eat</div>
@@ -738,13 +643,11 @@
           </div>
         </a>
 
-        <a class="cat-card featured cat-community city-dependent" href="./community/" data-base="community">
+        <a class="cat-card featured cat-community" href="/germany/ja/community/">
           <div class="cat-card-body">
             <div class="cat-top">
               <div class="cat-icon">🤝</div>
-              <div class="cat-badges">
-                <span class="badge city">デュッセルドルフ</span>
-              </div>
+              <div class="cat-badges"></div>
             </div>
             <div class="cat-content">
               <div class="cat-kicker">community</div>
@@ -754,12 +657,11 @@
           </div>
         </a>
         
-        <a class="cat-card featured cat-german" href="./learn-german/">
+        <a class="cat-card featured cat-german" href="/germany/ja/learn-german/">
           <div class="cat-card-body">
             <div class="cat-top">
               <div class="cat-icon">📘</div>
-              <div class="cat-badges">
-              </div>
+              <div class="cat-badges"></div>
             </div>
             <div class="cat-content">
               <div class="cat-kicker">Learn</div>
@@ -769,13 +671,11 @@
           </div>
         </a>
 
-        <a class="cat-card featured cat-jobs city-dependent" href="./jobs/" data-base="jobs">
+        <a class="cat-card featured cat-jobs" href="/germany/ja/jobs/">
           <div class="cat-card-body">
             <div class="cat-top">
               <div class="cat-icon">💼</div>
-              <div class="cat-badges">
-                <span class="badge city">デュッセルドルフ</span>
-              </div>
+              <div class="cat-badges"></div>
             </div>
             <div class="cat-content">
               <div class="cat-kicker">Jobs</div>
@@ -785,13 +685,11 @@
           </div>
         </a>
 
-        <a class="cat-card cat-shopping city-dependent" href="./shopping/" data-base="shopping">
+        <a class="cat-card cat-shopping" href="/germany/ja/shopping/">
           <div class="cat-card-body">
             <div class="cat-top">
               <div class="cat-icon">🛍️</div>
-              <div class="cat-badges">
-                <span class="badge city">デュッセルドルフ</span>
-              </div>
+              <div class="cat-badges"></div>
             </div>
             <div class="cat-content">
               <div class="cat-kicker">Shopping</div>
@@ -801,12 +699,11 @@
           </div>
         </a>
         
-        <a class="cat-card cat-guides" href="./guides/">
+        <a class="cat-card cat-guides" href="/germany/ja/guides/">
           <div class="cat-card-body">
             <div class="cat-top">
               <div class="cat-icon">📋</div>
-              <div class="cat-badges">
-              </div>
+              <div class="cat-badges"></div>
             </div>
             <div class="cat-content">
               <div class="cat-kicker">Guides</div>
@@ -816,12 +713,11 @@
           </div>
         </a>
 
-        <a class="cat-card cat-living" href="./living/">
+        <a class="cat-card cat-living" href="/germany/ja/living/">
           <div class="cat-card-body">
             <div class="cat-top">
               <div class="cat-icon">🏡</div>
-              <div class="cat-badges">
-              </div>
+              <div class="cat-badges"></div>
             </div>
             <div class="cat-content">
               <div class="cat-kicker">Living</div>
@@ -832,13 +728,11 @@
         </a>
 
 
-        <a class="cat-card cat-medical city-dependent" href="./medical/" data-base="medical">
+        <a class="cat-card cat-medical" href="/germany/ja/medical/">
           <div class="cat-card-body">
             <div class="cat-top">
               <div class="cat-icon">🏥</div>
-              <div class="cat-badges">
-                <span class="badge city">デュッセルドルフ</span>
-              </div>
+              <div class="cat-badges"></div>
             </div>
             <div class="cat-content">
               <div class="cat-kicker">Medical</div>
@@ -848,13 +742,11 @@
           </div>
         </a>
 
-        <a class="cat-card cat-events city-dependent" href="./events/" data-base="events">
+        <a class="cat-card cat-events" href="/germany/ja/events/">
           <div class="cat-card-body">
             <div class="cat-top">
               <div class="cat-icon">🎉</div>
-              <div class="cat-badges">
-                <span class="badge city">デュッセルドルフ</span>
-              </div>
+              <div class="cat-badges"></div>
             </div>
             <div class="cat-content">
               <div class="cat-kicker">Events</div>
@@ -864,12 +756,11 @@
           </div>
         </a>
 
-        <a class="cat-card cat-news" href="./news/">
+        <a class="cat-card cat-news" href="/germany/ja/news/">
           <div class="cat-card-body">
             <div class="cat-top">
               <div class="cat-icon">📰</div>
-              <div class="cat-badges">
-              </div>
+              <div class="cat-badges"></div>
             </div>
             <div class="cat-content">
               <div class="cat-kicker">News</div>
@@ -936,111 +827,6 @@
 
   </div>
 </main>
-
-<script>
-const cityConfig = {
-  duesseldorf: {
-    name: 'デュッセルドルフ',
-    paths: {
-      jobs: './jobs/',
-      medical: './medical/',
-      eat: './eat/',
-      shopping: './shopping/',
-      community: './community/',
-      events: './events/'
-    }
-  },
-  frankfurt: {
-    name: 'フランクフルト',
-    paths: {
-      jobs: './cities/frankfurt/jobs/',
-      medical: './cities/frankfurt/medical/',
-      eat: './cities/frankfurt/eat/',
-      shopping: './cities/frankfurt/shopping/',
-      community: './cities/frankfurt/community/',
-      events: './cities/frankfurt/events/'
-    }
-  },
-  muenchen: {
-    name: 'ミュンヘン',
-    paths: {
-      jobs: './cities/muenchen/jobs/',
-      medical: './cities/muenchen/medical/',
-      eat: './cities/muenchen/eat/',
-      shopping: './cities/muenchen/shopping/',
-      community: './cities/muenchen/community/',
-      events: './cities/muenchen/events/'
-    }
-  },
-  berlin: {
-    name: 'ベルリン',
-    paths: {
-      jobs: './cities/berlin/jobs/',
-      medical: './cities/berlin/medical/',
-      eat: './cities/berlin/eat/',
-      shopping: './cities/berlin/shopping/',
-      community: './cities/berlin/community/',
-      events: './cities/berlin/events/'
-    }
-  }
-};
-
-const cityButtons = document.querySelectorAll('.city-pill');
-const cityBadge = document.getElementById('currentCityBadge');
-const cityDependentCards = document.querySelectorAll('.cat-card.city-dependent');
-const headerCategoryLinks = document.querySelectorAll('.category-dropdown a[data-base]');
-const languageSelect = document.getElementById('languageSelect');
-
-function applyCity(cityKey){
-  const selected = cityConfig[cityKey];
-  if(!selected) return;
-
-  cityBadge.textContent = `現在の都市：${selected.name}`;
-
-  cityButtons.forEach(btn => {
-    const active = btn.dataset.city === cityKey;
-    btn.classList.toggle('is-active', active);
-    btn.setAttribute('aria-selected', active ? 'true' : 'false');
-  });
-
-  cityDependentCards.forEach(card => {
-    const base = card.dataset.base;
-    const nextHref = selected.paths[base];
-    const cityBadgeEl = card.querySelector('.badge.city');
-    if(nextHref) card.setAttribute('href', nextHref);
-    if(cityBadgeEl) cityBadgeEl.textContent = selected.name;
-  });
-  
-  headerCategoryLinks.forEach(link => {
-    const base = link.dataset.base;
-    const nextHref = selected.paths[base];
-    if(nextHref) link.setAttribute('href', nextHref);
-  });
-
-  try{
-    localStorage.setItem('ngg_selected_city', cityKey);
-  }catch(e){}
-}
-
-cityButtons.forEach(btn => {
-  btn.addEventListener('click', () => applyCity(btn.dataset.city));
-});
-
-if(languageSelect){
-  languageSelect.addEventListener('change', (e) => {
-    const url = e.target.value;
-    if(url) window.location.href = url;
-  });
-}
-
-let initialCity = 'duesseldorf';
-try{
-  const saved = localStorage.getItem('ngg_selected_city');
-  if(saved && cityConfig[saved]) initialCity = saved;
-}catch(e){}
-
-applyCity(initialCity);
-</script>
 
 <script src="/assets/js/main.js"></script>
 </body>

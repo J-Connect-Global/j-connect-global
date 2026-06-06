@@ -312,6 +312,7 @@ button,input,select,textarea{font:inherit;}
   color:#2f3e4c;
   padding:8px 10px;
   border-radius:10px;
+  border:1px solid transparent;
 }
 
 .category-dropdown a:hover{
@@ -413,10 +414,13 @@ button,input,select,textarea{font:inherit;}
   transition:all .18s ease;
 }
 
-.header-nav a.active{
-  color:#34414d;
-  border-color:#dce4ee;
-  background:rgba(255,255,255,.74);
+.header-nav a.active,
+.header-nav a[aria-current="page"],
+.category-dropdown a.active,
+.category-dropdown a[aria-current="page"]{
+  color:var(--brand);
+  border-color:var(--hover-pink);
+  background:var(--hover-pink-bg);
   transform:none;
 }
 

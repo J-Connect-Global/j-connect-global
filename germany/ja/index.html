@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>J-Connect Germany | ドイツ在住日本人向け生活ポータル</title>
-<meta name="description" content="ドイツ在住日本人向けの生活ポータル。仕事、医療、グルメ、買い物、掲示板、イベント、住まい・生活・手続き、ドイツ語学習まで、ドイツ生活に必要な情報を日本語で整理しています。">
+<meta name="description" content="ドイツ在住日本人向けの生活ポータル。仕事、医療、グルメ、買い物、掲示板、イベント、生活・手続き、ドイツ語学習まで、ドイツ生活に必要な情報を日本語で整理しています。">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://j-connect-global.com/germany/ja/">
 <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
@@ -61,7 +61,7 @@
       <div class="header-category header-category-menu" aria-label="カテゴリ選択">
         <button type="button" class="header-category-trigger">カテゴリ</button>
         <div class="category-dropdown">
-          <a href="/germany/ja/living/">住まい・生活・手続き</a>
+          <a href="/germany/ja/living/">生活・手続き</a>
           <a href="/germany/ja/jobs/">仕事・求人</a>
           <a href="/germany/ja/medical/">医療・緊急</a>
           <a href="/germany/ja/eat/">グルメ・飲食</a>
@@ -81,14 +81,17 @@
         <button class="search-btn" type="submit" aria-label="検索">⌕</button>
       </form>
 
-      <label class="header-language" aria-label="言語切り替え">
-        <span>Language</span>
-        <select id="languageSelect">
-          <option value="/germany/ja/">日本語</option>
-          <option value="/germany/en/coming-soon/">English</option>
-          <option value="/germany/de/coming-soon/">Deutsch</option>
-        </select>
-      </label>
+      <details class="header-language header-language-menu" aria-label="言語切り替え">
+        <summary class="header-language-trigger">
+          <span>Language</span>
+          <span class="header-language-current" lang="ja">日本語</span>
+        </summary>
+        <div class="language-dropdown">
+          <a href="/germany/ja/" class="active" aria-current="page" lang="ja">日本語</a>
+          <a href="/germany/en/coming-soon/" lang="en">English</a>
+          <a href="/germany/de/coming-soon/" lang="de">Deutsch</a>
+        </div>
+      </details>
     </div>
   </div>
 </header>
@@ -142,44 +145,16 @@
       </div>
 
       <div class="category-grid">
-        <a class="cat-card featured cat-eat" href="/germany/ja/eat/">
+        <a class="cat-card featured cat-living" href="/germany/ja/living/">
           <div class="cat-card-body">
             <div class="cat-top">
-              <div class="cat-icon">🍜</div>
+              <div class="cat-icon">🏡</div>
               <div class="cat-badges"></div>
             </div>
             <div class="cat-content">
-              <div class="cat-kicker">食べる</div>
-              <div class="cat-title">グルメ・飲食</div>
-              <div class="cat-desc">日本食、ラーメン、カフェ、ランチ、居酒屋など外食スポットを探す。</div>
-            </div>
-          </div>
-        </a>
-
-        <a class="cat-card featured cat-community" href="/germany/ja/community/">
-          <div class="cat-card-body">
-            <div class="cat-top">
-              <div class="cat-icon">🤝</div>
-              <div class="cat-badges"></div>
-            </div>
-            <div class="cat-content">
-              <div class="cat-kicker">交流する</div>
-              <div class="cat-title">交流・掲示板</div>
-              <div class="cat-desc">売ります・買います、相談、募集、地域交流などコミュニティ情報を探す。</div>
-            </div>
-          </div>
-        </a>
-        
-        <a class="cat-card featured cat-german" href="/germany/ja/learn-german/">
-          <div class="cat-card-body">
-            <div class="cat-top">
-              <div class="cat-icon">📘</div>
-              <div class="cat-badges"></div>
-            </div>
-            <div class="cat-content">
-              <div class="cat-kicker">学ぶ</div>
-              <div class="cat-title">ドイツ語・学び</div>
-              <div class="cat-desc">生活や仕事で使うドイツ語、学習法、勉強リソースを探す。</div>
+              <div class="cat-kicker">暮らす</div>
+              <div class="cat-title">生活・手続き</div>
+              <div class="cat-desc">住まい、光熱費、銀行、保険、住民登録、<br>滞在手続き、税金、家族・教育、引っ越し、運転まで確認。</div>
             </div>
           </div>
         </a>
@@ -198,6 +173,34 @@
           </div>
         </a>
 
+        <a class="cat-card featured cat-medical" href="/germany/ja/medical/">
+          <div class="cat-card-body">
+            <div class="cat-top">
+              <div class="cat-icon">🏥</div>
+              <div class="cat-badges"></div>
+            </div>
+            <div class="cat-content">
+              <div class="cat-kicker">受診する</div>
+              <div class="cat-title">医療・緊急</div>
+              <div class="cat-desc">病院、歯科、薬局、緊急時の<br>対応先や受診時に必要な情報を確認。</div>
+            </div>
+          </div>
+        </a>
+
+        <a class="cat-card featured cat-eat" href="/germany/ja/eat/">
+          <div class="cat-card-body">
+            <div class="cat-top">
+              <div class="cat-icon">🍜</div>
+              <div class="cat-badges"></div>
+            </div>
+            <div class="cat-content">
+              <div class="cat-kicker">食べる</div>
+              <div class="cat-title">グルメ・飲食</div>
+              <div class="cat-desc">日本食、ラーメン、カフェ、ランチ、居酒屋など外食スポットを探す。</div>
+            </div>
+          </div>
+        </a>
+
         <a class="cat-card cat-shopping" href="/germany/ja/shopping/">
           <div class="cat-card-body">
             <div class="cat-top">
@@ -211,32 +214,17 @@
             </div>
           </div>
         </a>
-        
-        <a class="cat-card cat-living" href="/germany/ja/living/">
+
+        <a class="cat-card cat-community" href="/germany/ja/community/">
           <div class="cat-card-body">
             <div class="cat-top">
-              <div class="cat-icon">🏡</div>
+              <div class="cat-icon">🤝</div>
               <div class="cat-badges"></div>
             </div>
             <div class="cat-content">
-              <div class="cat-kicker">暮らす</div>
-              <div class="cat-title">住まい・生活・手続き</div>
-              <div class="cat-desc">住まい、光熱費、銀行、保険、住民登録、<br>滞在手続き、税金、家族・教育、引っ越し、運転まで確認。</div>
-            </div>
-          </div>
-        </a>
-
-
-        <a class="cat-card cat-medical" href="/germany/ja/medical/">
-          <div class="cat-card-body">
-            <div class="cat-top">
-              <div class="cat-icon">🏥</div>
-              <div class="cat-badges"></div>
-            </div>
-            <div class="cat-content">
-              <div class="cat-kicker">受診する</div>
-              <div class="cat-title">医療・緊急</div>
-              <div class="cat-desc">病院、歯科、薬局、緊急時の<br>対応先や受診時に必要な情報を確認。</div>
+              <div class="cat-kicker">交流する</div>
+              <div class="cat-title">交流・掲示板</div>
+              <div class="cat-desc">売ります・買います、相談、募集、地域交流などコミュニティ情報を探す。</div>
             </div>
           </div>
         </a>
@@ -251,6 +239,20 @@
               <div class="cat-kicker">出かける</div>
               <div class="cat-title">おでかけ・イベント</div>
               <div class="cat-desc">イベント、観光、週末のおでかけ先、<br>季節イベントや地域情報を探す。</div>
+            </div>
+          </div>
+        </a>
+
+        <a class="cat-card cat-german" href="/germany/ja/learn-german/">
+          <div class="cat-card-body">
+            <div class="cat-top">
+              <div class="cat-icon">📘</div>
+              <div class="cat-badges"></div>
+            </div>
+            <div class="cat-content">
+              <div class="cat-kicker">学ぶ</div>
+              <div class="cat-title">ドイツ語・学び</div>
+              <div class="cat-desc">生活や仕事で使うドイツ語、学習法、勉強リソースを探す。</div>
             </div>
           </div>
         </a>
@@ -306,7 +308,7 @@
       </div>
       <div class="footer-group">
         <div class="footer-heading">暮らし</div>
-        <a href="/germany/ja/living/">住まい・生活・手続き</a>
+        <a href="/germany/ja/living/">生活・手続き</a>
         <a href="/germany/ja/medical/">医療・緊急</a>
         <a href="/germany/ja/shopping/">買い物・サービス</a>
         <a href="/germany/ja/eat/">グルメ・飲食</a>

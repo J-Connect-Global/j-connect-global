@@ -3,15 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>J-Connect Germany | ドイツ在住日本人向け生活ポータル</title>
-<meta name="description" content="ドイツ在住日本人向けの生活ポータル。仕事、医療、グルメ、買い物、掲示板、イベント、生活・手続き、ドイツ語学習まで、ドイツ生活に必要な情報を日本語で整理しています。">
+<title>J-Connect Germany | ドイツ生活・掲示板・求人・ニュース・ドイツ語</title>
+<meta name="description" content="ドイツ在住日本人向け総合ポータル。交流掲示板、生活・手続き、仕事・求人、ニュース・イベント、ドイツ語学習まで、ドイツ生活に必要な情報を日本語で整理しています。">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://j-connect-global.com/germany/ja/">
 <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css">
-
 <link rel="stylesheet" href="/assets/css/home.css">
 
 <script>
@@ -41,7 +40,6 @@
 </head>
 
 <body>
-
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
@@ -61,15 +59,11 @@
       <div class="header-category header-category-menu" aria-label="カテゴリ選択">
         <button type="button" class="header-category-trigger">カテゴリ</button>
         <div class="category-dropdown">
+          <a href="/germany/ja/community/">交流・掲示板</a>
           <a href="/germany/ja/living/">生活・手続き</a>
           <a href="/germany/ja/jobs/">仕事・求人</a>
-          <a href="/germany/ja/medical/">医療・緊急</a>
-          <a href="/germany/ja/eat/">グルメ・飲食</a>
-          <a href="/germany/ja/shopping/">買い物・サービス</a>
-          <a href="/germany/ja/community/">交流・掲示板</a>
-          <a href="/germany/ja/events/">おでかけ・イベント</a>
+          <a href="/germany/ja/news/">ニュース・イベント</a>
           <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
-          <a href="/germany/ja/news/">ニュース・読みもの</a>
         </div>
       </div>
 
@@ -96,179 +90,487 @@
   </div>
 </header>
 
-<main class="main">
-  <div class="container">
+<main class="main home-main" id="main">
+  <div class="container home-shell">
 
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-main">
-          <h1 class="hero-title">
-            ドイツの生活を<br>
-            <span class="brand-word">もっと楽しく &nbsp;もっと簡単に</span>
-          </h1>
-
-          <p class="hero-desc">
-  　食、仕事、交流、学びまで。ドイツ生活に必要な情報を、地域・目的別に迷わず探せます。
+    <section class="home-hero" aria-labelledby="home-hero-title">
+      <div class="home-hero-grid">
+        <div class="home-hero-copy">
+          <p class="hero-kicker">J-CONNECT GERMANY</p>
+          <h1 class="home-hero-title" id="home-hero-title">ドイツ生活を、探す・つながる・働く・学ぶ。</h1>
+          <p class="home-hero-desc">
+            ドイツで暮らす日本人の毎日をサポート。交流掲示板、生活情報、求人、ニュース、イベント、ドイツ語学習まで、必要な情報とつながりをここに集めています。
           </p>
 
+          <form class="home-search" action="/germany/ja/search/" method="get" role="search">
+            <label class="home-search-label" for="home-search-input">サイト内検索</label>
+            <div class="home-search-box">
+              <span class="home-search-icon" aria-hidden="true">⌕</span>
+              <input id="home-search-input" type="search" name="q" placeholder="キーワードを入力（例：ビザ、求人、デュッセルドルフ、イベント）">
+              <button type="submit">検索</button>
+            </div>
+          </form>
+
+          <div class="quick-actions" aria-label="主要アクション">
+            <a class="quick-action quick-post" href="/germany/ja/community/post/">投稿する</a>
+            <a class="quick-action quick-job" href="/germany/ja/jobs/">求人を見る</a>
+            <a class="quick-action quick-medical" href="/germany/ja/medical/">医療・緊急</a>
+            <a class="quick-action quick-event" href="/germany/ja/events/">今週のイベント</a>
+            <a class="quick-action quick-german" href="/germany/ja/learn-german/">ドイツ語を学ぶ</a>
+          </div>
         </div>
 
-        <aside class="hero-side">
-<section class="info-panel">
-            <h2>このサイトでできること</h2>
-            <div class="utility-list">
-              <div class="utility-item">
-                <div>📍</div>
-                <div><strong>ドイツ生活を探せる</strong><span>ドイツ在住日本人向けの情報を整理</span></div>
-              </div>
-              <div class="utility-item">
-                <div>🧭</div>
-                <div><strong>地域・目的別に探せる</strong><span>生活の場面ごとにカテゴリ整理</span></div>
-              </div>
-              <div class="utility-item">
-                <div>📱</div>
-                <div><strong>スマホでも見やすい</strong><span>日常利用を前提にしたシンプル設計</span></div>
-              </div>
+        <aside class="home-hero-panel" aria-label="J-Connectの主な入口">
+          <div class="hero-panel-card">
+            <span class="hero-panel-icon">🤝</span>
+            <div>
+              <strong>交流する</strong>
+              <span>売買・相談・募集を掲示板で探す</span>
             </div>
-          </section>
+          </div>
+          <div class="hero-panel-card">
+            <span class="hero-panel-icon">🏡</span>
+            <div>
+              <strong>暮らしを調べる</strong>
+              <span>手続き・医療・食・買い物を確認</span>
+            </div>
+          </div>
+          <div class="hero-panel-card">
+            <span class="hero-panel-icon">💼</span>
+            <div>
+              <strong>働く</strong>
+              <span>日本語求人・転職情報を見る</span>
+            </div>
+          </div>
         </aside>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-head">
-        <div class="section-title-wrap">
-          <div class="section-kicker">カテゴリ</div>
-          <h2 class="section-title">目的から探す</h2>
+    <nav class="category-ribbon" aria-label="ホーム主要カテゴリ">
+      <a href="#community">
+        <strong>① 交流・掲示板</strong>
+        <span>つながる・助け合う</span>
+      </a>
+      <a href="#living">
+        <strong>② 生活・手続き</strong>
+        <span>暮らしに役立つ情報</span>
+      </a>
+      <a href="#jobs">
+        <strong>③ 仕事・求人</strong>
+        <span>働く・キャリア支援</span>
+      </a>
+      <a href="#news-events">
+        <strong>④ ニュース・イベント</strong>
+        <span>最新情報をチェック</span>
+      </a>
+      <a href="#learn-german">
+        <strong>⑤ ドイツ語・学び</strong>
+        <span>学んで、もっと広がる</span>
+      </a>
+    </nav>
+
+    <section class="featured-strip" aria-label="注目情報">
+      <article class="featured-column">
+        <div class="featured-head">
+          <h2>新着投稿</h2>
+          <a href="/germany/ja/community/">もっと見る</a>
         </div>
-        <div class="section-meta">全9カテゴリ</div>
+        <div class="compact-list">
+          <a class="compact-item" href="/germany/ja/community/">
+            <span class="item-thumb thumb-desk" aria-hidden="true"></span>
+            <span>
+              <em>売ります</em>
+              <strong>IKEAのデスクとチェアセット</strong>
+              <small>Düsseldorf・2時間前</small>
+            </span>
+          </a>
+          <a class="compact-item" href="/germany/ja/community/">
+            <span class="item-thumb thumb-doc" aria-hidden="true"></span>
+            <span>
+              <em>質問</em>
+              <strong>住民登録の予約が取れません…</strong>
+              <small>Köln・5時間前</small>
+            </span>
+          </a>
+          <a class="compact-item" href="/germany/ja/community/">
+            <span class="item-thumb thumb-hike" aria-hidden="true"></span>
+            <span>
+              <em>友達募集</em>
+              <strong>週末ハイキング仲間募集！</strong>
+              <small>Erkrath・7時間前</small>
+            </span>
+          </a>
+        </div>
+      </article>
+
+      <article class="featured-column">
+        <div class="featured-head">
+          <h2>新着記事</h2>
+          <a href="/germany/ja/living/">もっと見る</a>
+        </div>
+        <div class="compact-list">
+          <a class="compact-item" href="/germany/ja/living/">
+            <span class="item-thumb thumb-living" aria-hidden="true"></span>
+            <span>
+              <em>生活・手続き</em>
+              <strong>【2026年版】ドイツの住民登録ガイド</strong>
+              <small>5月14日</small>
+            </span>
+          </a>
+          <a class="compact-item" href="/germany/ja/medical/">
+            <span class="item-thumb thumb-medical" aria-hidden="true"></span>
+            <span>
+              <em>医療</em>
+              <strong>ドイツの医療保険の選び方と注意点</strong>
+              <small>5月13日</small>
+            </span>
+          </a>
+          <a class="compact-item" href="/germany/ja/events/">
+            <span class="item-thumb thumb-travel" aria-hidden="true"></span>
+            <span>
+              <em>観光</em>
+              <strong>週末に行きたいNRWの絶景スポット</strong>
+              <small>5月12日</small>
+            </span>
+          </a>
+        </div>
+      </article>
+
+      <article class="featured-column">
+        <div class="featured-head">
+          <h2>注目求人</h2>
+          <a href="/germany/ja/jobs/">もっと見る</a>
+        </div>
+        <div class="compact-list">
+          <a class="compact-item" href="/germany/ja/jobs/">
+            <span class="job-icon" aria-hidden="true">💼</span>
+            <span>
+              <em>New</em>
+              <strong>営業アシスタント（日本語対応）</strong>
+              <small>ABC GmbH・Düsseldorf｜€2,600〜€3,200</small>
+            </span>
+          </a>
+          <a class="compact-item" href="/germany/ja/jobs/">
+            <span class="job-icon" aria-hidden="true">🖥️</span>
+            <span>
+              <em>New</em>
+              <strong>ITサポートスペシャリスト</strong>
+              <small>TechVision GmbH・Köln｜€3,200〜€4,000</small>
+            </span>
+          </a>
+          <a class="compact-item" href="/germany/ja/jobs/">
+            <span class="job-icon" aria-hidden="true">📄</span>
+            <span>
+              <em>注目</em>
+              <strong>経理・会計スタッフ</strong>
+              <small>Sakura Finance GmbH・München｜€3,000〜€3,800</small>
+            </span>
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <section class="portal-section section-community" id="community" aria-labelledby="community-title">
+      <div class="portal-section-head">
+        <div>
+          <p class="section-number">01</p>
+          <h2 id="community-title">① 交流・掲示板</h2>
+          <p>売買・譲渡から質問、友達募集まで、みんなでつながるコミュニティ。</p>
+        </div>
+        <a class="section-more" href="/germany/ja/community/">もっと見る</a>
       </div>
 
-      <div class="category-grid">
-        <a class="cat-card featured cat-living" href="/germany/ja/living/">
-          <div class="cat-card-body">
-            <div class="cat-top">
-              <div class="cat-icon">🏡</div>
-              <div class="cat-badges"></div>
-            </div>
-            <div class="cat-content">
-              <div class="cat-kicker">暮らす</div>
-              <div class="cat-title">生活・手続き</div>
-              <div class="cat-desc">住まい、光熱費、銀行、保険、住民登録、<br>滞在手続き、税金、家族・教育、引っ越し、運転まで確認。</div>
-            </div>
-          </div>
+      <div class="section-chips">
+        <a href="/germany/ja/community/">売ります</a>
+        <a href="/germany/ja/community/">買います</a>
+        <a href="/germany/ja/community/">譲ります</a>
+        <a href="/germany/ja/community/">探しています</a>
+        <a href="/germany/ja/community/">友達募集</a>
+        <a href="/germany/ja/community/">質問</a>
+        <a href="/germany/ja/community/">レッスン</a>
+        <a href="/germany/ja/community/">アルバイト</a>
+        <a class="chip-primary" href="/germany/ja/community/post/">投稿する</a>
+      </div>
+
+      <div class="card-grid card-grid-five">
+        <a class="post-card" href="/germany/ja/community/">
+          <span class="card-visual visual-bike" aria-hidden="true"></span>
+          <span class="post-tag">売ります</span>
+          <strong>自転車（26インチ）ほぼ新品</strong>
+          <small>Köln・1時間前</small>
+          <span class="card-meta">♡ 2　📷 3</span>
         </a>
 
-        <a class="cat-card featured cat-jobs" href="/germany/ja/jobs/">
-          <div class="cat-card-body">
-            <div class="cat-top">
-              <div class="cat-icon">💼</div>
-              <div class="cat-badges"></div>
-            </div>
-            <div class="cat-content">
-              <div class="cat-kicker">働く</div>
-              <div class="cat-title">仕事・求人</div>
-              <div class="cat-desc">求人、転職、アルバイト、日本語関連の仕事や働き方の情報を探す。</div>
-            </div>
-          </div>
+        <a class="post-card" href="/germany/ja/community/">
+          <span class="card-visual visual-doc" aria-hidden="true"></span>
+          <span class="post-tag">質問</span>
+          <strong>ビザ更新に必要な書類は？</strong>
+          <small>Düsseldorf・3時間前</small>
+          <span class="card-meta">♡ 5</span>
         </a>
 
-        <a class="cat-card featured cat-medical" href="/germany/ja/medical/">
-          <div class="cat-card-body">
-            <div class="cat-top">
-              <div class="cat-icon">🏥</div>
-              <div class="cat-badges"></div>
-            </div>
-            <div class="cat-content">
-              <div class="cat-kicker">受診する</div>
-              <div class="cat-title">医療・緊急</div>
-              <div class="cat-desc">病院、歯科、薬局、緊急時の<br>対応先や受診時に必要な情報を確認。</div>
-            </div>
-          </div>
+        <a class="post-card" href="/germany/ja/community/">
+          <span class="card-visual visual-family" aria-hidden="true"></span>
+          <span class="post-tag">友達募集</span>
+          <strong>日本人ママ友募集（Düsseldorf）</strong>
+          <small>Düsseldorf・5時間前</small>
+          <span class="card-meta">♡ 4</span>
         </a>
 
-        <a class="cat-card featured cat-eat" href="/germany/ja/eat/">
-          <div class="cat-card-body">
-            <div class="cat-top">
-              <div class="cat-icon">🍜</div>
-              <div class="cat-badges"></div>
-            </div>
-            <div class="cat-content">
-              <div class="cat-kicker">食べる</div>
-              <div class="cat-title">グルメ・飲食</div>
-              <div class="cat-desc">日本食、ラーメン、カフェ、ランチ、居酒屋など外食スポットを探す。</div>
-            </div>
-          </div>
+        <a class="post-card" href="/germany/ja/community/">
+          <span class="card-visual visual-piano" aria-hidden="true"></span>
+          <span class="post-tag">レッスン</span>
+          <strong>ピアノレッスン生徒募集♪</strong>
+          <small>Erkrath・6時間前</small>
+          <span class="card-meta">♡ 2</span>
         </a>
 
-        <a class="cat-card cat-shopping" href="/germany/ja/shopping/">
-          <div class="cat-card-body">
-            <div class="cat-top">
-              <div class="cat-icon">🛍️</div>
-              <div class="cat-badges"></div>
-            </div>
-            <div class="cat-content">
-              <div class="cat-kicker">買う</div>
-              <div class="cat-title">買い物・サービス</div>
-              <div class="cat-desc">スーパー、アジアショップ、薬局、<br>  生活サービスを探す。</div>
-            </div>
-          </div>
+        <a class="post-card" href="/germany/ja/community/">
+          <span class="card-visual visual-cafe" aria-hidden="true"></span>
+          <span class="post-tag">アルバイト</span>
+          <strong>カフェスタッフ募集（学生可）</strong>
+          <small>Köln・8時間前</small>
+          <span class="card-meta">♡ 6</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="portal-section section-living" id="living" aria-labelledby="living-title">
+      <div class="portal-section-head">
+        <div>
+          <p class="section-number">02</p>
+          <h2 id="living-title">② 生活・手続き</h2>
+          <p>ドイツでの暮らしに必要な手続きから、医療・住まい・食・買い物・観光まで幅広くカバー。</p>
+        </div>
+        <a class="section-more" href="/germany/ja/living/">もっと見る</a>
+      </div>
+
+      <div class="section-chips">
+        <a href="/germany/ja/living/">手続き</a>
+        <a href="/germany/ja/medical/">医療</a>
+        <a href="/germany/ja/living/">妊娠・育児</a>
+        <a href="/germany/ja/living/">住まい</a>
+        <a href="/germany/ja/eat/">食べる</a>
+        <a href="/germany/ja/shopping/">買い物</a>
+        <a href="/germany/ja/events/">観光</a>
+        <a href="/germany/ja/living/">家族・教育</a>
+      </div>
+
+      <div class="card-grid card-grid-five">
+        <a class="content-card" href="/germany/ja/living/">
+          <span class="card-visual visual-anmeldung" aria-hidden="true"></span>
+          <strong>住民登録（Anmeldung）の方法と必要書類</strong>
+          <small>5月14日・手続き</small>
         </a>
 
-        <a class="cat-card cat-community" href="/germany/ja/community/">
-          <div class="cat-card-body">
-            <div class="cat-top">
-              <div class="cat-icon">🤝</div>
-              <div class="cat-badges"></div>
-            </div>
-            <div class="cat-content">
-              <div class="cat-kicker">交流する</div>
-              <div class="cat-title">交流・掲示板</div>
-              <div class="cat-desc">売ります・買います、相談、募集、地域交流などコミュニティ情報を探す。</div>
-            </div>
-          </div>
+        <a class="content-card" href="/germany/ja/living/">
+          <span class="card-visual visual-paper" aria-hidden="true"></span>
+          <strong>ビザ・銀行・保険の基礎知識まとめ</strong>
+          <small>5月13日・手続き</small>
         </a>
 
-        <a class="cat-card cat-events" href="/germany/ja/events/">
-          <div class="cat-card-body">
-            <div class="cat-top">
-              <div class="cat-icon">🎉</div>
-              <div class="cat-badges"></div>
-            </div>
-            <div class="cat-content">
-              <div class="cat-kicker">出かける</div>
-              <div class="cat-title">おでかけ・イベント</div>
-              <div class="cat-desc">イベント、観光、週末のおでかけ先、<br>季節イベントや地域情報を探す。</div>
-            </div>
-          </div>
+        <a class="emergency-card" href="/germany/ja/medical/">
+          <span class="emergency-icon" aria-hidden="true">✚</span>
+          <strong>困ったときの医療・緊急</strong>
+          <p>病院の探し方、緊急時の連絡先、保険の使い方など、いざという時に役立つ情報をまとめました。</p>
+          <span>詳しく見る</span>
         </a>
 
-        <a class="cat-card cat-german" href="/germany/ja/learn-german/">
-          <div class="cat-card-body">
-            <div class="cat-top">
-              <div class="cat-icon">📘</div>
-              <div class="cat-badges"></div>
-            </div>
-            <div class="cat-content">
-              <div class="cat-kicker">学ぶ</div>
-              <div class="cat-title">ドイツ語・学び</div>
-              <div class="cat-desc">生活や仕事で使うドイツ語、学習法、勉強リソースを探す。</div>
-            </div>
-          </div>
+        <a class="content-card" href="/germany/ja/eat/">
+          <span class="card-visual visual-food" aria-hidden="true"></span>
+          <strong>日本食レストランおすすめ10選【デュッセルドルフ】</strong>
+          <small>5月12日・食べる</small>
         </a>
 
-        <a class="cat-card cat-news" href="/germany/ja/news/">
-          <div class="cat-card-body">
-            <div class="cat-top">
-              <div class="cat-icon">📰</div>
-              <div class="cat-badges"></div>
-            </div>
-            <div class="cat-content">
-              <div class="cat-kicker">読む</div>
-              <div class="cat-title">ニュース・読みもの</div>
-              <div class="cat-desc">制度変更、生活関連トピック、現地ニュース、<br>日本関連情報や読みものを確認。</div>
-            </div>
+        <a class="content-card" href="/germany/ja/events/">
+          <span class="card-visual visual-mountain" aria-hidden="true"></span>
+          <strong>週末に行きたい！ドイツの絶景スポット</strong>
+          <small>5月11日・観光</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="portal-section section-jobs" id="jobs" aria-labelledby="jobs-title">
+      <div class="portal-section-head portal-section-head-actions">
+        <div>
+          <p class="section-number">03</p>
+          <h2 id="jobs-title">③ 仕事・求人</h2>
+          <p>求人情報からキャリアアップのヒントまで、働くあなたをサポート。</p>
+        </div>
+        <div class="section-actions">
+          <a class="section-button" href="/germany/ja/jobs/">求人を探す</a>
+          <a class="section-button secondary" href="/germany/ja/jobs/posting/">求人を掲載する</a>
+        </div>
+      </div>
+
+      <div class="section-chips">
+        <a href="/germany/ja/jobs/">求人一覧</a>
+        <a href="/germany/ja/jobs/">転職ガイド</a>
+        <a href="/germany/ja/jobs/">履歴書</a>
+        <a href="/germany/ja/jobs/">面接</a>
+        <a href="/germany/ja/jobs/posting/">求人掲載</a>
+        <a href="/germany/ja/jobs/">アルバイト</a>
+      </div>
+
+      <div class="job-grid">
+        <a class="job-card" href="/germany/ja/jobs/">
+          <span class="job-badge">New</span>
+          <strong>プロジェクトマネージャー</strong>
+          <small>Global Tech GmbH・München</small>
+          <span class="job-salary">€4,500〜€6,000</span>
+          <span class="job-tags"><em>フルタイム</em><em>経験者優遇</em></span>
+        </a>
+
+        <a class="job-card" href="/germany/ja/jobs/">
+          <strong>マーケティング担当（日本語）</strong>
+          <small>Bright Future GmbH・Düsseldorf</small>
+          <span class="job-salary">€3,000〜€4,000</span>
+          <span class="job-tags"><em>フルタイム</em><em>リモート可</em></span>
+        </a>
+
+        <a class="job-card" href="/germany/ja/jobs/">
+          <strong>カスタマーサポート（日本語）</strong>
+          <small>Smart Service GmbH・Köln</small>
+          <span class="job-salary">€2,400〜€2,900</span>
+          <span class="job-tags"><em>フルタイム</em><em>未経験OK</em></span>
+        </a>
+
+        <a class="job-card" href="/germany/ja/jobs/">
+          <strong>倉庫スタッフ（学生可）</strong>
+          <small>LogiWork GmbH・Essen</small>
+          <span class="job-salary">€13〜€15 / 時給</span>
+          <span class="job-tags"><em>パートタイム</em><em>学生歓迎</em></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="portal-section section-news" id="news-events" aria-labelledby="news-events-title">
+      <div class="portal-section-head">
+        <div>
+          <p class="section-number">04</p>
+          <h2 id="news-events-title">④ ニュース・イベント</h2>
+          <p>ドイツの最新ニュースや制度変更、地域のイベント情報をお届け。</p>
+        </div>
+        <a class="section-more" href="/germany/ja/news/">もっと見る</a>
+      </div>
+
+      <div class="section-chips">
+        <a href="/germany/ja/news/">最新ニュース</a>
+        <a href="/germany/ja/news/">制度変更</a>
+        <a href="/germany/ja/news/">地域ニュース</a>
+        <a href="/germany/ja/events/">今週末</a>
+        <a href="/germany/ja/events/">イベントカレンダー</a>
+      </div>
+
+      <div class="news-event-grid">
+        <article class="news-panel">
+          <div class="subsection-head">
+            <h3>最新ニュース</h3>
+            <a href="/germany/ja/news/">ニュース一覧</a>
           </div>
+          <ul class="news-list">
+            <li>
+              <a href="/germany/ja/news/">ドイツの最低賃金、2026年から引き上げ</a>
+              <time datetime="2026-05-14">5月14日</time>
+            </li>
+            <li>
+              <a href="/germany/ja/news/">ビザ申請のデジタル化がさらに拡大へ</a>
+              <time datetime="2026-05-13">5月13日</time>
+            </li>
+            <li>
+              <a href="/germany/ja/news/">EUの新しい移民規制が施行へ</a>
+              <time datetime="2026-05-12">5月12日</time>
+            </li>
+          </ul>
+        </article>
+
+        <article class="events-panel">
+          <div class="subsection-head">
+            <h3>今週末のイベント</h3>
+            <a href="/germany/ja/events/">イベントカレンダー</a>
+          </div>
+
+          <div class="event-cards">
+            <a class="event-card" href="/germany/ja/events/">
+              <span class="event-date"><strong>5月</strong><b>18</b><small>日</small></span>
+              <span>
+                <strong>デュッセルドルフ日本デー</strong>
+                <small>Düsseldorf</small>
+                <em>フェスティバル</em>
+              </span>
+            </a>
+
+            <a class="event-card" href="/germany/ja/events/">
+              <span class="event-date"><strong>5月</strong><b>19</b><small>日</small></span>
+              <span>
+                <strong>ケルン・フリーマーケット</strong>
+                <small>Köln</small>
+                <em>マーケット</em>
+              </span>
+            </a>
+
+            <a class="event-card" href="/germany/ja/events/">
+              <span class="event-date"><strong>5月</strong><b>19</b><small>日</small></span>
+              <span>
+                <strong>ボン日本映画祭</strong>
+                <small>Bonn</small>
+                <em>映画・文化</em>
+              </span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="portal-section section-german" id="learn-german" aria-labelledby="learn-german-title">
+      <div class="portal-section-head">
+        <div>
+          <p class="section-number">05</p>
+          <h2 id="learn-german-title">⑤ ドイツ語・学び</h2>
+          <p>日常生活・役所・病院・仕事で使えるドイツ語を、楽しく効率的に学ぼう。</p>
+        </div>
+        <a class="section-more" href="/germany/ja/learn-german/">もっと見る</a>
+      </div>
+
+      <div class="section-chips">
+        <a href="/germany/ja/learn-german/">生活ドイツ語</a>
+        <a href="/germany/ja/learn-german/">役所</a>
+        <a href="/germany/ja/learn-german/">病院</a>
+        <a href="/germany/ja/learn-german/">仕事</a>
+        <a href="/germany/ja/learn-german/">A1〜B2</a>
+        <a href="/germany/ja/learn-german/">学習法</a>
+      </div>
+
+      <div class="learning-grid">
+        <a class="content-card" href="/germany/ja/learn-german/">
+          <span class="card-visual visual-office" aria-hidden="true"></span>
+          <strong>役所で使うドイツ語フレーズ集</strong>
+          <small>5月13日・役所</small>
+        </a>
+
+        <a class="content-card" href="/germany/ja/learn-german/">
+          <span class="card-visual visual-hospital" aria-hidden="true"></span>
+          <strong>病院での会話フレーズ（予約〜診察まで）</strong>
+          <small>5月12日・病院</small>
+        </a>
+
+        <article class="phrase-card">
+          <span>今日のフレーズ</span>
+          <strong lang="de">Ich hätte gern einen Termin.</strong>
+          <p>予約を取りたいです。</p>
+          <button type="button">発音を聞く</button>
+        </article>
+
+        <a class="content-card" href="/germany/ja/learn-german/">
+          <span class="card-visual visual-work" aria-hidden="true"></span>
+          <strong>仕事で使えるドイツ語表現【メール・会議】</strong>
+          <small>5月11日・仕事</small>
+        </a>
+
+        <a class="content-card" href="/germany/ja/learn-german/">
+          <span class="card-visual visual-study" aria-hidden="true"></span>
+          <strong>ドイツ語学習のコツとおすすめ教材</strong>
+          <small>5月10日・学習法</small>
         </a>
       </div>
     </section>
@@ -286,39 +588,49 @@
         <div class="footer-meta">© 2026 J-Connect Germany</div>
       </div>
     </div>
+
     <div class="footer-links" aria-label="フッターサイトマップ">
       <div class="footer-group">
-        <div class="footer-heading">サイト案内</div>
-        <a href="/germany/ja/">ホーム</a>
-        <a href="/germany/ja/about/">このサイトについて</a>
-        <a href="/germany/ja/news/">ニュース・読みもの</a>
-        <a href="/germany/ja/events/">おでかけ・イベント</a>
-      </div>
-      <div class="footer-group">
-        <div class="footer-heading">仕事</div>
-        <a href="/germany/ja/jobs/">仕事・求人</a>
-        <a href="/germany/ja/jobs/posting/">求人掲載希望の企業様へ</a>
-      </div>
-      <div class="footer-group">
-        <div class="footer-heading">掲示板 / コミュニティ</div>
-        <a href="/germany/ja/community/">掲示板トップ</a>
+        <div class="footer-heading">交流・掲示板</div>
+        <a href="/germany/ja/community/">新着投稿</a>
         <a href="/germany/ja/community/post/">投稿する</a>
-        <a href="/germany/ja/community/contact/">投稿者に連絡</a>
-        <a href="/germany/ja/community/report/">投稿を通報</a>
+        <a href="/germany/ja/terms/">利用ルール</a>
       </div>
+
       <div class="footer-group">
-        <div class="footer-heading">暮らし</div>
-        <a href="/germany/ja/living/">生活・手続き</a>
+        <div class="footer-heading">生活・手続き</div>
+        <a href="/germany/ja/living/">手続き</a>
         <a href="/germany/ja/medical/">医療・緊急</a>
+        <a href="/germany/ja/eat/">食べる</a>
         <a href="/germany/ja/shopping/">買い物・サービス</a>
-        <a href="/germany/ja/eat/">グルメ・飲食</a>
+        <a href="/germany/ja/events/">観光・レジャー</a>
       </div>
+
       <div class="footer-group">
-        <div class="footer-heading">学ぶ</div>
-        <a href="/germany/ja/learn-german/">ドイツ語の学び</a>
+        <div class="footer-heading">仕事・求人</div>
+        <a href="/germany/ja/jobs/">求人一覧</a>
+        <a href="/germany/ja/jobs/">転職ガイド</a>
+        <a href="/germany/ja/jobs/">履歴書・面接</a>
+        <a href="/germany/ja/jobs/posting/">求人掲載について</a>
       </div>
+
       <div class="footer-group">
-        <div class="footer-heading">サポート</div>
+        <div class="footer-heading">ニュース・イベント</div>
+        <a href="/germany/ja/news/">最新ニュース</a>
+        <a href="/germany/ja/news/">制度・ビザ情報</a>
+        <a href="/germany/ja/events/">イベントカレンダー</a>
+      </div>
+
+      <div class="footer-group">
+        <div class="footer-heading">ドイツ語・学び</div>
+        <a href="/germany/ja/learn-german/">学習コンテンツ</a>
+        <a href="/germany/ja/learn-german/">単語・フレーズ集</a>
+        <a href="/germany/ja/learn-german/">学習法・教材</a>
+      </div>
+
+      <div class="footer-group">
+        <div class="footer-heading">J-CONNECTについて</div>
+        <a href="/germany/ja/about/">このサイトについて</a>
         <a href="/germany/ja/contact/">お問い合わせ</a>
         <a href="/germany/ja/terms/">利用規約</a>
         <a href="/germany/ja/privacy/">プライバシー</a>

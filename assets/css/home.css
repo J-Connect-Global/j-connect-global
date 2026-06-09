@@ -255,9 +255,9 @@ body.portal3-home .portal3-header *{
   inset:0;
   z-index:0;
   background:
-    var(--portal3-hero-image) center center / auto 100% no-repeat,
+    var(--portal3-hero-image) center 47% / cover no-repeat,
     linear-gradient(90deg, #dff2ff, #fff);
-  filter:saturate(1.02) contrast(1.01);
+  filter:saturate(1.04) contrast(1.02);
 }
 
 .portal3-hero::before{
@@ -268,13 +268,13 @@ body.portal3-home .portal3-header *{
   background:
     linear-gradient(
       90deg,
-      rgba(255,255,255,.05) 0%,
-      rgba(255,255,255,.24) 18%,
-      rgba(255,255,255,.62) 34%,
-      rgba(255,255,255,.82) 50%,
-      rgba(255,255,255,.62) 66%,
-      rgba(255,255,255,.24) 82%,
-      rgba(255,255,255,.05) 100%
+      rgba(255,255,255,.10) 0%,
+      rgba(255,255,255,.20) 18%,
+      rgba(255,255,255,.56) 36%,
+      rgba(255,255,255,.74) 50%,
+      rgba(255,255,255,.56) 64%,
+      rgba(255,255,255,.20) 82%,
+      rgba(255,255,255,.10) 100%
     );
   pointer-events:none;
 }
@@ -285,9 +285,9 @@ body.portal3-home .portal3-header *{
   left:0;
   right:0;
   bottom:0;
-  height:72px;
+  height:74px;
   z-index:1;
-  background:linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,.70));
+  background:linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,.64));
   pointer-events:none;
 }
 
@@ -323,6 +323,10 @@ body.portal3-home .portal3-header *{
   font-weight:700;
   text-shadow:0 1px 0 rgba(255,255,255,.92), 0 2px 8px rgba(255,255,255,.78);
 }
+
+
+
+
 
 .portal3-hero-search{
   width:min(690px, 100%);

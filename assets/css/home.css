@@ -244,7 +244,7 @@ body.portal3-home .portal3-header *{
 
 .portal3-hero{
   position:relative;
-  height:292px;
+  height:300px;
   overflow:hidden;
   border-bottom:1px solid #cfe0f2;
   background:#eaf6ff;
@@ -255,9 +255,9 @@ body.portal3-home .portal3-header *{
   inset:0;
   z-index:0;
   background:
-    var(--portal3-hero-image) center center / 100% auto no-repeat,
+    var(--portal3-hero-image) center center / cover no-repeat,
     linear-gradient(90deg, #dff2ff, #fff);
-  filter:saturate(1.04) contrast(1.02);
+  filter:saturate(1.08) contrast(1.04);
 }
 
 .portal3-hero::before{
@@ -268,13 +268,13 @@ body.portal3-home .portal3-header *{
   background:
     linear-gradient(
       90deg,
-      rgba(255,255,255,.08) 0%,
-      rgba(255,255,255,.24) 18%,
-      rgba(255,255,255,.62) 36%,
-      rgba(255,255,255,.78) 50%,
-      rgba(255,255,255,.62) 64%,
-      rgba(255,255,255,.24) 82%,
-      rgba(255,255,255,.08) 100%
+      rgba(255,255,255,.04) 0%,
+      rgba(255,255,255,.10) 18%,
+      rgba(255,255,255,.42) 35%,
+      rgba(255,255,255,.68) 50%,
+      rgba(255,255,255,.42) 65%,
+      rgba(255,255,255,.10) 82%,
+      rgba(255,255,255,.04) 100%
     );
   pointer-events:none;
 }
@@ -285,9 +285,9 @@ body.portal3-home .portal3-header *{
   left:0;
   right:0;
   bottom:0;
-  height:72px;
+  height:54px;
   z-index:1;
-  background:linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,.72));
+  background:linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,.42));
   pointer-events:none;
 }
 
@@ -312,7 +312,9 @@ body.portal3-home .portal3-header *{
   line-height:1.18;
   font-weight:800;
   letter-spacing:-.04em;
-  text-shadow:0 1px 0 rgba(255,255,255,.92), 0 2px 10px rgba(255,255,255,.78);
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.92),
+    0 2px 10px rgba(255,255,255,.72);
 }
 
 .portal3-hero p{
@@ -321,7 +323,9 @@ body.portal3-home .portal3-header *{
   font-size:15px;
   line-height:1.65;
   font-weight:700;
-  text-shadow:0 1px 0 rgba(255,255,255,.92), 0 2px 8px rgba(255,255,255,.78);
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.92),
+    0 2px 8px rgba(255,255,255,.70);
 }
 
 .portal3-hero-search{

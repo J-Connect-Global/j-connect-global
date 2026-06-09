@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css">
-<link rel="stylesheet" href="/assets/css/home.css">
+<link rel="stylesheet" href="/assets/css/home.css?v=portal3-20260609">
 
 <script>
 (function () {
@@ -28,22 +28,22 @@
 </script>
 </head>
 
-<body class="jcg-home-page">
-<header class="jcg-header">
-  <div class="jcg-header-inner">
-    <a class="jcg-brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
-      <img src="/assets/images/brand/logo_header.png" alt="J-Connect Germany">
+<body class="portal3-home">
+<header class="portal3-header">
+  <div class="portal3-header-inner">
+    <a class="portal3-logo" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
+      <img src="/assets/images/brand/logo_header.png" alt="J-Connect">
     </a>
 
-    <p class="jcg-header-tagline">ドイツと日本をつなぐ総合ポータル</p>
+    <p class="portal3-tagline">ドイツと日本をつなぐ総合ポータル</p>
 
-    <form class="jcg-header-search" action="/germany/ja/search/" method="get" role="search">
-      <label for="header-search-input">サイト内検索</label>
-      <input id="header-search-input" type="search" name="q" placeholder="サイト内を検索">
+    <form class="portal3-header-search" action="/germany/ja/search/" method="get" role="search">
+      <label for="portal3-header-search-input">サイト内検索</label>
+      <input id="portal3-header-search-input" type="search" name="q" placeholder="サイト内を検索">
       <button type="submit" aria-label="検索">⌕</button>
     </form>
 
-    <nav class="jcg-language" aria-label="言語切り替え">
+    <nav class="portal3-lang" aria-label="言語切り替え">
       <a href="/germany/ja/" aria-current="page">JA</a>
       <span>|</span>
       <a href="/germany/en/coming-soon/" lang="en">EN</a>
@@ -51,12 +51,9 @@
       <a href="/germany/de/coming-soon/" lang="de">DE</a>
     </nav>
 
-    <div class="jcg-menu-wrap">
-      <button class="jcg-menu-button" type="button" aria-label="カテゴリメニュー">
-        <span class="menu-icon">☻</span>
-        <span>メニュー</span>
-      </button>
-      <div class="jcg-menu-dropdown">
+    <div class="portal3-menu">
+      <button type="button" aria-label="メニュー"><span>●</span> メニュー</button>
+      <div class="portal3-menu-dropdown">
         <a href="/germany/ja/community/">交流・掲示板</a>
         <a href="/germany/ja/living/">生活・手続き</a>
         <a href="/germany/ja/jobs/">仕事・求人</a>
@@ -68,33 +65,33 @@
   </div>
 </header>
 
-<main class="jcg-main">
-  <section class="jcg-hero" aria-labelledby="hero-title">
-    <div class="jcg-hero-inner">
-      <h1 id="hero-title">ドイツ生活を、探す・つながる・働く・学ぶ。</h1>
+<main class="portal3-main">
+  <section class="portal3-hero" aria-labelledby="portal3-hero-title">
+    <div class="portal3-hero-inner">
+      <h1 id="portal3-hero-title">ドイツ生活を、探す・つながる・働く・学ぶ。</h1>
       <p>
         ドイツで暮らす日本人の毎日をサポート。コミュニティ、仕事、ニュース、イベント、<br>
         ドイツ語学習まで、必要な情報とつながりがここにあります。
       </p>
 
-      <form class="jcg-hero-search" action="/germany/ja/search/" method="get" role="search">
-        <label for="home-search-input">サイト内検索</label>
+      <form class="portal3-hero-search" action="/germany/ja/search/" method="get" role="search">
+        <label for="portal3-home-search">サイト内検索</label>
         <span aria-hidden="true">⌕</span>
-        <input id="home-search-input" type="search" name="q" placeholder="キーワードを入力（例：ビザ、求人、デュッセルドルフ、イベント）">
+        <input id="portal3-home-search" type="search" name="q" placeholder="キーワードを入力（例：ビザ、求人、デュッセルドルフ、イベント）">
         <button type="submit">検索</button>
       </form>
 
-      <div class="jcg-quick-actions" aria-label="主要リンク">
-        <a class="quick-red" href="/germany/ja/community/post/">投稿する</a>
-        <a class="quick-blue" href="/germany/ja/jobs/">求人を見る</a>
-        <a class="quick-alert" href="/germany/ja/medical/">医療・緊急</a>
-        <a class="quick-green" href="/germany/ja/events/">今週のイベント</a>
-        <a class="quick-purple" href="/germany/ja/learn-german/">ドイツ語を学ぶ</a>
+      <div class="portal3-quick">
+        <a class="portal3-red" href="/germany/ja/community/post/">投稿する</a>
+        <a class="portal3-blue" href="/germany/ja/jobs/">求人を見る</a>
+        <a class="portal3-alert" href="/germany/ja/medical/">医療・緊急</a>
+        <a class="portal3-green" href="/germany/ja/events/">今週のイベント</a>
+        <a class="portal3-purple" href="/germany/ja/learn-german/">ドイツ語を学ぶ</a>
       </div>
     </div>
   </section>
 
-  <nav class="jcg-ribbon" aria-label="主要カテゴリ">
+  <nav class="portal3-ribbon" aria-label="主要カテゴリ">
     <a href="#community">
       <strong>① 交流・掲示板</strong>
       <span>つながる・助け合う</span>
@@ -112,87 +109,86 @@
       <span>最新情報をチェック</span>
     </a>
     <a href="#learn-german">
->
-    <a href="#      <strong>⑤ ドイツ語・学び</strong>
+      <strong>⑤ ドイツ語・学び</strong>
       <span>学んで、もっと広がる</span>
     </a>
   </nav>
 
-  <div class="jcg-container">
-    <section class="jcg-top-panels" aria-label="新着情報">
-      <article class="jcg-panel">
-        <div class="jcg-panel-head">
+  <div class="portal3-container">
+    <section class="portal3-top-grid" aria-label="新着情報">
+      <article class="portal3-panel">
+        <div class="portal3-panel-head">
           <h2>新着投稿</h2>
           <a href="/germany/ja/community/">もっと見る</a>
         </div>
 
-        <a class="jcg-mini-item" href="/germany/ja/community/">
-          <span class="mini-photo mini-desk"></span>
-          <span class="mini-body">
+        <a class="portal3-mini" href="/germany/ja/community/">
+          <span class="portal3-thumb thumb-desk"></span>
+          <span>
             <em>売ります</em>
             <strong>IKEAのデスクとチェアセット</strong>
-            <small>Düsseldorf・2時間前 <b>♡ 3　📷 2</b></small>
+            <small>Düsseldorf・2時間前　♡ 3　📷 2</small>
           </span>
         </a>
 
-        <a class="jcg-mini-item" href="/germany/ja/community/">
-          <span class="mini-photo mini-office"></span>
-          <span class="mini-body">
+        <a class="portal3-mini" href="/germany/ja/community/">
+          <span class="portal3-thumb thumb-office"></span>
+          <span>
             <em>質問</em>
             <strong>住民登録の予約が取れません…</strong>
-            <small>Köln・5時間前 <b>♡ 6</b></small>
+            <small>Köln・5時間前　♡ 6</small>
           </span>
         </a>
 
-        <a class="jcg-mini-item" href="/germany/ja/community/">
-          <span class="mini-photo mini-hike"></span>
-          <span class="mini-body">
+        <a class="portal3-mini" href="/germany/ja/community/">
+          <span class="portal3-thumb thumb-hike"></span>
+          <span>
             <em>友達募集</em>
             <strong>週末ハイキング仲間募集！</strong>
-            <small>Erkrath・7時間前 <b>♡ 4</b></small>
+            <small>Erkrath・7時間前　♡ 4</small>
           </span>
         </a>
       </article>
 
-      <article class="jcg-panel">
-        <div class="jcg-panel-head">
+      <article class="portal3-panel">
+        <div class="portal3-panel-head">
           <h2>新着記事</h2>
           <a href="/germany/ja/living/">もっと見る</a>
         </div>
 
-        <a class="jcg-mini-item" href="/germany/ja/living/">
-          <span class="mini-photo mini-laptop"></span>
-          <span class="mini-body">
+        <a class="portal3-mini" href="/germany/ja/living/">
+          <span class="portal3-thumb thumb-laptop"></span>
+          <span>
             <strong>【2026年版】ドイツの住民登録ガイド</strong>
             <small>5月14日・生活・手続き</small>
           </span>
         </a>
 
-        <a class="jcg-mini-item" href="/germany/ja/medical/">
-          <span class="mini-photo mini-medical"></span>
-          <span class="mini-body">
+        <a class="portal3-mini" href="/germany/ja/medical/">
+          <span class="portal3-thumb thumb-medical"></span>
+          <span>
             <strong>ドイツの医療保険の選び方と注意点</strong>
             <small>5月13日・医療</small>
           </span>
         </a>
 
-        <a class="jcg-mini-item" href="/germany/ja/events/">
-          <span class="mini-photo mini-mountain"></span>
-          <span class="mini-body">
+        <a class="portal3-mini" href="/germany/ja/events/">
+          <span class="portal3-thumb thumb-mountain"></span>
+          <span>
             <strong>週末に行きたい！NRWの絶景スポット</strong>
             <small>5月12日・観光</small>
           </span>
         </a>
       </article>
 
-      <article class="jcg-panel">
-        <div class="jcg-panel-head">
+      <article class="portal3-panel">
+        <div class="portal3-panel-head">
           <h2>注目求人</h2>
           <a href="/germany/ja/jobs/">もっと見る</a>
         </div>
 
-        <a class="jcg-job-mini" href="/germany/ja/jobs/">
-          <span>▦</span>
+        <a class="portal3-job-mini" href="/germany/ja/jobs/">
+          <span class="portal3-job-icon">▦</span>
           <span>
             <strong>営業アシスタント（日本語対応）</strong>
             <small>ABC GmbH・Düsseldorf<br>€2,600〜€3,200・フルタイム</small>
@@ -200,8 +196,8 @@
           <em>New</em>
         </a>
 
-        <a class="jcg-job-mini" href="/germany/ja/jobs/">
-          <span>✚</span>
+        <a class="portal3-job-mini" href="/germany/ja/jobs/">
+          <span class="portal3-job-icon">✚</span>
           <span>
             <strong>ITサポートスペシャリスト</strong>
             <small>TechVision GmbH・Köln<br>€3,200〜€4,000・フルタイム</small>
@@ -209,8 +205,8 @@
           <em>New</em>
         </a>
 
-        <a class="jcg-job-mini" href="/germany/ja/jobs/">
-          <span>▣</span>
+        <a class="portal3-job-mini" href="/germany/ja/jobs/">
+          <span class="portal3-job-icon">▣</span>
           <span>
             <strong>経理・会計スタッフ</strong>
             <small>Sakura Finance GmbH・München<br>€3,000〜€3,800・フルタイム</small>
@@ -219,8 +215,8 @@
       </article>
     </section>
 
-    <section class="jcg-section jcg-community" id="community">
-      <div class="jcg-section-head">
+    <section class="portal3-section portal3-community" id="community">
+      <div class="portal3-section-head">
         <div>
           <h2><span>①</span>交流・掲示板</h2>
           <p>売買・譲渡から質問、友達募集まで、みんなでつながるコミュニティ。</p>
@@ -228,7 +224,7 @@
         <a href="/germany/ja/community/">もっと見る</a>
       </div>
 
-      <div class="jcg-chips">
+      <div class="portal3-chips">
         <a href="/germany/ja/community/">売ります</a>
         <a href="/germany/ja/community/">買います</a>
         <a href="/germany/ja/community/">譲ります</a>
@@ -240,41 +236,41 @@
         <a class="chip-primary" href="/germany/ja/community/post/">投稿する</a>
       </div>
 
-      <div class="jcg-card-row five">
-        <a class="jcg-card" href="/germany/ja/community/">
-          <span class="card-img img-bike"></span>
+      <div class="portal3-card-row">
+        <a class="portal3-card" href="/germany/ja/community/">
+          <span class="portal3-card-img img-bike"></span>
           <em>売ります</em>
           <strong>自転車（26インチ）ほぼ新品</strong>
           <small>Köln・1時間前</small>
           <b>♡ 2　📷 3</b>
         </a>
 
-        <a class="jcg-card" href="/germany/ja/community/">
-          <span class="card-img img-doc"></span>
+        <a class="portal3-card" href="/germany/ja/community/">
+          <span class="portal3-card-img img-doc"></span>
           <em>質問</em>
           <strong>ビザ更新に必要な書類は？</strong>
           <small>Düsseldorf・3時間前</small>
           <b>♡ 5</b>
         </a>
 
-        <a class="jcg-card" href="/germany/ja/community/">
-          <span class="card-img img-family"></span>
+        <a class="portal3-card" href="/germany/ja/community/">
+          <span class="portal3-card-img img-family"></span>
           <em>友達募集</em>
           <strong>日本人ママ友募集（Düsseldorf）</strong>
           <small>Düsseldorf・5時間前</small>
           <b>♡ 4</b>
         </a>
 
-        <a class="jcg-card" href="/germany/ja/community/">
-          <span class="card-img img-piano"></span>
+        <a class="portal3-card" href="/germany/ja/community/">
+          <span class="portal3-card-img img-piano"></span>
           <em>レッスン</em>
           <strong>ピアノレッスン生徒募集♪</strong>
           <small>Erkrath・6時間前</small>
           <b>♡ 2</b>
         </a>
 
-        <a class="jcg-card" href="/germany/ja/community/">
-          <span class="card-img img-cafe"></span>
+        <a class="portal3-card" href="/germany/ja/community/">
+          <span class="portal3-card-img img-cafe"></span>
           <em>アルバイト</em>
           <strong>カフェスタッフ募集（学生可）</strong>
           <small>Köln・8時間前</small>
@@ -283,8 +279,8 @@
       </div>
     </section>
 
-    <section class="jcg-section jcg-living" id="living">
-      <div class="jcg-section-head">
+    <section class="portal3-section portal3-living" id="living">
+      <div class="portal3-section-head">
         <div>
           <h2><span>②</span>生活・手続き</h2>
           <p>ドイツでの暮らしに必要な手続きから、医療・住まい・食・観光まで幅広くカバー。</p>
@@ -292,7 +288,7 @@
         <a href="/germany/ja/living/">もっと見る</a>
       </div>
 
-      <div class="jcg-chips green">
+      <div class="portal3-chips green">
         <a href="/germany/ja/living/">手続き</a>
         <a href="/germany/ja/medical/">医療</a>
         <a href="/germany/ja/living/">妊娠・育児</a>
@@ -303,53 +299,53 @@
         <a href="/germany/ja/living/">家族・教育</a>
       </div>
 
-      <div class="jcg-card-row five">
-        <a class="jcg-card" href="/germany/ja/living/">
-          <span class="card-img img-anmeldung"></span>
+      <div class="portal3-card-row">
+        <a class="portal3-card" href="/germany/ja/living/">
+          <span class="portal3-card-img img-anmeldung"></span>
           <strong>住民登録（Anmeldung）の方法と必要書類</strong>
           <small>5月14日・手続き</small>
         </a>
 
-        <a class="jcg-card" href="/germany/ja/living/">
-          <span class="card-img img-paper"></span>
+        <a class="portal3-card" href="/germany/ja/living/">
+          <span class="portal3-card-img img-paper"></span>
           <strong>ビザ・銀行・保険の基礎知識まとめ</strong>
           <small>5月13日・手続き</small>
         </a>
 
-        <a class="jcg-emergency" href="/germany/ja/medical/">
+        <a class="portal3-emergency" href="/germany/ja/medical/">
           <span>✚</span>
           <strong>困ったときの医療・緊急</strong>
           <p>病院の探し方、緊急時の連絡先、保険の使い方など、いざという時に役立つ情報をまとめました。</p>
           <b>詳しく見る</b>
         </a>
 
-        <a class="jcg-card" href="/germany/ja/eat/">
-          <span class="card-img img-food"></span>
+        <a class="portal3-card" href="/germany/ja/eat/">
+          <span class="portal3-card-img img-food"></span>
           <strong>日本食レストランおすすめ10選【デュッセルドルフ】</strong>
           <small>5月12日・食べる</small>
         </a>
 
-        <a class="jcg-card" href="/germany/ja/events/">
-          <span class="card-img img-view"></span>
+        <a class="portal3-card" href="/germany/ja/events/">
+          <span class="portal3-card-img img-view"></span>
           <strong>週末に行きたい！ドイツの絶景スポット</strong>
           <small>5月11日・観光</small>
         </a>
       </div>
     </section>
 
-    <section class="jcg-section jcg-jobs" id="jobs">
-      <div class="jcg-section-head with-buttons">
+    <section class="portal3-section portal3-jobs" id="jobs">
+      <div class="portal3-section-head with-buttons">
         <div>
           <h2><span>③</span>仕事・求人</h2>
           <p>求人情報からキャリアアップのヒントまで、働くあなたをサポート。</p>
         </div>
-        <div class="jcg-section-buttons">
+        <div class="portal3-section-buttons">
           <a href="/germany/ja/jobs/">求人を探す</a>
           <a href="/germany/ja/jobs/posting/">求人を掲載する</a>
         </div>
       </div>
 
-      <div class="jcg-chips blue">
+      <div class="portal3-chips blue">
         <a href="/germany/ja/jobs/">求人一覧</a>
         <a href="/germany/ja/jobs/">転職ガイド</a>
         <a href="/germany/ja/jobs/">履歴書</a>
@@ -358,8 +354,8 @@
         <a href="/germany/ja/jobs/">アルバイト</a>
       </div>
 
-      <div class="jcg-job-row">
-        <a class="jcg-job-card" href="/germany/ja/jobs/">
+      <div class="portal3-job-row">
+        <a class="portal3-job-card" href="/germany/ja/jobs/">
           <span>▤</span>
           <strong>プロジェクトマネージャー</strong>
           <small>Global Tech GmbH・München</small>
@@ -367,7 +363,7 @@
           <em>フルタイム</em><em>経験者優遇</em>
         </a>
 
-        <a class="jcg-job-card" href="/germany/ja/jobs/">
+        <a class="portal3-job-card" href="/germany/ja/jobs/">
           <span>▥</span>
           <strong>マーケティング担当（日本語）</strong>
           <small>Bright Future GmbH・Düsseldorf</small>
@@ -375,7 +371,7 @@
           <em>フルタイム</em><em>リモート可</em>
         </a>
 
-        <a class="jcg-job-card" href="/germany/ja/jobs/">
+        <a class="portal3-job-card" href="/germany/ja/jobs/">
           <span>☻</span>
           <strong>カスタマーサポート（日本語）</strong>
           <small>Smart Service GmbH・Köln</small>
@@ -383,7 +379,7 @@
           <em>フルタイム</em><em>未経験OK</em>
         </a>
 
-        <a class="jcg-job-card" href="/germany/ja/jobs/">
+        <a class="portal3-job-card" href="/germany/ja/jobs/">
           <span>▣</span>
           <strong>倉庫スタッフ（学生可）</strong>
           <small>LogiWork GmbH・Essen</small>
@@ -393,8 +389,8 @@
       </div>
     </section>
 
-    <section class="jcg-section jcg-news" id="news-events">
-      <div class="jcg-section-head">
+    <section class="portal3-section portal3-news" id="news-events">
+      <div class="portal3-section-head">
         <div>
           <h2><span>④</span>ニュース・イベント</h2>
           <p>ドイツの最新ニュースや制度変更、地域のイベント情報をお届け。</p>
@@ -402,7 +398,7 @@
         <a href="/germany/ja/news/">もっと見る</a>
       </div>
 
-      <div class="jcg-chips blue">
+      <div class="portal3-chips blue">
         <a href="/germany/ja/news/">最新ニュース</a>
         <a href="/germany/ja/news/">制度変更</a>
         <a href="/germany/ja/news/">地域ニュース</a>
@@ -410,8 +406,8 @@
         <a href="/germany/ja/events/">イベントカレンダー</a>
       </div>
 
-      <div class="jcg-news-grid">
-        <article class="jcg-news-list">
+      <div class="portal3-news-grid">
+        <article class="portal3-news-list">
           <h3>最新ニュース</h3>
           <a href="/germany/ja/news/"><span>ドイツの最低賃金、2026年から引き上げ</span><time>5月14日</time></a>
           <a href="/germany/ja/news/"><span>ビザ申請のデジタル化がさらに拡大へ</span><time>5月13日</time></a>
@@ -419,8 +415,8 @@
           <a class="more-news" href="/germany/ja/news/">もっと見る</a>
         </article>
 
-        <div class="jcg-event-row">
-          <a class="jcg-event-card" href="/germany/ja/events/">
+        <div class="portal3-event-row">
+          <a class="portal3-event-card" href="/germany/ja/events/">
             <span class="event-date"><b>5月</b><strong>18</strong><small>日</small></span>
             <span class="event-img img-japan-day"></span>
             <strong>デュッセルドルフ日本デー</strong>
@@ -428,7 +424,7 @@
             <em>フェスティバル</em>
           </a>
 
-          <a class="jcg-event-card" href="/germany/ja/events/">
+          <a class="portal3-event-card" href="/germany/ja/events/">
             <span class="event-date"><b>5月</b><strong>19</strong><small>日</small></span>
             <span class="event-img img-market"></span>
             <strong>ケルン・フリーマーケット</strong>
@@ -436,7 +432,7 @@
             <em>マーケット</em>
           </a>
 
-          <a class="jcg-event-card" href="/germany/ja/events/">
+          <a class="portal3-event-card" href="/germany/ja/events/">
             <span class="event-date"><b>5月</b><strong>19</strong><small>日</small></span>
             <span class="event-img img-movie"></span>
             <strong>ボン日本映画祭</strong>
@@ -447,8 +443,8 @@
       </div>
     </section>
 
-    <section class="jcg-section jcg-learn" id="learn-german">
-      <div class="jcg-section-head">
+    <section class="portal3-section portal3-learn" id="learn-german">
+      <div class="portal3-section-head">
         <div>
           <h2><span>⑤</span>ドイツ語・学び</h2>
           <p>日常生活・役所・病院・仕事で使えるドイツ語を、楽しく効率的に学ぼう。</p>
@@ -456,7 +452,7 @@
         <a href="/germany/ja/learn-german/">もっと見る</a>
       </div>
 
-      <div class="jcg-chips purple">
+      <div class="portal3-chips purple">
         <a href="/germany/ja/learn-german/">生活ドイツ語</a>
         <a href="/germany/ja/learn-german/">役所</a>
         <a href="/germany/ja/learn-german/">病院</a>
@@ -465,34 +461,34 @@
         <a href="/germany/ja/learn-german/">学習法</a>
       </div>
 
-      <div class="jcg-learn-row">
-        <a class="jcg-card" href="/germany/ja/learn-german/">
-          <span class="card-img img-office"></span>
+      <div class="portal3-learn-row">
+        <a class="portal3-card" href="/germany/ja/learn-german/">
+          <span class="portal3-card-img img-office"></span>
           <strong>役所で使うドイツ語フレーズ集</strong>
           <small>5月13日・役所</small>
         </a>
 
-        <a class="jcg-card" href="/germany/ja/learn-german/">
-          <span class="card-img img-hospital"></span>
+        <a class="portal3-card" href="/germany/ja/learn-german/">
+          <span class="portal3-card-img img-hospital"></span>
           <strong>病院での会話フレーズ（予約〜診察まで）</strong>
           <small>5月12日・病院</small>
         </a>
 
-        <article class="jcg-phrase">
+        <article class="portal3-phrase">
           <span>今日のフレーズ</span>
           <strong lang="de">Ich hätte gern einen Termin.</strong>
           <p>予約を取りたいです。</p>
           <button type="button">発音を聞く　🔊</button>
         </article>
 
-        <a class="jcg-card" href="/germany/ja/learn-german/">
-          <span class="card-img img-meeting"></span>
+        <a class="portal3-card" href="/germany/ja/learn-german/">
+          <span class="portal3-card-img img-meeting"></span>
           <strong>仕事で使えるドイツ語表現【メール・会議】</strong>
           <small>5月11日・仕事</small>
         </a>
 
-        <a class="jcg-card" href="/germany/ja/learn-german/">
-          <span class="card-img img-study"></span>
+        <a class="portal3-card" href="/germany/ja/learn-german/">
+          <span class="portal3-card-img img-study"></span>
           <strong>ドイツ語学習のコツとおすすめ教材</strong>
           <small>5月10日・学習法</small>
         </a>
@@ -501,16 +497,16 @@
   </div>
 </main>
 
-<footer class="jcg-footer">
-  <div class="jcg-footer-inner">
-    <div class="jcg-footer-col">
+<footer class="portal3-footer">
+  <div class="portal3-footer-inner">
+    <div class="portal3-footer-col">
       <h2>交流・掲示板</h2>
       <a href="/germany/ja/community/">新着投稿</a>
       <a href="/germany/ja/community/post/">投稿する</a>
       <a href="/germany/ja/terms/">ルール・ガイドライン</a>
     </div>
 
-    <div class="jcg-footer-col">
+    <div class="portal3-footer-col">
       <h2>生活・手続き</h2>
       <a href="/germany/ja/living/">手続き</a>
       <a href="/germany/ja/medical/">医療</a>
@@ -518,7 +514,7 @@
       <a href="/germany/ja/events/">観光・レジャー</a>
     </div>
 
-    <div class="jcg-footer-col">
+    <div class="portal3-footer-col">
       <h2>仕事・求人</h2>
       <a href="/germany/ja/jobs/">求人一覧</a>
       <a href="/germany/ja/jobs/">転職ガイド</a>
@@ -526,21 +522,21 @@
       <a href="/germany/ja/jobs/posting/">求人掲載について</a>
     </div>
 
-    <div class="jcg-footer-col">
+    <div class="portal3-footer-col">
       <h2>ニュース・イベント</h2>
       <a href="/germany/ja/news/">最新ニュース</a>
       <a href="/germany/ja/news/">制度・ビザ情報</a>
       <a href="/germany/ja/events/">イベントカレンダー</a>
     </div>
 
-    <div class="jcg-footer-col">
+    <div class="portal3-footer-col">
       <h2>ドイツ語・学び</h2>
       <a href="/germany/ja/learn-german/">学習コンテンツ</a>
       <a href="/germany/ja/learn-german/">単語・フレーズ集</a>
       <a href="/germany/ja/learn-german/">学習法・教材</a>
     </div>
 
-    <div class="jcg-footer-col">
+    <div class="portal3-footer-col">
       <h2>J-CONNECTについて</h2>
       <a href="/germany/ja/about/">運営者情報</a>
       <a href="/germany/ja/contact/">広告掲載について</a>
@@ -548,7 +544,7 @@
     </div>
   </div>
 
-  <div class="jcg-footer-bottom">
+  <div class="portal3-footer-bottom">
     <nav>
       <a href="/germany/ja/terms/">利用規約</a>
       <a href="/germany/ja/privacy/">プライバシーポリシー</a>

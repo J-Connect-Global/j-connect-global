@@ -244,7 +244,7 @@ body.portal3-home .portal3-header *{
 
 .portal3-hero{
   position:relative;
-  height:300px;
+  height:280px;
   overflow:hidden;
   border-bottom:1px solid #cfe0f2;
   background:#eaf6ff;
@@ -257,7 +257,7 @@ body.portal3-home .portal3-header *{
   background:
     var(--portal3-hero-image) center center / cover no-repeat,
     linear-gradient(90deg, #dff2ff, #fff);
-  filter:saturate(1.08) contrast(1.04);
+  filter:saturate(1.05) contrast(1.02);
 }
 
 .portal3-hero::before{
@@ -268,13 +268,13 @@ body.portal3-home .portal3-header *{
   background:
     linear-gradient(
       90deg,
-      rgba(255,255,255,.04) 0%,
-      rgba(255,255,255,.10) 18%,
-      rgba(255,255,255,.42) 35%,
-      rgba(255,255,255,.68) 50%,
-      rgba(255,255,255,.42) 65%,
-      rgba(255,255,255,.10) 82%,
-      rgba(255,255,255,.04) 100%
+      rgba(255,255,255,.06) 0%,
+      rgba(255,255,255,.16) 18%,
+      rgba(255,255,255,.50) 35%,
+      rgba(255,255,255,.76) 50%,
+      rgba(255,255,255,.50) 65%,
+      rgba(255,255,255,.16) 82%,
+      rgba(255,255,255,.06) 100%
     );
   pointer-events:none;
 }
@@ -285,9 +285,9 @@ body.portal3-home .portal3-header *{
   left:0;
   right:0;
   bottom:0;
-  height:54px;
+  height:58px;
   z-index:1;
-  background:linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,.42));
+  background:linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,.55));
   pointer-events:none;
 }
 
@@ -301,40 +301,40 @@ body.portal3-home .portal3-header *{
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  padding-top:4px;
+  padding-top:2px;
   text-align:center;
 }
 
 .portal3-hero h1{
   margin:0 0 10px;
   color:var(--portal3-navy);
-  font-size:40px;
+  font-size:38px;
   line-height:1.18;
   font-weight:800;
   letter-spacing:-.04em;
   text-shadow:
-    0 1px 0 rgba(255,255,255,.92),
-    0 2px 10px rgba(255,255,255,.72);
+    0 1px 0 rgba(255,255,255,.95),
+    0 2px 10px rgba(255,255,255,.78);
 }
 
 .portal3-hero p{
-  margin:0 0 16px;
+  margin:0 0 15px;
   color:#173e68;
   font-size:15px;
-  line-height:1.65;
+  line-height:1.6;
   font-weight:700;
   text-shadow:
-    0 1px 0 rgba(255,255,255,.92),
-    0 2px 8px rgba(255,255,255,.70);
+    0 1px 0 rgba(255,255,255,.95),
+    0 2px 8px rgba(255,255,255,.75);
 }
 
 .portal3-hero-search{
   width:min(690px, 100%);
-  height:46px;
+  height:44px;
   display:flex;
   align-items:center;
   gap:8px;
-  margin:0 auto 14px;
+  margin:0 auto 13px;
   padding:0 7px 0 17px;
   border:1px solid #bdd2eb;
   border-radius:11px;
@@ -362,7 +362,7 @@ body.portal3-home .portal3-header *{
 
 .portal3-hero-search button{
   width:102px;
-  height:34px;
+  height:32px;
   border:0;
   border-radius:8px;
   background:#005ec4;

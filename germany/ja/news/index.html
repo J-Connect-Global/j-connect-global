@@ -10,6 +10,7 @@
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/news/" />
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
 <link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
 <link rel="stylesheet" href="/assets/css/cookie-consent.css">
 <script src="/assets/js/cookie-consent.js" defer></script>
 
@@ -18,13 +19,13 @@
 :root{
   --red:#e8002d;
   --orange:#0067c9;
-  --cream:#fdf8f2;
+  --cream:#f4f8fc;
   --paper:#ffffff;
   --ink:#1a1014;
   --muted:#6b5e68;
   --border:#ede5e0;
   --card-shadow:0 10px 30px rgba(26,16,20,.07);
-  --radius-xl:28px;
+  --radius-xl:10px;
   --radius-lg:20px;
   --radius-md:14px;
   --radius-sm:10px;
@@ -33,7 +34,7 @@
 
 .hero{max-width:var(--max);margin:0 auto;padding:36px 20px 20px}
 
-.hero-box{position:relative;overflow:hidden;background:linear-gradient(90deg, rgba(255,255,255,.42) 0%, rgba(255,255,255,.32) 42%, rgba(255,255,255,.18) 60%, rgba(255,255,255,.08) 100%),url("/assets/images/hero/top-hero.jpg") center center / cover no-repeat,#fff;border:1px solid #d9e0e8;border-radius:34px;padding:32px 28px 26px;box-shadow:var(--card-shadow)}
+.hero-box{position:relative;overflow:hidden;background:linear-gradient(90deg, rgba(255,255,255,.42) 0%, rgba(255,255,255,.32) 42%, rgba(255,255,255,.18) 60%, rgba(255,255,255,.08) 100%),url("/assets/images/hero/top-hero.jpg") center center / cover no-repeat,#fff;border:1px solid #d9e0e8;border-radius:10px;padding:32px 28px 26px;box-shadow:var(--card-shadow)}
 
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
 
@@ -47,7 +48,7 @@
 
 .news-disclaimer{margin:0 0 16px;padding:14px 16px;border-radius:14px;background:#eaf4ff;border:1px solid #b8d0eb;color:#6e3b4a;font-size:13px}
 
-.news-controls{display:grid;grid-template-columns:2fr repeat(4, minmax(130px,1fr));gap:12px;padding:20px;background:rgba(255,255,255,.88);border:1px solid #e5ebf2;border-radius:22px;box-shadow:var(--card-shadow);margin-bottom:18px}
+.news-controls{display:grid;grid-template-columns:2fr repeat(4, minmax(130px,1fr));gap:12px;padding:20px;background:rgba(255,255,255,.88);border:1px solid #e5ebf2;border-radius:9px;box-shadow:var(--card-shadow);margin-bottom:18px}
 
 .news-controls input,.news-controls select{height:46px;border-radius:14px;border:1px solid #d9e0e8;background:#fff;padding:0 14px;font-size:14px;color:#2f3e4c;outline:none;transition:all .18s ease}
 
@@ -91,7 +92,7 @@
 
 /* PR2 listing visual standardization: Community-aligned page surface */
 :root{
-  --listing-bg:#FAFBFC;
+  --listing-bg:#f4f8fc;
   --listing-paper:#FFFFFF;
   --listing-ink:#1F2937;
   --listing-muted:#64748B;
@@ -134,9 +135,9 @@ body{
 
 .hero-box{
   border:1px solid var(--listing-line);
-  border-radius:22px;
+  border-radius:9px;
   background:
-    linear-gradient(110deg, rgba(255,255,255,.98) 0%, rgba(250,251,252,.95) 60%, rgba(252,239,244,.82) 100%),
+    linear-gradient(110deg, rgba(255,255,255,.98) 0%, rgba(250,251,252,.95) 60%, rgba(248,251,255,.96) 100%),
     url("/assets/images/cards/news.jpg") right center / min(42vw, 520px) auto no-repeat,
     #fff;
   box-shadow:0 10px 24px rgba(30,58,95,.07);
@@ -238,48 +239,40 @@ body{
 }
 
 </style>
-<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
 </head>
 <body>
   <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
-      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany ヘッダーロゴ">
+      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany">
       <span class="brand-copy">
         <span class="brand-title">J-CONNECT GERMANY</span>
         <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
       </span>
     </a>
-
     <div class="header-actions">
-      <nav class="header-nav" aria-label="メインナビゲーション">
+      <nav class="header-nav" aria-label="主要ナビゲーション">
         <a href="/germany/ja/">ホーム</a>
         <a href="/germany/ja/about/">このサイトについて</a>
       </nav>
-
       <div class="header-category header-category-menu" aria-label="カテゴリ選択">
         <button type="button" class="header-category-trigger">カテゴリ</button>
         <div class="category-dropdown">
+          <a href="/germany/ja/community/">交流・掲示板</a>
           <a href="/germany/ja/living/">生活・手続き</a>
           <a href="/germany/ja/jobs/">仕事・求人</a>
-          <a href="/germany/ja/medical/">医療・緊急</a>
-          <a href="/germany/ja/eat/">グルメ・飲食</a>
-          <a href="/germany/ja/shopping/">買い物・サービス</a>
-          <a href="/germany/ja/community/">交流・掲示板</a>
-          <a href="/germany/ja/events/">おでかけ・イベント</a>
+          <a href="/germany/ja/events/" class="active" aria-current="page">ニュース・イベント</a>
           <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
-          <a href="/germany/ja/news/" class="active" aria-current="page">ニュース・読みもの</a>
+          <a href="/germany/ja/about/">J-CONNECTについて</a>
         </div>
       </div>
-
       <form class="header-search" action="/germany/ja/search/" method="get" role="search">
         <label class="search-box" aria-label="サイト内検索">
-          <span>⌕</span>
+          <span aria-hidden="true">⌕</span>
           <input type="search" name="q" placeholder="検索">
         </label>
         <button class="search-btn" type="submit" aria-label="検索">⌕</button>
       </form>
-
       <details class="header-language header-language-menu" aria-label="言語切り替え">
         <summary class="header-language-trigger">
           <span>Language</span>
@@ -322,7 +315,7 @@ body{
   <footer class="page-footer">
   <div class="footer-inner">
     <div class="footer-left">
-      <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany フッターロゴ">
+      <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany">
       <div class="footer-copy">
         <div class="footer-title">J-CONNECT GERMANY</div>
         <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
@@ -331,37 +324,38 @@ body{
     </div>
     <div class="footer-links" aria-label="フッターサイトマップ">
       <div class="footer-group">
-        <div class="footer-heading">サイト案内</div>
-        <a href="/germany/ja/">ホーム</a>
-        <a href="/germany/ja/about/">このサイトについて</a>
-        <a href="/germany/ja/news/">ニュース・読みもの</a>
-        <a href="/germany/ja/events/">おでかけ・イベント</a>
-      </div>
-      <div class="footer-group">
-        <div class="footer-heading">仕事</div>
-        <a href="/germany/ja/jobs/">仕事・求人</a>
-        <a href="/germany/ja/jobs/posting/">求人掲載希望の企業様へ</a>
-      </div>
-      <div class="footer-group">
-        <div class="footer-heading">掲示板 / コミュニティ</div>
-        <a href="/germany/ja/community/">掲示板トップ</a>
+        <div class="footer-heading">交流・掲示板</div>
+        <a href="/germany/ja/community/">新着投稿</a>
         <a href="/germany/ja/community/post/">投稿する</a>
-        <a href="/germany/ja/community/contact/">投稿者に連絡</a>
-        <a href="/germany/ja/community/report/">投稿を通報</a>
+        <a href="/germany/ja/terms/">ルール・ガイドライン</a>
       </div>
       <div class="footer-group">
-        <div class="footer-heading">暮らし</div>
-        <a href="/germany/ja/living/">生活・手続き</a>
-        <a href="/germany/ja/medical/">医療・緊急</a>
-        <a href="/germany/ja/shopping/">買い物・サービス</a>
-        <a href="/germany/ja/eat/">グルメ・飲食</a>
+        <div class="footer-heading">生活・手続き</div>
+        <a href="/germany/ja/living/">手続き</a>
+        <a href="/germany/ja/medical/">医療</a>
+        <a href="/germany/ja/eat/">食べる</a>
+        <a href="/germany/ja/shopping/">買い物</a>
+        <a href="/germany/ja/events/">観光・レジャー</a>
       </div>
       <div class="footer-group">
-        <div class="footer-heading">学ぶ</div>
-        <a href="/germany/ja/learn-german/">ドイツ語の学び</a>
+        <div class="footer-heading">仕事・求人</div>
+        <a href="/germany/ja/jobs/">求人一覧</a>
+        <a href="/germany/ja/jobs/posting/">求人掲載について</a>
       </div>
       <div class="footer-group">
-        <div class="footer-heading">サポート</div>
+        <div class="footer-heading">ニュース・イベント</div>
+        <a href="/germany/ja/news/">最新ニュース</a>
+        <a href="/germany/ja/events/">イベントカレンダー</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">ドイツ語・学び</div>
+        <a href="/germany/ja/learn-german/">学習コンテンツ</a>
+        <a href="/germany/ja/learn-german/appointment-phrase/">フレーズ集</a>
+        <a href="/germany/ja/learn-german/">学習法</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">J-CONNECTについて</div>
+        <a href="/germany/ja/about/">このサイトについて</a>
         <a href="/germany/ja/contact/">お問い合わせ</a>
         <a href="/germany/ja/terms/">利用規約</a>
         <a href="/germany/ja/privacy/">プライバシー</a>

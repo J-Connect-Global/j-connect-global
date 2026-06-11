@@ -1,249 +1,177 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>求人詳細 | J-Connect Germany</title>
-  <meta name="robots" content="noindex,follow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>求人詳細 | 仕事・求人 | J-Connect Germany</title>
+  <meta name="description" content="求人カードから開く動的な求人詳細ページです。">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://j-connect-global.com/germany/ja/jobs/detail/">
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <link rel="stylesheet" href="/assets/css/listing-pages.css">
   <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
+  <link rel="stylesheet" href="/assets/css/cookie-consent.css">
+  <link rel="stylesheet" href="/assets/css/listing-pages.css">
+  <script src="/assets/js/cookie-consent.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ???">
-        <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany">
-        <span class="brand-copy">
-          <span class="brand-title">J-CONNECT GERMANY</span>
-          <span class="brand-sub">????????????????</span>
-        </span>
-      </a>
-      <div class="header-actions">
-        <nav class="header-nav" aria-label="??????????">
-          <a href="/germany/ja/">???</a>
-          <a href="/germany/ja/about/">?????????</a>
-        </nav>
-        <div class="header-category header-category-menu" aria-label="??????">
-          <button type="button" class="header-category-trigger">????</button>
-          <div class="category-dropdown">
-            <a href="/germany/ja/living/">??????</a>
-            <a href="/germany/ja/jobs/" class="active" aria-current="page">?????</a>
-            <a href="/germany/ja/medical/">?????</a>
-            <a href="/germany/ja/eat/">??????</a>
-            <a href="/germany/ja/shopping/">????????</a>
-            <a href="/germany/ja/community/">??????</a>
-            <a href="/germany/ja/events/">?????????</a>
-            <a href="/germany/ja/learn-german/">???????</a>
-            <a href="/germany/ja/news/">?????????</a>
-          </div>
-        </div>
-        <form class="header-search" action="/germany/ja/search/" method="get" role="search">
-          <label class="search-box" aria-label="??????">
-            <span>?</span>
-            <input type="search" name="q" placeholder="??">
-          </label>
-          <button class="search-btn" type="submit" aria-label="??">?</button>
-        </form>
-        <details class="header-language header-language-menu" aria-label="??????">
-          <summary class="header-language-trigger">
-            <span>Language</span>
-            <span class="header-language-current" lang="ja">???</span>
-          </summary>
-          <div class="language-dropdown">
-            <a href="/germany/ja/jobs/detail/" class="active" aria-current="page" lang="ja">???</a>
-            <a href="/germany/en/coming-soon/" lang="en">English</a>
-            <a href="/germany/de/coming-soon/" lang="de">Deutsch</a>
-          </div>
-        </details>
-      </div>
-    </div>
-  </header>
-
-  <main class="main">
-    <div class="container jc-stack">
-      <nav class="jc-chip-row" aria-label="パンくず">
-        <a class="jc-chip" href="/germany/ja/jobs/">仕事・求人へ戻る</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
+      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany">
+      <span class="brand-copy">
+        <span class="brand-title">J-CONNECT GERMANY</span>
+        <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <nav class="header-nav" aria-label="主要ナビゲーション">
+        <a href="/germany/ja/">ホーム</a>
+        <a href="/germany/ja/about/">このサイトについて</a>
       </nav>
-
-      <article class="jc-article" id="jobDetail" aria-live="polite">
-        <p>求人情報を読み込んでいます。</p>
-      </article>
-    </div>
-  </main>
-  <footer class="page-footer">
-    <div class="footer-inner">
-      <div class="footer-left">
-        <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany">
-        <div class="footer-copy">
-          <div class="footer-title">J-CONNECT GERMANY</div>
-          <div class="footer-sub">????????????????</div>
-          <div class="footer-meta">? 2026 J-Connect Germany</div>
+      <div class="header-category header-category-menu" aria-label="カテゴリ選択">
+        <button type="button" class="header-category-trigger">カテゴリ</button>
+        <div class="category-dropdown">
+          <a href="/germany/ja/community/">交流・掲示板</a>
+          <a href="/germany/ja/living/">生活・手続き</a>
+          <a href="/germany/ja/jobs/" class="active" aria-current="page">仕事・求人</a>
+          <a href="/germany/ja/events/">ニュース・イベント</a>
+          <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+          <a href="/germany/ja/about/">J-CONNECTについて</a>
         </div>
       </div>
-      <div class="footer-links" aria-label="??????????">
-        <div class="footer-group"><div class="footer-heading">??????</div><a href="/germany/ja/community/">??????</a><a href="/germany/ja/community/post/">????</a></div>
-        <div class="footer-group"><div class="footer-heading">??????</div><a href="/germany/ja/living/">??????</a><a href="/germany/ja/medical/">?????</a><a href="/germany/ja/eat/">??????</a><a href="/germany/ja/shopping/">????????</a></div>
-        <div class="footer-group"><div class="footer-heading">?????</div><a href="/germany/ja/jobs/">????</a><a href="/germany/ja/jobs/posting/">????</a></div>
-        <div class="footer-group"><div class="footer-heading">?????????</div><a href="/germany/ja/news/">????</a><a href="/germany/ja/events/">????</a></div>
-        <div class="footer-group"><div class="footer-heading">???????</div><a href="/germany/ja/learn-german/">???????</a><a href="/germany/ja/learn-german/appointment-phrase/">??????</a></div>
-        <div class="footer-group"><div class="footer-heading">J-CONNECT????</div><a href="/germany/ja/about/">?????????</a><a href="/germany/ja/contact/">??????</a><a href="/germany/ja/terms/">????</a><a href="/germany/ja/privacy/">??????</a><a href="/germany/ja/impressum/">?????</a></div>
+      <form class="header-search" action="/germany/ja/search/" method="get" role="search">
+        <label class="search-box" aria-label="サイト内検索">
+          <span aria-hidden="true">⌕</span>
+          <input type="search" name="q" placeholder="検索">
+        </label>
+        <button class="search-btn" type="submit" aria-label="検索">⌕</button>
+      </form>
+      <details class="header-language header-language-menu" aria-label="言語切り替え">
+        <summary class="header-language-trigger">
+          <span>Language</span>
+          <span class="header-language-current" lang="ja">日本語</span>
+        </summary>
+        <div class="language-dropdown">
+          <a href="/germany/ja/jobs/detail/" class="active" aria-current="page" lang="ja">日本語</a>
+          <a href="/germany/en/coming-soon/" lang="en">English</a>
+          <a href="/germany/de/coming-soon/" lang="de">Deutsch</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+<main class="jc-shell jc-main jc-stack">
+  <article class="jc-detail-card" id="jobDetail" aria-live="polite">
+    <div class="jc-status"><strong>求人情報を読み込んでいます</strong><span>指定された求人IDの内容を確認しています。</span></div>
+  </article>
+</main>
+<footer class="page-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany">
+      <div class="footer-copy">
+        <div class="footer-title">J-CONNECT GERMANY</div>
+        <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+        <div class="footer-meta">© 2026 J-Connect Germany</div>
       </div>
     </div>
-  </footer>
-
-  <script src="/assets/js/data-sources.js"></script>
-  <script src="/assets/js/jobs-fallback.js"></script>
-  <script>
-    const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
-    const JOBS_API_URL = DATA_SOURCES.buildDirectoryUrl({
-      sheet: DATA_SOURCES.directorySheets.jobs,
-      lang: "ja",
-      status: "active"
-    });
-    const DATA_TIMEOUT_MS = 12000;
-    const detail = document.getElementById("jobDetail");
-    const queryId = new URLSearchParams(location.search).get("id") || "";
-
-    function escapeHtml(value) {
-      return String(value ?? "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+    <div class="footer-links" aria-label="フッターサイトマップ">
+      <div class="footer-group">
+        <div class="footer-heading">交流・掲示板</div>
+        <a href="/germany/ja/community/">新着投稿</a>
+        <a href="/germany/ja/community/post/">投稿する</a>
+        <a href="/germany/ja/terms/">ルール・ガイドライン</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">生活・手続き</div>
+        <a href="/germany/ja/living/">手続き</a>
+        <a href="/germany/ja/medical/">医療</a>
+        <a href="/germany/ja/eat/">食べる</a>
+        <a href="/germany/ja/shopping/">買い物</a>
+        <a href="/germany/ja/events/">観光・レジャー</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">仕事・求人</div>
+        <a href="/germany/ja/jobs/">求人一覧</a>
+        <a href="/germany/ja/jobs/posting/">求人掲載について</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">ニュース・イベント</div>
+        <a href="/germany/ja/news/">最新ニュース</a>
+        <a href="/germany/ja/events/">イベントカレンダー</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">ドイツ語・学び</div>
+        <a href="/germany/ja/learn-german/">学習コンテンツ</a>
+        <a href="/germany/ja/learn-german/appointment-phrase/">フレーズ集</a>
+        <a href="/germany/ja/learn-german/">学習法</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">J-CONNECTについて</div>
+        <a href="/germany/ja/about/">このサイトについて</a>
+        <a href="/germany/ja/contact/">お問い合わせ</a>
+        <a href="/germany/ja/terms/">利用規約</a>
+        <a href="/germany/ja/privacy/">プライバシー</a>
+        <a href="/germany/ja/impressum/">運営者情報</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/data-sources.js"></script>
+<script src="/assets/js/jobs-fallback.js"></script>
+<script>
+(function(){
+  const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
+  const JOBS_API_URL = DATA_SOURCES.buildDirectoryUrl({ sheet: DATA_SOURCES.directorySheets.jobs, lang: "ja", status: "active" });
+  const detail = document.getElementById("jobDetail");
+  const queryId = new URLSearchParams(location.search).get("id") || "";
+  const escapeHtml = value => String(value ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");
+  const clean = value => String(value ?? "").trim();
+  function getValue(row, ...keys){ for (const key of keys) { if (row[key] !== undefined && row[key] !== null && String(row[key]).trim() !== "") return clean(row[key]); } return ""; }
+  function normalizeJob(row, index){
+    const title = getValue(row, "position_title", "job_title", "title", "role", "position");
+    const company = getValue(row, "company_name", "company", "company_ja", "company_name_ja");
+    const region = getValue(row, "region", "location", "area", "city", "work_location");
+    const id = getValue(row, "job_id", "id") || getValue(row, "slug", "job_slug") || `job-${index + 1}`;
+    return { id, slug:getValue(row,"slug","job_slug"), title, company, city:region, location:getValue(row,"location","work_location","office_location","city") || region, employment_type:getValue(row,"employment_type","employment","type"), work_style:getValue(row,"work_style","workstyle","remote_type","remote","working_style"), language:getValue(row,"language","languages","required_language","language_requirement"), salary:getValue(row,"salary_label","salary","salary_range"), visa_support:getValue(row,"visa_support"), summary:getValue(row,"short_description","summary","description_short"), description:getValue(row,"full_description","description","job_details"), requirements:getValue(row,"requirements"), apply_url:getValue(row,"apply_url","application_url","source_url","official_url","url"), source_name:getValue(row,"source_name","source","publisher"), source_url:getValue(row,"source_url","official_url","url","website"), published_at:getValue(row,"published_at","posted_at","posted_date","published"), sample_label:getValue(row,"sample_label","test_label"), tags:getValue(row,"tags","skills","skill_tags") };
+  }
+  function splitList(value){ return String(value || "").split(/\n|,|、|;|；|\||\//).map(v => v.trim()).filter(Boolean); }
+  function findJob(rows){ const wanted = clean(queryId).toLowerCase(); return rows.find(job => [job.id, job.slug].some(value => clean(value).toLowerCase() === wanted)); }
+  function detailItem(label, value){ return value ? `<div class="jc-detail-item"><div class="jc-detail-label">${escapeHtml(label)}</div><div>${escapeHtml(value)}</div></div>` : ""; }
+  function renderEmpty(kind){
+    const title = kind === "missing" ? "求人IDが指定されていません" : "求人が見つかりませんでした";
+    const body = kind === "missing" ? "求人カードまたは求人一覧から詳細ページを開いてください。" : "指定されたIDの求人を確認できませんでした。掲載が終了したか、URLが変更された可能性があります。";
+    detail.innerHTML = `<h1>${title}</h1><p>${body}</p><div class="jc-actions"><a class="jc-button is-primary" href="/germany/ja/jobs/">求人一覧へ戻る</a></div>`;
+  }
+  function renderJob(job){
+    if (!job) { renderEmpty(queryId ? "notfound" : "missing"); return; }
+    document.title = `${job.title || "求人詳細"} | J-Connect Germany`;
+    const tags = splitList(job.tags);
+    const requirements = splitList(job.requirements);
+    detail.innerHTML = `<div class="jc-chip-row">${job.sample_label ? `<span class="jc-chip is-primary">${escapeHtml(job.sample_label)}</span>` : ""}${tags.map(tag => `<span class="jc-chip">${escapeHtml(tag)}</span>`).join("")}</div><h1>${escapeHtml(job.title || "求人詳細")}</h1><p class="jc-lead">${escapeHtml(job.summary || "求人概要は準備中です。")}</p><div class="jc-detail-grid">${detailItem("会社名", job.company)}${detailItem("勤務地", job.location || job.city)}${detailItem("雇用形態", job.employment_type)}${detailItem("勤務形態", job.work_style)}${detailItem("言語", job.language)}${detailItem("給与", job.salary)}${detailItem("ビザサポート", job.visa_support)}${detailItem("掲載日", job.published_at)}</div><section><h2>仕事内容</h2><p>${escapeHtml(job.description || job.summary || "詳細は準備中です。")}</p></section><section><h2>応募条件</h2>${requirements.length ? `<ul>${requirements.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : "<p>応募条件は準備中です。</p>"}</section><section><h2>応募・問い合わせ</h2><p>応募前に、勤務条件、ビザ、開始時期、語学要件を掲載元に確認してください。</p><div class="jc-actions">${job.apply_url ? `<a class="jc-button is-primary" href="${escapeHtml(job.apply_url)}" target="_blank" rel="noopener noreferrer">応募・掲載元を開く</a>` : ""}${job.source_url ? `<a class="jc-button" href="${escapeHtml(job.source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(job.source_name || "掲載元")}</a>` : ""}<a class="jc-button" href="/germany/ja/jobs/">求人一覧へ戻る</a></div></section>`;
+  }
+  async function loadJob(){
+    if (!queryId) { renderEmpty("missing"); return; }
+    const fallbackRows = (window.JCONNECT_FALLBACK_JOBS || []).map(normalizeJob);
+    const fallbackJob = findJob(fallbackRows);
+    if (fallbackJob) renderJob(fallbackJob);
+    try {
+      const payload = await DATA_SOURCES.fetchJsonWithTimeout(JOBS_API_URL, 12000);
+      const rows = DATA_SOURCES.normalizePayload(payload).map(normalizeJob);
+      const remoteJob = findJob(rows);
+      if (remoteJob) renderJob(remoteJob);
+      if (!remoteJob && !fallbackJob) renderEmpty("notfound");
+    } catch (error) {
+      console.warn("Job detail load failed:", JOBS_API_URL, error);
+      if (!fallbackJob) renderEmpty("notfound");
     }
-
-    function clean(value) {
-      return String(value ?? "").trim();
-    }
-
-    function getValue(row, ...keys) {
-      for (const key of keys) {
-        if (row[key] !== undefined && row[key] !== null && String(row[key]).trim() !== "") return clean(row[key]);
-      }
-      return "";
-    }
-
-    function normalizeJob(row, index) {
-      const title = getValue(row, "position_title", "job_title", "title", "role", "position");
-      const company = getValue(row, "company_name", "company", "company_ja", "company_name_ja");
-      const region = getValue(row, "region", "location", "area", "city", "work_location");
-      const id = getValue(row, "job_id", "id") || getValue(row, "slug", "job_slug") || `job-${index + 1}`;
-      return {
-        id,
-        slug: getValue(row, "slug", "job_slug"),
-        title,
-        company,
-        city: region,
-        region,
-        employment_type: getValue(row, "employment_type", "employment", "type"),
-        work_style: getValue(row, "work_style", "workstyle", "remote_type", "remote", "working_style"),
-        language: getValue(row, "language", "languages", "required_language", "language_requirement"),
-        salary: getValue(row, "salary_label", "salary", "salary_range"),
-        visa_support: getValue(row, "visa_support"),
-        summary: getValue(row, "short_description", "summary", "description_short"),
-        description: getValue(row, "full_description", "description", "job_details"),
-        requirements: getValue(row, "requirements"),
-        apply_url: getValue(row, "apply_url", "application_url", "source_url", "official_url", "url"),
-        source_name: getValue(row, "source_name", "source", "publisher"),
-        source_url: getValue(row, "source_url", "official_url", "url", "website"),
-        published_at: getValue(row, "published_at", "posted_at", "posted_date", "published"),
-        updated_at: getValue(row, "updated_at", "updated"),
-        sample_label: getValue(row, "sample_label", "test_label"),
-        tags: getValue(row, "tags", "skills", "skill_tags")
-      };
-    }
-
-    function splitList(value) {
-      return String(value || "").split(/\n|,|、|;|；|\||\//).map(v => v.trim()).filter(Boolean);
-    }
-
-    function findJob(rows) {
-      const wanted = clean(queryId).toLowerCase();
-      return rows.find(job => [job.id, job.slug].some(value => clean(value).toLowerCase() === wanted));
-    }
-
-    function detailItem(label, value) {
-      if (!value) return "";
-      return `<div class="jc-detail-item"><div class="jc-detail-label">${escapeHtml(label)}</div><div>${escapeHtml(value)}</div></div>`;
-    }
-
-    function renderJob(job) {
-      if (!job) {
-        detail.innerHTML = `
-          <h1>求人が見つかりませんでした</h1>
-          <p>指定された ID の求人を確認できませんでした。掲載が終了したか、URL が変更された可能性があります。</p>
-          <p><a class="jc-button is-primary" href="/germany/ja/jobs/">求人一覧へ戻る</a></p>
-        `;
-        return;
-      }
-
-      document.title = `${job.title || "求人詳細"} | J-Connect Germany`;
-      const tags = splitList(job.tags);
-      const requirements = splitList(job.requirements);
-      detail.innerHTML = `
-        <div class="jc-chip-row">
-          ${job.sample_label ? `<span class="jc-chip is-primary">${escapeHtml(job.sample_label)}</span>` : ""}
-          ${tags.map(tag => `<span class="jc-chip">${escapeHtml(tag)}</span>`).join("")}
-        </div>
-        <h1>${escapeHtml(job.title || "求人詳細")}</h1>
-        <p class="jc-lead">${escapeHtml(job.summary || "求人概要は準備中です。")}</p>
-        <div class="jc-detail-grid">
-          ${detailItem("会社名", job.company)}
-          ${detailItem("勤務地", job.city || job.region)}
-          ${detailItem("雇用形態", job.employment_type)}
-          ${detailItem("勤務形態", job.work_style)}
-          ${detailItem("言語", job.language)}
-          ${detailItem("給与", job.salary)}
-          ${detailItem("ビザサポート", job.visa_support)}
-          ${detailItem("掲載日", job.published_at)}
-        </div>
-        <div class="jc-article-body">
-          <section><h2>仕事内容</h2><p>${escapeHtml(job.description || job.summary || "詳細は準備中です。")}</p></section>
-          <section>
-            <h2>応募条件</h2>
-            ${requirements.length ? `<ul>${requirements.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : "<p>応募条件は準備中です。</p>"}
-          </section>
-          <section>
-            <h2>応募・問い合わせ</h2>
-            <p>応募前に、勤務条件、ビザ、開始時期、語学要件を掲載元に確認してください。</p>
-            <div class="jc-chip-row">
-              ${job.apply_url ? `<a class="jc-button is-primary" href="${escapeHtml(job.apply_url)}" target="_blank" rel="noopener noreferrer">応募・掲載元を開く</a>` : ""}
-              ${job.source_url ? `<a class="jc-button" href="${escapeHtml(job.source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(job.source_name || "掲載元")}</a>` : ""}
-              <a class="jc-button" href="/germany/ja/jobs/">求人一覧へ戻る</a>
-            </div>
-          </section>
-        </div>
-      `;
-    }
-
-    async function loadJob() {
-      if (!queryId) {
-        renderJob(null);
-        return;
-      }
-
-      const fallbackRows = (window.JCONNECT_FALLBACK_JOBS || []).map(normalizeJob);
-      const fallbackJob = findJob(fallbackRows);
-      if (fallbackJob) renderJob(fallbackJob);
-
-      try {
-        const payload = await DATA_SOURCES.fetchJsonWithTimeout(JOBS_API_URL, DATA_TIMEOUT_MS);
-        const rows = DATA_SOURCES.normalizePayload(payload).map(normalizeJob);
-        const remoteJob = findJob(rows);
-        if (remoteJob) renderJob(remoteJob);
-        if (!remoteJob && !fallbackJob) renderJob(null);
-      } catch (error) {
-        console.warn("Job detail load failed:", JOBS_API_URL, error);
-        if (!fallbackJob) renderJob(null);
-      }
-    }
-
-    loadJob();
-  </script>
+  }
+  loadJob();
+})();
+</script>
 </body>
 </html>

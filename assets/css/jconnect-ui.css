@@ -183,6 +183,16 @@ a{
   gap:12px;
 }
 
+.filter-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+  gap:10px;
+}
+
+.filter-grid .field{
+  margin:0;
+}
+
 .jc-card{
   display:grid;
   gap:10px;
@@ -358,6 +368,149 @@ a{
   box-shadow:var(--jc-shadow);
 }
 
+.jc-page-hero{
+  display:grid;
+  gap:14px;
+  padding:clamp(20px, 3vw, 30px);
+  border:1px solid var(--jc-line);
+  border-radius:var(--jc-radius-lg);
+  background:linear-gradient(110deg, rgba(255,255,255,.99), rgba(248,251,255,.96));
+  box-shadow:var(--jc-shadow);
+}
+
+.jc-page-hero h1{
+  margin:0;
+  color:var(--jc-navy);
+  font-size:clamp(28px, 4vw, 42px);
+  line-height:1.18;
+}
+
+.jc-page-hero p{
+  margin:0;
+  max-width:76ch;
+  color:var(--jc-muted);
+  line-height:1.75;
+}
+
+.jc-hero-actions,
+.jc-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+}
+
+.jc-article-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:12px;
+}
+
+.jc-article-card{
+  display:grid;
+  gap:10px;
+  min-width:0;
+  padding:16px;
+  border:1px solid var(--jc-line);
+  border-radius:var(--jc-radius-md);
+  background:#fff;
+  box-shadow:var(--jc-shadow);
+  color:var(--jc-text);
+  text-decoration:none;
+  transition:transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+}
+
+.jc-article-card:hover{
+  transform:translateY(-1px);
+  border-color:var(--jc-line-strong);
+  box-shadow:var(--jc-shadow-hover);
+}
+
+.jc-article-card h3{
+  margin:0;
+  color:var(--jc-navy);
+  font-size:18px;
+  line-height:1.35;
+}
+
+.jc-article-card p{
+  margin:0;
+  color:var(--jc-muted);
+  font-size:14px;
+  line-height:1.65;
+}
+
+.jc-card-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 10px;
+  color:var(--jc-muted);
+  font-size:12px;
+  font-weight:800;
+}
+
+.jc-two-column{
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) minmax(250px, .38fr);
+  gap:14px;
+  align-items:start;
+}
+
+.jc-side-panel{
+  display:grid;
+  gap:10px;
+  padding:16px;
+  border:1px solid var(--jc-line);
+  border-radius:var(--jc-radius-md);
+  background:#fff;
+  box-shadow:var(--jc-shadow);
+}
+
+.jc-side-panel h2,
+.jc-side-panel h3{
+  margin:0;
+  color:var(--jc-navy);
+  font-size:17px;
+}
+
+.jc-side-panel p{
+  margin:0;
+  color:var(--jc-muted);
+  font-size:14px;
+  line-height:1.65;
+}
+
+.jc-info-list{
+  display:grid;
+  gap:8px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+.jc-info-list li{
+  padding:10px;
+  border:1px solid var(--jc-line);
+  border-radius:var(--jc-radius-sm);
+  background:var(--jc-soft-2);
+  color:var(--jc-text);
+}
+
+.jc-status{
+  padding:16px;
+  border:1px solid var(--jc-line);
+  border-radius:var(--jc-radius-md);
+  background:#fff;
+  color:var(--jc-muted);
+  box-shadow:var(--jc-shadow);
+}
+
+.jc-status strong{
+  display:block;
+  margin-bottom:4px;
+  color:var(--jc-navy);
+}
+
 .jc-article h1{
   margin:0;
   color:var(--jc-navy);
@@ -402,6 +555,77 @@ a{
 
 .jc-phrase strong{
   color:var(--jc-navy);
+}
+
+.jc-phrase-grid{
+  display:grid;
+  gap:10px;
+}
+
+.jc-phrase-row{
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
+  gap:10px;
+  padding:12px;
+  border:1px solid var(--jc-line);
+  border-radius:var(--jc-radius-md);
+  background:var(--jc-soft-2);
+}
+
+.jc-phrase-row strong{
+  color:var(--jc-navy);
+}
+
+.jc-phrase-row small{
+  color:var(--jc-muted);
+  font-weight:800;
+}
+
+.jc-detail-card{
+  display:grid;
+  gap:16px;
+  padding:clamp(20px, 3vw, 30px);
+  border:1px solid var(--jc-line);
+  border-radius:var(--jc-radius-lg);
+  background:#fff;
+  box-shadow:var(--jc-shadow);
+}
+
+.jc-detail-card h1{
+  margin:0;
+  color:var(--jc-navy);
+  font-size:clamp(28px, 4vw, 40px);
+  line-height:1.2;
+}
+
+.jc-detail-card h2{
+  margin:0 0 8px;
+  color:var(--jc-navy);
+  font-size:22px;
+}
+
+.jc-detail-card p,
+.jc-detail-card li{
+  color:#314f70;
+  line-height:1.8;
+}
+
+.jc-detail-card section{
+  border-top:1px solid var(--jc-line);
+  padding-top:16px;
+}
+
+.listing-modal-dialog,
+.listing-modal-close,
+.save-button,
+.btn,
+.card-action,
+.chip,
+.job-chip,
+.eat-tag,
+.medical-tag,
+.shopping-tag{
+  border-radius:var(--jc-radius-sm);
 }
 
 .site-header{
@@ -496,6 +720,11 @@ a{
   .jc-detail-grid,
   .detail-grid,
   .listing-detail-grid{
+    grid-template-columns:1fr;
+  }
+
+  .jc-two-column,
+  .jc-phrase-row{
     grid-template-columns:1fr;
   }
 }

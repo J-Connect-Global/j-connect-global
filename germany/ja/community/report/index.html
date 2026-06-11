@@ -5,10 +5,11 @@
   <title>通報する | J-Connect Germany</title>
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
 <link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
   <style>
 /* Page-specific styles. Shared site styles live in the common site stylesheet. */
 :root{
-  --cream:#fdf8f2;
+  --cream:#f4f8fc;
   --ink:#1a1014;
   --muted:#6b5e68;
   --border:#dce4ee;
@@ -17,7 +18,7 @@
 
 .wrap{max-width:980px;margin:0 auto;padding:28px 18px 60px}
 
-.panel{background:#fff;border:1px solid var(--border);border-radius:22px;box-shadow:var(--card);padding:22px}
+.panel{background:#fff;border:1px solid var(--border);border-radius:9px;box-shadow:var(--card);padding:22px}
 
 body > a,
     body > h1,
@@ -49,7 +50,7 @@ body > h1{
 body > form{
   background:rgba(255,255,255,.94);
   border:1px solid var(--line);
-  border-radius:22px;
+  border-radius:9px;
   box-shadow:0 8px 18px rgba(30,58,95,.06);
   padding:22px;
 }
@@ -125,48 +126,40 @@ body > form button{
   document.head.appendChild(js);
 })();
 </script>
-<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
 </head>
 <body>
   <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
-      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany ヘッダーロゴ">
+      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany">
       <span class="brand-copy">
         <span class="brand-title">J-CONNECT GERMANY</span>
         <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
       </span>
     </a>
-
     <div class="header-actions">
-      <nav class="header-nav" aria-label="メインナビゲーション">
+      <nav class="header-nav" aria-label="主要ナビゲーション">
         <a href="/germany/ja/">ホーム</a>
         <a href="/germany/ja/about/">このサイトについて</a>
       </nav>
-
       <div class="header-category header-category-menu" aria-label="カテゴリ選択">
         <button type="button" class="header-category-trigger">カテゴリ</button>
         <div class="category-dropdown">
+          <a href="/germany/ja/community/" class="active" aria-current="page">交流・掲示板</a>
           <a href="/germany/ja/living/">生活・手続き</a>
           <a href="/germany/ja/jobs/">仕事・求人</a>
-          <a href="/germany/ja/medical/">医療・緊急</a>
-          <a href="/germany/ja/eat/">グルメ・飲食</a>
-          <a href="/germany/ja/shopping/">買い物・サービス</a>
-          <a href="/germany/ja/community/" class="active" aria-current="page">交流・掲示板</a>
-          <a href="/germany/ja/events/">おでかけ・イベント</a>
+          <a href="/germany/ja/events/">ニュース・イベント</a>
           <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
-          <a href="/germany/ja/news/">ニュース・読みもの</a>
+          <a href="/germany/ja/about/">J-CONNECTについて</a>
         </div>
       </div>
-
       <form class="header-search" action="/germany/ja/search/" method="get" role="search">
         <label class="search-box" aria-label="サイト内検索">
-          <span>⌕</span>
+          <span aria-hidden="true">⌕</span>
           <input type="search" name="q" placeholder="検索">
         </label>
         <button class="search-btn" type="submit" aria-label="検索">⌕</button>
       </form>
-
       <details class="header-language header-language-menu" aria-label="言語切り替え">
         <summary class="header-language-trigger">
           <span>Language</span>
@@ -227,7 +220,7 @@ body > form button{
   <footer class="page-footer">
   <div class="footer-inner">
     <div class="footer-left">
-      <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany フッターロゴ">
+      <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany">
       <div class="footer-copy">
         <div class="footer-title">J-CONNECT GERMANY</div>
         <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
@@ -236,37 +229,38 @@ body > form button{
     </div>
     <div class="footer-links" aria-label="フッターサイトマップ">
       <div class="footer-group">
-        <div class="footer-heading">サイト案内</div>
-        <a href="/germany/ja/">ホーム</a>
-        <a href="/germany/ja/about/">このサイトについて</a>
-        <a href="/germany/ja/news/">ニュース・読みもの</a>
-        <a href="/germany/ja/events/">おでかけ・イベント</a>
-      </div>
-      <div class="footer-group">
-        <div class="footer-heading">仕事</div>
-        <a href="/germany/ja/jobs/">仕事・求人</a>
-        <a href="/germany/ja/jobs/posting/">求人掲載希望の企業様へ</a>
-      </div>
-      <div class="footer-group">
-        <div class="footer-heading">掲示板 / コミュニティ</div>
-        <a href="/germany/ja/community/">掲示板トップ</a>
+        <div class="footer-heading">交流・掲示板</div>
+        <a href="/germany/ja/community/">新着投稿</a>
         <a href="/germany/ja/community/post/">投稿する</a>
-        <a href="/germany/ja/community/contact/">投稿者に連絡</a>
-        <a href="/germany/ja/community/report/">投稿を通報</a>
+        <a href="/germany/ja/terms/">ルール・ガイドライン</a>
       </div>
       <div class="footer-group">
-        <div class="footer-heading">暮らし</div>
-        <a href="/germany/ja/living/">生活・手続き</a>
-        <a href="/germany/ja/medical/">医療・緊急</a>
-        <a href="/germany/ja/shopping/">買い物・サービス</a>
-        <a href="/germany/ja/eat/">グルメ・飲食</a>
+        <div class="footer-heading">生活・手続き</div>
+        <a href="/germany/ja/living/">手続き</a>
+        <a href="/germany/ja/medical/">医療</a>
+        <a href="/germany/ja/eat/">食べる</a>
+        <a href="/germany/ja/shopping/">買い物</a>
+        <a href="/germany/ja/events/">観光・レジャー</a>
       </div>
       <div class="footer-group">
-        <div class="footer-heading">学ぶ</div>
-        <a href="/germany/ja/learn-german/">ドイツ語の学び</a>
+        <div class="footer-heading">仕事・求人</div>
+        <a href="/germany/ja/jobs/">求人一覧</a>
+        <a href="/germany/ja/jobs/posting/">求人掲載について</a>
       </div>
       <div class="footer-group">
-        <div class="footer-heading">サポート</div>
+        <div class="footer-heading">ニュース・イベント</div>
+        <a href="/germany/ja/news/">最新ニュース</a>
+        <a href="/germany/ja/events/">イベントカレンダー</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">ドイツ語・学び</div>
+        <a href="/germany/ja/learn-german/">学習コンテンツ</a>
+        <a href="/germany/ja/learn-german/appointment-phrase/">フレーズ集</a>
+        <a href="/germany/ja/learn-german/">学習法</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">J-CONNECTについて</div>
+        <a href="/germany/ja/about/">このサイトについて</a>
         <a href="/germany/ja/contact/">お問い合わせ</a>
         <a href="/germany/ja/terms/">利用規約</a>
         <a href="/germany/ja/privacy/">プライバシー</a>

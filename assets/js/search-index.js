@@ -1,403 +1,294 @@
 window.JCONNECT_SEARCH_INDEX = [
   {
     "title": "J-Connect Germany",
-    "description": "ドイツ在住日本人向けの生活ポータル。仕事、医療、グルメ、買い物、掲示板、イベント、生活・手続き、ドイツ語学習まで整理しています。",
+    "description": "ドイツ在住日本人向けの総合ポータル。交流、生活、仕事、ニュース・イベント、ドイツ語学習を整理しています。",
     "url": "/germany/ja/",
     "category": "ホーム",
     "tags": [
       "ドイツ生活",
       "日本人",
-      "ポータル",
-      "仕事",
-      "医療",
-      "グルメ",
-      "買い物",
-      "掲示板"
+      "ポータル"
     ]
   },
   {
-    "title": "このサイトについて",
-    "description": "J-Connect Germanyの理念、掲載方針、対象読者をご案内します。",
-    "url": "/germany/ja/about/",
-    "category": "サイト案内",
+    "title": "交流・掲示板",
+    "description": "売買、質問、友達募集、生活サポートの投稿を探せます。",
+    "url": "/germany/ja/community/",
+    "category": "交流・掲示板",
     "tags": [
-      "J-Connect Germany",
-      "理念",
-      "掲載方針",
-      "運営",
-      "生活ポータル"
-    ]
-  },
-  {
-    "title": "お問い合わせ",
-    "description": "掲載依頼、情報提供、修正依頼、コミュニティ関連の連絡先を確認できます。",
-    "url": "/germany/ja/contact/",
-    "category": "サポート",
-    "tags": [
-      "問い合わせ",
-      "掲載依頼",
-      "情報提供",
-      "修正依頼",
-      "連絡"
-    ]
-  },
-  {
-    "title": "ニュース・読みもの",
-    "description": "ドイツ生活、行政、交通、安全、制度変更などのニュースと読みものを出典リンク付きで整理しています。",
-    "url": "/germany/ja/news/",
-    "category": "情報",
-    "tags": [
-      "ニュース",
-      "制度変更",
-      "行政",
-      "交通",
-      "安全",
-      "読みもの"
-    ]
-  },
-  {
-    "title": "おでかけ・イベント",
-    "description": "ドイツで楽しめるおでかけ先、季節イベント、地域交流、家族向けイベントを探せます。",
-    "url": "/germany/ja/events/",
-    "category": "イベント",
-    "tags": [
-      "イベント",
-      "おでかけ",
-      "週末",
-      "季節",
-      "家族",
+      "掲示板",
+      "投稿",
       "交流"
     ]
   },
   {
     "title": "生活・手続き",
-    "description": "住まい、引っ越し、住民登録、滞在許可、保険、税金、銀行、通信、公共料金、家族・教育、交通・運転の基本情報を整理しています。",
+    "description": "住民登録、保険、税金、銀行、通信などドイツ生活の手続きを整理しています。",
     "url": "/germany/ja/living/",
-    "category": "暮らし",
+    "category": "生活・手続き",
     "tags": [
       "生活",
-      "暮らし",
-      "住まい",
       "手続き",
-      "住民登録",
-      "滞在許可",
-      "ビザ",
-      "保険",
-      "税金",
-      "銀行",
-      "家族",
-      "運転"
-    ]
-  },
-  {
-    "title": "ドイツ語・学び",
-    "description": "日常会話、仕事、試験、アプリ、動画、先生、AI活用などのドイツ語学習情報を整理しています。",
-    "url": "/germany/ja/learn-german/",
-    "category": "学び",
-    "tags": [
-      "ドイツ語",
-      "学習",
-      "勉強",
-      "日常会話",
-      "仕事",
-      "試験",
-      "アプリ",
-      "AI"
+      "住民登録"
     ]
   },
   {
     "title": "仕事・求人",
-    "description": "ドイツで働きたい日本語話者向けに、求人、転職、アルバイト、勤務形態、ビザサポートなどの仕事情報を整理しています。",
+    "description": "ドイツの日本語求人を地域、職種、勤務形態から探せます。",
     "url": "/germany/ja/jobs/",
-    "category": "仕事",
+    "category": "仕事・求人",
     "tags": [
-      "仕事",
       "求人",
-      "転職",
-      "アルバイト",
-      "就職",
-      "ビザサポート",
-      "日本語求人"
+      "仕事",
+      "転職"
     ]
   },
   {
-    "title": "求人掲載希望の企業様へ",
-    "description": "J-Connect Germanyに求人情報を掲載したい企業向けの案内ページです。",
-    "url": "/germany/ja/jobs/posting/",
-    "category": "仕事",
+    "title": "ニュース・イベント",
+    "description": "ドイツで参加しやすいイベント記事と週末のおでかけ情報を整理しています。",
+    "url": "/germany/ja/events/",
+    "category": "ニュース・イベント",
     "tags": [
-      "求人掲載",
-      "採用",
-      "企業",
-      "募集",
-      "仕事"
+      "イベント",
+      "週末",
+      "ニュース"
     ]
   },
   {
-    "title": "医療・緊急",
-    "description": "病院、クリニック、家庭医、薬局などの医療情報を日本語で整理しています。",
+    "title": "ドイツ語・学び",
+    "description": "生活で使えるドイツ語フレーズ記事と学習リソースを整理しています。",
+    "url": "/germany/ja/learn-german/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "ドイツ語",
+      "学習",
+      "フレーズ"
+    ]
+  },
+  {
+    "title": "このサイトについて",
+    "description": "J-Connect Germany の理念、掲載方針、対象読者をご案内します。",
+    "url": "/germany/ja/about/",
+    "category": "J-CONNECTについて",
+    "tags": [
+      "運営",
+      "サイト案内"
+    ]
+  },
+  {
+    "title": "お問い合わせ",
+    "description": "掲載依頼、情報提供、修正依頼の連絡先を確認できます。",
+    "url": "/germany/ja/contact/",
+    "category": "J-CONNECTについて",
+    "tags": [
+      "問い合わせ",
+      "掲載依頼"
+    ]
+  },
+  {
+    "title": "最新ニュース",
+    "description": "ドイツ生活、制度、行政、交通、安全に関するニュースを確認できます。",
+    "url": "/germany/ja/news/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "ニュース",
+      "制度",
+      "行政"
+    ]
+  },
+  {
+    "title": "医療",
+    "description": "病院、クリニック、家庭医、薬局などの医療情報を探せます。",
     "url": "/germany/ja/medical/",
-    "category": "医療",
+    "category": "生活・手続き",
     "tags": [
       "医療",
       "病院",
-      "クリニック",
-      "家庭医",
-      "薬局",
-      "緊急",
-      "救急"
+      "緊急"
     ]
   },
   {
-    "title": "グルメ・飲食",
-    "description": "日本食、ラーメン、カフェ、レストラン情報を地域、カテゴリ、評価、価格帯から探せます。",
+    "title": "食べる",
+    "description": "日本食、カフェ、レストラン情報を地域やカテゴリから探せます。",
     "url": "/germany/ja/eat/",
-    "category": "食",
+    "category": "生活・手続き",
     "tags": [
-      "グルメ",
-      "飲食",
-      "日本食",
+      "食べる",
       "レストラン",
-      "ラーメン",
-      "カフェ",
-      "寿司",
-      "居酒屋"
+      "グルメ"
     ]
   },
   {
-    "title": "買い物・サービス",
-    "description": "スーパー、食材店、薬局、日用品店、生活サービスを地域、カテゴリ、評価から探せます。",
+    "title": "買い物",
+    "description": "スーパー、食材店、薬局、生活サービスを探せます。",
     "url": "/germany/ja/shopping/",
-    "category": "買い物",
+    "category": "生活・手続き",
     "tags": [
       "買い物",
-      "ショッピング",
       "スーパー",
-      "食材店",
-      "薬局",
-      "日用品",
       "サービス"
     ]
   },
   {
-    "title": "交流・掲示板",
-    "description": "売ります・買います、部屋、イベント、質問、友達募集、生活サポートの投稿を探せます。",
-    "url": "/germany/ja/community/",
-    "category": "コミュニティ",
-    "tags": [
-      "掲示板",
-      "交流",
-      "売ります",
-      "買います",
-      "譲ります",
-      "友達募集",
-      "質問",
-      "部屋"
-    ]
-  },
-  {
-    "title": "掲示板に投稿する",
-    "description": "コミュニティ掲示板に売買、募集、質問、イベントなどの投稿を送信できます。",
-    "url": "/germany/ja/community/post/",
-    "category": "コミュニティ",
-    "tags": [
-      "投稿",
-      "掲示板",
-      "売買",
-      "募集",
-      "質問",
-      "イベント"
-    ]
-  },
-  {
-    "title": "投稿者に連絡",
-    "description": "コミュニティ掲示板の投稿者へ連絡するためのフォームです。",
-    "url": "/germany/ja/community/contact/",
-    "category": "コミュニティ",
-    "tags": [
-      "連絡",
-      "投稿者",
-      "問い合わせ",
-      "掲示板"
-    ]
-  },
-  {
-    "title": "投稿を通報",
-    "description": "不適切な投稿や気になる投稿を運営へ知らせるためのページです。",
-    "url": "/germany/ja/community/report/",
-    "category": "コミュニティ",
-    "tags": [
-      "通報",
-      "報告",
-      "安全",
-      "掲示板",
-      "不適切"
-    ]
-  },
-  {
-    "title": "利用規約",
-    "description": "J-Connect Germanyの利用条件とサイト利用時の注意事項を確認できます。",
-    "url": "/germany/ja/terms/",
-    "category": "サポート",
-    "tags": [
-      "利用規約",
-      "ルール",
-      "注意事項",
-      "規約"
-    ]
-  },
-  {
-    "title": "プライバシーポリシー",
-    "description": "J-Connect Germanyの個人情報の取り扱いとプライバシー方針を確認できます。",
-    "url": "/germany/ja/privacy/",
-    "category": "サポート",
-    "tags": [
-      "プライバシー",
-      "個人情報",
-      "データ",
-      "方針"
-    ]
-  },
-  {
-    "title": "運営者情報",
-    "description": "J-Connect Germanyの運営者情報、連絡先、法的表示を確認できます。",
-    "url": "/germany/ja/impressum/",
-    "category": "サポート",
-    "tags": [
-      "Impressum",
-      "運営者情報",
-      "連絡先",
-      "法的表示"
-    ]
-  },
-  {
-    "title": "???????????????",
-    "description": "???????????????????????????????????????????????",
+    "title": "営業アシスタント（日本語対応）",
+    "description": "日系顧客との連絡、見積書作成、受発注サポートを担当する営業アシスタント職です。",
     "url": "/germany/ja/jobs/sales-assistant-japanese-duesseldorf/",
-    "category": "??",
+    "category": "仕事・求人",
     "tags": [
-      "??",
-      "??",
-      "????????",
-      "?????"
+      "営業・事務",
+      "日本語対応",
+      "NRW",
+      "Sample listing"
     ]
   },
   {
-    "title": "IT???????????",
-    "description": "???? IT ?????????????????????Microsoft 365??????????",
+    "title": "ITサポートスペシャリスト",
+    "description": "日本語ユーザーを含む社内向け IT サポート、端末管理、アカウント運用を担当します。",
     "url": "/germany/ja/jobs/it-support-specialist-cologne/",
-    "category": "??",
+    "category": "仕事・求人",
     "tags": [
-      "??",
       "IT",
-      "???",
-      "??????"
+      "ヘルプデスク",
+      "ケルン",
+      "Sample listing"
     ]
   },
   {
-    "title": "?????????",
-    "description": "?????????????????????????????????????????????",
+    "title": "経理・会計スタッフ",
+    "description": "請求書処理、支払管理、月次決算補助を担当する経理スタッフ職です。",
     "url": "/germany/ja/jobs/accounting-staff-munich/",
-    "category": "??",
+    "category": "仕事・求人",
     "tags": [
-      "??",
-      "??",
-      "??",
-      "?????"
+      "経理",
+      "会計",
+      "ミュンヘン",
+      "Sample listing"
     ]
   },
   {
-    "title": "????",
-    "description": "?? ID ?????????????????",
+    "title": "求人詳細",
+    "description": "求人IDを指定して開く動的な求人詳細ページです。",
     "url": "/germany/ja/jobs/detail/",
-    "category": "??",
+    "category": "仕事・求人",
     "tags": [
-      "??",
-      "??",
-      "?????"
+      "求人",
+      "詳細"
     ]
   },
   {
-    "title": "????????????????????????",
-    "description": "???????????????????????????????????????",
+    "title": "デュッセルドルフ日本デーを楽しむための基本ガイド",
+    "description": "ライン川沿いで開かれる日本文化イベントを、初めて参加する人向けに整理しました。",
     "url": "/germany/ja/events/japan-day-duesseldorf/",
-    "category": "????",
+    "category": "ニュース・イベント",
     "tags": [
-      "????",
-      "????",
-      "????????",
-      "????"
+      "日本文化",
+      "家族向け",
+      "NRW"
     ]
   },
   {
-    "title": "??????????????????",
-    "description": "?????????????????????????????????",
+    "title": "ケルンの週末フリーマーケット散策メモ",
+    "description": "生活用品探しや週末散歩に使いやすい、ケルン周辺マーケットの楽しみ方。",
     "url": "/germany/ja/events/cologne-flea-market/",
-    "category": "????",
+    "category": "ニュース・イベント",
     "tags": [
-      "????",
-      "?????",
-      "???",
-      "??"
+      "買い物",
+      "週末",
+      "ケルン"
     ]
   },
   {
-    "title": "??????????????????",
-    "description": "???????????????????????????????????",
+    "title": "ボン日本映画フェスティバル鑑賞ガイド",
+    "description": "日本映画をドイツで楽しむためのチケット確認、上映言語、アクセスのメモ。",
     "url": "/germany/ja/events/bonn-japanese-film-festival/",
-    "category": "????",
+    "category": "ニュース・イベント",
     "tags": [
-      "????",
-      "??",
-      "??",
-      "????"
+      "映画",
+      "日本文化",
+      "ボン"
     ]
   },
   {
-    "title": "??????",
-    "description": "???? ID ???????????????????",
+    "title": "イベント詳細",
+    "description": "イベントIDを指定して開く動的なイベント詳細ページです。",
     "url": "/germany/ja/events/detail/",
-    "category": "????",
+    "category": "ニュース・イベント",
     "tags": [
-      "????",
-      "??",
-      "?????"
+      "イベント",
+      "詳細"
     ]
   },
   {
-    "title": "??????????????????",
-    "description": "????????????????????????????????",
+    "title": "予約を取りたいときのドイツ語フレーズ",
+    "description": "病院、美容室、役所などで使える予約依頼、空き確認、日時変更の基本表現です。",
     "url": "/germany/ja/learn-german/appointment-phrase/",
-    "category": "???????",
+    "category": "ドイツ語・学び",
     "tags": [
-      "????",
-      "??",
-      "????",
+      "予約",
+      "日常会話",
       "A1"
     ]
   },
   {
-    "title": "?????????????",
-    "description": "????????????????????????????????",
+    "title": "病院予約の電話で使うドイツ語",
+    "description": "病院・小児科・専門医に電話で予約を取るための基本フレーズと会話例です。",
     "url": "/germany/ja/learn-german/hospital-phrases/",
-    "category": "???????",
+    "category": "ドイツ語・学び",
     "tags": [
-      "????",
-      "??",
-      "??",
-      "????"
+      "病院",
+      "症状説明",
+      "電話"
     ]
   },
   {
-    "title": "?????????????????",
-    "description": "????????????????????????????????????",
+    "title": "ビジネスメールで使う丁寧なドイツ語表現",
+    "description": "依頼、確認、催促、謝罪、日程調整で使える職場向けドイツ語メール表現です。",
     "url": "/germany/ja/learn-german/work-email-phrases/",
-    "category": "???????",
+    "category": "ドイツ語・学び",
     "tags": [
-      "????",
-      "??",
-      "???",
+      "仕事",
+      "メール",
       "B1"
+    ]
+  },
+  {
+    "title": "求人掲載について",
+    "description": "J-Connect Germany に求人情報を掲載したい企業向けの案内です。",
+    "url": "/germany/ja/jobs/posting/",
+    "category": "仕事・求人",
+    "tags": [
+      "採用",
+      "求人掲載"
+    ]
+  },
+  {
+    "title": "利用規約",
+    "description": "J-Connect Germany の利用条件と注意事項です。",
+    "url": "/germany/ja/terms/",
+    "category": "J-CONNECTについて",
+    "tags": [
+      "規約",
+      "ルール"
+    ]
+  },
+  {
+    "title": "プライバシー",
+    "description": "個人情報の取り扱いとプライバシー方針です。",
+    "url": "/germany/ja/privacy/",
+    "category": "J-CONNECTについて",
+    "tags": [
+      "プライバシー",
+      "個人情報"
+    ]
+  },
+  {
+    "title": "運営者情報",
+    "description": "J-Connect Germany の運営者情報と法的表示です。",
+    "url": "/germany/ja/impressum/",
+    "category": "J-CONNECTについて",
+    "tags": [
+      "運営者情報",
+      "Impressum"
     ]
   }
 ];

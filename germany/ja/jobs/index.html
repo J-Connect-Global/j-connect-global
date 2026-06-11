@@ -46,7 +46,8 @@
   document.head.appendChild(js);
 })();
 </script>
-  </head>
+<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
+</head>
 
 <body>
   <header class="site-header">
@@ -266,6 +267,7 @@
 </footer>
 
   <script src="/assets/js/data-sources.js"></script>
+  <script src="/assets/js/jobs-fallback.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
     const JOBS_API_URL = DATA_SOURCES.buildDirectoryUrl({
@@ -403,9 +405,14 @@
       return getSavedJobs().has(String(id));
     }
 
+    function getJobDetailPath(job){
+      if (job.detail_url) return job.detail_url;
+      if (job.slug) return `/germany/ja/jobs/${encodeURIComponent(job.slug)}/`;
+      return `/germany/ja/jobs/detail/?id=${encodeURIComponent(job.id)}`;
+    }
+
     function getJobDetailUrl(job){
-      const base = `${location.origin}${location.pathname}${location.search}`;
-      return `${base}#job-${encodeURIComponent(job.id)}`;
+      return new URL(getJobDetailPath(job), location.origin).toString();
     }
 
     async function copyText(text){
@@ -489,6 +496,8 @@
 
       return {
         id: id,
+        slug: getValue(row, 'slug', 'job_slug'),
+        detail_url: getValue(row, 'detail_url', 'detailUrl', 'detail_page_url'),
         status: getValue(row, 'status') || 'Inactive',
         priority: toNumber(getValue(row, 'priority')) || 999,
 
@@ -519,6 +528,7 @@
         apply_url: applyUrl,
         source_url: sourceUrl,
         source_name: getValue(row, 'source_name', 'source', 'publisher'),
+        sample_label: getValue(row, 'sample_label', 'test_label'),
 
         free_comment: getValue(row, 'free_comment'),
         free_comment_en: getValue(row, 'free_comment_en'),
@@ -563,6 +573,38 @@
     function initFilters(){
       Object.keys(filterState).forEach(key => { filterState[key] = ''; });
       renderFilterChips();
+    }
+
+    function getSortTimestamp(item){
+      const candidates = [
+        item.published_at,
+        item.updated_at,
+        item.posted_at,
+        item.event_date
+      ];
+      for (const value of candidates) {
+        const time = Date.parse(value);
+        if (Number.isFinite(time)) return time;
+      }
+      return 0;
+    }
+
+    function sortNewestFirst(a, b){
+      const dateDiff = getSortTimestamp(b) - getSortTimestamp(a);
+      if (dateDiff) return dateDiff;
+      if (a.priority !== b.priority) return a.priority - b.priority;
+      return String(a.company_name).localeCompare(String(b.company_name), 'ja');
+    }
+
+    function useFallbackJobs(){
+      jobs = (window.JCONNECT_FALLBACK_JOBS || [])
+        .map(normalizeJob)
+        .filter(job => normalize(job.status) === 'active')
+        .sort(sortNewestFirst);
+
+      selectedId = jobs[0]?.id || null;
+      initFilters();
+      filterJobs();
     }
 
     function fetchWithTimeout(url, options = {}){
@@ -620,10 +662,12 @@
             job.summary,
             job.job_details
           ].join('')).length > 0)
-          .sort((a,b) => {
-            if (a.priority !== b.priority) return a.priority - b.priority;
-            return String(a.company_name).localeCompare(String(b.company_name), 'ja');
-          });
+          .sort(sortNewestFirst);
+
+        if (!jobs.length) {
+          useFallbackJobs();
+          return;
+        }
 
         selectedId = jobs[0]?.id || null;
 
@@ -631,13 +675,9 @@
         filterJobs();
 
       } catch (error) {
-        console.error('Jobs data load failed:', JOBS_API_URL, error);
+        console.warn('Jobs data load failed:', JOBS_API_URL, error);
 
-        jobs = [];
-        filtered = [];
-        selectedId = null;
-
-        renderJobsLoadError();
+        useFallbackJobs();
       }
     }
 
@@ -777,9 +817,10 @@
           { label: job.detail_category }
         ].filter(chip => chip.label);
         const tags = splitList(job.tags || job.skills).slice(0, 3);
+        const detailPath = getJobDetailPath(job);
 
         return `
-          <article class="card job-card ${String(job.id) === String(selectedId) ? 'active' : ''}" data-id="${escapeHtml(job.id)}">
+          <article class="card job-card ${String(job.id) === String(selectedId) ? 'active' : ''}" data-id="${escapeHtml(job.id)}" data-detail-url="${escapeHtml(detailPath)}">
             <button class="save-button ${saved ? 'saved' : ''}" type="button" data-save-id="${escapeHtml(job.id)}" aria-label="${saved ? '保存を解除' : '保存する'}">${saved ? '★' : '☆'}</button>
             <div class="job-card-body">
               <div class="job-main">
@@ -802,7 +843,7 @@
               </div>
 
               <div class="job-card-actions">
-                <button class="card-action primary" type="button" data-detail-id="${escapeHtml(job.id)}">詳細を見る</button>
+                <a class="card-action primary" href="${escapeHtml(detailPath)}">詳細を見る</a>
                 <button class="card-action" type="button" data-copy-id="${escapeHtml(job.id)}">URLコピー</button>
                 ${job.apply_url ? `<a class="card-action" href="${escapeHtml(job.apply_url)}" target="_blank" rel="noopener noreferrer">応募・掲載元</a>` : ''}
               </div>
@@ -812,29 +853,16 @@
       }).join('');
 
       els.cards.querySelectorAll('.card').forEach(card => {
-        card.setAttribute('role', 'button');
+        card.setAttribute('role', 'link');
         card.setAttribute('tabindex', '0');
         card.addEventListener('click', event => {
           if (event.target.closest('a, button')) return;
-          selectedId = card.dataset.id;
-          renderCards();
-          openListingModal();
+          window.location.href = card.dataset.detailUrl;
         });
         card.addEventListener('keydown', event => {
           if (event.key !== 'Enter' && event.key !== ' ') return;
           event.preventDefault();
-          selectedId = card.dataset.id;
-          renderCards();
-          openListingModal();
-        });
-      });
-
-      els.cards.querySelectorAll('[data-detail-id]').forEach(button => {
-        button.addEventListener('click', event => {
-          event.stopPropagation();
-          selectedId = button.dataset.detailId;
-          renderCards();
-          openListingModal();
+          window.location.href = card.dataset.detailUrl;
         });
       });
 

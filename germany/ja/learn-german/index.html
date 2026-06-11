@@ -16,7 +16,7 @@
   <style>
 /* Page-specific styles. Shared site styles live in the common site stylesheet. */
 :root{
-  --bg: #f7f4ef;
+  --bg: #f4f8fc;
   --surface: rgba(255, 255, 255, 0.92);
   --surface-strong: #ffffff;
   --line: rgba(91, 72, 51, 0.16);
@@ -24,10 +24,10 @@
   --text: #2f261d;
   --muted: #75685b;
   --muted-2: #9a8b7a;
-  --brand: #b98246;
-  --brand-dark: #7b4d25;
-  --hover-pink: #d85c8a;
-  --hover-pink-bg: rgba(216, 92, 138, 0.10);
+  --brand: #004f98;
+  --brand-dark: #00366d;
+  --hover-blue: #004f98;
+  --hover-blue-bg: rgba(0, 103, 201, 0.10);
   --accent: #1f7a63;
   --shadow: 0 18px 45px rgba(67, 49, 30, 0.10);
   --radius-lg: 28px;
@@ -48,8 +48,8 @@
     }
 
 .nav a:hover{
-      color: var(--hover-pink);
-      background: var(--hover-pink-bg);
+      color: var(--hover-blue);
+      background: var(--hover-blue-bg);
     }
 
 .page{
@@ -150,7 +150,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(185, 130, 70, 0.14), rgba(31, 122, 99, 0.08));
+      background: linear-gradient(135deg, rgba(0, 79, 152, 0.14), rgba(31, 122, 99, 0.08));
       opacity: 0;
       transition: 0.2s ease;
     }
@@ -174,7 +174,7 @@
       width: 44px;
       height: 44px;
       border-radius: 15px;
-      background: rgba(185, 130, 70, 0.14);
+      background: rgba(0, 79, 152, 0.14);
       display: grid;
       place-items: center;
       font-size: 22px;
@@ -216,9 +216,9 @@
     }
 
 .pill-btn:hover{
-      color: var(--hover-pink);
-      background: var(--hover-pink-bg);
-      border-color: rgba(216, 92, 138, 0.35);
+      color: var(--hover-blue);
+      background: var(--hover-blue-bg);
+      border-color: rgba(0, 103, 201, 0.22);
     }
 
 .route-grid{
@@ -342,8 +342,8 @@
       font-size: 12px;
       font-weight: 800;
       color: var(--brand-dark);
-      background: rgba(185, 130, 70, 0.13);
-      border: 1px solid rgba(185, 130, 70, 0.20);
+      background: rgba(0, 79, 152, 0.13);
+      border: 1px solid rgba(0, 79, 152, 0.20);
     }
 
 .resource-card h3{
@@ -394,7 +394,7 @@
     }
 
 .resource-card__link:hover{
-      background: var(--hover-pink);
+      background: var(--hover-blue);
     }
 
 .resource-empty{
@@ -453,8 +453,8 @@
   --listing-line-strong:#CBD5E1;
   --listing-navy:#1E3A5F;
   --listing-navy-hover:#16304E;
-  --listing-sakura:#E8A2B8;
-  --listing-sakura-light:#FCEFF4;
+  --listing-accent:#0067c9;
+  --listing-accent-soft:#eaf4ff;
   --listing-shadow:0 6px 14px rgba(30,58,95,.04);
   --listing-shadow-hover:0 12px 24px rgba(30,58,95,.08);
   --listing-radius:16px;
@@ -478,7 +478,7 @@ body{
   --text:var(--listing-ink);
   --muted:var(--listing-muted);
   --muted-2:#7d8893;
-  --brand:#d84b6a;
+  --brand:#004f98;
   --brand-dark:var(--listing-navy);
   --accent:var(--listing-navy);
   --shadow:var(--listing-shadow);
@@ -562,7 +562,7 @@ body{
 }
 
 .entry-card__icon{
-  background:var(--listing-sakura-light);
+  background:var(--listing-accent-soft);
 }
 
 .filter-panel{
@@ -600,7 +600,8 @@ body{
 }
 
 </style>
-  </head>
+<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
+</head>
 
 <body>
   <header class="site-header">
@@ -663,6 +664,35 @@ body{
         <div class="hero-kicker">Deutsch lernen in Deutschland</div>
         <h1>ドイツ語・学び</h1>
         <p>日常生活、仕事、試験、AI、アプリ、動画、先生、コミュニティまで。ドイツ在住日本人が続けやすい学習ルートをまとめました。</p>
+      </div>
+    </section>
+
+    <section class="jc-section" aria-labelledby="learn-articles-title">
+      <div class="jc-section-head">
+        <div>
+          <h2 id="learn-articles-title">生活で使うドイツ語記事</h2>
+          <p>予約、病院、仕事メールなど、ドイツ生活の具体的な場面ごとに読める記事です。</p>
+        </div>
+      </div>
+      <div class="jc-card-grid">
+        <a class="jc-card" href="/germany/ja/learn-german/appointment-phrase/">
+          <div class="jc-chip-row"><span class="jc-chip is-primary">日常</span><span class="jc-chip">予約</span><span class="jc-chip">A1-A2</span></div>
+          <h3>予約を取りたいときのドイツ語フレーズ</h3>
+          <p>病院、美容室、役所などで使える「予約したいです」「空きはありますか」の基本表現。</p>
+          <div class="jc-meta"><span>フレーズ</span><span>5分で確認</span></div>
+        </a>
+        <a class="jc-card" href="/germany/ja/learn-german/hospital-phrases/">
+          <div class="jc-chip-row"><span class="jc-chip is-primary">医療</span><span class="jc-chip">病院</span><span class="jc-chip">A1-A2</span></div>
+          <h3>病院で使うドイツ語フレーズ</h3>
+          <p>受付、症状説明、薬の確認まで、診察前後に使う表現をまとめました。</p>
+          <div class="jc-meta"><span>会話例</span><span>生活ドイツ語</span></div>
+        </a>
+        <a class="jc-card" href="/germany/ja/learn-german/work-email-phrases/">
+          <div class="jc-chip-row"><span class="jc-chip is-primary">仕事</span><span class="jc-chip">メール</span><span class="jc-chip">B1-B2</span></div>
+          <h3>仕事メールで使う丁寧なドイツ語表現</h3>
+          <p>依頼、確認、日程調整、催促をやわらかく伝える職場向けフレーズ集。</p>
+          <div class="jc-meta"><span>テンプレート</span><span>ビジネス</span></div>
+        </a>
       </div>
     </section>
 

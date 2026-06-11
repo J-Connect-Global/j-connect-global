@@ -17,11 +17,11 @@
       --events-teal:#14b8a6;
       --events-blue:#2f80ed;
       --events-yellow:#f5b83b;
-      --events-pink:#d84b6a;
+      --events-blue-accent:#004f98;
       --events-ink:#16202a;
       --events-muted:#5f6b76;
       --events-border:#d9e0e8;
-      --events-paper:#fffdfb;
+      --events-paper:#ffffff;
       --events-soft:#f8fbfb;
     }
 
@@ -80,7 +80,7 @@
       align-items:center;
       gap:9px;
       padding:7px 12px;
-      border:1px solid rgba(216,75,106,.25);
+      border:1px solid rgba(0, 79, 152,.25);
       border-radius:999px;
       background:rgba(255,255,255,.74);
       color:var(--brand);
@@ -94,7 +94,7 @@
       width:9px;
       height:9px;
       border-radius:999px;
-      background:linear-gradient(135deg,var(--events-pink),var(--events-teal));
+      background:linear-gradient(135deg,var(--events-blue-accent),var(--events-teal));
     }
 
     .events-hero-title{
@@ -319,7 +319,7 @@
 
     .event-card.season{--card-accent:#14b8a6;--card-rgb:20,184,166;--card-dark:#115e59;}
     .event-card.family{--card-accent:#2f80ed;--card-rgb:47,128,237;--card-dark:#1e40af;}
-    .event-card.community{--card-accent:#d84b6a;--card-rgb:216,75,106;--card-dark:#9f2846;}
+    .event-card.community{--card-accent:#004f98;--card-rgb:0,79,152;--card-dark:#00366d;}
     .event-card.weekend{--card-accent:#f5b83b;--card-rgb:245,184,59;--card-dark:#7a4507;}
 
     .events-feature-grid{
@@ -402,7 +402,7 @@
       margin-top:16px;
       min-height:44px;
       padding:0 18px;
-      border:1px solid rgba(216,75,106,.22);
+      border:1px solid rgba(0, 79, 152,.22);
       border-radius:999px;
       background:var(--brand);
       color:#fff;
@@ -512,8 +512,8 @@
   --listing-line-strong:#CBD5E1;
   --listing-navy:#1E3A5F;
   --listing-navy-hover:#16304E;
-  --listing-sakura:#E8A2B8;
-  --listing-sakura-light:#FCEFF4;
+  --listing-accent:#0067c9;
+  --listing-accent-soft:#eaf4ff;
   --listing-shadow:0 6px 14px rgba(30,58,95,.04);
   --listing-shadow-hover:0 12px 24px rgba(30,58,95,.08);
   --listing-radius:16px;
@@ -531,7 +531,7 @@ body{
 :root{
   --events-teal:var(--listing-navy);
   --events-blue:var(--listing-navy);
-  --events-pink:#d84b6a;
+  --events-blue-accent:#004f98;
   --events-ink:var(--listing-ink);
   --events-muted:var(--listing-muted);
   --events-border:var(--listing-line);
@@ -562,7 +562,7 @@ body{
 }
 
 .events-dot{
-  background:var(--listing-sakura);
+  background:var(--listing-accent);
 }
 
 .events-hero-title{
@@ -607,7 +607,7 @@ body{
 
 .event-chip,
 .events-status-mark{
-  background:var(--listing-sakura-light);
+  background:var(--listing-accent-soft);
   color:var(--listing-navy);
 }
 
@@ -643,6 +643,7 @@ body{
       document.head.appendChild(js);
     })();
   </script>
+<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
 </head>
 
 <body>
@@ -817,10 +818,10 @@ body{
         <div class="events-feature-grid">
           <div class="events-notice">
             <div>
-              <div class="events-section-kicker">Coming Soon</div>
-              <h2 id="events-preparing-title">掲載予定・準備中</h2>
+              <div class="events-section-kicker">Editorial Notes</div>
+              <h2 id="events-preparing-title">イベント情報の見方</h2>
               <p>
-                現在、イベント情報は順次追加していく準備中です。まずはカテゴリごとの入口を整え、今後は開催日、地域、対象年齢、参加方法などを分かりやすく確認できる形にしていきます。
+                開催日、地域、対象年齢、参加方法、公式リンクを確認しやすいよう、イベント情報を記事形式で整理しています。外部イベントは変更されることがあるため、参加前に必ず公式情報も確認してください。
               </p>
             </div>
 
@@ -930,6 +931,7 @@ body{
 </footer>
 
   <script src="/assets/js/data-sources.js"></script>
+  <script src="/assets/js/events-fallback.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
     const EVENTS_API_URL = DATA_SOURCES.buildDirectoryUrl({
@@ -970,30 +972,58 @@ body{
       return "";
     }
 
+    function getEventDetailPath(item) {
+      const detailUrl = getField(item, "detail_url", "detailUrl", "article_url");
+      if (detailUrl) return detailUrl;
+      const slug = getField(item, "slug", "event_slug");
+      if (slug) return `/germany/ja/events/${encodeURIComponent(slug)}/`;
+      const id = getField(item, "event_id", "id", "slug") || getField(item, "title", "name");
+      return `/germany/ja/events/detail/?id=${encodeURIComponent(id)}`;
+    }
+
+    function getSortTimestamp(item) {
+      const candidates = [
+        getField(item, "published_at", "published"),
+        getField(item, "updated_at", "updated"),
+        getField(item, "posted_at", "posted_date"),
+        getField(item, "event_date", "date", "start_date")
+      ];
+      for (const value of candidates) {
+        const time = Date.parse(value);
+        if (Number.isFinite(time)) return time;
+      }
+      return 0;
+    }
+
+    function sortNewestFirst(rows) {
+      return [...rows].sort((a, b) => getSortTimestamp(b) - getSortTimestamp(a));
+    }
+
     function renderDynamicEvents(rows) {
       if (!eventsDynamicSection || !eventsDynamicCards || !rows.length) return;
 
       eventsDynamicSummary.textContent = `${rows.length}件のイベントを表示しています。`;
-      eventsDynamicCards.innerHTML = rows.map((item) => {
+      eventsDynamicCards.innerHTML = sortNewestFirst(rows).map((item) => {
         const title = getField(item, "title", "name") || "イベント名未設定";
         const date = getField(item, "date", "event_date", "start_date");
         const city = getField(item, "city", "region", "area");
         const venue = getField(item, "venue", "location", "address");
         const description = getField(item, "description", "short_description", "detail_comment") || "詳細は準備中です。";
-        const url = getField(item, "url", "website", "official_url");
+        const url = getEventDetailPath(item);
         const image = getField(item, "image", "image_url", "thumbnail");
+        const category = getField(item, "category", "type") || date || city || "イベント";
         const meta = [date, city, venue].filter(Boolean).join(" / ");
 
         return `
           <article class="event-card">
             <div>
               ${image ? `<img class="event-card-image" src="${escapeHtml(image)}" alt="${escapeHtml(title)}" loading="lazy" decoding="async" onerror="this.remove()">` : ""}
-              <span class="event-card-label">${escapeHtml(date || city || "イベント")}</span>
+              <span class="event-card-label">${escapeHtml(category)}</span>
               <h3>${escapeHtml(title)}</h3>
               ${meta ? `<p>${escapeHtml(meta)}</p>` : ""}
               <p>${escapeHtml(description)}</p>
             </div>
-            ${url ? `<a class="events-cta-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">詳細を見る</a>` : ""}
+            <a class="events-cta-link" href="${escapeHtml(url)}">記事を読む</a>
           </article>
         `;
       }).join("");
@@ -1004,9 +1034,10 @@ body{
       try {
         const payload = await DATA_SOURCES.fetchJsonWithTimeout(EVENTS_API_URL, DATA_TIMEOUT_MS);
         const rows = DATA_SOURCES.normalizePayload(payload);
-        renderDynamicEvents(rows);
+        renderDynamicEvents(rows.length ? rows : (window.JCONNECT_FALLBACK_EVENTS || []));
       } catch (error) {
-        console.error("Events data load failed:", EVENTS_API_URL, error);
+        console.warn("Events data load failed:", EVENTS_API_URL, error);
+        renderDynamicEvents(window.JCONNECT_FALLBACK_EVENTS || []);
       }
     }
 

@@ -17,9 +17,9 @@
 /* Page-specific styles. Shared site styles live in the common site stylesheet. */
 :root{
   --red:#e8002d;
-  --orange:#ff6b2b;
+  --orange:#0067c9;
   --cream:#fdf8f2;
-  --paper:#fffdf9;
+  --paper:#ffffff;
   --ink:#1a1014;
   --muted:#6b5e68;
   --border:#ede5e0;
@@ -45,19 +45,19 @@
 
 .news-section{padding:8px 0 60px}
 
-.news-disclaimer{margin:0 0 16px;padding:14px 16px;border-radius:14px;background:#fff4f7;border:1px solid #f3c8d4;color:#6e3b4a;font-size:13px}
+.news-disclaimer{margin:0 0 16px;padding:14px 16px;border-radius:14px;background:#eaf4ff;border:1px solid #b8d0eb;color:#6e3b4a;font-size:13px}
 
 .news-controls{display:grid;grid-template-columns:2fr repeat(4, minmax(130px,1fr));gap:12px;padding:20px;background:rgba(255,255,255,.88);border:1px solid #e5ebf2;border-radius:22px;box-shadow:var(--card-shadow);margin-bottom:18px}
 
 .news-controls input,.news-controls select{height:46px;border-radius:14px;border:1px solid #d9e0e8;background:#fff;padding:0 14px;font-size:14px;color:#2f3e4c;outline:none;transition:all .18s ease}
 
-.news-controls input:focus,.news-controls select:focus{border-color:#f3c8d4;box-shadow:0 0 0 3px rgba(243,200,212,.28)}
+.news-controls input:focus,.news-controls select:focus{border-color:#b8d0eb;box-shadow:0 0 0 3px rgba(243,200,212,.28)}
 
 .news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 
 .news-card{display:flex;flex-direction:column;gap:12px;padding:18px;background:rgba(255,255,255,.94);border:1px solid #e5ebf2;border-radius:18px;box-shadow:var(--card-shadow);transition:all .2s ease}
 
-.news-card:hover{transform:translateY(-3px);border-color:#f3c8d4;box-shadow:0 16px 30px rgba(216,75,106,.12)}
+.news-card:hover{transform:translateY(-3px);border-color:#b8d0eb;box-shadow:0 16px 30px rgba(0, 79, 152,.12)}
 
 .news-card h2{font-size:20px;line-height:1.35}
 
@@ -67,7 +67,7 @@
 
 .news-card__badges{display:flex;flex-wrap:wrap;gap:8px}
 
-.news-card__badges span{font-size:12px;padding:4px 10px;border-radius:999px;background:#fff4f7;border:1px solid #f3c8d4;color:#a93250}
+.news-card__badges span{font-size:12px;padding:4px 10px;border-radius:999px;background:#eaf4ff;border:1px solid #b8d0eb;color:#a93250}
 
 .news-card__meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:#6f6270;border-top:1px dashed #eadce2;padding-top:8px}
 
@@ -99,8 +99,8 @@
   --listing-line-strong:#CBD5E1;
   --listing-navy:#1E3A5F;
   --listing-navy-hover:#16304E;
-  --listing-sakura:#E8A2B8;
-  --listing-sakura-light:#FCEFF4;
+  --listing-accent:#0067c9;
+  --listing-accent-soft:#eaf4ff;
   --listing-shadow:0 6px 14px rgba(30,58,95,.04);
   --listing-shadow-hover:0 12px 24px rgba(30,58,95,.08);
   --listing-radius:16px;
@@ -117,7 +117,7 @@ body{
 
 :root{
   --red:var(--listing-navy);
-  --orange:var(--listing-sakura);
+  --orange:var(--listing-accent);
   --cream:var(--listing-bg);
   --paper:var(--listing-paper);
   --ink:var(--listing-ink);
@@ -150,7 +150,7 @@ body{
 }
 
 .eyebrow-dot{
-  background:var(--listing-sakura);
+  background:var(--listing-accent);
 }
 
 .hero h1{
@@ -222,7 +222,7 @@ body{
 }
 
 .news-card__badges span{
-  background:var(--listing-sakura-light);
+  background:var(--listing-accent-soft);
   border-color:var(--listing-line);
   color:var(--listing-navy);
 }
@@ -238,7 +238,8 @@ body{
 }
 
 </style>
-  </head>
+<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
+</head>
 <body>
   <header class="site-header">
   <div class="container header-inner">

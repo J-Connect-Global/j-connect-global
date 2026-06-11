@@ -1,0 +1,61 @@
+(function (window) {
+  window.JCONNECT_FALLBACK_EVENTS = [
+    {
+      id: "japan-day-duesseldorf",
+      slug: "japan-day-duesseldorf",
+      detail_url: "/germany/ja/events/japan-day-duesseldorf/",
+      title: "デュッセルドルフ日本デーを楽しむための基本ガイド",
+      summary: "ライン川沿いで開かれる日本文化イベントを、初めて参加する人向けに整理しました。",
+      date: "2026-05-30",
+      event_date: "2026-05-30",
+      location: "Dusseldorf / Rheinuferpromenade",
+      city: "Dusseldorf",
+      category: "文化イベント",
+      tags: "日本文化,家族向け,NRW",
+      description: "混雑しやすい時間帯、アクセス、持ち物、子連れで動きやすい見方をまとめたイベント記事です。",
+      body: "日本デーは、屋台、ステージ、文化紹介、花火などを楽しめる大規模イベントです。早めの移動、公共交通機関の利用、待ち合わせ場所の事前確認がおすすめです。",
+      access_notes: "Dusseldorf Hbf から公共交通機関で中心部へ。混雑時は一駅手前から歩く選択肢もあります。",
+      official_url: "https://www.japantag-duesseldorf-nrw.de/",
+      published_at: "2026-06-09",
+      updated_at: "2026-06-09"
+    },
+    {
+      id: "cologne-flea-market",
+      slug: "cologne-flea-market",
+      detail_url: "/germany/ja/events/cologne-flea-market/",
+      title: "ケルンの週末フリーマーケット散策メモ",
+      summary: "生活用品探しや週末散歩に使いやすい、ケルン周辺のマーケットの楽しみ方。",
+      date: "2026-06-14",
+      event_date: "2026-06-14",
+      location: "Cologne / Stadtflohmarkt area",
+      city: "Cologne",
+      category: "マーケット",
+      tags: "買い物,週末,ケルン",
+      description: "現金の用意、午前中の回り方、家具や食器を探すときのポイントをまとめています。",
+      body: "ドイツのフリーマーケットは、生活用品、古本、食器、小さな家具を探すのに便利です。値段交渉は丁寧に、持ち帰り手段も考えておくと安心です。",
+      access_notes: "会場ごとに開催日が異なるため、出発前に公式情報を確認してください。",
+      official_url: "https://www.koeln.de/",
+      published_at: "2026-06-08",
+      updated_at: "2026-06-08"
+    },
+    {
+      id: "bonn-japanese-film-festival",
+      slug: "bonn-japanese-film-festival",
+      detail_url: "/germany/ja/events/bonn-japanese-film-festival/",
+      title: "ボン日本映画フェスティバル鑑賞ガイド",
+      summary: "日本映画をドイツで楽しむためのチケット確認、上映言語、アクセスのメモ。",
+      date: "2026-06-21",
+      event_date: "2026-06-21",
+      location: "Bonn / Innenstadt cinema",
+      city: "Bonn",
+      category: "映画・文化",
+      tags: "映画,日本文化,ボン",
+      description: "日本語音声、字幕、上映後イベントの確認ポイントを記事形式でまとめました。",
+      body: "映画イベントでは、上映言語と字幕言語を事前に確認しておくと安心です。小規模上映は席数が限られるため、早めの予約がおすすめです。",
+      access_notes: "Bonn Hbf から徒歩または市電でアクセス。夜の上映後は帰宅ルートを先に確認しておきましょう。",
+      official_url: "https://www.bonn.de/",
+      published_at: "2026-06-07",
+      updated_at: "2026-06-07"
+    }
+  ];
+})(window);

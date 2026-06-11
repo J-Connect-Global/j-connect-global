@@ -6,9 +6,9 @@
   --text:#16202a;
   --muted:#5f6b76;
   --muted-2:#7d8893;
-  --brand:#d84b6a;
-  --hover-pink:#f3c8d4;
-  --hover-pink-bg:#fff4f7;
+  --brand:#004f98;
+  --hover-blue:#b8d0eb;
+  --hover-blue-bg:#eaf4ff;
   --accent:#2f80ed;
   --container:1220px;
   line-height:1.6;
@@ -113,8 +113,8 @@
 
 .header-category:hover,
 .header-language:hover{
-  border-color:var(--hover-pink);
-  background:var(--hover-pink-bg);
+  border-color:var(--hover-blue);
+  background:var(--hover-blue-bg);
   transform:translateY(-1px);
 }
 
@@ -185,8 +185,8 @@
 }
 
 .category-dropdown a:hover{
-  background:var(--hover-pink-bg);
-  border:1px solid var(--hover-pink);
+  background:var(--hover-blue-bg);
+  border:1px solid var(--hover-blue);
   color:var(--brand);
   transform:translateY(-1px);
 }
@@ -293,8 +293,8 @@
 
 .header-nav a:hover{
   color:var(--brand);
-  border-color:var(--hover-pink);
-  background:var(--hover-pink-bg);
+  border-color:var(--hover-blue);
+  background:var(--hover-blue-bg);
   transform:translateY(-1px);
 }
 
@@ -386,8 +386,8 @@
 
 .footer-links a:hover{
   color:var(--brand);
-  border-color:var(--hover-pink);
-  background:var(--hover-pink-bg);
+  border-color:var(--hover-blue);
+  background:var(--hover-blue-bg);
   transform:translateY(-1px);
 }
 

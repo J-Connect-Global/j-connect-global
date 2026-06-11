@@ -71,6 +71,41 @@
     "recommended_use_ja": "外人局への問い合わせ・催促メール"
   },
   {
+    "id": "daily-appointment-phrase-a1",
+    "status": "published",
+    "priority": "high",
+    "title_ja": "予約を取りたいときのドイツ語フレーズ",
+    "summary_ja": "病院、美容室、役所などで使える予約依頼、空き確認、日時変更の基本表現です。",
+    "layer1": "daily",
+    "layer2": "appointment",
+    "level": [
+      "A1",
+      "A2"
+    ],
+    "purpose": [
+      "daily-life",
+      "conversation"
+    ],
+    "scene": [
+      "phone",
+      "appointment"
+    ],
+    "skill": [
+      "speaking",
+      "listening"
+    ],
+    "format": [
+      "phrases",
+      "dialogue"
+    ],
+    "content_type": "original",
+    "source_type": "j-connect",
+    "price": "free",
+    "url": "/germany/ja/learn-german/appointment-phrase/",
+    "cta_label": "記事を読む",
+    "recommended_use_ja": "予約・日時変更・空き確認"
+  },
+  {
     "id": "daily-hospital-appointment-a2",
     "status": "published",
     "priority": "high",
@@ -102,8 +137,8 @@
     "content_type": "original",
     "source_type": "j-connect",
     "price": "free",
-    "url": "#",
-    "cta_label": "準備中",
+    "url": "/germany/ja/learn-german/hospital-phrases/",
+    "cta_label": "記事を読む",
     "recommended_use_ja": "病院予約・症状説明"
   },
   {
@@ -136,8 +171,8 @@
     "content_type": "original",
     "source_type": "j-connect",
     "price": "free",
-    "url": "#",
-    "cta_label": "準備中",
+    "url": "/germany/ja/learn-german/work-email-phrases/",
+    "cta_label": "記事を読む",
     "recommended_use_ja": "職場メール・日程調整"
   },
   {

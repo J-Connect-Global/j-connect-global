@@ -6,10 +6,10 @@
   --text:#16202a;
   --muted:#5f6b76;
   --muted-2:#7d8893;
-  --brand:#d84b6a;
-  --brand-dark:#bc3856;
-  --hover-pink:#f3c8d4;
-  --hover-pink-bg:#fff4f7;
+  --brand:#004f98;
+  --brand-dark:#00366d;
+  --hover-blue:#b8d0eb;
+  --hover-blue-bg:#eaf4ff;
   --accent:#2f80ed;
   --shadow:0 12px 32px rgba(19,35,58,.12);
   --shadow-hover:0 18px 42px rgba(19,35,58,.12);
@@ -125,8 +125,8 @@ button,input,select{font:inherit;}
 
 .header-category:hover,
 .header-language:hover{
-  border-color:var(--hover-pink);
-  background:var(--hover-pink-bg);
+  border-color:var(--hover-blue);
+  background:var(--hover-blue-bg);
   transform:translateY(-1px);
 }
 
@@ -194,8 +194,8 @@ button,input,select{font:inherit;}
 }
 
 .category-dropdown a:hover{
-  background:var(--hover-pink-bg);
-  border:1px solid var(--hover-pink);
+  background:var(--hover-blue-bg);
+  border:1px solid var(--hover-blue);
   color:var(--brand);
   transform:translateY(-1px);
 }
@@ -278,8 +278,8 @@ button,input,select{font:inherit;}
 .header-nav a.active,
 .header-nav a:hover{
   color:var(--brand);
-  border-color:var(--hover-pink);
-  background:var(--hover-pink-bg);
+  border-color:var(--hover-blue);
+  background:var(--hover-blue-bg);
   transform:translateY(-1px);
 }
 
@@ -366,8 +366,8 @@ button,input,select{font:inherit;}
 
 .footer-links a:hover{
   color:var(--brand);
-  border-color:var(--hover-pink);
-  background:var(--hover-pink-bg);
+  border-color:var(--hover-blue);
+  background:var(--hover-blue-bg);
   transform:translateY(-1px);
 }
 

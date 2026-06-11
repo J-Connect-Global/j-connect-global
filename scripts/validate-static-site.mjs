@@ -31,6 +31,17 @@ const requiredPages = [
   '/germany/ja/impressum/',
   '/germany/en/coming-soon/',
   '/germany/de/coming-soon/',
+  '/germany/ja/jobs/sales-assistant-japanese-duesseldorf/',
+  '/germany/ja/jobs/it-support-specialist-cologne/',
+  '/germany/ja/jobs/accounting-staff-munich/',
+  '/germany/ja/jobs/detail/',
+  '/germany/ja/events/japan-day-duesseldorf/',
+  '/germany/ja/events/cologne-flea-market/',
+  '/germany/ja/events/bonn-japanese-film-festival/',
+  '/germany/ja/events/detail/',
+  '/germany/ja/learn-german/appointment-phrase/',
+  '/germany/ja/learn-german/hospital-phrases/',
+  '/germany/ja/learn-german/work-email-phrases/',
   '/germany/ja/search/',
 ];
 

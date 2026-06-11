@@ -23,14 +23,14 @@
 /* Page-specific styles. Shared site styles live in the common site stylesheet. */
 :root{
   --red:#e8002d;
-  --orange:#ff6b2b;
-  --yellow:#ffc93c;
+  --orange:#0067c9;
+  --yellow:#8eb6e5;
   --teal:#00b4a6;
   --blue:#2f6df5;
   --purple:#7c3aed;
-  --pink:#f472b6;
+  --accent-blue:#0067c9;
   --cream:#fdf8f2;
-  --paper:#fffdf9;
+  --paper:#ffffff;
   --ink:#1a1014;
   --muted:#6b5e68;
   --border:#ede5e0;
@@ -47,7 +47,7 @@
 .hero,.content{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}
 
 .hero-main,.hero-side,.panel{
-      background:linear-gradient(180deg,#fffdfb 0%,#fff7f1 100%);
+      background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
       border:1px solid var(--border);border-radius:var(--radius-xl);box-shadow:var(--shadow)
     }
 
@@ -115,7 +115,7 @@ textarea{min-height:180px;resize:vertical}
 
 .status-success{border-color:#cfe9d8;background:#f4fbf6;color:#1d5c33}
 
-.status-error{border-color:#f3d0d6;background:#fff6f7;color:#9d2235}
+.status-error{border-color:#f3d0d6;background:#f8fbff;color:#9d2235}
 
 .footer{max-width:var(--max);margin:0 auto 32px;padding:0 18px}
 
@@ -144,7 +144,7 @@ textarea{min-height:180px;resize:vertical}
 .eyebrow{
   color:var(--site-navy);
   border-color:var(--line);
-  background:var(--site-sakura);
+  background:var(--site-blue-soft);
   font-weight:900;
 }
 
@@ -214,7 +214,8 @@ textarea:focus{
   document.head.appendChild(js);
 })();
 </script>
-  </head>
+<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
+</head>
 <body>
 <header class="site-header">
   <div class="container header-inner">

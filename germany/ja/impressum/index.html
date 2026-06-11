@@ -20,7 +20,7 @@
 /* Page-specific styles. Shared site styles live in the common site stylesheet. */
 :root{
   --red:#e8002d;
-  --orange:#ff6b2b;
+  --orange:#0067c9;
   --cream:#fdf8f2;
   --ink:#1a1014;
   --muted:#6b5e68;
@@ -33,7 +33,7 @@
 
 .wrap{max-width:var(--max);margin:0 auto;padding:26px 18px 60px}
 
-.hero,.panel{background:linear-gradient(180deg,#fffdfb 0%,#fff7f1 100%);border:1px solid var(--border);border-radius:var(--radius-xl);padding:30px;box-shadow:var(--shadow)}
+.hero,.panel{background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);border:1px solid var(--border);border-radius:var(--radius-xl);padding:30px;box-shadow:var(--shadow)}
 
 .hero{margin-bottom:22px}
 
@@ -75,7 +75,7 @@ h1{font-size:clamp(32px,4.5vw,52px);line-height:1.08;letter-spacing:-.03em;margi
 .eyebrow{
   color:var(--site-navy);
   border-color:var(--line);
-  background:var(--site-sakura);
+  background:var(--site-blue-soft);
   font-weight:900;
 }
 
@@ -128,7 +128,8 @@ h1,
   document.head.appendChild(js);
 })();
 </script>
-  </head>
+<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
+</head>
 <body>
 <header class="site-header">
   <div class="container header-inner">

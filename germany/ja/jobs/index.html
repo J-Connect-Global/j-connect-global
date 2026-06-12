@@ -6,7 +6,7 @@
 
   <title>仕事・求人 | ドイツの日本語求人情報 | J-Connect Germany</title>
   <meta name="description" content="ドイツで働きたい日本語話者向けに、求人、転職、アルバイト、勤務形態、ビザサポートなどの仕事情報を整理しています。" />
-  <meta name="theme-color" content="#f7f3ee" />
+  <meta name="theme-color" content="#f4f8fc" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/jobs/" />
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png" />
@@ -801,7 +801,7 @@
         const position = job.position_title || '職種未設定';
         const salary = getSalaryLabel(job);
         const region = job.region || job.city || '勤務地未設定';
-        const summary = job.short_description || job.summary || job.description || job.job_details || '概要は準備中です。';
+        const summary = job.short_description || job.summary || job.description || job.job_details || '概要は詳細ページで確認してください。';
         const saved = isJobSaved(job.id);
         const chipValues = [
           { label: job.employment_type, primary: true },
@@ -933,8 +933,8 @@
       const salary = getSalaryLabel(job);
       const region = job.region || job.city || '勤務地未設定';
       const email = job.contact_email || '';
-      const summary = job.short_description || job.summary || '概要は準備中です。';
-      const details = job.description || job.job_details || summary || '職務詳細は準備中です。';
+      const summary = job.short_description || job.summary || '概要は詳細ページで確認してください。';
+      const details = job.description || job.job_details || summary || '職務詳細は掲載元情報を確認してください。';
       const requirementsRaw = job.requirements || '';
       const requirements = splitRequirements(requirementsRaw);
       const comment = job.free_comment || '';

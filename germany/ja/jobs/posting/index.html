@@ -964,7 +964,7 @@
                 <dd id="previewPositionMeta">職種未設定 / Job title not set</dd>
 
                 <dt>概要 / Summary</dt>
-                <dd id="previewSummary">概要は準備中です。 / Summary not set.</dd>
+                <dd id="previewSummary">概要は未入力です。 / Summary not set.</dd>
               </dl>
             </article>
           </div>
@@ -1038,7 +1038,7 @@
 
               <section class="detail-sec">
                 <h4>職務詳細 / Job Details</h4>
-                <p id="previewDetails">職務詳細は準備中です。 / Job details not set.</p>
+                <p id="previewDetails">職務詳細は未入力です。 / Job details not set.</p>
               </section>
 
               <section class="detail-sec">
@@ -1349,8 +1349,8 @@ function updatePreview(){
   const city = valueOf(fields.city, '勤務地未設定 / Location not set');
   const visa = valueOf(fields.visa, '未記載 / Not specified');
   const email = valueOf(fields.email, '未記載 / Not specified');
-  const summary = valueOf(fields.summary, '概要は準備中です。 / Summary not set.');
-  const details = valueOf(fields.details, '職務詳細は準備中です。 / Job details not set.');
+  const summary = valueOf(fields.summary, '概要は未入力です。 / Summary not set.');
+  const details = valueOf(fields.details, '職務詳細は未入力です。 / Job details not set.');
   const comment = fields.comment.value.trim();
 
   preview.company.textContent = company;

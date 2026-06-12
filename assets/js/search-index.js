@@ -176,7 +176,7 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "デュッセルドルフ日本デーを楽しむための基本ガイド",
+    "title": "デュッセルドルフ日本デーの基本ガイド",
     "description": "ライン川沿いで開かれる日本文化イベントを、初めて参加する人向けに整理しました。",
     "url": "/germany/ja/events/japan-day-duesseldorf/",
     "category": "ニュース・イベント",
@@ -187,19 +187,19 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ケルンの週末フリーマーケット散策メモ",
+    "title": "ケルンの蚤の市・フリーマーケットの楽しみ方",
     "description": "生活用品探しや週末散歩に使いやすい、ケルン周辺マーケットの楽しみ方。",
     "url": "/germany/ja/events/cologne-flea-market/",
     "category": "ニュース・イベント",
     "tags": [
-      "買い物",
+      "マーケット",
       "週末",
       "ケルン"
     ]
   },
   {
-    "title": "ボン日本映画フェスティバル鑑賞ガイド",
-    "description": "日本映画をドイツで楽しむためのチケット確認、上映言語、アクセスのメモ。",
+    "title": "ボン周辺の日本映画・国際映画イベントの探し方",
+    "description": "日本映画や国際映画をドイツで楽しむためのチケット確認、上映言語、アクセスのメモ。",
     "url": "/germany/ja/events/bonn-japanese-film-festival/",
     "category": "ニュース・イベント",
     "tags": [
@@ -289,6 +289,105 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "運営者情報",
       "Impressum"
+    ]
+  },
+  {
+    "title": "ドイツで家を探す基本ガイド",
+    "description": "ドイツで賃貸物件を探すときの流れ、必要書類、内見、契約前の確認点を整理。",
+    "url": "/germany/ja/living/rent-apartment-germany/",
+    "category": "生活・手続き",
+    "tags": [
+      "賃貸",
+      "家探し",
+      "契約"
+    ]
+  },
+  {
+    "title": "SCHUFAとは？賃貸・契約で必要になる信用情報",
+    "description": "SCHUFAの意味、賃貸契約や携帯・銀行手続きで必要になる場面、取得方法を解説。",
+    "url": "/germany/ja/living/schufa-guide/",
+    "category": "生活・手続き",
+    "tags": [
+      "SCHUFA",
+      "賃貸",
+      "信用情報"
+    ]
+  },
+  {
+    "title": "ドイツの銀行口座開設ガイド",
+    "description": "ドイツで銀行口座を開く基本、必要書類、オンライン銀行と支店型銀行の違いを整理。",
+    "url": "/germany/ja/living/bank-account-germany/",
+    "category": "生活・手続き",
+    "tags": [
+      "銀行口座",
+      "お金",
+      "初渡独"
+    ]
+  },
+  {
+    "title": "Tax ID・Steuernummer・Steuerklasseの違い",
+    "description": "ドイツ生活でよく出てくる税関連番号と税クラスの違いを、日本語で整理。",
+    "url": "/germany/ja/living/tax-id-steuernummer-steuerklasse/",
+    "category": "生活・手続き",
+    "tags": [
+      "税金",
+      "Tax ID",
+      "行政手続き"
+    ]
+  },
+  {
+    "title": "ドイツで妊娠・出産したときの基本手続き",
+    "description": "妊娠判明後から出産前後までに確認したい医療・保険・行政手続きの全体像。",
+    "url": "/germany/ja/living/pregnancy-birth-germany/",
+    "category": "生活・手続き",
+    "tags": [
+      "妊娠",
+      "出産",
+      "医療"
+    ]
+  },
+  {
+    "title": "Kita探しの基本：U3・Tagesmutter・Großtagespflege",
+    "description": "ドイツで保育先を探すときに出てくるU3、Kita、Tagesmutter、Großtagespflegeの違いを整理。",
+    "url": "/germany/ja/living/kita-u3-tagesmutter-guide/",
+    "category": "生活・手続き",
+    "tags": [
+      "Kita",
+      "子育て",
+      "保育"
+    ]
+  },
+  {
+    "title": "ドイツで引っ越すときの手続きチェックリスト",
+    "description": "住所変更、Anmeldung、電気・通信・保険・郵便転送など、引っ越し時の確認事項を整理。",
+    "url": "/germany/ja/living/moving-checklist-germany/",
+    "category": "生活・手続き",
+    "tags": [
+      "引っ越し",
+      "住所変更",
+      "手続き"
+    ]
+  },
+  {
+    "title": "デュッセルドルフ周辺のクリスマスマーケット基本ガイド",
+    "description": "冬のNRWで楽しめるクリスマスマーケットの回り方、混雑、服装、確認ポイントを整理。",
+    "url": "/germany/ja/events/christmas-markets-duesseldorf/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "冬",
+      "クリスマスマーケット",
+      "NRW"
+    ]
+  },
+  {
+    "title": "NRWで家族と行きやすい週末イベントの探し方",
+    "description": "子連れで行きやすい週末イベントを探すときの確認先、移動、持ち物、無理のない計画を整理。",
+    "url": "/germany/ja/events/family-weekend-events-nrw/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "家族向け",
+      "週末",
+      "NRW"
     ]
   }
 ];

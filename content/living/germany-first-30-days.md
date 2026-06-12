@@ -6,8 +6,8 @@ category: "生活・手続き"
 chips: ["初渡独", "行政手続き"]
 description: "ドイツに到着してから1ヶ月以内に済ませておきたい重要な手続きと準備を時系列でまとめました。"
 hero_image: "/assets/images/living/germany-first-30-days/hero.webp"
-status: "draft"
-published: false
+status: "published"
+published: true
 published_at: "2026-06-07"
 last_verified: "2026-06-07"
 update_frequency: "1 year"

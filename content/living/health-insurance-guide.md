@@ -6,8 +6,8 @@ category: "生活・手続き"
 chips: ["保険", "行政手続き"]
 description: "公的保険（GKV）と民間保険（PKV）の違い、加入義務、選び方のポイントを初心者向けに解説します。"
 hero_image: "/assets/images/living/health-insurance-guide/hero.webp"
-status: "draft"
-published: false
+status: "published"
+published: true
 published_at: "2026-06-07"
 last_verified: "2026-06-07"
 update_frequency: "1 year"

@@ -6,8 +6,8 @@ category: "生活・手続き"
 chips: ["行政手続き", "初渡独"]
 description: "ドイツ生活の第一歩、住民登録（Anmeldung）の手順、必要書類、予約のコツを分かりやすく解説します。"
 hero_image: "/assets/images/living/anmeldung-guide/hero.webp"
-status: "draft"
-published: false
+status: "published"
+published: true
 published_at: "2026-06-07"
 last_verified: "2026-06-07"
 update_frequency: "6 months"

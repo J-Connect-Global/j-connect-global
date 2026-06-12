@@ -489,14 +489,7 @@ body.portal3-home .portal3-header *{
   height:74px;
   text-decoration:none;
   border-right:1px solid rgba(255,255,255,.18);
-  color:#fff !;
-  justify-content:center;
-  align-items:center;
-  gap:3px;
-  min-width:0;
-  height:74px;
-  text-decoration:none;
-  border-right:1pximportant;
+  color:#fff;
 }
 
 .portal3-ribbon a:last-child{

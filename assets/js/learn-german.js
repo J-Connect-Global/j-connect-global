@@ -52,7 +52,7 @@ async function loadResources() {
     console.error(error);
     resourceGrid.innerHTML = `
       <p class="resource-empty">
-        学習リソースを読み込めませんでした。assets/data/learn-german.json の配置を確認してください。
+        学習リソースを読み込めませんでした。時間をおいてもう一度お試しください。
       </p>
     `;
   }
@@ -66,35 +66,38 @@ function renderResources(items) {
     return;
   }
 
-  resourceGrid.innerHTML = published.map(item => `
-    <article class="resource-card">
-      <div class="resource-card__badges">
-        <span>${escapeHtml(labels.content_type[item.content_type] || item.content_type)}</span>
-        <span>${escapeHtml(formatArray(item.level).join("-"))}</span>
-        <span>${escapeHtml(labels.layer1[item.layer1] || item.layer1)}</span>
-        <span>${escapeHtml(labels.price[item.price] || item.price)}</span>
-      </div>
-
-      <h3>${escapeHtml(item.title_ja)}</h3>
-
-      <p>${escapeHtml(item.summary_ja)}</p>
-
-      <dl class="resource-card__meta">
-        <div>
-          <dt>おすすめ</dt>
-          <dd>${escapeHtml(item.recommended_use_ja || "")}</dd>
+  resourceGrid.innerHTML = published.map(item => {
+    const url = getResourceUrl(item);
+    return `
+      <article class="resource-card">
+        <div class="resource-card__badges">
+          <span>${escapeHtml(labels.content_type[item.content_type] || item.content_type)}</span>
+          <span>${escapeHtml(formatArray(item.level).join("-"))}</span>
+          <span>${escapeHtml(labels.layer1[item.layer1] || item.layer1)}</span>
+          <span>${escapeHtml(labels.price[item.price] || item.price)}</span>
         </div>
-        <div>
-          <dt>形式</dt>
-          <dd>${escapeHtml(formatArray(item.format).join(" / "))}</dd>
-        </div>
-      </dl>
 
-      <a class="resource-card__link" href="${escapeAttribute(item.url || "#")}" ${isExternalUrl(item.url) ? 'target="_blank" rel="noopener noreferrer"' : ""}>
-        ${escapeHtml(item.cta_label || "開く")}
-      </a>
-    </article>
-  `).join("");
+        <h3>${escapeHtml(item.title_ja)}</h3>
+
+        <p>${escapeHtml(item.summary_ja)}</p>
+
+        <dl class="resource-card__meta">
+          <div>
+            <dt>おすすめ</dt>
+            <dd>${escapeHtml(item.recommended_use_ja || "")}</dd>
+          </div>
+          <div>
+            <dt>形式</dt>
+            <dd>${escapeHtml(formatArray(item.format).join(" / "))}</dd>
+          </div>
+        </dl>
+
+        <a class="resource-card__link" href="${escapeAttribute(url)}" ${isExternalUrl(url) ? 'target="_blank" rel="noopener noreferrer"' : ""}>
+          ${escapeHtml(item.cta_label || "開く")}
+        </a>
+      </article>
+    `;
+  }).join("");
 }
 
 function applyFilters() {
@@ -154,6 +157,11 @@ function formatArray(value) {
 
 function isExternalUrl(url) {
   return /^https?:\/\//i.test(String(url || ""));
+}
+
+function getResourceUrl(item) {
+  const url = String(item?.url || "").trim();
+  return url && url !== "#" ? url : "/germany/ja/learn-german/#resources";
 }
 
 function escapeHtml(value) {

@@ -34,16 +34,7 @@
     <loc>https://j-connect-global.com/germany/ja/events/</loc>
   </url>
   <url>
-    <loc>https://j-connect-global.com/germany/ja/events/bonn-japanese-film-festival/</loc>
-  </url>
-  <url>
-    <loc>https://j-connect-global.com/germany/ja/events/cologne-flea-market/</loc>
-  </url>
-  <url>
     <loc>https://j-connect-global.com/germany/ja/events/detail/</loc>
-  </url>
-  <url>
-    <loc>https://j-connect-global.com/germany/ja/events/japan-day-duesseldorf/</loc>
   </url>
   <url>
     <loc>https://j-connect-global.com/germany/ja/impressum/</loc>
@@ -82,15 +73,6 @@
     <loc>https://j-connect-global.com/germany/ja/living/</loc>
   </url>
   <url>
-    <loc>https://j-connect-global.com/germany/ja/living/anmeldung-guide/</loc>
-  </url>
-  <url>
-    <loc>https://j-connect-global.com/germany/ja/living/germany-first-30-days/</loc>
-  </url>
-  <url>
-    <loc>https://j-connect-global.com/germany/ja/living/health-insurance-guide/</loc>
-  </url>
-  <url>
     <loc>https://j-connect-global.com/germany/ja/medical/</loc>
   </url>
   <url>
@@ -110,29 +92,62 @@
   </url>
   <url>
     <loc>https://j-connect-global.com/germany/ja/living/rent-apartment-germany/</loc>
+    <lastmod>2026-06-12</lastmod>
   </url>
   <url>
     <loc>https://j-connect-global.com/germany/ja/living/schufa-guide/</loc>
+    <lastmod>2026-06-12</lastmod>
   </url>
   <url>
     <loc>https://j-connect-global.com/germany/ja/living/bank-account-germany/</loc>
+    <lastmod>2026-06-12</lastmod>
   </url>
   <url>
     <loc>https://j-connect-global.com/germany/ja/living/tax-id-steuernummer-steuerklasse/</loc>
+    <lastmod>2026-06-12</lastmod>
   </url>
   <url>
     <loc>https://j-connect-global.com/germany/ja/living/pregnancy-birth-germany/</loc>
+    <lastmod>2026-06-12</lastmod>
   </url>
   <url>
     <loc>https://j-connect-global.com/germany/ja/living/kita-u3-tagesmutter-guide/</loc>
+    <lastmod>2026-06-12</lastmod>
   </url>
   <url>
     <loc>https://j-connect-global.com/germany/ja/living/moving-checklist-germany/</loc>
+    <lastmod>2026-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://j-connect-global.com/germany/ja/living/anmeldung-guide/</loc>
+    <lastmod>2026-06-07</lastmod>
+  </url>
+  <url>
+    <loc>https://j-connect-global.com/germany/ja/living/germany-first-30-days/</loc>
+    <lastmod>2026-06-07</lastmod>
+  </url>
+  <url>
+    <loc>https://j-connect-global.com/germany/ja/living/health-insurance-guide/</loc>
+    <lastmod>2026-06-07</lastmod>
+  </url>
+  <url>
+    <loc>https://j-connect-global.com/germany/ja/events/japan-day-duesseldorf/</loc>
+    <lastmod>2026-06-12</lastmod>
   </url>
   <url>
     <loc>https://j-connect-global.com/germany/ja/events/christmas-markets-duesseldorf/</loc>
+    <lastmod>2026-06-12</lastmod>
   </url>
   <url>
     <loc>https://j-connect-global.com/germany/ja/events/family-weekend-events-nrw/</loc>
+    <lastmod>2026-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://j-connect-global.com/germany/ja/events/cologne-flea-market/</loc>
+    <lastmod>2026-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://j-connect-global.com/germany/ja/events/bonn-japanese-film-festival/</loc>
+    <lastmod>2026-06-12</lastmod>
   </url>
 </urlset>

@@ -1,44 +1,41 @@
 # Living Content Workflow
 
-This document outlines the process for managing and publishing articles within the "Living" (生活・手続き) category of J-Connect Global.
+Living articles are managed through Markdown source files and the Living registry. The registry is the canonical metadata source; Markdown front matter can provide fallback data, but the registry wins when values differ.
 
-## 1. Purpose
-The Living section serves as a practical life-procedure hub for Japanese speakers in Germany. It follows a "media hub" approach similar to platforms like note.com, providing structured, verified, and easy-to-read guides.
+## Source and Public Files
 
-## 2. Role of Google Spreadsheet
-The [Article Registry Spreadsheet](https://docs.google.com/spreadsheets/d/1mhePFwW-U8FJo5wHZbU5EnWdRpAyDJiG0XsN0MZQ7SQ/edit) acts as the central database for all content. It tracks the status, metadata, and verification history of every article.
+- Registry: `/content/registry/living.json`
+- Markdown source: `/content/living/{slug}.md`
+- Generated public page: `/germany/ja/living/{slug}/index.html`
+- Hub: `/germany/ja/living/index.html`
 
-## 3. Role of Markdown Files
-Markdown files located in `/content/living/` store the actual content and metadata (front matter) of the articles. This allows for version control via GitHub and easy editing by developers or AI agents.
+Generated public pages, hub cards, Home preview cards, sitemap entries, and search index entries are committed to the repo.
 
-## 4. Folder Structure
-- `/content/living/`: Markdown files for articles.
-- `/assets/images/living/[slug]/`: Images specific to an article.
-- `/germany/ja/living/[slug]/index.html`: The rendered public page.
+## Article Creation Steps
 
-## 5. Article Creation Steps
-1. **Register**: Add a new entry to the Google Spreadsheet to get an ID (e.g., L004).
-2. **Draft**: Create a new Markdown file in `/content/living/` using `_template.md`.
-3. **Images**: Create a folder in `/assets/images/living/` and add required images.
-4. **Develop**: Convert the Markdown content into a static HTML page in the appropriate directory.
-5. **Review**: Create a GitHub Pull Request for review.
-6. **Publish**: Merge the PR and update the status in the Spreadsheet.
+1. Create a Markdown file in `/content/living/` using `_template.md`.
+2. Add a matching item to `/content/registry/living.json`.
+3. Set `url` and `canonical_url` to `/germany/ja/living/{slug}/`.
+4. Keep drafts as `published: false` and `status: "draft"`.
+5. Set `published_at`, `updated_at`, and `last_verified` before publishing.
+6. Run `node scripts/build-content.mjs`.
+7. Run `node scripts/validate-content.mjs`.
+8. Open a GitHub PR with both source and generated files.
 
-## 6. Image Naming Rules
-- `hero.webp`: The main featured image.
-- `01-documents.webp`, `02-example.webp`, etc.: Sequential images used within the body.
-- Always use `.webp` format and lowercase filenames.
+## Metadata Rules
 
-## 7. Metadata Rules (Front Matter)
-- `id`: Unique identifier from the spreadsheet.
-- `slug`: URL-friendly name (e.g., `anmeldung-guide`).
-- `last_verified`: The date the information was last checked against official sources.
-- `status`: `draft`, `review`, or `published`.
+- IDs must be unique.
+- Slugs must be unique within Living.
+- Published items need `title`, `summary`, `published_at`, `updated_at`, `last_verified`, `markdown_path`, and `canonical_url`.
+- `home_visible` and `home_order` control Home preview eligibility and ordering.
+- `hub_visible`, `search_visible`, and `sitemap_visible` control generated hub/search/sitemap output.
 
-## 8. Avoiding Outdated Information
-- Check the `update_frequency` in the metadata.
-- Always include links to official German government sources.
-- Add a disclaimer to every article stating that procedures may vary by city or individual situation.
+## Verification Rules
 
-## 9. Future Integration
-This workflow is designed to be compatible with AI agents (Manus, Cursor) and automated scripts that can sync the Spreadsheet with the repository.
+- Keep Japanese text intact and UTF-8 encoded.
+- Do not add fake certainty for legal, tax, medical, insurance, or administrative topics.
+- Include official source links in the article when verified sources are available.
+- Use the generated disclaimer and still encourage readers to check official or specialist sources.
+- Do not manually edit generated article pages or generated card sections after running the build.
+
+See `/docs/content-production-workflow.md` for the shared Living and Events workflow.

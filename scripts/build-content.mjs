@@ -30,6 +30,18 @@ const contentTypes = {
     homeLimit: 3,
     cardText: 'イベント記事を読む',
     backText: 'イベント一覧へ戻る'
+  },
+  'learn-german': {
+    label: 'ドイツ語・学び',
+    hubUrl: '/germany/ja/learn-german/',
+    hubPath: 'germany/ja/learn-german/index.html',
+    registryPath: 'content/registry/learn-german.json',
+    publicBase: 'germany/ja/learn-german',
+    gridMarker: 'learn-german-grid',
+    homeMarker: 'home-learn-german',
+    homeLimit: 3,
+    cardText: '記事を読む',
+    backText: 'ドイツ語・学びへ戻る'
   }
 };
 
@@ -81,6 +93,7 @@ function normalizeItem(type, item, index) {
 
   return {
     ...item,
+    type,
     slug,
     url,
     summary,
@@ -94,7 +107,10 @@ function normalizeItem(type, item, index) {
     hub_visible: item.hub_visible !== false,
     search_visible: item.search_visible !== false,
     sitemap_visible: item.sitemap_visible !== false,
-    related_articles: toArray(item.related_articles)
+    official_sources: normalizeSources(item.official_sources),
+    disclaimer_type: item.disclaimer_type || type,
+    related_articles: toArray(item.related_articles),
+    review: normalizeReview(item)
   };
 }
 
@@ -110,14 +126,9 @@ function renderArticlePage(type, item, bodyHtml, allItems) {
   const config = contentTypes[type];
   const title = `${item.title} | ${config.label} | J-Connect Germany`;
   const canonicalHref = absoluteUrl(item.canonical_url);
-  const eventMeta = type === 'events'
-    ? [
-        item.event_date ? `<span>日程: ${escapeHtml(item.event_date)}</span>` : '',
-        item.city ? `<span>地域: ${escapeHtml(item.city)}</span>` : '',
-        item.location ? `<span>会場: ${escapeHtml(item.location)}</span>` : ''
-      ].filter(Boolean).join('\n          ')
-    : '';
-  const eventMetaBlock = eventMeta ? `\n          ${eventMeta}` : '';
+  const metaBlock = renderArticleMetaSpans(type, item);
+  const ogMeta = renderOpenGraphMeta(type, item, title, canonicalHref);
+  const structuredData = renderStructuredData(type, item, title, canonicalHref);
 
   return `<!DOCTYPE html>
 <html lang="ja">
@@ -128,6 +139,7 @@ function renderArticlePage(type, item, bodyHtml, allItems) {
   <meta name="description" content="${escapeAttribute(item.summary)}">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="${escapeAttribute(canonicalHref)}">
+${indent(ogMeta, 2)}
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -135,6 +147,7 @@ function renderArticlePage(type, item, bodyHtml, allItems) {
   <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <script src="/assets/js/cookie-consent.js" defer></script>
+${indent(structuredData, 2)}
 </head>
 <body>
 ${renderHeader(type, item.url)}
@@ -147,14 +160,14 @@ ${renderHeader(type, item.url)}
         <div class="article-meta">
           ${item.tags.map((tag) => `<span class="article-chip">${escapeHtml(tag)}</span>`).join('\n          ')}
           <span>公開: ${escapeHtml(item.published_at || '')}</span>
-          <span>最終確認: ${escapeHtml(item.last_verified || '')}</span>${eventMetaBlock}
+          <span>最終確認: ${escapeHtml(item.last_verified || '')}</span>${metaBlock}
         </div>
       </header>
 
       <div class="article-body">
 ${indent(bodyHtml, 8)}
         <p><a class="article-back-link" href="${config.hubUrl}">${escapeHtml(config.backText)}</a></p>
-${indent(renderDisclaimer(type), 8)}
+${indent(renderDisclaimer(item), 8)}
       </div>
     </article>
 ${indent(renderRelatedSection(item, allItems), 4)}
@@ -170,6 +183,7 @@ ${renderFooter()}
 function renderHeader(activeType, currentUrl) {
   const livingActive = activeType === 'living' ? ' class="active" aria-current="page"' : '';
   const eventsActive = activeType === 'events' ? ' class="active" aria-current="page"' : '';
+  const learnGermanActive = activeType === 'learn-german' ? ' class="active" aria-current="page"' : '';
 
   return `  <header class="site-header">
     <div class="container header-inner">
@@ -192,7 +206,7 @@ function renderHeader(activeType, currentUrl) {
             <a href="/germany/ja/living/"${livingActive}>生活・手続き</a>
             <a href="/germany/ja/jobs/">仕事・求人</a>
             <a href="/germany/ja/events/"${eventsActive}>ニュース・イベント</a>
-            <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+            <a href="/germany/ja/learn-german/"${learnGermanActive}>ドイツ語・学び</a>
             <a href="/germany/ja/about/">J-CONNECTについて</a>
           </div>
         </div>
@@ -455,10 +469,117 @@ function stripInlineMarkdown(value) {
     .replace(/[*_`]/g, '');
 }
 
-function renderDisclaimer(type) {
+function renderArticleMetaSpans(type, item) {
+  const rows = [];
+
   if (type === 'events') {
+    if (item.event_date) rows.push(`<span>日程: ${escapeHtml(item.event_date)}</span>`);
+    if (item.city) rows.push(`<span>地域: ${escapeHtml(item.city)}</span>`);
+    if (item.location) rows.push(`<span>会場: ${escapeHtml(item.location)}</span>`);
+  }
+
+  if (type === 'learn-german') {
+    if (item.level) rows.push(`<span>レベル: ${escapeHtml(item.level)}</span>`);
+    if (item.situation) rows.push(`<span>場面: ${escapeHtml(item.situation)}</span>`);
+  }
+
+  if (item.review?.next_review_due) {
+    rows.push(`<span>次回確認目安: ${escapeHtml(item.review.next_review_due)}</span>`);
+  }
+
+  return rows.length ? `\n          ${rows.join('\n          ')}` : '';
+}
+
+function renderOpenGraphMeta(type, item, title, canonicalHref) {
+  const tags = [
+    ['property', 'og:type', 'article'],
+    ['property', 'og:site_name', 'J-Connect Germany'],
+    ['property', 'og:locale', 'ja_JP'],
+    ['property', 'og:title', title],
+    ['property', 'og:description', item.summary],
+    ['property', 'og:url', canonicalHref],
+    ['property', 'article:section', contentTypes[type].label],
+    ['property', 'article:published_time', item.published_at],
+    ['property', 'article:modified_time', item.updated_at || item.last_verified || item.published_at]
+  ];
+
+  return tags
+    .filter(([, , content]) => content)
+    .map(([attr, key, content]) => `<meta ${attr}="${key}" content="${escapeAttribute(content)}">`)
+    .concat(item.tags.map((tag) => `<meta property="article:tag" content="${escapeAttribute(tag)}">`))
+    .join('\n');
+}
+
+function renderStructuredData(type, item, title, canonicalHref) {
+  const article = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: item.title,
+    description: item.summary,
+    inLanguage: 'ja',
+    url: canonicalHref,
+    mainEntityOfPage: canonicalHref,
+    datePublished: item.published_at || undefined,
+    dateModified: item.updated_at || item.last_verified || item.published_at || undefined,
+    articleSection: contentTypes[type].label,
+    keywords: item.tags,
+    author: {
+      '@type': 'Organization',
+      name: 'J-Connect Germany'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'J-Connect Germany',
+      url: SITE_ORIGIN
+    },
+    citation: item.official_sources.map((source) => source.url).filter(Boolean)
+  };
+
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'ホーム',
+        item: absoluteUrl('/germany/ja/')
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: contentTypes[type].label,
+        item: absoluteUrl(contentTypes[type].hubUrl)
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: item.title,
+        item: canonicalHref
+      }
+    ]
+  };
+
+  return `<script type="application/ld+json">${escapeJsonForHtml(article)}</script>
+<script type="application/ld+json">${escapeJsonForHtml(breadcrumb)}</script>`;
+}
+
+function renderDisclaimer(item) {
+  if (item.disclaimer_type === 'event') {
     return `<div class="article-disclaimer">
   開催日・会場・プログラムは年により異なるため、参加前に主催者や自治体、交通機関などの公式情報を確認してください。
+</div>`;
+  }
+
+  if (item.disclaimer_type === 'language_learning' || item.disclaimer_type === 'business_language') {
+    return `<div class="article-disclaimer">
+  本記事はドイツ語学習の補助情報です。実際の会話やメールでは、相手・地域・状況に合わせて表現を調整してください。
+</div>`;
+  }
+
+  if (item.disclaimer_type === 'medical_language') {
+    return `<div class="article-disclaimer">
+  本記事はドイツ語表現の学習補助です。医療判断や緊急対応の助言ではありません。症状が強い場合や緊急時は、医療機関・116117・救急番号など公式の案内を確認してください。
 </div>`;
   }
 
@@ -476,6 +597,11 @@ function renderRelatedSection(item, allItems) {
 
   if (item.official_url) {
     links.push(`<li><a href="${escapeAttribute(item.official_url)}">公式情報を確認する</a></li>`);
+  }
+
+  for (const source of item.official_sources) {
+    if (!source.url) continue;
+    links.push(`<li><a href="${escapeAttribute(source.url)}">${escapeHtml(source.title || '公式情報・参考ソース')}</a></li>`);
   }
 
   if (!links.length) return '';
@@ -498,19 +624,31 @@ function updateHub(type, items) {
   const hubPath = config.hubPath;
   const cards = sortForHub(items)
     .filter((item) => item.published && item.hub_visible)
-    .map((item) => type === 'events' ? renderEventHubCard(item) : renderLivingHubCard(item))
+    .map((item) => renderHubCard(type, item))
     .join('\n\n');
 
   const html = readText(hubPath);
   const nextHtml = replaceMarkedDivContent(
     html,
     config.gridMarker,
-    type === 'events' ? /<div class="jc-article-grid" id="eventArticleGrid">/ : /<div class="jc-article-grid">/,
+    hubGridPattern(type),
     cards,
     8
   );
 
   writeText(hubPath, nextHtml);
+}
+
+function hubGridPattern(type) {
+  if (type === 'events') return /<div class="jc-article-grid" id="eventArticleGrid">/;
+  if (type === 'learn-german') return /<div class="jc-article-grid">/;
+  return /<div class="jc-article-grid">/;
+}
+
+function renderHubCard(type, item) {
+  if (type === 'events') return renderEventHubCard(item);
+  if (type === 'learn-german') return renderLearnGermanHubCard(item);
+  return renderLivingHubCard(item);
 }
 
 function renderLivingHubCard(item) {
@@ -536,14 +674,27 @@ function renderEventHubCard(item) {
 </a>`;
 }
 
+function renderLearnGermanHubCard(item) {
+  const tags = item.tags.slice(0, 4).map((tag) => `<span class="jc-chip">${escapeHtml(tag)}</span>`).join('');
+
+  return `<a class="jc-article-card" href="${escapeAttribute(item.url)}">
+  <div class="jc-card-meta"><span>${escapeHtml(item.published_at || '')}</span><span>${escapeHtml(item.level || '')}</span><span>${escapeHtml(item.situation || item.category || '')}</span></div>
+  <h3>${escapeHtml(item.title)}</h3>
+  <p>${escapeHtml(item.summary)}</p>
+  <div class="jc-chip-row">${tags}</div>
+</a>`;
+}
+
 function updateHome(datasets) {
   const homePath = 'germany/ja/index.html';
   let html = readText(homePath);
   const livingCards = homeItems(datasets.living, contentTypes.living.homeLimit).map(renderHomeLivingCard).join('\n\n');
   const eventCards = homeItems(datasets.events, contentTypes.events.homeLimit).map(renderHomeEventCard).join('\n\n');
+  const learnGermanContent = renderHomeLearnGermanContent(homeItems(datasets['learn-german'], contentTypes['learn-german'].homeLimit));
 
   html = replaceHomePanelContent(html, contentTypes.living.homeMarker, '新着記事', livingCards, 8);
   html = replaceMarkedDivContent(html, contentTypes.events.homeMarker, /<div class="portal3-event-row">/, eventCards, 10);
+  html = replaceMarkedDivContent(html, contentTypes['learn-german'].homeMarker, /<div class="portal3-learn-row">/, learnGermanContent, 8);
   writeText(homePath, html);
 }
 
@@ -569,6 +720,34 @@ function renderHomeEventCard(item, index) {
   <strong>${escapeHtml(item.title)}</strong>
   <small>${escapeHtml(item.city || item.location || '')}</small>
   <em>${escapeHtml(item.category || 'イベント')}</em>
+</a>`;
+}
+
+function renderHomeLearnGermanContent(items) {
+  const cards = items.map(renderHomeLearnGermanCard);
+  const phrase = items.find((item) => item.home_phrase)?.home_phrase || { de: 'Ich hätte gern einen Termin.', ja: '予約を取りたいです。' };
+  const phraseCard = `<article class="portal3-phrase">
+  <span>今日のフレーズ</span>
+  <strong lang="de">${escapeHtml(phrase.de)}</strong>
+  <p>${escapeHtml(phrase.ja)}</p>
+  <button type="button">発音を聞く　🔊</button>
+</article>`;
+
+  return [
+    ...cards.slice(0, 2),
+    phraseCard,
+    ...cards.slice(2)
+  ].join('\n\n');
+}
+
+function renderHomeLearnGermanCard(item) {
+  const tagText = item.tags.slice(0, 2).join('・') || item.category;
+  const imageClass = item.home_image_class || 'img-study';
+
+  return `<a class="portal3-card" href="${escapeAttribute(item.url)}">
+  <span class="portal3-card-img ${escapeAttribute(imageClass)}"></span>
+  <strong>${escapeHtml(item.title)}</strong>
+  <small>${escapeHtml(formatDateJa(item.published_at))}・${escapeHtml(tagText)}</small>
 </a>`;
 }
 
@@ -600,7 +779,7 @@ function updateSearchIndex(allItems) {
       title: item.title,
       description: item.summary,
       url: item.url,
-      category: item.url.includes('/events/') ? contentTypes.events.label : contentTypes.living.label,
+      category: contentTypes[item.type].label,
       tags: item.tags
     }));
 
@@ -818,6 +997,30 @@ function toArray(value) {
   return String(value).split(',').map((entry) => entry.trim()).filter(Boolean);
 }
 
+function normalizeSources(value) {
+  if (!Array.isArray(value)) return [];
+  return value.map((source) => {
+    if (typeof source === 'string') {
+      return { title: source, url: source };
+    }
+
+    return {
+      title: source?.title || source?.name || source?.url || '',
+      url: source?.url || ''
+    };
+  }).filter((source) => source.title || source.url);
+}
+
+function normalizeReview(item) {
+  const reviewed = item.review?.last_reviewed_at || item.last_verified || item.updated_at || item.published_at || '';
+  return {
+    status: item.review?.status || (reviewed ? 'reviewed' : 'pending'),
+    reviewed_by: item.review?.reviewed_by || 'J-Connect Germany editorial',
+    last_reviewed_at: reviewed,
+    next_review_due: item.review?.next_review_due || ''
+  };
+}
+
 function compareDateDesc(a, b) {
   return String(b || '').localeCompare(String(a || ''));
 }
@@ -849,6 +1052,13 @@ function escapeHtml(value) {
 
 function escapeAttribute(value) {
   return escapeHtml(value).replace(/`/g, '&#096;');
+}
+
+function escapeJsonForHtml(value) {
+  return JSON.stringify(value, (_key, data) => data === undefined ? undefined : data)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026');
 }
 
 function escapeRegExp(value) {

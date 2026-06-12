@@ -176,39 +176,6 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "デュッセルドルフ日本デーの基本ガイド",
-    "description": "ライン川沿いで開かれる日本文化イベントを、初めて参加する人向けに整理しました。",
-    "url": "/germany/ja/events/japan-day-duesseldorf/",
-    "category": "ニュース・イベント",
-    "tags": [
-      "日本文化",
-      "家族向け",
-      "NRW"
-    ]
-  },
-  {
-    "title": "ケルンの蚤の市・フリーマーケットの楽しみ方",
-    "description": "生活用品探しや週末散歩に使いやすい、ケルン周辺マーケットの楽しみ方。",
-    "url": "/germany/ja/events/cologne-flea-market/",
-    "category": "ニュース・イベント",
-    "tags": [
-      "マーケット",
-      "週末",
-      "ケルン"
-    ]
-  },
-  {
-    "title": "ボン周辺の日本映画・国際映画イベントの探し方",
-    "description": "日本映画や国際映画をドイツで楽しむためのチケット確認、上映言語、アクセスのメモ。",
-    "url": "/germany/ja/events/bonn-japanese-film-festival/",
-    "category": "ニュース・イベント",
-    "tags": [
-      "映画",
-      "日本文化",
-      "ボン"
-    ]
-  },
-  {
     "title": "イベント詳細",
     "description": "イベントIDを指定して開く動的なイベント詳細ページです。",
     "url": "/germany/ja/events/detail/",
@@ -369,6 +336,47 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
+    "title": "住民登録 Anmeldung の完全ガイド",
+    "description": "ドイツ生活の第一歩、住民登録（Anmeldung）の手順、必要書類、予約のコツを分かりやすく解説します。",
+    "url": "/germany/ja/living/anmeldung-guide/",
+    "category": "生活・手続き",
+    "tags": [
+      "行政手続き",
+      "初渡独"
+    ]
+  },
+  {
+    "title": "ドイツ生活最初の30日チェックリスト",
+    "description": "ドイツに到着してから1ヶ月以内に済ませておきたい重要な手続きと準備を時系列でまとめました。",
+    "url": "/germany/ja/living/germany-first-30-days/",
+    "category": "生活・手続き",
+    "tags": [
+      "初渡独",
+      "行政手続き"
+    ]
+  },
+  {
+    "title": "ドイツの健康保険の基本",
+    "description": "公的保険（GKV）と民間保険（PKV）の違い、加入義務、選び方のポイントを初心者向けに解説します。",
+    "url": "/germany/ja/living/health-insurance-guide/",
+    "category": "生活・手続き",
+    "tags": [
+      "保険",
+      "行政手続き"
+    ]
+  },
+  {
+    "title": "デュッセルドルフ日本デーの基本ガイド",
+    "description": "ライン川沿いで開かれる日本文化イベントを、初めて参加する人向けに整理しました。",
+    "url": "/germany/ja/events/japan-day-duesseldorf/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "日本文化",
+      "家族向け",
+      "NRW"
+    ]
+  },
+  {
     "title": "デュッセルドルフ周辺のクリスマスマーケット基本ガイド",
     "description": "冬のNRWで楽しめるクリスマスマーケットの回り方、混雑、服装、確認ポイントを整理。",
     "url": "/germany/ja/events/christmas-markets-duesseldorf/",
@@ -388,6 +396,28 @@ window.JCONNECT_SEARCH_INDEX = [
       "家族向け",
       "週末",
       "NRW"
+    ]
+  },
+  {
+    "title": "ケルンの蚤の市・フリーマーケットの楽しみ方",
+    "description": "生活用品探しや週末散歩に使いやすい、ケルン周辺マーケットの楽しみ方。",
+    "url": "/germany/ja/events/cologne-flea-market/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "マーケット",
+      "週末",
+      "ケルン"
+    ]
+  },
+  {
+    "title": "ボン周辺の日本映画・国際映画イベントの探し方",
+    "description": "日本映画や国際映画をドイツで楽しむためのチケット確認、上映言語、アクセスのメモ。",
+    "url": "/germany/ja/events/bonn-japanese-film-festival/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "映画",
+      "日本文化",
+      "ボン"
     ]
   }
 ];

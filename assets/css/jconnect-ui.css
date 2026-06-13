@@ -1036,6 +1036,14 @@ a{
 }
 
 .footer-logo{
+  height:56px;
+  max-width:210px;
+  object-fit:contain;
+  background:#fff;
+  border:1px solid rgba(255,255,255,.82);
+  border-radius:8px;
+  padding:6px 8px;
+  box-shadow:0 8px 18px rgba(0,20,50,.18);
   filter:none;
 }
 

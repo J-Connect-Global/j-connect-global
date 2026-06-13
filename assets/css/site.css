@@ -521,13 +521,14 @@ body > .site-footer{
 .footer-logo{
   display:block;
   width:auto;
-  height:48px;
+  height:56px;
   max-width:210px;
   object-fit:contain;
-  background:transparent;
-  border:none;
-  box-shadow:none;
-  border-radius:0;
+  background:#fff;
+  border:1px solid rgba(255,255,255,.82);
+  box-shadow:0 8px 18px rgba(0,20,50,.18);
+  border-radius:8px;
+  padding:6px 8px;
   flex-shrink:0;
 }
 
@@ -820,7 +821,7 @@ body > .site-footer{
   }
 
   .footer-logo{
-    height:44px;
+    height:52px;
   }
 
   .footer-links{

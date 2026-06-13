@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>求人掲載希望の企業様へ | J-Connect Germany</title>
-<meta name="description" content="J-Connect Germanyでは、ドイツ在住の日本語話者向け求人掲載を受付中です。現在は掲載件数拡大のため、求人掲載を無料で受け付けています。">
+<title>求人掲載について | J-Connect Germany</title>
+<meta name="description" content="J-Connect Germanyの求人掲載相談ページです。ドイツ在住の日本語話者向け求人について、掲載内容の確認から公開までの流れを案内します。">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#f7f3ee">
+<meta name="theme-color" content="#f4f8fc">
 <link rel="canonical" href="https://j-connect-global.com/germany/ja/jobs/posting/">
 <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
 
@@ -15,8 +15,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="求人掲載希望の企業様へ | J-Connect Germany">
-<meta property="og:description" content="ドイツ在住の日本語話者向け求人掲載を受付中。現在は掲載件数拡大のため無料掲載を実施しています。">
+<meta property="og:title" content="求人掲載について | J-Connect Germany">
+<meta property="og:description" content="ドイツ在住の日本語話者向け求人について、掲載内容の確認から公開までの流れを案内します。">
 <meta property="og:url" content="https://j-connect-global.com/germany/ja/jobs/posting/">
 <meta property="og:site_name" content="J-Connect Germany">
 <meta property="og:locale" content="ja_JP">
@@ -45,10 +45,7 @@
   box-shadow:
     0 14px 34px rgba(19,35,58,.12),
     0 0 0 1px rgba(255,255,255,.5) inset;
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.50) 0%, rgba(255,255,255,.38) 44%, rgba(255,255,255,.18) 68%, rgba(255,255,255,.08) 100%),
-    url('/assets/images/hero/top-hero.jpg') center center / cover no-repeat,
-    #fff;
+  background:linear-gradient(110deg,#fff 0%,#f8fbff 100%),#fff;
 }
 
 .hero-grid{
@@ -651,6 +648,150 @@
     background-position:64% center;
   }
 }
+
+/* Production jobs posting baseline */
+body{
+  background:#f4f8fc;
+  color:#1f2937;
+}
+
+.main{
+  padding:18px 0 72px;
+  background:#f4f8fc;
+}
+
+.container{
+  width:min(1160px, calc(100% - 32px));
+}
+
+.hero{
+  border:1px solid #cfe0f2;
+  border-radius:8px;
+  background:linear-gradient(110deg,#fff 0%,#f8fbff 100%),#fff;
+  box-shadow:0 8px 20px rgba(0,54,109,.08);
+}
+
+.hero-grid{
+  grid-template-columns:minmax(0,1fr) minmax(280px,.42fr);
+  min-height:auto;
+  gap:18px;
+  padding:24px;
+}
+
+.kicker{
+  border-radius:6px;
+  background:#eaf4ff;
+  border-color:#cfe0f2;
+  color:#00366d;
+  letter-spacing:0;
+  text-transform:none;
+}
+
+.hero-title{
+  color:#07315f;
+  font-size:42px;
+  letter-spacing:0;
+}
+
+.hero-title .brand-word{
+  color:inherit;
+}
+
+.hero-desc,
+.section-desc,
+.panel p,
+.notice span,
+.policy-card span{
+  color:#475569;
+}
+
+.btn{
+  border-radius:7px;
+}
+
+.btn-primary{
+  background:#00366d;
+  box-shadow:0 8px 18px rgba(0,54,109,.18);
+}
+
+.btn-secondary{
+  color:#00366d;
+  border-color:#cfe0f2;
+}
+
+.info-panel,
+.panel,
+.notice,
+.policy-card,
+.job-preview-card,
+.status-box{
+  border:1px solid #cfe0f2;
+  border-radius:8px;
+  background:#fff;
+  box-shadow:0 8px 20px rgba(0,54,109,.06);
+}
+
+.section{
+  margin-top:20px;
+}
+
+.posting-flow-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+}
+
+.posting-flow-card{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  min-height:148px;
+  padding:16px;
+  border:1px solid #cfe0f2;
+  border-radius:8px;
+  background:#fff;
+  box-shadow:0 8px 20px rgba(0,54,109,.06);
+}
+
+.posting-flow-card span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  background:#00366d;
+  color:#fff;
+  font-weight:800;
+}
+
+.posting-flow-card strong{
+  color:#07315f;
+}
+
+.posting-flow-card p{
+  margin:0;
+  color:#475569;
+  font-size:14px;
+  line-height:1.7;
+}
+
+@media (max-width:900px){
+  .hero-grid,
+  .posting-flow-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:720px){
+  .hero-grid{
+    padding:18px;
+  }
+
+  .hero-title{
+    font-size:30px;
+  }
+}
 </style>
 
 <script>
@@ -736,17 +877,14 @@
     <section class="hero">
       <div class="hero-grid">
         <div class="hero-main">
-          <div class="kicker">For Companies</div>
-          <h1 class="hero-title">
-            求人掲載希望の<br>
-            <span class="brand-word">企業様へ</span>
-          </h1>
+          <div class="kicker">求人掲載について</div>
+          <h1 class="hero-title">求人掲載について</h1>
           <p class="hero-desc">
             J-Connect Germanyでは、ドイツで働きたい方、日本語話者、日本に関心のある求職者へ向けた求人情報を掲載しています。
-            現在は掲載件数拡大のため、求人掲載を無料で受け付けています。
+            掲載前に仕事内容・条件・応募方法を確認し、求職者が比較しやすい形で公開します。
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#postingForm">掲載フォーマットを入力する</a>
+            <a class="btn btn-primary" href="#postingForm">掲載相談フォームへ</a>
             <a class="btn btn-secondary" href="/germany/ja/jobs/">掲載中の求人を見る</a>
           </div>
         </div>
@@ -784,6 +922,38 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="postingFlowTitle">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Publishing Flow</div>
+          <h2 class="section-title" id="postingFlowTitle">掲載までの流れ</h2>
+          <p class="section-desc">送信後は内容確認を行い、必要に応じて確認連絡のうえ求人一覧へ掲載します。</p>
+        </div>
+      </div>
+      <div class="posting-flow-grid">
+        <article class="posting-flow-card">
+          <span>1</span>
+          <strong>掲載相談</strong>
+          <p>フォームから会社情報、仕事内容、応募方法を送信してください。</p>
+        </article>
+        <article class="posting-flow-card">
+          <span>2</span>
+          <strong>内容確認</strong>
+          <p>勤務条件、給与、勤務地、応募先など、求職者に必要な情報を確認します。</p>
+        </article>
+        <article class="posting-flow-card">
+          <span>3</span>
+          <strong>掲載</strong>
+          <p>確認後、求人一覧と詳細ページで見やすい形式に整えて公開します。</p>
+        </article>
+        <article class="posting-flow-card">
+          <span>4</span>
+          <strong>更新・終了</strong>
+          <p>掲載後の修正、募集終了、削除依頼も運営側で受け付けます。</p>
+        </article>
+      </div>
+    </section>
+
     <section class="section">
       <div class="section-head">
         <div>
@@ -799,16 +969,16 @@
       <div class="form-preview-grid">
         <section class="panel">
           <form id="postingForm" class="job-form" action="https://formspree.io/f/xlgojvar" method="POST">
-            <input type="hidden" name="_subject" value="[J-Connect Germany] 求人掲載希望 / Job Posting Request">
+            <input type="hidden" name="_subject" value="[J-Connect Germany] 求人掲載相談 / Job Posting Request">
             <input type="hidden" name="_language" value="ja">
-            <input type="hidden" name="inquiry_type" value="求人掲載希望 / Job Posting Request">
+            <input type="hidden" name="inquiry_type" value="求人掲載相談 / Job Posting Request">
             <input type="text" name="_gotcha" style="display:none">
 
 
             <div class="form-grid">
               <div class="field">
                 <label for="company_name">会社名 / Company Name <span class="required">*</span></label>
-                <input class="input js-preview" id="company_name" name="会社名 / Company Name" type="text" placeholder="Sakura GmbH" required>
+                <input class="input js-preview" id="company_name" name="会社名 / Company Name" type="text" placeholder="Example GmbH" required>
               </div>
 
               <div class="field">
@@ -929,7 +1099,7 @@
               </div>
             </div>
 
-            <button class="btn btn-primary" id="submitButton" type="submit">掲載希望を送信する / Submit Posting Request</button>
+            <button class="btn btn-primary" id="submitButton" type="submit">求人掲載相談を送信する / Submit Posting Request</button>
             <div class="status-box" id="formStatus" aria-live="polite"></div>
           </form>
         </section>
@@ -1123,73 +1293,65 @@
       </div>
     </section>
 
-    <!-- LAYOUT:ja-footer:start -->
-    <footer class="page-footer">
-      <div class="footer-inner">
-        <div class="footer-left">
-          <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany">
-          <div class="footer-copy">
-            <div class="footer-title">J-CONNECT GERMANY</div>
-            <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
-            <div class="footer-meta">© 2026 J-Connect Germany</div>
-          </div>
-        </div>
-        <div class="footer-links" aria-label="フッターサイトマップ">
-          <div class="footer-group">
-            <div class="footer-heading">交流・掲示板</div>
-            <a href="/germany/ja/community/">新着投稿</a>
-            <a href="/germany/ja/community/post/">投稿する</a>
-            <a href="/germany/ja/terms/">ルール・ガイドライン</a>
-          </div>
-          <div class="footer-group">
-            <div class="footer-heading">生活・手続き</div>
-            <a href="/germany/ja/living/">手続き</a>
-            <a href="/germany/ja/medical/">医療</a>
-            <a href="/germany/ja/eat/">食べる</a>
-            <a href="/germany/ja/shopping/">買い物</a>
-            <a href="/germany/ja/events/">観光・レジャー</a>
-          </div>
-          <div class="footer-group">
-            <div class="footer-heading">仕事・求人</div>
-            <a href="/germany/ja/jobs/">求人一覧</a>
-            <a href="/germany/ja/jobs/posting/">求人掲載について</a>
-          </div>
-          <div class="footer-group">
-            <div class="footer-heading">ニュース・イベント</div>
-            <a href="/germany/ja/news/">最新ニュース</a>
-            <a href="/germany/ja/events/">イベントカレンダー</a>
-          </div>
-          <div class="footer-group">
-            <div class="footer-heading">ドイツ語・学び</div>
-            <a href="/germany/ja/learn-german/">学習コンテンツ</a>
-            <a href="/germany/ja/learn-german/appointment-phrase/">フレーズ集</a>
-            <a href="/germany/ja/learn-german/">学習法</a>
-          </div>
-          <div class="footer-group">
-            <div class="footer-heading">J-CONNECTについて</div>
-            <a href="/germany/ja/about/">このサイトについて</a>
-            <a href="/germany/ja/contact/">お問い合わせ</a>
-            <a href="/germany/ja/terms/">利用規約</a>
-            <a href="/germany/ja/privacy/">プライバシー</a>
-            <a href="/germany/ja/impressum/">運営者情報</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- LAYOUT:ja-footer:end -->
-
   </div>
 </main>
 
+<!-- LAYOUT:ja-footer:start -->
+<footer class="page-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany">
+      <div class="footer-copy">
+        <div class="footer-title">J-CONNECT GERMANY</div>
+        <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+        <div class="footer-meta">© 2026 J-Connect Germany</div>
+      </div>
+    </div>
+    <div class="footer-links" aria-label="フッターサイトマップ">
+      <div class="footer-group">
+        <div class="footer-heading">交流・掲示板</div>
+        <a href="/germany/ja/community/">新着投稿</a>
+        <a href="/germany/ja/community/post/">投稿する</a>
+        <a href="/germany/ja/terms/">ルール・ガイドライン</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">生活・手続き</div>
+        <a href="/germany/ja/living/">手続き</a>
+        <a href="/germany/ja/medical/">医療</a>
+        <a href="/germany/ja/eat/">食べる</a>
+        <a href="/germany/ja/shopping/">買い物</a>
+        <a href="/germany/ja/events/">観光・レジャー</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">仕事・求人</div>
+        <a href="/germany/ja/jobs/">求人一覧</a>
+        <a href="/germany/ja/jobs/posting/">求人掲載について</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">ニュース・イベント</div>
+        <a href="/germany/ja/news/">最新ニュース</a>
+        <a href="/germany/ja/events/">イベントカレンダー</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">ドイツ語・学び</div>
+        <a href="/germany/ja/learn-german/">学習コンテンツ</a>
+        <a href="/germany/ja/learn-german/appointment-phrase/">フレーズ集</a>
+        <a href="/germany/ja/learn-german/">学習法</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">J-CONNECTについて</div>
+        <a href="/germany/ja/about/">このサイトについて</a>
+        <a href="/germany/ja/contact/">お問い合わせ</a>
+        <a href="/germany/ja/terms/">利用規約</a>
+        <a href="/germany/ja/privacy/">プライバシー</a>
+        <a href="/germany/ja/impressum/">運営者情報</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- LAYOUT:ja-footer:end -->
+
 <script>
-const languageSelect = document.getElementById('languageSelect');
-
-if (languageSelect) {
-  languageSelect.addEventListener('change', e => {
-    if (e.target.value) window.location.href = e.target.value;
-  });
-}
-
 const form = document.getElementById('postingForm');
 const statusBox = document.getElementById('formStatus');
 const submitButton = document.getElementById('submitButton');
@@ -1467,7 +1629,7 @@ form.addEventListener('submit', async function(event) {
       form.reset();
       updatePreview();
       statusBox.className = 'status-box show status-success';
-      statusBox.textContent = '送信が完了しました。求人掲載希望を受け付けました。内容確認後、必要に応じてご連絡します。';
+      statusBox.textContent = '送信が完了しました。求人掲載相談を受け付けました。内容確認後、必要に応じてご連絡します。';
     } else {
       const data = await response.json().catch(() => ({}));
       statusBox.className = 'status-box show status-error';
@@ -1479,7 +1641,7 @@ form.addEventListener('submit', async function(event) {
   } finally {
     validateLimits();
     submitButton.disabled = false;
-    submitButton.textContent = '掲載希望を送信する / Submit Posting Request';
+    submitButton.textContent = '求人掲載相談を送信する / Submit Posting Request';
   }
 });
 </script>

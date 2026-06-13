@@ -70,6 +70,7 @@ function main() {
 
   validateSearchIndex(pages, contentItems);
   validateSitemap(pages, contentItems);
+  validateProductionFixSharedAssets();
 
   if (problems.length) {
     console.error(`Layout validation failed with ${problems.length} issue(s):`);
@@ -231,6 +232,7 @@ function validateHtmlPage(url, file, page) {
   validateCssOrder(html, rel);
   validateInternalLinks(html, rel, rel);
   validateDirectoryListingPage(url, html, page, rel);
+  validateProductionFixPage(url, html, rel);
 
   if (page?.canonical_url && page.status !== 'redirect') {
     const expected = absoluteUrl(page.canonical_url);
@@ -261,6 +263,124 @@ function validateDirectoryListingPage(url, html, page, rel) {
 
   if (!html.includes('jc-empty-state') && !html.includes('jc-loading-state')) {
     problems.push(`${rel} missing shared empty/loading state class.`);
+  }
+}
+
+function validateProductionFixPage(url, html, rel) {
+  const normalizedUrl = normalizeUrl(url);
+
+  const languageTriggerCount = (html.match(/class=["'][^"']*\bheader-language-trigger\b[^"']*["']/g) || []).length;
+  if (languageTriggerCount > 1) {
+    problems.push(`${rel} contains duplicate header language triggers.`);
+  }
+
+  const languageSelectGuardUrls = new Set([
+    '/germany/ja/',
+    '/germany/ja/community/',
+    '/germany/ja/events/',
+    '/germany/ja/news/',
+    '/germany/ja/jobs/',
+    '/germany/ja/jobs/posting/',
+    '/germany/ja/jobs/detail/',
+    '/germany/ja/jobs/sales-assistant-japanese-duesseldorf/',
+    '/germany/ja/jobs/it-support-specialist-cologne/',
+    '/germany/ja/jobs/accounting-staff-munich/'
+  ]);
+  if (languageSelectGuardUrls.has(normalizedUrl) && /id=["']languageSelect["']|languageSelect/i.test(html)) {
+    problems.push(`${rel} contains legacy languageSelect wiring.`);
+  }
+
+  if (normalizedUrl === '/germany/ja/') {
+    if (!html.includes('/assets/js/community-shared.js')) {
+      problems.push(`${rel} must load shared Community post data for Home cards.`);
+    }
+    if (!html.includes('id="homeCommunityCards"') || !html.includes('data-community-posts')) {
+      problems.push(`${rel} must render Home Community cards from a data-marked container.`);
+    }
+    const newsSection = html.match(/<section\b[^>]*id=["']news-events["'][\s\S]*?<\/section>/i)?.[0] || '';
+    if (!newsSection.includes('/germany/ja/events/')) {
+      problems.push(`${rel} Home News/Events section must link primarily to /germany/ja/events/.`);
+    }
+    const sectionHead = newsSection.match(/<div class=["']portal3-section-head["'][\s\S]*?<\/div>\s*<div class=["']portal3-chips/i)?.[0] || '';
+    if (/href=["']\/germany\/ja\/news\/["']/i.test(sectionHead)) {
+      problems.push(`${rel} Home News/Events section head must not use /germany/ja/news/ as the primary link.`);
+    }
+  }
+
+  if (normalizedUrl === '/germany/ja/community/') {
+    if (!html.includes('/assets/js/community-shared.js')) {
+      problems.push(`${rel} must load shared Community fallback data.`);
+    }
+    if (!/params\.get\(["']post["']\)/.test(html)) {
+      problems.push(`${rel} must support ?post= Community deep links.`);
+    }
+    if (/console\.error\(["']Community posts load failed/i.test(html)) {
+      problems.push(`${rel} should not emit console.error when Community GAS fallback is used.`);
+    }
+  }
+
+  if (normalizedUrl === '/germany/ja/events/') {
+    if (!html.includes('id="life-updates"')) {
+      problems.push(`${rel} Events hub must include the life updates/news section.`);
+    }
+    const hero = html.match(/<section class=["']jc-page-hero["'][\s\S]*?<\/section>/i)?.[0] || '';
+    if (/href=["']\/germany\/ja\/news\/["']/i.test(hero)) {
+      problems.push(`${rel} Events hero should not send the primary news/update action to /germany/ja/news/.`);
+    }
+  }
+
+  if (normalizedUrl === '/germany/ja/news/') {
+    if (/#f7f3ee/i.test(html)) problems.push(`${rel} should not use old beige theme-color #f7f3ee.`);
+    if (/top-hero\.jpg/i.test(html)) problems.push(`${rel} should not use the old top-hero image.`);
+    if (!html.includes('/germany/ja/events/')) problems.push(`${rel} should link back to the Events hub.`);
+  }
+
+  if (normalizedUrl === '/germany/ja/jobs/') {
+    const postingLinks = html.match(/href=["']\/germany\/ja\/jobs\/posting\/["']/g) || [];
+    if (postingLinks.length < 2) {
+      problems.push(`${rel} Jobs index should expose /jobs/posting/ from both hero and results context.`);
+    }
+  }
+
+  if (normalizedUrl === '/germany/ja/jobs/posting/') {
+    for (const stale of ['#f7f3ee', 'top-hero.jpg', 'Sakura GmbH', 'For Companies']) {
+      if (html.includes(stale)) problems.push(`${rel} contains stale Jobs posting marker: ${stale}`);
+    }
+    if (!html.includes('Publishing Flow') || !html.includes('posting-flow-grid')) {
+      problems.push(`${rel} must include the production posting flow section.`);
+    }
+    if (!html.includes('https://formspree.io/f/xlgojvar')) {
+      problems.push(`${rel} must preserve the Formspree posting endpoint.`);
+    }
+  }
+
+  if (
+    normalizedUrl === '/germany/ja/jobs/detail/' ||
+    /^\/germany\/ja\/jobs\/(sales-assistant-japanese-duesseldorf|it-support-specialist-cologne|accounting-staff-munich)\/$/.test(normalizedUrl)
+  ) {
+    if (!html.includes('/germany/ja/jobs/posting/')) {
+      problems.push(`${rel} job detail page should include a secondary employer posting CTA.`);
+    }
+  }
+}
+
+function validateProductionFixSharedAssets() {
+  const sharedCommunityPath = path.join(root, 'assets/js/community-shared.js');
+  if (!fs.existsSync(sharedCommunityPath)) {
+    problems.push('assets/js/community-shared.js is required for shared Community fallback posts.');
+  } else {
+    const sharedCommunity = fs.readFileSync(sharedCommunityPath, 'utf8');
+    if (!sharedCommunity.includes('fallbackPosts') || !sharedCommunity.includes('communityDetailHref')) {
+      problems.push('assets/js/community-shared.js must expose fallbackPosts and communityDetailHref.');
+    }
+  }
+
+  for (const relPath of ['assets/css/site.css', 'assets/css/jconnect-ui.css']) {
+    const css = fs.readFileSync(path.join(root, relPath), 'utf8');
+    const footerLogoRule = css.match(/\.footer-logo\s*\{[\s\S]*?\}/g)?.join('\n') || '';
+    if (!/background:\s*#fff/i.test(footerLogoRule) || !/border-radius:\s*8px/i.test(footerLogoRule) || !/padding:\s*6px\s+8px/i.test(footerLogoRule)) {
+      problems.push(`${relPath} must keep the footer logo readable with a white backplate.`);
+    }
   }
 }
 

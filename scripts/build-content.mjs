@@ -134,7 +134,7 @@ function normalizeItem(type, item, index) {
     hub_visible: item.hub_visible !== false,
     search_visible: item.search_visible !== false,
     sitemap_visible: item.sitemap_visible !== false,
-    official_sources: normalizeSources(item.official_sources),
+    official_sources: normalizeSources(item.official_sources?.length ? item.official_sources : item.sources),
     disclaimer_type: item.disclaimer_type || type,
     related_articles: toArray(item.related_articles),
     review: normalizeReview(item)
@@ -218,11 +218,16 @@ function renderFooter() {
 function renderHeaderTemplate(activeType, currentUrl) {
   const active = (type) => activeType === type ? ' class="active" aria-current="page"' : '';
   return fillTemplate(readLayoutTemplate('ja-header'), {
+    active_home: active('home'),
+    active_about: active('about'),
     active_community: active('community'),
     active_living: active('living'),
     active_jobs: active('jobs'),
     active_events: active('events'),
     active_learn_german: active('learn-german'),
+    active_eat: active('eat'),
+    active_shopping: active('shopping'),
+    active_medical: active('medical'),
     current_url: escapeAttribute(currentUrl || '/germany/ja/')
   });
 }
@@ -547,25 +552,37 @@ function renderRelatedSection(item, allItems) {
     .map((reference) => findRelatedItem(reference, allItems))
     .filter(Boolean);
 
-  const links = related.map((relatedItem) => `<li><a href="${escapeAttribute(relatedItem.url)}">${escapeHtml(relatedItem.title)}</a></li>`);
+  const relatedLinks = related.map((relatedItem) => `<li><a href="${escapeAttribute(relatedItem.url)}">${escapeHtml(relatedItem.title)}</a></li>`);
+  const sourceLinks = [];
 
   if (item.official_url) {
-    links.push(`<li><a href="${escapeAttribute(item.official_url)}">公式情報を確認する</a></li>`);
+    sourceLinks.push(`<li><a href="${escapeAttribute(item.official_url)}">公式情報を確認する</a></li>`);
   }
-
   for (const source of item.official_sources) {
     if (!source.url) continue;
-    links.push(`<li><a href="${escapeAttribute(source.url)}">${escapeHtml(source.title || '公式情報・参考ソース')}</a></li>`);
+    sourceLinks.push(`<li><a href="${escapeAttribute(source.url)}">${escapeHtml(source.title || '公式情報・参考ソース')}</a></li>`);
   }
 
-  if (!links.length) return '';
-
-  return `<section class="related-section">
-  <h3>関連記事・関連リンク</h3>
+  const sections = [];
+  if (sourceLinks.length) {
+    sections.push(`<section class="related-section official-source-section">
+  <h3>公式情報・参考ソース</h3>
   <ul>
-${indent(links.join('\n'), 4)}
+${indent(sourceLinks.join('\n'), 4)}
   </ul>
-</section>`;
+</section>`);
+  }
+
+  if (relatedLinks.length) {
+    sections.push(`<section class="related-section">
+  <h3>関連記事</h3>
+  <ul>
+${indent(relatedLinks.join('\n'), 4)}
+  </ul>
+</section>`);
+  }
+
+  return sections.join('\n');
 }
 
 function findRelatedItem(reference, allItems) {

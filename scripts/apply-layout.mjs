@@ -16,9 +16,7 @@ function main() {
     const url = fileToUrl(relPath);
     const page = pagesByUrl.get(url);
     const html = fs.readFileSync(file, 'utf8');
-    const nextHtml = page?.layout === 'home'
-      ? applyHomeMarkers(html)
-      : applyCanonicalLayout(html, url, page);
+    const nextHtml = applyCanonicalLayout(html, url, page);
 
     if (nextHtml !== html) {
       fs.writeFileSync(file, nextHtml, 'utf8');
@@ -27,13 +25,6 @@ function main() {
   }
 
   console.log(`Layout application complete: ${changedCount} JA HTML file(s) updated.`);
-}
-
-function applyHomeMarkers(html) {
-  let next = html;
-  next = preserveExistingLayoutBlock(next, 'ja-header', 'header');
-  next = preserveExistingLayoutBlock(next, 'ja-footer', 'footer');
-  return next;
 }
 
 function applyCanonicalLayout(html, url, page) {
@@ -63,35 +54,30 @@ function replaceLayoutBlock(html, marker, replacement, tag) {
   return `${html.slice(0, tagMatch.index)}${block}${html.slice(tagMatch.index + tagMatch[0].length)}`;
 }
 
-function preserveExistingLayoutBlock(html, marker, tag) {
-  if (html.includes(`<!-- LAYOUT:${marker}:start -->`) && html.includes(`<!-- LAYOUT:${marker}:end -->`)) {
-    return html;
-  }
-
-  const tagPattern = new RegExp(`(^[ \\t]*)<${tag}\\b[\\s\\S]*?<\\/${tag}>`, 'im');
-  const tagMatch = html.match(tagPattern);
-  if (!tagMatch || tagMatch.index === undefined) {
-    throw new Error(`Unable to find Home <${tag}> block for layout marker ${marker}`);
-  }
-
-  const block = wrapLayoutBlock(marker, tagMatch[0].trim(), tagMatch[1] || '');
-  return `${html.slice(0, tagMatch.index)}${block}${html.slice(tagMatch.index + tagMatch[0].length)}`;
-}
-
 function renderHeader(activeType, currentUrl) {
   const active = (type) => activeType === type ? ' class="active" aria-current="page"' : '';
   return fillTemplate(readLayoutTemplate('ja-header'), {
+    active_home: active('home'),
+    active_about: active('about'),
     active_community: active('community'),
     active_living: active('living'),
     active_jobs: active('jobs'),
     active_events: active('events'),
     active_learn_german: active('learn-german'),
+    active_eat: active('eat'),
+    active_shopping: active('shopping'),
+    active_medical: active('medical'),
     current_url: escapeAttribute(currentUrl)
   });
 }
 
 function activePillar(url, page) {
   if (page?.status === 'legacy' && page.redirect_target) return activePillar(normalizeUrl(page.redirect_target), null);
+  if (url === '/germany/ja/') return 'home';
+  if (url.startsWith('/germany/ja/about/')) return 'about';
+  if (url.startsWith('/germany/ja/eat/')) return 'eat';
+  if (url.startsWith('/germany/ja/shopping/')) return 'shopping';
+  if (url.startsWith('/germany/ja/medical/')) return 'medical';
   if (['community', 'living', 'jobs', 'events', 'learn-german'].includes(page?.pillar)) return page.pillar;
   if (url.startsWith('/germany/ja/community/')) return 'community';
   if (url.startsWith('/germany/ja/living/')) return 'living';

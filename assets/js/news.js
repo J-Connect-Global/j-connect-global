@@ -17,7 +17,7 @@ async function loadNews() {
   } catch (error) {
     newsGrid.innerHTML = `
       <p class="news-error">
-        ニュースを読み込めませんでした。時間をおいて再度お試しください。
+        確認ポイントを読み込めませんでした。時間をおいて再度お試しください。
       </p>
     `;
   }
@@ -25,7 +25,7 @@ async function loadNews() {
 
 function renderNews(items) {
   if (!items.length) {
-    newsGrid.innerHTML = `<p class="news-empty">条件に合うニュースはありません。</p>`;
+    newsGrid.innerHTML = `<p class="news-empty">条件に合う確認ポイントはありません。</p>`;
     return;
   }
 
@@ -47,8 +47,8 @@ function renderNews(items) {
         <span>${escapeHtml(item.published_at)}</span>
       </div>
 
-      <a href="${item.url}" target="_blank" rel="noopener noreferrer">
-        続きを読む
+      <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">
+        出典で確認する
       </a>
     </article>
   `).join("");

@@ -5,6 +5,18 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE_ORIGIN = 'https://j-connect-global.com';
+const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
+
+const pillarLabels = {
+  home: 'ホーム',
+  community: '交流・掲示板',
+  living: '生活・手続き',
+  jobs: '仕事・求人',
+  events: 'ニュース・イベント',
+  'learn-german': 'ドイツ語・学び',
+  utility: 'J-CONNECTについて',
+  legacy: '旧ページ'
+};
 
 const contentTypes = {
   living: {
@@ -50,6 +62,7 @@ function main() {
     Object.keys(contentTypes).map((type) => [type, loadContentType(type)])
   );
   const allItems = Object.values(datasets).flatMap((items) => items);
+  const pages = loadPagesRegistry();
 
   for (const [type, items] of Object.entries(datasets)) {
     for (const item of items.filter((entry) => entry.published)) {
@@ -59,8 +72,8 @@ function main() {
   }
 
   updateHome(datasets);
-  updateSearchIndex(allItems);
-  updateSitemap(allItems);
+  updateSearchIndex(allItems, pages);
+  updateSitemap(allItems, pages);
 
   console.log(`Content build complete: ${allItems.filter((item) => item.published).length} published article pages processed.`);
 }
@@ -82,6 +95,20 @@ function loadContentType(type) {
       markdownRel
     };
   });
+}
+
+function loadPagesRegistry() {
+  if (!fs.existsSync(path.join(root, PAGE_REGISTRY_PATH))) return [];
+  const pages = readJson(PAGE_REGISTRY_PATH);
+  if (!Array.isArray(pages)) {
+    throw new Error(`${PAGE_REGISTRY_PATH} must contain a JSON array.`);
+  }
+  return pages.map((page) => ({
+    ...page,
+    url: normalizePageUrl(page.url),
+    canonical_url: normalizePageUrl(page.canonical_url || page.url),
+    tags: toArray(page.tags)
+  }));
 }
 
 function normalizeItem(type, item, index) {
@@ -181,111 +208,38 @@ ${renderFooter()}
 }
 
 function renderHeader(activeType, currentUrl) {
-  const livingActive = activeType === 'living' ? ' class="active" aria-current="page"' : '';
-  const eventsActive = activeType === 'events' ? ' class="active" aria-current="page"' : '';
-  const learnGermanActive = activeType === 'learn-german' ? ' class="active" aria-current="page"' : '';
-
-  return `  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
-        <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany">
-        <span class="brand-copy">
-          <span class="brand-title">J-CONNECT GERMANY</span>
-          <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
-        </span>
-      </a>
-      <div class="header-actions">
-        <nav class="header-nav" aria-label="主要ナビゲーション">
-          <a href="/germany/ja/">ホーム</a>
-          <a href="/germany/ja/about/">このサイトについて</a>
-        </nav>
-        <div class="header-category header-category-menu" aria-label="カテゴリ選択">
-          <button type="button" class="header-category-trigger">カテゴリ</button>
-          <div class="category-dropdown">
-            <a href="/germany/ja/community/">交流・掲示板</a>
-            <a href="/germany/ja/living/"${livingActive}>生活・手続き</a>
-            <a href="/germany/ja/jobs/">仕事・求人</a>
-            <a href="/germany/ja/events/"${eventsActive}>ニュース・イベント</a>
-            <a href="/germany/ja/learn-german/"${learnGermanActive}>ドイツ語・学び</a>
-            <a href="/germany/ja/about/">J-CONNECTについて</a>
-          </div>
-        </div>
-        <form class="header-search" action="/germany/ja/search/" method="get" role="search">
-          <label class="search-box" aria-label="サイト内検索">
-            <span aria-hidden="true">⌕</span>
-            <input type="search" name="q" placeholder="検索">
-          </label>
-          <button class="search-btn" type="submit" aria-label="検索">⌕</button>
-        </form>
-        <details class="header-language header-language-menu" aria-label="言語切り替え">
-          <summary class="header-language-trigger">
-            <span>Language</span>
-            <span class="header-language-current" lang="ja">日本語</span>
-          </summary>
-          <div class="language-dropdown">
-            <a href="${escapeAttribute(currentUrl)}" class="active" aria-current="page" lang="ja">日本語</a>
-            <a href="/germany/en/coming-soon/" lang="en">English</a>
-            <a href="/germany/de/coming-soon/" lang="de">Deutsch</a>
-          </div>
-        </details>
-      </div>
-    </div>
-  </header>`;
+  return renderLayoutBlock('ja-header', renderHeaderTemplate(activeType, currentUrl));
 }
 
 function renderFooter() {
-  return `  <footer class="page-footer">
-    <div class="footer-inner">
-      <div class="footer-left">
-        <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany">
-        <div class="footer-copy">
-          <div class="footer-title">J-CONNECT GERMANY</div>
-          <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
-          <div class="footer-meta">© 2026 J-Connect Germany</div>
-        </div>
-      </div>
-      <div class="footer-links" aria-label="フッターサイトマップ">
-        <div class="footer-group">
-          <div class="footer-heading">交流・掲示板</div>
-          <a href="/germany/ja/community/">新着投稿</a>
-          <a href="/germany/ja/community/post/">投稿する</a>
-          <a href="/germany/ja/terms/">ルール・ガイドライン</a>
-        </div>
-        <div class="footer-group">
-          <div class="footer-heading">生活・手続き</div>
-          <a href="/germany/ja/living/">手続き</a>
-          <a href="/germany/ja/medical/">医療</a>
-          <a href="/germany/ja/eat/">食べる</a>
-          <a href="/germany/ja/shopping/">買い物</a>
-          <a href="/germany/ja/events/">観光・レジャー</a>
-        </div>
-        <div class="footer-group">
-          <div class="footer-heading">仕事・求人</div>
-          <a href="/germany/ja/jobs/">求人一覧</a>
-          <a href="/germany/ja/jobs/posting/">求人掲載について</a>
-        </div>
-        <div class="footer-group">
-          <div class="footer-heading">ニュース・イベント</div>
-          <a href="/germany/ja/news/">最新ニュース</a>
-          <a href="/germany/ja/events/">イベントカレンダー</a>
-        </div>
-        <div class="footer-group">
-          <div class="footer-heading">ドイツ語・学び</div>
-          <a href="/germany/ja/learn-german/">学習コンテンツ</a>
-          <a href="/germany/ja/learn-german/appointment-phrase/">フレーズ集</a>
-          <a href="/germany/ja/learn-german/">学習法</a>
-        </div>
-        <div class="footer-group">
-          <div class="footer-heading">J-CONNECTについて</div>
-          <a href="/germany/ja/about/">このサイトについて</a>
-          <a href="/germany/ja/contact/">お問い合わせ</a>
-          <a href="/germany/ja/terms/">利用規約</a>
-          <a href="/germany/ja/privacy/">プライバシー</a>
-          <a href="/germany/ja/impressum/">運営者情報</a>
-        </div>
-      </div>
-    </div>
-  </footer>`;
+  return renderLayoutBlock('ja-footer', readLayoutTemplate('ja-footer'));
+}
+
+function renderHeaderTemplate(activeType, currentUrl) {
+  const active = (type) => activeType === type ? ' class="active" aria-current="page"' : '';
+  return fillTemplate(readLayoutTemplate('ja-header'), {
+    active_community: active('community'),
+    active_living: active('living'),
+    active_jobs: active('jobs'),
+    active_events: active('events'),
+    active_learn_german: active('learn-german'),
+    current_url: escapeAttribute(currentUrl || '/germany/ja/')
+  });
+}
+
+function renderLayoutBlock(name, html) {
+  return `  <!-- LAYOUT:${name}:start -->\n${indent(html.trim(), 2)}\n  <!-- LAYOUT:${name}:end -->`;
+}
+
+function readLayoutTemplate(name) {
+  return readText(`templates/layout/${name}.html`);
+}
+
+function fillTemplate(template, values) {
+  return template.replace(/\{\{([a-z0-9_]+)\}\}/g, (match, key) => {
+    if (!Object.prototype.hasOwnProperty.call(values, key)) return match;
+    return values[key];
+  });
 }
 
 function markdownToHtml(markdown, context) {
@@ -770,9 +724,12 @@ function sortForHub(items) {
   return [...items].sort((a, b) => compareDateDesc(a.published_at, b.published_at) || a.home_order - b.home_order);
 }
 
-function updateSearchIndex(allItems) {
+function updateSearchIndex(allItems, pages) {
   const searchPath = 'assets/js/search-index.js';
   const current = readSearchIndex(searchPath);
+  const pageEntries = pages
+    .filter((page) => page.status === 'published' && page.search_visible === true)
+    .map(pageToSearchEntry);
   const contentEntries = allItems
     .filter((item) => item.published && item.search_visible)
     .map((item) => ({
@@ -783,7 +740,10 @@ function updateSearchIndex(allItems) {
       tags: item.tags
     }));
 
-  const registryUrls = new Set(allItems.map((item) => item.url));
+  const registryUrls = new Set([
+    ...pages.map((page) => page.url),
+    ...allItems.map((item) => item.url)
+  ]);
   const next = [];
   const seen = new Set();
 
@@ -793,7 +753,7 @@ function updateSearchIndex(allItems) {
     seen.add(entry.url);
   }
 
-  for (const entry of contentEntries) {
+  for (const entry of [...pageEntries, ...contentEntries]) {
     if (seen.has(entry.url)) continue;
     next.push(entry);
     seen.add(entry.url);
@@ -802,21 +762,41 @@ function updateSearchIndex(allItems) {
   writeText(searchPath, `window.JCONNECT_SEARCH_INDEX = ${JSON.stringify(next, null, 2)};\n`);
 }
 
+function pageToSearchEntry(page) {
+  return {
+    title: page.title,
+    description: page.description,
+    url: page.url,
+    category: pillarLabels[page.pillar] || page.pillar || 'J-CONNECTについて',
+    tags: page.tags.length ? page.tags : [page.type, page.pillar].filter(Boolean)
+  };
+}
+
 function readSearchIndex(searchPath) {
   const sandbox = { window: {} };
   vm.runInNewContext(readText(searchPath), sandbox, { filename: searchPath, timeout: 1000 });
   return Array.isArray(sandbox.window.JCONNECT_SEARCH_INDEX) ? sandbox.window.JCONNECT_SEARCH_INDEX : [];
 }
 
-function updateSitemap(allItems) {
+function updateSitemap(allItems, pages) {
   const sitemapPath = 'sitemap.xml';
   const current = parseSitemap(readText(sitemapPath));
   const byLoc = new Map();
-  const registryLocs = new Set(allItems.map((item) => absoluteUrl(item.url)));
+  const registryLocs = new Set([
+    ...pages.map((page) => absoluteUrl(page.url)),
+    ...allItems.map((item) => absoluteUrl(item.url))
+  ]);
 
   for (const entry of current) {
     if (registryLocs.has(entry.loc)) continue;
     if (!byLoc.has(entry.loc)) byLoc.set(entry.loc, entry);
+  }
+
+  for (const page of pages.filter((entry) => entry.status === 'published' && entry.sitemap_visible === true)) {
+    byLoc.set(absoluteUrl(page.url), {
+      loc: absoluteUrl(page.url),
+      lastmod: page.lastmod || ''
+    });
   }
 
   for (const item of allItems.filter((entry) => entry.published && entry.sitemap_visible)) {
@@ -989,6 +969,12 @@ function writeText(relPath, content) {
 
 function trimLeadingSlash(value) {
   return String(value || '').replace(/^\/+/, '');
+}
+
+function normalizePageUrl(value) {
+  const url = String(value || '').trim();
+  if (!url || url === '/') return url || '';
+  return url.endsWith('/') ? url : `${url}/`;
 }
 
 function toArray(value) {

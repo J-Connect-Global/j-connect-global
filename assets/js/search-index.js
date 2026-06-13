@@ -1,40 +1,40 @@
 window.JCONNECT_SEARCH_INDEX = [
   {
     "title": "J-Connect Germany",
-    "description": "ドイツ在住日本人向けの総合ポータル。交流、生活、仕事、ニュース・イベント、ドイツ語学習を整理しています。",
+    "description": "ドイツ在住日本人向け総合ポータル。交流掲示板、生活・手続き、仕事・求人、ニュース・イベント、ドイツ語学習を日本語で整理しています。",
     "url": "/germany/ja/",
     "category": "ホーム",
     "tags": [
       "ドイツ生活",
-      "日本人",
-      "ポータル"
+      "日本語ポータル",
+      "J-Connect Germany"
     ]
   },
   {
     "title": "交流・掲示板",
-    "description": "売買、質問、友達募集、生活サポートの投稿を探せます。",
+    "description": "ドイツ在住日本人向けの交流掲示板。売ります・買います、質問、友達募集、生活サポートの投稿を探せます。",
     "url": "/germany/ja/community/",
     "category": "交流・掲示板",
     "tags": [
       "掲示板",
-      "投稿",
-      "交流"
+      "コミュニティ",
+      "投稿"
     ]
   },
   {
     "title": "生活・手続き",
-    "description": "住民登録、保険、税金、銀行、通信などドイツ生活の手続きを整理しています。",
+    "description": "ドイツ生活に必要な住民登録、住まい、銀行、保険、税金、家族、教育などの生活ガイドを整理したハブです。",
     "url": "/germany/ja/living/",
     "category": "生活・手続き",
     "tags": [
       "生活",
       "手続き",
-      "住民登録"
+      "ドイツ生活"
     ]
   },
   {
     "title": "仕事・求人",
-    "description": "ドイツの日本語求人を地域、職種、勤務形態から探せます。",
+    "description": "ドイツで働きたい日本語話者向けに、求人、転職、アルバイト、勤務形態、ビザサポートなどの仕事情報を整理しています。",
     "url": "/germany/ja/jobs/",
     "category": "仕事・求人",
     "tags": [
@@ -45,18 +45,18 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "ニュース・イベント",
-    "description": "ドイツで参加しやすいイベント記事と週末のおでかけ情報を整理しています。",
+    "description": "ドイツの日本関連イベント、地域イベント、制度ニュース、週末の予定を日本語で確認できるハブです。",
     "url": "/germany/ja/events/",
     "category": "ニュース・イベント",
     "tags": [
+      "ニュース",
       "イベント",
-      "週末",
-      "ニュース"
+      "ドイツ"
     ]
   },
   {
     "title": "ドイツ語・学び",
-    "description": "生活で使えるドイツ語フレーズ記事と学習リソースを整理しています。",
+    "description": "日常生活、役所、病院、仕事で使えるドイツ語フレーズと学習コンテンツをまとめたページです。",
     "url": "/germany/ja/learn-german/",
     "category": "ドイツ語・学び",
     "tags": [
@@ -66,39 +66,30 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "このサイトについて",
-    "description": "J-Connect Germany の理念、掲載方針、対象読者をご案内します。",
-    "url": "/germany/ja/about/",
-    "category": "J-CONNECTについて",
+    "title": "食べる",
+    "description": "ドイツ生活で使える日本食、レストラン、カフェ、飲食店情報を探すディレクトリページです。",
+    "url": "/germany/ja/eat/",
+    "category": "生活・手続き",
     "tags": [
-      "運営",
-      "サイト案内"
+      "食べる",
+      "日本食",
+      "レストラン"
     ]
   },
   {
-    "title": "お問い合わせ",
-    "description": "掲載依頼、情報提供、修正依頼の連絡先を確認できます。",
-    "url": "/germany/ja/contact/",
-    "category": "J-CONNECTについて",
+    "title": "買い物",
+    "description": "ドイツ生活で使える店舗、サービス、買い物スポットを探すディレクトリページです。",
+    "url": "/germany/ja/shopping/",
+    "category": "生活・手続き",
     "tags": [
-      "問い合わせ",
-      "掲載依頼"
-    ]
-  },
-  {
-    "title": "最新ニュース",
-    "description": "ドイツ生活、制度、行政、交通、安全に関するニュースを確認できます。",
-    "url": "/germany/ja/news/",
-    "category": "ニュース・イベント",
-    "tags": [
-      "ニュース",
-      "制度",
-      "行政"
+      "買い物",
+      "店舗",
+      "サービス"
     ]
   },
   {
     "title": "医療",
-    "description": "病院、クリニック、家庭医、薬局などの医療情報を探せます。",
+    "description": "ドイツで病院、クリニック、緊急時の連絡先を探すための医療ディレクトリページです。",
     "url": "/germany/ja/medical/",
     "category": "生活・手続き",
     "tags": [
@@ -108,76 +99,19 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "食べる",
-    "description": "日本食、カフェ、レストラン情報を地域やカテゴリから探せます。",
-    "url": "/germany/ja/eat/",
-    "category": "生活・手続き",
+    "title": "最新ニュース",
+    "description": "ドイツ生活に関わるニュース、制度情報、地域トピックを日本語で整理したニュース一覧です。",
+    "url": "/germany/ja/news/",
+    "category": "ニュース・イベント",
     "tags": [
-      "食べる",
-      "レストラン",
-      "グルメ"
-    ]
-  },
-  {
-    "title": "買い物",
-    "description": "スーパー、食材店、薬局、生活サービスを探せます。",
-    "url": "/germany/ja/shopping/",
-    "category": "生活・手続き",
-    "tags": [
-      "買い物",
-      "スーパー",
-      "サービス"
-    ]
-  },
-  {
-    "title": "営業アシスタント（日本語対応）",
-    "description": "日系顧客との連絡、見積書作成、受発注サポートを担当する営業アシスタント職です。",
-    "url": "/germany/ja/jobs/sales-assistant-japanese-duesseldorf/",
-    "category": "仕事・求人",
-    "tags": [
-      "営業・事務",
-      "日本語対応",
-      "NRW",
-      "Sample listing"
-    ]
-  },
-  {
-    "title": "ITサポートスペシャリスト",
-    "description": "日本語ユーザーを含む社内向け IT サポート、端末管理、アカウント運用を担当します。",
-    "url": "/germany/ja/jobs/it-support-specialist-cologne/",
-    "category": "仕事・求人",
-    "tags": [
-      "IT",
-      "ヘルプデスク",
-      "ケルン",
-      "Sample listing"
-    ]
-  },
-  {
-    "title": "経理・会計スタッフ",
-    "description": "請求書処理、支払管理、月次決算補助を担当する経理スタッフ職です。",
-    "url": "/germany/ja/jobs/accounting-staff-munich/",
-    "category": "仕事・求人",
-    "tags": [
-      "経理",
-      "会計",
-      "ミュンヘン",
-      "Sample listing"
-    ]
-  },
-  {
-    "title": "求人詳細",
-    "description": "求人IDを指定して開く動的な求人詳細ページです。",
-    "url": "/germany/ja/jobs/detail/",
-    "category": "仕事・求人",
-    "tags": [
-      "求人",
-      "詳細"
+      "ニュース",
+      "制度",
+      "地域情報"
     ]
   },
   {
     "title": "イベント詳細",
-    "description": "イベントIDを指定して開く動的なイベント詳細ページです。",
+    "description": "J-Connect Germany のイベント詳細ページです。開催日、場所、関連リンクなどを確認できます。",
     "url": "/germany/ja/events/detail/",
     "category": "ニュース・イベント",
     "tags": [
@@ -187,27 +121,91 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "求人掲載について",
-    "description": "J-Connect Germany に求人情報を掲載したい企業向けの案内です。",
+    "description": "J-Connect Germany に求人掲載を希望する企業向けの案内ページです。",
     "url": "/germany/ja/jobs/posting/",
     "category": "仕事・求人",
     "tags": [
-      "採用",
-      "求人掲載"
+      "求人掲載",
+      "企業向け",
+      "仕事"
+    ]
+  },
+  {
+    "title": "求人詳細",
+    "description": "J-Connect Germany の求人詳細ページです。仕事内容、勤務地、応募情報を確認できます。",
+    "url": "/germany/ja/jobs/detail/",
+    "category": "仕事・求人",
+    "tags": [
+      "求人",
+      "詳細"
+    ]
+  },
+  {
+    "title": "営業アシスタント（日本語対応）",
+    "description": "デュッセルドルフ周辺の日本語対応営業アシスタント求人の詳細ページです。",
+    "url": "/germany/ja/jobs/sales-assistant-japanese-duesseldorf/",
+    "category": "仕事・求人",
+    "tags": [
+      "求人",
+      "営業",
+      "デュッセルドルフ"
+    ]
+  },
+  {
+    "title": "ITサポートスペシャリスト",
+    "description": "ケルン周辺の IT サポートスペシャリスト求人の詳細ページです。",
+    "url": "/germany/ja/jobs/it-support-specialist-cologne/",
+    "category": "仕事・求人",
+    "tags": [
+      "求人",
+      "IT",
+      "ケルン"
+    ]
+  },
+  {
+    "title": "経理・会計スタッフ",
+    "description": "ミュンヘン周辺の経理・会計スタッフ求人の詳細ページです。",
+    "url": "/germany/ja/jobs/accounting-staff-munich/",
+    "category": "仕事・求人",
+    "tags": [
+      "求人",
+      "経理",
+      "ミュンヘン"
+    ]
+  },
+  {
+    "title": "このサイトについて",
+    "description": "J-Connect Germany の目的、掲載領域、運営方針を説明するページです。",
+    "url": "/germany/ja/about/",
+    "category": "J-CONNECTについて",
+    "tags": [
+      "J-CONNECTについて",
+      "運営方針"
+    ]
+  },
+  {
+    "title": "お問い合わせ",
+    "description": "J-Connect Germany へのお問い合わせ、掲載相談、運営への連絡に使うページです。",
+    "url": "/germany/ja/contact/",
+    "category": "J-CONNECTについて",
+    "tags": [
+      "お問い合わせ",
+      "運営"
     ]
   },
   {
     "title": "利用規約",
-    "description": "J-Connect Germany の利用条件と注意事項です。",
+    "description": "J-Connect Germany の利用規約、投稿ルール、免責事項を確認できるページです。",
     "url": "/germany/ja/terms/",
     "category": "J-CONNECTについて",
     "tags": [
-      "規約",
+      "利用規約",
       "ルール"
     ]
   },
   {
     "title": "プライバシー",
-    "description": "個人情報の取り扱いとプライバシー方針です。",
+    "description": "J-Connect Germany のプライバシーポリシーと個人情報の取り扱いを確認できるページです。",
     "url": "/germany/ja/privacy/",
     "category": "J-CONNECTについて",
     "tags": [
@@ -217,7 +215,7 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "運営者情報",
-    "description": "J-Connect Germany の運営者情報と法的表示です。",
+    "description": "J-Connect Germany の運営者情報、所在地、連絡先を確認できる Impressum ページです。",
     "url": "/germany/ja/impressum/",
     "category": "J-CONNECTについて",
     "tags": [

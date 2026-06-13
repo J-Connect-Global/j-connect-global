@@ -30,38 +30,52 @@
 
 <body class="portal3-home">
 <!-- LAYOUT:ja-header:start -->
-<header class="portal3-header">
-  <div class="portal3-header-inner">
-    <a class="portal3-logo" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
-      <img src="/assets/images/brand/logo_header.png" alt="J-Connect Germany">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
+      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany">
+      <span class="brand-copy">
+        <span class="brand-title">J-CONNECT GERMANY</span>
+        <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
+      </span>
     </a>
-
-    <p class="portal3-tagline">ドイツと日本をつなぐ総合ポータル</p>
-
-    <form class="portal3-header-search" action="/germany/ja/search/" method="get" role="search">
-      <label for="portal3-header-search-input">サイト内検索</label>
-      <input id="portal3-header-search-input" type="search" name="q" placeholder="サイト内を検索">
-      <button type="submit" aria-label="検索">⌕</button>
-    </form>
-
-    <nav class="portal3-lang" aria-label="言語切り替え">
-      <a href="/germany/ja/" aria-current="page">JA</a>
-      <span>|</span>
-      <a href="/germany/en/coming-soon/" lang="en">EN</a>
-      <span>|</span>
-      <a href="/germany/de/coming-soon/" lang="de">DE</a>
-    </nav>
-
-    <div class="portal3-menu">
-      <button type="button" aria-label="メニュー"><span>●</span> メニュー</button>
-      <div class="portal3-menu-dropdown">
-        <a href="/germany/ja/community/">交流・掲示板</a>
-        <a href="/germany/ja/living/">生活・手続き</a>
-        <a href="/germany/ja/jobs/">仕事・求人</a>
-        <a href="/germany/ja/events/">ニュース・イベント</a>
-        <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
-        <a href="/germany/ja/about/">J-CONNECTについて</a>
+    <div class="header-actions">
+      <nav class="header-nav" aria-label="主要ナビゲーション">
+        <a href="/germany/ja/" class="active" aria-current="page">ホーム</a>
+        <a href="/germany/ja/about/">このサイトについて</a>
+      </nav>
+      <div class="header-category header-category-menu" aria-label="カテゴリ選択">
+        <button type="button" class="header-category-trigger">カテゴリ</button>
+        <div class="category-dropdown">
+          <a href="/germany/ja/community/">交流・掲示板</a>
+          <a href="/germany/ja/living/">生活・手続き</a>
+          <a href="/germany/ja/jobs/">仕事・求人</a>
+          <a href="/germany/ja/events/">ニュース・イベント</a>
+          <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+          <a href="/germany/ja/eat/">食べる</a>
+          <a href="/germany/ja/shopping/">買い物</a>
+          <a href="/germany/ja/medical/">医療</a>
+          <a href="/germany/ja/about/">J-CONNECTについて</a>
+        </div>
       </div>
+      <form class="header-search" action="/germany/ja/search/" method="get" role="search">
+        <label class="search-box" aria-label="サイト内検索">
+          <span aria-hidden="true">⌕</span>
+          <input type="search" name="q" placeholder="検索">
+        </label>
+        <button class="search-btn" type="submit" aria-label="検索">⌕</button>
+      </form>
+      <details class="header-language header-language-menu" aria-label="言語切り替え">
+        <summary class="header-language-trigger">
+          <span>Language</span>
+          <span class="header-language-current" lang="ja">日本語</span>
+        </summary>
+        <div class="language-dropdown">
+          <a href="/germany/ja/" class="active" aria-current="page" lang="ja">日本語</a>
+          <a href="/germany/en/coming-soon/" lang="en">English</a>
+          <a href="/germany/de/coming-soon/" lang="de">Deutsch</a>
+        </div>
+      </details>
     </div>
   </div>
 </header>
@@ -76,13 +90,6 @@
         ドイツで暮らす日本人の毎日をサポート。コミュニティ、仕事、ニュース、イベント、<br>
         ドイツ語学習まで、必要な情報とつながりがここにあります。
       </p>
-
-      <form class="portal3-hero-search" action="/germany/ja/search/" method="get" role="search">
-        <label for="portal3-home-search">サイト内検索</label>
-        <span aria-hidden="true">⌕</span>
-        <input id="portal3-home-search" type="search" name="q" placeholder="キーワードを入力（例：ビザ、求人、デュッセルドルフ、イベント）">
-        <button type="submit">検索</button>
-      </form>
 
       <div class="portal3-quick">
         <a class="portal3-red" href="/germany/ja/community/post/">投稿する</a>
@@ -178,29 +185,15 @@
           <a href="/germany/ja/jobs/">もっと見る</a>
         </div>
 
-        <a class="portal3-job-mini" href="/germany/ja/jobs/sales-assistant-japanese-duesseldorf/">
-          <span class="portal3-job-icon">▦</span>
-          <span>
-            <strong>営業アシスタント（日本語対応）</strong>
-            <small>Rhein Trade GmbH・Düsseldorf<br>€2,600〜€3,200・フルタイム</small>
-          </span>
-        </a>
-
-        <a class="portal3-job-mini" href="/germany/ja/jobs/it-support-specialist-cologne/">
-          <span class="portal3-job-icon">✚</span>
-          <span>
-            <strong>ITサポートスペシャリスト</strong>
-            <small>TechBridge Solutions GmbH・Köln<br>€42,000〜€52,000・フルタイム</small>
-          </span>
-        </a>
-
-        <a class="portal3-job-mini" href="/germany/ja/jobs/accounting-staff-munich/">
-          <span class="portal3-job-icon">▣</span>
-          <span>
-            <strong>経理・会計スタッフ</strong>
-            <small>Kobato Finance GmbH・München<br>€3,000〜€3,800・フルタイム</small>
-          </span>
-        </a>
+        <div id="homeJobsMini" data-home-jobs-mini>
+          <a class="portal3-job-mini" href="/germany/ja/jobs/">
+            <span class="portal3-job-icon">▦</span>
+            <span>
+              <strong>求人を読み込み中</strong>
+              <small>掲載中の求人データを確認しています</small>
+            </span>
+          </a>
+        </div>
       </article>
     </section>
 
@@ -311,29 +304,13 @@
         <a href="/germany/ja/jobs/">アルバイト</a>
       </div>
 
-      <div class="portal3-job-row">
-        <a class="portal3-job-card" href="/germany/ja/jobs/sales-assistant-japanese-duesseldorf/">
+      <div class="portal3-job-row" id="homeJobsCards" data-home-jobs>
+        <a class="portal3-job-card" href="/germany/ja/jobs/">
           <span>▤</span>
-          <strong>営業アシスタント（日本語対応）</strong>
-          <small>Rhein Trade GmbH・Düsseldorf</small>
-          <b>€2,600〜€3,200</b>
-          <em>フルタイム</em><em>日本語対応</em>
-        </a>
-
-        <a class="portal3-job-card" href="/germany/ja/jobs/it-support-specialist-cologne/">
-          <span>▥</span>
-          <strong>ITサポートスペシャリスト</strong>
-          <small>TechBridge Solutions GmbH・Cologne</small>
-          <b>€42,000〜€52,000</b>
-          <em>フルタイム</em><em>出社中心</em>
-        </a>
-
-        <a class="portal3-job-card" href="/germany/ja/jobs/accounting-staff-munich/">
-          <span>☻</span>
-          <strong>経理・会計スタッフ</strong>
-          <small>Kobato Finance GmbH・München</small>
-          <b>€40,000〜€48,000</b>
-          <em>フルタイム</em><em>ハイブリッド</em>
+          <strong>求人を読み込み中</strong>
+          <small>掲載中の求人データを確認しています</small>
+          <b>求人一覧へ</b>
+          <em>データ確認中</em>
         </a>
       </div>
     </section>
@@ -445,61 +422,64 @@
 </main>
 
 <!-- LAYOUT:ja-footer:start -->
-<footer class="portal3-footer">
-  <div class="portal3-footer-inner">
-    <div class="portal3-footer-col">
-      <h2>交流・掲示板</h2>
-      <a href="/germany/ja/community/">新着投稿</a>
-      <a href="/germany/ja/community/post/">投稿する</a>
-      <a href="/germany/ja/terms/">ルール・ガイドライン</a>
+<footer class="page-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany">
+      <div class="footer-copy">
+        <div class="footer-title">J-CONNECT GERMANY</div>
+        <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+        <div class="footer-meta">© 2026 J-Connect Germany</div>
+      </div>
     </div>
-    <div class="portal3-footer-col">
-      <h2>生活・手続き</h2>
-      <a href="/germany/ja/living/">手続き</a>
-      <a href="/germany/ja/medical/">医療</a>
-      <a href="/germany/ja/eat/">食べる</a>
-      <a href="/germany/ja/shopping/">買い物</a>
-      <a href="/germany/ja/events/">観光・レジャー</a>
+    <div class="footer-links" aria-label="フッターサイトマップ">
+      <div class="footer-group">
+        <div class="footer-heading">交流・掲示板</div>
+        <a href="/germany/ja/community/">新着投稿</a>
+        <a href="/germany/ja/community/post/">投稿する</a>
+        <a href="/germany/ja/terms/">ルール・ガイドライン</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">生活・手続き</div>
+        <a href="/germany/ja/living/">手続き</a>
+        <a href="/germany/ja/medical/">医療</a>
+        <a href="/germany/ja/eat/">食べる</a>
+        <a href="/germany/ja/shopping/">買い物</a>
+        <a href="/germany/ja/events/">観光・レジャー</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">仕事・求人</div>
+        <a href="/germany/ja/jobs/">求人一覧</a>
+        <a href="/germany/ja/jobs/posting/">求人掲載について</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">ニュース・イベント</div>
+        <a href="/germany/ja/news/">生活アップデート</a>
+        <a href="/germany/ja/events/">イベントカレンダー</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">ドイツ語・学び</div>
+        <a href="/germany/ja/learn-german/">学習コンテンツ</a>
+        <a href="/germany/ja/learn-german/appointment-phrase/">フレーズ集</a>
+        <a href="/germany/ja/learn-german/">学習法</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">J-CONNECTについて</div>
+        <a href="/germany/ja/about/">このサイトについて</a>
+        <a href="/germany/ja/contact/">お問い合わせ</a>
+        <a href="/germany/ja/terms/">利用規約</a>
+        <a href="/germany/ja/privacy/">プライバシー</a>
+        <a href="/germany/ja/impressum/">運営者情報</a>
+      </div>
     </div>
-    <div class="portal3-footer-col">
-      <h2>仕事・求人</h2>
-      <a href="/germany/ja/jobs/">求人一覧</a>
-      <a href="/germany/ja/jobs/posting/">求人掲載について</a>
-    </div>
-    <div class="portal3-footer-col">
-      <h2>ニュース・イベント</h2>
-      <a href="/germany/ja/news/">最新ニュース</a>
-      <a href="/germany/ja/events/">イベントカレンダー</a>
-    </div>
-    <div class="portal3-footer-col">
-      <h2>ドイツ語・学び</h2>
-      <a href="/germany/ja/learn-german/">学習コンテンツ</a>
-      <a href="/germany/ja/learn-german/appointment-phrase/">フレーズ集</a>
-      <a href="/germany/ja/learn-german/">学習法</a>
-    </div>
-    <div class="portal3-footer-col">
-      <h2>J-CONNECTについて</h2>
-      <a href="/germany/ja/about/">このサイトについて</a>
-      <a href="/germany/ja/contact/">お問い合わせ</a>
-      <a href="/germany/ja/terms/">利用規約</a>
-      <a href="/germany/ja/privacy/">プライバシー</a>
-      <a href="/germany/ja/impressum/">運営者情報</a>
-    </div>
-  </div>
-  <div class="portal3-footer-bottom">
-    <nav aria-label="フッター補助リンク">
-      <a href="/germany/ja/terms/">利用規約</a>
-      <a href="/germany/ja/privacy/">プライバシー</a>
-      <a href="/germany/ja/impressum/">運営者情報</a>
-      <a href="/germany/ja/contact/">お問い合わせ</a>
-    </nav>
-    <p>© 2026 J-CONNECT GERMANY All Rights Reserved.</p>
   </div>
 </footer>
 <!-- LAYOUT:ja-footer:end -->
 
 <script src="/assets/js/data-sources.js"></script>
 <script src="/assets/js/community-shared.js"></script>
+<script src="/assets/js/jobs-fallback.js"></script>
+<script src="/assets/js/jobs-shared.js"></script>
 <script>
   (function () {
     const shared = window.JCONNECT_COMMUNITY_SHARED;
@@ -553,10 +533,13 @@
       miniRoot.innerHTML = miniPosts.map((post) => {
         const href = shared.communityDetailHref(post, "/germany/ja/community/");
         const thumbClass = thumbClassByType[post._postType] || "thumb-office";
+        const image = post._images[0] || "";
         const meta = [post._location, shared.formatDate(post._date)].filter(Boolean).join("・");
         return `
           <a class="portal3-mini" href="${escapeHtml(href)}" data-post-id="${escapeHtml(post._id)}">
-            <span class="portal3-thumb ${escapeHtml(thumbClass)}"></span>
+            <span class="portal3-thumb ${escapeHtml(thumbClass)} ${image ? "has-photo" : ""}">
+              ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(post._title)}の写真" loading="lazy" decoding="async" onerror="this.closest('.portal3-thumb')?.classList.remove('has-photo'); this.remove();">` : ""}
+            </span>
             <span>
               <em>${escapeHtml(post._postType)}</em>
               <strong>${escapeHtml(post._title)}</strong>
@@ -569,11 +552,14 @@
       cardRoot.innerHTML = cardPosts.map((post) => {
         const href = shared.communityDetailHref(post, "/germany/ja/community/");
         const imageClass = imageClassByType[post._postType] || "img-doc";
+        const image = post._images[0] || "";
         const secondary = [post._location, shared.formatDate(post._date)].filter(Boolean).join("・");
         const action = post._price || (post._images.length ? `写真 ${post._images.length}` : "詳細を見る");
         return `
           <a class="portal3-card" href="${escapeHtml(href)}" data-post-id="${escapeHtml(post._id)}">
-            <span class="portal3-card-img ${escapeHtml(imageClass)}"></span>
+            <span class="portal3-card-img ${escapeHtml(imageClass)} ${image ? "has-photo" : ""}">
+              ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(post._title)}の写真" loading="lazy" decoding="async" onerror="this.closest('.portal3-card-img')?.classList.remove('has-photo'); this.remove();">` : ""}
+            </span>
             <em>${escapeHtml(post._postType)}</em>
             <strong>${escapeHtml(post._title)}</strong>
             <small>${escapeHtml(secondary || post._subcategory)}</small>
@@ -601,6 +587,89 @@
     }
 
     loadCommunityPosts();
+  })();
+</script>
+<script>
+  (function () {
+    const dataSources = window.JCONNECT_DATA_SOURCES;
+    const jobsShared = window.JCONNECT_JOBS_SHARED;
+    const miniRoot = document.getElementById("homeJobsMini");
+    const cardRoot = document.getElementById("homeJobsCards");
+    if (!dataSources || !jobsShared || !miniRoot || !cardRoot) return;
+
+    const iconSet = ["▦", "▥", "▣"];
+
+    function escapeHtml(value) {
+      return String(value || "").replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      })[char]);
+    }
+
+    function fallbackJobs() {
+      return jobsShared.activeJobs(window.JCONNECT_FALLBACK_JOBS || []);
+    }
+
+    function jobMeta(job) {
+      return [job.company_name, job.location || job.city || job.region].filter(Boolean).join("・");
+    }
+
+    function render(jobs) {
+      const list = jobs.length ? jobs : fallbackJobs();
+      const selected = list.slice(0, 3);
+
+      miniRoot.innerHTML = selected.map((job, index) => {
+        const href = jobsShared.getJobDetailPath(job);
+        const salary = jobsShared.getSalaryLabel(job);
+        const detail = [jobMeta(job), salary, job.employment_type].filter(Boolean).join("・");
+        return `
+          <a class="portal3-job-mini" href="${escapeHtml(href)}" data-job-id="${escapeHtml(job.id)}">
+            <span class="portal3-job-icon">${iconSet[index % iconSet.length]}</span>
+            <span>
+              <strong>${escapeHtml(job.position_title || "求人タイトル未設定")}</strong>
+              <small>${escapeHtml(detail || "詳細ページで確認してください")}</small>
+            </span>
+          </a>
+        `;
+      }).join("");
+
+      cardRoot.innerHTML = selected.map((job, index) => {
+        const href = jobsShared.getJobDetailPath(job);
+        const salary = jobsShared.getSalaryLabel(job);
+        const chips = [job.employment_type, job.work_style, job.language].filter(Boolean).slice(0, 3);
+        const summary = job.short_description || job.summary || job.description || "詳細ページで内容を確認してください。";
+        return `
+          <a class="portal3-job-card" href="${escapeHtml(href)}" data-job-id="${escapeHtml(job.id)}">
+            <span>${iconSet[index % iconSet.length]}</span>
+            <strong>${escapeHtml(job.position_title || "求人タイトル未設定")}</strong>
+            <small>${escapeHtml(jobMeta(job) || "勤務地未設定")}</small>
+            <p>${escapeHtml(summary)}</p>
+            ${salary ? `<b>${escapeHtml(salary)}</b>` : ""}
+            ${chips.map((chip) => `<em>${escapeHtml(chip)}</em>`).join("")}
+          </a>
+        `;
+      }).join("");
+    }
+
+    async function loadJobs() {
+      try {
+        const url = dataSources.buildDirectoryUrl({
+          sheet: dataSources.directorySheets.jobs,
+          lang: "ja",
+          status: "active"
+        });
+        const payload = await dataSources.fetchJsonWithTimeout(url, 9000);
+        const rows = dataSources.normalizePayload(payload);
+        render(jobsShared.activeJobs(rows));
+      } catch (error) {
+        render(fallbackJobs());
+      }
+    }
+
+    loadJobs();
   })();
 </script>
 <script src="/assets/js/main.js"></script>

@@ -10,8 +10,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-06-12",
-    "last_verified": "2026-06-12",
+    "updated_at": "2026-06-14",
+    "last_verified": "2026-06-14",
     "tags": [
       "賃貸",
       "家探し",
@@ -27,13 +27,22 @@
       "schufa-guide",
       "moving-checklist-germany"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "Gesetze im Internet - BGB Section 535 Mietvertrag",
+        "url": "https://www.gesetze-im-internet.de/bgb/__535.html"
+      },
+      {
+        "title": "Verbraucherzentrale - Mietvertrag und Wohnungssuche",
+        "url": "https://www.verbraucherzentrale.de/laura-zieht-aus/mietvertrag"
+      }
+    ],
     "disclaimer_type": "housing",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-12",
-      "next_review_due": "2027-06-12"
+      "last_reviewed_at": "2026-06-14",
+      "next_review_due": "2027-06-14"
     }
   },
   {
@@ -47,8 +56,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-06-12",
-    "last_verified": "2026-06-12",
+    "updated_at": "2026-06-14",
+    "last_verified": "2026-06-14",
     "tags": [
       "SCHUFA",
       "賃貸",
@@ -64,13 +73,22 @@
       "rent-apartment-germany",
       "bank-account-germany"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "SCHUFA - Kostenlose Datenkopie",
+        "url": "https://www.schufa.de/newsroom/bonitaet/schufa-auskunft-kostenlos-datenkopie/index.jsp"
+      },
+      {
+        "title": "SCHUFA - Auskunft fuer Mieter",
+        "url": "https://www.schufa.de/newsroom/bonitaet/schufa-datenkopie-auskunft-mieter/"
+      }
+    ],
     "disclaimer_type": "finance_contract",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-12",
-      "next_review_due": "2027-06-12"
+      "last_reviewed_at": "2026-06-14",
+      "next_review_due": "2027-06-14"
     }
   },
   {
@@ -84,8 +102,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-06-12",
-    "last_verified": "2026-06-12",
+    "updated_at": "2026-06-14",
+    "last_verified": "2026-06-14",
     "tags": [
       "銀行口座",
       "お金",
@@ -101,13 +119,22 @@
       "germany-first-30-days",
       "schufa-guide"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "BaFin - Basiskonto",
+        "url": "https://www.bafin.de/DE/verbraucherinnen-verbraucher/themen-finanzprodukte/konten-zahlungen/konten/basiskonto/basiskonto_node.html"
+      },
+      {
+        "title": "BaFin-Kontenvergleich - Gut zu wissen",
+        "url": "https://kontenvergleich.bafin.de/de/gut-zu-wissen"
+      }
+    ],
     "disclaimer_type": "finance",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-12",
-      "next_review_due": "2027-06-12"
+      "last_reviewed_at": "2026-06-14",
+      "next_review_due": "2027-06-14"
     }
   },
   {
@@ -121,8 +148,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-06-12",
-    "last_verified": "2026-06-12",
+    "updated_at": "2026-06-14",
+    "last_verified": "2026-06-14",
     "tags": [
       "税金",
       "Tax ID",
@@ -138,13 +165,22 @@
       "germany-first-30-days",
       "bank-account-germany"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "BZSt - The identification number",
+        "url": "https://www.bzst.de/EN/Private_individuals/Tax_identification_number/tax_identification_number_node.html"
+      },
+      {
+        "title": "BZSt - Tax identification number FAQ",
+        "url": "https://www.bzst.de/EN/Private_individuals/Tax_identification_number/FAQ/faq_tin_node.html"
+      }
+    ],
     "disclaimer_type": "tax",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-12",
-      "next_review_due": "2027-06-12"
+      "last_reviewed_at": "2026-06-14",
+      "next_review_due": "2027-06-14"
     }
   },
   {
@@ -158,8 +194,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-06-12",
-    "last_verified": "2026-06-12",
+    "updated_at": "2026-06-14",
+    "last_verified": "2026-06-14",
     "tags": [
       "妊娠",
       "出産",
@@ -175,13 +211,22 @@
       "health-insurance-guide",
       "kita-u3-tagesmutter-guide"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "Familienportal - Mutterschaftsleistungen",
+        "url": "https://familienportal.de/familienportal/familienleistungen/mutterschaftsleistungen"
+      },
+      {
+        "title": "Familienportal - Elterngeld",
+        "url": "https://familienportal.de/familienportal/familienleistungen/elterngeld"
+      }
+    ],
     "disclaimer_type": "medical_family",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-12",
-      "next_review_due": "2027-06-12"
+      "last_reviewed_at": "2026-06-14",
+      "next_review_due": "2027-06-14"
     }
   },
   {
@@ -195,8 +240,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-06-12",
-    "last_verified": "2026-06-12",
+    "updated_at": "2026-06-14",
+    "last_verified": "2026-06-14",
     "tags": [
       "Kita",
       "子育て",
@@ -212,13 +257,22 @@
       "pregnancy-birth-germany",
       "moving-checklist-germany"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "Familienportal - Kinderbetreuung",
+        "url": "https://familienportal.de/familienportal/lebenslagen/ausbildung-beruf/kinderbetreuung"
+      },
+      {
+        "title": "Familienportal - Kindertagespflege",
+        "url": "https://familienportal.de/familienportal/lebenslagen/ausbildung-beruf/kinderbetreuung/was-ist-kindertagespflege--125528"
+      }
+    ],
     "disclaimer_type": "family_administrative",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-12",
-      "next_review_due": "2027-06-12"
+      "last_reviewed_at": "2026-06-14",
+      "next_review_due": "2027-06-14"
     }
   },
   {
@@ -269,8 +323,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-06-07",
-    "last_verified": "2026-06-07",
+    "updated_at": "2026-06-14",
+    "last_verified": "2026-06-14",
     "tags": [
       "行政手続き",
       "初渡独"
@@ -286,7 +340,7 @@
     ],
     "official_sources": [
       {
-        "title": "Berlin.de - Anmeldung einer Wohnung",
+        "title": "Berlin.de - Wohnsitz anmelden",
         "url": "https://service.berlin.de/dienstleistung/120686/"
       }
     ],
@@ -294,8 +348,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-07",
-      "next_review_due": "2027-06-07"
+      "last_reviewed_at": "2026-06-14",
+      "next_review_due": "2027-06-14"
     }
   },
   {
@@ -345,8 +399,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-06-07",
-    "last_verified": "2026-06-07",
+    "updated_at": "2026-06-14",
+    "last_verified": "2026-06-14",
     "tags": [
       "保険",
       "行政手続き"
@@ -360,13 +414,22 @@
     "related_articles": [
       "germany-first-30-days"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "Bundesministerium fuer Gesundheit - Gesetzlich Versicherte",
+        "url": "https://www.bundesgesundheitsministerium.de/gesetzlich-versicherte"
+      },
+      {
+        "title": "Bundesministerium fuer Gesundheit - Ratgeber GKV",
+        "url": "https://www.bundesgesundheitsministerium.de/gkv"
+      }
+    ],
     "disclaimer_type": "medical_insurance",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-07",
-      "next_review_due": "2027-06-07"
+      "last_reviewed_at": "2026-06-14",
+      "next_review_due": "2027-06-14"
     }
   }
 ]

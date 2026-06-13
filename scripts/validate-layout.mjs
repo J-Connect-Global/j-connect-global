@@ -43,6 +43,11 @@ const requiredNavLinks = [
   '/germany/ja/events/',
   '/germany/ja/learn-german/'
 ];
+const requiredDirectoryLinks = [
+  '/germany/ja/eat/',
+  '/germany/ja/shopping/',
+  '/germany/ja/medical/'
+];
 const standardizedDirectoryListingUrls = new Set([
   '/germany/ja/eat/',
   '/germany/ja/shopping/',
@@ -208,9 +213,17 @@ function validateHtmlPage(url, file, page) {
   const footerBlock = extractLayoutBlock(html, 'ja-footer', rel);
 
   if (headerBlock) {
+    if (!/<header\b[^>]*class=["'][^"']*\bsite-header\b/i.test(headerBlock)) {
+      problems.push(`${rel} must use the canonical JA site-header template.`);
+    }
     for (const requiredLink of requiredNavLinks) {
       if (!hasHref(headerBlock, requiredLink)) {
         problems.push(`${rel} header missing required nav link: ${requiredLink}`);
+      }
+    }
+    for (const requiredLink of requiredDirectoryLinks) {
+      if (!hasHref(headerBlock, requiredLink)) {
+        problems.push(`${rel} header missing Living directory link: ${requiredLink}`);
       }
     }
     if (/href=["']\/germany\/ja\/guides\/["']/i.test(headerBlock)) {
@@ -226,6 +239,9 @@ function validateHtmlPage(url, file, page) {
   }
 
   if (/\bhref=["']#["']/i.test(html)) problems.push(`${rel} contains placeholder href="#".`);
+  if (/\bportal3-header\b|\bportal3-footer\b|\bportal3-lang\b/i.test(html)) {
+    problems.push(`${rel} contains legacy Home-only header/footer markup.`);
+  }
   validateNoMojibake(html, rel);
   validateCanonical(html, page, rel);
   validateTitleAndDescription(html, rel);
@@ -274,6 +290,10 @@ function validateProductionFixPage(url, html, rel) {
     problems.push(`${rel} contains duplicate header language triggers.`);
   }
 
+  if (['/germany/ja/jobs/', '/germany/ja/jobs/posting/', '/germany/ja/news/', '/germany/ja/events/'].includes(normalizedUrl) && /#f7f3ee/i.test(html)) {
+    problems.push(`${rel} should not use old beige theme-color #f7f3ee.`);
+  }
+
   const languageSelectGuardUrls = new Set([
     '/germany/ja/',
     '/germany/ja/community/',
@@ -294,8 +314,17 @@ function validateProductionFixPage(url, html, rel) {
     if (!html.includes('/assets/js/community-shared.js')) {
       problems.push(`${rel} must load shared Community post data for Home cards.`);
     }
+    if (!html.includes('/assets/js/jobs-shared.js') || !html.includes('/assets/js/jobs-fallback.js')) {
+      problems.push(`${rel} must load shared Jobs data/fallback helpers for Home Jobs cards.`);
+    }
     if (!html.includes('id="homeCommunityCards"') || !html.includes('data-community-posts')) {
       problems.push(`${rel} must render Home Community cards from a data-marked container.`);
+    }
+    if (!html.includes('id="homeJobsCards"') || !html.includes('data-home-jobs')) {
+      problems.push(`${rel} must render Home Jobs cards from a data-marked container.`);
+    }
+    if (!/buildDirectoryUrl\(\{\s*sheet:\s*dataSources\.directorySheets\.jobs/i.test(html)) {
+      problems.push(`${rel} Home Jobs render path must use the shared jobs data source.`);
     }
     const newsSection = html.match(/<section\b[^>]*id=["']news-events["'][\s\S]*?<\/section>/i)?.[0] || '';
     if (!newsSection.includes('/germany/ja/events/')) {
@@ -333,6 +362,9 @@ function validateProductionFixPage(url, html, rel) {
     if (/#f7f3ee/i.test(html)) problems.push(`${rel} should not use old beige theme-color #f7f3ee.`);
     if (/top-hero\.jpg/i.test(html)) problems.push(`${rel} should not use the old top-hero image.`);
     if (!html.includes('/germany/ja/events/')) problems.push(`${rel} should link back to the Events hub.`);
+    if (!html.includes('/assets/css/news.css') || /<style\b/i.test(html)) {
+      problems.push(`${rel} should use external news.css instead of inline legacy CSS.`);
+    }
   }
 
   if (normalizedUrl === '/germany/ja/jobs/') {
@@ -351,6 +383,14 @@ function validateProductionFixPage(url, html, rel) {
     }
     if (!html.includes('https://formspree.io/f/xlgojvar')) {
       problems.push(`${rel} must preserve the Formspree posting endpoint.`);
+    }
+    if (!html.includes('/assets/css/jobs-posting.css')) {
+      problems.push(`${rel} must load external jobs-posting.css.`);
+    }
+    const inlineStyleLength = [...html.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/gi)]
+      .reduce((total, match) => total + match[1].trim().length, 0);
+    if (inlineStyleLength > 1200) {
+      problems.push(`${rel} contains a large inline CSS block; move page styles to jobs-posting.css.`);
     }
   }
 
@@ -372,6 +412,26 @@ function validateProductionFixSharedAssets() {
     const sharedCommunity = fs.readFileSync(sharedCommunityPath, 'utf8');
     if (!sharedCommunity.includes('fallbackPosts') || !sharedCommunity.includes('communityDetailHref')) {
       problems.push('assets/js/community-shared.js must expose fallbackPosts and communityDetailHref.');
+    }
+    for (const imageField of ['photos', 'images', 'image_urls', 'image_url', 'thumbnail_url', 'photo_url', 'first_image']) {
+      if (!sharedCommunity.includes(imageField)) {
+        problems.push(`assets/js/community-shared.js must support image field: ${imageField}`);
+      }
+    }
+    if (!sharedCommunity.includes('firstImage')) {
+      problems.push('assets/js/community-shared.js must expose firstImage support for Home Community cards.');
+    }
+  }
+
+  const sharedJobsPath = path.join(root, 'assets/js/jobs-shared.js');
+  if (!fs.existsSync(sharedJobsPath)) {
+    problems.push('assets/js/jobs-shared.js is required for Home Jobs shared rendering.');
+  } else {
+    const sharedJobs = fs.readFileSync(sharedJobsPath, 'utf8');
+    for (const expected of ['normalizeJob', 'activeJobs', 'getJobDetailPath', 'getSalaryLabel']) {
+      if (!sharedJobs.includes(expected)) {
+        problems.push(`assets/js/jobs-shared.js must expose ${expected}.`);
+      }
     }
   }
 

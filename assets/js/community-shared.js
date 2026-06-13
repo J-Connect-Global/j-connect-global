@@ -67,17 +67,52 @@
     return "";
   }
 
+  function splitMediaValue(value) {
+    if (!value) return [];
+    if (Array.isArray(value)) return value.flatMap(splitMediaValue);
+    if (typeof value === "object") return Object.values(value).flatMap(splitMediaValue);
+    return String(value).split(/[\n,;]/).map((item) => item.trim()).filter(Boolean);
+  }
+
+  function normalizeImageSrc(src) {
+    const value = String(src || "").trim();
+    if (!value) return "";
+
+    try {
+      const url = new URL(value, window.location.href);
+      if (url.hostname.includes("drive.google.com")) {
+        const fileMatch = url.pathname.match(/\/file\/d\/([^/]+)/);
+        const id = fileMatch?.[1] || url.searchParams.get("id");
+        if (id) return `https://drive.google.com/thumbnail?id=${encodeURIComponent(id)}&sz=w1200`;
+      }
+      return url.href;
+    } catch {
+      return value;
+    }
+  }
+
+  function isValidImageSrc(src) {
+    return /^https?:\/\//i.test(src) || src.startsWith("/") || src.startsWith("./") || src.startsWith("../");
+  }
+
   function postId(post, index) {
     return pick(post, ["post_id", "postId", "id", "_id", "slug"]) || `community-post-${index + 1}`;
   }
 
   function images(post) {
     const values = [
-      pick(post, ["image_url_1", "image1", "image"]),
-      pick(post, ["image_url_2", "image2"]),
-      pick(post, ["image_url_3", "image3"])
+      pick(post, ["image", "imageUrl", "image_url", "thumbnail", "thumbnail_url", "photo", "photoUrl", "photo_url", "first_image"]),
+      post?.photos,
+      post?.images,
+      post?.image_urls,
+      post?.image_url_1,
+      post?.image_url_2,
+      post?.image_url_3,
+      post?.image1,
+      post?.image2,
+      post?.image3
     ];
-    return values.filter(Boolean);
+    return [...new Set(values.flatMap(splitMediaValue).map(normalizeImageSrc).filter(isValidImageSrc))];
   }
 
   function normalizePost(post, index) {
@@ -125,6 +160,10 @@
     normalizePost,
     sortPosts,
     formatDate,
-    communityDetailHref
+    communityDetailHref,
+    images,
+    firstImage(post) {
+      return images(post)[0] || "";
+    }
   });
 })(window);

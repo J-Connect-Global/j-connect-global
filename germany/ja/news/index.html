@@ -11,234 +11,10 @@
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
 <link rel="stylesheet" href="/assets/css/site.css">
 <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
+
+<link rel="stylesheet" href="/assets/css/news.css">
 <link rel="stylesheet" href="/assets/css/cookie-consent.css">
 <script src="/assets/js/cookie-consent.js" defer></script>
-
-  <style>
-/* Page-specific styles. Shared site styles live in the common site stylesheet. */
-:root{
-  --red:#e8002d;
-  --orange:#0067c9;
-  --cream:#f4f8fc;
-  --paper:#ffffff;
-  --ink:#1a1014;
-  --muted:#6b5e68;
-  --border:#ede5e0;
-  --card-shadow:0 10px 30px rgba(26,16,20,.07);
-  --radius-xl:10px;
-  --radius-lg:20px;
-  --radius-md:14px;
-  --radius-sm:10px;
-  --max:1280px;
-}
-
-.hero{max-width:var(--max);margin:0 auto;padding:36px 20px 20px}
-
-.hero-box{position:relative;overflow:hidden;background:linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(248,251,255,.92) 100%),#fff;border:1px solid #d9e0e8;border-radius:10px;padding:32px 28px 26px;box-shadow:var(--card-shadow)}
-
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
-
-.eyebrow-dot{width:9px;height:9px;border-radius:999px;background:linear-gradient(135deg,var(--red),var(--orange));flex:0 0 auto}
-
-.hero h1{font-size:clamp(32px,5vw,58px);line-height:1.08;margin-bottom:8px;letter-spacing:.02em}
-
-.hero p{max-width:780px;color:#4a3d46;font-size:15px}
-
-.news-section{padding:8px 0 60px}
-
-.news-disclaimer{margin:0 0 16px;padding:14px 16px;border-radius:14px;background:#eaf4ff;border:1px solid #b8d0eb;color:#6e3b4a;font-size:13px}
-
-.news-controls{display:grid;grid-template-columns:2fr repeat(4, minmax(130px,1fr));gap:12px;padding:20px;background:rgba(255,255,255,.88);border:1px solid #e5ebf2;border-radius:9px;box-shadow:var(--card-shadow);margin-bottom:18px}
-
-.news-controls input,.news-controls select{height:46px;border-radius:14px;border:1px solid #d9e0e8;background:#fff;padding:0 14px;font-size:14px;color:#2f3e4c;outline:none;transition:all .18s ease}
-
-.news-controls input:focus,.news-controls select:focus{border-color:#b8d0eb;box-shadow:0 0 0 3px rgba(243,200,212,.28)}
-
-.news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-
-.news-card{display:flex;flex-direction:column;gap:12px;padding:18px;background:rgba(255,255,255,.94);border:1px solid #e5ebf2;border-radius:18px;box-shadow:var(--card-shadow);transition:all .2s ease}
-
-.news-card:hover{transform:translateY(-3px);border-color:#b8d0eb;box-shadow:0 16px 30px rgba(0, 79, 152,.12)}
-
-.news-card h2{font-size:20px;line-height:1.35}
-
-.news-card p{color:#4f4450;font-size:14px}
-
-.news-card a{align-self:flex-start;color:#c83354;font-weight:700}
-
-.news-card__badges{display:flex;flex-wrap:wrap;gap:8px}
-
-.news-card__badges span{font-size:12px;padding:4px 10px;border-radius:999px;background:#eaf4ff;border:1px solid #b8d0eb;color:#a93250}
-
-.news-card__meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:#6f6270;border-top:1px dashed #eadce2;padding-top:8px}
-
-.news-error,.news-empty{grid-column:1 / -1;padding:24px;border-radius:16px;text-align:center;background:#fff;border:1px solid #e5ebf2;color:#6b5e68}
-
-.footer-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#2f3e4c}
-
-.footer-brand img{width:84px;height:50px;object-fit:contain;border-radius:10px;background:transparent;border:none;box-shadow:none}
-
-@media (max-width:1080px){
-.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-
-.news-controls{grid-template-columns:1fr 1fr}
-}
-
-@media (max-width:720px){
-.news-grid{grid-template-columns:1fr}
-
-.news-controls{grid-template-columns:1fr}
-}
-
-/* PR2 listing visual standardization: Community-aligned page surface */
-:root{
-  --listing-bg:#f4f8fc;
-  --listing-paper:#FFFFFF;
-  --listing-ink:#1F2937;
-  --listing-muted:#64748B;
-  --listing-line:#E5E7EB;
-  --listing-line-strong:#CBD5E1;
-  --listing-navy:#1E3A5F;
-  --listing-navy-hover:#16304E;
-  --listing-accent:#0067c9;
-  --listing-accent-soft:#eaf4ff;
-  --listing-shadow:0 6px 14px rgba(30,58,95,.04);
-  --listing-shadow-hover:0 12px 24px rgba(30,58,95,.08);
-  --listing-radius:16px;
-  --listing-max:1320px;
-}
-
-body{
-  background:
-    linear-gradient(rgba(250,251,252,.96), rgba(250,251,252,.985)),
-    url("/assets/images/brand/site-bg.jpg") center top / cover fixed no-repeat,
-    var(--listing-bg);
-  color:var(--listing-ink);
-}
-
-:root{
-  --red:var(--listing-navy);
-  --orange:var(--listing-accent);
-  --cream:var(--listing-bg);
-  --paper:var(--listing-paper);
-  --ink:var(--listing-ink);
-  --muted:var(--listing-muted);
-  --border:var(--listing-line);
-  --card-shadow:var(--listing-shadow);
-  --radius-xl:var(--listing-radius);
-}
-
-.hero{
-  max-width:var(--listing-max);
-  padding:18px 20px 14px;
-}
-
-.hero-box{
-  border:1px solid var(--listing-line);
-  border-radius:9px;
-  background:
-    linear-gradient(110deg, rgba(255,255,255,.98) 0%, rgba(250,251,252,.95) 60%, rgba(248,251,255,.96) 100%),
-    url("/assets/images/cards/news.jpg") right center / min(42vw, 520px) auto no-repeat,
-    #fff;
-  box-shadow:0 10px 24px rgba(30,58,95,.07);
-  padding:22px;
-}
-
-.eyebrow{
-  color:var(--listing-navy);
-  letter-spacing:.06em;
-  margin-bottom:10px;
-}
-
-.eyebrow-dot{
-  background:var(--listing-accent);
-}
-
-.hero h1{
-  color:var(--listing-navy);
-  font-size:clamp(28px, 3.5vw, 42px);
-  letter-spacing:0;
-}
-
-.hero p{
-  max-width:760px;
-  color:var(--listing-muted);
-  line-height:1.7;
-}
-
-.news-section{
-  padding:8px 0 60px;
-}
-
-.news-disclaimer,
-.news-controls,
-.news-card,
-.news-error,
-.news-empty{
-  border-color:var(--listing-line);
-  background:#fff;
-  border-radius:16px;
-  box-shadow:var(--listing-shadow);
-}
-
-.news-controls{
-  padding:16px;
-  gap:10px;
-}
-
-.news-controls input,
-.news-controls select{
-  border-color:var(--listing-line);
-  border-radius:12px;
-}
-
-.news-controls input:focus,
-.news-controls select:focus{
-  border-color:var(--listing-navy);
-  box-shadow:0 0 0 4px rgba(30,58,95,.12);
-}
-
-.news-card{
-  gap:10px;
-  padding:16px;
-}
-
-.news-card:hover{
-  transform:translateY(-1px);
-  border-color:var(--listing-line-strong);
-  box-shadow:var(--listing-shadow-hover);
-}
-
-.news-card h2{
-  color:var(--listing-ink);
-}
-
-.news-card p,
-.news-card__meta{
-  color:var(--listing-muted);
-}
-
-.news-card a{
-  color:var(--listing-navy);
-}
-
-.news-card__badges span{
-  background:var(--listing-accent-soft);
-  border-color:var(--listing-line);
-  color:var(--listing-navy);
-}
-
-@media (max-width:720px){
-  .hero{
-    padding:16px 12px 12px;
-  }
-
-  .hero-box{
-    padding:20px;
-  }
-}
-
-</style>
 </head>
 <body>
   <!-- LAYOUT:ja-header:start -->
@@ -264,6 +40,9 @@ body{
             <a href="/germany/ja/jobs/">仕事・求人</a>
             <a href="/germany/ja/events/" class="active" aria-current="page">ニュース・イベント</a>
             <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+            <a href="/germany/ja/eat/">食べる</a>
+            <a href="/germany/ja/shopping/">買い物</a>
+            <a href="/germany/ja/medical/">医療</a>
             <a href="/germany/ja/about/">J-CONNECTについて</a>
           </div>
         </div>
@@ -291,18 +70,18 @@ body{
   <!-- LAYOUT:ja-header:end -->
 
   <main>
-    <section class="hero">
-      <div class="hero-box">
-        <span class="eyebrow"><span class="eyebrow-dot"></span>Life Updates</span>
+    <section class="news-hero">
+      <div class="news-hero__box">
+        <span class="news-eyebrow"><span class="news-eyebrow__dot"></span>Life Updates</span>
         <h1>制度・生活アップデート</h1>
-        <p>生活・行政・交通・安全に関する変更点を、出典元へのリンク付きで確認できます。イベントや季節情報はニュース・イベントHubから探せます。</p>
+        <p>生活・行政・交通・安全に関する確認ポイントを、公式・準公式の情報源へ戻れる形で整理しています。イベントや季節情報はニュース・イベントHubから探せます。</p>
         <div class="jc-hero-actions"><a class="jc-button is-primary" href="/germany/ja/events/">ニュース・イベントHubへ</a><a class="jc-button" href="/germany/ja/living/">生活ガイドを見る</a></div>
       </div>
     </section>
 
     <section class="news-section">
       <div class="container">
-        <p class="news-disclaimer">このページは外部ニュース・公式情報へのリンクをもとに、ドイツ在住日本人向けに整理した確認ページです。最新・正確な内容は必ず各出典元をご確認ください。</p>
+        <p class="news-disclaimer">このページは速報ではなく、ドイツ在住日本人が制度・生活情報を確認するときの入口です。申請や判断の前には必ず各出典元の最新情報をご確認ください。</p>
         <section class="news-controls">
           <input id="newsSearch" type="search" placeholder="キーワードで検索" />
           <select id="countryFilter"><option value="all">すべての国</option><option value="germany">ドイツ</option><option value="japan">日本</option><option value="eu">EU</option></select>
@@ -348,7 +127,7 @@ body{
         </div>
         <div class="footer-group">
           <div class="footer-heading">ニュース・イベント</div>
-          <a href="/germany/ja/news/">最新ニュース</a>
+          <a href="/germany/ja/news/">生活アップデート</a>
           <a href="/germany/ja/events/">イベントカレンダー</a>
         </div>
         <div class="footer-group">

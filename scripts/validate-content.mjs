@@ -61,6 +61,16 @@ const requiredFields = [
   'related_articles',
   'review'
 ];
+const livingOfficialSourceTargets = new Set([
+  'anmeldung-guide',
+  'health-insurance-guide',
+  'tax-id-steuernummer-steuerklasse',
+  'pregnancy-birth-germany',
+  'kita-u3-tagesmutter-guide',
+  'schufa-guide',
+  'bank-account-germany',
+  'rent-apartment-germany'
+]);
 
 function main() {
   const datasets = {};
@@ -156,6 +166,25 @@ function validateRegistryItem(type, item, label) {
 
   if (!Array.isArray(item.official_sources)) {
     problems.push(`${label} official_sources must be an array.`);
+  } else {
+    for (const [sourceIndex, source] of item.official_sources.entries()) {
+      const sourceLabel = `${label} official_sources[${sourceIndex}]`;
+      if (!source || typeof source !== 'object' || Array.isArray(source)) {
+        problems.push(`${sourceLabel} must be an object.`);
+        continue;
+      }
+      if (!String(source.title || '').trim()) problems.push(`${sourceLabel} missing title.`);
+      if (!/^https:\/\/[^ "]+$/i.test(String(source.url || ''))) {
+        problems.push(`${sourceLabel} must use a real https URL.`);
+      }
+      if (/todo|placeholder|example\.com/i.test(`${source.title || ''} ${source.url || ''}`)) {
+        problems.push(`${sourceLabel} must not contain placeholder source data.`);
+      }
+    }
+  }
+
+  if (type === 'living' && livingOfficialSourceTargets.has(item.slug) && (!Array.isArray(item.official_sources) || item.official_sources.length === 0)) {
+    problems.push(`${label} should include official_sources for production trust metadata.`);
   }
 
   if (!Array.isArray(item.related_articles)) {
@@ -209,9 +238,22 @@ function validatePublishedFiles(type, item, label) {
   }
 
   validateArticleMetaOutput(html, htmlRel);
+  validateOfficialSourceOutput(html, item, htmlRel);
   validateNoMojibake(html, htmlRel);
   validateNoPlaceholderHash(html, htmlRel);
   validateInternalLinks(html, htmlRel);
+}
+
+function validateOfficialSourceOutput(html, item, relPath) {
+  if (!item.official_sources.length) return;
+  if (!html.includes('official-source-section')) {
+    problems.push(`${relPath} missing official source section output.`);
+  }
+  for (const source of item.official_sources) {
+    if (source.url && !html.includes(source.url)) {
+      problems.push(`${relPath} missing official source URL: ${source.url}`);
+    }
+  }
 }
 
 function validateArticleMetaOutput(html, relPath) {

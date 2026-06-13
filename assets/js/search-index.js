@@ -186,39 +186,6 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "予約を取りたいときのドイツ語フレーズ",
-    "description": "病院、美容室、役所などで使える予約依頼、空き確認、日時変更の基本表現です。",
-    "url": "/germany/ja/learn-german/appointment-phrase/",
-    "category": "ドイツ語・学び",
-    "tags": [
-      "予約",
-      "日常会話",
-      "A1"
-    ]
-  },
-  {
-    "title": "病院予約の電話で使うドイツ語",
-    "description": "病院・小児科・専門医に電話で予約を取るための基本フレーズと会話例です。",
-    "url": "/germany/ja/learn-german/hospital-phrases/",
-    "category": "ドイツ語・学び",
-    "tags": [
-      "病院",
-      "症状説明",
-      "電話"
-    ]
-  },
-  {
-    "title": "ビジネスメールで使う丁寧なドイツ語表現",
-    "description": "依頼、確認、催促、謝罪、日程調整で使える職場向けドイツ語メール表現です。",
-    "url": "/germany/ja/learn-german/work-email-phrases/",
-    "category": "ドイツ語・学び",
-    "tags": [
-      "仕事",
-      "メール",
-      "B1"
-    ]
-  },
-  {
     "title": "求人掲載について",
     "description": "J-Connect Germany に求人情報を掲載したい企業向けの案内です。",
     "url": "/germany/ja/jobs/posting/",
@@ -418,6 +385,39 @@ window.JCONNECT_SEARCH_INDEX = [
       "映画",
       "日本文化",
       "ボン"
+    ]
+  },
+  {
+    "title": "予約を取りたいときのドイツ語フレーズ",
+    "description": "病院、美容室、役所などで使える予約依頼、空き確認、日時変更の基本表現です。",
+    "url": "/germany/ja/learn-german/appointment-phrase/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "予約",
+      "日常会話",
+      "A1"
+    ]
+  },
+  {
+    "title": "病院予約の電話で使うドイツ語",
+    "description": "病院・小児科・専門医に電話で予約を取るための基本フレーズと会話例です。",
+    "url": "/germany/ja/learn-german/hospital-phrases/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "病院",
+      "症状説明",
+      "電話"
+    ]
+  },
+  {
+    "title": "ビジネスメールで使う丁寧なドイツ語表現",
+    "description": "依頼、確認、催促、謝罪、日程調整で使える職場向けドイツ語メール表現です。",
+    "url": "/germany/ja/learn-german/work-email-phrases/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "仕事",
+      "メール",
+      "B1"
     ]
   }
 ];

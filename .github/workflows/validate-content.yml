@@ -1,0 +1,33 @@
+name: Validate content
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-content:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build generated content
+        run: node scripts/build-content.mjs
+
+      - name: Check generated files are committed
+        run: git diff --exit-code
+
+      - name: Validate content registry and generated output
+        run: node scripts/validate-content.mjs
+
+      - name: Validate static site
+        run: node scripts/validate-static-site.mjs

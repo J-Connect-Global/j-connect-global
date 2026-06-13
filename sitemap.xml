@@ -61,15 +61,6 @@
     <loc>https://j-connect-global.com/germany/ja/learn-german/</loc>
   </url>
   <url>
-    <loc>https://j-connect-global.com/germany/ja/learn-german/appointment-phrase/</loc>
-  </url>
-  <url>
-    <loc>https://j-connect-global.com/germany/ja/learn-german/hospital-phrases/</loc>
-  </url>
-  <url>
-    <loc>https://j-connect-global.com/germany/ja/learn-german/work-email-phrases/</loc>
-  </url>
-  <url>
     <loc>https://j-connect-global.com/germany/ja/living/</loc>
   </url>
   <url>
@@ -149,5 +140,17 @@
   <url>
     <loc>https://j-connect-global.com/germany/ja/events/bonn-japanese-film-festival/</loc>
     <lastmod>2026-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://j-connect-global.com/germany/ja/learn-german/appointment-phrase/</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://j-connect-global.com/germany/ja/learn-german/hospital-phrases/</loc>
+    <lastmod>2026-06-08</lastmod>
+  </url>
+  <url>
+    <loc>https://j-connect-global.com/germany/ja/learn-german/work-email-phrases/</loc>
+    <lastmod>2026-06-07</lastmod>
   </url>
 </urlset>

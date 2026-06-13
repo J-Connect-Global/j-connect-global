@@ -24,6 +24,15 @@ const contentTypes = {
     homeMarker: 'home-events',
     homeLimit: 3,
     eventFields: ['city', 'location', 'event_date', 'official_url']
+  },
+  'learn-german': {
+    registryPath: 'content/registry/learn-german.json',
+    hubPath: 'germany/ja/learn-german/index.html',
+    hubUrl: '/germany/ja/learn-german/',
+    gridMarker: 'learn-german-grid',
+    homeMarker: 'home-learn-german',
+    homeLimit: 3,
+    learnFields: ['level', 'situation']
   }
 };
 
@@ -46,7 +55,11 @@ const requiredFields = [
   'hub_visible',
   'search_visible',
   'sitemap_visible',
-  'canonical_url'
+  'canonical_url',
+  'official_sources',
+  'disclaimer_type',
+  'related_articles',
+  'review'
 ];
 
 function main() {
@@ -92,7 +105,7 @@ function main() {
   }
 
   const publishedCount = allItems.filter((item) => item.published === true).length;
-  console.log(`Content validation passed: ${publishedCount} published Living/Events articles checked.`);
+  console.log(`Content validation passed: ${publishedCount} published Living/Events/Learn German articles checked.`);
 }
 
 function readRegistry(type) {
@@ -134,6 +147,39 @@ function validateRegistryItem(type, item, label) {
       problems.push(`${label} missing event field: ${field}`);
     }
   }
+
+  for (const field of contentTypes[type].learnFields || []) {
+    if (!String(item[field] ?? '').trim()) {
+      problems.push(`${label} missing Learn German field: ${field}`);
+    }
+  }
+
+  if (!Array.isArray(item.official_sources)) {
+    problems.push(`${label} official_sources must be an array.`);
+  }
+
+  if (!Array.isArray(item.related_articles)) {
+    problems.push(`${label} related_articles must be an array.`);
+  }
+
+  if (!item.disclaimer_type || typeof item.disclaimer_type !== 'string') {
+    problems.push(`${label} disclaimer_type must be a non-empty string.`);
+  }
+
+  validateReview(item.review, label);
+}
+
+function validateReview(review, label) {
+  if (!review || typeof review !== 'object' || Array.isArray(review)) {
+    problems.push(`${label} review must be an object.`);
+    return;
+  }
+
+  for (const field of ['status', 'reviewed_by', 'last_reviewed_at', 'next_review_due']) {
+    if (!String(review[field] ?? '').trim()) {
+      problems.push(`${label} review missing ${field}.`);
+    }
+  }
 }
 
 function validatePublishedFiles(type, item, label) {
@@ -162,9 +208,25 @@ function validatePublishedFiles(type, item, label) {
     problems.push(`${htmlRel} does not link back to hub: ${contentTypes[type].hubUrl}`);
   }
 
+  validateArticleMetaOutput(html, htmlRel);
   validateNoMojibake(html, htmlRel);
   validateNoPlaceholderHash(html, htmlRel);
   validateInternalLinks(html, htmlRel);
+}
+
+function validateArticleMetaOutput(html, relPath) {
+  for (const expected of [
+    'property="og:type"',
+    'property="og:title"',
+    'property="og:description"',
+    'property="og:url"',
+    '"@type":"Article"',
+    '"@type":"BreadcrumbList"'
+  ]) {
+    if (!html.includes(expected)) {
+      problems.push(`${relPath} missing article metadata output: ${expected}`);
+    }
+  }
 }
 
 function validateHubs(datasets) {

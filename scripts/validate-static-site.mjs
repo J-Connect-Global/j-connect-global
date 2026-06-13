@@ -135,6 +135,7 @@ function readSearchIndex(searchIndexPath) {
 function resolveInternalUrl(urlValue, file) {
   if (!urlValue || urlValue.startsWith('#')) return null;
   if (urlValue.includes('${')) return null;
+  if (urlValue.includes('{{')) return null;
   if (/^(mailto|tel|javascript|data):/i.test(urlValue)) return null;
 
   let raw = urlValue.trim();

@@ -4,6 +4,7 @@ Living, Events, and Learn German articles are managed from Markdown source files
 
 ## Canonical Sources
 
+- Static JA page registry: `/content/registry/pages.json`
 - Living registry: `/content/registry/living.json`
 - Living Markdown: `/content/living/{slug}.md`
 - Events registry: `/content/registry/events.json`
@@ -17,7 +18,7 @@ Events remain static article pages. Do not make Spreadsheet or GAS the primary E
 
 ## Generated Files
 
-Running the content build updates:
+Running the content build and layout application updates:
 
 - `/germany/ja/living/{slug}/index.html`
 - `/germany/ja/events/{slug}/index.html`
@@ -29,9 +30,11 @@ Running the content build updates:
 - `/assets/js/search-index.js`
 - `/sitemap.xml`
 
+Search and sitemap are governed by the static page registry plus the Living, Events, and Learn German article registries. Legacy pages such as `/germany/ja/guides/` stay out of search and sitemap unless a registry flag is deliberately changed.
+
 Generated article pages include:
 
-- Shared J-Connect header/footer and CSS.
+- Shared J-Connect header/footer and CSS from `/templates/layout/ja-header.html` and `/templates/layout/ja-footer.html`.
 - Title, meta description, canonical URL, and Open Graph tags.
 - Article JSON-LD.
 - BreadcrumbList JSON-LD.
@@ -47,6 +50,13 @@ The build script uses marker comments for hub and Home card sections. Do not man
 - `CONTENT:home-living`
 - `CONTENT:home-events`
 - `CONTENT:home-learn-german`
+
+The layout script uses marker comments for canonical header/footer sections. Do not manually edit layout blocks between these markers:
+
+- `LAYOUT:ja-header`
+- `LAYOUT:ja-footer`
+
+Home keeps its special portal header/footer variant, but those blocks are still marker-wrapped and validated against the same five-pillar navigation model.
 
 ## Registry Fields
 
@@ -131,13 +141,26 @@ Use `home_visible` and `home_order` in the registry:
 - The build then sorts by `home_order` ascending, then `published_at` descending.
 - Home uses the current compact preview layout for Living, Events, and Learn German.
 
+## Adding A Static JA Page
+
+1. Create `/germany/ja/{slug}/index.html`.
+2. Add a matching item to `/content/registry/pages.json`.
+3. Choose the page `type`, conceptual `pillar`, `layout`, and `hero_type`.
+4. Set `search_visible` and `sitemap_visible` deliberately.
+5. For Eat, Shopping, and Medical style directories, keep the top-level URL and use `type: "directory"` with `pillar: "living"`.
+6. Run the build, layout, and validation commands.
+
+Do not reintroduce `/germany/ja/guides/` as a current pillar. It is a legacy route that points users to `/germany/ja/living/`.
+
 ## Commands
 
 This repo currently has no `package.json`, so run the scripts directly:
 
 ```bash
 node scripts/build-content.mjs
+node scripts/apply-layout.mjs
 node scripts/validate-content.mjs
+node scripts/validate-layout.mjs
 node scripts/validate-static-site.mjs
 ```
 
@@ -147,9 +170,11 @@ CI also runs these checks through `.github/workflows/validate-content.yml`. The 
 
 1. Add or update Markdown and registry entries.
 2. Run `node scripts/build-content.mjs`.
-3. Run `node scripts/validate-content.mjs`.
-4. Run `node scripts/validate-static-site.mjs`.
-5. Review Home, the relevant hub, one generated article page, sitemap, and search index.
-6. Open a focused PR with source and generated files committed.
+3. Run `node scripts/apply-layout.mjs`.
+4. Run `node scripts/validate-content.mjs`.
+5. Run `node scripts/validate-layout.mjs`.
+6. Run `node scripts/validate-static-site.mjs`.
+7. Review Home, the relevant hub, one generated article page, sitemap, and search index.
+8. Open a focused PR with source and generated files committed.
 
 After generation, do not manually edit generated article pages, generated hub cards, generated Home preview cards, sitemap entries, or generated search entries. Change the Markdown or registry and rebuild instead.

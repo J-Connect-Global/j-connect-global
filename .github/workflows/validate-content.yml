@@ -1,6 +1,7 @@
 name: Validate content
 
 on:
+  push:
   pull_request:
   workflow_dispatch:
 
@@ -23,11 +24,17 @@ jobs:
       - name: Build generated content
         run: node scripts/build-content.mjs
 
+      - name: Apply canonical JA layout
+        run: node scripts/apply-layout.mjs
+
       - name: Check generated files are committed
         run: git diff --exit-code
 
       - name: Validate content registry and generated output
         run: node scripts/validate-content.mjs
+
+      - name: Validate JA route and layout governance
+        run: node scripts/validate-layout.mjs
 
       - name: Validate static site
         run: node scripts/validate-static-site.mjs

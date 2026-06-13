@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>グルメ・飲食 | ドイツの日本食・レストラン情報 | J-Connect Germany</title>
   <meta name="description" content="ドイツの日本食、ラーメン、カフェ、レストラン情報を日本語で整理。地域、カテゴリ、評価、価格帯、地図リンクから飲食店を探せます。" />
-  <meta name="theme-color" content="#f7f3ee" />
+  <meta name="theme-color" content="#f4f8fc" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/eat/" />
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
@@ -101,9 +101,10 @@
   </header>
   <!-- LAYOUT:ja-header:end -->
 
-  <section class="hero">
-    <div class="hero-box">
+  <section class="hero jc-directory-hero">
+    <div class="hero-box jc-directory-hero-box">
       <div class="eyebrow"><span class="eyebrow-dot"></span>グルメ・飲食ガイド</div>
+      <div class="jc-directory-breadcrumb"><a href="/germany/ja/living/">生活・手続き</a><span>食べる</span></div>
       <h1>飲食店を地域・カテゴリから探す</h1>
       <p>
         レストラン、カフェ、専門店などをカテゴリ・地域・価格・評価から確認できます。
@@ -111,7 +112,7 @@
     </div>
   </section>
 
-  <div class="view-toggle-wrap">
+  <div class="view-toggle-wrap jc-filter-row">
     <div class="view-toggle" role="tablist" aria-label="表示切替">
       <button id="cardViewBtn" class="view-btn active" type="button" aria-pressed="true">リスト</button>
       <button id="gridViewBtn" class="view-btn" type="button" aria-pressed="false">グリッド</button>
@@ -119,9 +120,9 @@
     </div>
   </div>
 
-  <main class="layout list-mode" id="mainLayout">
-    <aside class="filters">
-      <div class="panel filter-panel">
+  <main class="layout jc-directory-layout list-mode" id="mainLayout">
+    <aside class="filters jc-directory-sidebar">
+      <div class="panel filter-panel jc-control-panel">
         <div class="panel-title-row">
           <h2 class="panel-title">検索フィルター</h2>
           <button class="reset-btn" id="resetFiltersBtn" type="button">リセット</button>
@@ -134,48 +135,48 @@
 
         <div class="field">
           <div class="label">地域</div>
-          <div class="filter-chip-group" id="regionChipGroup" role="group" aria-label="地域で絞り込み"></div>
+          <div class="filter-chip-group jc-chip-group" id="regionChipGroup" role="group" aria-label="地域で絞り込み"></div>
         </div>
 
         <div class="field">
           <div class="label">カテゴリ</div>
-          <div class="filter-chip-group" id="categoryChipGroup" role="group" aria-label="カテゴリで絞り込み"></div>
+          <div class="filter-chip-group jc-chip-group" id="categoryChipGroup" role="group" aria-label="カテゴリで絞り込み"></div>
         </div>
 
         <div class="field" id="detailCategoryField">
           <div class="label">詳細カテゴリ</div>
-          <div class="filter-chip-group" id="detailCategoryChipGroup" role="group" aria-label="詳細カテゴリで絞り込み"></div>
+          <div class="filter-chip-group jc-chip-group" id="detailCategoryChipGroup" role="group" aria-label="詳細カテゴリで絞り込み"></div>
         </div>
 
         <div class="field">
           <div class="label">評価</div>
-          <div class="filter-chip-group" id="starChipGroup" role="group" aria-label="星評価で絞り込み"></div>
+          <div class="filter-chip-group jc-chip-group" id="starChipGroup" role="group" aria-label="星評価で絞り込み"></div>
         </div>
 
         <div class="field">
           <div class="label">レビュー数</div>
-          <div class="filter-chip-group" id="reviewChipGroup" role="group" aria-label="レビュー数で絞り込み"></div>
+          <div class="filter-chip-group jc-chip-group" id="reviewChipGroup" role="group" aria-label="レビュー数で絞り込み"></div>
         </div>
 
         <div class="field" id="priceField">
           <div class="label">価格</div>
-          <div class="filter-chip-group" id="priceChipGroup" role="group" aria-label="価格帯で絞り込み"></div>
+          <div class="filter-chip-group jc-chip-group" id="priceChipGroup" role="group" aria-label="価格帯で絞り込み"></div>
         </div>
 
       </div>
     </aside>
 
-    <section class="content">
-      <div class="toolbar">
+    <section class="content jc-directory-results">
+      <div class="toolbar jc-results-toolbar">
         <div class="results-meta">
           <h2 class="results-title">飲食</h2>
           <div class="results-sub" id="resultsSummary">360件を表示中 / 全360件</div>
         </div>
-        <div class="chips" id="activeChips"></div>
+        <div class="chips jc-active-chips" id="activeChips"></div>
       </div>
 
-      <div id="statusBox" class="status-box">データを読み込んでいます...</div>
-      <div id="cards" class="cards" aria-live="polite"></div>
+      <div id="statusBox" class="status-box jc-loading-state">データを読み込んでいます...</div>
+      <div id="cards" class="cards jc-result-grid" aria-live="polite"></div>
     </section>
 
     <aside class="map-panel" id="mapPanel" aria-label="地図表示エリア">
@@ -642,7 +643,7 @@ function buildAddress(item) {
     function renderCards() {
       if (!rawItems.length) {
         els.cards.innerHTML = "";
-        els.statusBox.className = "status-box";
+        els.statusBox.className = "status-box jc-loading-state";
         els.statusBox.style.display = "block";
         els.statusBox.textContent = "現在表示できる飲食店データがありません。";
         return;
@@ -650,7 +651,7 @@ function buildAddress(item) {
 
       if (!filteredItems.length) {
         els.cards.innerHTML = "";
-        els.statusBox.className = "empty-box";
+        els.statusBox.className = "empty-box jc-empty-state";
         els.statusBox.style.display = "block";
         els.statusBox.textContent = "条件に一致する結果がありません。フィルターを変更してください。";
         return;
@@ -676,15 +677,15 @@ function buildAddress(item) {
         const tags = getTags(item).slice(0, 4);
 
         return `
-          <article class="card ${activeItemId === item.__id ? "active-map-item" : ""}" data-item-id="${escapeHtml(item.__id)}">
+          <article class="card jc-result-card ${activeItemId === item.__id ? "active-map-item" : ""}" data-item-id="${escapeHtml(item.__id)}">
             <div class="card-body">
               <div class="card-main">
                 <div class="card-title-block">
-                  <h3 class="card-title">${escapeHtml(displayName.title)}</h3>
+                  <h3 class="card-title jc-result-title">${escapeHtml(displayName.title)}</h3>
                   ${displayName.subtitle ? `<div class="card-subtitle">${escapeHtml(displayName.subtitle)}</div>` : ""}
                 </div>
 
-                <div class="meta-list">
+                <div class="meta-list jc-result-meta">
                   ${category1 ? `<div class="meta-item"><div class="meta-label">カテゴリ</div><div class="meta-value">${escapeHtml(category1)}</div></div>` : ""}
                   ${category2 ? `<div class="meta-item"><div class="meta-label">詳細カテゴリ</div><div class="meta-value">${escapeHtml(category2)}</div></div>` : ""}
                   ${region ? `<div class="meta-item"><div class="meta-label">地域</div><div class="meta-value">${escapeHtml(region)}</div></div>` : ""}
@@ -695,7 +696,7 @@ function buildAddress(item) {
 
                 ${tags.length ? `<div class="eat-tags">${tags.map(tag => `<span class="eat-tag">${escapeHtml(tag)}</span>`).join("")}</div>` : ""}
 
-                <div class="link-row">
+                <div class="link-row jc-result-actions">
                   <button class="btn btn-secondary" type="button" data-detail>詳細を見る</button>
                   ${website ? `<a class="btn btn-primary" href="${escapeHtml(website)}" target="_blank" rel="noopener noreferrer">公式サイト</a>` : ""}
                   ${mapUrl ? `<a class="btn btn-secondary" href="${escapeHtml(mapUrl)}" target="_blank" rel="noopener noreferrer">地図を見る</a>` : ""}
@@ -1053,7 +1054,7 @@ function setViewMode(mode) {
 
     function setLoadingStatus() {
       els.statusBox.style.display = "block";
-      els.statusBox.className = "status-box";
+      els.statusBox.className = "status-box jc-loading-state";
       els.statusBox.textContent = "データを読み込んでいます...";
       els.resultsSummary.textContent = "読み込み中...";
     }
@@ -1062,7 +1063,7 @@ function setViewMode(mode) {
       els.cards.innerHTML = "";
       els.resultsSummary.textContent = "読み込みエラー";
       els.statusBox.style.display = "block";
-      els.statusBox.className = "status-box error";
+      els.statusBox.className = "status-box jc-loading-state error";
       els.statusBox.innerHTML = `
         <span class="status-title">飲食店データを取得できませんでした。</span>
         <div>時間をおいて再読み込みしてください。</div>

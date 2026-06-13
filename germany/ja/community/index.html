@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>交流・掲示板 | ドイツ在住日本人コミュニティ | J-Connect Germany</title>
   <meta name="description" content="ドイツ在住日本人向けの交流掲示板。売ります・買います、部屋、イベント、質問、友達募集、生活サポートの投稿を探せます。" />
+  <meta name="theme-color" content="#f4f8fc" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/community/" />
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png" />
@@ -67,10 +68,11 @@
   </header>
   <!-- LAYOUT:ja-header:end -->
 
-  <main class="community-shell">
-    <section class="community-hero" aria-labelledby="communityTitle">
+  <main class="community-shell jc-directory-page">
+    <section class="community-hero jc-directory-hero" aria-labelledby="communityTitle">
       <div class="hero-grid">
-        <div class="hero-copy">
+        <div class="hero-copy jc-directory-hero-copy">
+          <div class="jc-directory-breadcrumb"><a href="/germany/ja/community/">交流・掲示板</a><span>投稿一覧</span></div>
           <h1 id="communityTitle" class="hero-title">ドイツ生活の掲示板</h1>
           <p class="hero-desc">家具、部屋、無料譲渡、イベント、質問、アルバイトまで。ドイツ在住者同士で使える掲示板です。</p>
           <div class="hero-search" role="search">
@@ -95,8 +97,8 @@
       </div>
     </section>
 
-    <div class="marketplace-layout">
-      <aside class="filter-bar" aria-label="検索と絞り込み">
+    <div class="marketplace-layout jc-directory-layout">
+      <aside class="filter-bar jc-control-panel jc-directory-sidebar" aria-label="検索と絞り込み">
         <div class="filter-panel-heading">
           <h2>絞り込み</h2>
           <button class="chip-button reset-button" type="button" id="clearFilters">リセット</button>
@@ -110,7 +112,7 @@
           </div>
           <div class="filter-row">
             <span class="filter-label">投稿の種類</span>
-            <div class="filter-rail" id="postTypeRail" aria-label="投稿の種類フィルター">
+            <div class="filter-rail jc-chip-group" id="postTypeRail" aria-label="投稿の種類フィルター">
               <span class="chip-skeleton" aria-hidden="true"></span>
               <span class="chip-skeleton" aria-hidden="true"></span>
               <span class="chip-skeleton" aria-hidden="true"></span>
@@ -118,7 +120,7 @@
           </div>
           <div class="filter-row">
             <span class="filter-label">詳しい内容</span>
-            <div class="subcategory-rail" id="subcategoryRail" aria-label="詳しい内容フィルター">
+            <div class="subcategory-rail jc-chip-group" id="subcategoryRail" aria-label="詳しい内容フィルター">
               <span class="chip-skeleton" aria-hidden="true"></span>
             </div>
           </div>
@@ -126,7 +128,7 @@
       </aside>
 
       <section id="communityBoard" aria-labelledby="boardTitle">
-        <div class="content-head">
+        <div class="content-head jc-results-toolbar">
           <div>
             <h2 id="boardTitle" class="content-title">コミュニティ投稿</h2>
             <p class="result-text loading-lines" id="resultText"><span class="skeleton-text medium"></span></p>
@@ -137,13 +139,13 @@
               <button class="view-button active" type="button" data-view="list">リスト</button>
               <button class="view-button" type="button" data-view="grid">グリッド</button>
             </div>
-            <div class="active-filters" id="activeFilters" aria-label="適用中の条件"></div>
+            <div class="active-filters jc-active-chips" id="activeFilters" aria-label="適用中の条件"></div>
           </div>
         </div>
 
-        <div class="board-grid" id="cards" aria-live="polite"></div>
+        <div class="board-grid jc-result-grid" id="cards" aria-live="polite"></div>
 
-        <div class="empty-state" id="emptyState">
+        <div class="empty-state jc-empty-state" id="emptyState">
           <h2>条件に合う投稿が見つかりませんでした</h2>
           <p>キーワードや地域を少し広げると見つかりやすくなります。探しているものがない場合は、コミュニティに投稿してみてください。</p>
           <div class="hero-actions is-centered">
@@ -685,7 +687,7 @@
       els.activeFilters.innerHTML = "";
       renderQuickChips();
       els.cards.innerHTML = Array.from({ length: 5 }).map(() => `
-        <article class="card skeleton" aria-hidden="true">
+        <article class="card jc-result-card skeleton" aria-hidden="true">
           <div class="card-media"></div>
           <div class="card-body">
             <div class="card-top">
@@ -781,7 +783,7 @@
         const saved = isSaved(post._id);
         const shareHref = detailUrl(post);
         return `
-          <article class="card ${image ? "" : "no-image"}" data-post-id="${escapeHtml(post._id)}">
+          <article class="card jc-result-card ${image ? "" : "no-image"}" data-post-id="${escapeHtml(post._id)}">
             <button class="save-button ${saved ? "saved" : ""}" type="button" data-save-id="${escapeHtml(post._id)}" aria-label="${saved ? "保存を解除" : "保存する"}">${saved ? "★" : "☆"}</button>
             <a class="card-link" href="#post-${encodeURIComponent(post._id)}" aria-label="${escapeHtml(post._title)}の詳細を開く">
               <div class="card-media">
@@ -796,15 +798,15 @@
                   ${priceText ? `<span class="price-badge ${post._free ? "free" : ""}">${escapeHtml(priceText)}</span>` : ""}
                   ${locationText ? `<span class="location-badge">${escapeHtml(locationText)}</span>` : ""}
                 </div>
-                <h3 class="card-title">${escapeHtml(post._title)}</h3>
-                <div class="card-meta">
+                <h3 class="card-title jc-result-title">${escapeHtml(post._title)}</h3>
+                <div class="card-meta jc-result-meta">
                   <span>${escapeHtml(post._location)}</span>
                   <span>${escapeHtml(contactDate)}</span>
                 </div>
                 <p class="card-excerpt">${escapeHtml(post._body || "詳細は投稿ページで確認してください。")}</p>
               </div>
             </a>
-            <div class="card-actions">
+            <div class="card-actions jc-result-actions">
               <a class="detail-open-link" href="${escapeHtml(shareHref)}" target="_blank" rel="noopener" aria-label="${escapeHtml(post._title)}を新しいタブで詳しく見る">詳細を見る</a>
             </div>
           </article>

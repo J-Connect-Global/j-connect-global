@@ -43,6 +43,13 @@ const requiredNavLinks = [
   '/germany/ja/events/',
   '/germany/ja/learn-german/'
 ];
+const standardizedDirectoryListingUrls = new Set([
+  '/germany/ja/eat/',
+  '/germany/ja/shopping/',
+  '/germany/ja/medical/',
+  '/germany/ja/jobs/',
+  '/germany/ja/community/'
+]);
 
 const problems = [];
 
@@ -164,6 +171,22 @@ function validatePagesRegistry(pages, pagesByUrl) {
     }
   }
 
+  const listingRoutes = [
+    ['/germany/ja/jobs/', 'jobs'],
+    ['/germany/ja/community/', 'community']
+  ];
+
+  for (const [url, pillar] of listingRoutes) {
+    const page = pagesByUrl.get(url);
+    if (!page) {
+      problems.push(`${PAGE_REGISTRY_PATH} missing listing route: ${url}`);
+      continue;
+    }
+    if (page.type !== 'listing' || page.pillar !== pillar) {
+      problems.push(`${url} must be classified as type="listing", pillar="${pillar}".`);
+    }
+  }
+
   const guides = pagesByUrl.get('/germany/ja/guides/');
   if (guides && (guides.type !== 'legacy' || guides.pillar !== 'legacy' || guides.nav_visible !== false)) {
     problems.push('/germany/ja/guides/ must remain a hidden legacy route.');
@@ -207,6 +230,7 @@ function validateHtmlPage(url, file, page) {
   validateTitleAndDescription(html, rel);
   validateCssOrder(html, rel);
   validateInternalLinks(html, rel, rel);
+  validateDirectoryListingPage(url, html, page, rel);
 
   if (page?.canonical_url && page.status !== 'redirect') {
     const expected = absoluteUrl(page.canonical_url);
@@ -214,6 +238,29 @@ function validateHtmlPage(url, file, page) {
     if (hrefs.length === 1 && hrefs[0] !== expected) {
       problems.push(`${rel} canonical href should be ${expected}, got ${hrefs[0]}`);
     }
+  }
+}
+
+function validateDirectoryListingPage(url, html, page, rel) {
+  if (page?.status !== 'published' || !standardizedDirectoryListingUrls.has(normalizeUrl(url))) return;
+
+  if (/#f7f3ee/i.test(html)) {
+    problems.push(`${rel} directory/listing page should not use old beige theme-color #f7f3ee.`);
+  }
+
+  for (const [className, label] of [
+    ['jc-directory-hero', 'shared directory hero'],
+    ['jc-control-panel', 'shared control panel'],
+    ['jc-result-card', 'shared result card'],
+    ['jc-result-grid', 'shared result grid']
+  ]) {
+    if (!html.includes(className)) {
+      problems.push(`${rel} missing ${label} class: ${className}`);
+    }
+  }
+
+  if (!html.includes('jc-empty-state') && !html.includes('jc-loading-state')) {
+    problems.push(`${rel} missing shared empty/loading state class.`);
   }
 }
 

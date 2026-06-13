@@ -228,6 +228,7 @@
   <!-- LAYOUT:ja-footer:end -->
 
   <script src="/assets/js/data-sources.js"></script>
+  <script src="/assets/js/community-shared.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
     const COMMUNITY_POSTS_URL = DATA_SOURCES.buildCommunityUrl({ action: "getPosts" });
@@ -346,8 +347,13 @@
     }
 
     function detailUrl(post) {
-      const url = new URL("./post/", location.href);
-      url.searchParams.set("id", String(post._id));
+      const shared = window.JCONNECT_COMMUNITY_SHARED;
+      if (shared?.communityDetailHref) {
+        return new URL(shared.communityDetailHref(post, location.pathname), location.href).href;
+      }
+      const url = new URL(location.pathname, location.href);
+      url.searchParams.set("post", String(post._id));
+      url.hash = `post-${encodeURIComponent(post._id)}`;
       return url.href;
     }
 
@@ -869,6 +875,9 @@
     }
 
     function currentDetailPostId() {
+      const params = new URLSearchParams(location.search);
+      const queryId = params.get("post") || params.get("id");
+      if (queryId) return queryId;
       const match = decodeURIComponent(location.hash || "").match(/^#post-(.+)$/);
       if (match) return match[1];
       return "";
@@ -1009,13 +1018,23 @@
     function closeDetail(updateHash = true) {
       els.modal.classList.remove("open");
       document.body.style.overflow = "";
-      if (updateHash && location.hash.startsWith("#post-")) {
-        history.pushState("", document.title, location.pathname + location.search);
+      if (updateHash && (location.hash.startsWith("#post-") || location.search.includes("post=") || location.search.includes("id="))) {
+        const url = new URL(location.href);
+        url.searchParams.delete("post");
+        url.searchParams.delete("id");
+        url.hash = "";
+        history.pushState("", document.title, url.pathname + url.search);
       }
     }
 
     async function fetchJson(url) {
       return DATA_SOURCES.fetchJsonWithTimeout(url, DATA_TIMEOUT_MS);
+    }
+
+    function sharedFallbackPosts() {
+      return Array.isArray(window.JCONNECT_COMMUNITY_SHARED?.fallbackPosts)
+        ? window.JCONNECT_COMMUNITY_SHARED.fallbackPosts
+        : [];
     }
 
     function renderEmptyActions(mode = "filters") {
@@ -1048,13 +1067,25 @@
       renderSkeletons();
       try {
         const data = await fetchJson(COMMUNITY_POSTS_URL);
-        state.posts = DATA_SOURCES.normalizePayload(data).map(normalizePost);
+        const rows = DATA_SOURCES.normalizePayload(data);
+        state.posts = (rows.length ? rows : sharedFallbackPosts()).map(normalizePost);
         state.loading = false;
         state.loadError = false;
         renderAreas();
         applyFilters();
       } catch (error) {
-        console.error("Community posts load failed:", COMMUNITY_POSTS_URL, error);
+        const fallbackRows = sharedFallbackPosts();
+        if (fallbackRows.length) {
+          console.warn("Community posts load failed; using shared fallback posts.", error);
+          state.posts = fallbackRows.map(normalizePost);
+          state.filtered = [];
+          state.loading = false;
+          state.loadError = false;
+          renderAreas();
+          applyFilters();
+          return;
+        }
+        console.warn("Community posts load failed:", COMMUNITY_POSTS_URL, error);
         state.posts = [];
         state.filtered = [];
         state.loading = false;
@@ -1110,13 +1141,6 @@
     window.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && els.modal.classList.contains("open")) closeDetail(true);
     });
-
-    const languageSelect = document.getElementById("languageSelect");
-    if (languageSelect) {
-      languageSelect.addEventListener("change", (event) => {
-        if (event.target.value) window.location.href = event.target.value;
-      });
-    }
 
     renderRails();
     loadPosts();

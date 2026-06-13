@@ -108,6 +108,7 @@
       <div class="jc-directory-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人一覧</span></div>
       <h1>ドイツの求人を地域・職種から探す</h1>
       <p>会社名、職種、勤務地、給与、勤務形態から求人を絞り込み、詳細や応募先をカードから確認できます。</p>
+      <div class="jc-hero-actions"><a class="jc-button is-primary" href="#mainLayout">求人を探す</a><a class="jc-button" href="/germany/ja/jobs/posting/">求人掲載について</a></div>
     </div>
   </section>
 
@@ -192,12 +193,12 @@
 
         <div class="toolbar-actions">
           <div class="chips jc-active-chips" id="chips"></div>
-          <a class="btn btn-secondary" href="/germany/ja/jobs/posting/">求人掲載希望の企業様へ</a>
+          <a class="btn btn-secondary" href="/germany/ja/jobs/posting/">求人掲載について</a>
         </div>
       </div>
 
       <div id="cards" class="cards jc-result-grid" aria-live="polite"></div>
-      <div id="emptyBox" class="empty-box jc-empty-state" style="display:none;">条件に一致する求人が見つかりませんでした。条件を変更してください。</div>
+      <div id="emptyBox" class="empty-box jc-empty-state" style="display:none;">条件に一致する求人が見つかりませんでした。条件を変更してください。求人掲載については <a href="/germany/ja/jobs/posting/">こちら</a>。</div>
     </section>
 
   </main>
@@ -319,14 +320,6 @@
     };
 
     const SAVED_JOBS_KEY = 'jconnect:germany:jobs:saved';
-
-    const languageSelect = document.getElementById('languageSelect');
-
-    if (languageSelect) {
-      languageSelect.addEventListener('change', e => {
-        if (e.target.value) window.location.href = e.target.value;
-      });
-    }
 
     function escapeHtml(value){
       return String(value ?? '')
@@ -794,7 +787,7 @@
         els.cards.innerHTML = '';
         els.emptyBox.style.display = 'block';
         els.emptyBox.className = 'empty-box jc-empty-state';
-        els.emptyBox.textContent = '条件に一致する結果がありません。フィルターを変更してください。';
+        els.emptyBox.innerHTML = '条件に一致する結果がありません。フィルターを変更してください。求人掲載については <a href="/germany/ja/jobs/posting/">こちら</a>。';
         return;
       }
 

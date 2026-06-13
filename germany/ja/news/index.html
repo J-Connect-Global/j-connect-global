@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ニュース・読みもの | ドイツ生活ニュースと制度情報 | J-Connect Germany</title>
-  <meta name="description" content="ドイツ在住日本人向けに、生活、行政、交通、安全、制度変更などのニュースと読みものを出典リンク付きで整理しています。" />
-  <meta name="theme-color" content="#f7f3ee" />
+  <title>制度・生活アップデート | ドイツ生活ニュース確認ポイント | J-Connect Germany</title>
+  <meta name="description" content="ドイツ在住日本人向けに、生活、行政、交通、安全、制度変更などの確認ポイントを公式情報へのリンク付きで整理しています。" />
+  <meta name="theme-color" content="#f4f8fc" />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/news/" />
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
@@ -34,7 +34,7 @@
 
 .hero{max-width:var(--max);margin:0 auto;padding:36px 20px 20px}
 
-.hero-box{position:relative;overflow:hidden;background:linear-gradient(90deg, rgba(255,255,255,.42) 0%, rgba(255,255,255,.32) 42%, rgba(255,255,255,.18) 60%, rgba(255,255,255,.08) 100%),url("/assets/images/hero/top-hero.jpg") center center / cover no-repeat,#fff;border:1px solid #d9e0e8;border-radius:10px;padding:32px 28px 26px;box-shadow:var(--card-shadow)}
+.hero-box{position:relative;overflow:hidden;background:linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(248,251,255,.92) 100%),#fff;border:1px solid #d9e0e8;border-radius:10px;padding:32px 28px 26px;box-shadow:var(--card-shadow)}
 
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
 
@@ -293,15 +293,16 @@ body{
   <main>
     <section class="hero">
       <div class="hero-box">
-        <span class="eyebrow"><span class="eyebrow-dot"></span>News</span>
-        <h1>ドイツ生活ニュース一覧</h1>
-        <p>生活・行政・交通・安全に関するニュースを、出典元へのリンク付きで確認できます。</p>
+        <span class="eyebrow"><span class="eyebrow-dot"></span>Life Updates</span>
+        <h1>制度・生活アップデート</h1>
+        <p>生活・行政・交通・安全に関する変更点を、出典元へのリンク付きで確認できます。イベントや季節情報はニュース・イベントHubから探せます。</p>
+        <div class="jc-hero-actions"><a class="jc-button is-primary" href="/germany/ja/events/">ニュース・イベントHubへ</a><a class="jc-button" href="/germany/ja/living/">生活ガイドを見る</a></div>
       </div>
     </section>
 
     <section class="news-section">
       <div class="container">
-        <p class="news-disclaimer">このページは外部ニュース・公式情報へのリンクをもとに、ドイツ在住日本人向けに整理したニュース一覧です。正確な内容は必ず各出典元をご確認ください。</p>
+        <p class="news-disclaimer">このページは外部ニュース・公式情報へのリンクをもとに、ドイツ在住日本人向けに整理した確認ページです。最新・正確な内容は必ず各出典元をご確認ください。</p>
         <section class="news-controls">
           <input id="newsSearch" type="search" placeholder="キーワードで検索" />
           <select id="countryFilter"><option value="all">すべての国</option><option value="germany">ドイツ</option><option value="japan">日本</option><option value="eu">EU</option></select>
@@ -372,8 +373,6 @@ body{
   <script>
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
-    const languageSelect = document.getElementById('languageSelect');
-    if (languageSelect) languageSelect.addEventListener('change', (e)=>{ if(e.target.value) window.location.href = e.target.value; });
   </script>
   <script src="/assets/js/news.js"></script>
 <script src="/assets/js/main.js"></script>

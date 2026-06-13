@@ -99,26 +99,27 @@
   </header>
   <!-- LAYOUT:ja-header:end -->
 
-  <section class="hero">
-    <div class="hero-box">
+  <section class="hero jc-directory-hero">
+    <div class="hero-box jc-directory-hero-box">
       <div class="eyebrow">
         <span class="eyebrow-dot"></span>
         仕事・求人ガイド
       </div>
+      <div class="jc-directory-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人一覧</span></div>
       <h1>ドイツの求人を地域・職種から探す</h1>
       <p>会社名、職種、勤務地、給与、勤務形態から求人を絞り込み、詳細や応募先をカードから確認できます。</p>
     </div>
   </section>
 
-  <div class="view-toggle-wrap">
+  <div class="view-toggle-wrap jc-filter-row">
     <div class="view-toggle" role="group" aria-label="表示切替">
       <button id="listViewBtn" class="view-btn active" type="button" aria-pressed="true">リスト</button>
       <button id="gridViewBtn" class="view-btn" type="button" aria-pressed="false">グリッド</button>
     </div>
   </div>
 
-  <main class="layout list-mode" id="mainLayout">
-    <aside class="panel filters">
+  <main class="layout jc-directory-layout list-mode" id="mainLayout">
+    <aside class="panel filters jc-control-panel jc-directory-sidebar">
       <div class="panel-title-row">
         <h2 class="panel-title">検索フィルター</h2>
         <button class="reset-btn" id="resetBtn" type="button">リセット</button>
@@ -131,42 +132,42 @@
 
       <div class="field">
         <div class="label">地域</div>
-        <div class="filter-chip-group" id="regionChipGroup" role="group" aria-label="地域で絞り込み"></div>
+        <div class="filter-chip-group jc-chip-group" id="regionChipGroup" role="group" aria-label="地域で絞り込み"></div>
       </div>
 
       <div class="field">
         <div class="label">職種</div>
-        <div class="filter-chip-group" id="positionChipGroup" role="group" aria-label="職種で絞り込み"></div>
+        <div class="filter-chip-group jc-chip-group" id="positionChipGroup" role="group" aria-label="職種で絞り込み"></div>
       </div>
 
       <div class="field" id="categoryField">
         <div class="label">カテゴリ</div>
-        <div class="filter-chip-group" id="categoryChipGroup" role="group" aria-label="カテゴリで絞り込み"></div>
+        <div class="filter-chip-group jc-chip-group" id="categoryChipGroup" role="group" aria-label="カテゴリで絞り込み"></div>
       </div>
 
       <div class="field" id="detailCategoryField">
         <div class="label">詳細カテゴリ</div>
-        <div class="filter-chip-group" id="detailCategoryChipGroup" role="group" aria-label="詳細カテゴリで絞り込み"></div>
+        <div class="filter-chip-group jc-chip-group" id="detailCategoryChipGroup" role="group" aria-label="詳細カテゴリで絞り込み"></div>
       </div>
 
       <div class="field">
         <div class="label">雇用形態</div>
-        <div class="filter-chip-group" id="employmentChipGroup" role="group" aria-label="雇用形態で絞り込み"></div>
+        <div class="filter-chip-group jc-chip-group" id="employmentChipGroup" role="group" aria-label="雇用形態で絞り込み"></div>
       </div>
 
       <div class="field" id="workStyleField">
         <div class="label">勤務形態</div>
-        <div class="filter-chip-group" id="workStyleChipGroup" role="group" aria-label="勤務形態で絞り込み"></div>
+        <div class="filter-chip-group jc-chip-group" id="workStyleChipGroup" role="group" aria-label="勤務形態で絞り込み"></div>
       </div>
 
       <div class="field" id="jobLanguageField">
         <div class="label">言語</div>
-        <div class="filter-chip-group" id="jobLanguageChipGroup" role="group" aria-label="言語で絞り込み"></div>
+        <div class="filter-chip-group jc-chip-group" id="jobLanguageChipGroup" role="group" aria-label="言語で絞り込み"></div>
       </div>
 
       <div class="field">
         <div class="label">ビザサポート</div>
-        <div class="filter-chip-group" id="visaChipGroup" role="group" aria-label="ビザサポートで絞り込み"></div>
+        <div class="filter-chip-group jc-chip-group" id="visaChipGroup" role="group" aria-label="ビザサポートで絞り込み"></div>
       </div>
 
       <div class="field">
@@ -182,21 +183,21 @@
       </div>
     </aside>
 
-    <section class="content">
-      <div class="toolbar">
+    <section class="content jc-directory-results">
+      <div class="toolbar jc-results-toolbar">
         <div>
           <h2 class="results-title">仕事・求人</h2>
           <div class="results-sub" id="resultsSummary">読み込み中...</div>
         </div>
 
         <div class="toolbar-actions">
-          <div class="chips" id="chips"></div>
+          <div class="chips jc-active-chips" id="chips"></div>
           <a class="btn btn-secondary" href="/germany/ja/jobs/posting/">求人掲載希望の企業様へ</a>
         </div>
       </div>
 
-      <div id="cards" class="cards" aria-live="polite"></div>
-      <div id="emptyBox" class="empty-box" style="display:none;">条件に一致する求人が見つかりませんでした。条件を変更してください。</div>
+      <div id="cards" class="cards jc-result-grid" aria-live="polite"></div>
+      <div id="emptyBox" class="empty-box jc-empty-state" style="display:none;">条件に一致する求人が見つかりませんでした。条件を変更してください。</div>
     </section>
 
   </main>
@@ -615,7 +616,7 @@
     function setJobsLoading(){
       els.resultsSummary.textContent = '読み込み中...';
       els.emptyBox.style.display = 'none';
-      els.emptyBox.className = 'empty-box';
+      els.emptyBox.className = 'empty-box jc-empty-state';
       els.emptyBox.innerHTML = '';
     }
 
@@ -624,7 +625,7 @@
       els.chips.innerHTML = '';
       els.resultsSummary.textContent = '読み込みエラー';
       els.emptyBox.style.display = 'block';
-      els.emptyBox.className = 'empty-box error';
+      els.emptyBox.className = 'empty-box jc-empty-state error';
       els.emptyBox.innerHTML = `
         <span class="status-title">求人データを取得できませんでした。</span>
         <div>時間をおいて再読み込みしてください。</div>
@@ -792,13 +793,13 @@
       if (!filtered.length) {
         els.cards.innerHTML = '';
         els.emptyBox.style.display = 'block';
-        els.emptyBox.className = 'empty-box';
+        els.emptyBox.className = 'empty-box jc-empty-state';
         els.emptyBox.textContent = '条件に一致する結果がありません。フィルターを変更してください。';
         return;
       }
 
       els.emptyBox.style.display = 'none';
-      els.emptyBox.className = 'empty-box';
+      els.emptyBox.className = 'empty-box jc-empty-state';
 
       els.cards.innerHTML = filtered.map(job => {
         const company = job.company_name || '会社名未設定';
@@ -818,17 +819,17 @@
         const detailPath = getJobDetailPath(job);
 
         return `
-          <article class="card job-card ${String(job.id) === String(selectedId) ? 'active' : ''}" data-id="${escapeHtml(job.id)}" data-detail-url="${escapeHtml(detailPath)}">
+          <article class="card job-card jc-result-card ${String(job.id) === String(selectedId) ? 'active' : ''}" data-id="${escapeHtml(job.id)}" data-detail-url="${escapeHtml(detailPath)}">
             <button class="save-button ${saved ? 'saved' : ''}" type="button" data-save-id="${escapeHtml(job.id)}" aria-label="${saved ? '保存を解除' : '保存する'}">${saved ? '★' : '☆'}</button>
             <div class="job-card-body">
               <div class="job-main">
                 <div class="job-card-kicker">${escapeHtml(company)}</div>
-                <h3 class="job-title">${escapeHtml(position)}</h3>
+                <h3 class="job-title jc-result-title">${escapeHtml(position)}</h3>
                 <p class="job-summary">${escapeHtml(summary)}</p>
               </div>
 
               <div class="job-side">
-                <div class="job-meta-line">
+                <div class="job-meta-line jc-result-meta">
                   <span>${escapeHtml(region)}</span>
                   <span>${escapeHtml(salary)}</span>
                   ${job.published_at ? `<span>掲載 ${escapeHtml(job.published_at)}</span>` : ''}
@@ -840,7 +841,7 @@
                 </div>
               </div>
 
-              <div class="job-card-actions">
+              <div class="job-card-actions jc-result-actions">
                 <a class="card-action primary" href="${escapeHtml(detailPath)}">詳細を見る</a>
                 <button class="card-action" type="button" data-copy-id="${escapeHtml(job.id)}">URLコピー</button>
                 ${job.apply_url ? `<a class="card-action" href="${escapeHtml(job.apply_url)}" target="_blank" rel="noopener noreferrer">応募・掲載元</a>` : ''}

@@ -614,8 +614,9 @@ body.portal3-home .portal3-header *{
   padding:2px 7px;
   margin-bottom:3px;
   border-radius:999px;
-  background:#ffe7ed;
-  color:#d93646;
+  background:#eef7ff;
+  color:var(--portal3-blue);
+  border:1px solid #d5e8fb;
   font-size:10px;
   font-style:normal;
   font-weight:800;
@@ -691,8 +692,9 @@ body.portal3-home .portal3-header *{
   right:0;
   padding:2px 8px;
   border-radius:999px;
-  background:#ff9f1c;
-  color:#fff;
+  background:#eef7ff;
+  color:var(--portal3-blue);
+  border:1px solid #d5e8fb;
   font-size:10px;
   font-style:normal;
   font-weight:800;
@@ -1111,7 +1113,8 @@ body.portal3-home .portal3-header *{
   font-weight:800;
 }
 
-.portal3-news-list time{
+.portal3-news-list time,
+.portal3-news-list small{
   flex:0 0 auto;
   color:#667c95;
   font-size:11px;

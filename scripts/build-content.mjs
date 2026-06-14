@@ -609,19 +609,21 @@ function renderArticleSidebar(type, item, allItems, toc = []) {
     .map((relatedItem) => `<li><a href="${escapeAttribute(relatedItem.url)}">${escapeHtml(relatedItem.title)}</a></li>`)
     .join('\n');
 
-  const sections = [
-    `<section class="article-sidebar-card article-sidebar-highlight">
-  <h2>この記事の要点</h2>
-${indent(facts, 2)}
-</section>`
-  ];
+  const sections = [];
 
   if (tocLinks) {
     sections.push(`<nav class="article-sidebar-card article-sidebar-toc" aria-label="記事内目次">
   <h2>目次</h2>
-${indent(tocLinks, 2)}
+  <div class="article-sidebar-toc-list">
+${indent(tocLinks, 4)}
+  </div>
 </nav>`);
   }
+
+  sections.push(`<section class="article-sidebar-card article-sidebar-highlight">
+  <h2>この記事の要点</h2>
+${indent(facts, 2)}
+</section>`);
 
   if (sourceLinks.length) {
     sections.push(`<section class="article-sidebar-card">

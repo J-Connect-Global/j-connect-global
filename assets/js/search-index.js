@@ -224,6 +224,17 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
+    "title": "Rundfunkbeitragとは？ドイツの放送負担金の基本",
+    "description": "ドイツで住み始めたときに届くRundfunkbeitragの通知、支払い対象、登録・支払い・引っ越し時の確認点を整理。",
+    "url": "/germany/ja/living/rundfunkbeitrag-guide/",
+    "category": "生活・手続き",
+    "tags": [
+      "Rundfunkbeitrag",
+      "住まい",
+      "手続き"
+    ]
+  },
+  {
     "title": "ドイツで家を探す基本ガイド",
     "description": "ドイツで賃貸物件を探すときの流れ、必要書類、内見、契約前の確認点を整理。",
     "url": "/germany/ja/living/rent-apartment-germany/",

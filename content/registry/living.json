@@ -1,5 +1,47 @@
 [
   {
+    "id": "L011",
+    "title": "Rundfunkbeitragとは？ドイツの放送負担金の基本",
+    "slug": "rundfunkbeitrag-guide",
+    "category": "生活・手続き",
+    "summary": "ドイツで住み始めたときに届くRundfunkbeitragの通知、支払い対象、登録・支払い・引っ越し時の確認点を整理。",
+    "url": "/germany/ja/living/rundfunkbeitrag-guide/",
+    "markdown_path": "/content/living/rundfunkbeitrag-guide.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-06-14",
+    "updated_at": "2026-06-14",
+    "last_verified": "2026-06-14",
+    "tags": [
+      "Rundfunkbeitrag",
+      "住まい",
+      "手続き"
+    ],
+    "home_visible": true,
+    "home_order": 15,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/rundfunkbeitrag-guide/",
+    "related_articles": [
+      "anmeldung-guide",
+      "moving-checklist-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "Rundfunkbeitrag - official website",
+        "url": "https://www.rundfunkbeitrag.de/"
+      }
+    ],
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Germany editorial",
+      "last_reviewed_at": "2026-06-14",
+      "next_review_due": "2027-06-14"
+    }
+  },
+  {
     "id": "L004",
     "title": "ドイツで家を探す基本ガイド",
     "slug": "rent-apartment-germany",

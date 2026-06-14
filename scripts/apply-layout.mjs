@@ -39,27 +39,33 @@ function applyCanonicalLayout(html, url, page) {
 
 function ensureHeaderFooterStylesheet(html) {
   const stylesheetHref = '/assets/css/ja-header-footer.css?v=header-language-fix-1';
+  const stylesheetLink = `  <link rel="stylesheet" href="${stylesheetHref}">`;
 
-  if (/\/assets\/css\/ja-header-footer\.css(?:\?[^"']*)?/.test(html)) {
-    return html.replace(
-      /href=["']\/assets\/css\/ja-header-footer\.css(?:\?[^"']*)?["']/,
-      `href="${stylesheetHref}"`
-    );
-  }
+  // Remove any existing ja-header-footer.css link first, regardless of its current position.
+  let next = html.replace(
+    /\s*<link\s+rel=["']stylesheet["']\s+href=["']\/assets\/css\/ja-header-footer\.css(?:\?[^"']*)?["']\s*\/?>\s*/g,
+    '\n'
+  );
 
+  // Preferred order:
+  // site.css
+  // ja-header-footer.css
+  // jconnect-ui.css
   const jconnectUiLink = /(\s*<link\s+rel=["']stylesheet["']\s+href=["']\/assets\/css\/jconnect-ui\.css(?:\?[^"']*)?["']\s*\/?>)/;
 
-  if (jconnectUiLink.test(html)) {
-    return html.replace(jconnectUiLink, `$1\n  <link rel="stylesheet" href="${stylesheetHref}">`);
+  if (jconnectUiLink.test(next)) {
+    return next.replace(jconnectUiLink, `\n${stylesheetLink}$1`);
   }
 
+  // If jconnect-ui.css is not present, insert after site.css.
   const siteCssLink = /(\s*<link\s+rel=["']stylesheet["']\s+href=["']\/assets\/css\/site\.css(?:\?[^"']*)?["']\s*\/?>)/;
 
-  if (siteCssLink.test(html)) {
-    return html.replace(siteCssLink, `$1\n  <link rel="stylesheet" href="${stylesheetHref}">`);
+  if (siteCssLink.test(next)) {
+    return next.replace(siteCssLink, `$1\n${stylesheetLink}`);
   }
 
-  return html.replace('</head>', `  <link rel="stylesheet" href="${stylesheetHref}">\n</head>`);
+  // Fallback: insert before </head>.
+  return next.replace('</head>', `${stylesheetLink}\n</head>`);
 }
 function replaceLayoutBlock(html, marker, replacement, tag) {
   const markerPattern = new RegExp(`(^[ \\t]*)<!-- LAYOUT:${marker}:start -->[\\s\\S]*?<!-- LAYOUT:${marker}:end -->`, 'm');

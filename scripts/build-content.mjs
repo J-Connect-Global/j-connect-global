@@ -156,6 +156,7 @@ function renderArticlePage(type, item, bodyHtml, allItems) {
   const metaBlock = renderArticleMetaSpans(type, item);
   const ogMeta = renderOpenGraphMeta(type, item, title, canonicalHref);
   const structuredData = renderStructuredData(type, item, title, canonicalHref);
+  const toc = extractArticleToc(item.markdown, item.title);
 
   return `<!DOCTYPE html>
 <html lang="ja">
@@ -179,24 +180,27 @@ ${indent(structuredData, 2)}
 <body>
 ${renderHeader(type, item.url)}
   <main class="container article-main">
-    <article>
-      <header class="article-header">
-        <span class="article-kicker">${escapeHtml(item.category || config.label)}</span>
-        <h1 class="article-title">${escapeHtml(item.title)}</h1>
-        <p class="article-summary">${escapeHtml(item.summary)}</p>
-        <div class="article-meta">
-          ${item.tags.map((tag) => `<span class="article-chip">${escapeHtml(tag)}</span>`).join('\n          ')}
-          <span>公開: ${escapeHtml(item.published_at || '')}</span>
-          <span>最終確認: ${escapeHtml(item.last_verified || '')}</span>${metaBlock}
-        </div>
-      </header>
+    <div class="article-layout">
+      <article class="article-content-shell">
+        <header class="article-header">
+          <span class="article-kicker">${escapeHtml(item.category || config.label)}</span>
+          <h1 class="article-title">${escapeHtml(item.title)}</h1>
+          <p class="article-summary">${escapeHtml(item.summary)}</p>
+          <div class="article-meta">
+            ${item.tags.map((tag) => `<span class="article-chip">${escapeHtml(tag)}</span>`).join('\n          ')}
+            <span>公開: ${escapeHtml(item.published_at || '')}</span>
+            <span>最終確認: ${escapeHtml(item.last_verified || '')}</span>${metaBlock}
+          </div>
+        </header>
 
-      <div class="article-body">
-${indent(bodyHtml, 8)}
-        <p><a class="article-back-link" href="${config.hubUrl}">${escapeHtml(config.backText)}</a></p>
-${indent(renderDisclaimer(item), 8)}
-      </div>
-    </article>
+        <div class="article-body">
+${indent(bodyHtml, 10)}
+          <p><a class="article-back-link" href="${config.hubUrl}">${escapeHtml(config.backText)}</a></p>
+${indent(renderDisclaimer(item), 10)}
+        </div>
+      </article>
+${indent(renderArticleSidebar(type, item, allItems, toc), 6)}
+    </div>
 ${indent(renderRelatedSection(item, allItems), 4)}
   </main>
 
@@ -272,7 +276,8 @@ function markdownToHtml(markdown, context) {
         continue;
       }
       const level = Math.min(heading[1].length + (heading[1].length === 1 ? 1 : 0), 3);
-      html.push(`<h${level}>${renderInline(heading[2], context)}</h${level}>`);
+      const headingId = createHeadingId(headingText);
+html.push(`<h${level} id="${escapeAttribute(headingId)}">${renderInline(heading[2], context)}</h${level}>`);
       index += 1;
       continue;
     }
@@ -546,7 +551,133 @@ function renderDisclaimer(item) {
   本記事は一般情報です。行政・税務・医療・保険などの条件は自治体、滞在資格、雇用状況、家族構成、申請時期により異なる場合があります。必ず公式窓口や専門家の最新情報を確認してください。
 </div>`;
 }
+function createHeadingId(value) {
+  const text = stripInlineMarkdown(value)
+    .trim()
+    .normalize('NFKC')
+    .toLowerCase();
 
+  const id = text
+    .replace(/[^\p{L}\p{N}]+/gu, '-')
+    .replace(/^-+|-+$/g, '');
+
+  return id || 'section';
+}
+
+function extractArticleToc(markdown, title) {
+  const source = stripFrontMatter(markdown).replace(/\r\n/g, '\n').trim();
+  const skipTitles = new Set([
+    title,
+    '関連記事'
+  ]);
+
+  return source
+    .split('\n')
+    .map((line) => line.trim().match(/^##\s+(.+)$/))
+    .filter(Boolean)
+    .map((match) => stripInlineMarkdown(match[1]).trim())
+    .filter((text) => text && !skipTitles.has(text))
+    .slice(0, 12)
+    .map((text) => ({
+      id: createHeadingId(text),
+      text
+    }));
+}
+
+function renderArticleSidebar(type, item, allItems, toc = []) {
+  const config = contentTypes[type];
+  const facts = renderArticleSidebarFacts(type, item);
+  const tocLinks = toc
+    .map((entry) => `<a href="#${escapeAttribute(entry.id)}">${escapeHtml(entry.text)}</a>`)
+    .join('\n');
+
+  const sourceLinks = [];
+  if (item.official_url) {
+    sourceLinks.push(`<li><a href="${escapeAttribute(item.official_url)}">公式情報を確認する</a></li>`);
+  }
+  for (const source of item.official_sources) {
+    if (!source.url) continue;
+    sourceLinks.push(`<li><a href="${escapeAttribute(source.url)}">${escapeHtml(source.title || '公式情報・参考ソース')}</a></li>`);
+  }
+
+  const related = toArray(item.related_articles)
+    .map((reference) => findRelatedItem(reference, allItems))
+    .filter(Boolean)
+    .slice(0, 4);
+
+  const relatedLinks = related
+    .map((relatedItem) => `<li><a href="${escapeAttribute(relatedItem.url)}">${escapeHtml(relatedItem.title)}</a></li>`)
+    .join('\n');
+
+  const sections = [
+    `<section class="article-sidebar-card article-sidebar-highlight">
+  <h2>この記事の要点</h2>
+${indent(facts, 2)}
+</section>`
+  ];
+
+  if (tocLinks) {
+    sections.push(`<nav class="article-sidebar-card article-sidebar-toc" aria-label="記事内目次">
+  <h2>目次</h2>
+${indent(tocLinks, 2)}
+</nav>`);
+  }
+
+  if (sourceLinks.length) {
+    sections.push(`<section class="article-sidebar-card">
+  <h2>公式情報</h2>
+  <ul class="article-sidebar-links">
+${indent(sourceLinks.join('\n'), 4)}
+  </ul>
+</section>`);
+  }
+
+  if (relatedLinks) {
+    sections.push(`<section class="article-sidebar-card">
+  <h2>関連ガイド</h2>
+  <ul class="article-sidebar-links">
+${indent(relatedLinks, 4)}
+  </ul>
+</section>`);
+  }
+
+  sections.push(`<section class="article-sidebar-card">
+  <h2>${escapeHtml(config.label)}</h2>
+  <a class="article-sidebar-back" href="${escapeAttribute(config.hubUrl)}">${escapeHtml(config.backText)}</a>
+</section>`);
+
+  return `<aside class="article-sidebar" aria-label="記事補助情報">
+${indent(sections.join('\n'), 2)}
+</aside>`;
+}
+
+function renderArticleSidebarFacts(type, item) {
+  const config = contentTypes[type];
+  const facts = [];
+
+  if (type === 'living' && item.slug === 'rundfunkbeitrag-guide') {
+    facts.push(['金額', '月18.36ユーロ']);
+    facts.push(['単位', '原則、住居単位']);
+    facts.push(['注意', 'WGは重複支払いに注意']);
+  }
+
+  facts.push(['カテゴリ', item.category || config.label]);
+
+  if (item.last_verified) {
+    facts.push(['最終確認', item.last_verified]);
+  }
+
+  if (item.review?.next_review_due) {
+    facts.push(['次回確認', item.review.next_review_due]);
+  }
+
+  return `<dl class="article-sidebar-facts">
+${indent(facts.map(([label, value]) => `<div>
+  <dt>${escapeHtml(label)}</dt>
+  <dd>${escapeHtml(value)}</dd>
+</div>`).join('\n'), 2)}
+</dl>`;
+}
 function renderRelatedSection(item, allItems) {
   const related = toArray(item.related_articles)
     .map((reference) => findRelatedItem(reference, allItems))

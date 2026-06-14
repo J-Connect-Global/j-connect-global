@@ -690,3 +690,234 @@
     justify-content:flex-start;
   }
 }
+
+/* =========================================================
+   Header one-line fix for desktop
+   Home also needs ja-header-footer.css loaded in index.html
+   ========================================================= */
+
+@media (min-width: 781px){
+  .site-header .header-inner{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:16px !important;
+    min-height:72px !important;
+  }
+
+  .site-header .brand{
+    flex:0 0 auto !important;
+    min-width:0 !important;
+  }
+
+  .site-header .brand-logo{
+    width:128px !important;
+    height:auto !important;
+  }
+
+  .site-header .brand-title{
+    font-size:13px !important;
+    white-space:nowrap !important;
+  }
+
+  .site-header .brand-sub{
+    font-size:11px !important;
+    white-space:nowrap !important;
+  }
+
+  .site-header .header-actions{
+    flex:1 1 auto !important;
+    min-width:0 !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
+    flex-wrap:nowrap !important;
+    gap:8px !important;
+  }
+
+  .site-header .header-nav{
+    display:flex !important;
+    align-items:center !important;
+    flex-wrap:nowrap !important;
+    gap:8px !important;
+    flex:0 0 auto !important;
+  }
+
+  .site-header .header-nav a{
+    height:38px !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    padding:0 11px !important;
+    border-radius:8px !important;
+    font-size:13px !important;
+    font-weight:700 !important;
+    white-space:nowrap !important;
+    line-height:1 !important;
+  }
+
+  .site-header .header-category{
+    flex:0 0 auto !important;
+    height:38px !important;
+    padding:0 11px !important;
+    border-radius:8px !important;
+    white-space:nowrap !important;
+  }
+
+  .site-header .header-category-trigger{
+    white-space:nowrap !important;
+    line-height:1 !important;
+  }
+
+  .site-header .header-category-menu::after{
+    font-size:16px !important;
+  }
+
+  .site-header .header-search{
+    flex:0 1 220px !important;
+    min-width:120px !important;
+    max-width:220px !important;
+    display:flex !important;
+    align-items:center !important;
+    gap:6px !important;
+    margin:0 !important;
+  }
+
+  .site-header .header-search .search-box{
+    flex:1 1 auto !important;
+    min-width:0 !important;
+    width:100% !important;
+    height:38px !important;
+    padding:0 10px !important;
+    border-radius:8px !important;
+  }
+
+  .site-header .header-search .search-box span{
+    font-size:17px !important;
+  }
+
+  .site-header .header-search .search-box input{
+    min-width:0 !important;
+    font-size:13px !important;
+  }
+
+  .site-header .header-search .search-btn{
+    flex:0 0 38px !important;
+    width:38px !important;
+    min-width:38px !important;
+    height:38px !important;
+    padding:0 !important;
+    border-radius:8px !important;
+    font-size:19px !important;
+  }
+
+  .site-header .header-language{
+    flex:0 0 auto !important;
+    position:relative !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    width:auto !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding:0 !important;
+    border:0 !important;
+    background:transparent !important;
+    white-space:nowrap !important;
+  }
+
+  .site-header .header-language-trigger{
+    list-style:none !important;
+    height:38px !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:6px !important;
+    margin:0 !important;
+    padding:0 11px !important;
+    border:1px solid var(--line) !important;
+    border-radius:8px !important;
+    background:#fff !important;
+    color:var(--text) !important;
+    font-size:13px !important;
+    font-weight:700 !important;
+    line-height:1 !important;
+    cursor:pointer !important;
+    white-space:nowrap !important;
+  }
+
+  .site-header .header-language-trigger::-webkit-details-marker{
+    display:none !important;
+  }
+
+  .site-header .header-language-trigger::after{
+    content:"▾" !important;
+    color:var(--muted) !important;
+    font-size:13px !important;
+    line-height:1 !important;
+    margin-left:2px !important;
+  }
+
+  .site-header .header-language-current{
+    color:var(--brand) !important;
+    font-weight:800 !important;
+  }
+
+  .site-header .language-dropdown{
+    position:absolute !important;
+    top:calc(100% + 8px) !important;
+    right:0 !important;
+    min-width:150px !important;
+    background:#fff !important;
+    border:1px solid var(--line) !important;
+    border-radius:14px !important;
+    box-shadow:0 16px 30px rgba(19,35,58,.14) !important;
+    padding:8px !important;
+    display:none !important;
+    z-index:60 !important;
+  }
+
+  .site-header .header-language[open] .language-dropdown{
+    display:grid !important;
+    gap:2px !important;
+  }
+
+  .site-header .language-dropdown a{
+    display:block !important;
+    text-decoration:none !important;
+    font-size:13px !important;
+    color:#2f3e4c !important;
+    padding:8px 10px !important;
+    border-radius:10px !important;
+    white-space:nowrap !important;
+  }
+
+  .site-header .language-dropdown a:hover,
+  .site-header .language-dropdown a.active{
+    background:var(--hover-blue-bg) !important;
+    color:var(--brand) !important;
+  }
+}
+
+@media (min-width: 781px) and (max-width: 1120px){
+  .site-header .brand-logo{
+    width:116px !important;
+  }
+
+  .site-header .brand-sub{
+    display:none !important;
+  }
+
+  .site-header .header-search{
+    flex-basis:170px !important;
+    max-width:170px !important;
+  }
+
+  .site-header .header-nav a,
+  .site-header .header-category,
+  .site-header .header-language-trigger{
+    padding-left:8px !important;
+    padding-right:8px !important;
+    font-size:12.5px !important;
+  }
+}

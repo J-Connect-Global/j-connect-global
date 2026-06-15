@@ -942,12 +942,20 @@ a{
   background:#fff;
 }
 
+.article-checklist-item.is-checked{
+  background:var(--jc-soft-2);
+}
+
 .article-checklist-item label{
   display:grid;
   grid-template-columns:18px minmax(0, 1fr);
   gap:10px;
   align-items:start;
   cursor:pointer;
+}
+
+.article-checklist-item.is-checked label{
+  color:var(--jc-muted);
 }
 
 .article-check-input{

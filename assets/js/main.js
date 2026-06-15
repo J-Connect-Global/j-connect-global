@@ -16,6 +16,51 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  var checklistInputs = Array.prototype.slice.call(document.querySelectorAll('.article-check-input'));
+  if (checklistInputs.length) {
+    var checklistStorageKey = 'jconnect:article-checklist:' + window.location.pathname;
+    var canUseChecklistStorage = true;
+
+    function updateChecklistItemState(input) {
+      var item = input.closest('.article-checklist-item');
+      if (item) item.classList.toggle('is-checked', input.checked);
+    }
+
+    function saveChecklistState() {
+      if (!canUseChecklistStorage) return;
+
+      try {
+        var states = checklistInputs.map(function (input) {
+          return input.checked;
+        });
+        window.localStorage.setItem(checklistStorageKey, JSON.stringify(states));
+      } catch (error) {
+        canUseChecklistStorage = false;
+      }
+    }
+
+    try {
+      var savedStates = JSON.parse(window.localStorage.getItem(checklistStorageKey) || '[]');
+      if (Array.isArray(savedStates)) {
+        checklistInputs.forEach(function (input, index) {
+          if (typeof savedStates[index] === 'boolean') {
+            input.checked = savedStates[index];
+          }
+        });
+      }
+    } catch (error) {
+      canUseChecklistStorage = false;
+    }
+
+    checklistInputs.forEach(function (input) {
+      updateChecklistItemState(input);
+      input.addEventListener('change', function () {
+        updateChecklistItemState(input);
+        saveChecklistState();
+      });
+    });
+  }
+
   var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.article-sidebar-toc a[href^="#"]'));
   if (!tocLinks.length) return;
 

@@ -134,6 +134,7 @@ function normalizeItem(type, item, index) {
     hub_visible: item.hub_visible !== false,
     search_visible: item.search_visible !== false,
     sitemap_visible: item.sitemap_visible !== false,
+    toc_exclude_headings: toArray(item.toc_exclude_headings),
     official_sources: normalizeSources(item.official_sources?.length ? item.official_sources : item.sources),
     disclaimer_type: item.disclaimer_type || type,
     related_articles: toArray(item.related_articles),
@@ -156,7 +157,7 @@ function renderArticlePage(type, item, bodyHtml, allItems) {
   const metaBlock = renderArticleMetaSpans(type, item);
   const ogMeta = renderOpenGraphMeta(type, item, title, canonicalHref);
   const structuredData = renderStructuredData(type, item, title, canonicalHref);
-  const toc = extractArticleToc(item.markdown, item.title);
+  const toc = extractArticleToc(item.markdown, item.title, item.toc_exclude_headings);
 
   return `<!DOCTYPE html>
 <html lang="ja">
@@ -278,7 +279,10 @@ function markdownToHtml(markdown, context) {
       }
       const level = Math.min(heading[1].length + (heading[1].length === 1 ? 1 : 0), 3);
       const headingId = createHeadingId(headingText);
-html.push(`<h${level} id="${escapeAttribute(headingId)}">${renderInline(heading[2], context)}</h${level}>`);
+      const headingClass = headingText === '公式サイトで確認すること' && hasOfficialLinksInVerificationSection(markdown)
+        ? ' class="official-source-section"'
+        : '';
+      html.push(`<h${level}${headingClass} id="${escapeAttribute(headingId)}">${renderInline(heading[2], context)}</h${level}>`);
       index += 1;
       continue;
     }
@@ -595,11 +599,13 @@ function createHeadingId(value) {
   return id || 'section';
 }
 
-function extractArticleToc(markdown, title) {
+function extractArticleToc(markdown, title, excludeHeadings = []) {
   const source = stripFrontMatter(markdown).replace(/\r\n/g, '\n').trim();
   const skipTitles = new Set([
     title,
-    '関連記事'
+    '関連記事',
+    '公式リンク',
+    ...toArray(excludeHeadings)
   ]);
 
   return source
@@ -732,6 +738,7 @@ function renderRelatedSection(item, allItems) {
 
   const relatedLinks = related.map((relatedItem) => `<li><a href="${escapeAttribute(relatedItem.url)}">${escapeHtml(relatedItem.title)}</a></li>`);
   const sourceLinks = [];
+  const bodyHasOfficialLinks = hasOfficialLinksInVerificationSection(item.markdown);
 
   if (item.official_url) {
     sourceLinks.push(`<li><a href="${escapeAttribute(item.official_url)}">公式情報を確認する</a></li>`);
@@ -742,7 +749,7 @@ function renderRelatedSection(item, allItems) {
   }
 
   const sections = [];
-  if (sourceLinks.length) {
+  if (sourceLinks.length && !bodyHasOfficialLinks) {
     sections.push(`<section class="related-section official-source-section">
   <h3>公式情報・参考ソース</h3>
   <ul>
@@ -761,6 +768,19 @@ ${indent(relatedLinks.join('\n'), 4)}
   }
 
   return sections.join('\n');
+}
+
+function hasOfficialLinksInVerificationSection(markdown) {
+  const source = stripFrontMatter(markdown).replace(/\r\n/g, '\n');
+  const heading = source.match(/^##\s+公式サイトで確認すること\s*$/m);
+  if (!heading) return false;
+
+  const start = heading.index + heading[0].length;
+  const rest = source.slice(start);
+  const nextHeading = rest.search(/^##\s+/m);
+  const section = nextHeading === -1 ? rest : rest.slice(0, nextHeading);
+
+  return /\[[^\]]+\]\(https?:\/\/[^)]+\)/.test(section);
 }
 
 function findRelatedItem(reference, allItems) {

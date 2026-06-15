@@ -353,7 +353,8 @@ function collectList(lines, start, ordered, context) {
     const items = checklistItems.map((match) => {
       const checked = match[1].toLowerCase() === 'x';
       const className = checked ? 'article-checklist-item is-checked' : 'article-checklist-item';
-      return `<li class="${className}"><span class="article-check" aria-hidden="true"></span><span>${renderInline(match[2], context)}</span></li>`;
+      const checkedAttribute = checked ? ' checked' : '';
+      return `<li class="${className}"><label><input type="checkbox" class="article-check-input"${checkedAttribute}><span>${renderInline(match[2], context)}</span></label></li>`;
     });
 
     return {

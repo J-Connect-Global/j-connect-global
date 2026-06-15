@@ -608,7 +608,6 @@ function extractArticleToc(markdown, title) {
     .filter(Boolean)
     .map((match) => stripInlineMarkdown(match[1]).trim())
     .filter((text) => text && !skipTitles.has(text))
-    .slice(0, 18)
     .map((text) => ({
       id: createHeadingId(text),
       text

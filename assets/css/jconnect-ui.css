@@ -982,21 +982,6 @@ a{
   display:grid;
   gap:12px;
   align-self:start;
-  max-height:calc(100vh - 104px);
-  overflow-y:auto;
-  padding-right:4px;
-  scrollbar-width:thin;
-}
-
-.article-sidebar::-webkit-scrollbar,
-.article-sidebar-toc-list::-webkit-scrollbar{
-  width:6px;
-}
-
-.article-sidebar::-webkit-scrollbar-thumb,
-.article-sidebar-toc-list::-webkit-scrollbar-thumb{
-  border-radius:999px;
-  background:rgba(0, 63, 125, .22);
 }
 
 .article-sidebar-card{
@@ -1037,9 +1022,6 @@ a{
 .article-sidebar-toc-list{
   display:grid;
   gap:7px;
-  max-height:min(360px, calc(100vh - 220px));
-  overflow-y:auto;
-  padding-right:2px;
 }
 
 .article-sidebar-links{
@@ -1305,9 +1287,41 @@ a{
 
 .page-footer,
 .site-footer{
+  box-sizing:border-box;
+  width:100%;
+  margin:44px 0 0;
+  padding:30px 0 28px;
   background:#002b57;
-  border-top:0;
+  border:0;
+  border-top:1px solid rgba(207, 224, 242, .42);
+  border-radius:0;
+  box-shadow:none;
+  backdrop-filter:none;
   color:#dcecff;
+}
+
+.footer-inner{
+  width:min(var(--jc-max), calc(100% - 32px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(min(100%, 260px), .72fr) minmax(0, 1.8fr);
+  align-items:start;
+  gap:clamp(24px, 4vw, 44px);
+}
+
+.footer-left{
+  align-items:flex-start;
+}
+
+.footer-links{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  gap:10px clamp(18px, 3vw, 32px);
+  min-width:0;
+  padding:2px 0 0;
+  white-space:normal;
+  overflow:visible;
+  scrollbar-width:auto;
 }
 
 .footer-title,
@@ -1316,14 +1330,40 @@ a{
 }
 
 .footer-sub,
-.footer-meta,
-.footer-links a{
+.footer-meta{
   color:#d2e5fb;
 }
 
+.footer-links a{
+  display:inline-flex;
+  width:max-content;
+  max-width:100%;
+  padding:6px 10px;
+  border:1px solid rgba(207, 224, 242, .95);
+  border-radius:999px;
+  background:#f8fbff;
+  color:var(--jc-navy);
+  font-size:12px;
+  font-weight:800;
+  line-height:1.45;
+  text-decoration:none;
+  overflow-wrap:anywhere;
+  transition:color .18s ease, background .18s ease, border-color .18s ease;
+}
+
 .footer-links a:hover{
-  color:#fff;
-  background:rgba(255,255,255,.1);
+  border-color:#fff;
+  background:#dcecff;
+  color:#002b57;
+  transform:none;
+}
+
+body.portal3-home .footer-links a{
+  color:var(--jc-navy);
+}
+
+body.portal3-home .footer-links a:hover{
+  color:#002b57;
 }
 
 .footer-logo{
@@ -1362,6 +1402,22 @@ a{
   .page,
   .jc-shell{
     width:min(var(--jc-max), calc(100% - 24px));
+  }
+
+  .page-footer,
+  .site-footer{
+    padding:26px 0;
+  }
+
+  .footer-inner{
+    width:min(var(--jc-max), calc(100% - 24px));
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+
+  .footer-left,
+  .footer-links{
+    width:100%;
   }
 
   .jc-section-head{

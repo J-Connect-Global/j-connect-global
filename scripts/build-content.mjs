@@ -193,6 +193,7 @@ ${renderHeader(type, item.url)}
           </div>
         </header>
 
+${indent(renderArticleMobileToc(toc), 8)}
         <div class="article-body">
 ${indent(bodyHtml, 10)}
           <p><a class="article-back-link" href="${config.hubUrl}">${escapeHtml(config.backText)}</a></p>
@@ -334,15 +335,34 @@ html.push(`<h${level} id="${escapeAttribute(headingId)}">${renderInline(heading[
 function collectList(lines, start, ordered, context) {
   const pattern = ordered ? /^\s*\d+\.\s+(.+)$/ : /^\s*[-*]\s+(.+)$/;
   const tag = ordered ? 'ol' : 'ul';
-  const items = [];
+  const rawItems = [];
   let index = start;
 
   while (index < lines.length) {
     const match = lines[index].match(pattern);
     if (!match) break;
-    items.push(`<li>${renderInline(match[1], context)}</li>`);
+    rawItems.push(match[1]);
     index += 1;
   }
+
+  const checklistItems = ordered
+    ? []
+    : rawItems.map((item) => item.match(/^\[( |x|X)\]\s+(.+)$/));
+
+  if (checklistItems.length && checklistItems.every(Boolean)) {
+    const items = checklistItems.map((match) => {
+      const checked = match[1].toLowerCase() === 'x';
+      const className = checked ? 'article-checklist-item is-checked' : 'article-checklist-item';
+      return `<li class="${className}"><span class="article-check" aria-hidden="true"></span><span>${renderInline(match[2], context)}</span></li>`;
+    });
+
+    return {
+      html: `<ul class="article-checklist">\n${indent(items.join('\n'), 2)}\n</ul>`,
+      nextIndex: index
+    };
+  }
+
+  const items = rawItems.map((item) => `<li>${renderInline(item, context)}</li>`);
 
   return {
     html: `<${tag}>\n${indent(items.join('\n'), 2)}\n</${tag}>`,
@@ -390,6 +410,7 @@ function isBlockStart(lines, index) {
 
 function renderInline(value, context) {
   const codeTokens = [];
+  const linkTokens = [];
   let text = String(value || '').replace(/`([^`]+)`/g, (_, code) => {
     const token = `\u0000CODE${codeTokens.length}\u0000`;
     codeTokens.push(`<code>${escapeHtml(code)}</code>`);
@@ -400,13 +421,22 @@ function renderInline(value, context) {
   text = text.replace(/\[([^\]]+)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g, (_, label, href) => {
     const normalized = normalizeHref(href, context);
     if (normalized === '#') return label;
-    return `<a href="${escapeAttribute(normalized)}">${label}</a>`;
+    const token = `\u0000LINK${linkTokens.length}\u0000`;
+    linkTokens.push(`<a href="${escapeAttribute(normalized)}">${label}</a>`);
+    return token;
   });
   text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   text = text.replace(/(^|[\s（(])\*([^*\n]+)\*/g, '$1<em>$2</em>');
+  text = text.replace(/(^|[\s（(])((?:https?:\/\/)[^\s<>"）)]+[^\s<>"）).,!?])/g, (_, prefix, url) => {
+    return `${prefix}<a href="${escapeAttribute(url)}">${url}</a>`;
+  });
 
   for (const [index, html] of codeTokens.entries()) {
     text = text.replace(`\u0000CODE${index}\u0000`, html);
+  }
+
+  for (const [index, html] of linkTokens.entries()) {
+    text = text.replace(`\u0000LINK${index}\u0000`, html);
   }
 
   return text;
@@ -577,11 +607,26 @@ function extractArticleToc(markdown, title) {
     .filter(Boolean)
     .map((match) => stripInlineMarkdown(match[1]).trim())
     .filter((text) => text && !skipTitles.has(text))
-    .slice(0, 12)
+    .slice(0, 18)
     .map((text) => ({
       id: createHeadingId(text),
       text
     }));
+}
+
+function renderArticleMobileToc(toc = []) {
+  if (!toc.length) return '';
+
+  const links = toc
+    .map((entry) => `<a href="#${escapeAttribute(entry.id)}">${escapeHtml(entry.text)}</a>`)
+    .join('\n');
+
+  return `<details class="article-mobile-toc">
+  <summary>目次を開く</summary>
+  <nav aria-label="記事内目次">
+${indent(links, 4)}
+  </nav>
+</details>`;
 }
 
 function renderArticleSidebar(type, item, allItems, toc = []) {

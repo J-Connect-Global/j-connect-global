@@ -631,7 +631,6 @@ ${indent(links, 4)}
 
 function renderArticleSidebar(type, item, allItems, toc = []) {
   const config = contentTypes[type];
-  const facts = renderArticleSidebarFacts(type, item);
   const tocLinks = toc
     .map((entry) => `<a href="#${escapeAttribute(entry.id)}">${escapeHtml(entry.text)}</a>`)
     .join('\n');
@@ -664,11 +663,6 @@ ${indent(tocLinks, 4)}
   </div>
 </nav>`);
   }
-
-  sections.push(`<section class="article-sidebar-card article-sidebar-highlight">
-  <h2>この記事の要点</h2>
-${indent(facts, 2)}
-</section>`);
 
   if (sourceLinks.length) {
     sections.push(`<section class="article-sidebar-card">

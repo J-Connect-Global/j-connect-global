@@ -18,11 +18,6 @@ canonical_url: "/germany/ja/living/rundfunkbeitrag-guide/"
 related_articles:
   - "anmeldung-guide"
   - "moving-checklist-germany"
-toc_exclude_headings:
-  - "この記事でわかること"
-  - "まず結論"
-  - "10秒でわかる要点"
-  - "よく出るドイツ語"
 ---
 
 # Rundfunkbeitragとは？ドイツの放送負担金の基本

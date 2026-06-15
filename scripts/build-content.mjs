@@ -134,7 +134,6 @@ function normalizeItem(type, item, index) {
     hub_visible: item.hub_visible !== false,
     search_visible: item.search_visible !== false,
     sitemap_visible: item.sitemap_visible !== false,
-    toc_exclude_headings: toArray(item.toc_exclude_headings),
     official_sources: normalizeSources(item.official_sources?.length ? item.official_sources : item.sources),
     disclaimer_type: item.disclaimer_type || type,
     related_articles: toArray(item.related_articles),
@@ -157,7 +156,7 @@ function renderArticlePage(type, item, bodyHtml, allItems) {
   const metaBlock = renderArticleMetaSpans(type, item);
   const ogMeta = renderOpenGraphMeta(type, item, title, canonicalHref);
   const structuredData = renderStructuredData(type, item, title, canonicalHref);
-  const toc = extractArticleToc(item.markdown, item.title, item.toc_exclude_headings);
+  const toc = extractArticleToc(item.markdown, item.title);
 
   return `<!DOCTYPE html>
 <html lang="ja">
@@ -599,13 +598,11 @@ function createHeadingId(value) {
   return id || 'section';
 }
 
-function extractArticleToc(markdown, title, excludeHeadings = []) {
+function extractArticleToc(markdown, title) {
   const source = stripFrontMatter(markdown).replace(/\r\n/g, '\n').trim();
   const skipTitles = new Set([
     title,
-    '関連記事',
-    '公式リンク',
-    ...toArray(excludeHeadings)
+    '関連記事'
   ]);
 
   return source

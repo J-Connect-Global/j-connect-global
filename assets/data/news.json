@@ -1,6 +1,6 @@
 [
   {
-    "id": "deutsche-welle-https-www-dw-com-en-gold-rush-atmosphere-at-berlin-s-military-air",
+    "id": "deutsche-welle-https-www-dw-com-en-germany-news-over-23m-tuned-into-sunday-world",
     "country": "germany",
     "country_ja": "ドイツ",
     "city": "nationwide",
@@ -13,10 +13,10 @@
     "importance_ja": "通常",
     "source_type": "media",
     "source_name": "Deutsche Welle",
-    "title": "Gold rush atmosphere at Berlin&#039;s military air trade show",
-    "summary": "This year&#039;s ILA Berlin Air Show is breaking records, primarily because of the booming defense sector, which is reaping billions in contracts as a result of wars and crises.",
-    "published_at": "Sat, 13 Jun 2026",
-    "url": "https://www.dw.com/en/gold-rush-atmosphere-at-berlin-s-military-air-trade-show/a-77538303?maca=en-rss-en-ger-1023-xml-mrss"
+    "title": "Germany news: Over 23M tuned into Sunday World Cup  win",
+    "summary": "The Germany national team&#039;s 7-1 win over Curacao was the most watched TV broadcast on the day with 23 million viewers. Meanwhile, German President Steinmeier is kicking off his visit to Indonesia. Follow DW for more.",
+    "published_at": "Mon, 15 Jun 2026",
+    "url": "https://www.dw.com/en/germany-news-over-23m-tuned-into-sunday-world-cup-win/live-77557116?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-manuel-neuer-fit-to-join-germany-in-first-wor",
@@ -38,7 +38,7 @@
     "url": "https://www.dw.com/en/manuel-neuer-fit-to-join-germany-in-first-world-cup-match/a-77541375?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
-    "id": "deutsche-welle-https-www-dw-com-en-german-court-holds-google-liable-for-fake-ai-",
+    "id": "deutsche-welle-https-www-dw-com-en-germany-news-president-steinmeier-heads-to-as",
     "country": "germany",
     "country_ja": "ドイツ",
     "city": "nationwide",
@@ -51,13 +51,13 @@
     "importance_ja": "通常",
     "source_type": "media",
     "source_name": "Deutsche Welle",
-    "title": "German court holds Google liable for fake AI answers",
-    "summary": "Judges in Bavaria drew a distinction between standard search engine results and AI-generated summaries. They ruled that tech giants themselves are responsible for the content of answers provided by AI.",
-    "published_at": "Fri, 12 Jun 2026",
-    "url": "https://www.dw.com/en/german-court-holds-google-liable-for-fake-ai-answers/a-77527661?maca=en-rss-en-ger-1023-xml-mrss"
+    "title": "Germany news: President Steinmeier heads to Asia",
+    "summary": "German President Frank-Walter Steinmeier is kicking off a trip to Asia. And veteran goalkeeper Manuel Neuer will take to the field with the national squad in Germany&#039;s first match of the 2026 World Cup.",
+    "published_at": "Sun, 14 Jun 2026",
+    "url": "https://www.dw.com/en/germany-news-president-steinmeier-heads-to-asia/live-77535533?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
-    "id": "deutsche-welle-https-www-dw-com-en-germany-news-pistorius-asks-for-time-mulling-",
+    "id": "deutsche-welle-https-www-dw-com-en-manuel-neuer-the-aura-of-a-record-breaking-go",
     "country": "germany",
     "country_ja": "ドイツ",
     "city": "nationwide",
@@ -70,10 +70,29 @@
     "importance_ja": "通常",
     "source_type": "media",
     "source_name": "Deutsche Welle",
-    "title": "Germany news: Pistorius asks for time mulling next-generation jet FCAS replacement",
-    "summary": "Germany&#039;s defense minister says the government needs time to evaluate a bid for a new possible military jet project. A nine-year Franco-German endeavor, the FCAS, collapsed this week.",
-    "published_at": "Fri, 12 Jun 2026",
-    "url": "https://www.dw.com/en/germany-news-pistorius-asks-for-time-mulling-next-generation-jet-fcas-replacement/live-77523802?maca=en-rss-en-ger-1023-xml-mrss"
+    "title": "Manuel Neuer: The aura of a record-breaking goalkeeper",
+    "summary": "Germany&#039;s hopes at the 2026 World Cup are connected to world-class goalkeeper Manuel Neuer&#039;s fitness and form.",
+    "published_at": "Sun, 14 Jun 2026",
+    "url": "https://www.dw.com/en/manuel-neuer-the-aura-of-a-record-breaking-goalkeeper/a-77538894?maca=en-rss-en-ger-1023-xml-mrss"
+  },
+  {
+    "id": "deutsche-welle-https-www-dw-com-en-germany-start-2026-world-cup-with-win-over-cu",
+    "country": "germany",
+    "country_ja": "ドイツ",
+    "city": "nationwide",
+    "city_ja": "全国",
+    "category": "life",
+    "category_ja": "生活",
+    "topic": "general",
+    "topic_ja": "一般",
+    "importance": "normal",
+    "importance_ja": "通常",
+    "source_type": "media",
+    "source_name": "Deutsche Welle",
+    "title": "Germany start 2026 World Cup with win over Curacao",
+    "summary": "For the first time since they won the tournament in 2014, Germany won their opening game at the World Cup.",
+    "published_at": "Sun, 14 Jun 2026",
+    "url": "https://www.dw.com/en/germany-start-2026-world-cup-with-win-over-curacao/a-77538843?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-the-creatives-trying-to-fix-germany-s-bureauc",
@@ -93,6 +112,25 @@
     "summary": "Berlin played host to the 9th annual Creative Bureaucracy Festival this week, where highly-motivated public service workers explained why a healthy democracy needs a functioning state.",
     "published_at": "Sun, 14 Jun 2026",
     "url": "https://www.dw.com/en/the-creatives-trying-to-fix-germany-s-bureaucracy/a-77539474?maca=en-rss-en-ger-1023-xml-mrss"
+  },
+  {
+    "id": "deutsche-welle-https-www-dw-com-en-gold-rush-atmosphere-at-berlin-s-military-air",
+    "country": "germany",
+    "country_ja": "ドイツ",
+    "city": "nationwide",
+    "city_ja": "全国",
+    "category": "life",
+    "category_ja": "生活",
+    "topic": "general",
+    "topic_ja": "一般",
+    "importance": "normal",
+    "importance_ja": "通常",
+    "source_type": "media",
+    "source_name": "Deutsche Welle",
+    "title": "Gold rush atmosphere at Berlin&#039;s military air trade show",
+    "summary": "This year&#039;s ILA Berlin Air Show is breaking records, primarily because of the booming defense sector, which is reaping billions in contracts as a result of wars and crises.",
+    "published_at": "Sat, 13 Jun 2026",
+    "url": "https://www.dw.com/en/gold-rush-atmosphere-at-berlin-s-military-air-trade-show/a-77538303?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-germany-faces-eu-penalty-over-gender-pay-gap-",
@@ -131,44 +169,6 @@
     "summary": "Germany&#039;s research minister, Dorothee Bär, says the situation of German students is \"very privileged\" and has rejected reform of the Federal Training Assistance Act (BAföG), thereby turning many students against her.",
     "published_at": "Fri, 12 Jun 2026",
     "url": "https://www.dw.com/en/german-students-up-in-arms-about-funding-cuts/a-77528594?maca=en-rss-en-ger-1023-xml-mrss"
-  },
-  {
-    "id": "deutsche-welle-https-www-dw-com-en-jonathan-tah-s-first-world-cup-and-the-long-w",
-    "country": "germany",
-    "country_ja": "ドイツ",
-    "city": "nationwide",
-    "city_ja": "全国",
-    "category": "life",
-    "category_ja": "生活",
-    "topic": "general",
-    "topic_ja": "一般",
-    "importance": "normal",
-    "importance_ja": "通常",
-    "source_type": "media",
-    "source_name": "Deutsche Welle",
-    "title": "Jonathan Tah&#039;s first World Cup and the long wait",
-    "summary": "The 2026 World Cup will be the Bayern Munich defender&#039;s first for Germany. This moment has been a long time coming.",
-    "published_at": "Fri, 12 Jun 2026",
-    "url": "https://www.dw.com/en/jonathan-tah-s-first-world-cup-and-the-long-wait/a-77512263?maca=en-rss-en-ger-1023-xml-mrss"
-  },
-  {
-    "id": "deutsche-welle-https-www-dw-com-en-julian-nagelsmann-the-coach-struggling-to-spe",
-    "country": "germany",
-    "country_ja": "ドイツ",
-    "city": "nationwide",
-    "city_ja": "全国",
-    "category": "life",
-    "category_ja": "生活",
-    "topic": "general",
-    "topic_ja": "一般",
-    "importance": "normal",
-    "importance_ja": "通常",
-    "source_type": "media",
-    "source_name": "Deutsche Welle",
-    "title": "Julian Nagelsmann: The coach struggling to speak to Germany",
-    "summary": "Considered German football&#039;s X factor during Euro 2024, head coach Julian Nagelsmann enters the 2026 World Cup with more questions than optimism.",
-    "published_at": "Fri, 12 Jun 2026",
-    "url": "https://www.dw.com/en/julian-nagelsmann-the-coach-struggling-to-speak-to-germany/a-77209578?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-germany-beat-usa-before-world-cup-but-injurie",

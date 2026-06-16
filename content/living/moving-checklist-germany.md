@@ -539,3 +539,466 @@ Bitte bestätigen Sie mir den Erhalt dieser Kündigung sowie das Beendigungsdatu
 
 Mit freundlichen Grüßen
 [氏名]
+```
+
+共同契約の場合は、契約者全員の署名が必要になることがあります。
+
+---
+
+## 退去・入居時の Übergabeprotokoll
+
+ドイツの引っ越しでは、旧居・新居ともに Übergabeprotokoll が重要です。  
+これは、部屋の状態、鍵、メーター値、備品などを記録する書類です。
+
+### Übergabeprotokoll に入れたい項目
+
+| 項目 | 内容 |
+| --- | --- |
+| 住所 | 対象物件の住所 |
+| 日付 | 引き渡し日 |
+| 参加者 | 入居者、大家、管理会社など |
+| 鍵 | 種類と本数 |
+| メーター値 | 電気、ガス、水道、暖房 |
+| 部屋の状態 | 壁、床、窓、ドア、浴室、キッチン |
+| 傷・汚れ | 既存の傷や故障 |
+| 備品 | 家具、キッチン、家電、リモコン |
+| 郵便受け | 鍵、名前表示 |
+| 地下室・駐車場 | 利用範囲と鍵 |
+| 署名 | 双方の署名 |
+
+写真は、できれば日付がわかる形で保存します。  
+傷や汚れは「小さいから大丈夫」と思わず、入居時に記録しておく方が安全です。
+
+### 写真を撮る場所
+
+* 玄関ドア
+* 各部屋の壁
+* 床
+* 窓
+* 浴室
+* トイレ
+* キッチン
+* コンロ
+* 冷蔵庫
+* 食洗機
+* 洗濯機置き場
+* 暖房
+* バルコニー
+* 地下室
+* 駐車場
+* 電気・ガス・水道メーター
+* 既存の傷、穴、カビ、汚れ
+
+---
+
+## デポジット・Kaution の注意点
+
+Kaution は、日本語では敷金・保証金に近いものです。
+
+ドイツの住宅賃貸では、Kaution は最大で**月額 Nettokaltmiete の3か月分**が一般的な上限です。  
+Nettokaltmiete とは、通常、Nebenkosten を含まない家賃部分です。
+
+### 注意点
+
+| 項目 | 内容 |
+| --- | --- |
+| すぐ返金されるとは限らない | 退去後すぐ全額戻らないことがある |
+| Nebenkosten 精算 | 後日の精算のため一部保留されることがある |
+| 退去時の損傷 | 修繕費が差し引かれる可能性 |
+| 写真・プロトコル | 返金トラブル時の証拠になる |
+| 新居のKaution | 旧居のKaution返金前に新居分が必要になることが多い |
+
+引っ越し資金を考えるときは、旧居のKautionがすぐ戻る前提で計算しない方が安全です。
+
+---
+
+## 原状回復・清掃・壁の塗装
+
+ドイツの賃貸では、退去時の原状回復や清掃で揉めることがあります。
+
+### 確認すること
+
+| 項目 | 確認ポイント |
+| --- | --- |
+| Mietvertrag | Schönheitsreparaturen の条項 |
+| 入居時の状態 | Renoviert / unrenoviert だったか |
+| 壁の穴 | Dübellöcher の扱い |
+| 壁の色 | 強い色に塗った場合の対応 |
+| 清掃 | besenrein でよいのか、より細かい清掃が必要か |
+| キッチン | 自分のものか、大家のものか、前入居者から引き継いだものか |
+| 床・水回り | 破損、カビ、通常使用の範囲か |
+
+契約書に書いてあるからといって、すべてが有効とは限りません。  
+高額請求や不明点がある場合は、Mieterverein や専門家に相談することを検討してください。
+
+---
+
+## 引っ越し費用の目安項目
+
+実際の金額は都市、距離、荷物量、階数、エレベーター有無、業者利用の有無により大きく変わります。  
+ここでは、費用項目だけ整理します。
+
+| 費用項目 | 内容 |
+| --- | --- |
+| 引っ越し業者 | 運搬、梱包、家具解体・組立 |
+| レンタカー | Sprinter、Transporter など |
+| ガソリン・保険 | レンタカー利用時 |
+| Halteverbot | 搬出入用の駐車スペース確保 |
+| 梱包材 | 段ボール、テープ、緩衝材 |
+| 家具・照明 | 新居に必要なもの |
+| キッチン用品 | キッチンがない物件では大きな費用になる |
+| カーテン・ブラインド | 窓サイズが変わると買い替え |
+| 電気・通信の初期費用 | 契約変更、工事、ルーター |
+| 二重家賃 | 旧居と新居の重複期間 |
+| Kaution | 新居の保証金 |
+| 旧居の修繕・清掃 | 必要な場合 |
+| 郵便転送 | Nachsendeauftrag |
+| 住所変更関連 | 車両登録などの手数料 |
+
+---
+
+## 日本人が見落としやすいポイント
+
+### 1. 郵便受けに名前がない
+
+ドイツでは、郵便受けに名前がないと重要な郵便が届かないことがあります。  
+住民登録後に届く書類、銀行カード、保険書類、Rundfunkbeitrag の手紙などに影響します。
+
+入居したらすぐに確認してください。
+
+* 郵便受け
+* インターホン
+* 建物入口の名前表示
+* 部屋番号
+* c/o や bei 表記が必要か
+
+### 2. 住民登録だけで全住所が変わると思ってしまう
+
+住民登録をしても、銀行、保険、携帯、通販、勤務先の住所が自動で全部変わるわけではありません。  
+各サービスごとに自分で住所変更が必要です。
+
+### 3. インターネット開通を甘く見る
+
+ドイツではインターネットの開通や移転に時間がかかることがあります。  
+在宅勤務やオンライン授業がある人は、早めに通信会社へ連絡してください。
+
+### 4. 旧居のメーター値を記録しない
+
+退去時の Zählerstand を記録しないと、最終精算で不利になることがあります。  
+写真とプロトコルの両方を残すと安全です。
+
+### 5. Kaution がすぐ戻ると思っている
+
+旧居のKautionは、退去後すぐ全額返金されるとは限りません。  
+Nebenkosten の最終精算まで一部が保留されることがあります。
+
+### 6. 退去時の立会いを軽く見る
+
+退去時に口頭で「大丈夫」と言われても、後から請求される可能性があります。  
+書面の Übergabeprotokoll と写真を残してください。
+
+### 7. サブレットで Anmeldung できない
+
+WGや短期滞在では、住民登録できない物件があります。  
+契約前に必ず確認してください。
+
+### 8. 役所の予約がすぐ取れると思っている
+
+大都市では Bürgeramt の予約が取りにくいことがあります。  
+引っ越し日が決まったら、早めに予約画面を確認してください。
+
+---
+
+## 引っ越し時のドイツ語ミニ用語集
+
+| ドイツ語 | 日本語 |
+| --- | --- |
+| der Umzug | 引っ越し |
+| umziehen | 引っ越す |
+| die neue Adresse | 新住所 |
+| die alte Adresse | 旧住所 |
+| die Adressänderung | 住所変更 |
+| die Anmeldung | 住民登録 |
+| die Ummeldung | 転居登録 |
+| die Abmeldung | 登録解除 |
+| die Meldebehörde | 住民登録機関 |
+| das Bürgeramt | 市民窓口 |
+| die Wohnungsgeberbestätigung | 住居提供者の入居証明 |
+| der Mietvertrag | 賃貸契約書 |
+| die Kündigung | 解約通知 |
+| die Kündigungsfrist | 解約通知期限 |
+| die Kaution | 保証金・敷金 |
+| die Nebenkosten | 共益費・付帯費用 |
+| die Warmmiete | 暖房費等を含む家賃 |
+| die Kaltmiete | 基本家賃 |
+| die Schlüsselübergabe | 鍵の引き渡し |
+| das Übergabeprotokoll | 引き渡し記録 |
+| der Zählerstand | メーター値 |
+| die Zählernummer | メーター番号 |
+| der Nachsendeauftrag | 郵便転送依頼 |
+| der Rundfunkbeitrag | 放送負担金 |
+| die Hausverwaltung | 管理会社 |
+| der Hausmeister | 管理人 |
+| die Zulassungsstelle | 車両登録局 |
+| die Ummeldung des Fahrzeugs | 車両の住所変更・登録変更 |
+| die Sperrmüllabholung | 粗大ごみ回収 |
+| das Halteverbot | 駐停車禁止スペース |
+| die Einzugsermächtigung | 口座引落し許可 |
+| die Beitragsnummer | Rundfunkbeitrag などの加入者番号 |
+
+---
+
+## そのまま使える住所変更メール例
+
+### 銀行・保険・契約先向け
+
+```text
+Sehr geehrte Damen und Herren,
+
+hiermit möchte ich Ihnen meine neue Adresse mitteilen.
+
+Name: [氏名]
+Kundennummer / Vertragsnummer: [顧客番号・契約番号]
+Alte Adresse: [旧住所]
+Neue Adresse: [新住所]
+Gültig ab: [日付]
+
+Bitte bestätigen Sie mir die Änderung kurz schriftlich.
+
+Mit freundlichen Grüßen
+[氏名]
+```
+
+### 大家・管理会社への入居証明依頼
+
+```text
+Sehr geehrte Damen und Herren,
+
+für meine Anmeldung / Ummeldung beim Bürgeramt benötige ich eine Wohnungsgeberbestätigung.
+
+Könnten Sie mir diese bitte für folgende Wohnung ausstellen?
+
+Adresse: [新住所]
+Einzugsdatum: [入居日]
+Name der einziehenden Person(en): [氏名]
+
+Vielen Dank im Voraus.
+
+Mit freundlichen Grüßen
+[氏名]
+```
+
+### インターネット会社への引っ越し連絡
+
+```text
+Sehr geehrte Damen und Herren,
+
+ich ziehe um und möchte meinen Anschluss an die neue Adresse mitnehmen.
+
+Kundennummer: [顧客番号]
+Vertragsnummer: [契約番号]
+Alte Adresse: [旧住所]
+Neue Adresse: [新住所]
+Gewünschter Umzugstermin: [日付]
+
+Bitte teilen Sie mir mit, ob der bestehende Vertrag an der neuen Adresse unverändert verfügbar ist und welche weiteren Schritte erforderlich sind.
+
+Mit freundlichen Grüßen
+[氏名]
+```
+
+### 退去立会いの日程相談
+
+```text
+Sehr geehrte Damen und Herren,
+
+ich möchte gerne einen Termin für die Wohnungsübergabe vereinbaren.
+
+Adresse: [旧住所]
+Gewünschter Zeitraum: [候補日・時間]
+Mietvertragsende: [日付]
+
+Bitte teilen Sie mir mit, wann die Übergabe stattfinden kann.
+
+Mit freundlichen Grüßen
+[氏名]
+```
+
+---
+
+## ケース別チェック
+
+### 一人暮らしから一人暮らしへ
+
+| 項目 | 確認 |
+| --- | --- |
+| 旧居解約 | Kündigungsfrist |
+| 新居登録 | Anmeldung / Ummeldung |
+| 電気 | 旧居解約・新居契約 |
+| インターネット | 移転または新規 |
+| Rundfunkbeitrag | 住所変更 |
+| 郵便 | Nachsendeauftrag |
+| 銀行・保険 | 住所変更 |
+
+### WGから一人暮らしへ
+
+| 項目 | 確認 |
+| --- | --- |
+| WG契約 | Hauptmieter か Untermieter か |
+| 旧居退去 | デポジット返金、部屋の状態 |
+| 新居登録 | Wohnungsgeberbestätigung |
+| Rundfunkbeitrag | 新居で自分が支払う必要があるか |
+| 家具 | WG備品が使えなくなる点に注意 |
+| 電気・通信 | 自分名義で契約が必要になる可能性 |
+
+### 一人暮らしから同居・結婚・家族世帯へ
+
+| 項目 | 確認 |
+| --- | --- |
+| 契約者 | 誰が Mietvertrag に入るか |
+| Anmeldung | 同居者全員分 |
+| Rundfunkbeitrag | 重複支払いを避ける |
+| 保険 | Hausrat、Haftpflicht の対象者 |
+| 銀行・税務 | 必要に応じて住所・家族状況確認 |
+| 郵便 | 旧姓・別姓・複数名の表示に注意 |
+
+### ドイツから日本へ帰国する
+
+| 項目 | 確認 |
+| --- | --- |
+| Abmeldung | 住民登録解除 |
+| 旧居解約 | Kündigungsfrist |
+| Rundfunkbeitrag | 登録解除 |
+| 健康保険 | 終了条件を確認 |
+| 銀行 | 口座維持・解約 |
+| 携帯・ネット | 解約期限 |
+| 税務 | Steuererklärung の要否 |
+| 郵便 | 転送・連絡先 |
+| 年金 | 必要に応じて確認 |
+複数名の表示に注意 |
+
+### ドイツから日本へ帰国する
+
+| 項目 | 確認 |
+| --- | --- |
+| Abmeldung | 住民登録解除 |
+| 旧居解約 | Kündigungsfrist |
+| Rundfunkbeitrag | 登録解除 |
+| 健康保険 | 終了条件を確認 |
+| 銀行 | | 在留届 | 日本側登録情報の更新 |
+
+---
+
+## よくある質問
+
+### Q. 引っ越し後、いつまでに住民登録が必要ですか？
+
+原則として、入居後2週間以内です。  
+ただし、予約が取りにくい都市もあるため、引っ越し日が決まったら早めに新住所の自治体ページを確認してください。
+
+### Q. Anmeldung と Ummeldung は違いますか？
+
+厳密には、Anmeldung は住所登録全般、Ummeldung は既にドイツ国内で登録している人が住所を変更する場合に使われることが多いです。  
+ただし、自治体や案内ページでは表記が混在することがあります。
+
+### Q. 旧住所の Abmeldung は必要ですか？
+
+ドイツ国内で新住所に引っ越す場合、通常は新住所での Ummeldung / Anmeldung により住所が更新されます。  
+ドイツ国外へ転出する場合は Abmeldung が必要になるのが一般的です。
+
+### Q. Wohnungsgeberbestätigung は誰が出しますか？
+
+通常は大家、管理会社、または住居提供者です。  
+WGやサブレットの場合は、メインテナントが関わることもありますが、大家の許可や契約関係を確認してください。
+
+### Q. 賃貸契約書だけで住民登録できますか？
+
+自治体によりますが、賃貸契約書だけでは足りず、Wohnungsgeberbestätigung が必要になることが多いです。  
+必ず新住所の Bürgeramt の案内を確認してください。
+
+### Q. 引っ越しだけでインターネット契約を解約できますか？
+
+必ず解約できるとは限りません。  
+新住所でも同じサービスを提供できる場合は、契約が継続されることがあります。  
+一方、事業者が新住所で契約通りのサービスを提供できない場合は、特別解約が認められる可能性があります。
+
+### Q. Rundfunkbeitrag は住所変更が必要ですか？
+
+はい。すでに支払っている場合は住所変更が必要です。  
+同居人がすでに新居分を支払っている場合は、重複支払いにならないように確認してください。
+
+### Q. 郵便転送を申し込めば住所変更は不要ですか？
+
+不要にはなりません。  
+Nachsendeauftrag は一時的な補助です。銀行、保険、勤務先、行政、通販などには個別に住所変更を行ってください。
+
+### Q. デポジットはいつ返ってきますか？
+
+退去直後に全額返金されるとは限りません。  
+損傷確認や Nebenkosten の精算のため、一部または全部の返金に時間がかかることがあります。
+
+### Q. 退去時に壁を塗る必要がありますか？
+
+契約内容、入居時の状態、使用状況によります。  
+一律に「必ず塗る」とは言えません。疑問がある場合は、Mieterverein や専門家に確認してください。
+
+### Q. 車の住所変更は必要ですか？
+
+車を所有している場合、Zulassungsbescheinigung Teil I の住所変更が必要になることがあります。  
+自治体や管轄により手続き方法が違うため、住民登録後に Kfz-Zulassungsstelle の案内を確認してください。
+
+---
+
+## 公式情報の確認ポイント
+
+引っ越し関連の手続きは、自治体、契約先、保険会社、住居形態により異なります。  
+以下の公式情報を確認してください。
+
+| 内容 | 確認先 |
+| --- | --- |
+| 住民登録・転居登録 | 新住所の Bürgeramt / Einwohnermeldeamt |
+| 住民登録期限 | Bundesmeldegesetz §17 |
+| Wohnungsgeberbestätigung | Bundesmeldegesetz §19、新住所の自治体 |
+| Rundfunkbeitrag | rundfunkbeitrag.de |
+| 郵便転送 | Deutsche Post Nachsendeservice |
+| 通信契約の引っ越し | 契約中の通信会社、Bundesnetzagentur、Verbraucherzentrale |
+| 車両登録 | 新住所の Kfz-Zulassungsstelle |
+| 犬税 | 新住所の市区町村 |
+| 賃貸解約・Kaution | Mietvertrag、BGB、Mieterverein |
+| 外国人局 | 新住所の Ausländerbehörde |
+| 税務 | Finanzamt、ELSTER、税理士 |
+
+---
+
+## 参考リンク
+
+* [Bundesmeldegesetz §17 - Anmeldung, Abmeldung](https://www.gesetze-im-internet.de/bmg/__17.html)
+* [Bundesmeldegesetz §19 - Mitwirkung des Wohnungsgebers](https://www.gesetze-im-internet.de/bmg/__19.html)
+* [Rundfunkbeitrag 公式サイト](https://www.rundfunkbeitrag.de/)
+* [Rundfunkbeitrag - Wohnung anmelden](https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/formulare/anmelden)
+* [Deutsche Post Nachsendeservice](https://www.deutschepost.de/de/n/nachsendeservice.html)
+* [Bundesnetzagentur - Anbieterwechsel und Umzug](https://www.bundesnetzagentur.de/DE/Vportal/TK/InternetTelefon/Wechsel/artikel.html)
+* [Verbraucherzentrale - Umzug: Rechte der Telefon- und Internetkunden](https://www.verbraucherzentrale.de/wissen/digitale-welt/mobilfunk-und-festnetz/umzug-die-rechte-der-telefon-und-internetkunden-11034)
+* [BGB §573c - Fristen der ordentlichen Kündigung](https://www.gesetze-im-internet.de/bgb/__573c.html)
+* [BGB §551 - Begrenzung und Anlage von Mietsicherheiten](https://www.gesetze-im-internet.de/bgb/__551.html)
+
+---
+
+## まとめ
+
+ドイツでの引っ越しは、荷物を運ぶだけでなく、行政、契約、保険、郵便、住居記録をまとめて処理する必要があります。
+
+特に大事なのは、次の5点です。
+
+* 新住所での住民登録を早めに行う
+* Wohnungsgeberbestätigung を事前に入手する
+* 旧居・新居の Übergabeprotokoll と写真を残す
+* 電気・通信・Rundfunkbeitrag・銀行・保険の住所変更を忘れない
+* 旧居のKaution返金や Nebenkosten 精算には時間がかかる前提で資金計画を立てる
+
+引っ越しは一度に多くの作業が発生します。  
+時期別チェックリストを使って、入居前、入居日、入居後、退去日の順番で処理すると漏れを減らせます。
+
+制度や必要書類は自治体・契約先・保険会社・住居形態により異なるため、必ず公式情報も確認してください。
+
+[生活・手続き一覧へ戻る](/germany/ja/living/)

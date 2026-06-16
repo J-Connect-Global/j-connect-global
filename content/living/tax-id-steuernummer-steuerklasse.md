@@ -71,13 +71,54 @@ official_links:
 確定申告や副業・フリーランスを始める場合は **Steuernummer** が関係します。  
 毎月の給与明細や手取り額には **Steuerklasse** が影響します。
 
-| 用語 | ドイツ語での表記 | 主な意味 | 主に使う場面 |
-| --- | --- | --- | --- |
-| Tax ID / Steuer-ID | steuerliche Identifikationsnummer / IdNr. | 個人に一生ひもづく税務識別番号 | 勤務先、銀行、確定申告、各種行政手続き |
-| Steuernummer | Steuernummer | 管轄 Finanzamt が税務処理に使う番号 | 確定申告、副業、フリーランス、請求書、税務署とのやり取り |
-| Steuerklasse | Lohnsteuerklasse | 給与税の月次控除を計算するための分類 | 給与計算、結婚後の税クラス選択、複数雇用 |
-| USt-IdNr. | Umsatzsteuer-Identifikationsnummer | VAT番号、EU域内取引などで使う事業者番号 | 事業者、B2B取引、越境請求書 |
-| Sozialversicherungsnummer | Sozialversicherungsnummer | 年金・社会保険の番号 | 雇用手続き、年金保険、社会保険 |
+<table>
+  <colgroup>
+    <col style="width: 22%;">
+    <col style="width: 30%;">
+    <col style="width: 28%;">
+    <col style="width: 20%;">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>用語</th>
+      <th>ドイツ語での表記</th>
+      <th>主な意味</th>
+      <th>使う場面</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tax ID / Steuer-ID</td>
+      <td>steuerliche Identifikationsnummer / IdNr.</td>
+      <td>個人に一生ひもづく税務識別番号</td>
+      <td>勤務先、銀行、確定申告、行政手続き</td>
+    </tr>
+    <tr>
+      <td>Steuernummer</td>
+      <td>Steuernummer</td>
+      <td>Finanzamt が税務処理のために使う番号</td>
+      <td>確定申告、副業、フリーランス、請求書</td>
+    </tr>
+    <tr>
+      <td>Steuerklasse</td>
+      <td>Lohnsteuerklasse</td>
+      <td>給与税の月次控除を計算するための分類</td>
+      <td>給与計算、結婚後の税クラス、複数雇用</td>
+    </tr>
+    <tr>
+      <td>USt-IdNr.</td>
+      <td>Umsatzsteuer-Identifikationsnummer</td>
+      <td>VAT番号、EU域内取引などで使う事業者番号</td>
+      <td>事業者、B2B取引、越境請求書</td>
+    </tr>
+    <tr>
+      <td>Sozialversicherungsnummer</td>
+      <td>Sozialversicherungsnummer</td>
+      <td>年金・社会保険の番号</td>
+      <td>雇用手続き、年金保険、社会保険</td>
+    </tr>
+  </tbody>
+</table>
 
 ## 3つの違いを一言で言うと
 

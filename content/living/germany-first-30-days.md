@@ -856,7 +856,6 @@ Meldebescheinigung
 * [ドイツの健康保険の基本](/germany/ja/living/health-insurance-guide/)
 * [ドイツで銀行口座を開設する方法](/germany/ja/living/bank-account-germany/)
 * [ドイツの税務ID・Steuernummer・税クラスの違い](/germany/ja/living/tax-id-steuernummer-steuerklasse/)
-* [ドイツの滞在許可・ビザ手続きの基本](/germany/ja/living/residence-permit-germany/)
 
 ## 公式情報・参考ソース
 

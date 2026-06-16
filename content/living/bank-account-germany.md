@@ -805,89 +805,43 @@ Dispoは便利ですが、金利が高い場合があります。生活費の補
 
 ### 口座を開きたい
 
-```text
-Ich möchte ein Girokonto eröffnen.
-```
-
-Girokontoを開設したいです。
-
-### 必要書類を聞く
-
-```text
-Welche Unterlagen brauche ich für die Kontoeröffnung?
-```
-
-口座開設にはどの書類が必要ですか？
-
-### Anmeldung前でも開けるか聞く
-
-```text
-Kann ich das Konto auch ohne Meldebescheinigung eröffnen?
-```
-
-住民登録証明なしでも口座を開設できますか？
-
-### Steuer-IDがまだないと伝える
-
-```text
-Ich habe meine Steuer-ID noch nicht erhalten. Kann ich sie später nachreichen?
-```
-
-Steuer-IDをまだ受け取っていません。後日提出できますか？
-
-### 日本のパスポートで本人確認できるか聞く
-
-```text
-Kann ich mich mit meinem japanischen Reisepass identifizieren?
-```
+> Kann ich mich mit meinem japanischen Reisepass identifizieren?
 
 日本のパスポートで本人確認できますか？
 
 ### 手数料を聞く
 
-```text
-Welche Gebühren fallen für das Konto an?
-```
+> Welche Gebühren fallen für das Konto an?
 
 この口座にはどのような手数料がかかりますか？
 
 ### カードについて聞く
 
-```text
-Ist eine Girocard oder Debitkarte enthalten?
-```
+> Ist eine Girocard oder Debitkarte enthalten?
 
 Girocardまたはデビットカードは含まれていますか？
 
 ### ATM条件を聞く
 
-```text
-Wo kann ich kostenlos Bargeld abheben?
-```
+> Wo kann ich kostenlos Bargeld abheben?
 
 どこで無料で現金を引き出せますか？
 
 ### 現金入金を聞く
 
-```text
-Wo kann ich Bargeld einzahlen?
-```
+> Wo kann ich Bargeld einzahlen?
 
 どこで現金を入金できますか？
 
 ### Basiskontoを申請したい
 
-```text
-Ich möchte ein Basiskonto nach dem Zahlungskontengesetz beantragen.
-```
+> Ich möchte ein Basiskonto nach dem Zahlungskontengesetz beantragen.
 
 支払い口座法に基づくBasiskontoを申請したいです。
 
 ### 拒否理由を書面でほしい
 
-```text
-Könnten Sie mir die Ablehnung bitte schriftlich geben?
-```
+> Könnten Sie mir die Ablehnung bitte schriftlich geben?
 
 拒否理由を書面でいただけますか？
 

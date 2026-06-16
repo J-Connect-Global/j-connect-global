@@ -615,6 +615,107 @@
     }
   }
 
+  .events-hub-tools{
+    display:grid;
+    gap:14px;
+    margin:0 0 18px;
+    padding:16px;
+    border:1px solid var(--jc-line);
+    border-radius:var(--jc-radius-md);
+    background:#fff;
+    box-shadow:var(--jc-shadow);
+  }
+
+  .events-hub-search,
+  .events-hub-sort{
+    display:grid;
+    gap:6px;
+    color:var(--jc-text);
+    font-size:13px;
+    font-weight:900;
+  }
+
+  .events-hub-search input,
+  .events-hub-sort select{
+    width:100%;
+    min-height:42px;
+    padding:9px 11px;
+    border:1px solid var(--jc-line);
+    border-radius:var(--jc-radius-sm);
+    background:#fff;
+    color:var(--jc-text);
+    font:inherit;
+    font-weight:700;
+  }
+
+  .events-hub-search input:focus,
+  .events-hub-sort select:focus{
+    border-color:var(--jc-blue);
+    outline:3px solid rgba(0, 103, 201, .18);
+    outline-offset:1px;
+  }
+
+  .events-hub-filter-group{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  .events-filter-chip{
+    min-height:34px;
+    padding:7px 11px;
+    border:1px solid var(--jc-line);
+    border-radius:var(--jc-radius-sm);
+    background:#fff;
+    color:var(--jc-text);
+    font:inherit;
+    font-size:13px;
+    font-weight:900;
+    cursor:pointer;
+  }
+
+  .events-filter-chip:hover{
+    border-color:var(--jc-line-strong);
+    background:var(--jc-soft);
+    color:var(--jc-blue);
+  }
+
+  .events-filter-chip.is-active{
+    border-color:var(--jc-blue);
+    background:var(--jc-blue);
+    color:#fff;
+  }
+
+  .events-hub-card .jc-card-meta span{
+    overflow-wrap:anywhere;
+  }
+
+  .events-hub-empty{
+    margin:16px 0 0;
+    padding:16px;
+    border:1px solid var(--jc-line);
+    border-radius:var(--jc-radius-md);
+    background:#fff;
+    color:var(--jc-text);
+    font-weight:800;
+    line-height:1.7;
+  }
+
+  @media (min-width:760px){
+    .events-hub-tools{
+      grid-template-columns:minmax(260px, 1fr) auto;
+      align-items:end;
+    }
+
+    .events-hub-filter-group{
+      grid-column:1 / -1;
+    }
+
+    .events-hub-sort{
+      min-width:190px;
+    }
+  }
+
   .jc-article-card{
     display:grid;
     gap:10px;

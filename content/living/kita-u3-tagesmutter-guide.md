@@ -47,7 +47,7 @@ related_articles:
 
 ドイツの保育先探しでは、次の3点を最初に押さえると進めやすくなります。
 
-1. **1歳以降の子どもには、KitaまたはKindertagespflegeで保育を受ける 権利 があります**
+1. **1歳以降の子どもには、KitaまたはKindertagespflegeで保育を受ける権利があります**
 2. **ただし、希望する特定のKitaに必ず入れるとは限りません**
 3. **Kitaだけでなく、TagesmutterやGroßtagespflegeも現実的な選択肢です**
 

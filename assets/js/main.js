@@ -105,6 +105,102 @@ document.addEventListener('DOMContentLoaded', function () {
     updateLivingHub();
   }
 
+  var eventsHub = document.querySelector('[data-events-hub]');
+  if (eventsHub) {
+    var eventsSearch = eventsHub.querySelector('[data-events-search]');
+    var eventsSort = eventsHub.querySelector('[data-events-sort]');
+    var eventsGrid = eventsHub.querySelector('#eventArticleGrid');
+    var eventsEmpty = eventsHub.querySelector('[data-events-empty]');
+    var eventsCards = Array.prototype.slice.call(eventsHub.querySelectorAll('[data-events-card]'));
+    var eventsFilterButtons = Array.prototype.slice.call(eventsHub.querySelectorAll('[data-events-filter]'));
+    var activeEventsFilter = 'all';
+    var eventsFilterMap = {
+      culture: ['日本文化', '文化', '映画'],
+      seasonal: ['季節', '冬', 'クリスマス'],
+      family: ['家族', '家族向け', '子連れ'],
+      weekend: ['週末', 'おでかけ', 'マーケット'],
+      nrw: ['NRW'],
+      duesseldorf: ['Düsseldorf']
+    };
+
+    function eventsCardText(card) {
+      return [
+        card.dataset.search,
+        card.dataset.title,
+        card.dataset.summary,
+        card.dataset.category,
+        card.dataset.location,
+        card.dataset.tags
+      ].join(' ').toLowerCase();
+    }
+
+    function eventsFilterText(card) {
+      return [
+        card.dataset.filter,
+        card.dataset.category,
+        card.dataset.location,
+        card.dataset.tags
+      ].join(' ').toLowerCase();
+    }
+
+    function eventsMatchesFilter(card) {
+      if (activeEventsFilter === 'all') return true;
+      var terms = eventsFilterMap[activeEventsFilter] || [activeEventsFilter];
+      var text = eventsFilterText(card);
+      return terms.some(function (term) {
+        return text.indexOf(String(term).toLowerCase()) !== -1;
+      });
+    }
+
+    function eventsCompareCards(a, b) {
+      var sortValue = eventsSort ? eventsSort.value : 'newest';
+
+      if (sortValue === 'title') {
+        return (a.dataset.title || '').localeCompare(b.dataset.title || '', 'ja');
+      }
+
+      if (sortValue === 'location') {
+        return (a.dataset.location || '').localeCompare(b.dataset.location || '', 'ja')
+          || (a.dataset.title || '').localeCompare(b.dataset.title || '', 'ja');
+      }
+
+      return String(b.dataset.published || '').localeCompare(String(a.dataset.published || ''))
+        || (a.dataset.title || '').localeCompare(b.dataset.title || '', 'ja');
+    }
+
+    function updateEventsHub() {
+      var query = eventsSearch ? eventsSearch.value.trim().toLowerCase() : '';
+      var visibleCount = 0;
+
+      eventsCards.sort(eventsCompareCards).forEach(function (card) {
+        if (eventsGrid) eventsGrid.appendChild(card);
+
+        var matchesSearch = !query || eventsCardText(card).indexOf(query) !== -1;
+        var isVisible = matchesSearch && eventsMatchesFilter(card);
+        card.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      });
+
+      if (eventsEmpty) eventsEmpty.hidden = visibleCount !== 0;
+    }
+
+    eventsFilterButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        activeEventsFilter = button.getAttribute('data-events-filter') || 'all';
+        eventsFilterButtons.forEach(function (item) {
+          var isActive = item === button;
+          item.classList.toggle('is-active', isActive);
+          item.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+        updateEventsHub();
+      });
+    });
+
+    if (eventsSearch) eventsSearch.addEventListener('input', updateEventsHub);
+    if (eventsSort) eventsSort.addEventListener('change', updateEventsHub);
+    updateEventsHub();
+  }
+
   var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.article-sidebar-toc a[href^="#"]'));
   if (!tocLinks.length) return;
 

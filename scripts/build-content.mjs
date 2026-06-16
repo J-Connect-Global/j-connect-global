@@ -821,12 +821,28 @@ ${indent(item.tags.map((tag) => `<span class="jc-chip">${escapeHtml(tag)}</span>
 
 function renderEventHubCard(item) {
   const tags = item.tags.slice(0, 4).map((tag) => `<span class="jc-chip">${escapeHtml(tag)}</span>`).join('');
+  const searchText = [
+    item.title,
+    item.summary,
+    item.category,
+    item.city,
+    item.location,
+    item.event_date,
+    ...item.tags
+  ].join(' ');
+  const filterText = [
+    item.category,
+    item.city,
+    item.location,
+    ...item.tags
+  ].join(' ');
 
-  return `<a class="jc-article-card" href="${escapeAttribute(item.url)}">
-  <div class="jc-card-meta"><span>${escapeHtml(item.event_date || '')}</span><span>${escapeHtml(item.city || '')}</span><span>${escapeHtml(item.category || '')}</span></div>
+  return `<a class="jc-article-card events-hub-card" href="${escapeAttribute(item.url)}" data-events-card data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-location="${escapeAttribute([item.city, item.location].filter(Boolean).join(' '))}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-search="${escapeAttribute(searchText)}" data-filter="${escapeAttribute(filterText)}" data-published="${escapeAttribute(item.published_at || '')}">
+  <div class="jc-card-meta"><span>${escapeHtml(item.event_date || '日程確認中')}</span><span>${escapeHtml(item.city || item.location || 'ドイツ')}</span><span>${escapeHtml(item.category || 'イベント')}</span></div>
   <h3>${escapeHtml(item.title)}</h3>
   <p>${escapeHtml(item.summary)}</p>
   <div class="jc-chip-row">${tags}</div>
+  <span class="jc-read-more">イベント記事を読む</span>
 </a>`;
 }
 

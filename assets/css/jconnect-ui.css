@@ -951,19 +951,30 @@
     list-style:none;
   }
 
+  .article-body .article-checklist{
+    margin-left:0;
+    padding-left:0;
+  }
+
   .article-checklist-item{
     margin:0;
     padding:10px 12px;
     border:1px solid var(--jc-line);
     border-radius:var(--jc-radius-sm);
     background:#fff;
+    box-sizing:border-box;
+  }
+
+  .article-body .article-checklist-item{
+    margin-left:0;
+    padding-left:12px;
   }
 
   .article-checklist-item label{
     display:grid;
     grid-template-columns:18px minmax(0, 1fr);
     gap:10px;
-    align-items:start;
+    align-items:center;
     cursor:pointer;
   }
 
@@ -971,7 +982,7 @@
     appearance:auto;
     width:18px;
     height:18px;
-    margin-top:5px;
+    margin-top:0;
     accent-color:var(--jc-blue);
     cursor:pointer;
   }

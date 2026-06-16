@@ -510,6 +510,61 @@
     gap:12px;
   }
 
+  .living-route-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:12px;
+  }
+
+  .living-route-card{
+    display:grid;
+    align-content:start;
+    gap:10px;
+    padding:16px;
+    border:1px solid var(--jc-line);
+    border-radius:var(--jc-radius-md);
+    background:var(--jc-panel);
+    box-shadow:var(--jc-shadow);
+  }
+
+  .living-route-card h3{
+    margin:0;
+    color:var(--jc-navy);
+    font-size:18px;
+    line-height:1.45;
+  }
+
+  .living-route-card p{
+    margin:0;
+    color:var(--jc-muted);
+    line-height:1.7;
+  }
+
+  .living-route-links{
+    display:grid;
+    gap:7px;
+    margin-top:2px;
+  }
+
+  .living-route-links a{
+    display:block;
+    padding:9px 10px;
+    border:1px solid var(--jc-line);
+    border-radius:var(--jc-radius-sm);
+    background:var(--jc-soft);
+    color:var(--jc-blue);
+    font-size:13px;
+    font-weight:900;
+    line-height:1.45;
+    text-decoration:none;
+  }
+
+  .living-route-links a:hover,
+  .living-route-links a:focus{
+    border-color:var(--jc-blue);
+    color:var(--jc-navy);
+  }
+
   .living-hub-tools{
     display:grid;
     gap:14px;
@@ -581,6 +636,41 @@
     color:#fff;
   }
 
+  .living-hub-status{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  .living-hub-status p{
+    margin:0;
+    color:var(--jc-muted);
+    font-size:13px;
+    font-weight:900;
+  }
+
+  .living-reset-button{
+    min-height:34px;
+    padding:7px 11px;
+    border:1px solid var(--jc-line);
+    border-radius:var(--jc-radius-sm);
+    background:var(--jc-panel);
+    color:var(--jc-blue);
+    font:inherit;
+    font-size:13px;
+    font-weight:900;
+    cursor:pointer;
+  }
+
+  .living-reset-button:hover,
+  .living-reset-button:focus{
+    border-color:var(--jc-blue);
+    background:var(--jc-soft);
+    color:var(--jc-navy);
+  }
+
   .living-card-dates{
     display:grid;
     gap:3px;
@@ -607,6 +697,10 @@
     }
 
     .living-hub-filter-group{
+      grid-column:1 / -1;
+    }
+
+    .living-hub-status{
       grid-column:1 / -1;
     }
 

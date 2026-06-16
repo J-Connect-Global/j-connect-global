@@ -103,6 +103,46 @@
       </div>
     </section>
 
+    <section class="jc-section" aria-labelledby="livingRoutesTitle">
+      <div class="jc-section-head">
+        <div>
+          <h2 id="livingRoutesTitle">目的別おすすめルート</h2>
+        </div>
+      </div>
+      <div class="living-route-grid">
+        <article class="living-route-card">
+          <h3>初めてドイツに来た人</h3>
+          <p>到着直後に必要な手続きを順番に確認できます。</p>
+          <div class="living-route-links">
+            <a href="/germany/ja/living/germany-first-30-days/">ドイツ生活最初の30日チェックリスト</a>
+            <a href="/germany/ja/living/anmeldung-guide/">住民登録 Anmeldung の完全ガイド</a>
+            <a href="/germany/ja/living/health-insurance-guide/">ドイツの健康保険の基本</a>
+            <a href="/germany/ja/living/bank-account-germany/">ドイツの銀行口座開設ガイド</a>
+            <a href="/germany/ja/living/tax-id-steuernummer-steuerklasse/">Tax ID・Steuernummer・Steuerklasseの違い</a>
+          </div>
+        </article>
+        <article class="living-route-card">
+          <h3>家を探している人</h3>
+          <p>物件探し、信用情報、契約、引っ越しの流れを確認できます。</p>
+          <div class="living-route-links">
+            <a href="/germany/ja/living/rent-apartment-germany/">ドイツで家を探す基本ガイド</a>
+            <a href="/germany/ja/living/schufa-guide/">SCHUFAとは？賃貸・契約で必要になる信用情報</a>
+            <a href="/germany/ja/living/moving-checklist-germany/">ドイツで引っ越すときの手続きチェックリスト</a>
+            <a href="/germany/ja/living/rundfunkbeitrag-guide/">Rundfunkbeitragとは？ドイツの放送負担金の基本</a>
+          </div>
+        </article>
+        <article class="living-route-card">
+          <h3>家族・子育ての手続きを知りたい人</h3>
+          <p>妊娠・出産、保育、Kita探しの基本を確認できます。</p>
+          <div class="living-route-links">
+            <a href="/germany/ja/living/pregnancy-birth-germany/">ドイツで妊娠・出産したときの基本手続き</a>
+            <a href="/germany/ja/living/kita-u3-tagesmutter-guide/">Kita探しの基本：U3・Tagesmutter・Großtagespflege</a>
+            <a href="/germany/ja/living/health-insurance-guide/">ドイツの健康保険の基本</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="jc-section living-hub" id="livingGuides" data-living-hub>
       <div class="jc-section-head">
         <div>
@@ -125,6 +165,8 @@
           <button type="button" class="living-filter-chip" data-living-filter="money" aria-pressed="false">お金</button>
           <button type="button" class="living-filter-chip" data-living-filter="moving" aria-pressed="false">引っ越し</button>
           <button type="button" class="living-filter-chip" data-living-filter="arrival" aria-pressed="false">到着後すぐ</button>
+          <button type="button" class="living-filter-chip" data-living-filter="family" aria-pressed="false">家族・育児</button>
+          <button type="button" class="living-filter-chip" data-living-filter="contract" aria-pressed="false">契約・信用</button>
         </div>
 
         <label class="living-hub-sort">
@@ -135,6 +177,11 @@
             <option value="title">タイトル順</option>
           </select>
         </label>
+
+        <div class="living-hub-status">
+          <p data-living-count aria-live="polite">記事を表示中</p>
+          <button type="button" class="living-reset-button" data-living-reset>条件をリセット</button>
+        </div>
       </div>
 
       <div class="jc-article-grid">

@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var livingSort = livingHub.querySelector('[data-living-sort]');
     var livingGrid = livingHub.querySelector('.jc-article-grid');
     var livingEmpty = livingHub.querySelector('[data-living-empty]');
+    var livingCount = livingHub.querySelector('[data-living-count]');
+    var livingReset = livingHub.querySelector('[data-living-reset]');
     var livingCards = Array.prototype.slice.call(livingHub.querySelectorAll('[data-living-card]'));
     var livingFilterButtons = Array.prototype.slice.call(livingHub.querySelectorAll('[data-living-filter]'));
     var activeLivingFilter = 'all';
@@ -31,7 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
       medical: ['医療', '保険', '健康保険', '妊娠', '出産'],
       money: ['お金', '銀行', '銀行口座', '税金', 'SCHUFA', '信用情報'],
       moving: ['引っ越し', '住所変更'],
-      arrival: ['初渡独', '到着', '最初の30日', '住民登録', '銀行口座', '健康保険']
+      arrival: ['初渡独', '到着', '最初の30日', '住民登録', '銀行口座', '健康保険'],
+      family: ['家族', '子育て', 'Kita', '保育', '妊娠', '出産'],
+      contract: ['契約', 'SCHUFA', '信用情報', '賃貸', 'Rundfunkbeitrag']
     };
 
     function livingCardText(card) {
@@ -86,22 +90,35 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       if (livingEmpty) livingEmpty.hidden = visibleCount !== 0;
+      if (livingCount) livingCount.textContent = visibleCount + '件の記事を表示中';
+    }
+
+    function setLivingFilter(filterValue) {
+      activeLivingFilter = filterValue || 'all';
+      livingFilterButtons.forEach(function (item) {
+        var isActive = (item.getAttribute('data-living-filter') || 'all') === activeLivingFilter;
+        item.classList.toggle('is-active', isActive);
+        item.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
     }
 
     livingFilterButtons.forEach(function (button) {
       button.addEventListener('click', function () {
-        activeLivingFilter = button.getAttribute('data-living-filter') || 'all';
-        livingFilterButtons.forEach(function (item) {
-          var isActive = item === button;
-          item.classList.toggle('is-active', isActive);
-          item.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-        });
+        setLivingFilter(button.getAttribute('data-living-filter') || 'all');
         updateLivingHub();
       });
     });
 
     if (livingSearch) livingSearch.addEventListener('input', updateLivingHub);
     if (livingSort) livingSort.addEventListener('change', updateLivingHub);
+    if (livingReset) {
+      livingReset.addEventListener('click', function () {
+        if (livingSearch) livingSearch.value = '';
+        if (livingSort) livingSort.value = 'newest';
+        setLivingFilter('all');
+        updateLivingHub();
+      });
+    }
     updateLivingHub();
   }
 

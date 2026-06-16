@@ -795,13 +795,26 @@ function renderHubCard(type, item) {
 }
 
 function renderLivingHubCard(item) {
-  return `<a href="${escapeAttribute(item.url)}" class="jc-article-card">
+  const searchText = [
+    item.title,
+    item.summary,
+    item.category,
+    ...item.tags
+  ].join(' ');
+  const reviewDate = item.review?.last_reviewed_at || item.last_verified || '';
+  const nextReview = item.review?.next_review_due || '';
+
+  return `<a href="${escapeAttribute(item.url)}" class="jc-article-card living-hub-card" data-living-card data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-search="${escapeAttribute(searchText)}" data-published="${escapeAttribute(item.published_at || '')}" data-reviewed="${escapeAttribute(reviewDate)}">
   <div class="jc-card-meta">
+    <span class="jc-chip">${escapeHtml(item.category || '生活ガイド')}</span>
 ${indent(item.tags.map((tag) => `<span class="jc-chip">${escapeHtml(tag)}</span>`).join('\n'), 4)}
   </div>
   <h3>${escapeHtml(item.title)}</h3>
   <p>${escapeHtml(item.summary)}</p>
-  <time datetime="${escapeAttribute(item.last_verified)}">最終確認: ${escapeHtml(item.last_verified)}</time>
+  <div class="living-card-dates">
+    <time datetime="${escapeAttribute(reviewDate)}">最終確認: ${escapeHtml(reviewDate)}</time>
+    ${nextReview ? `<span>次回確認目安: ${escapeHtml(nextReview)}</span>` : ''}
+  </div>
   <span class="jc-read-more">記事を読む</span>
 </a>`;
 }

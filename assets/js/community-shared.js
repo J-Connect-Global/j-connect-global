@@ -99,6 +99,29 @@
     return pick(post, ["post_id", "postId", "id", "_id", "slug"]) || `community-post-${index + 1}`;
   }
 
+  function isLikelyTestPost(post) {
+    const title = pick(post, ["title", "name", "subject"]);
+    const body = pick(post, ["body", "description", "message", "content"]);
+    const city = pick(post, ["city", "location", "area"]);
+    const region = pick(post, ["region", "prefecture"]);
+    const compactTitle = title.replace(/\s+/g, "").toLowerCase();
+    const compactBody = body.replace(/\s+/g, "").toLowerCase();
+    const compactLocation = [city, region].join("").replace(/\s+/g, "").toLowerCase();
+    const joined = [title, body, city, region, pick(post, ["tags"])].join(" ").toLowerCase();
+
+    if (/^(test|test\d+|teste|image test)$/i.test(title.trim())) return true;
+    if (/^(テスト|テスト投稿\d*|再テスト投稿.*)$/i.test(title.trim())) return true;
+    if (title.includes("テスト") || body.includes("テスト投稿")) return true;
+    if (/^(.)\1{5,}$/.test(compactTitle) && compactTitle === compactBody) return true;
+    if (/^[a-z]{1,4}$/i.test(title.trim()) && /^[a-z]{1,4}$/i.test(body.trim())) return true;
+    if (joined.includes("image test")) return true;
+    if (joined.includes("システムの動作を確認")) return true;
+    if (joined.includes("テスト投稿です")) return true;
+    if (compactBody === "test" || compactBody === "teste" || compactBody === "etse" || compactBody === "テスト") return true;
+    if (compactLocation.includes("test") && (compactTitle.includes("test") || compactBody.includes("test"))) return true;
+    return false;
+  }
+
   function images(post) {
     const values = [
       pick(post, ["image", "imageUrl", "image_url", "thumbnail", "thumbnail_url", "photo", "photoUrl", "photo_url", "first_image"]),
@@ -161,6 +184,7 @@
     sortPosts,
     formatDate,
     communityDetailHref,
+    isLikelyTestPost,
     images,
     firstImage(post) {
       return images(post)[0] || "";

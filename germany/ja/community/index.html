@@ -147,7 +147,30 @@
           </div>
         </div>
 
-        <div class="board-grid jc-result-grid" id="cards" aria-live="polite"></div>
+        <div class="board-grid jc-result-grid" id="cards" aria-live="polite">
+          <article class="card jc-result-card no-image">
+            <a class="card-link" href="./post/">
+              <div class="card-media">
+                <div class="placeholder-art" data-icon="掲"></div>
+              </div>
+              <div class="card-body">
+                <div class="card-top">
+                  <span class="category-badge">掲示板</span>
+                  <span class="subcategory-badge">投稿一覧</span>
+                </div>
+                <h3 class="card-title jc-result-title">投稿データを読み込んでいます</h3>
+                <div class="card-meta jc-result-meta">
+                  <span>ドイツ全域</span>
+                  <span>最新投稿</span>
+                </div>
+                <p class="card-excerpt">売買・譲渡、質問、友達募集、レッスンなどの投稿を取得しています。表示されない場合も投稿フォームは利用できます。</p>
+              </div>
+            </a>
+            <div class="card-actions jc-result-actions">
+              <a class="detail-open-link" href="./post/">投稿する</a>
+            </div>
+          </article>
+        </div>
 
         <div class="empty-state jc-empty-state" id="emptyState">
           <h2>条件に合う投稿が見つかりませんでした</h2>
@@ -320,6 +343,7 @@
       filtersReady: false,
       evaluationComplete: false,
       loadError: false,
+      sourceNotice: "",
       showAllSubcategories: false
     };
 
@@ -400,6 +424,8 @@
         field(post, ["image", "imageUrl", "image_url", "photo", "photoUrl", "thumbnail"]),
         post.photos,
         post.images,
+        post.image_urls,
+        field(post, ["thumbnail_url", "photo_url", "first_image"]),
         post.image_url_1,
         post.image_url_2,
         post.image_url_3,
@@ -423,6 +449,32 @@
 
     function getPostId(post, index) {
       return String(field(post, ["post_id", "postId", "id", "_id"]) || `community-${index + 1}`);
+    }
+
+    function isLikelyTestPost(post) {
+      const shared = window.JCONNECT_COMMUNITY_SHARED;
+      if (typeof shared?.isLikelyTestPost === "function") return shared.isLikelyTestPost(post);
+
+      const title = String(field(post, ["title", "name", "subject"]) || "").trim();
+      const body = String(field(post, ["body", "description", "message", "content"]) || "").trim();
+      const city = String(field(post, ["city", "location", "area"]) || "").trim();
+      const region = String(field(post, ["region", "prefecture"]) || "").trim();
+      const compactTitle = title.replace(/\s+/g, "").toLowerCase();
+      const compactBody = body.replace(/\s+/g, "").toLowerCase();
+      const compactLocation = [city, region].join("").replace(/\s+/g, "").toLowerCase();
+      const joined = [title, body, city, region, post.tags].join(" ").toLowerCase();
+
+      if (/^(test|test\d+|teste|image test)$/i.test(title)) return true;
+      if (/^(テスト|テスト投稿\d*|再テスト投稿.*)$/i.test(title)) return true;
+      if (title.includes("テスト") || body.includes("テスト投稿")) return true;
+      if (/^(.)\1{5,}$/.test(compactTitle) && compactTitle === compactBody) return true;
+      if (/^[a-z]{1,4}$/i.test(title) && /^[a-z]{1,4}$/i.test(body)) return true;
+      if (joined.includes("image test")) return true;
+      if (joined.includes("システムの動作を確認")) return true;
+      if (joined.includes("テスト投稿です")) return true;
+      if (compactBody === "test" || compactBody === "teste" || compactBody === "etse" || compactBody === "テスト") return true;
+      if (compactLocation.includes("test") && (compactTitle.includes("test") || compactBody.includes("test"))) return true;
+      return false;
     }
 
     function getDisplayCategoryRaw(post) {
@@ -596,11 +648,11 @@
         state.subcategory = "すべて";
       }
       const postTypeHtml = POST_TYPES.map((postType) => (
-        `<button class="chip-button ${state.postType === postType ? "active" : ""}" type="button" data-post-type="${escapeHtml(postType)}">${escapeHtml(postType)}</button>`
+        `<button class="chip-button ${state.postType === postType ? "active" : ""}" type="button" data-post-type="${escapeHtml(postType)}" aria-pressed="${state.postType === postType ? "true" : "false"}">${escapeHtml(postType)}</button>`
       )).join("");
       const subcategoryHtml = items.length
         ? items.map((subcategory) => (
-          `<button class="chip-button ${state.subcategory === subcategory ? "active" : ""}" type="button" data-subcategory="${escapeHtml(subcategory)}">${escapeHtml(subcategory)}</button>`
+          `<button class="chip-button ${state.subcategory === subcategory ? "active" : ""}" type="button" data-subcategory="${escapeHtml(subcategory)}" aria-pressed="${state.subcategory === subcategory ? "true" : "false"}">${escapeHtml(subcategory)}</button>`
         )).join("")
         : `<button class="chip-button" type="button" disabled>投稿の種類を選択すると表示されます</button>`;
       els.postTypeRail.innerHTML = postTypeHtml;
@@ -773,10 +825,10 @@
         els.cards.classList.toggle("grid-mode", state.viewMode === "grid");
         els.cards.innerHTML = "";
         renderEmptyActions("filters");
-        els.emptyState.querySelector("h2").textContent = state.savedOnly && !state.saved.size ? "保存済みの投稿はまだありません。" : "条件に一致する結果がありません。";
+        els.emptyState.querySelector("h2").textContent = state.savedOnly && !state.saved.size ? "保存済みの投稿はまだありません。" : "条件に合う投稿がありません";
         els.emptyState.querySelector("p").textContent = state.savedOnly && !state.saved.size
           ? "気になる投稿を保存すると、ここからすぐに見返せます。"
-          : "フィルターを変更してください。探しているものがない場合は、コミュニティに投稿してみてください。";
+          : "条件に合う投稿がありません。検索語やフィルターを変更してください。";
         els.emptyState.style.display = "block";
         return;
       }
@@ -798,7 +850,7 @@
             <a class="card-link" href="#post-${encodeURIComponent(post._id)}" aria-label="${escapeHtml(post._title)}の詳細を開く">
               <div class="card-media">
                 <div class="placeholder-art" data-icon="${escapeHtml(CATEGORY_ICONS[subcategory] || CATEGORY_ICONS[postType] || CATEGORY_ICONS["その他"])}"></div>
-                ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(post._title)}の写真" loading="lazy" decoding="async" onerror="this.remove()">` : ""}
+                ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(post._title)}の写真" loading="lazy" decoding="async" onerror="this.closest('.card')?.classList.add('no-image'); this.remove()">` : ""}
                 ${post._images.length > 1 ? `<span class="image-count">写真 ${post._images.length}</span>` : ""}
               </div>
               <div class="card-body">
@@ -837,7 +889,7 @@
 
     function renderSummary() {
       els.resultText.classList.remove("loading-lines");
-      els.resultText.textContent = `${state.posts.length}件中 ${state.filtered.length}件を表示`;
+      els.resultText.textContent = `${state.posts.length}件中 ${state.filtered.length}件を表示${state.sourceNotice ? `・${state.sourceNotice}` : ""}`;
       persistSaved();
       renderQuickChips();
     }
@@ -1064,6 +1116,7 @@
     async function loadPosts() {
       state.loading = true;
       state.loadError = false;
+      state.sourceNotice = "";
       state.evaluationComplete = false;
       els.emptyState.style.display = "none";
       els.resultText.classList.add("loading-lines");
@@ -1072,7 +1125,11 @@
       try {
         const data = await fetchJson(COMMUNITY_POSTS_URL);
         const rows = DATA_SOURCES.normalizePayload(data);
-        state.posts = (rows.length ? rows : sharedFallbackPosts()).map(normalizePost);
+        const publicRows = rows.filter((post) => !isLikelyTestPost(post));
+        state.sourceNotice = rows.length && rows.length !== publicRows.length ? "公開向け投稿のみ表示しています" : "";
+        if (!publicRows.length && rows.length) state.sourceNotice = "現在は確認用の投稿を表示しています";
+        if (!rows.length) state.sourceNotice = "現在は確認用の投稿を表示しています";
+        state.posts = (publicRows.length ? publicRows : sharedFallbackPosts()).map(normalizePost);
         state.loading = false;
         state.loadError = false;
         renderAreas();
@@ -1085,6 +1142,7 @@
           state.filtered = [];
           state.loading = false;
           state.loadError = false;
+          state.sourceNotice = "投稿データ取得中のため確認用の投稿を表示しています";
           renderAreas();
           applyFilters();
           return;

@@ -38,7 +38,7 @@ function applyCanonicalLayout(html, url, page) {
 }
 
 function ensureHeaderFooterStylesheet(html) {
-  const stylesheetHref = '/assets/css/ja-header-footer.css?v=header-language-fix-1';
+  const stylesheetHref = '/assets/css/ja-header-footer.css?v=portal5-nav-20260618';
   const stylesheetLink = `  <link rel="stylesheet" href="${stylesheetHref}">`;
 
   // Remove any existing ja-header-footer.css link first, regardless of position/version.
@@ -105,14 +105,16 @@ function activePillar(url, page) {
   if (page?.status === 'legacy' && page.redirect_target) return activePillar(normalizeUrl(page.redirect_target), null);
   if (url === '/germany/ja/') return 'home';
   if (url.startsWith('/germany/ja/about/')) return 'about';
-  if (url.startsWith('/germany/ja/eat/')) return 'eat';
-  if (url.startsWith('/germany/ja/shopping/')) return 'shopping';
-  if (url.startsWith('/germany/ja/medical/')) return 'medical';
   if (['community', 'living', 'jobs', 'events', 'learn-german'].includes(page?.pillar)) return page.pillar;
   if (url.startsWith('/germany/ja/community/')) return 'community';
   if (url.startsWith('/germany/ja/living/')) return 'living';
+  if (url.startsWith('/germany/ja/eat/')) return 'living';
+  if (url.startsWith('/germany/ja/shopping/')) return 'living';
+  if (url.startsWith('/germany/ja/medical/')) return 'living';
+  if (url.startsWith('/germany/ja/guides/')) return 'living';
   if (url.startsWith('/germany/ja/jobs/')) return 'jobs';
   if (url.startsWith('/germany/ja/events/')) return 'events';
+  if (url.startsWith('/germany/ja/news/')) return 'events';
   if (url.startsWith('/germany/ja/learn-german/')) return 'learn-german';
   return '';
 }

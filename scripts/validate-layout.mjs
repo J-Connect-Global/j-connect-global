@@ -43,10 +43,15 @@ const requiredNavLinks = [
   '/germany/ja/events/',
   '/germany/ja/learn-german/'
 ];
-const requiredDirectoryLinks = [
+const requiredLivingSecondaryLinks = [
   '/germany/ja/eat/',
   '/germany/ja/shopping/',
-  '/germany/ja/medical/'
+  '/germany/ja/medical/',
+  '/germany/ja/guides/'
+];
+const forbiddenPrimaryHeaderLinks = [
+  ...requiredLivingSecondaryLinks,
+  '/germany/ja/news/'
 ];
 const standardizedDirectoryListingUrls = new Set([
   '/germany/ja/eat/',
@@ -213,27 +218,27 @@ function validateHtmlPage(url, file, page) {
   const footerBlock = extractLayoutBlock(html, 'ja-footer', rel);
 
   if (headerBlock) {
+    const primaryNavBlock = extractClassedTagBlock(headerBlock, 'nav', 'header-nav') || headerBlock;
     if (!/<header\b[^>]*class=["'][^"']*\bsite-header\b/i.test(headerBlock)) {
       problems.push(`${rel} must use the canonical JA site-header template.`);
     }
     for (const requiredLink of requiredNavLinks) {
-      if (!hasHref(headerBlock, requiredLink)) {
+      if (!hasHref(primaryNavBlock, requiredLink)) {
         problems.push(`${rel} header missing required nav link: ${requiredLink}`);
       }
     }
-    for (const requiredLink of requiredDirectoryLinks) {
-      if (!hasHref(headerBlock, requiredLink)) {
-        problems.push(`${rel} header missing Living directory link: ${requiredLink}`);
+    for (const forbiddenLink of forbiddenPrimaryHeaderLinks) {
+      if (hasHref(primaryNavBlock, forbiddenLink)) {
+        problems.push(`${rel} header contains secondary or legacy route in primary navigation: ${forbiddenLink}`);
       }
-    }
-    if (/href=["']\/germany\/ja\/guides\/["']/i.test(headerBlock)) {
-      problems.push(`${rel} header contains legacy Guides as a current nav link.`);
     }
   }
 
   if (footerBlock) {
-    if (/href=["']\/germany\/ja\/guides\/["']/i.test(footerBlock)) {
-      problems.push(`${rel} footer contains legacy Guides as a current link.`);
+    for (const requiredLink of requiredLivingSecondaryLinks) {
+      if (!hasHref(footerBlock, requiredLink)) {
+        problems.push(`${rel} footer missing Living secondary link: ${requiredLink}`);
+      }
     }
     validateInternalLinks(footerBlock, rel, `${rel} footer`);
   }
@@ -451,6 +456,11 @@ function extractLayoutBlock(html, marker, rel) {
     return '';
   }
   return match[1];
+}
+
+function extractClassedTagBlock(html, tag, className) {
+  const pattern = new RegExp(`<${tag}\\b[^>]*class=["'][^"']*\\b${escapeRegExp(className)}\\b[^"']*["'][^>]*>[\\s\\S]*?<\\/${tag}>`, 'i');
+  return html.match(pattern)?.[0] || '';
 }
 
 function validateCanonical(html, page, rel) {

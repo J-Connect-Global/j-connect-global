@@ -127,6 +127,25 @@ button{cursor:pointer}
 }
 .view-btn.active{background:var(--listing-navy);color:#fff}
 
+.employer-cta{
+  width:min(var(--listing-max), calc(100% - 32px));
+  margin:0 auto 12px;
+  border:1px solid var(--listing-line);
+  border-radius:8px;
+  background:#fff;
+  box-shadow:var(--listing-shadow);
+  padding:14px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:14px;
+  align-items:center;
+}
+.employer-cta h2{margin:0;color:var(--listing-navy);font-size:18px;line-height:1.25;font-weight:900}
+.employer-cta p{margin:5px 0 0;color:var(--listing-muted);font-size:13px;line-height:1.55;font-weight:700}
+.employer-cta ul{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 0;padding:0}
+.employer-cta li{list-style:none;border:1px solid var(--listing-line);border-radius:999px;background:var(--listing-soft);padding:5px 9px;color:#384552;font-size:12px;font-weight:900}
+.employer-cta .btn{min-height:40px}
+
 .layout{
   width:min(var(--listing-max), calc(100% - 32px));
   margin:0 auto;
@@ -224,6 +243,7 @@ button{cursor:pointer}
 }
 @media (max-width:780px){
   .hero,.view-toggle-wrap,.layout,.layout.map-mode{width:100%;max-width:100vw;padding-left:12px;padding-right:12px}
+  .employer-cta{width:calc(100% - 24px);grid-template-columns:1fr;align-items:start}
   .hero{padding-top:10px}.hero-box{border-radius:8px;padding:12px}.hero h1{font-size:clamp(23px,6.4vw,27px);line-height:1.12;overflow-wrap:anywhere}.hero p{font-size:12.5px;line-height:1.45}
   .view-toggle{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;overflow:hidden}.view-btn{min-width:0;padding:0 6px;font-size:13px}
   .layout,.layout.map-mode{display:block}.filters{position:static;margin-bottom:12px}.filter-chip-group{grid-template-columns:repeat(2,minmax(0,1fr))}.toolbar{align-items:flex-start}.toolbar-actions{justify-content:flex-start}.chips{justify-content:flex-start}.layout.list-mode .card-body,.card-body{grid-template-columns:1fr}.list-detail-comment{border-left:0;border-top:1px solid var(--listing-line);padding-left:0;padding-top:10px}.map-panel{position:static;margin-top:12px}.map-shell{height:420px}.listing-detail-grid,.detail-grid{grid-template-columns:1fr}.listing-modal-dialog{width:calc(100vw - 20px);max-height:calc(100vh - 20px);margin:10px auto;border-radius:10px}.listing-modal-content{padding:20px 16px}.job-card-body{padding-right:48px}

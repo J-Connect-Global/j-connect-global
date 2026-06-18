@@ -139,11 +139,29 @@
         <div class="board-grid jc-result-grid" id="cards" aria-live="polite"></div>
 
         <div class="empty-state jc-empty-state" id="emptyState">
-          <h2>条件に合う投稿が見つかりませんでした</h2>
-          <p>キーワードや地域を少し広げると見つかりやすくなります。探しているものがない場合は、コミュニティに投稿してみてください。</p>
+          <h2>まだ表示できる投稿がありません</h2>
+          <p>現在、掲示板の投稿を準備中、または条件に合う投稿がありません。売ります・譲ります・質問・友達募集など、ドイツ在住者向けの投稿を順次掲載していきます。</p>
+          <p class="empty-helper">家具・家電の譲渡、住まい探し、イベント告知、生活の質問などに使えます。</p>
           <div class="hero-actions is-centered">
-            <button class="btn btn-secondary" type="button" id="emptyClear">条件をクリア</button>
             <a class="btn btn-primary" href="./post/">投稿する</a>
+            <button class="btn btn-secondary" type="button" id="emptyClear">条件をリセット</button>
+          </div>
+          <div class="usage-guide" aria-label="使い方案内">
+            <h3>使い方案内</h3>
+            <div class="usage-guide-grid">
+              <article class="usage-guide-card">
+                <strong>売ります・譲ります</strong>
+                <p>家具、家電、ベビー用品、生活用品などの譲渡に使えます。</p>
+              </article>
+              <article class="usage-guide-card">
+                <strong>質問・相談</strong>
+                <p>Anmeldung、保険、住まい、Kitaなど、ドイツ生活の疑問を相談できます。</p>
+              </article>
+              <article class="usage-guide-card">
+                <strong>友達募集・イベント</strong>
+                <p>地域交流、週末イベント、趣味仲間探しの入口として使えます。</p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -762,10 +780,10 @@
         els.cards.classList.toggle("grid-mode", state.viewMode === "grid");
         els.cards.innerHTML = "";
         renderEmptyActions("filters");
-        els.emptyState.querySelector("h2").textContent = state.savedOnly && !state.saved.size ? "保存済みの投稿はまだありません。" : "条件に一致する結果がありません。";
+        els.emptyState.querySelector("h2").textContent = state.savedOnly && !state.saved.size ? "保存済みの投稿はまだありません。" : "まだ表示できる投稿がありません";
         els.emptyState.querySelector("p").textContent = state.savedOnly && !state.saved.size
           ? "気になる投稿を保存すると、ここからすぐに見返せます。"
-          : "フィルターを変更してください。探しているものがない場合は、コミュニティに投稿してみてください。";
+          : "現在、掲示板の投稿を準備中、または条件に合う投稿がありません。売ります・譲ります・質問・友達募集など、ドイツ在住者向けの投稿を順次掲載していきます。";
         els.emptyState.style.display = "block";
         return;
       }
@@ -1024,12 +1042,6 @@
       return DATA_SOURCES.fetchJsonWithTimeout(url, DATA_TIMEOUT_MS);
     }
 
-    function sharedFallbackPosts() {
-      return Array.isArray(window.JCONNECT_COMMUNITY_SHARED?.fallbackPosts)
-        ? window.JCONNECT_COMMUNITY_SHARED.fallbackPosts
-        : [];
-    }
-
     function renderEmptyActions(mode = "filters") {
       const actions = els.emptyState.querySelector(".hero-actions");
       if (!actions) return;
@@ -1045,8 +1057,8 @@
       }
 
       actions.innerHTML = `
-        <button class="btn btn-secondary" type="button" data-clear-empty>条件をクリア</button>
         <a class="btn btn-primary" href="./post/">投稿する</a>
+        <button class="btn btn-secondary" type="button" data-clear-empty>条件をリセット</button>
       `;
     }
 
@@ -1061,23 +1073,12 @@
       try {
         const data = await fetchJson(COMMUNITY_POSTS_URL);
         const rows = DATA_SOURCES.normalizePayload(data);
-        state.posts = (rows.length ? rows : sharedFallbackPosts()).map(normalizePost);
+        state.posts = rows.map(normalizePost);
         state.loading = false;
         state.loadError = false;
         renderAreas();
         applyFilters();
       } catch (error) {
-        const fallbackRows = sharedFallbackPosts();
-        if (fallbackRows.length) {
-          console.warn("Community posts load failed; using shared fallback posts.", error);
-          state.posts = fallbackRows.map(normalizePost);
-          state.filtered = [];
-          state.loading = false;
-          state.loadError = false;
-          renderAreas();
-          applyFilters();
-          return;
-        }
         console.warn("Community posts load failed:", COMMUNITY_POSTS_URL, error);
         state.posts = [];
         state.filtered = [];

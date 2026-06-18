@@ -152,8 +152,8 @@
             <span class="portal3-thumb thumb-desk"></span>
             <span>
               <em>掲示板</em>
-              <strong>投稿を読み込み中</strong>
-              <small>最新の投稿を確認しています</small>
+              <strong>掲示板の投稿を準備中です</strong>
+              <small>売ります・譲ります・質問・友達募集などの投稿を順次掲載します</small>
             </span>
           </a>
         </div>
@@ -202,8 +202,8 @@
           <a class="portal3-job-mini" href="/germany/ja/jobs/">
             <span class="portal3-job-icon">▦</span>
             <span>
-              <strong>求人を読み込み中</strong>
-              <small>掲載中の求人データを確認しています</small>
+              <strong>求人情報を準備中です</strong>
+              <small>日本語話者向け求人を順次掲載します</small>
             </span>
           </a>
         </div>
@@ -232,13 +232,16 @@
       </div>
 
       <div class="portal3-card-row" id="homeCommunityCards" data-community-posts>
-        <a class="portal3-card" href="/germany/ja/community/">
+        <article class="portal3-card portal3-fallback-card">
           <span class="portal3-card-img img-doc"></span>
           <em>掲示板</em>
-          <strong>最新投稿を読み込み中</strong>
-          <small>投稿データを確認しています</small>
-          <b>掲示板へ</b>
-        </a>
+          <strong>掲示板の投稿を準備中です</strong>
+          <small>売ります・譲ります・質問・友達募集など、ドイツ在住者向けの投稿を順次掲載します。</small>
+          <div class="portal3-fallback-actions">
+            <a href="/germany/ja/community/">掲示板を見る</a>
+            <a href="/germany/ja/community/post/">投稿する</a>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -318,13 +321,15 @@
       </div>
 
       <div class="portal3-job-row" id="homeJobsCards" data-home-jobs>
-        <a class="portal3-job-card" href="/germany/ja/jobs/">
+        <article class="portal3-job-card portal3-fallback-card">
           <span>▤</span>
-          <strong>求人を読み込み中</strong>
-          <small>掲載中の求人データを確認しています</small>
-          <b>求人一覧へ</b>
-          <em>データ確認中</em>
-        </a>
+          <strong>求人情報を準備中です</strong>
+          <small>ドイツで働きたい日本語話者向けの求人情報を順次掲載します。企業・採用担当者の方は掲載案内をご確認ください。</small>
+          <div class="portal3-fallback-actions">
+            <a href="/germany/ja/jobs/">求人を見る</a>
+            <a href="/germany/ja/jobs/posting/">求人掲載について</a>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -538,10 +543,40 @@
       return shared.sortPosts((rows || []).map((post, index) => shared.normalizePost(post, index)));
     }
 
+    function renderFallback() {
+      miniRoot.innerHTML = `
+        <a class="portal3-mini" href="/germany/ja/community/">
+          <span class="portal3-thumb thumb-desk"></span>
+          <span>
+            <em>掲示板</em>
+            <strong>掲示板の投稿を準備中です</strong>
+            <small>売ります・譲ります・質問・友達募集などの投稿を順次掲載します</small>
+          </span>
+        </a>
+      `;
+
+      cardRoot.innerHTML = `
+        <article class="portal3-card portal3-fallback-card">
+          <span class="portal3-card-img img-doc"></span>
+          <em>掲示板</em>
+          <strong>掲示板の投稿を準備中です</strong>
+          <small>売ります・譲ります・質問・友達募集など、ドイツ在住者向けの投稿を順次掲載します。</small>
+          <div class="portal3-fallback-actions">
+            <a href="/germany/ja/community/">掲示板を見る</a>
+            <a href="/germany/ja/community/post/">投稿する</a>
+          </div>
+        </article>
+      `;
+    }
+
     function render(posts) {
-      const list = posts.length ? posts : normalizeRows(shared.fallbackPosts);
-      const miniPosts = list.slice(0, 3);
-      const cardPosts = list.slice(0, 5);
+      if (!posts.length) {
+        renderFallback();
+        return;
+      }
+
+      const miniPosts = posts.slice(0, 3);
+      const cardPosts = posts.slice(0, 5);
 
       miniRoot.innerHTML = miniPosts.map((post) => {
         const href = shared.communityDetailHref(post, "/germany/ja/community/");
@@ -583,9 +618,8 @@
     }
 
     async function loadCommunityPosts() {
-      const fallback = normalizeRows(shared.fallbackPosts);
       if (!dataSources) {
-        render(fallback);
+        renderFallback();
         return;
       }
 
@@ -595,7 +629,7 @@
         const rows = dataSources.normalizePayload(payload);
         render(normalizeRows(rows));
       } catch (error) {
-        render(fallback);
+        renderFallback();
       }
     }
 
@@ -622,17 +656,41 @@
       })[char]);
     }
 
-    function fallbackJobs() {
-      return jobsShared.activeJobs(window.JCONNECT_FALLBACK_JOBS || []);
-    }
-
     function jobMeta(job) {
       return [job.company_name, job.location || job.city || job.region].filter(Boolean).join("・");
     }
 
+    function renderFallback() {
+      miniRoot.innerHTML = `
+        <a class="portal3-job-mini" href="/germany/ja/jobs/">
+          <span class="portal3-job-icon">▦</span>
+          <span>
+            <strong>求人情報を準備中です</strong>
+            <small>日本語話者向け求人を順次掲載します</small>
+          </span>
+        </a>
+      `;
+
+      cardRoot.innerHTML = `
+        <article class="portal3-job-card portal3-fallback-card">
+          <span>▤</span>
+          <strong>求人情報を準備中です</strong>
+          <small>ドイツで働きたい日本語話者向けの求人情報を順次掲載します。企業・採用担当者の方は掲載案内をご確認ください。</small>
+          <div class="portal3-fallback-actions">
+            <a href="/germany/ja/jobs/">求人を見る</a>
+            <a href="/germany/ja/jobs/posting/">求人掲載について</a>
+          </div>
+        </article>
+      `;
+    }
+
     function render(jobs) {
-      const list = jobs.length ? jobs : fallbackJobs();
-      const selected = list.slice(0, 3);
+      if (!jobs.length) {
+        renderFallback();
+        return;
+      }
+
+      const selected = jobs.slice(0, 3);
 
       miniRoot.innerHTML = selected.map((job, index) => {
         const href = jobsShared.getJobDetailPath(job);
@@ -678,7 +736,7 @@
         const rows = dataSources.normalizePayload(payload);
         render(jobsShared.activeJobs(rows));
       } catch (error) {
-        render(fallbackJobs());
+        renderFallback();
       }
     }
 

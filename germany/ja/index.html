@@ -540,7 +540,9 @@
     }
 
     function normalizeRows(rows) {
-      return shared.sortPosts((rows || []).map((post, index) => shared.normalizePost(post, index)));
+      return shared.sortPosts((rows || [])
+        .filter((post) => typeof shared.isLikelyTestPost === "function" ? !shared.isLikelyTestPost(post) : true)
+        .map((post, index) => shared.normalizePost(post, index)));
     }
 
     function renderFallback() {
@@ -582,7 +584,7 @@
         const href = shared.communityDetailHref(post, "/germany/ja/community/");
         const thumbClass = thumbClassByType[post._postType] || "thumb-office";
         const image = post._images[0] || "";
-        const meta = [post._location, shared.formatDate(post._date)].filter(Boolean).join("・");
+        const meta = [post._location, fallbackNote || shared.formatDate(post._date)].filter(Boolean).join("・");
         return `
           <a class="portal3-mini" href="${escapeHtml(href)}" data-post-id="${escapeHtml(post._id)}">
             <span class="portal3-thumb ${escapeHtml(thumbClass)} ${image ? "has-photo" : ""}">
@@ -608,7 +610,7 @@
             <span class="portal3-card-img ${escapeHtml(imageClass)} ${image ? "has-photo" : ""}">
               ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(post._title)}の写真" loading="lazy" decoding="async" onerror="this.closest('.portal3-card-img')?.classList.remove('has-photo'); this.remove();">` : ""}
             </span>
-            <em>${escapeHtml(post._postType)}</em>
+            <em>${escapeHtml(options.fallback ? `${post._postType}・確認用` : post._postType)}</em>
             <strong>${escapeHtml(post._title)}</strong>
             <small>${escapeHtml(secondary || post._subcategory)}</small>
             <b>${escapeHtml(action)}</b>
@@ -627,7 +629,8 @@
         const url = dataSources.buildCommunityUrl({ action: "getPosts" });
         const payload = await dataSources.fetchJsonWithTimeout(url, 9000);
         const rows = dataSources.normalizePayload(payload);
-        render(normalizeRows(rows));
+        const posts = normalizeRows(rows);
+        render(posts.length ? posts : fallback, { fallback: !posts.length });
       } catch (error) {
         renderFallback();
       }

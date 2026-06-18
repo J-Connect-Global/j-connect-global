@@ -112,6 +112,21 @@
     </div>
   </div>
 
+  <section class="employer-cta" aria-labelledby="employerCtaTitle">
+    <div>
+      <h2 id="employerCtaTitle">採用担当者・企業の方へ</h2>
+      <p>ドイツ在住の日本語話者、日本関連業務の経験者、日独英の多言語人材に向けて求人情報を掲載できます。</p>
+      <ul>
+        <li>正社員・契約社員</li>
+        <li>Werkstudent / Internship</li>
+        <li>Minijob</li>
+        <li>日本語・英語・ドイツ語を使う仕事</li>
+        <li>ビザサポート有無の明記</li>
+      </ul>
+    </div>
+    <a class="btn btn-primary" href="/germany/ja/jobs/posting/">求人掲載について</a>
+  </section>
+
   <main class="layout jc-directory-layout list-mode" id="mainLayout">
     <aside class="panel filters jc-control-panel jc-directory-sidebar">
       <div class="panel-title-row">
@@ -191,7 +206,14 @@
       </div>
 
       <div id="cards" class="cards jc-result-grid" aria-live="polite"></div>
-      <div id="emptyBox" class="empty-box jc-empty-state" style="display:none;">条件に一致する求人が見つかりませんでした。条件を変更してください。求人掲載については <a href="/germany/ja/jobs/posting/">こちら</a>。</div>
+      <div id="emptyBox" class="empty-box jc-empty-state" style="display:none;">
+        <span class="status-title">現在表示できる求人がありません</span>
+        <div>条件に合う求人がないか、求人データを準備中です。日系企業・日本語人材向け求人の掲載を順次拡充します。</div>
+        <div class="status-actions">
+          <a class="btn btn-primary" href="/germany/ja/jobs/posting/">求人掲載について</a>
+          <button class="btn btn-secondary" type="button" data-reset-jobs>条件をリセット</button>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -260,7 +282,6 @@
   <!-- LAYOUT:ja-footer:end -->
 
   <script src="/assets/js/data-sources.js"></script>
-  <script src="/assets/js/jobs-fallback.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
     const JOBS_API_URL = DATA_SOURCES.buildDirectoryUrl({
@@ -581,13 +602,10 @@
       return String(a.company_name).localeCompare(String(b.company_name), 'ja');
     }
 
-    function useFallbackJobs(){
-      jobs = (window.JCONNECT_FALLBACK_JOBS || [])
-        .map(normalizeJob)
-        .filter(job => normalize(job.status) === 'active')
-        .sort(sortNewestFirst);
-
-      selectedId = jobs[0]?.id || null;
+    function showEmptyJobs(){
+      jobs = [];
+      filtered = [];
+      selectedId = null;
       initFilters();
       filterJobs();
     }
@@ -650,7 +668,7 @@
           .sort(sortNewestFirst);
 
         if (!jobs.length) {
-          useFallbackJobs();
+          showEmptyJobs();
           return;
         }
 
@@ -662,7 +680,7 @@
       } catch (error) {
         console.warn('Jobs data load failed:', JOBS_API_URL, error);
 
-        useFallbackJobs();
+        showEmptyJobs();
       }
     }
 
@@ -780,7 +798,15 @@
         els.cards.innerHTML = '';
         els.emptyBox.style.display = 'block';
         els.emptyBox.className = 'empty-box jc-empty-state';
-        els.emptyBox.innerHTML = '条件に一致する結果がありません。フィルターを変更してください。求人掲載については <a href="/germany/ja/jobs/posting/">こちら</a>。';
+        els.emptyBox.innerHTML = `
+          <span class="status-title">現在表示できる求人がありません</span>
+          <div>条件に合う求人がないか、求人データを準備中です。日系企業・日本語人材向け求人の掲載を順次拡充します。</div>
+          <div class="status-actions">
+            <a class="btn btn-primary" href="/germany/ja/jobs/posting/">求人掲載について</a>
+            <button class="btn btn-secondary" type="button" data-reset-jobs>条件をリセット</button>
+          </div>
+        `;
+        els.emptyBox.querySelector('[data-reset-jobs]')?.addEventListener('click', resetFilters);
         return;
       }
 
@@ -1076,6 +1102,14 @@
       document.body.classList.remove('modal-open');
     }
 
+    function resetFilters(){
+      els.keywordInput.value = '';
+      Object.keys(filterState).forEach(key => { filterState[key] = ''; });
+      els.salaryRange.value = '0';
+      renderSalaryRangeLabel();
+      filterJobs();
+    }
+
     function attachEvents(){
       els.keywordInput.addEventListener('input', filterJobs);
       els.salaryRange.addEventListener('input', () => {
@@ -1083,13 +1117,7 @@
         filterJobs();
       });
 
-      els.resetBtn.addEventListener('click', () => {
-        els.keywordInput.value = '';
-        Object.keys(filterState).forEach(key => { filterState[key] = ''; });
-        els.salaryRange.value = '0';
-        renderSalaryRangeLabel();
-        filterJobs();
-      });
+      els.resetBtn.addEventListener('click', resetFilters);
 
       els.listViewBtn.addEventListener('click', () => setViewMode('list'));
       els.gridViewBtn.addEventListener('click', () => setViewMode('grid'));

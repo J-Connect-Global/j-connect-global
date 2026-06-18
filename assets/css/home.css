@@ -815,6 +815,43 @@ body.portal3-home > .page-footer{
   font-weight:700;
 }
 
+.portal3-fallback-card{
+  grid-column:1 / -1;
+}
+
+.portal3-card.portal3-fallback-card,
+.portal3-job-card.portal3-fallback-card{
+  min-height:150px;
+}
+
+.portal3-fallback-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:auto;
+}
+
+.portal3-fallback-actions a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:32px;
+  padding:0 11px;
+  border:1px solid #bad2ee;
+  border-radius:6px;
+  background:#fff;
+  color:var(--portal3-blue);
+  text-decoration:none;
+  font-size:12px;
+  font-weight:800;
+}
+
+.portal3-fallback-actions a:first-child{
+  background:var(--portal3-blue);
+  border-color:var(--portal3-blue);
+  color:#fff;
+}
+
 .img-bike::before{content:"🚲";}
 .img-doc::before{content:"📄";}
 .img-family::before{content:"👥";}

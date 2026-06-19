@@ -36,7 +36,11 @@ const requiredPageFields = [
 const allowedTypes = new Set(['home', 'hub', 'article', 'directory', 'listing', 'detail', 'utility', 'legal', 'legacy']);
 const allowedPillars = new Set(['home', 'community', 'living', 'jobs', 'events', 'learn-german', 'utility', 'legacy']);
 const allowedStatuses = new Set(['published', 'legacy', 'redirect', 'draft']);
-const requiredNavLinks = [
+const requiredPrimaryNavLinks = [
+  '/germany/ja/',
+  '/germany/ja/about/'
+];
+const requiredCategoryMainLinks = [
   '/germany/ja/community/',
   '/germany/ja/living/',
   '/germany/ja/jobs/',
@@ -49,7 +53,14 @@ const requiredLivingSecondaryLinks = [
   '/germany/ja/medical/',
   '/germany/ja/guides/'
 ];
+const requiredCategoryLinks = [
+  ...requiredCategoryMainLinks,
+  ...requiredLivingSecondaryLinks,
+  '/germany/ja/news/',
+  '/germany/ja/about/'
+];
 const forbiddenPrimaryHeaderLinks = [
+  ...requiredCategoryMainLinks,
   ...requiredLivingSecondaryLinks,
   '/germany/ja/news/'
 ];
@@ -219,17 +230,26 @@ function validateHtmlPage(url, file, page) {
 
   if (headerBlock) {
     const primaryNavBlock = extractClassedTagBlock(headerBlock, 'nav', 'header-nav') || headerBlock;
+    const categoryDropdownBlock = extractClassedTagBlock(headerBlock, 'div', 'category-dropdown');
     if (!/<header\b[^>]*class=["'][^"']*\bsite-header\b/i.test(headerBlock)) {
       problems.push(`${rel} must use the canonical JA site-header template.`);
     }
-    for (const requiredLink of requiredNavLinks) {
+    for (const requiredLink of requiredPrimaryNavLinks) {
       if (!hasHref(primaryNavBlock, requiredLink)) {
-        problems.push(`${rel} header missing required nav link: ${requiredLink}`);
+        problems.push(`${rel} primary header missing required portal nav link: ${requiredLink}`);
       }
     }
     for (const forbiddenLink of forbiddenPrimaryHeaderLinks) {
       if (hasHref(primaryNavBlock, forbiddenLink)) {
         problems.push(`${rel} header contains secondary or legacy route in primary navigation: ${forbiddenLink}`);
+      }
+    }
+    if (!categoryDropdownBlock) {
+      problems.push(`${rel} header missing category dropdown.`);
+    }
+    for (const requiredLink of requiredCategoryLinks) {
+      if (!hasHref(categoryDropdownBlock, requiredLink)) {
+        problems.push(`${rel} category dropdown missing required link: ${requiredLink}`);
       }
     }
   }

@@ -313,35 +313,6 @@ body.portal3-home > .page-footer{
   outline-offset:-3px;
 }
 
-.portal3-section-cta{
-  text-decoration:none;
-}
-
-.portal3-section-cta::after{
-  content:" ›";
-}
-
-.portal3-section-sublinks{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  margin-top:2px;
-}
-
-.portal3-section-sublinks a{
-  display:inline-flex;
-  align-items:center;
-  min-height:28px;
-  padding:0 9px;
-  border-radius:999px;
-  border:1px solid #cde6d8;
-  background:#f3fbf7;
-  color:#00744c;
-  text-decoration:none;
-  font-size:12px;
-  font-weight:800;
-}
-
 /* Container */
 
 .portal3-container{
@@ -1166,10 +1137,6 @@ body.portal3-home > .page-footer{
 /* Responsive */
 
 @media (max-width:1180px){
-  .portal3-section-card-grid{
-    grid-template-columns:repeat(3, minmax(0,1fr));
-  }
-
   .portal3-card-row,
   .portal3-learn-row{
     grid-template-columns:repeat(3, minmax(0,1fr));
@@ -1193,11 +1160,6 @@ body.portal3-home > .page-footer{
     font-size:32px;
   }
 
-  .portal3-sections-head{
-    align-items:flex-start;
-    flex-direction:column;
-  }
-
   .portal3-ribbon{
     height:auto;
     display:flex;
@@ -1207,10 +1169,6 @@ body.portal3-home > .page-footer{
   .portal3-ribbon a{
     min-width:220px;
     height:74px;
-  }
-
-  .portal3-section-card-grid{
-    grid-template-columns:repeat(2, minmax(0,1fr));
   }
 
   .portal3-top-grid{
@@ -1271,10 +1229,6 @@ body.portal3-home > .page-footer{
   .portal3-hero-inner,
   .portal3-ribbon{
     width:min(100% - 22px, var(--portal3-container));
-  }
-
-  .portal3-section-card-grid{
-    grid-template-columns:1fr;
   }
 
   .portal3-quick{

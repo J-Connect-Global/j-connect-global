@@ -138,33 +138,36 @@
 }
 
 .header-category-trigger{
-  font:inherit;
-  margin:0;
-  padding:0;
-  border:none;
-  background:transparent;
-  color:var(--text);
-  font-weight:700;
-  cursor:pointer;
   display:flex;
   align-items:center;
   gap:8px;
+  margin:0;
+  padding:0;
+  list-style:none;
+  color:var(--text);
+  font-weight:700;
+  cursor:pointer;
+  white-space:nowrap;
 }
 
-.header-category-menu::after{
+.header-category-trigger::-webkit-details-marker{
+  display:none;
+}
+
+.header-category-trigger::after{
   content:"▾";
-  font-size:24px;
+  font-size:14px;
   line-height:1;
   color:var(--muted);
-  margin-top:1px;
-  pointer-events:none;
 }
 
 .category-dropdown{
   position:absolute;
   top:calc(100% + 8px);
   left:0;
-  min-width:220px;
+  width:min(280px, calc(100vw - 24px));
+  max-height:min(70vh, 420px);
+  overflow:auto;
   background:#fff;
   border:1px solid var(--line);
   border-radius:14px;
@@ -175,7 +178,8 @@
 }
 
 .header-category-menu:hover .category-dropdown,
-.header-category-menu:focus-within .category-dropdown{
+.header-category-menu:focus-within .category-dropdown,
+.header-category-menu[open] .category-dropdown{
   display:grid;
   gap:2px;
 }
@@ -390,10 +394,6 @@ body .site-header .header-nav{
   body .site-header .header-nav{
     display:flex;
   }
-
-  .header-search .search-box{
-    display:none;
-  }
 }
 
 .page-footer{
@@ -510,17 +510,21 @@ body .site-header .header-nav{
 
   body .site-header .header-nav{
     display:flex;
-    width:100%;
+    width:auto;
     justify-content:flex-start;
     overflow-x:auto;
     padding-bottom:2px;
     order:1;
   }
 
+  body .site-header .header-category{
+    order:2;
+  }
+
   body .site-header .header-search{
     flex:1 1 260px;
     width:auto;
-    order:2;
+    order:3;
   }
 
   body .site-header .header-search .search-box{
@@ -532,7 +536,7 @@ body .site-header .header-nav{
 
   body .site-header .header-actions .header-language{
     width:max-content;
-    order:3;
+    order:4;
   }
 
   body .site-header .header-language-trigger{

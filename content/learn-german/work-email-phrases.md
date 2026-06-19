@@ -29,3 +29,8 @@ canonical_url: "/germany/ja/learn-german/work-email-phrases/"
 * 件名は短く具体的にする。
 * 期限がある場合は日付を明記する。
 * 催促は “kurz nachfragen” を使うと柔らかい。
+
+## 関連する生活ガイド
+
+* [仕事・求人](/germany/ja/jobs/)
+* [ドイツで家を探す基本ガイド](/germany/ja/living/rent-apartment-germany/)

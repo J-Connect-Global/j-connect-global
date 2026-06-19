@@ -28,3 +28,9 @@ canonical_url: "/germany/ja/learn-german/hospital-phrases/"
 ## メモ
 * 症状が強い場合は 116117 または救急番号を確認する。
 * 専門医は紹介状が必要な場合があるため、予約時に聞く。
+
+## 関連する生活ガイド
+
+* [ドイツの健康保険の基本](/germany/ja/living/health-insurance-guide/)
+* [医療・緊急情報](/germany/ja/medical/)
+* [ドイツで妊娠・出産したときの基本手続き](/germany/ja/living/pregnancy-birth-germany/)

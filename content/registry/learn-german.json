@@ -101,5 +101,116 @@
       "next_review_due": "2026-12-07"
     },
     "home_image_class": "img-meeting"
+  },
+  {
+    "id": "G004",
+    "title": "役所・Anmeldungで使うドイツ語フレーズ",
+    "slug": "behoerde-anmeldung-phrases",
+    "category": "役所・Anmeldung",
+    "summary": "住民登録、予約確認、必要書類、不足書類、証明書の受け取りなど、役所で使いやすい基本表現です。",
+    "url": "/germany/ja/learn-german/behoerde-anmeldung-phrases/",
+    "markdown_path": "/content/learn-german/behoerde-anmeldung-phrases.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-06-19",
+    "updated_at": "2026-06-19",
+    "last_verified": "2026-06-19",
+    "tags": ["役所", "Anmeldung", "A1"],
+    "home_visible": true,
+    "home_order": 40,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/learn-german/behoerde-anmeldung-phrases/",
+    "level": "A1-A2",
+    "situation": "役所・Anmeldung",
+    "official_sources": [],
+    "disclaimer_type": "language_learning",
+    "related_articles": ["appointment-phrase"],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Germany editorial",
+      "last_reviewed_at": "2026-06-19",
+      "next_review_due": "2026-12-19"
+    },
+    "home_image_class": "img-office",
+    "home_phrase": {
+      "de": "Ich möchte meinen Wohnsitz anmelden.",
+      "ja": "住所を登録したいです。"
+    }
+  },
+  {
+    "id": "G005",
+    "title": "大家・住まいの連絡で使うドイツ語フレーズ",
+    "slug": "landlord-housing-email-phrases",
+    "category": "住まい・メール",
+    "summary": "内見、必要書類、修理依頼、退去連絡など、大家・管理会社とのやり取りで使えるドイツ語表現です。",
+    "url": "/germany/ja/learn-german/landlord-housing-email-phrases/",
+    "markdown_path": "/content/learn-german/landlord-housing-email-phrases.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-06-19",
+    "updated_at": "2026-06-19",
+    "last_verified": "2026-06-19",
+    "tags": ["住まい", "大家", "メール"],
+    "home_visible": true,
+    "home_order": 50,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/learn-german/landlord-housing-email-phrases/",
+    "level": "A2-B1",
+    "situation": "住まい・メール",
+    "official_sources": [],
+    "disclaimer_type": "language_learning",
+    "related_articles": ["work-email-phrases"],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Germany editorial",
+      "last_reviewed_at": "2026-06-19",
+      "next_review_due": "2026-12-19"
+    },
+    "home_image_class": "img-meeting",
+    "home_phrase": {
+      "de": "Könnte ich einen Besichtigungstermin vereinbaren?",
+      "ja": "内見の予約を取れますか。"
+    }
+  },
+  {
+    "id": "G006",
+    "title": "Kita・学校への問い合わせで使うドイツ語フレーズ",
+    "slug": "kita-school-inquiry-phrases",
+    "category": "Kita・学校",
+    "summary": "Kita、Tagesmutter、Großtagespflege、学校への空き状況確認、見学、必要書類、待機リストの問い合わせに使える表現です。",
+    "url": "/germany/ja/learn-german/kita-school-inquiry-phrases/",
+    "markdown_path": "/content/learn-german/kita-school-inquiry-phrases.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-06-19",
+    "updated_at": "2026-06-19",
+    "last_verified": "2026-06-19",
+    "tags": ["Kita", "学校", "メール"],
+    "home_visible": true,
+    "home_order": 60,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/learn-german/kita-school-inquiry-phrases/",
+    "level": "A2-B1",
+    "situation": "Kita・学校",
+    "official_sources": [],
+    "disclaimer_type": "language_learning",
+    "related_articles": ["appointment-phrase", "work-email-phrases"],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Germany editorial",
+      "last_reviewed_at": "2026-06-19",
+      "next_review_due": "2026-12-19"
+    },
+    "home_image_class": "img-office",
+    "home_phrase": {
+      "de": "Haben Sie freie Plätze?",
+      "ja": "空きはありますか。"
+    }
   }
 ]

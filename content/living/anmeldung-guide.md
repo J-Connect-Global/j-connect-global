@@ -1087,6 +1087,7 @@ Anmeldung は、ドイツ生活の最初の重要手続きです。
 
 ## あわせて使えるドイツ語
 
+- [役所・Anmeldungで使うドイツ語フレーズ](/germany/ja/learn-german/behoerde-anmeldung-phrases/)
 - [予約を取りたいときのドイツ語フレーズ](/germany/ja/learn-german/appointment-phrase/)
 
 ---

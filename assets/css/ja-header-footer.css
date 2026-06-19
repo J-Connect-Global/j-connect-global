@@ -188,6 +188,7 @@
   border-radius:10px;
 }
 
+.category-dropdown a.active,
 .category-dropdown a:hover{
   background:var(--hover-blue-bg);
   border:1px solid var(--hover-blue);

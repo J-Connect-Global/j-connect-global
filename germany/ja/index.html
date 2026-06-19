@@ -42,12 +42,25 @@
     </a>
     <div class="header-actions">
       <nav class="header-nav" aria-label="主要ナビゲーション">
-        <a href="/germany/ja/community/">交流・掲示板</a>
-        <a href="/germany/ja/living/">生活・手続き</a>
-        <a href="/germany/ja/jobs/">仕事・求人</a>
-        <a href="/germany/ja/events/">ニュース・イベント</a>
-        <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+        <a href="/germany/ja/" class="active" aria-current="page">ホーム</a>
+        <a href="/germany/ja/about/">このサイトについて</a>
       </nav>
+      <div class="header-category header-category-menu" aria-label="カテゴリ選択">
+        <button type="button" class="header-category-trigger">カテゴリ</button>
+        <div class="category-dropdown">
+          <a href="/germany/ja/community/">交流・掲示板</a>
+          <a href="/germany/ja/living/">生活・手続き</a>
+          <a href="/germany/ja/jobs/">仕事・求人</a>
+          <a href="/germany/ja/events/">ニュース・イベント</a>
+          <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+          <a href="/germany/ja/eat/">食べる</a>
+          <a href="/germany/ja/shopping/">買い物</a>
+          <a href="/germany/ja/medical/">医療</a>
+          <a href="/germany/ja/guides/">ガイド</a>
+          <a href="/germany/ja/news/">ニュース</a>
+          <a href="/germany/ja/about/">J-CONNECTについて</a>
+        </div>
+      </div>
       <form class="header-search" action="/germany/ja/search/" method="get" role="search">
         <label class="search-box" aria-label="サイト内検索">
           <span aria-hidden="true">⌕</span>
@@ -82,61 +95,38 @@
       </p>
 
       <div class="portal3-quick">
-        <a class="portal3-red" href="/germany/ja/community/">掲示板を見る</a>
-        <a class="portal3-green" href="/germany/ja/living/">生活ガイド</a>
+        <a class="portal3-red" href="/germany/ja/community/post/">投稿する</a>
         <a class="portal3-blue" href="/germany/ja/jobs/">求人を見る</a>
-        <a class="portal3-alert" href="/germany/ja/events/">イベントを見る</a>
+        <a class="portal3-alert" href="/germany/ja/medical/">医療・緊急</a>
+        <a class="portal3-green" href="/germany/ja/events/">今週のイベント</a>
         <a class="portal3-purple" href="/germany/ja/learn-german/">ドイツ語を学ぶ</a>
       </div>
     </div>
   </section>
 
   <div class="portal3-ribbon-wrap">
-    <section class="portal3-section-cards" aria-labelledby="portal3-sections-title">
-      <div class="portal3-sections-head">
-        <h2 id="portal3-sections-title">5つの入口から探す</h2>
-        <p>J-CONNECT GERMANY の主要セクションを、目的に合わせて選べます。</p>
-      </div>
-      <div class="portal3-section-card-grid">
-        <article class="portal3-section-card">
-          <span class="portal3-section-number">01</span>
-          <h3>交流・掲示板</h3>
-          <p>売ります・譲ります・質問・友達募集など、ドイツ在住者同士でつながる掲示板。</p>
-          <a class="portal3-section-cta" href="/germany/ja/community/">掲示板を見る</a>
-        </article>
-        <article class="portal3-section-card">
-          <span class="portal3-section-number">02</span>
-          <h3>生活・手続き</h3>
-          <p>Anmeldung、健康保険、住まい、銀行、税金、妊娠・出産・Kitaまで、生活立ち上げに必要な情報。</p>
-          <a class="portal3-section-cta" href="/germany/ja/living/">生活ガイドを見る</a>
-          <div class="portal3-section-sublinks" aria-label="生活・手続きの関連カテゴリ">
-            <a href="/germany/ja/living/">手続き</a>
-            <a href="/germany/ja/eat/">食べる</a>
-            <a href="/germany/ja/shopping/">買い物</a>
-            <a href="/germany/ja/medical/">医療</a>
-            <a href="/germany/ja/guides/">ガイド</a>
-          </div>
-        </article>
-        <article class="portal3-section-card">
-          <span class="portal3-section-number">03</span>
-          <h3>仕事・求人</h3>
-          <p>ドイツで働きたい日本語話者向けの求人・仕事情報。</p>
-          <a class="portal3-section-cta" href="/germany/ja/jobs/">求人を見る</a>
-        </article>
-        <article class="portal3-section-card">
-          <span class="portal3-section-number">04</span>
-          <h3>ニュース・イベント</h3>
-          <p>NRW・ドイツの週末イベント、家族向け情報、地域のお知らせ。</p>
-          <a class="portal3-section-cta" href="/germany/ja/events/">イベントを見る</a>
-        </article>
-        <article class="portal3-section-card">
-          <span class="portal3-section-number">05</span>
-          <h3>ドイツ語・学び</h3>
-          <p>役所、病院、大家、職場メールなど、生活場面から覚える実用ドイツ語。</p>
-          <a class="portal3-section-cta" href="/germany/ja/learn-german/">ドイツ語フレーズを見る</a>
-        </article>
-      </div>
-    </section>
+    <nav class="portal3-ribbon" aria-label="主要カテゴリ">
+      <a href="#community">
+        <strong>① 交流・掲示板</strong>
+        <span>つながる・助け合う</span>
+      </a>
+      <a href="#living">
+        <strong>② 生活・手続き</strong>
+        <span>暮らしに役立つ情報</span>
+      </a>
+      <a href="#jobs">
+        <strong>③ 仕事・求人</strong>
+        <span>働く・キャリア支援</span>
+      </a>
+      <a href="#news-events">
+        <strong>④ ニュース・イベント</strong>
+        <span>最新情報をチェック</span>
+      </a>
+      <a href="#learn-german">
+        <strong>⑤ ドイツ語・学び</strong>
+        <span>学んで、もっと広がる</span>
+      </a>
+    </nav>
   </div>
 
   <div class="portal3-container">
@@ -539,9 +529,27 @@
       })[char]);
     }
 
+    function truthyFlag(value) {
+      if (value === true) return true;
+      return ["true", "1", "yes"].includes(String(value || "").trim().toLowerCase());
+    }
+
+    function falseFlag(value) {
+      if (value === false) return true;
+      return ["false", "0", "no"].includes(String(value || "").trim().toLowerCase());
+    }
+
+    function shouldDisplayPost(post) {
+      const status = String(post?.status || "").trim().toLowerCase();
+      if (status === "draft" || status === "hidden") return false;
+      if (truthyFlag(post?.deleted) || truthyFlag(post?.hidden)) return false;
+      if (falseFlag(post?.published)) return false;
+      return true;
+    }
+
     function normalizeRows(rows) {
       return shared.sortPosts((rows || [])
-        .filter((post) => typeof shared.isLikelyTestPost === "function" ? !shared.isLikelyTestPost(post) : true)
+        .filter(shouldDisplayPost)
         .map((post, index) => shared.normalizePost(post, index)));
     }
 
@@ -584,7 +592,7 @@
         const href = shared.communityDetailHref(post, "/germany/ja/community/");
         const thumbClass = thumbClassByType[post._postType] || "thumb-office";
         const image = post._images[0] || "";
-        const meta = [post._location, fallbackNote || shared.formatDate(post._date)].filter(Boolean).join("・");
+        const meta = [post._location, shared.formatDate(post._date)].filter(Boolean).join("・");
         return `
           <a class="portal3-mini" href="${escapeHtml(href)}" data-post-id="${escapeHtml(post._id)}">
             <span class="portal3-thumb ${escapeHtml(thumbClass)} ${image ? "has-photo" : ""}">
@@ -610,7 +618,7 @@
             <span class="portal3-card-img ${escapeHtml(imageClass)} ${image ? "has-photo" : ""}">
               ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(post._title)}の写真" loading="lazy" decoding="async" onerror="this.closest('.portal3-card-img')?.classList.remove('has-photo'); this.remove();">` : ""}
             </span>
-            <em>${escapeHtml(options.fallback ? `${post._postType}・確認用` : post._postType)}</em>
+            <em>${escapeHtml(post._postType)}</em>
             <strong>${escapeHtml(post._title)}</strong>
             <small>${escapeHtml(secondary || post._subcategory)}</small>
             <b>${escapeHtml(action)}</b>
@@ -630,7 +638,7 @@
         const payload = await dataSources.fetchJsonWithTimeout(url, 9000);
         const rows = dataSources.normalizePayload(payload);
         const posts = normalizeRows(rows);
-        render(posts.length ? posts : fallback, { fallback: !posts.length });
+        render(posts);
       } catch (error) {
         renderFallback();
       }

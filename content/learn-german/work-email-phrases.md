@@ -32,5 +32,7 @@ canonical_url: "/germany/ja/learn-german/work-email-phrases/"
 
 ## 関連する生活ガイド
 
+* [大家・住まいの連絡で使うドイツ語フレーズ](/germany/ja/learn-german/landlord-housing-email-phrases/)
+* [Kita・学校への問い合わせで使うドイツ語フレーズ](/germany/ja/learn-german/kita-school-inquiry-phrases/)
 * [仕事・求人](/germany/ja/jobs/)
 * [ドイツで家を探す基本ガイド](/germany/ja/living/rent-apartment-germany/)

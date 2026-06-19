@@ -31,6 +31,8 @@ canonical_url: "/germany/ja/learn-german/appointment-phrase/"
 
 ## 関連する生活ガイド
 
+* [役所・Anmeldungで使うドイツ語フレーズ](/germany/ja/learn-german/behoerde-anmeldung-phrases/)
+* [Kita・学校への問い合わせで使うドイツ語フレーズ](/germany/ja/learn-german/kita-school-inquiry-phrases/)
 * [ドイツ住民登録 Anmeldung 完全ガイド](/germany/ja/living/anmeldung-guide/)
 * [Kita探しの基本：U3・Tagesmutter・Großtagespflege](/germany/ja/living/kita-u3-tagesmutter-guide/)
 * [ドイツの健康保険の基本](/germany/ja/living/health-insurance-guide/)

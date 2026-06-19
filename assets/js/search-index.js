@@ -428,5 +428,38 @@ window.JCONNECT_SEARCH_INDEX = [
       "メール",
       "B1"
     ]
+  },
+  {
+    "title": "役所・Anmeldungで使うドイツ語フレーズ",
+    "description": "住民登録、予約確認、必要書類、不足書類、証明書の受け取りなど、役所で使いやすい基本表現です。",
+    "url": "/germany/ja/learn-german/behoerde-anmeldung-phrases/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "役所",
+      "Anmeldung",
+      "A1"
+    ]
+  },
+  {
+    "title": "大家・住まいの連絡で使うドイツ語フレーズ",
+    "description": "内見、必要書類、修理依頼、退去連絡など、大家・管理会社とのやり取りで使えるドイツ語表現です。",
+    "url": "/germany/ja/learn-german/landlord-housing-email-phrases/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "住まい",
+      "大家",
+      "メール"
+    ]
+  },
+  {
+    "title": "Kita・学校への問い合わせで使うドイツ語フレーズ",
+    "description": "Kita、Tagesmutter、Großtagespflege、学校への空き状況確認、見学、必要書類、待機リストの問い合わせに使える表現です。",
+    "url": "/germany/ja/learn-german/kita-school-inquiry-phrases/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "Kita",
+      "学校",
+      "メール"
+    ]
   }
 ];

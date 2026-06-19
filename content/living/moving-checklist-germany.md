@@ -1003,7 +1003,8 @@ Nachsendeauftrag は一時的な補助です。銀行、保険、勤務先、行
 
 ## あわせて使えるドイツ語
 
+* [大家・住まいの連絡で使うドイツ語フレーズ](/germany/ja/learn-german/landlord-housing-email-phrases/)
+* [役所・Anmeldungで使うドイツ語フレーズ](/germany/ja/learn-german/behoerde-anmeldung-phrases/)
 * [ビジネスメールで使う丁寧なドイツ語表現](/germany/ja/learn-german/work-email-phrases/)
-* [予約を取りたいときのドイツ語フレーズ](/germany/ja/learn-german/appointment-phrase/)
 
 [生活・手続き一覧へ戻る](/germany/ja/living/)

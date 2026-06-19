@@ -28,3 +28,9 @@ canonical_url: "/germany/ja/learn-german/appointment-phrase/"
 ## メモ
 * 用件、希望日、名前、電話番号を手元に置いてから連絡する。
 * 聞き取れない場合は、日時をメールで送ってもらえるか確認する。
+
+## 関連する生活ガイド
+
+* [ドイツ住民登録 Anmeldung 完全ガイド](/germany/ja/living/anmeldung-guide/)
+* [Kita探しの基本：U3・Tagesmutter・Großtagespflege](/germany/ja/living/kita-u3-tagesmutter-guide/)
+* [ドイツの健康保険の基本](/germany/ja/living/health-insurance-guide/)

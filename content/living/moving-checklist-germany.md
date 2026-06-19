@@ -1001,4 +1001,9 @@ Nachsendeauftrag は一時的な補助です。銀行、保険、勤務先、行
 
 制度や必要書類は自治体・契約先・保険会社・住居形態により異なるため、必ず公式情報も確認してください。
 
+## あわせて使えるドイツ語
+
+* [ビジネスメールで使う丁寧なドイツ語表現](/germany/ja/learn-german/work-email-phrases/)
+* [予約を取りたいときのドイツ語フレーズ](/germany/ja/learn-german/appointment-phrase/)
+
 [生活・手続き一覧へ戻る](/germany/ja/living/)

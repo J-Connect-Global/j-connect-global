@@ -1085,6 +1085,12 @@ Anmeldung は、ドイツ生活の最初の重要手続きです。
 
 ---
 
+## あわせて使えるドイツ語
+
+- [予約を取りたいときのドイツ語フレーズ](/germany/ja/learn-german/appointment-phrase/)
+
+---
+
 ## 関連記事
 
 - [ドイツ生活最初の30日チェックリスト](/germany/ja/living/germany-first-30-days/)

@@ -136,9 +136,15 @@
       <div class="learn-results-panel">
         <div class="learn-results-head">
           <div><h3>記事一覧</h3><p>条件に合うJ-Connect内の実用フレーズ記事を表示します。</p></div>
-          <p id="articleFilterStatus">すべての記事を表示しています。</p>
+          <div class="learn-results-actions">
+            <p id="articleFilterStatus">すべての記事を表示しています。</p>
+            <div class="learn-view-toggle" role="group" aria-label="実用フレーズ記事の表示切替" data-learn-view-toggle data-view-target="learningArticleGrid">
+              <button class="learn-view-button is-active" type="button" data-view-mode="grid" aria-pressed="true">グリッド</button>
+              <button class="learn-view-button" type="button" data-view-mode="list" aria-pressed="false">リスト</button>
+            </div>
+          </div>
         </div>
-        <div class="jc-article-grid" id="learningArticleGrid" aria-live="polite">
+        <div class="jc-article-grid learn-card-grid is-grid-view" id="learningArticleGrid" aria-live="polite" data-learn-view-container>
         <!-- CONTENT:learn-german-grid:start -->
         <a class="jc-article-card learn-article-card" href="/germany/ja/learn-german/bank-account-phrases/" data-learn-article-card data-content-type="phrase" data-title="銀行口座開設で使うドイツ語" data-summary="銀行口座の開設、本人確認、必要書類、予約、オンラインバンキングで使う基本フレーズです。" data-category="銀行・保険" data-tags="銀行口座 本人確認 A1" data-situation="bank appointment administration" data-goal="new-arrival daily-life" data-level="A1 A2" data-skill="speaking reading" data-duration="15min" data-search="銀行口座開設で使うドイツ語 銀行口座の開設、本人確認、必要書類、予約、オンラインバンキングで使う基本フレーズです。 銀行・保険 銀行口座 本人確認 A1 bank appointment administration new-arrival daily-life A1 A2 speaking reading 15min 銀行 / 予約 / 役所 ドイツに来たばかり / 生活で使う A1 / A2 話す / 読む 15分" data-published="2026-06-20">
           <div class="jc-card-meta"><span>銀行・保険</span><span>ドイツに来たばかり / 生活で使う</span><span>A1 / A2</span><span>話す / 読む</span><span>15分</span></div>
@@ -300,52 +306,70 @@
 
   <section class="jc-section learn-resource-section" id="learning-resources" aria-labelledby="learningResourcesTitle">
     <div class="jc-section-head"><div><h2 id="learningResourcesTitle">教材・リソース集</h2><p>アプリ、動画、講座、教材など、ドイツ語を継続して学ぶためのリソースを探せます。</p></div></div>
-    <div class="learn-resource-tools" aria-label="教材・リソースフィルター">
-      <label class="learn-article-search"><span>キーワード検索</span><input id="resourceSearch" type="search" placeholder="例：会話、動画、B1"></label>
-      <div class="learn-resource-filter-grid">
-        <details class="learn-filter-group" data-resource-filter-group open>
-          <summary>スキル</summary>
-          <div class="learn-filter-options is-short">
-            <button class="learn-filter-option" type="button" data-resource-filter="skill" data-filter-value="speaking" aria-controls="resourceArticleGrid">話す</button>
-            <button class="learn-filter-option" type="button" data-resource-filter="skill" data-filter-value="listening" aria-controls="resourceArticleGrid">聞く</button>
-            <button class="learn-filter-option" type="button" data-resource-filter="skill" data-filter-value="reading" aria-controls="resourceArticleGrid">読む</button>
-            <button class="learn-filter-option" type="button" data-resource-filter="skill" data-filter-value="writing" aria-controls="resourceArticleGrid">書く</button>
+    <div class="learn-search-layout learn-resource-layout">
+      <aside class="learn-filter-sidebar learn-resource-sidebar" aria-label="教材・リソースフィルター">
+        <div class="learn-selected-filters">
+          <div class="learn-selected-filters__head">
+            <span>リソース条件</span>
+            <button id="resourceFilterToggle" class="learn-mobile-filter-toggle" type="button" aria-expanded="true" aria-controls="resourceFilterPanel">条件を変更</button>
           </div>
-        </details>
-        <details class="learn-filter-group" data-resource-filter-group open>
-          <summary>形式</summary>
-          <div class="learn-filter-options is-short">
-            <button class="learn-filter-option" type="button" data-resource-filter="format" data-filter-value="app" aria-controls="resourceArticleGrid">アプリ</button>
-            <button class="learn-filter-option" type="button" data-resource-filter="format" data-filter-value="video" aria-controls="resourceArticleGrid">動画</button>
-            <button class="learn-filter-option" type="button" data-resource-filter="format" data-filter-value="website" aria-controls="resourceArticleGrid">サイト</button>
-            <button class="learn-filter-option" type="button" data-resource-filter="format" data-filter-value="course" aria-controls="resourceArticleGrid">講座</button>
-            <button class="learn-filter-option" type="button" data-resource-filter="format" data-filter-value="exam" aria-controls="resourceArticleGrid">試験対策</button>
+        </div>
+        <div id="resourceFilterPanel" class="learn-filter-panel">
+          <details class="learn-filter-group" data-resource-filter-group open>
+            <summary>キーワード</summary>
+            <label class="learn-article-search"><span>キーワード検索</span><input id="resourceSearch" type="search" placeholder="例：会話、動画、B1"></label>
+          </details>
+          <details class="learn-filter-group" data-resource-filter-group open>
+            <summary>スキル</summary>
+            <div class="learn-filter-options is-short">
+              <button class="learn-filter-option" type="button" data-resource-filter="skill" data-filter-value="speaking" aria-controls="resourceArticleGrid">話す</button>
+              <button class="learn-filter-option" type="button" data-resource-filter="skill" data-filter-value="listening" aria-controls="resourceArticleGrid">聞く</button>
+              <button class="learn-filter-option" type="button" data-resource-filter="skill" data-filter-value="reading" aria-controls="resourceArticleGrid">読む</button>
+              <button class="learn-filter-option" type="button" data-resource-filter="skill" data-filter-value="writing" aria-controls="resourceArticleGrid">書く</button>
+            </div>
+          </details>
+          <details class="learn-filter-group" data-resource-filter-group open>
+            <summary>形式</summary>
+            <div class="learn-filter-options is-short">
+              <button class="learn-filter-option" type="button" data-resource-filter="format" data-filter-value="app" aria-controls="resourceArticleGrid">アプリ</button>
+              <button class="learn-filter-option" type="button" data-resource-filter="format" data-filter-value="video" aria-controls="resourceArticleGrid">動画</button>
+              <button class="learn-filter-option" type="button" data-resource-filter="format" data-filter-value="website" aria-controls="resourceArticleGrid">サイト</button>
+              <button class="learn-filter-option" type="button" data-resource-filter="format" data-filter-value="course" aria-controls="resourceArticleGrid">講座</button>
+              <button class="learn-filter-option" type="button" data-resource-filter="format" data-filter-value="exam" aria-controls="resourceArticleGrid">試験対策</button>
+            </div>
+          </details>
+          <details class="learn-filter-group" data-resource-filter-group open>
+            <summary>レベル</summary>
+            <div class="learn-filter-options is-short">
+              <button class="learn-filter-option" type="button" data-resource-filter="level" data-filter-value="A1" aria-controls="resourceArticleGrid">A1</button>
+              <button class="learn-filter-option" type="button" data-resource-filter="level" data-filter-value="A2" aria-controls="resourceArticleGrid">A2</button>
+              <button class="learn-filter-option" type="button" data-resource-filter="level" data-filter-value="B1" aria-controls="resourceArticleGrid">B1</button>
+              <button class="learn-filter-option" type="button" data-resource-filter="level" data-filter-value="B2plus" aria-controls="resourceArticleGrid">B2以上</button>
+            </div>
+          </details>
+          <details class="learn-filter-group" data-resource-filter-group open>
+            <summary>料金</summary>
+            <div class="learn-filter-options is-short">
+              <button class="learn-filter-option" type="button" data-resource-filter="price" data-filter-value="free" aria-controls="resourceArticleGrid">無料</button>
+              <button class="learn-filter-option" type="button" data-resource-filter="price" data-filter-value="freemium" aria-controls="resourceArticleGrid">一部無料</button>
+              <button class="learn-filter-option" type="button" data-resource-filter="price" data-filter-value="paid" aria-controls="resourceArticleGrid">有料</button>
+            </div>
+          </details>
+          <button id="resourceFilterReset" class="living-reset-button learn-reset-button" type="button">リソース条件をリセット</button>
+        </div>
+      </aside>
+      <div class="learn-results-panel">
+        <div class="learn-results-head">
+          <div><h3>リソース一覧</h3><p>条件に合う学習アプリ、動画、サイト、講座を表示します。</p></div>
+          <div class="learn-results-actions">
+            <p id="resourceFilterStatus">すべてのリソースを表示しています。</p>
+            <div class="learn-view-toggle" role="group" aria-label="教材・リソース記事の表示切替" data-learn-view-toggle data-view-target="resourceArticleGrid">
+              <button class="learn-view-button is-active" type="button" data-view-mode="grid" aria-pressed="true">グリッド</button>
+              <button class="learn-view-button" type="button" data-view-mode="list" aria-pressed="false">リスト</button>
+            </div>
           </div>
-        </details>
-        <details class="learn-filter-group" data-resource-filter-group open>
-          <summary>レベル</summary>
-          <div class="learn-filter-options is-short">
-            <button class="learn-filter-option" type="button" data-resource-filter="level" data-filter-value="A1" aria-controls="resourceArticleGrid">A1</button>
-            <button class="learn-filter-option" type="button" data-resource-filter="level" data-filter-value="A2" aria-controls="resourceArticleGrid">A2</button>
-            <button class="learn-filter-option" type="button" data-resource-filter="level" data-filter-value="B1" aria-controls="resourceArticleGrid">B1</button>
-            <button class="learn-filter-option" type="button" data-resource-filter="level" data-filter-value="B2plus" aria-controls="resourceArticleGrid">B2以上</button>
-          </div>
-        </details>
-        <details class="learn-filter-group" data-resource-filter-group open>
-          <summary>料金</summary>
-          <div class="learn-filter-options is-short">
-            <button class="learn-filter-option" type="button" data-resource-filter="price" data-filter-value="free" aria-controls="resourceArticleGrid">無料</button>
-            <button class="learn-filter-option" type="button" data-resource-filter="price" data-filter-value="freemium" aria-controls="resourceArticleGrid">一部無料</button>
-            <button class="learn-filter-option" type="button" data-resource-filter="price" data-filter-value="paid" aria-controls="resourceArticleGrid">有料</button>
-          </div>
-        </details>
-      </div>
-      <div class="learn-resource-status">
-        <p id="resourceFilterStatus">すべてのリソースを表示しています。</p>
-        <button id="resourceFilterReset" class="living-reset-button learn-reset-button" type="button">リソース条件をリセット</button>
-      </div>
-    </div>
-    <div class="jc-article-grid learn-resource-grid" id="resourceArticleGrid" aria-live="polite">
+        </div>
+        <div class="jc-article-grid learn-resource-grid learn-card-grid is-grid-view" id="resourceArticleGrid" aria-live="polite" data-learn-view-container>
         <!-- CONTENT:learn-german-resource-grid:start -->
         <a class="jc-article-card learn-resource-card" href="/germany/ja/learn-german/tandem-language-exchange-guide/" data-resource-article-card data-content-type="resource" data-title="Tandemとは？ドイツ語会話練習に使える言語交換アプリ" data-summary="Tandemをドイツ語の会話・チャット練習に使うときの向き不向きと、J-Connect記事との組み合わせ方を整理します。" data-tags="Tandem 言語交換 会話" data-resource-skill="speaking writing" data-resource-format="app" data-resource-level="A2 B1 B2plus" data-resource-price="freemium" data-search="Tandemとは？ドイツ語会話練習に使える言語交換アプリ Tandemをドイツ語の会話・チャット練習に使うときの向き不向きと、J-Connect記事との組み合わせ方を整理します。 教材・リソース Tandem 言語交換 会話 work phone daily-life employment A2 B1 B2 speaking writing 15min speaking writing app A2 B1 B2plus freemium 話す / 書く アプリ A2 / B1 / B2以上 一部無料" data-published="2026-06-20">
           <div class="jc-card-meta"><span>話す / 書く</span><span>アプリ</span><span>A2 / B1 / B2以上</span><span>一部無料</span></div>
@@ -395,10 +419,12 @@
           <span class="jc-read-more">リソースを見る</span>
         </a>
         <!-- CONTENT:learn-german-resource-grid:end -->
-    </div>
-    <div id="resourceEmpty" class="learn-hub-empty" hidden>
-      <h3>条件に合うリソースはありません</h3>
-      <p>条件を少し広げるか、キーワードを変えて確認してください。</p>
+        </div>
+        <div id="resourceEmpty" class="learn-hub-empty" hidden>
+          <h3>条件に合うリソースはありません</h3>
+          <p>条件を少し広げるか、キーワードを変えて確認してください。</p>
+        </div>
+      </div>
     </div>
   </section>
     </div>

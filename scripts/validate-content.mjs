@@ -32,7 +32,7 @@ const contentTypes = {
     gridMarker: 'learn-german-grid',
     homeMarker: 'home-learn-german',
     homeLimit: 3,
-    learnFields: ['level', 'situation']
+    learnFields: ['level', 'situation', 'goal', 'skill', 'duration']
   }
 };
 
@@ -159,9 +159,13 @@ function validateRegistryItem(type, item, label) {
   }
 
   for (const field of contentTypes[type].learnFields || []) {
-    if (!String(item[field] ?? '').trim()) {
+    if (!toArray(item[field]).length) {
       problems.push(`${label} missing Learn German field: ${field}`);
     }
+  }
+
+  if (type === 'learn-german' && Object.prototype.hasOwnProperty.call(item, 'related_living_guides') && !Array.isArray(item.related_living_guides)) {
+    problems.push(`${label} related_living_guides must be an array when present.`);
   }
 
   if (!Array.isArray(item.official_sources)) {
@@ -453,6 +457,12 @@ function checkUnique(seen, value, message) {
     return;
   }
   seen.add(value);
+}
+
+function toArray(value) {
+  if (Array.isArray(value)) return value.filter((entry) => String(entry).trim()).map(String);
+  if (!value) return [];
+  return String(value).split(',').map((entry) => entry.trim()).filter(Boolean);
 }
 
 function exists(relPath) {

@@ -67,9 +67,3 @@ Mit freundlichen Grüßen
 * パスポート、Wohnungsgeberbestätigung、必要に応じて賃貸契約書を持参します。
 * 必要書類や予約方法は都市ごとに異なります。
 * 予約前に自治体公式サイトで最新情報を確認してください。
-
-## 関連する生活ガイド
-
-* [ドイツ住民登録 Anmeldung 完全ガイド](/germany/ja/living/anmeldung-guide/)
-* [ドイツ生活最初の30日チェックリスト](/germany/ja/living/germany-first-30-days/)
-* [ドイツで引っ越すときの手続きチェックリスト](/germany/ja/living/moving-checklist-germany/)

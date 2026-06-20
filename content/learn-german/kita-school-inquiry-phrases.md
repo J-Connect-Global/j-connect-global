@@ -64,9 +64,3 @@ Mit freundlichen Grüßen
 * 空き状況は都市、施設、年齢、希望時間によって大きく変わります。
 * 早めに問い合わせ、複数の施設を並行して確認すると進めやすくなります。
 * 自治体ポータルや Jugendamt の案内がある場合は、そちらも確認してください。
-
-## 関連する生活ガイド
-
-* [Kita探しの基本：U3・Tagesmutter・Großtagespflege](/germany/ja/living/kita-u3-tagesmutter-guide/)
-* [ドイツで妊娠・出産したときの基本手続き](/germany/ja/living/pregnancy-birth-germany/)
-* [ドイツの健康保険の基本](/germany/ja/living/health-insurance-guide/)

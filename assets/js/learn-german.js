@@ -13,6 +13,9 @@ const articleFilterCards = Array.from(document.querySelectorAll("[data-article-f
 const articleFilterStatus = document.getElementById("articleFilterStatus");
 const articleFilterReset = document.getElementById("articleFilterReset");
 const articleEmpty = document.getElementById("articleEmpty");
+const articleEmptyTitle = document.getElementById("articleEmptyTitle");
+const articleEmptyBody = document.getElementById("articleEmptyBody");
+const articleEmptyActions = Array.from(document.querySelectorAll("[data-empty-command]"));
 
 const resourceGrid = document.getElementById("resourceGrid");
 const resourceSearchInput = document.getElementById("resourceSearch");
@@ -128,7 +131,7 @@ function updateArticleFilterState(state, visibleCount) {
       ? `${articleCards.length}件中 ${visibleCount}件を表示しています。`
       : `すべての記事（${articleCards.length}件）を表示しています。`;
   }
-  if (articleEmpty) articleEmpty.hidden = visibleCount !== 0;
+  updateArticleEmptyState(state, visibleCount);
   if (articleFilterReset) articleFilterReset.disabled = !hasActiveFilter;
 
   for (const button of articleFilterCards) {
@@ -137,6 +140,56 @@ function updateArticleFilterState(state, visibleCount) {
     const active = field && sameFilterValue(state[field], value);
     button.classList.toggle("is-active", active);
     button.setAttribute("aria-pressed", active ? "true" : "false");
+  }
+}
+
+function updateArticleEmptyState(state, visibleCount) {
+  if (!articleEmpty) return;
+
+  const isEmpty = visibleCount === 0;
+  articleEmpty.hidden = !isEmpty;
+  if (!isEmpty) return;
+
+  const isAdvancedLevel = state.level !== "all" && matchesFilterValue("B2 C1 C2", state.level);
+  const isPlannedDuration = state.duration !== "all" && matchesFilterValue("30min", state.duration);
+
+  if (isAdvancedLevel) {
+    setArticleEmptyCopy(
+      "このレベルの記事は準備中です",
+      "B2以上の職場・大学・専門的な表現は今後追加予定です。まずはA2/B1の記事から確認できます。"
+    );
+    setEmptyActionVisibility({ relatedLevels: true, reset: true, all: false });
+    return;
+  }
+
+  if (isPlannedDuration) {
+    setArticleEmptyCopy(
+      "30分で学ぶ記事は準備中です",
+      "応用表現や長めの練習記事は今後追加予定です。まずは5分・15分の記事から確認できます。"
+    );
+    setEmptyActionVisibility({ relatedLevels: false, reset: true, all: true });
+    return;
+  }
+
+  setArticleEmptyCopy(
+    "条件に合う記事はまだありません",
+    "このテーマの記事は準備中です。条件を少し広げるか、近い場面の記事から確認してください。"
+  );
+  setEmptyActionVisibility({ relatedLevels: false, reset: true, all: true });
+}
+
+function setArticleEmptyCopy(title, body) {
+  if (articleEmptyTitle) articleEmptyTitle.textContent = title;
+  if (articleEmptyBody) articleEmptyBody.textContent = body;
+}
+
+function setEmptyActionVisibility({ relatedLevels, reset, all }) {
+  for (const action of articleEmptyActions) {
+    const kind = action.dataset.emptyCommand;
+    action.hidden =
+      (kind === "related-levels" && !relatedLevels) ||
+      (kind === "reset" && !reset) ||
+      (kind === "all" && !all);
   }
 }
 
@@ -178,6 +231,14 @@ function resetArticleFilters() {
   applyArticleFilters();
 }
 
+function showRelatedLevelArticles() {
+  if (articleSearchInput) articleSearchInput.value = "";
+  for (const [key, control] of Object.entries(articleFilterControls)) {
+    setControlValue(control, key === "level" ? "A2,B1" : "all");
+  }
+  applyArticleFilters({ scroll: true });
+}
+
 function setControlValue(control, value) {
   if (!control) return;
   const hasOption = Array.from(control.options).some(option => option.value === value);
@@ -211,7 +272,10 @@ function renderResources(items) {
   const published = items.filter(item => item.status !== "archived");
 
   if (!published.length) {
-    resourceGrid.innerHTML = `<p class="resource-empty">条件に合う教材はありません。</p>`;
+    const message = allResources.length
+      ? "条件に合う学習リソースはありません。条件を少し広げて確認してください。"
+      : "学習リソースを準備中です。アプリ、オンライン講座、動画教材などを順次整理します。";
+    resourceGrid.innerHTML = `<p class="resource-empty">${message}</p>`;
     return;
   }
 
@@ -329,6 +393,17 @@ articleFilterCards.forEach(button => {
   });
 
 articleFilterReset?.addEventListener("click", resetArticleFilters);
+
+articleEmptyActions.forEach(button => {
+  button.addEventListener("click", () => {
+    const action = button.dataset.emptyCommand;
+    if (action === "related-levels") {
+      showRelatedLevelArticles();
+      return;
+    }
+    resetArticleFilters();
+  });
+});
 
 [resourceSearchInput, levelFilter, layerFilter, formatFilter, purposeFilter, typeFilter, priceFilter]
   .filter(Boolean)

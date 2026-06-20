@@ -698,6 +698,18 @@
     align-items:stretch;
   }
 
+  .learn-filter-helper{
+    margin:-10px 0 4px;
+    padding:12px 14px;
+    border:1px solid var(--jc-line);
+    border-radius:var(--jc-radius-md);
+    background:#fff;
+    color:var(--jc-muted);
+    font-size:14px;
+    font-weight:800;
+    line-height:1.7;
+  }
+
   .learn-filter-grid.is-compact{
     grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
   }
@@ -711,10 +723,30 @@
     cursor:pointer;
   }
 
+  .learn-filter-card.is-roadmap{
+    border-style:dashed;
+    background:linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+  }
+
   .learn-filter-card.is-active{
     border-color:var(--jc-blue);
     background:linear-gradient(180deg, #ffffff 0%, #f4f9ff 100%);
     box-shadow:0 0 0 3px rgba(0, 103, 201, .16), var(--jc-shadow-hover);
+  }
+
+  .learn-card-badge{
+    justify-self:start;
+    display:inline-flex;
+    align-items:center;
+    min-height:24px;
+    padding:3px 8px;
+    border:1px solid var(--jc-line);
+    border-radius:999px;
+    background:var(--jc-soft);
+    color:var(--jc-blue);
+    font-size:12px;
+    font-weight:900;
+    line-height:1.2;
   }
 
   .learn-filter-card:focus-visible{
@@ -801,8 +833,37 @@
     line-height:1.7;
   }
 
+  .learn-hub-empty h3{
+    margin:0 0 6px;
+    color:var(--jc-navy);
+    font-size:18px;
+    line-height:1.4;
+  }
+
+  .learn-hub-empty p{
+    margin:0;
+    color:var(--jc-muted);
+    font-size:14px;
+    line-height:1.7;
+  }
+
+  .learn-empty-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:12px;
+  }
+
   .learn-route-card{
-    min-height:210px;
+    min-height:236px;
+    align-content:start;
+  }
+
+  .learn-route-card > p{
+    margin:0;
+    color:var(--jc-muted);
+    font-size:14px;
+    line-height:1.7;
   }
 
   .learn-route-card ol{
@@ -823,6 +884,19 @@
   .learn-route-card span{
     color:var(--jc-blue);
     text-decoration:none;
+  }
+
+  .learn-route-card em{
+    display:inline-flex;
+    margin-left:4px;
+    padding:2px 6px;
+    border:1px solid var(--jc-line);
+    border-radius:999px;
+    background:var(--jc-soft);
+    color:var(--jc-muted);
+    font-size:11px;
+    font-style:normal;
+    font-weight:900;
   }
 
   .learn-route-card a:hover,

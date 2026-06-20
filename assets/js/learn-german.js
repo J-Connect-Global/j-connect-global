@@ -1,40 +1,39 @@
-const LEARN_GERMAN_DATA_URL = "/assets/data/learn-german.json";
-
-const articleCards = Array.from(document.querySelectorAll("[data-learn-article-card]"));
-const articleSearchInput = document.getElementById("articleSearch");
-const articleFilterFields = ["situation", "goal", "level", "skill", "duration"];
-const articleFilterCards = Array.from(document.querySelectorAll("[data-article-filter]"));
-const articleFilterStatus = document.getElementById("articleFilterStatus");
-const articleFilterReset = document.getElementById("articleFilterReset");
-const articleEmpty = document.getElementById("articleEmpty");
-const articleEmptyTitle = document.getElementById("articleEmptyTitle");
-const articleEmptyBody = document.getElementById("articleEmptyBody");
-const articleEmptyActions = Array.from(document.querySelectorAll("[data-empty-command]"));
+const phraseCards = Array.from(document.querySelectorAll("[data-learn-article-card]"));
+const phraseSearchInput = document.getElementById("articleSearch");
+const phraseFilterFields = ["situation", "goal"];
+const phraseFilterButtons = Array.from(document.querySelectorAll("[data-article-filter]"));
+const phraseFilterStatus = document.getElementById("articleFilterStatus");
+const phraseFilterReset = document.getElementById("articleFilterReset");
+const phraseEmpty = document.getElementById("articleEmpty");
+const phraseEmptyActions = Array.from(document.querySelectorAll("[data-empty-command]"));
 const selectedFilterChips = document.getElementById("selectedFilterChips");
 const learnFilterToggle = document.getElementById("learnFilterToggle");
 const learnFilterPanel = document.getElementById("learnFilterPanel");
 const learnFilterGroups = Array.from(document.querySelectorAll("[data-filter-group]"));
 
-const resourceGrid = document.getElementById("resourceGrid");
+const resourceCards = Array.from(document.querySelectorAll("[data-resource-article-card]"));
 const resourceSearchInput = document.getElementById("resourceSearch");
-const levelFilter = document.getElementById("levelFilter");
-const layerFilter = document.getElementById("layerFilter");
-const formatFilter = document.getElementById("formatFilter");
-const purposeFilter = document.getElementById("purposeFilter");
-const typeFilter = document.getElementById("typeFilter");
-const priceFilter = document.getElementById("priceFilter");
+const resourceFilterFields = ["skill", "format", "level", "price"];
+const resourceFilterButtons = Array.from(document.querySelectorAll("[data-resource-filter]"));
+const resourceFilterStatus = document.getElementById("resourceFilterStatus");
+const resourceFilterReset = document.getElementById("resourceFilterReset");
+const resourceEmpty = document.getElementById("resourceEmpty");
 
-let allResources = [];
-let articleFilterState = {
+let phraseFilterState = {
   query: "",
   situation: "all",
-  goal: "all",
-  level: "all",
-  skill: "all",
-  duration: "all"
+  goal: "all"
 };
 
-const articleFilterLabels = {
+let resourceFilterState = {
+  query: "",
+  skill: "all",
+  format: "all",
+  level: "all",
+  price: "all"
+};
+
+const phraseFilterLabels = {
   situation: {
     "phone,appointment": "電話・予約",
     "medical,pharmacy": "病院・薬局",
@@ -53,45 +52,28 @@ const articleFilterLabels = {
     healthcare: "病院を利用したい",
     parenting: "子育てをしたい",
     "school-kita": "学校・Kitaを探したい"
-  },
-  level: {
-    A1: "A1",
-    A2: "A2",
-    B1: "B1",
-    "A2,B1": "A2/B1",
-    B2: "B2",
-    "C1,C2": "C1-C2"
-  },
+  }
+};
+
+const resourceFilterLabels = {
   skill: {
     speaking: "話す",
     listening: "聞く",
     reading: "読む",
     writing: "書く"
   },
-  duration: {
-    "5min": "5分",
-    "15min": "15分",
-    "30min": "30分"
-  }
-};
-
-const labels = {
-  layer1: {
-    roadmap: "ロードマップ",
-    daily: "日常ドイツ語",
-    business: "ビジネスドイツ語",
-    exam: "試験対策",
-    "apps-ai": "アプリ・AI",
-    media: "動画・音声",
-    speaking: "会話・先生",
-    community: "コミュニティ"
+  format: {
+    app: "アプリ",
+    video: "動画",
+    website: "サイト",
+    course: "講座",
+    exam: "試験対策"
   },
-  content_type: {
-    original: "Original",
-    external: "External",
-    ai_tool: "AI Tool",
-    community: "Community",
-    teacher_class: "Teacher/Class"
+  level: {
+    A1: "A1",
+    A2: "A2",
+    B1: "B1",
+    B2plus: "B2以上"
   },
   price: {
     free: "無料",
@@ -100,52 +82,203 @@ const labels = {
   }
 };
 
-function hydrateArticleFiltersFromUrl() {
-  if (!articleCards.length) return;
+function hydratePhraseFiltersFromUrl() {
+  if (!phraseCards.length) return;
   const params = new URLSearchParams(window.location.search);
-  for (const field of articleFilterFields) {
-    articleFilterState[field] = normalizeArticleFilterValue(field, params.get(field) || "all");
+  for (const field of phraseFilterFields) {
+    phraseFilterState[field] = normalizeFilterValue(field, params.get(field) || "all", phraseFilterLabels);
   }
-  articleFilterState.query = (params.get("article_q") || "").trim().toLowerCase();
-  if (articleSearchInput) articleSearchInput.value = articleFilterState.query;
-  applyArticleFilters({ updateUrl: false });
+  phraseFilterState.query = (params.get("article_q") || "").trim().toLowerCase();
+  if (phraseSearchInput) phraseSearchInput.value = phraseFilterState.query;
+  applyPhraseFilters({ updateUrl: false });
 }
 
-function getArticleFilterState() {
-  articleFilterState.query = (articleSearchInput?.value || "").trim().toLowerCase();
-  return {
-    ...articleFilterState
-  };
+function getPhraseFilterState() {
+  phraseFilterState.query = (phraseSearchInput?.value || "").trim().toLowerCase();
+  return { ...phraseFilterState };
 }
 
-function applyArticleFilters({ updateUrl = true, scroll = false } = {}) {
-  if (!articleCards.length) return;
-  const state = getArticleFilterState();
+function applyPhraseFilters({ updateUrl = true, scroll = false } = {}) {
+  if (!phraseCards.length) return;
+  const state = getPhraseFilterState();
   let visibleCount = 0;
 
-  for (const card of articleCards) {
-    const matches = articleMatches(card, state);
-    card.hidden = !matches;
-    card.classList.toggle("is-filtered-out", !matches);
-    card.setAttribute("aria-hidden", matches ? "false" : "true");
+  for (const card of phraseCards) {
+    const matches = phraseMatches(card, state);
+    setCardVisible(card, matches);
     if (matches) visibleCount += 1;
   }
 
-  updateArticleFilterState(state, visibleCount);
-  if (updateUrl) updateArticleUrl(state);
-  if (scroll) document.getElementById("learningArticles")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  updatePhraseFilterState(state, visibleCount);
+  if (updateUrl) updatePhraseUrl(state);
+  if (scroll) document.getElementById("phrase-library")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-function articleMatches(card, state) {
+function phraseMatches(card, state) {
   const searchText = String(card.dataset.search || "").toLowerCase();
   return (
     (!state.query || searchText.includes(state.query)) &&
     matchesFilterValue(card.dataset.situation, state.situation) &&
-    matchesFilterValue(card.dataset.goal, state.goal) &&
-    matchesFilterValue(card.dataset.level, state.level) &&
-    matchesFilterValue(card.dataset.skill, state.skill) &&
-    matchesFilterValue(card.dataset.duration, state.duration)
+    matchesFilterValue(card.dataset.goal, state.goal)
   );
+}
+
+function updatePhraseFilterState(state, visibleCount) {
+  const hasActiveFilter = hasActiveFilterState(state, phraseFilterFields);
+
+  if (phraseFilterStatus) {
+    phraseFilterStatus.textContent = hasActiveFilter
+      ? `${phraseCards.length}件中 ${visibleCount}件を表示しています。`
+      : `すべての記事（${phraseCards.length}件）を表示しています。`;
+  }
+
+  renderSelectedFilterChips(state);
+  if (phraseEmpty) phraseEmpty.hidden = visibleCount !== 0;
+  if (phraseFilterReset) phraseFilterReset.disabled = !hasActiveFilter;
+
+  for (const button of phraseFilterButtons) {
+    const field = button.dataset.articleFilter;
+    const value = button.dataset.filterValue || "all";
+    const active = field && sameFilterValue(state[field], value);
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  }
+}
+
+function updatePhraseUrl(state) {
+  if (!window.history?.replaceState) return;
+  const url = new URL(window.location.href);
+  for (const key of ["situation", "goal", "level", "skill", "duration", "article_q"]) {
+    url.searchParams.delete(key);
+  }
+  for (const key of phraseFilterFields) {
+    if (state[key] && state[key] !== "all") url.searchParams.set(key, state[key]);
+  }
+  if (state.query) url.searchParams.set("article_q", state.query);
+  window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
+}
+
+function setPhraseFilter(field, value) {
+  if (!phraseFilterFields.includes(field)) return;
+  const normalizedValue = normalizeFilterValue(field, value, phraseFilterLabels);
+  phraseFilterState[field] = sameFilterValue(phraseFilterState[field], normalizedValue) ? "all" : normalizedValue;
+  applyPhraseFilters({ scroll: true });
+}
+
+function removePhraseFilter(field) {
+  if (field === "query") {
+    phraseFilterState.query = "";
+    if (phraseSearchInput) phraseSearchInput.value = "";
+  } else if (phraseFilterFields.includes(field)) {
+    phraseFilterState[field] = "all";
+  }
+  applyPhraseFilters();
+}
+
+function resetPhraseFilters() {
+  if (phraseSearchInput) phraseSearchInput.value = "";
+  phraseFilterState = {
+    query: "",
+    situation: "all",
+    goal: "all"
+  };
+  applyPhraseFilters();
+}
+
+function renderSelectedFilterChips(state) {
+  if (!selectedFilterChips) return;
+  const chips = [];
+
+  if (state.query) {
+    chips.push(`<button class="learn-selected-chip" type="button" data-chip-remove="query">キーワード: ${escapeHtml(state.query)} <span aria-hidden="true">×</span></button>`);
+  }
+
+  for (const field of phraseFilterFields) {
+    if (!state[field] || state[field] === "all") continue;
+    const label = getFilterLabel(field, state[field], phraseFilterLabels);
+    chips.push(`<button class="learn-selected-chip" type="button" data-chip-remove="${escapeAttribute(field)}">${escapeHtml(label)} <span aria-hidden="true">×</span></button>`);
+  }
+
+  selectedFilterChips.innerHTML = chips.length
+    ? chips.join("")
+    : '<span class="learn-no-filters">条件は選択されていません</span>';
+}
+
+function getResourceFilterState() {
+  resourceFilterState.query = (resourceSearchInput?.value || "").trim().toLowerCase();
+  return { ...resourceFilterState };
+}
+
+function applyResourceFilters({ scroll = false } = {}) {
+  if (!resourceCards.length) return;
+  const state = getResourceFilterState();
+  let visibleCount = 0;
+
+  for (const card of resourceCards) {
+    const matches = resourceMatches(card, state);
+    setCardVisible(card, matches);
+    if (matches) visibleCount += 1;
+  }
+
+  updateResourceFilterState(state, visibleCount);
+  if (scroll) document.getElementById("learning-resources")?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function resourceMatches(card, state) {
+  const searchText = String(card.dataset.search || "").toLowerCase();
+  return (
+    (!state.query || searchText.includes(state.query)) &&
+    matchesFilterValue(card.dataset.resourceSkill, state.skill) &&
+    matchesFilterValue(card.dataset.resourceFormat, state.format) &&
+    matchesFilterValue(card.dataset.resourceLevel, state.level) &&
+    matchesFilterValue(card.dataset.resourcePrice, state.price)
+  );
+}
+
+function updateResourceFilterState(state, visibleCount) {
+  const hasActiveFilter = hasActiveFilterState(state, resourceFilterFields);
+
+  if (resourceFilterStatus) {
+    resourceFilterStatus.textContent = hasActiveFilter
+      ? `${resourceCards.length}件中 ${visibleCount}件を表示しています。`
+      : `すべてのリソース（${resourceCards.length}件）を表示しています。`;
+  }
+
+  if (resourceEmpty) resourceEmpty.hidden = visibleCount !== 0;
+  if (resourceFilterReset) resourceFilterReset.disabled = !hasActiveFilter;
+
+  for (const button of resourceFilterButtons) {
+    const field = button.dataset.resourceFilter;
+    const value = button.dataset.filterValue || "all";
+    const active = field && sameFilterValue(state[field], value);
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  }
+}
+
+function setResourceFilter(field, value) {
+  if (!resourceFilterFields.includes(field)) return;
+  const normalizedValue = normalizeFilterValue(field, value, resourceFilterLabels);
+  resourceFilterState[field] = sameFilterValue(resourceFilterState[field], normalizedValue) ? "all" : normalizedValue;
+  applyResourceFilters({ scroll: true });
+}
+
+function resetResourceFilters() {
+  if (resourceSearchInput) resourceSearchInput.value = "";
+  resourceFilterState = {
+    query: "",
+    skill: "all",
+    format: "all",
+    level: "all",
+    price: "all"
+  };
+  applyResourceFilters();
+}
+
+function setCardVisible(card, visible) {
+  card.hidden = !visible;
+  card.classList.toggle("is-filtered-out", !visible);
+  card.setAttribute("aria-hidden", visible ? "false" : "true");
 }
 
 function matchesFilterValue(cardValue, selectedValue) {
@@ -162,77 +295,6 @@ function splitFilterValue(value) {
     .filter(entry => entry && entry !== "all");
 }
 
-function updateArticleFilterState(state, visibleCount) {
-  const hasActiveFilter = hasActiveArticleFilter(state);
-
-  if (articleFilterStatus) {
-    articleFilterStatus.textContent = hasActiveFilter
-      ? `${articleCards.length}件中 ${visibleCount}件を表示しています。`
-      : `すべての記事（${articleCards.length}件）を表示しています。`;
-  }
-  renderSelectedFilterChips(state);
-  updateArticleEmptyState(state, visibleCount);
-  if (articleFilterReset) articleFilterReset.disabled = !hasActiveFilter;
-
-  for (const button of articleFilterCards) {
-    const field = button.dataset.articleFilter;
-    const value = button.dataset.filterValue || "all";
-    const active = field && sameFilterValue(state[field], value);
-    button.classList.toggle("is-active", active);
-    button.setAttribute("aria-pressed", active ? "true" : "false");
-  }
-}
-
-function updateArticleEmptyState(state, visibleCount) {
-  if (!articleEmpty) return;
-
-  const isEmpty = visibleCount === 0;
-  articleEmpty.hidden = !isEmpty;
-  if (!isEmpty) return;
-
-  const isAdvancedLevel = state.level !== "all" && matchesFilterValue("B2 C1 C2", state.level);
-  const isPlannedDuration = state.duration !== "all" && matchesFilterValue("30min", state.duration);
-
-  if (isAdvancedLevel) {
-    setArticleEmptyCopy(
-      "このレベルの記事は準備中です",
-      "B2以上の職場・大学・専門的な表現は今後追加予定です。まずはA2/B1の記事から確認できます。"
-    );
-    setEmptyActionVisibility({ relatedLevels: true, reset: true, all: false });
-    return;
-  }
-
-  if (isPlannedDuration) {
-    setArticleEmptyCopy(
-      "30分で学ぶ記事は準備中です",
-      "応用表現や長めの練習記事は今後追加予定です。まずは5分・15分の記事から確認できます。"
-    );
-    setEmptyActionVisibility({ relatedLevels: false, reset: true, all: true });
-    return;
-  }
-
-  setArticleEmptyCopy(
-    "条件に合う記事はまだありません",
-    "条件を少し広げるか、近い場面の記事から確認してください。"
-  );
-  setEmptyActionVisibility({ relatedLevels: false, reset: true, all: true });
-}
-
-function setArticleEmptyCopy(title, body) {
-  if (articleEmptyTitle) articleEmptyTitle.textContent = title;
-  if (articleEmptyBody) articleEmptyBody.textContent = body;
-}
-
-function setEmptyActionVisibility({ relatedLevels, reset, all }) {
-  for (const action of articleEmptyActions) {
-    const kind = action.dataset.emptyCommand;
-    action.hidden =
-      (kind === "related-levels" && !relatedLevels) ||
-      (kind === "reset" && !reset) ||
-      (kind === "all" && !all);
-  }
-}
-
 function sameFilterValue(left, right) {
   const leftValues = splitFilterValue(left).sort();
   const rightValues = splitFilterValue(right).sort();
@@ -241,66 +303,17 @@ function sameFilterValue(left, right) {
     leftValues.every((value, index) => value === rightValues[index]);
 }
 
-function updateArticleUrl(state) {
-  if (!window.history?.replaceState) return;
-  const url = new URL(window.location.href);
-  const keys = ["situation", "goal", "level", "skill", "duration", "article_q"];
-  for (const key of keys) url.searchParams.delete(key);
-
-  for (const key of ["situation", "goal", "level", "skill", "duration"]) {
-    if (state[key] && state[key] !== "all") url.searchParams.set(key, state[key]);
-  }
-  if (state.query) url.searchParams.set("article_q", state.query);
-
-  window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
-}
-
-function setArticleFilter(field, value) {
-  if (!articleFilterFields.includes(field)) return;
-  const normalizedValue = normalizeArticleFilterValue(field, value);
-  articleFilterState[field] = sameFilterValue(articleFilterState[field], normalizedValue) ? "all" : normalizedValue;
-  applyArticleFilters({ scroll: true });
-}
-
-function removeArticleFilter(field) {
-  if (field === "query") {
-    articleFilterState.query = "";
-    if (articleSearchInput) articleSearchInput.value = "";
-  } else if (articleFilterFields.includes(field)) {
-    articleFilterState[field] = "all";
-  }
-  applyArticleFilters();
-}
-
-function resetArticleFilters() {
-  if (articleSearchInput) articleSearchInput.value = "";
-  articleFilterState.query = "";
-  for (const field of articleFilterFields) {
-    articleFilterState[field] = "all";
-  }
-  applyArticleFilters();
-}
-
-function showRelatedLevelArticles() {
-  if (articleSearchInput) articleSearchInput.value = "";
-  articleFilterState.query = "";
-  for (const field of articleFilterFields) {
-    articleFilterState[field] = field === "level" ? "A2,B1" : "all";
-  }
-  applyArticleFilters({ scroll: true });
-}
-
-function hasActiveArticleFilter(state) {
+function hasActiveFilterState(state, fields) {
   return Boolean(
     state.query ||
-    articleFilterFields.some(field => state[field] && state[field] !== "all")
+    fields.some(field => state[field] && state[field] !== "all")
   );
 }
 
-function normalizeArticleFilterValue(field, value) {
+function normalizeFilterValue(field, value, labels) {
   const rawValue = String(value || "all").trim();
   if (!rawValue || rawValue === "all") return "all";
-  const labelsForField = articleFilterLabels[field] || {};
+  const labelsForField = labels[field] || {};
   if (Object.prototype.hasOwnProperty.call(labelsForField, rawValue)) return rawValue;
 
   const rawParts = splitFilterValue(rawValue);
@@ -311,8 +324,8 @@ function normalizeArticleFilterValue(field, value) {
   return matchingOption || rawValue;
 }
 
-function getArticleFilterLabel(field, value) {
-  const labelsForField = articleFilterLabels[field] || {};
+function getFilterLabel(field, value, labels) {
+  const labelsForField = labels[field] || {};
   if (labelsForField[value]) return labelsForField[value];
   const values = splitFilterValue(value);
   const label = Object.entries(labelsForField)
@@ -320,25 +333,6 @@ function getArticleFilterLabel(field, value) {
     .map(([, optionLabel]) => optionLabel)
     .join(" / ");
   return label || value;
-}
-
-function renderSelectedFilterChips(state) {
-  if (!selectedFilterChips) return;
-  const chips = [];
-
-  if (state.query) {
-    chips.push(`<button class="learn-selected-chip" type="button" data-chip-remove="query">キーワード: ${escapeHtml(state.query)} <span aria-hidden="true">×</span></button>`);
-  }
-
-  for (const field of articleFilterFields) {
-    if (!state[field] || state[field] === "all") continue;
-    const label = getArticleFilterLabel(field, state[field]);
-    chips.push(`<button class="learn-selected-chip" type="button" data-chip-remove="${escapeAttribute(field)}">${escapeHtml(label)} <span aria-hidden="true">×</span></button>`);
-  }
-
-  selectedFilterChips.innerHTML = chips.length
-    ? chips.join("")
-    : '<span class="learn-no-filters">条件は選択されていません</span>';
 }
 
 function setFilterPanelExpanded(expanded) {
@@ -358,7 +352,7 @@ function setFilterGroupsOpen(open) {
   }
 }
 
-function initializeResponsiveFilters() {
+function initializeResponsivePhraseFilters() {
   if (!window.matchMedia) return;
   const mobileQuery = window.matchMedia("(max-width: 759px)");
   const sync = () => {
@@ -370,124 +364,27 @@ function initializeResponsiveFilters() {
   mobileQuery.addEventListener?.("change", sync);
 }
 
-async function loadResources() {
-  if (!resourceGrid) return;
+function initializePageGuide() {
+  const guideLinks = Array.from(document.querySelectorAll(".learn-page-guide a"));
+  if (!guideLinks.length || !("IntersectionObserver" in window)) return;
+  const linkById = new Map(guideLinks.map(link => [link.getAttribute("href")?.slice(1), link]));
 
-  try {
-    const response = await fetch(LEARN_GERMAN_DATA_URL);
-
-    if (!response.ok) {
-      throw new Error(`Failed to load learn-german.json: ${response.status}`);
-    }
-
-    allResources = await response.json();
-    renderResources(allResources);
-  } catch (error) {
-    console.error(error);
-    resourceGrid.innerHTML = `
-      <p class="resource-empty">
-        学習リソースを読み込めませんでした。時間をおいてもう一度お試しください。
-      </p>
-    `;
-  }
-}
-
-function renderResources(items) {
-  if (!resourceGrid) return;
-  const published = items.filter(item => item.status !== "archived");
-
-  if (!published.length) {
-    const message = allResources.length
-      ? "条件に合う学習リソースはありません。条件を少し広げて確認してください。"
-      : "学習リソースを準備中です。アプリ、オンライン講座、動画教材などを順次整理します。";
-    resourceGrid.innerHTML = `<p class="resource-empty">${message}</p>`;
-    return;
-  }
-
-  resourceGrid.innerHTML = published.map(item => {
-    const url = getResourceUrl(item);
-    return `
-      <article class="resource-card">
-        <div class="resource-card__badges">
-          <span>${escapeHtml(labels.content_type[item.content_type] || item.content_type)}</span>
-          <span>${escapeHtml(formatArray(item.level).join("-"))}</span>
-          <span>${escapeHtml(labels.layer1[item.layer1] || item.layer1)}</span>
-          <span>${escapeHtml(labels.price[item.price] || item.price)}</span>
-        </div>
-
-        <h3>${escapeHtml(item.title_ja)}</h3>
-
-        <p>${escapeHtml(item.summary_ja)}</p>
-
-        <dl class="resource-card__meta">
-          <div>
-            <dt>おすすめ</dt>
-            <dd>${escapeHtml(item.recommended_use_ja || "")}</dd>
-          </div>
-          <div>
-            <dt>形式</dt>
-            <dd>${escapeHtml(formatArray(item.format).join(" / "))}</dd>
-          </div>
-        </dl>
-
-        <a class="resource-card__link" href="${escapeAttribute(url)}" ${isExternalUrl(url) ? 'target="_blank" rel="noopener noreferrer"' : ""}>
-          ${escapeHtml(item.cta_label || "開く")}
-        </a>
-      </article>
-    `;
-  }).join("");
-}
-
-function applyResourceFilters() {
-  const keyword = (resourceSearchInput?.value || "").toLowerCase().trim();
-  const level = levelFilter?.value || "all";
-  const layer = layerFilter?.value || "all";
-  const format = formatFilter?.value || "all";
-  const purpose = purposeFilter?.value || "all";
-  const type = typeFilter?.value || "all";
-  const price = priceFilter?.value || "all";
-
-  const filtered = allResources.filter(item => {
-    const searchableText = `
-      ${item.title_ja || ""}
-      ${item.summary_ja || ""}
-      ${item.recommended_use_ja || ""}
-      ${item.layer1 || ""}
-      ${item.layer2 || ""}
-      ${formatArray(item.level).join(" ")}
-      ${formatArray(item.purpose).join(" ")}
-      ${formatArray(item.scene).join(" ")}
-      ${formatArray(item.skill).join(" ")}
-      ${formatArray(item.format).join(" ")}
-      ${item.content_type || ""}
-      ${item.price || ""}
-    `.toLowerCase();
-
-    return (
-      (!keyword || searchableText.includes(keyword)) &&
-      (level === "all" || formatArray(item.level).includes(level)) &&
-      (layer === "all" || item.layer1 === layer) &&
-      (format === "all" || formatArray(item.format).includes(format)) &&
-      (purpose === "all" || formatArray(item.purpose).includes(purpose)) &&
-      (type === "all" || item.content_type === type) &&
-      (price === "all" || item.price === price)
-    );
+  const observer = new IntersectionObserver(entries => {
+    const visible = entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!visible) return;
+    for (const link of guideLinks) link.classList.remove("is-active");
+    linkById.get(visible.target.id)?.classList.add("is-active");
+  }, {
+    rootMargin: "-20% 0px -55% 0px",
+    threshold: [0.1, 0.35, 0.6]
   });
 
-  renderResources(filtered);
-}
-
-function formatArray(value) {
-  return Array.isArray(value) ? value : value ? [value] : [];
-}
-
-function isExternalUrl(url) {
-  return /^https?:\/\//i.test(String(url || ""));
-}
-
-function getResourceUrl(item) {
-  const url = String(item?.url || "").trim();
-  return url && url !== "#" ? url : "/germany/ja/learn-german/#resources";
+  for (const id of linkById.keys()) {
+    const section = document.getElementById(id);
+    if (section) observer.observe(section);
+  }
 }
 
 function escapeHtml(value) {
@@ -503,22 +400,21 @@ function escapeAttribute(value) {
   return escapeHtml(value);
 }
 
-articleFilterCards.forEach(button => {
+phraseFilterButtons.forEach(button => {
   button.setAttribute("aria-pressed", "false");
   button.addEventListener("click", () => {
-    setArticleFilter(button.dataset.articleFilter, button.dataset.filterValue || "all");
+    setPhraseFilter(button.dataset.articleFilter, button.dataset.filterValue || "all");
   });
 });
 
-articleSearchInput?.addEventListener("input", () => applyArticleFilters());
-articleSearchInput?.addEventListener("change", () => applyArticleFilters());
-
-articleFilterReset?.addEventListener("click", resetArticleFilters);
+phraseSearchInput?.addEventListener("input", () => applyPhraseFilters());
+phraseSearchInput?.addEventListener("change", () => applyPhraseFilters());
+phraseFilterReset?.addEventListener("click", resetPhraseFilters);
 
 selectedFilterChips?.addEventListener("click", event => {
   const button = event.target.closest("[data-chip-remove]");
   if (!button) return;
-  removeArticleFilter(button.dataset.chipRemove);
+  removePhraseFilter(button.dataset.chipRemove);
 });
 
 learnFilterToggle?.addEventListener("click", () => {
@@ -526,24 +422,22 @@ learnFilterToggle?.addEventListener("click", () => {
   setFilterPanelExpanded(!expanded);
 });
 
-articleEmptyActions.forEach(button => {
+phraseEmptyActions.forEach(button => {
+  button.addEventListener("click", resetPhraseFilters);
+});
+
+resourceFilterButtons.forEach(button => {
+  button.setAttribute("aria-pressed", "false");
   button.addEventListener("click", () => {
-    const action = button.dataset.emptyCommand;
-    if (action === "related-levels") {
-      showRelatedLevelArticles();
-      return;
-    }
-    resetArticleFilters();
+    setResourceFilter(button.dataset.resourceFilter, button.dataset.filterValue || "all");
   });
 });
 
-[resourceSearchInput, levelFilter, layerFilter, formatFilter, purposeFilter, typeFilter, priceFilter]
-  .filter(Boolean)
-  .forEach(element => {
-    element.addEventListener("input", applyResourceFilters);
-    element.addEventListener("change", applyResourceFilters);
-  });
+resourceSearchInput?.addEventListener("input", () => applyResourceFilters());
+resourceSearchInput?.addEventListener("change", () => applyResourceFilters());
+resourceFilterReset?.addEventListener("click", resetResourceFilters);
 
-initializeResponsiveFilters();
-hydrateArticleFiltersFromUrl();
-loadResources();
+initializeResponsivePhraseFilters();
+hydratePhraseFiltersFromUrl();
+applyResourceFilters();
+initializePageGuide();

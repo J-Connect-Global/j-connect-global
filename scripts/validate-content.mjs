@@ -61,6 +61,8 @@ const requiredFields = [
   'related_articles',
   'review'
 ];
+const learnGermanContentTypes = new Set(['phrase', 'route', 'resource']);
+const learnGermanResourceFields = ['resource_skills', 'resource_format', 'resource_level', 'resource_price_type'];
 const livingOfficialSourceTargets = new Set([
   'anmeldung-guide',
   'health-insurance-guide',
@@ -166,6 +168,20 @@ function validateRegistryItem(type, item, label) {
 
   if (type === 'learn-german' && Object.prototype.hasOwnProperty.call(item, 'related_living_guides') && !Array.isArray(item.related_living_guides)) {
     problems.push(`${label} related_living_guides must be an array when present.`);
+  }
+
+  if (type === 'learn-german') {
+    if (!learnGermanContentTypes.has(item.content_type)) {
+      problems.push(`${label} content_type must be one of: ${[...learnGermanContentTypes].join(', ')}.`);
+    }
+
+    if (item.content_type === 'resource') {
+      for (const field of learnGermanResourceFields) {
+        if (!toArray(item[field]).length) {
+          problems.push(`${label} missing resource metadata field: ${field}`);
+        }
+      }
+    }
   }
 
   if (!Array.isArray(item.official_sources)) {

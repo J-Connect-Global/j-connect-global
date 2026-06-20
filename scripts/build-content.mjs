@@ -57,8 +57,15 @@ const contentTypes = {
   }
 };
 
+const learnGermanContentTypes = new Set(['phrase', 'route', 'resource']);
 const learnGermanMetadataFields = ['situation', 'goal', 'level', 'skill', 'duration'];
+const learnGermanResourceFields = ['resource_skills', 'resource_format', 'resource_level', 'resource_price_type'];
 const learnGermanLabels = {
+  content_type: {
+    phrase: '実用フレーズ',
+    route: '学習ルート',
+    resource: '教材・リソース'
+  },
   situation: {
     phone: '電話',
     appointment: '予約',
@@ -96,6 +103,30 @@ const learnGermanLabels = {
     '5min': '5分',
     '15min': '15分',
     '30min': '30分'
+  },
+  resource_skills: {
+    speaking: '話す',
+    listening: '聞く',
+    reading: '読む',
+    writing: '書く'
+  },
+  resource_format: {
+    app: 'アプリ',
+    video: '動画',
+    website: 'サイト',
+    course: '講座',
+    exam: '試験対策'
+  },
+  resource_level: {
+    A1: 'A1',
+    A2: 'A2',
+    B1: 'B1',
+    B2plus: 'B2以上'
+  },
+  resource_price_type: {
+    free: '無料',
+    freemium: '一部無料',
+    paid: '有料'
   }
 };
 
@@ -189,7 +220,12 @@ function normalizeItem(type, item, index) {
 
 function normalizeLearnGermanItem(item) {
   const normalized = { ...item };
+  const contentType = String(item.content_type || '').trim();
+  normalized.content_type = learnGermanContentTypes.has(contentType) ? contentType : 'phrase';
   for (const field of learnGermanMetadataFields) {
+    normalized[field] = uniqueArray(toArray(item[field]));
+  }
+  for (const field of learnGermanResourceFields) {
     normalized[field] = uniqueArray(toArray(item[field]));
   }
   normalized.related_living_guides = uniqueArray(toArray(item.related_living_guides));
@@ -228,7 +264,7 @@ ${indent(ogMeta, 2)}
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal5-nav-20260618">
-  <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
+<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <script src="/assets/js/cookie-consent.js" defer></script>
 ${indent(structuredData, 2)}
@@ -530,11 +566,17 @@ function renderArticleMetaSpans(type, item) {
   }
 
   if (type === 'learn-german') {
+    rows.push(`<span>種類: ${escapeHtml(formatLearnGermanMeta('content_type', item.content_type))}</span>`);
     if (item.level?.length) rows.push(`<span>レベル: ${escapeHtml(formatLearnGermanMeta('level', item.level))}</span>`);
     if (item.situation?.length) rows.push(`<span>場面: ${escapeHtml(formatLearnGermanMeta('situation', item.situation))}</span>`);
     if (item.goal?.length) rows.push(`<span>目的: ${escapeHtml(formatLearnGermanMeta('goal', item.goal))}</span>`);
     if (item.skill?.length) rows.push(`<span>スキル: ${escapeHtml(formatLearnGermanMeta('skill', item.skill))}</span>`);
     if (item.duration?.length) rows.push(`<span>学習時間: ${escapeHtml(formatLearnGermanMeta('duration', item.duration))}</span>`);
+    if (item.content_type === 'resource') {
+      if (item.resource_skills?.length) rows.push(`<span>リソーススキル: ${escapeHtml(formatLearnGermanMeta('resource_skills', item.resource_skills))}</span>`);
+      if (item.resource_format?.length) rows.push(`<span>形式: ${escapeHtml(formatLearnGermanMeta('resource_format', item.resource_format))}</span>`);
+      if (item.resource_price_type?.length) rows.push(`<span>料金: ${escapeHtml(formatLearnGermanMeta('resource_price_type', item.resource_price_type))}</span>`);
+    }
   }
 
   if (item.review?.next_review_due) {
@@ -566,7 +608,12 @@ function renderOpenGraphMeta(type, item, title, canonicalHref) {
 
 function renderStructuredData(type, item, title, canonicalHref) {
   const keywords = type === 'learn-german'
-    ? uniqueArray([...item.tags, ...learnGermanMetadataFields.flatMap((field) => toArray(item[field]))])
+    ? uniqueArray([
+      ...item.tags,
+      item.content_type,
+      ...learnGermanMetadataFields.flatMap((field) => toArray(item[field])),
+      ...learnGermanResourceFields.flatMap((field) => toArray(item[field]))
+    ])
     : item.tags;
   const article = {
     '@context': 'https://schema.org',
@@ -930,6 +977,11 @@ function findRelatedItem(reference, allItems) {
 }
 
 function updateHub(type, items) {
+  if (type === 'learn-german') {
+    updateLearnGermanHub(items);
+    return;
+  }
+
   const config = contentTypes[type];
   const hubPath = config.hubPath;
   const cards = sortForHub(items)
@@ -947,6 +999,50 @@ function updateHub(type, items) {
   );
 
   writeText(hubPath, nextHtml);
+}
+
+function updateLearnGermanHub(items) {
+  const config = contentTypes['learn-german'];
+  const hubPath = config.hubPath;
+  let html = readText(hubPath);
+  const published = sortForHub(items).filter((item) => item.published && item.hub_visible);
+
+  const phraseCards = published
+    .filter((item) => item.content_type === 'phrase')
+    .map(renderLearnGermanPhraseHubCard)
+    .join('\n\n');
+  const routeCards = published
+    .filter((item) => item.content_type === 'route')
+    .map(renderLearnGermanRouteHubCard)
+    .join('\n\n');
+  const resourceCards = published
+    .filter((item) => item.content_type === 'resource')
+    .map(renderLearnGermanResourceHubCard)
+    .join('\n\n');
+
+  html = replaceMarkedDivContent(
+    html,
+    config.gridMarker,
+    /<div class="jc-article-grid" id="learningArticleGrid"[^>]*>/,
+    phraseCards,
+    8
+  );
+  html = replaceMarkedDivContent(
+    html,
+    'learn-german-route-grid',
+    /<div class="learn-route-grid" id="learningRouteGrid"[^>]*>/,
+    routeCards,
+    8
+  );
+  html = replaceMarkedDivContent(
+    html,
+    'learn-german-resource-grid',
+    /<div class="jc-article-grid learn-resource-grid" id="resourceArticleGrid"[^>]*>/,
+    resourceCards,
+    8
+  );
+
+  writeText(hubPath, html);
 }
 
 function hubGridPattern(type) {
@@ -1014,6 +1110,12 @@ function renderEventHubCard(item) {
 }
 
 function renderLearnGermanHubCard(item) {
+  if (item.content_type === 'route') return renderLearnGermanRouteHubCard(item);
+  if (item.content_type === 'resource') return renderLearnGermanResourceHubCard(item);
+  return renderLearnGermanPhraseHubCard(item);
+}
+
+function renderLearnGermanPhraseHubCard(item) {
   const tags = item.tags.slice(0, 4).map((tag) => `<span class="jc-chip">${escapeHtml(tag)}</span>`).join('');
   const metadata = learnGermanMetadataFields.flatMap((field) => toArray(item[field]));
   const searchText = [
@@ -1024,13 +1126,61 @@ function renderLearnGermanHubCard(item) {
     ...metadata,
     ...learnGermanMetadataFields.map((field) => formatLearnGermanMeta(field, item[field]))
   ].join(' ');
+  const metaChips = [
+    item.category || formatLearnGermanMeta('situation', item.situation),
+    formatLearnGermanMeta('goal', item.goal),
+    formatLearnGermanMeta('level', item.level),
+    formatLearnGermanMeta('skill', item.skill),
+    formatLearnGermanMeta('duration', item.duration)
+  ].filter(Boolean);
 
-  return `<a class="jc-article-card learn-article-card" href="${escapeAttribute(item.url)}" data-learn-article-card data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-situation="${escapeAttribute(toArray(item.situation).join(' '))}" data-goal="${escapeAttribute(toArray(item.goal).join(' '))}" data-level="${escapeAttribute(toArray(item.level).join(' '))}" data-skill="${escapeAttribute(toArray(item.skill).join(' '))}" data-duration="${escapeAttribute(toArray(item.duration).join(' '))}" data-search="${escapeAttribute(searchText)}" data-published="${escapeAttribute(item.published_at || '')}">
-  <div class="jc-card-meta"><span>${escapeHtml(item.published_at || '')}</span><span>${escapeHtml(formatLearnGermanMeta('level', item.level))}</span><span>${escapeHtml(item.category || formatLearnGermanMeta('situation', item.situation))}</span><span>${escapeHtml(formatLearnGermanMeta('duration', item.duration))}</span></div>
+  return `<a class="jc-article-card learn-article-card" href="${escapeAttribute(item.url)}" data-learn-article-card data-content-type="phrase" data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-situation="${escapeAttribute(toArray(item.situation).join(' '))}" data-goal="${escapeAttribute(toArray(item.goal).join(' '))}" data-level="${escapeAttribute(toArray(item.level).join(' '))}" data-skill="${escapeAttribute(toArray(item.skill).join(' '))}" data-duration="${escapeAttribute(toArray(item.duration).join(' '))}" data-search="${escapeAttribute(searchText)}" data-published="${escapeAttribute(item.published_at || '')}">
+  <div class="jc-card-meta">${metaChips.map((chip) => `<span>${escapeHtml(chip)}</span>`).join('')}</div>
   <h3>${escapeHtml(item.title)}</h3>
   <p>${escapeHtml(item.summary)}</p>
   <div class="jc-chip-row">${tags}</div>
   <span class="jc-read-more">記事を読む</span>
+</a>`;
+}
+
+function renderLearnGermanRouteHubCard(item) {
+  const metaChips = [
+    formatLearnGermanMeta('level', item.level),
+    formatLearnGermanMeta('goal', item.goal),
+    formatLearnGermanMeta('duration', item.duration)
+  ].filter(Boolean);
+
+  return `<a class="jc-card learn-route-card" href="${escapeAttribute(item.url)}" data-learn-route-card>
+  <div class="jc-card-meta">${metaChips.map((chip) => `<span>${escapeHtml(chip)}</span>`).join('')}</div>
+  <h3>${escapeHtml(item.title)}</h3>
+  <p>${escapeHtml(item.summary)}</p>
+  <span class="jc-read-more">ルートを見る</span>
+</a>`;
+}
+
+function renderLearnGermanResourceHubCard(item) {
+  const searchText = [
+    item.title,
+    item.summary,
+    item.category,
+    ...item.tags,
+    ...learnGermanMetadataFields.flatMap((field) => toArray(item[field])),
+    ...learnGermanResourceFields.flatMap((field) => toArray(item[field])),
+    ...learnGermanResourceFields.map((field) => formatLearnGermanMeta(field, item[field]))
+  ].join(' ');
+  const badges = [
+    formatLearnGermanMeta('resource_skills', item.resource_skills),
+    formatLearnGermanMeta('resource_format', item.resource_format),
+    formatLearnGermanMeta('resource_level', item.resource_level),
+    formatLearnGermanMeta('resource_price_type', item.resource_price_type)
+  ].filter(Boolean);
+
+  return `<a class="jc-article-card learn-resource-card" href="${escapeAttribute(item.url)}" data-resource-article-card data-content-type="resource" data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-resource-skill="${escapeAttribute(toArray(item.resource_skills).join(' '))}" data-resource-format="${escapeAttribute(toArray(item.resource_format).join(' '))}" data-resource-level="${escapeAttribute(toArray(item.resource_level).join(' '))}" data-resource-price="${escapeAttribute(toArray(item.resource_price_type).join(' '))}" data-search="${escapeAttribute(searchText)}" data-published="${escapeAttribute(item.published_at || '')}">
+  <div class="jc-card-meta">${badges.map((badge) => `<span>${escapeHtml(badge)}</span>`).join('')}</div>
+  <h3>${escapeHtml(item.title)}</h3>
+  <p>${escapeHtml(item.summary)}</p>
+  <div class="jc-chip-row">${item.tags.slice(0, 4).map((tag) => `<span class="jc-chip">${escapeHtml(tag)}</span>`).join('')}</div>
+  <span class="jc-read-more">リソースを見る</span>
 </a>`;
 }
 
@@ -1133,7 +1283,12 @@ function updateSearchIndex(allItems, pages) {
       url: item.url,
       category: contentTypes[item.type].label,
       tags: item.type === 'learn-german'
-        ? uniqueArray([...item.tags, ...learnGermanMetadataFields.flatMap((field) => toArray(item[field]))])
+        ? uniqueArray([
+          ...item.tags,
+          item.content_type,
+          ...learnGermanMetadataFields.flatMap((field) => toArray(item[field])),
+          ...learnGermanResourceFields.flatMap((field) => toArray(item[field]))
+        ])
         : item.tags
     }));
 

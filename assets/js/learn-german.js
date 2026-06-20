@@ -2,13 +2,7 @@ const LEARN_GERMAN_DATA_URL = "/assets/data/learn-german.json";
 
 const articleCards = Array.from(document.querySelectorAll("[data-learn-article-card]"));
 const articleSearchInput = document.getElementById("articleSearch");
-const articleFilterControls = {
-  situation: document.getElementById("articleSituationFilter"),
-  goal: document.getElementById("articleGoalFilter"),
-  level: document.getElementById("articleLevelFilter"),
-  skill: document.getElementById("articleSkillFilter"),
-  duration: document.getElementById("articleDurationFilter")
-};
+const articleFilterFields = ["situation", "goal", "level", "skill", "duration"];
 const articleFilterCards = Array.from(document.querySelectorAll("[data-article-filter]"));
 const articleFilterStatus = document.getElementById("articleFilterStatus");
 const articleFilterReset = document.getElementById("articleFilterReset");
@@ -16,6 +10,10 @@ const articleEmpty = document.getElementById("articleEmpty");
 const articleEmptyTitle = document.getElementById("articleEmptyTitle");
 const articleEmptyBody = document.getElementById("articleEmptyBody");
 const articleEmptyActions = Array.from(document.querySelectorAll("[data-empty-command]"));
+const selectedFilterChips = document.getElementById("selectedFilterChips");
+const learnFilterToggle = document.getElementById("learnFilterToggle");
+const learnFilterPanel = document.getElementById("learnFilterPanel");
+const learnFilterGroups = Array.from(document.querySelectorAll("[data-filter-group]"));
 
 const resourceGrid = document.getElementById("resourceGrid");
 const resourceSearchInput = document.getElementById("resourceSearch");
@@ -27,6 +25,55 @@ const typeFilter = document.getElementById("typeFilter");
 const priceFilter = document.getElementById("priceFilter");
 
 let allResources = [];
+let articleFilterState = {
+  query: "",
+  situation: "all",
+  goal: "all",
+  level: "all",
+  skill: "all",
+  duration: "all"
+};
+
+const articleFilterLabels = {
+  situation: {
+    "phone,appointment": "電話・予約",
+    "medical,pharmacy": "病院・薬局",
+    "administration,anmeldung": "役所・Anmeldung",
+    "housing,landlord": "大家・住まい",
+    "kita,school": "Kita・学校",
+    "work,business-email": "職場・ビジネスメール",
+    "bank,insurance": "銀行・保険",
+    shopping: "買い物",
+    parenting: "子育て"
+  },
+  goal: {
+    "new-arrival": "ドイツに来たばかり",
+    employment: "仕事を探したい",
+    "housing-contract": "賃貸契約をしたい",
+    healthcare: "病院を利用したい",
+    parenting: "子育てをしたい",
+    "school-kita": "学校・Kitaを探したい"
+  },
+  level: {
+    A1: "A1",
+    A2: "A2",
+    B1: "B1",
+    "A2,B1": "A2/B1",
+    B2: "B2",
+    "C1,C2": "C1-C2"
+  },
+  skill: {
+    speaking: "話す",
+    listening: "聞く",
+    reading: "読む",
+    writing: "書く"
+  },
+  duration: {
+    "5min": "5分",
+    "15min": "15分",
+    "30min": "30分"
+  }
+};
 
 const labels = {
   layer1: {
@@ -56,21 +103,18 @@ const labels = {
 function hydrateArticleFiltersFromUrl() {
   if (!articleCards.length) return;
   const params = new URLSearchParams(window.location.search);
-  for (const [field, control] of Object.entries(articleFilterControls)) {
-    setControlValue(control, params.get(field) || "all");
+  for (const field of articleFilterFields) {
+    articleFilterState[field] = normalizeArticleFilterValue(field, params.get(field) || "all");
   }
-  if (articleSearchInput) articleSearchInput.value = params.get("article_q") || "";
+  articleFilterState.query = (params.get("article_q") || "").trim().toLowerCase();
+  if (articleSearchInput) articleSearchInput.value = articleFilterState.query;
   applyArticleFilters({ updateUrl: false });
 }
 
 function getArticleFilterState() {
+  articleFilterState.query = (articleSearchInput?.value || "").trim().toLowerCase();
   return {
-    query: (articleSearchInput?.value || "").trim().toLowerCase(),
-    situation: articleFilterControls.situation?.value || "all",
-    goal: articleFilterControls.goal?.value || "all",
-    level: articleFilterControls.level?.value || "all",
-    skill: articleFilterControls.skill?.value || "all",
-    duration: articleFilterControls.duration?.value || "all"
+    ...articleFilterState
   };
 }
 
@@ -82,6 +126,8 @@ function applyArticleFilters({ updateUrl = true, scroll = false } = {}) {
   for (const card of articleCards) {
     const matches = articleMatches(card, state);
     card.hidden = !matches;
+    card.classList.toggle("is-filtered-out", !matches);
+    card.setAttribute("aria-hidden", matches ? "false" : "true");
     if (matches) visibleCount += 1;
   }
 
@@ -117,20 +163,14 @@ function splitFilterValue(value) {
 }
 
 function updateArticleFilterState(state, visibleCount) {
-  const hasActiveFilter = Boolean(
-    state.query ||
-    state.situation !== "all" ||
-    state.goal !== "all" ||
-    state.level !== "all" ||
-    state.skill !== "all" ||
-    state.duration !== "all"
-  );
+  const hasActiveFilter = hasActiveArticleFilter(state);
 
   if (articleFilterStatus) {
     articleFilterStatus.textContent = hasActiveFilter
       ? `${articleCards.length}件中 ${visibleCount}件を表示しています。`
       : `すべての記事（${articleCards.length}件）を表示しています。`;
   }
+  renderSelectedFilterChips(state);
   updateArticleEmptyState(state, visibleCount);
   if (articleFilterReset) articleFilterReset.disabled = !hasActiveFilter;
 
@@ -173,7 +213,7 @@ function updateArticleEmptyState(state, visibleCount) {
 
   setArticleEmptyCopy(
     "条件に合う記事はまだありません",
-    "このテーマの記事は準備中です。条件を少し広げるか、近い場面の記事から確認してください。"
+    "条件を少し広げるか、近い場面の記事から確認してください。"
   );
   setEmptyActionVisibility({ relatedLevels: false, reset: true, all: true });
 }
@@ -215,34 +255,119 @@ function updateArticleUrl(state) {
   window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
 }
 
-function setSingleArticleFilter(field, value) {
-  if (articleSearchInput) articleSearchInput.value = "";
-  for (const [key, control] of Object.entries(articleFilterControls)) {
-    setControlValue(control, key === field ? value : "all");
-  }
+function setArticleFilter(field, value) {
+  if (!articleFilterFields.includes(field)) return;
+  const normalizedValue = normalizeArticleFilterValue(field, value);
+  articleFilterState[field] = sameFilterValue(articleFilterState[field], normalizedValue) ? "all" : normalizedValue;
   applyArticleFilters({ scroll: true });
+}
+
+function removeArticleFilter(field) {
+  if (field === "query") {
+    articleFilterState.query = "";
+    if (articleSearchInput) articleSearchInput.value = "";
+  } else if (articleFilterFields.includes(field)) {
+    articleFilterState[field] = "all";
+  }
+  applyArticleFilters();
 }
 
 function resetArticleFilters() {
   if (articleSearchInput) articleSearchInput.value = "";
-  for (const control of Object.values(articleFilterControls)) {
-    setControlValue(control, "all");
+  articleFilterState.query = "";
+  for (const field of articleFilterFields) {
+    articleFilterState[field] = "all";
   }
   applyArticleFilters();
 }
 
 function showRelatedLevelArticles() {
   if (articleSearchInput) articleSearchInput.value = "";
-  for (const [key, control] of Object.entries(articleFilterControls)) {
-    setControlValue(control, key === "level" ? "A2,B1" : "all");
+  articleFilterState.query = "";
+  for (const field of articleFilterFields) {
+    articleFilterState[field] = field === "level" ? "A2,B1" : "all";
   }
   applyArticleFilters({ scroll: true });
 }
 
-function setControlValue(control, value) {
-  if (!control) return;
-  const hasOption = Array.from(control.options).some(option => option.value === value);
-  control.value = hasOption ? value : "all";
+function hasActiveArticleFilter(state) {
+  return Boolean(
+    state.query ||
+    articleFilterFields.some(field => state[field] && state[field] !== "all")
+  );
+}
+
+function normalizeArticleFilterValue(field, value) {
+  const rawValue = String(value || "all").trim();
+  if (!rawValue || rawValue === "all") return "all";
+  const labelsForField = articleFilterLabels[field] || {};
+  if (Object.prototype.hasOwnProperty.call(labelsForField, rawValue)) return rawValue;
+
+  const rawParts = splitFilterValue(rawValue);
+  const matchingOption = Object.keys(labelsForField).find(optionValue => {
+    const optionParts = splitFilterValue(optionValue);
+    return rawParts.length && rawParts.every(part => optionParts.includes(part));
+  });
+  return matchingOption || rawValue;
+}
+
+function getArticleFilterLabel(field, value) {
+  const labelsForField = articleFilterLabels[field] || {};
+  if (labelsForField[value]) return labelsForField[value];
+  const values = splitFilterValue(value);
+  const label = Object.entries(labelsForField)
+    .filter(([optionValue]) => values.some(valuePart => splitFilterValue(optionValue).includes(valuePart)))
+    .map(([, optionLabel]) => optionLabel)
+    .join(" / ");
+  return label || value;
+}
+
+function renderSelectedFilterChips(state) {
+  if (!selectedFilterChips) return;
+  const chips = [];
+
+  if (state.query) {
+    chips.push(`<button class="learn-selected-chip" type="button" data-chip-remove="query">キーワード: ${escapeHtml(state.query)} <span aria-hidden="true">×</span></button>`);
+  }
+
+  for (const field of articleFilterFields) {
+    if (!state[field] || state[field] === "all") continue;
+    const label = getArticleFilterLabel(field, state[field]);
+    chips.push(`<button class="learn-selected-chip" type="button" data-chip-remove="${escapeAttribute(field)}">${escapeHtml(label)} <span aria-hidden="true">×</span></button>`);
+  }
+
+  selectedFilterChips.innerHTML = chips.length
+    ? chips.join("")
+    : '<span class="learn-no-filters">条件は選択されていません</span>';
+}
+
+function setFilterPanelExpanded(expanded) {
+  if (!learnFilterPanel || !learnFilterToggle) return;
+  learnFilterPanel.classList.toggle("is-collapsed", !expanded);
+  learnFilterToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+  learnFilterToggle.textContent = expanded ? "フィルターを閉じる" : "条件を変更";
+}
+
+function setFilterGroupsOpen(open) {
+  for (const group of learnFilterGroups) {
+    if (open) {
+      group.setAttribute("open", "");
+    } else {
+      group.removeAttribute("open");
+    }
+  }
+}
+
+function initializeResponsiveFilters() {
+  if (!window.matchMedia) return;
+  const mobileQuery = window.matchMedia("(max-width: 759px)");
+  const sync = () => {
+    const isMobile = mobileQuery.matches;
+    setFilterPanelExpanded(!isMobile);
+    setFilterGroupsOpen(!isMobile);
+  };
+  sync();
+  mobileQuery.addEventListener?.("change", sync);
 }
 
 async function loadResources() {
@@ -381,18 +506,25 @@ function escapeAttribute(value) {
 articleFilterCards.forEach(button => {
   button.setAttribute("aria-pressed", "false");
   button.addEventListener("click", () => {
-    setSingleArticleFilter(button.dataset.articleFilter, button.dataset.filterValue || "all");
+    setArticleFilter(button.dataset.articleFilter, button.dataset.filterValue || "all");
   });
 });
 
-[articleSearchInput, ...Object.values(articleFilterControls)]
-  .filter(Boolean)
-  .forEach(element => {
-    element.addEventListener("input", () => applyArticleFilters());
-    element.addEventListener("change", () => applyArticleFilters());
-  });
+articleSearchInput?.addEventListener("input", () => applyArticleFilters());
+articleSearchInput?.addEventListener("change", () => applyArticleFilters());
 
 articleFilterReset?.addEventListener("click", resetArticleFilters);
+
+selectedFilterChips?.addEventListener("click", event => {
+  const button = event.target.closest("[data-chip-remove]");
+  if (!button) return;
+  removeArticleFilter(button.dataset.chipRemove);
+});
+
+learnFilterToggle?.addEventListener("click", () => {
+  const expanded = learnFilterToggle.getAttribute("aria-expanded") === "true";
+  setFilterPanelExpanded(!expanded);
+});
 
 articleEmptyActions.forEach(button => {
   button.addEventListener("click", () => {
@@ -412,5 +544,6 @@ articleEmptyActions.forEach(button => {
     element.addEventListener("change", applyResourceFilters);
   });
 
+initializeResponsiveFilters();
 hydrateArticleFiltersFromUrl();
 loadResources();

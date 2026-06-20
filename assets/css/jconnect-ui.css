@@ -854,6 +854,52 @@
     margin-top:12px;
   }
 
+  .learn-resource-note{
+    display:grid;
+    gap:12px;
+    margin:0 0 18px;
+    padding:16px;
+    border:1px solid var(--jc-line);
+    border-radius:var(--jc-radius-md);
+    background:#fff;
+    box-shadow:var(--jc-shadow);
+  }
+
+  .learn-resource-note h3{
+    margin:0 0 6px;
+    color:var(--jc-navy);
+    font-size:18px;
+    line-height:1.4;
+  }
+
+  .learn-resource-note p{
+    margin:0;
+    color:var(--jc-muted);
+    font-size:14px;
+    font-weight:800;
+    line-height:1.7;
+  }
+
+  .learn-resource-chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  .learn-resource-chips span{
+    display:inline-flex;
+    align-items:center;
+    min-height:30px;
+    padding:5px 10px;
+    border:1px solid var(--jc-line);
+    border-radius:999px;
+    background:var(--jc-soft);
+    color:var(--jc-muted);
+    font-size:12px;
+    font-weight:900;
+    line-height:1.2;
+  }
+
   .learn-route-card{
     min-height:236px;
     align-content:start;

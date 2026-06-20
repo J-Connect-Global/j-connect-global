@@ -748,6 +748,17 @@
     gap:24px;
   }
 
+  .learn-german-hub{
+    --learn-anchor-offset:112px;
+    --learn-guide-top:92px;
+  }
+
+  .learn-german-hub #phrase-library,
+  .learn-german-hub #learning-routes,
+  .learn-german-hub #learning-resources{
+    scroll-margin-top:var(--learn-anchor-offset);
+  }
+
   .learn-page-guide{
     display:none;
   }
@@ -1342,17 +1353,19 @@
   @media (min-width:1120px){
     .learn-hub-layout{
       display:grid;
-      grid-template-columns:minmax(0, 1fr) 220px;
-      gap:18px;
+      grid-template-columns:minmax(0, 1fr) 200px;
+      gap:16px;
       align-items:start;
     }
 
     .learn-page-guide{
       position:sticky;
-      top:18px;
+      top:var(--learn-guide-top);
       display:grid;
       gap:6px;
-      padding:14px;
+      width:200px;
+      max-width:200px;
+      padding:12px;
       border:1px solid var(--jc-line);
       border-radius:var(--jc-radius-md);
       background:#fff;
@@ -1388,6 +1401,10 @@
   }
 
   @media (max-width:759px){
+    .learn-german-hub{
+      --learn-anchor-offset:168px;
+    }
+
     .learn-pillar-ribbon{
       grid-template-columns:1fr;
     }

@@ -79,6 +79,7 @@
     <p>場面、目的、レベル、スキル、学習時間から、今必要な実用フレーズ記事を絞り込めます。</p>
     <div class="jc-hero-actions"><a class="jc-button is-primary" href="#learningArticles">記事を探す</a><a class="jc-button" href="#resources">教材を探す</a></div>
   </section>
+  <p class="learn-filter-helper">カードを選ぶと、該当する実用フレーズ記事を下に表示します。条件は一覧のフィルターで組み合わせたり、リセットしたりできます。</p>
 
   <section class="jc-section" aria-labelledby="learningScenarioTitle">
     <div class="jc-section-head"><div><h2 id="learningScenarioTitle">場面別に探す</h2><p>電話、役所、住まい、医療など、使う場所から記事を絞り込みます。</p></div></div>
@@ -113,8 +114,8 @@
       <button class="jc-card learn-filter-card" type="button" data-article-filter="level" data-filter-value="A1" aria-controls="learningArticleGrid"><h3>A1 はじめてのドイツ語</h3><p>短い文で予約、買い物、電話の要点を伝える段階。</p></button>
       <button class="jc-card learn-filter-card" type="button" data-article-filter="level" data-filter-value="A2" aria-controls="learningArticleGrid"><h3>A2 生活で使えるドイツ語</h3><p>理由や希望を添えて、メールや窓口で確認できる段階。</p></button>
       <button class="jc-card learn-filter-card" type="button" data-article-filter="level" data-filter-value="B1" aria-controls="learningArticleGrid"><h3>B1 自立した生活のためのドイツ語</h3><p>状況説明、相談、職場の確認を自分で進める段階。</p></button>
-      <button class="jc-card learn-filter-card" type="button" data-article-filter="level" data-filter-value="B2" aria-controls="learningArticleGrid"><h3>B2 仕事で使うドイツ語</h3><p>会議、交渉、丁寧な文書で細かな意図を伝える段階。</p></button>
-      <button class="jc-card learn-filter-card" type="button" data-article-filter="level" data-filter-value="C1,C2" aria-controls="learningArticleGrid"><h3>C1-C2 高度な表現</h3><p>専門的な説明や自然な言い換えを増やす段階。</p></button>
+      <button class="jc-card learn-filter-card is-roadmap" type="button" data-article-filter="level" data-filter-value="B2" data-empty-kind="advanced-level" aria-controls="learningArticleGrid"><span class="learn-card-badge">今後追加</span><h3>B2 仕事で使うドイツ語</h3><p>会議、交渉、丁寧な文書で細かな意図を伝える段階。記事は順次追加予定です。</p></button>
+      <button class="jc-card learn-filter-card is-roadmap" type="button" data-article-filter="level" data-filter-value="C1,C2" data-empty-kind="advanced-level" aria-controls="learningArticleGrid"><span class="learn-card-badge">準備中</span><h3>C1-C2 高度な表現</h3><p>専門的な説明や自然な言い換えを増やす段階。記事は順次追加予定です。</p></button>
     </div>
   </section>
 
@@ -133,7 +134,7 @@
     <div class="learn-filter-grid is-compact">
       <button class="jc-card learn-filter-card" type="button" data-article-filter="duration" data-filter-value="5min" aria-controls="learningArticleGrid"><h3>5分で学ぶ</h3><p>すぐ使う一言と短い会話を確認します。</p></button>
       <button class="jc-card learn-filter-card" type="button" data-article-filter="duration" data-filter-value="15min" aria-controls="learningArticleGrid"><h3>15分で学ぶ</h3><p>基本フレーズ、会話例、注意点まで確認します。</p></button>
-      <button class="jc-card learn-filter-card" type="button" data-article-filter="duration" data-filter-value="30min" aria-controls="learningArticleGrid"><h3>30分で学ぶ</h3><p>メール例や応用表現までまとめて練習します。</p></button>
+      <button class="jc-card learn-filter-card is-roadmap" type="button" data-article-filter="duration" data-filter-value="30min" data-empty-kind="planned" aria-controls="learningArticleGrid"><span class="learn-card-badge">今後追加</span><h3>30分で学ぶ</h3><p>メール例や応用表現までまとめて練習する記事を順次追加予定です。</p></button>
     </div>
   </section>
 
@@ -144,7 +145,7 @@
       <div class="learn-article-selects">
         <label><span>場面</span><select id="articleSituationFilter"><option value="all">すべて</option><option value="phone,appointment">電話・予約</option><option value="medical,pharmacy">病院・薬局</option><option value="administration,anmeldung">役所・Anmeldung</option><option value="housing,landlord">大家・住まい</option><option value="kita,school">Kita・学校</option><option value="work,business-email">職場・ビジネスメール</option><option value="bank,insurance">銀行・保険</option><option value="shopping">買い物</option><option value="parenting">子育て</option></select></label>
         <label><span>目的</span><select id="articleGoalFilter"><option value="all">すべて</option><option value="new-arrival">ドイツに来たばかり</option><option value="employment">仕事</option><option value="housing-contract">賃貸契約</option><option value="healthcare">医療・健康保険</option><option value="parenting">子育て</option><option value="school-kita">学校・Kita</option></select></label>
-        <label><span>レベル</span><select id="articleLevelFilter"><option value="all">すべて</option><option value="A1">A1</option><option value="A2">A2</option><option value="B1">B1</option><option value="B2">B2</option><option value="C1,C2">C1-C2</option></select></label>
+        <label><span>レベル</span><select id="articleLevelFilter"><option value="all">すべて</option><option value="A1">A1</option><option value="A2">A2</option><option value="B1">B1</option><option value="A2,B1">A2/B1</option><option value="B2">B2</option><option value="C1,C2">C1-C2</option></select></label>
         <label><span>スキル</span><select id="articleSkillFilter"><option value="all">すべて</option><option value="speaking">話す</option><option value="listening">聞く</option><option value="reading">読む</option><option value="writing">書く</option></select></label>
         <label><span>学習時間</span><select id="articleDurationFilter"><option value="all">すべて</option><option value="5min">5分</option><option value="15min">15分</option><option value="30min">30分</option></select></label>
       </div>
@@ -252,11 +253,19 @@
         </a>
         <!-- CONTENT:learn-german-grid:end -->
 </div>
-    <p id="articleEmpty" class="learn-hub-empty" hidden>条件に合う記事はまだありません。絞り込みを減らして探してください。</p>
+    <div id="articleEmpty" class="learn-hub-empty" hidden>
+      <h3 id="articleEmptyTitle">条件に合う記事はまだありません</h3>
+      <p id="articleEmptyBody">このテーマの記事は準備中です。条件を少し広げるか、近い場面の記事から確認してください。</p>
+      <div class="learn-empty-actions">
+        <button class="living-reset-button" type="button" data-empty-command="related-levels">A2/B1の記事を見る</button>
+        <button class="living-reset-button" type="button" data-empty-command="reset">条件をリセット</button>
+        <button class="living-reset-button" type="button" data-empty-command="all">すべての記事を見る</button>
+      </div>
+    </div>
   </section>
 
   <section class="jc-section" id="resources">
-    <div class="jc-section-head"><div><h2>学習リソース</h2><p>レベル、目的、形式で教材を絞り込めます。</p></div></div>
+    <div class="jc-section-head"><div><h2>外部教材・学習リソース</h2><p>アプリ、動画、講座、教材など、ドイツ語を継続して学ぶためのリソースを整理します。生活場面の表現は上の実用フレーズ記事から確認できます。</p></div></div>
     <div class="filter-panel jc-panel">
       <div class="filter-grid">
         <label class="field"><span class="label">キーワード</span><input id="resourceSearch" class="input" type="search" placeholder="例：予約、B1、メール"></label>
@@ -274,9 +283,10 @@
   <section class="jc-section" aria-labelledby="learningRoutesTitle">
     <div class="jc-section-head"><div><h2 id="learningRoutesTitle">おすすめ学習ルート</h2><p>今の状況に合わせて、読む順番を決めやすくします。</p></div></div>
     <div class="learn-route-grid">
-      <article class="jc-card learn-route-card"><h3>ドイツ到着直後</h3><ol><li><a href="/germany/ja/learn-german/behoerde-anmeldung-phrases/">Anmeldung</a></li><li><a href="/germany/ja/learn-german/bank-account-phrases/">銀行口座</a></li><li><a href="/germany/ja/learn-german/health-insurance-phrases/">健康保険</a></li><li><a href="/germany/ja/learn-german/telephone-phrases/">電話</a></li></ol></article>
-      <article class="jc-card learn-route-card"><h3>Job seeker</h3><ol><li><a href="/germany/ja/learn-german/work-email-phrases/">Work email</a></li><li><a href="/germany/ja/learn-german/telephone-phrases/">Phone</a></li><li><span>Interview</span></li><li><a href="/germany/ja/learn-german/workplace-conversation-phrases/">Workplace</a></li></ol></article>
-      <article class="jc-card learn-route-card"><h3>Parent route</h3><ol><li><a href="/germany/ja/learn-german/kita-school-inquiry-phrases/">Kita</a></li><li><a href="/germany/ja/learn-german/parenting-phrases/">Parenting</a></li><li><a href="/germany/ja/learn-german/hospital-phrases/">Medical</a></li><li><a href="/germany/ja/learn-german/kita-school-inquiry-phrases/">School</a></li></ol></article>
+      <article class="jc-card learn-route-card"><h3>ドイツ到着直後</h3><p>役所、銀行、保険、電話予約など、生活開始で使う表現を順番に確認します。</p><ol><li><a href="/germany/ja/learn-german/behoerde-anmeldung-phrases/">役所・Anmeldung</a></li><li><a href="/germany/ja/learn-german/bank-account-phrases/">銀行口座</a></li><li><a href="/germany/ja/learn-german/health-insurance-phrases/">保険・健康保険</a></li><li><a href="/germany/ja/learn-german/telephone-phrases/">電話・予約</a></li></ol></article>
+      <article class="jc-card learn-route-card"><h3>仕事を探す人向け</h3><p>応募、連絡、面接、職場での基本会話に使う表現を確認します。</p><ol><li><a href="/germany/ja/learn-german/work-email-phrases/">ビジネスメール</a></li><li><a href="/germany/ja/learn-german/telephone-phrases/">電話</a></li><li><span>面接・応募 <em>今後追加</em></span></li><li><a href="/germany/ja/learn-german/workplace-conversation-phrases/">職場会話</a></li></ol></article>
+      <article class="jc-card learn-route-card"><h3>子育て世帯向け</h3><p>Kita、学校、病院、子どもの日常会話で使う表現を確認します。</p><ol><li><a href="/germany/ja/learn-german/kita-school-inquiry-phrases/">Kita・学校</a></li><li><a href="/germany/ja/learn-german/parenting-phrases/">子育て・育児</a></li><li><a href="/germany/ja/learn-german/hospital-phrases/">病院・薬局</a></li><li><a href="/germany/ja/learn-german/telephone-phrases/">電話・予約</a></li></ol></article>
+      <article class="jc-card learn-route-card"><h3>住まいを探す人向け</h3><p>内見、大家への連絡、必要書類、修理依頼に使う表現を確認します。</p><ol><li><a href="/germany/ja/learn-german/landlord-housing-email-phrases/">大家・住まい</a></li><li><a href="/germany/ja/learn-german/work-email-phrases/">ビジネスメール</a></li><li><a href="/germany/ja/learn-german/telephone-phrases/">電話・予約</a></li></ol></article>
     </div>
   </section>
 </main>

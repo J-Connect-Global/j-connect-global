@@ -72,92 +72,189 @@
   </div>
 </header>
 <!-- LAYOUT:ja-header:end -->
-<main class="jc-shell jc-main jc-stack">
+<main class="jc-shell jc-main jc-stack learn-german-hub">
   <section class="jc-page-hero">
     <div class="jc-eyebrow"><span class="jc-dot"></span>ドイツ語・学び</div>
-    <h1>ドイツ生活でそのまま使える学習記事</h1>
-    <p>予約、病院、仕事メールなど、生活の場面から逆算したドイツ語フレーズと学習リソースをまとめています。</p>
-    <div class="jc-hero-actions"><a class="jc-button is-primary" href="#learningArticles">記事を読む</a><a class="jc-button" href="#resources">教材を探す</a></div>
+    <h1>ドイツ生活でそのまま使えるドイツ語</h1>
+    <p>場面、目的、レベル、スキル、学習時間から、今必要な実用フレーズ記事を絞り込めます。</p>
+    <div class="jc-hero-actions"><a class="jc-button is-primary" href="#learningArticles">記事を探す</a><a class="jc-button" href="#resources">教材を探す</a></div>
   </section>
+
   <section class="jc-section" aria-labelledby="learningScenarioTitle">
-    <div class="jc-section-head"><div><h2 id="learningScenarioTitle">場面別に探す</h2><p>生活の手続きや連絡場面から、今使うフレーズへ移動できます。</p></div></div>
-    <div class="jc-card-grid">
-      <a class="jc-card" href="/germany/ja/learn-german/appointment-phrase/"><h3>電話・予約</h3><p>役所、病院、美容室などで予約を取る基本表現。</p></a>
-      <a class="jc-card" href="/germany/ja/learn-german/hospital-phrases/"><h3>病院・薬局</h3><p>医療機関への電話予約や症状説明に使う表現。</p></a>
-      <a class="jc-card" href="/germany/ja/learn-german/behoerde-anmeldung-phrases/"><h3>役所・Anmeldung</h3><p>Bürgeramtでの住民登録、書類確認、証明書の表現。</p></a>
-      <a class="jc-card" href="/germany/ja/learn-german/landlord-housing-email-phrases/"><h3>大家・住まい</h3><p>内見、書類、修理、退去連絡に使うメール表現。</p></a>
-      <a class="jc-card" href="/germany/ja/learn-german/kita-school-inquiry-phrases/"><h3>Kita・学校</h3><p>空き状況、待機リスト、見学予約を問い合わせる表現。</p></a>
-      <a class="jc-card" href="/germany/ja/learn-german/work-email-phrases/"><h3>職場・ビジネスメール</h3><p>依頼、確認、日程調整を丁寧に伝えるメール表現。</p></a>
+    <div class="jc-section-head"><div><h2 id="learningScenarioTitle">場面別に探す</h2><p>電話、役所、住まい、医療など、使う場所から記事を絞り込みます。</p></div></div>
+    <div class="learn-filter-grid">
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="situation" data-filter-value="phone,appointment" aria-controls="learningArticleGrid"><h3>電話・予約</h3><p>予約、日時変更、折り返し、聞き返しに使う表現。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="situation" data-filter-value="medical,pharmacy" aria-controls="learningArticleGrid"><h3>病院・薬局</h3><p>予約、症状説明、保険、薬局での確認に使う表現。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="situation" data-filter-value="administration,anmeldung" aria-controls="learningArticleGrid"><h3>役所・Anmeldung</h3><p>Bürgeramt、住民登録、必要書類の確認に使う表現。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="situation" data-filter-value="housing,landlord" aria-controls="learningArticleGrid"><h3>大家・住まい</h3><p>内見、書類、修理依頼、退去連絡の表現。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="situation" data-filter-value="kita,school" aria-controls="learningArticleGrid"><h3>Kita・学校</h3><p>空き状況、見学、待機リスト、学校連絡の表現。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="situation" data-filter-value="work,business-email" aria-controls="learningArticleGrid"><h3>職場・ビジネスメール</h3><p>職場会話、確認、依頼、メール文面に使う表現。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="situation" data-filter-value="bank,insurance" aria-controls="learningArticleGrid"><h3>銀行・保険</h3><p>口座開設、健康保険、カード、問い合わせの表現。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="situation" data-filter-value="shopping" aria-controls="learningArticleGrid"><h3>買い物</h3><p>スーパー、ドラッグストア、返品、会計で使う表現。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="situation" data-filter-value="parenting" aria-controls="learningArticleGrid"><h3>子育て</h3><p>育児、医師、Kita、日常会話で使う表現。</p></button>
     </div>
   </section>
+
+  <section class="jc-section" aria-labelledby="learningGoalTitle">
+    <div class="jc-section-head"><div><h2 id="learningGoalTitle">目的別に探す</h2><p>生活の目的から、先に覚えると動きやすい表現を選びます。</p></div></div>
+    <div class="learn-filter-grid">
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="goal" data-filter-value="new-arrival" aria-controls="learningArticleGrid"><h3>ドイツに来たばかり</h3><p>到着直後の役所、銀行、保険、電話の表現。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="goal" data-filter-value="employment" aria-controls="learningArticleGrid"><h3>仕事を探したい</h3><p>職場連絡、メール、電話、面接準備につながる表現。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="goal" data-filter-value="housing-contract" aria-controls="learningArticleGrid"><h3>賃貸契約をしたい</h3><p>内見、必要書類、修理、解約連絡に使う表現。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="goal" data-filter-value="healthcare" aria-controls="learningArticleGrid"><h3>病院を利用したい</h3><p>予約、症状、健康保険、保険会社連絡の表現。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="goal" data-filter-value="parenting" aria-controls="learningArticleGrid"><h3>子育てをしたい</h3><p>育児、医療、Kita、日常連絡の表現。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="goal" data-filter-value="school-kita" aria-controls="learningArticleGrid"><h3>学校・Kitaを探したい</h3><p>空き確認、見学、必要書類、慣らし保育の表現。</p></button>
+    </div>
+  </section>
+
+  <section class="jc-section" aria-labelledby="learningLevelTitle">
+    <div class="jc-section-head"><div><h2 id="learningLevelTitle">レベル別に探す</h2><p>今のレベルで実際に使いやすい記事へ絞り込みます。</p></div></div>
+    <div class="learn-filter-grid">
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="level" data-filter-value="A1" aria-controls="learningArticleGrid"><h3>A1 はじめてのドイツ語</h3><p>短い文で予約、買い物、電話の要点を伝える段階。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="level" data-filter-value="A2" aria-controls="learningArticleGrid"><h3>A2 生活で使えるドイツ語</h3><p>理由や希望を添えて、メールや窓口で確認できる段階。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="level" data-filter-value="B1" aria-controls="learningArticleGrid"><h3>B1 自立した生活のためのドイツ語</h3><p>状況説明、相談、職場の確認を自分で進める段階。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="level" data-filter-value="B2" aria-controls="learningArticleGrid"><h3>B2 仕事で使うドイツ語</h3><p>会議、交渉、丁寧な文書で細かな意図を伝える段階。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="level" data-filter-value="C1,C2" aria-controls="learningArticleGrid"><h3>C1-C2 高度な表現</h3><p>専門的な説明や自然な言い換えを増やす段階。</p></button>
+    </div>
+  </section>
+
+  <section class="jc-section" aria-labelledby="learningSkillTitle">
+    <div class="jc-section-head"><div><h2 id="learningSkillTitle">スキル別に探す</h2><p>会話、聞き取り、読む、書くの練習目的から記事を選べます。</p></div></div>
+    <div class="learn-filter-grid is-compact">
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="skill" data-filter-value="speaking" aria-controls="learningArticleGrid"><h3>話す</h3><p>電話、窓口、職場で口に出して使う表現。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="skill" data-filter-value="listening" aria-controls="learningArticleGrid"><h3>聞く</h3><p>聞き返し、確認、相手の返答を理解する練習。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="skill" data-filter-value="reading" aria-controls="learningArticleGrid"><h3>読む</h3><p>書類、メール、案内文の意味をつかむ練習。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="skill" data-filter-value="writing" aria-controls="learningArticleGrid"><h3>書く</h3><p>問い合わせ、依頼、確認メールを書く練習。</p></button>
+    </div>
+  </section>
+
+  <section class="jc-section" aria-labelledby="learningDurationTitle">
+    <div class="jc-section-head"><div><h2 id="learningDurationTitle">学習時間別</h2><p>今ある時間に合わせて、短い記事から深める記事まで選べます。</p></div></div>
+    <div class="learn-filter-grid is-compact">
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="duration" data-filter-value="5min" aria-controls="learningArticleGrid"><h3>5分で学ぶ</h3><p>すぐ使う一言と短い会話を確認します。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="duration" data-filter-value="15min" aria-controls="learningArticleGrid"><h3>15分で学ぶ</h3><p>基本フレーズ、会話例、注意点まで確認します。</p></button>
+      <button class="jc-card learn-filter-card" type="button" data-article-filter="duration" data-filter-value="30min" aria-controls="learningArticleGrid"><h3>30分で学ぶ</h3><p>メール例や応用表現までまとめて練習します。</p></button>
+    </div>
+  </section>
+
   <section class="jc-section" id="learningArticles">
-    <div class="jc-section-head"><div><h2>実用フレーズ記事</h2><p>新しい順に、場面別の記事として掲載しています。</p></div></div>
-    <div class="jc-article-grid">
+    <div class="jc-section-head"><div><h2>実用フレーズ記事</h2><p>条件を組み合わせて、必要な記事だけを表示できます。</p></div></div>
+    <div class="learn-article-tools" aria-label="実用フレーズ記事フィルター">
+      <label class="learn-article-search"><span>キーワード</span><input id="articleSearch" type="search" placeholder="例：電話、A1、健康保険"></label>
+      <div class="learn-article-selects">
+        <label><span>場面</span><select id="articleSituationFilter"><option value="all">すべて</option><option value="phone,appointment">電話・予約</option><option value="medical,pharmacy">病院・薬局</option><option value="administration,anmeldung">役所・Anmeldung</option><option value="housing,landlord">大家・住まい</option><option value="kita,school">Kita・学校</option><option value="work,business-email">職場・ビジネスメール</option><option value="bank,insurance">銀行・保険</option><option value="shopping">買い物</option><option value="parenting">子育て</option></select></label>
+        <label><span>目的</span><select id="articleGoalFilter"><option value="all">すべて</option><option value="new-arrival">ドイツに来たばかり</option><option value="employment">仕事</option><option value="housing-contract">賃貸契約</option><option value="healthcare">医療・健康保険</option><option value="parenting">子育て</option><option value="school-kita">学校・Kita</option></select></label>
+        <label><span>レベル</span><select id="articleLevelFilter"><option value="all">すべて</option><option value="A1">A1</option><option value="A2">A2</option><option value="B1">B1</option><option value="B2">B2</option><option value="C1,C2">C1-C2</option></select></label>
+        <label><span>スキル</span><select id="articleSkillFilter"><option value="all">すべて</option><option value="speaking">話す</option><option value="listening">聞く</option><option value="reading">読む</option><option value="writing">書く</option></select></label>
+        <label><span>学習時間</span><select id="articleDurationFilter"><option value="all">すべて</option><option value="5min">5分</option><option value="15min">15分</option><option value="30min">30分</option></select></label>
+      </div>
+      <div class="learn-article-status">
+        <p id="articleFilterStatus">すべての記事を表示しています。</p>
+        <button id="articleFilterReset" class="living-reset-button" type="button">絞り込みを解除</button>
+      </div>
+    </div>
+    <div class="jc-article-grid" id="learningArticleGrid" aria-live="polite">
         <!-- CONTENT:learn-german-grid:start -->
-        <a class="jc-article-card" href="/germany/ja/learn-german/behoerde-anmeldung-phrases/">
-          <div class="jc-card-meta"><span>2026-06-19</span><span>A1-A2</span><span>役所・Anmeldung</span></div>
+        <a class="jc-article-card learn-article-card" href="/germany/ja/learn-german/bank-account-phrases/" data-learn-article-card data-title="銀行口座開設で使うドイツ語" data-summary="銀行口座の開設、本人確認、必要書類、予約、オンラインバンキングで使う基本フレーズです。" data-category="銀行・保険" data-tags="銀行口座 本人確認 A1" data-situation="bank appointment administration" data-goal="new-arrival daily-life" data-level="A1 A2" data-skill="speaking reading" data-duration="15min" data-search="銀行口座開設で使うドイツ語 銀行口座の開設、本人確認、必要書類、予約、オンラインバンキングで使う基本フレーズです。 銀行・保険 銀行口座 本人確認 A1 bank appointment administration new-arrival daily-life A1 A2 speaking reading 15min 銀行 / 予約 / 役所 ドイツに来たばかり / 生活で使う A1 / A2 話す / 読む 15分" data-published="2026-06-20">
+          <div class="jc-card-meta"><span>2026-06-20</span><span>A1 / A2</span><span>銀行・保険</span><span>15分</span></div>
+          <h3>銀行口座開設で使うドイツ語</h3>
+          <p>銀行口座の開設、本人確認、必要書類、予約、オンラインバンキングで使う基本フレーズです。</p>
+          <div class="jc-chip-row"><span class="jc-chip">銀行口座</span><span class="jc-chip">本人確認</span><span class="jc-chip">A1</span></div>
+          <span class="jc-read-more">記事を読む</span>
+        </a>
+
+        <a class="jc-article-card learn-article-card" href="/germany/ja/learn-german/health-insurance-phrases/" data-learn-article-card data-title="保険・健康保険で使うドイツ語" data-summary="公的健康保険への加入、保険証、補償範囲、保険会社への問い合わせで使える表現です。" data-category="銀行・保険" data-tags="健康保険 保険証 A1" data-situation="insurance medical phone" data-goal="healthcare new-arrival" data-level="A1 A2" data-skill="speaking reading" data-duration="15min" data-search="保険・健康保険で使うドイツ語 公的健康保険への加入、保険証、補償範囲、保険会社への問い合わせで使える表現です。 銀行・保険 健康保険 保険証 A1 insurance medical phone healthcare new-arrival A1 A2 speaking reading 15min 保険 / 病院・薬局 / 電話 医療・健康保険 / ドイツに来たばかり A1 / A2 話す / 読む 15分" data-published="2026-06-20">
+          <div class="jc-card-meta"><span>2026-06-20</span><span>A1 / A2</span><span>銀行・保険</span><span>15分</span></div>
+          <h3>保険・健康保険で使うドイツ語</h3>
+          <p>公的健康保険への加入、保険証、補償範囲、保険会社への問い合わせで使える表現です。</p>
+          <div class="jc-chip-row"><span class="jc-chip">健康保険</span><span class="jc-chip">保険証</span><span class="jc-chip">A1</span></div>
+          <span class="jc-read-more">記事を読む</span>
+        </a>
+
+        <a class="jc-article-card learn-article-card" href="/germany/ja/learn-german/shopping-phrases/" data-learn-article-card data-title="買い物で使うドイツ語" data-summary="スーパー、ドラッグストア、返品、質問、会計でそのまま使える短いドイツ語フレーズです。" data-category="買い物" data-tags="買い物 スーパー A1" data-situation="shopping" data-goal="daily-life new-arrival" data-level="A1" data-skill="speaking listening" data-duration="5min" data-search="買い物で使うドイツ語 スーパー、ドラッグストア、返品、質問、会計でそのまま使える短いドイツ語フレーズです。 買い物 買い物 スーパー A1 shopping daily-life new-arrival A1 speaking listening 5min 買い物 生活で使う / ドイツに来たばかり A1 話す / 聞く 5分" data-published="2026-06-20">
+          <div class="jc-card-meta"><span>2026-06-20</span><span>A1</span><span>買い物</span><span>5分</span></div>
+          <h3>買い物で使うドイツ語</h3>
+          <p>スーパー、ドラッグストア、返品、質問、会計でそのまま使える短いドイツ語フレーズです。</p>
+          <div class="jc-chip-row"><span class="jc-chip">買い物</span><span class="jc-chip">スーパー</span><span class="jc-chip">A1</span></div>
+          <span class="jc-read-more">記事を読む</span>
+        </a>
+
+        <a class="jc-article-card learn-article-card" href="/germany/ja/learn-german/parenting-phrases/" data-learn-article-card data-title="子育て・育児で使うドイツ語" data-summary="育児、子どもの体調、Kita、日常会話で使うA1-A2向けの実用フレーズです。" data-category="子育て" data-tags="子育て Kita A1" data-situation="parenting kita medical school" data-goal="parenting school-kita healthcare" data-level="A1 A2" data-skill="speaking listening" data-duration="15min" data-search="子育て・育児で使うドイツ語 育児、子どもの体調、Kita、日常会話で使うA1-A2向けの実用フレーズです。 子育て 子育て Kita A1 parenting kita medical school parenting school-kita healthcare A1 A2 speaking listening 15min 子育て / Kita / 病院・薬局 / 学校 子育て / 学校・Kita / 医療・健康保険 A1 / A2 話す / 聞く 15分" data-published="2026-06-20">
+          <div class="jc-card-meta"><span>2026-06-20</span><span>A1 / A2</span><span>子育て</span><span>15分</span></div>
+          <h3>子育て・育児で使うドイツ語</h3>
+          <p>育児、子どもの体調、Kita、日常会話で使うA1-A2向けの実用フレーズです。</p>
+          <div class="jc-chip-row"><span class="jc-chip">子育て</span><span class="jc-chip">Kita</span><span class="jc-chip">A1</span></div>
+          <span class="jc-read-more">記事を読む</span>
+        </a>
+
+        <a class="jc-article-card learn-article-card" href="/germany/ja/learn-german/telephone-phrases/" data-learn-article-card data-title="電話でよく使うドイツ語" data-summary="電話のかけ始め、取り次ぎ、予約確認、留守電、聞き返しで使う基本フレーズです。" data-category="電話・予約" data-tags="電話 予約 A1" data-situation="phone appointment" data-goal="daily-life new-arrival employment healthcare" data-level="A1" data-skill="speaking listening" data-duration="5min" data-search="電話でよく使うドイツ語 電話のかけ始め、取り次ぎ、予約確認、留守電、聞き返しで使う基本フレーズです。 電話・予約 電話 予約 A1 phone appointment daily-life new-arrival employment healthcare A1 speaking listening 5min 電話 / 予約 生活で使う / ドイツに来たばかり / 仕事 / 医療・健康保険 A1 話す / 聞く 5分" data-published="2026-06-20">
+          <div class="jc-card-meta"><span>2026-06-20</span><span>A1</span><span>電話・予約</span><span>5分</span></div>
+          <h3>電話でよく使うドイツ語</h3>
+          <p>電話のかけ始め、取り次ぎ、予約確認、留守電、聞き返しで使う基本フレーズです。</p>
+          <div class="jc-chip-row"><span class="jc-chip">電話</span><span class="jc-chip">予約</span><span class="jc-chip">A1</span></div>
+          <span class="jc-read-more">記事を読む</span>
+        </a>
+
+        <a class="jc-article-card learn-article-card" href="/germany/ja/learn-german/workplace-conversation-phrases/" data-learn-article-card data-title="職場会話で使うドイツ語" data-summary="雑談、会議、質問、聞き返し、予定確認で使えるA2-B1向けの職場会話表現です。" data-category="職場・ビジネスメール" data-tags="職場 会議 A2" data-situation="work" data-goal="employment" data-level="A2 B1" data-skill="speaking listening" data-duration="15min" data-search="職場会話で使うドイツ語 雑談、会議、質問、聞き返し、予定確認で使えるA2-B1向けの職場会話表現です。 職場・ビジネスメール 職場 会議 A2 work employment A2 B1 speaking listening 15min 職場 仕事 A2 / B1 話す / 聞く 15分" data-published="2026-06-20">
+          <div class="jc-card-meta"><span>2026-06-20</span><span>A2 / B1</span><span>職場・ビジネスメール</span><span>15分</span></div>
+          <h3>職場会話で使うドイツ語</h3>
+          <p>雑談、会議、質問、聞き返し、予定確認で使えるA2-B1向けの職場会話表現です。</p>
+          <div class="jc-chip-row"><span class="jc-chip">職場</span><span class="jc-chip">会議</span><span class="jc-chip">A2</span></div>
+          <span class="jc-read-more">記事を読む</span>
+        </a>
+
+        <a class="jc-article-card learn-article-card" href="/germany/ja/learn-german/behoerde-anmeldung-phrases/" data-learn-article-card data-title="役所・Anmeldungで使うドイツ語フレーズ" data-summary="住民登録、予約確認、必要書類、不足書類、証明書の受け取りなど、役所で使いやすい基本表現です。" data-category="役所・Anmeldung" data-tags="役所 Anmeldung A1" data-situation="administration anmeldung appointment" data-goal="new-arrival daily-life" data-level="A1" data-skill="speaking reading" data-duration="15min" data-search="役所・Anmeldungで使うドイツ語フレーズ 住民登録、予約確認、必要書類、不足書類、証明書の受け取りなど、役所で使いやすい基本表現です。 役所・Anmeldung 役所 Anmeldung A1 administration anmeldung appointment new-arrival daily-life A1 speaking reading 15min 役所 / Anmeldung / 予約 ドイツに来たばかり / 生活で使う A1 話す / 読む 15分" data-published="2026-06-19">
+          <div class="jc-card-meta"><span>2026-06-19</span><span>A1</span><span>役所・Anmeldung</span><span>15分</span></div>
           <h3>役所・Anmeldungで使うドイツ語フレーズ</h3>
           <p>住民登録、予約確認、必要書類、不足書類、証明書の受け取りなど、役所で使いやすい基本表現です。</p>
           <div class="jc-chip-row"><span class="jc-chip">役所</span><span class="jc-chip">Anmeldung</span><span class="jc-chip">A1</span></div>
+          <span class="jc-read-more">記事を読む</span>
         </a>
 
-        <a class="jc-article-card" href="/germany/ja/learn-german/landlord-housing-email-phrases/">
-          <div class="jc-card-meta"><span>2026-06-19</span><span>A2-B1</span><span>住まい・メール</span></div>
+        <a class="jc-article-card learn-article-card" href="/germany/ja/learn-german/landlord-housing-email-phrases/" data-learn-article-card data-title="大家・住まいの連絡で使うドイツ語フレーズ" data-summary="内見、必要書類、修理依頼、退去連絡など、大家・管理会社とのやり取りで使えるドイツ語表現です。" data-category="大家・住まい" data-tags="住まい 大家 メール" data-situation="housing landlord business-email" data-goal="housing-contract" data-level="A2 B1" data-skill="writing reading" data-duration="15min" data-search="大家・住まいの連絡で使うドイツ語フレーズ 内見、必要書類、修理依頼、退去連絡など、大家・管理会社とのやり取りで使えるドイツ語表現です。 大家・住まい 住まい 大家 メール housing landlord business-email housing-contract A2 B1 writing reading 15min 住まい / 大家 / ビジネスメール 賃貸契約 A2 / B1 書く / 読む 15分" data-published="2026-06-19">
+          <div class="jc-card-meta"><span>2026-06-19</span><span>A2 / B1</span><span>大家・住まい</span><span>15分</span></div>
           <h3>大家・住まいの連絡で使うドイツ語フレーズ</h3>
           <p>内見、必要書類、修理依頼、退去連絡など、大家・管理会社とのやり取りで使えるドイツ語表現です。</p>
           <div class="jc-chip-row"><span class="jc-chip">住まい</span><span class="jc-chip">大家</span><span class="jc-chip">メール</span></div>
+          <span class="jc-read-more">記事を読む</span>
         </a>
 
-        <a class="jc-article-card" href="/germany/ja/learn-german/kita-school-inquiry-phrases/">
-          <div class="jc-card-meta"><span>2026-06-19</span><span>A2-B1</span><span>Kita・学校</span></div>
+        <a class="jc-article-card learn-article-card" href="/germany/ja/learn-german/kita-school-inquiry-phrases/" data-learn-article-card data-title="Kita・学校への問い合わせで使うドイツ語フレーズ" data-summary="Kita、Tagesmutter、Großtagespflege、学校への空き状況確認、見学、必要書類、待機リストの問い合わせに使える表現です。" data-category="Kita・学校" data-tags="Kita 学校 メール" data-situation="kita school parenting" data-goal="school-kita parenting" data-level="A2 B1" data-skill="writing speaking" data-duration="15min" data-search="Kita・学校への問い合わせで使うドイツ語フレーズ Kita、Tagesmutter、Großtagespflege、学校への空き状況確認、見学、必要書類、待機リストの問い合わせに使える表現です。 Kita・学校 Kita 学校 メール kita school parenting school-kita parenting A2 B1 writing speaking 15min Kita / 学校 / 子育て 学校・Kita / 子育て A2 / B1 書く / 話す 15分" data-published="2026-06-19">
+          <div class="jc-card-meta"><span>2026-06-19</span><span>A2 / B1</span><span>Kita・学校</span><span>15分</span></div>
           <h3>Kita・学校への問い合わせで使うドイツ語フレーズ</h3>
           <p>Kita、Tagesmutter、Großtagespflege、学校への空き状況確認、見学、必要書類、待機リストの問い合わせに使える表現です。</p>
           <div class="jc-chip-row"><span class="jc-chip">Kita</span><span class="jc-chip">学校</span><span class="jc-chip">メール</span></div>
+          <span class="jc-read-more">記事を読む</span>
         </a>
 
-        <a class="jc-article-card" href="/germany/ja/learn-german/appointment-phrase/">
-          <div class="jc-card-meta"><span>2026-06-09</span><span>A1-A2</span><span>電話・窓口</span></div>
+        <a class="jc-article-card learn-article-card" href="/germany/ja/learn-german/appointment-phrase/" data-learn-article-card data-title="予約を取りたいときのドイツ語フレーズ" data-summary="病院、美容室、役所などで使える予約依頼、空き確認、日時変更の基本表現です。" data-category="電話・予約" data-tags="予約 日常会話 A1" data-situation="phone appointment" data-goal="daily-life new-arrival" data-level="A1" data-skill="speaking listening" data-duration="5min" data-search="予約を取りたいときのドイツ語フレーズ 病院、美容室、役所などで使える予約依頼、空き確認、日時変更の基本表現です。 電話・予約 予約 日常会話 A1 phone appointment daily-life new-arrival A1 speaking listening 5min 電話 / 予約 生活で使う / ドイツに来たばかり A1 話す / 聞く 5分" data-published="2026-06-09">
+          <div class="jc-card-meta"><span>2026-06-09</span><span>A1</span><span>電話・予約</span><span>5分</span></div>
           <h3>予約を取りたいときのドイツ語フレーズ</h3>
           <p>病院、美容室、役所などで使える予約依頼、空き確認、日時変更の基本表現です。</p>
           <div class="jc-chip-row"><span class="jc-chip">予約</span><span class="jc-chip">日常会話</span><span class="jc-chip">A1</span></div>
+          <span class="jc-read-more">記事を読む</span>
         </a>
 
-        <a class="jc-article-card" href="/germany/ja/learn-german/hospital-phrases/">
-          <div class="jc-card-meta"><span>2026-06-08</span><span>A1-A2</span><span>医療・電話</span></div>
+        <a class="jc-article-card learn-article-card" href="/germany/ja/learn-german/hospital-phrases/" data-learn-article-card data-title="病院予約の電話で使うドイツ語" data-summary="病院・小児科・専門医に電話で予約を取るための基本フレーズと会話例です。" data-category="病院・薬局" data-tags="病院 症状説明 電話" data-situation="medical phone appointment" data-goal="healthcare" data-level="A1" data-skill="speaking listening" data-duration="15min" data-search="病院予約の電話で使うドイツ語 病院・小児科・専門医に電話で予約を取るための基本フレーズと会話例です。 病院・薬局 病院 症状説明 電話 medical phone appointment healthcare A1 speaking listening 15min 病院・薬局 / 電話 / 予約 医療・健康保険 A1 話す / 聞く 15分" data-published="2026-06-08">
+          <div class="jc-card-meta"><span>2026-06-08</span><span>A1</span><span>病院・薬局</span><span>15分</span></div>
           <h3>病院予約の電話で使うドイツ語</h3>
           <p>病院・小児科・専門医に電話で予約を取るための基本フレーズと会話例です。</p>
           <div class="jc-chip-row"><span class="jc-chip">病院</span><span class="jc-chip">症状説明</span><span class="jc-chip">電話</span></div>
+          <span class="jc-read-more">記事を読む</span>
         </a>
 
-        <a class="jc-article-card" href="/germany/ja/learn-german/work-email-phrases/">
-          <div class="jc-card-meta"><span>2026-06-07</span><span>B1-B2</span><span>仕事・メール</span></div>
+        <a class="jc-article-card learn-article-card" href="/germany/ja/learn-german/work-email-phrases/" data-learn-article-card data-title="ビジネスメールで使う丁寧なドイツ語表現" data-summary="依頼、確認、催促、謝罪、日程調整で使える職場向けドイツ語メール表現です。" data-category="職場・ビジネスメール" data-tags="仕事 メール B1" data-situation="work business-email" data-goal="employment" data-level="A2 B1" data-skill="writing reading" data-duration="15min" data-search="ビジネスメールで使う丁寧なドイツ語表現 依頼、確認、催促、謝罪、日程調整で使える職場向けドイツ語メール表現です。 職場・ビジネスメール 仕事 メール B1 work business-email employment A2 B1 writing reading 15min 職場 / ビジネスメール 仕事 A2 / B1 書く / 読む 15分" data-published="2026-06-07">
+          <div class="jc-card-meta"><span>2026-06-07</span><span>A2 / B1</span><span>職場・ビジネスメール</span><span>15分</span></div>
           <h3>ビジネスメールで使う丁寧なドイツ語表現</h3>
           <p>依頼、確認、催促、謝罪、日程調整で使える職場向けドイツ語メール表現です。</p>
           <div class="jc-chip-row"><span class="jc-chip">仕事</span><span class="jc-chip">メール</span><span class="jc-chip">B1</span></div>
+          <span class="jc-read-more">記事を読む</span>
         </a>
         <!-- CONTENT:learn-german-grid:end -->
 </div>
+    <p id="articleEmpty" class="learn-hub-empty" hidden>条件に合う記事はまだありません。絞り込みを減らして探してください。</p>
   </section>
-  <section class="jc-section" aria-labelledby="learningLivingTitle">
-    <div class="jc-section-head"><div><h2 id="learningLivingTitle">関連する生活ガイド</h2><p>フレーズを使う場面の手続きや準備もあわせて確認できます。</p></div></div>
-    <div class="jc-topic-links">
-      <a href="/germany/ja/living/anmeldung-guide/" class="jc-chip">住民登録 Anmeldung</a>
-      <a href="/germany/ja/living/health-insurance-guide/" class="jc-chip">健康保険</a>
-      <a href="/germany/ja/living/rent-apartment-germany/" class="jc-chip">家探し・賃貸</a>
-      <a href="/germany/ja/living/kita-u3-tagesmutter-guide/" class="jc-chip">Kita・Tagesmutter</a>
-      <a href="/germany/ja/living/moving-checklist-germany/" class="jc-chip">引っ越し手続き</a>
-      <a href="/germany/ja/living/tax-id-steuernummer-steuerklasse/" class="jc-chip">Tax ID・税クラス</a>
-    </div>
-  </section>
-  <section class="jc-section">
-    <div class="jc-section-head"><div><h2>学習の入口</h2><p>目的に合わせて、まず取り組みやすい順番を選べます。</p></div></div>
-    <div class="jc-card-grid">
-      <button class="jc-card" type="button" data-level-shortcut="A1"><h3>A1から始める</h3><p>発音、挨拶、予約、買い物など生活の最初の一歩。</p></button>
-      <button class="jc-card" type="button" data-layer-shortcut="daily"><h3>日常生活で使う</h3><p>病院、役所、電話、メールなどの場面別表現。</p></button>
-      <button class="jc-card" type="button" data-layer-shortcut="business"><h3>仕事で使う</h3><p>メール、会議、依頼、確認の丁寧な表現。</p></button>
-      <button class="jc-card" type="button" data-layer-shortcut="exam"><h3>試験に備える</h3><p>B1/B2 のスピーキングや書く練習に向けた素材。</p></button>
-    </div>
-  </section>
+
   <section class="jc-section" id="resources">
     <div class="jc-section-head"><div><h2>学習リソース</h2><p>レベル、目的、形式で教材を絞り込めます。</p></div></div>
     <div class="filter-panel jc-panel">
@@ -172,6 +269,15 @@
       </div>
     </div>
     <div class="jc-article-grid" id="resourceGrid" aria-live="polite"></div>
+  </section>
+
+  <section class="jc-section" aria-labelledby="learningRoutesTitle">
+    <div class="jc-section-head"><div><h2 id="learningRoutesTitle">おすすめ学習ルート</h2><p>今の状況に合わせて、読む順番を決めやすくします。</p></div></div>
+    <div class="learn-route-grid">
+      <article class="jc-card learn-route-card"><h3>ドイツ到着直後</h3><ol><li><a href="/germany/ja/learn-german/behoerde-anmeldung-phrases/">Anmeldung</a></li><li><a href="/germany/ja/learn-german/bank-account-phrases/">銀行口座</a></li><li><a href="/germany/ja/learn-german/health-insurance-phrases/">健康保険</a></li><li><a href="/germany/ja/learn-german/telephone-phrases/">電話</a></li></ol></article>
+      <article class="jc-card learn-route-card"><h3>Job seeker</h3><ol><li><a href="/germany/ja/learn-german/work-email-phrases/">Work email</a></li><li><a href="/germany/ja/learn-german/telephone-phrases/">Phone</a></li><li><span>Interview</span></li><li><a href="/germany/ja/learn-german/workplace-conversation-phrases/">Workplace</a></li></ol></article>
+      <article class="jc-card learn-route-card"><h3>Parent route</h3><ol><li><a href="/germany/ja/learn-german/kita-school-inquiry-phrases/">Kita</a></li><li><a href="/germany/ja/learn-german/parenting-phrases/">Parenting</a></li><li><a href="/germany/ja/learn-german/hospital-phrases/">Medical</a></li><li><a href="/germany/ja/learn-german/kita-school-inquiry-phrases/">School</a></li></ol></article>
+    </div>
   </section>
 </main>
 <!-- LAYOUT:ja-footer:start -->

@@ -75,10 +75,3 @@ Mit freundlichen Grüßen
 * 修理依頼では写真や発生日を残しておくと説明しやすくなります。
 * 解約や退去連絡の前に、契約書の条件を確認してください。
 * トラブルや法的判断が必要な場合は、Mieterverein や専門家に相談してください。
-
-## 関連する生活ガイド
-
-* [ドイツで家を探す基本ガイド](/germany/ja/living/rent-apartment-germany/)
-* [SCHUFAとは？賃貸・契約で必要になる信用情報](/germany/ja/living/schufa-guide/)
-* [ドイツで引っ越すときの手続きチェックリスト](/germany/ja/living/moving-checklist-germany/)
-* [Rundfunkbeitragとは？ドイツの放送負担金の基本](/germany/ja/living/rundfunkbeitrag-guide/)

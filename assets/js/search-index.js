@@ -404,7 +404,14 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "予約",
       "日常会話",
-      "A1"
+      "A1",
+      "phone",
+      "appointment",
+      "daily-life",
+      "new-arrival",
+      "speaking",
+      "listening",
+      "5min"
     ]
   },
   {
@@ -415,7 +422,15 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "病院",
       "症状説明",
-      "電話"
+      "電話",
+      "medical",
+      "phone",
+      "appointment",
+      "healthcare",
+      "A1",
+      "speaking",
+      "listening",
+      "15min"
     ]
   },
   {
@@ -426,7 +441,14 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "仕事",
       "メール",
-      "B1"
+      "B1",
+      "work",
+      "business-email",
+      "employment",
+      "A2",
+      "writing",
+      "reading",
+      "15min"
     ]
   },
   {
@@ -437,7 +459,15 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "役所",
       "Anmeldung",
-      "A1"
+      "A1",
+      "administration",
+      "anmeldung",
+      "appointment",
+      "new-arrival",
+      "daily-life",
+      "speaking",
+      "reading",
+      "15min"
     ]
   },
   {
@@ -448,7 +478,16 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "住まい",
       "大家",
-      "メール"
+      "メール",
+      "housing",
+      "landlord",
+      "business-email",
+      "housing-contract",
+      "A2",
+      "B1",
+      "writing",
+      "reading",
+      "15min"
     ]
   },
   {
@@ -459,7 +498,131 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "Kita",
       "学校",
-      "メール"
+      "メール",
+      "kita",
+      "school",
+      "parenting",
+      "school-kita",
+      "A2",
+      "B1",
+      "writing",
+      "speaking",
+      "15min"
+    ]
+  },
+  {
+    "title": "銀行口座開設で使うドイツ語",
+    "description": "銀行口座の開設、本人確認、必要書類、予約、オンラインバンキングで使う基本フレーズです。",
+    "url": "/germany/ja/learn-german/bank-account-phrases/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "銀行口座",
+      "本人確認",
+      "A1",
+      "bank",
+      "appointment",
+      "administration",
+      "new-arrival",
+      "daily-life",
+      "A2",
+      "speaking",
+      "reading",
+      "15min"
+    ]
+  },
+  {
+    "title": "保険・健康保険で使うドイツ語",
+    "description": "公的健康保険への加入、保険証、補償範囲、保険会社への問い合わせで使える表現です。",
+    "url": "/germany/ja/learn-german/health-insurance-phrases/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "健康保険",
+      "保険証",
+      "A1",
+      "insurance",
+      "medical",
+      "phone",
+      "healthcare",
+      "new-arrival",
+      "A2",
+      "speaking",
+      "reading",
+      "15min"
+    ]
+  },
+  {
+    "title": "買い物で使うドイツ語",
+    "description": "スーパー、ドラッグストア、返品、質問、会計でそのまま使える短いドイツ語フレーズです。",
+    "url": "/germany/ja/learn-german/shopping-phrases/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "買い物",
+      "スーパー",
+      "A1",
+      "shopping",
+      "daily-life",
+      "new-arrival",
+      "speaking",
+      "listening",
+      "5min"
+    ]
+  },
+  {
+    "title": "子育て・育児で使うドイツ語",
+    "description": "育児、子どもの体調、Kita、日常会話で使うA1-A2向けの実用フレーズです。",
+    "url": "/germany/ja/learn-german/parenting-phrases/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "子育て",
+      "Kita",
+      "A1",
+      "parenting",
+      "kita",
+      "medical",
+      "school",
+      "school-kita",
+      "healthcare",
+      "A2",
+      "speaking",
+      "listening",
+      "15min"
+    ]
+  },
+  {
+    "title": "電話でよく使うドイツ語",
+    "description": "電話のかけ始め、取り次ぎ、予約確認、留守電、聞き返しで使う基本フレーズです。",
+    "url": "/germany/ja/learn-german/telephone-phrases/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "電話",
+      "予約",
+      "A1",
+      "phone",
+      "appointment",
+      "daily-life",
+      "new-arrival",
+      "employment",
+      "healthcare",
+      "speaking",
+      "listening",
+      "5min"
+    ]
+  },
+  {
+    "title": "職場会話で使うドイツ語",
+    "description": "雑談、会議、質問、聞き返し、予定確認で使えるA2-B1向けの職場会話表現です。",
+    "url": "/germany/ja/learn-german/workplace-conversation-phrases/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "職場",
+      "会議",
+      "A2",
+      "work",
+      "employment",
+      "B1",
+      "speaking",
+      "listening",
+      "15min"
     ]
   }
 ];

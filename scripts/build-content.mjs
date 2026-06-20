@@ -57,6 +57,48 @@ const contentTypes = {
   }
 };
 
+const learnGermanMetadataFields = ['situation', 'goal', 'level', 'skill', 'duration'];
+const learnGermanLabels = {
+  situation: {
+    phone: '電話',
+    appointment: '予約',
+    medical: '病院・薬局',
+    pharmacy: '薬局',
+    administration: '役所',
+    anmeldung: 'Anmeldung',
+    housing: '住まい',
+    landlord: '大家',
+    kita: 'Kita',
+    school: '学校',
+    work: '職場',
+    'business-email': 'ビジネスメール',
+    bank: '銀行',
+    insurance: '保険',
+    shopping: '買い物',
+    parenting: '子育て'
+  },
+  goal: {
+    'new-arrival': 'ドイツに来たばかり',
+    'daily-life': '生活で使う',
+    employment: '仕事',
+    'housing-contract': '賃貸契約',
+    healthcare: '医療・健康保険',
+    parenting: '子育て',
+    'school-kita': '学校・Kita'
+  },
+  skill: {
+    speaking: '話す',
+    listening: '聞く',
+    reading: '読む',
+    writing: '書く'
+  },
+  duration: {
+    '5min': '5分',
+    '15min': '15分',
+    '30min': '30分'
+  }
+};
+
 function main() {
   const datasets = Object.fromEntries(
     Object.keys(contentTypes).map((type) => [type, loadContentType(type)])
@@ -118,7 +160,7 @@ function normalizeItem(type, item, index) {
   const url = item.url || `/germany/ja/${type}/${slug}/`;
   const summary = item.summary || item.description || '';
 
-  return {
+  const normalized = {
     ...item,
     type,
     slug,
@@ -139,6 +181,19 @@ function normalizeItem(type, item, index) {
     related_articles: toArray(item.related_articles),
     review: normalizeReview(item)
   };
+
+  if (type !== 'learn-german') return normalized;
+
+  return normalizeLearnGermanItem(normalized);
+}
+
+function normalizeLearnGermanItem(item) {
+  const normalized = { ...item };
+  for (const field of learnGermanMetadataFields) {
+    normalized[field] = uniqueArray(toArray(item[field]));
+  }
+  normalized.related_living_guides = uniqueArray(toArray(item.related_living_guides));
+  return normalized;
 }
 
 function writeArticlePage(type, item, allItems) {
@@ -172,6 +227,7 @@ ${indent(ogMeta, 2)}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal5-nav-20260618">
   <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <script src="/assets/js/cookie-consent.js" defer></script>
@@ -474,8 +530,11 @@ function renderArticleMetaSpans(type, item) {
   }
 
   if (type === 'learn-german') {
-    if (item.level) rows.push(`<span>レベル: ${escapeHtml(item.level)}</span>`);
-    if (item.situation) rows.push(`<span>場面: ${escapeHtml(item.situation)}</span>`);
+    if (item.level?.length) rows.push(`<span>レベル: ${escapeHtml(formatLearnGermanMeta('level', item.level))}</span>`);
+    if (item.situation?.length) rows.push(`<span>場面: ${escapeHtml(formatLearnGermanMeta('situation', item.situation))}</span>`);
+    if (item.goal?.length) rows.push(`<span>目的: ${escapeHtml(formatLearnGermanMeta('goal', item.goal))}</span>`);
+    if (item.skill?.length) rows.push(`<span>スキル: ${escapeHtml(formatLearnGermanMeta('skill', item.skill))}</span>`);
+    if (item.duration?.length) rows.push(`<span>学習時間: ${escapeHtml(formatLearnGermanMeta('duration', item.duration))}</span>`);
   }
 
   if (item.review?.next_review_due) {
@@ -506,6 +565,9 @@ function renderOpenGraphMeta(type, item, title, canonicalHref) {
 }
 
 function renderStructuredData(type, item, title, canonicalHref) {
+  const keywords = type === 'learn-german'
+    ? uniqueArray([...item.tags, ...learnGermanMetadataFields.flatMap((field) => toArray(item[field]))])
+    : item.tags;
   const article = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -517,7 +579,7 @@ function renderStructuredData(type, item, title, canonicalHref) {
     datePublished: item.published_at || undefined,
     dateModified: item.updated_at || item.last_verified || item.published_at || undefined,
     articleSection: contentTypes[type].label,
-    keywords: item.tags,
+    keywords,
     author: {
       '@type': 'Organization',
       name: 'J-Connect Germany'
@@ -644,11 +706,9 @@ function renderArticleSidebar(type, item, allItems, toc = []) {
     sourceLinks.push(`<li><a href="${escapeAttribute(source.url)}">${escapeHtml(source.title || '公式情報・参考ソース')}</a></li>`);
   }
 
-  const related = toArray(item.related_articles)
-    .map((reference) => findRelatedItem(reference, allItems))
-    .filter(Boolean)
-    .slice(0, 4);
-
+  const related = type === 'learn-german'
+    ? []
+    : getExplicitRelatedItems(item, allItems).slice(0, 4);
   const relatedLinks = related
     .map((relatedItem) => `<li><a href="${escapeAttribute(relatedItem.url)}">${escapeHtml(relatedItem.title)}</a></li>`)
     .join('\n');
@@ -673,7 +733,7 @@ ${indent(sourceLinks.join('\n'), 4)}
 </section>`);
   }
 
-  if (relatedLinks) {
+  if (type !== 'learn-german' && relatedLinks) {
     sections.push(`<section class="article-sidebar-card">
   <h2>関連ガイド</h2>
   <ul class="article-sidebar-links">
@@ -720,11 +780,13 @@ ${indent(facts.map(([label, value]) => `<div>
 </dl>`;
 }
 function renderRelatedSection(item, allItems) {
-  const related = toArray(item.related_articles)
-    .map((reference) => findRelatedItem(reference, allItems))
-    .filter(Boolean);
-
+  const related = item.type === 'learn-german'
+    ? getRelatedLearnGermanItems(item, allItems)
+    : getExplicitRelatedItems(item, allItems);
   const relatedLinks = related.map((relatedItem) => `<li><a href="${escapeAttribute(relatedItem.url)}">${escapeHtml(relatedItem.title)}</a></li>`);
+  const livingGuideLinks = item.type === 'learn-german'
+    ? getRelatedLivingGuideItems(item, allItems).map((relatedItem) => `<li><a href="${escapeAttribute(relatedItem.url)}">${escapeHtml(relatedItem.title)}</a></li>`)
+    : [];
   const sourceLinks = [];
 
   if (item.official_url) {
@@ -754,7 +816,112 @@ ${indent(relatedLinks.join('\n'), 4)}
 </section>`);
   }
 
+  if (livingGuideLinks.length) {
+    sections.push(`<section class="related-section">
+  <h3>関連する生活ガイド</h3>
+  <ul>
+${indent(livingGuideLinks.join('\n'), 4)}
+  </ul>
+</section>`);
+  }
+
   return sections.join('\n');
+}
+
+function getExplicitRelatedItems(item, allItems, references = item.related_articles) {
+  return uniqueItems(
+    toArray(references)
+      .map((reference) => findRelatedItem(reference, allItems))
+      .filter(Boolean)
+      .filter((relatedItem) => relatedItem.slug !== item.slug)
+  );
+}
+
+function getRelatedLearnGermanItems(item, allItems) {
+  const explicit = getExplicitRelatedItems(item, allItems)
+    .filter((relatedItem) => relatedItem.type === 'learn-german');
+  const automatic = allItems
+    .filter((candidate) => candidate.type === 'learn-german' && candidate.slug !== item.slug && candidate.published)
+    .map((candidate) => ({
+      item: candidate,
+      score: scoreLearnGermanRelationship(item, candidate)
+    }))
+    .filter((entry) => entry.score > 0)
+    .sort((a, b) => b.score - a.score || compareDateDesc(a.item.published_at, b.item.published_at))
+    .map((entry) => entry.item);
+
+  return uniqueItems([...explicit, ...automatic]).slice(0, 6);
+}
+
+function getRelatedLivingGuideItems(item, allItems) {
+  const references = getLearnGermanLivingGuideRefs(item);
+  return getExplicitRelatedItems(item, allItems, references)
+    .filter((relatedItem) => relatedItem.type === 'living')
+    .slice(0, 6);
+}
+
+function getLearnGermanLivingGuideRefs(item) {
+  const refs = [...toArray(item.related_living_guides)];
+  const meta = new Set(learnGermanMetadataFields.flatMap((field) => toArray(item[field])));
+  const relations = [
+    {
+      match: ['new-arrival', 'administration', 'anmeldung'],
+      refs: ['germany-first-30-days', 'anmeldung-guide', 'moving-checklist-germany']
+    },
+    {
+      match: ['bank'],
+      refs: ['bank-account-germany', 'schufa-guide', 'tax-id-steuernummer-steuerklasse']
+    },
+    {
+      match: ['insurance', 'healthcare', 'medical'],
+      refs: ['health-insurance-guide', 'pregnancy-birth-germany']
+    },
+    {
+      match: ['housing', 'landlord', 'housing-contract'],
+      refs: ['rent-apartment-germany', 'schufa-guide', 'moving-checklist-germany', 'rundfunkbeitrag-guide']
+    },
+    {
+      match: ['kita', 'school', 'parenting', 'school-kita'],
+      refs: ['kita-u3-tagesmutter-guide', 'pregnancy-birth-germany', 'health-insurance-guide']
+    },
+    {
+      match: ['employment', 'work', 'business-email'],
+      refs: ['tax-id-steuernummer-steuerklasse', 'bank-account-germany']
+    }
+  ];
+
+  for (const relation of relations) {
+    if (relation.match.some((value) => meta.has(value))) refs.push(...relation.refs);
+  }
+
+  return uniqueArray(refs);
+}
+
+function scoreLearnGermanRelationship(item, candidate) {
+  let score = 0;
+  if (hasOverlap(item.situation, candidate.situation)) score += 4;
+  if (hasOverlap(item.goal, candidate.goal)) score += 3;
+  if (hasOverlap(item.skill, candidate.skill)) score += 2;
+  if (hasOverlap(item.level, candidate.level)) score += 1;
+  if (hasOverlap(item.duration, candidate.duration)) score += 1;
+  return score;
+}
+
+function hasOverlap(left, right) {
+  const rightSet = new Set(toArray(right));
+  return toArray(left).some((value) => rightSet.has(value));
+}
+
+function uniqueItems(items) {
+  const seen = new Set();
+  const output = [];
+  for (const item of items) {
+    const key = item?.url || item?.slug || item?.id;
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    output.push(item);
+  }
+  return output;
 }
 
 function findRelatedItem(reference, allItems) {
@@ -848,12 +1015,22 @@ function renderEventHubCard(item) {
 
 function renderLearnGermanHubCard(item) {
   const tags = item.tags.slice(0, 4).map((tag) => `<span class="jc-chip">${escapeHtml(tag)}</span>`).join('');
+  const metadata = learnGermanMetadataFields.flatMap((field) => toArray(item[field]));
+  const searchText = [
+    item.title,
+    item.summary,
+    item.category,
+    ...item.tags,
+    ...metadata,
+    ...learnGermanMetadataFields.map((field) => formatLearnGermanMeta(field, item[field]))
+  ].join(' ');
 
-  return `<a class="jc-article-card" href="${escapeAttribute(item.url)}">
-  <div class="jc-card-meta"><span>${escapeHtml(item.published_at || '')}</span><span>${escapeHtml(item.level || '')}</span><span>${escapeHtml(item.situation || item.category || '')}</span></div>
+  return `<a class="jc-article-card learn-article-card" href="${escapeAttribute(item.url)}" data-learn-article-card data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-situation="${escapeAttribute(toArray(item.situation).join(' '))}" data-goal="${escapeAttribute(toArray(item.goal).join(' '))}" data-level="${escapeAttribute(toArray(item.level).join(' '))}" data-skill="${escapeAttribute(toArray(item.skill).join(' '))}" data-duration="${escapeAttribute(toArray(item.duration).join(' '))}" data-search="${escapeAttribute(searchText)}" data-published="${escapeAttribute(item.published_at || '')}">
+  <div class="jc-card-meta"><span>${escapeHtml(item.published_at || '')}</span><span>${escapeHtml(formatLearnGermanMeta('level', item.level))}</span><span>${escapeHtml(item.category || formatLearnGermanMeta('situation', item.situation))}</span><span>${escapeHtml(formatLearnGermanMeta('duration', item.duration))}</span></div>
   <h3>${escapeHtml(item.title)}</h3>
   <p>${escapeHtml(item.summary)}</p>
   <div class="jc-chip-row">${tags}</div>
+  <span class="jc-read-more">記事を読む</span>
 </a>`;
 }
 
@@ -955,7 +1132,9 @@ function updateSearchIndex(allItems, pages) {
       description: item.summary,
       url: item.url,
       category: contentTypes[item.type].label,
-      tags: item.tags
+      tags: item.type === 'learn-german'
+        ? uniqueArray([...item.tags, ...learnGermanMetadataFields.flatMap((field) => toArray(item[field]))])
+        : item.tags
     }));
 
   const registryUrls = new Set([
@@ -1199,6 +1378,15 @@ function toArray(value) {
   if (Array.isArray(value)) return value.filter((entry) => String(entry).trim()).map(String);
   if (!value) return [];
   return String(value).split(',').map((entry) => entry.trim()).filter(Boolean);
+}
+
+function uniqueArray(values) {
+  return [...new Set(toArray(values))];
+}
+
+function formatLearnGermanMeta(field, value) {
+  const labels = learnGermanLabels[field] || {};
+  return toArray(value).map((entry) => labels[entry] || entry).join(' / ');
 }
 
 function normalizeSources(value) {

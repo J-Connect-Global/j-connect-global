@@ -300,12 +300,8 @@ button,input,select,textarea{font:inherit;}
 }
 
 .header-category-menu::after{
-  content:"\25be";
-  font-size:24px;
-  line-height:1;
-  color:var(--muted);
-  margin-top:1px;
-  pointer-events:none;
+  content:none;
+  display:none;
 }
 
 .header-language-trigger::after{
@@ -790,8 +786,10 @@ body > .site-footer{
   }
 
   body .site-header .header-actions .header-category{
-    width:72px;
+    width:max-content;
+    min-width:max-content;
     justify-content:center;
+    padding:0;
   }
 
   body .site-header .header-actions .header-language{
@@ -878,8 +876,10 @@ body > .site-footer{
   }
 
   body .site-header .header-actions .header-category{
-    width:64px;
+    width:max-content;
+    min-width:max-content;
     justify-content:center;
+    padding:0;
   }
 
   body .site-header .header-actions .header-language{

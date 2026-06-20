@@ -79,7 +79,7 @@
     <p>場面、目的、レベル、スキル、学習時間から、今必要な実用フレーズ記事を絞り込めます。</p>
     <div class="jc-hero-actions"><a class="jc-button is-primary" href="#learningArticles">記事を探す</a><a class="jc-button" href="#resources">教材を探す</a></div>
   </section>
-  <p class="learn-filter-helper">カードを選ぶと、該当する実用フレーズ記事を下に表示します。条件は一覧のフィルターで組み合わせたり、リセットしたりできます。</p>
+  <p class="learn-filter-helper">カードを選ぶと、下の実用フレーズ記事が絞り込まれます。</p>
 
   <section class="jc-section" aria-labelledby="learningScenarioTitle">
     <div class="jc-section-head"><div><h2 id="learningScenarioTitle">場面別に探す</h2><p>電話、役所、住まい、医療など、使う場所から記事を絞り込みます。</p></div></div>
@@ -139,7 +139,7 @@
   </section>
 
   <section class="jc-section" id="learningArticles">
-    <div class="jc-section-head"><div><h2>実用フレーズ記事</h2><p>条件を組み合わせて、必要な記事だけを表示できます。</p></div></div>
+    <div class="jc-section-head"><div><h2>実用フレーズ記事</h2><p>J-Connect内の記事を、場面別・目的別・レベル別などで探せます。条件を組み合わせて、必要な記事だけを表示できます。</p></div></div>
     <div class="learn-article-tools" aria-label="実用フレーズ記事フィルター">
       <label class="learn-article-search"><span>キーワード</span><input id="articleSearch" type="search" placeholder="例：電話、A1、健康保険"></label>
       <div class="learn-article-selects">
@@ -264,22 +264,6 @@
     </div>
   </section>
 
-  <section class="jc-section" id="resources">
-    <div class="jc-section-head"><div><h2>外部教材・学習リソース</h2><p>アプリ、動画、講座、教材など、ドイツ語を継続して学ぶためのリソースを整理します。生活場面の表現は上の実用フレーズ記事から確認できます。</p></div></div>
-    <div class="filter-panel jc-panel">
-      <div class="filter-grid">
-        <label class="field"><span class="label">キーワード</span><input id="resourceSearch" class="input" type="search" placeholder="例：予約、B1、メール"></label>
-        <label class="field"><span class="label">レベル</span><select id="levelFilter" class="select"><option value="all">すべて</option><option>A0</option><option>A1</option><option>A2</option><option>B1</option><option>B2</option></select></label>
-        <label class="field"><span class="label">分野</span><select id="layerFilter" class="select"><option value="all">すべて</option><option value="roadmap">ロードマップ</option><option value="daily">日常</option><option value="business">仕事</option><option value="exam">試験</option><option value="apps-ai">アプリ・AI</option><option value="media">動画・音声</option><option value="speaking">会話・先生</option><option value="community">コミュニティ</option></select></label>
-        <label class="field"><span class="label">形式</span><select id="formatFilter" class="select"><option value="all">すべて</option><option value="article">記事</option><option value="phrases">フレーズ</option><option value="dialogue">会話例</option><option value="template">テンプレート</option><option value="video">動画</option></select></label>
-        <label class="field"><span class="label">目的</span><select id="purposeFilter" class="select"><option value="all">すべて</option><option value="daily-life">生活</option><option value="work">仕事</option><option value="exam">試験</option><option value="conversation">会話</option><option value="writing">書く</option></select></label>
-        <label class="field"><span class="label">種別</span><select id="typeFilter" class="select"><option value="all">すべて</option><option value="original">Original</option><option value="external">External</option><option value="ai_tool">AI Tool</option><option value="community">Community</option><option value="teacher_class">Teacher/Class</option></select></label>
-        <label class="field"><span class="label">料金</span><select id="priceFilter" class="select"><option value="all">すべて</option><option value="free">無料</option><option value="freemium">一部無料</option><option value="paid">有料</option></select></label>
-      </div>
-    </div>
-    <div class="jc-article-grid" id="resourceGrid" aria-live="polite"></div>
-  </section>
-
   <section class="jc-section" aria-labelledby="learningRoutesTitle">
     <div class="jc-section-head"><div><h2 id="learningRoutesTitle">おすすめ学習ルート</h2><p>今の状況に合わせて、読む順番を決めやすくします。</p></div></div>
     <div class="learn-route-grid">
@@ -288,6 +272,23 @@
       <article class="jc-card learn-route-card"><h3>子育て世帯向け</h3><p>Kita、学校、病院、子どもの日常会話で使う表現を確認します。</p><ol><li><a href="/germany/ja/learn-german/kita-school-inquiry-phrases/">Kita・学校</a></li><li><a href="/germany/ja/learn-german/parenting-phrases/">子育て・育児</a></li><li><a href="/germany/ja/learn-german/hospital-phrases/">病院・薬局</a></li><li><a href="/germany/ja/learn-german/telephone-phrases/">電話・予約</a></li></ol></article>
       <article class="jc-card learn-route-card"><h3>住まいを探す人向け</h3><p>内見、大家への連絡、必要書類、修理依頼に使う表現を確認します。</p><ol><li><a href="/germany/ja/learn-german/landlord-housing-email-phrases/">大家・住まい</a></li><li><a href="/germany/ja/learn-german/work-email-phrases/">ビジネスメール</a></li><li><a href="/germany/ja/learn-german/telephone-phrases/">電話・予約</a></li></ol></article>
     </div>
+  </section>
+
+  <section class="jc-section" id="resources">
+    <div class="jc-section-head"><div><h2>外部教材・学習リソース</h2><p>アプリ、動画、講座、教材など、ドイツ語を継続して学ぶためのリソースを順次整理します。生活場面の表現は上の実用フレーズ記事から確認できます。</p></div></div>
+    <div class="learn-resource-note">
+      <div>
+        <h3>補助リソースとして確認する</h3>
+        <p>外部教材・学習リソースは、アプリ、動画、講座、教材などの補助的な情報です。J-Connect内の実用フレーズ記事を探す場合は、上の検索とフィルターを使ってください。</p>
+      </div>
+      <div class="learn-resource-chips" aria-label="学習リソースの種類">
+        <span>アプリ</span>
+        <span>動画・音声</span>
+        <span>講座・先生</span>
+        <span>試験対策</span>
+      </div>
+    </div>
+    <div class="jc-article-grid" id="resourceGrid" aria-live="polite"></div>
   </section>
 </main>
 <!-- LAYOUT:ja-footer:start -->

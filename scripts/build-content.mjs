@@ -1023,7 +1023,7 @@ function updateLearnGermanHub(items) {
   html = replaceMarkedDivContent(
     html,
     config.gridMarker,
-    /<div class="jc-article-grid" id="learningArticleGrid"[^>]*>/,
+    /<div class="jc-article-grid learn-card-grid is-grid-view" id="learningArticleGrid"[^>]*>/,
     phraseCards,
     8
   );
@@ -1037,7 +1037,7 @@ function updateLearnGermanHub(items) {
   html = replaceMarkedDivContent(
     html,
     'learn-german-resource-grid',
-    /<div class="jc-article-grid learn-resource-grid" id="resourceArticleGrid"[^>]*>/,
+    /<div class="jc-article-grid learn-resource-grid learn-card-grid is-grid-view" id="resourceArticleGrid"[^>]*>/,
     resourceCards,
     8
   );

@@ -10,6 +10,7 @@ const selectedFilterChips = document.getElementById("selectedFilterChips");
 const learnFilterToggle = document.getElementById("learnFilterToggle");
 const learnFilterPanel = document.getElementById("learnFilterPanel");
 const learnFilterGroups = Array.from(document.querySelectorAll("[data-filter-group]"));
+const learnViewToggles = Array.from(document.querySelectorAll("[data-learn-view-toggle]"));
 
 const resourceCards = Array.from(document.querySelectorAll("[data-resource-article-card]"));
 const resourceSearchInput = document.getElementById("resourceSearch");
@@ -18,6 +19,9 @@ const resourceFilterButtons = Array.from(document.querySelectorAll("[data-resour
 const resourceFilterStatus = document.getElementById("resourceFilterStatus");
 const resourceFilterReset = document.getElementById("resourceFilterReset");
 const resourceEmpty = document.getElementById("resourceEmpty");
+const resourceFilterToggle = document.getElementById("resourceFilterToggle");
+const resourceFilterPanel = document.getElementById("resourceFilterPanel");
+const resourceFilterGroups = Array.from(document.querySelectorAll("[data-resource-filter-group]"));
 
 let phraseFilterState = {
   query: "",
@@ -352,16 +356,63 @@ function setFilterGroupsOpen(open) {
   }
 }
 
-function initializeResponsivePhraseFilters() {
+function setResourceFilterPanelExpanded(expanded) {
+  if (!resourceFilterPanel || !resourceFilterToggle) return;
+  resourceFilterPanel.classList.toggle("is-collapsed", !expanded);
+  resourceFilterToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+  resourceFilterToggle.textContent = expanded ? "フィルターを閉じる" : "条件を変更";
+}
+
+function setResourceFilterGroupsOpen(open) {
+  for (const group of resourceFilterGroups) {
+    if (open) {
+      group.setAttribute("open", "");
+    } else {
+      group.removeAttribute("open");
+    }
+  }
+}
+
+function initializeResponsiveFilters() {
   if (!window.matchMedia) return;
   const mobileQuery = window.matchMedia("(max-width: 759px)");
   const sync = () => {
     const isMobile = mobileQuery.matches;
     setFilterPanelExpanded(!isMobile);
     setFilterGroupsOpen(!isMobile);
+    setResourceFilterPanelExpanded(!isMobile);
+    setResourceFilterGroupsOpen(!isMobile);
   };
   sync();
   mobileQuery.addEventListener?.("change", sync);
+}
+
+function setViewMode(toggle, mode) {
+  const targetId = toggle?.dataset.viewTarget;
+  const container = targetId ? document.getElementById(targetId) : null;
+  if (!toggle || !container || !["grid", "list"].includes(mode)) return;
+
+  container.classList.toggle("is-grid-view", mode === "grid");
+  container.classList.toggle("is-list-view", mode === "list");
+
+  const buttons = Array.from(toggle.querySelectorAll("[data-view-mode]"));
+  for (const button of buttons) {
+    const active = button.dataset.viewMode === mode;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  }
+}
+
+function initializeViewToggles() {
+  for (const toggle of learnViewToggles) {
+    const activeButton = toggle.querySelector("[data-view-mode].is-active") || toggle.querySelector("[data-view-mode='grid']");
+    setViewMode(toggle, activeButton?.dataset.viewMode || "grid");
+    toggle.addEventListener("click", event => {
+      const button = event.target.closest("[data-view-mode]");
+      if (!button || !toggle.contains(button)) return;
+      setViewMode(toggle, button.dataset.viewMode || "grid");
+    });
+  }
 }
 
 function initializePageGuide() {
@@ -422,6 +473,11 @@ learnFilterToggle?.addEventListener("click", () => {
   setFilterPanelExpanded(!expanded);
 });
 
+resourceFilterToggle?.addEventListener("click", () => {
+  const expanded = resourceFilterToggle.getAttribute("aria-expanded") === "true";
+  setResourceFilterPanelExpanded(!expanded);
+});
+
 phraseEmptyActions.forEach(button => {
   button.addEventListener("click", resetPhraseFilters);
 });
@@ -437,7 +493,8 @@ resourceSearchInput?.addEventListener("input", () => applyResourceFilters());
 resourceSearchInput?.addEventListener("change", () => applyResourceFilters());
 resourceFilterReset?.addEventListener("click", resetResourceFilters);
 
-initializeResponsivePhraseFilters();
+initializeResponsiveFilters();
+initializeViewToggles();
 hydratePhraseFiltersFromUrl();
 applyResourceFilters();
 initializePageGuide();

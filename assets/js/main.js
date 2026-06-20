@@ -1,5 +1,46 @@
 document.addEventListener('DOMContentLoaded', function () {
+  var categoryMenus = Array.prototype.slice.call(document.querySelectorAll('.header-category-menu'));
   var languageMenus = Array.prototype.slice.call(document.querySelectorAll('.header-language-menu'));
+  var desktopCategoryQuery = window.matchMedia ? window.matchMedia('(min-width: 921px)') : null;
+
+  function isDesktopCategoryMenu() {
+    return desktopCategoryQuery ? desktopCategoryQuery.matches : true;
+  }
+
+  if (categoryMenus.length) {
+    categoryMenus.forEach(function (menu) {
+      menu.addEventListener('mouseenter', function () {
+        if (isDesktopCategoryMenu()) menu.setAttribute('open', '');
+      });
+
+      menu.addEventListener('mouseleave', function () {
+        if (isDesktopCategoryMenu()) menu.removeAttribute('open');
+      });
+
+      menu.addEventListener('focusin', function () {
+        if (isDesktopCategoryMenu()) menu.setAttribute('open', '');
+      });
+
+      menu.addEventListener('focusout', function (event) {
+        if (isDesktopCategoryMenu() && !menu.contains(event.relatedTarget)) {
+          menu.removeAttribute('open');
+        }
+      });
+    });
+
+    document.addEventListener('click', function (event) {
+      categoryMenus.forEach(function (menu) {
+        if (!menu.contains(event.target)) menu.removeAttribute('open');
+      });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape') return;
+      categoryMenus.forEach(function (menu) {
+        menu.removeAttribute('open');
+      });
+    });
+  }
 
   if (languageMenus.length) {
     document.addEventListener('click', function (event) {

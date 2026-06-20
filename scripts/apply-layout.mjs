@@ -34,6 +34,7 @@ function applyCanonicalLayout(html, url, page) {
   next = ensureHeaderFooterStylesheet(next);
   next = replaceLayoutBlock(next, 'ja-header', renderHeader(pillar, currentUrl), 'header');
   next = replaceLayoutBlock(next, 'ja-footer', readLayoutTemplate('ja-footer'), 'footer');
+  next = ensureMainScript(next);
   return next;
 }
 
@@ -64,6 +65,11 @@ function ensureHeaderFooterStylesheet(html) {
   }
 
   return next.replace('</head>', `${stylesheetLink}\n</head>`);
+}
+
+function ensureMainScript(html) {
+  if (/<script\b[^>]*src=["']\/assets\/js\/main\.js(?:\?[^"']*)?["'][^>]*>/i.test(html)) return html;
+  return html.replace(/(\s*)<\/body>/i, `\n<script src="/assets/js/main.js"></script>$1</body>`);
 }
 
 function replaceLayoutBlock(html, marker, replacement, tag) {

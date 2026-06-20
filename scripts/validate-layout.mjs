@@ -54,7 +54,9 @@ const requiredLivingSecondaryLinks = [
   '/germany/ja/guides/'
 ];
 const requiredCategoryLinks = [
-  ...requiredCategoryMainLinks,
+  ...requiredCategoryMainLinks
+];
+const forbiddenCategoryLinks = [
   ...requiredLivingSecondaryLinks,
   '/germany/ja/news/',
   '/germany/ja/about/'
@@ -234,6 +236,9 @@ function validateHtmlPage(url, file, page) {
     if (!/<header\b[^>]*class=["'][^"']*\bsite-header\b/i.test(headerBlock)) {
       problems.push(`${rel} must use the canonical JA site-header template.`);
     }
+    if (!/<script\b[^>]*src=["']\/assets\/js\/main\.js(?:\?[^"']*)?["'][^>]*>/i.test(html)) {
+      problems.push(`${rel} must load /assets/js/main.js for shared header behavior.`);
+    }
     for (const requiredLink of requiredPrimaryNavLinks) {
       if (!hasHref(primaryNavBlock, requiredLink)) {
         problems.push(`${rel} primary header missing required portal nav link: ${requiredLink}`);
@@ -250,6 +255,11 @@ function validateHtmlPage(url, file, page) {
     for (const requiredLink of requiredCategoryLinks) {
       if (!hasHref(categoryDropdownBlock, requiredLink)) {
         problems.push(`${rel} category dropdown missing required link: ${requiredLink}`);
+      }
+    }
+    for (const forbiddenLink of forbiddenCategoryLinks) {
+      if (hasHref(categoryDropdownBlock, forbiddenLink)) {
+        problems.push(`${rel} category dropdown contains non-primary category link: ${forbiddenLink}`);
       }
     }
   }

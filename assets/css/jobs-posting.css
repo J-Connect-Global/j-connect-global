@@ -643,6 +643,7 @@ body{
   border-radius:8px;
   background:linear-gradient(110deg,#fff 0%,#f8fbff 100%),#fff;
   box-shadow:0 8px 20px rgba(0,54,109,.08);
+  padding:24px;
 }
 
 .hero-grid{
@@ -697,6 +698,7 @@ body{
 .panel,
 .notice,
 .policy-card,
+.faq-card,
 .job-preview-card,
 .status-box{
   border:1px solid #cfe0f2;
@@ -750,15 +752,55 @@ body{
   line-height:1.7;
 }
 
+.faq-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+.faq-card{
+  padding:18px;
+}
+
+.faq-card h3{
+  color:#07315f;
+  font-size:16px;
+  margin:0 0 8px;
+}
+
+.faq-card p{
+  color:#475569;
+  font-size:14px;
+  line-height:1.7;
+  margin:0;
+}
+
+.badge{
+  color:#07315f;
+  border-color:#cfe0f2;
+}
+
+.meta dt,
+.detail-item .k{
+  color:#07315f;
+}
+
+.meta dd,
+.detail-sec p,
+.detail-sec li{
+  color:#475569;
+}
+
 @media (max-width:900px){
   .hero-grid,
-  .posting-flow-grid{
+  .posting-flow-grid,
+  .faq-grid{
     grid-template-columns:1fr;
   }
 }
 
 @media (max-width:720px){
-  .hero-grid{
+  .hero{
     padding:18px;
   }
 

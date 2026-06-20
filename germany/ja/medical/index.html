@@ -117,6 +117,9 @@
       <p>
         病院、クリニック、薬局などの情報を地域・カテゴリ・言語対応から確認できます。
       </p>
+      <p class="directory-trust-note">
+        このページは医療機関を探すための入口です。診療内容、受付時間、言語対応、保険対応は変更されることがあります。受診前に必ず公式サイトまたは医療機関へ直接確認してください。緊急時は112へ連絡してください。
+      </p>
     </div>
   </section>
 
@@ -544,6 +547,50 @@
       els.resultsSummary.textContent = `${filteredItems.length} 件 / 全 ${rawItems.length} 件`;
     }
 
+    function renderMedicalStatus({ title, body, guidance = [], isError = false, showRetry = false, showReset = true }) {
+      els.cards.innerHTML = "";
+      els.statusBox.className = `empty-box jc-empty-state directory-fallback${isError ? " error" : ""}`;
+      els.statusBox.style.display = "block";
+      els.statusBox.innerHTML = `
+        <span class="status-title">${escapeHtml(title)}</span>
+        <div>${escapeHtml(body)}</div>
+        <div class="directory-medical-note">このページは医療機関を探すための入口です。受診前に必ず公式サイトまたは医療機関へ直接確認してください。緊急時は112へ連絡してください。</div>
+        <div class="status-actions">
+          ${showRetry ? `<button class="btn btn-primary" type="button" data-retry-load>再読み込み</button>` : ""}
+          ${showReset ? `<button class="btn btn-secondary" type="button" data-reset-filters>条件をリセット</button>` : ""}
+          <a class="btn btn-secondary" href="/germany/ja/contact/">掲載・修正を相談</a>
+        </div>
+        ${guidance.length ? `
+          <div class="directory-guidance" aria-label="探し方案内">
+            <div class="directory-guidance-label">探し方案内</div>
+            <div class="directory-guidance-grid">
+              ${guidance.map(item => `<div class="directory-guidance-card">${escapeHtml(item)}</div>`).join("")}
+            </div>
+          </div>
+        ` : ""}
+      `;
+      els.statusBox.querySelector("[data-reset-filters]")?.addEventListener("click", resetFilters);
+      els.statusBox.querySelector("[data-retry-load]")?.addEventListener("click", loadMedicalData);
+    }
+
+    function renderMedicalEmptyState(isError = false) {
+      renderMedicalStatus({
+        title: "医療リソースを準備中です",
+        body: "病院、クリニック、薬局、日本語・英語対応の有無など、生活に役立つ医療情報を順次整理しています。",
+        guidance: ["Hausarzt・小児科", "歯科・専門医", "薬局・緊急時の確認先"],
+        isError,
+        showRetry: isError
+      });
+    }
+
+    function renderFilterEmptyState() {
+      renderMedicalStatus({
+        title: "条件に一致する結果がありません",
+        body: "キーワードや地域、カテゴリ、言語対応を少し広げて再検索してください。",
+        guidance: ["地域をすべてに戻す", "カテゴリを広げる", "言語対応条件を外す"]
+      });
+    }
+
     function renderChips() {
       const chips = [];
       const keyword = normalizeText(els.keywordInput.value);
@@ -569,8 +616,13 @@
     function renderCards() {
       els.cards.innerHTML = "";
 
+      if (!rawItems.length) {
+        renderMedicalEmptyState(false);
+        return;
+      }
+
       if (!filteredItems.length) {
-        setStatus("条件に一致する結果がありません。フィルターを変更してください。");
+        renderFilterEmptyState();
         return;
       }
 
@@ -912,16 +964,7 @@
     }
 
     function renderMedicalLoadError() {
-      setStatus(`
-        <span class="status-title">医療機関データを取得できませんでした。</span>
-        <div>緊急の場合は公的機関・救急窓口を優先してください。</div>
-        <div>このサイトは緊急医療サービスではありません。</div>
-        <div class="status-actions">
-          <button class="btn btn-primary" type="button" data-retry-load>再読み込み</button>
-          <a class="btn btn-secondary" href="/germany/ja/">トップページへ戻る</a>
-        </div>
-      `, true);
-      els.statusBox.querySelector("[data-retry-load]")?.addEventListener("click", loadMedicalData);
+      renderMedicalEmptyState(true);
     }
 
     async function loadMedicalData() {
@@ -935,10 +978,6 @@
 
         renderFilterChips();
         applyFilters();
-
-        if (!rawItems.length) {
-          setStatus("現在表示できる医療機関データがありません。緊急の場合は公的機関・救急窓口を優先してください。", true);
-        }
       } catch (error) {
         console.error("Medical data load failed:", API_URL, error);
         rawItems = [];

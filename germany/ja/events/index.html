@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ニュース・イベント | J-Connect Germany</title>
-  <meta name="description" content="ドイツで参加しやすいイベント記事、季節のおでかけ、制度・生活アップデートの確認先を日本語で整理しています。">
+  <meta name="description" content="ドイツ生活に関係するニュース、サイトからのお知らせ、交流会・セミナーなどのイベント情報をまとめて確認できます。">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/events/">
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
@@ -14,8 +14,7 @@
   <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal5-nav-20260618">
 <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
-<link rel="stylesheet" href="/assets/css/cookie-consent.css">
-
+  <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <script src="/assets/js/cookie-consent.js" defer></script>
 </head>
 <body>
@@ -69,59 +68,50 @@
   </div>
 </header>
 <!-- LAYOUT:ja-header:end -->
-<main class="jc-shell jc-main jc-stack">
-  <section class="jc-page-hero">
+<main class="jc-shell jc-main jc-stack news-events-hub">
+  <section class="jc-page-hero news-events-hero">
     <div class="jc-eyebrow"><span class="jc-dot"></span>ニュース・イベント</div>
     <h1>ニュース・イベント</h1>
-    <p>日本文化イベント、季節のおでかけ、週末情報に加えて、制度・交通・生活アップデートの確認先を整理しています。速報ではなく、公式情報を確認しながら使える入口です。</p>
-    <div class="jc-hero-actions"><a class="jc-button is-primary" href="#eventArticles">イベント記事を見る</a><a class="jc-button" href="#life-updates">生活アップデートを見る</a></div>
+    <p>ドイツ生活に関係するニュース、サイトからのお知らせ、交流会・セミナーなどのイベント情報をまとめて確認できます。</p>
   </section>
-  <section class="jc-section" aria-labelledby="eventsOverviewTitle">
-    <div class="jc-section-head">
-      <div>
-        <h2 id="eventsOverviewTitle">イベント・お知らせ</h2>
-        <p>ドイツ生活に役立つイベントやコミュニティ情報、運営からのお知らせを掲載しています。</p>
-      </div>
-    </div>
-    <div class="jc-card-grid">
-      <a class="jc-card" href="#eventArticles">
-        <h3>イベントを探す</h3>
-        <p>日本文化、季節、週末、家族向けなど、実用メモつきの記事を確認できます。</p>
-      </a>
-      <a class="jc-card" href="/germany/ja/news/">
-        <h3>ニュース・お知らせ</h3>
-        <p>制度変更や生活アップデートは、ニュース一覧で確認できます。</p>
-      </a>
-    </div>
-  </section>
-  <section class="jc-section events-hub" id="eventArticles" data-events-hub>
-    <div class="jc-section-head"><div><h2>イベント記事</h2><p>新しい順に、実用メモつきの記事として掲載しています。</p></div></div>
-    <div class="events-hub-tools" aria-label="イベント記事の検索と絞り込み">
-      <label class="events-hub-search">
-        <span>キーワード検索</span>
-        <input type="search" data-events-search placeholder="例：NRW、日本文化、週末" autocomplete="off">
-      </label>
 
-      <div class="events-hub-filter-group" aria-label="テーマで絞り込み">
-        <button type="button" class="events-filter-chip is-active" data-events-filter="all" aria-pressed="true">すべて</button>
-        <button type="button" class="events-filter-chip" data-events-filter="culture" aria-pressed="false">日本文化</button>
-        <button type="button" class="events-filter-chip" data-events-filter="seasonal" aria-pressed="false">季節</button>
-        <button type="button" class="events-filter-chip" data-events-filter="family" aria-pressed="false">家族向け</button>
-        <button type="button" class="events-filter-chip" data-events-filter="weekend" aria-pressed="false">週末</button>
-        <button type="button" class="events-filter-chip" data-events-filter="nrw" aria-pressed="false">NRW</button>
-        <button type="button" class="events-filter-chip" data-events-filter="duesseldorf" aria-pressed="false">Düsseldorf</button>
-      </div>
+  <nav class="news-events-ribbon" aria-label="ニュース・イベント内ナビゲーション">
+    <a href="#news">
+      <span>1 ニュース</span>
+      <small>最新情報・お知らせ</small>
+    </a>
+    <a href="#events">
+      <span>2 イベント</span>
+      <small>交流会・セミナー・カレンダー</small>
+    </a>
+  </nav>
 
-      <label class="events-hub-sort">
-        <span>並び替え</span>
-        <select data-events-sort>
-          <option value="newest">新しい順</option>
-          <option value="title">タイトル順</option>
-          <option value="location">地域順</option>
-        </select>
-      </label>
-    </div>
-    <div class="jc-article-grid" id="eventArticleGrid">
+  <div class="news-events-layout">
+    <div class="news-events-main">
+      <section class="jc-section news-section" id="news" aria-labelledby="newsTitle">
+        <span class="news-events-anchor-alias" id="life-updates" aria-hidden="true"></span>
+        <div class="jc-section-head">
+          <div>
+            <h2 id="newsTitle">ニュース</h2>
+            <p>ドイツ生活に関係する更新情報、サイトからのお知らせ、生活に役立つニュースを確認できます。</p>
+          </div>
+        </div>
+        <div class="news-card-grid" id="newsGrid" aria-live="polite">
+          <div class="news-events-empty">
+            <h3>ニュースを準備中です</h3>
+            <p>生活アップデート、サイトからのお知らせ、コミュニティ関連の情報を順次掲載します。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="jc-section events-section" id="events" data-events-hub aria-labelledby="eventsTitle">
+        <div class="jc-section-head">
+          <div>
+            <h2 id="eventsTitle">イベント</h2>
+            <p>交流会、セミナー、家族向けイベント、オンラインイベントなどを確認できます。</p>
+          </div>
+        </div>
+        <div class="jc-article-grid event-card-grid" id="eventArticleGrid">
         <!-- CONTENT:events-grid:start -->
         <a class="jc-article-card events-hub-card" href="/germany/ja/events/japan-day-duesseldorf/" data-events-card data-title="デュッセルドルフ日本デーの基本ガイド" data-summary="ライン川沿いで開かれる日本文化イベントを、初めて参加する人向けに整理しました。" data-category="日本文化イベント" data-location="Düsseldorf Rheinuferpromenade 周辺" data-tags="日本文化 家族向け NRW" data-search="デュッセルドルフ日本デーの基本ガイド ライン川沿いで開かれる日本文化イベントを、初めて参加する人向けに整理しました。 日本文化イベント Düsseldorf Rheinuferpromenade 周辺 年により異なる 日本文化 家族向け NRW" data-filter="日本文化イベント Düsseldorf Rheinuferpromenade 周辺 日本文化 家族向け NRW" data-published="2026-06-12">
           <div class="jc-card-meta"><span>年により異なる</span><span>Düsseldorf</span><span>日本文化イベント</span></div>
@@ -163,36 +153,33 @@
           <span class="jc-read-more">イベント記事を読む</span>
         </a>
         <!-- CONTENT:events-grid:end -->
-</div>
-    <p class="events-hub-empty" data-events-empty hidden>条件に合うイベント記事がありません。検索語やフィルターを変更するか、ニュース・お知らせも確認してください。</p>
-  </section>
-  <section class="jc-section" id="life-updates">
-    <div class="jc-section-head">
-      <div>
-        <h2>生活アップデート・ニュース確認ポイント</h2>
-        <p>制度変更や地域情報は、記事だけで完結させず、公式発表とあわせて確認できる導線として整理しています。</p>
-      </div>
+        </div>
+        <div class="news-events-empty events-hub-empty" data-events-empty hidden>
+          <h3>イベント情報を準備中です</h3>
+          <p>交流会、セミナー、家族向けイベントなどを順次掲載します。</p>
+        </div>
+
+        <div class="news-events-supplement" aria-labelledby="supplementalEventsTitle">
+          <div class="jc-section-head">
+            <div>
+              <h3 id="supplementalEventsTitle">補助イベント情報</h3>
+              <p>外部データが取得できた場合のみ、静的記事の下に補助情報として表示します。</p>
+            </div>
+          </div>
+          <div id="dynamicEventStatus" class="jc-status"><strong>静的イベント記事を表示中</strong><span>上のカードから日付・場所・アクセスメモを確認できます。</span></div>
+          <div class="jc-article-grid" id="dynamicEventGrid"></div>
+        </div>
+      </section>
     </div>
-    <div class="jc-card-grid">
-      <a class="jc-card" href="/germany/ja/news/">
-        <h3>制度・生活アップデート</h3>
-        <p>最低賃金、税制、滞在許可、交通など、変更があり得る情報の確認ポイントをまとめます。</p>
-      </a>
-      <a class="jc-card" href="/germany/ja/living/">
-        <h3>生活手続きガイド</h3>
-        <p>住民登録、住まい、銀行、SCHUFAなど、引っ越し後に確認したい実務記事へ移動できます。</p>
-      </a>
-      <a class="jc-card" href="/germany/ja/events/">
-        <h3>イベント・季節情報</h3>
-        <p>日本文化イベントや週末のおでかけ記事を、日付や会場の公式情報とあわせて確認できます。</p>
-      </a>
-    </div>
-  </section>
-  <section class="jc-section">
-    <div class="jc-section-head"><div><h2>補助イベント情報</h2><p>外部データが取得できた場合のみ、静的記事の下に補助情報として表示します。</p></div></div>
-    <div id="dynamicEventStatus" class="jc-status"><strong>静的イベント記事を表示中</strong><span>上のカードから日付・場所・アクセスメモを確認できます。</span></div>
-    <div class="jc-article-grid" id="dynamicEventGrid"></div>
-  </section>
+
+    <aside class="news-events-toc" aria-labelledby="newsEventsTocTitle">
+      <h2 id="newsEventsTocTitle">このページ</h2>
+      <nav aria-label="ページ内リンク">
+        <a href="#news">ニュース</a>
+        <a href="#events">イベント</a>
+      </nav>
+    </aside>
+  </div>
 </main>
 <!-- LAYOUT:ja-footer:start -->
 <footer class="page-footer">
@@ -240,6 +227,7 @@
 </footer>
 <!-- LAYOUT:ja-footer:end -->
 <script src="/assets/js/main.js"></script>
+<script src="/assets/js/news.js"></script>
 <script src="/assets/js/data-sources.js"></script>
 <script src="/assets/js/events-fallback.js"></script>
 <script>
@@ -247,6 +235,7 @@
   const grid = document.getElementById("dynamicEventGrid");
   const status = document.getElementById("dynamicEventStatus");
   const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
+  if (!grid || !status || !DATA_SOURCES) return;
   const EVENTS_API_URL = DATA_SOURCES.buildDirectoryUrl({ sheet: DATA_SOURCES.directorySheets.events, lang:"ja", status:"active" });
   const escapeHtml = value => String(value ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");
   const clean = value => String(value ?? "").trim();

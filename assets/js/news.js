@@ -6,39 +6,43 @@ const countryFilter = document.getElementById("countryFilter");
 const cityFilter = document.getElementById("cityFilter");
 const categoryFilter = document.getElementById("categoryFilter");
 const importanceFilter = document.getElementById("importanceFilter");
+const filterControls = [searchInput, countryFilter, cityFilter, categoryFilter, importanceFilter].filter(Boolean);
 
 let allNews = [];
 
 async function loadNews() {
+  if (!newsGrid) return;
+
   try {
     const response = await fetch(NEWS_DATA_URL);
     allNews = await response.json();
     renderNews(allNews);
   } catch (error) {
-    newsGrid.innerHTML = `
-      <p class="news-error">
-        確認ポイントを読み込めませんでした。時間をおいて再度お試しください。
-      </p>
-    `;
+    renderNews([]);
   }
 }
 
 function renderNews(items) {
   if (!items.length) {
-    newsGrid.innerHTML = `<p class="news-empty">条件に合う確認ポイントはありません。</p>`;
+    newsGrid.innerHTML = `
+      <div class="news-events-empty news-empty">
+        <h3>ニュースを準備中です</h3>
+        <p>生活アップデート、サイトからのお知らせ、コミュニティ関連の情報を順次掲載します。</p>
+      </div>
+    `;
     return;
   }
 
   newsGrid.innerHTML = items.map(item => `
     <article class="news-card">
       <div class="news-card__badges">
-        <span>${item.country_ja}</span>
-        <span>${item.city_ja}</span>
-        <span>${item.category_ja}</span>
-        <span>${item.importance_ja}</span>
+        <span>${escapeHtml(item.country_ja)}</span>
+        <span>${escapeHtml(item.city_ja)}</span>
+        <span>${escapeHtml(item.category_ja)}</span>
+        <span>${escapeHtml(item.importance_ja)}</span>
       </div>
 
-      <h2>${escapeHtml(item.title)}</h2>
+      <h3>${escapeHtml(item.title)}</h3>
 
       <p>${escapeHtml(item.summary)}</p>
 
@@ -55,11 +59,11 @@ function renderNews(items) {
 }
 
 function applyFilters() {
-  const keyword = searchInput.value.toLowerCase();
-  const country = countryFilter.value;
-  const city = cityFilter.value;
-  const category = categoryFilter.value;
-  const importance = importanceFilter.value;
+  const keyword = searchInput ? searchInput.value.toLowerCase() : "";
+  const country = countryFilter ? countryFilter.value : "all";
+  const city = cityFilter ? cityFilter.value : "all";
+  const category = categoryFilter ? categoryFilter.value : "all";
+  const importance = importanceFilter ? importanceFilter.value : "all";
 
   const filtered = allNews.filter(item => {
     const text = `${item.title} ${item.summary} ${item.source_name} ${item.category_ja} ${item.city_ja}`.toLowerCase();
@@ -85,7 +89,7 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
-[searchInput, countryFilter, cityFilter, categoryFilter, importanceFilter].forEach(element => {
+filterControls.forEach(element => {
   element.addEventListener("input", applyFilters);
   element.addEventListener("change", applyFilters);
 });

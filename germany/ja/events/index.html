@@ -322,17 +322,6 @@
             </div>
           </div>
         </div>
-
-        <div class="news-events-supplement" aria-labelledby="supplementalEventsTitle">
-          <div class="jc-section-head">
-            <div>
-              <h3 id="supplementalEventsTitle">補助イベント情報</h3>
-              <p>外部データが取得できた場合のみ、静的記事の下に補助情報として表示します。</p>
-            </div>
-          </div>
-          <div id="dynamicEventStatus" class="jc-status"><strong>静的イベント記事を表示中</strong><span>上のカードから日付・場所・アクセスメモを確認できます。</span></div>
-          <div class="jc-article-grid" id="dynamicEventGrid"></div>
-        </div>
       </section>
     </div>
 
@@ -392,34 +381,5 @@
 <!-- LAYOUT:ja-footer:end -->
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/news.js"></script>
-<script src="/assets/js/data-sources.js"></script>
-<script src="/assets/js/events-fallback.js"></script>
-<script>
-(function(){
-  const grid = document.getElementById("dynamicEventGrid");
-  const status = document.getElementById("dynamicEventStatus");
-  const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
-  if (!grid || !status || !DATA_SOURCES) return;
-  const EVENTS_API_URL = DATA_SOURCES.buildDirectoryUrl({ sheet: DATA_SOURCES.directorySheets.events, lang:"ja", status:"active" });
-  const escapeHtml = value => String(value ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");
-  const clean = value => String(value ?? "").trim();
-  function getValue(row, ...keys){ for (const key of keys) { if (row[key] !== undefined && row[key] !== null && String(row[key]).trim() !== "") return clean(row[key]); } return ""; }
-  function normalizeEvent(row, index){ const title = getValue(row,"title","event_title","name"); const id = getValue(row,"event_id","id") || getValue(row,"slug","event_slug") || `event-${index + 1}`; return { id, slug:getValue(row,"slug","event_slug"), detail_url:getValue(row,"detail_url","detailUrl","detail_page_url"), title, summary:getValue(row,"summary","description_short","description"), date:getValue(row,"event_date","date","published_at"), city:getValue(row,"city","area","region"), location:getValue(row,"location","venue","address"), category:getValue(row,"category","event_category"), tags:getValue(row,"tags"), published_at:getValue(row,"published_at","updated_at","event_date") }; }
-  function splitList(value){ return String(value || "").split(/\n|,|、|;|；|\||\//).map(v => v.trim()).filter(Boolean); }
-  function detailPath(event){ if (event.detail_url) return event.detail_url; if (event.slug) return `/germany/ja/events/${encodeURIComponent(event.slug)}/`; return `/germany/ja/events/detail/?id=${encodeURIComponent(event.id)}`; }
-  function timestamp(event){ const time = Date.parse(event.published_at || event.date); return Number.isFinite(time) ? time : 0; }
-  function render(items){
-    const usable = items.filter(item => item.title).sort((a,b) => timestamp(b) - timestamp(a));
-    if (!usable.length) { status.innerHTML = '<strong>静的イベント記事を表示中</strong><span>上のカードから日付・場所・アクセスメモを確認できます。</span>'; return; }
-    grid.innerHTML = usable.map(event => `<a class="jc-article-card" href="${escapeHtml(detailPath(event))}"><div class="jc-card-meta"><span>${escapeHtml(event.date || event.published_at || "日付確認中")}</span><span>${escapeHtml(event.city || event.location || "ドイツ")}</span><span>${escapeHtml(event.category || "イベント")}</span></div><h3>${escapeHtml(event.title)}</h3><p>${escapeHtml(event.summary || "詳細ページで内容を確認してください。")}</p><div class="jc-chip-row">${splitList(event.tags).slice(0,4).map(tag => `<span class="jc-chip">${escapeHtml(tag)}</span>`).join("")}</div></a>`).join("");
-    status.innerHTML = `<strong>${usable.length}件の補助イベントを表示中</strong><span>静的記事の補足として表示しています。</span>`;
-  }
-  async function load(){
-    try { const payload = await DATA_SOURCES.fetchJsonWithTimeout(EVENTS_API_URL, 12000); render(DATA_SOURCES.normalizePayload(payload).map(normalizeEvent)); }
-    catch (error) { console.warn("Events data load failed:", EVENTS_API_URL, error); status.innerHTML = '<strong>静的イベント記事を表示中</strong><span>上のカードから日付・場所・アクセスメモを確認できます。</span>'; }
-  }
-  load();
-})();
-</script>
 </body>
 </html>

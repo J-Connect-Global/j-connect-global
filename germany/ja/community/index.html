@@ -100,6 +100,43 @@
       </div>
     </section>
 
+    <section class="community-onboarding" aria-labelledby="communityUseTitle">
+      <div class="community-onboarding-head">
+        <div>
+          <p class="community-section-kicker">はじめて使う方へ</p>
+          <h2 id="communityUseTitle">この掲示板でできること</h2>
+        </div>
+        <p>売買、質問、交流、イベント告知など、ドイツ生活に関する投稿をまとめて確認できます。</p>
+      </div>
+      <div class="community-use-cases" aria-label="投稿できる内容">
+        <article class="community-use-card">
+          <span class="community-use-icon" aria-hidden="true">売</span>
+          <h3>売ります・譲ります</h3>
+          <p>家具・家電・ベビー用品など</p>
+        </article>
+        <article class="community-use-card">
+          <span class="community-use-icon" aria-hidden="true">問</span>
+          <h3>質問・相談</h3>
+          <p>役所、保険、Kita、住まいなど</p>
+        </article>
+        <article class="community-use-card">
+          <span class="community-use-icon" aria-hidden="true">友</span>
+          <h3>友達募集・交流</h3>
+          <p>地域交流、趣味仲間、家族交流など</p>
+        </article>
+        <article class="community-use-card">
+          <span class="community-use-icon" aria-hidden="true">会</span>
+          <h3>イベント告知</h3>
+          <p>交流会、勉強会、食事会など</p>
+        </article>
+        <article class="community-use-card">
+          <span class="community-use-icon" aria-hidden="true">学</span>
+          <h3>レッスン・アルバイト</h3>
+          <p>語学、家庭教師、単発仕事など</p>
+        </article>
+      </div>
+    </section>
+
     <div class="marketplace-layout jc-directory-layout">
       <aside class="filter-bar jc-control-panel jc-directory-sidebar" aria-label="検索と絞り込み">
         <div class="filter-panel-heading">
@@ -172,29 +209,11 @@
         </div>
 
         <div class="empty-state jc-empty-state" id="emptyState">
-          <h2>まだ表示できる投稿がありません</h2>
-          <p>現在、掲示板の投稿を準備中、または条件に合う投稿がありません。売ります・譲ります・質問・友達募集など、ドイツ在住者向けの投稿を順次掲載していきます。</p>
-          <p class="empty-helper">家具・家電の譲渡、住まい探し、イベント告知、生活の質問などに使えます。</p>
+          <h2>条件に合う投稿はありません</h2>
+          <p>条件を少し広げるか、絞り込みを解除してください。投稿したい場合は、上部の「投稿する」から作成できます。</p>
           <div class="hero-actions is-centered">
-            <a class="btn btn-primary" href="./post/">投稿する</a>
-            <button class="btn btn-secondary" type="button" id="emptyClear">条件をリセット</button>
-          </div>
-          <div class="usage-guide" aria-label="使い方案内">
-            <h3>使い方案内</h3>
-            <div class="usage-guide-grid">
-              <article class="usage-guide-card">
-                <strong>売ります・譲ります</strong>
-                <p>家具、家電、ベビー用品、生活用品などの譲渡に使えます。</p>
-              </article>
-              <article class="usage-guide-card">
-                <strong>質問・相談</strong>
-                <p>Anmeldung、保険、住まい、Kitaなど、ドイツ生活の疑問を相談できます。</p>
-              </article>
-              <article class="usage-guide-card">
-                <strong>友達募集・イベント</strong>
-                <p>地域交流、週末イベント、趣味仲間探しの入口として使えます。</p>
-              </article>
-            </div>
+            <button class="btn btn-primary" type="button" id="emptyClear">絞り込みを解除</button>
+            <a class="btn btn-secondary" href="./post/">投稿する</a>
           </div>
         </div>
       </section>
@@ -833,10 +852,10 @@
         els.cards.classList.toggle("grid-mode", state.viewMode === "grid");
         els.cards.innerHTML = "";
         renderEmptyActions("filters");
-        els.emptyState.querySelector("h2").textContent = state.savedOnly && !state.saved.size ? "保存済みの投稿はまだありません。" : "まだ表示できる投稿がありません";
+        els.emptyState.querySelector("h2").textContent = state.savedOnly && !state.saved.size ? "保存済みの投稿はまだありません。" : "条件に合う投稿はありません";
         els.emptyState.querySelector("p").textContent = state.savedOnly && !state.saved.size
           ? "気になる投稿を保存すると、ここからすぐに見返せます。"
-          : "現在、掲示板の投稿を準備中、または条件に合う投稿がありません。売ります・譲ります・質問・友達募集など、ドイツ在住者向けの投稿を順次掲載していきます。";
+          : "条件を少し広げるか、絞り込みを解除してください。投稿したい場合は、上部の「投稿する」から作成できます。";
         els.emptyState.style.display = "block";
         return;
       }
@@ -1110,8 +1129,8 @@
       }
 
       actions.innerHTML = `
-        <a class="btn btn-primary" href="./post/">投稿する</a>
-        <button class="btn btn-secondary" type="button" data-clear-empty>条件をリセット</button>
+        <button class="btn btn-primary" type="button" data-clear-empty>絞り込みを解除</button>
+        <a class="btn btn-secondary" href="./post/">投稿する</a>
       `;
     }
 

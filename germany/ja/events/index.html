@@ -96,10 +96,84 @@
             <p>ドイツ生活に関係する更新情報、サイトからのお知らせ、生活に役立つニュースを確認できます。</p>
           </div>
         </div>
-        <div class="news-card-grid" id="newsGrid" aria-live="polite">
-          <div class="news-events-empty">
-            <h3>ニュースを準備中です</h3>
-            <p>生活アップデート、サイトからのお知らせ、コミュニティ関連の情報を順次掲載します。</p>
+        <div class="news-events-section-layout" data-news-hub>
+          <aside class="news-events-filter-pane" aria-labelledby="newsFilterTitle">
+            <h3 id="newsFilterTitle">ニュースを絞り込む</h3>
+            <label class="news-events-control">
+              <span>キーワード</span>
+              <input id="newsSearch" type="search" placeholder="例：生活、Düsseldorf、制度">
+            </label>
+            <label class="news-events-control">
+              <span>カテゴリ</span>
+              <select id="newsCategoryFilter" data-news-filter="category">
+                <option value="all">すべて</option>
+                <option value="life-update">生活アップデート</option>
+                <option value="admin">行政・手続き</option>
+                <option value="work">仕事・求人</option>
+                <option value="education-family">教育・家族</option>
+                <option value="transport">交通・ストライキ</option>
+                <option value="community">コミュニティ</option>
+                <option value="jconnect">J-Connectからのお知らせ</option>
+              </select>
+            </label>
+            <label class="news-events-control">
+              <span>エリア</span>
+              <select id="newsAreaFilter" data-news-filter="area">
+                <option value="all">すべて</option>
+                <option value="germany">ドイツ全体</option>
+                <option value="nrw">NRW</option>
+                <option value="duesseldorf">Düsseldorf</option>
+                <option value="koln">Köln</option>
+                <option value="online">Online</option>
+              </select>
+            </label>
+            <label class="news-events-control">
+              <span>種別</span>
+              <select id="newsTypeFilter" data-news-filter="type">
+                <option value="all">すべて</option>
+                <option value="notice">お知らせ</option>
+                <option value="life-info">生活情報</option>
+                <option value="alert">注意喚起</option>
+                <option value="update">更新情報</option>
+              </select>
+            </label>
+            <label class="news-events-control">
+              <span>掲載時期</span>
+              <select id="newsPeriodFilter" data-news-filter="period">
+                <option value="all">すべて</option>
+                <option value="7">過去7日</option>
+                <option value="30">過去30日</option>
+                <option value="90">過去90日</option>
+              </select>
+            </label>
+            <button class="living-reset-button news-events-reset" type="button" data-news-reset>絞り込みを解除</button>
+          </aside>
+          <div class="news-events-results">
+            <div class="news-events-results-head">
+              <div>
+                <h3>ニュース一覧</h3>
+                <p data-news-count>ニュースを読み込み中です。</p>
+              </div>
+              <div class="news-events-results-actions">
+                <div class="news-events-view-toggle" role="group" aria-label="ニュースの表示切替" data-view-toggle="news">
+                  <button class="news-events-view-button" type="button" data-view-mode="grid" aria-pressed="false">グリッド</button>
+                  <button class="news-events-view-button is-active" type="button" data-view-mode="list" aria-pressed="true">リスト</button>
+                </div>
+              </div>
+            </div>
+            <div class="news-card-grid news-events-grid is-list-view" id="newsGrid" aria-live="polite" data-news-view-container>
+              <div class="news-events-empty">
+                <h3>ニュースを準備中です</h3>
+                <p>生活アップデート、サイトからのお知らせ、コミュニティ関連の情報を順次掲載します。</p>
+              </div>
+            </div>
+            <div class="news-events-empty" data-news-empty hidden>
+              <h3 data-news-empty-title>ニュースを準備中です</h3>
+              <p data-news-empty-body>生活アップデート、サイトからのお知らせ、コミュニティ関連の情報を順次掲載します。</p>
+              <div class="news-events-empty-actions">
+                <button class="living-reset-button news-events-reset" type="button" data-news-empty-reset hidden>絞り込みを解除</button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -111,9 +185,94 @@
             <p>交流会、セミナー、家族向けイベント、オンラインイベントなどを確認できます。</p>
           </div>
         </div>
-        <div class="jc-article-grid event-card-grid" id="eventArticleGrid">
+        <div class="news-events-section-layout">
+          <aside class="news-events-filter-pane" aria-labelledby="eventFilterTitle">
+            <h3 id="eventFilterTitle">イベントを絞り込む</h3>
+            <label class="news-events-control">
+              <span>キーワード</span>
+              <input id="eventSearch" type="search" placeholder="例：NRW、日本文化、週末" data-event-search>
+            </label>
+            <label class="news-events-control">
+              <span>開催時期</span>
+              <select id="eventPeriodFilter" data-event-filter="period">
+                <option value="all">すべて</option>
+                <option value="upcoming">今後開催</option>
+                <option value="week">今週</option>
+                <option value="month">今月</option>
+                <option value="past">過去イベント</option>
+              </select>
+            </label>
+            <label class="news-events-control">
+              <span>都市・エリア</span>
+              <select id="eventAreaFilter" data-event-filter="area">
+                <option value="all">すべて</option>
+                <option value="duesseldorf">Düsseldorf</option>
+                <option value="koln">Köln</option>
+                <option value="nrw">NRW</option>
+                <option value="germany">Germany</option>
+                <option value="online">Online</option>
+              </select>
+            </label>
+            <label class="news-events-control">
+              <span>カテゴリ</span>
+              <select id="eventCategoryFilter" data-event-filter="category">
+                <option value="all">すべて</option>
+                <option value="meetup">交流会</option>
+                <option value="seminar">セミナー</option>
+                <option value="family">家族向け</option>
+                <option value="career">キャリア</option>
+                <option value="learning">学習</option>
+                <option value="culture">文化</option>
+                <option value="outing">おでかけ</option>
+                <option value="seasonal">季節イベント</option>
+              </select>
+            </label>
+            <label class="news-events-control">
+              <span>形式</span>
+              <select id="eventFormatFilter" data-event-filter="format">
+                <option value="all">すべて</option>
+                <option value="in-person">対面</option>
+                <option value="online">オンライン</option>
+                <option value="hybrid">ハイブリッド</option>
+              </select>
+            </label>
+            <label class="news-events-control">
+              <span>言語</span>
+              <select id="eventLanguageFilter" data-event-filter="language">
+                <option value="all">すべて</option>
+                <option value="ja">日本語</option>
+                <option value="de">ドイツ語</option>
+                <option value="en">英語</option>
+                <option value="multi">多言語</option>
+              </select>
+            </label>
+            <label class="news-events-control">
+              <span>料金</span>
+              <select id="eventPriceFilter" data-event-filter="price">
+                <option value="all">すべて</option>
+                <option value="free">無料</option>
+                <option value="paid">有料</option>
+                <option value="partial">一部有料</option>
+              </select>
+            </label>
+            <button class="living-reset-button news-events-reset" type="button" data-event-reset>絞り込みを解除</button>
+          </aside>
+          <div class="news-events-results">
+            <div class="news-events-results-head">
+              <div>
+                <h3>イベント一覧</h3>
+                <p data-event-count>イベントを読み込み中です。</p>
+              </div>
+              <div class="news-events-results-actions">
+                <div class="news-events-view-toggle" role="group" aria-label="イベントの表示切替" data-view-toggle="events">
+                  <button class="news-events-view-button is-active" type="button" data-view-mode="grid" aria-pressed="true">グリッド</button>
+                  <button class="news-events-view-button" type="button" data-view-mode="list" aria-pressed="false">リスト</button>
+                </div>
+              </div>
+            </div>
+            <div class="jc-article-grid event-card-grid news-events-grid is-grid-view" id="eventArticleGrid" aria-live="polite" data-event-view-container>
         <!-- CONTENT:events-grid:start -->
-        <a class="jc-article-card events-hub-card" href="/germany/ja/events/japan-day-duesseldorf/" data-events-card data-title="デュッセルドルフ日本デーの基本ガイド" data-summary="ライン川沿いで開かれる日本文化イベントを、初めて参加する人向けに整理しました。" data-category="日本文化イベント" data-location="Düsseldorf Rheinuferpromenade 周辺" data-tags="日本文化 家族向け NRW" data-search="デュッセルドルフ日本デーの基本ガイド ライン川沿いで開かれる日本文化イベントを、初めて参加する人向けに整理しました。 日本文化イベント Düsseldorf Rheinuferpromenade 周辺 年により異なる 日本文化 家族向け NRW" data-filter="日本文化イベント Düsseldorf Rheinuferpromenade 周辺 日本文化 家族向け NRW" data-published="2026-06-12">
+        <a class="jc-article-card events-hub-card" href="/germany/ja/events/japan-day-duesseldorf/" data-events-card data-title="デュッセルドルフ日本デーの基本ガイド" data-summary="ライン川沿いで開かれる日本文化イベントを、初めて参加する人向けに整理しました。" data-category="日本文化イベント" data-location="Düsseldorf Rheinuferpromenade 周辺" data-tags="日本文化 家族向け NRW" data-search="デュッセルドルフ日本デーの基本ガイド ライン川沿いで開かれる日本文化イベントを、初めて参加する人向けに整理しました。 日本文化イベント Düsseldorf Rheinuferpromenade 周辺 年により異なる 日本文化 家族向け NRW" data-filter="日本文化イベント Düsseldorf Rheinuferpromenade 周辺 日本文化 家族向け NRW" data-published="2026-06-12" data-event-date="" data-event-area="germany duesseldorf nrw" data-event-category="family culture" data-event-format="" data-event-language="" data-event-price="">
           <div class="jc-card-meta"><span>年により異なる</span><span>Düsseldorf</span><span>日本文化イベント</span></div>
           <h3>デュッセルドルフ日本デーの基本ガイド</h3>
           <p>ライン川沿いで開かれる日本文化イベントを、初めて参加する人向けに整理しました。</p>
@@ -121,7 +280,7 @@
           <span class="jc-read-more">イベント記事を読む</span>
         </a>
 
-        <a class="jc-article-card events-hub-card" href="/germany/ja/events/christmas-markets-duesseldorf/" data-events-card data-title="デュッセルドルフ周辺のクリスマスマーケット基本ガイド" data-summary="冬のNRWで楽しめるクリスマスマーケットの回り方、混雑、服装、確認ポイントを整理。" data-category="季節イベント" data-location="Düsseldorf / NRW Düsseldorf とNRW各都市" data-tags="冬 クリスマスマーケット NRW" data-search="デュッセルドルフ周辺のクリスマスマーケット基本ガイド 冬のNRWで楽しめるクリスマスマーケットの回り方、混雑、服装、確認ポイントを整理。 季節イベント Düsseldorf / NRW Düsseldorf とNRW各都市 年により異なる 冬 クリスマスマーケット NRW" data-filter="季節イベント Düsseldorf / NRW Düsseldorf とNRW各都市 冬 クリスマスマーケット NRW" data-published="2026-06-12">
+        <a class="jc-article-card events-hub-card" href="/germany/ja/events/christmas-markets-duesseldorf/" data-events-card data-title="デュッセルドルフ周辺のクリスマスマーケット基本ガイド" data-summary="冬のNRWで楽しめるクリスマスマーケットの回り方、混雑、服装、確認ポイントを整理。" data-category="季節イベント" data-location="Düsseldorf / NRW Düsseldorf とNRW各都市" data-tags="冬 クリスマスマーケット NRW" data-search="デュッセルドルフ周辺のクリスマスマーケット基本ガイド 冬のNRWで楽しめるクリスマスマーケットの回り方、混雑、服装、確認ポイントを整理。 季節イベント Düsseldorf / NRW Düsseldorf とNRW各都市 年により異なる 冬 クリスマスマーケット NRW" data-filter="季節イベント Düsseldorf / NRW Düsseldorf とNRW各都市 冬 クリスマスマーケット NRW" data-published="2026-06-12" data-event-date="" data-event-area="germany duesseldorf nrw" data-event-category="outing seasonal" data-event-format="" data-event-language="" data-event-price="">
           <div class="jc-card-meta"><span>年により異なる</span><span>Düsseldorf / NRW</span><span>季節イベント</span></div>
           <h3>デュッセルドルフ周辺のクリスマスマーケット基本ガイド</h3>
           <p>冬のNRWで楽しめるクリスマスマーケットの回り方、混雑、服装、確認ポイントを整理。</p>
@@ -129,7 +288,7 @@
           <span class="jc-read-more">イベント記事を読む</span>
         </a>
 
-        <a class="jc-article-card events-hub-card" href="/germany/ja/events/family-weekend-events-nrw/" data-events-card data-title="NRWで家族と行きやすい週末イベントの探し方" data-summary="子連れで行きやすい週末イベントを探すときの確認先、移動、持ち物、無理のない計画を整理。" data-category="家族・週末" data-location="NRW NRW各地" data-tags="家族向け 週末 NRW" data-search="NRWで家族と行きやすい週末イベントの探し方 子連れで行きやすい週末イベントを探すときの確認先、移動、持ち物、無理のない計画を整理。 家族・週末 NRW NRW各地 週末ごとに異なる 家族向け 週末 NRW" data-filter="家族・週末 NRW NRW各地 家族向け 週末 NRW" data-published="2026-06-12">
+        <a class="jc-article-card events-hub-card" href="/germany/ja/events/family-weekend-events-nrw/" data-events-card data-title="NRWで家族と行きやすい週末イベントの探し方" data-summary="子連れで行きやすい週末イベントを探すときの確認先、移動、持ち物、無理のない計画を整理。" data-category="家族・週末" data-location="NRW NRW各地" data-tags="家族向け 週末 NRW" data-search="NRWで家族と行きやすい週末イベントの探し方 子連れで行きやすい週末イベントを探すときの確認先、移動、持ち物、無理のない計画を整理。 家族・週末 NRW NRW各地 週末ごとに異なる 家族向け 週末 NRW" data-filter="家族・週末 NRW NRW各地 家族向け 週末 NRW" data-published="2026-06-12" data-event-date="" data-event-area="germany nrw" data-event-category="family" data-event-format="" data-event-language="" data-event-price="">
           <div class="jc-card-meta"><span>週末ごとに異なる</span><span>NRW</span><span>家族・週末</span></div>
           <h3>NRWで家族と行きやすい週末イベントの探し方</h3>
           <p>子連れで行きやすい週末イベントを探すときの確認先、移動、持ち物、無理のない計画を整理。</p>
@@ -137,7 +296,7 @@
           <span class="jc-read-more">イベント記事を読む</span>
         </a>
 
-        <a class="jc-article-card events-hub-card" href="/germany/ja/events/cologne-flea-market/" data-events-card data-title="ケルンの蚤の市・フリーマーケットの楽しみ方" data-summary="生活用品探しや週末散歩に使いやすい、ケルン周辺マーケットの楽しみ方。" data-category="おでかけ" data-location="Köln Köln 周辺の各会場" data-tags="マーケット 週末 ケルン" data-search="ケルンの蚤の市・フリーマーケットの楽しみ方 生活用品探しや週末散歩に使いやすい、ケルン周辺マーケットの楽しみ方。 おでかけ Köln Köln 周辺の各会場 会場により異なる マーケット 週末 ケルン" data-filter="おでかけ Köln Köln 周辺の各会場 マーケット 週末 ケルン" data-published="2026-06-12">
+        <a class="jc-article-card events-hub-card" href="/germany/ja/events/cologne-flea-market/" data-events-card data-title="ケルンの蚤の市・フリーマーケットの楽しみ方" data-summary="生活用品探しや週末散歩に使いやすい、ケルン周辺マーケットの楽しみ方。" data-category="おでかけ" data-location="Köln Köln 周辺の各会場" data-tags="マーケット 週末 ケルン" data-search="ケルンの蚤の市・フリーマーケットの楽しみ方 生活用品探しや週末散歩に使いやすい、ケルン周辺マーケットの楽しみ方。 おでかけ Köln Köln 周辺の各会場 会場により異なる マーケット 週末 ケルン" data-filter="おでかけ Köln Köln 周辺の各会場 マーケット 週末 ケルン" data-published="2026-06-12" data-event-date="" data-event-area="germany koln" data-event-category="outing" data-event-format="" data-event-language="" data-event-price="">
           <div class="jc-card-meta"><span>会場により異なる</span><span>Köln</span><span>おでかけ</span></div>
           <h3>ケルンの蚤の市・フリーマーケットの楽しみ方</h3>
           <p>生活用品探しや週末散歩に使いやすい、ケルン周辺マーケットの楽しみ方。</p>
@@ -145,7 +304,7 @@
           <span class="jc-read-more">イベント記事を読む</span>
         </a>
 
-        <a class="jc-article-card events-hub-card" href="/germany/ja/events/bonn-japanese-film-festival/" data-events-card data-title="ボン周辺の日本映画・国際映画イベントの探し方" data-summary="日本映画や国際映画をドイツで楽しむためのチケット確認、上映言語、アクセスのメモ。" data-category="文化・映画" data-location="Bonn Bonn 周辺の映画館・文化施設" data-tags="映画 日本文化 ボン" data-search="ボン周辺の日本映画・国際映画イベントの探し方 日本映画や国際映画をドイツで楽しむためのチケット確認、上映言語、アクセスのメモ。 文化・映画 Bonn Bonn 周辺の映画館・文化施設 上映企画により異なる 映画 日本文化 ボン" data-filter="文化・映画 Bonn Bonn 周辺の映画館・文化施設 映画 日本文化 ボン" data-published="2026-06-12">
+        <a class="jc-article-card events-hub-card" href="/germany/ja/events/bonn-japanese-film-festival/" data-events-card data-title="ボン周辺の日本映画・国際映画イベントの探し方" data-summary="日本映画や国際映画をドイツで楽しむためのチケット確認、上映言語、アクセスのメモ。" data-category="文化・映画" data-location="Bonn Bonn 周辺の映画館・文化施設" data-tags="映画 日本文化 ボン" data-search="ボン周辺の日本映画・国際映画イベントの探し方 日本映画や国際映画をドイツで楽しむためのチケット確認、上映言語、アクセスのメモ。 文化・映画 Bonn Bonn 周辺の映画館・文化施設 上映企画により異なる 映画 日本文化 ボン" data-filter="文化・映画 Bonn Bonn 周辺の映画館・文化施設 映画 日本文化 ボン" data-published="2026-06-12" data-event-date="" data-event-area="germany" data-event-category="culture" data-event-format="" data-event-language="" data-event-price="">
           <div class="jc-card-meta"><span>上映企画により異なる</span><span>Bonn</span><span>文化・映画</span></div>
           <h3>ボン周辺の日本映画・国際映画イベントの探し方</h3>
           <p>日本映画や国際映画をドイツで楽しむためのチケット確認、上映言語、アクセスのメモ。</p>
@@ -153,10 +312,15 @@
           <span class="jc-read-more">イベント記事を読む</span>
         </a>
         <!-- CONTENT:events-grid:end -->
-        </div>
-        <div class="news-events-empty events-hub-empty" data-events-empty hidden>
-          <h3>イベント情報を準備中です</h3>
-          <p>交流会、セミナー、家族向けイベントなどを順次掲載します。</p>
+            </div>
+            <div class="news-events-empty events-hub-empty" data-events-empty hidden>
+              <h3 data-event-empty-title>イベント情報を準備中です</h3>
+              <p data-event-empty-body>交流会、セミナー、家族向けイベントなどを順次掲載します。</p>
+              <div class="news-events-empty-actions">
+                <button class="living-reset-button news-events-reset" type="button" data-event-empty-reset hidden>絞り込みを解除</button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="news-events-supplement" aria-labelledby="supplementalEventsTitle">

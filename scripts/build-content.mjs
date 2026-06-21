@@ -1084,6 +1084,7 @@ ${indent(item.tags.map((tag) => `<span class="jc-chip">${escapeHtml(tag)}</span>
 
 function renderEventHubCard(item) {
   const tags = item.tags.slice(0, 4).map((tag) => `<span class="jc-chip">${escapeHtml(tag)}</span>`).join('');
+  const eventFilters = eventHubFilterValues(item);
   const searchText = [
     item.title,
     item.summary,
@@ -1100,13 +1101,102 @@ function renderEventHubCard(item) {
     ...item.tags
   ].join(' ');
 
-  return `<a class="jc-article-card events-hub-card" href="${escapeAttribute(item.url)}" data-events-card data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-location="${escapeAttribute([item.city, item.location].filter(Boolean).join(' '))}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-search="${escapeAttribute(searchText)}" data-filter="${escapeAttribute(filterText)}" data-published="${escapeAttribute(item.published_at || '')}">
+  return `<a class="jc-article-card events-hub-card" href="${escapeAttribute(item.url)}" data-events-card data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-location="${escapeAttribute([item.city, item.location].filter(Boolean).join(' '))}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-search="${escapeAttribute(searchText)}" data-filter="${escapeAttribute(filterText)}" data-published="${escapeAttribute(item.published_at || '')}" data-event-date="${escapeAttribute(eventFilters.date)}" data-event-area="${escapeAttribute(eventFilters.area.join(' '))}" data-event-category="${escapeAttribute(eventFilters.category.join(' '))}" data-event-format="${escapeAttribute(eventFilters.format.join(' '))}" data-event-language="${escapeAttribute(eventFilters.language.join(' '))}" data-event-price="${escapeAttribute(eventFilters.price.join(' '))}">
   <div class="jc-card-meta"><span>${escapeHtml(item.event_date || '日程確認中')}</span><span>${escapeHtml(item.city || item.location || 'ドイツ')}</span><span>${escapeHtml(item.category || 'イベント')}</span></div>
   <h3>${escapeHtml(item.title)}</h3>
   <p>${escapeHtml(item.summary)}</p>
   <div class="jc-chip-row">${tags}</div>
   <span class="jc-read-more">イベント記事を読む</span>
 </a>`;
+}
+
+function eventHubFilterValues(item) {
+  const text = [
+    item.category,
+    item.city,
+    item.location,
+    item.event_date,
+    ...item.tags
+  ].join(' ');
+  return {
+    date: extractIsoDate(item.event_date || item.date || ''),
+    area: classifyEventArea(text),
+    category: classifyEventCategory(text),
+    format: classifyExplicitEventFormat(item),
+    language: classifyExplicitEventLanguage(item),
+    price: classifyExplicitEventPrice(item)
+  };
+}
+
+function classifyEventArea(value) {
+  const text = normalizeFilterText(value);
+  const values = ['germany'];
+  if (text.includes('dusseldorf') || text.includes('duesseldorf')) values.push('duesseldorf');
+  if (text.includes('koln') || text.includes('cologne')) values.push('koln');
+  if (text.includes('nrw')) values.push('nrw');
+  if (text.includes('online')) values.push('online');
+  return uniqueArray(values);
+}
+
+function classifyEventCategory(value) {
+  const text = normalizeFilterText(value);
+  const values = [];
+  if (text.includes('交流') || text.includes('meetup')) values.push('meetup');
+  if (text.includes('セミナー') || text.includes('seminar')) values.push('seminar');
+  if (text.includes('家族') || text.includes('子連れ') || text.includes('family')) values.push('family');
+  if (text.includes('キャリア') || text.includes('仕事') || text.includes('career')) values.push('career');
+  if (text.includes('学習') || text.includes('learn')) values.push('learning');
+  if (text.includes('文化') || text.includes('映画') || text.includes('culture') || text.includes('film')) values.push('culture');
+  if (text.includes('おでかけ') || text.includes('マーケット') || text.includes('market')) values.push('outing');
+  if (text.includes('季節') || text.includes('冬') || text.includes('クリスマス') || text.includes('seasonal')) values.push('seasonal');
+  return uniqueArray(values);
+}
+
+function classifyExplicitEventFormat(item) {
+  const values = explicitMetadataValues(item, ['format', 'event_format', 'delivery_format']);
+  const text = normalizeFilterText(values.join(' '));
+  const output = [];
+  if (text.includes('対面') || text.includes('in-person') || text.includes('in person') || text.includes('offline')) output.push('in-person');
+  if (text.includes('オンライン') || text.includes('online')) output.push('online');
+  if (text.includes('ハイブリッド') || text.includes('hybrid')) output.push('hybrid');
+  return uniqueArray(output);
+}
+
+function classifyExplicitEventLanguage(item) {
+  const values = explicitMetadataValues(item, ['language', 'languages', 'event_language']);
+  const text = normalizeFilterText(values.join(' '));
+  const output = [];
+  if (text.includes('日本語') || text.includes('japanese') || /\bja\b/.test(text)) output.push('ja');
+  if (text.includes('ドイツ語') || text.includes('german') || /\bde\b/.test(text)) output.push('de');
+  if (text.includes('英語') || text.includes('english') || /\ben\b/.test(text)) output.push('en');
+  if (text.includes('多言語') || text.includes('multi')) output.push('multi');
+  return uniqueArray(output);
+}
+
+function classifyExplicitEventPrice(item) {
+  const values = explicitMetadataValues(item, ['price', 'fee', 'cost', 'admission']);
+  const text = normalizeFilterText(values.join(' '));
+  const output = [];
+  if (text.includes('一部') || text.includes('partial')) output.push('partial');
+  else if (text.includes('無料') || text.includes('free')) output.push('free');
+  else if (text.includes('有料') || text.includes('paid')) output.push('paid');
+  return uniqueArray(output);
+}
+
+function explicitMetadataValues(item, keys) {
+  return keys.flatMap((key) => toArray(item[key]));
+}
+
+function extractIsoDate(value) {
+  const match = String(value || '').match(/\b\d{4}-\d{2}-\d{2}\b/);
+  return match ? match[0] : '';
+}
+
+function normalizeFilterText(value) {
+  return String(value || '')
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
 }
 
 function renderLearnGermanHubCard(item) {

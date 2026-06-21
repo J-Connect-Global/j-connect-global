@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var eventsHub = document.querySelector('[data-events-hub]');
-  if (eventsHub) {
+  if (eventsHub && eventsHub.querySelector('[data-events-search], [data-events-filter]')) {
     var eventsSearch = eventsHub.querySelector('[data-events-search]');
     var eventsSort = eventsHub.querySelector('[data-events-sort]');
     var eventsGrid = eventsHub.querySelector('#eventArticleGrid');

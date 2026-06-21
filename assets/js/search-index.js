@@ -45,7 +45,7 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "ニュース・イベント",
-    "description": "ドイツの日本関連イベント、地域イベント、制度ニュース、週末の予定を日本語で確認できるハブです。",
+    "description": "ドイツ生活に関係するニュース、サイトからのお知らせ、交流会・セミナーなどのイベント情報をまとめて確認できるハブです。",
     "url": "/germany/ja/events/",
     "category": "ニュース・イベント",
     "tags": [
@@ -96,17 +96,6 @@ window.JCONNECT_SEARCH_INDEX = [
       "医療",
       "病院",
       "緊急"
-    ]
-  },
-  {
-    "title": "最新ニュース",
-    "description": "ドイツ生活に関わるニュース、制度情報、地域トピックを日本語で整理したニュース一覧です。",
-    "url": "/germany/ja/news/",
-    "category": "ニュース・イベント",
-    "tags": [
-      "ニュース",
-      "制度",
-      "地域情報"
     ]
   },
   {

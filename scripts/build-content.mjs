@@ -1046,7 +1046,7 @@ function updateLearnGermanHub(items) {
 }
 
 function hubGridPattern(type) {
-  if (type === 'events') return /<div class="jc-article-grid" id="eventArticleGrid">/;
+  if (type === 'events') return /<div class="[^"]*\bjc-article-grid\b[^"]*" id="eventArticleGrid"[^>]*>/;
   if (type === 'learn-german') return /<div class="jc-article-grid">/;
   return /<div class="jc-article-grid">/;
 }

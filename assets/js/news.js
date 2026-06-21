@@ -11,6 +11,7 @@ const NEWS_DATA_URL = "/assets/data/news.json";
 function initNewsEventsHub() {
   initNewsSection();
   initEventSection();
+  initNewsEventsToc();
 }
 
 function initNewsSection() {
@@ -205,6 +206,72 @@ function initEventSection() {
   if (reset) reset.addEventListener("click", resetEventFilters);
   if (emptyReset) emptyReset.addEventListener("click", resetEventFilters);
   updateEvents();
+}
+
+function initNewsEventsToc() {
+  const toc = document.querySelector(".news-events-toc");
+  if (!toc) return;
+
+  const links = Array.from(toc.querySelectorAll('a[href="#news"], a[href="#events"]'));
+  const linkById = new Map(links.map((link) => [(link.getAttribute("href") || "").slice(1), link]));
+  const sections = ["news", "events"].map((id) => document.getElementById(id)).filter(Boolean);
+  if (!links.length || !sections.length) return;
+
+  let ticking = false;
+
+  function setActive(id) {
+    links.forEach((link) => {
+      link.classList.toggle("is-active", link === linkById.get(id));
+    });
+  }
+
+  function activeSectionId() {
+    const offset = Math.max(120, Math.min(window.innerHeight * 0.35, 220));
+    return sections.reduce((current, section) => (
+      section.getBoundingClientRect().top <= offset ? section.id : current
+    ), sections[0].id);
+  }
+
+  function updateActiveSection() {
+    setActive(activeSectionId());
+    ticking = false;
+  }
+
+  function requestActiveSectionUpdate() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateActiveSection);
+  }
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      const id = (link.getAttribute("href") || "").slice(1);
+      if (linkById.has(id)) setActive(id);
+      window.setTimeout(requestActiveSectionUpdate, 300);
+    });
+  });
+
+  window.addEventListener("hashchange", () => {
+    if (linkById.has(window.location.hash.slice(1))) {
+      setActive(window.location.hash.slice(1));
+    }
+    window.setTimeout(requestActiveSectionUpdate, 100);
+  });
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(requestActiveSectionUpdate, {
+      rootMargin: "-20% 0px -55% 0px",
+      threshold: [0, 0.1, 0.35, 0.6]
+    });
+    sections.forEach((section) => observer.observe(section));
+  } else {
+    window.addEventListener("scroll", requestActiveSectionUpdate, { passive: true });
+    window.addEventListener("resize", requestActiveSectionUpdate);
+  }
+
+  const initialId = linkById.has(window.location.hash.slice(1)) ? window.location.hash.slice(1) : "news";
+  setActive(initialId);
+  window.setTimeout(requestActiveSectionUpdate, initialId === "events" ? 150 : 0);
 }
 
 function renderNewsCard(item) {

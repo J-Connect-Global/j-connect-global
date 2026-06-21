@@ -1125,25 +1125,6 @@
     grid-template-columns:1fr;
   }
 
-  .news-events-supplement{
-    display:grid;
-    gap:14px;
-    margin-top:28px;
-    padding-top:20px;
-    border-top:1px solid var(--jc-line);
-  }
-
-  .news-events-supplement .jc-section-head h3{
-    margin:0;
-    color:var(--jc-navy);
-    font-size:20px;
-    line-height:1.4;
-  }
-
-  .news-events-supplement .jc-section-head p{
-    margin:6px 0 0;
-  }
-
   .learn-page-guide{
     display:none;
   }

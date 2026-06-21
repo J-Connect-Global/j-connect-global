@@ -1,6 +1,6 @@
 [
   {
-    "id": "deutsche-welle-https-www-dw-com-en-germany-s-left-party-is-dreaming-big-a-776275",
+    "id": "deutsche-welle-https-www-dw-com-en-undav-heroics-help-germany-beat-ivory-coast-a",
     "country": "germany",
     "country_ja": "ドイツ",
     "city": "nationwide",
@@ -13,10 +13,29 @@
     "importance_ja": "通常",
     "source_type": "media",
     "source_name": "Deutsche Welle",
-    "title": "Germany&#039;s Left Party is dreaming big",
-    "summary": "The socialist Left Party has seen its membership soar and is especially popular with young female voters. Could it soon come to power in the city state of Berlin?",
-    "published_at": "Fri, 19 Jun 2026",
-    "url": "https://www.dw.com/en/germany-s-left-party-is-dreaming-big/a-77627530?maca=en-rss-en-ger-1023-xml-mrss"
+    "title": "Undav heroics help Germany beat Ivory Coast",
+    "summary": "In Germany&#039;s second 2026 World Cup game, Deniz Undav helped Germany to a comeback win against Ivory Coast in Toronto.",
+    "published_at": "Sat, 20 Jun 2026",
+    "url": "https://www.dw.com/en/undav-heroics-help-germany-beat-ivory-coast/a-77639564?maca=en-rss-en-ger-1023-xml-mrss"
+  },
+  {
+    "id": "deutsche-welle-https-www-dw-com-en-germany-news-pension-overhaul-may-push-retire",
+    "country": "germany",
+    "country_ja": "ドイツ",
+    "city": "nationwide",
+    "city_ja": "全国",
+    "category": "life",
+    "category_ja": "生活",
+    "topic": "general",
+    "topic_ja": "一般",
+    "importance": "normal",
+    "importance_ja": "通常",
+    "source_type": "media",
+    "source_name": "Deutsche Welle",
+    "title": "Germany news: Pension overhaul may push retirement age to 70",
+    "summary": "Germany is weighing sweeping pension changes, including raising the retirement age to 70. Meanwhile, football fans are celebrating after the men&#039;s national side qualified for the World Cup knockout stage. DW has more.",
+    "published_at": "Sat, 20 Jun 2026",
+    "url": "https://www.dw.com/en/germany-news-pension-overhaul-may-push-retirement-age-to-70/live-77635252?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-german-journalist-detained-in-syria-back-home",
@@ -76,7 +95,7 @@
     "url": "https://www.dw.com/en/us-stars-and-ex-leaders-on-hand-to-open-obama-center/a-77623934?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
-    "id": "deutsche-welle-https-www-dw-com-en-us-probes-germany-s-persistent-underpayment-f",
+    "id": "deutsche-welle-https-www-dw-com-en-inequality-is-elementary-to-germany-s-school-",
     "country": "germany",
     "country_ja": "ドイツ",
     "city": "nationwide",
@@ -89,29 +108,10 @@
     "importance_ja": "通常",
     "source_type": "media",
     "source_name": "Deutsche Welle",
-    "title": "US probes Germany&#039;s &#039;persistent underpayment&#039; for drugs",
-    "summary": "The US Trade Representative said a new probe would determine if Germany was a underpaying for pharmaceuticals.",
-    "published_at": "Fri, 19 Jun 2026",
-    "url": "https://www.dw.com/en/us-probes-germany-s-persistent-underpayment-for-drugs/a-77620250?maca=en-rss-en-ger-1023-xml-mrss"
-  },
-  {
-    "id": "deutsche-welle-https-www-dw-com-en-germany-news-minister-weighs-cuts-to-un-contr",
-    "country": "germany",
-    "country_ja": "ドイツ",
-    "city": "nationwide",
-    "city_ja": "全国",
-    "category": "life",
-    "category_ja": "生活",
-    "topic": "general",
-    "topic_ja": "一般",
-    "importance": "normal",
-    "importance_ja": "通常",
-    "source_type": "media",
-    "source_name": "Deutsche Welle",
-    "title": "Germany news: Minister weighs cuts to UN contributions",
-    "summary": "German Foreign Minister Johann Wadephul has criticized the UN after Germany failed in a recent bid for a Security Council seat. Meanwhile, industrial employment levels in the country are at a decade low.",
-    "published_at": "Thu, 18 Jun 2026",
-    "url": "https://www.dw.com/en/germany-news-minister-weighs-cuts-to-un-contributions/live-77599561?maca=en-rss-en-ger-1023-xml-mrss"
+    "title": "Inequality is elementary to Germany&#039;s school system",
+    "summary": "Children&#039;s paths through Germany&#039;s school system are often determined before their first day of kindergarten, according to the national report on education. An elementary school in Bonn is offering a new model for kids.",
+    "published_at": "Sat, 20 Jun 2026",
+    "url": "https://www.dw.com/en/inequality-is-elementary-to-germany-s-school-system/a-77613220?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-can-europe-build-its-own-ai-heavyweights-to-r",
@@ -133,6 +133,25 @@
     "url": "https://www.dw.com/en/can-europe-build-its-own-ai-heavyweights-to-rival-the-us/a-77629735?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
+    "id": "deutsche-welle-https-www-dw-com-en-germany-s-left-party-is-dreaming-big-a-776275",
+    "country": "germany",
+    "country_ja": "ドイツ",
+    "city": "nationwide",
+    "city_ja": "全国",
+    "category": "life",
+    "category_ja": "生活",
+    "topic": "general",
+    "topic_ja": "一般",
+    "importance": "normal",
+    "importance_ja": "通常",
+    "source_type": "media",
+    "source_name": "Deutsche Welle",
+    "title": "Germany&#039;s Left Party is dreaming big",
+    "summary": "The socialist Left Party has seen its membership soar and is especially popular with young female voters. Could it soon come to power in the city state of Berlin?",
+    "published_at": "Fri, 19 Jun 2026",
+    "url": "https://www.dw.com/en/germany-s-left-party-is-dreaming-big/a-77627530?maca=en-rss-en-ger-1023-xml-mrss"
+  },
+  {
     "id": "deutsche-welle-https-www-dw-com-en-germany-s-2026-world-cup-squad-built-on-afric",
     "country": "germany",
     "country_ja": "ドイツ",
@@ -150,25 +169,6 @@
     "summary": "Germany&#039;s 2026 World Cup squad has leaders with African heritage. The diversity of the team is a strength.",
     "published_at": "Fri, 19 Jun 2026",
     "url": "https://www.dw.com/en/germany-s-2026-world-cup-squad-built-on-african-roots/a-77298357?maca=en-rss-en-ger-1023-xml-mrss"
-  },
-  {
-    "id": "deutsche-welle-https-www-dw-com-en-baerbock-germany-team-is-an-example-to-german",
-    "country": "germany",
-    "country_ja": "ドイツ",
-    "city": "nationwide",
-    "city_ja": "全国",
-    "category": "life",
-    "category_ja": "生活",
-    "topic": "general",
-    "topic_ja": "一般",
-    "importance": "normal",
-    "importance_ja": "通常",
-    "source_type": "media",
-    "source_name": "Deutsche Welle",
-    "title": "Baerbock: &#039;Germany team is an example to Germany&#039;s kids&#039;",
-    "summary": "The president of the UN General Assembly, Annalena Baerbock, praises the diversity of Germany&#039;s football team as it plays in the World Cup.",
-    "published_at": "Fri, 19 Jun 2026",
-    "url": "https://www.dw.com/en/baerbock-germany-team-is-an-example-to-germany-s-kids/a-77617935?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-how-a-feel-good-german-song-is-taking-over-so",

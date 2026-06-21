@@ -143,6 +143,7 @@
           <h2>絞り込み</h2>
           <button class="chip-button reset-button" type="button" id="clearFilters">リセット</button>
         </div>
+        <p class="filter-panel-helper">地域や投稿の種類で絞り込めます。</p>
         <div class="filter-grid">
           <div class="filter-row area-filter-row">
             <span class="filter-label">地域</span>
@@ -172,7 +173,13 @@
           <div>
             <h2 id="boardTitle" class="content-title">コミュニティ投稿</h2>
             <p class="result-text loading-lines" id="resultText"><span class="skeleton-text medium"></span></p>
-            <div class="search-suggestions" id="searchSuggestions" aria-label="クイック条件"></div>
+            <div class="community-quick-filters" aria-label="よく使う条件">
+              <div class="community-quick-filters__head">
+                <span>よく使う条件</span>
+                <button class="community-clear-all" type="button" id="quickClearFilters">すべて解除</button>
+              </div>
+              <div class="search-suggestions" id="searchSuggestions"></div>
+            </div>
           </div>
           <div class="content-tools">
             <div class="view-segment" id="viewSegment" role="group" aria-label="表示形式">
@@ -386,6 +393,7 @@
       resultText: document.getElementById("resultText"),
       activeFilters: document.getElementById("activeFilters"),
       searchSuggestions: document.getElementById("searchSuggestions"),
+      quickClearFilters: document.getElementById("quickClearFilters"),
       emptyState: document.getElementById("emptyState"),
       emptyClear: document.getElementById("emptyClear"),
       modal: document.getElementById("detailModal"),
@@ -706,9 +714,13 @@
         { label: "新しい順", sort: "newest", active: state.sort === "newest" },
         { label: "古い順", sort: "oldest", active: state.sort === "oldest" }
       ];
+      const hasActiveFilters = Boolean(state.query || state.area || state.postType !== "すべて" || state.subcategory !== "すべて" || state.freeOnly || state.photoOnly || state.savedOnly || state.sort !== "newest");
+      els.quickClearFilters.disabled = !hasActiveFilters;
+      els.quickClearFilters.setAttribute("aria-disabled", String(!hasActiveFilters));
       els.searchSuggestions.innerHTML = chips.map((chip) => {
         const data = chip.filter ? `data-filter="${chip.filter}"` : `data-sort="${chip.sort}"`;
-        return `<button class="chip-button ${chip.active ? "active" : ""}" type="button" ${data} aria-pressed="${chip.active ? "true" : "false"}">${escapeHtml(chip.label)}</button>`;
+        const typeClass = chip.filter ? "community-quick-chip is-filter" : "community-quick-chip is-sort";
+        return `<button class="chip-button ${typeClass} ${chip.active ? "active" : ""}" type="button" ${data} aria-pressed="${chip.active ? "true" : "false"}">${escapeHtml(chip.label)}</button>`;
       }).join("");
       els.searchSuggestions.querySelectorAll("[data-filter]").forEach((button) => {
         button.addEventListener("click", () => {
@@ -871,28 +883,31 @@
         const contactDate = formatDate(post._date);
         const saved = isSaved(post._id);
         const shareHref = detailUrl(post);
+        const footerChips = [
+          priceText ? `<span class="community-post-price ${post._free ? "free" : ""}">${escapeHtml(priceText)}</span>` : "",
+          post._images.length ? `<span class="community-photo-count">写真 ${post._images.length}</span>` : "",
+          post._urgent ? `<span class="trust-badge urgent">急ぎ</span>` : "",
+          post._japaneseOk ? `<span class="trust-badge japanese">日本語OK</span>` : ""
+        ].filter(Boolean).join("");
         return `
-          <article class="card jc-result-card ${image ? "" : "no-image"}" data-post-id="${escapeHtml(post._id)}">
+          <article class="card jc-result-card ${image ? "" : "no-image"}" data-post-id="${escapeHtml(post._id)}" data-photo-count="${post._images.length}" data-free="${post._free ? "true" : "false"}">
             <button class="save-button ${saved ? "saved" : ""}" type="button" data-save-id="${escapeHtml(post._id)}" aria-label="${saved ? "保存を解除" : "保存する"}">${saved ? "★" : "☆"}</button>
             <a class="card-link" href="#post-${encodeURIComponent(post._id)}" aria-label="${escapeHtml(post._title)}の詳細を開く">
               <div class="card-media">
                 <div class="placeholder-art" data-icon="${escapeHtml(CATEGORY_ICONS[subcategory] || CATEGORY_ICONS[postType] || CATEGORY_ICONS["その他"])}"></div>
                 ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(post._title)}の写真" loading="lazy" decoding="async" onerror="this.closest('.card')?.classList.add('no-image'); this.remove()">` : ""}
-                ${post._images.length > 1 ? `<span class="image-count">写真 ${post._images.length}</span>` : ""}
+                ${post._images.length ? `<span class="image-count">写真 ${post._images.length}</span>` : ""}
               </div>
               <div class="card-body">
-                <div class="card-top">
+                <div class="card-top community-post-meta">
                   <span class="category-badge ${postType === "譲ります" ? "give" : ""} ${postType === "売ります" ? "sell" : ""}">${escapeHtml(postType)}</span>
                   <span class="subcategory-badge">${escapeHtml(subcategory)}</span>
-                  ${priceText ? `<span class="price-badge ${post._free ? "free" : ""}">${escapeHtml(priceText)}</span>` : ""}
                   ${locationText ? `<span class="location-badge">${escapeHtml(locationText)}</span>` : ""}
+                  <span class="date-badge">${escapeHtml(contactDate)}</span>
                 </div>
                 <h3 class="card-title jc-result-title">${escapeHtml(post._title)}</h3>
-                <div class="card-meta jc-result-meta">
-                  <span>${escapeHtml(post._location)}</span>
-                  <span>${escapeHtml(contactDate)}</span>
-                </div>
                 <p class="card-excerpt">${escapeHtml(post._body || "詳細は投稿ページで確認してください。")}</p>
+                ${footerChips ? `<div class="community-post-footer">${footerChips}</div>` : ""}
               </div>
             </a>
             <div class="card-actions jc-result-actions">
@@ -1177,6 +1192,7 @@
     });
     els.areaFilter.addEventListener("change", applyFilters);
     els.clearFilters.addEventListener("click", clearFilters);
+    els.quickClearFilters.addEventListener("click", clearFilters);
     els.emptyState.addEventListener("click", (event) => {
       if (event.target.closest("[data-clear-empty], #emptyClear")) {
         clearFilters();

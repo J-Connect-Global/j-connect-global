@@ -20,6 +20,12 @@
 /* Page-specific styles. Shared site styles live in the common site stylesheet. */
 :root{
   --surface:#ffffff;
+  --community-line:#cfe0f2;
+  --community-line-strong:#b8d0eb;
+  --community-navy:#00366d;
+  --community-navy-hover:#004f98;
+  --community-accent-soft:#eaf4ff;
+  --community-muted:#60748c;
 }
 
 .post-hero{
@@ -334,6 +340,25 @@
   transform:none;
 }
 
+.button-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+}
+
+.btn-secondary{
+  background:#fff;
+  color:var(--brand);
+  border:1px solid var(--line-strong);
+  box-shadow:none;
+}
+
+.btn-secondary:hover{
+  background:var(--hover-blue-bg);
+  border-color:var(--hover-blue);
+}
+
 .subtle{
   font-size:.84rem;
   color:var(--muted);
@@ -632,6 +657,171 @@
   accent-color:var(--brand);
 }
 
+.modal-shell{
+  position:fixed;
+  inset:0;
+  z-index:300;
+  display:none;
+}
+
+.modal-shell.open{display:block}
+
+.modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(13,23,32,.48);
+}
+
+.modal-card{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:min(940px, calc(100% - 32px));
+  max-height:min(88vh, 780px);
+  overflow:auto;
+  background:#fff;
+  border:1px solid var(--community-line);
+  border-radius:10px;
+  box-shadow:0 24px 70px rgba(13,23,32,.28);
+}
+
+.modal-close{
+  position:sticky;
+  top:12px;
+  float:right;
+  margin:12px 12px 0 0;
+  z-index:2;
+  width:40px;
+  height:40px;
+  border-radius:999px;
+  border:1px solid var(--community-line);
+  background:#fff;
+  font-size:24px;
+  line-height:1;
+  color:#293541;
+}
+
+.modal-close:focus-visible,
+.btn:focus-visible{
+  outline:3px solid rgba(30,58,95,.22);
+  outline-offset:2px;
+}
+
+.preview-detail-layout{
+  display:grid;
+  grid-template-columns:minmax(0,.75fr) minmax(320px,1fr);
+  gap:0;
+  clear:both;
+}
+
+.preview-detail-media{
+  background:linear-gradient(180deg,#f8fafc 0%,#eef3f6 100%);
+  min-height:100%;
+  padding:16px;
+  display:grid;
+  align-content:start;
+  gap:10px;
+}
+
+.preview-detail-placeholder{
+  aspect-ratio:4/3;
+  border-radius:8px;
+  background:#dfe7ef;
+  display:grid;
+  place-items:center;
+}
+
+.preview-detail-marker{
+  width:min(150px,42%);
+  aspect-ratio:1;
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  background:#fff;
+  border:1px solid rgba(205,216,227,.95);
+  box-shadow:0 10px 22px rgba(25,39,52,.08);
+  font-size:42px;
+  font-weight:900;
+  color:#3d4a56;
+}
+
+.preview-image-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.preview-image-name,
+.category-badge,
+.subcategory-badge,
+.price-badge,
+.trust-badge{
+  display:inline-flex;
+  align-items:center;
+  border-radius:6px;
+  font-size:11px;
+  font-weight:900;
+  line-height:1;
+  padding:6px 8px;
+  max-width:100%;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.category-badge{background:var(--community-navy);color:#fff}
+.subcategory-badge{background:var(--community-accent-soft);color:var(--community-navy)}
+.price-badge{background:#f8fbff;color:var(--community-navy);border:1px solid var(--community-line)}
+.trust-badge{background:#f2f5f8;color:#536170}
+.preview-image-name{background:#fff;border:1px solid var(--community-line);color:#34414d}
+
+.preview-detail-content{
+  padding:30px 24px 24px;
+  min-width:0;
+}
+
+.preview-detail-content h2{
+  margin-top:12px;
+  font-size:clamp(24px,3.4vw,36px);
+  line-height:1.18;
+  font-weight:900;
+  letter-spacing:0;
+}
+
+.preview-detail-meta,
+.preview-detail-facts{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+
+.preview-detail-body{
+  white-space:pre-wrap;
+  color:#394653;
+  line-height:1.8;
+  margin-top:14px;
+}
+
+.preview-empty-message{
+  color:#526170;
+  background:#f8fbff;
+  border:1px solid var(--community-line);
+  border-radius:8px;
+  padding:12px;
+  font-weight:800;
+}
+
+.preview-note{
+  margin-top:16px;
+  color:var(--community-muted);
+  font-size:13px;
+  line-height:1.7;
+  border-top:1px solid var(--community-line);
+  padding-top:12px;
+}
+
 @media(max-width:780px){
 .post-hero{padding:18px}
 
@@ -655,6 +845,18 @@
 .detail-panel{padding:20px}
 
 .safety-list{grid-template-columns:1fr}
+
+.preview-detail-layout{grid-template-columns:1fr}
+
+.modal-card{
+    inset:auto 0 0 0;
+    left:0;
+    top:auto;
+    transform:none;
+    width:100%;
+    max-height:94vh;
+    border-radius:10px 10px 0 0;
+  }
 }
 
 @media(max-width:560px){
@@ -897,7 +1099,8 @@
             </label>
           </div>
 
-          <div class="full">
+          <div class="full button-row">
+            <button id="previewButton" class="btn btn-secondary" type="button">投稿プレビュー</button>
             <button id="submitButton" class="btn" type="submit">投稿を送信する</button>
           </div>
         </form>
@@ -908,6 +1111,14 @@
         </p>
       </div>
     </section>
+    </div>
+
+    <div class="modal-shell" id="postPreviewModal" role="dialog" aria-modal="true" aria-labelledby="postPreviewTitle" hidden>
+      <div class="modal-backdrop" data-close-preview></div>
+      <article class="modal-card" tabindex="-1">
+        <button class="modal-close" type="button" aria-label="プレビューを閉じる" data-close-preview>×</button>
+        <div id="postPreviewContent"></div>
+      </article>
     </div>
 
     <!-- LAYOUT:ja-footer:start -->
@@ -966,6 +1177,8 @@ const COMMUNITY_POSTS_URL = DATA_SOURCES.buildCommunityUrl({ action: 'getPosts' 
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const detailPostId = new URLSearchParams(location.search).get('id');
 const DETAIL_STORAGE_KEY = 'ngg-community-saved-posts';
+const LAST_SUBMISSION_KEY = 'jconnectCommunityLastSubmission';
+const THANKS_URL = '/germany/ja/community/thanks/';
 const SUBCATEGORY_OPTIONS = {
   '売ります': ['帰国売り', '家具・家電', '生活用品', '子ども用品', '本・教材', '車・自転車', 'その他'],
   '買います': ['家具・家電', '生活用品', '子ども用品', '本・教材', '車・自転車', 'その他'],
@@ -1181,6 +1394,148 @@ function escapeHtml(value) {
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#039;');
+}
+
+function getSelectedLabel(name) {
+  const element = document.querySelector('[name="' + name + '"]');
+  if (!element) return '';
+  if (element.tagName === 'SELECT') {
+    const option = element.selectedOptions && element.selectedOptions[0];
+    return option && option.value ? option.textContent.trim() : '';
+  }
+  return element.value.trim();
+}
+
+function getImageNamesFromInputs() {
+  return ['image1', 'image2', 'image3']
+    .map(function(id) {
+      const input = document.getElementById(id);
+      const file = input && input.files ? input.files[0] : null;
+      return file ? file.name : '';
+    })
+    .filter(Boolean);
+}
+
+function getResponsePostId(response) {
+  if (!response || typeof response !== 'object') return '';
+  const direct = response.post_id || response.postId || response.id || response._id;
+  if (direct) return String(direct);
+  const nested = response.data || response.item || response.post;
+  if (nested && typeof nested === 'object') {
+    return String(nested.post_id || nested.postId || nested.id || nested._id || '');
+  }
+  return '';
+}
+
+function buildSubmissionSnapshot(response, imageNames) {
+  updateRegionFromCity();
+  return {
+    submittedAt: new Date().toISOString(),
+    category1: getSelectedLabel('category1'),
+    category2: getSelectedLabel('category2'),
+    title: getValue('title'),
+    body: getValue('body'),
+    country: getSelectedLabel('country') || getValue('country'),
+    city: getSelectedLabel('city') || getValue('city'),
+    price: getValue('price'),
+    event_date: getValue('event_date'),
+    availability_date: getValue('availability_date'),
+    nickname: getValue('nickname'),
+    responsePostId: getResponsePostId(response),
+    imageNames: imageNames || getImageNamesFromInputs(),
+    cancellationRequested: false
+  };
+}
+
+function saveLastSubmission(snapshot) {
+  const value = JSON.stringify(snapshot);
+  try {
+    sessionStorage.setItem(LAST_SUBMISSION_KEY, value);
+    return;
+  } catch (error) {
+    try {
+      localStorage.setItem(LAST_SUBMISSION_KEY, value);
+    } catch (storageError) {
+      console.warn('Could not store community submission snapshot:', storageError);
+    }
+  }
+}
+
+function previewFact(label, value) {
+  if (!value) return '';
+  return '<div class="fact"><div class="fact-label">' + escapeHtml(label) + '</div><div class="fact-value">' + escapeHtml(value) + '</div></div>';
+}
+
+function renderPostPreview() {
+  const content = document.getElementById('postPreviewContent');
+  if (!content) return;
+
+  const snapshot = buildSubmissionSnapshot(null, getImageNamesFromInputs());
+  const marker = escapeHtml(CATEGORY_ICONS[snapshot.category2] || CATEGORY_ICONS[snapshot.category1] || CATEGORY_ICONS['その他'] || '街');
+  const title = snapshot.title || '投稿プレビュー';
+  const hasTitleAndBody = Boolean(snapshot.title && snapshot.body);
+  const imageNames = snapshot.imageNames || [];
+  const imageList = imageNames.length
+    ? '<div class="preview-image-list">' + imageNames.map(function(name) {
+        return '<span class="preview-image-name">' + escapeHtml(name) + '</span>';
+      }).join('') + '</div>'
+    : '<span class="trust-badge">画像なし</span>';
+
+  content.innerHTML = `
+    <div class="preview-detail-layout">
+      <div class="preview-detail-media">
+        <div class="preview-detail-placeholder">
+          <div class="preview-detail-marker" aria-hidden="true">${marker}</div>
+        </div>
+        ${imageList}
+      </div>
+      <div class="preview-detail-content">
+        <span class="category-badge">${escapeHtml(snapshot.category1 || '投稿カテゴリ未選択')}</span>
+        <span class="subcategory-badge">${escapeHtml(snapshot.category2 || '投稿の種類未選択')}</span>
+        <h2 id="postPreviewTitle">${escapeHtml(title)}</h2>
+        <div class="preview-detail-meta">
+          ${snapshot.price ? `<span class="price-badge">${escapeHtml(snapshot.price)}</span>` : ''}
+          ${imageNames.length ? `<span class="trust-badge">写真 ${imageNames.length}</span>` : ''}
+        </div>
+        <div class="preview-detail-facts">
+          ${previewFact('国', snapshot.country)}
+          ${previewFact('都市', snapshot.city)}
+          ${previewFact('イベント日', snapshot.event_date)}
+          ${previewFact('利用可能日', snapshot.availability_date)}
+          ${previewFact('ニックネーム', snapshot.nickname)}
+        </div>
+        ${hasTitleAndBody
+          ? `<p class="preview-detail-body">${escapeHtml(snapshot.body)}</p>`
+          : '<p class="preview-detail-body preview-empty-message">入力内容を確認するには、タイトルと本文を入力してください。</p>'}
+        <p class="preview-note">非公開メールアドレスはサイト上の公開プレビューには表示されません。</p>
+      </div>
+    </div>
+  `;
+}
+
+let previewLastFocused = null;
+
+function openPostPreview() {
+  const modal = document.getElementById('postPreviewModal');
+  const card = modal ? modal.querySelector('.modal-card') : null;
+  if (!modal || !card) return;
+  renderPostPreview();
+  previewLastFocused = document.activeElement;
+  modal.hidden = false;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  card.focus({ preventScroll: true });
+}
+
+function closePostPreview() {
+  const modal = document.getElementById('postPreviewModal');
+  if (!modal) return;
+  modal.classList.remove('open');
+  modal.hidden = true;
+  document.body.style.overflow = '';
+  if (previewLastFocused && typeof previewLastFocused.focus === 'function') {
+    previewLastFocused.focus({ preventScroll: true });
+  }
 }
 
 function normalize(value) {
@@ -1673,11 +2028,8 @@ async function submitForm(event) {
       throw new Error(response.error || '送信に失敗しました。');
     }
 
-    showMessage('success', '投稿を受け付けました。管理者確認後に掲載されます。');
-    document.getElementById('postForm').reset();
-    renderCategory2('');
-    updateCategoryWritingHelper('');
-    updateRegionFromCity();
+    saveLastSubmission(buildSubmissionSnapshot(response, [image1.name, image2.name, image3.name].filter(Boolean)));
+    location.assign(THANKS_URL);
 
   } catch (error) {
     console.error('Community post submit failed:', GAS_URL, error);
@@ -1697,7 +2049,15 @@ if (detailPostId) {
   });
 
   document.getElementById('postForm').addEventListener('submit', submitForm);
+  document.getElementById('previewButton').addEventListener('click', openPostPreview);
   document.getElementById('city').addEventListener('change', updateRegionFromCity);
+  document.querySelectorAll('[data-close-preview]').forEach(function(item) {
+    item.addEventListener('click', closePostPreview);
+  });
+  window.addEventListener('keydown', function(event) {
+    const modal = document.getElementById('postPreviewModal');
+    if (event.key === 'Escape' && modal && modal.classList.contains('open')) closePostPreview();
+  });
 
   loadCategories();
   updateRegionFromCity();

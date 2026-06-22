@@ -19,198 +19,157 @@
 /* Page-specific styles. Shared site styles live in the common site stylesheet. */
 :root{
   --surface:#ffffff;
-  --hero-overlay-a:.42;
-  --hero-overlay-b:.32;
-  --hero-overlay-c:.18;
-  --hero-overlay-d:.08;
+  --thanks-line:#dce4ee;
+  --thanks-soft:#f8fbff;
+  --thanks-muted:#596875;
+  --thanks-navy:#00366d;
+  --thanks-danger:#a54912;
 }
 
-.hero{
-  position:relative;
-  overflow:hidden;
-  border:1px solid rgba(210,218,228,.95);
-  border-radius:10px;
-  box-shadow:
-    0 14px 34px rgba(19,35,58,.12),
-    0 0 0 1px rgba(255,255,255,.5) inset;
-  background:
-    linear-gradient(90deg, rgba(255,255,255,var(--hero-overlay-a)) 0%, rgba(255,255,255,var(--hero-overlay-b)) 42%, rgba(255,255,255,var(--hero-overlay-c)) 60%, rgba(255,255,255,var(--hero-overlay-d)) 100%),
-    url('/assets/images/hero/top-hero.jpg') center center / cover no-repeat,
-    #fff;
+.thanks-hero{
+  gap:11px;
+  padding:22px;
 }
 
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.05));
+.thanks-hero h1{
+  font-size:clamp(28px,3.6vw,40px);
 }
 
-.hero-grid{
-  position:relative;
-  z-index:1;
-  display:grid;
-  grid-template-columns:1fr;
-  gap:24px;
-  align-items:stretch;
-  min-height:320px;
-  padding:30px;
+.thanks-hero p{
+  max-width:86ch;
 }
 
-.hero-main{
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-}
-
-.hero-title{
-  font-size:clamp(2rem, 4vw, 3.2rem);
-  line-height:1.08;
-  letter-spacing:-.03em;
-  font-weight:800;
-}
-
-.hero-title .brand-word{
-  color:var(--brand);
-  white-space:nowrap;
-}
-
-.hero-desc{
-  max-width:88ch;
-  color:#485664;
-  font-size:15px;
-  line-height:1.8;
-}
-
-.hero-actions{
+.thanks-actions{
   display:flex;
   flex-wrap:wrap;
-  gap:12px;
-  margin-top:4px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  min-height:46px;
-  padding:0 18px;
-  border-radius:999px;
-  text-decoration:none;
-  font-size:14px;
-  font-weight:800;
-  transition:all .18s ease;
-}
-
-.btn-primary{
-  color:#fff;
-  background:var(--brand);
-  border:1px solid var(--brand);
-  box-shadow:0 10px 22px rgba(0, 79, 152,.22);
-}
-
-.btn-primary:hover{
-  background:var(--brand-dark);
-  border-color:var(--brand-dark);
-  transform:translateY(-1px);
-}
-
-.btn-soft{
-  color:#34414d;
-  background:#ffffff;
-  border:1px solid var(--line-strong);
-}
-
-.btn-soft:hover{
-  color:var(--brand);
-  background:var(--hover-blue-bg);
-  border-color:var(--hover-blue);
-  transform:translateY(-1px);
+  gap:10px;
+  margin-top:6px;
 }
 
 .section{
-  margin-top:24px;
+  margin-top:18px;
 }
 
-.complete-card{
+.thanks-card{
   background:rgba(255,255,255,.92);
   border:1px solid var(--line);
-  border-radius:24px;
-  box-shadow:var(--shadow);
-  padding:26px;
-}
-
-.complete-grid{
-  display:grid;
-  grid-template-columns:72px 1fr;
-  gap:18px;
-  align-items:flex-start;
-}
-
-.complete-icon{
-  width:72px;
-  height:72px;
   border-radius:9px;
+  box-shadow:var(--shadow);
+  padding:20px;
+}
+
+.thanks-card-head{
   display:grid;
-  place-items:center;
-  font-size:34px;
-  background:var(--hover-blue-bg);
-  border:1px solid var(--hover-blue);
+  gap:6px;
+  margin-bottom:14px;
+}
+
+.section-kicker{
+  margin:0;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
   color:var(--brand);
+  text-transform:uppercase;
 }
 
-.complete-card h2{
+.thanks-card h2{
+  margin:0;
   font-size:24px;
-  line-height:1.3;
-  margin-bottom:8px;
+  line-height:1.25;
+  font-weight:800;
 }
 
-.complete-card p{
+.thanks-card p{
+  margin:0;
   color:var(--muted);
   font-size:14px;
   line-height:1.8;
 }
 
-.notice-list{
-  margin-top:18px;
+.summary-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+
+.summary-item{
+  min-width:0;
+  border:1px solid var(--thanks-line);
+  border-radius:8px;
+  background:#fff;
+  padding:10px 12px;
+}
+
+.summary-item.is-full{grid-column:1/-1}
+
+.summary-label{
+  color:var(--thanks-muted);
+  font-size:12px;
+  font-weight:800;
+}
+
+.summary-value{
+  margin-top:4px;
+  color:#24313d;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.65;
+  overflow-wrap:anywhere;
+  white-space:pre-wrap;
+}
+
+.fallback-message{
+  border:1px solid var(--thanks-line);
+  border-radius:8px;
+  background:var(--thanks-soft);
+  color:#526170;
+  padding:12px;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.8;
+}
+
+.cancel-panel{
+  margin-top:14px;
+  border-top:1px solid var(--thanks-line);
+  padding-top:14px;
   display:grid;
   gap:10px;
 }
 
-.notice-item{
-  padding:14px 16px;
-  border-radius:16px;
-  border:1px solid var(--line);
-  background:#ffffff;
-  color:#4b5966;
-  font-size:14px;
+.cancel-button{
+  justify-self:start;
+  border:1px solid #ffd5bb;
+  background:#fff7ed;
+  color:var(--thanks-danger);
 }
 
-.notice-item strong{
-  color:var(--text);
+.cancel-button:hover{
+  background:#fff0e7;
+  border-color:#f6b780;
 }
 
-@media (max-width:1100px){
-.hero-grid{grid-template-columns:1fr;}
+.cancel-button[disabled]{
+  opacity:.72;
+  cursor:not-allowed;
+}
+
+.cancel-status{
+  color:var(--thanks-muted);
+  font-size:13px;
+  line-height:1.7;
+}
+
+.bottom-actions{
+  margin-top:16px;
 }
 
 @media (max-width:780px){
-.hero-grid{
-    min-height:auto;
-    padding:22px;
-  }
+.thanks-hero{padding:18px}
 
-.complete-grid{
+.summary-grid{
     grid-template-columns:1fr;
-  }
-}
-
-@media (max-width:560px){
-.hero{
-    background-position:64% center;
   }
 }
 </style>
@@ -297,55 +256,35 @@
 <main class="main">
   <div class="container">
 
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-main">
-          <h1 class="hero-title">
-            送信が<span class="brand-word">完了</span>しました
-          </h1>
-          <p class="hero-desc">
-            掲示板への投稿内容を受け付けました。ご投稿ありがとうございます。
-            内容の確認後、必要に応じて掲載・反映されます。
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="../">掲示板トップへ戻る</a>
-            <a class="btn btn-soft" href="../../">トップページへ戻る</a>
-          </div>
-        </div>
+    <section class="thanks-hero jc-page-hero" aria-labelledby="page-title">
+      <div class="jc-eyebrow"><span class="jc-dot"></span>COMMUNITY BOARD</div>
+      <h1 id="page-title">投稿を受け付けました</h1>
+      <p class="hero-desc">
+        投稿は管理者確認後に掲載されます。確認が完了するまで、反映に時間がかかる場合があります。
+      </p>
+      <div class="thanks-actions">
+        <a class="jc-button is-primary" href="../">掲示板に戻る</a>
+        <a class="jc-button" href="../post/">別の投稿を作成する</a>
       </div>
     </section>
 
-    <section class="section">
-      <div class="complete-card">
-        <div class="complete-grid">
-          <div class="complete-icon" aria-hidden="true">✓</div>
-          <div>
-            <h2>投稿を受け付けました</h2>
-            <p>
-              送信された内容は、確認後に掲示板へ反映されます。
-              画像を添付した場合は、保存処理に少し時間がかかる場合があります。
-            </p>
-
-            <div class="notice-list">
-              <div class="notice-item">
-                <strong>掲載について：</strong>
-                内容確認後、サイトの方針に沿って掲載されます。
-              </div>
-              <div class="notice-item">
-                <strong>修正・削除について：</strong>
-                投稿内容の修正や削除が必要な場合は、お問い合わせページからご連絡ください。
-              </div>
-              <div class="notice-item">
-                <strong>次の操作：</strong>
-                続けて別の投稿をする場合は、掲示板トップから投稿フォームへ進んでください。
-              </div>
-            </div>
-
-            <div class="hero-actions" style="margin-top:20px;">
-              <a class="btn btn-primary" href="../">掲示板トップへ</a>
-              <a class="btn btn-soft" href="../../contact/">お問い合わせ</a>
-            </div>
-          </div>
+    <section class="section" aria-labelledby="submitted-title">
+      <div class="thanks-card">
+        <div class="thanks-card-head">
+          <p class="section-kicker">SUBMITTED CONTENT</p>
+          <h2 id="submitted-title">送信した内容</h2>
+          <p>この表示は送信直後の確認用です。非公開メールアドレスや内部項目は表示していません。</p>
+        </div>
+        <div id="submissionSummary"></div>
+        <div class="cancel-panel" aria-labelledby="cancel-title">
+          <h2 id="cancel-title">投稿を取り消したい場合</h2>
+          <p>管理者確認前に掲載を止めたい場合は、取り消し依頼を作成できます。</p>
+          <button id="cancelSubmissionButton" class="jc-button cancel-button" type="button">投稿取り消し</button>
+          <p id="cancelStatus" class="cancel-status" aria-live="polite"></p>
+        </div>
+        <div class="thanks-actions bottom-actions">
+          <a class="jc-button is-primary" href="../">掲示板に戻る</a>
+          <a class="jc-button" href="../post/">別の投稿を作成する</a>
         </div>
       </div>
     </section>
@@ -398,6 +337,204 @@
   </div>
 </main>
 
+<script src="/assets/js/data-sources.js"></script>
+<script>
+(function() {
+  const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
+  const GAS_URL = DATA_SOURCES.communityDataEndpoint;
+  const LAST_SUBMISSION_KEY = 'jconnectCommunityLastSubmission';
+  const CANCEL_ACCEPTED_MESSAGE = '投稿取り消しの依頼を受け付けました。管理者確認前のため、掲載されないよう確認します。';
+  const ADMIN_EMAIL_NOT_CONFIGURED_MESSAGE = '投稿取り消し依頼の送信先が管理者側で設定されていません。時間をおいて再度お試しください。';
+  const CANCEL_FAILED_MESSAGE = '投稿取り消し依頼を送信できませんでした。時間をおいて再度お試しください。';
+
+  function escapeHtml(value) {
+    return String(value || '')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+  }
+
+  function readStoredSnapshot() {
+    const sources = [sessionStorage, localStorage];
+    for (const storage of sources) {
+      try {
+        const raw = storage.getItem(LAST_SUBMISSION_KEY);
+        if (!raw) continue;
+        const parsed = JSON.parse(raw);
+        return parsed && typeof parsed === 'object' ? parsed : null;
+      } catch (error) {
+        continue;
+      }
+    }
+    return null;
+  }
+
+  function saveStoredSnapshot(snapshot) {
+    const value = JSON.stringify(snapshot);
+    try {
+      sessionStorage.setItem(LAST_SUBMISSION_KEY, value);
+    } catch (error) {
+      try {
+        localStorage.setItem(LAST_SUBMISSION_KEY, value);
+      } catch (storageError) {}
+    }
+  }
+
+  function formatDateTime(value) {
+    const date = value ? new Date(value) : null;
+    if (!date || Number.isNaN(date.getTime())) return '';
+    return date.toLocaleString('ja-JP', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  }
+
+  function summaryItem(label, value, isFull) {
+    if (!value) return '';
+    return `
+      <div class="summary-item ${isFull ? 'is-full' : ''}">
+        <div class="summary-label">${escapeHtml(label)}</div>
+        <div class="summary-value">${escapeHtml(value)}</div>
+      </div>
+    `;
+  }
+
+  function renderSummary(snapshot) {
+    const container = document.getElementById('submissionSummary');
+    if (!container) return;
+
+    if (!snapshot) {
+      container.innerHTML = '<div class="fallback-message">送信内容の一時表示データが見つかりませんでした。投稿内容は管理者確認後に掲載されます。</div>';
+      return;
+    }
+
+    container.innerHTML = `
+      <div class="summary-grid">
+        ${summaryItem('投稿カテゴリ', snapshot.category1)}
+        ${summaryItem('投稿の種類', snapshot.category2)}
+        ${summaryItem('タイトル', snapshot.title, true)}
+        ${summaryItem('本文', snapshot.body, true)}
+        ${summaryItem('国', snapshot.country)}
+        ${summaryItem('都市', snapshot.city)}
+        ${summaryItem('価格', snapshot.price)}
+        ${summaryItem('イベント日', snapshot.event_date)}
+        ${summaryItem('利用可能日', snapshot.availability_date)}
+        ${summaryItem('ニックネーム', snapshot.nickname)}
+        ${summaryItem('送信日時', formatDateTime(snapshot.submittedAt))}
+      </div>
+    `;
+  }
+
+  function updateCancelButton(snapshot) {
+    const button = document.getElementById('cancelSubmissionButton');
+    const status = document.getElementById('cancelStatus');
+    if (!button || !status) return;
+    if (snapshot && snapshot.cancellationRequested) {
+      button.textContent = '取り消し依頼済み';
+      button.disabled = true;
+      status.textContent = '取り消し依頼の状態をこのブラウザに保存しました。';
+    }
+  }
+
+  function appendPayloadValue(payload, key, value) {
+    payload.append(key, value === undefined || value === null ? '' : String(value));
+  }
+
+  function buildCancellationPayload(snapshot) {
+    const payload = new URLSearchParams();
+    appendPayloadValue(payload, 'action', 'cancelCommunityPostRequest');
+    appendPayloadValue(payload, 'request_type', 'community_post_cancellation');
+    appendPayloadValue(payload, 'site', 'J-Connect Germany');
+    appendPayloadValue(payload, 'cancellation_requested_at', new Date().toISOString());
+    appendPayloadValue(payload, 'submitted_at', snapshot.submittedAt);
+    appendPayloadValue(payload, 'responsePostId', snapshot.responsePostId);
+    appendPayloadValue(payload, 'title', snapshot.title);
+    appendPayloadValue(payload, 'body', snapshot.body);
+    appendPayloadValue(payload, 'category1', snapshot.category1);
+    appendPayloadValue(payload, 'category2', snapshot.category2);
+    appendPayloadValue(payload, 'country', snapshot.country);
+    appendPayloadValue(payload, 'city', snapshot.city);
+    appendPayloadValue(payload, 'price', snapshot.price);
+    appendPayloadValue(payload, 'event_date', snapshot.event_date);
+    appendPayloadValue(payload, 'availability_date', snapshot.availability_date);
+    appendPayloadValue(payload, 'nickname', snapshot.nickname);
+    return payload;
+  }
+
+  async function postCancellationRequest(snapshot) {
+    const response = await fetch(GAS_URL, {
+      method: 'POST',
+      body: buildCancellationPayload(snapshot)
+    });
+    if (!response.ok) {
+      throw new Error('HTTP ' + response.status);
+    }
+    return await response.json();
+  }
+
+  function isAdminEmailMissing(data) {
+    const value = [
+      data && data.error,
+      data && data.code,
+      data && data.reason,
+      data && data.message
+    ].filter(Boolean).join(' ');
+    return value.includes('ADMIN_EMAIL_NOT_CONFIGURED');
+  }
+
+  async function handleCancellation() {
+    const snapshot = readStoredSnapshot() || {};
+    const button = document.getElementById('cancelSubmissionButton');
+    const status = document.getElementById('cancelStatus');
+    if (!window.confirm('この投稿の取り消しを依頼しますか？')) return;
+
+    if (button) {
+      button.disabled = true;
+      button.textContent = '送信中...';
+    }
+
+    try {
+      const data = await postCancellationRequest(snapshot);
+      if (!data || data.ok !== true) {
+        if (isAdminEmailMissing(data)) {
+          window.alert(ADMIN_EMAIL_NOT_CONFIGURED_MESSAGE);
+        } else {
+          window.alert(CANCEL_FAILED_MESSAGE);
+        }
+        if (button) {
+          button.disabled = false;
+          button.textContent = '投稿取り消し';
+        }
+        return;
+      }
+
+      window.alert(CANCEL_ACCEPTED_MESSAGE);
+      snapshot.cancellationRequested = true;
+      saveStoredSnapshot(snapshot);
+      updateCancelButton(snapshot);
+    } catch (error) {
+      window.alert(CANCEL_FAILED_MESSAGE);
+      if (button) {
+        button.disabled = false;
+        button.textContent = '投稿取り消し';
+      }
+      if (status) {
+        status.textContent = '投稿取り消し依頼を送信できませんでした。時間をおいて再度お試しください。';
+      }
+    }
+  }
+
+  const snapshot = readStoredSnapshot();
+  renderSummary(snapshot);
+  updateCancelButton(snapshot);
+  document.getElementById('cancelSubmissionButton')?.addEventListener('click', handleCancellation);
+})();
+</script>
 <script src="/assets/js/main.js"></script>
 </body>
 </html>

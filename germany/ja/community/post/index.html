@@ -291,6 +291,37 @@
   line-height:1.65;
 }
 
+.category-writing-helper{
+  grid-column:1/-1;
+  display:grid;
+  gap:7px;
+  margin:-2px 0 2px;
+  border:1px solid #dce8f5;
+  border-radius:9px;
+  background:#f8fbff;
+  padding:12px;
+}
+
+.category-writing-helper h3{
+  margin:0;
+  color:#24313d;
+  font-size:14px;
+  line-height:1.35;
+  font-weight:800;
+}
+
+.category-writing-helper p{
+  margin:0;
+  color:#526170;
+  font-size:13px;
+  line-height:1.65;
+}
+
+.category-writing-helper-example{
+  color:#34414d;
+  font-weight:700;
+}
+
 .message{
   display:none;
   grid-column:1/-1;
@@ -808,6 +839,12 @@
             </select>
           </div>
 
+          <aside class="category-writing-helper" aria-labelledby="categoryWritingHelperTitle">
+            <h3 id="categoryWritingHelperTitle">この投稿タイプの書き方</h3>
+            <p id="categoryWritingHelperBody">投稿の種類を選ぶと、書くとよい内容の例が表示されます。</p>
+            <p id="categoryWritingHelperExample" class="category-writing-helper-example" hidden></p>
+          </aside>
+
           <div class="form-field full">
             <label for="title">タイトル<span class="required-mark">*</span></label>
             <input id="title" name="title" required placeholder="例：DüsseldorfでIKEAの棚を譲ります / Kita申請について質問">
@@ -977,6 +1014,54 @@ const SUBCATEGORY_OPTIONS = {
   '質問': ['ビザ・滞在許可', '住民登録・役所', '保険', '税金', '病院・医療', '妊娠・出産', 'Kita・学校', '生活一般', 'その他'],
   'アルバイト': ['飲食', '販売', 'ベビーシッター', '家庭教師', '通訳・翻訳', '単発', 'リモート', 'その他']
 };
+const DEFAULT_BODY_PLACEHOLDER = '例：品物の状態、価格、地域、受け渡し方法、質問内容、希望条件などを具体的に書いてください。';
+const CATEGORY_WRITING_HELPERS = {
+  '売ります': {
+    tips: '品名、状態、価格、受け渡し場所を書く。写真があると伝わりやすくなります。',
+    example: '例：IKEAの棚を10€で譲ります。Düsseldorf中心部で手渡し希望です。小さな傷があります。',
+    placeholder: '例：品名、状態、価格、受け渡し場所、写真の有無を具体的に書いてください。'
+  },
+  '買います': {
+    tips: '探している物、希望価格、受け取り可能エリアを書く。',
+    example: '例：子ども用ベッドを探しています。Düsseldorf周辺で受け取り可能です。予算は30€前後です。',
+    placeholder: '例：探している物、希望価格、受け取り可能エリア、希望条件を書いてください。'
+  },
+  '譲ります': {
+    tips: '品名、状態、無料かどうか、受け渡し場所を書く。',
+    example: '例：引っ越し用段ボールを無料で譲ります。Erkrathで受け渡し希望です。',
+    placeholder: '例：品名、状態、無料かどうか、受け渡し場所、受け渡し可能日時を書いてください。'
+  },
+  '探しています': {
+    tips: '探しているもの・人・情報、地域、期限を書く。',
+    example: '例：Erkrath周辺で引っ越しを手伝ってくれる方を探しています。週末希望です。',
+    placeholder: '例：探しているもの・人・情報、地域、期限、希望条件を書いてください。'
+  },
+  '友達募集': {
+    tips: '地域、興味、希望する交流方法を書く。',
+    example: '例：Düsseldorf周辺で週末にカフェや散歩に行ける友達を探しています。',
+    placeholder: '例：地域、興味、話したいこと、希望する交流方法を書いてください。'
+  },
+  'イベント': {
+    tips: '日時、場所、参加方法、対象者を書く。',
+    example: '例：7月20日にDüsseldorfで日本語交流会を開催します。参加希望の方はメールで連絡してください。',
+    placeholder: '例：日時、場所、参加方法、対象者、参加費の有無を書いてください。'
+  },
+  'レッスン': {
+    tips: '教える内容、対象レベル、形式、料金を書く。',
+    example: '例：オンラインで日本語レッスンを行います。初心者向け、1回60分、料金は相談可です。',
+    placeholder: '例：教える内容、対象レベル、オンラインか対面か、料金を書いてください。'
+  },
+  '質問': {
+    tips: '困っていること、地域、試したことを書く。',
+    example: '例：Kita申請の進め方について質問です。Erkrath在住で、すでに市のポータルは確認しました。',
+    placeholder: '例：困っていること、地域、すでに試したこと、知りたい点を書いてください。'
+  },
+  'アルバイト': {
+    tips: '内容、勤務場所、条件、報酬、連絡方法を書く。',
+    example: '例：週末のイベント受付を手伝ってくれる方を探しています。Düsseldorf、2時間、報酬ありです。',
+    placeholder: '例：仕事内容、勤務場所、条件、報酬、連絡方法を書いてください。'
+  }
+};
 const POST_TYPES = ['すべて', ...Object.keys(SUBCATEGORY_OPTIONS)];
 const SUBCATEGORIES = ['すべて', ...new Set(Object.values(SUBCATEGORY_OPTIONS).flat())];
 const CATEGORY_ICONS = {
@@ -1087,6 +1172,29 @@ async function loadCategories() {
   buildCategoryMap();
   renderCategory1();
   renderCategory2('');
+  updateCategoryWritingHelper('');
+}
+
+function updateCategoryWritingHelper(selectedCategory1) {
+  const helper = CATEGORY_WRITING_HELPERS[selectedCategory1];
+  const body = document.getElementById('categoryWritingHelperBody');
+  const example = document.getElementById('categoryWritingHelperExample');
+  const bodyField = document.getElementById('body');
+
+  if (!body || !example || !bodyField) return;
+
+  if (!helper) {
+    body.textContent = '投稿の種類を選ぶと、書くとよい内容の例が表示されます。';
+    example.textContent = '';
+    example.hidden = true;
+    bodyField.placeholder = DEFAULT_BODY_PLACEHOLDER;
+    return;
+  }
+
+  body.textContent = helper.tips;
+  example.textContent = helper.example;
+  example.hidden = false;
+  bodyField.placeholder = helper.placeholder;
 }
 
 function escapeHtml(value) {
@@ -1590,6 +1698,7 @@ async function submitForm(event) {
     showMessage('success', '投稿を受け付けました。管理者確認後に掲載されます。');
     document.getElementById('postForm').reset();
     renderCategory2('');
+    updateCategoryWritingHelper('');
 
   } catch (error) {
     console.error('Community post submit failed:', GAS_URL, error);
@@ -1605,6 +1714,7 @@ if (detailPostId) {
 } else {
   document.getElementById('category1').addEventListener('change', function() {
     renderCategory2(this.value);
+    updateCategoryWritingHelper(this.value);
   });
 
   document.getElementById('postForm').addEventListener('submit', submitForm);

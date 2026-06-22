@@ -337,14 +337,15 @@
   </div>
 </main>
 
+<script src="/assets/js/data-sources.js"></script>
 <script>
 (function() {
+  const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
+  const GAS_URL = DATA_SOURCES.communityDataEndpoint;
   const LAST_SUBMISSION_KEY = 'jconnectCommunityLastSubmission';
-  const ADMIN_EMAIL = '';
-  const BACKEND_CANCEL_SUPPORTED = false;
   const CANCEL_ACCEPTED_MESSAGE = '投稿取り消しの依頼を受け付けました。管理者確認前のため、掲載されないよう確認します。';
-  const MAILTO_MESSAGE = 'メール作成画面を開きます。内容を確認して送信してください。送信後、管理者が掲載しないよう確認します。';
-  const NO_ADMIN_CONTACT_MESSAGE = '取り消し依頼の送信先が設定されていません。掲示板一覧またはお問い合わせから管理者へ連絡してください。';
+  const ADMIN_EMAIL_NOT_CONFIGURED_MESSAGE = '投稿取り消し依頼の送信先が管理者側で設定されていません。時間をおいて再度お試しください。';
+  const CANCEL_FAILED_MESSAGE = '投稿取り消し依頼を送信できませんでした。時間をおいて再度お試しください。';
 
   function escapeHtml(value) {
     return String(value || '')
@@ -440,46 +441,91 @@
     }
   }
 
-  function buildMailto(snapshot) {
-    const subject = '【J-Connect】投稿取り消し依頼';
-    const body = [
-      '投稿取り消し依頼です。',
-      'タイトル: ' + (snapshot.title || '未設定'),
-      '投稿カテゴリ: ' + (snapshot.category1 || '未設定'),
-      '投稿の種類: ' + (snapshot.category2 || '未設定'),
-      '都市: ' + (snapshot.city || '未設定'),
-      '送信日時: ' + (formatDateTime(snapshot.submittedAt) || '未設定'),
-      snapshot.responsePostId ? '投稿ID: ' + snapshot.responsePostId : '',
-      '可能であればこの投稿を掲載しないでください。'
-    ].filter(Boolean).join('\n');
-    return 'mailto:' + encodeURIComponent(ADMIN_EMAIL) + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  function appendPayloadValue(payload, key, value) {
+    payload.append(key, value === undefined || value === null ? '' : String(value));
+  }
+
+  function buildCancellationPayload(snapshot) {
+    const payload = new URLSearchParams();
+    appendPayloadValue(payload, 'action', 'cancelCommunityPostRequest');
+    appendPayloadValue(payload, 'request_type', 'community_post_cancellation');
+    appendPayloadValue(payload, 'site', 'J-Connect Germany');
+    appendPayloadValue(payload, 'cancellation_requested_at', new Date().toISOString());
+    appendPayloadValue(payload, 'submitted_at', snapshot.submittedAt);
+    appendPayloadValue(payload, 'responsePostId', snapshot.responsePostId);
+    appendPayloadValue(payload, 'title', snapshot.title);
+    appendPayloadValue(payload, 'body', snapshot.body);
+    appendPayloadValue(payload, 'category1', snapshot.category1);
+    appendPayloadValue(payload, 'category2', snapshot.category2);
+    appendPayloadValue(payload, 'country', snapshot.country);
+    appendPayloadValue(payload, 'city', snapshot.city);
+    appendPayloadValue(payload, 'price', snapshot.price);
+    appendPayloadValue(payload, 'event_date', snapshot.event_date);
+    appendPayloadValue(payload, 'availability_date', snapshot.availability_date);
+    appendPayloadValue(payload, 'nickname', snapshot.nickname);
+    return payload;
+  }
+
+  async function postCancellationRequest(snapshot) {
+    const response = await fetch(GAS_URL, {
+      method: 'POST',
+      body: buildCancellationPayload(snapshot)
+    });
+    if (!response.ok) {
+      throw new Error('HTTP ' + response.status);
+    }
+    return await response.json();
+  }
+
+  function isAdminEmailMissing(data) {
+    const value = [
+      data && data.error,
+      data && data.code,
+      data && data.reason,
+      data && data.message
+    ].filter(Boolean).join(' ');
+    return value.includes('ADMIN_EMAIL_NOT_CONFIGURED');
   }
 
   async function handleCancellation() {
     const snapshot = readStoredSnapshot() || {};
+    const button = document.getElementById('cancelSubmissionButton');
     const status = document.getElementById('cancelStatus');
-    if (!window.confirm('投稿取り消し依頼を作成します。よろしいですか？')) return;
+    if (!window.confirm('この投稿の取り消しを依頼しますか？')) return;
 
-    if (BACKEND_CANCEL_SUPPORTED) {
+    if (button) {
+      button.disabled = true;
+      button.textContent = '送信中...';
+    }
+
+    try {
+      const data = await postCancellationRequest(snapshot);
+      if (!data || data.ok !== true) {
+        if (isAdminEmailMissing(data)) {
+          window.alert(ADMIN_EMAIL_NOT_CONFIGURED_MESSAGE);
+        } else {
+          window.alert(CANCEL_FAILED_MESSAGE);
+        }
+        if (button) {
+          button.disabled = false;
+          button.textContent = '投稿取り消し';
+        }
+        return;
+      }
+
       window.alert(CANCEL_ACCEPTED_MESSAGE);
       snapshot.cancellationRequested = true;
       saveStoredSnapshot(snapshot);
       updateCancelButton(snapshot);
-      return;
-    }
-
-    if (ADMIN_EMAIL) {
-      window.alert(MAILTO_MESSAGE);
-      location.href = buildMailto(snapshot);
-      snapshot.cancellationRequested = true;
-      saveStoredSnapshot(snapshot);
-      updateCancelButton(snapshot);
-      return;
-    }
-
-    window.alert(NO_ADMIN_CONTACT_MESSAGE);
-    if (status) {
-      status.textContent = '取り消し依頼の送信先が設定されていません。掲示板一覧またはお問い合わせから管理者へ連絡してください。';
+    } catch (error) {
+      window.alert(CANCEL_FAILED_MESSAGE);
+      if (button) {
+        button.disabled = false;
+        button.textContent = '投稿取り消し';
+      }
+      if (status) {
+        status.textContent = '投稿取り消し依頼を送信できませんでした。時間をおいて再度お試しください。';
+      }
     }
   }
 

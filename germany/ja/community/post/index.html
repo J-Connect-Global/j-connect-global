@@ -1178,7 +1178,6 @@ const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const detailPostId = new URLSearchParams(location.search).get('id');
 const DETAIL_STORAGE_KEY = 'ngg-community-saved-posts';
 const LAST_SUBMISSION_KEY = 'jconnectCommunityLastSubmission';
-const SUCCESS_MESSAGE = '投稿を受け付けました。管理者確認後に掲載されます。';
 const THANKS_URL = '/germany/ja/community/thanks/';
 const SUBCATEGORY_OPTIONS = {
   '売ります': ['帰国売り', '家具・家電', '生活用品', '子ども用品', '本・教材', '車・自転車', 'その他'],
@@ -2030,8 +2029,6 @@ async function submitForm(event) {
     }
 
     saveLastSubmission(buildSubmissionSnapshot(response, [image1.name, image2.name, image3.name].filter(Boolean)));
-    showMessage('success', SUCCESS_MESSAGE);
-    window.alert(SUCCESS_MESSAGE);
     location.assign(THANKS_URL);
 
   } catch (error) {

@@ -148,6 +148,67 @@
   backdrop-filter:blur(6px);
 }
 
+.writing-tips{
+  display:grid;
+  gap:12px;
+  margin-bottom:14px;
+}
+
+.writing-tips-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.writing-tips-head h3{
+  margin:0;
+  font-size:20px;
+  line-height:1.25;
+  font-weight:800;
+  color:#24313d;
+}
+
+.writing-tips-head p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+}
+
+.writing-tip-list{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:8px;
+  margin:0;
+  padding:0;
+}
+
+.writing-tip-list li{
+  list-style:none;
+  min-width:0;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:#f8fbff;
+  padding:10px;
+}
+
+.writing-tip-list strong{
+  display:block;
+  color:#24313d;
+  font-size:13px;
+  line-height:1.35;
+  font-weight:800;
+}
+
+.writing-tip-list span{
+  display:block;
+  margin-top:4px;
+  color:#596875;
+  font-size:12px;
+  line-height:1.5;
+}
+
 .form-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -218,6 +279,18 @@
   color:var(--muted);
 }
 
+.field-note{
+  grid-column:1/-1;
+  margin:-2px 0 0;
+  border:1px solid #dce8f5;
+  border-radius:9px;
+  background:#f8fbff;
+  padding:10px 12px;
+  color:#526170;
+  font-size:13px;
+  line-height:1.65;
+}
+
 .message{
   display:none;
   grid-column:1/-1;
@@ -274,6 +347,7 @@
   font-size:.84rem;
   color:var(--muted);
   margin-top:14px;
+  line-height:1.7;
 }
 
 .skeleton-block,
@@ -575,6 +649,13 @@
 
 .section-title{font-size:21px}
 
+.writing-tips-head{
+    display:grid;
+    gap:4px;
+  }
+
+.writing-tip-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+
 .form-grid{grid-template-columns:1fr}
 
 .detail-shell{grid-template-columns:1fr}
@@ -590,6 +671,7 @@
 
 @media(max-width:560px){
 .hero{background-position:64% center}
+.writing-tip-list{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -687,10 +769,24 @@
         <div>
           <p class="section-kicker">POST FORM</p>
           <h2 id="form-title" class="section-title">投稿内容</h2>
-          <p class="section-desc">必要事項を入力して送信してください。</p>
+          <p class="section-desc">探している人に伝わるように、内容・地域・条件を具体的に入力してください。</p>
           <p class="required-note"><span class="required-mark">*</span>は必須項目です。</p>
         </div>
       </div>
+
+      <aside class="panel writing-tips" aria-labelledby="writingTipsTitle">
+        <div class="writing-tips-head">
+          <h3 id="writingTipsTitle">書き方のヒント</h3>
+          <p>投稿の種類に合わせて、相手が判断しやすい情報を先にまとめておくとスムーズです。</p>
+        </div>
+        <ul class="writing-tip-list">
+          <li><strong>売ります・譲ります</strong><span>品名、状態、価格、受け渡し場所を書く</span></li>
+          <li><strong>質問・相談</strong><span>困っていること、地域、試したことを書く</span></li>
+          <li><strong>友達募集・交流</strong><span>地域、興味、希望する交流方法を書く</span></li>
+          <li><strong>イベント告知</strong><span>日時、場所、参加方法を書く</span></li>
+          <li><strong>レッスン・アルバイト</strong><span>内容、条件、報酬、連絡方法を書く</span></li>
+        </ul>
+      </aside>
 
       <div class="panel">
         <form id="postForm" class="form-grid">
@@ -714,12 +810,12 @@
 
           <div class="form-field full">
             <label for="title">タイトル<span class="required-mark">*</span></label>
-            <input id="title" name="title" required placeholder="例：デュッセルドルフでソファ売ります">
+            <input id="title" name="title" required placeholder="例：DüsseldorfでIKEAの棚を譲ります / Kita申請について質問">
           </div>
 
           <div class="form-field full">
             <label for="body">本文<span class="required-mark">*</span></label>
-            <textarea id="body" name="body" required placeholder="内容、条件、受け渡し方法などを記載してください"></textarea>
+            <textarea id="body" name="body" required placeholder="例：品物の状態、価格、地域、受け渡し方法、質問内容、希望条件などを具体的に書いてください。"></textarea>
           </div>
 
           <div class="form-field">
@@ -729,12 +825,12 @@
 
           <div class="form-field">
             <label for="region">地域</label>
-            <input id="region" name="region" placeholder="NRW, Berlin など">
+            <input id="region" name="region" placeholder="例：NRW、Berlin、Bayern">
           </div>
 
           <div class="form-field">
             <label for="city">都市<span class="required-mark">*</span></label>
-            <input id="city" name="city" required placeholder="Düsseldorf">
+            <input id="city" name="city" required placeholder="例：Düsseldorf、Köln、Berlin">
           </div>
 
           <div class="form-field">
@@ -752,14 +848,18 @@
             <input id="contact_phone_private" name="contact_phone_private">
           </div>
 
+          <p class="field-note">
+            メールアドレスや電話番号は原則として公開表示されません。ただし、本文には住所や電話番号などの個人情報を書きすぎないようにしてください。
+          </p>
+
           <div class="form-field">
             <label for="preferred_contact_method">希望連絡方法</label>
-            <input id="preferred_contact_method" name="preferred_contact_method" placeholder="サイト経由メッセージ優先 など">
+            <input id="preferred_contact_method" name="preferred_contact_method" placeholder="例：メール優先、サイト経由メッセージ希望、電話は平日夜のみ">
           </div>
 
           <div class="form-field">
             <label for="price">価格（必要な場合）</label>
-            <input id="price" name="price" placeholder="€50">
+            <input id="price" name="price" placeholder="例：無料、10€、相談可">
           </div>
 
           <div class="form-field">
@@ -803,7 +903,8 @@
         </form>
 
         <p class="subtle">
-          送信後、投稿者メール宛に削除リンクが送られます。画像は管理用Google Driveに保存され、保存URLがSpreadsheetの image_url_1 / image_url_2 / image_url_3 に記録されます。
+          送信後、投稿内容は管理者確認後に掲載されます。確認が完了するまで、反映に時間がかかる場合があります。画像を添付した場合も、内容確認後に表示されます。
+          投稿者メール宛に確認用の連絡が届く場合があります。
         </p>
       </div>
     </section>

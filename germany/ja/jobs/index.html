@@ -221,8 +221,31 @@
   }
 
   #job-listings .jobs-card .job-card-body{
-    grid-template-columns:minmax(0,1fr) minmax(260px,.72fr) auto;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(220px,.46fr);
+    grid-template-areas:
+      "main meta"
+      "actions actions";
     align-items:start;
+    gap:10px 14px;
+    padding:14px 48px 14px 14px;
+  }
+
+  #job-listings .jobs-card .job-main{
+    grid-area:main;
+  }
+
+  #job-listings .jobs-card .job-side{
+    grid-area:meta;
+  }
+
+  #job-listings .jobs-card .job-card-actions{
+    grid-area:actions;
+    justify-content:flex-end;
+    align-items:center;
+    gap:6px;
+    border-top:1px solid var(--listing-line);
+    padding-top:10px;
   }
 
   #job-listings .jobs-card-title{
@@ -231,6 +254,8 @@
     font-size:19px;
     line-height:1.3;
     font-weight:900;
+    word-break:normal;
+    overflow-wrap:break-word;
   }
 
   #job-listings .jobs-card-company{
@@ -239,27 +264,34 @@
     font-size:13px;
     line-height:1.45;
     font-weight:900;
+    word-break:normal;
+    overflow-wrap:break-word;
   }
 
   #job-listings .jobs-card-summary{
-    margin:9px 0 0;
+    margin:7px 0 0;
     color:#4d5b68;
     font-size:13px;
-    line-height:1.6;
+    line-height:1.55;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
   }
 
   #job-listings .jobs-card-meta{
     display:grid;
-    gap:7px;
+    gap:5px;
   }
 
   #job-listings .jobs-card-meta-item{
     display:grid;
-    grid-template-columns:72px minmax(0,1fr);
-    gap:8px;
+    grid-template-columns:64px minmax(0,1fr);
+    gap:7px;
     color:#384552;
     font-size:12px;
-    line-height:1.45;
+    line-height:1.4;
   }
 
   #job-listings .jobs-card-meta-label{
@@ -270,20 +302,69 @@
   #job-listings .jobs-card-meta-value{
     min-width:0;
     font-weight:800;
-    overflow-wrap:anywhere;
+    word-break:normal;
+    overflow-wrap:break-word;
   }
 
   #job-listings .jobs-card-pill-row{
     display:flex;
     flex-wrap:wrap;
     gap:5px;
-    margin-top:9px;
+    margin-top:7px;
   }
 
   #job-listings .jobs-card-date{
     color:var(--listing-muted);
     font-size:12px;
     font-weight:800;
+    margin-top:2px;
+  }
+
+  #job-listings .jobs-card .card-action{
+    min-width:max-content;
+    white-space:nowrap;
+    padding:0 10px;
+  }
+
+  #job-listings .layout.grid-mode .cards{
+    grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  }
+
+  #job-listings .layout.grid-mode .jobs-card .job-card-body{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "main"
+      "meta"
+      "actions";
+    gap:9px;
+    padding:14px 48px 14px 14px;
+  }
+
+  #job-listings .layout.grid-mode .jobs-card .job-card-actions{
+    justify-content:flex-start;
+  }
+
+  #job-listings .layout.grid-mode .jobs-card-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px;
+  }
+
+  #job-listings .layout.grid-mode .jobs-card-meta-item{
+    display:inline-flex;
+    width:auto;
+    max-width:100%;
+    grid-template-columns:none;
+    gap:4px;
+    align-items:center;
+    border:1px solid var(--listing-line);
+    border-radius:6px;
+    background:#fff;
+    padding:4px 7px;
+  }
+
+  #job-listings .layout.grid-mode .jobs-card-meta-label::after{
+    content:":";
   }
 
   .jobs-detail-modal .listing-modal-dialog{
@@ -337,6 +418,10 @@
 
     #job-listings .jobs-card .job-card-body{
       grid-template-columns:1fr;
+      grid-template-areas:
+        "main"
+        "meta"
+        "actions";
       padding-right:48px;
     }
 
@@ -347,6 +432,25 @@
 
     .jobs-detail-modal .listing-modal-dialog{
       width:calc(100vw - 20px);
+    }
+  }
+
+  @media (max-width:520px){
+    #job-listings .jobs-card .job-card-body,
+    #job-listings .layout.grid-mode .jobs-card .job-card-body{
+      padding:12px;
+      padding-top:44px;
+    }
+
+    #job-listings .jobs-card .job-card-actions{
+      justify-content:flex-start;
+      align-items:stretch;
+    }
+
+    #job-listings .jobs-card .card-action{
+      flex:1 1 108px;
+      min-width:108px;
+      white-space:nowrap;
     }
   }
 </style>

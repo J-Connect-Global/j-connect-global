@@ -22,62 +22,17 @@
   --surface:#ffffff;
 }
 
-.hero{
-  position:relative;
-  overflow:hidden;
-  border:1px solid rgba(210,218,228,.95);
-  border-radius:10px;
-  box-shadow:0 14px 34px rgba(19,35,58,.12),0 0 0 1px rgba(255,255,255,.5) inset;
-  background:
-    linear-gradient(90deg,rgba(255,255,255,.52) 0%,rgba(255,255,255,.42) 45%,rgba(255,255,255,.22) 100%),
-    url('/assets/images/hero/top-hero.jpg') center center/cover no-repeat,
-    #fff;
+.post-hero{
+  gap:11px;
+  padding:22px;
 }
 
-.hero-grid{
-  position:relative;
-  z-index:1;
-  display:grid;
-  grid-template-columns:1fr;
-  gap:18px;
-  align-items:stretch;
-  min-height:260px;
-  padding:30px;
+.post-hero h1{
+  font-size:clamp(28px,3.6vw,40px);
 }
 
-.hero-kicker{
-  display:inline-flex;
-  width:max-content;
-  align-items:center;
-  gap:8px;
-  padding:7px 12px;
-  border-radius:999px;
-  background:rgba(255,255,255,.78);
-  border:1px solid rgba(216,222,230,.95);
-  color:var(--brand);
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.08em;
-}
-
-.hero-title{
-  font-size:clamp(2rem,4vw,3.2rem);
-  line-height:1.08;
-  letter-spacing:-.03em;
-  font-weight:800;
-  max-width:960px;
-}
-
-.hero-title .brand-word{
-  color:var(--brand);
-  white-space:nowrap;
-}
-
-.hero-desc{
-  max-width:105ch;
-  color:#485664;
-  font-size:15px;
-  line-height:1.8;
+.post-hero p{
+  max-width:92ch;
 }
 
 .hero-actions{
@@ -110,14 +65,19 @@
   transform:translateY(-1px);
 }
 
-.section{margin-top:24px}
+#postFormMode{
+  display:grid;
+  gap:16px;
+}
+
+.section{margin-top:0}
 
 .section-head{
   display:flex;
   align-items:flex-end;
   justify-content:space-between;
   gap:16px;
-  margin-bottom:14px;
+  margin-bottom:10px;
 }
 
 .section-kicker{
@@ -144,7 +104,7 @@
   border:1px solid var(--line);
   border-radius:9px;
   box-shadow:var(--shadow);
-  padding:22px;
+  padding:18px;
   backdrop-filter:blur(6px);
 }
 
@@ -212,7 +172,7 @@
 .form-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:14px;
+  gap:12px;
 }
 
 .full{grid-column:1/-1}
@@ -673,10 +633,7 @@
 }
 
 @media(max-width:780px){
-.hero-grid{
-    min-height:auto;
-    padding:22px;
-  }
+.post-hero{padding:18px}
 
 .section-title{font-size:21px}
 
@@ -701,7 +658,6 @@
 }
 
 @media(max-width:560px){
-.hero{background-position:64% center}
 .writing-tip-list{grid-template-columns:1fr}
 }
 </style>
@@ -761,38 +717,20 @@
 
 <main class="main">
   <div class="container">
-    <section id="detailMode" class="detail-page" aria-live="polite" hidden>
-      <div class="detail-loading" aria-hidden="true">
-        <div class="skeleton-block detail-loading-media"></div>
-        <div class="detail-loading-content">
-          <span class="skeleton-line title"></span>
-          <div class="skeleton-badges">
-            <span class="skeleton-block skeleton-badge"></span>
-            <span class="skeleton-block skeleton-badge"></span>
-            <span class="skeleton-block skeleton-badge"></span>
-          </div>
-          <span class="skeleton-line long"></span>
-          <span class="skeleton-line medium"></span>
-          <span class="skeleton-line long"></span>
-          <span class="skeleton-line short"></span>
-        </div>
-      </div>
-    </section>
+    <section id="detailMode" class="detail-page" aria-live="polite" hidden></section>
 
     <div id="postFormMode">
-    <section class="hero" aria-labelledby="page-title">
-      <div class="hero-grid">
-        <span class="hero-kicker">COMMUNITY BOARD</span>
-        <h1 id="page-title" class="hero-title">交流・掲示板に<span class="brand-word">投稿する</span></h1>
+    <section class="post-hero jc-page-hero" aria-labelledby="page-title">
+        <div class="jc-eyebrow"><span class="jc-dot"></span>COMMUNITY BOARD</div>
+        <h1 id="page-title">交流・掲示板に投稿する</h1>
         <p class="hero-desc">
           売ります・買います、住まい、イベント、質問、仲間募集など、ドイツ生活に関する情報を投稿できます。
-          投稿は送信後に管理者確認となります。メールアドレスや電話番号は掲示板に表示されません。
+          投稿は送信後に管理者確認となります。
         </p>
-        <div class="hero-actions">
-          <a class="pill-link" href="../">← 掲示板一覧へ戻る</a>
-          <a class="pill-link" href="../../">ホームへ戻る</a>
+        <div class="jc-hero-actions">
+          <a class="jc-button is-primary" href="../">掲示板一覧へ戻る</a>
+          <a class="jc-button" href="../../">ホームへ戻る</a>
         </div>
-      </div>
     </section>
 
     <section class="section" aria-labelledby="form-title">
@@ -825,15 +763,19 @@
 
           <div id="messageBox" class="message"></div>
 
+          <input type="hidden" id="region" name="region" value="">
+          <input type="hidden" id="contact_phone_private" name="contact_phone_private" value="">
+          <input type="hidden" id="preferred_contact_method" name="preferred_contact_method" value="メール">
+
           <div class="form-field">
-            <label for="category1">投稿の種類<span class="required-mark">*</span></label>
+            <label for="category1">投稿カテゴリ<span class="required-mark">*</span></label>
             <select name="category1" id="category1" required>
               <option value="">投稿の種類を選択してください</option>
             </select>
           </div>
 
           <div class="form-field">
-            <label for="category2">詳しい内容<span class="required-mark">*</span></label>
+            <label for="category2">投稿の種類<span class="required-mark">*</span></label>
             <select name="category2" id="category2" required>
               <option value="">先に投稿の種類を選択してください</option>
             </select>
@@ -857,17 +799,48 @@
 
           <div class="form-field">
             <label for="country">国</label>
-            <input id="country" name="country" value="Germany">
-          </div>
-
-          <div class="form-field">
-            <label for="region">地域</label>
-            <input id="region" name="region" placeholder="例：NRW、Berlin、Bayern">
+            <select id="country" name="country">
+              <option value="ドイツ" selected>ドイツ</option>
+              <option value="オーストリア">オーストリア</option>
+              <option value="スイス">スイス</option>
+              <option value="その他">その他</option>
+            </select>
           </div>
 
           <div class="form-field">
             <label for="city">都市<span class="required-mark">*</span></label>
-            <input id="city" name="city" required placeholder="例：Düsseldorf、Köln、Berlin">
+            <select id="city" name="city" required>
+              <option value="">選択してください</option>
+              <option value="NRW - Düsseldorf">NRW - Düsseldorf</option>
+              <option value="NRW - Köln">NRW - Köln</option>
+              <option value="NRW - Bonn">NRW - Bonn</option>
+              <option value="NRW - Essen">NRW - Essen</option>
+              <option value="NRW - Dortmund">NRW - Dortmund</option>
+              <option value="NRW - Duisburg">NRW - Duisburg</option>
+              <option value="NRW - Wuppertal">NRW - Wuppertal</option>
+              <option value="NRW - Bochum">NRW - Bochum</option>
+              <option value="NRW - Münster">NRW - Münster</option>
+              <option value="NRW - Aachen">NRW - Aachen</option>
+              <option value="Hessen - Frankfurt am Main">Hessen - Frankfurt am Main</option>
+              <option value="Hessen - Wiesbaden">Hessen - Wiesbaden</option>
+              <option value="Hessen - Darmstadt">Hessen - Darmstadt</option>
+              <option value="Berlin - Berlin">Berlin - Berlin</option>
+              <option value="Hamburg - Hamburg">Hamburg - Hamburg</option>
+              <option value="Bayern - München">Bayern - München</option>
+              <option value="Bayern - Nürnberg">Bayern - Nürnberg</option>
+              <option value="Baden-Württemberg - Stuttgart">Baden-Württemberg - Stuttgart</option>
+              <option value="Baden-Württemberg - Karlsruhe">Baden-Württemberg - Karlsruhe</option>
+              <option value="Baden-Württemberg - Mannheim">Baden-Württemberg - Mannheim</option>
+              <option value="Niedersachsen - Hannover">Niedersachsen - Hannover</option>
+              <option value="Sachsen - Leipzig">Sachsen - Leipzig</option>
+              <option value="Sachsen - Dresden">Sachsen - Dresden</option>
+              <option value="Bremen - Bremen">Bremen - Bremen</option>
+              <option value="Rheinland-Pfalz - Mainz">Rheinland-Pfalz - Mainz</option>
+              <option value="Saarland - Saarbrücken">Saarland - Saarbrücken</option>
+              <option value="Schleswig-Holstein - Kiel">Schleswig-Holstein - Kiel</option>
+              <option value="Online">Online</option>
+              <option value="その他">その他</option>
+            </select>
           </div>
 
           <div class="form-field">
@@ -880,19 +853,9 @@
             <input id="contact_email_private" name="contact_email_private" type="email" required>
           </div>
 
-          <div class="form-field">
-            <label for="contact_phone_private">非公開電話番号（任意）</label>
-            <input id="contact_phone_private" name="contact_phone_private">
-          </div>
-
           <p class="field-note">
-            メールアドレスや電話番号は原則として公開表示されません。ただし、本文には住所や電話番号などの個人情報を書きすぎないようにしてください。
+            メールアドレスはサイト上に表示されません。ただし、本文には住所や電話番号などの個人情報を書きすぎないようにしてください。
           </p>
-
-          <div class="form-field">
-            <label for="preferred_contact_method">希望連絡方法</label>
-            <input id="preferred_contact_method" name="preferred_contact_method" placeholder="例：メール優先、サイト経由メッセージ希望、電話は平日夜のみ">
-          </div>
 
           <div class="form-field">
             <label for="price">価格（必要な場合）</label>
@@ -1195,6 +1158,20 @@ function updateCategoryWritingHelper(selectedCategory1) {
   example.textContent = helper.example;
   example.hidden = false;
   bodyField.placeholder = helper.placeholder;
+}
+
+function updateRegionFromCity() {
+  const city = document.getElementById('city');
+  const region = document.getElementById('region');
+  if (!city || !region) return;
+
+  const value = city.value || '';
+  if (value.includes(' - ')) {
+    region.value = value.split(' - ')[0];
+    return;
+  }
+
+  region.value = value === 'Online' ? 'Online' : '';
 }
 
 function escapeHtml(value) {
@@ -1663,6 +1640,7 @@ async function submitForm(event) {
     const body = new URLSearchParams();
 
     body.append('action', 'submitPost');
+    updateRegionFromCity();
 
     body.append('category1', getValue('category1'));
     body.append('category2', getValue('category2'));
@@ -1699,6 +1677,7 @@ async function submitForm(event) {
     document.getElementById('postForm').reset();
     renderCategory2('');
     updateCategoryWritingHelper('');
+    updateRegionFromCity();
 
   } catch (error) {
     console.error('Community post submit failed:', GAS_URL, error);
@@ -1718,8 +1697,10 @@ if (detailPostId) {
   });
 
   document.getElementById('postForm').addEventListener('submit', submitForm);
+  document.getElementById('city').addEventListener('change', updateRegionFromCity);
 
   loadCategories();
+  updateRegionFromCity();
 }
 </script>
 <script src="/assets/js/main.js"></script>

@@ -24,8 +24,7 @@
 <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
 <link rel="stylesheet" href="/assets/css/listing-pages.css" />
 <style>
-  .jobs-hub-section,
-  .jobs-section-layout{
+  .jobs-listings-shell{
     width:min(var(--listing-max), calc(100% - 32px));
     margin:0 auto 12px;
   }
@@ -34,177 +33,51 @@
     scroll-margin-top:110px;
   }
 
-  .jobs-audience-block{
-    border:1px solid var(--listing-line);
-    border-radius:8px;
-    background:#fff;
-    box-shadow:var(--listing-shadow);
-    padding:14px;
-  }
-
-  .jobs-section-head{
-    display:flex;
-    align-items:flex-end;
-    justify-content:space-between;
-    gap:14px;
-    margin-bottom:10px;
-  }
-
-  .jobs-section-head h2{
-    margin:0;
-    color:var(--listing-navy);
-    font-size:20px;
-    line-height:1.25;
-    font-weight:900;
-  }
-
-  .jobs-section-head p{
-    margin:4px 0 0;
-    color:var(--listing-muted);
-    font-size:13px;
-    line-height:1.6;
-    font-weight:700;
-  }
-
-  .jobs-audience-cards{
+  .jobs-hero-box{
     display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:10px;
-  }
-
-  .jobs-audience-card{
-    min-width:0;
-    border:1px solid var(--listing-line);
-    border-radius:8px;
-    background:var(--listing-soft);
-    padding:12px;
-    color:#24313d;
-    transition:transform .16s ease, border-color .16s ease, background .16s ease;
-  }
-
-  .jobs-audience-card:hover{
-    transform:translateY(-1px);
-    border-color:var(--listing-line-strong);
-    background:#fff;
-  }
-
-  .jobs-audience-card strong{
-    display:block;
-    color:var(--listing-navy);
-    font-size:14px;
-    line-height:1.35;
-    font-weight:900;
-  }
-
-  .jobs-audience-card span{
-    display:block;
-    margin-top:5px;
-    color:#4d5b68;
-    font-size:12px;
-    line-height:1.55;
-    font-weight:700;
-  }
-
-  .jobs-section-layout{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) 188px;
+    grid-template-columns:minmax(0,1fr) 240px;
     gap:16px;
-    align-items:start;
+    align-items:center;
   }
 
-  .jobs-main-flow{
+  .jobs-hero-main{
     min-width:0;
-    display:grid;
-    gap:12px;
   }
 
-  .jobs-page-toc{
-    position:sticky;
-    top:92px;
+  .jobs-hero-actions{
+    display:grid;
+    gap:8px;
+    align-self:center;
+  }
+
+  .jobs-hero-link{
     border:1px solid var(--listing-line);
     border-radius:8px;
     background:#fff;
-    box-shadow:var(--listing-shadow);
-    padding:12px;
-  }
-
-  .jobs-page-toc-title{
-    color:var(--listing-muted);
-    font-size:12px;
-    font-weight:900;
-    letter-spacing:.04em;
-    text-transform:uppercase;
-    margin-bottom:8px;
-  }
-
-  .jobs-page-toc a{
-    display:block;
-    border-radius:7px;
     color:var(--listing-navy);
-    font-size:12px;
-    font-weight:900;
+    padding:10px 12px;
+    font-size:13px;
     line-height:1.35;
-    padding:8px;
-  }
-
-  .jobs-page-toc a:hover{
-    background:var(--listing-accent-soft);
-  }
-
-  .jobs-guide-card,
-  .jobs-employer-card{
-    border:1px solid var(--listing-line);
-    border-radius:8px;
-    background:#fff;
-    box-shadow:var(--listing-shadow);
-    padding:16px;
-  }
-
-  .jobs-guide-links{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:8px;
-  }
-
-  .jobs-guide-link{
-    border:1px solid var(--listing-line);
-    border-radius:8px;
-    background:var(--listing-soft);
-    padding:10px;
-    color:#24313d;
-    font-size:13px;
     font-weight:900;
-    line-height:1.45;
+    box-shadow:0 8px 18px rgba(30,58,95,.08);
   }
 
-  .jobs-guide-link:hover{
+  .jobs-hero-link:hover{
     border-color:var(--listing-line-strong);
-    background:#fff;
-  }
-
-  .jobs-employer-grid{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:8px;
-    margin:12px 0;
-  }
-
-  .jobs-employer-grid div{
-    border:1px solid var(--listing-line);
-    border-radius:8px;
     background:var(--listing-soft);
-    padding:10px;
-    color:#384552;
-    font-size:12px;
-    line-height:1.55;
-    font-weight:800;
   }
 
-  .jobs-employer-grid strong{
-    display:block;
-    color:var(--listing-navy);
+  .jobs-filter-select{
+    width:100%;
+    min-height:38px;
+    border:1px solid var(--listing-line);
+    border-radius:7px;
+    background:#fff;
+    color:#24313d;
+    padding:0 10px;
+    font:inherit;
     font-size:13px;
-    margin-bottom:3px;
+    font-weight:800;
   }
 
   #job-listings .layout{
@@ -227,8 +100,8 @@
       "main meta"
       "actions actions";
     align-items:start;
-    gap:10px 14px;
-    padding:14px 48px 14px 14px;
+    gap:8px 14px;
+    padding:12px 46px 12px 12px;
   }
 
   #job-listings .jobs-card .job-main{
@@ -245,13 +118,13 @@
     align-items:center;
     gap:6px;
     border-top:1px solid var(--listing-line);
-    padding-top:10px;
+    padding-top:8px;
   }
 
   #job-listings .jobs-card-title{
     margin:0;
     color:var(--listing-ink);
-    font-size:19px;
+    font-size:18px;
     line-height:1.3;
     font-weight:900;
     word-break:normal;
@@ -269,7 +142,7 @@
   }
 
   #job-listings .jobs-card-summary{
-    margin:7px 0 0;
+    margin:6px 0 0;
     color:#4d5b68;
     font-size:13px;
     line-height:1.55;
@@ -310,7 +183,7 @@
     display:flex;
     flex-wrap:wrap;
     gap:5px;
-    margin-top:7px;
+    margin-top:6px;
   }
 
   #job-listings .jobs-card-date{
@@ -327,7 +200,7 @@
   }
 
   #job-listings .layout.grid-mode .cards{
-    grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+    grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   }
 
   #job-listings .layout.grid-mode .jobs-card .job-card-body{
@@ -336,8 +209,17 @@
       "main"
       "meta"
       "actions";
-    gap:9px;
-    padding:14px 48px 14px 14px;
+    gap:8px;
+    padding:12px;
+  }
+
+  #job-listings .layout.grid-mode .jobs-card .job-main{
+    padding-right:34px;
+  }
+
+  #job-listings .layout.list-mode .jobs-card-summary{
+    -webkit-line-clamp:1;
+    line-clamp:1;
   }
 
   #job-listings .layout.grid-mode .jobs-card .job-card-actions{
@@ -390,29 +272,17 @@
   }
 
   @media (max-width:1100px){
-    .jobs-section-layout{
+    .jobs-hero-box{
       grid-template-columns:1fr;
-    }
-
-    .jobs-page-toc{
-      display:none;
     }
   }
 
   @media (max-width:780px){
-    .jobs-hub-section,
-    .jobs-section-layout{
+    .jobs-listings-shell{
       width:min(100% - 24px, var(--listing-max));
     }
 
-    .jobs-section-head{
-      display:grid;
-      gap:4px;
-    }
-
-    .jobs-audience-cards,
-    .jobs-guide-links,
-    .jobs-employer-grid{
+    .jobs-hero-actions{
       grid-template-columns:1fr;
     }
 
@@ -451,6 +321,10 @@
       flex:1 1 108px;
       min-width:108px;
       white-space:nowrap;
+    }
+
+    #job-listings .layout.grid-mode .jobs-card .job-main{
+      padding-right:0;
     }
   }
 </style>
@@ -534,38 +408,20 @@
   <!-- LAYOUT:ja-header:end -->
 
   <section class="hero jc-directory-hero">
-    <div class="hero-box jc-directory-hero-box">
-      <div class="eyebrow">
-        <span class="eyebrow-dot"></span>
-        JOBS
+    <div class="hero-box jc-directory-hero-box jobs-hero-box">
+      <div class="jobs-hero-main">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          JOBS
+        </div>
+        <div class="jc-directory-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人一覧</span></div>
+        <h1>仕事・求人</h1>
+        <p>ドイツで働きたい人向けの求人情報をまとめています。勤務地、雇用形態、言語条件などを確認しながら求人を探せます。</p>
       </div>
-      <div class="jc-directory-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人一覧</span></div>
-      <h1>仕事・求人</h1>
-      <p>ドイツで働きたい人と、日本語人材を探す企業をつなぐ求人情報をまとめています。求人を探す方は一覧へ、採用担当者の方は掲載案内へ進めます。</p>
-      <div class="jc-hero-actions"><a class="jc-button is-primary" href="#job-listings">求人を見る</a><a class="jc-button" href="#employers">求人を掲載したい方へ</a></div>
-    </div>
-  </section>
-
-  <section class="jobs-hub-section jobs-audience-block" aria-labelledby="jobsAudienceTitle">
-    <div class="jobs-section-head">
-      <div>
-        <h2 id="jobsAudienceTitle">目的から探す</h2>
-        <p>求人を探す人、掲載したい企業、応募準備をしたい人向けの入口です。</p>
+      <div class="jobs-hero-actions" aria-label="仕事・求人の関連リンク">
+        <a class="jobs-hero-link" href="/germany/ja/learn-german/job-seeker-german-route/">求職者向けガイド</a>
+        <a class="jobs-hero-link" href="/germany/ja/jobs/posting/">企業・採用担当者へ</a>
       </div>
-    </div>
-    <div class="jobs-audience-cards">
-      <a class="jobs-audience-card" href="#job-listings">
-        <strong>求職者向け</strong>
-        <span>職種・勤務地・言語条件で求人を探す</span>
-      </a>
-      <a class="jobs-audience-card" href="#employers">
-        <strong>企業・採用担当者向け</strong>
-        <span>日本語人材向けに求人を掲載する</span>
-      </a>
-      <a class="jobs-audience-card" href="#job-seeker-guide">
-        <strong>転職準備ガイド</strong>
-        <span>応募メール、面接、CVなどの準備を確認する</span>
-      </a>
     </div>
   </section>
 
@@ -576,9 +432,7 @@
     </div>
   </div>
 
-  <div class="jobs-section-layout">
-    <div class="jobs-main-flow">
-  <section class="jobs-anchor" id="job-listings" aria-labelledby="jobListingsTitle">
+  <section class="jobs-anchor jobs-listings-shell" id="job-listings" aria-labelledby="jobListingsTitle">
   <main class="layout jc-directory-layout list-mode" id="mainLayout">
     <aside class="panel filters jc-control-panel jc-directory-sidebar">
       <div class="panel-title-row">
@@ -597,18 +451,22 @@
       </div>
 
       <div class="field">
-        <div class="label">職種</div>
-        <div class="filter-chip-group jc-chip-group" id="positionChipGroup" role="group" aria-label="職種で絞り込み"></div>
+        <label class="label" for="salaryRange">給与</label>
+        <div class="salary-range">
+          <div class="salary-range-values">
+            <span id="salaryMinLabel">€10,000</span>
+            <span id="salaryMaxLabel">€100,000</span>
+          </div>
+          <input id="salaryRange" class="salary-range-input" type="range" min="0" max="90000" step="5000" value="0" />
+          <div id="salaryCurrentLabel" class="salary-range-current">すべて</div>
+        </div>
       </div>
 
-      <div class="field" id="categoryField">
-        <div class="label">カテゴリ</div>
-        <div class="filter-chip-group jc-chip-group" id="categoryChipGroup" role="group" aria-label="カテゴリで絞り込み"></div>
-      </div>
-
-      <div class="field" id="detailCategoryField">
-        <div class="label">詳細カテゴリ</div>
-        <div class="filter-chip-group jc-chip-group" id="detailCategoryChipGroup" role="group" aria-label="詳細カテゴリで絞り込み"></div>
+      <div class="field">
+        <label class="label" for="positionSelect">職種</label>
+        <select class="jobs-filter-select" id="positionSelect" aria-label="職種で絞り込み">
+          <option value="">すべて</option>
+        </select>
       </div>
 
       <div class="field">
@@ -631,16 +489,14 @@
         <div class="filter-chip-group jc-chip-group" id="visaChipGroup" role="group" aria-label="ビザサポートで絞り込み"></div>
       </div>
 
-      <div class="field">
-        <label class="label" for="salaryRange">給与</label>
-        <div class="salary-range">
-          <div class="salary-range-values">
-            <span id="salaryMinLabel">€10,000</span>
-            <span id="salaryMaxLabel">€100,000</span>
-          </div>
-          <input id="salaryRange" class="salary-range-input" type="range" min="0" max="90000" step="5000" value="0" />
-          <div id="salaryCurrentLabel" class="salary-range-current">すべて</div>
-        </div>
+      <div class="field" id="categoryField">
+        <div class="label">カテゴリ</div>
+        <div class="filter-chip-group jc-chip-group" id="categoryChipGroup" role="group" aria-label="カテゴリで絞り込み"></div>
+      </div>
+
+      <div class="field" id="detailCategoryField">
+        <div class="label">詳細カテゴリ</div>
+        <div class="filter-chip-group jc-chip-group" id="detailCategoryChipGroup" role="group" aria-label="詳細カテゴリで絞り込み"></div>
       </div>
     </aside>
 
@@ -652,10 +508,6 @@
           <div class="results-sub" id="resultsSummary">読み込み中...</div>
         </div>
 
-        <div class="toolbar-actions">
-          <div class="chips jc-active-chips" id="chips"></div>
-          <a class="btn btn-secondary" href="/germany/ja/jobs/posting/">求人を掲載する</a>
-        </div>
       </div>
 
       <div id="cards" class="cards jc-result-grid" aria-live="polite"></div>
@@ -671,46 +523,6 @@
 
   </main>
   </section>
-
-      <section class="jobs-guide-card jobs-anchor" id="job-seeker-guide" aria-labelledby="jobSeekerGuideTitle">
-        <div class="jobs-section-head">
-          <div>
-            <h2 id="jobSeekerGuideTitle">求職者向けガイド</h2>
-            <p>応募前に確認しておきたいドイツ語、生活手続き、働き方の基礎情報です。</p>
-          </div>
-        </div>
-        <div class="jobs-guide-links">
-          <a class="jobs-guide-link" href="/germany/ja/learn-german/job-seeker-german-route/">求人探しのドイツ語準備</a>
-          <a class="jobs-guide-link" href="/germany/ja/learn-german/work-email-phrases/">応募・勤務で使うメール表現</a>
-          <a class="jobs-guide-link" href="/germany/ja/learn-german/workplace-conversation-phrases/">職場で使う会話フレーズ</a>
-          <a class="jobs-guide-link" href="/germany/ja/living/tax-id-steuernummer-steuerklasse/">Tax ID・税番号・税クラス</a>
-          <a class="jobs-guide-link" href="/germany/ja/living/bank-account-germany/">ドイツの銀行口座開設</a>
-        </div>
-      </section>
-
-      <section class="jobs-employer-card jobs-anchor" id="employers" aria-labelledby="employersTitle">
-        <div class="jobs-section-head">
-          <div>
-            <h2 id="employersTitle">求人掲載を検討中の企業・採用担当者へ</h2>
-            <p>日本語人材向けの求人情報を掲載したい場合は、募集内容を整理したうえで掲載案内ページからご連絡ください。</p>
-          </div>
-        </div>
-        <div class="jobs-employer-grid" aria-label="掲載前に確認する内容">
-          <div><strong>募集内容</strong>職種、勤務地、雇用形態、勤務形態、必要な言語条件を整理します。</div>
-          <div><strong>応募条件</strong>業務内容、必須条件、歓迎条件、ビザサポート有無を確認します。</div>
-          <div><strong>連絡先</strong>応募方法、問い合わせ先、掲載に必要な会社情報を準備します。</div>
-        </div>
-        <a class="btn btn-primary" href="/germany/ja/jobs/posting/">求人掲載の案内を見る</a>
-      </section>
-    </div>
-
-    <aside class="jobs-page-toc" aria-label="このページ">
-      <div class="jobs-page-toc-title">このページ</div>
-      <a href="#job-listings">求人一覧</a>
-      <a href="#job-seeker-guide">求職者向けガイド</a>
-      <a href="#employers">企業・採用担当者へ</a>
-    </aside>
-  </div>
 
   <div class="listing-modal jobs-detail-modal" id="listingModal" hidden>
     <div class="listing-modal-backdrop" data-modal-close></div>
@@ -795,7 +607,7 @@
     const els = {
       keywordInput: document.getElementById('keywordInput'),
       regionChipGroup: document.getElementById('regionChipGroup'),
-      positionChipGroup: document.getElementById('positionChipGroup'),
+      positionSelect: document.getElementById('positionSelect'),
       categoryChipGroup: document.getElementById('categoryChipGroup'),
       detailCategoryChipGroup: document.getElementById('detailCategoryChipGroup'),
       salaryRange: document.getElementById('salaryRange'),
@@ -814,7 +626,6 @@
       listingModal: document.getElementById('listingModal'),
       listingModalContent: document.getElementById('listingModalContent'),
       listingModalClose: document.getElementById('listingModalClose'),
-      chips: document.getElementById('chips'),
       resultsSummary: document.getElementById('resultsSummary'),
       emptyBox: document.getElementById('emptyBox')
     };
@@ -1015,9 +826,23 @@
       });
     }
 
+    function renderFilterSelect(select, values, stateKey){
+      if (!select) return;
+      const cleanValues = uniqueSorted(values);
+      const current = clean(filterState[stateKey]);
+      select.innerHTML = ['']
+        .concat(cleanValues)
+        .map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value || 'すべて')}</option>`)
+        .join('');
+      select.value = cleanValues.includes(current) ? current : '';
+      if (current && select.value === '') {
+        filterState[stateKey] = '';
+      }
+    }
+
     function renderFilterChips(){
       renderFilterChipGroup(els.regionChipGroup, jobs.map(j => j.region || j.city), 'region', false);
-      renderFilterChipGroup(els.positionChipGroup, jobs.map(j => j.position_title), 'position', false);
+      renderFilterSelect(els.positionSelect, jobs.map(j => j.position_title), 'position');
       renderFilterChipGroup(els.categoryChipGroup, jobs.map(j => j.category), 'category');
       renderFilterChipGroup(els.detailCategoryChipGroup, jobs.map(j => j.detail_category), 'detailCategory');
       renderFilterChipGroup(els.visaChipGroup, ['yes', 'no'], 'visa', false, { yes: 'あり', no: 'なし' });
@@ -1181,7 +1006,6 @@
 
     function renderJobsLoadError(){
       els.cards.innerHTML = '';
-      els.chips.innerHTML = '';
       els.resultsSummary.textContent = '読み込みエラー';
       els.emptyBox.style.display = 'block';
       els.emptyBox.className = 'empty-box jc-empty-state error';
@@ -1298,62 +1122,12 @@
       }
 
       renderSummary();
-      renderChips();
       renderFilterChips();
       renderCards();
     }
 
     function renderSummary(){
       els.resultsSummary.textContent = `${filtered.length}件を表示中 / 全${jobs.length}件`;
-    }
-
-    function renderChips(){
-      const chips = [];
-
-      if (els.keywordInput.value.trim()) {
-        chips.push(`キーワード: ${escapeHtml(els.keywordInput.value.trim())}`);
-      }
-
-      if (filterState.region) {
-        chips.push(`地域: ${escapeHtml(filterState.region)}`);
-      }
-
-      if (filterState.position) {
-        chips.push(`職種: ${escapeHtml(filterState.position)}`);
-      }
-
-      if (filterState.category) {
-        chips.push(`カテゴリ: ${escapeHtml(filterState.category)}`);
-      }
-
-      if (filterState.detailCategory) {
-        chips.push(`詳細カテゴリ: ${escapeHtml(filterState.detailCategory)}`);
-      }
-
-      if (Number(els.salaryRange.value) > 0) {
-        const salaryMin = Number(els.salaryRange.value) + 10000;
-        chips.push(`給与下限: 年収 ${salaryMin.toLocaleString()}€ 以上`);
-      }
-
-      if (filterState.visa) {
-        chips.push(`ビザサポート: ${filterState.visa === 'yes' ? 'あり' : 'なし'}`);
-      }
-
-      if (filterState.employment) {
-        chips.push(`雇用形態: ${escapeHtml(filterState.employment)}`);
-      }
-
-      if (filterState.workStyle) {
-        chips.push(`勤務形態: ${escapeHtml(filterState.workStyle)}`);
-      }
-
-      if (filterState.language) {
-        chips.push(`言語: ${escapeHtml(filterState.language)}`);
-      }
-
-      els.chips.innerHTML = chips
-        .map(c => `<span class="chip">${c}</span>`)
-        .join('');
     }
 
     function renderCards(){
@@ -1705,6 +1479,7 @@
       els.keywordInput.value = '';
       Object.keys(filterState).forEach(key => { filterState[key] = ''; });
       els.salaryRange.value = '0';
+      if (els.positionSelect) els.positionSelect.value = '';
       renderSalaryRangeLabel();
       filterJobs();
     }
@@ -1713,6 +1488,10 @@
       els.keywordInput.addEventListener('input', filterJobs);
       els.salaryRange.addEventListener('input', () => {
         renderSalaryRangeLabel();
+        filterJobs();
+      });
+      els.positionSelect?.addEventListener('change', () => {
+        filterState.position = els.positionSelect.value || '';
         filterJobs();
       });
 

@@ -266,6 +266,25 @@
     "tags": ["求人", "詳細"]
   },
   {
+    "id": "page-jobs-guide",
+    "title": "求職者向けガイド",
+    "url": "/germany/ja/jobs/guide/",
+    "type": "utility",
+    "pillar": "jobs",
+    "status": "published",
+    "canonical_url": "/germany/ja/jobs/guide/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "ドイツで求人に応募する前に確認したい、応募書類・言語条件・面接準備の基本をまとめます。",
+    "tags": ["求人", "求職者", "ガイド"]
+  },
+  {
     "id": "page-job-sales-assistant-japanese-duesseldorf",
     "title": "営業アシスタント（日本語対応）",
     "url": "/germany/ja/jobs/sales-assistant-japanese-duesseldorf/",

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>求人詳細 | 仕事・求人 | J-Connect Germany</title>
-  <meta name="description" content="求人カードから開く動的な求人詳細ページです。">
+  <meta name="description" content="J-Connect Germanyの求人詳細ページです。求人IDをもとに仕事内容、応募条件、連絡先を確認できます。">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/jobs/detail/">
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
@@ -14,9 +14,160 @@
   <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal5-nav-20260618">
 <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
-<link rel="stylesheet" href="/assets/css/cookie-consent.css">
+  <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <link rel="stylesheet" href="/assets/css/listing-pages.css">
   <script src="/assets/js/cookie-consent.js" defer></script>
+  <style>
+    .jobs-detail-shell{
+      width:min(980px, calc(100% - 32px));
+      margin:24px auto 40px;
+    }
+
+    .jobs-detail-card{
+      border:1px solid var(--listing-line);
+      border-radius:10px;
+      background:#fff;
+      box-shadow:var(--listing-shadow);
+      padding:20px;
+    }
+
+    .jobs-detail-breadcrumb{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      color:var(--listing-muted);
+      font-size:12px;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+
+    .jobs-detail-card h1{
+      margin:0;
+      color:var(--listing-ink);
+      font-size:clamp(26px, 4vw, 38px);
+      line-height:1.25;
+      font-weight:900;
+    }
+
+    .jobs-detail-company{
+      color:var(--listing-navy);
+      font-size:15px;
+      font-weight:900;
+      margin-bottom:6px;
+    }
+
+    .jobs-detail-summary{
+      color:#384552;
+      font-size:15px;
+      line-height:1.75;
+      font-weight:700;
+      margin:12px 0 0;
+    }
+
+    .jobs-detail-actions,
+    .jobs-detail-link-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:16px;
+    }
+
+    .jobs-detail-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px;
+      margin:18px 0;
+    }
+
+    .jobs-detail-item{
+      border:1px solid var(--listing-line);
+      border-radius:8px;
+      background:var(--listing-soft);
+      padding:10px;
+      min-width:0;
+    }
+
+    .jobs-detail-label{
+      color:var(--listing-muted);
+      font-size:12px;
+      line-height:1.3;
+      font-weight:900;
+      margin-bottom:4px;
+    }
+
+    .jobs-detail-value{
+      color:#24313d;
+      font-size:13px;
+      line-height:1.55;
+      font-weight:800;
+      word-break:normal;
+      overflow-wrap:break-word;
+    }
+
+    .jobs-detail-section{
+      border-top:1px solid var(--listing-line);
+      padding-top:16px;
+      margin-top:16px;
+    }
+
+    .jobs-detail-section h2{
+      margin:0 0 8px;
+      color:var(--listing-navy);
+      font-size:18px;
+      line-height:1.35;
+      font-weight:900;
+    }
+
+    .jobs-detail-section p{
+      margin:0;
+      color:#384552;
+      font-size:14px;
+      line-height:1.75;
+      font-weight:700;
+    }
+
+    .jobs-detail-section ul{
+      list-style-position:outside;
+      padding-left:1.35em;
+      margin:8px 0 0;
+      color:#384552;
+      font-size:14px;
+      line-height:1.7;
+      font-weight:700;
+    }
+
+    .jobs-detail-section li{
+      padding-left:.15em;
+      margin:4px 0;
+    }
+
+    .jobs-detail-email{
+      margin-top:8px;
+      color:#384552;
+      font-size:14px;
+      font-weight:800;
+    }
+
+    @media (max-width:640px){
+      .jobs-detail-shell{
+        width:calc(100% - 24px);
+        margin-top:16px;
+      }
+
+      .jobs-detail-card{
+        padding:14px;
+      }
+
+      .jobs-detail-grid{
+        grid-template-columns:1fr;
+      }
+
+      .jobs-detail-actions .jc-button,
+      .jobs-detail-link-list .jc-button{
+        flex:1 1 150px;
+      }
+    }
+  </style>
 </head>
 <body>
 <!-- LAYOUT:ja-header:start -->
@@ -69,11 +220,16 @@
   </div>
 </header>
 <!-- LAYOUT:ja-header:end -->
-<main class="jc-shell jc-main jc-stack">
-  <article class="jc-detail-card" id="jobDetail" aria-live="polite">
-    <div class="jc-status"><strong>求人情報を読み込んでいます</strong><span>指定された求人IDの内容を確認しています。</span></div>
+
+<main class="jobs-detail-shell">
+  <article class="jobs-detail-card" id="jobDetail" aria-live="polite">
+    <div class="jc-status">
+      <strong>求人情報を読み込んでいます</strong>
+      <span>指定された求人IDの内容を確認しています。</span>
+    </div>
   </article>
 </main>
+
 <!-- LAYOUT:ja-footer:start -->
 <footer class="page-footer">
   <div class="footer-inner">
@@ -119,6 +275,7 @@
   </div>
 </footer>
 <!-- LAYOUT:ja-footer:end -->
+
 <script src="/assets/js/data-sources.js"></script>
 <script src="/assets/js/jobs-fallback.js"></script>
 <script>
@@ -127,39 +284,287 @@
   const JOBS_API_URL = DATA_SOURCES.buildDirectoryUrl({ sheet: DATA_SOURCES.directorySheets.jobs, lang: "ja", status: "active" });
   const detail = document.getElementById("jobDetail");
   const queryId = new URLSearchParams(location.search).get("id") || "";
-  const escapeHtml = value => String(value ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");
-  const clean = value => String(value ?? "").trim();
-  function getValue(row, ...keys){ for (const key of keys) { if (row[key] !== undefined && row[key] !== null && String(row[key]).trim() !== "") return clean(row[key]); } return ""; }
-  function normalizeJob(row, index){
-    const title = getValue(row, "position_title", "job_title", "title", "role", "position");
-    const company = getValue(row, "company_name", "company", "company_ja", "company_name_ja");
-    const region = getValue(row, "region", "location", "area", "city", "work_location");
-    const id = getValue(row, "job_id", "id") || getValue(row, "slug", "job_slug") || `job-${index + 1}`;
-    return { id, slug:getValue(row,"slug","job_slug"), title, company, city:region, location:getValue(row,"location","work_location","office_location","city") || region, employment_type:getValue(row,"employment_type","employment","type"), work_style:getValue(row,"work_style","workstyle","remote_type","remote","working_style"), language:getValue(row,"language","languages","required_language","language_requirement"), salary:getValue(row,"salary_label","salary","salary_range"), visa_support:getValue(row,"visa_support"), summary:getValue(row,"short_description","summary","description_short"), description:getValue(row,"full_description","description","job_details"), requirements:getValue(row,"requirements"), apply_url:getValue(row,"apply_url","application_url","source_url","official_url","url"), source_name:getValue(row,"source_name","source","publisher"), source_url:getValue(row,"source_url","official_url","url","website"), published_at:getValue(row,"published_at","posted_at","posted_date","published"), sample_label:getValue(row,"sample_label","test_label"), tags:getValue(row,"tags","skills","skill_tags") };
+
+  function escapeHtml(value){
+    return String(value ?? "")
+      .replace(/&/g,"&amp;")
+      .replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;")
+      .replace(/"/g,"&quot;")
+      .replace(/'/g,"&#039;");
   }
-  function splitList(value){ return String(value || "").split(/\n|,|、|;|；|\||\//).map(v => v.trim()).filter(Boolean); }
-  function findJob(rows){ const wanted = clean(queryId).toLowerCase(); return rows.find(job => [job.id, job.slug].some(value => clean(value).toLowerCase() === wanted)); }
-  function detailItem(label, value){ return value ? `<div class="jc-detail-item"><div class="jc-detail-label">${escapeHtml(label)}</div><div>${escapeHtml(value)}</div></div>` : ""; }
+
+  function clean(value){ return String(value ?? "").trim(); }
+
+  function getValue(row, ...keys){
+    for (const key of keys) {
+      if (row[key] !== undefined && row[key] !== null && clean(row[key]) !== "") return clean(row[key]);
+    }
+    return "";
+  }
+
+  function toNumber(value){
+    const number = Number(String(value || "").replace(/[^\d.-]/g, ""));
+    return Number.isFinite(number) ? number : 0;
+  }
+
+  function stableSlug(...parts){
+    const slug = parts
+      .map(part => clean(part).normalize("NFKC").toLowerCase())
+      .filter(Boolean)
+      .join("-")
+      .replace(/[^\p{L}\p{N}]+/gu, "-")
+      .replace(/^-+|-+$/g, "");
+    return slug || "job";
+  }
+
+  function isPublicContactEmail(value){
+    const email = clean(value);
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return false;
+    return !email.toLowerCase().endsWith("@j-connect-global.com");
+  }
+
+  function getEmailFromMailto(value){
+    const match = clean(value).match(/^mailto:([^?]+)/i);
+    return match ? decodeURIComponent(match[1]) : "";
+  }
+
+  function isSafeUrl(value){
+    const url = clean(value);
+    if (!url) return false;
+    try {
+      const parsed = new URL(url, location.origin);
+      return parsed.protocol === "https:" || parsed.protocol === "http:";
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function splitList(value){
+    return String(value || "")
+      .split(/\n|,|、|;|；|\||\/|#/)
+      .map(item => item.trim())
+      .filter(Boolean);
+  }
+
+  function normalizeJob(row, index){
+    const positionTitle = getValue(row, "position_title", "job_title", "title", "role", "position");
+    const companyName = getValue(row, "company_name", "company", "company_ja", "company_name_ja");
+    const region = getValue(row, "region", "location", "area", "city", "work_location");
+    const summary = getValue(row, "short_description", "summary", "description_short");
+    const details = getValue(row, "full_description", "description", "job_details");
+    const applyUrl = getValue(row, "apply_url", "application_url", "apply_link");
+    const sourceUrl = getValue(row, "source_url", "official_url", "url", "website");
+    const id = getValue(row, "job_id", "id") || stableSlug(positionTitle, companyName, region) || `job-${index + 1}`;
+
+    return {
+      id,
+      slug: getValue(row, "slug", "job_slug"),
+      status: getValue(row, "status") || "active",
+      company_name: companyName,
+      position_title: positionTitle,
+      employment_type: getValue(row, "employment_type", "employment", "type"),
+      city: getValue(row, "city") || region,
+      region,
+      location: getValue(row, "location", "work_location", "office_location", "city") || region,
+      work_style: getValue(row, "work_style", "workstyle", "work_type", "remote_type", "remote", "working_style"),
+      language: getValue(row, "language", "lang", "languages", "required_language", "language_requirement"),
+      category: getValue(row, "category", "job_category", "occupation_category"),
+      detail_category: getValue(row, "detail_category", "subcategory", "sub_category", "occupation_detail"),
+      tags: getValue(row, "tags", "skills", "skill_tags", "requirements_tags"),
+      skills: getValue(row, "skills", "skill_tags"),
+      salary_min_eur: toNumber(getValue(row, "salary_min_eur")),
+      salary_max_eur: toNumber(getValue(row, "salary_max_eur")),
+      salary_label: getValue(row, "salary_label", "salary", "salary_range"),
+      summary,
+      description: details,
+      requirements: getValue(row, "requirements"),
+      apply_url: applyUrl,
+      application_url: getValue(row, "application_url"),
+      apply_link: getValue(row, "apply_link"),
+      contact_email: getValue(row, "contact_email", "email"),
+      application_email: getValue(row, "application_email", "application_contact_email"),
+      apply_email: getValue(row, "apply_email"),
+      apply_method: getValue(row, "apply_method", "application_method", "how_to_apply"),
+      company_url: getValue(row, "company_url", "company_website", "company_site", "company_link"),
+      source_url: sourceUrl,
+      source_name: getValue(row, "source_name", "source", "publisher"),
+      visa_support: getValue(row, "visa_support", "visa"),
+      published_at: getValue(row, "published_at", "posted_at", "posted_date", "published", "created_at"),
+      updated_at: getValue(row, "updated_at", "updated", "last_updated"),
+      created_at: getValue(row, "created_at", "created"),
+      expires_at: getValue(row, "expires_at", "deadline", "application_deadline")
+    };
+  }
+
+  function getSalaryLabel(job){
+    if (job.salary_label) return job.salary_label;
+    if (job.salary_min_eur && job.salary_max_eur) return `年収 ${job.salary_min_eur.toLocaleString()}€〜${job.salary_max_eur.toLocaleString()}€`;
+    if (job.salary_min_eur) return `年収 ${job.salary_min_eur.toLocaleString()}€〜`;
+    if (job.salary_max_eur) return `〜${job.salary_max_eur.toLocaleString()}€`;
+    return "";
+  }
+
+  function getApplyEmail(job){
+    const candidates = [
+      job.application_email,
+      job.apply_email,
+      job.contact_email,
+      getEmailFromMailto(job.apply_url),
+      getEmailFromMailto(job.application_url),
+      getEmailFromMailto(job.apply_link)
+    ];
+    return candidates.find(isPublicContactEmail) || "";
+  }
+
+  function getApplyMailto(job){
+    const email = getApplyEmail(job);
+    if (!email) return "";
+    return `mailto:${email}?subject=${encodeURIComponent(`${job.position_title || "求人"} 応募`)}`;
+  }
+
+  async function copyText(text){
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return true;
+      }
+    } catch (error) {}
+
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.setAttribute("readonly", "");
+    textArea.style.position = "fixed";
+    textArea.style.left = "-9999px";
+    document.body.appendChild(textArea);
+    textArea.select();
+    textArea.setSelectionRange(0, textArea.value.length);
+    document.execCommand("copy");
+    textArea.remove();
+    return true;
+  }
+
+  function findJob(rows){
+    const wanted = clean(queryId).toLowerCase();
+    return rows.find(job => [job.id, job.slug].some(value => clean(value).toLowerCase() === wanted));
+  }
+
+  function detailItem(label, value){
+    if (!value) return "";
+    return `
+      <div class="jobs-detail-item">
+        <div class="jobs-detail-label">${escapeHtml(label)}</div>
+        <div class="jobs-detail-value">${escapeHtml(value)}</div>
+      </div>
+    `;
+  }
+
   function renderEmpty(kind){
     const title = kind === "missing" ? "求人IDが指定されていません" : "求人が見つかりませんでした";
-    const body = kind === "missing" ? "求人カードまたは求人一覧から詳細ページを開いてください。" : "指定されたIDの求人を確認できませんでした。掲載が終了したか、URLが変更された可能性があります。";
-    detail.innerHTML = `<h1>${title}</h1><p>${body}</p><div class="jc-actions"><a class="jc-button is-primary" href="/germany/ja/jobs/">求人一覧へ戻る</a><a class="jc-button" href="/germany/ja/jobs/posting/">求人掲載について</a></div>`;
+    const body = kind === "missing"
+      ? "求人カードまたは求人一覧から詳細ページを開いてください。"
+      : "指定されたIDの求人を確認できませんでした。掲載が終了したか、URLが変更された可能性があります。";
+    detail.innerHTML = `
+      <div class="jobs-detail-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人詳細</span></div>
+      <h1>${escapeHtml(title)}</h1>
+      <p class="jobs-detail-summary">${escapeHtml(body)}</p>
+      <div class="jobs-detail-actions">
+        <a class="jc-button is-primary" href="/germany/ja/jobs/">求人一覧へ戻る</a>
+      </div>
+    `;
   }
+
   function renderJob(job){
-    if (!job) { renderEmpty(queryId ? "notfound" : "missing"); return; }
-    document.title = `${job.title || "求人詳細"} | J-Connect Germany`;
-    const tags = splitList(job.tags);
+    if (!job) {
+      renderEmpty(queryId ? "notfound" : "missing");
+      return;
+    }
+
+    const title = job.position_title || "求人詳細";
+    const company = job.company_name;
+    const salary = getSalaryLabel(job);
+    const tags = splitList(job.tags || job.skills);
     const requirements = splitList(job.requirements);
-    detail.innerHTML = `<div class="jc-chip-row">${job.sample_label ? `<span class="jc-chip is-primary">${escapeHtml(job.sample_label)}</span>` : ""}${tags.map(tag => `<span class="jc-chip">${escapeHtml(tag)}</span>`).join("")}</div><h1>${escapeHtml(job.title || "求人詳細")}</h1><p class="jc-lead">${escapeHtml(job.summary || "求人概要は掲載元情報を確認してください。")}</p><div class="jc-detail-grid">${detailItem("会社名", job.company)}${detailItem("勤務地", job.location || job.city)}${detailItem("雇用形態", job.employment_type)}${detailItem("勤務形態", job.work_style)}${detailItem("言語", job.language)}${detailItem("給与", job.salary)}${detailItem("ビザサポート", job.visa_support)}${detailItem("掲載日", job.published_at)}</div><section><h2>仕事内容</h2><p>${escapeHtml(job.description || job.summary || "詳細は掲載元情報を確認してください。")}</p></section><section><h2>応募条件</h2>${requirements.length ? `<ul>${requirements.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : "<p>応募条件は掲載元に確認してください。</p>"}</section><section><h2>応募・問い合わせ</h2><p>応募前に、勤務条件、ビザ、開始時期、語学要件を掲載元に確認してください。</p><div class="jc-actions">${job.apply_url ? `<a class="jc-button is-primary" href="${escapeHtml(job.apply_url)}" target="_blank" rel="noopener noreferrer">応募・掲載元を開く</a>` : ""}${job.source_url ? `<a class="jc-button" href="${escapeHtml(job.source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(job.source_name || "掲載元")}</a>` : ""}<a class="jc-button" href="/germany/ja/jobs/">求人一覧へ戻る</a><a class="jc-button" href="/germany/ja/jobs/posting/">求人掲載について</a></div></section>`;
+    const applyEmail = getApplyEmail(job);
+    const applyMailto = getApplyMailto(job);
+    const companyUrl = isSafeUrl(job.company_url) ? job.company_url : "";
+    const sourceUrl = isSafeUrl(job.source_url) ? job.source_url : "";
+
+    document.title = `${title} | 仕事・求人 | J-Connect Germany`;
+    detail.innerHTML = `
+      <div class="jobs-detail-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人詳細</span></div>
+      ${company ? `<div class="jobs-detail-company">${escapeHtml(company)}</div>` : ""}
+      <h1>${escapeHtml(title)}</h1>
+      ${job.summary ? `<p class="jobs-detail-summary">${escapeHtml(job.summary)}</p>` : ""}
+      ${tags.length ? `<div class="jc-chip-row">${tags.map(tag => `<span class="jc-chip">${escapeHtml(tag)}</span>`).join("")}</div>` : ""}
+
+      <div class="jobs-detail-actions">
+        <a class="jc-button is-primary" href="/germany/ja/jobs/">求人一覧へ戻る</a>
+        ${applyMailto ? `<a class="jc-button" href="${escapeHtml(applyMailto)}">応募先にメールする</a>` : ""}
+        ${companyUrl ? `<a class="jc-button" href="${escapeHtml(companyUrl)}" target="_blank" rel="noopener noreferrer">会社サイトを見る</a>` : ""}
+        <button class="jc-button" type="button" id="copyDetailUrl">URLコピー</button>
+      </div>
+
+      <div class="jobs-detail-grid">
+        ${detailItem("会社名", company)}
+        ${detailItem("勤務地", job.location || job.city || job.region)}
+        ${detailItem("雇用形態", job.employment_type)}
+        ${detailItem("勤務形態", job.work_style)}
+        ${detailItem("職種・カテゴリ", [job.category, job.detail_category].filter(Boolean).join(" / "))}
+        ${detailItem("言語条件", job.language)}
+        ${detailItem("ビザサポート", job.visa_support)}
+        ${detailItem("給与", salary)}
+        ${detailItem("掲載日", job.published_at)}
+        ${detailItem("更新日", job.updated_at)}
+        ${detailItem("応募期限", job.expires_at)}
+        ${detailItem("Job ID", job.id)}
+      </div>
+
+      <section class="jobs-detail-section">
+        <h2>仕事内容</h2>
+        <p>${escapeHtml(job.description || job.summary || "詳細は掲載元情報を確認してください。")}</p>
+      </section>
+
+      <section class="jobs-detail-section">
+        <h2>応募条件</h2>
+        ${requirements.length ? `<ul>${requirements.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : "<p>応募条件は掲載元に確認してください。</p>"}
+      </section>
+
+      <section class="jobs-detail-section">
+        <h2>応募・問い合わせ</h2>
+        <p>${escapeHtml(job.apply_method || "応募前に、勤務条件、ビザ、開始時期、語学要件を掲載元に確認してください。")}</p>
+        ${applyEmail ? `<p class="jobs-detail-email">連絡先: <a href="mailto:${escapeHtml(applyEmail)}">${escapeHtml(applyEmail)}</a></p>` : ""}
+        <div class="jobs-detail-link-list">
+          ${applyMailto ? `<a class="jc-button is-primary" href="${escapeHtml(applyMailto)}">応募先にメールする</a>` : ""}
+          ${companyUrl ? `<a class="jc-button" href="${escapeHtml(companyUrl)}" target="_blank" rel="noopener noreferrer">会社サイトを見る</a>` : ""}
+          ${sourceUrl && sourceUrl !== companyUrl ? `<a class="jc-button" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(job.source_name || "掲載元")}</a>` : ""}
+        </div>
+      </section>
+    `;
+
+    detail.querySelector("#copyDetailUrl")?.addEventListener("click", async event => {
+      const button = event.currentTarget;
+      const copied = await copyText(location.href);
+      button.textContent = copied ? "コピーしました" : "URLを選択してコピー";
+      setTimeout(() => { button.textContent = "URLコピー"; }, 1800);
+    });
   }
+
   async function loadJob(){
-    if (!queryId) { renderEmpty("missing"); return; }
+    if (!queryId) {
+      renderEmpty("missing");
+      return;
+    }
+
     const fallbackRows = (window.JCONNECT_FALLBACK_JOBS || []).map(normalizeJob);
     const fallbackJob = findJob(fallbackRows);
     if (fallbackJob) renderJob(fallbackJob);
+
     try {
       const payload = await DATA_SOURCES.fetchJsonWithTimeout(JOBS_API_URL, 12000);
-      const rows = DATA_SOURCES.normalizePayload(payload).map(normalizeJob);
+      const rows = DATA_SOURCES.normalizePayload(payload)
+        .map(normalizeJob)
+        .filter(job => clean(job.status).toLowerCase() === "active");
       const remoteJob = findJob(rows);
       if (remoteJob) renderJob(remoteJob);
       if (!remoteJob && !fallbackJob) renderEmpty("notfound");
@@ -168,6 +573,7 @@
       if (!fallbackJob) renderEmpty("notfound");
     }
   }
+
   loadJob();
 })();
 </script>

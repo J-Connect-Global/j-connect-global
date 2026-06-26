@@ -690,6 +690,159 @@
     line-height:1.7;
   }
 
+  .living-column-shell{
+    display:grid;
+    gap:16px;
+    align-items:start;
+  }
+
+  .living-column-filters,
+  .living-column-results-panel{
+    min-width:0;
+  }
+
+  .living-column-filters{
+    display:grid;
+    gap:12px;
+    padding:14px;
+    border:1px solid var(--jc-line);
+    border-radius:var(--jc-radius-md);
+    background:#fff;
+    box-shadow:var(--jc-shadow);
+  }
+
+  .living-column-field{
+    display:grid;
+    gap:6px;
+    min-width:0;
+    color:var(--jc-text);
+    font-size:13px;
+    font-weight:900;
+  }
+
+  .living-column-field input,
+  .living-column-field select{
+    width:100%;
+    min-height:42px;
+    padding:9px 11px;
+    border:1px solid var(--jc-line);
+    border-radius:var(--jc-radius-sm);
+    background:#fff;
+    color:var(--jc-text);
+    font:inherit;
+    font-weight:700;
+  }
+
+  .living-column-field input:focus,
+  .living-column-field select:focus{
+    border-color:var(--jc-blue);
+    outline:3px solid rgba(0, 103, 201, .18);
+    outline-offset:1px;
+  }
+
+  .living-column-results-panel{
+    display:grid;
+    gap:12px;
+  }
+
+  .living-column-toolbar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    align-items:center;
+    justify-content:space-between;
+    min-width:0;
+    padding:12px;
+    border:1px solid var(--jc-line);
+    border-radius:var(--jc-radius-md);
+    background:#fff;
+    box-shadow:var(--jc-shadow);
+  }
+
+  .living-column-toolbar p{
+    margin:0;
+    color:var(--jc-navy);
+    font-size:13px;
+    font-weight:900;
+    line-height:1.5;
+  }
+
+  .living-column-actions,
+  .living-column-sort{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    align-items:center;
+    min-width:0;
+  }
+
+  .living-column-view-toggle{
+    flex:0 0 auto;
+  }
+
+  .living-column-grid{
+    align-items:stretch;
+  }
+
+  .living-column-grid.is-list-view{
+    grid-template-columns:1fr;
+  }
+
+  .living-column-card{
+    position:relative;
+    min-width:0;
+    padding-right:48px;
+  }
+
+  .living-column-card.is-saved{
+    border-color:rgba(0, 103, 201, .42);
+    box-shadow:0 0 0 3px rgba(0, 103, 201, .12), var(--jc-shadow);
+  }
+
+  .living-column-save{
+    position:absolute;
+    top:12px;
+    right:12px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:34px;
+    height:34px;
+    border:1px solid var(--jc-line);
+    border-radius:50%;
+    background:#fff;
+    color:var(--jc-blue);
+    font:inherit;
+    font-size:18px;
+    font-weight:900;
+    line-height:1;
+    cursor:pointer;
+  }
+
+  .living-column-save:hover,
+  .living-column-save:focus-visible,
+  .living-column-save[aria-pressed="true"]{
+    border-color:var(--jc-blue);
+    background:var(--jc-blue);
+    color:#fff;
+    outline:0;
+  }
+
+  .living-column-empty{
+    margin:0;
+    padding:16px;
+    border:1px solid var(--jc-line);
+    border-radius:var(--jc-radius-md);
+    background:#fff;
+    color:var(--jc-text);
+    font-weight:800;
+    line-height:1.7;
+  }
+
+  [data-living-card][hidden]{
+    display:none !important;
+  }
+
   .learn-filter-grid,
   .learn-route-grid{
     display:grid;
@@ -1942,6 +2095,51 @@
 
     .living-hub-sort{
       min-width:190px;
+    }
+
+    .living-column-shell{
+      grid-template-columns:minmax(230px, 270px) minmax(0, 1fr);
+    }
+
+    .living-column-filters{
+      position:sticky;
+      top:18px;
+    }
+
+    .living-column-grid.is-list-view .living-column-card{
+      grid-template-columns:minmax(150px, .36fr) minmax(0, 1fr) auto;
+      grid-template-areas:
+        "meta title action"
+        "meta summary action"
+        "meta dates action";
+      align-items:start;
+      gap:8px 14px;
+      min-height:0;
+    }
+
+    .living-column-grid.is-list-view .living-column-card .jc-card-meta{
+      grid-area:meta;
+      align-content:start;
+      gap:5px;
+    }
+
+    .living-column-grid.is-list-view .living-column-card h3{
+      grid-area:title;
+      font-size:17px;
+    }
+
+    .living-column-grid.is-list-view .living-column-card p{
+      grid-area:summary;
+    }
+
+    .living-column-grid.is-list-view .living-card-dates{
+      grid-area:dates;
+    }
+
+    .living-column-grid.is-list-view .living-column-card .jc-read-more{
+      grid-area:action;
+      align-self:end;
+      white-space:nowrap;
     }
 
     .learn-search-layout{

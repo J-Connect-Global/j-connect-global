@@ -1047,6 +1047,7 @@ function updateLearnGermanHub(items) {
 
 function hubGridPattern(type) {
   if (type === 'events') return /<div class="[^"]*\bjc-article-grid\b[^"]*" id="eventArticleGrid"[^>]*>/;
+  if (type === 'living') return /<div class="[^"]*\bjc-article-grid\b[^"]*"[^>]*data-living-results[^>]*>/;
   if (type === 'learn-german') return /<div class="jc-article-grid">/;
   return /<div class="jc-article-grid">/;
 }
@@ -1066,8 +1067,10 @@ function renderLivingHubCard(item) {
   ].join(' ');
   const reviewDate = item.review?.last_reviewed_at || item.last_verified || '';
   const nextReview = item.review?.next_review_due || '';
+  const dateText = reviewDate || item.updated_at || item.published_at || '';
 
-  return `<a href="${escapeAttribute(item.url)}" class="jc-article-card living-hub-card" data-living-card data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-search="${escapeAttribute(searchText)}" data-published="${escapeAttribute(item.published_at || '')}" data-reviewed="${escapeAttribute(reviewDate)}">
+  return `<article class="jc-article-card living-hub-card living-column-card" data-living-card data-url="${escapeAttribute(item.url)}" data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-search="${escapeAttribute(searchText)}" data-published="${escapeAttribute(item.published_at || '')}" data-reviewed="${escapeAttribute(reviewDate)}" data-updated="${escapeAttribute(item.updated_at || '')}">
+  <button class="living-column-save" type="button" data-living-save aria-pressed="false" aria-label="${escapeAttribute(`保存: ${item.title}`)}">☆</button>
   <div class="jc-card-meta">
     <span class="jc-chip">${escapeHtml(item.category || '生活ガイド')}</span>
 ${indent(item.tags.map((tag) => `<span class="jc-chip">${escapeHtml(tag)}</span>`).join('\n'), 4)}
@@ -1075,11 +1078,11 @@ ${indent(item.tags.map((tag) => `<span class="jc-chip">${escapeHtml(tag)}</span>
   <h3>${escapeHtml(item.title)}</h3>
   <p>${escapeHtml(item.summary)}</p>
   <div class="living-card-dates">
-    <time datetime="${escapeAttribute(reviewDate)}">最終確認: ${escapeHtml(reviewDate)}</time>
+    ${dateText ? `<time datetime="${escapeAttribute(dateText)}">最終確認: ${escapeHtml(dateText)}</time>` : ''}
     ${nextReview ? `<span>次回確認目安: ${escapeHtml(nextReview)}</span>` : ''}
   </div>
-  <span class="jc-read-more">記事を読む</span>
-</a>`;
+  <a class="jc-read-more" href="${escapeAttribute(item.url)}">記事を読む</a>
+</article>`;
 }
 
 function renderEventHubCard(item) {

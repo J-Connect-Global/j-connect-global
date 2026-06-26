@@ -16,7 +16,10 @@
     "layout": "redirect",
     "hero_type": "none",
     "description": "J-Connect Germany の日本語サイトへ移動するルートページです。",
-    "tags": ["J-Connect Germany", "日本語"]
+    "tags": [
+      "J-Connect Germany",
+      "日本語"
+    ]
   },
   {
     "id": "page-home",
@@ -35,7 +38,11 @@
     "layout": "home",
     "hero_type": "home",
     "description": "ドイツ在住日本人向け総合ポータル。交流掲示板、生活・手続き、仕事・求人、ニュース・イベント、ドイツ語学習を日本語で整理しています。",
-    "tags": ["ドイツ生活", "日本語ポータル", "J-Connect Germany"]
+    "tags": [
+      "ドイツ生活",
+      "日本語ポータル",
+      "J-Connect Germany"
+    ]
   },
   {
     "id": "page-community",
@@ -54,7 +61,11 @@
     "layout": "listing",
     "hero_type": "listing",
     "description": "ドイツ在住日本人向けの交流掲示板。売ります・買います、質問、友達募集、生活サポートの投稿を探せます。",
-    "tags": ["掲示板", "コミュニティ", "投稿"]
+    "tags": [
+      "掲示板",
+      "コミュニティ",
+      "投稿"
+    ]
   },
   {
     "id": "page-living",
@@ -73,7 +84,172 @@
     "layout": "hub",
     "hero_type": "hub",
     "description": "ドイツ生活に必要な住民登録、住まい、銀行、保険、税金、家族、教育などの生活ガイドを整理したハブです。",
-    "tags": ["生活", "手続き", "ドイツ生活"]
+    "tags": [
+      "生活",
+      "手続き",
+      "ドイツ生活"
+    ]
+  },
+  {
+    "id": "page-living-route-new-arrival",
+    "title": "初めてドイツに来た人",
+    "url": "/germany/ja/living/routes/new-arrival/",
+    "type": "utility",
+    "pillar": "living",
+    "status": "published",
+    "canonical_url": "/germany/ja/living/routes/new-arrival/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "到着直後に確認したい住民登録、健康保険、銀行口座、税番号まわりの記事をまとめたルートです。",
+    "tags": [
+      "生活",
+      "手続き",
+      "初渡独"
+    ]
+  },
+  {
+    "id": "page-living-route-housing",
+    "title": "家を探している人",
+    "url": "/germany/ja/living/routes/housing/",
+    "type": "utility",
+    "pillar": "living",
+    "status": "published",
+    "canonical_url": "/germany/ja/living/routes/housing/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "ドイツで家を探すときに確認したい賃貸、SCHUFA、引っ越し、放送負担金の記事をまとめたルートです。",
+    "tags": [
+      "生活",
+      "住まい",
+      "賃貸"
+    ]
+  },
+  {
+    "id": "page-living-route-family",
+    "title": "家族・子育ての手続きを知りたい人",
+    "url": "/germany/ja/living/routes/family/",
+    "type": "utility",
+    "pillar": "living",
+    "status": "published",
+    "canonical_url": "/germany/ja/living/routes/family/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "妊娠・出産、健康保険、Kita探しなど家族に関わる既存記事をまとめたルートです。",
+    "tags": [
+      "生活",
+      "家族",
+      "子育て"
+    ]
+  },
+  {
+    "id": "page-living-travel-area",
+    "title": "地域・街別",
+    "url": "/germany/ja/living/travel/area/",
+    "type": "utility",
+    "pillar": "living",
+    "status": "published",
+    "canonical_url": "/germany/ja/living/travel/area/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "地域や街ごとに観光記事を探すための入口です。",
+    "tags": [
+      "生活",
+      "観光",
+      "地域"
+    ]
+  },
+  {
+    "id": "page-living-travel-relax",
+    "title": "リラックス・自然",
+    "url": "/germany/ja/living/travel/relax/",
+    "type": "utility",
+    "pillar": "living",
+    "status": "published",
+    "canonical_url": "/germany/ja/living/travel/relax/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "自然やゆっくり過ごせる場所に関する観光記事の入口です。",
+    "tags": [
+      "生活",
+      "観光",
+      "自然"
+    ]
+  },
+  {
+    "id": "page-living-travel-weekend",
+    "title": "週末・日帰り旅行",
+    "url": "/germany/ja/living/travel/weekend/",
+    "type": "utility",
+    "pillar": "living",
+    "status": "published",
+    "canonical_url": "/germany/ja/living/travel/weekend/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "週末や日帰りで読める観光記事をまとめるための入口です。",
+    "tags": [
+      "生活",
+      "観光",
+      "週末"
+    ]
+  },
+  {
+    "id": "page-living-travel-family",
+    "title": "家族・子連れ",
+    "url": "/germany/ja/living/travel/family/",
+    "type": "utility",
+    "pillar": "living",
+    "status": "published",
+    "canonical_url": "/germany/ja/living/travel/family/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "家族で出かける観光記事を整理するための入口です。",
+    "tags": [
+      "生活",
+      "観光",
+      "家族"
+    ]
   },
   {
     "id": "page-jobs",
@@ -92,7 +268,11 @@
     "layout": "listing",
     "hero_type": "listing",
     "description": "ドイツで働きたい日本語話者向けに、求人、転職、アルバイト、勤務形態、ビザサポートなどの仕事情報を整理しています。",
-    "tags": ["求人", "仕事", "転職"]
+    "tags": [
+      "求人",
+      "仕事",
+      "転職"
+    ]
   },
   {
     "id": "page-events",
@@ -111,7 +291,11 @@
     "layout": "hub",
     "hero_type": "hub",
     "description": "ドイツ生活に関係するニュース、サイトからのお知らせ、交流会・セミナーなどのイベント情報をまとめて確認できるハブです。",
-    "tags": ["ニュース", "イベント", "ドイツ"]
+    "tags": [
+      "ニュース",
+      "イベント",
+      "ドイツ"
+    ]
   },
   {
     "id": "page-learn-german",
@@ -130,7 +314,11 @@
     "layout": "hub",
     "hero_type": "hub",
     "description": "日常生活、役所、病院、仕事で使えるドイツ語フレーズと学習コンテンツをまとめたページです。",
-    "tags": ["ドイツ語", "学習", "フレーズ"]
+    "tags": [
+      "ドイツ語",
+      "学習",
+      "フレーズ"
+    ]
   },
   {
     "id": "page-eat",
@@ -149,7 +337,11 @@
     "layout": "directory",
     "hero_type": "directory",
     "description": "ドイツ生活で使える日本食、レストラン、カフェ、飲食店情報を探すディレクトリページです。",
-    "tags": ["食べる", "日本食", "レストラン"]
+    "tags": [
+      "食べる",
+      "日本食",
+      "レストラン"
+    ]
   },
   {
     "id": "page-shopping",
@@ -168,7 +360,11 @@
     "layout": "directory",
     "hero_type": "directory",
     "description": "ドイツ生活で使える店舗、サービス、買い物スポットを探すディレクトリページです。",
-    "tags": ["買い物", "店舗", "サービス"]
+    "tags": [
+      "買い物",
+      "店舗",
+      "サービス"
+    ]
   },
   {
     "id": "page-medical",
@@ -187,7 +383,11 @@
     "layout": "directory",
     "hero_type": "directory",
     "description": "ドイツで病院、クリニック、緊急時の連絡先を探すための医療ディレクトリページです。",
-    "tags": ["医療", "病院", "緊急"]
+    "tags": [
+      "医療",
+      "病院",
+      "緊急"
+    ]
   },
   {
     "id": "page-news",
@@ -206,7 +406,11 @@
     "layout": "legacy",
     "hero_type": "utility",
     "description": "ニュースはニュース・イベントページに統合しました。",
-    "tags": ["ニュース", "制度", "地域情報"]
+    "tags": [
+      "ニュース",
+      "制度",
+      "地域情報"
+    ]
   },
   {
     "id": "page-events-detail",
@@ -225,7 +429,10 @@
     "layout": "detail",
     "hero_type": "detail",
     "description": "J-Connect Germany のイベント詳細ページです。開催日、場所、関連リンクなどを確認できます。",
-    "tags": ["イベント", "詳細"]
+    "tags": [
+      "イベント",
+      "詳細"
+    ]
   },
   {
     "id": "page-jobs-posting",
@@ -244,7 +451,11 @@
     "layout": "utility",
     "hero_type": "utility",
     "description": "J-Connect Germany に求人掲載を希望する企業向けの案内ページです。",
-    "tags": ["求人掲載", "企業向け", "仕事"]
+    "tags": [
+      "求人掲載",
+      "企業向け",
+      "仕事"
+    ]
   },
   {
     "id": "page-jobs-detail",
@@ -263,7 +474,10 @@
     "layout": "detail",
     "hero_type": "detail",
     "description": "J-Connect Germany の求人詳細ページです。仕事内容、勤務地、応募情報を確認できます。",
-    "tags": ["求人", "詳細"]
+    "tags": [
+      "求人",
+      "詳細"
+    ]
   },
   {
     "id": "page-jobs-guide",
@@ -282,7 +496,11 @@
     "layout": "utility",
     "hero_type": "utility",
     "description": "ドイツで求人に応募する前に確認したい、応募書類・言語条件・面接準備の基本をまとめます。",
-    "tags": ["求人", "求職者", "ガイド"]
+    "tags": [
+      "求人",
+      "求職者",
+      "ガイド"
+    ]
   },
   {
     "id": "page-job-sales-assistant-japanese-duesseldorf",
@@ -301,7 +519,11 @@
     "layout": "detail",
     "hero_type": "detail",
     "description": "デュッセルドルフ周辺の日本語対応営業アシスタント求人の詳細ページです。",
-    "tags": ["求人", "営業", "デュッセルドルフ"]
+    "tags": [
+      "求人",
+      "営業",
+      "デュッセルドルフ"
+    ]
   },
   {
     "id": "page-job-it-support-specialist-cologne",
@@ -320,7 +542,11 @@
     "layout": "detail",
     "hero_type": "detail",
     "description": "ケルン周辺の IT サポートスペシャリスト求人の詳細ページです。",
-    "tags": ["求人", "IT", "ケルン"]
+    "tags": [
+      "求人",
+      "IT",
+      "ケルン"
+    ]
   },
   {
     "id": "page-job-accounting-staff-munich",
@@ -339,7 +565,11 @@
     "layout": "detail",
     "hero_type": "detail",
     "description": "ミュンヘン周辺の経理・会計スタッフ求人の詳細ページです。",
-    "tags": ["求人", "経理", "ミュンヘン"]
+    "tags": [
+      "求人",
+      "経理",
+      "ミュンヘン"
+    ]
   },
   {
     "id": "page-community-post",
@@ -358,7 +588,10 @@
     "layout": "utility",
     "hero_type": "utility",
     "description": "J-Connect Germany の交流掲示板へ投稿するためのフォームページです。",
-    "tags": ["掲示板", "投稿フォーム"]
+    "tags": [
+      "掲示板",
+      "投稿フォーム"
+    ]
   },
   {
     "id": "page-community-contact",
@@ -377,7 +610,10 @@
     "layout": "utility",
     "hero_type": "utility",
     "description": "掲示板の投稿者へ連絡するためのフォームページです。",
-    "tags": ["掲示板", "連絡"]
+    "tags": [
+      "掲示板",
+      "連絡"
+    ]
   },
   {
     "id": "page-community-report",
@@ -396,7 +632,10 @@
     "layout": "utility",
     "hero_type": "utility",
     "description": "掲示板の投稿内容を運営へ通報するためのフォームページです。",
-    "tags": ["掲示板", "通報"]
+    "tags": [
+      "掲示板",
+      "通報"
+    ]
   },
   {
     "id": "page-community-delete",
@@ -415,7 +654,10 @@
     "layout": "utility",
     "hero_type": "utility",
     "description": "掲示板投稿の削除手続きに使う確認ページです。",
-    "tags": ["掲示板", "削除"]
+    "tags": [
+      "掲示板",
+      "削除"
+    ]
   },
   {
     "id": "page-community-thanks",
@@ -434,7 +676,10 @@
     "layout": "utility",
     "hero_type": "utility",
     "description": "J-Connect Germany の掲示板フォーム送信完了ページです。",
-    "tags": ["掲示板", "送信完了"]
+    "tags": [
+      "掲示板",
+      "送信完了"
+    ]
   },
   {
     "id": "page-about",
@@ -453,7 +698,10 @@
     "layout": "utility",
     "hero_type": "utility",
     "description": "J-Connect Germany の目的、掲載領域、運営方針を説明するページです。",
-    "tags": ["J-CONNECTについて", "運営方針"]
+    "tags": [
+      "J-CONNECTについて",
+      "運営方針"
+    ]
   },
   {
     "id": "page-contact",
@@ -472,7 +720,10 @@
     "layout": "utility",
     "hero_type": "utility",
     "description": "J-Connect Germany へのお問い合わせ、掲載相談、運営への連絡に使うページです。",
-    "tags": ["お問い合わせ", "運営"]
+    "tags": [
+      "お問い合わせ",
+      "運営"
+    ]
   },
   {
     "id": "page-search",
@@ -491,7 +742,10 @@
     "layout": "utility",
     "hero_type": "utility",
     "description": "J-Connect Germany 内の生活、求人、イベント、ドイツ語学習コンテンツを検索できるページです。",
-    "tags": ["検索", "サイト内検索"]
+    "tags": [
+      "検索",
+      "サイト内検索"
+    ]
   },
   {
     "id": "page-terms",
@@ -510,7 +764,10 @@
     "layout": "legal",
     "hero_type": "utility",
     "description": "J-Connect Germany の利用規約、投稿ルール、免責事項を確認できるページです。",
-    "tags": ["利用規約", "ルール"]
+    "tags": [
+      "利用規約",
+      "ルール"
+    ]
   },
   {
     "id": "page-privacy",
@@ -529,7 +786,10 @@
     "layout": "legal",
     "hero_type": "utility",
     "description": "J-Connect Germany のプライバシーポリシーと個人情報の取り扱いを確認できるページです。",
-    "tags": ["プライバシー", "個人情報"]
+    "tags": [
+      "プライバシー",
+      "個人情報"
+    ]
   },
   {
     "id": "page-impressum",
@@ -548,7 +808,10 @@
     "layout": "legal",
     "hero_type": "utility",
     "description": "J-Connect Germany の運営者情報、所在地、連絡先を確認できる Impressum ページです。",
-    "tags": ["運営者情報", "Impressum"]
+    "tags": [
+      "運営者情報",
+      "Impressum"
+    ]
   },
   {
     "id": "page-guides",
@@ -567,6 +830,9 @@
     "layout": "legacy",
     "hero_type": "utility",
     "description": "旧ガイドページは生活・手続きハブへ統合されました。",
-    "tags": ["旧ページ", "生活・手続き"]
+    "tags": [
+      "旧ページ",
+      "生活・手続き"
+    ]
   }
 ]

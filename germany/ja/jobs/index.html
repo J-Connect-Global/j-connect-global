@@ -80,6 +80,34 @@
     font-weight:800;
   }
 
+  .jobs-results-controls{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+    align-items:center;
+    gap:6px;
+  }
+
+  .jobs-result-control{
+    min-height:32px;
+    border:1px solid var(--listing-line);
+    border-radius:999px;
+    background:#fff;
+    color:var(--listing-navy);
+    padding:0 10px;
+    font-size:12px;
+    line-height:1;
+    font-weight:900;
+    white-space:nowrap;
+    cursor:pointer;
+  }
+
+  .jobs-result-control.active{
+    border-color:var(--listing-navy);
+    background:var(--listing-navy);
+    color:#fff;
+  }
+
   #job-listings .layout{
     width:100%;
     margin:0;
@@ -271,6 +299,25 @@
     margin-top:10px;
   }
 
+  .jobs-detail-email{
+    margin:8px 0 0;
+    color:#384552;
+    font-size:13px;
+    line-height:1.55;
+    font-weight:800;
+  }
+
+  .jobs-detail-modal .detail-sec ul{
+    list-style-position:outside;
+    padding-left:1.35em;
+    margin:8px 0 0;
+  }
+
+  .jobs-detail-modal .detail-sec li{
+    padding-left:.15em;
+    margin:4px 0;
+  }
+
   @media (max-width:1100px){
     .jobs-hero-box{
       grid-template-columns:1fr;
@@ -284,6 +331,10 @@
 
     .jobs-hero-actions{
       grid-template-columns:1fr;
+    }
+
+    .jobs-results-controls{
+      justify-content:flex-start;
     }
 
     #job-listings .jobs-card .job-card-body{
@@ -419,7 +470,7 @@
         <p>ドイツで働きたい人向けの求人情報をまとめています。勤務地、雇用形態、言語条件などを確認しながら求人を探せます。</p>
       </div>
       <div class="jobs-hero-actions" aria-label="仕事・求人の関連リンク">
-        <a class="jobs-hero-link" href="/germany/ja/learn-german/job-seeker-german-route/">求職者向けガイド</a>
+        <a class="jobs-hero-link" href="/germany/ja/jobs/guide/">求職者向けガイド</a>
         <a class="jobs-hero-link" href="/germany/ja/jobs/posting/">企業・採用担当者へ</a>
       </div>
     </div>
@@ -507,7 +558,11 @@
           <p class="results-sub">勤務地、雇用形態、言語条件などを確認しながら求人を探せます。</p>
           <div class="results-sub" id="resultsSummary">読み込み中...</div>
         </div>
-
+        <div class="jobs-results-controls" aria-label="求人一覧の表示条件">
+          <button class="jobs-result-control" id="savedOnlyBtn" type="button" aria-pressed="false">保存済</button>
+          <button class="jobs-result-control active" id="sortNewestBtn" type="button" aria-pressed="true">新しい順</button>
+          <button class="jobs-result-control" id="sortOldestBtn" type="button" aria-pressed="false">古い順</button>
+        </div>
       </div>
 
       <div id="cards" class="cards jc-result-grid" aria-live="polite"></div>
@@ -593,6 +648,8 @@
     let selectedId = null;
     let currentView = 'list';
     let modalReturnFocus = null;
+    let showSavedOnly = false;
+    let sortDirection = 'newest';
     const filterState = {
       region: '',
       position: '',
@@ -626,11 +683,32 @@
       listingModal: document.getElementById('listingModal'),
       listingModalContent: document.getElementById('listingModalContent'),
       listingModalClose: document.getElementById('listingModalClose'),
+      savedOnlyBtn: document.getElementById('savedOnlyBtn'),
+      sortNewestBtn: document.getElementById('sortNewestBtn'),
+      sortOldestBtn: document.getElementById('sortOldestBtn'),
       resultsSummary: document.getElementById('resultsSummary'),
       emptyBox: document.getElementById('emptyBox')
     };
 
     const SAVED_JOBS_KEY = 'jconnect:germany:jobs:saved';
+    const SECTOR_OPTIONS = [
+      { key: 'finance', label: '金融（銀行・証券・保険）', terms: ['金融', '銀行', '証券', '保険', 'finance', 'bank', 'banking', 'securities', 'insurance'] },
+      { key: 'accounting', label: '経理・財務・監査', terms: ['経理', '会計', '財務', '監査', 'accounting', 'treasury', 'audit', 'bookkeeping'] },
+      { key: 'admin', label: '事務・秘書', terms: ['事務', '秘書', 'アシスタント', '総務', 'admin', 'administration', 'assistant', 'pa', 'secretary'] },
+      { key: 'sales', label: '営業・事業開発', terms: ['営業', '事業開発', '法人営業', 'sales', 'business development', 'account manager'] },
+      { key: 'customer', label: 'カスタマーサービス・小売', terms: ['カスタマー', '顧客対応', '小売', '店舗', '販売', 'retail', 'customer service', 'store'] },
+      { key: 'hr', label: '人事・ビザ・移民関連', terms: ['人事', '採用', 'ビザ', '移民', 'hr', 'human resources', 'recruiting', 'immigration', 'visa'] },
+      { key: 'it', label: 'IT・通信・エンジニアリング', terms: ['it', 'ict', '通信', 'エンジニア', 'エンジニアリング', 'ソフトウェア', 'システム', 'プロジェクトマネージャー', 'telecom', 'engineering', 'engineer', 'software', 'developer', 'support'] },
+      { key: 'hospitality', label: 'ホスピタリティ・観光', terms: ['ホテル', '観光', '旅行', 'ホスピタリティ', 'hospitality', 'tourism', 'travel', 'hotel'] },
+      { key: 'catering', label: '飲食・シェフ', terms: ['飲食', 'シェフ', '調理', 'キッチン', 'レストラン', 'catering', 'chef', 'cook', 'restaurant'] },
+      { key: 'procurement', label: '調達・購買', terms: ['調達', '購買', 'procurement', 'buying', 'buyer', 'purchasing'] },
+      { key: 'digital', label: 'デジタルマーケティング・PR', terms: ['デジタルマーケティング', 'pr', '広報', 'sns', 'seo', 'marketing', 'digital marketing', 'public relations'] },
+      { key: 'research', label: '調査・マーケティング分析', terms: ['調査', '分析', 'リサーチ', 'マーケティング分析', 'research', 'analysis', 'analyst', 'market research'] },
+      { key: 'logistics', label: '輸出入・物流・サプライチェーン', terms: ['輸出入', '物流', 'サプライチェーン', 'ロジスティクス', 'logistics', 'supply chain', 'import', 'export', 'warehouse', 'shipping'] },
+      { key: 'legal', label: '法務・コンサルティング', terms: ['法務', '法律', 'コンサル', 'legal', 'law', 'consulting', 'consultancy', 'consultant'] },
+      { key: 'property', label: '不動産', terms: ['不動産', '物件', 'property', 'real estate'] },
+      { key: 'others', label: 'その他', terms: [] }
+    ];
 
     function escapeHtml(value){
       return String(value ?? '')
@@ -670,19 +748,35 @@
       return '';
     }
 
-    function getApplyTarget(job){
-      const candidates = [job.apply_url, job.application_url, job.apply_link].filter(hasDisplayValue);
-      for (const value of candidates) {
-        if (isSafeActionUrl(value)) return value;
-      }
-      if (isPublicContactEmail(job.contact_email)) return `mailto:${job.contact_email}`;
-      return '';
-    }
-
     function isPublicContactEmail(value){
       const email = clean(value);
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return false;
       return !email.toLowerCase().endsWith('@j-connect-global.com');
+    }
+
+    function getEmailFromMailto(value){
+      const text = clean(value);
+      const match = text.match(/^mailto:([^?]+)/i);
+      return match ? decodeURIComponent(match[1]) : '';
+    }
+
+    function getApplyEmail(job){
+      const candidates = [
+        job.application_email,
+        job.apply_email,
+        job.contact_email,
+        getEmailFromMailto(job.apply_url),
+        getEmailFromMailto(job.application_url),
+        getEmailFromMailto(job.apply_link)
+      ];
+      return candidates.find(isPublicContactEmail) || '';
+    }
+
+    function getApplyMailto(job){
+      const email = getApplyEmail(job);
+      if (!email) return '';
+      const subject = encodeURIComponent(`${job.position_title || '求人'} 応募`);
+      return `mailto:${email}?subject=${subject}`;
     }
 
     function isSafeActionUrl(value){
@@ -725,6 +819,32 @@
         .sort((a,b) => a.localeCompare(b,'ja'));
     }
 
+    function getSectorOption(key){
+      return SECTOR_OPTIONS.find(option => option.key === key) || SECTOR_OPTIONS[SECTOR_OPTIONS.length - 1];
+    }
+
+    function getSectorSearchText(job){
+      return normalize([
+        job.position_title,
+        job.category,
+        job.detail_category,
+        job.tags,
+        job.skills
+      ].join(' ')).normalize('NFKC');
+    }
+
+    function getJobSectorKey(job){
+      const text = getSectorSearchText(job);
+      const match = SECTOR_OPTIONS.find(option =>
+        option.key !== 'others' && option.terms.some(term => text.includes(normalize(term).normalize('NFKC')))
+      );
+      return (match || getSectorOption('others')).key;
+    }
+
+    function getJobSectorLabel(job){
+      return getSectorOption(getJobSectorKey(job)).label;
+    }
+
     function splitList(value){
       return String(value || '')
         .split(/\n|,|、|;|；|\||\/|#/)
@@ -764,8 +884,6 @@
     }
 
     function getJobDetailPath(job){
-      if (job.detail_url) return job.detail_url;
-      if (job.slug) return `/germany/ja/jobs/${encodeURIComponent(job.slug)}/`;
       return `/germany/ja/jobs/detail/?id=${encodeURIComponent(job.id)}`;
     }
 
@@ -840,9 +958,20 @@
       }
     }
 
+    function renderSectorSelect(){
+      if (!els.positionSelect) return;
+      const current = clean(filterState.position);
+      els.positionSelect.innerHTML = [
+        '<option value="">すべて</option>',
+        ...SECTOR_OPTIONS.map(option => `<option value="${escapeHtml(option.key)}">${escapeHtml(option.label)}</option>`)
+      ].join('');
+      els.positionSelect.value = SECTOR_OPTIONS.some(option => option.key === current) ? current : '';
+      if (current && els.positionSelect.value === '') filterState.position = '';
+    }
+
     function renderFilterChips(){
       renderFilterChipGroup(els.regionChipGroup, jobs.map(j => j.region || j.city), 'region', false);
-      renderFilterSelect(els.positionSelect, jobs.map(j => j.position_title), 'position');
+      renderSectorSelect();
       renderFilterChipGroup(els.categoryChipGroup, jobs.map(j => j.category), 'category');
       renderFilterChipGroup(els.detailCategoryChipGroup, jobs.map(j => j.detail_category), 'detailCategory');
       renderFilterChipGroup(els.visaChipGroup, ['yes', 'no'], 'visa', false, { yes: 'あり', no: 'なし' });
@@ -864,6 +993,7 @@
       const applyUrl = getValue(row, 'apply_url', 'application_url', 'apply_link');
       const sourceUrl = getValue(row, 'source_url', 'official_url', 'url', 'website');
       const tags = getValue(row, 'tags', 'skills', 'skill_tags', 'requirements_tags');
+      // Prefer spreadsheet IDs; fall back to a stable content slug when older rows do not provide one.
       const id = getValue(row, 'job_id', 'id') || stableSlug(positionTitle, companyName, region) || `job-${index + 1}`;
 
       return {
@@ -896,7 +1026,9 @@
         description: details,
         requirements: getValue(row, 'requirements'),
 
-        contact_email: getValue(row, 'contact_email'),
+        contact_email: getValue(row, 'contact_email', 'email'),
+        application_email: getValue(row, 'application_email', 'application_contact_email'),
+        apply_email: getValue(row, 'apply_email'),
         apply_url: applyUrl,
         application_url: getValue(row, 'application_url'),
         apply_link: getValue(row, 'apply_link'),
@@ -956,6 +1088,7 @@
       const candidates = [
         item.published_at,
         item.updated_at,
+        item.created_at,
         item.posted_at,
         item.event_date
       ];
@@ -971,6 +1104,17 @@
       if (dateDiff) return dateDiff;
       if (a.priority !== b.priority) return a.priority - b.priority;
       return String(a.company_name).localeCompare(String(b.company_name), 'ja');
+    }
+
+    function sortOldestFirst(a, b){
+      const dateDiff = getSortTimestamp(a) - getSortTimestamp(b);
+      if (dateDiff) return dateDiff;
+      if (a.priority !== b.priority) return a.priority - b.priority;
+      return String(a.company_name).localeCompare(String(b.company_name), 'ja');
+    }
+
+    function sortFilteredJobs(){
+      filtered.sort(sortDirection === 'oldest' ? sortOldestFirst : sortNewestFirst);
     }
 
     function showEmptyJobs(){
@@ -1074,6 +1218,7 @@
     function filterJobs(){
       const keyword = normalize(els.keywordInput.value);
       const salaryMin = Number(els.salaryRange.value) + 10000;
+      const savedJobs = getSavedJobs();
 
       filtered = jobs.filter(job => {
         const text = normalize([
@@ -1100,7 +1245,7 @@
 
         const matchKeyword = !keyword || text.includes(keyword);
         const matchCity = !filterState.region || job.region === filterState.region || job.city === filterState.region;
-        const matchPosition = !filterState.position || job.position_title === filterState.position;
+        const matchPosition = !filterState.position || getJobSectorKey(job) === filterState.position;
         const matchCategory = !filterState.category || job.category === filterState.category;
         const matchDetailCategory = !filterState.detailCategory || job.detail_category === filterState.detailCategory;
         const matchType = !filterState.employment || job.employment_type === filterState.employment;
@@ -1113,15 +1258,18 @@
           (filterState.visa === 'no' && !isVisaYes(job));
 
         const matchSalary = Number(els.salaryRange.value) === 0 || job.salary_min_eur >= salaryMin;
+        const matchSaved = !showSavedOnly || savedJobs.has(String(job.id));
 
-        return matchKeyword && matchCity && matchPosition && matchCategory && matchDetailCategory && matchType && matchWorkStyle && matchLanguage && matchVisa && matchSalary;
+        return matchKeyword && matchCity && matchPosition && matchCategory && matchDetailCategory && matchType && matchWorkStyle && matchLanguage && matchVisa && matchSalary && matchSaved;
       });
+      sortFilteredJobs();
 
       if (!filtered.some(j => String(j.id) === String(selectedId))) {
         selectedId = filtered[0]?.id || null;
       }
 
       renderSummary();
+      renderResultControls();
       renderFilterChips();
       renderCards();
     }
@@ -1130,20 +1278,37 @@
       els.resultsSummary.textContent = `${filtered.length}件を表示中 / 全${jobs.length}件`;
     }
 
+    function renderResultControls(){
+      els.savedOnlyBtn?.classList.toggle('active', showSavedOnly);
+      els.savedOnlyBtn?.setAttribute('aria-pressed', String(showSavedOnly));
+      els.sortNewestBtn?.classList.toggle('active', sortDirection === 'newest');
+      els.sortNewestBtn?.setAttribute('aria-pressed', String(sortDirection === 'newest'));
+      els.sortOldestBtn?.classList.toggle('active', sortDirection === 'oldest');
+      els.sortOldestBtn?.setAttribute('aria-pressed', String(sortDirection === 'oldest'));
+    }
+
     function renderCards(){
       if (!filtered.length) {
         els.cards.innerHTML = '';
         els.emptyBox.style.display = 'block';
         els.emptyBox.className = 'empty-box jc-empty-state';
+        const emptyTitle = showSavedOnly ? '保存済みの求人はありません。' : '現在掲載中の求人はありません';
+        const emptyBody = showSavedOnly
+          ? '保存した求人がある場合は、条件をリセットするか保存済フィルターを解除してください。'
+          : '求人掲載を希望する企業・採用担当者の方は、掲載案内をご確認ください。';
         els.emptyBox.innerHTML = `
-          <span class="status-title">現在掲載中の求人はありません</span>
-          <div>求人掲載を希望する企業・採用担当者の方は、掲載案内をご確認ください。</div>
+          <span class="status-title">${escapeHtml(emptyTitle)}</span>
+          <div>${escapeHtml(emptyBody)}</div>
           <div class="status-actions">
-            <a class="btn btn-primary" href="/germany/ja/jobs/posting/">求人を掲載する</a>
+            ${showSavedOnly ? '<button class="btn btn-primary" type="button" data-clear-saved-filter>すべての求人を見る</button>' : ''}
             <button class="btn btn-secondary" type="button" data-reset-jobs>条件をリセット</button>
           </div>
         `;
         els.emptyBox.querySelector('[data-reset-jobs]')?.addEventListener('click', resetFilters);
+        els.emptyBox.querySelector('[data-clear-saved-filter]')?.addEventListener('click', () => {
+          showSavedOnly = false;
+          filterJobs();
+        });
         return;
       }
 
@@ -1158,7 +1323,7 @@
         const summary = job.short_description || job.summary || job.description || job.job_details;
         const saved = isJobSaved(job.id);
         const dateLabel = formatJobDate(job);
-        const applyTarget = getApplyTarget(job);
+        const detailPath = getJobDetailPath(job);
         const chipValues = [job.employment_type, job.work_style, job.language, job.visa_support]
           .filter(hasDisplayValue);
         const tags = splitList(job.tags || job.skills).slice(0, 3);
@@ -1180,6 +1345,7 @@
                   ${metaItem('勤務形態', job.work_style)}
                   ${metaItem('言語', job.language)}
                   ${metaItem('ビザ', job.visa_support)}
+                  ${metaItem('職種', getJobSectorLabel(job))}
                   ${metaItem('給与', salary)}
                 </div>
                 <div class="job-chip-row jobs-card-pill-row">
@@ -1190,9 +1356,7 @@
               </div>
 
               <div class="job-card-actions jc-result-actions">
-                <button class="card-action primary" type="button" data-open-detail-id="${escapeHtml(job.id)}">詳細を見る</button>
-                ${applyTarget ? `<a class="card-action" href="${escapeHtml(applyTarget)}"${externalLinkAttrs(applyTarget)}>応募先</a>` : ''}
-                <button class="card-action" type="button" data-copy-id="${escapeHtml(job.id)}">URLコピー</button>
+                <a class="card-action primary" href="${escapeHtml(detailPath)}" data-detail-page-link="${escapeHtml(job.id)}">詳細を見る</a>
               </div>
             </div>
           </article>
@@ -1213,31 +1377,14 @@
         });
       });
 
-      els.cards.querySelectorAll('[data-open-detail-id]').forEach(button => {
-        button.addEventListener('click', event => {
-          event.stopPropagation();
-          openListingModal(button.dataset.openDetailId, button);
-        });
-      });
-
       els.cards.querySelectorAll('[data-save-id]').forEach(button => {
         button.addEventListener('click', event => {
           event.stopPropagation();
-          const isSaved = toggleJobSaved(button.dataset.saveId, { render: false });
+          const isSaved = toggleJobSaved(button.dataset.saveId, { render: showSavedOnly });
           button.classList.toggle('saved', isSaved);
           button.textContent = isSaved ? '★' : '☆';
           button.setAttribute('aria-label', isSaved ? '保存を解除' : '保存する');
-        });
-      });
-
-      els.cards.querySelectorAll('[data-copy-id]').forEach(button => {
-        button.addEventListener('click', async event => {
-          event.stopPropagation();
-          const job = filtered.find(j => String(j.id) === String(button.dataset.copyId));
-          if (!job) return;
-          const copied = await copyText(getJobDetailUrl(job));
-          button.textContent = copied ? 'コピー済み' : 'URLを選択';
-          setTimeout(() => { button.textContent = 'URLコピー'; }, 1600);
+          renderResultControls();
         });
       });
     }
@@ -1270,7 +1417,8 @@
     }
 
     function buildApplicationSection(job){
-      const applyTarget = getApplyTarget(job);
+      const applyEmail = getApplyEmail(job);
+      const applyMailto = getApplyMailto(job);
       const companyUrl = isSafeActionUrl(job.company_url) ? job.company_url : '';
       const sourceUrl = isSafeActionUrl(job.source_url) ? job.source_url : '';
       const applyMethod = job.apply_method;
@@ -1279,10 +1427,11 @@
         <section class="detail-sec">
           <h4>応募方法</h4>
           ${
-            applyTarget
-              ? `<div class="jobs-detail-link-list"><a class="card-action primary" href="${escapeHtml(applyTarget)}"${externalLinkAttrs(applyTarget)}>応募先を開く</a></div>`
+            applyMailto
+              ? `<div class="jobs-detail-link-list"><a class="card-action primary" href="${escapeHtml(applyMailto)}">応募先にメールする</a></div>`
               : `<p class="jobs-detail-apply-note">${escapeHtml(applyMethod || '応募方法は求人詳細をご確認ください。')}</p>`
           }
+          ${applyEmail ? `<p class="jobs-detail-email">連絡先: <a href="mailto:${escapeHtml(applyEmail)}">${escapeHtml(applyEmail)}</a></p>` : ''}
           ${
             companyUrl || sourceUrl
               ? `
@@ -1328,6 +1477,8 @@
       const commentEn = job.free_comment_en || '';
       const logoUrl = job.company_logo_url || '';
       const saved = isJobSaved(job.id);
+      const detailPath = getJobDetailPath(job);
+      const applyMailto = getApplyMailto(job);
       const tags = splitList(job.tags || job.skills);
       const chips = [
         job.employment_type,
@@ -1347,7 +1498,9 @@
           ${chips.length ? `<div class="detail-chip-row">${chips.map(chip => `<span class="job-chip">${escapeHtml(chip)}</span>`).join('')}</div>` : ''}
 
           <div class="detail-actions">
-            <button class="card-action" type="button" data-detail-copy-id="${escapeHtml(job.id)}">URLをコピー</button>
+            <button class="card-action" type="button" data-detail-copy-id="${escapeHtml(job.id)}">URLコピー</button>
+            <a class="card-action primary" href="${escapeHtml(detailPath)}">詳細を見る</a>
+            ${applyMailto ? `<a class="card-action" href="${escapeHtml(applyMailto)}">応募先にメールする</a>` : ''}
             <button class="save-button inline ${saved ? 'saved' : ''}" type="button" data-detail-save-id="${escapeHtml(job.id)}">${saved ? '★ 保存済み' : '☆ 保存'}</button>
           </div>
         </div>
@@ -1460,7 +1613,7 @@
           if (!job) return;
           const copied = await copyText(getJobDetailUrl(job));
           button.textContent = copied ? 'コピーしました' : 'URLを選択してコピー';
-          setTimeout(() => { button.textContent = 'URLをコピー'; }, 1800);
+          setTimeout(() => { button.textContent = 'URLコピー'; }, 1800);
         });
       });
     }
@@ -1480,6 +1633,7 @@
       Object.keys(filterState).forEach(key => { filterState[key] = ''; });
       els.salaryRange.value = '0';
       if (els.positionSelect) els.positionSelect.value = '';
+      showSavedOnly = false;
       renderSalaryRangeLabel();
       filterJobs();
     }
@@ -1492,6 +1646,18 @@
       });
       els.positionSelect?.addEventListener('change', () => {
         filterState.position = els.positionSelect.value || '';
+        filterJobs();
+      });
+      els.savedOnlyBtn?.addEventListener('click', () => {
+        showSavedOnly = !showSavedOnly;
+        filterJobs();
+      });
+      els.sortNewestBtn?.addEventListener('click', () => {
+        sortDirection = 'newest';
+        filterJobs();
+      });
+      els.sortOldestBtn?.addEventListener('click', () => {
+        sortDirection = 'oldest';
         filterJobs();
       });
 

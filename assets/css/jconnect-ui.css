@@ -1370,6 +1370,7 @@
 
   .living-travel-card{
     display:grid;
+    grid-template-rows:auto 1fr auto;
     gap:10px;
     min-width:0;
     padding:16px;
@@ -1418,6 +1419,34 @@
     box-shadow:var(--jc-shadow);
   }
 
+  .living-travel-related,
+  .living-travel-empty{
+    min-width:0;
+  }
+
+  .living-travel-empty{
+    display:grid;
+    gap:8px;
+    padding:14px;
+    border:1px dashed var(--jc-line-strong);
+    border-radius:var(--jc-radius-md);
+    background:var(--jc-soft);
+  }
+
+  .living-travel-empty strong{
+    color:var(--jc-navy);
+    font-size:15px;
+    font-weight:900;
+    line-height:1.4;
+  }
+
+  .living-travel-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    min-width:0;
+  }
+
   .living-subpage-section h2{
     margin:0;
     color:var(--jc-navy);
@@ -1427,7 +1456,8 @@
 
   .living-subpage-section p,
   .living-subpage-section li,
-  .living-prep-state p{
+  .living-prep-state p,
+  .living-travel-empty p{
     margin:0;
     color:var(--jc-muted);
     font-size:14px;

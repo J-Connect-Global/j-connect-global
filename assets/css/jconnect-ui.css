@@ -1370,7 +1370,7 @@
 
   .living-travel-card{
     display:grid;
-    grid-template-rows:auto 1fr auto;
+    grid-template-rows:auto auto 1fr auto;
     gap:10px;
     min-width:0;
     padding:16px;

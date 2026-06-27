@@ -290,6 +290,103 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
+    "title": "デュッセルドルフ観光の基本：旧市街・ライン川・日本人街の歩き方",
+    "description": "デュッセルドルフ市内を初めて歩く人向けに、旧市街、ライン川沿い、日本人街、買い物エリアを半日から1日で回る基本ルートを整理。",
+    "url": "/germany/ja/living/duesseldorf-city-guide/",
+    "category": "生活・手続き",
+    "tags": [
+      "デュッセルドルフ",
+      "街歩き",
+      "NRW",
+      "観光"
+    ]
+  },
+  {
+    "title": "ケルン観光の基本：大聖堂・ライン川・旧市街の回り方",
+    "description": "ケルン大聖堂を中心に、旧市街、ライン川沿い、博物館エリアを効率よく回るための基本ガイド。",
+    "url": "/germany/ja/living/cologne-city-guide/",
+    "category": "生活・手続き",
+    "tags": [
+      "ケルン",
+      "大聖堂",
+      "街歩き",
+      "観光"
+    ]
+  },
+  {
+    "title": "NRWから行く日帰り旅行：アーヘン観光モデルコース",
+    "description": "NRW在住者向けに、アーヘン大聖堂、旧市街、カフェ、温泉文化を日帰りで楽しむモデルコースを紹介。",
+    "url": "/germany/ja/living/aachen-day-trip/",
+    "category": "生活・手続き",
+    "tags": [
+      "アーヘン",
+      "日帰り旅行",
+      "NRW",
+      "週末旅行"
+    ]
+  },
+  {
+    "title": "ドイツから行く週末旅行：ストラスブール観光の基本",
+    "description": "ドイツ西部から車や電車で行きやすいストラスブールを、週末旅行として楽しむための基本ルートと注意点を整理。",
+    "url": "/germany/ja/living/strasbourg-weekend-trip/",
+    "category": "生活・手続き",
+    "tags": [
+      "ストラスブール",
+      "週末旅行",
+      "フランス",
+      "観光"
+    ]
+  },
+  {
+    "title": "ライン川沿いで過ごす休日：散歩・景色・カフェの楽しみ方",
+    "description": "ライン川沿いでゆっくり過ごしたい人向けに、散歩、景色、カフェ、夕方の過ごし方をまとめた休日ガイド。",
+    "url": "/germany/ja/living/rhine-river-relax-guide/",
+    "category": "生活・手続き",
+    "tags": [
+      "ライン川",
+      "散歩",
+      "自然",
+      "リラックス"
+    ]
+  },
+  {
+    "title": "NRWの自然スポット入門：森・湖・公園でリラックスする休日",
+    "description": "NRW周辺で自然を感じたい人向けに、森、湖、公園を使った無理のない休日の過ごし方を整理。",
+    "url": "/germany/ja/living/nrw-nature-relax-guide/",
+    "category": "生活・手続き",
+    "tags": [
+      "NRW",
+      "自然",
+      "公園",
+      "湖",
+      "リラックス"
+    ]
+  },
+  {
+    "title": "子連れで楽しむデュッセルドルフ観光：公園・川沿い・短時間ルート",
+    "description": "小さな子ども連れでも回りやすいデュッセルドルフ市内の観光ルート、公園、休憩ポイントを整理。",
+    "url": "/germany/ja/living/duesseldorf-family-trip/",
+    "category": "生活・手続き",
+    "tags": [
+      "子連れ",
+      "デュッセルドルフ",
+      "家族",
+      "観光"
+    ]
+  },
+  {
+    "title": "家族で行くケルン観光：大聖堂周辺と休憩しやすいスポット",
+    "description": "家族連れでケルンを訪れる人向けに、大聖堂周辺、川沿い、休憩しやすい場所を中心に紹介。",
+    "url": "/germany/ja/living/cologne-family-trip/",
+    "category": "生活・手続き",
+    "tags": [
+      "子連れ",
+      "ケルン",
+      "家族",
+      "観光"
+    ]
+  },
+  {
     "title": "Rundfunkbeitragとは？ドイツの放送負担金の基本",
     "description": "ドイツで住み始めたときに届くRundfunkbeitragの通知、支払い対象、登録・支払い・引っ越し時の確認点を整理。",
     "url": "/germany/ja/living/rundfunkbeitrag-guide/",

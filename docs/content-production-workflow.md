@@ -132,6 +132,11 @@ Drafts and unpublished items are excluded from hubs, Home, sitemap, and search.
 7. Use `published: false` and `status: "draft"` until the article is ready.
 8. Run the build and validation commands.
 
+Optional hub card images can be added to Living, Events, and Learn German registry items with:
+
+- `image_url`: local or site-relative card image path.
+- `image_alt`: short alt text for the card image.
+
 ## Home Visibility
 
 Use `home_visible` and `home_order` in the registry:

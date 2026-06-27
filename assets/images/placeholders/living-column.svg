@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Living guide placeholder</title>
+  <desc id="desc">Abstract city guide cards for daily life in Germany.</desc>
+  <rect width="960" height="540" fill="#f5f9fc"/>
+  <rect x="96" y="146" width="220" height="260" rx="20" fill="#0067c9" opacity=".16"/>
+  <rect x="370" y="100" width="220" height="306" rx="20" fill="#ffffff"/>
+  <rect x="644" y="178" width="220" height="228" rx="20" fill="#ffc400" opacity=".34"/>
+  <path d="M420 168h120M420 226h96M420 284h132" stroke="#0067c9" stroke-width="22" stroke-linecap="round"/>
+  <path d="M120 440h720" stroke="#0b2545" stroke-width="22" stroke-linecap="round" opacity=".10"/>
+</svg>

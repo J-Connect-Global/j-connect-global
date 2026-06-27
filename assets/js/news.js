@@ -276,8 +276,15 @@ function initNewsEventsToc() {
 
 function renderNewsCard(item) {
   const meta = newsMetadata(item);
+  const imageUrl = newsImageUrl(item);
+  const imageAlt = firstNonEmpty(item.image_alt, item.imageAlt, item.alt_text, item.title);
+  const mediaClass = imageUrl ? " card--has-media" : "";
+  const media = imageUrl
+    ? `<div class="card-media"><img src="${escapeAttribute(imageUrl)}" alt="${escapeAttribute(imageAlt)}" loading="lazy" decoding="async" onerror="this.closest('.card--has-media')?.classList.remove('card--has-media'); this.closest('.card-media')?.remove();"></div>`
+    : "";
   return `
-    <article class="news-card" data-news-card data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-search="${escapeAttribute(meta.search)}" data-news-category="${escapeAttribute(meta.category)}" data-news-area="${escapeAttribute(meta.area.join(" "))}" data-news-type="${escapeAttribute(meta.type)}" data-news-date="${escapeAttribute(meta.date)}">
+    <article class="news-card${mediaClass}" data-news-card data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-search="${escapeAttribute(meta.search)}" data-news-category="${escapeAttribute(meta.category)}" data-news-area="${escapeAttribute(meta.area.join(" "))}" data-news-type="${escapeAttribute(meta.type)}" data-news-date="${escapeAttribute(meta.date)}">
+      ${media}
       <div class="news-card__badges">
         <span>${escapeHtml(item.country_ja || "ドイツ")}</span>
         <span>${escapeHtml(item.city_ja || "全体")}</span>
@@ -293,6 +300,25 @@ function renderNewsCard(item) {
       <a href="${escapeAttribute(item.url)}" target="_blank" rel="noopener noreferrer">出典で確認する</a>
     </article>
   `;
+}
+
+function newsImageUrl(item) {
+  return firstNonEmpty(
+    item.image_url,
+    item.imageUrl,
+    item.image,
+    item.thumbnail_url,
+    item.thumbnail,
+    item.cover_image
+  );
+}
+
+function firstNonEmpty(...values) {
+  for (const value of values) {
+    const text = String(value || "").trim();
+    if (text) return text;
+  }
+  return "";
 }
 
 function newsMetadata(item) {

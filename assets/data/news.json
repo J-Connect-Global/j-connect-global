@@ -1,6 +1,6 @@
 [
   {
-    "id": "deutsche-welle-https-www-dw-com-en-europe-heat-wave-virtually-impossible-without",
+    "id": "deutsche-welle-https-www-dw-com-en-bayer-why-so-many-roundup-weedkiller-lawsuits",
     "country": "germany",
     "country_ja": "ドイツ",
     "city": "nationwide",
@@ -13,10 +13,29 @@
     "importance_ja": "通常",
     "source_type": "media",
     "source_name": "Deutsche Welle",
-    "title": "Europe heat wave &#039;virtually impossible&#039; without human impact",
-    "summary": "A new study says Europe&#039;s current heat wave would have been nearly impossible without climate change and is now 200 more likely than 20 years ago. And Germany is expecting things to warm up even more. DW has the latest.",
+    "title": "Bayer: Why so many Roundup weedkiller lawsuits?",
+    "summary": "Bayer was sued for failing to add cancer warnings to its controversial pesticide Roundup when US regulators opposed adding one. DW asks if the latest Supreme Court win will shield the chemical giant from paying billions.",
     "published_at": "Fri, 26 Jun 2026",
-    "url": "https://www.dw.com/en/europe-heat-wave-virtually-impossible-without-human-impact/live-77663026?maca=en-rss-en-ger-1023-xml-mrss"
+    "url": "https://www.dw.com/en/bayer-why-so-many-roundup-weedkiller-lawsuits/a-77717842?maca=en-rss-en-ger-1023-xml-mrss"
+  },
+  {
+    "id": "deutsche-welle-https-www-dw-com-en-germany-news-berlin-s-orchestra-eases-dress-c",
+    "country": "germany",
+    "country_ja": "ドイツ",
+    "city": "nationwide",
+    "city_ja": "全国",
+    "category": "life",
+    "category_ja": "生活",
+    "topic": "general",
+    "topic_ja": "一般",
+    "importance": "normal",
+    "importance_ja": "通常",
+    "source_type": "media",
+    "source_name": "Deutsche Welle",
+    "title": "Germany news: Berlin&#039;s orchestra eases dress code amid heat",
+    "summary": "Men are not obliged to wear jackets during the orchestra&#039;s end-of-season performance this weekend. Meanwhile, a court has sentenced the defendant in the Magdeburg Christmas market attack to life.",
+    "published_at": "Fri, 26 Jun 2026",
+    "url": "https://www.dw.com/en/germany-news-berlin-s-orchestra-eases-dress-code-amid-heat/live-77718509?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-magdeburg-christmas-market-attacker-sentenced",
@@ -32,10 +51,29 @@
     "importance_ja": "通常",
     "source_type": "media",
     "source_name": "Deutsche Welle",
-    "title": "Magdeburg Christmas market attacker sentenced to life",
-    "summary": "A Magdeburg court has sentenced a 51-year-old to life after his 2024 attack on a Christmas market in the city. He drove a rental car through a security cordon and into a crowd, killing six and injuring more than 300.",
+    "title": "Magdeburg Christmas market attacker sentenced to life in prison",
+    "summary": "A Magdeburg court has sentenced a 51-year-old to life over his 2024 attack on a Christmas market in the city. The trained psychiatrist drove an SUV through a barricade and into a crowd, killing six and injuring hundreds.",
     "published_at": "Fri, 26 Jun 2026",
-    "url": "https://www.dw.com/en/magdeburg-christmas-market-attacker-sentenced-to-life/a-77718126?maca=en-rss-en-ger-1023-xml-mrss"
+    "url": "https://www.dw.com/en/magdeburg-christmas-market-attacker-sentenced-to-life-in-prison/a-77718126?maca=en-rss-en-ger-1023-xml-mrss"
+  },
+  {
+    "id": "deutsche-welle-https-www-dw-com-en-europe-heat-wave-virtually-impossible-without",
+    "country": "germany",
+    "country_ja": "ドイツ",
+    "city": "nationwide",
+    "city_ja": "全国",
+    "category": "life",
+    "category_ja": "生活",
+    "topic": "general",
+    "topic_ja": "一般",
+    "importance": "normal",
+    "importance_ja": "通常",
+    "source_type": "media",
+    "source_name": "Deutsche Welle",
+    "title": "Europe heat wave &#039;virtually impossible&#039; without human impact",
+    "summary": "A new study says Europe&#039;s current heat wave would have been nearly impossible without human-driven climate change. And Germany is expecting things to warm up even more. DW has the latest.",
+    "published_at": "Fri, 26 Jun 2026",
+    "url": "https://www.dw.com/en/europe-heat-wave-virtually-impossible-without-human-impact/live-77663026?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-germany-news-deutsche-bahn-advises-against-tr",
@@ -57,7 +95,7 @@
     "url": "https://www.dw.com/en/germany-news-deutsche-bahn-advises-against-travel-amid-heat/live-77704395?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
-    "id": "deutsche-welle-https-www-dw-com-en-germany-s-merz-rallies-european-nato-allies-a",
+    "id": "deutsche-welle-https-www-dw-com-en-german-lawyers-ban-on-far-right-afd-likely-su",
     "country": "germany",
     "country_ja": "ドイツ",
     "city": "nationwide",
@@ -70,10 +108,10 @@
     "importance_ja": "通常",
     "source_type": "media",
     "source_name": "Deutsche Welle",
-    "title": "Germany&#039;s Merz rallies European NATO allies ahead of summit",
-    "summary": "Chancellor Friedrich Merz hosted leaders of European NATO powers in Berlin to hash out consensus on bolstering European defense. With US tensions looming, the leaders signaled that transatlantic ties are improving.",
-    "published_at": "Wed, 24 Jun 2026",
-    "url": "https://www.dw.com/en/germany-s-merz-rallies-european-nato-allies-ahead-of-summit/a-77698670?maca=en-rss-en-ger-1023-xml-mrss"
+    "title": "German lawyers: Ban on far-right AfD &#039;likely successful&#039;",
+    "summary": "A new report by legal experts has found that efforts to ban Germany&#039;s far-right Alternative for Germany (AfD) could be successful — but there would be political dangers to such a move.",
+    "published_at": "Fri, 26 Jun 2026",
+    "url": "https://www.dw.com/en/german-lawyers-ban-on-far-right-afd-likely-successful/a-77726537?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-germany-disappoints-in-loss-to-ecuador-at-202",
@@ -112,44 +150,6 @@
     "summary": "Germany is one of few European countries that still has an exclusively \"opt-in\" choice for organ donation — despite long waiting lists for organs. Now, parliament is debating a change.",
     "published_at": "Thu, 25 Jun 2026",
     "url": "https://www.dw.com/en/germany-considers-opt-out-organ-donor-option/a-77712351?maca=en-rss-en-ger-1023-xml-mrss"
-  },
-  {
-    "id": "deutsche-welle-https-www-dw-com-en-germany-racism-is-almost-a-daily-reality-for-",
-    "country": "germany",
-    "country_ja": "ドイツ",
-    "city": "nationwide",
-    "city_ja": "全国",
-    "category": "life",
-    "category_ja": "生活",
-    "topic": "general",
-    "topic_ja": "一般",
-    "importance": "normal",
-    "importance_ja": "通常",
-    "source_type": "media",
-    "source_name": "Deutsche Welle",
-    "title": "Germany: Racism is almost a daily reality for Muslims",
-    "summary": "Insults, discrimination, violence, deaths: Experts warn of growing anti-Muslim racism in Germany — and criticize policymakers.",
-    "published_at": "Thu, 25 Jun 2026",
-    "url": "https://www.dw.com/en/germany-racism-is-almost-a-daily-reality-for-muslims/a-77708763?maca=en-rss-en-ger-1023-xml-mrss"
-  },
-  {
-    "id": "deutsche-welle-https-www-dw-com-en-human-rights-expert-philippe-sands-wins-germa",
-    "country": "germany",
-    "country_ja": "ドイツ",
-    "city": "nationwide",
-    "city_ja": "全国",
-    "category": "life",
-    "category_ja": "生活",
-    "topic": "general",
-    "topic_ja": "一般",
-    "importance": "normal",
-    "importance_ja": "通常",
-    "source_type": "media",
-    "source_name": "Deutsche Welle",
-    "title": "Human rights expert Philippe Sands wins German Peace Prize",
-    "summary": "From advocating for the law of ecocide to representing Palestinian rights, the descendant of Holocaust survivors tirelessly fights against genocide and crimes against humanity.",
-    "published_at": "Thu, 25 Jun 2026",
-    "url": "https://www.dw.com/en/human-rights-expert-philippe-sands-wins-german-peace-prize/a-77702306?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-how-a-feel-good-german-song-is-taking-over-so",

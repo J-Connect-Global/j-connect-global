@@ -1,4 +1,5 @@
 const NEWS_DATA_URL = "/assets/data/news.json";
+const NEWS_FALLBACK_IMAGE = "/assets/images/placeholders/news.svg";
 
 (function () {
   if (document.readyState === "loading") {
@@ -276,14 +277,11 @@ function initNewsEventsToc() {
 
 function renderNewsCard(item) {
   const meta = newsMetadata(item);
-  const imageUrl = newsImageUrl(item);
-  const imageAlt = firstNonEmpty(item.image_alt, item.imageAlt, item.alt_text, item.title);
-  const mediaClass = imageUrl ? " card--has-media" : "";
-  const media = imageUrl
-    ? `<div class="card-media"><img src="${escapeAttribute(imageUrl)}" alt="${escapeAttribute(imageAlt)}" loading="lazy" decoding="async" onerror="this.closest('.card--has-media')?.classList.remove('card--has-media'); this.closest('.card-media')?.remove();"></div>`
-    : "";
+  const imageUrl = newsImageUrl(item) || NEWS_FALLBACK_IMAGE;
+  const imageAlt = firstNonEmpty(item.image_alt, item.imageAlt, item.alt_text, item.title, "News");
+  const media = renderNewsCardMedia(imageUrl, imageAlt);
   return `
-    <article class="news-card${mediaClass}" data-news-card data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-search="${escapeAttribute(meta.search)}" data-news-category="${escapeAttribute(meta.category)}" data-news-area="${escapeAttribute(meta.area.join(" "))}" data-news-type="${escapeAttribute(meta.type)}" data-news-date="${escapeAttribute(meta.date)}">
+    <article class="news-card card--has-media" data-news-card data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-search="${escapeAttribute(meta.search)}" data-news-category="${escapeAttribute(meta.category)}" data-news-area="${escapeAttribute(meta.area.join(" "))}" data-news-type="${escapeAttribute(meta.type)}" data-news-date="${escapeAttribute(meta.date)}">
       ${media}
       <div class="news-card__badges">
         <span>${escapeHtml(item.country_ja || "ドイツ")}</span>
@@ -300,6 +298,15 @@ function renderNewsCard(item) {
       <a href="${escapeAttribute(item.url)}" target="_blank" rel="noopener noreferrer">出典で確認する</a>
     </article>
   `;
+}
+
+function renderNewsCardMedia(src, alt) {
+  const fallback = NEWS_FALLBACK_IMAGE;
+  const fallbackAttribute = fallback && fallback !== src ? ` data-fallback="${escapeAttribute(fallback)}"` : "";
+  const onError = fallback && fallback !== src
+    ? "if(this.dataset.fallback&&this.getAttribute('src')!==this.dataset.fallback){this.src=this.dataset.fallback}else{this.closest('.card--has-media')?.classList.remove('card--has-media');this.closest('.card-media')?.remove();}"
+    : "this.closest('.card--has-media')?.classList.remove('card--has-media');this.closest('.card-media')?.remove();";
+  return `<div class="card-media"><img src="${escapeAttribute(src)}" alt="${escapeAttribute(alt)}" loading="lazy" decoding="async"${fallbackAttribute} onerror="${escapeAttribute(onError)}"></div>`;
 }
 
 function newsImageUrl(item) {

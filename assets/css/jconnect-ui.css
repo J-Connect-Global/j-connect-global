@@ -2293,7 +2293,8 @@
     }
 
     .living-page-guide a:hover,
-    .living-page-guide a:focus-visible{
+    .living-page-guide a:focus-visible,
+    .living-page-guide a.is-active{
       background:var(--jc-soft);
       color:var(--jc-blue);
       outline:0;

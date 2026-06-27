@@ -57,6 +57,57 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function initializeSectionGuide(guideSelector) {
+    var guideLinks = Array.prototype.slice.call(document.querySelectorAll(guideSelector));
+    if (!guideLinks.length || !('IntersectionObserver' in window)) return;
+
+    var linkById = new Map(guideLinks.map(function (link) {
+      var href = link.getAttribute('href') || '';
+      return [href.charAt(0) === '#' ? href.slice(1) : '', link];
+    }).filter(function (entry) {
+      return entry[0];
+    }));
+    var sections = Array.from(linkById.keys()).map(function (id) {
+      return document.getElementById(id);
+    }).filter(Boolean);
+    if (!sections.length) return;
+
+    function setActiveGuideLink(id) {
+      guideLinks.forEach(function (link) {
+        link.classList.toggle('is-active', link === linkById.get(id));
+      });
+    }
+
+    function updateActiveGuideLink() {
+      var activationLine = window.innerHeight * 0.45;
+      var current = sections[0];
+
+      sections.forEach(function (section) {
+        if (section.getBoundingClientRect().top <= activationLine) {
+          current = section;
+        }
+      });
+
+      setActiveGuideLink(current.id);
+    }
+
+    var observer = new IntersectionObserver(function () {
+      updateActiveGuideLink();
+    }, {
+      rootMargin: '-20% 0px -55% 0px',
+      threshold: [0.1, 0.35, 0.6]
+    });
+
+    sections.forEach(function (section) {
+      observer.observe(section);
+    });
+    window.addEventListener('scroll', updateActiveGuideLink, { passive: true });
+    window.addEventListener('resize', updateActiveGuideLink);
+    updateActiveGuideLink();
+  }
+
+  initializeSectionGuide('.living-page-guide a');
+
   var livingHub = document.querySelector('[data-living-hub]');
   if (livingHub) {
     var livingSearch = livingHub.querySelector('[data-living-search]');

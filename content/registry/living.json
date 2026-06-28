@@ -4,19 +4,20 @@
     "title": "デュッセルドルフ観光の基本：旧市街・ライン川・日本人街の歩き方",
     "slug": "duesseldorf-city-guide",
     "category": "観光",
-    "summary": "デュッセルドルフ市内を初めて歩く人向けに、旧市街、ライン川沿い、日本人街、買い物エリアを半日から1日で回る基本ルートを整理。",
+    "summary": "デュッセルドルフ市内を初めて歩く人向けに、旧市街、ライン川沿い、日本人街、Königsallee、買い物エリアを半日から1日で回る基本ルートを整理します。",
     "url": "/germany/ja/living/duesseldorf-city-guide/",
     "markdown_path": "/content/living/duesseldorf-city-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-06-27",
-    "last_verified": "2026-06-27",
+    "updated_at": "2026-06-28",
+    "last_verified": "2026-06-28",
     "tags": [
       "デュッセルドルフ",
       "街歩き",
       "NRW",
-      "観光"
+      "観光",
+      "日本人街"
     ],
     "home_visible": true,
     "home_order": 200,
@@ -29,13 +30,22 @@
       "duesseldorf-family-trip",
       "rhine-river-relax-guide"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "Visit Düsseldorf",
+        "url": "https://www.visitduesseldorf.de/"
+      },
+      {
+        "title": "Landeshauptstadt Düsseldorf",
+        "url": "https://www.duesseldorf.de/"
+      }
+    ],
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-27",
-      "next_review_due": "2027-06-27"
+      "last_reviewed_at": "2026-06-28",
+      "next_review_due": "2027-06-28"
     }
   },
   {
@@ -43,19 +53,20 @@
     "title": "ケルン観光の基本：大聖堂・ライン川・旧市街の回り方",
     "slug": "cologne-city-guide",
     "category": "観光",
-    "summary": "ケルン大聖堂を中心に、旧市街、ライン川沿い、博物館エリアを効率よく回るための基本ガイド。",
+    "summary": "ケルン大聖堂を中心に、旧市街、ライン川沿い、Hohenzollernbrücke、博物館エリアを半日から1日で効率よく回る基本ガイドです。",
     "url": "/germany/ja/living/cologne-city-guide/",
     "markdown_path": "/content/living/cologne-city-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-06-27",
-    "last_verified": "2026-06-27",
+    "updated_at": "2026-06-28",
+    "last_verified": "2026-06-28",
     "tags": [
       "ケルン",
       "大聖堂",
       "街歩き",
-      "観光"
+      "観光",
+      "ライン川"
     ],
     "home_visible": true,
     "home_order": 201,
@@ -68,13 +79,22 @@
       "cologne-family-trip",
       "rhine-river-relax-guide"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "KölnTourismus",
+        "url": "https://www.koelntourismus.de/"
+      },
+      {
+        "title": "Kölner Dom",
+        "url": "https://www.koelner-dom.de/"
+      }
+    ],
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-27",
-      "next_review_due": "2027-06-27"
+      "last_reviewed_at": "2026-06-28",
+      "next_review_due": "2027-06-28"
     }
   },
   {
@@ -82,19 +102,20 @@
     "title": "NRWから行く日帰り旅行：アーヘン観光モデルコース",
     "slug": "aachen-day-trip",
     "category": "観光",
-    "summary": "NRW在住者向けに、アーヘン大聖堂、旧市街、カフェ、温泉文化を日帰りで楽しむモデルコースを紹介。",
+    "summary": "NRW在住者向けに、アーヘン大聖堂、旧市街、市庁舎、カフェ、温泉文化を日帰りで無理なく楽しむモデルコースを整理します。",
     "url": "/germany/ja/living/aachen-day-trip/",
     "markdown_path": "/content/living/aachen-day-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-06-27",
-    "last_verified": "2026-06-27",
+    "updated_at": "2026-06-28",
+    "last_verified": "2026-06-28",
     "tags": [
       "アーヘン",
       "日帰り旅行",
       "NRW",
-      "週末旅行"
+      "週末旅行",
+      "大聖堂"
     ],
     "home_visible": true,
     "home_order": 202,
@@ -107,13 +128,22 @@
       "cologne-city-guide",
       "nrw-nature-relax-guide"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "Aachen Tourismus",
+        "url": "https://www.aachen-tourismus.de/"
+      },
+      {
+        "title": "Aachener Dom",
+        "url": "https://www.aachenerdom.de/"
+      }
+    ],
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-27",
-      "next_review_due": "2027-06-27"
+      "last_reviewed_at": "2026-06-28",
+      "next_review_due": "2027-06-28"
     }
   },
   {

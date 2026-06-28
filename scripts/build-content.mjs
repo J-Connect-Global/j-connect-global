@@ -9,6 +9,7 @@ const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
 const cardFallbackImages = {
   livingColumn: '/assets/images/placeholders/living-column.svg',
   event: '/assets/images/placeholders/event.svg',
+  news: '/assets/images/placeholders/news.svg',
   learnPhrase: '/assets/images/placeholders/learn-german-daily.svg',
   learnRoute: '/assets/images/placeholders/learn-german-route.svg',
   learnResource: '/assets/images/placeholders/learn-german-resource.svg'
@@ -252,7 +253,7 @@ function normalizeLearnGermanItem(item) {
 
 function writeArticlePage(type, item, allItems) {
   const config = contentTypes[type];
-  const publicPath = path.join(config.publicBase, item.slug, 'index.html');
+  const publicPath = outputPathFromUrl(item.url || `/${config.publicBase}/${item.slug}/`);
   const bodyHtml = markdownToHtml(item.markdown, { type, item });
   const html = renderArticlePage(type, item, bodyHtml, allItems);
   writeText(publicPath, html);
@@ -266,6 +267,8 @@ function renderArticlePage(type, item, bodyHtml, allItems) {
   const ogMeta = renderOpenGraphMeta(type, item, title, canonicalHref);
   const structuredData = renderStructuredData(type, item, title, canonicalHref);
   const toc = extractArticleToc(item.markdown, item.title);
+  const articleBodyHtml = renderArticleBodyHtml(type, item, bodyHtml);
+  const extraScripts = renderArticleExtraScripts(type, item);
 
   return `<!DOCTYPE html>
 <html lang="ja">
@@ -305,7 +308,7 @@ ${renderHeader(type, item.url)}
 
 ${indent(renderArticleMobileToc(toc), 8)}
         <div class="article-body">
-${indent(bodyHtml, 10)}
+${indent(articleBodyHtml, 10)}
           <p><a class="article-back-link" href="${config.hubUrl}">${escapeHtml(config.backText)}</a></p>
 ${indent(renderDisclaimer(item), 10)}
         </div>
@@ -316,10 +319,41 @@ ${indent(renderRelatedSection(item, allItems), 4)}
   </main>
 
 ${renderFooter()}
-  <script src="/assets/js/main.js"></script>
+${extraScripts ? `${indent(extraScripts, 2)}\n` : ''}  <script src="/assets/js/main.js"></script>
 </body>
 </html>
 `;
+}
+
+function renderArticleBodyHtml(type, item, bodyHtml) {
+  if (type === 'learn-german' && item.slug === 'german-news-reading-guide') {
+    return `${bodyHtml}\n${renderGermanNewsLearningPanel()}`;
+  }
+  return bodyHtml;
+}
+
+function renderArticleExtraScripts(type, item) {
+  if (type === 'learn-german' && item.slug === 'german-news-reading-guide') {
+    return '<script src="/assets/js/german-news-learning.js"></script>';
+  }
+  return '';
+}
+
+function renderGermanNewsLearningPanel() {
+  return `<section class="related-section german-news-learning-panel" data-german-news-learning aria-labelledby="germanNewsLearningTitle">
+  <div class="jc-section-head">
+    <div>
+      <h2 id="germanNewsLearningTitle">ドイツ語ニュース素材</h2>
+      <p>以下は外部メディアの記事をドイツ語学習の素材として表示するものです。J-Connectの日本語ニュース解説・編集記事ではありません。</p>
+    </div>
+  </div>
+  <div class="jc-article-grid learn-card-grid" data-german-news-list aria-live="polite">
+    <div class="news-events-empty">
+      <h3>ドイツ語ニュース素材を読み込み中です</h3>
+      <p>外部ニュースの取得に時間がかかる場合があります。</p>
+    </div>
+  </div>
+</section>`;
 }
 
 function renderHeader(activeType, currentUrl) {
@@ -578,9 +612,14 @@ function renderArticleMetaSpans(type, item) {
   const rows = [];
 
   if (type === 'events') {
-    if (item.event_date) rows.push(`<span>日程: ${escapeHtml(item.event_date)}</span>`);
-    if (item.city) rows.push(`<span>地域: ${escapeHtml(item.city)}</span>`);
-    if (item.location) rows.push(`<span>会場: ${escapeHtml(item.location)}</span>`);
+    if (item.content_type === 'news') {
+      if (item.area || item.city) rows.push(`<span>対象地域: ${escapeHtml(item.area || item.city)}</span>`);
+      if (item.source_type === 'manual') rows.push('<span>種別: J-Connect編集部の日本語解説</span>');
+    } else {
+      if (item.event_date) rows.push(`<span>日程: ${escapeHtml(item.event_date)}</span>`);
+      if (item.city) rows.push(`<span>地域: ${escapeHtml(item.city)}</span>`);
+      if (item.location) rows.push(`<span>会場: ${escapeHtml(item.location)}</span>`);
+    }
   }
 
   if (type === 'learn-german') {
@@ -690,6 +729,12 @@ function renderDisclaimer(item) {
   if (item.disclaimer_type === 'event') {
     return `<div class="article-disclaimer">
   開催日・会場・プログラムは年により異なるため、参加前に主催者や自治体、交通機関などの公式情報を確認してください。
+</div>`;
+  }
+
+  if (item.disclaimer_type === 'news_explainer') {
+    return `<div class="article-disclaimer">
+  本記事はJ-Connect編集部による日本語の生活解説です。速報や公式発表の代替ではありません。制度、交通、健康、安全に関わる判断は、自治体・交通機関・医療機関などの公式情報を確認してください。
 </div>`;
   }
 
@@ -906,7 +951,7 @@ function getRelatedLearnGermanItems(item, allItems) {
   const explicit = getExplicitRelatedItems(item, allItems)
     .filter((relatedItem) => relatedItem.type === 'learn-german');
   const automatic = allItems
-    .filter((candidate) => candidate.type === 'learn-german' && candidate.slug !== item.slug && candidate.published)
+    .filter((candidate) => candidate.type === 'learn-german' && candidate.slug !== item.slug && candidate.published && candidate.related_auto_visible !== false)
     .map((candidate) => ({
       item: candidate,
       score: scoreLearnGermanRelationship(item, candidate)
@@ -999,6 +1044,10 @@ function updateHub(type, items) {
     updateLearnGermanHub(items);
     return;
   }
+  if (type === 'events') {
+    updateEventsHub(items);
+    return;
+  }
 
   const config = contentTypes[type];
   const hubPath = config.hubPath;
@@ -1017,6 +1066,38 @@ function updateHub(type, items) {
   );
 
   writeText(hubPath, nextHtml);
+}
+
+function updateEventsHub(items) {
+  const config = contentTypes.events;
+  const hubPath = config.hubPath;
+  let html = readText(hubPath);
+
+  const eventCards = sortForHub(items)
+    .filter((item) => item.published && item.hub_visible && item.content_type !== 'news')
+    .map((item) => renderHubCard('events', item))
+    .join('\n\n');
+  const newsCards = sortForHub(items)
+    .filter((item) => item.published && item.content_type === 'news')
+    .map(renderManualNewsHubCard)
+    .join('\n\n');
+
+  html = replaceMarkedDivContent(
+    html,
+    config.gridMarker,
+    hubGridPattern('events'),
+    eventCards,
+    8
+  );
+  html = replaceMarkedDivContent(
+    html,
+    'events-news-grid',
+    /<div class="news-card-grid news-events-grid is-list-view" id="newsGrid"[^>]*>/,
+    newsCards,
+    14
+  );
+
+  writeText(hubPath, html);
 }
 
 function updateLearnGermanHub(items) {
@@ -1135,6 +1216,79 @@ ${media ? indent(media, 2) : ''}
   <div class="jc-chip-row">${tags}</div>
   <span class="jc-read-more">イベント記事を読む</span>
 </a>`;
+}
+
+function renderManualNewsHubCard(item) {
+  const newsFilters = manualNewsFilterValues(item);
+  const searchText = [
+    item.title,
+    item.summary,
+    item.category,
+    item.area,
+    item.city,
+    ...item.tags,
+    ...newsFilters.category,
+    ...newsFilters.area,
+    ...newsFilters.type
+  ].join(' ');
+  const media = renderCardMedia(item, item.title, cardFallbackImages.news);
+  const mediaClass = media ? ' card--has-media' : '';
+  const badges = [
+    item.category || '生活ニュース',
+    item.area || item.city || 'ドイツ全体',
+    'J-Connect解説'
+  ];
+  const meta = [
+    `公開: ${item.published_at || ''}`,
+    item.last_verified ? `最終確認: ${item.last_verified}` : ''
+  ].filter(Boolean);
+
+  return `<article class="news-card manual-news-card${mediaClass}" data-news-card data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-search="${escapeAttribute(searchText)}" data-news-category="${escapeAttribute(newsFilters.category.join(' '))}" data-news-area="${escapeAttribute(newsFilters.area.join(' '))}" data-news-type="${escapeAttribute(newsFilters.type.join(' '))}" data-news-date="${escapeAttribute(item.published_at || '')}">
+${media ? indent(media, 2) : ''}
+  <div class="news-card__badges">${badges.map((badge) => `<span>${escapeHtml(badge)}</span>`).join('')}</div>
+  <h3>${escapeHtml(item.title)}</h3>
+  <p>${escapeHtml(item.summary)}</p>
+  <div class="news-card__meta">${meta.map((entry) => `<span>${escapeHtml(entry)}</span>`).join('')}</div>
+  <a href="${escapeAttribute(item.url)}">解説を読む</a>
+</article>`;
+}
+
+function manualNewsFilterValues(item) {
+  const text = normalizeFilterText([
+    item.title,
+    item.summary,
+    item.category,
+    item.area,
+    item.city,
+    ...item.tags
+  ].join(' '));
+  const category = [];
+  const area = ['germany'];
+  const type = ['life-info'];
+
+  if (text.includes('行政') || text.includes('制度') || text.includes('手続')) category.push('admin');
+  if (text.includes('仕事') || text.includes('求人') || text.includes('work')) category.push('work');
+  if (text.includes('学校') || text.includes('教育') || text.includes('家族')) category.push('education-family');
+  if (text.includes('交通') || text.includes('db') || text.includes('bahn')) category.push('transport');
+  if (text.includes('イベント') || text.includes('community') || text.includes('ワールドカップ')) category.push('community');
+  if (text.includes('j-connect') || text.includes('jconnect')) category.push('jconnect');
+  if (text.includes('生活') || text.includes('気候') || text.includes('熱波') || text.includes('健康')) category.push('life-update');
+  if (!category.length) category.push('life-update');
+
+  if (text.includes('nrw')) area.push('nrw');
+  if (text.includes('düsseldorf') || text.includes('duesseldorf')) area.push('duesseldorf');
+  if (text.includes('köln') || text.includes('koln') || text.includes('cologne')) area.push('koln');
+  if (text.includes('online')) area.push('online');
+
+  if (text.includes('注意') || text.includes('熱波') || text.includes('健康')) type.push('alert');
+  if (text.includes('更新')) type.push('update');
+  if (text.includes('お知らせ')) type.push('notice');
+
+  return {
+    category: uniqueArray(category),
+    area: uniqueArray(area),
+    type: uniqueArray(type)
+  };
 }
 
 function eventHubFilterValues(item) {
@@ -1653,6 +1807,16 @@ function normalizePageUrl(value) {
   const url = String(value || '').trim();
   if (!url || url === '/') return url || '';
   return url.endsWith('/') ? url : `${url}/`;
+}
+
+function outputPathFromUrl(value) {
+  const pathname = String(value || '')
+    .replace(/^https?:\/\/[^/]+/i, '')
+    .split('#')[0]
+    .split('?')[0]
+    .replace(/^\/+/, '');
+  const normalized = pathname.endsWith('/') ? pathname : `${pathname}/`;
+  return path.join(normalized, 'index.html');
 }
 
 function toArray(value) {

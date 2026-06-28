@@ -93,7 +93,7 @@
         <div class="jc-section-head">
           <div>
             <h2 id="newsTitle">ニュース</h2>
-            <p>ドイツ生活に関係する更新情報、サイトからのお知らせ、生活に役立つニュースを確認できます。</p>
+            <p>ドイツ生活に関係するニュースを、日本語で短く整理しています。制度変更、気候、交通、学校、仕事、地域生活など、在独日本人が確認しておきたい情報を中心に掲載します。</p>
           </div>
         </div>
         <div class="news-events-section-layout" data-news-hub>
@@ -107,12 +107,12 @@
               <span>カテゴリ</span>
               <select id="newsCategoryFilter" data-news-filter="category">
                 <option value="all">すべて</option>
-                <option value="life-update">生活アップデート</option>
-                <option value="admin">行政・手続き</option>
-                <option value="work">仕事・求人</option>
+                <option value="life-update">生活・気候</option>
+                <option value="admin">行政・制度</option>
+                <option value="work">仕事・働き方</option>
                 <option value="education-family">教育・家族</option>
-                <option value="transport">交通・ストライキ</option>
-                <option value="community">コミュニティ</option>
+                <option value="transport">交通</option>
+                <option value="community">地域生活・イベント</option>
                 <option value="jconnect">J-Connectからのお知らせ</option>
               </select>
             </label>
@@ -131,9 +131,9 @@
               <span>種別</span>
               <select id="newsTypeFilter" data-news-filter="type">
                 <option value="all">すべて</option>
-                <option value="notice">お知らせ</option>
+                <option value="notice">解説</option>
                 <option value="life-info">生活情報</option>
-                <option value="alert">注意喚起</option>
+                <option value="alert">注意ポイント</option>
                 <option value="update">更新情報</option>
               </select>
             </label>
@@ -152,7 +152,7 @@
             <div class="news-events-results-head">
               <div>
                 <h3>ニュース一覧</h3>
-                <p data-news-count>ニュースを読み込み中です。</p>
+                <p data-news-count>ニュース解説を読み込み中です。</p>
               </div>
               <div class="news-events-results-actions">
                 <div class="news-events-view-toggle" role="group" aria-label="ニュースの表示切替" data-view-toggle="news">
@@ -162,14 +162,29 @@
               </div>
             </div>
             <div class="news-card-grid news-events-grid is-list-view" id="newsGrid" aria-live="polite" data-news-view-container>
-              <div class="news-events-empty">
-                <h3>ニュースを準備中です</h3>
-                <p>生活アップデート、サイトからのお知らせ、コミュニティ関連の情報を順次掲載します。</p>
-              </div>
+              <!-- CONTENT:events-news-grid:start -->
+              <article class="news-card manual-news-card card--has-media" data-news-card data-title="欧州の熱波で確認したい生活上の注意点" data-summary="欧州で高温の日が続くときに、住まい・外出・子ども・高齢者・職場で確認したい基本ポイントを整理します。" data-search="欧州の熱波で確認したい生活上の注意点 欧州で高温の日が続くときに、住まい・外出・子ども・高齢者・職場で確認したい基本ポイントを整理します。 生活・気候 ドイツ全体 / EU ドイツ全体 / EU 熱波 夏 健康 life-update germany life-info alert" data-news-category="life-update" data-news-area="germany" data-news-type="life-info alert" data-news-date="2026-06-28">
+                <div class="card-media"><img src="/assets/images/placeholders/news.svg" alt="暑い日の生活チェックリスト" loading="lazy" decoding="async" onerror="this.closest(&#039;.card--has-media&#039;)?.classList.remove(&#039;card--has-media&#039;);this.closest(&#039;.card-media&#039;)?.remove();"></div>
+                <div class="news-card__badges"><span>生活・気候</span><span>ドイツ全体 / EU</span><span>J-Connect解説</span></div>
+                <h3>欧州の熱波で確認したい生活上の注意点</h3>
+                <p>欧州で高温の日が続くときに、住まい・外出・子ども・高齢者・職場で確認したい基本ポイントを整理します。</p>
+                <div class="news-card__meta"><span>公開: 2026-06-28</span><span>最終確認: 2026-06-28</span></div>
+                <a href="/germany/ja/events/news/europe-heatwave-basic-checks/">解説を読む</a>
+              </article>
+
+              <article class="news-card manual-news-card card--has-media" data-news-card data-title="ワールドカップ期間中にドイツで確認したいこと" data-summary="ワールドカップ期間中に、試合日程、公共交通、混雑、観戦イベントを確認するときの基本ポイントを整理します。" data-search="ワールドカップ期間中にドイツで確認したいこと ワールドカップ期間中に、試合日程、公共交通、混雑、観戦イベントを確認するときの基本ポイントを整理します。 生活・イベント ドイツ全体 ドイツ全体 ワールドカップ 交通 イベント transport life-update germany life-info" data-news-category="transport life-update" data-news-area="germany" data-news-type="life-info" data-news-date="2026-06-28">
+                <div class="card-media"><img src="/assets/images/placeholders/news.svg" alt="イベント期間中の交通チェックリスト" loading="lazy" decoding="async" onerror="this.closest(&#039;.card--has-media&#039;)?.classList.remove(&#039;card--has-media&#039;);this.closest(&#039;.card-media&#039;)?.remove();"></div>
+                <div class="news-card__badges"><span>生活・イベント</span><span>ドイツ全体</span><span>J-Connect解説</span></div>
+                <h3>ワールドカップ期間中にドイツで確認したいこと</h3>
+                <p>ワールドカップ期間中に、試合日程、公共交通、混雑、観戦イベントを確認するときの基本ポイントを整理します。</p>
+                <div class="news-card__meta"><span>公開: 2026-06-28</span><span>最終確認: 2026-06-28</span></div>
+                <a href="/germany/ja/events/news/world-cup-germany-basic-checks/">解説を読む</a>
+              </article>
+              <!-- CONTENT:events-news-grid:end -->
             </div>
             <div class="news-events-empty" data-news-empty hidden>
-              <h3 data-news-empty-title>ニュースを準備中です</h3>
-              <p data-news-empty-body>生活アップデート、サイトからのお知らせ、コミュニティ関連の情報を順次掲載します。</p>
+              <h3 data-news-empty-title>日本語ニュース解説を準備中です</h3>
+              <p data-news-empty-body>J-Connect編集部による日本語の生活ニュース解説を順次掲載します。</p>
               <div class="news-events-empty-actions">
                 <button class="living-reset-button news-events-reset" type="button" data-news-empty-reset hidden>絞り込みを解除</button>
               </div>

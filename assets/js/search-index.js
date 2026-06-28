@@ -506,24 +506,28 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "デュッセルドルフ日本デーの基本ガイド",
-    "description": "ライン川沿いで開かれる日本文化イベントを、初めて参加する人向けに整理しました。",
+    "description": "デュッセルドルフの日本デーについて、初めて行く人向けに見どころ、混雑、アクセス、子連れ・花火観覧の注意点を整理します。",
     "url": "/germany/ja/events/japan-day-duesseldorf/",
     "category": "ニュース・イベント",
     "tags": [
       "日本文化",
       "家族向け",
-      "NRW"
+      "NRW",
+      "Düsseldorf",
+      "花火"
     ]
   },
   {
     "title": "デュッセルドルフ周辺のクリスマスマーケット基本ガイド",
-    "description": "冬のNRWで楽しめるクリスマスマーケットの回り方、混雑、服装、確認ポイントを整理。",
+    "description": "デュッセルドルフとNRW周辺のクリスマスマーケットについて、会場の回り方、混雑、防寒、子連れ、交通、確認ポイントを整理します。",
     "url": "/germany/ja/events/christmas-markets-duesseldorf/",
     "category": "ニュース・イベント",
     "tags": [
       "冬",
       "クリスマスマーケット",
-      "NRW"
+      "NRW",
+      "Düsseldorf",
+      "家族向け"
     ]
   },
   {
@@ -830,13 +834,14 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "A1から生活で困らないレベルを目指すドイツ語ルート",
-    "description": "A1から、買い物、電話予約、病院、役所など日常生活で最低限伝える力を伸ばす読む順番です。",
+    "description": "A1から、買い物、電話予約、病院、役所などドイツ生活で最低限必要な場面を順番に練習する学習ルートです。",
     "url": "/germany/ja/learn-german/a1-daily-life-german-route/",
     "category": "ドイツ語・学び",
     "tags": [
       "A1",
       "生活ドイツ語",
       "初心者",
+      "新生活",
       "route",
       "shopping",
       "phone",
@@ -978,13 +983,14 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "HelloTalkとは？チャットと通話でドイツ語を練習する方法",
-    "description": "HelloTalkをチャット、音声、短い投稿で使うときの向き不向きと、実用フレーズ記事との組み合わせ方です。",
+    "description": "HelloTalkをドイツ語のチャット、音声メッセージ、投稿、通話練習に使う手順と注意点を整理します。J-Connectの実用フレーズ記事と組み合わせる使い方も紹介します。",
     "url": "/germany/ja/learn-german/hellotalk-language-exchange-guide/",
     "category": "ドイツ語・学び",
     "tags": [
       "HelloTalk",
       "言語交換",
       "チャット",
+      "会話練習",
       "resource",
       "phone",
       "parenting",
@@ -1081,13 +1087,14 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "VHSとは？ドイツで通える市民講座のドイツ語コース",
-    "description": "VHSのドイツ語コースを検討するときに見るポイントと、J-Connectの実用フレーズ記事との組み合わせ方です。",
+    "description": "VHSのドイツ語コースを探す方法、レベル選び、料金・補助制度で確認すべき点、J-Connect記事との組み合わせ方を整理します。",
     "url": "/germany/ja/learn-german/vhs-german-course-guide/",
     "category": "ドイツ語・学び",
     "tags": [
       "VHS",
       "講座",
       "A1-B2",
+      "統合コース",
       "resource",
       "administration",
       "work",

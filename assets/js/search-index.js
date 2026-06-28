@@ -291,38 +291,41 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "デュッセルドルフ観光の基本：旧市街・ライン川・日本人街の歩き方",
-    "description": "デュッセルドルフ市内を初めて歩く人向けに、旧市街、ライン川沿い、日本人街、買い物エリアを半日から1日で回る基本ルートを整理。",
+    "description": "デュッセルドルフ市内を初めて歩く人向けに、旧市街、ライン川沿い、日本人街、Königsallee、買い物エリアを半日から1日で回る基本ルートを整理します。",
     "url": "/germany/ja/living/duesseldorf-city-guide/",
     "category": "生活・手続き",
     "tags": [
       "デュッセルドルフ",
       "街歩き",
       "NRW",
-      "観光"
+      "観光",
+      "日本人街"
     ]
   },
   {
     "title": "ケルン観光の基本：大聖堂・ライン川・旧市街の回り方",
-    "description": "ケルン大聖堂を中心に、旧市街、ライン川沿い、博物館エリアを効率よく回るための基本ガイド。",
+    "description": "ケルン大聖堂を中心に、旧市街、ライン川沿い、Hohenzollernbrücke、博物館エリアを半日から1日で効率よく回る基本ガイドです。",
     "url": "/germany/ja/living/cologne-city-guide/",
     "category": "生活・手続き",
     "tags": [
       "ケルン",
       "大聖堂",
       "街歩き",
-      "観光"
+      "観光",
+      "ライン川"
     ]
   },
   {
     "title": "NRWから行く日帰り旅行：アーヘン観光モデルコース",
-    "description": "NRW在住者向けに、アーヘン大聖堂、旧市街、カフェ、温泉文化を日帰りで楽しむモデルコースを紹介。",
+    "description": "NRW在住者向けに、アーヘン大聖堂、旧市街、市庁舎、カフェ、温泉文化を日帰りで無理なく楽しむモデルコースを整理します。",
     "url": "/germany/ja/living/aachen-day-trip/",
     "category": "生活・手続き",
     "tags": [
       "アーヘン",
       "日帰り旅行",
       "NRW",
-      "週末旅行"
+      "週末旅行",
+      "大聖堂"
     ]
   },
   {
@@ -506,24 +509,28 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "デュッセルドルフ日本デーの基本ガイド",
-    "description": "ライン川沿いで開かれる日本文化イベントを、初めて参加する人向けに整理しました。",
+    "description": "デュッセルドルフの日本デーについて、初めて行く人向けに見どころ、混雑、アクセス、子連れ・花火観覧の注意点を整理します。",
     "url": "/germany/ja/events/japan-day-duesseldorf/",
     "category": "ニュース・イベント",
     "tags": [
       "日本文化",
       "家族向け",
-      "NRW"
+      "NRW",
+      "Düsseldorf",
+      "花火"
     ]
   },
   {
     "title": "デュッセルドルフ周辺のクリスマスマーケット基本ガイド",
-    "description": "冬のNRWで楽しめるクリスマスマーケットの回り方、混雑、服装、確認ポイントを整理。",
+    "description": "デュッセルドルフとNRW周辺のクリスマスマーケットについて、会場の回り方、混雑、防寒、子連れ、交通、確認ポイントを整理します。",
     "url": "/germany/ja/events/christmas-markets-duesseldorf/",
     "category": "ニュース・イベント",
     "tags": [
       "冬",
       "クリスマスマーケット",
-      "NRW"
+      "NRW",
+      "Düsseldorf",
+      "家族向け"
     ]
   },
   {
@@ -830,13 +837,14 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "A1から生活で困らないレベルを目指すドイツ語ルート",
-    "description": "A1から、買い物、電話予約、病院、役所など日常生活で最低限伝える力を伸ばす読む順番です。",
+    "description": "A1から、買い物、電話予約、病院、役所などドイツ生活で最低限必要な場面を順番に練習する学習ルートです。",
     "url": "/germany/ja/learn-german/a1-daily-life-german-route/",
     "category": "ドイツ語・学び",
     "tags": [
       "A1",
       "生活ドイツ語",
       "初心者",
+      "新生活",
       "route",
       "shopping",
       "phone",
@@ -978,13 +986,14 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "HelloTalkとは？チャットと通話でドイツ語を練習する方法",
-    "description": "HelloTalkをチャット、音声、短い投稿で使うときの向き不向きと、実用フレーズ記事との組み合わせ方です。",
+    "description": "HelloTalkをドイツ語のチャット、音声メッセージ、投稿、通話練習に使う手順と注意点を整理します。J-Connectの実用フレーズ記事と組み合わせる使い方も紹介します。",
     "url": "/germany/ja/learn-german/hellotalk-language-exchange-guide/",
     "category": "ドイツ語・学び",
     "tags": [
       "HelloTalk",
       "言語交換",
       "チャット",
+      "会話練習",
       "resource",
       "phone",
       "parenting",
@@ -1081,13 +1090,14 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "VHSとは？ドイツで通える市民講座のドイツ語コース",
-    "description": "VHSのドイツ語コースを検討するときに見るポイントと、J-Connectの実用フレーズ記事との組み合わせ方です。",
+    "description": "VHSのドイツ語コースを探す方法、レベル選び、料金・補助制度で確認すべき点、J-Connect記事との組み合わせ方を整理します。",
     "url": "/germany/ja/learn-german/vhs-german-course-guide/",
     "category": "ドイツ語・学び",
     "tags": [
       "VHS",
       "講座",
       "A1-B2",
+      "統合コース",
       "resource",
       "administration",
       "work",

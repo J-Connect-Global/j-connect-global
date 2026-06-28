@@ -1,6 +1,3 @@
-const NEWS_DATA_URL = "/assets/data/news.json";
-const NEWS_FALLBACK_IMAGE = "/assets/images/placeholders/news.svg";
-
 (function () {
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initNewsEventsHub);
@@ -28,8 +25,8 @@ function initNewsSection() {
   const reset = hub.querySelector("[data-news-reset]");
   const search = hub.querySelector("#newsSearch");
   const filters = Array.from(hub.querySelectorAll("[data-news-filter]"));
-  let cards = [];
-  let totalCount = 0;
+  const cards = Array.from(grid.querySelectorAll("[data-news-card]"));
+  const totalCount = cards.length;
 
   setupViewToggle(hub.querySelector('[data-view-toggle="news"]'), grid);
 
@@ -69,7 +66,7 @@ function initNewsSection() {
     if (count) {
       count.textContent = totalCount
         ? `${totalCount}件中${filtered.length}件を表示しています`
-        : "ニュースを準備中です。";
+        : "日本語ニュース解説を準備中です。";
     }
 
     if (empty) {
@@ -77,10 +74,10 @@ function initNewsSection() {
       empty.hidden = !showEmpty;
       grid.hidden = showEmpty && totalCount === 0;
       if (emptyTitle) emptyTitle.textContent = totalCount === 0 || !hasFilters
-        ? "ニュースを準備中です"
+        ? "日本語ニュース解説を準備中です"
         : "条件に合うニュースはありません";
       if (emptyBody) emptyBody.textContent = totalCount === 0 || !hasFilters
-        ? "生活アップデート、サイトからのお知らせ、コミュニティ関連の情報を順次掲載します。"
+        ? "J-Connect編集部による日本語の生活ニュース解説を順次掲載します。"
         : "条件を少し広げるか、絞り込みを解除してください。";
       if (emptyReset) emptyReset.hidden = !(totalCount > 0 && hasFilters);
     }
@@ -92,37 +89,12 @@ function initNewsSection() {
     updateNews();
   }
 
-  async function loadNews() {
-    try {
-      const response = await fetch(NEWS_DATA_URL);
-      const items = await response.json();
-      renderNewsCards(Array.isArray(items) ? items : []);
-    } catch (error) {
-      renderNewsCards([]);
-    }
-  }
-
-  function renderNewsCards(items) {
-    totalCount = items.length;
-    if (!items.length) {
-      grid.innerHTML = "";
-      cards = [];
-      updateNews();
-      return;
-    }
-
-    grid.hidden = false;
-    grid.innerHTML = items.map(renderNewsCard).join("");
-    cards = Array.from(grid.querySelectorAll("[data-news-card]"));
-    updateNews();
-  }
-
   if (search) search.addEventListener("input", updateNews);
   filters.forEach((filter) => filter.addEventListener("change", updateNews));
   if (reset) reset.addEventListener("click", resetNewsFilters);
   if (emptyReset) emptyReset.addEventListener("click", resetNewsFilters);
 
-  loadNews();
+  updateNews();
 }
 
 function initEventSection() {
@@ -273,109 +245,6 @@ function initNewsEventsToc() {
   const initialId = linkById.has(window.location.hash.slice(1)) ? window.location.hash.slice(1) : "news";
   setActive(initialId);
   window.setTimeout(requestActiveSectionUpdate, initialId === "events" ? 150 : 0);
-}
-
-function renderNewsCard(item) {
-  const meta = newsMetadata(item);
-  const imageUrl = newsImageUrl(item) || NEWS_FALLBACK_IMAGE;
-  const imageAlt = firstNonEmpty(item.image_alt, item.imageAlt, item.alt_text, item.title, "News");
-  const media = renderNewsCardMedia(imageUrl, imageAlt);
-  return `
-    <article class="news-card card--has-media" data-news-card data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-search="${escapeAttribute(meta.search)}" data-news-category="${escapeAttribute(meta.category)}" data-news-area="${escapeAttribute(meta.area.join(" "))}" data-news-type="${escapeAttribute(meta.type)}" data-news-date="${escapeAttribute(meta.date)}">
-      ${media}
-      <div class="news-card__badges">
-        <span>${escapeHtml(item.country_ja || "ドイツ")}</span>
-        <span>${escapeHtml(item.city_ja || "全体")}</span>
-        <span>${escapeHtml(item.category_ja || "ニュース")}</span>
-        <span>${escapeHtml(item.importance_ja || "通常")}</span>
-      </div>
-      <h3>${escapeHtml(item.title)}</h3>
-      <p>${escapeHtml(item.summary)}</p>
-      <div class="news-card__meta">
-        <span>出典: ${escapeHtml(item.source_name)}</span>
-        <span>${escapeHtml(item.published_at)}</span>
-      </div>
-      <a href="${escapeAttribute(item.url)}" target="_blank" rel="noopener noreferrer">出典で確認する</a>
-    </article>
-  `;
-}
-
-function renderNewsCardMedia(src, alt) {
-  const fallback = NEWS_FALLBACK_IMAGE;
-  const fallbackAttribute = fallback && fallback !== src ? ` data-fallback="${escapeAttribute(fallback)}"` : "";
-  const onError = fallback && fallback !== src
-    ? "if(this.dataset.fallback&&this.getAttribute('src')!==this.dataset.fallback){this.src=this.dataset.fallback}else{this.closest('.card--has-media')?.classList.remove('card--has-media');this.closest('.card-media')?.remove();}"
-    : "this.closest('.card--has-media')?.classList.remove('card--has-media');this.closest('.card-media')?.remove();";
-  return `<div class="card-media"><img src="${escapeAttribute(src)}" alt="${escapeAttribute(alt)}" loading="lazy" decoding="async"${fallbackAttribute} onerror="${escapeAttribute(onError)}"></div>`;
-}
-
-function newsImageUrl(item) {
-  return firstNonEmpty(
-    item.image_url,
-    item.imageUrl,
-    item.image,
-    item.thumbnail_url,
-    item.thumbnail,
-    item.cover_image
-  );
-}
-
-function firstNonEmpty(...values) {
-  for (const value of values) {
-    const text = String(value || "").trim();
-    if (text) return text;
-  }
-  return "";
-}
-
-function newsMetadata(item) {
-  const category = normalizeNewsCategory(item.category, item.category_ja, item.topic, item.topic_ja);
-  const area = normalizeNewsArea(item.country, item.city, item.city_ja);
-  const type = normalizeNewsType(item.source_type, item.source_name, item.importance);
-  const date = parseDateValue(item.published_at);
-  const search = [
-    item.title,
-    item.summary,
-    item.source_name,
-    item.category_ja,
-    item.city_ja,
-    item.country_ja,
-    item.topic_ja,
-    category,
-    type,
-    ...area
-  ].join(" ");
-  return { category, area, type, date, search };
-}
-
-function normalizeNewsCategory(category, categoryJa, topic, topicJa) {
-  const text = normalize([category, categoryJa, topic, topicJa].join(" "));
-  if (text.includes("visa") || text.includes("law") || text.includes("行政") || text.includes("手続")) return "admin";
-  if (text.includes("work") || text.includes("job") || text.includes("仕事") || text.includes("求人")) return "work";
-  if (text.includes("education") || text.includes("school") || text.includes("family") || text.includes("教育") || text.includes("家族")) return "education-family";
-  if (text.includes("transport") || text.includes("strike") || text.includes("交通") || text.includes("ストライキ")) return "transport";
-  if (text.includes("community") || text.includes("コミュニティ")) return "community";
-  if (text.includes("j-connect") || text.includes("jconnect")) return "jconnect";
-  return "life-update";
-}
-
-function normalizeNewsArea(country, city, cityJa) {
-  const text = normalize([country, city, cityJa].join(" "));
-  const areas = [];
-  if (text.includes("germany") || text.includes("全国") || text.includes("nationwide")) areas.push("germany");
-  if (text.includes("nrw")) areas.push("nrw");
-  if (text.includes("dusseldorf") || text.includes("duesseldorf")) areas.push("duesseldorf");
-  if (text.includes("koln") || text.includes("cologne")) areas.push("koln");
-  if (text.includes("online")) areas.push("online");
-  return unique(areas.length ? areas : ["germany"]);
-}
-
-function normalizeNewsType(sourceType, sourceName, importance) {
-  const text = normalize([sourceType, sourceName, importance].join(" "));
-  if (text.includes("important") || text.includes("check") || text.includes("alert") || text.includes("warning")) return "alert";
-  if (text.includes("official") || text.includes("j-connect") || text.includes("jconnect")) return "notice";
-  if (text.includes("update")) return "update";
-  return "life-info";
 }
 
 function setupViewToggle(toggle, container) {

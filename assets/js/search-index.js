@@ -567,6 +567,28 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
+    "title": "欧州の熱波で確認したい生活上の注意点",
+    "description": "欧州で高温の日が続くときに、住まい・外出・子ども・高齢者・職場で確認したい基本ポイントを整理します。",
+    "url": "/germany/ja/events/news/europe-heatwave-basic-checks/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "熱波",
+      "夏",
+      "健康"
+    ]
+  },
+  {
+    "title": "ワールドカップ期間中にドイツで確認したいこと",
+    "description": "ワールドカップ期間中に、試合日程、公共交通、混雑、観戦イベントを確認するときの基本ポイントを整理します。",
+    "url": "/germany/ja/events/news/world-cup-germany-basic-checks/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "ワールドカップ",
+      "交通",
+      "イベント"
+    ]
+  },
+  {
     "title": "予約を取りたいときのドイツ語フレーズ",
     "description": "病院、美容室、役所などで使える予約依頼、空き確認、日時変更の基本表現です。",
     "url": "/germany/ja/learn-german/appointment-phrase/",
@@ -1118,6 +1140,31 @@ window.JCONNECT_SEARCH_INDEX = [
       "course",
       "B2plus",
       "paid"
+    ]
+  },
+  {
+    "title": "ドイツ語ニュースを読んで語彙と読解力を伸ばす",
+    "description": "ドイツのニュース記事を、生活語彙・時事語彙・長文読解の練習として使う方法を整理します。難しすぎる記事の選び方、辞書の使い方、要約練習の進め方も紹介します。",
+    "url": "/germany/ja/learn-german/german-news-reading-guide/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "ニュース",
+      "読解",
+      "B1-B2",
+      "resource",
+      "administration",
+      "work",
+      "medical",
+      "daily-life",
+      "employment",
+      "B1",
+      "B2",
+      "reading",
+      "listening",
+      "15min",
+      "website",
+      "B2plus",
+      "free"
     ]
   }
 ];

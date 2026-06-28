@@ -93,7 +93,7 @@ function main() {
       checkUnique(slugs, item.slug, `Duplicate ${type} slug: ${item.slug}`);
       checkUnique(urls, item.url, `Duplicate content URL: ${item.url}`);
 
-      if (item.url !== `/germany/ja/${type}/${item.slug}/`) {
+      if (!isValidGeneratedArticleUrl(type, item)) {
         problems.push(`${label} URL must match generated page path: ${item.url}`);
       }
 
@@ -233,7 +233,7 @@ function validateReview(review, label) {
 
 function validatePublishedFiles(type, item, label) {
   const markdownRel = trimLeadingSlash(item.markdown_path);
-  const htmlRel = path.posix.join('germany/ja', type, item.slug, 'index.html');
+  const htmlRel = outputPathFromUrl(item.url);
 
   if (!exists(markdownRel)) {
     problems.push(`${label} markdown_path does not exist: ${item.markdown_path}`);
@@ -262,6 +262,14 @@ function validatePublishedFiles(type, item, label) {
   validateNoMojibake(html, htmlRel);
   validateNoPlaceholderHash(html, htmlRel);
   validateInternalLinks(html, htmlRel);
+}
+
+function isValidGeneratedArticleUrl(type, item) {
+  if (item.url === `/germany/ja/${type}/${item.slug}/`) return true;
+  if (type === 'events' && item.content_type === 'news') {
+    return item.url === `/germany/ja/events/news/${item.slug}/`;
+  }
+  return false;
 }
 
 function validateOfficialSourceOutput(html, item, relPath) {
@@ -491,6 +499,16 @@ function readText(relPath) {
 
 function trimLeadingSlash(value) {
   return String(value || '').replace(/^\/+/, '');
+}
+
+function outputPathFromUrl(value) {
+  const pathname = String(value || '')
+    .replace(/^https?:\/\/[^/]+/i, '')
+    .split('#')[0]
+    .split('?')[0]
+    .replace(/^\/+/, '');
+  const normalized = pathname.endsWith('/') ? pathname : `${pathname}/`;
+  return path.posix.join(normalized, 'index.html');
 }
 
 function absoluteUrl(url) {

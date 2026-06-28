@@ -740,15 +740,15 @@
     "slug": "hellotalk-language-exchange-guide",
     "category": "教材・リソース",
     "content_type": "resource",
-    "summary": "HelloTalkをチャット、音声、短い投稿で使うときの向き不向きと、実用フレーズ記事との組み合わせ方です。",
+    "summary": "HelloTalkをドイツ語のチャット、音声メッセージ、投稿、通話練習に使う手順と注意点を整理します。J-Connectの実用フレーズ記事と組み合わせる使い方も紹介します。",
     "url": "/germany/ja/learn-german/hellotalk-language-exchange-guide/",
     "markdown_path": "/content/learn-german/hellotalk-language-exchange-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-20",
-    "updated_at": "2026-06-20",
-    "last_verified": "2026-06-20",
-    "tags": ["HelloTalk", "言語交換", "チャット"],
+    "updated_at": "2026-06-28",
+    "last_verified": "2026-06-28",
+    "tags": ["HelloTalk", "言語交換", "チャット", "会話練習"],
     "home_visible": false,
     "home_order": 200,
     "hub_visible": true,
@@ -771,8 +771,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-20",
-      "next_review_due": "2026-12-20"
+      "last_reviewed_at": "2026-06-28",
+      "next_review_due": "2026-12-28"
     }
   },
   {

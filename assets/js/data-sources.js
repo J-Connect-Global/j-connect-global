@@ -18,6 +18,13 @@
     jobs: "jobs"
   });
 
+  const staticData = Object.freeze({
+    communityPosts: "/assets/data/community/posts.json",
+    communityCategories: "/assets/data/community/categories.json",
+    jobs: "/assets/data/jobs/jobs.json",
+    jobCategories: "/assets/data/jobs/categories.json"
+  });
+
   function buildUrl(endpoint, params) {
     const url = new URL(endpoint);
     Object.entries(params || {}).forEach(([key, value]) => {
@@ -59,6 +66,7 @@
   window.JCONNECT_DATA_SOURCES = Object.freeze({
     directoryDataEndpoint,
     directorySheets,
+    staticData,
     communityDataEndpoint,
     buildDirectoryUrl(params) {
       return buildUrl(directoryDataEndpoint, params);

@@ -322,8 +322,11 @@
   <script src="/assets/js/community-shared.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
+    const COMMUNITY_STATIC_POSTS_URL = DATA_SOURCES.staticData?.communityPosts || "/assets/data/community/posts.json";
     const COMMUNITY_POSTS_URL = DATA_SOURCES.buildCommunityUrl({ action: "getPosts" });
     const DATA_TIMEOUT_MS = 12000;
+    const STATIC_DATA_TIMEOUT_MS = 5000;
+    const GAS_FALLBACK_TIMEOUT_MS = 8000;
     const SUBCATEGORY_OPTIONS = {
       "売ります": ["帰国売り", "家具・家電", "生活用品", "子ども用品", "本・教材", "車・自転車", "その他"],
       "買います": ["家具・家電", "生活用品", "子ども用品", "本・教材", "車・自転車", "その他"],
@@ -1155,8 +1158,17 @@
       }
     }
 
-    async function fetchJson(url) {
-      return DATA_SOURCES.fetchJsonWithTimeout(url, DATA_TIMEOUT_MS);
+    async function fetchJson(url, timeoutMs = DATA_TIMEOUT_MS) {
+      return DATA_SOURCES.fetchJsonWithTimeout(url, timeoutMs);
+    }
+
+    async function fetchCommunityPostsData() {
+      try {
+        return await fetchJson(COMMUNITY_STATIC_POSTS_URL, STATIC_DATA_TIMEOUT_MS);
+      } catch (staticError) {
+        console.warn("Community static posts load failed; trying GAS fallback:", COMMUNITY_STATIC_POSTS_URL, staticError);
+        return await fetchJson(COMMUNITY_POSTS_URL, GAS_FALLBACK_TIMEOUT_MS);
+      }
     }
 
     function renderEmptyActions(mode = "filters") {
@@ -1189,7 +1201,7 @@
       els.resultText.innerHTML = '<span class="skeleton-text medium"></span>';
       renderSkeletons();
       try {
-        const data = await fetchJson(COMMUNITY_POSTS_URL);
+        const data = await fetchCommunityPostsData();
         const rows = DATA_SOURCES.normalizePayload(data);
         state.posts = rows.map(normalizePost);
         state.loading = false;
@@ -1197,7 +1209,7 @@
         renderAreas();
         applyFilters();
       } catch (error) {
-        console.warn("Community posts load failed:", COMMUNITY_POSTS_URL, error);
+        console.warn("Community posts load failed:", COMMUNITY_STATIC_POSTS_URL, error);
         state.posts = [];
         state.filtered = [];
         state.loading = false;

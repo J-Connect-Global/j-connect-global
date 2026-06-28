@@ -636,12 +636,15 @@
   <script src="/assets/js/data-sources.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
+    const JOBS_STATIC_URL = DATA_SOURCES.staticData?.jobs || '/assets/data/jobs/jobs.json';
     const JOBS_API_URL = DATA_SOURCES.buildDirectoryUrl({
       sheet: DATA_SOURCES.directorySheets.jobs,
       lang: 'ja',
       status: 'active'
     });
     const DATA_TIMEOUT_MS = 12000;
+    const STATIC_DATA_TIMEOUT_MS = 5000;
+    const GAS_FALLBACK_TIMEOUT_MS = 8000;
 
     let jobs = [];
     let filtered = [];
@@ -1164,11 +1167,20 @@
       els.emptyBox.querySelector('[data-retry-load]')?.addEventListener('click', loadJobs);
     }
 
+    async function fetchJobsData(){
+      try {
+        return await DATA_SOURCES.fetchJsonWithTimeout(JOBS_STATIC_URL, STATIC_DATA_TIMEOUT_MS);
+      } catch (staticError) {
+        console.warn('Jobs static data load failed; trying GAS fallback:', JOBS_STATIC_URL, staticError);
+        return await DATA_SOURCES.fetchJsonWithTimeout(JOBS_API_URL, GAS_FALLBACK_TIMEOUT_MS);
+      }
+    }
+
     async function loadJobs(){
       setJobsLoading();
 
       try {
-        const payload = await DATA_SOURCES.fetchJsonWithTimeout(JOBS_API_URL, DATA_TIMEOUT_MS);
+        const payload = await fetchJobsData();
         const rows = normalizePayload(payload);
 
         jobs = rows
@@ -1203,7 +1215,7 @@
         scrollToCurrentHash();
 
       } catch (error) {
-        console.warn('Jobs data load failed:', JOBS_API_URL, error);
+        console.warn('Jobs data load failed:', JOBS_STATIC_URL, error);
 
         jobs = [];
         filtered = [];

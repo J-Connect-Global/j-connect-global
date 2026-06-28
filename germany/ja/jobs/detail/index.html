@@ -281,7 +281,10 @@
 <script>
 (function(){
   const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
+  const JOBS_STATIC_URL = DATA_SOURCES.staticData?.jobs || "/assets/data/jobs/jobs.json";
   const JOBS_API_URL = DATA_SOURCES.buildDirectoryUrl({ sheet: DATA_SOURCES.directorySheets.jobs, lang: "ja", status: "active" });
+  const STATIC_DATA_TIMEOUT_MS = 5000;
+  const GAS_FALLBACK_TIMEOUT_MS = 8000;
   const detail = document.getElementById("jobDetail");
   const queryId = new URLSearchParams(location.search).get("id") || "";
 
@@ -550,6 +553,15 @@
     });
   }
 
+  async function fetchJobsData(){
+    try {
+      return await DATA_SOURCES.fetchJsonWithTimeout(JOBS_STATIC_URL, STATIC_DATA_TIMEOUT_MS);
+    } catch (staticError) {
+      console.warn("Jobs static detail data load failed; trying GAS fallback:", JOBS_STATIC_URL, staticError);
+      return await DATA_SOURCES.fetchJsonWithTimeout(JOBS_API_URL, GAS_FALLBACK_TIMEOUT_MS);
+    }
+  }
+
   async function loadJob(){
     if (!queryId) {
       renderEmpty("missing");
@@ -561,7 +573,7 @@
     if (fallbackJob) renderJob(fallbackJob);
 
     try {
-      const payload = await DATA_SOURCES.fetchJsonWithTimeout(JOBS_API_URL, 12000);
+      const payload = await fetchJobsData();
       const rows = DATA_SOURCES.normalizePayload(payload)
         .map(normalizeJob)
         .filter(job => clean(job.status).toLowerCase() === "active");
@@ -569,7 +581,7 @@
       if (remoteJob) renderJob(remoteJob);
       if (!remoteJob && !fallbackJob) renderEmpty("notfound");
     } catch (error) {
-      console.warn("Job detail load failed:", JOBS_API_URL, error);
+      console.warn("Job detail load failed:", JOBS_STATIC_URL, error);
       if (!fallbackJob) renderEmpty("notfound");
     }
   }

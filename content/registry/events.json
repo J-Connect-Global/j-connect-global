@@ -6,18 +6,20 @@
     "image_url": "/assets/images/placeholders/event.svg",
     "image_alt": "Local event calendar card",
     "category": "日本文化イベント",
-    "summary": "ライン川沿いで開かれる日本文化イベントを、初めて参加する人向けに整理しました。",
+    "summary": "デュッセルドルフの日本デーについて、初めて行く人向けに見どころ、混雑、アクセス、子連れ・花火観覧の注意点を整理します。",
     "url": "/germany/ja/events/japan-day-duesseldorf/",
     "markdown_path": "/content/events/japan-day-duesseldorf.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-06-12",
-    "last_verified": "2026-06-12",
+    "updated_at": "2026-06-28",
+    "last_verified": "2026-06-28",
     "tags": [
       "日本文化",
       "家族向け",
-      "NRW"
+      "NRW",
+      "Düsseldorf",
+      "花火"
     ],
     "home_visible": true,
     "home_order": 10,
@@ -27,16 +29,21 @@
     "canonical_url": "/germany/ja/events/japan-day-duesseldorf/",
     "city": "Düsseldorf",
     "location": "Rheinuferpromenade 周辺",
-    "event_date": "年により異なる",
-    "official_url": "",
-    "official_sources": [],
+    "event_date": "次回日程は公式発表を確認",
+    "official_url": "https://www.visitduesseldorf.de/erleben/veranstaltungen/japan-tag-duesseldorf-nrw",
+    "official_sources": [
+      {
+        "title": "Visit Düsseldorf Japan-Tag Düsseldorf/NRW",
+        "url": "https://www.visitduesseldorf.de/erleben/veranstaltungen/japan-tag-duesseldorf-nrw"
+      }
+    ],
     "disclaimer_type": "event",
     "related_articles": [],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-12",
-      "next_review_due": "2027-06-12"
+      "last_reviewed_at": "2026-06-28",
+      "next_review_due": "2027-06-28"
     }
   },
   {
@@ -44,18 +51,20 @@
     "title": "デュッセルドルフ周辺のクリスマスマーケット基本ガイド",
     "slug": "christmas-markets-duesseldorf",
     "category": "季節イベント",
-    "summary": "冬のNRWで楽しめるクリスマスマーケットの回り方、混雑、服装、確認ポイントを整理。",
+    "summary": "デュッセルドルフとNRW周辺のクリスマスマーケットについて、会場の回り方、混雑、防寒、子連れ、交通、確認ポイントを整理します。",
     "url": "/germany/ja/events/christmas-markets-duesseldorf/",
     "markdown_path": "/content/events/christmas-markets-duesseldorf.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-06-12",
-    "last_verified": "2026-06-12",
+    "updated_at": "2026-06-28",
+    "last_verified": "2026-06-28",
     "tags": [
       "冬",
       "クリスマスマーケット",
-      "NRW"
+      "NRW",
+      "Düsseldorf",
+      "家族向け"
     ],
     "home_visible": true,
     "home_order": 20,
@@ -66,15 +75,20 @@
     "city": "Düsseldorf / NRW",
     "location": "Düsseldorf とNRW各都市",
     "event_date": "年により異なる",
-    "official_url": "",
-    "official_sources": [],
+    "official_url": "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf",
+    "official_sources": [
+      {
+        "title": "Visit Düsseldorf Weihnachten in Düsseldorf",
+        "url": "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
+      }
+    ],
     "disclaimer_type": "event",
     "related_articles": [],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-12",
-      "next_review_due": "2027-06-12"
+      "last_reviewed_at": "2026-06-28",
+      "next_review_due": "2027-06-28"
     }
   },
   {

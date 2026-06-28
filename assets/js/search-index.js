@@ -506,24 +506,28 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "デュッセルドルフ日本デーの基本ガイド",
-    "description": "ライン川沿いで開かれる日本文化イベントを、初めて参加する人向けに整理しました。",
+    "description": "デュッセルドルフの日本デーについて、初めて行く人向けに見どころ、混雑、アクセス、子連れ・花火観覧の注意点を整理します。",
     "url": "/germany/ja/events/japan-day-duesseldorf/",
     "category": "ニュース・イベント",
     "tags": [
       "日本文化",
       "家族向け",
-      "NRW"
+      "NRW",
+      "Düsseldorf",
+      "花火"
     ]
   },
   {
     "title": "デュッセルドルフ周辺のクリスマスマーケット基本ガイド",
-    "description": "冬のNRWで楽しめるクリスマスマーケットの回り方、混雑、服装、確認ポイントを整理。",
+    "description": "デュッセルドルフとNRW周辺のクリスマスマーケットについて、会場の回り方、混雑、防寒、子連れ、交通、確認ポイントを整理します。",
     "url": "/germany/ja/events/christmas-markets-duesseldorf/",
     "category": "ニュース・イベント",
     "tags": [
       "冬",
       "クリスマスマーケット",
-      "NRW"
+      "NRW",
+      "Düsseldorf",
+      "家族向け"
     ]
   },
   {

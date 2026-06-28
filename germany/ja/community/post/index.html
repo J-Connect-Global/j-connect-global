@@ -1173,7 +1173,10 @@
 <script>
 const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
 const GAS_URL = DATA_SOURCES.communityDataEndpoint;
+const COMMUNITY_STATIC_POSTS_URL = DATA_SOURCES.staticData?.communityPosts || '/assets/data/community/posts.json';
 const COMMUNITY_POSTS_URL = DATA_SOURCES.buildCommunityUrl({ action: 'getPosts' });
+const STATIC_DATA_TIMEOUT_MS = 5000;
+const GAS_FALLBACK_TIMEOUT_MS = 8000;
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const detailPostId = new URLSearchParams(location.search).get('id');
 const DETAIL_STORAGE_KEY = 'ngg-community-saved-posts';
@@ -1315,6 +1318,15 @@ async function fetchJson(url, options) {
     throw new Error('Network error for ' + url);
   }
   return await res.json();
+}
+
+async function fetchCommunityPostsData() {
+  try {
+    return await DATA_SOURCES.fetchJsonWithTimeout(COMMUNITY_STATIC_POSTS_URL, STATIC_DATA_TIMEOUT_MS);
+  } catch (staticError) {
+    console.warn('Community static detail data load failed; trying GAS fallback:', COMMUNITY_STATIC_POSTS_URL, staticError);
+    return await DATA_SOURCES.fetchJsonWithTimeout(COMMUNITY_POSTS_URL, GAS_FALLBACK_TIMEOUT_MS);
+  }
 }
 
 function buildCategoryMap(rows) {
@@ -1923,7 +1935,7 @@ async function loadStandaloneDetail(id) {
   document.getElementById('detailMode').hidden = false;
 
   try {
-    const data = await fetchJson(COMMUNITY_POSTS_URL);
+    const data = await fetchCommunityPostsData();
     const posts = DATA_SOURCES.normalizePayload(data).map(normalizePost);
     const post = posts.find(function(item) { return String(item._id) === String(id); });
     if (!post) {
@@ -1932,7 +1944,7 @@ async function loadStandaloneDetail(id) {
     }
     renderStandaloneDetail(post, posts);
   } catch (error) {
-    console.error('Community detail load failed:', COMMUNITY_POSTS_URL, error);
+    console.error('Community detail load failed:', COMMUNITY_STATIC_POSTS_URL, error);
     renderNotFound();
   }
 }

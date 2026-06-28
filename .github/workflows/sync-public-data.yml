@@ -1,0 +1,35 @@
+name: Sync public data
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-public-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Sync community and jobs data
+        env:
+          COMMUNITY_API_URL: ${{ secrets.COMMUNITY_API_URL }}
+          CONTENTS_API_URL: ${{ secrets.CONTENTS_API_URL }}
+          JOBS_API_URL: ${{ secrets.JOBS_API_URL }}
+        run: node scripts/sync-public-data.mjs
+
+      - name: Commit updated public data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(data): sync public community and jobs data [skip ci]"
+          file_pattern: assets/data/community/*.json assets/data/jobs/*.json

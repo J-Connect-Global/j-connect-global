@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-06-28T08:04:44.617Z",
+  "source": "community-gas",
+  "count": 19,
+  "groups": [
+    {
+      "field": "category1",
+      "values": [
+        "レッスン・習い事",
+        "質問・相談",
+        "住まい・物件",
+        "仲間募集",
+        "売ります",
+        "売ります・買います",
+        "友達募集"
+      ]
+    },
+    {
+      "field": "category2",
+      "values": [
+        "その他",
+        "ダンス",
+        "帰国売り",
+        "言語交換",
+        "生活",
+        "部屋を貸します",
+        "友達",
+        "留学"
+      ]
+    },
+    {
+      "field": "city",
+      "values": [
+        "Berlin - Berlin",
+        "Duesseldorf",
+        "DUS",
+        "Dusseldorf",
+        "Düsseldorf",
+        "Koeln",
+        "オーバーカッセル",
+        "デュッセルドルフ"
+      ]
+    },
+    {
+      "field": "region",
+      "values": [
+        "Berlin",
+        "NRW"
+      ]
+    }
+  ]
+}

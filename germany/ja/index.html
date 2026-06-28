@@ -484,6 +484,10 @@
     const cardRoot = document.getElementById("homeCommunityCards");
     if (!shared || !miniRoot || !cardRoot) return;
 
+    const COMMUNITY_STATIC_POSTS_URL = dataSources?.staticData?.communityPosts || "/assets/data/community/posts.json";
+    const STATIC_DATA_TIMEOUT_MS = 5000;
+    const GAS_FALLBACK_TIMEOUT_MS = 8000;
+
     const imageClassByType = {
       "売ります": "img-bike",
       "譲ります": "img-bike",
@@ -615,6 +619,16 @@
       }).join("");
     }
 
+    async function fetchCommunityPostsData() {
+      try {
+        return await dataSources.fetchJsonWithTimeout(COMMUNITY_STATIC_POSTS_URL, STATIC_DATA_TIMEOUT_MS);
+      } catch (staticError) {
+        const fallbackUrl = dataSources.buildCommunityUrl({ action: "getPosts" });
+        console.warn("Home community static data load failed; trying GAS fallback:", COMMUNITY_STATIC_POSTS_URL, staticError);
+        return await dataSources.fetchJsonWithTimeout(fallbackUrl, GAS_FALLBACK_TIMEOUT_MS);
+      }
+    }
+
     async function loadCommunityPosts() {
       if (!dataSources) {
         renderFallback();
@@ -622,8 +636,7 @@
       }
 
       try {
-        const url = dataSources.buildCommunityUrl({ action: "getPosts" });
-        const payload = await dataSources.fetchJsonWithTimeout(url, 9000);
+        const payload = await fetchCommunityPostsData();
         const rows = dataSources.normalizePayload(payload);
         const posts = normalizeRows(rows);
         render(posts);
@@ -642,6 +655,10 @@
     const miniRoot = document.getElementById("homeJobsMini");
     const cardRoot = document.getElementById("homeJobsCards");
     if (!dataSources || !jobsShared || !miniRoot || !cardRoot) return;
+
+    const JOBS_STATIC_URL = dataSources.staticData?.jobs || "/assets/data/jobs/jobs.json";
+    const STATIC_DATA_TIMEOUT_MS = 5000;
+    const GAS_FALLBACK_TIMEOUT_MS = 8000;
 
     const iconSet = ["▦", "▥", "▣"];
 
@@ -724,14 +741,23 @@
       }).join("");
     }
 
-    async function loadJobs() {
+    async function fetchJobsData() {
       try {
-        const url = dataSources.buildDirectoryUrl({
+        return await dataSources.fetchJsonWithTimeout(JOBS_STATIC_URL, STATIC_DATA_TIMEOUT_MS);
+      } catch (staticError) {
+        const fallbackUrl = dataSources.buildDirectoryUrl({
           sheet: dataSources.directorySheets.jobs,
           lang: "ja",
           status: "active"
         });
-        const payload = await dataSources.fetchJsonWithTimeout(url, 9000);
+        console.warn("Home jobs static data load failed; trying GAS fallback:", JOBS_STATIC_URL, staticError);
+        return await dataSources.fetchJsonWithTimeout(fallbackUrl, GAS_FALLBACK_TIMEOUT_MS);
+      }
+    }
+
+    async function loadJobs() {
+      try {
+        const payload = await fetchJobsData();
         const rows = dataSources.normalizePayload(payload);
         render(jobsShared.activeJobs(rows));
       } catch (error) {

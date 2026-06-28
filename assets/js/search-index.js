@@ -830,13 +830,14 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "A1から生活で困らないレベルを目指すドイツ語ルート",
-    "description": "A1から、買い物、電話予約、病院、役所など日常生活で最低限伝える力を伸ばす読む順番です。",
+    "description": "A1から、買い物、電話予約、病院、役所などドイツ生活で最低限必要な場面を順番に練習する学習ルートです。",
     "url": "/germany/ja/learn-german/a1-daily-life-german-route/",
     "category": "ドイツ語・学び",
     "tags": [
       "A1",
       "生活ドイツ語",
       "初心者",
+      "新生活",
       "route",
       "shopping",
       "phone",
@@ -1082,13 +1083,14 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "VHSとは？ドイツで通える市民講座のドイツ語コース",
-    "description": "VHSのドイツ語コースを検討するときに見るポイントと、J-Connectの実用フレーズ記事との組み合わせ方です。",
+    "description": "VHSのドイツ語コースを探す方法、レベル選び、料金・補助制度で確認すべき点、J-Connect記事との組み合わせ方を整理します。",
     "url": "/germany/ja/learn-german/vhs-german-course-guide/",
     "category": "ドイツ語・学び",
     "tags": [
       "VHS",
       "講座",
       "A1-B2",
+      "統合コース",
       "resource",
       "administration",
       "work",

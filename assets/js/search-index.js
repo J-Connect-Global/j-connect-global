@@ -978,13 +978,14 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "HelloTalkとは？チャットと通話でドイツ語を練習する方法",
-    "description": "HelloTalkをチャット、音声、短い投稿で使うときの向き不向きと、実用フレーズ記事との組み合わせ方です。",
+    "description": "HelloTalkをドイツ語のチャット、音声メッセージ、投稿、通話練習に使う手順と注意点を整理します。J-Connectの実用フレーズ記事と組み合わせる使い方も紹介します。",
     "url": "/germany/ja/learn-german/hellotalk-language-exchange-guide/",
     "category": "ドイツ語・学び",
     "tags": [
       "HelloTalk",
       "言語交換",
       "チャット",
+      "会話練習",
       "resource",
       "phone",
       "parenting",

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Learn German resource placeholder</title>
+  <desc id="desc">Abstract laptop and learning resource cards.</desc>
+  <rect width="960" height="540" fill="#eef6fb"/>
+  <rect x="170" y="120" width="620" height="310" rx="26" fill="#ffffff"/>
+  <rect x="218" y="166" width="270" height="32" rx="10" fill="#0067c9" opacity=".18"/>
+  <rect x="218" y="232" width="524" height="44" rx="14" fill="#0b2545" opacity=".10"/>
+  <rect x="218" y="302" width="230" height="70" rx="18" fill="#ffc400" opacity=".34"/>
+  <rect x="480" y="302" width="262" height="70" rx="18" fill="#0067c9" opacity=".14"/>
+  <path d="M260 456h440" stroke="#0067c9" stroke-width="24" stroke-linecap="round" opacity=".22"/>
+</svg>

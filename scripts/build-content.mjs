@@ -6,6 +6,13 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE_ORIGIN = 'https://j-connect-global.com';
 const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
+const cardFallbackImages = {
+  livingColumn: '/assets/images/placeholders/living-column.svg',
+  event: '/assets/images/placeholders/event.svg',
+  learnPhrase: '/assets/images/placeholders/learn-german-daily.svg',
+  learnRoute: '/assets/images/placeholders/learn-german-route.svg',
+  learnResource: '/assets/images/placeholders/learn-german-resource.svg'
+};
 
 const pillarLabels = {
   home: 'ホーム',
@@ -190,6 +197,15 @@ function normalizeItem(type, item, index) {
   const published = item.published === true || item.published === 'true' || item.status === 'published';
   const url = item.url || `/germany/ja/${type}/${slug}/`;
   const summary = item.summary || item.description || '';
+  const imageUrl = firstNonEmpty(
+    item.image_url,
+    item.imageUrl,
+    item.image,
+    item.thumbnail_url,
+    item.thumbnail,
+    item.cover_image,
+    item.hero_image
+  );
 
   const normalized = {
     ...item,
@@ -210,6 +226,8 @@ function normalizeItem(type, item, index) {
     official_sources: normalizeSources(item.official_sources?.length ? item.official_sources : item.sources),
     disclaimer_type: item.disclaimer_type || type,
     related_articles: toArray(item.related_articles),
+    image_url: imageUrl,
+    image_alt: firstNonEmpty(item.image_alt, item.imageAlt, item.alt_text, item.alt),
     review: normalizeReview(item)
   };
 
@@ -1068,9 +1086,12 @@ function renderLivingHubCard(item) {
   const reviewDate = item.review?.last_reviewed_at || item.last_verified || '';
   const nextReview = item.review?.next_review_due || '';
   const dateText = reviewDate || item.updated_at || item.published_at || '';
+  const media = renderCardMedia(item, item.title, cardFallbackImages.livingColumn);
+  const mediaClass = media ? ' card--has-media' : '';
 
-  return `<article class="jc-article-card living-hub-card living-column-card" data-living-card data-url="${escapeAttribute(item.url)}" data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-search="${escapeAttribute(searchText)}" data-published="${escapeAttribute(item.published_at || '')}" data-reviewed="${escapeAttribute(reviewDate)}" data-updated="${escapeAttribute(item.updated_at || '')}">
+  return `<article class="jc-article-card living-hub-card living-column-card${mediaClass}" data-living-card data-url="${escapeAttribute(item.url)}" data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-search="${escapeAttribute(searchText)}" data-published="${escapeAttribute(item.published_at || '')}" data-reviewed="${escapeAttribute(reviewDate)}" data-updated="${escapeAttribute(item.updated_at || '')}">
   <button class="living-column-save" type="button" data-living-save aria-pressed="false" aria-label="${escapeAttribute(`保存: ${item.title}`)}">☆</button>
+${media ? indent(media, 2) : ''}
   <div class="jc-card-meta">
     <span class="jc-chip">${escapeHtml(item.category || '生活ガイド')}</span>
 ${indent(item.tags.map((tag) => `<span class="jc-chip">${escapeHtml(tag)}</span>`).join('\n'), 4)}
@@ -1103,8 +1124,11 @@ function renderEventHubCard(item) {
     item.location,
     ...item.tags
   ].join(' ');
+  const media = renderCardMedia(item, item.title, cardFallbackImages.event);
+  const mediaClass = media ? ' card--has-media' : '';
 
-  return `<a class="jc-article-card events-hub-card" href="${escapeAttribute(item.url)}" data-events-card data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-location="${escapeAttribute([item.city, item.location].filter(Boolean).join(' '))}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-search="${escapeAttribute(searchText)}" data-filter="${escapeAttribute(filterText)}" data-published="${escapeAttribute(item.published_at || '')}" data-event-date="${escapeAttribute(eventFilters.date)}" data-event-area="${escapeAttribute(eventFilters.area.join(' '))}" data-event-category="${escapeAttribute(eventFilters.category.join(' '))}" data-event-format="${escapeAttribute(eventFilters.format.join(' '))}" data-event-language="${escapeAttribute(eventFilters.language.join(' '))}" data-event-price="${escapeAttribute(eventFilters.price.join(' '))}">
+  return `<a class="jc-article-card events-hub-card${mediaClass}" href="${escapeAttribute(item.url)}" data-events-card data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-location="${escapeAttribute([item.city, item.location].filter(Boolean).join(' '))}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-search="${escapeAttribute(searchText)}" data-filter="${escapeAttribute(filterText)}" data-published="${escapeAttribute(item.published_at || '')}" data-event-date="${escapeAttribute(eventFilters.date)}" data-event-area="${escapeAttribute(eventFilters.area.join(' '))}" data-event-category="${escapeAttribute(eventFilters.category.join(' '))}" data-event-format="${escapeAttribute(eventFilters.format.join(' '))}" data-event-language="${escapeAttribute(eventFilters.language.join(' '))}" data-event-price="${escapeAttribute(eventFilters.price.join(' '))}">
+${media ? indent(media, 2) : ''}
   <div class="jc-card-meta"><span>${escapeHtml(item.event_date || '日程確認中')}</span><span>${escapeHtml(item.city || item.location || 'ドイツ')}</span><span>${escapeHtml(item.category || 'イベント')}</span></div>
   <h3>${escapeHtml(item.title)}</h3>
   <p>${escapeHtml(item.summary)}</p>
@@ -1226,8 +1250,11 @@ function renderLearnGermanPhraseHubCard(item) {
     formatLearnGermanMeta('skill', item.skill),
     formatLearnGermanMeta('duration', item.duration)
   ].filter(Boolean);
+  const media = renderCardMedia(item, item.title, cardFallbackImages.learnPhrase);
+  const mediaClass = media ? ' card--has-media' : '';
 
-  return `<a class="jc-article-card learn-article-card" href="${escapeAttribute(item.url)}" data-learn-article-card data-content-type="phrase" data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-situation="${escapeAttribute(toArray(item.situation).join(' '))}" data-goal="${escapeAttribute(toArray(item.goal).join(' '))}" data-level="${escapeAttribute(toArray(item.level).join(' '))}" data-skill="${escapeAttribute(toArray(item.skill).join(' '))}" data-duration="${escapeAttribute(toArray(item.duration).join(' '))}" data-search="${escapeAttribute(searchText)}" data-published="${escapeAttribute(item.published_at || '')}">
+  return `<a class="jc-article-card learn-article-card${mediaClass}" href="${escapeAttribute(item.url)}" data-learn-article-card data-content-type="phrase" data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-situation="${escapeAttribute(toArray(item.situation).join(' '))}" data-goal="${escapeAttribute(toArray(item.goal).join(' '))}" data-level="${escapeAttribute(toArray(item.level).join(' '))}" data-skill="${escapeAttribute(toArray(item.skill).join(' '))}" data-duration="${escapeAttribute(toArray(item.duration).join(' '))}" data-search="${escapeAttribute(searchText)}" data-published="${escapeAttribute(item.published_at || '')}">
+${media ? indent(media, 2) : ''}
   <div class="jc-card-meta">${metaChips.map((chip) => `<span>${escapeHtml(chip)}</span>`).join('')}</div>
   <h3>${escapeHtml(item.title)}</h3>
   <p>${escapeHtml(item.summary)}</p>
@@ -1242,8 +1269,11 @@ function renderLearnGermanRouteHubCard(item) {
     formatLearnGermanMeta('goal', item.goal),
     formatLearnGermanMeta('duration', item.duration)
   ].filter(Boolean);
+  const media = renderCardMedia(item, item.title, cardFallbackImages.learnRoute);
+  const mediaClass = media ? ' card--has-media' : '';
 
-  return `<a class="jc-card learn-route-card" href="${escapeAttribute(item.url)}" data-learn-route-card>
+  return `<a class="jc-card learn-route-card${mediaClass}" href="${escapeAttribute(item.url)}" data-learn-route-card>
+${media ? indent(media, 2) : ''}
   <div class="jc-card-meta">${metaChips.map((chip) => `<span>${escapeHtml(chip)}</span>`).join('')}</div>
   <h3>${escapeHtml(item.title)}</h3>
   <p>${escapeHtml(item.summary)}</p>
@@ -1267,8 +1297,11 @@ function renderLearnGermanResourceHubCard(item) {
     formatLearnGermanMeta('resource_level', item.resource_level),
     formatLearnGermanMeta('resource_price_type', item.resource_price_type)
   ].filter(Boolean);
+  const media = renderCardMedia(item, item.title, cardFallbackImages.learnResource);
+  const mediaClass = media ? ' card--has-media' : '';
 
-  return `<a class="jc-article-card learn-resource-card" href="${escapeAttribute(item.url)}" data-resource-article-card data-content-type="resource" data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-resource-skill="${escapeAttribute(toArray(item.resource_skills).join(' '))}" data-resource-format="${escapeAttribute(toArray(item.resource_format).join(' '))}" data-resource-level="${escapeAttribute(toArray(item.resource_level).join(' '))}" data-resource-price="${escapeAttribute(toArray(item.resource_price_type).join(' '))}" data-search="${escapeAttribute(searchText)}" data-published="${escapeAttribute(item.published_at || '')}">
+  return `<a class="jc-article-card learn-resource-card${mediaClass}" href="${escapeAttribute(item.url)}" data-resource-article-card data-content-type="resource" data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-resource-skill="${escapeAttribute(toArray(item.resource_skills).join(' '))}" data-resource-format="${escapeAttribute(toArray(item.resource_format).join(' '))}" data-resource-level="${escapeAttribute(toArray(item.resource_level).join(' '))}" data-resource-price="${escapeAttribute(toArray(item.resource_price_type).join(' '))}" data-search="${escapeAttribute(searchText)}" data-published="${escapeAttribute(item.published_at || '')}">
+${media ? indent(media, 2) : ''}
   <div class="jc-card-meta">${badges.map((badge) => `<span>${escapeHtml(badge)}</span>`).join('')}</div>
   <h3>${escapeHtml(item.title)}</h3>
   <p>${escapeHtml(item.summary)}</p>
@@ -1626,6 +1659,26 @@ function toArray(value) {
   if (Array.isArray(value)) return value.filter((entry) => String(entry).trim()).map(String);
   if (!value) return [];
   return String(value).split(',').map((entry) => entry.trim()).filter(Boolean);
+}
+
+function firstNonEmpty(...values) {
+  for (const value of values) {
+    const text = String(value || '').trim();
+    if (text) return text;
+  }
+  return '';
+}
+
+function renderCardMedia(item, fallbackAlt = '', fallbackImage = '') {
+  const src = firstNonEmpty(item.image_url, fallbackImage);
+  if (!src) return '';
+  const alt = firstNonEmpty(item.image_alt, fallbackAlt, item.title);
+  const fallback = firstNonEmpty(fallbackImage);
+  const fallbackAttribute = fallback && fallback !== src ? ` data-fallback="${escapeAttribute(fallback)}"` : '';
+  const onError = fallback && fallback !== src
+    ? `if(this.dataset.fallback&&this.getAttribute('src')!==this.dataset.fallback){this.src=this.dataset.fallback}else{this.closest('.card--has-media')?.classList.remove('card--has-media');this.closest('.card-media')?.remove();}`
+    : `this.closest('.card--has-media')?.classList.remove('card--has-media');this.closest('.card-media')?.remove();`;
+  return `<div class="card-media"><img src="${escapeAttribute(src)}" alt="${escapeAttribute(alt)}" loading="lazy" decoding="async"${fallbackAttribute} onerror="${escapeAttribute(onError)}"></div>`;
 }
 
 function uniqueArray(values) {

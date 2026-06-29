@@ -26,6 +26,8 @@ const requiredPages = [
   '/germany/ja/community/report/',
   '/germany/ja/community/delete/',
   '/germany/ja/community/thanks/',
+  '/germany/ja/community/complete/',
+  '/germany/ja/community/manage/',
   '/germany/ja/terms/',
   '/germany/ja/privacy/',
   '/germany/ja/impressum/',

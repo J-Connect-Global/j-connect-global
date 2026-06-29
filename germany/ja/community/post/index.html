@@ -588,6 +588,8 @@
 .badge.free{background:#def7e8;color:#0f6a3d;border-color:#bde9cd}
 .badge.urgent{background:#fff0e7;color:#a54912;border-color:#ffd5bb}
 .badge.japanese{background:#eaf4ff;color:#a83252}
+.badge.is-active{background:#eafaf1;color:#11643a;border-color:#bde9cd}
+.badge.is-closed{background:#f1f5f9;color:#475569;border-color:#cbd5e1}
 
 .detail-body{
   white-space:pre-wrap;
@@ -598,6 +600,14 @@
 
 .detail-actions .btn{
   box-shadow:none;
+}
+
+.btn.is-disabled,
+.btn[aria-disabled="true"]{
+  opacity:.62;
+  cursor:not-allowed;
+  pointer-events:none;
+  filter:saturate(.75);
 }
 
 .related-panel,
@@ -1055,6 +1065,12 @@
             <input id="contact_email_private" name="contact_email_private" type="email" required>
           </div>
 
+          <div class="form-field">
+            <label for="edit_password">編集用パスワード<span class="required-mark">*</span></label>
+            <input id="edit_password" name="edit_password" type="password" minlength="6" autocomplete="new-password" required>
+            <p class="field-note">投稿の編集、募集終了、再開、非公開化に使います。6文字以上で設定してください。</p>
+          </div>
+
           <p class="field-note">
             メールアドレスはサイト上に表示されません。ただし、本文には住所や電話番号などの個人情報を書きすぎないようにしてください。
           </p>
@@ -1181,7 +1197,7 @@ const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const detailPostId = new URLSearchParams(location.search).get('id');
 const DETAIL_STORAGE_KEY = 'ngg-community-saved-posts';
 const LAST_SUBMISSION_KEY = 'jconnectCommunityLastSubmission';
-const THANKS_URL = '/germany/ja/community/thanks/';
+const COMPLETE_URL = '/germany/ja/community/complete/';
 const SUBCATEGORY_OPTIONS = {
   '売ります': ['帰国売り', '家具・家電', '生活用品', '子ども用品', '本・教材', '車・自転車', 'その他'],
   '買います': ['家具・家電', '生活用品', '子ども用品', '本・教材', '車・自転車', 'その他'],
@@ -1322,10 +1338,10 @@ async function fetchJson(url, options) {
 
 async function fetchCommunityPostsData() {
   try {
+    return await DATA_SOURCES.fetchJsonWithTimeout(DATA_SOURCES.buildCommunityUrl({ action: 'listPosts', includeClosed: 'true', bypassCache: 'true' }), GAS_FALLBACK_TIMEOUT_MS);
+  } catch (gasError) {
+    console.warn('Community GAS detail data load failed; trying static fallback:', gasError);
     return await DATA_SOURCES.fetchJsonWithTimeout(COMMUNITY_STATIC_POSTS_URL, STATIC_DATA_TIMEOUT_MS);
-  } catch (staticError) {
-    console.warn('Community static detail data load failed; trying GAS fallback:', COMMUNITY_STATIC_POSTS_URL, staticError);
-    return await DATA_SOURCES.fetchJsonWithTimeout(COMMUNITY_POSTS_URL, GAS_FALLBACK_TIMEOUT_MS);
   }
 }
 
@@ -1439,8 +1455,23 @@ function getResponsePostId(response) {
   return '';
 }
 
+function getResponseValue(response, keys) {
+  if (!response || typeof response !== 'object') return '';
+  for (const key of keys) {
+    if (response[key]) return String(response[key]);
+  }
+  const nested = response.data || response.item || response.post;
+  if (nested && typeof nested === 'object') {
+    for (const key of keys) {
+      if (nested[key]) return String(nested[key]);
+    }
+  }
+  return '';
+}
+
 function buildSubmissionSnapshot(response, imageNames) {
   updateRegionFromCity();
+  const responsePostId = getResponsePostId(response);
   return {
     submittedAt: new Date().toISOString(),
     category1: getSelectedLabel('category1'),
@@ -1453,7 +1484,10 @@ function buildSubmissionSnapshot(response, imageNames) {
     event_date: getValue('event_date'),
     availability_date: getValue('availability_date'),
     nickname: getValue('nickname'),
-    responsePostId: getResponsePostId(response),
+    responsePostId,
+    publicUrl: getResponseValue(response, ['public_url', 'publicUrl']) || (responsePostId ? '/germany/ja/community/post/?id=' + encodeURIComponent(responsePostId) : ''),
+    manageUrl: getResponseValue(response, ['manage_url', 'manageUrl']),
+    emailSent: getResponseValue(response, ['email_sent', 'emailSent']),
     imageNames: imageNames || getImageNamesFromInputs(),
     cancellationRequested: false
   };
@@ -1719,6 +1753,37 @@ function formatDate(value) {
   return date.getFullYear() + '.' + String(date.getMonth() + 1).padStart(2, '0') + '.' + String(date.getDate()).padStart(2, '0');
 }
 
+function formatDateTime(value) {
+  const date = value ? new Date(value) : null;
+  if (!date || Number.isNaN(date.getTime())) return '';
+  return date.toLocaleString('ja-JP', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+}
+
+function normalizeStatus(value) {
+  const text = String(value || '').trim().toLowerCase();
+  if (!text) return 'active';
+  if (['active', 'closed', 'hidden', 'pending', 'deleted', 'inactive', 'expired'].includes(text)) return text;
+  return text;
+}
+
+function isExpired(post) {
+  const raw = field(post, ['expires_at', 'expiresAt']);
+  if (!raw) return false;
+  const time = new Date(raw).getTime();
+  return Number.isFinite(time) && time < Date.now();
+}
+
+function isPublicBoardPost(post) {
+  if (post._isExpired) return false;
+  return post._status === 'active' || post._status === 'closed';
+}
+
 function normalizePost(post, index) {
   const postType = inferPostType(post);
   const subcategory = inferSubcategory(post);
@@ -1726,8 +1791,18 @@ function normalizePost(post, index) {
     contact_email_private,
     contact_phone_private,
     delete_token,
+    edit_token,
+    manage_url,
+    manage_token_hash,
+    edit_password_hash,
+    edit_password_salt,
+    admin_notes,
+    admin_note,
     ...publicPost
   } = post;
+  const status = normalizeStatus(post.status);
+  const lastModifiedAt = field(post, ['last_modified_at', 'lastModifiedAt']);
+  const updatedAt = field(post, ['updated_at', 'updatedAt']);
   return {
     ...publicPost,
     _id: getPostId(post, index),
@@ -1739,7 +1814,14 @@ function normalizePost(post, index) {
     _category: subcategory,
     _categoryRaw: getDisplayCategoryRaw(post),
     _location: getLocation(post),
-    _date: field(post, ['created_at', 'createdAt', 'date', 'timestamp', 'updated_at']),
+    _date: lastModifiedAt || updatedAt || field(post, ['created_at', 'createdAt', 'date', 'timestamp']),
+    _createdAt: field(post, ['created_at', 'createdAt', 'date', 'timestamp']),
+    _lastModifiedAt: lastModifiedAt,
+    _lastModifiedAction: field(post, ['last_modified_action', 'lastModifiedAction']),
+    _status: status,
+    _isActive: status === 'active',
+    _isClosed: status === 'closed',
+    _isExpired: isExpired(post),
     _price: getPrice(post),
     _images: getImages(post),
     _free: isFree(post),
@@ -1824,6 +1906,12 @@ function renderStandaloneDetail(post, posts) {
   const contactHref = '../contact/?post_id=' + encodeURIComponent(post._id);
   const reportHref = '../report/?post_id=' + encodeURIComponent(post._id);
   const shareHref = detailUrl(post);
+  const manageHref = '../manage/?post=' + encodeURIComponent(post._id);
+  const statusLabel = post._isClosed ? '募集終了' : '募集中';
+  const lastModifiedText = post._lastModifiedAt ? formatDateTime(post._lastModifiedAt) : '';
+  const contactAction = post._isClosed
+    ? '<span class="btn is-disabled" aria-disabled="true">募集終了</span>'
+    : '<a class="btn" href="' + escapeHtml(contactHref) + '">投稿者に連絡</a>';
   const relatedGroup = comparablePosts(posts, post, 4);
   const related = relatedGroup.items;
   const marker = escapeHtml(CATEGORY_ICONS[post._subcategory] || CATEGORY_ICONS[post._postType] || CATEGORY_ICONS['その他']);
@@ -1858,6 +1946,7 @@ function renderStandaloneDetail(post, posts) {
         <div class="badge-row">
           <span class="badge category">${escapeHtml(post._postType)}</span>
           <span class="badge subcategory">${escapeHtml(post._subcategory)}</span>
+          <span class="badge ${post._isClosed ? 'is-closed' : 'is-active'}">${escapeHtml(statusLabel)}</span>
           ${priceText ? `<span class="badge ${post._free ? 'free' : ''}">${escapeHtml(priceText)}</span>` : ''}
           ${post._urgent ? '<span class="badge urgent">急募</span>' : ''}
           ${post._japaneseOk ? '<span class="badge japanese">日本語OK</span>' : ''}
@@ -1869,11 +1958,13 @@ function renderStandaloneDetail(post, posts) {
           <span class="fact">投稿の種類: ${escapeHtml(post._postType)}</span>
           <span class="fact">詳しい内容: ${escapeHtml(post._subcategory)}</span>
           <span class="fact">元カテゴリ: ${escapeHtml(post._categoryRaw || '未設定')}</span>
+          ${lastModifiedText ? `<span class="fact">最終更新: ${escapeHtml(lastModifiedText)}</span>` : ''}
         </div>
         <p class="detail-body">${escapeHtml(post._body || '詳細本文は未設定です。')}</p>
         <div class="detail-actions">
-          <a class="btn" href="${escapeHtml(contactHref)}">投稿者に連絡</a>
+          ${contactAction}
           <button class="btn" type="button" id="copyDetailUrl">URLをコピー</button>
+          <a class="btn" href="${escapeHtml(manageHref)}">投稿を編集・終了</a>
           <button class="btn" type="button" id="saveDetailPost">${saved ? '★ 保存済み' : '☆ 保存'}</button>
           <a class="btn" href="${escapeHtml(reportHref)}">通報</a>
         </div>
@@ -1936,7 +2027,7 @@ async function loadStandaloneDetail(id) {
 
   try {
     const data = await fetchCommunityPostsData();
-    const posts = DATA_SOURCES.normalizePayload(data).map(normalizePost);
+    const posts = DATA_SOURCES.normalizePayload(data).map(normalizePost).filter(isPublicBoardPost);
     const post = posts.find(function(item) { return String(item._id) === String(id); });
     if (!post) {
       renderNotFound();
@@ -2000,6 +2091,11 @@ async function submitForm(event) {
   submitButton.textContent = '送信中...';
 
   try {
+    const editPassword = getValue('edit_password');
+    if (editPassword.length < 6) {
+      throw new Error('編集用パスワードは6文字以上で設定してください。');
+    }
+
     const image1 = await fileToBase64(document.getElementById('image1').files[0]);
     const image2 = await fileToBase64(document.getElementById('image2').files[0]);
     const image3 = await fileToBase64(document.getElementById('image3').files[0]);
@@ -2020,6 +2116,7 @@ async function submitForm(event) {
     body.append('contact_email_private', getValue('contact_email_private'));
     body.append('contact_phone_private', getValue('contact_phone_private'));
     body.append('preferred_contact_method', getValue('preferred_contact_method'));
+    body.append('edit_password', editPassword);
     body.append('price', getValue('price'));
     body.append('event_date', getValue('event_date'));
     body.append('availability_date', getValue('availability_date'));
@@ -2041,7 +2138,7 @@ async function submitForm(event) {
     }
 
     saveLastSubmission(buildSubmissionSnapshot(response, [image1.name, image2.name, image3.name].filter(Boolean)));
-    location.assign(THANKS_URL);
+    location.assign(COMPLETE_URL);
 
   } catch (error) {
     console.error('Community post submit failed:', GAS_URL, error);

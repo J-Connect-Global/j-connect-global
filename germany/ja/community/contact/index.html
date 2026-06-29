@@ -180,6 +180,7 @@ body > form button{
 
   <p><a href="../">← 掲示板へ戻る</a></p>
   <h1>投稿者に連絡する</h1>
+  <p id="contactStatus" aria-live="polite"></p>
   <form id="contactForm">
     <input name="action" type="hidden" value="submitInquiry">
     <input name="post_id" id="post_id" type="hidden">
@@ -193,8 +194,27 @@ body > form button{
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
     const GAS_URL = DATA_SOURCES.communityDataEndpoint;
-    document.getElementById('post_id').value = new URLSearchParams(location.search).get('post_id') || '';
-    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    const postId = new URLSearchParams(location.search).get('post_id') || '';
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('contactStatus');
+    document.getElementById('post_id').value = postId;
+
+    async function checkPostStatus() {
+      if (!postId || !DATA_SOURCES.buildCommunityUrl) return;
+      try {
+        const data = await DATA_SOURCES.fetchJsonWithTimeout(DATA_SOURCES.buildCommunityUrl({ action: 'getPost', post_id: postId }), 8000);
+        const post = data && data.post;
+        if (post && String(post.status || '').toLowerCase() === 'closed') {
+          form.querySelectorAll('input, textarea, button').forEach((item) => item.disabled = true);
+          status.textContent = 'この投稿は募集終了のため、投稿者への連絡はできません。';
+        }
+      } catch (error) {
+        console.warn('Community contact status check failed:', error);
+      }
+    }
+
+    checkPostStatus();
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const fd = new FormData(e.target);
       try {

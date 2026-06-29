@@ -682,6 +682,52 @@
     ]
   },
   {
+    "id": "page-community-complete",
+    "title": "投稿完了",
+    "url": "/germany/ja/community/complete/",
+    "type": "utility",
+    "pillar": "community",
+    "status": "published",
+    "canonical_url": "/germany/ja/community/complete/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": false,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "J-Connect Germany の掲示板投稿完了ページです。投稿者が管理用URLを確認できます。",
+    "tags": [
+      "掲示板",
+      "投稿完了",
+      "管理用URL"
+    ]
+  },
+  {
+    "id": "page-community-manage",
+    "title": "投稿を管理",
+    "url": "/germany/ja/community/manage/",
+    "type": "utility",
+    "pillar": "community",
+    "status": "published",
+    "canonical_url": "/germany/ja/community/manage/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": false,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "J-Connect Germany の掲示板投稿を編集、募集終了、再開、非公開化する投稿者向けページです。",
+    "tags": [
+      "掲示板",
+      "投稿管理",
+      "編集"
+    ]
+  },
+  {
     "id": "page-about",
     "title": "このサイトについて",
     "url": "/germany/ja/about/",

@@ -182,6 +182,18 @@
             </select>
           </div>
           <div class="filter-row">
+            <span class="filter-label">募集状況</span>
+            <div class="filter-rail status-rail jc-chip-group" id="statusRail" aria-label="募集状況フィルター">
+              <button class="chip-button active" type="button" data-status-filter="active">募集中</button>
+              <button class="chip-button" type="button" data-status-filter="closed">募集終了</button>
+              <button class="chip-button" type="button" data-status-filter="all">すべて</button>
+            </div>
+            <label class="community-toggle-line">
+              <input id="hideClosedToggle" type="checkbox">
+              <span>募集終了を非表示</span>
+            </label>
+          </div>
+          <div class="filter-row">
             <span class="filter-label">投稿の種類</span>
             <div class="filter-rail jc-chip-group" id="postTypeRail" aria-label="投稿の種類フィルター">
               <span class="chip-skeleton" aria-hidden="true"></span>
@@ -203,6 +215,7 @@
           <div>
             <h2 id="boardTitle" class="content-title">コミュニティ投稿</h2>
             <p class="result-text loading-lines" id="resultText"><span class="skeleton-text medium"></span></p>
+            <p class="community-cache-warning" id="communityCacheWarning" hidden>最新データを取得できませんでした。保存済みの表示を継続しています。</p>
             <div class="community-quick-filters" aria-label="よく使う条件">
               <div class="community-quick-filters__head">
                 <span>よく使う条件</span>
@@ -327,6 +340,8 @@
     const DATA_TIMEOUT_MS = 12000;
     const STATIC_DATA_TIMEOUT_MS = 5000;
     const GAS_FALLBACK_TIMEOUT_MS = 8000;
+    const COMMUNITY_LIST_CACHE_KEY = "jconnectCommunityPostsCacheV2";
+    const COMMUNITY_LIST_CACHE_MAX_AGE_MS = 1000 * 60 * 60 * 6;
     const SUBCATEGORY_OPTIONS = {
       "売ります": ["帰国売り", "家具・家電", "生活用品", "子ども用品", "本・教材", "車・自転車", "その他"],
       "買います": ["家具・家電", "生活用品", "子ども用品", "本・教材", "車・自転車", "その他"],
@@ -404,6 +419,8 @@
       freeOnly: false,
       photoOnly: false,
       savedOnly: false,
+      statusFilter: localStorage.getItem("ngg-community-status-filter") || "active",
+      hideClosed: localStorage.getItem("ngg-community-hide-closed") !== "false",
       saved: new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]")),
       viewMode: localStorage.getItem(VIEW_STORAGE_KEY) === "grid" ? "grid" : "list",
       loading: true,
@@ -420,6 +437,9 @@
       postTypeRail: document.getElementById("postTypeRail"),
       subcategoryRail: document.getElementById("subcategoryRail"),
       areaFilter: document.getElementById("areaFilter"),
+      statusRail: document.getElementById("statusRail"),
+      hideClosedToggle: document.getElementById("hideClosedToggle"),
+      cacheWarning: document.getElementById("communityCacheWarning"),
       viewSegment: document.getElementById("viewSegment"),
       clearFilters: document.getElementById("clearFilters"),
       cards: document.getElementById("cards"),
@@ -655,6 +675,37 @@
       return SUBCATEGORIES.includes(explicit) ? explicit : "その他";
     }
 
+    function normalizeStatus(value) {
+      const text = String(value || "").trim().toLowerCase();
+      if (!text) return "active";
+      if (["active", "closed", "hidden", "pending", "deleted", "inactive", "expired"].includes(text)) return text;
+      return text;
+    }
+
+    function isExpired(post) {
+      const raw = field(post, ["expires_at", "expiresAt"]);
+      if (!raw) return false;
+      const time = new Date(raw).getTime();
+      return Number.isFinite(time) && time < Date.now();
+    }
+
+    function isPublicBoardPost(post) {
+      if (post._isExpired) return false;
+      return post._status === "active" || post._status === "closed";
+    }
+
+    function formatDateTime(value) {
+      const date = value ? new Date(value) : null;
+      if (!date || Number.isNaN(date.getTime())) return "";
+      return date.toLocaleString("ja-JP", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit"
+      });
+    }
+
     function normalizePost(post, index) {
       const images = getImages(post);
       const postType = inferPostType(post);
@@ -663,8 +714,18 @@
         contact_email_private,
         contact_phone_private,
         delete_token,
+        edit_token,
+        manage_url,
+        manage_token_hash,
+        edit_password_hash,
+        edit_password_salt,
+        admin_notes,
+        admin_note,
         ...publicPost
       } = post;
+      const status = normalizeStatus(post.status);
+      const lastModifiedAt = field(post, ["last_modified_at", "lastModifiedAt"]);
+      const updatedAt = field(post, ["updated_at", "updatedAt"]);
       return {
         ...publicPost,
         _id: getPostId(post, index),
@@ -676,7 +737,14 @@
         _category: subcategory,
         _categoryRaw: getDisplayCategoryRaw(post),
         _location: getLocation(post),
-        _date: field(post, ["created_at", "createdAt", "date", "timestamp", "updated_at"]),
+        _date: lastModifiedAt || updatedAt || field(post, ["created_at", "createdAt", "date", "timestamp"]),
+        _createdAt: field(post, ["created_at", "createdAt", "date", "timestamp"]),
+        _lastModifiedAt: lastModifiedAt,
+        _lastModifiedAction: field(post, ["last_modified_action", "lastModifiedAction"]),
+        _status: status,
+        _isActive: status === "active",
+        _isClosed: status === "closed",
+        _isExpired: isExpired(post),
         _price: getPrice(post),
         _images: images,
         _free: isFree(post),
@@ -747,7 +815,7 @@
         { label: "新しい順", sort: "newest", active: state.sort === "newest" },
         { label: "古い順", sort: "oldest", active: state.sort === "oldest" }
       ];
-      const hasActiveFilters = Boolean(state.query || state.area || state.postType !== "すべて" || state.subcategory !== "すべて" || state.freeOnly || state.photoOnly || state.savedOnly || state.sort !== "newest");
+      const hasActiveFilters = Boolean(state.query || state.area || state.postType !== "すべて" || state.subcategory !== "すべて" || state.freeOnly || state.photoOnly || state.savedOnly || state.sort !== "newest" || state.statusFilter !== "active" || (state.hideClosed && state.statusFilter !== "active"));
       els.quickClearFilters.disabled = !hasActiveFilters;
       els.quickClearFilters.setAttribute("aria-disabled", String(!hasActiveFilters));
       els.searchSuggestions.innerHTML = chips.map((chip) => {
@@ -776,6 +844,17 @@
         button.classList.toggle("active", active);
         button.setAttribute("aria-pressed", String(active));
       });
+    }
+
+    function renderStatusControls() {
+      if (els.statusRail) {
+        els.statusRail.querySelectorAll("[data-status-filter]").forEach((button) => {
+          const active = button.dataset.statusFilter === state.statusFilter;
+          button.classList.toggle("active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+      }
+      if (els.hideClosedToggle) els.hideClosedToggle.checked = state.hideClosed;
     }
 
     function setPostType(postType) {
@@ -854,6 +933,7 @@
       renderRails();
       renderQuickChips();
       renderViewButtons();
+      renderStatusControls();
 
       if (state.loading || !state.filtersReady) {
         state.evaluationComplete = false;
@@ -868,10 +948,14 @@
         const subcategoryOk = state.subcategory === "すべて" || post._subcategory === state.subcategory;
         const areaOk = !state.area || [post.city, post.region, post.area, post._location].filter(Boolean).some((area) => String(area) === state.area);
         const queryOk = !query || searchable.includes(query);
-        return postTypeOk && subcategoryOk && areaOk && queryOk && (!state.freeOnly || post._free) && (!state.photoOnly || post._images.length) && (!state.savedOnly || isSaved(post._id));
+        const publicOk = isPublicBoardPost(post);
+        const statusOk = state.statusFilter === "all" || post._status === state.statusFilter;
+        const closedOk = !state.hideClosed || !post._isClosed;
+        return publicOk && statusOk && closedOk && postTypeOk && subcategoryOk && areaOk && queryOk && (!state.freeOnly || post._free) && (!state.photoOnly || post._images.length) && (!state.savedOnly || isSaved(post._id));
       });
 
       list.sort((a, b) => {
+        if (a._isClosed !== b._isClosed) return a._isClosed ? 1 : -1;
         const aDate = dateValue(a._date);
         const bDate = dateValue(b._date);
         if (!aDate && !bDate) return 0;
@@ -914,16 +998,20 @@
         const priceText = post._free ? "無料" : post._price;
         const locationText = hasDisplayValue(post._location, ["地域未設定"]) ? post._location : "";
         const contactDate = formatDate(post._date);
+        const statusLabel = post._isClosed ? "募集終了" : "募集中";
+        const lastModifiedText = post._lastModifiedAt ? formatDateTime(post._lastModifiedAt) : "";
         const saved = isSaved(post._id);
         const shareHref = detailUrl(post);
+        const manageHref = `./manage/?post=${encodeURIComponent(post._id)}`;
         const footerChips = [
           priceText ? `<span class="community-post-price ${post._free ? "free" : ""}">${escapeHtml(priceText)}</span>` : "",
           post._images.length ? `<span class="community-photo-count">写真 ${post._images.length}</span>` : "",
           post._urgent ? `<span class="trust-badge urgent">急ぎ</span>` : "",
-          post._japaneseOk ? `<span class="trust-badge japanese">日本語OK</span>` : ""
+          post._japaneseOk ? `<span class="trust-badge japanese">日本語OK</span>` : "",
+          lastModifiedText ? `<span class="last-updated-badge">最終更新 ${escapeHtml(lastModifiedText)}</span>` : ""
         ].filter(Boolean).join("");
         return `
-          <article class="card jc-result-card ${image ? "" : "no-image"}" data-post-id="${escapeHtml(post._id)}" data-photo-count="${post._images.length}" data-free="${post._free ? "true" : "false"}">
+          <article class="card jc-result-card ${image ? "" : "no-image"} ${post._isClosed ? "is-closed" : ""}" data-post-id="${escapeHtml(post._id)}" data-status="${escapeHtml(post._status)}" data-photo-count="${post._images.length}" data-free="${post._free ? "true" : "false"}">
             <button class="save-button ${saved ? "saved" : ""}" type="button" data-save-id="${escapeHtml(post._id)}" aria-label="${saved ? "保存を解除" : "保存する"}">${saved ? "★" : "☆"}</button>
             <a class="card-link" href="#post-${encodeURIComponent(post._id)}" aria-label="${escapeHtml(post._title)}の詳細を開く">
               <div class="card-media">
@@ -935,6 +1023,7 @@
                 <div class="card-top community-post-meta">
                   <span class="category-badge ${postType === "譲ります" ? "give" : ""} ${postType === "売ります" ? "sell" : ""}">${escapeHtml(postType)}</span>
                   <span class="subcategory-badge">${escapeHtml(subcategory)}</span>
+                  <span class="status-badge ${post._isClosed ? "is-closed" : ""}">${escapeHtml(statusLabel)}</span>
                   ${locationText ? `<span class="location-badge">${escapeHtml(locationText)}</span>` : ""}
                   <span class="date-badge">${escapeHtml(contactDate)}</span>
                 </div>
@@ -945,6 +1034,7 @@
             </a>
             <div class="card-actions jc-result-actions">
               <a class="detail-open-link" href="${escapeHtml(shareHref)}" target="_blank" rel="noopener" aria-label="${escapeHtml(post._title)}を新しいタブで詳しく見る">詳細を見る</a>
+              <a class="detail-open-link owner-link" href="${escapeHtml(manageHref)}" aria-label="${escapeHtml(post._title)}を編集・終了する">編集</a>
             </div>
           </article>
         `;
@@ -975,6 +1065,9 @@
       if (state.postType !== "すべて") filters.push(`投稿の種類: ${state.postType}`);
       if (state.subcategory !== "すべて") filters.push(`詳しい内容: ${state.subcategory}`);
       if (state.area) filters.push(`地域: ${state.area}`);
+      if (state.statusFilter === "closed") filters.push("募集状況: 募集終了");
+      if (state.statusFilter === "all") filters.push("募集状況: すべて");
+      if (state.hideClosed && state.statusFilter !== "active") filters.push("募集終了を非表示");
       if (state.freeOnly) filters.push("無料");
       if (state.photoOnly) filters.push("写真あり");
       if (state.savedOnly) filters.push("保存済");
@@ -1000,8 +1093,12 @@
       state.freeOnly = false;
       state.photoOnly = false;
       state.savedOnly = false;
+      state.statusFilter = "active";
+      state.hideClosed = true;
       state.postType = "すべて";
       state.subcategory = "すべて";
+      localStorage.setItem("ngg-community-status-filter", state.statusFilter);
+      localStorage.setItem("ngg-community-hide-closed", "true");
       applyFilters();
     }
 
@@ -1064,8 +1161,14 @@
       const contactHref = post._id ? `./contact/?post_id=${encodeURIComponent(post._id)}` : "./contact/";
       const reportHref = post._id ? `./report/?post_id=${encodeURIComponent(post._id)}` : "./report/";
       const shareHref = detailUrl(post);
+      const manageHref = `./manage/?post=${encodeURIComponent(post._id)}`;
+      const statusLabel = post._isClosed ? "募集終了" : "募集中";
+      const lastModifiedText = post._lastModifiedAt ? formatDateTime(post._lastModifiedAt) : "";
       const hasImages = images.length > 0;
       const marker = escapeHtml(CATEGORY_ICONS[post._subcategory] || CATEGORY_ICONS[post._postType] || CATEGORY_ICONS["その他"]);
+      const contactAction = post._isClosed
+        ? `<span class="btn btn-primary is-disabled" aria-disabled="true">募集終了</span>`
+        : `<a class="btn btn-primary" href="${escapeHtml(contactHref)}">投稿者に連絡</a>`;
       const galleryHtml = hasImages ? `
           <div class="detail-gallery">
             <div class="detail-main-image" id="detailMainImage">
@@ -1090,6 +1193,7 @@
             <span class="subcategory-badge">${escapeHtml(post._subcategory)}</span>
             <h2 id="detailTitle">${escapeHtml(post._title)}</h2>
             <div class="detail-meta">
+              <span class="status-badge ${post._isClosed ? "is-closed" : ""}">${escapeHtml(statusLabel)}</span>
               ${post._free || post._price ? `<span class="price-badge ${post._free ? "free" : ""}">${escapeHtml(post._free ? "無料" : post._price)}</span>` : ""}
               ${post._urgent ? `<span class="trust-badge urgent">急募</span>` : ""}
               ${post._japaneseOk ? `<span class="trust-badge japanese">日本語OK</span>` : ""}
@@ -1101,12 +1205,14 @@
               <div class="fact"><div class="fact-label">投稿の種類</div><div class="fact-value">${escapeHtml(post._postType)}</div></div>
               <div class="fact"><div class="fact-label">詳しい内容</div><div class="fact-value">${escapeHtml(post._subcategory)}</div></div>
               <div class="fact"><div class="fact-label">元カテゴリ</div><div class="fact-value">${escapeHtml(post._categoryRaw || "未設定")}</div></div>
+              ${lastModifiedText ? `<div class="fact"><div class="fact-label">最終更新</div><div class="fact-value">${escapeHtml(lastModifiedText)}</div></div>` : ""}
             </div>
             <p class="detail-body">${escapeHtml(post._body || "詳細本文は未設定です。")}</p>
             <div class="detail-actions">
-              <a class="btn btn-primary" href="${escapeHtml(contactHref)}">投稿者に連絡</a>
+              ${contactAction}
               <button class="btn btn-secondary" type="button" id="copyShareUrl">URLをコピー</button>
               <a class="btn btn-secondary" href="${escapeHtml(shareHref)}" target="_blank" rel="noopener">新しいタブで詳細</a>
+              <a class="btn btn-secondary" href="${escapeHtml(manageHref)}">投稿を編集・終了</a>
               <button class="save-button inline ${saved ? "saved" : ""}" type="button" id="detailSaveButton">${saved ? "★ 保存済み" : "☆ 保存"}</button>
               <a class="btn btn-soft" href="${escapeHtml(reportHref)}">通報</a>
             </div>
@@ -1164,11 +1270,49 @@
 
     async function fetchCommunityPostsData() {
       try {
+        return await fetchJson(DATA_SOURCES.buildCommunityUrl({ action: "listPosts", includeClosed: "true", bypassCache: "true" }), GAS_FALLBACK_TIMEOUT_MS);
+      } catch (gasError) {
+        console.warn("Community GAS posts load failed; trying static fallback:", gasError);
         return await fetchJson(COMMUNITY_STATIC_POSTS_URL, STATIC_DATA_TIMEOUT_MS);
-      } catch (staticError) {
-        console.warn("Community static posts load failed; trying GAS fallback:", COMMUNITY_STATIC_POSTS_URL, staticError);
-        return await fetchJson(COMMUNITY_POSTS_URL, GAS_FALLBACK_TIMEOUT_MS);
       }
+    }
+
+    function readCommunityPostsCache() {
+      try {
+        const cached = JSON.parse(localStorage.getItem(COMMUNITY_LIST_CACHE_KEY) || "null");
+        if (!cached || !cached.data || !cached.savedAt) return null;
+        return {
+          data: cached.data,
+          savedAt: Number(cached.savedAt) || 0,
+          isFresh: Date.now() - Number(cached.savedAt || 0) < COMMUNITY_LIST_CACHE_MAX_AGE_MS
+        };
+      } catch (error) {
+        localStorage.removeItem(COMMUNITY_LIST_CACHE_KEY);
+        return null;
+      }
+    }
+
+    function writeCommunityPostsCache(data) {
+      try {
+        localStorage.setItem(COMMUNITY_LIST_CACHE_KEY, JSON.stringify({
+          savedAt: Date.now(),
+          data
+        }));
+      } catch (error) {
+        console.warn("Community posts cache write failed:", error);
+      }
+    }
+
+    function renderCommunityPostsPayload(data, sourceNotice = "") {
+      const rows = DATA_SOURCES.normalizePayload(data);
+      state.posts = rows.map(normalizePost);
+      state.loading = false;
+      state.loadError = false;
+      state.sourceNotice = sourceNotice;
+      state.evaluationComplete = false;
+      if (els.cacheWarning) els.cacheWarning.hidden = true;
+      renderAreas();
+      applyFilters();
     }
 
     function renderEmptyActions(mode = "filters") {
@@ -1192,24 +1336,36 @@
     }
 
     async function loadPosts() {
-      state.loading = true;
+      const cached = readCommunityPostsCache();
+      if (cached) {
+        renderCommunityPostsPayload(cached.data, cached.isFresh ? "保存済みデータを表示中" : "保存済みデータを表示中");
+      }
+
+      state.loading = !cached;
       state.loadError = false;
-      state.sourceNotice = "";
       state.evaluationComplete = false;
       els.emptyState.style.display = "none";
-      els.resultText.classList.add("loading-lines");
-      els.resultText.innerHTML = '<span class="skeleton-text medium"></span>';
-      renderSkeletons();
+      if (!cached) {
+        state.sourceNotice = "";
+        els.resultText.classList.add("loading-lines");
+        els.resultText.innerHTML = '<span class="skeleton-text medium"></span>';
+        renderSkeletons();
+      }
+
       try {
         const data = await fetchCommunityPostsData();
-        const rows = DATA_SOURCES.normalizePayload(data);
-        state.posts = rows.map(normalizePost);
-        state.loading = false;
-        state.loadError = false;
-        renderAreas();
-        applyFilters();
+        writeCommunityPostsCache(data);
+        renderCommunityPostsPayload(data);
       } catch (error) {
         console.warn("Community posts load failed:", COMMUNITY_STATIC_POSTS_URL, error);
+        if (cached) {
+          state.loading = false;
+          state.loadError = false;
+          state.sourceNotice = "保存済みデータを表示中";
+          if (els.cacheWarning) els.cacheWarning.hidden = false;
+          applyFilters();
+          return;
+        }
         state.posts = [];
         state.filtered = [];
         state.loading = false;
@@ -1233,6 +1389,24 @@
       focusWithoutScroll(els.search);
     });
     els.areaFilter.addEventListener("change", applyFilters);
+    els.statusRail?.querySelectorAll("[data-status-filter]").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.statusFilter = button.dataset.statusFilter || "active";
+        if (state.statusFilter !== "active") state.hideClosed = false;
+        localStorage.setItem("ngg-community-status-filter", state.statusFilter);
+        localStorage.setItem("ngg-community-hide-closed", String(state.hideClosed));
+        applyFilters();
+      });
+    });
+    els.hideClosedToggle?.addEventListener("change", () => {
+      state.hideClosed = Boolean(els.hideClosedToggle.checked);
+      if (state.hideClosed && state.statusFilter === "closed") {
+        state.statusFilter = "active";
+        localStorage.setItem("ngg-community-status-filter", state.statusFilter);
+      }
+      localStorage.setItem("ngg-community-hide-closed", String(state.hideClosed));
+      applyFilters();
+    });
     els.clearFilters.addEventListener("click", clearFilters);
     els.quickClearFilters.addEventListener("click", clearFilters);
     els.emptyState.addEventListener("click", (event) => {

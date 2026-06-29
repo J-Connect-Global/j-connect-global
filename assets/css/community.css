@@ -184,19 +184,19 @@
     }
 
     .community-onboarding{
-      margin-top:14px;
+      margin-top:12px;
       border:1px solid var(--community-line);
       border-radius:8px;
       background:rgba(255,255,255,.96);
       box-shadow:0 6px 16px rgba(30,58,95,.05);
-      padding:14px;
+      padding:12px;
     }
     .community-onboarding-head{
       display:grid;
       grid-template-columns:minmax(0,1fr) minmax(280px,.64fr);
-      gap:14px;
-      align-items:end;
-      margin-bottom:11px;
+      gap:12px;
+      align-items:center;
+      margin-bottom:9px;
     }
     .community-section-kicker{
       margin:0 0 4px;
@@ -223,31 +223,18 @@
     .community-use-cases{
       display:grid;
       grid-template-columns:repeat(5,minmax(0,1fr));
-      gap:9px;
+      gap:8px;
     }
     .community-use-card{
-      min-height:124px;
+      min-height:96px;
       border:1px solid var(--community-line);
       border-radius:8px;
       background:linear-gradient(180deg,#fff 0%,var(--community-soft) 100%);
-      padding:12px;
+      padding:11px 12px;
       display:grid;
       align-content:start;
-      gap:8px;
+      gap:6px;
       box-shadow:0 4px 10px rgba(30,58,95,.035);
-    }
-    .community-use-icon{
-      width:30px;
-      height:30px;
-      border-radius:7px;
-      display:grid;
-      place-items:center;
-      background:var(--community-accent-soft);
-      border:1px solid var(--community-line-strong);
-      color:var(--community-navy);
-      font-size:13px;
-      font-weight:900;
-      line-height:1;
     }
     .community-use-card h3{
       margin:0;
@@ -409,6 +396,36 @@
     .date-badge{background:#fff;color:#5c6b78;border:1px solid var(--community-line)}
     .status-badge{background:#eafaf1;color:#11643a;border:1px solid #bde9cd}
     .status-badge.is-closed{background:#f1f5f9;color:#475569;border-color:#cbd5e1}
+    .closed-ribbon{
+      position:absolute;
+      left:10px;
+      top:10px;
+      z-index:4;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:30px;
+      border-radius:7px;
+      background:rgba(15,23,42,.88);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.45);
+      padding:0 10px;
+      font-size:12px;
+      font-weight:900;
+      box-shadow:0 8px 18px rgba(15,23,42,.18);
+    }
+    .closed-inline-label{
+      width:max-content;
+      max-width:100%;
+      border:1px solid #cbd5e1;
+      border-radius:7px;
+      background:#fff;
+      color:#334155;
+      padding:6px 8px;
+      font-size:12px;
+      line-height:1.25;
+      font-weight:900;
+    }
     .last-updated-badge{background:#fff;border:1px solid var(--community-line);color:#526170}
     .card-top .price-badge{font-size:12px}
     .price-badge.free,.community-post-price.free{background:#def7e8;color:#0f6a3d;border:1px solid #bde9cd}
@@ -515,6 +532,19 @@
     .detail-content h2{font-size:clamp(24px,3.4vw,36px);line-height:1.18;font-weight:900;letter-spacing:0}
     .detail-meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
     .detail-body{white-space:pre-wrap;color:#394653;line-height:1.8;margin-top:12px}
+    .closed-detail-notice{
+      display:grid;
+      gap:3px;
+      border:1px solid #cbd5e1;
+      border-left:5px solid #475569;
+      border-radius:8px;
+      background:#f8fafc;
+      color:#334155;
+      padding:12px 14px;
+      margin-bottom:14px;
+    }
+    .closed-detail-notice strong{font-size:16px;line-height:1.35}
+    .closed-detail-notice span{color:#64748b;font-size:13px;line-height:1.55;font-weight:800}
     .detail-facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
     .fact{background:#f8fafc;border:1px solid var(--community-line);border-radius:7px;padding:7px 10px;display:inline-flex;align-items:center;gap:6px}
     .fact-label{font-size:11px;color:var(--community-muted);font-weight:900}

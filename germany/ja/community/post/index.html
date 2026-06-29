@@ -591,6 +591,30 @@
 .badge.is-active{background:#eafaf1;color:#11643a;border-color:#bde9cd}
 .badge.is-closed{background:#f1f5f9;color:#475569;border-color:#cbd5e1}
 
+.closed-detail-notice{
+  display:grid;
+  gap:3px;
+  border:1px solid #cbd5e1;
+  border-left:5px solid #475569;
+  border-radius:8px;
+  background:#f8fafc;
+  color:#334155;
+  padding:12px 14px;
+  margin-bottom:16px;
+}
+
+.closed-detail-notice strong{
+  font-size:16px;
+  line-height:1.35;
+}
+
+.closed-detail-notice span{
+  color:#64748b;
+  font-size:13px;
+  line-height:1.55;
+  font-weight:800;
+}
+
 .detail-body{
   white-space:pre-wrap;
   color:#394653;
@@ -1780,8 +1804,9 @@ function isExpired(post) {
 }
 
 function isPublicBoardPost(post) {
-  if (post._isExpired) return false;
-  return post._status === 'active' || post._status === 'closed';
+  if (post._status === 'closed') return true;
+  if (post._status === 'active') return !post._isExpired;
+  return false;
 }
 
 function normalizePost(post, index) {
@@ -1909,6 +1934,9 @@ function renderStandaloneDetail(post, posts) {
   const manageHref = '../manage/?post=' + encodeURIComponent(post._id);
   const statusLabel = post._isClosed ? '募集終了' : '募集中';
   const lastModifiedText = post._lastModifiedAt ? formatDateTime(post._lastModifiedAt) : '';
+  const closedNotice = post._isClosed
+    ? '<div class="closed-detail-notice" role="status"><strong>この投稿は募集終了しました</strong><span>この投稿への新規問い合わせは現在できません。</span></div>'
+    : '';
   const contactAction = post._isClosed
     ? '<span class="btn is-disabled" aria-disabled="true">募集終了</span>'
     : '<a class="btn" href="' + escapeHtml(contactHref) + '">投稿者に連絡</a>';
@@ -1941,6 +1969,7 @@ function renderStandaloneDetail(post, posts) {
 
       <article class="detail-panel">
         ${hasImages ? '' : `<div class="detail-compact-marker" aria-hidden="true">${marker}</div>`}
+        ${closedNotice}
         <p class="detail-kicker">COMMUNITY POST</p>
         <h1 id="detailTitle" class="detail-title">${escapeHtml(post._title)}</h1>
         <div class="badge-row">
@@ -1964,7 +1993,7 @@ function renderStandaloneDetail(post, posts) {
         <div class="detail-actions">
           ${contactAction}
           <button class="btn" type="button" id="copyDetailUrl">URLをコピー</button>
-          <a class="btn" href="${escapeHtml(manageHref)}">投稿を編集・終了</a>
+          <a class="btn" href="${escapeHtml(manageHref)}">投稿者管理</a>
           <button class="btn" type="button" id="saveDetailPost">${saved ? '★ 保存済み' : '☆ 保存'}</button>
           <a class="btn" href="${escapeHtml(reportHref)}">通報</a>
         </div>

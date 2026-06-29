@@ -207,7 +207,13 @@
     return `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, "0")}.${String(date.getDate()).padStart(2, "0")}`;
   }
 
-  function communityDetailHref(post, basePath) {
+  function communityStandaloneDetailHref(post, basePath) {
+    const id = post && (post._id || postId(post, 0));
+    const base = basePath || "/germany/ja/community/post/";
+    return `${base}?id=${encodeURIComponent(id)}`;
+  }
+
+  function communityBoardModalHref(post, basePath) {
     const id = post && (post._id || postId(post, 0));
     const base = basePath || "/germany/ja/community/";
     return `${base}?post=${encodeURIComponent(id)}#post-${encodeURIComponent(id)}`;
@@ -221,7 +227,9 @@
     normalizeStatus,
     isExpired,
     isPubliclyVisible,
-    communityDetailHref,
+    communityDetailHref: communityStandaloneDetailHref,
+    communityStandaloneDetailHref,
+    communityBoardModalHref,
     isLikelyTestPost,
     images,
     firstImage(post) {

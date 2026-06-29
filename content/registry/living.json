@@ -1410,5 +1410,57 @@
       "last_reviewed_at": "2026-06-14",
       "next_review_due": "2027-06-14"
     }
+  },
+  {
+    "id": "L031",
+    "title": "ドイツでワールドカップ2026を見る方法：日本代表戦・無料放送・配信・スポーツバーの使い分け",
+    "slug": "world-cup-2026-watch-germany",
+    "category": "生活・手続き",
+    "summary": "ドイツ在住者向けに、FIFAワールドカップ2026をARD/ZDF、MagentaTV、スポーツバー、公式ハイライトで見る方法と、日本代表戦を追う実用ポイントを整理します。",
+    "url": "/germany/ja/living/world-cup-2026-watch-germany/",
+    "markdown_path": "/content/living/world-cup-2026-watch-germany.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-06-29",
+    "updated_at": "2026-06-29",
+    "last_verified": "2026-06-29",
+    "tags": [
+      "ワールドカップ",
+      "サッカー",
+      "配信",
+      "ドイツ生活",
+      "日本代表"
+    ],
+    "home_visible": true,
+    "home_order": 1,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/world-cup-2026-watch-germany/",
+    "related_articles": [
+      "germany-first-30-days",
+      "rundfunkbeitrag-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "ZDF Presseportal: ARD und ZDF übertragen 60 Spiele",
+        "url": "https://presseportal.zdf.de/pressemitteilung/ard-und-zdf-uebertragen-60-spiele-der-fifa-fussball-wm-2026"
+      },
+      {
+        "title": "FIFA Japan fixtures",
+        "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/japan/fixtures"
+      },
+      {
+        "title": "FIFA World Cup 2026",
+        "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026"
+      }
+    ],
+    "disclaimer_type": "living",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Germany editorial",
+      "last_reviewed_at": "2026-06-29",
+      "next_review_due": "2026-07-06"
+    }
   }
 ]

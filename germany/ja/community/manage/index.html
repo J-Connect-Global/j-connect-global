@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>投稿を管理 | 掲示板 | J-Connect Germany</title>
+<meta name="description" content="J-Connect Germanyの掲示板投稿を編集、募集終了、再開、非公開化する投稿者向けページです。">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://j-connect-global.com/germany/ja/community/manage/">
+
+<link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal5-nav-20260618">
+<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
+<link rel="stylesheet" href="/assets/css/community.css">
+<style>
+.manage-page-shell{width:min(100% - 32px,960px);margin:0 auto;padding:24px 0 46px}
+.manage-hero{gap:10px;padding:22px}
+.manage-hero h1{font-size:clamp(28px,3.6vw,40px)}
+.manage-form label{font-weight:900;color:#24313d}
+.manage-form input,.manage-form select,.manage-form textarea{width:100%;border:1px solid #dce4ee;border-radius:8px;padding:11px 12px;font:inherit;background:#fff;color:#24313d}
+.manage-form textarea{min-height:180px;resize:vertical}
+.manage-form .field-note{margin:6px 0 0;color:#596875;font-size:12px;line-height:1.6}
+.thanks-card-head{display:grid;gap:6px;margin-bottom:14px}
+.thanks-card-head h2{margin:0;font-size:24px;line-height:1.25;font-weight:800}
+.thanks-card-head p{margin:0;color:#596875;font-size:14px;line-height:1.8}
+.section-kicker{margin:0;font-size:12px;font-weight:800;letter-spacing:.08em;color:#00366d;text-transform:uppercase}
+.status-line{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}
+.hidden{display:none!important}
+</style>
+</head>
+
+<body>
+<!-- LAYOUT:ja-header:start -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
+      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany">
+      <span class="brand-copy">
+        <span class="brand-title">J-CONNECT GERMANY</span>
+        <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <nav class="header-nav" aria-label="主要ナビゲーション">
+        <a href="/germany/ja/">ホーム</a>
+        <a href="/germany/ja/about/">このサイトについて</a>
+      </nav>
+      <details class="header-category header-category-menu" aria-label="カテゴリ選択">
+        <summary class="header-category-trigger" aria-haspopup="true">
+          <span>カテゴリ</span>
+          <span class="header-category-chevron" aria-hidden="true">▼</span>
+        </summary>
+        <div class="category-dropdown">
+          <a href="/germany/ja/community/" class="active" aria-current="page">交流・掲示板</a>
+          <a href="/germany/ja/living/">生活・手続き</a>
+          <a href="/germany/ja/jobs/">仕事・求人</a>
+          <a href="/germany/ja/events/">ニュース・イベント</a>
+          <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+        </div>
+      </details>
+      <form class="header-search" action="/germany/ja/search/" method="get" role="search">
+        <label class="search-box" aria-label="サイト内検索">
+          <span aria-hidden="true">⌕</span>
+          <input type="search" name="q" placeholder="検索">
+        </label>
+        <button class="search-btn" type="submit" aria-label="検索"><span class="search-btn-icon" aria-hidden="true">⌕</span></button>
+      </form>
+      <details class="header-language header-language-menu" aria-label="言語切り替え">
+        <summary class="header-language-trigger">
+          <span>Language</span>
+          <span class="header-language-current" lang="ja">日本語</span>
+        </summary>
+        <div class="language-dropdown">
+          <a href="/germany/ja/community/manage/" class="active" aria-current="page" lang="ja">日本語</a>
+          <a href="/germany/en/coming-soon/" lang="en">English</a>
+          <a href="/germany/de/coming-soon/" lang="de">Deutsch</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+<!-- LAYOUT:ja-header:end -->
+<main class="main">
+  <div class="manage-page-shell">
+    <section class="manage-hero jc-page-hero" aria-labelledby="page-title">
+      <div class="jc-eyebrow"><span class="jc-dot"></span>COMMUNITY BOARD</div>
+      <h1 id="page-title">投稿を管理</h1>
+      <p class="hero-desc">投稿時に設定した編集用パスワード、またはメールで届いた管理用URLで、投稿内容の編集、募集終了、再開、非公開化ができます。</p>
+      <div class="jc-hero-actions">
+        <a class="jc-button is-primary" href="../">掲示板一覧へ戻る</a>
+        <a class="jc-button" href="../post/">新しく投稿する</a>
+      </div>
+    </section>
+
+    <section class="management-shell" aria-labelledby="auth-title">
+      <div class="management-panel">
+        <div class="thanks-card-head">
+          <p class="section-kicker">VERIFY</p>
+          <h2 id="auth-title">投稿者確認</h2>
+          <p>管理用URLから開いた場合は自動確認します。手入力の場合は投稿IDと編集用パスワードを入力してください。</p>
+        </div>
+        <form id="authForm" class="manage-form management-grid">
+          <div>
+            <label for="postId">投稿ID</label>
+            <input id="postId" name="post_id" autocomplete="off" required>
+          </div>
+          <div>
+            <label for="password">編集用パスワード</label>
+            <input id="password" name="password" type="password" autocomplete="current-password">
+            <p class="field-note">管理用URLの token がある場合、パスワードは不要です。</p>
+          </div>
+          <input id="manageToken" name="token" type="hidden">
+          <div class="full management-actions">
+            <button class="jc-button is-primary" id="verifyButton" type="submit">投稿を開く</button>
+            <span id="authMessage" class="management-message" aria-live="polite"></span>
+          </div>
+        </form>
+      </div>
+
+      <div id="editorPanel" class="management-panel hidden" aria-labelledby="edit-title">
+        <div class="thanks-card-head">
+          <p class="section-kicker">EDIT</p>
+          <h2 id="edit-title">投稿内容</h2>
+          <p>公開される内容だけを編集できます。メールアドレス、パスワード、管理用トークンは表示・編集しません。</p>
+          <div class="status-line">
+            <span id="statusBadge" class="status-badge">募集中</span>
+            <span id="lastModified" class="last-updated-badge"></span>
+            <a id="publicLink" class="jc-button" href="../" target="_blank" rel="noopener">公開ページを開く</a>
+          </div>
+        </div>
+
+        <form id="editForm" class="manage-form management-grid">
+          <div class="full">
+            <label for="title">タイトル</label>
+            <input id="title" name="title" required>
+          </div>
+          <div class="full">
+            <label for="body">本文</label>
+            <textarea id="body" name="body" required></textarea>
+          </div>
+          <div>
+            <label for="category1">投稿カテゴリ</label>
+            <input id="category1" name="category1">
+          </div>
+          <div>
+            <label for="category2">投稿の種類</label>
+            <input id="category2" name="category2">
+          </div>
+          <div>
+            <label for="country">国</label>
+            <input id="country" name="country">
+          </div>
+          <div>
+            <label for="region">地域</label>
+            <input id="region" name="region">
+          </div>
+          <div>
+            <label for="city">都市</label>
+            <input id="city" name="city">
+          </div>
+          <div>
+            <label for="nickname">ニックネーム</label>
+            <input id="nickname" name="nickname">
+          </div>
+          <div>
+            <label for="price">価格</label>
+            <input id="price" name="price">
+          </div>
+          <div>
+            <label for="event_date">イベント日</label>
+            <input id="event_date" name="event_date" type="date">
+          </div>
+          <div>
+            <label for="availability_date">利用可能日</label>
+            <input id="availability_date" name="availability_date" type="date">
+          </div>
+          <div>
+            <label for="preferred_contact_method">希望連絡方法</label>
+            <input id="preferred_contact_method" name="preferred_contact_method">
+          </div>
+          <div class="full management-actions">
+            <button class="jc-button is-primary" id="saveButton" type="submit">変更を保存</button>
+            <button class="jc-button" id="closeButton" type="button">募集終了にする</button>
+            <button class="jc-button" id="reopenButton" type="button">再募集する</button>
+            <button class="jc-button management-danger" id="deleteButton" type="button">投稿を非公開にする</button>
+          </div>
+          <div class="full">
+            <p id="editMessage" class="management-message" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+</main>
+<!-- LAYOUT:ja-footer:start -->
+<footer class="page-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany">
+      <div class="footer-copy">
+        <div class="footer-title">J-CONNECT GERMANY</div>
+        <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+        <div class="footer-meta">© 2026 J-Connect Germany</div>
+      </div>
+    </div>
+    <div class="footer-links" aria-label="フッターサイトマップ">
+      <div class="footer-group">
+        <div class="footer-heading">サイト</div>
+        <a href="/germany/ja/">ホーム</a>
+        <a href="/germany/ja/about/">このサイトについて</a>
+        <a href="/germany/ja/guides/">ガイド</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">主要カテゴリ</div>
+        <a href="/germany/ja/community/">交流・掲示板</a>
+        <a href="/germany/ja/living/">生活・手続き</a>
+        <a href="/germany/ja/jobs/">仕事・求人</a>
+        <a href="/germany/ja/events/">イベント</a>
+        <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">生活ディレクトリ</div>
+        <a href="/germany/ja/eat/">食べる</a>
+        <a href="/germany/ja/shopping/">買い物</a>
+        <a href="/germany/ja/medical/">医療</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">利用者向け</div>
+        <a href="/germany/ja/community/post/">投稿する</a>
+        <a href="/germany/ja/jobs/posting/">求人掲載について</a>
+        <a href="/germany/ja/contact/">お問い合わせ</a>
+        <a href="/germany/ja/terms/">利用規約</a>
+        <a href="/germany/ja/privacy/">プライバシー</a>
+        <a href="/germany/ja/impressum/">運営者情報</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- LAYOUT:ja-footer:end -->
+
+<script src="/assets/js/data-sources.js"></script>
+<script>
+(function() {
+  const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
+  const GAS_URL = DATA_SOURCES.communityDataEndpoint;
+  const params = new URLSearchParams(location.search);
+  const state = {
+    postId: params.get('post') || params.get('id') || '',
+    token: params.get('token') || params.get('manage_token') || '',
+    password: '',
+    post: null
+  };
+
+  const fields = [
+    'title',
+    'body',
+    'category1',
+    'category2',
+    'country',
+    'region',
+    'city',
+    'nickname',
+    'preferred_contact_method',
+    'price',
+    'event_date',
+    'availability_date'
+  ];
+
+  const els = {
+    authForm: document.getElementById('authForm'),
+    editForm: document.getElementById('editForm'),
+    editorPanel: document.getElementById('editorPanel'),
+    postId: document.getElementById('postId'),
+    password: document.getElementById('password'),
+    token: document.getElementById('manageToken'),
+    authMessage: document.getElementById('authMessage'),
+    editMessage: document.getElementById('editMessage'),
+    statusBadge: document.getElementById('statusBadge'),
+    lastModified: document.getElementById('lastModified'),
+    publicLink: document.getElementById('publicLink'),
+    closeButton: document.getElementById('closeButton'),
+    reopenButton: document.getElementById('reopenButton'),
+    deleteButton: document.getElementById('deleteButton')
+  };
+
+  function setMessage(element, type, text) {
+    if (!element) return;
+    element.className = 'management-message ' + (type || 'info');
+    element.textContent = text || '';
+  }
+
+  function dateInputValue(value) {
+    if (!value) return '';
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return String(value).slice(0, 10);
+    return date.toISOString().slice(0, 10);
+  }
+
+  function formatDateTime(value) {
+    const date = value ? new Date(value) : null;
+    if (!date || Number.isNaN(date.getTime())) return '';
+    return date.toLocaleString('ja-JP', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  }
+
+  async function postAction(action, values) {
+    const body = new URLSearchParams();
+    body.append('action', action);
+    body.append('post_id', state.postId);
+    if (state.token) body.append('token', state.token);
+    if (state.password) body.append('password', state.password);
+    Object.entries(values || {}).forEach(function(entry) {
+      body.append(entry[0], entry[1] == null ? '' : String(entry[1]));
+    });
+    const response = await fetch(GAS_URL, { method: 'POST', body });
+    if (!response.ok) throw new Error('HTTP ' + response.status);
+    const data = await response.json();
+    if (!data || data.ok !== true) throw new Error((data && data.error) || '操作に失敗しました。');
+    return data;
+  }
+
+  function publicUrl(post) {
+    const id = post && (post.post_id || post.id || state.postId);
+    return '/germany/ja/community/post/?id=' + encodeURIComponent(id || '');
+  }
+
+  function renderPost(post) {
+    state.post = post || {};
+    state.postId = String(state.post.post_id || state.post.id || state.postId);
+    els.postId.value = state.postId;
+    fields.forEach(function(name) {
+      const input = document.getElementById(name);
+      if (!input) return;
+      input.value = input.type === 'date' ? dateInputValue(state.post[name]) : (state.post[name] || '');
+    });
+
+    const status = String(state.post.status || 'active').toLowerCase();
+    const isClosed = status === 'closed';
+    els.statusBadge.textContent = isClosed ? '募集終了' : '募集中';
+    els.statusBadge.classList.toggle('is-closed', isClosed);
+    els.lastModified.textContent = state.post.last_modified_at ? '最終更新 ' + formatDateTime(state.post.last_modified_at) : '';
+    els.publicLink.href = publicUrl(state.post);
+    els.closeButton.hidden = isClosed;
+    els.reopenButton.hidden = !isClosed;
+    els.editorPanel.classList.remove('hidden');
+  }
+
+  async function verifyAccess(event) {
+    event?.preventDefault();
+    state.postId = els.postId.value.trim();
+    state.password = els.password.value.trim();
+    state.token = els.token.value.trim();
+    if (!state.postId) {
+      setMessage(els.authMessage, 'error', '投稿IDを入力してください。');
+      return;
+    }
+    if (!state.password && !state.token) {
+      setMessage(els.authMessage, 'error', '編集用パスワード、または管理用URLのtokenが必要です。');
+      return;
+    }
+    setMessage(els.authMessage, 'info', '確認中...');
+    try {
+      const data = await postAction('verifyManageAccess');
+      renderPost(data.post);
+      setMessage(els.authMessage, 'success', '投稿を開きました。');
+      setMessage(els.editMessage, '', '');
+    } catch (error) {
+      setMessage(els.authMessage, 'error', error.message || '確認できませんでした。');
+    }
+  }
+
+  async function savePost(event) {
+    event.preventDefault();
+    const values = {};
+    fields.forEach(function(name) {
+      const input = document.getElementById(name);
+      if (input) values[name] = input.value.trim();
+    });
+    setMessage(els.editMessage, 'info', '保存中...');
+    try {
+      const data = await postAction('updatePost', values);
+      renderPost(data.post);
+      setMessage(els.editMessage, 'success', '変更を保存しました。');
+    } catch (error) {
+      setMessage(els.editMessage, 'error', error.message || '保存できませんでした。');
+    }
+  }
+
+  async function changeStatus(action, confirmText, successText) {
+    if (!window.confirm(confirmText)) return;
+    setMessage(els.editMessage, 'info', '更新中...');
+    try {
+      await postAction(action);
+      const data = await postAction('verifyManageAccess');
+      renderPost(data.post);
+      setMessage(els.editMessage, 'success', successText);
+    } catch (error) {
+      setMessage(els.editMessage, 'error', error.message || '更新できませんでした。');
+    }
+  }
+
+  els.postId.value = state.postId;
+  els.token.value = state.token;
+  els.authForm.addEventListener('submit', verifyAccess);
+  els.editForm.addEventListener('submit', savePost);
+  els.closeButton.addEventListener('click', function() {
+    changeStatus('closePost', 'この投稿を募集終了にしますか？', '募集終了にしました。');
+  });
+  els.reopenButton.addEventListener('click', function() {
+    changeStatus('reopenPost', 'この投稿を再募集しますか？', '再募集しました。');
+  });
+  els.deleteButton.addEventListener('click', function() {
+    changeStatus('deletePost', 'この投稿を非公開にしますか？一覧と公開ページから表示されなくなります。', '投稿を非公開にしました。');
+  });
+
+  if (state.postId && state.token) verifyAccess();
+})();
+</script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

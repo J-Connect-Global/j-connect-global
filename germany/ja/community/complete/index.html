@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>投稿完了 | 掲示板 | J-Connect Germany</title>
+<meta name="description" content="J-Connect Germanyの掲示板投稿完了ページです。管理用URLと投稿内容を確認できます。">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://j-connect-global.com/germany/ja/community/complete/">
+
+<link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal5-nav-20260618">
+<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
+<link rel="stylesheet" href="/assets/css/community.css">
+<style>
+/* Page-specific styles. Shared site styles live in the common site stylesheet. */
+:root{
+  --surface:#ffffff;
+  --thanks-line:#dce4ee;
+  --thanks-soft:#f8fbff;
+  --thanks-muted:#596875;
+  --thanks-navy:#00366d;
+  --thanks-danger:#a54912;
+}
+
+.thanks-hero{
+  gap:11px;
+  padding:22px;
+}
+
+.thanks-hero h1{
+  font-size:clamp(28px,3.6vw,40px);
+}
+
+.thanks-hero p{
+  max-width:86ch;
+}
+
+.thanks-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:6px;
+}
+
+.section{
+  margin-top:18px;
+}
+
+.thanks-card{
+  background:rgba(255,255,255,.92);
+  border:1px solid var(--line);
+  border-radius:9px;
+  box-shadow:var(--shadow);
+  padding:20px;
+}
+
+.thanks-card-head{
+  display:grid;
+  gap:6px;
+  margin-bottom:14px;
+}
+
+.section-kicker{
+  margin:0;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  color:var(--brand);
+  text-transform:uppercase;
+}
+
+.thanks-card h2{
+  margin:0;
+  font-size:24px;
+  line-height:1.25;
+  font-weight:800;
+}
+
+.thanks-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.8;
+}
+
+.summary-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+
+.summary-item{
+  min-width:0;
+  border:1px solid var(--thanks-line);
+  border-radius:8px;
+  background:#fff;
+  padding:10px 12px;
+}
+
+.summary-item.is-full{grid-column:1/-1}
+
+.summary-label{
+  color:var(--thanks-muted);
+  font-size:12px;
+  font-weight:800;
+}
+
+.summary-value{
+  margin-top:4px;
+  color:#24313d;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.65;
+  overflow-wrap:anywhere;
+  white-space:pre-wrap;
+}
+
+.fallback-message{
+  border:1px solid var(--thanks-line);
+  border-radius:8px;
+  background:var(--thanks-soft);
+  color:#526170;
+  padding:12px;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.8;
+}
+
+.cancel-panel{
+  margin-top:14px;
+  border-top:1px solid var(--thanks-line);
+  padding-top:14px;
+  display:grid;
+  gap:10px;
+}
+
+.cancel-button{
+  justify-self:start;
+  border:1px solid #ffd5bb;
+  background:#fff7ed;
+  color:var(--thanks-danger);
+}
+
+.cancel-button:hover{
+  background:#fff0e7;
+  border-color:#f6b780;
+}
+
+.cancel-button[disabled]{
+  opacity:.72;
+  cursor:not-allowed;
+}
+
+.cancel-status{
+  color:var(--thanks-muted);
+  font-size:13px;
+  line-height:1.7;
+}
+
+.bottom-actions{
+  margin-top:16px;
+}
+
+@media (max-width:780px){
+.thanks-hero{padding:18px}
+
+.summary-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+
+<script>
+(function () {
+  var segments = location.pathname.split('/').filter(Boolean);
+  if (segments.length && /\.html$/i.test(segments[segments.length - 1])) segments.pop();
+
+  var localeIndex = -1;
+  for (var i = 0; i < segments.length; i++) {
+    if (segments[i] === 'ja' || segments[i] === 'de') { localeIndex = i; break; }
+  }
+
+  var depth = localeIndex >= 0 ? (segments.length - localeIndex) : Math.max(segments.length - 1, 0);
+  var prefix = depth === 0 ? './' : '../'.repeat(depth);
+
+  var css = document.createElement('link');
+  css.rel = 'stylesheet';
+  css.href = '/assets/css/cookie-consent.css';
+  document.head.appendChild(css);
+
+  var js = document.createElement('script');
+  js.src = '/assets/js/cookie-consent.js';
+  js.defer = true;
+  document.head.appendChild(js);
+})();
+</script>
+</head>
+
+<body>
+
+<!-- LAYOUT:ja-header:start -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
+      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany">
+      <span class="brand-copy">
+        <span class="brand-title">J-CONNECT GERMANY</span>
+        <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <nav class="header-nav" aria-label="主要ナビゲーション">
+        <a href="/germany/ja/">ホーム</a>
+        <a href="/germany/ja/about/">このサイトについて</a>
+      </nav>
+      <details class="header-category header-category-menu" aria-label="カテゴリ選択">
+        <summary class="header-category-trigger" aria-haspopup="true">
+          <span>カテゴリ</span>
+          <span class="header-category-chevron" aria-hidden="true">▼</span>
+        </summary>
+        <div class="category-dropdown">
+          <a href="/germany/ja/community/" class="active" aria-current="page">交流・掲示板</a>
+          <a href="/germany/ja/living/">生活・手続き</a>
+          <a href="/germany/ja/jobs/">仕事・求人</a>
+          <a href="/germany/ja/events/">ニュース・イベント</a>
+          <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+        </div>
+      </details>
+      <form class="header-search" action="/germany/ja/search/" method="get" role="search">
+        <label class="search-box" aria-label="サイト内検索">
+          <span aria-hidden="true">⌕</span>
+          <input type="search" name="q" placeholder="検索">
+        </label>
+        <button class="search-btn" type="submit" aria-label="検索"><span class="search-btn-icon" aria-hidden="true">⌕</span></button>
+      </form>
+      <details class="header-language header-language-menu" aria-label="言語切り替え">
+        <summary class="header-language-trigger">
+          <span>Language</span>
+          <span class="header-language-current" lang="ja">日本語</span>
+        </summary>
+        <div class="language-dropdown">
+          <a href="/germany/ja/community/complete/" class="active" aria-current="page" lang="ja">日本語</a>
+          <a href="/germany/en/coming-soon/" lang="en">English</a>
+          <a href="/germany/de/coming-soon/" lang="de">Deutsch</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+<!-- LAYOUT:ja-header:end -->
+
+<main class="main">
+  <div class="container">
+
+    <section class="thanks-hero jc-page-hero" aria-labelledby="page-title">
+      <div class="jc-eyebrow"><span class="jc-dot"></span>COMMUNITY BOARD</div>
+      <h1 id="page-title">投稿を受け付けました</h1>
+      <p class="hero-desc">
+        投稿は管理者確認後に掲載されます。確認が完了するまで、反映に時間がかかる場合があります。
+      </p>
+      <div class="thanks-actions">
+        <a class="jc-button is-primary" href="../">掲示板に戻る</a>
+        <a class="jc-button" href="../post/">別の投稿を作成する</a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="submitted-title">
+      <div class="thanks-card">
+        <div class="thanks-card-head">
+          <p class="section-kicker">SUBMITTED CONTENT</p>
+          <h2 id="submitted-title">送信した内容</h2>
+          <p>この表示は送信直後の確認用です。非公開メールアドレスや内部項目は表示していません。</p>
+        </div>
+        <div id="submissionSummary"></div>
+        <div class="cancel-panel" aria-labelledby="cancel-title">
+          <h2 id="cancel-title">投稿を取り消したい場合</h2>
+          <p>管理者確認前に掲載を止めたい場合は、取り消し依頼を作成できます。</p>
+          <button id="cancelSubmissionButton" class="jc-button cancel-button" type="button">投稿取り消し</button>
+          <p id="cancelStatus" class="cancel-status" aria-live="polite"></p>
+        </div>
+        <div class="thanks-actions bottom-actions">
+          <a class="jc-button is-primary" href="../">掲示板に戻る</a>
+          <a class="jc-button" href="../post/">別の投稿を作成する</a>
+        </div>
+      </div>
+    </section>
+
+<!-- LAYOUT:ja-footer:start -->
+<footer class="page-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany">
+      <div class="footer-copy">
+        <div class="footer-title">J-CONNECT GERMANY</div>
+        <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+        <div class="footer-meta">© 2026 J-Connect Germany</div>
+      </div>
+    </div>
+    <div class="footer-links" aria-label="フッターサイトマップ">
+      <div class="footer-group">
+        <div class="footer-heading">サイト</div>
+        <a href="/germany/ja/">ホーム</a>
+        <a href="/germany/ja/about/">このサイトについて</a>
+        <a href="/germany/ja/guides/">ガイド</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">主要カテゴリ</div>
+        <a href="/germany/ja/community/">交流・掲示板</a>
+        <a href="/germany/ja/living/">生活・手続き</a>
+        <a href="/germany/ja/jobs/">仕事・求人</a>
+        <a href="/germany/ja/events/">イベント</a>
+        <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">生活ディレクトリ</div>
+        <a href="/germany/ja/eat/">食べる</a>
+        <a href="/germany/ja/shopping/">買い物</a>
+        <a href="/germany/ja/medical/">医療</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">利用者向け</div>
+        <a href="/germany/ja/community/post/">投稿する</a>
+        <a href="/germany/ja/jobs/posting/">求人掲載について</a>
+        <a href="/germany/ja/contact/">お問い合わせ</a>
+        <a href="/germany/ja/terms/">利用規約</a>
+        <a href="/germany/ja/privacy/">プライバシー</a>
+        <a href="/germany/ja/impressum/">運営者情報</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- LAYOUT:ja-footer:end -->
+  </div>
+</main>
+
+<script src="/assets/js/data-sources.js"></script>
+<script>
+(function() {
+  const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
+  const GAS_URL = DATA_SOURCES.communityDataEndpoint;
+  const LAST_SUBMISSION_KEY = 'jconnectCommunityLastSubmission';
+  const CANCEL_ACCEPTED_MESSAGE = '投稿取り消しの依頼を受け付けました。管理者確認前のため、掲載されないよう確認します。';
+  const ADMIN_EMAIL_NOT_CONFIGURED_MESSAGE = '投稿取り消し依頼の送信先が管理者側で設定されていません。時間をおいて再度お試しください。';
+  const CANCEL_FAILED_MESSAGE = '投稿取り消し依頼を送信できませんでした。時間をおいて再度お試しください。';
+
+  function escapeHtml(value) {
+    return String(value || '')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+  }
+
+  function readStoredSnapshot() {
+    const sources = [sessionStorage, localStorage];
+    for (const storage of sources) {
+      try {
+        const raw = storage.getItem(LAST_SUBMISSION_KEY);
+        if (!raw) continue;
+        const parsed = JSON.parse(raw);
+        return parsed && typeof parsed === 'object' ? parsed : null;
+      } catch (error) {
+        continue;
+      }
+    }
+    return null;
+  }
+
+  function saveStoredSnapshot(snapshot) {
+    const value = JSON.stringify(snapshot);
+    try {
+      sessionStorage.setItem(LAST_SUBMISSION_KEY, value);
+    } catch (error) {
+      try {
+        localStorage.setItem(LAST_SUBMISSION_KEY, value);
+      } catch (storageError) {}
+    }
+  }
+
+  function formatDateTime(value) {
+    const date = value ? new Date(value) : null;
+    if (!date || Number.isNaN(date.getTime())) return '';
+    return date.toLocaleString('ja-JP', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  }
+
+  function summaryItem(label, value, isFull) {
+    if (!value) return '';
+    return `
+      <div class="summary-item ${isFull ? 'is-full' : ''}">
+        <div class="summary-label">${escapeHtml(label)}</div>
+        <div class="summary-value">${escapeHtml(value)}</div>
+      </div>
+    `;
+  }
+
+  function linkPanel(snapshot) {
+    if (!snapshot) return '';
+    const publicUrl = snapshot.publicUrl || (snapshot.responsePostId ? '/germany/ja/community/post/?id=' + encodeURIComponent(snapshot.responsePostId) : '');
+    const manageUrl = snapshot.manageUrl || (snapshot.responsePostId ? '/germany/ja/community/manage/?post=' + encodeURIComponent(snapshot.responsePostId) : '');
+    return `
+      <div class="completion-panel" style="margin-top:14px">
+        <div class="thanks-card-head">
+          <p class="section-kicker">OWNER ACCESS</p>
+          <h2>投稿の編集・募集終了</h2>
+          <p>管理用URLは投稿者だけが使うリンクです。メールが届かない場合に備えて、この画面でも確認できます。</p>
+        </div>
+        ${manageUrl ? `
+          <div class="completion-copy-row">
+            <input id="manageUrlField" readonly value="${escapeHtml(manageUrl)}" aria-label="管理用URL">
+            <button class="jc-button" type="button" data-copy-target="manageUrlField">コピー</button>
+          </div>
+          <div class="thanks-actions" style="margin-top:10px">
+            <a class="jc-button is-primary" href="${escapeHtml(manageUrl)}">投稿を管理する</a>
+            ${publicUrl ? `<a class="jc-button" href="${escapeHtml(publicUrl)}">公開ページを開く</a>` : ''}
+          </div>
+        ` : `
+          <p class="fallback-message">管理用URLを取得できませんでした。投稿時に設定した編集用パスワードと投稿IDで管理ページから操作できます。</p>
+          <div class="thanks-actions" style="margin-top:10px"><a class="jc-button is-primary" href="../manage/">管理ページへ</a></div>
+        `}
+      </div>
+    `;
+  }
+
+  function renderSummary(snapshot) {
+    const container = document.getElementById('submissionSummary');
+    if (!container) return;
+
+    if (!snapshot) {
+      container.innerHTML = '<div class="fallback-message">送信内容の一時表示データが見つかりませんでした。投稿内容は管理者確認後に掲載されます。</div>';
+      return;
+    }
+
+    container.innerHTML = `
+      <div class="summary-grid">
+        ${summaryItem('投稿カテゴリ', snapshot.category1)}
+        ${summaryItem('投稿の種類', snapshot.category2)}
+        ${summaryItem('タイトル', snapshot.title, true)}
+        ${summaryItem('本文', snapshot.body, true)}
+        ${summaryItem('国', snapshot.country)}
+        ${summaryItem('都市', snapshot.city)}
+        ${summaryItem('価格', snapshot.price)}
+        ${summaryItem('イベント日', snapshot.event_date)}
+        ${summaryItem('利用可能日', snapshot.availability_date)}
+        ${summaryItem('ニックネーム', snapshot.nickname)}
+        ${summaryItem('送信日時', formatDateTime(snapshot.submittedAt))}
+      </div>
+      ${linkPanel(snapshot)}
+    `;
+  }
+
+  function updateCancelButton(snapshot) {
+    const button = document.getElementById('cancelSubmissionButton');
+    const status = document.getElementById('cancelStatus');
+    if (!button || !status) return;
+    if (snapshot && snapshot.cancellationRequested) {
+      button.textContent = '取り消し依頼済み';
+      button.disabled = true;
+      status.textContent = '取り消し依頼の状態をこのブラウザに保存しました。';
+    }
+  }
+
+  function appendPayloadValue(payload, key, value) {
+    payload.append(key, value === undefined || value === null ? '' : String(value));
+  }
+
+  function buildCancellationPayload(snapshot) {
+    const payload = new URLSearchParams();
+    appendPayloadValue(payload, 'action', 'cancelCommunityPostRequest');
+    appendPayloadValue(payload, 'request_type', 'community_post_cancellation');
+    appendPayloadValue(payload, 'site', 'J-Connect Germany');
+    appendPayloadValue(payload, 'cancellation_requested_at', new Date().toISOString());
+    appendPayloadValue(payload, 'submitted_at', snapshot.submittedAt);
+    appendPayloadValue(payload, 'responsePostId', snapshot.responsePostId);
+    appendPayloadValue(payload, 'title', snapshot.title);
+    appendPayloadValue(payload, 'body', snapshot.body);
+    appendPayloadValue(payload, 'category1', snapshot.category1);
+    appendPayloadValue(payload, 'category2', snapshot.category2);
+    appendPayloadValue(payload, 'country', snapshot.country);
+    appendPayloadValue(payload, 'city', snapshot.city);
+    appendPayloadValue(payload, 'price', snapshot.price);
+    appendPayloadValue(payload, 'event_date', snapshot.event_date);
+    appendPayloadValue(payload, 'availability_date', snapshot.availability_date);
+    appendPayloadValue(payload, 'nickname', snapshot.nickname);
+    return payload;
+  }
+
+  async function postCancellationRequest(snapshot) {
+    const response = await fetch(GAS_URL, {
+      method: 'POST',
+      body: buildCancellationPayload(snapshot)
+    });
+    if (!response.ok) {
+      throw new Error('HTTP ' + response.status);
+    }
+    return await response.json();
+  }
+
+  function isAdminEmailMissing(data) {
+    const value = [
+      data && data.error,
+      data && data.code,
+      data && data.reason,
+      data && data.message
+    ].filter(Boolean).join(' ');
+    return value.includes('ADMIN_EMAIL_NOT_CONFIGURED');
+  }
+
+  async function handleCancellation() {
+    const snapshot = readStoredSnapshot() || {};
+    const button = document.getElementById('cancelSubmissionButton');
+    const status = document.getElementById('cancelStatus');
+    if (!window.confirm('この投稿の取り消しを依頼しますか？')) return;
+
+    if (button) {
+      button.disabled = true;
+      button.textContent = '送信中...';
+    }
+
+    try {
+      const data = await postCancellationRequest(snapshot);
+      if (!data || data.ok !== true) {
+        if (isAdminEmailMissing(data)) {
+          window.alert(ADMIN_EMAIL_NOT_CONFIGURED_MESSAGE);
+        } else {
+          window.alert(CANCEL_FAILED_MESSAGE);
+        }
+        if (button) {
+          button.disabled = false;
+          button.textContent = '投稿取り消し';
+        }
+        return;
+      }
+
+      window.alert(CANCEL_ACCEPTED_MESSAGE);
+      snapshot.cancellationRequested = true;
+      saveStoredSnapshot(snapshot);
+      updateCancelButton(snapshot);
+    } catch (error) {
+      window.alert(CANCEL_FAILED_MESSAGE);
+      if (button) {
+        button.disabled = false;
+        button.textContent = '投稿取り消し';
+      }
+      if (status) {
+        status.textContent = '投稿取り消し依頼を送信できませんでした。時間をおいて再度お試しください。';
+      }
+    }
+  }
+
+  const snapshot = readStoredSnapshot();
+  renderSummary(snapshot);
+  updateCancelButton(snapshot);
+  document.getElementById('cancelSubmissionButton')?.addEventListener('click', handleCancellation);
+  document.querySelectorAll('[data-copy-target]').forEach(function(button) {
+    button.addEventListener('click', async function() {
+      const target = document.getElementById(button.dataset.copyTarget || '');
+      if (!target) return;
+      try {
+        await navigator.clipboard.writeText(target.value || target.textContent || '');
+        button.textContent = 'コピーしました';
+      } catch (error) {
+        target.select?.();
+        button.textContent = '選択してください';
+      }
+    });
+  });
+})();
+</script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -99,6 +99,33 @@
     return pick(post, ["post_id", "postId", "id", "_id", "slug"]) || `community-post-${index + 1}`;
   }
 
+  function normalizeStatus(value) {
+    const text = String(value || "").trim().toLowerCase();
+    if (!text) return "active";
+    if (text === "active") return "active";
+    if (text === "closed") return "closed";
+    if (text === "hidden") return "hidden";
+    if (text === "pending") return "pending";
+    if (text === "deleted") return "deleted";
+    if (text === "inactive") return "inactive";
+    if (text === "expired") return "expired";
+    return text;
+  }
+
+  function isExpired(post) {
+    const raw = pick(post, ["expires_at", "expiresAt"]);
+    if (!raw) return false;
+    const time = new Date(raw).getTime();
+    return Number.isFinite(time) && time < Date.now();
+  }
+
+  function isPubliclyVisible(post, includeClosed) {
+    const status = normalizeStatus(post && post.status);
+    if (status === "active") return !isExpired(post);
+    if (status === "closed") return includeClosed !== false;
+    return false;
+  }
+
   function isLikelyTestPost(post) {
     const title = pick(post, ["title", "name", "subject"]);
     const body = pick(post, ["body", "description", "message", "content"]);
@@ -142,6 +169,7 @@
     const id = postId(post, index);
     const city = pick(post, ["city", "location", "area"]);
     const region = pick(post, ["region", "prefecture"]);
+    const status = normalizeStatus(post.status);
     return {
       ...post,
       _id: id,
@@ -150,7 +178,14 @@
       _postType: pick(post, ["category1", "post_type", "postType", "type", "category"]) || "質問",
       _subcategory: pick(post, ["category2", "subcategory", "sub_category", "detail_category"]) || "その他",
       _location: [city, region].filter(Boolean).join(" / ") || "地域未設定",
-      _date: pick(post, ["created_at", "createdAt", "date", "timestamp", "updated_at"]),
+      _date: pick(post, ["last_modified_at", "updated_at", "created_at", "createdAt", "date", "timestamp"]),
+      _createdAt: pick(post, ["created_at", "createdAt", "date", "timestamp"]),
+      _lastModifiedAt: pick(post, ["last_modified_at", "lastModifiedAt"]),
+      _lastModifiedAction: pick(post, ["last_modified_action", "lastModifiedAction"]),
+      _status: status,
+      _isActive: status === "active",
+      _isClosed: status === "closed",
+      _isExpired: isExpired(post),
       _price: pick(post, ["price", "fee", "salary", "budget"]),
       _images: images(post)
     };
@@ -183,6 +218,9 @@
     normalizePost,
     sortPosts,
     formatDate,
+    normalizeStatus,
+    isExpired,
+    isPubliclyVisible,
     communityDetailHref,
     isLikelyTestPost,
     images,

@@ -343,6 +343,55 @@
     }
   },
   {
+    "id": "T009",
+    "title": "ドイツから行く週末旅行：アムステルダム観光の基本",
+    "slug": "amsterdam-weekend-trip",
+    "category": "観光",
+    "summary": "ドイツ西部から電車や車で行きやすいアムステルダムを、初めての週末旅行として無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "url": "/germany/ja/living/amsterdam-weekend-trip/",
+    "markdown_path": "/content/living/amsterdam-weekend-trip.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-06-29",
+    "updated_at": "2026-06-29",
+    "last_verified": "2026-06-29",
+    "tags": [
+      "アムステルダム",
+      "週末旅行",
+      "オランダ",
+      "観光",
+      "美術館"
+    ],
+    "home_visible": true,
+    "home_order": 208,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/amsterdam-weekend-trip/",
+    "related_articles": [
+      "strasbourg-weekend-trip",
+      "aachen-day-trip",
+      "cologne-city-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "I amsterdam",
+        "url": "https://www.iamsterdam.com/en"
+      },
+      {
+        "title": "GVB - Public transport in Amsterdam",
+        "url": "https://www.gvb.nl/en/visit-amsterdam/gvb-public-transport-company-amsterdam"
+      }
+    ],
+    "disclaimer_type": "tourism",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Germany editorial",
+      "last_reviewed_at": "2026-06-29",
+      "next_review_due": "2027-06-29"
+    }
+  },
+  {
     "id": "L011",
     "title": "Rundfunkbeitragとは？ドイツの放送負担金の基本",
     "slug": "rundfunkbeitrag-guide",

@@ -390,6 +390,19 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
+    "title": "ドイツから行く週末旅行：アムステルダム観光の基本",
+    "description": "ドイツ西部から電車や車で行きやすいアムステルダムを、初めての週末旅行として無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "url": "/germany/ja/living/amsterdam-weekend-trip/",
+    "category": "生活・手続き",
+    "tags": [
+      "アムステルダム",
+      "週末旅行",
+      "オランダ",
+      "観光",
+      "美術館"
+    ]
+  },
+  {
     "title": "Rundfunkbeitragとは？ドイツの放送負担金の基本",
     "description": "ドイツで住み始めたときに届くRundfunkbeitragの通知、支払い対象、登録・支払い・引っ越し時の確認点を整理。",
     "url": "/germany/ja/living/rundfunkbeitrag-guide/",

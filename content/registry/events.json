@@ -292,5 +292,54 @@
       "last_reviewed_at": "2026-06-28",
       "next_review_due": "2026-12-28"
     }
+  },
+  {
+    "id": "E008",
+    "title": "NATSU HIKARI Japan Festival Köln 2026 ガイド",
+    "slug": "natsu-hikari-japan-festival-cologne",
+    "image_url": "/assets/images/placeholders/event.svg",
+    "image_alt": "Japan festival event card",
+    "category": "日本文化イベント",
+    "summary": "2026年8月22日にケルンで開催予定のNATSU HIKARI Japan Festival Kölnについて、内容、チケット、アクセス、子連れ・コスプレ参加時の確認ポイントを整理します。",
+    "url": "/germany/ja/events/natsu-hikari-japan-festival-cologne/",
+    "markdown_path": "/content/events/natsu-hikari-japan-festival-cologne.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-06-29",
+    "updated_at": "2026-06-29",
+    "last_verified": "2026-06-29",
+    "tags": [
+      "日本文化",
+      "ケルン",
+      "NRW",
+      "アニメ",
+      "家族向け"
+    ],
+    "home_visible": true,
+    "home_order": 5,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/natsu-hikari-japan-festival-cologne/",
+    "city": "Köln",
+    "location": "Carlswerk Victoria & Club Volta Köln",
+    "event_date": "2026-08-22 09:00-21:00",
+    "official_url": "https://www.dreamlight-labs.com/de/festival/hikari-japan-festival-koln",
+    "official_sources": [
+      {
+        "title": "NATSU HIKARI Japan Festival Köln",
+        "url": "https://www.dreamlight-labs.com/de/festival/hikari-japan-festival-koln"
+      }
+    ],
+    "disclaimer_type": "event",
+    "related_articles": [
+      "cologne-city-guide"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Germany editorial",
+      "last_reviewed_at": "2026-06-29",
+      "next_review_due": "2026-08-22"
+    }
   }
 ]

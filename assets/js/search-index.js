@@ -664,6 +664,19 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
+    "title": "ドイツでワールドカップ2026を見る方法：日本代表戦・無料放送・配信・スポーツバーの使い分け",
+    "description": "ドイツ在住者向けに、FIFAワールドカップ2026をARD/ZDF、MagentaTV、スポーツバー、公式ハイライトで見る方法と、日本代表戦を追う実用ポイントを整理します。",
+    "url": "/germany/ja/living/world-cup-2026-watch-germany/",
+    "category": "生活・手続き",
+    "tags": [
+      "ワールドカップ",
+      "サッカー",
+      "配信",
+      "ドイツ生活",
+      "日本代表"
+    ]
+  },
+  {
     "title": "デュッセルドルフ日本デーの基本ガイド",
     "description": "デュッセルドルフの日本デーについて、初めて行く人向けに見どころ、混雑、アクセス、子連れ・花火観覧の注意点を整理します。",
     "url": "/germany/ja/events/japan-day-duesseldorf/",
@@ -742,6 +755,19 @@ window.JCONNECT_SEARCH_INDEX = [
       "ワールドカップ",
       "交通",
       "イベント"
+    ]
+  },
+  {
+    "title": "NATSU HIKARI Japan Festival Köln 2026 ガイド",
+    "description": "2026年8月22日にケルンで開催予定のNATSU HIKARI Japan Festival Kölnについて、内容、チケット、アクセス、子連れ・コスプレ参加時の確認ポイントを整理します。",
+    "url": "/germany/ja/events/natsu-hikari-japan-festival-cologne/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "日本文化",
+      "ケルン",
+      "NRW",
+      "アニメ",
+      "家族向け"
     ]
   },
   {

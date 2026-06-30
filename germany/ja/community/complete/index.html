@@ -6,7 +6,7 @@
 
 <title>投稿完了 | 掲示板 | J-Connect Germany</title>
 <meta name="description" content="J-Connect Germanyの掲示板投稿完了ページです。管理用URLと投稿内容を確認できます。">
-<meta name="robots" content="noindex, follow">
+<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://j-connect-global.com/germany/ja/community/complete/">
 
 <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
@@ -290,6 +290,9 @@
       </div>
     </section>
 
+  </div>
+</main>
+
 <!-- LAYOUT:ja-footer:start -->
 <footer class="page-footer">
   <div class="footer-inner">
@@ -335,8 +338,6 @@
   </div>
 </footer>
 <!-- LAYOUT:ja-footer:end -->
-  </div>
-</main>
 
 <script src="/assets/js/data-sources.js"></script>
 <script>
@@ -405,16 +406,29 @@
     `;
   }
 
+  function safeCommunityUrl(value, fallback) {
+    const raw = String(value || '').trim();
+    if (!raw) return fallback || '';
+    try {
+      const url = new URL(raw, location.origin);
+      if (url.origin === location.origin && url.pathname.startsWith('/germany/ja/community/')) {
+        return url.pathname + url.search + url.hash;
+      }
+    } catch (error) {}
+    return fallback || '';
+  }
+
   function linkPanel(snapshot) {
     if (!snapshot) return '';
-    const publicUrl = snapshot.publicUrl || (snapshot.responsePostId ? '/germany/ja/community/post/?id=' + encodeURIComponent(snapshot.responsePostId) : '');
-    const manageUrl = snapshot.manageUrl || (snapshot.responsePostId ? '/germany/ja/community/manage/?post=' + encodeURIComponent(snapshot.responsePostId) : '');
+    const fallbackPublicUrl = snapshot.responsePostId ? '/germany/ja/community/post/?id=' + encodeURIComponent(snapshot.responsePostId) : '';
+    const publicUrl = safeCommunityUrl(snapshot.publicUrl, fallbackPublicUrl);
+    const manageUrl = safeCommunityUrl(snapshot.manageUrl, '');
     return `
       <div class="completion-panel" style="margin-top:14px">
         <div class="thanks-card-head">
           <p class="section-kicker">OWNER ACCESS</p>
           <h2>投稿の編集・募集終了</h2>
-          <p>管理用URLは投稿者だけが使うリンクです。メールが届かない場合に備えて、この画面でも確認できます。</p>
+          <p>管理用URLは投稿者だけが使うリンクです。メールでも同じ管理用リンクをお送りします。</p>
         </div>
         ${manageUrl ? `
           <div class="completion-copy-row">
@@ -426,8 +440,7 @@
             ${publicUrl ? `<a class="jc-button" href="${escapeHtml(publicUrl)}">公開ページを開く</a>` : ''}
           </div>
         ` : `
-          <p class="fallback-message">管理用URLを取得できませんでした。投稿時に設定した編集用パスワードと投稿IDで管理ページから操作できます。</p>
-          <div class="thanks-actions" style="margin-top:10px"><a class="jc-button is-primary" href="../manage/">管理ページへ</a></div>
+          <p class="fallback-message">管理用URLは投稿時の非公開メールアドレス宛に送信されます。メール内の管理用リンクから操作してください。</p>
         `}
       </div>
     `;
@@ -451,8 +464,7 @@
         ${summaryItem('国', snapshot.country)}
         ${summaryItem('都市', snapshot.city)}
         ${summaryItem('価格', snapshot.price)}
-        ${summaryItem('イベント日', snapshot.event_date)}
-        ${summaryItem('利用可能日', snapshot.availability_date)}
+        ${summaryItem(snapshot.date_label || '目安日', snapshot.date_value || snapshot.availability_date)}
         ${summaryItem('ニックネーム', snapshot.nickname)}
         ${summaryItem('送信日時', formatDateTime(snapshot.submittedAt))}
       </div>
@@ -490,8 +502,7 @@
     appendPayloadValue(payload, 'country', snapshot.country);
     appendPayloadValue(payload, 'city', snapshot.city);
     appendPayloadValue(payload, 'price', snapshot.price);
-    appendPayloadValue(payload, 'event_date', snapshot.event_date);
-    appendPayloadValue(payload, 'availability_date', snapshot.availability_date);
+    appendPayloadValue(payload, 'availability_date', snapshot.date_value || snapshot.availability_date);
     appendPayloadValue(payload, 'nickname', snapshot.nickname);
     return payload;
   }

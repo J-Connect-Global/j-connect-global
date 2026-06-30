@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>投稿フォーム | J-Connect Germany</title>
 <meta name="description" content="J-Connect Germanyの交流・掲示板に投稿するためのフォームです。投稿は管理者確認後に掲載されます。">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://j-connect-global.com/germany/ja/community/post/">
 <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,7 +73,7 @@
 
 #postFormMode{
   display:grid;
-  gap:16px;
+  gap:12px;
 }
 
 .section{margin-top:0}
@@ -114,74 +114,16 @@
   backdrop-filter:blur(6px);
 }
 
-.writing-tips{
-  display:grid;
-  gap:12px;
-  margin-bottom:14px;
-}
-
-.writing-tips-head{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap:16px;
-}
-
-.writing-tips-head h3{
-  margin:0;
-  font-size:20px;
-  line-height:1.25;
-  font-weight:800;
-  color:#24313d;
-}
-
-.writing-tips-head p{
-  margin:0;
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.6;
-}
-
-.writing-tip-list{
-  display:grid;
-  grid-template-columns:repeat(5,minmax(0,1fr));
-  gap:8px;
-  margin:0;
-  padding:0;
-}
-
-.writing-tip-list li{
-  list-style:none;
-  min-width:0;
-  border:1px solid var(--line);
-  border-radius:9px;
-  background:#f8fbff;
-  padding:10px;
-}
-
-.writing-tip-list strong{
-  display:block;
-  color:#24313d;
-  font-size:13px;
-  line-height:1.35;
-  font-weight:800;
-}
-
-.writing-tip-list span{
-  display:block;
-  margin-top:4px;
-  color:#596875;
-  font-size:12px;
-  line-height:1.5;
-}
-
 .form-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(4,1fr);
   gap:12px;
 }
 
 .full{grid-column:1/-1}
+.form-field{grid-column:span 2}
+.compact-field{grid-column:span 1}
+.hidden{display:none!important}
 
 .form-field label,
 .agree-label{
@@ -247,7 +189,7 @@
 
 .field-note{
   grid-column:1/-1;
-  margin:-2px 0 0;
+  margin:2px 0 0;
   border:1px solid #dce8f5;
   border-radius:9px;
   background:#f8fbff;
@@ -255,6 +197,80 @@
   color:#526170;
   font-size:13px;
   line-height:1.65;
+}
+
+.form-field .field-note{
+  border:0;
+  background:transparent;
+  padding:0;
+  margin-top:6px;
+  font-size:12px;
+  line-height:1.55;
+  font-weight:600;
+}
+
+.image-upload-field{max-width:620px}
+
+.image-dropzone{
+  border:1.5px dashed var(--community-line-strong);
+  border-radius:12px;
+  background:#f8fbff;
+  min-height:96px;
+  display:grid;
+  place-items:center;
+  padding:16px;
+  color:#34414d;
+  text-align:center;
+  transition:border-color .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+.image-dropzone strong,
+.image-dropzone span{display:block}
+
+.image-dropzone strong{font-size:14px;font-weight:900}
+
+.image-dropzone span{margin-top:3px;color:var(--community-muted);font-size:12px;font-weight:700}
+
+.image-dropzone.is-dragover,
+.image-dropzone:focus-visible{
+  border-color:var(--community-navy);
+  background:#eef7ff;
+  box-shadow:0 0 0 4px rgba(0,54,109,.1);
+  outline:0;
+}
+
+.image-preview-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:8px;
+}
+
+.image-preview-item{
+  width:96px;
+  border:1px solid #dce4ee;
+  border-radius:9px;
+  background:#fff;
+  overflow:hidden;
+}
+
+.image-preview-item img{
+  display:block;
+  width:100%;
+  aspect-ratio:1;
+  object-fit:cover;
+  background:#eef3f6;
+}
+
+.image-preview-item button{
+  width:100%;
+  border:0;
+  border-top:1px solid #dce4ee;
+  background:#fff;
+  color:#9b1c1c;
+  min-height:30px;
+  font-size:12px;
+  font-weight:900;
 }
 
 .category-writing-helper{
@@ -424,6 +440,7 @@
   display:grid;
   grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
   gap:18px;
+  min-height:520px;
 }
 
 .detail-loading-media{
@@ -433,6 +450,13 @@
 
 .detail-loading-content{
   align-self:start;
+}
+
+.detail-loading-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:20px;
 }
 
 .detail-shell{
@@ -560,6 +584,16 @@
   font-weight:800;
 }
 
+.detail-price{
+  margin-top:8px;
+  color:#0f2f57;
+  font-size:22px;
+  line-height:1.2;
+  font-weight:900;
+}
+
+.detail-price.free{color:#0f6a3d}
+
 .badge-row,
 .fact-row,
 .detail-actions{
@@ -594,11 +628,11 @@
 .closed-detail-notice{
   display:grid;
   gap:3px;
-  border:1px solid #cbd5e1;
-  border-left:5px solid #475569;
+  border:1px solid #efb8b8;
+  border-left:5px solid #b91c1c;
   border-radius:8px;
-  background:#f8fafc;
-  color:#334155;
+  background:#fff1f1;
+  color:#9b1c1c;
   padding:12px 14px;
   margin-bottom:16px;
 }
@@ -609,7 +643,7 @@
 }
 
 .closed-detail-notice span{
-  color:#64748b;
+  color:#7f1d1d;
   font-size:13px;
   line-height:1.55;
   font-weight:800;
@@ -861,13 +895,6 @@
 
 .section-title{font-size:21px}
 
-.writing-tips-head{
-    display:grid;
-    gap:4px;
-  }
-
-.writing-tip-list{grid-template-columns:repeat(2,minmax(0,1fr))}
-
 .form-grid{grid-template-columns:1fr}
 
 .detail-shell{grid-template-columns:1fr}
@@ -893,9 +920,6 @@
   }
 }
 
-@media(max-width:560px){
-.writing-tip-list{grid-template-columns:1fr}
-}
 </style>
 </head>
 
@@ -979,20 +1003,6 @@
         </div>
       </div>
 
-      <aside class="panel writing-tips" aria-labelledby="writingTipsTitle">
-        <div class="writing-tips-head">
-          <h3 id="writingTipsTitle">書き方のヒント</h3>
-          <p>投稿の種類に合わせて、相手が判断しやすい情報を先にまとめておくとスムーズです。</p>
-        </div>
-        <ul class="writing-tip-list">
-          <li><strong>売ります・譲ります</strong><span>品名、状態、価格、受け渡し場所を書く</span></li>
-          <li><strong>質問・相談</strong><span>困っていること、地域、試したことを書く</span></li>
-          <li><strong>友達募集・交流</strong><span>地域、興味、希望する交流方法を書く</span></li>
-          <li><strong>イベント告知</strong><span>日時、場所、参加方法を書く</span></li>
-          <li><strong>レッスン・アルバイト</strong><span>内容、条件、報酬、連絡方法を書く</span></li>
-        </ul>
-      </aside>
-
       <div class="panel">
         <form id="postForm" class="form-grid">
           <input type="hidden" name="action" value="submitPost">
@@ -1000,8 +1010,6 @@
           <div id="messageBox" class="message"></div>
 
           <input type="hidden" id="region" name="region" value="">
-          <input type="hidden" id="contact_phone_private" name="contact_phone_private" value="">
-          <input type="hidden" id="preferred_contact_method" name="preferred_contact_method" value="メール">
 
           <div class="form-field">
             <label for="category1">投稿カテゴリ<span class="required-mark">*</span></label>
@@ -1039,44 +1047,21 @@
               <option value="ドイツ" selected>ドイツ</option>
               <option value="オーストリア">オーストリア</option>
               <option value="スイス">スイス</option>
+              <option value="オンライン">オンライン</option>
               <option value="その他">その他</option>
             </select>
           </div>
 
-          <div class="form-field">
-            <label for="city">都市<span class="required-mark">*</span></label>
+          <div class="form-field" id="cityField">
+            <label for="city">地域<span class="required-mark" id="cityRequiredMark">*</span></label>
             <select id="city" name="city" required>
               <option value="">選択してください</option>
-              <option value="NRW - Düsseldorf">NRW - Düsseldorf</option>
-              <option value="NRW - Köln">NRW - Köln</option>
-              <option value="NRW - Bonn">NRW - Bonn</option>
-              <option value="NRW - Essen">NRW - Essen</option>
-              <option value="NRW - Dortmund">NRW - Dortmund</option>
-              <option value="NRW - Duisburg">NRW - Duisburg</option>
-              <option value="NRW - Wuppertal">NRW - Wuppertal</option>
-              <option value="NRW - Bochum">NRW - Bochum</option>
-              <option value="NRW - Münster">NRW - Münster</option>
-              <option value="NRW - Aachen">NRW - Aachen</option>
-              <option value="Hessen - Frankfurt am Main">Hessen - Frankfurt am Main</option>
-              <option value="Hessen - Wiesbaden">Hessen - Wiesbaden</option>
-              <option value="Hessen - Darmstadt">Hessen - Darmstadt</option>
-              <option value="Berlin - Berlin">Berlin - Berlin</option>
-              <option value="Hamburg - Hamburg">Hamburg - Hamburg</option>
-              <option value="Bayern - München">Bayern - München</option>
-              <option value="Bayern - Nürnberg">Bayern - Nürnberg</option>
-              <option value="Baden-Württemberg - Stuttgart">Baden-Württemberg - Stuttgart</option>
-              <option value="Baden-Württemberg - Karlsruhe">Baden-Württemberg - Karlsruhe</option>
-              <option value="Baden-Württemberg - Mannheim">Baden-Württemberg - Mannheim</option>
-              <option value="Niedersachsen - Hannover">Niedersachsen - Hannover</option>
-              <option value="Sachsen - Leipzig">Sachsen - Leipzig</option>
-              <option value="Sachsen - Dresden">Sachsen - Dresden</option>
-              <option value="Bremen - Bremen">Bremen - Bremen</option>
-              <option value="Rheinland-Pfalz - Mainz">Rheinland-Pfalz - Mainz</option>
-              <option value="Saarland - Saarbrücken">Saarland - Saarbrücken</option>
-              <option value="Schleswig-Holstein - Kiel">Schleswig-Holstein - Kiel</option>
-              <option value="Online">Online</option>
-              <option value="その他">その他</option>
             </select>
+          </div>
+
+          <div class="form-field hidden" id="customLocationField">
+            <label for="custom_location">地域・都市<span class="required-mark">*</span></label>
+            <input id="custom_location" name="custom_location" placeholder="例：エアランゲン周辺、ブレーメン周辺など">
           </div>
 
           <div class="form-field">
@@ -1087,49 +1072,43 @@
           <div class="form-field">
             <label for="contact_email_private">非公開メールアドレス<span class="required-mark">*</span></label>
             <input id="contact_email_private" name="contact_email_private" type="email" required>
+            <p class="field-note">メールアドレスはサイト上には表示されません。投稿への問い合わせ転送と管理連絡のためにのみ使用します。</p>
           </div>
 
           <div class="form-field">
-            <label for="edit_password">編集用パスワード<span class="required-mark">*</span></label>
-            <input id="edit_password" name="edit_password" type="password" minlength="6" autocomplete="new-password" required>
-            <p class="field-note">投稿の編集、募集終了、再開、非公開化に使います。6文字以上で設定してください。</p>
+            <p class="field-note">投稿後、管理用リンクをメールでお送りします。投稿の編集・募集終了・再開・非公開化は、その管理用リンクから行えます。</p>
           </div>
 
           <p class="field-note">
-            メールアドレスはサイト上に表示されません。ただし、本文には住所や電話番号などの個人情報を書きすぎないようにしてください。
+            本文には住所、電話番号、勤務先などの個人情報を書きすぎないようにしてください。
+          </p>
+          <p class="field-note">
+            J-Connect Germanyはログイン情報、銀行情報、公的ID番号を求めません。メールアドレスは公開されず、投稿連絡・管理連絡のためにのみ使用されます。
+            <a href="/germany/ja/privacy/">プライバシー</a>・<a href="/germany/ja/terms/">利用規約</a>・<a href="/germany/ja/impressum/">運営者情報</a>
           </p>
 
-          <div class="form-field">
+          <div class="form-field compact-field">
             <label for="price">価格（必要な場合）</label>
             <input id="price" name="price" placeholder="例：無料、10€、相談可">
           </div>
 
-          <div class="form-field">
-            <label for="event_date">イベント日（イベント投稿のみ）</label>
-            <input id="event_date" name="event_date" type="date">
+          <div class="form-field compact-field">
+            <label id="dateFieldLabel" for="date_value">目安日</label>
+            <input id="date_value" name="date_value" type="date">
+            <p class="field-note">未定の場合は空欄で構いません。本文に「6月末ごろ」「週末のみ」などを書いてください。</p>
           </div>
 
-          <div class="form-field">
-            <label for="availability_date">利用可能日（物件など）</label>
-            <input id="availability_date" name="availability_date" type="date">
-          </div>
-
-          <div class="form-field">
-            <label for="image1">画像1</label>
-            <input id="image1" name="image1" type="file" accept="image/jpeg,image/png,image/webp">
-            <p class="file-note">JPG / PNG / WebP。1枚5MBまで。</p>
-          </div>
-
-          <div class="form-field">
-            <label for="image2">画像2</label>
-            <input id="image2" name="image2" type="file" accept="image/jpeg,image/png,image/webp">
-            <p class="file-note">JPG / PNG / WebP。1枚5MBまで。</p>
-          </div>
-
-          <div class="form-field full">
-            <label for="image3">画像3</label>
-            <input id="image3" name="image3" type="file" accept="image/jpeg,image/png,image/webp">
-            <p class="file-note">JPG / PNG / WebP。1枚5MBまで。</p>
+          <div class="form-field full image-upload-field">
+            <label for="imageUpload">画像</label>
+            <div class="image-dropzone" id="imageDropzone" tabindex="0" role="button" aria-describedby="imageUploadHelp">
+              <input id="imageUpload" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden>
+              <div>
+                <strong>画像を選択</strong>
+                <span>またはここにドラッグ＆ドロップ</span>
+              </div>
+            </div>
+            <p id="imageUploadHelp" class="file-note">最大3枚まで。JPG / PNG / WebP、1枚5MBまで。</p>
+            <div class="image-preview-list" id="imagePreviewList" aria-live="polite"></div>
           </div>
 
           <div class="full">
@@ -1161,55 +1140,57 @@
       </article>
     </div>
 
-    <!-- LAYOUT:ja-footer:start -->
-    <footer class="page-footer">
-      <div class="footer-inner">
-        <div class="footer-left">
-          <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany">
-          <div class="footer-copy">
-            <div class="footer-title">J-CONNECT GERMANY</div>
-            <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
-            <div class="footer-meta">© 2026 J-Connect Germany</div>
-          </div>
-        </div>
-        <div class="footer-links" aria-label="フッターサイトマップ">
-          <div class="footer-group">
-            <div class="footer-heading">サイト</div>
-            <a href="/germany/ja/">ホーム</a>
-            <a href="/germany/ja/about/">このサイトについて</a>
-            <a href="/germany/ja/guides/">ガイド</a>
-          </div>
-          <div class="footer-group">
-            <div class="footer-heading">主要カテゴリ</div>
-            <a href="/germany/ja/community/">交流・掲示板</a>
-            <a href="/germany/ja/living/">生活・手続き</a>
-            <a href="/germany/ja/jobs/">仕事・求人</a>
-            <a href="/germany/ja/events/">イベント</a>
-            <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
-          </div>
-          <div class="footer-group">
-            <div class="footer-heading">生活ディレクトリ</div>
-            <a href="/germany/ja/eat/">食べる</a>
-            <a href="/germany/ja/shopping/">買い物</a>
-            <a href="/germany/ja/medical/">医療</a>
-          </div>
-          <div class="footer-group">
-            <div class="footer-heading">利用者向け</div>
-            <a href="/germany/ja/community/post/">投稿する</a>
-            <a href="/germany/ja/jobs/posting/">求人掲載について</a>
-            <a href="/germany/ja/contact/">お問い合わせ</a>
-            <a href="/germany/ja/terms/">利用規約</a>
-            <a href="/germany/ja/privacy/">プライバシー</a>
-            <a href="/germany/ja/impressum/">運営者情報</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- LAYOUT:ja-footer:end -->
   </div>
 </main>
 
+<!-- LAYOUT:ja-footer:start -->
+<footer class="page-footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany">
+      <div class="footer-copy">
+        <div class="footer-title">J-CONNECT GERMANY</div>
+        <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+        <div class="footer-meta">© 2026 J-Connect Germany</div>
+      </div>
+    </div>
+    <div class="footer-links" aria-label="フッターサイトマップ">
+      <div class="footer-group">
+        <div class="footer-heading">サイト</div>
+        <a href="/germany/ja/">ホーム</a>
+        <a href="/germany/ja/about/">このサイトについて</a>
+        <a href="/germany/ja/guides/">ガイド</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">主要カテゴリ</div>
+        <a href="/germany/ja/community/">交流・掲示板</a>
+        <a href="/germany/ja/living/">生活・手続き</a>
+        <a href="/germany/ja/jobs/">仕事・求人</a>
+        <a href="/germany/ja/events/">イベント</a>
+        <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">生活ディレクトリ</div>
+        <a href="/germany/ja/eat/">食べる</a>
+        <a href="/germany/ja/shopping/">買い物</a>
+        <a href="/germany/ja/medical/">医療</a>
+      </div>
+      <div class="footer-group">
+        <div class="footer-heading">利用者向け</div>
+        <a href="/germany/ja/community/post/">投稿する</a>
+        <a href="/germany/ja/jobs/posting/">求人掲載について</a>
+        <a href="/germany/ja/contact/">お問い合わせ</a>
+        <a href="/germany/ja/terms/">利用規約</a>
+        <a href="/germany/ja/privacy/">プライバシー</a>
+        <a href="/germany/ja/impressum/">運営者情報</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- LAYOUT:ja-footer:end -->
+
 <script src="/assets/js/data-sources.js"></script>
+<script src="/assets/js/community-shared.js"></script>
 <script>
 const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
 const GAS_URL = DATA_SOURCES.communityDataEndpoint;
@@ -1222,6 +1203,36 @@ const detailPostId = new URLSearchParams(location.search).get('id');
 const DETAIL_STORAGE_KEY = 'ngg-community-saved-posts';
 const LAST_SUBMISSION_KEY = 'jconnectCommunityLastSubmission';
 const COMPLETE_URL = '/germany/ja/community/complete/';
+const CITY_OPTIONS_BY_COUNTRY = {
+  'ドイツ': [
+    'デュッセルドルフ周辺',
+    'ケルン・ボン周辺',
+    'フランクフルト周辺',
+    'ベルリン周辺',
+    'ハンブルク周辺',
+    'ミュンヘン周辺',
+    'シュトゥットガルト周辺',
+    'ハノーファー周辺',
+    'ライプツィヒ・ドレスデン周辺',
+    'その他'
+  ],
+  'オーストリア': [
+    'ウィーン周辺',
+    'グラーツ周辺',
+    'リンツ周辺',
+    'ザルツブルク周辺',
+    'インスブルック周辺',
+    'その他'
+  ],
+  'スイス': [
+    'チューリッヒ周辺',
+    'ジュネーブ周辺',
+    'バーゼル周辺',
+    'ベルン周辺',
+    'ローザンヌ周辺',
+    'その他'
+  ]
+};
 const SUBCATEGORY_OPTIONS = {
   '売ります': ['帰国売り', '家具・家電', '生活用品', '子ども用品', '本・教材', '車・自転車', 'その他'],
   '買います': ['家具・家電', '生活用品', '子ども用品', '本・教材', '車・自転車', 'その他'],
@@ -1335,6 +1346,7 @@ const CATEGORY_ICONS = {
 };
 
 let categoryMap = SUBCATEGORY_OPTIONS;
+let selectedImageFiles = [];
 
 function showMessage(type, text) {
   const box = document.getElementById('messageBox');
@@ -1425,18 +1437,84 @@ function updateCategoryWritingHelper(selectedCategory1) {
   bodyField.placeholder = helper.placeholder;
 }
 
-function updateRegionFromCity() {
-  const city = document.getElementById('city');
-  const region = document.getElementById('region');
-  if (!city || !region) return;
+function dateLabelForCategory(category1, category2) {
+  if (category1 === 'イベント') return '開催日';
+  if (category1 === '売ります' || category1 === '譲ります') return '受け渡し可能日';
+  if (category1 === '探しています' || category1 === '買います') return '希望期限';
+  if (category2 && (category2.includes('部屋') || category2.includes('住まい'))) return '入居可能日';
+  return '目安日';
+}
 
-  const value = city.value || '';
-  if (value.includes(' - ')) {
-    region.value = value.split(' - ')[0];
-    return;
+function updateDateFieldLabel() {
+  const label = document.getElementById('dateFieldLabel');
+  if (!label) return;
+  label.textContent = dateLabelForCategory(getValue('category1'), getValue('category2'));
+}
+
+function renderCityOptions() {
+  const country = getValue('country') || 'ドイツ';
+  const city = document.getElementById('city');
+  const cityField = document.getElementById('cityField');
+  const customField = document.getElementById('customLocationField');
+  const customInput = document.getElementById('custom_location');
+  if (!city || !cityField || !customField || !customInput) return;
+
+  const options = CITY_OPTIONS_BY_COUNTRY[country] || [];
+  const usesCitySelect = options.length > 0;
+  cityField.classList.toggle('hidden', !usesCitySelect);
+  city.disabled = !usesCitySelect;
+  city.required = usesCitySelect;
+
+  if (usesCitySelect) {
+    const current = city.value;
+    city.innerHTML = '<option value="">選択してください</option>' + options.map(function(value) {
+      return '<option value="' + escapeHtml(value) + '">' + escapeHtml(value) + '</option>';
+    }).join('');
+    if (options.includes(current)) city.value = current;
+  } else {
+    city.innerHTML = '<option value=""></option>';
+    city.value = country === 'オンライン' ? 'オンライン' : '';
   }
 
-  region.value = value === 'Online' ? 'Online' : '';
+  updateCustomLocationVisibility();
+  updateRegionFromCity();
+}
+
+function updateCustomLocationVisibility() {
+  const country = getValue('country');
+  const city = document.getElementById('city');
+  const customField = document.getElementById('customLocationField');
+  const customInput = document.getElementById('custom_location');
+  if (!city || !customField || !customInput) return;
+
+  const needsCustom = country === 'その他' || city.value === 'その他';
+  customField.classList.toggle('hidden', !needsCustom);
+  customInput.required = needsCustom;
+  customInput.placeholder = country === 'その他'
+    ? '例：パリ周辺、ロンドン周辺、オンライン中心など'
+    : '例：エアランゲン周辺、ブレーメン周辺など';
+  if (!needsCustom) customInput.value = '';
+}
+
+function getSubmissionCity() {
+  const country = getValue('country');
+  const city = document.getElementById('city');
+  const custom = getValue('custom_location');
+  if (country === 'オンライン') return 'オンライン';
+  if (country === 'その他') return custom;
+  if (city && city.value === 'その他') return custom;
+  return city ? city.value.trim() : '';
+}
+
+function updateRegionFromCity() {
+  const region = document.getElementById('region');
+  if (!region) return;
+  const country = getValue('country');
+  if (country === 'オンライン') {
+    region.value = 'オンライン';
+    return;
+  }
+  region.value = country || '';
 }
 
 function escapeHtml(value) {
@@ -1459,13 +1537,44 @@ function getSelectedLabel(name) {
 }
 
 function getImageNamesFromInputs() {
-  return ['image1', 'image2', 'image3']
-    .map(function(id) {
-      const input = document.getElementById(id);
-      const file = input && input.files ? input.files[0] : null;
-      return file ? file.name : '';
-    })
-    .filter(Boolean);
+  return selectedImageFiles.map(function(file) {
+    return file.name;
+  });
+}
+
+function renderImagePreviews() {
+  const list = document.getElementById('imagePreviewList');
+  if (!list) return;
+  list.innerHTML = selectedImageFiles.map(function(file, index) {
+    const url = URL.createObjectURL(file);
+    return `
+      <div class="image-preview-item">
+        <img src="${escapeHtml(url)}" alt="${escapeHtml(file.name)}">
+        <button type="button" data-remove-image="${index}">削除</button>
+      </div>
+    `;
+  }).join('');
+
+  list.querySelectorAll('[data-remove-image]').forEach(function(button) {
+    button.addEventListener('click', function() {
+      selectedImageFiles.splice(Number(button.dataset.removeImage), 1);
+      renderImagePreviews();
+    });
+  });
+}
+
+function addImageFiles(files) {
+  const nextFiles = Array.from(files || []).filter(function(file) {
+    return ['image/jpeg', 'image/png', 'image/webp'].includes(file.type);
+  });
+  if (!nextFiles.length) return;
+  const availableSlots = Math.max(0, 3 - selectedImageFiles.length);
+  const accepted = nextFiles.slice(0, availableSlots);
+  selectedImageFiles = selectedImageFiles.concat(accepted);
+  renderImagePreviews();
+  if (nextFiles.length > availableSlots) {
+    showMessage('error', '画像は最大3枚まで選択できます。');
+  }
 }
 
 function getResponsePostId(response) {
@@ -1496,6 +1605,7 @@ function getResponseValue(response, keys) {
 function buildSubmissionSnapshot(response, imageNames) {
   updateRegionFromCity();
   const responsePostId = getResponsePostId(response);
+  const dateLabel = dateLabelForCategory(getValue('category1'), getValue('category2'));
   return {
     submittedAt: new Date().toISOString(),
     category1: getSelectedLabel('category1'),
@@ -1503,10 +1613,11 @@ function buildSubmissionSnapshot(response, imageNames) {
     title: getValue('title'),
     body: getValue('body'),
     country: getSelectedLabel('country') || getValue('country'),
-    city: getSelectedLabel('city') || getValue('city'),
+    city: getSubmissionCity(),
     price: getValue('price'),
-    event_date: getValue('event_date'),
-    availability_date: getValue('availability_date'),
+    availability_date: getValue('date_value'),
+    date_label: dateLabel,
+    date_value: getValue('date_value'),
     nickname: getValue('nickname'),
     responsePostId,
     publicUrl: getResponseValue(response, ['public_url', 'publicUrl']) || (responsePostId ? '/germany/ja/community/post/?id=' + encodeURIComponent(responsePostId) : ''),
@@ -1570,8 +1681,7 @@ function renderPostPreview() {
         <div class="preview-detail-facts">
           ${previewFact('国', snapshot.country)}
           ${previewFact('都市', snapshot.city)}
-          ${previewFact('イベント日', snapshot.event_date)}
-          ${previewFact('利用可能日', snapshot.availability_date)}
+          ${previewFact(snapshot.date_label, snapshot.date_value)}
           ${previewFact('ニックネーム', snapshot.nickname)}
         </div>
         ${hasTitleAndBody
@@ -1627,6 +1737,10 @@ function splitMediaValue(value) {
 }
 
 function normalizeImageSrc(src) {
+  const shared = window.JCONNECT_COMMUNITY_SHARED;
+  if (shared && typeof shared.normalizeImageSrc === 'function') {
+    return shared.normalizeImageSrc(src);
+  }
   const value = String(src || '').trim();
   if (!value) return '';
   try {
@@ -1655,8 +1769,11 @@ function getImages(post) {
     post.image3
   ];
 
+  const shared = window.JCONNECT_COMMUNITY_SHARED;
   return Array.from(new Set(values.flatMap(splitMediaValue).map(normalizeImageSrc).filter(function(src) {
-    return /^https?:\/\//i.test(src) || src.startsWith('/') || src.startsWith('../../../') || src.startsWith('../../') || src.startsWith('./');
+    return shared && typeof shared.isAllowedCommunityImageUrl === 'function'
+      ? shared.isAllowedCommunityImageUrl(src)
+      : /^\/assets\//.test(src);
   })));
 }
 
@@ -1690,7 +1807,7 @@ function isUrgent(post) {
 }
 
 function isJapaneseOk(post) {
-  return normalize([post.title, post.body, post.category1, post.category2, post.preferred_contact_method, post.tags].join(' ')).match(/日本語|japanese|日本人/) !== null;
+  return normalize([post.title, post.body, post.category1, post.category2, post.tags].join(' ')).match(/日本語|japanese|日本人/) !== null;
 }
 
 function inferPostType(post) {
@@ -1812,24 +1929,33 @@ function isPublicBoardPost(post) {
 function normalizePost(post, index) {
   const postType = inferPostType(post);
   const subcategory = inferSubcategory(post);
-  const {
-    contact_email_private,
-    contact_phone_private,
-    delete_token,
-    edit_token,
-    manage_url,
-    manage_token_hash,
-    edit_password_hash,
-    edit_password_salt,
-    admin_notes,
-    admin_note,
-    ...publicPost
-  } = post;
   const status = normalizeStatus(post.status);
   const lastModifiedAt = field(post, ['last_modified_at', 'lastModifiedAt']);
   const updatedAt = field(post, ['updated_at', 'updatedAt']);
   return {
-    ...publicPost,
+    id: post.id,
+    post_id: post.post_id,
+    title: post.title,
+    body: post.body,
+    category1: post.category1,
+    category2: post.category2,
+    country: post.country,
+    region: post.region,
+    city: post.city,
+    nickname: post.nickname,
+    image_url_1: post.image_url_1,
+    image_url_2: post.image_url_2,
+    image_url_3: post.image_url_3,
+    images: post.images,
+    price: post.price,
+    availability_date: post.availability_date,
+    created_at: post.created_at,
+    updated_at: post.updated_at,
+    published_at: post.published_at,
+    last_modified_at: post.last_modified_at,
+    last_modified_action: post.last_modified_action,
+    status: post.status,
+    closed_at: post.closed_at,
     _id: getPostId(post, index),
     _title: field(post, ['title', 'name', 'subject']) || 'タイトル未設定',
     _body: field(post, ['body', 'description', 'message', 'content']) || '',
@@ -1906,13 +2032,56 @@ function comparablePosts(posts, current, limit) {
   };
 }
 
+function renderDetailLoading() {
+  const detailMode = document.getElementById('detailMode');
+  detailMode.innerHTML = `
+    <section class="detail-loading" aria-label="投稿を読み込み中">
+      <div class="skeleton-block detail-loading-media"></div>
+      <div class="detail-loading-content">
+        <span class="skeleton-line short"></span>
+        <span class="skeleton-line title"></span>
+        <div class="skeleton-badges">
+          <span class="skeleton-block skeleton-badge"></span>
+          <span class="skeleton-block skeleton-badge"></span>
+          <span class="skeleton-block skeleton-badge"></span>
+        </div>
+        <span class="skeleton-line long"></span>
+        <span class="skeleton-line long"></span>
+        <span class="skeleton-line medium"></span>
+        <div class="detail-loading-actions">
+          <span class="skeleton-block skeleton-badge"></span>
+          <span class="skeleton-block skeleton-badge"></span>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderDetailError() {
+  const detailMode = document.getElementById('detailMode');
+  detailMode.innerHTML = `
+    <section class="detail-not-found">
+      <p class="section-kicker">LOAD ERROR</p>
+      <h1 class="section-title">投稿を読み込めませんでした</h1>
+      <p class="section-desc">投稿を読み込めませんでした。時間をおいて再読み込みしてください。</p>
+      <div class="hero-actions">
+        <button class="pill-link" type="button" id="retryDetailLoad">再読み込み</button>
+        <a class="pill-link" href="../">掲示板一覧へ戻る</a>
+      </div>
+    </section>
+  `;
+  document.getElementById('retryDetailLoad')?.addEventListener('click', function() {
+    location.reload();
+  });
+}
+
 function renderNotFound() {
   document.title = '投稿が見つかりません | J-Connect Germany';
   document.getElementById('detailMode').innerHTML = `
     <section class="detail-not-found">
       <p class="section-kicker">POST NOT FOUND</p>
       <h1 class="section-title">投稿が見つかりません</h1>
-      <p class="section-desc">指定された投稿は削除されたか、URLが正しくない可能性があります。</p>
+      <p class="section-desc">この投稿はまだ公開前、削除済み、またはURLが正しくない可能性があります。</p>
       <div class="hero-actions">
         <a class="pill-link" href="../">掲示板一覧へ戻る</a>
         <a class="pill-link" href="./">投稿フォームへ</a>
@@ -1933,9 +2102,9 @@ function renderStandaloneDetail(post, posts) {
   const shareHref = detailUrl(post);
   const manageHref = '../manage/?post=' + encodeURIComponent(post._id);
   const statusLabel = post._isClosed ? '募集終了' : '募集中';
-  const lastModifiedText = post._lastModifiedAt ? formatDateTime(post._lastModifiedAt) : '';
+  const lastModifiedText = post._lastModifiedAt ? formatDate(post._lastModifiedAt) : '';
   const closedNotice = post._isClosed
-    ? '<div class="closed-detail-notice" role="status"><strong>この投稿は募集終了しました</strong><span>この投稿への新規問い合わせは現在できません。</span></div>'
+    ? '<div class="closed-detail-notice" role="status"><strong>この投稿は募集終了しました。</strong><span>この投稿への新規問い合わせは現在できません。</span></div>'
     : '';
   const contactAction = post._isClosed
     ? '<span class="btn is-disabled" aria-disabled="true">募集終了</span>'
@@ -1972,11 +2141,11 @@ function renderStandaloneDetail(post, posts) {
         ${closedNotice}
         <p class="detail-kicker">COMMUNITY POST</p>
         <h1 id="detailTitle" class="detail-title">${escapeHtml(post._title)}</h1>
+        ${priceText ? `<div class="detail-price ${post._free ? 'free' : ''}">${escapeHtml(priceText)}</div>` : ''}
         <div class="badge-row">
           <span class="badge category">${escapeHtml(post._postType)}</span>
           <span class="badge subcategory">${escapeHtml(post._subcategory)}</span>
           <span class="badge ${post._isClosed ? 'is-closed' : 'is-active'}">${escapeHtml(statusLabel)}</span>
-          ${priceText ? `<span class="badge ${post._free ? 'free' : ''}">${escapeHtml(priceText)}</span>` : ''}
           ${post._urgent ? '<span class="badge urgent">急募</span>' : ''}
           ${post._japaneseOk ? '<span class="badge japanese">日本語OK</span>' : ''}
           ${images.length ? '<span class="badge">写真あり</span>' : ''}
@@ -2053,6 +2222,7 @@ function renderStandaloneDetail(post, posts) {
 async function loadStandaloneDetail(id) {
   document.body.classList.add('detail-mode-active');
   document.getElementById('detailMode').hidden = false;
+  renderDetailLoading();
 
   try {
     const data = await fetchCommunityPostsData();
@@ -2065,7 +2235,7 @@ async function loadStandaloneDetail(id) {
     renderStandaloneDetail(post, posts);
   } catch (error) {
     console.error('Community detail load failed:', COMMUNITY_STATIC_POSTS_URL, error);
-    renderNotFound();
+    renderDetailError();
   }
 }
 
@@ -2120,14 +2290,15 @@ async function submitForm(event) {
   submitButton.textContent = '送信中...';
 
   try {
-    const editPassword = getValue('edit_password');
-    if (editPassword.length < 6) {
-      throw new Error('編集用パスワードは6文字以上で設定してください。');
+    const country = getValue('country');
+    const cityValue = getSubmissionCity();
+    if (country !== 'オンライン' && !cityValue) {
+      throw new Error('地域を選択または入力してください。');
     }
 
-    const image1 = await fileToBase64(document.getElementById('image1').files[0]);
-    const image2 = await fileToBase64(document.getElementById('image2').files[0]);
-    const image3 = await fileToBase64(document.getElementById('image3').files[0]);
+    const image1 = await fileToBase64(selectedImageFiles[0]);
+    const image2 = await fileToBase64(selectedImageFiles[1]);
+    const image3 = await fileToBase64(selectedImageFiles[2]);
 
     const body = new URLSearchParams();
 
@@ -2138,17 +2309,16 @@ async function submitForm(event) {
     body.append('category2', getValue('category2'));
     body.append('title', getValue('title'));
     body.append('body', getValue('body'));
-    body.append('country', getValue('country'));
+    body.append('country', country);
     body.append('region', getValue('region'));
-    body.append('city', getValue('city'));
+    body.append('city', cityValue);
     body.append('nickname', getValue('nickname'));
     body.append('contact_email_private', getValue('contact_email_private'));
-    body.append('contact_phone_private', getValue('contact_phone_private'));
-    body.append('preferred_contact_method', getValue('preferred_contact_method'));
-    body.append('edit_password', editPassword);
+    // GAS should generate manage_token/manage_url server-side and email the private
+    // management link to contact_email_private. Do not collect or send a public
+    // user-entered credential from this form.
     body.append('price', getValue('price'));
-    body.append('event_date', getValue('event_date'));
-    body.append('availability_date', getValue('availability_date'));
+    body.append('availability_date', getValue('date_value'));
 
     body.append('image1_base64', image1.base64);
     body.append('image1_name', image1.name);
@@ -2163,6 +2333,10 @@ async function submitForm(event) {
     });
 
     if (!response.ok) {
+      const backendMessage = String(response.error || '');
+      if (/password/i.test(backendMessage)) {
+        throw new Error('送信先の管理設定が更新中のため、投稿を受け付けられませんでした。管理用リンク方式で再試行できるよう管理者が確認します。');
+      }
       throw new Error(response.error || '送信に失敗しました。');
     }
 
@@ -2184,11 +2358,48 @@ if (detailPostId) {
   document.getElementById('category1').addEventListener('change', function() {
     renderCategory2(this.value);
     updateCategoryWritingHelper(this.value);
+    updateDateFieldLabel();
   });
+  document.getElementById('category2').addEventListener('change', updateDateFieldLabel);
+  document.getElementById('country').addEventListener('change', renderCityOptions);
+  document.getElementById('city').addEventListener('change', function() {
+    updateCustomLocationVisibility();
+    updateRegionFromCity();
+  });
+  document.getElementById('custom_location').addEventListener('input', updateRegionFromCity);
 
   document.getElementById('postForm').addEventListener('submit', submitForm);
   document.getElementById('previewButton').addEventListener('click', openPostPreview);
-  document.getElementById('city').addEventListener('change', updateRegionFromCity);
+  const imageUpload = document.getElementById('imageUpload');
+  const imageDropzone = document.getElementById('imageDropzone');
+  imageUpload.addEventListener('change', function() {
+    addImageFiles(imageUpload.files);
+    imageUpload.value = '';
+  });
+  imageDropzone.addEventListener('click', function() {
+    imageUpload.click();
+  });
+  imageDropzone.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      imageUpload.click();
+    }
+  });
+  ['dragenter', 'dragover'].forEach(function(type) {
+    imageDropzone.addEventListener(type, function(event) {
+      event.preventDefault();
+      imageDropzone.classList.add('is-dragover');
+    });
+  });
+  ['dragleave', 'drop'].forEach(function(type) {
+    imageDropzone.addEventListener(type, function(event) {
+      event.preventDefault();
+      imageDropzone.classList.remove('is-dragover');
+    });
+  });
+  imageDropzone.addEventListener('drop', function(event) {
+    addImageFiles(event.dataTransfer && event.dataTransfer.files);
+  });
   document.querySelectorAll('[data-close-preview]').forEach(function(item) {
     item.addEventListener('click', closePostPreview);
   });
@@ -2198,7 +2409,8 @@ if (detailPostId) {
   });
 
   loadCategories();
-  updateRegionFromCity();
+  renderCityOptions();
+  updateDateFieldLabel();
 }
 </script>
 <script src="/assets/js/main.js"></script>

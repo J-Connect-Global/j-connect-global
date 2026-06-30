@@ -74,6 +74,39 @@
     return String(value).split(/[\n,;]/).map((item) => item.trim()).filter(Boolean);
   }
 
+  function isAllowedCommunityImageUrl(src) {
+    const value = String(src || "").trim();
+    if (!value) return false;
+    if (/^(javascript|data|blob|file):/i.test(value) || value.startsWith("//")) return false;
+    if (!/^[a-z][a-z0-9+.-]*:/i.test(value) && !value.startsWith("/")) {
+      try {
+        return new URL(value, window.location.href).origin === window.location.origin;
+      } catch {
+        return false;
+      }
+    }
+
+    try {
+      const url = new URL(value, window.location.href);
+      if (url.protocol === "http:" || url.protocol === "https:") {
+        const host = url.hostname.toLowerCase();
+        if (url.origin === window.location.origin) {
+          return true;
+        }
+        return host === "drive.google.com" ||
+          host === "lh3.googleusercontent.com" ||
+          host === "googleusercontent.com" ||
+          host.endsWith(".googleusercontent.com");
+      }
+      if (url.origin === window.location.origin) {
+        return true;
+      }
+      return false;
+    } catch {
+      return !value.startsWith("/") || value.startsWith("/assets/");
+    }
+  }
+
   function normalizeImageSrc(src) {
     const value = String(src || "").trim();
     if (!value) return "";
@@ -85,14 +118,14 @@
         const id = fileMatch?.[1] || url.searchParams.get("id");
         if (id) return `https://drive.google.com/thumbnail?id=${encodeURIComponent(id)}&sz=w1200`;
       }
-      return url.href;
+      return isAllowedCommunityImageUrl(url.href) ? url.href : "";
     } catch {
-      return value;
+      return isAllowedCommunityImageUrl(value) ? value : "";
     }
   }
 
   function isValidImageSrc(src) {
-    return /^https?:\/\//i.test(src) || src.startsWith("/") || src.startsWith("./") || src.startsWith("../");
+    return isAllowedCommunityImageUrl(src);
   }
 
   function postId(post, index) {
@@ -227,6 +260,8 @@
     normalizeStatus,
     isExpired,
     isPubliclyVisible,
+    isAllowedCommunityImageUrl,
+    normalizeImageSrc,
     communityDetailHref: communityStandaloneDetailHref,
     communityStandaloneDetailHref,
     communityBoardModalHref,

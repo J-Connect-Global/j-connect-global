@@ -2,6 +2,7 @@
 id: "T001"
 title: "デュッセルドルフ観光の基本：旧市街・ライン川・日本人街の歩き方"
 slug: "duesseldorf-city-guide"
+image_alt: "デュッセルドルフ観光ガイドの記事イメージ"
 category: "観光"
 tags:
   - "デュッセルドルフ"

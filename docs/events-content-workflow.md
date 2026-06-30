@@ -18,7 +18,7 @@ Generated public pages, hub cards, Home preview cards, sitemap entries, and sear
 1. Create a Markdown file in `/content/events/` using `_template.md`.
 2. Add a matching item to `/content/registry/events.json`.
 3. Set `url` and `canonical_url` to `/germany/ja/events/{slug}/`.
-4. Add `city`, `location`, `event_date`, and `official_url`.
+4. Add `city`, `location`, the event date field, and `official_url`.
 5. Keep drafts as `published: false` and `status: "draft"`.
 6. Run `node scripts/build-content.mjs`.
 7. Run `node scripts/validate-content.mjs`.

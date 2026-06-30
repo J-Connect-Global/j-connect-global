@@ -86,7 +86,7 @@ All three article registries use the shared fields below:
 - `related_articles`
 - `review`
 
-Events also use `city`, `location`, `event_date`, and `official_url`.
+Events also use `city`, `location`, the event date field, and `official_url`.
 
 Learn German also uses `level` and `situation`. Optional Home presentation fields such as `home_image_class` and `home_phrase` may be used for the Home Learn German preview.
 
@@ -116,7 +116,7 @@ Drafts and unpublished items are excluded from hubs, Home, sitemap, and search.
 2. Add a matching item to `/content/registry/events.json`.
 3. Set `url` and `canonical_url` to `/germany/ja/events/{slug}/`.
 4. Set `markdown_path` to `/content/events/{slug}.md`.
-5. Add event fields such as `city`, `location`, `event_date`, and `official_url`.
+5. Add event fields such as `city`, `location`, the event date field, and `official_url`.
 6. If the exact date changes yearly, use cautious wording such as `年により異なる` and tell readers to check official information.
 7. Add `official_sources`, `disclaimer_type`, `related_articles`, and `review`.
 8. Run the build and validation commands.

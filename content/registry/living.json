@@ -1477,5 +1477,50 @@
       "last_reviewed_at": "2026-06-29",
       "next_review_due": "2026-07-06"
     }
+  },
+  {
+    "id": "L032",
+    "title": "ドイツ・NRWでよく見かける野鳥図鑑",
+    "meta_title": "ドイツ・NRWでよく見る鳥の名前一覧｜野鳥図鑑・ドイツ語/英語/日本語/スペイン語",
+    "slug": "germany-wild-birds-guide",
+    "image": "/assets/img/living/germany-wild-birds/germany-wild-birds-hero.webp",
+    "image_alt": "ドイツ・NRWでよく見かける野鳥のイメージ",
+    "category": "コラム・自然",
+    "summary": "公園、ライン川、湖、住宅街で見かける鳥を、ドイツ語・英語・日本語・スペイン語で整理。NRW生活で役立つ身近な野鳥ガイド。",
+    "url": "/germany/ja/living/germany-wild-birds-guide/",
+    "markdown_path": "/content/living/germany-wild-birds-guide.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-06-30",
+    "updated_at": "2026-06-30",
+    "last_verified": "2026-06-30",
+    "tags": [
+      "ドイツ生活",
+      "野鳥",
+      "NRW",
+      "自然観察",
+      "ドイツ語",
+      "英語",
+      "スペイン語"
+    ],
+    "home_visible": true,
+    "home_order": 2,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/germany-wild-birds-guide/",
+    "related_articles": [
+      "nrw-nature-relax-guide",
+      "rhine-river-relax-guide",
+      "duesseldorf-family-trip"
+    ],
+    "official_sources": [],
+    "disclaimer_type": "living",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Germany editorial",
+      "last_reviewed_at": "2026-06-30",
+      "next_review_due": "2027-06-30"
+    }
   }
 ]

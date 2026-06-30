@@ -2,6 +2,7 @@
 id: "T011"
 title: "ドイツ在住者向け：1泊2日ベルリン観光モデルコース"
 slug: "berlin-weekend-trip"
+image_alt: "ベルリン週末旅行の記事イメージ"
 category: "観光"
 tags:
   - "ベルリン"

@@ -2,6 +2,7 @@
 id: "T009"
 title: "ドイツから行く週末旅行：アムステルダム観光の基本"
 slug: "amsterdam-weekend-trip"
+image_alt: "アムステルダム週末旅行の記事イメージ"
 category: "観光"
 tags:
   - "アムステルダム"

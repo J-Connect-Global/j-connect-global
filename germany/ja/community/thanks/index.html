@@ -6,7 +6,7 @@
 
 <title>送信完了 | 掲示板 | J-Connect Germany</title>
 <meta name="description" content="J-Connect Germanyの掲示板投稿送信完了ページです。">
-<meta name="robots" content="noindex, follow">
+<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://j-connect-global.com/germany/ja/community/thanks/">
 
 <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
@@ -422,8 +422,7 @@
         ${summaryItem('国', snapshot.country)}
         ${summaryItem('都市', snapshot.city)}
         ${summaryItem('価格', snapshot.price)}
-        ${summaryItem('イベント日', snapshot.event_date)}
-        ${summaryItem('利用可能日', snapshot.availability_date)}
+        ${summaryItem(snapshot.date_label || '目安日', snapshot.date_value || snapshot.availability_date)}
         ${summaryItem('ニックネーム', snapshot.nickname)}
         ${summaryItem('送信日時', formatDateTime(snapshot.submittedAt))}
       </div>
@@ -460,8 +459,7 @@
     appendPayloadValue(payload, 'country', snapshot.country);
     appendPayloadValue(payload, 'city', snapshot.city);
     appendPayloadValue(payload, 'price', snapshot.price);
-    appendPayloadValue(payload, 'event_date', snapshot.event_date);
-    appendPayloadValue(payload, 'availability_date', snapshot.availability_date);
+    appendPayloadValue(payload, 'availability_date', snapshot.date_value || snapshot.availability_date);
     appendPayloadValue(payload, 'nickname', snapshot.nickname);
     return payload;
   }

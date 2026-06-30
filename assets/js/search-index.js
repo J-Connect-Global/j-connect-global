@@ -678,7 +678,7 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "ドイツ・NRWでよく見かける野鳥図鑑",
-    "description": "公園、ライン川、湖、住宅街で見かける鳥を、ドイツ語・英語・日本語・スペイン語で整理。NRW生活で役立つ身近な野鳥ガイド。",
+    "description": "公園、ライン川、湖、住宅街で見かける鳥を、日本語名とドイツ語名で整理。NRW生活で役立つ身近な野鳥ガイド。",
     "url": "/germany/ja/living/germany-wild-birds-guide/",
     "category": "生活・手続き",
     "tags": [
@@ -686,9 +686,7 @@ window.JCONNECT_SEARCH_INDEX = [
       "野鳥",
       "NRW",
       "自然観察",
-      "ドイツ語",
-      "英語",
-      "スペイン語"
+      "ドイツ語"
     ]
   },
   {

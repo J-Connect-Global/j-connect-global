@@ -86,6 +86,10 @@
             </div>
             <a class="btn btn-primary" href="./post/">投稿する</a>
             <p class="community-cta-helper">投稿内容は送信前に確認してください。</p>
+            <p class="community-cta-helper">
+              J-Connect Germanyはログイン情報、銀行情報、公的ID番号を求めません。メールアドレスは公開されず、投稿連絡・管理連絡のためにのみ使用されます。
+              <a href="/germany/ja/privacy/">プライバシー</a>・<a href="/germany/ja/terms/">利用規約</a>・<a href="/germany/ja/impressum/">運営者情報</a>
+            </p>
           </div>
         </div>
         <aside class="hero-insight hero-safety" aria-label="安心して使うために">
@@ -476,6 +480,10 @@
     }
 
     function normalizeImageSrc(src) {
+      const shared = window.JCONNECT_COMMUNITY_SHARED;
+      if (shared && typeof shared.normalizeImageSrc === "function") {
+        return shared.normalizeImageSrc(src);
+      }
       const value = String(src || "").trim();
       if (!value) return "";
       try {
@@ -505,7 +513,12 @@
         post.image2,
         post.image3
       ];
-      return [...new Set(values.flatMap(splitMediaValue).map(normalizeImageSrc).filter((src) => /^https?:\/\//i.test(src) || src.startsWith("/") || src.startsWith("../../") || src.startsWith("./")))];
+      const shared = window.JCONNECT_COMMUNITY_SHARED;
+      return [...new Set(values.flatMap(splitMediaValue).map(normalizeImageSrc).filter((src) => {
+        return shared && typeof shared.isAllowedCommunityImageUrl === "function"
+          ? shared.isAllowedCommunityImageUrl(src)
+          : /^\/assets\//.test(src);
+      }))];
     }
 
     function dateValue(value) {
@@ -1017,7 +1030,7 @@
               </div>
             </a>
             <div class="card-actions jc-result-actions">
-              <a class="detail-open-link" href="${escapeHtml(shareHref)}" target="_blank" rel="noopener" aria-label="${escapeHtml(post._title)}を新しいタブで詳しく見る">詳細を見る</a>
+              <a class="detail-open-link" href="${escapeHtml(shareHref)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(post._title)}を新しいタブで詳しく見る">詳細を見る</a>
             </div>
           </article>
         `;
@@ -1200,7 +1213,7 @@
             <div class="detail-actions">
               ${contactAction}
               <button class="btn btn-secondary" type="button" id="copyShareUrl">URLをコピー</button>
-              <a class="btn btn-secondary" href="${escapeHtml(shareHref)}" target="_blank" rel="noopener">新しいタブで詳細</a>
+              <a class="btn btn-secondary" href="${escapeHtml(shareHref)}" target="_blank" rel="noopener noreferrer">新しいタブで詳細</a>
               <a class="btn btn-secondary" href="${escapeHtml(manageHref)}">投稿者管理</a>
               <button class="save-button inline ${saved ? "saved" : ""}" type="button" id="detailSaveButton">${saved ? "★ 保存済み" : "☆ 保存"}</button>
               <a class="btn btn-soft" href="${escapeHtml(reportHref)}">通報</a>

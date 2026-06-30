@@ -6,7 +6,7 @@
 
 <title>投稿を管理 | 掲示板 | J-Connect Germany</title>
 <meta name="description" content="J-Connect Germanyの掲示板投稿を編集、募集終了、再開、非公開化する投稿者向けページです。">
-<meta name="robots" content="noindex, follow">
+<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://j-connect-global.com/germany/ja/community/manage/">
 
 <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
@@ -89,7 +89,7 @@
     <section class="manage-hero jc-page-hero" aria-labelledby="page-title">
       <div class="jc-eyebrow"><span class="jc-dot"></span>COMMUNITY BOARD</div>
       <h1 id="page-title">投稿を管理</h1>
-      <p class="hero-desc">投稿時に設定した編集用パスワード、またはメールで届いた管理用URLで、投稿内容の編集、募集終了、再開、非公開化ができます。</p>
+      <p class="hero-desc">投稿後にメールで届く管理用URLから、投稿内容の編集、募集終了、再開、非公開化ができます。</p>
       <div class="jc-hero-actions">
         <a class="jc-button is-primary" href="../">掲示板一覧へ戻る</a>
         <a class="jc-button" href="../post/">新しく投稿する</a>
@@ -101,17 +101,12 @@
         <div class="thanks-card-head">
           <p class="section-kicker">VERIFY</p>
           <h2 id="auth-title">投稿者確認</h2>
-          <p>管理用URLから開いた場合は自動確認します。手入力の場合は投稿IDと編集用パスワードを入力してください。</p>
+          <p>管理用URLから開いた場合は自動確認します。URLに管理用tokenがない場合は、投稿受付メールの管理用リンクから開き直してください。</p>
         </div>
         <form id="authForm" class="manage-form management-grid">
           <div>
             <label for="postId">投稿ID</label>
             <input id="postId" name="post_id" autocomplete="off" required>
-          </div>
-          <div>
-            <label for="password">編集用パスワード</label>
-            <input id="password" name="password" type="password" autocomplete="current-password">
-            <p class="field-note">管理用URLの token がある場合、パスワードは不要です。</p>
           </div>
           <input id="manageToken" name="token" type="hidden">
           <div class="full management-actions">
@@ -125,11 +120,11 @@
         <div class="thanks-card-head">
           <p class="section-kicker">EDIT</p>
           <h2 id="edit-title">投稿内容</h2>
-          <p>公開される内容だけを編集できます。メールアドレス、パスワード、管理用トークンは表示・編集しません。</p>
+          <p>公開される内容だけを編集できます。メールアドレス、管理用トークンは表示・編集しません。</p>
           <div class="status-line">
             <span id="statusBadge" class="status-badge">募集中</span>
             <span id="lastModified" class="last-updated-badge"></span>
-            <a id="publicLink" class="jc-button" href="../" target="_blank" rel="noopener">公開ページを開く</a>
+            <a id="publicLink" class="jc-button" href="../" target="_blank" rel="noopener noreferrer">公開ページを開く</a>
           </div>
         </div>
 
@@ -251,7 +246,6 @@
   const state = {
     postId: params.get('post') || params.get('id') || '',
     token: params.get('token') || params.get('manage_token') || '',
-    password: '',
     post: null
   };
 
@@ -275,7 +269,6 @@
     editForm: document.getElementById('editForm'),
     editorPanel: document.getElementById('editorPanel'),
     postId: document.getElementById('postId'),
-    password: document.getElementById('password'),
     token: document.getElementById('manageToken'),
     authMessage: document.getElementById('authMessage'),
     editMessage: document.getElementById('editMessage'),
@@ -317,7 +310,6 @@
     body.append('action', action);
     body.append('post_id', state.postId);
     if (state.token) body.append('token', state.token);
-    if (state.password) body.append('password', state.password);
     Object.entries(values || {}).forEach(function(entry) {
       body.append(entry[0], entry[1] == null ? '' : String(entry[1]));
     });
@@ -357,14 +349,13 @@
   async function verifyAccess(event) {
     event?.preventDefault();
     state.postId = els.postId.value.trim();
-    state.password = els.password.value.trim();
     state.token = els.token.value.trim();
     if (!state.postId) {
       setMessage(els.authMessage, 'error', '投稿IDを入力してください。');
       return;
     }
-    if (!state.password && !state.token) {
-      setMessage(els.authMessage, 'error', '編集用パスワード、または管理用URLのtokenが必要です。');
+    if (!state.token) {
+      setMessage(els.authMessage, 'error', '管理用URLのtokenが必要です。投稿受付メールの管理用リンクから開き直してください。');
       return;
     }
     setMessage(els.authMessage, 'info', '確認中...');

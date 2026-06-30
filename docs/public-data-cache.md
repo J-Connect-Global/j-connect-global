@@ -9,6 +9,8 @@ Community and Jobs public display pages use generated JSON under `assets/data/`:
 
 Google Sheets and Apps Script remain the source of truth for managing posts and jobs. The public GitHub Pages site should load these local JSON files during normal list and detail page rendering. GAS is still used by submission workflows, including the Community post form.
 
+Community post submissions must not collect or send a user-entered edit password. The Apps Script backend is expected to generate `manage_token` / `manage_url` server-side, store only the token hash, and email the private management link to `contact_email_private`.
+
 Run the sync locally with:
 
 ```sh

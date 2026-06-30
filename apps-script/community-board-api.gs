@@ -7,6 +7,9 @@
  * - The sheet must already contain the headers listed in the site request.
  *   This script maps by header name and does not add, rename, remove, or
  *   reorder columns.
+ * - New Community posts must not depend on a user-entered edit password.
+ *   Create manage_token/manage_url server-side and email the private link to
+ *   contact_email_private. Legacy password columns may remain for old rows.
  */
 
 const COMMUNITY_SHEET_NAME = 'Community Posts';
@@ -287,13 +290,9 @@ function findPostById_(postId) {
 }
 
 function createPost_(params) {
-  const password = String(params.edit_password || params.password || '').trim();
-  if (password.length < 8) return { ok: false, error: 'Edit password must be at least 8 characters.' };
-
   const context = getSheetContext_();
   const now = nowIso_();
   const postId = `post_${Utilities.getUuid()}`;
-  const salt = randomToken_(18);
   const manageToken = randomToken_(32);
   const deleteToken = randomToken_(24);
   const editToken = randomToken_(24);
@@ -305,8 +304,6 @@ function createPost_(params) {
     const value = createPostValue_(header, params, {
       postId,
       now,
-      salt,
-      password,
       manageToken,
       manageUrl,
       publicPostUrl,
@@ -345,8 +342,8 @@ function createPostValue_(header, params, generated) {
   if (header === 'published_at') return generated.now;
   if (header === 'status') return 'active';
   if (header === 'priority') return params.priority || '';
-  if (header === 'edit_password_salt') return generated.salt;
-  if (header === 'edit_password_hash') return sha256Hex_(`${generated.salt}:${generated.password}`);
+  if (header === 'edit_password_salt') return '';
+  if (header === 'edit_password_hash') return '';
   if (header === 'manage_token_hash') return sha256Hex_(generated.manageToken);
   if (header === 'manage_url') return generated.manageUrl;
   if (header === 'delete_token') return generated.deleteToken;
@@ -409,7 +406,7 @@ function verifyAccess_(params) {
 }
 
 function genericAccessFailure_() {
-  return { ok: false, success: false, error: '投稿ID、編集用パスワード、または管理用リンクを確認してください。' };
+  return { ok: false, success: false, error: '投稿ID、または管理用リンクを確認してください。' };
 }
 
 function updatePost_(params) {
@@ -518,14 +515,14 @@ function sendCreateConfirmationEmail_(params, info) {
       `<p><strong>公開投稿リンク:</strong><br><a href="${info.publicPostUrl}">${info.publicPostUrl}</a></p>`,
       `<p><strong>管理用リンク:</strong><br><a href="${info.manageUrl}">${info.manageUrl}</a></p>`,
       '<p>このリンクは、投稿の編集・募集終了・再募集・非公開化に必要です。ブックマークまたは保存してください。</p>',
-      '<p>投稿時に設定した編集用パスワードでも管理できます。パスワードは公開されません。</p>'
+      '<p>J-Connect Germanyがログイン情報、銀行情報、公的ID番号を求めることはありません。</p>'
     ].join('');
     MailApp.sendEmail({
       to,
       subject: `【J-Connect Germany】投稿を受け付けました: ${title}`,
       name: 'J-Connect Germany',
       htmlBody,
-      body: `J-Connect Germany 掲示板への投稿を受け付けました。\n\n投稿タイトル: ${title}\n公開投稿リンク: ${info.publicPostUrl}\n管理用リンク: ${info.manageUrl}\n\nこのリンクは投稿の編集・募集終了・再募集・非公開化に必要です。編集用パスワードでも管理できます。`
+      body: `J-Connect Germany 掲示板への投稿を受け付けました。\n\n投稿タイトル: ${title}\n公開投稿リンク: ${info.publicPostUrl}\n管理用リンク: ${info.manageUrl}\n\nこのリンクは投稿の編集・募集終了・再募集・非公開化に必要です。J-Connect Germanyがログイン情報、銀行情報、公的ID番号を求めることはありません。`
     });
     return { sent: true };
   } catch (error) {

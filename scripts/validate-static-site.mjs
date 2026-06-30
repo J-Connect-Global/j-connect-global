@@ -244,12 +244,26 @@ for (const file of htmlFiles) {
 
   const attrPattern = /\b(?:href|src|action)=["']([^"']+)["']/gi;
   for (const match of html.matchAll(attrPattern)) {
+    if (isDeferredArticleImageUrl(html, match.index, match[1])) continue;
     const target = resolveInternalUrl(match[1], file);
     if (!target) continue;
     if (!localTargetExists(target)) {
       problems.push(`Missing internal target in ${rel}: ${match[1]}`);
     }
   }
+}
+
+function isDeferredArticleImageUrl(html, attrIndex, url) {
+  if (!/^\/assets\/img\/(?:living|events|learn-german)\/[^"']+\.webp$/i.test(String(url || ''))) {
+    return false;
+  }
+
+  const tagStart = html.lastIndexOf('<', attrIndex);
+  const tagEnd = html.indexOf('>', attrIndex);
+  if (tagStart === -1 || tagEnd === -1) return false;
+
+  const tag = html.slice(tagStart, tagEnd + 1);
+  return /\bdata-fallback-src=["']\/assets\/img\/placeholders\/jconnect-article-placeholder\.svg["']/i.test(tag);
 }
 
 if (problems.length) {

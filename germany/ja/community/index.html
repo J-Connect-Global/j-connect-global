@@ -596,7 +596,7 @@
     }
 
     function isJapaneseOk(post) {
-      return normalize([post.title, post.body, post.category1, post.category2, post.preferred_contact_method, post.tags].join(" ")).match(/日本語|japanese|日本人/) !== null;
+      return normalize([post.title, post.body, post.category1, post.category2, post.tags].join(" ")).match(/日本語|japanese|日本人/) !== null;
     }
 
     function inferPostType(post) {
@@ -722,7 +722,6 @@
         region: post.region,
         city: post.city,
         nickname: post.nickname,
-        preferred_contact_method: post.preferred_contact_method,
         image_url_1: post.image_url_1,
         image_url_2: post.image_url_2,
         image_url_3: post.image_url_3,

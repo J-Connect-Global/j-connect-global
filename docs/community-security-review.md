@@ -4,11 +4,12 @@ This remediation prepares the Community board for Google Search Console / Safe B
 
 Scope: `/germany/ja/community/`, Community utility pages, `assets/js/community-shared.js`, `assets/js/data-sources.js`, and `apps-script/community-board-api.gs`.
 
-## Password flow
+## Management flow
 
-- Public post submission no longer displays or sends `edit_password`.
-- New post management is expected to use a server-generated `manage_token` / `manage_url` emailed to `contact_email_private`.
-- Apps Script keeps legacy password verification only for old rows that already have `edit_password_hash` / `edit_password_salt`; new rows leave those fields blank.
+- Public post submission does not display or send a user-entered management credential.
+- Community management uses server-generated `manage_token_hash` / `manage_url` only.
+- The private management link is emailed to `contact_email_private`.
+- Community date values are stored in `availability_date`.
 
 ## User-generated images
 
@@ -19,14 +20,14 @@ Scope: `/germany/ja/community/`, Community utility pages, `assets/js/community-s
 
 ## Apps Script deployment
 
-After merging this branch, manually redeploy Apps Script from `apps-script/community-board-api.gs`. The deployed script must match the repository copy so new posts are created with server-generated `manage_token` / `manage_url` instead of a user-entered edit password.
+After merging this branch, manually redeploy Apps Script from `apps-script/community-board-api.gs`. The deployed script must match the repository copy so new posts are created with server-generated `manage_token_hash` / `manage_url`, `status` starts as `pending`, `published_at` stays empty until approval, and date values are stored in `availability_date`.
 
 ## Remaining keyword matches
 
 - `innerHTML` remains in board and completion templates where static markup is assembled. Dynamic post values are passed through `escapeHtml`; filter options and category chips are rendered from controlled arrays or escaped strings.
 - `base64` / `data:` remain only in the image upload path: local `FileReader` output is posted to Apps Script, MIME type and file size are checked client-side, and Apps Script stores the file in Drive before returning a Drive thumbnail URL.
 - `location.href` matches in Community scripts are URL parsing/copying contexts, not user-controlled navigation. Contact/report completion redirects use `location.assign('../thanks/')`.
-- `edit_password_hash` / `edit_password_salt` matches are legacy private spreadsheet fields explicitly removed from public payloads before rendering.
+- Community management fields are private and are not included in public post payloads.
 
 ## Manual Search Console checklist
 

@@ -66,7 +66,6 @@ const EDITABLE_POST_FIELDS = [
 
 const PRIVATE_POST_FIELDS = [
   'contact_email_private',
-  'contact_phone_private',
   'edit_password_hash',
   'edit_password_salt',
   'manage_token_hash',
@@ -199,7 +198,7 @@ function isPubliclyVisible_(post, params) {
   const status = normalizeStatus_(post.status);
   const includeClosed = String(params.includeClosed || 'true').toLowerCase() !== 'false';
   if (status === 'active') return !isExpired_(post);
-  if (status === 'closed') return includeClosed && !isExpired_(post);
+  if (status === 'closed') return includeClosed;
   return false;
 }
 
@@ -289,7 +288,7 @@ function findPostById_(postId) {
 
 function createPost_(params) {
   const password = String(params.edit_password || params.password || '').trim();
-  if (password.length < 6) return { ok: false, error: 'Edit password must be at least 6 characters.' };
+  if (password.length < 8) return { ok: false, error: 'Edit password must be at least 8 characters.' };
 
   const context = getSheetContext_();
   const now = nowIso_();

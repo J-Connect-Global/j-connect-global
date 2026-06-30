@@ -104,32 +104,6 @@
       </div>
     </section>
 
-    <section class="community-posting-guide" aria-labelledby="communityPostingGuideTitle">
-      <div class="community-posting-guide__head">
-        <p class="community-section-kicker">投稿する前に</p>
-        <h2 id="communityPostingGuideTitle">投稿前チェック</h2>
-        <p>投稿する前に、内容・地域・連絡方法・受け渡し条件を整理しておくと、やり取りがスムーズになります。</p>
-      </div>
-      <ol class="community-posting-checklist">
-        <li>
-          <strong>内容を具体的に書く</strong>
-          <span>例：品名、状態、希望条件、困っていること</span>
-        </li>
-        <li>
-          <strong>地域・受け渡し方法を書く</strong>
-          <span>例：Düsseldorf、Erkrath、郵送可、手渡し希望</span>
-        </li>
-        <li>
-          <strong>金額や条件を明確にする</strong>
-          <span>例：無料、10€、相談可、返信期限</span>
-        </li>
-        <li>
-          <strong>個人情報を書きすぎない</strong>
-          <span>住所、電話番号、勤務先などは必要最小限にする</span>
-        </li>
-      </ol>
-    </section>
-
     <section class="community-onboarding" aria-labelledby="communityUseTitle">
       <div class="community-onboarding-head">
         <div>
@@ -723,7 +697,6 @@
       const subcategory = inferSubcategory(post);
       const {
         contact_email_private,
-        contact_phone_private,
         delete_token,
         edit_token,
         manage_url,
@@ -1009,19 +982,13 @@
         const priceText = post._free ? "無料" : post._price;
         const locationText = hasDisplayValue(post._location, ["地域未設定"]) ? post._location : "";
         const contactDate = formatDate(post._date);
-        const statusLabel = post._isClosed ? "募集終了" : "募集中";
-        const lastModifiedText = post._lastModifiedAt ? formatDateTime(post._lastModifiedAt) : "";
         const saved = isSaved(post._id);
         const shareHref = detailUrl(post);
-        const manageHref = `./manage/?post=${encodeURIComponent(post._id)}`;
         const closedLabel = post._isClosed ? `<span class="closed-ribbon">募集終了</span>` : "";
         const closedInlineLabel = post._isClosed ? `<span class="closed-inline-label">この投稿は募集終了しました</span>` : "";
-        const footerChips = [
-          priceText ? `<span class="community-post-price ${post._free ? "free" : ""}">${escapeHtml(priceText)}</span>` : "",
-          post._images.length ? `<span class="community-photo-count">写真 ${post._images.length}</span>` : "",
+        const cardFlags = [
           post._urgent ? `<span class="trust-badge urgent">急ぎ</span>` : "",
-          post._japaneseOk ? `<span class="trust-badge japanese">日本語OK</span>` : "",
-          lastModifiedText ? `<span class="last-updated-badge">最終更新 ${escapeHtml(lastModifiedText)}</span>` : ""
+          post._japaneseOk ? `<span class="trust-badge japanese">日本語OK</span>` : ""
         ].filter(Boolean).join("");
         return `
           <article class="card jc-result-card ${image ? "" : "no-image"} ${post._isClosed ? "is-closed" : ""}" data-post-id="${escapeHtml(post._id)}" data-status="${escapeHtml(post._status)}" data-photo-count="${post._images.length}" data-free="${post._free ? "true" : "false"}">
@@ -1037,19 +1004,20 @@
                 <div class="card-top community-post-meta">
                   <span class="category-badge ${postType === "譲ります" ? "give" : ""} ${postType === "売ります" ? "sell" : ""}">${escapeHtml(postType)}</span>
                   <span class="subcategory-badge">${escapeHtml(subcategory)}</span>
-                  <span class="status-badge ${post._isClosed ? "is-closed" : ""}">${escapeHtml(statusLabel)}</span>
-                  ${locationText ? `<span class="location-badge">${escapeHtml(locationText)}</span>` : ""}
-                  <span class="date-badge">${escapeHtml(contactDate)}</span>
                 </div>
                 ${closedInlineLabel}
                 <h3 class="card-title jc-result-title">${escapeHtml(post._title)}</h3>
+                ${priceText ? `<div class="card-price ${post._free ? "free" : ""}">${escapeHtml(priceText)}</div>` : ""}
+                <div class="card-meta jc-result-meta">
+                  ${locationText ? `<span>${escapeHtml(locationText)}</span>` : ""}
+                  <span>${escapeHtml(contactDate)}</span>
+                </div>
                 <p class="card-excerpt">${escapeHtml(post._body || "詳細は投稿ページで確認してください。")}</p>
-                ${footerChips ? `<div class="community-post-footer">${footerChips}</div>` : ""}
+                ${cardFlags ? `<div class="trust-row">${cardFlags}</div>` : ""}
               </div>
             </a>
             <div class="card-actions jc-result-actions">
               <a class="detail-open-link" href="${escapeHtml(shareHref)}" target="_blank" rel="noopener" aria-label="${escapeHtml(post._title)}を新しいタブで詳しく見る">詳細を見る</a>
-              <a class="detail-open-link owner-link" href="${escapeHtml(manageHref)}" aria-label="${escapeHtml(post._title)}の投稿者管理を開く">投稿者管理</a>
             </div>
           </article>
         `;
@@ -1179,11 +1147,12 @@
       const shareHref = detailUrl(post);
       const manageHref = `./manage/?post=${encodeURIComponent(post._id)}`;
       const statusLabel = post._isClosed ? "募集終了" : "募集中";
-      const lastModifiedText = post._lastModifiedAt ? formatDateTime(post._lastModifiedAt) : "";
+      const priceText = post._free ? "無料" : post._price;
+      const lastModifiedText = post._lastModifiedAt ? formatDate(post._lastModifiedAt) : "";
       const hasImages = images.length > 0;
       const marker = escapeHtml(CATEGORY_ICONS[post._subcategory] || CATEGORY_ICONS[post._postType] || CATEGORY_ICONS["その他"]);
       const closedNotice = post._isClosed
-        ? `<div class="closed-detail-notice" role="status"><strong>この投稿は募集終了しました</strong><span>この投稿への新規問い合わせは現在できません。</span></div>`
+        ? `<div class="closed-detail-notice" role="status"><strong>この投稿は募集終了しました。</strong><span>この投稿への新規問い合わせは現在できません。</span></div>`
         : "";
       const contactAction = post._isClosed
         ? `<span class="btn btn-primary is-disabled" aria-disabled="true">募集終了</span>`
@@ -1212,9 +1181,9 @@
             <span class="category-badge">${escapeHtml(post._postType)}</span>
             <span class="subcategory-badge">${escapeHtml(post._subcategory)}</span>
             <h2 id="detailTitle">${escapeHtml(post._title)}</h2>
+            ${priceText ? `<div class="detail-price ${post._free ? "free" : ""}">${escapeHtml(priceText)}</div>` : ""}
             <div class="detail-meta">
               <span class="status-badge ${post._isClosed ? "is-closed" : ""}">${escapeHtml(statusLabel)}</span>
-              ${post._free || post._price ? `<span class="price-badge ${post._free ? "free" : ""}">${escapeHtml(post._free ? "無料" : post._price)}</span>` : ""}
               ${post._urgent ? `<span class="trust-badge urgent">急募</span>` : ""}
               ${post._japaneseOk ? `<span class="trust-badge japanese">日本語OK</span>` : ""}
               ${post._images.length ? `<span class="trust-badge">写真あり</span>` : ""}

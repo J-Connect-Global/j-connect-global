@@ -272,7 +272,7 @@ function writeArticlePage(type, item, allItems) {
 
 function renderArticlePage(type, item, bodyHtml, allItems) {
   const config = contentTypes[type];
-  const title = `${item.title} | ${config.label} | J-Connect Germany`;
+  const title = `${item.meta_title || item.title} | ${config.label} | J-Connect Germany`;
   const canonicalHref = absoluteUrl(item.canonical_url);
   const metaBlock = renderArticleMetaSpans(type, item);
   const ogMeta = renderOpenGraphMeta(type, item, title, canonicalHref);
@@ -446,6 +446,13 @@ html.push(`<h${level} id="${escapeAttribute(headingId)}">${renderInline(heading[
       continue;
     }
 
+    if (isBirdGridStart(lines, index)) {
+      const birdGrid = collectBirdGrid(lines, index, context);
+      html.push(birdGrid.html);
+      index = birdGrid.nextIndex;
+      continue;
+    }
+
     if (isTableStart(lines, index)) {
       const table = collectTable(lines, index, context);
       html.push(table.html);
@@ -552,6 +559,81 @@ function collectTable(lines, start, context) {
   };
 }
 
+function isBirdGridStart(lines, index) {
+  return String(lines[index] || '').trim() === ':::bird-grid';
+}
+
+function collectBirdGrid(lines, start, context) {
+  const records = [];
+  let current = {};
+  let index = start + 1;
+
+  while (index < lines.length) {
+    const trimmed = lines[index].trim();
+    if (trimmed === ':::') {
+      if (Object.keys(current).length) records.push(current);
+      index += 1;
+      break;
+    }
+
+    if (trimmed === '---') {
+      if (Object.keys(current).length) records.push(current);
+      current = {};
+      index += 1;
+      continue;
+    }
+
+    const match = lines[index].match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
+    if (match) {
+      current[match[1].toLowerCase()] = match[2].trim();
+    }
+    index += 1;
+  }
+
+  return {
+    html: renderBirdGrid(records, context),
+    nextIndex: index
+  };
+}
+
+function renderBirdGrid(records, context) {
+  const cards = records
+    .filter((record) => record.de && record.jp)
+    .map((record) => renderBirdCard(record, context))
+    .join('\n');
+
+  return `<div class="bird-profile-grid">\n${indent(cards, 2)}\n</div>`;
+}
+
+function renderBirdCard(record, context) {
+  const src = record.image || '';
+  const alt = record.alt || `ドイツで見られる ${record.de}（${record.jp}）のイメージ`;
+  const image = src
+    ? `<figure class="bird-card-media"><img ${renderArticleImageAttributes(src, alt, 'bird-card-image')}></figure>`
+    : '';
+  const title = `${record.de}（${record.jp}）`;
+  const names = [
+    ['DE', record.de],
+    ['EN', record.en],
+    ['JP', record.jp],
+    ['ES', record.es]
+  ].filter(([, value]) => value);
+
+  return `<article class="bird-profile-card">
+${image ? indent(image, 2) : ''}
+  <div class="bird-card-body">
+    <h3>${renderInline(title, context)}</h3>
+    <dl class="bird-name-list">
+${indent(names.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${renderInline(value, context)}</dd></div>`).join('\n'), 6)}
+    </dl>
+    ${record.description ? `<p>${renderInline(record.description, context)}</p>` : ''}
+    ${record.tip ? `<p><strong>見分けポイント：</strong>${renderInline(record.tip, context)}</p>` : ''}
+    ${record.where ? `<p><strong>よく見る場所：</strong>${renderInline(record.where, context)}</p>` : ''}
+    ${record.note ? `<p><strong>観察メモ：</strong>${renderInline(record.note, context)}</p>` : ''}
+  </div>
+</article>`;
+}
+
 function splitTableRow(line) {
   return line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((cell) => cell.trim());
 }
@@ -563,6 +645,7 @@ function isBlockStart(lines, index) {
     || /^>\s?/.test(trimmed)
     || /^\s*[-*]\s+/.test(lines[index])
     || /^\s*\d+\.\s+/.test(lines[index])
+    || isBirdGridStart(lines, index)
     || isTableStart(lines, index);
 }
 

@@ -822,6 +822,14 @@
     position:relative;
     min-width:0;
     padding-right:48px;
+    cursor:pointer;
+  }
+
+  .living-column-card:focus-visible{
+    outline:3px solid rgba(0, 103, 201, .22);
+    outline-offset:3px;
+    border-color:var(--jc-line-strong);
+    box-shadow:var(--jc-shadow-hover);
   }
 
   .living-column-card.card--has-media{
@@ -1212,6 +1220,14 @@
     background:#fff;
     color:var(--jc-text);
     box-shadow:var(--jc-shadow);
+    cursor:pointer;
+  }
+
+  .news-card:focus-visible{
+    outline:3px solid rgba(0, 103, 201, .22);
+    outline-offset:3px;
+    border-color:var(--jc-line-strong);
+    box-shadow:var(--jc-shadow-hover);
   }
 
   .news-card h3{

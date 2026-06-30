@@ -6,15 +6,12 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE_ORIGIN = 'https://j-connect-global.com';
 const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
-const cardFallbackImages = {
-  livingColumn: '/assets/images/placeholders/living-column.svg',
-  event: '/assets/images/placeholders/event.svg',
-  news: '/assets/images/placeholders/news.svg',
-  learnPhrase: '/assets/images/placeholders/learn-german-daily.svg',
-  learnRoute: '/assets/images/placeholders/learn-german-route.svg',
-  learnResource: '/assets/images/placeholders/learn-german-resource.svg'
+const ARTICLE_PLACEHOLDER_IMAGE = '/assets/img/placeholders/jconnect-article-placeholder.svg';
+const articleImageDirs = {
+  living: '/assets/img/living',
+  events: '/assets/img/events',
+  'learn-german': '/assets/img/learn-german'
 };
-
 const pillarLabels = {
   home: 'ホーム',
   community: '交流・掲示板',
@@ -168,7 +165,7 @@ function loadContentType(type) {
     const markdownPath = path.join(root, markdownRel);
     const markdown = fs.existsSync(markdownPath) ? readText(markdownRel) : '';
     const frontMatter = parseFrontMatter(markdown).data;
-    const merged = normalizeItem(type, { ...frontMatter, ...entry }, index);
+    const merged = normalizeItem(type, { ...frontMatter, ...entry, __frontmatter: frontMatter }, index);
 
     return {
       ...merged,
@@ -198,18 +195,28 @@ function normalizeItem(type, item, index) {
   const published = item.published === true || item.published === 'true' || item.status === 'published';
   const url = item.url || `/germany/ja/${type}/${slug}/`;
   const summary = item.summary || item.description || '';
-  const imageUrl = firstNonEmpty(
+  const frontmatter = item.__frontmatter || {};
+  const explicitImage = firstNonEmpty(
+    frontmatter.image,
+    item.image
+  );
+  const imageSrc = getArticleImageSrc({ ...item, image: explicitImage }, type);
+  const hasLegacyPlaceholderImage = [
     item.image_url,
     item.imageUrl,
-    item.image,
     item.thumbnail_url,
     item.thumbnail,
     item.cover_image,
     item.hero_image
-  );
+  ].some(isLegacyPlaceholderImage);
+  const imageAlt = getArticleImageAlt({
+    ...item,
+    image_alt: firstNonEmpty(frontmatter.image_alt, hasLegacyPlaceholderImage ? '' : item.image_alt, item.imageAlt, item.alt_text, item.alt)
+  });
 
   const normalized = {
     ...item,
+    __frontmatter: undefined,
     type,
     slug,
     url,
@@ -227,8 +234,12 @@ function normalizeItem(type, item, index) {
     official_sources: normalizeSources(item.official_sources?.length ? item.official_sources : item.sources),
     disclaimer_type: item.disclaimer_type || type,
     related_articles: toArray(item.related_articles),
-    image_url: imageUrl,
-    image_alt: firstNonEmpty(item.image_alt, item.imageAlt, item.alt_text, item.alt),
+    image: explicitImage,
+    image_url: imageSrc,
+    image_src: imageSrc,
+    image_alt: imageAlt,
+    image_caption: firstNonEmpty(frontmatter.image_caption, item.image_caption, item.imageCaption),
+    image_credit: firstNonEmpty(frontmatter.image_credit, item.image_credit, item.imageCredit),
     review: normalizeReview(item)
   };
 
@@ -269,6 +280,7 @@ function renderArticlePage(type, item, bodyHtml, allItems) {
   const toc = extractArticleToc(item.markdown, item.title);
   const articleBodyHtml = renderArticleBodyHtml(type, item, bodyHtml);
   const extraScripts = renderArticleExtraScripts(type, item);
+  const heroMedia = renderArticleHeroMedia(type, item);
 
   return `<!DOCTYPE html>
 <html lang="ja">
@@ -306,6 +318,7 @@ ${renderHeader(type, item.url)}
           </div>
         </header>
 
+${indent(heroMedia, 8)}
 ${indent(renderArticleMobileToc(toc), 8)}
         <div class="article-body">
 ${indent(articleBodyHtml, 10)}
@@ -644,6 +657,7 @@ function renderArticleMetaSpans(type, item) {
 }
 
 function renderOpenGraphMeta(type, item, title, canonicalHref) {
+  const imageUrl = absoluteUrl(getArticleImageSrc(item, type));
   const tags = [
     ['property', 'og:type', 'article'],
     ['property', 'og:site_name', 'J-Connect Germany'],
@@ -651,6 +665,11 @@ function renderOpenGraphMeta(type, item, title, canonicalHref) {
     ['property', 'og:title', title],
     ['property', 'og:description', item.summary],
     ['property', 'og:url', canonicalHref],
+    ['property', 'og:image', imageUrl],
+    ['property', 'og:image:alt', getArticleImageAlt(item)],
+    ['name', 'twitter:card', 'summary_large_image'],
+    ['name', 'twitter:image', imageUrl],
+    ['name', 'twitter:image:alt', getArticleImageAlt(item)],
     ['property', 'article:section', contentTypes[type].label],
     ['property', 'article:published_time', item.published_at],
     ['property', 'article:modified_time', item.updated_at || item.last_verified || item.published_at]
@@ -1167,7 +1186,7 @@ function renderLivingHubCard(item) {
   const reviewDate = item.review?.last_reviewed_at || item.last_verified || '';
   const nextReview = item.review?.next_review_due || '';
   const dateText = reviewDate || item.updated_at || item.published_at || '';
-  const media = renderCardMedia(item, item.title, cardFallbackImages.livingColumn);
+  const media = renderCardMedia(item, 'living');
   const mediaClass = media ? ' card--has-media' : '';
 
   return `<article class="jc-article-card living-hub-card living-column-card${mediaClass}" data-living-card data-url="${escapeAttribute(item.url)}" data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-search="${escapeAttribute(searchText)}" data-published="${escapeAttribute(item.published_at || '')}" data-reviewed="${escapeAttribute(reviewDate)}" data-updated="${escapeAttribute(item.updated_at || '')}">
@@ -1205,7 +1224,7 @@ function renderEventHubCard(item) {
     item.location,
     ...item.tags
   ].join(' ');
-  const media = renderCardMedia(item, item.title, cardFallbackImages.event);
+  const media = renderCardMedia(item, 'events');
   const mediaClass = media ? ' card--has-media' : '';
 
   return `<a class="jc-article-card events-hub-card${mediaClass}" href="${escapeAttribute(item.url)}" data-events-card data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-location="${escapeAttribute([item.city, item.location].filter(Boolean).join(' '))}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-search="${escapeAttribute(searchText)}" data-filter="${escapeAttribute(filterText)}" data-published="${escapeAttribute(item.published_at || '')}" data-event-date="${escapeAttribute(eventFilters.date)}" data-event-area="${escapeAttribute(eventFilters.area.join(' '))}" data-event-category="${escapeAttribute(eventFilters.category.join(' '))}" data-event-format="${escapeAttribute(eventFilters.format.join(' '))}" data-event-language="${escapeAttribute(eventFilters.language.join(' '))}" data-event-price="${escapeAttribute(eventFilters.price.join(' '))}">
@@ -1231,7 +1250,7 @@ function renderManualNewsHubCard(item) {
     ...newsFilters.area,
     ...newsFilters.type
   ].join(' ');
-  const media = renderCardMedia(item, item.title, cardFallbackImages.news);
+  const media = renderCardMedia(item, 'events');
   const mediaClass = media ? ' card--has-media' : '';
   const badges = [
     item.category || '生活ニュース',
@@ -1404,7 +1423,7 @@ function renderLearnGermanPhraseHubCard(item) {
     formatLearnGermanMeta('skill', item.skill),
     formatLearnGermanMeta('duration', item.duration)
   ].filter(Boolean);
-  const media = renderCardMedia(item, item.title, cardFallbackImages.learnPhrase);
+  const media = renderCardMedia(item, 'learn-german');
   const mediaClass = media ? ' card--has-media' : '';
 
   return `<a class="jc-article-card learn-article-card${mediaClass}" href="${escapeAttribute(item.url)}" data-learn-article-card data-content-type="phrase" data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-situation="${escapeAttribute(toArray(item.situation).join(' '))}" data-goal="${escapeAttribute(toArray(item.goal).join(' '))}" data-level="${escapeAttribute(toArray(item.level).join(' '))}" data-skill="${escapeAttribute(toArray(item.skill).join(' '))}" data-duration="${escapeAttribute(toArray(item.duration).join(' '))}" data-search="${escapeAttribute(searchText)}" data-published="${escapeAttribute(item.published_at || '')}">
@@ -1423,7 +1442,7 @@ function renderLearnGermanRouteHubCard(item) {
     formatLearnGermanMeta('goal', item.goal),
     formatLearnGermanMeta('duration', item.duration)
   ].filter(Boolean);
-  const media = renderCardMedia(item, item.title, cardFallbackImages.learnRoute);
+  const media = renderCardMedia(item, 'learn-german');
   const mediaClass = media ? ' card--has-media' : '';
 
   return `<a class="jc-card learn-route-card${mediaClass}" href="${escapeAttribute(item.url)}" data-learn-route-card>
@@ -1451,7 +1470,7 @@ function renderLearnGermanResourceHubCard(item) {
     formatLearnGermanMeta('resource_level', item.resource_level),
     formatLearnGermanMeta('resource_price_type', item.resource_price_type)
   ].filter(Boolean);
-  const media = renderCardMedia(item, item.title, cardFallbackImages.learnResource);
+  const media = renderCardMedia(item, 'learn-german');
   const mediaClass = media ? ' card--has-media' : '';
 
   return `<a class="jc-article-card learn-resource-card${mediaClass}" href="${escapeAttribute(item.url)}" data-resource-article-card data-content-type="resource" data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-resource-skill="${escapeAttribute(toArray(item.resource_skills).join(' '))}" data-resource-format="${escapeAttribute(toArray(item.resource_format).join(' '))}" data-resource-level="${escapeAttribute(toArray(item.resource_level).join(' '))}" data-resource-price="${escapeAttribute(toArray(item.resource_price_type).join(' '))}" data-search="${escapeAttribute(searchText)}" data-published="${escapeAttribute(item.published_at || '')}">
@@ -1833,16 +1852,54 @@ function firstNonEmpty(...values) {
   return '';
 }
 
-function renderCardMedia(item, fallbackAlt = '', fallbackImage = '') {
-  const src = firstNonEmpty(item.image_url, fallbackImage);
-  if (!src) return '';
-  const alt = firstNonEmpty(item.image_alt, fallbackAlt, item.title);
-  const fallback = firstNonEmpty(fallbackImage);
-  const fallbackAttribute = fallback && fallback !== src ? ` data-fallback="${escapeAttribute(fallback)}"` : '';
-  const onError = fallback && fallback !== src
-    ? `if(this.dataset.fallback&&this.getAttribute('src')!==this.dataset.fallback){this.src=this.dataset.fallback}else{this.closest('.card--has-media')?.classList.remove('card--has-media');this.closest('.card-media')?.remove();}`
-    : `this.closest('.card--has-media')?.classList.remove('card--has-media');this.closest('.card-media')?.remove();`;
-  return `<div class="card-media"><img src="${escapeAttribute(src)}" alt="${escapeAttribute(alt)}" loading="lazy" decoding="async"${fallbackAttribute} onerror="${escapeAttribute(onError)}"></div>`;
+function getArticleFallbackImageSrc() {
+  return ARTICLE_PLACEHOLDER_IMAGE;
+}
+
+function getArticleImageSrc(article, section) {
+  const explicitImage = firstNonEmpty(article.image);
+  if (explicitImage) return explicitImage;
+
+  const baseDir = articleImageDirs[section || article.type] || '';
+  if (baseDir && article.slug) return `${baseDir}/${article.slug}.webp`;
+
+  return getArticleFallbackImageSrc();
+}
+
+function getArticleImageAlt(article) {
+  return firstNonEmpty(article.image_alt, article.title ? `${article.title} のイメージ` : 'J-Connect Germany article image');
+}
+
+function isLegacyPlaceholderImage(value) {
+  return String(value || '').startsWith('/assets/images/placeholders/');
+}
+
+function renderArticleImageAttributes(src, alt, className, loading = 'lazy') {
+  const fallback = getArticleFallbackImageSrc();
+  const onError = `if(this.dataset.fallbackSrc&&this.getAttribute('src')!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;this.classList.add('is-fallback-image');}`;
+  return `src="${escapeAttribute(src)}" alt="${escapeAttribute(alt)}" class="${escapeAttribute(className)}" loading="${escapeAttribute(loading)}" decoding="async" data-fallback-src="${escapeAttribute(fallback)}" onerror="${escapeAttribute(onError)}"`;
+}
+
+function renderCardMedia(item, section) {
+  const src = getArticleImageSrc(item, section);
+  const alt = getArticleImageAlt(item);
+  return `<div class="article-card-media card-media"><img ${renderArticleImageAttributes(src, alt, 'article-card-image')}></div>`;
+}
+
+function renderArticleHeroMedia(type, item) {
+  const src = getArticleImageSrc(item, type);
+  const alt = getArticleImageAlt(item);
+  const captionParts = [
+    item.image_caption,
+    item.image_credit ? `Credit: ${item.image_credit}` : ''
+  ].filter(Boolean);
+  const caption = captionParts.length
+    ? `\n  <figcaption class="article-image-caption">${captionParts.map(escapeHtml).join(' / ')}</figcaption>`
+    : '';
+
+  return `<figure class="article-hero-media">
+  <img ${renderArticleImageAttributes(src, alt, 'article-hero-image', 'eager')}>${caption}
+</figure>`;
 }
 
 function uniqueArray(values) {

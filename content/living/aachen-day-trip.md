@@ -2,6 +2,7 @@
 id: "T003"
 title: "NRWから行く日帰り旅行：アーヘン観光モデルコース"
 slug: "aachen-day-trip"
+image_alt: "アーヘン日帰り旅行の記事イメージ"
 category: "観光"
 tags:
   - "アーヘン"

@@ -2,6 +2,7 @@
 id: "T002"
 title: "ケルン観光の基本：大聖堂・ライン川・旧市街の回り方"
 slug: "cologne-city-guide"
+image_alt: "ケルン観光ガイドの記事イメージ"
 category: "観光"
 tags:
   - "ケルン"

@@ -639,10 +639,24 @@ function validateInternalLinks(html, rel, label) {
 
 function extractLocalUrls(html) {
   return [...String(html || '').matchAll(/\b(?:href|src|action)=["']([^"']+)["']/gi)]
+    .filter((match) => !isDeferredArticleImageUrl(html, match.index, match[1]))
     .map((match) => match[1])
     .filter((href) => !/^(https?:|mailto:|tel:|javascript:|data:)/i.test(href))
     .map((href) => href.split('#')[0].split('?')[0])
     .filter(Boolean);
+}
+
+function isDeferredArticleImageUrl(html, attrIndex, url) {
+  if (!/^\/assets\/img\/(?:living|events|learn-german)\/[^"']+\.webp$/i.test(String(url || ''))) {
+    return false;
+  }
+
+  const tagStart = html.lastIndexOf('<', attrIndex);
+  const tagEnd = html.indexOf('>', attrIndex);
+  if (tagStart === -1 || tagEnd === -1) return false;
+
+  const tag = html.slice(tagStart, tagEnd + 1);
+  return /\bdata-fallback-src=["']\/assets\/img\/placeholders\/jconnect-article-placeholder\.svg["']/i.test(tag);
 }
 
 function validateNoMojibake(text, label) {

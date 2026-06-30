@@ -2,6 +2,7 @@
 id: "T011"
 title: "ドイツから行く週末旅行：ベルリン観光の基本"
 slug: "berlin-weekend-trip"
+image_alt: "ベルリン週末旅行の記事イメージ"
 category: "観光"
 tags:
   - "ベルリン"

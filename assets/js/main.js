@@ -191,6 +191,32 @@ document.addEventListener('DOMContentLoaded', function () {
       return card.dataset.url || card.getAttribute('href') || '';
     }
 
+    function livingIsInteractiveTarget(target) {
+      return Boolean(target && target.closest('a, button, input, select, textarea, label, [role="button"]'));
+    }
+
+    function setupLivingLinkedCards() {
+      livingCards.forEach(function (card) {
+        var url = livingCardUrl(card);
+        if (!url) return;
+        card.setAttribute('role', 'link');
+        card.setAttribute('tabindex', '0');
+        if (!card.getAttribute('aria-label')) {
+          card.setAttribute('aria-label', card.dataset.title || card.textContent.trim());
+        }
+        card.addEventListener('click', function (event) {
+          if (event.defaultPrevented || livingIsInteractiveTarget(event.target)) return;
+          window.location.href = url;
+        });
+        card.addEventListener('keydown', function (event) {
+          if (event.defaultPrevented || livingIsInteractiveTarget(event.target)) return;
+          if (event.key !== 'Enter' && event.key !== ' ') return;
+          event.preventDefault();
+          window.location.href = url;
+        });
+      });
+    }
+
     function livingDateValue(card) {
       var value = card.dataset.published || card.dataset.reviewed || card.dataset.updated || card.dataset.created || '';
       var parsed = Date.parse(value);
@@ -302,6 +328,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     setupLivingFilters();
+    setupLivingLinkedCards();
 
     livingSortButtons.forEach(function (button) {
       button.addEventListener('click', function () {

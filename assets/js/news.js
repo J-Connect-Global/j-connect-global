@@ -29,6 +29,10 @@ function initNewsSection() {
   const totalCount = cards.length;
 
   setupViewToggle(hub.querySelector('[data-view-toggle="news"]'), grid);
+  setupLinkedCards(cards, (card) => {
+    const link = card.querySelector('a[href]');
+    return link ? link.getAttribute("href") : "";
+  });
 
   function activeFilters() {
     return {
@@ -260,6 +264,30 @@ function setupViewToggle(toggle, container) {
         item.classList.toggle("is-active", isActive);
         item.setAttribute("aria-pressed", isActive ? "true" : "false");
       });
+    });
+  });
+}
+
+function setupLinkedCards(cards, getHref) {
+  cards.forEach((card) => {
+    const href = getHref(card);
+    if (!href) return;
+    card.setAttribute("role", "link");
+    card.setAttribute("tabindex", "0");
+    if (!card.getAttribute("aria-label")) {
+      card.setAttribute("aria-label", card.dataset.title || card.textContent.trim());
+    }
+
+    card.addEventListener("click", (event) => {
+      if (event.defaultPrevented || event.target.closest("a, button, input, select, textarea, label, [role='button']")) return;
+      window.location.href = href;
+    });
+
+    card.addEventListener("keydown", (event) => {
+      if (event.defaultPrevented || event.target.closest("a, button, input, select, textarea, label, [role='button']")) return;
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      window.location.href = href;
     });
   });
 }

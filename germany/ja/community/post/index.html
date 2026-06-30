@@ -2332,9 +2332,7 @@ async function submitForm(event) {
     // management link to contact_email_private. Do not collect or send a public
     // user-entered credential from this form.
     body.append('price', getValue('price'));
-    body.append('event_date', getValue('event_date'));
-    body.append('availability_date', getValue('availability_date'));
-
+body.append('availability_date', getValue('date_value'));
     body.append('image1_base64', image1.base64);
     body.append('image1_name', image1.name);
     body.append('image2_base64', image2.base64);

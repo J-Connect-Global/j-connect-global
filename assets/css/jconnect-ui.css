@@ -3011,6 +3011,29 @@
     font-weight:800;
   }
 
+  .article-hero-figure,
+  .article-inline-figure{
+    margin:10px 0 18px;
+  }
+
+  .article-hero-figure img,
+  .article-inline-figure img{
+    display:block;
+    width:100%;
+    height:auto;
+    border:1px solid var(--jc-line);
+    border-radius:var(--jc-radius-md);
+    background:#fff;
+  }
+
+  .article-hero-figure figcaption,
+  .article-inline-figure figcaption{
+    margin-top:8px;
+    color:var(--article-muted, #4f5f70);
+    font-size:13px;
+    line-height:1.65;
+  }
+
   .article-chip{
     display:inline-flex;
     align-items:center;

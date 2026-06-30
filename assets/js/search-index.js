@@ -677,6 +677,21 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
+    "title": "ドイツ・NRWでよく見かける野鳥図鑑",
+    "description": "公園、ライン川、湖、住宅街で見かける鳥を、ドイツ語・英語・日本語・スペイン語で整理。NRW生活で役立つ身近な野鳥ガイド。",
+    "url": "/germany/ja/living/germany-wild-birds-guide/",
+    "category": "生活・手続き",
+    "tags": [
+      "ドイツ生活",
+      "野鳥",
+      "NRW",
+      "自然観察",
+      "ドイツ語",
+      "英語",
+      "スペイン語"
+    ]
+  },
+  {
     "title": "デュッセルドルフ日本デーの基本ガイド",
     "description": "デュッセルドルフの日本デーについて、初めて行く人向けに見どころ、混雑、アクセス、子連れ・花火観覧の注意点を整理します。",
     "url": "/germany/ja/events/japan-day-duesseldorf/",

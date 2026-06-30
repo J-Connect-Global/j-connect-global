@@ -1,6 +1,6 @@
 [
   {
-    "id": "deutsche-welle-https-www-dw-com-en-art-biennial-manifesta-revives-germany-s-post",
+    "id": "deutsche-welle-https-www-dw-com-en-germany-out-of-world-cup-after-loss-on-penalt",
     "country": "germany",
     "country_ja": "ドイツ",
     "city": "nationwide",
@@ -13,10 +13,29 @@
     "importance_ja": "通常",
     "source_type": "media",
     "source_name": "Deutsche Welle",
-    "title": "Art biennial Manifesta revives Germany&#039;s post-war churches",
-    "summary": "Following the destruction of World War II, around 1,000 new churches were built in Germany&#039;s Ruhr region. Today many stand empty — and the contemporary art show Manifesta is giving them a new lease of life.",
+    "title": "Germany out of World Cup after loss on penalties to Paraguay",
+    "summary": "Germany lost in dramatic fashion against Paraguay in Boston to exit the 2026 World Cup at the first knockout stage.",
+    "published_at": "Tue, 30 Jun 2026",
+    "url": "https://www.dw.com/en/germany-out-of-world-cup-after-loss-on-penalties-to-paraguay/a-77760529?maca=en-rss-en-ger-1023-xml-mrss"
+  },
+  {
+    "id": "deutsche-welle-https-www-dw-com-en-germany-at-least-6-killed-in-shooting-in-stad",
+    "country": "germany",
+    "country_ja": "ドイツ",
+    "city": "nationwide",
+    "city_ja": "全国",
+    "category": "life",
+    "category_ja": "生活",
+    "topic": "general",
+    "topic_ja": "一般",
+    "importance": "normal",
+    "importance_ja": "通常",
+    "source_type": "media",
+    "source_name": "Deutsche Welle",
+    "title": "Germany: At least 6 killed in shooting in Stade",
+    "summary": "Several people are reported dead following gunfire in the northern German city of Stade. Authorities arrested the suspected shooter and said the shooting concerned a custody dispute.",
     "published_at": "Mon, 29 Jun 2026",
-    "url": "https://www.dw.com/en/art-biennial-manifesta-revives-germany-s-post-war-churches/a-77725021?maca=en-rss-en-ger-1023-xml-mrss"
+    "url": "https://www.dw.com/en/germany-at-least-6-killed-in-shooting-in-stade/a-77754951?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-germany-news-new-heat-record-at-41-7-degrees-",
@@ -38,7 +57,7 @@
     "url": "https://www.dw.com/en/germany-news-new-heat-record-at-41-7-degrees-celsius/live-77733670?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
-    "id": "deutsche-welle-https-www-dw-com-en-europe-heat-wave-over-1-300-excess-deaths-who",
+    "id": "deutsche-welle-https-www-dw-com-en-germany-news-temperatures-plunge-after-histor",
     "country": "germany",
     "country_ja": "ドイツ",
     "city": "nationwide",
@@ -51,10 +70,29 @@
     "importance_ja": "通常",
     "source_type": "media",
     "source_name": "Deutsche Welle",
-    "title": "Europe heat wave: Over 1,300 excess deaths, WHO says",
-    "summary": "The WHO said over 1,300 excess deaths have been recorded in Europe since the record-breaking heat wave started around June 21. Germany logged yet another heat record at 41.7 degrees Celsius.",
-    "published_at": "Sun, 28 Jun 2026",
-    "url": "https://www.dw.com/en/europe-heat-wave-over-1-300-excess-deaths-who-says/live-77663026?maca=en-rss-en-ger-1023-xml-mrss"
+    "title": "Germany news: Temperatures plunge after historic heat wave",
+    "summary": "A record-breaking heat wave has moved on, with temperatures sinking rapidly amid many storms. German Foreign Minister Johann Wadephul is heading to Washington for talks with his US counterpart, with NATO issues in focus.",
+    "published_at": "Mon, 29 Jun 2026",
+    "url": "https://www.dw.com/en/germany-news-temperatures-plunge-after-historic-heat-wave/live-77748142?maca=en-rss-en-ger-1023-xml-mrss"
+  },
+  {
+    "id": "deutsche-welle-https-www-dw-com-en-art-biennial-manifesta-revives-germany-s-post",
+    "country": "germany",
+    "country_ja": "ドイツ",
+    "city": "nationwide",
+    "city_ja": "全国",
+    "category": "life",
+    "category_ja": "生活",
+    "topic": "general",
+    "topic_ja": "一般",
+    "importance": "normal",
+    "importance_ja": "通常",
+    "source_type": "media",
+    "source_name": "Deutsche Welle",
+    "title": "Art biennial Manifesta revives Germany&#039;s postwar churches",
+    "summary": "Following the destruction of World War II, around 1,000 new churches were built in Germany&#039;s Ruhr region. Today, many stand empty, but the contemporary art show Manifesta is giving them a new lease on life.",
+    "published_at": "Mon, 29 Jun 2026",
+    "url": "https://www.dw.com/en/art-biennial-manifesta-revives-germany-s-postwar-churches/a-77725021?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-will-germany-impose-an-age-limit-for-social-m",
@@ -95,25 +133,6 @@
     "url": "https://www.dw.com/en/germany-s-development-aid-strategy-under-fire/a-77721928?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
-    "id": "deutsche-welle-https-www-dw-com-en-why-is-germany-taking-a-big-stake-in-a-major-",
-    "country": "germany",
-    "country_ja": "ドイツ",
-    "city": "nationwide",
-    "city_ja": "全国",
-    "category": "life",
-    "category_ja": "生活",
-    "topic": "general",
-    "topic_ja": "一般",
-    "importance": "normal",
-    "importance_ja": "通常",
-    "source_type": "media",
-    "source_name": "Deutsche Welle",
-    "title": "Why is Germany taking a big stake in a major tankmaker?",
-    "summary": "The German government will buy a 40% stake in tankmaker KNDS. The deal is as much about control in the critical defense sector as it is about the Franco-German relationship.",
-    "published_at": "Sat, 27 Jun 2026",
-    "url": "https://www.dw.com/en/why-is-germany-taking-a-big-stake-in-a-major-tankmaker/a-77687784?maca=en-rss-en-ger-1023-xml-mrss"
-  },
-  {
     "id": "deutsche-welle-https-www-dw-com-en-how-a-feel-good-german-song-is-taking-over-so",
     "country": "germany",
     "country_ja": "ドイツ",
@@ -131,24 +150,5 @@
     "summary": "Being encouraging and building confidence is what the German song \"Gut genug\" (\"Good Enough\") is all about. A meme is now bringing the track and its message to millions of people around the world.",
     "published_at": "Thu, 18 Jun 2026",
     "url": "https://www.dw.com/en/how-a-feel-good-german-song-is-taking-over-social-media/a-77592590?maca=en-rss-en-ger-1023-xml-mrss"
-  },
-  {
-    "id": "deutsche-welle-https-www-dw-com-en-ibrahim-maza-algeria-s-multicultural-kid-from",
-    "country": "germany",
-    "country_ja": "ドイツ",
-    "city": "nationwide",
-    "city_ja": "全国",
-    "category": "life",
-    "category_ja": "生活",
-    "topic": "general",
-    "topic_ja": "一般",
-    "importance": "normal",
-    "importance_ja": "通常",
-    "source_type": "media",
-    "source_name": "Deutsche Welle",
-    "title": "Ibrahim Maza: Algeria&#039;s &#039;multicultural kid&#039; from Berlin",
-    "summary": "Ibo Maza had his choice of three different countries. Instead of his native Germany, the Bayer Leverkusen forward is representing Algeria, the country of his father, at the World Cup in North America.",
-    "published_at": "Mon, 15 Jun 2026",
-    "url": "https://www.dw.com/en/ibrahim-maza-algeria-s-multicultural-kid-from-berlin/a-77435644?maca=en-rss-en-ger-1023-xml-mrss"
   }
 ]

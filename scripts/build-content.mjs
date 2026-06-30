@@ -613,21 +613,12 @@ function renderBirdCard(record, context) {
   const image = src
     ? `<figure class="bird-card-media"><img ${renderArticleImageAttributes(src, alt, 'bird-card-image')}></figure>`
     : '';
-  const title = `${record.de}（${record.jp}）`;
-  const names = [
-    ['DE', record.de],
-    ['EN', record.en],
-    ['JP', record.jp],
-    ['ES', record.es]
-  ].filter(([, value]) => value);
+  const title = `${record.jp}（${record.de}）`;
 
   return `<article class="bird-profile-card">
 ${image ? indent(image, 2) : ''}
   <div class="bird-card-body">
     <h3>${renderInline(title, context)}</h3>
-    <dl class="bird-name-list">
-${indent(names.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${renderInline(value, context)}</dd></div>`).join('\n'), 6)}
-    </dl>
     ${record.description ? `<p>${renderInline(record.description, context)}</p>` : ''}
     ${record.tip ? `<p><strong>見分けポイント：</strong>${renderInline(record.tip, context)}</p>` : ''}
     ${record.where ? `<p><strong>よく見る場所：</strong>${renderInline(record.where, context)}</p>` : ''}

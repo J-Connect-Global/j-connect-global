@@ -3213,37 +3213,6 @@
     line-height:1.65;
   }
 
-  .bird-name-list{
-    display:grid;
-    grid-template-columns:repeat(2, minmax(0, 1fr));
-    gap:6px;
-    margin:0;
-  }
-
-  .bird-name-list div{
-    min-width:0;
-    padding:7px 8px;
-    border:1px solid var(--jc-line);
-    border-radius:var(--jc-radius-sm);
-    background:var(--jc-soft-2);
-  }
-
-  .bird-name-list dt{
-    margin:0 0 2px;
-    color:var(--jc-blue);
-    font-size:11px;
-    font-weight:900;
-    line-height:1.2;
-  }
-
-  .bird-name-list dd{
-    margin:0;
-    color:var(--article-ink-strong, #0f253d);
-    font-size:13px;
-    font-weight:800;
-    line-height:1.35;
-    overflow-wrap:anywhere;
-  }
 
   .article-checklist{
     display:grid;

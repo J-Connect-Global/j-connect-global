@@ -30,7 +30,6 @@ const PUBLIC_POST_FIELDS = [
   'region',
   'city',
   'nickname',
-  'preferred_contact_method',
   'image_url_1',
   'image_url_2',
   'image_url_3',
@@ -55,7 +54,6 @@ const EDITABLE_POST_FIELDS = [
   'region',
   'city',
   'nickname',
-  'preferred_contact_method',
   'price',
   'availability_date',
   'image_url_1',
@@ -63,6 +61,20 @@ const EDITABLE_POST_FIELDS = [
   'image_url_3',
   'images',
   'tags'
+];
+
+const CREATE_POST_PARAM_FIELDS = [
+  'title',
+  'body',
+  'category1',
+  'category2',
+  'country',
+  'region',
+  'city',
+  'nickname',
+  'price',
+  'tags',
+  'contact_email_private'
 ];
 
 const PRIVATE_POST_FIELDS = [
@@ -343,7 +355,7 @@ function createPostValue_(header, params, generated) {
   if (header === 'last_modified_action') return 'created';
   if (header === 'edit_history_json') return JSON.stringify([{ timestamp: generated.now, action: 'created', fields: [] }]);
   if (header === 'moderation_status') return params.moderation_status || '';
-  if (Object.prototype.hasOwnProperty.call(params, header)) return params[header];
+  if (CREATE_POST_PARAM_FIELDS.indexOf(header) !== -1 && Object.prototype.hasOwnProperty.call(params, header)) return params[header];
   return undefined;
 }
 
@@ -466,7 +478,7 @@ function sendCreateConfirmationEmail_(params, info) {
     const htmlBody = [
       '<p>J-Connect Germany 掲示板への投稿を受け付けました。</p>',
       `<p><strong>投稿タイトル:</strong> ${escapeHtmlForEmail_(title)}</p>`,
-      `<p><strong>公開投稿リンク:</strong><br><a href="${info.publicPostUrl}">${info.publicPostUrl}</a></p>`,
+      '<p>投稿は安全確認後に掲載されます。</p>',
       `<p><strong>管理用リンク:</strong><br><a href="${info.manageUrl}">${info.manageUrl}</a></p>`,
       '<p>このリンクは、投稿の編集・募集終了・再募集・非公開化に必要です。ブックマークまたは保存してください。</p>',
       '<p>J-Connect Germanyがログイン情報、銀行情報、公的ID番号を求めることはありません。</p>'
@@ -476,7 +488,7 @@ function sendCreateConfirmationEmail_(params, info) {
       subject: `【J-Connect Germany】投稿を受け付けました: ${title}`,
       name: 'J-Connect Germany',
       htmlBody,
-      body: `J-Connect Germany 掲示板への投稿を受け付けました。\n\n投稿タイトル: ${title}\n公開投稿リンク: ${info.publicPostUrl}\n管理用リンク: ${info.manageUrl}\n\nこのリンクは投稿の編集・募集終了・再募集・非公開化に必要です。J-Connect Germanyがログイン情報、銀行情報、公的ID番号を求めることはありません。`
+      body: `J-Connect Germany 掲示板への投稿を受け付けました。\n\n投稿タイトル: ${title}\n投稿は安全確認後に掲載されます。\n管理用リンク: ${info.manageUrl}\n\nこのリンクは投稿の編集・募集終了・再募集・非公開化に必要です。J-Connect Germanyがログイン情報、銀行情報、公的ID番号を求めることはありません。`
     });
     return { sent: true };
   } catch (error) {

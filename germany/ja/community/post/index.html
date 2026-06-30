@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>投稿フォーム | J-Connect Germany</title>
 <meta name="description" content="J-Connect Germanyの交流・掲示板に投稿するためのフォームです。投稿は管理者確認後に掲載されます。">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://j-connect-global.com/germany/ja/community/post/">
 <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1079,13 +1079,15 @@
           </div>
 
           <div class="form-field">
-            <label for="edit_password">編集用パスワード<span class="required-mark">*</span></label>
-            <input id="edit_password" name="edit_password" type="password" minlength="8" autocomplete="new-password" required>
-            <p class="field-note">投稿の編集、募集終了、再開、非公開化に使います。8文字以上で設定してください。</p>
+            <p class="field-note">投稿後、管理用リンクをメールでお送りします。投稿の編集・募集終了・再開・非公開化は、その管理用リンクから行えます。</p>
           </div>
 
           <p class="field-note">
             本文には住所、電話番号、勤務先などの個人情報を書きすぎないようにしてください。
+          </p>
+          <p class="field-note">
+            J-Connect Germanyはログイン情報、銀行情報、公的ID番号を求めません。メールアドレスは公開されず、投稿連絡・管理連絡のためにのみ使用されます。
+            <a href="/germany/ja/privacy/">プライバシー</a>・<a href="/germany/ja/terms/">利用規約</a>・<a href="/germany/ja/impressum/">運営者情報</a>
           </p>
 
           <div class="form-field compact-field">
@@ -1191,6 +1193,7 @@
 <!-- LAYOUT:ja-footer:end -->
 
 <script src="/assets/js/data-sources.js"></script>
+<script src="/assets/js/community-shared.js"></script>
 <script>
 const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
 const GAS_URL = DATA_SOURCES.communityDataEndpoint;
@@ -1755,6 +1758,10 @@ function splitMediaValue(value) {
 }
 
 function normalizeImageSrc(src) {
+  const shared = window.JCONNECT_COMMUNITY_SHARED;
+  if (shared && typeof shared.normalizeImageSrc === 'function') {
+    return shared.normalizeImageSrc(src);
+  }
   const value = String(src || '').trim();
   if (!value) return '';
   try {
@@ -1783,8 +1790,11 @@ function getImages(post) {
     post.image3
   ];
 
+  const shared = window.JCONNECT_COMMUNITY_SHARED;
   return Array.from(new Set(values.flatMap(splitMediaValue).map(normalizeImageSrc).filter(function(src) {
-    return /^https?:\/\//i.test(src) || src.startsWith('/') || src.startsWith('../../../') || src.startsWith('../../') || src.startsWith('./');
+    return shared && typeof shared.isAllowedCommunityImageUrl === 'function'
+      ? shared.isAllowedCommunityImageUrl(src)
+      : /^\/assets\//.test(src);
   })));
 }
 
@@ -2291,11 +2301,6 @@ async function submitForm(event) {
   submitButton.textContent = '送信中...';
 
   try {
-    const editPassword = getValue('edit_password');
-    if (editPassword.length < 8) {
-      throw new Error('編集用パスワードは8文字以上で設定してください。');
-    }
-
     const country = getValue('country');
     const cityValue = getSubmissionCity();
     if (country !== 'オンライン' && !cityValue) {
@@ -2323,7 +2328,9 @@ async function submitForm(event) {
     body.append('nickname', getValue('nickname'));
     body.append('contact_email_private', getValue('contact_email_private'));
     body.append('preferred_contact_method', getValue('preferred_contact_method'));
-    body.append('edit_password', editPassword);
+    // GAS should generate manage_token/manage_url server-side and email the private
+    // management link to contact_email_private. Do not collect or send a public
+    // user-entered credential from this form.
     body.append('price', getValue('price'));
     body.append('event_date', getValue('event_date'));
     body.append('availability_date', getValue('availability_date'));
@@ -2341,6 +2348,10 @@ async function submitForm(event) {
     });
 
     if (!response.ok) {
+      const backendMessage = String(response.error || '');
+      if (/password/i.test(backendMessage)) {
+        throw new Error('送信先の管理設定が更新中のため、投稿を受け付けられませんでした。管理用リンク方式で再試行できるよう管理者が確認します。');
+      }
       throw new Error(response.error || '送信に失敗しました。');
     }
 

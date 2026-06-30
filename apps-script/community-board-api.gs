@@ -7,9 +7,9 @@
  * - The sheet must already contain the headers listed in the site request.
  *   This script maps by header name and does not add, rename, remove, or
  *   reorder columns.
- * - New Community posts must not depend on a user-entered edit password.
- *   Create manage_token/manage_url server-side and email the private link to
- *   contact_email_private. Legacy password columns may remain for old rows.
+ * - Community management uses server-generated manage_token/manage_url only.
+ *   Email the private management link to contact_email_private.
+ * - Dates are normalized into availability_date.
  */
 
 const COMMUNITY_SHEET_NAME = 'Community Posts';
@@ -36,7 +36,6 @@ const PUBLIC_POST_FIELDS = [
   'image_url_3',
   'images',
   'price',
-  'event_date',
   'availability_date',
   'created_at',
   'updated_at',
@@ -58,7 +57,6 @@ const EDITABLE_POST_FIELDS = [
   'nickname',
   'preferred_contact_method',
   'price',
-  'event_date',
   'availability_date',
   'image_url_1',
   'image_url_2',
@@ -69,17 +67,12 @@ const EDITABLE_POST_FIELDS = [
 
 const PRIVATE_POST_FIELDS = [
   'contact_email_private',
-  'edit_password_hash',
-  'edit_password_salt',
   'manage_token_hash',
   'manage_url',
-  'edit_token',
-  'delete_token',
   'admin_notes',
   'admin_note',
   'report_count',
   'moderation_status',
-  'delete_url',
   'image_file_id_1',
   'image_file_id_2',
   'image_file_id_3'
@@ -107,7 +100,6 @@ function dispatchCommunityRequest_(e) {
     else if (action === 'closePost') payload = setPostStatusWithAccess_(params, 'closed');
     else if (action === 'reopenPost') payload = setPostStatusWithAccess_(params, 'active');
     else if (action === 'deletePost') payload = setPostStatusWithAccess_(params, 'hidden');
-    else if (action === 'deletePostByToken') payload = deletePostByLegacyToken_(params);
     else if (action === 'submitInquiry') payload = submitInquiry_(params);
     else if (action === 'submitReport') payload = submitReport_(params);
     else if (action === 'cancelCommunityPostRequest') payload = cancelCommunityPostRequest_(params);
@@ -294,8 +286,6 @@ function createPost_(params) {
   const now = nowIso_();
   const postId = `post_${Utilities.getUuid()}`;
   const manageToken = randomToken_(32);
-  const deleteToken = randomToken_(24);
-  const editToken = randomToken_(24);
   const manageUrl = `${COMMUNITY_SITE_ORIGIN}${COMMUNITY_MANAGE_PATH}?post=${encodeURIComponent(postId)}&token=${encodeURIComponent(manageToken)}`;
   const publicPostUrl = `${COMMUNITY_SITE_ORIGIN}${COMMUNITY_PUBLIC_POST_PATH}?id=${encodeURIComponent(postId)}`;
 
@@ -307,8 +297,6 @@ function createPost_(params) {
       manageToken,
       manageUrl,
       publicPostUrl,
-      deleteToken,
-      editToken,
       imageData
     });
     return value === undefined ? '' : value;
@@ -339,16 +327,12 @@ function createPost_(params) {
 function createPostValue_(header, params, generated) {
   if (header === 'id' || header === 'post_id') return generated.postId;
   if (header === 'created_at' || header === 'updated_at' || header === 'last_modified_at') return generated.now;
-  if (header === 'published_at') return generated.now;
-  if (header === 'status') return 'active';
+  if (header === 'published_at') return '';
+  if (header === 'status') return 'pending';
   if (header === 'priority') return params.priority || '';
-  if (header === 'edit_password_salt') return '';
-  if (header === 'edit_password_hash') return '';
   if (header === 'manage_token_hash') return sha256Hex_(generated.manageToken);
   if (header === 'manage_url') return generated.manageUrl;
-  if (header === 'delete_token') return generated.deleteToken;
-  if (header === 'edit_token') return generated.editToken;
-  if (header === 'delete_url') return `${COMMUNITY_SITE_ORIGIN}/germany/ja/community/delete/?token=${encodeURIComponent(generated.deleteToken)}`;
+  if (header === 'availability_date') return params.availability_date || params.date_value || '';
   if (header === 'image_url_1') return generated.imageData.urls[0] || params.image_url_1 || '';
   if (header === 'image_url_2') return generated.imageData.urls[1] || params.image_url_2 || '';
   if (header === 'image_url_3') return generated.imageData.urls[2] || params.image_url_3 || '';
@@ -394,14 +378,10 @@ function verifyManageAccess_(params) {
 function verifyAccess_(params) {
   const found = findPostById_(params.post_id || params.id || params.post);
   if (!found) return { ok: false };
-  const password = String(params.password || params.edit_password || '').trim();
   const token = String(params.token || params.manage_token || '').trim();
-  const salt = String(found.post.edit_password_salt || '');
-  const storedPasswordHash = String(found.post.edit_password_hash || '');
   const storedTokenHash = String(found.post.manage_token_hash || '');
-  const passwordOk = password && salt && storedPasswordHash && sha256Hex_(`${salt}:${password}`) === storedPasswordHash;
   const tokenOk = token && storedTokenHash && sha256Hex_(token) === storedTokenHash;
-  if (!passwordOk && !tokenOk) return { ok: false };
+  if (!tokenOk) return { ok: false };
   return Object.assign({ ok: true }, found);
 }
 
@@ -458,32 +438,6 @@ function setPostStatusWithAccess_(params, nextStatus) {
   writeExistingFields_(verified.context, verified.rowNumber, updates);
   invalidateCommunityCache_();
   return { ok: true, success: true, status: nextStatus, last_modified_at: now };
-}
-
-function deletePostByLegacyToken_(params) {
-  const token = String(params.token || params.delete_token || '').trim();
-  if (!token) return { ok: false, error: 'Invalid token.' };
-  const context = getSheetContext_();
-  for (let i = 1; i < context.values.length; i += 1) {
-    const post = rowToObject_(context.headers, context.values[i], i + 1);
-    if (String(post.delete_token || '').trim() !== token) continue;
-    const now = nowIso_();
-    writeExistingFields_(context, i + 1, {
-      status: 'hidden',
-      deleted_at: now,
-      updated_at: now,
-      last_modified_at: now,
-      last_modified_action: 'deleted_by_user',
-      edit_history_json: appendHistory_(post.edit_history_json, {
-        timestamp: now,
-        action: 'deleted_by_user',
-        fields: ['status']
-      })
-    });
-    invalidateCommunityCache_();
-    return { ok: true, success: true };
-  }
-  return { ok: false, error: 'Invalid token.' };
 }
 
 function appendHistory_(raw, record) {

@@ -708,23 +708,34 @@
       const images = getImages(post);
       const postType = inferPostType(post);
       const subcategory = inferSubcategory(post);
-      const {
-        contact_email_private,
-        delete_token,
-        edit_token,
-        manage_url,
-        manage_token_hash,
-        edit_password_hash,
-        edit_password_salt,
-        admin_notes,
-        admin_note,
-        ...publicPost
-      } = post;
       const status = normalizeStatus(post.status);
       const lastModifiedAt = field(post, ["last_modified_at", "lastModifiedAt"]);
       const updatedAt = field(post, ["updated_at", "updatedAt"]);
       return {
-        ...publicPost,
+        id: post.id,
+        post_id: post.post_id,
+        title: post.title,
+        body: post.body,
+        category1: post.category1,
+        category2: post.category2,
+        country: post.country,
+        region: post.region,
+        city: post.city,
+        nickname: post.nickname,
+        preferred_contact_method: post.preferred_contact_method,
+        image_url_1: post.image_url_1,
+        image_url_2: post.image_url_2,
+        image_url_3: post.image_url_3,
+        images: post.images,
+        price: post.price,
+        availability_date: post.availability_date,
+        created_at: post.created_at,
+        updated_at: post.updated_at,
+        published_at: post.published_at,
+        last_modified_at: post.last_modified_at,
+        last_modified_action: post.last_modified_action,
+        status: post.status,
+        closed_at: post.closed_at,
         _id: getPostId(post, index),
         _title: field(post, ["title", "name", "subject"]) || "タイトル未設定",
         _body: field(post, ["body", "description", "message", "content"]) || "",

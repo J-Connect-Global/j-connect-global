@@ -17,6 +17,7 @@
   const COPY_SUCCESS_MESSAGE = "\u30ea\u30f3\u30af\u3092\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f\u3002";
   const COPY_ERROR_MESSAGE = "\u30ea\u30f3\u30af\u3092\u30b3\u30d4\u30fc\u3067\u304d\u307e\u305b\u3093\u3067\u3057\u305f\u3002\u0055\u0052\u004c\u3092\u9078\u629e\u3057\u3066\u30b3\u30d4\u30fc\u3057\u3066\u304f\u3060\u3055\u3044\u3002";
   const SHARE_SELECTOR = "[data-social-share]";
+  const AUTO_SHARE_SELECTOR = '[data-social-share="auto"]';
   const DIALOG_SELECTOR = "[data-social-share-dialog]";
   const MOBILE_NATIVE_QUERY = "(max-width: 720px)";
   const LABELS = {
@@ -112,10 +113,11 @@
     return text.length > max ? `${text.slice(0, max - 1)}\u2026` : text;
   }
 
-  function shareData() {
-    const url = pageUrl();
-    const title = pageTitle();
-    const text = pageText();
+  function shareData(source) {
+    const sourceData = shareSourceData(source);
+    const url = sourceData.url || pageUrl();
+    const title = sourceData.title || pageTitle();
+    const text = sourceData.text || pageText();
     return {
       url,
       title,
@@ -123,6 +125,17 @@
       encodedUrl: encodeURIComponent(url),
       encodedTitle: encodeURIComponent(title),
       encodedText: encodeURIComponent(`${title} ${url}`)
+    };
+  }
+
+  function shareSourceData(source) {
+    const trigger = source?.closest?.("[data-share-trigger]");
+    if (!trigger) return {};
+
+    return {
+      url: trigger.dataset.shareUrl || "",
+      title: trigger.dataset.shareTitle || "",
+      text: trigger.dataset.shareText || ""
     };
   }
 
@@ -136,15 +149,15 @@
     return "#";
   }
 
-  function createShareTrigger() {
+  function createShareTrigger(target) {
     const root = document.createElement("div");
     root.className = "social-share";
-    root.dataset.socialShare = "trigger";
-    root.append(createTriggerButton());
+    root.dataset.socialShare = "auto";
+    root.append(createTriggerButton(target));
     return root;
   }
 
-  function createTriggerButton() {
+  function createTriggerButton(target) {
     const trigger = document.createElement("button");
     trigger.type = "button";
     trigger.className = "social-share__trigger";
@@ -152,8 +165,22 @@
     trigger.setAttribute("aria-haspopup", "dialog");
     trigger.setAttribute("aria-expanded", "false");
     trigger.setAttribute("aria-label", LABELS.trigger);
+    applyTriggerData(trigger, target);
     trigger.append(createShareIcon("social-share__trigger-icon"), textSpan(LABELS.trigger, "social-share__trigger-label"), textSpan(LABELS.triggerShort, "social-share__trigger-label social-share__trigger-label--short"));
     return trigger;
+  }
+
+  function applyTriggerData(trigger, target) {
+    if (!trigger) return;
+    delete trigger.dataset.shareUrl;
+    delete trigger.dataset.shareTitle;
+    delete trigger.dataset.shareText;
+
+    if (!target?.share) return;
+
+    if (target.share.url) trigger.dataset.shareUrl = target.share.url;
+    if (target.share.title) trigger.dataset.shareTitle = target.share.title;
+    if (target.share.text) trigger.dataset.shareText = target.share.text;
   }
 
   function createShareIcon(className) {
@@ -261,12 +288,16 @@
 
   function placeTrigger() {
     const target = findTarget();
-    if (!target) return;
+    if (!target) {
+      removeAutoTriggers();
+      return;
+    }
 
-    const shares = Array.from(document.querySelectorAll(SHARE_SELECTOR));
-    const root = shares.shift() || createShareTrigger();
+    const shares = Array.from(document.querySelectorAll(AUTO_SHARE_SELECTOR));
+    const root = shares.shift() || createShareTrigger(target);
     shares.forEach((share) => share.remove());
     root.className = `social-share social-share--${target.type}`;
+    applyTriggerData(root.querySelector("[data-share-trigger]"), target);
 
     const anchor = findAnchor(target);
     if (anchor?.parentElement) {
@@ -279,6 +310,10 @@
     if (root.parentElement !== target.root) {
       target.root.insertAdjacentElement("afterbegin", root);
     }
+  }
+
+  function removeAutoTriggers() {
+    document.querySelectorAll(AUTO_SHARE_SELECTOR).forEach((share) => share.remove());
   }
 
   function findAnchor(target) {
@@ -296,13 +331,14 @@
 
   function findTarget() {
     const article = document.querySelector("main article.article-content-shell, main article.article-content");
-    if (isVisibleContainer(article)) return { root: article, type: "article" };
+    if (isVisibleContainer(article) && article.querySelector(".article-header, .article-meta")) {
+      return { root: article, type: "article" };
+    }
 
     const detail = document.querySelector(".detail-panel");
-    if (isVisibleContainer(detail)) return { root: detail, type: "detail" };
-
-    const main = document.querySelector("main");
-    if (main) return { root: main, type: "page" };
+    if (isVisibleContainer(detail) && detail.querySelector(".detail-title, h1, h2, h3")) {
+      return { root: detail, type: "detail" };
+    }
 
     return null;
   }
@@ -320,7 +356,7 @@
   }
 
   function updateShareLinks() {
-    const data = shareData();
+    const data = shareData(activeTrigger);
     document.querySelectorAll("[data-share-service]").forEach((element) => {
       const service = element.dataset.shareService;
       if (service === "native") {
@@ -414,7 +450,7 @@
     }
 
     try {
-      await nativeShare(shareData());
+      await nativeShare(shareData(trigger));
     } catch (error) {
       if (error && error.name === "AbortError") return;
       openDialog(trigger);
@@ -426,7 +462,7 @@
     if (!["native", "copy", "instagram"].includes(service)) return;
 
     event.preventDefault();
-    const data = shareData();
+    const data = shareData(activeTrigger);
 
     try {
       if (service === "native") {

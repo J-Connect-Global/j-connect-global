@@ -300,7 +300,7 @@ ${indent(ogMeta, 2)}
   <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <link rel="stylesheet" href="/assets/css/social-share.css">
-  <script src="/assets/js/cookie-consent.js" defer></script>
+<script src="/assets/js/cookie-consent.js" defer></script>
 ${indent(structuredData, 2)}
 </head>
 <body>

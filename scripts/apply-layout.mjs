@@ -76,10 +76,7 @@ function ensureHeaderFooterStylesheet(html) {
 
 function ensureSocialShareStylesheet(html) {
   const stylesheetLink = `  <link rel="stylesheet" href="${SOCIAL_SHARE_CSS}">`;
-  let next = html.replace(
-    /\s*<link\s+rel=["']stylesheet["']\s+href=["']\/assets\/css\/social-share\.css(?:\?[^"']*)?["']\s*\/?>\s*/g,
-    '\n'
-  );
+  let next = removeHeadLines(html, (line) => isStylesheetLine(line, SOCIAL_SHARE_CSS));
 
   const cookieCssLink = /(\s*<link\s+rel=["']stylesheet["']\s+href=["']\/assets\/css\/cookie-consent\.css(?:\?[^"']*)?["']\s*\/?>)/;
   if (cookieCssLink.test(next)) {
@@ -122,8 +119,7 @@ function ensureStaticSocialMeta(html, url, page) {
     'twitter:description',
     'twitter:image'
   ];
-  const pattern = new RegExp(`\\s*<meta\\b(?=[^>]*(?:property|name)=["'](?:${names.map(escapeRegExp).join('|')})["'])[^>]*>\\s*`, 'gi');
-  let next = html.replace(pattern, '\n');
+  let next = removeHeadLines(html, (line) => isManagedMetaLine(line, names));
 
   const canonicalPattern = /(\s*<link\s+rel=["']canonical["'][^>]*>)/i;
   if (canonicalPattern.test(next)) {
@@ -136,6 +132,24 @@ function ensureStaticSocialMeta(html, url, page) {
   }
 
   return next.replace('</head>', `${block}\n</head>`);
+}
+
+function removeHeadLines(html, shouldRemove) {
+  const headEnd = html.search(/<\/head>/i);
+  if (headEnd === -1) return html;
+
+  const beforeHeadEnd = html.slice(0, headEnd);
+  const afterHeadEnd = html.slice(headEnd);
+  const lines = beforeHeadEnd.split('\n');
+  return `${lines.filter((line) => !shouldRemove(line)).join('\n')}${afterHeadEnd}`;
+}
+
+function isStylesheetLine(line, href) {
+  return new RegExp(`<link\\b(?=[^>]*rel=["']stylesheet["'])(?=[^>]*href=["']${escapeRegExp(href)}(?:\\?[^"']*)?["'])[^>]*>`, 'i').test(line);
+}
+
+function isManagedMetaLine(line, names) {
+  return new RegExp(`<meta\\b(?=[^>]*(?:property|name)=["'](?:${names.map(escapeRegExp).join('|')})["'])[^>]*>`, 'i').test(line);
 }
 
 function pageSocialMeta(html, url, page) {

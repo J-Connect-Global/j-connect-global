@@ -1,15 +1,12 @@
 {
-  "generated_at": "2026-07-02T19:20:49.361Z",
+  "generated_at": "2026-07-02T19:26:15.597Z",
   "source": "community-gas",
-  "count": 6,
+  "count": 2,
   "groups": [
     {
       "field": "category1",
       "values": [
-        "質問",
         "譲ります",
-        "探しています",
-        "買います",
         "売ります"
       ]
     },
@@ -17,28 +14,19 @@
       "field": "category2",
       "values": [
         "家具・家電",
-        "帰国売り",
-        "子ども用品",
-        "住民登録・役所",
-        "部屋・住まい"
+        "子ども用品"
       ]
     },
     {
       "field": "city",
       "values": [
-        "Baden-Württemberg - Mannheim",
-        "Baden-Württemberg - Stuttgart",
         "Hilden",
-        "NRW - Bonn",
-        "オーバーカッセル",
         "フランクフルト周辺"
       ]
     },
     {
       "field": "region",
       "values": [
-        "Baden-Württemberg",
-        "NRW",
         "ドイツ"
       ]
     }

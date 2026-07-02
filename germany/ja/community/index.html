@@ -1318,12 +1318,22 @@
       return DATA_SOURCES.fetchJsonWithTimeout(url, timeoutMs);
     }
 
+    function assertCommunityPostsPayloadUsable(payload) {
+      if (payload && payload.ok === false) {
+        throw new Error(payload.error || "Community data source returned ok:false");
+      }
+      const hasPostsArray = Array.isArray(payload)
+        || (payload && typeof payload === "object" && ["data", "rows", "items", "posts"].some((key) => Array.isArray(payload[key])));
+      if (!hasPostsArray) throw new Error("Community data source returned no posts array");
+      return payload;
+    }
+
     async function fetchCommunityPostsData() {
       try {
-        return await fetchJson(DATA_SOURCES.buildCommunityUrl({ action: "listPosts", includeClosed: "true", bypassCache: "true" }), GAS_FALLBACK_TIMEOUT_MS);
-      } catch (gasError) {
-        console.warn("Community GAS posts load failed; trying static fallback:", gasError);
-        return await fetchJson(COMMUNITY_STATIC_POSTS_URL, STATIC_DATA_TIMEOUT_MS);
+        return assertCommunityPostsPayloadUsable(await fetchJson(COMMUNITY_STATIC_POSTS_URL, STATIC_DATA_TIMEOUT_MS));
+      } catch (staticError) {
+        console.warn("Community static posts load failed; trying GAS fallback:", COMMUNITY_STATIC_POSTS_URL, staticError);
+        return assertCommunityPostsPayloadUsable(await fetchJson(DATA_SOURCES.buildCommunityUrl({ action: "listPosts", includeClosed: "true" }), GAS_FALLBACK_TIMEOUT_MS));
       }
     }
 

@@ -1,51 +1,45 @@
 {
-  "generated_at": "2026-06-29T16:08:49.283Z",
+  "generated_at": "2026-07-02T19:20:49.361Z",
   "source": "community-gas",
-  "count": 19,
+  "count": 6,
   "groups": [
     {
       "field": "category1",
       "values": [
-        "レッスン・習い事",
-        "質問・相談",
-        "住まい・物件",
-        "仲間募集",
-        "売ります",
-        "売ります・買います",
-        "友達募集"
+        "質問",
+        "譲ります",
+        "探しています",
+        "買います",
+        "売ります"
       ]
     },
     {
       "field": "category2",
       "values": [
-        "その他",
-        "ダンス",
+        "家具・家電",
         "帰国売り",
-        "言語交換",
-        "生活",
-        "部屋を貸します",
-        "友達",
-        "留学"
+        "子ども用品",
+        "住民登録・役所",
+        "部屋・住まい"
       ]
     },
     {
       "field": "city",
       "values": [
-        "Berlin - Berlin",
-        "Duesseldorf",
-        "DUS",
-        "Dusseldorf",
-        "Düsseldorf",
-        "Koeln",
+        "Baden-Württemberg - Mannheim",
+        "Baden-Württemberg - Stuttgart",
+        "Hilden",
+        "NRW - Bonn",
         "オーバーカッセル",
-        "デュッセルドルフ"
+        "フランクフルト周辺"
       ]
     },
     {
       "field": "region",
       "values": [
-        "Berlin",
-        "NRW"
+        "Baden-Württemberg",
+        "NRW",
+        "ドイツ"
       ]
     }
   ]

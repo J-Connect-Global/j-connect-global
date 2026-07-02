@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
 const SITE_ORIGIN = 'https://j-connect-global.com';
+const PRIMARY_JA_PATH = '/germany/ja/';
 const DEFAULT_SOCIAL_IMAGE = '/assets/images/brand/logo_header.png';
 const SOCIAL_SHARE_CSS = '/assets/css/social-share.css';
 const SOCIAL_SHARE_JS = '/assets/js/social-share.js';
@@ -38,6 +39,7 @@ function applyCanonicalLayout(html, url, page) {
   next = ensureHeaderFooterStylesheet(next);
   next = ensureSocialShareStylesheet(next);
   next = ensureStaticSocialMeta(next, currentUrl, page);
+  next = ensureJaHreflang(next, page);
   next = replaceLayoutBlock(next, 'ja-header', renderHeader(pillar, currentUrl), 'header');
   next = replaceLayoutBlock(next, 'ja-footer', readLayoutTemplate('ja-footer'), 'footer');
   next = ensureMainScript(next);
@@ -134,6 +136,28 @@ function ensureStaticSocialMeta(html, url, page) {
   return next.replace('</head>', `${block}\n</head>`);
 }
 
+function ensureJaHreflang(html, page) {
+  const canonical = extractCanonical(html) || absoluteUrl(page?.canonical_url || page?.url || '');
+  let next = removeHeadLines(html, isAlternateHreflangLine);
+
+  if (!shouldHaveJaHreflang(next, page, canonical)) return next;
+
+  // JA is the current primary public version. DE/EN placeholders are
+  // intentionally noindex until completed; do not add unfinished language
+  // placeholders to hreflang.
+  const block = [
+    `  <link rel="alternate" hreflang="ja" href="${escapeAttribute(canonical)}">`,
+    `  <link rel="alternate" hreflang="x-default" href="${escapeAttribute(canonical)}">`
+  ].join('\n');
+  const canonicalPattern = /(\s*<link\s+rel=["']canonical["'][^>]*>)/i;
+
+  if (canonicalPattern.test(next)) {
+    return next.replace(canonicalPattern, `$1\n${block}`);
+  }
+
+  return next.replace('</head>', `${block}\n</head>`);
+}
+
 function removeHeadLines(html, shouldRemove) {
   const headEnd = html.search(/<\/head>/i);
   if (headEnd === -1) return html;
@@ -150,6 +174,16 @@ function isStylesheetLine(line, href) {
 
 function isManagedMetaLine(line, names) {
   return new RegExp(`<meta\\b(?=[^>]*(?:property|name)=["'](?:${names.map(escapeRegExp).join('|')})["'])[^>]*>`, 'i').test(line);
+}
+
+function isAlternateHreflangLine(line) {
+  return /<link\b(?=[^>]*rel=["']alternate["'])(?=[^>]*hreflang=)[^>]*>/i.test(line);
+}
+
+function shouldHaveJaHreflang(html, page, canonical) {
+  if (/<meta\b(?=[^>]*name=["']robots["'])(?=[^>]*content=["'][^"']*noindex)/i.test(html)) return false;
+  if (page && page.status !== 'published') return false;
+  return isCanonicalJaUrl(canonical);
 }
 
 function pageSocialMeta(html, url, page) {
@@ -299,6 +333,11 @@ function normalizeUrl(value) {
 function absoluteUrl(url) {
   if (/^https?:\/\//i.test(url)) return url;
   return `${SITE_ORIGIN}${url.startsWith('/') ? url : `/${url}`}`;
+}
+
+function isCanonicalJaUrl(url) {
+  const absolute = absoluteUrl(url);
+  return absolute === `${SITE_ORIGIN}${PRIMARY_JA_PATH}` || absolute.startsWith(`${SITE_ORIGIN}${PRIMARY_JA_PATH}`);
 }
 
 function formatPageTitle(title) {

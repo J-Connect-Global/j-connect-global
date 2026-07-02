@@ -473,6 +473,26 @@
       return url.href;
     }
 
+    function shareExcerpt(...parts) {
+      const text = parts
+        .map((part) => String(part || "").replace(/\s+/g, " ").trim())
+        .filter(Boolean)
+        .join(" / ");
+      return text.length > 120 ? `${text.slice(0, 119)}…` : text;
+    }
+
+    function socialShareTriggerHtml({ url, title, text, type }) {
+      return `
+        <div class="social-share social-share--detail" data-social-share="manual">
+          <button class="social-share__trigger" type="button" data-share-trigger="true" data-share-url="${escapeHtml(url)}" data-share-title="${escapeHtml(title)}" data-share-text="${escapeHtml(text)}" data-share-type="${escapeHtml(type)}" aria-haspopup="dialog" aria-expanded="false" aria-label="\u30b7\u30a7\u30a2\u3059\u308b">
+            <svg class="social-share__trigger-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 16.1c-.76 0-1.44.3-1.96.77L8.9 12.7a3.3 3.3 0 0 0 0-1.39l7.05-4.12A2.98 2.98 0 1 0 15 5c0 .24.03.47.08.69L8.03 9.81a3 3 0 1 0 0 4.38l7.12 4.18c-.05.2-.07.42-.07.63a2.92 2.92 0 1 0 2.92-2.9Z" fill="currentColor"/></svg>
+            <span class="social-share__trigger-label">\u30b7\u30a7\u30a2\u3059\u308b</span>
+            <span class="social-share__trigger-label social-share__trigger-label--short">\u30b7\u30a7\u30a2</span>
+          </button>
+        </div>
+      `;
+    }
+
     function normalize(value) {
       return String(value ?? "").trim().toLowerCase();
     }
@@ -1216,6 +1236,12 @@
             <span class="category-badge">${escapeHtml(post._postType)}</span>
             <span class="subcategory-badge">${escapeHtml(post._subcategory)}</span>
             <h2 id="detailTitle">${escapeHtml(post._title)}</h2>
+            ${socialShareTriggerHtml({
+              url: shareHref,
+              title: post._title,
+              text: shareExcerpt(post._body, post._subcategory, post._postType, post._location),
+              type: "community"
+            })}
             ${priceText ? `<div class="detail-price ${post._free ? "free" : ""}">${escapeHtml(priceText)}</div>` : ""}
             <div class="detail-meta">
               <span class="status-badge ${post._isClosed ? "is-closed" : ""}">${escapeHtml(statusLabel)}</span>

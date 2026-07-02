@@ -438,6 +438,42 @@
     return `mailto:${email}?subject=${encodeURIComponent(`${job.position_title || "求人"} 応募`)}`;
   }
 
+  function shareExcerpt(...parts){
+    const text = parts
+      .map(part => String(part || "").replace(/\s+/g, " ").trim())
+      .filter(Boolean)
+      .join(" / ");
+    return text.length > 120 ? `${text.slice(0, 119)}…` : text;
+  }
+
+  function currentDetailUrl(){
+    const url = new URL(location.href);
+    url.hash = "";
+    return url.href;
+  }
+
+  function jobShareText(job){
+    return shareExcerpt(
+      job.company_name,
+      job.location || job.city || job.region,
+      job.employment_type,
+      getSalaryLabel(job),
+      job.summary || job.description
+    );
+  }
+
+  function socialShareTriggerHtml({ url, title, text, type }){
+    return `
+      <div class="social-share social-share--detail" data-social-share="manual">
+        <button class="social-share__trigger" type="button" data-share-trigger="true" data-share-url="${escapeHtml(url)}" data-share-title="${escapeHtml(title)}" data-share-text="${escapeHtml(text)}" data-share-type="${escapeHtml(type)}" aria-haspopup="dialog" aria-expanded="false" aria-label="\u30b7\u30a7\u30a2\u3059\u308b">
+          <svg class="social-share__trigger-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 16.1c-.76 0-1.44.3-1.96.77L8.9 12.7a3.3 3.3 0 0 0 0-1.39l7.05-4.12A2.98 2.98 0 1 0 15 5c0 .24.03.47.08.69L8.03 9.81a3 3 0 1 0 0 4.38l7.12 4.18c-.05.2-.07.42-.07.63a2.92 2.92 0 1 0 2.92-2.9Z" fill="currentColor"/></svg>
+          <span class="social-share__trigger-label">\u30b7\u30a7\u30a2\u3059\u308b</span>
+          <span class="social-share__trigger-label social-share__trigger-label--short">\u30b7\u30a7\u30a2</span>
+        </button>
+      </div>
+    `;
+  }
+
   async function copyText(text){
     try {
       if (navigator.clipboard && window.isSecureContext) {
@@ -534,6 +570,13 @@
         ${detailItem("応募期限", job.expires_at)}
         ${detailItem("Job ID", job.id)}
       </div>
+
+      ${socialShareTriggerHtml({
+        url: currentDetailUrl(),
+        title,
+        text: jobShareText(job),
+        type: "job"
+      })}
 
       <section class="jobs-detail-section">
         <h2>仕事内容</h2>

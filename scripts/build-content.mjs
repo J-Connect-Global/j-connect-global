@@ -297,9 +297,10 @@ ${indent(ogMeta, 2)}
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal5-nav-20260618">
-<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
+  <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
-  <script src="/assets/js/cookie-consent.js" defer></script>
+  <link rel="stylesheet" href="/assets/css/social-share.css">
+<script src="/assets/js/cookie-consent.js" defer></script>
 ${indent(structuredData, 2)}
 </head>
 <body>
@@ -333,6 +334,7 @@ ${indent(renderRelatedSection(item, allItems), 4)}
 
 ${renderFooter()}
 ${extraScripts ? `${indent(extraScripts, 2)}\n` : ''}  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/social-share.js"></script>
 </body>
 </html>
 `;
@@ -742,6 +744,8 @@ function renderOpenGraphMeta(type, item, title, canonicalHref) {
     ['property', 'og:image', imageUrl],
     ['property', 'og:image:alt', getArticleImageAlt(item)],
     ['name', 'twitter:card', 'summary_large_image'],
+    ['name', 'twitter:title', title],
+    ['name', 'twitter:description', item.summary],
     ['name', 'twitter:image', imageUrl],
     ['name', 'twitter:image:alt', getArticleImageAlt(item)],
     ['property', 'article:section', contentTypes[type].label],

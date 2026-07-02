@@ -4,6 +4,10 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
+const SITE_ORIGIN = 'https://j-connect-global.com';
+const DEFAULT_SOCIAL_IMAGE = '/assets/images/brand/logo_header.png';
+const SOCIAL_SHARE_CSS = '/assets/css/social-share.css';
+const SOCIAL_SHARE_JS = '/assets/js/social-share.js';
 
 function main() {
   const pages = readJson(PAGE_REGISTRY_PATH);
@@ -32,9 +36,12 @@ function applyCanonicalLayout(html, url, page) {
   const currentUrl = page?.status === 'legacy' && page.redirect_target ? normalizeUrl(page.redirect_target) : url;
   let next = html;
   next = ensureHeaderFooterStylesheet(next);
+  next = ensureSocialShareStylesheet(next);
+  next = ensureStaticSocialMeta(next, currentUrl, page);
   next = replaceLayoutBlock(next, 'ja-header', renderHeader(pillar, currentUrl), 'header');
   next = replaceLayoutBlock(next, 'ja-footer', readLayoutTemplate('ja-footer'), 'footer');
   next = ensureMainScript(next);
+  next = ensureSocialShareScript(next);
   return next;
 }
 
@@ -67,9 +74,124 @@ function ensureHeaderFooterStylesheet(html) {
   return next.replace('</head>', `${stylesheetLink}\n</head>`);
 }
 
+function ensureSocialShareStylesheet(html) {
+  const stylesheetLink = `  <link rel="stylesheet" href="${SOCIAL_SHARE_CSS}">`;
+  let next = removeHeadLines(html, (line) => isStylesheetLine(line, SOCIAL_SHARE_CSS));
+
+  const cookieCssLink = /(\s*<link\s+rel=["']stylesheet["']\s+href=["']\/assets\/css\/cookie-consent\.css(?:\?[^"']*)?["']\s*\/?>)/;
+  if (cookieCssLink.test(next)) {
+    return next.replace(cookieCssLink, `$1\n${stylesheetLink}`);
+  }
+
+  const jconnectUiLink = /(\s*<link\s+rel=["']stylesheet["']\s+href=["']\/assets\/css\/jconnect-ui\.css(?:\?[^"']*)?["']\s*\/?>)/;
+  if (jconnectUiLink.test(next)) {
+    return next.replace(jconnectUiLink, `$1\n${stylesheetLink}`);
+  }
+
+  return next.replace('</head>', `${stylesheetLink}\n</head>`);
+}
+
 function ensureMainScript(html) {
   if (/<script\b[^>]*src=["']\/assets\/js\/main\.js(?:\?[^"']*)?["'][^>]*>/i.test(html)) return html;
   return html.replace(/(\s*)<\/body>/i, `\n<script src="/assets/js/main.js"></script>$1</body>`);
+}
+
+function ensureSocialShareScript(html) {
+  if (/<script\b[^>]*src=["']\/assets\/js\/social-share\.js(?:\?[^"']*)?["'][^>]*>/i.test(html)) return html;
+  return html.replace(/(\s*)<\/body>/i, `\n<script src="${SOCIAL_SHARE_JS}"></script>$1</body>`);
+}
+
+function ensureStaticSocialMeta(html, url, page) {
+  if (!page || !['published', 'legacy'].includes(page.status)) return html;
+
+  const meta = pageSocialMeta(html, url, page);
+  const block = renderSocialMeta(meta, 2);
+  const names = [
+    'og:title',
+    'og:description',
+    'og:url',
+    'og:image',
+    'og:type',
+    'og:site_name',
+    'og:locale',
+    'twitter:card',
+    'twitter:title',
+    'twitter:description',
+    'twitter:image'
+  ];
+  let next = removeHeadLines(html, (line) => isManagedMetaLine(line, names));
+
+  const canonicalPattern = /(\s*<link\s+rel=["']canonical["'][^>]*>)/i;
+  if (canonicalPattern.test(next)) {
+    return next.replace(canonicalPattern, `$1\n${block}`);
+  }
+
+  const descriptionPattern = /(\s*<meta\s+name=["']description["'][^>]*>)/i;
+  if (descriptionPattern.test(next)) {
+    return next.replace(descriptionPattern, `$1\n${block}`);
+  }
+
+  return next.replace('</head>', `${block}\n</head>`);
+}
+
+function removeHeadLines(html, shouldRemove) {
+  const headEnd = html.search(/<\/head>/i);
+  if (headEnd === -1) return html;
+
+  const beforeHeadEnd = html.slice(0, headEnd);
+  const afterHeadEnd = html.slice(headEnd);
+  const lines = beforeHeadEnd.split('\n');
+  return `${lines.filter((line) => !shouldRemove(line)).join('\n')}${afterHeadEnd}`;
+}
+
+function isStylesheetLine(line, href) {
+  return new RegExp(`<link\\b(?=[^>]*rel=["']stylesheet["'])(?=[^>]*href=["']${escapeRegExp(href)}(?:\\?[^"']*)?["'])[^>]*>`, 'i').test(line);
+}
+
+function isManagedMetaLine(line, names) {
+  return new RegExp(`<meta\\b(?=[^>]*(?:property|name)=["'](?:${names.map(escapeRegExp).join('|')})["'])[^>]*>`, 'i').test(line);
+}
+
+function pageSocialMeta(html, url, page) {
+  const title = cleanTitle(
+    page.id === 'page-community-post'
+      ? '交流・掲示板の投稿 | J-Connect Germany'
+      : extractTitle(html) || formatPageTitle(page.title)
+  );
+  const description = cleanTitle(
+    page.id === 'page-community-post'
+      ? 'ドイツ在住日本人向けの交流掲示板投稿ページです。投稿詳細はページ読み込み後に表示されます。'
+      : extractMetaContent(html, 'description') || page.description || 'J-Connect Germanyのページです。'
+  );
+  const canonical = extractCanonical(html) || absoluteUrl(page.canonical_url || url);
+
+  return {
+    title,
+    description,
+    url: canonical,
+    image: absoluteUrl(page.og_image || page.image || DEFAULT_SOCIAL_IMAGE),
+    type: page.type === 'article' ? 'article' : 'website'
+  };
+}
+
+function renderSocialMeta(meta, spaces) {
+  const tags = [
+    ['property', 'og:title', meta.title],
+    ['property', 'og:description', meta.description],
+    ['property', 'og:url', meta.url],
+    ['property', 'og:image', meta.image],
+    ['property', 'og:type', meta.type],
+    ['property', 'og:site_name', 'J-Connect Germany'],
+    ['property', 'og:locale', 'ja_JP'],
+    ['name', 'twitter:card', 'summary_large_image'],
+    ['name', 'twitter:title', meta.title],
+    ['name', 'twitter:description', meta.description],
+    ['name', 'twitter:image', meta.image]
+  ];
+
+  return tags
+    .map(([attr, key, content]) => `${' '.repeat(spaces)}<meta ${attr}="${key}" content="${escapeAttribute(content)}">`)
+    .join('\n');
 }
 
 function replaceLayoutBlock(html, marker, replacement, tag) {
@@ -174,6 +296,37 @@ function normalizeUrl(value) {
   return url.endsWith('/') ? url : `${url}/`;
 }
 
+function absoluteUrl(url) {
+  if (/^https?:\/\//i.test(url)) return url;
+  return `${SITE_ORIGIN}${url.startsWith('/') ? url : `/${url}`}`;
+}
+
+function formatPageTitle(title) {
+  const text = cleanTitle(title);
+  if (!text || text === 'J-Connect Germany') return 'J-Connect Germany';
+  return text.includes('J-Connect Germany') ? text : `${text} | J-Connect Germany`;
+}
+
+function cleanTitle(value) {
+  return String(value || '').replace(/\s+/g, ' ').trim();
+}
+
+function extractTitle(html) {
+  const match = String(html || '').match(/<title\b[^>]*>([\s\S]*?)<\/title>/i);
+  return match ? cleanTitle(match[1]) : '';
+}
+
+function extractMetaContent(html, name) {
+  const pattern = new RegExp(`<meta\\b(?=[^>]*name=["']${escapeRegExp(name)}["'])(?=[^>]*content=["']([^"']*)["'])[^>]*>`, 'i');
+  const match = String(html || '').match(pattern);
+  return match ? match[1] : '';
+}
+
+function extractCanonical(html) {
+  const match = String(html || '').match(/<link\b(?=[^>]*rel=["']canonical["'])(?=[^>]*href=["']([^"']*)["'])[^>]*>/i);
+  return match ? match[1] : '';
+}
+
 function escapeAttribute(value) {
   return String(value || '')
     .replace(/&/g, '&amp;')
@@ -182,6 +335,10 @@ function escapeAttribute(value) {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;')
     .replace(/`/g, '&#096;');
+}
+
+function escapeRegExp(value) {
+  return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 main();

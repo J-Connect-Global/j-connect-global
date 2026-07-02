@@ -280,7 +280,9 @@ function renderArticlePage(type, item, bodyHtml, allItems) {
   const toc = extractArticleToc(item.markdown, item.title);
   const articleBodyHtml = renderArticleBodyHtml(type, item, bodyHtml);
   const extraScripts = renderArticleExtraScripts(type, item);
-  const heroMedia = renderArticleHeroMedia(type, item);
+  const primaryHeroMedia = shouldRenderArticleHeroFigure(item)
+    ? renderArticleHeroFigure(item)
+    : renderArticleHeroMedia(type, item);
 
   return `<!DOCTYPE html>
 <html lang="ja">
@@ -315,10 +317,10 @@ ${renderHeader(type, item.url)}
             ${item.tags.map((tag) => `<span class="article-chip">${escapeHtml(tag)}</span>`).join('\n          ')}
             <span>公開: ${escapeHtml(item.published_at || '')}</span>
             <span>最終確認: ${escapeHtml(item.last_verified || '')}</span>${metaBlock}
-          </div>${item.hero_image ? `\n${indent(renderArticleHeroFigure(item), 10)}` : ''}
+          </div>
         </header>
 
-${indent(heroMedia, 8)}
+${indent(primaryHeroMedia, 8)}
 ${indent(renderArticleMobileToc(toc), 8)}
         <div class="article-body">
 ${indent(articleBodyHtml, 10)}
@@ -353,6 +355,11 @@ function renderArticleHeroFigure(item) {
   <img src="${escapeAttribute(item.hero_image)}" alt="${escapeAttribute(alt)}" loading="eager" decoding="async">
 ${caption ? `  <figcaption>${escapeHtml(caption)}</figcaption>` : ''}
 </figure>`;
+}
+
+function shouldRenderArticleHeroFigure(item) {
+  const heroImage = firstNonEmpty(item.hero_image);
+  return item.slug === 'berlin-weekend-trip' && heroImage.endsWith('.svg');
 }
 
 function renderArticleExtraScripts(type, item) {
@@ -764,7 +771,8 @@ function renderArticleMetaSpans(type, item) {
 }
 
 function renderOpenGraphMeta(type, item, title, canonicalHref) {
-  const imageUrl = absoluteUrl(getArticleImageSrc(item, type));
+  const crawlableImage = getCrawlableLocalImageUrl(item);
+  const imageUrl = crawlableImage || absoluteUrl(getArticleImageSrc(item, type));
   const tags = [
     ['property', 'og:type', 'article'],
     ['property', 'og:site_name', 'J-Connect Germany'],

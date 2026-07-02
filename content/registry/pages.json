@@ -782,7 +782,7 @@
     "nav_visible": false,
     "footer_visible": false,
     "search_visible": false,
-    "sitemap_visible": true,
+    "sitemap_visible": false,
     "legacy": false,
     "redirect_target": "",
     "layout": "utility",

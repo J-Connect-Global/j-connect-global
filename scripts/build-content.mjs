@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE_ORIGIN = 'https://j-connect-global.com';
+const PRIMARY_JA_PATH = '/germany/ja/';
 const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
 const ARTICLE_PLACEHOLDER_IMAGE = '/assets/img/placeholders/jconnect-article-placeholder.svg';
 const articleImageDirs = {
@@ -293,6 +294,7 @@ function renderArticlePage(type, item, bodyHtml, allItems) {
   <meta name="description" content="${escapeAttribute(item.summary)}">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="${escapeAttribute(canonicalHref)}">
+${indent(renderJaHreflang(canonicalHref), 2)}
 ${indent(ogMeta, 2)}
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -790,6 +792,17 @@ function renderOpenGraphMeta(type, item, title, canonicalHref) {
     .map(([attr, key, content]) => `<meta ${attr}="${key}" content="${escapeAttribute(content)}">`)
     .concat(item.tags.map((tag) => `<meta property="article:tag" content="${escapeAttribute(tag)}">`))
     .join('\n');
+}
+
+function renderJaHreflang(canonicalHref) {
+  if (!isCanonicalJaUrl(canonicalHref)) return '';
+
+  // JA is the current primary public version. Do not add unfinished DE/EN
+  // placeholders to hreflang until those localized pages are complete.
+  return [
+    `<link rel="alternate" hreflang="ja" href="${escapeAttribute(canonicalHref)}">`,
+    `<link rel="alternate" hreflang="x-default" href="${escapeAttribute(canonicalHref)}">`
+  ].join('\n');
 }
 
 function renderStructuredData(type, item, title, canonicalHref) {
@@ -1760,28 +1773,25 @@ function readSearchIndex(searchPath) {
 
 function updateSitemap(allItems, pages) {
   const sitemapPath = 'sitemap.xml';
-  const current = parseSitemap(readText(sitemapPath));
   const byLoc = new Map();
-  const registryLocs = new Set([
-    ...pages.map((page) => absoluteUrl(page.url)),
-    ...allItems.map((item) => absoluteUrl(item.url))
-  ]);
 
-  for (const entry of current) {
-    if (registryLocs.has(entry.loc)) continue;
-    if (!byLoc.has(entry.loc)) byLoc.set(entry.loc, entry);
-  }
-
+  // JA is the current primary public version. DE/EN placeholders are
+  // intentionally noindex until completed, so do not preserve or add unfinished
+  // language placeholders, redirect-only pages, or non-JA URLs to the sitemap.
   for (const page of pages.filter((entry) => entry.status === 'published' && entry.sitemap_visible === true)) {
-    byLoc.set(absoluteUrl(page.url), {
-      loc: absoluteUrl(page.url),
+    const loc = absoluteUrl(page.canonical_url || page.url);
+    if (!isCanonicalJaUrl(loc)) continue;
+    byLoc.set(loc, {
+      loc,
       lastmod: page.lastmod || ''
     });
   }
 
   for (const item of allItems.filter((entry) => entry.published && entry.sitemap_visible)) {
-    byLoc.set(absoluteUrl(item.url), {
-      loc: absoluteUrl(item.url),
+    const loc = absoluteUrl(item.canonical_url || item.url);
+    if (!isCanonicalJaUrl(loc)) continue;
+    byLoc.set(loc, {
+      loc,
       lastmod: item.updated_at || item.last_verified || item.published_at
     });
   }
@@ -2077,6 +2087,11 @@ function formatDateJa(value) {
 function absoluteUrl(url) {
   if (/^https?:\/\//i.test(url)) return url;
   return `${SITE_ORIGIN}${url.startsWith('/') ? url : `/${url}`}`;
+}
+
+function isCanonicalJaUrl(url) {
+  const absolute = absoluteUrl(url);
+  return absolute === `${SITE_ORIGIN}${PRIMARY_JA_PATH}` || absolute.startsWith(`${SITE_ORIGIN}${PRIMARY_JA_PATH}`);
 }
 
 function indent(value, spaces) {

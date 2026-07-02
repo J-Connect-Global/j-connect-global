@@ -280,7 +280,9 @@ function renderArticlePage(type, item, bodyHtml, allItems) {
   const toc = extractArticleToc(item.markdown, item.title);
   const articleBodyHtml = renderArticleBodyHtml(type, item, bodyHtml);
   const extraScripts = renderArticleExtraScripts(type, item);
-  const heroMedia = renderArticleHeroMedia(type, item);
+  const primaryHeroMedia = shouldRenderArticleHeroFigure(item)
+    ? renderArticleHeroFigure(item)
+    : renderArticleHeroMedia(type, item);
 
   return `<!DOCTYPE html>
 <html lang="ja">
@@ -319,7 +321,7 @@ ${renderHeader(type, item.url)}
           </div>
         </header>
 
-${indent(heroMedia, 8)}
+${indent(primaryHeroMedia, 8)}
 ${indent(renderArticleMobileToc(toc), 8)}
         <div class="article-body">
 ${indent(articleBodyHtml, 10)}
@@ -345,6 +347,21 @@ function renderArticleBodyHtml(type, item, bodyHtml) {
     return `${bodyHtml}\n${renderGermanNewsLearningPanel()}`;
   }
   return bodyHtml;
+}
+
+function renderArticleHeroFigure(item) {
+  if (!item.hero_image) return '';
+  const alt = firstNonEmpty(item.hero_image_alt, item.image_alt, item.title);
+  const caption = firstNonEmpty(item.hero_image_caption);
+  return `<figure class="article-hero-figure">
+  <img src="${escapeAttribute(item.hero_image)}" alt="${escapeAttribute(alt)}" loading="eager" decoding="async">
+${caption ? `  <figcaption>${escapeHtml(caption)}</figcaption>` : ''}
+</figure>`;
+}
+
+function shouldRenderArticleHeroFigure(item) {
+  const heroImage = firstNonEmpty(item.hero_image);
+  return item.slug === 'berlin-weekend-trip' && heroImage.endsWith('.svg');
 }
 
 function renderArticleExtraScripts(type, item) {
@@ -437,7 +454,10 @@ function markdownToHtml(markdown, context) {
       }
       const level = Math.min(heading[1].length + (heading[1].length === 1 ? 1 : 0), 3);
       const headingId = createHeadingId(headingText);
-html.push(`<h${level} id="${escapeAttribute(headingId)}">${renderInline(heading[2], context)}</h${level}>`);
+      const classAttribute = context.item.slug === 'berlin-weekend-trip' && /^公式情報/.test(headingText)
+        ? ' class="official-source-section"'
+        : '';
+html.push(`<h${level}${classAttribute} id="${escapeAttribute(headingId)}">${renderInline(heading[2], context)}</h${level}>`);
       index += 1;
       continue;
     }
@@ -470,6 +490,17 @@ html.push(`<h${level} id="${escapeAttribute(headingId)}">${renderInline(heading[
       }
       const quote = quoteLines.filter((entry) => !/^\[![A-Z]+\]/.test(entry)).join(' ');
       html.push(`<blockquote><p>${renderInline(quote, context)}</p></blockquote>`);
+      continue;
+    }
+
+    const image = trimmed.match(/^!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)$/);
+    if (image) {
+      const [, alt, src, title] = image;
+      html.push(`<figure class="article-inline-figure">
+  <img src="${escapeAttribute(normalizeHref(src, context))}" alt="${escapeAttribute(stripInlineMarkdown(alt).trim())}" loading="lazy" decoding="async">
+${title ? `  <figcaption>${escapeHtml(title)}</figcaption>` : ''}
+</figure>`);
+      index += 1;
       continue;
     }
 
@@ -733,7 +764,8 @@ function renderArticleMetaSpans(type, item) {
 }
 
 function renderOpenGraphMeta(type, item, title, canonicalHref) {
-  const imageUrl = absoluteUrl(getArticleImageSrc(item, type));
+  const crawlableImage = getCrawlableLocalImageUrl(item);
+  const imageUrl = crawlableImage || absoluteUrl(getArticleImageSrc(item, type));
   const tags = [
     ['property', 'og:type', 'article'],
     ['property', 'og:site_name', 'J-Connect Germany'],
@@ -761,6 +793,7 @@ function renderOpenGraphMeta(type, item, title, canonicalHref) {
 }
 
 function renderStructuredData(type, item, title, canonicalHref) {
+  const image = getCrawlableLocalImageUrl(item);
   const keywords = type === 'learn-german'
     ? uniqueArray([
       ...item.tags,
@@ -776,6 +809,7 @@ function renderStructuredData(type, item, title, canonicalHref) {
     description: item.summary,
     inLanguage: 'ja',
     url: canonicalHref,
+    image: image || undefined,
     mainEntityOfPage: canonicalHref,
     datePublished: item.published_at || undefined,
     dateModified: item.updated_at || item.last_verified || item.published_at || undefined,
@@ -822,7 +856,23 @@ function renderStructuredData(type, item, title, canonicalHref) {
 <script type="application/ld+json">${escapeJsonForHtml(breadcrumb)}</script>`;
 }
 
+function getCrawlableLocalImageUrl(item) {
+  if (item.slug !== 'berlin-weekend-trip') return '';
+  const src = firstNonEmpty(item.hero_image, item.image_url);
+  if (!src || !src.startsWith('/')) return '';
+  const rel = trimLeadingSlash(src);
+  const fullPath = path.join(root, rel);
+  if (!fs.existsSync(fullPath) || !fs.statSync(fullPath).isFile()) return '';
+  return absoluteUrl(src);
+}
+
 function renderDisclaimer(item) {
+  if (item.disclaimer_type === 'tourism' && item.slug === 'berlin-weekend-trip') {
+    return `<div class="article-disclaimer">
+  観光スポットの開館時間、チケット、展示、交通機関の運行、ストライキ、工事、イベントによる閉鎖、天候条件は変わることがあります。出発前に公式情報を確認してください。
+</div>`;
+  }
+
   if (item.disclaimer_type === 'event') {
     return `<div class="article-disclaimer">
   開催日・会場・プログラムは年により異なるため、参加前に主催者や自治体、交通機関などの公式情報を確認してください。
@@ -1005,7 +1055,8 @@ function renderRelatedSection(item, allItems) {
   }
 
   const sections = [];
-  if (sourceLinks.length) {
+  const markdownHasOfficialSources = item.slug === 'berlin-weekend-trip' && /^##\s+公式情報/m.test(stripFrontMatter(item.markdown || ''));
+  if (sourceLinks.length && !markdownHasOfficialSources) {
     sections.push(`<section class="related-section official-source-section">
   <h3>公式情報・参考ソース</h3>
   <ul>

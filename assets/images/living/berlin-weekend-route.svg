@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">ベルリン週末旅行のMitte中心ルート図</title>
+  <desc id="desc">Berlin HbfからReichstag、Brandenburger Tor、Holocaust Memorial、Unter den Linden、Museum Island、Hackescher Marktへ進む簡易ルート</desc>
+  <rect width="1200" height="630" fill="#f7f2ea"/>
+  <path d="M60 500 C220 420 320 430 450 350 S690 280 805 210 S1010 170 1130 115" fill="none" stroke="#d8c7ae" stroke-width="34" stroke-linecap="round"/>
+  <path d="M90 485 C235 407 330 420 462 340 S690 270 812 202 S1008 162 1110 105" fill="none" stroke="#2563eb" stroke-width="10" stroke-linecap="round" stroke-dasharray="1 24"/>
+  <g font-family="Inter, 'Noto Sans JP', sans-serif">
+    <text x="64" y="80" font-size="38" font-weight="800" fill="#1f2937">Berlin weekend route</text>
+    <text x="66" y="118" font-size="22" fill="#4b5563">初回はMitteの歴史軸を半日〜1日で</text>
+  </g>
+  <g font-family="Inter, 'Noto Sans JP', sans-serif" font-size="22" font-weight="700" fill="#111827">
+    <g transform="translate(118 455)"><circle r="20" fill="#ef4444"/><text x="34" y="8">Berlin Hbf</text></g>
+    <g transform="translate(294 390)"><circle r="20" fill="#f97316"/><text x="34" y="8">Reichstag</text></g>
+    <g transform="translate(442 330)"><circle r="20" fill="#eab308"/><text x="34" y="8">Brandenburger Tor</text></g>
+    <g transform="translate(570 292)"><circle r="20" fill="#22c55e"/><text x="34" y="8">Holocaust Memorial</text></g>
+    <g transform="translate(720 238)"><circle r="20" fill="#14b8a6"/><text x="34" y="8">Unter den Linden</text></g>
+    <g transform="translate(876 176)"><circle r="20" fill="#8b5cf6"/><text x="34" y="8">Museum Island</text></g>
+    <g transform="translate(1022 112)"><circle r="20" fill="#ec4899"/><text x="34" y="8">Hackescher Markt</text></g>
+  </g>
+  <rect x="64" y="535" width="1072" height="54" rx="16" fill="#fff" opacity="0.9"/>
+  <text x="88" y="570" font-family="Inter, 'Noto Sans JP', sans-serif" font-size="22" fill="#374151">雨の日はMuseum Island中心へ、疲れたらUnter den Linden以降を短縮</text>
+</svg>

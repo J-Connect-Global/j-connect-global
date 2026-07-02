@@ -442,23 +442,23 @@
   },
   {
     "id": "T011",
-    "title": "ドイツから行く週末旅行：ベルリン観光の基本",
+    "title": "ドイツ在住者向け：1泊2日ベルリン観光モデルコース",
     "slug": "berlin-weekend-trip",
     "category": "観光",
-    "summary": "ドイツ国内旅行の定番で、歴史、博物館、現代文化、カフェを週末に組み合わせやすい首都です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "summary": "NRW・デュッセルドルフ・ケルン方面から週末に行く人向けに、Berlin Hbf起点のMitte歴史ルート、壁・博物館・カフェ街歩きの分岐、市内交通と車利用の注意点を整理します。",
     "url": "/germany/ja/living/berlin-weekend-trip/",
     "markdown_path": "/content/living/berlin-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-06-29",
-    "last_verified": "2026-06-29",
+    "updated_at": "2026-06-30",
+    "last_verified": "2026-06-30",
     "tags": [
       "ベルリン",
       "週末旅行",
-      "ドイツ",
-      "歴史",
-      "観光"
+      "ドイツ在住",
+      "1泊2日",
+      "モデルコース"
     ],
     "home_visible": true,
     "home_order": 210,
@@ -473,21 +473,36 @@
     ],
     "official_sources": [
       {
-        "title": "Visit Berlin",
+        "title": "Visit Berlin：観光公式サイト",
         "url": "https://www.visitberlin.de/en"
       },
       {
-        "title": "BVG",
-        "url": "https://www.bvg.de/en"
+        "title": "German Bundestag：Reichstag dome registration",
+        "url": "https://www.bundestag.de/en/visittheBundestag/dome/registration-245686"
+      },
+      {
+        "title": "Staatliche Museen zu Berlin：Tickets & Admission",
+        "url": "https://www.smb.museum/en/plan-your-visit/prices-tickets/"
+      },
+      {
+        "title": "BVG：tariff zones and information",
+        "url": "https://www.bvg.de/en/subscriptions-and-tickets/tariff-zones-and-information"
+      },
+      {
+        "title": "Visit Berlin：Berlin environmental zone",
+        "url": "https://www.visitberlin.de/en/berlin-environmental-zone"
       }
     ],
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-29",
-      "next_review_due": "2027-06-29"
-    }
+      "last_reviewed_at": "2026-06-30",
+      "next_review_due": "2027-06-30"
+    },
+    "hero_image": "/assets/images/living/berlin-weekend-route.svg",
+    "hero_image_alt": "Berlin HbfからMitte主要スポットを回る週末旅行ルート図",
+    "hero_image_caption": "初回ベルリンは、Berlin HbfからMitteの歴史スポットを線でつなぐと移動が読みやすくなります。"
   },
   {
     "id": "T012",

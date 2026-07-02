@@ -154,14 +154,24 @@ function isLikelyTestPost(row) {
   const compactTitle = title.replace(/\s+/g, "").toLowerCase();
   const compactBody = body.replace(/\s+/g, "").toLowerCase();
   const compactLocation = [city, region].join("").replace(/\s+/g, "").toLowerCase();
-  const joined = [title, body, city, region, row.tags].join(" ").toLowerCase();
+  const compactJoined = [title, body, city, region, first(row, ["tags"])]
+    .join("")
+    .replace(/\s+/g, "")
+    .toLowerCase();
+  const joined = [title, body, city, region, first(row, ["tags"])].join(" ").toLowerCase();
 
-  if (/^(test|test\d+|teste|image test)$/i.test(title)) return true;
-  if (/^[a-z]{1,4}$/i.test(title) && /^[a-z]{1,4}$/i.test(body)) return true;
+  if (/^(test|test\d+|teste|image test)$/i.test(title.trim())) return true;
+  if (/^(テスト|テスト投稿\d*|再テスト投稿.*)$/i.test(title.trim())) return true;
+  if (/^[a-z]{1,4}$/i.test(title.trim()) && /^[a-z]{1,4}$/i.test(body.trim())) return true;
   if (/^(.)\1{5,}$/.test(compactTitle) && compactTitle === compactBody) return true;
   if (compactTitle.length < 2 || compactBody.length < 3) return true;
   if (joined.includes("image test")) return true;
-  if (compactBody === "test" || compactBody === "teste" || compactBody === "etse") return true;
+  if (joined.includes("system test") || joined.includes("demo placeholder") || joined.includes("sample placeholder")) return true;
+  if (compactJoined.includes("システムの動作を確認")) return true;
+  if ((compactBody.match(/テスト投稿です/g) || []).length >= 2) return true;
+  if (compactBody === "test" || compactBody === "teste" || compactBody === "etse" || compactBody === "テスト") return true;
+  if (/^(test|demo|sample|dummy|placeholder)[-_]?\d*$/i.test(compactTitle) && /^(test|demo|sample|dummy|placeholder)[-_]?\d*$/i.test(compactBody)) return true;
+  if (/^(テスト|デモ|サンプル|ダミー)\d*$/.test(compactTitle) && /^(テスト|デモ|サンプル|ダミー)\d*$/.test(compactBody)) return true;
   if (compactLocation.includes("test") && (compactTitle.includes("test") || compactBody.includes("test"))) return true;
   return false;
 }
@@ -234,6 +244,11 @@ function isPublicContactEmail(value) {
   return !email.toLowerCase().endsWith("@j-connect-global.com");
 }
 
+function publicContactEmail(row, keys) {
+  const email = first(row, keys);
+  return isPublicContactEmail(email) ? email : "";
+}
+
 function normalizeJob(row, index) {
   const positionTitle = first(row, ["position_title", "job_title", "title", "role", "position"]);
   const companyName = first(row, ["company_name", "company", "company_ja", "company_name_ja"]);
@@ -244,7 +259,7 @@ function normalizeJob(row, index) {
   const id = first(row, ["job_id", "id"]) || stableSlug(positionTitle, companyName, region) || `job-${index + 1}`;
   const applyUrl = first(row, ["apply_url", "application_url", "apply_link"]);
   const sourceUrl = first(row, ["source_url", "official_url", "url", "website"]);
-  const applicationEmail = first(row, ["application_email", "application_contact_email", "apply_email", "public_email"]);
+  const applicationEmail = publicContactEmail(row, ["contact_email", "application_email", "application_contact_email", "apply_email", "public_email"]);
 
   return {
     id,
@@ -272,8 +287,9 @@ function normalizeJob(row, index) {
     description: details,
     requirements: first(row, ["requirements"]),
     benefits: first(row, ["benefits"]),
-    application_email: isPublicContactEmail(applicationEmail) ? applicationEmail : "",
-    apply_email: isPublicContactEmail(applicationEmail) ? applicationEmail : "",
+    contact_email: applicationEmail,
+    application_email: applicationEmail,
+    apply_email: applicationEmail,
     apply_url: isSafeUrl(applyUrl) ? applyUrl : "",
     application_url: isSafeUrl(applyUrl) ? applyUrl : "",
     apply_method: first(row, ["apply_method", "application_method", "how_to_apply"]),

@@ -299,9 +299,10 @@ ${indent(ogMeta, 2)}
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal5-nav-20260618">
-<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
+  <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
-  <script src="/assets/js/cookie-consent.js" defer></script>
+  <link rel="stylesheet" href="/assets/css/social-share.css">
+<script src="/assets/js/cookie-consent.js" defer></script>
 ${indent(structuredData, 2)}
 </head>
 <body>
@@ -335,6 +336,7 @@ ${indent(renderRelatedSection(item, allItems), 4)}
 
 ${renderFooter()}
 ${extraScripts ? `${indent(extraScripts, 2)}\n` : ''}  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/social-share.js"></script>
 </body>
 </html>
 `;
@@ -642,21 +644,12 @@ function renderBirdCard(record, context) {
   const image = src
     ? `<figure class="bird-card-media"><img ${renderArticleImageAttributes(src, alt, 'bird-card-image')}></figure>`
     : '';
-  const title = `${record.de}（${record.jp}）`;
-  const names = [
-    ['DE', record.de],
-    ['EN', record.en],
-    ['JP', record.jp],
-    ['ES', record.es]
-  ].filter(([, value]) => value);
+  const title = `${record.jp}（${record.de}）`;
 
   return `<article class="bird-profile-card">
 ${image ? indent(image, 2) : ''}
   <div class="bird-card-body">
     <h3>${renderInline(title, context)}</h3>
-    <dl class="bird-name-list">
-${indent(names.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${renderInline(value, context)}</dd></div>`).join('\n'), 6)}
-    </dl>
     ${record.description ? `<p>${renderInline(record.description, context)}</p>` : ''}
     ${record.tip ? `<p><strong>見分けポイント：</strong>${renderInline(record.tip, context)}</p>` : ''}
     ${record.where ? `<p><strong>よく見る場所：</strong>${renderInline(record.where, context)}</p>` : ''}
@@ -783,6 +776,8 @@ function renderOpenGraphMeta(type, item, title, canonicalHref) {
     ['property', 'og:image', imageUrl],
     ['property', 'og:image:alt', getArticleImageAlt(item)],
     ['name', 'twitter:card', 'summary_large_image'],
+    ['name', 'twitter:title', title],
+    ['name', 'twitter:description', item.summary],
     ['name', 'twitter:image', imageUrl],
     ['name', 'twitter:image:alt', getArticleImageAlt(item)],
     ['property', 'article:section', contentTypes[type].label],

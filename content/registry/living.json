@@ -1481,12 +1481,12 @@
   {
     "id": "L032",
     "title": "ドイツ・NRWでよく見かける野鳥図鑑",
-    "meta_title": "ドイツ・NRWでよく見る鳥の名前一覧｜野鳥図鑑・ドイツ語/英語/日本語/スペイン語",
+    "meta_title": "ドイツ・NRWでよく見かける野鳥図鑑｜日本語名とドイツ語名で見る身近な鳥",
     "slug": "germany-wild-birds-guide",
     "image": "/assets/img/living/germany-wild-birds/germany-wild-birds-hero.webp",
     "image_alt": "ドイツ・NRWでよく見かける野鳥のイメージ",
     "category": "コラム・自然",
-    "summary": "公園、ライン川、湖、住宅街で見かける鳥を、ドイツ語・英語・日本語・スペイン語で整理。NRW生活で役立つ身近な野鳥ガイド。",
+    "summary": "公園、ライン川、湖、住宅街で見かける鳥を、日本語名とドイツ語名で整理。NRW生活で役立つ身近な野鳥ガイド。",
     "url": "/germany/ja/living/germany-wild-birds-guide/",
     "markdown_path": "/content/living/germany-wild-birds-guide.md",
     "published": true,
@@ -1499,9 +1499,7 @@
       "野鳥",
       "NRW",
       "自然観察",
-      "ドイツ語",
-      "英語",
-      "スペイン語"
+      "ドイツ語"
     ],
     "home_visible": true,
     "home_order": 2,

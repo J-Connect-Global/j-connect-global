@@ -7,6 +7,7 @@
  * - The sheet must already contain the headers listed in the site request.
  *   This script maps by header name and does not add, rename, remove, or
  *   reorder columns.
+ * - Community Posts may have an instruction row above the header row.
  * - Community management uses server-generated manage_token/manage_url only.
  *   Email the private management link to contact_email_private.
  * - Dates are normalized into availability_date.
@@ -90,6 +91,14 @@ const PRIVATE_POST_FIELDS = [
   'image_file_id_3'
 ];
 
+const REQUIRED_COMMUNITY_HEADERS = [
+  'post_id',
+  'status',
+  'category1',
+  'title',
+  'body'
+];
+
 function doGet(e) {
   return dispatchCommunityRequest_(e);
 }
@@ -153,12 +162,37 @@ function getSheetContext_() {
   if (!sheet) throw new Error('Community Posts sheet not found.');
   const values = sheet.getDataRange().getValues();
   if (!values.length) throw new Error('Community Posts sheet has no header row.');
-  const headers = values[0].map((value) => String(value || '').trim());
+  // Community Posts may include an instruction row above the actual header.
+  // Scan the top rows so sheet row numbers still point at the real data rows.
+  const headerRowIndex = findCommunityHeaderRowIndex_(values);
+  if (headerRowIndex === -1) throw new Error('Community Posts sheet header row not found.');
+  const headers = values[headerRowIndex].map((value) => String(value || '').trim());
   const indexes = {};
   headers.forEach((header, index) => {
     if (header) indexes[header] = index;
   });
-  return { sheet, headers, indexes, values };
+  return {
+    sheet,
+    headers,
+    indexes,
+    values,
+    headerRowNumber: headerRowIndex + 1,
+    dataStartIndex: headerRowIndex + 1
+  };
+}
+
+function findCommunityHeaderRowIndex_(values) {
+  const scanRows = Math.min(values.length, 5);
+  for (let rowIndex = 0; rowIndex < scanRows; rowIndex += 1) {
+    const headers = values[rowIndex].map((value) => String(value || '').trim());
+    const headerSet = {};
+    headers.forEach((header) => {
+      if (header) headerSet[header] = true;
+    });
+    const hasRequiredHeaders = REQUIRED_COMMUNITY_HEADERS.every((header) => headerSet[header]);
+    if (hasRequiredHeaders) return rowIndex;
+  }
+  return -1;
 }
 
 function rowToObject_(headers, row, rowNumber) {
@@ -249,8 +283,8 @@ function listPosts_(params) {
   }
 
   const context = getSheetContext_();
-  const posts = context.values.slice(1)
-    .map((row, index) => rowToObject_(context.headers, row, index + 2))
+  const posts = context.values.slice(context.dataStartIndex)
+    .map((row, index) => rowToObject_(context.headers, row, context.dataStartIndex + index + 1))
     .filter((post) => isPubliclyVisible_(post, params))
     .map(publicPostPayload_)
     .sort(comparePublicPosts_);
@@ -284,7 +318,7 @@ function findPostById_(postId) {
   const id = String(postId || '').trim();
   if (!id) return null;
   const context = getSheetContext_();
-  for (let i = 1; i < context.values.length; i += 1) {
+  for (let i = context.dataStartIndex; i < context.values.length; i += 1) {
     const post = rowToObject_(context.headers, context.values[i], i + 1);
     if (String(post.post_id || '').trim() === id || String(post.id || '').trim() === id) {
       return { context, post, rowNumber: i + 1 };
@@ -531,7 +565,7 @@ function submitInquiry_(params) {
   }
   const senderName = String(params.sender_name || '').trim();
   const senderEmail = String(params.sender_email || '').trim();
-  const subject = String(params.subject || '').trim() || `J-Connect Germany æŽ²ç¤ºæ¿ã®æŠ•ç¨¿ã¸ã®å•ã„åˆã‚ã›`;
+  const subject = String(params.subject || '').trim() || 'J-Connect Germany 掲示板の投稿への問い合わせ';
   const message = String(params.message || '').trim();
   if (!senderName || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(senderEmail) || !message) {
     return { ok: false, error: 'Required inquiry fields are missing.' };
@@ -540,14 +574,14 @@ function submitInquiry_(params) {
     to,
     replyTo: senderEmail,
     name: 'J-Connect Germany',
-    subject: `ã€J-Connect Germanyã€‘${subject}`,
+    subject: `【J-Connect Germany】${subject}`,
     body: [
-      'J-Connect Germany æŽ²ç¤ºæ¿ã®æŠ•ç¨¿ã«å•ã„åˆã‚ã›ãŒå±Šãã¾ã—ãŸã€‚',
+      'J-Connect Germany 掲示板の投稿に問い合わせが届きました。',
       '',
-      `æŠ•ç¨¿ID: ${found.post.post_id || found.post.id || ''}`,
-      `æŠ•ç¨¿ã‚¿ã‚¤ãƒˆãƒ«: ${found.post.title || ''}`,
-      `é€ä¿¡è€…: ${senderName}`,
-      `é€ä¿¡è€…ãƒ¡ãƒ¼ãƒ«: ${senderEmail}`,
+      `投稿ID: ${found.post.post_id || found.post.id || ''}`,
+      `投稿タイトル: ${found.post.title || ''}`,
+      `送信者: ${senderName}`,
+      `送信者メール: ${senderEmail}`,
       '',
       message
     ].join('\n')
@@ -561,7 +595,7 @@ function submitReport_(params) {
   MailApp.sendEmail({
     to: adminEmail,
     name: 'J-Connect Germany',
-    subject: 'J-Connect Germany æŽ²ç¤ºæ¿æŠ•ç¨¿ã®é€šå ±',
+    subject: 'J-Connect Germany 掲示板投稿の通報',
     body: Object.keys(params).map((key) => `${key}: ${params[key]}`).join('\n')
   });
   return { ok: true, success: true };

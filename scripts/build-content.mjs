@@ -197,9 +197,18 @@ function normalizeItem(type, item, index) {
   const url = item.url || `/germany/ja/${type}/${slug}/`;
   const summary = item.summary || item.description || '';
   const frontmatter = item.__frontmatter || {};
-  const explicitImage = firstNonEmpty(
+  const explicitImage = firstArticleImage(
     frontmatter.image,
-    item.image
+    item.image,
+    frontmatter.hero_image,
+    item.hero_image,
+    item.heroImage,
+    item.cover_image,
+    item.coverImage,
+    item.thumbnail,
+    item.thumbnail_url,
+    item.imageUrl,
+    item.image_url
   );
   const imageSrc = getArticleImageSrc({ ...item, image: explicitImage }, type);
   const hasLegacyPlaceholderImage = [
@@ -212,7 +221,7 @@ function normalizeItem(type, item, index) {
   ].some(isLegacyPlaceholderImage);
   const imageAlt = getArticleImageAlt({
     ...item,
-    image_alt: firstNonEmpty(frontmatter.image_alt, hasLegacyPlaceholderImage ? '' : item.image_alt, item.imageAlt, item.alt_text, item.alt)
+    image_alt: firstNonEmpty(frontmatter.image_alt, frontmatter.hero_image_alt, hasLegacyPlaceholderImage ? '' : item.image_alt, item.imageAlt, item.hero_image_alt, item.alt_text, item.alt)
   });
 
   const normalized = {
@@ -1631,10 +1640,12 @@ function updateHome(datasets) {
   const livingCards = homeItems(datasets.living, contentTypes.living.homeLimit).map(renderHomeLivingCard).join('\n\n');
   const eventCards = homeItems(datasets.events, contentTypes.events.homeLimit).map(renderHomeEventCard).join('\n\n');
   const learnGermanContent = renderHomeLearnGermanContent(homeItems(datasets['learn-german'], contentTypes['learn-german'].homeLimit));
+  const homeArticleItemsByUrl = new Map(Object.values(datasets).flatMap((items) => items).map((item) => [item.url, item]));
 
   html = replaceHomePanelContent(html, contentTypes.living.homeMarker, '新着記事', livingCards, 8);
   html = replaceMarkedDivContent(html, contentTypes.events.homeMarker, /<div class="portal3-event-row">/, eventCards, 10);
   html = replaceMarkedDivContent(html, contentTypes['learn-german'].homeMarker, /<div class="portal3-learn-row">/, learnGermanContent, 8);
+  html = upgradeStaticHomeArticleCardImages(html, homeArticleItemsByUrl);
   writeText(homePath, html);
 }
 
@@ -1642,7 +1653,7 @@ function renderHomeLivingCard(item, index) {
   const thumbClasses = ['thumb-laptop', 'thumb-medical', 'thumb-mountain'];
   const tagText = item.tags.slice(0, 2).join('・') || item.category;
   return `<a class="portal3-mini" href="${escapeAttribute(item.url)}">
-  <span class="portal3-thumb ${thumbClasses[index % thumbClasses.length]}"></span>
+  ${renderHomeCardImage(item, 'living', `portal3-thumb ${thumbClasses[index % thumbClasses.length]}`)}
   <span>
     <strong>${escapeHtml(item.title)}</strong>
     <small>${escapeHtml(formatDateJa(item.published_at))}・${escapeHtml(tagText)}</small>
@@ -1656,7 +1667,7 @@ function renderHomeEventCard(item, index) {
 
   return `<a class="portal3-event-card" href="${escapeAttribute(item.url)}">
   <span class="event-date"><b>${escapeHtml(badge.top)}</b><strong>${escapeHtml(badge.main)}</strong><small>${escapeHtml(badge.sub)}</small></span>
-  <span class="event-img ${imageClasses[index % imageClasses.length]}"></span>
+  ${renderHomeCardImage(item, 'events', `event-img ${imageClasses[index % imageClasses.length]}`)}
   <strong>${escapeHtml(item.title)}</strong>
   <small>${escapeHtml(item.city || item.location || '')}</small>
   <em>${escapeHtml(item.category || 'イベント')}</em>
@@ -1685,10 +1696,27 @@ function renderHomeLearnGermanCard(item) {
   const imageClass = item.home_image_class || 'img-study';
 
   return `<a class="portal3-card" href="${escapeAttribute(item.url)}">
-  <span class="portal3-card-img ${escapeAttribute(imageClass)}"></span>
+  ${renderHomeCardImage(item, 'learn-german', `portal3-card-img ${imageClass}`)}
   <strong>${escapeHtml(item.title)}</strong>
   <small>${escapeHtml(formatDateJa(item.published_at))}・${escapeHtml(tagText)}</small>
 </a>`;
+}
+
+function upgradeStaticHomeArticleCardImages(html, itemsByUrl) {
+  return html.replace(
+    /(<a class="portal3-card" href="([^"]+)">\s*)<span class="portal3-card-img[^"]*"><\/span>/g,
+    (match, prefix, href) => {
+      const item = itemsByUrl.get(href);
+      if (!item) return match;
+      return `${prefix}${renderHomeCardImage(item, item.type, 'portal3-card-img')}`;
+    }
+  );
+}
+
+function renderHomeCardImage(item, section, className) {
+  const src = getExistingArticleImageSrc(item, section);
+  const alt = getArticleImageAlt(item);
+  return `<span class="${escapeAttribute(className)} has-photo"><img ${renderArticleImageAttributes(src, alt, 'home-card-image')}></span>`;
 }
 
 function eventBadge(item) {
@@ -1991,6 +2019,14 @@ function firstNonEmpty(...values) {
   return '';
 }
 
+function firstArticleImage(...values) {
+  for (const value of values) {
+    const text = String(value || '').trim();
+    if (text && !isLegacyPlaceholderImage(text)) return text;
+  }
+  return '';
+}
+
 function getArticleFallbackImageSrc() {
   return ARTICLE_PLACEHOLDER_IMAGE;
 }
@@ -2003,6 +2039,19 @@ function getArticleImageSrc(article, section) {
   if (baseDir && article.slug) return `${baseDir}/${article.slug}.webp`;
 
   return getArticleFallbackImageSrc();
+}
+
+function getExistingArticleImageSrc(article, section) {
+  const src = getArticleImageSrc(article, section);
+  if (isExistingImagePath(src)) return src;
+  return getArticleFallbackImageSrc();
+}
+
+function isExistingImagePath(src) {
+  if (!src) return false;
+  if (/^(https?:)?\/\//i.test(src) || /^data:/i.test(src)) return true;
+  if (!src.startsWith('/')) return true;
+  return fs.existsSync(path.join(root, trimLeadingSlash(src)));
 }
 
 function getArticleImageAlt(article) {

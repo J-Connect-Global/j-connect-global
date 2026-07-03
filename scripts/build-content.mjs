@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -8,6 +9,7 @@ const SITE_ORIGIN = 'https://j-connect-global.com';
 const PRIMARY_JA_PATH = '/germany/ja/';
 const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
 const ARTICLE_PLACEHOLDER_IMAGE = '/assets/img/placeholders/jconnect-article-placeholder.svg';
+let trackedFileSet;
 const articleImageDirs = {
   living: '/assets/img/living',
   events: '/assets/img/events',
@@ -2052,8 +2054,29 @@ function imageSourceExists(src) {
   const value = String(src || '').trim();
   if (!value) return false;
   if (/^(?:https?:)?\/\//i.test(value) || /^data:/i.test(value)) return true;
-  if (value.startsWith('/')) return fs.existsSync(path.join(root, value.slice(1)));
-  return fs.existsSync(path.join(root, value));
+  const rel = normalizeRepoPath(value.startsWith('/') ? value.slice(1) : value);
+  const trackedFiles = getTrackedFileSet();
+  if (trackedFiles) return trackedFiles.has(rel);
+  return fs.existsSync(path.join(root, rel));
+}
+
+function getTrackedFileSet() {
+  if (trackedFileSet !== undefined) return trackedFileSet;
+  try {
+    trackedFileSet = new Set(
+      execFileSync('git', ['ls-files'], { cwd: root, encoding: 'utf8' })
+        .split(/\r?\n/)
+        .filter(Boolean)
+        .map(normalizeRepoPath)
+    );
+  } catch {
+    trackedFileSet = null;
+  }
+  return trackedFileSet;
+}
+
+function normalizeRepoPath(value) {
+  return String(value || '').replace(/\\/g, '/').replace(/^\/+/, '');
 }
 
 function getArticleImageAlt(article) {

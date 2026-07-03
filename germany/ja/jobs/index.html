@@ -134,13 +134,12 @@
 
   #job-listings .jobs-card .job-card-body{
     display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(220px,.46fr);
+    grid-template-columns:minmax(0,1fr) minmax(220px,.5fr) auto;
     grid-template-areas:
-      "main meta"
-      "actions actions";
-    align-items:start;
-    gap:8px 14px;
-    padding:12px 46px 12px 12px;
+      "main meta actions";
+    align-items:center;
+    gap:8px 12px;
+    padding:12px 48px 12px 12px;
   }
 
   #job-listings .jobs-card .job-main{
@@ -156,8 +155,6 @@
     justify-content:flex-end;
     align-items:center;
     gap:6px;
-    border-top:1px solid var(--listing-line);
-    padding-top:8px;
   }
 
   #job-listings .jobs-card-title{
@@ -166,6 +163,11 @@
     font-size:18px;
     line-height:1.3;
     font-weight:900;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
     word-break:normal;
     overflow-wrap:break-word;
   }
@@ -257,8 +259,8 @@
   }
 
   #job-listings .layout.list-mode .jobs-card-summary{
-    -webkit-line-clamp:1;
-    line-clamp:1;
+    -webkit-line-clamp:2;
+    line-clamp:2;
   }
 
   #job-listings .layout.grid-mode .jobs-card .job-card-actions{
@@ -335,7 +337,7 @@
     }
   }
 
-  @media (max-width:780px){
+  @media (max-width:759px){
     .jobs-listings-shell{
       width:min(100% - 24px, var(--listing-max));
     }

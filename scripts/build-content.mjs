@@ -1714,7 +1714,7 @@ function upgradeStaticHomeArticleCardImages(html, itemsByUrl) {
 }
 
 function renderHomeCardImage(item, section, className) {
-  const src = getExistingArticleImageSrc(item, section);
+  const src = getArticleImageSrc(item, section);
   const alt = getArticleImageAlt(item);
   return `<span class="${escapeAttribute(className)} has-photo"><img ${renderArticleImageAttributes(src, alt, 'home-card-image')}></span>`;
 }
@@ -2039,19 +2039,6 @@ function getArticleImageSrc(article, section) {
   if (baseDir && article.slug) return `${baseDir}/${article.slug}.webp`;
 
   return getArticleFallbackImageSrc();
-}
-
-function getExistingArticleImageSrc(article, section) {
-  const src = getArticleImageSrc(article, section);
-  if (isExistingImagePath(src)) return src;
-  return getArticleFallbackImageSrc();
-}
-
-function isExistingImagePath(src) {
-  if (!src) return false;
-  if (/^(https?:)?\/\//i.test(src) || /^data:/i.test(src)) return true;
-  if (!src.startsWith('/')) return true;
-  return fs.existsSync(path.join(root, trimLeadingSlash(src)));
 }
 
 function getArticleImageAlt(article) {

@@ -2037,10 +2037,13 @@ function getArticleFallbackImageSrc() {
 
 function getArticleImageSrc(article, section) {
   const explicitImage = firstNonEmpty(article.image);
-  if (explicitImage) return explicitImage;
+  if (explicitImage && imageSourceExists(explicitImage)) return explicitImage;
 
   const baseDir = articleImageDirs[section || article.type] || '';
-  if (baseDir && article.slug) return `${baseDir}/${article.slug}.webp`;
+  if (baseDir && article.slug) {
+    const derivedImage = `${baseDir}/${article.slug}.webp`;
+    if (imageSourceExists(derivedImage)) return derivedImage;
+  }
 
   return getArticleFallbackImageSrc();
 }

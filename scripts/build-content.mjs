@@ -1704,19 +1704,21 @@ function renderHomeLearnGermanCard(item) {
 
 function upgradeStaticHomeArticleCardImages(html, itemsByUrl) {
   return html.replace(
-    /(<a class="portal3-card" href="([^"]+)">\s*)<span class="portal3-card-img[^"]*"><\/span>/g,
-    (match, prefix, href) => {
+    /(<a class="portal3-card" href="([^"]+)">\s*)<span class="([^"]*\bportal3-card-img\b[^"]*)"[^>]*>[\s\S]*?<\/span>/g,
+    (match, prefix, href, className) => {
       const item = itemsByUrl.get(href);
       if (!item) return match;
-      return `${prefix}${renderHomeCardImage(item, item.type, 'portal3-card-img')}`;
+      return `${prefix}${renderHomeCardImage(item, item.type, className)}`;
     }
   );
 }
 
 function renderHomeCardImage(item, section, className) {
-  const src = getArticleImageSrc(item, section);
+  const src = getExistingHomeArticleImageSrc(item, section);
   const alt = getArticleImageAlt(item);
-  return `<span class="${escapeAttribute(className)} has-photo"><img ${renderArticleImageAttributes(src, alt, 'home-card-image')}></span>`;
+  const classes = [...new Set(String(className || '').split(/\s+/).filter(Boolean))];
+  if (!classes.includes('has-photo')) classes.push('has-photo');
+  return `<span class="${escapeAttribute(classes.join(' '))}"><img ${renderArticleImageAttributes(src, alt, 'home-card-image')}></span>`;
 }
 
 function eventBadge(item) {
@@ -2039,6 +2041,19 @@ function getArticleImageSrc(article, section) {
   if (baseDir && article.slug) return `${baseDir}/${article.slug}.webp`;
 
   return getArticleFallbackImageSrc();
+}
+
+function getExistingHomeArticleImageSrc(article, section) {
+  const src = getArticleImageSrc(article, section);
+  return imageSourceExists(src) ? src : getArticleFallbackImageSrc();
+}
+
+function imageSourceExists(src) {
+  const value = String(src || '').trim();
+  if (!value) return false;
+  if (/^(?:https?:)?\/\//i.test(value) || /^data:/i.test(value)) return true;
+  if (value.startsWith('/')) return fs.existsSync(path.join(root, value.slice(1)));
+  return fs.existsSync(path.join(root, value));
 }
 
 function getArticleImageAlt(article) {

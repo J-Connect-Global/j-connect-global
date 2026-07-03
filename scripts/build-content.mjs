@@ -36,6 +36,7 @@ const contentTypes = {
     gridMarker: 'living-grid',
     homeMarker: 'home-living',
     homeLimit: 3,
+    homeSectionLimit: 5,
     cardText: '記事を読む',
     backText: '生活・手続き一覧へ戻る'
   },
@@ -59,7 +60,7 @@ const contentTypes = {
     publicBase: 'germany/ja/learn-german',
     gridMarker: 'learn-german-grid',
     homeMarker: 'home-learn-german',
-    homeLimit: 3,
+    homeLimit: 5,
     cardText: '記事を読む',
     backText: 'ドイツ語・学びへ戻る'
   }
@@ -1640,11 +1641,17 @@ function updateHome(datasets) {
   const homePath = 'germany/ja/index.html';
   let html = readText(homePath);
   const livingCards = homeItems(datasets.living, contentTypes.living.homeLimit).map(renderHomeLivingCard).join('\n\n');
-  const eventCards = homeItems(datasets.events, contentTypes.events.homeLimit).map(renderHomeEventCard).join('\n\n');
-  const learnGermanContent = renderHomeLearnGermanContent(homeItems(datasets['learn-german'], contentTypes['learn-german'].homeLimit));
+  const livingSectionCards = homeItems(datasets.living, contentTypes.living.homeSectionLimit)
+    .map((item) => renderHomeStandardArticleCard(item, 'living', 'portal3-card-img'))
+    .join('\n\n');
+  const newsList = renderHomeNewsList(homeNewsItems(datasets.events, 3));
+  const eventCards = homeItems(datasets.events, contentTypes.events.homeLimit, (item) => item.content_type !== 'news').map(renderHomeEventCard).join('\n\n');
+  const learnGermanContent = homeItems(datasets['learn-german'], contentTypes['learn-german'].homeLimit).map(renderHomeLearnGermanCard).join('\n\n');
   const homeArticleItemsByUrl = new Map(Object.values(datasets).flatMap((items) => items).map((item) => [item.url, item]));
 
   html = replaceHomePanelContent(html, contentTypes.living.homeMarker, '新着記事', livingCards, 8);
+  html = replaceHomeSectionCardRow(html, 'living', livingSectionCards);
+  html = replaceHomeNewsList(html, newsList);
   html = replaceMarkedDivContent(html, contentTypes.events.homeMarker, /<div class="portal3-event-row">/, eventCards, 10);
   html = replaceMarkedDivContent(html, contentTypes['learn-german'].homeMarker, /<div class="portal3-learn-row">/, learnGermanContent, 8);
   html = upgradeStaticHomeArticleCardImages(html, homeArticleItemsByUrl);
@@ -1676,23 +1683,6 @@ function renderHomeEventCard(item, index) {
 </a>`;
 }
 
-function renderHomeLearnGermanContent(items) {
-  const cards = items.map(renderHomeLearnGermanCard);
-  const phrase = items.find((item) => item.home_phrase)?.home_phrase || { de: 'Ich hätte gern einen Termin.', ja: '予約を取りたいです。' };
-  const phraseCard = `<article class="portal3-phrase">
-  <span>今日のフレーズ</span>
-  <strong lang="de">${escapeHtml(phrase.de)}</strong>
-  <p>${escapeHtml(phrase.ja)}</p>
-  <button type="button">発音を聞く　🔊</button>
-</article>`;
-
-  return [
-    ...cards.slice(0, 2),
-    phraseCard,
-    ...cards.slice(2)
-  ].join('\n\n');
-}
-
 function renderHomeLearnGermanCard(item) {
   const tagText = item.tags.slice(0, 2).join('・') || item.category;
   const imageClass = item.home_image_class || 'img-study';
@@ -1702,6 +1692,29 @@ function renderHomeLearnGermanCard(item) {
   <strong>${escapeHtml(item.title)}</strong>
   <small>${escapeHtml(formatDateJa(item.published_at))}・${escapeHtml(tagText)}</small>
 </a>`;
+}
+
+function renderHomeStandardArticleCard(item, section, imageClass) {
+  return `<a class="portal3-card" href="${escapeAttribute(item.url)}">
+  ${renderHomeCardImage(item, section, imageClass)}
+  <strong>${escapeHtml(item.title)}</strong>
+  <small>${escapeHtml(formatDateJa(item.published_at))}・${escapeHtml(item.category || '')}</small>
+</a>`;
+}
+
+function renderHomeNewsList(items) {
+  const newsItems = items.map(renderHomeNewsListItem).join('\n');
+  return `<article class="portal3-news-list">
+  <h3>制度・生活アップデート</h3>
+${indent(newsItems, 2)}
+  <a class="more-news" href="/germany/ja/events/#life-updates">ニュース・生活アップデートへ</a>
+</article>`;
+}
+
+function renderHomeNewsListItem(item) {
+  const dateText = formatDateJa(getPreferredHomeDateValue(item));
+  const meta = [dateText, item.category].filter(Boolean).join('・');
+  return `<a href="${escapeAttribute(item.url || '/germany/ja/events/#life-updates')}"><span>${escapeHtml(item.title)}</span><small>${escapeHtml(meta)}</small></a>`;
 }
 
 function upgradeStaticHomeArticleCardImages(html, itemsByUrl) {
@@ -1731,11 +1744,45 @@ function eventBadge(item) {
   return { top: '日程', main: '確認', sub: '' };
 }
 
-function homeItems(items, limit) {
+function homeItems(items, limit, predicate = () => true) {
   return items
-    .filter((item) => item.published && item.home_visible)
-    .sort((a, b) => a.home_order - b.home_order || compareDateDesc(a.published_at, b.published_at))
-    .slice(0, limit);
+    .map((item, index) => ({ item, index }))
+    .filter(({ item }) => item.published && item.home_visible && predicate(item))
+    .sort(compareHomeItemEntries)
+    .slice(0, limit)
+    .map(({ item }) => item);
+}
+
+function homeNewsItems(items, limit) {
+  return items
+    .map((item, index) => ({ item, index }))
+    .filter(({ item }) => item.published && item.content_type === 'news')
+    .sort(compareHomeItemEntries)
+    .slice(0, limit)
+    .map(({ item }) => item);
+}
+
+function compareHomeItemEntries(a, b) {
+  const aTime = getHomeDateTimestamp(a.item);
+  const bTime = getHomeDateTimestamp(b.item);
+  const aHasDate = Number.isFinite(aTime);
+  const bHasDate = Number.isFinite(bTime);
+  if (aHasDate && bHasDate && aTime !== bTime) return bTime - aTime;
+  if (aHasDate !== bHasDate) return aHasDate ? -1 : 1;
+  return a.index - b.index;
+}
+
+function getPreferredHomeDateValue(item) {
+  for (const field of ['publishedAt', 'published_at', 'date', 'updatedAt', 'updated_at', 'createdAt', 'created_at']) {
+    const value = String(item?.[field] || '').trim();
+    if (value && Number.isFinite(Date.parse(value))) return value;
+  }
+  return '';
+}
+
+function getHomeDateTimestamp(item) {
+  const value = getPreferredHomeDateValue(item);
+  return value ? Date.parse(value) : NaN;
 }
 
 function sortForHub(items) {
@@ -1885,6 +1932,27 @@ function replaceHomePanelContent(html, marker, heading, content, spaces) {
 
     return `${source.slice(0, headEnd)}\n\n${indent(marked, spaces)}\n${source.slice(articleEnd)}`;
   });
+}
+
+function replaceHomeSectionCardRow(html, sectionId, content) {
+  const sectionStart = html.search(new RegExp(`<section class="portal3-section[^"]*" id="${escapeRegExp(sectionId)}"`));
+  if (sectionStart === -1) throw new Error(`Unable to find Home section: ${sectionId}`);
+  const sectionEnd = findMatchingTag(html, sectionStart, 'section');
+  const section = html.slice(sectionStart, sectionEnd + '</section>'.length);
+  const rowMatch = section.match(/<div class="portal3-card-row">/);
+  if (!rowMatch || rowMatch.index === undefined) throw new Error(`Unable to find card row for Home section: ${sectionId}`);
+  const rowStart = sectionStart + rowMatch.index;
+  const openEnd = html.indexOf('>', rowStart) + 1;
+  const rowEnd = findMatchingTag(html, rowStart, 'div');
+  return `${html.slice(0, openEnd)}\n${indent(content, 8)}\n${html.slice(rowEnd)}`;
+}
+
+function replaceHomeNewsList(html, content) {
+  const match = html.match(/<article class="portal3-news-list">/);
+  if (!match || match.index === undefined) throw new Error('Unable to find Home news list');
+  const start = match.index;
+  const end = findMatchingTag(html, start, 'article') + '</article>'.length;
+  return `${html.slice(0, start)}${content}${html.slice(end)}`;
 }
 
 function replaceMarkedContent(html, marker, content, spaces, fallback) {

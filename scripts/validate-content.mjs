@@ -31,7 +31,7 @@ const contentTypes = {
     hubUrl: '/germany/ja/learn-german/',
     gridMarker: 'learn-german-grid',
     homeMarker: 'home-learn-german',
-    homeLimit: 3,
+    homeLimit: 5,
     learnFields: ['level', 'situation', 'goal', 'skill', 'duration']
   }
 };
@@ -328,7 +328,10 @@ function validateHome(datasets) {
 
   for (const [type, items] of Object.entries(datasets)) {
     const config = contentTypes[type];
-    const selected = homeItems(items, config.homeLimit);
+    const selectableItems = type === 'events'
+      ? items.filter((item) => item.content_type !== 'news')
+      : items;
+    const selected = homeItems(selectableItems, config.homeLimit);
     const markerContent = extractMarker(html, config.homeMarker);
 
     for (const item of selected) {
@@ -469,9 +472,29 @@ function localTargetExists(url) {
 
 function homeItems(items, limit) {
   return items
-    .filter((item) => item.published === true && item.home_visible === true)
-    .sort((a, b) => Number(a.home_order) - Number(b.home_order) || String(b.published_at || '').localeCompare(String(a.published_at || '')))
-    .slice(0, limit);
+    .map((item, index) => ({ item, index }))
+    .filter(({ item }) => item.published === true && item.home_visible === true)
+    .sort(compareHomeItemEntries)
+    .slice(0, limit)
+    .map(({ item }) => item);
+}
+
+function compareHomeItemEntries(a, b) {
+  const aTime = getHomeDateTimestamp(a.item);
+  const bTime = getHomeDateTimestamp(b.item);
+  const aHasDate = Number.isFinite(aTime);
+  const bHasDate = Number.isFinite(bTime);
+  if (aHasDate && bHasDate && aTime !== bTime) return bTime - aTime;
+  if (aHasDate !== bHasDate) return aHasDate ? -1 : 1;
+  return a.index - b.index;
+}
+
+function getHomeDateTimestamp(item) {
+  for (const field of ['publishedAt', 'published_at', 'date', 'updatedAt', 'updated_at', 'createdAt', 'created_at']) {
+    const time = Date.parse(item?.[field] || '');
+    if (Number.isFinite(time)) return time;
+  }
+  return NaN;
 }
 
 function checkUnique(seen, value, message) {

@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-04T18:52:04.533Z",
+  "generated_at": "2026-07-04T20:03:48.952Z",
   "source": "community-gas",
-  "count": 8,
+  "count": 7,
   "groups": [
     {
       "field": "category1",
@@ -24,15 +24,13 @@
       "field": "city",
       "values": [
         "-",
-        "デュッセルドルフ周辺",
-        "リンツ周辺"
+        "デュッセルドルフ周辺"
       ]
     },
     {
       "field": "region",
       "values": [
         "Baden-Württemberg",
-        "オーストリア",
         "ドイツ"
       ]
     }

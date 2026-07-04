@@ -364,16 +364,47 @@ body.portal3-home > .page-footer{
 .portal3-section-head > a,
 .more-news{
   color:var(--portal3-blue);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  padding:0 12px;
+  border:1px solid #b8d0eb;
+  border-radius:999px;
+  background:#fff;
+  box-shadow:0 2px 8px rgba(0,45,95,.06);
   text-decoration:none;
-  font-size:12px;
+  font-size:.95rem;
   font-weight:800;
   white-space:nowrap;
+  transition:background-color .16s ease, border-color .16s ease, color .16s ease, box-shadow .16s ease;
+}
+
+.portal3-panel-head a{
+  min-height:30px;
+  padding:0 10px;
+  font-size:13px;
 }
 
 .portal3-panel-head a::after,
 .portal3-section-head > a::after,
 .more-news::after{
   content:" ›";
+}
+
+.portal3-panel-head a:hover,
+.portal3-section-head > a:hover,
+.more-news:hover{
+  border-color:#0d60bd;
+  background:#eef7ff;
+  box-shadow:0 4px 12px rgba(0,45,95,.10);
+}
+
+.portal3-panel-head a:focus-visible,
+.portal3-section-head > a:focus-visible,
+.more-news:focus-visible{
+  outline:3px solid rgba(13,96,189,.28);
+  outline-offset:3px;
 }
 
 .portal3-mini{
@@ -566,13 +597,38 @@ body.portal3-home > .page-footer{
 .portal3-section-head h2{
   display:flex;
   align-items:center;
-  gap:7px;
   margin:0;
   color:var(--portal3-navy);
   font-size:25px;
   line-height:1.2;
   font-weight:800;
   letter-spacing:-.03em;
+}
+
+.portal3-section-title-link{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  margin:-2px;
+  padding:2px;
+  border-radius:6px;
+  color:inherit;
+  text-decoration:none;
+  cursor:pointer;
+  transition:color .16s ease, text-decoration-color .16s ease, background-color .16s ease;
+}
+
+.portal3-section-title-link:hover,
+.portal3-section-title-link:focus-visible{
+  color:var(--portal3-blue);
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-underline-offset:5px;
+}
+
+.portal3-section-title-link:focus-visible{
+  outline:3px solid rgba(13,96,189,.28);
+  outline-offset:3px;
 }
 
 .portal3-section-head h2 span{
@@ -618,11 +674,12 @@ body.portal3-home > .page-footer{
   align-items:center;
   justify-content:center;
   min-width:118px;
-  height:34px;
+  min-height:36px;
+  padding:0 14px;
   border:1px solid #0d60bd;
   border-radius:6px;
   text-decoration:none;
-  font-size:13px;
+  font-size:.95rem;
   font-weight:800;
 }
 
@@ -649,7 +706,7 @@ body.portal3-home > .page-footer{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-height:30px;
+  min-height:28px;
   min-width:74px;
   padding:0 12px;
   border:1px solid #bad2ee;
@@ -658,7 +715,7 @@ body.portal3-home > .page-footer{
   color:var(--portal3-blue);
   text-decoration:none;
   font-size:12px;
-  font-weight:800;
+  font-weight:700;
 }
 
 .portal3-chips.green a{

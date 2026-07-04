@@ -1,12 +1,14 @@
 {
-  "generated_at": "2026-07-04T08:49:45.001Z",
+  "generated_at": "2026-07-04T15:42:27.452Z",
   "source": "community-gas",
-  "count": 2,
+  "count": 6,
   "groups": [
     {
       "field": "category1",
       "values": [
+        "質問",
         "譲ります",
+        "買います",
         "売ります"
       ]
     },
@@ -14,19 +16,21 @@
       "field": "category2",
       "values": [
         "家具・家電",
-        "子ども用品"
+        "子ども用品",
+        "生活一般"
       ]
     },
     {
       "field": "city",
       "values": [
-        "Hilden",
-        "フランクフルト周辺"
+        "-",
+        "デュッセルドルフ周辺"
       ]
     },
     {
       "field": "region",
       "values": [
+        "Baden-Württemberg",
         "ドイツ"
       ]
     }

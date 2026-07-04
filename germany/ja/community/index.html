@@ -646,15 +646,16 @@
     }
 
     function inferPostType(post) {
-      const explicit = ["category1", "postType", "type", "purpose"]
+      const explicit = ["category1", "postType", "post_type", "type", "purpose"]
         .map((name) => validPostType(post && post[name]))
         .find(Boolean);
       if (explicit) return explicit;
 
       const text = normalize([post.title, post.body, post.tags].join(" "));
       if (text.includes("売ります") || text.includes("売り") || text.includes("販売")) return "売ります";
-      if (text.includes("買います") || text.includes("買いたい") || text.includes("購入")) return "買います";
       if (text.includes("譲") || text.includes("無料") || text.includes("差し上げ")) return "譲ります";
+      if (text.includes("買います") || text.includes("買いたい") || text.includes("購入希望")) return "買います";
+      if (/(?:家具|家電|生活用品|本|教材|車|自転車|部屋|住まい|物件|チケット|ベッド|ソファ|冷蔵庫|洗濯機|電子レンジ|机|椅子|テーブル|自動車|ベビーカー|子ども用品|日用品).*(?:探しています|探し)|(?:探しています|探し).*(?:家具|家電|生活用品|本|教材|車|自転車|部屋|住まい|物件|チケット|ベッド|ソファ|冷蔵庫|洗濯機|電子レンジ|机|椅子|テーブル|自動車|ベビーカー|子ども用品|日用品)/.test(text)) return "買います";
       if (text.includes("探しています") || text.includes("探し") || text.includes("募集")) {
         if (text.includes("友達") || text.includes("仲間")) return "友達募集";
         return "探しています";

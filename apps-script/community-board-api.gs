@@ -509,20 +509,25 @@ function sendCreateConfirmationEmail_(params, info) {
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(to)) return { sent: false };
   try {
     const title = info.title || 'J-Connect Germany 掲示板投稿';
+    const safeTitle = escapeHtmlForEmail_(title);
+    const safeManageUrl = escapeHtmlForEmail_(info.manageUrl);
+    const safePublicPostUrl = escapeHtmlForEmail_(info.publicPostUrl);
     const htmlBody = [
       '<p>J-Connect Germany 掲示板への投稿を受け付けました。</p>',
-      `<p><strong>投稿タイトル:</strong> ${escapeHtmlForEmail_(title)}</p>`,
-      '<p>投稿は安全確認後に掲載されます。</p>',
-      `<p><strong>管理用リンク:</strong><br><a href="${info.manageUrl}">${info.manageUrl}</a></p>`,
-      '<p>このリンクは、投稿の編集・募集終了・再募集・非公開化に必要です。ブックマークまたは保存してください。</p>',
-      '<p>J-Connect Germanyがログイン情報、銀行情報、公的ID番号を求めることはありません。</p>'
+      `<p><strong>投稿タイトル:</strong><br>${safeTitle}</p>`,
+      '<p>投稿は管理者が確認後に掲載されます。<br>掲載まで数時間から数日かかる場合があります。</p>',
+      '<p><strong>管理用リンク:</strong><br>下記URLから、投稿内容の編集、募集停止、再募集、非公開化ができます。<br>このリンクは投稿管理専用です。第三者には共有しないでください。</p>',
+      `<p><a href="${safeManageUrl}">${safeManageUrl}</a></p>`,
+      '<p><strong>公開投稿リンク:</strong><br>管理者が投稿内容を確認・承認後、下記ページで投稿内容を閲覧できるようになります。</p>',
+      `<p><a href="${safePublicPostUrl}">${safePublicPostUrl}</a></p>`,
+      '<p>J-Connect Germany がログイン情報、銀行情報、公的ID番号を求めることはありません。</p>'
     ].join('');
     MailApp.sendEmail({
       to,
       subject: `【J-Connect Germany】投稿を受け付けました: ${title}`,
       name: 'J-Connect Germany',
       htmlBody,
-      body: `J-Connect Germany 掲示板への投稿を受け付けました。\n\n投稿タイトル: ${title}\n投稿は安全確認後に掲載されます。\n管理用リンク: ${info.manageUrl}\n\nこのリンクは投稿の編集・募集終了・再募集・非公開化に必要です。J-Connect Germanyがログイン情報、銀行情報、公的ID番号を求めることはありません。`
+      body: `J-Connect Germany 掲示板への投稿を受け付けました。\n\n投稿タイトル:\n${title}\n\n投稿は管理者が確認後に掲載されます。\n掲載まで数時間から数日かかる場合があります。\n\n管理用リンク:\n下記URLから、投稿内容の編集、募集停止、再募集、非公開化ができます。\nこのリンクは投稿管理専用です。第三者には共有しないでください。\n\n${info.manageUrl}\n\n公開投稿リンク:\n管理者が投稿内容を確認・承認後、下記ページで投稿内容を閲覧できるようになります。\n\n${info.publicPostUrl}\n\nJ-Connect Germany がログイン情報、銀行情報、公的ID番号を求めることはありません。`
     });
     return { sent: true };
   } catch (error) {

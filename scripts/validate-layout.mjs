@@ -381,6 +381,7 @@ function validateProductionFixPage(url, html, rel) {
     if (/console\.error\(["']Community posts load failed/i.test(html)) {
       problems.push(`${rel} should not emit console.error when Community GAS fallback is used.`);
     }
+    validateCommunityPostTypeInference(html, rel);
   }
 
   if (normalizedUrl === '/germany/ja/events/') {
@@ -437,6 +438,77 @@ function validateProductionFixPage(url, html, rel) {
       problems.push(`${rel} job detail page should include a secondary employer posting CTA.`);
     }
   }
+}
+
+function validateCommunityPostTypeInference(html, rel) {
+  const subcategoryOptions = html.match(/const SUBCATEGORY_OPTIONS = (\{[\s\S]*?\n    \});/)?.[1];
+  const snippets = [
+    subcategoryOptions && `const SUBCATEGORY_OPTIONS = ${subcategoryOptions};`,
+    extractFunction(html, 'normalize'),
+    extractFunction(html, 'normalizeExplicitPostType'),
+    extractFunction(html, 'validPostType'),
+    extractFunction(html, 'inferPostType'),
+    `
+      const cases = [
+        {
+          label: 'explicit category1 beats purchased body text',
+          post: { category1: '譲ります', body: '昨日購入しました。無料でお譲りします。' },
+          expected: '譲ります'
+        },
+        {
+          label: 'explicit buy category is preserved',
+          post: { category1: '買います', title: '買います' },
+          expected: '買います'
+        },
+        {
+          label: 'legacy giveaway fallback',
+          post: { body: '無料で差し上げます。' },
+          expected: '譲ります'
+        },
+        {
+          label: 'purchased alone is not buy intent',
+          post: { body: '昨日購入しました。使い方について質問です。' },
+          expected: '質問'
+        }
+      ];
+
+      for (const item of cases) {
+        const actual = inferPostType(item.post);
+        if (actual !== item.expected) {
+          throw new Error(\`\${item.label}: expected \${item.expected}, got \${actual}\`);
+        }
+      }
+    `
+  ];
+
+  if (snippets.some((snippet) => !snippet)) {
+    problems.push(`${rel} Community post type inference regression check could not find required script blocks.`);
+    return;
+  }
+
+  try {
+    vm.runInNewContext(snippets.join('\n'), {}, { timeout: 1000 });
+  } catch (error) {
+    problems.push(`${rel} Community post type inference regression failed: ${error.message}`);
+  }
+}
+
+function extractFunction(source, name) {
+  const start = source.indexOf(`function ${name}(`);
+  if (start === -1) return '';
+  const bodyStart = source.indexOf('{', start);
+  if (bodyStart === -1) return '';
+
+  let depth = 0;
+  for (let index = bodyStart; index < source.length; index += 1) {
+    const char = source[index];
+    if (char === '{') depth += 1;
+    if (char === '}') {
+      depth -= 1;
+      if (depth === 0) return source.slice(start, index + 1);
+    }
+  }
+  return '';
 }
 
 function validateProductionFixSharedAssets() {

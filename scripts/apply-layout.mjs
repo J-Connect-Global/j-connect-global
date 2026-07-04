@@ -38,8 +38,10 @@ function applyCanonicalLayout(html, url, page) {
   let next = html;
   next = ensureHeaderFooterStylesheet(next);
   next = ensureSocialShareStylesheet(next);
+  next = ensureRobotsMeta(next, page);
   next = ensureStaticSocialMeta(next, currentUrl, page);
   next = ensureJaHreflang(next, page);
+  next = ensurePageStructuredData(next, currentUrl, page);
   next = replaceLayoutBlock(next, 'ja-header', renderHeader(pillar, currentUrl), 'header');
   next = replaceLayoutBlock(next, 'ja-footer', readLayoutTemplate('ja-footer'), 'footer');
   next = ensureMainScript(next);
@@ -103,6 +105,19 @@ function ensureSocialShareScript(html) {
   return html.replace(/(\s*)<\/body>/i, `\n<script src="${SOCIAL_SHARE_JS}"></script>$1</body>`);
 }
 
+function ensureRobotsMeta(html, page) {
+  if (!page || page.status === 'redirect') return html;
+
+  const content = shouldIndexPage(page) ? 'index, follow' : 'noindex, follow';
+  const tag = `<meta name="robots" content="${content}">`;
+
+  if (/<meta\b(?=[^>]*name=["']robots["'])[^>]*>/i.test(html)) {
+    return html.replace(/<meta\b(?=[^>]*name=["']robots["'])[^>]*>/i, tag);
+  }
+
+  return html.replace(/<meta\b[^>]*name=["']description["'][^>]*>/i, (match) => `${match}\n  ${tag}`);
+}
+
 function ensureStaticSocialMeta(html, url, page) {
   if (!page || !['published', 'legacy'].includes(page.status)) return html;
 
@@ -156,6 +171,119 @@ function ensureJaHreflang(html, page) {
   }
 
   return next.replace('</head>', `${block}\n</head>`);
+}
+
+function ensurePageStructuredData(html, url, page) {
+  let next = html.replace(/\s*<script\b(?=[^>]*type=["']application\/ld\+json["'])(?=[^>]*data-jconnect-managed=["']page-structured-data["'])[^>]*>[\s\S]*?<\/script>\s*/gi, '\n');
+  if (!page || page.status !== 'published' || !shouldIndexPage(page)) return next;
+  if (!isCanonicalJaUrl(page.canonical_url || page.url || url)) return next;
+  if (page.id === 'page-home') return next;
+
+  const canonical = extractCanonical(next) || absoluteUrl(page.canonical_url || url);
+  const hasPageType = hasJsonLdType(next, pageStructuredDataType(page)) || hasJsonLdType(next, 'WebPage');
+  const hasBreadcrumb = hasJsonLdType(next, 'BreadcrumbList');
+  const scripts = [];
+
+  if (!hasPageType) {
+    scripts.push(renderManagedJsonLd({
+      '@context': 'https://schema.org',
+      '@type': pageStructuredDataType(page),
+      name: cleanTitle(page.title),
+      description: cleanTitle(page.description),
+      inLanguage: 'ja',
+      url: canonical,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'J-Connect Germany',
+        url: absoluteUrl('/germany/ja/')
+      }
+    }));
+  }
+
+  if (!hasBreadcrumb) {
+    scripts.push(renderManagedJsonLd(renderBreadcrumbStructuredData(page, canonical)));
+  }
+
+  if (!scripts.length) return next;
+
+  return next.replace('</head>', `${scripts.join('\n')}\n</head>`);
+}
+
+function shouldIndexPage(page) {
+  return page?.status === 'published' && (page.search_visible === true || page.sitemap_visible === true);
+}
+
+function pageStructuredDataType(page) {
+  return ['hub', 'listing', 'directory'].includes(page?.type) ? 'CollectionPage' : 'WebPage';
+}
+
+function renderBreadcrumbStructuredData(page, canonical) {
+  const items = [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'ホーム',
+      item: absoluteUrl('/germany/ja/')
+    }
+  ];
+
+  const pillar = breadcrumbPillar(page);
+  if (pillar && pillar.url !== page.url) {
+    items.push({
+      '@type': 'ListItem',
+      position: items.length + 1,
+      name: pillar.name,
+      item: absoluteUrl(pillar.url)
+    });
+  }
+
+  items.push({
+    '@type': 'ListItem',
+    position: items.length + 1,
+    name: cleanTitle(page.title),
+    item: canonical
+  });
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items
+  };
+}
+
+function breadcrumbPillar(page) {
+  const map = {
+    community: { name: '交流・掲示板', url: '/germany/ja/community/' },
+    living: { name: '生活・手続き', url: '/germany/ja/living/' },
+    jobs: { name: '仕事・求人', url: '/germany/ja/jobs/' },
+    events: { name: 'ニュース・イベント', url: '/germany/ja/events/' },
+    'learn-german': { name: 'ドイツ語・学び', url: '/germany/ja/learn-german/' },
+    utility: { name: 'このサイトについて', url: '/germany/ja/about/' }
+  };
+  return map[page?.pillar] || null;
+}
+
+function hasJsonLdType(html, type) {
+  for (const match of html.matchAll(/<script\b(?=[^>]*type=["']application\/ld\+json["'])[^>]*>([\s\S]*?)<\/script>/gi)) {
+    try {
+      const parsed = JSON.parse(match[1]);
+      const items = Array.isArray(parsed) ? parsed : [parsed];
+      if (items.some((item) => jsonLdTypes(item).includes(type))) return true;
+    } catch {
+      return false;
+    }
+  }
+  return false;
+}
+
+function jsonLdTypes(item) {
+  const value = item?.['@type'];
+  if (Array.isArray(value)) return value;
+  return value ? [value] : [];
+}
+
+function renderManagedJsonLd(data) {
+  return `  <script type="application/ld+json" data-jconnect-managed="page-structured-data">${escapeJsonForHtml(data)}</script>`;
 }
 
 function removeHeadLines(html, shouldRemove) {
@@ -374,6 +502,13 @@ function escapeAttribute(value) {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;')
     .replace(/`/g, '&#096;');
+}
+
+function escapeJsonForHtml(value) {
+  return JSON.stringify(value, (_key, data) => data === undefined ? undefined : data)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026');
 }
 
 function escapeRegExp(value) {

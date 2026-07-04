@@ -6,7 +6,7 @@
       detail_url: "/germany/ja/jobs/sales-assistant-japanese-duesseldorf/",
       status: "active",
       priority: 1,
-      company_name: "Rhein Trade GmbH",
+      company_name: "掲載元未検証（表示例）",
       position_title: "営業アシスタント（日本語対応）",
       employment_type: "フルタイム",
       city: "Dusseldorf",
@@ -25,11 +25,11 @@
       summary: "日系顧客との連絡、見積書作成、受発注サポートを担当する営業アシスタント職です。",
       job_details: "営業チームと連携し、日本語での問い合わせ対応、納期確認、資料作成、社内システムへの入力を行います。ドイツでの就業経験が浅い方も、事務経験と丁寧なコミュニケーション力を重視します。",
       requirements: "日本語でのビジネス対応 / 英語またはドイツ語での社内連絡 / MS Office 基本操作 / ドイツで就労可能な滞在資格",
-      apply_url: "mailto:jobs@j-connect-global.com?subject=営業アシスタント応募",
-      source_name: "J-Connect sample",
+      apply_url: "/germany/ja/jobs/",
+      source_name: "J-Connect 表示例",
       published_at: "2026-06-09",
       updated_at: "2026-06-09",
-      sample_label: "Sample listing"
+      sample_label: "掲載例・未検証"
     },
     {
       id: "it-support-specialist-cologne",
@@ -37,7 +37,7 @@
       detail_url: "/germany/ja/jobs/it-support-specialist-cologne/",
       status: "active",
       priority: 2,
-      company_name: "TechBridge Solutions GmbH",
+      company_name: "掲載元未検証（表示例）",
       position_title: "ITサポートスペシャリスト",
       employment_type: "フルタイム",
       city: "Cologne",
@@ -56,11 +56,11 @@
       summary: "日本語ユーザーを含む社内向け IT サポート、端末管理、アカウント運用を担当します。",
       job_details: "一次問い合わせ対応、PC キッティング、Microsoft 365 アカウント管理、ネットワーク障害の切り分け、外部ベンダーとの調整を行います。日本語での利用者支援と英語での技術連携が中心です。",
       requirements: "ITサポート経験2年以上 / Windows と Microsoft 365 の基本知識 / 日本語での丁寧なユーザー対応 / 英語での技術コミュニケーション",
-      apply_url: "mailto:jobs@j-connect-global.com?subject=ITサポート応募",
-      source_name: "J-Connect sample",
+      apply_url: "/germany/ja/jobs/",
+      source_name: "J-Connect 表示例",
       published_at: "2026-06-08",
       updated_at: "2026-06-08",
-      sample_label: "Sample listing"
+      sample_label: "掲載例・未検証"
     },
     {
       id: "accounting-staff-munich",
@@ -68,7 +68,7 @@
       detail_url: "/germany/ja/jobs/accounting-staff-munich/",
       status: "active",
       priority: 3,
-      company_name: "Kobato Finance GmbH",
+      company_name: "掲載元未検証（表示例）",
       position_title: "経理・会計スタッフ",
       employment_type: "フルタイム",
       city: "Munich",
@@ -87,11 +87,11 @@
       summary: "請求書処理、支払管理、月次決算補助を担当する経理スタッフ職です。",
       job_details: "ドイツ拠点の経理チームで、仕訳前チェック、請求書管理、支払依頼、経費精算、月次レポート補助を行います。日本本社との連絡があるため、日本語での正確な報告力を重視します。",
       requirements: "経理または事務経験 / Excel 基本操作 / 数字を正確に扱える方 / 日本語での報告・確認ができる方",
-      apply_url: "mailto:jobs@j-connect-global.com?subject=経理スタッフ応募",
-      source_name: "J-Connect sample",
+      apply_url: "/germany/ja/jobs/",
+      source_name: "J-Connect 表示例",
       published_at: "2026-06-07",
       updated_at: "2026-06-07",
-      sample_label: "Sample listing"
+      sample_label: "掲載例・未検証"
     }
   ];
 })(window);

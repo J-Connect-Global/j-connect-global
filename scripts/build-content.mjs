@@ -140,6 +140,8 @@ const learnGermanLabels = {
 };
 
 function main() {
+  // Source of truth: registries and Markdown generate committed HTML, sitemap,
+  // and search index. Do not hand-edit generated article output as primary data.
   const datasets = Object.fromEntries(
     Object.keys(contentTypes).map((type) => [type, loadContentType(type)])
   );

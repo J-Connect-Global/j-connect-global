@@ -634,12 +634,28 @@
       return normalize([post.title, post.body, post.category1, post.category2, post.tags].join(" ")).match(/日本語|japanese|日本人/) !== null;
     }
 
+    function normalizeExplicitPostType(value) {
+      const text = String(value || "").trim();
+      if (!text) return "";
+      return text === "教えます" ? "レッスン" : text;
+    }
+
+    function validPostType(value) {
+      const text = normalizeExplicitPostType(value);
+      return Object.keys(SUBCATEGORY_OPTIONS).filter((type) => type !== "すべて").includes(text) ? text : "";
+    }
+
     function inferPostType(post) {
-      const explicit = field(post, ["postType", "type", "purpose"]);
-      const text = normalize([explicit, post.category1, post.category2, post.title, post.body, post.tags].join(" "));
+      const explicit = ["category1", "postType", "post_type", "type", "purpose"]
+        .map((name) => validPostType(post && post[name]))
+        .find(Boolean);
+      if (explicit) return explicit;
+
+      const text = normalize([post.title, post.body, post.tags].join(" "));
       if (text.includes("売ります") || text.includes("売り") || text.includes("販売")) return "売ります";
-      if (text.includes("買います") || text.includes("買いたい") || text.includes("購入")) return "買います";
       if (text.includes("譲") || text.includes("無料") || text.includes("差し上げ")) return "譲ります";
+      if (text.includes("買います") || text.includes("買いたい") || text.includes("購入希望")) return "買います";
+      if (/(?:家具|家電|生活用品|本|教材|車|自転車|部屋|住まい|物件|チケット|ベッド|ソファ|冷蔵庫|洗濯機|電子レンジ|机|椅子|テーブル|自動車|ベビーカー|子ども用品|日用品).*(?:探しています|探し)|(?:探しています|探し).*(?:家具|家電|生活用品|本|教材|車|自転車|部屋|住まい|物件|チケット|ベッド|ソファ|冷蔵庫|洗濯機|電子レンジ|机|椅子|テーブル|自動車|ベビーカー|子ども用品|日用品)/.test(text)) return "買います";
       if (text.includes("探しています") || text.includes("探し") || text.includes("募集")) {
         if (text.includes("友達") || text.includes("仲間")) return "友達募集";
         return "探しています";
@@ -649,8 +665,7 @@
       if (text.includes("イベント") || text.includes("交流会")) return "イベント";
       if (text.includes("アルバイト") || text.includes("求人") || text.includes("仕事") || text.includes("バイト")) return "アルバイト";
       if (text.includes("質問") || text.includes("相談") || text.includes("教えて")) return "質問";
-      if (explicit === "教えます") return "レッスン";
-      return POST_TYPES.includes(explicit) ? explicit : "質問";
+      return "質問";
     }
 
     function knownSubcategory(value) {

@@ -507,7 +507,23 @@ body.portal3-home > .page-footer{
   min-width:0;
 }
 
+.portal3-community-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-width:0;
+}
+
 .portal3-latest-meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  min-width:0;
+  margin-bottom:4px;
+}
+
+.portal3-community-meta{
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -526,7 +542,30 @@ body.portal3-home > .page-footer{
   white-space:nowrap;
 }
 
+.portal3-community-mini em{
+  flex:0 1 auto;
+  min-width:0;
+  max-width:54%;
+  margin-bottom:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size:9px;
+  color:#738498;
+  background:#f8fafc;
+  border-color:#e4ecf4;
+}
+
 .portal3-latest-date{
+  flex:0 0 auto;
+  color:#75879a;
+  font-size:11px;
+  line-height:1.3;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.portal3-community-date{
   flex:0 0 auto;
   color:#75879a;
   font-size:11px;

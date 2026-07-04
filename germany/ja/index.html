@@ -610,6 +610,18 @@
         .map((post, index) => shared.normalizePost(post, index)));
     }
 
+    function formatDigestDate(raw) {
+      const date = raw ? new Date(raw) : null;
+      if (!date || Number.isNaN(date.getTime())) return "";
+      return `${date.getMonth() + 1}月${date.getDate()}日`;
+    }
+
+    function compactDigestMeta(post) {
+      const country = String(post?.country || post?.country_name || post?.countryName || "ドイツ").trim();
+      const date = formatDigestDate(post?._date);
+      return [country, date].filter(Boolean).join("・");
+    }
+
     function renderFallback() {
       miniRoot.innerHTML = `
         <a class="portal3-mini" href="/germany/ja/community/">
@@ -649,16 +661,18 @@
         const href = shared.communityDetailHref(post, "/germany/ja/community/");
         const thumbClass = thumbClassByType[post._postType] || "thumb-office";
         const image = post._images[0] || "";
-        const meta = [post._location, shared.formatDate(post._date)].filter(Boolean).join("・");
+        const meta = compactDigestMeta(post);
         return `
-          <a class="portal3-mini" href="${escapeHtml(href)}" data-post-id="${escapeHtml(post._id)}">
+          <a class="portal3-mini portal3-community-mini" href="${escapeHtml(href)}" data-post-id="${escapeHtml(post._id)}">
             <span class="portal3-thumb ${escapeHtml(thumbClass)} ${image ? "has-photo" : ""}">
               ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(post._title)}の写真" loading="lazy" decoding="async" onerror="this.closest('.portal3-thumb')?.classList.remove('has-photo'); this.remove();">` : ""}
             </span>
-            <span>
-              <em>${escapeHtml(post._postType)}</em>
+            <span class="portal3-community-copy">
+              <span class="portal3-community-meta">
+                <em>${escapeHtml(post._postType)}</em>
+                <small class="portal3-community-date">${escapeHtml(meta)}</small>
+              </span>
               <strong>${escapeHtml(post._title)}</strong>
-              <small>${escapeHtml(meta || post._subcategory)}</small>
             </span>
           </a>
         `;

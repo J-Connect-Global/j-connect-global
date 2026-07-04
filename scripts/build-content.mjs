@@ -1642,7 +1642,8 @@ ${media ? indent(media, 2) : ''}
 function updateHome(datasets) {
   const homePath = 'germany/ja/index.html';
   let html = readText(homePath);
-  const livingCards = homeItems(datasets.living, contentTypes.living.homeLimit).map(renderHomeLivingCard).join('\n\n');
+  html = updateHomeTopPanelChrome(html);
+  const latestDigestCards = homeLatestDigestItems(datasets).map(renderHomeLatestDigestCard).join('\n\n');
   const livingSectionCards = homeItems(datasets.living, contentTypes.living.homeSectionLimit)
     .map((item) => renderHomeStandardArticleCard(item, 'living', 'portal3-card-img'))
     .join('\n\n');
@@ -1651,7 +1652,7 @@ function updateHome(datasets) {
   const learnGermanContent = homeItems(datasets['learn-german'], contentTypes['learn-german'].homeLimit).map(renderHomeLearnGermanCard).join('\n\n');
   const homeArticleItemsByUrl = new Map(Object.values(datasets).flatMap((items) => items).map((item) => [item.url, item]));
 
-  html = replaceHomePanelContent(html, contentTypes.living.homeMarker, '新着記事', livingCards, 8);
+  html = replaceHomePanelContent(html, contentTypes.living.homeMarker, '新着コンテンツ', latestDigestCards, 8);
   html = replaceHomeSectionCardRow(html, 'living', livingSectionCards);
   html = replaceHomeNewsList(html, newsList);
   html = replaceMarkedDivContent(html, contentTypes.events.homeMarker, /<div class="portal3-event-row">/, eventCards, 10);
@@ -1660,14 +1661,53 @@ function updateHome(datasets) {
   writeText(homePath, html);
 }
 
-function renderHomeLivingCard(item, index) {
-  const thumbClasses = ['thumb-laptop', 'thumb-medical', 'thumb-mountain'];
-  const tagText = item.tags.slice(0, 2).join('・') || item.category;
-  return `<a class="portal3-mini" href="${escapeAttribute(item.url)}">
-  ${renderHomeCardImage(item, 'living', `portal3-thumb ${thumbClasses[index % thumbClasses.length]}`)}
+function updateHomeTopPanelChrome(html) {
+  return html
+    .replace(
+      /<h2>(?:<a class="portal3-panel-title-link" href="\/germany\/ja\/community\/">)?掲示板トピック(?:<\/a>)?<\/h2>\s*<a\b[^>]*href="\/germany\/ja\/community\/"[^>]*>[^<]*<\/a>/,
+      '<h2><a class="portal3-panel-title-link" href="/germany/ja/community/">掲示板トピック</a></h2>\n          <a class="portal3-panel-more" href="/germany/ja/community/">掲示板一覧へ</a>'
+    )
+    .replace(
+      /<h2>(?:<a class="portal3-panel-title-link" href="\/germany\/ja\/living\/">)?(?:新着記事|新着コンテンツ)(?:<\/a>)?<\/h2>\s*<a\b[^>]*href="\/germany\/ja\/living\/"[^>]*>[^<]*<\/a>/,
+      '<h2><a class="portal3-panel-title-link" href="/germany/ja/living/">新着コンテンツ</a></h2>\n          <a class="portal3-panel-more" href="/germany/ja/living/">コンテンツ一覧へ</a>'
+    )
+    .replace(
+      /<h2>(?:<a class="portal3-panel-title-link" href="\/germany\/ja\/jobs\/">)?求人ピックアップ(?:<\/a>)?<\/h2>\s*<a\b[^>]*href="\/germany\/ja\/jobs\/"[^>]*>[^<]*<\/a>/,
+      '<h2><a class="portal3-panel-title-link" href="/germany/ja/jobs/">求人ピックアップ</a></h2>\n          <a class="portal3-panel-more" href="/germany/ja/jobs/">求人一覧へ</a>'
+    );
+}
+
+function homeLatestDigestItems(datasets) {
+  return [
+    { item: latestHomeDigestItem(datasets.living), section: 'living', sourceLabel: '生活', thumbClass: 'thumb-laptop' },
+    { item: latestHomeDigestItem(datasets.events), section: 'events', sourceLabel: 'ニュース・イベント', thumbClass: 'thumb-office' },
+    { item: latestHomeDigestItem(datasets['learn-german']), section: 'learn-german', sourceLabel: 'ドイツ語', thumbClass: 'thumb-mountain' }
+  ].map((entry) => {
+    if (!entry.item) {
+      throw new Error(`Unable to find published Home latest digest item for ${entry.section}`);
+    }
+    return entry;
+  });
+}
+
+function latestHomeDigestItem(items) {
+  return items
+    .map((item, index) => ({ item, index }))
+    .filter(({ item }) => item.published && item.home_visible)
+    .sort(compareHomeItemEntries)
+    .map(({ item }) => item)[0];
+}
+
+function renderHomeLatestDigestCard({ item, section, sourceLabel, thumbClass }) {
+  const dateText = formatDateJa(getPreferredHomeDateValue(item));
+  const metaText = [dateText, sourceLabel].filter(Boolean).join('・');
+
+  return `<a class="portal3-mini portal3-latest-mini" href="${escapeAttribute(item.url)}" data-home-latest-source="${escapeAttribute(section)}">
+  ${renderHomeCardImage(item, section, `portal3-thumb ${thumbClass}`)}
   <span>
+    <em>${escapeHtml(sourceLabel)}</em>
     <strong>${escapeHtml(item.title)}</strong>
-    <small>${escapeHtml(formatDateJa(item.published_at))}・${escapeHtml(tagText)}</small>
+    <small>${escapeHtml(metaText)}</small>
   </span>
 </a>`;
 }
@@ -1931,7 +1971,10 @@ function replaceMarkedDivContent(html, marker, divPattern, content, spaces) {
 
 function replaceHomePanelContent(html, marker, heading, content, spaces) {
   return replaceMarkedContent(html, marker, content, spaces, (source, marked) => {
-    const headingIndex = source.indexOf(`<h2>${heading}</h2>`);
+    let headingIndex = source.indexOf(`<h2>${heading}</h2>`);
+    if (headingIndex === -1) {
+      headingIndex = source.search(new RegExp(`<h2>\\s*<a\\b[^>]*>${escapeRegExp(heading)}<\\/a>\\s*<\\/h2>`));
+    }
     if (headingIndex === -1) throw new Error(`Unable to find Home panel heading: ${heading}`);
 
     const headStart = source.lastIndexOf('<div class="portal3-panel-head"', headingIndex);

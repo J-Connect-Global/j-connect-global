@@ -89,11 +89,16 @@ function validateHomeMarkers(html, label) {
 
   const livingMarker = extractMarkedContent(html, 'home-living');
   if (!livingMarker) {
-    fail(`${label} missing generated Home Living marker.`);
+    fail(`${label} missing generated Home latest digest marker.`);
   } else {
-    const livingCards = (livingMarker.match(/class="portal3-mini"/g) || []).length;
-    if (livingCards < 3) fail(`${label} Home Living marker should contain at least 3 generated mini cards.`);
-    if (/準備中|coming soon|読み込み中|loading\.\.\./i.test(livingMarker)) fail(`${label} Home Living marker contains placeholder/loading copy.`);
+    const latestRows = (livingMarker.match(/class="portal3-mini portal3-latest-mini"/g) || []).length;
+    if (latestRows !== 3) fail(`${label} Home latest digest marker should contain exactly 3 generated mixed-source rows.`);
+    for (const source of ['living', 'events', 'learn-german']) {
+      if (!livingMarker.includes(`data-home-latest-source="${source}"`)) {
+        fail(`${label} Home latest digest marker missing ${source} row.`);
+      }
+    }
+    if (/準備中|coming soon|読み込み中|loading\.\.\./i.test(livingMarker)) fail(`${label} Home latest digest marker contains placeholder/loading copy.`);
   }
 
   const livingSection = extractSectionById(html, 'living');

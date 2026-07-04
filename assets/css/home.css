@@ -349,18 +349,36 @@ body.portal3-home > .page-footer{
 }
 
 .portal3-panel-head{
-  align-items:center;
-  margin-bottom:8px;
+  align-items:flex-start;
+  margin-bottom:10px;
 }
 
 .portal3-panel-head h2{
+  min-width:0;
   margin:0;
   color:var(--portal3-navy);
   font-size:18px;
   font-weight:800;
+  line-height:1.35;
 }
 
-.portal3-panel-head a,
+.portal3-panel-title-link{
+  color:inherit;
+  text-decoration:none;
+}
+
+.portal3-panel-title-link:hover,
+.portal3-panel-title-link:focus-visible{
+  color:var(--portal3-blue);
+}
+
+.portal3-panel-title-link:focus-visible{
+  outline:3px solid rgba(13,96,189,.24);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+.portal3-panel-head > a,
 .portal3-section-head > a,
 .more-news{
   color:var(--portal3-blue);
@@ -380,19 +398,20 @@ body.portal3-home > .page-footer{
   transition:background-color .16s ease, border-color .16s ease, color .16s ease, box-shadow .16s ease;
 }
 
-.portal3-panel-head a{
-  min-height:30px;
-  padding:0 10px;
-  font-size:13px;
+.portal3-panel-head > a{
+  flex:0 0 auto;
+  min-height:38px;
+  padding:0 14px;
+  font-size:13.5px;
 }
 
-.portal3-panel-head a::after,
+.portal3-panel-head > a::after,
 .portal3-section-head > a::after,
 .more-news::after{
   content:" ›";
 }
 
-.portal3-panel-head a:hover,
+.portal3-panel-head > a:hover,
 .portal3-section-head > a:hover,
 .more-news:hover{
   border-color:#0d60bd;
@@ -400,7 +419,7 @@ body.portal3-home > .page-footer{
   box-shadow:0 4px 12px rgba(0,45,95,.10);
 }
 
-.portal3-panel-head a:focus-visible,
+.portal3-panel-head > a:focus-visible,
 .portal3-section-head > a:focus-visible,
 .more-news:focus-visible{
   outline:3px solid rgba(13,96,189,.28);
@@ -411,10 +430,23 @@ body.portal3-home > .page-footer{
   display:grid;
   grid-template-columns:62px minmax(0,1fr);
   gap:10px;
-  padding:8px 0;
+  min-height:70px;
+  padding:10px 0;
   border-bottom:1px solid #edf3f8;
+  border-radius:6px;
   text-decoration:none;
   color:inherit;
+  transition:background-color .16s ease, box-shadow .16s ease;
+}
+
+.portal3-mini:hover,
+.portal3-mini:focus-visible{
+  background:#f8fbff;
+}
+
+.portal3-mini:focus-visible{
+  outline:3px solid rgba(13,96,189,.22);
+  outline-offset:2px;
 }
 
 .portal3-mini:last-child{
@@ -457,15 +489,15 @@ body.portal3-home > .page-footer{
 
 .portal3-mini em{
   display:inline-flex;
-  padding:2px 7px;
+  padding:1px 6px;
   margin-bottom:3px;
   border-radius:999px;
-  background:#eef7ff;
-  color:var(--portal3-blue);
-  border:1px solid #d5e8fb;
-  font-size:10px;
+  background:#f6f9fc;
+  color:#6f8093;
+  border:1px solid #e2ebf4;
+  font-size:9.5px;
   font-style:normal;
-  font-weight:800;
+  font-weight:700;
 }
 
 .portal3-mini strong{
@@ -485,6 +517,10 @@ body.portal3-home > .page-footer{
   color:#667c95;
   font-size:11px;
   line-height:1.4;
+}
+
+.portal3-latest-mini small{
+  color:#75879a;
 }
 
 .portal3-job-mini{

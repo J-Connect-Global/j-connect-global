@@ -490,6 +490,15 @@ function validateHomeStaticQuality(rel, html) {
   const livingSection = extractSectionById(html, 'living');
   const livingCards = (livingSection.match(/class="portal3-card"/g) || []).length;
   if (livingCards < 5) problems.push(`${rel} Home Living section should contain at least 5 article cards.`);
+
+  const latestDigest = extractMarkedContent(html, 'home-living');
+  const latestRows = (latestDigest.match(/class="portal3-mini portal3-latest-mini"/g) || []).length;
+  if (latestRows !== 3) problems.push(`${rel} Home latest digest should contain exactly 3 mixed-source rows.`);
+  for (const source of ['living', 'events', 'learn-german']) {
+    if (!latestDigest.includes(`data-home-latest-source="${source}"`)) {
+      problems.push(`${rel} Home latest digest missing ${source} row.`);
+    }
+  }
 }
 
 function extractMarkedContent(html, marker) {

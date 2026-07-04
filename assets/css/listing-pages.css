@@ -2,6 +2,13 @@
    Shared listing-page design system
    Used by: Jobs, Eat, Medical, Shopping
    Visual baseline: Community page
+
+   List-card rules:
+   - Compact list rhythm with two-line titles and two-line summaries.
+   - Metadata stays compact and adjacent to the card content.
+   - CTAs stay attached to the content area, not isolated in blank columns.
+   - Image/list media uses a stable 4:3-like rhythm and stacks on mobile.
+   - Mobile layouts must not create horizontal overflow.
    ============================================================ */
 
 :root{

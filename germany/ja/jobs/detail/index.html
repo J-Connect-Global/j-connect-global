@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>求人詳細 | 仕事・求人 | J-Connect Germany</title>
   <meta name="description" content="J-Connect Germanyの求人詳細ページです。求人IDをもとに仕事内容、応募条件、連絡先を確認できます。">
-  <meta name="robots" content="index,follow">
+  <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/jobs/detail/">
-  <link rel="alternate" hreflang="ja" href="https://j-connect-global.com/germany/ja/jobs/detail/">
-  <link rel="alternate" hreflang="x-default" href="https://j-connect-global.com/germany/ja/jobs/detail/">
   <meta property="og:title" content="求人詳細 | 仕事・求人 | J-Connect Germany">
   <meta property="og:description" content="J-Connect Germanyの求人詳細ページです。求人IDをもとに仕事内容、応募条件、連絡先を確認できます。">
   <meta property="og:url" content="https://j-connect-global.com/germany/ja/jobs/detail/">
@@ -76,6 +74,18 @@
       line-height:1.75;
       font-weight:700;
       margin:12px 0 0;
+    }
+
+    .jobs-detail-apply-note{
+      margin:12px 0 0;
+      border:1px solid var(--listing-line);
+      border-radius:8px;
+      background:var(--listing-soft);
+      color:#384552;
+      padding:10px 12px;
+      font-size:13px;
+      line-height:1.65;
+      font-weight:800;
     }
 
     .jobs-detail-actions,
@@ -547,6 +557,7 @@
       ${company ? `<div class="jobs-detail-company">${escapeHtml(company)}</div>` : ""}
       <h1>${escapeHtml(title)}</h1>
       ${job.summary ? `<p class="jobs-detail-summary">${escapeHtml(job.summary)}</p>` : ""}
+      <p class="jobs-detail-apply-note">掲載内容は雇用主または掲載元の申告情報です。J-Connect Germanyは採用、雇用条件、ビザ取得、応募結果を保証しません。応募前に会社情報、勤務条件、給与、契約形態、ビザサポート、応募先の正当性を確認してください。</p>
       ${tags.length ? `<div class="jc-chip-row">${tags.map(tag => `<span class="jc-chip">${escapeHtml(tag)}</span>`).join("")}</div>` : ""}
 
       <div class="jobs-detail-actions">
@@ -590,7 +601,7 @@
 
       <section class="jobs-detail-section">
         <h2>応募・問い合わせ</h2>
-        <p>${escapeHtml(job.apply_method || "応募前に、勤務条件、ビザ、開始時期、語学要件を掲載元に確認してください。")}</p>
+        <p>${escapeHtml(job.apply_method || "応募前に、勤務条件、ビザ、開始時期、語学要件、連絡先を掲載元に確認してください。")}</p>
         ${applyEmail ? `<p class="jobs-detail-email">連絡先: <a href="mailto:${escapeHtml(applyEmail)}">${escapeHtml(applyEmail)}</a></p>` : ""}
         <div class="jobs-detail-link-list">
           ${applyMailto ? `<a class="jc-button is-primary" href="${escapeHtml(applyMailto)}">応募先にメールする</a>` : ""}

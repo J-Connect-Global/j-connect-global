@@ -176,16 +176,6 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "イベント詳細",
-    "description": "J-Connect Germany のイベント詳細ページです。開催日、場所、関連リンクなどを確認できます。",
-    "url": "/germany/ja/events/detail/",
-    "category": "ニュース・イベント",
-    "tags": [
-      "イベント",
-      "詳細"
-    ]
-  },
-  {
     "title": "求人掲載について",
     "description": "J-Connect Germany に求人掲載を希望する企業向けの案内ページです。",
     "url": "/germany/ja/jobs/posting/",
@@ -194,49 +184,6 @@ window.JCONNECT_SEARCH_INDEX = [
       "求人掲載",
       "企業向け",
       "仕事"
-    ]
-  },
-  {
-    "title": "求人詳細",
-    "description": "J-Connect Germany の求人詳細ページです。仕事内容、勤務地、応募情報を確認できます。",
-    "url": "/germany/ja/jobs/detail/",
-    "category": "仕事・求人",
-    "tags": [
-      "求人",
-      "詳細"
-    ]
-  },
-  {
-    "title": "営業アシスタント（日本語対応）",
-    "description": "デュッセルドルフ周辺の日本語対応営業アシスタント求人の詳細ページです。",
-    "url": "/germany/ja/jobs/sales-assistant-japanese-duesseldorf/",
-    "category": "仕事・求人",
-    "tags": [
-      "求人",
-      "営業",
-      "デュッセルドルフ"
-    ]
-  },
-  {
-    "title": "ITサポートスペシャリスト",
-    "description": "ケルン周辺の IT サポートスペシャリスト求人の詳細ページです。",
-    "url": "/germany/ja/jobs/it-support-specialist-cologne/",
-    "category": "仕事・求人",
-    "tags": [
-      "求人",
-      "IT",
-      "ケルン"
-    ]
-  },
-  {
-    "title": "経理・会計スタッフ",
-    "description": "ミュンヘン周辺の経理・会計スタッフ求人の詳細ページです。",
-    "url": "/germany/ja/jobs/accounting-staff-munich/",
-    "category": "仕事・求人",
-    "tags": [
-      "求人",
-      "経理",
-      "ミュンヘン"
     ]
   },
   {

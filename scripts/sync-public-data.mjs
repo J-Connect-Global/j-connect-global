@@ -5,6 +5,9 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 const dataSourcesPath = path.join(rootDir, "assets/js/data-sources.js");
+
+// Public data cache flow: spreadsheet/GAS responses are normalized into
+// committed JSON first; browser UIs load that static JSON before trying GAS.
 const outputPaths = {
   communityPosts: path.join(rootDir, "assets/data/community/posts.json"),
   communityCategories: path.join(rootDir, "assets/data/community/categories.json"),

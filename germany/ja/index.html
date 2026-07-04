@@ -247,7 +247,15 @@
           <a href="/germany/ja/jobs/">もっと見る</a>
         </div>
 
-        <div id="homeJobsMini" data-home-jobs-mini></div>
+        <div id="homeJobsMini" data-home-jobs-mini>
+          <a class="portal3-job-mini" href="/germany/ja/jobs/">
+            <span class="portal3-job-icon">▦</span>
+            <span>
+              <strong>求人情報を確認中です</strong>
+              <small>掲載条件と応募先は各求人の詳細で確認してください</small>
+            </span>
+          </a>
+        </div>
       </article>
     </section>
 
@@ -343,7 +351,7 @@
       <div class="portal3-section-head with-buttons">
         <div>
           <h2><span>③</span>仕事・求人</h2>
-          <p>求人情報からキャリアアップのヒントまで、働くあなたをサポート。</p>
+          <p>求人情報からキャリアアップのヒントまで整理します。応募前に雇用主、条件、ビザ要件を必ず確認してください。</p>
         </div>
         <div class="portal3-section-buttons">
           <a href="/germany/ja/jobs/">求人を探す</a>
@@ -360,7 +368,16 @@
         <a href="/germany/ja/jobs/">アルバイト</a>
       </div>
 
-      <div class="portal3-job-row" id="homeJobsCards" data-home-jobs></div>
+      <div class="portal3-job-row" id="homeJobsCards" data-home-jobs>
+        <a class="portal3-job-card portal3-fallback-card" href="/germany/ja/jobs/">
+          <span>▦</span>
+          <strong>求人データを確認中です</strong>
+          <small>掲載内容は雇用主または掲載元の申告に基づきます。</small>
+          <p>応募前に仕事内容、勤務地、給与、ビザサポート、応募先の連絡先を掲載元へ確認してください。</p>
+          <b>求人一覧へ</b>
+          <em>確認推奨</em>
+        </a>
+      </div>
     </section>
 
     <section class="portal3-section portal3-news" id="news-events">
@@ -724,8 +741,25 @@
     }
 
     function renderFallback() {
-      miniRoot.innerHTML = "";
-      cardRoot.innerHTML = "";
+      miniRoot.innerHTML = `
+        <a class="portal3-job-mini" href="/germany/ja/jobs/">
+          <span class="portal3-job-icon">▦</span>
+          <span>
+            <strong>求人情報を確認中です</strong>
+            <small>掲載条件と応募先は各求人の詳細で確認してください</small>
+          </span>
+        </a>
+      `;
+      cardRoot.innerHTML = `
+        <a class="portal3-job-card portal3-fallback-card" href="/germany/ja/jobs/">
+          <span>▦</span>
+          <strong>求人データを確認中です</strong>
+          <small>掲載内容は雇用主または掲載元の申告に基づきます。</small>
+          <p>応募前に仕事内容、勤務地、給与、ビザサポート、応募先の連絡先を掲載元へ確認してください。</p>
+          <b>求人一覧へ</b>
+          <em>確認推奨</em>
+        </a>
+      `;
     }
 
     function render(jobs) {

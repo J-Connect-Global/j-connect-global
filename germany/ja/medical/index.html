@@ -7,7 +7,7 @@
   <title>医療・緊急 | ドイツの病院・クリニック情報 | J-Connect Germany</title>
   <meta name="description" content="ドイツの病院、クリニック、家庭医、薬局などの医療情報を日本語で整理。地域、カテゴリ、言語対応、地図リンクを確認できます。" />
   <meta name="theme-color" content="#f4f8fc" />
-  <meta name="robots" content="index,follow" />
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/medical/" />
   <link rel="alternate" hreflang="ja" href="https://j-connect-global.com/germany/ja/medical/">
   <link rel="alternate" hreflang="x-default" href="https://j-connect-global.com/germany/ja/medical/">
@@ -63,6 +63,7 @@
       document.head.appendChild(js);
     })();
   </script>
+  <script type="application/ld+json" data-jconnect-managed="page-structured-data">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://j-connect-global.com/germany/ja/"},{"@type":"ListItem","position":2,"name":"生活・手続き","item":"https://j-connect-global.com/germany/ja/living/"},{"@type":"ListItem","position":3,"name":"医療","item":"https://j-connect-global.com/germany/ja/medical/"}]}</script>
 </head>
 
 <body>
@@ -124,7 +125,7 @@
         病院、クリニック、薬局などの情報を地域・カテゴリ・言語対応から確認できます。
       </p>
       <p class="directory-trust-note">
-        このページは医療機関を探すための入口です。診療内容、受付時間、言語対応、保険対応は変更されることがあります。受診前に必ず公式サイトまたは医療機関へ直接確認してください。緊急時は112へ連絡してください。
+        このページは医療機関を探すための入口であり、医療上の助言や診断ではありません。診療内容、受付時間、言語対応、保険対応は変更されることがあります。受診前に必ず公式サイトまたは医療機関へ直接確認してください。緊急時は112へ連絡してください。
       </p>
     </div>
   </section>
@@ -551,7 +552,7 @@
       els.statusBox.innerHTML = `
         <span class="status-title">${escapeHtml(title)}</span>
         <div>${escapeHtml(body)}</div>
-        <div class="directory-medical-note">このページは医療機関を探すための入口です。受診前に必ず公式サイトまたは医療機関へ直接確認してください。緊急時は112へ連絡してください。</div>
+        <div class="directory-medical-note">このページは医療機関を探すための入口であり、医療上の助言や診断ではありません。受診前に必ず公式サイトまたは医療機関へ直接確認してください。緊急時は112へ連絡してください。</div>
         <div class="status-actions">
           ${showRetry ? `<button class="btn btn-primary" type="button" data-retry-load>再読み込み</button>` : ""}
           ${showReset ? `<button class="btn btn-secondary" type="button" data-reset-filters>条件をリセット</button>` : ""}

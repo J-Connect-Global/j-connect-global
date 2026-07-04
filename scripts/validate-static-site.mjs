@@ -5,6 +5,43 @@ import vm from 'node:vm';
 
 const root = process.cwd();
 const scriptPath = path.relative(root, fileURLToPath(import.meta.url));
+const SITE_ORIGIN = 'https://j-connect-global.com';
+const PRIMARY_JA_PATH = '/germany/ja/';
+const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
+
+const requiredOgProperties = [
+  'og:title',
+  'og:description',
+  'og:url',
+  'og:image',
+  'og:type',
+  'og:site_name',
+  'og:locale',
+];
+
+const requiredTwitterNames = [
+  'twitter:card',
+  'twitter:title',
+  'twitter:description',
+  'twitter:image',
+];
+
+const coreIndexableUrls = new Set([
+  '/germany/ja/',
+  '/germany/ja/about/',
+  '/germany/ja/contact/',
+  '/germany/ja/terms/',
+  '/germany/ja/privacy/',
+  '/germany/ja/impressum/',
+  '/germany/ja/community/',
+  '/germany/ja/living/',
+  '/germany/ja/jobs/',
+  '/germany/ja/events/',
+  '/germany/ja/learn-german/',
+  '/germany/ja/eat/',
+  '/germany/ja/shopping/',
+  '/germany/ja/medical/',
+]);
 
 const requiredPages = [
   '/germany/ja/',
@@ -90,6 +127,7 @@ const checkedTextExts = new Set(['.html', '.css', '.js', '.mjs']);
 const htmlFiles = [];
 const textFiles = [];
 const problems = [];
+const pagesByUrl = loadPagesRegistry();
 
 function walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -106,6 +144,27 @@ function walk(dir) {
     if (normalizedRel === scriptPath.split(path.sep).join('/')) continue;
     if (entry.name.endsWith('.html')) htmlFiles.push(full);
     if (checkedTextExts.has(ext)) textFiles.push(full);
+  }
+}
+
+function loadPagesRegistry() {
+  const fullPath = path.join(root, PAGE_REGISTRY_PATH);
+  if (!fs.existsSync(fullPath)) return new Map();
+
+  try {
+    const pages = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+    if (!Array.isArray(pages)) {
+      problems.push(`${PAGE_REGISTRY_PATH} must contain a JSON array.`);
+      return new Map();
+    }
+    return new Map(pages.map((page) => [normalizeUrl(page.url), {
+      ...page,
+      url: normalizeUrl(page.url),
+      canonical_url: normalizeUrl(page.canonical_url || page.url),
+    }]));
+  } catch (error) {
+    problems.push(`Unable to parse ${PAGE_REGISTRY_PATH}: ${error.message}`);
+    return new Map();
   }
 }
 
@@ -234,6 +293,7 @@ for (const file of textFiles) {
 for (const file of htmlFiles) {
   const rel = path.relative(root, file).split(path.sep).join('/');
   const html = fs.readFileSync(file, 'utf8');
+  const url = fileToUrl(rel);
 
   const faviconLinks = html.match(/<link\b[^>]*rel=["']icon["'][^>]*href=["']\/assets\/images\/brand\/favicon\.png["'][^>]*>/gi) || [];
   for (const link of faviconLinks) {
@@ -241,6 +301,9 @@ for (const file of htmlFiles) {
       problems.push(`Incorrect favicon MIME type in ${rel}: ${link}`);
     }
   }
+
+  validateHtmlMetadata(rel, url, html, pagesByUrl.get(url));
+  validateJsonLd(rel, html);
 
   const attrPattern = /\b(?:href|src|action)=["']([^"']+)["']/gi;
   for (const match of html.matchAll(attrPattern)) {
@@ -251,6 +314,232 @@ for (const file of htmlFiles) {
       problems.push(`Missing internal target in ${rel}: ${match[1]}`);
     }
   }
+}
+
+validateSitemap();
+
+function validateHtmlMetadata(rel, url, html, page) {
+  if (!url.startsWith(PRIMARY_JA_PATH)) return;
+
+  const title = extractTitle(html);
+  const description = extractMetaContent(html, 'name', 'description');
+  const robots = normalizeRobots(extractMetaContent(html, 'name', 'robots'));
+  const canonical = extractCanonical(html);
+  const expectedCanonical = absoluteUrl(page?.canonical_url || url);
+  const shouldIndex = shouldIndexHtml(url, page);
+  const hasNoindex = robots.includes('noindex');
+
+  if (!title) problems.push(`${rel} missing <title>.`);
+  if (!description) problems.push(`${rel} missing meta description.`);
+  if (!robots) problems.push(`${rel} missing robots meta.`);
+
+  if (shouldIndex) {
+    if (robots !== 'index, follow') problems.push(`${rel} should use robots "index, follow", got "${robots || '(missing)'}".`);
+    if (coreIndexableUrls.has(url) && hasNoindex) problems.push(`${rel} core public page must not be noindex.`);
+  } else if (page && robots !== 'noindex, follow') {
+    problems.push(`${rel} non-indexable registry page should use robots "noindex, follow", got "${robots || '(missing)'}".`);
+  }
+
+  if (canonical !== expectedCanonical) {
+    problems.push(`${rel} canonical should be ${expectedCanonical}, got ${canonical || '(missing)'}.`);
+  }
+
+  if (shouldIndex) {
+    if (!hasHreflang(html, 'ja')) problems.push(`${rel} missing hreflang="ja".`);
+    if (!hasHreflang(html, 'x-default')) problems.push(`${rel} missing hreflang="x-default".`);
+  }
+
+  for (const property of requiredOgProperties) {
+    if (!extractMetaContent(html, 'property', property)) problems.push(`${rel} missing ${property}.`);
+  }
+  for (const name of requiredTwitterNames) {
+    if (!extractMetaContent(html, 'name', name)) problems.push(`${rel} missing ${name}.`);
+  }
+
+  const ogUrl = extractMetaContent(html, 'property', 'og:url');
+  if (ogUrl && ogUrl !== canonical) problems.push(`${rel} og:url should match canonical URL.`);
+
+  if (isArticleUrl(url, page)) {
+    if (!hasJsonLdType(html, 'Article')) problems.push(`${rel} article page missing Article JSON-LD.`);
+    if (!hasJsonLdType(html, 'BreadcrumbList')) problems.push(`${rel} article page missing BreadcrumbList JSON-LD.`);
+  }
+
+  if (page && shouldIndex && page.id !== 'page-home' && ['hub', 'listing', 'directory', 'detail'].includes(page.type)) {
+    if (!hasJsonLdType(html, 'BreadcrumbList')) problems.push(`${rel} indexable ${page.type} page missing BreadcrumbList JSON-LD.`);
+  }
+
+  validateTrustPlaceholders(rel, html);
+}
+
+function validateJsonLd(rel, html) {
+  const scripts = [...html.matchAll(/<script\b(?=[^>]*type=["']application\/ld\+json["'])[^>]*>([\s\S]*?)<\/script>/gi)];
+  for (const [index, match] of scripts.entries()) {
+    let parsed;
+    try {
+      parsed = JSON.parse(match[1]);
+    } catch (error) {
+      problems.push(`${rel} has invalid JSON-LD #${index + 1}: ${error.message}`);
+      continue;
+    }
+    validateJsonLdUrls(parsed, `${rel} JSON-LD #${index + 1}`);
+    validateJsonLdSchemaPolicy(parsed, `${rel} JSON-LD #${index + 1}`);
+  }
+}
+
+function validateJsonLdUrls(value, label, keyPath = []) {
+  if (Array.isArray(value)) {
+    value.forEach((item, index) => validateJsonLdUrls(item, label, [...keyPath, index]));
+    return;
+  }
+  if (!value || typeof value !== 'object') return;
+
+  for (const [key, data] of Object.entries(value)) {
+    const nextPath = [...keyPath, key];
+    if (typeof data === 'string' && isJsonLdUrlKey(key)) {
+      if (data.startsWith('/') || /^https?:\/\/(?:localhost|127\.0\.0\.1|0\.0\.0\.0)(?:[/:]|$)/i.test(data)) {
+        problems.push(`${label} uses a non-production URL at ${nextPath.join('.')}: ${data}`);
+      }
+      if (/^http:\/\//i.test(data) && data.startsWith(`${SITE_ORIGIN.replace('https:', 'http:')}`)) {
+        problems.push(`${label} uses http for production URL at ${nextPath.join('.')}: ${data}`);
+      }
+    }
+    validateJsonLdUrls(data, label, nextPath);
+  }
+}
+
+function validateJsonLdSchemaPolicy(value, label) {
+  const items = Array.isArray(value) ? value : [value];
+  for (const item of items) {
+    const types = jsonLdTypes(item);
+    if (types.includes('JobPosting')) {
+      problems.push(`${label} contains JobPosting schema; job data is not verified enough for structured JobPosting output.`);
+    }
+    if (types.includes('Event') && !isRealSchemaDate(item.startDate)) {
+      problems.push(`${label} contains Event schema without a real ISO startDate.`);
+    }
+  }
+}
+
+function validateTrustPlaceholders(rel, html) {
+  if (!/^germany\/ja\/(?:terms|privacy|impressum|contact)\//.test(rel)) return;
+  for (const term of ['Site Administrator', 'TODO', 'TBD', 'lorem ipsum']) {
+    if (html.toLowerCase().includes(term.toLowerCase())) {
+      problems.push(`${rel} contains placeholder-looking trust/legal text: ${term}`);
+    }
+  }
+}
+
+function validateSitemap() {
+  const sitemapPath = path.join(root, 'sitemap.xml');
+  if (!fs.existsSync(sitemapPath)) {
+    problems.push('Missing sitemap.xml.');
+    return;
+  }
+
+  const xml = fs.readFileSync(sitemapPath, 'utf8');
+  const urls = [...xml.matchAll(/<loc>([\s\S]*?)<\/loc>/g)].map((match) => match[1].trim());
+  const seen = new Set();
+  for (const loc of urls) {
+    if (seen.has(loc)) problems.push(`sitemap.xml contains duplicate URL: ${loc}`);
+    seen.add(loc);
+
+    if (!loc.startsWith(`${SITE_ORIGIN}${PRIMARY_JA_PATH}`)) {
+      problems.push(`sitemap.xml URL should be a production JA URL: ${loc}`);
+      continue;
+    }
+
+    const url = normalizeUrl(new URL(loc).pathname);
+    const target = path.join(root, url.slice(1));
+    if (!localTargetExists(target)) {
+      problems.push(`sitemap.xml URL does not resolve locally: ${loc}`);
+      continue;
+    }
+
+    const page = pagesByUrl.get(url);
+    if (page && !shouldIndexHtml(url, page)) {
+      problems.push(`sitemap.xml includes non-indexable registry page: ${url}`);
+    }
+  }
+}
+
+function fileToUrl(relPath) {
+  const normalized = relPath.replace(/\\/g, '/');
+  if (normalized === 'germany/ja/index.html') return '/germany/ja/';
+  if (normalized.endsWith('/index.html')) return `/${normalized.slice(0, -'index.html'.length)}`;
+  return `/${normalized}`;
+}
+
+function normalizeUrl(value) {
+  const url = String(value || '').trim();
+  if (!url || url === '/') return url || '';
+  return url.endsWith('/') ? url : `${url}/`;
+}
+
+function absoluteUrl(url) {
+  if (/^https?:\/\//i.test(url)) return url;
+  return `${SITE_ORIGIN}${url.startsWith('/') ? url : `/${url}`}`;
+}
+
+function extractTitle(html) {
+  return String(html || '').match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.replace(/\s+/g, ' ').trim() || '';
+}
+
+function extractMetaContent(html, attr, key) {
+  const pattern = new RegExp(`<meta\\b(?=[^>]*${attr}=["']${escapeRegExp(key)}["'])(?=[^>]*content=["']([^"']*)["'])[^>]*>`, 'i');
+  return String(html || '').match(pattern)?.[1]?.trim() || '';
+}
+
+function extractCanonical(html) {
+  return String(html || '').match(/<link\b(?=[^>]*rel=["']canonical["'])(?=[^>]*href=["']([^"']*)["'])[^>]*>/i)?.[1]?.trim() || '';
+}
+
+function normalizeRobots(value) {
+  return String(value || '').toLowerCase().replace(/\s*,\s*/g, ', ').replace(/\s+/g, ' ').trim();
+}
+
+function shouldIndexHtml(url, page) {
+  if (page) return page.status === 'published' && (page.search_visible === true || page.sitemap_visible === true);
+  return isArticleUrl(url, page);
+}
+
+function isArticleUrl(url, page) {
+  if (page) return false;
+  return /^\/germany\/ja\/(?:living|events|learn-german)\/.+\/$/.test(url);
+}
+
+function hasHreflang(html, lang) {
+  return new RegExp(`<link\\b(?=[^>]*rel=["']alternate["'])(?=[^>]*hreflang=["']${escapeRegExp(lang)}["'])[^>]*>`, 'i').test(html);
+}
+
+function hasJsonLdType(html, type) {
+  for (const match of String(html || '').matchAll(/<script\b(?=[^>]*type=["']application\/ld\+json["'])[^>]*>([\s\S]*?)<\/script>/gi)) {
+    try {
+      const parsed = JSON.parse(match[1]);
+      const items = Array.isArray(parsed) ? parsed : [parsed];
+      if (items.some((item) => jsonLdTypes(item).includes(type))) return true;
+    } catch {
+      return false;
+    }
+  }
+  return false;
+}
+
+function jsonLdTypes(item) {
+  const value = item?.['@type'];
+  if (Array.isArray(value)) return value;
+  return value ? [value] : [];
+}
+
+function isJsonLdUrlKey(key) {
+  return /^(?:url|sameAs|image|logo|mainEntityOfPage|item|id|@id)$/i.test(key);
+}
+
+function isRealSchemaDate(value) {
+  return /^\d{4}-\d{2}-\d{2}(?:T\d{2}:\d{2}(?::\d{2})?(?:Z|[+-]\d{2}:\d{2})?)?$/.test(String(value || '').trim());
+}
+
+function escapeRegExp(value) {
+  return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 function isDeferredArticleImageUrl(html, attrIndex, url) {

@@ -33,7 +33,7 @@ After merging this branch, manually redeploy Apps Script from `apps-script/commu
 
 - Deploy the site and redeploy Apps Script from `apps-script/community-board-api.gs`.
 - Confirm `/germany/ja/community/` is reachable and has `index, follow`.
-- Confirm `/germany/ja/community/post/`, `/contact/`, `/report/`, `/manage/`, `/complete/`, `/delete/`, and `/thanks/` are reachable and have `noindex, nofollow`.
+- Confirm `/germany/ja/community/post/`, `/contact/`, `/report/`, `/manage/`, `/complete/`, `/delete/`, and `/thanks/` are reachable and have `noindex, follow`.
 - Confirm `/robots.txt` exposes `Sitemap: https://j-connect-global.com/sitemap.xml`.
 - Confirm `/sitemap.xml` excludes Community utility pages and redirect-only legacy pages.
 - Submit a test Community post and verify the private email receives the management URL.

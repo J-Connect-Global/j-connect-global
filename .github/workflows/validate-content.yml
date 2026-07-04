@@ -38,3 +38,6 @@ jobs:
 
       - name: Validate static site
         run: node scripts/validate-static-site.mjs
+
+      - name: Validate production parity markers
+        run: node scripts/validate-production-parity.mjs

@@ -4,6 +4,7 @@ import path from 'node:path';
 const root = process.cwd();
 const SITE_ORIGIN = 'https://j-connect-global.com';
 const HOME_PATH = 'germany/ja/index.html';
+const MEDICAL_PATH = 'germany/ja/medical/index.html';
 const LIVE_ENABLED = process.argv.includes('--live') || process.env.JCONNECT_VALIDATE_LIVE_PRODUCTION === '1';
 const problems = [];
 
@@ -22,8 +23,10 @@ const oldHomeMarkers = [
 ];
 
 function main() {
-  const localHome = readLocalHome();
+  const localHome = readLocalHtml(HOME_PATH);
+  const localMedical = readLocalHtml(MEDICAL_PATH);
   validateHomeMarkers(localHome, `${HOME_PATH} local generated output`);
+  validateMedicalMarkers(localMedical, `${MEDICAL_PATH} local generated output`);
 
   if (LIVE_ENABLED) {
     return validateLiveHome();
@@ -32,30 +35,39 @@ function main() {
   finish('Production parity validation passed for committed generated output. Live production fetch skipped.');
 }
 
-function readLocalHome() {
-  const fullPath = path.join(root, HOME_PATH);
+function readLocalHtml(relPath) {
+  const fullPath = path.join(root, relPath);
   if (!fs.existsSync(fullPath)) {
-    fail(`Missing generated Home page: ${HOME_PATH}`);
+    fail(`Missing generated page: ${relPath}`);
     finish();
   }
   return fs.readFileSync(fullPath, 'utf8');
 }
 
 async function validateLiveHome() {
+  const homeHtml = await fetchLiveHtml('/germany/ja/', 'Home');
+  if (homeHtml) validateHomeMarkers(homeHtml, `${SITE_ORIGIN}/germany/ja/ live production`);
+
+  const medicalHtml = await fetchLiveHtml('/germany/ja/medical/', 'Medical');
+  if (medicalHtml) validateMedicalMarkers(medicalHtml, `${SITE_ORIGIN}/germany/ja/medical/ live production`);
+
+  finish('Production parity validation passed for committed output and live production.');
+}
+
+async function fetchLiveHtml(urlPath, label) {
   try {
-    const response = await fetch(`${SITE_ORIGIN}/germany/ja/`, {
+    const response = await fetch(`${SITE_ORIGIN}${urlPath}`, {
       headers: { 'user-agent': 'J-Connect production parity check' },
     });
     if (!response.ok) {
-      fail(`Live production Home fetch failed: HTTP ${response.status}`);
-    } else {
-      validateHomeMarkers(await response.text(), `${SITE_ORIGIN}/germany/ja/ live production`);
+      fail(`Live production ${label} fetch failed: HTTP ${response.status}`);
+      return '';
     }
+    return await response.text();
   } catch (error) {
-    fail(`Live production Home fetch failed: ${error.message}`);
+    fail(`Live production ${label} fetch failed: ${error.message}`);
+    return '';
   }
-
-  finish('Production parity validation passed for committed output and live production.');
 }
 
 function validateHomeMarkers(html, label) {
@@ -84,6 +96,10 @@ function validateHomeMarkers(html, label) {
     if (/準備中|coming soon|読み込み中|loading\.\.\./i.test(livingMarker)) fail(`${label} Home Living marker contains placeholder/loading copy.`);
   }
 
+  const livingSection = extractSectionById(html, 'living');
+  const livingArticleCards = (livingSection.match(/class="portal3-card"/g) || []).length;
+  if (livingArticleCards < 5) fail(`${label} Home Living section should contain at least 5 article cards.`);
+
   const jobsSection = extractSectionById(html, 'jobs');
   for (const marker of [
     'id="homeJobsMini"',
@@ -100,10 +116,49 @@ function validateHomeMarkers(html, label) {
   if (!jobsSection.includes('/germany/ja/jobs/posting/')) {
     fail(`${label} Home Jobs section should link to the job posting guidance page.`);
   }
+  for (const requiredText of [
+    '掲載内容は雇用主または掲載元の申告に基づきます。',
+    '応募前に仕事内容、勤務地、給与、ビザサポート',
+  ]) {
+    if (!jobsSection.includes(requiredText)) fail(`${label} Home Jobs section missing current trust copy: ${requiredText}`);
+  }
+
+  const eventsMarker = extractMarkedContent(html, 'home-events');
+  if (!eventsMarker) {
+    fail(`${label} missing generated Home Events marker.`);
+  } else {
+    validateHomeEventBadges(eventsMarker, label);
+  }
 
   const communitySection = extractSectionById(html, 'community');
   if (!communitySection.includes('data-community-posts')) {
     fail(`${label} Home Community section missing static/GAS post container.`);
+  }
+}
+
+function validateHomeEventBadges(html, label) {
+  const staleBadgePatterns = [
+    /<b>\s*日程\s*<\/b>\s*<strong>\s*確認\s*<\/strong>/,
+    /<b>\s*冬\s*<\/b>\s*<strong>\s*確認\s*<\/strong>/,
+    /日程\s*確認/,
+    /冬\s*確認/,
+    /æ—¥ç¨‹\s*ç¢ºèª/,
+    /å†¬\s*ç¢ºèª/,
+  ];
+  for (const pattern of staleBadgePatterns) {
+    if (pattern.test(html)) fail(`${label} contains stale Home event badge label: ${pattern}`);
+  }
+  if (!html.includes('公式情報') && !html.includes('開催日') && !html.includes('冬の')) {
+    fail(`${label} Home Events marker is missing polished event badge wording.`);
+  }
+}
+
+function validateMedicalMarkers(html, label) {
+  for (const requiredText of [
+    '医療上の助言や診断ではありません',
+    '緊急時は112',
+  ]) {
+    if (!html.includes(requiredText)) fail(`${label} missing Medical trust copy: ${requiredText}`);
   }
 }
 

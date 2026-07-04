@@ -597,6 +597,17 @@ body.portal3-home > .page-footer{
   align-items:center;
 }
 
+.portal3-trust-note{
+  margin:10px 0 12px 42px;
+  max-width:720px;
+  border-left:3px solid #0d60bd;
+  padding-left:12px;
+  color:#284b72;
+  font-size:12px;
+  font-weight:800;
+  line-height:1.65;
+}
+
 .portal3-section-buttons{
   display:flex;
   gap:10px;
@@ -1215,6 +1226,10 @@ body.portal3-home > .page-footer{
   }
 
   .portal3-section-head p{
+    margin-left:0;
+  }
+
+  .portal3-trust-note{
     margin-left:0;
   }
 

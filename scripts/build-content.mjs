@@ -1740,10 +1740,18 @@ function renderHomeCardImage(item, section, className) {
 
 function eventBadge(item) {
   const date = String(item.event_date || '');
-  if (date.includes('週末')) return { top: '週末', main: '確認', sub: '' };
-  if (item.tags.includes('冬') || item.category.includes('季節')) return { top: '冬', main: '確認', sub: '' };
-  if (date.includes('年')) return { top: '日程', main: '変動', sub: '' };
-  return { top: '日程', main: '確認', sub: '' };
+  const isoDate = date.match(/\b(20\d{2})-(\d{2})-(\d{2})\b/);
+  if (isoDate) {
+    return {
+      top: '開催日',
+      main: `${Number(isoDate[2])}/${Number(isoDate[3])}`,
+      sub: isoDate[1]
+    };
+  }
+  if (date.includes('週末')) return { top: '週末', main: 'イベント', sub: '随時' };
+  if (item.tags.includes('冬') || item.category.includes('季節')) return { top: '冬の', main: 'イベント', sub: '' };
+  if (date.includes('年') || date.includes('異なる') || date.includes('変動')) return { top: '開催時期', main: '変動制', sub: '' };
+  return { top: '公式情報', main: '確認中', sub: '' };
 }
 
 function homeItems(items, limit, predicate = () => true) {

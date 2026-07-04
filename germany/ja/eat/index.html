@@ -183,13 +183,32 @@
       <div class="toolbar jc-results-toolbar">
         <div class="results-meta">
           <h2 class="results-title">飲食</h2>
-          <div class="results-sub" id="resultsSummary">360件を表示中 / 全360件</div>
+          <div class="results-sub" id="resultsSummary">静的ガイドを表示中</div>
         </div>
         <div class="chips jc-active-chips" id="activeChips"></div>
       </div>
 
-      <div id="statusBox" class="status-box jc-loading-state">データを読み込んでいます...</div>
-      <div id="cards" class="cards jc-result-grid" aria-live="polite"></div>
+      <div id="statusBox" class="status-box jc-loading-state">静的ガイドを表示中です。店舗データを読み込むと一覧が更新されます。</div>
+      <div id="cards" class="cards jc-result-grid" aria-live="polite">
+        <article class="card jc-result-card directory-seed-card">
+          <div class="card-body">
+            <div class="card-main">
+              <span class="directory-seed-label">探す前に確認</span>
+              <h3 class="card-title jc-result-title">地図・営業時間・予約条件を公式情報で確認</h3>
+              <p class="card-desc">飲食店データを読み込む間、探し方の基本を表示しています。営業時間、定休日、予約、支払い方法、アレルギー対応は変更されることがあります。</p>
+              <ul class="directory-seed-points">
+                <li>公式サイトや地図サービスで営業状況を確認</li>
+                <li>子連れ・大人数・ベジタリアン対応は事前確認</li>
+                <li>掲載・修正依頼はお問い合わせから連絡</li>
+              </ul>
+            </div>
+            <div class="link-row jc-result-actions">
+              <a class="btn btn-primary" href="/germany/ja/contact/">掲載・修正を相談</a>
+              <a class="btn btn-secondary" href="/germany/ja/living/">生活ガイドを見る</a>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
     <aside class="map-panel" id="mapPanel" aria-label="地図表示エリア">

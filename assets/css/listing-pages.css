@@ -264,6 +264,38 @@ button{cursor:pointer}
   line-height:1.55;
   font-weight:700;
 }
+.directory-static-note{
+  margin:0;
+  color:var(--listing-muted);
+  font-size:12.5px;
+  line-height:1.55;
+  font-weight:700;
+}
+.directory-seed-card .card-body{
+  grid-template-columns:1fr;
+}
+.directory-seed-label{
+  width:max-content;
+  max-width:100%;
+  border:1px solid var(--listing-line);
+  border-radius:999px;
+  background:var(--listing-soft);
+  color:var(--listing-navy);
+  padding:4px 8px;
+  font-size:11px;
+  font-weight:900;
+  line-height:1;
+}
+.directory-seed-points{
+  margin:0;
+  padding-left:18px;
+  color:#405060;
+  font-size:12.5px;
+  line-height:1.55;
+}
+.directory-seed-points li+li{
+  margin-top:3px;
+}
 .cards{display:grid;grid-template-columns:1fr;gap:10px;min-width:0}.layout.grid-mode .cards{grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
 .card{position:relative;overflow:hidden;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}.card:hover{transform:translateY(-1px);border-color:var(--listing-line-strong);box-shadow:var(--listing-shadow-hover)}.card.active,.card.active-map-item{border-color:var(--listing-navy);box-shadow:0 0 0 3px rgba(30,58,95,.13),var(--listing-shadow)}
 .card-body{padding:12px;display:grid;gap:8px;min-width:0}.layout.list-mode .card-body{grid-template-columns:minmax(0,1fr) minmax(180px,.42fr);gap:12px;align-items:start}.card-main{display:grid;gap:7px;min-width:0}.card-title,.job-title{margin:0;color:var(--listing-ink);font-size:17px;line-height:1.3;font-weight:900;letter-spacing:0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;overflow-wrap:anywhere}.card-subtitle{margin:2px 0 0;color:var(--listing-muted);font-size:13px;font-weight:700}.card-desc,.job-summary{margin:0;color:#4d5b68;font-size:13px;line-height:1.55;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}.meta-list{display:grid;gap:5px}.layout.list-mode .meta-list{display:flex;flex-wrap:wrap;gap:5px 8px}.meta-item{display:flex;gap:6px;align-items:baseline;min-width:0;font-size:12px;line-height:1.45}.layout.list-mode .meta-item{display:inline-flex;max-width:100%;align-items:center}.meta-label{flex:0 0 auto;color:var(--listing-navy);font-weight:900}.meta-value{min-width:0;color:var(--listing-muted);overflow-wrap:anywhere}.layout.list-mode .meta-value{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.layout.grid-mode .card-body{display:grid;gap:8px;padding:13px}.layout.grid-mode .card-title,.layout.grid-mode .job-title{font-size:16px}.layout.grid-mode .card-desc,.layout.grid-mode .job-summary{-webkit-line-clamp:2;line-clamp:2}.layout.grid-mode .list-detail-comment,.layout.map-mode .list-detail-comment{display:none}

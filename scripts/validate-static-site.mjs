@@ -43,6 +43,24 @@ const coreIndexableUrls = new Set([
   '/germany/ja/medical/',
 ]);
 
+const directoryStaticRequirements = new Map([
+  ['/germany/ja/jobs/', ['directory-seed-card', '応募前の確認', '求人情報は掲載元の確認が前提です', '応募前に会社情報']],
+  ['/germany/ja/eat/', ['directory-seed-card', '静的ガイドを表示中', '地図・営業時間・予約条件を公式情報で確認']],
+  ['/germany/ja/shopping/', ['directory-seed-card', '静的ガイドを表示中', '日本食材・生活用品は在庫と配送条件を確認']],
+  ['/germany/ja/medical/', ['directory-seed-card', '医療上の助言や診断ではありません', '緊急時は112']],
+  ['/germany/ja/community/', ['hero-safety', '受け渡しは公共の場所推奨', '投稿内容や取引の成立をサイトが保証するものではありません']],
+  ['/germany/ja/events/', ['data-events-card', 'data-news-card', 'イベント一覧']],
+]);
+
+const staleHomeEventBadgePatterns = [
+  /<b>\s*日程\s*<\/b>\s*<strong>\s*確認\s*<\/strong>/,
+  /<b>\s*冬\s*<\/b>\s*<strong>\s*確認\s*<\/strong>/,
+  /日程\s*確認/,
+  /冬\s*確認/,
+  /æ—¥ç¨‹\s*ç¢ºèª/,
+  /å†¬\s*ç¢ºèª/,
+];
+
 const requiredPages = [
   '/germany/ja/',
   '/germany/ja/about/',
@@ -304,6 +322,7 @@ for (const file of htmlFiles) {
 
   validateHtmlMetadata(rel, url, html, pagesByUrl.get(url));
   validateJsonLd(rel, html);
+  validateStaticContentQuality(rel, url, html);
 
   const attrPattern = /\b(?:href|src|action)=["']([^"']+)["']/gi;
   for (const match of html.matchAll(attrPattern)) {
@@ -427,6 +446,73 @@ function validateTrustPlaceholders(rel, html) {
       problems.push(`${rel} contains placeholder-looking trust/legal text: ${term}`);
     }
   }
+}
+
+function validateStaticContentQuality(rel, url, html) {
+  if (url === '/germany/ja/') validateHomeStaticQuality(rel, html);
+
+  const requiredTexts = directoryStaticRequirements.get(url);
+  if (!requiredTexts) return;
+
+  for (const text of requiredTexts) {
+    if (!html.includes(text)) problems.push(`${rel} missing visible static guidance/trust text: ${text}`);
+  }
+
+  if (/^\/germany\/ja\/(?:jobs|eat|shopping|medical)\/$/.test(url)) {
+    if (/<div\b[^>]*id=["']cards["'][^>]*>\s*<\/div>/i.test(html)) {
+      problems.push(`${rel} has an empty initial #cards container; public directory pages need static guidance before JavaScript runs.`);
+    }
+    const statusBox = extractElementById(html, 'statusBox');
+    if (/^\s*(?:データを読み込んでいます|読み込み中)\.{0,3}\s*$/i.test(stripTags(statusBox))) {
+      problems.push(`${rel} initial status box is loading-only instead of useful static guidance.`);
+    }
+  }
+}
+
+function validateHomeStaticQuality(rel, html) {
+  const eventsMarker = extractMarkedContent(html, 'home-events');
+  if (!eventsMarker) {
+    problems.push(`${rel} missing generated Home Events marker.`);
+  } else {
+    for (const pattern of staleHomeEventBadgePatterns) {
+      if (pattern.test(eventsMarker)) problems.push(`${rel} contains stale Home event badge label: ${pattern}`);
+    }
+  }
+
+  const jobsSection = extractSectionById(html, 'jobs');
+  for (const text of [
+    '掲載内容は雇用主または掲載元の申告に基づきます。',
+    '応募前に仕事内容、勤務地、給与、ビザサポート',
+  ]) {
+    if (!jobsSection.includes(text)) problems.push(`${rel} Home Jobs section missing trust copy: ${text}`);
+  }
+
+  const livingSection = extractSectionById(html, 'living');
+  const livingCards = (livingSection.match(/class="portal3-card"/g) || []).length;
+  if (livingCards < 5) problems.push(`${rel} Home Living section should contain at least 5 article cards.`);
+}
+
+function extractMarkedContent(html, marker) {
+  const start = `<!-- CONTENT:${marker}:start -->`;
+  const end = `<!-- CONTENT:${marker}:end -->`;
+  const startIndex = html.indexOf(start);
+  const endIndex = html.indexOf(end);
+  if (startIndex === -1 || endIndex === -1 || endIndex < startIndex) return '';
+  return html.slice(startIndex + start.length, endIndex);
+}
+
+function extractSectionById(html, id) {
+  const match = html.match(new RegExp(`<section\\b[^>]*id=["']${escapeRegExp(id)}["'][\\s\\S]*?<\\/section>`, 'i'));
+  return match?.[0] || '';
+}
+
+function extractElementById(html, id) {
+  const match = html.match(new RegExp(`<[^>]+\\bid=["']${escapeRegExp(id)}["'][^>]*>[\\s\\S]*?<\\/[^>]+>`, 'i'));
+  return match?.[0] || '';
+}
+
+function stripTags(value) {
+  return String(value || '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
 }
 
 function validateSitemap() {

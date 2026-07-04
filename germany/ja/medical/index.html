@@ -187,8 +187,23 @@
         <div class="chips jc-active-chips" id="activeChips"></div>
       </div>
 
-      <div id="statusBox" class="status-box jc-loading-state">データを読み込んでいます...</div>
-      <div id="cards" class="cards jc-result-grid" aria-live="polite"></div>
+      <div id="statusBox" class="status-box jc-loading-state">静的ガイドを表示中です。医療リソースデータを読み込むと一覧が更新されます。</div>
+      <div id="cards" class="cards jc-result-grid" aria-live="polite">
+        <article class="card jc-result-card directory-seed-card">
+          <div class="card-body">
+            <div class="card-main">
+              <span class="directory-seed-label">医療情報の確認</span>
+              <h3 class="card-title jc-result-title">このページは医療上の助言や診断ではありません</h3>
+              <p class="card-desc">医療リソースデータを読み込む間、探し方の基本を表示しています。診療内容、受付時間、言語対応、保険対応は必ず公式サイトまたは医療機関へ直接確認してください。</p>
+              <div class="directory-medical-note">緊急時は112へ連絡してください。症状や治療判断は医療機関・公式窓口の案内に従ってください。</div>
+            </div>
+            <div class="link-row jc-result-actions">
+              <a class="btn btn-primary" href="/germany/ja/contact/">掲載・修正を相談</a>
+              <a class="btn btn-secondary" href="/germany/ja/living/">生活ガイドを見る</a>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
     <aside class="map-panel" id="mapPanel" aria-label="地図表示">

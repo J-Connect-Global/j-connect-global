@@ -9,7 +9,7 @@ This repository publishes a static GitHub Pages site. Generated HTML and JSON ar
 - Shared Japanese header/footer, canonical social metadata, robots normalization, and registry page JSON-LD: output from `node scripts/apply-layout.mjs`.
 - Jobs: source spreadsheet or GAS -> `assets/data/jobs/jobs.json` static cache -> UI, with GAS as runtime fallback.
 - Community: source spreadsheet or GAS -> `assets/data/community/posts.json` static cache -> UI, with GAS as runtime fallback.
-- Directory data for Eat, Shopping, and Medical: Contents GAS at runtime, with static explanatory/fallback content in committed HTML.
+- Directory data for Eat, Shopping, and Medical: Contents GAS at runtime, with static seed/guidance cards in committed HTML.
 - Editorial images: committed under `/assets/img/...` or `/assets/images/...`.
 - User-submitted Community images: Drive thumbnail URLs only; do not move them into editorial image folders.
 
@@ -36,5 +36,7 @@ This repository publishes a static GitHub Pages site. Generated HTML and JSON ar
 - Do not add `JobPosting` schema until a listing source has complete, verified employer and application data.
 - Do not add `Event` schema for uncertain or recurring event-guide pages without a real ISO `startDate`.
 - Keep static JSON first and GAS fallback second for Jobs and Community.
+- Static seed/guidance cards are not verified listings. They explain how to evaluate a directory or listing while runtime data loads.
+- GAS/runtime data may replace static guidance when available, but generated output and any static fallback changes must be committed before merge.
 - Keep live production checks manual-only; normal PR validation must not depend on network availability.
-
+- Treat live production parity as a post-merge check after the `Deploy GitHub Pages` workflow finishes for `main`.

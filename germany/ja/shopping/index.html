@@ -184,8 +184,27 @@
         <div class="chips jc-active-chips" id="activeChips"></div>
       </div>
 
-      <div id="statusBox" class="status-box jc-loading-state">データを読み込んでいます...</div>
-      <div id="cards" class="cards jc-result-grid" aria-live="polite"></div>
+      <div id="statusBox" class="status-box jc-loading-state">静的ガイドを表示中です。店舗・サービスデータを読み込むと一覧が更新されます。</div>
+      <div id="cards" class="cards jc-result-grid" aria-live="polite">
+        <article class="card jc-result-card directory-seed-card">
+          <div class="card-body">
+            <div class="card-main">
+              <span class="directory-seed-label">買い物ガイド</span>
+              <h3 class="card-title jc-result-title">日本食材・生活用品は在庫と配送条件を確認</h3>
+              <p class="card-desc">買い物データを読み込む間、探し方の基本を表示しています。実店舗、オンライン購入、配送、返品条件、営業時間は利用前に確認してください。</p>
+              <ul class="directory-seed-points">
+                <li>地図・営業時間・祝日営業を確認</li>
+                <li>送料、最低注文額、返品条件を確認</li>
+                <li>掲載・修正依頼はお問い合わせから連絡</li>
+              </ul>
+            </div>
+            <div class="link-row jc-result-actions">
+              <a class="btn btn-primary" href="/germany/ja/contact/">掲載・修正を相談</a>
+              <a class="btn btn-secondary" href="/germany/ja/living/">生活ガイドを見る</a>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
     <aside class="map-panel" id="mapPanel" aria-label="地図表示エリア">

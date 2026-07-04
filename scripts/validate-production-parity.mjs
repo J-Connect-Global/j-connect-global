@@ -93,6 +93,12 @@ function validateHomeMarkers(html, label) {
   } else {
     const latestRows = (livingMarker.match(/class="portal3-mini portal3-latest-mini"/g) || []).length;
     if (latestRows !== 3) fail(`${label} Home latest digest marker should contain exactly 3 generated mixed-source rows.`);
+    if (html.includes('<a class="portal3-panel-more" href="/germany/ja/living/">コンテンツ一覧へ</a>')) {
+      fail(`${label} Home latest digest should not render a top-right content list button.`);
+    }
+    if (/class="portal3-latest-date"[^>]*>[^<]*・/.test(livingMarker)) {
+      fail(`${label} Home latest digest date metadata should not repeat the source label.`);
+    }
     for (const source of ['living', 'events', 'learn-german']) {
       if (!livingMarker.includes(`data-home-latest-source="${source}"`)) {
         fail(`${label} Home latest digest marker missing ${source} row.`);

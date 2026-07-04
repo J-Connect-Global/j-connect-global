@@ -494,6 +494,12 @@ function validateHomeStaticQuality(rel, html) {
   const latestDigest = extractMarkedContent(html, 'home-living');
   const latestRows = (latestDigest.match(/class="portal3-mini portal3-latest-mini"/g) || []).length;
   if (latestRows !== 3) problems.push(`${rel} Home latest digest should contain exactly 3 mixed-source rows.`);
+  if (html.includes('<a class="portal3-panel-more" href="/germany/ja/living/">コンテンツ一覧へ</a>')) {
+    problems.push(`${rel} Home latest digest should not render a top-right content list button.`);
+  }
+  if (/class="portal3-latest-date"[^>]*>[^<]*・/.test(latestDigest)) {
+    problems.push(`${rel} Home latest digest date metadata should not repeat the source label.`);
+  }
   for (const source of ['living', 'events', 'learn-german']) {
     if (!latestDigest.includes(`data-home-latest-source="${source}"`)) {
       problems.push(`${rel} Home latest digest missing ${source} row.`);

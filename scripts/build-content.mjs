@@ -1669,7 +1669,11 @@ function updateHomeTopPanelChrome(html) {
     )
     .replace(
       /<h2>(?:<a class="portal3-panel-title-link" href="\/germany\/ja\/living\/">)?(?:新着記事|新着コンテンツ)(?:<\/a>)?<\/h2>\s*<a\b[^>]*href="\/germany\/ja\/living\/"[^>]*>[^<]*<\/a>/,
-      '<h2><a class="portal3-panel-title-link" href="/germany/ja/living/">新着コンテンツ</a></h2>\n          <a class="portal3-panel-more" href="/germany/ja/living/">コンテンツ一覧へ</a>'
+      '<h2><a class="portal3-panel-title-link" href="/germany/ja/living/">新着コンテンツ</a></h2>'
+    )
+    .replace(
+      /<h2>(?:<a class="portal3-panel-title-link" href="\/germany\/ja\/living\/">)?(?:新着記事|新着コンテンツ)(?:<\/a>)?<\/h2>/,
+      '<h2><a class="portal3-panel-title-link" href="/germany/ja/living/">新着コンテンツ</a></h2>'
     )
     .replace(
       /<h2>(?:<a class="portal3-panel-title-link" href="\/germany\/ja\/jobs\/">)?求人ピックアップ(?:<\/a>)?<\/h2>\s*<a\b[^>]*href="\/germany\/ja\/jobs\/"[^>]*>[^<]*<\/a>/,
@@ -1700,14 +1704,12 @@ function latestHomeDigestItem(items) {
 
 function renderHomeLatestDigestCard({ item, section, sourceLabel, thumbClass }) {
   const dateText = formatDateJa(getPreferredHomeDateValue(item));
-  const metaText = [dateText, sourceLabel].filter(Boolean).join('・');
 
   return `<a class="portal3-mini portal3-latest-mini" href="${escapeAttribute(item.url)}" data-home-latest-source="${escapeAttribute(section)}">
   ${renderHomeCardImage(item, section, `portal3-thumb ${thumbClass}`)}
-  <span>
-    <em>${escapeHtml(sourceLabel)}</em>
+  <span class="portal3-latest-copy">
+    <span class="portal3-latest-meta"><em>${escapeHtml(sourceLabel)}</em>${dateText ? `<small class="portal3-latest-date">${escapeHtml(dateText)}</small>` : ''}</span>
     <strong>${escapeHtml(item.title)}</strong>
-    <small>${escapeHtml(metaText)}</small>
   </span>
 </a>`;
 }

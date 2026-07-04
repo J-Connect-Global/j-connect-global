@@ -224,6 +224,9 @@ function normalizeStatus_(value) {
   if (text === 'deleted') return 'deleted';
   if (text === 'inactive') return 'inactive';
   if (text === 'expired') return 'expired';
+  if (text === 'rejected') return 'rejected';
+  if (text === 'draft') return 'draft';
+  if (text === 'spam') return 'spam';
   return text;
 }
 
@@ -238,6 +241,15 @@ function isExpired_(post) {
 function isPubliclyVisible_(post, params) {
   const status = normalizeStatus_(post.status);
   const includeClosed = String(params.includeClosed || 'true').toLowerCase() !== 'false';
+  const moderationStatus = normalizeStatus_(post.moderation_status);
+  const deletedAt = String(cleanCell_(post.deleted_at || '')).trim();
+  const blockedStatuses = ['hidden', 'deleted', 'inactive', 'pending', 'rejected', 'draft', 'expired', 'spam'];
+
+  if (deletedAt) return false;
+  if (blockedStatuses.indexOf(status) !== -1) return false;
+  if (blockedStatuses.indexOf(moderationStatus) !== -1) return false;
+  if (isExpired_(post)) return false;
+
   if (status === 'active') return !isExpired_(post);
   if (status === 'closed') return includeClosed;
   return false;

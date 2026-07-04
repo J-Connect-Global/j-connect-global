@@ -7,10 +7,18 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: sync-public-data-and-pages
+  cancel-in-progress: false
 
 jobs:
   sync-public-data:
     runs-on: ubuntu-latest
+    outputs:
+      changes_detected: ${{ steps.auto-commit-action.outputs.changes_detected }}
 
     steps:
       - name: Checkout repository
@@ -29,7 +37,57 @@ jobs:
         run: node scripts/sync-public-data.mjs
 
       - name: Commit updated public data
+        id: auto-commit-action
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(data): sync public community and jobs data [skip ci]"
+          commit_message: "chore(data): sync public community and jobs data"
           file_pattern: assets/data/community/*.json assets/data/jobs/*.json
+
+  deploy-pages:
+    if: needs.sync-public-data.outputs.changes_detected == 'true' || github.event_name == 'workflow_dispatch'
+    needs: sync-public-data
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build clean Pages artifact
+        shell: bash
+        run: |
+          rm -rf _site
+          mkdir -p _site
+
+          for dir in assets germany de en ja; do
+            if [ -d "$dir" ]; then
+              mkdir -p "_site/$dir"
+              cp -a "$dir/." "_site/$dir/"
+            fi
+          done
+
+          for file in index.html 404.html robots.txt sitemap.xml CNAME favicon.ico site.webmanifest manifest.json browserconfig.xml; do
+            if [ -f "$file" ]; then
+              cp "$file" "_site/$file"
+            fi
+          done
+
+          find . -maxdepth 1 -type f \( -name '*.webp' -o -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.svg' \) -exec cp {} _site/ \;
+          find _site -depth -name '.*' -exec rm -rf {} +
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

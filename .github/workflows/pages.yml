@@ -26,11 +26,32 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Build clean Pages artifact
+        shell: bash
+        run: |
+          rm -rf _site
+          mkdir -p _site
+
+          for dir in assets germany de en ja; do
+            if [ -d "$dir" ]; then
+              mkdir -p "_site/$dir"
+              cp -a "$dir/." "_site/$dir/"
+            fi
+          done
+
+          for file in index.html 404.html robots.txt sitemap.xml CNAME favicon.ico site.webmanifest manifest.json browserconfig.xml; do
+            if [ -f "$file" ]; then
+              cp "$file" "_site/$file"
+            fi
+          done
+
+          find . -maxdepth 1 -type f \( -name '*.webp' -o -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.svg' \) -exec cp {} _site/ \;
+          find _site -depth -name '.*' -exec rm -rf {} +
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: .
-          include-hidden-files: true
+          path: _site
 
   deploy:
     if: github.ref == 'refs/heads/main'

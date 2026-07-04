@@ -357,7 +357,11 @@ async function main() {
   const directoryEndpoint = await getEndpoint("directoryDataEndpoint", "CONTENTS_API_URL", FALLBACK_DIRECTORY_ENDPOINT);
   const communityEndpoint = await getEndpoint("communityDataEndpoint", "COMMUNITY_API_URL", FALLBACK_COMMUNITY_ENDPOINT);
   const jobsEndpoint = process.env.JOBS_API_URL || buildUrl(directoryEndpoint, { sheet: "jobs", lang: "ja", status: "active" });
-  const communityUrl = buildUrl(communityEndpoint, { action: "getPosts" });
+  const communityUrl = buildUrl(communityEndpoint, {
+    action: "getPosts",
+    bypassCache: "true",
+    includeClosed: "false"
+  });
 
   const [communityPayload, jobsPayload] = await Promise.all([
     fetchJson(communityUrl),
@@ -385,7 +389,7 @@ async function main() {
   await writeJson(outputPaths.communityPosts, {
     generated_at: generatedAt,
     source: "community-gas",
-    endpoint: "communityDataEndpoint?action=getPosts",
+    endpoint: "communityDataEndpoint?action=getPosts&bypassCache=true&includeClosed=false",
     count: communityItems.length,
     items: communityItems
   });
@@ -412,7 +416,10 @@ async function main() {
     groups: categories(jobItems, ["region", "city", "category", "detail_category", "employment_type", "work_style", "language"])
   });
 
-  console.log(`Synced ${communityItems.length} community posts and ${jobItems.length} jobs.`);
+  console.log(`Synced community count: ${communityItems.length}`);
+  console.log(`Synced jobs count: ${jobItems.length}`);
+  console.log(`Generated at: ${generatedAt}`);
+  console.log(`First 3 community post IDs: ${communityItems.slice(0, 3).map((item) => item.id).join(", ") || "(none)"}`);
 }
 
 main().catch((error) => {

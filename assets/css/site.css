@@ -45,6 +45,7 @@
   --color-primary:var(--brand);
   --color-primary-soft:var(--hover-blue-bg);
   --color-card-bg:#ffffff;
+  --color-chip-bg:#ffffff;
   --color-header-bg:#ffffff;
   --color-input-bg:#ffffff;
   --color-footer-bg:#002b57;
@@ -60,6 +61,7 @@
   --color-primary:#67b7ff;
   --color-primary-soft:rgba(69, 151, 232, .16);
   --color-card-bg:#101f33;
+  --color-chip-bg:#0f1d30;
   --color-header-bg:#0b1626;
   --color-input-bg:#0f1d30;
   --color-footer-bg:#07101d;
@@ -167,7 +169,7 @@ button,input,select,textarea{font:inherit;}
 .site-hero{
   border:1px solid var(--line);
   border-radius:var(--site-radius-xl);
-  background:#fff;
+  background:var(--color-card-bg);
   box-shadow:var(--shadow);
   padding:clamp(18px, 3vw, 32px);
 }
@@ -198,8 +200,8 @@ button,input,select,textarea{font:inherit;}
   border:1px solid var(--line);
   border-radius:999px;
   padding:0 12px;
-  background:#fff;
-  color:#2f3a45;
+  background:var(--color-chip-bg);
+  color:var(--color-text);
   font-size:12px;
   font-weight:800;
 }
@@ -218,7 +220,7 @@ button,input,select,textarea{font:inherit;}
   min-width:0;
   border:1px solid var(--line);
   border-radius:var(--site-radius-lg);
-  background:#fff;
+  background:var(--color-card-bg);
   box-shadow:var(--shadow);
 }
 

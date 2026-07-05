@@ -74,7 +74,70 @@
   });
 })(window);
 
+window.JCONNECT_THEME = (function () {
+  const STORAGE_KEY = "jconnect-theme";
+  const THEMES = new Set(["light", "dark"]);
+  const DARK_LABEL = "ダークモードに切り替え";
+  const LIGHT_LABEL = "ライトモードに切り替え";
+
+  function systemTheme() {
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  function savedTheme() {
+    try {
+      const value = window.localStorage.getItem(STORAGE_KEY);
+      return THEMES.has(value) ? value : "";
+    } catch {
+      return "";
+    }
+  }
+
+  function currentTheme() {
+    const value = document.documentElement.dataset.theme;
+    return THEMES.has(value) ? value : savedTheme() || systemTheme();
+  }
+
+  function updateButtons(theme) {
+    const isDark = theme === "dark";
+    document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+      button.setAttribute("aria-pressed", String(isDark));
+      button.setAttribute("aria-label", isDark ? LIGHT_LABEL : DARK_LABEL);
+    });
+  }
+
+  function applyTheme(theme, persist) {
+    const nextTheme = THEMES.has(theme) ? theme : "light";
+    document.documentElement.dataset.theme = nextTheme;
+    document.documentElement.style.colorScheme = nextTheme;
+    if (persist) {
+      try {
+        window.localStorage.setItem(STORAGE_KEY, nextTheme);
+      } catch {
+        /* localStorage can be unavailable in restrictive browser modes. */
+      }
+    }
+    updateButtons(nextTheme);
+    return nextTheme;
+  }
+
+  function init() {
+    applyTheme(currentTheme(), false);
+    document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+      if (button.dataset.themeToggleBound === "true") return;
+      button.dataset.themeToggleBound = "true";
+      button.addEventListener("click", () => {
+        applyTheme(currentTheme() === "dark" ? "light" : "dark", true);
+      });
+    });
+  }
+
+  return Object.freeze({ init, applyTheme, currentTheme });
+})();
+
 document.addEventListener("DOMContentLoaded", () => {
+  window.JCONNECT_THEME?.init();
+
   const s = document.getElementById("languageSelect");
   if (s) {
     s.addEventListener("change", (e) => {

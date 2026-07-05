@@ -1209,6 +1209,7 @@ const COMMUNITY_STATIC_POSTS_URL = DATA_SOURCES.staticData?.communityPosts || '/
 const COMMUNITY_POSTS_URL = DATA_SOURCES.buildCommunityUrl({ action: 'getPosts' });
 const STATIC_DATA_TIMEOUT_MS = 5000;
 const GAS_FALLBACK_TIMEOUT_MS = 8000;
+const DEFAULT_IMAGE = window.JCONNECT_IMAGE_FALLBACK?.DEFAULT_IMAGE || "/assets/img/placeholders/jconnect-default-card.webp";
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const detailPostId = new URLSearchParams(location.search).get('id');
 const DETAIL_STORAGE_KEY = 'ngg-community-saved-posts';
@@ -1744,7 +1745,18 @@ function splitMediaValue(value) {
   if (!value) return [];
   if (Array.isArray(value)) return value.flatMap(splitMediaValue);
   if (typeof value === 'object') return Object.values(value).flatMap(splitMediaValue);
-  return String(value).split(/[\n,;]/).map(function(item) { return item.trim(); }).filter(Boolean);
+  const text = String(value).trim();
+  if (!text || ['#', 'n/a', 'null', 'undefined'].includes(text.toLowerCase())) return [];
+  if (/^\s*[\[{]/.test(text)) {
+    try {
+      return splitMediaValue(JSON.parse(text));
+    } catch (error) {
+      return [text];
+    }
+  }
+  return text.split(/[\n,;]/).map(function(item) { return item.trim(); }).filter(function(item) {
+    return item && !['#', 'n/a', 'null', 'undefined'].includes(item.toLowerCase());
+  });
 }
 
 function normalizeImageSrc(src) {
@@ -1768,24 +1780,48 @@ function normalizeImageSrc(src) {
 }
 
 function getImages(post) {
+  const shared = window.JCONNECT_COMMUNITY_SHARED;
+  if (shared && typeof shared.getCommunityPostImages === 'function') {
+    return shared.getCommunityPostImages(post);
+  }
   const values = [
-    field(post, ['image', 'imageUrl', 'image_url', 'photo', 'photoUrl', 'thumbnail']),
-    post.photos,
     post.images,
+    post._images,
     post.image_url_1,
     post.image_url_2,
     post.image_url_3,
+    field(post, ['image']),
+    field(post, ['image_url']),
+    field(post, ['imageUrl']),
+    post.image_urls,
+    post.photos,
+    field(post, ['thumbnail', 'thumbnail_url', 'photo', 'photoUrl', 'photo_url', 'first_image']),
     post.image1,
     post.image2,
     post.image3
   ];
 
-  const shared = window.JCONNECT_COMMUNITY_SHARED;
   return Array.from(new Set(values.flatMap(splitMediaValue).map(normalizeImageSrc).filter(function(src) {
+    const isDefault = src === DEFAULT_IMAGE || (function() {
+      try {
+        return new URL(src, location.href).pathname === DEFAULT_IMAGE;
+      } catch (error) {
+        return false;
+      }
+    })();
+    if (isDefault) return false;
     return shared && typeof shared.isAllowedCommunityImageUrl === 'function'
       ? shared.isAllowedCommunityImageUrl(src)
       : /^\/assets\//.test(src);
   })));
+}
+
+function getCommunityThumbnail(post) {
+  const shared = window.JCONNECT_COMMUNITY_SHARED;
+  if (shared && typeof shared.getCommunityThumbnail === 'function') {
+    return shared.getCommunityThumbnail(post);
+  }
+  return getImages(post)[0] || DEFAULT_IMAGE;
 }
 
 function getPostId(post, index) {
@@ -1957,6 +1993,7 @@ function normalizePost(post, index) {
   const status = normalizeStatus(post.status);
   const lastModifiedAt = field(post, ['last_modified_at', 'lastModifiedAt']);
   const updatedAt = field(post, ['updated_at', 'updatedAt']);
+  const images = getImages(post);
   return {
     id: post.id,
     post_id: post.post_id,
@@ -1999,7 +2036,8 @@ function normalizePost(post, index) {
     _isClosed: status === 'closed',
     _isExpired: isExpired(post),
     _price: getPrice(post),
-    _images: getImages(post),
+    _images: images,
+    _contentImage: images[0] || DEFAULT_IMAGE,
     _free: isFree(post),
     _urgent: isUrgent(post),
     _japaneseOk: isJapaneseOk(post)
@@ -2118,7 +2156,7 @@ function renderNotFound() {
 function renderStandaloneDetail(post, posts) {
   const detailMode = document.getElementById('detailMode');
   const images = post._images || [];
-  const mainImage = images[0] || post._contentImage || "/assets/img/placeholders/jconnect-default-card.webp";
+  const mainImage = images[0] || getCommunityThumbnail(post);
   const hasImages = images.length > 0;
   const priceText = post._free ? '無料' : post._price;
   const saved = isSaved(post._id);

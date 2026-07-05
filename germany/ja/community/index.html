@@ -329,6 +329,7 @@
     const DATA_TIMEOUT_MS = 12000;
     const STATIC_DATA_TIMEOUT_MS = 5000;
     const GAS_FALLBACK_TIMEOUT_MS = 8000;
+    const DEFAULT_IMAGE = window.JCONNECT_IMAGE_FALLBACK?.DEFAULT_IMAGE || "/assets/img/placeholders/jconnect-default-card.webp";
     const COMMUNITY_LIST_CACHE_KEY = "jconnectCommunityPostsCacheV2";
     const COMMUNITY_LIST_CACHE_MAX_AGE_MS = 1000 * 60 * 60 * 6;
     const SUBCATEGORY_OPTIONS = {
@@ -512,7 +513,16 @@
       if (!value) return [];
       if (Array.isArray(value)) return value.flatMap(splitMediaValue);
       if (typeof value === "object") return Object.values(value).flatMap(splitMediaValue);
-      return String(value).split(/[\n,;]/).map((item) => item.trim()).filter(Boolean);
+      const text = String(value).trim();
+      if (!text || ["#", "n/a", "null", "undefined"].includes(text.toLowerCase())) return [];
+      if (/^\s*[\[{]/.test(text)) {
+        try {
+          return splitMediaValue(JSON.parse(text));
+        } catch {
+          return [text];
+        }
+      }
+      return text.split(/[\n,;]/).map((item) => item.trim()).filter((item) => item && !["#", "n/a", "null", "undefined"].includes(item.toLowerCase()));
     }
 
     function normalizeImageSrc(src) {
@@ -536,25 +546,47 @@
     }
 
     function getImages(post) {
+      const shared = window.JCONNECT_COMMUNITY_SHARED;
+      if (shared && typeof shared.getCommunityPostImages === "function") {
+        return shared.getCommunityPostImages(post);
+      }
       const values = [
-        field(post, ["image", "imageUrl", "image_url", "photo", "photoUrl", "thumbnail"]),
-        post.photos,
         post.images,
-        post.image_urls,
-        field(post, ["thumbnail_url", "photo_url", "first_image"]),
+        post._images,
         post.image_url_1,
         post.image_url_2,
         post.image_url_3,
+        field(post, ["image"]),
+        field(post, ["image_url"]),
+        field(post, ["imageUrl"]),
+        post.image_urls,
+        post.photos,
+        field(post, ["thumbnail", "thumbnail_url", "photo", "photoUrl", "photo_url", "first_image"]),
         post.image1,
         post.image2,
         post.image3
       ];
-      const shared = window.JCONNECT_COMMUNITY_SHARED;
       return [...new Set(values.flatMap(splitMediaValue).map(normalizeImageSrc).filter((src) => {
+        const isDefault = src === DEFAULT_IMAGE || (() => {
+          try {
+            return new URL(src, location.href).pathname === DEFAULT_IMAGE;
+          } catch {
+            return false;
+          }
+        })();
+        if (isDefault) return false;
         return shared && typeof shared.isAllowedCommunityImageUrl === "function"
           ? shared.isAllowedCommunityImageUrl(src)
           : /^\/assets\//.test(src);
       }))];
+    }
+
+    function getCommunityThumbnail(post) {
+      const shared = window.JCONNECT_COMMUNITY_SHARED;
+      if (shared && typeof shared.getCommunityThumbnail === "function") {
+        return shared.getCommunityThumbnail(post);
+      }
+      return getImages(post)[0] || DEFAULT_IMAGE;
     }
 
     function dateValue(value) {
@@ -805,6 +837,7 @@
         _isExpired: isExpired(post),
         _price: getPrice(post),
         _images: images,
+        _contentImage: images[0] || DEFAULT_IMAGE,
         _free: isFree(post),
         _urgent: isUrgent(post),
         _japaneseOk: isJapaneseOk(post)
@@ -1050,7 +1083,7 @@
       els.emptyState.style.display = "none";
       els.cards.classList.toggle("grid-mode", state.viewMode === "grid");
       els.cards.innerHTML = state.filtered.map((post) => {
-        const image = post._contentImage || "/assets/img/placeholders/jconnect-default-card.webp";
+        const thumbnailSrc = getCommunityThumbnail(post);
         const postType = post._postType || "質問";
         const subcategory = post._subcategory || "その他";
         const priceText = post._free ? "無料" : post._price;
@@ -1070,7 +1103,7 @@
             <a class="card-link" href="#post-${encodeURIComponent(post._id)}" aria-label="${escapeHtml(post._title)}の詳細を開く">
               <div class="card-media">
                 <div class="placeholder-art" data-icon="${escapeHtml(CATEGORY_ICONS[subcategory] || CATEGORY_ICONS[postType] || CATEGORY_ICONS["その他"])}"></div>
-                <img src="${escapeHtml(image)}" alt="${escapeHtml(post._title)} のイメージ" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&&this.getAttribute('src')!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;}">
+                <img src="${escapeHtml(thumbnailSrc)}" alt="${escapeHtml(post._title)} のイメージ" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&&this.getAttribute('src')!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;}">
                 ${closedLabel}
                 ${post._images.length ? `<span class="image-count">写真 ${post._images.length}</span>` : ""}
               </div>
@@ -1214,7 +1247,7 @@
       const relatedGroup = comparablePosts(state.posts, post, 3);
       const related = relatedGroup.items;
       const images = post._images.length ? post._images : [];
-      const mainImage = images[0] || post._contentImage || "/assets/img/placeholders/jconnect-default-card.webp";
+      const mainImage = images[0] || getCommunityThumbnail(post);
       const saved = isSaved(post._id);
       const contactHref = post._id ? `./contact/?post_id=${encodeURIComponent(post._id)}` : "./contact/";
       const reportHref = post._id ? `./report/?post_id=${encodeURIComponent(post._id)}` : "./report/";

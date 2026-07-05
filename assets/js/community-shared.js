@@ -1,6 +1,7 @@
 (function (window) {
   const imageFallback = window.JCONNECT_IMAGE_FALLBACK;
   const DEFAULT_IMAGE = imageFallback?.DEFAULT_IMAGE || "/assets/img/placeholders/jconnect-default-card.webp";
+  const INVALID_IMAGE_VALUES = new Set(["", "#", "n/a", "null", "undefined"]);
   const fallbackPosts = Object.freeze([
     {
       post_id: "community-fallback-moving-sale-duesseldorf",
@@ -73,7 +74,16 @@
     if (!value) return [];
     if (Array.isArray(value)) return value.flatMap(splitMediaValue);
     if (typeof value === "object") return Object.values(value).flatMap(splitMediaValue);
-    return String(value).split(/[\n,;]/).map((item) => item.trim()).filter(Boolean);
+    const text = String(value).trim();
+    if (!text || INVALID_IMAGE_VALUES.has(text.toLowerCase())) return [];
+    if (/^\s*[\[{]/.test(text)) {
+      try {
+        return splitMediaValue(JSON.parse(text));
+      } catch {
+        return [text];
+      }
+    }
+    return text.split(/[\n,;]/).map((item) => item.trim()).filter((item) => item && !INVALID_IMAGE_VALUES.has(item.toLowerCase()));
   }
 
   function isAllowedCommunityImageUrl(src) {
@@ -127,7 +137,20 @@
   }
 
   function isValidImageSrc(src) {
-    return isAllowedCommunityImageUrl(src);
+    const value = String(src || "").trim();
+    if (!value || INVALID_IMAGE_VALUES.has(value.toLowerCase())) return false;
+    return isAllowedCommunityImageUrl(value) && !isDefaultImageSrc(value);
+  }
+
+  function isDefaultImageSrc(src) {
+    const value = String(src || "").trim();
+    if (!value) return false;
+    try {
+      const url = new URL(value, window.location.href);
+      return url.pathname === DEFAULT_IMAGE;
+    } catch {
+      return value === DEFAULT_IMAGE || value === `https://j-connect-global.com${DEFAULT_IMAGE}`;
+    }
   }
 
   function postId(post, index) {
@@ -184,15 +207,19 @@
     return false;
   }
 
-  function images(post) {
+  function getCommunityPostImages(post) {
     const values = [
-      pick(post, ["image", "imageUrl", "image_url", "thumbnail", "thumbnail_url", "photo", "photoUrl", "photo_url", "first_image"]),
-      post?.photos,
       post?.images,
-      post?.image_urls,
+      post?._images,
       post?.image_url_1,
       post?.image_url_2,
       post?.image_url_3,
+      pick(post, ["image"]),
+      pick(post, ["image_url"]),
+      pick(post, ["imageUrl"]),
+      post?.image_urls,
+      post?.photos,
+      pick(post, ["thumbnail", "thumbnail_url", "photo", "photoUrl", "photo_url", "first_image"]),
       post?.image1,
       post?.image2,
       post?.image3
@@ -200,12 +227,16 @@
     return [...new Set(values.flatMap(splitMediaValue).map(normalizeImageSrc).filter(isValidImageSrc))];
   }
 
+  function getCommunityThumbnail(post) {
+    return getCommunityPostImages(post)[0] || DEFAULT_IMAGE;
+  }
+
   function normalizePost(post, index) {
     const id = postId(post, index);
     const city = pick(post, ["city", "location", "area"]);
     const region = pick(post, ["region", "prefecture"]);
     const status = normalizeStatus(post.status);
-    const postImages = images(post);
+    const postImages = getCommunityPostImages(post);
     return {
       ...post,
       _id: id,
@@ -270,9 +301,11 @@
     communityStandaloneDetailHref,
     communityBoardModalHref,
     isLikelyTestPost,
-    images,
+    images: getCommunityPostImages,
+    getCommunityPostImages,
+    getCommunityThumbnail,
     firstImage(post) {
-      return images(post)[0] || DEFAULT_IMAGE;
+      return getCommunityThumbnail(post);
     }
   });
 })(window);

@@ -3,6 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script data-jconnect-theme-init>
+  (function () {
+    try {
+      var saved = localStorage.getItem('jconnect-theme');
+      var theme = saved === 'dark' || saved === 'light'
+        ? saved
+        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+    } catch (error) {
+      document.documentElement.dataset.theme = 'light';
+      document.documentElement.style.colorScheme = 'light';
+    }
+  })();
+  </script>
 
 <title>投稿を管理 | 掲示板 | J-Connect Germany</title>
 <meta name="description" content="J-Connect Germanyの掲示板投稿を編集、募集終了、再開、非公開化する投稿者向けページです。">
@@ -24,7 +39,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css">
-  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal5-nav-20260618">
+  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal6-theme-20260705">
 <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
   <link rel="stylesheet" href="/assets/css/social-share.css">
 <link rel="stylesheet" href="/assets/css/community.css">
@@ -76,10 +91,22 @@
       </details>
       <form class="header-search" action="/germany/ja/search/" method="get" role="search">
         <label class="search-box" aria-label="サイト内検索">
-          <span aria-hidden="true">⌕</span>
+          <span class="search-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="M16 16l4.5 4.5"></path>
+            </svg>
+          </span>
           <input type="search" name="q" placeholder="検索">
         </label>
-        <button class="search-btn" type="submit" aria-label="検索"><span class="search-btn-icon" aria-hidden="true">⌕</span></button>
+        <button class="search-btn" type="submit" aria-label="検索">
+          <span class="search-btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="M16 16l4.5 4.5"></path>
+            </svg>
+          </span>
+        </button>
       </form>
       <details class="header-language header-language-menu" aria-label="言語切り替え">
         <summary class="header-language-trigger">
@@ -90,6 +117,21 @@
           <a href="/germany/ja/community/manage/" class="active" aria-current="page" lang="ja">日本語</a>
         </div>
       </details>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="ダークモードに切り替え">
+        <span class="theme-toggle-track" aria-hidden="true">
+          <span class="theme-toggle-icon theme-toggle-sun">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"></path>
+            </svg>
+          </span>
+          <span class="theme-toggle-icon theme-toggle-moon">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M20.4 14.6A7.7 7.7 0 0 1 9.4 3.6 8.9 8.9 0 1 0 20.4 14.6Z"></path>
+            </svg>
+          </span>
+        </span>
+      </button>
     </div>
   </div>
 </header>

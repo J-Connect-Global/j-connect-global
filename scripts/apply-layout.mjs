@@ -36,6 +36,7 @@ function applyCanonicalLayout(html, url, page) {
   const pillar = activePillar(url, page);
   const currentUrl = page?.status === 'legacy' && page.redirect_target ? normalizeUrl(page.redirect_target) : url;
   let next = html;
+  next = ensureThemeInitScript(next);
   next = ensureHeaderFooterStylesheet(next);
   next = ensureSocialShareStylesheet(next);
   next = ensureRobotsMeta(next, page);
@@ -49,8 +50,37 @@ function applyCanonicalLayout(html, url, page) {
   return next;
 }
 
+function ensureThemeInitScript(html) {
+  const script = `  <script data-jconnect-theme-init>
+  (function () {
+    try {
+      var saved = localStorage.getItem('jconnect-theme');
+      var theme = saved === 'dark' || saved === 'light'
+        ? saved
+        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+    } catch (error) {
+      document.documentElement.dataset.theme = 'light';
+      document.documentElement.style.colorScheme = 'light';
+    }
+  })();
+  </script>`;
+
+  let next = html.replace(/\s*<script\b(?=[^>]*data-jconnect-theme-init\b)[^>]*>[\s\S]*?<\/script>\s*/gi, '\n');
+  if (/<script\b(?=[^>]*data-jconnect-theme-init\b)[^>]*>/i.test(next)) return next;
+
+  const viewportPattern = /(\s*<meta\b(?=[^>]*name=["']viewport["'])[^>]*>)/i;
+  if (viewportPattern.test(next)) return next.replace(viewportPattern, `$1\n${script}`);
+
+  const charsetPattern = /(\s*<meta\b(?=[^>]*charset=)[^>]*>)/i;
+  if (charsetPattern.test(next)) return next.replace(charsetPattern, `$1\n${script}`);
+
+  return next.replace(/<head>/i, `<head>\n${script}`);
+}
+
 function ensureHeaderFooterStylesheet(html) {
-  const stylesheetHref = '/assets/css/ja-header-footer.css?v=portal5-nav-20260618';
+  const stylesheetHref = '/assets/css/ja-header-footer.css?v=portal6-theme-20260705';
   const stylesheetLink = `  <link rel="stylesheet" href="${stylesheetHref}">`;
 
   // Remove any existing ja-header-footer.css link first, regardless of position/version.

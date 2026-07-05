@@ -6,7 +6,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
 const SITE_ORIGIN = 'https://j-connect-global.com';
 const PRIMARY_JA_PATH = '/germany/ja/';
-const DEFAULT_SOCIAL_IMAGE = '/assets/images/brand/logo_header.png';
+const DEFAULT_SOCIAL_IMAGE = '/assets/img/placeholders/jconnect-default-card.webp';
 const SOCIAL_SHARE_CSS = '/assets/css/social-share.css';
 const SOCIAL_SHARE_JS = '/assets/js/social-share.js';
 
@@ -96,8 +96,14 @@ function ensureSocialShareStylesheet(html) {
 }
 
 function ensureMainScript(html) {
-  if (/<script\b[^>]*src=["']\/assets\/js\/main\.js(?:\?[^"']*)?["'][^>]*>/i.test(html)) return html;
-  return html.replace(/(\s*)<\/body>/i, `\n<script src="/assets/js/main.js"></script>$1</body>`);
+  let next = html;
+  if (!/<script\b[^>]*src=["']\/assets\/js\/common\.js(?:\?[^"']*)?["'][^>]*>/i.test(next)) {
+    const mainScript = /(\s*<script\b[^>]*src=["']\/assets\/js\/main\.js(?:\?[^"']*)?["'][^>]*>\s*<\/script>)/i;
+    if (mainScript.test(next)) next = next.replace(mainScript, `\n<script src="/assets/js/common.js"></script>$1`);
+    else next = next.replace(/(\s*)<\/body>/i, `\n<script src="/assets/js/common.js"></script>$1</body>`);
+  }
+  if (/<script\b[^>]*src=["']\/assets\/js\/main\.js(?:\?[^"']*)?["'][^>]*>/i.test(next)) return next;
+  return next.replace(/(\s*)<\/body>/i, `\n<script src="/assets/js/main.js"></script>$1</body>`);
 }
 
 function ensureSocialShareScript(html) {

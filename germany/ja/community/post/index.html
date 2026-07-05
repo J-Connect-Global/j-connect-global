@@ -10,14 +10,14 @@
   <meta property="og:title" content="交流・掲示板の投稿 | J-Connect Germany">
   <meta property="og:description" content="ドイツ在住日本人向けの交流掲示板投稿ページです。投稿詳細はページ読み込み後に表示されます。">
   <meta property="og:url" content="https://j-connect-global.com/germany/ja/community/post/">
-  <meta property="og:image" content="https://j-connect-global.com/assets/images/brand/logo_header.png">
+  <meta property="og:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="J-Connect Germany">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="交流・掲示板の投稿 | J-Connect Germany">
   <meta name="twitter:description" content="ドイツ在住日本人向けの交流掲示板投稿ページです。投稿詳細はページ読み込み後に表示されます。">
-  <meta name="twitter:image" content="https://j-connect-global.com/assets/images/brand/logo_header.png">
+  <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
 <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -1199,6 +1199,7 @@
 </footer>
 <!-- LAYOUT:ja-footer:end -->
 
+<script src="/assets/js/common.js"></script>
 <script src="/assets/js/data-sources.js"></script>
 <script src="/assets/js/community-shared.js"></script>
 <script>
@@ -2117,7 +2118,7 @@ function renderNotFound() {
 function renderStandaloneDetail(post, posts) {
   const detailMode = document.getElementById('detailMode');
   const images = post._images || [];
-  const mainImage = images[0];
+  const mainImage = images[0] || post._contentImage || "/assets/img/placeholders/jconnect-default-card.webp";
   const hasImages = images.length > 0;
   const priceText = post._free ? '無料' : post._price;
   const saved = isSaved(post._id);
@@ -2136,20 +2137,19 @@ function renderStandaloneDetail(post, posts) {
   const relatedGroup = comparablePosts(posts, post, 4);
   const related = relatedGroup.items;
   const marker = escapeHtml(CATEGORY_ICONS[post._subcategory] || CATEGORY_ICONS[post._postType] || CATEGORY_ICONS['その他']);
-  const galleryHtml = hasImages ? `
+  const galleryHtml = `
       <div class="detail-gallery">
         <div class="detail-main-image" id="detailMainImage">
-          <img id="detailMainPhoto" src="${escapeHtml(mainImage)}" alt="${escapeHtml(post._title)}の写真" loading="eager" decoding="async" onerror="this.remove(); document.getElementById('detailMainPlaceholder')?.removeAttribute('hidden');">
-          <div id="detailMainPlaceholder" class="detail-placeholder" hidden>${marker}</div>
-        </div>
+          <img id="detailMainPhoto" src="${escapeHtml(mainImage)}" alt="${escapeHtml(post._title)} のイメージ" loading="eager" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&&this.getAttribute('src')!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;}">
+          </div>
         <div class="detail-thumbs" id="detailThumbs" ${images.length <= 1 ? 'hidden' : ''}>
           ${images.map(function(src, index) {
             return `<button class="detail-thumb-button ${index === 0 ? 'active' : ''}" type="button" data-image-src="${escapeHtml(src)}" aria-label="写真${index + 1}を表示">
-              <img src="${escapeHtml(src)}" alt="${escapeHtml(post._title)}の写真 ${index + 1}" loading="lazy" decoding="async" onerror="this.closest('button')?.remove()">
+              <img src="${escapeHtml(src)}" alt="${escapeHtml(post._title)} のイメージ" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&&this.getAttribute('src')!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;}">
             </button>`;
           }).join('')}
         </div>
-      </div>` : '';
+      </div>`;
 
   document.title = post._title + ' | J-Connect Germany';
   detailMode.innerHTML = `
@@ -2157,11 +2157,10 @@ function renderStandaloneDetail(post, posts) {
       <a class="pill-link" href="../">← 掲示板一覧へ戻る</a>
       <a class="pill-link" href="./">投稿する</a>
     </div>
-    <section class="detail-shell ${hasImages ? '' : 'no-image'}" aria-labelledby="detailTitle">
+    <section class="detail-shell" aria-labelledby="detailTitle">
       ${galleryHtml}
 
       <article class="detail-panel">
-        ${hasImages ? '' : `<div class="detail-compact-marker" aria-hidden="true">${marker}</div>`}
         ${closedNotice}
         <p class="detail-kicker">COMMUNITY POST</p>
         <h1 id="detailTitle" class="detail-title">${escapeHtml(post._title)}</h1>

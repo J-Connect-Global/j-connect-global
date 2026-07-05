@@ -1,4 +1,6 @@
 (function (window) {
+  const imageFallback = window.JCONNECT_IMAGE_FALLBACK;
+  const DEFAULT_IMAGE = imageFallback?.DEFAULT_IMAGE || "/assets/img/placeholders/jconnect-default-card.webp";
   const fallbackPosts = Object.freeze([
     {
       post_id: "community-fallback-moving-sale-duesseldorf",
@@ -203,6 +205,7 @@
     const city = pick(post, ["city", "location", "area"]);
     const region = pick(post, ["region", "prefecture"]);
     const status = normalizeStatus(post.status);
+    const postImages = images(post);
     return {
       ...post,
       _id: id,
@@ -220,7 +223,8 @@
       _isClosed: status === "closed",
       _isExpired: isExpired(post),
       _price: pick(post, ["price", "fee", "salary", "budget"]),
-      _images: images(post)
+      _images: postImages,
+      _contentImage: postImages[0] || DEFAULT_IMAGE
     };
   }
 
@@ -268,7 +272,7 @@
     isLikelyTestPost,
     images,
     firstImage(post) {
-      return images(post)[0] || "";
+      return images(post)[0] || DEFAULT_IMAGE;
     }
   });
 })(window);

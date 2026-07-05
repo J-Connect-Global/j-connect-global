@@ -8,7 +8,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE_ORIGIN = 'https://j-connect-global.com';
 const PRIMARY_JA_PATH = '/germany/ja/';
 const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
-const ARTICLE_PLACEHOLDER_IMAGE = '/assets/img/placeholders/jconnect-article-placeholder.svg';
+const DEFAULT_IMAGE = '/assets/img/placeholders/jconnect-default-card.webp';
 let trackedFileSet;
 const articleImageDirs = {
   living: '/assets/img/living',
@@ -351,7 +351,8 @@ ${indent(renderRelatedSection(item, allItems), 4)}
   </main>
 
 ${renderFooter()}
-${extraScripts ? `${indent(extraScripts, 2)}\n` : ''}  <script src="/assets/js/main.js"></script>
+${extraScripts ? `${indent(extraScripts, 2)}\n` : ''}  <script src="/assets/js/common.js"></script>
+  <script src="/assets/js/main.js"></script>
   <script src="/assets/js/social-share.js"></script>
 </body>
 </html>
@@ -366,11 +367,11 @@ function renderArticleBodyHtml(type, item, bodyHtml) {
 }
 
 function renderArticleHeroFigure(item) {
-  if (!item.hero_image) return '';
-  const alt = firstNonEmpty(item.hero_image_alt, item.image_alt, item.title);
+  const src = resolveContentImage(item);
+  const alt = getArticleImageAlt(item);
   const caption = firstNonEmpty(item.hero_image_caption);
   return `<figure class="article-hero-figure">
-  <img src="${escapeAttribute(item.hero_image)}" alt="${escapeAttribute(alt)}" loading="eager" decoding="async">
+  <img ${renderArticleImageAttributes(src, alt, 'article-hero-image', 'eager')}>
 ${caption ? `  <figcaption>${escapeHtml(caption)}</figcaption>` : ''}
 </figure>`;
 }
@@ -820,7 +821,7 @@ function renderJaHreflang(canonicalHref) {
 }
 
 function renderStructuredData(type, item, title, canonicalHref) {
-  const image = getCrawlableLocalImageUrl(item);
+  const image = getCrawlableLocalImageUrl(item) || absoluteUrl(getArticleImageSrc(item, type));
   const keywords = type === 'learn-german'
     ? uniqueArray([
       ...item.tags,
@@ -836,7 +837,7 @@ function renderStructuredData(type, item, title, canonicalHref) {
     description: item.summary,
     inLanguage: 'ja',
     url: canonicalHref,
-    image: image || undefined,
+    image,
     mainEntityOfPage: canonicalHref,
     datePublished: item.published_at || undefined,
     dateModified: item.updated_at || item.last_verified || item.published_at || undefined,
@@ -2149,18 +2150,18 @@ function firstNonEmpty(...values) {
 function firstArticleImage(...values) {
   for (const value of values) {
     const text = String(value || '').trim();
-    if (text && !isLegacyPlaceholderImage(text)) return text;
+    if (isValidContentImageValue(text) && !isLegacyPlaceholderImage(text)) return text;
   }
   return '';
 }
 
 function getArticleFallbackImageSrc() {
-  return ARTICLE_PLACEHOLDER_IMAGE;
+  return DEFAULT_IMAGE;
 }
 
 function getArticleImageSrc(article, section) {
-  const explicitImage = firstNonEmpty(article.image);
-  if (explicitImage && imageSourceExists(explicitImage)) return explicitImage;
+  const explicitImage = resolveContentImage(article);
+  if (explicitImage !== DEFAULT_IMAGE && imageSourceExists(explicitImage)) return explicitImage;
 
   const baseDir = articleImageDirs[section || article.type] || '';
   if (baseDir && article.slug) {
@@ -2206,17 +2207,59 @@ function normalizeRepoPath(value) {
 }
 
 function getArticleImageAlt(article) {
-  return firstNonEmpty(article.image_alt, article.title ? `${article.title} のイメージ` : 'J-Connect Germany article image');
+  return article.title ? `${article.title} のイメージ` : 'J-Connect Germany のイメージ';
 }
 
 function isLegacyPlaceholderImage(value) {
-  return String(value || '').startsWith('/assets/images/placeholders/');
+  const text = String(value || '');
+  return /^\/assets\/images\/[^/]+\/[^/]+\.svg$/i.test(text) || /^\/assets\/img\/placeholders\/[^/]+\.svg$/i.test(text);
+}
+
+function isValidContentImageValue(value) {
+  const text = String(value ?? '').trim();
+  return Boolean(text) && !['#', 'n/a', 'null', 'undefined'].includes(text.toLowerCase());
+}
+
+function contentImageValues(value) {
+  if (Array.isArray(value)) return value.flatMap(contentImageValues);
+  if (value && typeof value === 'object') return Object.values(value).flatMap(contentImageValues);
+  if (typeof value === 'string') {
+    const text = value.trim();
+    if (!isValidContentImageValue(text)) return [];
+    if (/^\s*[\[{]/.test(text)) {
+      try {
+        return contentImageValues(JSON.parse(text));
+      } catch {
+        return [text];
+      }
+    }
+    return text.split(/[\n,;]/).map((entry) => entry.trim()).filter(isValidContentImageValue);
+  }
+  return [];
+}
+
+function resolveContentImage(item) {
+  const source = item || {};
+  const candidates = [
+    source.image,
+    source.image_url,
+    source.imageUrl,
+    source.image_url_1,
+    source.hero_image,
+    source.heroImage,
+    source.thumbnail,
+    source.thumbnail_url,
+    source.og_image,
+    source.images
+  ];
+  return candidates.flatMap(contentImageValues).find((src) => !isLegacyPlaceholderImage(src)) || DEFAULT_IMAGE;
 }
 
 function renderArticleImageAttributes(src, alt, className, loading = 'lazy') {
   const fallback = getArticleFallbackImageSrc();
+  const safeSrc = isValidContentImageValue(src) ? src : fallback;
   const onError = `if(this.dataset.fallbackSrc&&this.getAttribute('src')!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;this.classList.add('is-fallback-image');}`;
-  return `src="${escapeAttribute(src)}" alt="${escapeAttribute(alt)}" class="${escapeAttribute(className)}" loading="${escapeAttribute(loading)}" decoding="async" data-fallback-src="${escapeAttribute(fallback)}" onerror="${escapeAttribute(onError)}"`;
+  return `src="${escapeAttribute(safeSrc)}" alt="${escapeAttribute(alt)}" class="${escapeAttribute(className)}" loading="${escapeAttribute(loading)}" decoding="async" data-fallback-src="${escapeAttribute(fallback)}" onerror="${escapeAttribute(onError)}"`;
 }
 
 function renderCardMedia(item, section) {

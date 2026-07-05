@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-05T10:33:31.828Z",
+  "generated_at": "2026-07-05T12:01:22.594Z",
   "source": "community-gas",
   "endpoint": "communityDataEndpoint?action=getPosts&bypassCache=true&includeClosed=false",
   "count": 7,
@@ -130,9 +130,9 @@
     {
       "id": "post_ccf0e459-bee4-4b30-b58f-854c48731799",
       "post_id": "post_ccf0e459-bee4-4b30-b58f-854c48731799",
-      "slug": "かでんあげます-デュッセルドルフ周辺-ドイツ-post-ccf0e459-bee4-4b30-b58f-854c48731799",
-      "title": "かでんあげます",
-      "body": "かでんあげます",
+      "slug": "炊飯器あげます-デュッセルドルフ周辺-ドイツ-post-ccf0e459-bee4-4b30-b58f-854c48731799",
+      "title": "炊飯器あげます",
+      "body": "炊飯器あげます",
       "summary": "",
       "category1": "譲ります",
       "category2": "家具・家電",
@@ -146,7 +146,7 @@
       "availability_date": "2026-06-10T22:00:00.000Z",
       "tags": "",
       "image_url": "https://drive.google.com/thumbnail?id=1p68q_uSp5kz8h7df9yZ8I5GTqUMLWv1t&sz=w1200",
-      "image_alt": "かでんあげます",
+      "image_alt": "炊飯器あげます",
       "image_urls": [
         "https://drive.google.com/thumbnail?id=1p68q_uSp5kz8h7df9yZ8I5GTqUMLWv1t&sz=w1200"
       ],

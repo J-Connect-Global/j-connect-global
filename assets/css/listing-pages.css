@@ -324,3 +324,166 @@ button{cursor:pointer}
 @media (max-width:480px){
   .filter-chip-group{grid-template-columns:1fr}.view-toggle{gap:2px}.view-btn{font-size:12px}.card-body,.layout.grid-mode .card-body{padding:12px}.job-card-actions,.link-row{align-items:stretch}.job-card-actions .card-action,.link-row .btn{flex:1 1 auto}.map-shell{height:360px}
 }
+
+/* Dark theme polish for shared listing pages. */
+:root[data-theme="dark"] body{
+  background:
+    linear-gradient(rgba(7,17,31,.96), rgba(7,17,31,.98)),
+    url("/assets/images/brand/site-bg.jpg") center top / cover fixed no-repeat,
+    var(--color-bg, #07111f);
+  color:var(--color-text, #e8f1fb);
+}
+
+:root[data-theme="dark"] .hero-box,
+:root[data-theme="dark"] .employer-cta,
+:root[data-theme="dark"] .panel,
+:root[data-theme="dark"] .filter-panel,
+:root[data-theme="dark"] .filters.panel,
+:root[data-theme="dark"] .card,
+:root[data-theme="dark"] .map-shell,
+:root[data-theme="dark"] .status-box,
+:root[data-theme="dark"] .empty-box,
+:root[data-theme="dark"] .listing-modal-dialog{
+  border-color:var(--color-border, #263a52);
+  background:var(--color-card-bg, #101f33);
+  color:var(--color-text, #e8f1fb);
+  box-shadow:var(--shadow, 0 16px 36px rgba(0,0,0,.24));
+}
+
+:root[data-theme="dark"] .hero-box{
+  background:
+    linear-gradient(110deg, rgba(18,34,56,.98), rgba(13,26,43,.96)),
+    var(--color-card-bg, #101f33);
+}
+
+:root[data-theme="dark"] .view-toggle,
+:root[data-theme="dark"] .chip,
+:root[data-theme="dark"] .hero-btn,
+:root[data-theme="dark"] .hero-link,
+:root[data-theme="dark"] .btn,
+:root[data-theme="dark"] .card-action,
+:root[data-theme="dark"] .save-button,
+:root[data-theme="dark"] .map-popup-btn,
+:root[data-theme="dark"] .listing-modal-close,
+:root[data-theme="dark"] .directory-guidance-card,
+:root[data-theme="dark"] .directory-seed-label,
+:root[data-theme="dark"] .eat-tag,
+:root[data-theme="dark"] .medical-tag,
+:root[data-theme="dark"] .shopping-tag,
+:root[data-theme="dark"] .job-chip{
+  border-color:var(--color-border, #263a52);
+  background:var(--color-button-bg, #122238);
+  color:var(--color-button-text, #dbeeff);
+  box-shadow:none;
+}
+
+:root[data-theme="dark"] .view-btn{
+  background:transparent;
+  color:var(--color-text-muted, #a8bad0);
+}
+
+:root[data-theme="dark"] .view-btn:hover,
+:root[data-theme="dark"] .view-btn:focus-visible,
+:root[data-theme="dark"] .filter-chip:hover,
+:root[data-theme="dark"] .btn:hover,
+:root[data-theme="dark"] .card-action:hover,
+:root[data-theme="dark"] .save-button:hover{
+  border-color:rgba(103,183,255,.5);
+  background:rgba(103,183,255,.14);
+  color:var(--color-primary, #67b7ff);
+}
+
+:root[data-theme="dark"] .view-btn.active,
+:root[data-theme="dark"] .filter-chip.active,
+:root[data-theme="dark"] .btn-primary,
+:root[data-theme="dark"] .card-action.primary,
+:root[data-theme="dark"] .save-button.saved,
+:root[data-theme="dark"] .save-button.inline.saved,
+:root[data-theme="dark"] .job-chip.primary{
+  border-color:var(--color-primary, #67b7ff);
+  background:var(--color-primary, #67b7ff);
+  color:#061321;
+}
+
+:root[data-theme="dark"] .input,
+:root[data-theme="dark"] .select{
+  border-color:var(--color-border, #263a52);
+  background:var(--color-input-bg, #0f1d30);
+  color:var(--color-input-text, #e8f1fb);
+}
+
+:root[data-theme="dark"] .input::placeholder{
+  color:var(--color-text-muted, #a8bad0);
+}
+
+:root[data-theme="dark"] .filter-chip,
+:root[data-theme="dark"] .reset-btn,
+:root[data-theme="dark"] .salary-range-current,
+:root[data-theme="dark"] .meta-label,
+:root[data-theme="dark"] .listing-detail-label,
+:root[data-theme="dark"] .detail-item .k,
+:root[data-theme="dark"] .status-title,
+:root[data-theme="dark"] .panel-title,
+:root[data-theme="dark"] .results-title,
+:root[data-theme="dark"] .hero h1,
+:root[data-theme="dark"] .employer-cta h2,
+:root[data-theme="dark"] .card-title,
+:root[data-theme="dark"] .job-title,
+:root[data-theme="dark"] .listing-detail-title,
+:root[data-theme="dark"] .job-detail-title,
+:root[data-theme="dark"] .listing-detail-section h4,
+:root[data-theme="dark"] .detail-sec h4,
+:root[data-theme="dark"] .map-popup-title{
+  color:var(--color-text-strong, #f4f8ff);
+}
+
+:root[data-theme="dark"] .hero p,
+:root[data-theme="dark"] .employer-cta p,
+:root[data-theme="dark"] .results-sub,
+:root[data-theme="dark"] .card-subtitle,
+:root[data-theme="dark"] .card-desc,
+:root[data-theme="dark"] .job-summary,
+:root[data-theme="dark"] .meta-value,
+:root[data-theme="dark"] .job-card-kicker,
+:root[data-theme="dark"] .job-detail-company,
+:root[data-theme="dark"] .job-meta-line,
+:root[data-theme="dark"] .salary-range-values,
+:root[data-theme="dark"] .list-detail-comment,
+:root[data-theme="dark"] .directory-trust-note,
+:root[data-theme="dark"] .directory-static-note,
+:root[data-theme="dark"] .directory-seed-points,
+:root[data-theme="dark"] .listing-detail-subtitle,
+:root[data-theme="dark"] .job-detail-summary,
+:root[data-theme="dark"] .listing-detail-section p,
+:root[data-theme="dark"] .detail-sec p,
+:root[data-theme="dark"] .detail-sec li,
+:root[data-theme="dark"] .map-popup-sub,
+:root[data-theme="dark"] .map-popup-line{
+  color:var(--color-text-muted, #a8bad0);
+}
+
+:root[data-theme="dark"] .filter-chip,
+:root[data-theme="dark"] .chip,
+:root[data-theme="dark"] .directory-trust-note,
+:root[data-theme="dark"] .directory-guidance-card,
+:root[data-theme="dark"] .detail-item,
+:root[data-theme="dark"] .listing-detail-item,
+:root[data-theme="dark"] .directory-seed-label{
+  background:var(--color-chip-bg, #0f1d30);
+}
+
+:root[data-theme="dark"] .status-box.error,
+:root[data-theme="dark"] .empty-box.error{
+  border-color:rgba(255,141,154,.42);
+  background:rgba(97,31,43,.35);
+  color:#ffc7cf;
+}
+
+:root[data-theme="dark"] .listing-modal-backdrop{
+  background:rgba(3,8,15,.72);
+}
+
+:root[data-theme="dark"] .detail-logo img{
+  border-color:var(--color-border, #263a52);
+  background:#ffffff;
+}

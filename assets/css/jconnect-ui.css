@@ -3782,3 +3782,239 @@
       grid-template-columns:1fr;
     }
   }
+
+  /* Dark theme polish for hub controls, filters, cards, and page guides. */
+  :root[data-theme="dark"] body .news-events-view-toggle,
+  :root[data-theme="dark"] body .learn-view-toggle,
+  :root[data-theme="dark"] body .living-page-guide,
+  :root[data-theme="dark"] body .learn-page-guide,
+  :root[data-theme="dark"] body .news-events-toc,
+  :root[data-theme="dark"] body .events-hub-tools,
+  :root[data-theme="dark"] body .learn-filter-helper,
+  :root[data-theme="dark"] body .learn-filter-sidebar,
+  :root[data-theme="dark"] body .learn-results-head,
+  :root[data-theme="dark"] body .news-events-results-head,
+  :root[data-theme="dark"] body .living-subpage-section,
+  :root[data-theme="dark"] body .living-prep-state,
+  :root[data-theme="dark"] body .living-travel-card,
+  :root[data-theme="dark"] body .living-travel-empty,
+  :root[data-theme="dark"] body .events-hub-empty,
+  :root[data-theme="dark"] body .news-events-empty,
+  :root[data-theme="dark"] body .jc-article-card,
+  :root[data-theme="dark"] body .jc-note,
+  :root[data-theme="dark"] body .jc-side-panel,
+  :root[data-theme="dark"] body .jc-status,
+  :root[data-theme="dark"] body .jc-phrase,
+  :root[data-theme="dark"] body .jc-phrase-row,
+  :root[data-theme="dark"] body .modal-card,
+  :root[data-theme="dark"] body .panel,
+  :root[data-theme="dark"] body .owner-panel,
+  :root[data-theme="dark"] body .management-panel,
+  :root[data-theme="dark"] body .completion-panel,
+  :root[data-theme="dark"] body .detail-loading{
+    border-color:var(--color-border, #263a52);
+    background:var(--color-card-bg, #101f33);
+    color:var(--color-text, #e8f1fb);
+    box-shadow:var(--shadow, 0 16px 36px rgba(0,0,0,.24));
+  }
+
+  :root[data-theme="dark"] body .news-events-view-button,
+  :root[data-theme="dark"] body .learn-view-button,
+  :root[data-theme="dark"] body .learn-mobile-filter-toggle,
+  :root[data-theme="dark"] body .learn-filter-option,
+  :root[data-theme="dark"] body .learn-selected-chip,
+  :root[data-theme="dark"] body .events-filter-chip,
+  :root[data-theme="dark"] body .pill-link,
+  :root[data-theme="dark"] body .modal-close,
+  :root[data-theme="dark"] body .mini-link,
+  :root[data-theme="dark"] body .related-link,
+  :root[data-theme="dark"] body .fact,
+  :root[data-theme="dark"] body .badge,
+  :root[data-theme="dark"] body .living-related-list a,
+  :root[data-theme="dark"] body .living-page-guide a,
+  :root[data-theme="dark"] body .learn-page-guide a,
+  :root[data-theme="dark"] body .news-events-toc a,
+  :root[data-theme="dark"] body #articleFilterStatus,
+  :root[data-theme="dark"] body #resourceFilterStatus,
+  :root[data-theme="dark"] body [data-news-count],
+  :root[data-theme="dark"] body [data-event-count]{
+    border-color:var(--color-border, #263a52);
+    background:var(--color-chip-bg, #0f1d30);
+    color:var(--color-text-muted, #a8bad0);
+  }
+
+  :root[data-theme="dark"] body .news-events-view-button:hover,
+  :root[data-theme="dark"] body .news-events-view-button:focus-visible,
+  :root[data-theme="dark"] body .learn-view-button:hover,
+  :root[data-theme="dark"] body .learn-view-button:focus-visible,
+  :root[data-theme="dark"] body .learn-mobile-filter-toggle:hover,
+  :root[data-theme="dark"] body .learn-mobile-filter-toggle:focus-visible,
+  :root[data-theme="dark"] body .learn-filter-option:hover,
+  :root[data-theme="dark"] body .learn-filter-option:focus-visible,
+  :root[data-theme="dark"] body .learn-selected-chip:hover,
+  :root[data-theme="dark"] body .learn-selected-chip:focus-visible,
+  :root[data-theme="dark"] body .events-filter-chip:hover,
+  :root[data-theme="dark"] body .pill-link:hover,
+  :root[data-theme="dark"] body .modal-close:hover,
+  :root[data-theme="dark"] body .mini-link:hover,
+  :root[data-theme="dark"] body .related-link:hover,
+  :root[data-theme="dark"] body .living-related-list a:hover,
+  :root[data-theme="dark"] body .living-related-list a:focus-visible,
+  :root[data-theme="dark"] body .living-page-guide a:hover,
+  :root[data-theme="dark"] body .living-page-guide a:focus-visible,
+  :root[data-theme="dark"] body .learn-page-guide a:hover,
+  :root[data-theme="dark"] body .learn-page-guide a:focus-visible,
+  :root[data-theme="dark"] body .news-events-toc a:hover,
+  :root[data-theme="dark"] body .news-events-toc a:focus-visible{
+    border-color:rgba(103,183,255,.5);
+    background:rgba(103,183,255,.14);
+    color:var(--color-primary, #67b7ff);
+    outline-color:rgba(103,183,255,.24);
+  }
+
+  :root[data-theme="dark"] body .news-events-view-button.is-active,
+  :root[data-theme="dark"] body .learn-view-button.is-active,
+  :root[data-theme="dark"] body .learn-filter-option.is-active,
+  :root[data-theme="dark"] body .events-filter-chip.is-active,
+  :root[data-theme="dark"] body .badge.category,
+  :root[data-theme="dark"] body .badge.is-active,
+  :root[data-theme="dark"] body .living-page-guide a.is-active,
+  :root[data-theme="dark"] body .learn-page-guide a.is-active,
+  :root[data-theme="dark"] body .news-events-toc a.is-active{
+    border-color:var(--color-primary, #67b7ff);
+    background:var(--color-primary, #67b7ff);
+    color:#061321;
+    box-shadow:none;
+  }
+
+  :root[data-theme="dark"] body .events-hub-search input,
+  :root[data-theme="dark"] body .events-hub-sort select,
+  :root[data-theme="dark"] body .form-field input,
+  :root[data-theme="dark"] body .form-field select,
+  :root[data-theme="dark"] body .form-field textarea{
+    border-color:var(--color-border, #263a52);
+    background:var(--color-input-bg, #0f1d30);
+    color:var(--color-input-text, #e8f1fb);
+  }
+
+  :root[data-theme="dark"] body .events-hub-search input::placeholder{
+    color:var(--color-text-muted, #a8bad0);
+  }
+
+  :root[data-theme="dark"] body .form-field input::placeholder,
+  :root[data-theme="dark"] body .form-field textarea::placeholder{
+    color:var(--color-text-muted, #a8bad0);
+  }
+
+  :root[data-theme="dark"] body .learn-filter-option span,
+  :root[data-theme="dark"] body .news-card__badges span,
+  :root[data-theme="dark"] body .living-related-list a,
+  :root[data-theme="dark"] body .jc-info-list li,
+  :root[data-theme="dark"] body .living-travel-empty,
+  :root[data-theme="dark"] body .detail-gallery,
+  :root[data-theme="dark"] body .detail-compact-marker,
+  :root[data-theme="dark"] body .detail-main-image,
+  :root[data-theme="dark"] body .detail-placeholder,
+  :root[data-theme="dark"] body .placeholder-art{
+    border-color:var(--color-border, #263a52);
+    background:var(--color-chip-bg, #0f1d30);
+    color:var(--color-chip-text, #9ccdff);
+  }
+
+  :root[data-theme="dark"] body .learn-filter-card.is-roadmap,
+  :root[data-theme="dark"] body .learn-filter-card.is-active{
+    background:var(--color-card-bg, #101f33);
+  }
+
+  :root[data-theme="dark"] body .learn-filter-card.is-active{
+    border-color:var(--color-primary, #67b7ff);
+    box-shadow:0 0 0 3px rgba(103,183,255,.2), var(--shadow, 0 16px 36px rgba(0,0,0,.24));
+  }
+
+  :root[data-theme="dark"] body .news-events-toc h2,
+  :root[data-theme="dark"] body .learn-page-guide h2,
+  :root[data-theme="dark"] body .living-page-guide h2,
+  :root[data-theme="dark"] body .learn-selected-filters__head,
+  :root[data-theme="dark"] body .learn-filter-group summary,
+  :root[data-theme="dark"] body .learn-results-head h3,
+  :root[data-theme="dark"] body .living-travel-card h3,
+  :root[data-theme="dark"] body .living-subpage-section h2,
+  :root[data-theme="dark"] body .living-prep-state strong,
+  :root[data-theme="dark"] body .living-travel-empty strong,
+  :root[data-theme="dark"] body .jc-article-card h3,
+  :root[data-theme="dark"] body .jc-note h2,
+  :root[data-theme="dark"] body .jc-note h3,
+  :root[data-theme="dark"] body .jc-side-panel h2,
+  :root[data-theme="dark"] body .jc-side-panel h3,
+  :root[data-theme="dark"] body .jc-status strong,
+  :root[data-theme="dark"] body .jc-article h1,
+  :root[data-theme="dark"] body .jc-article h2,
+  :root[data-theme="dark"] body .jc-article h3,
+  :root[data-theme="dark"] body .jc-phrase strong,
+  :root[data-theme="dark"] body .jc-phrase-row strong,
+  :root[data-theme="dark"] body .section-title,
+  :root[data-theme="dark"] body .form-field label,
+  :root[data-theme="dark"] body .agree-label,
+  :root[data-theme="dark"] body .detail-title,
+  :root[data-theme="dark"] body .detail-content h2,
+  :root[data-theme="dark"] body .detail-price,
+  :root[data-theme="dark"] body .fact-value,
+  :root[data-theme="dark"] body .related-box h3{
+    color:var(--color-text-strong, #f4f8ff);
+  }
+
+  :root[data-theme="dark"] body .learn-filter-helper,
+  :root[data-theme="dark"] body .learn-no-filters,
+  :root[data-theme="dark"] body .learn-results-head p,
+  :root[data-theme="dark"] body .living-subpage-section p,
+  :root[data-theme="dark"] body .living-subpage-section li,
+  :root[data-theme="dark"] body .living-prep-state p,
+  :root[data-theme="dark"] body .living-travel-empty p,
+  :root[data-theme="dark"] body .jc-article-card p,
+  :root[data-theme="dark"] body .jc-card-meta,
+  :root[data-theme="dark"] body .jc-article-card time,
+  :root[data-theme="dark"] body .jc-note p,
+  :root[data-theme="dark"] body .jc-side-panel p,
+  :root[data-theme="dark"] body .jc-status,
+  :root[data-theme="dark"] body .jc-article p,
+  :root[data-theme="dark"] body .jc-article li,
+  :root[data-theme="dark"] body .jc-phrase-row small,
+  :root[data-theme="dark"] body .section-desc,
+  :root[data-theme="dark"] body .required-note,
+  :root[data-theme="dark"] body .file-note,
+  :root[data-theme="dark"] body .field-note,
+  :root[data-theme="dark"] body .detail-body,
+  :root[data-theme="dark"] body .fact-label,
+  :root[data-theme="dark"] body .owner-panel p{
+    color:var(--color-text-muted, #a8bad0);
+  }
+
+  :root[data-theme="dark"] body .modal-backdrop{
+    background:rgba(3,8,15,.74);
+  }
+
+  :root[data-theme="dark"] body .management-message.info{
+    border-color:var(--color-border, #263a52);
+    background:var(--color-chip-bg, #0f1d30);
+    color:var(--color-text, #e8f1fb);
+  }
+
+  :root[data-theme="dark"] body .management-message.success{
+    border-color:rgba(98,218,146,.38);
+    background:rgba(22,96,61,.24);
+    color:#a9f0c5;
+  }
+
+  :root[data-theme="dark"] body .management-message.error,
+  :root[data-theme="dark"] body .closed-detail-notice{
+    border-color:rgba(255,141,154,.42);
+    background:rgba(97,31,43,.35);
+    color:#ffc7cf;
+  }
+
+  @media (max-width:759px){
+    :root[data-theme="dark"] body .news-events-view-toggle,
+    :root[data-theme="dark"] body .learn-view-toggle{
+      background:var(--color-card-bg, #101f33);
+    }
+  }

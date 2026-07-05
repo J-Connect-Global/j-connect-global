@@ -1518,6 +1518,7 @@ body.portal3-home > .page-footer{
 :root[data-theme="dark"] body.portal3-home .portal3-card b,
 :root[data-theme="dark"] body.portal3-home .portal3-job-card small,
 :root[data-theme="dark"] body.portal3-home .portal3-job-card p,
+:root[data-theme="dark"] body.portal3-home .portal3-job-card b,
 :root[data-theme="dark"] body.portal3-home .portal3-news-list time,
 :root[data-theme="dark"] body.portal3-home .portal3-news-list small,
 :root[data-theme="dark"] body.portal3-home .portal3-event-card small,
@@ -1530,6 +1531,10 @@ body.portal3-home > .page-footer{
 :root[data-theme="dark"] body.portal3-home .portal3-hero p{
   color:#dbeeff;
   text-shadow:0 2px 12px rgba(0,0,0,.52);
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-job-card b{
+  color:var(--color-text-accent, #9ccdff);
 }
 
 :root[data-theme="dark"] body.portal3-home .portal3-panel,

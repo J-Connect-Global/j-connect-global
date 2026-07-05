@@ -1826,7 +1826,7 @@ function compareHomeItemEntries(a, b) {
 }
 
 function getPreferredHomeDateValue(item) {
-  for (const field of ['publishedAt', 'published_at', 'date', 'updatedAt', 'updated_at', 'createdAt', 'created_at']) {
+  for (const field of ['lastModifiedAt', 'last_modified_at', 'updatedAt', 'updated_at', 'publishedAt', 'published_at', 'postedAt', 'posted_at', 'date', 'createdAt', 'created_at']) {
     const value = String(item?.[field] || '').trim();
     if (value && Number.isFinite(Date.parse(value))) return value;
   }

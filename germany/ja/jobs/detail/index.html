@@ -458,8 +458,10 @@
       source_url: sourceUrl,
       source_name: getValue(row, "source_name", "source", "publisher"),
       visa_support: getValue(row, "visa_support", "visa"),
-      published_at: getValue(row, "published_at", "posted_at", "posted_date", "published", "created_at"),
+      last_modified_at: getValue(row, "last_modified_at", "lastModifiedAt", "last_modified"),
       updated_at: getValue(row, "updated_at", "updated", "last_updated"),
+      published_at: getValue(row, "published_at", "posted_at", "posted_date", "published"),
+      posted_at: getValue(row, "posted_at", "posted_date"),
       created_at: getValue(row, "created_at", "created"),
       expires_at: getValue(row, "expires_at", "deadline", "application_deadline")
     };
@@ -563,6 +565,19 @@
     `;
   }
 
+  function formatDisplayDate(value){
+    const text = clean(value);
+    if (!text) return "";
+    const time = Date.parse(text);
+    if (!Number.isFinite(time)) return text;
+    return new Intl.DateTimeFormat("ja-JP", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      timeZone: "Europe/Berlin"
+    }).format(new Date(time)).replace(/\//g, ".");
+  }
+
   function renderEmpty(kind){
     const title = kind === "missing" ? "求人IDが指定されていません" : "求人が見つかりませんでした";
     const body = kind === "missing"
@@ -619,9 +634,11 @@
         ${detailItem("言語条件", job.language)}
         ${detailItem("ビザサポート", job.visa_support)}
         ${detailItem("給与", salary)}
-        ${detailItem("掲載日", job.published_at)}
-        ${detailItem("更新日", job.updated_at)}
-        ${detailItem("応募期限", job.expires_at)}
+        ${detailItem("掲載日", formatDisplayDate(job.published_at))}
+        ${detailItem("応募期限", formatDisplayDate(job.expires_at))}
+        ${detailItem("最終更新", formatDisplayDate(job.last_modified_at))}
+        ${detailItem("更新日", formatDisplayDate(job.updated_at))}
+        ${detailItem("作成日", formatDisplayDate(job.created_at))}
         ${detailItem("Job ID", job.id)}
       </div>
 

@@ -81,14 +81,17 @@
       company_logo_url: getValue(row, "company_logo_url", "logo_url", "logo"),
       sample_label: getValue(row, "sample_label", "test_label"),
       visa_support: getValue(row, "visa_support"),
-      updated_at: getValue(row, "updated_at", "updated"),
+      last_modified_at: getValue(row, "last_modified_at", "lastModifiedAt", "last_modified"),
+      updated_at: getValue(row, "updated_at", "updated", "last_updated"),
       published_at: getValue(row, "published_at", "posted_at", "posted_date", "published"),
+      posted_at: getValue(row, "posted_at", "posted_date"),
+      created_at: getValue(row, "created_at", "created"),
       expires_at: getValue(row, "expires_at", "deadline", "application_deadline")
     };
   }
 
   function getSortTimestamp(item) {
-    for (const value of [item.published_at, item.updated_at, item.posted_at]) {
+    for (const value of [item.last_modified_at, item.updated_at, item.published_at, item.posted_at, item.created_at]) {
       const time = Date.parse(value);
       if (Number.isFinite(time)) return time;
     }

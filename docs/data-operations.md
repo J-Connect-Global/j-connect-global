@@ -36,6 +36,7 @@ This repository publishes a static GitHub Pages site. Generated HTML and JSON ar
 - Do not add `JobPosting` schema until a listing source has complete, verified employer and application data.
 - Do not add `Event` schema for uncertain or recurring event-guide pages without a real ISO `startDate`.
 - Keep static JSON first and GAS fallback second for Jobs and Community.
+- Jobs date display and sorting must use existing fields in this order: `last_modified_at`, `updated_at`, `published_at` / `posted_at`, then `created_at`. Do not copy `created_at` into `published_at`; keep the labels distinct in the UI.
 - Static seed/guidance cards are not verified listings. They explain how to evaluate a directory or listing while runtime data loads.
 - GAS/runtime data may replace static guidance when available, but generated output and any static fallback changes must be committed before merge.
 - Keep live production checks manual-only; normal PR validation must not depend on network availability.

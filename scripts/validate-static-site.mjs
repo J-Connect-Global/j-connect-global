@@ -653,7 +653,7 @@ function isDeferredArticleImageUrl(html, attrIndex, url) {
   if (tagStart === -1 || tagEnd === -1) return false;
 
   const tag = html.slice(tagStart, tagEnd + 1);
-  return /\bdata-fallback-src=["']\/assets\/img\/placeholders\/jconnect-article-placeholder\.svg["']/i.test(tag);
+  return /\bdata-fallback-src=["']\/assets\/img\/placeholders\/jconnect-default-card\.webp["']/i.test(tag);
 }
 
 if (problems.length) {

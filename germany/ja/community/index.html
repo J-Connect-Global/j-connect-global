@@ -13,14 +13,14 @@
   <meta property="og:title" content="交流・掲示板 | ドイツ在住日本人コミュニティ | J-Connect Germany">
   <meta property="og:description" content="ドイツ在住日本人向けの交流掲示板。売ります・買います、部屋、イベント、質問、友達募集、生活サポートの投稿を探せます。">
   <meta property="og:url" content="https://j-connect-global.com/germany/ja/community/">
-  <meta property="og:image" content="https://j-connect-global.com/assets/images/brand/logo_header.png">
+  <meta property="og:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="J-Connect Germany">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="交流・掲示板 | ドイツ在住日本人コミュニティ | J-Connect Germany">
   <meta name="twitter:description" content="ドイツ在住日本人向けの交流掲示板。売ります・買います、部屋、イベント、質問、友達募集、生活サポートの投稿を探せます。">
-  <meta name="twitter:image" content="https://j-connect-global.com/assets/images/brand/logo_header.png">
+  <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
@@ -319,7 +319,8 @@
   </footer>
   <!-- LAYOUT:ja-footer:end -->
 
-  <script src="/assets/js/data-sources.js"></script>
+  <script src="/assets/js/common.js"></script>
+<script src="/assets/js/data-sources.js"></script>
   <script src="/assets/js/community-shared.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
@@ -1049,7 +1050,7 @@
       els.emptyState.style.display = "none";
       els.cards.classList.toggle("grid-mode", state.viewMode === "grid");
       els.cards.innerHTML = state.filtered.map((post) => {
-        const image = post._images[0];
+        const image = post._contentImage || "/assets/img/placeholders/jconnect-default-card.webp";
         const postType = post._postType || "質問";
         const subcategory = post._subcategory || "その他";
         const priceText = post._free ? "無料" : post._price;
@@ -1064,12 +1065,12 @@
           post._japaneseOk ? `<span class="trust-badge japanese">日本語OK</span>` : ""
         ].filter(Boolean).join("");
         return `
-          <article class="card jc-result-card ${image ? "" : "no-image"} ${post._isClosed ? "is-closed" : ""}" data-post-id="${escapeHtml(post._id)}" data-status="${escapeHtml(post._status)}" data-photo-count="${post._images.length}" data-free="${post._free ? "true" : "false"}">
+          <article class="card jc-result-card ${post._isClosed ? "is-closed" : ""}" data-post-id="${escapeHtml(post._id)}" data-status="${escapeHtml(post._status)}" data-photo-count="${post._images.length}" data-free="${post._free ? "true" : "false"}">
             <button class="save-button ${saved ? "saved" : ""}" type="button" data-save-id="${escapeHtml(post._id)}" aria-label="${saved ? "保存を解除" : "保存する"}">${saved ? "★" : "☆"}</button>
             <a class="card-link" href="#post-${encodeURIComponent(post._id)}" aria-label="${escapeHtml(post._title)}の詳細を開く">
               <div class="card-media">
                 <div class="placeholder-art" data-icon="${escapeHtml(CATEGORY_ICONS[subcategory] || CATEGORY_ICONS[postType] || CATEGORY_ICONS["その他"])}"></div>
-                ${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(post._title)}の写真" loading="lazy" decoding="async" onerror="this.closest('.card')?.classList.add('no-image'); this.remove()">` : ""}
+                <img src="${escapeHtml(image)}" alt="${escapeHtml(post._title)} のイメージ" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&&this.getAttribute('src')!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;}">
                 ${closedLabel}
                 ${post._images.length ? `<span class="image-count">写真 ${post._images.length}</span>` : ""}
               </div>
@@ -1213,7 +1214,7 @@
       const relatedGroup = comparablePosts(state.posts, post, 3);
       const related = relatedGroup.items;
       const images = post._images.length ? post._images : [];
-      const mainImage = images[0];
+      const mainImage = images[0] || post._contentImage || "/assets/img/placeholders/jconnect-default-card.webp";
       const saved = isSaved(post._id);
       const contactHref = post._id ? `./contact/?post_id=${encodeURIComponent(post._id)}` : "./contact/";
       const reportHref = post._id ? `./report/?post_id=${encodeURIComponent(post._id)}` : "./report/";
@@ -1230,26 +1231,24 @@
       const contactAction = post._isClosed
         ? `<span class="btn btn-primary is-disabled" aria-disabled="true">募集終了</span>`
         : `<a class="btn btn-primary" href="${escapeHtml(contactHref)}">投稿者に連絡</a>`;
-      const galleryHtml = hasImages ? `
+      const galleryHtml = `
           <div class="detail-gallery">
             <div class="detail-main-image" id="detailMainImage">
-              <img id="detailMainPhoto" src="${escapeHtml(mainImage)}" alt="${escapeHtml(post._title)}の写真" loading="eager" decoding="async" onerror="this.remove(); document.getElementById('detailMainPlaceholder')?.removeAttribute('hidden');">
-              <div id="detailMainPlaceholder" class="detail-placeholder" hidden>${marker}</div>
-            </div>
+              <img id="detailMainPhoto" src="${escapeHtml(mainImage)}" alt="${escapeHtml(post._title)} のイメージ" loading="eager" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&&this.getAttribute('src')!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;}">
+              </div>
             <div class="detail-thumbs" id="detailThumbs" ${images.length <= 1 ? "hidden" : ""}>
               ${images.map((src, index) => `
                 <button class="detail-thumb-button ${index === 0 ? "active" : ""}" type="button" data-image-src="${escapeHtml(src)}" aria-label="写真${index + 1}を表示">
-                  <img src="${escapeHtml(src)}" alt="${escapeHtml(post._title)}の写真 ${index + 1}" loading="lazy" decoding="async" onerror="this.closest('button')?.remove()">
+                  <img src="${escapeHtml(src)}" alt="${escapeHtml(post._title)} のイメージ" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&&this.getAttribute('src')!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;}">
                 </button>
               `).join("")}
             </div>
-          </div>` : "";
+          </div>`;
 
       els.detailContent.innerHTML = `
-        <div class="detail-layout ${hasImages ? "" : "no-image"}">
+        <div class="detail-layout">
           ${galleryHtml}
           <div class="detail-content">
-            ${hasImages ? "" : `<div class="detail-compact-marker" aria-hidden="true">${marker}</div>`}
             ${closedNotice}
             <span class="category-badge">${escapeHtml(post._postType)}</span>
             <span class="subcategory-badge">${escapeHtml(post._subcategory)}</span>

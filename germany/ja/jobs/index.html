@@ -14,14 +14,14 @@
   <meta property="og:title" content="仕事・求人 | ドイツの日本語求人情報 | J-Connect Germany">
   <meta property="og:description" content="ドイツで働きたい日本語話者向けに、求人、転職、アルバイト、勤務形態、ビザサポートなどの仕事情報を整理しています。">
   <meta property="og:url" content="https://j-connect-global.com/germany/ja/jobs/">
-  <meta property="og:image" content="https://j-connect-global.com/assets/images/brand/logo_header.png">
+  <meta property="og:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="J-Connect Germany">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="仕事・求人 | ドイツの日本語求人情報 | J-Connect Germany">
   <meta name="twitter:description" content="ドイツで働きたい日本語話者向けに、求人、転職、アルバイト、勤務形態、ビザサポートなどの仕事情報を整理しています。">
-  <meta name="twitter:image" content="https://j-connect-global.com/assets/images/brand/logo_header.png">
+  <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png" />
 
 
@@ -669,7 +669,8 @@
   </footer>
   <!-- LAYOUT:ja-footer:end -->
 
-  <script src="/assets/js/data-sources.js"></script>
+  <script src="/assets/js/common.js"></script>
+<script src="/assets/js/data-sources.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
     const JOBS_STATIC_URL = DATA_SOURCES.staticData?.jobs || '/assets/data/jobs/jobs.json';
@@ -1117,7 +1118,9 @@
         created_at: getValue(row, 'created_at', 'created'),
         expires_at: getValue(row, 'expires_at', 'deadline', 'application_deadline'),
 
-        company_logo_url: getValue(row, 'company_logo_url')
+        image: getValue(row, 'image', 'image_url', 'imageUrl', 'thumbnail', 'thumbnail_url', 'company_logo_url'),
+        image_url: getValue(row, 'image_url', 'imageUrl', 'thumbnail', 'thumbnail_url', 'company_logo_url'),
+        company_logo_url: getValue(row, 'company_logo_url', 'logo_url', 'logo')
       };
     }
 
@@ -1554,7 +1557,7 @@
       const requirements = splitRequirements(requirementsRaw);
       const comment = job.free_comment || '';
       const commentEn = job.free_comment_en || '';
-      const logoUrl = job.company_logo_url || '';
+      const logoUrl = window.JCONNECT_IMAGE_FALLBACK?.resolveContentImage(job) || '/assets/img/placeholders/jconnect-default-card.webp';
       const saved = isJobSaved(job.id);
       const detailPath = getJobDetailPath(job);
       const applyMailto = getApplyMailto(job);
@@ -1590,16 +1593,9 @@
             <button class="save-button inline ${saved ? 'saved' : ''}" type="button" data-detail-save-id="${escapeHtml(job.id)}">${saved ? '★ 保存済み' : '☆ 保存'}</button>
           </div>
         </div>
-
-        ${
-          hasDisplayValue(logoUrl)
-            ? `
-              <div class="detail-logo">
-                <img src="${escapeHtml(logoUrl)}" alt="${escapeHtml(company)} ロゴ">
-              </div>
-            `
-            : ''
-        }
+        <div class="detail-logo">
+          <img src="${escapeHtml(logoUrl)}" alt="${escapeHtml(position)} のイメージ" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&&this.getAttribute('src')!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;}">
+        </div>
 
         <div class="detail-grid">
           ${detailItem('地域', region)}

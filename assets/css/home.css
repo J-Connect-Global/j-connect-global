@@ -15,6 +15,27 @@
   --portal3-soft-shadow:0 3px 10px rgba(0,45,95,.08);
   --portal3-container:1160px;
   --portal3-hero-image:url('/assets/images/hero/home-portal-hero.png');
+  --portal3-surface:#ffffff;
+  --portal3-surface-elevated:#ffffff;
+  --portal3-chip-bg:#ffffff;
+}
+
+:root[data-theme="dark"]{
+  --portal3-blue:#67b7ff;
+  --portal3-blue-2:#7bc4ff;
+  --portal3-navy:#eef6ff;
+  --portal3-navy-dark:#dbeeff;
+  --portal3-bg:#07111f;
+  --portal3-line:#263a52;
+  --portal3-line-2:#355575;
+  --portal3-text:#e8f1fb;
+  --portal3-muted:#a8bad0;
+  --portal3-shadow:0 16px 36px rgba(0,0,0,.24);
+  --portal3-soft-shadow:0 12px 28px rgba(0,0,0,.20);
+  --portal3-hero-image:url('/assets/images/hero/home-portal-hero-dark.png');
+  --portal3-surface:#101f33;
+  --portal3-surface-elevated:#122238;
+  --portal3-chip-bg:#0f1d30;
 }
 
 html{
@@ -1429,4 +1450,182 @@ body.portal3-home > .page-footer{
   .portal3-chips a{
     flex:0 0 auto;
   }
+}
+
+/* Dark theme */
+
+:root[data-theme="dark"] body.portal3-home{
+  color:var(--portal3-text);
+  background:var(--portal3-bg) !important;
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-main,
+:root[data-theme="dark"] body.portal3-home .portal3-ribbon-wrap{
+  background:var(--portal3-bg) !important;
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-hero{
+  border-bottom-color:var(--portal3-line);
+  background:#0b1626;
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-hero-bg{
+  background:
+    var(--portal3-hero-image) center center / cover no-repeat,
+    linear-gradient(90deg, #07111f, #102541);
+  filter:saturate(1.05) contrast(1.04);
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-hero::before{
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7,17,31,.26) 0%,
+      rgba(7,17,31,.18) 22%,
+      rgba(7,17,31,.04) 50%,
+      rgba(7,17,31,.18) 78%,
+      rgba(7,17,31,.26) 100%
+    );
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-hero::after{
+  background:linear-gradient(180deg, rgba(7,17,31,0), rgba(7,17,31,.72));
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-hero h1,
+:root[data-theme="dark"] body.portal3-home .portal3-panel-head h2,
+:root[data-theme="dark"] body.portal3-home .portal3-section-head h2,
+:root[data-theme="dark"] body.portal3-home .portal3-news-list h3,
+:root[data-theme="dark"] body.portal3-home .portal3-mini strong,
+:root[data-theme="dark"] body.portal3-home .portal3-job-mini strong,
+:root[data-theme="dark"] body.portal3-home .portal3-card strong,
+:root[data-theme="dark"] body.portal3-home .portal3-job-card strong,
+:root[data-theme="dark"] body.portal3-home .portal3-event-card strong,
+:root[data-theme="dark"] body.portal3-home .portal3-phrase strong{
+  color:var(--portal3-text);
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-hero h1{
+  text-shadow:0 2px 16px rgba(0,0,0,.58);
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-hero p,
+:root[data-theme="dark"] body.portal3-home .portal3-section-head p,
+:root[data-theme="dark"] body.portal3-home .portal3-trust-note,
+:root[data-theme="dark"] body.portal3-home .portal3-mini small,
+:root[data-theme="dark"] body.portal3-home .portal3-job-mini small,
+:root[data-theme="dark"] body.portal3-home .portal3-card small,
+:root[data-theme="dark"] body.portal3-home .portal3-card b,
+:root[data-theme="dark"] body.portal3-home .portal3-job-card small,
+:root[data-theme="dark"] body.portal3-home .portal3-job-card p,
+:root[data-theme="dark"] body.portal3-home .portal3-news-list time,
+:root[data-theme="dark"] body.portal3-home .portal3-news-list small,
+:root[data-theme="dark"] body.portal3-home .portal3-event-card small,
+:root[data-theme="dark"] body.portal3-home .portal3-phrase p,
+:root[data-theme="dark"] body.portal3-home .portal3-latest-date,
+:root[data-theme="dark"] body.portal3-home .portal3-community-date{
+  color:var(--portal3-muted);
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-hero p{
+  color:#dbeeff;
+  text-shadow:0 2px 12px rgba(0,0,0,.52);
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-panel,
+:root[data-theme="dark"] body.portal3-home .portal3-section,
+:root[data-theme="dark"] body.portal3-home .portal3-card,
+:root[data-theme="dark"] body.portal3-home .portal3-job-card,
+:root[data-theme="dark"] body.portal3-home .portal3-news-list,
+:root[data-theme="dark"] body.portal3-home .portal3-event-card,
+:root[data-theme="dark"] body.portal3-home .portal3-phrase{
+  border-color:var(--portal3-line);
+  background:var(--portal3-surface);
+  color:var(--portal3-text);
+  box-shadow:var(--portal3-soft-shadow);
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-community,
+:root[data-theme="dark"] body.portal3-home .portal3-living,
+:root[data-theme="dark"] body.portal3-home .portal3-jobs,
+:root[data-theme="dark"] body.portal3-home .portal3-news,
+:root[data-theme="dark"] body.portal3-home .portal3-learn{
+  background:linear-gradient(180deg, #122238, #101f33 46%);
+  border-color:var(--portal3-line-2);
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-mini,
+:root[data-theme="dark"] body.portal3-home .portal3-job-mini,
+:root[data-theme="dark"] body.portal3-home .portal3-news-list a:not(.more-news){
+  border-bottom-color:var(--portal3-line);
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-mini:hover,
+:root[data-theme="dark"] body.portal3-home .portal3-mini:focus-visible{
+  background:#142742;
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-quick a,
+:root[data-theme="dark"] body.portal3-home .portal3-panel-head > a,
+:root[data-theme="dark"] body.portal3-home .portal3-section-head > a,
+:root[data-theme="dark"] body.portal3-home .more-news,
+:root[data-theme="dark"] body.portal3-home .portal3-chips a,
+:root[data-theme="dark"] body.portal3-home .portal3-section-buttons a:last-child,
+:root[data-theme="dark"] body.portal3-home .portal3-fallback-actions a,
+:root[data-theme="dark"] body.portal3-home .portal3-phrase button{
+  border-color:var(--portal3-line-2);
+  background:var(--portal3-chip-bg);
+  color:var(--portal3-blue);
+  box-shadow:none;
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-panel-head > a:hover,
+:root[data-theme="dark"] body.portal3-home .portal3-section-head > a:hover,
+:root[data-theme="dark"] body.portal3-home .more-news:hover,
+:root[data-theme="dark"] body.portal3-home .portal3-chips a:hover,
+:root[data-theme="dark"] body.portal3-home .portal3-fallback-actions a:hover{
+  border-color:rgba(103,183,255,.62);
+  background:rgba(103,183,255,.14);
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-section-buttons a:first-child,
+:root[data-theme="dark"] body.portal3-home .portal3-chips .chip-primary,
+:root[data-theme="dark"] body.portal3-home .portal3-fallback-actions a:first-child{
+  border-color:var(--portal3-blue);
+  background:var(--portal3-blue);
+  color:#061321;
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-thumb,
+:root[data-theme="dark"] body.portal3-home .portal3-card-img,
+:root[data-theme="dark"] body.portal3-home .event-img,
+:root[data-theme="dark"] body.portal3-home .portal3-job-icon{
+  border-color:var(--portal3-line);
+  background:#0d1a2b;
+  color:var(--portal3-blue);
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-mini em,
+:root[data-theme="dark"] body.portal3-home .portal3-community-mini em,
+:root[data-theme="dark"] body.portal3-home .portal3-card em,
+:root[data-theme="dark"] body.portal3-home .portal3-job-card em,
+:root[data-theme="dark"] body.portal3-home .portal3-event-card em,
+:root[data-theme="dark"] body.portal3-home .portal3-phrase span{
+  border-color:var(--portal3-line);
+  background:rgba(103,183,255,.14);
+  color:var(--portal3-blue);
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-emergency{
+  border-color:rgba(255,125,139,.44);
+  background:linear-gradient(180deg, rgba(97,31,43,.72), #101f33);
+  color:var(--portal3-text);
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-emergency strong{
+  color:#ff8d9a;
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-emergency p{
+  color:#f2bdc5;
 }

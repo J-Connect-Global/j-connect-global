@@ -67,7 +67,6 @@ const requiredPages = [
   '/germany/ja/contact/',
   '/germany/ja/news/',
   '/germany/ja/events/',
-  '/germany/ja/guides/',
   '/germany/ja/learn-german/',
   '/germany/ja/living/',
   '/germany/ja/jobs/',

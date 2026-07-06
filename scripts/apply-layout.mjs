@@ -437,7 +437,6 @@ function activePillar(url, page) {
   if (url.startsWith('/germany/ja/eat/')) return 'living';
   if (url.startsWith('/germany/ja/shopping/')) return 'living';
   if (url.startsWith('/germany/ja/medical/')) return 'living';
-  if (url.startsWith('/germany/ja/guides/')) return 'living';
   if (url.startsWith('/germany/ja/jobs/')) return 'jobs';
   if (url.startsWith('/germany/ja/events/')) return 'events';
   if (url.startsWith('/germany/ja/news/')) return 'events';

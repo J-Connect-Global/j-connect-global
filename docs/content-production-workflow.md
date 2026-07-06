@@ -30,7 +30,7 @@ Running the content build and layout application updates:
 - `/assets/js/search-index.js`
 - `/sitemap.xml`
 
-Search and sitemap are governed by the static page registry plus the Living, Events, and Learn German article registries. Legacy pages such as `/germany/ja/guides/` stay out of search and sitemap unless a registry flag is deliberately changed.
+Search and sitemap are governed by the static page registry plus the Living, Events, and Learn German article registries. Retired routes such as `/germany/ja/guides/` must stay out of search, sitemap, and emitted internal links.
 
 Generated article pages include:
 
@@ -155,7 +155,7 @@ Use `home_visible` and `home_order` in the registry:
 5. For Eat, Shopping, and Medical style directories, keep the top-level URL and use `type: "directory"` with `pillar: "living"`.
 6. Run the build, layout, and validation commands.
 
-Do not reintroduce `/germany/ja/guides/` as a current pillar. It is a legacy route that points users to `/germany/ja/living/`.
+Do not reintroduce `/germany/ja/guides/` as a current pillar or live internal link. Use `/germany/ja/living/` instead.
 
 ## Commands
 

@@ -858,27 +858,5 @@
       "運営者情報",
       "Impressum"
     ]
-  },
-  {
-    "id": "page-guides",
-    "title": "ページを移動しました",
-    "url": "/germany/ja/guides/",
-    "type": "legacy",
-    "pillar": "legacy",
-    "status": "legacy",
-    "canonical_url": "/germany/ja/living/",
-    "nav_visible": false,
-    "footer_visible": false,
-    "search_visible": false,
-    "sitemap_visible": false,
-    "legacy": true,
-    "redirect_target": "/germany/ja/living/",
-    "layout": "legacy",
-    "hero_type": "utility",
-    "description": "旧ガイドページは生活・手続きハブへ統合されました。",
-    "tags": [
-      "旧ページ",
-      "生活・手続き"
-    ]
   }
 ]

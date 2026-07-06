@@ -50,8 +50,7 @@ const requiredCategoryMainLinks = [
 const requiredLivingSecondaryLinks = [
   '/germany/ja/eat/',
   '/germany/ja/shopping/',
-  '/germany/ja/medical/',
-  '/germany/ja/guides/'
+  '/germany/ja/medical/'
 ];
 const requiredCategoryLinks = [
   ...requiredCategoryMainLinks
@@ -211,10 +210,6 @@ function validatePagesRegistry(pages, pagesByUrl) {
     }
   }
 
-  const guides = pagesByUrl.get('/germany/ja/guides/');
-  if (guides && (guides.type !== 'legacy' || guides.pillar !== 'legacy' || guides.nav_visible !== false)) {
-    problems.push('/germany/ja/guides/ must remain a hidden legacy route.');
-  }
 }
 
 function validateRouteCoverage(htmlByUrl, pagesByUrl, articleUrls) {

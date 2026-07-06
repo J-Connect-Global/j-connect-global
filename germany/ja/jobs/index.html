@@ -424,6 +424,37 @@
     background:var(--color-primary, #67b7ff);
     color:#061321;
   }
+
+  :root[data-theme="dark"] .jobs-hero-link,
+  :root[data-theme="dark"] #job-listings .card-action,
+  :root[data-theme="dark"] #job-listings .btn,
+  :root[data-theme="dark"] #job-listings .save-button{
+    border-color:var(--color-border, #263a52);
+    background:var(--button-on-dark-bg, #122238);
+    color:var(--button-on-dark-text, #dbeeff);
+  }
+
+  :root[data-theme="dark"] .jobs-hero-link:hover,
+  :root[data-theme="dark"] .jobs-hero-link:focus-visible,
+  :root[data-theme="dark"] #job-listings .card-action:hover,
+  :root[data-theme="dark"] #job-listings .card-action:focus-visible,
+  :root[data-theme="dark"] #job-listings .btn:hover,
+  :root[data-theme="dark"] #job-listings .btn:focus-visible,
+  :root[data-theme="dark"] #job-listings .save-button:hover,
+  :root[data-theme="dark"] #job-listings .save-button:focus-visible{
+    border-color:rgba(103,183,255,.5);
+    background:rgba(103,183,255,.14);
+    color:var(--color-primary, #67b7ff);
+  }
+
+  :root[data-theme="dark"] #job-listings .card-action.primary,
+  :root[data-theme="dark"] #job-listings .btn-primary,
+  :root[data-theme="dark"] #job-listings .save-button.saved,
+  :root[data-theme="dark"] #job-listings .save-button.inline.saved{
+    border-color:var(--color-primary, #67b7ff);
+    background:var(--color-primary, #67b7ff);
+    color:#061321;
+  }
 </style>
 
 <script>

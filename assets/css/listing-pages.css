@@ -418,6 +418,7 @@ button{cursor:pointer}
 
 :root[data-theme="dark"] .filter-chip,
 :root[data-theme="dark"] .reset-btn,
+:root[data-theme="dark"] .label,
 :root[data-theme="dark"] .salary-range-current,
 :root[data-theme="dark"] .meta-label,
 :root[data-theme="dark"] .listing-detail-label,

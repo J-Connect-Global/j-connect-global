@@ -564,6 +564,7 @@
     }
 
     :root[data-theme="dark"] .community-hero,
+    :root[data-theme="dark"] .skip-link,
     :root[data-theme="dark"] .hero-insight,
     :root[data-theme="dark"] .community-onboarding,
     :root[data-theme="dark"] .community-use-card,
@@ -579,6 +580,11 @@
       background:var(--color-card-bg, #101f33);
       color:var(--color-text, #e8f1fb);
       box-shadow:var(--shadow, 0 16px 36px rgba(0,0,0,.24));
+    }
+
+    :root[data-theme="dark"] .skip-link{
+      background:#fff;
+      color:#111;
     }
 
     :root[data-theme="dark"] .community-hero{

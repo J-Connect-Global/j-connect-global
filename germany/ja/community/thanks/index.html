@@ -191,6 +191,86 @@
   margin-top:16px;
 }
 
+:root[data-theme="dark"] .thanks-hero,
+:root[data-theme="dark"] .thanks-card,
+:root[data-theme="dark"] .completion-panel{
+  border-color:var(--color-border, #263a52);
+  background:var(--surface-card-bg, #fff);
+  color:var(--surface-card-text, #24313d);
+  box-shadow:var(--shadow, 0 16px 36px rgba(0,0,0,.24));
+}
+
+:root[data-theme="dark"] .thanks-hero h1,
+:root[data-theme="dark"] .thanks-card h2,
+:root[data-theme="dark"] .section-kicker{
+  color:var(--surface-card-heading, #07315f);
+}
+
+:root[data-theme="dark"] .thanks-hero p,
+:root[data-theme="dark"] .thanks-card p,
+:root[data-theme="dark"] .fallback-message,
+:root[data-theme="dark"] .cancel-status{
+  color:var(--surface-card-muted, #526170);
+}
+
+:root[data-theme="dark"] .summary-item,
+:root[data-theme="dark"] .fallback-message{
+  border-color:#d6e2ef;
+  background:#f8fbff;
+  color:var(--surface-card-text, #24313d);
+}
+
+:root[data-theme="dark"] .summary-label{
+  color:#60748c;
+}
+
+:root[data-theme="dark"] .summary-value{
+  color:var(--surface-card-text, #24313d);
+}
+
+:root[data-theme="dark"] .cancel-panel{
+  border-top-color:#d6e2ef;
+}
+
+:root[data-theme="dark"] .cancel-button{
+  border-color:#ffd5bb;
+  background:#fff7ed;
+  color:var(--thanks-danger);
+}
+
+:root[data-theme="dark"] .cancel-button:hover,
+:root[data-theme="dark"] .cancel-button:focus-visible{
+  background:#fff0e7;
+  border-color:#f6b780;
+}
+
+:root[data-theme="dark"] #manageUrlField{
+  border-color:#cfe0f2;
+  background:#fff;
+  color:var(--surface-card-text, #24313d);
+}
+
+:root[data-theme="dark"] body .thanks-hero,
+:root[data-theme="dark"] body .thanks-card,
+:root[data-theme="dark"] body .completion-panel{
+  border-color:var(--color-border, #263a52);
+  background:var(--surface-card-bg, #fff);
+  color:var(--surface-card-text, #24313d);
+}
+
+:root[data-theme="dark"] body .thanks-hero h1,
+:root[data-theme="dark"] body .thanks-card h2,
+:root[data-theme="dark"] body .section-kicker{
+  color:var(--surface-card-heading, #07315f);
+}
+
+:root[data-theme="dark"] body .thanks-hero p,
+:root[data-theme="dark"] body .thanks-card p,
+:root[data-theme="dark"] body .fallback-message,
+:root[data-theme="dark"] body .cancel-status{
+  color:var(--surface-card-muted, #526170);
+}
+
 @media (max-width:780px){
 .thanks-hero{padding:18px}
 

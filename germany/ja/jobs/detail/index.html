@@ -206,6 +206,52 @@
         flex:1 1 150px;
       }
     }
+
+    :root[data-theme="dark"] .jobs-detail-card{
+      border-color:var(--color-border, #263a52);
+      background:var(--surface-card-bg, #fff);
+      color:var(--surface-card-text, #24313d);
+      box-shadow:var(--shadow, 0 16px 36px rgba(0,0,0,.24));
+    }
+
+    :root[data-theme="dark"] .jobs-detail-card h1,
+    :root[data-theme="dark"] .jobs-detail-company,
+    :root[data-theme="dark"] .jobs-detail-section h2{
+      color:var(--surface-card-heading, #07315f);
+    }
+
+    :root[data-theme="dark"] .jobs-detail-breadcrumb,
+    :root[data-theme="dark"] .jobs-detail-summary,
+    :root[data-theme="dark"] .jobs-detail-apply-note,
+    :root[data-theme="dark"] .jobs-detail-section p,
+    :root[data-theme="dark"] .jobs-detail-section ul,
+    :root[data-theme="dark"] .jobs-detail-section li,
+    :root[data-theme="dark"] .jobs-detail-email{
+      color:var(--surface-card-muted, #526170);
+    }
+
+    :root[data-theme="dark"] .jobs-detail-apply-note{
+      border-color:#d6e2ef;
+      background:#f8fbff;
+    }
+
+    :root[data-theme="dark"] .jobs-detail-item{
+      border-color:var(--color-border, #263a52);
+      background:var(--surface-dark-bg, #101f33);
+      color:var(--surface-dark-text, #e8f1fb);
+    }
+
+    :root[data-theme="dark"] .jobs-detail-label{
+      color:var(--surface-dark-muted, #a8bad0);
+    }
+
+    :root[data-theme="dark"] .jobs-detail-value{
+      color:var(--surface-dark-text, #e8f1fb);
+    }
+
+    :root[data-theme="dark"] .jobs-detail-section{
+      border-top-color:#d6e2ef;
+    }
   </style>
 </head>
 <body>

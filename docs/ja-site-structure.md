@@ -109,7 +109,7 @@ Eat, Shopping, and Medical must not become top-level global nav items. They may 
 
 ## Legacy Guides Policy
 
-`/germany/ja/guides/` is a legacy route. It is kept physically to avoid breaking old links, but it is not a current site pillar.
+`/germany/ja/guides/` is retired and should not be emitted as a live internal link. Use `/germany/ja/living/` for guide-style Living content.
 
 Rules:
 
@@ -117,7 +117,7 @@ Rules:
 - Keep it out of main navigation.
 - Keep it out of search.
 - Keep it out of sitemap.
-- Prefer internal links to `/germany/ja/living/` instead of `/germany/ja/guides/`.
+- Use `/germany/ja/living/` instead of `/germany/ja/guides/`.
 
 ## CSS And Hero Rules
 

@@ -1288,7 +1288,7 @@
             </select>
           </div>
 
-          <aside class="category-writing-helper" aria-labelledby="categoryWritingHelperTitle">
+          <aside class="category-writing-helper" aria-labelledby="categoryWritingHelperTitle" aria-live="polite">
             <h3 id="categoryWritingHelperTitle">この投稿タイプの書き方</h3>
             <p id="categoryWritingHelperBody">投稿の種類を選ぶと、書くとよい内容の例が表示されます。</p>
             <p id="categoryWritingHelperExample" class="category-writing-helper-example" hidden></p>
@@ -1304,8 +1304,8 @@
             <textarea id="body" name="body" required placeholder="例：品物の状態、価格、地域、受け渡し方法、質問内容、希望条件などを具体的に書いてください。"></textarea>
           </div>
 
-          <div class="form-field">
-            <label for="country">国</label>
+          <div class="form-field" id="countryField">
+            <label for="country" id="countryLabel">国<span class="required-mark">*</span></label>
             <select id="country" name="country">
               <option value="ドイツ" selected>ドイツ</option>
               <option value="オーストリア">オーストリア</option>
@@ -1316,24 +1316,24 @@
           </div>
 
           <div class="form-field" id="cityField">
-            <label for="city">地域<span class="required-mark" id="cityRequiredMark">*</span></label>
+            <label for="city" id="cityLabel">地域<span class="required-mark" id="cityRequiredMark">*</span></label>
             <select id="city" name="city" required>
               <option value="">選択してください</option>
             </select>
           </div>
 
           <div class="form-field hidden" id="customLocationField">
-            <label for="custom_location">地域・都市<span class="required-mark">*</span></label>
+            <label for="custom_location" id="customLocationLabel">地域・都市<span class="required-mark">*</span></label>
             <input id="custom_location" name="custom_location" placeholder="例：エアランゲン周辺、ブレーメン周辺など">
           </div>
 
-          <div class="form-field">
-            <label for="nickname">ニックネーム<span class="required-mark">*</span></label>
-            <input id="nickname" name="nickname" required>
+          <div class="form-field" id="nicknameField">
+            <label for="nickname" id="nicknameLabel">ニックネーム</label>
+            <input id="nickname" name="nickname">
           </div>
 
-          <div class="form-field">
-            <label for="contact_email_private">非公開メールアドレス<span class="required-mark">*</span></label>
+          <div class="form-field" id="contactEmailPrivateField">
+            <label for="contact_email_private" id="contactEmailPrivateLabel">非公開メールアドレス<span class="required-mark">*</span></label>
             <input id="contact_email_private" name="contact_email_private" type="email" required>
             <p class="field-note">メールアドレスはサイト上には表示されません。投稿への問い合わせ転送と管理連絡のためにのみ使用します。</p>
           </div>
@@ -1350,12 +1350,12 @@
             <a href="/germany/ja/privacy/">プライバシー</a>・<a href="/germany/ja/terms/">利用規約</a>・<a href="/germany/ja/impressum/">運営者情報</a>
           </p>
 
-          <div class="form-field compact-field">
-            <label for="price">価格（必要な場合）</label>
+          <div class="form-field compact-field" id="priceField">
+            <label for="price" id="priceLabel">価格（必要な場合）</label>
             <input id="price" name="price" placeholder="例：無料、10€、相談可">
           </div>
 
-          <div class="form-field compact-field">
+          <div class="form-field compact-field" id="availabilityDateField">
             <label id="dateFieldLabel" for="date_value">目安日</label>
             <input id="date_value" name="date_value" type="date">
             <p class="field-note">未定の場合は空欄で構いません。本文に「6月末ごろ」「週末のみ」などを書いてください。</p>
@@ -1557,6 +1557,132 @@ const CATEGORY_WRITING_HELPERS = {
     placeholder: '例：仕事内容、勤務場所、条件、報酬、連絡方法を書いてください。'
   }
 };
+
+const CATEGORY_FORM_CONFIG = {
+  '売ります': {
+    locationRequired: true,
+    fields: {
+      price: { visible: true, label: '価格', required: true, placeholder: '例：10€、無料、相談可' },
+      availability_date: { visible: true, label: '受け渡し可能日', required: false }
+    },
+    guidance: {
+      tips: '品物の状態、価格、受け渡し場所、写真の有無が分かるように書いてください。',
+      example: '例：IKEAの棚を10€で譲ります。Düsseldorf中心部で手渡し希望です。小さな傷があります。',
+      placeholder: '例：品名、状態、価格、受け渡し場所、写真の有無を具体的に書いてください。'
+    }
+  },
+  '買います': {
+    locationRequired: true,
+    fields: {
+      price: { visible: true, label: '予算', required: false, placeholder: '例：30€前後、相談可' },
+      availability_date: { visible: true, label: '希望期限', required: false }
+    },
+    guidance: {
+      tips: '探している物、予算、希望する状態、受け取り可能な地域を書いてください。',
+      example: '例：子ども用ベッドを探しています。Düsseldorf周辺で受け取り可能です。予算は30€前後です。',
+      placeholder: '例：探している物、予算、希望する状態、受け取り可能な地域を書いてください。'
+    }
+  },
+  '譲ります': {
+    locationRequired: true,
+    fields: {
+      price: { visible: true, label: '譲渡条件/価格', required: false, placeholder: '例：無料、5€、引き取り優先' },
+      availability_date: { visible: true, label: '引き渡し可能日', required: false }
+    },
+    guidance: {
+      tips: '無料または有料の条件、引き取り場所、品物の状態を書いてください。',
+      example: '例：引っ越し用段ボールを無料で譲ります。Erkrathで受け渡し希望です。',
+      placeholder: '例：品名、状態、無料/有料の条件、引き取り場所、引き渡し可能日時を書いてください。'
+    }
+  },
+  '探しています': {
+    locationRequired: true,
+    fields: {
+      price: { visible: true, label: '予算/謝礼', required: false, placeholder: '例：予算50€まで、謝礼相談可' },
+      availability_date: { visible: true, label: '探している期限', required: false }
+    },
+    guidance: {
+      tips: '探しているもの、条件、地域、期限を書いてください。',
+      example: '例：Erkrath周辺で引っ越しを手伝ってくれる方を探しています。週末希望です。',
+      placeholder: '例：探しているもの・人・情報、条件、地域、期限を書いてください。'
+    }
+  },
+  '友達募集': {
+    locationRequired: true,
+    fields: {
+      price: { visible: false, label: '価格', required: false },
+      availability_date: { visible: true, label: '希望時期', required: false }
+    },
+    guidance: {
+      tips: '目的、地域、オンライン/対面の希望、頻度、個人情報を書きすぎないための希望を書いてください。',
+      example: '例：Düsseldorf周辺で週末にカフェや散歩に行ける友達を探しています。まずはメールで連絡希望です。',
+      placeholder: '例：目的、地域、オンライン/対面の希望、頻度、安全に連絡を始めるための希望を書いてください。'
+    }
+  },
+  'イベント': {
+    locationRequired: true,
+    fields: {
+      price: { visible: true, label: '参加費', required: false, placeholder: '例：無料、5€、実費のみ' },
+      availability_date: { visible: true, label: '開催日', required: true }
+    },
+    guidance: {
+      tips: '日時、場所、参加費、対象者、参加方法を書いてください。',
+      example: '例：7月20日にDüsseldorfで日本語交流会を開催します。参加希望の方はメールで連絡してください。',
+      placeholder: '例：日時、場所、参加費、対象者、参加方法を書いてください。'
+    }
+  },
+  'レッスン': {
+    locationRequired: true,
+    fields: {
+      price: { visible: true, label: '料金/予算', required: false, placeholder: '例：1回20€、相談可、予算30€まで' },
+      availability_date: { visible: true, label: '希望日時/開催日', required: false }
+    },
+    guidance: {
+      tips: '教える/探している内容、レベル、形式、料金、オンライン/対面の可否を書いてください。',
+      example: '例：オンラインで日本語レッスンを行います。初心者向け、1回60分、料金は相談可です。',
+      placeholder: '例：教える/探している内容、レベル、形式、料金、オンライン/対面の可否を書いてください。'
+    }
+  },
+  '質問': {
+    locationRequired: false,
+    fields: {
+      price: { visible: false, label: '価格', required: false },
+      availability_date: { visible: true, label: '解決したい時期', required: false }
+    },
+    guidance: {
+      tips: '困っていること、すでに試したこと、必要なら市区町村や州、急ぎ度を書いてください。',
+      example: '例：Kita申請の進め方について質問です。Erkrath在住で、すでに市のポータルは確認しました。',
+      placeholder: '例：困っていること、すでに試したこと、地域が関係する場合の市区町村や州、急ぎ度を書いてください。'
+    }
+  },
+  'アルバイト': {
+    locationRequired: true,
+    fields: {
+      price: { visible: true, label: '報酬/時給', required: true, placeholder: '例：時給15€、2時間30€、応相談' },
+      availability_date: { visible: true, label: '勤務日/期間', required: true }
+    },
+    guidance: {
+      tips: '仕事内容、場所、報酬、勤務時間、必要な言語を書いてください。正式な求人はJobsセクションの利用も検討してください。',
+      example: '例：週末のイベント受付を手伝ってくれる方を探しています。Düsseldorf、2時間、報酬ありです。',
+      placeholder: '例：仕事内容、場所、報酬、勤務時間、必要な言語、応募方法を書いてください。'
+    }
+  }
+};
+
+const BASE_FORM_FIELD_CONFIG = {
+  title: { visible: true, label: 'タイトル', required: true, inputId: 'title' },
+  body: { visible: true, label: '本文', required: true, inputId: 'body' },
+  country: { visible: true, label: '国', required: true, inputId: 'country', labelId: 'countryLabel', fieldId: 'countryField' },
+  city: { visible: true, label: '地域', required: true, inputId: 'city', labelId: 'cityLabel', fieldId: 'cityField' },
+  custom_location: { visible: true, label: '地域・都市', required: true, inputId: 'custom_location', labelId: 'customLocationLabel', fieldId: 'customLocationField' },
+  price: { visible: true, label: '価格（必要な場合）', required: false, inputId: 'price', labelId: 'priceLabel', fieldId: 'priceField', placeholder: '例：無料、10€、相談可' },
+  availability_date: { visible: true, label: '目安日', required: false, inputId: 'date_value', labelId: 'dateFieldLabel', fieldId: 'availabilityDateField' },
+  image: { visible: true, label: '画像', required: false, inputId: 'imageUpload' },
+  nickname: { visible: true, label: 'ニックネーム', required: false, inputId: 'nickname', labelId: 'nicknameLabel', fieldId: 'nicknameField' },
+  contact_email_private: { visible: true, label: '非公開メールアドレス', required: true, inputId: 'contact_email_private', labelId: 'contactEmailPrivateLabel', fieldId: 'contactEmailPrivateField' },
+  consent: { visible: true, label: '利用ルールに同意します', required: true, inputId: 'agreement' }
+};
+
 const POST_TYPES = ['すべて', ...Object.keys(SUBCATEGORY_OPTIONS)];
 const SUBCATEGORIES = ['すべて', ...new Set(Object.values(SUBCATEGORY_OPTIONS).flat())];
 const CATEGORY_ICONS = {
@@ -1678,10 +1804,153 @@ async function loadCategories() {
   renderCategory1();
   renderCategory2('');
   updateCategoryWritingHelper('');
+  updateCategoryForm('');
+}
+
+function getCategoryFormConfig(category1) {
+  const categoryConfig = CATEGORY_FORM_CONFIG[category1] || {};
+  const fields = {};
+  Object.keys(BASE_FORM_FIELD_CONFIG).forEach(function(fieldName) {
+    fields[fieldName] = Object.assign(
+      {},
+      BASE_FORM_FIELD_CONFIG[fieldName],
+      categoryConfig.fields && categoryConfig.fields[fieldName] ? categoryConfig.fields[fieldName] : {}
+    );
+  });
+
+  const locationRequired = categoryConfig.locationRequired !== undefined
+    ? categoryConfig.locationRequired
+    : true;
+
+  return {
+    locationRequired,
+    fields,
+    guidance: categoryConfig.guidance || CATEGORY_WRITING_HELPERS[category1] || null
+  };
+}
+
+function getFieldControl(fieldConfig) {
+  return fieldConfig && fieldConfig.inputId ? document.getElementById(fieldConfig.inputId) : null;
+}
+
+function getFieldLabel(fieldConfig) {
+  if (!fieldConfig) return null;
+  if (fieldConfig.labelId) return document.getElementById(fieldConfig.labelId);
+  if (fieldConfig.inputId) return document.querySelector('label[for="' + fieldConfig.inputId + '"]');
+  return null;
+}
+
+function setLabelText(label, text, required) {
+  if (!label) return;
+  label.textContent = text;
+  if (required) {
+    const mark = document.createElement('span');
+    mark.className = 'required-mark';
+    mark.textContent = '*';
+    label.appendChild(mark);
+  }
+}
+
+function clearControlValue(control) {
+  if (!control) return;
+  if (control.type === 'checkbox' || control.type === 'radio') {
+    control.checked = false;
+    return;
+  }
+  if (control.type === 'file') {
+    control.value = '';
+    return;
+  }
+  control.value = '';
+}
+
+function applyFieldConfig(fieldName, fieldConfig) {
+  const field = fieldConfig || {};
+  const control = getFieldControl(field);
+  const label = getFieldLabel(field);
+  const wrapper = field.fieldId ? document.getElementById(field.fieldId) : null;
+  const visible = field.visible !== false;
+  const required = visible && field.required === true;
+
+  if (wrapper) {
+    wrapper.classList.toggle('hidden', !visible);
+    wrapper.setAttribute('aria-hidden', visible ? 'false' : 'true');
+  }
+
+  if (label && field.label) {
+    setLabelText(label, field.label, required);
+  }
+
+  if (control) {
+    control.required = required;
+    control.disabled = !visible;
+    if (field.placeholder !== undefined && 'placeholder' in control) {
+      control.placeholder = field.placeholder;
+    }
+    if (!visible) {
+      clearControlValue(control);
+    }
+  }
+}
+
+function updateLocationRequiredState(config) {
+  const locationRequired = Boolean(config && config.locationRequired);
+  const countryField = config.fields.country;
+  const cityFieldConfig = config.fields.city;
+  const customFieldConfig = config.fields.custom_location;
+  const country = getFieldControl(countryField);
+  const city = getFieldControl(cityFieldConfig);
+  const customInput = getFieldControl(customFieldConfig);
+  const cityWrapper = document.getElementById('cityField');
+  const customWrapper = document.getElementById('customLocationField');
+  const needsCustom = customWrapper && !customWrapper.classList.contains('hidden');
+
+  if (country) country.required = locationRequired;
+  setLabelText(getFieldLabel(countryField), countryField.label, locationRequired);
+
+  if (city) {
+    city.required = locationRequired && !city.disabled && !(cityWrapper && cityWrapper.classList.contains('hidden'));
+  }
+  setLabelText(getFieldLabel(cityFieldConfig), cityFieldConfig.label, locationRequired && city && !city.disabled && !(cityWrapper && cityWrapper.classList.contains('hidden')));
+
+  if (customInput) {
+    customInput.required = locationRequired && needsCustom;
+  }
+  setLabelText(getFieldLabel(customFieldConfig), customFieldConfig.label, locationRequired && needsCustom);
+}
+
+function updateCategoryForm(selectedCategory1) {
+  const config = getCategoryFormConfig(selectedCategory1);
+  [
+    'title',
+    'body',
+    'country',
+    'price',
+    'availability_date',
+    'image',
+    'nickname',
+    'contact_email_private',
+    'consent'
+  ].forEach(function(fieldName) {
+    applyFieldConfig(fieldName, config.fields[fieldName]);
+  });
+  updateCustomLocationVisibility();
+  updateLocationRequiredState(config);
+}
+
+function clearHiddenConfiguredFields() {
+  const config = getCategoryFormConfig(getValue('category1'));
+  Object.keys(config.fields).forEach(function(fieldName) {
+    const field = config.fields[fieldName];
+    const wrapper = field.fieldId ? document.getElementById(field.fieldId) : null;
+    if ((field.visible === false || (wrapper && wrapper.classList.contains('hidden'))) && !['city', 'custom_location'].includes(fieldName)) {
+      clearControlValue(getFieldControl(field));
+    }
+  });
 }
 
 function updateCategoryWritingHelper(selectedCategory1) {
-  const helper = CATEGORY_WRITING_HELPERS[selectedCategory1];
+  const helper = getCategoryFormConfig(selectedCategory1).guidance;
   const body = document.getElementById('categoryWritingHelperBody');
   const example = document.getElementById('categoryWritingHelperExample');
   const bodyField = document.getElementById('body');
@@ -1703,17 +1972,12 @@ function updateCategoryWritingHelper(selectedCategory1) {
 }
 
 function dateLabelForCategory(category1, category2) {
-  if (category1 === 'イベント') return '開催日';
-  if (category1 === '売ります' || category1 === '譲ります') return '受け渡し可能日';
-  if (category1 === '探しています' || category1 === '買います') return '希望期限';
-  if (category2 && (category2.includes('部屋') || category2.includes('住まい'))) return '入居可能日';
-  return '目安日';
+  return getCategoryFormConfig(category1).fields.availability_date.label || '目安日';
 }
 
 function updateDateFieldLabel() {
-  const label = document.getElementById('dateFieldLabel');
-  if (!label) return;
-  label.textContent = dateLabelForCategory(getValue('category1'), getValue('category2'));
+  const config = getCategoryFormConfig(getValue('category1'));
+  applyFieldConfig('availability_date', config.fields.availability_date);
 }
 
 function renderCityOptions() {
@@ -1726,9 +1990,10 @@ function renderCityOptions() {
 
   const options = CITY_OPTIONS_BY_COUNTRY[country] || [];
   const usesCitySelect = options.length > 0;
+  const formConfig = getCategoryFormConfig(getValue('category1'));
   cityField.classList.toggle('hidden', !usesCitySelect);
   city.disabled = !usesCitySelect;
-  city.required = usesCitySelect;
+  city.required = usesCitySelect && formConfig.locationRequired;
 
   if (usesCitySelect) {
     const current = city.value;
@@ -1742,6 +2007,7 @@ function renderCityOptions() {
   }
 
   updateCustomLocationVisibility();
+  updateLocationRequiredState(formConfig);
   updateRegionFromCity();
 }
 
@@ -1753,12 +2019,15 @@ function updateCustomLocationVisibility() {
   if (!city || !customField || !customInput) return;
 
   const needsCustom = country === 'その他' || city.value === 'その他';
+  const formConfig = getCategoryFormConfig(getValue('category1'));
   customField.classList.toggle('hidden', !needsCustom);
-  customInput.required = needsCustom;
+  customField.setAttribute('aria-hidden', needsCustom ? 'false' : 'true');
+  customInput.required = needsCustom && formConfig.locationRequired;
   customInput.placeholder = country === 'その他'
     ? '例：パリ周辺、ロンドン周辺、オンライン中心など'
     : '例：エアランゲン周辺、ブレーメン周辺など';
   if (!needsCustom) customInput.value = '';
+  updateLocationRequiredState(formConfig);
 }
 
 function getSubmissionCity() {
@@ -1868,6 +2137,7 @@ function getResponseValue(response, keys) {
 }
 
 function buildSubmissionSnapshot(response, imageNames) {
+  clearHiddenConfiguredFields();
   updateRegionFromCity();
   const responsePostId = getResponsePostId(response);
   const dateLabel = dateLabelForCategory(getValue('category1'), getValue('category2'));
@@ -2598,15 +2868,17 @@ function fileToBase64(file) {
 async function submitForm(event) {
   event.preventDefault();
   clearMessage();
+  clearHiddenConfiguredFields();
 
   const submitButton = document.getElementById('submitButton');
   submitButton.disabled = true;
   submitButton.textContent = '送信中...';
 
   try {
+    const formConfig = getCategoryFormConfig(getValue('category1'));
     const country = getValue('country');
     const cityValue = getSubmissionCity();
-    if (country !== 'オンライン' && !cityValue) {
+    if (formConfig.locationRequired && country !== 'オンライン' && !cityValue) {
       throw new Error('地域を選択または入力してください。');
     }
 
@@ -2672,9 +2944,11 @@ if (detailPostId) {
   document.getElementById('category1').addEventListener('change', function() {
     renderCategory2(this.value);
     updateCategoryWritingHelper(this.value);
-    updateDateFieldLabel();
+    updateCategoryForm(this.value);
   });
-  document.getElementById('category2').addEventListener('change', updateDateFieldLabel);
+  document.getElementById('category2').addEventListener('change', function() {
+    updateCategoryForm(getValue('category1'));
+  });
   document.getElementById('country').addEventListener('change', renderCityOptions);
   document.getElementById('city').addEventListener('change', function() {
     updateCustomLocationVisibility();

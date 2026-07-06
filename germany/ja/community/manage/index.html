@@ -56,6 +56,20 @@
 .section-kicker{margin:0;font-size:12px;font-weight:800;letter-spacing:.08em;color:#00366d;text-transform:uppercase}
 .status-line{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}
 .hidden{display:none!important}
+:root[data-theme="dark"] .manage-form label,
+:root[data-theme="dark"] .thanks-card-head h2,
+:root[data-theme="dark"] .section-kicker{color:var(--surface-card-heading, #f4f8ff)}
+:root[data-theme="dark"] .thanks-card-head p,
+:root[data-theme="dark"] .manage-form .field-note{color:var(--surface-card-muted, #a8bad0)}
+:root[data-theme="dark"] .manage-form input,
+:root[data-theme="dark"] .manage-form select,
+:root[data-theme="dark"] .manage-form textarea{
+  border-color:var(--color-border, #263a52);
+  background:var(--color-input-bg, #0f1d30);
+  color:var(--color-input-text, #e8f1fb);
+}
+:root[data-theme="dark"] .manage-form input::placeholder,
+:root[data-theme="dark"] .manage-form textarea::placeholder{color:var(--color-text-muted, #a8bad0)}
 </style>
 </head>
 

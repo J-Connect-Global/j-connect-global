@@ -711,12 +711,27 @@
     :root[data-theme="dark"] .detail-gallery,
     :root[data-theme="dark"] .detail-compact-marker,
     :root[data-theme="dark"] .detail-main-image,
+    :root[data-theme="dark"] .card-media,
+    :root[data-theme="dark"] .card-media img,
     :root[data-theme="dark"] .placeholder-art,
     :root[data-theme="dark"] .detail-placeholder,
     :root[data-theme="dark"] .safety-list li{
       border-color:var(--color-border, #263a52);
       background:#0d1a2b;
       color:var(--color-text-muted, #a8bad0);
+    }
+
+    :root[data-theme="dark"] .placeholder-art::before{
+      border-color:var(--color-border, #263a52);
+      background:var(--color-chip-bg, #0f1d30);
+      color:var(--color-text, #e8f1fb);
+      box-shadow:none;
+    }
+
+    :root[data-theme="dark"] .image-count{
+      border:1px solid rgba(103,183,255,.28);
+      background:#07111f;
+      color:#ffffff;
     }
 
     :root[data-theme="dark"] .management-message.info{

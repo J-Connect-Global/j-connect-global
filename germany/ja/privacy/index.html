@@ -154,15 +154,15 @@ h1{color:var(--site-navy);letter-spacing:0}
 :root[data-theme="dark"] .article,
 :root[data-theme="dark"] .callout{
   border-color:var(--color-border, #263a52);
-  background:var(--surface-card-bg, #fff);
-  color:var(--surface-card-text, #24313d);
+  background:var(--surface-card-bg, #101f33);
+  color:var(--surface-card-text, #e8f1fb);
   box-shadow:var(--shadow, 0 16px 36px rgba(0,0,0,.24));
 }
 
 :root[data-theme="dark"] .eyebrow{
-  border-color:#cfe0f2;
-  background:#eaf4ff;
-  color:var(--surface-card-heading, #07315f);
+  border-color:var(--color-border, #263a52);
+  background:var(--color-primary-soft, rgba(69,151,232,.16));
+  color:var(--color-primary, #67b7ff);
 }
 
 :root[data-theme="dark"] h1,
@@ -173,6 +173,8 @@ h1{color:var(--site-navy);letter-spacing:0}
 
 :root[data-theme="dark"] .lead,
 :root[data-theme="dark"] .article p,
+:root[data-theme="dark"] .article ul,
+:root[data-theme="dark"] .article ol,
 :root[data-theme="dark"] .article li,
 :root[data-theme="dark"] .callout,
 :root[data-theme="dark"] .note{
@@ -185,12 +187,12 @@ h1{color:var(--site-navy);letter-spacing:0}
 
 :root[data-theme="dark"] .toc a:hover,
 :root[data-theme="dark"] .toc a:focus-visible{
-  background:#eaf4ff;
-  color:#00366d;
+  background:rgba(103,183,255,.14);
+  color:var(--color-primary, #67b7ff);
 }
 
 :root[data-theme="dark"] .article section+section{
-  border-top-color:#d6e2ef;
+  border-top-color:var(--color-border, #263a52);
 }
 
 :root[data-theme="dark"] body .hero,
@@ -198,8 +200,8 @@ h1{color:var(--site-navy);letter-spacing:0}
 :root[data-theme="dark"] body .article,
 :root[data-theme="dark"] body .callout{
   border-color:var(--color-border, #263a52);
-  background:var(--surface-card-bg, #fff);
-  color:var(--surface-card-text, #24313d);
+  background:var(--surface-card-bg, #101f33);
+  color:var(--surface-card-text, #e8f1fb);
 }
 
 :root[data-theme="dark"] body h1,
@@ -211,6 +213,8 @@ h1{color:var(--site-navy);letter-spacing:0}
 
 :root[data-theme="dark"] body .lead,
 :root[data-theme="dark"] body .article p,
+:root[data-theme="dark"] body .article ul,
+:root[data-theme="dark"] body .article ol,
 :root[data-theme="dark"] body .article li,
 :root[data-theme="dark"] body .callout,
 :root[data-theme="dark"] body .note{

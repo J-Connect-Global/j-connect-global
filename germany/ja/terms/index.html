@@ -139,6 +139,70 @@ h1{color:var(--site-navy);letter-spacing:0}
 .article p,
 .article li{line-height:1.8;color:#34414d}
 
+:root[data-theme="dark"] .hero,
+:root[data-theme="dark"] .toc,
+:root[data-theme="dark"] .article{
+  border-color:var(--color-border, #263a52);
+  background:var(--surface-card-bg, #101f33);
+  color:var(--surface-card-text, #e8f1fb);
+  box-shadow:var(--shadow, 0 16px 36px rgba(0,0,0,.24));
+}
+
+:root[data-theme="dark"] .eyebrow{
+  border-color:var(--color-border, #263a52);
+  background:var(--color-primary-soft, rgba(69,151,232,.16));
+  color:var(--color-primary, #67b7ff);
+}
+
+:root[data-theme="dark"] h1,
+:root[data-theme="dark"] .toc h2,
+:root[data-theme="dark"] .article h2{
+  color:var(--surface-card-heading, #07315f);
+}
+
+:root[data-theme="dark"] .lead,
+:root[data-theme="dark"] .article p,
+:root[data-theme="dark"] .article li,
+:root[data-theme="dark"] .note{
+  color:var(--surface-card-muted, #526170);
+}
+
+:root[data-theme="dark"] .toc a{
+  color:var(--surface-card-text, #24313d);
+}
+
+:root[data-theme="dark"] .toc a:hover,
+:root[data-theme="dark"] .toc a:focus-visible{
+  background:rgba(103,183,255,.14);
+  color:var(--color-primary, #67b7ff);
+}
+
+:root[data-theme="dark"] .article section+section{
+  border-top-color:var(--color-border, #263a52);
+}
+
+:root[data-theme="dark"] body .hero,
+:root[data-theme="dark"] body .toc,
+:root[data-theme="dark"] body .article{
+  border-color:var(--color-border, #263a52);
+  background:var(--surface-card-bg, #101f33);
+  color:var(--surface-card-text, #e8f1fb);
+}
+
+:root[data-theme="dark"] body h1,
+:root[data-theme="dark"] body .toc h2,
+:root[data-theme="dark"] body .article h2,
+:root[data-theme="dark"] body .article h3{
+  color:var(--surface-card-heading, #07315f);
+}
+
+:root[data-theme="dark"] body .lead,
+:root[data-theme="dark"] body .article p,
+:root[data-theme="dark"] body .article li,
+:root[data-theme="dark"] body .note{
+  color:var(--surface-card-muted, #526170);
+}
+
 @media (max-width:640px){
   .wrap{padding:18px 12px 44px}
   .hero,.toc,.article{border-radius:18px;padding:18px}

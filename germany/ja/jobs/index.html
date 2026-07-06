@@ -97,8 +97,8 @@
     min-height:38px;
     border:1px solid var(--listing-line);
     border-radius:7px;
-    background:#fff;
-    color:#24313d;
+    background:var(--color-input-bg, #fff);
+    color:var(--color-input-text, #24313d);
     padding:0 10px;
     font:inherit;
     font-size:13px;
@@ -117,8 +117,8 @@
     min-height:32px;
     border:1px solid var(--listing-line);
     border-radius:999px;
-    background:#fff;
-    color:var(--listing-navy);
+    background:var(--color-button-bg, #fff);
+    color:var(--color-button-text, var(--listing-navy));
     padding:0 10px;
     font-size:12px;
     line-height:1;
@@ -198,7 +198,7 @@
 
   #job-listings .jobs-card-summary{
     margin:6px 0 0;
-    color:#4d5b68;
+    color:var(--listing-muted);
     font-size:13px;
     line-height:1.55;
     display:-webkit-box;
@@ -217,7 +217,7 @@
     display:grid;
     grid-template-columns:64px minmax(0,1fr);
     gap:7px;
-    color:#384552;
+    color:var(--listing-ink);
     font-size:12px;
     line-height:1.4;
   }
@@ -296,7 +296,7 @@
     align-items:center;
     border:1px solid var(--listing-line);
     border-radius:6px;
-    background:#fff;
+    background:var(--color-chip-bg, #fff);
     padding:4px 7px;
   }
 
@@ -312,7 +312,7 @@
     border:1px solid var(--listing-line);
     border-radius:8px;
     background:var(--listing-soft);
-    color:#384552;
+    color:var(--listing-ink);
     padding:10px 12px;
     font-size:13px;
     line-height:1.6;
@@ -328,7 +328,7 @@
 
   .jobs-detail-email{
     margin:8px 0 0;
-    color:#384552;
+    color:var(--listing-ink);
     font-size:13px;
     line-height:1.55;
     font-weight:800;
@@ -404,6 +404,56 @@
     #job-listings .layout.grid-mode .jobs-card .job-main{
       padding-right:0;
     }
+  }
+
+  :root[data-theme="dark"] .jobs-result-control{
+    border-color:var(--color-border, #263a52);
+    background:var(--color-button-bg, #122238);
+    color:var(--color-button-text, #dbeeff);
+  }
+
+  :root[data-theme="dark"] .jobs-result-control:hover,
+  :root[data-theme="dark"] .jobs-result-control:focus-visible{
+    border-color:rgba(103,183,255,.5);
+    background:rgba(103,183,255,.14);
+    color:var(--color-primary, #67b7ff);
+  }
+
+  :root[data-theme="dark"] .jobs-result-control.active{
+    border-color:var(--color-primary, #67b7ff);
+    background:var(--color-primary, #67b7ff);
+    color:#061321;
+  }
+
+  :root[data-theme="dark"] .jobs-hero-link,
+  :root[data-theme="dark"] #job-listings .card-action,
+  :root[data-theme="dark"] #job-listings .btn,
+  :root[data-theme="dark"] #job-listings .save-button{
+    border-color:var(--color-border, #263a52);
+    background:var(--button-on-dark-bg, #122238);
+    color:var(--button-on-dark-text, #dbeeff);
+  }
+
+  :root[data-theme="dark"] .jobs-hero-link:hover,
+  :root[data-theme="dark"] .jobs-hero-link:focus-visible,
+  :root[data-theme="dark"] #job-listings .card-action:hover,
+  :root[data-theme="dark"] #job-listings .card-action:focus-visible,
+  :root[data-theme="dark"] #job-listings .btn:hover,
+  :root[data-theme="dark"] #job-listings .btn:focus-visible,
+  :root[data-theme="dark"] #job-listings .save-button:hover,
+  :root[data-theme="dark"] #job-listings .save-button:focus-visible{
+    border-color:rgba(103,183,255,.5);
+    background:rgba(103,183,255,.14);
+    color:var(--color-primary, #67b7ff);
+  }
+
+  :root[data-theme="dark"] #job-listings .card-action.primary,
+  :root[data-theme="dark"] #job-listings .btn-primary,
+  :root[data-theme="dark"] #job-listings .save-button.saved,
+  :root[data-theme="dark"] #job-listings .save-button.inline.saved{
+    border-color:var(--color-primary, #67b7ff);
+    background:var(--color-primary, #67b7ff);
+    color:#061321;
   }
 </style>
 
@@ -612,6 +662,7 @@
         <div>
           <h2 class="results-title" id="jobListingsTitle">求人一覧</h2>
           <p class="results-sub">勤務地、雇用形態、言語条件などを確認しながら求人を探せます。</p>
+          <p class="results-sub">新しい順は、最終更新日、更新日、掲載日、作成日の順で判定します。</p>
           <div class="results-sub" id="resultsSummary">読み込み中...</div>
         </div>
         <div class="jobs-results-controls" aria-label="求人一覧の表示条件">
@@ -878,10 +929,24 @@
       return /^https?:/i.test(clean(url)) ? ' target="_blank" rel="noopener noreferrer"' : '';
     }
 
+    function formatDisplayDate(value){
+      const text = clean(value);
+      if (!text) return '';
+      const time = Date.parse(text);
+      if (!Number.isFinite(time)) return text;
+      return new Intl.DateTimeFormat('ja-JP', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        timeZone: 'Europe/Berlin'
+      }).format(new Date(time)).replace(/\//g, '.');
+    }
+
     function formatJobDate(job){
-      if (hasDisplayValue(job.published_at)) return `掲載 ${job.published_at}`;
-      if (hasDisplayValue(job.updated_at)) return `更新 ${job.updated_at}`;
-      if (hasDisplayValue(job.created_at)) return `作成 ${job.created_at}`;
+      if (hasDisplayValue(job.last_modified_at)) return `更新 ${formatDisplayDate(job.last_modified_at)}`;
+      if (hasDisplayValue(job.updated_at)) return `更新 ${formatDisplayDate(job.updated_at)}`;
+      if (hasDisplayValue(job.published_at)) return `掲載 ${formatDisplayDate(job.published_at)}`;
+      if (hasDisplayValue(job.created_at)) return `作成 ${formatDisplayDate(job.created_at)}`;
       return '';
     }
 
@@ -1154,8 +1219,10 @@
 
         visa_support: getValue(row, 'visa_support', 'visa'),
 
+        last_modified_at: getValue(row, 'last_modified_at', 'lastModifiedAt', 'last_modified'),
         updated_at: getValue(row, 'updated_at', 'updated', 'last_updated'),
-        published_at: getValue(row, 'published_at', 'posted_at', 'posted_date', 'published', 'created_at'),
+        published_at: getValue(row, 'published_at', 'posted_at', 'posted_date', 'published'),
+        posted_at: getValue(row, 'posted_at', 'posted_date'),
         created_at: getValue(row, 'created_at', 'created'),
         expires_at: getValue(row, 'expires_at', 'deadline', 'application_deadline'),
 
@@ -1199,11 +1266,11 @@
 
     function getSortTimestamp(item){
       const candidates = [
-        item.published_at,
+        item.last_modified_at,
         item.updated_at,
-        item.created_at,
+        item.published_at,
         item.posted_at,
-        item.event_date
+        item.created_at
       ];
       for (const value of candidates) {
         const time = Date.parse(value);
@@ -1647,9 +1714,11 @@
           ${detailItem('カテゴリ', job.category)}
           ${detailItem('詳細カテゴリ', job.detail_category)}
           ${detailItem('ビザサポート', job.visa_support)}
-          ${detailItem('掲載開始', job.published_at)}
-          ${detailItem('応募期限', job.expires_at)}
-          ${detailItem('更新日', job.updated_at)}
+          ${detailItem('掲載開始', formatDisplayDate(job.published_at))}
+          ${detailItem('応募期限', formatDisplayDate(job.expires_at))}
+          ${detailItem('最終更新', formatDisplayDate(job.last_modified_at))}
+          ${detailItem('更新日', formatDisplayDate(job.updated_at))}
+          ${detailItem('作成日', formatDisplayDate(job.created_at))}
           ${detailItem('掲載元', job.source_name)}
           ${detailItem('Job ID', job.id)}
         </div>

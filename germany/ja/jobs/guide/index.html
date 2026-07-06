@@ -127,6 +127,29 @@
         padding:14px;
       }
     }
+
+    :root[data-theme="dark"] .jobs-guide-card{
+      border-color:var(--color-border, #263a52);
+      background:var(--surface-card-bg, #101f33);
+      color:var(--surface-card-text, #e8f1fb);
+      box-shadow:var(--shadow, 0 16px 36px rgba(0,0,0,.24));
+    }
+
+    :root[data-theme="dark"] .jobs-guide-card h1,
+    :root[data-theme="dark"] .jobs-guide-section h2{
+      color:var(--surface-card-heading, #f4f8ff);
+    }
+
+    :root[data-theme="dark"] .jobs-guide-breadcrumb,
+    :root[data-theme="dark"] .jobs-guide-lead,
+    :root[data-theme="dark"] .jobs-guide-section p,
+    :root[data-theme="dark"] .jobs-guide-section li{
+      color:var(--surface-card-muted, #a8bad0);
+    }
+
+    :root[data-theme="dark"] .jobs-guide-section{
+      border-top-color:var(--color-border, #263a52);
+    }
   </style>
 </head>
 <body>

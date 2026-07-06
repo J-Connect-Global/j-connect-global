@@ -192,6 +192,86 @@
   margin-top:16px;
 }
 
+:root[data-theme="dark"] .thanks-hero,
+:root[data-theme="dark"] .thanks-card,
+:root[data-theme="dark"] .completion-panel{
+  border-color:var(--color-border, #263a52);
+  background:var(--surface-card-bg, #101f33);
+  color:var(--surface-card-text, #e8f1fb);
+  box-shadow:var(--shadow, 0 16px 36px rgba(0,0,0,.24));
+}
+
+:root[data-theme="dark"] .thanks-hero h1,
+:root[data-theme="dark"] .thanks-card h2,
+:root[data-theme="dark"] .section-kicker{
+  color:var(--surface-card-heading, #07315f);
+}
+
+:root[data-theme="dark"] .thanks-hero p,
+:root[data-theme="dark"] .thanks-card p,
+:root[data-theme="dark"] .fallback-message,
+:root[data-theme="dark"] .cancel-status{
+  color:var(--surface-card-muted, #526170);
+}
+
+:root[data-theme="dark"] .summary-item,
+:root[data-theme="dark"] .fallback-message{
+  border-color:var(--color-border, #263a52);
+  background:var(--color-surface, #0d1a2b);
+  color:var(--surface-card-text, #e8f1fb);
+}
+
+:root[data-theme="dark"] .summary-label{
+  color:var(--surface-card-muted, #a8bad0);
+}
+
+:root[data-theme="dark"] .summary-value{
+  color:var(--surface-card-text, #e8f1fb);
+}
+
+:root[data-theme="dark"] .cancel-panel{
+  border-top-color:var(--color-border, #263a52);
+}
+
+:root[data-theme="dark"] .cancel-button{
+  border-color:rgba(251,191,36,.4);
+  background:rgba(120,73,15,.28);
+  color:#ffd78a;
+}
+
+:root[data-theme="dark"] .cancel-button:hover,
+:root[data-theme="dark"] .cancel-button:focus-visible{
+  background:rgba(120,73,15,.4);
+  border-color:rgba(251,191,36,.62);
+}
+
+:root[data-theme="dark"] #manageUrlField{
+  border-color:var(--color-border, #263a52);
+  background:var(--color-input-bg, #0f1d30);
+  color:var(--color-input-text, #e8f1fb);
+}
+
+:root[data-theme="dark"] body .thanks-hero,
+:root[data-theme="dark"] body .thanks-card,
+:root[data-theme="dark"] body .completion-panel{
+  border-color:var(--color-border, #263a52);
+  background:var(--surface-card-bg, #101f33);
+  color:var(--surface-card-text, #e8f1fb);
+}
+
+:root[data-theme="dark"] body .thanks-hero h1,
+:root[data-theme="dark"] body .thanks-card h2,
+:root[data-theme="dark"] body .section-kicker{
+  color:var(--surface-card-heading, #07315f);
+}
+
+:root[data-theme="dark"] body .thanks-hero p,
+:root[data-theme="dark"] body .thanks-card p,
+:root[data-theme="dark"] body .fallback-message,
+:root[data-theme="dark"] body .cancel-status{
+  color:var(--surface-card-muted, #526170);
+}
+
 @media (max-width:780px){
 .thanks-hero{padding:18px}
 

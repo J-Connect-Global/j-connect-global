@@ -1613,6 +1613,40 @@ const BASE_FORM_FIELD_CONFIG = {
   consent: { visible: true, label: '利用ルール同意', required: true, inputId: 'agreement', fieldId: 'agreementField' }
 };
 
+const FORM_FIELD_ORDER = [
+  'category1',
+  'category2',
+  'title',
+  'body',
+  'country',
+  'city',
+  'custom_location',
+  'price',
+  'availability_date',
+  'image',
+  'nickname',
+  'contact_email_private',
+  'consent'
+];
+
+const FIELD_ALIASES = {
+  date_value: 'availability_date',
+  agreement: 'consent'
+};
+
+const QUESTION_REQUIRED_FIELDS = [
+  'category1',
+  'category2',
+  'title',
+  'body',
+  'contact_email_private',
+  'consent'
+];
+
+function normalizeFieldName(fieldName) {
+  return FIELD_ALIASES[fieldName] || fieldName;
+}
+
 const POST_TYPES = ['すべて', ...Object.keys(SUBCATEGORY_OPTIONS)];
 const SUBCATEGORIES = ['すべて', ...new Set(Object.values(SUBCATEGORY_OPTIONS).flat())];
 const CATEGORY_ICONS = {
@@ -1689,6 +1723,49 @@ function showValidationSummary(items) {
       ? '<p class="message-list">未入力の項目: ' + escapeHtml(labels.join('、')) + '</p>'
       : '');
 }
+
+function normalizeBackendMissingFields(response) {
+  const raw = []
+    .concat(response && Array.isArray(response.missing_fields) ? response.missing_fields : [])
+    .concat(response && Array.isArray(response.missingFields) ? response.missingFields : [])
+    .concat(response && response.data && Array.isArray(response.data.missing_fields) ? response.data.missing_fields : [])
+    .concat(response && response.data && Array.isArray(response.data.missingFields) ? response.data.missingFields : []);
+  const fields = getActiveValidationFields ? getActiveValidationFields() : getCategoryFormConfig(getValue('category1')).fields;
+  return raw.map(function(item) {
+    const key = normalizeFieldName(String(item || '').trim());
+    const field = fields[key] || BASE_FORM_FIELD_CONFIG[key];
+    return {
+      fieldName: key,
+      label: field && field.label ? field.label : String(item || '').trim(),
+      control: field ? getFieldControl(field) : null,
+      message: REQUIRED_FIELD_MESSAGE
+    };
+  }).filter(function(item) {
+    return item.label;
+  });
+}
+
+function showBackendRequiredError(response) {
+  const items = normalizeBackendMissingFields(response);
+  if (items.length) {
+    items.forEach(function(item) {
+      const field = getActiveValidationFields()[item.fieldName] || BASE_FORM_FIELD_CONFIG[item.fieldName];
+      if (field && isFieldVisibleForValidation(field)) {
+        setFieldError(item.fieldName, field, item.message);
+      }
+    });
+    showValidationSummary(items);
+    return;
+  }
+
+  const box = document.getElementById('messageBox');
+  box.className = 'message error';
+  box.setAttribute('role', 'alert');
+  box.setAttribute('tabindex', '-1');
+  box.innerHTML = '<p class="message-title">' + escapeHtml(FORM_REQUIRED_MESSAGE) + '</p>'
+    + '<p class="message-list">サーバー側の必須判定で差し戻されました。ページを再読み込みして再度お試しください。</p>';
+}
+
 
 function clearMessage() {
   const box = document.getElementById('messageBox');
@@ -1831,9 +1908,12 @@ function syncDescribedBy(control, errorId, shouldInclude) {
 }
 
 function clearFieldError(fieldName) {
-  const config = getCategoryFormConfig(getValue('category1')).fields[fieldName] || BASE_FORM_FIELD_CONFIG[fieldName];
-  const wrapper = getFieldWrapper(config);
-  const control = getFieldControl(config);
+  const normalizedFieldName = normalizeFieldName(fieldName);
+  const baseConfig = BASE_FORM_FIELD_CONFIG[normalizedFieldName];
+  if (!baseConfig) return;
+
+  const wrapper = getFieldWrapper(baseConfig);
+  const control = getFieldControl(baseConfig);
   if (wrapper) {
     wrapper.classList.remove('has-error');
     wrapper.querySelectorAll('.field-error[data-field-error]').forEach(function(error) {
@@ -1841,7 +1921,13 @@ function clearFieldError(fieldName) {
       error.remove();
     });
   }
-  if (control) control.removeAttribute('aria-invalid');
+  if (control) {
+    control.removeAttribute('aria-invalid');
+  }
+}
+
+function clearAllFieldErrors() {
+  FORM_FIELD_ORDER.forEach(clearFieldError);
 }
 
 function clearMessageIfNoFieldErrors() {
@@ -1869,6 +1955,18 @@ function setFieldError(fieldName, fieldConfig, message) {
   syncDescribedBy(control, errorId, true);
 }
 
+function resetControlValidationState(fieldName, fieldConfig) {
+  const field = fieldConfig || BASE_FORM_FIELD_CONFIG[normalizeFieldName(fieldName)];
+  const control = getFieldControl(field);
+  if (!field) return;
+  clearFieldError(fieldName);
+  if (control) {
+    control.required = false;
+    control.removeAttribute('aria-invalid');
+    if (control.setCustomValidity) control.setCustomValidity('');
+  }
+}
+
 function applyFieldConfig(fieldName, fieldConfig) {
   const field = fieldConfig || {};
   const control = getFieldControl(field);
@@ -1876,6 +1974,8 @@ function applyFieldConfig(fieldName, fieldConfig) {
   const wrapper = field.fieldId ? document.getElementById(field.fieldId) : null;
   const visible = field.visible !== false;
   const required = visible && field.required === true;
+
+  resetControlValidationState(fieldName, field);
 
   if (wrapper) {
     wrapper.classList.toggle('hidden', !visible);
@@ -1887,15 +1987,13 @@ function applyFieldConfig(fieldName, fieldConfig) {
   }
 
   if (control) {
-    control.required = required;
     control.disabled = !visible;
+    control.required = required;
     if (field.placeholder !== undefined && 'placeholder' in control) {
       control.placeholder = field.placeholder;
     }
     if (!visible) {
       clearControlValue(control);
-      clearFieldError(fieldName);
-      control.removeAttribute('aria-invalid');
     }
   }
 }
@@ -1931,36 +2029,49 @@ function updateLocationRequiredState(config) {
 
 function updateCategoryForm(selectedCategory1) {
   const config = getCategoryFormConfig(selectedCategory1);
-  [
-    'category1',
-    'category2',
-    'title',
-    'body',
-    'country',
-    'city',
-    'custom_location',
-    'price',
-    'availability_date',
-    'image',
-    'nickname',
-    'contact_email_private',
-    'consent'
-  ].forEach(function(fieldName) {
+
+  FORM_FIELD_ORDER.forEach(function(fieldName) {
+    resetControlValidationState(fieldName, config.fields[fieldName]);
+  });
+
+  FORM_FIELD_ORDER.forEach(function(fieldName) {
     applyFieldConfig(fieldName, config.fields[fieldName]);
   });
+
   updateCustomLocationVisibility();
   updateLocationRequiredState(config);
+
+  if (selectedCategory1 === '質問') {
+    ['country', 'city', 'custom_location', 'price', 'availability_date', 'nickname'].forEach(function(fieldName) {
+      const field = config.fields[fieldName];
+      const control = getFieldControl(field);
+      if (control) {
+        control.required = false;
+        control.removeAttribute('aria-invalid');
+      }
+      clearFieldError(fieldName);
+    });
+  }
+}
+
+function isWrapperHidden(fieldConfig) {
+  const wrapper = getFieldWrapper(fieldConfig);
+  return Boolean(wrapper && wrapper.classList.contains('hidden'));
 }
 
 function clearHiddenConfiguredFields() {
   const config = getCategoryFormConfig(getValue('category1'));
-  Object.keys(config.fields).forEach(function(fieldName) {
+  FORM_FIELD_ORDER.forEach(function(fieldName) {
     const field = config.fields[fieldName];
-    const wrapper = field.fieldId ? document.getElementById(field.fieldId) : null;
-    if (field.visible === false || (wrapper && wrapper.classList.contains('hidden'))) {
-      clearControlValue(getFieldControl(field));
-      clearFieldError(fieldName);
+    const control = getFieldControl(field);
+    const shouldClear = field && (field.visible === false || isWrapperHidden(field) || (control && control.disabled));
+    if (!shouldClear) return;
+    if (control) {
+      clearControlValue(control);
+      control.required = false;
+      control.removeAttribute('aria-invalid');
     }
+    clearFieldError(fieldName);
   });
 }
 
@@ -2048,12 +2159,30 @@ function updateRegionFromCity() {
   region.value = country || '';
 }
 
+function isElementHidden(element) {
+  if (!element) return true;
+  if (element.hidden) return true;
+  const style = window.getComputedStyle ? window.getComputedStyle(element) : null;
+  return Boolean(style && (style.display === 'none' || style.visibility === 'hidden'));
+}
+
 function isFieldVisibleForValidation(fieldConfig) {
   if (!fieldConfig || fieldConfig.visible === false) return false;
   const control = getFieldControl(fieldConfig);
   if (!control || control.disabled) return false;
   const wrapper = getFieldWrapper(fieldConfig);
-  return !(wrapper && wrapper.classList.contains('hidden'));
+  if (wrapper && (wrapper.classList.contains('hidden') || wrapper.getAttribute('aria-hidden') === 'true' || isElementHidden(wrapper))) {
+    return false;
+  }
+  return !isElementHidden(control);
+}
+
+function isFieldRequiredForActiveCategory(fieldName, fieldConfig) {
+  if (!fieldConfig || fieldConfig.required !== true) return false;
+  if (getValue('category1') === '質問') {
+    return QUESTION_REQUIRED_FIELDS.includes(fieldName);
+  }
+  return isFieldVisibleForValidation(fieldConfig);
 }
 
 function isFieldEmpty(control) {
@@ -2063,22 +2192,23 @@ function isFieldEmpty(control) {
   return !String(control.value || '').trim();
 }
 
-function clearAllFieldErrors() {
-  const config = getCategoryFormConfig(getValue('category1'));
-  Object.keys(config.fields).forEach(clearFieldError);
+function getActiveValidationFields() {
+  return getCategoryFormConfig(getValue('category1')).fields;
 }
 
 function validatePostForm() {
   const config = getCategoryFormConfig(getValue('category1'));
   const invalidItems = [];
   clearAllFieldErrors();
+  clearHiddenConfiguredFields();
 
-  Object.keys(config.fields).forEach(function(fieldName) {
+  FORM_FIELD_ORDER.forEach(function(fieldName) {
     const field = config.fields[fieldName];
     const control = getFieldControl(field);
+    if (!field || !control) return;
     if (!isFieldVisibleForValidation(field)) return;
 
-    const required = field.required === true;
+    const required = isFieldRequiredForActiveCategory(fieldName, field);
     if (required && isFieldEmpty(control)) {
       invalidItems.push({ fieldName: fieldName, label: field.label, control: control, message: REQUIRED_FIELD_MESSAGE });
       setFieldError(fieldName, field, REQUIRED_FIELD_MESSAGE);
@@ -2993,7 +3123,8 @@ async function submitForm(event) {
         throw new Error('送信先の管理設定が更新中のため、投稿を受け付けられませんでした。管理用リンク方式で再試行できるよう管理者が確認します。');
       }
       if (/Required post fields are missing/i.test(backendMessage)) {
-        throw new Error(FORM_REQUIRED_MESSAGE);
+        showBackendRequiredError(response);
+        return;
       }
       throw new Error(response.error || '送信に失敗しました。');
     }
@@ -3031,14 +3162,12 @@ if (detailPostId) {
   document.getElementById('postForm').addEventListener('submit', submitForm);
   document.getElementById('postForm').addEventListener('input', function(event) {
     const fieldName = event.target && (event.target.name || event.target.id);
-    const aliases = { date_value: 'availability_date', agreement: 'consent' };
-    clearFieldError(aliases[fieldName] || fieldName);
+    clearFieldError(normalizeFieldName(fieldName));
     clearMessageIfNoFieldErrors();
   });
   document.getElementById('postForm').addEventListener('change', function(event) {
     const fieldName = event.target && (event.target.name || event.target.id);
-    const aliases = { date_value: 'availability_date', agreement: 'consent' };
-    clearFieldError(aliases[fieldName] || fieldName);
+    clearFieldError(normalizeFieldName(fieldName));
     clearMessageIfNoFieldErrors();
   });
   document.getElementById('previewButton').addEventListener('click', openPostPreview);

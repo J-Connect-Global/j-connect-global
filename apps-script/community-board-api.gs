@@ -99,6 +99,74 @@ const REQUIRED_COMMUNITY_HEADERS = [
   'body'
 ];
 
+const CREATE_POST_FIELD_LABELS = {
+  category1: '投稿カテゴリ',
+  category2: '投稿の種類',
+  title: 'タイトル',
+  body: '本文',
+  country: '国',
+  city: '地域',
+  price: '価格',
+  availability_date: '目安日',
+  contact_email_private: '非公開メールアドレス'
+};
+
+const CREATE_POST_BASE_REQUIRED_FIELDS = [
+  'category1',
+  'category2',
+  'title',
+  'body',
+  'contact_email_private'
+];
+
+const CREATE_POST_CATEGORY_RULES = {
+  '売ります': {
+    locationRequired: true,
+    price: { visible: true, required: true, label: '価格' },
+    availability_date: { visible: true, required: false, label: '受け渡し可能日' }
+  },
+  '買います': {
+    locationRequired: true,
+    price: { visible: true, required: false, label: '予算' },
+    availability_date: { visible: true, required: false, label: '希望期限' }
+  },
+  '譲ります': {
+    locationRequired: true,
+    price: { visible: true, required: false, label: '譲渡条件/価格' },
+    availability_date: { visible: true, required: false, label: '引き渡し可能日' }
+  },
+  '探しています': {
+    locationRequired: true,
+    price: { visible: true, required: false, label: '予算/謝礼' },
+    availability_date: { visible: true, required: false, label: '探している期限' }
+  },
+  '友達募集': {
+    locationRequired: true,
+    price: { visible: false, required: false, label: '価格' },
+    availability_date: { visible: true, required: false, label: '希望時期' }
+  },
+  'イベント': {
+    locationRequired: true,
+    price: { visible: true, required: false, label: '参加費' },
+    availability_date: { visible: true, required: true, label: '開催日' }
+  },
+  'レッスン': {
+    locationRequired: true,
+    price: { visible: true, required: false, label: '料金/予算' },
+    availability_date: { visible: true, required: false, label: '希望日時/開催日' }
+  },
+  '質問': {
+    locationRequired: false,
+    price: { visible: false, required: false, label: '価格' },
+    availability_date: { visible: true, required: false, label: '解決したい時期' }
+  },
+  'アルバイト': {
+    locationRequired: true,
+    price: { visible: true, required: true, label: '報酬/時給' },
+    availability_date: { visible: true, required: true, label: '勤務日/期間' }
+  }
+};
+
 function doGet(e) {
   return dispatchCommunityRequest_(e);
 }
@@ -339,7 +407,55 @@ function findPostById_(postId) {
   return null;
 }
 
+function createPostRuleForCategory_(category1) {
+  return CREATE_POST_CATEGORY_RULES[String(category1 || '').trim()] || {
+    locationRequired: true,
+    price: { visible: true, required: false, label: CREATE_POST_FIELD_LABELS.price },
+    availability_date: { visible: true, required: false, label: CREATE_POST_FIELD_LABELS.availability_date }
+  };
+}
+
+function createPostParamValue_(params, field) {
+  if (field === 'availability_date') return String(params.availability_date || params.date_value || '').trim();
+  if (field === 'city') return String(params.city || params.custom_location || '').trim();
+  return String(params[field] || '').trim();
+}
+
+function createPostMissingLabel_(field, rule) {
+  if (field === 'price' && rule && rule.price && rule.price.label) return rule.price.label;
+  if (field === 'availability_date' && rule && rule.availability_date && rule.availability_date.label) {
+    return rule.availability_date.label;
+  }
+  return CREATE_POST_FIELD_LABELS[field] || field;
+}
+
+function validateCreatePostParams_(params) {
+  const rule = createPostRuleForCategory_(params.category1);
+  const requiredFields = CREATE_POST_BASE_REQUIRED_FIELDS.slice();
+  if (rule.locationRequired) requiredFields.push('country', 'city');
+  if (rule.price && rule.price.visible !== false && rule.price.required) requiredFields.push('price');
+  if (rule.availability_date && rule.availability_date.visible !== false && rule.availability_date.required) {
+    requiredFields.push('availability_date');
+  }
+
+  const missingLabels = requiredFields
+    .filter((field) => !createPostParamValue_(params, field))
+    .map((field) => createPostMissingLabel_(field, rule));
+
+  if (!missingLabels.length) return { ok: true };
+
+  return {
+    ok: false,
+    success: false,
+    error: `未入力の必須項目があります。未入力の項目: ${missingLabels.join('、')}`,
+    missing_fields: missingLabels
+  };
+}
+
 function createPost_(params) {
+  const validation = validateCreatePostParams_(params);
+  if (!validation.ok) return validation;
+
   const context = getSheetContext_();
   const now = nowIso_();
   const postId = `post_${Utilities.getUuid()}`;
@@ -390,6 +506,10 @@ function createPostValue_(header, params, generated) {
   if (header === 'priority') return params.priority || '';
   if (header === 'manage_token_hash') return sha256Hex_(generated.manageToken);
   if (header === 'manage_url') return generated.manageUrl;
+  if (header === 'price') {
+    const rule = createPostRuleForCategory_(params.category1);
+    return rule.price && rule.price.visible === false ? '' : params.price || '';
+  }
   if (header === 'availability_date') return params.availability_date || params.date_value || '';
   if (header === 'image_url_1') return generated.imageData.urls[0] || params.image_url_1 || '';
   if (header === 'image_url_2') return generated.imageData.urls[1] || params.image_url_2 || '';

@@ -106,6 +106,7 @@ const CREATE_POST_FIELD_LABELS = {
   body: '本文',
   country: '国',
   city: '地域',
+  nickname: 'ニックネーム',
   price: '価格',
   availability_date: '目安日',
   contact_email_private: '非公開メールアドレス'
@@ -117,6 +118,17 @@ const CREATE_POST_BASE_REQUIRED_FIELDS = [
   'title',
   'body',
   'contact_email_private'
+];
+
+// These fields are intentionally optional for every community category.
+// Keep this list as a defensive guard so future edits cannot accidentally
+// reintroduce nickname/name as a server-side required field.
+const CREATE_POST_ALWAYS_OPTIONAL_FIELDS = [
+  'nickname',
+  'name',
+  'display_name',
+  'author_name',
+  'poster_name'
 ];
 
 const CREATE_POST_CATEGORY_RULES = {
@@ -429,26 +441,50 @@ function createPostMissingLabel_(field, rule) {
   return CREATE_POST_FIELD_LABELS[field] || field;
 }
 
-function validateCreatePostParams_(params) {
-  const rule = createPostRuleForCategory_(params.category1);
+function normalizeRequiredCreatePostFields_(fields) {
+  const seen = {};
+  return fields
+    .filter((field) => CREATE_POST_ALWAYS_OPTIONAL_FIELDS.indexOf(field) === -1)
+    .filter((field) => {
+      if (seen[field]) return false;
+      seen[field] = true;
+      return true;
+    });
+}
+
+function requiredCreatePostFieldsForCategory_(category1) {
+  const rule = createPostRuleForCategory_(category1);
   const requiredFields = CREATE_POST_BASE_REQUIRED_FIELDS.slice();
-  if (rule.locationRequired) requiredFields.push('country', 'city');
-  if (rule.price && rule.price.visible !== false && rule.price.required) requiredFields.push('price');
+
+  if (rule.locationRequired) {
+    requiredFields.push('country', 'city');
+  }
+
+  if (rule.price && rule.price.visible !== false && rule.price.required) {
+    requiredFields.push('price');
+  }
+
   if (rule.availability_date && rule.availability_date.visible !== false && rule.availability_date.required) {
     requiredFields.push('availability_date');
   }
 
-  const missingLabels = requiredFields
-    .filter((field) => !createPostParamValue_(params, field))
-    .map((field) => createPostMissingLabel_(field, rule));
+  return normalizeRequiredCreatePostFields_(requiredFields);
+}
 
-  if (!missingLabels.length) return { ok: true };
+function validateCreatePostParams_(params) {
+  const rule = createPostRuleForCategory_(params.category1);
+  const requiredFields = requiredCreatePostFieldsForCategory_(params.category1);
+  const missingFields = requiredFields.filter((field) => !createPostParamValue_(params, field));
+  const missingLabels = missingFields.map((field) => createPostMissingLabel_(field, rule));
+
+  if (!missingFields.length) return { ok: true };
 
   return {
     ok: false,
     success: false,
     error: `未入力の必須項目があります。未入力の項目: ${missingLabels.join('、')}`,
-    missing_fields: missingLabels
+    missing_fields: missingFields,
+    missing_labels: missingLabels
   };
 }
 

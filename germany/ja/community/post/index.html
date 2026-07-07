@@ -1610,7 +1610,7 @@ const BASE_FORM_FIELD_CONFIG = {
   image: { visible: true, label: '画像', required: false, inputId: 'imageUpload' },
   nickname: { visible: true, label: 'ニックネーム', required: false, inputId: 'nickname', labelId: 'nicknameLabel', fieldId: 'nicknameField' },
   contact_email_private: { visible: true, label: '非公開メールアドレス', required: true, inputId: 'contact_email_private', labelId: 'contactEmailPrivateLabel', fieldId: 'contactEmailPrivateField' },
-  consent: { visible: true, label: '利用ルールに同意します', required: true, inputId: 'agreement', fieldId: 'agreementField' }
+  consent: { visible: true, label: '利用ルール同意', required: true, inputId: 'agreement', fieldId: 'agreementField' }
 };
 
 const POST_TYPES = ['すべて', ...Object.keys(SUBCATEGORY_OPTIONS)];
@@ -1686,9 +1686,7 @@ function showValidationSummary(items) {
   box.setAttribute('tabindex', '-1');
   box.innerHTML = '<p class="message-title">' + escapeHtml(FORM_REQUIRED_MESSAGE) + '</p>'
     + (labels.length
-      ? '<p class="message-title">未入力の項目:</p><ul class="message-list">'
-        + labels.map(function(label) { return '<li>' + escapeHtml(label) + '</li>'; }).join('')
-        + '</ul>'
+      ? '<p class="message-list">未入力の項目: ' + escapeHtml(labels.join('、')) + '</p>'
       : '');
 }
 

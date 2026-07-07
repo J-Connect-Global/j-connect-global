@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-07T01:27:30.856Z",
+  "generated_at": "2026-07-07T05:03:38.433Z",
   "source": "community-gas",
-  "count": 7,
+  "count": 8,
   "groups": [
     {
       "field": "category1",
@@ -15,6 +15,7 @@
     {
       "field": "category2",
       "values": [
+        "ビザ・滞在許可",
         "家具・家電",
         "子ども用品",
         "生活一般"

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-07T05:03:38.433Z",
+  "generated_at": "2026-07-07T05:47:35.622Z",
   "source": "community-gas",
   "endpoint": "communityDataEndpoint?action=getPosts&bypassCache=true&includeClosed=false",
   "count": 8,
@@ -9,7 +9,7 @@
       "post_id": "post_cd6cadde-3221-4de3-8f8d-935d66331457",
       "slug": "fiktionsbescheinigung中の一時帰国-再入国について-デュッセルドルフ周辺-ドイツ-post-cd6cadde-3221-4de3-8f8d-935d66331457",
       "title": "Fiktionsbescheinigung中の一時帰国・再入国について",
-      "body": "こんにちは。ドイツで滞在許可の延長申請中なのですが、外国人局の予約がなかなか取れず、現在はFiktionsbescheinigungで待っている状態です。 同じような経験をされた方がいれば教えていただきたいです。  特に気になっているのは以下の点です。 ・Fiktionsbescheinigungの状態で日本へ一時帰国した方はいますか？ ・ドイツへ再入国するときに空港で何か確認されましたか？ ・職場、保険、銀行などで困ったことはありましたか？  外国人局から返事がもらえずどうしようか悩んでいます。  よろしくお願いいたします。",
+      "body": "こんにちは。\nドイツで滞在許可の延長申請中なのですが、外国人局の予約がなかなか取れず、現在はFiktionsbescheinigungで待っている状態です。 同じような経験をされた方がいれば教えていただきたいです。\n\n  特に気になっているのは以下の点です。\n ・Fiktionsbescheinigungの状態で日本へ一時帰国した方はいますか？ \n・ドイツへ再入国するときに空港で何か確認されましたか？\n・職場、保険、銀行などで困ったことはありましたか？ \n\n外国人局から返事がもらえずどうしようか悩んでいます。 \nよろしくお願いいたします。",
       "summary": "",
       "category1": "質問",
       "category2": "ビザ・滞在許可",
@@ -29,7 +29,7 @@
       "image_url_2": "",
       "image_url_3": "",
       "created_at": "2026-07-07T05:01:23.414Z",
-      "updated_at": "2026-07-07T05:02:59.933Z",
+      "updated_at": "2026-07-07T05:06:36.775Z",
       "published_at": "2026-07-07T05:01:23.414Z",
       "status": "active"
     },

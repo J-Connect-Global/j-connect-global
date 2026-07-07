@@ -68,6 +68,16 @@
   max-width:92ch;
 }
 
+.hero-safety-note{
+  font-size:13px;
+  line-height:1.65;
+}
+
+.hero-safety-note a{
+  color:inherit;
+  font-weight:800;
+}
+
 .hero-actions{
   display:flex;
   flex-wrap:wrap;
@@ -208,6 +218,27 @@
   color:#9aa4af;
 }
 
+.form-field.has-error label,
+.full.has-error .agree-label{
+  color:#991b1b;
+}
+
+.form-field.has-error input,
+.form-field.has-error select,
+.form-field.has-error textarea,
+.full.has-error input[type="checkbox"]{
+  border-color:#dc2626;
+  box-shadow:0 0 0 3px rgba(220,38,38,.12);
+}
+
+.field-error{
+  margin:6px 0 0;
+  color:#991b1b;
+  font-size:12px;
+  font-weight:800;
+  line-height:1.45;
+}
+
 .file-note{
   margin-top:6px;
   font-size:12px;
@@ -300,37 +331,6 @@
   font-weight:900;
 }
 
-.category-writing-helper{
-  grid-column:1/-1;
-  display:grid;
-  gap:7px;
-  margin:-2px 0 2px;
-  border:1px solid #dce8f5;
-  border-radius:9px;
-  background:#f8fbff;
-  padding:12px;
-}
-
-.category-writing-helper h3{
-  margin:0;
-  color:#24313d;
-  font-size:14px;
-  line-height:1.35;
-  font-weight:800;
-}
-
-.category-writing-helper p{
-  margin:0;
-  color:#526170;
-  font-size:13px;
-  line-height:1.65;
-}
-
-.category-writing-helper-example{
-  color:#34414d;
-  font-weight:700;
-}
-
 .message{
   display:none;
   grid-column:1/-1;
@@ -352,6 +352,17 @@
   color:#991b1b;
   background:#fff1f2;
   border:1px solid #fecdd3;
+}
+
+.message-title{
+  margin:0;
+  font-weight:900;
+}
+
+.message-list{
+  margin:6px 0 0;
+  padding-left:1.2em;
+  font-weight:800;
 }
 
 .btn{
@@ -925,8 +936,7 @@
 :root[data-theme="dark"] .modal-card,
 :root[data-theme="dark"] .detail-not-found,
 :root[data-theme="dark"] .preview-card,
-:root[data-theme="dark"] .preview-empty-message,
-:root[data-theme="dark"] .category-writing-helper{
+:root[data-theme="dark"] .preview-empty-message{
   border-color:var(--color-border, #263a52);
   background:var(--surface-card-bg, #101f33);
   color:var(--surface-card-text, #e8f1fb);
@@ -946,8 +956,7 @@
 :root[data-theme="dark"] .safety-panel h3,
 :root[data-theme="dark"] .preview-title,
 :root[data-theme="dark"] .preview-detail-title,
-:root[data-theme="dark"] .preview-card h3,
-:root[data-theme="dark"] .category-writing-helper h3{
+:root[data-theme="dark"] .preview-card h3{
   color:var(--surface-card-heading, #07315f);
 }
 
@@ -964,9 +973,7 @@
 :root[data-theme="dark"] .preview-empty-message,
 :root[data-theme="dark"] .preview-note,
 :root[data-theme="dark"] .safety-panel p,
-:root[data-theme="dark"] .safety-panel li,
-:root[data-theme="dark"] .category-writing-helper p,
-:root[data-theme="dark"] .category-writing-helper-example{
+:root[data-theme="dark"] .safety-panel li{
   color:var(--surface-card-muted, #526170);
 }
 
@@ -981,6 +988,20 @@
 :root[data-theme="dark"] .form-field input::placeholder,
 :root[data-theme="dark"] .form-field textarea::placeholder{
   color:var(--color-text-muted, #a8bad0);
+}
+
+:root[data-theme="dark"] .form-field.has-error label,
+:root[data-theme="dark"] .full.has-error .agree-label,
+:root[data-theme="dark"] .field-error{
+  color:#ffc7cf;
+}
+
+:root[data-theme="dark"] .form-field.has-error input,
+:root[data-theme="dark"] .form-field.has-error select,
+:root[data-theme="dark"] .form-field.has-error textarea,
+:root[data-theme="dark"] .full.has-error input[type="checkbox"]{
+  border-color:#ff8d9a;
+  box-shadow:0 0 0 3px rgba(255,141,154,.18);
 }
 
 :root[data-theme="dark"] .detail-gallery,
@@ -1063,8 +1084,7 @@
 :root[data-theme="dark"] body .modal-card,
 :root[data-theme="dark"] body .detail-not-found,
 :root[data-theme="dark"] body .preview-card,
-:root[data-theme="dark"] body .preview-empty-message,
-:root[data-theme="dark"] body .category-writing-helper{
+:root[data-theme="dark"] body .preview-empty-message{
   border-color:var(--color-border, #263a52);
   background:var(--surface-card-bg, #101f33);
   color:var(--surface-card-text, #e8f1fb);
@@ -1084,8 +1104,7 @@
 :root[data-theme="dark"] body .preview-title,
 :root[data-theme="dark"] body .preview-detail-title,
 :root[data-theme="dark"] body .preview-card h3,
-:root[data-theme="dark"] body .image-dropzone strong,
-:root[data-theme="dark"] body .category-writing-helper h3{
+:root[data-theme="dark"] body .image-dropzone strong{
   color:var(--surface-card-heading, #07315f);
 }
 
@@ -1103,9 +1122,7 @@
 :root[data-theme="dark"] body .preview-note,
 :root[data-theme="dark"] body .safety-panel p,
 :root[data-theme="dark"] body .safety-panel li,
-:root[data-theme="dark"] body .image-dropzone span,
-:root[data-theme="dark"] body .category-writing-helper p,
-:root[data-theme="dark"] body .category-writing-helper-example{
+:root[data-theme="dark"] body .image-dropzone span{
   color:var(--surface-card-muted, #526170);
 }
 
@@ -1126,6 +1143,21 @@
 
 :root[data-theme="dark"] body .section > .section-head .required-mark{
   color:#ffb4c0;
+}
+
+:root[data-theme="dark"] body .form-field.has-error label,
+:root[data-theme="dark"] body .full.has-error .agree-label,
+:root[data-theme="dark"] body .form-field .field-error,
+:root[data-theme="dark"] body .full .field-error{
+  color:#ffc7cf;
+}
+
+:root[data-theme="dark"] body .form-field.has-error input,
+:root[data-theme="dark"] body .form-field.has-error select,
+:root[data-theme="dark"] body .form-field.has-error textarea,
+:root[data-theme="dark"] body .full.has-error input[type="checkbox"]{
+  border-color:#ff8d9a;
+  box-shadow:0 0 0 3px rgba(255,141,154,.18);
 }
 
 @media(max-width:780px){
@@ -1250,6 +1282,11 @@
           売ります・買います、住まい、イベント、質問、仲間募集など、ドイツ生活に関する情報を投稿できます。
           投稿は送信後に管理者確認となります。
         </p>
+        <p class="hero-desc hero-safety-note">
+          本文には住所、電話番号、勤務先などの個人情報を書きすぎないようにしてください。
+          J-Connect Germanyはログイン情報、銀行情報、公的ID番号を求めません。メールアドレスは公開されず、投稿連絡・管理連絡のためにのみ使用されます。
+          <a href="/germany/ja/privacy/">プライバシー</a>・<a href="/germany/ja/terms/">利用規約</a>・<a href="/germany/ja/impressum/">運営者情報</a>
+        </p>
         <div class="jc-hero-actions">
           <a class="jc-button is-primary" href="../">掲示板一覧へ戻る</a>
           <a class="jc-button" href="../../">ホームへ戻る</a>
@@ -1267,39 +1304,33 @@
       </div>
 
       <div class="panel">
-        <form id="postForm" class="form-grid">
+        <form id="postForm" class="form-grid" novalidate>
           <input type="hidden" name="action" value="submitPost">
 
           <div id="messageBox" class="message"></div>
 
           <input type="hidden" id="region" name="region" value="">
 
-          <div class="form-field">
+          <div class="form-field" id="category1Field">
             <label for="category1">投稿カテゴリ<span class="required-mark">*</span></label>
             <select name="category1" id="category1" required>
               <option value="">投稿の種類を選択してください</option>
             </select>
           </div>
 
-          <div class="form-field">
+          <div class="form-field" id="category2Field">
             <label for="category2">投稿の種類<span class="required-mark">*</span></label>
             <select name="category2" id="category2" required>
               <option value="">先に投稿の種類を選択してください</option>
             </select>
           </div>
 
-          <aside class="category-writing-helper" aria-labelledby="categoryWritingHelperTitle" aria-live="polite">
-            <h3 id="categoryWritingHelperTitle">この投稿タイプの書き方</h3>
-            <p id="categoryWritingHelperBody">投稿の種類を選ぶと、書くとよい内容の例が表示されます。</p>
-            <p id="categoryWritingHelperExample" class="category-writing-helper-example" hidden></p>
-          </aside>
-
-          <div class="form-field full">
+          <div class="form-field full" id="titleField">
             <label for="title">タイトル<span class="required-mark">*</span></label>
             <input id="title" name="title" required placeholder="例：DüsseldorfでIKEAの棚を譲ります / Kita申請について質問">
           </div>
 
-          <div class="form-field full">
+          <div class="form-field full" id="bodyField">
             <label for="body">本文<span class="required-mark">*</span></label>
             <textarea id="body" name="body" required placeholder="例：品物の状態、価格、地域、受け渡し方法、質問内容、希望条件などを具体的に書いてください。"></textarea>
           </div>
@@ -1335,20 +1366,11 @@
           <div class="form-field" id="contactEmailPrivateField">
             <label for="contact_email_private" id="contactEmailPrivateLabel">非公開メールアドレス<span class="required-mark">*</span></label>
             <input id="contact_email_private" name="contact_email_private" type="email" required>
-            <p class="field-note">メールアドレスはサイト上には表示されません。投稿への問い合わせ転送と管理連絡のためにのみ使用します。</p>
           </div>
 
           <div class="form-field">
             <p class="field-note">投稿後、管理用リンクをメールでお送りします。投稿の編集・募集終了・再開・非公開化は、その管理用リンクから行えます。</p>
           </div>
-
-          <p class="field-note">
-            本文には住所、電話番号、勤務先などの個人情報を書きすぎないようにしてください。
-          </p>
-          <p class="field-note">
-            J-Connect Germanyはログイン情報、銀行情報、公的ID番号を求めません。メールアドレスは公開されず、投稿連絡・管理連絡のためにのみ使用されます。
-            <a href="/germany/ja/privacy/">プライバシー</a>・<a href="/germany/ja/terms/">利用規約</a>・<a href="/germany/ja/impressum/">運営者情報</a>
-          </p>
 
           <div class="form-field compact-field" id="priceField">
             <label for="price" id="priceLabel">価格（必要な場合）</label>
@@ -1374,7 +1396,7 @@
             <div class="image-preview-list" id="imagePreviewList" aria-live="polite"></div>
           </div>
 
-          <div class="full">
+          <div class="full" id="agreementField">
             <label class="agree-label">
               <input id="agreement" type="checkbox" required>
               利用ルールに同意します<span class="required-mark">*</span>
@@ -1509,55 +1531,6 @@ const SUBCATEGORY_OPTIONS = {
   '質問': ['ビザ・滞在許可', '住民登録・役所', '保険', '税金', '病院・医療', '妊娠・出産', 'Kita・学校', '生活一般', 'その他'],
   'アルバイト': ['飲食', '販売', 'ベビーシッター', '家庭教師', '通訳・翻訳', '単発', 'リモート', 'その他']
 };
-const DEFAULT_BODY_PLACEHOLDER = '例：品物の状態、価格、地域、受け渡し方法、質問内容、希望条件などを具体的に書いてください。';
-const CATEGORY_WRITING_HELPERS = {
-  '売ります': {
-    tips: '品名、状態、価格、受け渡し場所を書く。写真があると伝わりやすくなります。',
-    example: '例：IKEAの棚を10€で譲ります。Düsseldorf中心部で手渡し希望です。小さな傷があります。',
-    placeholder: '例：品名、状態、価格、受け渡し場所、写真の有無を具体的に書いてください。'
-  },
-  '買います': {
-    tips: '探している物、希望価格、受け取り可能エリアを書く。',
-    example: '例：子ども用ベッドを探しています。Düsseldorf周辺で受け取り可能です。予算は30€前後です。',
-    placeholder: '例：探している物、希望価格、受け取り可能エリア、希望条件を書いてください。'
-  },
-  '譲ります': {
-    tips: '品名、状態、無料かどうか、受け渡し場所を書く。',
-    example: '例：引っ越し用段ボールを無料で譲ります。Erkrathで受け渡し希望です。',
-    placeholder: '例：品名、状態、無料かどうか、受け渡し場所、受け渡し可能日時を書いてください。'
-  },
-  '探しています': {
-    tips: '探しているもの・人・情報、地域、期限を書く。',
-    example: '例：Erkrath周辺で引っ越しを手伝ってくれる方を探しています。週末希望です。',
-    placeholder: '例：探しているもの・人・情報、地域、期限、希望条件を書いてください。'
-  },
-  '友達募集': {
-    tips: '地域、興味、希望する交流方法を書く。',
-    example: '例：Düsseldorf周辺で週末にカフェや散歩に行ける友達を探しています。',
-    placeholder: '例：地域、興味、話したいこと、希望する交流方法を書いてください。'
-  },
-  'イベント': {
-    tips: '日時、場所、参加方法、対象者を書く。',
-    example: '例：7月20日にDüsseldorfで日本語交流会を開催します。参加希望の方はメールで連絡してください。',
-    placeholder: '例：日時、場所、参加方法、対象者、参加費の有無を書いてください。'
-  },
-  'レッスン': {
-    tips: '教える内容、対象レベル、形式、料金を書く。',
-    example: '例：オンラインで日本語レッスンを行います。初心者向け、1回60分、料金は相談可です。',
-    placeholder: '例：教える内容、対象レベル、オンラインか対面か、料金を書いてください。'
-  },
-  '質問': {
-    tips: '困っていること、地域、試したことを書く。',
-    example: '例：Kita申請の進め方について質問です。Erkrath在住で、すでに市のポータルは確認しました。',
-    placeholder: '例：困っていること、地域、すでに試したこと、知りたい点を書いてください。'
-  },
-  'アルバイト': {
-    tips: '内容、勤務場所、条件、報酬、連絡方法を書く。',
-    example: '例：週末のイベント受付を手伝ってくれる方を探しています。Düsseldorf、2時間、報酬ありです。',
-    placeholder: '例：仕事内容、勤務場所、条件、報酬、連絡方法を書いてください。'
-  }
-};
-
 const CATEGORY_FORM_CONFIG = {
   '売ります': {
     locationRequired: true,
@@ -1565,11 +1538,6 @@ const CATEGORY_FORM_CONFIG = {
       price: { visible: true, label: '価格', required: true, placeholder: '例：10€、無料、相談可' },
       availability_date: { visible: true, label: '受け渡し可能日', required: false }
     },
-    guidance: {
-      tips: '品物の状態、価格、受け渡し場所、写真の有無が分かるように書いてください。',
-      example: '例：IKEAの棚を10€で譲ります。Düsseldorf中心部で手渡し希望です。小さな傷があります。',
-      placeholder: '例：品名、状態、価格、受け渡し場所、写真の有無を具体的に書いてください。'
-    }
   },
   '買います': {
     locationRequired: true,
@@ -1577,11 +1545,6 @@ const CATEGORY_FORM_CONFIG = {
       price: { visible: true, label: '予算', required: false, placeholder: '例：30€前後、相談可' },
       availability_date: { visible: true, label: '希望期限', required: false }
     },
-    guidance: {
-      tips: '探している物、予算、希望する状態、受け取り可能な地域を書いてください。',
-      example: '例：子ども用ベッドを探しています。Düsseldorf周辺で受け取り可能です。予算は30€前後です。',
-      placeholder: '例：探している物、予算、希望する状態、受け取り可能な地域を書いてください。'
-    }
   },
   '譲ります': {
     locationRequired: true,
@@ -1589,11 +1552,6 @@ const CATEGORY_FORM_CONFIG = {
       price: { visible: true, label: '譲渡条件/価格', required: false, placeholder: '例：無料、5€、引き取り優先' },
       availability_date: { visible: true, label: '引き渡し可能日', required: false }
     },
-    guidance: {
-      tips: '無料または有料の条件、引き取り場所、品物の状態を書いてください。',
-      example: '例：引っ越し用段ボールを無料で譲ります。Erkrathで受け渡し希望です。',
-      placeholder: '例：品名、状態、無料/有料の条件、引き取り場所、引き渡し可能日時を書いてください。'
-    }
   },
   '探しています': {
     locationRequired: true,
@@ -1601,11 +1559,6 @@ const CATEGORY_FORM_CONFIG = {
       price: { visible: true, label: '予算/謝礼', required: false, placeholder: '例：予算50€まで、謝礼相談可' },
       availability_date: { visible: true, label: '探している期限', required: false }
     },
-    guidance: {
-      tips: '探しているもの、条件、地域、期限を書いてください。',
-      example: '例：Erkrath周辺で引っ越しを手伝ってくれる方を探しています。週末希望です。',
-      placeholder: '例：探しているもの・人・情報、条件、地域、期限を書いてください。'
-    }
   },
   '友達募集': {
     locationRequired: true,
@@ -1613,11 +1566,6 @@ const CATEGORY_FORM_CONFIG = {
       price: { visible: false, label: '価格', required: false },
       availability_date: { visible: true, label: '希望時期', required: false }
     },
-    guidance: {
-      tips: '目的、地域、オンライン/対面の希望、頻度、個人情報を書きすぎないための希望を書いてください。',
-      example: '例：Düsseldorf周辺で週末にカフェや散歩に行ける友達を探しています。まずはメールで連絡希望です。',
-      placeholder: '例：目的、地域、オンライン/対面の希望、頻度、安全に連絡を始めるための希望を書いてください。'
-    }
   },
   'イベント': {
     locationRequired: true,
@@ -1625,11 +1573,6 @@ const CATEGORY_FORM_CONFIG = {
       price: { visible: true, label: '参加費', required: false, placeholder: '例：無料、5€、実費のみ' },
       availability_date: { visible: true, label: '開催日', required: true }
     },
-    guidance: {
-      tips: '日時、場所、参加費、対象者、参加方法を書いてください。',
-      example: '例：7月20日にDüsseldorfで日本語交流会を開催します。参加希望の方はメールで連絡してください。',
-      placeholder: '例：日時、場所、参加費、対象者、参加方法を書いてください。'
-    }
   },
   'レッスン': {
     locationRequired: true,
@@ -1637,11 +1580,6 @@ const CATEGORY_FORM_CONFIG = {
       price: { visible: true, label: '料金/予算', required: false, placeholder: '例：1回20€、相談可、予算30€まで' },
       availability_date: { visible: true, label: '希望日時/開催日', required: false }
     },
-    guidance: {
-      tips: '教える/探している内容、レベル、形式、料金、オンライン/対面の可否を書いてください。',
-      example: '例：オンラインで日本語レッスンを行います。初心者向け、1回60分、料金は相談可です。',
-      placeholder: '例：教える/探している内容、レベル、形式、料金、オンライン/対面の可否を書いてください。'
-    }
   },
   '質問': {
     locationRequired: false,
@@ -1649,11 +1587,6 @@ const CATEGORY_FORM_CONFIG = {
       price: { visible: false, label: '価格', required: false },
       availability_date: { visible: true, label: '解決したい時期', required: false }
     },
-    guidance: {
-      tips: '困っていること、すでに試したこと、必要なら市区町村や州、急ぎ度を書いてください。',
-      example: '例：Kita申請の進め方について質問です。Erkrath在住で、すでに市のポータルは確認しました。',
-      placeholder: '例：困っていること、すでに試したこと、地域が関係する場合の市区町村や州、急ぎ度を書いてください。'
-    }
   },
   'アルバイト': {
     locationRequired: true,
@@ -1661,17 +1594,14 @@ const CATEGORY_FORM_CONFIG = {
       price: { visible: true, label: '報酬/時給', required: true, placeholder: '例：時給15€、2時間30€、応相談' },
       availability_date: { visible: true, label: '勤務日/期間', required: true }
     },
-    guidance: {
-      tips: '仕事内容、場所、報酬、勤務時間、必要な言語を書いてください。正式な求人はJobsセクションの利用も検討してください。',
-      example: '例：週末のイベント受付を手伝ってくれる方を探しています。Düsseldorf、2時間、報酬ありです。',
-      placeholder: '例：仕事内容、場所、報酬、勤務時間、必要な言語、応募方法を書いてください。'
-    }
   }
 };
 
 const BASE_FORM_FIELD_CONFIG = {
-  title: { visible: true, label: 'タイトル', required: true, inputId: 'title' },
-  body: { visible: true, label: '本文', required: true, inputId: 'body' },
+  category1: { visible: true, label: '投稿カテゴリ', required: true, inputId: 'category1', fieldId: 'category1Field' },
+  category2: { visible: true, label: '投稿の種類', required: true, inputId: 'category2', fieldId: 'category2Field' },
+  title: { visible: true, label: 'タイトル', required: true, inputId: 'title', fieldId: 'titleField' },
+  body: { visible: true, label: '本文', required: true, inputId: 'body', fieldId: 'bodyField' },
   country: { visible: true, label: '国', required: true, inputId: 'country', labelId: 'countryLabel', fieldId: 'countryField' },
   city: { visible: true, label: '地域', required: true, inputId: 'city', labelId: 'cityLabel', fieldId: 'cityField' },
   custom_location: { visible: true, label: '地域・都市', required: true, inputId: 'custom_location', labelId: 'customLocationLabel', fieldId: 'customLocationField' },
@@ -1680,7 +1610,7 @@ const BASE_FORM_FIELD_CONFIG = {
   image: { visible: true, label: '画像', required: false, inputId: 'imageUpload' },
   nickname: { visible: true, label: 'ニックネーム', required: false, inputId: 'nickname', labelId: 'nicknameLabel', fieldId: 'nicknameField' },
   contact_email_private: { visible: true, label: '非公開メールアドレス', required: true, inputId: 'contact_email_private', labelId: 'contactEmailPrivateLabel', fieldId: 'contactEmailPrivateField' },
-  consent: { visible: true, label: '利用ルールに同意します', required: true, inputId: 'agreement' }
+  consent: { visible: true, label: '利用ルール同意', required: true, inputId: 'agreement', fieldId: 'agreementField' }
 };
 
 const POST_TYPES = ['すべて', ...Object.keys(SUBCATEGORY_OPTIONS)];
@@ -1738,6 +1668,9 @@ const CATEGORY_ICONS = {
 
 let categoryMap = SUBCATEGORY_OPTIONS;
 let selectedImageFiles = [];
+const REQUIRED_FIELD_MESSAGE = 'この項目は必須です。';
+const INVALID_FIELD_MESSAGE = '入力内容を確認してください。';
+const FORM_REQUIRED_MESSAGE = '未入力の必須項目があります。赤く表示された項目を確認してください。';
 
 function showMessage(type, text) {
   const box = document.getElementById('messageBox');
@@ -1745,10 +1678,24 @@ function showMessage(type, text) {
   box.textContent = text;
 }
 
+function showValidationSummary(items) {
+  const box = document.getElementById('messageBox');
+  const labels = items.map(function(item) { return item.label; }).filter(Boolean);
+  box.className = 'message error';
+  box.setAttribute('role', 'alert');
+  box.setAttribute('tabindex', '-1');
+  box.innerHTML = '<p class="message-title">' + escapeHtml(FORM_REQUIRED_MESSAGE) + '</p>'
+    + (labels.length
+      ? '<p class="message-list">未入力の項目: ' + escapeHtml(labels.join('、')) + '</p>'
+      : '');
+}
+
 function clearMessage() {
   const box = document.getElementById('messageBox');
   box.className = 'message';
   box.textContent = '';
+  box.removeAttribute('role');
+  box.removeAttribute('tabindex');
 }
 
 async function fetchJson(url, options) {
@@ -1803,7 +1750,6 @@ async function loadCategories() {
   buildCategoryMap();
   renderCategory1();
   renderCategory2('');
-  updateCategoryWritingHelper('');
   updateCategoryForm('');
 }
 
@@ -1821,11 +1767,13 @@ function getCategoryFormConfig(category1) {
   const locationRequired = categoryConfig.locationRequired !== undefined
     ? categoryConfig.locationRequired
     : true;
+  fields.country.required = locationRequired;
+  fields.city.required = locationRequired;
+  fields.custom_location.required = locationRequired;
 
   return {
     locationRequired,
-    fields,
-    guidance: categoryConfig.guidance || CATEGORY_WRITING_HELPERS[category1] || null
+    fields
   };
 }
 
@@ -1838,6 +1786,13 @@ function getFieldLabel(fieldConfig) {
   if (fieldConfig.labelId) return document.getElementById(fieldConfig.labelId);
   if (fieldConfig.inputId) return document.querySelector('label[for="' + fieldConfig.inputId + '"]');
   return null;
+}
+
+function getFieldWrapper(fieldConfig) {
+  if (!fieldConfig) return null;
+  if (fieldConfig.fieldId) return document.getElementById(fieldConfig.fieldId);
+  const control = getFieldControl(fieldConfig);
+  return control ? control.closest('.form-field, .full') : null;
 }
 
 function setLabelText(label, text, required) {
@@ -1862,6 +1817,56 @@ function clearControlValue(control) {
     return;
   }
   control.value = '';
+}
+
+function syncDescribedBy(control, errorId, shouldInclude) {
+  if (!control || !errorId) return;
+  const values = (control.getAttribute('aria-describedby') || '')
+    .split(/\s+/)
+    .filter(Boolean)
+    .filter(function(value) { return value !== errorId; });
+  if (shouldInclude) values.push(errorId);
+  if (values.length) control.setAttribute('aria-describedby', values.join(' '));
+  else control.removeAttribute('aria-describedby');
+}
+
+function clearFieldError(fieldName) {
+  const config = getCategoryFormConfig(getValue('category1')).fields[fieldName] || BASE_FORM_FIELD_CONFIG[fieldName];
+  const wrapper = getFieldWrapper(config);
+  const control = getFieldControl(config);
+  if (wrapper) {
+    wrapper.classList.remove('has-error');
+    wrapper.querySelectorAll('.field-error[data-field-error]').forEach(function(error) {
+      syncDescribedBy(control, error.id, false);
+      error.remove();
+    });
+  }
+  if (control) control.removeAttribute('aria-invalid');
+}
+
+function clearMessageIfNoFieldErrors() {
+  if (!document.querySelector('.has-error')) {
+    clearMessage();
+  }
+}
+
+function setFieldError(fieldName, fieldConfig, message) {
+  const wrapper = getFieldWrapper(fieldConfig);
+  const control = getFieldControl(fieldConfig);
+  if (!wrapper || !control) return;
+  const errorId = (fieldConfig.inputId || fieldName) + 'Error';
+  let error = wrapper.querySelector('#' + errorId);
+  if (!error) {
+    error = document.createElement('p');
+    error.id = errorId;
+    error.className = 'field-error';
+    error.dataset.fieldError = 'true';
+    wrapper.appendChild(error);
+  }
+  error.textContent = message || REQUIRED_FIELD_MESSAGE;
+  wrapper.classList.add('has-error');
+  control.setAttribute('aria-invalid', 'true');
+  syncDescribedBy(control, errorId, true);
 }
 
 function applyFieldConfig(fieldName, fieldConfig) {
@@ -1889,6 +1894,8 @@ function applyFieldConfig(fieldName, fieldConfig) {
     }
     if (!visible) {
       clearControlValue(control);
+      clearFieldError(fieldName);
+      control.removeAttribute('aria-invalid');
     }
   }
 }
@@ -1907,24 +1914,31 @@ function updateLocationRequiredState(config) {
 
   if (country) country.required = locationRequired;
   setLabelText(getFieldLabel(countryField), countryField.label, locationRequired);
+  if (!locationRequired) clearFieldError('country');
 
   if (city) {
     city.required = locationRequired && !city.disabled && !(cityWrapper && cityWrapper.classList.contains('hidden'));
   }
   setLabelText(getFieldLabel(cityFieldConfig), cityFieldConfig.label, locationRequired && city && !city.disabled && !(cityWrapper && cityWrapper.classList.contains('hidden')));
+  if (!(city && city.required)) clearFieldError('city');
 
   if (customInput) {
     customInput.required = locationRequired && needsCustom;
   }
   setLabelText(getFieldLabel(customFieldConfig), customFieldConfig.label, locationRequired && needsCustom);
+  if (!(customInput && customInput.required)) clearFieldError('custom_location');
 }
 
 function updateCategoryForm(selectedCategory1) {
   const config = getCategoryFormConfig(selectedCategory1);
   [
+    'category1',
+    'category2',
     'title',
     'body',
     'country',
+    'city',
+    'custom_location',
     'price',
     'availability_date',
     'image',
@@ -1943,32 +1957,11 @@ function clearHiddenConfiguredFields() {
   Object.keys(config.fields).forEach(function(fieldName) {
     const field = config.fields[fieldName];
     const wrapper = field.fieldId ? document.getElementById(field.fieldId) : null;
-    if ((field.visible === false || (wrapper && wrapper.classList.contains('hidden'))) && !['city', 'custom_location'].includes(fieldName)) {
+    if (field.visible === false || (wrapper && wrapper.classList.contains('hidden'))) {
       clearControlValue(getFieldControl(field));
+      clearFieldError(fieldName);
     }
   });
-}
-
-function updateCategoryWritingHelper(selectedCategory1) {
-  const helper = getCategoryFormConfig(selectedCategory1).guidance;
-  const body = document.getElementById('categoryWritingHelperBody');
-  const example = document.getElementById('categoryWritingHelperExample');
-  const bodyField = document.getElementById('body');
-
-  if (!body || !example || !bodyField) return;
-
-  if (!helper) {
-    body.textContent = '投稿の種類を選ぶと、書くとよい内容の例が表示されます。';
-    example.textContent = '';
-    example.hidden = true;
-    bodyField.placeholder = DEFAULT_BODY_PLACEHOLDER;
-    return;
-  }
-
-  body.textContent = helper.tips;
-  example.textContent = helper.example;
-  example.hidden = false;
-  bodyField.placeholder = helper.placeholder;
 }
 
 function dateLabelForCategory(category1, category2) {
@@ -1994,6 +1987,7 @@ function renderCityOptions() {
   cityField.classList.toggle('hidden', !usesCitySelect);
   city.disabled = !usesCitySelect;
   city.required = usesCitySelect && formConfig.locationRequired;
+  if (!usesCitySelect) clearFieldError('city');
 
   if (usesCitySelect) {
     const current = city.value;
@@ -2026,7 +2020,10 @@ function updateCustomLocationVisibility() {
   customInput.placeholder = country === 'その他'
     ? '例：パリ周辺、ロンドン周辺、オンライン中心など'
     : '例：エアランゲン周辺、ブレーメン周辺など';
-  if (!needsCustom) customInput.value = '';
+  if (!needsCustom) {
+    customInput.value = '';
+    clearFieldError('custom_location');
+  }
   updateLocationRequiredState(formConfig);
 }
 
@@ -2049,6 +2046,74 @@ function updateRegionFromCity() {
     return;
   }
   region.value = country || '';
+}
+
+function isFieldVisibleForValidation(fieldConfig) {
+  if (!fieldConfig || fieldConfig.visible === false) return false;
+  const control = getFieldControl(fieldConfig);
+  if (!control || control.disabled) return false;
+  const wrapper = getFieldWrapper(fieldConfig);
+  return !(wrapper && wrapper.classList.contains('hidden'));
+}
+
+function isFieldEmpty(control) {
+  if (!control) return true;
+  if (control.type === 'checkbox' || control.type === 'radio') return !control.checked;
+  if (control.type === 'file') return !selectedImageFiles.length;
+  return !String(control.value || '').trim();
+}
+
+function clearAllFieldErrors() {
+  const config = getCategoryFormConfig(getValue('category1'));
+  Object.keys(config.fields).forEach(clearFieldError);
+}
+
+function validatePostForm() {
+  const config = getCategoryFormConfig(getValue('category1'));
+  const invalidItems = [];
+  clearAllFieldErrors();
+
+  Object.keys(config.fields).forEach(function(fieldName) {
+    const field = config.fields[fieldName];
+    const control = getFieldControl(field);
+    if (!isFieldVisibleForValidation(field)) return;
+
+    const required = field.required === true;
+    if (required && isFieldEmpty(control)) {
+      invalidItems.push({ fieldName: fieldName, label: field.label, control: control, message: REQUIRED_FIELD_MESSAGE });
+      setFieldError(fieldName, field, REQUIRED_FIELD_MESSAGE);
+      return;
+    }
+
+    if (!isFieldEmpty(control) && typeof control.checkValidity === 'function' && !control.checkValidity()) {
+      invalidItems.push({ fieldName: fieldName, label: field.label, control: control, message: INVALID_FIELD_MESSAGE });
+      setFieldError(fieldName, field, INVALID_FIELD_MESSAGE);
+    }
+  });
+
+  if (invalidItems.length) {
+    showValidationSummary(invalidItems);
+    const first = invalidItems[0].control;
+    const target = getFieldWrapper(config.fields[invalidItems[0].fieldName]) || first;
+    requestAnimationFrame(function() {
+      (target || document.getElementById('messageBox')).scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (first && typeof first.focus === 'function') first.focus({ preventScroll: true });
+    });
+    return false;
+  }
+
+  return true;
+}
+
+function getSubmissionFieldValue(fieldName) {
+  const config = getCategoryFormConfig(getValue('category1'));
+  const field = config.fields[fieldName];
+  if (!isFieldVisibleForValidation(field)) {
+    clearControlValue(getFieldControl(field));
+    return '';
+  }
+  if (fieldName === 'availability_date') return getValue('date_value');
+  return getValue(field.inputId || fieldName);
 }
 
 function escapeHtml(value) {
@@ -2870,6 +2935,10 @@ async function submitForm(event) {
   clearMessage();
   clearHiddenConfiguredFields();
 
+  if (!validatePostForm()) {
+    return;
+  }
+
   const submitButton = document.getElementById('submitButton');
   submitButton.disabled = true;
   submitButton.textContent = '送信中...';
@@ -2903,8 +2972,8 @@ async function submitForm(event) {
     // GAS should generate manage_token/manage_url server-side and email the private
     // management link to contact_email_private. Do not collect or send a public
     // user-entered credential from this form.
-    body.append('price', getValue('price'));
-    body.append('availability_date', getValue('date_value'));
+    body.append('price', getSubmissionFieldValue('price'));
+    body.append('availability_date', getSubmissionFieldValue('availability_date'));
 
     body.append('image1_base64', image1.base64);
     body.append('image1_name', image1.name);
@@ -2922,6 +2991,9 @@ async function submitForm(event) {
       const backendMessage = String(response.error || '');
       if (/password/i.test(backendMessage)) {
         throw new Error('送信先の管理設定が更新中のため、投稿を受け付けられませんでした。管理用リンク方式で再試行できるよう管理者が確認します。');
+      }
+      if (/Required post fields are missing/i.test(backendMessage)) {
+        throw new Error(FORM_REQUIRED_MESSAGE);
       }
       throw new Error(response.error || '送信に失敗しました。');
     }
@@ -2943,8 +3015,8 @@ if (detailPostId) {
 } else {
   document.getElementById('category1').addEventListener('change', function() {
     renderCategory2(this.value);
-    updateCategoryWritingHelper(this.value);
     updateCategoryForm(this.value);
+    clearAllFieldErrors();
   });
   document.getElementById('category2').addEventListener('change', function() {
     updateCategoryForm(getValue('category1'));
@@ -2957,6 +3029,18 @@ if (detailPostId) {
   document.getElementById('custom_location').addEventListener('input', updateRegionFromCity);
 
   document.getElementById('postForm').addEventListener('submit', submitForm);
+  document.getElementById('postForm').addEventListener('input', function(event) {
+    const fieldName = event.target && (event.target.name || event.target.id);
+    const aliases = { date_value: 'availability_date', agreement: 'consent' };
+    clearFieldError(aliases[fieldName] || fieldName);
+    clearMessageIfNoFieldErrors();
+  });
+  document.getElementById('postForm').addEventListener('change', function(event) {
+    const fieldName = event.target && (event.target.name || event.target.id);
+    const aliases = { date_value: 'availability_date', agreement: 'consent' };
+    clearFieldError(aliases[fieldName] || fieldName);
+    clearMessageIfNoFieldErrors();
+  });
   document.getElementById('previewButton').addEventListener('click', openPostPreview);
   const imageUpload = document.getElementById('imageUpload');
   const imageDropzone = document.getElementById('imageDropzone');

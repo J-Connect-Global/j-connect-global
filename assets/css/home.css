@@ -1634,3 +1634,229 @@ body.portal3-home > .page-footer{
 :root[data-theme="dark"] body.portal3-home .portal3-emergency p{
   color:#f2bdc5;
 }
+
+/* Home information hierarchy */
+
+.portal3-section-head > a,
+.portal3-section-buttons a,
+.portal3-chips a{
+  min-height:44px;
+}
+
+.portal3-section-buttons a{
+  transition:background-color .16s ease, border-color .16s ease, color .16s ease, box-shadow .16s ease, transform .16s ease;
+}
+
+.portal3-section-buttons a:hover{
+  box-shadow:0 5px 14px rgba(0,45,95,.13);
+  transform:translateY(-1px);
+}
+
+.portal3-section-buttons a:active{
+  transform:translateY(0);
+}
+
+.portal3-section-buttons a:focus-visible,
+.portal3-chips a:focus-visible{
+  outline:3px solid rgba(13,96,189,.28);
+  outline-offset:3px;
+}
+
+.portal3-card-row,
+.portal3-job-row,
+.portal3-learn-row,
+.portal3-event-row{
+  align-items:stretch;
+}
+
+.portal3-card,
+.portal3-job-card,
+.portal3-event-card{
+  height:100%;
+  transition:border-color .16s ease, box-shadow .16s ease, transform .16s ease;
+}
+
+.portal3-card:hover,
+.portal3-job-card:hover,
+.portal3-event-card:hover{
+  border-color:#8bb8e8;
+  box-shadow:0 8px 20px rgba(0,45,95,.12);
+  transform:translateY(-2px);
+}
+
+.portal3-card:active,
+.portal3-job-card:active,
+.portal3-event-card:active{
+  transform:translateY(0);
+}
+
+.portal3-card:focus-visible,
+.portal3-job-card:focus-visible,
+.portal3-event-card:focus-visible{
+  outline:3px solid rgba(13,96,189,.30);
+  outline-offset:3px;
+}
+
+.portal3-card-img{
+  height:90px;
+}
+
+.portal3-card strong,
+.portal3-event-card strong{
+  display:-webkit-box;
+  min-height:2.7em;
+  overflow:hidden;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+}
+
+.portal3-community .portal3-card strong{
+  font-size:15px;
+}
+
+.portal3-card-badges{
+  position:absolute;
+  inset:7px;
+  z-index:2;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:8px;
+  width:auto;
+  height:auto;
+  pointer-events:none;
+}
+
+.portal3-card .portal3-card-badges em,
+.portal3-card .portal3-card-badges b{
+  position:static;
+  display:inline-flex;
+  align-items:center;
+  max-width:calc(50% - 4px);
+  min-height:25px;
+  margin:0;
+  padding:3px 8px;
+  border:1px solid rgba(255,255,255,.78);
+  border-radius:999px;
+  background:rgba(0,43,87,.88);
+  box-shadow:0 2px 8px rgba(0,25,60,.18);
+  color:#fff;
+  font-size:10px;
+  font-style:normal;
+  font-weight:800;
+  line-height:1.2;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.portal3-card .portal3-card-badges b{
+  margin-left:auto;
+  background:rgba(255,255,255,.94);
+  border-color:rgba(0,43,87,.16);
+  color:#173e68;
+}
+
+.portal3-fallback-card{
+  grid-column:1 / -1;
+}
+
+.portal3-job-card{
+  display:flex;
+  flex-direction:column;
+  min-height:164px;
+}
+
+.portal3-job-card strong{
+  display:-webkit-box;
+  min-height:2.7em;
+  overflow:hidden;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+}
+
+.portal3-job-card b{
+  margin-top:auto;
+  padding-top:12px;
+  color:#0d60bd;
+  font-size:16px;
+}
+
+.portal3-job-card em{
+  align-self:flex-start;
+  margin-top:8px;
+}
+
+.portal3-trust-note-after{
+  max-width:none;
+  margin:12px 0 0;
+  border-left:0;
+  padding:0;
+  color:#667c95;
+  font-size:11px;
+  font-weight:600;
+}
+
+.portal3-news-grid{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+}
+
+.portal3-news-list{
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+}
+
+.portal3-news-list a:not(.more-news){
+  flex:1 1 0;
+  align-items:center;
+  min-height:62px;
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-card .portal3-card-badges em{
+  border-color:rgba(255,255,255,.34);
+  background:rgba(4,18,35,.9);
+  color:#fff;
+}
+
+:root[data-theme="dark"] body.portal3-home .portal3-card .portal3-card-badges b{
+  border-color:rgba(148,196,241,.42);
+  background:rgba(15,35,58,.94);
+  color:#cbe5ff;
+}
+
+@media (max-width:920px){
+  .portal3-news-grid{
+    grid-template-columns:1fr;
+  }
+
+  .portal3-event-row{
+    grid-template-columns:repeat(3, minmax(0,1fr));
+  }
+}
+
+@media (max-width:720px){
+  .portal3-section-buttons{
+    flex-wrap:wrap;
+  }
+
+  .portal3-event-row{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:480px){
+  .portal3-chips{
+    flex-wrap:wrap;
+    overflow-x:visible;
+    padding-bottom:0;
+  }
+
+  .portal3-chips a{
+    flex:1 1 auto;
+  }
+
+  .portal3-section-buttons a{
+    min-width:min(100%, 132px);
+  }
+}

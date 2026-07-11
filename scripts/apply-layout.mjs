@@ -80,7 +80,7 @@ function ensureThemeInitScript(html) {
 }
 
 function ensureHeaderFooterStylesheet(html) {
-  const stylesheetHref = '/assets/css/ja-header-footer.css?v=portal7-theme-20260705';
+  const stylesheetHref = '/assets/css/ja-header-footer.css?v=portal8-hierarchy-20260711';
   const stylesheetLink = `  <link rel="stylesheet" href="${stylesheetHref}">`;
 
   // Remove any existing ja-header-footer.css link first, regardless of position/version.

@@ -1735,7 +1735,7 @@ function renderHomeLearnGermanCard(item) {
   return `<a class="portal3-card" href="${escapeAttribute(item.url)}">
   ${renderHomeCardImage(item, 'learn-german', `portal3-card-img ${imageClass}`)}
   <strong>${escapeHtml(item.title)}</strong>
-  <small>${escapeHtml(formatDateJa(item.published_at))}・${escapeHtml(tagText)}</small>
+  <small>${escapeHtml(tagText)}</small>
 </a>`;
 }
 
@@ -1743,16 +1743,15 @@ function renderHomeStandardArticleCard(item, section, imageClass) {
   return `<a class="portal3-card" href="${escapeAttribute(item.url)}">
   ${renderHomeCardImage(item, section, imageClass)}
   <strong>${escapeHtml(item.title)}</strong>
-  <small>${escapeHtml(formatDateJa(item.published_at))}・${escapeHtml(item.category || '')}</small>
+  <small>${escapeHtml(item.category || '')}</small>
 </a>`;
 }
 
 function renderHomeNewsList(items) {
   const newsItems = items.map(renderHomeNewsListItem).join('\n');
   return `<article class="portal3-news-list">
-  <h3>制度・生活アップデート</h3>
+  <h3>ニュース</h3>
 ${indent(newsItems, 2)}
-  <a class="more-news" href="/germany/ja/events/#life-updates">ニュース・生活アップデートへ</a>
 </article>`;
 }
 

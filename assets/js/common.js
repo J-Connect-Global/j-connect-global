@@ -80,8 +80,8 @@ window.JCONNECT_THEME = (function () {
   const DARK_LABEL = "ダークモードに切り替え";
   const LIGHT_LABEL = "ライトモードに切り替え";
 
-  function systemTheme() {
-    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  function defaultTheme() {
+    return "light";
   }
 
   function savedTheme() {
@@ -95,7 +95,7 @@ window.JCONNECT_THEME = (function () {
 
   function currentTheme() {
     const value = document.documentElement.dataset.theme;
-    return THEMES.has(value) ? value : savedTheme() || systemTheme();
+    return THEMES.has(value) ? value : savedTheme() || defaultTheme();
   }
 
   function updateButtons(theme) {

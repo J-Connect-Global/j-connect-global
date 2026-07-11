@@ -9,7 +9,7 @@
       var saved = localStorage.getItem('jconnect-theme');
       var theme = saved === 'dark' || saved === 'light'
         ? saved
-        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        : 'light';
       document.documentElement.dataset.theme = theme;
       document.documentElement.style.colorScheme = theme;
     } catch (error) {
@@ -18,7 +18,7 @@
     }
   })();
   </script>
-  <title>ライン川沿いで過ごす休日：散歩・景色・カフェの楽しみ方 | 生活・手続き | J-Connect Germany</title>
+<title>ライン川沿いで過ごす休日：散歩・景色・カフェの楽しみ方 | 生活・手続き | J-Connect Germany</title>
   <meta name="description" content="ライン川沿いでゆっくり過ごしたい人向けに、散歩、景色、カフェ、夕方の過ごし方をまとめた休日ガイド。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/living/rhine-river-relax-guide/">

@@ -9,7 +9,7 @@
       var saved = localStorage.getItem('jconnect-theme');
       var theme = saved === 'dark' || saved === 'light'
         ? saved
-        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        : 'light';
       document.documentElement.dataset.theme = theme;
       document.documentElement.style.colorScheme = theme;
     } catch (error) {
@@ -18,7 +18,7 @@
     }
   })();
   </script>
-  <title>買い物で使うドイツ語 | ドイツ語・学び | J-Connect Germany</title>
+<title>買い物で使うドイツ語 | ドイツ語・学び | J-Connect Germany</title>
   <meta name="description" content="スーパー、ドラッグストア、返品、質問、会計でそのまま使える短いドイツ語フレーズです。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/learn-german/shopping-phrases/">

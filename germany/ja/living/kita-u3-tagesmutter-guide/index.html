@@ -9,7 +9,7 @@
       var saved = localStorage.getItem('jconnect-theme');
       var theme = saved === 'dark' || saved === 'light'
         ? saved
-        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        : 'light';
       document.documentElement.dataset.theme = theme;
       document.documentElement.style.colorScheme = theme;
     } catch (error) {
@@ -18,7 +18,7 @@
     }
   })();
   </script>
-  <title>Kita探しの基本：U3・Tagesmutter・Großtagespflege | 生活・手続き | J-Connect Germany</title>
+<title>Kita探しの基本：U3・Tagesmutter・Großtagespflege | 生活・手続き | J-Connect Germany</title>
   <meta name="description" content="ドイツで保育先を探すときに出てくるU3、Kita、Tagesmutter、Großtagespflegeの違いを整理。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/living/kita-u3-tagesmutter-guide/">

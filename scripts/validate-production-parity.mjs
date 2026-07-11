@@ -128,8 +128,8 @@ function validateHomeMarkers(html, label) {
     fail(`${label} Home Jobs section should link to the job posting guidance page.`);
   }
   for (const requiredText of [
-    '掲載内容は雇用主または掲載元の申告に基づきます。',
-    '応募前に仕事内容、勤務地、給与、ビザサポート',
+    '掲載情報は掲載元の提供内容です。',
+    '応募前に雇用条件、ビザ要件、連絡先をご確認ください。',
   ]) {
     if (!jobsSection.includes(requiredText)) fail(`${label} Home Jobs section missing current trust copy: ${requiredText}`);
   }

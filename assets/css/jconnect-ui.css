@@ -3440,6 +3440,19 @@
       display:block;
     }
 
+    .article-content-shell,
+    .article-header,
+    .article-body,
+    .article-mobile-toc{
+      width:100%;
+      max-width:100%;
+      min-width:0;
+    }
+
+    .article-body .jc-table-wrap{
+      width:100%;
+    }
+
     .article-sidebar{
       display:none;
     }

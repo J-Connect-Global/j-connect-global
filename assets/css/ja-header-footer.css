@@ -574,7 +574,7 @@ body .site-header .language-dropdown a:focus-visible{
   width:min(var(--container), calc(100% - 32px));
   margin:0 auto;
   display:grid;
-  grid-template-columns:minmax(min(100%, 260px), .72fr) minmax(0, 1.8fr);
+  grid-template-columns:minmax(min(100%, 260px), 1fr) minmax(0, 3fr);
   align-items:start;
   gap:clamp(24px, 4vw, 44px);
 }
@@ -627,7 +627,7 @@ body .site-header .language-dropdown a:focus-visible{
 
 .footer-links{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  grid-template-columns:repeat(3, minmax(0, 1fr));
   gap:8px clamp(18px, 3vw, 32px);
   min-width:0;
   padding:2px 0 0;
@@ -821,6 +821,11 @@ body.portal3-home .page-footer .footer-links a:hover{
     width:min(var(--container), calc(100% - 24px));
     grid-template-columns:1fr;
     gap:22px;
+  }
+
+  .footer-links{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:20px 28px;
   }
 }
 

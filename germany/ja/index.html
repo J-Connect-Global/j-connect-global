@@ -39,10 +39,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css">
-  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal7-theme-20260705">
+  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-hierarchy-20260711">
 <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
   <link rel="stylesheet" href="/assets/css/social-share.css">
-<link rel="stylesheet" href="/assets/css/home.css?v=portal7-dark-polish-20260705">
+<link rel="stylesheet" href="/assets/css/home.css?v=portal8-hierarchy-20260711">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -301,12 +301,15 @@
     </section>
 
     <section class="portal3-section portal3-community" id="community">
-      <div class="portal3-section-head">
+      <div class="portal3-section-head with-buttons">
         <div>
           <h2><a class="portal3-section-title-link" href="/germany/ja/community/" aria-label="交流・掲示板をもっと見る"><span>①</span>交流・掲示板</a></h2>
           <p>売買・譲渡、質問、友達募集、レッスンなど、投稿をカテゴリから探せます。</p>
         </div>
-        <a href="/germany/ja/community/" aria-label="交流・掲示板をもっと見る">もっと見る</a>
+        <div class="portal3-section-buttons">
+          <a href="/germany/ja/community/post/">投稿する</a>
+          <a href="/germany/ja/community/" aria-label="交流・掲示板をもっと見る">もっと見る</a>
+        </div>
       </div>
 
       <div class="portal3-chips">
@@ -316,22 +319,16 @@
         <a href="/germany/ja/community/">探しています</a>
         <a href="/germany/ja/community/">友達募集</a>
         <a href="/germany/ja/community/">質問</a>
-        <a href="/germany/ja/community/">レッスン</a>
-        <a href="/germany/ja/community/">アルバイト</a>
-        <a class="chip-primary" href="/germany/ja/community/post/">投稿する</a>
       </div>
 
       <div class="portal3-card-row" id="homeCommunityCards" data-community-posts>
-        <article class="portal3-card portal3-fallback-card">
-          <span class="portal3-card-img img-doc"></span>
-          <em>掲示板</em>
+        <a class="portal3-card portal3-fallback-card" href="/germany/ja/community/">
+          <span class="portal3-card-img img-doc">
+            <span class="portal3-card-badges"><em>掲示板</em></span>
+          </span>
           <strong>掲示板の投稿を準備中です</strong>
           <small>売ります・譲ります・質問・友達募集など、ドイツ在住者向けの投稿を順次掲載します。</small>
-          <div class="portal3-fallback-actions">
-            <a href="/germany/ja/community/">掲示板を見る</a>
-            <a href="/germany/ja/community/post/">投稿する</a>
-          </div>
-        </article>
+        </a>
       </div>
     </section>
 
@@ -345,45 +342,40 @@
       </div>
 
       <div class="portal3-chips green">
-        <a href="/germany/ja/living/">手続き</a>
-        <a href="/germany/ja/medical/">医療</a>
-        <a href="/germany/ja/living/">妊娠・育児</a>
-        <a href="/germany/ja/living/">住まい</a>
-        <a href="/germany/ja/eat/">食べる</a>
-        <a href="/germany/ja/shopping/">買い物</a>
-        <a href="/germany/ja/living/">ガイド</a>
-        <a href="/germany/ja/living/">家族・教育</a>
+        <a href="/germany/ja/living/#procedures">制度・手続き</a>
+        <a href="/germany/ja/living/#travel">観光</a>
+        <a href="/germany/ja/living/#columns">コラム</a>
       </div>
 
       <div class="portal3-card-row">
         <a class="portal3-card" href="/germany/ja/living/berlin-weekend-trip/">
           <span class="portal3-card-img has-photo"><img src="/assets/img/living/berlin-weekend-trip.webp" alt="ドイツ在住者向け：1泊2日ベルリン観光モデルコース のイメージ" class="home-card-image" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&amp;&amp;this.getAttribute(&#039;src&#039;)!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;this.classList.add(&#039;is-fallback-image&#039;);}"></span>
           <strong>ドイツ在住者向け：1泊2日ベルリン観光モデルコース</strong>
-          <small>6月29日・観光</small>
+          <small>観光</small>
         </a>
 
         <a class="portal3-card" href="/germany/ja/living/germany-wild-birds-guide/">
           <span class="portal3-card-img has-photo"><img src="/assets/img/living/germany-wild-birds/germany-wild-birds-hero.webp" alt="ドイツ・NRWでよく見かける野鳥図鑑 のイメージ" class="home-card-image" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&amp;&amp;this.getAttribute(&#039;src&#039;)!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;this.classList.add(&#039;is-fallback-image&#039;);}"></span>
           <strong>ドイツ・NRWでよく見かける野鳥図鑑</strong>
-          <small>6月30日・コラム・自然</small>
+          <small>コラム・自然</small>
         </a>
 
         <a class="portal3-card" href="/germany/ja/living/amsterdam-weekend-trip/">
           <span class="portal3-card-img has-photo"><img src="/assets/img/living/amsterdam-weekend-trip.webp" alt="ドイツから行く週末旅行：アムステルダム観光の基本 のイメージ" class="home-card-image" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&amp;&amp;this.getAttribute(&#039;src&#039;)!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;this.classList.add(&#039;is-fallback-image&#039;);}"></span>
           <strong>ドイツから行く週末旅行：アムステルダム観光の基本</strong>
-          <small>6月29日・観光</small>
+          <small>観光</small>
         </a>
 
         <a class="portal3-card" href="/germany/ja/living/hamburg-weekend-trip/">
           <span class="portal3-card-img has-photo"><img src="/assets/img/living/hamburg-weekend-trip.webp" alt="ドイツから行く週末旅行：ハンブルク観光の基本 のイメージ" class="home-card-image" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&amp;&amp;this.getAttribute(&#039;src&#039;)!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;this.classList.add(&#039;is-fallback-image&#039;);}"></span>
           <strong>ドイツから行く週末旅行：ハンブルク観光の基本</strong>
-          <small>6月29日・観光</small>
+          <small>観光</small>
         </a>
 
         <a class="portal3-card" href="/germany/ja/living/bremen-weekend-trip/">
           <span class="portal3-card-img has-photo"><img src="/assets/img/living/bremen-weekend-trip.webp" alt="ドイツから行く週末旅行：ブレーメン観光の基本 のイメージ" class="home-card-image" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&amp;&amp;this.getAttribute(&#039;src&#039;)!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;this.classList.add(&#039;is-fallback-image&#039;);}"></span>
           <strong>ドイツから行く週末旅行：ブレーメン観光の基本</strong>
-          <small>6月29日・観光</small>
+          <small>観光</small>
         </a>
 </div>
     </section>
@@ -392,7 +384,7 @@
       <div class="portal3-section-head with-buttons">
         <div>
           <h2><a class="portal3-section-title-link" href="/germany/ja/jobs/" aria-label="仕事・求人をもっと見る"><span>③</span>仕事・求人</a></h2>
-          <p>求人情報からキャリアアップのヒントまで整理します。応募前に雇用主、条件、ビザ要件を必ず確認してください。</p>
+          <p>ドイツの求人情報と、転職・応募準備に役立つ情報を掲載しています。</p>
         </div>
         <div class="portal3-section-buttons">
           <a href="/germany/ja/jobs/" aria-label="仕事・求人をもっと見る">求人を探す</a>
@@ -400,27 +392,21 @@
         </div>
       </div>
 
-      <p class="portal3-trust-note">掲載内容は雇用主または掲載元の申告に基づきます。応募前に仕事内容、勤務地、給与、ビザサポート、応募先の連絡先を掲載元へ確認してください。</p>
-
       <div class="portal3-chips blue">
         <a href="/germany/ja/jobs/">求人一覧</a>
-        <a href="/germany/ja/jobs/">転職ガイド</a>
-        <a href="/germany/ja/jobs/">履歴書</a>
-        <a href="/germany/ja/jobs/">面接</a>
-        <a href="/germany/ja/jobs/posting/">求人掲載</a>
-        <a href="/germany/ja/jobs/">アルバイト</a>
+        <a href="/germany/ja/jobs/guide/">転職ガイド</a>
+        <a href="/germany/ja/jobs/guide/">履歴書</a>
+        <a href="/germany/ja/jobs/guide/">面接</a>
       </div>
 
       <div class="portal3-job-row" id="homeJobsCards" data-home-jobs>
         <a class="portal3-job-card portal3-fallback-card" href="/germany/ja/jobs/">
           <span>▦</span>
           <strong>求人データを確認中です</strong>
-          <small>掲載内容は雇用主または掲載元の申告に基づきます。</small>
-          <p>応募前に仕事内容、勤務地、給与、ビザサポート、応募先の連絡先を掲載元へ確認してください。</p>
-          <b>求人一覧へ</b>
-          <em>確認推奨</em>
+          <small>会社名・都市は求人一覧でご確認ください。</small>
         </a>
       </div>
+      <p class="portal3-trust-note portal3-trust-note-after">掲載情報は掲載元の提供内容です。応募前に雇用条件、ビザ要件、連絡先をご確認ください。</p>
     </section>
 
     <section class="portal3-section portal3-news" id="news-events">
@@ -433,19 +419,15 @@
       </div>
 
       <div class="portal3-chips blue">
-        <a href="/germany/ja/events/#life-updates">制度確認</a>
-        <a href="/germany/ja/events/#life-updates">公的情報</a>
-        <a href="/germany/ja/events/#life-updates">地域ニュース</a>
-        <a href="/germany/ja/events/">イベントガイド</a>
-        <a href="/germany/ja/events/">イベントカレンダー</a>
+        <a href="/germany/ja/events/#news">ニュース</a>
+        <a href="/germany/ja/events/#events">イベント</a>
       </div>
 
       <div class="portal3-news-grid">
         <article class="portal3-news-list">
-  <h3>制度・生活アップデート</h3>
+  <h3>ニュース</h3>
   <a href="/germany/ja/events/news/europe-heatwave-basic-checks/"><span>欧州の熱波で確認したい生活上の注意点</span><small>6月28日・生活・気候</small></a>
   <a href="/germany/ja/events/news/world-cup-germany-basic-checks/"><span>ワールドカップ期間中にドイツで確認したいこと</span><small>6月28日・生活・イベント</small></a>
-  <a class="more-news" href="/germany/ja/events/#life-updates">ニュース・生活アップデートへ</a>
 </article>
 
         <div class="portal3-event-row">
@@ -488,12 +470,9 @@
       </div>
 
       <div class="portal3-chips purple">
-        <a href="/germany/ja/learn-german/">生活ドイツ語</a>
-        <a href="/germany/ja/learn-german/">役所</a>
-        <a href="/germany/ja/learn-german/">病院</a>
-        <a href="/germany/ja/learn-german/">仕事</a>
-        <a href="/germany/ja/learn-german/">A1〜B2</a>
-        <a href="/germany/ja/learn-german/">学習法</a>
+        <a href="/germany/ja/learn-german/#phrase-library">実用フレーズ集</a>
+        <a href="/germany/ja/learn-german/#learning-routes">学習ルート</a>
+        <a href="/germany/ja/learn-german/#learning-resources">教材・リソース</a>
       </div>
 
       <div class="portal3-learn-row">
@@ -501,31 +480,31 @@
         <a class="portal3-card" href="/germany/ja/learn-german/behoerde-anmeldung-phrases/">
           <span class="portal3-card-img img-office has-photo"><img src="/assets/img/learn-german/behoerde-anmeldung-phrases.webp" alt="役所・Anmeldungで使うドイツ語フレーズ のイメージ" class="home-card-image" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&amp;&amp;this.getAttribute(&#039;src&#039;)!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;this.classList.add(&#039;is-fallback-image&#039;);}"></span>
           <strong>役所・Anmeldungで使うドイツ語フレーズ</strong>
-          <small>6月19日・役所・Anmeldung</small>
+          <small>役所・Anmeldung</small>
         </a>
 
         <a class="portal3-card" href="/germany/ja/learn-german/landlord-housing-email-phrases/">
           <span class="portal3-card-img img-meeting has-photo"><img src="/assets/img/learn-german/landlord-housing-email-phrases.webp" alt="大家・住まいの連絡で使うドイツ語フレーズ のイメージ" class="home-card-image" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&amp;&amp;this.getAttribute(&#039;src&#039;)!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;this.classList.add(&#039;is-fallback-image&#039;);}"></span>
           <strong>大家・住まいの連絡で使うドイツ語フレーズ</strong>
-          <small>6月19日・住まい・大家</small>
+          <small>住まい・大家</small>
         </a>
 
         <a class="portal3-card" href="/germany/ja/learn-german/kita-school-inquiry-phrases/">
           <span class="portal3-card-img img-office has-photo"><img src="/assets/img/learn-german/kita-school-inquiry-phrases.webp" alt="Kita・学校への問い合わせで使うドイツ語フレーズ のイメージ" class="home-card-image" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&amp;&amp;this.getAttribute(&#039;src&#039;)!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;this.classList.add(&#039;is-fallback-image&#039;);}"></span>
           <strong>Kita・学校への問い合わせで使うドイツ語フレーズ</strong>
-          <small>6月19日・Kita・学校</small>
+          <small>Kita・学校</small>
         </a>
 
         <a class="portal3-card" href="/germany/ja/learn-german/appointment-phrase/">
           <span class="portal3-card-img img-office has-photo"><img src="/assets/img/learn-german/appointment-phrase.webp" alt="予約を取りたいときのドイツ語フレーズ のイメージ" class="home-card-image" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&amp;&amp;this.getAttribute(&#039;src&#039;)!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;this.classList.add(&#039;is-fallback-image&#039;);}"></span>
           <strong>予約を取りたいときのドイツ語フレーズ</strong>
-          <small>6月9日・予約・日常会話</small>
+          <small>予約・日常会話</small>
         </a>
 
         <a class="portal3-card" href="/germany/ja/learn-german/hospital-phrases/">
           <span class="portal3-card-img img-hospital has-photo"><img src="/assets/img/learn-german/hospital-phrases.webp" alt="病院予約の電話で使うドイツ語 のイメージ" class="home-card-image" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&amp;&amp;this.getAttribute(&#039;src&#039;)!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;this.classList.add(&#039;is-fallback-image&#039;);}"></span>
           <strong>病院予約の電話で使うドイツ語</strong>
-          <small>6月8日・病院・症状説明</small>
+          <small>病院・症状説明</small>
         </a>
         <!-- CONTENT:home-learn-german:end -->
 </div>
@@ -556,18 +535,11 @@
         <a href="/germany/ja/community/">交流・掲示板</a>
         <a href="/germany/ja/living/">生活・手続き</a>
         <a href="/germany/ja/jobs/">仕事・求人</a>
-        <a href="/germany/ja/events/">イベント</a>
+        <a href="/germany/ja/events/">ニュース・イベント</a>
         <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
       </div>
       <div class="footer-group">
-        <div class="footer-heading">生活ディレクトリ</div>
-        <a href="/germany/ja/eat/">食べる</a>
-        <a href="/germany/ja/shopping/">買い物</a>
-        <a href="/germany/ja/medical/">医療</a>
-      </div>
-      <div class="footer-group">
-        <div class="footer-heading">利用者向け</div>
-        <a href="/germany/ja/community/post/">投稿する</a>
+        <div class="footer-heading">サポート・運営情報</div>
         <a href="/germany/ja/jobs/posting/">求人掲載について</a>
         <a href="/germany/ja/contact/">お問い合わせ</a>
         <a href="/germany/ja/terms/">利用規約</a>
@@ -678,16 +650,13 @@
       `;
 
       cardRoot.innerHTML = `
-        <article class="portal3-card portal3-fallback-card">
-          <span class="portal3-card-img img-doc"></span>
-          <em>掲示板</em>
+        <a class="portal3-card portal3-fallback-card" href="/germany/ja/community/">
+          <span class="portal3-card-img img-doc">
+            <span class="portal3-card-badges"><em>掲示板</em></span>
+          </span>
           <strong>掲示板の投稿を準備中です</strong>
           <small>売ります・譲ります・質問・友達募集など、ドイツ在住者向けの投稿を順次掲載します。</small>
-          <div class="portal3-fallback-actions">
-            <a href="/germany/ja/community/">掲示板を見る</a>
-            <a href="/germany/ja/community/post/">投稿する</a>
-          </div>
-        </article>
+        </a>
       `;
     }
 
@@ -726,16 +695,18 @@
         const imageClass = imageClassByType[post._postType] || "img-doc";
         const image = post._contentImage || "/assets/img/placeholders/jconnect-default-card.webp";
         const secondary = [post._location, shared.formatDate(post._date)].filter(Boolean).join("・");
-        const action = post._price || (post._images.length ? `写真 ${post._images.length}` : "詳細を見る");
+        const price = String(post._price || "").trim();
         return `
           <a class="portal3-card" href="${escapeHtml(href)}" data-post-id="${escapeHtml(post._id)}">
             <span class="portal3-card-img ${escapeHtml(imageClass)} has-photo">
               <img src="${escapeHtml(image)}" alt="${escapeHtml(post._title)} のイメージ" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&&this.getAttribute('src')!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;}">
+              <span class="portal3-card-badges">
+                <em>${escapeHtml(post._postType)}</em>
+                ${price ? `<b>${escapeHtml(price)}</b>` : ""}
+              </span>
             </span>
-            <em>${escapeHtml(post._postType)}</em>
             <strong>${escapeHtml(post._title)}</strong>
             <small>${escapeHtml(secondary || post._subcategory)}</small>
-            <b>${escapeHtml(action)}</b>
           </a>
         `;
       }).join("");
@@ -812,10 +783,7 @@
         <a class="portal3-job-card portal3-fallback-card" href="/germany/ja/jobs/">
           <span>▦</span>
           <strong>求人データを確認中です</strong>
-          <small>掲載内容は雇用主または掲載元の申告に基づきます。</small>
-          <p>応募前に仕事内容、勤務地、給与、ビザサポート、応募先の連絡先を掲載元へ確認してください。</p>
-          <b>求人一覧へ</b>
-          <em>確認推奨</em>
+          <small>会社名・都市は求人一覧でご確認ください。</small>
         </a>
       `;
     }
@@ -848,16 +816,14 @@
       cardRoot.innerHTML = selectedCards.map((job, index) => {
         const href = jobsShared.getJobDetailPath(job);
         const salary = jobsShared.getSalaryLabel(job);
-        const chips = [job.employment_type, job.work_style, job.language].filter(Boolean).slice(0, 3);
-        const summary = job.short_description || job.summary || job.description || "詳細ページで内容を確認してください。";
+        const employmentType = String(job.employment_type || "").trim();
         return `
           <a class="portal3-job-card" href="${escapeHtml(href)}" data-job-id="${escapeHtml(job.id)}">
             <span>${iconSet[index % iconSet.length]}</span>
             <strong>${escapeHtml(job.position_title || "求人タイトル未設定")}</strong>
             <small>${escapeHtml(jobMeta(job) || "勤務地未設定")}</small>
-            <p>${escapeHtml(summary)}</p>
             ${salary ? `<b>${escapeHtml(salary)}</b>` : ""}
-            ${chips.map((chip) => `<em>${escapeHtml(chip)}</em>`).join("")}
+            ${employmentType ? `<em>${escapeHtml(employmentType)}</em>` : ""}
           </a>
         `;
       }).join("");

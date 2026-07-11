@@ -55,6 +55,17 @@ const requiredLivingSecondaryLinks = [
 const requiredCategoryLinks = [
   ...requiredCategoryMainLinks
 ];
+const requiredFooterLinks = [
+  '/germany/ja/',
+  '/germany/ja/about/',
+  '/germany/ja/living/',
+  ...requiredCategoryMainLinks,
+  '/germany/ja/jobs/posting/',
+  '/germany/ja/contact/',
+  '/germany/ja/terms/',
+  '/germany/ja/privacy/',
+  '/germany/ja/impressum/'
+];
 const forbiddenCategoryLinks = [
   ...requiredLivingSecondaryLinks,
   '/germany/ja/news/',
@@ -260,9 +271,19 @@ function validateHtmlPage(url, file, page) {
   }
 
   if (footerBlock) {
-    for (const requiredLink of requiredLivingSecondaryLinks) {
+    for (const requiredLink of requiredFooterLinks) {
       if (!hasHref(footerBlock, requiredLink)) {
-        problems.push(`${rel} footer missing Living secondary link: ${requiredLink}`);
+        problems.push(`${rel} footer missing required link: ${requiredLink}`);
+      }
+    }
+    for (const forbiddenLink of [...requiredLivingSecondaryLinks, '/germany/ja/community/post/']) {
+      if (hasHref(footerBlock, forbiddenLink)) {
+        problems.push(`${rel} footer contains removed hierarchy link: ${forbiddenLink}`);
+      }
+    }
+    for (const requiredHeading of ['サイト', '主要カテゴリ', 'サポート・運営情報']) {
+      if (!footerBlock.includes(requiredHeading)) {
+        problems.push(`${rel} footer missing required group heading: ${requiredHeading}`);
       }
     }
     validateInternalLinks(footerBlock, rel, `${rel} footer`);

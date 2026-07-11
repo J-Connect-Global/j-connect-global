@@ -9,7 +9,7 @@
       var saved = localStorage.getItem('jconnect-theme');
       var theme = saved === 'dark' || saved === 'light'
         ? saved
-        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        : 'light';
       document.documentElement.dataset.theme = theme;
       document.documentElement.style.colorScheme = theme;
     } catch (error) {
@@ -18,7 +18,7 @@
     }
   })();
   </script>
-  <title>B1を目指す生活ドイツ語ルート | ドイツ語・学び | J-Connect Germany</title>
+<title>B1を目指す生活ドイツ語ルート | ドイツ語・学び | J-Connect Germany</title>
   <meta name="description" content="A2からB1を目指し、生活手続き、医療、住まい、仕事のやり取りを少し長く説明できるようにするルートです。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/learn-german/b1-daily-life-german-route/">

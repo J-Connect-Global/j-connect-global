@@ -9,7 +9,7 @@
       var saved = localStorage.getItem('jconnect-theme');
       var theme = saved === 'dark' || saved === 'light'
         ? saved
-        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        : 'light';
       document.documentElement.dataset.theme = theme;
       document.documentElement.style.colorScheme = theme;
     } catch (error) {
@@ -18,7 +18,7 @@
     }
   })();
   </script>
-  <title>Kita・学校への問い合わせで使うドイツ語フレーズ | ドイツ語・学び | J-Connect Germany</title>
+<title>Kita・学校への問い合わせで使うドイツ語フレーズ | ドイツ語・学び | J-Connect Germany</title>
   <meta name="description" content="Kita、Tagesmutter、Großtagespflege、学校への空き状況確認、見学、必要書類、待機リストの問い合わせに使える表現です。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/learn-german/kita-school-inquiry-phrases/">

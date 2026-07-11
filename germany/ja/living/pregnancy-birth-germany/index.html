@@ -9,7 +9,7 @@
       var saved = localStorage.getItem('jconnect-theme');
       var theme = saved === 'dark' || saved === 'light'
         ? saved
-        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        : 'light';
       document.documentElement.dataset.theme = theme;
       document.documentElement.style.colorScheme = theme;
     } catch (error) {
@@ -18,7 +18,7 @@
     }
   })();
   </script>
-  <title>ドイツで妊娠・出産したときの基本手続き | 生活・手続き | J-Connect Germany</title>
+<title>ドイツで妊娠・出産したときの基本手続き | 生活・手続き | J-Connect Germany</title>
   <meta name="description" content="妊娠判明後から出産前後までに確認したい医療・保険・行政手続きの全体像。">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/living/pregnancy-birth-germany/">

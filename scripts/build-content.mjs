@@ -1750,7 +1750,7 @@ function renderHomeStandardArticleCard(item, section, imageClass) {
 function renderHomeNewsList(items) {
   const newsItems = items.map(renderHomeNewsListItem).join('\n');
   return `<article class="portal3-news-list">
-  <h3>ニュース</h3>
+  <h3><a class="portal3-content-heading-link" href="/germany/ja/events/#news">ニュース <span aria-hidden="true">›</span></a></h3>
 ${indent(newsItems, 2)}
 </article>`;
 }

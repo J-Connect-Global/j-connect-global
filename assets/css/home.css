@@ -401,6 +401,7 @@ body.portal3-home > .page-footer{
 
 .portal3-panel-head > a,
 .portal3-section-head > a,
+.portal3-section-more,
 .more-news{
   color:var(--portal3-blue);
   display:inline-flex;
@@ -428,12 +429,14 @@ body.portal3-home > .page-footer{
 
 .portal3-panel-head > a::after,
 .portal3-section-head > a::after,
+.portal3-section-more::after,
 .more-news::after{
   content:" ›";
 }
 
 .portal3-panel-head > a:hover,
 .portal3-section-head > a:hover,
+.portal3-section-more:hover,
 .more-news:hover{
   border-color:#0d60bd;
   background:#eef7ff;
@@ -442,6 +445,7 @@ body.portal3-home > .page-footer{
 
 .portal3-panel-head > a:focus-visible,
 .portal3-section-head > a:focus-visible,
+.portal3-section-more:focus-visible,
 .more-news:focus-visible{
   outline:3px solid rgba(13,96,189,.28);
   outline-offset:3px;
@@ -722,7 +726,7 @@ body.portal3-home > .page-footer{
 }
 
 .portal3-section-head{
-  margin-bottom:9px;
+  margin-bottom:7px;
 }
 
 .portal3-section-head h2{
@@ -784,6 +788,24 @@ body.portal3-home > .page-footer{
   align-items:center;
 }
 
+.portal3-section-head--with-navigation{
+  align-items:center;
+}
+
+.portal3-section-navigation{
+  display:flex;
+  flex:0 1 auto;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:flex-end;
+  gap:9px;
+  min-width:0;
+}
+
+.portal3-section-navigation .portal3-chips{
+  margin:0;
+}
+
 .portal3-trust-note{
   margin:10px 0 12px 42px;
   max-width:720px;
@@ -830,7 +852,7 @@ body.portal3-home > .page-footer{
   display:flex;
   flex-wrap:wrap;
   gap:9px;
-  margin:0 0 12px;
+  margin:0 0 9px;
 }
 
 .portal3-chips a{
@@ -1163,6 +1185,39 @@ body.portal3-home > .page-footer{
   font-weight:800;
 }
 
+.portal3-event-panel > h3{
+  margin:0 0 8px;
+  color:var(--portal3-navy);
+  font-size:15px;
+  font-weight:800;
+}
+
+.portal3-content-heading-link{
+  display:inline-flex;
+  align-items:center;
+  gap:3px;
+  min-height:32px;
+  margin:-4px;
+  padding:4px;
+  border-radius:5px;
+  color:inherit;
+  text-decoration:none;
+  transition:color .16s ease, text-decoration-color .16s ease, background-color .16s ease;
+}
+
+.portal3-content-heading-link:hover,
+.portal3-content-heading-link:focus-visible{
+  color:var(--portal3-blue);
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-underline-offset:4px;
+}
+
+.portal3-content-heading-link:focus-visible{
+  outline:3px solid rgba(13,96,189,.28);
+  outline-offset:3px;
+}
+
 .portal3-news-list a:not(.more-news){
   display:flex;
   justify-content:space-between;
@@ -1408,9 +1463,14 @@ body.portal3-home > .page-footer{
   }
 
   .portal3-section-head,
-  .portal3-section-head.with-buttons{
+  .portal3-section-head.with-buttons,
+  .portal3-section-head--with-navigation{
     flex-direction:column;
     align-items:flex-start;
+  }
+
+  .portal3-section-navigation{
+    justify-content:flex-start;
   }
 
   .portal3-section-head p{
@@ -1496,6 +1556,7 @@ body.portal3-home > .page-footer{
 :root[data-theme="dark"] body.portal3-home .portal3-panel-head h2,
 :root[data-theme="dark"] body.portal3-home .portal3-section-head h2,
 :root[data-theme="dark"] body.portal3-home .portal3-news-list h3,
+:root[data-theme="dark"] body.portal3-home .portal3-event-panel > h3,
 :root[data-theme="dark"] body.portal3-home .portal3-mini strong,
 :root[data-theme="dark"] body.portal3-home .portal3-job-mini strong,
 :root[data-theme="dark"] body.portal3-home .portal3-card strong,
@@ -1573,6 +1634,7 @@ body.portal3-home > .page-footer{
 :root[data-theme="dark"] body.portal3-home .portal3-quick a,
 :root[data-theme="dark"] body.portal3-home .portal3-panel-head > a,
 :root[data-theme="dark"] body.portal3-home .portal3-section-head > a,
+:root[data-theme="dark"] body.portal3-home .portal3-section-more,
 :root[data-theme="dark"] body.portal3-home .more-news,
 :root[data-theme="dark"] body.portal3-home .portal3-chips a,
 :root[data-theme="dark"] body.portal3-home .portal3-section-buttons a:last-child,
@@ -1586,6 +1648,7 @@ body.portal3-home > .page-footer{
 
 :root[data-theme="dark"] body.portal3-home .portal3-panel-head > a:hover,
 :root[data-theme="dark"] body.portal3-home .portal3-section-head > a:hover,
+:root[data-theme="dark"] body.portal3-home .portal3-section-more:hover,
 :root[data-theme="dark"] body.portal3-home .more-news:hover,
 :root[data-theme="dark"] body.portal3-home .portal3-chips a:hover,
 :root[data-theme="dark"] body.portal3-home .portal3-fallback-actions a:hover{
@@ -1638,6 +1701,7 @@ body.portal3-home > .page-footer{
 /* Home information hierarchy */
 
 .portal3-section-head > a,
+.portal3-section-more,
 .portal3-section-buttons a,
 .portal3-chips a{
   min-height:44px;
@@ -1657,7 +1721,8 @@ body.portal3-home > .page-footer{
 }
 
 .portal3-section-buttons a:focus-visible,
-.portal3-chips a:focus-visible{
+.portal3-chips a:focus-visible,
+.portal3-section-more:focus-visible{
   outline:3px solid rgba(13,96,189,.28);
   outline-offset:3px;
 }
@@ -1826,6 +1891,15 @@ body.portal3-home > .page-footer{
 }
 
 @media (max-width:920px){
+  .portal3-section-head--with-navigation{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .portal3-section-navigation{
+    justify-content:flex-start;
+  }
+
   .portal3-news-grid{
     grid-template-columns:1fr;
   }

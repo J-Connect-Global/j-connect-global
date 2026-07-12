@@ -1,15 +1,23 @@
 {
-  "generated_at": "2026-07-12T17:42:08.851Z",
+  "generated_at": "2026-07-12T18:20:18.176Z",
   "source": "contents-gas:jobs",
-  "count": 0,
+  "count": 4,
   "groups": [
     {
       "field": "region",
-      "values": []
+      "values": [
+        "デュッセルドルフ",
+        "ハンブルク",
+        "フランクフルト"
+      ]
     },
     {
       "field": "city",
-      "values": []
+      "values": [
+        "デュッセルドルフ",
+        "ハンブルク",
+        "フランクフルト"
+      ]
     },
     {
       "field": "category",
@@ -21,7 +29,10 @@
     },
     {
       "field": "employment_type",
-      "values": []
+      "values": [
+        "インターン",
+        "正社員"
+      ]
     },
     {
       "field": "work_style",

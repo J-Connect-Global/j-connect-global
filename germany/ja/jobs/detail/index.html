@@ -19,11 +19,11 @@
   })();
   </script>
 <title>求人詳細 | 仕事・求人 | J-Connect Germany</title>
-  <meta name="description" content="J-Connect Germanyの確認済み求人または掲載イメージの詳細表示ページです。">
+  <meta name="description" content="J-Connect Germanyの求人詳細表示ページです。">
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/jobs/detail/">
   <meta property="og:title" content="求人詳細 | 仕事・求人 | J-Connect Germany">
-  <meta property="og:description" content="J-Connect Germanyの確認済み求人または掲載イメージの詳細表示ページです。">
+  <meta property="og:description" content="J-Connect Germanyの求人詳細表示ページです。">
   <meta property="og:url" content="https://j-connect-global.com/germany/ja/jobs/detail/">
   <meta property="og:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <meta property="og:type" content="website">
@@ -31,7 +31,7 @@
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="求人詳細 | 仕事・求人 | J-Connect Germany">
-  <meta name="twitter:description" content="J-Connect Germanyの確認済み求人または掲載イメージの詳細表示ページです。">
+  <meta name="twitter:description" content="J-Connect Germanyの求人詳細表示ページです。">
   <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -443,7 +443,7 @@
     const url = clean(value);
     if (!url) return false;
     try {
-      const parsed = new URL(url, location.origin);
+      const parsed = new URL(url);
       return parsed.protocol === "https:" || parsed.protocol === "http:";
     } catch (error) {
       return false;
@@ -457,58 +457,6 @@
       .filter(Boolean);
   }
 
-  function normalizeJob(row, index){
-    const positionTitle = getValue(row, "position_title", "job_title", "title", "role", "position");
-    const companyName = getValue(row, "company_name", "company", "company_ja", "company_name_ja");
-    const region = getValue(row, "region", "location", "area", "city", "work_location");
-    const summary = getValue(row, "short_description", "summary", "description_short");
-    const details = getValue(row, "full_description", "description", "job_details");
-    const applyUrl = getValue(row, "apply_url", "application_url", "apply_link");
-    const sourceUrl = getValue(row, "source_url", "official_url", "url", "website");
-    const id = getValue(row, "job_id", "id") || stableSlug(positionTitle, companyName, region) || `job-${index + 1}`;
-
-    return {
-      id,
-      slug: getValue(row, "slug", "job_slug"),
-      status: getValue(row, "status") || "active",
-      company_name: companyName,
-      position_title: positionTitle,
-      employment_type: getValue(row, "employment_type", "employment", "type"),
-      city: getValue(row, "city") || region,
-      region,
-      location: getValue(row, "location", "work_location", "office_location", "city") || region,
-      work_style: getValue(row, "work_style", "workstyle", "work_type", "remote_type", "remote", "working_style"),
-      language: getValue(row, "language", "lang", "languages", "required_language", "language_requirement"),
-      category: getValue(row, "category", "job_category", "occupation_category"),
-      detail_category: getValue(row, "detail_category", "subcategory", "sub_category", "occupation_detail"),
-      tags: getValue(row, "tags", "skills", "skill_tags", "requirements_tags"),
-      skills: getValue(row, "skills", "skill_tags"),
-      salary_min_eur: toNumber(getValue(row, "salary_min_eur")),
-      salary_max_eur: toNumber(getValue(row, "salary_max_eur")),
-      salary_label: getValue(row, "salary_label", "salary", "salary_range"),
-      summary,
-      description: details,
-      requirements: getValue(row, "requirements"),
-      apply_url: applyUrl,
-      application_url: getValue(row, "application_url"),
-      apply_link: getValue(row, "apply_link"),
-      contact_email: getValue(row, "contact_email", "email"),
-      application_email: getValue(row, "application_email", "application_contact_email"),
-      apply_email: getValue(row, "apply_email"),
-      apply_method: getValue(row, "apply_method", "application_method", "how_to_apply"),
-      company_url: getValue(row, "company_url", "company_website", "company_site", "company_link"),
-      source_url: sourceUrl,
-      source_name: getValue(row, "source_name", "source", "publisher"),
-      visa_support: getValue(row, "visa_support", "visa"),
-      last_modified_at: getValue(row, "last_modified_at", "lastModifiedAt", "last_modified"),
-      updated_at: getValue(row, "updated_at", "updated", "last_updated"),
-      published_at: getValue(row, "published_at", "posted_at", "posted_date", "published"),
-      posted_at: getValue(row, "posted_at", "posted_date"),
-      created_at: getValue(row, "created_at", "created"),
-      expires_at: getValue(row, "expires_at", "deadline", "application_deadline")
-    };
-  }
-
   function getSalaryLabel(job){
     if (job.salary_label) return job.salary_label;
     if (job.salary_min_eur && job.salary_max_eur) return `年収 ${job.salary_min_eur.toLocaleString()}€〜${job.salary_max_eur.toLocaleString()}€`;
@@ -518,7 +466,6 @@
   }
 
   function getApplyEmail(job){
-    if (!JOBS_SHARED.isPublicApplyEnabled(job)) return "";
     const candidates = [
       job.application_email,
       job.apply_email,
@@ -647,18 +594,15 @@
     const salary = getSalaryLabel(job);
     const tags = splitList(job.tags || job.skills);
     const requirements = splitList(job.requirements);
-    const isSample = JOBS_SHARED.isSampleJob(job);
-    const applicationEnabled = JOBS_SHARED.isPublicApplyEnabled(job);
     const applyEmail = getApplyEmail(job);
     const applyMailto = getApplyMailto(job);
-    const companyUrl = applicationEnabled && isSafeUrl(job.company_url) ? job.company_url : "";
-    const sourceUrl = applicationEnabled && isSafeUrl(job.source_url) ? job.source_url : "";
+    const companyUrl = isSafeUrl(job.company_url) ? job.company_url : "";
+    const sourceUrl = isSafeUrl(job.source_url) ? job.source_url : "";
 
-    document.title = isSample ? `掲載見本 | 仕事・求人 | J-Connect Germany` : `${title} | 仕事・求人 | J-Connect Germany`;
+    document.title = `${title} | 仕事・求人 | J-Connect Germany`;
     detail.innerHTML = `
       <div class="jobs-detail-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人詳細</span></div>
       ${company ? `<div class="jobs-detail-company">${escapeHtml(company)}</div>` : ""}
-      ${isSample ? `<div class="jc-chip-row"><span class="jc-chip">${escapeHtml(job.sample_label || "掲載見本")}</span></div><p class="jobs-detail-apply-note">この求人は画面・掲載形式の確認用に作成した架空データです。実在する募集ではなく、応募できません。</p>` : ""}
       <h1>${escapeHtml(title)}</h1>
       ${job.summary ? `<p class="jobs-detail-summary">${escapeHtml(job.summary)}</p>` : ""}
       <p class="jobs-detail-apply-note">掲載内容は雇用主または掲載元の申告情報です。J-Connect Germanyは採用、雇用条件、ビザ取得、応募結果を保証しません。応募前に会社情報、勤務条件、給与、契約形態、ビザサポート、応募先の正当性を確認してください。</p>
@@ -666,7 +610,7 @@
 
       <div class="jobs-detail-actions">
         <a class="jc-button is-primary" href="/germany/ja/jobs/">求人一覧へ戻る</a>
-        ${applicationEnabled && applyMailto ? `<a class="jc-button" href="${escapeHtml(applyMailto)}">応募先にメールする</a>` : ""}
+        ${applyMailto ? `<a class="jc-button" href="${escapeHtml(applyMailto)}">応募先にメールする</a>` : ""}
         ${companyUrl ? `<a class="jc-button" href="${escapeHtml(companyUrl)}" target="_blank" rel="noopener noreferrer">会社サイトを見る</a>` : ""}
         <button class="jc-button" type="button" id="copyDetailUrl">URLコピー</button>
       </div>
@@ -707,15 +651,13 @@
 
       <section class="jobs-detail-section">
         <h2>応募・問い合わせ</h2>
-        ${isSample
-          ? `<p>この求人は画面・掲載形式の確認用に作成した架空データです。実在する募集ではなく、応募できません。</p>`
-          : `<p>${escapeHtml(job.apply_method || "応募前に、勤務条件、ビザ、開始時期、語学要件、連絡先を掲載元に確認してください。")}</p>
+        <p>${escapeHtml(job.apply_method || "応募前に、勤務条件、ビザ、開始時期、語学要件、連絡先を掲載元に確認してください。")}</p>
             ${applyEmail ? `<p class="jobs-detail-email">連絡先: <a href="mailto:${escapeHtml(applyEmail)}">${escapeHtml(applyEmail)}</a></p>` : ""}
             <div class="jobs-detail-link-list">
               ${applyMailto ? `<a class="jc-button is-primary" href="${escapeHtml(applyMailto)}">応募先にメールする</a>` : ""}
               ${companyUrl ? `<a class="jc-button" href="${escapeHtml(companyUrl)}" target="_blank" rel="noopener noreferrer">会社サイトを見る</a>` : ""}
               ${sourceUrl && sourceUrl !== companyUrl ? `<a class="jc-button" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(job.source_name || "掲載元")}</a>` : ""}
-            </div>`}
+            </div>
       </section>
     `;
 
@@ -744,17 +686,13 @@
 
     try {
       const payload = await fetchJobsData();
-      const rows = DATA_SOURCES.normalizePayload(payload)
-        .map(JOBS_SHARED.normalizeJob)
-        .filter(job => JOBS_SHARED.isPublicRealJob(job) || JOBS_SHARED.isActiveSampleJob(job));
+      const rows = JOBS_SHARED.activeJobs(DATA_SOURCES.normalizePayload(payload));
       const remoteJob = findJob(rows);
       if (remoteJob) renderJob(remoteJob);
       if (!remoteJob) renderEmpty("notfound");
     } catch (error) {
       console.warn("Job detail load failed:", JOBS_STATIC_URL, error);
-      const fallbackJob = (window.JCONNECT_FALLBACK_JOBS || [])
-        .map(JOBS_SHARED.normalizeJob)
-        .filter(JOBS_SHARED.isActiveSampleJob)
+      const fallbackJob = JOBS_SHARED.activeJobs(window.JCONNECT_FALLBACK_JOBS || [])
         .find(job => [job.id, job.slug].some(value => clean(value).toLowerCase() === clean(queryId).toLowerCase()));
       if (fallbackJob) renderJob(fallbackJob);
       else renderEmpty("notfound");

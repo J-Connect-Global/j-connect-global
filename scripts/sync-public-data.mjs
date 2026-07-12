@@ -270,21 +270,13 @@ function normalizeJob(row, index) {
   const applyUrl = first(row, ["apply_url", "application_url", "apply_link"]);
   const sourceUrl = first(row, ["source_url", "official_url", "url", "website"]);
   const applicationEmail = publicContactEmail(row, ["contact_email", "application_email", "application_contact_email", "apply_email", "public_email"]);
-  const listingType = clean(first(row, ["listing_type"])).toLowerCase() === "sample" ? "sample" : "real";
-  const isSample = listingType === "sample";
-  const publicApplyEnabled = toBoolean(firstRaw(row, ["public_apply_enabled"]));
 
   return {
     id,
     slug: first(row, ["slug", "job_slug"]) || stableSlug(positionTitle, companyName, region),
     detail_url: first(row, ["detail_url", "detailUrl", "detail_page_url"]),
     status: clean(first(row, ["status", "publish_status", "publication_status"])) || "active",
-    listing_type: listingType,
-    is_verified: toBoolean(firstRaw(row, ["is_verified"])),
-    sample_label: first(row, ["sample_label"]) || (isSample ? "掲載見本" : ""),
-    employer_authorized_at: toIsoDate(first(row, ["employer_authorized_at"])),
-    verified_at: toIsoDate(first(row, ["verified_at"])),
-    public_apply_enabled: !isSample && publicApplyEnabled,
+    priority: toNumber(first(row, ["priority"])) || 999,
     company_name: companyName,
     position_title: positionTitle,
     employment_type: first(row, ["employment_type", "employment", "type"]),
@@ -299,27 +291,26 @@ function normalizeJob(row, index) {
     skills: first(row, ["skills", "skill_tags"]) || tags,
     salary_min_eur: toNumber(first(row, ["salary_min_eur"])),
     salary_max_eur: toNumber(first(row, ["salary_max_eur"])),
-    salary_label: first(row, ["salary_label", "salary", "salary_range"]),
+    salary_label: first(row, ["salary_label", "salary"]),
     summary,
     short_description: summary,
     job_details: details,
     description: details,
     requirements: first(row, ["requirements"]),
     benefits: first(row, ["benefits"]),
-    contact_email: isSample ? "" : applicationEmail,
-    application_email: isSample ? "" : applicationEmail,
-    apply_email: isSample ? "" : applicationEmail,
-    apply_url: !isSample && isSafeUrl(applyUrl) ? applyUrl : "",
-    application_url: !isSample && isSafeUrl(applyUrl) ? applyUrl : "",
-    apply_method: isSample ? "" : first(row, ["apply_method", "application_method", "how_to_apply"]),
-    company_url: !isSample && isSafeUrl(first(row, ["company_url", "company_website", "company_site", "company_link"])) ? first(row, ["company_url", "company_website", "company_site", "company_link"]) : "",
-    source_url: !isSample && isSafeUrl(sourceUrl) ? sourceUrl : "",
-    source_name: isSample ? "" : first(row, ["source_name", "source", "publisher"]),
+    contact_email: applicationEmail,
+    application_email: applicationEmail,
+    apply_email: applicationEmail,
+    apply_url: isSafeUrl(applyUrl) ? applyUrl : "",
+    application_url: isSafeUrl(applyUrl) ? applyUrl : "",
+    apply_method: first(row, ["apply_method", "application_method", "how_to_apply"]),
+    company_url: isSafeUrl(first(row, ["company_url", "company_website", "company_site", "company_link"])) ? first(row, ["company_url", "company_website", "company_site", "company_link"]) : "",
+    source_url: isSafeUrl(sourceUrl) ? sourceUrl : "",
+    source_name: first(row, ["source_name", "source", "publisher"]),
     visa_support: first(row, ["visa_support", "visa"]),
-    company_logo_url: !isSample && isSafeUrl(first(row, ["company_logo_url", "logo_url", "image_url"])) ? first(row, ["company_logo_url", "logo_url", "image_url"]) : "",
-    image_url: !isSample && isSafeUrl(first(row, ["image_url", "company_logo_url", "logo_url"])) ? first(row, ["image_url", "company_logo_url", "logo_url"]) : "",
     image_alt: first(row, ["image_alt", "imageAlt"]) || companyName || positionTitle,
-    published_at: toIsoDate(first(row, ["published_at", "posted_at", "posted_date", "published", "created_at"])),
+    last_modified_at: toIsoDate(first(row, ["last_modified_at", "lastModifiedAt", "last_modified"])),
+    published_at: toIsoDate(first(row, ["published_at", "posted_at", "posted_date", "published"])),
     updated_at: toIsoDate(first(row, ["updated_at", "updated", "last_updated"])),
     created_at: toIsoDate(first(row, ["created_at", "created"])),
     expires_at: toIsoDate(first(row, ["expires_at", "deadline", "application_deadline"]))
@@ -327,13 +318,9 @@ function normalizeJob(row, index) {
 }
 
 function isActiveJob(row) {
-  if (!isPublicStatus(row, false)) return false;
-  const listingType = clean(first(row, ["listing_type"])).toLowerCase() === "sample" ? "sample" : "real";
-  if (listingType === "sample") return true;
-  if (!toBoolean(firstRaw(row, ["is_verified"]))) return false;
-  if (!isValidDate(first(row, ["employer_authorized_at"]))) return false;
-  if (!isValidDate(first(row, ["verified_at"]))) return false;
+  if (clean(first(row, ["status"])).toLowerCase() !== "active") return false;
   const expiresAt = first(row, ["expires_at", "deadline", "application_deadline"]);
+  if (!expiresAt) return true;
   const expires = Date.parse(expiresAt);
   return Number.isFinite(expires) && expires >= Date.now();
 }
@@ -343,6 +330,23 @@ function sortNewest(items) {
     const aTime = Date.parse(a.published_at || a.updated_at || a.created_at || "") || 0;
     const bTime = Date.parse(b.published_at || b.updated_at || b.created_at || "") || 0;
     if (aTime !== bTime) return bTime - aTime;
+    return String(a.id).localeCompare(String(b.id), "ja");
+  });
+}
+
+function sortJobsNewest(items) {
+  return items.sort((a, b) => {
+    const getTime = (item) => {
+      for (const value of [item.last_modified_at, item.updated_at, item.published_at, item.posted_at, item.created_at]) {
+        const time = Date.parse(value || "");
+        if (Number.isFinite(time)) return time;
+      }
+      return 0;
+    };
+    const aTime = getTime(a);
+    const bTime = getTime(b);
+    if (aTime !== bTime) return bTime - aTime;
+    if (a.priority !== b.priority) return (a.priority || 999) - (b.priority || 999);
     return String(a.id).localeCompare(String(b.id), "ja");
   });
 }
@@ -395,13 +399,12 @@ async function main() {
       .filter((item) => item.title || item.body)
   );
 
-  const jobItems = sortNewest(
+  const jobItems = sortJobsNewest(
     normalizePayload(jobsPayload)
       .filter(isActiveJob)
       .map(normalizeJob)
       .filter((item) => [item.company_name, item.position_title, item.region, item.city, item.summary, item.job_details].some(Boolean))
   );
-  const publicRealJobItems = jobItems.filter((item) => item.listing_type === "real");
 
   validateUnique(communityItems, ["id"], "community posts");
   validateUnique(jobItems, ["id"], "jobs");
@@ -432,8 +435,8 @@ async function main() {
   await writeJson(outputPaths.jobCategories, {
     generated_at: generatedAt,
     source: "contents-gas:jobs",
-    count: publicRealJobItems.length,
-    groups: categories(publicRealJobItems, ["region", "city", "category", "detail_category", "employment_type", "work_style", "language"])
+    count: jobItems.length,
+    groups: categories(jobItems, ["region", "city", "category", "detail_category", "employment_type", "work_style", "language"])
   });
 
   console.log(`Synced community count: ${communityItems.length}`);

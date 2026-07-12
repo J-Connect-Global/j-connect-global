@@ -660,21 +660,21 @@
       `;
     }
 
-    function renderNoVerifiedJobs() {
+    function renderNoActiveJobs() {
       miniRoot.innerHTML = `
         <a class="portal3-job-mini" href="/germany/ja/jobs/">
           <span class="portal3-job-icon">▦</span>
           <span>
-            <strong>現在、公開中の確認済み求人はありません。</strong>
-            <small>掲載イメージは求人一覧で確認できます。</small>
+            <strong>現在、公開中の求人はありません。</strong>
+            <small>求人一覧で最新の掲載状況をご確認ください。</small>
           </span>
         </a>
       `;
       cardRoot.innerHTML = `
         <a class="portal3-job-card portal3-fallback-card" href="/germany/ja/jobs/">
           <span>▦</span>
-          <strong>現在、公開中の確認済み求人はありません。</strong>
-          <small>応募できない掲載イメージは求人一覧でご確認ください。</small>
+          <strong>現在、公開中の求人はありません。</strong>
+          <small>求人一覧で最新の掲載状況をご確認ください。</small>
         </a>
       `;
     }
@@ -793,27 +793,27 @@
         <a class="portal3-job-mini" href="/germany/ja/jobs/">
           <span class="portal3-job-icon">▦</span>
           <span>
-            <strong>求人情報を確認中です</strong>
-            <small>掲載条件と応募先は各求人の詳細で確認してください</small>
+            <strong>求人情報を読み込めませんでした</strong>
+            <small>時間をおいて求人一覧を再度ご確認ください。</small>
           </span>
         </a>
       `;
       cardRoot.innerHTML = `
         <a class="portal3-job-card portal3-fallback-card" href="/germany/ja/jobs/">
           <span>▦</span>
-          <strong>求人データを確認中です</strong>
-          <small>会社名・都市は求人一覧でご確認ください。</small>
+          <strong>求人データを読み込めませんでした</strong>
+          <small>時間をおいて求人一覧を再度ご確認ください。</small>
         </a>
       `;
     }
 
     function render(jobs) {
       if (!jobs.length) {
-        renderNoVerifiedJobs();
+        renderNoActiveJobs();
         return;
       }
 
-      const selected = sortHomeJobsNewest(jobs);
+      const selected = [...jobs].sort(jobsShared.sortNewestFirst);
       const selectedMini = selected.slice(0, 3);
       const selectedCards = selected.slice(0, 4);
 
@@ -846,30 +846,6 @@
           </a>
         `;
       }).join("");
-    }
-
-    function sortHomeJobsNewest(jobs) {
-      return (jobs || [])
-        .map((job, index) => ({ job, index }))
-        .sort((a, b) => {
-          const aTime = getHomeJobTime(a.job);
-          const bTime = getHomeJobTime(b.job);
-          const aHasDate = Number.isFinite(aTime);
-          const bHasDate = Number.isFinite(bTime);
-          if (aHasDate && bHasDate && aTime !== bTime) return bTime - aTime;
-          if (aHasDate !== bHasDate) return aHasDate ? -1 : 1;
-          return a.index - b.index;
-        })
-        .map(({ job }) => job);
-    }
-
-    function getHomeJobTime(job) {
-      const fields = ["lastModifiedAt", "last_modified_at", "updatedAt", "updated_at", "publishedAt", "published_at", "postedAt", "posted_at", "date", "createdAt", "created_at"];
-      for (const field of fields) {
-        const time = Date.parse(job?.[field] || "");
-        if (Number.isFinite(time)) return time;
-      }
-      return NaN;
     }
 
     async function fetchJobsData() {

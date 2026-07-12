@@ -199,13 +199,20 @@
           <h2>絞り込み</h2>
           <button class="chip-button reset-button" type="button" id="clearFilters">リセット</button>
         </div>
-        <p class="filter-panel-helper">地域や投稿の種類で絞り込めます。</p>
+        <p class="filter-panel-helper">国・地域や投稿の種類で絞り込めます。</p>
         <div class="filter-grid">
           <div class="filter-row area-filter-row">
-            <span class="filter-label">地域</span>
-            <select class="select" id="areaFilter" aria-label="地域で絞り込み">
-              <option value="">すべての地域</option>
+            <label class="filter-label" for="countryFilter">国</label>
+            <select class="select" id="countryFilter" aria-label="国で絞り込み">
+              <option value="">すべての国</option>
             </select>
+          </div>
+          <div class="filter-row area-filter-row">
+            <label class="filter-label" for="regionFilter">地域</label>
+            <select class="select" id="regionFilter" aria-label="地域で絞り込み" disabled aria-describedby="regionFilterHint">
+              <option value="">先に国を選択してください</option>
+            </select>
+            <p id="regionFilterHint" class="filter-control-hint" aria-live="polite">先に国を選択してください</p>
           </div>
           <div class="filter-row">
             <span class="filter-label">募集状況</span>
@@ -430,7 +437,7 @@
       "その他": "街"
     };
 
-    const FILTER_STORAGE_VERSION = "closed-visible-v1";
+    const FILTER_STORAGE_VERSION = "country-region-v1";
 
     function readStatusFilter() {
       const value = localStorage.getItem("ngg-community-status-filter");
@@ -449,7 +456,8 @@
       query: "",
       postType: "すべて",
       subcategory: "すべて",
-      area: "",
+      country: "",
+      region: "",
       sort: "newest",
       freeOnly: false,
       photoOnly: false,
@@ -473,7 +481,8 @@
       clearSearch: document.getElementById("clearSearch"),
       postTypeRail: document.getElementById("postTypeRail"),
       subcategoryRail: document.getElementById("subcategoryRail"),
-      areaFilter: document.getElementById("areaFilter"),
+      countryFilter: document.getElementById("countryFilter"),
+      regionFilter: document.getElementById("regionFilter"),
       statusRail: document.getElementById("statusRail"),
       hideClosedToggle: document.getElementById("hideClosedToggle"),
       cacheWarning: document.getElementById("communityCacheWarning"),
@@ -938,7 +947,7 @@
         { label: "新しい順", sort: "newest", active: state.sort === "newest" },
         { label: "古い順", sort: "oldest", active: state.sort === "oldest" }
       ];
-      const hasActiveFilters = Boolean(state.query || state.area || state.postType !== "すべて" || state.subcategory !== "すべて" || state.freeOnly || state.photoOnly || state.savedOnly || state.sort !== "newest" || state.statusFilter !== "all" || state.hideClosed);
+      const hasActiveFilters = Boolean(state.query || state.country || state.region || state.postType !== "すべて" || state.subcategory !== "すべて" || state.freeOnly || state.photoOnly || state.savedOnly || state.sort !== "newest" || state.statusFilter !== "all" || state.hideClosed);
       els.quickClearFilters.disabled = !hasActiveFilters;
       els.quickClearFilters.setAttribute("aria-disabled", String(!hasActiveFilters));
       els.searchSuggestions.innerHTML = chips.map((chip) => {
@@ -992,16 +1001,6 @@
       applyFilters();
     }
 
-    function setArea(area, options = {}) {
-      if (!area) return;
-      if (options.clearCategory) {
-        state.postType = "すべて";
-        state.subcategory = "すべて";
-      }
-      els.areaFilter.value = area;
-      applyFilters();
-    }
-
     function focusWithoutScroll(element) {
       if (!element) return;
       try {
@@ -1011,11 +1010,40 @@
       }
     }
 
-    function renderAreas() {
-      const areas = [...new Set(state.posts.flatMap((post) => [post.city, post.region, post.area, post._location]).filter(Boolean))]
-        .sort((a, b) => String(a).localeCompare(String(b), "ja"));
-      els.areaFilter.innerHTML = `<option value="">すべての地域</option>${areas.map((area) => `<option value="${escapeHtml(area)}">${escapeHtml(area)}</option>`).join("")}`;
-      els.areaFilter.value = state.area;
+    function communityLocationConfig() {
+      return window.JCONNECT_COMMUNITY_SHARED?.communityLocationConfig || { countries: [], regionsByCountry: {} };
+    }
+
+    function normalizeCommunityCountry(value) {
+      return window.JCONNECT_COMMUNITY_SHARED?.normalizeCommunityCountry?.(value) || "";
+    }
+
+    function renderCountryOptions() {
+      const countries = communityLocationConfig().countries || [];
+      els.countryFilter.innerHTML = `<option value="">すべての国</option>${countries.map((country) => `<option value="${escapeHtml(country)}">${escapeHtml(country)}</option>`).join("")}`;
+      els.countryFilter.value = state.country;
+    }
+
+    function updateRegionFilter() {
+      const country = state.country;
+      const regions = communityLocationConfig().regionsByCountry?.[country] || [];
+      const hint = document.getElementById("regionFilterHint");
+      state.region = "";
+      els.regionFilter.value = "";
+      if (regions.length) {
+        els.regionFilter.disabled = false;
+        els.regionFilter.innerHTML = `<option value="">すべての地域</option>${regions.map((region) => `<option value="${escapeHtml(region)}">${escapeHtml(region)}</option>`).join("")}`;
+        if (hint) hint.textContent = "地域を選択できます";
+        return;
+      }
+      els.regionFilter.disabled = true;
+      const message = country === "オンライン"
+        ? "地域指定なし"
+        : country === "その他"
+          ? "個別入力地域のため指定不可"
+          : "先に国を選択してください";
+      els.regionFilter.innerHTML = `<option value="">${escapeHtml(message)}</option>`;
+      if (hint) hint.textContent = message;
     }
 
     function renderSkeletons() {
@@ -1051,7 +1079,8 @@
 
     function applyFilters() {
       state.query = els.search.value.trim();
-      state.area = els.areaFilter.value;
+      state.country = els.countryFilter.value;
+      state.region = els.regionFilter.value;
 
       renderRails();
       renderQuickChips();
@@ -1069,12 +1098,18 @@
         const searchable = normalize([post._title, post._body, post._postTypeSearch, post._subcategory, post._categoryRaw, post._location, post._price, post.nickname, post.tags, post.city, post.region].join(" "));
         const postTypeOk = state.postType === "すべて" || post._postType === state.postType;
         const subcategoryOk = state.subcategory === "すべて" || post._subcategory === state.subcategory;
-        const areaOk = !state.area || [post.city, post.region, post.area, post._location].filter(Boolean).some((area) => String(area) === state.area);
+        const postCountry = normalizeCommunityCountry(post.country);
+        const countryOk = !state.country || postCountry === state.country;
+        const city = String(post.city || "").trim();
+        const fixedRegions = communityLocationConfig().regionsByCountry?.[state.country] || [];
+        const regionOk = !state.region || (state.region === "その他"
+          ? countryOk && Boolean(city) && !fixedRegions.filter((region) => region !== "その他").includes(city)
+          : city === state.region);
         const queryOk = !query || searchable.includes(query);
         const publicOk = isPublicBoardPost(post);
         const statusOk = state.statusFilter === "all" || post._status === state.statusFilter;
         const closedOk = !state.hideClosed || !post._isClosed;
-        return publicOk && statusOk && closedOk && postTypeOk && subcategoryOk && areaOk && queryOk && (!state.freeOnly || post._free) && (!state.photoOnly || post._images.length) && (!state.savedOnly || isSaved(post._id));
+        return publicOk && statusOk && closedOk && postTypeOk && subcategoryOk && countryOk && regionOk && queryOk && (!state.freeOnly || post._free) && (!state.photoOnly || post._images.length) && (!state.savedOnly || isSaved(post._id));
       });
 
       list.sort((a, b) => {
@@ -1186,7 +1221,8 @@
       if (state.query) filters.push(`検索: ${state.query}`);
       if (state.postType !== "すべて") filters.push(`投稿の種類: ${state.postType}`);
       if (state.subcategory !== "すべて") filters.push(`詳しい内容: ${state.subcategory}`);
-      if (state.area) filters.push(`地域: ${state.area}`);
+      if (state.country) filters.push(`国: ${state.country}`);
+      if (state.region) filters.push(`地域: ${state.region}`);
       if (state.statusFilter === "active") filters.push("募集状況: 募集中");
       if (state.statusFilter === "closed") filters.push("募集状況: 募集終了");
       if (state.hideClosed) filters.push("募集終了を非表示");
@@ -1210,7 +1246,10 @@
 
     function clearFilters() {
       els.search.value = "";
-      els.areaFilter.value = "";
+      state.country = "";
+      state.region = "";
+      els.countryFilter.value = "";
+      updateRegionFilter();
       state.sort = "newest";
       state.freeOnly = false;
       state.photoOnly = false;
@@ -1444,7 +1483,8 @@
       state.sourceNotice = sourceNotice;
       state.evaluationComplete = false;
       if (els.cacheWarning) els.cacheWarning.hidden = true;
-      renderAreas();
+      renderCountryOptions();
+      updateRegionFilter();
       applyFilters();
     }
 
@@ -1521,7 +1561,12 @@
       applyFilters();
       focusWithoutScroll(els.search);
     });
-    els.areaFilter.addEventListener("change", applyFilters);
+    els.countryFilter.addEventListener("change", () => {
+      state.country = els.countryFilter.value;
+      updateRegionFilter();
+      applyFilters();
+    });
+    els.regionFilter.addEventListener("change", applyFilters);
     els.statusRail?.querySelectorAll("[data-status-filter]").forEach((button) => {
       button.addEventListener("click", () => {
         state.statusFilter = button.dataset.statusFilter || "active";

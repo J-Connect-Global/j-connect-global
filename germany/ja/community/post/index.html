@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-hierarchy-20260711">
 <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
 <link rel="stylesheet" href="/assets/css/cookie-consent.css">
-<link rel="stylesheet" href="/assets/css/community.css">
   <link rel="stylesheet" href="/assets/css/social-share.css">
+<link rel="stylesheet" href="/assets/css/community.css">
 <script src="/assets/js/cookie-consent.js" defer></script>
 
 <style>
@@ -1351,10 +1351,6 @@
             <label for="country" id="countryLabel">国<span class="required-mark">*</span></label>
             <select id="country" name="country">
               <option value="ドイツ" selected>ドイツ</option>
-              <option value="オーストリア">オーストリア</option>
-              <option value="スイス">スイス</option>
-              <option value="オンライン">オンライン</option>
-              <option value="その他">その他</option>
             </select>
           </div>
 
@@ -1496,36 +1492,7 @@ const detailPostId = new URLSearchParams(location.search).get('id');
 const DETAIL_STORAGE_KEY = 'ngg-community-saved-posts';
 const LAST_SUBMISSION_KEY = 'jconnectCommunityLastSubmission';
 const COMPLETE_URL = '/germany/ja/community/complete/';
-const CITY_OPTIONS_BY_COUNTRY = {
-  'ドイツ': [
-    'デュッセルドルフ周辺',
-    'ケルン・ボン周辺',
-    'フランクフルト周辺',
-    'ベルリン周辺',
-    'ハンブルク周辺',
-    'ミュンヘン周辺',
-    'シュトゥットガルト周辺',
-    'ハノーファー周辺',
-    'ライプツィヒ・ドレスデン周辺',
-    'その他'
-  ],
-  'オーストリア': [
-    'ウィーン周辺',
-    'グラーツ周辺',
-    'リンツ周辺',
-    'ザルツブルク周辺',
-    'インスブルック周辺',
-    'その他'
-  ],
-  'スイス': [
-    'チューリッヒ周辺',
-    'ジュネーブ周辺',
-    'バーゼル周辺',
-    'ベルン周辺',
-    'ローザンヌ周辺',
-    'その他'
-  ]
-};
+const COMMUNITY_LOCATION_CONFIG = window.JCONNECT_COMMUNITY_SHARED?.communityLocationConfig || { countries: ['ドイツ'], regionsByCountry: {} };
 const SUBCATEGORY_OPTIONS = {
   '売ります': ['帰国売り', '家具・家電', '生活用品', '子ども用品', '本・教材', '車・自転車', 'その他'],
   '買います': ['家具・家電', '生活用品', '子ども用品', '本・教材', '車・自転車', 'その他'],
@@ -2090,6 +2057,17 @@ function updateDateFieldLabel() {
   applyFieldConfig('availability_date', config.fields.availability_date);
 }
 
+function renderCountryOptions() {
+  const country = document.getElementById('country');
+  if (!country) return;
+  const current = country.value || 'ドイツ';
+  const countries = COMMUNITY_LOCATION_CONFIG.countries || [];
+  country.innerHTML = countries.map(function(value) {
+    return '<option value="' + escapeHtml(value) + '">' + escapeHtml(value) + '</option>';
+  }).join('');
+  country.value = countries.includes(current) ? current : 'ドイツ';
+}
+
 function renderCityOptions() {
   const country = getValue('country') || 'ドイツ';
   const city = document.getElementById('city');
@@ -2098,7 +2076,7 @@ function renderCityOptions() {
   const customInput = document.getElementById('custom_location');
   if (!city || !cityField || !customField || !customInput) return;
 
-  const options = CITY_OPTIONS_BY_COUNTRY[country] || [];
+  const options = COMMUNITY_LOCATION_CONFIG.regionsByCountry[country] || [];
   const usesCitySelect = options.length > 0;
   const formConfig = getCategoryFormConfig(getValue('category1'));
   cityField.classList.toggle('hidden', !usesCitySelect);
@@ -3207,6 +3185,7 @@ if (detailPostId) {
   });
 
   loadCategories();
+  renderCountryOptions();
   renderCityOptions();
   updateDateFieldLabel();
 }

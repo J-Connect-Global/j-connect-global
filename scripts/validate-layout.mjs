@@ -262,6 +262,7 @@ function validateRouteCoverage(htmlByUrl, pagesByUrl, articleUrls) {
 function validateHtmlPage(url, file, page) {
   const rel = toRelPath(file);
   const html = fs.readFileSync(file, 'utf8');
+  validateFooterStructure(html, page, rel);
   const headerBlock = extractLayoutBlock(html, 'ja-header', rel);
   const footerBlock = extractLayoutBlock(html, 'ja-footer', rel);
 
@@ -339,6 +340,32 @@ function validateHtmlPage(url, file, page) {
     if (hrefs.length === 1 && hrefs[0] !== expected) {
       problems.push(`${rel} canonical href should be ${expected}, got ${hrefs[0]}`);
     }
+  }
+}
+
+function validateFooterStructure(html, page, rel) {
+  const footerStartMarkers = html.match(/<!--\s*LAYOUT:ja-footer:start\s*-->/g) || [];
+  const footerEndMarkers = html.match(/<!--\s*LAYOUT:ja-footer:end\s*-->/g) || [];
+  const pageFooters = html.match(/<footer\b[^>]*\bclass=["'][^"']*\bpage-footer\b[^"']*["'][^>]*>/gi) || [];
+  const expectsSharedFooter = Boolean(page && page.status !== 'redirect');
+
+  if (expectsSharedFooter && footerStartMarkers.length !== 1) {
+    problems.push(`${rel} must contain exactly one canonical JA footer start marker.`);
+  }
+  if (expectsSharedFooter && footerEndMarkers.length !== 1) {
+    problems.push(`${rel} must contain exactly one canonical JA footer end marker.`);
+  }
+  if (expectsSharedFooter && pageFooters.length !== 1) {
+    problems.push(`${rel} must contain exactly one page-footer.`);
+  }
+  if (!footerStartMarkers.length) return;
+
+  const footerStart = html.indexOf('<!-- LAYOUT:ja-footer:start -->');
+  const mainClose = html.lastIndexOf('</main>');
+  if (mainClose === -1) {
+    problems.push(`${rel} must close <main> before the canonical footer.`);
+  } else if (footerStart < mainClose) {
+    problems.push(`${rel} canonical footer must appear after the closing </main> and cannot be nested inside main.`);
   }
 }
 

@@ -30,6 +30,9 @@ jobs:
       - name: Check generated files are committed
         run: git diff --exit-code
 
+      - name: Validate Community workflows
+        run: node scripts/validate-community.mjs
+
       - name: Validate content registry and generated output
         run: node scripts/validate-content.mjs
 

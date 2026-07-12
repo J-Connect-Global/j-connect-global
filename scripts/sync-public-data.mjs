@@ -137,19 +137,12 @@ function imageUrls(row) {
   return [...new Set(values.flatMap(splitMediaValue).map(normalizeImageSrc).filter(Boolean))];
 }
 
-function isPublicStatus(row, fallbackActive = true) {
+function isPublicStatus(row) {
   const status = clean(first(row, ["status", "publish_status", "publication_status", "moderation_status"])).toLowerCase();
-  const published = clean(first(row, ["published", "is_published", "public", "visible"])).toLowerCase();
   const deleted = clean(first(row, ["deleted", "is_deleted", "archived"])).toLowerCase();
-  const blocked = ["draft", "pending", "rejected", "hidden", "deleted", "removed", "inactive", "private", "spam", "test"];
-  const allowed = ["active", "published", "publish", "approved", "visible", "public", "open", "live", "true", "yes", "1"];
 
   if (["true", "yes", "1"].includes(deleted)) return false;
-  if (status && blocked.some((word) => status.includes(word))) return false;
-  if (published && ["false", "no", "0", "private"].includes(published)) return false;
-  if (status) return allowed.some((word) => status.includes(word));
-  if (published) return allowed.includes(published);
-  return fallbackActive;
+  return status === "active";
 }
 
 function isLikelyTestPost(row) {
@@ -269,7 +262,9 @@ function normalizeJob(row, index) {
   const id = first(row, ["job_id", "id"]) || stableSlug(positionTitle, companyName, region) || `job-${index + 1}`;
   const applyUrl = first(row, ["apply_url", "application_url", "apply_link"]);
   const sourceUrl = first(row, ["source_url", "official_url", "url", "website"]);
-  const applicationEmail = publicContactEmail(row, ["contact_email", "application_email", "application_contact_email", "apply_email", "public_email"]);
+  // contact_email/contact_name are private review fields. A public application
+  // address must use an explicitly public header in the source sheet.
+  const applicationEmail = publicContactEmail(row, ["application_email", "application_contact_email", "apply_email", "public_email"]);
 
   return {
     id,
@@ -298,7 +293,6 @@ function normalizeJob(row, index) {
     description: details,
     requirements: first(row, ["requirements"]),
     benefits: first(row, ["benefits"]),
-    contact_email: applicationEmail,
     application_email: applicationEmail,
     apply_email: applicationEmail,
     apply_url: isSafeUrl(applyUrl) ? applyUrl : "",
@@ -393,7 +387,7 @@ async function main() {
 
   const communityItems = sortNewest(
     normalizePayload(communityPayload)
-      .filter((row) => isPublicStatus(row, true))
+      .filter(isPublicStatus)
       .filter((row) => !isLikelyTestPost(row))
       .map(normalizeCommunityPost)
       .filter((item) => item.title || item.body)

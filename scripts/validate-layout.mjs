@@ -104,6 +104,7 @@ function main() {
   validateSearchIndex(pages, contentItems);
   validateSitemap(pages, contentItems);
   validateProductionFixSharedAssets();
+  validateEmailMigration();
 
   if (problems.length) {
     console.error(`Layout validation failed with ${problems.length} issue(s):`);
@@ -112,6 +113,34 @@ function main() {
   }
 
   console.log(`Layout validation passed: ${htmlFiles.length} JA HTML pages and ${pages.length} registry routes checked.`);
+}
+
+function validateEmailMigration() {
+  const productionRoots = ['germany', 'apps-script', 'assets', 'scripts'];
+  const bannedFormEndpoint = ['form', 'spree.io'].join('');
+  const bannedFormId = ['xlgo', 'jvar'].join('');
+  const bannedGoogleTransport = new RegExp(`(?:Mail|Gmail)${['App', '.sendEmail'].join('')}`);
+  const bannedPersonalMailbox = new RegExp(`@${['g', 'mail.com'].join('')}`, 'i');
+
+  for (const productionRoot of productionRoots) {
+    const directory = path.join(root, productionRoot);
+    if (!fs.existsSync(directory)) continue;
+    for (const file of walk(directory)) {
+      if (!/\.(?:html|js|mjs|gs|css)$/i.test(file)) continue;
+      const rel = toRelPath(file);
+      const text = fs.readFileSync(file, 'utf8');
+      for (const [label, pattern] of [
+        ['removed form endpoint', bannedFormEndpoint],
+        ['removed form identifier', bannedFormId],
+        ['Google email transport', bannedGoogleTransport],
+        ['personal mailbox domain', bannedPersonalMailbox]
+      ]) {
+        if (typeof pattern === 'string' ? text.toLowerCase().includes(pattern) : pattern.test(text)) {
+          problems.push(`${rel} contains forbidden ${label}.`);
+        }
+      }
+    }
+  }
 }
 
 function readPages() {
@@ -287,6 +316,9 @@ function validateHtmlPage(url, file, page) {
       }
     }
     validateInternalLinks(footerBlock, rel, `${rel} footer`);
+    if (!footerBlock.includes('mailto:contact@j-connect-global.com')) {
+      problems.push(`${rel} footer must include the public J-Connect email address.`);
+    }
   }
 
   if (/\bhref=["']#["']/i.test(html)) problems.push(`${rel} contains placeholder href="#".`);
@@ -433,8 +465,8 @@ function validateProductionFixPage(url, html, rel) {
     if (!html.includes('Publishing Flow') || !html.includes('posting-flow-grid')) {
       problems.push(`${rel} must include the production posting flow section.`);
     }
-    if (!html.includes('https://formspree.io/f/xlgojvar')) {
-      problems.push(`${rel} must preserve the Formspree posting endpoint.`);
+    if (!html.includes('communityDataEndpoint') || !/name=["']action["']\s+value=["']submitJobPosting["']/i.test(html)) {
+      problems.push(`${rel} must submit job posting requests to the J-Connect GAS endpoint.`);
     }
     if (!html.includes('/assets/css/jobs-posting.css')) {
       problems.push(`${rel} must load external jobs-posting.css.`);
@@ -443,6 +475,15 @@ function validateProductionFixPage(url, html, rel) {
       .reduce((total, match) => total + match[1].trim().length, 0);
     if (inlineStyleLength > 1200) {
       problems.push(`${rel} contains a large inline CSS block; move page styles to jobs-posting.css.`);
+    }
+  }
+
+  if (normalizedUrl === '/germany/ja/contact/') {
+    if (!html.includes('communityDataEndpoint') || !/name=["']action["']\s+value=["']submitContact["']/i.test(html)) {
+      problems.push(`${rel} must submit contact requests to the J-Connect GAS endpoint.`);
+    }
+    if (!html.includes('mailto:contact@j-connect-global.com')) {
+      problems.push(`${rel} must publish the public J-Connect email address.`);
     }
   }
 

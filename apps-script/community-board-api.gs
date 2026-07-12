@@ -204,12 +204,14 @@ function dispatchCommunityRequest_(e) {
     else if (action === 'submitInquiry') payload = submitInquiry_(params);
     else if (action === 'submitReport') payload = submitReport_(params);
     else if (action === 'cancelCommunityPostRequest') payload = cancelCommunityPostRequest_(params);
+    else if (action === 'submitContact') payload = submitContact_(params);
+    else if (action === 'submitJobPosting') payload = submitJobPosting_(params);
     else payload = { ok: false, error: 'Unsupported action.' };
 
     return json_(payload);
   } catch (error) {
-    console.error(error);
-    return json_({ ok: false, error: 'Request failed.' });
+    console.error(`Community request failed: ${safeEmailErrorCode_(error)}`);
+    return json_({ ok: false, success: false, error: '送信を完了できませんでした。時間をおいて再度お試しください。' });
   }
 }
 
@@ -674,7 +676,7 @@ function invalidateCommunityCache_() {
 
 function sendCreateConfirmationEmail_(params, info) {
   const to = String(params.contact_email_private || '').trim();
-  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(to)) return { sent: false };
+  if (!isJConnectValidEmail_(to)) return { sent: false, error: 'INVALID_RECIPIENT' };
   try {
     const title = info.title || 'J-Connect Germany 掲示板投稿';
     const safeTitle = escapeHtmlForEmail_(title);
@@ -690,7 +692,7 @@ function sendCreateConfirmationEmail_(params, info) {
       `<p><a href="${safePublicPostUrl}">${safePublicPostUrl}</a></p>`,
       '<p>J-Connect Germany がログイン情報、銀行情報、公的ID番号を求めることはありません。</p>'
     ].join('');
-    MailApp.sendEmail({
+    sendZohoEmail_({
       to,
       subject: `【J-Connect Germany】投稿を受け付けました: ${title}`,
       name: 'J-Connect Germany',
@@ -699,8 +701,8 @@ function sendCreateConfirmationEmail_(params, info) {
     });
     return { sent: true };
   } catch (error) {
-    console.warn('Confirmation email failed.', error);
-    return { sent: false, error: String(error && error.message || error) };
+    console.warn(`Community confirmation email failed: ${safeEmailErrorCode_(error)}`);
+    return { sent: false, error: safeEmailErrorCode_(error) };
   }
 }
 
@@ -714,9 +716,8 @@ function escapeHtmlForEmail_(value) {
 }
 
 function cancelCommunityPostRequest_(params) {
-  const adminEmail = PropertiesService.getScriptProperties().getProperty('COMMUNITY_ADMIN_EMAIL');
-  if (!adminEmail) return { ok: false, code: 'ADMIN_EMAIL_NOT_CONFIGURED' };
-  MailApp.sendEmail({
+  const adminEmail = validateJConnectEmailConfiguration_().adminEmail;
+  sendZohoEmail_({
     to: adminEmail,
     subject: 'J-Connect Germany 掲示板投稿の取り消し依頼',
     name: 'J-Connect Germany',
@@ -733,17 +734,17 @@ function submitInquiry_(params) {
     return { ok: false, error: 'This post is closed.' };
   }
   const to = String(found.post.contact_email_private || '').trim();
-  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(to)) {
+  if (!isJConnectValidEmail_(to)) {
     return { ok: false, error: 'Contact email is unavailable.' };
   }
   const senderName = String(params.sender_name || '').trim();
   const senderEmail = String(params.sender_email || '').trim();
   const subject = String(params.subject || '').trim() || 'J-Connect Germany 掲示板の投稿への問い合わせ';
   const message = String(params.message || '').trim();
-  if (!senderName || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(senderEmail) || !message) {
+  if (!senderName || !isJConnectValidEmail_(senderEmail) || !message) {
     return { ok: false, error: 'Required inquiry fields are missing.' };
   }
-  MailApp.sendEmail({
+  sendZohoEmail_({
     to,
     replyTo: senderEmail,
     name: 'J-Connect Germany',
@@ -763,15 +764,177 @@ function submitInquiry_(params) {
 }
 
 function submitReport_(params) {
-  const adminEmail = PropertiesService.getScriptProperties().getProperty('COMMUNITY_ADMIN_EMAIL');
-  if (!adminEmail) return { ok: false, code: 'ADMIN_EMAIL_NOT_CONFIGURED' };
-  MailApp.sendEmail({
+  const adminEmail = validateJConnectEmailConfiguration_().adminEmail;
+  sendZohoEmail_({
     to: adminEmail,
     name: 'J-Connect Germany',
     subject: 'J-Connect Germany 掲示板投稿の通報',
     body: Object.keys(params).map((key) => `${key}: ${params[key]}`).join('\n')
   });
   return { ok: true, success: true };
+}
+
+function submitContact_(params) {
+  const fields = readValidatedFields_(params, {
+    name: { required: true, max: 120 },
+    email: { required: true, max: 254, email: true },
+    inquiry_type: { required: true, max: 120 },
+    subject: { required: true, max: 180 },
+    page_url: { max: 2048, url: true },
+    message: { required: true, max: 6000 },
+    website: { max: 0 },
+    form_started_at: { required: true, max: 20 }
+  });
+  if (!fields.ok) return safeFormFailure_(fields.code);
+  if (!isReasonableFormCompletion_(fields.values.form_started_at)) return safeFormFailure_('FORM_TIMING');
+  if (!acquireSubmissionRateLimit_('submitContact', fields.values.email)) return safeFormFailure_('RATE_LIMITED');
+
+  try {
+    const config = validateJConnectEmailConfiguration_();
+    sendZohoEmail_({
+      to: config.adminEmail,
+      subject: `[J-Connect] Contact inquiry: ${fields.values.subject}`,
+      html: emailDefinitionList_('Contact inquiry', fields.values, ['name', 'email', 'inquiry_type', 'subject', 'page_url', 'message'])
+    });
+    sendZohoEmail_({
+      to: fields.values.email,
+      subject: '[J-Connect Germany] We received your inquiry',
+      html: '<p>お問い合わせを受け付けました。内容を確認のうえ、ご連絡します。</p>'
+    });
+    return { ok: true, success: true };
+  } catch (error) {
+    console.warn(`Contact email failed: ${safeEmailErrorCode_(error)}`);
+    return safeFormFailure_(safeEmailErrorCode_(error));
+  }
+}
+
+function submitJobPosting_(params) {
+  const fields = readValidatedFields_(params, {
+    company_name: { required: true, max: 160 },
+    contact_name: { required: true, max: 120 },
+    contact_email: { required: true, max: 254, email: true },
+    company_url: { max: 2048, url: true },
+    position_title: { required: true, max: 120 },
+    city: { required: true, max: 120 },
+    employment_type: { required: true, max: 100 },
+    salary: { max: 160 },
+    visa_support: { max: 120 },
+    start_date: { max: 120 },
+    publish_date: { max: 120 },
+    apply_method: { max: 240 },
+    summary: { required: true, max: 1000 },
+    job_details: { required: true, max: 6000 },
+    requirements: { required: true, max: 4000 },
+    free_comment: { max: 3000 },
+    logo_url: { max: 2048, url: true },
+    job_preview: { max: 12000 },
+    website: { max: 0 },
+    form_started_at: { required: true, max: 20 }
+  });
+  if (!fields.ok) return safeFormFailure_(fields.code);
+  if (!isReasonableFormCompletion_(fields.values.form_started_at)) return safeFormFailure_('FORM_TIMING');
+  if (!acquireSubmissionRateLimit_('submitJobPosting', fields.values.contact_email)) return safeFormFailure_('RATE_LIMITED');
+
+  try {
+    const config = validateJConnectEmailConfiguration_();
+    const value = fields.values;
+    const html = [
+      emailDefinitionList_('Company information', value, ['company_name', 'company_url', 'logo_url']),
+      emailDefinitionList_('Contact information', value, ['contact_name', 'contact_email']),
+      emailDefinitionList_('Job summary', value, ['position_title', 'city', 'employment_type', 'salary', 'visa_support']),
+      emailDefinitionList_('Job details', value, ['summary', 'job_details', 'requirements']),
+      emailDefinitionList_('Publication preferences', value, ['start_date', 'publish_date', 'apply_method']),
+      emailDefinitionList_('Optional comments', value, ['free_comment', 'job_preview'])
+    ].join('');
+    sendZohoEmail_({
+      to: config.adminEmail,
+      subject: `[J-Connect] Job posting request: ${value.position_title}`,
+      html
+    });
+    sendZohoEmail_({
+      to: value.contact_email,
+      subject: '[J-Connect Germany] Job posting request received',
+      html: '<p>求人掲載のご相談を受け付けました。We have received your job posting request and will contact you after review.</p>'
+    });
+    return { ok: true, success: true };
+  } catch (error) {
+    console.warn(`Job posting email failed: ${safeEmailErrorCode_(error)}`);
+    return safeFormFailure_(safeEmailErrorCode_(error));
+  }
+}
+
+function readValidatedFields_(params, rules) {
+  const values = {};
+  for (const name in rules) {
+    const rule = rules[name];
+    const value = String(params[name] || '').trim();
+    if (rule.required && !value) return { ok: false, code: 'MISSING_REQUIRED_FIELD' };
+    if (value.length > rule.max) return { ok: false, code: 'FIELD_TOO_LONG' };
+    if (rule.email && value && !isJConnectValidEmail_(value)) return { ok: false, code: 'INVALID_EMAIL' };
+    if (rule.url && value && !/^https?:\/\/[^\s]+$/i.test(value)) return { ok: false, code: 'INVALID_URL' };
+    if (name === 'website' && value) return { ok: false, code: 'HONEYPOT' };
+    values[name] = value;
+  }
+  return { ok: true, values };
+}
+
+function isReasonableFormCompletion_(startedAt) {
+  const started = Number(startedAt);
+  const elapsed = Date.now() - started;
+  return Number.isFinite(started) && elapsed >= 2500 && elapsed <= 86400000;
+}
+
+function acquireSubmissionRateLimit_(action, email) {
+  const key = `jconnect_form_rate:${sha256Hex_(`${action}:${String(email).toLowerCase()}`)}`;
+  const lock = LockService.getScriptLock();
+  try {
+    lock.waitLock(5000);
+    const cache = CacheService.getScriptCache();
+    if (cache.get(key)) return false;
+    cache.put(key, '1', 300);
+    return true;
+  } finally {
+    if (lock.hasLock()) lock.releaseLock();
+  }
+}
+
+function safeFormFailure_(code) {
+  const messages = {
+    MISSING_REQUIRED_FIELD: '必須項目を入力してください。',
+    INVALID_EMAIL: 'メールアドレスをご確認ください。',
+    INVALID_URL: 'URLの形式をご確認ください。',
+    FIELD_TOO_LONG: '入力内容が長すぎます。',
+    HONEYPOT: '送信を完了できませんでした。',
+    FORM_TIMING: '送信を完了できませんでした。しばらくしてから再度お試しください。',
+    RATE_LIMITED: '短時間に複数回送信されています。しばらくしてから再度お試しください。',
+    ZOHO_AUTH_FAILED: '現在送信を受け付けられません。時間をおいて再度お試しください。',
+    ZOHO_SEND_FAILED: '現在送信を受け付けられません。時間をおいて再度お試しください。'
+  };
+  return { ok: false, success: false, code, error: messages[code] || '送信を完了できませんでした。時間をおいて再度お試しください。' };
+}
+
+function safeEmailErrorCode_(error) {
+  const code = String(error && error.message || 'EMAIL_DELIVERY_FAILED');
+  return /^(ZOHO_AUTH_FAILED|ZOHO_SEND_FAILED)$/.test(code)
+    ? code
+    : 'EMAIL_DELIVERY_FAILED';
+}
+
+function emailDefinitionList_(heading, values, keys) {
+  const labels = {
+    name: 'Name', email: 'Email', inquiry_type: 'Inquiry type', subject: 'Subject', page_url: 'Page URL', message: 'Message',
+    company_name: 'Company name', company_url: 'Company website', logo_url: 'Logo URL', contact_name: 'Contact person', contact_email: 'Contact email',
+    position_title: 'Job title', city: 'Location / city', employment_type: 'Employment type', salary: 'Salary', visa_support: 'Visa support',
+    start_date: 'Start date', publish_date: 'Preferred publishing date', apply_method: 'Application method', summary: 'Summary',
+    job_details: 'Job details', requirements: 'Requirements', free_comment: 'Additional comments', job_preview: 'Job preview',
+    post_id: 'Post ID', post: 'Post ID', reason: 'Reason', reporter_name: 'Reporter name', reporter_email: 'Reporter email',
+    responsePostId: 'Post ID', title: 'Title', category1: 'Category', category2: 'Type', country: 'Country', city: 'City',
+    price: 'Price', availability_date: 'Availability', cancellation_requested_at: 'Requested at'
+  };
+  const selected = keys || Object.keys(values || {});
+  const rows = selected.filter((key) => values && values[key] !== undefined && values[key] !== '')
+    .map((key) => `<dt>${escapeHtmlForEmail_(labels[key] || key)}</dt><dd>${escapeHtmlForEmail_(values[key]).replace(/\r?\n/g, '<br>')}</dd>`);
+  return `<h2>${escapeHtmlForEmail_(heading)}</h2><dl>${rows.join('')}</dl>`;
 }
 
 function sha256Hex_(input) {

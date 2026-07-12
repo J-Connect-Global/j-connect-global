@@ -448,7 +448,7 @@ textarea:focus{
           <div class="mini"><strong>返信目安</strong><br>通常 3日以内を目安に確認します。</div>
           <div class="mini"><strong>送信方法</strong><br>専用フォーム経由で受け付けます。</div>
           <div class="mini"><strong>主な用途</strong><br>誤情報修正、掲載依頼、広告・提携、求人関連。</div>
-          <div class="mini"><strong>ご案内</strong><br>スパム対策のため連絡先メールアドレスは公開していません。</div>
+          <div class="mini"><strong>ご案内</strong><br>フォームを推奨していますが、<a href="mailto:contact@j-connect-global.com">contact@j-connect-global.com</a> でもご連絡いただけます。</div>
         </div>
       </div>
 
@@ -457,10 +457,10 @@ textarea:focus{
         <p class="note" style="margin-top:-4px;margin-bottom:16px">
           必要事項をご入力のうえ送信してください。
         </p>
-        <form class="form-wrap" id="contactForm" action="https://formspree.io/f/xlgojvar" method="POST">
-          <input type="hidden" name="_subject" value="[J-Connect Germany] お問い合わせ">
-          <input type="hidden" name="_language" value="ja">
-          <input type="text" name="_gotcha" style="display:none">
+        <form class="form-wrap" id="contactForm" method="POST">
+          <input type="hidden" name="action" value="submitContact">
+          <input type="hidden" name="form_started_at" id="formStartedAt">
+          <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
 
           <div class="form-grid">
             <div class="field">
@@ -475,7 +475,7 @@ textarea:focus{
 
             <div class="field full">
               <label for="type">お問い合わせ種別</label>
-              <select id="type" name="type" required>
+              <select id="type" name="inquiry_type" required>
                 <option value="">選択してください</option>
                 <option>一般のお問い合わせ</option>
                 <option>掲載内容の修正依頼</option>
@@ -530,8 +530,7 @@ textarea:focus{
       <div class="panel">
         <h2>連絡方法について</h2>
         <p>
-          スパム対策および運用上の理由から、連絡先メールアドレスはサイト上に直接掲載していません。
-          お問い合わせはフォーム経由で受け付けています。
+          お問い合わせはフォーム経由をおすすめしますが、<a href="mailto:contact@j-connect-global.com">contact@j-connect-global.com</a> でも受け付けています。
         </p>
 
         <h3>返信について</h3>
@@ -571,6 +570,7 @@ textarea:focus{
           <div class="footer-heading">サポート・運営情報</div>
           <a href="/germany/ja/jobs/posting/">求人掲載について</a>
           <a href="/germany/ja/contact/">お問い合わせ</a>
+          <a href="mailto:contact@j-connect-global.com">contact@j-connect-global.com</a>
           <a href="/germany/ja/terms/">利用規約</a>
           <a href="/germany/ja/privacy/">プライバシー</a>
           <a href="/germany/ja/impressum/">運営者情報</a>
@@ -580,10 +580,14 @@ textarea:focus{
   </footer>
   <!-- LAYOUT:ja-footer:end -->
 
+  <script src="/assets/js/data-sources.js"></script>
   <script>
     const form = document.getElementById('contactForm');
     const statusBox = document.getElementById('formStatus');
     const submitButton = document.getElementById('submitButton');
+    const GAS_URL = window.JCONNECT_DATA_SOURCES.communityDataEndpoint;
+    const formStartedAt = document.getElementById('formStartedAt');
+    formStartedAt.value = String(Date.now());
 
     form.addEventListener('submit', async function(event) {
       event.preventDefault();
@@ -596,7 +600,7 @@ textarea:focus{
       const formData = new FormData(form);
 
       try {
-        const response = await fetch(form.action, {
+        const response = await fetch(GAS_URL, {
           method: 'POST',
           body: formData,
           headers: {
@@ -604,14 +608,15 @@ textarea:focus{
           }
         });
 
-        if (response.ok) {
+        const data = await response.json().catch(() => ({}));
+        if (response.ok && data.ok) {
           form.reset();
+          formStartedAt.value = String(Date.now());
           statusBox.className = 'status-box show status-success';
           statusBox.textContent = '送信が完了しました。お問い合わせありがとうございます。';
         } else {
-          const data = await response.json().catch(() => ({}));
           statusBox.className = 'status-box show status-error';
-          statusBox.textContent = data.errors?.[0]?.message || '送信に失敗しました。しばらくしてから再度お試しください。';
+          statusBox.textContent = data.error || '送信に失敗しました。しばらくしてから再度お試しください。';
         }
       } catch (error) {
         statusBox.className = 'status-box show status-error';

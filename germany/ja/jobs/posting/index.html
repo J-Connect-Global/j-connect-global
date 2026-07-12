@@ -221,37 +221,36 @@
 
       <div class="form-preview-grid">
         <section class="panel">
-          <form id="postingForm" class="job-form" action="https://formspree.io/f/xlgojvar" method="POST">
-            <input type="hidden" name="_subject" value="[J-Connect Germany] 求人掲載相談 / Job Posting Request">
-            <input type="hidden" name="_language" value="ja">
-            <input type="hidden" name="inquiry_type" value="求人掲載相談 / Job Posting Request">
-            <input type="text" name="_gotcha" style="display:none">
+          <form id="postingForm" class="job-form" method="POST">
+            <input type="hidden" name="action" value="submitJobPosting">
+            <input type="hidden" name="form_started_at" id="formStartedAt">
+            <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
 
 
             <div class="form-grid">
               <div class="field">
                 <label for="company_name">会社名 / Company Name <span class="required">*</span></label>
-                <input class="input js-preview" id="company_name" name="会社名 / Company Name" type="text" placeholder="Example GmbH" required>
+                <input class="input js-preview" id="company_name" name="company_name" type="text" placeholder="Example GmbH" required>
               </div>
 
               <div class="field">
                 <label for="contact_name">担当者名 / Contact Person <span class="required">*</span></label>
-                <input class="input js-preview" id="contact_name" name="担当者名 / Contact Person" type="text" placeholder="Taro Yamada" required>
+                <input class="input js-preview" id="contact_name" name="contact_name" type="text" placeholder="Taro Yamada" required>
               </div>
 
               <div class="field">
                 <label for="contact_email">連絡先メールアドレス / Contact Email <span class="required">*</span></label>
-                <input class="input js-preview" id="contact_email" name="連絡先メールアドレス / Contact Email" type="email" placeholder="example@company.com" required>
+                <input class="input js-preview" id="contact_email" name="contact_email" type="email" placeholder="example@company.com" required>
               </div>
 
               <div class="field">
                 <label for="company_url">会社URL / Company Website</label>
-                <input class="input js-preview" id="company_url" name="会社URL / Company Website" type="url" placeholder="https://example.com">
+                <input class="input js-preview" id="company_url" name="company_url" type="url" placeholder="https://example.com">
               </div>
 
               <div class="field" data-limit-field="position">
                 <label for="position_title">求人タイトル / Job Title <span class="required">*</span></label>
-                <input class="input js-preview js-limit" id="position_title" name="求人タイトル / Job Title" type="text" placeholder="営業アシスタント / Sales Assistant" required>
+                <input class="input js-preview js-limit" id="position_title" name="position_title" type="text" placeholder="営業アシスタント / Sales Assistant" required>
                 <div class="counter">
                   <span id="positionCounter">0 / 25</span>
                   <span>小カード表示用 / For small card</span>
@@ -261,7 +260,7 @@
 
               <div class="field" data-limit-field="city">
                 <label for="city">勤務地・都市名 / Location・City <span class="required">*</span></label>
-                <input class="input js-preview js-limit" id="city" name="勤務地・都市名 / Location・City" type="text" placeholder="Düsseldorf" required>
+                <input class="input js-preview js-limit" id="city" name="city" type="text" placeholder="Düsseldorf" required>
                 <div class="counter">
                   <span id="cityCounter">0 / 25</span>
                   <span>小カード表示用 / For small card</span>
@@ -271,7 +270,7 @@
 
               <div class="field">
                 <label for="employment_type">雇用形態 / Employment Type <span class="required">*</span></label>
-                <select class="select js-preview" id="employment_type" name="雇用形態 / Employment Type" required>
+                <select class="select js-preview" id="employment_type" name="employment_type" required>
                   <option value="">選択してください / Please select</option>
                   <option>正社員 / Full-time</option>
                   <option>契約社員 / Contract</option>
@@ -286,7 +285,7 @@
 
               <div class="field" data-limit-field="salary">
                 <label for="salary">給与目安 / Salary Range</label>
-                <input class="input js-preview js-limit" id="salary" name="給与目安 / Salary Range" type="text" placeholder="年収 35,000€〜45,000€ / €35,000–€45,000 per year">
+                <input class="input js-preview js-limit" id="salary" name="salary" type="text" placeholder="年収 35,000€〜45,000€ / €35,000–€45,000 per year">
                 <div class="counter">
                   <span id="salaryCounter">0 / 25</span>
                   <span>小カード表示用 / For small card</span>
@@ -296,7 +295,7 @@
 
               <div class="field">
                 <label for="visa_support">ビザサポート有無 / Visa Support</label>
-                <select class="select js-preview" id="visa_support" name="ビザサポート有無 / Visa Support">
+                <select class="select js-preview" id="visa_support" name="visa_support">
                   <option value="">選択してください / Please select</option>
                   <option>あり / Available</option>
                   <option>なし / Not available</option>
@@ -307,22 +306,22 @@
 
               <div class="field">
                 <label for="start_date">勤務開始時期 / Start Date</label>
-                <input class="input js-preview" id="start_date" name="勤務開始時期 / Start Date" type="text" placeholder="2026年7月以降 / From July 2026">
+                <input class="input js-preview" id="start_date" name="start_date" type="text" placeholder="2026年7月以降 / From July 2026">
               </div>
 
               <div class="field">
                 <label for="publish_date">掲載希望開始日 / Preferred Publishing Date</label>
-                <input class="input js-preview" id="publish_date" name="掲載希望開始日 / Preferred Publishing Date" type="text" placeholder="できるだけ早く / As soon as possible">
+                <input class="input js-preview" id="publish_date" name="publish_date" type="text" placeholder="できるだけ早く / As soon as possible">
               </div>
 
               <div class="field">
                 <label for="apply_method">応募方法 / Application Method</label>
-                <input class="input js-preview" id="apply_method" name="応募方法 / Application Method" type="text" placeholder="メール応募 / Apply by email">
+                <input class="input js-preview" id="apply_method" name="apply_method" type="text" placeholder="メール応募 / Apply by email">
               </div>
 
               <div class="field full" data-limit-field="summary">
                 <label for="summary">求人概要 / Job Summary <span class="required">*</span></label>
-                <textarea class="textarea js-preview js-limit" id="summary" name="求人概要 / Job Summary" placeholder="営業事務・受発注管理・問い合わせ対応 / Sales admin, order management, and customer inquiries." required></textarea>
+                <textarea class="textarea js-preview js-limit" id="summary" name="summary" placeholder="営業事務・受発注管理・問い合わせ対応 / Sales admin, order management, and customer inquiries." required></textarea>
                 <div class="counter">
                   <span id="summaryCounter">0 / 25</span>
                   <span>小カード表示用 / For small card</span>
@@ -332,23 +331,23 @@
 
               <div class="field full">
                 <label for="job_details">職務詳細 / Job Details <span class="required">*</span></label>
-                <textarea class="textarea js-preview" id="job_details" name="職務詳細 / Job Details" placeholder="顧客対応、見積作成、受発注管理、社内調整など。 / Customer support, quotations, order management, and internal coordination." required></textarea>
+                <textarea class="textarea js-preview" id="job_details" name="job_details" placeholder="顧客対応、見積作成、受発注管理、社内調整など。 / Customer support, quotations, order management, and internal coordination." required></textarea>
               </div>
 
               <div class="field full">
                 <label for="requirements">必要要件・歓迎条件 / Requirements・Preferred Skills <span class="required">*</span></label>
-                <textarea class="textarea js-preview" id="requirements" name="必要要件・歓迎条件 / Requirements・Preferred Skills" placeholder="日本語ネイティブレベル、英語またはドイツ語での業務経験。 / Native-level Japanese and business experience in English or German." required></textarea>
+                <textarea class="textarea js-preview" id="requirements" name="requirements" placeholder="日本語ネイティブレベル、英語またはドイツ語での業務経験。 / Native-level Japanese and business experience in English or German." required></textarea>
                 <div class="help">複数ある場合は改行、読点、カンマで区切るとプレビューで見やすく表示されます。</div>
               </div>
 
               <div class="field full">
                 <label for="free_comment">自由コメント / Additional Comment</label>
-                <textarea class="textarea js-preview" id="free_comment" name="自由コメント / Additional Comment" placeholder="未経験者歓迎、勤務時間応相談、リモート勤務一部可。 / Beginners welcome, flexible working hours, partial remote work possible."></textarea>
+                <textarea class="textarea js-preview" id="free_comment" name="free_comment" placeholder="未経験者歓迎、勤務時間応相談、リモート勤務一部可。 / Beginners welcome, flexible working hours, partial remote work possible."></textarea>
               </div>
 
               <div class="field full">
                 <label for="logo_url">会社ロゴ画像URL / Company Logo URL</label>
-                <input class="input js-preview" id="logo_url" name="会社ロゴ画像URL / Company Logo URL" type="url" placeholder="https://example.com/logo.png">
+                <input class="input js-preview" id="logo_url" name="logo_url" type="url" placeholder="https://example.com/logo.png">
               </div>
             </div>
 
@@ -591,6 +590,7 @@
         <div class="footer-heading">サポート・運営情報</div>
         <a href="/germany/ja/jobs/posting/">求人掲載について</a>
         <a href="/germany/ja/contact/">お問い合わせ</a>
+        <a href="mailto:contact@j-connect-global.com">contact@j-connect-global.com</a>
         <a href="/germany/ja/terms/">利用規約</a>
         <a href="/germany/ja/privacy/">プライバシー</a>
         <a href="/germany/ja/impressum/">運営者情報</a>
@@ -600,10 +600,14 @@
 </footer>
 <!-- LAYOUT:ja-footer:end -->
 
+<script src="/assets/js/data-sources.js"></script>
 <script>
 const form = document.getElementById('postingForm');
 const statusBox = document.getElementById('formStatus');
 const submitButton = document.getElementById('submitButton');
+const GAS_URL = window.JCONNECT_DATA_SOURCES.communityDataEndpoint;
+const formStartedAt = document.getElementById('formStartedAt');
+formStartedAt.value = String(Date.now());
 
 const fields = {
   company: document.getElementById('company_name'),
@@ -863,10 +867,10 @@ form.addEventListener('submit', async function(event) {
     fields.comment.value.trim()
   ].join('\n');
 
-  formData.append('求人プレビュー / Job Preview', previewText);
+  formData.append('job_preview', previewText);
 
   try {
-    const response = await fetch(form.action, {
+    const response = await fetch(GAS_URL, {
       method: 'POST',
       body: formData,
       headers: {
@@ -874,15 +878,16 @@ form.addEventListener('submit', async function(event) {
       }
     });
 
-    if (response.ok) {
+    const data = await response.json().catch(() => ({}));
+    if (response.ok && data.ok) {
       form.reset();
+      formStartedAt.value = String(Date.now());
       updatePreview();
       statusBox.className = 'status-box show status-success';
       statusBox.textContent = '送信が完了しました。掲載内容を受け付けました。内容確認後、必要に応じてご連絡します。';
     } else {
-      const data = await response.json().catch(() => ({}));
       statusBox.className = 'status-box show status-error';
-      statusBox.textContent = data.errors?.[0]?.message || '送信に失敗しました。しばらくしてから再度お試しください。';
+      statusBox.textContent = data.error || '送信に失敗しました。しばらくしてから再度お試しください。';
     }
   } catch (error) {
     statusBox.className = 'status-box show status-error';

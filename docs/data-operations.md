@@ -36,6 +36,7 @@ This repository publishes a static GitHub Pages site. Generated HTML and JSON ar
 - Do not add `JobPosting` schema until a listing source has complete employer and application data.
 - Do not add `Event` schema for uncertain or recurring event-guide pages without a real ISO `startDate`.
 - Keep static JSON first and GAS fallback second for Jobs and Community.
+- Configure the unified Apps Script source with `MASTER_SPREADSHEET_ID` as the recommended Script Property. `COMMUNITY_SPREADSHEET_ID` is supported only as a legacy fallback; the active spreadsheet is used only when both trimmed property values are empty.
 - Jobs date display and sorting must use existing fields in this order: `last_modified_at`, `updated_at`, `published_at` / `posted_at`, then `created_at`. Do not copy `created_at` into `published_at`; keep the labels distinct in the UI.
 - Static seed/guidance cards are not public listings. They explain how to evaluate a directory or listing while runtime data loads.
 - GAS/runtime data may replace static guidance when available, but generated output and any static fallback changes must be committed before merge.

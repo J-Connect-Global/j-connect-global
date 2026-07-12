@@ -4,10 +4,11 @@
 
 ## 初回設定と更新時の注意
 
-1. 既存Apps Scriptプロジェクトの `community-board-api.gs` と `zoho-mail.gs` を更新し、既存Webアプリを新しいバージョンとして再デプロイします。別の `doGet`、`doPost`、`onOpen` は追加しません。
+1. 既存Apps Scriptプロジェクトの `community-board-api.gs` と `zoho-mail.gs` を更新し、既存Webアプリを新しいバージョンとして再デプロイします。`apps-script/community-board-api.gs` が Master GAS プロジェクトへコピーする完全な正式ソースです。別の `doGet`、`doPost`、`onOpen` は追加しません。
 2. 既存の5分トリガー `processWaitingCommunityApprovalNotifications` は互換ラッパーとして残っており、CommunityとJobsの両方を確認します。すでに本番トリガーがあれば作り直す必要はありません。
 3. トリガーが存在しない場合だけ、Apps Scriptエディターから `installCommunityApprovalNotificationTrigger` を手動実行します。この保守関数は通常メニューには表示されません。
-4. メール用Script Propertiesは `zoho-mail-gas-setup.md` の既存設定を利用します。即時同期には既存の `GITHUB_ACTIONS_TOKEN` を利用します。値をリポジトリやクライアントへ記載しないでください。
+4. 統合Spreadsheetは Script Property の `MASTER_SPREADSHEET_ID` で指定することを推奨します。未設定時のみ従来の `COMMUNITY_SPREADSHEET_ID`、さらに両方が未設定の場合のみアクティブSpreadsheetを使用します。値の前後の空白は無視されます。IDをソース、ログ、クライアントへ記載しないでください。
+5. メール用Script Propertiesは `zoho-mail-gas-setup.md` の既存設定を利用します。即時同期には既存の `GITHUB_ACTIONS_TOKEN` を利用します。値をリポジトリやクライアントへ記載しないでください。
 
 審査操作時に不足していれば、次の管理列が既存列の末尾へ自動追加されます。既存列の削除、移動、改名は行いません。
 
@@ -25,7 +26,7 @@
 
 ## Jobsの審査
 
-1. 求人フォームの正常受付時に `Jobs` へ `pending` 行が自動保存され、管理者と企業担当者へ受付メールが送られます。同じ `company_name`、`position_title`、`contact_email`、`form_started_at` の再送は `submission_key` で同一申請として扱われ、二重行を作りません。
+1. 求人フォームの正常受付時に `Jobs` へ `pending` 行が自動保存され、管理者と企業担当者へ受付メールが送られます。同じ `company_name`、`position_title`、`contact_email`、`form_started_at` の再送は `submission_key` で同一申請として扱われ、二重行やメールを作りません。別のフォーム読み込みによる新規申請でも、同じ `contact_email` から5分以内なら安全なレート制限応答となります。別メールアドレスには影響せず、5分後は再度受け付けます。
 2. 管理者通知メールを確認し、`Jobs` の `pending` 行で企業情報、求人内容、非公開の `contact_name` / `contact_email` を審査します。
 3. 行を選び、Communityと同じ **J-Connect管理** メニューから承認または却下します。
 4. 承認後、本番 `assets/data/jobs/jobs.json` に `job_id` / `id` が現れたことを5分トリガーが確認し、企業担当者へ `/germany/ja/jobs/detail/?id=...` の公開URLを1回だけ通知します。

@@ -2,8 +2,9 @@
  * J-Connect Germany Community Board API
  *
  * Deployment notes:
- * - Bind this script to the Community Posts spreadsheet or set
- *   COMMUNITY_SPREADSHEET_ID in Script Properties.
+ * - Set MASTER_SPREADSHEET_ID in Script Properties to the unified spreadsheet.
+ *   COMMUNITY_SPREADSHEET_ID remains a legacy fallback. If neither property is
+ *   set, the script uses its active spreadsheet.
  * - The sheet must already contain the headers listed in the site request.
  *   This script maps by header name and does not rename, remove, or reorder
  *   columns. The administrator-only approval setup menu may append its
@@ -317,7 +318,9 @@ function json_(payload) {
 }
 
 function getSpreadsheet_() {
-  const spreadsheetId = PropertiesService.getScriptProperties().getProperty('COMMUNITY_SPREADSHEET_ID');
+  const properties = PropertiesService.getScriptProperties();
+  const spreadsheetId = String(properties.getProperty('MASTER_SPREADSHEET_ID') || '').trim()
+    || String(properties.getProperty('COMMUNITY_SPREADSHEET_ID') || '').trim();
   if (spreadsheetId) return SpreadsheetApp.openById(spreadsheetId);
   return SpreadsheetApp.getActiveSpreadsheet();
 }
@@ -1540,6 +1543,9 @@ function submitJobPosting_(params) {
     if (duplicate) {
       return { ok: true, success: true, duplicate: true, job_id: duplicate.jobId, id: duplicate.jobId };
     }
+    if (!acquireSubmissionRateLimitWithHeldLock_('submitJobPosting', value.contact_email)) {
+      return safeFormFailure_('RATE_LIMITED');
+    }
 
     const now = nowIso_();
     const jobId = `job_${Utilities.getUuid()}`;
@@ -1671,17 +1677,23 @@ function isReasonableFormCompletion_(startedAt) {
 }
 
 function acquireSubmissionRateLimit_(action, email) {
-  const key = `jconnect_form_rate:${sha256Hex_(`${action}:${String(email).toLowerCase()}`)}`;
   const lock = LockService.getScriptLock();
   try {
     lock.waitLock(5000);
-    const cache = CacheService.getScriptCache();
-    if (cache.get(key)) return false;
-    cache.put(key, '1', 300);
-    return true;
+    return acquireSubmissionRateLimitWithHeldLock_(action, email);
   } finally {
     if (lock.hasLock()) lock.releaseLock();
   }
+}
+
+// The caller must already own the ScriptLock so the cache check and set remain atomic.
+function acquireSubmissionRateLimitWithHeldLock_(action, email) {
+  const identity = `${String(action || '')}:${String(email || '').trim().toLowerCase()}`;
+  const key = `jconnect_form_rate:${sha256Hex_(identity)}`;
+  const cache = CacheService.getScriptCache();
+  if (cache.get(key)) return false;
+  cache.put(key, '1', 300);
+  return true;
 }
 
 function safeFormFailure_(code) {

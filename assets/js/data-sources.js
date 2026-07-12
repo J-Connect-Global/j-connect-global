@@ -1,17 +1,13 @@
 (function (window) {
-  // Contents Deployment ID: AKfycbxg5RQDOZn64GHiC5uMhohfn0OKTp595iPn09vSOCQrmMv36tpsm0fq7opjzA2h7Wyz
-  // Contents Spreadsheet ID: 1Z9pe8lZxbVAnjTvx3kUCWVZm-Qt_xhgJsrZ7W75Ktks
-  const directoryDataEndpoint =
-    "https://script.google.com/macros/s/AKfycbxg5RQDOZn64GHiC5uMhohfn0OKTp595iPn09vSOCQrmMv36tpsm0fq7opjzA2h7Wyz/exec";
-
-  // Community Deployment ID: AKfycbxwP2QkpK0-k4_WPgJ5zaHSC_I0vqytH-n3xbb62NS0XHtQVdSTyXBT2r_lyBuQcuM
-  // Community Spreadsheet ID: 1rWn1KsRgDkfli8tPN1ddm5s8Zp6yt8EG1Yr5I6sgtNc
+  // Master GAS Deployment ID: AKfycbxwP2QkpK0-k4_WPgJ5zaHSC_I0vqytH-n3xbb62NS0XHtQVdSTyXBT2r_lyBuQcuM
+  // Master Spreadsheet ID: 1rWn1KsRgDkfli8tPN1ddm5s8Zp6yt8EG1Yr5I6sgtNc
   // Community image Drive folder ID: 1ezKSoBNrXeWgIFGQFCqGn6875arnBasQ
-  const communityDataEndpoint =
+  const masterDataEndpoint =
     "https://script.google.com/macros/s/AKfycbxwP2QkpK0-k4_WPgJ5zaHSC_I0vqytH-n3xbb62NS0XHtQVdSTyXBT2r_lyBuQcuM/exec";
+  const directoryDataEndpoint = masterDataEndpoint;
+  const communityDataEndpoint = masterDataEndpoint;
 
   const directorySheets = Object.freeze({
-    events: "events",
     eat: "eat",
     shopping: "shopping",
     medical: "medical",

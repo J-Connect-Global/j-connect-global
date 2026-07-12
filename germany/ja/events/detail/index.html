@@ -170,8 +170,6 @@
 <script src="/assets/js/events-fallback.js"></script>
 <script>
 (function(){
-  const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
-  const EVENTS_API_URL = DATA_SOURCES.buildDirectoryUrl({ sheet: DATA_SOURCES.directorySheets.events, lang:"ja", status:"active" });
   const detail = document.getElementById("eventDetail");
   const queryId = new URLSearchParams(location.search).get("id") || "";
   const escapeHtml = value => String(value ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");
@@ -188,13 +186,12 @@
     const tags = splitList(event.tags);
     detail.innerHTML = `<div class="jc-chip-row">${tags.map(tag => `<span class="jc-chip">${escapeHtml(tag)}</span>`).join("")}</div><h1>${escapeHtml(event.title || "イベント詳細")}</h1><p class="jc-lead">${escapeHtml(event.summary || "イベント情報の詳細を確認してください。")}</p><div class="jc-detail-grid">${detailItem("日付", event.date)}${detailItem("都市", event.city)}${detailItem("場所", event.location)}${detailItem("カテゴリ", event.category)}${detailItem("公開日", event.published_at)}</div><section><h2>本文</h2><p>${escapeHtml(event.body || event.summary || "日付・場所・公式情報を確認してから参加してください。")}</p></section>${event.access ? `<section><h2>アクセスメモ</h2><p>${escapeHtml(event.access)}</p></section>` : ""}<section><h2>公式・参考リンク</h2><div class="jc-actions">${event.official_url ? `<a class="jc-button is-primary" href="${escapeHtml(event.official_url)}" target="_blank" rel="noopener noreferrer">公式情報を確認</a>` : ""}<a class="jc-button" href="/germany/ja/events/">イベント一覧へ戻る</a></div></section>`;
   }
-  async function loadEvent(){
+  function loadEvent(){
     if (!queryId) { renderEmpty("missing"); return; }
     const fallbackRows = (window.JCONNECT_FALLBACK_EVENTS || []).map(normalizeEvent);
     const fallbackEvent = findEvent(fallbackRows);
     if (fallbackEvent) renderEvent(fallbackEvent);
-    try { const payload = await DATA_SOURCES.fetchJsonWithTimeout(EVENTS_API_URL, 12000); const remoteEvent = findEvent(DATA_SOURCES.normalizePayload(payload).map(normalizeEvent)); if (remoteEvent) renderEvent(remoteEvent); if (!remoteEvent && !fallbackEvent) renderEmpty("notfound"); }
-    catch (error) { console.warn("Event detail load failed:", EVENTS_API_URL, error); if (!fallbackEvent) renderEmpty("notfound"); }
+    else renderEmpty("notfound");
   }
   loadEvent();
 })();

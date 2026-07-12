@@ -2108,6 +2108,7 @@ function readText(relPath) {
 
 function writeText(relPath, content) {
   const fullPath = path.join(root, relPath);
+  if (fs.existsSync(fullPath) && fs.readFileSync(fullPath, 'utf8') === content) return;
   fs.mkdirSync(path.dirname(fullPath), { recursive: true });
   fs.writeFileSync(fullPath, content, 'utf8');
 }

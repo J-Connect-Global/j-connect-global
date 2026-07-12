@@ -176,8 +176,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "求人掲載について",
-    "description": "J-Connect Germany に求人掲載を希望する企業向けの案内ページです。",
+    "title": "求人掲載について｜無料掲載パイロット",
+    "description": "J-Connect Germanyでは現在、サービス検証期間として求人掲載を無料で受け付けています。掲載条件は将来変更される場合がありますが、現在の申込みが有料サービスへ自動移行することはありません。",
     "url": "/germany/ja/jobs/posting/",
     "category": "仕事・求人",
     "tags": [

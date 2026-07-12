@@ -661,7 +661,7 @@
   },
   {
     "id": "page-community-thanks",
-    "title": "送信完了",
+    "title": "送信が完了しました",
     "url": "/germany/ja/community/thanks/",
     "type": "utility",
     "pillar": "community",
@@ -675,7 +675,7 @@
     "redirect_target": "",
     "layout": "utility",
     "hero_type": "utility",
-    "description": "J-Connect Germany の掲示板フォーム送信完了ページです。",
+    "description": "操作元のページへ戻るか、掲示板をご確認ください。",
     "tags": [
       "掲示板",
       "送信完了"
@@ -703,6 +703,44 @@
       "投稿完了",
       "管理用URL"
     ]
+  },
+  {
+    "id": "page-community-report-complete",
+    "title": "通報完了",
+    "url": "/germany/ja/community/report/complete/",
+    "type": "utility",
+    "pillar": "community",
+    "status": "published",
+    "canonical_url": "/germany/ja/community/report/complete/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "掲示板投稿の通報完了ページです。",
+    "tags": ["掲示板", "通報", "送信完了"]
+  },
+  {
+    "id": "page-community-contact-complete",
+    "title": "メッセージ送信完了",
+    "url": "/germany/ja/community/contact/complete/",
+    "type": "utility",
+    "pillar": "community",
+    "status": "published",
+    "canonical_url": "/germany/ja/community/contact/complete/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "掲示板投稿者へのメッセージ送信完了ページです。",
+    "tags": ["掲示板", "投稿者連絡", "送信完了"]
   },
   {
     "id": "page-community-manage",

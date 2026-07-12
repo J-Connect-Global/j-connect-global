@@ -2,6 +2,21 @@
   const imageFallback = window.JCONNECT_IMAGE_FALLBACK;
   const DEFAULT_IMAGE = imageFallback?.DEFAULT_IMAGE || "/assets/img/placeholders/jconnect-default-card.webp";
   const INVALID_IMAGE_VALUES = new Set(["", "#", "n/a", "null", "undefined"]);
+  const COMMUNITY_LOCATION_CONFIG = Object.freeze({
+    countries: Object.freeze(["ドイツ", "オーストリア", "スイス", "オンライン", "その他"]),
+    regionsByCountry: Object.freeze({
+      "ドイツ": Object.freeze(["デュッセルドルフ周辺", "ケルン・ボン周辺", "フランクフルト周辺", "ベルリン周辺", "ハンブルク周辺", "ミュンヘン周辺", "シュトゥットガルト周辺", "ハノーファー周辺", "ライプツィヒ・ドレスデン周辺", "その他"]),
+      "オーストリア": Object.freeze(["ウィーン周辺", "グラーツ周辺", "リンツ周辺", "ザルツブルク周辺", "インスブルック周辺", "その他"]),
+      "スイス": Object.freeze(["チューリッヒ周辺", "ジュネーブ周辺", "バーゼル周辺", "ベルン周辺", "ローザンヌ周辺", "その他"])
+    })
+  });
+  const COMMUNITY_COUNTRY_ALIASES = Object.freeze({
+    "germany": "ドイツ",
+    "austria": "オーストリア",
+    "switzerland": "スイス",
+    "schweiz": "スイス",
+    "online": "オンライン"
+  });
   const fallbackPosts = Object.freeze([
     {
       post_id: "community-fallback-moving-sale-duesseldorf",
@@ -68,6 +83,24 @@
       }
     }
     return "";
+  }
+
+  function normalizeCommunityCountry(value) {
+    const raw = String(value || "").trim();
+    if (!raw) return "";
+    if (COMMUNITY_LOCATION_CONFIG.countries.includes(raw)) return raw;
+    return COMMUNITY_COUNTRY_ALIASES[raw.toLowerCase()] || "";
+  }
+
+  function communityRegionsForCountry(country) {
+    return COMMUNITY_LOCATION_CONFIG.regionsByCountry[normalizeCommunityCountry(country)] || [];
+  }
+
+  function isCustomCommunityRegion(country, city) {
+    const value = String(city || "").trim();
+    if (!value) return false;
+    const fixedRegions = communityRegionsForCountry(country).filter((region) => region !== "その他");
+    return !fixedRegions.includes(value);
   }
 
   function splitMediaValue(value) {
@@ -293,6 +326,10 @@
     sortPosts,
     formatDate,
     normalizeStatus,
+    communityLocationConfig: COMMUNITY_LOCATION_CONFIG,
+    normalizeCommunityCountry,
+    communityRegionsForCountry,
+    isCustomCommunityRegion,
     isExpired,
     isPubliclyVisible,
     isAllowedCommunityImageUrl,

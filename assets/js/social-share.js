@@ -293,6 +293,14 @@
       return;
     }
 
+    const manualShare = Array.from(target.root.querySelectorAll(SHARE_SELECTOR)).find((share) => {
+      return share.dataset.socialShare !== "auto" && isVisibleContainer(share);
+    });
+    if (manualShare) {
+      target.root.querySelectorAll(AUTO_SHARE_SELECTOR).forEach((share) => share.remove());
+      return;
+    }
+
     const shares = Array.from(document.querySelectorAll(AUTO_SHARE_SELECTOR));
     const root = shares.shift() || createShareTrigger(target);
     shares.forEach((share) => share.remove());

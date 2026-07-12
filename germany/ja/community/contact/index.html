@@ -51,13 +51,13 @@
 
 .panel{background:#fff;border:1px solid var(--border);border-radius:9px;box-shadow:var(--card);padding:22px}
 
-body > p,
-    body > h1,
-    body > form{width:min(760px, calc(100% - 32px));margin-left:auto;margin-right:auto}
+.main > .container > p,
+    .main > .container > h1,
+    .main > .container > form{width:min(760px, calc(100% - 32px));margin-left:auto;margin-right:auto}
 
-body > p:first-of-type{margin-top:24px}
+.main > .container > p:first-of-type{margin-top:24px}
 
-body > p a{
+.main > .container > p a{
   display:inline-flex;
   min-height:38px;
   align-items:center;
@@ -70,14 +70,14 @@ body > p a{
   text-decoration:none;
 }
 
-body > h1{
+.main > .container > h1{
   margin-top:18px;
   color:var(--site-navy);
   font-size:clamp(28px,5vw,42px);
   letter-spacing:0;
 }
 
-body > form{
+.main > .container > form{
   background:rgba(255,255,255,.94);
   border:1px solid var(--line);
   border-radius:9px;
@@ -85,15 +85,15 @@ body > form{
   padding:22px;
 }
 
-body > form label{
+.main > .container > form label{
   display:block;
   margin-top:14px;
   color:var(--site-navy);
   font-weight:900;
 }
 
-body > form input,
-    body > form textarea{
+.main > .container > form input,
+    .main > .container > form textarea{
   width:100%;
   padding:12px 14px;
   margin:8px 0 0;
@@ -102,16 +102,16 @@ body > form input,
   background:#fff;
 }
 
-body > form input:focus,
-body > form textarea:focus{
+.main > .container > form input:focus,
+.main > .container > form textarea:focus{
   border-color:var(--site-navy);
   outline:none;
   box-shadow:var(--site-focus-ring);
 }
 
-body > form textarea{min-height:150px;resize:vertical}
+.main > .container > form textarea{min-height:150px;resize:vertical}
 
-body > form button{
+.main > .container > form button{
   min-height:44px;
   margin-top:16px;
   padding:0 18px;
@@ -123,10 +123,10 @@ body > form button{
 }
 
 @media (max-width:640px){
-  body > p,
-  body > h1,
-  body > form{width:min(100% - 24px, 760px)}
-  body > form{border-radius:18px;padding:18px}
+  .main > .container > p,
+  .main > .container > h1,
+  .main > .container > form{width:min(100% - 24px, 760px)}
+  .main > .container > form{border-radius:18px;padding:18px}
 }
 </style>
 <script>
@@ -231,6 +231,7 @@ body > form button{
   </header>
   <!-- LAYOUT:ja-header:end -->
 
+  <main class="main"><div class="container">
   <p><a href="../">← 掲示板へ戻る</a></p>
   <h1>投稿者に連絡する</h1>
   <p id="contactStatus" aria-live="polite"></p>
@@ -275,7 +276,7 @@ body > form button{
         const res = await fetch(GAS_URL, { method:'POST', body: fd });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (data.ok) location.assign('../thanks/');
+        if (data.ok) location.assign(`./complete/?post_id=${encodeURIComponent(postId)}`);
         else {
           console.error('Community contact submit failed:', GAS_URL, data.error || data);
           alert('送信に失敗しました');
@@ -287,6 +288,7 @@ body > form button{
     });
   </script>
 
+  </div></main>
   <!-- LAYOUT:ja-footer:start -->
   <footer class="page-footer">
     <div class="footer-inner">

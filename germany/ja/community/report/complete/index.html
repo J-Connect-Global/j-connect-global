@@ -18,20 +18,20 @@
     }
   })();
   </script>
-<title>送信が完了しました | J-Connect Germany</title>
-  <meta name="description" content="操作元のページへ戻るか、掲示板をご確認ください。">
+<title>通報を受け付けました | J-Connect Germany</title>
+  <meta name="description" content="通報内容を確認し、必要に応じて対応します。">
   <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://j-connect-global.com/germany/ja/community/thanks/">
-  <meta property="og:title" content="送信が完了しました | J-Connect Germany">
-  <meta property="og:description" content="操作元のページへ戻るか、掲示板をご確認ください。">
-  <meta property="og:url" content="https://j-connect-global.com/germany/ja/community/thanks/">
+  <link rel="canonical" href="https://j-connect-global.com/germany/ja/community/report/complete/">
+  <meta property="og:title" content="通報を受け付けました | J-Connect Germany">
+  <meta property="og:description" content="通報内容を確認し、必要に応じて対応します。">
+  <meta property="og:url" content="https://j-connect-global.com/germany/ja/community/report/complete/">
   <meta property="og:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="J-Connect Germany">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="送信が完了しました | J-Connect Germany">
-  <meta name="twitter:description" content="操作元のページへ戻るか、掲示板をご確認ください。">
+  <meta name="twitter:title" content="通報を受け付けました | J-Connect Germany">
+  <meta name="twitter:description" content="通報内容を確認し、必要に応じて対応します。">
   <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-hierarchy-20260711">
@@ -92,7 +92,7 @@
           <span class="header-language-current" lang="ja">日本語</span>
         </summary>
         <div class="language-dropdown">
-          <a href="/germany/ja/community/thanks/" class="active" aria-current="page" lang="ja">日本語</a>
+          <a href="/germany/ja/community/report/complete/" class="active" aria-current="page" lang="ja">日本語</a>
         </div>
       </details>
       <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="ダークモードに切り替え">
@@ -116,13 +116,14 @@
 <!-- LAYOUT:ja-header:end -->
 <main class="main">
   <div class="container">
-    <section class="jc-page-hero" aria-labelledby="thanksTitle">
-      <div class="jc-eyebrow"><span class="jc-dot"></span>J-CONNECT GERMANY</div>
-      <h1 id="thanksTitle">送信が完了しました</h1>
-      <p>操作元のページへ戻るか、掲示板をご確認ください。</p>
+    <section class="jc-page-hero" aria-labelledby="reportCompleteTitle">
+      <div class="jc-eyebrow"><span class="jc-dot"></span>COMMUNITY REPORT</div>
+      <h1 id="reportCompleteTitle">通報を受け付けました</h1>
+      <p>通報内容を確認し、必要に応じて対応します。</p>
+      <p>個別の調査結果を必ずお知らせできるとは限りません。緊急の安全上の危険や詐欺の疑いがある場合は、警察などの公的機関へ連絡してください。投稿者の非公開情報は表示されません。</p>
       <div class="hero-actions">
-        <a class="jc-button is-primary" href="../">掲示板に戻る</a>
-        <a class="jc-button" href="/germany/ja/">J-Connect Germany ホームへ</a>
+        <a class="jc-button is-primary" href="../../">掲示板に戻る</a>
+        <a class="jc-button" id="reportedPostLink" hidden>通報した投稿に戻る</a>
       </div>
     </section>
   </div>
@@ -166,6 +167,15 @@
   </div>
 </footer>
 <!-- LAYOUT:ja-footer:end -->
+<script>
+  (function () {
+    const postId = new URLSearchParams(location.search).get('post_id');
+    const link = document.getElementById('reportedPostLink');
+    if (!postId || !link) return;
+    link.href = `/germany/ja/community/post/?id=${encodeURIComponent(postId)}`;
+    link.hidden = false;
+  })();
+</script>
 <script src="/assets/js/common.js"></script>
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/social-share.js"></script>

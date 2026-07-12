@@ -1,14 +1,35 @@
 {
-  "generated_at": "2026-07-12T00:00:00.000Z",
+  "generated_at": "2026-07-12T09:20:59.126Z",
   "source": "contents-gas:jobs",
   "count": 0,
   "groups": [
-    { "field": "region", "values": [] },
-    { "field": "city", "values": [] },
-    { "field": "category", "values": [] },
-    { "field": "detail_category", "values": [] },
-    { "field": "employment_type", "values": [] },
-    { "field": "work_style", "values": [] },
-    { "field": "language", "values": [] }
+    {
+      "field": "region",
+      "values": []
+    },
+    {
+      "field": "city",
+      "values": []
+    },
+    {
+      "field": "category",
+      "values": []
+    },
+    {
+      "field": "detail_category",
+      "values": []
+    },
+    {
+      "field": "employment_type",
+      "values": []
+    },
+    {
+      "field": "work_style",
+      "values": []
+    },
+    {
+      "field": "language",
+      "values": []
+    }
   ]
 }

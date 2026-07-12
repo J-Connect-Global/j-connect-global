@@ -33,6 +33,15 @@ jobs:
       - name: Validate Community workflows
         run: node scripts/validate-community.mjs
 
+      - name: Validate Jobs data
+        run: node scripts/validate-jobs.mjs
+
+      - name: Validate Community and Jobs moderation
+        run: node scripts/validate-submission-moderation.mjs
+
+      - name: Test GAS submission persistence and idempotency
+        run: node scripts/test-gas-submissions.mjs
+
       - name: Validate content registry and generated output
         run: node scripts/validate-content.mjs
 

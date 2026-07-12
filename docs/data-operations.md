@@ -46,7 +46,7 @@ This repository publishes a static GitHub Pages site. Generated HTML and JSON ar
 
 The Jobs spreadsheet is the source of truth. A job is public when `status=active`. If `expires_at` is blank, the job remains public; if it is supplied, it must be a valid date that has not passed. All other statuses, including `inactive`, `draft`, `pending`, `hidden`, and `deleted`, are non-public.
 
-The browser, sync, and validator never infer a job's status from its company name, title, description, email address, URL, or any other content. Spreadsheet content is displayed as entered. Application contact and source links are optional: an email action is shown only for a valid non-J-Connect email, and a source link is shown only for a valid HTTP(S) URL.
+The browser, sync, and validator never infer a job's status from its company name, title, description, email address, URL, or any other content. Spreadsheet content is displayed as entered. Private review fields `contact_name` and `contact_email` are never copied to public JSON. A public application email is optional and must be supplied through an explicitly public source header such as `application_email` or `public_email`; a source link is shown only for a valid HTTP(S) URL.
 
 Use this final header order:
 
@@ -64,7 +64,9 @@ Use this final header order:
 | `summary` | Recommended. |
 | `job_details` | Recommended. |
 | `requirements` | Recommended. |
-| `contact_email` | Optional public application email. |
+| `contact_name` | Private review field; never public. |
+| `contact_email` | Private review field; never public. |
+| `application_email` | Optional explicitly public application email. |
 | `visa_support` | Optional. |
 | `updated_at` | Recommended when `published_at` is absent. |
 | `published_at` | Recommended when `updated_at` is absent. |

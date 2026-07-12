@@ -659,6 +659,25 @@
       `;
     }
 
+    function renderNoVerifiedJobs() {
+      miniRoot.innerHTML = `
+        <a class="portal3-job-mini" href="/germany/ja/jobs/">
+          <span class="portal3-job-icon">▦</span>
+          <span>
+            <strong>現在、公開中の確認済み求人はありません。</strong>
+            <small>掲載イメージは求人一覧で確認できます。</small>
+          </span>
+        </a>
+      `;
+      cardRoot.innerHTML = `
+        <a class="portal3-job-card portal3-fallback-card" href="/germany/ja/jobs/">
+          <span>▦</span>
+          <strong>現在、公開中の確認済み求人はありません。</strong>
+          <small>応募できない掲載イメージは求人一覧でご確認ください。</small>
+        </a>
+      `;
+    }
+
     function render(posts) {
       if (!posts.length) {
         renderFallback();
@@ -789,7 +808,7 @@
 
     function render(jobs) {
       if (!jobs.length) {
-        renderFallback();
+        renderNoVerifiedJobs();
         return;
       }
 

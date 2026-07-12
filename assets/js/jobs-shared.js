@@ -20,6 +20,20 @@
     return clean(value).toLowerCase();
   }
 
+  function toBoolean(value) {
+    if (value === true || value === false) return value;
+    return ["true", "1", "yes", "y"].includes(normalize(value));
+  }
+
+  function isValidFutureExpiry(value) {
+    const time = Date.parse(clean(value));
+    return Number.isFinite(time) && time >= Date.now();
+  }
+
+  function isValidIsoDate(value) {
+    return Number.isFinite(Date.parse(clean(value)));
+  }
+
   function splitList(value) {
     return String(value || "")
       .split(/\n|,|、|;|；|\||\/|#/)
@@ -45,6 +59,8 @@
     const details = getValue(row, "full_description", "description", "job_details");
     const tags = getValue(row, "tags", "skills", "skill_tags", "requirements_tags");
     const id = getValue(row, "job_id", "id") || stableSlug(positionTitle, companyName, region) || `job-${index + 1}`;
+    const listingType = normalize(getValue(row, "listing_type")) === "sample" ? "sample" : "real";
+    const isSample = listingType === "sample";
 
     return {
       ...row,
@@ -52,6 +68,12 @@
       slug: getValue(row, "slug", "job_slug"),
       detail_url: getValue(row, "detail_url", "detailUrl", "detail_page_url"),
       status: getValue(row, "status") || "active",
+      listing_type: listingType,
+      is_verified: toBoolean(row?.is_verified),
+      sample_label: getValue(row, "sample_label", "test_label") || "掲載見本",
+      employer_authorized_at: getValue(row, "employer_authorized_at"),
+      verified_at: getValue(row, "verified_at"),
+      public_apply_enabled: toBoolean(row?.public_apply_enabled),
       priority: toNumber(getValue(row, "priority")) || 999,
       company_name: companyName,
       position_title: positionTitle,
@@ -73,13 +95,21 @@
       job_details: details,
       description: details,
       requirements: getValue(row, "requirements"),
-      apply_url: getValue(row, "apply_url", "application_url", "source_url", "official_url", "url"),
-      source_url: getValue(row, "source_url", "official_url", "url", "website"),
-      source_name: getValue(row, "source_name", "source", "publisher"),
-      image: getValue(row, "image", "image_url", "imageUrl", "thumbnail", "thumbnail_url", "company_logo_url"),
-      image_url: getValue(row, "image_url", "imageUrl", "thumbnail", "thumbnail_url", "company_logo_url"),
-      company_logo_url: getValue(row, "company_logo_url", "logo_url", "logo"),
-      sample_label: getValue(row, "sample_label", "test_label"),
+      contact_email: isSample ? "" : getValue(row, "contact_email", "application_email", "apply_email"),
+      application_email: isSample ? "" : getValue(row, "application_email", "contact_email", "apply_email"),
+      apply_email: isSample ? "" : getValue(row, "apply_email", "application_email", "contact_email"),
+      apply_url: isSample ? "" : getValue(row, "apply_url", "application_url", "source_url", "official_url", "url"),
+      application_url: isSample ? "" : getValue(row, "application_url", "apply_url", "apply_link"),
+      apply_link: isSample ? "" : getValue(row, "apply_link", "apply_url", "application_url"),
+      apply_method: isSample ? "" : getValue(row, "apply_method", "application_method", "how_to_apply"),
+      company_url: isSample ? "" : getValue(row, "company_url", "company_website", "company_site", "company_link"),
+      source_url: isSample ? "" : getValue(row, "source_url", "official_url", "url", "website"),
+      source_name: isSample ? "" : getValue(row, "source_name", "source", "publisher"),
+      image: isSample ? "" : getValue(row, "image", "image_url", "imageUrl", "thumbnail", "thumbnail_url", "company_logo_url"),
+      image_url: isSample ? "" : getValue(row, "image_url", "imageUrl", "thumbnail", "thumbnail_url", "company_logo_url"),
+      company_logo_url: isSample ? "" : getValue(row, "company_logo_url", "logo_url", "logo"),
+      free_comment: getValue(row, "free_comment"),
+      free_comment_en: getValue(row, "free_comment_en"),
       visa_support: getValue(row, "visa_support"),
       last_modified_at: getValue(row, "last_modified_at", "lastModifiedAt", "last_modified"),
       updated_at: getValue(row, "updated_at", "updated", "last_updated"),
@@ -124,7 +154,7 @@
   function activeJobs(rows) {
     return (rows || [])
       .map(normalizeJob)
-      .filter((job) => normalize(job.status) === "active")
+      .filter(isPublicRealJob)
       .filter((job) => normalize([
         job.company_name,
         job.position_title,
@@ -141,9 +171,43 @@
       .sort(sortNewestFirst);
   }
 
+  function isSampleJob(job) {
+    return normalize(job?.listing_type) === "sample";
+  }
+
+  function isPublicRealJob(job) {
+    return normalize(job?.status) === "active" &&
+      !isSampleJob(job) &&
+      job?.is_verified === true &&
+      isValidIsoDate(job?.employer_authorized_at) &&
+      isValidIsoDate(job?.verified_at) &&
+      isValidFutureExpiry(job?.expires_at);
+  }
+
+  function isActiveSampleJob(job) {
+    return normalize(job?.status) === "active" && isSampleJob(job);
+  }
+
+  function activeSampleJobs(rows) {
+    return (rows || [])
+      .map(normalizeJob)
+      .filter(isActiveSampleJob)
+      .sort(sortNewestFirst)
+      .slice(0, 3);
+  }
+
+  function isPublicApplyEnabled(job) {
+    return isPublicRealJob(job) && job?.public_apply_enabled === true;
+  }
+
   window.JCONNECT_JOBS_SHARED = Object.freeze({
     normalizeJob,
     activeJobs,
+    activeSampleJobs,
+    isSampleJob,
+    isPublicRealJob,
+    isActiveSampleJob,
+    isPublicApplyEnabled,
     splitList,
     sortNewestFirst,
     getJobDetailPath,

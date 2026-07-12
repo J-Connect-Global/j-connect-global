@@ -695,13 +695,18 @@
         </article>
       </div>
       <div id="emptyBox" class="empty-box jc-empty-state" style="display:none;">
-        <span class="status-title">現在掲載中の求人はありません</span>
+        <span class="status-title">現在、公開中の確認済み求人はありません。</span>
         <div>求人掲載を希望する企業・採用担当者の方は、掲載案内をご確認ください。</div>
         <div class="status-actions">
           <a class="btn btn-primary" href="/germany/ja/jobs/posting/">求人を掲載する</a>
           <button class="btn btn-secondary" type="button" data-reset-jobs>条件をリセット</button>
         </div>
       </div>
+      <section id="sampleJobsSection" class="jobs-sample-section" hidden aria-labelledby="sampleJobsTitle">
+        <h2 id="sampleJobsTitle" class="results-title">掲載イメージ</h2>
+        <p class="results-sub">企業と求職者の方が掲載画面を確認できるようにした、応募できない架空の表示例です。</p>
+        <div id="sampleCards" class="cards jc-result-grid" aria-live="polite"></div>
+      </section>
     </section>
 
   </main>
@@ -756,6 +761,8 @@
 
   <script src="/assets/js/common.js"></script>
 <script src="/assets/js/data-sources.js"></script>
+  <script src="/assets/js/jobs-fallback.js"></script>
+  <script src="/assets/js/jobs-shared.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
     const JOBS_STATIC_URL = DATA_SOURCES.staticData?.jobs || '/assets/data/jobs/jobs.json';
@@ -769,6 +776,7 @@
     const GAS_FALLBACK_TIMEOUT_MS = 8000;
 
     let jobs = [];
+    let sampleJobs = [];
     let filtered = [];
     let selectedId = null;
     let currentView = 'list';
@@ -812,7 +820,9 @@
       sortNewestBtn: document.getElementById('sortNewestBtn'),
       sortOldestBtn: document.getElementById('sortOldestBtn'),
       resultsSummary: document.getElementById('resultsSummary'),
-      emptyBox: document.getElementById('emptyBox')
+      emptyBox: document.getElementById('emptyBox'),
+      sampleJobsSection: document.getElementById('sampleJobsSection'),
+      sampleCards: document.getElementById('sampleCards')
     };
 
     const SAVED_JOBS_KEY = 'jconnect:germany:jobs:saved';
@@ -886,6 +896,7 @@
     }
 
     function getApplyEmail(job){
+      if (!window.JCONNECT_JOBS_SHARED?.isPublicApplyEnabled(job)) return '';
       const candidates = [
         job.application_email,
         job.apply_email,
@@ -1353,24 +1364,9 @@
         const payload = await fetchJobsData();
         const rows = normalizePayload(payload);
 
-        jobs = rows
-          .map(normalizeJob)
-          .filter(job => normalize(job.status) === 'active')
-          .filter(job => normalize([
-            job.company_name,
-            job.position_title,
-            job.region,
-            job.city,
-            job.employment_type,
-            job.work_style,
-            job.language,
-            job.category,
-            job.detail_category,
-            job.tags,
-            job.summary,
-            job.job_details
-          ].join('')).length > 0)
-          .sort(sortNewestFirst);
+        jobs = window.JCONNECT_JOBS_SHARED.activeJobs(rows);
+        sampleJobs = window.JCONNECT_JOBS_SHARED.activeSampleJobs(rows);
+        renderSampleJobs();
 
         if (!jobs.length) {
           showEmptyJobs();
@@ -1388,11 +1384,13 @@
         console.warn('Jobs data load failed:', JOBS_STATIC_URL, error);
 
         jobs = [];
+        sampleJobs = window.JCONNECT_JOBS_SHARED.activeSampleJobs(window.JCONNECT_FALLBACK_JOBS || []);
         filtered = [];
         selectedId = null;
         initFilters();
         renderSummary();
         renderJobsLoadError();
+        renderSampleJobs();
         scrollToCurrentHash();
       }
     }
@@ -1460,6 +1458,36 @@
       els.resultsSummary.textContent = `${filtered.length}件を表示中 / 全${jobs.length}件`;
     }
 
+    function renderSampleJobs(){
+      if (!els.sampleJobsSection || !els.sampleCards) return;
+      if (!sampleJobs.length) {
+        els.sampleJobsSection.hidden = true;
+        els.sampleCards.innerHTML = '';
+        return;
+      }
+      els.sampleJobsSection.hidden = false;
+      els.sampleCards.innerHTML = sampleJobs.map(job => {
+        const position = job.position_title || '掲載見本';
+        const company = job.company_name || 'サンプル企業（架空）';
+        const region = job.location || job.city || job.region;
+        const detailPath = getJobDetailPath(job);
+        return `
+          <article class="card job-card jobs-card jc-result-card job-card--sample" data-id="${escapeHtml(job.id)}">
+            <div class="job-card-body">
+              <div class="job-main">
+                <span class="directory-seed-label">${escapeHtml(job.sample_label || '掲載見本')}</span>
+                <h3 class="job-title jobs-card-title jc-result-title">${escapeHtml(position)}</h3>
+                <div class="jobs-card-company">${escapeHtml(company)}</div>
+                <p class="job-summary jobs-card-summary">この求人は画面・掲載形式の確認用に作成した架空データです。実在する募集ではなく、応募できません。</p>
+              </div>
+              <div class="job-side"><div class="jobs-card-meta jc-result-meta">${metaItem('勤務地', region)}${metaItem('雇用形態', job.employment_type)}</div></div>
+              <div class="job-card-actions jc-result-actions"><a class="card-action" href="${escapeHtml(detailPath)}">表示を見る</a></div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
     function renderResultControls(){
       els.savedOnlyBtn?.classList.toggle('active', showSavedOnly);
       els.savedOnlyBtn?.setAttribute('aria-pressed', String(showSavedOnly));
@@ -1474,7 +1502,7 @@
         els.cards.innerHTML = '';
         els.emptyBox.style.display = 'block';
         els.emptyBox.className = 'empty-box jc-empty-state';
-        const emptyTitle = showSavedOnly ? '保存済みの求人はありません。' : '現在掲載中の求人はありません';
+        const emptyTitle = showSavedOnly ? '保存済みの求人はありません。' : '現在、公開中の確認済み求人はありません。';
         const emptyBody = showSavedOnly
           ? '保存した求人がある場合は、条件をリセットするか保存済フィルターを解除してください。'
           : '求人掲載を希望する企業・採用担当者の方は、掲載案内をご確認ください。';

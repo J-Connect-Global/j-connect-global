@@ -47,6 +47,11 @@ function toNumber(value) {
   return Number.isFinite(number) ? number : 0;
 }
 
+function toBoolean(value) {
+  if (value === true || value === false) return value;
+  return ["true", "1", "yes", "y"].includes(clean(value).toLowerCase());
+}
+
 function stableSlug(...parts) {
   const slug = parts
     .map((part) => clean(part).normalize("NFKC").toLowerCase())
@@ -186,6 +191,10 @@ function toIsoDate(value) {
   return Number.isFinite(time) ? new Date(time).toISOString() : text;
 }
 
+function isValidDate(value) {
+  return Number.isFinite(Date.parse(clean(value)));
+}
+
 function normalizeCommunityPost(row, index) {
   const title = first(row, ["title", "name", "subject"]);
   const body = first(row, ["body", "description", "message", "content"]);
@@ -263,12 +272,21 @@ function normalizeJob(row, index) {
   const applyUrl = first(row, ["apply_url", "application_url", "apply_link"]);
   const sourceUrl = first(row, ["source_url", "official_url", "url", "website"]);
   const applicationEmail = publicContactEmail(row, ["contact_email", "application_email", "application_contact_email", "apply_email", "public_email"]);
+  const listingType = clean(first(row, ["listing_type"])).toLowerCase() === "sample" ? "sample" : "real";
+  const isSample = listingType === "sample";
+  const publicApplyEnabled = toBoolean(firstRaw(row, ["public_apply_enabled"]));
 
   return {
     id,
     slug: first(row, ["slug", "job_slug"]) || stableSlug(positionTitle, companyName, region),
     detail_url: first(row, ["detail_url", "detailUrl", "detail_page_url"]),
-    status: "active",
+    status: clean(first(row, ["status", "publish_status", "publication_status"])) || "active",
+    listing_type: listingType,
+    is_verified: toBoolean(firstRaw(row, ["is_verified"])),
+    sample_label: first(row, ["sample_label"]) || (isSample ? "掲載見本" : ""),
+    employer_authorized_at: toIsoDate(first(row, ["employer_authorized_at"])),
+    verified_at: toIsoDate(first(row, ["verified_at"])),
+    public_apply_enabled: !isSample && publicApplyEnabled,
     company_name: companyName,
     position_title: positionTitle,
     employment_type: first(row, ["employment_type", "employment", "type"]),
@@ -290,18 +308,18 @@ function normalizeJob(row, index) {
     description: details,
     requirements: first(row, ["requirements"]),
     benefits: first(row, ["benefits"]),
-    contact_email: applicationEmail,
-    application_email: applicationEmail,
-    apply_email: applicationEmail,
-    apply_url: isSafeUrl(applyUrl) ? applyUrl : "",
-    application_url: isSafeUrl(applyUrl) ? applyUrl : "",
-    apply_method: first(row, ["apply_method", "application_method", "how_to_apply"]),
-    company_url: isSafeUrl(first(row, ["company_url", "company_website", "company_site", "company_link"])) ? first(row, ["company_url", "company_website", "company_site", "company_link"]) : "",
-    source_url: isSafeUrl(sourceUrl) ? sourceUrl : "",
-    source_name: first(row, ["source_name", "source", "publisher"]),
+    contact_email: isSample ? "" : applicationEmail,
+    application_email: isSample ? "" : applicationEmail,
+    apply_email: isSample ? "" : applicationEmail,
+    apply_url: !isSample && isSafeUrl(applyUrl) ? applyUrl : "",
+    application_url: !isSample && isSafeUrl(applyUrl) ? applyUrl : "",
+    apply_method: isSample ? "" : first(row, ["apply_method", "application_method", "how_to_apply"]),
+    company_url: !isSample && isSafeUrl(first(row, ["company_url", "company_website", "company_site", "company_link"])) ? first(row, ["company_url", "company_website", "company_site", "company_link"]) : "",
+    source_url: !isSample && isSafeUrl(sourceUrl) ? sourceUrl : "",
+    source_name: isSample ? "" : first(row, ["source_name", "source", "publisher"]),
     visa_support: first(row, ["visa_support", "visa"]),
-    company_logo_url: isSafeUrl(first(row, ["company_logo_url", "logo_url", "image_url"])) ? first(row, ["company_logo_url", "logo_url", "image_url"]) : "",
-    image_url: isSafeUrl(first(row, ["image_url", "company_logo_url", "logo_url"])) ? first(row, ["image_url", "company_logo_url", "logo_url"]) : "",
+    company_logo_url: !isSample && isSafeUrl(first(row, ["company_logo_url", "logo_url", "image_url"])) ? first(row, ["company_logo_url", "logo_url", "image_url"]) : "",
+    image_url: !isSample && isSafeUrl(first(row, ["image_url", "company_logo_url", "logo_url"])) ? first(row, ["image_url", "company_logo_url", "logo_url"]) : "",
     image_alt: first(row, ["image_alt", "imageAlt"]) || companyName || positionTitle,
     published_at: toIsoDate(first(row, ["published_at", "posted_at", "posted_date", "published", "created_at"])),
     updated_at: toIsoDate(first(row, ["updated_at", "updated", "last_updated"])),
@@ -312,12 +330,14 @@ function normalizeJob(row, index) {
 
 function isActiveJob(row) {
   if (!isPublicStatus(row, false)) return false;
+  const listingType = clean(first(row, ["listing_type"])).toLowerCase() === "sample" ? "sample" : "real";
+  if (listingType === "sample") return true;
+  if (!toBoolean(firstRaw(row, ["is_verified"]))) return false;
+  if (!isValidDate(first(row, ["employer_authorized_at"]))) return false;
+  if (!isValidDate(first(row, ["verified_at"]))) return false;
   const expiresAt = first(row, ["expires_at", "deadline", "application_deadline"]);
-  if (expiresAt) {
-    const expires = Date.parse(expiresAt);
-    if (Number.isFinite(expires) && expires < Date.now()) return false;
-  }
-  return true;
+  const expires = Date.parse(expiresAt);
+  return Number.isFinite(expires) && expires >= Date.now();
 }
 
 function sortNewest(items) {
@@ -382,6 +402,7 @@ async function main() {
       .map(normalizeJob)
       .filter((item) => [item.company_name, item.position_title, item.region, item.city, item.summary, item.job_details].some(Boolean))
   );
+  const publicRealJobItems = jobItems.filter((item) => item.listing_type === "real");
 
   validateUnique(communityItems, ["id"], "community posts");
   validateUnique(jobItems, ["id"], "jobs");
@@ -412,8 +433,8 @@ async function main() {
   await writeJson(outputPaths.jobCategories, {
     generated_at: generatedAt,
     source: "contents-gas:jobs",
-    count: jobItems.length,
-    groups: categories(jobItems, ["region", "city", "category", "detail_category", "employment_type", "work_style", "language"])
+    count: publicRealJobItems.length,
+    groups: categories(publicRealJobItems, ["region", "city", "category", "detail_category", "employment_type", "work_style", "language"])
   });
 
   console.log(`Synced community count: ${communityItems.length}`);

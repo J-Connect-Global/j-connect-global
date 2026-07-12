@@ -40,6 +40,7 @@
   <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-hierarchy-20260711">
 <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
 <link rel="stylesheet" href="/assets/css/cookie-consent.css">
+<link rel="stylesheet" href="/assets/css/community.css">
   <link rel="stylesheet" href="/assets/css/social-share.css">
 <script src="/assets/js/cookie-consent.js" defer></script>
 
@@ -511,8 +512,7 @@
 
 .detail-gallery,
 .detail-panel,
-.related-panel,
-.safety-panel{
+.related-panel{
   background:#fff;
   border:1px solid var(--line);
   border-radius:9px;
@@ -706,8 +706,7 @@
   filter:saturate(.75);
 }
 
-.related-panel,
-.safety-panel{
+.related-panel{
   padding:18px;
 }
 
@@ -932,7 +931,6 @@
 :root[data-theme="dark"] .panel,
 :root[data-theme="dark"] .detail-panel,
 :root[data-theme="dark"] .related-panel,
-:root[data-theme="dark"] .safety-panel,
 :root[data-theme="dark"] .modal-card,
 :root[data-theme="dark"] .detail-not-found,
 :root[data-theme="dark"] .preview-card,
@@ -953,7 +951,6 @@
 :root[data-theme="dark"] .detail-content h2,
 :root[data-theme="dark"] .detail-price,
 :root[data-theme="dark"] .related-panel h3,
-:root[data-theme="dark"] .safety-panel h3,
 :root[data-theme="dark"] .preview-title,
 :root[data-theme="dark"] .preview-detail-title,
 :root[data-theme="dark"] .preview-card h3{
@@ -971,9 +968,7 @@
 :root[data-theme="dark"] .detail-body,
 :root[data-theme="dark"] .preview-detail-body,
 :root[data-theme="dark"] .preview-empty-message,
-:root[data-theme="dark"] .preview-note,
-:root[data-theme="dark"] .safety-panel p,
-:root[data-theme="dark"] .safety-panel li{
+:root[data-theme="dark"] .preview-note{
   color:var(--surface-card-muted, #526170);
 }
 
@@ -1064,6 +1059,27 @@
   opacity:1;
 }
 
+:root[data-theme="dark"] .detail-actions .btn-primary{
+  border-color:var(--color-primary,#67b7ff);
+  background:var(--color-primary,#67b7ff);
+  color:#061321;
+}
+
+:root[data-theme="dark"] .detail-actions .btn-secondary,
+:root[data-theme="dark"] .detail-actions .btn-soft,
+:root[data-theme="dark"] .detail-actions .save-button.inline{
+  border-color:var(--color-border,#263a52);
+  background:var(--color-chip-bg,#0f1d30);
+  color:var(--color-button-text,#dbeeff);
+  box-shadow:none;
+}
+
+:root[data-theme="dark"] .detail-actions .save-button.inline.saved{
+  border-color:var(--color-primary,#67b7ff);
+  background:var(--color-primary,#67b7ff);
+  color:#061321;
+}
+
 :root[data-theme="dark"] .message.success{
   border-color:rgba(98,218,146,.38);
   background:rgba(22,96,61,.24);
@@ -1080,7 +1096,6 @@
 :root[data-theme="dark"] body .panel,
 :root[data-theme="dark"] body .detail-panel,
 :root[data-theme="dark"] body .related-panel,
-:root[data-theme="dark"] body .safety-panel,
 :root[data-theme="dark"] body .modal-card,
 :root[data-theme="dark"] body .detail-not-found,
 :root[data-theme="dark"] body .preview-card,
@@ -1100,7 +1115,6 @@
 :root[data-theme="dark"] body .detail-content h2,
 :root[data-theme="dark"] body .detail-price,
 :root[data-theme="dark"] body .related-panel h3,
-:root[data-theme="dark"] body .safety-panel h3,
 :root[data-theme="dark"] body .preview-title,
 :root[data-theme="dark"] body .preview-detail-title,
 :root[data-theme="dark"] body .preview-card h3,
@@ -1120,8 +1134,6 @@
 :root[data-theme="dark"] body .preview-detail-body,
 :root[data-theme="dark"] body .preview-empty-message,
 :root[data-theme="dark"] body .preview-note,
-:root[data-theme="dark"] body .safety-panel p,
-:root[data-theme="dark"] body .safety-panel li,
 :root[data-theme="dark"] body .image-dropzone span{
   color:var(--surface-card-muted, #526170);
 }
@@ -2882,8 +2894,8 @@ function renderStandaloneDetail(post, posts) {
     ? '<div class="closed-detail-notice" role="status"><strong>この投稿は募集終了しました。</strong><span>この投稿への新規問い合わせは現在できません。</span></div>'
     : '';
   const contactAction = post._isClosed
-    ? '<span class="btn is-disabled" aria-disabled="true">募集終了</span>'
-    : '<a class="btn" href="' + escapeHtml(contactHref) + '">投稿者に連絡</a>';
+    ? '<span class="btn btn-primary is-disabled" aria-disabled="true">募集終了</span>'
+    : '<a class="btn btn-primary" href="' + escapeHtml(contactHref) + '">投稿者に連絡</a>';
   const relatedGroup = comparablePosts(posts, post, 4);
   const related = relatedGroup.items;
   const marker = escapeHtml(CATEGORY_ICONS[post._subcategory] || CATEGORY_ICONS[post._postType] || CATEGORY_ICONS['その他']);
@@ -2914,6 +2926,13 @@ function renderStandaloneDetail(post, posts) {
         ${closedNotice}
         <p class="detail-kicker">COMMUNITY POST</p>
         <h1 id="detailTitle" class="detail-title">${escapeHtml(post._title)}</h1>
+        <div class="social-share social-share--detail" data-social-share="manual">
+          <button class="social-share__trigger" type="button" data-share-trigger="true" data-share-url="${escapeHtml(shareHref)}" data-share-title="${escapeHtml(post._title)}" data-share-text="${escapeHtml(post._body || post._title)}" data-share-type="community" aria-haspopup="dialog" aria-expanded="false" aria-label="シェアする">
+            <svg class="social-share__trigger-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 16.1c-.76 0-1.44.3-1.96.77L8.9 12.7a3.3 3.3 0 0 0 0-1.39l7.05-4.12A2.98 2.98 0 1 0 15 5c0 .24.03.47.08.69L8.03 9.81a3 3 0 1 0 0 4.38l7.12 4.18c-.05.2-.07.42-.07.63a2.92 2.92 0 1 0 2.92-2.9Z" fill="currentColor"/></svg>
+            <span class="social-share__trigger-label">シェアする</span>
+            <span class="social-share__trigger-label social-share__trigger-label--short">シェア</span>
+          </button>
+        </div>
         ${priceText ? `<div class="detail-price ${post._free ? 'free' : ''}">${escapeHtml(priceText)}</div>` : ''}
         <div class="badge-row">
           <span class="badge category">${escapeHtml(post._postType)}</span>
@@ -2932,12 +2951,11 @@ function renderStandaloneDetail(post, posts) {
           ${lastModifiedText ? `<span class="fact">最終更新: ${escapeHtml(lastModifiedText)}</span>` : ''}
         </div>
         <p class="detail-body">${escapeHtml(post._body || '詳細本文は未設定です。')}</p>
-        <div class="detail-actions">
+        <div class="detail-actions community-detail-actions">
           ${contactAction}
-          <button class="btn" type="button" id="copyDetailUrl">URLをコピー</button>
-          <a class="btn" href="${escapeHtml(manageHref)}">投稿者管理</a>
-          <button class="btn" type="button" id="saveDetailPost">${saved ? '★ 保存済み' : '☆ 保存'}</button>
-          <a class="btn" href="${escapeHtml(reportHref)}">通報</a>
+          <a class="btn btn-secondary" href="${escapeHtml(manageHref)}">投稿者管理</a>
+          <button class="save-button inline ${saved ? 'saved' : ''}" type="button" id="saveDetailPost" aria-pressed="${saved ? 'true' : 'false'}" aria-label="${saved ? '保存を解除' : '保存する'}">${saved ? '★ 保存済み' : '☆ 保存'}</button>
+          <a class="btn btn-soft" href="${escapeHtml(reportHref)}">通報</a>
         </div>
       </article>
     </section>
@@ -2951,15 +2969,6 @@ function renderStandaloneDetail(post, posts) {
       </div>
     </section>
 
-    <section class="safety-panel" aria-labelledby="safetyTitle">
-      <h2 id="safetyTitle" class="section-title">安心の目安</h2>
-      <ul class="safety-list">
-        <li>個人情報は必要最小限に</li>
-        <li>受け渡しは公共の場所推奨</li>
-        <li>不審投稿は通報</li>
-        <li>金銭取引は自己責任で確認</li>
-      </ul>
-    </section>
   `;
 
   detailMode.querySelectorAll('.detail-thumb-button').forEach(function(button) {
@@ -2977,18 +2986,12 @@ function renderStandaloneDetail(post, posts) {
     });
   });
 
-  document.getElementById('copyDetailUrl').addEventListener('click', async function() {
-    try {
-      await navigator.clipboard.writeText(shareHref);
-      this.textContent = 'コピーしました';
-    } catch (error) {
-      this.textContent = 'URLを選択してコピー';
-    }
-  });
-
   document.getElementById('saveDetailPost').addEventListener('click', function() {
     const nowSaved = toggleDetailSaved(post._id);
     this.textContent = nowSaved ? '★ 保存済み' : '☆ 保存';
+    this.classList.toggle('saved', nowSaved);
+    this.setAttribute('aria-pressed', String(nowSaved));
+    this.setAttribute('aria-label', nowSaved ? '保存を解除' : '保存する');
   });
 }
 

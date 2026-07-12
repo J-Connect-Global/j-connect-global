@@ -465,7 +465,7 @@ function validateProductionFixPage(url, html, rel) {
     if (!html.includes('Publishing Flow') || !html.includes('posting-flow-grid')) {
       problems.push(`${rel} must include the production posting flow section.`);
     }
-    if (!html.includes('communityDataEndpoint') || !/name=["']action["']\s+value=["']submitJobPosting["']/i.test(html)) {
+    if (!html.includes('directoryDataEndpoint') || !/name=["']action["']\s+value=["']submitJobPosting["']/i.test(html)) {
       problems.push(`${rel} must submit job posting requests to the J-Connect GAS endpoint.`);
     }
     if (!html.includes('/assets/css/jobs-posting.css')) {
@@ -479,7 +479,7 @@ function validateProductionFixPage(url, html, rel) {
   }
 
   if (normalizedUrl === '/germany/ja/contact/') {
-    if (!html.includes('communityDataEndpoint') || !/name=["']action["']\s+value=["']submitContact["']/i.test(html)) {
+    if (!html.includes('directoryDataEndpoint') || !/name=["']action["']\s+value=["']submitContact["']/i.test(html)) {
       problems.push(`${rel} must submit contact requests to the J-Connect GAS endpoint.`);
     }
     if (!html.includes('mailto:contact@j-connect-global.com')) {

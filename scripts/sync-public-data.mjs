@@ -15,9 +15,7 @@ const outputPaths = {
   jobCategories: path.join(rootDir, "assets/data/jobs/categories.json")
 };
 
-const FALLBACK_DIRECTORY_ENDPOINT =
-  "https://script.google.com/macros/s/AKfycbxg5RQDOZn64GHiC5uMhohfn0OKTp595iPn09vSOCQrmMv36tpsm0fq7opjzA2h7Wyz/exec";
-const FALLBACK_COMMUNITY_ENDPOINT =
+const FALLBACK_MASTER_ENDPOINT =
   "https://script.google.com/macros/s/AKfycbxwP2QkpK0-k4_WPgJ5zaHSC_I0vqytH-n3xbb62NS0XHtQVdSTyXBT2r_lyBuQcuM/exec";
 
 const timeoutMs = Number(process.env.PUBLIC_DATA_TIMEOUT_MS || 30000);
@@ -80,11 +78,11 @@ function buildUrl(endpoint, params) {
   return url.toString();
 }
 
-async function getEndpoint(name, envName, fallback) {
-  if (process.env[envName]) return process.env[envName];
+async function getMasterEndpoint() {
+  if (process.env.MASTER_API_URL) return process.env.MASTER_API_URL;
   const source = await readFile(dataSourcesPath, "utf8");
-  const match = source.match(new RegExp(`const\\s+${name}\\s*=\\s*["']([^"']+)["']`));
-  return match?.[1] || fallback;
+  const match = source.match(/const\s+masterDataEndpoint\s*=\s*["']([^"']+)["']/);
+  return match?.[1] || FALLBACK_MASTER_ENDPOINT;
 }
 
 async function fetchJson(url) {
@@ -374,8 +372,9 @@ async function writeJson(file, data) {
 }
 
 async function main() {
-  const directoryEndpoint = await getEndpoint("directoryDataEndpoint", "CONTENTS_API_URL", FALLBACK_DIRECTORY_ENDPOINT);
-  const communityEndpoint = await getEndpoint("communityDataEndpoint", "COMMUNITY_API_URL", FALLBACK_COMMUNITY_ENDPOINT);
+  const masterEndpoint = await getMasterEndpoint();
+  const directoryEndpoint = process.env.CONTENTS_API_URL || masterEndpoint;
+  const communityEndpoint = process.env.COMMUNITY_API_URL || masterEndpoint;
   const jobsEndpoint = process.env.JOBS_API_URL || buildUrl(directoryEndpoint, { sheet: "jobs", lang: "ja", status: "active" });
   const communityUrl = buildUrl(communityEndpoint, {
     action: "getPosts",

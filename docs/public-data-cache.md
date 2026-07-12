@@ -13,9 +13,7 @@ Community post submissions must not collect or send a user-entered management cr
 
 Community generated JSON excludes rows that look like obvious test, demo, sample, dummy, or placeholder posts. The filter targets exact test titles, repeated Japanese test bodies such as `テスト投稿です`, image/system test rows, and synthetic placeholder rows; it should not remove real posts merely because a natural sentence contains `test` or `テスト` once.
 
-Jobs generated JSON may include public application contact fields only when a real listing has passed the publication gate: `status=active`, `listing_type=real`, `is_verified=true`, non-empty `employer_authorized_at` and `verified_at`, and a valid future `expires_at`. `public_apply_enabled` must also be `true` before the UI renders an application action. The same validated address is emitted as `contact_email`, `application_email`, and `apply_email` for frontend compatibility. Empty or invalid source emails are left blank.
-
-Samples are explicit records (`listing_type=sample`, `is_verified=false`, `public_apply_enabled=false`) and retain their classification through the sync. The sync strips application, company, and source URLs from samples; it does not infer or replace a sample classification from fallback data. See `docs/data-operations.md` for the required Jobs spreadsheet columns and review flow.
+Jobs generated JSON includes every row with `status=active` when `expires_at` is blank or a valid, non-expired date. No sample, real-listing, verification, authorization, or application-enable fields are read or generated. The same validated public email may be emitted as `contact_email`, `application_email`, and `apply_email` for frontend compatibility; blank or invalid public emails are left blank. Source URLs are emitted only when they are valid HTTP(S) URLs. See `docs/data-operations.md` for the simplified spreadsheet schema.
 
 Run the sync locally with:
 

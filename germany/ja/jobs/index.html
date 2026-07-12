@@ -92,6 +92,28 @@
     background:var(--listing-soft);
   }
 
+  .jobs-pilot-note{
+    display:grid;
+    gap:4px;
+    border-left:3px solid var(--listing-line-strong);
+    color:var(--listing-muted);
+    padding:8px 0 8px 10px;
+    font-size:12px;
+    line-height:1.55;
+  }
+
+  .jobs-pilot-note strong{
+    color:var(--listing-ink);
+    font-size:12px;
+  }
+
+  .jobs-pilot-note a{
+    color:var(--listing-navy);
+    font-weight:800;
+    text-decoration:underline;
+    text-underline-offset:2px;
+  }
+
   .jobs-filter-select{
     width:100%;
     min-height:38px;
@@ -447,6 +469,19 @@
     color:var(--color-primary, #67b7ff);
   }
 
+  :root[data-theme="dark"] .jobs-pilot-note{
+    border-left-color:var(--color-primary, #67b7ff);
+    color:var(--color-text-muted, #a8bad0);
+  }
+
+  :root[data-theme="dark"] .jobs-pilot-note strong{
+    color:var(--color-text-strong, #f4f8ff);
+  }
+
+  :root[data-theme="dark"] .jobs-pilot-note a{
+    color:var(--color-primary, #67b7ff);
+  }
+
   :root[data-theme="dark"] #job-listings .card-action.primary,
   :root[data-theme="dark"] #job-listings .btn-primary,
   :root[data-theme="dark"] #job-listings .save-button.saved,
@@ -577,7 +612,12 @@
       </div>
       <div class="jobs-hero-actions" aria-label="仕事・求人の関連リンク">
         <a class="jobs-hero-link" href="/germany/ja/jobs/guide/">求職者向けガイド</a>
-        <a class="jobs-hero-link" href="/germany/ja/jobs/posting/">企業・採用担当者へ</a>
+        <a class="jobs-hero-link" href="/germany/ja/jobs/posting/">求人を無料掲載する</a>
+        <div class="jobs-pilot-note">
+          <strong>無料掲載パイロット実施中</strong>
+          <span>現在、企業・採用担当者からの求人掲載を無料で受け付けています。</span>
+          <a href="/germany/ja/jobs/posting/#pilotNotice">掲載条件のご案内</a>
+        </div>
       </div>
     </div>
   </section>
@@ -696,9 +736,9 @@
       </div>
       <div id="emptyBox" class="empty-box jc-empty-state" style="display:none;">
         <span class="status-title">現在、公開中の確認済み求人はありません。</span>
-        <div>求人掲載を希望する企業・採用担当者の方は、掲載案内をご確認ください。</div>
+        <div>求人掲載を希望する企業・採用担当者の方は、無料掲載パイロットの案内をご確認ください。</div>
         <div class="status-actions">
-          <a class="btn btn-primary" href="/germany/ja/jobs/posting/">求人を掲載する</a>
+          <a class="btn btn-primary" href="/germany/ja/jobs/posting/">求人を無料掲載する</a>
           <button class="btn btn-secondary" type="button" data-reset-jobs>条件をリセット</button>
         </div>
       </div>
@@ -1506,12 +1546,13 @@
         const emptyTitle = showSavedOnly ? '保存済みの求人はありません。' : '現在、公開中の確認済み求人はありません。';
         const emptyBody = showSavedOnly
           ? '保存した求人がある場合は、条件をリセットするか保存済フィルターを解除してください。'
-          : '求人掲載を希望する企業・採用担当者の方は、掲載案内をご確認ください。';
+          : '求人掲載を希望する企業・採用担当者の方は、無料掲載パイロットの案内をご確認ください。';
         els.emptyBox.innerHTML = `
           <span class="status-title">${escapeHtml(emptyTitle)}</span>
           <div>${escapeHtml(emptyBody)}</div>
           <div class="status-actions">
             ${showSavedOnly ? '<button class="btn btn-primary" type="button" data-clear-saved-filter>すべての求人を見る</button>' : ''}
+            ${showSavedOnly ? '' : '<a class="btn btn-primary" href="/germany/ja/jobs/posting/">求人を無料掲載する</a>'}
             <button class="btn btn-secondary" type="button" data-reset-jobs>条件をリセット</button>
           </div>
         `;

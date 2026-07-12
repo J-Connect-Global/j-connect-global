@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-12T09:20:59.126Z",
+  "generated_at": "2026-07-12T10:51:17.024Z",
   "source": "community-gas",
-  "count": 8,
+  "count": 9,
   "groups": [
     {
       "field": "category1",
@@ -17,6 +17,7 @@
       "values": [
         "ビザ・滞在許可",
         "家具・家電",
+        "帰国売り",
         "子ども用品",
         "生活一般"
       ]
@@ -25,6 +26,7 @@
       "field": "city",
       "values": [
         "-",
+        "ケルン・ボン周辺",
         "デュッセルドルフ周辺"
       ]
     },

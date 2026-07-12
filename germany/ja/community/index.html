@@ -142,7 +142,6 @@
               <button class="search-clear" id="clearSearch" type="button" aria-label="検索をクリア">×</button>
             </div>
             <a class="btn btn-primary" href="./post/">投稿する</a>
-            <p class="community-cta-helper">投稿内容は送信前に確認してください。</p>
             <p class="community-cta-helper">
               J-Connect Germanyはログイン情報、銀行情報、公的ID番号を求めません。メールアドレスは公開されず、投稿連絡・管理連絡のためにのみ使用されます。
               <a href="/germany/ja/privacy/">プライバシー</a>・<a href="/germany/ja/terms/">利用規約</a>・<a href="/germany/ja/impressum/">運営者情報</a>
@@ -158,9 +157,6 @@
             <li>金銭取引は自己責任で確認</li>
           </ul>
           <p class="result-text">投稿内容や取引の成立をサイトが保証するものではありません。条件や受け渡し方法を相手と十分に確認してください。</p>
-          <div class="community-safety-actions">
-            <a class="mini-link" href="./report/">問題のある投稿を通報する</a>
-          </div>
         </aside>
       </div>
     </section>
@@ -1346,10 +1342,9 @@
             <p class="detail-body">${escapeHtml(post._body || "詳細本文は未設定です。")}</p>
             <div class="detail-actions">
               ${contactAction}
-              <button class="btn btn-secondary" type="button" id="copyShareUrl">URLをコピー</button>
               <a class="btn btn-secondary" href="${escapeHtml(shareHref)}" target="_blank" rel="noopener noreferrer">新しいタブで詳細</a>
               <a class="btn btn-secondary" href="${escapeHtml(manageHref)}">投稿者管理</a>
-              <button class="save-button inline ${saved ? "saved" : ""}" type="button" id="detailSaveButton">${saved ? "★ 保存済み" : "☆ 保存"}</button>
+              <button class="save-button inline ${saved ? "saved" : ""}" type="button" id="detailSaveButton" aria-pressed="${saved ? "true" : "false"}" aria-label="${saved ? "保存を解除" : "保存する"}">${saved ? "★ 保存済み" : "☆ 保存"}</button>
               <a class="btn btn-soft" href="${escapeHtml(reportHref)}">通報</a>
             </div>
             <div class="related-box">
@@ -1378,14 +1373,6 @@
         });
       });
       document.getElementById("detailSaveButton")?.addEventListener("click", () => toggleSaved(post._id));
-      document.getElementById("copyShareUrl")?.addEventListener("click", async () => {
-        try {
-          await navigator.clipboard.writeText(shareHref);
-          document.getElementById("copyShareUrl").textContent = "コピーしました";
-        } catch {
-          document.getElementById("copyShareUrl").textContent = "URLを選択してコピー";
-        }
-      });
     }
 
     function closeDetail(updateHash = true) {

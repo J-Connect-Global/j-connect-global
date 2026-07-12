@@ -51,11 +51,9 @@
 
 .panel{background:#fff;border:1px solid var(--border);border-radius:9px;box-shadow:var(--card);padding:22px}
 
-body > a,
-    body > h1,
-    body > form{width:min(760px, calc(100% - 32px));margin-left:auto;margin-right:auto}
+.report-shell{width:min(760px, calc(100% - 32px));margin:24px auto 60px}
 
-body > a{
+.report-back{
   display:flex;
   min-height:38px;
   align-items:center;
@@ -71,14 +69,17 @@ body > a{
   text-decoration:none;
 }
 
-body > h1{
+.report-shell h1{
   margin-top:18px;
   color:var(--site-navy);
   font-size:clamp(28px,5vw,42px);
   letter-spacing:0;
 }
 
-body > form{
+.report-intro{color:var(--muted);line-height:1.65}
+
+.report-target,
+.report-shell form{
   background:rgba(255,255,255,.94);
   border:1px solid var(--line);
   border-radius:9px;
@@ -86,16 +87,27 @@ body > form{
   padding:22px;
 }
 
-body > form label{
+.report-target{margin-top:18px;padding:18px}
+.report-target h2{margin:0;color:var(--site-navy);font-size:18px}
+.report-target-grid{display:grid;grid-template-columns:130px minmax(0,1fr);gap:10px 14px;margin:14px 0 0}
+.report-target-grid dt{font-weight:900;color:var(--muted)}
+.report-target-grid dd{margin:0;overflow-wrap:anywhere;font-weight:700}
+.report-target-grid a{color:var(--site-navy);text-decoration:underline;text-underline-offset:3px}
+.report-target-status{margin:12px 0 0;color:var(--muted);font-weight:700;line-height:1.55}
+.report-target.is-error{border-color:#e99b9b;background:#fff7f7}
+.report-target.is-error .report-target-status{color:#9b1c1c}
+
+.report-shell form{margin-top:18px}
+.report-shell form label{
   display:block;
   margin-top:14px;
   color:var(--site-navy);
   font-weight:900;
 }
 
-body > form input,
-    body > form textarea,
-    body > form select{
+.report-shell form input,
+.report-shell form textarea,
+    .report-shell form select{
   width:100%;
   padding:12px 14px;
   margin:8px 0 0;
@@ -104,17 +116,17 @@ body > form input,
   background:#fff;
 }
 
-body > form input:focus,
-body > form textarea:focus,
-body > form select:focus{
+.report-shell form input:focus,
+.report-shell form textarea:focus,
+.report-shell form select:focus{
   border-color:var(--site-navy);
   outline:none;
   box-shadow:var(--site-focus-ring);
 }
 
-body > form textarea{min-height:150px;resize:vertical}
+.report-shell form textarea{min-height:150px;resize:vertical}
 
-body > form button{
+.report-shell form button{
   min-height:44px;
   margin-top:16px;
   padding:0 18px;
@@ -125,12 +137,27 @@ body > form button{
   font-weight:900;
 }
 
+ .report-shell form button:disabled{opacity:.62;cursor:not-allowed}
+.report-form-status{min-height:1.4em;margin:12px 0 0;color:#9b1c1c;font-weight:700}
+.report-honeypot{position:absolute!important;left:-9999px!important;opacity:0!important;pointer-events:none!important}
+
+:root[data-theme="dark"] .report-target,
+:root[data-theme="dark"] .report-shell form{background:var(--surface-card-bg,#101f33);border-color:var(--color-border,#263a52);color:var(--surface-card-text,#e8f1fb)}
+:root[data-theme="dark"] .report-shell h1,
+:root[data-theme="dark"] .report-target h2{color:var(--color-text-strong,#f4f8ff)}
+:root[data-theme="dark"] .report-intro,
+:root[data-theme="dark"] .report-target-grid dt,
+:root[data-theme="dark"] .report-target-status{color:var(--color-text-muted,#a8bad0)}
+:root[data-theme="dark"] .report-target-grid a{color:var(--color-primary,#67b7ff)}
+:root[data-theme="dark"] .report-shell form input,
+:root[data-theme="dark"] .report-shell form textarea,
+:root[data-theme="dark"] .report-shell form select{background:var(--color-input-bg,#0f1d30);border-color:var(--color-border,#263a52);color:var(--color-input-text,#e8f1fb)}
+
 @media (max-width:640px){
-  body > a,
-  body > h1,
-  body > form{width:min(100% - 24px, 760px)}
-  body > a{width:max-content;max-width:calc(100% - 24px)}
-  body > form{border-radius:18px;padding:18px}
+  .report-shell{width:min(100% - 24px, 760px);margin-top:18px}
+  .report-back{width:max-content;max-width:100%}
+  .report-shell form,.report-target{border-radius:18px;padding:18px}
+  .report-target-grid{grid-template-columns:1fr;gap:4px}
 }
 </style>
 <script>
@@ -235,13 +262,27 @@ body > form button{
   </header>
   <!-- LAYOUT:ja-header:end -->
 
-  <a href="../">← 掲示板一覧へ戻る</a>
-  <h1>投稿を通報する</h1>
-  <form id="reportForm">
-    <input name="action" type="hidden" value="submitReport">
-    <input name="post_id" id="post_id" type="hidden">
-    <label>理由</label>
-    <select name="reason" required>
+  <main class="report-shell">
+    <a class="report-back" href="../">← 掲示板一覧へ戻る</a>
+    <h1>投稿を通報する</h1>
+    <p class="report-intro">通報対象の投稿を確認してから、内容をお知らせください。</p>
+    <section id="reportTarget" class="panel report-target" aria-labelledby="reportTargetTitle" aria-busy="true">
+      <h2 id="reportTargetTitle">通報する投稿</h2>
+      <p id="reportTargetStatus" class="report-target-status" role="status">投稿情報を確認しています。</p>
+      <dl id="reportTargetFields" class="report-target-grid" hidden>
+        <dt>投稿タイトル</dt><dd id="targetPostTitle"></dd>
+        <dt>投稿ID</dt><dd id="targetPostId"></dd>
+        <dt>地域</dt><dd id="targetPostLocation"></dd>
+        <dt>公開投稿URL</dt><dd><a id="targetPostUrl" target="_blank" rel="noopener noreferrer"></a></dd>
+      </dl>
+    </section>
+    <form id="reportForm" novalidate>
+      <input name="action" type="hidden" value="submitReport">
+      <input name="post_id" id="post_id" type="hidden">
+      <input name="form_started_at" id="form_started_at" type="hidden">
+      <label class="report-honeypot" aria-hidden="true">Webサイト<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
+      <label>理由</label>
+      <select name="reason" required disabled>
       <option value="">選択してください</option>
       <option>スパム</option>
       <option>不適切な内容</option>
@@ -249,18 +290,79 @@ body > form button{
       <option>重複投稿</option>
       <option>その他</option>
     </select>
-    <label>詳細</label><textarea name="detail"></textarea>
-    <label>あなたのメール（任意）</label><input name="reporter_email" type="email">
-    <button type="submit">送信する</button>
-  </form>
+      <label>詳細</label><textarea name="detail" maxlength="6000" disabled></textarea>
+      <label>あなたのメール（任意）</label><input name="reporter_email" type="email" maxlength="254" disabled>
+      <button type="submit" disabled>送信する</button>
+      <p id="reportFormStatus" class="report-form-status" role="alert"></p>
+    </form>
+  </main>
   <script src="/assets/js/common.js"></script>
 <script src="/assets/js/data-sources.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
     const GAS_URL = DATA_SOURCES.communityDataEndpoint;
-    document.getElementById('post_id').value = new URLSearchParams(location.search).get('post_id') || '';
-    document.getElementById('reportForm').addEventListener('submit', async (e) => {
+    const reportForm = document.getElementById('reportForm');
+    const reportTarget = document.getElementById('reportTarget');
+    const reportTargetStatus = document.getElementById('reportTargetStatus');
+    const reportTargetFields = document.getElementById('reportTargetFields');
+    const reportFormStatus = document.getElementById('reportFormStatus');
+    const postId = new URLSearchParams(location.search).get('post_id') || '';
+    let validTarget = false;
+
+    function setFormEnabled(enabled) {
+      reportForm.querySelectorAll('select, textarea, input[type="email"], button[type="submit"]').forEach((field) => {
+        field.disabled = !enabled;
+      });
+    }
+
+    function showTargetError(message) {
+      validTarget = false;
+      setFormEnabled(false);
+      reportTarget.classList.add('is-error');
+      reportTarget.setAttribute('aria-busy', 'false');
+      reportTargetStatus.textContent = message;
+      reportFormStatus.textContent = '有効な通報対象の投稿が確認できないため、送信できません。';
+    }
+
+    async function loadTargetPost() {
+      if (!postId) {
+        showTargetError('通報する投稿が指定されていません。投稿詳細ページから通報してください。');
+        return;
+      }
+      try {
+        const url = DATA_SOURCES.buildCommunityUrl({ action: 'getPost', post_id: postId });
+        const response = await fetch(url, { headers: { Accept: 'application/json' } });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        const post = data && data.ok ? data.post : null;
+        if (!post || !String(post.post_id || post.id || '').trim()) throw new Error('POST_NOT_FOUND');
+
+        const canonicalId = String(post.post_id || post.id).trim();
+        const postLocation = [post.country, post.region, post.city].map((value) => String(value || '').trim()).filter(Boolean).join(' / ') || '未設定';
+        const publicUrl = `https://j-connect-global.com/germany/ja/community/post/?id=${encodeURIComponent(canonicalId)}`;
+        document.getElementById('post_id').value = canonicalId;
+        document.getElementById('targetPostTitle').textContent = String(post.title || '無題の投稿');
+        document.getElementById('targetPostId').textContent = canonicalId;
+        document.getElementById('targetPostLocation').textContent = postLocation;
+        const targetUrl = document.getElementById('targetPostUrl');
+        targetUrl.href = publicUrl;
+        targetUrl.textContent = publicUrl;
+        reportTargetFields.hidden = false;
+        reportTargetStatus.textContent = 'この投稿に対する通報を送信します。';
+        reportTarget.setAttribute('aria-busy', 'false');
+        document.getElementById('form_started_at').value = String(Date.now());
+        validTarget = true;
+        setFormEnabled(true);
+      } catch (error) {
+        console.error('Community report target load failed:', error);
+        showTargetError('投稿情報を確認できませんでした。投稿詳細ページから、もう一度お試しください。');
+      }
+    }
+
+    reportForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (!validTarget) return;
+      reportFormStatus.textContent = '';
       const fd = new FormData(e.target);
       try {
         const res = await fetch(GAS_URL, { method:'POST', body: fd });
@@ -269,13 +371,14 @@ body > form button{
         if (data.ok) location.assign('../thanks/');
         else {
           console.error('Community report submit failed:', GAS_URL, data.error || data);
-          alert('送信に失敗しました');
+          reportFormStatus.textContent = data.error || '送信に失敗しました。入力内容を確認して、もう一度お試しください。';
         }
       } catch (error) {
         console.error('Community report submit failed:', GAS_URL, error);
-        alert('送信に失敗しました');
+        reportFormStatus.textContent = '送信に失敗しました。時間をおいて、もう一度お試しください。';
       }
     });
+    loadTargetPost();
   </script>
 
   <!-- LAYOUT:ja-footer:start -->

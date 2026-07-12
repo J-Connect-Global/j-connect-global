@@ -5,8 +5,9 @@
  * - Bind this script to the Community Posts spreadsheet or set
  *   COMMUNITY_SPREADSHEET_ID in Script Properties.
  * - The sheet must already contain the headers listed in the site request.
- *   This script maps by header name and does not add, rename, remove, or
- *   reorder columns.
+ *   This script maps by header name and does not rename, remove, or reorder
+ *   columns. The administrator-only approval setup menu may append its
+ *   documented notification columns when explicitly invoked.
  * - Community Posts may have an instruction row above the header row.
  * - Community management uses server-generated manage_token/manage_url only.
  *   Email the private management link to contact_email_private.
@@ -19,6 +20,19 @@ const COMMUNITY_MANAGE_PATH = '/germany/ja/community/manage/';
 const COMMUNITY_PUBLIC_POST_PATH = '/germany/ja/community/post/';
 const COMMUNITY_CACHE_KEY = 'community_posts_public_v2';
 const COMMUNITY_CACHE_SECONDS = 300;
+const COMMUNITY_PUBLIC_POSTS_JSON_URL = 'https://j-connect-global.com/assets/data/community/posts.json';
+const COMMUNITY_GITHUB_WORKFLOW_URL = 'https://api.github.com/repos/J-Connect-Global/j-connect-global/actions/workflows/sync-public-data.yml/dispatches';
+const COMMUNITY_APPROVAL_TRIGGER_HANDLER = 'processWaitingCommunityApprovalNotifications';
+const COMMUNITY_APPROVAL_TIMEOUT_MS = 90 * 60 * 1000;
+const COMMUNITY_APPROVAL_MAX_ROWS_PER_RUN = 12;
+const COMMUNITY_APPROVAL_HEADERS = [
+  'approval_notified_status',
+  'approval_notified_at',
+  'approval_notified_to',
+  'approval_notified_error',
+  'approval_notified_queued_at',
+  'approval_sync_requested_at'
+];
 
 const PUBLIC_POST_FIELDS = [
   'id',
@@ -88,7 +102,13 @@ const PRIVATE_POST_FIELDS = [
   'moderation_status',
   'image_file_id_1',
   'image_file_id_2',
-  'image_file_id_3'
+  'image_file_id_3',
+  'approval_notified_status',
+  'approval_notified_at',
+  'approval_notified_to',
+  'approval_notified_error',
+  'approval_notified_queued_at',
+  'approval_sync_requested_at'
 ];
 
 const REQUIRED_COMMUNITY_HEADERS = [
@@ -185,6 +205,17 @@ function doGet(e) {
 
 function doPost(e) {
   return dispatchCommunityRequest_(e);
+}
+
+function onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu('J-Connect Community')
+    .addItem('選択した投稿を承認・公開キューに追加', 'approveSelectedCommunityPost')
+    .addItem('選択した投稿の公開確認を再試行', 'retrySelectedCommunityPublication')
+    .addSeparator()
+    .addItem('承認通知用の列を追加', 'installCommunityApprovalColumns')
+    .addItem('承認通知トリガーを再インストール', 'installCommunityApprovalNotificationTrigger')
+    .addToUi();
 }
 
 function dispatchCommunityRequest_(e) {
@@ -674,6 +705,232 @@ function invalidateCommunityCache_() {
   cache.remove(`${COMMUNITY_CACHE_KEY}:false`);
 }
 
+function installCommunityApprovalColumns() {
+  const lock = LockService.getScriptLock();
+  lock.waitLock(5000);
+  try {
+    const context = getSheetContext_();
+    const missing = COMMUNITY_APPROVAL_HEADERS.filter((header) => !Object.prototype.hasOwnProperty.call(context.indexes, header));
+    if (missing.length) {
+      context.sheet.getRange(context.headerRowNumber, context.headers.length + 1, 1, missing.length).setValues([missing]);
+    }
+    SpreadsheetApp.getUi().alert(missing.length ? `承認通知用の列を追加しました: ${missing.join(', ')}` : '承認通知用の列はすでに設定されています。');
+  } finally {
+    if (lock.hasLock()) lock.releaseLock();
+  }
+}
+
+function installCommunityApprovalNotificationTrigger() {
+  ScriptApp.getProjectTriggers()
+    .filter((trigger) => trigger.getHandlerFunction() === COMMUNITY_APPROVAL_TRIGGER_HANDLER)
+    .forEach((trigger) => ScriptApp.deleteTrigger(trigger));
+  ScriptApp.newTrigger(COMMUNITY_APPROVAL_TRIGGER_HANDLER).timeBased().everyMinutes(5).create();
+  SpreadsheetApp.getUi().alert('承認通知の公開確認トリガーを5分間隔で設定しました。');
+}
+
+function approveSelectedCommunityPost() {
+  return queueSelectedCommunityApproval_(false);
+}
+
+function retrySelectedCommunityPublication() {
+  return queueSelectedCommunityApproval_(true);
+}
+
+function queueSelectedCommunityApproval_(isRetry) {
+  const lock = LockService.getScriptLock();
+  lock.waitLock(5000);
+  try {
+    const selected = selectedCommunityPost_();
+    requireCommunityApprovalHeaders_(selected.context);
+    const currentStatus = String(selected.post.approval_notified_status || '').trim().toLowerCase();
+    if (currentStatus === 'sent') {
+      SpreadsheetApp.getUi().alert('この投稿の承認メールはすでに送信済みです。');
+      return { ok: true, status: 'sent' };
+    }
+    if (currentStatus === 'waiting_publish' && !isRetry) {
+      SpreadsheetApp.getUi().alert('この投稿はすでに公開確認待ちです。公開確認後に投稿者へメールを送信します。');
+      return { ok: true, status: 'waiting_publish' };
+    }
+
+    const recipient = String(selected.post.contact_email_private || '').trim();
+    const now = nowIso_();
+    const postId = String(selected.post.post_id || selected.post.id || '').trim();
+    const updates = {
+      status: 'active',
+      published_at: selected.post.published_at || now,
+      updated_at: now,
+      last_modified_at: now,
+      last_modified_action: isRetry ? 'approval_publish_retry' : 'approved',
+      approval_notified_status: 'waiting_publish',
+      approval_notified_at: '',
+      approval_notified_to: recipient,
+      approval_notified_error: '',
+      approval_notified_queued_at: now,
+      approval_sync_requested_at: ''
+    };
+    writeExistingFields_(selected.context, selected.rowNumber, updates);
+    invalidateCommunityCache_();
+
+    if (!isJConnectValidEmail_(recipient)) {
+      writeExistingFields_(selected.context, selected.rowNumber, {
+        approval_notified_status: 'publish_error',
+        approval_notified_error: 'INVALID_RECIPIENT'
+      });
+      SpreadsheetApp.getUi().alert('投稿は公開状態にしましたが、通知先メールを確認できません。');
+      return { ok: false, status: 'publish_error' };
+    }
+
+    const dispatch = requestCommunityPublicDataSync_();
+    if (dispatch.dispatched) {
+      writeExistingFields_(selected.context, selected.rowNumber, { approval_sync_requested_at: now });
+    } else if (dispatch.error) {
+      writeExistingFields_(selected.context, selected.rowNumber, { approval_notified_error: dispatch.error });
+    }
+    SpreadsheetApp.getUi().alert('公開同期を開始しました。公開確認後に投稿者へメールを送信します。');
+    return { ok: true, status: 'waiting_publish', post_id: postId };
+  } finally {
+    if (lock.hasLock()) lock.releaseLock();
+  }
+}
+
+function selectedCommunityPost_() {
+  const context = getSheetContext_();
+  const rowNumber = context.sheet.getActiveRange().getRow();
+  if (rowNumber <= context.headerRowNumber || rowNumber > context.values.length) {
+    throw new Error('SELECT_A_COMMUNITY_POST_ROW');
+  }
+  const post = rowToObject_(context.headers, context.values[rowNumber - 1], rowNumber);
+  if (!String(post.post_id || post.id || '').trim()) throw new Error('SELECT_A_COMMUNITY_POST_ROW');
+  return { context, post, rowNumber };
+}
+
+function requireCommunityApprovalHeaders_(context) {
+  const missing = COMMUNITY_APPROVAL_HEADERS.filter((header) => !Object.prototype.hasOwnProperty.call(context.indexes, header));
+  if (missing.length) throw new Error(`MISSING_APPROVAL_HEADERS:${missing.join(',')}`);
+}
+
+function requestCommunityPublicDataSync_() {
+  const token = String(PropertiesService.getScriptProperties().getProperty('GITHUB_ACTIONS_TOKEN') || '').trim();
+  if (!token) return { dispatched: false, error: '' };
+  try {
+    const response = UrlFetchApp.fetch(COMMUNITY_GITHUB_WORKFLOW_URL, {
+      method: 'post',
+      contentType: 'application/json',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28'
+      },
+      payload: JSON.stringify({ ref: 'main' }),
+      muteHttpExceptions: true
+    });
+    if (response.getResponseCode() >= 200 && response.getResponseCode() < 300) return { dispatched: true };
+    console.warn(`Community workflow dispatch failed (HTTP ${response.getResponseCode()}).`);
+    return { dispatched: false, error: 'WORKFLOW_DISPATCH_FAILED' };
+  } catch (error) {
+    console.warn('Community workflow dispatch failed.');
+    return { dispatched: false, error: 'WORKFLOW_DISPATCH_FAILED' };
+  }
+}
+
+function processWaitingCommunityApprovalNotifications() {
+  const lock = LockService.getScriptLock();
+  try {
+    lock.waitLock(5000);
+    const context = getSheetContext_();
+    requireCommunityApprovalHeaders_(context);
+    let processed = 0;
+    for (let index = context.dataStartIndex; index < context.values.length && processed < COMMUNITY_APPROVAL_MAX_ROWS_PER_RUN; index += 1) {
+      const post = rowToObject_(context.headers, context.values[index], index + 1);
+      if (String(post.approval_notified_status || '').trim().toLowerCase() !== 'waiting_publish') continue;
+      processWaitingCommunityApprovalNotification_(context, post, index + 1);
+      processed += 1;
+    }
+    return { ok: true, processed };
+  } catch (error) {
+    console.warn(`Community approval notification processor failed: ${safeApprovalErrorCode_(error)}`);
+    return { ok: false, error: safeApprovalErrorCode_(error) };
+  } finally {
+    if (lock.hasLock()) lock.releaseLock();
+  }
+}
+
+function processWaitingCommunityApprovalNotification_(context, post, rowNumber) {
+  const postId = String(post.post_id || post.id || '').trim();
+  if (!postId || normalizeStatus_(post.status) !== 'active') {
+    writeExistingFields_(context, rowNumber, { approval_notified_status: 'publish_error', approval_notified_error: 'INVALID_APPROVAL_POST' });
+    return;
+  }
+  const queuedAt = dateTime_(post.approval_notified_queued_at || post.published_at || post.updated_at);
+  if (queuedAt && Date.now() - queuedAt > COMMUNITY_APPROVAL_TIMEOUT_MS) {
+    writeExistingFields_(context, rowNumber, { approval_notified_status: 'publish_timeout', approval_notified_error: 'PUBLICATION_TIMEOUT' });
+    return;
+  }
+
+  let published;
+  try {
+    published = isPostInDeployedCommunityJson_(postId);
+  } catch (error) {
+    writeExistingFields_(context, rowNumber, { approval_notified_error: safeApprovalErrorCode_(error) });
+    return;
+  }
+  if (!published) return;
+
+  const recipient = String(post.approval_notified_to || post.contact_email_private || '').trim();
+  if (!isJConnectValidEmail_(recipient)) {
+    writeExistingFields_(context, rowNumber, { approval_notified_status: 'publish_error', approval_notified_error: 'INVALID_RECIPIENT' });
+    return;
+  }
+  try {
+    sendCommunityApprovalEmail_(post, recipient);
+    writeExistingFields_(context, rowNumber, {
+      approval_notified_status: 'sent',
+      approval_notified_at: nowIso_(),
+      approval_notified_to: recipient,
+      approval_notified_error: ''
+    });
+  } catch (error) {
+    writeExistingFields_(context, rowNumber, { approval_notified_status: 'publish_error', approval_notified_error: safeApprovalErrorCode_(error) });
+  }
+}
+
+function isPostInDeployedCommunityJson_(postId) {
+  const response = UrlFetchApp.fetch(`${COMMUNITY_PUBLIC_POSTS_JSON_URL}?v=${Date.now()}`, { muteHttpExceptions: true });
+  if (response.getResponseCode() < 200 || response.getResponseCode() >= 300) throw new Error('PUBLIC_JSON_FETCH_FAILED');
+  let payload;
+  try {
+    payload = JSON.parse(response.getContentText());
+  } catch (error) {
+    throw new Error('PUBLIC_JSON_INVALID');
+  }
+  const posts = Array.isArray(payload) ? payload : (payload.items || payload.posts || payload.data || []);
+  return Array.isArray(posts) && posts.some((item) => {
+    const id = String(item && (item.post_id || item.id) || '').trim();
+    const status = normalizeStatus_(item && item.status);
+    return id === postId && status === 'active';
+  });
+}
+
+function sendCommunityApprovalEmail_(post, recipient) {
+  const postId = String(post.post_id || post.id || '').trim();
+  const title = String(cleanCell_(post.title || '')).trim() || 'J-Connect Germany 掲示板投稿';
+  const publicUrl = `${COMMUNITY_SITE_ORIGIN}${COMMUNITY_PUBLIC_POST_PATH}?id=${encodeURIComponent(postId)}`;
+  sendZohoEmail_({
+    to: recipient,
+    name: 'J-Connect Germany',
+    subject: `【J-Connect Germany】投稿を公開しました: ${title}`,
+    html: `<p>投稿を公開しました。</p><p><strong>投稿タイトル:</strong><br>${escapeHtmlForEmail_(title)}</p><p><strong>公開投稿URL:</strong><br><a href="${escapeHtmlForEmail_(publicUrl)}">${escapeHtmlForEmail_(publicUrl)}</a></p>`,
+    body: `投稿を公開しました。\n\n投稿タイトル:\n${title}\n\n公開投稿URL:\n${publicUrl}`
+  });
+}
+
+function safeApprovalErrorCode_(error) {
+  const code = String(error && error.message || 'PUBLICATION_CHECK_FAILED');
+  return /^(WORKFLOW_DISPATCH_FAILED|PUBLIC_JSON_FETCH_FAILED|PUBLIC_JSON_INVALID|INVALID_RECIPIENT|INVALID_APPROVAL_POST|ZOHO_AUTH_FAILED|ZOHO_SEND_FAILED|SELECT_A_COMMUNITY_POST_ROW)$/.test(code)
+    ? code
+    : 'PUBLICATION_CHECK_FAILED';
+}
+
 function sendCreateConfirmationEmail_(params, info) {
   const to = String(params.contact_email_private || '').trim();
   if (!isJConnectValidEmail_(to)) return { sent: false, error: 'INVALID_RECIPIENT' };
@@ -764,14 +1021,103 @@ function submitInquiry_(params) {
 }
 
 function submitReport_(params) {
-  const adminEmail = validateJConnectEmailConfiguration_().adminEmail;
-  sendZohoEmail_({
-    to: adminEmail,
-    name: 'J-Connect Germany',
-    subject: 'J-Connect Germany 掲示板投稿の通報',
-    body: Object.keys(params).map((key) => `${key}: ${params[key]}`).join('\n')
+  const fields = readValidatedFields_(params, {
+    post_id: { required: true, max: 200 },
+    reason: { required: true, max: 120 },
+    detail: { max: 6000 },
+    reporter_email: { max: 254, email: true },
+    website: { max: 0 },
+    form_started_at: { required: true, max: 20 }
   });
-  return { ok: true, success: true };
+  if (!fields.ok) return safeFormFailure_(fields.code);
+  if (!isReasonableFormCompletion_(fields.values.form_started_at)) return safeFormFailure_('FORM_TIMING');
+
+  const found = findPostById_(fields.values.post_id);
+  if (!found || !isPubliclyVisible_(found.post, { includeClosed: 'true' })) {
+    return {
+      ok: false,
+      success: false,
+      code: 'POST_NOT_FOUND',
+      error: '通報対象の投稿が見つかりません。投稿詳細ページから、もう一度お試しください。'
+    };
+  }
+
+  const canonicalPost = found.post;
+  const postId = String(canonicalPost.post_id || canonicalPost.id || '').trim();
+  if (!postId) return safeFormFailure_('POST_NOT_FOUND');
+  const rateIdentity = fields.values.reporter_email || postId;
+  if (!acquireSubmissionRateLimit_('submitReport', rateIdentity)) return safeFormFailure_('RATE_LIMITED');
+
+  const title = String(cleanCell_(canonicalPost.title || '')).trim() || '無題の投稿';
+  const category = [canonicalPost.category1, canonicalPost.category2]
+    .map((value) => String(cleanCell_(value || '')).trim())
+    .filter(Boolean)
+    .join(' / ') || '未設定';
+  const location = [canonicalPost.country, canonicalPost.region, canonicalPost.city]
+    .map((value) => String(cleanCell_(value || '')).trim())
+    .filter(Boolean)
+    .join(' / ') || '未設定';
+  const publicUrl = `${COMMUNITY_SITE_ORIGIN}${COMMUNITY_PUBLIC_POST_PATH}?id=${encodeURIComponent(postId)}`;
+  const sentAt = nowIso_();
+  const report = {
+    postId,
+    title,
+    category,
+    location,
+    publicUrl,
+    reason: fields.values.reason,
+    detail: fields.values.detail || '（記載なし）',
+    reporterEmail: fields.values.reporter_email || '（未入力）',
+    sentAt
+  };
+
+  try {
+    const config = validateJConnectEmailConfiguration_();
+    const html = reportNotificationHtml_(report);
+    const subjectTitle = title.length > 140 ? `${title.slice(0, 139)}…` : title;
+    sendZohoEmail_({
+      to: config.adminEmail,
+      name: 'J-Connect Germany',
+      subject: `【J-Connect 通報】${postId}｜${subjectTitle}`,
+      html,
+      body: reportNotificationText_(report)
+    });
+    return { ok: true, success: true };
+  } catch (error) {
+    console.warn(`Community report email failed: ${safeEmailErrorCode_(error)}`);
+    return safeFormFailure_(safeEmailErrorCode_(error));
+  }
+}
+
+function reportNotificationText_(report) {
+  return [
+    'J-Connect Community 投稿通報',
+    '',
+    `投稿ID: ${report.postId}`,
+    `投稿タイトル: ${report.title}`,
+    `投稿カテゴリー: ${report.category}`,
+    `地域: ${report.location}`,
+    `公開投稿URL: ${report.publicUrl}`,
+    `通報理由: ${report.reason}`,
+    `通報詳細: ${report.detail}`,
+    `通報者メール: ${report.reporterEmail}`,
+    `送信日時: ${report.sentAt}`
+  ].join('\n');
+}
+
+function reportNotificationHtml_(report) {
+  const rows = [
+    ['投稿ID', report.postId],
+    ['投稿タイトル', report.title],
+    ['投稿カテゴリー', report.category],
+    ['地域', report.location],
+    ['公開投稿URL', report.publicUrl],
+    ['通報理由', report.reason],
+    ['通報詳細', report.detail],
+    ['通報者メール', report.reporterEmail],
+    ['送信日時', report.sentAt]
+  ].map(([label, value]) => `<tr><th align="left" style="padding:8px;border:1px solid #dce4ee;background:#f4f8fc">${escapeHtmlForEmail_(label)}</th><td style="padding:8px;border:1px solid #dce4ee;white-space:pre-wrap">${escapeHtmlForEmail_(value)}</td></tr>`);
+  return `<h2>J-Connect Community 投稿通報</h2><table style="border-collapse:collapse">${rows.join('')}</table>`;
 }
 
 function submitContact_(params) {
@@ -901,6 +1247,7 @@ function acquireSubmissionRateLimit_(action, email) {
 function safeFormFailure_(code) {
   const messages = {
     MISSING_REQUIRED_FIELD: '必須項目を入力してください。',
+    POST_NOT_FOUND: '通報対象の投稿が見つかりません。投稿詳細ページから、もう一度お試しください。',
     INVALID_EMAIL: 'メールアドレスをご確認ください。',
     INVALID_URL: 'URLの形式をご確認ください。',
     FIELD_TOO_LONG: '入力内容が長すぎます。',

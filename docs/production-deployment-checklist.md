@@ -14,6 +14,7 @@ node scripts/validate-content.mjs
 node scripts/validate-layout.mjs
 node scripts/validate-static-site.mjs
 node scripts/validate-production-parity.mjs
+node scripts/validate-jobs.mjs
 ```
 
 If `git diff --exit-code` fails after build/layout, commit the generated output or fix the nondeterministic generator.

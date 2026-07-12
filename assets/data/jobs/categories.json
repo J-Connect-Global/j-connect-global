@@ -1,54 +1,14 @@
 {
-  "generated_at": "2026-07-12T04:38:29.363Z",
+  "generated_at": "2026-07-12T00:00:00.000Z",
   "source": "contents-gas:jobs",
-  "count": 25,
+  "count": 0,
   "groups": [
-    {
-      "field": "region",
-      "values": [
-        "シュトゥットガルト",
-        "デュッセルドルフ",
-        "ハンブルク",
-        "フランクフルト",
-        "ベルリン",
-        "ミュンヘン"
-      ]
-    },
-    {
-      "field": "city",
-      "values": [
-        "シュトゥットガルト",
-        "デュッセルドルフ",
-        "ハンブルク",
-        "フランクフルト",
-        "ベルリン",
-        "ミュンヘン"
-      ]
-    },
-    {
-      "field": "category",
-      "values": []
-    },
-    {
-      "field": "detail_category",
-      "values": []
-    },
-    {
-      "field": "employment_type",
-      "values": [
-        "インターン",
-        "業務委託",
-        "契約社員",
-        "正社員"
-      ]
-    },
-    {
-      "field": "work_style",
-      "values": []
-    },
-    {
-      "field": "language",
-      "values": []
-    }
+    { "field": "region", "values": [] },
+    { "field": "city", "values": [] },
+    { "field": "category", "values": [] },
+    { "field": "detail_category", "values": [] },
+    { "field": "employment_type", "values": [] },
+    { "field": "work_style", "values": [] },
+    { "field": "language", "values": [] }
   ]
 }

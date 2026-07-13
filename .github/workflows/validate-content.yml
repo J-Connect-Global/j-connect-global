@@ -21,6 +21,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install pinned runtime smoke dependencies
+        run: npm ci
+
       - name: Build generated content
         run: node scripts/build-content.mjs
 
@@ -56,3 +59,9 @@ jobs:
 
       - name: Validate production parity markers
         run: node scripts/validate-production-parity.mjs
+
+      - name: Install Chromium for runtime smoke tests
+        run: npx playwright install --with-deps chromium
+
+      - name: Run browser runtime smoke tests
+        run: npm run test:browser

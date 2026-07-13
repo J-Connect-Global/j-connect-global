@@ -1,7 +1,6 @@
 {
-  "generated_at": "2026-07-13T13:40:07.473Z",
-  "source": "community-gas",
-  "count": 5,
+  "source": "master-gas:community",
+  "count": 6,
   "groups": [
     {
       "field": "category1",
@@ -15,13 +14,15 @@
       "values": [
         "ビザ・滞在許可",
         "家具・家電",
-        "生活一般"
+        "生活一般",
+        "生活用品"
       ]
     },
     {
       "field": "city",
       "values": [
         "-",
+        "ケルン・ボン周辺",
         "デュッセルドルフ周辺"
       ]
     },
@@ -31,5 +32,6 @@
         "ドイツ"
       ]
     }
-  ]
+  ],
+  "generated_at": "2026-07-13T14:48:12.011Z"
 }

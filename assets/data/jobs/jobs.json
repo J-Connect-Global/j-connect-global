@@ -1,7 +1,6 @@
 {
-  "generated_at": "2026-07-13T13:40:07.473Z",
-  "source": "contents-gas:jobs",
-  "endpoint": "directoryDataEndpoint?sheet=jobs&lang=ja&status=active",
+  "source": "master-gas:jobs",
+  "endpoint": "canonicalMasterEndpoint?sheet=jobs&lang=ja&status=active",
   "count": 4,
   "items": [
     {
@@ -176,5 +175,6 @@
       "created_at": "",
       "expires_at": ""
     }
-  ]
+  ],
+  "generated_at": "2026-07-13T14:44:17.337Z"
 }

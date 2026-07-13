@@ -6,6 +6,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (relative) => fs.readFileSync(path.join(root, relative), "utf8");
 const gas = read("apps-script/community-board-api.gs");
 const sync = read("scripts/sync-public-data.mjs");
+const syncWorkflow = read(".github/workflows/sync-public-data.yml");
 const failures = [];
 
 function expect(condition, message) {
@@ -73,6 +74,13 @@ expect(gas.includes("rejection_reason") && gas.includes("sendRejectionEmail_"), 
 
 expect(sync.includes('status !== "active"') && sync.includes('isPublicCommunityPost'), "Public sync must require exact status=active.");
 expect(!sync.includes('isLikelyTestPost'), "Public sync still contains content-based Community publication filtering.");
+expect(!sync.includes('.filter((item) => item.title || item.body)'), "Public sync still suppresses Community rows based on content.");
+for (const legacyEndpoint of ["COMMUNITY_API_URL", "CONTENTS_API_URL", "JOBS_API_URL"]) {
+  expect(!syncWorkflow.includes(legacyEndpoint), `Production workflow still supplies legacy endpoint ${legacyEndpoint}.`);
+}
+expect(syncWorkflow.includes("outputs.commit_hash") && syncWorkflow.includes("needs.sync-public-data.outputs.commit_hash || github.sha"), "Pages does not deploy the exact generated-data commit.");
+expect(gas.includes("if (status !== 'active') return false"), "GAS Community publication does not require exact status=active.");
+expect(gas.includes("isTrueLifecycleFlag_") && gas.includes("post.hidden_at"), "GAS Community publication is missing explicit lifecycle checks.");
 expect(!sync.includes('publicContactEmail(row, ["contact_email"'), "Private job contact_email is used as a public address.");
 expect(!sync.includes("contact_email: applicationEmail"), "Public job output still emits contact_email.");
 assertPublicJson("assets/data/community/posts.json");

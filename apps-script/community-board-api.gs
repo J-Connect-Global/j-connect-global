@@ -422,21 +422,23 @@ function isExpired_(post) {
   return date.getTime() < Date.now();
 }
 
-function isPubliclyVisible_(post, params) {
-  const status = normalizeStatus_(post.status);
-  const includeClosed = String(params.includeClosed || 'true').toLowerCase() !== 'false';
-  const moderationStatus = normalizeStatus_(post.moderation_status);
-  const deletedAt = String(cleanCell_(post.deleted_at || '')).trim();
-  const blockedStatuses = ['hidden', 'deleted', 'inactive', 'pending', 'rejected', 'draft', 'expired', 'spam'];
+function isTrueLifecycleFlag_(value) {
+  if (value === true) return true;
+  return ['true', 'yes', '1'].indexOf(String(value || '').trim().toLowerCase()) !== -1;
+}
 
-  if (deletedAt) return false;
-  if (blockedStatuses.indexOf(status) !== -1) return false;
-  if (blockedStatuses.indexOf(moderationStatus) !== -1) return false;
-  if (isExpired_(post)) return false;
+function isPubliclyVisible_(post) {
+  const status = String(cleanCell_(post.status || '')).trim().toLowerCase();
+  const moderationStatus = String(cleanCell_(post.moderation_status || '')).trim().toLowerCase();
+  const blockedModerationStatuses = ['hidden', 'deleted', 'inactive', 'pending', 'rejected', 'draft', 'expired', 'spam', 'closed'];
+  const lifecycleFlags = ['deleted', 'is_deleted', 'archive', 'archived', 'is_archived', 'hidden', 'is_hidden'];
 
-  if (status === 'active') return !isExpired_(post);
-  if (status === 'closed') return includeClosed;
-  return false;
+  if (status !== 'active') return false;
+  if (blockedModerationStatuses.indexOf(moderationStatus) !== -1) return false;
+  if (lifecycleFlags.some((field) => isTrueLifecycleFlag_(post[field]))) return false;
+  if (String(cleanCell_(post.deleted_at || '')).trim()) return false;
+  if (String(cleanCell_(post.hidden_at || '')).trim()) return false;
+  return !isExpired_(post);
 }
 
 function publicPostPayload_(post) {
@@ -472,7 +474,7 @@ function cleanCell_(value) {
 
 function listPosts_(params) {
   const cache = CacheService.getScriptCache();
-  const cacheKey = `${COMMUNITY_CACHE_KEY}:${String(params.includeClosed || 'true').toLowerCase()}`;
+  const cacheKey = COMMUNITY_CACHE_KEY;
   if (String(params.bypassCache || '').toLowerCase() !== 'true') {
     const cached = cache.get(cacheKey);
     if (cached) return JSON.parse(cached);
@@ -491,7 +493,7 @@ function listPosts_(params) {
 
 function getPost_(params) {
   const found = findPostById_(params.id || params.post_id || params.post);
-  if (!found || !isPubliclyVisible_(found.post, { includeClosed: 'true' })) {
+  if (!found || !isPubliclyVisible_(found.post)) {
     return { ok: false, error: 'Post not found.' };
   }
   return { ok: true, post: publicPostPayload_(found.post) };
@@ -663,7 +665,7 @@ function listJobs_() {
 }
 
 function isPublicJob_(job) {
-  if (normalizeStatus_(job.status) !== 'active') return false;
+  if (String(cleanCell_(job.status || '')).trim().toLowerCase() !== 'active') return false;
   const expiresAt = String(cleanCell_(job.expires_at || '')).trim();
   if (!expiresAt) return true;
   const expires = new Date(expiresAt).getTime();

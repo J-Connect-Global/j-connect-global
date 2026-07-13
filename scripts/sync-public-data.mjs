@@ -17,6 +17,7 @@ const outputPaths = {
 
 const FALLBACK_MASTER_ENDPOINT =
   "https://script.google.com/macros/s/AKfycbxwP2QkpK0-k4_WPgJ5zaHSC_I0vqytH-n3xbb62NS0XHtQVdSTyXBT2r_lyBuQcuM/exec";
+const LEGACY_ENDPOINT_ENV_NAMES = ["COMMUNITY_API_URL", "CONTENTS_API_URL", "JOBS_API_URL"];
 
 const timeoutMs = Number(process.env.PUBLIC_DATA_TIMEOUT_MS || 30000);
 const generatedAt = new Date().toISOString();
@@ -78,11 +79,43 @@ function buildUrl(endpoint, params) {
   return url.toString();
 }
 
+export function assertNoLegacyEndpointOverrides(env = process.env) {
+  const configured = LEGACY_ENDPOINT_ENV_NAMES.filter((name) => clean(env[name]));
+  if (configured.length) {
+    throw new Error(
+      `Legacy endpoint override(s) are not supported: ${configured.join(", ")}. ` +
+      "Community and Jobs must use the single canonical Master endpoint."
+    );
+  }
+}
+
+function validateMasterEndpoint(endpoint) {
+  const url = new URL(clean(endpoint));
+  if (url.protocol !== "https:") throw new Error("The Master endpoint must use HTTPS.");
+  return url.toString();
+}
+
+export function sanitizedEndpointIdentity(endpoint) {
+  const url = new URL(endpoint);
+  const deploymentId = url.pathname.match(/\/s\/([^/]+)\/exec\/?$/)?.[1] || "";
+  const suffix = deploymentId ? deploymentId.slice(-8) : "non-gas-path";
+  return `${url.hostname}/deployment-…${suffix}`;
+}
+
 async function getMasterEndpoint() {
-  if (process.env.MASTER_API_URL) return process.env.MASTER_API_URL;
+  assertNoLegacyEndpointOverrides();
+  if (clean(process.env.MASTER_API_URL)) {
+    return {
+      endpoint: validateMasterEndpoint(process.env.MASTER_API_URL),
+      sourceType: "development MASTER_API_URL override"
+    };
+  }
   const source = await readFile(dataSourcesPath, "utf8");
   const match = source.match(/const\s+masterDataEndpoint\s*=\s*["']([^"']+)["']/);
-  return match?.[1] || FALLBACK_MASTER_ENDPOINT;
+  return {
+    endpoint: validateMasterEndpoint(match?.[1] || FALLBACK_MASTER_ENDPOINT),
+    sourceType: match?.[1] ? "repository canonical Master endpoint" : "built-in canonical Master fallback"
+  };
 }
 
 async function fetchJson(url) {
@@ -143,10 +176,12 @@ function isTrueFlag(value) {
 }
 
 export function isPublicCommunityPost(row, now = Date.now()) {
-  const status = clean(first(row, ["status", "publish_status", "publication_status", "moderation_status"])).toLowerCase();
+  const status = clean(row?.status).toLowerCase();
   if (status !== "active") return false;
+  const moderationStatus = clean(row?.moderation_status).toLowerCase();
+  if (["hidden", "deleted", "inactive", "pending", "rejected", "draft", "expired", "spam", "closed"].includes(moderationStatus)) return false;
 
-  for (const field of ["deleted", "is_deleted", "archived", "hidden", "is_hidden"]) {
+  for (const field of ["deleted", "is_deleted", "archive", "archived", "is_archived", "hidden", "is_hidden"]) {
     if (isTrueFlag(row?.[field])) return false;
   }
   if (first(row, ["deleted_at", "hidden_at"])) return false;
@@ -353,6 +388,35 @@ function comparableJson(data) {
   return JSON.stringify(comparable);
 }
 
+export function strictSourceItems(payload, label) {
+  let items;
+  if (Array.isArray(payload)) {
+    items = payload;
+  } else if (payload && typeof payload === "object" && payload.ok !== false) {
+    for (const key of ["data", "rows", "items", "posts", "jobs"]) {
+      if (Array.isArray(payload[key])) {
+        items = payload[key];
+        break;
+      }
+    }
+  } else if (payload?.ok === false) {
+    throw new Error(`${label} returned ok:false: ${payload.error || "unknown error"}`);
+  }
+
+  if (!items) throw new Error(`${label} returned an incompatible payload.`);
+  if (Object.hasOwn(payload, "count") && Number(payload.count) !== items.length) {
+    throw new Error(`${label} count mismatch: declared ${payload.count}, received ${items.length}.`);
+  }
+  if (!items.length) throw new Error(`${label} unexpectedly returned zero source items.`);
+  return items;
+}
+
+export function publicPayload(source, endpoint, items) {
+  const payload = { source, endpoint, count: items.length, items };
+  if (payload.count !== payload.items.length) throw new Error(`${source} generated count mismatch.`);
+  return payload;
+}
+
 export async function writeJsonIfChanged(file, data) {
   try {
     const existing = JSON.parse(await readFile(file, "utf8"));
@@ -367,11 +431,9 @@ export async function writeJsonIfChanged(file, data) {
 }
 
 export async function main() {
-  const masterEndpoint = await getMasterEndpoint();
-  const directoryEndpoint = process.env.CONTENTS_API_URL || masterEndpoint;
-  const communityEndpoint = process.env.COMMUNITY_API_URL || masterEndpoint;
-  const jobsEndpoint = process.env.JOBS_API_URL || buildUrl(directoryEndpoint, { sheet: "jobs", lang: "ja", status: "active" });
-  const communityUrl = buildUrl(communityEndpoint, {
+  const { endpoint: masterEndpoint, sourceType } = await getMasterEndpoint();
+  const jobsUrl = buildUrl(masterEndpoint, { sheet: "jobs", lang: "ja", status: "active" });
+  const communityUrl = buildUrl(masterEndpoint, {
     action: "getPosts",
     bypassCache: "true",
     includeClosed: "false"
@@ -379,58 +441,72 @@ export async function main() {
 
   const [communityPayload, jobsPayload] = await Promise.all([
     fetchJson(communityUrl),
-    fetchJson(jobsEndpoint)
+    fetchJson(jobsUrl)
   ]);
 
+  const communitySourceItems = strictSourceItems(communityPayload, "Community Master GAS");
+  const jobSourceItems = strictSourceItems(jobsPayload, "Jobs Master GAS");
+  const communityEligibleRows = communitySourceItems.filter((row) => isPublicCommunityPost(row));
+  const jobEligibleRows = jobSourceItems.filter(isActiveJob);
+  if (!communityEligibleRows.length) throw new Error("Community Master GAS returned zero public-eligible items.");
+  if (!jobEligibleRows.length) throw new Error("Jobs Master GAS returned zero public-eligible items.");
+
   const communityItems = sortNewest(
-    normalizePayload(communityPayload)
-      .filter((row) => isPublicCommunityPost(row))
-      .map(normalizeCommunityPost)
-      .filter((item) => item.title || item.body)
+    communityEligibleRows.map(normalizeCommunityPost)
   );
 
   const jobItems = sortJobsNewest(
-    normalizePayload(jobsPayload)
-      .filter(isActiveJob)
-      .map(normalizeJob)
-      .filter((item) => [item.company_name, item.position_title, item.region, item.city, item.summary, item.job_details].some(Boolean))
+    jobEligibleRows.map(normalizeJob)
   );
 
   validateUnique(communityItems, ["id"], "community posts");
   validateUnique(jobItems, ["id"], "jobs");
 
   const changed = [];
-  if (await writeJsonIfChanged(outputPaths.communityPosts, {
-    source: "community-gas",
-    endpoint: "communityDataEndpoint?action=getPosts&bypassCache=true&includeClosed=false",
-    count: communityItems.length,
-    items: communityItems
-  })) changed.push("community posts");
+  const communityPostsChanged = await writeJsonIfChanged(
+    outputPaths.communityPosts,
+    publicPayload(
+      "master-gas:community",
+      "canonicalMasterEndpoint?action=getPosts&bypassCache=true&includeClosed=false",
+      communityItems
+    )
+  );
+  if (communityPostsChanged) changed.push("community posts");
 
   if (await writeJsonIfChanged(outputPaths.communityCategories, {
-    source: "community-gas",
+    source: "master-gas:community",
     count: communityItems.length,
     groups: categories(communityItems, ["category1", "category2", "city", "region"])
   })) changed.push("community categories");
 
-  if (await writeJsonIfChanged(outputPaths.jobs, {
-    source: "contents-gas:jobs",
-    endpoint: "directoryDataEndpoint?sheet=jobs&lang=ja&status=active",
-    count: jobItems.length,
-    items: jobItems
-  })) changed.push("jobs");
+  const jobsChanged = await writeJsonIfChanged(
+    outputPaths.jobs,
+    publicPayload(
+      "master-gas:jobs",
+      "canonicalMasterEndpoint?sheet=jobs&lang=ja&status=active",
+      jobItems
+    )
+  );
+  if (jobsChanged) changed.push("jobs");
 
   if (await writeJsonIfChanged(outputPaths.jobCategories, {
-    source: "contents-gas:jobs",
+    source: "master-gas:jobs",
     count: jobItems.length,
     groups: categories(jobItems, ["region", "city", "category", "detail_category", "employment_type", "work_style", "language"])
   })) changed.push("job categories");
 
-  console.log(`Synced community count: ${communityItems.length}`);
-  console.log(`Synced jobs count: ${jobItems.length}`);
-  console.log(`Generated at: ${generatedAt}`);
+  console.log(`Canonical source type: ${sourceType}`);
+  console.log(`Canonical endpoint identity: ${sanitizedEndpointIdentity(masterEndpoint)}`);
+  console.log(`Community source item count: ${communitySourceItems.length}`);
+  console.log(`Community public eligible count: ${communityEligibleRows.length}`);
+  console.log(`Community generated JSON count: ${communityItems.length}`);
+  console.log(`Community post IDs: ${communityItems.map((item) => item.id).join(", ")}`);
+  console.log(`Community public JSON changed: ${communityPostsChanged}`);
+  console.log(`Jobs source item count: ${jobSourceItems.length}`);
+  console.log(`Jobs public eligible count: ${jobEligibleRows.length}`);
+  console.log(`Jobs generated JSON count: ${jobItems.length}`);
+  console.log(`Jobs public JSON changed: ${jobsChanged}`);
   console.log(`Changed public files: ${changed.join(", ") || "none"}`);
-  console.log(`First 3 community post IDs: ${communityItems.slice(0, 3).map((item) => item.id).join(", ") || "(none)"}`);
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

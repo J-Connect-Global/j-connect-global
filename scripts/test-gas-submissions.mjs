@@ -125,6 +125,10 @@ function rowObject(sheet, rowIndex = 1) {
   return Object.fromEntries(sheet.rows[0].map((header, index) => [header, sheet.rows[rowIndex][index]]));
 }
 
+function appendObjectRow(sheet, values) {
+  sheet.appendRow(sheet.rows[0].map((header) => values[header] ?? ""));
+}
+
 function validJobParams(now, overrides = {}) {
   return {
     company_name: "Example GmbH", contact_name: "担当者", contact_email: "person@example.com",
@@ -241,7 +245,59 @@ function testCommunityAdminFailureIsolation() {
   assert(emails.length === 1 && emails[0].to === "poster@example.com", "Existing submitter receipt email was not preserved.");
 }
 
+function testCommunityPublicLifecycleAndCacheBypass() {
+  const now = Date.parse("2026-07-13T12:00:00Z");
+  const community = new MockSheet("Community Posts", [
+    "post_id", "status", "category1", "title", "body", "moderation_status",
+    "deleted", "is_deleted", "archive", "archived", "is_archived", "hidden", "is_hidden",
+    "deleted_at", "hidden_at", "expires_at", "contact_email_private"
+  ]);
+  const expectedIds = [
+    "post_10d2f796-9555-4358-ab98-95de74346cad",
+    "post_066f3c93-7f73-46a3-9c89-e38d47f7308d",
+    "post_cd6cadde-3221-4de3-8f8d-935d66331457",
+    "post_79f6dfd5-86c4-4c68-bf50-f8a7a1993bfe",
+    "post_361ec368-085b-42da-86e4-2c6d3dd2c28a",
+    "post_23baeb1d-3d92-4438-9350-e04029bd3add",
+    "post_807cffe7-b1af-41c0-89ee-c54b57ce44c5"
+  ];
+  expectedIds.forEach((postId, index) => appendObjectRow(community, {
+    post_id: postId,
+    status: "active",
+    category1: "question",
+    title: index === 0 ? "test" : index === 1 ? "\u30c6\u30b9\u30c8" : `active-${index}`,
+    body: index === 0 ? "test" : index === 1 ? "\u30c6\u30b9\u30c8" : `body-${index}`,
+    contact_email_private: "private@example.com"
+  }));
+
+  for (const status of ["", "pending", "rejected", "hidden", "deleted", "inactive", "draft", "spam", "closed"]) {
+    appendObjectRow(community, { post_id: `excluded-status-${status || "blank"}`, status, category1: "question", title: "normal", body: "normal" });
+  }
+  for (const flag of ["deleted", "is_deleted", "archive", "archived", "is_archived", "hidden", "is_hidden"]) {
+    appendObjectRow(community, { post_id: `excluded-${flag}`, status: "active", category1: "question", title: "normal", body: "normal", [flag]: true });
+  }
+  appendObjectRow(community, { post_id: "excluded-deleted-at", status: "active", category1: "question", title: "normal", body: "normal", deleted_at: "2026-07-12T00:00:00Z" });
+  appendObjectRow(community, { post_id: "excluded-hidden-at", status: "active", category1: "question", title: "normal", body: "normal", hidden_at: "2026-07-12T00:00:00Z" });
+  appendObjectRow(community, { post_id: "excluded-expired", status: "active", category1: "question", title: "normal", body: "normal", expires_at: "2026-07-12T00:00:00Z" });
+
+  const { sandbox } = createRuntime([community], () => ({ sent: true }), { now });
+  const initial = sandbox.listPosts_({ bypassCache: "true", includeClosed: "false" });
+  assert(initial.count === 7 && initial.items.length === 7, "GAS did not return exactly seven lifecycle-eligible rows.");
+  assert(expectedIds.every((id) => initial.items.some((item) => item.post_id === id)), "GAS lost an expected Community post ID.");
+  assert(initial.items.some((item) => item.title === "test" && item.body === "test"), "GAS suppressed active test/test content.");
+  assert(initial.items.some((item) => item.title === "\u30c6\u30b9\u30c8" && item.body === "\u30c6\u30b9\u30c8"), "GAS suppressed active Japanese test content.");
+  assert(initial.items.every((item) => !("contact_email_private" in item)), "GAS exposed a private Community field.");
+
+  appendObjectRow(community, { post_id: "post-cache-bypass", status: "active", category1: "question", title: "new", body: "new" });
+  const cached = sandbox.listPosts_({ includeClosed: "false" });
+  assert(cached.count === 7, "ordinary GAS list did not use the populated cache in the test harness.");
+  const bypassed = sandbox.listPosts_({ bypassCache: "true", includeClosed: "false" });
+  assert(bypassed.count === 8 && bypassed.items.some((item) => item.post_id === "post-cache-bypass"), "bypassCache=true did not bypass the stale GAS cache.");
+  assert(!sandbox.getPost_({ id: "excluded-status-closed" }).ok, "GAS detail endpoint exposed a closed post.");
+}
+
 testSpreadsheetResolution();
 testJobPersistenceIdempotencyAndThrottling();
 testCommunityAdminFailureIsolation();
+testCommunityPublicLifecycleAndCacheBypass();
 console.log("GAS submission tests passed.");

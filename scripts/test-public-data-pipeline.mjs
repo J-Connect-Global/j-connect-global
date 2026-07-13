@@ -4,8 +4,11 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
+  assertNoLegacyEndpointOverrides,
   isPublicCommunityPost,
   normalizeCommunityPost,
+  publicPayload,
+  strictSourceItems,
   writeJsonIfChanged
 } from "./sync-public-data.mjs";
 
@@ -39,6 +42,30 @@ const activeRows = retainedContentCases.map((row, index) => ({
   ...row
 }));
 
+const expectedSevenIds = [
+  "post_10d2f796-9555-4358-ab98-95de74346cad",
+  "post_066f3c93-7f73-46a3-9c89-e38d47f7308d",
+  "post_cd6cadde-3221-4de3-8f8d-935d66331457",
+  "post_79f6dfd5-86c4-4c68-bf50-f8a7a1993bfe",
+  "post_361ec368-085b-42da-86e4-2c6d3dd2c28a",
+  "post_23baeb1d-3d92-4438-9350-e04029bd3add",
+  "post_807cffe7-b1af-41c0-89ee-c54b57ce44c5"
+];
+const sevenActiveRows = expectedSevenIds.map((postId, index) => ({
+  post_id: postId,
+  status: "active",
+  title: index === 0 ? "test" : index === 1 ? "\u30c6\u30b9\u30c8" : `active-${index + 1}`,
+  body: index === 0 ? "test" : index === 1 ? "\u30c6\u30b9\u30c8" : `body-${index + 1}`
+}));
+const sevenGenerated = sevenActiveRows
+  .filter((row) => isPublicCommunityPost(row, now))
+  .map(normalizeCommunityPost);
+assert.equal(sevenGenerated.length, 7, "seven active source rows did not generate seven public rows");
+assert.deepEqual(new Set(sevenGenerated.map((item) => item.post_id)), new Set(expectedSevenIds));
+assert.equal(sevenGenerated.find((item) => item.post_id === expectedSevenIds[0]).title, "test");
+assert.equal(sevenGenerated.find((item) => item.post_id === expectedSevenIds[1]).title, "\u30c6\u30b9\u30c8");
+assert.equal(publicPayload("test", "test", sevenGenerated).count, sevenGenerated.length);
+
 for (const row of activeRows) {
   assert.equal(isPublicCommunityPost(row, now), true, `active content was suppressed: ${row.post_id}`);
 }
@@ -46,13 +73,26 @@ for (const row of activeRows) {
 for (const status of ["pending", "rejected", "hidden", "deleted", "inactive", "draft", "spam", "closed"]) {
   assert.equal(isPublicCommunityPost({ status, title: "通常の投稿", body: "本文" }, now), false, `${status} post became public`);
 }
-for (const flag of ["deleted", "is_deleted", "archived", "hidden", "is_hidden"]) {
+for (const flag of ["deleted", "is_deleted", "archive", "archived", "is_archived", "hidden", "is_hidden"]) {
   assert.equal(isPublicCommunityPost({ status: "active", [flag]: true }, now), false, `${flag}=true post became public`);
 }
+assert.equal(isPublicCommunityPost({ status: "", title: "test", body: "test" }, now), false);
+assert.equal(isPublicCommunityPost({ status: "", moderation_status: "active", title: "test", body: "test" }, now), false);
+assert.equal(isPublicCommunityPost({ status: "active", moderation_status: "pending", title: "test", body: "test" }, now), false);
 assert.equal(isPublicCommunityPost({ status: "active", deleted_at: "2026-07-12T00:00:00Z" }, now), false);
 assert.equal(isPublicCommunityPost({ status: "active", hidden_at: "2026-07-12T00:00:00Z" }, now), false);
 assert.equal(isPublicCommunityPost({ status: "active", expires_at: "2026-07-12T00:00:00Z" }, now), false);
 assert.equal(isPublicCommunityPost({ status: "active", expires_at: "2026-07-14T00:00:00Z" }, now), true);
+assert.equal(isPublicCommunityPost({ status: "active", expires_at: "not-a-date" }, now), true);
+assert.equal(isPublicCommunityPost({ status: "active", title: "", body: "" }, now), true, "empty content incorrectly changed lifecycle eligibility");
+
+assert.equal(strictSourceItems({ ok: true, count: 7, items: sevenActiveRows }, "test").length, 7);
+assert.throws(() => strictSourceItems({ ok: true }, "test"), /incompatible payload/);
+assert.throws(() => strictSourceItems({ ok: true, count: 1, items: [] }, "test"), /count mismatch/);
+assert.throws(() => strictSourceItems({ ok: true, count: 0, items: [] }, "test"), /zero source items/);
+for (const name of ["COMMUNITY_API_URL", "CONTENTS_API_URL", "JOBS_API_URL"]) {
+  assert.throws(() => assertNoLegacyEndpointOverrides({ [name]: "https://legacy.example/exec" }), new RegExp(name));
+}
 
 const privateSource = {
   ...activeRows[0],
@@ -86,6 +126,13 @@ for (const relative of runtimeFiles) {
   const source = read(relative);
   assert.equal(source.includes("isLikelyTestPost"), false, `${relative} retains isLikelyTestPost`);
 }
+
+const syncWorkflow = read(".github/workflows/sync-public-data.yml");
+for (const legacyName of ["COMMUNITY_API_URL", "CONTENTS_API_URL", "JOBS_API_URL"]) {
+  assert.equal(syncWorkflow.includes(legacyName), false, `production workflow still supplies ${legacyName}`);
+}
+const syncSource = read("scripts/sync-public-data.mjs");
+assert.equal(syncSource.includes(".filter((item) => item.title || item.body)"), false, "Community sync still suppresses rows based on content");
 
 const home = read("germany/ja/index.html");
 const communityList = read("germany/ja/community/index.html");

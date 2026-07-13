@@ -569,15 +569,6 @@
             </span>
           </button>
         </form>
-        <details class="header-language header-language-menu" aria-label="言語切り替え">
-          <summary class="header-language-trigger">
-            <span>Language</span>
-            <span class="header-language-current" lang="ja">日本語</span>
-          </summary>
-          <div class="language-dropdown">
-            <a href="/germany/ja/jobs/" class="active" aria-current="page" lang="ja">日本語</a>
-          </div>
-        </details>
         <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="ダークモードに切り替え">
           <span class="theme-toggle-track" aria-hidden="true">
             <span class="theme-toggle-icon theme-toggle-sun">
@@ -797,19 +788,11 @@
 
   <script src="/assets/js/common.js"></script>
 <script src="/assets/js/data-sources.js"></script>
-  <script src="/assets/js/jobs-fallback.js"></script>
   <script src="/assets/js/jobs-shared.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
     const JOBS_STATIC_URL = DATA_SOURCES.staticData?.jobs || '/assets/data/jobs/jobs.json';
-    const JOBS_API_URL = DATA_SOURCES.buildDirectoryUrl({
-      sheet: DATA_SOURCES.directorySheets.jobs,
-      lang: 'ja',
-      status: 'active'
-    });
-    const DATA_TIMEOUT_MS = 12000;
     const STATIC_DATA_TIMEOUT_MS = 5000;
-    const GAS_FALLBACK_TIMEOUT_MS = 8000;
 
     let jobs = [];
     let filtered = [];
@@ -1275,13 +1258,6 @@
       });
     }
 
-    function fetchWithTimeout(url, options = {}){
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), DATA_TIMEOUT_MS);
-      return fetch(url, { ...options, signal: controller.signal })
-        .finally(() => clearTimeout(timeoutId));
-    }
-
     function setJobsLoading(){
       els.resultsSummary.textContent = '読み込み中...';
       els.emptyBox.style.display = 'none';
@@ -1306,12 +1282,7 @@
     }
 
     async function fetchJobsData(){
-      try {
-        return await DATA_SOURCES.fetchJsonWithTimeout(JOBS_STATIC_URL, STATIC_DATA_TIMEOUT_MS);
-      } catch (staticError) {
-        console.warn('Jobs static data load failed; trying GAS fallback:', JOBS_STATIC_URL, staticError);
-        return await DATA_SOURCES.fetchJsonWithTimeout(JOBS_API_URL, GAS_FALLBACK_TIMEOUT_MS);
-      }
+      return await DATA_SOURCES.fetchJsonWithTimeout(JOBS_STATIC_URL, STATIC_DATA_TIMEOUT_MS);
     }
 
     async function loadJobs(){
@@ -1422,17 +1393,22 @@
         els.cards.innerHTML = '';
         els.emptyBox.style.display = 'block';
         els.emptyBox.className = 'empty-box jc-empty-state';
-        const emptyTitle = showSavedOnly ? '保存済みの求人はありません。' : '現在、公開中の求人はありません。';
-        const emptyBody = showSavedOnly
+        const noPublicJobs = jobs.length === 0;
+        const emptyTitle = noPublicJobs
+          ? '現在公開中の求人はありません。'
+          : showSavedOnly ? '保存済みの求人はありません。' : '条件に合う求人はありません。';
+        const emptyBody = noPublicJobs
+          ? '現在公開中の求人はありません。求人掲載をご希望の場合は、掲載フォームをご利用ください。'
+          : showSavedOnly
           ? '保存した求人がある場合は、条件をリセットするか保存済フィルターを解除してください。'
-          : '求人掲載を希望する企業・採用担当者の方は、無料掲載パイロットの案内をご確認ください。';
+          : '条件を少し広げるか、絞り込みを解除してください。';
         els.emptyBox.innerHTML = `
           <span class="status-title">${escapeHtml(emptyTitle)}</span>
           <div>${escapeHtml(emptyBody)}</div>
           <div class="status-actions">
             ${showSavedOnly ? '<button class="btn btn-primary" type="button" data-clear-saved-filter>すべての求人を見る</button>' : ''}
-            ${showSavedOnly ? '' : '<a class="btn btn-primary" href="/germany/ja/jobs/posting/">求人を無料掲載する</a>'}
-            <button class="btn btn-secondary" type="button" data-reset-jobs>条件をリセット</button>
+            ${noPublicJobs ? '<a class="btn btn-primary" href="/germany/ja/jobs/posting/">求人掲載フォームへ</a>' : ''}
+            ${noPublicJobs ? '' : '<button class="btn btn-secondary" type="button" data-reset-jobs>条件をリセット</button>'}
           </div>
         `;
         els.emptyBox.querySelector('[data-reset-jobs]')?.addEventListener('click', resetFilters);

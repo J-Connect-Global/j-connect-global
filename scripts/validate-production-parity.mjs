@@ -77,13 +77,9 @@ function validateHomeMarkers(html, label) {
     }
   }
 
-  const languageDropdown = extractBlock(html, 'class="language-dropdown"', '</div>');
-  if (!languageDropdown.includes('href="/germany/ja/"') && !languageDropdown.includes('href="/germany/ja/index.html"')) {
-    fail(`${label} language dropdown does not expose the Japanese canonical page.`);
-  }
-  for (const staleLanguage of ['/germany/en/', '/germany/de/', '/en/', '/de/']) {
-    if (languageDropdown.includes(`href="${staleLanguage}"`)) {
-      fail(`${label} language dropdown exposes unavailable language route: ${staleLanguage}`);
+  for (const staleLanguageUi of ['language-dropdown', 'header-language-trigger', 'header-language-menu']) {
+    if (html.includes(staleLanguageUi)) {
+      fail(`${label} contains language switcher UI in the Japanese-only site: ${staleLanguageUi}`);
     }
   }
 
@@ -117,10 +113,10 @@ function validateHomeMarkers(html, label) {
     'data-home-jobs-mini',
     'id="homeJobsCards"',
     'data-home-jobs',
-    '/assets/js/jobs-fallback.js',
     '/assets/js/jobs-shared.js',
-    'buildDirectoryUrl',
-    'directorySheets.jobs',
+    '/assets/data/jobs/jobs.json',
+    'JOBS_STATIC_URL',
+    'fetchJsonWithTimeout',
   ]) {
     if (!html.includes(marker)) fail(`${label} missing Home Jobs generated/fallback marker: ${marker}`);
   }
@@ -185,14 +181,6 @@ function extractMarkedContent(html, marker) {
 function extractSectionById(html, id) {
   const match = html.match(new RegExp(`<section\\b[^>]*id=["']${escapeRegExp(id)}["'][\\s\\S]*?<\\/section>`, 'i'));
   return match?.[0] || '';
-}
-
-function extractBlock(html, startMarker, endMarker) {
-  const start = html.indexOf(startMarker);
-  if (start === -1) return '';
-  const close = html.indexOf(endMarker, start);
-  if (close === -1) return '';
-  return html.slice(start, close + endMarker.length);
 }
 
 function escapeRegExp(value) {

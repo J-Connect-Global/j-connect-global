@@ -102,15 +102,6 @@
             </span>
           </button>
         </form>
-        <details class="header-language header-language-menu" aria-label="言語切り替え">
-          <summary class="header-language-trigger">
-            <span>Language</span>
-            <span class="header-language-current" lang="ja">日本語</span>
-          </summary>
-          <div class="language-dropdown">
-            <a href="/germany/ja/living/health-insurance-guide/" class="active" aria-current="page" lang="ja">日本語</a>
-          </div>
-        </details>
         <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="ダークモードに切り替え">
           <span class="theme-toggle-track" aria-hidden="true">
             <span class="theme-toggle-icon theme-toggle-sun">
@@ -149,8 +140,8 @@
         <figure class="article-hero-media">
           <img src="/assets/img/living/health-insurance-guide.webp" alt="ドイツの健康保険の基本 のイメージ" class="article-hero-image" loading="eager" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&amp;&amp;this.getAttribute(&#039;src&#039;)!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;this.classList.add(&#039;is-fallback-image&#039;);}">
         </figure>
-        <details class="article-mobile-toc">
-          <summary>目次を開く</summary>
+        <details class="article-mobile-toc" open>
+          <summary>目次</summary>
           <nav aria-label="記事内目次">
             <a href="#この記事でわかること">この記事でわかること</a>
             <a href="#まず結論">まず結論</a>
@@ -796,56 +787,22 @@
         </div>
       </article>
       <aside class="article-sidebar" aria-label="記事補助情報">
-        <nav class="article-sidebar-card article-sidebar-toc" aria-label="記事内目次">
-          <h2>目次</h2>
-          <div class="article-sidebar-toc-list">
-            <a href="#この記事でわかること">この記事でわかること</a>
-            <a href="#まず結論">まず結論</a>
-            <a href="#ドイツの健康保険制度の全体像">ドイツの健康保険制度の全体像</a>
-            <a href="#gkvとpkvの違い">GKVとPKVの違い</a>
-            <a href="#gkvとpkvの比較表">GKVとPKVの比較表</a>
-            <a href="#2026年時点の主な保険料-基準額">2026年時点の主な保険料・基準額</a>
-            <a href="#gkvの3つの加入形態">GKVの3つの加入形態</a>
-            <a href="#会社員の場合">会社員の場合</a>
-            <a href="#学生の場合">学生の場合</a>
-            <a href="#自営業-フリーランスの場合">自営業・フリーランスの場合</a>
-            <a href="#配偶者-子どもがいる場合">配偶者・子どもがいる場合</a>
-            <a href="#駐在員-日本企業からの派遣の場合">駐在員・日本企業からの派遣の場合</a>
-            <a href="#ワーキングホリデーの場合">ワーキングホリデーの場合</a>
-            <a href="#渡独直後の-つなぎ保険">渡独直後の「つなぎ保険」</a>
-            <a href="#gkvでカバーされる主な医療">GKVでカバーされる主な医療</a>
-            <a href="#健康保険カード-egk-の使い方">健康保険カード eGK の使い方</a>
-            <a href="#krankengeldとは">Krankengeldとは</a>
-            <a href="#pflegeversicherungとは">Pflegeversicherungとは</a>
-            <a href="#gkv保険会社の選び方">GKV保険会社の選び方</a>
-            <a href="#加入に必要なもの">加入に必要なもの</a>
-            <a href="#加入手続きの流れ">加入手続きの流れ</a>
-            <a href="#保険会社を変更したい場合">保険会社を変更したい場合</a>
-            <a href="#日本人が誤解しやすいポイント">日本人が誤解しやすいポイント</a>
-            <a href="#申し込み前チェックリスト">申し込み前チェックリスト</a>
-            <a href="#よくある質問">よくある質問</a>
-            <a href="#ドイツ語ミニ用語集">ドイツ語ミニ用語集</a>
-            <a href="#実務上のおすすめ">実務上のおすすめ</a>
-            <a href="#公式情報-参考ソース">公式情報・参考ソース</a>
-            <a href="#あわせて使えるドイツ語">あわせて使えるドイツ語</a>
-          </div>
-        </nav>
         <section class="article-sidebar-card">
-          <h2>公式情報</h2>
-          <ul class="article-sidebar-links">
-            <li><a href="https://www.bundesgesundheitsministerium.de/gesetzlich-versicherte">Bundesministerium fuer Gesundheit - Gesetzlich Versicherte</a></li>
-            <li><a href="https://www.bundesgesundheitsministerium.de/gkv">Bundesministerium fuer Gesundheit - Ratgeber GKV</a></li>
-          </ul>
-        </section>
-        <section class="article-sidebar-card">
-          <h2>関連ガイド</h2>
-          <ul class="article-sidebar-links">
-            <li><a href="/germany/ja/living/germany-first-30-days/">ドイツ生活最初の30日チェックリスト</a></li>
-          </ul>
-        </section>
-        <section class="article-sidebar-card">
-          <h2>生活・手続き</h2>
-          <a class="article-sidebar-back" href="/germany/ja/living/">生活・手続き一覧へ戻る</a>
+          <h2>記事情報</h2>
+          <dl class="article-sidebar-facts">
+            <div>
+              <dt>カテゴリ</dt>
+              <dd>生活・手続き</dd>
+            </div>
+            <div>
+              <dt>最終確認</dt>
+              <dd>2026-06-14</dd>
+            </div>
+            <div>
+              <dt>次回確認</dt>
+              <dd>2027-06-14</dd>
+            </div>
+          </dl>
         </section>
       </aside>
     </div>
@@ -854,12 +811,6 @@
       <ul>
         <li><a href="https://www.bundesgesundheitsministerium.de/gesetzlich-versicherte">Bundesministerium fuer Gesundheit - Gesetzlich Versicherte</a></li>
         <li><a href="https://www.bundesgesundheitsministerium.de/gkv">Bundesministerium fuer Gesundheit - Ratgeber GKV</a></li>
-      </ul>
-    </section>
-    <section class="related-section">
-      <h3>関連記事</h3>
-      <ul>
-        <li><a href="/germany/ja/living/germany-first-30-days/">ドイツ生活最初の30日チェックリスト</a></li>
       </ul>
     </section>
   </main>

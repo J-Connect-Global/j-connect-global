@@ -30,7 +30,7 @@ expect(!detail.includes('URLをコピー'), 'Standalone detail still contains a 
 expect(!detail.includes('安心の目安'), 'Standalone detail renderer still contains the safety section.');
 expect(detail.includes('btn btn-primary') && detail.includes('btn btn-soft'), 'Standalone detail action hierarchy is missing shared primary/soft buttons.');
 expect(detail.includes('save-button inline') && css.includes('min-inline-size:112px'), 'Save actions do not reserve width for 保存済み.');
-expect(report.includes('id="reportTarget"') && report.includes("action: 'getPost'"), 'Report page does not load and display a canonical target post.');
+expect(report.includes('id="reportTarget"') && report.includes('COMMUNITY_STATIC_POSTS_URL'), 'Report page does not load its canonical target from public JSON.');
 expect(report.includes('form_started_at') && report.includes('website'), 'Report form is missing anti-abuse fields.');
 expect(report.includes('./complete/?post_id=') && !report.includes("location.assign('../thanks/')"), 'Report success must redirect to report/complete with post_id.');
 expect(contact.includes('./complete/?post_id=') && !contact.includes("location.assign('../thanks/')"), 'Contact success must redirect to contact/complete with post_id.');
@@ -42,6 +42,11 @@ expect(listing.includes('id="countryFilter"') && listing.includes('id="regionFil
 expect(listing.includes('id="regionFilter" aria-label="地域で絞り込み" disabled'), 'Community region filter must start disabled.');
 expect(!listing.includes('areaFilter') && !listing.includes('state.area'), 'Legacy area filter implementation remains.');
 expect(shared.includes('COMMUNITY_LOCATION_CONFIG') && shared.includes('communityLocationConfig'), 'Shared Community location configuration is missing.');
+expect(!shared.includes('isLikelyTestPost') && !listing.includes('isLikelyTestPost'), 'Community runtime still contains content-based test-post filtering.');
+expect(listing.includes('COMMUNITY_STATIC_POSTS_URL') && !listing.includes('GAS_FALLBACK_TIMEOUT_MS'), 'Community list is not public-JSON-only.');
+expect(detail.includes('COMMUNITY_STATIC_POSTS_URL') && !detail.includes('GAS_FALLBACK_TIMEOUT_MS'), 'Community detail is not public-JSON-only.');
+expect(detail.includes('この投稿は見つからないか、現在公開されていません。') && detail.includes('noindex, follow'), 'Community detail lacks the safe non-public state.');
+expect(contact.includes('COMMUNITY_STATIC_POSTS_URL') && report.includes('COMMUNITY_STATIC_POSTS_URL'), 'Community contact/report target reads do not use public JSON.');
 expect(!detail.includes('CITY_OPTIONS_BY_COUNTRY') && detail.includes('communityLocationConfig'), 'Post form does not use the shared Community location configuration.');
 expect(listing.includes('communityLocationConfig') && listing.includes('normalizeCommunityCountry'), 'Listing does not use the shared Community location configuration.');
 expect(detail.includes('data-social-share="manual"') && socialShare.includes('manualShare') && socialShare.includes('target.root.querySelectorAll(AUTO_SHARE_SELECTOR)'), 'Community detail can still create duplicate share triggers.');

@@ -39,6 +39,9 @@ jobs:
       - name: Validate Community and Jobs moderation
         run: node scripts/validate-submission-moderation.mjs
 
+      - name: Test public data source and publication policy
+        run: node scripts/test-public-data-pipeline.mjs
+
       - name: Test GAS submission persistence and idempotency
         run: node scripts/test-gas-submissions.mjs
 

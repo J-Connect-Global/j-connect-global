@@ -338,14 +338,14 @@ ${renderHeader(type, item.url)}
         </header>
 
 ${indent(primaryHeroMedia, 8)}
-${indent(renderArticleMobileToc(toc), 8)}
+${indent(renderArticleToc(toc), 8)}
         <div class="article-body">
 ${indent(articleBodyHtml, 10)}
-          <p><a class="article-back-link" href="${config.hubUrl}">${escapeHtml(config.backText)}</a></p>
+${indent(renderArticleBackLink(item, config), 10)}
 ${indent(renderDisclaimer(item), 10)}
         </div>
       </article>
-${indent(renderArticleSidebar(type, item, allItems, toc), 6)}
+${indent(renderArticleSidebar(type, item), 6)}
     </div>
 ${indent(renderRelatedSection(item, allItems), 4)}
   </main>
@@ -961,76 +961,26 @@ function extractArticleToc(markdown, title) {
     }));
 }
 
-function renderArticleMobileToc(toc = []) {
+function renderArticleToc(toc = []) {
   if (!toc.length) return '';
 
   const links = toc
     .map((entry) => `<a href="#${escapeAttribute(entry.id)}">${escapeHtml(entry.text)}</a>`)
     .join('\n');
 
-  return `<details class="article-mobile-toc">
-  <summary>目次を開く</summary>
+  return `<details class="article-mobile-toc" open>
+  <summary>目次</summary>
   <nav aria-label="記事内目次">
 ${indent(links, 4)}
   </nav>
 </details>`;
 }
 
-function renderArticleSidebar(type, item, allItems, toc = []) {
-  const config = contentTypes[type];
-  const tocLinks = toc
-    .map((entry) => `<a href="#${escapeAttribute(entry.id)}">${escapeHtml(entry.text)}</a>`)
-    .join('\n');
-
-  const sourceLinks = [];
-  if (item.official_url) {
-    sourceLinks.push(`<li><a href="${escapeAttribute(item.official_url)}">公式情報を確認する</a></li>`);
-  }
-  for (const source of item.official_sources) {
-    if (!source.url) continue;
-    sourceLinks.push(`<li><a href="${escapeAttribute(source.url)}">${escapeHtml(source.title || '公式情報・参考ソース')}</a></li>`);
-  }
-
-  const related = type === 'learn-german'
-    ? []
-    : getExplicitRelatedItems(item, allItems).slice(0, 4);
-  const relatedLinks = related
-    .map((relatedItem) => `<li><a href="${escapeAttribute(relatedItem.url)}">${escapeHtml(relatedItem.title)}</a></li>`)
-    .join('\n');
-
-  const sections = [];
-
-  if (tocLinks) {
-    sections.push(`<nav class="article-sidebar-card article-sidebar-toc" aria-label="記事内目次">
-  <h2>目次</h2>
-  <div class="article-sidebar-toc-list">
-${indent(tocLinks, 4)}
-  </div>
-</nav>`);
-  }
-
-  if (sourceLinks.length) {
-    sections.push(`<section class="article-sidebar-card">
-  <h2>公式情報</h2>
-  <ul class="article-sidebar-links">
-${indent(sourceLinks.join('\n'), 4)}
-  </ul>
-</section>`);
-  }
-
-  if (type !== 'learn-german' && relatedLinks) {
-    sections.push(`<section class="article-sidebar-card">
-  <h2>関連ガイド</h2>
-  <ul class="article-sidebar-links">
-${indent(relatedLinks, 4)}
-  </ul>
-</section>`);
-  }
-
-  sections.push(`<section class="article-sidebar-card">
-  <h2>${escapeHtml(config.label)}</h2>
-  <a class="article-sidebar-back" href="${escapeAttribute(config.hubUrl)}">${escapeHtml(config.backText)}</a>
-</section>`);
+function renderArticleSidebar(type, item) {
+  const sections = [`<section class="article-sidebar-card">
+  <h2>記事情報</h2>
+${indent(renderArticleSidebarFacts(type, item), 2)}
+</section>`];
 
   return `<aside class="article-sidebar" aria-label="記事補助情報">
 ${indent(sections.join('\n'), 2)}
@@ -1083,7 +1033,9 @@ function renderRelatedSection(item, allItems) {
   }
 
   const sections = [];
-  const markdownHasOfficialSources = item.slug === 'berlin-weekend-trip' && /^##\s+公式情報/m.test(stripFrontMatter(item.markdown || ''));
+  const markdownSource = stripFrontMatter(item.markdown || '');
+  const markdownHasOfficialSources = item.slug === 'berlin-weekend-trip' && /^##\s+公式情報/m.test(markdownSource);
+  const markdownHasRelatedArticles = /^##\s+関連記事\s*$/m.test(markdownSource);
   if (sourceLinks.length && !markdownHasOfficialSources) {
     sections.push(`<section class="related-section official-source-section">
   <h3>公式情報・参考ソース</h3>
@@ -1093,7 +1045,7 @@ ${indent(sourceLinks.join('\n'), 4)}
 </section>`);
   }
 
-  if (relatedLinks.length) {
+  if (relatedLinks.length && !markdownHasRelatedArticles) {
     sections.push(`<section class="related-section">
   <h3>関連記事</h3>
   <ul>
@@ -1112,6 +1064,13 @@ ${indent(livingGuideLinks.join('\n'), 4)}
   }
 
   return sections.join('\n');
+}
+
+function renderArticleBackLink(item, config) {
+  const markdown = stripFrontMatter(item.markdown || '');
+  const hubPattern = new RegExp(`\\[[^\\]]*(?:一覧|トップ)[^\\]]*戻る[^\\]]*\\]\\(${escapeRegExp(config.hubUrl)}\\)`);
+  if (hubPattern.test(markdown)) return '';
+  return `<p><a class="article-back-link" href="${escapeAttribute(config.hubUrl)}">${escapeHtml(config.backText)}</a></p>`;
 }
 
 function getExplicitRelatedItems(item, allItems, references = item.related_articles) {

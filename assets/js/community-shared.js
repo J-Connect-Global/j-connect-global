@@ -192,7 +192,7 @@
 
   function normalizeStatus(value) {
     const text = String(value || "").trim().toLowerCase();
-    if (!text) return "active";
+    if (!text) return "";
     if (text === "active") return "active";
     if (text === "closed") return "closed";
     if (text === "hidden") return "hidden";
@@ -212,31 +212,11 @@
 
   function isPubliclyVisible(post, includeClosed) {
     const status = normalizeStatus(post && post.status);
+    const trueFlag = (value) => value === true || ["true", "yes", "1"].includes(String(value || "").trim().toLowerCase());
+    if (["deleted", "is_deleted", "archived", "hidden", "is_hidden"].some((field) => trueFlag(post && post[field]))) return false;
+    if (pick(post, ["deleted_at", "hidden_at"])) return false;
     if (status === "active") return !isExpired(post);
     if (status === "closed") return includeClosed !== false;
-    return false;
-  }
-
-  function isLikelyTestPost(post) {
-    const title = pick(post, ["title", "name", "subject"]);
-    const body = pick(post, ["body", "description", "message", "content"]);
-    const city = pick(post, ["city", "location", "area"]);
-    const region = pick(post, ["region", "prefecture"]);
-    const compactTitle = title.replace(/\s+/g, "").toLowerCase();
-    const compactBody = body.replace(/\s+/g, "").toLowerCase();
-    const compactLocation = [city, region].join("").replace(/\s+/g, "").toLowerCase();
-    const joined = [title, body, city, region, pick(post, ["tags"])].join(" ").toLowerCase();
-
-    if (/^(test|test\d+|teste|image test)$/i.test(title.trim())) return true;
-    if (/^(テスト|テスト投稿\d*|再テスト投稿.*)$/i.test(title.trim())) return true;
-    if (title.includes("テスト") || body.includes("テスト投稿")) return true;
-    if (/^(.)\1{5,}$/.test(compactTitle) && compactTitle === compactBody) return true;
-    if (/^[a-z]{1,4}$/i.test(title.trim()) && /^[a-z]{1,4}$/i.test(body.trim())) return true;
-    if (joined.includes("image test")) return true;
-    if (joined.includes("システムの動作を確認")) return true;
-    if (joined.includes("テスト投稿です")) return true;
-    if (compactBody === "test" || compactBody === "teste" || compactBody === "etse" || compactBody === "テスト") return true;
-    if (compactLocation.includes("test") && (compactTitle.includes("test") || compactBody.includes("test"))) return true;
     return false;
   }
 
@@ -337,7 +317,6 @@
     communityDetailHref: communityStandaloneDetailHref,
     communityStandaloneDetailHref,
     communityBoardModalHref,
-    isLikelyTestPost,
     images: getCommunityPostImages,
     getCommunityPostImages,
     getCommunityThumbnail,

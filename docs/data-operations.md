@@ -7,8 +7,8 @@ This repository publishes a static GitHub Pages site. Generated HTML and JSON ar
 - Editorial articles: `content/living/*.md`, `content/events/*.md`, `content/learn-german/*.md`, plus the matching `content/registry/*.json` files.
 - Generated article HTML, hub grids, Home article cards, `sitemap.xml`, and `assets/js/search-index.js`: output from `node scripts/build-content.mjs`.
 - Shared Japanese header/footer, canonical social metadata, robots normalization, and registry page JSON-LD: output from `node scripts/apply-layout.mjs`.
-- Jobs: source spreadsheet or GAS -> `assets/data/jobs/jobs.json` static cache -> UI, with GAS as runtime fallback.
-- Community: source spreadsheet or GAS -> `assets/data/community/posts.json` static cache -> UI, with GAS as runtime fallback.
+- Jobs: source spreadsheet or GAS -> scheduled/manual sync -> sanitized `assets/data/jobs/jobs.json` -> Home/list/detail UI.
+- Community: source spreadsheet or GAS -> scheduled/manual sync -> sanitized `assets/data/community/posts.json` -> Home/list/detail UI.
 - Directory data for Eat, Shopping, and Medical: Contents GAS at runtime, with static seed/guidance cards in committed HTML.
 - Editorial images: committed under `/assets/img/...` or `/assets/images/...`.
 - User-submitted Community images: Drive thumbnail URLs only; do not move them into editorial image folders.
@@ -35,7 +35,7 @@ This repository publishes a static GitHub Pages site. Generated HTML and JSON ar
 - Do not add claims about an employer, legal details, operators, VAT IDs, or addresses that are not present in the source data.
 - Do not add `JobPosting` schema until a listing source has complete employer and application data.
 - Do not add `Event` schema for uncertain or recurring event-guide pages without a real ISO `startDate`.
-- Keep static JSON first and GAS fallback second for Jobs and Community.
+- Keep generated static JSON as the only public display source for Jobs and Community. GAS remains available to sync, form submission, and private management workflows only.
 - Configure the unified Apps Script source with `MASTER_SPREADSHEET_ID` as the recommended Script Property. `COMMUNITY_SPREADSHEET_ID` is supported only as a legacy fallback; the active spreadsheet is used only when both trimmed property values are empty.
 - Jobs date display and sorting must use existing fields in this order: `last_modified_at`, `updated_at`, `published_at` / `posted_at`, then `created_at`. Do not copy `created_at` into `published_at`; keep the labels distinct in the UI.
 - Static seed/guidance cards are not public listings. They explain how to evaluate a directory or listing while runtime data loads.

@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import vm from "node:vm";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -40,13 +39,6 @@ function isActiveJob(job) {
   return Number.isFinite(expires) && expires >= Date.now();
 }
 
-function readFallbackJobs() {
-  const source = fs.readFileSync(path.join(root, "assets/js/jobs-fallback.js"), "utf8");
-  const sandbox = { window: {} };
-  vm.runInNewContext(source, sandbox, { filename: "assets/js/jobs-fallback.js" });
-  return sandbox.window.JCONNECT_FALLBACK_JOBS || [];
-}
-
 function validateRows(items, sourceName, publicCache = false) {
   const ids = new Set();
   items.forEach((job, index) => {
@@ -77,7 +69,17 @@ function validateRows(items, sourceName, publicCache = false) {
 
 const jobsCache = JSON.parse(fs.readFileSync(path.join(root, "assets/data/jobs/jobs.json"), "utf8"));
 validateRows(jobsCache.items || [], "assets/data/jobs/jobs.json", true);
-validateRows(readFallbackJobs(), "assets/js/jobs-fallback.js");
+
+const home = fs.readFileSync(path.join(root, "germany/ja/index.html"), "utf8");
+const listing = fs.readFileSync(path.join(root, "germany/ja/jobs/index.html"), "utf8");
+const detail = fs.readFileSync(path.join(root, "germany/ja/jobs/detail/index.html"), "utf8");
+for (const [label, source] of [["Home", home], ["Jobs list", listing], ["Jobs detail", detail]]) {
+  if (!source.includes("/assets/data/jobs/jobs.json")) problems.push(`${label} does not use generated public Jobs JSON.`);
+  if (/GAS_FALLBACK_TIMEOUT_MS|trying GAS fallback|JOBS_API_URL/.test(source)) problems.push(`${label} still contains a Jobs GAS display fallback.`);
+}
+if (!detail.includes("この求人は見つからないか、現在公開されていません。") || !detail.includes('noindex, follow')) {
+  problems.push("Jobs detail lacks the safe non-public/noindex state.");
+}
 
 if (problems.length) {
   console.error("Jobs validation failed:");

@@ -399,6 +399,12 @@ function validateProductionFixPage(url, html, rel) {
   if (languageTriggerCount > 1) {
     problems.push(`${rel} contains duplicate header language triggers.`);
   }
+  if (normalizedUrl.startsWith('/germany/ja/') && languageTriggerCount !== 0) {
+    problems.push(`${rel} exposes a language switcher while only Japanese is active.`);
+  }
+  if (normalizedUrl.startsWith('/germany/ja/') && /hreflang=["'](?:en|de)["']/i.test(html)) {
+    problems.push(`${rel} exposes inactive English/German hreflang alternates.`);
+  }
 
   if (['/germany/ja/jobs/', '/germany/ja/jobs/posting/', '/germany/ja/news/', '/germany/ja/events/'].includes(normalizedUrl) && /#f7f3ee/i.test(html)) {
     problems.push(`${rel} should not use old beige theme-color #f7f3ee.`);
@@ -424,8 +430,8 @@ function validateProductionFixPage(url, html, rel) {
     if (!html.includes('/assets/js/community-shared.js')) {
       problems.push(`${rel} must load shared Community post data for Home cards.`);
     }
-    if (!html.includes('/assets/js/jobs-shared.js') || !html.includes('/assets/js/jobs-fallback.js')) {
-      problems.push(`${rel} must load shared Jobs data/fallback helpers for Home Jobs cards.`);
+    if (!html.includes('/assets/js/jobs-shared.js')) {
+      problems.push(`${rel} must load the shared Jobs data helper for Home Jobs cards.`);
     }
     if (!html.includes('id="homeCommunityCards"') || !html.includes('data-community-posts')) {
       problems.push(`${rel} must render Home Community cards from a data-marked container.`);
@@ -433,8 +439,11 @@ function validateProductionFixPage(url, html, rel) {
     if (!html.includes('id="homeJobsCards"') || !html.includes('data-home-jobs')) {
       problems.push(`${rel} must render Home Jobs cards from a data-marked container.`);
     }
-    if (!/buildDirectoryUrl\(\{\s*sheet:\s*dataSources\.directorySheets\.jobs/i.test(html)) {
-      problems.push(`${rel} Home Jobs render path must use the shared jobs data source.`);
+    if (!/staticData\?\.jobs|staticData\.jobs/i.test(html) || !html.includes('/assets/data/jobs/jobs.json')) {
+      problems.push(`${rel} Home Jobs render path must use generated public Jobs JSON.`);
+    }
+    if (/buildDirectoryUrl\(\{\s*sheet:\s*dataSources\.directorySheets\.jobs/i.test(html)) {
+      problems.push(`${rel} Home Jobs render path must not fetch Jobs directly from GAS.`);
     }
     const newsSection = html.match(/<section\b[^>]*id=["']news-events["'][\s\S]*?<\/section>/i)?.[0] || '';
     if (!newsSection.includes('/germany/ja/events/')) {

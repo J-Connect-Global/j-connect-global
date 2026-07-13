@@ -99,15 +99,6 @@
             </span>
           </button>
         </form>
-        <details class="header-language header-language-menu" aria-label="言語切り替え">
-          <summary class="header-language-trigger">
-            <span>Language</span>
-            <span class="header-language-current" lang="ja">日本語</span>
-          </summary>
-          <div class="language-dropdown">
-            <a href="/germany/ja/community/" class="active" aria-current="page" lang="ja">日本語</a>
-          </div>
-        </details>
         <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="ダークモードに切り替え">
           <span class="theme-toggle-track" aria-hidden="true">
             <span class="theme-toggle-icon theme-toggle-sun">
@@ -364,12 +355,10 @@
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
     const COMMUNITY_STATIC_POSTS_URL = DATA_SOURCES.staticData?.communityPosts || "/assets/data/community/posts.json";
-    const COMMUNITY_POSTS_URL = DATA_SOURCES.buildCommunityUrl({ action: "getPosts" });
     const DATA_TIMEOUT_MS = 12000;
     const STATIC_DATA_TIMEOUT_MS = 5000;
-    const GAS_FALLBACK_TIMEOUT_MS = 8000;
     const DEFAULT_IMAGE = window.JCONNECT_IMAGE_FALLBACK?.DEFAULT_IMAGE || "/assets/img/placeholders/jconnect-default-card.webp";
-    const COMMUNITY_LIST_CACHE_KEY = "jconnectCommunityPostsCacheV2";
+    const COMMUNITY_LIST_CACHE_KEY = "jconnectCommunityPostsCacheV3";
     const COMMUNITY_LIST_CACHE_MAX_AGE_MS = 1000 * 60 * 60 * 6;
     const SUBCATEGORY_OPTIONS = {
       "売ります": ["帰国売り", "家具・家電", "生活用品", "子ども用品", "本・教材", "車・自転車", "その他"],
@@ -645,32 +634,6 @@
       return String(field(post, ["post_id", "postId", "id", "_id"]) || `community-${index + 1}`);
     }
 
-    function isLikelyTestPost(post) {
-      const shared = window.JCONNECT_COMMUNITY_SHARED;
-      if (typeof shared?.isLikelyTestPost === "function") return shared.isLikelyTestPost(post);
-
-      const title = String(field(post, ["title", "name", "subject"]) || "").trim();
-      const body = String(field(post, ["body", "description", "message", "content"]) || "").trim();
-      const city = String(field(post, ["city", "location", "area"]) || "").trim();
-      const region = String(field(post, ["region", "prefecture"]) || "").trim();
-      const compactTitle = title.replace(/\s+/g, "").toLowerCase();
-      const compactBody = body.replace(/\s+/g, "").toLowerCase();
-      const compactLocation = [city, region].join("").replace(/\s+/g, "").toLowerCase();
-      const joined = [title, body, city, region, post.tags].join(" ").toLowerCase();
-
-      if (/^(test|test\d+|teste|image test)$/i.test(title)) return true;
-      if (/^(テスト|テスト投稿\d*|再テスト投稿.*)$/i.test(title)) return true;
-      if (title.includes("テスト") || body.includes("テスト投稿")) return true;
-      if (/^(.)\1{5,}$/.test(compactTitle) && compactTitle === compactBody) return true;
-      if (/^[a-z]{1,4}$/i.test(title) && /^[a-z]{1,4}$/i.test(body)) return true;
-      if (joined.includes("image test")) return true;
-      if (joined.includes("システムの動作を確認")) return true;
-      if (joined.includes("テスト投稿です")) return true;
-      if (compactBody === "test" || compactBody === "teste" || compactBody === "etse" || compactBody === "テスト") return true;
-      if (compactLocation.includes("test") && (compactTitle.includes("test") || compactBody.includes("test"))) return true;
-      return false;
-    }
-
     function getDisplayCategoryRaw(post) {
       return [post.category1, post.category2]
         .filter(Boolean)
@@ -811,9 +774,9 @@
     }
 
     function isPublicBoardPost(post) {
-      if (post._status === "closed") return true;
-      if (post._status === "active") return !post._isExpired;
-      return false;
+      const shared = window.JCONNECT_COMMUNITY_SHARED;
+      if (typeof shared?.isPubliclyVisible === "function") return shared.isPubliclyVisible(post, false);
+      return post._status === "active" && !post._isExpired;
     }
 
     function formatDateTime(value) {
@@ -1138,11 +1101,16 @@
       if (!state.filtered.length) {
         els.cards.classList.toggle("grid-mode", state.viewMode === "grid");
         els.cards.innerHTML = "";
-        renderEmptyActions("filters");
-        els.emptyState.querySelector("h2").textContent = state.savedOnly && !state.saved.size ? "保存済みの投稿はまだありません。" : "条件に合う投稿はありません";
-        els.emptyState.querySelector("p").textContent = state.savedOnly && !state.saved.size
-          ? "気になる投稿を保存すると、ここからすぐに見返せます。"
-          : "条件を少し広げるか、絞り込みを解除してください。投稿したい場合は、上部の「投稿する」から作成できます。";
+        const noPublicPosts = state.posts.length === 0;
+        renderEmptyActions(noPublicPosts ? "public-empty" : "filters");
+        els.emptyState.querySelector("h2").textContent = noPublicPosts
+          ? "現在公開中の投稿はありません"
+          : state.savedOnly && !state.saved.size ? "保存済みの投稿はまだありません。" : "条件に合う投稿はありません";
+        els.emptyState.querySelector("p").textContent = noPublicPosts
+          ? "現在公開中の投稿はありません。最初の投稿を作成できます。"
+          : state.savedOnly && !state.saved.size
+            ? "気になる投稿を保存すると、ここからすぐに見返せます。"
+            : "条件を少し広げるか、絞り込みを解除してください。投稿したい場合は、上部の「投稿する」から作成できます。";
         els.emptyState.style.display = "block";
         return;
       }
@@ -1441,12 +1409,7 @@
     }
 
     async function fetchCommunityPostsData() {
-      try {
-        return assertCommunityPostsPayloadUsable(await fetchJson(COMMUNITY_STATIC_POSTS_URL, STATIC_DATA_TIMEOUT_MS));
-      } catch (staticError) {
-        console.warn("Community static posts load failed; trying GAS fallback:", COMMUNITY_STATIC_POSTS_URL, staticError);
-        return assertCommunityPostsPayloadUsable(await fetchJson(DATA_SOURCES.buildCommunityUrl({ action: "listPosts", includeClosed: "true" }), GAS_FALLBACK_TIMEOUT_MS));
-      }
+      return assertCommunityPostsPayloadUsable(await fetchJson(COMMUNITY_STATIC_POSTS_URL, STATIC_DATA_TIMEOUT_MS));
     }
 
     function readCommunityPostsCache() {
@@ -1477,7 +1440,7 @@
 
     function renderCommunityPostsPayload(data, sourceNotice = "") {
       const rows = DATA_SOURCES.normalizePayload(data);
-      state.posts = rows.map(normalizePost);
+      state.posts = rows.map(normalizePost).filter(isPublicBoardPost);
       state.loading = false;
       state.loadError = false;
       state.sourceNotice = sourceNotice;
@@ -1502,6 +1465,14 @@
         return;
       }
 
+      if (mode === "public-empty") {
+        actions.innerHTML = `
+          <a class="btn btn-primary" href="./post/">最初の投稿を作成する</a>
+          <a class="btn btn-secondary" href="/germany/ja/">トップページへ戻る</a>
+        `;
+        return;
+      }
+
       actions.innerHTML = `
         <button class="btn btn-primary" type="button" data-clear-empty>絞り込みを解除</button>
         <a class="btn btn-secondary" href="./post/">投稿する</a>
@@ -1511,7 +1482,7 @@
     async function loadPosts() {
       const cached = readCommunityPostsCache();
       if (cached) {
-        renderCommunityPostsPayload(cached.data, cached.isFresh ? "保存済みデータを表示中" : "保存済みデータを表示中");
+        renderCommunityPostsPayload(cached.data, cached.isFresh ? "保存済みデータを表示中" : "保存済みの古いデータを表示中");
       }
 
       state.loading = !cached;

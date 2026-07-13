@@ -9,7 +9,7 @@ import {
   assertOneManualShareButton,
   assertRouteReady,
   assertSharedLayout,
-  assertThreeSampleJobs,
+  assertAllActiveJobs,
   assertWcagTextContrast,
   eatFixture,
   fixtureCommunityDetailPath,
@@ -18,6 +18,7 @@ import {
   fixtureNoImageCommunityPost,
   fixturePhotoCommunityPost,
   installRuntimeDiagnostics,
+  jobsFixture,
   medicalFixture,
   openDataRoute,
   openRoute,
@@ -139,10 +140,10 @@ test("Community detail renders the requested fixture with one accessible share b
   await assertRouteReady(page);
 });
 
-test("Jobs renders exactly three sample listings", async ({ page }) => {
+test("Jobs renders every active listing", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/jobs/", "/assets/data/jobs/jobs.json");
-  await assertThreeSampleJobs(page);
-  await expect(page.locator("#resultsSummary")).toContainText("3件を表示中 / 全3件");
+  await assertAllActiveJobs(page);
+  await expect(page.locator("#resultsSummary")).toContainText(`${jobsFixture.items.length}件を表示中 / 全${jobsFixture.items.length}件`);
   const firstCard = page.locator("#cards .jobs-card[data-id]").first();
   const returnLink = firstCard.locator("[data-detail-page-link]");
   await firstCard.evaluate((element) => element.click());
@@ -178,10 +179,10 @@ test("Jobs renders exactly three sample listings", async ({ page }) => {
   await assertRouteReady(page);
 });
 
-test("sample Job detail has no application CTA or JobPosting JSON-LD", async ({ page }) => {
+test("Job detail renders without obsolete sample labels or unsupported JobPosting JSON-LD", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/jobs/detail/?id=a", "/assets/data/jobs/jobs.json");
   await expect(page.locator("#jobDetail h1")).toBeVisible();
-  await expect(page.locator("#jobDetail .directory-seed-label")).toHaveText("掲載見本・応募不可");
+  await expect(page.locator("#jobDetail .directory-seed-label")).toHaveCount(0);
   await expect(page.locator('#jobDetail a[href^="mailto:"]')).toHaveCount(0);
   await expect(page.getByRole("link", { name: /応募先にメールする|応募する|Apply/i })).toHaveCount(0);
   await expect(page.getByRole("button", { name: /応募先にメールする|応募する|Apply/i })).toHaveCount(0);
@@ -194,10 +195,10 @@ test("sample Job detail has no application CTA or JobPosting JSON-LD", async ({ 
   await assertRouteReady(page);
 });
 
-test("an excluded old Job id renders a useful noindex not-found state", async ({ page }) => {
+test("the fourth active Job is public and renders a detail page", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/jobs/detail/?id=d", "/assets/data/jobs/jobs.json");
-  await expect(page.locator("#jobDetail h1")).toHaveText("求人が見つかりませんでした");
-  await expect(page.locator("#jobDetail")).toContainText("指定された求人IDに一致する求人は見つかりませんでした");
+  await expect(page.locator("#jobDetail h1")).toBeVisible();
+  await expect(page.locator("#jobDetail")).toContainText("営業担当（食品）");
   const structuredData = await page.locator('script[type="application/ld+json"]').allTextContents();
   expect(structuredData.some((value) => /["']?JobPosting["']?/i.test(value))).toBe(false);
   await assertNoIndex(page);

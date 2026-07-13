@@ -167,9 +167,7 @@ const PUBLIC_JOB_FIELDS = [
   'apply_url', 'application_url', 'apply_method', 'company_url', 'source_url',
   'source_name', 'visa_support',
   'company_logo_url', 'logo_url', 'image_alt', 'start_date', 'publish_date',
-  'published_at', 'updated_at', 'created_at', 'last_modified_at', 'expires_at',
-  'listing_type', 'is_verified', 'employer_authorized_at', 'verified_at',
-  'is_indexable', 'last_reviewed_at'
+  'published_at', 'updated_at', 'created_at', 'last_modified_at', 'expires_at'
 ];
 
 const PUBLIC_DIRECTORY_FIELDS = [

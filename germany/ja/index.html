@@ -828,8 +828,8 @@
       }
 
       const selected = [...jobs].sort(jobsShared.sortNewestFirst);
-      const selectedMini = selected.slice(0, 3);
-      const selectedCards = selected.slice(0, 3);
+      const selectedMini = selected.slice(0, 4);
+      const selectedCards = selected.slice(0, 4);
 
       miniRoot.innerHTML = selectedMini.map((job, index) => {
         const href = jobsShared.getJobDetailPath(job);
@@ -839,7 +839,6 @@
           <a class="portal3-job-mini" href="${escapeHtml(href)}" data-job-id="${escapeHtml(job.id)}">
             <span class="portal3-job-icon">${iconSet[index % iconSet.length]}</span>
             <span>
-              ${jobsShared.isSampleJob(job) ? `<b class="directory-seed-label">掲載見本・応募不可</b>` : ""}
               <strong>${escapeHtml(job.position_title || "求人タイトル未設定")}</strong>
               <small>${escapeHtml(detail || "詳細ページで確認してください")}</small>
             </span>
@@ -854,7 +853,6 @@
         return `
           <a class="portal3-job-card" href="${escapeHtml(href)}" data-job-id="${escapeHtml(job.id)}">
             <span>${iconSet[index % iconSet.length]}</span>
-            ${jobsShared.isSampleJob(job) ? `<b class="directory-seed-label">掲載見本・応募不可</b>` : ""}
             <strong>${escapeHtml(job.position_title || "求人タイトル未設定")}</strong>
             <small>${escapeHtml(jobMeta(job) || "勤務地未設定")}</small>
             ${salary ? `<b>${escapeHtml(salary)}</b>` : ""}

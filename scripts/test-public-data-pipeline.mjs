@@ -5,7 +5,6 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   EXPECTED_API_VERSION,
-  SAMPLE_JOB_LIMIT,
   assertApiVersion,
   assertNoPrivateFields,
   assertNoLegacyEndpointOverrides,
@@ -26,9 +25,9 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (relative) => fs.readFileSync(path.join(root, relative), "utf8");
 const now = Date.parse("2026-07-13T12:00:00Z");
 
-const cappedSampleIds = capSafeIds(Array.from({ length: 55 }, (_, index) => `sample-${index + 1}`));
-assert.equal(cappedSampleIds.length, 50, "sample-limit safe IDs are not capped at 50");
-assert.equal(cappedSampleIds.at(-1), "sample-50");
+const cappedSafeIds = capSafeIds(Array.from({ length: 55 }, (_, index) => `excluded-${index + 1}`));
+assert.equal(cappedSafeIds.length, 50, "excluded safe IDs are not capped at 50");
+assert.equal(cappedSafeIds.at(-1), "excluded-50");
 
 const gasContractSource = read("apps-script/community-board-api.gs");
 const browserDataSources = read("assets/js/data-sources.js");
@@ -121,58 +120,48 @@ for (const name of ["COMMUNITY_API_URL", "CONTENTS_API_URL", "JOBS_API_URL", "DI
   assert.throws(() => assertNoLegacyEndpointOverrides({ [name]: "https://legacy.example/exec" }), new RegExp(name));
 }
 
-const sampleRows = ["a", "b", "c", "d"].map((id, index) => ({
+const activeJobRows = ["a", "b", "c", "d"].map((id, index) => ({
   id,
   status: "active",
-  listing_type: "sample",
   priority: index + 1,
-  position_title: `Sample ${id}`,
+  position_title: `Job ${id}`,
   application_email: `apply-${id}@example.com`,
   apply_url: `https://example.com/apply/${id}`
 }));
-const publicSamples = sampleRows
-  .map((row, index) => normalizeJob(row, index, classifyJob(row, now)))
-  .slice(0, SAMPLE_JOB_LIMIT);
-assert.equal(publicSamples.length, 3, "sample jobs were not capped at three");
-for (const sample of publicSamples) {
-  assert.equal(sample.listing_type, "sample");
-  assert.equal(sample.is_indexable, false);
-  assert.equal(sample.emit_job_posting, false);
-  assert.equal(Object.hasOwn(sample, "application_email"), false);
-  assert.equal(Object.hasOwn(sample, "apply_email"), false);
-  assert.equal(sample.apply_url, "");
-  assert.equal(sample.sample_label, "掲載見本・応募不可");
+const publicJobs = activeJobRows.map((row, index) => normalizeJob(row, index, classifyJob(row, now)));
+assert.equal(publicJobs.length, 4, "active Jobs were capped or suppressed");
+for (const job of publicJobs) {
+  for (const removedField of ["listing_type", "governance_defaulted", "is_verified", "is_indexable", "emit_job_posting", "sample_label"]) {
+    assert.equal(Object.hasOwn(job, removedField), false, `obsolete Job field remains: ${removedField}`);
+  }
+  assert.equal(Object.hasOwn(job, "application_email"), false);
+  assert.equal(Object.hasOwn(job, "apply_email"), false);
+  assert.match(job.apply_url, /^https:\/\/example\.com\/apply\//);
 }
-const legacyGovernance = normalizeJob({ id: "legacy", status: "active", position_title: "Legacy" }, 0, classifyJob({ status: "active" }, now));
-assert.equal(legacyGovernance.listing_type, "sample");
-assert.equal(legacyGovernance.governance_defaulted, true);
 const jobWithLogo = normalizeJob({
   id: "logo",
   status: "active",
-  listing_type: "sample",
   position_title: "Logo fixture",
   company_logo_url: "https://cdn.example.com/logo.webp"
-}, 0, classifyJob({ status: "active", listing_type: "sample" }, now));
+}, 0, classifyJob({ status: "active" }, now));
 assert.equal(jobWithLogo.company_logo_url, "https://cdn.example.com/logo.webp");
 assert.equal(jobWithLogo.image_url, jobWithLogo.company_logo_url);
 const jobWithUnsafeLogo = normalizeJob({
   id: "unsafe-logo",
   status: "active",
-  listing_type: "sample",
   position_title: "Unsafe logo fixture",
   logo_url: "javascript:alert(1)"
-}, 0, classifyJob({ status: "active", listing_type: "sample" }, now));
+}, 0, classifyJob({ status: "active" }, now));
 assert.equal(jobWithUnsafeLogo.logo_url, "");
 const hardenedRealJob = normalizeJob({
   id: "private@example.com",
   status: "active",
-  listing_type: "real",
   position_title: "Safe real example",
   slug: "private@example.com",
   detail_url: "mailto:private@example.com",
   apply_method: "Email private@example.com",
   apply_url: "https://example.com/apply#accessToken=private"
-}, 0, { listingType: "real", legacyDefault: false, indexable: true, emitJobPosting: true });
+}, 0, classifyJob({ status: "active" }, now));
 assert.equal(hardenedRealJob.id, "safe-real-example", "unsafe source ID was not replaced with a safe deterministic ID");
 assert.equal(hardenedRealJob.slug, "safe-real-example-safe-real-example", "unsafe source slug was not replaced with a safe deterministic slug");
 assert.equal(hardenedRealJob.detail_url, "");
@@ -186,34 +175,31 @@ for (const encodedPrivateMethod of [
   const encodedMethodJob = normalizeJob({
     id: "safe-encoded-method",
     status: "active",
-    listing_type: "real",
     position_title: "Safe encoded method",
     apply_method: encodedPrivateMethod
-  }, 0, { listingType: "real", legacyDefault: false, indexable: false, emitJobPosting: false });
+  }, 0, classifyJob({ status: "active" }, now));
   assert.equal(encodedMethodJob.apply_method, "", "encoded private application method was published");
   assert.throws(() => assertNoPrivateFields({ apply_method: encodedPrivateMethod }), /private application/);
 }
 const safeRelativeDetailJob = normalizeJob({
   id: "safe-detail",
   status: "active",
-  listing_type: "real",
   position_title: "Safe detail",
   detail_url: "/germany/ja/jobs/safe-detail/"
-}, 0, { listingType: "real", legacyDefault: false, indexable: false, emitJobPosting: false });
+}, 0, classifyJob({ status: "active" }, now));
 assert.equal(safeRelativeDetailJob.detail_url, "/germany/ja/jobs/safe-detail/");
 const internalTitlePost = normalizeCommunityPost({ status: "active", title: "Internal transfer" }, 0);
 assert.equal(internalTitlePost.id, "community-row-1", "private-marker title prevented the guaranteed Community row ID fallback");
 assert.equal(internalTitlePost.slug, "community-row-1", "private-marker title leaked into the Community slug");
 const internalTitleJob = normalizeJob(
-  { status: "active", listing_type: "sample", position_title: "Internal sales" },
+  { status: "active", position_title: "Internal sales" },
   0,
-  classifyJob({ status: "active", listing_type: "sample" }, now)
+  classifyJob({ status: "active" }, now)
 );
 assert.equal(internalTitleJob.id, "job-row-1", "private-marker title prevented the guaranteed Jobs row ID fallback");
 assert.equal(internalTitleJob.slug, "job-row-1", "private-marker title leaked into the Jobs slug");
-const unverifiedReal = classifyJob({ status: "active", listing_type: "real", is_verified: false }, now);
-assert.equal(unverifiedReal.eligible, false);
-assert.equal(unverifiedReal.indexable, false);
+assert.equal(classifyJob({ status: "active" }, now).eligible, true);
+assert.equal(classifyJob({ status: "inactive" }, now).eligible, false);
 
 const validDirectoryBase = {
   status: "active",
@@ -380,7 +366,7 @@ assert.match(syncSource, /for \(const \[, data, label\] of writes\) assertNoPriv
 assert.match(syncSource, /writeFile\(tempFile,[\s\S]*rename\(tempFile, file\)/, "changed JSON is not written to a same-directory temporary file before rename");
 assert.match(syncSource, /rm\(tempFile, \{ force: true \}\)/, "failed per-file replacement does not clean up its temporary file");
 assert.equal(/writeFile\(file,/.test(syncSource), false, "writeJsonIfChanged writes directly to its target");
-assert.match(syncSource, /excluded_safe_ids\.sample_limit\s*=\s*capSafeIds\(cappedSampleJobs\.map\(\(job\) => job\.id\)\)/, "sample-limit safe IDs do not use the shared 50-ID cap");
+assert.equal(/sample_limit|listing_type|governance_defaulted/.test(syncSource), false, "obsolete Job publication tiers remain in sync");
 assert.equal(/application_email|apply_email|public_email|contact_email/.test(jobsSharedSource), false, "shared Jobs normalization retains public email fields");
 assert.match(jobsSharedSource, /company_logo_url/);
 assert.match(commonImageSource, /source\.company_logo_url/);
@@ -430,9 +416,10 @@ assert.match(jobsInitialHead, /<title>求人詳細 \| 仕事・求人 \| J-Conne
 assert.match(jobsInitialHead, /<meta name="description" content="J-Connect Germanyの求人詳細表示ページです。">/);
 assert.match(jobsInitialHead, /<link rel="canonical" href="https:\/\/j-connect-global\.com\/germany\/ja\/jobs\/detail\/">/);
 assert.match(jobsInitialHead, /<meta name="robots" content="noindex, follow">/);
-assert.equal(/"@type"\s*:\s*"JobPosting"/.test(jobsDetail), false, "sample-capable dynamic detail emits JobPosting");
-for (const source of [home, jobsList, jobsDetail]) assert.match(source, /掲載見本・応募不可/);
-assert.match(jobsDetail, /isSample[\s\S]*応募・問い合わせ/);
+assert.equal(/"@type"\s*:\s*"JobPosting"/.test(jobsDetail), false, "dynamic detail emits unsupported JobPosting markup");
+for (const source of [home, jobsList, jobsDetail, jobsSharedSource]) {
+  assert.equal(/掲載見本|応募不可|isSampleJob|listing_type|sample_label/.test(source), false, "obsolete sample distinction remains in Jobs UI");
+}
 assert.match(communityList, /現在公開中の投稿はありません。最初の投稿を作成できます。/);
 assert.match(communityList, /条件に合う投稿はありません/);
 assert.match(communityList, /現在、投稿を表示できません/);
@@ -506,23 +493,18 @@ for (const [relative, payload] of committedDatasetPayloads) {
 }
 
 assert.equal(committedCommunity.count > 0, true, "Community must retain at least one public item");
-assert.equal(committedJobs.items.filter((item) => item.listing_type === "sample").length <= SAMPLE_JOB_LIMIT, true);
-assert.equal(
-  committedJobs.items.every((item) => item.listing_type !== "sample" || (!item.is_indexable && !item.emit_job_posting)),
-  true,
-  "sample Jobs became indexable or emitted JobPosting"
-);
-assert.match(home, /const selectedMini = selected\.slice\(0, 3\)/);
-assert.match(home, /const selectedCards = selected\.slice\(0, 3\)/);
+for (const job of committedJobs.items) {
+  for (const removedField of ["listing_type", "governance_defaulted", "is_verified", "is_indexable", "emit_job_posting", "sample_label"]) {
+    assert.equal(Object.hasOwn(job, removedField), false, `committed Job retains obsolete field ${removedField}`);
+  }
+}
+assert.match(home, /const selectedMini = selected\.slice\(0, 4\)/);
+assert.match(home, /const selectedCards = selected\.slice\(0, 4\)/);
 assert.equal(committedEat.items.some((item) => String(item.category2).toLowerCase() === "test"), false);
 
 if (committedCommunity.api_version === "unversioned-bootstrap") {
   assert.equal(committedCommunity.count, 6);
   assert.equal(committedCommunity.items.some((item) => item.title === "test 1"), true);
-  assert.equal(committedJobs.count, SAMPLE_JOB_LIMIT);
-  assert.deepEqual(committedJobs.items.map((item) => item.id), ["a", "b", "c"]);
-  assert.equal(committedJobs.validation.excluded_by_reason.sample_limit, 1);
-  assert.deepEqual(committedJobs.validation.excluded_safe_ids.sample_limit, ["d"]);
   assert.equal(committedShopping.validation.excluded_by_reason.missing_display_name, 299);
   assert.equal(committedMedical.count, 0);
   assert.equal(committedMedical.validation.excluded_by_reason.status_not_active, 23);

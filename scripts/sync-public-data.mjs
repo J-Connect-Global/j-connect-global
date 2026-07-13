@@ -9,8 +9,6 @@ const rootDir = path.resolve(__dirname, "..");
 const dataSourcesPath = path.join(rootDir, "assets/js/data-sources.js");
 
 export const EXPECTED_API_VERSION = "2026-07-13.1";
-export const SAMPLE_JOB_LIMIT = 3;
-export const OPEN_ENDED_JOB_REVIEW_DAYS = 30;
 
 const outputPaths = {
   communityPosts: path.join(rootDir, "assets/data/community/posts.json"),
@@ -67,11 +65,6 @@ function toNumber(value) {
   if (value === null || value === undefined || value === "") return 0;
   const number = Number(String(value).replace(/[^\d.-]/g, ""));
   return Number.isFinite(number) ? number : 0;
-}
-
-function toBoolean(value) {
-  if (value === true || value === false) return value;
-  return ["true", "1", "yes", "y"].includes(clean(value).toLowerCase());
 }
 
 function stableSlug(...parts) {
@@ -436,35 +429,9 @@ export function normalizeCommunityPost(row, index) {
   };
 }
 
-function jobListingType(row) {
-  const value = first(row, ["listing_type"]).toLowerCase();
-  return value === "sample" || value === "real" ? value : "";
-}
-
-function jobExpiryEligible(row, now) {
-  const expiresAt = first(row, ["expires_at", "deadline", "application_deadline"]);
-  if (expiresAt) {
-    const expires = Date.parse(expiresAt);
-    return Number.isFinite(expires) && expires >= now;
-  }
-  const reviewed = Date.parse(first(row, ["last_reviewed_at"]));
-  return Number.isFinite(reviewed) && reviewed <= now && now - reviewed <= OPEN_ENDED_JOB_REVIEW_DAYS * 86400000;
-}
-
-export function classifyJob(row, now = Date.now()) {
-  if (clean(first(row, ["status"])).toLowerCase() !== "active") return { eligible: false, reason: "status_not_active", listingType: jobListingType(row) };
-  const explicitType = jobListingType(row);
-  const listingType = explicitType || "sample";
-  if (listingType === "sample") {
-    return { eligible: true, reason: "", listingType, legacyDefault: !explicitType, indexable: false, emitJobPosting: false };
-  }
-  if (!toBoolean(firstRaw(row, ["is_verified"]))) return { eligible: false, reason: "real_not_verified", listingType, indexable: false, emitJobPosting: false };
-  if (!isValidDate(first(row, ["verified_at"]))) return { eligible: false, reason: "real_missing_verified_at", listingType, indexable: false, emitJobPosting: false };
-  const authorized = isValidDate(first(row, ["employer_authorized_at"])) || isSafeHttpUrl(first(row, ["source_url"]));
-  if (!authorized) return { eligible: false, reason: "real_missing_authorization", listingType, indexable: false, emitJobPosting: false };
-  if (!jobExpiryEligible(row, now)) return { eligible: false, reason: "real_expiry_policy_failed", listingType, indexable: false, emitJobPosting: false };
-  const indexable = toBoolean(firstRaw(row, ["is_indexable"])) && isValidDate(first(row, ["last_reviewed_at"]));
-  return { eligible: true, reason: "", listingType, legacyDefault: false, indexable, emitJobPosting: indexable };
+export function classifyJob(row) {
+  const eligible = clean(first(row, ["status"])).toLowerCase() === "active";
+  return { eligible, reason: eligible ? "" : "status_not_active" };
 }
 
 export function normalizeJob(row, index, classification = classifyJob(row)) {
@@ -476,20 +443,13 @@ export function normalizeJob(row, index, classification = classifyJob(row)) {
   const tags = first(row, ["tags", "skills", "skill_tags", "requirements_tags"]);
   const fallbackId = stableSlug(positionTitle, companyName, region) || `job-${index + 1}`;
   const id = safePublicId(first(row, ["job_id", "id"]), fallbackId, `job-row-${index + 1}`);
-  const isSample = classification.listingType === "sample";
-  const applyUrl = isSample ? "" : safeHttpUrl(first(row, ["apply_url", "application_url", "apply_link"]));
+  const applyUrl = safeHttpUrl(first(row, ["apply_url", "application_url", "apply_link"]));
   const logoUrl = normalizeImageSrc(first(row, ["company_logo_url", "logo_url", "image_url", "image"]));
   return {
     id, job_id: id,
     slug: safePublicSlug(first(row, ["slug", "job_slug"]), stableSlug(positionTitle, companyName, region, id), id),
     detail_url: safePublicUrl(first(row, ["detail_url", "detailUrl", "detail_page_url"]), { allowRelative: true }),
     status: "active", priority: toNumber(first(row, ["priority"])) || 999,
-    listing_type: classification.listingType,
-    governance_defaulted: Boolean(classification.legacyDefault),
-    is_verified: classification.listingType === "real",
-    is_indexable: Boolean(classification.indexable),
-    emit_job_posting: Boolean(classification.emitJobPosting),
-    sample_label: isSample ? "掲載見本・応募不可" : "",
     company_name: companyName, position_title: positionTitle,
     employment_type: first(row, ["employment_type", "employment", "type"]),
     city: first(row, ["city"]) || region, region,
@@ -504,16 +464,13 @@ export function normalizeJob(row, index, classification = classifyJob(row)) {
     job_details: details, description: details,
     requirements: first(row, ["requirements"]), benefits: first(row, ["benefits"]),
     apply_url: applyUrl, application_url: applyUrl,
-    apply_method: isSample ? "" : safePublicApplicationMethod(first(row, ["apply_method", "application_method", "how_to_apply"])),
+    apply_method: safePublicApplicationMethod(first(row, ["apply_method", "application_method", "how_to_apply"])),
     company_url: safeHttpUrl(first(row, ["company_url", "company_website", "company_site", "company_link"])),
     source_url: safeHttpUrl(first(row, ["source_url", "official_url", "url", "website"])),
     source_name: first(row, ["source_name", "source", "publisher"]),
     visa_support: first(row, ["visa_support", "visa"]),
     company_logo_url: logoUrl, logo_url: logoUrl, image_url: logoUrl,
     image_alt: first(row, ["image_alt", "imageAlt"]) || companyName || positionTitle,
-    verified_at: classification.listingType === "real" ? toIsoDate(first(row, ["verified_at"])) : "",
-    employer_authorized_at: classification.listingType === "real" ? toIsoDate(first(row, ["employer_authorized_at"])) : "",
-    last_reviewed_at: toIsoDate(first(row, ["last_reviewed_at"])),
     published_at: toIsoDate(first(row, ["published_at", "posted_at", "posted_date", "published"])),
     updated_at: toIsoDate(first(row, ["updated_at", "updated", "last_updated"])),
     created_at: toIsoDate(first(row, ["created_at", "created"])),
@@ -870,12 +827,7 @@ export async function main() {
     .map((row, index) => ({ row, index, classification: jobResults[index] }))
     .filter(({ classification }) => classification.eligible)
     .map(({ row, index, classification }) => normalizeJob(row, index, classification));
-  const realJobs = normalizedJobs.filter((job) => job.listing_type === "real");
-  const allSampleJobs = sortJobsNewest(normalizedJobs.filter((job) => job.listing_type === "sample"));
-  const sampleJobs = allSampleJobs.slice(0, SAMPLE_JOB_LIMIT);
-  const cappedSampleJobs = allSampleJobs.slice(SAMPLE_JOB_LIMIT);
-  const jobItems = sortJobsNewest([...realJobs, ...sampleJobs]);
-  const cappedSamples = cappedSampleJobs.length;
+  const jobItems = sortJobsNewest(normalizedJobs);
 
   const directoryItems = {};
   const directoryResults = {};
@@ -892,19 +844,8 @@ export async function main() {
 
   const reports = {
     community: validationReport(payloads.community, communityRows, communityResults, communityItems.length),
-    jobs: validationReport(payloads.jobs, jobRows, jobResults, jobItems.length, {
-      sample_limit: SAMPLE_JOB_LIMIT,
-      sample_limit_excluded_count: cappedSamples,
-      sample_generated_count: sampleJobs.length,
-      real_generated_count: realJobs.length
-    })
+    jobs: validationReport(payloads.jobs, jobRows, jobResults, jobItems.length)
   };
-  if (cappedSamples) {
-    reports.jobs.excluded_by_reason.sample_limit = cappedSamples;
-    reports.jobs.excluded_safe_ids.sample_limit = capSafeIds(cappedSampleJobs.map((job) => job.id));
-    reports.jobs.excluded_count += cappedSamples;
-    reports.jobs.eligible_count = jobItems.length;
-  }
   for (const dataset of Object.keys(directoryItems)) {
     reports[dataset] = validationReport(payloads[dataset], directoryRows[dataset], directoryResults[dataset], directoryItems[dataset].length, {
       map_eligible_count: directoryItems[dataset].filter((item) => item.latitude !== null && item.longitude !== null).length,

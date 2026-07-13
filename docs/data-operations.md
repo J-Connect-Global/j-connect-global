@@ -47,7 +47,7 @@ This repository publishes a static GitHub Pages site. Generated HTML and JSON ar
 
 ## Jobs publication policy
 
-The Jobs spreadsheet is the source of truth. A job is public when `status=active`. If `expires_at` is blank, the job remains public; if it is supplied, it must be a valid date that has not passed. All other statuses, including `inactive`, `draft`, `pending`, `hidden`, and `deleted`, are non-public.
+The Jobs spreadsheet is the source of truth. Every row with exact `status=active` is public, without a sample/real distinction or a generated-count cap. All other statuses, including `inactive`, `draft`, `pending`, `hidden`, and `deleted`, are non-public. `/germany/ja/` shows at most four Jobs; `/germany/ja/jobs/` shows every active Job.
 
 The browser, sync, and validator never infer a job's status from its company name, title, description, email address, URL, or any other content. Private review fields `contact_name` and `contact_email` are never copied to public JSON. Public application and source destinations must be safe HTTP(S) URLs (or a safe same-origin detail path); email addresses and credential-bearing or management URLs are removed from public output.
 
@@ -73,7 +73,7 @@ Use this final header order:
 | `visa_support` | Optional. |
 | `updated_at` | Recommended when `published_at` is absent. |
 | `published_at` | Recommended when `updated_at` is absent. |
-| `expires_at` | Optional; a supplied date must be valid and unexpired to publish. |
+| `expires_at` | Optional display information; publication is controlled only by exact `status=active`. |
 | `source_url` | Optional public HTTP(S) source link. |
 
 Run `node scripts/sync-public-data.mjs` followed by `node scripts/validate-jobs.mjs`, then review the generated `assets/data/jobs/jobs.json` before committing.

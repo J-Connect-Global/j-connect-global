@@ -9,6 +9,7 @@ import {
   assertApiVersion,
   assertNoPrivateFields,
   assertNoLegacyEndpointOverrides,
+  capSafeIds,
   classifyJob,
   communityPublicationDate,
   isPublicCommunityPost,
@@ -24,6 +25,10 @@ import {
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (relative) => fs.readFileSync(path.join(root, relative), "utf8");
 const now = Date.parse("2026-07-13T12:00:00Z");
+
+const cappedSampleIds = capSafeIds(Array.from({ length: 55 }, (_, index) => `sample-${index + 1}`));
+assert.equal(cappedSampleIds.length, 50, "sample-limit safe IDs are not capped at 50");
+assert.equal(cappedSampleIds.at(-1), "sample-50");
 
 const gasContractSource = read("apps-script/community-board-api.gs");
 const browserDataSources = read("assets/js/data-sources.js");
@@ -158,6 +163,54 @@ const jobWithUnsafeLogo = normalizeJob({
   logo_url: "javascript:alert(1)"
 }, 0, classifyJob({ status: "active", listing_type: "sample" }, now));
 assert.equal(jobWithUnsafeLogo.logo_url, "");
+const hardenedRealJob = normalizeJob({
+  id: "private@example.com",
+  status: "active",
+  listing_type: "real",
+  position_title: "Safe real example",
+  slug: "private@example.com",
+  detail_url: "mailto:private@example.com",
+  apply_method: "Email private@example.com",
+  apply_url: "https://example.com/apply#accessToken=private"
+}, 0, { listingType: "real", legacyDefault: false, indexable: true, emitJobPosting: true });
+assert.equal(hardenedRealJob.id, "safe-real-example", "unsafe source ID was not replaced with a safe deterministic ID");
+assert.equal(hardenedRealJob.slug, "safe-real-example-safe-real-example", "unsafe source slug was not replaced with a safe deterministic slug");
+assert.equal(hardenedRealJob.detail_url, "");
+assert.equal(hardenedRealJob.apply_method, "");
+assert.equal(hardenedRealJob.apply_url, "");
+for (const encodedPrivateMethod of [
+  "Apply https%3A%2F%2Fuser%3Apassword%40example.com%2Fpublic",
+  "Apply https%3A%2F%2F10.0.0.1%2Fpublic",
+  "Apply %2F%2F127.0.0.1%2Fpublic"
+]) {
+  const encodedMethodJob = normalizeJob({
+    id: "safe-encoded-method",
+    status: "active",
+    listing_type: "real",
+    position_title: "Safe encoded method",
+    apply_method: encodedPrivateMethod
+  }, 0, { listingType: "real", legacyDefault: false, indexable: false, emitJobPosting: false });
+  assert.equal(encodedMethodJob.apply_method, "", "encoded private application method was published");
+  assert.throws(() => assertNoPrivateFields({ apply_method: encodedPrivateMethod }), /private application/);
+}
+const safeRelativeDetailJob = normalizeJob({
+  id: "safe-detail",
+  status: "active",
+  listing_type: "real",
+  position_title: "Safe detail",
+  detail_url: "/germany/ja/jobs/safe-detail/"
+}, 0, { listingType: "real", legacyDefault: false, indexable: false, emitJobPosting: false });
+assert.equal(safeRelativeDetailJob.detail_url, "/germany/ja/jobs/safe-detail/");
+const internalTitlePost = normalizeCommunityPost({ status: "active", title: "Internal transfer" }, 0);
+assert.equal(internalTitlePost.id, "community-row-1", "private-marker title prevented the guaranteed Community row ID fallback");
+assert.equal(internalTitlePost.slug, "community-row-1", "private-marker title leaked into the Community slug");
+const internalTitleJob = normalizeJob(
+  { status: "active", listing_type: "sample", position_title: "Internal sales" },
+  0,
+  classifyJob({ status: "active", listing_type: "sample" }, now)
+);
+assert.equal(internalTitleJob.id, "job-row-1", "private-marker title prevented the guaranteed Jobs row ID fallback");
+assert.equal(internalTitleJob.slug, "job-row-1", "private-marker title leaked into the Jobs slug");
 const unverifiedReal = classifyJob({ status: "active", listing_type: "real", is_verified: false }, now);
 assert.equal(unverifiedReal.eligible, false);
 assert.equal(unverifiedReal.indexable, false);
@@ -172,6 +225,7 @@ const validDirectoryBase = {
 };
 assert.deepEqual(validateDirectoryRow({ ...validDirectoryBase, category2: "test" }, "eat").reason, "placeholder_category");
 assert.deepEqual(validateDirectoryRow({ ...validDirectoryBase, url: "not-http" }, "eat").reason, "invalid_public_url");
+assert.deepEqual(validateDirectoryRow({ ...validDirectoryBase, website: "https://example.com/%2561dmin/review" }, "eat").reason, "invalid_public_url");
 assert.deepEqual(validateDirectoryRow({ ...validDirectoryBase, name: "" }, "shopping").reason, "missing_display_name");
 assert.deepEqual(validateDirectoryRow({ ...validDirectoryBase, status: "" }, "medical").reason, "status_not_active");
 assert.deepEqual(validateDirectoryRow({ ...validDirectoryBase, website: "", source_url: "" }, "medical").reason, "missing_provenance_url");
@@ -180,6 +234,21 @@ assert.equal(validateDirectoryRow(validDirectoryBase, "medical").eligible, true)
 const normalizedDirectory = normalizeDirectoryItem({ ...validDirectoryBase, notes_internal: "private", map_url: "javascript:alert(1)" }, "eat", 0);
 assert.equal(normalizedDirectory.map_url, "");
 assert.equal(Object.hasOwn(normalizedDirectory, "notes_internal"), false);
+const privateMarkerDirectory = normalizeDirectoryItem({
+  ...validDirectoryBase,
+  id: "",
+  name: "Admin",
+  title: "Admin"
+}, "eat", 0);
+assert.equal(privateMarkerDirectory.id, "eat-row-1", "private-marker name prevented the guaranteed Directory row ID fallback");
+assert.equal(privateMarkerDirectory.slug, "eat-row-1", "private-marker name leaked into the Directory slug");
+const unsafeImagePost = normalizeCommunityPost({
+  post_id: "safe-image-post",
+  status: "active",
+  title: "Unsafe image",
+  image_url_1: "/%61dmin/private.webp"
+}, 0);
+assert.equal(unsafeImagePost.image_url, "");
 
 const dateFixture = {
   created_at: "2026-07-01T09:00:00Z",
@@ -210,16 +279,79 @@ for (const key of [
   assert.equal(Object.hasOwn(publicPost, key), false, `private field was emitted: ${key}`);
 }
 assert.equal(assertNoPrivateFields(publicPost), true);
-for (const key of ["contact_email", "reviewer_email", "manage_url", "spreadsheet_id", "moderation_status"]) {
+for (const key of [
+  "contact_email", "reviewer_email", "manage_url", "spreadsheet_id", "moderation_status",
+  "apiKey", "authorization_code", "credential", "signature", "password",
+  "contactName", "manageUrl", "adminNotes", "approvalStatus", "submissionKey", "notesInternal"
+]) {
   assert.throws(() => assertNoPrivateFields({ [key]: "private" }), new RegExp(key));
 }
+assert.equal(assertNoPrivateFields({
+  validation: {
+    excluded_by_reason: { real_missing_authorization: 1 },
+    excluded_safe_ids: { real_missing_authorization: ["job-safe"] }
+  }
+}), true, "public validation reason labels were treated as private fields");
+assert.throws(
+  () => assertNoPrivateFields({ validation: { excluded_by_reason: { contact_email: "private@example.com" } } }),
+  /non-negative integer/
+);
+assert.throws(
+  () => assertNoPrivateFields({ validation: { excluded_by_reason: { camelCaseReason: 1 } } }),
+  /safe reason label/
+);
+assert.throws(
+  () => assertNoPrivateFields({ validation: { excluded_safe_ids: { hidden: Array.from({ length: 51 }, (_, index) => `safe-${index}`) } } }),
+  /capped at 50/
+);
+assert.throws(
+  () => assertNoPrivateFields({ validation: { excluded_safe_ids: { hidden: [123] } } }),
+  /safe string ID/
+);
 for (const privateUrl of [
   "https://example.com/community/manage/?token=private",
   "https://user:password@example.com/public",
-  "/admin/review/"
+  "/admin/review/",
+  "/%61dmin/review/",
+  "/%2561dmin/review/",
+  "https://example.com/#access_token=private",
+  "https://example.com/#refresh-token=private",
+  "https://example.com/?accessToken=private",
+  "https://example.com/?%2561ccess_token=private",
+  "https://example.com/?authorization_code=private",
+  "https://example.com/?X-Amz-Credential=private&X-Amz-Signature=private",
+  "https://example.com/?sig=private",
+  "https://example.com/out?next=https%3A%2F%2Fother.example%2Fadmin%3Faccess_token%3Dprivate",
+  "https://example.com/out?next=https%3A%2F%2Fother.example%2Fadmin%3Fview%3Dreview",
+  "https://example.com/out?next=http%3A%2F%2F192.168.1.20%2Freview",
+  "https://example.com/out?next=%2F%2F127.0.0.1%2Freview",
+  "https://example.com\\admin\\review",
+  "https://example.com/apply?candidate=private@example.com",
+  "http://127.0.0.1/admin",
+  "http://192.168.1.20/public",
+  "http://[::1]/public",
+  "http://[::ffff:192.168.1.20]/public",
+  "http://[fec0::1]/public",
+  "http://[ff02::1]/public",
+  "https://service.internal/public"
 ]) {
-  assert.throws(() => assertNoPrivateFields({ public_url: privateUrl }), /private/);
+  assert.throws(() => assertNoPrivateFields({ public_url: privateUrl }), /private|unsafe|non-public/);
 }
+assert.throws(
+  () => assertNoPrivateFields({ images: ["https://example.com/public.webp#api_key=private"] }),
+  /private|unsafe/
+);
+assert.throws(() => assertNoPrivateFields({ detail_url: "mailto:private@example.com" }), /non-public/);
+assert.throws(() => assertNoPrivateFields({ apply_method: "Email private@example.com" }), /private application/);
+assert.throws(
+  () => assertNoPrivateFields({ apply_method: "Apply at https://example.com/#access_token=private" }),
+  /private application/
+);
+assert.throws(() => assertNoPrivateFields({ id: "private@example.com" }), /unsafe public identifier/);
+assert.throws(() => assertNoPrivateFields({ placeId: "private@example.com" }), /unsafe public identifier/);
+assert.throws(() => assertNoPrivateFields({ slug: "https://example.com/manage?token=private" }), /unsafe public slug/);
+assert.throws(() => assertNoPrivateFields({ slug: "manage-token-secret" }), /unsafe public slug/);
+assert.throws(() => assertNoPrivateFields({ validation: { excluded_safe_ids: { hidden: ["manage_token_secret"] } } }), /unsafe public identifier/);
 assert.equal(assertNoPrivateFields({ body: "/admin/review/?token=content-is-not-a-url-field" }), true);
 
 const runtimeFiles = [
@@ -245,6 +377,10 @@ const jobsSharedSource = read("assets/js/jobs-shared.js");
 const commonImageSource = read("assets/js/common.js");
 assert.equal(syncSource.includes(".filter((item) => item.title || item.body)"), false, "Community sync still suppresses rows based on content");
 assert.match(syncSource, /for \(const \[, data, label\] of writes\) assertNoPrivateFields\(data, label\);[\s\S]*for \(const \[file, data, label\] of writes\)/, "public outputs are not all validated before the first write");
+assert.match(syncSource, /writeFile\(tempFile,[\s\S]*rename\(tempFile, file\)/, "changed JSON is not written to a same-directory temporary file before rename");
+assert.match(syncSource, /rm\(tempFile, \{ force: true \}\)/, "failed per-file replacement does not clean up its temporary file");
+assert.equal(/writeFile\(file,/.test(syncSource), false, "writeJsonIfChanged writes directly to its target");
+assert.match(syncSource, /excluded_safe_ids\.sample_limit\s*=\s*capSafeIds\(cappedSampleJobs\.map\(\(job\) => job\.id\)\)/, "sample-limit safe IDs do not use the shared 50-ID cap");
 assert.equal(/application_email|apply_email|public_email|contact_email/.test(jobsSharedSource), false, "shared Jobs normalization retains public email fields");
 assert.match(jobsSharedSource, /company_logo_url/);
 assert.match(commonImageSource, /source\.company_logo_url/);
@@ -326,11 +462,13 @@ for (const relative of ["germany/ja/index.html", "germany/ja/community/index.htm
   assert.match(source, /<html lang="ja">/);
 }
 
+const committedDatasetPayloads = new Map();
 for (const relative of [
   "assets/data/community/posts.json", "assets/data/jobs/jobs.json", "assets/data/eat/items.json",
   "assets/data/shopping/items.json", "assets/data/medical/items.json"
 ]) {
   const payload = JSON.parse(read(relative));
+  committedDatasetPayloads.set(relative, payload);
   assert.equal(payload.count, payload.items.length, `${relative} count mismatch`);
   assert.equal(assertNoPrivateFields(payload), true, `${relative} exposes a private field`);
   if (payload.api_version === EXPECTED_API_VERSION) {
@@ -340,29 +478,58 @@ for (const relative of [
     assert.match(payload.source, /^legacy-gas-bootstrap:/, `${relative} bootstrap source label is unsafe`);
   }
 }
-for (const relative of ["assets/data/community/categories.json", "assets/data/jobs/categories.json"]) {
+for (const [relative, itemRelative] of [
+  ["assets/data/community/categories.json", "assets/data/community/posts.json"],
+  ["assets/data/jobs/categories.json", "assets/data/jobs/jobs.json"]
+]) {
   const payload = JSON.parse(read(relative));
   assert.equal(assertNoPrivateFields(payload), true, `${relative} exposes a private field`);
   assert.equal(Array.isArray(payload.groups), true, `${relative} is missing category groups`);
+  assert.equal(payload.api_version, committedDatasetPayloads.get(itemRelative).api_version, `${relative} version does not match ${itemRelative}`);
+  assert.equal(payload.count, committedDatasetPayloads.get(itemRelative).count, `${relative} count does not match ${itemRelative}`);
 }
-const committedCommunity = JSON.parse(read("assets/data/community/posts.json"));
-assert.equal(committedCommunity.count, 6);
-assert.equal(committedCommunity.items.some((item) => item.title === "test 1"), true);
-const committedJobs = JSON.parse(read("assets/data/jobs/jobs.json"));
-assert.equal(committedJobs.count, SAMPLE_JOB_LIMIT);
-assert.deepEqual(committedJobs.items.map((item) => item.id), ["a", "b", "c"]);
-assert.equal(committedJobs.items.every((item) => item.listing_type === "sample" && !item.is_indexable && !item.emit_job_posting), true);
-assert.equal(committedJobs.validation.excluded_by_reason.sample_limit, 1);
-assert.deepEqual(committedJobs.validation.excluded_safe_ids.sample_limit, ["d"]);
+const committedVersions = new Set([...committedDatasetPayloads.values()].map((payload) => payload.api_version));
+assert.equal(committedVersions.size, 1, "committed public datasets contain mixed versions");
+const committedCommunity = committedDatasetPayloads.get("assets/data/community/posts.json");
+const committedJobs = committedDatasetPayloads.get("assets/data/jobs/jobs.json");
+const committedEat = committedDatasetPayloads.get("assets/data/eat/items.json");
+const committedShopping = committedDatasetPayloads.get("assets/data/shopping/items.json");
+const committedMedical = committedDatasetPayloads.get("assets/data/medical/items.json");
+
+for (const [relative, payload] of committedDatasetPayloads) {
+  const report = payload.validation;
+  assert.equal(report.generated_count, payload.count, `${relative} generated_count mismatch`);
+  assert.equal(report.generated_count + report.excluded_count, report.source_count, `${relative} report counts do not reconcile`);
+  for (const ids of Object.values(report.excluded_safe_ids || {})) {
+    assert.equal(Array.isArray(ids) && ids.length <= 50, true, `${relative} exposes uncapped excluded safe IDs`);
+  }
+}
+
+assert.equal(committedCommunity.count > 0, true, "Community must retain at least one public item");
+assert.equal(committedJobs.items.filter((item) => item.listing_type === "sample").length <= SAMPLE_JOB_LIMIT, true);
+assert.equal(
+  committedJobs.items.every((item) => item.listing_type !== "sample" || (!item.is_indexable && !item.emit_job_posting)),
+  true,
+  "sample Jobs became indexable or emitted JobPosting"
+);
 assert.match(home, /const selectedMini = selected\.slice\(0, 3\)/);
 assert.match(home, /const selectedCards = selected\.slice\(0, 3\)/);
-const committedEat = JSON.parse(read("assets/data/eat/items.json"));
 assert.equal(committedEat.items.some((item) => String(item.category2).toLowerCase() === "test"), false);
-const committedShopping = JSON.parse(read("assets/data/shopping/items.json"));
-assert.equal(committedShopping.validation.excluded_by_reason.missing_display_name, 299);
-const committedMedical = JSON.parse(read("assets/data/medical/items.json"));
-assert.equal(committedMedical.count, 0);
-assert.equal(committedMedical.validation.excluded_by_reason.status_not_active, 23);
+
+if (committedCommunity.api_version === "unversioned-bootstrap") {
+  assert.equal(committedCommunity.count, 6);
+  assert.equal(committedCommunity.items.some((item) => item.title === "test 1"), true);
+  assert.equal(committedJobs.count, SAMPLE_JOB_LIMIT);
+  assert.deepEqual(committedJobs.items.map((item) => item.id), ["a", "b", "c"]);
+  assert.equal(committedJobs.validation.excluded_by_reason.sample_limit, 1);
+  assert.deepEqual(committedJobs.validation.excluded_safe_ids.sample_limit, ["d"]);
+  assert.equal(committedShopping.validation.excluded_by_reason.missing_display_name, 299);
+  assert.equal(committedMedical.count, 0);
+  assert.equal(committedMedical.validation.excluded_by_reason.status_not_active, 23);
+} else {
+  assert.equal(committedCommunity.api_version, EXPECTED_API_VERSION);
+  assert.equal([...committedDatasetPayloads.values()].every((payload) => payload.source.startsWith("master-gas:")), true);
+}
 
 assert.match(syncWorkflow, /assets\/data\/eat\/\*\.json/);
 assert.match(syncWorkflow, /commit_hash/);
@@ -403,6 +570,22 @@ try {
   const first = fs.readFileSync(output, "utf8");
   assert.equal(await writeJsonIfChanged(output, payload), false);
   assert.equal(fs.readFileSync(output, "utf8"), first, "unchanged public payload rewrote generated_at");
+  assert.deepEqual(fs.readdirSync(tempDir), ["posts.json"], "unchanged write left a temporary file");
+
+  const replacement = { source: "test", count: 0, items: [] };
+  assert.equal(await writeJsonIfChanged(output, replacement), true);
+  assert.equal(JSON.parse(fs.readFileSync(output, "utf8")).count, 0, "changed payload was not replaced");
+  assert.deepEqual(fs.readdirSync(tempDir), ["posts.json"], "successful replacement left a temporary file");
+
+  const blockedTarget = path.join(tempDir, "blocked.json");
+  fs.mkdirSync(blockedTarget);
+  await assert.rejects(() => writeJsonIfChanged(blockedTarget, payload));
+  assert.equal(fs.statSync(blockedTarget).isDirectory(), true, "failed replacement changed the target");
+  assert.equal(
+    fs.readdirSync(tempDir).some((name) => name.startsWith(".blocked.json.") && name.endsWith(".tmp")),
+    false,
+    "failed replacement left its same-directory temporary file"
+  );
 } finally {
   fs.rmSync(tempDir, { recursive: true, force: true });
 }

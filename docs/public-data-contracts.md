@@ -8,7 +8,7 @@ The browser does not use GAS for normal public rendering. The canonical Web App 
 
 ## API version decision
 
-The public contract version is `2026-07-13.1`. `PUBLIC_DATA_API_VERSION` in `apps-script/community-board-api.gs` and `EXPECTED_API_VERSION` in `scripts/sync-public-data.mjs` must match. GAS adds `api_version` to every JSON response. Sync validates all five responses before writing any file, so a missing, stale, or invalid version cannot partially replace a known-good snapshot. Dataset-specific legacy endpoint environment variables are rejected; `MASTER_API_URL` is only a whole-Master development override.
+The public contract version is `2026-07-13.1`. `PUBLIC_DATA_API_VERSION` in `apps-script/community-board-api.gs` and `EXPECTED_API_VERSION` in `scripts/sync-public-data.mjs` must match. GAS adds `api_version` to every JSON response. Sync validates all five responses and prepares all seven artifacts before replacing any file, so a missing, stale, or invalid version leaves the known-good snapshot untouched. Each changed artifact then uses **per-file atomic replacement**: it is written completely to a unique temporary file in the target directory, renamed over the target, and the temporary file is removed if writing or renaming fails. The seven files are **not one filesystem transaction**; a later filesystem failure can leave earlier per-file replacements in place. Dataset-specific legacy endpoint environment variables are rejected; `MASTER_API_URL` is only a whole-Master development override.
 
 Apps Script source changes do not update the deployed Web App automatically. Every change to the canonical `.gs` source requires a manual **Deploy -> Manage deployments -> Edit -> New version -> Deploy** operation against the existing deployment. Do not create or configure a replacement Web App URL.
 
@@ -94,6 +94,6 @@ Primary references: [§ 5 DDG](https://www.gesetze-im-internet.de/ddg/__5.html),
 
 ## Explicitly re-scoped: Jobs detail initial HTML
 
-PR #286 does **not** satisfy job-specific initial HTML or metadata. The query route `/germany/ja/jobs/detail/?id=...` starts with the generic title, description, canonical `/germany/ja/jobs/detail/`, and `noindex, follow`; JavaScript then hydrates valid records or a safe invalid state. No pre-rendering or `JobPosting` is claimed in this PR.
+This PR does **not** satisfy job-specific initial HTML or metadata. The query route `/germany/ja/jobs/detail/?id=...` starts with the generic title, description, canonical `/germany/ja/jobs/detail/`, and `noindex, follow`; JavaScript then hydrates valid records or a safe invalid state. No pre-rendering or `JobPosting` is claimed in this PR.
 
 A separate follow-up PR must generate a stable URL and initial HTML for every eligible public job, including sample records. Its acceptance boundary is: job title and summary in initial HTML; job-specific title, description, and canonical; sample `noindex` with no `JobPosting`; eligible real-job robots/indexation policy; sitemap entries only where indexation is allowed; invalid/expired URL behavior; and rollback by removing the generated job-detail artifacts without changing the public-data pipeline.

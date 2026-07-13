@@ -8,10 +8,7 @@ on:
         required: true
         type: string
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+permissions: {}
 
 # This fixed repository-wide group is shared by every caller. Deployments run
 # one at a time, and each queued run rechecks main before it can publish.
@@ -23,6 +20,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
 
     steps:
       - name: Checkout exact deployment commit
@@ -66,6 +66,7 @@ jobs:
         run: |
           node --input-type=module <<'NODE'
           import { readFile } from "node:fs/promises";
+          import { assertNoPrivateFields } from "./scripts/sync-public-data.mjs";
 
           const itemDatasets = [
             ["community", "assets/data/community/posts.json"],
@@ -80,7 +81,6 @@ jobs:
           ];
           const expectedApiVersion = "2026-07-13.1";
           const bootstrapApiVersion = "unversioned-bootstrap";
-          const forbiddenPrivateField = /(?:email|contact_name|reviewer|manage_|token|secret|admin_|internal|moderation|submission_key|approval_|spreadsheet|notes_internal)/i;
 
           function fail(message) {
             throw new Error(message);
@@ -121,38 +121,6 @@ jobs:
               fail(`${file} is missing generated_at.`);
             }
             assertNonNegativeInteger(payload.count, `${file} count`);
-          }
-
-          function assertNoPrivateFields(value, path = "payload") {
-            if (typeof value === "string") {
-              const text = value.trim();
-              const fieldName = path.split(".").at(-1) || "";
-              if (/(?:url|href|link|endpoint|image|logo)/i.test(fieldName) && /^(?:https?:\/\/|\/)/i.test(text)) {
-                const url = new URL(text, "https://j-connect.invalid");
-                const privatePath = /\/(?:manage|admin|internal)(?:\/|$)/i.test(url.pathname);
-                const privateParameter = [...url.searchParams.keys()].some((key) => {
-                  const name = key.toLowerCase();
-                  return ["token", "secret", "password", "authorization", "auth", "api_key", "apikey", "access_token", "refresh_token", "manage_token", "key"].includes(name)
-                    || /(?:^|_)(?:token|secret|password)(?:_|$)/.test(name);
-                });
-                const privateFragment = /(?:^|[&#])(?:token|secret|password|manage_token)=/i.test(url.hash.replace(/^#/, ""));
-                if (url.username || url.password || privatePath || privateParameter || privateFragment) {
-                  fail(`${path} contains a private management URL or credential.`);
-                }
-              }
-              return;
-            }
-            if (Array.isArray(value)) {
-              value.forEach((entry, index) => assertNoPrivateFields(entry, `${path}[${index}]`));
-              return;
-            }
-            if (!value || typeof value !== "object") return;
-            for (const [key, child] of Object.entries(value)) {
-              if (forbiddenPrivateField.test(key)) {
-                fail(`${path} contains forbidden private field ${key}.`);
-              }
-              assertNoPrivateFields(child, `${path}.${key}`);
-            }
           }
 
           const payloads = new Map();
@@ -285,6 +253,10 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 25
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

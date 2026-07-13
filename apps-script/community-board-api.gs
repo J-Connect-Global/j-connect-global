@@ -190,6 +190,17 @@ const PUBLIC_DIRECTORY_FIELDS = [
   'last_reviewed_at', 'reviewed_at', 'priority'
 ];
 
+const PUBLIC_PRIVATE_URL_PARAMETER_NAMES = [
+  'token', 'secret', 'password', 'authorization', 'auth', 'api_key', 'apikey',
+  'access_token', 'refresh_token', 'manage_token', 'authorization_code', 'auth_code',
+  'oauth_code', 'credential', 'credentials', 'signature', 'sig', 'key',
+  'email', 'contact_email', 'reviewer_email'
+];
+const PUBLIC_PRIVATE_IDENTIFIER_PATTERN = /(?:^|[._'&-])(?:manage|admin|internal|token|secret|password|email|spreadsheet|moderation)(?:[._'&-]|$)/i;
+const PUBLIC_EMAIL_ADDRESS_PATTERN = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i;
+const PUBLIC_SAFE_ID_PATTERN = /^[\p{L}\p{N}][\p{L}\p{N}._'&-]{0,159}$/u;
+const PUBLIC_SAFE_SLUG_PATTERN = /^[\p{L}\p{N}][\p{L}\p{N}._'&-]{0,239}$/u;
+
 const REQUIRED_COMMUNITY_HEADERS = [
   'post_id',
   'status',
@@ -488,8 +499,13 @@ function publicPostPayload_(post) {
   PUBLIC_POST_FIELDS.forEach((field) => {
     if (Object.prototype.hasOwnProperty.call(post, field)) payload[field] = cleanCell_(post[field]);
   });
-  payload.id = cleanCell_(post.post_id || post.id || payload.id);
-  payload.post_id = cleanCell_(post.post_id || post.id || payload.post_id);
+  const postId = safePublicId_(post.post_id || post.id || payload.id, `community-row-${post._rowNumber || 'unknown'}`);
+  payload.id = postId;
+  payload.post_id = postId;
+  ['image_url_1', 'image_url_2', 'image_url_3'].forEach((field) => {
+    if (Object.prototype.hasOwnProperty.call(payload, field)) payload[field] = safePublicUrl_(payload[field], true);
+  });
+  if (Object.prototype.hasOwnProperty.call(payload, 'images')) payload.images = safePublicImages_(payload.images);
   payload.status = status;
   payload.isActive = status === 'active';
   payload.isClosed = status === 'closed';
@@ -511,6 +527,188 @@ function cleanCell_(value) {
   if (value instanceof Date) return value.toISOString();
   if (value === null || value === undefined) return '';
   return value;
+}
+
+function normalizePublicUrlParameterName_(value) {
+  const text = String(value || '');
+  const normalized = typeof text.normalize === 'function' ? text.normalize('NFKC') : text;
+  return normalized
+    .replace(/([a-z0-9])([A-Z])/g, '$1_$2')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '_')
+    .replace(/^_+|_+$/g, '');
+}
+
+function isPrivatePublicUrlParameter_(value) {
+  const name = normalizePublicUrlParameterName_(value);
+  return PUBLIC_PRIVATE_URL_PARAMETER_NAMES.indexOf(name) !== -1
+    || /(?:^|_)(?:token|secret|password|credential|signature)(?:_|$)/.test(name);
+}
+
+function repeatedlyDecodePublicUrl_(value) {
+  let decoded = String(value || '').trim();
+  try {
+    for (let index = 0; index < 3; index += 1) {
+      const next = decodeURIComponent(decoded);
+      if (next === decoded) break;
+      decoded = next;
+    }
+  } catch (error) {
+    return '';
+  }
+  return typeof decoded.normalize === 'function' ? decoded.normalize('NFKC') : decoded;
+}
+
+function parsePublicIpv4Part_(value) {
+  const text = String(value || '').toLowerCase();
+  if (/^0x[0-9a-f]+$/.test(text)) return parseInt(text.slice(2), 16);
+  if (/^0[0-7]+$/.test(text) && text.length > 1) return parseInt(text, 8);
+  if (/^\d+$/.test(text)) return parseInt(text, 10);
+  return NaN;
+}
+
+function canonicalPublicIpv4_(hostname) {
+  const parts = String(hostname || '').split('.');
+  if (!parts.length || parts.length > 4) return '';
+  const numbers = parts.map(parsePublicIpv4Part_);
+  if (numbers.some((part) => !Number.isFinite(part) || part < 0)) return '';
+  let value;
+  if (numbers.length === 1 && numbers[0] <= 0xffffffff) {
+    value = numbers[0];
+  } else if (numbers.length === 2 && numbers[0] <= 0xff && numbers[1] <= 0xffffff) {
+    value = numbers[0] * 0x1000000 + numbers[1];
+  } else if (numbers.length === 3 && numbers[0] <= 0xff && numbers[1] <= 0xff && numbers[2] <= 0xffff) {
+    value = numbers[0] * 0x1000000 + numbers[1] * 0x10000 + numbers[2];
+  } else if (numbers.length === 4 && numbers.every((part) => part <= 0xff)) {
+    value = numbers[0] * 0x1000000 + numbers[1] * 0x10000 + numbers[2] * 0x100 + numbers[3];
+  } else {
+    return '';
+  }
+  return [
+    Math.floor(value / 0x1000000) % 0x100,
+    Math.floor(value / 0x10000) % 0x100,
+    Math.floor(value / 0x100) % 0x100,
+    value % 0x100
+  ].join('.');
+}
+
+function isPrivatePublicUrlHost_(authority) {
+  let host = String(authority || '').trim().toLowerCase();
+  if (host.charAt(0) === '[') {
+    // Apps Script does not reliably expose WHATWG URL canonicalization here;
+    // fail closed rather than misclassifying an equivalent private IPv6 form.
+    return true;
+  } else {
+    host = host.replace(/:\d+$/, '');
+  }
+  host = host.replace(/\.$/, '');
+  if (!host || host === 'localhost' || /\.(?:localhost|local|internal)$/.test(host)) return true;
+  const canonicalIpv4 = canonicalPublicIpv4_(host);
+  if (canonicalIpv4) {
+    const octets = canonicalIpv4.split('.').map(Number);
+    const first = octets[0];
+    const second = octets[1];
+    return first === 0 || first === 10 || first === 127
+      || (first === 100 && second >= 64 && second <= 127)
+      || (first === 169 && second === 254)
+      || (first === 172 && second >= 16 && second <= 31)
+      || (first === 192 && second === 168)
+      || (first === 198 && (second === 18 || second === 19))
+      || first >= 224;
+  }
+  if (host === '::' || host === '::1' || /^(?:fc|fd|ff)/.test(host) || /^fe[89a-f]/.test(host)) return true;
+  const mapped = host.match(/::ffff:(\d+\.\d+\.\d+\.\d+)$/i);
+  if (mapped) return isPrivatePublicUrlHost_(mapped[1]);
+  const mappedHex = host.match(/::(?:ffff:)?([0-9a-f]{1,4}):([0-9a-f]{1,4})$/i);
+  if (mappedHex) {
+    const high = parseInt(mappedHex[1], 16);
+    const low = parseInt(mappedHex[2], 16);
+    return isPrivatePublicUrlHost_(`${high >> 8}.${high & 255}.${low >> 8}.${low & 255}`);
+  }
+  return false;
+}
+
+function safePublicUrl_(value, allowRelative) {
+  const text = String(cleanCell_(value) || '').trim();
+  if (!text || /[\u0000-\u001F\u007F\s]/.test(text)) return '';
+  const isRelative = /^\/(?!\/)/.test(text);
+  if ((!isRelative || !allowRelative) && !/^https?:\/\/[^/?#]+/i.test(text)) return '';
+  if (!isRelative && !/^https?:\/\//i.test(text)) return '';
+
+  const decoded = repeatedlyDecodePublicUrl_(text);
+  if (!decoded) return '';
+  const normalizedDecoded = decoded.replace(/\\/g, '/');
+  if (/^https?:\/\/[^/?#]*@/i.test(normalizedDecoded)) return '';
+  if (PUBLIC_EMAIL_ADDRESS_PATTERN.test(normalizedDecoded)) return '';
+  const everyAuthority = /(?:https?:)?\/\/([^/?#&]+)/gi;
+  let authorityMatch;
+  while ((authorityMatch = everyAuthority.exec(normalizedDecoded)) !== null) {
+    if (authorityMatch[1].indexOf('@') !== -1 || isPrivatePublicUrlHost_(authorityMatch[1])) return '';
+  }
+  const authority = normalizedDecoded.match(/^https?:\/\/([^/?#]+)/i);
+  if (!isRelative && (!authority || isPrivatePublicUrlHost_(authority[1]))) return '';
+  const pathPart = normalizedDecoded
+    .replace(/^https?:\/\/[^/?#]*/i, '')
+    .split(/[?#]/, 1)[0];
+  if (/\/(?:manage|admin|internal)(?:[/?#]|$)/i.test(pathPart)) return '';
+  if (/\/(?:manage|admin|internal)(?:[/?#]|$)/i.test(normalizedDecoded)) return '';
+
+  const parameterPattern = /(?:^|[?&#;/])([^=?&#;/]+)=/g;
+  let match;
+  while ((match = parameterPattern.exec(normalizedDecoded)) !== null) {
+    if (isPrivatePublicUrlParameter_(match[1])) return '';
+  }
+  return text;
+}
+
+function safePublicApplicationMethod_(value) {
+  const text = String(cleanCell_(value) || '').trim();
+  if (!text || PUBLIC_EMAIL_ADDRESS_PATTERN.test(text)) return '';
+  const decoded = repeatedlyDecodePublicUrl_(text);
+  const normalizedDecoded = decoded.replace(/\\/g, '/');
+  if (!decoded || PUBLIC_EMAIL_ADDRESS_PATTERN.test(normalizedDecoded)
+      || /\/(?:manage|admin|internal)(?:[/?#]|$)/i.test(normalizedDecoded)) return '';
+  const authorityPattern = /(?:https?:)?\/\/([^/?#&]+)/gi;
+  let authorityMatch;
+  while ((authorityMatch = authorityPattern.exec(normalizedDecoded)) !== null) {
+    if (authorityMatch[1].indexOf('@') !== -1 || isPrivatePublicUrlHost_(authorityMatch[1])) return '';
+  }
+  const parameterPattern = /(?:^|[?&#;/])([^=?&#;/]+)=/g;
+  let parameterMatch;
+  while ((parameterMatch = parameterPattern.exec(normalizedDecoded)) !== null) {
+    if (isPrivatePublicUrlParameter_(parameterMatch[1])) return '';
+  }
+  const urls = text.match(/https?:\/\/[^\s<>"']+/gi) || [];
+  if (urls.some((url) => !safePublicUrl_(url, false))) return '';
+  return text;
+}
+
+function safePublicImages_(value) {
+  const values = Array.isArray(value)
+    ? value
+    : String(cleanCell_(value) || '').split(/[\n,;]/);
+  const safe = values.map((item) => safePublicUrl_(item, true)).filter(Boolean);
+  return Array.isArray(value) ? safe : safe.join(', ');
+}
+
+function isSafePublicId_(value) {
+  const raw = String(cleanCell_(value) || '').trim();
+  const candidate = typeof raw.normalize === 'function' ? raw.normalize('NFKC') : raw;
+  return PUBLIC_SAFE_ID_PATTERN.test(candidate) && !PUBLIC_PRIVATE_IDENTIFIER_PATTERN.test(candidate);
+}
+
+function isSafePublicSlug_(value) {
+  const raw = String(cleanCell_(value) || '').trim();
+  const candidate = typeof raw.normalize === 'function' ? raw.normalize('NFKC') : raw;
+  return PUBLIC_SAFE_SLUG_PATTERN.test(candidate) && !PUBLIC_PRIVATE_IDENTIFIER_PATTERN.test(candidate);
+}
+
+function safePublicId_(value, fallback) {
+  const raw = String(cleanCell_(value) || '').trim();
+  const candidate = typeof raw.normalize === 'function' ? raw.normalize('NFKC') : raw;
+  if (isSafePublicId_(candidate)) return candidate;
+  if (!isSafePublicId_(fallback)) throw new Error('Unable to derive a safe public identifier.');
+  return String(fallback);
 }
 
 function listPosts_(params) {
@@ -741,9 +939,21 @@ function publicJobPayload_(job) {
   PUBLIC_JOB_FIELDS.forEach((field) => {
     if (Object.prototype.hasOwnProperty.call(job, field)) payload[field] = cleanCell_(job[field]);
   });
-  const jobId = cleanCell_(job.job_id || job.id || '');
+  const jobId = safePublicId_(job.job_id || job.id || '', `job-row-${job._rowNumber || 'unknown'}`);
   payload.id = jobId;
   payload.job_id = jobId;
+  if (Object.prototype.hasOwnProperty.call(payload, 'slug')) {
+    payload.slug = isSafePublicSlug_(payload.slug) ? String(payload.slug).trim() : jobId;
+  }
+  ['apply_url', 'application_url', 'company_url', 'source_url'].forEach((field) => {
+    if (Object.prototype.hasOwnProperty.call(payload, field)) payload[field] = safePublicUrl_(payload[field], false);
+  });
+  ['detail_url', 'company_logo_url', 'logo_url'].forEach((field) => {
+    if (Object.prototype.hasOwnProperty.call(payload, field)) payload[field] = safePublicUrl_(payload[field], true);
+  });
+  if (Object.prototype.hasOwnProperty.call(payload, 'apply_method')) {
+    payload.apply_method = safePublicApplicationMethod_(payload.apply_method);
+  }
   payload.status = 'active';
   return payload;
 }
@@ -772,10 +982,23 @@ function publicDirectoryPayload_(row, sheetKey) {
     if (Object.prototype.hasOwnProperty.call(row, field)) payload[field] = cleanCell_(row[field]);
   });
   const idCandidate = String(cleanCell_(row.id || row.item_id || row.place_id || row.placeId || row.placeid || row.slug || '')).trim();
-  const safeId = !idCandidate || ['-', 'test', 'placeholder', 'dummy'].indexOf(idCandidate.toLowerCase()) !== -1
-    ? `${sheetKey}-${row._rowNumber}`
-    : idCandidate;
+  const placeholder = !idCandidate || ['-', 'test', 'placeholder', 'dummy'].indexOf(idCandidate.toLowerCase()) !== -1;
+  const safeId = safePublicId_(placeholder ? '' : idCandidate, `${sheetKey}-row-${row._rowNumber || 'unknown'}`);
   payload.id = safeId;
+  ['item_id', 'place_id', 'placeId', 'placeid'].forEach((field) => {
+    if (Object.prototype.hasOwnProperty.call(payload, field)) {
+      payload[field] = isSafePublicId_(payload[field]) ? String(payload[field]).trim() : safeId;
+    }
+  });
+  if (Object.prototype.hasOwnProperty.call(payload, 'slug')) {
+    payload.slug = isSafePublicSlug_(payload.slug) ? String(payload.slug).trim() : safeId;
+  }
+  [
+    'official_url', 'website', 'site_url', 'homepage', 'map_url', 'url',
+    'google_map_url', 'maps_url', 'source_url'
+  ].forEach((field) => {
+    if (Object.prototype.hasOwnProperty.call(payload, field)) payload[field] = safePublicUrl_(payload[field], false);
+  });
   payload.status = 'active';
   return payload;
 }

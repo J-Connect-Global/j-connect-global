@@ -12,15 +12,41 @@ function initNewsEventsHub() {
   initNewsEventsToc();
 }
 
+function renderSectionEmptyState(container, { show, title, body, resetAttribute, showReset }) {
+  if (!container) return;
+  container.hidden = !show;
+  if (!show) {
+    container.replaceChildren();
+    return;
+  }
+
+  const heading = document.createElement("h3");
+  heading.textContent = title;
+  const description = document.createElement("p");
+  description.textContent = body;
+  const children = [heading, description];
+
+  if (showReset) {
+    const actions = document.createElement("div");
+    actions.className = "news-events-empty-actions";
+    const button = document.createElement("button");
+    button.className = "living-reset-button news-events-reset";
+    button.type = "button";
+    button.setAttribute(resetAttribute, "");
+    button.textContent = "絞り込みを解除";
+    actions.append(button);
+    children.push(actions);
+  }
+
+  container.replaceChildren(...children);
+}
+
 function initNewsSection() {
   const hub = document.querySelector("[data-news-hub]");
   const grid = document.getElementById("newsGrid");
   if (!hub || !grid) return;
 
   const empty = hub.querySelector("[data-news-empty]");
-  const emptyTitle = hub.querySelector("[data-news-empty-title]");
-  const emptyBody = hub.querySelector("[data-news-empty-body]");
-  const emptyReset = hub.querySelector("[data-news-empty-reset]");
   const count = hub.querySelector("[data-news-count]");
   const reset = hub.querySelector("[data-news-reset]");
   const search = hub.querySelector("#newsSearch");
@@ -73,18 +99,19 @@ function initNewsSection() {
         : "現在公開中のニュース解説はありません。";
     }
 
-    if (empty) {
-      const showEmpty = totalCount === 0 || filtered.length === 0;
-      empty.hidden = !showEmpty;
-      grid.hidden = showEmpty && totalCount === 0;
-      if (emptyTitle) emptyTitle.textContent = totalCount === 0 || !hasFilters
+    const showEmpty = totalCount === 0 || filtered.length === 0;
+    grid.hidden = showEmpty && totalCount === 0;
+    renderSectionEmptyState(empty, {
+      show: showEmpty,
+      title: totalCount === 0 || !hasFilters
         ? "現在公開中のニュース解説はありません"
-        : "条件に合うニュースはありません";
-      if (emptyBody) emptyBody.textContent = totalCount === 0 || !hasFilters
+        : "条件に合うニュースはありません",
+      body: totalCount === 0 || !hasFilters
         ? "生活情報や注意点は、生活・手続きガイドからも確認できます。"
-        : "条件を少し広げるか、絞り込みを解除してください。";
-      if (emptyReset) emptyReset.hidden = !(totalCount > 0 && hasFilters);
-    }
+        : "条件を少し広げるか、絞り込みを解除してください。",
+      resetAttribute: "data-news-empty-reset",
+      showReset: totalCount > 0 && hasFilters
+    });
   }
 
   function resetNewsFilters() {
@@ -96,7 +123,9 @@ function initNewsSection() {
   if (search) search.addEventListener("input", updateNews);
   filters.forEach((filter) => filter.addEventListener("change", updateNews));
   if (reset) reset.addEventListener("click", resetNewsFilters);
-  if (emptyReset) emptyReset.addEventListener("click", resetNewsFilters);
+  if (empty) empty.addEventListener("click", (event) => {
+    if (event.target.closest("[data-news-empty-reset]")) resetNewsFilters();
+  });
 
   updateNews();
 }
@@ -107,9 +136,6 @@ function initEventSection() {
   if (!hub || !grid) return;
 
   const empty = hub.querySelector("[data-events-empty]");
-  const emptyTitle = hub.querySelector("[data-event-empty-title]");
-  const emptyBody = hub.querySelector("[data-event-empty-body]");
-  const emptyReset = hub.querySelector("[data-event-empty-reset]");
   const count = hub.querySelector("[data-event-count]");
   const reset = hub.querySelector("[data-event-reset]");
   const search = hub.querySelector("[data-event-search]");
@@ -158,18 +184,19 @@ function initEventSection() {
     cards.forEach((card) => setCardVisibility(card, visibleCards.includes(card)));
 
     if (count) count.textContent = `${totalCount}件中${visibleCards.length}件を表示しています`;
-    if (empty) {
-      const hasFilters = hasActiveFilter(state);
-      const showEmpty = visibleCards.length === 0;
-      empty.hidden = !showEmpty;
-      if (emptyTitle) emptyTitle.textContent = totalCount === 0
+    const hasFilters = hasActiveFilter(state);
+    const showEmpty = visibleCards.length === 0;
+    renderSectionEmptyState(empty, {
+      show: showEmpty,
+      title: totalCount === 0
         ? "現在公開中のイベント情報はありません"
-        : "条件に合うイベントはありません";
-      if (emptyBody) emptyBody.textContent = totalCount === 0
+        : "条件に合うイベントはありません",
+      body: totalCount === 0
         ? "新しいイベント情報が公開されたときに、この一覧へ追加されます。"
-        : "条件を少し広げるか、絞り込みを解除してください。";
-      if (emptyReset) emptyReset.hidden = !(totalCount > 0 && hasFilters);
-    }
+        : "条件を少し広げるか、絞り込みを解除してください。",
+      resetAttribute: "data-event-empty-reset",
+      showReset: totalCount > 0 && hasFilters
+    });
   }
 
   function resetEventFilters() {
@@ -181,7 +208,9 @@ function initEventSection() {
   if (search) search.addEventListener("input", updateEvents);
   filters.forEach((filter) => filter.addEventListener("change", updateEvents));
   if (reset) reset.addEventListener("click", resetEventFilters);
-  if (emptyReset) emptyReset.addEventListener("click", resetEventFilters);
+  if (empty) empty.addEventListener("click", (event) => {
+    if (event.target.closest("[data-event-empty-reset]")) resetEventFilters();
+  });
   updateEvents();
 }
 

@@ -36,6 +36,16 @@
   <meta name="twitter:title" content="交流・掲示板 | ドイツ在住日本人コミュニティ | J-Connect Germany">
   <meta name="twitter:description" content="ドイツ在住日本人向けの交流掲示板。売ります・買います、部屋、イベント、質問、友達募集、生活サポートの投稿を探せます。">
   <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
+  <script data-jconnect-query-robots>
+  (function () {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      if (params.has("id") || params.has("post")) {
+        document.querySelector('meta[name="robots"]').setAttribute("content", "noindex, follow");
+      }
+    } catch (error) {}
+  })();
+  </script>
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
@@ -282,11 +292,7 @@
           </article>
         </div>
 
-        <div class="empty-state jc-empty-state" id="emptyState" role="status" hidden>
-          <h2></h2>
-          <p></p>
-          <div class="hero-actions is-centered"></div>
-        </div>
+        <div class="empty-state jc-empty-state" id="emptyState" role="status" hidden></div>
       </section>
     </div>
 
@@ -1027,7 +1033,14 @@
       `).join("");
     }
 
+    function ensureEmptyStateContent() {
+      if (els.emptyState.querySelector("h2")) return;
+      els.emptyState.innerHTML = '<h2></h2><p></p><div class="hero-actions is-centered"></div>';
+    }
+
     function setEmptyStateVisible(visible) {
+      if (visible) ensureEmptyStateContent();
+      else els.emptyState.replaceChildren();
       els.emptyState.hidden = !visible;
       els.emptyState.style.display = visible ? "block" : "none";
     }
@@ -1454,6 +1467,7 @@
     }
 
     function renderEmptyActions(mode = "filters") {
+      ensureEmptyStateContent();
       const actions = els.emptyState.querySelector(".hero-actions");
       if (!actions) return;
 

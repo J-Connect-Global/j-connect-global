@@ -216,19 +216,19 @@
       <div class="toolbar jc-results-toolbar">
         <div class="results-meta">
           <h2 class="results-title">飲食</h2>
-          <div class="results-sub" id="resultsSummary">静的ガイドを表示中</div>
+          <div class="results-sub" id="resultsSummary">現在は基本ガイドを表示しています</div>
         </div>
         <div class="chips jc-active-chips" id="activeChips"></div>
       </div>
 
-      <div id="statusBox" class="status-box jc-loading-state">静的ガイドを表示中です。店舗データを読み込むと一覧が更新されます。</div>
+      <div id="statusBox" class="status-box jc-empty-state">現在は飲食店探しの基本ガイドを表示しています。店舗一覧は、公開データが利用できるときに表示されます。</div>
       <div id="cards" class="cards jc-result-grid" aria-live="polite">
         <article class="card jc-result-card directory-seed-card">
           <div class="card-body">
             <div class="card-main">
               <span class="directory-seed-label">探す前に確認</span>
               <h3 class="card-title jc-result-title">地図・営業時間・予約条件を公式情報で確認</h3>
-              <p class="card-desc">飲食店データを読み込む間、探し方の基本を表示しています。営業時間、定休日、予約、支払い方法、アレルギー対応は変更されることがあります。</p>
+              <p class="card-desc">店舗一覧は、公開データが利用できるときに表示されます。営業時間、定休日、予約、支払い方法、アレルギー対応は変更されることがあります。</p>
               <ul class="directory-seed-points">
                 <li>公式サイトや地図サービスで営業状況を確認</li>
                 <li>子連れ・大人数・ベジタリアン対応は事前確認</li>
@@ -714,8 +714,10 @@ function buildAddress(item) {
 
     function renderDirectoryEmptyState(isError = false) {
       renderDirectoryStatus({
-        title: "飲食店情報を準備中です",
-        body: "レストラン、カフェ、日本食材を扱うお店など、ドイツ生活で使いやすい飲食情報を順次整理しています。",
+        title: isError ? "飲食店情報を一時的に表示できません" : "現在は飲食店探しの基本ガイドを表示しています",
+        body: isError
+          ? "店舗データを取得できませんでした。時間をおいて再度お試しください。"
+          : "店舗一覧は、公開データが利用できるときに表示されます。営業時間、予約、支払い方法などの確認ポイントをご利用ください。",
         guidance: ["日本食・アジア食材", "子連れで行きやすいお店", "週末に使えるカフェ・レストラン"],
         isError,
         showRetry: isError
@@ -746,6 +748,8 @@ function buildAddress(item) {
       }
 
       els.statusBox.style.display = "none";
+      els.statusBox.className = "status-box";
+      els.statusBox.textContent = "";
 
       els.cards.innerHTML = filteredItems.map((item) => {
         const displayName = getDisplayNameParts(item);

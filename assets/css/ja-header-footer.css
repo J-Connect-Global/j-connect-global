@@ -100,9 +100,9 @@ body .site-header .header-actions{
 body .site-header .header-nav{
   display:flex;
   align-items:center;
-  justify-content:center;
+  justify-content:flex-start;
   gap:8px;
-  flex:1 1 auto;
+  flex:0 0 auto;
   min-width:0;
   flex-wrap:nowrap;
 }

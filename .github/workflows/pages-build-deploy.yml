@@ -1,0 +1,314 @@
+name: Build and deploy GitHub Pages
+
+on:
+  workflow_call:
+    inputs:
+      commit_sha:
+        description: Exact main commit to build and deploy
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# This fixed repository-wide group is shared by every caller. Deployments run
+# one at a time, and each queued run rechecks main before it can publish.
+concurrency:
+  group: github-pages-production
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout exact deployment commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.commit_sha }}
+          fetch-depth: 1
+
+      - name: Verify deployment commit is current main
+        shell: bash
+        env:
+          DEPLOY_COMMIT_SHA: ${{ inputs.commit_sha }}
+        run: |
+          if [[ ! "$DEPLOY_COMMIT_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "Deployment input must be a full commit SHA." >&2
+            exit 1
+          fi
+
+          checked_out_sha="$(git rev-parse HEAD)"
+          if [[ "$checked_out_sha" != "$DEPLOY_COMMIT_SHA" ]]; then
+            echo "Checked out $checked_out_sha instead of requested commit $DEPLOY_COMMIT_SHA." >&2
+            exit 1
+          fi
+
+          git fetch --no-tags --depth=1 origin refs/heads/main
+          current_main_sha="$(git rev-parse FETCH_HEAD)"
+          if [[ "$current_main_sha" != "$DEPLOY_COMMIT_SHA" ]]; then
+            echo "Refusing to build stale commit $DEPLOY_COMMIT_SHA; current main is $current_main_sha." >&2
+            exit 1
+          fi
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate Pages public-data artifacts
+        shell: bash
+        env:
+          EXPECTED_APPROVED_COMMUNITY_POST_ID: ${{ vars.EXPECTED_APPROVED_COMMUNITY_POST_ID }}
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFile } from "node:fs/promises";
+
+          const itemDatasets = [
+            ["community", "assets/data/community/posts.json"],
+            ["jobs", "assets/data/jobs/jobs.json"],
+            ["eat", "assets/data/eat/items.json"],
+            ["shopping", "assets/data/shopping/items.json"],
+            ["medical", "assets/data/medical/items.json"]
+          ];
+          const categoryDatasets = [
+            ["community", "assets/data/community/categories.json"],
+            ["jobs", "assets/data/jobs/categories.json"]
+          ];
+          const expectedApiVersion = "2026-07-13.1";
+          const bootstrapApiVersion = "unversioned-bootstrap";
+          const forbiddenPrivateField = /(?:email|contact_name|reviewer|manage_|token|secret|admin_|internal|moderation|submission_key|approval_|spreadsheet|notes_internal)/i;
+
+          function fail(message) {
+            throw new Error(message);
+          }
+
+          function assertObject(value, label) {
+            if (!value || typeof value !== "object" || Array.isArray(value)) {
+              fail(`${label} must be an object.`);
+            }
+          }
+
+          function assertNonNegativeInteger(value, label) {
+            if (!Number.isInteger(value) || value < 0) {
+              fail(`${label} must be a non-negative integer.`);
+            }
+          }
+
+          function validateCommonSchema(payload, file) {
+            assertObject(payload, file);
+            if (typeof payload.api_version !== "string" || !payload.api_version.trim()) {
+              fail(`${file} is missing api_version.`);
+            }
+            if (typeof payload.source !== "string" || !payload.source.trim()) {
+              fail(`${file} is missing source.`);
+            }
+            if (payload.api_version === expectedApiVersion) {
+              if (!payload.source.startsWith("master-gas:")) {
+                fail(`${file} labels a versioned snapshot with an incompatible source: ${payload.source}.`);
+              }
+            } else if (payload.api_version === bootstrapApiVersion) {
+              if (!payload.source.startsWith("legacy-gas-bootstrap:")) {
+                fail(`${file} bootstrap source label is incompatible: ${payload.source}.`);
+              }
+            } else {
+              fail(`${file} has unsupported api_version ${payload.api_version}.`);
+            }
+            if (typeof payload.generated_at !== "string" || !payload.generated_at.trim()) {
+              fail(`${file} is missing generated_at.`);
+            }
+            assertNonNegativeInteger(payload.count, `${file} count`);
+          }
+
+          function assertNoPrivateFields(value, path = "payload") {
+            if (typeof value === "string") {
+              const text = value.trim();
+              const fieldName = path.split(".").at(-1) || "";
+              if (/(?:url|href|link|endpoint|image|logo)/i.test(fieldName) && /^(?:https?:\/\/|\/)/i.test(text)) {
+                const url = new URL(text, "https://j-connect.invalid");
+                const privatePath = /\/(?:manage|admin|internal)(?:\/|$)/i.test(url.pathname);
+                const privateParameter = [...url.searchParams.keys()].some((key) => {
+                  const name = key.toLowerCase();
+                  return ["token", "secret", "password", "authorization", "auth", "api_key", "apikey", "access_token", "refresh_token", "manage_token", "key"].includes(name)
+                    || /(?:^|_)(?:token|secret|password)(?:_|$)/.test(name);
+                });
+                const privateFragment = /(?:^|[&#])(?:token|secret|password|manage_token)=/i.test(url.hash.replace(/^#/, ""));
+                if (url.username || url.password || privatePath || privateParameter || privateFragment) {
+                  fail(`${path} contains a private management URL or credential.`);
+                }
+              }
+              return;
+            }
+            if (Array.isArray(value)) {
+              value.forEach((entry, index) => assertNoPrivateFields(entry, `${path}[${index}]`));
+              return;
+            }
+            if (!value || typeof value !== "object") return;
+            for (const [key, child] of Object.entries(value)) {
+              if (forbiddenPrivateField.test(key)) {
+                fail(`${path} contains forbidden private field ${key}.`);
+              }
+              assertNoPrivateFields(child, `${path}.${key}`);
+            }
+          }
+
+          const payloads = new Map();
+          for (const [name, file] of [...itemDatasets, ...categoryDatasets]) {
+            let payload;
+            try {
+              payload = JSON.parse(await readFile(file, "utf8"));
+            } catch (error) {
+              fail(`${file} is missing or invalid JSON: ${error.message}`);
+            }
+            validateCommonSchema(payload, file);
+            assertNoPrivateFields(payload, file);
+            payloads.set(file, payload);
+          }
+
+          for (const [name, file] of itemDatasets) {
+            const payload = payloads.get(file);
+            if (!Array.isArray(payload.items)) fail(`${file} is missing items.`);
+            if (payload.count !== payload.items.length) {
+              fail(`${file} count mismatch: ${payload.count} != ${payload.items.length}.`);
+            }
+
+            assertObject(payload.validation, `${file} validation`);
+            const report = payload.validation;
+            for (const field of [
+              "source_count",
+              "explicitly_active_count",
+              "eligible_count",
+              "excluded_count",
+              "generated_count"
+            ]) {
+              assertNonNegativeInteger(report[field], `${file} validation.${field}`);
+            }
+            assertObject(report.excluded_by_reason, `${file} validation.excluded_by_reason`);
+            assertObject(report.excluded_safe_ids, `${file} validation.excluded_safe_ids`);
+
+            if (report.generated_count !== payload.count) {
+              fail(`${file} generated count mismatch: ${report.generated_count} != ${payload.count}.`);
+            }
+            if (report.generated_count + report.excluded_count !== report.source_count) {
+              fail(`${file} generated and excluded counts do not reconcile with source_count.`);
+            }
+            if (report.eligible_count > report.source_count) {
+              fail(`${file} eligible_count exceeds source_count.`);
+            }
+            if (report.explicitly_active_count > report.source_count) {
+              fail(`${file} explicitly_active_count exceeds source_count.`);
+            }
+            if (payload.count > report.eligible_count) {
+              fail(`${file} generated count exceeds eligible_count.`);
+            }
+
+            const shouldGenerateItems = report.source_count > 0 && report.eligible_count > 0;
+            if ((payload.count > 0) !== shouldGenerateItems) {
+              fail(`${file} generated count is inconsistent with source_count and eligible_count.`);
+            }
+
+            for (const [reason, ids] of Object.entries(report.excluded_safe_ids)) {
+              if (!Array.isArray(ids) || ids.length > 50) {
+                fail(`${file} excluded_safe_ids.${reason} must be an array capped at 50 IDs.`);
+              }
+            }
+
+            console.log(`${name}: ${payload.count} generated items (${payload.api_version})`);
+          }
+
+          for (const [name, file] of categoryDatasets) {
+            const payload = payloads.get(file);
+            const itemFile = itemDatasets.find(([dataset]) => dataset === name)[1];
+            const itemPayload = payloads.get(itemFile);
+            if (!Array.isArray(payload.groups)) fail(`${file} is missing groups.`);
+            for (const [index, group] of payload.groups.entries()) {
+              assertObject(group, `${file} groups[${index}]`);
+              if (typeof group.field !== "string" || !group.field.trim() || !Array.isArray(group.values)) {
+                fail(`${file} groups[${index}] must contain a field and values array.`);
+              }
+            }
+            if (payload.count !== itemPayload.count) {
+              fail(`${file} count does not match ${itemFile}.`);
+            }
+            if (payload.api_version !== itemPayload.api_version) {
+              fail(`${file} api_version does not match ${itemFile}.`);
+            }
+          }
+
+          const versions = new Set(itemDatasets.map(([, file]) => payloads.get(file).api_version));
+          if (versions.size !== 1) fail("Public datasets contain mixed api_version values.");
+
+          const expectedPostId = (process.env.EXPECTED_APPROVED_COMMUNITY_POST_ID || "").trim();
+          if (expectedPostId) {
+            const community = payloads.get("assets/data/community/posts.json");
+            const ids = community.items.map((item) => item.post_id || item.id).filter(Boolean);
+            if (!ids.includes(expectedPostId)) {
+              fail(`Configured approved Community post is missing from the Pages artifact: ${expectedPostId}`);
+            }
+          }
+          NODE
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build clean Pages artifact
+        shell: bash
+        run: |
+          rm -rf _site
+          mkdir -p _site
+
+          for dir in assets germany de en ja; do
+            if [ -d "$dir" ]; then
+              mkdir -p "_site/$dir"
+              cp -a "$dir/." "_site/$dir/"
+            fi
+          done
+
+          for file in index.html 404.html robots.txt sitemap.xml CNAME favicon.ico site.webmanifest manifest.json browserconfig.xml; do
+            if [ -f "$file" ]; then
+              cp "$file" "_site/$file"
+            fi
+          done
+
+          find . -maxdepth 1 -type f \( -name '*.webp' -o -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.svg' \) -exec cp {} _site/ \;
+          find _site -depth -name '.*' -exec rm -rf {} +
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout exact deployment commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.commit_sha }}
+          fetch-depth: 1
+
+      - name: Recheck deployment commit is current main
+        shell: bash
+        env:
+          DEPLOY_COMMIT_SHA: ${{ inputs.commit_sha }}
+        run: |
+          checked_out_sha="$(git rev-parse HEAD)"
+          git fetch --no-tags --depth=1 origin refs/heads/main
+          current_main_sha="$(git rev-parse FETCH_HEAD)"
+          if [[ "$checked_out_sha" != "$DEPLOY_COMMIT_SHA" || "$current_main_sha" != "$DEPLOY_COMMIT_SHA" ]]; then
+            echo "Refusing to deploy stale commit $DEPLOY_COMMIT_SHA; current main is $current_main_sha." >&2
+            exit 1
+          fi
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

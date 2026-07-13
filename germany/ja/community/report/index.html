@@ -233,15 +233,6 @@
             </span>
           </button>
         </form>
-        <details class="header-language header-language-menu" aria-label="言語切り替え">
-          <summary class="header-language-trigger">
-            <span>Language</span>
-            <span class="header-language-current" lang="ja">日本語</span>
-          </summary>
-          <div class="language-dropdown">
-            <a href="/germany/ja/community/report/" class="active" aria-current="page" lang="ja">日本語</a>
-          </div>
-        </details>
         <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="ダークモードに切り替え">
           <span class="theme-toggle-track" aria-hidden="true">
             <span class="theme-toggle-icon theme-toggle-sun">
@@ -301,6 +292,7 @@
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
     const GAS_URL = DATA_SOURCES.communityDataEndpoint;
+    const COMMUNITY_STATIC_POSTS_URL = DATA_SOURCES.staticData?.communityPosts || '/assets/data/community/posts.json';
     const reportForm = document.getElementById('reportForm');
     const reportTarget = document.getElementById('reportTarget');
     const reportTargetStatus = document.getElementById('reportTargetStatus');
@@ -330,11 +322,8 @@
         return;
       }
       try {
-        const url = DATA_SOURCES.buildCommunityUrl({ action: 'getPost', post_id: postId });
-        const response = await fetch(url, { headers: { Accept: 'application/json' } });
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const data = await response.json();
-        const post = data && data.ok ? data.post : null;
+        const data = await DATA_SOURCES.fetchJsonWithTimeout(COMMUNITY_STATIC_POSTS_URL, 5000);
+        const post = DATA_SOURCES.normalizePayload(data).find((item) => String(item.post_id || item.id || '') === String(postId));
         if (!post || !String(post.post_id || post.id || '').trim()) throw new Error('POST_NOT_FOUND');
 
         const canonicalId = String(post.post_id || post.id).trim();
@@ -354,7 +343,7 @@
         validTarget = true;
         setFormEnabled(true);
       } catch (error) {
-        console.error('Community report target load failed:', error);
+        console.error('Community report public JSON target load failed:', COMMUNITY_STATIC_POSTS_URL, error);
         showTargetError('投稿情報を確認できませんでした。投稿詳細ページから、もう一度お試しください。');
       }
     }

@@ -71,7 +71,8 @@ expect(gas.includes("Community administrator notification failed") && gas.includ
 expect(gas.includes("JOBS_PUBLIC_JSON_URL") && gas.includes("processWaitingApprovalNotifications"), "Jobs publication verification is not part of the shared processor.");
 expect(gas.includes("rejection_reason") && gas.includes("sendRejectionEmail_"), "Rejection persistence/email flow is missing.");
 
-expect(sync.includes('return status === "active"'), "Public sync must require exact status=active.");
+expect(sync.includes('status !== "active"') && sync.includes('isPublicCommunityPost'), "Public sync must require exact status=active.");
+expect(!sync.includes('isLikelyTestPost'), "Public sync still contains content-based Community publication filtering.");
 expect(!sync.includes('publicContactEmail(row, ["contact_email"'), "Private job contact_email is used as a public address.");
 expect(!sync.includes("contact_email: applicationEmail"), "Public job output still emits contact_email.");
 assertPublicJson("assets/data/community/posts.json");

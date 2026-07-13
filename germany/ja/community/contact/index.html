@@ -202,15 +202,6 @@
             </span>
           </button>
         </form>
-        <details class="header-language header-language-menu" aria-label="言語切り替え">
-          <summary class="header-language-trigger">
-            <span>Language</span>
-            <span class="header-language-current" lang="ja">日本語</span>
-          </summary>
-          <div class="language-dropdown">
-            <a href="/germany/ja/community/contact/" class="active" aria-current="page" lang="ja">日本語</a>
-          </div>
-        </details>
         <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="ダークモードに切り替え">
           <span class="theme-toggle-track" aria-hidden="true">
             <span class="theme-toggle-icon theme-toggle-sun">
@@ -249,22 +240,28 @@
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
     const GAS_URL = DATA_SOURCES.communityDataEndpoint;
+    const COMMUNITY_STATIC_POSTS_URL = DATA_SOURCES.staticData?.communityPosts || '/assets/data/community/posts.json';
     const postId = new URLSearchParams(location.search).get('post_id') || '';
     const form = document.getElementById('contactForm');
     const status = document.getElementById('contactStatus');
     document.getElementById('post_id').value = postId;
 
     async function checkPostStatus() {
-      if (!postId || !DATA_SOURCES.buildCommunityUrl) return;
+      const disableForm = (message) => {
+        form.querySelectorAll('input, textarea, button').forEach((item) => item.disabled = true);
+        status.textContent = message;
+      };
+      if (!postId) {
+        disableForm('連絡する投稿が指定されていません。投稿詳細ページから開いてください。');
+        return;
+      }
       try {
-        const data = await DATA_SOURCES.fetchJsonWithTimeout(DATA_SOURCES.buildCommunityUrl({ action: 'getPost', post_id: postId }), 8000);
-        const post = data && data.post;
-        if (post && String(post.status || '').toLowerCase() === 'closed') {
-          form.querySelectorAll('input, textarea, button').forEach((item) => item.disabled = true);
-          status.textContent = 'この投稿は募集終了のため、投稿者への連絡はできません。';
-        }
+        const data = await DATA_SOURCES.fetchJsonWithTimeout(COMMUNITY_STATIC_POSTS_URL, 5000);
+        const post = DATA_SOURCES.normalizePayload(data).find((item) => String(item.post_id || item.id || '') === String(postId));
+        if (!post) disableForm('この投稿は見つからないか、現在公開されていません。');
       } catch (error) {
-        console.warn('Community contact status check failed:', error);
+        console.warn('Community contact public JSON check failed:', COMMUNITY_STATIC_POSTS_URL, error);
+        disableForm('投稿情報を読み込めませんでした。時間をおいて再度お試しください。');
       }
     }
 

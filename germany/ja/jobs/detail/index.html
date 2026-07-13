@@ -302,15 +302,6 @@
           </span>
         </button>
       </form>
-      <details class="header-language header-language-menu" aria-label="言語切り替え">
-        <summary class="header-language-trigger">
-          <span>Language</span>
-          <span class="header-language-current" lang="ja">日本語</span>
-        </summary>
-        <div class="language-dropdown">
-          <a href="/germany/ja/jobs/detail/" class="active" aria-current="page" lang="ja">日本語</a>
-        </div>
-      </details>
       <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="ダークモードに切り替え">
         <span class="theme-toggle-track" aria-hidden="true">
           <span class="theme-toggle-icon theme-toggle-sun">
@@ -382,16 +373,13 @@
 
 <script src="/assets/js/common.js"></script>
 <script src="/assets/js/data-sources.js"></script>
-<script src="/assets/js/jobs-fallback.js"></script>
 <script src="/assets/js/jobs-shared.js"></script>
 <script>
 (function(){
   const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
   const JOBS_SHARED = window.JCONNECT_JOBS_SHARED;
   const JOBS_STATIC_URL = DATA_SOURCES.staticData?.jobs || "/assets/data/jobs/jobs.json";
-  const JOBS_API_URL = DATA_SOURCES.buildDirectoryUrl({ sheet: DATA_SOURCES.directorySheets.jobs, lang: "ja", status: "active" });
   const STATIC_DATA_TIMEOUT_MS = 5000;
-  const GAS_FALLBACK_TIMEOUT_MS = 8000;
   const detail = document.getElementById("jobDetail");
   const queryId = new URLSearchParams(location.search).get("id") || "";
 
@@ -572,7 +560,7 @@
     const title = kind === "missing" ? "求人IDが指定されていません" : "求人が見つかりませんでした";
     const body = kind === "missing"
       ? "求人カードまたは求人一覧から詳細ページを開いてください。"
-      : "指定されたIDの求人を確認できませんでした。掲載が終了したか、URLが変更された可能性があります。";
+      : "この求人は見つからないか、現在公開されていません。";
     detail.innerHTML = `
       <div class="jobs-detail-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人詳細</span></div>
       <h1>${escapeHtml(title)}</h1>
@@ -581,6 +569,19 @@
         <a class="jc-button is-primary" href="/germany/ja/jobs/">求人一覧へ戻る</a>
       </div>
     `;
+  }
+
+  function renderLoadError(){
+    detail.innerHTML = `
+      <div class="jobs-detail-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人詳細</span></div>
+      <h1>求人情報を読み込めませんでした</h1>
+      <p class="jobs-detail-summary">公開求人データを読み込めませんでした。時間をおいて再度お試しください。</p>
+      <div class="jobs-detail-actions">
+        <button class="jc-button is-primary" type="button" id="retryJobDetail">再読み込み</button>
+        <a class="jc-button" href="/germany/ja/jobs/">求人一覧へ戻る</a>
+      </div>
+    `;
+    detail.querySelector("#retryJobDetail")?.addEventListener("click", () => location.reload());
   }
 
   function renderJob(job){
@@ -670,12 +671,7 @@
   }
 
   async function fetchJobsData(){
-    try {
-      return await DATA_SOURCES.fetchJsonWithTimeout(JOBS_STATIC_URL, STATIC_DATA_TIMEOUT_MS);
-    } catch (staticError) {
-      console.warn("Jobs static detail data load failed; trying GAS fallback:", JOBS_STATIC_URL, staticError);
-      return await DATA_SOURCES.fetchJsonWithTimeout(JOBS_API_URL, GAS_FALLBACK_TIMEOUT_MS);
-    }
+    return await DATA_SOURCES.fetchJsonWithTimeout(JOBS_STATIC_URL, STATIC_DATA_TIMEOUT_MS);
   }
 
   async function loadJob(){
@@ -691,11 +687,8 @@
       if (remoteJob) renderJob(remoteJob);
       if (!remoteJob) renderEmpty("notfound");
     } catch (error) {
-      console.warn("Job detail load failed:", JOBS_STATIC_URL, error);
-      const fallbackJob = JOBS_SHARED.activeJobs(window.JCONNECT_FALLBACK_JOBS || [])
-        .find(job => [job.id, job.slug].some(value => clean(value).toLowerCase() === clean(queryId).toLowerCase()));
-      if (fallbackJob) renderJob(fallbackJob);
-      else renderEmpty("notfound");
+      console.warn("Job detail public JSON load failed:", JOBS_STATIC_URL, error);
+      renderLoadError();
     }
   }
 

@@ -1253,15 +1253,6 @@
           </span>
         </button>
       </form>
-      <details class="header-language header-language-menu" aria-label="言語切り替え">
-        <summary class="header-language-trigger">
-          <span>Language</span>
-          <span class="header-language-current" lang="ja">日本語</span>
-        </summary>
-        <div class="language-dropdown">
-          <a href="/germany/ja/community/post/" class="active" aria-current="page" lang="ja">日本語</a>
-        </div>
-      </details>
       <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="ダークモードに切り替え">
         <span class="theme-toggle-track" aria-hidden="true">
           <span class="theme-toggle-icon theme-toggle-sun">
@@ -1483,9 +1474,7 @@
 const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
 const GAS_URL = DATA_SOURCES.communityDataEndpoint;
 const COMMUNITY_STATIC_POSTS_URL = DATA_SOURCES.staticData?.communityPosts || '/assets/data/community/posts.json';
-const COMMUNITY_POSTS_URL = DATA_SOURCES.buildCommunityUrl({ action: 'getPosts' });
 const STATIC_DATA_TIMEOUT_MS = 5000;
-const GAS_FALLBACK_TIMEOUT_MS = 8000;
 const DEFAULT_IMAGE = window.JCONNECT_IMAGE_FALLBACK?.DEFAULT_IMAGE || "/assets/img/placeholders/jconnect-default-card.webp";
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const detailPostId = new URLSearchParams(location.search).get('id');
@@ -1761,12 +1750,7 @@ async function fetchJson(url, options) {
 }
 
 async function fetchCommunityPostsData() {
-  try {
-    return await DATA_SOURCES.fetchJsonWithTimeout(DATA_SOURCES.buildCommunityUrl({ action: 'listPosts', includeClosed: 'true', bypassCache: 'true' }), GAS_FALLBACK_TIMEOUT_MS);
-  } catch (gasError) {
-    console.warn('Community GAS detail data load failed; trying static fallback:', gasError);
-    return await DATA_SOURCES.fetchJsonWithTimeout(COMMUNITY_STATIC_POSTS_URL, STATIC_DATA_TIMEOUT_MS);
-  }
+  return await DATA_SOURCES.fetchJsonWithTimeout(COMMUNITY_STATIC_POSTS_URL, STATIC_DATA_TIMEOUT_MS);
 }
 
 function buildCategoryMap(rows) {
@@ -2684,9 +2668,9 @@ function isExpired(post) {
 }
 
 function isPublicBoardPost(post) {
-  if (post._status === 'closed') return true;
-  if (post._status === 'active') return !post._isExpired;
-  return false;
+  const shared = window.JCONNECT_COMMUNITY_SHARED;
+  if (typeof shared?.isPubliclyVisible === 'function') return shared.isPubliclyVisible(post, false);
+  return post._status === 'active' && !post._isExpired;
 }
 
 function normalizePost(post, index) {
@@ -2846,7 +2830,7 @@ function renderNotFound() {
     <section class="detail-not-found">
       <p class="section-kicker">POST NOT FOUND</p>
       <h1 class="section-title">投稿が見つかりません</h1>
-      <p class="section-desc">この投稿はまだ公開前、削除済み、またはURLが正しくない可能性があります。</p>
+      <p class="section-desc">この投稿は見つからないか、現在公開されていません。</p>
       <div class="hero-actions">
         <a class="pill-link" href="../">掲示板一覧へ戻る</a>
         <a class="pill-link" href="./">投稿フォームへ</a>

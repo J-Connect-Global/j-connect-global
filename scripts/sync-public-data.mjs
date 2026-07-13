@@ -7,7 +7,7 @@ const rootDir = path.resolve(__dirname, "..");
 const dataSourcesPath = path.join(rootDir, "assets/js/data-sources.js");
 
 // Public data cache flow: spreadsheet/GAS responses are normalized into
-// committed JSON first; browser UIs load that static JSON before trying GAS.
+// committed JSON. Public browser UIs only read these sanitized static files.
 const outputPaths = {
   communityPosts: path.join(rootDir, "assets/data/community/posts.json"),
   communityCategories: path.join(rootDir, "assets/data/community/categories.json"),
@@ -60,7 +60,7 @@ function stableSlug(...parts) {
   return slug || "";
 }
 
-function normalizePayload(payload) {
+export function normalizePayload(payload) {
   if (Array.isArray(payload)) return payload;
   if (!payload || typeof payload !== "object") return [];
   if (payload.ok === false) throw new Error(payload.error || "Data source returned ok:false");
@@ -137,42 +137,24 @@ function imageUrls(row) {
   return [...new Set(values.flatMap(splitMediaValue).map(normalizeImageSrc).filter(Boolean))];
 }
 
-function isPublicStatus(row) {
-  const status = clean(first(row, ["status", "publish_status", "publication_status", "moderation_status"])).toLowerCase();
-  const deleted = clean(first(row, ["deleted", "is_deleted", "archived"])).toLowerCase();
-
-  if (["true", "yes", "1"].includes(deleted)) return false;
-  return status === "active";
+function isTrueFlag(value) {
+  if (value === true) return true;
+  return ["true", "yes", "1"].includes(clean(value).toLowerCase());
 }
 
-function isLikelyTestPost(row) {
-  const title = first(row, ["title", "name", "subject"]);
-  const body = first(row, ["body", "description", "message", "content"]);
-  const city = first(row, ["city", "location", "area"]);
-  const region = first(row, ["region", "prefecture"]);
-  const compactTitle = title.replace(/\s+/g, "").toLowerCase();
-  const compactBody = body.replace(/\s+/g, "").toLowerCase();
-  const compactLocation = [city, region].join("").replace(/\s+/g, "").toLowerCase();
-  const compactJoined = [title, body, city, region, first(row, ["tags"])]
-    .join("")
-    .replace(/\s+/g, "")
-    .toLowerCase();
-  const joined = [title, body, city, region, first(row, ["tags"])].join(" ").toLowerCase();
+export function isPublicCommunityPost(row, now = Date.now()) {
+  const status = clean(first(row, ["status", "publish_status", "publication_status", "moderation_status"])).toLowerCase();
+  if (status !== "active") return false;
 
-  if (/^(test|test\d+|teste|image test)$/i.test(title.trim())) return true;
-  if (/^(テスト|テスト投稿\d*|再テスト投稿.*)$/i.test(title.trim())) return true;
-  if (/^[a-z]{1,4}$/i.test(title.trim()) && /^[a-z]{1,4}$/i.test(body.trim())) return true;
-  if (/^(.)\1{5,}$/.test(compactTitle) && compactTitle === compactBody) return true;
-  if (compactTitle.length < 2 || compactBody.length < 3) return true;
-  if (joined.includes("image test")) return true;
-  if (joined.includes("system test") || joined.includes("demo placeholder") || joined.includes("sample placeholder")) return true;
-  if (compactJoined.includes("システムの動作を確認")) return true;
-  if ((compactBody.match(/テスト投稿です/g) || []).length >= 2) return true;
-  if (compactBody === "test" || compactBody === "teste" || compactBody === "etse" || compactBody === "テスト") return true;
-  if (/^(test|demo|sample|dummy|placeholder)[-_]?\d*$/i.test(compactTitle) && /^(test|demo|sample|dummy|placeholder)[-_]?\d*$/i.test(compactBody)) return true;
-  if (/^(テスト|デモ|サンプル|ダミー)\d*$/.test(compactTitle) && /^(テスト|デモ|サンプル|ダミー)\d*$/.test(compactBody)) return true;
-  if (compactLocation.includes("test") && (compactTitle.includes("test") || compactBody.includes("test"))) return true;
-  return false;
+  for (const field of ["deleted", "is_deleted", "archived", "hidden", "is_hidden"]) {
+    if (isTrueFlag(row?.[field])) return false;
+  }
+  if (first(row, ["deleted_at", "hidden_at"])) return false;
+
+  const expiresAt = first(row, ["expires_at", "expiresAt", "expiration_date"]);
+  if (!expiresAt) return true;
+  const expires = Date.parse(expiresAt);
+  return !Number.isFinite(expires) || expires >= now;
 }
 
 function toIsoDate(value) {
@@ -186,7 +168,7 @@ function isValidDate(value) {
   return Number.isFinite(Date.parse(clean(value)));
 }
 
-function normalizeCommunityPost(row, index) {
+export function normalizeCommunityPost(row, index) {
   const title = first(row, ["title", "name", "subject"]);
   const body = first(row, ["body", "description", "message", "content"]);
   const category1 = first(row, ["category1", "category", "post_type", "postType", "type", "purpose"]);
@@ -225,6 +207,7 @@ function normalizeCommunityPost(row, index) {
     created_at: createdAt,
     updated_at: updatedAt,
     published_at: toIsoDate(first(row, ["published_at", "published", "posted_at"])) || createdAt,
+    expires_at: toIsoDate(first(row, ["expires_at", "expiresAt", "expiration_date"])),
     status: "active"
   };
 }
@@ -252,7 +235,7 @@ function publicContactEmail(row, keys) {
   return isPublicContactEmail(email) ? email : "";
 }
 
-function normalizeJob(row, index) {
+export function normalizeJob(row, index) {
   const positionTitle = first(row, ["position_title", "job_title", "title", "role", "position"]);
   const companyName = first(row, ["company_name", "company", "company_ja", "company_name_ja"]);
   const region = first(row, ["region", "location", "area", "city", "work_location"]);
@@ -311,12 +294,12 @@ function normalizeJob(row, index) {
   };
 }
 
-function isActiveJob(row) {
+export function isActiveJob(row, now = Date.now()) {
   if (clean(first(row, ["status"])).toLowerCase() !== "active") return false;
   const expiresAt = first(row, ["expires_at", "deadline", "application_deadline"]);
   if (!expiresAt) return true;
   const expires = Date.parse(expiresAt);
-  return Number.isFinite(expires) && expires >= Date.now();
+  return Number.isFinite(expires) && expires >= now;
 }
 
 function sortNewest(items) {
@@ -364,12 +347,26 @@ function categories(items, fields) {
   }));
 }
 
-async function writeJson(file, data) {
-  await mkdir(path.dirname(file), { recursive: true });
-  await writeFile(file, `${JSON.stringify(data, null, 2)}\n`, "utf8");
+function comparableJson(data) {
+  const comparable = { ...data };
+  delete comparable.generated_at;
+  return JSON.stringify(comparable);
 }
 
-async function main() {
+export async function writeJsonIfChanged(file, data) {
+  try {
+    const existing = JSON.parse(await readFile(file, "utf8"));
+    if (comparableJson(existing) === comparableJson(data)) return false;
+  } catch {
+    // A missing or invalid generated file is replaced below.
+  }
+
+  await mkdir(path.dirname(file), { recursive: true });
+  await writeFile(file, `${JSON.stringify({ ...data, generated_at: generatedAt }, null, 2)}\n`, "utf8");
+  return true;
+}
+
+export async function main() {
   const masterEndpoint = await getMasterEndpoint();
   const directoryEndpoint = process.env.CONTENTS_API_URL || masterEndpoint;
   const communityEndpoint = process.env.COMMUNITY_API_URL || masterEndpoint;
@@ -387,8 +384,7 @@ async function main() {
 
   const communityItems = sortNewest(
     normalizePayload(communityPayload)
-      .filter(isPublicStatus)
-      .filter((row) => !isLikelyTestPost(row))
+      .filter((row) => isPublicCommunityPost(row))
       .map(normalizeCommunityPost)
       .filter((item) => item.title || item.body)
   );
@@ -403,43 +399,43 @@ async function main() {
   validateUnique(communityItems, ["id"], "community posts");
   validateUnique(jobItems, ["id"], "jobs");
 
-  await writeJson(outputPaths.communityPosts, {
-    generated_at: generatedAt,
+  const changed = [];
+  if (await writeJsonIfChanged(outputPaths.communityPosts, {
     source: "community-gas",
     endpoint: "communityDataEndpoint?action=getPosts&bypassCache=true&includeClosed=false",
     count: communityItems.length,
     items: communityItems
-  });
+  })) changed.push("community posts");
 
-  await writeJson(outputPaths.communityCategories, {
-    generated_at: generatedAt,
+  if (await writeJsonIfChanged(outputPaths.communityCategories, {
     source: "community-gas",
     count: communityItems.length,
     groups: categories(communityItems, ["category1", "category2", "city", "region"])
-  });
+  })) changed.push("community categories");
 
-  await writeJson(outputPaths.jobs, {
-    generated_at: generatedAt,
+  if (await writeJsonIfChanged(outputPaths.jobs, {
     source: "contents-gas:jobs",
     endpoint: "directoryDataEndpoint?sheet=jobs&lang=ja&status=active",
     count: jobItems.length,
     items: jobItems
-  });
+  })) changed.push("jobs");
 
-  await writeJson(outputPaths.jobCategories, {
-    generated_at: generatedAt,
+  if (await writeJsonIfChanged(outputPaths.jobCategories, {
     source: "contents-gas:jobs",
     count: jobItems.length,
     groups: categories(jobItems, ["region", "city", "category", "detail_category", "employment_type", "work_style", "language"])
-  });
+  })) changed.push("job categories");
 
   console.log(`Synced community count: ${communityItems.length}`);
   console.log(`Synced jobs count: ${jobItems.length}`);
   console.log(`Generated at: ${generatedAt}`);
+  console.log(`Changed public files: ${changed.join(", ") || "none"}`);
   console.log(`First 3 community post IDs: ${communityItems.slice(0, 3).map((item) => item.id).join(", ") || "(none)"}`);
 }
 
-main().catch((error) => {
-  console.error("Public data sync failed:", error);
-  process.exitCode = 1;
-});
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch((error) => {
+    console.error("Public data sync failed:", error);
+    process.exitCode = 1;
+  });
+}

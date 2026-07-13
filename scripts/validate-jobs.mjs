@@ -73,12 +73,22 @@ validateRows(jobsCache.items || [], "assets/data/jobs/jobs.json", true);
 const home = fs.readFileSync(path.join(root, "germany/ja/index.html"), "utf8");
 const listing = fs.readFileSync(path.join(root, "germany/ja/jobs/index.html"), "utf8");
 const detail = fs.readFileSync(path.join(root, "germany/ja/jobs/detail/index.html"), "utf8");
+const shared = fs.readFileSync(path.join(root, "assets/js/jobs-shared.js"), "utf8");
 for (const [label, source] of [["Home", home], ["Jobs list", listing], ["Jobs detail", detail]]) {
   if (!source.includes("/assets/data/jobs/jobs.json")) problems.push(`${label} does not use generated public Jobs JSON.`);
   if (/GAS_FALLBACK_TIMEOUT_MS|trying GAS fallback|JOBS_API_URL/.test(source)) problems.push(`${label} still contains a Jobs GAS display fallback.`);
 }
-if (!detail.includes("この求人は見つからないか、現在公開されていません。") || !detail.includes('noindex, follow')) {
-  problems.push("Jobs detail lacks the safe non-public/noindex state.");
+for (const marker of [
+  "求人IDが指定されていません",
+  "指定された求人IDに一致する求人は見つかりませんでした。",
+  "この求人は募集終了、非公開、削除済み、または掲載期限終了のため表示できません。",
+]) {
+  if (!detail.includes(marker)) problems.push(`Jobs detail lacks state marker: ${marker}`);
+}
+if (!detail.includes('noindex, follow')) problems.push("Jobs detail lacks noindex protection.");
+if (shared.includes("...row")) problems.push("Jobs shared normalizer retains arbitrary source fields instead of a public allowlist.");
+if (!shared.includes('publicApplicationEmail') || shared.includes('getValue(row, "contact_email"')) {
+  problems.push("Jobs shared normalizer does not defensively restrict application email fields.");
 }
 
 if (problems.length) {

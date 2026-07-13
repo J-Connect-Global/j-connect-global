@@ -229,13 +229,13 @@
           <a class="portal3-panel-more" href="/germany/ja/community/">掲示板一覧へ</a>
         </div>
 
-        <div class="portal3-mini-list" id="homeCommunityMini" data-community-mini>
+        <div class="portal3-mini-list" id="homeCommunityMini" data-community-mini aria-live="polite">
           <a class="portal3-mini" href="/germany/ja/community/">
             <span class="portal3-thumb thumb-desk"></span>
             <span>
               <em>掲示板</em>
-              <strong>掲示板の投稿を準備中です</strong>
-              <small>売ります・譲ります・質問・友達募集などの投稿を順次掲載します</small>
+              <strong>掲示板の新着投稿を見る</strong>
+              <small>売ります・譲ります・質問・友達募集など、公開中の投稿を確認できます</small>
             </span>
           </a>
         </div>
@@ -279,12 +279,12 @@
           <a class="portal3-panel-more" href="/germany/ja/jobs/">求人一覧へ</a>
         </div>
 
-        <div id="homeJobsMini" data-home-jobs-mini>
+        <div id="homeJobsMini" data-home-jobs-mini aria-live="polite">
           <a class="portal3-job-mini" href="/germany/ja/jobs/">
             <span class="portal3-job-icon">▦</span>
             <span>
-              <strong>求人情報を確認中です</strong>
-              <small>掲載条件と応募先は各求人の詳細で確認してください</small>
+              <strong>ドイツの求人情報を探す</strong>
+              <small>勤務地、雇用形態、応募条件は求人一覧から確認できます</small>
             </span>
           </a>
         </div>
@@ -312,14 +312,18 @@
         <a href="/germany/ja/community/">質問</a>
       </div>
 
-      <div class="portal3-card-row" id="homeCommunityCards" data-community-posts>
-        <a class="portal3-card portal3-fallback-card" href="/germany/ja/community/">
+      <div class="portal3-card-row" id="homeCommunityCards" data-community-posts aria-live="polite">
+        <div class="portal3-card portal3-fallback-card">
           <span class="portal3-card-img img-doc">
             <span class="portal3-card-badges"><em>掲示板</em></span>
           </span>
-          <strong>掲示板の投稿を準備中です</strong>
-          <small>売ります・譲ります・質問・友達募集など、ドイツ在住者向けの投稿を順次掲載します。</small>
-        </a>
+          <strong>ドイツ生活の掲示板</strong>
+          <small>公開中の投稿を探したり、新しい投稿を作成したりできます。</small>
+          <span class="portal3-fallback-actions">
+            <a href="/germany/ja/community/">掲示板を見る</a>
+            <a href="/germany/ja/community/post/">投稿する</a>
+          </span>
+        </div>
       </div>
     </section>
 
@@ -390,12 +394,16 @@
         <a href="/germany/ja/jobs/guide/">面接</a>
       </div>
 
-      <div class="portal3-job-row" id="homeJobsCards" data-home-jobs>
-        <a class="portal3-job-card portal3-fallback-card" href="/germany/ja/jobs/">
+      <div class="portal3-job-row" id="homeJobsCards" data-home-jobs aria-live="polite">
+        <div class="portal3-job-card portal3-fallback-card">
           <span>▦</span>
-          <strong>求人データを確認中です</strong>
-          <small>会社名・都市は求人一覧でご確認ください。</small>
-        </a>
+          <strong>ドイツの求人情報</strong>
+          <small>公開中の求人を探すか、企業向けの求人掲載案内を確認できます。</small>
+          <span class="portal3-fallback-actions">
+            <a href="/germany/ja/jobs/">求人を見る</a>
+            <a href="/germany/ja/jobs/posting/">求人掲載について</a>
+          </span>
+        </div>
       </div>
       <p class="portal3-trust-note portal3-trust-note-after">掲載情報は掲載元の提供内容です。応募前に雇用条件、ビザ要件、連絡先をご確認ください。</p>
     </section>
@@ -618,20 +626,24 @@
           <span class="portal3-thumb thumb-desk"></span>
           <span>
             <em>掲示板</em>
-            <strong>掲示板データを読み込めませんでした</strong>
+            <strong>掲示板を一時的に表示できません</strong>
             <small>時間をおいて掲示板を再度ご確認ください。</small>
           </span>
         </a>
       `;
 
       cardRoot.innerHTML = `
-        <a class="portal3-card portal3-fallback-card" href="/germany/ja/community/">
+        <div class="portal3-card portal3-fallback-card">
           <span class="portal3-card-img img-doc">
             <span class="portal3-card-badges"><em>掲示板</em></span>
           </span>
-          <strong>掲示板データを読み込めませんでした</strong>
+          <strong>掲示板を一時的に表示できません</strong>
           <small>時間をおいて掲示板を再度ご確認ください。</small>
-        </a>
+          <span class="portal3-fallback-actions">
+            <a href="/germany/ja/community/">掲示板を見る</a>
+            <a href="/germany/ja/community/post/">投稿する</a>
+          </span>
+        </div>
       `;
     }
 
@@ -647,11 +659,15 @@
         </a>
       `;
       cardRoot.innerHTML = `
-        <a class="portal3-card portal3-fallback-card" href="/germany/ja/community/post/">
+        <div class="portal3-card portal3-fallback-card">
           <span class="portal3-card-img img-doc"><span class="portal3-card-badges"><em>掲示板</em></span></span>
           <strong>現在公開中の投稿はありません。</strong>
-          <small>最初の投稿を作成できます。</small>
-        </a>
+          <small>掲示板の使い方を確認するか、最初の投稿を作成できます。</small>
+          <span class="portal3-fallback-actions">
+            <a href="/germany/ja/community/">掲示板を見る</a>
+            <a href="/germany/ja/community/post/">投稿する</a>
+          </span>
+        </div>
       `;
     }
 
@@ -763,17 +779,21 @@
         <a class="portal3-job-mini" href="/germany/ja/jobs/">
           <span class="portal3-job-icon">▦</span>
           <span>
-            <strong>求人情報を読み込めませんでした</strong>
+            <strong>求人情報を一時的に表示できません</strong>
             <small>時間をおいて求人一覧を再度ご確認ください。</small>
           </span>
         </a>
       `;
       cardRoot.innerHTML = `
-        <a class="portal3-job-card portal3-fallback-card" href="/germany/ja/jobs/">
+        <div class="portal3-job-card portal3-fallback-card">
           <span>▦</span>
-          <strong>求人データを読み込めませんでした</strong>
+          <strong>求人情報を一時的に表示できません</strong>
           <small>時間をおいて求人一覧を再度ご確認ください。</small>
-        </a>
+          <span class="portal3-fallback-actions">
+            <a href="/germany/ja/jobs/">求人を見る</a>
+            <a href="/germany/ja/contact/">お問い合わせ</a>
+          </span>
+        </div>
       `;
     }
 
@@ -788,11 +808,16 @@
         </a>
       `;
       cardRoot.innerHTML = `
-        <a class="portal3-job-card portal3-fallback-card" href="/germany/ja/jobs/posting/">
+        <div class="portal3-job-card portal3-fallback-card">
           <span>▦</span>
           <strong>現在公開中の求人はありません。</strong>
-          <small>求人掲載をご希望の場合は、掲載フォームをご利用ください。</small>
-        </a>
+          <small>求職者向けガイドを確認するか、企業向けの求人掲載案内をご利用ください。</small>
+          <span class="portal3-fallback-actions">
+            <a href="/germany/ja/jobs/guide/">求職者向けガイド</a>
+            <a href="/germany/ja/jobs/posting/">求人掲載について</a>
+            <a href="/germany/ja/contact/">お問い合わせ</a>
+          </span>
+        </div>
       `;
     }
 

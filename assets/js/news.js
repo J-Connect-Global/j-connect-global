@@ -70,7 +70,7 @@ function initNewsSection() {
     if (count) {
       count.textContent = totalCount
         ? `${totalCount}件中${filtered.length}件を表示しています`
-        : "日本語ニュース解説を準備中です。";
+        : "現在公開中のニュース解説はありません。";
     }
 
     if (empty) {
@@ -78,10 +78,10 @@ function initNewsSection() {
       empty.hidden = !showEmpty;
       grid.hidden = showEmpty && totalCount === 0;
       if (emptyTitle) emptyTitle.textContent = totalCount === 0 || !hasFilters
-        ? "日本語ニュース解説を準備中です"
+        ? "現在公開中のニュース解説はありません"
         : "条件に合うニュースはありません";
       if (emptyBody) emptyBody.textContent = totalCount === 0 || !hasFilters
-        ? "J-Connect編集部による日本語の生活ニュース解説を順次掲載します。"
+        ? "生活情報や注意点は、生活・手続きガイドからも確認できます。"
         : "条件を少し広げるか、絞り込みを解除してください。";
       if (emptyReset) emptyReset.hidden = !(totalCount > 0 && hasFilters);
     }
@@ -163,10 +163,10 @@ function initEventSection() {
       const showEmpty = visibleCards.length === 0;
       empty.hidden = !showEmpty;
       if (emptyTitle) emptyTitle.textContent = totalCount === 0
-        ? "イベント情報を準備中です"
+        ? "現在公開中のイベント情報はありません"
         : "条件に合うイベントはありません";
       if (emptyBody) emptyBody.textContent = totalCount === 0
-        ? "交流会、セミナー、家族向けイベントなどを順次掲載します。"
+        ? "新しいイベント情報が公開されたときに、この一覧へ追加されます。"
         : "条件を少し広げるか、絞り込みを解除してください。";
       if (emptyReset) emptyReset.hidden = !(totalCount > 0 && hasFilters);
     }

@@ -13,7 +13,18 @@ function initGermanNewsLearning() {
   const list = panel?.querySelector("[data-german-news-list]");
   if (!panel || !list) return;
 
+  renderGermanNewsLearningLoading(list);
   loadGermanNewsLearningItems(list);
+}
+
+function renderGermanNewsLearningLoading(list) {
+  list.setAttribute("aria-busy", "true");
+  list.innerHTML = `
+    <div class="news-events-empty" role="status">
+      <h3>ドイツ語ニュース素材を読み込んでいます</h3>
+      <p>外部ニュースの公開データを確認しています。</p>
+    </div>
+  `;
 }
 
 async function loadGermanNewsLearningItems(list) {
@@ -23,22 +34,34 @@ async function loadGermanNewsLearningItems(list) {
     const items = await response.json();
     renderGermanNewsLearningItems(list, Array.isArray(items) ? items.slice(0, 6) : []);
   } catch (error) {
-    renderGermanNewsLearningItems(list, []);
+    console.warn("German news learning data load failed:", GERMAN_NEWS_DATA_URL, error);
+    renderGermanNewsLearningError(list);
   }
 }
 
 function renderGermanNewsLearningItems(list, items) {
+  list.setAttribute("aria-busy", "false");
   if (!items.length) {
     list.innerHTML = `
-      <div class="news-events-empty">
-        <h3>ドイツ語ニュース素材を表示できません</h3>
-        <p>外部ニュースの取得状況を確認してから、時間を置いて再読み込みしてください。</p>
+      <div class="news-events-empty" role="status">
+        <h3>現在利用できるドイツ語ニュース素材はありません</h3>
+        <p>このページの読解手順や、ほかの教材・リソースも学習に利用できます。</p>
       </div>
     `;
     return;
   }
 
   list.innerHTML = items.map(renderGermanNewsLearningCard).join("");
+}
+
+function renderGermanNewsLearningError(list) {
+  list.setAttribute("aria-busy", "false");
+  list.innerHTML = `
+    <div class="news-events-empty" role="status">
+      <h3>ドイツ語ニュース素材を一時的に表示できません</h3>
+      <p>時間をおいて再読み込みしてください。このページの読解手順は引き続き利用できます。</p>
+    </div>
+  `;
 }
 
 function renderGermanNewsLearningCard(item) {

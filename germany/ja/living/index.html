@@ -256,7 +256,7 @@
             </aside>
             <div class="living-column-results-panel">
               <div class="living-column-toolbar" aria-label="コラム記事の表示設定">
-                <p data-living-count>記事を読み込み中です。</p>
+                <p data-living-count aria-live="polite">生活・手続き・観光の記事を一覧で確認できます。</p>
                 <div class="living-column-actions">
                   <div class="learn-view-toggle living-column-view-toggle" role="group" aria-label="表示切替">
                     <button class="learn-view-button is-active" type="button" data-living-view="grid" aria-pressed="true">グリッド</button>
@@ -903,8 +903,8 @@
         </article>
         <!-- CONTENT:living-grid:end -->
               </div>
-              <p class="living-column-empty" data-living-empty hidden>条件に合う記事はありません。</p>
-              <p class="living-column-empty" data-living-saved-empty hidden>保存済みの記事はありません。</p>
+              <p class="living-column-empty" data-living-empty role="status" hidden>条件に合う記事はありません。条件をリセットして再度お試しください。</p>
+              <p class="living-column-empty" data-living-saved-empty role="status" hidden>保存済みの記事はありません。</p>
             </div>
           </div>
         </section>

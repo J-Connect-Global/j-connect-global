@@ -158,7 +158,7 @@ assert.equal(communityContact.includes("COMMUNITY_STATIC_POSTS_URL"), true);
 assert.equal(communityReport.includes("COMMUNITY_STATIC_POSTS_URL"), true);
 
 assert.match(communityDetail, /この投稿は見つからないか、現在公開されていません。/);
-assert.match(jobsDetail, /この求人は見つからないか、現在公開されていません。/);
+assert.match(jobsDetail, /この求人は募集終了、非公開、削除済み、または掲載期限終了のため表示できません。/);
 assert.match(communityDetail, /<meta name="robots" content="noindex, follow">/);
 assert.match(jobsDetail, /<meta name="robots" content="noindex, follow">/);
 assert.match(communityList, /現在公開中の投稿はありません。最初の投稿を作成できます。/);

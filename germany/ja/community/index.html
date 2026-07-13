@@ -238,8 +238,8 @@
         <div class="content-head jc-results-toolbar">
           <div>
             <h2 id="boardTitle" class="content-title">コミュニティ投稿</h2>
-            <p class="result-text loading-lines" id="resultText"><span class="skeleton-text medium"></span></p>
-            <p class="community-cache-warning" id="communityCacheWarning" hidden>最新データを取得できませんでした。保存済みの表示を継続しています。</p>
+            <p class="result-text loading-lines" id="resultText" aria-live="polite"><span class="skeleton-text medium" aria-hidden="true"></span></p>
+            <p class="community-cache-warning" id="communityCacheWarning" role="status" hidden></p>
             <div class="community-quick-filters" aria-label="よく使う条件">
               <div class="community-quick-filters__head">
                 <span>よく使う条件</span>
@@ -282,13 +282,10 @@
           </article>
         </div>
 
-        <div class="empty-state jc-empty-state" id="emptyState">
-          <h2>条件に合う投稿はありません</h2>
-          <p>条件を少し広げるか、絞り込みを解除してください。投稿したい場合は、上部の「投稿する」から作成できます。</p>
-          <div class="hero-actions is-centered">
-            <button class="btn btn-primary" type="button" id="emptyClear">絞り込みを解除</button>
-            <a class="btn btn-secondary" href="./post/">投稿する</a>
-          </div>
+        <div class="empty-state jc-empty-state" id="emptyState" role="status" hidden>
+          <h2></h2>
+          <p></p>
+          <div class="hero-actions is-centered"></div>
         </div>
       </section>
     </div>
@@ -1010,7 +1007,7 @@
     }
 
     function renderSkeletons() {
-      els.emptyState.style.display = "none";
+      setEmptyStateVisible(false);
       els.activeFilters.innerHTML = "";
       renderQuickChips();
       els.cards.innerHTML = Array.from({ length: 5 }).map(() => `
@@ -1028,6 +1025,11 @@
           </div>
         </article>
       `).join("");
+    }
+
+    function setEmptyStateVisible(visible) {
+      els.emptyState.hidden = !visible;
+      els.emptyState.style.display = visible ? "block" : "none";
     }
 
     function scorePost(post) {
@@ -1111,11 +1113,11 @@
           : state.savedOnly && !state.saved.size
             ? "気になる投稿を保存すると、ここからすぐに見返せます。"
             : "条件を少し広げるか、絞り込みを解除してください。投稿したい場合は、上部の「投稿する」から作成できます。";
-        els.emptyState.style.display = "block";
+        setEmptyStateVisible(true);
         return;
       }
 
-      els.emptyState.style.display = "none";
+      setEmptyStateVisible(false);
       els.cards.classList.toggle("grid-mode", state.viewMode === "grid");
       els.cards.innerHTML = state.filtered.map((post) => {
         const thumbnailSrc = getCommunityThumbnail(post);
@@ -1488,7 +1490,7 @@
       state.loading = !cached;
       state.loadError = false;
       state.evaluationComplete = false;
-      els.emptyState.style.display = "none";
+      setEmptyStateVisible(false);
       if (!cached) {
         state.sourceNotice = "";
         els.resultText.classList.add("loading-lines");
@@ -1506,7 +1508,10 @@
           state.loading = false;
           state.loadError = false;
           state.sourceNotice = "保存済みデータを表示中";
-          if (els.cacheWarning) els.cacheWarning.hidden = false;
+          if (els.cacheWarning) {
+            els.cacheWarning.textContent = "最新データを取得できないため、保存済みの投稿を表示しています。";
+            els.cacheWarning.hidden = false;
+          }
           applyFilters();
           return;
         }
@@ -1520,7 +1525,7 @@
         els.resultText.textContent = "現在、投稿を表示できません";
         renderQuickChips();
         renderEmptyActions("error");
-        els.emptyState.style.display = "block";
+        setEmptyStateVisible(true);
         els.emptyState.querySelector("h2").textContent = "掲示板データを取得できませんでした。";
         els.emptyState.querySelector("p").textContent = "時間をおいて再読み込みしてください。投稿フォームと通報フォームは利用できます。";
       }

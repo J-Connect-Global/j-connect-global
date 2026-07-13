@@ -784,6 +784,7 @@
   <script src="/assets/js/jobs-shared.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
+    const jobsShared = window.JCONNECT_JOBS_SHARED;
     const JOBS_STATIC_URL = DATA_SOURCES.staticData?.jobs || '/assets/data/jobs/jobs.json';
     const STATIC_DATA_TIMEOUT_MS = 5000;
 
@@ -1433,12 +1434,14 @@
         const chipValues = [job.employment_type, job.work_style, job.language, job.visa_support]
           .filter(hasDisplayValue);
         const tags = splitList(job.tags || job.skills).slice(0, 3);
+        const isSample = jobsShared.isSampleJob(job);
 
         return `
           <article class="card job-card jobs-card jc-result-card ${String(job.id) === String(selectedId) ? 'active' : ''}" data-id="${escapeHtml(job.id)}">
             <button class="save-button ${saved ? 'saved' : ''}" type="button" data-save-id="${escapeHtml(job.id)}" aria-label="${saved ? '保存を解除' : '保存する'}">${saved ? '★' : '☆'}</button>
             <div class="job-card-body">
               <div class="job-main">
+                ${isSample ? `<span class="directory-seed-label">掲載見本・応募不可</span>` : ''}
                 <h3 class="job-title jobs-card-title jc-result-title">${escapeHtml(position)}</h3>
                 ${hasDisplayValue(company) ? `<div class="jobs-card-company">${escapeHtml(company)}</div>` : ''}
                 ${hasDisplayValue(summary) ? `<p class="job-summary jobs-card-summary">${escapeHtml(summary)}</p>` : ''}
@@ -1523,6 +1526,14 @@
     }
 
     function buildApplicationSection(job){
+      if (jobsShared.isSampleJob(job)) {
+        return `
+          <section class="detail-sec">
+            <h4>掲載見本・応募不可</h4>
+            <p class="jobs-detail-apply-note">この求人は表示例です。実際の募集ではなく、応募を受け付けていません。</p>
+          </section>
+        `;
+      }
       const applyEmail = getApplyEmail(job);
       const applyMailto = getApplyMailto(job);
       const companyUrl = isSafeActionUrl(job.company_url) ? job.company_url : '';
@@ -1593,9 +1604,11 @@
         job.detail_category,
         ...tags
       ].filter(hasDisplayValue);
+      const isSample = jobsShared.isSampleJob(job);
 
       return `
         <div class="job-detail-head">
+          ${isSample ? `<span class="directory-seed-label">掲載見本・応募不可</span>` : ''}
           ${hasDisplayValue(company) ? `<div class="job-detail-company">${escapeHtml(company)}</div>` : ''}
           <h3 class="job-detail-title">${escapeHtml(position)}</h3>
           ${hasDisplayValue(summary) ? `<p class="job-detail-summary">${escapeHtml(summary)}</p>` : ''}
@@ -1612,7 +1625,7 @@
           <div class="detail-actions">
             <button class="card-action" type="button" data-detail-copy-id="${escapeHtml(job.id)}">URLコピー</button>
             <a class="card-action primary" href="${escapeHtml(detailPath)}">詳細を見る</a>
-            ${applyMailto ? `<a class="card-action" href="${escapeHtml(applyMailto)}">応募先にメールする</a>` : ''}
+            ${!isSample && applyMailto ? `<a class="card-action" href="${escapeHtml(applyMailto)}">応募先にメールする</a>` : ''}
             <button class="save-button inline ${saved ? 'saved' : ''}" type="button" data-detail-save-id="${escapeHtml(job.id)}">${saved ? '★ 保存済み' : '☆ 保存'}</button>
           </div>
         </div>

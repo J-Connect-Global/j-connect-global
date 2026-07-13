@@ -17,10 +17,16 @@
 
 const COMMUNITY_SHEET_NAME = 'Community Posts';
 const JOBS_SHEET_NAME = 'Jobs';
+const PUBLIC_DATA_API_VERSION = '2026-07-13.1';
+const DIRECTORY_SHEET_NAMES = {
+  eat: 'eat',
+  shopping: 'shopping',
+  medical: 'medical'
+};
 const COMMUNITY_SITE_ORIGIN = 'https://j-connect-global.com';
 const COMMUNITY_MANAGE_PATH = '/germany/ja/community/manage/';
 const COMMUNITY_PUBLIC_POST_PATH = '/germany/ja/community/post/';
-const COMMUNITY_CACHE_KEY = 'community_posts_public_v2';
+const COMMUNITY_CACHE_KEY = 'community_posts_public_v3';
 const COMMUNITY_CACHE_SECONDS = 300;
 const COMMUNITY_PUBLIC_POSTS_JSON_URL = 'https://j-connect-global.com/assets/data/community/posts.json';
 const JOBS_PUBLIC_JSON_URL = 'https://j-connect-global.com/assets/data/jobs/jobs.json';
@@ -161,7 +167,27 @@ const PUBLIC_JOB_FIELDS = [
   'application_email', 'apply_email', 'public_email', 'apply_url', 'application_url',
   'apply_method', 'company_url', 'source_url', 'source_name', 'visa_support',
   'company_logo_url', 'logo_url', 'image_alt', 'start_date', 'publish_date',
-  'published_at', 'updated_at', 'created_at', 'last_modified_at', 'expires_at'
+  'published_at', 'updated_at', 'created_at', 'last_modified_at', 'expires_at',
+  'listing_type', 'is_verified', 'employer_authorized_at', 'verified_at',
+  'is_indexable', 'last_reviewed_at'
+];
+
+const PUBLIC_DIRECTORY_FIELDS = [
+  'id', 'item_id', 'place_id', 'placeId', 'placeid', 'slug', 'status',
+  'name', 'title', 'name_ja', 'name_en', 'category', 'category1', 'category2',
+  'category3', 'categoryName', 'categoryname', 'detail_category', 'subcategory',
+  'city', 'region', 'area', 'state', 'address', 'completeAddress',
+  'completeaddress', 'street', 'postcode', 'postalCode', 'postalcode',
+  'countryCode', 'countrycode', 'short_description', 'description_ja',
+  'description', 'detail_comment', 'long_description', 'comment',
+  'description_en', 'tags', 'keywords', 'price', 'price_range', 'rating',
+  'totalScore', 'totalscore', 'reviewsCount', 'reviewscount', 'review_count',
+  'official_url', 'website', 'site_url', 'homepage', 'map_url', 'url',
+  'google_map_url', 'maps_url', 'source_url', 'phone', 'telephone', 'tel',
+  'opening_hours', 'openingHours', 'hours', 'language_support', 'language',
+  'languages', 'latitude', 'longitude', 'lat', 'lng', 'lon', 'location_lat',
+  'location_lng', 'location/lat', 'location/lng', 'updated_at',
+  'last_reviewed_at', 'reviewed_at', 'priority'
 ];
 
 const REQUIRED_COMMUNITY_HEADERS = [
@@ -273,10 +299,12 @@ function dispatchCommunityRequest_(e) {
   try {
     const params = requestParams_(e);
     const action = String(params.action || 'listPosts');
+    const sheetKey = String(params.sheet || '').trim().toLowerCase();
     let payload;
 
-    if (action === 'getJobs' || action === 'listJobs'
-      || (action === 'listPosts' && String(params.sheet || '').trim().toLowerCase() === 'jobs')) payload = listJobs_(params);
+    if (Object.prototype.hasOwnProperty.call(DIRECTORY_SHEET_NAMES, sheetKey)) payload = listDirectory_(sheetKey);
+    else if (action === 'getJobs' || action === 'listJobs'
+      || (action === 'listPosts' && sheetKey === 'jobs')) payload = listJobs_(params);
     else if (action === 'getPosts' || action === 'listPosts') payload = listPosts_(params);
     else if (action === 'getPost') payload = getPost_(params);
     else if (action === 'submitPost' || action === 'createPost') payload = createPost_(params);
@@ -312,8 +340,11 @@ function requestParams_(e) {
 }
 
 function json_(payload) {
+  const versionedPayload = payload && typeof payload === 'object' && !Array.isArray(payload)
+    ? Object.assign({}, payload, { api_version: PUBLIC_DATA_API_VERSION })
+    : { ok: true, api_version: PUBLIC_DATA_API_VERSION, items: payload || [] };
   return ContentService
-    .createTextOutput(JSON.stringify(payload))
+    .createTextOutput(JSON.stringify(versionedPayload))
     .setMimeType(ContentService.MimeType.JSON);
 }
 
@@ -335,6 +366,14 @@ function getJobsSheetContext_() {
   const sheet = getSpreadsheet_().getSheetByName(JOBS_SHEET_NAME);
   if (!sheet) throw new Error('JOBS_SHEET_NOT_FOUND');
   return getSheetContextForSheet_(sheet, 'job');
+}
+
+function getDirectorySheetContext_(sheetKey) {
+  const expected = String(DIRECTORY_SHEET_NAMES[sheetKey] || '').trim().toLowerCase();
+  if (!expected) throw new Error('DIRECTORY_SHEET_NOT_SUPPORTED');
+  const sheet = getSpreadsheet_().getSheets().find((candidate) => String(candidate.getName() || '').trim().toLowerCase() === expected);
+  if (!sheet) throw new Error('DIRECTORY_SHEET_NOT_FOUND');
+  return getSheetContextForSheet_(sheet, 'directory');
 }
 
 function getSheetContextForSheet_(sheet, type) {
@@ -371,6 +410,8 @@ function findSheetHeaderRowIndex_(values, type) {
       const hasTitle = headerSet.position_title || headerSet.job_title || headerSet.title;
       if ((hasId || headerSet.company_name) && hasTitle) return rowIndex;
     }
+    if (type === 'directory' && (headerSet.name || headerSet.title || headerSet.name_ja)
+      && (headerSet.status || headerSet.category || headerSet.category1)) return rowIndex;
   }
   return -1;
 }
@@ -481,14 +522,30 @@ function listPosts_(params) {
   }
 
   const context = getSheetContext_();
-  const posts = context.values.slice(context.dataStartIndex)
-    .map((row, index) => rowToObject_(context.headers, row, context.dataStartIndex + index + 1))
+  const sourceRows = context.values.slice(context.dataStartIndex)
+    .map((row, index) => rowToObject_(context.headers, row, context.dataStartIndex + index + 1));
+  const explicitlyActive = sourceRows.filter((post) => String(cleanCell_(post.status || '')).trim().toLowerCase() === 'active').length;
+  const posts = sourceRows
     .filter((post) => isPubliclyVisible_(post, params))
     .map(publicPostPayload_)
-    .sort(comparePublicPosts_);
-  const payload = { ok: true, items: posts, posts, count: posts.length };
+    .sort(compareCommunityPublicationDates_);
+  const payload = {
+    ok: true,
+    items: posts,
+    posts,
+    count: posts.length,
+    validation_report: {
+      source_count: sourceRows.length,
+      active_count: explicitlyActive,
+      excluded_by_reason: { lifecycle_or_status: sourceRows.length - posts.length }
+    }
+  };
   cache.put(cacheKey, JSON.stringify(payload), COMMUNITY_CACHE_SECONDS);
   return payload;
+}
+
+function compareCommunityPublicationDates_(a, b) {
+  return dateTime_(b.published_at || b.created_at) - dateTime_(a.published_at || a.created_at);
 }
 
 function getPost_(params) {
@@ -656,20 +713,27 @@ function createPost_(params) {
 
 function listJobs_() {
   const context = getJobsSheetContext_();
-  const items = context.values.slice(context.dataStartIndex)
-    .map((row, index) => rowToObject_(context.headers, row, context.dataStartIndex + index + 1))
+  const sourceRows = context.values.slice(context.dataStartIndex)
+    .map((row, index) => rowToObject_(context.headers, row, context.dataStartIndex + index + 1));
+  const items = sourceRows
     .filter(isPublicJob_)
     .map(publicJobPayload_)
     .sort(comparePublicPosts_);
-  return { ok: true, items, jobs: items, count: items.length };
+  return {
+    ok: true,
+    items,
+    jobs: items,
+    count: items.length,
+    validation_report: {
+      source_count: sourceRows.length,
+      active_count: items.length,
+      excluded_by_reason: { status_not_active: sourceRows.length - items.length }
+    }
+  };
 }
 
 function isPublicJob_(job) {
-  if (String(cleanCell_(job.status || '')).trim().toLowerCase() !== 'active') return false;
-  const expiresAt = String(cleanCell_(job.expires_at || '')).trim();
-  if (!expiresAt) return true;
-  const expires = new Date(expiresAt).getTime();
-  return Number.isFinite(expires) && expires >= Date.now();
+  return String(cleanCell_(job.status || '')).trim().toLowerCase() === 'active';
 }
 
 function publicJobPayload_(job) {
@@ -680,6 +744,38 @@ function publicJobPayload_(job) {
   const jobId = cleanCell_(job.job_id || job.id || '');
   payload.id = jobId;
   payload.job_id = jobId;
+  payload.status = 'active';
+  return payload;
+}
+
+function listDirectory_(sheetKey) {
+  const context = getDirectorySheetContext_(sheetKey);
+  const sourceRows = context.values.slice(context.dataStartIndex)
+    .map((row, index) => rowToObject_(context.headers, row, context.dataStartIndex + index + 1));
+  const activeRows = sourceRows.filter((row) => String(cleanCell_(row.status || '')).trim().toLowerCase() === 'active');
+  const items = activeRows.map((row) => publicDirectoryPayload_(row, sheetKey));
+  return {
+    ok: true,
+    items,
+    count: items.length,
+    validation_report: {
+      source_count: sourceRows.length,
+      active_count: activeRows.length,
+      excluded_by_reason: { status_not_active: sourceRows.length - activeRows.length }
+    }
+  };
+}
+
+function publicDirectoryPayload_(row, sheetKey) {
+  const payload = {};
+  PUBLIC_DIRECTORY_FIELDS.forEach((field) => {
+    if (Object.prototype.hasOwnProperty.call(row, field)) payload[field] = cleanCell_(row[field]);
+  });
+  const idCandidate = String(cleanCell_(row.id || row.item_id || row.place_id || row.placeId || row.placeid || row.slug || '')).trim();
+  const safeId = !idCandidate || ['-', 'test', 'placeholder', 'dummy'].indexOf(idCandidate.toLowerCase()) !== -1
+    ? `${sheetKey}-${row._rowNumber}`
+    : idCandidate;
+  payload.id = safeId;
   payload.status = 'active';
   return payload;
 }
@@ -1113,7 +1209,10 @@ function moderationRecipient_(selected) {
 
 function requestCommunityPublicDataSync_() {
   const token = String(PropertiesService.getScriptProperties().getProperty('GITHUB_ACTIONS_TOKEN') || '').trim();
-  if (!token) return { dispatched: false, error: '' };
+  if (!token) {
+    console.info('Immediate public-data dispatch unavailable; relying on the scheduled five-minute workflow.');
+    return { dispatched: false, error: 'SCHEDULED_SYNC_FALLBACK' };
+  }
   try {
     const response = UrlFetchApp.fetch(COMMUNITY_GITHUB_WORKFLOW_URL, {
       method: 'post',
@@ -1273,7 +1372,7 @@ function safeModerationErrorCode_(error) {
 
 function safeApprovalErrorCode_(error) {
   const code = String(error && error.message || 'PUBLICATION_CHECK_FAILED');
-  return /^(WORKFLOW_DISPATCH_FAILED|PUBLIC_JSON_FETCH_FAILED|PUBLIC_JSON_INVALID|PUBLICATION_NOT_FOUND|INVALID_RECIPIENT|INVALID_APPROVAL_POST|ZOHO_AUTH_FAILED|ZOHO_SEND_FAILED|SELECT_SUBMISSION_ROW)$/.test(code)
+  return /^(SCHEDULED_SYNC_FALLBACK|WORKFLOW_DISPATCH_FAILED|PUBLIC_JSON_FETCH_FAILED|PUBLIC_JSON_INVALID|PUBLICATION_NOT_FOUND|INVALID_RECIPIENT|INVALID_APPROVAL_POST|ZOHO_AUTH_FAILED|ZOHO_SEND_FAILED|SELECT_SUBMISSION_ROW)$/.test(code)
     ? code
     : 'PUBLICATION_CHECK_FAILED';
 }

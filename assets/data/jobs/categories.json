@@ -1,21 +1,20 @@
 {
-  "source": "master-gas:jobs",
-  "count": 4,
+  "api_version": "unversioned-bootstrap",
+  "source": "legacy-gas-bootstrap:jobs",
+  "count": 3,
   "groups": [
     {
       "field": "region",
       "values": [
         "デュッセルドルフ",
-        "ハンブルク",
-        "フランクフルト"
+        "ハンブルク"
       ]
     },
     {
       "field": "city",
       "values": [
         "デュッセルドルフ",
-        "ハンブルク",
-        "フランクフルト"
+        "ハンブルク"
       ]
     },
     {
@@ -42,5 +41,5 @@
       "values": []
     }
   ],
-  "generated_at": "2026-07-13T14:44:17.337Z"
+  "generated_at": "2026-07-13T17:51:06.035Z"
 }

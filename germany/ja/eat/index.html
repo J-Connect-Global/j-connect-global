@@ -309,12 +309,8 @@
 <script src="/assets/js/data-sources.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
-    const API_URL = DATA_SOURCES.buildDirectoryUrl({
-      sheet: DATA_SOURCES.directorySheets.eat,
-      lang: "ja",
-      status: "active"
-    });
-    const DATA_TIMEOUT_MS = 12000;
+    const STATIC_DATA_URL = DATA_SOURCES.staticData?.eat || "/assets/data/eat/items.json";
+    const DATA_TIMEOUT_MS = 5000;
 
     const languageSelect = document.getElementById("languageSelect");
     if (languageSelect) {
@@ -1159,9 +1155,12 @@ function setViewMode(mode) {
     async function loadData() {
       try {
         setLoadingStatus();
-        const json = await fetchJsonWithTimeout(API_URL);
+        const json = await fetchJsonWithTimeout(STATIC_DATA_URL);
 
         const items = DATA_SOURCES.normalizePayload(json);
+        if (!items.length && json?.validation?.intentionally_empty !== true) {
+          throw new Error("Static Eat data unexpectedly contains zero eligible records.");
+        }
 
 rawItems = sortItems(items).map((item, index) => ({
   ...item,
@@ -1169,11 +1168,15 @@ rawItems = sortItems(items).map((item, index) => ({
 }));
 
 rawItems.forEach(preloadCoordinatesFromFields);
+        const hasMapItems = rawItems.some(hasCoordinates);
+        els.mapViewBtn.disabled = !hasMapItems;
+        els.mapViewBtn.setAttribute("aria-disabled", String(!hasMapItems));
+        if (!hasMapItems && currentView === "map") setViewMode("list");
 
         categoryMap = buildCategoryMap(rawItems);
         filterItems();
       } catch (error) {
-        console.error("Eat data load failed:", API_URL, error);
+        console.error("Eat static data load failed.", error);
         rawItems = [];
         filteredItems = [];
         renderDataLoadError();

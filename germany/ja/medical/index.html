@@ -303,11 +303,8 @@
 <script src="/assets/js/data-sources.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
-    const API_URL = DATA_SOURCES.buildDirectoryUrl({
-      sheet: DATA_SOURCES.directorySheets.medical,
-      city: "duesseldorf"
-    });
-    const DATA_TIMEOUT_MS = 12000;
+    const STATIC_DATA_URL = DATA_SOURCES.staticData?.medical || "/assets/data/medical/items.json";
+    const DATA_TIMEOUT_MS = 5000;
 
     const CATEGORY_LABELS = {
       hospital: "病院",
@@ -1013,15 +1010,22 @@
       setStatus("データを読み込んでいます...");
 
       try {
-        const payload = await fetchJsonWithTimeout(API_URL);
+        const payload = await fetchJsonWithTimeout(STATIC_DATA_URL);
         const rows = normalizePayload(payload);
+        if (!rows.length && payload?.validation?.intentionally_empty !== true) {
+          throw new Error("Static Medical data unexpectedly contains zero eligible records.");
+        }
 
         rawItems = rows.map(parseItem).filter(item => item.title && item.title !== "名称未設定");
+        const hasMapItems = rawItems.some(item => item.lat !== null && item.lng !== null);
+        els.mapViewBtn.disabled = !hasMapItems;
+        els.mapViewBtn.setAttribute("aria-disabled", String(!hasMapItems));
+        if (!hasMapItems && currentView === "map") setView("list");
 
         renderFilterChips();
         applyFilters();
       } catch (error) {
-        console.error("Medical data load failed:", API_URL, error);
+        console.error("Medical static data load failed.", error);
         rawItems = [];
         filteredItems = [];
         renderSummary();

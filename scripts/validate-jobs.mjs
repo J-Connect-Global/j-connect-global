@@ -87,8 +87,16 @@ for (const marker of [
 }
 if (!detail.includes('noindex, follow')) problems.push("Jobs detail lacks noindex protection.");
 if (shared.includes("...row")) problems.push("Jobs shared normalizer retains arbitrary source fields instead of a public allowlist.");
-if (!shared.includes('publicApplicationEmail') || shared.includes('getValue(row, "contact_email"')) {
-  problems.push("Jobs shared normalizer does not defensively restrict application email fields.");
+const publicEmailFields = ["contact_email", "application_email", "apply_email", "public_email"];
+for (const field of publicEmailFields) {
+  if (new RegExp(`\\b${field}\\b`).test(shared)) {
+    problems.push(`Jobs shared normalizer must not read or emit removed public email field ${field}.`);
+  }
+  for (const [index, job] of (jobsCache.items || []).entries()) {
+    if (Object.hasOwn(job, field)) {
+      problems.push(`assets/data/jobs/jobs.json item ${index + 1} exposes removed public email field ${field}.`);
+    }
+  }
 }
 
 if (problems.length) {

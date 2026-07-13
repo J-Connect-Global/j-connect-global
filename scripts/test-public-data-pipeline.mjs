@@ -25,6 +25,14 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (relative) => fs.readFileSync(path.join(root, relative), "utf8");
 const now = Date.parse("2026-07-13T12:00:00Z");
 
+const gasContractSource = read("apps-script/community-board-api.gs");
+const browserDataSources = read("assets/js/data-sources.js");
+const gasVersion = gasContractSource.match(/const\s+PUBLIC_DATA_API_VERSION\s*=\s*['"]([^'"]+)['"]/)?.[1];
+assert.equal(EXPECTED_API_VERSION, "2026-07-13.1");
+assert.equal(gasVersion, EXPECTED_API_VERSION, "Apps Script and sync public API versions diverged");
+assert.equal(/'application_email'|'apply_email'|'public_email'/.test(gasContractSource), false, "GAS public Jobs allowlist exposes email fields");
+assert.equal(/Spreadsheet ID|Drive folder ID/.test(browserDataSources), false, "public data-sources.js exposes internal source identifiers");
+
 const retainedContentCases = [
   { title: "test", body: "test" },
   { title: "Test", body: "Test" },
@@ -74,7 +82,10 @@ assert.equal(sixGenerated.find((item) => item.post_id === expectedSixIds[0]).tit
 assert.equal(publicPayload("test", "test", sixGenerated).count, sixGenerated.length);
 
 assert.equal(assertApiVersion({ api_version: EXPECTED_API_VERSION }, "fixture"), true);
-assert.throws(() => assertApiVersion({}, "fixture"), new RegExp(`expected ${EXPECTED_API_VERSION}, received missing`));
+assert.throws(
+  () => assertApiVersion({}, "fixture"),
+  new RegExp(`expected ${EXPECTED_API_VERSION}, received missing.*Apps Script source must be deployed as a new version using the existing Web App deployment URL`)
+);
 assert.throws(() => assertApiVersion({ api_version: "legacy" }, "fixture"), /received legacy/);
 
 for (const row of activeRows) {
@@ -122,13 +133,31 @@ for (const sample of publicSamples) {
   assert.equal(sample.listing_type, "sample");
   assert.equal(sample.is_indexable, false);
   assert.equal(sample.emit_job_posting, false);
-  assert.equal(sample.application_email, "");
+  assert.equal(Object.hasOwn(sample, "application_email"), false);
+  assert.equal(Object.hasOwn(sample, "apply_email"), false);
   assert.equal(sample.apply_url, "");
   assert.equal(sample.sample_label, "掲載見本・応募不可");
 }
 const legacyGovernance = normalizeJob({ id: "legacy", status: "active", position_title: "Legacy" }, 0, classifyJob({ status: "active" }, now));
 assert.equal(legacyGovernance.listing_type, "sample");
 assert.equal(legacyGovernance.governance_defaulted, true);
+const jobWithLogo = normalizeJob({
+  id: "logo",
+  status: "active",
+  listing_type: "sample",
+  position_title: "Logo fixture",
+  company_logo_url: "https://cdn.example.com/logo.webp"
+}, 0, classifyJob({ status: "active", listing_type: "sample" }, now));
+assert.equal(jobWithLogo.company_logo_url, "https://cdn.example.com/logo.webp");
+assert.equal(jobWithLogo.image_url, jobWithLogo.company_logo_url);
+const jobWithUnsafeLogo = normalizeJob({
+  id: "unsafe-logo",
+  status: "active",
+  listing_type: "sample",
+  position_title: "Unsafe logo fixture",
+  logo_url: "javascript:alert(1)"
+}, 0, classifyJob({ status: "active", listing_type: "sample" }, now));
+assert.equal(jobWithUnsafeLogo.logo_url, "");
 const unverifiedReal = classifyJob({ status: "active", listing_type: "real", is_verified: false }, now);
 assert.equal(unverifiedReal.eligible, false);
 assert.equal(unverifiedReal.indexable, false);
@@ -181,6 +210,17 @@ for (const key of [
   assert.equal(Object.hasOwn(publicPost, key), false, `private field was emitted: ${key}`);
 }
 assert.equal(assertNoPrivateFields(publicPost), true);
+for (const key of ["contact_email", "reviewer_email", "manage_url", "spreadsheet_id", "moderation_status"]) {
+  assert.throws(() => assertNoPrivateFields({ [key]: "private" }), new RegExp(key));
+}
+for (const privateUrl of [
+  "https://example.com/community/manage/?token=private",
+  "https://user:password@example.com/public",
+  "/admin/review/"
+]) {
+  assert.throws(() => assertNoPrivateFields({ public_url: privateUrl }), /private/);
+}
+assert.equal(assertNoPrivateFields({ body: "/admin/review/?token=content-is-not-a-url-field" }), true);
 
 const runtimeFiles = [
   "scripts/sync-public-data.mjs",
@@ -195,11 +235,19 @@ for (const relative of runtimeFiles) {
 }
 
 const syncWorkflow = read(".github/workflows/sync-public-data.yml");
+const pagesWorkflow = read(".github/workflows/pages.yml");
+const reusablePagesWorkflow = read(".github/workflows/pages-build-deploy.yml");
 for (const legacyName of ["COMMUNITY_API_URL", "CONTENTS_API_URL", "JOBS_API_URL"]) {
   assert.equal(syncWorkflow.includes(legacyName), false, `production workflow still supplies ${legacyName}`);
 }
 const syncSource = read("scripts/sync-public-data.mjs");
+const jobsSharedSource = read("assets/js/jobs-shared.js");
+const commonImageSource = read("assets/js/common.js");
 assert.equal(syncSource.includes(".filter((item) => item.title || item.body)"), false, "Community sync still suppresses rows based on content");
+assert.match(syncSource, /for \(const \[, data, label\] of writes\) assertNoPrivateFields\(data, label\);[\s\S]*for \(const \[file, data, label\] of writes\)/, "public outputs are not all validated before the first write");
+assert.equal(/application_email|apply_email|public_email|contact_email/.test(jobsSharedSource), false, "shared Jobs normalization retains public email fields");
+assert.match(jobsSharedSource, /company_logo_url/);
+assert.match(commonImageSource, /source\.company_logo_url/);
 
 const home = read("germany/ja/index.html");
 const communityList = read("germany/ja/community/index.html");
@@ -228,6 +276,8 @@ for (const [label, source, jsonPath] of [
   assert.equal(source.includes("buildDirectoryUrl"), false, `${label} still reads GAS directly`);
   assert.match(source, /データを読み込んでいます/);
   assert.match(source, /intentionally_empty/);
+  assert.match(source, /条件に一致する結果がありません/);
+  assert.match(source, /読み込みエラー|一時的に表示できません/);
   assert.match(source, /aria-disabled/);
 }
 assert.equal(/buildCommunityUrl\(\{\s*action:\s*["'](?:getPosts|listPosts|getPost)/.test(home + communityList + communityDetail + communityContact + communityReport), false, "Community public display still reads GAS");
@@ -239,11 +289,32 @@ assert.match(communityDetail, /この投稿は見つからないか、現在公�
 assert.match(jobsDetail, /この求人は募集終了、非公開、削除済み、または掲載期限終了のため表示できません。/);
 assert.match(communityDetail, /<meta name="robots" content="noindex, follow">/);
 assert.match(jobsDetail, /<meta name="robots" content="noindex, follow">/);
+const jobsInitialHead = jobsDetail.slice(0, jobsDetail.indexOf("</head>") + 7);
+assert.match(jobsInitialHead, /<title>求人詳細 \| 仕事・求人 \| J-Connect Germany<\/title>/);
+assert.match(jobsInitialHead, /<meta name="description" content="J-Connect Germanyの求人詳細表示ページです。">/);
+assert.match(jobsInitialHead, /<link rel="canonical" href="https:\/\/j-connect-global\.com\/germany\/ja\/jobs\/detail\/">/);
+assert.match(jobsInitialHead, /<meta name="robots" content="noindex, follow">/);
 assert.equal(/"@type"\s*:\s*"JobPosting"/.test(jobsDetail), false, "sample-capable dynamic detail emits JobPosting");
 for (const source of [home, jobsList, jobsDetail]) assert.match(source, /掲載見本・応募不可/);
 assert.match(jobsDetail, /isSample[\s\S]*応募・問い合わせ/);
 assert.match(communityList, /現在公開中の投稿はありません。最初の投稿を作成できます。/);
+assert.match(communityList, /条件に合う投稿はありません/);
+assert.match(communityList, /現在、投稿を表示できません/);
+assert.match(communityList, /renderSkeletons\(\)/);
 assert.match(jobsList, /現在公開中の求人はありません。求人掲載をご希望の場合は、掲載フォームをご利用ください。/);
+assert.match(jobsList, /条件に合う求人はありません/);
+assert.match(jobsList, /求人情報を読み込めませんでした/);
+assert.match(jobsList, /setJobsLoading\(\)/);
+
+const normalizePostStart = communityList.indexOf("function normalizePost(post, index)");
+const normalizePostEnd = communityList.indexOf("\n    function ", normalizePostStart + 1);
+assert.notEqual(normalizePostStart, -1, "Community normalizePost() is missing");
+const normalizePostSource = communityList.slice(normalizePostStart, normalizePostEnd);
+assert.match(
+  normalizePostSource,
+  /const\s+shared\s*=\s*window\.JCONNECT_COMMUNITY_SHARED\s*;/,
+  "normalizePost() references shared helpers without declaring the window.JCONNECT_COMMUNITY_SHARED binding"
+);
 
 const headerTemplate = read("templates/layout/ja-header.html");
 assert.equal(/header-language|germany\/(?:en|de)\//.test(headerTemplate), false, "JA header still exposes inactive language navigation");
@@ -262,13 +333,29 @@ for (const relative of [
   const payload = JSON.parse(read(relative));
   assert.equal(payload.count, payload.items.length, `${relative} count mismatch`);
   assert.equal(assertNoPrivateFields(payload), true, `${relative} exposes a private field`);
+  if (payload.api_version === EXPECTED_API_VERSION) {
+    assert.match(payload.source, /^master-gas:/, `${relative} labels versioned data as a legacy bootstrap`);
+  } else {
+    assert.equal(payload.api_version, "unversioned-bootstrap", `${relative} has an unsupported public-data version`);
+    assert.match(payload.source, /^legacy-gas-bootstrap:/, `${relative} bootstrap source label is unsafe`);
+  }
+}
+for (const relative of ["assets/data/community/categories.json", "assets/data/jobs/categories.json"]) {
+  const payload = JSON.parse(read(relative));
+  assert.equal(assertNoPrivateFields(payload), true, `${relative} exposes a private field`);
+  assert.equal(Array.isArray(payload.groups), true, `${relative} is missing category groups`);
 }
 const committedCommunity = JSON.parse(read("assets/data/community/posts.json"));
 assert.equal(committedCommunity.count, 6);
 assert.equal(committedCommunity.items.some((item) => item.title === "test 1"), true);
 const committedJobs = JSON.parse(read("assets/data/jobs/jobs.json"));
-assert.equal(committedJobs.items.length <= SAMPLE_JOB_LIMIT, true);
+assert.equal(committedJobs.count, SAMPLE_JOB_LIMIT);
+assert.deepEqual(committedJobs.items.map((item) => item.id), ["a", "b", "c"]);
 assert.equal(committedJobs.items.every((item) => item.listing_type === "sample" && !item.is_indexable && !item.emit_job_posting), true);
+assert.equal(committedJobs.validation.excluded_by_reason.sample_limit, 1);
+assert.deepEqual(committedJobs.validation.excluded_safe_ids.sample_limit, ["d"]);
+assert.match(home, /const selectedMini = selected\.slice\(0, 3\)/);
+assert.match(home, /const selectedCards = selected\.slice\(0, 3\)/);
 const committedEat = JSON.parse(read("assets/data/eat/items.json"));
 assert.equal(committedEat.items.some((item) => String(item.category2).toLowerCase() === "test"), false);
 const committedShopping = JSON.parse(read("assets/data/shopping/items.json"));
@@ -279,7 +366,18 @@ assert.equal(committedMedical.validation.excluded_by_reason.status_not_active, 2
 
 assert.match(syncWorkflow, /assets\/data\/eat\/\*\.json/);
 assert.match(syncWorkflow, /commit_hash/);
-assert.match(syncWorkflow, /EXPECTED_APPROVED_COMMUNITY_POST_ID/);
+assert.match(syncWorkflow, /uses:\s+\.\/\.github\/workflows\/pages-build-deploy\.yml/);
+assert.match(pagesWorkflow, /uses:\s+\.\/\.github\/workflows\/pages-build-deploy\.yml/);
+assert.match(reusablePagesWorkflow, /EXPECTED_APPROVED_COMMUNITY_POST_ID:\s*\$\{\{\s*vars\.EXPECTED_APPROVED_COMMUNITY_POST_ID\s*\}\}/);
+assert.equal(/vars\.EXPECTED_APPROVED_COMMUNITY_POST_ID\s*\|\|/.test(reusablePagesWorkflow), false, "Pages workflow still defaults to a specific Community record");
+assert.match(reusablePagesWorkflow, /expectedApiVersion\s*=\s*["']2026-07-13\.1["']/);
+assert.match(reusablePagesWorkflow, /legacy-gas-bootstrap:/);
+assert.match(reusablePagesWorkflow, /master-gas:/);
+assert.match(reusablePagesWorkflow, /Refusing to deploy stale commit/);
+const pageWorkflowSources = [syncWorkflow, pagesWorkflow, reusablePagesWorkflow].join("\n");
+assert.equal((pageWorkflowSources.match(/Build clean Pages artifact/g) || []).length, 1, "Pages artifact builder is duplicated");
+assert.equal((pageWorkflowSources.match(/actions\/upload-pages-artifact@/g) || []).length, 1, "Pages artifact upload is duplicated");
+assert.equal((pageWorkflowSources.match(/actions\/deploy-pages@/g) || []).length, 1, "Pages deployment is duplicated");
 
 for (const [type, backText] of [
   ["living", "生活・手続き一覧へ戻る"],

@@ -52,7 +52,22 @@ expect(listing.includes('communityLocationConfig') && listing.includes('normaliz
 expect(!listing.includes('最新データを取得できませんでした。保存済みの表示を継続しています。'), 'Community cache warning is still embedded in initial HTML.');
 expect(listing.includes('data-jconnect-query-robots') && listing.includes('params.has("id")') && listing.includes('noindex, follow'), 'Community query detail URLs do not receive rendered noindex protection.');
 expect(!/<h[1-6]\b[^>]*>\s*<\/h[1-6]>/i.test(listing.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')), 'Community initial HTML contains an empty heading.');
-expect(listing.includes('renderEmptyActions("error")') && listing.includes('renderEmptyActions(noPublicPosts ? "public-empty" : "filters")'), 'Community loading result does not preserve distinct error, empty, and filtered-empty states.');
+expect(!/<h[1-6]\b[^>]*>\s*<\/h[1-6]>/i.test(listing), 'Community rendered templates contain an empty heading.');
+const atomicEmptyState = listing.slice(
+  listing.indexOf('function showEmptyState(title, body, mode)'),
+  listing.indexOf('\n    function scorePost', listing.indexOf('function showEmptyState(title, body, mode)'))
+);
+expect(
+  atomicEmptyState.includes('<h2>${escapeHtml(title)}</h2>')
+    && atomicEmptyState.includes('<p>${escapeHtml(body)}</p>')
+    && atomicEmptyState.indexOf('renderEmptyActions(mode)') < atomicEmptyState.indexOf('setEmptyStateVisible(true)'),
+  'Community empty states must render non-empty escaped content and actions atomically before becoming visible.'
+);
+expect(
+  listing.includes('showEmptyState(emptyTitle, emptyBody, noPublicPosts ? "public-empty" : "filters")')
+    && /showEmptyState\([\s\S]*?"error"\s*\);/.test(listing.slice(listing.indexOf('async function loadPosts()'))),
+  'Community loading result does not preserve distinct error, public-empty, and filtered-empty states.'
+);
 expect(!shared.includes('...post'), 'Shared Community normalizer retains arbitrary source fields instead of a public allowlist.');
 expect(detail.includes('data-social-share="manual"') && socialShare.includes('manualShare') && socialShare.includes('target.root.querySelectorAll(AUTO_SHARE_SELECTOR)'), 'Community detail can still create duplicate share triggers.');
 expect(gas.includes('function submitReport_(params)') && gas.includes('reportNotificationHtml_'), 'GAS report handling is not structured.');

@@ -26,7 +26,8 @@ const LEGACY_ENDPOINT_ENV_NAMES = [
   "COMMUNITY_API_URL", "CONTENTS_API_URL", "JOBS_API_URL", "DIRECTORY_API_URL",
   "EAT_API_URL", "SHOPPING_API_URL", "MEDICAL_API_URL"
 ];
-const PRIVATE_FIELD_PATTERN = /(?:email_private|contact_email|contact_name|manage_|token|secret|admin_|internal|moderation|submission_key|approval_|spreadsheet|notes_internal)/i;
+const PRIVATE_FIELD_PATTERN = /(?:email|contact_name|reviewer|manage_|token|secret|admin_|internal|moderation|submission_key|approval_|spreadsheet|notes_internal)/i;
+const PRIVATE_URL_PATH_PATTERN = /\/(?:manage|admin|internal)(?:\/|$)/i;
 const PLACEHOLDER_CATEGORY_VALUES = new Set(["test", "placeholder", "dummy", "n/a", "na", "-"]);
 
 const timeoutMs = Number(process.env.PUBLIC_DATA_TIMEOUT_MS || 30000);
@@ -139,7 +140,7 @@ function safeVersion(value) {
 export function assertApiVersion(payload, label, expected = EXPECTED_API_VERSION) {
   const received = safeVersion(payload?.api_version);
   if (received !== expected) {
-    throw new Error(`${label} API version mismatch: expected ${expected}, received ${received}. Deploy the current Apps Script as a new version to the existing Web App deployment.`);
+    throw new Error(`${label} API version mismatch: expected ${expected}, received ${received}. Apps Script source must be deployed as a new version using the existing Web App deployment URL.`);
   }
   return true;
 }
@@ -156,7 +157,14 @@ function isSafeHttpUrl(value) {
   if (!text) return false;
   try {
     const url = new URL(text);
-    return url.protocol === "https:" || url.protocol === "http:";
+    if (url.protocol !== "https:" && url.protocol !== "http:") return false;
+    if (url.username || url.password || PRIVATE_URL_PATH_PATTERN.test(url.pathname)) return false;
+    for (const key of url.searchParams.keys()) {
+      const name = key.toLowerCase();
+      if (["token", "secret", "password", "authorization", "auth", "api_key", "apikey", "access_token", "refresh_token", "manage_token", "key"].includes(name)
+        || /(?:^|_)(?:token|secret|password)(?:_|$)/.test(name)) return false;
+    }
+    return !/(?:^|[&#])(?:token|secret|password|manage_token)=/i.test(url.hash.replace(/^#/, ""));
   } catch {
     return false;
   }
@@ -258,17 +266,6 @@ export function normalizeCommunityPost(row, index) {
   };
 }
 
-function isPublicContactEmail(value) {
-  const email = clean(value);
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return false;
-  return !email.toLowerCase().endsWith("@j-connect-global.com");
-}
-
-function publicContactEmail(row, keys) {
-  const email = first(row, keys);
-  return isPublicContactEmail(email) ? email : "";
-}
-
 function jobListingType(row) {
   const value = first(row, ["listing_type"]).toLowerCase();
   return value === "sample" || value === "real" ? value : "";
@@ -310,7 +307,7 @@ export function normalizeJob(row, index, classification = classifyJob(row)) {
   const id = first(row, ["job_id", "id"]) || stableSlug(positionTitle, companyName, region) || `job-${index + 1}`;
   const isSample = classification.listingType === "sample";
   const applyUrl = isSample ? "" : safeHttpUrl(first(row, ["apply_url", "application_url", "apply_link"]));
-  const applicationEmail = isSample ? "" : publicContactEmail(row, ["application_email", "application_contact_email", "apply_email", "public_email"]);
+  const logoUrl = normalizeImageSrc(first(row, ["company_logo_url", "logo_url", "image_url", "image"]));
   return {
     id, job_id: id,
     slug: first(row, ["slug", "job_slug"]) || stableSlug(positionTitle, companyName, region),
@@ -335,13 +332,14 @@ export function normalizeJob(row, index, classification = classifyJob(row)) {
     salary_label: first(row, ["salary_label", "salary"]), summary, short_description: summary,
     job_details: details, description: details,
     requirements: first(row, ["requirements"]), benefits: first(row, ["benefits"]),
-    application_email: applicationEmail, apply_email: applicationEmail,
     apply_url: applyUrl, application_url: applyUrl,
     apply_method: isSample ? "" : first(row, ["apply_method", "application_method", "how_to_apply"]),
     company_url: safeHttpUrl(first(row, ["company_url", "company_website", "company_site", "company_link"])),
     source_url: safeHttpUrl(first(row, ["source_url", "official_url", "url", "website"])),
     source_name: first(row, ["source_name", "source", "publisher"]),
-    visa_support: first(row, ["visa_support", "visa"]), image_alt: first(row, ["image_alt", "imageAlt"]) || companyName || positionTitle,
+    visa_support: first(row, ["visa_support", "visa"]),
+    company_logo_url: logoUrl, logo_url: logoUrl, image_url: logoUrl,
+    image_alt: first(row, ["image_alt", "imageAlt"]) || companyName || positionTitle,
     verified_at: classification.listingType === "real" ? toIsoDate(first(row, ["verified_at"])) : "",
     employer_authorized_at: classification.listingType === "real" ? toIsoDate(first(row, ["employer_authorized_at"])) : "",
     last_reviewed_at: toIsoDate(first(row, ["last_reviewed_at"])),
@@ -548,6 +546,31 @@ export function publicPayload(source, endpoint, items, validation = undefined) {
 }
 
 export function assertNoPrivateFields(value, pathLabel = "public JSON") {
+  if (typeof value === "string") {
+    const text = value.trim();
+    const fieldName = pathLabel.split(".").at(-1) || "";
+    if (/(?:url|href|link|endpoint|image|logo)/i.test(fieldName) && /^(?:https?:\/\/|\/)/i.test(text)) {
+      try {
+        const url = new URL(text, "https://j-connect.invalid");
+        if (url.username || url.password || PRIVATE_URL_PATH_PATTERN.test(url.pathname)) {
+          throw new Error(`${pathLabel} contains a private management URL`);
+        }
+        for (const key of url.searchParams.keys()) {
+          const name = key.toLowerCase();
+          if (["token", "secret", "password", "authorization", "auth", "api_key", "apikey", "access_token", "refresh_token", "manage_token", "key"].includes(name)
+            || /(?:^|_)(?:token|secret|password)(?:_|$)/.test(name)) {
+            throw new Error(`${pathLabel} contains a private URL parameter`);
+          }
+        }
+        if (/(?:^|[&#])(?:token|secret|password|manage_token)=/i.test(url.hash.replace(/^#/, ""))) {
+          throw new Error(`${pathLabel} contains a private URL parameter`);
+        }
+      } catch (error) {
+        if (/private (?:management URL|URL parameter)/.test(String(error?.message))) throw error;
+      }
+    }
+    return true;
+  }
   if (Array.isArray(value)) {
     value.forEach((item, index) => assertNoPrivateFields(item, `${pathLabel}[${index}]`));
     return true;
@@ -667,6 +690,9 @@ export async function main() {
     [outputPaths.shopping, publicPayload("master-gas:shopping", "canonicalMasterEndpoint?sheet=shopping&lang=ja&status=active", directoryItems.shopping, reports.shopping), "shopping"],
     [outputPaths.medical, publicPayload("master-gas:medical", "canonicalMasterEndpoint?sheet=medical&lang=ja&status=active", directoryItems.medical, reports.medical), "medical"]
   ];
+  // Validate every prepared public artifact before the first write. A private
+  // field or incompatible prepared payload must never leave a partial snapshot.
+  for (const [, data, label] of writes) assertNoPrivateFields(data, label);
   for (const [file, data, label] of writes) if (await writeJsonIfChanged(file, data)) changed.push(label);
 
   console.log(`Public data source: ${sourceType}; ${sanitizedEndpointIdentity(masterEndpoint)}; expected API ${EXPECTED_API_VERSION}`);

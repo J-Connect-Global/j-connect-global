@@ -298,7 +298,7 @@
 
   </main>
 
-  <div class="modal-shell" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+  <div class="modal-shell" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailTitle" aria-hidden="true">
     <div class="modal-backdrop" data-close-modal></div>
     <article class="modal-card" tabindex="-1">
       <button class="modal-close" type="button" aria-label="詳細を閉じる" data-close-modal>×</button>
@@ -309,7 +309,7 @@
   <div class="mobile-action-bar" aria-label="主要アクション">
     <a class="btn btn-secondary" href="#communityBoard">探す</a>
     <a class="btn btn-primary" href="./post/">投稿</a>
-    <button class="btn btn-secondary" type="button" id="mobileSavedButton">保存</button>
+    <button class="btn btn-secondary" type="button" id="mobileSavedButton" aria-pressed="false" aria-label="保存済みの投稿だけを表示">保存</button>
   </div>
 
   <!-- LAYOUT:ja-footer:start -->
@@ -465,6 +465,8 @@
       sourceNotice: "",
       showAllSubcategories: false
     };
+    let modalOpener = null;
+    const MODAL_FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
     localStorage.setItem("ngg-community-filter-version", FILTER_STORAGE_VERSION);
 
@@ -795,6 +797,7 @@
     }
 
     function normalizePost(post, index) {
+      const shared = window.JCONNECT_COMMUNITY_SHARED;
       const images = getImages(post);
       const postType = inferPostType(post);
       const subcategory = inferSubcategory(post);
@@ -938,6 +941,14 @@
           applyFilters();
         });
       });
+      const mobileSavedButton = document.getElementById("mobileSavedButton");
+      if (mobileSavedButton) {
+        mobileSavedButton.classList.toggle("active", state.savedOnly);
+        mobileSavedButton.setAttribute("aria-pressed", String(state.savedOnly));
+        mobileSavedButton.setAttribute("aria-label", state.savedOnly
+          ? "保存済み投稿の絞り込みを解除"
+          : "保存済みの投稿だけを表示");
+      }
     }
 
     function renderViewButtons() {
@@ -1037,16 +1048,20 @@
       `).join("");
     }
 
-    function ensureEmptyStateContent() {
-      if (els.emptyState.querySelector("h2")) return;
-      els.emptyState.innerHTML = '<h2></h2><p></p><div class="hero-actions is-centered"></div>';
-    }
-
     function setEmptyStateVisible(visible) {
-      if (visible) ensureEmptyStateContent();
-      else els.emptyState.replaceChildren();
+      if (!visible) els.emptyState.replaceChildren();
       els.emptyState.hidden = !visible;
       els.emptyState.style.display = visible ? "block" : "none";
+    }
+
+    function showEmptyState(title, body, mode) {
+      els.emptyState.innerHTML = `
+        <h2>${escapeHtml(title)}</h2>
+        <p>${escapeHtml(body)}</p>
+        <div class="hero-actions is-centered"></div>
+      `;
+      renderEmptyActions(mode);
+      setEmptyStateVisible(true);
     }
 
     function scorePost(post) {
@@ -1121,16 +1136,15 @@
         els.cards.classList.toggle("grid-mode", state.viewMode === "grid");
         els.cards.innerHTML = "";
         const noPublicPosts = state.posts.length === 0;
-        renderEmptyActions(noPublicPosts ? "public-empty" : "filters");
-        els.emptyState.querySelector("h2").textContent = noPublicPosts
+        const emptyTitle = noPublicPosts
           ? "現在公開中の投稿はありません"
           : state.savedOnly && !state.saved.size ? "保存済みの投稿はまだありません。" : "条件に合う投稿はありません";
-        els.emptyState.querySelector("p").textContent = noPublicPosts
+        const emptyBody = noPublicPosts
           ? "現在公開中の投稿はありません。最初の投稿を作成できます。"
           : state.savedOnly && !state.saved.size
             ? "気になる投稿を保存すると、ここからすぐに見返せます。"
             : "条件を少し広げるか、絞り込みを解除してください。投稿したい場合は、上部の「投稿する」から作成できます。";
-        setEmptyStateVisible(true);
+        showEmptyState(emptyTitle, emptyBody, noPublicPosts ? "public-empty" : "filters");
         return;
       }
 
@@ -1153,7 +1167,7 @@
         ].filter(Boolean).join("");
         return `
           <article class="card jc-result-card ${post._isClosed ? "is-closed" : ""}" data-post-id="${escapeHtml(post._id)}" data-status="${escapeHtml(post._status)}" data-photo-count="${post._images.length}" data-free="${post._free ? "true" : "false"}">
-            <button class="save-button ${saved ? "saved" : ""}" type="button" data-save-id="${escapeHtml(post._id)}" aria-label="${saved ? "保存を解除" : "保存する"}">${saved ? "★" : "☆"}</button>
+            <button class="save-button ${saved ? "saved" : ""}" type="button" data-save-id="${escapeHtml(post._id)}" aria-pressed="${saved ? "true" : "false"}" aria-label="${saved ? "保存を解除" : "保存する"}">${saved ? "★" : "☆"}</button>
             <a class="card-link" href="#post-${encodeURIComponent(post._id)}" aria-label="${escapeHtml(post._title)}の詳細を開く">
               <div class="card-media">
                 <div class="placeholder-art" data-icon="${escapeHtml(CATEGORY_ICONS[subcategory] || CATEGORY_ICONS[postType] || CATEGORY_ICONS["その他"])}"></div>
@@ -1302,6 +1316,12 @@
     }
 
     function openDetail(post) {
+      if (!els.modal.classList.contains("open")) {
+        const active = document.activeElement;
+        modalOpener = active instanceof HTMLElement && active !== document.body && !els.modal.contains(active)
+          ? active
+          : null;
+      }
       const relatedGroup = comparablePosts(state.posts, post, 3);
       const related = relatedGroup.items;
       const images = post._images.length ? post._images : [];
@@ -1384,6 +1404,7 @@
       `;
 
       els.modal.classList.add("open");
+      els.modal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
       focusWithoutScroll(document.querySelector(".modal-card"));
       els.detailContent.querySelectorAll(".detail-thumb-button").forEach((button) => {
@@ -1402,7 +1423,9 @@
     }
 
     function closeDetail(updateHash = true) {
+      const wasOpen = els.modal.classList.contains("open");
       els.modal.classList.remove("open");
+      els.modal.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
       if (updateHash && (location.hash.startsWith("#post-") || location.search.includes("post=") || location.search.includes("id="))) {
         const url = new URL(location.href);
@@ -1410,6 +1433,30 @@
         url.searchParams.delete("id");
         url.hash = "";
         history.pushState("", document.title, url.pathname + url.search);
+      }
+      if (wasOpen && modalOpener?.isConnected) focusWithoutScroll(modalOpener);
+      modalOpener = null;
+    }
+
+    function trapModalFocus(event) {
+      if (event.key !== "Tab" || !els.modal.classList.contains("open")) return;
+      const focusable = [...els.modal.querySelectorAll(MODAL_FOCUSABLE)]
+        .filter((element) => element instanceof HTMLElement
+          && !element.hidden
+          && element.getAttribute("aria-hidden") !== "true"
+          && element.getClientRects().length > 0);
+      if (!focusable.length) {
+        event.preventDefault();
+        focusWithoutScroll(els.modal.querySelector(".modal-card"));
+        return;
+      }
+      const currentIndex = focusable.indexOf(document.activeElement);
+      if (event.shiftKey && currentIndex <= 0) {
+        event.preventDefault();
+        focusWithoutScroll(focusable[focusable.length - 1]);
+      } else if (!event.shiftKey && (currentIndex === -1 || currentIndex === focusable.length - 1)) {
+        event.preventDefault();
+        focusWithoutScroll(focusable[0]);
       }
     }
 
@@ -1471,7 +1518,6 @@
     }
 
     function renderEmptyActions(mode = "filters") {
-      ensureEmptyStateContent();
       const actions = els.emptyState.querySelector(".hero-actions");
       if (!actions) return;
 
@@ -1542,10 +1588,11 @@
         els.resultText.classList.remove("loading-lines");
         els.resultText.textContent = "現在、投稿を表示できません";
         renderQuickChips();
-        renderEmptyActions("error");
-        setEmptyStateVisible(true);
-        els.emptyState.querySelector("h2").textContent = "掲示板データを取得できませんでした。";
-        els.emptyState.querySelector("p").textContent = "時間をおいて再読み込みしてください。投稿フォームと通報フォームは利用できます。";
+        showEmptyState(
+          "掲示板データを取得できませんでした。",
+          "時間をおいて再読み込みしてください。投稿フォームと通報フォームは利用できます。",
+          "error"
+        );
       }
     }
 
@@ -1613,6 +1660,7 @@
     window.addEventListener("hashchange", syncHashDetail);
     window.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && els.modal.classList.contains("open")) closeDetail(true);
+      else trapModalFocus(event);
     });
 
     renderRails();

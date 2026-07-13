@@ -1,6 +1,6 @@
 {
-  "api_version": "unversioned-bootstrap",
-  "source": "legacy-gas-bootstrap:medical",
+  "api_version": "2026-07-13.1",
+  "source": "master-gas:medical",
   "endpoint": "canonicalMasterEndpoint?sheet=medical&lang=ja&status=active",
   "count": 0,
   "items": [],
@@ -12,36 +12,10 @@
     "excluded_by_reason": {
       "status_not_active": 23
     },
-    "excluded_safe_ids": {
-      "status_not_active": [
-        "evangelisches-krankenhaus-duesseldorf",
-        "florence-nightingale-krankenhaus",
-        "marien-hospital-duesseldorf",
-        "sana-kliniken-gerresheim",
-        "sana-kliniken-benrath",
-        "schoen-klinik-duesseldorf",
-        "augusta-krankenhaus",
-        "st-vinzenz-krankenhaus",
-        "st-martinus-krankenhaus",
-        "universitaetsklinikum-duesseldorf",
-        "paracelsus-klinik-golzheim",
-        "krankenhaus-elbroich",
-        "luisenkrankenhaus",
-        "lvr-klinikum-duesseldorf",
-        "johanniter-tagesklinik",
-        "wdgz",
-        "gemeinschaftspraxis-rethelstrasse",
-        "hausaerzte-am-kaiserteich",
-        "vantis-hausarztpraxis",
-        "hafendoc-praxis",
-        "graf-adolf-praxis",
-        "hausarztpraxis-duesseltal",
-        "hausarztpraxis-eller"
-      ]
-    },
+    "excluded_safe_ids": {},
     "generated_count": 0,
     "map_eligible_count": 0,
     "intentionally_empty": true
   },
-  "generated_at": "2026-07-13T17:51:06.035Z"
+  "generated_at": "2026-07-13T21:48:07.234Z"
 }

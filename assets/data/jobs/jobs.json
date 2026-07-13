@@ -1,13 +1,13 @@
 {
-  "api_version": "unversioned-bootstrap",
-  "source": "legacy-gas-bootstrap:jobs",
+  "api_version": "2026-07-13.1",
+  "source": "master-gas:jobs",
   "endpoint": "canonicalMasterEndpoint?sheet=jobs&lang=ja&status=active",
   "count": 3,
   "items": [
     {
       "id": "a",
       "job_id": "a",
-      "slug": "会計アシスタント-japanese-desk-a社-求人サンプル-ハンブルク",
+      "slug": "会計アシスタント-japanese-desk-a社-求人サンプル-ハンブルク-a",
       "detail_url": "",
       "status": "active",
       "priority": 1,
@@ -45,19 +45,22 @@
       "source_url": "",
       "source_name": "",
       "visa_support": "",
+      "company_logo_url": "",
+      "logo_url": "",
+      "image_url": "",
       "image_alt": "A社 (求人サンプル)",
       "verified_at": "",
       "employer_authorized_at": "",
       "last_reviewed_at": "",
-      "published_at": "2026-07-12T00:00:00.000Z",
-      "updated_at": "2026-07-12T00:00:00.000Z",
+      "published_at": "2026-07-11T22:00:00.000Z",
+      "updated_at": "2026-07-11T22:00:00.000Z",
       "created_at": "",
       "expires_at": ""
     },
     {
       "id": "b",
       "job_id": "b",
-      "slug": "物流オペレーション担当-b社-求人サンプル-デュッセルドルフ",
+      "slug": "物流オペレーション担当-b社-求人サンプル-デュッセルドルフ-b",
       "detail_url": "",
       "status": "active",
       "priority": 2,
@@ -95,19 +98,22 @@
       "source_url": "",
       "source_name": "",
       "visa_support": "",
+      "company_logo_url": "",
+      "logo_url": "",
+      "image_url": "",
       "image_alt": "B社 (求人サンプル)",
       "verified_at": "",
       "employer_authorized_at": "",
       "last_reviewed_at": "",
-      "published_at": "2026-07-12T00:00:00.000Z",
-      "updated_at": "2026-07-12T00:00:00.000Z",
+      "published_at": "2026-07-11T22:00:00.000Z",
+      "updated_at": "2026-07-11T22:00:00.000Z",
       "created_at": "",
       "expires_at": ""
     },
     {
       "id": "c",
       "job_id": "c",
-      "slug": "サポートエンジニア-c社-求人サンプル-デュッセルドルフ",
+      "slug": "サポートエンジニア-c社-求人サンプル-デュッセルドルフ-c",
       "detail_url": "",
       "status": "active",
       "priority": 3,
@@ -145,12 +151,15 @@
       "source_url": "",
       "source_name": "",
       "visa_support": "",
+      "company_logo_url": "",
+      "logo_url": "",
+      "image_url": "",
       "image_alt": "C社 (求人サンプル)",
       "verified_at": "",
       "employer_authorized_at": "",
       "last_reviewed_at": "",
-      "published_at": "2026-07-12T00:00:00.000Z",
-      "updated_at": "2026-07-12T00:00:00.000Z",
+      "published_at": "2026-07-11T22:00:00.000Z",
+      "updated_at": "2026-07-11T22:00:00.000Z",
       "created_at": "",
       "expires_at": ""
     }
@@ -161,6 +170,7 @@
     "eligible_count": 3,
     "excluded_count": 1,
     "excluded_by_reason": {
+      "status_not_active": 0,
       "sample_limit": 1
     },
     "excluded_safe_ids": {
@@ -170,8 +180,9 @@
     },
     "generated_count": 3,
     "sample_limit": 3,
+    "sample_limit_excluded_count": 1,
     "sample_generated_count": 3,
     "real_generated_count": 0
   },
-  "generated_at": "2026-07-13T17:51:06.035Z"
+  "generated_at": "2026-07-13T21:48:07.234Z"
 }

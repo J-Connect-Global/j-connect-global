@@ -1,39 +1,9 @@
 {
-  "api_version": "unversioned-bootstrap",
-  "source": "legacy-gas-bootstrap:community",
+  "api_version": "2026-07-13.1",
+  "source": "master-gas:community",
   "endpoint": "canonicalMasterEndpoint?action=getPosts&bypassCache=true&includeClosed=false",
-  "count": 6,
+  "count": 5,
   "items": [
-    {
-      "id": "post_b316572b-01e1-4b77-b41a-c87e68d65f0b",
-      "post_id": "post_b316572b-01e1-4b77-b41a-c87e68d65f0b",
-      "slug": "test-1-フランクフルト周辺-ドイツ-post-b316572b-01e1-4b77-b41a-c87e68d65f0b",
-      "title": "test 1",
-      "body": "test 1",
-      "summary": "",
-      "category1": "譲ります",
-      "category2": "子ども用品",
-      "postType": "譲ります",
-      "subcategory": "子ども用品",
-      "country": "ドイツ",
-      "region": "ドイツ",
-      "city": "フランクフルト周辺",
-      "price": "",
-      "event_date": "",
-      "availability_date": "",
-      "tags": "",
-      "image_url": "",
-      "image_alt": "test 1",
-      "image_urls": [],
-      "image_url_1": "",
-      "image_url_2": "",
-      "image_url_3": "",
-      "created_at": "2026-07-13T16:26:21.243Z",
-      "published_at": "2026-07-13T16:26:21.243Z",
-      "updated_at": "2026-07-13T16:30:46.730Z",
-      "expires_at": "",
-      "status": "active"
-    },
     {
       "id": "post_cd6cadde-3221-4de3-8f8d-935d66331457",
       "post_id": "post_cd6cadde-3221-4de3-8f8d-935d66331457",
@@ -193,13 +163,15 @@
     }
   ],
   "validation": {
-    "source_count": 6,
-    "explicitly_active_count": 6,
-    "eligible_count": 6,
+    "source_count": 5,
+    "explicitly_active_count": 5,
+    "eligible_count": 5,
     "excluded_count": 0,
-    "excluded_by_reason": {},
+    "excluded_by_reason": {
+      "lifecycle_or_status": 0
+    },
     "excluded_safe_ids": {},
-    "generated_count": 6
+    "generated_count": 5
   },
-  "generated_at": "2026-07-13T17:51:06.035Z"
+  "generated_at": "2026-07-13T21:48:07.234Z"
 }

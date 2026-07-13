@@ -1,7 +1,7 @@
 {
-  "api_version": "unversioned-bootstrap",
-  "source": "legacy-gas-bootstrap:community",
-  "count": 6,
+  "api_version": "2026-07-13.1",
+  "source": "master-gas:community",
+  "count": 5,
   "groups": [
     {
       "field": "category1",
@@ -15,7 +15,6 @@
       "values": [
         "ビザ・滞在許可",
         "家具・家電",
-        "子ども用品",
         "生活一般"
       ]
     },
@@ -23,8 +22,7 @@
       "field": "city",
       "values": [
         "-",
-        "デュッセルドルフ周辺",
-        "フランクフルト周辺"
+        "デュッセルドルフ周辺"
       ]
     },
     {
@@ -34,5 +32,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-13T17:51:06.035Z"
+  "generated_at": "2026-07-13T21:48:07.234Z"
 }

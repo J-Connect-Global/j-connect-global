@@ -7,6 +7,8 @@ const read = (relative) => fs.readFileSync(path.join(root, relative), "utf8");
 const gas = read("apps-script/community-board-api.gs");
 const sync = read("scripts/sync-public-data.mjs");
 const syncWorkflow = read(".github/workflows/sync-public-data.yml");
+const pagesWorkflow = read(".github/workflows/pages.yml");
+const pagesBuildDeployWorkflow = read(".github/workflows/pages-build-deploy.yml");
 const failures = [];
 
 function expect(condition, message) {
@@ -78,7 +80,27 @@ expect(!sync.includes('.filter((item) => item.title || item.body)'), "Public syn
 for (const legacyEndpoint of ["COMMUNITY_API_URL", "CONTENTS_API_URL", "JOBS_API_URL"]) {
   expect(!syncWorkflow.includes(legacyEndpoint), `Production workflow still supplies legacy endpoint ${legacyEndpoint}.`);
 }
-expect(syncWorkflow.includes("outputs.commit_hash") && syncWorkflow.includes("needs.sync-public-data.outputs.commit_hash || github.sha"), "Pages does not deploy the exact generated-data commit.");
+expect(
+  syncWorkflow.includes("deployment_sha: ${{ steps.deployment-ref.outputs.commit_sha }}")
+    && syncWorkflow.includes("uses: ./.github/workflows/pages-build-deploy.yml")
+    && syncWorkflow.includes("commit_sha: ${{ needs.sync-public-data.outputs.deployment_sha }}"),
+  "Public-data sync does not delegate the exact generated-data commit to the reusable Pages workflow."
+);
+expect(
+  pagesWorkflow.includes("uses: ./.github/workflows/pages-build-deploy.yml")
+    && pagesWorkflow.includes("commit_sha: ${{ github.sha }}"),
+  "Normal main deployments do not delegate their exact trigger commit to the reusable Pages workflow."
+);
+expect(
+  pagesBuildDeployWorkflow.includes("workflow_call:")
+    && pagesBuildDeployWorkflow.includes("required: true")
+    && count(/ref:\s*\$\{\{ inputs\.commit_sha \}\}/g, pagesBuildDeployWorkflow) === 2
+    && count(/uses:\s*actions\/upload-pages-artifact@v5/g, pagesBuildDeployWorkflow) === 1
+    && count(/uses:\s*actions\/deploy-pages@v5/g, pagesBuildDeployWorkflow) === 1
+    && pagesBuildDeployWorkflow.includes('current_main_sha="$(git rev-parse FETCH_HEAD)"')
+    && pagesBuildDeployWorkflow.includes('"$current_main_sha" != "$DEPLOY_COMMIT_SHA"'),
+  "Reusable Pages deployment does not build and recheck the exact current-main commit before its single deploy step."
+);
 expect(gas.includes("if (status !== 'active') return false"), "GAS Community publication does not require exact status=active.");
 expect(gas.includes("isTrueLifecycleFlag_") && gas.includes("post.hidden_at"), "GAS Community publication is missing explicit lifecycle checks.");
 expect(!sync.includes('publicContactEmail(row, ["contact_email"'), "Private job contact_email is used as a public address.");

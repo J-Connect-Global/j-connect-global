@@ -829,7 +829,7 @@
 
       const selected = [...jobs].sort(jobsShared.sortNewestFirst);
       const selectedMini = selected.slice(0, 3);
-      const selectedCards = selected.slice(0, 4);
+      const selectedCards = selected.slice(0, 3);
 
       miniRoot.innerHTML = selectedMini.map((job, index) => {
         const href = jobsShared.getJobDetailPath(job);

@@ -296,8 +296,94 @@ function testCommunityPublicLifecycleAndCacheBypass() {
   assert(!sandbox.getPost_({ id: "excluded-status-closed" }).ok, "GAS detail endpoint exposed a closed post.");
 }
 
+function testPublicPayloadCredentialSanitization() {
+  const { sandbox } = createRuntime([], () => ({ sent: true }));
+  assert(sandbox.isSafePublicId_("日本語-id_1") === true, "GAS rejected a valid Unicode public ID.");
+  assert(sandbox.isSafePublicId_("abc<script>") === false, "GAS accepted markup characters in a public ID.");
+  assert(sandbox.isSafePublicId_("abc\u0000def") === false, "GAS accepted a control character in a public ID.");
+  assert(sandbox.isSafePublicSlug_("manage-token-secret") === false, "GAS accepted a credential-like public slug.");
+
+  const post = sandbox.publicPostPayload_({
+    _rowNumber: 2,
+    post_id: "poster@example.com",
+    status: "active",
+    image_url_1: "https://cdn.example.com/photo.jpg",
+    image_url_2: "/%2561dmin/review.jpg",
+    image_url_3: "https://cdn.example.com/photo.jpg#accessToken=private",
+    images: ["/assets/photo.jpg", "https://cdn.example.com/photo.jpg?api_key=private"]
+  });
+  assert(post.id === "community-row-2" && post.post_id === "community-row-2", "GAS exposed an unsafe Community ID.");
+  assert(post.image_url_1 === "https://cdn.example.com/photo.jpg", "GAS removed a safe Community image URL.");
+  assert(post.image_url_2 === "" && post.image_url_3 === "", "GAS exposed a private Community image URL.");
+  assert(Array.isArray(post.images) && post.images.length === 1 && post.images[0] === "/assets/photo.jpg", "GAS did not sanitize a Community image array.");
+
+  const job = sandbox.publicJobPayload_({
+    _rowNumber: 4,
+    job_id: "https://example.com/manage?token=private",
+    slug: "person@example.com",
+    status: "active",
+    detail_url: "/jobs/example",
+    apply_url: "https://jobs.example.com/apply#authorization_code=private",
+    application_url: "https://jobs.example.com/apply?X-Amz-Credential=private",
+    company_url: "https://jobs.example.com/%2561dmin",
+    source_url: "https://service.internal/listing",
+    logo_url: "/assets/logo.png",
+    apply_method: "Apply to recruiter@example.com"
+  });
+  assert(job.id === "job-row-4" && job.job_id === "job-row-4" && job.slug === "job-row-4", "GAS exposed an unsafe Jobs identifier.");
+  assert(job.detail_url === "/jobs/example" && job.logo_url === "/assets/logo.png", "GAS removed a safe Jobs URL.");
+  assert(job.apply_url === "" && job.application_url === "" && job.company_url === "", "GAS exposed a credential or private-path Jobs URL.");
+  assert(job.source_url === "" && job.apply_method === "", "GAS Jobs public-field sanitization is incorrect.");
+  assert(sandbox.safePublicApplicationMethod_("Use the web form") === "Use the web form", "GAS removed a safe application method.");
+  assert(sandbox.safePublicApplicationMethod_("Apply at https://jobs.example.com/#access_token=private") === "", "GAS exposed a credential URL in application text.");
+  for (const encodedPrivateMethod of [
+    "Apply https%3A%2F%2Fuser%3Apassword%40example.com%2Fpublic",
+    "Apply https%3A%2F%2F10.0.0.1%2Fpublic",
+    "Apply %2F%2F127.0.0.1%2Fpublic"
+  ]) {
+    assert(sandbox.safePublicApplicationMethod_(encodedPrivateMethod) === "", `GAS exposed encoded private application data: ${encodedPrivateMethod}`);
+  }
+  assert(sandbox.safePublicUrl_("https://jobs.example.com/apply?candidate=private@example.com", false) === "", "GAS exposed an email-bearing URL.");
+  assert(sandbox.safePublicUrl_("http://[::ffff:c0a8:114]/apply", false) === "", "GAS exposed an IPv4-mapped private-network URL.");
+  for (const privateHostUrl of [
+    "http://2130706433/apply",
+    "http://127.1/apply",
+    "http://0x7f000001/apply",
+    "http://0177.0.0.1/apply",
+    "http://[0:0:0:0:0:0:0:1]/apply",
+    "http://[0:0:0:0:0:ffff:c0a8:114]/apply",
+    "http://[0000::1]/apply",
+    "http://[fec0::1]/apply",
+    "http://[ff02::1]/apply"
+  ]) {
+    assert(sandbox.safePublicUrl_(privateHostUrl, false) === "", `GAS exposed a non-public host: ${privateHostUrl}`);
+  }
+  assert(sandbox.safePublicUrl_("https://jobs.example.com/out?next=https%3A%2F%2Fother.example%2Fadmin%3Faccess_token%3Dprivate", false) === "", "GAS exposed a nested credential URL.");
+  assert(sandbox.safePublicUrl_("https://jobs.example.com/out?next=https%3A%2F%2Fother.example%2Fadmin%3Fview%3Dreview", false) === "", "GAS exposed a nested management URL.");
+  assert(sandbox.safePublicUrl_("https://jobs.example.com/out?next=http%3A%2F%2F192.168.1.20%2Freview", false) === "", "GAS exposed a nested private-network URL.");
+  assert(sandbox.safePublicUrl_("https://jobs.example.com/out?next=%2F%2F127.0.0.1%2Freview", false) === "", "GAS exposed a protocol-relative nested private-network URL.");
+  assert(sandbox.safePublicUrl_("https://jobs.example.com\\admin\\review", false) === "", "GAS exposed a backslash private path.");
+
+  const directory = sandbox.publicDirectoryPayload_({
+    _rowNumber: 9,
+    id: "shop@example.com",
+    place_id: "place@example.com",
+    placeId: "https://example.com/manage",
+    slug: "https://example.com/internal",
+    status: "active",
+    website: "https://example.com/%2561dmin/edit",
+    official_url: "https://example.com/",
+    map_url: "http://192.168.1.20/place"
+  }, "shopping");
+  assert(directory.id === "shopping-row-9" && directory.slug === "shopping-row-9", "GAS exposed an unsafe Directory identifier.");
+  assert(directory.place_id === "shopping-row-9" && directory.placeId === "shopping-row-9", "GAS exposed an unsafe Directory identifier alias.");
+  assert(directory.website === "" && directory.map_url === "", "GAS exposed a private Directory URL.");
+  assert(directory.official_url === "https://example.com/", "GAS removed a safe Directory URL.");
+}
+
 testSpreadsheetResolution();
 testJobPersistenceIdempotencyAndThrottling();
 testCommunityAdminFailureIsolation();
 testCommunityPublicLifecycleAndCacheBypass();
+testPublicPayloadCredentialSanitization();
 console.log("GAS submission tests passed.");

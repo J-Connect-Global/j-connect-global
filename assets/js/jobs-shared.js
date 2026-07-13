@@ -45,7 +45,7 @@
     const details = getValue(row, "full_description", "description", "job_details");
     const tags = getValue(row, "tags", "skills", "skill_tags", "requirements_tags");
     const id = getValue(row, "job_id", "id") || stableSlug(positionTitle, companyName, region) || `job-${index + 1}`;
-    const publicApplicationEmail = getValue(row, "application_email", "public_email", "apply_email");
+    const logoUrl = getValue(row, "company_logo_url", "logo_url", "image_url", "image");
     const explicitListingType = normalize(getValue(row, "listing_type"));
     const listingType = explicitListingType === "real" ? "real" : "sample";
     const isSample = listingType === "sample";
@@ -82,9 +82,6 @@
       job_details: details,
       description: details,
       requirements: getValue(row, "requirements"),
-      contact_email: isSample ? "" : publicApplicationEmail,
-      application_email: isSample ? "" : publicApplicationEmail,
-      apply_email: isSample ? "" : publicApplicationEmail,
       apply_url: isSample ? "" : getValue(row, "apply_url", "application_url", "source_url", "official_url", "url"),
       application_url: isSample ? "" : getValue(row, "application_url", "apply_url", "apply_link"),
       apply_link: isSample ? "" : getValue(row, "apply_link", "apply_url", "application_url"),
@@ -93,6 +90,10 @@
       source_url: getValue(row, "source_url", "official_url", "url", "website"),
       source_name: getValue(row, "source_name", "source", "publisher"),
       visa_support: getValue(row, "visa_support"),
+      company_logo_url: logoUrl,
+      logo_url: logoUrl,
+      image_url: logoUrl,
+      image_alt: getValue(row, "image_alt") || companyName || positionTitle,
       last_modified_at: getValue(row, "last_modified_at", "lastModifiedAt", "last_modified"),
       updated_at: getValue(row, "updated_at", "updated", "last_updated"),
       published_at: getValue(row, "published_at", "posted_at", "posted_date", "published"),

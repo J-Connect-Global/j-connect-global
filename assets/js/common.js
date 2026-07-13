@@ -32,6 +32,8 @@
   function resolveContentImage(item) {
     const source = item || {};
     const candidates = [
+      source.company_logo_url,
+      source.logo_url,
       source.image,
       source.image_url,
       source.imageUrl,

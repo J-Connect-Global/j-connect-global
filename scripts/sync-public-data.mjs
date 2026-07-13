@@ -1,4 +1,6 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { randomUUID } from "node:crypto";
+import { mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
+import { isIP } from "node:net";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -26,7 +28,18 @@ const LEGACY_ENDPOINT_ENV_NAMES = [
   "COMMUNITY_API_URL", "CONTENTS_API_URL", "JOBS_API_URL", "DIRECTORY_API_URL",
   "EAT_API_URL", "SHOPPING_API_URL", "MEDICAL_API_URL"
 ];
-const PRIVATE_FIELD_PATTERN = /(?:email_private|contact_email|contact_name|manage_|token|secret|admin_|internal|moderation|submission_key|approval_|spreadsheet|notes_internal)/i;
+const PRIVATE_FIELD_PATTERN = /(?:email|contact_name|reviewer|manage_|token|secret|password|authorization|credential|signature|api[_-]?key|admin_|internal|moderation|submission_key|approval_|spreadsheet|notes_internal)/i;
+const PRIVATE_URL_PATH_PATTERN = /\/(?:manage|admin|internal)(?:[/?#]|$)/i;
+const PRIVATE_IDENTIFIER_PATTERN = /(?:^|[._'&-])(?:manage|admin|internal|token|secret|password|email|spreadsheet|moderation)(?:[._'&-]|$)/i;
+const SAFE_PUBLIC_ID_PATTERN = /^[\p{L}\p{N}][\p{L}\p{N}._'&-]{0,159}$/u;
+const SAFE_PUBLIC_SLUG_PATTERN = /^[\p{L}\p{N}][\p{L}\p{N}._'&-]{0,239}$/u;
+const EMAIL_ADDRESS_PATTERN = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i;
+const PRIVATE_URL_PARAMETER_NAMES = new Set([
+  "token", "secret", "password", "authorization", "auth", "api_key", "apikey",
+  "access_token", "refresh_token", "manage_token", "authorization_code", "auth_code",
+  "oauth_code", "credential", "credentials", "signature", "sig", "key",
+  "email", "contact_email", "reviewer_email"
+]);
 const PLACEHOLDER_CATEGORY_VALUES = new Set(["test", "placeholder", "dummy", "n/a", "na", "-"]);
 
 const timeoutMs = Number(process.env.PUBLIC_DATA_TIMEOUT_MS || 30000);
@@ -139,7 +152,7 @@ function safeVersion(value) {
 export function assertApiVersion(payload, label, expected = EXPECTED_API_VERSION) {
   const received = safeVersion(payload?.api_version);
   if (received !== expected) {
-    throw new Error(`${label} API version mismatch: expected ${expected}, received ${received}. Deploy the current Apps Script as a new version to the existing Web App deployment.`);
+    throw new Error(`${label} API version mismatch: expected ${expected}, received ${received}. Apps Script source must be deployed as a new version using the existing Web App deployment URL.`);
   }
   return true;
 }
@@ -151,12 +164,127 @@ function splitMediaValue(value) {
   return String(value).split(/[\n,;]/).map((item) => item.trim()).filter(Boolean);
 }
 
+function normalizeUrlParameterName(value) {
+  return clean(value)
+    .normalize("NFKC")
+    .replace(/([a-z0-9])([A-Z])/g, "$1_$2")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "");
+}
+
+function isPrivateUrlParameterName(value) {
+  let decoded = "";
+  try {
+    decoded = decodeUrlComponent(value);
+  } catch {
+    return true;
+  }
+  const name = normalizeUrlParameterName(decoded);
+  return PRIVATE_URL_PARAMETER_NAMES.has(name)
+    || /(?:^|_)(?:token|secret|password|credential|signature)(?:_|$)/.test(name);
+}
+
+function decodeUrlComponent(value) {
+  let decoded = clean(value);
+  for (let index = 0; index < 3; index += 1) {
+    const next = decodeURIComponent(decoded);
+    if (next === decoded) break;
+    decoded = next;
+  }
+  return decoded.normalize("NFKC");
+}
+
+function hasPrivateUrlPath(url) {
+  try {
+    return PRIVATE_URL_PATH_PATTERN.test(decodeUrlComponent(url.pathname).replace(/\\/g, "/"));
+  } catch {
+    return true;
+  }
+}
+
+function hasPrivateParameterAssignments(value) {
+  let decoded;
+  try {
+    decoded = decodeUrlComponent(value);
+  } catch {
+    return true;
+  }
+  const keys = [];
+  const keyPattern = /(?:^|[?&#;/])([^=?&#;/]+)=/g;
+  for (const match of decoded.matchAll(keyPattern)) keys.push(match[1]);
+  return keys.some(isPrivateUrlParameterName);
+}
+
+function hasPrivateUrlParameters(url) {
+  if ([...url.searchParams.keys()].some(isPrivateUrlParameterName)) return true;
+  return hasPrivateParameterAssignments(url.hash.replace(/^#/, ""));
+}
+
+function isPrivateNetworkHost(hostname) {
+  const host = clean(hostname).toLowerCase().replace(/^\[|\]$/g, "").replace(/\.$/, "");
+  if (!host || host === "localhost" || host.endsWith(".localhost") || host.endsWith(".local") || host.endsWith(".internal")) return true;
+  if (isIP(host) === 4) {
+    const [a, b] = host.split(".").map(Number);
+    return a === 0 || a === 10 || a === 127
+      || (a === 100 && b >= 64 && b <= 127)
+      || (a === 169 && b === 254)
+      || (a === 172 && b >= 16 && b <= 31)
+      || (a === 192 && b === 168)
+      || (a === 198 && (b === 18 || b === 19))
+      || a >= 224;
+  }
+  if (isIP(host) === 6) {
+    if (host === "::" || host === "::1") return true;
+    if (/^(?:fc|fd|ff)/i.test(host) || /^fe[89a-f]/i.test(host)) return true;
+    const mapped = host.match(/::ffff:(\d+\.\d+\.\d+\.\d+)$/i)?.[1];
+    if (mapped) return isPrivateNetworkHost(mapped);
+    const mappedHex = host.match(/::(?:ffff:)?([0-9a-f]{1,4}):([0-9a-f]{1,4})$/i);
+    if (mappedHex) {
+      const high = Number.parseInt(mappedHex[1], 16);
+      const low = Number.parseInt(mappedHex[2], 16);
+      return isPrivateNetworkHost(`${high >> 8}.${high & 255}.${low >> 8}.${low & 255}`);
+    }
+    return false;
+  }
+  return false;
+}
+
+function hasUnsafeUrlAuthority(value) {
+  for (const match of value.matchAll(/(?:https?:)?\/\/([^/?#&]+)/gi)) {
+    try {
+      const nested = new URL(match[0], "https://j-connect.invalid");
+      if (nested.username || nested.password || isPrivateNetworkHost(nested.hostname)) return true;
+    } catch {
+      return true;
+    }
+  }
+  return false;
+}
+
+function isSafeParsedUrl(url) {
+  let decodedHref = "";
+  try {
+    decodedHref = decodeUrlComponent(url.href);
+  } catch {
+    return false;
+  }
+  const normalizedDecodedHref = decodedHref.replace(/\\/g, "/");
+  return !url.username && !url.password && !EMAIL_ADDRESS_PATTERN.test(normalizedDecodedHref)
+    && !isPrivateNetworkHost(url.hostname)
+    && !hasUnsafeUrlAuthority(normalizedDecodedHref)
+    && !PRIVATE_URL_PATH_PATTERN.test(normalizedDecodedHref)
+    && !hasPrivateParameterAssignments(normalizedDecodedHref)
+    && !hasPrivateUrlPath(url) && !hasPrivateUrlParameters(url);
+}
+
 function isSafeHttpUrl(value) {
   const text = clean(value);
   if (!text) return false;
   try {
     const url = new URL(text);
-    return url.protocol === "https:" || url.protocol === "http:";
+    if (url.protocol !== "https:" && url.protocol !== "http:") return false;
+    return isSafeParsedUrl(url);
   } catch {
     return false;
   }
@@ -164,6 +292,55 @@ function isSafeHttpUrl(value) {
 
 function safeHttpUrl(value) {
   return isSafeHttpUrl(value) ? new URL(clean(value)).toString() : "";
+}
+
+function safeRelativeUrl(value) {
+  const text = clean(value);
+  if (!text.startsWith("/") || text.startsWith("//")) return "";
+  try {
+    const url = new URL(text, "https://j-connect.invalid");
+    return url.origin === "https://j-connect.invalid" && isSafeParsedUrl(url)
+      ? `${url.pathname}${url.search}${url.hash}`
+      : "";
+  } catch {
+    return "";
+  }
+}
+
+function safePublicUrl(value, { allowRelative = false } = {}) {
+  return safeHttpUrl(value) || (allowRelative ? safeRelativeUrl(value) : "");
+}
+
+function safePublicApplicationMethod(value) {
+  const text = clean(value);
+  if (EMAIL_ADDRESS_PATTERN.test(text) || hasPrivateParameterAssignments(text)) return "";
+  let decoded = "";
+  try {
+    decoded = decodeUrlComponent(text).replace(/\\/g, "/");
+  } catch {
+    return "";
+  }
+  if (EMAIL_ADDRESS_PATTERN.test(decoded) || hasUnsafeUrlAuthority(decoded) || PRIVATE_URL_PATH_PATTERN.test(decoded)) return "";
+  for (const match of text.matchAll(/https?:\/\/[^\s<>"']+/gi)) {
+    if (!isSafeHttpUrl(match[0])) return "";
+  }
+  return text;
+}
+
+function safePublicId(value, fallback, guaranteedFallback = "") {
+  for (const raw of [value, fallback, guaranteedFallback]) {
+    const candidate = clean(raw).normalize("NFKC");
+    if (SAFE_PUBLIC_ID_PATTERN.test(candidate) && !PRIVATE_IDENTIFIER_PATTERN.test(candidate)) return candidate;
+  }
+  throw new Error("Unable to derive a safe public identifier.");
+}
+
+function safePublicSlug(value, fallback, guaranteedFallback = "") {
+  for (const raw of [value, fallback, guaranteedFallback]) {
+    const candidate = clean(raw).normalize("NFKC");
+    if (SAFE_PUBLIC_SLUG_PATTERN.test(candidate) && !PRIVATE_IDENTIFIER_PATTERN.test(candidate)) return candidate;
+  }
+  throw new Error("Unable to derive a safe public slug.");
 }
 
 function normalizeImageSrc(value) {
@@ -179,7 +356,7 @@ function normalizeImageSrc(value) {
     }
     return url.toString();
   } catch {
-    return src.startsWith("/") ? src : "";
+    return safeRelativeUrl(src);
   }
 }
 
@@ -235,13 +412,14 @@ export function normalizeCommunityPost(row, index) {
   const category2 = first(row, ["category2", "subcategory", "topic"]);
   const city = first(row, ["city", "town", "location"]);
   const region = first(row, ["region", "state", "area"]);
-  const id = first(row, ["post_id", "postId", "id", "_id"]) || stableSlug(title, city, region) || `community-${index + 1}`;
+  const fallbackId = stableSlug(title, city, region) || `community-${index + 1}`;
+  const id = safePublicId(first(row, ["post_id", "postId", "id", "_id"]), fallbackId, `community-row-${index + 1}`);
   const images = imageUrls(row);
   const createdAt = toIsoDate(first(row, ["created_at", "createdAt", "date", "timestamp"]));
   const publishedAt = communityPublicationDate(row) || createdAt;
   return {
     id, post_id: id,
-    slug: first(row, ["slug"]) || stableSlug(title, city, region, id),
+    slug: safePublicSlug(first(row, ["slug"]), stableSlug(title, city, region, id), id),
     title, body, summary: first(row, ["summary", "excerpt"]),
     category1, category2, postType: category1, subcategory: category2,
     country: first(row, ["country"]) || "Germany", region, city,
@@ -256,17 +434,6 @@ export function normalizeCommunityPost(row, index) {
     expires_at: toIsoDate(first(row, ["expires_at", "expiresAt", "expiration_date"])),
     status: "active"
   };
-}
-
-function isPublicContactEmail(value) {
-  const email = clean(value);
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return false;
-  return !email.toLowerCase().endsWith("@j-connect-global.com");
-}
-
-function publicContactEmail(row, keys) {
-  const email = first(row, keys);
-  return isPublicContactEmail(email) ? email : "";
 }
 
 function jobListingType(row) {
@@ -307,14 +474,15 @@ export function normalizeJob(row, index, classification = classifyJob(row)) {
   const summary = first(row, ["short_description", "summary", "description_short"]);
   const details = first(row, ["full_description", "description", "job_details"]);
   const tags = first(row, ["tags", "skills", "skill_tags", "requirements_tags"]);
-  const id = first(row, ["job_id", "id"]) || stableSlug(positionTitle, companyName, region) || `job-${index + 1}`;
+  const fallbackId = stableSlug(positionTitle, companyName, region) || `job-${index + 1}`;
+  const id = safePublicId(first(row, ["job_id", "id"]), fallbackId, `job-row-${index + 1}`);
   const isSample = classification.listingType === "sample";
   const applyUrl = isSample ? "" : safeHttpUrl(first(row, ["apply_url", "application_url", "apply_link"]));
-  const applicationEmail = isSample ? "" : publicContactEmail(row, ["application_email", "application_contact_email", "apply_email", "public_email"]);
+  const logoUrl = normalizeImageSrc(first(row, ["company_logo_url", "logo_url", "image_url", "image"]));
   return {
     id, job_id: id,
-    slug: first(row, ["slug", "job_slug"]) || stableSlug(positionTitle, companyName, region),
-    detail_url: first(row, ["detail_url", "detailUrl", "detail_page_url"]),
+    slug: safePublicSlug(first(row, ["slug", "job_slug"]), stableSlug(positionTitle, companyName, region, id), id),
+    detail_url: safePublicUrl(first(row, ["detail_url", "detailUrl", "detail_page_url"]), { allowRelative: true }),
     status: "active", priority: toNumber(first(row, ["priority"])) || 999,
     listing_type: classification.listingType,
     governance_defaulted: Boolean(classification.legacyDefault),
@@ -335,13 +503,14 @@ export function normalizeJob(row, index, classification = classifyJob(row)) {
     salary_label: first(row, ["salary_label", "salary"]), summary, short_description: summary,
     job_details: details, description: details,
     requirements: first(row, ["requirements"]), benefits: first(row, ["benefits"]),
-    application_email: applicationEmail, apply_email: applicationEmail,
     apply_url: applyUrl, application_url: applyUrl,
-    apply_method: isSample ? "" : first(row, ["apply_method", "application_method", "how_to_apply"]),
+    apply_method: isSample ? "" : safePublicApplicationMethod(first(row, ["apply_method", "application_method", "how_to_apply"])),
     company_url: safeHttpUrl(first(row, ["company_url", "company_website", "company_site", "company_link"])),
     source_url: safeHttpUrl(first(row, ["source_url", "official_url", "url", "website"])),
     source_name: first(row, ["source_name", "source", "publisher"]),
-    visa_support: first(row, ["visa_support", "visa"]), image_alt: first(row, ["image_alt", "imageAlt"]) || companyName || positionTitle,
+    visa_support: first(row, ["visa_support", "visa"]),
+    company_logo_url: logoUrl, logo_url: logoUrl, image_url: logoUrl,
+    image_alt: first(row, ["image_alt", "imageAlt"]) || companyName || positionTitle,
     verified_at: classification.listingType === "real" ? toIsoDate(first(row, ["verified_at"])) : "",
     employer_authorized_at: classification.listingType === "real" ? toIsoDate(first(row, ["employer_authorized_at"])) : "",
     last_reviewed_at: toIsoDate(first(row, ["last_reviewed_at"])),
@@ -362,9 +531,9 @@ function placeholderCategory(value) {
 
 function directoryId(row, dataset, index) {
   const candidate = first(row, ["id", "item_id", "place_id", "placeId", "placeid", "slug"]);
-  if (candidate && !placeholderCategory(candidate)) return candidate;
-  return stableSlug(dataset, first(row, ["name", "title", "name_ja", "name_en"]), first(row, ["address", "completeAddress", "completeaddress", "street"]), index + 1)
+  const fallbackId = stableSlug(dataset, first(row, ["name", "title", "name_ja", "name_en"]), first(row, ["address", "completeAddress", "completeaddress", "street"]), index + 1)
     || `${dataset}-${index + 1}`;
+  return safePublicId(candidate && !placeholderCategory(candidate) ? candidate : "", fallbackId, `${dataset}-row-${index + 1}`);
 }
 
 function directoryFields(row, dataset, index) {
@@ -409,7 +578,7 @@ export function normalizeDirectoryItem(row, dataset, index) {
   const address = first(row, ["address", "completeAddress", "completeaddress", "street"]);
   const description = first(row, ["short_description", "description_ja", "description"]);
   return {
-    id: fields.id, slug: first(row, ["slug"]) || stableSlug(fields.name, fields.cityArea, fields.id), status: "active",
+    id: fields.id, slug: safePublicSlug(first(row, ["slug"]), stableSlug(fields.name, fields.cityArea, fields.id), fields.id), status: "active",
     name: fields.name, title: fields.name, name_ja: first(row, ["name_ja"]), name_en: first(row, ["name_en"]),
     category: fields.category, category1: fields.category, detail_category: fields.detailCategory, category2: fields.detailCategory,
     city: first(row, ["city"]), region: first(row, ["region", "state", "area", "city"]), area: first(row, ["area"]),
@@ -540,6 +709,10 @@ function validationReport(payload, rows, results, generatedCount, extra = {}) {
   };
 }
 
+export function capSafeIds(ids, limit = 50) {
+  return ids.slice(0, Math.max(0, limit));
+}
+
 export function publicPayload(source, endpoint, items, validation = undefined) {
   const payload = { api_version: EXPECTED_API_VERSION, source, endpoint, count: items.length, items };
   if (validation) payload.validation = validation;
@@ -547,14 +720,78 @@ export function publicPayload(source, endpoint, items, validation = undefined) {
   return payload;
 }
 
+function isUrlFieldPath(pathLabel) {
+  return /(?:url|href|link|endpoint|image|logo|website|homepage)/i.test(pathLabel);
+}
+
+function isIdentifierPath(pathLabel) {
+  const normalizedPath = pathLabel.replace(/\[\d+\]/g, "");
+  return /(?:^|\.)(?:id|post_id|job_id|item_id|place_id|placeid)$/i.test(normalizedPath)
+    || /(?:^|\.)excluded_safe_ids(?:\.|$)/.test(normalizedPath);
+}
+
+function isSlugPath(pathLabel) {
+  return /(?:^|\.)slug$/i.test(pathLabel.replace(/\[\d+\]/g, ""));
+}
+
 export function assertNoPrivateFields(value, pathLabel = "public JSON") {
+  if (typeof value === "string") {
+    const text = value.trim();
+    if (isIdentifierPath(pathLabel)
+      && (!SAFE_PUBLIC_ID_PATTERN.test(text.normalize("NFKC")) || PRIVATE_IDENTIFIER_PATTERN.test(text))) {
+      throw new Error(`${pathLabel} contains an unsafe public identifier`);
+    }
+    if (isSlugPath(pathLabel)
+      && (!SAFE_PUBLIC_SLUG_PATTERN.test(text.normalize("NFKC")) || PRIVATE_IDENTIFIER_PATTERN.test(text))) {
+      throw new Error(`${pathLabel} contains an unsafe public slug`);
+    }
+    if (/(?:apply_method|application_method|how_to_apply)$/i.test(pathLabel)
+      && safePublicApplicationMethod(text) !== text) {
+      throw new Error(`${pathLabel} contains private application data`);
+    }
+    if (isUrlFieldPath(pathLabel)) {
+      if (/^(?:https?:\/\/|\/)/i.test(text)) {
+        const safe = text.startsWith("/") ? safeRelativeUrl(text) : safeHttpUrl(text);
+        if (!safe) throw new Error(`${pathLabel} contains a private or unsafe URL`);
+      } else if (/^[a-z][a-z0-9+.-]*:/i.test(text)) {
+        throw new Error(`${pathLabel} contains a non-public URL scheme`);
+      } else if (EMAIL_ADDRESS_PATTERN.test(text) || hasPrivateParameterAssignments(text)) {
+        throw new Error(`${pathLabel} contains private URL data`);
+      }
+    }
+    return true;
+  }
   if (Array.isArray(value)) {
     value.forEach((item, index) => assertNoPrivateFields(item, `${pathLabel}[${index}]`));
     return true;
   }
   if (!value || typeof value !== "object") return true;
+  if (/(?:^|\.)excluded_by_reason$/.test(pathLabel)) {
+    for (const [reason, count] of Object.entries(value)) {
+      if (!/^[a-z][a-z0-9_]{0,79}$/.test(reason) || !Number.isInteger(count) || count < 0) {
+        throw new Error(`${pathLabel}.${reason} must be a non-negative integer with a safe reason label`);
+      }
+    }
+    return true;
+  }
+  if (/(?:^|\.)excluded_safe_ids$/.test(pathLabel)) {
+    for (const [reason, ids] of Object.entries(value)) {
+      if (!/^[a-z][a-z0-9_]{0,79}$/.test(reason) || !Array.isArray(ids) || ids.length > 50) {
+        throw new Error(`${pathLabel}.${reason} must be an array capped at 50 IDs with a safe reason label`);
+      }
+      ids.forEach((id, index) => {
+        if (typeof id !== "string" || !id.trim()) {
+          throw new Error(`${pathLabel}.${reason}[${index}] must be a non-empty safe string ID`);
+        }
+        assertNoPrivateFields(id, `${pathLabel}.${reason}[${index}]`);
+      });
+    }
+    return true;
+  }
   for (const [key, nested] of Object.entries(value)) {
-    if (PRIVATE_FIELD_PATTERN.test(key)) throw new Error(`${pathLabel} contains forbidden private field: ${key}`);
+    if (PRIVATE_FIELD_PATTERN.test(normalizeUrlParameterName(key))) {
+      throw new Error(`${pathLabel} contains forbidden private field: ${key}`);
+    }
     assertNoPrivateFields(nested, `${pathLabel}.${key}`);
   }
   return true;
@@ -568,8 +805,21 @@ export async function writeJsonIfChanged(file, data) {
   } catch {
     // A missing or invalid generated file is replaced below.
   }
-  await mkdir(path.dirname(file), { recursive: true });
-  await writeFile(file, `${JSON.stringify({ ...data, generated_at: generatedAt }, null, 2)}\n`, "utf8");
+  const directory = path.dirname(file);
+  await mkdir(directory, { recursive: true });
+  const tempFile = path.join(directory, `.${path.basename(file)}.${process.pid}.${randomUUID()}.tmp`);
+  const serialized = `${JSON.stringify({ ...data, generated_at: generatedAt }, null, 2)}\n`;
+  try {
+    await writeFile(tempFile, serialized, { encoding: "utf8", flag: "wx" });
+    await rename(tempFile, file);
+  } catch (error) {
+    try {
+      await rm(tempFile, { force: true });
+    } catch (cleanupError) {
+      throw new AggregateError([error, cleanupError], `Failed to replace ${file} and clean up its temporary file.`);
+    }
+    throw error;
+  }
   return true;
 }
 
@@ -605,12 +855,17 @@ export async function main() {
   };
 
   const communityResults = communityRows.map((row, index) => ({
-    eligible: isPublicCommunityPost(row), reason: "lifecycle_excluded", id: first(row, ["post_id", "id"]) || `community-${index + 1}`
+    eligible: isPublicCommunityPost(row),
+    reason: "lifecycle_excluded",
+    id: safePublicId(first(row, ["post_id", "id"]), `community-row-${index + 1}`)
   }));
   const communityItems = sortCommunityNewest(communityRows.filter((_, index) => communityResults[index].eligible).map(normalizeCommunityPost));
   if (!communityItems.length) throw new Error("Community Master GAS returned zero public-eligible items.");
 
-  const jobResults = jobRows.map((row, index) => ({ ...classifyJob(row), id: first(row, ["job_id", "id"]) || `job-${index + 1}` }));
+  const jobResults = jobRows.map((row, index) => ({
+    ...classifyJob(row),
+    id: safePublicId(first(row, ["job_id", "id"]), `job-row-${index + 1}`)
+  }));
   const normalizedJobs = jobRows
     .map((row, index) => ({ row, index, classification: jobResults[index] }))
     .filter(({ classification }) => classification.eligible)
@@ -646,7 +901,7 @@ export async function main() {
   };
   if (cappedSamples) {
     reports.jobs.excluded_by_reason.sample_limit = cappedSamples;
-    reports.jobs.excluded_safe_ids.sample_limit = cappedSampleJobs.map((job) => job.id);
+    reports.jobs.excluded_safe_ids.sample_limit = capSafeIds(cappedSampleJobs.map((job) => job.id));
     reports.jobs.excluded_count += cappedSamples;
     reports.jobs.eligible_count = jobItems.length;
   }
@@ -667,6 +922,10 @@ export async function main() {
     [outputPaths.shopping, publicPayload("master-gas:shopping", "canonicalMasterEndpoint?sheet=shopping&lang=ja&status=active", directoryItems.shopping, reports.shopping), "shopping"],
     [outputPaths.medical, publicPayload("master-gas:medical", "canonicalMasterEndpoint?sheet=medical&lang=ja&status=active", directoryItems.medical, reports.medical), "medical"]
   ];
+  // Validate every prepared artifact before the first replacement. Each changed
+  // file is then replaced atomically, but the seven files are not one transaction:
+  // a later filesystem failure can leave earlier per-file replacements in place.
+  for (const [, data, label] of writes) assertNoPrivateFields(data, label);
   for (const [file, data, label] of writes) if (await writeJsonIfChanged(file, data)) changed.push(label);
 
   console.log(`Public data source: ${sourceType}; ${sanitizedEndpointIdentity(masterEndpoint)}; expected API ${EXPECTED_API_VERSION}`);

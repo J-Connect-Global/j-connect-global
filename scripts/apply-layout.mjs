@@ -345,7 +345,6 @@ function isAlternateHreflangLine(line) {
 }
 
 function shouldHaveJaHreflang(html, page, canonical) {
-  if (/<meta\b(?=[^>]*name=["']robots["'])(?=[^>]*content=["'][^"']*noindex)/i.test(html)) return false;
   if (page && page.status !== 'published') return false;
   return isCanonicalJaUrl(canonical);
 }

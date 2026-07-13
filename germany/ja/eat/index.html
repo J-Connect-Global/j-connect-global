@@ -391,6 +391,7 @@
     let markerMap = new Map();
     let geocodeCache = new Map();
     let activeItemId = null;
+    let modalReturnFocus = null;
     let mapInitialized = false;
     let geocodeRunToken = 0;
 
@@ -802,9 +803,7 @@ function buildAddress(item) {
 
     function bindCardInteractions() {
       els.cards.querySelectorAll(".card").forEach(card => {
-        card.setAttribute("role", "button");
-        card.setAttribute("tabindex", "0");
-        const openCurrent = () => {
+        const openCurrent = (returnFocusEl) => {
           const itemId = card.getAttribute("data-item-id");
           const item = filteredItems.find(x => x.__id === itemId);
           if (!item) return;
@@ -817,21 +816,11 @@ function buildAddress(item) {
             marker.openPopup();
           }
 
-          openListingModal(item);
+          openListingModal(item, returnFocusEl);
         };
 
-        card.addEventListener("click", (e) => {
-          if (e.target.closest("a, button")) return;
-          openCurrent();
-        });
-
-        card.querySelector("[data-detail]")?.addEventListener("click", openCurrent);
-
-        card.addEventListener("keydown", (event) => {
-          if (event.key !== "Enter" && event.key !== " ") return;
-          event.preventDefault();
-          openCurrent();
-        });
+        const detailButton = card.querySelector("[data-detail]");
+        detailButton?.addEventListener("click", () => openCurrent(detailButton));
       });
     }
 
@@ -896,8 +885,9 @@ function buildAddress(item) {
       `;
     }
 
-    function openListingModal(item) {
+    function openListingModal(item, returnFocusEl) {
       if (!els.listingModal || !els.listingModalContent) return;
+      modalReturnFocus = returnFocusEl || document.activeElement;
       els.listingModalContent.innerHTML = buildListingDetailHtml(item);
       els.listingModal.hidden = false;
       document.body.classList.add("modal-open");
@@ -905,9 +895,51 @@ function buildAddress(item) {
     }
 
     function closeListingModal() {
-      if (!els.listingModal) return;
+      if (!els.listingModal || els.listingModal.hidden) return;
       els.listingModal.hidden = true;
       document.body.classList.remove("modal-open");
+      if (modalReturnFocus?.isConnected && typeof modalReturnFocus.focus === "function") {
+        modalReturnFocus.focus({ preventScroll:true });
+      }
+      modalReturnFocus = null;
+    }
+
+    function getModalFocusableElements() {
+      const dialog = els.listingModal?.querySelector('[role="dialog"][aria-modal="true"]');
+      if (!dialog) return [];
+      return Array.from(dialog.querySelectorAll(
+        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]), [contenteditable="true"]'
+      )).filter(element => element.getAttribute("aria-hidden") !== "true" && !element.hasAttribute("hidden"));
+    }
+
+    function handleListingModalKeydown(event) {
+      if (!els.listingModal || els.listingModal.hidden) return;
+
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeListingModal();
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+      const focusable = getModalFocusableElements();
+      if (!focusable.length) {
+        event.preventDefault();
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const dialog = els.listingModal.querySelector('[role="dialog"][aria-modal="true"]');
+      const focusIsOutside = !dialog?.contains(document.activeElement);
+
+      if (event.shiftKey && (document.activeElement === first || focusIsOutside)) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && (document.activeElement === last || focusIsOutside)) {
+        event.preventDefault();
+        first.focus();
+      }
     }
 
     function resetFilters() {
@@ -1193,11 +1225,7 @@ rawItems.forEach(preloadCoordinatesFromFields);
     els.listingModal.addEventListener("click", event => {
       if (event.target.matches("[data-modal-close]")) closeListingModal();
     });
-    document.addEventListener("keydown", event => {
-      if (event.key === "Escape" && els.listingModal && !els.listingModal.hidden) {
-        closeListingModal();
-      }
-    });
+    document.addEventListener("keydown", handleListingModalKeydown);
 
     setViewMode(currentView);
     loadData();

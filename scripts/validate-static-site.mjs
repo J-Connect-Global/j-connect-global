@@ -143,6 +143,12 @@ const blockedTerms = [
 ];
 
 const checkedTextExts = new Set(['.html', '.css', '.js', '.mjs']);
+const excludedWalkDirectories = new Set([
+  '.git',
+  'node_modules',
+  'playwright-report',
+  'test-results',
+]);
 const htmlFiles = [];
 const textFiles = [];
 const problems = [];
@@ -150,7 +156,7 @@ const pagesByUrl = loadPagesRegistry();
 
 function walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (entry.name === '.git') continue;
+    if (entry.isDirectory() && excludedWalkDirectories.has(entry.name)) continue;
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       walk(full);
@@ -343,6 +349,7 @@ function validateHtmlMetadata(rel, url, html, page) {
   if (!url.startsWith(PRIMARY_JA_PATH)) return;
 
   const title = extractTitle(html);
+  const htmlLang = String(html).match(/<html\b[^>]*\blang=["']([^"']+)["']/i)?.[1]?.toLowerCase() || '';
   const description = extractMetaContent(html, 'name', 'description');
   const robots = normalizeRobots(extractMetaContent(html, 'name', 'robots'));
   const canonical = extractCanonical(html);
@@ -351,6 +358,7 @@ function validateHtmlMetadata(rel, url, html, page) {
   const hasNoindex = robots.includes('noindex');
 
   if (!title) problems.push(`${rel} missing <title>.`);
+  if (htmlLang !== 'ja') problems.push(`${rel} must use <html lang="ja">.`);
   if (!description) problems.push(`${rel} missing meta description.`);
   if (!robots) problems.push(`${rel} missing robots meta.`);
 
@@ -365,9 +373,20 @@ function validateHtmlMetadata(rel, url, html, page) {
     problems.push(`${rel} canonical should be ${expectedCanonical}, got ${canonical || '(missing)'}.`);
   }
 
-  if (shouldIndex) {
-    if (!hasHreflang(html, 'ja')) problems.push(`${rel} missing hreflang="ja".`);
-    if (!hasHreflang(html, 'x-default')) problems.push(`${rel} missing hreflang="x-default".`);
+  const shouldHaveJaAlternates = page
+    ? page.status === 'published'
+    : isArticleUrl(url, page);
+  if (shouldHaveJaAlternates) {
+    const alternates = hreflangEntries(html);
+    if (alternates.length !== 2) problems.push(`${rel} must contain exactly ja and x-default hreflang alternates.`);
+    for (const lang of ['ja', 'x-default']) {
+      const matches = alternates.filter((entry) => entry.lang === lang);
+      if (matches.length !== 1) problems.push(`${rel} must contain exactly one hreflang="${lang}".`);
+      else if (matches[0].href !== canonical) problems.push(`${rel} hreflang="${lang}" must match the canonical URL.`);
+    }
+    for (const entry of alternates.filter((item) => !['ja', 'x-default'].includes(item.lang))) {
+      problems.push(`${rel} exposes unsupported hreflang="${entry.lang}".`);
+    }
   }
 
   for (const property of requiredOgProperties) {
@@ -643,8 +662,18 @@ function isArticleUrl(url, page) {
   return /^\/germany\/ja\/(?:living|events|learn-german)\/.+\/$/.test(url);
 }
 
-function hasHreflang(html, lang) {
-  return new RegExp(`<link\\b(?=[^>]*rel=["']alternate["'])(?=[^>]*hreflang=["']${escapeRegExp(lang)}["'])[^>]*>`, 'i').test(html);
+function hreflangEntries(html) {
+  const entries = [];
+  for (const match of String(html || '').matchAll(/<link\b[^>]*>/gi)) {
+    const tag = match[0];
+    const rel = tag.match(/\brel=["']([^"']+)["']/i)?.[1]?.toLowerCase().split(/\s+/) || [];
+    if (!rel.includes('alternate')) continue;
+    const lang = tag.match(/\bhreflang=["']([^"']+)["']/i)?.[1]?.toLowerCase();
+    if (!lang) continue;
+    const href = tag.match(/\bhref=["']([^"']+)["']/i)?.[1]?.trim() || '';
+    entries.push({ lang, href });
+  }
+  return entries;
 }
 
 function hasJsonLdType(html, type) {

@@ -5,21 +5,21 @@ on:
     - cron: "2,7,12,17,22,27,32,37,42,47,52,57 * * * *"
   workflow_dispatch:
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
+permissions: {}
 
 concurrency:
-  group: sync-public-data-and-pages
+  group: sync-public-data
   cancel-in-progress: false
 
 jobs:
   sync-public-data:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     outputs:
       changes_detected: ${{ steps.auto-commit-action.outputs.changes_detected }}
-      commit_hash: ${{ steps.auto-commit-action.outputs.commit_hash }}
+      deployment_sha: ${{ steps.deployment-ref.outputs.commit_sha }}
 
     steps:
       - name: Checkout repository
@@ -35,78 +35,47 @@ jobs:
 
       - name: Commit updated public data
         id: auto-commit-action
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@b863ae1933cb653a53c021fe36dbb774e1fb9403 # v5
         with:
           commit_message: "chore(data): sync public data"
           file_pattern: assets/data/community/*.json assets/data/jobs/*.json assets/data/eat/*.json assets/data/shopping/*.json assets/data/medical/*.json
 
-  deploy-pages:
-    if: needs.sync-public-data.outputs.changes_detected == 'true' || github.event_name == 'workflow_dispatch'
-    needs: sync-public-data
-    runs-on: ubuntu-latest
-    timeout-minutes: 25
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ needs.sync-public-data.outputs.commit_hash || github.sha }}
-
-      - name: Report Pages public-data artifact
+      - name: Resolve exact deployment commit
+        id: deployment-ref
         shell: bash
         env:
-          EXPECTED_APPROVED_COMMUNITY_POST_ID: ${{ vars.EXPECTED_APPROVED_COMMUNITY_POST_ID || 'post_b316572b-01e1-4b77-b41a-c87e68d65f0b' }}
+          CHANGES_DETECTED: ${{ steps.auto-commit-action.outputs.changes_detected }}
+          AUTO_COMMIT_SHA: ${{ steps.auto-commit-action.outputs.commit_hash }}
         run: |
-          node --input-type=module <<'NODE'
-          import { readFile } from "node:fs/promises";
-          const payload = JSON.parse(await readFile("assets/data/community/posts.json", "utf8"));
-          const ids = Array.isArray(payload.items) ? payload.items.map((item) => item.post_id || item.id) : [];
-          if (payload.count !== ids.length) throw new Error(`Pages Community count mismatch: ${payload.count} != ${ids.length}`);
-          if (!ids.length) throw new Error("Pages Community artifact unexpectedly contains zero posts.");
-          const expectedId = process.env.EXPECTED_APPROVED_COMMUNITY_POST_ID;
-          if (expectedId && !ids.includes(expectedId)) throw new Error(`Approved Community post is not present in the Pages artifact: ${expectedId}`);
-          console.log(`Pages Community artifact count: ${ids.length}`);
-          console.log(`Pages Community artifact post IDs: ${ids.join(", ")}`);
-          for (const file of ["assets/data/jobs/jobs.json", "assets/data/eat/items.json", "assets/data/shopping/items.json", "assets/data/medical/items.json"]) {
-            const data = JSON.parse(await readFile(file, "utf8"));
-            if (data.count !== data.items.length) throw new Error(`${file} count mismatch: ${data.count} != ${data.items.length}`);
-            console.log(`${file}: ${data.count} generated items`);
-          }
-          NODE
+          checked_out_sha="$(git rev-parse HEAD)"
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Build clean Pages artifact
-        shell: bash
-        run: |
-          rm -rf _site
-          mkdir -p _site
-
-          for dir in assets germany de en ja; do
-            if [ -d "$dir" ]; then
-              mkdir -p "_site/$dir"
-              cp -a "$dir/." "_site/$dir/"
+          if [[ "$CHANGES_DETECTED" == "true" ]]; then
+            if [[ ! "$AUTO_COMMIT_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+              echo "Public-data changes were committed without a valid commit_hash output." >&2
+              exit 1
             fi
-          done
-
-          for file in index.html 404.html robots.txt sitemap.xml CNAME favicon.ico site.webmanifest manifest.json browserconfig.xml; do
-            if [ -f "$file" ]; then
-              cp "$file" "_site/$file"
+            if [[ "$checked_out_sha" != "$AUTO_COMMIT_SHA" ]]; then
+              echo "Sync checkout is $checked_out_sha, but the generated-data commit is $AUTO_COMMIT_SHA." >&2
+              exit 1
             fi
-          done
+          fi
 
-          find . -maxdepth 1 -type f \( -name '*.webp' -o -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.svg' \) -exec cp {} _site/ \;
-          find _site -depth -name '.*' -exec rm -rf {} +
+          git fetch --no-tags --depth=1 origin refs/heads/main
+          current_main_sha="$(git rev-parse FETCH_HEAD)"
+          if [[ "$checked_out_sha" != "$current_main_sha" ]]; then
+            echo "Refusing to deploy sync result $checked_out_sha because current main is $current_main_sha." >&2
+            exit 1
+          fi
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: _site
+          echo "commit_sha=$checked_out_sha" >> "$GITHUB_OUTPUT"
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
+  deploy-pages:
+    if: github.ref == 'refs/heads/main' && (needs.sync-public-data.outputs.changes_detected == 'true' || github.event_name == 'workflow_dispatch')
+    needs: sync-public-data
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/pages-build-deploy.yml
+    with:
+      commit_sha: ${{ needs.sync-public-data.outputs.deployment_sha }}

@@ -213,7 +213,7 @@
   function isPubliclyVisible(post, includeClosed) {
     const status = normalizeStatus(post && post.status);
     const trueFlag = (value) => value === true || ["true", "yes", "1"].includes(String(value || "").trim().toLowerCase());
-    if (["deleted", "is_deleted", "archived", "hidden", "is_hidden"].some((field) => trueFlag(post && post[field]))) return false;
+    if (["deleted", "is_deleted", "archive", "archived", "is_archived", "hidden", "is_hidden"].some((field) => trueFlag(post && post[field]))) return false;
     if (pick(post, ["deleted_at", "hidden_at"])) return false;
     if (status === "active") return !isExpired(post);
     if (status === "closed") return includeClosed !== false;

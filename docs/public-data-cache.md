@@ -24,10 +24,8 @@ node scripts/validate-jobs.mjs
 
 The GitHub Actions workflow `Sync public data` can also be run manually and is scheduled every five minutes. Its concurrency group prevents overlapping runs, and the sync preserves each file's existing `generated_at` value when its public payload is unchanged so the workflow commits only real public-data changes.
 
-Optional environment overrides are supported:
+Community and Jobs resolve one canonical Master GAS endpoint from `assets/js/data-sources.js`. The production workflow does not accept dataset-specific endpoint overrides. A developer may set `MASTER_API_URL` for an intentional local integration test; the sync identifies that source as a development override and still uses it for both datasets. If `COMMUNITY_API_URL`, `CONTENTS_API_URL`, or `JOBS_API_URL` is present, the sync fails instead of silently selecting a legacy deployment.
 
-- `COMMUNITY_API_URL`
-- `CONTENTS_API_URL`
-- `JOBS_API_URL`
+Sync diagnostics report only the canonical source type, a sanitized hostname/deployment suffix, source and eligible counts, generated counts, Community post IDs, and whether each public JSON file changed. Full endpoint URLs, query secrets, spreadsheet IDs, private contacts, and tokens must not be logged.
 
 Generated JSON must contain public display fields only. Do not include private email addresses, private phone numbers, moderation notes, management tokens, hidden rows, drafts, rejected rows, or admin-only spreadsheet metadata.

@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       changes_detected: ${{ steps.auto-commit-action.outputs.changes_detected }}
+      commit_hash: ${{ steps.auto-commit-action.outputs.commit_hash }}
 
     steps:
       - name: Checkout repository
@@ -30,10 +31,6 @@ jobs:
           node-version: 20
 
       - name: Sync community and jobs data
-        env:
-          COMMUNITY_API_URL: ${{ secrets.COMMUNITY_API_URL }}
-          CONTENTS_API_URL: ${{ secrets.CONTENTS_API_URL }}
-          JOBS_API_URL: ${{ secrets.JOBS_API_URL }}
         run: node scripts/sync-public-data.mjs
 
       - name: Commit updated public data
@@ -56,7 +53,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref_name }}
+          ref: ${{ needs.sync-public-data.outputs.commit_hash || github.sha }}
+
+      - name: Report Pages public-data artifact
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFile } from "node:fs/promises";
+          const payload = JSON.parse(await readFile("assets/data/community/posts.json", "utf8"));
+          const ids = Array.isArray(payload.items) ? payload.items.map((item) => item.post_id || item.id) : [];
+          if (payload.count !== ids.length) throw new Error(`Pages Community count mismatch: ${payload.count} != ${ids.length}`);
+          if (!ids.length) throw new Error("Pages Community artifact unexpectedly contains zero posts.");
+          console.log(`Pages Community artifact count: ${ids.length}`);
+          console.log(`Pages Community artifact post IDs: ${ids.join(", ")}`);
+          NODE
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

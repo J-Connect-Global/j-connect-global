@@ -1,6 +1,5 @@
 {
-  "generated_at": "2026-07-13T13:40:07.473Z",
-  "source": "contents-gas:jobs",
+  "source": "master-gas:jobs",
   "count": 4,
   "groups": [
     {
@@ -42,5 +41,6 @@
       "field": "language",
       "values": []
     }
-  ]
+  ],
+  "generated_at": "2026-07-13T14:44:17.337Z"
 }

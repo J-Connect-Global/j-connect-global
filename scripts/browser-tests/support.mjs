@@ -1,7 +1,8 @@
 import { readFile } from "node:fs/promises";
 import { expect } from "@playwright/test";
 
-const baseURL = process.env.PLAYWRIGHT_BASE_URL || "http://127.0.0.1:4173";
+const port = Number(process.env.PLAYWRIGHT_PORT || 4173);
+const baseURL = process.env.PLAYWRIGHT_BASE_URL || `http://127.0.0.1:${port}`;
 const localOrigin = new URL(baseURL).origin;
 const diagnosticsByPage = new WeakMap();
 
@@ -141,6 +142,25 @@ export async function assertRouteReady(page) {
   await waitForDataLoad(page);
   await assertDocumentSemantics(page);
   await assertNoHorizontalOverflow(page);
+}
+
+export async function assertDirectoryModalKeyboard(page) {
+  const detailButton = page.locator("#cards [data-detail]").first();
+  const modal = page.locator("#listingModal");
+  await expect(detailButton).toBeVisible();
+  await detailButton.focus();
+  await page.keyboard.press("Enter");
+  await expect(modal).toBeVisible();
+  await expect(page.locator("#listingModalClose")).toBeFocused();
+
+  await page.keyboard.press("Shift+Tab");
+  expect(await modal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+  await page.keyboard.press("Tab");
+  expect(await modal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+
+  await page.keyboard.press("Escape");
+  await expect(modal).toBeHidden();
+  await expect(detailButton).toBeFocused();
 }
 
 export async function assertDocumentSemantics(page) {

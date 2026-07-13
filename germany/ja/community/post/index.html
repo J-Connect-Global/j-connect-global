@@ -2394,13 +2394,16 @@ function renderPostPreview() {
 }
 
 let previewLastFocused = null;
+const PREVIEW_FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-function openPostPreview() {
+function openPostPreview(event) {
   const modal = document.getElementById('postPreviewModal');
   const card = modal ? modal.querySelector('.modal-card') : null;
   if (!modal || !card) return;
   renderPostPreview();
-  previewLastFocused = document.activeElement;
+  previewLastFocused = event?.currentTarget instanceof HTMLElement
+    ? event.currentTarget
+    : document.activeElement;
   modal.hidden = false;
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -2409,12 +2412,38 @@ function openPostPreview() {
 
 function closePostPreview() {
   const modal = document.getElementById('postPreviewModal');
-  if (!modal) return;
+  if (!modal || !modal.classList.contains('open')) return;
   modal.classList.remove('open');
   modal.hidden = true;
   document.body.style.overflow = '';
-  if (previewLastFocused && typeof previewLastFocused.focus === 'function') {
+  if (previewLastFocused?.isConnected && typeof previewLastFocused.focus === 'function') {
     previewLastFocused.focus({ preventScroll: true });
+  }
+  previewLastFocused = null;
+}
+
+function trapPostPreviewFocus(event) {
+  const modal = document.getElementById('postPreviewModal');
+  if (event.key !== 'Tab' || !modal || !modal.classList.contains('open')) return;
+  const card = modal.querySelector('.modal-card');
+  const focusable = [...modal.querySelectorAll(PREVIEW_FOCUSABLE)].filter(function(element) {
+    return element instanceof HTMLElement
+      && !element.hidden
+      && element.getAttribute('aria-hidden') !== 'true'
+      && element.getClientRects().length > 0;
+  });
+  if (!focusable.length) {
+    event.preventDefault();
+    card?.focus({ preventScroll: true });
+    return;
+  }
+  const currentIndex = focusable.indexOf(document.activeElement);
+  if (event.shiftKey && currentIndex <= 0) {
+    event.preventDefault();
+    focusable[focusable.length - 1].focus({ preventScroll: true });
+  } else if (!event.shiftKey && (currentIndex === -1 || currentIndex === focusable.length - 1)) {
+    event.preventDefault();
+    focusable[0].focus({ preventScroll: true });
   }
 }
 
@@ -3171,7 +3200,12 @@ if (detailPostId) {
   });
   window.addEventListener('keydown', function(event) {
     const modal = document.getElementById('postPreviewModal');
-    if (event.key === 'Escape' && modal && modal.classList.contains('open')) closePostPreview();
+    if (event.key === 'Escape' && modal && modal.classList.contains('open')) {
+      event.preventDefault();
+      closePostPreview();
+    } else {
+      trapPostPreviewFocus(event);
+    }
   });
 
   loadCategories();

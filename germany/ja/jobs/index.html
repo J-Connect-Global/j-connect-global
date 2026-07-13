@@ -793,6 +793,7 @@
     let selectedId = null;
     let currentView = 'list';
     let modalReturnFocus = null;
+    let modalReturnJobId = '';
     let showSavedOnly = false;
     let sortDirection = 'newest';
     const filterState = {
@@ -1104,6 +1105,17 @@
       if (saved.has(key)) saved.delete(key);
       else saved.add(key);
       setSavedJobs(saved);
+      if (showSavedOnly && !saved.has(key)) {
+        const modalWasOpen = Boolean(els.listingModal && !els.listingModal.hidden);
+        filterJobs();
+        if (modalWasOpen) {
+          modalReturnFocus = els.savedOnlyBtn;
+          closeListingModal();
+        } else {
+          els.savedOnlyBtn?.focus({ preventScroll:true });
+        }
+        return false;
+      }
       if (options.render !== false) renderCards();
       syncOpenModalContent();
       return saved.has(key);
@@ -1475,7 +1487,7 @@
       els.cards.querySelectorAll('.card').forEach(card => {
         card.addEventListener('click', event => {
           if (event.target.closest('a, button')) return;
-          openListingModal(card.dataset.id);
+          openListingModal(card.dataset.id, card.querySelector('[data-detail-page-link]'));
         });
       });
 
@@ -1676,6 +1688,7 @@
       const job = filtered.find(j => String(j.id) === String(selectedId));
       if (!job) return;
       modalReturnFocus = returnFocusEl || document.activeElement;
+      modalReturnJobId = String(job.id || '');
       els.listingModalContent.innerHTML = buildJobDetailHtml(job);
       bindDetailActions(els.listingModalContent);
       els.listingModal.hidden = false;
@@ -1686,16 +1699,22 @@
     function syncOpenModalContent(){
       if (!els.listingModal || els.listingModal.hidden || !els.listingModalContent) return;
       const job = filtered.find(j => String(j.id) === String(selectedId));
+      const focusedSaveId = els.listingModalContent.contains(document.activeElement)
+        ? String(document.activeElement?.getAttribute?.('data-detail-save-id') || '')
+        : '';
       els.listingModalContent.innerHTML = buildJobDetailHtml(job);
       bindDetailActions(els.listingModalContent);
+      if (focusedSaveId) {
+        const replacement = [...els.listingModalContent.querySelectorAll('[data-detail-save-id]')]
+          .find(button => String(button.dataset.detailSaveId || '') === focusedSaveId);
+        replacement?.focus({ preventScroll:true });
+      }
     }
 
     function bindDetailActions(scope){
       scope.querySelectorAll('[data-detail-save-id]').forEach(button => {
         button.addEventListener('click', () => {
-          const isSaved = toggleJobSaved(button.dataset.detailSaveId);
-          button.classList.toggle('saved', isSaved);
-          button.textContent = isSaved ? '★ 保存済み' : '☆ 保存';
+          toggleJobSaved(button.dataset.detailSaveId);
         });
       });
 
@@ -1714,10 +1733,15 @@
       if (!els.listingModal || els.listingModal.hidden) return;
       els.listingModal.hidden = true;
       document.body.classList.remove('modal-open');
-      if (modalReturnFocus?.isConnected && typeof modalReturnFocus.focus === 'function') {
-        modalReturnFocus.focus({ preventScroll:true });
+      let returnTarget = modalReturnFocus?.isConnected ? modalReturnFocus : null;
+      if (!returnTarget && modalReturnJobId) {
+        const replacementCard = [...els.cards.querySelectorAll('[data-id]')]
+          .find(card => String(card.dataset.id || '') === modalReturnJobId);
+        returnTarget = replacementCard?.querySelector('[data-detail-page-link]') || els.keywordInput;
       }
+      returnTarget?.focus({ preventScroll:true });
       modalReturnFocus = null;
+      modalReturnJobId = '';
     }
 
     function getModalFocusableElements(){

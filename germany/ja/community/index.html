@@ -466,6 +466,7 @@
       showAllSubcategories: false
     };
     let modalOpener = null;
+    let modalOpenerPostId = "";
     const MODAL_FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
     localStorage.setItem("ngg-community-filter-version", FILTER_STORAGE_VERSION);
@@ -1321,6 +1322,9 @@
         modalOpener = active instanceof HTMLElement && active !== document.body && !els.modal.contains(active)
           ? active
           : null;
+        modalOpenerPostId = active instanceof HTMLElement
+          ? String(active.closest("[data-post-id]")?.dataset.postId || "")
+          : "";
       }
       const relatedGroup = comparablePosts(state.posts, post, 3);
       const related = relatedGroup.items;
@@ -1434,8 +1438,17 @@
         url.hash = "";
         history.pushState("", document.title, url.pathname + url.search);
       }
-      if (wasOpen && modalOpener?.isConnected) focusWithoutScroll(modalOpener);
+      if (wasOpen) {
+        let returnTarget = modalOpener?.isConnected ? modalOpener : null;
+        if (!returnTarget && modalOpenerPostId) {
+          const replacementCard = [...els.cards.querySelectorAll("[data-post-id]")]
+            .find((card) => String(card.dataset.postId || "") === modalOpenerPostId);
+          returnTarget = replacementCard?.querySelector(".card-link") || els.search;
+        }
+        if (returnTarget) focusWithoutScroll(returnTarget);
+      }
       modalOpener = null;
+      modalOpenerPostId = "";
     }
 
     function trapModalFocus(event) {

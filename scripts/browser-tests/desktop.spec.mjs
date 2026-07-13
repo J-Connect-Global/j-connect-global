@@ -3,6 +3,7 @@ import {
   activateDarkMode,
   activeCommunityPosts,
   assertCommunityCards,
+  assertDirectoryModalKeyboard,
   assertNoIndex,
   assertNoRuntimeDiagnostics,
   assertOneManualShareButton,
@@ -94,6 +95,11 @@ test("Community normalizePost renders every active fixture without an undeclared
   expect(await modal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
   expect(afterTab).not.toEqual(afterShiftTab);
 
+  const detailSaveButton = modal.locator("#detailSaveButton");
+  await detailSaveButton.focus();
+  await page.keyboard.press("Enter");
+  expect(await modal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+
   await page.keyboard.press("Escape");
   await expect(modal).toHaveAttribute("aria-hidden", "true");
   await expect(modal).not.toBeVisible();
@@ -112,12 +118,63 @@ test("Community detail renders the requested fixture with one accessible share b
   expect(shareUrl.searchParams.get("id")).toBe(String(fixtureCommunityPostId));
   await assertNoIndex(page);
   await assertRouteReady(page);
+
+  await openRoute(page, "/germany/ja/community/post/");
+  const previewButton = page.locator("#previewButton");
+  const previewModal = page.locator("#postPreviewModal");
+  await previewButton.focus();
+  await page.keyboard.press("Enter");
+  await expect(previewModal).toBeVisible();
+  await expect(previewModal.locator(".modal-card")).toBeFocused();
+  await page.keyboard.press("Tab");
+  expect(await previewModal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+  await page.keyboard.press("Tab");
+  expect(await previewModal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+  await page.keyboard.press("Shift+Tab");
+  expect(await previewModal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+  await page.keyboard.press("Escape");
+  await expect(previewModal).toBeHidden();
+  await expect(previewButton).toBeFocused();
+  await assertNoIndex(page);
+  await assertRouteReady(page);
 });
 
 test("Jobs renders exactly three sample listings", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/jobs/", "/assets/data/jobs/jobs.json");
   await assertThreeSampleJobs(page);
   await expect(page.locator("#resultsSummary")).toContainText("3件を表示中 / 全3件");
+  const firstCard = page.locator("#cards .jobs-card[data-id]").first();
+  const returnLink = firstCard.locator("[data-detail-page-link]");
+  await firstCard.evaluate((element) => element.click());
+  const jobsModal = page.locator("#listingModal");
+  await expect(jobsModal).toBeVisible();
+  await expect(page.locator("#listingModalClose")).toBeFocused();
+  await page.keyboard.press("Shift+Tab");
+  expect(await jobsModal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+  await page.keyboard.press("Tab");
+  expect(await jobsModal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+  const modalSaveButton = jobsModal.locator("[data-detail-save-id]");
+  await modalSaveButton.focus();
+  await page.keyboard.press("Enter");
+  await expect(modalSaveButton).toBeFocused();
+  expect(await jobsModal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+  await page.keyboard.press("Escape");
+  await expect(jobsModal).toBeHidden();
+  await expect(returnLink).toBeFocused();
+
+  const savedOnlyButton = page.locator("#savedOnlyBtn");
+  await savedOnlyButton.click();
+  await expect(savedOnlyButton).toHaveAttribute("aria-pressed", "true");
+  const savedOnlyCards = page.locator("#cards .jobs-card[data-id]");
+  await expect(savedOnlyCards).toHaveCount(1);
+  await savedOnlyCards.evaluate((element) => element.click());
+  await expect(jobsModal).toBeVisible();
+  await jobsModal.locator("[data-detail-save-id]").focus();
+  await page.keyboard.press("Enter");
+  await expect(jobsModal).toBeHidden();
+  await expect(savedOnlyCards).toHaveCount(0);
+  await expect(page.locator("#emptyBox")).toContainText("保存済みの求人はありません");
+  await expect(savedOnlyButton).toBeFocused();
   await assertRouteReady(page);
 });
 
@@ -152,19 +209,7 @@ test("Eat renders the committed fixture dataset", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/eat/", "/assets/data/eat/items.json");
   await expect(page.locator("#cards [data-item-id]")).toHaveCount(eatFixture.items.length);
   await expect(page.locator("#resultsSummary")).toContainText(`全${eatFixture.items.length}件`);
-  const detailButton = page.locator("#cards [data-detail]").first();
-  await detailButton.focus();
-  await page.keyboard.press("Enter");
-  const listingModal = page.locator("#listingModal");
-  await expect(listingModal).toBeVisible();
-  await expect(page.locator("#listingModalClose")).toBeFocused();
-  await page.keyboard.press("Shift+Tab");
-  expect(await listingModal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
-  await page.keyboard.press("Tab");
-  expect(await listingModal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
-  await page.keyboard.press("Escape");
-  await expect(listingModal).toBeHidden();
-  await expect(detailButton).toBeFocused();
+  await assertDirectoryModalKeyboard(page);
   await assertRouteReady(page);
 });
 
@@ -173,6 +218,7 @@ test("Shopping renders the committed fixture dataset", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/shopping/", "/assets/data/shopping/items.json");
   await expect(page.locator("#cards [data-item-id]")).toHaveCount(shoppingFixture.items.length);
   await expect(page.locator("#resultsSummary")).toContainText(`全${shoppingFixture.items.length}件`);
+  await assertDirectoryModalKeyboard(page);
   await assertRouteReady(page);
 });
 
@@ -184,6 +230,34 @@ test("Medical renders its intentional empty state and emergency guidance", async
   await expect(page.locator("#statusBox")).toContainText("現在は医療機関を探すための基本ガイドを表示しています");
   await expect(page.locator("#statusBox")).toContainText("112");
   await expect(page.locator("#statusBox")).toContainText("116117");
+  await assertRouteReady(page);
+
+  const modalFixture = {
+    ...medicalFixture,
+    count: 1,
+    items: [{
+      id: "medical-modal-fixture",
+      name_ja: "モーダル確認用医療機関",
+      category: "病院",
+      detail_category: "総合病院",
+      region: "Berlin",
+      description: "キーボード操作確認用のローカルテストデータです。"
+    }],
+    validation: {
+      ...medicalFixture.validation,
+      eligible_count: 1,
+      generated_count: 1,
+      intentionally_empty: false
+    }
+  };
+  await page.route("**/assets/data/medical/items.json", (route) => route.fulfill({
+    body: JSON.stringify(modalFixture),
+    contentType: "application/json",
+    status: 200
+  }));
+  await openDataRoute(page, "/germany/ja/medical/", "/assets/data/medical/items.json");
+  await expect(page.locator("#cards .jc-result-card")).toHaveCount(1);
+  await assertDirectoryModalKeyboard(page);
   await assertRouteReady(page);
 });
 

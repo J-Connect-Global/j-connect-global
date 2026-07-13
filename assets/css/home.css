@@ -1007,6 +1007,16 @@ body.portal3-home > .page-footer{
   color:#fff;
 }
 
+.portal3-fallback-actions a:hover{
+  border-color:var(--portal3-blue);
+  box-shadow:0 4px 12px rgba(0,45,95,.12);
+}
+
+.portal3-fallback-actions a:focus-visible{
+  outline:3px solid rgba(13,96,189,.3);
+  outline-offset:3px;
+}
+
 .img-bike::before{content:"🚲";}
 .img-doc::before{content:"📄";}
 .img-family::before{content:"👥";}

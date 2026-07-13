@@ -45,9 +45,9 @@
     const details = getValue(row, "full_description", "description", "job_details");
     const tags = getValue(row, "tags", "skills", "skill_tags", "requirements_tags");
     const id = getValue(row, "job_id", "id") || stableSlug(positionTitle, companyName, region) || `job-${index + 1}`;
+    const publicApplicationEmail = getValue(row, "application_email", "public_email", "apply_email");
 
     return {
-      ...row,
       id,
       slug: getValue(row, "slug", "job_slug"),
       detail_url: getValue(row, "detail_url", "detailUrl", "detail_page_url"),
@@ -73,9 +73,9 @@
       job_details: details,
       description: details,
       requirements: getValue(row, "requirements"),
-      contact_email: getValue(row, "contact_email", "application_email", "apply_email"),
-      application_email: getValue(row, "application_email", "contact_email", "apply_email"),
-      apply_email: getValue(row, "apply_email", "application_email", "contact_email"),
+      contact_email: publicApplicationEmail,
+      application_email: publicApplicationEmail,
+      apply_email: publicApplicationEmail,
       apply_url: getValue(row, "apply_url", "application_url", "source_url", "official_url", "url"),
       application_url: getValue(row, "application_url", "apply_url", "apply_link"),
       apply_link: getValue(row, "apply_link", "apply_url", "application_url"),

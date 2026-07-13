@@ -694,7 +694,7 @@
           <h2 class="results-title" id="jobListingsTitle">求人一覧</h2>
           <p class="results-sub">勤務地、雇用形態、言語条件などを確認しながら求人を探せます。</p>
           <p class="results-sub">新しい順は、最終更新日、更新日、掲載日、作成日の順で判定します。</p>
-          <div class="results-sub" id="resultsSummary">読み込み中...</div>
+          <div class="results-sub" id="resultsSummary" aria-live="polite">公開中の求人を一覧で確認できます。</div>
         </div>
         <div class="jobs-results-controls" aria-label="求人一覧の表示条件">
           <button class="jobs-result-control" id="savedOnlyBtn" type="button" aria-pressed="false">保存済</button>
@@ -725,14 +725,7 @@
           </div>
         </article>
       </div>
-      <div id="emptyBox" class="empty-box jc-empty-state" style="display:none;">
-        <span class="status-title">現在、公開中の求人はありません。</span>
-        <div>求人掲載を希望する企業・採用担当者の方は、無料掲載パイロットの案内をご確認ください。</div>
-        <div class="status-actions">
-          <a class="btn btn-primary" href="/germany/ja/jobs/posting/">求人を無料掲載する</a>
-          <button class="btn btn-secondary" type="button" data-reset-jobs>条件をリセット</button>
-        </div>
-      </div>
+      <div id="emptyBox" class="empty-box jc-empty-state" role="status" hidden></div>
     </section>
 
   </main>
@@ -1260,15 +1253,17 @@
 
     function setJobsLoading(){
       els.resultsSummary.textContent = '読み込み中...';
-      els.emptyBox.style.display = 'none';
+      els.cards.setAttribute('aria-busy', 'true');
+      els.emptyBox.hidden = true;
       els.emptyBox.className = 'empty-box jc-empty-state';
       els.emptyBox.innerHTML = '';
     }
 
     function renderJobsLoadError(){
       els.cards.innerHTML = '';
+      els.cards.setAttribute('aria-busy', 'false');
       els.resultsSummary.textContent = '読み込みエラー';
-      els.emptyBox.style.display = 'block';
+      els.emptyBox.hidden = false;
       els.emptyBox.className = 'empty-box jc-empty-state error';
       els.emptyBox.innerHTML = `
         <span class="status-title">求人情報を読み込めませんでした。</span>
@@ -1276,6 +1271,7 @@
         <div class="status-actions">
           <button class="btn btn-primary" type="button" data-retry-load>再読み込み</button>
           <a class="btn btn-secondary" href="/germany/ja/">トップページへ戻る</a>
+          <a class="btn btn-secondary" href="/germany/ja/contact/">お問い合わせ</a>
         </div>
       `;
       els.emptyBox.querySelector('[data-retry-load]')?.addEventListener('click', loadJobs);
@@ -1389,9 +1385,10 @@
     }
 
     function renderCards(){
+      els.cards.setAttribute('aria-busy', 'false');
       if (!filtered.length) {
         els.cards.innerHTML = '';
-        els.emptyBox.style.display = 'block';
+        els.emptyBox.hidden = false;
         els.emptyBox.className = 'empty-box jc-empty-state';
         const noPublicJobs = jobs.length === 0;
         const emptyTitle = noPublicJobs
@@ -1407,7 +1404,9 @@
           <div>${escapeHtml(emptyBody)}</div>
           <div class="status-actions">
             ${showSavedOnly ? '<button class="btn btn-primary" type="button" data-clear-saved-filter>すべての求人を見る</button>' : ''}
-            ${noPublicJobs ? '<a class="btn btn-primary" href="/germany/ja/jobs/posting/">求人掲載フォームへ</a>' : ''}
+            ${noPublicJobs ? '<a class="btn btn-primary" href="/germany/ja/jobs/guide/">求職者向けガイド</a>' : ''}
+            ${noPublicJobs ? '<a class="btn btn-secondary" href="/germany/ja/jobs/posting/">求人掲載について</a>' : ''}
+            ${noPublicJobs ? '<a class="btn btn-secondary" href="/germany/ja/contact/">お問い合わせ</a>' : ''}
             ${noPublicJobs ? '' : '<button class="btn btn-secondary" type="button" data-reset-jobs>条件をリセット</button>'}
           </div>
         `;
@@ -1419,7 +1418,7 @@
         return;
       }
 
-      els.emptyBox.style.display = 'none';
+      els.emptyBox.hidden = true;
       els.emptyBox.className = 'empty-box jc-empty-state';
 
       els.cards.innerHTML = filtered.map(job => {

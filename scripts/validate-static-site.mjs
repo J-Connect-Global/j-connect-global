@@ -324,6 +324,7 @@ for (const file of htmlFiles) {
   validateHtmlMetadata(rel, url, html, pagesByUrl.get(url));
   validateJsonLd(rel, html);
   validateStaticContentQuality(rel, url, html);
+  validateInitialStateSafety(rel, url, html);
 
   const attrPattern = /\b(?:href|src|action)=["']([^"']+)["']/gi;
   for (const match of html.matchAll(attrPattern)) {
@@ -467,6 +468,29 @@ function validateStaticContentQuality(rel, url, html) {
     if (/^\s*(?:データを読み込んでいます|読み込み中)\.{0,3}\s*$/i.test(stripTags(statusBox))) {
       problems.push(`${rel} initial status box is loading-only instead of useful static guidance.`);
     }
+  }
+}
+
+function validateInitialStateSafety(rel, url, html) {
+  const initialText = stripTags(
+    String(html || '')
+      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
+      .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
+  ).replace(/\s+/g, ' ').trim();
+
+  const blockedInitialCopy = new Map([
+    ['/germany/ja/', ['掲示板の投稿を準備中です', '求人情報を確認中です', '求人データを確認中です']],
+    ['/germany/ja/community/', ['最新データを取得できませんでした。保存済みの表示を継続しています。']],
+    ['/germany/ja/jobs/', ['読み込み中...']],
+    ['/germany/ja/jobs/detail/', ['求人情報を読み込んでいます', '指定された求人IDの内容を確認しています。']],
+    ['/germany/ja/events/', ['ニュース解説を読み込み中です。', 'イベントを読み込み中です。', '日本語ニュース解説を準備中です', 'イベント情報を準備中です']],
+    ['/germany/ja/living/', ['記事を読み込み中です。']],
+    ['/germany/ja/learn-german/', ['このテーマの記事は準備中です。']],
+    ['/germany/ja/learn-german/german-news-reading-guide/', ['ドイツ語ニュース素材を読み込み中です']],
+  ]);
+
+  for (const copy of blockedInitialCopy.get(url) || []) {
+    if (initialText.includes(copy)) problems.push(`${rel} exposes transient or stale state copy in initial HTML: ${copy}`);
   }
 }
 

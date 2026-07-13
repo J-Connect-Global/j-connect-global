@@ -200,7 +200,7 @@
             <div class="news-events-results-head">
               <div>
                 <h3>ニュース一覧</h3>
-                <p data-news-count>ニュース解説を読み込み中です。</p>
+                <p data-news-count aria-live="polite">公開中のニュース解説を掲載しています。</p>
               </div>
               <div class="news-events-results-actions">
                 <div class="news-events-view-toggle" role="group" aria-label="ニュースの表示切替" data-view-toggle="news">
@@ -230,9 +230,9 @@
               </article>
               <!-- CONTENT:events-news-grid:end -->
             </div>
-            <div class="news-events-empty" data-news-empty hidden>
-              <h3 data-news-empty-title>日本語ニュース解説を準備中です</h3>
-              <p data-news-empty-body>J-Connect編集部による日本語の生活ニュース解説を順次掲載します。</p>
+            <div class="news-events-empty" data-news-empty role="status" hidden>
+              <h3 data-news-empty-title></h3>
+              <p data-news-empty-body></p>
               <div class="news-events-empty-actions">
                 <button class="living-reset-button news-events-reset" type="button" data-news-empty-reset hidden>絞り込みを解除</button>
               </div>
@@ -324,7 +324,7 @@
             <div class="news-events-results-head">
               <div>
                 <h3>イベント一覧</h3>
-                <p data-event-count>イベントを読み込み中です。</p>
+                <p data-event-count aria-live="polite">公開中のイベント情報を掲載しています。</p>
               </div>
               <div class="news-events-results-actions">
                 <div class="news-events-view-toggle" role="group" aria-label="イベントの表示切替" data-view-toggle="events">
@@ -390,9 +390,9 @@
         </a>
         <!-- CONTENT:events-grid:end -->
             </div>
-            <div class="news-events-empty events-hub-empty" data-events-empty hidden>
-              <h3 data-event-empty-title>イベント情報を準備中です</h3>
-              <p data-event-empty-body>交流会、セミナー、家族向けイベントなどを順次掲載します。</p>
+            <div class="news-events-empty events-hub-empty" data-events-empty role="status" hidden>
+              <h3 data-event-empty-title></h3>
+              <p data-event-empty-body></p>
               <div class="news-events-empty-actions">
                 <button class="living-reset-button news-events-reset" type="button" data-event-empty-reset hidden>絞り込みを解除</button>
               </div>

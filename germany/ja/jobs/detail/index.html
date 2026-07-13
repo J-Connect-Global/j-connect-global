@@ -323,10 +323,13 @@
 <!-- LAYOUT:ja-header:end -->
 
 <main class="jobs-detail-shell">
-  <article class="jobs-detail-card" id="jobDetail" aria-live="polite">
+  <article class="jobs-detail-card" id="jobDetail">
     <div class="jc-status">
-      <strong>求人情報を読み込んでいます</strong>
-      <span>指定された求人IDの内容を確認しています。</span>
+      <strong>求人詳細について</strong>
+      <span>公開中の求人は、求人一覧から詳細を開いて確認できます。</span>
+      <div class="jobs-detail-actions">
+        <a class="jc-button is-primary" href="/germany/ja/jobs/">求人一覧を見る</a>
+      </div>
     </div>
   </article>
 </main>
@@ -557,28 +560,43 @@
   }
 
   function renderEmpty(kind){
-    const title = kind === "missing" ? "求人IDが指定されていません" : "求人が見つかりませんでした";
+    const unavailable = kind === "unavailable";
+    const title = kind === "missing"
+      ? "求人IDが指定されていません"
+      : unavailable ? "この求人は現在公開されていません" : "求人が見つかりませんでした";
     const body = kind === "missing"
       ? "求人カードまたは求人一覧から詳細ページを開いてください。"
-      : "この求人は見つからないか、現在公開されていません。";
+      : unavailable
+        ? "この求人は募集終了、非公開、削除済み、または掲載期限終了のため表示できません。"
+        : "指定された求人IDに一致する求人は見つかりませんでした。";
+    detail.setAttribute("aria-busy", "false");
+    document.title = `${title} | 仕事・求人 | J-Connect Germany`;
     detail.innerHTML = `
-      <div class="jobs-detail-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人詳細</span></div>
-      <h1>${escapeHtml(title)}</h1>
-      <p class="jobs-detail-summary">${escapeHtml(body)}</p>
-      <div class="jobs-detail-actions">
-        <a class="jc-button is-primary" href="/germany/ja/jobs/">求人一覧へ戻る</a>
+      <div role="status">
+        <div class="jobs-detail-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人詳細</span></div>
+        <h1>${escapeHtml(title)}</h1>
+        <p class="jobs-detail-summary">${escapeHtml(body)}</p>
+        <div class="jobs-detail-actions">
+          <a class="jc-button is-primary" href="/germany/ja/jobs/">求人一覧へ戻る</a>
+          <a class="jc-button" href="/germany/ja/contact/">お問い合わせ</a>
+        </div>
       </div>
     `;
   }
 
   function renderLoadError(){
+    detail.setAttribute("aria-busy", "false");
+    document.title = "求人情報を表示できません | 仕事・求人 | J-Connect Germany";
     detail.innerHTML = `
-      <div class="jobs-detail-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人詳細</span></div>
-      <h1>求人情報を読み込めませんでした</h1>
-      <p class="jobs-detail-summary">公開求人データを読み込めませんでした。時間をおいて再度お試しください。</p>
-      <div class="jobs-detail-actions">
-        <button class="jc-button is-primary" type="button" id="retryJobDetail">再読み込み</button>
-        <a class="jc-button" href="/germany/ja/jobs/">求人一覧へ戻る</a>
+      <div role="status">
+        <div class="jobs-detail-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人詳細</span></div>
+        <h1>求人情報を一時的に表示できません</h1>
+        <p class="jobs-detail-summary">時間をおいて再度お試しください。</p>
+        <div class="jobs-detail-actions">
+          <button class="jc-button is-primary" type="button" id="retryJobDetail">再読み込み</button>
+          <a class="jc-button" href="/germany/ja/jobs/">求人一覧へ戻る</a>
+          <a class="jc-button" href="/germany/ja/contact/">お問い合わせ</a>
+        </div>
       </div>
     `;
     detail.querySelector("#retryJobDetail")?.addEventListener("click", () => location.reload());
@@ -601,6 +619,7 @@
     const sourceUrl = isSafeUrl(job.source_url) ? job.source_url : "";
 
     document.title = `${title} | 仕事・求人 | J-Connect Germany`;
+    detail.setAttribute("aria-busy", "false");
     detail.innerHTML = `
       <div class="jobs-detail-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人詳細</span></div>
       ${company ? `<div class="jobs-detail-company">${escapeHtml(company)}</div>` : ""}
@@ -680,12 +699,27 @@
       return;
     }
 
+    detail.setAttribute("aria-busy", "true");
+    detail.innerHTML = `
+      <div class="jc-status" role="status">
+        <strong>求人情報を読み込んでいます</strong>
+        <span>指定された求人IDの内容を確認しています。</span>
+      </div>
+    `;
+
     try {
       const payload = await fetchJobsData();
-      const rows = JOBS_SHARED.activeJobs(DATA_SOURCES.normalizePayload(payload));
-      const remoteJob = findJob(rows);
-      if (remoteJob) renderJob(remoteJob);
-      if (!remoteJob) renderEmpty("notfound");
+      const rows = DATA_SOURCES.normalizePayload(payload).map(JOBS_SHARED.normalizeJob);
+      const matchedJob = findJob(rows);
+      if (!matchedJob) {
+        renderEmpty("notfound");
+        return;
+      }
+      if (!JOBS_SHARED.isActiveJob(matchedJob)) {
+        renderEmpty("unavailable");
+        return;
+      }
+      renderJob(matchedJob);
     } catch (error) {
       console.warn("Job detail public JSON load failed:", JOBS_STATIC_URL, error);
       renderLoadError();

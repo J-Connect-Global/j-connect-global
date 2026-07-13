@@ -250,6 +250,8 @@
     const region = pick(post, ["region", "prefecture"]);
     const status = normalizeStatus(post.status);
     const postImages = getCommunityPostImages(post);
+    const publicationDate = communityPublicationDate(post);
+    const updatedDate = communityUpdatedDate(post);
     return {
       id,
       post_id: pick(post, ["post_id", "postId", "id"]),
@@ -278,7 +280,9 @@
       _postType: pick(post, ["category1", "post_type", "postType", "type", "category"]) || "質問",
       _subcategory: pick(post, ["category2", "subcategory", "sub_category", "detail_category"]) || "その他",
       _location: [city, region].filter(Boolean).join(" / ") || "地域未設定",
-      _date: pick(post, ["last_modified_at", "updated_at", "created_at", "createdAt", "date", "timestamp"]),
+      _date: publicationDate,
+      _publicationDate: publicationDate,
+      _updatedDate: updatedDate,
       _createdAt: pick(post, ["created_at", "createdAt", "date", "timestamp"]),
       _lastModifiedAt: pick(post, ["last_modified_at", "lastModifiedAt"]),
       _lastModifiedAction: pick(post, ["last_modified_action", "lastModifiedAction"]),
@@ -290,6 +294,22 @@
       _images: postImages,
       _contentImage: postImages[0] || DEFAULT_IMAGE
     };
+  }
+
+  // 投稿日 is the explicit publication timestamp when present, otherwise the
+  // original creation timestamp. Administrative approval/update timestamps do
+  // not affect newest sorting.
+  function communityPublicationDate(post) {
+    return pick(post, ["published_at", "publishedAt"])
+      || pick(post, ["created_at", "createdAt", "date", "timestamp"]);
+  }
+
+  function communityUpdatedDate(post) {
+    const published = Date.parse(communityPublicationDate(post));
+    const updatedRaw = pick(post, ["updated_at", "updatedAt"]);
+    const updated = Date.parse(updatedRaw);
+    if (!Number.isFinite(published) || !Number.isFinite(updated)) return "";
+    return updated - published >= 24 * 60 * 60 * 1000 ? updatedRaw : "";
   }
 
   function dateValue(post) {
@@ -323,6 +343,8 @@
   window.JCONNECT_COMMUNITY_SHARED = Object.freeze({
     fallbackPosts,
     normalizePost,
+    communityPublicationDate,
+    communityUpdatedDate,
     sortPosts,
     formatDate,
     normalizeStatus,

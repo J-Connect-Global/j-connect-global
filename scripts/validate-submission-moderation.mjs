@@ -72,7 +72,7 @@ expect(gas.includes("Community administrator notification failed") && gas.includ
 expect(gas.includes("JOBS_PUBLIC_JSON_URL") && gas.includes("processWaitingApprovalNotifications"), "Jobs publication verification is not part of the shared processor.");
 expect(gas.includes("rejection_reason") && gas.includes("sendRejectionEmail_"), "Rejection persistence/email flow is missing.");
 
-expect(sync.includes('status !== "active"') && sync.includes('isPublicCommunityPost'), "Public sync must require exact status=active.");
+expect(/clean\(row\?\.status\)\.toLowerCase\(\)\s*!==\s*"active"/.test(sync) && sync.includes('isPublicCommunityPost'), "Public sync must require exact status=active.");
 expect(!sync.includes('isLikelyTestPost'), "Public sync still contains content-based Community publication filtering.");
 expect(!sync.includes('.filter((item) => item.title || item.body)'), "Public sync still suppresses Community rows based on content.");
 for (const legacyEndpoint of ["COMMUNITY_API_URL", "CONTENTS_API_URL", "JOBS_API_URL"]) {
@@ -85,6 +85,9 @@ expect(!sync.includes('publicContactEmail(row, ["contact_email"'), "Private job 
 expect(!sync.includes("contact_email: applicationEmail"), "Public job output still emits contact_email.");
 assertPublicJson("assets/data/community/posts.json");
 assertPublicJson("assets/data/jobs/jobs.json");
+assertPublicJson("assets/data/eat/items.json");
+assertPublicJson("assets/data/shopping/items.json");
+assertPublicJson("assets/data/medical/items.json");
 
 if (failures.length) {
   console.error("Submission moderation validation failed:");

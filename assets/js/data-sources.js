@@ -18,7 +18,10 @@
     communityPosts: "/assets/data/community/posts.json",
     communityCategories: "/assets/data/community/categories.json",
     jobs: "/assets/data/jobs/jobs.json",
-    jobCategories: "/assets/data/jobs/categories.json"
+    jobCategories: "/assets/data/jobs/categories.json",
+    eat: "/assets/data/eat/items.json",
+    shopping: "/assets/data/shopping/items.json",
+    medical: "/assets/data/medical/items.json"
   });
 
   function buildUrl(endpoint, params) {

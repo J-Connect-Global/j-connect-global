@@ -2678,7 +2678,9 @@ function normalizePost(post, index) {
   const subcategory = inferSubcategory(post);
   const status = normalizeStatus(post.status);
   const lastModifiedAt = field(post, ['last_modified_at', 'lastModifiedAt']);
-  const updatedAt = field(post, ['updated_at', 'updatedAt']);
+  const publicationDate = window.JCONNECT_COMMUNITY_SHARED?.communityPublicationDate?.(post)
+    || field(post, ['published_at', 'publishedAt', 'created_at', 'createdAt', 'date', 'timestamp']);
+  const updatedDate = window.JCONNECT_COMMUNITY_SHARED?.communityUpdatedDate?.(post) || '';
   const images = getImages(post);
   return {
     id: post.id,
@@ -2713,7 +2715,9 @@ function normalizePost(post, index) {
     _category: subcategory,
     _categoryRaw: getDisplayCategoryRaw(post),
     _location: getLocation(post),
-    _date: lastModifiedAt || updatedAt || field(post, ['created_at', 'createdAt', 'date', 'timestamp']),
+    _date: publicationDate,
+    _publicationDate: publicationDate,
+    _updatedDate: updatedDate,
     _createdAt: field(post, ['created_at', 'createdAt', 'date', 'timestamp']),
     _lastModifiedAt: lastModifiedAt,
     _lastModifiedAction: field(post, ['last_modified_action', 'lastModifiedAction']),
@@ -2851,7 +2855,7 @@ function renderStandaloneDetail(post, posts) {
   const shareHref = detailUrl(post);
   const manageHref = '../manage/?post=' + encodeURIComponent(post._id);
   const statusLabel = post._isClosed ? '募集終了' : '募集中';
-  const lastModifiedText = post._lastModifiedAt ? formatDate(post._lastModifiedAt) : '';
+  const updatedText = post._updatedDate ? formatDate(post._updatedDate) : '';
   const closedNotice = post._isClosed
     ? '<div class="closed-detail-notice" role="status"><strong>この投稿は募集終了しました。</strong><span>この投稿への新規問い合わせは現在できません。</span></div>'
     : '';
@@ -2910,7 +2914,7 @@ function renderStandaloneDetail(post, posts) {
           <span class="fact">投稿の種類: ${escapeHtml(post._postType)}</span>
           <span class="fact">詳しい内容: ${escapeHtml(post._subcategory)}</span>
           <span class="fact">元カテゴリ: ${escapeHtml(post._categoryRaw || '未設定')}</span>
-          ${lastModifiedText ? `<span class="fact">最終更新: ${escapeHtml(lastModifiedText)}</span>` : ''}
+          ${updatedText ? `<span class="fact">更新日: ${escapeHtml(updatedText)}</span>` : ''}
         </div>
         <p class="detail-body">${escapeHtml(post._body || '詳細本文は未設定です。')}</p>
         <div class="detail-actions community-detail-actions">

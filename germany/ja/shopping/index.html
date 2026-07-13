@@ -212,19 +212,19 @@
       <div class="toolbar jc-results-toolbar">
         <div class="results-meta">
           <h2 class="results-title">買い物</h2>
-          <div class="results-sub" id="resultsSummary">読み込み中...</div>
+          <div class="results-sub" id="resultsSummary">現在は基本ガイドを表示しています</div>
         </div>
         <div class="chips jc-active-chips" id="activeChips"></div>
       </div>
 
-      <div id="statusBox" class="status-box jc-loading-state">静的ガイドを表示中です。店舗・サービスデータを読み込むと一覧が更新されます。</div>
+      <div id="statusBox" class="status-box jc-empty-state">現在は買い物の基本ガイドを表示しています。店舗・サービスの一覧は、公開データが利用できるときに表示されます。</div>
       <div id="cards" class="cards jc-result-grid" aria-live="polite">
         <article class="card jc-result-card directory-seed-card">
           <div class="card-body">
             <div class="card-main">
               <span class="directory-seed-label">買い物ガイド</span>
               <h3 class="card-title jc-result-title">日本食材・生活用品は在庫と配送条件を確認</h3>
-              <p class="card-desc">買い物データを読み込む間、探し方の基本を表示しています。実店舗、オンライン購入、配送、返品条件、営業時間は利用前に確認してください。</p>
+              <p class="card-desc">店舗・サービスの一覧は、公開データが利用できるときに表示されます。実店舗、オンライン購入、配送、返品条件、営業時間は利用前に確認してください。</p>
               <ul class="directory-seed-points">
                 <li>地図・営業時間・祝日営業を確認</li>
                 <li>送料、最低注文額、返品条件を確認</li>
@@ -305,13 +305,8 @@
 <script src="/assets/js/data-sources.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
-    const API_URL = DATA_SOURCES.buildDirectoryUrl({
-      sheet: DATA_SOURCES.directorySheets.shopping,
-      lang: "ja",
-      city: "duesseldorf",
-      status: "active"
-    });
-    const DATA_TIMEOUT_MS = 12000;
+    const STATIC_DATA_URL = DATA_SOURCES.staticData?.shopping || "/assets/data/shopping/items.json";
+    const DATA_TIMEOUT_MS = 5000;
 
     const languageSelect = document.getElementById("languageSelect");
     if (languageSelect) {
@@ -694,8 +689,10 @@ function buildAddress(item) {
 
     function renderDirectoryEmptyState(isError = false) {
       renderDirectoryStatus({
-        title: "買い物情報を準備中です",
-        body: "日本食材、日用品、オンラインショップ、生活立ち上げに役立つお店を順次整理しています。",
+        title: isError ? "買い物情報を一時的に表示できません" : "現在は買い物の基本ガイドを表示しています",
+        body: isError
+          ? "店舗・サービスデータを取得できませんでした。時間をおいて再度お試しください。"
+          : "店舗・サービスの一覧は、公開データが利用できるときに表示されます。日本食材、日用品、オンライン購入の確認ポイントをご利用ください。",
         guidance: ["日本食材・アジア食材", "生活用品・家具", "オンライン購入・配送"],
         isError,
         showRetry: isError
@@ -722,6 +719,8 @@ function buildAddress(item) {
       }
 
       els.statusBox.style.display = "none";
+      els.statusBox.className = "status-box";
+      els.statusBox.textContent = "";
 
       els.cards.innerHTML = filteredItems.map((item) => {
         const displayName = getDisplayNameParts(item);
@@ -1127,9 +1126,12 @@ function setViewMode(mode) {
     async function loadData() {
       try {
         setLoadingStatus();
-        const json = await fetchJsonWithTimeout(API_URL);
+        const json = await fetchJsonWithTimeout(STATIC_DATA_URL);
 
         const items = DATA_SOURCES.normalizePayload(json);
+        if (!items.length && json?.validation?.intentionally_empty !== true) {
+          throw new Error("Static Shopping data unexpectedly contains zero eligible records.");
+        }
 
 rawItems = sortItems(items).map((item, index) => ({
   ...item,
@@ -1137,12 +1139,16 @@ rawItems = sortItems(items).map((item, index) => ({
 }));
 
         rawItems.forEach(preloadCoordinatesFromFields);
+        const hasMapItems = rawItems.some(hasCoordinates);
+        els.mapViewBtn.disabled = !hasMapItems;
+        els.mapViewBtn.setAttribute("aria-disabled", String(!hasMapItems));
+        if (!hasMapItems && currentView === "map") setViewMode("list");
 
         categoryMap = buildCategoryMap(rawItems);
         renderFilterChips();
         filterItems();
       } catch (error) {
-        console.error("Shopping data load failed:", API_URL, error);
+        console.error("Shopping static data load failed.", error);
         rawItems = [];
         filteredItems = [];
         renderDataLoadError();

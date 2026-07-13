@@ -30,15 +30,15 @@ jobs:
         with:
           node-version: 20
 
-      - name: Sync community and jobs data
+      - name: Sync all public data
         run: node scripts/sync-public-data.mjs
 
       - name: Commit updated public data
         id: auto-commit-action
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(data): sync public community and jobs data"
-          file_pattern: assets/data/community/*.json assets/data/jobs/*.json
+          commit_message: "chore(data): sync public data"
+          file_pattern: assets/data/community/*.json assets/data/jobs/*.json assets/data/eat/*.json assets/data/shopping/*.json assets/data/medical/*.json
 
   deploy-pages:
     if: needs.sync-public-data.outputs.changes_detected == 'true' || github.event_name == 'workflow_dispatch'
@@ -57,6 +57,8 @@ jobs:
 
       - name: Report Pages public-data artifact
         shell: bash
+        env:
+          EXPECTED_APPROVED_COMMUNITY_POST_ID: ${{ vars.EXPECTED_APPROVED_COMMUNITY_POST_ID || 'post_b316572b-01e1-4b77-b41a-c87e68d65f0b' }}
         run: |
           node --input-type=module <<'NODE'
           import { readFile } from "node:fs/promises";
@@ -64,8 +66,15 @@ jobs:
           const ids = Array.isArray(payload.items) ? payload.items.map((item) => item.post_id || item.id) : [];
           if (payload.count !== ids.length) throw new Error(`Pages Community count mismatch: ${payload.count} != ${ids.length}`);
           if (!ids.length) throw new Error("Pages Community artifact unexpectedly contains zero posts.");
+          const expectedId = process.env.EXPECTED_APPROVED_COMMUNITY_POST_ID;
+          if (expectedId && !ids.includes(expectedId)) throw new Error(`Approved Community post is not present in the Pages artifact: ${expectedId}`);
           console.log(`Pages Community artifact count: ${ids.length}`);
           console.log(`Pages Community artifact post IDs: ${ids.join(", ")}`);
+          for (const file of ["assets/data/jobs/jobs.json", "assets/data/eat/items.json", "assets/data/shopping/items.json", "assets/data/medical/items.json"]) {
+            const data = JSON.parse(await readFile(file, "utf8"));
+            if (data.count !== data.items.length) throw new Error(`${file} count mismatch: ${data.count} != ${data.items.length}`);
+            console.log(`${file}: ${data.count} generated items`);
+          }
           NODE
 
       - name: Configure Pages

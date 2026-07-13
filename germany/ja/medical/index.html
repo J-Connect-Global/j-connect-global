@@ -214,20 +214,20 @@
       <div class="toolbar jc-results-toolbar">
         <div>
           <h2 class="results-title">医療リソース</h2>
-          <p class="results-sub" id="resultsSummary">読み込み中...</p>
+          <p class="results-sub" id="resultsSummary">現在は基本ガイドを表示しています</p>
         </div>
         <div class="chips jc-active-chips" id="activeChips"></div>
       </div>
 
-      <div id="statusBox" class="status-box jc-loading-state">静的ガイドを表示中です。医療リソースデータを読み込むと一覧が更新されます。</div>
+      <div id="statusBox" class="status-box jc-empty-state">現在は医療機関を探すための基本ガイドを表示しています。医療リソース一覧は、公開データが利用できるときに表示されます。</div>
       <div id="cards" class="cards jc-result-grid" aria-live="polite">
         <article class="card jc-result-card directory-seed-card">
           <div class="card-body">
             <div class="card-main">
               <span class="directory-seed-label">医療情報の確認</span>
               <h3 class="card-title jc-result-title">このページは医療上の助言や診断ではありません</h3>
-              <p class="card-desc">医療リソースデータを読み込む間、探し方の基本を表示しています。診療内容、受付時間、言語対応、保険対応は必ず公式サイトまたは医療機関へ直接確認してください。</p>
-              <div class="directory-medical-note">緊急時は112へ連絡してください。症状や治療判断は医療機関・公式窓口の案内に従ってください。</div>
+              <p class="card-desc">医療リソース一覧は、公開データが利用できるときに表示されます。診療内容、受付時間、言語対応、保険対応は必ず公式サイトまたは医療機関へ直接確認してください。</p>
+              <div class="directory-medical-note">生命の危険がある場合や重い症状は112、緊急ではないものの診療時間外に医療上の助けが必要な場合は116117へ連絡してください。116117の電話対応はドイツ語です。</div>
             </div>
             <div class="link-row jc-result-actions">
               <a class="btn btn-primary" href="/germany/ja/contact/">掲載・修正を相談</a>
@@ -303,11 +303,8 @@
 <script src="/assets/js/data-sources.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
-    const API_URL = DATA_SOURCES.buildDirectoryUrl({
-      sheet: DATA_SOURCES.directorySheets.medical,
-      city: "duesseldorf"
-    });
-    const DATA_TIMEOUT_MS = 12000;
+    const STATIC_DATA_URL = DATA_SOURCES.staticData?.medical || "/assets/data/medical/items.json";
+    const DATA_TIMEOUT_MS = 5000;
 
     const CATEGORY_LABELS = {
       hospital: "病院",
@@ -594,7 +591,7 @@
       els.statusBox.innerHTML = `
         <span class="status-title">${escapeHtml(title)}</span>
         <div>${escapeHtml(body)}</div>
-        <div class="directory-medical-note">このページは医療機関を探すための入口であり、医療上の助言や診断ではありません。受診前に必ず公式サイトまたは医療機関へ直接確認してください。緊急時は112へ連絡してください。</div>
+        <div class="directory-medical-note">このページは医療機関を探すための入口であり、医療上の助言や診断ではありません。受診前に必ず公式サイトまたは医療機関へ直接確認してください。生命の危険がある場合や重い症状は112、緊急ではないものの診療時間外に医療上の助けが必要な場合は116117へ連絡してください。116117の電話対応はドイツ語です。</div>
         <div class="status-actions">
           ${showRetry ? `<button class="btn btn-primary" type="button" data-retry-load>再読み込み</button>` : ""}
           ${showReset ? `<button class="btn btn-secondary" type="button" data-reset-filters>条件をリセット</button>` : ""}
@@ -615,8 +612,10 @@
 
     function renderMedicalEmptyState(isError = false) {
       renderMedicalStatus({
-        title: "医療リソースを準備中です",
-        body: "病院、クリニック、薬局、日本語・英語対応の有無など、生活に役立つ医療情報を順次整理しています。",
+        title: isError ? "医療リソースを一時的に表示できません" : "現在は医療機関を探すための基本ガイドを表示しています",
+        body: isError
+          ? "医療リソースデータを取得できませんでした。緊急時の案内を確認し、時間をおいて再度お試しください。"
+          : "医療リソース一覧は、公開データが利用できるときに表示されます。受診先と受付条件は公式情報で確認してください。",
         guidance: ["Hausarzt・小児科", "歯科・専門医", "薬局・緊急時の確認先"],
         isError,
         showRetry: isError
@@ -1011,15 +1010,22 @@
       setStatus("データを読み込んでいます...");
 
       try {
-        const payload = await fetchJsonWithTimeout(API_URL);
+        const payload = await fetchJsonWithTimeout(STATIC_DATA_URL);
         const rows = normalizePayload(payload);
+        if (!rows.length && payload?.validation?.intentionally_empty !== true) {
+          throw new Error("Static Medical data unexpectedly contains zero eligible records.");
+        }
 
         rawItems = rows.map(parseItem).filter(item => item.title && item.title !== "名称未設定");
+        const hasMapItems = rawItems.some(item => item.lat !== null && item.lng !== null);
+        els.mapViewBtn.disabled = !hasMapItems;
+        els.mapViewBtn.setAttribute("aria-disabled", String(!hasMapItems));
+        if (!hasMapItems && currentView === "map") setView("list");
 
         renderFilterChips();
         applyFilters();
       } catch (error) {
-        console.error("Medical data load failed:", API_URL, error);
+        console.error("Medical static data load failed.", error);
         rawItems = [];
         filteredItems = [];
         renderSummary();

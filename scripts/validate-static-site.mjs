@@ -45,9 +45,9 @@ const coreIndexableUrls = new Set([
 
 const directoryStaticRequirements = new Map([
   ['/germany/ja/jobs/', ['directory-seed-card', '応募前の確認', '求人情報は掲載元の確認が前提です', '応募前に会社情報']],
-  ['/germany/ja/eat/', ['directory-seed-card', '静的ガイドを表示中', '地図・営業時間・予約条件を公式情報で確認']],
-  ['/germany/ja/shopping/', ['directory-seed-card', '静的ガイドを表示中', '日本食材・生活用品は在庫と配送条件を確認']],
-  ['/germany/ja/medical/', ['directory-seed-card', '医療上の助言や診断ではありません', '緊急時は112']],
+  ['/germany/ja/eat/', ['directory-seed-card', '現在は基本ガイドを表示しています', '地図・営業時間・予約条件を公式情報で確認']],
+  ['/germany/ja/shopping/', ['directory-seed-card', '現在は基本ガイドを表示しています', '日本食材・生活用品は在庫と配送条件を確認']],
+  ['/germany/ja/medical/', ['directory-seed-card', '医療上の助言や診断ではありません', '重い症状は112', '116117']],
   ['/germany/ja/community/', ['hero-safety', '受け渡しは公共の場所推奨', '投稿内容や取引の成立をサイトが保証するものではありません']],
   ['/germany/ja/events/', ['data-events-card', 'data-news-card', 'イベント一覧']],
 ]);
@@ -453,6 +453,13 @@ function validateTrustPlaceholders(rel, html) {
 function validateStaticContentQuality(rel, url, html) {
   if (url === '/germany/ja/') validateHomeStaticQuality(rel, html);
 
+  if (url === '/germany/ja/events/' || url === '/germany/ja/community/') {
+    const initialMarkup = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
+    if (/<h[1-6]\b[^>]*>\s*<\/h[1-6]>/i.test(initialMarkup)) {
+      problems.push(`${rel} contains an empty heading in initial HTML.`);
+    }
+  }
+
   const requiredTexts = directoryStaticRequirements.get(url);
   if (!requiredTexts) return;
 
@@ -484,6 +491,9 @@ function validateInitialStateSafety(rel, url, html) {
     ['/germany/ja/jobs/', ['読み込み中...']],
     ['/germany/ja/jobs/detail/', ['求人情報を読み込んでいます', '指定された求人IDの内容を確認しています。']],
     ['/germany/ja/events/', ['ニュース解説を読み込み中です。', 'イベントを読み込み中です。', '日本語ニュース解説を準備中です', 'イベント情報を準備中です']],
+    ['/germany/ja/eat/', ['静的ガイドを表示中']],
+    ['/germany/ja/shopping/', ['静的ガイドを表示中']],
+    ['/germany/ja/medical/', ['静的ガイドを表示中']],
     ['/germany/ja/living/', ['記事を読み込み中です。']],
     ['/germany/ja/learn-german/', ['このテーマの記事は準備中です。']],
     ['/germany/ja/learn-german/german-news-reading-guide/', ['ドイツ語ニュース素材を読み込み中です']],

@@ -50,6 +50,8 @@ expect(contact.includes('COMMUNITY_STATIC_POSTS_URL') && report.includes('COMMUN
 expect(!detail.includes('CITY_OPTIONS_BY_COUNTRY') && detail.includes('communityLocationConfig'), 'Post form does not use the shared Community location configuration.');
 expect(listing.includes('communityLocationConfig') && listing.includes('normalizeCommunityCountry'), 'Listing does not use the shared Community location configuration.');
 expect(!listing.includes('最新データを取得できませんでした。保存済みの表示を継続しています。'), 'Community cache warning is still embedded in initial HTML.');
+expect(listing.includes('data-jconnect-query-robots') && listing.includes('params.has("id")') && listing.includes('noindex, follow'), 'Community query detail URLs do not receive rendered noindex protection.');
+expect(!/<h[1-6]\b[^>]*>\s*<\/h[1-6]>/i.test(listing.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')), 'Community initial HTML contains an empty heading.');
 expect(listing.includes('renderEmptyActions("error")') && listing.includes('renderEmptyActions(noPublicPosts ? "public-empty" : "filters")'), 'Community loading result does not preserve distinct error, empty, and filtered-empty states.');
 expect(!shared.includes('...post'), 'Shared Community normalizer retains arbitrary source fields instead of a public allowlist.');
 expect(detail.includes('data-social-share="manual"') && socialShare.includes('manualShare') && socialShare.includes('target.root.querySelectorAll(AUTO_SHARE_SELECTOR)'), 'Community detail can still create duplicate share triggers.');

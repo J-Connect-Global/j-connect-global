@@ -4,11 +4,20 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
+  EXPECTED_API_VERSION,
+  SAMPLE_JOB_LIMIT,
+  assertApiVersion,
+  assertNoPrivateFields,
   assertNoLegacyEndpointOverrides,
+  classifyJob,
+  communityPublicationDate,
   isPublicCommunityPost,
   normalizeCommunityPost,
+  normalizeDirectoryItem,
+  normalizeJob,
   publicPayload,
   strictSourceItems,
+  validateDirectoryRow,
   writeJsonIfChanged
 } from "./sync-public-data.mjs";
 
@@ -42,29 +51,31 @@ const activeRows = retainedContentCases.map((row, index) => ({
   ...row
 }));
 
-const expectedSevenIds = [
-  "post_10d2f796-9555-4358-ab98-95de74346cad",
-  "post_066f3c93-7f73-46a3-9c89-e38d47f7308d",
+const expectedSixIds = [
+  "post_b316572b-01e1-4b77-b41a-c87e68d65f0b",
   "post_cd6cadde-3221-4de3-8f8d-935d66331457",
   "post_79f6dfd5-86c4-4c68-bf50-f8a7a1993bfe",
   "post_361ec368-085b-42da-86e4-2c6d3dd2c28a",
   "post_23baeb1d-3d92-4438-9350-e04029bd3add",
   "post_807cffe7-b1af-41c0-89ee-c54b57ce44c5"
 ];
-const sevenActiveRows = expectedSevenIds.map((postId, index) => ({
+const sixActiveRows = expectedSixIds.map((postId, index) => ({
   post_id: postId,
   status: "active",
-  title: index === 0 ? "test" : index === 1 ? "\u30c6\u30b9\u30c8" : `active-${index + 1}`,
-  body: index === 0 ? "test" : index === 1 ? "\u30c6\u30b9\u30c8" : `body-${index + 1}`
+  title: index === 0 ? "test 1" : `active-${index + 1}`,
+  body: index === 0 ? "test 1" : `body-${index + 1}`
 }));
-const sevenGenerated = sevenActiveRows
+const sixGenerated = sixActiveRows
   .filter((row) => isPublicCommunityPost(row, now))
   .map(normalizeCommunityPost);
-assert.equal(sevenGenerated.length, 7, "seven active source rows did not generate seven public rows");
-assert.deepEqual(new Set(sevenGenerated.map((item) => item.post_id)), new Set(expectedSevenIds));
-assert.equal(sevenGenerated.find((item) => item.post_id === expectedSevenIds[0]).title, "test");
-assert.equal(sevenGenerated.find((item) => item.post_id === expectedSevenIds[1]).title, "\u30c6\u30b9\u30c8");
-assert.equal(publicPayload("test", "test", sevenGenerated).count, sevenGenerated.length);
+assert.equal(sixGenerated.length, 6, "six active source rows did not generate six public rows");
+assert.deepEqual(new Set(sixGenerated.map((item) => item.post_id)), new Set(expectedSixIds));
+assert.equal(sixGenerated.find((item) => item.post_id === expectedSixIds[0]).title, "test 1");
+assert.equal(publicPayload("test", "test", sixGenerated).count, sixGenerated.length);
+
+assert.equal(assertApiVersion({ api_version: EXPECTED_API_VERSION }, "fixture"), true);
+assert.throws(() => assertApiVersion({}, "fixture"), new RegExp(`expected ${EXPECTED_API_VERSION}, received missing`));
+assert.throws(() => assertApiVersion({ api_version: "legacy" }, "fixture"), /received legacy/);
 
 for (const row of activeRows) {
   assert.equal(isPublicCommunityPost(row, now), true, `active content was suppressed: ${row.post_id}`);
@@ -86,13 +97,68 @@ assert.equal(isPublicCommunityPost({ status: "active", expires_at: "2026-07-14T0
 assert.equal(isPublicCommunityPost({ status: "active", expires_at: "not-a-date" }, now), true);
 assert.equal(isPublicCommunityPost({ status: "active", title: "", body: "" }, now), true, "empty content incorrectly changed lifecycle eligibility");
 
-assert.equal(strictSourceItems({ ok: true, count: 7, items: sevenActiveRows }, "test").length, 7);
+assert.equal(strictSourceItems({ ok: true, count: 6, items: sixActiveRows }, "test").length, 6);
 assert.throws(() => strictSourceItems({ ok: true }, "test"), /incompatible payload/);
 assert.throws(() => strictSourceItems({ ok: true, count: 1, items: [] }, "test"), /count mismatch/);
 assert.throws(() => strictSourceItems({ ok: true, count: 0, items: [] }, "test"), /zero source items/);
-for (const name of ["COMMUNITY_API_URL", "CONTENTS_API_URL", "JOBS_API_URL"]) {
+for (const name of ["COMMUNITY_API_URL", "CONTENTS_API_URL", "JOBS_API_URL", "DIRECTORY_API_URL", "EAT_API_URL", "SHOPPING_API_URL", "MEDICAL_API_URL"]) {
   assert.throws(() => assertNoLegacyEndpointOverrides({ [name]: "https://legacy.example/exec" }), new RegExp(name));
 }
+
+const sampleRows = ["a", "b", "c", "d"].map((id, index) => ({
+  id,
+  status: "active",
+  listing_type: "sample",
+  priority: index + 1,
+  position_title: `Sample ${id}`,
+  application_email: `apply-${id}@example.com`,
+  apply_url: `https://example.com/apply/${id}`
+}));
+const publicSamples = sampleRows
+  .map((row, index) => normalizeJob(row, index, classifyJob(row, now)))
+  .slice(0, SAMPLE_JOB_LIMIT);
+assert.equal(publicSamples.length, 3, "sample jobs were not capped at three");
+for (const sample of publicSamples) {
+  assert.equal(sample.listing_type, "sample");
+  assert.equal(sample.is_indexable, false);
+  assert.equal(sample.emit_job_posting, false);
+  assert.equal(sample.application_email, "");
+  assert.equal(sample.apply_url, "");
+  assert.equal(sample.sample_label, "掲載見本・応募不可");
+}
+const legacyGovernance = normalizeJob({ id: "legacy", status: "active", position_title: "Legacy" }, 0, classifyJob({ status: "active" }, now));
+assert.equal(legacyGovernance.listing_type, "sample");
+assert.equal(legacyGovernance.governance_defaulted, true);
+const unverifiedReal = classifyJob({ status: "active", listing_type: "real", is_verified: false }, now);
+assert.equal(unverifiedReal.eligible, false);
+assert.equal(unverifiedReal.indexable, false);
+
+const validDirectoryBase = {
+  status: "active",
+  name: "Public place",
+  category1: "Cafe",
+  city: "Berlin",
+  website: "https://example.com",
+  updated_at: "2026-07-01"
+};
+assert.deepEqual(validateDirectoryRow({ ...validDirectoryBase, category2: "test" }, "eat").reason, "placeholder_category");
+assert.deepEqual(validateDirectoryRow({ ...validDirectoryBase, url: "not-http" }, "eat").reason, "invalid_public_url");
+assert.deepEqual(validateDirectoryRow({ ...validDirectoryBase, name: "" }, "shopping").reason, "missing_display_name");
+assert.deepEqual(validateDirectoryRow({ ...validDirectoryBase, status: "" }, "medical").reason, "status_not_active");
+assert.deepEqual(validateDirectoryRow({ ...validDirectoryBase, website: "", source_url: "" }, "medical").reason, "missing_provenance_url");
+assert.deepEqual(validateDirectoryRow({ ...validDirectoryBase, updated_at: "" }, "medical").reason, "missing_review_date");
+assert.equal(validateDirectoryRow(validDirectoryBase, "medical").eligible, true);
+const normalizedDirectory = normalizeDirectoryItem({ ...validDirectoryBase, notes_internal: "private", map_url: "javascript:alert(1)" }, "eat", 0);
+assert.equal(normalizedDirectory.map_url, "");
+assert.equal(Object.hasOwn(normalizedDirectory, "notes_internal"), false);
+
+const dateFixture = {
+  created_at: "2026-07-01T09:00:00Z",
+  published_at: "2026-07-02T09:00:00Z",
+  updated_at: "2026-07-10T09:00:00Z"
+};
+assert.equal(communityPublicationDate(dateFixture), "2026-07-02T09:00:00.000Z");
+assert.equal(normalizeCommunityPost(dateFixture, 0).published_at, "2026-07-02T09:00:00.000Z");
 
 const privateSource = {
   ...activeRows[0],
@@ -114,6 +180,7 @@ for (const key of [
 ]) {
   assert.equal(Object.hasOwn(publicPost, key), false, `private field was emitted: ${key}`);
 }
+assert.equal(assertNoPrivateFields(publicPost), true);
 
 const runtimeFiles = [
   "scripts/sync-public-data.mjs",
@@ -152,6 +219,17 @@ for (const [label, source, jsonPath] of [
   assert.equal(source.includes(jsonPath), true, `${label} does not reference generated public JSON`);
   assert.equal(/trying GAS fallback|GAS_FALLBACK_TIMEOUT_MS/.test(source), false, `${label} retains a GAS display fallback`);
 }
+for (const [label, source, jsonPath] of [
+  ["Eat", read("germany/ja/eat/index.html"), "/assets/data/eat/items.json"],
+  ["Shopping", read("germany/ja/shopping/index.html"), "/assets/data/shopping/items.json"],
+  ["Medical", read("germany/ja/medical/index.html"), "/assets/data/medical/items.json"]
+]) {
+  assert.equal(source.includes(jsonPath), true, `${label} does not reference generated public JSON`);
+  assert.equal(source.includes("buildDirectoryUrl"), false, `${label} still reads GAS directly`);
+  assert.match(source, /データを読み込んでいます/);
+  assert.match(source, /intentionally_empty/);
+  assert.match(source, /aria-disabled/);
+}
 assert.equal(/buildCommunityUrl\(\{\s*action:\s*["'](?:getPosts|listPosts|getPost)/.test(home + communityList + communityDetail + communityContact + communityReport), false, "Community public display still reads GAS");
 assert.equal(/buildDirectoryUrl\(\{[\s\S]{0,180}(?:directorySheets\.jobs|sheet:\s*["']jobs)/.test(home + jobsList + jobsDetail), false, "Jobs public display still reads GAS");
 assert.equal(communityContact.includes("COMMUNITY_STATIC_POSTS_URL"), true);
@@ -161,6 +239,9 @@ assert.match(communityDetail, /この投稿は見つからないか、現在公�
 assert.match(jobsDetail, /この求人は募集終了、非公開、削除済み、または掲載期限終了のため表示できません。/);
 assert.match(communityDetail, /<meta name="robots" content="noindex, follow">/);
 assert.match(jobsDetail, /<meta name="robots" content="noindex, follow">/);
+assert.equal(/"@type"\s*:\s*"JobPosting"/.test(jobsDetail), false, "sample-capable dynamic detail emits JobPosting");
+for (const source of [home, jobsList, jobsDetail]) assert.match(source, /掲載見本・応募不可/);
+assert.match(jobsDetail, /isSample[\s\S]*応募・問い合わせ/);
 assert.match(communityList, /現在公開中の投稿はありません。最初の投稿を作成できます。/);
 assert.match(jobsList, /現在公開中の求人はありません。求人掲載をご希望の場合は、掲載フォームをご利用ください。/);
 
@@ -173,6 +254,32 @@ for (const relative of ["germany/ja/index.html", "germany/ja/community/index.htm
   assert.equal(/hreflang=["'](?:en|de)["']/.test(source), false, `${relative} emits inactive hreflang`);
   assert.match(source, /<html lang="ja">/);
 }
+
+for (const relative of [
+  "assets/data/community/posts.json", "assets/data/jobs/jobs.json", "assets/data/eat/items.json",
+  "assets/data/shopping/items.json", "assets/data/medical/items.json"
+]) {
+  const payload = JSON.parse(read(relative));
+  assert.equal(payload.count, payload.items.length, `${relative} count mismatch`);
+  assert.equal(assertNoPrivateFields(payload), true, `${relative} exposes a private field`);
+}
+const committedCommunity = JSON.parse(read("assets/data/community/posts.json"));
+assert.equal(committedCommunity.count, 6);
+assert.equal(committedCommunity.items.some((item) => item.title === "test 1"), true);
+const committedJobs = JSON.parse(read("assets/data/jobs/jobs.json"));
+assert.equal(committedJobs.items.length <= SAMPLE_JOB_LIMIT, true);
+assert.equal(committedJobs.items.every((item) => item.listing_type === "sample" && !item.is_indexable && !item.emit_job_posting), true);
+const committedEat = JSON.parse(read("assets/data/eat/items.json"));
+assert.equal(committedEat.items.some((item) => String(item.category2).toLowerCase() === "test"), false);
+const committedShopping = JSON.parse(read("assets/data/shopping/items.json"));
+assert.equal(committedShopping.validation.excluded_by_reason.missing_display_name, 299);
+const committedMedical = JSON.parse(read("assets/data/medical/items.json"));
+assert.equal(committedMedical.count, 0);
+assert.equal(committedMedical.validation.excluded_by_reason.status_not_active, 23);
+
+assert.match(syncWorkflow, /assets\/data\/eat\/\*\.json/);
+assert.match(syncWorkflow, /commit_hash/);
+assert.match(syncWorkflow, /EXPECTED_APPROVED_COMMUNITY_POST_ID/);
 
 for (const [type, backText] of [
   ["living", "生活・手続き一覧へ戻る"],

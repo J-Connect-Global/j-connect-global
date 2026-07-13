@@ -46,12 +46,21 @@
     const tags = getValue(row, "tags", "skills", "skill_tags", "requirements_tags");
     const id = getValue(row, "job_id", "id") || stableSlug(positionTitle, companyName, region) || `job-${index + 1}`;
     const publicApplicationEmail = getValue(row, "application_email", "public_email", "apply_email");
+    const explicitListingType = normalize(getValue(row, "listing_type"));
+    const listingType = explicitListingType === "real" ? "real" : "sample";
+    const isSample = listingType === "sample";
 
     return {
       id,
       slug: getValue(row, "slug", "job_slug"),
       detail_url: getValue(row, "detail_url", "detailUrl", "detail_page_url"),
       status: getValue(row, "status"),
+      listing_type: listingType,
+      governance_defaulted: explicitListingType !== "sample" && explicitListingType !== "real",
+      is_verified: listingType === "real" && ["true", "1", "yes"].includes(normalize(getValue(row, "is_verified"))),
+      is_indexable: listingType === "real" && ["true", "1", "yes"].includes(normalize(getValue(row, "is_indexable"))),
+      emit_job_posting: listingType === "real" && ["true", "1", "yes"].includes(normalize(getValue(row, "emit_job_posting"))),
+      sample_label: isSample ? "掲載見本・応募不可" : "",
       priority: toNumber(getValue(row, "priority")) || 999,
       company_name: companyName,
       position_title: positionTitle,
@@ -73,13 +82,13 @@
       job_details: details,
       description: details,
       requirements: getValue(row, "requirements"),
-      contact_email: publicApplicationEmail,
-      application_email: publicApplicationEmail,
-      apply_email: publicApplicationEmail,
-      apply_url: getValue(row, "apply_url", "application_url", "source_url", "official_url", "url"),
-      application_url: getValue(row, "application_url", "apply_url", "apply_link"),
-      apply_link: getValue(row, "apply_link", "apply_url", "application_url"),
-      apply_method: getValue(row, "apply_method", "application_method", "how_to_apply"),
+      contact_email: isSample ? "" : publicApplicationEmail,
+      application_email: isSample ? "" : publicApplicationEmail,
+      apply_email: isSample ? "" : publicApplicationEmail,
+      apply_url: isSample ? "" : getValue(row, "apply_url", "application_url", "source_url", "official_url", "url"),
+      application_url: isSample ? "" : getValue(row, "application_url", "apply_url", "apply_link"),
+      apply_link: isSample ? "" : getValue(row, "apply_link", "apply_url", "application_url"),
+      apply_method: isSample ? "" : getValue(row, "apply_method", "application_method", "how_to_apply"),
       company_url: getValue(row, "company_url", "company_website", "company_site", "company_link"),
       source_url: getValue(row, "source_url", "official_url", "url", "website"),
       source_name: getValue(row, "source_name", "source", "publisher"),
@@ -91,6 +100,17 @@
       created_at: getValue(row, "created_at", "created"),
       expires_at: getValue(row, "expires_at", "deadline", "application_deadline")
     };
+  }
+
+  function isSampleJob(job) {
+    return normalize(job?.listing_type) !== "real";
+  }
+
+  function isIndexableRealJob(job) {
+    return normalize(job?.listing_type) === "real"
+      && job?.is_verified === true
+      && job?.is_indexable === true
+      && job?.emit_job_posting === true;
   }
 
   function isActiveJob(job) {
@@ -140,6 +160,8 @@
     splitList,
     sortNewestFirst,
     getJobDetailPath,
-    getSalaryLabel
+    getSalaryLabel,
+    isSampleJob,
+    isIndexableRealJob
   });
 })(window);

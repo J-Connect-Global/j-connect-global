@@ -6,7 +6,7 @@ import {
   assertNoRuntimeDiagnostics,
   assertOneManualShareButton,
   assertRouteReady,
-  assertThreeSampleJobs,
+  assertAllActiveJobs,
   fixtureCommunityDetailPath,
   fixtureCommunityPost,
   installRuntimeDiagnostics,
@@ -47,9 +47,9 @@ test("mobile Community renders the active fixtures", async ({ page }) => {
   await assertRouteReady(page);
 });
 
-test("mobile Jobs renders exactly three samples", async ({ page }) => {
+test("mobile Jobs renders every active listing", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/jobs/", "/assets/data/jobs/jobs.json");
-  await assertThreeSampleJobs(page);
+  await assertAllActiveJobs(page);
   await assertRouteReady(page);
 });
 

@@ -1,20 +1,22 @@
 {
   "api_version": "2026-07-13.1",
   "source": "master-gas:jobs",
-  "count": 3,
+  "count": 4,
   "groups": [
     {
       "field": "region",
       "values": [
         "デュッセルドルフ",
-        "ハンブルク"
+        "ハンブルク",
+        "フランクフルト"
       ]
     },
     {
       "field": "city",
       "values": [
         "デュッセルドルフ",
-        "ハンブルク"
+        "ハンブルク",
+        "フランクフルト"
       ]
     },
     {
@@ -41,5 +43,5 @@
       "values": []
     }
   ],
-  "generated_at": "2026-07-13T21:48:07.234Z"
+  "generated_at": "2026-07-13T21:59:38.098Z"
 }

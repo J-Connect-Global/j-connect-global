@@ -619,13 +619,10 @@
     const applyMailto = getApplyMailto(job);
     const companyUrl = isSafeUrl(job.company_url) ? job.company_url : "";
     const sourceUrl = isSafeUrl(job.source_url) ? job.source_url : "";
-    const isSample = JOBS_SHARED.isSampleJob(job);
-
     document.title = `${title} | 仕事・求人 | J-Connect Germany`;
     detail.setAttribute("aria-busy", "false");
     detail.innerHTML = `
       <div class="jobs-detail-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人詳細</span></div>
-      ${isSample ? `<div class="directory-seed-label">掲載見本・応募不可</div>` : ""}
       ${company ? `<div class="jobs-detail-company">${escapeHtml(company)}</div>` : ""}
       <h1>${escapeHtml(title)}</h1>
       ${job.summary ? `<p class="jobs-detail-summary">${escapeHtml(job.summary)}</p>` : ""}
@@ -634,7 +631,7 @@
 
       <div class="jobs-detail-actions">
         <a class="jc-button is-primary" href="/germany/ja/jobs/">求人一覧へ戻る</a>
-        ${!isSample && applyMailto ? `<a class="jc-button" href="${escapeHtml(applyMailto)}">応募先にメールする</a>` : ""}
+        ${applyMailto ? `<a class="jc-button" href="${escapeHtml(applyMailto)}">応募先にメールする</a>` : ""}
         ${companyUrl ? `<a class="jc-button" href="${escapeHtml(companyUrl)}" target="_blank" rel="noopener noreferrer">会社サイトを見る</a>` : ""}
         <button class="jc-button" type="button" id="copyDetailUrl">URLコピー</button>
       </div>
@@ -673,23 +670,16 @@
         ${requirements.length ? `<ul>${requirements.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : "<p>応募条件は掲載元に確認してください。</p>"}
       </section>
 
-      ${isSample ? `
-        <section class="jobs-detail-section">
-          <h2>掲載見本・応募不可</h2>
-          <p>この求人は表示例です。実際の募集ではなく、応募を受け付けていません。</p>
-        </section>
-      ` : `
-        <section class="jobs-detail-section">
-          <h2>応募・問い合わせ</h2>
-          <p>${escapeHtml(job.apply_method || "応募前に、勤務条件、ビザ、開始時期、語学要件、連絡先を掲載元に確認してください。")}</p>
-          ${applyEmail ? `<p class="jobs-detail-email">連絡先: <a href="mailto:${escapeHtml(applyEmail)}">${escapeHtml(applyEmail)}</a></p>` : ""}
-          <div class="jobs-detail-link-list">
-            ${applyMailto ? `<a class="jc-button is-primary" href="${escapeHtml(applyMailto)}">応募先にメールする</a>` : ""}
-            ${companyUrl ? `<a class="jc-button" href="${escapeHtml(companyUrl)}" target="_blank" rel="noopener noreferrer">会社サイトを見る</a>` : ""}
-            ${sourceUrl && sourceUrl !== companyUrl ? `<a class="jc-button" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(job.source_name || "掲載元")}</a>` : ""}
-          </div>
-        </section>
-      `}
+      <section class="jobs-detail-section">
+        <h2>応募・問い合わせ</h2>
+        <p>${escapeHtml(job.apply_method || "応募前に、勤務条件、ビザ、開始時期、語学要件、連絡先を掲載元に確認してください。")}</p>
+        ${applyEmail ? `<p class="jobs-detail-email">連絡先: <a href="mailto:${escapeHtml(applyEmail)}">${escapeHtml(applyEmail)}</a></p>` : ""}
+        <div class="jobs-detail-link-list">
+          ${applyMailto ? `<a class="jc-button is-primary" href="${escapeHtml(applyMailto)}">応募先にメールする</a>` : ""}
+          ${companyUrl ? `<a class="jc-button" href="${escapeHtml(companyUrl)}" target="_blank" rel="noopener noreferrer">会社サイトを見る</a>` : ""}
+          ${sourceUrl && sourceUrl !== companyUrl ? `<a class="jc-button" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(job.source_name || "掲載元")}</a>` : ""}
+        </div>
+      </section>
     `;
 
     detail.querySelector("#copyDetailUrl")?.addEventListener("click", async event => {

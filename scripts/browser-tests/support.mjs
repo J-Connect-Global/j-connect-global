@@ -316,13 +316,12 @@ export async function assertCommunityCards(page) {
   expect(renderedIds).toEqual(fixtureIds);
 }
 
-export async function assertThreeSampleJobs(page) {
-  expect(jobsFixture.items, "the committed Jobs fixture must preserve the three-sample cap").toHaveLength(3);
-  expect(jobsFixture.items.every((job) => job.listing_type === "sample")).toBe(true);
-
+export async function assertAllActiveJobs(page) {
+  expect(jobsFixture.items.length, "the committed Jobs fixture must contain active Jobs").toBeGreaterThan(0);
+  expect(jobsFixture.items.every((job) => job.status === "active")).toBe(true);
   const cards = page.locator("#cards .jobs-card[data-id]");
-  await expect(cards).toHaveCount(3);
+  await expect(cards).toHaveCount(jobsFixture.items.length);
   const renderedIds = await cards.evaluateAll((elements) => elements.map((element) => element.dataset.id).sort());
   expect(renderedIds).toEqual(jobsFixture.items.map((job) => String(job.id)).sort());
-  await expect(page.locator("#cards .directory-seed-label")).toHaveCount(3);
+  await expect(page.locator("#cards .directory-seed-label")).toHaveCount(0);
 }

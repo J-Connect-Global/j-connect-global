@@ -19,8 +19,7 @@ The committed directory files in this PR are an explicitly labelled `unversioned
 | Dataset | Public eligibility | Index/application policy | Browser file |
 | --- | --- | --- | --- |
 | Community | `status` exactly `active`; only lifecycle, moderation, deletion, hidden, archive, and expiry exclusions | Content text is never a publication heuristic. 投稿日 is `published_at`, falling back to `created_at`; 更新日 is shown only when `updated_at` is at least 24 hours later. | `/assets/data/community/posts.json` |
-| Jobs sample | `status=active`; `listing_type=sample`; missing `listing_type` temporarily defaults to the same conservative sample behavior | Maximum 3; prominent `掲載見本・応募不可`; no application CTA; noindex dynamic detail; no sitemap entry; no `JobPosting` | `/assets/data/jobs/jobs.json` |
-| Jobs real | `status=active`, `listing_type=real`, `is_verified=true`, valid `verified_at`, and valid `employer_authorized_at` or safe `source_url` | Missing expiry is allowed only when `last_reviewed_at` is within 30 days. Indexation additionally requires `is_indexable=true` and valid `last_reviewed_at`. Only then may `emit_job_posting` be true. | `/assets/data/jobs/jobs.json` |
+| Jobs | `status` exactly `active`; no sample/real tier and no generated-count cap | `/germany/ja/` shows at most four Jobs. `/germany/ja/jobs/` shows every active Job. Dynamic detail remains noindex and does not emit `JobPosting` until a separate complete structured-data policy is introduced. | `/assets/data/jobs/jobs.json` |
 | Eat / Shopping | `status=active`, non-empty display name, non-placeholder primary/detail category, and only HTTP(S) public URLs | Invalid URLs exclude the row and can never become an `href`. No guessed category. Missing coordinates are list/grid-only. | `/assets/data/eat/items.json`, `/assets/data/shopping/items.json` |
 | Medical | `status=active`, name, category, city/area, safe official/source URL, and valid review/update date | Blank status is never public. No recommendation claim. The 112/116117 instruction and medical disclaimer remain visible. | `/assets/data/medical/items.json` |
 
@@ -30,22 +29,20 @@ All generated datasets report `source_count`, `explicitly_active_count`, `eligib
 
 | Dataset | Source | Explicit active | Eligible | Excluded | Generated | Main exclusion |
 | --- | ---: | ---: | ---: | ---: | ---: | --- |
-| Community | 6 | 6 | 6 | 0 | 6 | none; active content such as the title `test 1` is not suppressed by text heuristics |
-| Jobs | 4 | 4 | 3 | 1 | 3 | fourth sample exceeds the public sample limit |
+| Community | 5 | 5 | 5 | 0 | 5 | none; publication is controlled by explicit active status rather than content-text heuristics |
+| Jobs | 4 | 4 | 4 | 0 | 4 | none; every exact `status=active` row is generated |
 | Eat | 361 | 361 | 63 | 298 | 63 | placeholder `category2=test`; the 72 invalid map URLs occur inside that excluded group |
 | Shopping | 344 | 344 | 45 | 299 | 45 | missing display name |
 | Medical | 23 | 0 | 0 | 23 | 0 | blank status; review dates are also absent |
 
 ## Spreadsheet migration checklist
 
-1. Do not rename existing columns. Add missing governance columns at the end.
-2. Jobs: add `listing_type`, `is_verified`, `employer_authorized_at`, `verified_at`, `is_indexable`, and `last_reviewed_at`.
-3. Mark at most three current display examples `listing_type=sample`; mark the fourth sample non-public or move it outside the sample set. Samples must not contain application destinations intended for use.
-4. For a real job, set `listing_type=real` only after employer/source authorization; record ISO dates in `verified_at`, `employer_authorized_at`, and `last_reviewed_at`; set `is_verified=true`; set `is_indexable=true` only after the complete review; provide a future `expires_at` unless the documented 30-day open-ended review policy applies.
-5. Eat: replace `category2=test` with a reviewed real category or make the row non-public. Do not guess a replacement. Correct non-HTTP map URLs or leave the URL blank before re-review.
-6. Shopping: supply a usable display name for each intended public row; keep unnamed rows non-public.
-7. Medical: review each provider against an official/source URL, add a review/update date, confirm name/category/city or area, and only then explicitly set `status=active`. Never bulk-fill blank statuses as active.
-8. Keep private contact, moderation, management, and internal-note columns private; do not copy them into a public alias.
+1. Do not rename existing columns.
+2. Jobs: use exact `status=active` to publish and any other status to keep a row non-public. Do not add sample/real governance columns.
+3. Eat: replace `category2=test` with a reviewed real category or make the row non-public. Do not guess a replacement. Correct non-HTTP map URLs or leave the URL blank before re-review.
+4. Shopping: supply a usable display name for each intended public row; keep unnamed rows non-public.
+5. Medical: review each provider against an official/source URL, add a review/update date, confirm name/category/city or area, and only then explicitly set `status=active`. Never bulk-fill blank statuses as active.
+6. Keep private contact, moderation, management, and internal-note columns private; do not copy them into a public alias.
 
 ## Apps Script deployment checklist
 

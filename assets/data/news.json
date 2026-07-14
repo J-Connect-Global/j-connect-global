@@ -19,7 +19,7 @@
     "url": "https://www.dw.com/en/are-german-companies-leaving-the-country/a-77875399?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
-    "id": "deutsche-welle-https-www-dw-com-en-germany-iraqi-man-gets-life-in-prison-over-en",
+    "id": "deutsche-welle-https-www-dw-com-en-germany-news-merz-calls-for-monetary-policy-d",
     "country": "germany",
     "country_ja": "ドイツ",
     "city": "nationwide",
@@ -32,10 +32,29 @@
     "importance_ja": "通常",
     "source_type": "media",
     "source_name": "Deutsche Welle",
-    "title": "Germany: Iraqi man gets life in prison over &#039;enslavement&#039;",
+    "title": "Germany news: Merz calls for monetary policy dialogue with China",
+    "summary": "The German chancellor says the EU cannot win against a competitor that artificially manipulates its currency. Meanwhile, another US national suffering from Ebola has landed in Germany for treatment.",
+    "published_at": "Mon, 13 Jul 2026",
+    "url": "https://www.dw.com/en/germany-news-merz-calls-for-monetary-policy-dialogue-with-china/live-77932396?maca=en-rss-en-ger-1023-xml-mrss"
+  },
+  {
+    "id": "deutsche-welle-https-www-dw-com-en-germany-iraqi-sentenced-to-life-for-enslaving",
+    "country": "germany",
+    "country_ja": "ドイツ",
+    "city": "nationwide",
+    "city_ja": "全国",
+    "category": "life",
+    "category_ja": "生活",
+    "topic": "general",
+    "topic_ja": "一般",
+    "importance": "normal",
+    "importance_ja": "通常",
+    "source_type": "media",
+    "source_name": "Deutsche Welle",
+    "title": "Germany: Iraqi sentenced to life for enslaving Yazidi girls",
     "summary": "The man and his former partner are accused of holding two Yazidi girls captive for years while subjecting them to forced labor, abuse and torture before handing them over to other IS members.",
     "published_at": "Mon, 13 Jul 2026",
-    "url": "https://www.dw.com/en/germany-iraqi-man-gets-life-in-prison-over-enslavement/a-77928732?maca=en-rss-en-ger-1023-xml-mrss"
+    "url": "https://www.dw.com/en/germany-iraqi-sentenced-to-life-for-enslaving-yazidi-girls/a-77928732?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-germany-news-neuschwanstein-killer-fights-ext",
@@ -57,7 +76,7 @@
     "url": "https://www.dw.com/en/germany-news-neuschwanstein-killer-fights-extradition-to-us/live-77913703?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
-    "id": "deutsche-welle-https-www-dw-com-en-germany-left-wing-group-says-it-is-behind-rai",
+    "id": "deutsche-welle-https-www-dw-com-en-germany-set-to-curb-its-freedom-of-informatio",
     "country": "germany",
     "country_ja": "ドイツ",
     "city": "nationwide",
@@ -70,10 +89,10 @@
     "importance_ja": "通常",
     "source_type": "media",
     "source_name": "Deutsche Welle",
-    "title": "Germany: Left-wing group says it is behind railway sabotage",
-    "summary": "The \"Angry Birds Commando\" group said they placed incendiary devices on a railroad between the two busy cities of Cologne and Düsseldorf. The group blamed industrial technology for the destruction of the environment.",
-    "published_at": "Sat, 11 Jul 2026",
-    "url": "https://www.dw.com/en/germany-left-wing-group-says-it-is-behind-railway-sabotage/a-77916758?maca=en-rss-en-ger-1023-xml-mrss"
+    "title": "Germany set to curb its Freedom of Information Act",
+    "summary": "The German government wants to amend the Freedom of Information Act. Critics fear the changes will water down the government&#039;s obligation to disclose information.",
+    "published_at": "Mon, 13 Jul 2026",
+    "url": "https://www.dw.com/en/germany-set-to-curb-its-freedom-of-information-act/a-77939695?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-germany-s-ruhr-valley-cities-on-brink-of-fina",
@@ -90,7 +109,7 @@
     "source_type": "media",
     "source_name": "Deutsche Welle",
     "title": "Germany&#039;s Ruhr Valley: Cities on brink of financial collapse",
-    "summary": "With tax revenues down and social spending up, more and more cities and towns in the Ruhrgebiet are struggling to make ends meet. One city that is particularly deep in the red is Oberhausen.",
+    "summary": "With tax revenues down and social spending up, more and more cities and towns in the Ruhrgebiet are struggling. Oberhausen is particularly deep in the red.",
     "published_at": "Sun, 12 Jul 2026",
     "url": "https://www.dw.com/en/germany-s-ruhr-valley-cities-on-brink-of-financial-collapse/a-77905338?maca=en-rss-en-ger-1023-xml-mrss"
   },
@@ -109,7 +128,7 @@
     "source_type": "media",
     "source_name": "Deutsche Welle",
     "title": "How a Jewish heir is taking on Germany&#039;s far-right AfD",
-    "summary": "Heavily supported in eastern states, the Alternative for Germany is using a GDR cultural icon, the Schwalbe moped, in its campaigning. Now, the Jewish heir of the manufacturer is fighting to protect his family&#039;s legacy.",
+    "summary": "The AfD is using the iconic GDR-era Simson moped in its campaign. Now, a Jewish heir to the founding family is fighting to protect the company&#039;s legacy.",
     "published_at": "Sun, 12 Jul 2026",
     "url": "https://www.dw.com/en/how-a-jewish-heir-is-taking-on-germany-s-far-right-afd/a-77910312?maca=en-rss-en-ger-1023-xml-mrss"
   },
@@ -128,28 +147,9 @@
     "source_type": "media",
     "source_name": "Deutsche Welle",
     "title": "Germany&#039;s richest man takes on Big Tech",
-    "summary": "Dieter Schwarz made his fortune from supermarkets, becoming Germany&#039;s wealthiest person. Now he wants to take on Google, Microsoft and Amazon and an entire region stands to benefit.",
+    "summary": "Supermarket billionaire Dieter Schwarz is investing billions in his cloud company, Schwarz Digits, to rival Google, Microsoft and Amazon.",
     "published_at": "Sat, 11 Jul 2026",
     "url": "https://www.dw.com/en/germany-s-richest-man-takes-on-big-tech/a-77893723?maca=en-rss-en-ger-1023-xml-mrss"
-  },
-  {
-    "id": "deutsche-welle-https-www-dw-com-en-mayor-of-berlin-says-he-won-t-run-for-reelect",
-    "country": "germany",
-    "country_ja": "ドイツ",
-    "city": "nationwide",
-    "city_ja": "全国",
-    "category": "life",
-    "category_ja": "生活",
-    "topic": "general",
-    "topic_ja": "一般",
-    "importance": "normal",
-    "importance_ja": "通常",
-    "source_type": "media",
-    "source_name": "Deutsche Welle",
-    "title": "Mayor of Berlin says he won&#039;t run for reelection",
-    "summary": "Berlin Mayor Kai Wegner withdrew from the reelection race this fall. His decision to play tennis during the power outage in January was among missteps that has dented his reputation.",
-    "published_at": "Fri, 10 Jul 2026",
-    "url": "https://www.dw.com/en/mayor-of-berlin-says-he-won-t-run-for-reelection/a-77910019?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-free-electricity-in-australia-and-the-week-s-",

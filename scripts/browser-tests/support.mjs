@@ -316,12 +316,15 @@ export async function assertCommunityCards(page) {
   expect(renderedIds).toEqual(fixtureIds);
 }
 
-export async function assertAllActiveJobs(page) {
-  expect(jobsFixture.items.length, "the committed Jobs fixture must contain active Jobs").toBeGreaterThan(0);
-  expect(jobsFixture.items.every((job) => job.status === "active")).toBe(true);
-  const cards = page.locator("#cards .jobs-card[data-id]");
-  await expect(cards).toHaveCount(jobsFixture.items.length);
-  const renderedIds = await cards.evaluateAll((elements) => elements.map((element) => element.dataset.id).sort());
-  expect(renderedIds).toEqual(jobsFixture.items.map((job) => String(job.id)).sort());
-  await expect(page.locator("#cards .directory-seed-label")).toHaveCount(0);
+export async function assertNoPublicJobs(page) {
+  expect(jobsFixture.items, "the committed Jobs fixture must exclude sample/test records").toHaveLength(0);
+  await expect(page.locator("#cards .jobs-card[data-id]")).toHaveCount(0);
+  await expect(page.locator("#emptyBox")).toBeVisible();
+  await expect(page.locator("#emptyBox")).toContainText("現在公開中の求人はありません");
+  await expect(page.locator("#emptyBox").getByRole("link", { name: "求人を無料掲載する" })).toBeVisible();
+  await expect(page.locator("#emptyBox").getByRole("link", { name: "ドイツで仕事を探すガイド" })).toBeVisible();
+  await expect(page.locator("#jobsFilters")).toBeHidden();
+  await expect(page.locator("#jobsViewToggle")).toBeHidden();
+  await expect(page.locator("#jobsResultsControls")).toBeHidden();
+  await expect(page.locator("#jobsDataUpdated")).toContainText("データ最終更新:");
 }

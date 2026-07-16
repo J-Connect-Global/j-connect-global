@@ -1,0 +1,7 @@
+{
+  "max_total_bytes": 20000000,
+  "max_single_file_bytes": 750000,
+  "max_files_over_one_mebibyte": 0,
+  "max_width": 1440,
+  "required_format": "WEBP"
+}

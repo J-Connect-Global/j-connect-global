@@ -10,6 +10,7 @@ const PRIMARY_JA_PATH = '/germany/ja/';
 const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
 const DEFAULT_IMAGE = '/assets/img/placeholders/jconnect-default-card.webp';
 let trackedFileSet;
+const contentImageDimensions = new Map();
 const articleImageDirs = {
   living: '/assets/img/living',
   events: '/assets/img/events',
@@ -2214,11 +2215,69 @@ function resolveContentImage(item) {
   return candidates.flatMap(contentImageValues).find((src) => !isLegacyPlaceholderImage(src)) || DEFAULT_IMAGE;
 }
 
+function readWebpDimensions(buffer) {
+  if (buffer.subarray(0, 4).toString('ascii') !== 'RIFF' || buffer.subarray(8, 12).toString('ascii') !== 'WEBP') return null;
+  let offset = 12;
+  while (offset + 8 <= buffer.length) {
+    const type = buffer.subarray(offset, offset + 4).toString('ascii');
+    const size = buffer.readUInt32LE(offset + 4);
+    const data = offset + 8;
+    if (type === 'VP8X' && data + 10 <= buffer.length) {
+      const width = buffer[data + 4] | (buffer[data + 5] << 8) | (buffer[data + 6] << 16);
+      const height = buffer[data + 7] | (buffer[data + 8] << 8) | (buffer[data + 9] << 16);
+      return { width: width + 1, height: height + 1 };
+    }
+    if (type === 'VP8 ' && data + 10 <= buffer.length) {
+      return { width: buffer.readUInt16LE(data + 6) & 0x3fff, height: buffer.readUInt16LE(data + 8) & 0x3fff };
+    }
+    if (type === 'VP8L' && data + 5 <= buffer.length) {
+      const bits = buffer.readUInt32LE(data + 1);
+      return { width: (bits & 0x3fff) + 1, height: ((bits >> 14) & 0x3fff) + 1 };
+    }
+    offset = data + size + (size % 2);
+  }
+  return null;
+}
+
+function contentImageDimensionAttributes(src, className) {
+  if (!String(src).startsWith('/assets/img/') || !String(src).endsWith('.webp')) return '';
+  let dimensions = contentImageDimensions.get(src);
+  if (dimensions === undefined) {
+    const localPath = path.join(root, String(src).replace(/^\/+/, ''));
+    try {
+      dimensions = readWebpDimensions(fs.readFileSync(localPath));
+    } catch {
+      dimensions = null;
+    }
+    contentImageDimensions.set(src, dimensions);
+  }
+  if (!dimensions?.width || !dimensions?.height) return '';
+
+  let attributes = ` width="${dimensions.width}" height="${dimensions.height}"`;
+  const variantSrc = String(src).replace(/\.webp$/i, '-768w.webp');
+  const variantPath = path.join(root, variantSrc.replace(/^\/+/, ''));
+  try {
+    if (fs.existsSync(variantPath)) {
+      const variant = readWebpDimensions(fs.readFileSync(variantPath));
+      if (variant?.width) {
+        const sizes = /article-card-image|home-card-image/.test(className)
+          ? '(max-width: 760px) calc(100vw - 32px), (max-width: 1120px) 50vw, 320px'
+          : '(max-width: 760px) calc(100vw - 32px), min(960px, 100vw - 64px)';
+        attributes += ` srcset="${escapeAttribute(variantSrc)} ${variant.width}w, ${escapeAttribute(src)} ${dimensions.width}w" sizes="${sizes}"`;
+      }
+    }
+  } catch {
+    // A missing optional responsive variant must not block content generation.
+  }
+  return attributes;
+}
+
 function renderArticleImageAttributes(src, alt, className, loading = 'lazy') {
   const fallback = getArticleFallbackImageSrc();
   const safeSrc = isValidContentImageValue(src) ? src : fallback;
   const onError = `if(this.dataset.fallbackSrc&&this.getAttribute('src')!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;this.classList.add('is-fallback-image');}`;
-  return `src="${escapeAttribute(safeSrc)}" alt="${escapeAttribute(alt)}" class="${escapeAttribute(className)}" loading="${escapeAttribute(loading)}" decoding="async" data-fallback-src="${escapeAttribute(fallback)}" onerror="${escapeAttribute(onError)}"`;
+  const dimensionAttributes = contentImageDimensionAttributes(safeSrc, className);
+  return `src="${escapeAttribute(safeSrc)}" alt="${escapeAttribute(alt)}" class="${escapeAttribute(className)}"${dimensionAttributes} loading="${escapeAttribute(loading)}" decoding="async" data-fallback-src="${escapeAttribute(fallback)}" onerror="${escapeAttribute(onError)}"`;
 }
 
 function renderCardMedia(item, section) {

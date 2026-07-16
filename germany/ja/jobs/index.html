@@ -135,6 +135,10 @@
     gap:6px;
   }
 
+  .jobs-results-controls[hidden]{
+    display:none !important;
+  }
+
   .jobs-result-control{
     min-height:32px;
     border:1px solid var(--listing-line);
@@ -158,6 +162,22 @@
   #job-listings .layout{
     width:100%;
     margin:0;
+  }
+
+  #job-listings .layout.jobs-empty-mode{
+    grid-template-columns:minmax(0, 1fr);
+  }
+
+  #job-listings .layout.jobs-empty-mode .content{
+    max-width:760px;
+    margin:0 auto;
+  }
+
+  .jobs-data-updated{
+    margin:8px 0 0;
+    color:var(--listing-muted);
+    font-size:12px;
+    line-height:1.5;
   }
 
   #job-listings .content{
@@ -613,7 +633,7 @@
     </div>
   </section>
 
-  <div class="view-toggle-wrap jc-filter-row">
+  <div class="view-toggle-wrap jc-filter-row" id="jobsViewToggle">
     <div class="view-toggle" role="group" aria-label="表示切替">
       <button id="listViewBtn" class="view-btn active" type="button" aria-pressed="true">リスト</button>
       <button id="gridViewBtn" class="view-btn" type="button" aria-pressed="false">グリッド</button>
@@ -622,7 +642,7 @@
 
   <section class="jobs-anchor jobs-listings-shell" id="job-listings" aria-labelledby="jobListingsTitle">
   <main class="layout jc-directory-layout list-mode" id="mainLayout">
-    <aside class="panel filters jc-control-panel jc-directory-sidebar">
+    <aside class="panel filters jc-control-panel jc-directory-sidebar" id="jobsFilters">
       <div class="panel-title-row">
         <h2 class="panel-title">検索フィルター</h2>
         <button class="reset-btn" id="resetBtn" type="button">リセット</button>
@@ -695,8 +715,9 @@
           <p class="results-sub">勤務地、雇用形態、言語条件などを確認しながら求人を探せます。</p>
           <p class="results-sub">新しい順は、最終更新日、更新日、掲載日、作成日の順で判定します。</p>
           <div class="results-sub" id="resultsSummary" aria-live="polite">公開中の求人を一覧で確認できます。</div>
+          <p class="jobs-data-updated" id="jobsDataUpdated">データ最終更新: 読み込み中</p>
         </div>
-        <div class="jobs-results-controls" aria-label="求人一覧の表示条件">
+        <div class="jobs-results-controls" id="jobsResultsControls" aria-label="求人一覧の表示条件">
           <button class="jobs-result-control" id="savedOnlyBtn" type="button" aria-pressed="false">保存済</button>
           <button class="jobs-result-control active" id="sortNewestBtn" type="button" aria-pressed="true">新しい順</button>
           <button class="jobs-result-control" id="sortOldestBtn" type="button" aria-pressed="false">古い順</button>
@@ -796,6 +817,7 @@
     let modalReturnJobId = '';
     let showSavedOnly = false;
     let sortDirection = 'newest';
+    let dataUpdatedLabel = '';
     const filterState = {
       region: '',
       position: '',
@@ -821,6 +843,8 @@
       employmentChipGroup: document.getElementById('employmentChipGroup'),
       workStyleChipGroup: document.getElementById('workStyleChipGroup'),
       jobLanguageChipGroup: document.getElementById('jobLanguageChipGroup'),
+      filters: document.getElementById('jobsFilters'),
+      viewToggle: document.getElementById('jobsViewToggle'),
       resetBtn: document.getElementById('resetBtn'),
       cards: document.getElementById('cards'),
       mainLayout: document.getElementById('mainLayout'),
@@ -833,6 +857,8 @@
       sortNewestBtn: document.getElementById('sortNewestBtn'),
       sortOldestBtn: document.getElementById('sortOldestBtn'),
       resultsSummary: document.getElementById('resultsSummary'),
+      jobsDataUpdated: document.getElementById('jobsDataUpdated'),
+      jobsResultsControls: document.getElementById('jobsResultsControls'),
       emptyBox: document.getElementById('emptyBox')
     };
 
@@ -1256,6 +1282,22 @@
       filterJobs();
     }
 
+    function setPublicEmptyMode(isEmpty){
+      els.mainLayout.classList.toggle('jobs-empty-mode', isEmpty);
+      els.filters.hidden = isEmpty;
+      els.viewToggle.hidden = isEmpty;
+      els.jobsResultsControls.hidden = isEmpty;
+    }
+
+    function formatDataUpdated(value){
+      const timestamp = Date.parse(value || '');
+      if (!Number.isFinite(timestamp)) return '不明';
+      return new Intl.DateTimeFormat('ja-JP', {
+        year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit',
+        timeZone: 'Europe/Berlin'
+      }).format(new Date(timestamp));
+    }
+
     function scrollToCurrentHash(){
       if (!location.hash) return;
       const target = document.querySelector(location.hash);
@@ -1266,7 +1308,9 @@
     }
 
     function setJobsLoading(){
+      setPublicEmptyMode(false);
       els.resultsSummary.textContent = '読み込み中...';
+      els.jobsDataUpdated.textContent = 'データ最終更新: 読み込み中';
       els.cards.setAttribute('aria-busy', 'true');
       els.emptyBox.hidden = true;
       els.emptyBox.className = 'empty-box jc-empty-state';
@@ -1274,6 +1318,7 @@
     }
 
     function renderJobsLoadError(){
+      setPublicEmptyMode(false);
       els.cards.innerHTML = '';
       els.cards.setAttribute('aria-busy', 'false');
       els.resultsSummary.textContent = '読み込みエラー';
@@ -1301,6 +1346,8 @@
       try {
         const payload = await fetchJobsData();
         const rows = normalizePayload(payload);
+        dataUpdatedLabel = formatDataUpdated(payload?.generated_at);
+        els.jobsDataUpdated.textContent = `データ最終更新: ${dataUpdatedLabel}`;
 
         jobs = window.JCONNECT_JOBS_SHARED.activeJobs(rows);
         if (!jobs.length) {
@@ -1321,6 +1368,7 @@
         jobs = [];
         filtered = [];
         selectedId = null;
+        dataUpdatedLabel = '';
         initFilters();
         renderSummary();
         renderJobsLoadError();
@@ -1380,13 +1428,16 @@
       }
 
       renderSummary();
+      setPublicEmptyMode(jobs.length === 0);
       renderResultControls();
       renderFilterChips();
       renderCards();
     }
 
     function renderSummary(){
-      els.resultsSummary.textContent = `${filtered.length}件を表示中 / 全${jobs.length}件`;
+      els.resultsSummary.textContent = jobs.length === 0
+        ? '公開中の求人はありません。'
+        : `${filtered.length}件を表示中 / 全${jobs.length}件`;
     }
 
     function renderResultControls(){
@@ -1409,18 +1460,19 @@
           ? '現在公開中の求人はありません。'
           : showSavedOnly ? '保存済みの求人はありません。' : '条件に合う求人はありません。';
         const emptyBody = noPublicJobs
-          ? '現在公開中の求人はありません。求人掲載をご希望の場合は、掲載フォームをご利用ください。'
+          ? '求人情報は準備でき次第公開します。採用担当者の方は、無料掲載フォームから求人をお送りください。'
           : showSavedOnly
           ? '保存した求人がある場合は、条件をリセットするか保存済フィルターを解除してください。'
           : '条件を少し広げるか、絞り込みを解除してください。';
         els.emptyBox.innerHTML = `
           <span class="status-title">${escapeHtml(emptyTitle)}</span>
           <div>${escapeHtml(emptyBody)}</div>
+          ${noPublicJobs ? `<p class="jobs-data-updated">データ最終更新: ${escapeHtml(dataUpdatedLabel || '不明')}</p>` : ''}
           <div class="status-actions">
             ${showSavedOnly ? '<button class="btn btn-primary" type="button" data-clear-saved-filter>すべての求人を見る</button>' : ''}
-            ${noPublicJobs ? '<a class="btn btn-primary" href="/germany/ja/jobs/guide/">求職者向けガイド</a>' : ''}
-            ${noPublicJobs ? '<a class="btn btn-secondary" href="/germany/ja/jobs/posting/">求人掲載について</a>' : ''}
-            ${noPublicJobs ? '<a class="btn btn-secondary" href="/germany/ja/contact/">お問い合わせ</a>' : ''}
+            ${noPublicJobs ? '<a class="btn btn-primary" href="/germany/ja/jobs/posting/">求人を無料掲載する</a>' : ''}
+            ${noPublicJobs ? '<a class="btn btn-secondary" href="/germany/ja/jobs/guide/">ドイツで仕事を探すガイド</a>' : ''}
+            ${noPublicJobs ? '<a class="btn btn-secondary" href="/germany/ja/living/germany-first-30-days/">生活の準備ガイド</a>' : ''}
             ${noPublicJobs ? '' : '<button class="btn btn-secondary" type="button" data-reset-jobs>条件をリセット</button>'}
           </div>
         `;

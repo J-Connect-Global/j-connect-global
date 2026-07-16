@@ -7,12 +7,9 @@ city: "Köln"
 location: "Köln 周辺の各会場"
 event_date: "会場により異なる"
 published_at: "2026-06-12"
-last_verified: "2026-07-06"
+last_verified: "2026-06-12"
 summary: "生活用品探しや週末散歩に使いやすい、ケルン周辺マーケットの楽しみ方。"
-tags:
-  - "マーケット"
-  - "週末"
-  - "ケルン"
+tags: ["マーケット","週末","ケルン"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/cologne-flea-market/"

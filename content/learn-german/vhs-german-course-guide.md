@@ -8,7 +8,7 @@ status: "published"
 published: true
 published_at: "2026-06-20"
 last_verified: "2026-06-28"
-tags: ["VHS", "講座", "A1-B2", "統合コース"]
+tags: ["VHS","講座","A1-B2","統合コース"]
 canonical_url: "/germany/ja/learn-german/vhs-german-course-guide/"
 ---
 

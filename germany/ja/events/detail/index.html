@@ -18,21 +18,21 @@
     }
   })();
   </script>
-<title>イベント詳細 | ニュース・イベント | J-Connect Germany</title>
+<title>イベント詳細 | ニュース・イベント | J-Connect Global</title>
   <meta name="description" content="イベントカードから開く動的なイベント詳細ページです。">
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/events/detail/">
   <link rel="alternate" hreflang="ja" href="https://j-connect-global.com/germany/ja/events/detail/">
   <link rel="alternate" hreflang="x-default" href="https://j-connect-global.com/germany/ja/events/detail/">
-  <meta property="og:title" content="イベント詳細 | ニュース・イベント | J-Connect Germany">
+  <meta property="og:title" content="イベント詳細 | ニュース・イベント | J-Connect Global">
   <meta property="og:description" content="イベントカードから開く動的なイベント詳細ページです。">
   <meta property="og:url" content="https://j-connect-global.com/germany/ja/events/detail/">
   <meta property="og:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="J-Connect Germany">
+  <meta property="og:site_name" content="J-Connect Global">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="イベント詳細 | ニュース・イベント | J-Connect Germany">
+  <meta name="twitter:title" content="イベント詳細 | ニュース・イベント | J-Connect Global">
   <meta name="twitter:description" content="イベントカードから開く動的なイベント詳細ページです。">
   <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
@@ -51,10 +51,10 @@
 <!-- LAYOUT:ja-header:start -->
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
-      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany">
+    <a class="brand" href="/germany/ja/" aria-label="J-Connect Global ホーム">
+      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Global">
       <span class="brand-copy">
-        <span class="brand-title">J-CONNECT GERMANY</span>
+        <span class="brand-title">J-CONNECT GLOBAL</span>
         <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
       </span>
     </a>
@@ -123,11 +123,11 @@
 <footer class="page-footer">
   <div class="footer-inner">
     <div class="footer-left">
-      <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany">
+      <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Global">
       <div class="footer-copy">
-        <div class="footer-title">J-CONNECT GERMANY</div>
+        <div class="footer-title">J-CONNECT GLOBAL</div>
         <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
-        <div class="footer-meta">© 2026 J-Connect Germany</div>
+        <div class="footer-meta">© 2026 J-Connect Global</div>
       </div>
     </div>
     <div class="footer-links" aria-label="フッターサイトマップ">
@@ -175,7 +175,7 @@
   function renderEmpty(kind){ const title = kind === "missing" ? "イベントIDが指定されていません" : "イベントが見つかりませんでした"; const body = kind === "missing" ? "イベントカードまたはイベント一覧から詳細ページを開いてください。" : "指定されたIDのイベントを確認できませんでした。掲載が終了したか、URLが変更された可能性があります。"; detail.innerHTML = `<h1>${title}</h1><p>${body}</p><div class="jc-actions"><a class="jc-button is-primary" href="/germany/ja/events/">イベント一覧へ戻る</a></div>`; }
   function renderEvent(event){
     if (!event) { renderEmpty(queryId ? "notfound" : "missing"); return; }
-    document.title = `${event.title || "イベント詳細"} | J-Connect Germany`;
+    document.title = `${event.title || "イベント詳細"} | J-Connect Global`;
     const tags = splitList(event.tags);
     detail.innerHTML = `<div class="jc-chip-row">${tags.map(tag => `<span class="jc-chip">${escapeHtml(tag)}</span>`).join("")}</div><h1>${escapeHtml(event.title || "イベント詳細")}</h1><p class="jc-lead">${escapeHtml(event.summary || "イベント情報の詳細を確認してください。")}</p><div class="jc-detail-grid">${detailItem("日付", event.date)}${detailItem("都市", event.city)}${detailItem("場所", event.location)}${detailItem("カテゴリ", event.category)}${detailItem("公開日", event.published_at)}</div><section><h2>本文</h2><p>${escapeHtml(event.body || event.summary || "日付・場所・公式情報を確認してから参加してください。")}</p></section>${event.access ? `<section><h2>アクセスメモ</h2><p>${escapeHtml(event.access)}</p></section>` : ""}<section><h2>公式・参考リンク</h2><div class="jc-actions">${event.official_url ? `<a class="jc-button is-primary" href="${escapeHtml(event.official_url)}" target="_blank" rel="noopener noreferrer">公式情報を確認</a>` : ""}<a class="jc-button" href="/germany/ja/events/">イベント一覧へ戻る</a></div></section>`;
   }

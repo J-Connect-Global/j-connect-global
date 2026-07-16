@@ -8,7 +8,7 @@ status: "published"
 published: true
 published_at: "2026-06-20"
 last_verified: "2026-06-20"
-tags: ["健康保険", "保険証", "A1"]
+tags: ["健康保険","保険証","A1"]
 canonical_url: "/germany/ja/learn-german/health-insurance-phrases/"
 ---
 

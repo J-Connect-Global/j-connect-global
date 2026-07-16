@@ -5,14 +5,11 @@ slug: "world-cup-germany-basic-checks"
 category: "生活・イベント"
 area: "ドイツ全体"
 summary: "ワールドカップ期間中に、試合日程、公共交通、混雑、観戦イベントを確認するときの基本ポイントを整理します。"
-tags:
-  - "ワールドカップ"
-  - "交通"
-  - "イベント"
+tags: ["ワールドカップ","交通","イベント"]
 status: "published"
 published: true
 published_at: "2026-06-28"
-last_verified: "2026-07-06"
+last_verified: "2026-06-28"
 canonical_url: "/germany/ja/events/news/world-cup-germany-basic-checks/"
 source_type: "manual"
 ---

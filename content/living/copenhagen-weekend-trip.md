@@ -3,15 +3,15 @@ id: "T017"
 title: "ドイツから行く週末旅行：コペンハーゲン観光の基本"
 slug: "copenhagen-weekend-trip"
 category: "観光"
-tags: ["コペンハーゲン", "週末旅行", "デンマーク", "デザイン"]
-summary: "Indre By、港、Christianshavnを徒歩と公共交通でつなぎ、空港・中央駅・自転車移動を無理なく選ぶためのコペンハーゲン週末ガイドです。"
+tags: ["コペンハーゲン","週末旅行","デンマーク","北欧","観光"]
+summary: "北欧らしいデザイン、港町の景色、自転車文化を週末で感じやすいデンマークの首都です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。"
 status: "published"
 published: true
 published_at: "2026-06-29"
-updated_at: "2026-07-16"
-last_verified: "2026-07-16"
+updated_at: "2026-06-29"
+last_verified: "2026-06-29"
 canonical_url: "/germany/ja/living/copenhagen-weekend-trip/"
-related_articles: ["hamburg-weekend-trip", "amsterdam-weekend-trip", "bremen-weekend-trip"]
+related_articles: ["amsterdam-weekend-trip","strasbourg-weekend-trip","cologne-city-guide"]
 official_sources:
   - title: "Visit Copenhagen"
     url: "https://www.visitcopenhagen.com/"

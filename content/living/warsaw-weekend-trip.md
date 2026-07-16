@@ -3,15 +3,15 @@ id: "T018"
 title: "ドイツから行く週末旅行：ワルシャワ観光の基本"
 slug: "warsaw-weekend-trip"
 category: "観光"
-tags: ["ワルシャワ", "週末旅行", "ポーランド", "公園"]
-summary: "再建された旧市街、王の道、Śródmieście、ヴィスワ川沿いを目的別に組み、公式交通情報で移動するワルシャワ週末ガイドです。"
+tags: ["ワルシャワ","週末旅行","ポーランド","旧市街","観光"]
+summary: "再建された旧市街、緑の多い公園、近代的な中心部を週末で組み合わせやすいポーランドの首都です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。"
 status: "published"
 published: true
 published_at: "2026-06-29"
-updated_at: "2026-07-16"
-last_verified: "2026-07-16"
+updated_at: "2026-06-29"
+last_verified: "2026-06-29"
 canonical_url: "/germany/ja/living/warsaw-weekend-trip/"
-related_articles: ["krakow-weekend-trip", "prague-weekend-trip", "brussels-weekend-trip"]
+related_articles: ["amsterdam-weekend-trip","strasbourg-weekend-trip","cologne-city-guide"]
 official_sources:
   - title: "Warsaw Tourism"
     url: "https://go2warsaw.pl/en/main-page/"

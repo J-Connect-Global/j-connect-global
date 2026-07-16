@@ -4,12 +4,7 @@ title: "NRWから行く日帰り旅行：アーヘン観光モデルコース"
 slug: "aachen-day-trip"
 image_alt: "アーヘン日帰り旅行の記事イメージ"
 category: "観光"
-tags:
-  - "アーヘン"
-  - "日帰り旅行"
-  - "NRW"
-  - "週末旅行"
-  - "大聖堂"
+tags: ["アーヘン","日帰り旅行","NRW","週末旅行","大聖堂"]
 summary: "NRW在住者向けに、アーヘン大聖堂、旧市街、市庁舎、カフェ、温泉文化を日帰りで無理なく楽しむモデルコースを整理します。"
 status: "published"
 published: true
@@ -17,10 +12,7 @@ published_at: "2026-06-27"
 updated_at: "2026-06-28"
 last_verified: "2026-06-28"
 canonical_url: "/germany/ja/living/aachen-day-trip/"
-related_articles:
-  - "strasbourg-weekend-trip"
-  - "cologne-city-guide"
-  - "nrw-nature-relax-guide"
+related_articles: ["strasbourg-weekend-trip","cologne-city-guide","nrw-nature-relax-guide"]
 official_sources:
   - title: "Aachen Tourismus"
     url: "https://www.aachen-tourismus.de/"

@@ -2,13 +2,13 @@
 id: "G005"
 title: "大家・住まいの連絡で使うドイツ語フレーズ"
 slug: "landlord-housing-email-phrases"
-category: "住まい・メール"
+category: "大家・住まい"
 summary: "内見、必要書類、修理依頼、退去連絡など、大家・管理会社とのやり取りで使えるドイツ語表現です。"
 status: "published"
 published: true
 published_at: "2026-06-19"
 last_verified: "2026-06-19"
-tags: ["住まい", "大家", "メール"]
+tags: ["住まい","大家","メール"]
 canonical_url: "/germany/ja/learn-german/landlord-housing-email-phrases/"
 ---
 

@@ -8,7 +8,7 @@ status: "published"
 published: true
 published_at: "2026-06-19"
 last_verified: "2026-06-19"
-tags: ["Kita", "学校", "メール"]
+tags: ["Kita","学校","メール"]
 canonical_url: "/germany/ja/learn-german/kita-school-inquiry-phrases/"
 ---
 

@@ -51,7 +51,7 @@
 
   function contentImageAlt(item) {
     const title = cleanImageValue(item && (item.title || item._title || item.name || item.position_title || item.company_name));
-    return title ? `${title} のイメージ` : "J-Connect Germany のイメージ";
+    return title ? `${title} のイメージ` : "J-Connect Global のイメージ";
   }
 
   function applyFallbackImage(img) {

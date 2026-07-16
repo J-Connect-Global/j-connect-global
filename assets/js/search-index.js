@@ -1,13 +1,13 @@
 window.JCONNECT_SEARCH_INDEX = [
   {
-    "title": "J-Connect Germany",
+    "title": "J-Connect Global",
     "description": "ドイツ在住日本人向け総合ポータル。交流掲示板、生活・手続き、仕事・求人、ニュース・イベント、ドイツ語学習を日本語で整理しています。",
     "url": "/germany/ja/",
     "category": "ホーム",
     "tags": [
       "ドイツ生活",
       "日本語ポータル",
-      "J-Connect Germany"
+      "J-Connect Global"
     ]
   },
   {
@@ -133,7 +133,7 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "求人掲載について｜無料掲載パイロット",
-    "description": "J-Connect Germanyでは現在、サービス検証期間として求人掲載を無料で受け付けています。掲載条件は将来変更される場合がありますが、現在の申込みが有料サービスへ自動移行することはありません。",
+    "description": "J-Connect Globalでは現在、サービス検証期間として求人掲載を無料で受け付けています。掲載条件は将来変更される場合がありますが、現在の申込みが有料サービスへ自動移行することはありません。",
     "url": "/germany/ja/jobs/posting/",
     "category": "仕事・求人",
     "tags": [
@@ -144,9 +144,9 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "このサイトについて",
-    "description": "J-Connect Germany の目的、掲載領域、運営方針を説明するページです。",
+    "description": "J-Connect Global の目的、掲載領域、運営方針を説明するページです。",
     "url": "/germany/ja/about/",
-    "category": "J-CONNECTについて",
+    "category": "J-Connect Globalについて",
     "tags": [
       "J-CONNECTについて",
       "運営方針"
@@ -154,9 +154,9 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "お問い合わせ",
-    "description": "J-Connect Germany へのお問い合わせ、掲載相談、運営への連絡に使うページです。",
+    "description": "J-Connect Global へのお問い合わせ、掲載相談、運営への連絡に使うページです。",
     "url": "/germany/ja/contact/",
-    "category": "J-CONNECTについて",
+    "category": "J-Connect Globalについて",
     "tags": [
       "お問い合わせ",
       "運営"
@@ -164,9 +164,9 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "利用規約",
-    "description": "J-Connect Germany の利用規約、投稿ルール、免責事項を確認できるページです。",
+    "description": "J-Connect Global の利用規約、投稿ルール、免責事項を確認できるページです。",
     "url": "/germany/ja/terms/",
-    "category": "J-CONNECTについて",
+    "category": "J-Connect Globalについて",
     "tags": [
       "利用規約",
       "ルール"
@@ -174,9 +174,9 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "プライバシー",
-    "description": "J-Connect Germany のプライバシーポリシーと個人情報の取り扱いを確認できるページです。",
+    "description": "J-Connect Global のプライバシーポリシーと個人情報の取り扱いを確認できるページです。",
     "url": "/germany/ja/privacy/",
-    "category": "J-CONNECTについて",
+    "category": "J-Connect Globalについて",
     "tags": [
       "プライバシー",
       "個人情報"
@@ -184,9 +184,9 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "運営者情報",
-    "description": "J-Connect Germany の運営者情報、所在地、連絡先を確認できる Impressum ページです。",
+    "description": "J-Connect Global の運営者情報、所在地、連絡先を確認できる Impressum ページです。",
     "url": "/germany/ja/impressum/",
-    "category": "J-CONNECTについて",
+    "category": "J-Connect Globalについて",
     "tags": [
       "運営者情報",
       "Impressum"

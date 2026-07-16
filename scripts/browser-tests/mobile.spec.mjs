@@ -56,7 +56,10 @@ test("mobile Jobs renders all active records without overflow", async ({ page })
 
 test("mobile article hero frame remains a readable 16:9 crop", async ({ page }) => {
   await openRoute(page, "/germany/ja/learn-german/hospital-phrases/");
-  await assertArticleHeroFrame(page, { minRatio: 1.72, maxRatio: 1.84 });
+  const viewportWidth = page.viewportSize()?.width || 360;
+  await assertArticleHeroFrame(page, viewportWidth >= 768
+    ? { minRatio: 1.95, maxRatio: 2.05 }
+    : { minRatio: 1.72, maxRatio: 1.84 });
   await assertRouteReady(page);
 });
 
@@ -64,6 +67,17 @@ test("mobile Community detail renders the requested fixture", async ({ page }) =
   expect(fixtureCommunityPost, "an active Community detail fixture is required").toBeTruthy();
   await openRoute(page, fixtureCommunityDetailPath);
   await expect(page.locator(".public-detail-page h1")).toHaveText(fixtureCommunityPost.title);
+  const galleryTrigger = page.locator("[data-lightbox-open]").first();
+  if (await galleryTrigger.isVisible()) {
+    await galleryTrigger.focus();
+    await galleryTrigger.tap();
+    const lightbox = page.locator("[data-public-lightbox]");
+    await expect(lightbox).toBeVisible();
+    await expect(page.locator("body")).toHaveClass(/public-lightbox-open/);
+    await page.keyboard.press("Escape");
+    await expect(lightbox).toBeHidden();
+    await expect(galleryTrigger).toBeFocused();
+  }
   await assertNoIndex(page);
   await activateDarkMode(page);
   await assertRouteReady(page);

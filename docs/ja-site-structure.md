@@ -1,6 +1,6 @@
 # JA Site Structure Governance
 
-This document defines the structural rules for the Japanese J-Connect Germany site. It covers routes, page types, layout markers, legacy handling, and the workflow for adding new routes without breaking search, sitemap, or navigation.
+This document defines the structural rules for the Japanese J-Connect Global site. It covers routes, page types, layout markers, legacy handling, and the workflow for adding new routes without breaking search, sitemap, or navigation.
 
 ## Conceptual IA
 

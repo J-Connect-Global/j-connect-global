@@ -3,6 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const IMAGE_ROOTS = [path.join("assets", "img"), path.join("assets", "images")];
 const IMAGE_EXTENSIONS = new Set([".avif", ".gif", ".jpeg", ".jpg", ".png", ".webp"]);
 const TEXT_EXTENSIONS = new Set([".css", ".html", ".js", ".json", ".mjs"]);
 const SKIPPED_DIRECTORIES = new Set([".git", "_site", "node_modules", "playwright-report", "test-results"]);
@@ -81,8 +82,10 @@ function countOccurrences(text, needle) {
 }
 
 export async function auditImageAssets({ root = rootDir } = {}) {
-  const imageRoot = path.join(root, "assets", "img");
-  const imageFiles = (await walk(imageRoot)).filter((file) => IMAGE_EXTENSIONS.has(path.extname(file).toLowerCase()));
+  const imageFiles = (await Promise.all(IMAGE_ROOTS.map(async (relativeRoot) => {
+    const imageRoot = path.join(root, relativeRoot);
+    return walk(imageRoot).catch(() => []);
+  }))).flat().filter((file) => IMAGE_EXTENSIONS.has(path.extname(file).toLowerCase()));
   const records = await Promise.all(imageFiles.map(async (file) => {
     const [header, details] = await Promise.all([readFile(file), stat(file)]);
     const info = imageInfo(header);
@@ -114,8 +117,8 @@ export async function auditImageAssets({ root = rootDir } = {}) {
   const totalBytes = records.reduce((total, record) => total + record.bytes, 0);
   const overOneMebibyte = records.filter((record) => record.bytes > 1024 * 1024);
   return {
-    schema_version: 1,
-    image_root: "/assets/img/",
+    schema_version: 2,
+    image_roots: IMAGE_ROOTS.map((relativeRoot) => `/${relativeRoot.split(path.sep).join("/")}/`),
     generated_at: new Date().toISOString(),
     totals: {
       files: records.length,
@@ -129,6 +132,13 @@ export async function auditImageAssets({ root = rootDir } = {}) {
 
 export function validateImageBudget(report, budget) {
   const errors = [];
+  const expectedFormatByExtension = new Map([
+    [".gif", "GIF"],
+    [".jpeg", "JPEG"],
+    [".jpg", "JPEG"],
+    [".png", "PNG"],
+    [".webp", "WEBP"]
+  ]);
   if (report.totals.bytes > budget.max_total_bytes) {
     errors.push(`Image total ${report.totals.bytes} exceeds budget ${budget.max_total_bytes}.`);
   }
@@ -136,8 +146,13 @@ export function validateImageBudget(report, budget) {
     errors.push(`Images over 1 MiB: ${report.totals.files_over_one_mebibyte} exceeds ${budget.max_files_over_one_mebibyte}.`);
   }
   for (const image of report.images) {
+    const extension = path.extname(image.path).toLowerCase();
+    const expectedFormat = expectedFormatByExtension.get(extension);
     if (image.bytes > budget.max_single_file_bytes) errors.push(`${image.path} exceeds per-file byte budget.`);
-    if (image.format !== budget.required_format) errors.push(`${image.path} is ${image.format}, expected ${budget.required_format}.`);
+    if (expectedFormat && image.format !== expectedFormat) errors.push(`${image.path} is ${image.format}, but its extension requires ${expectedFormat}.`);
+    if (budget.required_format && image.path.startsWith("/assets/img/") && image.format !== budget.required_format) {
+      errors.push(`${image.path} is ${image.format}, expected ${budget.required_format} in /assets/img/.`);
+    }
     if (!Number.isInteger(image.width) || !Number.isInteger(image.height)) errors.push(`${image.path} has unreadable dimensions.`);
     if (image.width > budget.max_width) errors.push(`${image.path} exceeds maximum width ${budget.max_width}.`);
   }

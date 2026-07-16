@@ -8,7 +8,7 @@ status: "published"
 published: true
 published_at: "2026-06-20"
 last_verified: "2026-06-20"
-tags: ["電話", "予約", "A1"]
+tags: ["電話","予約","A1"]
 canonical_url: "/germany/ja/learn-german/telephone-phrases/"
 ---
 

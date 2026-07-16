@@ -3,11 +3,7 @@ id: "T007"
 title: "子連れで楽しむデュッセルドルフ観光：公園・川沿い・短時間ルート"
 slug: "duesseldorf-family-trip"
 category: "観光"
-tags:
-  - "子連れ"
-  - "デュッセルドルフ"
-  - "家族"
-  - "観光"
+tags: ["子連れ","デュッセルドルフ","家族","観光"]
 summary: "小さな子ども連れでも回りやすいデュッセルドルフ市内の観光ルート、公園、休憩ポイントを整理。"
 status: "published"
 published: true
@@ -15,10 +11,7 @@ published_at: "2026-06-27"
 updated_at: "2026-06-27"
 last_verified: "2026-06-27"
 canonical_url: "/germany/ja/living/duesseldorf-family-trip/"
-related_articles:
-  - "cologne-family-trip"
-  - "duesseldorf-city-guide"
-  - "nrw-nature-relax-guide"
+related_articles: ["cologne-family-trip","duesseldorf-city-guide","nrw-nature-relax-guide"]
 official_sources: []
 ---
 

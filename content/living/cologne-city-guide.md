@@ -4,12 +4,7 @@ title: "ケルン観光の基本：大聖堂・ライン川・旧市街の回り
 slug: "cologne-city-guide"
 image_alt: "ケルン観光ガイドの記事イメージ"
 category: "観光"
-tags:
-  - "ケルン"
-  - "大聖堂"
-  - "街歩き"
-  - "観光"
-  - "ライン川"
+tags: ["ケルン","大聖堂","街歩き","観光","ライン川"]
 summary: "ケルン大聖堂を中心に、旧市街、ライン川沿い、Hohenzollernbrücke、博物館エリアを半日から1日で効率よく回る基本ガイドです。"
 status: "published"
 published: true
@@ -17,10 +12,7 @@ published_at: "2026-06-27"
 updated_at: "2026-06-28"
 last_verified: "2026-06-28"
 canonical_url: "/germany/ja/living/cologne-city-guide/"
-related_articles:
-  - "duesseldorf-city-guide"
-  - "cologne-family-trip"
-  - "rhine-river-relax-guide"
+related_articles: ["duesseldorf-city-guide","cologne-family-trip","rhine-river-relax-guide"]
 official_sources:
   - title: "KölnTourismus"
     url: "https://www.koelntourismus.de/"

@@ -5,6 +5,7 @@ import { assertNoPrivateFields } from "./sync-public-data.mjs";
 import { assertPublicDetailUrl, publicDetailOutputPath } from "./public-detail-routes.mjs";
 
 const ORIGIN = "https://j-connect-global.com";
+const SITE_NAME = "J-Connect Global";
 const DEFAULT_IMAGE = `${ORIGIN}/assets/img/placeholders/jconnect-default-card.webp`;
 const GENERATED_MARKER = "data-generated-public-detail";
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -76,7 +77,7 @@ export function isIndexableJob(job, now = new Date()) {
   const published = validDate(job.published_at);
   if (published === null || published > now.getTime() + 86_400_000) return false;
   return [job.id || job.job_id, job.company_name, job.position_title, job.description || job.job_details, job.location || job.city || job.region]
-    .every((value) => Boolean(text(value))) && hasSafeApplication(job);
+    .every((value) => Boolean(text(value)));
 }
 
 function employmentType(value) {
@@ -92,7 +93,7 @@ function employmentType(value) {
 }
 
 export function buildJobPosting(job, canonical, now = new Date()) {
-  if (!isIndexableJob(job, now)) return null;
+  if (!isIndexableJob(job, now) || !hasSafeApplication(job)) return null;
   const location = text(job.location || job.city || job.region);
   const posting = {
     "@context": "https://schema.org",
@@ -166,7 +167,7 @@ function metaHead({ title, description, canonical, robots, image, type = "articl
   <meta property="og:url" content="${safeCanonical}">
   <meta property="og:image" content="${escapeHtml(image || DEFAULT_IMAGE)}">
   <meta property="og:type" content="${escapeHtml(type)}">
-  <meta property="og:site_name" content="J-Connect Germany">
+  <meta property="og:site_name" content="${SITE_NAME}">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${safeTitle}">
@@ -196,6 +197,7 @@ ${body}
 ${footer}
 <script src="/assets/js/common.js"></script>
 <script src="/assets/js/cookie-consent.js" defer></script>
+<script src="/assets/js/public-detail-pages.js" defer></script>
 </body>
 </html>
 `;
@@ -215,15 +217,27 @@ function relatedCommunity(post, all) {
     }).slice(0, 3);
 }
 
-function communityPage(post, all, layout) {
+function communityPage(post, all, layout, now) {
   const route = assertPublicDetailUrl("community", post.detail_url, post.id || post.post_id);
   const canonical = `${ORIGIN}${route}`;
-  const title = `${text(post.title) || "交流・掲示板の投稿"} | J-Connect Germany`;
-  const description = compact(post.summary || post.body || post.title) || "J-Connect Germanyの交流・掲示板の公開投稿です。";
+  const title = `${text(post.title) || "交流・掲示板の投稿"} | ${SITE_NAME}`;
+  const description = compact(post.summary || post.body || post.title) || `${SITE_NAME}の交流・掲示板の公開投稿です。`;
   const images = [...new Set([...(Array.isArray(post.image_urls) ? post.image_urls : []), post.image_url].map(safeImageUrl).filter(Boolean))];
   const related = relatedCommunity(post, all);
-  const contactHref = `/germany/ja/contact/?subject=${encodeURIComponent(`掲示板投稿 ${post.id} について`)}`;
-  const reportHref = `/germany/ja/contact/?subject=${encodeURIComponent(`掲示板投稿 ${post.id} の通報`)}`;
+  const contactHref = `/germany/ja/community/contact/?post_id=${encodeURIComponent(post.id)}`;
+  const reportHref = `/germany/ja/community/report/?post_id=${encodeURIComponent(post.id)}`;
+  const canContact = text(post.status) === "active" && !isExpired(post, now);
+  const imageAlt = text(post.image_alt) || text(post.title) || "投稿画像";
+  const gallery = images.length ? `<section class="public-detail-section" aria-label="投稿画像"><div class="public-detail-gallery">${images.map((image, index) => {
+    const alt = `${imageAlt}${images.length > 1 ? ` ${index + 1}` : ""}`;
+    return `<button class="public-detail-gallery-item" type="button" data-lightbox-open data-lightbox-index="${index}" aria-label="${escapeHtml(alt)}を拡大"><img src="${escapeHtml(image)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async"></button>`;
+  }).join("")}</div></section>
+        <dialog class="public-detail-lightbox" data-public-lightbox aria-label="投稿画像の拡大表示">
+          <button class="public-detail-lightbox-close" type="button" data-lightbox-close aria-label="拡大表示を閉じる">×</button>
+          <button class="public-detail-lightbox-nav public-detail-lightbox-prev" type="button" data-lightbox-prev aria-label="前の画像">‹</button>
+          <figure><img data-lightbox-image alt=""><figcaption data-lightbox-caption aria-live="polite"></figcaption></figure>
+          <button class="public-detail-lightbox-nav public-detail-lightbox-next" type="button" data-lightbox-next aria-label="次の画像">›</button>
+        </dialog>` : "";
   const body = `<main class="public-detail-page" id="main-content">
   <div class="public-detail-shell">
     <nav class="public-detail-breadcrumbs" aria-label="パンくず"><a href="/germany/ja/">ホーム</a> / <a href="/germany/ja/community/">交流・掲示板</a> / 投稿詳細</nav>
@@ -233,9 +247,9 @@ function communityPage(post, all, layout) {
         <h1>${escapeHtml(text(post.title) || "投稿タイトル未設定")}</h1>
         <ul class="public-detail-meta"><li>投稿日 ${escapeHtml(displayDate(post.published_at || post.created_at) || "日付未設定")}</li>${displayDate(post.updated_at) ? `<li>更新日 ${escapeHtml(displayDate(post.updated_at))}</li>` : ""}</ul>
         ${facts([["カテゴリ", [post.category1, post.category2].map(text).filter(Boolean).join(" / ")], ["地域", [post.city, post.region].map(text).filter(Boolean).join(" / ")], ["価格・条件", post.price], ["予定日", post.event_date || post.availability_date]])}
-        ${images.length ? `<section class="public-detail-section" aria-label="投稿画像"><div class="public-detail-gallery">${images.map((image, index) => `<img src="${escapeHtml(image)}" alt="${escapeHtml(text(post.image_alt) || text(post.title))}${images.length > 1 ? ` ${index + 1}` : ""}" loading="lazy" decoding="async">`).join("")}</div></section>` : ""}
+        ${gallery}
         <section class="public-detail-section"><h2>投稿内容</h2><div class="public-detail-copy">${escapeHtml(post.body || post.summary || "内容はありません。")}</div></section>
-        <section class="public-detail-section"><h2>連絡・通報</h2><p>投稿IDを添えてお問い合わせください。個人の連絡先は公開していません。</p><div class="public-detail-actions"><a class="public-detail-button" href="${escapeHtml(contactHref)}">この投稿について連絡</a><a class="public-detail-button public-detail-button--secondary" href="${escapeHtml(reportHref)}">投稿を通報</a></div></section>
+        <section class="public-detail-section"><h2>連絡・通報</h2><p>投稿者のメールアドレスを公開せず、${SITE_NAME} がメッセージを取り次ぎます。</p><div class="public-detail-actions">${canContact ? `<a class="public-detail-button" href="${escapeHtml(contactHref)}">投稿者に連絡</a>` : '<span class="public-detail-button public-detail-button--disabled" aria-disabled="true">この投稿の受付は終了しました</span>'}<a class="public-detail-button public-detail-button--secondary" href="${escapeHtml(reportHref)}">投稿を通報</a></div></section>
         <section class="public-detail-section"><h2>関連する投稿</h2><div class="public-detail-related">${related.length ? related.map((item) => `<a href="${escapeHtml(assertPublicDetailUrl("community", item.detail_url, item.id || item.post_id))}"><strong>${escapeHtml(item.title)}</strong><span>${escapeHtml([item.category1, item.city || item.region].map(text).filter(Boolean).join(" / "))}</span></a>`).join("") : "<p>関連する公開投稿はまだありません。</p>"}</div></section>
       </div>
     </article>
@@ -251,9 +265,12 @@ function salaryLabel(job) {
   if (text(job.salary_label)) return text(job.salary_label);
   const minimum = Number(job.salary_min_eur);
   const maximum = Number(job.salary_max_eur);
-  if (minimum > 0 && maximum > 0) return `${minimum.toLocaleString("en-US")}–${maximum.toLocaleString("en-US")} EUR`;
-  if (minimum > 0) return `${minimum.toLocaleString("en-US")} EUR 以上`;
-  if (maximum > 0) return `${maximum.toLocaleString("en-US")} EUR 以下`;
+  const unitLabels = { HOUR: "時給", DAY: "日給", WEEK: "週給", MONTH: "月給", YEAR: "年収" };
+  const period = unitLabels[text(job.salary_unit).toUpperCase()] || "支給期間未指定";
+  const currency = /^[A-Z]{3}$/.test(text(job.salary_currency).toUpperCase()) ? text(job.salary_currency).toUpperCase() : "EUR";
+  if (minimum > 0 && maximum > 0) return `${period} ${minimum.toLocaleString("en-US")}–${maximum.toLocaleString("en-US")} ${currency}`;
+  if (minimum > 0) return `${period} ${minimum.toLocaleString("en-US")} ${currency} 以上`;
+  if (maximum > 0) return `${period} ${maximum.toLocaleString("en-US")} ${currency} 以下`;
   return "";
 }
 
@@ -263,8 +280,8 @@ function jobPage(job, layout, now) {
   const indexable = isIndexableJob(job, now);
   const expired = isExpired(job, now);
   const jsonLd = buildJobPosting(job, canonical, now);
-  const title = `${text(job.position_title) || "求人詳細"} | ${text(job.company_name) || "J-Connect Germany"}`;
-  const description = compact(job.summary || job.description || job.job_details || job.position_title) || "J-Connect Germanyの公開求人情報です。";
+  const title = `${text(job.position_title) || "求人詳細"} | ${text(job.company_name) || SITE_NAME}`;
+  const description = compact(job.summary || job.description || job.job_details || job.position_title) || `${SITE_NAME}の公開求人情報です。`;
   const applicationUrl = safeHttpsUrl(job.apply_url || job.application_url || job.apply_link);
   const applicationMethod = text(job.apply_method);
   const image = safeImageUrl(job.company_logo_url || job.logo_url || job.image_url) || DEFAULT_IMAGE;
@@ -277,11 +294,10 @@ function jobPage(job, layout, now) {
         <h1>${escapeHtml(text(job.position_title) || "求人タイトル未設定")}</h1>
         <ul class="public-detail-meta"><li>掲載日 ${escapeHtml(displayDate(job.published_at) || "日付未設定")}</li>${displayDate(job.updated_at) ? `<li>更新日 ${escapeHtml(displayDate(job.updated_at))}</li>` : ""}</ul>
         ${facts([["勤務地", job.location || job.city || job.region], ["雇用形態", job.employment_type], ["勤務形態", job.work_style], ["給与", salaryLabel(job)], ["言語", job.language], ["ビザ支援", job.visa_support]])}
-        ${!indexable ? `<p class="public-detail-notice">${expired ? "この求人は掲載期限を過ぎているため、検索エンジンへの掲載対象外です。" : `この求人は公開中ですが、応募方法などの必要情報が揃っていないため、検索エンジンへの掲載対象外です。${hasSafeApplication(job) ? "" : "現在、公開できる応募方法はありません。"}`}</p>` : ""}
         <section class="public-detail-section"><h2>仕事内容</h2><div class="public-detail-copy">${escapeHtml(job.description || job.job_details || job.summary || "仕事内容は未掲載です。")}</div></section>
         ${text(job.requirements) ? `<section class="public-detail-section"><h2>応募条件</h2><div class="public-detail-copy">${escapeHtml(job.requirements)}</div></section>` : ""}
         ${text(job.benefits) ? `<section class="public-detail-section"><h2>待遇・福利厚生</h2><div class="public-detail-copy">${escapeHtml(job.benefits)}</div></section>` : ""}
-        <section class="public-detail-section"><h2>応募方法</h2>${expired ? "<p>掲載期限を過ぎているため、このページからは応募できません。</p>" : applicationUrl ? `<div class="public-detail-actions"><a class="public-detail-button" href="${escapeHtml(applicationUrl)}" rel="noopener noreferrer">応募先を開く</a></div>` : applicationMethod && hasSafeApplication(job) ? `<div class="public-detail-copy">${escapeHtml(applicationMethod)}</div>` : `<p>現在、公開できる応募方法はありません。求人一覧で更新をご確認ください。</p>`}</section>
+        ${expired ? "" : applicationUrl ? `<section class="public-detail-section"><h2>応募方法</h2><div class="public-detail-actions"><a class="public-detail-button" href="${escapeHtml(applicationUrl)}" rel="noopener noreferrer">応募先を開く</a></div></section>` : applicationMethod && hasSafeApplication(job) ? `<section class="public-detail-section"><h2>応募方法</h2><div class="public-detail-copy">${escapeHtml(applicationMethod)}</div></section>` : ""}
         <section class="public-detail-section"><div class="public-detail-actions"><a class="public-detail-button public-detail-button--secondary" href="/germany/ja/jobs/">求人一覧へ戻る</a><a class="public-detail-button public-detail-button--secondary" href="/germany/ja/contact/?subject=${encodeURIComponent(`求人 ${job.id} の通報`)}">求人を通報</a></div></section>
       </div>
     </article>
@@ -407,7 +423,7 @@ export async function generatePublicDetails({ siteDir = path.join(rootDir, "_sit
   const communityPayload = await readPayload(resolvedSite, "assets/data/community/posts.json");
   const jobsPayload = await readPayload(resolvedSite, "assets/data/jobs/jobs.json");
   assertActiveItems(communityPayload.items, "community", now, { rejectExpired: true });
-  assertActiveItems(jobsPayload.items, "jobs", now);
+  assertActiveItems(jobsPayload.items, "jobs", now, { rejectExpired: true });
   await clearGeneratedPages(resolvedSite);
 
   const communitySource = await readFile(path.join(resolvedSite, "germany", "ja", "community", "index.html"), "utf8");
@@ -419,7 +435,7 @@ export async function generatePublicDetails({ siteDir = path.join(rootDir, "_sit
   const outputPaths = new Set();
   for (const post of communityPayload.items) {
     const relative = publicDetailOutputPath("community", post.detail_url, post.id || post.post_id);
-    await writeGenerated(resolvedSite, relative, communityPage(post, communityPayload.items, layouts.community), outputPaths);
+    await writeGenerated(resolvedSite, relative, communityPage(post, communityPayload.items, layouts.community, now), outputPaths);
   }
   const indexableJobUrls = [];
   for (const job of jobsPayload.items) {

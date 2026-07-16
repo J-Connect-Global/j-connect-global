@@ -63,6 +63,13 @@ const requiredFields = [
 ];
 const learnGermanContentTypes = new Set(['phrase', 'route', 'resource']);
 const learnGermanResourceFields = ['resource_skills', 'resource_format', 'resource_level', 'resource_price_type'];
+const frontMatterRequiredFields = ['id', 'title', 'slug', 'category', 'summary', 'status', 'published', 'published_at', 'last_verified', 'canonical_url', 'tags'];
+const frontMatterComparableFields = [
+  ...frontMatterRequiredFields,
+  'updated_at', 'related_articles', 'content_type', 'city', 'location', 'event_date',
+  'official_url', 'situation', 'goal', 'level', 'skill', 'duration',
+  ...learnGermanResourceFields, 'related_living_guides', 'image', 'image_url', 'hero_image', 'image_alt'
+];
 const livingOfficialSourceTargets = new Set([
   'anmeldung-guide',
   'health-insurance-guide',
@@ -99,6 +106,7 @@ function main() {
 
       if (item.published === true) {
         validatePublishedFiles(type, item, label);
+        validateFrontMatterConsistency(item, label);
       }
 
       allItems.push(item);
@@ -109,6 +117,7 @@ function main() {
   validateHome(datasets);
   validateSearchIndex(allItems);
   validateSitemap(allItems);
+  validateWildBirdCards();
 
   if (problems.length) {
     console.error(`Content validation failed with ${problems.length} issue(s):`);
@@ -259,9 +268,118 @@ function validatePublishedFiles(type, item, label) {
 
   validateArticleMetaOutput(html, htmlRel);
   validateOfficialSourceOutput(html, item, htmlRel);
+  if (item.content_type !== 'news') {
+    const visibleHtml = html
+      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
+      .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '')
+      .replace(/<!--[\s\S]*?-->/g, '');
+    if (/最終確認|次回確認/.test(visibleHtml)) {
+      problems.push(`${htmlRel} exposes review dates in visible non-News content.`);
+    }
+  }
   validateNoMojibake(html, htmlRel);
   validateNoPlaceholderHash(html, htmlRel);
   validateInternalLinks(html, htmlRel);
+}
+
+function validateFrontMatterConsistency(item, label) {
+  const markdownRel = trimLeadingSlash(item.markdown_path);
+  if (!exists(markdownRel)) return;
+  const frontMatter = parseFrontMatter(readText(markdownRel));
+
+  for (const field of frontMatterRequiredFields) {
+    if (!Object.prototype.hasOwnProperty.call(frontMatter, field)) {
+      problems.push(`${label} Markdown front matter missing required field: ${field}`);
+    }
+  }
+
+  for (const field of frontMatterComparableFields) {
+    if (!Object.prototype.hasOwnProperty.call(frontMatter, field)
+        || !Object.prototype.hasOwnProperty.call(item, field)) continue;
+    if (normalizedMetadataValue(frontMatter[field]) !== normalizedMetadataValue(item[field])) {
+      problems.push(`${label} registry/front matter mismatch for ${field}.`);
+    }
+  }
+
+  if (Object.prototype.hasOwnProperty.call(frontMatter, 'next_review')) {
+    if (normalizedMetadataValue(frontMatter.next_review) !== normalizedMetadataValue(item.review?.next_review_due)) {
+      problems.push(`${label} registry/front matter mismatch for next_review.`);
+    }
+  }
+}
+
+function validateWildBirdCards() {
+  const relative = 'content/living/germany-wild-birds-guide.md';
+  const source = readText(relative);
+  const requiredBirdFields = ['de', 'jp', 'image', 'alt', 'description', 'tip', 'where', 'note'];
+  const cards = [...source.matchAll(/:::bird-grid\r?\n([\s\S]*?)\r?\n:::/g)]
+    .flatMap((grid) => grid[1].split(/^---\s*$/gm))
+    .map((block) => Object.fromEntries([...block.matchAll(/^([a-z]+):\s*(.+)$/gm)].map((match) => [match[1], match[2].trim()])))
+    .filter((card) => Object.keys(card).length);
+
+  if (!cards.length) problems.push(`${relative} contains no bird cards.`);
+  cards.forEach((card, index) => {
+    for (const field of requiredBirdFields) {
+      if (!String(card[field] || '').trim()) problems.push(`${relative} bird card ${index + 1} missing ${field}.`);
+    }
+    if (card.image && !/^https?:\/\//i.test(card.image) && !exists(trimLeadingSlash(card.image))) {
+      problems.push(`${relative} bird card ${index + 1} references a missing image: ${card.image}`);
+    }
+  });
+
+  const normalizedValues = {
+    'German bird name': cards.map((card) => String(card.de || '').normalize('NFKC').toLocaleLowerCase('de')),
+    'Japanese bird name': cards.map((card) => String(card.jp || '').normalize('NFKC').toLocaleLowerCase('ja')),
+    'bird image': cards.map((card) => String(card.image || '').trim())
+  };
+  for (const [label, values] of Object.entries(normalizedValues)) {
+    const seen = new Set();
+    for (const value of values) {
+      if (!value) continue;
+      if (seen.has(value)) problems.push(`${relative} contains a duplicate ${label} card: ${value}`);
+      seen.add(value);
+    }
+  }
+}
+
+function parseFrontMatter(markdown) {
+  const match = String(markdown || '').match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!match) return {};
+  const data = {};
+  const lines = match[1].split(/\r?\n/);
+  for (let index = 0; index < lines.length; index += 1) {
+    const entry = lines[index].match(/^([A-Za-z0-9_]+):\s*(.*)$/);
+    if (!entry) continue;
+    const key = entry[1];
+    const rawValue = entry[2].trim();
+    if (!rawValue) {
+      const values = [];
+      while (lines[index + 1] && /^\s*-\s+/.test(lines[index + 1])) {
+        index += 1;
+        values.push(unquoteMetadata(lines[index].replace(/^\s*-\s+/, '').trim()));
+      }
+      data[key] = values;
+    } else if (rawValue === 'true' || rawValue === 'false') {
+      data[key] = rawValue === 'true';
+    } else if (rawValue === '[]') {
+      data[key] = [];
+    } else if (/^\[.*\]$/.test(rawValue)) {
+      try { data[key] = JSON.parse(rawValue); } catch { data[key] = unquoteMetadata(rawValue); }
+    } else {
+      data[key] = unquoteMetadata(rawValue);
+    }
+  }
+  return data;
+}
+
+function unquoteMetadata(value) {
+  return String(value || '').replace(/^["']|["']$/g, '');
+}
+
+function normalizedMetadataValue(value) {
+  if (Array.isArray(value)) return JSON.stringify(value.map((entry) => String(entry).trim()));
+  if (typeof value === 'boolean') return String(value);
+  return String(value ?? '').trim();
 }
 
 function isValidGeneratedArticleUrl(type, item) {
@@ -278,7 +396,8 @@ function validateOfficialSourceOutput(html, item, relPath) {
     problems.push(`${relPath} missing official source section output.`);
   }
   for (const source of item.official_sources) {
-    if (source.url && !html.includes(source.url)) {
+    const htmlUrl = String(source.url || '').replaceAll('&', '&amp;').replaceAll('"', '&quot;');
+    if (source.url && !html.includes(source.url) && !html.includes(htmlUrl)) {
       problems.push(`${relPath} missing official source URL: ${source.url}`);
     }
   }

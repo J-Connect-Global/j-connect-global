@@ -18,23 +18,23 @@
     }
   })();
   </script>
-<title>Impressum | J-Connect Germany</title>
-  <meta name="description" content="J-Connect Germany の運営者表示（Impressum）。連絡先、責任範囲、法的補足をご案内します。" />
+<title>Impressum | J-Connect Global</title>
+  <meta name="description" content="J-Connect Global の運営者表示（Impressum）。連絡先、責任範囲、法的補足をご案内します。" />
   <meta name="theme-color" content="#f7f3ee" />
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/impressum/" />
   <link rel="alternate" hreflang="ja" href="https://j-connect-global.com/germany/ja/impressum/">
   <link rel="alternate" hreflang="x-default" href="https://j-connect-global.com/germany/ja/impressum/">
-  <meta property="og:title" content="Impressum | J-Connect Germany">
-  <meta property="og:description" content="J-Connect Germany の運営者表示（Impressum）。連絡先、責任範囲、法的補足をご案内します。">
+  <meta property="og:title" content="Impressum | J-Connect Global">
+  <meta property="og:description" content="J-Connect Global の運営者表示（Impressum）。連絡先、責任範囲、法的補足をご案内します。">
   <meta property="og:url" content="https://j-connect-global.com/germany/ja/impressum/">
   <meta property="og:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="J-Connect Germany">
+  <meta property="og:site_name" content="J-Connect Global">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Impressum | J-Connect Germany">
-  <meta name="twitter:description" content="J-Connect Germany の運営者表示（Impressum）。連絡先、責任範囲、法的補足をご案内します。">
+  <meta name="twitter:title" content="Impressum | J-Connect Global">
+  <meta name="twitter:description" content="J-Connect Global の運営者表示（Impressum）。連絡先、責任範囲、法的補足をご案内します。">
   <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
 
@@ -193,11 +193,48 @@ h1,
   color:var(--surface-card-heading, #f4f8ff);
 }
 
+.legal-intro{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.legal-intro span{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--site-navy);font-size:13px;font-weight:800}
+.legal-intro span::before{content:'✓';display:grid;place-items:center;width:19px;height:19px;border-radius:999px;background:var(--site-blue-soft);color:var(--site-navy);font-size:11px}
+.legal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:18px}
+.legal-card{background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 8px 18px rgba(30,58,95,.06)}
+.legal-card h2{margin:0 0 6px;color:var(--site-navy);font-size:22px}
+.legal-card-intro{margin:0 0 18px;color:#526170;line-height:1.7}
+.legal-list{margin:0}
+.legal-list>div{display:grid;grid-template-columns:minmax(120px,.42fr) minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--line)}
+.legal-list dt{color:#526170;font-size:13px;font-weight:900}
+.legal-list dd{margin:0;color:#26384a;font-weight:700;line-height:1.7;overflow-wrap:anywhere}
+.legal-list address{font-style:normal}
+.legal-list a{color:var(--site-navy);text-decoration-thickness:1px;text-underline-offset:3px}
+.legal-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.legal-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 15px;border-radius:999px;background:var(--site-navy);color:#fff;font-weight:900;text-decoration:none}
+.legal-actions a.secondary{background:transparent;border:1px solid var(--site-navy);color:var(--site-navy)}
+.legal-notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.legal-note{padding:20px;border:1px solid var(--line);border-radius:16px;background:#f8fafc}
+.legal-note h2{font-size:18px;margin:0 0 8px;color:var(--site-navy)}
+.legal-note p{margin:0;color:#34414d;line-height:1.75}
+
+:root[data-theme="dark"] body .legal-intro span,
+:root[data-theme="dark"] body .legal-card,
+:root[data-theme="dark"] body .legal-note{border-color:var(--color-border,#263a52);background:var(--color-surface,#0d1a2b);color:#e8f1fb}
+:root[data-theme="dark"] body .legal-card h2,
+:root[data-theme="dark"] body .legal-note h2,
+:root[data-theme="dark"] body .legal-list dd{color:#f4f8ff}
+:root[data-theme="dark"] body .legal-card-intro,
+:root[data-theme="dark"] body .legal-list dt,
+:root[data-theme="dark"] body .legal-note p{color:#b9c8d8}
+:root[data-theme="dark"] body .legal-list>div{border-top-color:var(--color-border,#263a52)}
+:root[data-theme="dark"] body .legal-list a{color:#67b7ff}
+:root[data-theme="dark"] body .legal-actions a.secondary{border-color:#67b7ff;color:#67b7ff}
+
 @media (max-width:640px){
   .wrap{padding:18px 12px 44px}
   .hero,.panel{border-radius:18px;padding:18px}
   h1{font-size:clamp(28px,9vw,36px)}
   .lead{font-size:15px}
+  .legal-grid,.legal-notes{grid-template-columns:1fr}
+  .legal-card{padding:20px}
+  .legal-list>div{grid-template-columns:1fr;gap:4px}
 }
 </style>
 <script>
@@ -225,17 +262,17 @@ h1,
 })();
 </script>
 
-  <script type="application/ld+json" data-jconnect-managed="page-structured-data">{"@context":"https://schema.org","@type":"WebPage","name":"運営者情報","description":"J-Connect Germany の運営者情報、所在地、連絡先を確認できる Impressum ページです。","inLanguage":"ja","url":"https://j-connect-global.com/germany/ja/impressum/","isPartOf":{"@type":"WebSite","name":"J-Connect Germany","url":"https://j-connect-global.com/germany/ja/"}}</script>
+  <script type="application/ld+json" data-jconnect-managed="page-structured-data">{"@context":"https://schema.org","@type":"WebPage","name":"運営者情報","description":"J-Connect Global の運営者情報、所在地、連絡先を確認できる Impressum ページです。","inLanguage":"ja","url":"https://j-connect-global.com/germany/ja/impressum/","isPartOf":{"@type":"WebSite","name":"J-Connect Global","url":"https://j-connect-global.com/germany/ja/"}}</script>
   <script type="application/ld+json" data-jconnect-managed="page-structured-data">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://j-connect-global.com/germany/ja/"},{"@type":"ListItem","position":2,"name":"このサイトについて","item":"https://j-connect-global.com/germany/ja/about/"},{"@type":"ListItem","position":3,"name":"運営者情報","item":"https://j-connect-global.com/germany/ja/impressum/"}]}</script>
 </head>
 <body>
 <!-- LAYOUT:ja-header:start -->
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
-      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany">
+    <a class="brand" href="/germany/ja/" aria-label="J-Connect Global ホーム">
+      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Global">
       <span class="brand-copy">
-        <span class="brand-title">J-CONNECT GERMANY</span>
+        <span class="brand-title">J-CONNECT GLOBAL</span>
         <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
       </span>
     </a>
@@ -296,35 +333,45 @@ h1,
 </header>
 <!-- LAYOUT:ja-header:end -->
   <main class="wrap">
-    <section class="hero"><div class="eyebrow">Impressum</div><h1>運営者情報</h1><p class="lead">J-Connect Germany はサイトおよびブランド名です。以下は、法令上の連絡先と編集責任者を明示するための表示です。</p></section>
-    <section class="panel">
-      <h2>提供者・連絡先</h2>
-      <div class="info">
-        <div><strong>サイト／ブランド名</strong></div><div>J-Connect Germany</div>
-        <div><strong>サービス提供者</strong></div><div>Yoshihiro Nagamatsu</div>
-        <div><strong>住所</strong></div><div><address>Am Rosenberg 9<br>40699 Erkrath<br>Germany</address></div>
-        <div><strong>電子メール</strong></div><div><a href="mailto:contact@j-connect-global.com">contact@j-connect-global.com</a></div>
-        <div><strong>編集責任者<br><small>§ 18 Abs. 2 MStV</small></strong></div><div>Yoshihiro Nagamatsu<br><address>Am Rosenberg 9<br>40699 Erkrath<br>Germany</address></div>
-        <div><strong>通報・削除依頼</strong></div><div><a href="/germany/ja/community/report/">掲示板の通報フォーム</a> または <a href="/germany/ja/contact/">お問い合わせフォーム</a></div>
-      </div>
-      <h3>サイトについて</h3>
-      <p>本サイトは、ドイツ在住の日本語話者に向け、生活・地域・学習情報、公開ディレクトリ、Community 投稿、無料の Jobs 掲載パイロットを提供しています。投稿と求人は、公開条件を満たすもののみ表示します。</p>
-      <h3>掲載情報と外部リンク</h3>
-      <p>掲載内容は確認・更新に努めていますが、完全性、正確性、最新性を保証するものではありません。外部サイト、地図、各事業者の情報は、それぞれの提供者の責任で運営されています。</p>
-      <h3>著作権</h3>
-      <p>本サイトの編集物、デザイン、ロゴ、画像、プログラム等の権利は、運営者または正当な権利者に帰属します。法令上認められる範囲を超える利用には、事前の許諾が必要です。</p>
-      <p class="note">Last updated: 2026-07-14</p>
+    <section class="hero"><div class="eyebrow">Impressum</div><h1>運営者情報</h1><p class="lead">J-Connect Global のサービス提供者、連絡先、編集責任者を、ドイツの法令に基づいて明示します。</p><div class="legal-intro" aria-label="このページで確認できる情報"><span>サービス提供者</span><span>連絡可能な住所</span><span>編集責任者</span></div></section>
+    <div class="legal-grid">
+      <section class="legal-card" aria-labelledby="providerTitle">
+        <h2 id="providerTitle">サービス提供者</h2>
+        <p class="legal-card-intro">サイト運営と一般のお問い合わせに関する表示です。</p>
+        <dl class="legal-list">
+          <div><dt>サイト／ブランド名</dt><dd>J-Connect Global</dd></div>
+          <div><dt>氏名</dt><dd>Yoshihiro Nagamatsu</dd></div>
+          <div><dt>住所</dt><dd><address>Am Rosenberg 9<br>40699 Erkrath<br>Germany</address></dd></div>
+          <div><dt>電子メール</dt><dd><a href="mailto:contact@j-connect-global.com">contact@j-connect-global.com</a></dd></div>
+        </dl>
+        <div class="legal-actions"><a href="/germany/ja/contact/">お問い合わせフォーム</a></div>
+      </section>
+      <section class="legal-card" aria-labelledby="editorTitle">
+        <h2 id="editorTitle">編集責任者</h2>
+        <p class="legal-card-intro">§ 18 Abs. 2 MStV（Medienstaatsvertrag）に基づく編集責任者です。</p>
+        <dl class="legal-list">
+          <div><dt>氏名</dt><dd>Yoshihiro Nagamatsu</dd></div>
+          <div><dt>住所</dt><dd><address>Am Rosenberg 9<br>40699 Erkrath<br>Germany</address></dd></div>
+          <div><dt>対象</dt><dd>本サイト上の編集コンテンツ</dd></div>
+        </dl>
+        <div class="legal-actions"><a class="secondary" href="/germany/ja/community/report/">掲示板の通報</a><a class="secondary" href="/germany/ja/contact/">修正・削除の相談</a></div>
+      </section>
+    </div>
+    <section class="legal-notes" aria-label="法的補足">
+      <article class="legal-note"><h2>サイトについて</h2><p>ドイツ在住の日本語話者に向け、生活・地域・学習情報、公開ディレクトリ、Community 投稿、無料の Jobs 掲載パイロットを提供しています。</p></article>
+      <article class="legal-note"><h2>掲載情報と外部リンク</h2><p>掲載内容の完全性、正確性、最新性は保証していません。外部サイトや各事業者の情報は、それぞれの提供者が管理しています。</p></article>
+      <article class="legal-note"><h2>著作権</h2><p>編集物、デザイン、ロゴ、画像、プログラム等の権利は、運営者または正当な権利者に帰属します。</p></article>
     </section>
   </main>
   <!-- LAYOUT:ja-footer:start -->
   <footer class="page-footer">
     <div class="footer-inner">
       <div class="footer-left">
-        <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany">
+        <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Global">
         <div class="footer-copy">
-          <div class="footer-title">J-CONNECT GERMANY</div>
+          <div class="footer-title">J-CONNECT GLOBAL</div>
           <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
-          <div class="footer-meta">© 2026 J-Connect Germany</div>
+          <div class="footer-meta">© 2026 J-Connect Global</div>
         </div>
       </div>
       <div class="footer-links" aria-label="フッターサイトマップ">

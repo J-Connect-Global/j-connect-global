@@ -21,6 +21,8 @@ const css = read('assets/css/community.css');
 const gas = read('apps-script/community-board-api.gs');
 const shared = read('assets/js/community-shared.js');
 const socialShare = read('assets/js/social-share.js');
+const publicDetailScript = read('assets/js/public-detail-pages.js');
+const publicDetailCss = read('assets/css/public-detail-pages.css');
 
 expect(!listing.includes('投稿内容は送信前に確認してください。'), 'Community hero still contains the removed pre-submit text.');
 expect(!listing.includes('問題のある投稿を通報する'), 'Community hero still contains the generic report link.');
@@ -47,6 +49,7 @@ expect(listing.includes('COMMUNITY_STATIC_POSTS_URL') && !listing.includes('GAS_
 expect(detail.includes('COMMUNITY_STATIC_POSTS_URL') && !detail.includes('GAS_FALLBACK_TIMEOUT_MS'), 'Community detail is not public-JSON-only.');
 expect(detail.includes('この投稿は見つからないか、現在公開されていません。') && detail.includes('noindex, follow'), 'Community detail lacks the safe non-public state.');
 expect(contact.includes('COMMUNITY_STATIC_POSTS_URL') && report.includes('COMMUNITY_STATIC_POSTS_URL'), 'Community contact/report target reads do not use public JSON.');
+expect(contact.includes('form_started_at') && contact.includes('website') && contact.includes('form-privacy-notice'), 'Community contact form is missing privacy or anti-abuse controls.');
 expect(!detail.includes('CITY_OPTIONS_BY_COUNTRY') && detail.includes('communityLocationConfig'), 'Post form does not use the shared Community location configuration.');
 expect(listing.includes('communityLocationConfig') && listing.includes('normalizeCommunityCountry'), 'Listing does not use the shared Community location configuration.');
 expect(!listing.includes('最新データを取得できませんでした。保存済みの表示を継続しています。'), 'Community cache warning is still embedded in initial HTML.');
@@ -71,8 +74,15 @@ expect(
 expect(!shared.includes('...post'), 'Shared Community normalizer retains arbitrary source fields instead of a public allowlist.');
 expect(detail.includes('data-social-share="manual"') && socialShare.includes('manualShare') && socialShare.includes('target.root.querySelectorAll(AUTO_SHARE_SELECTOR)'), 'Community detail can still create duplicate share triggers.');
 expect(gas.includes('function submitReport_(params)') && gas.includes('reportNotificationHtml_'), 'GAS report handling is not structured.');
+expect(gas.includes("acquireSubmissionRateLimit_('submitInquiry'") && gas.includes("website: { max: 0 }"), 'Community inquiry proxy is missing server-side abuse controls.');
 expect(gas.includes('GITHUB_ACTIONS_TOKEN') && gas.includes('processWaitingCommunityApprovalNotifications'), 'GAS publication verification queue is missing.');
 expect(gas.includes('COMMUNITY_PUBLIC_POSTS_JSON_URL') && gas.includes("approval_notified_status: 'sent'"), 'GAS does not verify deployed JSON before marking approval notifications sent.');
+expect(detail.includes('preview-default-image') && detail.includes('/assets/img/placeholders/jconnect-default-card.webp'), 'Image-less submission preview does not use the actual default card.');
+expect(detail.includes('previewModalImageObjectUrls') && detail.includes('revokeAllPreviewModalImageObjectUrls'), 'Submission preview does not manage modal object URLs.');
+expect(detail.includes('選択した画像') && detail.includes('getPreviewModalImageObjectUrl(file)'), 'Submission preview does not render the selected files.');
+expect(publicDetailScript.includes("dialog.addEventListener('close'") && publicDetailScript.includes('lastTrigger.focus'), 'Public detail lightbox does not restore focus.');
+expect(publicDetailScript.includes("event.key !== 'Tab'") && publicDetailScript.includes('public-lightbox-open'), 'Public detail lightbox is missing focus trapping or scroll locking.');
+expect(publicDetailCss.includes('body.public-lightbox-open') && publicDetailCss.includes('overflow: hidden'), 'Public detail lightbox scroll lock CSS is missing.');
 
 if (failures.length) {
   console.error('Community validation failed:');

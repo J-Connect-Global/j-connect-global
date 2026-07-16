@@ -3,15 +3,15 @@ id: "T014"
 title: "ドイツから行く週末旅行：パリ観光の基本"
 slug: "paris-weekend-trip"
 category: "観光"
-tags: ["パリ", "週末旅行", "フランス", "美術館"]
-summary: "一日に一地区と一つの予約施設を基本に、メトロ・RERの券種と工事情報を確認して歩くパリ週末旅行の実用ガイドです。"
+tags: ["パリ","週末旅行","フランス","美術館","観光"]
+summary: "ドイツから鉄道や飛行機で行ける大都市で、美術館、街歩き、カフェを目的別に絞ると週末でも楽しめます。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。"
 status: "published"
 published: true
 published_at: "2026-06-29"
-updated_at: "2026-07-16"
-last_verified: "2026-07-16"
+updated_at: "2026-06-29"
+last_verified: "2026-06-29"
 canonical_url: "/germany/ja/living/paris-weekend-trip/"
-related_articles: ["brussels-weekend-trip", "london-weekend-trip", "strasbourg-weekend-trip"]
+related_articles: ["amsterdam-weekend-trip","strasbourg-weekend-trip","cologne-city-guide"]
 official_sources:
   - title: "Paris je t’aime"
     url: "https://parisjetaime.com/eng/"

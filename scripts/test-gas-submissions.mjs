@@ -296,6 +296,51 @@ function testCommunityPublicLifecycleAndCacheBypass() {
   assert(!sandbox.getPost_({ id: "excluded-status-closed" }).ok, "GAS detail endpoint exposed a closed post.");
 }
 
+function testCommunityInquiryPrivacyAndAbuseControls() {
+  const now = Date.parse("2026-07-16T12:00:00Z");
+  const community = new MockSheet("Community Posts", [
+    "post_id", "status", "category1", "title", "body", "contact_email_private", "expires_at"
+  ]);
+  appendObjectRow(community, {
+    post_id: "post-contactable",
+    status: "active",
+    category1: "質問",
+    title: "公開投稿",
+    body: "公開本文",
+    contact_email_private: "poster@example.com",
+    expires_at: ""
+  });
+  const emails = [];
+  const runtime = createRuntime([community], (message) => { emails.push(message); return { sent: true }; }, { now });
+  const params = {
+    post_id: "post-contactable",
+    sender_name: "問い合わせ者",
+    sender_email: "sender@example.com",
+    subject: "投稿について",
+    message: "詳しい受け渡し方法を教えてください。",
+    website: "",
+    form_started_at: String(now - 5000)
+  };
+
+  const result = runtime.sandbox.submitInquiry_(params);
+  assert(result.ok && result.success, "Privacy-safe Community inquiry did not succeed.");
+  assert(!JSON.stringify(result).includes("poster@example.com"), "Community inquiry response exposed the poster email.");
+  assert(emails.length === 1 && emails[0].to === "poster@example.com", "Community inquiry was not proxied to the poster.");
+  assert(emails[0].replyTo === "sender@example.com", "Community inquiry did not preserve the sender reply-to address.");
+
+  const repeated = runtime.sandbox.submitInquiry_(params);
+  assert(!repeated.ok && repeated.code === "RATE_LIMITED", "Repeated Community inquiry was not rate limited.");
+  assert(emails.length === 1, "Rate-limited Community inquiry sent another email.");
+
+  const bot = runtime.sandbox.submitInquiry_({
+    ...params,
+    sender_email: "bot@example.com",
+    website: "https://spam.example"
+  });
+  assert(!bot.ok && bot.code === "HONEYPOT", "Community inquiry honeypot was not enforced.");
+  assert(emails.length === 1, "Honeypot Community inquiry sent an email.");
+}
+
 function testPublicPayloadCredentialSanitization() {
   const { sandbox } = createRuntime([], () => ({ sent: true }));
   assert(sandbox.isSafePublicId_("日本語-id_1") === true, "GAS rejected a valid Unicode public ID.");
@@ -388,5 +433,6 @@ testSpreadsheetResolution();
 testJobPersistenceIdempotencyAndThrottling();
 testCommunityAdminFailureIsolation();
 testCommunityPublicLifecycleAndCacheBypass();
+testCommunityInquiryPrivacyAndAbuseControls();
 testPublicPayloadCredentialSanitization();
 console.log("GAS submission tests passed.");

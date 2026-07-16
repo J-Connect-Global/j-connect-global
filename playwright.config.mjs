@@ -47,8 +47,16 @@ export default defineConfig({
       name: "mobile-chromium",
       testMatch: /mobile\.spec\.mjs/,
       use: {
-        viewport: { width: 390, height: 844 },
+        viewport: { width: 360, height: 800 },
         isMobile: true,
+        hasTouch: true
+      }
+    },
+    {
+      name: "tablet-chromium",
+      testMatch: /mobile\.spec\.mjs/,
+      use: {
+        viewport: { width: 768, height: 1024 },
         hasTouch: true
       }
     }

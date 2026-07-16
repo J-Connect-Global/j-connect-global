@@ -66,6 +66,8 @@
       skills: getValue(row, "skills", "skill_tags") || tags,
       salary_min_eur: toNumber(getValue(row, "salary_min_eur")),
       salary_max_eur: toNumber(getValue(row, "salary_max_eur")),
+      salary_currency: getValue(row, "salary_currency", "currency"),
+      salary_unit: getValue(row, "salary_unit", "salary_period", "pay_period"),
       salary_label: getValue(row, "salary_label", "salary"),
       summary,
       short_description: summary,
@@ -125,9 +127,12 @@
 
   function getSalaryLabel(job) {
     if (job.salary_label) return job.salary_label;
-    if (job.salary_min_eur && job.salary_max_eur) return `年収 ${job.salary_min_eur.toLocaleString()} EUR-${job.salary_max_eur.toLocaleString()} EUR`;
-    if (job.salary_min_eur) return `年収 ${job.salary_min_eur.toLocaleString()} EUR-`;
-    if (job.salary_max_eur) return `-${job.salary_max_eur.toLocaleString()} EUR`;
+    const periods = { HOUR: "時給", DAY: "日給", WEEK: "週給", MONTH: "月給", YEAR: "年収" };
+    const period = periods[clean(job.salary_unit).toUpperCase()] || "給与（期間未指定）";
+    const currency = /^[A-Z]{3}$/.test(clean(job.salary_currency).toUpperCase()) ? clean(job.salary_currency).toUpperCase() : "EUR";
+    if (job.salary_min_eur && job.salary_max_eur) return `${period} ${job.salary_min_eur.toLocaleString()}–${job.salary_max_eur.toLocaleString()} ${currency}`;
+    if (job.salary_min_eur) return `${period} ${job.salary_min_eur.toLocaleString()} ${currency} 以上`;
+    if (job.salary_max_eur) return `${period} ${job.salary_max_eur.toLocaleString()} ${currency} 以下`;
     return "";
   }
 

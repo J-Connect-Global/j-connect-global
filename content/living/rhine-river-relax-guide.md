@@ -3,11 +3,7 @@ id: "T005"
 title: "ライン川沿いで過ごす休日：散歩・景色・カフェの楽しみ方"
 slug: "rhine-river-relax-guide"
 category: "観光"
-tags:
-  - "ライン川"
-  - "散歩"
-  - "自然"
-  - "リラックス"
+tags: ["ライン川","散歩","自然","リラックス"]
 summary: "ライン川沿いでゆっくり過ごしたい人向けに、散歩、景色、カフェ、夕方の過ごし方をまとめた休日ガイド。"
 status: "published"
 published: true
@@ -15,10 +11,7 @@ published_at: "2026-06-27"
 updated_at: "2026-06-27"
 last_verified: "2026-06-27"
 canonical_url: "/germany/ja/living/rhine-river-relax-guide/"
-related_articles:
-  - "nrw-nature-relax-guide"
-  - "duesseldorf-city-guide"
-  - "cologne-city-guide"
+related_articles: ["nrw-nature-relax-guide","duesseldorf-city-guide","cologne-city-guide"]
 official_sources: []
 ---
 

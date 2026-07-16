@@ -17,6 +17,7 @@ export const shoppingFixture = await readFixture("assets/data/shopping/items.jso
 export const medicalFixture = await readFixture("assets/data/medical/items.json");
 
 export const activeCommunityPosts = communityFixture.items.filter((post) => post.status === "active");
+export const activeJobs = jobsFixture.items.filter((job) => job.status === "active");
 export const fixtureCommunityPost = activeCommunityPosts[0];
 export const fixtureCommunityPostId = fixtureCommunityPost?.post_id || fixtureCommunityPost?.id || "";
 export const fixtureCommunityDetailPath = fixtureCommunityPost?.detail_url || `/germany/ja/community/post/?id=${encodeURIComponent(fixtureCommunityPostId)}`;
@@ -136,6 +137,32 @@ export async function assertNoHorizontalOverflow(page) {
     };
   });
   expect(dimensions.scrollWidth, `horizontal overflow: ${JSON.stringify(dimensions)}`).toBeLessThanOrEqual(dimensions.clientWidth);
+}
+
+export async function assertArticleHeroFrame(page, { minRatio, maxRatio }) {
+  const title = page.locator(".article-title").first();
+  const figure = page.locator(".article-hero-figure, .article-hero-media").first();
+  const frame = figure.locator(".article-hero-frame");
+  const image = frame.locator("img.article-hero-image");
+  await expect(title).toBeVisible();
+  await expect(frame).toBeVisible();
+  await expect(image).toHaveAttribute("width", /\d+/);
+  await expect(image).toHaveAttribute("height", /\d+/);
+  const geometry = await frame.evaluate((element) => {
+    const frameRect = element.getBoundingClientRect();
+    const titleRect = document.querySelector(".article-title")?.getBoundingClientRect();
+    const captionRect = element.parentElement?.querySelector("figcaption")?.getBoundingClientRect();
+    return {
+      ratio: frameRect.width / frameRect.height,
+      frameLeft: frameRect.left,
+      titleLeft: titleRect?.left ?? null,
+      captionLeft: captionRect?.left ?? null
+    };
+  });
+  expect(geometry.ratio).toBeGreaterThan(minRatio);
+  expect(geometry.ratio).toBeLessThan(maxRatio);
+  expect(Math.abs(geometry.frameLeft - geometry.titleLeft)).toBeLessThanOrEqual(1);
+  if (geometry.captionLeft !== null) expect(Math.abs(geometry.frameLeft - geometry.captionLeft)).toBeLessThanOrEqual(1);
 }
 
 export async function assertRouteReady(page) {
@@ -316,8 +343,15 @@ export async function assertCommunityCards(page) {
   expect(renderedIds).toEqual(fixtureIds);
 }
 
+export async function assertPublicJobs(page, expectedJobs = activeJobs) {
+  expect(expectedJobs.length, "the Jobs fixture must contain active records").toBeGreaterThan(0);
+  await expect(page.locator("#cards .jobs-card[data-id]")).toHaveCount(expectedJobs.length);
+  const renderedIds = await page.locator("#cards .jobs-card[data-id]").evaluateAll((elements) => elements.map((element) => element.dataset.id).sort());
+  expect(renderedIds).toEqual(expectedJobs.map((job) => String(job.id)).sort());
+  await expect(page.locator("#emptyBox")).toBeHidden();
+}
+
 export async function assertNoPublicJobs(page) {
-  expect(jobsFixture.items, "the committed Jobs fixture must exclude sample/test records").toHaveLength(0);
   await expect(page.locator("#cards .jobs-card[data-id]")).toHaveCount(0);
   await expect(page.locator("#emptyBox")).toBeVisible();
   await expect(page.locator("#emptyBox")).toContainText("現在公開中の求人はありません");

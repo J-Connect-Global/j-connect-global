@@ -372,7 +372,9 @@ function renderArticleHeroFigure(item) {
   const alt = getArticleImageAlt(item);
   const caption = firstNonEmpty(item.hero_image_caption);
   return `<figure class="article-hero-figure">
-  <img ${renderArticleImageAttributes(src, alt, 'article-hero-image', 'eager')}>
+  <div class="article-hero-frame"${firstNonEmpty(item.hero_image_position) ? ` style="--article-hero-position:${escapeHtml(firstNonEmpty(item.hero_image_position))}"` : ''}>
+    <img ${renderArticleImageAttributes(src, alt, 'article-hero-image', 'eager')}>
+  </div>
 ${caption ? `  <figcaption>${escapeHtml(caption)}</figcaption>` : ''}
 </figure>`;
 }
@@ -514,8 +516,9 @@ html.push(`<h${level}${classAttribute} id="${escapeAttribute(headingId)}">${rend
     const image = trimmed.match(/^!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)$/);
     if (image) {
       const [, alt, src, title] = image;
+      const normalizedSrc = normalizeHref(src, context);
       html.push(`<figure class="article-inline-figure">
-  <img src="${escapeAttribute(normalizeHref(src, context))}" alt="${escapeAttribute(stripInlineMarkdown(alt).trim())}" loading="lazy" decoding="async">
+  ${renderInlineArticleImage(normalizedSrc, stripInlineMarkdown(alt).trim())}
 ${title ? `  <figcaption>${escapeHtml(title)}</figcaption>` : ''}
 </figure>`);
       index += 1;
@@ -545,6 +548,31 @@ ${title ? `  <figcaption>${escapeHtml(title)}</figcaption>` : ''}
   }
 
   return html.join('\n');
+}
+
+const INLINE_IMAGE_VARIANTS = Object.freeze({
+  '/assets/images/learn-german/hospital-appointment-prep.webp': {
+    small: '/assets/images/learn-german/hospital-appointment-prep-480.webp', width: 820, height: 461
+  },
+  '/assets/images/learn-german/job-application-prep.webp': {
+    small: '/assets/images/learn-german/job-application-prep-480.webp', width: 820, height: 461
+  },
+  '/assets/images/learn-german/parenting-contact-prep.webp': {
+    small: '/assets/images/learn-german/parenting-contact-prep-480.webp', width: 820, height: 461
+  }
+});
+
+function renderInlineArticleImage(src, alt) {
+  const variant = INLINE_IMAGE_VARIANTS[src];
+  const safeSrc = escapeAttribute(src);
+  const safeAlt = escapeAttribute(alt);
+  if (!variant) {
+    return `<img src="${safeSrc}" alt="${safeAlt}" loading="lazy" decoding="async">`;
+  }
+  return `<picture>
+    <source media="(max-width: 600px)" srcset="${escapeAttribute(variant.small)}">
+    <img src="${safeSrc}" alt="${safeAlt}" width="${variant.width}" height="${variant.height}" loading="lazy" decoding="async">
+  </picture>`;
 }
 
 function collectList(lines, start, ordered, context) {
@@ -2298,7 +2326,9 @@ function renderArticleHeroMedia(type, item) {
     : '';
 
   return `<figure class="article-hero-media">
-  <img ${renderArticleImageAttributes(src, alt, 'article-hero-image', 'eager')}>${caption}
+  <div class="article-hero-frame"${firstNonEmpty(item.hero_image_position) ? ` style="--article-hero-position:${escapeHtml(firstNonEmpty(item.hero_image_position))}"` : ''}>
+    <img ${renderArticleImageAttributes(src, alt, 'article-hero-image', 'eager')}>
+  </div>${caption}
 </figure>`;
 }
 

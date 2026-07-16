@@ -4,8 +4,10 @@ import {
   activeCommunityPosts,
   assertCommunityCards,
   assertDirectoryModalKeyboard,
+  assertArticleHeroFrame,
   assertNoIndex,
   assertNoRuntimeDiagnostics,
+  assertPublicJobs,
   assertRouteReady,
   assertSharedLayout,
   assertNoPublicJobs,
@@ -17,6 +19,7 @@ import {
   fixtureNoImageCommunityPost,
   fixturePhotoCommunityPost,
   installRuntimeDiagnostics,
+  jobsFixture,
   medicalFixture,
   openDataRoute,
   openRoute,
@@ -31,12 +34,15 @@ test.afterEach(async ({ page }) => {
   await assertNoRuntimeDiagnostics(page);
 });
 
-test("home renders in Chromium and can activate dark mode", async ({ page }) => {
+test("home renders no more than four active Jobs and can activate dark mode", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/", [
     "/assets/data/community/posts.json",
     "/assets/data/jobs/jobs.json"
   ]);
   await expect(page.locator("main h1")).toBeVisible();
+  expect(jobsFixture.items.length).toBeGreaterThan(0);
+  await expect(page.locator("#homeJobsCards [data-job-id]")).toHaveCount(Math.min(jobsFixture.items.length, 4));
+  await expect(page.locator("#homeJobsCards .portal3-fallback-actions")).toHaveCount(0);
   await activateDarkMode(page);
   await assertWcagTextContrast(page, "body", "dark-mode body text");
   await assertWcagTextContrast(page, ".portal3-red", "dark-mode primary action");
@@ -84,6 +90,32 @@ test("Community renders active fixtures and links to the generated detail page",
   await assertRouteReady(page);
 });
 
+test("home Jobs fallback actions keep their intrinsic flex layout in light and dark themes", async ({ page }) => {
+  await page.route("**/assets/data/jobs/jobs.json", (route) => route.fulfill({
+    contentType: "application/json",
+    body: JSON.stringify({ ...jobsFixture, count: 0, items: [] })
+  }));
+  await openDataRoute(page, "/germany/ja/", [
+    "/assets/data/community/posts.json",
+    "/assets/data/jobs/jobs.json"
+  ]);
+  const actions = page.locator("#homeJobsCards .portal3-fallback-actions");
+  await expect(actions).toBeVisible();
+  const layout = await actions.evaluate((element) => {
+    const rect = element.getBoundingClientRect();
+    const parent = element.parentElement.getBoundingClientRect();
+    const style = getComputedStyle(element);
+    return { width: rect.width, height: rect.height, parentWidth: parent.width, display: style.display, direction: style.flexDirection };
+  });
+  expect(layout.display).toBe("flex");
+  expect(layout.direction).toBe("row");
+  expect(layout.width).toBeLessThan(layout.parentWidth);
+  expect(layout.height).toBeGreaterThan(0);
+  await activateDarkMode(page);
+  await expect(actions).toBeVisible();
+  await assertRouteReady(page);
+});
+
 test("legacy Community detail safely redirects and the no-ID route remains the post form", async ({ page }) => {
   expect(fixtureCommunityPost, "an active Community detail fixture is required").toBeTruthy();
   const legacyPath = `/germany/ja/community/post/?id=${encodeURIComponent(fixtureCommunityPostId)}`;
@@ -123,7 +155,41 @@ test("legacy Community detail safely redirects and the no-ID route remains the p
   await assertRouteReady(page);
 });
 
-test("Jobs uses a compact, actionable empty state when no public listing exists", async ({ page }) => {
+test("Jobs list renders every active record and has no four-record cap", async ({ page }) => {
+  const exemplar = jobsFixture.items[0];
+  expect(exemplar, "a public Jobs fixture is required").toBeTruthy();
+  const extendedJobs = [
+    ...jobsFixture.items,
+    { ...exemplar, id: "regression-active-job", job_id: "regression-active-job", title: "Regression active job", status: "active" }
+  ];
+  const extendedFixture = { ...jobsFixture, count: extendedJobs.length, items: extendedJobs };
+  await page.route("**/assets/data/jobs/jobs.json", (route) => route.fulfill({
+    contentType: "application/json",
+    body: JSON.stringify(extendedFixture)
+  }));
+  await openDataRoute(page, "/germany/ja/jobs/", "/assets/data/jobs/jobs.json");
+  await assertPublicJobs(page, extendedJobs);
+  await expect(page.locator("#mainLayout")).not.toHaveClass(/jobs-empty-mode/);
+  await assertRouteReady(page);
+});
+
+test("article hero frames preserve the desktop crop and article alignment", async ({ page }) => {
+  for (const route of [
+    "/germany/ja/living/hamburg-weekend-trip/",
+    "/germany/ja/events/natsu-hikari-japan-festival-cologne/",
+    "/germany/ja/learn-german/hospital-phrases/"
+  ]) {
+    await openRoute(page, route);
+    await assertArticleHeroFrame(page, { minRatio: 1.95, maxRatio: 2.05 });
+    await assertRouteReady(page);
+  }
+});
+
+test("Jobs empty fallback remains actionable when the public data is empty", async ({ page }) => {
+  await page.route("**/assets/data/jobs/jobs.json", (route) => route.fulfill({
+    contentType: "application/json",
+    body: JSON.stringify({ ...jobsFixture, count: 0, items: [] })
+  }));
   await openDataRoute(page, "/germany/ja/jobs/", "/assets/data/jobs/jobs.json");
   await assertNoPublicJobs(page);
   await expect(page.locator("#mainLayout")).toHaveClass(/jobs-empty-mode/);

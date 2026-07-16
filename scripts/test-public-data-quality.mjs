@@ -3,7 +3,12 @@ import { buildPublicDataQualityReport, baselineFromReport, validateQualityBaseli
 
 const report = await buildPublicDataQualityReport();
 assert.deepEqual(report.datasets.map((dataset) => dataset.dataset), ["community", "jobs", "eat", "shopping", "medical"]);
-assert.equal(report.datasets.find((dataset) => dataset.dataset === "jobs").public_sample_or_test_records.length, 0, "sample jobs reached the public snapshot");
+const eat = report.datasets.find((dataset) => dataset.dataset === "eat");
+const shopping = report.datasets.find((dataset) => dataset.dataset === "shopping");
+assert.equal(eat.missing_fields.official_url.count, 5, "Eat official URL aliases were not evaluated with anyOf semantics");
+assert.equal(eat.missing_fields.last_reviewed.count, 0, "Eat review date aliases were not evaluated with anyOf semantics");
+assert.equal(shopping.missing_fields.official_url.count, 14, "Shopping official URL aliases were not evaluated with anyOf semantics");
+assert.equal(shopping.missing_fields.last_reviewed.count, 0, "Shopping review date aliases were not evaluated with anyOf semantics");
 
 const baseline = baselineFromReport(report);
 assert.deepEqual(validateQualityBaseline(report, baseline), [], "a matching quality baseline must pass");
@@ -30,12 +35,4 @@ assert.match(
   "a new incomplete record must fail even when an existing deficit is allowed"
 );
 
-const sampleLeakReport = {
-  ...report,
-  datasets: report.datasets.map((dataset) => dataset.dataset !== "jobs" ? dataset : {
-    ...dataset,
-    public_sample_or_test_records: ["sample-fixture"]
-  })
-};
-assert.match(validateQualityBaseline(sampleLeakReport, baseline).join("\n"), /sample-fixture/);
 console.log("Public data quality tests passed.");

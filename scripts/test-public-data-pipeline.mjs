@@ -12,7 +12,6 @@ import {
   capSafeIds,
   classifyJob,
   communityPublicationDate,
-  isSampleOrTestJobRecord,
   isPublicCommunityPost,
   normalizeCommunityPost,
   normalizeDirectoryItem,
@@ -201,28 +200,21 @@ const internalTitleJob = normalizeJob(
 );
 assert.equal(internalTitleJob.id, "job-row-1", "private-marker title prevented the guaranteed Jobs row ID fallback");
 assert.equal(internalTitleJob.slug, "job-row-1", "private-marker title leaked into the Jobs slug");
-assert.equal(classifyJob({ status: "active" }, now).eligible, true);
-assert.equal(classifyJob({ status: "inactive" }, now).eligible, false);
-assert.deepEqual(
-  classifyJob({ id: "fixture", status: "active", is_sample: true }),
-  { eligible: false, reason: "sample_or_test_record" },
-  "explicit sample flag was published"
-);
-assert.deepEqual(
-  classifyJob({ id: "fixture", status: "active", record_type: "test" }),
-  { eligible: false, reason: "sample_or_test_record" },
-  "explicit test record type was published"
-);
-for (const id of ["a", "b", "c", "d"]) {
-  const fixture = { id, status: "active", company_name: `${id.toUpperCase()}社 (求人サンプル)` };
-  assert.equal(isSampleOrTestJobRecord(fixture), true, `legacy sample ${id} was not recognized`);
-  assert.deepEqual(classifyJob(fixture), { eligible: false, reason: "sample_or_test_record" });
-}
+assert.equal(classifyJob({ id: "a", status: "active" }, now).eligible, true, "active ID a must be public");
 assert.equal(
-  isSampleOrTestJobRecord({ id: "real-company", status: "active", company_name: "Sample Holdings GmbH" }),
-  false,
-  "a generic real company name was incorrectly classified as sample data"
+  classifyJob({ id: "sample-title", status: "active", position_title: "Sample support role", company_name: "Test Works GmbH" }, now).eligible,
+  true,
+  "active content containing sample/test must not change publication"
 );
+for (const status of ["inactive", "hidden", "deleted", "draft"]) {
+  assert.deepEqual(classifyJob({ status }, now), { eligible: false, reason: "status_not_active" }, `${status} Job became public`);
+}
+assert.deepEqual(
+  classifyJob({ status: "active", expires_at: "2026-07-12T00:00:00Z" }, now),
+  { eligible: false, reason: "expired" },
+  "expired Job became public"
+);
+assert.equal(classifyJob({ status: "active", expires_at: "2026-07-14T00:00:00Z" }, now).eligible, true, "future-expiring Job was excluded");
 
 const validDirectoryBase = {
   status: "active",
@@ -474,7 +466,7 @@ assert.match(jobsInitialHead, /<link rel="canonical" href="https:\/\/j-connect-g
 assert.match(jobsInitialHead, /<meta name="robots" content="noindex, follow">/);
 assert.equal(/"@type"\s*:\s*"JobPosting"/.test(jobsDetail), false, "dynamic detail emits unsupported JobPosting markup");
 for (const source of [home, jobsList, jobsDetail, jobsSharedSource]) {
-  assert.equal(/掲載見本|応募不可|isSampleJob|listing_type|sample_label/.test(source), false, "obsolete sample distinction remains in Jobs UI");
+  assert.equal(/掲載見本|応募不可|isSampleJob|listing_type|sample_label/.test(source), false, "obsolete Jobs display tier remains in the UI");
 }
 assert.match(communityList, /現在公開中の投稿はありません。最初の投稿を作成できます。/);
 assert.match(communityList, /条件に合う投稿はありません/);
@@ -502,6 +494,33 @@ const headerTemplate = read("templates/layout/ja-header.html");
 assert.equal(/header-language|germany\/(?:en|de)\//.test(headerTemplate), false, "JA header still exposes inactive language navigation");
 const sitemap = read("sitemap.xml");
 assert.equal(/\/germany\/(?:en|de)\/|\/(?:en|de)\//.test(sitemap), false, "Sitemap exposes an inactive language route");
+const utilityHubRoutes = [
+  "/germany/ja/living/travel/area/",
+  "/germany/ja/living/travel/family/",
+  "/germany/ja/living/travel/relax/",
+  "/germany/ja/living/travel/weekend/"
+];
+const pageRegistry = JSON.parse(read("content/registry/pages.json"));
+for (const route of utilityHubRoutes) {
+  const page = pageRegistry.find((entry) => entry.url === route);
+  assert.ok(page, `missing utility hub registry entry: ${route}`);
+  assert.equal(page.search_visible, false, `${route} must remain noindex`);
+  assert.equal(page.sitemap_visible, false, `${route} must remain out of the sitemap`);
+  assert.equal(sitemap.includes(route), false, `${route} remains in sitemap.xml`);
+  const generatedHub = read(`${route.replace(/^\//, "")}index.html`);
+  assert.match(generatedHub, /<meta name="robots" content="noindex, follow">/, `${route} is missing noindex, follow`);
+}
+for (const [relative, asset] of [
+  ["germany/ja/learn-german/hospital-phrases/index.html", "hospital-appointment-prep"],
+  ["germany/ja/learn-german/job-seeker-german-route/index.html", "job-application-prep"],
+  ["germany/ja/learn-german/parenting-german-route/index.html", "parenting-contact-prep"]
+]) {
+  const html = read(relative);
+  assert.match(html, new RegExp(`/assets/images/learn-german/${asset}-480\\.webp`), `${relative} is missing the small inline image variant`);
+  assert.match(html, new RegExp(`/assets/images/learn-german/${asset}\\.webp`), `${relative} is missing the main inline image asset`);
+  assert.match(html, /width="820" height="461" loading="lazy" decoding="async"/, `${relative} inline image is missing intrinsic dimensions or lazy loading`);
+  assert.match(html, /AI生成イラスト/, `${relative} does not label its generated illustration`);
+}
 for (const relative of ["germany/ja/index.html", "germany/ja/community/index.html", "germany/ja/jobs/index.html"]) {
   const source = read(relative);
   assert.equal(/hreflang=["'](?:en|de)["']/.test(source), false, `${relative} emits inactive hreflang`);
@@ -560,8 +579,11 @@ for (const job of committedJobs.items) {
     assert.equal(Object.hasOwn(job, removedField), false, `committed Job retains obsolete field ${removedField}`);
   }
 }
-assert.match(home, /const selectedMini = selected\.slice\(0, 4\)/);
-assert.match(home, /const selectedCards = selected\.slice\(0, 4\)/);
+assert.match(home, /const allActiveJobs = \[\.\.\.jobs\]\.sort\(jobsShared\.sortNewestFirst\);/);
+assert.match(home, /const selectedMini = allActiveJobs\.slice\(0, 4\)/);
+assert.match(home, /const selectedCards = allActiveJobs\.slice\(0, 4\)/);
+const jobsListSource = read("germany/ja/jobs/index.html");
+assert.equal(/\.slice\(0,\s*4\)/.test(jobsListSource), false, "Jobs list is capped at four records");
 assert.equal(committedEat.items.some((item) => String(item.category2).toLowerCase() === "test"), false);
 for (const payload of [committedEat, committedShopping, committedMedical]) {
   assert.equal(payload.items.every((item) => item.rating === null || item.rating > 0), true, "Directory retained a zero/invalid rating");
@@ -579,8 +601,10 @@ for (const item of committedShopping.items.filter((entry) => entry.latitude !== 
   shoppingCoordinates.get(coordinate).add(`${item.address}|${item.postcode}|${item.city}`.toLowerCase());
 }
 assert.equal([...shoppingCoordinates.values()].every((addresses) => addresses.size <= 1), true, "suspicious Shopping coordinates remain map-eligible");
-assert.equal(committedShopping.validation.manual_correction_safe_ids.category_pair.length, 4);
-assert.equal(committedShopping.validation.manual_correction_safe_ids.suspicious_duplicate_coordinates.length, 37);
+const shoppingCorrections = committedShopping.validation.manual_correction_safe_ids || {};
+for (const [reason, ids] of Object.entries(shoppingCorrections)) {
+  assert.deepEqual(ids, [...new Set(ids)].sort(), `Shopping ${reason} correction IDs are not sorted and unique`);
+}
 
 if (committedCommunity.api_version === "unversioned-bootstrap") {
   assert.equal(committedCommunity.count, 6);

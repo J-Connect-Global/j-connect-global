@@ -5,7 +5,7 @@ import {
   assertNoIndex,
   assertNoRuntimeDiagnostics,
   assertRouteReady,
-  assertAllActiveJobs,
+  assertNoPublicJobs,
   fixtureCommunityDetailPath,
   fixtureCommunityPost,
   installRuntimeDiagnostics,
@@ -47,9 +47,9 @@ test("mobile Community renders the active fixtures", async ({ page }) => {
   await assertRouteReady(page);
 });
 
-test("mobile Jobs renders every active listing", async ({ page }) => {
+test("mobile Jobs has no overflow in the public empty state", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/jobs/", "/assets/data/jobs/jobs.json");
-  await assertAllActiveJobs(page);
+  await assertNoPublicJobs(page);
   await assertRouteReady(page);
 });
 
@@ -62,10 +62,9 @@ test("mobile Community detail renders the requested fixture", async ({ page }) =
   await assertRouteReady(page);
 });
 
-test("mobile incomplete Job detail is readable and excluded from indexing", async ({ page }) => {
-  await openRoute(page, "/germany/ja/jobs/a/");
-  await expect(page.locator(".public-detail-page h1")).toBeVisible();
-  await expect(page.locator(".public-detail-notice")).toContainText("公開できる応募方法はありません");
+test("mobile missing legacy Job detail is readable and excluded from indexing", async ({ page }) => {
+  await openDataRoute(page, "/germany/ja/jobs/detail/?id=2", "/assets/data/jobs/jobs.json");
+  await expect(page.locator("#jobDetail")).toContainText("求人が見つかりませんでした");
   await assertNoIndex(page);
   await activateDarkMode(page);
   await assertRouteReady(page);

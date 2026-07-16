@@ -433,9 +433,41 @@ export function normalizeCommunityPost(row, index) {
   };
 }
 
+const EXPLICIT_SAMPLE_JOB_VALUES = new Set(["sample", "test", "demo", "fixture", "sandbox"]);
+const EXPLICIT_SAMPLE_JOB_FLAGS = ["is_sample", "sample", "is_test", "test", "is_demo", "demo"];
+const EXPLICIT_SAMPLE_JOB_TYPES = ["record_type", "data_type", "listing_type", "environment"];
+const LEGACY_SAMPLE_JOB_COMPANIES = new Set([
+  "A社 (求人サンプル)",
+  "B社 (求人サンプル)",
+  "C社 (求人サンプル)",
+  "D社 (求人サンプル)"
+]);
+
+function isTruthyMarker(value) {
+  return ["1", "true", "yes", "y"].includes(clean(value).toLowerCase());
+}
+
+/**
+ * Keep public-data filtering deliberately narrow. The explicit fields are the
+ * forward-compatible contract; the exact A–D fixture signatures only retire
+ * the four legacy spreadsheet examples and never classify a real company from
+ * a generic word such as "sample" in its name or description.
+ */
+export function isSampleOrTestJobRecord(row) {
+  if (EXPLICIT_SAMPLE_JOB_FLAGS.some((field) => isTruthyMarker(row?.[field]))) return true;
+  if (EXPLICIT_SAMPLE_JOB_TYPES.some((field) => EXPLICIT_SAMPLE_JOB_VALUES.has(clean(row?.[field]).toLowerCase()))) return true;
+
+  const id = clean(first(row, ["job_id", "id"])).normalize("NFKC").toLowerCase();
+  const company = clean(first(row, ["company_name", "company", "company_ja", "company_name_ja"])).normalize("NFKC");
+  return /^[a-d]$/.test(id) && LEGACY_SAMPLE_JOB_COMPANIES.has(company);
+}
+
 export function classifyJob(row) {
-  const eligible = clean(first(row, ["status"])).toLowerCase() === "active";
-  return { eligible, reason: eligible ? "" : "status_not_active" };
+  if (clean(first(row, ["status"])).toLowerCase() !== "active") {
+    return { eligible: false, reason: "status_not_active" };
+  }
+  if (isSampleOrTestJobRecord(row)) return { eligible: false, reason: "sample_or_test_record" };
+  return { eligible: true, reason: "" };
 }
 
 export function normalizeJob(row, index, classification = classifyJob(row)) {

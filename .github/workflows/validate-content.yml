@@ -45,6 +45,12 @@ jobs:
       - name: Test public data source and publication policy
         run: node scripts/test-public-data-pipeline.mjs
 
+      - name: Report public data quality and reject regressions
+        run: node scripts/report-public-data-quality.mjs --check-baseline --github-summary
+
+      - name: Enforce image asset budget
+        run: node scripts/image-asset-budget.mjs --check --github-summary
+
       - name: Test GAS submission persistence and idempotency
         run: node scripts/test-gas-submissions.mjs
 
@@ -67,6 +73,7 @@ jobs:
         run: |
           node scripts/build-pages-artifact.mjs --site-dir _site
           node scripts/test-public-detail-generation.mjs --site-dir _site
+          node scripts/validate-production-seo.mjs --site-dir _site --github-summary
 
       - name: Install Chromium for runtime smoke tests
         run: npx playwright install --with-deps chromium

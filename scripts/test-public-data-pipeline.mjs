@@ -12,6 +12,7 @@ import {
   capSafeIds,
   classifyJob,
   communityPublicationDate,
+  isSampleOrTestJobRecord,
   isPublicCommunityPost,
   normalizeCommunityPost,
   normalizeDirectoryItem,
@@ -202,6 +203,26 @@ assert.equal(internalTitleJob.id, "job-row-1", "private-marker title prevented t
 assert.equal(internalTitleJob.slug, "job-row-1", "private-marker title leaked into the Jobs slug");
 assert.equal(classifyJob({ status: "active" }, now).eligible, true);
 assert.equal(classifyJob({ status: "inactive" }, now).eligible, false);
+assert.deepEqual(
+  classifyJob({ id: "fixture", status: "active", is_sample: true }),
+  { eligible: false, reason: "sample_or_test_record" },
+  "explicit sample flag was published"
+);
+assert.deepEqual(
+  classifyJob({ id: "fixture", status: "active", record_type: "test" }),
+  { eligible: false, reason: "sample_or_test_record" },
+  "explicit test record type was published"
+);
+for (const id of ["a", "b", "c", "d"]) {
+  const fixture = { id, status: "active", company_name: `${id.toUpperCase()}社 (求人サンプル)` };
+  assert.equal(isSampleOrTestJobRecord(fixture), true, `legacy sample ${id} was not recognized`);
+  assert.deepEqual(classifyJob(fixture), { eligible: false, reason: "sample_or_test_record" });
+}
+assert.equal(
+  isSampleOrTestJobRecord({ id: "real-company", status: "active", company_name: "Sample Holdings GmbH" }),
+  false,
+  "a generic real company name was incorrectly classified as sample data"
+);
 
 const validDirectoryBase = {
   status: "active",
@@ -401,7 +422,7 @@ assert.match(syncSource, /for \(const \[, data, label\] of writes\) assertNoPriv
 assert.match(syncSource, /writeFile\(tempFile,[\s\S]*rename\(tempFile, file\)/, "changed JSON is not written to a same-directory temporary file before rename");
 assert.match(syncSource, /rm\(tempFile, \{ force: true \}\)/, "failed per-file replacement does not clean up its temporary file");
 assert.equal(/writeFile\(file,/.test(syncSource), false, "writeJsonIfChanged writes directly to its target");
-assert.equal(/sample_limit|listing_type|governance_defaulted/.test(syncSource), false, "obsolete Job publication tiers remain in sync");
+assert.equal(/sample_limit|governance_defaulted/.test(syncSource), false, "obsolete Job publication tiers remain in sync");
 assert.equal(/application_email|apply_email|public_email|contact_email/.test(jobsSharedSource), false, "shared Jobs normalization retains public email fields");
 assert.match(jobsSharedSource, /company_logo_url/);
 assert.match(commonImageSource, /source\.company_logo_url/);
@@ -459,10 +480,13 @@ assert.match(communityList, /現在公開中の投稿はありません。最初
 assert.match(communityList, /条件に合う投稿はありません/);
 assert.match(communityList, /現在、投稿を表示できません/);
 assert.match(communityList, /renderSkeletons\(\)/);
-assert.match(jobsList, /現在公開中の求人はありません。求人掲載をご希望の場合は、掲載フォームをご利用ください。/);
+assert.match(jobsList, /求人情報は準備でき次第公開します。採用担当者の方は、無料掲載フォームから求人をお送りください。/);
+assert.match(jobsList, /求人を無料掲載する/);
+assert.match(jobsList, /データ最終更新/);
 assert.match(jobsList, /条件に合う求人はありません/);
 assert.match(jobsList, /求人情報を読み込めませんでした/);
 assert.match(jobsList, /setJobsLoading\(\)/);
+assert.match(jobsList, /setPublicEmptyMode\(jobs\.length === 0\)/);
 
 const normalizePostStart = communityList.indexOf("function normalizePost(post, index)");
 const normalizePostEnd = communityList.indexOf("\n    function ", normalizePostStart + 1);

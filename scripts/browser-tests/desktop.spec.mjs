@@ -8,7 +8,7 @@ import {
   assertNoRuntimeDiagnostics,
   assertRouteReady,
   assertSharedLayout,
-  assertAllActiveJobs,
+  assertNoPublicJobs,
   assertWcagTextContrast,
   eatFixture,
   fixtureCommunityDetailPath,
@@ -17,7 +17,6 @@ import {
   fixtureNoImageCommunityPost,
   fixturePhotoCommunityPost,
   installRuntimeDiagnostics,
-  jobsFixture,
   medicalFixture,
   openDataRoute,
   openRoute,
@@ -124,77 +123,19 @@ test("legacy Community detail safely redirects and the no-ID route remains the p
   await assertRouteReady(page);
 });
 
-test("Jobs renders every active listing", async ({ page }) => {
+test("Jobs uses a compact, actionable empty state when no public listing exists", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/jobs/", "/assets/data/jobs/jobs.json");
-  await assertAllActiveJobs(page);
-  await expect(page.locator("#resultsSummary")).toContainText(`${jobsFixture.items.length}件を表示中 / 全${jobsFixture.items.length}件`);
-  const firstCard = page.locator("#cards .jobs-card[data-id]").first();
-  const returnLink = firstCard.locator("[data-detail-page-link]");
-  await firstCard.evaluate((element) => element.click());
-  const jobsModal = page.locator("#listingModal");
-  await expect(jobsModal).toBeVisible();
-  await expect(page.locator("#listingModalClose")).toBeFocused();
-  await page.keyboard.press("Shift+Tab");
-  expect(await jobsModal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
-  await page.keyboard.press("Tab");
-  expect(await jobsModal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
-  const modalSaveButton = jobsModal.locator("[data-detail-save-id]");
-  await modalSaveButton.focus();
-  await page.keyboard.press("Enter");
-  await expect(modalSaveButton).toBeFocused();
-  expect(await jobsModal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
-  await page.keyboard.press("Escape");
-  await expect(jobsModal).toBeHidden();
-  await expect(returnLink).toBeFocused();
-
-  const savedOnlyButton = page.locator("#savedOnlyBtn");
-  await savedOnlyButton.click();
-  await expect(savedOnlyButton).toHaveAttribute("aria-pressed", "true");
-  const savedOnlyCards = page.locator("#cards .jobs-card[data-id]");
-  await expect(savedOnlyCards).toHaveCount(1);
-  await savedOnlyCards.evaluate((element) => element.click());
-  await expect(jobsModal).toBeVisible();
-  await jobsModal.locator("[data-detail-save-id]").focus();
-  await page.keyboard.press("Enter");
-  await expect(jobsModal).toBeHidden();
-  await expect(savedOnlyCards).toHaveCount(0);
-  await expect(page.locator("#emptyBox")).toContainText("保存済みの求人はありません");
-  await expect(savedOnlyButton).toBeFocused();
+  await assertNoPublicJobs(page);
+  await expect(page.locator("#mainLayout")).toHaveClass(/jobs-empty-mode/);
   await assertRouteReady(page);
 });
 
-test("legacy Job detail redirects to an incomplete generated noindex page", async ({ page }) => {
-  await openDataRoute(page, "/germany/ja/jobs/detail/?id=a", "/assets/data/jobs/jobs.json");
-  await expect(page).toHaveURL(/\/germany\/ja\/jobs\/a\/$/);
-  await expect(page.locator(".public-detail-page h1")).toBeVisible();
-  await expect(page.locator(".public-detail-page .directory-seed-label")).toHaveCount(0);
-  await expect(page.locator('.public-detail-page a[href^="mailto:"]')).toHaveCount(0);
-  await expect(page.getByRole("link", { name: /応募先にメールする|応募する|Apply/i })).toHaveCount(0);
-  await expect(page.getByRole("button", { name: /応募先にメールする|応募する|Apply/i })).toHaveCount(0);
-  await expect(page.locator(".public-detail-notice")).toContainText("公開できる応募方法はありません");
-
-  const structuredData = await page.locator('script[type="application/ld+json"]').allTextContents();
-  expect(structuredData.some((value) => /["']?JobPosting["']?/i.test(value))).toBe(false);
-
-  await assertNoIndex(page);
-  await activateDarkMode(page);
-  await assertWcagTextContrast(page, ".public-detail-content", "Job detail dark-mode text");
-  await assertRouteReady(page);
-
-  await openDataRoute(page, "/germany/ja/jobs/detail/?id=missing-public-id", "/assets/data/jobs/jobs.json");
-  await expect(page).toHaveURL(/\/germany\/ja\/jobs\/detail\/\?id=missing-public-id$/);
+test("legacy Job detail with an absent ID remains safe and noindex", async ({ page }) => {
+  await openDataRoute(page, "/germany/ja/jobs/detail/?id=2", "/assets/data/jobs/jobs.json");
+  await expect(page).toHaveURL(/\/germany\/ja\/jobs\/detail\/\?id=2$/);
   await expect(page.locator("#jobDetail")).toContainText("求人が見つかりませんでした");
   await assertNoIndex(page);
-  await assertRouteReady(page);
-});
-
-test("the fourth active Job is public and renders a detail page", async ({ page }) => {
-  await openRoute(page, "/germany/ja/jobs/d/");
-  await expect(page.locator(".public-detail-page h1")).toBeVisible();
-  await expect(page.locator(".public-detail-page")).toContainText("営業担当（食品）");
-  const structuredData = await page.locator('script[type="application/ld+json"]').allTextContents();
-  expect(structuredData.some((value) => /["']?JobPosting["']?/i.test(value))).toBe(false);
-  await assertNoIndex(page);
+  await activateDarkMode(page);
   await assertRouteReady(page);
 });
 

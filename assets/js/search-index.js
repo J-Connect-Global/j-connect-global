@@ -66,50 +66,6 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "地域・街別",
-    "description": "地域や街ごとに観光記事を探すための入口です。",
-    "url": "/germany/ja/living/travel/area/",
-    "category": "生活・手続き",
-    "tags": [
-      "生活",
-      "観光",
-      "地域"
-    ]
-  },
-  {
-    "title": "リラックス・自然",
-    "description": "自然やゆっくり過ごせる場所に関する観光記事の入口です。",
-    "url": "/germany/ja/living/travel/relax/",
-    "category": "生活・手続き",
-    "tags": [
-      "生活",
-      "観光",
-      "自然"
-    ]
-  },
-  {
-    "title": "週末・日帰り旅行",
-    "description": "週末や日帰りで読める観光記事をまとめるための入口です。",
-    "url": "/germany/ja/living/travel/weekend/",
-    "category": "生活・手続き",
-    "tags": [
-      "生活",
-      "観光",
-      "週末"
-    ]
-  },
-  {
-    "title": "家族・子連れ",
-    "description": "家族で出かける観光記事を整理するための入口です。",
-    "url": "/germany/ja/living/travel/family/",
-    "category": "生活・手続き",
-    "tags": [
-      "生活",
-      "観光",
-      "家族"
-    ]
-  },
-  {
     "title": "仕事・求人",
     "description": "ドイツで働きたい日本語話者向けに、求人、転職、アルバイト、勤務形態、ビザサポートなどの仕事情報を整理しています。",
     "url": "/germany/ja/jobs/",

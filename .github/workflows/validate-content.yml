@@ -60,6 +60,9 @@ jobs:
       - name: Report editorial freshness
         run: node scripts/report-content-freshness.mjs --github-summary
 
+      - name: Reject repeated destination-guide prose
+        run: node scripts/check-travel-guide-duplication.mjs
+
       - name: Validate JA route and layout governance
         run: node scripts/validate-layout.mjs
 

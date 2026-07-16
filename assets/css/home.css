@@ -982,6 +982,11 @@ body.portal3-home > .page-footer{
 .portal3-fallback-actions{
   display:flex;
   flex-wrap:wrap;
+  align-self:flex-start;
+  width:auto;
+  height:auto;
+  max-width:100%;
+  flex:0 0 auto;
   gap:8px;
   margin-top:auto;
 }
@@ -1113,7 +1118,8 @@ body.portal3-home > .page-footer{
   box-shadow:0 2px 7px rgba(0,45,95,.06);
 }
 
-.portal3-job-card span{
+.portal3-job-card .portal3-job-icon{
+  flex:none;
   display:inline-grid;
   place-items:center;
   width:38px;

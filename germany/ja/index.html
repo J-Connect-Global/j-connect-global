@@ -396,7 +396,7 @@
 
       <div class="portal3-job-row" id="homeJobsCards" data-home-jobs aria-live="polite">
         <div class="portal3-job-card portal3-fallback-card">
-          <span>▦</span>
+          <span class="portal3-job-icon">▦</span>
           <strong>ドイツの求人情報</strong>
           <small>公開中の求人を探すか、企業向けの求人掲載案内を確認できます。</small>
           <span class="portal3-fallback-actions">
@@ -786,7 +786,7 @@
       `;
       cardRoot.innerHTML = `
         <div class="portal3-job-card portal3-fallback-card">
-          <span>▦</span>
+          <span class="portal3-job-icon">▦</span>
           <strong>求人情報を一時的に表示できません</strong>
           <small>時間をおいて求人一覧を再度ご確認ください。</small>
           <span class="portal3-fallback-actions">
@@ -809,7 +809,7 @@
       `;
       cardRoot.innerHTML = `
         <div class="portal3-job-card portal3-fallback-card">
-          <span>▦</span>
+          <span class="portal3-job-icon">▦</span>
           <strong>現在公開中の求人はありません。</strong>
           <small>求職者向けガイドを確認するか、企業向けの求人掲載案内をご利用ください。</small>
           <span class="portal3-fallback-actions">
@@ -827,9 +827,9 @@
         return;
       }
 
-      const selected = [...jobs].sort(jobsShared.sortNewestFirst);
-      const selectedMini = selected.slice(0, 4);
-      const selectedCards = selected.slice(0, 4);
+      const allActiveJobs = [...jobs].sort(jobsShared.sortNewestFirst);
+      const selectedMini = allActiveJobs.slice(0, 4);
+      const selectedCards = allActiveJobs.slice(0, 4);
 
       miniRoot.innerHTML = selectedMini.map((job, index) => {
         const href = jobsShared.getJobDetailPath(job);
@@ -852,7 +852,7 @@
         const employmentType = String(job.employment_type || "").trim();
         return `
           <a class="portal3-job-card" href="${escapeHtml(href)}" data-job-id="${escapeHtml(job.id)}">
-            <span>${iconSet[index % iconSet.length]}</span>
+            <span class="portal3-job-icon">${iconSet[index % iconSet.length]}</span>
             <strong>${escapeHtml(job.position_title || "求人タイトル未設定")}</strong>
             <small>${escapeHtml(jobMeta(job) || "勤務地未設定")}</small>
             ${salary ? `<b>${escapeHtml(salary)}</b>` : ""}

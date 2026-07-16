@@ -1,8 +1,6 @@
 import { appendFile, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { isSampleOrTestJobRecord } from "./sync-public-data.mjs";
-
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const baselinePath = path.join(rootDir, "content", "quality-baselines", "public-data-quality.json");
 
@@ -11,30 +9,30 @@ const datasets = [
     key: "community",
     path: "assets/data/community/posts.json",
     fields: {
-      description: ["body", "summary"],
-      last_reviewed: ["updated_at", "published_at", "created_at"]
+      description: { anyOf: ["body", "summary"] },
+      last_reviewed: { anyOf: ["updated_at", "published_at", "created_at"] }
     }
   },
   {
     key: "jobs",
     path: "assets/data/jobs/jobs.json",
     fields: {
-      description: ["description", "job_details", "summary"],
-      application: ["apply_url", "application_url", "apply_method"],
-      last_reviewed: ["updated_at", "published_at", "created_at"]
+      description: { anyOf: ["description", "job_details", "summary"] },
+      application: { anyOf: ["apply_url", "application_url", "apply_method"] },
+      last_reviewed: { anyOf: ["updated_at", "published_at", "created_at"] }
     }
   },
   ...["eat", "shopping", "medical"].map((key) => ({
     key,
     path: `assets/data/${key}/items.json`,
     fields: {
-      description: ["description", "description_ja", "summary"],
-      rating: ["rating"],
-      official_url: ["official_url", "website", "source_url"],
-      coordinates: ["latitude", "longitude"],
-      phone: ["phone", "telephone"],
-      opening_hours: ["opening_hours", "openingHours"],
-      last_reviewed: ["last_reviewed_at", "updated_at", "reviewed_at"]
+      description: { anyOf: ["description", "description_ja", "summary"] },
+      rating: { anyOf: ["rating"] },
+      official_url: { anyOf: ["official_url", "website", "source_url"] },
+      coordinates: { allOf: ["latitude", "longitude"] },
+      phone: { anyOf: ["phone", "telephone"] },
+      opening_hours: { anyOf: ["opening_hours", "openingHours"] },
+      last_reviewed: { anyOf: ["last_reviewed_at", "updated_at", "reviewed_at"] }
     }
   }))
 ];
@@ -45,8 +43,10 @@ function hasValue(value) {
   return String(value ?? "").trim() !== "";
 }
 
-function hasAllValues(item, fields) {
-  return fields.every((field) => hasValue(item?.[field]));
+function hasFieldGroupValue(item, group) {
+  if (group && Array.isArray(group.anyOf)) return group.anyOf.some((field) => hasValue(item?.[field]));
+  if (group && Array.isArray(group.allOf)) return group.allOf.every((field) => hasValue(item?.[field]));
+  throw new Error("Each public-data quality field must declare anyOf or allOf semantics.");
 }
 
 function itemId(item, index) {
@@ -61,10 +61,10 @@ async function readDataset(root, definition) {
 }
 
 function missingFields(items, fields) {
-  return Object.fromEntries(Object.entries(fields).map(([field, acceptedFields]) => {
+  return Object.fromEntries(Object.entries(fields).map(([field, fieldGroup]) => {
     const ids = items
       .map((item, index) => ({ item, id: itemId(item, index) }))
-      .filter(({ item }) => !hasAllValues(item, acceptedFields))
+      .filter(({ item }) => !hasFieldGroupValue(item, fieldGroup))
       .map(({ id }) => id)
       .sort();
     return [field, { count: ids.length, ids }];
@@ -81,9 +81,6 @@ export async function buildPublicDataQualityReport({ root = rootDir } = {}) {
   for (const definition of datasets) {
     const payload = await readDataset(root, definition);
     const validation = payload.validation || {};
-    const publicSampleIds = definition.key === "jobs"
-      ? payload.items.map((item, index) => ({ item, id: itemId(item, index) })).filter(({ item }) => isSampleOrTestJobRecord(item)).map(({ id }) => id).sort()
-      : [];
     report.datasets.push({
       dataset: definition.key,
       public_count: payload.items.length,
@@ -93,8 +90,7 @@ export async function buildPublicDataQualityReport({ root = rootDir } = {}) {
       generated_count: Number(validation.generated_count ?? payload.items.length),
       excluded_by_reason: validation.excluded_by_reason || {},
       manual_correction_safe_ids: validation.manual_correction_safe_ids || {},
-      missing_fields: missingFields(payload.items, definition.fields),
-      public_sample_or_test_records: publicSampleIds
+      missing_fields: missingFields(payload.items, definition.fields)
     });
   }
   return report;
@@ -117,9 +113,6 @@ export function validateQualityBaseline(report, baseline) {
     return ["Public data quality baseline is missing or incompatible."];
   }
   for (const dataset of report.datasets) {
-    if (dataset.public_sample_or_test_records.length) {
-      errors.push(`${dataset.dataset} publishes sample/test records: ${dataset.public_sample_or_test_records.join(", ")}.`);
-    }
     const allowedForDataset = baseline.allowed_missing[dataset.dataset] || {};
     for (const [field, result] of Object.entries(dataset.missing_fields)) {
       const allowed = new Set(allowedForDataset[field] || []);

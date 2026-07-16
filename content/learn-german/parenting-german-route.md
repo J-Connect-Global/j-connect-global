@@ -7,7 +7,7 @@ summary: "Kita、学校、病院、子どもの日常会話で使う表現を、
 status: "published"
 published: true
 published_at: "2026-06-20"
-last_verified: "2026-06-20"
+last_verified: "2026-07-16"
 tags: ["子育て", "Kita", "A2"]
 canonical_url: "/germany/ja/learn-german/parenting-german-route/"
 ---
@@ -21,6 +21,8 @@ canonical_url: "/germany/ja/learn-german/parenting-german-route/"
 - 病院予約や電話連絡で聞き返しながら進められる
 
 ## 読む順番
+
+![子どものリュック、連絡メモ、時計、電話、色鉛筆を机に準備した様子](/assets/images/learn-german/parenting-contact-prep.webp "AI生成イラスト：Kita・学校への連絡前に確認するもの")
 
 1. [Kita・学校への問い合わせで使うドイツ語フレーズ](/germany/ja/learn-german/kita-school-inquiry-phrases/)
 2. [子育て・育児で使うドイツ語](/germany/ja/learn-german/parenting-phrases/)
@@ -43,3 +45,19 @@ canonical_url: "/germany/ja/learn-german/parenting-german-route/"
 ## 次に進むステップ
 
 メールと電話の基本が固まったら、子どもの状況を一文で説明する練習を増やしてください。病院、Kita、学校で同じ型を使い回せます。
+
+## 毎週使える3つの型
+
+**欠席連絡:** *Mein Kind kann heute leider nicht kommen, weil ___. *
+
+**確認:** *Können Sie mir bitte sagen, ob ich noch etwas mitbringen muss?*
+
+**共有:** *Ich möchte kurz Bescheid geben, dass ___.*
+
+この三つを、Kita、学校、習い事、診療所の場面に入れ替えて練習します。子どもの病状や家庭状況を必要以上に詳しく書かず、欠席日・迎えの時間・必要な対応だけを明確にする方が伝わります。
+
+## 連絡帳・メールを読む手順
+
+学校やKitaの連絡は、最初に日付、締切、持ち物、返信が必要かを印で確認します。分からない文は、そのまま貼り付けて翻訳に頼る前に、`Wann? Was mitbringen? Muss ich antworten?` の三点を確認します。個人情報が含まれる画面や連絡帳を外部サービスに送らないよう注意してください。
+
+緊急連絡先、医療上の指示、同意書は、言い回しが不安でも自己判断で記入せず、施設の担当者または通訳支援に確認します。[病院予約の電話で使うドイツ語](/germany/ja/learn-german/hospital-phrases/)の復唱フレーズは、子どもの受診にも使えます。

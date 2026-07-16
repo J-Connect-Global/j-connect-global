@@ -2,10 +2,11 @@ import { expect, test } from "@playwright/test";
 import {
   activateDarkMode,
   assertCommunityCards,
+  assertArticleHeroFrame,
   assertNoIndex,
   assertNoRuntimeDiagnostics,
+  assertPublicJobs,
   assertRouteReady,
-  assertNoPublicJobs,
   fixtureCommunityDetailPath,
   fixtureCommunityPost,
   installRuntimeDiagnostics,
@@ -47,9 +48,15 @@ test("mobile Community renders the active fixtures", async ({ page }) => {
   await assertRouteReady(page);
 });
 
-test("mobile Jobs has no overflow in the public empty state", async ({ page }) => {
+test("mobile Jobs renders all active records without overflow", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/jobs/", "/assets/data/jobs/jobs.json");
-  await assertNoPublicJobs(page);
+  await assertPublicJobs(page);
+  await assertRouteReady(page);
+});
+
+test("mobile article hero frame remains a readable 16:9 crop", async ({ page }) => {
+  await openRoute(page, "/germany/ja/learn-german/hospital-phrases/");
+  await assertArticleHeroFrame(page, { minRatio: 1.72, maxRatio: 1.84 });
   await assertRouteReady(page);
 });
 

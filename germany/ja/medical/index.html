@@ -227,7 +227,7 @@
               <span class="directory-seed-label">医療情報の確認</span>
               <h3 class="card-title jc-result-title">このページは医療上の助言や診断ではありません</h3>
               <p class="card-desc">医療リソース一覧は、公開データが利用できるときに表示されます。診療内容、受付時間、言語対応、保険対応は必ず公式サイトまたは医療機関へ直接確認してください。</p>
-              <div class="directory-medical-note">生命の危険がある場合や重い症状は112、緊急ではないものの診療時間外に医療上の助けが必要な場合は116117へ連絡してください。116117の電話対応はドイツ語です。</div>
+              <div class="directory-medical-note">生命の危険がある場合や重い症状は112（<a href="https://gesund.bund.de/en/emergency-numbers" target="_blank" rel="noopener noreferrer">公式案内</a>）、緊急ではないものの診療時間外に医療上の助けが必要な場合は<a href="https://www.116117.de/de/englisch.php" target="_blank" rel="noopener noreferrer">116117</a>へ連絡してください。116117の電話対応はドイツ語です。</div>
             </div>
             <div class="link-row jc-result-actions">
               <a class="btn btn-primary" href="/germany/ja/contact/">掲載・修正を相談</a>
@@ -348,6 +348,8 @@
       statusBox: document.getElementById("statusBox"),
       cards: document.getElementById("cards"),
       mainLayout: document.getElementById("mainLayout"),
+      viewToggle: document.querySelector(".view-toggle-wrap"),
+      filters: document.querySelector(".filters"),
       cardViewBtn: document.getElementById("cardViewBtn"),
       gridViewBtn: document.getElementById("gridViewBtn"),
       mapViewBtn: document.getElementById("mapViewBtn"),
@@ -366,6 +368,7 @@
     let activeId = null;
     let modalReturnFocus = null;
     let currentView = "list";
+    let intentionallyEmpty = false;
     const filterState = {
       region: "",
       category: "",
@@ -380,6 +383,10 @@
       { value: "3.5", label: "★3.5以上" },
       { value: "3.0", label: "★3.0以上" }
     ];
+
+    const medicalGuideHtml = `
+      <div class="directory-medical-note">このページは医療機関を探すための入口であり、医療上の助言や診断ではありません。受診前に必ず公式サイトまたは医療機関へ直接確認してください。生命の危険がある場合や重い症状は112（<a href="https://gesund.bund.de/en/emergency-numbers" target="_blank" rel="noopener noreferrer">公式案内</a>）、緊急ではないものの診療時間外に医療上の助けが必要な場合は<a href="https://www.116117.de/de/englisch.php" target="_blank" rel="noopener noreferrer">116117</a>へ連絡してください。116117の電話対応はドイツ語です。</div>
+    `;
 
     function escapeHtml(value) {
       return String(value ?? "")
@@ -582,7 +589,19 @@
     }
 
     function renderSummary() {
+      if (intentionallyEmpty) {
+        els.resultsSummary.textContent = "医療機関一覧は現在準備中です";
+        return;
+      }
       els.resultsSummary.textContent = `${filteredItems.length} 件 / 全 ${rawItems.length} 件`;
+    }
+
+    function setMedicalEmptyMode(enabled) {
+      els.mainLayout.classList.toggle("medical-empty-mode", enabled);
+      if (els.viewToggle) els.viewToggle.hidden = enabled;
+      if (els.filters) els.filters.hidden = enabled;
+      if (els.mapPanel) els.mapPanel.hidden = enabled;
+      if (enabled) els.activeChips.innerHTML = "";
     }
 
     function renderMedicalStatus({ title, body, guidance = [], isError = false, showRetry = false, showReset = true }) {
@@ -592,7 +611,7 @@
       els.statusBox.innerHTML = `
         <span class="status-title">${escapeHtml(title)}</span>
         <div>${escapeHtml(body)}</div>
-        <div class="directory-medical-note">このページは医療機関を探すための入口であり、医療上の助言や診断ではありません。受診前に必ず公式サイトまたは医療機関へ直接確認してください。生命の危険がある場合や重い症状は112、緊急ではないものの診療時間外に医療上の助けが必要な場合は116117へ連絡してください。116117の電話対応はドイツ語です。</div>
+        ${medicalGuideHtml}
         <div class="status-actions">
           ${showRetry ? `<button class="btn btn-primary" type="button" data-retry-load>再読み込み</button>` : ""}
           ${showReset ? `<button class="btn btn-secondary" type="button" data-reset-filters>条件をリセット</button>` : ""}
@@ -619,7 +638,8 @@
           : "医療リソース一覧は、公開データが利用できるときに表示されます。受診先と受付条件は公式情報で確認してください。",
         guidance: ["Hausarzt・小児科", "歯科・専門医", "薬局・緊急時の確認先"],
         isError,
-        showRetry: isError
+        showRetry: isError,
+        showReset: !intentionallyEmpty
       });
     }
 
@@ -1042,10 +1062,13 @@
       try {
         const payload = await fetchJsonWithTimeout(STATIC_DATA_URL);
         const rows = normalizePayload(payload);
-        if (!rows.length && payload?.validation?.intentionally_empty !== true) {
+        const isIntentionallyEmpty = !rows.length && payload?.validation?.intentionally_empty === true;
+        if (!rows.length && !isIntentionallyEmpty) {
           throw new Error("Static Medical data unexpectedly contains zero eligible records.");
         }
 
+        intentionallyEmpty = isIntentionallyEmpty;
+        setMedicalEmptyMode(intentionallyEmpty);
         rawItems = rows.map(parseItem).filter(item => item.title && item.title !== "名称未設定");
         const hasMapItems = rawItems.some(item => item.lat !== null && item.lng !== null);
         els.mapViewBtn.disabled = !hasMapItems;
@@ -1056,6 +1079,8 @@
         applyFilters();
       } catch (error) {
         console.error("Medical static data load failed.", error);
+        intentionallyEmpty = false;
+        setMedicalEmptyMode(false);
         rawItems = [];
         filteredItems = [];
         renderSummary();

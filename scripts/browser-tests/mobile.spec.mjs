@@ -10,7 +10,8 @@ import {
   fixtureCommunityDetailPath,
   fixtureCommunityPost,
   installRuntimeDiagnostics,
-  openDataRoute
+  openDataRoute,
+  openRoute
 } from "./support.mjs";
 
 test.beforeEach(async ({ page }) => {
@@ -59,5 +60,19 @@ test("mobile Community detail renders the requested fixture", async ({ page }) =
   await expect(page.locator("#detailTitle")).toHaveText(fixtureCommunityPost.title);
   await assertOneManualShareButton(page);
   await assertNoIndex(page);
+  await assertRouteReady(page);
+});
+
+test("mobile legal disclosure remains readable in light and dark modes", async ({ page }) => {
+  await openRoute(page, "/germany/ja/impressum/");
+  await expect(page.locator("main")).toContainText("Yoshihiro Nagamatsu");
+  await expect(page.locator("main")).toContainText("Am Rosenberg 9");
+  await assertRouteReady(page);
+  await activateDarkMode(page);
+  await assertRouteReady(page);
+
+  await openRoute(page, "/germany/ja/privacy/");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(page.locator("main h1")).toHaveText("プライバシーポリシー");
   await assertRouteReady(page);
 });

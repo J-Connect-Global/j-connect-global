@@ -167,6 +167,7 @@ button{cursor:pointer}
   grid-template-columns:280px minmax(0,1fr) minmax(380px,.82fr);
   gap:16px;
 }
+.layout.medical-empty-mode{grid-template-columns:minmax(0,1fr)}
 .filters{position:sticky;top:92px;min-width:0}
 .content{min-width:0}
 .panel,.filter-panel,.card,.map-shell,.status-box,.empty-box{

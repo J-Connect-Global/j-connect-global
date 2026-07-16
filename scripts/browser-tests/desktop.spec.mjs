@@ -210,6 +210,20 @@ test("Eat renders the committed fixture dataset", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/eat/", "/assets/data/eat/items.json");
   await expect(page.locator("#cards [data-item-id]")).toHaveCount(eatFixture.items.length);
   await expect(page.locator("#resultsSummary")).toContainText(`全${eatFixture.items.length}件`);
+  await expect(page.locator("#cards")).not.toContainText("★0.0");
+  const expectedRatedEat = eatFixture.items.filter((item) => Number(item.rating) >= 4).length;
+  await page.locator('#starChipGroup [data-value="4.0"]').click();
+  await expect(page.locator("#cards [data-item-id]")).toHaveCount(expectedRatedEat);
+  await page.locator('#starChipGroup [data-value=""]').click();
+  const eatBranchGroups = new Map();
+  for (const item of eatFixture.items) {
+    if (!eatBranchGroups.has(item.name)) eatBranchGroups.set(item.name, []);
+    eatBranchGroups.get(item.name).push(item);
+  }
+  const eatBranch = [...eatBranchGroups.values()].find((items) => new Set(items.map((item) => item.address)).size > 1)?.[0];
+  expect(eatBranch, "an Eat same-name branch fixture is required").toBeTruthy();
+  const eatBranchCard = page.locator(`[data-item-id="${eatBranch.slug || eatBranch.id}"]`);
+  await expect(eatBranchCard).toContainText(eatBranch.street || eatBranch.address);
   await assertDirectoryModalKeyboard(page);
   await assertRouteReady(page);
 });
@@ -219,6 +233,11 @@ test("Shopping renders the committed fixture dataset", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/shopping/", "/assets/data/shopping/items.json");
   await expect(page.locator("#cards [data-item-id]")).toHaveCount(shoppingFixture.items.length);
   await expect(page.locator("#resultsSummary")).toContainText(`全${shoppingFixture.items.length}件`);
+  await expect(page.locator("#cards")).not.toContainText("★0.0");
+  const expectedRatedShopping = shoppingFixture.items.filter((item) => Number(item.rating) >= 4).length;
+  await page.locator('#starChipGroup [data-value="4.0"]').click();
+  await expect(page.locator("#cards [data-item-id]")).toHaveCount(expectedRatedShopping);
+  await page.locator('#starChipGroup [data-value=""]').click();
   await assertDirectoryModalKeyboard(page);
   await assertRouteReady(page);
 });
@@ -231,6 +250,11 @@ test("Medical renders its intentional empty state and emergency guidance", async
   await expect(page.locator("#statusBox")).toContainText("現在は医療機関を探すための基本ガイドを表示しています");
   await expect(page.locator("#statusBox")).toContainText("112");
   await expect(page.locator("#statusBox")).toContainText("116117");
+  await expect(page.locator(".view-toggle-wrap")).toBeHidden();
+  await expect(page.locator(".filters")).toBeHidden();
+  await expect(page.locator("#mapPanel")).toHaveAttribute("hidden", "");
+  await expect(page.locator('#statusBox a[href="https://gesund.bund.de/en/emergency-numbers"]')).toHaveCount(1);
+  await expect(page.locator('#statusBox a[href="https://www.116117.de/de/englisch.php"]')).toHaveCount(1);
   await assertRouteReady(page);
 
   const modalFixture = {
@@ -258,7 +282,29 @@ test("Medical renders its intentional empty state and emergency guidance", async
   }));
   await openDataRoute(page, "/germany/ja/medical/", "/assets/data/medical/items.json");
   await expect(page.locator("#cards .jc-result-card")).toHaveCount(1);
+  await expect(page.locator(".view-toggle-wrap")).toBeVisible();
+  await expect(page.locator(".filters")).toBeVisible();
   await assertDirectoryModalKeyboard(page);
+  await assertRouteReady(page);
+});
+
+test("legal trust pages expose the operator clearly in light and dark modes", async ({ page }) => {
+  await openRoute(page, "/germany/ja/impressum/");
+  await expect(page.locator("main h1")).toHaveText("運営者情報");
+  await expect(page.locator("main")).toContainText("Yoshihiro Nagamatsu");
+  await expect(page.locator("main")).toContainText("Am Rosenberg 9");
+  await expect(page.locator("main")).toContainText("§ 18 Abs. 2 MStV");
+  await assertRouteReady(page);
+
+  await openRoute(page, "/germany/ja/privacy/");
+  await expect(page.locator("main h1")).toHaveText("プライバシーポリシー");
+  await expect(page.locator("main")).toContainText("G-BSKBFKQY19");
+  await activateDarkMode(page);
+  await assertWcagTextContrast(page, "main", "dark-mode privacy text");
+  await assertRouteReady(page);
+
+  await openRoute(page, "/germany/ja/contact/");
+  await expect(page.locator(".form-privacy-notice a")).toHaveAttribute("href", "/germany/ja/privacy/");
   await assertRouteReady(page);
 });
 

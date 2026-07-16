@@ -3604,6 +3604,19 @@
   border-bottom:0;
 }
 
+.form-privacy-notice{
+  margin:12px 0 0;
+  color:var(--color-text-muted, #526170);
+  font-size:13px;
+  line-height:1.6;
+}
+
+.form-privacy-notice a{
+  color:inherit;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+
 @media (max-width:640px){
   .jc-info-table{
     min-width:700px;

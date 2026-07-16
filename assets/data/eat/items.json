@@ -2526,13 +2526,13 @@
       ]
     },
     "generated_count": 63,
-    "map_eligible_count": 30,
-    "intentionally_empty": false,
     "unknown_rating_count": 59,
     "manual_correction_safe_ids": {
       "category_pair": [],
       "suspicious_duplicate_coordinates": []
-    }
+    },
+    "map_eligible_count": 30,
+    "intentionally_empty": false
   },
-  "generated_at": "2026-07-13T21:48:07.234Z"
+  "generated_at": "2026-07-16T07:03:52.951Z"
 }

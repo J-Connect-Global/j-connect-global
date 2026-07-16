@@ -14,13 +14,13 @@
     },
     "excluded_safe_ids": {},
     "generated_count": 0,
-    "map_eligible_count": 0,
-    "intentionally_empty": true,
     "unknown_rating_count": 0,
     "manual_correction_safe_ids": {
       "category_pair": [],
       "suspicious_duplicate_coordinates": []
-    }
+    },
+    "map_eligible_count": 0,
+    "intentionally_empty": true
   },
-  "generated_at": "2026-07-13T21:48:07.234Z"
+  "generated_at": "2026-07-16T07:03:52.951Z"
 }

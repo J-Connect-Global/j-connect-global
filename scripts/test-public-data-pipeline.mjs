@@ -165,7 +165,7 @@ const hardenedRealJob = normalizeJob({
 }, 0, classifyJob({ status: "active" }, now));
 assert.equal(hardenedRealJob.id, "safe-real-example", "unsafe source ID was not replaced with a safe deterministic ID");
 assert.equal(hardenedRealJob.slug, "safe-real-example-safe-real-example", "unsafe source slug was not replaced with a safe deterministic slug");
-assert.equal(hardenedRealJob.detail_url, "");
+assert.equal(hardenedRealJob.detail_url, "/germany/ja/jobs/safe-real-example/");
 assert.equal(hardenedRealJob.apply_method, "");
 assert.equal(hardenedRealJob.apply_url, "");
 for (const encodedPrivateMethod of [
@@ -192,6 +192,7 @@ assert.equal(safeRelativeDetailJob.detail_url, "/germany/ja/jobs/safe-detail/");
 const internalTitlePost = normalizeCommunityPost({ status: "active", title: "Internal transfer" }, 0);
 assert.equal(internalTitlePost.id, "community-row-1", "private-marker title prevented the guaranteed Community row ID fallback");
 assert.equal(internalTitlePost.slug, "community-row-1", "private-marker title leaked into the Community slug");
+assert.equal(internalTitlePost.detail_url, "/germany/ja/community/posts/community-row-1/");
 const internalTitleJob = normalizeJob(
   { status: "active", position_title: "Internal sales" },
   0,

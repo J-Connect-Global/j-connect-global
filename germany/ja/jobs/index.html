@@ -1041,7 +1041,8 @@
     }
 
     function getJobDetailPath(job){
-      return `/germany/ja/jobs/detail/?id=${encodeURIComponent(job.id)}`;
+      return window.JCONNECT_JOBS_SHARED?.getJobDetailPath(job)
+        || `/germany/ja/jobs/detail/?id=${encodeURIComponent(job.id)}`;
     }
 
     function getJobDetailUrl(job){

@@ -1612,7 +1612,7 @@ function updateHome(datasets) {
   const learnGermanContent = homeItems(datasets['learn-german'], contentTypes['learn-german'].homeLimit).map(renderHomeLearnGermanCard).join('\n\n');
   const homeArticleItemsByUrl = new Map(Object.values(datasets).flatMap((items) => items).map((item) => [item.url, item]));
 
-  html = replaceHomePanelContent(html, contentTypes.living.homeMarker, '新着コンテンツ', latestDigestCards, 8);
+  html = replaceHomePanelContent(html, contentTypes.living.homeMarker, 'おすすめコンテンツ', latestDigestCards, 8);
   html = replaceHomeSectionCardRow(html, 'living', livingSectionCards);
   html = replaceHomeNewsList(html, newsList);
   html = replaceMarkedDivContent(html, contentTypes.events.homeMarker, /<div class="portal3-event-row">/, eventCards, 10);
@@ -1628,12 +1628,12 @@ function updateHomeTopPanelChrome(html) {
       '<h2><a class="portal3-panel-title-link" href="/germany/ja/community/">掲示板トピック</a></h2>\n          <a class="portal3-panel-more" href="/germany/ja/community/">掲示板一覧へ</a>'
     )
     .replace(
-      /<h2>(?:<a class="portal3-panel-title-link" href="\/germany\/ja\/living\/">)?(?:新着記事|新着コンテンツ)(?:<\/a>)?<\/h2>\s*<a\b[^>]*href="\/germany\/ja\/living\/"[^>]*>[^<]*<\/a>/,
-      '<h2><a class="portal3-panel-title-link" href="/germany/ja/living/">新着コンテンツ</a></h2>'
+      /<h2>(?:<a class="portal3-panel-title-link" href="\/germany\/ja\/living\/">)?(?:新着記事|新着コンテンツ|おすすめコンテンツ)(?:<\/a>)?<\/h2>\s*<a\b[^>]*href="\/germany\/ja\/living\/"[^>]*>[^<]*<\/a>/,
+      '<h2><a class="portal3-panel-title-link" href="/germany/ja/living/">おすすめコンテンツ</a></h2>'
     )
     .replace(
-      /<h2>(?:<a class="portal3-panel-title-link" href="\/germany\/ja\/living\/">)?(?:新着記事|新着コンテンツ)(?:<\/a>)?<\/h2>/,
-      '<h2><a class="portal3-panel-title-link" href="/germany/ja/living/">新着コンテンツ</a></h2>'
+      /<h2>(?:<a class="portal3-panel-title-link" href="\/germany\/ja\/living\/">)?(?:新着記事|新着コンテンツ|おすすめコンテンツ)(?:<\/a>)?<\/h2>/,
+      '<h2><a class="portal3-panel-title-link" href="/germany/ja/living/">おすすめコンテンツ</a></h2>'
     )
     .replace(
       /<h2>(?:<a class="portal3-panel-title-link" href="\/germany\/ja\/jobs\/">)?求人ピックアップ(?:<\/a>)?<\/h2>\s*<a\b[^>]*href="\/germany\/ja\/jobs\/"[^>]*>[^<]*<\/a>/,

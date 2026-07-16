@@ -19,7 +19,7 @@ export const medicalFixture = await readFixture("assets/data/medical/items.json"
 export const activeCommunityPosts = communityFixture.items.filter((post) => post.status === "active");
 export const fixtureCommunityPost = activeCommunityPosts[0];
 export const fixtureCommunityPostId = fixtureCommunityPost?.post_id || fixtureCommunityPost?.id || "";
-export const fixtureCommunityDetailPath = `/germany/ja/community/post/?id=${encodeURIComponent(fixtureCommunityPostId)}`;
+export const fixtureCommunityDetailPath = fixtureCommunityPost?.detail_url || `/germany/ja/community/post/?id=${encodeURIComponent(fixtureCommunityPostId)}`;
 
 function communityFixtureImageUrls(post) {
   const values = [

@@ -114,6 +114,12 @@
 
   function getJobDetailPath(job) {
     const identifier = job.id || job.slug;
+    const normalizedId = clean(identifier).normalize("NFKC");
+    const encodedId = encodeURIComponent(normalizedId).replace(/[!'()*]/g, (character) =>
+      `%${character.charCodeAt(0).toString(16).toUpperCase()}`
+    );
+    const expected = `/germany/ja/jobs/${encodedId}/`;
+    if (clean(job.detail_url) === expected) return expected;
     return `/germany/ja/jobs/detail/?id=${encodeURIComponent(identifier)}`;
   }
 

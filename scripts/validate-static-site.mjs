@@ -148,6 +148,7 @@ const excludedWalkDirectories = new Set([
   'node_modules',
   'playwright-report',
   'test-results',
+  '_site',
 ]);
 const htmlFiles = [];
 const textFiles = [];

@@ -8,7 +8,7 @@
       "id": "a",
       "job_id": "a",
       "slug": "会計アシスタント-japanese-desk-a社-求人サンプル-ハンブルク-a",
-      "detail_url": "",
+      "detail_url": "/germany/ja/jobs/a/",
       "status": "active",
       "priority": 1,
       "company_name": "A社 (求人サンプル)",
@@ -46,13 +46,15 @@
       "published_at": "2026-07-11T22:00:00.000Z",
       "updated_at": "2026-07-11T22:00:00.000Z",
       "created_at": "",
-      "expires_at": ""
+      "expires_at": "",
+      "salary_currency": "",
+      "salary_unit": ""
     },
     {
       "id": "b",
       "job_id": "b",
       "slug": "物流オペレーション担当-b社-求人サンプル-デュッセルドルフ-b",
-      "detail_url": "",
+      "detail_url": "/germany/ja/jobs/b/",
       "status": "active",
       "priority": 2,
       "company_name": "B社 (求人サンプル)",
@@ -90,13 +92,15 @@
       "published_at": "2026-07-11T22:00:00.000Z",
       "updated_at": "2026-07-11T22:00:00.000Z",
       "created_at": "",
-      "expires_at": ""
+      "expires_at": "",
+      "salary_currency": "",
+      "salary_unit": ""
     },
     {
       "id": "c",
       "job_id": "c",
       "slug": "サポートエンジニア-c社-求人サンプル-デュッセルドルフ-c",
-      "detail_url": "",
+      "detail_url": "/germany/ja/jobs/c/",
       "status": "active",
       "priority": 3,
       "company_name": "C社 (求人サンプル)",
@@ -134,13 +138,15 @@
       "published_at": "2026-07-11T22:00:00.000Z",
       "updated_at": "2026-07-11T22:00:00.000Z",
       "created_at": "",
-      "expires_at": ""
+      "expires_at": "",
+      "salary_currency": "",
+      "salary_unit": ""
     },
     {
       "id": "d",
       "job_id": "d",
       "slug": "営業担当-食品-d社-求人サンプル-フランクフルト-d",
-      "detail_url": "",
+      "detail_url": "/germany/ja/jobs/d/",
       "status": "active",
       "priority": 4,
       "company_name": "D社 (求人サンプル)",
@@ -178,7 +184,9 @@
       "published_at": "2026-07-11T22:00:00.000Z",
       "updated_at": "2026-07-11T22:00:00.000Z",
       "created_at": "",
-      "expires_at": ""
+      "expires_at": "",
+      "salary_currency": "",
+      "salary_unit": ""
     }
   ],
   "validation": {

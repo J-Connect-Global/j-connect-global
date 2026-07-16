@@ -26,7 +26,7 @@ export default defineConfig({
     screenshot: "only-on-failure"
   },
   webServer: {
-    command: "node scripts/browser-tests/static-server.mjs",
+    command: "node scripts/browser-tests/build-and-serve.mjs",
     env: {
       ...process.env,
       PORT: String(port)

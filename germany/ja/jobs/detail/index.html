@@ -720,6 +720,11 @@
         renderEmpty("unavailable");
         return;
       }
+      const canonicalDetail = JOBS_SHARED.getJobDetailPath(matchedJob);
+      if (canonicalDetail.startsWith("/germany/ja/jobs/") && !canonicalDetail.startsWith("/germany/ja/jobs/detail/")) {
+        location.replace(canonicalDetail);
+        return;
+      }
       renderJob(matchedJob);
     } catch (error) {
       console.warn("Job detail public JSON load failed:", JOBS_STATIC_URL, error);

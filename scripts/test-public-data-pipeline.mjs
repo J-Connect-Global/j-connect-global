@@ -5,6 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   EXPECTED_API_VERSION,
+  assessDirectoryDataQuality,
   assertApiVersion,
   assertNoPrivateFields,
   assertNoLegacyEndpointOverrides,
@@ -204,7 +205,8 @@ assert.equal(classifyJob({ status: "inactive" }, now).eligible, false);
 const validDirectoryBase = {
   status: "active",
   name: "Public place",
-  category1: "Cafe",
+  category1: "🌸和食",
+  category2: "🍜ラーメン",
   city: "Berlin",
   website: "https://example.com",
   updated_at: "2026-07-01"
@@ -220,6 +222,37 @@ assert.equal(validateDirectoryRow(validDirectoryBase, "medical").eligible, true)
 const normalizedDirectory = normalizeDirectoryItem({ ...validDirectoryBase, notes_internal: "private", map_url: "javascript:alert(1)" }, "eat", 0);
 assert.equal(normalizedDirectory.map_url, "");
 assert.equal(Object.hasOwn(normalizedDirectory, "notes_internal"), false);
+assert.equal(normalizeDirectoryItem({ ...validDirectoryBase, rating: 0 }, "eat", 0).rating, null);
+assert.equal(normalizeDirectoryItem({ ...validDirectoryBase, rating: "4.6" }, "eat", 0).rating, 4.6);
+const categoryCorrection = normalizeDirectoryItem({
+  ...validDirectoryBase,
+  id: "bad-category-pair",
+  category1: "🌸和食",
+  category2: "食品"
+}, "eat", 0);
+assert.equal(categoryCorrection.category1, "🌸和食");
+assert.equal(categoryCorrection.category2, "", "invalid child category was silently reassigned");
+const duplicateBranches = [
+  normalizeDirectoryItem({ ...validDirectoryBase, id: "same-name-a", name: "Same branch name", address: "Street 1" }, "eat", 0),
+  normalizeDirectoryItem({ ...validDirectoryBase, id: "same-name-b", name: "Same branch name", address: "Street 2" }, "eat", 1)
+];
+const duplicateBranchQuality = assessDirectoryDataQuality(duplicateBranches);
+assert.equal(duplicateBranchQuality.items.length, 2, "same-name branches were deduplicated");
+assert.notEqual(duplicateBranchQuality.items[0].id, duplicateBranchQuality.items[1].id);
+const suspiciousCoordinates = [
+  normalizeDirectoryItem({ ...validDirectoryBase, id: "coord-a", address: "Street 1", latitude: 51.2, longitude: 6.7 }, "eat", 0),
+  normalizeDirectoryItem({ ...validDirectoryBase, id: "coord-b", address: "Street 2", latitude: 51.2, longitude: 6.7 }, "eat", 1)
+];
+const suspiciousCoordinateQuality = assessDirectoryDataQuality(suspiciousCoordinates);
+assert.equal(suspiciousCoordinateQuality.items.every((item) => item.latitude === null && item.longitude === null), true);
+assert.deepEqual(
+  suspiciousCoordinateQuality.diagnostics.manual_correction_safe_ids.suspicious_duplicate_coordinates,
+  ["coord-a", "coord-b"]
+);
+assert.deepEqual(
+  assessDirectoryDataQuality([categoryCorrection]).diagnostics.manual_correction_safe_ids.category_pair,
+  ["bad-category-pair"]
+);
 const privateMarkerDirectory = normalizeDirectoryItem({
   ...validDirectoryBase,
   id: "",
@@ -275,7 +308,8 @@ for (const key of [
 assert.equal(assertNoPrivateFields({
   validation: {
     excluded_by_reason: { real_missing_authorization: 1 },
-    excluded_safe_ids: { real_missing_authorization: ["job-safe"] }
+    excluded_safe_ids: { real_missing_authorization: ["job-safe"] },
+    manual_correction_safe_ids: { category_pair: ["directory-safe"] }
   }
 }), true, "public validation reason labels were treated as private fields");
 assert.throws(
@@ -490,6 +524,9 @@ for (const [relative, payload] of committedDatasetPayloads) {
   for (const ids of Object.values(report.excluded_safe_ids || {})) {
     assert.equal(Array.isArray(ids) && ids.length <= 50, true, `${relative} exposes uncapped excluded safe IDs`);
   }
+  for (const ids of Object.values(report.manual_correction_safe_ids || {})) {
+    assert.equal(Array.isArray(ids) && ids.length <= 50, true, `${relative} exposes uncapped correction safe IDs`);
+  }
 }
 
 assert.equal(committedCommunity.count > 0, true, "Community must retain at least one public item");
@@ -501,6 +538,24 @@ for (const job of committedJobs.items) {
 assert.match(home, /const selectedMini = selected\.slice\(0, 4\)/);
 assert.match(home, /const selectedCards = selected\.slice\(0, 4\)/);
 assert.equal(committedEat.items.some((item) => String(item.category2).toLowerCase() === "test"), false);
+for (const payload of [committedEat, committedShopping, committedMedical]) {
+  assert.equal(payload.items.every((item) => item.rating === null || item.rating > 0), true, "Directory retained a zero/invalid rating");
+}
+const eatNameAddresses = new Map();
+for (const item of committedEat.items) {
+  if (!eatNameAddresses.has(item.name)) eatNameAddresses.set(item.name, new Set());
+  eatNameAddresses.get(item.name).add(item.address);
+}
+assert.equal([...eatNameAddresses.values()].some((addresses) => addresses.size > 1), true, "same-name Eat branches were not preserved");
+const shoppingCoordinates = new Map();
+for (const item of committedShopping.items.filter((entry) => entry.latitude !== null && entry.longitude !== null)) {
+  const coordinate = `${item.latitude},${item.longitude}`;
+  if (!shoppingCoordinates.has(coordinate)) shoppingCoordinates.set(coordinate, new Set());
+  shoppingCoordinates.get(coordinate).add(`${item.address}|${item.postcode}|${item.city}`.toLowerCase());
+}
+assert.equal([...shoppingCoordinates.values()].every((addresses) => addresses.size <= 1), true, "suspicious Shopping coordinates remain map-eligible");
+assert.equal(committedShopping.validation.manual_correction_safe_ids.category_pair.length, 4);
+assert.equal(committedShopping.validation.manual_correction_safe_ids.suspicious_duplicate_coordinates.length, 37);
 
 if (committedCommunity.api_version === "unversioned-bootstrap") {
   assert.equal(committedCommunity.count, 6);

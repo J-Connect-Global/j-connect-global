@@ -3,6 +3,7 @@ import { mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
 import { isIP } from "node:net";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { normalizeDirectoryCategoryPair, normalizeDirectoryRating } from "./directory-category-map.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
@@ -39,6 +40,7 @@ const PRIVATE_URL_PARAMETER_NAMES = new Set([
   "email", "contact_email", "reviewer_email"
 ]);
 const PLACEHOLDER_CATEGORY_VALUES = new Set(["test", "placeholder", "dummy", "n/a", "na", "-"]);
+const directoryItemDiagnostics = new WeakMap();
 
 const timeoutMs = Number(process.env.PUBLIC_DATA_TIMEOUT_MS || 30000);
 const generatedAt = new Date().toISOString();
@@ -527,6 +529,7 @@ export function validateDirectoryRow(row, dataset, index = 0) {
 
 export function normalizeDirectoryItem(row, dataset, index) {
   const fields = directoryFields(row, dataset, index);
+  const categoryPair = normalizeDirectoryCategoryPair(dataset, fields.category, fields.detailCategory);
   const latitude = toNumber(first(row, ["latitude", "lat", "location_lat", "location/lat"]));
   const longitude = toNumber(first(row, ["longitude", "lng", "lon", "location_lng", "location/lng"]));
   const hasCoordinates = clean(first(row, ["latitude", "lat", "location_lat", "location/lat"])) !== ""
@@ -534,17 +537,17 @@ export function normalizeDirectoryItem(row, dataset, index) {
     && Number.isFinite(latitude) && Number.isFinite(longitude);
   const address = first(row, ["address", "completeAddress", "completeaddress", "street"]);
   const description = first(row, ["short_description", "description_ja", "description"]);
-  return {
+  const item = {
     id: fields.id, slug: safePublicSlug(first(row, ["slug"]), stableSlug(fields.name, fields.cityArea, fields.id), fields.id), status: "active",
     name: fields.name, title: fields.name, name_ja: first(row, ["name_ja"]), name_en: first(row, ["name_en"]),
-    category: fields.category, category1: fields.category, detail_category: fields.detailCategory, category2: fields.detailCategory,
+    category: categoryPair.category1, category1: categoryPair.category1, detail_category: categoryPair.category2, category2: categoryPair.category2,
     city: first(row, ["city"]), region: first(row, ["region", "state", "area", "city"]), area: first(row, ["area"]),
     address, street: first(row, ["street", "address"]), postcode: first(row, ["postcode", "postalCode", "postalcode"]),
     country_code: first(row, ["country_code", "countryCode", "countrycode"]),
     short_description: description, description,
     detail_comment: first(row, ["detail_comment", "long_description", "comment"]),
     description_en: first(row, ["description_en"]), tags: first(row, ["tags", "keywords"]),
-    price: first(row, ["price", "price_range"]), rating: toNumber(first(row, ["rating", "totalScore", "totalscore", "score"])),
+    price: first(row, ["price", "price_range"]), rating: normalizeDirectoryRating(first(row, ["rating", "totalScore", "totalscore", "score"])),
     reviews_count: toNumber(first(row, ["reviews_count", "reviewsCount", "reviewscount", "review_count"])),
     official_url: safeHttpUrl(fields.officialRaw), website: safeHttpUrl(fields.officialRaw), map_url: safeHttpUrl(fields.mapRaw),
     source_url: safeHttpUrl(fields.sourceRaw), phone: first(row, ["phone", "telephone", "tel"]),
@@ -552,6 +555,50 @@ export function normalizeDirectoryItem(row, dataset, index) {
     language_support: first(row, ["language_support", "language", "languages"]),
     latitude: hasCoordinates ? latitude : null, longitude: hasCoordinates ? longitude : null,
     last_reviewed_at: toIsoDate(fields.reviewDate), updated_at: toIsoDate(first(row, ["updated_at"]))
+  };
+  directoryItemDiagnostics.set(item, { requiresManualCategoryCorrection: categoryPair.requiresManualCorrection });
+  return item;
+}
+
+function normalizedDirectoryAddress(item) {
+  return [item.address, item.postcode, item.city || item.region || item.area]
+    .map((value) => clean(value).normalize("NFKC").toLowerCase().replace(/\s+/g, " "))
+    .filter(Boolean)
+    .join(" | ");
+}
+
+export function assessDirectoryDataQuality(items) {
+  const categoryCorrectionIds = [];
+  const unknownRatingIds = [];
+  const coordinates = new Map();
+
+  for (const item of items) {
+    if (directoryItemDiagnostics.get(item)?.requiresManualCategoryCorrection) categoryCorrectionIds.push(item.id);
+    if (item.rating === null) unknownRatingIds.push(item.id);
+    if (item.latitude === null || item.longitude === null) continue;
+    const coordinate = `${item.latitude},${item.longitude}`;
+    if (!coordinates.has(coordinate)) coordinates.set(coordinate, []);
+    coordinates.get(coordinate).push(item);
+  }
+
+  const suspiciousCoordinateIds = new Set();
+  for (const entries of coordinates.values()) {
+    if (new Set(entries.map(normalizedDirectoryAddress).filter(Boolean)).size < 2) continue;
+    entries.forEach((item) => suspiciousCoordinateIds.add(item.id));
+  }
+
+  const sanitizedItems = items.map((item) => suspiciousCoordinateIds.has(item.id)
+    ? { ...item, latitude: null, longitude: null }
+    : item);
+  return {
+    items: sanitizedItems,
+    diagnostics: {
+      unknown_rating_count: unknownRatingIds.length,
+      manual_correction_safe_ids: {
+        category_pair: capSafeIds(categoryCorrectionIds),
+        suspicious_duplicate_coordinates: capSafeIds([...suspiciousCoordinateIds])
+      }
+    }
   };
 }
 
@@ -684,7 +731,7 @@ function isUrlFieldPath(pathLabel) {
 function isIdentifierPath(pathLabel) {
   const normalizedPath = pathLabel.replace(/\[\d+\]/g, "");
   return /(?:^|\.)(?:id|post_id|job_id|item_id|place_id|placeid)$/i.test(normalizedPath)
-    || /(?:^|\.)excluded_safe_ids(?:\.|$)/.test(normalizedPath);
+    || /(?:^|\.)(?:excluded_safe_ids|manual_correction_safe_ids)(?:\.|$)/.test(normalizedPath);
 }
 
 function isSlugPath(pathLabel) {
@@ -731,7 +778,7 @@ export function assertNoPrivateFields(value, pathLabel = "public JSON") {
     }
     return true;
   }
-  if (/(?:^|\.)excluded_safe_ids$/.test(pathLabel)) {
+  if (/(?:^|\.)(?:excluded_safe_ids|manual_correction_safe_ids)$/.test(pathLabel)) {
     for (const [reason, ids] of Object.entries(value)) {
       if (!/^[a-z][a-z0-9_]{0,79}$/.test(reason) || !Array.isArray(ids) || ids.length > 50) {
         throw new Error(`${pathLabel}.${reason} must be an array capped at 50 IDs with a safe reason label`);
@@ -831,11 +878,15 @@ export async function main() {
 
   const directoryItems = {};
   const directoryResults = {};
+  const directoryQuality = {};
   for (const dataset of Object.keys(directoryRows)) {
     directoryResults[dataset] = directoryRows[dataset].map((row, index) => validateDirectoryRow(row, dataset, index));
-    directoryItems[dataset] = sortDirectory(directoryRows[dataset]
+    const normalizedItems = directoryRows[dataset]
       .filter((_, index) => directoryResults[dataset][index].eligible)
-      .map((row, index) => normalizeDirectoryItem(row, dataset, index)));
+      .map((row, index) => normalizeDirectoryItem(row, dataset, index));
+    const assessed = assessDirectoryDataQuality(normalizedItems);
+    directoryItems[dataset] = sortDirectory(assessed.items);
+    directoryQuality[dataset] = assessed.diagnostics;
   }
 
   validateUnique(communityItems, ["id"], "community posts");
@@ -848,6 +899,7 @@ export async function main() {
   };
   for (const dataset of Object.keys(directoryItems)) {
     reports[dataset] = validationReport(payloads[dataset], directoryRows[dataset], directoryResults[dataset], directoryItems[dataset].length, {
+      ...directoryQuality[dataset],
       map_eligible_count: directoryItems[dataset].filter((item) => item.latitude !== null && item.longitude !== null).length,
       intentionally_empty: directoryItems[dataset].length === 0
     });

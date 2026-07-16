@@ -371,6 +371,8 @@ function testPublicPayloadCredentialSanitization() {
     placeId: "https://example.com/manage",
     slug: "https://example.com/internal",
     status: "active",
+    rating: "0",
+    totalScore: "4.6",
     website: "https://example.com/%2561dmin/edit",
     official_url: "https://example.com/",
     map_url: "http://192.168.1.20/place"
@@ -379,6 +381,7 @@ function testPublicPayloadCredentialSanitization() {
   assert(directory.place_id === "shopping-row-9" && directory.placeId === "shopping-row-9", "GAS exposed an unsafe Directory identifier alias.");
   assert(directory.website === "" && directory.map_url === "", "GAS exposed a private Directory URL.");
   assert(directory.official_url === "https://example.com/", "GAS removed a safe Directory URL.");
+  assert(directory.rating === "" && directory.totalScore === 4.6, "GAS did not normalize Directory rating semantics.");
 }
 
 testSpreadsheetResolution();

@@ -449,9 +449,14 @@
       return Number.isFinite(n) ? n : null;
     }
 
+    function parseRating(value) {
+      const n = parseFloat(value);
+      return Number.isFinite(n) && n > 0 ? n : null;
+    }
+
     function formatScore(score) {
-      const n = parseFloat(score);
-      return Number.isFinite(n) ? n.toFixed(1) : "";
+      const n = parseRating(score);
+      return n === null ? "" : n.toFixed(1);
     }
 
     function formatReviews(value) {
@@ -477,6 +482,16 @@ function buildAddress(item) {
   return [street, postal, city, country].filter(Boolean).join(", ");
 }
 
+function getAddressDiscriminator(item) {
+  return [getField(item, "street", "address"), getField(item, "postalCode", "Postal Code", "postcode")]
+    .filter(Boolean)
+    .join(" / ");
+}
+
+function getLastReviewed(item) {
+  return getField(item, "last_reviewed_at", "lastReviewedAt", "updated_at").slice(0, 10);
+}
+
     function getDisplayNameParts(item) {
       const nameJa = getField(item, "name_ja");
       const title = getField(item, "title", "name_en", "name");
@@ -493,18 +508,18 @@ function buildAddress(item) {
     }
 
     function getCardRatingHtml(item) {
-      const scoreNumber = parseFloat(getField(item, "rating", "totalScore", "score"));
-      const hasScore = Number.isFinite(scoreNumber);
+      const scoreNumber = parseRating(getField(item, "rating", "totalScore", "score"));
+      const hasScore = scoreNumber !== null;
       const reviewsNumber = parseNumber(getField(item, "reviewsCount", "review_count", "reviews"));
       const hasReviews = Number.isFinite(reviewsNumber);
 
       if (!hasScore && !hasReviews) return "";
 
-      const scoreText = hasScore ? `★${scoreNumber.toFixed(1)}` : "★-";
+      const scoreText = hasScore ? `★${scoreNumber.toFixed(1)}` : "評価情報なし";
       const reviewsText = hasReviews ? `${reviewsNumber.toLocaleString("ja-JP")}件` : "";
       const ratingLabel = hasReviews
-        ? `評価 ${scoreText.replace("★", "")}、レビュー ${reviewsText}`
-        : `評価 ${scoreText.replace("★", "")}`;
+        ? `${hasScore ? `評価 ${scoreText.replace("★", "")}` : scoreText}、レビュー ${reviewsText}`
+        : (hasScore ? `評価 ${scoreText.replace("★", "")}` : scoreText);
 
       return `
         <div class="card-rating" role="img" aria-label="${escapeHtml(ratingLabel)}">
@@ -563,9 +578,9 @@ function buildAddress(item) {
         const rb = parseNumber(getField(b, "reviewsCount", "review_count", "reviews")) ?? -1;
         if (ra !== rb) return rb - ra;
 
-        const sa = parseFloat(getField(a, "rating", "totalScore", "score")) || 0;
-        const sb = parseFloat(getField(b, "rating", "totalScore", "score")) || 0;
-        if (sa !== sb) return sb - sa;
+        const sa = parseRating(getField(a, "rating", "totalScore", "score"));
+        const sb = parseRating(getField(b, "rating", "totalScore", "score"));
+        if (sa !== null && sb !== null && sa !== sb) return sb - sa;
 
         return normalize(getField(a, "name_ja", "title", "name"))
           .localeCompare(normalize(getField(b, "name_ja", "title", "name")), "ja");
@@ -648,8 +663,8 @@ function buildAddress(item) {
         const matchesPrice = !filterState.price || getField(item, "price_range", "price") === filterState.price;
         const reviews = parseNumber(getField(item, "reviewsCount", "review_count", "reviews")) || 0;
         const matchesReviews = !minReviews || reviews >= minReviews;
-        const score = parseFloat(getField(item, "rating", "totalScore", "score")) || 0;
-        const matchesStarRating = !minStarRating || score >= minStarRating;
+        const score = parseRating(getField(item, "rating", "totalScore", "score"));
+        const matchesStarRating = !minStarRating || (score !== null && score >= minStarRating);
         return matchesKeyword && matchesCity && matchesCategory1 && matchesCategory2 && matchesPrice && matchesReviews && matchesStarRating;
       }).map((item, index) => ({
         ...item,
@@ -750,14 +765,16 @@ function buildAddress(item) {
 
       els.cards.innerHTML = filteredItems.map((item) => {
         const displayName = getDisplayNameParts(item);
-        const scoreNumber = parseFloat(getField(item, "rating", "totalScore", "score"));
-        const scoreText = Number.isFinite(scoreNumber) ? `★${scoreNumber.toFixed(1)}` : "";
+        const scoreNumber = parseRating(getField(item, "rating", "totalScore", "score"));
+        const scoreText = scoreNumber === null ? "" : `★${scoreNumber.toFixed(1)}`;
         const category1 = getCategory1(item);
         const category2 = getCategory2(item);
         const website = getOfficialUrl(item);
         const mapUrl = getMapUrl(item);
         const price = getField(item, "price_range", "price");
         const region = getRegion(item);
+        const addressDiscriminator = getAddressDiscriminator(item);
+        const lastReviewed = getLastReviewed(item);
         const description = getShortDescription(item);
         const detailComment = getDetailComment(item);
         const showDescriptionInMeta = currentView !== "list" || !detailComment || detailComment !== description;
@@ -778,8 +795,10 @@ function buildAddress(item) {
                   ${category1 ? `<div class="meta-item"><div class="meta-label">カテゴリ</div><div class="meta-value">${escapeHtml(category1)}</div></div>` : ""}
                   ${category2 ? `<div class="meta-item"><div class="meta-label">詳細カテゴリ</div><div class="meta-value">${escapeHtml(category2)}</div></div>` : ""}
                   ${region ? `<div class="meta-item"><div class="meta-label">地域</div><div class="meta-value">${escapeHtml(region)}</div></div>` : ""}
+                  ${addressDiscriminator ? `<div class="meta-item"><div class="meta-label">住所の目印</div><div class="meta-value">${escapeHtml(addressDiscriminator)}</div></div>` : ""}
                   ${price ? `<div class="meta-item"><div class="meta-label">価格</div><div class="meta-value">${escapeHtml(price)}</div></div>` : ""}
                   ${scoreText ? `<div class="meta-item"><div class="meta-label">評価</div><div class="meta-value">${escapeHtml(scoreText)}</div></div>` : ""}
+                  ${lastReviewed ? `<div class="meta-item"><div class="meta-label">最終確認</div><div class="meta-value">${escapeHtml(lastReviewed)}</div></div>` : ""}
                   ${description && showDescriptionInMeta ? `<div class="meta-item"><div class="meta-label">説明</div><div class="meta-value">${escapeHtml(description)}</div></div>` : ""}
                 </div>
 

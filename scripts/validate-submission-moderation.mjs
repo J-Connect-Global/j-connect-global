@@ -70,7 +70,7 @@ expect(!heldLockRateLimit.includes("LockService"), "Held-lock rate-limit helper 
 expect(heldLockRateLimit.includes("sha256Hex_") && !heldLockRateLimit.includes("jconnect_form_rate:${String(email"), "Job rate-limit cache key is not SHA-256-derived.");
 expect(gas.indexOf("context.sheet.appendRow(row)", gas.indexOf("function submitJobPosting_")) < gas.indexOf("sendJobSubmissionAdminEmail_", gas.indexOf("function submitJobPosting_")), "Job notification occurs before durable storage.");
 expect(gas.includes("sendCommunitySubmissionAdminEmail_") && gas.includes("【J-Connect管理】Community新規投稿"), "Community administrator notification is missing.");
-expect(gas.includes("Community administrator notification failed") && gas.includes("return {\n    ok: true"), "Community notification failure is not isolated from submission success.");
+expect(gas.includes("Community administrator notification failed") && /return \{\r?\n\s+ok: true/.test(gas), "Community notification failure is not isolated from submission success.");
 expect(gas.includes("JOBS_PUBLIC_JSON_URL") && gas.includes("processWaitingApprovalNotifications"), "Jobs publication verification is not part of the shared processor.");
 expect(gas.includes("rejection_reason") && gas.includes("sendRejectionEmail_"), "Rejection persistence/email flow is missing.");
 

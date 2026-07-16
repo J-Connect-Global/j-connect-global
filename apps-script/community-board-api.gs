@@ -997,8 +997,17 @@ function publicDirectoryPayload_(row, sheetKey) {
   ].forEach((field) => {
     if (Object.prototype.hasOwnProperty.call(payload, field)) payload[field] = safePublicUrl_(payload[field], false);
   });
+  ['rating', 'totalScore', 'totalscore'].forEach((field) => {
+    if (Object.prototype.hasOwnProperty.call(payload, field)) payload[field] = normalizePublicDirectoryRating_(payload[field]);
+  });
   payload.status = 'active';
   return payload;
+}
+
+function normalizePublicDirectoryRating_(value) {
+  const normalized = String(cleanCell_(value)).replace(/[^0-9.-]/g, '');
+  const numeric = Number(normalized);
+  return isFinite(numeric) && numeric > 0 ? numeric : '';
 }
 
 function sendCommunitySubmissionAdminEmail_(context, post) {

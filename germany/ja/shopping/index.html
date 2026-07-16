@@ -411,9 +411,14 @@
       return Number.isFinite(n) ? n : null;
     }
 
+    function parseRating(value) {
+      const n = parseFloat(value);
+      return Number.isFinite(n) && n > 0 ? n : null;
+    }
+
     function formatScore(score) {
-      const n = parseFloat(score);
-      return Number.isFinite(n) ? n.toFixed(1) : "";
+      const n = parseRating(score);
+      return n === null ? "" : n.toFixed(1);
     }
 
     function formatReviews(value) {
@@ -437,6 +442,16 @@ function buildAddress(item) {
   const city = getField(item, "city", "region", "area") || "";
   const country = getField(item, "countryCode") === "DE" ? "Germany" : "Germany";
   return [street, postal, city, country].filter(Boolean).join(", ");
+}
+
+function getAddressDiscriminator(item) {
+  return [getField(item, "street", "address"), getField(item, "postalCode", "Postal Code", "postcode", "postal_code")]
+    .filter(Boolean)
+    .join(" / ");
+}
+
+function getLastReviewed(item) {
+  return getField(item, "last_reviewed_at", "lastReviewedAt", "updated_at").slice(0, 10);
 }
 
     function getDisplayNameParts(item) {
@@ -543,9 +558,9 @@ function buildAddress(item) {
         const rb = parseNumber(getReviewCount(b)) ?? -1;
         if (ra !== rb) return rb - ra;
 
-        const sa = parseFloat(getRating(a)) || 0;
-        const sb = parseFloat(getRating(b)) || 0;
-        if (sa !== sb) return sb - sa;
+        const sa = parseRating(getRating(a));
+        const sb = parseRating(getRating(b));
+        if (sa !== null && sb !== null && sa !== sb) return sb - sa;
 
         return normalize(getField(a, "name_ja", "title", "name"))
           .localeCompare(normalize(getField(b, "name_ja", "title", "name")), "ja");
@@ -624,8 +639,8 @@ function buildAddress(item) {
         const matchesCategory1 = !filterState.category || getCategory1(item) === filterState.category;
         const matchesCategory2 = !filterState.detailCategory || getCategory2(item) === filterState.detailCategory;
         const matchesPrice = !filterState.price || getPrice(item) === filterState.price;
-        const score = parseFloat(getRating(item)) || 0;
-        const matchesStarRating = !minStarRating || score >= minStarRating;
+        const score = parseRating(getRating(item));
+        const matchesStarRating = !minStarRating || (score !== null && score >= minStarRating);
         return matchesKeyword && matchesRegion && matchesCategory1 && matchesCategory2 && matchesPrice && matchesStarRating;
       }).map((item, index) => ({
         ...item,
@@ -733,6 +748,8 @@ function buildAddress(item) {
         const detailComment = getDetailComment(item);
         const score = formatScore(getRating(item));
         const region = getRegion(item);
+        const addressDiscriminator = getAddressDiscriminator(item);
+        const lastReviewed = getLastReviewed(item);
         const tags = parseTags(getField(item, "tags", "keywords")).slice(0, 4);
 
         return `
@@ -749,8 +766,10 @@ function buildAddress(item) {
                 <div class="meta-list jc-result-meta">
                   ${categoryText ? `<div class="meta-item"><div class="meta-label">カテゴリ</div><div class="meta-value">${escapeHtml(categoryText)}</div></div>` : ""}
                   ${region ? `<div class="meta-item"><div class="meta-label">地域</div><div class="meta-value">${escapeHtml(region)}</div></div>` : ""}
+                  ${addressDiscriminator ? `<div class="meta-item"><div class="meta-label">住所の目印</div><div class="meta-value">${escapeHtml(addressDiscriminator)}</div></div>` : ""}
                   ${price ? `<div class="meta-item"><div class="meta-label">価格</div><div class="meta-value">${escapeHtml(price)}</div></div>` : ""}
                   ${score ? `<div class="meta-item"><div class="meta-label">評価</div><div class="meta-value">★ ${escapeHtml(score)}</div></div>` : ""}
+                  ${lastReviewed ? `<div class="meta-item"><div class="meta-label">最終確認</div><div class="meta-value">${escapeHtml(lastReviewed)}</div></div>` : ""}
                 </div>
 
                 ${description ? `<p class="card-desc">${escapeHtml(description)}</p>` : ""}

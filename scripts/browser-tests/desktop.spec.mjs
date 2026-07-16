@@ -215,7 +215,11 @@ test("Eat renders the committed fixture dataset", async ({ page }) => {
   await page.locator('#starChipGroup [data-value="4.0"]').click();
   await expect(page.locator("#cards [data-item-id]")).toHaveCount(expectedRatedEat);
   await page.locator('#starChipGroup [data-value=""]').click();
-  const eatBranchGroups = Map.groupBy(eatFixture.items, (item) => item.name);
+  const eatBranchGroups = new Map();
+  for (const item of eatFixture.items) {
+    if (!eatBranchGroups.has(item.name)) eatBranchGroups.set(item.name, []);
+    eatBranchGroups.get(item.name).push(item);
+  }
   const eatBranch = [...eatBranchGroups.values()].find((items) => new Set(items.map((item) => item.address)).size > 1)?.[0];
   expect(eatBranch, "an Eat same-name branch fixture is required").toBeTruthy();
   const eatBranchCard = page.locator(`[data-item-id="${eatBranch.slug || eatBranch.id}"]`);

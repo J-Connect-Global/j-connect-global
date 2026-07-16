@@ -677,8 +677,8 @@
       "name_en": "",
       "category": "書籍・雑貨",
       "category1": "書籍・雑貨",
-      "detail_category": "",
-      "category2": "",
+      "detail_category": "雑貨",
+      "category2": "雑貨",
       "city": "Düsseldorf",
       "region": "Düsseldorf",
       "area": "",
@@ -755,8 +755,8 @@
       "name_en": "",
       "category": "美容",
       "category1": "美容",
-      "detail_category": "",
-      "category2": "",
+      "detail_category": "その他・未分類",
+      "category2": "その他・未分類",
       "city": "Düsseldorf",
       "region": "Düsseldorf",
       "area": "",
@@ -989,8 +989,8 @@
       "name_en": "",
       "category": "薬局",
       "category1": "薬局",
-      "detail_category": "",
-      "category2": "",
+      "detail_category": "その他・未分類",
+      "category2": "その他・未分類",
       "city": "Düsseldorf",
       "region": "Düsseldorf",
       "area": "",
@@ -1826,21 +1826,16 @@
     "generated_count": 45,
     "unknown_rating_count": 41,
     "manual_correction_safe_ids": {
-      "category_pair": [
-        "idol-dorotheenstrasse",
-        "jasmina-peter-behrens-strasse",
-        "löwen-apotheke-garath-wolfgang-döring-strasse",
-        "zen-parking"
-      ],
+      "category_pair": [],
       "suspicious_duplicate_coordinates": [
-        "ChIJAd4S4JnLuEcRH6rEOgjLIz8",
-        "ChIJA23lnlzLuEcRgEpGYpDkG_I",
-        "nhan-kölner",
+        "zen-parking",
+        "le-kurfürstenstrasse",
         "s&a-worringer",
         "asiatische-b326",
         "bang-ackerstrasse",
         "tat's-fürstenwall",
         "bombay-worringer",
+        "ChIJAd4S4JnLuEcRH6rEOgjLIz8",
         "fresh-friedrich-ebert-strasse",
         "k4u-oststrasse",
         "dawayo-lierenfelder",
@@ -1862,18 +1857,18 @@
         "rice-burscheider",
         "muji-königsallee",
         "idol-dorotheenstrasse",
-        "aldi-ickerswarder",
-        "hira-westfalenstrasse",
+        "nhan-kölner",
         "jasmina-peter-behrens-strasse",
         "löwen-apotheke-garath-wolfgang-döring-strasse",
-        "zen-parking",
+        "ChIJA23lnlzLuEcRgEpGYpDkG_I",
+        "aldi-ickerswarder",
+        "hira-westfalenstrasse",
         "polnische-schlesischestrasse",
-        "transfood-old",
-        "le-kurfürstenstrasse"
+        "transfood-old"
       ]
     },
     "map_eligible_count": 8,
     "intentionally_empty": false
   },
-  "generated_at": "2026-07-16T07:03:52.951Z"
+  "generated_at": "2026-07-16T18:25:38.278Z"
 }

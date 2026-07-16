@@ -25,6 +25,8 @@
       "skills": "",
       "salary_min_eur": 41000,
       "salary_max_eur": 48000,
+      "salary_currency": "",
+      "salary_unit": "",
       "salary_label": "",
       "summary": "日系クライアント向けの会計補助、月次処理サポート、文書翻訳を担当。",
       "short_description": "日系クライアント向けの会計補助、月次処理サポート、文書翻訳を担当。",
@@ -46,9 +48,7 @@
       "published_at": "2026-07-11T22:00:00.000Z",
       "updated_at": "2026-07-11T22:00:00.000Z",
       "created_at": "",
-      "expires_at": "",
-      "salary_currency": "",
-      "salary_unit": ""
+      "expires_at": ""
     },
     {
       "id": "b",
@@ -71,6 +71,8 @@
       "skills": "",
       "salary_min_eur": 48000,
       "salary_max_eur": 60000,
+      "salary_currency": "",
+      "salary_unit": "",
       "salary_label": "",
       "summary": "倉庫・輸送管理、日系顧客対応。",
       "short_description": "倉庫・輸送管理、日系顧客対応。",
@@ -92,9 +94,7 @@
       "published_at": "2026-07-11T22:00:00.000Z",
       "updated_at": "2026-07-11T22:00:00.000Z",
       "created_at": "",
-      "expires_at": "",
-      "salary_currency": "",
-      "salary_unit": ""
+      "expires_at": ""
     },
     {
       "id": "c",
@@ -117,6 +117,8 @@
       "skills": "",
       "salary_min_eur": 48000,
       "salary_max_eur": 60000,
+      "salary_currency": "",
+      "salary_unit": "",
       "salary_label": "",
       "summary": "ITサポート業務。",
       "short_description": "ITサポート業務。",
@@ -138,9 +140,7 @@
       "published_at": "2026-07-11T22:00:00.000Z",
       "updated_at": "2026-07-11T22:00:00.000Z",
       "created_at": "",
-      "expires_at": "",
-      "salary_currency": "",
-      "salary_unit": ""
+      "expires_at": ""
     },
     {
       "id": "d",
@@ -163,6 +163,8 @@
       "skills": "",
       "salary_min_eur": 50000,
       "salary_max_eur": 65000,
+      "salary_currency": "",
+      "salary_unit": "",
       "salary_label": "",
       "summary": "食品営業。",
       "short_description": "食品営業。",
@@ -184,9 +186,7 @@
       "published_at": "2026-07-11T22:00:00.000Z",
       "updated_at": "2026-07-11T22:00:00.000Z",
       "created_at": "",
-      "expires_at": "",
-      "salary_currency": "",
-      "salary_unit": ""
+      "expires_at": ""
     }
   ],
   "validation": {
@@ -200,5 +200,5 @@
     "excluded_safe_ids": {},
     "generated_count": 4
   },
-  "generated_at": "2026-07-13T21:59:38.098Z"
+  "generated_at": "2026-07-16T16:41:42.423Z"
 }

@@ -6,7 +6,6 @@ import {
   assertDirectoryModalKeyboard,
   assertNoIndex,
   assertNoRuntimeDiagnostics,
-  assertOneManualShareButton,
   assertRouteReady,
   assertSharedLayout,
   assertAllActiveJobs,
@@ -46,7 +45,7 @@ test("home renders in Chromium and can activate dark mode", async ({ page }) => 
   await assertRouteReady(page);
 });
 
-test("Community normalizePost renders every active fixture without an undeclared shared reference", async ({ page }) => {
+test("Community renders active fixtures and links to the generated detail page", async ({ page }) => {
   await page.route("https://drive.google.com/**", (route) => route.fulfill({
     body: '<svg xmlns="http://www.w3.org/2000/svg" width="2" height="2"><rect width="2" height="2" fill="#829ab1"/></svg>',
     contentType: "image/svg+xml",
@@ -71,56 +70,35 @@ test("Community normalizePost renders every active fixture without an undeclared
   await expect(noImageCard.locator("img")).toHaveAttribute("src", placeholderPath);
 
   const opener = photoCard.locator(".card-link");
+  await expect(opener).toHaveAttribute("href", new RegExp(`${fixturePhotoCommunityPost.detail_url.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`));
   await opener.focus();
   await expect(opener).toBeFocused();
-  await page.keyboard.press("Enter");
-  const modal = page.locator("#detailModal");
-  await expect(modal).toBeVisible();
-  await expect(modal).toHaveAttribute("aria-hidden", "false");
-  await expect(modal.locator("#detailMainPhoto")).toHaveAttribute("src", photoSrc);
-  expect(await modal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
-
-  await page.keyboard.press("Shift+Tab");
-  const afterShiftTab = await page.evaluate(() => ({
-    className: document.activeElement?.className || "",
-    id: document.activeElement?.id || "",
-    tagName: document.activeElement?.tagName || ""
-  }));
-  expect(await modal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
-  await page.keyboard.press("Tab");
-  const afterTab = await page.evaluate(() => ({
-    className: document.activeElement?.className || "",
-    id: document.activeElement?.id || "",
-    tagName: document.activeElement?.tagName || ""
-  }));
-  expect(await modal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
-  expect(afterTab).not.toEqual(afterShiftTab);
-
-  const detailSaveButton = modal.locator("#detailSaveButton");
-  await detailSaveButton.focus();
-  await page.keyboard.press("Enter");
-  expect(await modal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
-
-  await page.keyboard.press("Escape");
-  await expect(modal).toHaveAttribute("aria-hidden", "true");
-  await expect(modal).not.toBeVisible();
-  await expect(opener).toBeFocused();
+  await Promise.all([
+    page.waitForURL(new RegExp(`${fixturePhotoCommunityPost.detail_url.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`)),
+    page.keyboard.press("Enter")
+  ]);
+  await expect(page.locator(".public-detail-page h1")).toHaveText(fixturePhotoCommunityPost.title);
+  await expect(page.locator(".public-detail-gallery img").first()).toHaveAttribute("src", photoSrc);
+  await assertNoIndex(page);
+  await activateDarkMode(page);
+  await assertWcagTextContrast(page, ".public-detail-content", "Community detail dark-mode text");
   await assertRouteReady(page);
 });
 
-test("Community detail renders the requested fixture with one accessible share button and noindex", async ({ page }) => {
+test("legacy Community detail safely redirects and the no-ID route remains the post form", async ({ page }) => {
   expect(fixtureCommunityPost, "an active Community detail fixture is required").toBeTruthy();
-  await openDataRoute(page, fixtureCommunityDetailPath, "/assets/data/community/posts.json");
-  await expect(page.locator("#detailTitle")).toHaveText(fixtureCommunityPost.title);
+  const legacyPath = `/germany/ja/community/post/?id=${encodeURIComponent(fixtureCommunityPostId)}`;
+  await openDataRoute(page, legacyPath, "/assets/data/community/posts.json");
+  await expect(page).toHaveURL(new RegExp(`${fixtureCommunityDetailPath.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`));
+  await expect(page.locator(".public-detail-page h1")).toHaveText(fixtureCommunityPost.title);
   const bodyExcerpt = String(fixtureCommunityPost.body || "").split(/\r?\n/).find(Boolean);
-  if (bodyExcerpt) await expect(page.locator("#detailMode")).toContainText(bodyExcerpt);
-  await assertOneManualShareButton(page);
-  const shareUrl = new URL(await page.locator('[data-share-trigger="true"]').getAttribute("data-share-url"));
-  expect(shareUrl.searchParams.get("id")).toBe(String(fixtureCommunityPostId));
+  if (bodyExcerpt) await expect(page.locator(".public-detail-page")).toContainText(bodyExcerpt);
   await assertNoIndex(page);
   await assertRouteReady(page);
 
   await openRoute(page, "/germany/ja/community/post/");
+  await expect(page).toHaveTitle(/投稿フォーム/);
+  await expect(page.locator("h1:visible")).toHaveCount(1);
   const previewButton = page.locator("#previewButton");
   const previewModal = page.locator("#postPreviewModal");
   await previewButton.focus();
@@ -136,6 +114,12 @@ test("Community detail renders the requested fixture with one accessible share b
   await page.keyboard.press("Escape");
   await expect(previewModal).toBeHidden();
   await expect(previewButton).toBeFocused();
+  await assertNoIndex(page);
+  await assertRouteReady(page);
+
+  await openDataRoute(page, "/germany/ja/community/post/?id=missing-public-id", "/assets/data/community/posts.json");
+  await expect(page).toHaveURL(/\/germany\/ja\/community\/post\/\?id=missing-public-id$/);
+  await expect(page.locator("h1:visible")).toHaveText("投稿が見つかりません");
   await assertNoIndex(page);
   await assertRouteReady(page);
 });
@@ -179,26 +163,35 @@ test("Jobs renders every active listing", async ({ page }) => {
   await assertRouteReady(page);
 });
 
-test("Job detail renders without obsolete sample labels or unsupported JobPosting JSON-LD", async ({ page }) => {
+test("legacy Job detail redirects to an incomplete generated noindex page", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/jobs/detail/?id=a", "/assets/data/jobs/jobs.json");
-  await expect(page.locator("#jobDetail h1")).toBeVisible();
-  await expect(page.locator("#jobDetail .directory-seed-label")).toHaveCount(0);
-  await expect(page.locator('#jobDetail a[href^="mailto:"]')).toHaveCount(0);
+  await expect(page).toHaveURL(/\/germany\/ja\/jobs\/a\/$/);
+  await expect(page.locator(".public-detail-page h1")).toBeVisible();
+  await expect(page.locator(".public-detail-page .directory-seed-label")).toHaveCount(0);
+  await expect(page.locator('.public-detail-page a[href^="mailto:"]')).toHaveCount(0);
   await expect(page.getByRole("link", { name: /応募先にメールする|応募する|Apply/i })).toHaveCount(0);
   await expect(page.getByRole("button", { name: /応募先にメールする|応募する|Apply/i })).toHaveCount(0);
+  await expect(page.locator(".public-detail-notice")).toContainText("公開できる応募方法はありません");
 
   const structuredData = await page.locator('script[type="application/ld+json"]').allTextContents();
   expect(structuredData.some((value) => /["']?JobPosting["']?/i.test(value))).toBe(false);
 
-  await assertOneManualShareButton(page);
+  await assertNoIndex(page);
+  await activateDarkMode(page);
+  await assertWcagTextContrast(page, ".public-detail-content", "Job detail dark-mode text");
+  await assertRouteReady(page);
+
+  await openDataRoute(page, "/germany/ja/jobs/detail/?id=missing-public-id", "/assets/data/jobs/jobs.json");
+  await expect(page).toHaveURL(/\/germany\/ja\/jobs\/detail\/\?id=missing-public-id$/);
+  await expect(page.locator("#jobDetail")).toContainText("求人が見つかりませんでした");
   await assertNoIndex(page);
   await assertRouteReady(page);
 });
 
 test("the fourth active Job is public and renders a detail page", async ({ page }) => {
-  await openDataRoute(page, "/germany/ja/jobs/detail/?id=d", "/assets/data/jobs/jobs.json");
-  await expect(page.locator("#jobDetail h1")).toBeVisible();
-  await expect(page.locator("#jobDetail")).toContainText("営業担当（食品）");
+  await openRoute(page, "/germany/ja/jobs/d/");
+  await expect(page.locator(".public-detail-page h1")).toBeVisible();
+  await expect(page.locator(".public-detail-page")).toContainText("営業担当（食品）");
   const structuredData = await page.locator('script[type="application/ld+json"]').allTextContents();
   expect(structuredData.some((value) => /["']?JobPosting["']?/i.test(value))).toBe(false);
   await assertNoIndex(page);

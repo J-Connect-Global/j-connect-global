@@ -5,7 +5,7 @@ import path from "node:path";
 
 const host = "127.0.0.1";
 const port = Number(process.env.PORT || 4173);
-const root = path.resolve(process.cwd());
+const root = path.resolve(process.env.STATIC_ROOT || process.cwd());
 
 const contentTypes = new Map([
   [".css", "text/css; charset=utf-8"],

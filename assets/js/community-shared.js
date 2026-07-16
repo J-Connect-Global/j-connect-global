@@ -256,6 +256,7 @@
       id,
       post_id: pick(post, ["post_id", "postId", "id"]),
       slug: pick(post, ["slug"]),
+      detail_url: pick(post, ["detail_url", "detailUrl", "detail_page_url"]),
       title: pick(post, ["title", "name", "subject"]),
       body: pick(post, ["body", "description", "message", "content"]),
       summary: pick(post, ["summary"]),
@@ -324,12 +325,19 @@
 
   function formatDate(raw) {
     const date = raw ? new Date(raw) : null;
-    if (!date || Number.isNaN(date.getTime())) return "新着";
+    if (!date || Number.isNaN(date.getTime())) return "日付未設定";
     return `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, "0")}.${String(date.getDate()).padStart(2, "0")}`;
   }
 
   function communityStandaloneDetailHref(post, basePath) {
     const id = post && (post._id || postId(post, 0));
+    const configured = pick(post, ["detail_url", "detailUrl", "detail_page_url"]);
+    const normalizedId = String(id || "").trim().normalize("NFKC");
+    const encodedId = encodeURIComponent(normalizedId).replace(/[!'()*]/g, (character) =>
+      `%${character.charCodeAt(0).toString(16).toUpperCase()}`
+    );
+    const expected = `/germany/ja/community/posts/${encodedId}/`;
+    if (configured === expected) return configured;
     const base = basePath || "/germany/ja/community/post/";
     return `${base}?id=${encodeURIComponent(id)}`;
   }

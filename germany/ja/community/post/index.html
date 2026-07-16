@@ -2718,6 +2718,7 @@ function normalizePost(post, index) {
   return {
     id: post.id,
     post_id: post.post_id,
+    detail_url: post.detail_url,
     title: post.title,
     body: post.body,
     category1: post.category1,
@@ -3005,6 +3006,11 @@ async function loadStandaloneDetail(id) {
     const post = posts.find(function(item) { return String(item._id) === String(id); });
     if (!post) {
       renderNotFound();
+      return;
+    }
+    const canonicalDetail = window.JCONNECT_COMMUNITY_SHARED?.communityStandaloneDetailHref(post);
+    if (canonicalDetail && canonicalDetail.startsWith('/germany/ja/community/posts/')) {
+      location.replace(canonicalDetail);
       return;
     }
     renderStandaloneDetail(post, posts);

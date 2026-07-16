@@ -51,6 +51,9 @@ jobs:
       - name: Validate content registry and generated output
         run: node scripts/validate-content.mjs
 
+      - name: Report editorial freshness
+        run: node scripts/report-content-freshness.mjs --github-summary
+
       - name: Validate JA route and layout governance
         run: node scripts/validate-layout.mjs
 
@@ -59,6 +62,11 @@ jobs:
 
       - name: Validate production parity markers
         run: node scripts/validate-production-parity.mjs
+
+      - name: Build and test production Pages artifact
+        run: |
+          node scripts/build-pages-artifact.mjs --site-dir _site
+          node scripts/test-public-detail-generation.mjs --site-dir _site
 
       - name: Install Chromium for runtime smoke tests
         run: npx playwright install --with-deps chromium

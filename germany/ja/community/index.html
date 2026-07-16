@@ -810,6 +810,7 @@
       return {
         id: post.id,
         post_id: post.post_id,
+        detail_url: post.detail_url,
         title: post.title,
         body: post.body,
         category1: post.category1,
@@ -1169,7 +1170,7 @@
         return `
           <article class="card jc-result-card ${post._isClosed ? "is-closed" : ""}" data-post-id="${escapeHtml(post._id)}" data-status="${escapeHtml(post._status)}" data-photo-count="${post._images.length}" data-free="${post._free ? "true" : "false"}">
             <button class="save-button ${saved ? "saved" : ""}" type="button" data-save-id="${escapeHtml(post._id)}" aria-pressed="${saved ? "true" : "false"}" aria-label="${saved ? "保存を解除" : "保存する"}">${saved ? "★" : "☆"}</button>
-            <a class="card-link" href="#post-${encodeURIComponent(post._id)}" aria-label="${escapeHtml(post._title)}の詳細を開く">
+            <a class="card-link" href="${escapeHtml(detailUrl(post))}" aria-label="${escapeHtml(post._title)}の詳細ページを開く">
               <div class="card-media">
                 <div class="placeholder-art" data-icon="${escapeHtml(CATEGORY_ICONS[subcategory] || CATEGORY_ICONS[postType] || CATEGORY_ICONS["その他"])}"></div>
                 <img src="${escapeHtml(thumbnailSrc)}" alt="${escapeHtml(post._title)} のイメージ" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&&this.getAttribute('src')!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;}">
@@ -1400,7 +1401,7 @@
             <div class="related-box">
               <h3>${escapeHtml(relatedGroup.label)}</h3>
               <div class="related-list">
-                ${related.length ? related.map((item) => `<a class="related-link" href="#post-${encodeURIComponent(item._id)}"><span>${escapeHtml(item._title)}</span><span>${escapeHtml(item._location)}</span></a>`).join("") : `<p class="result-text">近い条件の投稿はまだありません。</p>`}
+                ${related.length ? related.map((item) => `<a class="related-link" href="${escapeHtml(detailUrl(item))}"><span>${escapeHtml(item._title)}</span><span>${escapeHtml(item._location)}</span></a>`).join("") : `<p class="result-text">近い条件の投稿はまだありません。</p>`}
               </div>
             </div>
           </div>

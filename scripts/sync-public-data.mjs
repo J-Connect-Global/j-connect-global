@@ -4,6 +4,7 @@ import { isIP } from "node:net";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { normalizeDirectoryCategoryPair, normalizeDirectoryRating } from "./directory-category-map.mjs";
+import { publicDetailUrl } from "./public-detail-routes.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
@@ -415,6 +416,7 @@ export function normalizeCommunityPost(row, index) {
   return {
     id, post_id: id,
     slug: safePublicSlug(first(row, ["slug"]), stableSlug(title, city, region, id), id),
+    detail_url: publicDetailUrl("community", id),
     title, body, summary: first(row, ["summary", "excerpt"]),
     category1, category2, postType: category1, subcategory: category2,
     country: first(row, ["country"]) || "Germany", region, city,
@@ -450,7 +452,7 @@ export function normalizeJob(row, index, classification = classifyJob(row)) {
   return {
     id, job_id: id,
     slug: safePublicSlug(first(row, ["slug", "job_slug"]), stableSlug(positionTitle, companyName, region, id), id),
-    detail_url: safePublicUrl(first(row, ["detail_url", "detailUrl", "detail_page_url"]), { allowRelative: true }),
+    detail_url: publicDetailUrl("jobs", id),
     status: "active", priority: toNumber(first(row, ["priority"])) || 999,
     company_name: companyName, position_title: positionTitle,
     employment_type: first(row, ["employment_type", "employment", "type"]),
@@ -462,6 +464,8 @@ export function normalizeJob(row, index, classification = classifyJob(row)) {
     detail_category: first(row, ["detail_category", "subcategory", "sub_category", "occupation_detail"]),
     tags, skills: first(row, ["skills", "skill_tags"]) || tags,
     salary_min_eur: toNumber(first(row, ["salary_min_eur"])), salary_max_eur: toNumber(first(row, ["salary_max_eur"])),
+    salary_currency: first(row, ["salary_currency", "currency"]),
+    salary_unit: first(row, ["salary_unit", "salary_period", "pay_period"]),
     salary_label: first(row, ["salary_label", "salary"]), summary, short_description: summary,
     job_details: details, description: details,
     requirements: first(row, ["requirements"]), benefits: first(row, ["benefits"]),

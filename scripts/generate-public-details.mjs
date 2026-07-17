@@ -267,13 +267,16 @@ function salaryLabel(job) {
   if (text(job.salary_label)) return text(job.salary_label);
   const minimum = Number(job.salary_min_eur);
   const maximum = Number(job.salary_max_eur);
+  if (!(minimum > 0) && !(maximum > 0)) return "";
   const unitLabels = { HOUR: "時給", DAY: "日給", WEEK: "週給", MONTH: "月給", YEAR: "年収" };
-  const period = unitLabels[text(job.salary_unit).toUpperCase()] || "支給期間未指定";
+  const period = unitLabels[text(job.salary_unit).toUpperCase()];
   const currency = /^[A-Z]{3}$/.test(text(job.salary_currency).toUpperCase()) ? text(job.salary_currency).toUpperCase() : "EUR";
-  if (minimum > 0 && maximum > 0) return `${period} ${minimum.toLocaleString("en-US")}–${maximum.toLocaleString("en-US")} ${currency}`;
-  if (minimum > 0) return `${period} ${minimum.toLocaleString("en-US")} ${currency} 以上`;
-  if (maximum > 0) return `${period} ${maximum.toLocaleString("en-US")} ${currency} 以下`;
-  return "";
+  const amount = minimum > 0 && maximum > 0
+    ? `${minimum.toLocaleString("en-US")}–${maximum.toLocaleString("en-US")} ${currency}`
+    : minimum > 0
+      ? `${minimum.toLocaleString("en-US")} ${currency} 以上`
+      : `${maximum.toLocaleString("en-US")} ${currency} 以下`;
+  return period ? `${period} ${amount}` : `給与額 ${amount}（支給期間は各求人で確認）`;
 }
 
 function preferredJobDate(job) {

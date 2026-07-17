@@ -126,14 +126,32 @@
   }
 
   function getSalaryLabel(job) {
-    if (job.salary_label) return job.salary_label;
+    const suppliedLabel = clean(job?.salary_label);
+    if (suppliedLabel) return suppliedLabel;
+
+    const minimum = Number(job?.salary_min_eur);
+    const maximum = Number(job?.salary_max_eur);
+    if (!(minimum > 0) && !(maximum > 0)) return "";
+
     const periods = { HOUR: "時給", DAY: "日給", WEEK: "週給", MONTH: "月給", YEAR: "年収" };
-    const period = periods[clean(job.salary_unit).toUpperCase()] || "給与（期間未指定）";
-    const currency = /^[A-Z]{3}$/.test(clean(job.salary_currency).toUpperCase()) ? clean(job.salary_currency).toUpperCase() : "EUR";
-    if (job.salary_min_eur && job.salary_max_eur) return `${period} ${job.salary_min_eur.toLocaleString()}–${job.salary_max_eur.toLocaleString()} ${currency}`;
-    if (job.salary_min_eur) return `${period} ${job.salary_min_eur.toLocaleString()} ${currency} 以上`;
-    if (job.salary_max_eur) return `${period} ${job.salary_max_eur.toLocaleString()} ${currency} 以下`;
-    return "";
+    const period = periods[clean(job?.salary_unit).toUpperCase()];
+    const currency = /^[A-Z]{3}$/.test(clean(job?.salary_currency).toUpperCase()) ? clean(job.salary_currency).toUpperCase() : "EUR";
+    const amount = minimum > 0 && maximum > 0
+      ? `${minimum.toLocaleString()}–${maximum.toLocaleString()} ${currency}`
+      : minimum > 0
+        ? `${minimum.toLocaleString()} ${currency} 以上`
+        : `${maximum.toLocaleString()} ${currency} 以下`;
+
+    return period
+      ? `${period} ${amount}`
+      : `給与額 ${amount}（支給期間は各求人で確認）`;
+  }
+
+  function supportsAnnualSalaryFilter(jobs) {
+    const rows = Array.isArray(jobs) ? jobs : [];
+    return rows.length > 0 && rows.every((job) => (
+      Number(job?.salary_min_eur) > 0 && clean(job?.salary_unit).toUpperCase() === "YEAR"
+    ));
   }
 
   function activeJobs(rows) {
@@ -147,6 +165,7 @@
     splitList,
     sortNewestFirst,
     getJobDetailPath,
-    getSalaryLabel
+    getSalaryLabel,
+    supportsAnnualSalaryFilter
   });
 })(window);

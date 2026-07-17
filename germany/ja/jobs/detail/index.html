@@ -422,14 +422,7 @@
   }
 
   function getSalaryLabel(job){
-    if (job.salary_label) return job.salary_label;
-    const periods = { HOUR: "時給", DAY: "日給", WEEK: "週給", MONTH: "月給", YEAR: "年収" };
-    const period = periods[clean(job.salary_unit).toUpperCase()] || "給与（期間未指定）";
-    const currency = /^[A-Z]{3}$/.test(clean(job.salary_currency).toUpperCase()) ? clean(job.salary_currency).toUpperCase() : "EUR";
-    if (job.salary_min_eur && job.salary_max_eur) return `${period} ${job.salary_min_eur.toLocaleString()}〜${job.salary_max_eur.toLocaleString()} ${currency}`;
-    if (job.salary_min_eur) return `${period} ${job.salary_min_eur.toLocaleString()} ${currency} 以上`;
-    if (job.salary_max_eur) return `${period} ${job.salary_max_eur.toLocaleString()} ${currency} 以下`;
-    return "";
+    return JOBS_SHARED.getSalaryLabel(job);
   }
 
   function shareExcerpt(...parts){

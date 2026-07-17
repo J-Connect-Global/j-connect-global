@@ -117,7 +117,9 @@ async function runFixtureTests() {
   try {
     const safeCommunity = community();
     const indexable = job();
-    const incomplete = job("job-incomplete", { apply_url: "", application_url: "", apply_method: "" });
+    const incomplete = job("job-incomplete", {
+      apply_url: "", application_url: "", apply_method: "", salary_unit: "", salary_currency: ""
+    });
     const expired = job("job-expired", { expires_at: "2026-07-01T00:00:00.000Z" });
     await writeJson(path.join(siteDir, "assets", "data", "community", "posts.json"), payload([safeCommunity]));
     await writeJson(path.join(siteDir, "assets", "data", "jobs", "jobs.json"), payload([indexable, incomplete]));
@@ -145,6 +147,7 @@ async function runFixtureTests() {
     const incompleteHtml = await readFile(path.join(siteDir, "germany", "ja", "jobs", "job-incomplete", "index.html"), "utf8");
     assert.match(incompleteHtml, /<meta name="robots" content="index, follow">/);
     assert.equal(extractJsonLd(incompleteHtml), null);
+    assert.match(incompleteHtml, /給与額 50,000–65,000 EUR（支給期間は各求人で確認）/);
     assert.ok(!incompleteHtml.includes("公開できる応募方法はありません"));
     assert.ok(!incompleteHtml.includes("検索エンジンへの掲載対象外"));
 

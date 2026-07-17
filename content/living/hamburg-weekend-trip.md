@@ -3,15 +3,15 @@ id: "T010"
 title: "ドイツから行く週末旅行：ハンブルク観光の基本"
 slug: "hamburg-weekend-trip"
 category: "観光"
-tags: ["ハンブルク","週末旅行","ドイツ","港町","観光"]
-summary: "ドイツ国内の主要都市から鉄道で行きやすく、北ドイツらしい港町の雰囲気を週末で楽しめる街です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。"
+tags: ["ハンブルク","週末旅行","港町","ドイツ"]
+summary: "Speicherstadt、HafenCity、Alsterを同日に詰め込みすぎず、HVVで港町の移動を組み立てるハンブルク週末ガイドです。"
 status: "published"
 published: true
 published_at: "2026-06-29"
-updated_at: "2026-06-29"
-last_verified: "2026-06-29"
+updated_at: "2026-07-16"
+last_verified: "2026-07-16"
 canonical_url: "/germany/ja/living/hamburg-weekend-trip/"
-related_articles: ["amsterdam-weekend-trip","strasbourg-weekend-trip","cologne-city-guide"]
+related_articles: ["bremen-weekend-trip","copenhagen-weekend-trip","cologne-city-guide"]
 official_sources:
   - title: "Hamburg Tourismus"
     url: "https://www.hamburg-travel.com/"

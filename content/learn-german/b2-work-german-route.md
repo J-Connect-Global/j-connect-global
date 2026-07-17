@@ -7,7 +7,7 @@ summary: "B2で仕事に使うドイツ語を伸ばしたい人向けに、既�
 status: "published"
 published: true
 published_at: "2026-06-20"
-last_verified: "2026-06-20"
+last_verified: "2026-07-16"
 tags: ["B2","仕事","職場"]
 canonical_url: "/germany/ja/learn-german/b2-work-german-route/"
 ---

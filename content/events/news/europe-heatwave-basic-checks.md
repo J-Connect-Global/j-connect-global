@@ -9,7 +9,7 @@ tags: ["熱波","夏","健康"]
 status: "published"
 published: true
 published_at: "2026-06-28"
-last_verified: "2026-06-28"
+last_verified: "2026-07-06"
 canonical_url: "/germany/ja/events/news/europe-heatwave-basic-checks/"
 source_type: "manual"
 ---

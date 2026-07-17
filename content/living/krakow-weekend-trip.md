@@ -3,15 +3,15 @@ id: "T019"
 title: "ドイツから行く週末旅行：クラクフ観光の基本"
 slug: "krakow-weekend-trip"
 category: "観光"
-tags: ["クラクフ","週末旅行","ポーランド","旧市街","観光"]
-summary: "旧市街、ヴァヴェル城、カジミエシュ地区を徒歩中心で回りやすい、週末旅行向きの歴史都市です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。"
+tags: ["クラクフ","週末旅行","ポーランド","旧市街"]
+summary: "Rynek、Wawel、Kazimierzを徒歩でつなぎ、遠い地区だけをトラムで補うクラクフの実用的な週末ガイドです。"
 status: "published"
 published: true
 published_at: "2026-06-29"
-updated_at: "2026-06-29"
-last_verified: "2026-06-29"
+updated_at: "2026-07-16"
+last_verified: "2026-07-16"
 canonical_url: "/germany/ja/living/krakow-weekend-trip/"
-related_articles: ["amsterdam-weekend-trip","strasbourg-weekend-trip","cologne-city-guide"]
+related_articles: ["prague-weekend-trip","warsaw-weekend-trip","munich-weekend-trip"]
 official_sources:
   - title: "Kraków Travel"
     url: "https://krakow.travel/en"

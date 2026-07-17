@@ -9,7 +9,7 @@ tags: ["ニュース","読解","B1-B2"]
 status: "published"
 published: true
 published_at: "2026-06-28"
-last_verified: "2026-06-28"
+last_verified: "2026-07-16"
 canonical_url: "/germany/ja/learn-german/german-news-reading-guide/"
 ---
 

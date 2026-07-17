@@ -3,14 +3,14 @@ id: "L007"
 title: "Tax ID・Steuernummer・Steuerklasseの違い"
 slug: "tax-id-steuernummer-steuerklasse"
 category: "税金・行政"
-tags: ["税金","Tax ID","行政手続き"]
-summary: "ドイツ生活でよく出てくる税関連番号と税クラスの違いを、日本語で整理。"
+tags: ["税金","Tax ID","Steuernummer","Steuerklasse","行政手続き"]
+summary: "ドイツ生活でよく出てくる Tax ID、Steuernummer、Steuerklasse の違い、必要になる場面、勤務開始・確定申告・結婚後の確認ポイントを日本語で整理。"
 status: "published"
 published: true
 published_at: "2026-06-12"
-last_verified: "2026-06-14"
+last_verified: "2026-06-16"
 canonical_url: "/germany/ja/living/tax-id-steuernummer-steuerklasse/"
-related_articles: ["germany-first-30-days","bank-account-germany"]
+related_articles: ["germany-first-30-days","anmeldung-guide","bank-account-germany","health-insurance-guide"]
 official_links:
   - title: "BZSt - Identifikationsnummer"
     url: "https://www.bzst.de/DE/Privatpersonen/SteuerlicheIdentifikationsnummer/steuerlicheidentifikationsnummer_node.html"

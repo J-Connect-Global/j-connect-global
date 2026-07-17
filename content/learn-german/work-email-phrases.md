@@ -2,12 +2,12 @@
 id: "G003"
 title: "ビジネスメールで使う丁寧なドイツ語表現"
 slug: "work-email-phrases"
-category: "職場・ビジネスメール"
+category: "仕事・メール"
 summary: "依頼、確認、催促、謝罪、日程調整で使える職場向けドイツ語メール表現です。"
 status: "published"
 published: true
 published_at: "2026-06-07"
-last_verified: "2026-06-07"
+last_verified: "2026-07-16"
 tags: ["仕事","メール","B1"]
 canonical_url: "/germany/ja/learn-german/work-email-phrases/"
 ---

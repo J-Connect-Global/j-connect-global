@@ -3,15 +3,15 @@ id: "T012"
 title: "ドイツから行く週末旅行：ブレーメン観光の基本"
 slug: "bremen-weekend-trip"
 category: "観光"
-tags: ["ブレーメン","週末旅行","ドイツ","旧市街","観光"]
-summary: "北ドイツらしい旧市街とメルヘンの雰囲気を、日帰りから1泊で楽しみやすい街です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。"
+tags: ["ブレーメン", "週末旅行", "旧市街", "ハンザ都市"]
+summary: "市庁舎前の歴史地区、細い路地のSchnoor、文化のあるViertelを、徒歩中心で1泊にまとめるブレーメンの実用ガイドです。"
 status: "published"
 published: true
 published_at: "2026-06-29"
-updated_at: "2026-06-29"
-last_verified: "2026-06-29"
+updated_at: "2026-07-16"
+last_verified: "2026-07-16"
 canonical_url: "/germany/ja/living/bremen-weekend-trip/"
-related_articles: ["amsterdam-weekend-trip","strasbourg-weekend-trip","cologne-city-guide"]
+related_articles: ["hamburg-weekend-trip", "cologne-city-guide", "nrw-nature-relax-guide"]
 official_sources:
   - title: "Bremen Tourism"
     url: "https://www.bremen.eu/tourism"

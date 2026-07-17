@@ -7,7 +7,7 @@ summary: "A2からB1を目指し、生活手続き、医療、住まい、仕事
 status: "published"
 published: true
 published_at: "2026-06-20"
-last_verified: "2026-06-20"
+last_verified: "2026-07-16"
 tags: ["B1","生活ドイツ語","説明力"]
 canonical_url: "/germany/ja/learn-german/b1-daily-life-german-route/"
 ---

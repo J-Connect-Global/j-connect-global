@@ -3,15 +3,15 @@ id: "T020"
 title: "ドイツから行く週末旅行：プラハ観光の基本"
 slug: "prague-weekend-trip"
 category: "観光"
-tags: ["プラハ","週末旅行","チェコ","旧市街","観光"]
-summary: "旧市街、カレル橋、プラハ城を徒歩と公共交通で回りやすく、ドイツからの週末旅行でも人気の高い街です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。"
+tags: ["プラハ","週末旅行","チェコ","旧市街"]
+summary: "旧市街、カレル橋、プラハ城を朝夕の混雑で分け、PIDの時間制チケットを正しく使うためのプラハ週末ガイドです。"
 status: "published"
 published: true
 published_at: "2026-06-29"
-updated_at: "2026-06-29"
-last_verified: "2026-06-29"
+updated_at: "2026-07-16"
+last_verified: "2026-07-16"
 canonical_url: "/germany/ja/living/prague-weekend-trip/"
-related_articles: ["amsterdam-weekend-trip","strasbourg-weekend-trip","cologne-city-guide"]
+related_articles: ["krakow-weekend-trip","warsaw-weekend-trip","munich-weekend-trip"]
 official_sources:
   - title: "Prague City Tourism"
     url: "https://prague.eu/en"

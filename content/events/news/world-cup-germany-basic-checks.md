@@ -9,7 +9,7 @@ tags: ["ワールドカップ","交通","イベント"]
 status: "published"
 published: true
 published_at: "2026-06-28"
-last_verified: "2026-06-28"
+last_verified: "2026-07-06"
 canonical_url: "/germany/ja/events/news/world-cup-germany-basic-checks/"
 source_type: "manual"
 ---

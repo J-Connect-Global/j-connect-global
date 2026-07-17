@@ -1,9 +1,9 @@
 ---
 id: "L011"
-title: "Rundfunkbeitragとは？ドイツの放送負担金の基本"
+title: "Rundfunkbeitragとは？ドイツの放送負担金・GEZの完全ガイド"
 slug: "rundfunkbeitrag-guide"
 category: "生活・手続き"
-tags: ["Rundfunkbeitrag","住まい","手続き"]
+tags: ["Rundfunkbeitrag","GEZ","住まい","手続き","引っ越し"]
 summary: "ドイツで住み始めたときに届くRundfunkbeitragの通知、支払い対象、登録・支払い・引っ越し時の確認点を整理。"
 status: "published"
 published: true

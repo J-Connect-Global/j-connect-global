@@ -3,15 +3,15 @@ id: "T016"
 title: "ドイツから行く週末旅行：ロンドン観光の基本"
 slug: "london-weekend-trip"
 category: "観光"
-tags: ["ロンドン","週末旅行","イギリス","観光","美術館"]
-summary: "ドイツから飛行機や鉄道乗り継ぎで行ける大都市で、入国条件、空港移動、時差を意識して計画したい週末旅行先です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。"
+tags: ["ロンドン","週末旅行","イギリス","美術館"]
+summary: "到着空港と宿の地区を先に固定し、徒歩で回る地区とTfLを使う区間を分けるロンドン週末旅行の基本です。"
 status: "published"
 published: true
 published_at: "2026-06-29"
-updated_at: "2026-06-29"
-last_verified: "2026-06-29"
+updated_at: "2026-07-16"
+last_verified: "2026-07-16"
 canonical_url: "/germany/ja/living/london-weekend-trip/"
-related_articles: ["amsterdam-weekend-trip","strasbourg-weekend-trip","cologne-city-guide"]
+related_articles: ["brussels-weekend-trip","paris-weekend-trip","hamburg-weekend-trip"]
 official_sources:
   - title: "Visit London"
     url: "https://www.visitlondon.com/"

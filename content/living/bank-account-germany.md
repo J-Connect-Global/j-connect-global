@@ -3,12 +3,12 @@ id: "L006"
 title: "ドイツの銀行口座開設ガイド"
 slug: "bank-account-germany"
 category: "銀行・お金"
-tags: ["銀行口座","お金","初渡独"]
-summary: "ドイツで銀行口座を開く基本、必要書類、オンライン銀行と支店型銀行の違いを整理。"
+tags: ["銀行口座","Girokonto","Basiskonto","お金","初渡独"]
+summary: "ドイツで銀行口座を開くために必要な書類、銀行の選び方、オンライン銀行と支店型銀行の違い、Basiskonto、開設後の設定まで解説。"
 status: "published"
 published: true
 published_at: "2026-06-12"
-last_verified: "2026-06-14"
+last_verified: "2026-06-16"
 canonical_url: "/germany/ja/living/bank-account-germany/"
 related_articles: ["germany-first-30-days","schufa-guide"]
 ---

@@ -2,15 +2,15 @@
 id: "L002"
 title: "ドイツ生活最初の30日チェックリスト"
 slug: "germany-first-30-days"
-category: "生活・手続き"
-tags: ["初渡独","行政手続き"]
-summary: "ドイツに到着してから1ヶ月以内に済ませておきたい重要な手続きと準備を時系列でまとめました。"
+category: "生活立ち上げ"
+tags: ["初渡独","住民登録","健康保険","銀行口座","税務ID","滞在許可"]
+summary: "ドイツ到着後30日以内に優先して進めたい住民登録、健康保険、銀行口座、税務ID、通信、滞在許可、放送負担金などを時系列で整理。"
 status: "published"
 published: true
 published_at: "2026-06-07"
-last_verified: "2026-06-07"
+last_verified: "2026-06-16"
 canonical_url: "/germany/ja/living/germany-first-30-days/"
-related_articles: ["anmeldung-guide","health-insurance-guide"]
+related_articles: ["anmeldung-guide","health-insurance-guide","bank-account-germany","tax-id-steuernummer-steuerklasse"]
 ---
 
 # ドイツ生活最初の30日チェックリスト

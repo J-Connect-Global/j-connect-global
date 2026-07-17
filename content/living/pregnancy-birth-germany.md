@@ -1,14 +1,14 @@
 ---
 id: "L008"
-title: "ドイツで妊娠・出産したときの基本手続き"
+title: "ドイツで妊娠・出産したときの基本手続き：医療・保険・職場・出生届の流れ"
 slug: "pregnancy-birth-germany"
 category: "家族・医療"
-tags: ["妊娠","出産","医療"]
-summary: "妊娠判明後から出産前後までに確認したい医療・保険・行政手続きの全体像。"
+tags: ["妊娠","出産","医療","助産師","Mutterschutz","Elterngeld","Kindergeld","出生届"]
+summary: "ドイツで妊娠・出産する日本人家庭向けに、妊娠判明後の婦人科受診、助産師探し、出産施設、健康保険、職場報告、Mutterschutz、出生届、Elterngeld・Kindergeld申請までの流れを整理。"
 status: "published"
 published: true
 published_at: "2026-06-12"
-last_verified: "2026-06-14"
+last_verified: "2026-06-16"
 canonical_url: "/germany/ja/living/pregnancy-birth-germany/"
 related_articles: ["health-insurance-guide","kita-u3-tagesmutter-guide"]
 ---

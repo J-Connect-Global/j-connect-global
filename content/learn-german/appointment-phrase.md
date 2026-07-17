@@ -2,12 +2,12 @@
 id: "G001"
 title: "予約を取りたいときのドイツ語フレーズ"
 slug: "appointment-phrase"
-category: "電話・予約"
+category: "電話・窓口"
 summary: "病院、美容室、役所などで使える予約依頼、空き確認、日時変更の基本表現です。"
 status: "published"
 published: true
 published_at: "2026-06-09"
-last_verified: "2026-06-09"
+last_verified: "2026-07-16"
 tags: ["予約","日常会話","A1"]
 canonical_url: "/germany/ja/learn-german/appointment-phrase/"
 ---

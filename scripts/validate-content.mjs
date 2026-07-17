@@ -117,6 +117,7 @@ function main() {
   validateHome(datasets);
   validateSearchIndex(allItems);
   validateSitemap(allItems);
+  validateRelatedArticles(allItems);
   validateWildBirdCards();
 
   if (problems.length) {
@@ -266,7 +267,7 @@ function validatePublishedFiles(type, item, label) {
     problems.push(`${htmlRel} does not link back to hub: ${contentTypes[type].hubUrl}`);
   }
 
-  validateArticleMetaOutput(html, htmlRel);
+  validateArticleMetaOutput(html, item, htmlRel);
   validateOfficialSourceOutput(html, item, htmlRel);
   if (item.content_type !== 'news') {
     const visibleHtml = html
@@ -382,6 +383,16 @@ function normalizedMetadataValue(value) {
   return String(value ?? '').trim();
 }
 
+function latestMetadataDate(...values) {
+  const candidates = values
+    .map((value) => String(value || '').trim())
+    .filter(Boolean)
+    .map((value) => ({ value, timestamp: Date.parse(value) }))
+    .filter((entry) => Number.isFinite(entry.timestamp));
+  candidates.sort((a, b) => b.timestamp - a.timestamp);
+  return candidates[0]?.value || '';
+}
+
 function isValidGeneratedArticleUrl(type, item) {
   if (item.url === `/germany/ja/${type}/${item.slug}/`) return true;
   if (type === 'events' && item.content_type === 'news') {
@@ -403,7 +414,7 @@ function validateOfficialSourceOutput(html, item, relPath) {
   }
 }
 
-function validateArticleMetaOutput(html, relPath) {
+function validateArticleMetaOutput(html, item, relPath) {
   for (const expected of [
     'property="og:type"',
     'property="og:title"',
@@ -414,6 +425,27 @@ function validateArticleMetaOutput(html, relPath) {
   ]) {
     if (!html.includes(expected)) {
       problems.push(`${relPath} missing article metadata output: ${expected}`);
+    }
+  }
+  const expectedModified = latestMetadataDate(item.updated_at, item.last_verified, item.published_at);
+  if (expectedModified && !html.includes(`property="article:modified_time" content="${expectedModified}"`)) {
+    problems.push(`${relPath} article:modified_time does not match source metadata: ${expectedModified}.`);
+  }
+  if (expectedModified && !html.includes(`"dateModified":"${expectedModified}"`)) {
+    problems.push(`${relPath} JSON-LD dateModified does not match source metadata: ${expectedModified}.`);
+  }
+}
+
+function validateRelatedArticles(allItems) {
+  const publishedSlugs = new Set(allItems.filter((item) => item.published === true).map((item) => item.slug));
+  for (const item of allItems.filter((entry) => entry.published === true)) {
+    const related = Array.isArray(item.related_articles) ? item.related_articles : [];
+    const seen = new Set();
+    for (const slug of related) {
+      if (slug === item.slug) problems.push(`${item.markdown_path} related_articles contains a self-link: ${slug}.`);
+      if (seen.has(slug)) problems.push(`${item.markdown_path} related_articles contains a duplicate: ${slug}.`);
+      if (!publishedSlugs.has(slug)) problems.push(`${item.markdown_path} related_articles references an unknown published slug: ${slug}.`);
+      seen.add(slug);
     }
   }
 }
@@ -492,13 +524,22 @@ function validateSearchIndex(allItems) {
 function validateSitemap(allItems) {
   const sitemapPath = 'sitemap.xml';
   const xml = readText(sitemapPath);
-  const urls = [...xml.matchAll(/<loc>([\s\S]*?)<\/loc>/g)].map((match) => match[1].trim());
+  const entries = [...xml.matchAll(/<url>\s*<loc>([\s\S]*?)<\/loc>([\s\S]*?)<\/url>/g)].map((match) => ({
+    loc: match[1].trim(),
+    lastmod: match[2].match(/<lastmod>([\s\S]*?)<\/lastmod>/)?.[1].trim() || ''
+  }));
+  const urls = entries.map((entry) => entry.loc);
+  const lastmodByUrl = new Map(entries.map((entry) => [entry.loc, entry.lastmod]));
   validateNoDuplicateUrls(urls, sitemapPath);
 
   for (const item of allItems.filter((entry) => entry.published === true && entry.sitemap_visible === true)) {
     const loc = absoluteUrl(item.url);
     if (!urls.includes(loc)) {
       problems.push(`${sitemapPath} missing sitemap-visible item: ${loc}`);
+    }
+    const expectedLastmod = latestMetadataDate(item.updated_at, item.last_verified, item.published_at);
+    if (lastmodByUrl.get(loc) !== expectedLastmod) {
+      problems.push(`${sitemapPath} lastmod for ${loc} must match source metadata: ${expectedLastmod}.`);
     }
   }
 
@@ -609,7 +650,7 @@ function compareHomeItemEntries(a, b) {
 }
 
 function getHomeDateTimestamp(item) {
-  for (const field of ['publishedAt', 'published_at', 'date', 'updatedAt', 'updated_at', 'createdAt', 'created_at']) {
+  for (const field of ['lastModifiedAt', 'last_modified_at', 'updatedAt', 'updated_at', 'publishedAt', 'published_at', 'postedAt', 'posted_at', 'date', 'createdAt', 'created_at']) {
     const time = Date.parse(item?.[field] || '');
     if (Number.isFinite(time)) return time;
   }

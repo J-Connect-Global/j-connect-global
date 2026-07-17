@@ -5,7 +5,7 @@
     "slug": "appointment-phrase",
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
     "image_alt": "German phrase study cards",
-    "category": "電話・予約",
+    "category": "電話・窓口",
     "content_type": "phrase",
     "summary": "病院、美容室、役所などで使える予約依頼、空き確認、日時変更の基本表現です。",
     "url": "/germany/ja/learn-german/appointment-phrase/",
@@ -14,7 +14,7 @@
     "status": "published",
     "published_at": "2026-06-09",
     "updated_at": "2026-06-09",
-    "last_verified": "2026-06-09",
+    "last_verified": "2026-07-16",
     "tags": ["予約", "日常会話", "A1"],
     "home_visible": true,
     "home_order": 10,
@@ -34,7 +34,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-09",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2026-12-09"
     },
     "home_image_class": "img-office",
@@ -47,7 +47,7 @@
     "id": "G002",
     "title": "病院予約の電話で使うドイツ語",
     "slug": "hospital-phrases",
-    "category": "病院・薬局",
+    "category": "医療・電話",
     "content_type": "phrase",
     "summary": "病院・小児科・専門医に電話で予約を取るための基本フレーズと会話例です。",
     "url": "/germany/ja/learn-german/hospital-phrases/",
@@ -56,7 +56,7 @@
     "status": "published",
     "published_at": "2026-06-08",
     "updated_at": "2026-06-08",
-    "last_verified": "2026-06-08",
+    "last_verified": "2026-07-16",
     "tags": ["病院", "症状説明", "電話"],
     "home_visible": true,
     "home_order": 20,
@@ -76,7 +76,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-08",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2026-12-08"
     },
     "home_image_class": "img-hospital"
@@ -85,7 +85,7 @@
     "id": "G003",
     "title": "ビジネスメールで使う丁寧なドイツ語表現",
     "slug": "work-email-phrases",
-    "category": "職場・ビジネスメール",
+    "category": "仕事・メール",
     "content_type": "phrase",
     "summary": "依頼、確認、催促、謝罪、日程調整で使える職場向けドイツ語メール表現です。",
     "url": "/germany/ja/learn-german/work-email-phrases/",
@@ -94,7 +94,7 @@
     "status": "published",
     "published_at": "2026-06-07",
     "updated_at": "2026-06-07",
-    "last_verified": "2026-06-07",
+    "last_verified": "2026-07-16",
     "tags": ["仕事", "メール", "B1"],
     "home_visible": true,
     "home_order": 30,
@@ -114,7 +114,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-07",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2026-12-07"
     },
     "home_image_class": "img-meeting"
@@ -132,7 +132,7 @@
     "status": "published",
     "published_at": "2026-06-19",
     "updated_at": "2026-06-19",
-    "last_verified": "2026-06-19",
+    "last_verified": "2026-07-06",
     "tags": ["役所", "Anmeldung", "A1"],
     "home_visible": true,
     "home_order": 40,
@@ -152,7 +152,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-19",
+      "last_reviewed_at": "2026-07-06",
       "next_review_due": "2026-12-19"
     },
     "home_image_class": "img-office",
@@ -165,7 +165,7 @@
     "id": "G005",
     "title": "大家・住まいの連絡で使うドイツ語フレーズ",
     "slug": "landlord-housing-email-phrases",
-    "category": "大家・住まい",
+    "category": "住まい・メール",
     "content_type": "phrase",
     "summary": "内見、必要書類、修理依頼、退去連絡など、大家・管理会社とのやり取りで使えるドイツ語表現です。",
     "url": "/germany/ja/learn-german/landlord-housing-email-phrases/",
@@ -556,7 +556,7 @@
     "status": "published",
     "published_at": "2026-06-20",
     "updated_at": "2026-06-20",
-    "last_verified": "2026-06-20",
+    "last_verified": "2026-07-16",
     "tags": ["仕事探し", "メール", "B1"],
     "home_visible": false,
     "home_order": 150,
@@ -576,7 +576,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-20",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2026-12-20"
     }
   },
@@ -593,7 +593,7 @@
     "status": "published",
     "published_at": "2026-06-20",
     "updated_at": "2026-06-20",
-    "last_verified": "2026-06-20",
+    "last_verified": "2026-07-16",
     "tags": ["子育て", "Kita", "A2"],
     "home_visible": false,
     "home_order": 160,
@@ -613,7 +613,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-20",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2026-12-20"
     }
   },
@@ -630,7 +630,7 @@
     "status": "published",
     "published_at": "2026-06-20",
     "updated_at": "2026-06-20",
-    "last_verified": "2026-06-20",
+    "last_verified": "2026-07-16",
     "tags": ["B1", "生活ドイツ語", "説明力"],
     "home_visible": false,
     "home_order": 170,
@@ -650,7 +650,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-20",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2026-12-20"
     }
   },
@@ -667,7 +667,7 @@
     "status": "published",
     "published_at": "2026-06-20",
     "updated_at": "2026-06-20",
-    "last_verified": "2026-06-20",
+    "last_verified": "2026-07-16",
     "tags": ["B2", "仕事", "職場"],
     "home_visible": false,
     "home_order": 180,
@@ -687,7 +687,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-20",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2026-12-20"
     }
   },
@@ -706,7 +706,7 @@
     "status": "published",
     "published_at": "2026-06-20",
     "updated_at": "2026-06-20",
-    "last_verified": "2026-06-20",
+    "last_verified": "2026-07-16",
     "tags": ["Tandem", "言語交換", "会話"],
     "home_visible": false,
     "home_order": 190,
@@ -723,14 +723,19 @@
     "resource_format": ["app"],
     "resource_level": ["A2", "B1", "B2plus"],
     "resource_price_type": ["freemium"],
-    "official_sources": [{ "title": "Tandem 公式サイト", "url": "https://tandem.net/" }],
+    "official_sources": [
+      {
+        "title": "Tandem 公式サイト",
+        "url": "https://tandem.net/"
+      }
+    ],
     "disclaimer_type": "language_learning",
     "related_articles": ["workplace-conversation-phrases", "telephone-phrases", "job-seeker-german-route", "b2-work-german-route"],
     "related_living_guides": [],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-20",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2026-12-20"
     }
   },
@@ -764,7 +769,12 @@
     "resource_format": ["app"],
     "resource_level": ["A1", "A2", "B1", "B2plus"],
     "resource_price_type": ["freemium"],
-    "official_sources": [{ "title": "HelloTalk 公式サイト", "url": "https://www.hellotalk.com/en/" }],
+    "official_sources": [
+      {
+        "title": "HelloTalk 公式サイト",
+        "url": "https://www.hellotalk.com/en/"
+      }
+    ],
     "disclaimer_type": "language_learning",
     "related_articles": ["parenting-phrases", "workplace-conversation-phrases", "telephone-phrases", "parenting-german-route", "job-seeker-german-route"],
     "related_living_guides": [],
@@ -788,7 +798,7 @@
     "status": "published",
     "published_at": "2026-06-20",
     "updated_at": "2026-06-20",
-    "last_verified": "2026-06-20",
+    "last_verified": "2026-07-16",
     "tags": ["DW", "Nicos Weg", "無料教材"],
     "home_visible": false,
     "home_order": 210,
@@ -805,14 +815,19 @@
     "resource_format": ["video", "website"],
     "resource_level": ["A1", "A2", "B1"],
     "resource_price_type": ["free"],
-    "official_sources": [{ "title": "DW Learn German", "url": "https://learngerman.dw.com/" }],
+    "official_sources": [
+      {
+        "title": "DW Learn German",
+        "url": "https://learngerman.dw.com/"
+      }
+    ],
     "disclaimer_type": "language_learning",
     "related_articles": ["shopping-phrases", "telephone-phrases", "appointment-phrase", "a1-daily-life-german-route", "b1-daily-life-german-route"],
     "related_living_guides": [],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-20",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2026-12-20"
     }
   },
@@ -829,7 +844,7 @@
     "status": "published",
     "published_at": "2026-06-20",
     "updated_at": "2026-06-20",
-    "last_verified": "2026-06-20",
+    "last_verified": "2026-07-16",
     "tags": ["Duolingo", "アプリ", "A1"],
     "home_visible": false,
     "home_order": 220,
@@ -846,14 +861,19 @@
     "resource_format": ["app"],
     "resource_level": ["A1", "A2"],
     "resource_price_type": ["freemium"],
-    "official_sources": [{ "title": "Duolingo German course", "url": "https://www.duolingo.com/course/de/en/Learn-German" }],
+    "official_sources": [
+      {
+        "title": "Duolingo German course",
+        "url": "https://www.duolingo.com/course/de/en/Learn-German"
+      }
+    ],
     "disclaimer_type": "language_learning",
     "related_articles": ["shopping-phrases", "appointment-phrase", "a1-daily-life-german-route", "arrival-german-learning-route"],
     "related_living_guides": [],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-20",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2026-12-20"
     }
   },
@@ -870,7 +890,7 @@
     "status": "published",
     "published_at": "2026-06-20",
     "updated_at": "2026-06-20",
-    "last_verified": "2026-06-20",
+    "last_verified": "2026-07-16",
     "tags": ["ZDF", "リスニング", "B1"],
     "home_visible": false,
     "home_order": 230,
@@ -887,14 +907,19 @@
     "resource_format": ["video", "website"],
     "resource_level": ["B1", "B2plus"],
     "resource_price_type": ["free"],
-    "official_sources": [{ "title": "ZDF 公式サイト", "url": "https://www.zdf.de/" }],
+    "official_sources": [
+      {
+        "title": "ZDF 公式サイト",
+        "url": "https://www.zdf.de/"
+      }
+    ],
     "disclaimer_type": "language_learning",
     "related_articles": ["workplace-conversation-phrases", "work-email-phrases", "b1-daily-life-german-route", "b2-work-german-route"],
     "related_living_guides": [],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-20",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2026-12-20"
     }
   },
@@ -928,7 +953,12 @@
     "resource_format": ["course"],
     "resource_level": ["A1", "A2", "B1", "B2plus"],
     "resource_price_type": ["paid"],
-    "official_sources": [{ "title": "Volkshochschule 公式ポータル", "url": "https://www.volkshochschule.de/" }],
+    "official_sources": [
+      {
+        "title": "Volkshochschule 公式ポータル",
+        "url": "https://www.volkshochschule.de/"
+      }
+    ],
     "disclaimer_type": "language_learning",
     "related_articles": ["b1-daily-life-german-route", "b2-work-german-route", "a1-daily-life-german-route", "workplace-conversation-phrases"],
     "related_living_guides": [],
@@ -954,7 +984,7 @@
     "status": "published",
     "published_at": "2026-06-28",
     "updated_at": "2026-06-28",
-    "last_verified": "2026-06-28",
+    "last_verified": "2026-07-16",
     "tags": ["ニュース", "読解", "B1-B2"],
     "home_visible": false,
     "home_order": 250,
@@ -972,14 +1002,19 @@
     "resource_format": ["website"],
     "resource_level": ["B1", "B2plus"],
     "resource_price_type": ["free"],
-    "official_sources": [{ "title": "Deutsche Welle", "url": "https://www.dw.com/" }],
+    "official_sources": [
+      {
+        "title": "Deutsche Welle",
+        "url": "https://www.dw.com/"
+      }
+    ],
     "disclaimer_type": "language_learning",
     "related_articles": ["b1-daily-life-german-route", "b2-work-german-route", "zdf-listening-german-guide"],
     "related_living_guides": [],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-28",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2026-12-28"
     }
   }

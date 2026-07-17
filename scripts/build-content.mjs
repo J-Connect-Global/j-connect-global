@@ -3,6 +3,7 @@ import path from 'node:path';
 import vm from 'node:vm';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { frontMatterComparableFields } from './sync-content-frontmatter.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE_ORIGIN = 'https://j-connect-global.com';
@@ -173,7 +174,11 @@ function loadContentType(type) {
     const markdownPath = path.join(root, markdownRel);
     const markdown = fs.existsSync(markdownPath) ? readText(markdownRel) : '';
     const frontMatter = parseFrontMatter(markdown).data;
-    const merged = normalizeItem(type, { ...frontMatter, ...entry, __frontmatter: frontMatter }, index);
+    const source = { ...entry };
+    for (const field of frontMatterComparableFields) {
+      if (Object.prototype.hasOwnProperty.call(frontMatter, field)) source[field] = frontMatter[field];
+    }
+    const merged = normalizeItem(type, { ...source, __frontmatter: frontMatter }, index);
 
     return {
       ...merged,
@@ -838,7 +843,7 @@ function renderOpenGraphMeta(type, item, title, canonicalHref) {
     ['name', 'twitter:image:alt', getArticleImageAlt(item)],
     ['property', 'article:section', contentTypes[type].label],
     ['property', 'article:published_time', item.published_at],
-    ['property', 'article:modified_time', item.updated_at || item.last_verified || item.published_at]
+    ['property', 'article:modified_time', latestMetadataDate(item.updated_at, item.last_verified, item.published_at)]
   ];
 
   return tags
@@ -879,7 +884,7 @@ function renderStructuredData(type, item, title, canonicalHref) {
     image,
     mainEntityOfPage: canonicalHref,
     datePublished: item.published_at || undefined,
-    dateModified: item.updated_at || item.last_verified || item.published_at || undefined,
+    dateModified: latestMetadataDate(item.updated_at, item.last_verified, item.published_at) || undefined,
     articleSection: contentTypes[type].label,
     keywords,
     author: {
@@ -1915,7 +1920,7 @@ function updateSitemap(allItems, pages) {
     if (!isCanonicalJaUrl(loc)) continue;
     byLoc.set(loc, {
       loc,
-      lastmod: item.updated_at || item.last_verified || item.published_at
+      lastmod: latestMetadataDate(item.updated_at, item.last_verified, item.published_at)
     });
   }
 
@@ -2137,6 +2142,17 @@ function firstNonEmpty(...values) {
     if (text) return text;
   }
   return '';
+}
+
+function latestMetadataDate(...values) {
+  const candidates = values
+    .map((value) => String(value || '').trim())
+    .filter(Boolean)
+    .map((value) => ({ value, timestamp: Date.parse(value) }))
+    .filter((entry) => Number.isFinite(entry.timestamp));
+  if (!candidates.length) return firstNonEmpty(...values);
+  candidates.sort((a, b) => b.timestamp - a.timestamp);
+  return candidates[0].value;
 }
 
 function firstArticleImage(...values) {

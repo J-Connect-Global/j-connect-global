@@ -3,14 +3,14 @@ id: "L003"
 title: "ドイツの健康保険の基本"
 slug: "health-insurance-guide"
 category: "生活・手続き"
-tags: ["保険","行政手続き"]
-summary: "公的保険（GKV）と民間保険（PKV）の違い、加入義務、選び方のポイントを初心者向けに解説します。"
+tags: ["健康保険","GKV","PKV","医療","渡独後手続き"]
+summary: "ドイツの健康保険制度、GKVとPKVの違い、会社員・学生・自営業・家族帯同者の加入パターン、保険料、選び方、加入手続きの流れを解説。"
 status: "published"
 published: true
 published_at: "2026-06-07"
-last_verified: "2026-06-14"
+last_verified: "2026-06-16"
 canonical_url: "/germany/ja/living/health-insurance-guide/"
-related_articles: ["germany-first-30-days"]
+related_articles: ["germany-first-30-days","anmeldung-guide"]
 ---
 
 # ドイツの健康保険の基本

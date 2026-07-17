@@ -7,7 +7,7 @@ summary: "住民登録、予約確認、必要書類、不足書類、証明書�
 status: "published"
 published: true
 published_at: "2026-06-19"
-last_verified: "2026-06-19"
+last_verified: "2026-07-06"
 tags: ["役所","Anmeldung","A1"]
 canonical_url: "/germany/ja/learn-german/behoerde-anmeldung-phrases/"
 ---

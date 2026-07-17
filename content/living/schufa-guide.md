@@ -4,11 +4,11 @@ title: "SCHUFAとは？賃貸・契約で必要になる信用情報"
 slug: "schufa-guide"
 category: "住まい・契約"
 tags: ["SCHUFA","賃貸","信用情報"]
-summary: "SCHUFAの意味、賃貸契約や携帯・銀行手続きで必要になる場面、取得方法を解説。"
+summary: "SCHUFAの意味、賃貸契約や携帯・銀行手続きで必要になる場面、取得方法、提出時の注意点を解説。"
 status: "published"
 published: true
 published_at: "2026-06-12"
-last_verified: "2026-06-14"
+last_verified: "2026-06-16"
 canonical_url: "/germany/ja/living/schufa-guide/"
 related_articles: ["rent-apartment-germany","bank-account-germany"]
 ---

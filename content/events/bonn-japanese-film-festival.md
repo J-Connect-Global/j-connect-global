@@ -7,7 +7,7 @@ city: "Bonn"
 location: "Bonn 周辺の映画館・文化施設"
 event_date: "上映企画により異なる"
 published_at: "2026-06-12"
-last_verified: "2026-06-12"
+last_verified: "2026-07-06"
 summary: "日本映画や国際映画をドイツで楽しむためのチケット確認、上映言語、アクセスのメモ。"
 tags: ["映画","日本文化","ボン"]
 status: "published"

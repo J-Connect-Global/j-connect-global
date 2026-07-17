@@ -2,12 +2,12 @@
 id: "G002"
 title: "病院予約の電話で使うドイツ語"
 slug: "hospital-phrases"
-category: "病院・薬局"
+category: "医療・電話"
 summary: "病院・小児科・専門医に電話で予約を取るための基本フレーズと会話例です。"
 status: "published"
 published: true
 published_at: "2026-06-08"
-last_verified: "2026-06-08"
+last_verified: "2026-07-16"
 tags: ["病院","症状説明","電話"]
 canonical_url: "/germany/ja/learn-german/hospital-phrases/"
 ---

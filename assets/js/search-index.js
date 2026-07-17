@@ -307,15 +307,14 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "ドイツから行く週末旅行：ハンブルク観光の基本",
-    "description": "ドイツ国内の主要都市から鉄道で行きやすく、北ドイツらしい港町の雰囲気を週末で楽しめる街です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "description": "Speicherstadt、HafenCity、Alsterを同日に詰め込みすぎず、HVVで港町の移動を組み立てるハンブルク週末ガイドです。",
     "url": "/germany/ja/living/hamburg-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
       "ハンブルク",
       "週末旅行",
-      "ドイツ",
       "港町",
-      "観光"
+      "ドイツ"
     ]
   },
   {
@@ -333,146 +332,141 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "ドイツから行く週末旅行：ブレーメン観光の基本",
-    "description": "北ドイツらしい旧市街とメルヘンの雰囲気を、日帰りから1泊で楽しみやすい街です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "description": "市庁舎前の歴史地区、細い路地のSchnoor、文化のあるViertelを、徒歩中心で1泊にまとめるブレーメンの実用ガイドです。",
     "url": "/germany/ja/living/bremen-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
       "ブレーメン",
       "週末旅行",
-      "ドイツ",
       "旧市街",
-      "観光"
+      "ハンザ都市"
     ]
   },
   {
     "title": "ドイツから行く週末旅行：ブリュッセル観光の基本",
-    "description": "ドイツ西部から国際列車で行きやすく、グランプラス、美食、EU地区を週末で楽しめるベルギーの首都です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "description": "グランプラス周辺、サブロン、EU地区を目的別に分け、STIB/MIVBと鉄道の境界を確認して歩くブリュッセルの週末ガイドです。",
     "url": "/germany/ja/living/brussels-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
       "ブリュッセル",
       "週末旅行",
       "ベルギー",
-      "観光",
-      "グルメ"
+      "美術館"
     ]
   },
   {
     "title": "ドイツから行く週末旅行：パリ観光の基本",
-    "description": "ドイツから鉄道や飛行機で行ける大都市で、美術館、街歩き、カフェを目的別に絞ると週末でも楽しめます。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "description": "一日に一地区と一つの予約施設を基本に、メトロ・RERの券種と工事情報を確認して歩くパリ週末旅行の実用ガイドです。",
     "url": "/germany/ja/living/paris-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
       "パリ",
       "週末旅行",
       "フランス",
-      "美術館",
-      "観光"
+      "美術館"
     ]
   },
   {
     "title": "ドイツから行く週末旅行：ミュンヘン観光の基本",
-    "description": "南ドイツらしい旧市街、ビアホール、公園、博物館を週末で組み合わせやすいバイエルン州の中心都市です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "description": "Marienplatz、Kunstareal、Isar・Englischer Gartenを目的ごとに選び、MVVの経路と日券を確認するミュンヘン週末ガイドです。",
     "url": "/germany/ja/living/munich-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
       "ミュンヘン",
       "週末旅行",
-      "ドイツ",
       "バイエルン",
-      "観光"
+      "美術館"
     ]
   },
   {
     "title": "ドイツから行く週末旅行：ロンドン観光の基本",
-    "description": "ドイツから飛行機や鉄道乗り継ぎで行ける大都市で、入国条件、空港移動、時差を意識して計画したい週末旅行先です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "description": "到着空港と宿の地区を先に固定し、徒歩で回る地区とTfLを使う区間を分けるロンドン週末旅行の基本です。",
     "url": "/germany/ja/living/london-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
       "ロンドン",
       "週末旅行",
       "イギリス",
-      "観光",
       "美術館"
     ]
   },
   {
     "title": "ドイツから行く週末旅行：コペンハーゲン観光の基本",
-    "description": "北欧らしいデザイン、港町の景色、自転車文化を週末で感じやすいデンマークの首都です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "description": "Indre By、港、Christianshavnを徒歩と公共交通でつなぎ、空港・中央駅・自転車移動を無理なく選ぶためのコペンハーゲン週末ガイドです。",
     "url": "/germany/ja/living/copenhagen-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
       "コペンハーゲン",
       "週末旅行",
       "デンマーク",
-      "北欧",
-      "観光"
+      "デザイン"
     ]
   },
   {
     "title": "ドイツから行く週末旅行：ワルシャワ観光の基本",
-    "description": "再建された旧市街、緑の多い公園、近代的な中心部を週末で組み合わせやすいポーランドの首都です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "description": "再建された旧市街、王の道、Śródmieście、ヴィスワ川沿いを目的別に組み、公式交通情報で移動するワルシャワ週末ガイドです。",
     "url": "/germany/ja/living/warsaw-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
       "ワルシャワ",
       "週末旅行",
       "ポーランド",
-      "旧市街",
-      "観光"
+      "公園"
     ]
   },
   {
     "title": "ドイツから行く週末旅行：クラクフ観光の基本",
-    "description": "旧市街、ヴァヴェル城、カジミエシュ地区を徒歩中心で回りやすい、週末旅行向きの歴史都市です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "description": "Rynek、Wawel、Kazimierzを徒歩でつなぎ、遠い地区だけをトラムで補うクラクフの実用的な週末ガイドです。",
     "url": "/germany/ja/living/krakow-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
       "クラクフ",
       "週末旅行",
       "ポーランド",
-      "旧市街",
-      "観光"
+      "旧市街"
     ]
   },
   {
     "title": "ドイツから行く週末旅行：プラハ観光の基本",
-    "description": "旧市街、カレル橋、プラハ城を徒歩と公共交通で回りやすく、ドイツからの週末旅行でも人気の高い街です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "description": "旧市街、カレル橋、プラハ城を朝夕の混雑で分け、PIDの時間制チケットを正しく使うためのプラハ週末ガイドです。",
     "url": "/germany/ja/living/prague-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
       "プラハ",
       "週末旅行",
       "チェコ",
-      "旧市街",
-      "観光"
+      "旧市街"
     ]
   },
   {
-    "title": "Rundfunkbeitragとは？ドイツの放送負担金の基本",
+    "title": "Rundfunkbeitragとは？ドイツの放送負担金・GEZの完全ガイド",
     "description": "ドイツで住み始めたときに届くRundfunkbeitragの通知、支払い対象、登録・支払い・引っ越し時の確認点を整理。",
     "url": "/germany/ja/living/rundfunkbeitrag-guide/",
     "category": "生活・手続き",
     "tags": [
       "Rundfunkbeitrag",
+      "GEZ",
       "住まい",
-      "手続き"
+      "手続き",
+      "引っ越し"
     ]
   },
   {
     "title": "ドイツで家を探す基本ガイド",
-    "description": "ドイツで賃貸物件を探すときの流れ、必要書類、内見、契約前の確認点を整理。",
+    "description": "ドイツで賃貸物件を探すときの流れ、必要書類、内見、契約前の確認点、入居後の手続きをまとめた実務ガイド。",
     "url": "/germany/ja/living/rent-apartment-germany/",
     "category": "生活・手続き",
     "tags": [
       "賃貸",
       "家探し",
-      "契約"
+      "契約",
+      "SCHUFA",
+      "Anmeldung"
     ]
   },
   {
     "title": "SCHUFAとは？賃貸・契約で必要になる信用情報",
-    "description": "SCHUFAの意味、賃貸契約や携帯・銀行手続きで必要になる場面、取得方法を解説。",
+    "description": "SCHUFAの意味、賃貸契約や携帯・銀行手続きで必要になる場面、取得方法、提出時の注意点を解説。",
     "url": "/germany/ja/living/schufa-guide/",
     "category": "生活・手続き",
     "tags": [
@@ -483,87 +477,113 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "ドイツの銀行口座開設ガイド",
-    "description": "ドイツで銀行口座を開く基本、必要書類、オンライン銀行と支店型銀行の違いを整理。",
+    "description": "ドイツで銀行口座を開くために必要な書類、銀行の選び方、オンライン銀行と支店型銀行の違い、Basiskonto、開設後の設定まで解説。",
     "url": "/germany/ja/living/bank-account-germany/",
     "category": "生活・手続き",
     "tags": [
       "銀行口座",
+      "Girokonto",
+      "Basiskonto",
       "お金",
       "初渡独"
     ]
   },
   {
     "title": "Tax ID・Steuernummer・Steuerklasseの違い",
-    "description": "ドイツ生活でよく出てくる税関連番号と税クラスの違いを、日本語で整理。",
+    "description": "ドイツ生活でよく出てくる Tax ID、Steuernummer、Steuerklasse の違い、必要になる場面、勤務開始・確定申告・結婚後の確認ポイントを日本語で整理。",
     "url": "/germany/ja/living/tax-id-steuernummer-steuerklasse/",
     "category": "生活・手続き",
     "tags": [
       "税金",
       "Tax ID",
+      "Steuernummer",
+      "Steuerklasse",
       "行政手続き"
     ]
   },
   {
-    "title": "ドイツで妊娠・出産したときの基本手続き",
-    "description": "妊娠判明後から出産前後までに確認したい医療・保険・行政手続きの全体像。",
+    "title": "ドイツで妊娠・出産したときの基本手続き：医療・保険・職場・出生届の流れ",
+    "description": "ドイツで妊娠・出産する日本人家庭向けに、妊娠判明後の婦人科受診、助産師探し、出産施設、健康保険、職場報告、Mutterschutz、出生届、Elterngeld・Kindergeld申請までの流れを整理。",
     "url": "/germany/ja/living/pregnancy-birth-germany/",
     "category": "生活・手続き",
     "tags": [
       "妊娠",
       "出産",
-      "医療"
+      "医療",
+      "助産師",
+      "Mutterschutz",
+      "Elterngeld",
+      "Kindergeld",
+      "出生届"
     ]
   },
   {
-    "title": "Kita探しの基本：U3・Tagesmutter・Großtagespflege",
-    "description": "ドイツで保育先を探すときに出てくるU3、Kita、Tagesmutter、Großtagespflegeの違いを整理。",
+    "title": "Kita探しの基本：U3・Tagesmutter・Großtagespflegeの違いと申し込み手順",
+    "description": "ドイツで保育先を探す日本人家庭向けに、U3、Kita、Tagesmutter、Großtagespflegeの違い、申し込み手順、費用、見学時の確認ポイントを整理。",
     "url": "/germany/ja/living/kita-u3-tagesmutter-guide/",
     "category": "生活・手続き",
     "tags": [
       "Kita",
+      "U3",
+      "Tagesmutter",
+      "Großtagespflege",
+      "Jugendamt",
       "子育て",
       "保育"
     ]
   },
   {
     "title": "ドイツで引っ越すときの手続きチェックリスト",
-    "description": "住所変更、Anmeldung、電気・通信・保険・郵便転送など、引っ越し時の確認事項を整理。",
+    "description": "ドイツ国内で引っ越すときに必要な住民登録、住所変更、退去・入居確認、電気・通信・保険・郵便転送などを時系列で整理。",
     "url": "/germany/ja/living/moving-checklist-germany/",
     "category": "生活・手続き",
     "tags": [
       "引っ越し",
       "住所変更",
-      "手続き"
+      "手続き",
+      "住民登録",
+      "賃貸"
     ]
   },
   {
-    "title": "住民登録 Anmeldung の完全ガイド",
-    "description": "ドイツ生活の第一歩、住民登録（Anmeldung）の手順、必要書類、予約のコツを分かりやすく解説します。",
+    "title": "ドイツ住民登録 Anmeldung 完全ガイド｜必要書類・予約・当日の流れ",
+    "description": "ドイツで生活を始めるときに必要な住民登録 Anmeldung の完全ガイド。14日以内の登録ルール、必要書類、Wohnungsgeberbestätigung、予約方法、当日の流れ、税務IDとの関係、よくあるトラブルまで解説。",
     "url": "/germany/ja/living/anmeldung-guide/",
     "category": "生活・手続き",
     "tags": [
-      "行政手続き",
-      "初渡独"
+      "Anmeldung",
+      "住民登録",
+      "Bürgeramt",
+      "Wohnungsgeberbestätigung",
+      "初渡独",
+      "引っ越し"
     ]
   },
   {
     "title": "ドイツ生活最初の30日チェックリスト",
-    "description": "ドイツに到着してから1ヶ月以内に済ませておきたい重要な手続きと準備を時系列でまとめました。",
+    "description": "ドイツ到着後30日以内に優先して進めたい住民登録、健康保険、銀行口座、税務ID、通信、滞在許可、放送負担金などを時系列で整理。",
     "url": "/germany/ja/living/germany-first-30-days/",
     "category": "生活・手続き",
     "tags": [
       "初渡独",
-      "行政手続き"
+      "住民登録",
+      "健康保険",
+      "銀行口座",
+      "税務ID",
+      "滞在許可"
     ]
   },
   {
     "title": "ドイツの健康保険の基本",
-    "description": "公的保険（GKV）と民間保険（PKV）の違い、加入義務、選び方のポイントを初心者向けに解説します。",
+    "description": "ドイツの健康保険制度、GKVとPKVの違い、会社員・学生・自営業・家族帯同者の加入パターン、保険料、選び方、加入手続きの流れを解説。",
     "url": "/germany/ja/living/health-insurance-guide/",
     "category": "生活・手続き",
     "tags": [
-      "保険",
-      "行政手続き"
+      "健康保険",
+      "GKV",
+      "PKV",
+      "医療",
+      "渡独後手続き"
     ]
   },
   {

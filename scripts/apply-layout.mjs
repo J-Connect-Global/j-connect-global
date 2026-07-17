@@ -230,7 +230,7 @@ function ensurePageStructuredData(html, url, page) {
       url: canonical,
       isPartOf: {
         '@type': 'WebSite',
-        name: 'J-Connect Germany',
+        name: 'J-Connect Global',
         url: absoluteUrl('/germany/ja/')
       }
     }));
@@ -352,13 +352,13 @@ function shouldHaveJaHreflang(html, page, canonical) {
 function pageSocialMeta(html, url, page) {
   const title = cleanTitle(
     page.id === 'page-community-post'
-      ? '交流・掲示板の投稿 | J-Connect Germany'
+      ? '交流・掲示板の投稿 | J-Connect Global'
       : extractTitle(html) || formatPageTitle(page.title)
   );
   const description = cleanTitle(
     page.id === 'page-community-post'
       ? 'ドイツ在住日本人向けの交流掲示板投稿ページです。投稿詳細はページ読み込み後に表示されます。'
-      : extractMetaContent(html, 'description') || page.description || 'J-Connect Germanyのページです。'
+      : extractMetaContent(html, 'description') || page.description || 'J-Connect Globalのページです。'
   );
   const canonical = extractCanonical(html) || absoluteUrl(page.canonical_url || url);
 
@@ -378,7 +378,7 @@ function renderSocialMeta(meta, spaces) {
     ['property', 'og:url', meta.url],
     ['property', 'og:image', meta.image],
     ['property', 'og:type', meta.type],
-    ['property', 'og:site_name', 'J-Connect Germany'],
+    ['property', 'og:site_name', 'J-Connect Global'],
     ['property', 'og:locale', 'ja_JP'],
     ['name', 'twitter:card', 'summary_large_image'],
     ['name', 'twitter:title', meta.title],
@@ -504,8 +504,8 @@ function isCanonicalJaUrl(url) {
 
 function formatPageTitle(title) {
   const text = cleanTitle(title);
-  if (!text || text === 'J-Connect Germany') return 'J-Connect Germany';
-  return text.includes('J-Connect Germany') ? text : `${text} | J-Connect Germany`;
+  if (!text || text === 'J-Connect Global') return 'J-Connect Global';
+  return text.includes('J-Connect Global') ? text : `${text} | J-Connect Global`;
 }
 
 function cleanTitle(value) {

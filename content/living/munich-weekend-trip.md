@@ -3,7 +3,7 @@ id: "T015"
 title: "ドイツから行く週末旅行：ミュンヘン観光の基本"
 slug: "munich-weekend-trip"
 category: "観光"
-tags: ["ミュンヘン", "週末旅行", "バイエルン", "美術館"]
+tags: ["ミュンヘン","週末旅行","バイエルン","美術館"]
 summary: "Marienplatz、Kunstareal、Isar・Englischer Gartenを目的ごとに選び、MVVの経路と日券を確認するミュンヘン週末ガイドです。"
 status: "published"
 published: true
@@ -11,7 +11,7 @@ published_at: "2026-06-29"
 updated_at: "2026-07-16"
 last_verified: "2026-07-16"
 canonical_url: "/germany/ja/living/munich-weekend-trip/"
-related_articles: ["aachen-day-trip", "krakow-weekend-trip", "germany-first-30-days"]
+related_articles: ["aachen-day-trip","krakow-weekend-trip","germany-first-30-days"]
 official_sources:
   - title: "Simply Munich"
     url: "https://www.munich.travel/en"

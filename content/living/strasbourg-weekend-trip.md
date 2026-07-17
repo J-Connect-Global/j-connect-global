@@ -3,11 +3,7 @@ id: "T004"
 title: "ドイツから行く週末旅行：ストラスブール観光の基本"
 slug: "strasbourg-weekend-trip"
 category: "観光"
-tags:
-  - "ストラスブール"
-  - "週末旅行"
-  - "フランス"
-  - "観光"
+tags: ["ストラスブール","週末旅行","フランス","観光"]
 summary: "ドイツ西部から車や電車で行きやすいストラスブールを、週末旅行として楽しむための基本ルートと注意点を整理。"
 status: "published"
 published: true
@@ -15,10 +11,7 @@ published_at: "2026-06-27"
 updated_at: "2026-06-27"
 last_verified: "2026-06-27"
 canonical_url: "/germany/ja/living/strasbourg-weekend-trip/"
-related_articles:
-  - "aachen-day-trip"
-  - "cologne-city-guide"
-  - "rhine-river-relax-guide"
+related_articles: ["aachen-day-trip","cologne-city-guide","rhine-river-relax-guide"]
 official_sources: []
 ---
 

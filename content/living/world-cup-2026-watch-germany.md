@@ -21,9 +21,10 @@ sources:
   - "https://www.zdfheute.de/sport/fussball-wm-2026-live-spiele-ard-zdf-rechte-uebertragungen-100.html"
   - "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/japan/fixtures"
   - "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026"
-related_articles:
-  - "germany-first-30-days"
-  - "rundfunkbeitrag-guide"
+related_articles: ["germany-first-30-days","rundfunkbeitrag-guide"]
+summary: "ドイツ在住者向けに、FIFAワールドカップ2026をARD/ZDF、MagentaTV、スポーツバー、公式ハイライトで見る方法と、日本代表戦を追う実用ポイントを整理します。"
+canonical_url: "/germany/ja/living/world-cup-2026-watch-germany/"
+tags: ["ワールドカップ","サッカー","配信","ドイツ生活","日本代表"]
 ---
 
 # ドイツでワールドカップ2026を見る方法：日本代表戦・無料放送・配信・スポーツバーの使い分け

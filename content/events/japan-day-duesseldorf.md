@@ -9,12 +9,7 @@ event_date: "次回日程は公式発表を確認"
 published_at: "2026-06-12"
 last_verified: "2026-06-28"
 summary: "デュッセルドルフの日本デーについて、初めて行く人向けに見どころ、混雑、アクセス、子連れ・花火観覧の注意点を整理します。"
-tags:
-  - "日本文化"
-  - "家族向け"
-  - "NRW"
-  - "Düsseldorf"
-  - "花火"
+tags: ["日本文化","家族向け","NRW","Düsseldorf","花火"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/japan-day-duesseldorf/"

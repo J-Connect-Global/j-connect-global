@@ -3,11 +3,7 @@ id: "T008"
 title: "家族で行くケルン観光：大聖堂周辺と休憩しやすいスポット"
 slug: "cologne-family-trip"
 category: "観光"
-tags:
-  - "子連れ"
-  - "ケルン"
-  - "家族"
-  - "観光"
+tags: ["子連れ","ケルン","家族","観光"]
 summary: "家族連れでケルンを訪れる人向けに、大聖堂周辺、川沿い、休憩しやすい場所を中心に紹介。"
 status: "published"
 published: true
@@ -15,10 +11,7 @@ published_at: "2026-06-27"
 updated_at: "2026-06-27"
 last_verified: "2026-06-27"
 canonical_url: "/germany/ja/living/cologne-family-trip/"
-related_articles:
-  - "duesseldorf-family-trip"
-  - "cologne-city-guide"
-  - "rhine-river-relax-guide"
+related_articles: ["duesseldorf-family-trip","cologne-city-guide","rhine-river-relax-guide"]
 official_sources: []
 ---
 

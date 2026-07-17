@@ -44,7 +44,7 @@ const coreIndexableUrls = new Set([
 ]);
 
 const directoryStaticRequirements = new Map([
-  ['/germany/ja/jobs/', ['directory-seed-card', '応募前の確認', '求人情報は掲載元の確認が前提です', '応募前に会社情報']],
+  ['/germany/ja/jobs/', ['jobs-list-loading', '求人情報を読み込んでいます。', '公開中の求人を一覧で確認できます。']],
   ['/germany/ja/eat/', ['directory-seed-card', '現在は基本ガイドを表示しています', '地図・営業時間・予約条件を公式情報で確認']],
   ['/germany/ja/shopping/', ['directory-seed-card', '現在は基本ガイドを表示しています', '日本食材・生活用品は在庫と配送条件を確認']],
   ['/germany/ja/medical/', ['directory-seed-card', '医療上の助言や診断ではありません', '重い症状は112', '116117']],

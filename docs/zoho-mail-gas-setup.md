@@ -14,7 +14,7 @@ Use the correct Zoho data center for the account. For example, the accounts and 
 
 ## 2. Find the Zoho Mail account ID
 
-Use the Zoho Mail account API or the Zoho Mail web console to find the account ID for the mailbox that sends as `contact@j-connect-global.com`. Confirm in Zoho that this address is a verified sender and that its display name is **J-Connect Germany**. The API request deliberately uses only documented send-message fields, so the display name is configured in Zoho rather than injected as an undocumented request parameter.
+Use the Zoho Mail account API or the Zoho Mail web console to find the account ID for the mailbox that sends as `contact@j-connect-global.com`. Confirm in Zoho that this address is a verified sender and that its display name is **J-Connect Global**. The API request deliberately uses only documented send-message fields, so the display name is configured in Zoho rather than injected as an undocumented request parameter.
 
 ## 3. Set Apps Script Script Properties
 
@@ -58,7 +58,7 @@ After deploying a new version, test with non-sensitive data:
 - Missing required fields, malformed email, malformed URL, hidden honeypot, overly long fields, form submitted too quickly, and repeated submissions.
 - Zoho authentication failure and Zoho send failure: requests must return a safe user-facing error without OAuth/API details and must not send by any alternate provider.
 
-Verify each message is visibly sent from `contact@j-connect-global.com`, the Community confirmation uses the **J-Connect Germany** display name, and a Community inquiry provides a clearly labelled `mailto:` reply link without exposing the post owner address to the public form.
+Verify each message is visibly sent from `contact@j-connect-global.com`, the Community confirmation uses the **J-Connect Global** display name, and a Community inquiry provides a clearly labelled `mailto:` reply link without exposing the post owner address to the public form.
 
 ## 7. Retire the previous form service
 

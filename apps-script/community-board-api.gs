@@ -1,5 +1,5 @@
 /**
- * J-Connect Germany Community Board API
+ * J-Connect Global Community Board API
  *
  * Deployment notes:
  * - Set MASTER_SPREADSHEET_ID in Script Properties to the unified spreadsheet.
@@ -162,7 +162,7 @@ const PUBLIC_JOB_FIELDS = [
   'id', 'job_id', 'slug', 'detail_url', 'status', 'priority', 'company_name',
   'position_title', 'employment_type', 'city', 'region', 'location', 'work_style',
   'language', 'category', 'detail_category', 'tags', 'skills', 'salary_min_eur',
-  'salary_max_eur', 'salary_label', 'salary', 'summary', 'short_description',
+  'salary_max_eur', 'salary_currency', 'salary_unit', 'salary_label', 'salary', 'summary', 'short_description',
   'job_details', 'full_description', 'description', 'requirements', 'benefits',
   'apply_url', 'application_url', 'apply_method', 'company_url', 'source_url',
   'source_name', 'visa_support',
@@ -929,7 +929,7 @@ function listJobs_() {
 }
 
 function isPublicJob_(job) {
-  return String(cleanCell_(job.status || '')).trim().toLowerCase() === 'active';
+  return String(cleanCell_(job.status || '')).trim().toLowerCase() === 'active' && !isExpired_(job);
 }
 
 function publicJobPayload_(job) {
@@ -1563,15 +1563,15 @@ function sendApprovalEmail_(selected, recipient) {
   const submissionId = moderationId_(selected);
   const isCommunity = selected.type === 'community';
   const title = String(cleanCell_(isCommunity ? selected.item.title : selected.item.position_title || selected.item.job_title || selected.item.title || '')).trim()
-    || (isCommunity ? 'J-Connect Germany 掲示板投稿' : 'J-Connect Germany 求人');
+    || (isCommunity ? 'J-Connect Global 掲示板投稿' : 'J-Connect Global 求人');
   const publicPath = isCommunity ? COMMUNITY_PUBLIC_POST_PATH : JOB_PUBLIC_PATH;
   const publicUrl = `${COMMUNITY_SITE_ORIGIN}${publicPath}?id=${encodeURIComponent(submissionId)}`;
   sendZohoEmail_({
     to: recipient,
-    name: 'J-Connect Germany',
+    name: 'J-Connect Global',
     subject: isCommunity
-      ? `【J-Connect Germany】投稿を公開しました: ${title}`
-      : `【J-Connect Germany】求人を公開しました: ${title}`,
+      ? `【J-Connect Global】投稿を公開しました: ${title}`
+      : `【J-Connect Global】求人を公開しました: ${title}`,
     html: `<p>${isCommunity ? '投稿' : '求人'}を公開しました。</p><p><strong>${isCommunity ? '投稿' : '求人'}タイトル:</strong><br>${escapeHtmlForEmail_(title)}</p><p><strong>公開URL:</strong><br><a href="${escapeHtmlForEmail_(publicUrl)}">${escapeHtmlForEmail_(publicUrl)}</a></p>`
   });
 }
@@ -1582,8 +1582,8 @@ function sendRejectionEmail_(selected, recipient, reason) {
   sendZohoEmail_({
     to: recipient,
     subject: isCommunity
-      ? '【J-Connect Germany】投稿の掲載結果について'
-      : '【J-Connect Germany】求人掲載依頼の審査結果について',
+      ? '【J-Connect Global】投稿の掲載結果について'
+      : '【J-Connect Global】求人掲載依頼の審査結果について',
     html: `<p>${isCommunity ? '投稿' : '求人'}「${escapeHtmlForEmail_(title)}」について、今回は掲載を見送らせていただきました。</p><p><strong>理由:</strong><br>${escapeHtmlForEmail_(reason).replace(/\r?\n/g, '<br>')}</p><p>必要に応じて内容を修正し、再度申請いただけます。</p>`
   });
 }
@@ -1611,26 +1611,26 @@ function sendCreateConfirmationEmail_(params, info) {
   const to = String(params.contact_email_private || '').trim();
   if (!isJConnectValidEmail_(to)) return { sent: false, error: 'INVALID_RECIPIENT' };
   try {
-    const title = info.title || 'J-Connect Germany 掲示板投稿';
+    const title = info.title || 'J-Connect Global 掲示板投稿';
     const safeTitle = escapeHtmlForEmail_(title);
     const safeManageUrl = escapeHtmlForEmail_(info.manageUrl);
     const safePublicPostUrl = escapeHtmlForEmail_(info.publicPostUrl);
     const htmlBody = [
-      '<p>J-Connect Germany 掲示板への投稿を受け付けました。</p>',
+      '<p>J-Connect Global 掲示板への投稿を受け付けました。</p>',
       `<p><strong>投稿タイトル:</strong><br>${safeTitle}</p>`,
       '<p>投稿は管理者が確認後に掲載されます。<br>掲載まで数時間から数日かかる場合があります。</p>',
       '<p><strong>管理用リンク:</strong><br>下記URLから、投稿内容の編集、募集停止、再募集、非公開化ができます。<br>このリンクは投稿管理専用です。第三者には共有しないでください。</p>',
       `<p><a href="${safeManageUrl}">${safeManageUrl}</a></p>`,
       '<p><strong>公開投稿リンク:</strong><br>管理者が投稿内容を確認・承認後、下記ページで投稿内容を閲覧できるようになります。</p>',
       `<p><a href="${safePublicPostUrl}">${safePublicPostUrl}</a></p>`,
-      '<p>J-Connect Germany がログイン情報、銀行情報、公的ID番号を求めることはありません。</p>'
+      '<p>J-Connect Global がログイン情報、銀行情報、公的ID番号を求めることはありません。</p>'
     ].join('');
     sendZohoEmail_({
       to,
-      subject: `【J-Connect Germany】投稿を受け付けました: ${title}`,
-      name: 'J-Connect Germany',
+      subject: `【J-Connect Global】投稿を受け付けました: ${title}`,
+      name: 'J-Connect Global',
       htmlBody,
-      body: `J-Connect Germany 掲示板への投稿を受け付けました。\n\n投稿タイトル:\n${title}\n\n投稿は管理者が確認後に掲載されます。\n掲載まで数時間から数日かかる場合があります。\n\n管理用リンク:\n下記URLから、投稿内容の編集、募集停止、再募集、非公開化ができます。\nこのリンクは投稿管理専用です。第三者には共有しないでください。\n\n${info.manageUrl}\n\n公開投稿リンク:\n管理者が投稿内容を確認・承認後、下記ページで投稿内容を閲覧できるようになります。\n\n${info.publicPostUrl}\n\nJ-Connect Germany がログイン情報、銀行情報、公的ID番号を求めることはありません。`
+      body: `J-Connect Global 掲示板への投稿を受け付けました。\n\n投稿タイトル:\n${title}\n\n投稿は管理者が確認後に掲載されます。\n掲載まで数時間から数日かかる場合があります。\n\n管理用リンク:\n下記URLから、投稿内容の編集、募集停止、再募集、非公開化ができます。\nこのリンクは投稿管理専用です。第三者には共有しないでください。\n\n${info.manageUrl}\n\n公開投稿リンク:\n管理者が投稿内容を確認・承認後、下記ページで投稿内容を閲覧できるようになります。\n\n${info.publicPostUrl}\n\nJ-Connect Global がログイン情報、銀行情報、公的ID番号を求めることはありません。`
     });
     return { sent: true };
   } catch (error) {
@@ -1652,15 +1652,28 @@ function cancelCommunityPostRequest_(params) {
   const adminEmail = validateJConnectEmailConfiguration_().adminEmail;
   sendZohoEmail_({
     to: adminEmail,
-    subject: 'J-Connect Germany 掲示板投稿の取り消し依頼',
-    name: 'J-Connect Germany',
+    subject: 'J-Connect Global 掲示板投稿の取り消し依頼',
+    name: 'J-Connect Global',
     body: Object.keys(params).map((key) => `${key}: ${params[key]}`).join('\n')
   });
   return { ok: true };
 }
 
 function submitInquiry_(params) {
-  const found = findPostById_(params.post_id || params.id || params.post);
+  const fields = readValidatedFields_(params, {
+    post_id: { required: true, max: 200 },
+    sender_name: { required: true, max: 120 },
+    sender_email: { required: true, max: 254, email: true },
+    subject: { max: 200 },
+    message: { required: true, max: 6000 },
+    website: { max: 0 },
+    form_started_at: { required: true, max: 20 }
+  });
+  if (!fields.ok) return safeFormFailure_(fields.code);
+  if (!isReasonableFormCompletion_(fields.values.form_started_at)) return safeFormFailure_('FORM_TIMING');
+  if (!acquireSubmissionRateLimit_('submitInquiry', fields.values.sender_email)) return safeFormFailure_('RATE_LIMITED');
+
+  const found = findPostById_(fields.values.post_id);
   if (!found) return { ok: false, error: 'Post not found.' };
   const status = normalizeStatus_(found.post.status);
   if (status !== 'active' || isExpired_(found.post)) {
@@ -1670,20 +1683,17 @@ function submitInquiry_(params) {
   if (!isJConnectValidEmail_(to)) {
     return { ok: false, error: 'Contact email is unavailable.' };
   }
-  const senderName = String(params.sender_name || '').trim();
-  const senderEmail = String(params.sender_email || '').trim();
-  const subject = String(params.subject || '').trim() || 'J-Connect Germany 掲示板の投稿への問い合わせ';
-  const message = String(params.message || '').trim();
-  if (!senderName || !isJConnectValidEmail_(senderEmail) || !message) {
-    return { ok: false, error: 'Required inquiry fields are missing.' };
-  }
+  const senderName = fields.values.sender_name;
+  const senderEmail = fields.values.sender_email;
+  const subject = fields.values.subject || 'J-Connect Global 掲示板の投稿への問い合わせ';
+  const message = fields.values.message;
   sendZohoEmail_({
     to,
     replyTo: senderEmail,
-    name: 'J-Connect Germany',
-    subject: `【J-Connect Germany】${subject}`,
+    name: 'J-Connect Global',
+    subject: `【J-Connect Global】${subject}`,
     body: [
-      'J-Connect Germany 掲示板の投稿に問い合わせが届きました。',
+      'J-Connect Global 掲示板の投稿に問い合わせが届きました。',
       '',
       `投稿ID: ${found.post.post_id || found.post.id || ''}`,
       `投稿タイトル: ${found.post.title || ''}`,
@@ -1753,7 +1763,7 @@ function submitReport_(params) {
     const subjectTitle = title.length > 140 ? `${title.slice(0, 139)}…` : title;
     sendZohoEmail_({
       to: config.adminEmail,
-      name: 'J-Connect Germany',
+      name: 'J-Connect Global',
       subject: `【J-Connect 通報】${postId}｜${subjectTitle}`,
       html,
       body: reportNotificationText_(report)
@@ -1820,7 +1830,7 @@ function submitContact_(params) {
     });
     sendZohoEmail_({
       to: fields.values.email,
-      subject: '[J-Connect Germany] We received your inquiry',
+      subject: '[J-Connect Global] We received your inquiry',
       html: '<p>お問い合わせを受け付けました。内容を確認のうえ、ご連絡します。</p>'
     });
     return { ok: true, success: true };
@@ -1905,7 +1915,7 @@ function submitJobPosting_(params) {
   try {
     sendZohoEmail_({
       to: value.contact_email,
-      subject: '[J-Connect Germany] Job posting request received',
+      subject: '[J-Connect Global] Job posting request received',
       html: '<p>求人掲載のご相談を受け付けました。We have received your job posting request and will contact you after review.</p>'
     });
     applicantEmailSent = true;
@@ -1991,11 +2001,11 @@ function readValidatedFields_(params, rules) {
   for (const name in rules) {
     const rule = rules[name];
     const value = String(params[name] || '').trim();
+    if (name === 'website' && value) return { ok: false, code: 'HONEYPOT' };
     if (rule.required && !value) return { ok: false, code: 'MISSING_REQUIRED_FIELD' };
     if (value.length > rule.max) return { ok: false, code: 'FIELD_TOO_LONG' };
     if (rule.email && value && !isJConnectValidEmail_(value)) return { ok: false, code: 'INVALID_EMAIL' };
     if (rule.url && value && !/^https?:\/\/[^\s]+$/i.test(value)) return { ok: false, code: 'INVALID_URL' };
-    if (name === 'website' && value) return { ok: false, code: 'HONEYPOT' };
     values[name] = value;
   }
   return { ok: true, values };

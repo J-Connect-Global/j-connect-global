@@ -8,7 +8,7 @@ status: "published"
 published: true
 published_at: "2026-06-20"
 last_verified: "2026-06-20"
-tags: ["職場", "会議", "A2"]
+tags: ["職場","会議","A2"]
 canonical_url: "/germany/ja/learn-german/workplace-conversation-phrases/"
 ---
 

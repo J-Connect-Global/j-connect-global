@@ -9,10 +9,7 @@ event_date: "週末ごとに異なる"
 published_at: "2026-06-12"
 last_verified: "2026-07-06"
 summary: "子連れで行きやすい週末イベントを探すときの確認先、移動、持ち物、無理のない計画を整理。"
-tags:
-  - "家族向け"
-  - "週末"
-  - "NRW"
+tags: ["家族向け","週末","NRW"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/family-weekend-events-nrw/"

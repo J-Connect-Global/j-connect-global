@@ -9,12 +9,7 @@ event_date: "2026-08-22 09:00-21:00"
 published_at: "2026-06-29"
 last_verified: "2026-06-29"
 summary: "2026年8月22日にケルンで開催予定のNATSU HIKARI Japan Festival Kölnについて、内容、チケット、アクセス、子連れ・コスプレ参加時の確認ポイントを整理します。"
-tags:
-  - "日本文化"
-  - "ケルン"
-  - "NRW"
-  - "アニメ"
-  - "家族向け"
+tags: ["日本文化","ケルン","NRW","アニメ","家族向け"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/natsu-hikari-japan-festival-cologne/"

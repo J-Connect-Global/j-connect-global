@@ -8,7 +8,7 @@ status: "published"
 published: true
 published_at: "2026-06-20"
 last_verified: "2026-07-16"
-tags: ["B2", "仕事", "職場"]
+tags: ["B2","仕事","職場"]
 canonical_url: "/germany/ja/learn-german/b2-work-german-route/"
 ---
 

@@ -30,7 +30,7 @@ function community(id = "post-safe") {
     id, post_id: id, slug: id, detail_url: publicDetailUrl("community", id),
     status: "active", title: "危険 <script>alert(1)</script>", body: "本文 </script><img src=x onerror=alert(1)>",
     category1: "質問", category2: "生活", country: "Germany", region: "NRW", city: "Düsseldorf",
-    image_urls: [], published_at: "2026-07-10T10:00:00.000Z", updated_at: "", expires_at: ""
+    image_urls: ["https://cdn.example.com/post.webp"], published_at: "2026-07-10T10:00:00.000Z", updated_at: "", expires_at: ""
   };
 }
 
@@ -95,7 +95,7 @@ async function assertProductionArtifact(siteDir) {
     const html = await readFile(path.join(siteDir, ...publicDetailOutputPath("jobs", route, item.id || item.job_id).split("/")), "utf8");
     const shouldIndex = isIndexableJob(item);
     assert.equal(/<meta name="robots" content="index, follow">/.test(html), shouldIndex);
-    assert.equal(Boolean(extractJsonLd(html)), shouldIndex);
+    assert.equal(Boolean(extractJsonLd(html)), Boolean(buildJobPosting(item, `https://j-connect-global.com${route}`)));
     assert.equal(sitemap.includes(`https://j-connect-global.com${route}`), shouldIndex);
     assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1);
     assert.ok(html.indexOf("<h1") < html.lastIndexOf("<script src="), "Jobs SSR content must precede client JavaScript");
@@ -120,15 +120,18 @@ async function runFixtureTests() {
     const incomplete = job("job-incomplete", { apply_url: "", application_url: "", apply_method: "" });
     const expired = job("job-expired", { expires_at: "2026-07-01T00:00:00.000Z" });
     await writeJson(path.join(siteDir, "assets", "data", "community", "posts.json"), payload([safeCommunity]));
-    await writeJson(path.join(siteDir, "assets", "data", "jobs", "jobs.json"), payload([indexable, incomplete, expired]));
+    await writeJson(path.join(siteDir, "assets", "data", "jobs", "jobs.json"), payload([indexable, incomplete]));
     const result = await generatePublicDetails({ siteDir, now: fixedNow });
-    assert.deepEqual({ community: result.community, jobs: result.jobs, indexableJobs: result.indexableJobs }, { community: 1, jobs: 3, indexableJobs: 1 });
+    assert.deepEqual({ community: result.community, jobs: result.jobs, indexableJobs: result.indexableJobs }, { community: 1, jobs: 2, indexableJobs: 2 });
 
     const communityHtml = await readFile(path.join(siteDir, "germany", "ja", "community", "posts", "post-safe", "index.html"), "utf8");
     assert.ok(!communityHtml.includes("<script>alert(1)</script>"));
     assert.ok(communityHtml.includes("&lt;script&gt;alert(1)&lt;/script&gt;"));
     assert.equal((communityHtml.match(/<h1(?:\s|>)/g) || []).length, 1);
     assert.ok(!communityHtml.includes("DiscussionForumPosting"));
+    assert.match(communityHtml, /\/germany\/ja\/community\/contact\/\?post_id=post-safe/);
+    assert.match(communityHtml, /\/germany\/ja\/community\/report\/\?post_id=post-safe/);
+    assert.match(communityHtml, /data-public-lightbox/);
 
     const jobHtml = await readFile(path.join(siteDir, "germany", "ja", "jobs", "job-safe", "index.html"), "utf8");
     assert.match(jobHtml, /<meta name="robots" content="index, follow">/);
@@ -140,21 +143,18 @@ async function runFixtureTests() {
     assert.equal(posting.baseSalary.currency, "EUR");
 
     const incompleteHtml = await readFile(path.join(siteDir, "germany", "ja", "jobs", "job-incomplete", "index.html"), "utf8");
-    assert.match(incompleteHtml, /noindex, follow/);
+    assert.match(incompleteHtml, /<meta name="robots" content="index, follow">/);
     assert.equal(extractJsonLd(incompleteHtml), null);
-    assert.match(incompleteHtml, /公開できる応募方法はありません/);
-
-    const expiredHtml = await readFile(path.join(siteDir, "germany", "ja", "jobs", "job-expired", "index.html"), "utf8");
-    assert.match(expiredHtml, /noindex, follow/);
-    assert.equal(extractJsonLd(expiredHtml), null);
-    assert.match(expiredHtml, /掲載期限を過ぎている/);
-    assert.ok(!expiredHtml.includes("応募先を開く"));
+    assert.ok(!incompleteHtml.includes("公開できる応募方法はありません"));
+    assert.ok(!incompleteHtml.includes("検索エンジンへの掲載対象外"));
 
     const sitemap = await readFile(path.join(siteDir, "sitemap.xml"), "utf8");
     assert.equal((sitemap.match(/https:\/\/j-connect-global\.com\/germany\/ja\/jobs\/job-safe\//g) || []).length, 1);
-    assert.ok(!sitemap.includes("job-incomplete"));
-    assert.ok(!sitemap.includes("job-expired"));
+    assert.ok(sitemap.includes("job-incomplete"));
     assert.ok(!sitemap.includes("community/posts"));
+
+    await writeJson(path.join(siteDir, "assets", "data", "jobs", "jobs.json"), payload([expired]));
+    await assert.rejects(() => generatePublicDetails({ siteDir, now: fixedNow }), /expired/);
 
     await writeJson(path.join(siteDir, "assets", "data", "community", "posts.json"), payload([]));
     await writeJson(path.join(siteDir, "assets", "data", "jobs", "jobs.json"), payload([incomplete]));

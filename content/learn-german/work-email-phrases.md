@@ -8,7 +8,7 @@ status: "published"
 published: true
 published_at: "2026-06-07"
 last_verified: "2026-07-16"
-tags: ["仕事", "メール", "B1"]
+tags: ["仕事","メール","B1"]
 canonical_url: "/germany/ja/learn-german/work-email-phrases/"
 ---
 

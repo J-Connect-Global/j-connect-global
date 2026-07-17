@@ -8,7 +8,7 @@ status: "published"
 published: true
 published_at: "2026-06-08"
 last_verified: "2026-07-16"
-tags: ["病院", "症状説明", "電話"]
+tags: ["病院","症状説明","電話"]
 canonical_url: "/germany/ja/learn-german/hospital-phrases/"
 ---
 

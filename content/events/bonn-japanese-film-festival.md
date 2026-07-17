@@ -9,10 +9,7 @@ event_date: "上映企画により異なる"
 published_at: "2026-06-12"
 last_verified: "2026-07-06"
 summary: "日本映画や国際映画をドイツで楽しむためのチケット確認、上映言語、アクセスのメモ。"
-tags:
-  - "映画"
-  - "日本文化"
-  - "ボン"
+tags: ["映画","日本文化","ボン"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/bonn-japanese-film-festival/"

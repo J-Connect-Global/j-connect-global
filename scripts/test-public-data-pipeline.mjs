@@ -460,8 +460,8 @@ assert.match(jobsDetail, /この求人は募集終了、非公開、削除済み
 assert.match(communityDetail, /<meta name="robots" content="noindex, follow">/);
 assert.match(jobsDetail, /<meta name="robots" content="noindex, follow">/);
 const jobsInitialHead = jobsDetail.slice(0, jobsDetail.indexOf("</head>") + 7);
-assert.match(jobsInitialHead, /<title>求人詳細 \| 仕事・求人 \| J-Connect Germany<\/title>/);
-assert.match(jobsInitialHead, /<meta name="description" content="J-Connect Germanyの求人詳細表示ページです。">/);
+assert.match(jobsInitialHead, /<title>求人詳細 \| 仕事・求人 \| J-Connect Global<\/title>/);
+assert.match(jobsInitialHead, /<meta name="description" content="J-Connect Globalの求人詳細表示ページです。">/);
 assert.match(jobsInitialHead, /<link rel="canonical" href="https:\/\/j-connect-global\.com\/germany\/ja\/jobs\/detail\/">/);
 assert.match(jobsInitialHead, /<meta name="robots" content="noindex, follow">/);
 assert.equal(/"@type"\s*:\s*"JobPosting"/.test(jobsDetail), false, "dynamic detail emits unsupported JobPosting markup");
@@ -513,11 +513,14 @@ for (const route of utilityHubRoutes) {
 for (const [relative, asset] of [
   ["germany/ja/learn-german/hospital-phrases/index.html", "hospital-appointment-prep"],
   ["germany/ja/learn-german/job-seeker-german-route/index.html", "job-application-prep"],
-  ["germany/ja/learn-german/parenting-german-route/index.html", "parenting-contact-prep"]
+  ["germany/ja/learn-german/parenting-german-route/index.html", "parenting-contact-prep"],
+  ["germany/ja/living/anmeldung-guide/index.html", "anmeldung-preparation"],
+  ["germany/ja/living/germany-first-30-days/index.html", "first-month-checklist"],
+  ["germany/ja/living/health-insurance-guide/index.html", "health-insurance-path"]
 ]) {
   const html = read(relative);
-  assert.match(html, new RegExp(`/assets/images/learn-german/${asset}-480\\.webp`), `${relative} is missing the small inline image variant`);
-  assert.match(html, new RegExp(`/assets/images/learn-german/${asset}\\.webp`), `${relative} is missing the main inline image asset`);
+  assert.match(html, new RegExp(`/assets/images/(?:learn-german|living)/${asset}-480\\.webp`), `${relative} is missing the small inline image variant`);
+  assert.match(html, new RegExp(`/assets/images/(?:learn-german|living)/${asset}\\.webp`), `${relative} is missing the main inline image asset`);
   assert.match(html, /width="820" height="461" loading="lazy" decoding="async"/, `${relative} inline image is missing intrinsic dimensions or lazy loading`);
   assert.match(html, /AI生成イラスト/, `${relative} does not label its generated illustration`);
 }

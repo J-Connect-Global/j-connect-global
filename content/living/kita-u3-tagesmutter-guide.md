@@ -3,23 +3,14 @@ id: "L009"
 title: "Kita探しの基本：U3・Tagesmutter・Großtagespflegeの違いと申し込み手順"
 slug: "kita-u3-tagesmutter-guide"
 category: "家族・子育て"
-tags:
-  - "Kita"
-  - "U3"
-  - "Tagesmutter"
-  - "Großtagespflege"
-  - "Jugendamt"
-  - "子育て"
-  - "保育"
+tags: ["Kita","U3","Tagesmutter","Großtagespflege","Jugendamt","子育て","保育"]
 summary: "ドイツで保育先を探す日本人家庭向けに、U3、Kita、Tagesmutter、Großtagespflegeの違い、申し込み手順、費用、見学時の確認ポイントを整理。"
 status: "published"
 published: true
 published_at: "2026-06-12"
 last_verified: "2026-06-16"
 canonical_url: "/germany/ja/living/kita-u3-tagesmutter-guide/"
-related_articles:
-  - "pregnancy-birth-germany"
-  - "moving-checklist-germany"
+related_articles: ["pregnancy-birth-germany","moving-checklist-germany"]
 ---
 
 # Kita探しの基本：U3・Tagesmutter・Großtagespflegeの違いと申し込み手順

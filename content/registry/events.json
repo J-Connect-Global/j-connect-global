@@ -41,7 +41,7 @@
     "related_articles": [],
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-06-28",
       "next_review_due": "2027-06-28"
     }
@@ -86,7 +86,7 @@
     "related_articles": [],
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-06-28",
       "next_review_due": "2027-06-28"
     }
@@ -105,7 +105,7 @@
     "status": "published",
     "published_at": "2026-06-12",
     "updated_at": "2026-06-12",
-    "last_verified": "2026-06-12",
+    "last_verified": "2026-07-06",
     "tags": [
       "家族向け",
       "週末",
@@ -126,8 +126,8 @@
     "related_articles": [],
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-12",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-06",
       "next_review_due": "2027-06-12"
     }
   },
@@ -143,7 +143,7 @@
     "status": "published",
     "published_at": "2026-06-12",
     "updated_at": "2026-06-12",
-    "last_verified": "2026-06-12",
+    "last_verified": "2026-07-06",
     "tags": [
       "マーケット",
       "週末",
@@ -164,8 +164,8 @@
     "related_articles": [],
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-12",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-06",
       "next_review_due": "2027-06-12"
     }
   },
@@ -181,7 +181,7 @@
     "status": "published",
     "published_at": "2026-06-12",
     "updated_at": "2026-06-12",
-    "last_verified": "2026-06-12",
+    "last_verified": "2026-07-06",
     "tags": [
       "映画",
       "日本文化",
@@ -202,8 +202,8 @@
     "related_articles": [],
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-12",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-06",
       "next_review_due": "2027-06-12"
     }
   },
@@ -224,7 +224,7 @@
     "status": "published",
     "published_at": "2026-06-28",
     "updated_at": "2026-06-28",
-    "last_verified": "2026-06-28",
+    "last_verified": "2026-07-06",
     "tags": [
       "熱波",
       "夏",
@@ -245,8 +245,8 @@
     "related_articles": [],
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-28",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-06",
       "next_review_due": "2026-12-28"
     }
   },
@@ -267,7 +267,7 @@
     "status": "published",
     "published_at": "2026-06-28",
     "updated_at": "2026-06-28",
-    "last_verified": "2026-06-28",
+    "last_verified": "2026-07-06",
     "tags": [
       "ワールドカップ",
       "交通",
@@ -288,8 +288,8 @@
     "related_articles": [],
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-28",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-06",
       "next_review_due": "2026-12-28"
     }
   },
@@ -337,7 +337,7 @@
     ],
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-06-29",
       "next_review_due": "2026-08-22"
     }

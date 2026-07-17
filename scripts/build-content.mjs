@@ -3,9 +3,11 @@ import path from 'node:path';
 import vm from 'node:vm';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { frontMatterComparableFields } from './sync-content-frontmatter.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE_ORIGIN = 'https://j-connect-global.com';
+const SITE_NAME = 'J-Connect Global';
 const PRIMARY_JA_PATH = '/germany/ja/';
 const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
 const DEFAULT_IMAGE = '/assets/img/placeholders/jconnect-default-card.webp';
@@ -23,7 +25,7 @@ const pillarLabels = {
   jobs: '仕事・求人',
   events: 'ニュース・イベント',
   'learn-german': 'ドイツ語・学び',
-  utility: 'J-CONNECTについて',
+  utility: 'J-Connect Globalについて',
   legacy: '旧ページ'
 };
 
@@ -172,7 +174,11 @@ function loadContentType(type) {
     const markdownPath = path.join(root, markdownRel);
     const markdown = fs.existsSync(markdownPath) ? readText(markdownRel) : '';
     const frontMatter = parseFrontMatter(markdown).data;
-    const merged = normalizeItem(type, { ...frontMatter, ...entry, __frontmatter: frontMatter }, index);
+    const source = { ...entry };
+    for (const field of frontMatterComparableFields) {
+      if (Object.prototype.hasOwnProperty.call(frontMatter, field)) source[field] = frontMatter[field];
+    }
+    const merged = normalizeItem(type, { ...source, __frontmatter: frontMatter }, index);
 
     return {
       ...merged,
@@ -288,7 +294,7 @@ function writeArticlePage(type, item, allItems) {
 
 function renderArticlePage(type, item, bodyHtml, allItems) {
   const config = contentTypes[type];
-  const title = `${item.meta_title || item.title} | ${config.label} | J-Connect Germany`;
+  const title = `${item.meta_title || item.title} | ${config.label} | ${SITE_NAME}`;
   const canonicalHref = absoluteUrl(item.canonical_url);
   const metaBlock = renderArticleMetaSpans(type, item);
   const ogMeta = renderOpenGraphMeta(type, item, title, canonicalHref);
@@ -334,7 +340,7 @@ ${renderHeader(type, item.url)}
           <div class="article-meta">
             ${item.tags.map((tag) => `<span class="article-chip">${escapeHtml(tag)}</span>`).join('\n          ')}
             <span>公開: ${escapeHtml(item.published_at || '')}</span>
-            <span>最終確認: ${escapeHtml(item.last_verified || '')}</span>${metaBlock}
+${item.content_type === 'news' && item.last_verified ? `            <span>最終確認: ${escapeHtml(item.last_verified)}</span>` : ''}${metaBlock}
           </div>
         </header>
 
@@ -559,6 +565,15 @@ const INLINE_IMAGE_VARIANTS = Object.freeze({
   },
   '/assets/images/learn-german/parenting-contact-prep.webp': {
     small: '/assets/images/learn-german/parenting-contact-prep-480.webp', width: 820, height: 461
+  },
+  '/assets/images/living/anmeldung-preparation.webp': {
+    small: '/assets/images/living/anmeldung-preparation-480.webp', width: 820, height: 461
+  },
+  '/assets/images/living/first-month-checklist.webp': {
+    small: '/assets/images/living/first-month-checklist-480.webp', width: 820, height: 461
+  },
+  '/assets/images/living/health-insurance-path.webp': {
+    small: '/assets/images/living/health-insurance-path-480.webp', width: 820, height: 461
   }
 });
 
@@ -802,7 +817,7 @@ function renderArticleMetaSpans(type, item) {
     }
   }
 
-  if (item.review?.next_review_due) {
+  if (item.content_type === 'news' && item.review?.next_review_due) {
     rows.push(`<span>次回確認目安: ${escapeHtml(item.review.next_review_due)}</span>`);
   }
 
@@ -814,7 +829,7 @@ function renderOpenGraphMeta(type, item, title, canonicalHref) {
   const imageUrl = crawlableImage || absoluteUrl(getArticleImageSrc(item, type));
   const tags = [
     ['property', 'og:type', 'article'],
-    ['property', 'og:site_name', 'J-Connect Germany'],
+    ['property', 'og:site_name', SITE_NAME],
     ['property', 'og:locale', 'ja_JP'],
     ['property', 'og:title', title],
     ['property', 'og:description', item.summary],
@@ -828,7 +843,7 @@ function renderOpenGraphMeta(type, item, title, canonicalHref) {
     ['name', 'twitter:image:alt', getArticleImageAlt(item)],
     ['property', 'article:section', contentTypes[type].label],
     ['property', 'article:published_time', item.published_at],
-    ['property', 'article:modified_time', item.updated_at || item.last_verified || item.published_at]
+    ['property', 'article:modified_time', latestMetadataDate(item.updated_at, item.last_verified, item.published_at)]
   ];
 
   return tags
@@ -869,16 +884,16 @@ function renderStructuredData(type, item, title, canonicalHref) {
     image,
     mainEntityOfPage: canonicalHref,
     datePublished: item.published_at || undefined,
-    dateModified: item.updated_at || item.last_verified || item.published_at || undefined,
+    dateModified: latestMetadataDate(item.updated_at, item.last_verified, item.published_at) || undefined,
     articleSection: contentTypes[type].label,
     keywords,
     author: {
       '@type': 'Organization',
-      name: 'J-Connect Germany'
+      name: SITE_NAME
     },
     publisher: {
       '@type': 'Organization',
-      name: 'J-Connect Germany',
+      name: SITE_NAME,
       url: SITE_ORIGIN
     },
     citation: item.official_sources.map((source) => source.url).filter(Boolean)
@@ -1028,11 +1043,11 @@ function renderArticleSidebarFacts(type, item) {
 
   facts.push(['カテゴリ', item.category || config.label]);
 
-  if (item.last_verified) {
+  if (item.content_type === 'news' && item.last_verified) {
     facts.push(['最終確認', item.last_verified]);
   }
 
-  if (item.review?.next_review_due) {
+  if (item.content_type === 'news' && item.review?.next_review_due) {
     facts.push(['次回確認', item.review.next_review_due]);
   }
 
@@ -1329,8 +1344,6 @@ function renderLivingHubCard(item) {
     ...item.tags
   ].join(' ');
   const reviewDate = item.review?.last_reviewed_at || item.last_verified || '';
-  const nextReview = item.review?.next_review_due || '';
-  const dateText = reviewDate || item.updated_at || item.published_at || '';
   const media = renderCardMedia(item, 'living');
   const mediaClass = media ? ' card--has-media' : '';
 
@@ -1343,10 +1356,6 @@ ${indent(item.tags.map((tag) => `<span class="jc-chip">${escapeHtml(tag)}</span>
   </div>
   <h3>${escapeHtml(item.title)}</h3>
   <p>${escapeHtml(item.summary)}</p>
-  <div class="living-card-dates">
-    ${dateText ? `<time datetime="${escapeAttribute(dateText)}">最終確認: ${escapeHtml(dateText)}</time>` : ''}
-    ${nextReview ? `<span>次回確認目安: ${escapeHtml(nextReview)}</span>` : ''}
-  </div>
   <a class="jc-read-more" href="${escapeAttribute(item.url)}">記事を読む</a>
 </article>`;
 }
@@ -1911,7 +1920,7 @@ function updateSitemap(allItems, pages) {
     if (!isCanonicalJaUrl(loc)) continue;
     byLoc.set(loc, {
       loc,
-      lastmod: item.updated_at || item.last_verified || item.published_at
+      lastmod: latestMetadataDate(item.updated_at, item.last_verified, item.published_at)
     });
   }
 
@@ -2135,6 +2144,17 @@ function firstNonEmpty(...values) {
   return '';
 }
 
+function latestMetadataDate(...values) {
+  const candidates = values
+    .map((value) => String(value || '').trim())
+    .filter(Boolean)
+    .map((value) => ({ value, timestamp: Date.parse(value) }))
+    .filter((entry) => Number.isFinite(entry.timestamp));
+  if (!candidates.length) return firstNonEmpty(...values);
+  candidates.sort((a, b) => b.timestamp - a.timestamp);
+  return candidates[0].value;
+}
+
 function firstArticleImage(...values) {
   for (const value of values) {
     const text = String(value || '').trim();
@@ -2195,7 +2215,7 @@ function normalizeRepoPath(value) {
 }
 
 function getArticleImageAlt(article) {
-  return article.title ? `${article.title} のイメージ` : 'J-Connect Germany のイメージ';
+  return article.title ? `${article.title} のイメージ` : `${SITE_NAME} のイメージ`;
 }
 
 function isLegacyPlaceholderImage(value) {
@@ -2359,7 +2379,7 @@ function normalizeReview(item) {
   const reviewed = item.review?.last_reviewed_at || item.last_verified || item.updated_at || item.published_at || '';
   return {
     status: item.review?.status || (reviewed ? 'reviewed' : 'pending'),
-    reviewed_by: item.review?.reviewed_by || 'J-Connect Germany editorial',
+    reviewed_by: item.review?.reviewed_by || `${SITE_NAME} editorial`,
     last_reviewed_at: reviewed,
     next_review_due: item.review?.next_review_due || ''
   };

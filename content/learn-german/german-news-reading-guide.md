@@ -5,10 +5,7 @@ slug: "german-news-reading-guide"
 category: "教材・リソース"
 content_type: "resource"
 summary: "ドイツのニュース記事を、生活語彙・時事語彙・長文読解の練習として使う方法を整理します。難しすぎる記事の選び方、辞書の使い方、要約練習の進め方も紹介します。"
-tags:
-  - "ニュース"
-  - "読解"
-  - "B1-B2"
+tags: ["ニュース","読解","B1-B2"]
 status: "published"
 published: true
 published_at: "2026-06-28"

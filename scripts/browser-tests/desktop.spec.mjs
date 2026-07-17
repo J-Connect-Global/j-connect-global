@@ -84,6 +84,29 @@ test("Community renders active fixtures and links to the generated detail page",
   ]);
   await expect(page.locator(".public-detail-page h1")).toHaveText(fixturePhotoCommunityPost.title);
   await expect(page.locator(".public-detail-gallery img").first()).toHaveAttribute("src", photoSrc);
+  await expect(page.locator(`a[href="/germany/ja/community/contact/?post_id=${encodeURIComponent(photoPostId)}"]`)).toBeVisible();
+  await expect(page.locator(`a[href="/germany/ja/community/report/?post_id=${encodeURIComponent(photoPostId)}"]`)).toBeVisible();
+  const galleryTrigger = page.locator("[data-lightbox-open]").first();
+  const lightbox = page.locator("[data-public-lightbox]");
+  await galleryTrigger.focus();
+  await galleryTrigger.click();
+  await expect(lightbox).toBeVisible();
+  await expect(page.locator("body")).toHaveClass(/public-lightbox-open/);
+  await expect(lightbox.locator("[data-lightbox-close]")).toBeFocused();
+  await expect(lightbox.locator("[data-lightbox-image]")).toHaveAttribute("src", photoSrc);
+  await expect(lightbox.locator("[data-lightbox-caption]")).toContainText("1 / ");
+  await page.keyboard.press("Shift+Tab");
+  expect(await lightbox.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+  if (await page.locator("[data-lightbox-open]").count() > 1) {
+    await lightbox.locator("[data-lightbox-next]").click();
+    await expect(lightbox.locator("[data-lightbox-caption]")).toContainText("2 / ");
+    await page.keyboard.press("ArrowLeft");
+    await expect(lightbox.locator("[data-lightbox-caption]")).toContainText("1 / ");
+  }
+  await page.keyboard.press("Escape");
+  await expect(lightbox).toBeHidden();
+  await expect(page.locator("body")).not.toHaveClass(/public-lightbox-open/);
+  await expect(galleryTrigger).toBeFocused();
   await assertNoIndex(page);
   await activateDarkMode(page);
   await assertWcagTextContrast(page, ".public-detail-content", "Community detail dark-mode text");
@@ -136,6 +159,9 @@ test("legacy Community detail safely redirects and the no-ID route remains the p
   await page.keyboard.press("Enter");
   await expect(previewModal).toBeVisible();
   await expect(previewModal.locator(".modal-card")).toBeFocused();
+  await expect(previewModal.locator(".preview-selected-image")).toHaveCount(0);
+  await expect(previewModal.locator(".preview-default-image")).toHaveAttribute("src", "/assets/img/placeholders/jconnect-default-card.webp");
+  await expect(previewModal.getByText("画像なし", { exact: true })).toBeVisible();
   await page.keyboard.press("Tab");
   expect(await previewModal.evaluate((element) => element.contains(document.activeElement))).toBe(true);
   await page.keyboard.press("Tab");
@@ -145,6 +171,54 @@ test("legacy Community detail safely redirects and the no-ID route remains the p
   await page.keyboard.press("Escape");
   await expect(previewModal).toBeHidden();
   await expect(previewButton).toBeFocused();
+
+  await page.evaluate(() => {
+    window.__jconnectRevokedObjectUrls = [];
+    const originalRevokeObjectURL = URL.revokeObjectURL.bind(URL);
+    URL.revokeObjectURL = function (url) {
+      window.__jconnectRevokedObjectUrls.push(url);
+      originalRevokeObjectURL(url);
+    };
+  });
+  const imageUpload = page.locator("#imageUpload");
+  await imageUpload.setInputFiles({
+    name: "preview.png",
+    mimeType: "image/png",
+    buffer: Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=", "base64")
+  });
+  const thumbnailUrl = await page.locator("#imagePreviewList img").getAttribute("src");
+  expect(thumbnailUrl).toMatch(/^blob:/);
+  await previewButton.click();
+  await expect(previewModal).toBeVisible();
+  await expect(previewModal.locator(".preview-selected-image img")).toHaveAttribute("src", /^blob:/);
+  await expect(previewModal.locator(".preview-selected-image figcaption")).toHaveText("preview.png");
+  const firstModalUrl = await previewModal.locator(".preview-selected-image img").getAttribute("src");
+  await page.keyboard.press("Escape");
+  await expect(previewModal).toBeHidden();
+  expect(await page.evaluate((url) => window.__jconnectRevokedObjectUrls.includes(url), firstModalUrl)).toBe(true);
+
+  await previewButton.click();
+  const reopenedModalUrl = await previewModal.locator(".preview-selected-image img").getAttribute("src");
+  expect(reopenedModalUrl).toMatch(/^blob:/);
+  expect(reopenedModalUrl).not.toBe(firstModalUrl);
+  await page.keyboard.press("Escape");
+
+  const imageBuffer = Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=", "base64");
+  await imageUpload.setInputFiles([
+    { name: "preview-2.png", mimeType: "image/png", buffer: imageBuffer },
+    { name: "preview-3.png", mimeType: "image/png", buffer: imageBuffer }
+  ]);
+  await expect(page.locator("#imagePreviewList img")).toHaveCount(3);
+  await previewButton.click();
+  await expect(previewModal.locator(".preview-selected-image img")).toHaveCount(3);
+  await page.keyboard.press("Escape");
+  await page.locator("[data-remove-image]").first().click();
+  await expect(page.locator("#imagePreviewList img")).toHaveCount(2);
+  expect(await page.evaluate((url) => window.__jconnectRevokedObjectUrls.includes(url), thumbnailUrl)).toBe(true);
+
+  await page.evaluate(() => addImageFiles([new File(["invalid"], "not-an-image.txt", { type: "text/plain" })]));
+  await expect(page.locator("#messageBox")).toContainText("JPG / PNG / WebP形式");
+  await expect(page.locator("#imagePreviewList img")).toHaveCount(2);
   await assertNoIndex(page);
   await assertRouteReady(page);
 
@@ -169,6 +243,9 @@ test("Jobs list renders every active record and has no four-record cap", async (
   }));
   await openDataRoute(page, "/germany/ja/jobs/", "/assets/data/jobs/jobs.json");
   await assertPublicJobs(page, extendedJobs);
+  await expect(page.locator("#cards")).not.toContainText(/分類できません|応募方法がありません|警告/);
+  await expect(page.locator("#cards .jobs-card").first()).toContainText("給与（期間未指定）");
+  await expect(page.locator("#cards .jobs-card").first()).toContainText("EUR");
   await expect(page.locator("#mainLayout")).not.toHaveClass(/jobs-empty-mode/);
   await assertRouteReady(page);
 });

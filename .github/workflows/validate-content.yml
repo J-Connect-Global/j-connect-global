@@ -24,6 +24,20 @@ jobs:
       - name: Install pinned runtime smoke dependencies
         run: npm ci
 
+      - name: Verify Markdown-authored registry metadata
+        run: node scripts/sync-content-frontmatter.mjs
+
+      - name: Test content metadata synchronization and regression policy
+        run: node scripts/test-content-metadata.mjs
+
+      - name: Fetch pull request base for metadata regression checks
+        if: github.event_name == 'pull_request'
+        run: git fetch --no-tags --depth=1 origin "${{ github.base_ref }}:refs/remotes/origin/${{ github.base_ref }}"
+
+      - name: Reject unapproved content metadata date regressions
+        if: github.event_name == 'pull_request'
+        run: node scripts/check-content-metadata-regression.mjs --base-ref "origin/${{ github.base_ref }}"
+
       - name: Build generated content
         run: node scripts/build-content.mjs
 

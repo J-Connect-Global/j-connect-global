@@ -9,12 +9,7 @@ event_date: "年により異なる"
 published_at: "2026-06-12"
 last_verified: "2026-06-28"
 summary: "デュッセルドルフとNRW周辺のクリスマスマーケットについて、会場の回り方、混雑、防寒、子連れ、交通、確認ポイントを整理します。"
-tags:
-  - "冬"
-  - "クリスマスマーケット"
-  - "NRW"
-  - "Düsseldorf"
-  - "家族向け"
+tags: ["冬","クリスマスマーケット","NRW","Düsseldorf","家族向け"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/christmas-markets-duesseldorf/"

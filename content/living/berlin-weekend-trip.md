@@ -4,12 +4,7 @@ title: "ドイツ在住者向け：1泊2日ベルリン観光モデルコース"
 slug: "berlin-weekend-trip"
 image_alt: "ベルリン週末旅行の記事イメージ"
 category: "観光"
-tags:
-  - "ベルリン"
-  - "週末旅行"
-  - "ドイツ在住"
-  - "1泊2日"
-  - "モデルコース"
+tags: ["ベルリン","週末旅行","ドイツ在住","1泊2日","モデルコース"]
 summary: "NRW・デュッセルドルフ・ケルン方面から週末に行く人向けに、Berlin Hbf起点のMitte歴史ルート、壁・博物館・カフェ街歩きの分岐、市内交通と車利用の注意点を整理します。"
 status: "published"
 published: true
@@ -20,10 +15,7 @@ canonical_url: "/germany/ja/living/berlin-weekend-trip/"
 hero_image: "/assets/images/living/berlin-weekend-route.svg"
 hero_image_alt: "Berlin HbfからMitte主要スポットを回る週末旅行ルート図"
 hero_image_caption: "初回ベルリンは、Berlin HbfからMitteの歴史スポットを線でつなぐと移動が読みやすくなります。"
-related_articles:
-  - "amsterdam-weekend-trip"
-  - "strasbourg-weekend-trip"
-  - "cologne-city-guide"
+related_articles: ["amsterdam-weekend-trip","strasbourg-weekend-trip","cologne-city-guide"]
 official_sources:
   - title: "Visit Berlin：観光公式サイト"
     url: "https://www.visitberlin.de/en"

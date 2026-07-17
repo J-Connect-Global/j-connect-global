@@ -22,6 +22,40 @@ function normalizeParagraph(value) {
     .trim();
 }
 
+function parseFrontMatter(markdown) {
+  const match = String(markdown || '').match(/^---\r?\n([\s\S]*?)\r?\n---/u);
+  if (!match) return {};
+  const data = {};
+  const lines = match[1].split(/\r?\n/u);
+  for (let index = 0; index < lines.length; index += 1) {
+    const entry = lines[index].match(/^([A-Za-z0-9_]+):\s*(.*)$/u);
+    if (!entry) continue;
+    const key = entry[1];
+    const raw = entry[2].trim();
+    if (!raw) {
+      const values = [];
+      while (lines[index + 1] && /^\s*-\s+/.test(lines[index + 1])) {
+        index += 1;
+        values.push(lines[index].replace(/^\s*-\s+/, '').trim().replace(/^["']|["']$/g, ''));
+      }
+      data[key] = values;
+    } else if (/^\[.*\]$/.test(raw)) {
+      try { data[key] = JSON.parse(raw); } catch { data[key] = raw; }
+    } else {
+      data[key] = raw.replace(/^["']|["']$/g, '');
+    }
+  }
+  return data;
+}
+
+function normalizedSummarySentences(summary) {
+  return String(summary || '')
+    .normalize('NFKC')
+    .split(/[。.!?！？]+/u)
+    .map((sentence) => sentence.replace(/[\s　]+/gu, ' ').trim())
+    .filter((sentence) => sentence.length >= 24);
+}
+
 export function qualifyingParagraphs(markdown) {
   return bodyOf(markdown)
     .split(/\r?\n\s*\r?\n/gu)
@@ -57,6 +91,32 @@ export async function analyzeTravelGuideDuplication({ gitRef = "" } = {}) {
   });
 }
 
+export async function analyzeTravelGuideMetadata({ gitRef = "" } = {}) {
+  const entries = await Promise.all(guideSlugs.map(async (slug) => {
+    const frontMatter = parseFrontMatter(await guideMarkdown(slug, gitRef));
+    return { slug, summary: String(frontMatter.summary || ''), related: Array.isArray(frontMatter.related_articles) ? frontMatter.related_articles : [] };
+  }));
+  const issues = [];
+  const sentenceOwners = new Map();
+  const relatedSetOwners = new Map();
+  for (const entry of entries) {
+    for (const sentence of new Set(normalizedSummarySentences(entry.summary))) {
+      if (!sentenceOwners.has(sentence)) sentenceOwners.set(sentence, []);
+      sentenceOwners.get(sentence).push(entry.slug);
+    }
+    const relatedKey = [...entry.related].sort().join('|');
+    if (!relatedSetOwners.has(relatedKey)) relatedSetOwners.set(relatedKey, []);
+    relatedSetOwners.get(relatedKey).push(entry.slug);
+  }
+  for (const [sentence, owners] of sentenceOwners) {
+    if (owners.length >= 3) issues.push(`summary sentence is repeated across ${owners.length} guides (${owners.join(', ')}): ${sentence}`);
+  }
+  for (const [relatedSet, owners] of relatedSetOwners) {
+    if (relatedSet && owners.length >= 3) issues.push(`identical related_articles set is repeated across ${owners.length} guides (${owners.join(', ')}): ${relatedSet}`);
+  }
+  return { entries, issues };
+}
+
 async function main() {
   const args = process.argv.slice(2);
   const gitRefIndex = args.indexOf("--git-ref");
@@ -68,7 +128,12 @@ async function main() {
     console.log(`${result.slug}: ${result.duplicated_paragraphs}/${result.qualifying_paragraphs} duplicated (${percent}%)`);
     if (result.duplicate_ratio > maximumDuplicateRatio) process.exitCode = 1;
   }
-  if (process.exitCode) console.error(`Travel guides exceed the ${maximumDuplicateRatio * 100}% exact-paragraph duplication limit.`);
+  const metadata = await analyzeTravelGuideMetadata({ gitRef });
+  for (const issue of metadata.issues) {
+    console.error(`Travel metadata duplication: ${issue}`);
+    process.exitCode = 1;
+  }
+  if (process.exitCode) console.error(`Travel guide prose or metadata duplication exceeds the allowed limits.`);
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

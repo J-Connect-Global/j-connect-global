@@ -4,12 +4,7 @@ title: "デュッセルドルフ観光の基本：旧市街・ライン川・日
 slug: "duesseldorf-city-guide"
 image_alt: "デュッセルドルフ観光ガイドの記事イメージ"
 category: "観光"
-tags:
-  - "デュッセルドルフ"
-  - "街歩き"
-  - "NRW"
-  - "観光"
-  - "日本人街"
+tags: ["デュッセルドルフ","街歩き","NRW","観光","日本人街"]
 summary: "デュッセルドルフ市内を初めて歩く人向けに、旧市街、ライン川沿い、日本人街、Königsallee、買い物エリアを半日から1日で回る基本ルートを整理します。"
 status: "published"
 published: true
@@ -17,10 +12,7 @@ published_at: "2026-06-27"
 updated_at: "2026-06-28"
 last_verified: "2026-06-28"
 canonical_url: "/germany/ja/living/duesseldorf-city-guide/"
-related_articles:
-  - "cologne-city-guide"
-  - "duesseldorf-family-trip"
-  - "rhine-river-relax-guide"
+related_articles: ["cologne-city-guide","duesseldorf-family-trip","rhine-river-relax-guide"]
 official_sources:
   - title: "Visit Düsseldorf"
     url: "https://www.visitduesseldorf.de/"

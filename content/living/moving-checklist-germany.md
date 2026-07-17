@@ -3,22 +3,14 @@ id: "L010"
 title: "ドイツで引っ越すときの手続きチェックリスト"
 slug: "moving-checklist-germany"
 category: "住まい・手続き"
-tags:
-  - "引っ越し"
-  - "住所変更"
-  - "手続き"
-  - "住民登録"
-  - "賃貸"
+tags: ["引っ越し","住所変更","手続き","住民登録","賃貸"]
 summary: "ドイツ国内で引っ越すときに必要な住民登録、住所変更、退去・入居確認、電気・通信・保険・郵便転送などを時系列で整理。"
 status: "published"
 published: true
 published_at: "2026-06-12"
 last_verified: "2026-06-16"
 canonical_url: "/germany/ja/living/moving-checklist-germany/"
-related_articles:
-  - "anmeldung-guide"
-  - "rent-apartment-germany"
-  - "rundfunkbeitrag-guide"
+related_articles: ["anmeldung-guide","rent-apartment-germany","rundfunkbeitrag-guide"]
 ---
 
 # ドイツで引っ越すときの手続きチェックリスト

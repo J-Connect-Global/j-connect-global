@@ -8,7 +8,7 @@ status: "published"
 published: true
 published_at: "2026-06-20"
 last_verified: "2026-07-16"
-tags: ["ZDF", "リスニング", "B1"]
+tags: ["ZDF","リスニング","B1"]
 canonical_url: "/germany/ja/learn-german/zdf-listening-german-guide/"
 ---
 

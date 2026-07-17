@@ -8,7 +8,7 @@ status: "published"
 published: true
 published_at: "2026-06-09"
 last_verified: "2026-07-16"
-tags: ["予約", "日常会話", "A1"]
+tags: ["予約","日常会話","A1"]
 canonical_url: "/germany/ja/learn-german/appointment-phrase/"
 ---
 

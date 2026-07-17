@@ -4,12 +4,7 @@ title: "ドイツから行く週末旅行：アムステルダム観光の基本
 slug: "amsterdam-weekend-trip"
 image_alt: "アムステルダム週末旅行の記事イメージ"
 category: "観光"
-tags:
-  - "アムステルダム"
-  - "週末旅行"
-  - "オランダ"
-  - "観光"
-  - "美術館"
+tags: ["アムステルダム","週末旅行","オランダ","観光","美術館"]
 summary: "ドイツ西部から電車や車で行きやすいアムステルダムを、初めての週末旅行として無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。"
 status: "published"
 published: true
@@ -17,10 +12,7 @@ published_at: "2026-06-29"
 updated_at: "2026-06-29"
 last_verified: "2026-06-29"
 canonical_url: "/germany/ja/living/amsterdam-weekend-trip/"
-related_articles:
-  - "strasbourg-weekend-trip"
-  - "aachen-day-trip"
-  - "cologne-city-guide"
+related_articles: ["strasbourg-weekend-trip","aachen-day-trip","cologne-city-guide"]
 official_sources:
   - title: "I amsterdam"
     url: "https://www.iamsterdam.com/en"

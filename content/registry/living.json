@@ -43,10 +43,11 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-06-28",
       "next_review_due": "2027-06-28"
-    }
+    },
+    "image_alt": "デュッセルドルフ観光ガイドの記事イメージ"
   },
   {
     "id": "T002",
@@ -92,10 +93,11 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-06-28",
       "next_review_due": "2027-06-28"
-    }
+    },
+    "image_alt": "ケルン観光ガイドの記事イメージ"
   },
   {
     "id": "T003",
@@ -141,10 +143,11 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-06-28",
       "next_review_due": "2027-06-28"
-    }
+    },
+    "image_alt": "アーヘン日帰り旅行の記事イメージ"
   },
   {
     "id": "T004",
@@ -180,7 +183,7 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-06-27",
       "next_review_due": "2027-06-27"
     }
@@ -219,7 +222,7 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-06-27",
       "next_review_due": "2027-06-27"
     }
@@ -259,7 +262,7 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-06-27",
       "next_review_due": "2027-06-27"
     }
@@ -298,7 +301,7 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-06-27",
       "next_review_due": "2027-06-27"
     }
@@ -337,7 +340,7 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-06-27",
       "next_review_due": "2027-06-27"
     }
@@ -386,30 +389,30 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-06-29",
       "next_review_due": "2027-06-29"
-    }
+    },
+    "image_alt": "アムステルダム週末旅行の記事イメージ"
   },
   {
     "id": "T010",
     "title": "ドイツから行く週末旅行：ハンブルク観光の基本",
     "slug": "hamburg-weekend-trip",
     "category": "観光",
-    "summary": "ドイツ国内の主要都市から鉄道で行きやすく、北ドイツらしい港町の雰囲気を週末で楽しめる街です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "summary": "Speicherstadt、HafenCity、Alsterを同日に詰め込みすぎず、HVVで港町の移動を組み立てるハンブルク週末ガイドです。",
     "url": "/germany/ja/living/hamburg-weekend-trip/",
     "markdown_path": "/content/living/hamburg-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-06-29",
-    "last_verified": "2026-06-29",
+    "updated_at": "2026-07-16",
+    "last_verified": "2026-07-16",
     "tags": [
       "ハンブルク",
       "週末旅行",
-      "ドイツ",
       "港町",
-      "観光"
+      "ドイツ"
     ],
     "home_visible": true,
     "home_order": 209,
@@ -418,8 +421,8 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/hamburg-weekend-trip/",
     "related_articles": [
-      "amsterdam-weekend-trip",
-      "strasbourg-weekend-trip",
+      "bremen-weekend-trip",
+      "copenhagen-weekend-trip",
       "cologne-city-guide"
     ],
     "official_sources": [
@@ -435,8 +438,8 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-29",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2027-06-29"
     }
   },
@@ -496,33 +499,33 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-06-30",
       "next_review_due": "2027-06-30"
     },
     "hero_image": "/assets/images/living/berlin-weekend-route.svg",
     "hero_image_alt": "Berlin HbfからMitte主要スポットを回る週末旅行ルート図",
-    "hero_image_caption": "初回ベルリンは、Berlin HbfからMitteの歴史スポットを線でつなぐと移動が読みやすくなります。"
+    "hero_image_caption": "初回ベルリンは、Berlin HbfからMitteの歴史スポットを線でつなぐと移動が読みやすくなります。",
+    "image_alt": "ベルリン週末旅行の記事イメージ"
   },
   {
     "id": "T012",
     "title": "ドイツから行く週末旅行：ブレーメン観光の基本",
     "slug": "bremen-weekend-trip",
     "category": "観光",
-    "summary": "北ドイツらしい旧市街とメルヘンの雰囲気を、日帰りから1泊で楽しみやすい街です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "summary": "市庁舎前の歴史地区、細い路地のSchnoor、文化のあるViertelを、徒歩中心で1泊にまとめるブレーメンの実用ガイドです。",
     "url": "/germany/ja/living/bremen-weekend-trip/",
     "markdown_path": "/content/living/bremen-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-06-29",
-    "last_verified": "2026-06-29",
+    "updated_at": "2026-07-16",
+    "last_verified": "2026-07-16",
     "tags": [
       "ブレーメン",
       "週末旅行",
-      "ドイツ",
       "旧市街",
-      "観光"
+      "ハンザ都市"
     ],
     "home_visible": true,
     "home_order": 211,
@@ -531,9 +534,9 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/bremen-weekend-trip/",
     "related_articles": [
-      "amsterdam-weekend-trip",
-      "strasbourg-weekend-trip",
-      "cologne-city-guide"
+      "hamburg-weekend-trip",
+      "cologne-city-guide",
+      "nrw-nature-relax-guide"
     ],
     "official_sources": [
       {
@@ -548,8 +551,8 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-29",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2027-06-29"
     }
   },
@@ -558,20 +561,19 @@
     "title": "ドイツから行く週末旅行：ブリュッセル観光の基本",
     "slug": "brussels-weekend-trip",
     "category": "観光",
-    "summary": "ドイツ西部から国際列車で行きやすく、グランプラス、美食、EU地区を週末で楽しめるベルギーの首都です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "summary": "グランプラス周辺、サブロン、EU地区を目的別に分け、STIB/MIVBと鉄道の境界を確認して歩くブリュッセルの週末ガイドです。",
     "url": "/germany/ja/living/brussels-weekend-trip/",
     "markdown_path": "/content/living/brussels-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-06-29",
-    "last_verified": "2026-06-29",
+    "updated_at": "2026-07-16",
+    "last_verified": "2026-07-16",
     "tags": [
       "ブリュッセル",
       "週末旅行",
       "ベルギー",
-      "観光",
-      "グルメ"
+      "美術館"
     ],
     "home_visible": true,
     "home_order": 212,
@@ -580,8 +582,8 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/brussels-weekend-trip/",
     "related_articles": [
-      "amsterdam-weekend-trip",
-      "strasbourg-weekend-trip",
+      "paris-weekend-trip",
+      "london-weekend-trip",
       "cologne-city-guide"
     ],
     "official_sources": [
@@ -597,8 +599,8 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-29",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2027-06-29"
     }
   },
@@ -607,20 +609,19 @@
     "title": "ドイツから行く週末旅行：パリ観光の基本",
     "slug": "paris-weekend-trip",
     "category": "観光",
-    "summary": "ドイツから鉄道や飛行機で行ける大都市で、美術館、街歩き、カフェを目的別に絞ると週末でも楽しめます。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "summary": "一日に一地区と一つの予約施設を基本に、メトロ・RERの券種と工事情報を確認して歩くパリ週末旅行の実用ガイドです。",
     "url": "/germany/ja/living/paris-weekend-trip/",
     "markdown_path": "/content/living/paris-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-06-29",
-    "last_verified": "2026-06-29",
+    "updated_at": "2026-07-16",
+    "last_verified": "2026-07-16",
     "tags": [
       "パリ",
       "週末旅行",
       "フランス",
-      "美術館",
-      "観光"
+      "美術館"
     ],
     "home_visible": true,
     "home_order": 213,
@@ -629,9 +630,9 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/paris-weekend-trip/",
     "related_articles": [
-      "amsterdam-weekend-trip",
-      "strasbourg-weekend-trip",
-      "cologne-city-guide"
+      "brussels-weekend-trip",
+      "london-weekend-trip",
+      "strasbourg-weekend-trip"
     ],
     "official_sources": [
       {
@@ -646,8 +647,8 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-29",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2027-06-29"
     }
   },
@@ -656,20 +657,19 @@
     "title": "ドイツから行く週末旅行：ミュンヘン観光の基本",
     "slug": "munich-weekend-trip",
     "category": "観光",
-    "summary": "南ドイツらしい旧市街、ビアホール、公園、博物館を週末で組み合わせやすいバイエルン州の中心都市です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "summary": "Marienplatz、Kunstareal、Isar・Englischer Gartenを目的ごとに選び、MVVの経路と日券を確認するミュンヘン週末ガイドです。",
     "url": "/germany/ja/living/munich-weekend-trip/",
     "markdown_path": "/content/living/munich-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-06-29",
-    "last_verified": "2026-06-29",
+    "updated_at": "2026-07-16",
+    "last_verified": "2026-07-16",
     "tags": [
       "ミュンヘン",
       "週末旅行",
-      "ドイツ",
       "バイエルン",
-      "観光"
+      "美術館"
     ],
     "home_visible": true,
     "home_order": 214,
@@ -678,9 +678,9 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/munich-weekend-trip/",
     "related_articles": [
-      "amsterdam-weekend-trip",
-      "strasbourg-weekend-trip",
-      "cologne-city-guide"
+      "aachen-day-trip",
+      "krakow-weekend-trip",
+      "germany-first-30-days"
     ],
     "official_sources": [
       {
@@ -695,8 +695,8 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-29",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2027-06-29"
     }
   },
@@ -705,19 +705,18 @@
     "title": "ドイツから行く週末旅行：ロンドン観光の基本",
     "slug": "london-weekend-trip",
     "category": "観光",
-    "summary": "ドイツから飛行機や鉄道乗り継ぎで行ける大都市で、入国条件、空港移動、時差を意識して計画したい週末旅行先です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "summary": "到着空港と宿の地区を先に固定し、徒歩で回る地区とTfLを使う区間を分けるロンドン週末旅行の基本です。",
     "url": "/germany/ja/living/london-weekend-trip/",
     "markdown_path": "/content/living/london-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-06-29",
-    "last_verified": "2026-06-29",
+    "updated_at": "2026-07-16",
+    "last_verified": "2026-07-16",
     "tags": [
       "ロンドン",
       "週末旅行",
       "イギリス",
-      "観光",
       "美術館"
     ],
     "home_visible": true,
@@ -727,9 +726,9 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/london-weekend-trip/",
     "related_articles": [
-      "amsterdam-weekend-trip",
-      "strasbourg-weekend-trip",
-      "cologne-city-guide"
+      "brussels-weekend-trip",
+      "paris-weekend-trip",
+      "hamburg-weekend-trip"
     ],
     "official_sources": [
       {
@@ -744,8 +743,8 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-29",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2027-06-29"
     }
   },
@@ -754,20 +753,19 @@
     "title": "ドイツから行く週末旅行：コペンハーゲン観光の基本",
     "slug": "copenhagen-weekend-trip",
     "category": "観光",
-    "summary": "北欧らしいデザイン、港町の景色、自転車文化を週末で感じやすいデンマークの首都です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "summary": "Indre By、港、Christianshavnを徒歩と公共交通でつなぎ、空港・中央駅・自転車移動を無理なく選ぶためのコペンハーゲン週末ガイドです。",
     "url": "/germany/ja/living/copenhagen-weekend-trip/",
     "markdown_path": "/content/living/copenhagen-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-06-29",
-    "last_verified": "2026-06-29",
+    "updated_at": "2026-07-16",
+    "last_verified": "2026-07-16",
     "tags": [
       "コペンハーゲン",
       "週末旅行",
       "デンマーク",
-      "北欧",
-      "観光"
+      "デザイン"
     ],
     "home_visible": true,
     "home_order": 216,
@@ -776,9 +774,9 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/copenhagen-weekend-trip/",
     "related_articles": [
+      "hamburg-weekend-trip",
       "amsterdam-weekend-trip",
-      "strasbourg-weekend-trip",
-      "cologne-city-guide"
+      "bremen-weekend-trip"
     ],
     "official_sources": [
       {
@@ -793,8 +791,8 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-29",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2027-06-29"
     }
   },
@@ -803,20 +801,19 @@
     "title": "ドイツから行く週末旅行：ワルシャワ観光の基本",
     "slug": "warsaw-weekend-trip",
     "category": "観光",
-    "summary": "再建された旧市街、緑の多い公園、近代的な中心部を週末で組み合わせやすいポーランドの首都です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "summary": "再建された旧市街、王の道、Śródmieście、ヴィスワ川沿いを目的別に組み、公式交通情報で移動するワルシャワ週末ガイドです。",
     "url": "/germany/ja/living/warsaw-weekend-trip/",
     "markdown_path": "/content/living/warsaw-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-06-29",
-    "last_verified": "2026-06-29",
+    "updated_at": "2026-07-16",
+    "last_verified": "2026-07-16",
     "tags": [
       "ワルシャワ",
       "週末旅行",
       "ポーランド",
-      "旧市街",
-      "観光"
+      "公園"
     ],
     "home_visible": true,
     "home_order": 217,
@@ -825,9 +822,9 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/warsaw-weekend-trip/",
     "related_articles": [
-      "amsterdam-weekend-trip",
-      "strasbourg-weekend-trip",
-      "cologne-city-guide"
+      "krakow-weekend-trip",
+      "prague-weekend-trip",
+      "brussels-weekend-trip"
     ],
     "official_sources": [
       {
@@ -842,8 +839,8 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-29",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2027-06-29"
     }
   },
@@ -852,20 +849,19 @@
     "title": "ドイツから行く週末旅行：クラクフ観光の基本",
     "slug": "krakow-weekend-trip",
     "category": "観光",
-    "summary": "旧市街、ヴァヴェル城、カジミエシュ地区を徒歩中心で回りやすい、週末旅行向きの歴史都市です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "summary": "Rynek、Wawel、Kazimierzを徒歩でつなぎ、遠い地区だけをトラムで補うクラクフの実用的な週末ガイドです。",
     "url": "/germany/ja/living/krakow-weekend-trip/",
     "markdown_path": "/content/living/krakow-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-06-29",
-    "last_verified": "2026-06-29",
+    "updated_at": "2026-07-16",
+    "last_verified": "2026-07-16",
     "tags": [
       "クラクフ",
       "週末旅行",
       "ポーランド",
-      "旧市街",
-      "観光"
+      "旧市街"
     ],
     "home_visible": true,
     "home_order": 218,
@@ -874,9 +870,9 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/krakow-weekend-trip/",
     "related_articles": [
-      "amsterdam-weekend-trip",
-      "strasbourg-weekend-trip",
-      "cologne-city-guide"
+      "prague-weekend-trip",
+      "warsaw-weekend-trip",
+      "munich-weekend-trip"
     ],
     "official_sources": [
       {
@@ -891,8 +887,8 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-29",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2027-06-29"
     }
   },
@@ -901,20 +897,19 @@
     "title": "ドイツから行く週末旅行：プラハ観光の基本",
     "slug": "prague-weekend-trip",
     "category": "観光",
-    "summary": "旧市街、カレル橋、プラハ城を徒歩と公共交通で回りやすく、ドイツからの週末旅行でも人気の高い街です。初回の週末旅行で無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "summary": "旧市街、カレル橋、プラハ城を朝夕の混雑で分け、PIDの時間制チケットを正しく使うためのプラハ週末ガイドです。",
     "url": "/germany/ja/living/prague-weekend-trip/",
     "markdown_path": "/content/living/prague-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-06-29",
-    "last_verified": "2026-06-29",
+    "updated_at": "2026-07-16",
+    "last_verified": "2026-07-16",
     "tags": [
       "プラハ",
       "週末旅行",
       "チェコ",
-      "旧市街",
-      "観光"
+      "旧市街"
     ],
     "home_visible": true,
     "home_order": 219,
@@ -923,9 +918,9 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/prague-weekend-trip/",
     "related_articles": [
-      "amsterdam-weekend-trip",
-      "strasbourg-weekend-trip",
-      "cologne-city-guide"
+      "krakow-weekend-trip",
+      "warsaw-weekend-trip",
+      "munich-weekend-trip"
     ],
     "official_sources": [
       {
@@ -940,14 +935,14 @@
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-29",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2027-06-29"
     }
   },
   {
     "id": "L011",
-    "title": "Rundfunkbeitragとは？ドイツの放送負担金の基本",
+    "title": "Rundfunkbeitragとは？ドイツの放送負担金・GEZの完全ガイド",
     "slug": "rundfunkbeitrag-guide",
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
     "image_alt": "German living guide cards",
@@ -962,8 +957,10 @@
     "last_verified": "2026-06-14",
     "tags": [
       "Rundfunkbeitrag",
+      "GEZ",
       "住まい",
-      "手続き"
+      "手続き",
+      "引っ越し"
     ],
     "home_visible": true,
     "home_order": 15,
@@ -984,7 +981,7 @@
     "disclaimer_type": "administrative",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-06-14",
       "next_review_due": "2027-06-14"
     }
@@ -995,19 +992,21 @@
     "slug": "rent-apartment-germany",
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
     "image_alt": "German housing guide cards",
-    "category": "住まい",
-    "summary": "ドイツで賃貸物件を探すときの流れ、必要書類、内見、契約前の確認点を整理。",
+    "category": "住まい・契約",
+    "summary": "ドイツで賃貸物件を探すときの流れ、必要書類、内見、契約前の確認点、入居後の手続きをまとめた実務ガイド。",
     "url": "/germany/ja/living/rent-apartment-germany/",
     "markdown_path": "/content/living/rent-apartment-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
     "updated_at": "2026-06-14",
-    "last_verified": "2026-06-14",
+    "last_verified": "2026-06-16",
     "tags": [
       "賃貸",
       "家探し",
-      "契約"
+      "契約",
+      "SCHUFA",
+      "Anmeldung"
     ],
     "home_visible": true,
     "home_order": 10,
@@ -1017,7 +1016,9 @@
     "canonical_url": "/germany/ja/living/rent-apartment-germany/",
     "related_articles": [
       "schufa-guide",
-      "moving-checklist-germany"
+      "moving-checklist-germany",
+      "anmeldung-guide",
+      "rundfunkbeitrag-guide"
     ],
     "official_sources": [
       {
@@ -1032,8 +1033,8 @@
     "disclaimer_type": "housing",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-14",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-06-16",
       "next_review_due": "2027-06-14"
     }
   },
@@ -1042,14 +1043,14 @@
     "title": "SCHUFAとは？賃貸・契約で必要になる信用情報",
     "slug": "schufa-guide",
     "category": "住まい・契約",
-    "summary": "SCHUFAの意味、賃貸契約や携帯・銀行手続きで必要になる場面、取得方法を解説。",
+    "summary": "SCHUFAの意味、賃貸契約や携帯・銀行手続きで必要になる場面、取得方法、提出時の注意点を解説。",
     "url": "/germany/ja/living/schufa-guide/",
     "markdown_path": "/content/living/schufa-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
     "updated_at": "2026-06-14",
-    "last_verified": "2026-06-14",
+    "last_verified": "2026-06-16",
     "tags": [
       "SCHUFA",
       "賃貸",
@@ -1078,8 +1079,8 @@
     "disclaimer_type": "finance_contract",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-14",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-06-16",
       "next_review_due": "2027-06-14"
     }
   },
@@ -1088,16 +1089,18 @@
     "title": "ドイツの銀行口座開設ガイド",
     "slug": "bank-account-germany",
     "category": "銀行・お金",
-    "summary": "ドイツで銀行口座を開く基本、必要書類、オンライン銀行と支店型銀行の違いを整理。",
+    "summary": "ドイツで銀行口座を開くために必要な書類、銀行の選び方、オンライン銀行と支店型銀行の違い、Basiskonto、開設後の設定まで解説。",
     "url": "/germany/ja/living/bank-account-germany/",
     "markdown_path": "/content/living/bank-account-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
     "updated_at": "2026-06-14",
-    "last_verified": "2026-06-14",
+    "last_verified": "2026-06-16",
     "tags": [
       "銀行口座",
+      "Girokonto",
+      "Basiskonto",
       "お金",
       "初渡独"
     ],
@@ -1124,8 +1127,8 @@
     "disclaimer_type": "finance",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-14",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-06-16",
       "next_review_due": "2027-06-14"
     }
   },
@@ -1134,17 +1137,19 @@
     "title": "Tax ID・Steuernummer・Steuerklasseの違い",
     "slug": "tax-id-steuernummer-steuerklasse",
     "category": "税金・行政",
-    "summary": "ドイツ生活でよく出てくる税関連番号と税クラスの違いを、日本語で整理。",
+    "summary": "ドイツ生活でよく出てくる Tax ID、Steuernummer、Steuerklasse の違い、必要になる場面、勤務開始・確定申告・結婚後の確認ポイントを日本語で整理。",
     "url": "/germany/ja/living/tax-id-steuernummer-steuerklasse/",
     "markdown_path": "/content/living/tax-id-steuernummer-steuerklasse.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
     "updated_at": "2026-06-14",
-    "last_verified": "2026-06-14",
+    "last_verified": "2026-06-16",
     "tags": [
       "税金",
       "Tax ID",
+      "Steuernummer",
+      "Steuerklasse",
       "行政手続き"
     ],
     "home_visible": true,
@@ -1155,7 +1160,9 @@
     "canonical_url": "/germany/ja/living/tax-id-steuernummer-steuerklasse/",
     "related_articles": [
       "germany-first-30-days",
-      "bank-account-germany"
+      "anmeldung-guide",
+      "bank-account-germany",
+      "health-insurance-guide"
     ],
     "official_sources": [
       {
@@ -1170,28 +1177,33 @@
     "disclaimer_type": "tax",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-14",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-06-16",
       "next_review_due": "2027-06-14"
     }
   },
   {
     "id": "L008",
-    "title": "ドイツで妊娠・出産したときの基本手続き",
+    "title": "ドイツで妊娠・出産したときの基本手続き：医療・保険・職場・出生届の流れ",
     "slug": "pregnancy-birth-germany",
     "category": "家族・医療",
-    "summary": "妊娠判明後から出産前後までに確認したい医療・保険・行政手続きの全体像。",
+    "summary": "ドイツで妊娠・出産する日本人家庭向けに、妊娠判明後の婦人科受診、助産師探し、出産施設、健康保険、職場報告、Mutterschutz、出生届、Elterngeld・Kindergeld申請までの流れを整理。",
     "url": "/germany/ja/living/pregnancy-birth-germany/",
     "markdown_path": "/content/living/pregnancy-birth-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
     "updated_at": "2026-06-14",
-    "last_verified": "2026-06-14",
+    "last_verified": "2026-06-16",
     "tags": [
       "妊娠",
       "出産",
-      "医療"
+      "医療",
+      "助産師",
+      "Mutterschutz",
+      "Elterngeld",
+      "Kindergeld",
+      "出生届"
     ],
     "home_visible": true,
     "home_order": 50,
@@ -1216,26 +1228,30 @@
     "disclaimer_type": "medical_family",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-14",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-06-16",
       "next_review_due": "2027-06-14"
     }
   },
   {
     "id": "L009",
-    "title": "Kita探しの基本：U3・Tagesmutter・Großtagespflege",
+    "title": "Kita探しの基本：U3・Tagesmutter・Großtagespflegeの違いと申し込み手順",
     "slug": "kita-u3-tagesmutter-guide",
     "category": "家族・子育て",
-    "summary": "ドイツで保育先を探すときに出てくるU3、Kita、Tagesmutter、Großtagespflegeの違いを整理。",
+    "summary": "ドイツで保育先を探す日本人家庭向けに、U3、Kita、Tagesmutter、Großtagespflegeの違い、申し込み手順、費用、見学時の確認ポイントを整理。",
     "url": "/germany/ja/living/kita-u3-tagesmutter-guide/",
     "markdown_path": "/content/living/kita-u3-tagesmutter-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
     "updated_at": "2026-06-14",
-    "last_verified": "2026-06-14",
+    "last_verified": "2026-06-16",
     "tags": [
       "Kita",
+      "U3",
+      "Tagesmutter",
+      "Großtagespflege",
+      "Jugendamt",
       "子育て",
       "保育"
     ],
@@ -1262,8 +1278,8 @@
     "disclaimer_type": "family_administrative",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-14",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-06-16",
       "next_review_due": "2027-06-14"
     }
   },
@@ -1272,18 +1288,20 @@
     "title": "ドイツで引っ越すときの手続きチェックリスト",
     "slug": "moving-checklist-germany",
     "category": "住まい・手続き",
-    "summary": "住所変更、Anmeldung、電気・通信・保険・郵便転送など、引っ越し時の確認事項を整理。",
+    "summary": "ドイツ国内で引っ越すときに必要な住民登録、住所変更、退去・入居確認、電気・通信・保険・郵便転送などを時系列で整理。",
     "url": "/germany/ja/living/moving-checklist-germany/",
     "markdown_path": "/content/living/moving-checklist-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
     "updated_at": "2026-06-12",
-    "last_verified": "2026-06-12",
+    "last_verified": "2026-06-16",
     "tags": [
       "引っ越し",
       "住所変更",
-      "手続き"
+      "手続き",
+      "住民登録",
+      "賃貸"
     ],
     "home_visible": true,
     "home_order": 70,
@@ -1293,35 +1311,40 @@
     "canonical_url": "/germany/ja/living/moving-checklist-germany/",
     "related_articles": [
       "anmeldung-guide",
-      "rent-apartment-germany"
+      "rent-apartment-germany",
+      "rundfunkbeitrag-guide"
     ],
     "official_sources": [],
     "disclaimer_type": "administrative",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-12",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-06-16",
       "next_review_due": "2027-06-12"
     }
   },
   {
     "id": "L001",
-    "title": "住民登録 Anmeldung の完全ガイド",
+    "title": "ドイツ住民登録 Anmeldung 完全ガイド｜必要書類・予約・当日の流れ",
     "slug": "anmeldung-guide",
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
     "image_alt": "German registration guide cards",
-    "category": "生活・手続き",
-    "summary": "ドイツ生活の第一歩、住民登録（Anmeldung）の手順、必要書類、予約のコツを分かりやすく解説します。",
+    "category": "行政手続き",
+    "summary": "ドイツで生活を始めるときに必要な住民登録 Anmeldung の完全ガイド。14日以内の登録ルール、必要書類、Wohnungsgeberbestätigung、予約方法、当日の流れ、税務IDとの関係、よくあるトラブルまで解説。",
     "url": "/germany/ja/living/anmeldung-guide/",
     "markdown_path": "/content/living/anmeldung-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
     "updated_at": "2026-06-14",
-    "last_verified": "2026-06-14",
+    "last_verified": "2026-06-16",
     "tags": [
-      "行政手続き",
-      "初渡独"
+      "Anmeldung",
+      "住民登録",
+      "Bürgeramt",
+      "Wohnungsgeberbestätigung",
+      "初渡独",
+      "引っ越し"
     ],
     "home_visible": true,
     "home_order": 80,
@@ -1330,7 +1353,11 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/anmeldung-guide/",
     "related_articles": [
-      "germany-first-30-days"
+      "germany-first-30-days",
+      "moving-checklist-germany",
+      "tax-id-steuernummer-steuerklasse",
+      "bank-account-germany",
+      "health-insurance-guide"
     ],
     "official_sources": [
       {
@@ -1341,27 +1368,31 @@
     "disclaimer_type": "administrative",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-14",
-      "next_review_due": "2027-06-14"
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-06-16",
+      "next_review_due": "2027-06-16"
     }
   },
   {
     "id": "L002",
     "title": "ドイツ生活最初の30日チェックリスト",
     "slug": "germany-first-30-days",
-    "category": "生活・手続き",
-    "summary": "ドイツに到着してから1ヶ月以内に済ませておきたい重要な手続きと準備を時系列でまとめました。",
+    "category": "生活立ち上げ",
+    "summary": "ドイツ到着後30日以内に優先して進めたい住民登録、健康保険、銀行口座、税務ID、通信、滞在許可、放送負担金などを時系列で整理。",
     "url": "/germany/ja/living/germany-first-30-days/",
     "markdown_path": "/content/living/germany-first-30-days.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
     "updated_at": "2026-06-07",
-    "last_verified": "2026-06-07",
+    "last_verified": "2026-06-16",
     "tags": [
       "初渡独",
-      "行政手続き"
+      "住民登録",
+      "健康保険",
+      "銀行口座",
+      "税務ID",
+      "滞在許可"
     ],
     "home_visible": true,
     "home_order": 90,
@@ -1371,14 +1402,16 @@
     "canonical_url": "/germany/ja/living/germany-first-30-days/",
     "related_articles": [
       "anmeldung-guide",
-      "health-insurance-guide"
+      "health-insurance-guide",
+      "bank-account-germany",
+      "tax-id-steuernummer-steuerklasse"
     ],
     "official_sources": [],
     "disclaimer_type": "administrative",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-07",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-06-16",
       "next_review_due": "2027-06-07"
     }
   },
@@ -1387,17 +1420,20 @@
     "title": "ドイツの健康保険の基本",
     "slug": "health-insurance-guide",
     "category": "生活・手続き",
-    "summary": "公的保険（GKV）と民間保険（PKV）の違い、加入義務、選び方のポイントを初心者向けに解説します。",
+    "summary": "ドイツの健康保険制度、GKVとPKVの違い、会社員・学生・自営業・家族帯同者の加入パターン、保険料、選び方、加入手続きの流れを解説。",
     "url": "/germany/ja/living/health-insurance-guide/",
     "markdown_path": "/content/living/health-insurance-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
     "updated_at": "2026-06-14",
-    "last_verified": "2026-06-14",
+    "last_verified": "2026-06-16",
     "tags": [
-      "保険",
-      "行政手続き"
+      "健康保険",
+      "GKV",
+      "PKV",
+      "医療",
+      "渡独後手続き"
     ],
     "home_visible": true,
     "home_order": 100,
@@ -1406,7 +1442,8 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/health-insurance-guide/",
     "related_articles": [
-      "germany-first-30-days"
+      "germany-first-30-days",
+      "anmeldung-guide"
     ],
     "official_sources": [
       {
@@ -1421,8 +1458,8 @@
     "disclaimer_type": "medical_insurance",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-14",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-06-16",
       "next_review_due": "2027-06-14"
     }
   },
@@ -1473,10 +1510,11 @@
     "disclaimer_type": "living",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-06-29",
       "next_review_due": "2026-07-06"
-    }
+    },
+    "hero_image": ""
   },
   {
     "id": "L032",
@@ -1492,8 +1530,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-30",
-    "updated_at": "2026-06-30",
-    "last_verified": "2026-06-30",
+    "updated_at": "2026-07-16",
+    "last_verified": "2026-07-16",
     "tags": [
       "ドイツ生活",
       "野鳥",
@@ -1512,13 +1550,27 @@
       "rhine-river-relax-guide",
       "duesseldorf-family-trip"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "DDA: Vögel in Deutschland online（種別情報）",
+        "url": "https://www.dda-web.de/vid-online"
+      },
+      {
+        "title": "ornitho.de: ドイツの鳥類観察ポータル",
+        "url": "https://www.ornitho.de/index.php?langu=de&m_id=1"
+      },
+      {
+        "title": "LANUK NRW: NRWに定着した外来鳥類の背景",
+        "url": "https://www.lanuk.nrw.de/fileadmin/lanuvpubl/5_natur_in_nrw/50006_Natur_in_NRW_2_2008.pdf"
+      }
+    ],
     "disclaimer_type": "living",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Germany editorial",
-      "last_reviewed_at": "2026-06-30",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-16",
       "next_review_due": "2027-06-30"
-    }
+    },
+    "hero_image": "/assets/img/living/germany-wild-birds/germany-wild-birds-hero.webp"
   }
 ]

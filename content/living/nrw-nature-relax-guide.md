@@ -3,12 +3,7 @@ id: "T006"
 title: "NRWの自然スポット入門：森・湖・公園でリラックスする休日"
 slug: "nrw-nature-relax-guide"
 category: "観光"
-tags:
-  - "NRW"
-  - "自然"
-  - "公園"
-  - "湖"
-  - "リラックス"
+tags: ["NRW","自然","公園","湖","リラックス"]
 summary: "NRW周辺で自然を感じたい人向けに、森、湖、公園を使った無理のない休日の過ごし方を整理。"
 status: "published"
 published: true
@@ -16,10 +11,7 @@ published_at: "2026-06-27"
 updated_at: "2026-06-27"
 last_verified: "2026-06-27"
 canonical_url: "/germany/ja/living/nrw-nature-relax-guide/"
-related_articles:
-  - "rhine-river-relax-guide"
-  - "aachen-day-trip"
-  - "duesseldorf-family-trip"
+related_articles: ["rhine-river-relax-guide","aachen-day-trip","duesseldorf-family-trip"]
 official_sources: []
 ---
 

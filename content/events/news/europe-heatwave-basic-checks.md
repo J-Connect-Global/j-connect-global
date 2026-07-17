@@ -5,10 +5,7 @@ slug: "europe-heatwave-basic-checks"
 category: "生活・気候"
 area: "ドイツ全体 / EU"
 summary: "欧州で高温の日が続くときに、住まい・外出・子ども・高齢者・職場で確認したい基本ポイントを整理します。"
-tags:
-  - "熱波"
-  - "夏"
-  - "健康"
+tags: ["熱波","夏","健康"]
 status: "published"
 published: true
 published_at: "2026-06-28"

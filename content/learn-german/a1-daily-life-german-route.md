@@ -8,7 +8,7 @@ status: "published"
 published: true
 published_at: "2026-06-20"
 last_verified: "2026-06-28"
-tags: ["A1", "生活ドイツ語", "初心者", "新生活"]
+tags: ["A1","生活ドイツ語","初心者","新生活"]
 canonical_url: "/germany/ja/learn-german/a1-daily-life-german-route/"
 ---
 

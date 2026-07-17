@@ -8,7 +8,7 @@ status: "published"
 published: true
 published_at: "2026-06-19"
 last_verified: "2026-07-06"
-tags: ["役所", "Anmeldung", "A1"]
+tags: ["役所","Anmeldung","A1"]
 canonical_url: "/germany/ja/learn-german/behoerde-anmeldung-phrases/"
 ---
 

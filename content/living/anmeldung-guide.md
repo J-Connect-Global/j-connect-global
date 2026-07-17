@@ -3,13 +3,7 @@ id: "L001"
 title: "ドイツ住民登録 Anmeldung 完全ガイド｜必要書類・予約・当日の流れ"
 slug: "anmeldung-guide"
 category: "行政手続き"
-tags:
-  - "Anmeldung"
-  - "住民登録"
-  - "Bürgeramt"
-  - "Wohnungsgeberbestätigung"
-  - "初渡独"
-  - "引っ越し"
+tags: ["Anmeldung","住民登録","Bürgeramt","Wohnungsgeberbestätigung","初渡独","引っ越し"]
 summary: "ドイツで生活を始めるときに必要な住民登録 Anmeldung の完全ガイド。14日以内の登録ルール、必要書類、Wohnungsgeberbestätigung、予約方法、当日の流れ、税務IDとの関係、よくあるトラブルまで解説。"
 status: "published"
 published: true
@@ -17,12 +11,7 @@ published_at: "2026-06-07"
 last_verified: "2026-06-16"
 next_review: "2027-06-16"
 canonical_url: "/germany/ja/living/anmeldung-guide/"
-related_articles:
-  - "germany-first-30-days"
-  - "moving-checklist-germany"
-  - "tax-id-steuernummer-steuerklasse"
-  - "bank-account-germany"
-  - "health-insurance-guide"
+related_articles: ["germany-first-30-days","moving-checklist-germany","tax-id-steuernummer-steuerklasse","bank-account-germany","health-insurance-guide"]
 ---
 
 # ドイツ住民登録 Anmeldung 完全ガイド｜必要書類・予約・当日の流れ
@@ -32,6 +21,8 @@ related_articles:
 Anmeldung は、単なる住所登録ではありません。銀行口座、給与、税務ID、健康保険、携帯契約、滞在許可、子どもの手続きなど、ドイツ生活の多くの手続きの入口になります。
 
 この記事では、初めてドイツに住む日本人向けに、Anmeldung の意味、期限、必要書類、予約方法、当日の流れ、よくある失敗、サブレット・ホテル・Airbnb・家族帯同の場合の注意点まで、実務目線でまとめます。
+
+![住民登録の申請書、予約カレンダー、鍵、封筒を机に準備した様子](/assets/images/living/anmeldung-preparation.webp "AI生成イラスト：Anmeldung前にそろえるもの")
 
 ---
 

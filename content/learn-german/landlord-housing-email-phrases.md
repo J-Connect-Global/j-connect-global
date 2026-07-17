@@ -8,7 +8,7 @@ status: "published"
 published: true
 published_at: "2026-06-19"
 last_verified: "2026-06-19"
-tags: ["住まい", "大家", "メール"]
+tags: ["住まい","大家","メール"]
 canonical_url: "/germany/ja/learn-german/landlord-housing-email-phrases/"
 ---
 

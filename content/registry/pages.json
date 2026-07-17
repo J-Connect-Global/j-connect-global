@@ -1,7 +1,7 @@
 [
   {
     "id": "page-root",
-    "title": "J-Connect Germany",
+    "title": "J-Connect Global",
     "url": "/",
     "type": "utility",
     "pillar": "utility",
@@ -15,15 +15,15 @@
     "redirect_target": "/germany/ja/",
     "layout": "redirect",
     "hero_type": "none",
-    "description": "J-Connect Germany の日本語サイトへ移動するルートページです。",
+    "description": "J-Connect Global の日本語サイトへ移動するルートページです。",
     "tags": [
-      "J-Connect Germany",
+      "J-Connect Global",
       "日本語"
     ]
   },
   {
     "id": "page-home",
-    "title": "J-Connect Germany",
+    "title": "J-Connect Global",
     "url": "/germany/ja/",
     "type": "home",
     "pillar": "home",
@@ -41,7 +41,7 @@
     "tags": [
       "ドイツ生活",
       "日本語ポータル",
-      "J-Connect Germany"
+      "J-Connect Global"
     ]
   },
   {
@@ -428,7 +428,7 @@
     "redirect_target": "",
     "layout": "detail",
     "hero_type": "detail",
-    "description": "J-Connect Germany のイベント詳細ページです。開催日、場所、関連リンクなどを確認できます。",
+    "description": "J-Connect Global のイベント詳細ページです。開催日、場所、関連リンクなどを確認できます。",
     "tags": [
       "イベント",
       "詳細"
@@ -450,7 +450,7 @@
     "redirect_target": "",
     "layout": "utility",
     "hero_type": "utility",
-    "description": "J-Connect Germanyでは現在、サービス検証期間として求人掲載を無料で受け付けています。掲載条件は将来変更される場合がありますが、現在の申込みが有料サービスへ自動移行することはありません。",
+    "description": "J-Connect Globalでは現在、サービス検証期間として求人掲載を無料で受け付けています。掲載条件は将来変更される場合がありますが、現在の申込みが有料サービスへ自動移行することはありません。",
     "tags": [
       "求人掲載",
       "企業向け",
@@ -473,7 +473,7 @@
     "redirect_target": "",
     "layout": "detail",
     "hero_type": "detail",
-    "description": "J-Connect Germany の求人詳細ページです。仕事内容、勤務地、応募情報を確認できます。",
+    "description": "J-Connect Global の求人詳細ページです。仕事内容、勤務地、応募情報を確認できます。",
     "tags": [
       "求人",
       "詳細"
@@ -587,7 +587,7 @@
     "redirect_target": "",
     "layout": "utility",
     "hero_type": "utility",
-    "description": "J-Connect Germany の交流掲示板へ投稿するためのフォームページです。",
+    "description": "J-Connect Global の交流掲示板へ投稿するためのフォームページです。",
     "tags": [
       "掲示板",
       "投稿フォーム"
@@ -697,7 +697,7 @@
     "redirect_target": "",
     "layout": "utility",
     "hero_type": "utility",
-    "description": "J-Connect Germany の掲示板投稿完了ページです。投稿者が管理用URLを確認できます。",
+    "description": "J-Connect Global の掲示板投稿完了ページです。投稿者が管理用URLを確認できます。",
     "tags": [
       "掲示板",
       "投稿完了",
@@ -758,7 +758,7 @@
     "redirect_target": "",
     "layout": "utility",
     "hero_type": "utility",
-    "description": "J-Connect Germany の掲示板投稿を編集、募集終了、再開、非公開化する投稿者向けページです。",
+    "description": "J-Connect Global の掲示板投稿を編集、募集終了、再開、非公開化する投稿者向けページです。",
     "tags": [
       "掲示板",
       "投稿管理",
@@ -781,7 +781,7 @@
     "redirect_target": "",
     "layout": "utility",
     "hero_type": "utility",
-    "description": "J-Connect Germany の目的、掲載領域、運営方針を説明するページです。",
+    "description": "J-Connect Global の目的、掲載領域、運営方針を説明するページです。",
     "tags": [
       "J-CONNECTについて",
       "運営方針"
@@ -803,7 +803,7 @@
     "redirect_target": "",
     "layout": "utility",
     "hero_type": "utility",
-    "description": "J-Connect Germany へのお問い合わせ、掲載相談、運営への連絡に使うページです。",
+    "description": "J-Connect Global へのお問い合わせ、掲載相談、運営への連絡に使うページです。",
     "tags": [
       "お問い合わせ",
       "運営"
@@ -825,7 +825,7 @@
     "redirect_target": "",
     "layout": "utility",
     "hero_type": "utility",
-    "description": "J-Connect Germany 内の生活、求人、イベント、ドイツ語学習コンテンツを検索できるページです。",
+    "description": "J-Connect Global 内の生活、求人、イベント、ドイツ語学習コンテンツを検索できるページです。",
     "tags": [
       "検索",
       "サイト内検索"
@@ -847,7 +847,7 @@
     "redirect_target": "",
     "layout": "legal",
     "hero_type": "utility",
-    "description": "J-Connect Germany の利用規約、投稿ルール、免責事項を確認できるページです。",
+    "description": "J-Connect Global の利用規約、投稿ルール、免責事項を確認できるページです。",
     "tags": [
       "利用規約",
       "ルール"
@@ -869,7 +869,7 @@
     "redirect_target": "",
     "layout": "legal",
     "hero_type": "utility",
-    "description": "J-Connect Germany のプライバシーポリシーと個人情報の取り扱いを確認できるページです。",
+    "description": "J-Connect Global のプライバシーポリシーと個人情報の取り扱いを確認できるページです。",
     "tags": [
       "プライバシー",
       "個人情報"
@@ -891,7 +891,7 @@
     "redirect_target": "",
     "layout": "legal",
     "hero_type": "utility",
-    "description": "J-Connect Germany の運営者情報、所在地、連絡先を確認できる Impressum ページです。",
+    "description": "J-Connect Global の運営者情報、所在地、連絡先を確認できる Impressum ページです。",
     "tags": [
       "運営者情報",
       "Impressum"

@@ -11,7 +11,7 @@
   state.initialized = true;
   window[GLOBAL_KEY] = state;
 
-  const SITE_NAME = "J-Connect Germany";
+  const SITE_NAME = "J-Connect Global";
   const DEFAULT_TEXT = "\u004a\u002d\u0043\u006f\u006e\u006e\u0065\u0063\u0074\u0020\u0047\u0065\u0072\u006d\u0061\u006e\u0079\u306e\u8a18\u4e8b\u3092\u5171\u6709\u3057\u307e\u3059\u3002";
   const INSTAGRAM_COPY_MESSAGE = "\u30ea\u30f3\u30af\u3092\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f\u3002\u0049\u006e\u0073\u0074\u0061\u0067\u0072\u0061\u006d\u306e\u0044\u004d\u30fb\u30b9\u30c8\u30fc\u30ea\u30fc\u30ba\u30fb\u30d7\u30ed\u30d5\u30a3\u30fc\u30eb\u7b49\u306b\u8cbc\u308a\u4ed8\u3051\u3066\u5171\u6709\u3067\u304d\u307e\u3059\u3002";
   const COPY_SUCCESS_MESSAGE = "\u30ea\u30f3\u30af\u3092\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f\u3002";
@@ -80,8 +80,8 @@
     const h1 = cleanTitle(document.querySelector("main h1, h1")?.textContent);
     const title = cleanTitle(document.title);
     const genericTitles = [
-      "\u6295\u7a3f\u30d5\u30a9\u30fc\u30e0 | J-Connect Germany",
-      "\u6295\u7a3f\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093 | J-Connect Germany"
+      "\u6295\u7a3f\u30d5\u30a9\u30fc\u30e0 | J-Connect Global",
+      "\u6295\u7a3f\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093 | J-Connect Global"
     ];
 
     if (h1 && (!title || genericTitles.includes(title))) {

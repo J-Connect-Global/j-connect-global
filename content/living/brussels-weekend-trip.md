@@ -3,7 +3,7 @@ id: "T013"
 title: "ドイツから行く週末旅行：ブリュッセル観光の基本"
 slug: "brussels-weekend-trip"
 category: "観光"
-tags: ["ブリュッセル", "週末旅行", "ベルギー", "美術館"]
+tags: ["ブリュッセル","週末旅行","ベルギー","美術館"]
 summary: "グランプラス周辺、サブロン、EU地区を目的別に分け、STIB/MIVBと鉄道の境界を確認して歩くブリュッセルの週末ガイドです。"
 status: "published"
 published: true
@@ -11,7 +11,7 @@ published_at: "2026-06-29"
 updated_at: "2026-07-16"
 last_verified: "2026-07-16"
 canonical_url: "/germany/ja/living/brussels-weekend-trip/"
-related_articles: ["paris-weekend-trip", "london-weekend-trip", "cologne-city-guide"]
+related_articles: ["paris-weekend-trip","london-weekend-trip","cologne-city-guide"]
 official_sources:
   - title: "visit.brussels"
     url: "https://www.visit.brussels/en"

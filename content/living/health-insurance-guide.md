@@ -3,21 +3,14 @@ id: "L003"
 title: "ドイツの健康保険の基本"
 slug: "health-insurance-guide"
 category: "生活・手続き"
-tags:
-  - "健康保険"
-  - "GKV"
-  - "PKV"
-  - "医療"
-  - "渡独後手続き"
+tags: ["健康保険","GKV","PKV","医療","渡独後手続き"]
 summary: "ドイツの健康保険制度、GKVとPKVの違い、会社員・学生・自営業・家族帯同者の加入パターン、保険料、選び方、加入手続きの流れを解説。"
 status: "published"
 published: true
 published_at: "2026-06-07"
 last_verified: "2026-06-16"
 canonical_url: "/germany/ja/living/health-insurance-guide/"
-related_articles:
-  - "germany-first-30-days"
-  - "anmeldung-guide"
+related_articles: ["germany-first-30-days","anmeldung-guide"]
 ---
 
 # ドイツの健康保険の基本
@@ -26,6 +19,8 @@ related_articles:
 会社員として働く人、大学に入学する人、家族帯同で来る人、自営業として活動する人、ワーキングホリデーや求職ビザで滞在する人では、選べる保険や必要な証明が変わります。
 
 この記事では、ドイツの健康保険制度を初めて使う日本人向けに、GKV・PKVの違い、保険料の考え方、加入手続き、家族保険、学生保険、よくある注意点まで整理します。
+
+![保険証、医療書類、予約カレンダー、スマートフォン、聴診器を机に準備した様子](/assets/images/living/health-insurance-path.webp "AI生成イラスト：健康保険加入から受診予約まで")
 
 ## この記事でわかること
 

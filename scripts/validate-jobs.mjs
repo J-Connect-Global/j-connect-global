@@ -85,8 +85,10 @@ if (!detail.includes('noindex, follow')) problems.push("Jobs detail lacks noinde
 if (shared.includes("...row")) problems.push("Jobs shared normalizer retains arbitrary source fields instead of a public allowlist.");
 const publicEmailFields = ["contact_email", "application_email", "apply_email", "public_email"];
 for (const field of publicEmailFields) {
-  if (new RegExp(`\\b${field}\\b`).test(shared)) {
-    problems.push(`Jobs shared normalizer must not read or emit removed public email field ${field}.`);
+  for (const [surface, source] of [["shared normalizer", shared], ["listing", listing], ["legacy detail", detail]]) {
+    if (new RegExp(`\\b${field}\\b`).test(source)) {
+      problems.push(`Jobs ${surface} must not read or emit removed public email field ${field}.`);
+    }
   }
   for (const [index, job] of (jobsCache.items || []).entries()) {
     if (Object.hasOwn(job, field)) {

@@ -250,6 +250,17 @@ test("Jobs list renders every active record and has no four-record cap", async (
   await assertRouteReady(page);
 });
 
+test("generated Job detail stays readable and private in dark mode", async ({ page }) => {
+  const exemplar = jobsFixture.items[0];
+  expect(exemplar?.detail_url, "a stable public Jobs detail route is required").toBeTruthy();
+  await openRoute(page, exemplar.detail_url);
+  await expect(page.locator(".public-detail-content h1")).toHaveText(exemplar.position_title);
+  await expect(page.locator('main article a[href^="mailto:"]')).toHaveCount(0);
+  await activateDarkMode(page);
+  await assertWcagTextContrast(page, ".public-detail-facts", "dark-mode Job facts");
+  await assertRouteReady(page);
+});
+
 test("article hero frames preserve the desktop crop and article alignment", async ({ page }) => {
   for (const route of [
     "/germany/ja/living/hamburg-weekend-trip/",

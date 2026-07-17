@@ -444,12 +444,15 @@ for (const [label, source, jsonPath] of [
 ]) {
   assert.equal(source.includes(jsonPath), true, `${label} does not reference generated public JSON`);
   assert.equal(source.includes("buildDirectoryUrl"), false, `${label} still reads GAS directly`);
-  assert.match(source, /データを読み込んでいます/);
+  assert.match(source, /UI\.(?:dataStateHtml|renderDataState)/, `${label} does not use the shared data-state renderer`);
   assert.match(source, /intentionally_empty/);
-  assert.match(source, /条件に一致する結果がありません/);
-  assert.match(source, /読み込みエラー|一時的に表示できません/);
+  assert.match(source, /isError \? "error" : kind|isError \? "error" : "loading"/);
   assert.match(source, /aria-disabled/);
 }
+for (const stateKind of ["loading", "empty", "not-available", "error", "invalid", "inactive"]) {
+  assert.match(commonImageSource, new RegExp(`(?:^|\\s)["']?${stateKind.replace("-", "\\-")}["']?\\s*:`), `shared UI copy is missing ${stateKind}`);
+}
+assert.match(commonImageSource, /escapeHtml\(title\)[\s\S]*escapeHtml\(body\)/, "shared data-state renderer does not escape visible copy");
 assert.equal(/buildCommunityUrl\(\{\s*action:\s*["'](?:getPosts|listPosts|getPost)/.test(home + communityList + communityDetail + communityContact + communityReport), false, "Community public display still reads GAS");
 assert.equal(/buildDirectoryUrl\(\{[\s\S]{0,180}(?:directorySheets\.jobs|sheet:\s*["']jobs)/.test(home + jobsList + jobsDetail), false, "Jobs public display still reads GAS");
 assert.equal(communityContact.includes("COMMUNITY_STATIC_POSTS_URL"), true);
@@ -460,8 +463,8 @@ assert.match(jobsDetail, /この求人は募集終了、非公開、削除済み
 assert.match(communityDetail, /<meta name="robots" content="noindex, follow">/);
 assert.match(jobsDetail, /<meta name="robots" content="noindex, follow">/);
 const jobsInitialHead = jobsDetail.slice(0, jobsDetail.indexOf("</head>") + 7);
-assert.match(jobsInitialHead, /<title>求人詳細 \| 仕事・求人 \| J-Connect Global<\/title>/);
-assert.match(jobsInitialHead, /<meta name="description" content="J-Connect Globalの求人詳細表示ページです。">/);
+assert.match(jobsInitialHead, /<title>求人詳細 \| 仕事・求人 \| J-Connect Germany<\/title>/);
+assert.match(jobsInitialHead, /<meta name="description" content="J-Connect Germanyの求人詳細表示ページです。">/);
 assert.match(jobsInitialHead, /<link rel="canonical" href="https:\/\/j-connect-global\.com\/germany\/ja\/jobs\/detail\/">/);
 assert.match(jobsInitialHead, /<meta name="robots" content="noindex, follow">/);
 assert.equal(/"@type"\s*:\s*"JobPosting"/.test(jobsDetail), false, "dynamic detail emits unsupported JobPosting markup");

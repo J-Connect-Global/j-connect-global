@@ -1,16 +1,24 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  SITE_IDENTITY,
+  SERVICE_NAME,
+  SITE_ORIGIN,
+  PRIMARY_JA_PATH,
+  serviceTitle,
+  replaceAccidentalParentBrand
+} from './site-identity.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
-const SITE_ORIGIN = 'https://j-connect-global.com';
-const PRIMARY_JA_PATH = '/germany/ja/';
 const DEFAULT_SOCIAL_IMAGE = '/assets/img/placeholders/jconnect-default-card.webp';
 const SOCIAL_SHARE_CSS = '/assets/css/social-share.css';
 const SOCIAL_SHARE_JS = '/assets/js/social-share.js';
+const SITE_IDENTITY_JS = '/assets/js/site-identity.js';
 
 function main() {
+  writeBrowserSiteIdentity();
   const pages = readJson(PAGE_REGISTRY_PATH);
   const pagesByUrl = new Map(pages.map((page) => [normalizeUrl(page.url), page]));
   const htmlFiles = walk(path.join(root, 'germany/ja')).filter((file) => file.endsWith('.html'));
@@ -37,17 +45,65 @@ function applyCanonicalLayout(html, url, page) {
   const currentUrl = page?.status === 'legacy' && page.redirect_target ? normalizeUrl(page.redirect_target) : url;
   let next = html;
   next = ensureThemeInitScript(next);
+  next = ensureSiteIdentityScript(next);
   next = ensureHeaderFooterStylesheet(next);
   next = ensureSocialShareStylesheet(next);
   next = ensureRobotsMeta(next, page);
+  next = ensureSiteIdentityMeta(next);
   next = ensureStaticSocialMeta(next, currentUrl, page);
   next = ensureJaHreflang(next, page);
   next = ensurePageStructuredData(next, currentUrl, page);
   next = replaceLayoutBlock(next, 'ja-header', renderHeader(pillar, currentUrl), 'header');
-  next = replaceLayoutBlock(next, 'ja-footer', readLayoutTemplate('ja-footer'), 'footer');
+  next = replaceLayoutBlock(next, 'ja-footer', renderFooter(), 'footer');
   next = ensureMainScript(next);
   next = ensureSocialShareScript(next);
   return next;
+}
+
+function writeBrowserSiteIdentity() {
+  const payload = JSON.stringify(SITE_IDENTITY, null, 2).replace(/</g, '\\u003c');
+  fs.writeFileSync(
+    path.join(root, 'assets/js/site-identity.js'),
+    `(function (window) {\n  window.JCONNECT_SITE_IDENTITY = Object.freeze(${payload});\n})(window);\n`,
+    'utf8'
+  );
+}
+
+function ensureSiteIdentityScript(html) {
+  const pattern = new RegExp(`<script\\b[^>]*src=["']${escapeRegExp(SITE_IDENTITY_JS)}(?:\\?[^"']*)?["'][^>]*>`, 'i');
+  if (pattern.test(html)) return html;
+  const themeScript = /(\s*<script\b(?=[^>]*data-jconnect-theme-init\b)[^>]*>[\s\S]*?<\/script>)/i;
+  if (themeScript.test(html)) return html.replace(themeScript, `$1\n  <script src="${SITE_IDENTITY_JS}"></script>`);
+  return html.replace('</head>', `  <script src="${SITE_IDENTITY_JS}"></script>\n</head>`);
+}
+
+function ensureSiteIdentityMeta(html) {
+  let next = html.replace(/(<title\b[^>]*>)([\s\S]*?)(<\/title>)/i, (match, open, title, close) => (
+    `${open}${escapeHtmlText(serviceTitle(decodeHtmlText(title)))}${close}`
+  ));
+  next = next.replace(/<meta\b[^>]*>/gi, (tag) => {
+    if (!/(?:name|property)=["'](?:description|og:title|og:description|og:site_name|twitter:title|twitter:description)["']/i.test(tag)) return tag;
+    return tag.replace(/content=(["'])([\s\S]*?)\1/i, (match, quote, content) => {
+      const value = /(?:name|property)=["']og:site_name["']/i.test(tag)
+        ? SERVICE_NAME
+        : replaceAccidentalParentBrand(decodeHtmlText(content));
+      return `content=${quote}${escapeAttribute(value)}${quote}`;
+    });
+  });
+  return next;
+}
+
+function decodeHtmlText(value) {
+  return String(value || '')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&#039;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>');
+}
+
+function escapeHtmlText(value) {
+  return String(value || '').replace(/[&<>]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[character]);
 }
 
 function ensureThemeInitScript(html) {
@@ -230,7 +286,7 @@ function ensurePageStructuredData(html, url, page) {
       url: canonical,
       isPartOf: {
         '@type': 'WebSite',
-        name: 'J-Connect Global',
+        name: SERVICE_NAME,
         url: absoluteUrl('/germany/ja/')
       }
     }));
@@ -352,13 +408,13 @@ function shouldHaveJaHreflang(html, page, canonical) {
 function pageSocialMeta(html, url, page) {
   const title = cleanTitle(
     page.id === 'page-community-post'
-      ? '交流・掲示板の投稿 | J-Connect Global'
+      ? `交流・掲示板の投稿 | ${SERVICE_NAME}`
       : extractTitle(html) || formatPageTitle(page.title)
   );
   const description = cleanTitle(
     page.id === 'page-community-post'
       ? 'ドイツ在住日本人向けの交流掲示板投稿ページです。投稿詳細はページ読み込み後に表示されます。'
-      : extractMetaContent(html, 'description') || page.description || 'J-Connect Globalのページです。'
+      : extractMetaContent(html, 'description') || page.description || `${SERVICE_NAME}のページです。`
   );
   const canonical = extractCanonical(html) || absoluteUrl(page.canonical_url || url);
 
@@ -378,7 +434,7 @@ function renderSocialMeta(meta, spaces) {
     ['property', 'og:url', meta.url],
     ['property', 'og:image', meta.image],
     ['property', 'og:type', meta.type],
-    ['property', 'og:site_name', 'J-Connect Global'],
+    ['property', 'og:site_name', SERVICE_NAME],
     ['property', 'og:locale', 'ja_JP'],
     ['name', 'twitter:card', 'summary_large_image'],
     ['name', 'twitter:title', meta.title],
@@ -412,6 +468,7 @@ function replaceLayoutBlock(html, marker, replacement, tag) {
 function renderHeader(activeType, currentUrl) {
   const active = (type) => activeType === type ? ' class="active" aria-current="page"' : '';
   return fillTemplate(readLayoutTemplate('ja-header'), {
+    ...identityTemplateValues(),
     active_home: active('home'),
     active_about: active('about'),
     active_community: active('community'),
@@ -424,6 +481,21 @@ function renderHeader(activeType, currentUrl) {
     active_medical: active('medical'),
     current_url: escapeAttribute(currentUrl)
   });
+}
+
+function renderFooter() {
+  return fillTemplate(readLayoutTemplate('ja-footer'), identityTemplateValues());
+}
+
+function identityTemplateValues() {
+  return {
+    service_name: escapeAttribute(SITE_IDENTITY.serviceName),
+    service_name_upper: escapeAttribute(SITE_IDENTITY.serviceNameUpper),
+    service_logo_alt: escapeAttribute(`${SITE_IDENTITY.serviceName}（${SITE_IDENTITY.parentBrandName}）`),
+    tagline: escapeAttribute(SITE_IDENTITY.tagline),
+    relationship: escapeAttribute(SITE_IDENTITY.relationship),
+    copyright_holder: escapeAttribute(SITE_IDENTITY.copyrightHolder)
+  };
 }
 
 function activePillar(url, page) {
@@ -503,9 +575,7 @@ function isCanonicalJaUrl(url) {
 }
 
 function formatPageTitle(title) {
-  const text = cleanTitle(title);
-  if (!text || text === 'J-Connect Global') return 'J-Connect Global';
-  return text.includes('J-Connect Global') ? text : `${text} | J-Connect Global`;
+  return serviceTitle(cleanTitle(title));
 }
 
 function cleanTitle(value) {

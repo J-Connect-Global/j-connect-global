@@ -18,22 +18,23 @@
     }
   })();
   </script>
-<title>グルメ・飲食 | ドイツの日本食・レストラン情報 | J-Connect Global</title>
+<script src="/assets/js/site-identity.js"></script>
+<title>グルメ・飲食 | ドイツの日本食・レストラン情報 | J-Connect Germany</title>
   <meta name="description" content="ドイツの日本食、ラーメン、カフェ、レストラン情報を日本語で整理。地域、カテゴリ、評価、価格帯、地図リンクから飲食店を探せます。" />
   <meta name="theme-color" content="#f4f8fc" />
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/eat/" />
   <link rel="alternate" hreflang="ja" href="https://j-connect-global.com/germany/ja/eat/">
   <link rel="alternate" hreflang="x-default" href="https://j-connect-global.com/germany/ja/eat/">
-  <meta property="og:title" content="グルメ・飲食 | ドイツの日本食・レストラン情報 | J-Connect Global">
+  <meta property="og:title" content="グルメ・飲食 | ドイツの日本食・レストラン情報 | J-Connect Germany">
   <meta property="og:description" content="ドイツの日本食、ラーメン、カフェ、レストラン情報を日本語で整理。地域、カテゴリ、評価、価格帯、地図リンクから飲食店を探せます。">
   <meta property="og:url" content="https://j-connect-global.com/germany/ja/eat/">
   <meta property="og:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="J-Connect Global">
+  <meta property="og:site_name" content="J-Connect Germany">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="グルメ・飲食 | ドイツの日本食・レストラン情報 | J-Connect Global">
+  <meta name="twitter:title" content="グルメ・飲食 | ドイツの日本食・レストラン情報 | J-Connect Germany">
   <meta name="twitter:description" content="ドイツの日本食、ラーメン、カフェ、レストラン情報を日本語で整理。地域、カテゴリ、評価、価格帯、地図リンクから飲食店を探せます。">
   <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
@@ -83,11 +84,11 @@
   <!-- LAYOUT:ja-header:start -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="/germany/ja/" aria-label="J-Connect Global ホーム">
-        <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Global">
+      <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
+        <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany（J-Connect Global）">
         <span class="brand-copy">
-          <span class="brand-title">J-CONNECT GLOBAL</span>
-          <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
+          <span class="brand-title">J-CONNECT GERMANY</span>
+          <span class="brand-sub">J-Connect Global のドイツ向け生活ポータル</span>
         </span>
       </a>
       <div class="header-actions">
@@ -263,10 +264,11 @@
   <footer class="page-footer">
     <div class="footer-inner">
       <div class="footer-left">
-        <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Global">
+        <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany（J-Connect Global）">
         <div class="footer-copy">
-          <div class="footer-title">J-CONNECT GLOBAL</div>
-          <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+          <div class="footer-title">J-CONNECT GERMANY</div>
+          <div class="footer-sub">J-Connect Global のドイツ向け生活ポータル</div>
+          <div class="footer-relationship">J-Connect Germany は、J-Connect Global のドイツ向けポータルです。</div>
           <div class="footer-meta">© 2026 J-Connect Global</div>
         </div>
       </div>
@@ -309,6 +311,7 @@
 <script src="/assets/js/data-sources.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
+    const UI = window.JCONNECT_UI;
     const STATIC_DATA_URL = DATA_SOURCES.staticData?.eat || "/assets/data/eat/items.json";
     const DATA_TIMEOUT_MS = 5000;
 
@@ -699,13 +702,12 @@ function getLastReviewed(item) {
       els.resultsSummary.textContent = `${filteredItems.length}件を表示中 / 全${rawItems.length}件`;
     }
 
-    function renderDirectoryStatus({ title, body, guidance = [], isError = false, showRetry = false, showReset = true }) {
+    function renderDirectoryStatus({ title, body, guidance = [], kind = "not-available", isError = false, showRetry = false, showReset = true }) {
       els.cards.innerHTML = "";
       els.statusBox.className = `empty-box jc-empty-state directory-fallback${isError ? " error" : ""}`;
       els.statusBox.style.display = "block";
       els.statusBox.innerHTML = `
-        <span class="status-title">${escapeHtml(title)}</span>
-        <div>${escapeHtml(body)}</div>
+        ${UI.dataStateHtml(isError ? "error" : kind, { title, body })}
         <div class="status-actions">
           ${showRetry ? `<button class="btn btn-primary" type="button" data-retry-load>再読み込み</button>` : ""}
           ${showReset ? `<button class="btn btn-secondary" type="button" data-reset-filters>条件をリセット</button>` : ""}
@@ -740,6 +742,7 @@ function getLastReviewed(item) {
       renderDirectoryStatus({
         title: "条件に一致する結果がありません",
         body: "キーワードや地域、カテゴリを少し広げて再検索してください。",
+        kind: "empty",
         guidance: ["地域をすべてに戻す", "カテゴリを広げる", "キーワードを短くする"]
       });
     }
@@ -1193,7 +1196,7 @@ function setViewMode(mode) {
     function setLoadingStatus() {
       els.statusBox.style.display = "block";
       els.statusBox.className = "status-box jc-loading-state";
-      els.statusBox.textContent = "データを読み込んでいます...";
+      UI.renderDataState(els.statusBox, "loading", { title: "飲食店情報を読み込んでいます" });
       els.resultsSummary.textContent = "読み込み中...";
     }
 
@@ -1253,7 +1256,7 @@ rawItems.forEach(preloadCoordinatesFromFields);
   {
     "@context":"https://schema.org",
     "@type":"CollectionPage",
-    "name":"Eat Guide | J-Connect Global",
+    "name":"Eat Guide | J-Connect Germany",
     "url":"https://j-connect-global.com/germany/ja/eat/",
     "inLanguage":"ja",
     "about":"Restaurant and cafe information for Japanese residents and visitors"

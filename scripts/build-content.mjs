@@ -4,11 +4,16 @@ import vm from 'node:vm';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { frontMatterComparableFields } from './sync-content-frontmatter.mjs';
+import {
+  SITE_IDENTITY,
+  SERVICE_NAME,
+  PARENT_BRAND_NAME,
+  SITE_ORIGIN,
+  PRIMARY_JA_PATH
+} from './site-identity.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const SITE_ORIGIN = 'https://j-connect-global.com';
-const SITE_NAME = 'J-Connect Global';
-const PRIMARY_JA_PATH = '/germany/ja/';
+const SITE_NAME = SERVICE_NAME;
 const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
 const DEFAULT_IMAGE = '/assets/img/placeholders/jconnect-default-card.webp';
 let trackedFileSet;
@@ -25,7 +30,7 @@ const pillarLabels = {
   jobs: '仕事・求人',
   events: 'ニュース・イベント',
   'learn-german': 'ドイツ語・学び',
-  utility: 'J-Connect Globalについて',
+  utility: `${SITE_NAME}について`,
   legacy: '旧ページ'
 };
 
@@ -419,12 +424,13 @@ function renderHeader(activeType, currentUrl) {
 }
 
 function renderFooter() {
-  return renderLayoutBlock('ja-footer', readLayoutTemplate('ja-footer'));
+  return renderLayoutBlock('ja-footer', fillTemplate(readLayoutTemplate('ja-footer'), identityTemplateValues()));
 }
 
 function renderHeaderTemplate(activeType, currentUrl) {
   const active = (type) => activeType === type ? ' class="active" aria-current="page"' : '';
   return fillTemplate(readLayoutTemplate('ja-header'), {
+    ...identityTemplateValues(),
     active_home: active('home'),
     active_about: active('about'),
     active_community: active('community'),
@@ -437,6 +443,17 @@ function renderHeaderTemplate(activeType, currentUrl) {
     active_medical: active('medical'),
     current_url: escapeAttribute(currentUrl || '/germany/ja/')
   });
+}
+
+function identityTemplateValues() {
+  return {
+    service_name: escapeAttribute(SITE_IDENTITY.serviceName),
+    service_name_upper: escapeHtml(SITE_IDENTITY.serviceNameUpper),
+    service_logo_alt: escapeAttribute(`${SITE_IDENTITY.serviceName}（${SITE_IDENTITY.parentBrandName}）`),
+    tagline: escapeHtml(SITE_IDENTITY.tagline),
+    relationship: escapeHtml(SITE_IDENTITY.relationship),
+    copyright_holder: escapeHtml(SITE_IDENTITY.copyrightHolder)
+  };
 }
 
 function renderLayoutBlock(name, html) {
@@ -893,7 +910,7 @@ function renderStructuredData(type, item, title, canonicalHref) {
     },
     publisher: {
       '@type': 'Organization',
-      name: SITE_NAME,
+      name: PARENT_BRAND_NAME,
       url: SITE_ORIGIN
     },
     citation: item.official_sources.map((source) => source.url).filter(Boolean)

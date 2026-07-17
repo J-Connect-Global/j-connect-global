@@ -1,6 +1,7 @@
 (function (window) {
   const DEFAULT_IMAGE = "/assets/img/placeholders/jconnect-default-card.webp";
   const INVALID_IMAGE_VALUES = new Set(["", "#", "n/a", "null", "undefined"]);
+  const SITE_NAME = window.JCONNECT_SITE_IDENTITY.serviceName;
 
   function cleanImageValue(value) {
     const text = String(value ?? "").trim();
@@ -51,7 +52,9 @@
 
   function contentImageAlt(item) {
     const title = cleanImageValue(item && (item.title || item._title || item.name || item.position_title || item.company_name));
-    return title ? `${title} のイメージ` : "J-Connect Global のイメージ";
+    const usesFallback = resolveContentImage(item) === DEFAULT_IMAGE;
+    if (usesFallback) return title ? `${title} の案内用イメージ` : `${SITE_NAME} の案内用イメージ`;
+    return title ? `${title} の画像` : `${SITE_NAME} のコンテンツ画像`;
   }
 
   function applyFallbackImage(img) {
@@ -73,6 +76,60 @@
     contentImageAlt,
     applyFallbackImage,
     isValidImageValue
+  });
+})(window);
+
+(function (window) {
+  const COPY = Object.freeze({
+    loading: Object.freeze({ title: "読み込み中です", body: "公開データを確認しています。しばらくお待ちください。" }),
+    empty: Object.freeze({ title: "公開中の情報はありません", body: "公開できる情報が追加されると、ここに表示されます。" }),
+    "not-available": Object.freeze({ title: "公開データを準備しています", body: "現在は基本ガイドをご利用ください。公開データは準備でき次第表示します。" }),
+    error: Object.freeze({ title: "情報を読み込めませんでした", body: "時間をおいて再度お試しください。問題が続く場合は運営へお知らせください。" }),
+    invalid: Object.freeze({ title: "情報が見つかりません", body: "URLが正しくないか、情報が公開されていません。" }),
+    inactive: Object.freeze({ title: "現在は公開されていません", body: "募集終了、非公開、削除済み、または掲載期限終了の可能性があります。" })
+  });
+
+  function escapeHtml(value) {
+    return String(value ?? "").replace(/[&<>"']/g, (character) => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    })[character]);
+  }
+
+  function dataStateHtml(kind, options = {}) {
+    const state = COPY[kind] || COPY.empty;
+    const title = options.title || state.title;
+    const body = options.body || state.body;
+    const headingLevel = [1, 2, 3, 4].includes(Number(options.headingLevel)) ? Number(options.headingLevel) : 3;
+    const actions = Array.isArray(options.actions) ? options.actions : [];
+    const actionHtml = actions.map((action) => {
+      const label = escapeHtml(action?.label || "");
+      if (!label) return "";
+      const className = action.primary ? "btn btn-primary" : "btn btn-secondary";
+      const href = String(action?.href || "").trim();
+      if (/^\/(?!\/)/.test(href) || /^https:\/\//i.test(href)) {
+        return `<a class="${className}" href="${escapeHtml(href)}">${label}</a>`;
+      }
+      const dataAction = String(action.action || "").replace(/[^a-z0-9_-]/gi, "");
+      return dataAction ? `<button class="${className}" type="button" data-state-action="${escapeHtml(dataAction)}">${label}</button>` : "";
+    }).join("");
+    return `<div class="jc-data-state jc-data-state--${escapeHtml(kind)}" data-state-kind="${escapeHtml(kind)}">
+      <h${headingLevel} class="status-title">${escapeHtml(title)}</h${headingLevel}>
+      <p>${escapeHtml(body)}</p>
+      ${actionHtml ? `<div class="status-actions">${actionHtml}</div>` : ""}
+    </div>`;
+  }
+
+  function renderDataState(container, kind, options) {
+    if (!container) return null;
+    container.innerHTML = dataStateHtml(kind, options);
+    container.dataset.stateKind = kind;
+    return container;
+  }
+
+  window.JCONNECT_UI = Object.freeze({
+    DATA_STATE_COPY: COPY,
+    dataStateHtml,
+    renderDataState
   });
 })(window);
 

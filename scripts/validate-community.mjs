@@ -61,10 +61,13 @@ const atomicEmptyState = listing.slice(
   listing.indexOf('\n    function scorePost', listing.indexOf('function showEmptyState(title, body, mode)'))
 );
 expect(
-  atomicEmptyState.includes('<h2>${escapeHtml(title)}</h2>')
-    && atomicEmptyState.includes('<p>${escapeHtml(body)}</p>')
+  atomicEmptyState.includes('UI.renderDataState(els.emptyState')
+    && atomicEmptyState.includes('title,')
+    && atomicEmptyState.includes('body,')
+    && atomicEmptyState.includes("headingLevel: 2")
+    && atomicEmptyState.includes("insertAdjacentHTML(\"beforeend\"")
     && atomicEmptyState.indexOf('renderEmptyActions(mode)') < atomicEmptyState.indexOf('setEmptyStateVisible(true)'),
-  'Community empty states must render non-empty escaped content and actions atomically before becoming visible.'
+  'Community empty states must use the shared escaped renderer and add actions before becoming visible.'
 );
 expect(
   listing.includes('showEmptyState(emptyTitle, emptyBody, noPublicPosts ? "public-empty" : "filters")')

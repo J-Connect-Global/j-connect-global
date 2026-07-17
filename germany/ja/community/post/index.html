@@ -18,21 +18,22 @@
     }
   })();
   </script>
-<title>投稿フォーム | J-Connect Global</title>
-<meta name="description" content="J-Connect Globalの交流・掲示板に投稿するためのフォームです。投稿は管理者確認後に掲載されます。">
+<script src="/assets/js/site-identity.js"></script>
+<title>投稿フォーム | J-Connect Germany</title>
+<meta name="description" content="J-Connect Germanyの交流・掲示板に投稿するためのフォームです。投稿は管理者確認後に掲載されます。">
 <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/community/post/">
   <link rel="alternate" hreflang="ja" href="https://j-connect-global.com/germany/ja/community/post/">
   <link rel="alternate" hreflang="x-default" href="https://j-connect-global.com/germany/ja/community/post/">
-  <meta property="og:title" content="交流・掲示板の投稿 | J-Connect Global">
+  <meta property="og:title" content="交流・掲示板の投稿 | J-Connect Germany">
   <meta property="og:description" content="ドイツ在住日本人向けの交流掲示板投稿ページです。投稿詳細はページ読み込み後に表示されます。">
   <meta property="og:url" content="https://j-connect-global.com/germany/ja/community/post/">
   <meta property="og:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="J-Connect Global">
+  <meta property="og:site_name" content="J-Connect Germany">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="交流・掲示板の投稿 | J-Connect Global">
+  <meta name="twitter:title" content="交流・掲示板の投稿 | J-Connect Germany">
   <meta name="twitter:description" content="ドイツ在住日本人向けの交流掲示板投稿ページです。投稿詳細はページ読み込み後に表示されます。">
   <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
 <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
@@ -1250,11 +1251,11 @@
 <!-- LAYOUT:ja-header:start -->
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/germany/ja/" aria-label="J-Connect Global ホーム">
-      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Global">
+    <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
+      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany（J-Connect Global）">
       <span class="brand-copy">
-        <span class="brand-title">J-CONNECT GLOBAL</span>
-        <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
+        <span class="brand-title">J-CONNECT GERMANY</span>
+        <span class="brand-sub">J-Connect Global のドイツ向け生活ポータル</span>
       </span>
     </a>
     <div class="header-actions">
@@ -1328,7 +1329,7 @@
         </p>
         <p class="hero-desc hero-safety-note">
           本文には住所、電話番号、勤務先などの個人情報を書きすぎないようにしてください。
-          J-Connect Globalはログイン情報、銀行情報、公的ID番号を求めません。メールアドレスは公開されず、投稿連絡・管理連絡のためにのみ使用されます。
+          J-Connect Germanyはログイン情報、銀行情報、公的ID番号を求めません。メールアドレスは公開されず、投稿連絡・管理連絡のためにのみ使用されます。
           <a href="/germany/ja/privacy/">プライバシー</a>・<a href="/germany/ja/terms/">利用規約</a>・<a href="/germany/ja/impressum/">運営者情報</a>
         </p>
         <div class="jc-hero-actions">
@@ -1474,10 +1475,11 @@
 <footer class="page-footer">
   <div class="footer-inner">
     <div class="footer-left">
-      <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Global">
+      <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany（J-Connect Global）">
       <div class="footer-copy">
-        <div class="footer-title">J-CONNECT GLOBAL</div>
-        <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+        <div class="footer-title">J-CONNECT GERMANY</div>
+        <div class="footer-sub">J-Connect Global のドイツ向け生活ポータル</div>
+        <div class="footer-relationship">J-Connect Germany は、J-Connect Global のドイツ向けポータルです。</div>
         <div class="footer-meta">© 2026 J-Connect Global</div>
       </div>
     </div>
@@ -2946,7 +2948,7 @@ function renderDetailError() {
 }
 
 function renderNotFound() {
-  document.title = '投稿が見つかりません | J-Connect Global';
+  document.title = '投稿が見つかりません | J-Connect Germany';
   document.getElementById('detailMode').innerHTML = `
     <section class="detail-not-found">
       <p class="section-kicker">POST NOT FOUND</p>
@@ -2996,7 +2998,7 @@ function renderStandaloneDetail(post, posts) {
         </div>
       </div>`;
 
-  document.title = post._title + ' | J-Connect Global';
+  document.title = post._title + ' | J-Connect Germany';
   detailMode.innerHTML = `
     <div class="hero-actions">
       <a class="pill-link" href="../">← 掲示板一覧へ戻る</a>

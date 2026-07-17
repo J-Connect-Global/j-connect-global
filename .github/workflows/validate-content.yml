@@ -44,6 +44,9 @@ jobs:
       - name: Apply canonical JA layout
         run: node scripts/apply-layout.mjs
 
+      - name: Validate Germany portal identity
+        run: node scripts/validate-site-identity.mjs
+
       - name: Check generated files are committed
         run: git diff --exit-code
 

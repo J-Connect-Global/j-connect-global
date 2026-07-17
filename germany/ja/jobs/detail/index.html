@@ -18,22 +18,23 @@
     }
   })();
   </script>
-<title>求人詳細 | 仕事・求人 | J-Connect Global</title>
-  <meta name="description" content="J-Connect Globalの求人詳細表示ページです。">
+<script src="/assets/js/site-identity.js"></script>
+<title>求人詳細 | 仕事・求人 | J-Connect Germany</title>
+  <meta name="description" content="J-Connect Germanyの求人詳細表示ページです。">
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/jobs/detail/">
   <link rel="alternate" hreflang="ja" href="https://j-connect-global.com/germany/ja/jobs/detail/">
   <link rel="alternate" hreflang="x-default" href="https://j-connect-global.com/germany/ja/jobs/detail/">
-  <meta property="og:title" content="求人詳細 | 仕事・求人 | J-Connect Global">
-  <meta property="og:description" content="J-Connect Globalの求人詳細表示ページです。">
+  <meta property="og:title" content="求人詳細 | 仕事・求人 | J-Connect Germany">
+  <meta property="og:description" content="J-Connect Germanyの求人詳細表示ページです。">
   <meta property="og:url" content="https://j-connect-global.com/germany/ja/jobs/detail/">
   <meta property="og:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="J-Connect Global">
+  <meta property="og:site_name" content="J-Connect Germany">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="求人詳細 | 仕事・求人 | J-Connect Global">
-  <meta name="twitter:description" content="J-Connect Globalの求人詳細表示ページです。">
+  <meta name="twitter:title" content="求人詳細 | 仕事・求人 | J-Connect Germany">
+  <meta name="twitter:description" content="J-Connect Germanyの求人詳細表示ページです。">
   <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -260,11 +261,11 @@
 <!-- LAYOUT:ja-header:start -->
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/germany/ja/" aria-label="J-Connect Global ホーム">
-      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Global">
+    <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
+      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany（J-Connect Global）">
       <span class="brand-copy">
-        <span class="brand-title">J-CONNECT GLOBAL</span>
-        <span class="brand-sub">ドイツと日本をつなぐ総合ポータル</span>
+        <span class="brand-title">J-CONNECT GERMANY</span>
+        <span class="brand-sub">J-Connect Global のドイツ向け生活ポータル</span>
       </span>
     </a>
     <div class="header-actions">
@@ -340,10 +341,11 @@
 <footer class="page-footer">
   <div class="footer-inner">
     <div class="footer-left">
-      <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Global">
+      <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany（J-Connect Global）">
       <div class="footer-copy">
-        <div class="footer-title">J-CONNECT GLOBAL</div>
-        <div class="footer-sub">ドイツと日本をつなぐ総合ポータル</div>
+        <div class="footer-title">J-CONNECT GERMANY</div>
+        <div class="footer-sub">J-Connect Global のドイツ向け生活ポータル</div>
+        <div class="footer-relationship">J-Connect Germany は、J-Connect Global のドイツ向けポータルです。</div>
         <div class="footer-meta">© 2026 J-Connect Global</div>
       </div>
     </div>
@@ -383,6 +385,8 @@
 (function(){
   const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
   const JOBS_SHARED = window.JCONNECT_JOBS_SHARED;
+  const UI = window.JCONNECT_UI;
+  const SITE_NAME = window.JCONNECT_SITE_IDENTITY.serviceName;
   const JOBS_STATIC_URL = DATA_SOURCES.staticData?.jobs || "/assets/data/jobs/jobs.json";
   const STATIC_DATA_TIMEOUT_MS = 5000;
   const detail = document.getElementById("jobDetail");
@@ -398,39 +402,6 @@
   }
 
   function clean(value){ return String(value ?? "").trim(); }
-
-  function getValue(row, ...keys){
-    for (const key of keys) {
-      if (row[key] !== undefined && row[key] !== null && clean(row[key]) !== "") return clean(row[key]);
-    }
-    return "";
-  }
-
-  function toNumber(value){
-    const number = Number(String(value || "").replace(/[^\d.-]/g, ""));
-    return Number.isFinite(number) ? number : 0;
-  }
-
-  function stableSlug(...parts){
-    const slug = parts
-      .map(part => clean(part).normalize("NFKC").toLowerCase())
-      .filter(Boolean)
-      .join("-")
-      .replace(/[^\p{L}\p{N}]+/gu, "-")
-      .replace(/^-+|-+$/g, "");
-    return slug || "job";
-  }
-
-  function isPublicContactEmail(value){
-    const email = clean(value);
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return false;
-    return !email.toLowerCase().endsWith("@j-connect-global.com");
-  }
-
-  function getEmailFromMailto(value){
-    const match = clean(value).match(/^mailto:([^?]+)/i);
-    return match ? decodeURIComponent(match[1]) : "";
-  }
 
   function isSafeUrl(value){
     const url = clean(value);
@@ -459,23 +430,6 @@
     if (job.salary_min_eur) return `${period} ${job.salary_min_eur.toLocaleString()} ${currency} 以上`;
     if (job.salary_max_eur) return `${period} ${job.salary_max_eur.toLocaleString()} ${currency} 以下`;
     return "";
-  }
-
-  function getApplyEmail(job){
-    const candidates = [
-      job.application_email,
-      job.apply_email,
-      getEmailFromMailto(job.apply_url),
-      getEmailFromMailto(job.application_url),
-      getEmailFromMailto(job.apply_link)
-    ];
-    return candidates.find(isPublicContactEmail) || "";
-  }
-
-  function getApplyMailto(job){
-    const email = getApplyEmail(job);
-    if (!email) return "";
-    return `mailto:${email}?subject=${encodeURIComponent(`${job.position_title || "求人"} 応募`)}`;
   }
 
   function shareExcerpt(...parts){
@@ -574,36 +528,41 @@
         ? "この求人は募集終了、非公開、削除済み、または掲載期限終了のため表示できません。"
         : "指定された求人IDに一致する求人は見つかりませんでした。";
     detail.setAttribute("aria-busy", "false");
-    document.title = `${title} | 仕事・求人 | J-Connect Global`;
+    document.title = `${title} | 仕事・求人 | ${SITE_NAME}`;
     detail.innerHTML = `
       <div role="status">
         <div class="jobs-detail-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人詳細</span></div>
-        <h1>${escapeHtml(title)}</h1>
-        <p class="jobs-detail-summary">${escapeHtml(body)}</p>
-        <div class="jobs-detail-actions">
-          <a class="jc-button is-primary" href="/germany/ja/jobs/">求人一覧へ戻る</a>
-          <a class="jc-button" href="/germany/ja/contact/">お問い合わせ</a>
-        </div>
+        ${UI.dataStateHtml(unavailable ? "inactive" : "invalid", {
+          title,
+          body,
+          headingLevel: 1,
+          actions: [
+            { label: "求人一覧へ戻る", href: "/germany/ja/jobs/", primary: true },
+            { label: "お問い合わせ", href: "/germany/ja/contact/" }
+          ]
+        })}
       </div>
     `;
   }
 
   function renderLoadError(){
     detail.setAttribute("aria-busy", "false");
-    document.title = "求人情報を表示できません | 仕事・求人 | J-Connect Global";
+    document.title = `求人情報を表示できません | 仕事・求人 | ${SITE_NAME}`;
     detail.innerHTML = `
       <div role="status">
         <div class="jobs-detail-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人詳細</span></div>
-        <h1>求人情報を一時的に表示できません</h1>
-        <p class="jobs-detail-summary">時間をおいて再度お試しください。</p>
-        <div class="jobs-detail-actions">
-          <button class="jc-button is-primary" type="button" id="retryJobDetail">再読み込み</button>
-          <a class="jc-button" href="/germany/ja/jobs/">求人一覧へ戻る</a>
-          <a class="jc-button" href="/germany/ja/contact/">お問い合わせ</a>
-        </div>
+        ${UI.dataStateHtml("error", {
+          title: "求人情報を一時的に表示できません",
+          headingLevel: 1,
+          actions: [
+            { label: "再読み込み", action: "retry", primary: true },
+            { label: "求人一覧へ戻る", href: "/germany/ja/jobs/" },
+            { label: "お問い合わせ", href: "/germany/ja/contact/" }
+          ]
+        })}
       </div>
     `;
-    detail.querySelector("#retryJobDetail")?.addEventListener("click", () => location.reload());
+    detail.querySelector('[data-state-action="retry"]')?.addEventListener("click", () => location.reload());
   }
 
   function renderJob(job){
@@ -617,13 +576,11 @@
     const salary = getSalaryLabel(job);
     const tags = splitList(job.tags || job.skills);
     const requirements = splitList(job.requirements);
-    const applyEmail = getApplyEmail(job);
-    const applyMailto = getApplyMailto(job);
     const rawApplyUrl = job.apply_url || job.application_url || job.apply_link;
     const applyUrl = isSafeUrl(rawApplyUrl) ? rawApplyUrl : "";
     const companyUrl = isSafeUrl(job.company_url) ? job.company_url : "";
     const sourceUrl = isSafeUrl(job.source_url) ? job.source_url : "";
-    document.title = `${title} | 仕事・求人 | J-Connect Global`;
+    document.title = `${title} | 仕事・求人 | ${SITE_NAME}`;
     detail.setAttribute("aria-busy", "false");
     detail.innerHTML = `
       <div class="jobs-detail-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求人詳細</span></div>
@@ -634,7 +591,6 @@
 
       <div class="jobs-detail-actions">
         <a class="jc-button is-primary" href="/germany/ja/jobs/">求人一覧へ戻る</a>
-        ${applyMailto ? `<a class="jc-button" href="${escapeHtml(applyMailto)}">応募先にメールする</a>` : ""}
         ${applyUrl ? `<a class="jc-button" href="${escapeHtml(applyUrl)}" target="_blank" rel="noopener noreferrer">応募先を開く</a>` : ""}
         ${companyUrl ? `<a class="jc-button" href="${escapeHtml(companyUrl)}" target="_blank" rel="noopener noreferrer">会社サイトを見る</a>` : ""}
         <button class="jc-button" type="button" id="copyDetailUrl">URLコピー</button>
@@ -674,17 +630,19 @@
         <ul>${requirements.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
       </section>` : ""}
 
-      ${job.apply_method || applyEmail || applyUrl || companyUrl || sourceUrl ? `<section class="jobs-detail-section">
+      ${job.apply_method || applyUrl || companyUrl || sourceUrl ? `<section class="jobs-detail-section">
         <h2>応募・問い合わせ</h2>
         ${job.apply_method ? `<p>${escapeHtml(job.apply_method)}</p>` : ""}
-        ${applyEmail ? `<p class="jobs-detail-email">連絡先: <a href="mailto:${escapeHtml(applyEmail)}">${escapeHtml(applyEmail)}</a></p>` : ""}
         <div class="jobs-detail-link-list">
-          ${applyMailto ? `<a class="jc-button is-primary" href="${escapeHtml(applyMailto)}">応募先にメールする</a>` : ""}
           ${applyUrl ? `<a class="jc-button is-primary" href="${escapeHtml(applyUrl)}" target="_blank" rel="noopener noreferrer">応募先を開く</a>` : ""}
           ${companyUrl ? `<a class="jc-button" href="${escapeHtml(companyUrl)}" target="_blank" rel="noopener noreferrer">会社サイトを見る</a>` : ""}
           ${sourceUrl && sourceUrl !== companyUrl ? `<a class="jc-button" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(job.source_name || "掲載元")}</a>` : ""}
         </div>
-      </section>` : ""}
+      </section>` : `<section class="jobs-detail-section"><h2>応募方法</h2><p>公開できる応募先が設定されていません。応募先を確認できるまで履歴書や個人情報を送信しないでください。</p></section>`}
+      <aside class="jc-trust-notice" aria-label="応募前の安全確認">
+        <h2>応募前の安全確認</h2>
+        <p>雇用主、契約形態、給与、勤務時間、ビザ支援、応募先を公式情報で確認してください。前払い手数料や不審な送金を求める求人には応じず、<a href="/germany/ja/contact/">運営へ連絡</a>してください。</p>
+      </aside>
     `;
 
     detail.querySelector("#copyDetailUrl")?.addEventListener("click", async event => {
@@ -706,12 +664,10 @@
     }
 
     detail.setAttribute("aria-busy", "true");
-    detail.innerHTML = `
-      <div class="jc-status" role="status">
-        <strong>求人情報を読み込んでいます</strong>
-        <span>指定された求人IDの内容を確認しています。</span>
-      </div>
-    `;
+    UI.renderDataState(detail, "loading", {
+      title: "求人情報を読み込んでいます",
+      body: "指定された求人IDの公開状態を確認しています。"
+    });
 
     try {
       const payload = await fetchJobsData();

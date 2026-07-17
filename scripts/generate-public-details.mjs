@@ -3,9 +3,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { assertNoPrivateFields } from "./sync-public-data.mjs";
 import { assertPublicDetailUrl, publicDetailOutputPath } from "./public-detail-routes.mjs";
+import { SERVICE_NAME, SITE_ORIGIN } from "./site-identity.mjs";
 
-const ORIGIN = "https://j-connect-global.com";
-const SITE_NAME = "J-Connect Global";
+const ORIGIN = SITE_ORIGIN;
+const SITE_NAME = SERVICE_NAME;
 const DEFAULT_IMAGE = `${ORIGIN}/assets/img/placeholders/jconnect-default-card.webp`;
 const GENERATED_MARKER = "data-generated-public-detail";
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -190,6 +191,7 @@ function documentShell({ head, header, footer, kind, body }) {
   <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <link rel="stylesheet" href="/assets/css/public-detail-pages.css">
+  <script src="/assets/js/site-identity.js"></script>
 </head>
 <body>
 ${header}
@@ -274,16 +276,42 @@ function salaryLabel(job) {
   return "";
 }
 
+function preferredJobDate(job) {
+  const fields = [
+    ["last_modified_at", "更新日"],
+    ["updated_at", "更新日"],
+    ["published_at", "掲載日"],
+    ["posted_at", "掲載日"],
+    ["created_at", "作成日"]
+  ];
+  for (const [field, label] of fields) {
+    const value = displayDate(job[field]);
+    if (value) return { field, label, value };
+  }
+  return null;
+}
+
+function jobTrustNotice() {
+  return `<aside class="public-detail-trust" aria-labelledby="job-safety-title">
+    <h2 id="job-safety-title">応募前の安全確認</h2>
+    <p>雇用主の実在性、契約形態、給与、勤務時間、ビザ支援、応募先を公式情報で確認してください。前払い手数料、送金、暗証情報、公的IDの不要な提出を求める求人には応じないでください。</p>
+    <p>${SITE_NAME} は採用、雇用契約、給与、ビザ取得を保証しません。不審な求人や修正依頼は <a href="/germany/ja/contact/">お問い合わせ</a> からお知らせください。<a href="/germany/ja/terms/">利用規約</a>と<a href="/germany/ja/privacy/">プライバシー</a>も確認できます。</p>
+  </aside>`;
+}
+
 function jobPage(job, layout, now) {
   const route = assertPublicDetailUrl("jobs", job.detail_url, job.id || job.job_id);
   const canonical = `${ORIGIN}${route}`;
   const indexable = isIndexableJob(job, now);
   const expired = isExpired(job, now);
   const jsonLd = buildJobPosting(job, canonical, now);
-  const title = `${text(job.position_title) || "求人詳細"} | ${text(job.company_name) || SITE_NAME}`;
+  const title = `${text(job.position_title) || "求人詳細"} | ${text(job.company_name) || "公開求人"} | ${SITE_NAME}`;
   const description = compact(job.summary || job.description || job.job_details || job.position_title) || `${SITE_NAME}の公開求人情報です。`;
   const applicationUrl = safeHttpsUrl(job.apply_url || job.application_url || job.apply_link);
   const applicationMethod = text(job.apply_method);
+  const companyUrl = safeHttpsUrl(job.company_url);
+  const sourceUrl = safeHttpsUrl(job.source_url);
+  const preferredDate = preferredJobDate(job);
   const image = safeImageUrl(job.company_logo_url || job.logo_url || job.image_url) || DEFAULT_IMAGE;
   const body = `<main class="public-detail-page" id="main-content">
   <div class="public-detail-shell">
@@ -292,12 +320,15 @@ function jobPage(job, layout, now) {
       <div class="public-detail-content">
         <p class="public-detail-eyebrow">${escapeHtml(text(job.company_name) || "公開求人")}</p>
         <h1>${escapeHtml(text(job.position_title) || "求人タイトル未設定")}</h1>
-        <ul class="public-detail-meta"><li>掲載日 ${escapeHtml(displayDate(job.published_at) || "日付未設定")}</li>${displayDate(job.updated_at) ? `<li>更新日 ${escapeHtml(displayDate(job.updated_at))}</li>` : ""}</ul>
+        <ul class="public-detail-meta"><li>${escapeHtml(preferredDate?.label || "掲載日")} ${escapeHtml(preferredDate?.value || "日付未設定")}</li></ul>
+        ${text(job.summary) ? `<p class="public-detail-lead">${escapeHtml(job.summary)}</p>` : ""}
         ${facts([["勤務地", job.location || job.city || job.region], ["雇用形態", job.employment_type], ["勤務形態", job.work_style], ["給与", salaryLabel(job)], ["言語", job.language], ["ビザ支援", job.visa_support]])}
         <section class="public-detail-section"><h2>仕事内容</h2><div class="public-detail-copy">${escapeHtml(job.description || job.job_details || job.summary || "仕事内容は未掲載です。")}</div></section>
         ${text(job.requirements) ? `<section class="public-detail-section"><h2>応募条件</h2><div class="public-detail-copy">${escapeHtml(job.requirements)}</div></section>` : ""}
         ${text(job.benefits) ? `<section class="public-detail-section"><h2>待遇・福利厚生</h2><div class="public-detail-copy">${escapeHtml(job.benefits)}</div></section>` : ""}
-        ${expired ? "" : applicationUrl ? `<section class="public-detail-section"><h2>応募方法</h2><div class="public-detail-actions"><a class="public-detail-button" href="${escapeHtml(applicationUrl)}" rel="noopener noreferrer">応募先を開く</a></div></section>` : applicationMethod && hasSafeApplication(job) ? `<section class="public-detail-section"><h2>応募方法</h2><div class="public-detail-copy">${escapeHtml(applicationMethod)}</div></section>` : ""}
+        ${expired ? "" : applicationUrl ? `<section class="public-detail-section"><h2>応募方法</h2><div class="public-detail-actions"><a class="public-detail-button" href="${escapeHtml(applicationUrl)}" rel="noopener noreferrer">応募先を開く</a></div></section>` : applicationMethod && hasSafeApplication(job) ? `<section class="public-detail-section"><h2>応募方法</h2><div class="public-detail-copy">${escapeHtml(applicationMethod)}</div></section>` : `<section class="public-detail-section"><h2>応募方法</h2><p>この求人には公開できる応募先が設定されていません。応募先を確認できるまで、履歴書や個人情報を送信しないでください。</p></section>`}
+        ${(companyUrl || sourceUrl) ? `<section class="public-detail-section"><h2>会社・掲載元</h2><div class="public-detail-actions">${companyUrl ? `<a class="public-detail-button public-detail-button--secondary" href="${escapeHtml(companyUrl)}" rel="noopener noreferrer">会社公式サイト</a>` : ""}${sourceUrl && sourceUrl !== companyUrl ? `<a class="public-detail-button public-detail-button--secondary" href="${escapeHtml(sourceUrl)}" rel="noopener noreferrer">掲載元を確認</a>` : ""}</div></section>` : ""}
+        ${jobTrustNotice()}
         <section class="public-detail-section"><div class="public-detail-actions"><a class="public-detail-button public-detail-button--secondary" href="/germany/ja/jobs/">求人一覧へ戻る</a><a class="public-detail-button public-detail-button--secondary" href="/germany/ja/contact/?subject=${encodeURIComponent(`求人 ${job.id} の通報`)}">求人を通報</a></div></section>
       </div>
     </article>

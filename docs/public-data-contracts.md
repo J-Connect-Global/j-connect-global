@@ -19,7 +19,7 @@ The committed directory files in this PR are an explicitly labelled `unversioned
 | Dataset | Public eligibility | Index/application policy | Browser file |
 | --- | --- | --- | --- |
 | Community | `status` exactly `active`; only lifecycle, moderation, deletion, hidden, archive, and expiry exclusions | Content text is never a publication heuristic. 投稿日 is `published_at`, falling back to `created_at`; 更新日 is shown only when `updated_at` is at least 24 hours later. | `/assets/data/community/posts.json` |
-| Jobs | exact `status=active`, unless an explicit expiry date has passed; no content-derived publication tier or generated-count cap | `/germany/ja/` shows at most four Jobs. `/germany/ja/jobs/` shows every active Job. Dynamic detail remains noindex and does not emit `JobPosting` until a separate complete structured-data policy is introduced. | `/assets/data/jobs/jobs.json` |
+| Jobs | exact `status=active`, unless an explicit expiry date has passed; no content-derived publication tier or generated-count cap | `/germany/ja/` shows at most four Jobs. `/germany/ja/jobs/` shows every active Job. Every public ID gets a stable generated detail URL with record-specific initial HTML and metadata. A current complete record is indexable; `JobPosting` is emitted only when a safe public application URL or method is present. The legacy query route remains `noindex, follow` and redirects valid IDs. | `/assets/data/jobs/jobs.json` |
 | Eat / Shopping | `status=active`, non-empty display name, non-placeholder primary/detail category, and only HTTP(S) public URLs | Invalid URLs exclude the row and can never become an `href`. No guessed category. Missing coordinates are list/grid-only. | `/assets/data/eat/items.json`, `/assets/data/shopping/items.json` |
 | Medical | `status=active`, name, category, city/area, safe official/source URL, and valid review/update date | Blank status is never public. No recommendation claim. The 112/116117 instruction and medical disclaimer remain visible. | `/assets/data/medical/items.json` |
 
@@ -67,10 +67,10 @@ All generated datasets report `source_count`, `explicitly_active_count`, `eligib
 
 1. Deploy the existing Apps Script project as a **new version** through the existing Web App deployment. Keep the current deployment URL; do not create a replacement deployment.
 2. Run **Sync public data** manually and confirm every response reports `api_version: 2026-07-13.1`.
-3. Confirm generated counts are Community 6, Jobs 3, Eat 63, Shopping 45, and Medical 0 unless the authoritative Spreadsheet data has intentionally changed. Every artifact must also satisfy `count === items.length`.
+3. Confirm generated counts match the reviewed authoritative Spreadsheet state (the checked-in 2026-07-17 artifacts contain Community 5, Jobs 4, Eat 63, Shopping 45, and Medical 0). Every artifact must also satisfy `count === items.length`.
 4. Confirm GitHub Pages deployed the exact commit created by the generated-data sync, not the workflow's earlier trigger SHA.
 5. Complete the Spreadsheet actions above without renaming columns: keep Jobs status and expiry fields accurate, review Eat placeholder categories, add Shopping display names only after review, and activate Medical rows only after official-source and review-date checks.
-6. Replace the placeholder Impressum only after the owner supplies and verifies the real operator information. This is a blocking manual item; no person, organization, address, telephone number, register number, VAT ID, tax number, or other identifier may be inferred from repository content.
+6. Have the owner or a qualified legal reviewer re-verify the operator information already present in the Impressum before relying on it. Repository content alone cannot establish that a person, organization, address, telephone number, register number, VAT ID, tax number, or other identifier is current or legally sufficient; missing facts must never be inferred.
 
 For the Impressum, the owner or qualified legal reviewer must determine applicability and supply:
 
@@ -86,11 +86,11 @@ Primary references: [§ 5 DDG](https://www.gesetze-im-internet.de/ddg/__5.html),
 
 - The repository cannot deploy Apps Script or edit Spreadsheet governance fields. Until the manual GAS deployment occurs, scheduled sync intentionally fails with a version mismatch and retains the bootstrap JSON.
 - Directory quality remains source-limited: 298 Eat rows need category review, 299 Shopping rows need names, and every Medical row needs explicit review and activation.
-- The dynamic Jobs detail route stays noindex for every record in this PR. Job-specific initial HTML is explicitly incomplete and is not claimed as an acceptance result here.
+- The four checked-in Jobs records do not currently provide a safe public application URL or method. Their stable pages therefore explain that the application destination is unavailable and omit `JobPosting`; the private submission email is never copied into public JSON or markup.
 - Community `/community/post/?id=...` still shares the posting-form HTML shell and remains noindex. A separate follow-up should split form/detail URLs and give the detail route record-specific canonical/description metadata without changing this data-pipeline rollout.
 
-## Explicitly re-scoped: Jobs detail initial HTML
+## Jobs detail initial HTML
 
-This PR does **not** satisfy job-specific initial HTML or metadata. The query route `/germany/ja/jobs/detail/?id=...` starts with the generic title, description, canonical `/germany/ja/jobs/detail/`, and `noindex, follow`; JavaScript then hydrates valid records or a safe invalid state. No pre-rendering or `JobPosting` is claimed in this PR.
+The Pages artifact build generates `/germany/ja/jobs/{public-id}/` for every public Job. The initial response includes the job title, company, summary, record-specific title and description, canonical URL, trust guidance, and an explicit application state. Indexable records are added to the sitemap. `JobPosting` is emitted only when the required core fields, lifecycle dates, and a sanitized public application method are complete.
 
-A separate follow-up PR must generate a stable URL and initial HTML for every eligible public job. Its acceptance boundary is: job title and summary in initial HTML; job-specific title, description, and canonical; an explicit indexation policy with no `JobPosting` until required data is complete; sitemap entries only where indexation is allowed; invalid/expired URL behavior; and rollback by removing the generated job-detail artifacts without changing the public-data pipeline.
+The compatibility route `/germany/ja/jobs/detail/?id=...` remains generic and `noindex, follow`. It redirects a valid current ID to the matching stable URL and renders distinct missing-ID, unknown-ID, inactive, and load-error states without publishing a thin or misleading page.

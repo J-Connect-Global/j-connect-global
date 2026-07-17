@@ -333,7 +333,10 @@ for (const file of htmlFiles) {
   validateStaticContentQuality(rel, url, html);
   validateInitialStateSafety(rel, url, html);
 
-  const attrPattern = /\b(?:href|src|action)=["']([^"']+)["']/gi;
+  // Do not treat the trailing "action" in data-state-action as a URL-bearing
+  // HTML attribute. The negative lookbehind still accepts real href/src/action
+  // attributes while excluding custom data-* and namespaced attribute names.
+  const attrPattern = /(?<![-:\w])(?:href|src|action)=["']([^"']+)["']/gi;
   for (const match of html.matchAll(attrPattern)) {
     if (isDeferredArticleImageUrl(html, match.index, match[1])) continue;
     const target = resolveInternalUrl(match[1], file);

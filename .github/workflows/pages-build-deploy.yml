@@ -234,7 +234,9 @@ jobs:
           node scripts/image-asset-budget.mjs --check --github-summary
 
       - name: Validate production SEO and accessibility regression
-        run: node scripts/validate-production-seo.mjs --site-dir _site --github-summary
+        run: |
+          node scripts/validate-site-identity.mjs --site-dir _site
+          node scripts/validate-production-seo.mjs --site-dir _site --github-summary
 
       - name: Report editorial freshness
         run: node scripts/report-content-freshness.mjs --github-summary

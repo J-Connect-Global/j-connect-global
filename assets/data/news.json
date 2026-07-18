@@ -1,6 +1,6 @@
 [
   {
-    "id": "deutsche-welle-https-www-dw-com-en-no-support-for-jews-fleeing-nazi-germany-at-e",
+    "id": "deutsche-welle-https-www-dw-com-en-germany-news-merz-macron-plan-closer-nuclear-",
     "country": "germany",
     "country_ja": "ドイツ",
     "city": "nationwide",
@@ -13,10 +13,10 @@
     "importance_ja": "通常",
     "source_type": "media",
     "source_name": "Deutsche Welle",
-    "title": "No support for Jews fleeing Nazi Germany at Evian conference",
-    "summary": "In July 1938, a conference was held in Evian, France, to address the issue of Jews being persecuted by the Nazis in Germany and Austria. Almost nobody in the world was willing to take them in as refugees.",
-    "published_at": "Wed, 15 Jul 2026",
-    "url": "https://www.dw.com/en/no-support-for-jews-fleeing-nazi-germany-at-evian-conference/a-77966381?maca=en-rss-en-ger-1023-xml-mrss"
+    "title": "Germany news: Merz, Macron plan closer nuclear cooperation",
+    "summary": "Germany is expected to soon take part in a nuclear drill with France, Germany&#039;s Merz said after meeting France&#039;s Macron. It comes as Franco-German ties face an unclear future as French elections loom. DW has more.",
+    "published_at": "Fri, 17 Jul 2026",
+    "url": "https://www.dw.com/en/germany-news-merz-macron-plan-closer-nuclear-cooperation/live-77998510?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-germany-gender-switch-neo-nazi-sent-to-men-s-",
@@ -57,7 +57,7 @@
     "url": "https://www.dw.com/en/germany-news-inland-shipping-under-strain-as-rivers-run-low/live-77978527?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
-    "id": "deutsche-welle-https-www-dw-com-en-germany-news-coalition-has-found-its-footing-",
+    "id": "deutsche-welle-https-www-dw-com-en-germany-s-5-000-heat-deaths-what-the-numbers-",
     "country": "germany",
     "country_ja": "ドイツ",
     "city": "nationwide",
@@ -70,10 +70,48 @@
     "importance_ja": "通常",
     "source_type": "media",
     "source_name": "Deutsche Welle",
-    "title": "Germany news: Coalition has &#039;found its footing,&#039; Merz says",
-    "summary": "German Chancellor Friedrich Merz says changes to health and labor laws show that his coalition is making progress. Meanwhile, arrests were made after police carry out drug raids in western Germany and the Netherlands.",
-    "published_at": "Wed, 15 Jul 2026",
-    "url": "https://www.dw.com/en/germany-news-coalition-has-found-its-footing-merz-says/live-77965417?maca=en-rss-en-ger-1023-xml-mrss"
+    "title": "Germany’s 5,000 heat deaths: What the numbers reveal",
+    "summary": "More than 5,100 people in Germany died from heat-related causes this year until the end of June, the Robert Koch Institute reports. But how can researchers prove that someone died because of soaring temperatures?",
+    "published_at": "Fri, 17 Jul 2026",
+    "url": "https://www.dw.com/en/germany-s-5-000-heat-deaths-what-the-numbers-reveal/a-78010353?maca=en-rss-en-ger-1023-xml-mrss"
+  },
+  {
+    "id": "deutsche-welle-https-www-dw-com-en-germany-debates-surrogacy-and-hypocrisy-a-780",
+    "country": "germany",
+    "country_ja": "ドイツ",
+    "city": "nationwide",
+    "city_ja": "全国",
+    "category": "life",
+    "category_ja": "生活",
+    "topic": "general",
+    "topic_ja": "一般",
+    "importance": "normal",
+    "importance_ja": "通常",
+    "source_type": "media",
+    "source_name": "Deutsche Welle",
+    "title": "Germany debates surrogacy and hypocrisy",
+    "summary": "Former Health Minister Jens Spahn of the conservative CDU, who opposed legalizing surrogacy in Germany, has become a father with the help of a surrogate mother in the US.",
+    "published_at": "Fri, 17 Jul 2026",
+    "url": "https://www.dw.com/en/germany-debates-surrogacy-and-hypocrisy/a-78009366?maca=en-rss-en-ger-1023-xml-mrss"
+  },
+  {
+    "id": "deutsche-welle-https-www-dw-com-en-new-bundesliga-broadcasting-deal-in-the-us-re",
+    "country": "germany",
+    "country_ja": "ドイツ",
+    "city": "nationwide",
+    "city_ja": "全国",
+    "category": "life",
+    "category_ja": "生活",
+    "topic": "general",
+    "topic_ja": "一般",
+    "importance": "normal",
+    "importance_ja": "通常",
+    "source_type": "media",
+    "source_name": "Deutsche Welle",
+    "title": "New Bundesliga broadcasting deal in the US: Reach over money",
+    "summary": "The Bundesliga has a new home on American screens after Germany&#039;s top football league left ESPN. The new deal is a sign of the times.",
+    "published_at": "Fri, 17 Jul 2026",
+    "url": "https://www.dw.com/en/new-bundesliga-broadcasting-deal-in-the-us-reach-over-money/a-77979741?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-german-tenants-need-better-heat-protection-a-",
@@ -109,7 +147,7 @@
     "source_type": "media",
     "source_name": "Deutsche Welle",
     "title": "Germany massively expands federal police powers",
-    "summary": "The German government has expanded the powers of its federal police, especially in the use of surveillance, AI, and drone defenses. But experts warn of constitutional challenges.",
+    "summary": "The German government has increased the powers of its federal police, especially in the use of AI, surveillance and drone defenses. But experts warn of constitutional challenges.",
     "published_at": "Thu, 16 Jul 2026",
     "url": "https://www.dw.com/en/germany-massively-expands-federal-police-powers/a-77993148?maca=en-rss-en-ger-1023-xml-mrss"
   },
@@ -131,44 +169,6 @@
     "summary": "Germany&#039;s upper house of parliament, the Bundesrat, has introduced a bill seeking to ban the questioning of Israel&#039;s right to exist. It is now up to the lower house to decide whether to turn it into law.",
     "published_at": "Thu, 16 Jul 2026",
     "url": "https://www.dw.com/en/germany-may-make-it-illegal-to-deny-israel-s-right-to-exist/a-77980283?maca=en-rss-en-ger-1023-xml-mrss"
-  },
-  {
-    "id": "deutsche-welle-https-www-dw-com-en-east-west-border-death-zone-now-germany-s-bio",
-    "country": "germany",
-    "country_ja": "ドイツ",
-    "city": "nationwide",
-    "city_ja": "全国",
-    "category": "life",
-    "category_ja": "生活",
-    "topic": "general",
-    "topic_ja": "一般",
-    "importance": "normal",
-    "importance_ja": "通常",
-    "source_type": "media",
-    "source_name": "Deutsche Welle",
-    "title": "East-West border death zone now Germany&#039;s biodiversity oasis",
-    "summary": "Many endangered species now live in the area that once formed the border between East and West Germany. Environment Minister Carsten Schneider recently visited the \"Green Belt,\" and DW went along for the ride.",
-    "published_at": "Thu, 16 Jul 2026",
-    "url": "https://www.dw.com/en/east-west-border-death-zone-now-germany-s-biodiversity-oasis/a-77917041?maca=en-rss-en-ger-1023-xml-mrss"
-  },
-  {
-    "id": "deutsche-welle-https-www-dw-com-en-german-chancellor-friedrich-merz-makes-appeal",
-    "country": "germany",
-    "country_ja": "ドイツ",
-    "city": "nationwide",
-    "city_ja": "全国",
-    "category": "life",
-    "category_ja": "生活",
-    "topic": "general",
-    "topic_ja": "一般",
-    "importance": "normal",
-    "importance_ja": "通常",
-    "source_type": "media",
-    "source_name": "Deutsche Welle",
-    "title": "German Chancellor Friedrich Merz makes appeal to AfD voters",
-    "summary": "Germany&#039;s chancellor has insisted that his coalition has \"regained its footing\" — despite dismal poll numbers. Friedrich Merz also cautioned against voting for the far-right AfD party.",
-    "published_at": "Wed, 15 Jul 2026",
-    "url": "https://www.dw.com/en/german-chancellor-friedrich-merz-makes-appeal-to-afd-voters/a-77973735?maca=en-rss-en-ger-1023-xml-mrss"
   },
   {
     "id": "deutsche-welle-https-www-dw-com-en-running-dry-how-to-store-more-groundwater-for",

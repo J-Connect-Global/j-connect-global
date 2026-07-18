@@ -244,9 +244,31 @@ test("Jobs list renders every active record and has no four-record cap", async (
   await openDataRoute(page, "/germany/ja/jobs/", "/assets/data/jobs/jobs.json");
   await assertPublicJobs(page, extendedJobs);
   await expect(page.locator("#cards")).not.toContainText(/分類できません|応募方法がありません|警告/);
-  await expect(page.locator("#cards .jobs-card").first()).toContainText("給与（期間未指定）");
+  await expect(page.locator("#cards .jobs-card").first()).toContainText("支給期間は各求人で確認");
   await expect(page.locator("#cards .jobs-card").first()).toContainText("EUR");
+  await expect(page.locator("#salaryFilterField")).toBeHidden();
   await expect(page.locator("#mainLayout")).not.toHaveClass(/jobs-empty-mode/);
+  await assertRouteReady(page);
+});
+
+test("Jobs annual-salary filter is offered only for comparable annual data", async ({ page }) => {
+  const annualJobs = jobsFixture.items.map((job, index) => ({
+    ...job,
+    id: `annual-salary-${index + 1}`,
+    job_id: `annual-salary-${index + 1}`,
+    salary_currency: "EUR",
+    salary_unit: "YEAR",
+    salary_min_eur: 40_000 + index * 5_000,
+    salary_max_eur: 50_000 + index * 5_000
+  }));
+  await page.route("**/assets/data/jobs/jobs.json", (route) => route.fulfill({
+    contentType: "application/json",
+    body: JSON.stringify({ ...jobsFixture, count: annualJobs.length, items: annualJobs })
+  }));
+  await openDataRoute(page, "/germany/ja/jobs/", "/assets/data/jobs/jobs.json");
+  await expect(page.locator("#salaryFilterField")).toBeVisible();
+  await expect(page.locator("#salaryRange")).toBeEnabled();
+  await expect(page.locator("#salaryCurrentLabel")).toHaveText("すべて");
   await assertRouteReady(page);
 });
 
@@ -255,6 +277,7 @@ test("generated Job detail stays readable and private in dark mode", async ({ pa
   expect(exemplar?.detail_url, "a stable public Jobs detail route is required").toBeTruthy();
   await openRoute(page, exemplar.detail_url);
   await expect(page.locator(".public-detail-content h1")).toHaveText(exemplar.position_title);
+  await expect(page.locator(".public-detail-facts")).toContainText("支給期間は各求人で確認");
   await expect(page.locator('main article a[href^="mailto:"]')).toHaveCount(0);
   await activateDarkMode(page);
   await assertWcagTextContrast(page, ".public-detail-facts", "dark-mode Job facts");

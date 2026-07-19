@@ -18,17 +18,22 @@ for (const route of data.routes) {
   slugs.add(route.slug);
 }
 
+const svgRoutes = data.routes.filter((route) => !route.asset);
+
 fs.mkdirSync(outputDir, { recursive: true });
 
-for (const route of data.routes) {
+for (const route of svgRoutes) {
   fs.writeFileSync(path.join(outputDir, `${route.slug}-route-overview.svg`), renderDesktop(route), 'utf8');
   fs.writeFileSync(path.join(outputDir, `${route.slug}-route-overview-mobile.svg`), renderMobile(route), 'utf8');
 }
 
-console.log(`Generated ${data.routes.length * 2} responsive tourism route diagrams in ${path.relative(root, outputDir)}`);
+console.log(`Generated ${svgRoutes.length * 2} responsive tourism route diagrams in ${path.relative(root, outputDir)}; ${data.routes.length - svgRoutes.length} route uses an external raster map.`);
 
 function validateRoute(route) {
   if (!/^[a-z0-9-]+$/.test(route.slug || '')) throw new Error(`Invalid slug: ${route.slug}`);
+  if (route.asset && !/^\/assets\/img\/[a-z0-9._/-]+\.webp$/i.test(route.asset)) {
+    throw new Error(`Invalid external route asset for ${route.slug}: ${route.asset}`);
+  }
   if (!route.title || !route.alt) throw new Error(`Missing accessible copy for ${route.slug}`);
   if (!Array.isArray(route.nodes) || route.nodes.length < 4 || route.nodes.length > 7) {
     throw new Error(`${route.slug} must have 4-7 nodes`);

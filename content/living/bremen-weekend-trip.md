@@ -33,7 +33,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![Bremen HbfからMarktplatz、Böttcherstraße、Schnoor、Schlachteへ進みViertelを翌日の候補にする順序](/assets/images/living/routes/bremen-weekend-trip-route-overview.svg "位置関係を把握するための概略図です。縮尺・所要時間は目安で、当日の経路は公式交通情報で確認してください。")
+![ブレーメン中央駅、マルクト広場、ベットヒャー通り、シュノー地区、シュラハテ、フィアテルの位置関係と観光ルートを示す概略図](/assets/img/living/bremen-city-guide-map-final.webp "主要観光地の位置関係を把握するための概略図です。縮尺や細かな道路形状は実際と異なります。移動時は地図アプリも併用してください。")
 
 大型の屋内施設や夜の選択肢を重視するなら、先に[ハンブルク週末旅行の港・市街ルート](/germany/ja/living/hamburg-weekend-trip/)と比較できます。
 

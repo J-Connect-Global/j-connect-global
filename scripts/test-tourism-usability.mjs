@@ -8,6 +8,7 @@ const livingDir = path.join(root, 'content', 'living');
 const routeData = JSON.parse(read('data/tourism-route-overviews.json'));
 const livingRegistry = JSON.parse(read('content/registry/living.json'));
 const routeSlugs = new Set(routeData.routes.map((route) => route.slug));
+const routesBySlug = new Map(routeData.routes.map((route) => [route.slug, route]));
 
 const articles = fs.readdirSync(livingDir)
   .filter((name) => name.endsWith('.md'))
@@ -27,18 +28,23 @@ assertSameSet(contentSlugs, routeSlugs, 'tourism content and route data');
 
 for (const article of articles) {
   const { slug } = article.meta;
-  const routeSrc = `/assets/images/living/routes/${slug}-route-overview.svg`;
+  const externalRouteAsset = routesBySlug.get(slug)?.asset || '';
+  const routeSrc = externalRouteAsset || `/assets/images/living/routes/${slug}-route-overview.svg`;
   const routeMatches = article.body.match(new RegExp(escapeRegExp(routeSrc), 'g')) || [];
   assert(routeMatches.length === 1, `${slug}: expected one route overview in Markdown`);
   assert(article.body.indexOf(routeSrc) / article.body.length <= 0.25, `${slug}: route overview must be within the first 25% of the body`);
 
-  for (const suffix of ['-route-overview.svg', '-route-overview-mobile.svg']) {
-    const relative = `assets/images/living/routes/${slug}${suffix}`;
-    const svg = read(relative);
-    assert(/<svg\b[^>]*\bwidth="\d+"[^>]*\bheight="\d+"[^>]*\bviewBox="0 0 \d+ \d+"/i.test(svg), `${relative}: missing safe intrinsic dimensions/viewBox`);
-    assert(/<title\b[^>]*>[^<]+<\/title>/i.test(svg), `${relative}: missing title`);
-    assert(/<desc\b[^>]*>[^<]+<\/desc>/i.test(svg), `${relative}: missing desc`);
-    assert(!/<script\b|<foreignObject\b|\b(?:href|xlink:href)=["']https?:|data:image|base64/i.test(svg), `${relative}: contains prohibited active or external content`);
+  if (externalRouteAsset) {
+    assert(fs.existsSync(path.join(root, normalizeRepoPath(routeSrc))), `${slug}: replacement WebP is missing`);
+  } else {
+    for (const suffix of ['-route-overview.svg', '-route-overview-mobile.svg']) {
+      const relative = `assets/images/living/routes/${slug}${suffix}`;
+      const svg = read(relative);
+      assert(/<svg\b[^>]*\bwidth="\d+"[^>]*\bheight="\d+"[^>]*\bviewBox="0 0 \d+ \d+"/i.test(svg), `${relative}: missing safe intrinsic dimensions/viewBox`);
+      assert(/<title\b[^>]*>[^<]+<\/title>/i.test(svg), `${relative}: missing title`);
+      assert(/<desc\b[^>]*>[^<]+<\/desc>/i.test(svg), `${relative}: missing desc`);
+      assert(!/<script\b|<foreignObject\b|\b(?:href|xlink:href)=["']https?:|data:image|base64/i.test(svg), `${relative}: contains prohibited active or external content`);
+    }
   }
 
   const headings = [...article.body.matchAll(/^##\s+(.+)$/gm)].map((match) => match[1].trim());
@@ -53,8 +59,12 @@ for (const article of articles) {
 
   const htmlRel = `germany/ja/living/${slug}/index.html`;
   const html = read(htmlRel);
-  assert(html.includes(`<source media="(max-width: 600px)" srcset="/assets/images/living/routes/${slug}-route-overview-mobile.svg">`), `${slug}: generated HTML does not use mobile SVG source`);
-  assert(new RegExp(`<img src="${escapeRegExp(routeSrc)}"[^>]*width="820"[^>]*height="520"`).test(html), `${slug}: generated HTML lacks SVG intrinsic dimensions`);
+  if (externalRouteAsset) {
+    assert(new RegExp(`<img src="${escapeRegExp(routeSrc)}"[^>]*width="1536"[^>]*height="1024"[^>]*loading="lazy"[^>]*decoding="async"`).test(html), `${slug}: generated HTML lacks WebP intrinsic dimensions or loading attributes`);
+  } else {
+    assert(html.includes(`<source media="(max-width: 600px)" srcset="/assets/images/living/routes/${slug}-route-overview-mobile.svg">`), `${slug}: generated HTML does not use mobile SVG source`);
+    assert(new RegExp(`<img src="${escapeRegExp(routeSrc)}"[^>]*width="820"[^>]*height="520"`).test(html), `${slug}: generated HTML lacks SVG intrinsic dimensions`);
+  }
   assert(count(html, 'class="article-sidebar-card article-sidebar-toc"') === 1, `${slug}: desktop sidebar TOC count is not one`);
   assert(count(html, 'class="article-mobile-toc"') === 1, `${slug}: mobile collapsible TOC count is not one`);
   const articleBody = html.match(/<div class="article-body">([\s\S]*?)<\/article>/)?.[1] || '';
@@ -76,10 +86,15 @@ for (const relative of ['content/living/germany-train-travel-guide.md', 'content
   assert(fs.existsSync(path.join(root, relative)), `Missing shared guide: ${relative}`);
 }
 
-console.log(`Tourism usability validation passed for ${articles.length} articles and ${articles.length * 2} responsive SVGs.`);
+const externalRouteAssets = routeData.routes.filter((route) => route.asset).length;
+console.log(`Tourism usability validation passed for ${articles.length} articles, ${(articles.length - externalRouteAssets) * 2} responsive SVGs, and ${externalRouteAssets} external raster map.`);
 
 function read(relative) {
   return fs.readFileSync(path.join(root, relative), 'utf8');
+}
+
+function normalizeRepoPath(value) {
+  return String(value || '').replace(/^\/+/, '').replaceAll('/', path.sep);
 }
 
 function stripFrontmatter(markdown) {

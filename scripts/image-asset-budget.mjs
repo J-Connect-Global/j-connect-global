@@ -169,7 +169,8 @@ export function validateImageBudget(report, budget) {
       errors.push(`${image.path} is ${image.format}, expected ${budget.required_format} in /assets/img/.`);
     }
     if (!Number.isInteger(image.width) || !Number.isInteger(image.height)) errors.push(`${image.path} has unreadable dimensions.`);
-    if (image.width > budget.max_width) errors.push(`${image.path} exceeds maximum width ${budget.max_width}.`);
+    const maxWidth = budget.max_width_overrides?.[image.path] ?? budget.max_width;
+    if (image.width > maxWidth) errors.push(`${image.path} exceeds maximum width ${maxWidth}.`);
   }
   return errors;
 }

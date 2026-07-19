@@ -532,6 +532,30 @@ for (const [relative, asset] of [
   assert.match(html, /width="820" height="461" loading="lazy" decoding="async"/, `${relative} inline image is missing intrinsic dimensions or lazy loading`);
   assert.match(html, /AI生成イラスト/, `${relative} does not label its generated illustration`);
 }
+const tourismEditorialImages = [
+  ['bremen-weekend-trip', 'bremen-schnoor-walk-editorial-v1'],
+  ['brussels-weekend-trip', 'brussels-sablon-walk-editorial-v1'],
+  ['copenhagen-weekend-trip', 'copenhagen-christianshavn-bike-editorial-v1'],
+  ['hamburg-weekend-trip', 'hamburg-harbour-ferry-editorial-v1'],
+  ['krakow-weekend-trip', 'krakow-kazimierz-courtyard-editorial-v1'],
+  ['london-weekend-trip', 'london-contactless-gates-editorial-v1'],
+  ['munich-weekend-trip', 'munich-isar-rest-editorial-v1'],
+  ['paris-weekend-trip', 'paris-seine-walking-break-editorial-v1'],
+  ['prague-weekend-trip', 'prague-mala-strana-tram-editorial-v1'],
+  ['warsaw-weekend-trip', 'warsaw-vistula-promenade-editorial-v1']
+];
+const buildContentSource = read('scripts/build-content.mjs');
+assert.match(buildContentSource, /function resolveLocalInlineWebpVariant\(src\)/, 'generic local inline WebP variant detection is missing');
+for (const [slug, asset] of tourismEditorialImages) {
+  assert.equal(buildContentSource.includes(asset), false, `${asset} must not be hard-coded in the responsive renderer`);
+  const relative = `germany/ja/living/${slug}/index.html`;
+  const html = read(relative);
+  const assetBase = `/assets/images/living/${asset}`;
+  assert.match(html, new RegExp(`<source media="\\(max-width: 600px\\)" srcset="${assetBase}-480w\\.webp">`), `${relative} is missing its 480px mobile source`);
+  assert.match(html, new RegExp(`<source media="\\(max-width: 960px\\)" srcset="${assetBase}-768w\\.webp">`), `${relative} is missing its 768px tablet source`);
+  assert.match(html, new RegExp(`<img src="${assetBase}\\.webp"[^>]*width="1440" height="810"[^>]*srcset="[^"]*${assetBase}-480w\\.webp 480w[^"]*${assetBase}-768w\\.webp 768w[^"]*${assetBase}\\.webp 1440w"[^>]*sizes="[^"]+"[^>]*loading="lazy" decoding="async">`), `${relative} is missing generic responsive inline image markup`);
+  assert.equal((html.match(/AI生成の編集イメージ。実際の現地写真ではありません。/g) || []).length, 1, `${relative} must disclose its editorial image exactly once`);
+}
 for (const relative of ["germany/ja/index.html", "germany/ja/community/index.html", "germany/ja/jobs/index.html"]) {
   const source = read(relative);
   assert.equal(/hreflang=["'](?:en|de)["']/.test(source), false, `${relative} emits inactive hreflang`);

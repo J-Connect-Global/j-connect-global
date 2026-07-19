@@ -306,8 +306,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツから行く週末旅行：ハンブルク観光の基本",
-    "description": "Speicherstadt、HafenCity、Alsterを同日に詰め込みすぎず、HVVで港町の移動を組み立てるハンブルク週末ガイドです。",
+    "title": "ハンブルク1泊2日｜港・倉庫街・HVVフェリーを無理なく回る週末プラン",
+    "description": "SpeicherstadtからHafenCity、Landungsbrückenへ西進し、HVV港湾フェリーと屋内施設を天候で組み替えるハンブルク1泊2日の実用ガイドです。",
     "url": "/germany/ja/living/hamburg-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
@@ -331,8 +331,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツから行く週末旅行：ブレーメン観光の基本",
-    "description": "市庁舎前の歴史地区、細い路地のSchnoor、文化のあるViertelを、徒歩中心で1泊にまとめるブレーメンの実用ガイドです。",
+    "title": "ブレーメン週末旅行｜徒歩で迷わない旧市街・Schnoorの1泊2日モデルコース",
+    "description": "ドイツから24〜36時間でブレーメンへ。マルクト広場、Schnoor、ヴェーザー川を一方向につなぎ、雨・石畳・到着遅延にも崩れにくい徒歩中心の実用プランです。",
     "url": "/germany/ja/living/bremen-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
@@ -343,8 +343,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツから行く週末旅行：ブリュッセル観光の基本",
-    "description": "グランプラス周辺、サブロン、EU地区を目的別に分け、STIB/MIVBと鉄道の境界を確認して歩くブリュッセルの週末ガイドです。",
+    "title": "ブリュッセル1泊2日｜グランプラスとサブロンを歩く週末ルート",
+    "description": "中央駅を起点に、グランプラス、サブロン、マロルを高低差と石畳を考慮して回り、STIBのタッチ決済で迷わない週末ガイドです。",
     "url": "/germany/ja/living/brussels-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
@@ -355,8 +355,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツから行く週末旅行：パリ観光の基本",
-    "description": "一日に一地区と一つの予約施設を基本に、メトロ・RERの券種と工事情報を確認して歩くパリ週末旅行の実用ガイドです。",
+    "title": "パリ1泊2日｜セーヌ・Maraisと美術館一館に絞る週末ガイド",
+    "description": "セーヌとMaraisを一方向に歩き、LouvreかOrsayの一館を選び、空港券と市内交通券の違いを理解するパリ週末ガイドです。",
     "url": "/germany/ja/living/paris-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
@@ -367,8 +367,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツから行く週末旅行：ミュンヘン観光の基本",
-    "description": "Marienplatz、Kunstareal、Isar・Englischer Gartenを目的ごとに選び、MVVの経路と日券を確認するミュンヘン週末ガイドです。",
+    "title": "ミュンヘン週末旅行｜旧市街・美術館・Isarを選ぶ1泊2日プラン",
+    "description": "Marienplatzを起点に、Residenz、Kunstareal、Isarを目的別に選び、MVVのゾーンと打刻条件を間違えない週末ガイドです。",
     "url": "/germany/ja/living/munich-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
@@ -379,8 +379,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツから行く週末旅行：ロンドン観光の基本",
-    "description": "到着空港と宿の地区を先に固定し、徒歩で回る地区とTfLを使う区間を分けるロンドン週末旅行の基本です。",
+    "title": "ロンドン1泊2日｜到着空港から逆算するWestminster・South Bank週末旅",
+    "description": "空港・宿・入国要件を先に固定し、WestminsterとSouth Bankを徒歩、2日目を一地区に絞るロンドン週末ガイドです。",
     "url": "/germany/ja/living/london-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
@@ -391,8 +391,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツから行く週末旅行：コペンハーゲン観光の基本",
-    "description": "Indre By、港、Christianshavnを徒歩と公共交通でつなぎ、空港・中央駅・自転車移動を無理なく選ぶためのコペンハーゲン週末ガイドです。",
+    "title": "コペンハーゲン週末旅行｜港・Christianshavn・デザインを巡る1泊2日",
+    "description": "空港からのゾーンを理解し、Indre ByとChristianshavnを徒歩・メトロ・自転車から安全に選ぶ1泊2日の実用プランです。",
     "url": "/germany/ja/living/copenhagen-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
@@ -403,8 +403,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツから行く週末旅行：ワルシャワ観光の基本",
-    "description": "再建された旧市街、王の道、Śródmieście、ヴィスワ川沿いを目的別に組み、公式交通情報で移動するワルシャワ週末ガイドです。",
+    "title": "ワルシャワ1泊2日｜旧市街・王の道・ヴィスワ川をつなぐ週末旅",
+    "description": "再建された旧市街と王の道を歴史として読み、2日目はヴィスワ川または博物館を選び、WTP券を正しく有効化するガイドです。",
     "url": "/germany/ja/living/warsaw-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
@@ -415,8 +415,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツから行く週末旅行：クラクフ観光の基本",
-    "description": "Rynek、Wawel、Kazimierzを徒歩でつなぎ、遠い地区だけをトラムで補うクラクフの実用的な週末ガイドです。",
+    "title": "クラクフ1泊2日｜Rynek・Wawel・Kazimierzを歩く週末計画",
+    "description": "旧市街、Wawel、Kazimierzを一方向につなぎ、時間制のKMK乗車券を正しく有効化するクラクフ1泊2日の実用ガイドです。",
     "url": "/germany/ja/living/krakow-weekend-trip/",
     "category": "生活・手続き",
     "tags": [
@@ -427,8 +427,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツから行く週末旅行：プラハ観光の基本",
-    "description": "旧市街、カレル橋、プラハ城を朝夕の混雑で分け、PIDの時間制チケットを正しく使うためのプラハ週末ガイドです。",
+    "title": "プラハ1泊2日｜朝のカレル橋と城下りで石畳を減らす週末ルート",
+    "description": "旧市街とカレル橋を朝夕に分け、トラムで城へ上ってMalá Stranaへ下り、PID券を正しく有効化する週末ガイドです。",
     "url": "/germany/ja/living/prague-weekend-trip/",
     "category": "生活・手続き",
     "tags": [

@@ -542,7 +542,17 @@ const tourismEditorialImages = [
   ['munich-weekend-trip', 'munich-isar-rest-editorial-v1'],
   ['paris-weekend-trip', 'paris-seine-walking-break-editorial-v1'],
   ['prague-weekend-trip', 'prague-mala-strana-tram-editorial-v1'],
-  ['warsaw-weekend-trip', 'warsaw-vistula-promenade-editorial-v1']
+  ['warsaw-weekend-trip', 'warsaw-vistula-promenade-editorial-v1'],
+  ['aachen-day-trip', 'aachen-printen-break-editorial-v1'],
+  ['amsterdam-weekend-trip', 'amsterdam-bike-lane-crossing-editorial-v1'],
+  ['berlin-weekend-trip', 'berlin-transit-transfer-editorial-v1'],
+  ['cologne-city-guide', 'cologne-rhine-handsfree-walk-editorial-v1'],
+  ['cologne-family-trip', 'cologne-rheinpark-family-rest-editorial-v1'],
+  ['duesseldorf-city-guide', 'duesseldorf-japanese-quarter-choice-editorial-v1'],
+  ['duesseldorf-family-trip', 'duesseldorf-family-park-rest-editorial-v1'],
+  ['nrw-nature-relax-guide', 'nrw-lakeside-short-loop-editorial-v1'],
+  ['rhine-river-relax-guide', 'rhine-regional-train-walk-editorial-v1'],
+  ['strasbourg-weekend-trip', 'strasbourg-tram-arrival-editorial-v1']
 ];
 const buildContentSource = read('scripts/build-content.mjs');
 assert.match(buildContentSource, /function resolveLocalInlineWebpVariant\(src\)/, 'generic local inline WebP variant detection is missing');

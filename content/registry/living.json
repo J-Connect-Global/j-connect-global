@@ -1,23 +1,23 @@
 [
   {
     "id": "T001",
-    "title": "デュッセルドルフ観光の基本：旧市街・ライン川・日本人街の歩き方",
+    "title": "デュッセルドルフ観光｜日本人街を起点にKö・旧市街・川を選ぶ",
     "slug": "duesseldorf-city-guide",
     "category": "観光",
-    "summary": "デュッセルドルフ市内を初めて歩く人向けに、旧市街、ライン川沿い、日本人街、Königsallee、買い物エリアを半日から1日で回る基本ルートを整理します。",
+    "summary": "Düsseldorf Hbfから日本人街で昼食・買い物を済ませ、Kö、Altstadt、Rheinuferを目的別に選ぶ一方向ルート。Rheinbahn、夜の旧市街、環境ゾーンも解説します。",
     "url": "/germany/ja/living/duesseldorf-city-guide/",
     "markdown_path": "/content/living/duesseldorf-city-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-06-28",
-    "last_verified": "2026-06-28",
+    "updated_at": "2026-07-19",
+    "last_verified": "2026-07-19",
     "tags": [
       "デュッセルドルフ",
-      "街歩き",
-      "NRW",
-      "観光",
-      "日本人街"
+      "日本人街",
+      "Immermannstraße",
+      "旧市街",
+      "ライン川"
     ],
     "home_visible": true,
     "home_order": 200,
@@ -26,8 +26,8 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/duesseldorf-city-guide/",
     "related_articles": [
-      "cologne-city-guide",
       "duesseldorf-family-trip",
+      "cologne-city-guide",
       "rhine-river-relax-guide"
     ],
     "official_sources": [
@@ -44,30 +44,30 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-28",
-      "next_review_due": "2027-06-28"
+      "last_reviewed_at": "2026-07-19",
+      "next_review_due": "2026-10-01"
     },
     "image_alt": "デュッセルドルフ観光ガイドの記事イメージ"
   },
   {
     "id": "T002",
-    "title": "ケルン観光の基本：大聖堂・ライン川・旧市街の回り方",
+    "title": "ケルン観光ガイド｜Hbf・大聖堂・旧市街・Deutzを一方向で回る",
     "slug": "cologne-city-guide",
     "category": "観光",
-    "summary": "ケルン大聖堂を中心に、旧市街、ライン川沿い、Hohenzollernbrücke、博物館エリアを半日から1日で効率よく回る基本ガイドです。",
+    "summary": "Köln Hbfで荷物を処理し、大聖堂、旧市街、ライン川、Hohenzollernbrücke、Deutzを逆戻りなく歩く半日〜1日ガイド。2026年7月開始の大聖堂見学券も解説します。",
     "url": "/germany/ja/living/cologne-city-guide/",
     "markdown_path": "/content/living/cologne-city-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-06-28",
-    "last_verified": "2026-06-28",
+    "updated_at": "2026-07-19",
+    "last_verified": "2026-07-19",
     "tags": [
       "ケルン",
       "大聖堂",
-      "街歩き",
-      "観光",
-      "ライン川"
+      "旧市街",
+      "ライン川",
+      "KVB"
     ],
     "home_visible": true,
     "home_order": 201,
@@ -76,9 +76,9 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/cologne-city-guide/",
     "related_articles": [
-      "duesseldorf-city-guide",
       "cologne-family-trip",
-      "rhine-river-relax-guide"
+      "rhine-river-relax-guide",
+      "duesseldorf-city-guide"
     ],
     "official_sources": [
       {
@@ -94,30 +94,30 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-28",
-      "next_review_due": "2027-06-28"
+      "last_reviewed_at": "2026-07-19",
+      "next_review_due": "2026-09-15"
     },
     "image_alt": "ケルン観光ガイドの記事イメージ"
   },
   {
     "id": "T003",
-    "title": "NRWから行く日帰り旅行：アーヘン観光モデルコース",
+    "title": "アーヘン日帰り観光｜大聖堂・旧市街・Printenを一方向で回る実用コース",
     "slug": "aachen-day-trip",
     "category": "観光",
-    "summary": "NRW在住者向けに、アーヘン大聖堂、旧市街、市庁舎、カフェ、温泉文化を日帰りで無理なく楽しむモデルコースを整理します。",
+    "summary": "Aachen HbfからElisenbrunnen、大聖堂、Katschhof、市庁舎を逆戻りなく歩き、見学予約、石畳、Printen休憩、温泉を入れる判断まで組み立てる日帰りガイドです。",
     "url": "/germany/ja/living/aachen-day-trip/",
     "markdown_path": "/content/living/aachen-day-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-06-28",
-    "last_verified": "2026-06-28",
+    "updated_at": "2026-07-19",
+    "last_verified": "2026-07-19",
     "tags": [
       "アーヘン",
       "日帰り旅行",
       "NRW",
-      "週末旅行",
-      "大聖堂"
+      "大聖堂",
+      "Printen"
     ],
     "home_visible": true,
     "home_order": 202,
@@ -126,9 +126,9 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/aachen-day-trip/",
     "related_articles": [
-      "strasbourg-weekend-trip",
       "cologne-city-guide",
-      "nrw-nature-relax-guide"
+      "nrw-nature-relax-guide",
+      "strasbourg-weekend-trip"
     ],
     "official_sources": [
       {
@@ -144,29 +144,30 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-28",
-      "next_review_due": "2027-06-28"
+      "last_reviewed_at": "2026-07-19",
+      "next_review_due": "2026-10-15"
     },
     "image_alt": "アーヘン日帰り旅行の記事イメージ"
   },
   {
     "id": "T004",
-    "title": "ドイツから行く週末旅行：ストラスブール観光の基本",
+    "title": "ドイツからストラスブール1泊2日｜鉄道・P+R・トラム実用ガイド",
     "slug": "strasbourg-weekend-trip",
     "category": "観光",
-    "summary": "ドイツ西部から車や電車で行きやすいストラスブールを、週末旅行として楽しむための基本ルートと注意点を整理。",
+    "summary": "ドイツから鉄道・車・P+Rで入り、GareからPetite France、Grande Île、大聖堂を一方向に巡る1泊2日。身分証、Crit’Air、CTS券、予約、日曜も整理します。",
     "url": "/germany/ja/living/strasbourg-weekend-trip/",
     "markdown_path": "/content/living/strasbourg-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-06-27",
-    "last_verified": "2026-06-27",
+    "updated_at": "2026-07-19",
+    "last_verified": "2026-07-19",
     "tags": [
       "ストラスブール",
       "週末旅行",
       "フランス",
-      "観光"
+      "CTS",
+      "P+R"
     ],
     "home_visible": true,
     "home_order": 203,
@@ -176,36 +177,37 @@
     "canonical_url": "/germany/ja/living/strasbourg-weekend-trip/",
     "related_articles": [
       "aachen-day-trip",
-      "cologne-city-guide",
-      "rhine-river-relax-guide"
+      "amsterdam-weekend-trip",
+      "cologne-city-guide"
     ],
     "official_sources": [],
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-27",
-      "next_review_due": "2027-06-27"
+      "last_reviewed_at": "2026-07-19",
+      "next_review_due": "2026-09-15"
     }
   },
   {
     "id": "T005",
-    "title": "ライン川沿いで過ごす休日：散歩・景色・カフェの楽しみ方",
+    "title": "ライン川の休日｜KölnからBacharachまで鉄道・船・徒歩で短く歩く",
     "slug": "rhine-river-relax-guide",
     "category": "観光",
-    "summary": "ライン川沿いでゆっくり過ごしたい人向けに、散歩、景色、カフェ、夕方の過ごし方をまとめた休日ガイド。",
+    "summary": "Köln〜Mainzのライン左岸を対象に、都市散歩、Königswinter、Linz、Bacharach〜St. Goarを比較。鉄道と船で途中短縮できる休日を組み立てます。",
     "url": "/germany/ja/living/rhine-river-relax-guide/",
     "markdown_path": "/content/living/rhine-river-relax-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-06-27",
-    "last_verified": "2026-06-27",
+    "updated_at": "2026-07-19",
+    "last_verified": "2026-07-19",
     "tags": [
       "ライン川",
       "散歩",
-      "自然",
-      "リラックス"
+      "Mittelrhein",
+      "鉄道",
+      "船"
     ],
     "home_visible": true,
     "home_order": 204,
@@ -215,37 +217,37 @@
     "canonical_url": "/germany/ja/living/rhine-river-relax-guide/",
     "related_articles": [
       "nrw-nature-relax-guide",
-      "duesseldorf-city-guide",
-      "cologne-city-guide"
+      "cologne-city-guide",
+      "duesseldorf-city-guide"
     ],
     "official_sources": [],
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-27",
-      "next_review_due": "2027-06-27"
+      "last_reviewed_at": "2026-07-19",
+      "next_review_due": "2026-09-01"
     }
   },
   {
     "id": "T006",
-    "title": "NRWの自然スポット入門：森・湖・公園でリラックスする休日",
+    "title": "NRW自然スポット5選｜公園・湖・森・岩場を路面と設備で比較",
     "slug": "nrw-nature-relax-guide",
     "category": "観光",
-    "summary": "NRW周辺で自然を感じたい人向けに、森、湖、公園を使った無理のない休日の過ごし方を整理。",
+    "summary": "Grugapark、Fühlinger See、Wilder Kermeter、Üfter Mark、Externsteineを、公共交通、路面、トイレ、日陰、ベビーカー、保護ルール、雨後の状態で選ぶ実用比較です。",
     "url": "/germany/ja/living/nrw-nature-relax-guide/",
     "markdown_path": "/content/living/nrw-nature-relax-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-06-27",
-    "last_verified": "2026-06-27",
+    "updated_at": "2026-07-19",
+    "last_verified": "2026-07-19",
     "tags": [
       "NRW",
       "自然",
       "公園",
       "湖",
-      "リラックス"
+      "バリアフリー"
     ],
     "home_visible": true,
     "home_order": 205,
@@ -255,36 +257,37 @@
     "canonical_url": "/germany/ja/living/nrw-nature-relax-guide/",
     "related_articles": [
       "rhine-river-relax-guide",
-      "aachen-day-trip",
-      "duesseldorf-family-trip"
+      "duesseldorf-family-trip",
+      "aachen-day-trip"
     ],
     "official_sources": [],
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-27",
-      "next_review_due": "2027-06-27"
+      "last_reviewed_at": "2026-07-19",
+      "next_review_due": "2026-09-30"
     }
   },
   {
     "id": "T007",
-    "title": "子連れで楽しむデュッセルドルフ観光：公園・川沿い・短時間ルート",
+    "title": "子連れデュッセルドルフ｜Nordpark＋Aquazooの短時間家族ルート",
     "slug": "duesseldorf-family-trip",
     "category": "観光",
-    "summary": "小さな子ども連れでも回りやすいデュッセルドルフ市内の観光ルート、公園、休憩ポイントを整理。",
+    "summary": "Nordparkの短い舗装路とAquazooを一つの拠点にまとめ、年齢、雨、昼寝、ベビーカー、トイレ、予約判断から2〜6時間を組む家族向けプランです。",
     "url": "/germany/ja/living/duesseldorf-family-trip/",
     "markdown_path": "/content/living/duesseldorf-family-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-06-27",
-    "last_verified": "2026-06-27",
+    "updated_at": "2026-07-19",
+    "last_verified": "2026-07-19",
     "tags": [
       "子連れ",
       "デュッセルドルフ",
-      "家族",
-      "観光"
+      "Nordpark",
+      "Aquazoo",
+      "ベビーカー"
     ],
     "home_visible": true,
     "home_order": 206,
@@ -302,28 +305,29 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-27",
-      "next_review_due": "2027-06-27"
+      "last_reviewed_at": "2026-07-19",
+      "next_review_due": "2026-10-01"
     }
   },
   {
     "id": "T008",
-    "title": "家族で行くケルン観光：大聖堂周辺と休憩しやすいスポット",
+    "title": "子連れケルン｜Rheinparkと屋内一施設で崩れない家族プラン",
     "slug": "cologne-family-trip",
     "category": "観光",
-    "summary": "家族連れでケルンを訪れる人向けに、大聖堂周辺、川沿い、休憩しやすい場所を中心に紹介。",
+    "summary": "年齢と天候からRheinpark、Kölner Zoo、Kölnisches Stadtmuseumを選び、遊び・昼寝・トイレ・迷子対策まで含めて一日を組む家族向けケルンガイドです。",
     "url": "/germany/ja/living/cologne-family-trip/",
     "markdown_path": "/content/living/cologne-family-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-06-27",
-    "last_verified": "2026-06-27",
+    "updated_at": "2026-07-19",
+    "last_verified": "2026-07-19",
     "tags": [
       "子連れ",
       "ケルン",
-      "家族",
-      "観光"
+      "Rheinpark",
+      "動物園",
+      "ベビーカー"
     ],
     "home_visible": true,
     "home_order": 207,
@@ -334,35 +338,35 @@
     "related_articles": [
       "duesseldorf-family-trip",
       "cologne-city-guide",
-      "rhine-river-relax-guide"
+      "nrw-nature-relax-guide"
     ],
     "official_sources": [],
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-27",
-      "next_review_due": "2027-06-27"
+      "last_reviewed_at": "2026-07-19",
+      "next_review_due": "2026-09-15"
     }
   },
   {
     "id": "T009",
-    "title": "ドイツから行く週末旅行：アムステルダム観光の基本",
+    "title": "アムステルダム週末旅行｜予約を一つに絞る1泊2日モデルコース",
     "slug": "amsterdam-weekend-trip",
     "category": "観光",
-    "summary": "ドイツ西部から電車や車で行きやすいアムステルダムを、初めての週末旅行として無理なく楽しむためのモデルコース、交通、予約、注意点を整理します。",
+    "summary": "Amsterdam Centraal到着後、予約施設を一つだけ固定し、運河帯とMuseumpleinまたはJordaanを一方向で巡る週末ルート。NS・GVB・OVpay・P+Rの境界も整理します。",
     "url": "/germany/ja/living/amsterdam-weekend-trip/",
     "markdown_path": "/content/living/amsterdam-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-06-29",
-    "last_verified": "2026-06-29",
+    "updated_at": "2026-07-19",
+    "last_verified": "2026-07-19",
     "tags": [
       "アムステルダム",
       "週末旅行",
       "オランダ",
-      "観光",
+      "OVpay",
       "美術館"
     ],
     "home_visible": true,
@@ -372,8 +376,8 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/amsterdam-weekend-trip/",
     "related_articles": [
+      "berlin-weekend-trip",
       "strasbourg-weekend-trip",
-      "aachen-day-trip",
       "cologne-city-guide"
     ],
     "official_sources": [
@@ -390,8 +394,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-29",
-      "next_review_due": "2027-06-29"
+      "last_reviewed_at": "2026-07-19",
+      "next_review_due": "2026-10-01"
     },
     "image_alt": "アムステルダム週末旅行の記事イメージ"
   },
@@ -445,22 +449,22 @@
   },
   {
     "id": "T011",
-    "title": "ドイツ在住者向け：1泊2日ベルリン観光モデルコース",
+    "title": "ベルリン1泊2日｜Mitteの歴史軸と二日目を一つ選ぶモデルコース",
     "slug": "berlin-weekend-trip",
     "category": "観光",
-    "summary": "NRW・デュッセルドルフ・ケルン方面から週末に行く人向けに、Berlin Hbf起点のMitte歴史ルート、壁・博物館・カフェ街歩きの分岐、市内交通と車利用の注意点を整理します。",
+    "summary": "Berlin HbfからMitteを一方向に歩き、二日目は壁・博物館・地区散策から一つだけ選択。BVGのAB/C、BER、Reichstag予約、Museum Islandの現況も整理します。",
     "url": "/germany/ja/living/berlin-weekend-trip/",
     "markdown_path": "/content/living/berlin-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-06-30",
-    "last_verified": "2026-06-30",
+    "updated_at": "2026-07-19",
+    "last_verified": "2026-07-19",
     "tags": [
       "ベルリン",
       "週末旅行",
-      "ドイツ在住",
-      "1泊2日",
+      "Mitte",
+      "BVG",
       "モデルコース"
     ],
     "home_visible": true,
@@ -471,8 +475,8 @@
     "canonical_url": "/germany/ja/living/berlin-weekend-trip/",
     "related_articles": [
       "amsterdam-weekend-trip",
-      "strasbourg-weekend-trip",
-      "cologne-city-guide"
+      "munich-weekend-trip",
+      "hamburg-weekend-trip"
     ],
     "official_sources": [
       {
@@ -500,8 +504,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-30",
-      "next_review_due": "2027-06-30"
+      "last_reviewed_at": "2026-07-19",
+      "next_review_due": "2026-09-30"
     },
     "hero_image": "/assets/images/living/berlin-weekend-route.svg",
     "hero_image_alt": "Berlin HbfからMitte主要スポットを回る週末旅行ルート図",

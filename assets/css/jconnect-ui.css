@@ -3699,9 +3699,39 @@
     color:var(--jc-navy);
   }
 
+  .related-section ul,
+  .official-source-section ul{
+    margin:0;
+    padding-inline-start:1.4rem;
+    list-style-position:outside;
+  }
+
+  .related-section li,
+  .official-source-section li{
+    padding-inline-start:.15rem;
+    line-height:1.7;
+  }
+
+  .related-section li + li,
+  .official-source-section li + li{
+    margin-top:.55rem;
+  }
+
+  .related-section li::marker,
+  .official-source-section li::marker{
+    color:var(--jc-blue);
+  }
+
   .related-section a{
     color:var(--jc-blue);
     font-weight:800;
+  }
+
+  @media (max-width:640px){
+    .related-section ul,
+    .official-source-section ul{
+      padding-inline-start:1.25rem;
+    }
   }
 
   .listing-modal-dialog,

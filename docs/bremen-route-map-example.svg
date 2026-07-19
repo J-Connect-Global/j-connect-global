@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="560" viewBox="0 0 820 560" role="img" aria-labelledby="title desc">
+  <title id="title">ブレーメン中心部の位置関係と基本ルートの例</title>
+  <desc id="desc">北側の中央駅からマルクト広場、Böttcherstraße、Schnoorへ進み、川沿いのSchlachteで終える概略図。Viertelは翌日の追加候補として東側に示す。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#075b9a"/>
+    </marker>
+    <marker id="optional-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#147d75"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#12324a" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <rect x="1" y="1" width="818" height="558" rx="20" fill="#f8fbfe" stroke="#b8d0e5" stroke-width="2"/>
+  <text x="36" y="48" fill="#062f55" font-family="Inter, Noto Sans JP, sans-serif" font-size="27" font-weight="800">位置関係と基本ルート</text>
+  <text x="36" y="76" fill="#4d6578" font-family="Inter, Noto Sans JP, sans-serif" font-size="16">初日：中央駅から旧市街を通り、川沿いへ進む</text>
+
+  <g transform="translate(742 28)" aria-hidden="true">
+    <path d="M20 42 L20 6 M20 6 L12 19 M20 6 L28 19" fill="none" stroke="#062f55" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="20" y="58" text-anchor="middle" fill="#062f55" font-family="Inter, Noto Sans JP, sans-serif" font-size="15" font-weight="800">北</text>
+  </g>
+
+  <path d="M350 134 C350 174 365 194 365 222" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M380 258 C400 275 423 286 445 300" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M478 327 C507 346 532 359 550 374" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M545 413 C490 437 417 452 346 458" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M394 232 C486 205 585 203 655 224" fill="none" stroke="#147d75" stroke-width="5" stroke-dasharray="12 10" stroke-linecap="round" marker-end="url(#optional-arrow)"/>
+
+  <path d="M56 489 C140 468 226 508 310 487 C394 466 480 506 564 485 C648 464 710 491 765 479" fill="none" stroke="#60aee8" stroke-width="12" stroke-linecap="round" opacity="0.68" aria-hidden="true"/>
+  <text x="65" y="525" fill="#39779f" font-family="Inter, Noto Sans JP, sans-serif" font-size="16" font-weight="700">ヴェーザー川</text>
+
+  <g filter="url(#shadow)">
+    <rect x="245" y="92" width="210" height="54" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="274" cy="119" r="13" fill="#075b9a"/>
+    <text x="298" y="116" fill="#092f4e" font-family="Inter, Noto Sans JP, sans-serif" font-size="19" font-weight="800">Bremen Hbf</text>
+    <text x="298" y="136" fill="#557082" font-family="Inter, Noto Sans JP, sans-serif" font-size="13">荷物を預けて出発</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="252" y="220" width="226" height="62" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="282" cy="251" r="13" fill="#075b9a"/>
+    <text x="307" y="247" fill="#092f4e" font-family="Inter, Noto Sans JP, sans-serif" font-size="19" font-weight="800">Marktplatz</text>
+    <text x="307" y="269" fill="#557082" font-family="Inter, Noto Sans JP, sans-serif" font-size="13">市庁舎・ローラント</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="393" y="294" width="213" height="61" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="423" cy="325" r="13" fill="#075b9a"/>
+    <text x="448" y="321" fill="#092f4e" font-family="Inter, Noto Sans JP, sans-serif" font-size="18" font-weight="800">Böttcherstraße</text>
+    <text x="448" y="343" fill="#557082" font-family="Inter, Noto Sans JP, sans-serif" font-size="13">通り抜ける区間</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="528" y="372" width="192" height="62" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="558" cy="403" r="13" fill="#075b9a"/>
+    <text x="583" y="399" fill="#092f4e" font-family="Inter, Noto Sans JP, sans-serif" font-size="19" font-weight="800">Schnoor</text>
+    <text x="583" y="421" fill="#557082" font-family="Inter, Noto Sans JP, sans-serif" font-size="13">石畳・細い路地</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="205" y="424" width="205" height="62" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="235" cy="455" r="13" fill="#075b9a"/>
+    <text x="260" y="451" fill="#092f4e" font-family="Inter, Noto Sans JP, sans-serif" font-size="19" font-weight="800">Schlachte</text>
+    <text x="260" y="473" fill="#557082" font-family="Inter, Noto Sans JP, sans-serif" font-size="13">川沿い・夕食候補</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="620" y="197" width="166" height="63" rx="14" fill="#edf9f6" stroke="#5ba99f" stroke-width="2"/>
+    <circle cx="650" cy="229" r="13" fill="#147d75"/>
+    <text x="674" y="225" fill="#0e4f4a" font-family="Inter, Noto Sans JP, sans-serif" font-size="18" font-weight="800">Viertel</text>
+    <text x="674" y="247" fill="#47716d" font-family="Inter, Noto Sans JP, sans-serif" font-size="13">翌日の追加候補</text>
+  </g>
+
+  <g transform="translate(36 96)" aria-hidden="true">
+    <line x1="0" y1="0" x2="46" y2="0" stroke="#075b9a" stroke-width="7" stroke-linecap="round"/>
+    <text x="58" y="6" fill="#405e72" font-family="Inter, Noto Sans JP, sans-serif" font-size="14">基本ルート</text>
+    <line x1="0" y1="30" x2="46" y2="30" stroke="#147d75" stroke-width="5" stroke-dasharray="10 8" stroke-linecap="round"/>
+    <text x="58" y="36" fill="#405e72" font-family="Inter, Noto Sans JP, sans-serif" font-size="14">任意の追加</text>
+  </g>
+
+  <text x="790" y="534" text-anchor="end" fill="#617788" font-family="Inter, Noto Sans JP, sans-serif" font-size="13">概略図／縮尺は正確ではありません</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="520" viewBox="0 0 820 520" role="img" aria-labelledby="title desc">
+  <title id="title">コペンハーゲン港までの基本ルート</title>
+  <desc id="desc">København HからTivoli周辺、Indre By、Nyhavn、Christianshavnへ進む順序。実線は基本ルート、破線は任意の分岐。縮尺は正確ではありません。</desc>
+  <defs>
+    <marker id="route-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#075b9a"/></marker>
+    <marker id="optional-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#147d75"/></marker>
+    <filter id="card-shadow" x="-15%" y="-20%" width="130%" height="150%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#12324a" flood-opacity="0.15"/></filter>
+  </defs>
+  <rect x="1" y="1" width="818" height="518" rx="20" fill="#f8fbfe" stroke="#a9c5dc" stroke-width="2"/>
+  <text x="34" y="44" fill="#062f55" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="800">コペンハーゲン港までの基本ルート</text>
+  <g transform="translate(34 72)" aria-hidden="true">
+    <line x1="0" y1="0" x2="44" y2="0" stroke="#075b9a" stroke-width="7" stroke-linecap="round"/>
+    <text x="56" y="6" fill="#405e72" font-family="system-ui, -apple-system, sans-serif" font-size="16">基本ルート</text>
+    <line x1="178" y1="0" x2="222" y2="0" stroke="#147d75" stroke-width="5" stroke-dasharray="10 8" stroke-linecap="round"/>
+    <text x="234" y="6" fill="#405e72" font-family="system-ui, -apple-system, sans-serif" font-size="16">任意の追加</text>
+  </g>
+  <g aria-hidden="true">
+    <path d="M145 375 L260 300" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
+    <path d="M260 300 L395 220" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
+    <path d="M395 220 L565 205" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
+    <path d="M565 205 L680 345" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
+    <path d="M145 375 L120 145" fill="none" stroke="#147d75" stroke-width="5" stroke-dasharray="12 10" stroke-linecap="round" marker-end="url(#optional-arrow)"/></g>
+  <g filter="url(#card-shadow)">
+    <rect x="33" y="341" width="224" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="53" cy="375" r="9" fill="#075b9a"/>
+    <text x="145" y="371" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800"><tspan x="145" dy="0">København H</tspan></text>
+    <text x="145" y="394" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="15">空港線の到着</text>
+  </g>
+<g filter="url(#card-shadow)">
+    <rect x="148" y="266" width="224" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="168" cy="300" r="9" fill="#075b9a"/>
+    <text x="260" y="296" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800"><tspan x="260" dy="0">Tivoli周辺</tspan></text>
+    <text x="260" y="319" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="15">営業日を確認</text>
+  </g>
+<g filter="url(#card-shadow)">
+    <rect x="283" y="186" width="224" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="303" cy="220" r="9" fill="#075b9a"/>
+    <text x="395" y="216" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800"><tspan x="395" dy="0">Indre By</tspan></text>
+    <text x="395" y="239" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="15">中心街</text>
+  </g>
+<g filter="url(#card-shadow)">
+    <rect x="453" y="171" width="224" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="473" cy="205" r="9" fill="#075b9a"/>
+    <text x="565" y="201" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800"><tspan x="565" dy="0">Nyhavn</tspan></text>
+    <text x="565" y="224" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="15">港へ</text>
+  </g>
+<g filter="url(#card-shadow)">
+    <rect x="568" y="311" width="224" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="588" cy="345" r="9" fill="#075b9a"/>
+    <text x="680" y="341" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800"><tspan x="680" dy="0">Christianshavn</tspan></text>
+    <text x="680" y="364" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="15">水辺で休む</text>
+  </g>
+<g filter="url(#card-shadow)">
+    <rect x="8" y="111" width="224" height="68" rx="14" fill="#edf9f6" stroke="#4c9f96" stroke-width="2"/>
+    <circle cx="28" cy="145" r="9" fill="#147d75"/>
+    <text x="120" y="141" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800"><tspan x="120" dy="0">空港</tspan></text>
+    <text x="120" y="164" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="15">別レイヤー</text>
+  </g>
+  <text x="786" y="493" text-anchor="end" fill="#526c7f" font-family="system-ui, -apple-system, sans-serif" font-size="15">概略図／縮尺は正確ではありません</text>
+</svg>

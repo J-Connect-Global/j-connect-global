@@ -28,12 +28,19 @@ official_sources:
   - title: "Düsseldorf市：環境ゾーン"
     url: "https://www.duesseldorf.de/kfz/feinstaub/faq-und-rechtliches"
 ---
-
 # デュッセルドルフ観光｜日本人街を起点にKö・旧市街・川を選ぶ
 
 デュッセルドルフが向くのは、観光と在住者の実用を同じ日に体験したい人です。日本食の昼食・食材や本の買い物を済ませ、午後にKönigsalleeかAltstadt、最後にRheinuferへ進めます。向かないのは、日本人街、Kö、旧市街、MedienHafenをすべて同じ密度で回りたい人。最初に決めるのは、**午後の主役を買い物、旧市街の歴史、川辺の長い散歩のどれにするか**です。
 
 日本人街は「珍しい観光通り」ではなく、レストラン、食品店、書店、生活サービスが集まる実用拠点です。[Visit Düsseldorf公式](https://www.visitduesseldorf.de/erleben/sehenswertes/little-tokyo-duesseldorf)が示す範囲はHbfと市中心の間、Immermannstraßeと周辺道路です。駅からここを先に使うと、昼食のために夕方また戻る必要がありません。
+
+## 位置関係と基本ルート
+
+![Düsseldorf HbfからImmermannstraße、Königsallee、AltstadtとBurgplatz、Rheinuferへ西進しMedienHafenを任意で加える順序](/assets/images/living/routes/duesseldorf-city-guide-route-overview.svg "位置関係を把握するための概略図です。縮尺・所要時間は目安で、当日の経路は公式交通情報で確認してください。")
+
+[ケルン大聖堂からライン川へ進む都市ルート](/germany/ja/living/cologne-city-guide/)と比べ、日本人街での食事と買い物を起点にしたい日に向きます。
+
+ドイツ側の出発・帰着列車は、共通の[DB Navigatorと列車種別の確認手順](/germany/ja/living/germany-train-travel-guide/#市内交通券と刻印は都市-購入方法で異なる)で工事、列車種別、乗換を確認してから、この目的地固有の交通へ進みます。
 
 ## Hbfから西へ進み、戻らない
 
@@ -107,7 +114,17 @@ Düsseldorf中心部には環境ゾーンがあり、[市の公式FAQ](https://w
 - **車いす・歩行補助**：Rheinbahnの段差なし停留所を選び、石畳の路地を網羅しない。
 - **子連れ**：一般ガイドを短くせず、Nordpark＋Aquazoo中心の[家族旅行ガイド](/germany/ja/living/duesseldorf-family-trip/)へ切り替える。
 
-## 起きやすい失敗8件
+## 主要公式ページで旅程を固定する手順
+
+- **確認手順**：[Rheinbahn Tickets und Tarife](https://www.rheinbahn.de/tickets-und-tarife)では経路検索後に券種を開き、`Preisstufe`、利用範囲、有効開始を確認します。VRR圏外へ出る場合は同じ券が使えると決めず、検索結果の運賃を原文で照合します。
+- **確認手順**：[Little Tokyo公式案内](https://www.visitduesseldorf.de/erleben/sehenswertes/little-tokyo-duesseldorf)では掲載地図と施設リンクから、訪問日の営業時間と住所を各店舗の公式情報で確認します。観光局の紹介文だけで席や営業を確定せず、食事候補を二つ用意します。
+
+ページ全体をブラウザ翻訳した場合も、日付、時刻、人数、券名、入口、運休期間は原文表示へ戻して照合してください。
+
+## 注意点のまとめ
+
+以下は読者の落ち度を挙げる一覧ではなく、出発前に順番を変えるだけで避けやすい状況です。同行者と共有し、当日は該当する項目だけを確認してください。
+
 
 1. 日本人街を写真だけ撮る通りにし、昼食・買い物の実用時間を取らない。
 2. 人気店一軒だけを保存し、長い列から動けない。
@@ -127,8 +144,10 @@ Düsseldorf中心部には環境ゾーンがあり、[市の公式FAQ](https://w
 - [ ] 川から最寄り駅へ戻る経路を保存した
 - [ ] 車なら環境ゾーンと駐車場の条件を確認した
 
-## 次の一歩
+ドイツ側の駅・宿・出発時に確認が必要なら、[観光で使える短いドイツ語フレーズ](/germany/ja/learn-german/travel-german-phrases/#駅でホーム-乗換-遅延を確認する)を画面に開いておくと、番線、予約、集合場所をその場で照合できます。
 
-- 子どもの遊びと屋内アンカーなら[デュッセルドルフ家族旅行](/germany/ja/living/duesseldorf-family-trip/)
-- 都市を離れてライン沿いの具体区間を歩くなら[ライン川休日ガイド](/germany/ja/living/rhine-river-relax-guide/)
-- 大聖堂中心の一方向ルートなら[ケルン観光ガイド](/germany/ja/living/cologne-city-guide/)
+## まとめ
+
+デュッセルドルフ中心部は、HbfからImmermannstraße、Kö、Altstadt、Rheinuferへ西進すると、食事・買い物・街歩きが逆戻りなくつながります。最初に日本人街で何を済ませるかを決めるのが要点です。
+
+雨ならKöと川沿いを短くし、強風時はRheinuferを無理に延ばしません。買い物が増えた日や歩行量を抑えたい同行者がいる日はMedienHafenを外し、旧市街から帰路へ切り替えます。

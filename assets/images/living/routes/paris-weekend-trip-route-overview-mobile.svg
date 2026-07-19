@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="720" viewBox="0 0 480 720" role="img" aria-labelledby="title desc">
+  <title id="title">パリ1泊2日の基本ルート（モバイル）</title>
+  <desc id="desc">到着駅と宿からMarais、Seineへ進みLouvreまたはOrsayの一館を選ぶ順序。読み順を優先した縦配置で、実線は基本ルート、破線は任意の分岐。縮尺は正確ではありません。</desc>
+  <defs>
+    <marker id="route-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#075b9a"/></marker>
+    <marker id="optional-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#147d75"/></marker>
+    <filter id="card-shadow" x="-15%" y="-20%" width="130%" height="150%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#12324a" flood-opacity="0.15"/></filter>
+  </defs>
+  <rect x="1" y="1" width="478" height="718" rx="18" fill="#f8fbfe" stroke="#a9c5dc" stroke-width="2"/>
+  <text x="24" y="40" fill="#062f55" font-family="system-ui, -apple-system, sans-serif" font-size="23" font-weight="800">パリ1泊2日 基本ルート</text>
+  <g transform="translate(25 68)" aria-hidden="true">
+    <line x1="0" y1="0" x2="34" y2="0" stroke="#075b9a" stroke-width="7" stroke-linecap="round"/>
+    <text x="44" y="6" fill="#405e72" font-family="system-ui, -apple-system, sans-serif" font-size="16">基本</text>
+    <line x1="128" y1="0" x2="162" y2="0" stroke="#147d75" stroke-width="5" stroke-dasharray="9 7" stroke-linecap="round"/>
+    <text x="172" y="6" fill="#405e72" font-family="system-ui, -apple-system, sans-serif" font-size="16">任意</text>
+  </g>
+  <g aria-hidden="true">
+    <path d="M240 174 L240 231" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
+    <path d="M240 299 L240 356" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
+    <path d="M240 424 L240 481" fill="none" stroke="#147d75" stroke-width="5" stroke-dasharray="12 10" stroke-linecap="round" marker-end="url(#optional-arrow)"/>
+    <path d="M240 424 L240 606" fill="none" stroke="#147d75" stroke-width="5" stroke-dasharray="12 10" stroke-linecap="round" marker-end="url(#optional-arrow)"/></g>
+  <g filter="url(#card-shadow)">
+    <rect x="36" y="106" width="408" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="56" cy="140" r="9" fill="#075b9a"/>
+    <text x="240" y="136" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="800"><tspan x="240" dy="0">到着駅 / 宿</tspan></text>
+    <text x="240" y="159" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="16">荷物を置く</text>
+  </g>
+<g filter="url(#card-shadow)">
+    <rect x="36" y="231" width="408" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="56" cy="265" r="9" fill="#075b9a"/>
+    <text x="240" y="261" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="800"><tspan x="240" dy="0">Marais</tspan></text>
+    <text x="240" y="284" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="16">初日の終点</text>
+  </g>
+<g filter="url(#card-shadow)">
+    <rect x="36" y="356" width="408" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="56" cy="390" r="9" fill="#075b9a"/>
+    <text x="240" y="386" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="800"><tspan x="240" dy="0">Seine</tspan></text>
+    <text x="240" y="409" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="16">川沿い</text>
+  </g>
+<g filter="url(#card-shadow)">
+    <rect x="36" y="481" width="408" height="68" rx="14" fill="#edf9f6" stroke="#4c9f96" stroke-width="2"/>
+    <circle cx="56" cy="515" r="9" fill="#147d75"/>
+    <text x="240" y="511" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="800"><tspan x="240" dy="0">Louvre</tspan></text>
+    <text x="240" y="534" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="16">一館を選ぶ</text>
+  </g>
+<g filter="url(#card-shadow)">
+    <rect x="36" y="606" width="408" height="68" rx="14" fill="#edf9f6" stroke="#4c9f96" stroke-width="2"/>
+    <circle cx="56" cy="640" r="9" fill="#147d75"/>
+    <text x="240" y="636" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="800"><tspan x="240" dy="0">Orsay</tspan></text>
+    <text x="240" y="659" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="16">一館を選ぶ</text>
+  </g>
+  <text x="456" y="695" text-anchor="end" fill="#526c7f" font-family="system-ui, -apple-system, sans-serif" font-size="16">概略図／縮尺は正確ではありません</text>
+</svg>

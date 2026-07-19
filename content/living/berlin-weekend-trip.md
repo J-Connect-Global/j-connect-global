@@ -33,12 +33,19 @@ official_sources:
   - title: "Berlin.de：環境ゾーン"
     url: "https://www.berlin.de/en/tourism/travel-information/1760452-2862820-environmental-zone.en.html"
 ---
-
 # ベルリン1泊2日｜Mitteの歴史軸と二日目を一つ選ぶモデルコース
 
 ベルリンが向くのは、都市の大きさを受け入れ、二日間で「政治・戦争・分断の歴史」と自分の関心一つを深掘りできる人です。王宮、美術館、壁、カフェ、蚤の市、Potsdamを全部回収したい人には週末では足りません。最初に決めるのは、**二日目を壁、Museum Island、地区散策のどれにするか**。一日目は全員共通でBerlin HbfからMitteを東へ流します。
 
 Reichstagドームへ入りたい場合だけ、そこを時刻固定点にします。[Bundestag公式](https://www.bundestag.de/en/visittheBundestag/dome/registration-245686)では事前登録と参加者情報が必要で、原本の写真付き身分証を求められます。予約がなければ外観を見て次へ進み、当日枠を待つためにMitte全体を止めません。
+
+## 位置関係と基本ルート
+
+![Berlin HbfからReichstag、Brandenburger Tor、Holocaust-Mahnmal、Unter den Linden、Museumsinselへ東進する順序](/assets/images/living/routes/berlin-weekend-trip-route-overview.svg "位置関係を把握するための概略図です。縮尺・所要時間は目安で、当日の経路は公式交通情報で確認してください。")
+
+[ハンブルク港へ西進する週末ルート](/germany/ja/living/hamburg-weekend-trip/)と比べ、歴史地点と博物館の選択を優先したい週末向けです。
+
+ドイツ側の出発・帰着列車は、共通の[DB Navigatorと列車種別の確認手順](/germany/ja/living/germany-train-travel-guide/#deutschlandticketで使える列車-使えない列車)で工事、列車種別、乗換を確認してから、この目的地固有の交通へ進みます。
 
 ## 一日目はHbfから東へ進み続ける
 
@@ -119,7 +126,17 @@ Mitteへ車を持ち込むと、駐車料金、ホテルの入出庫、イベン
 - **子ども・ベビーカー**：追悼施設では遊び場と分け、Tiergartenで動く時間を確保。おむつ替えは利用施設・駅の公式設備で確認する。
 - **妊娠中・高齢者**：駅構内の上下移動も歩行負荷に数え、二日目は地区横断ではなく一館か短い壁区間を選ぶ。
 
-## ベルリンで起きやすい失敗10件
+## 主要公式ページで旅程を固定する手順
+
+- **確認手順**：[Bundestagの見学案内](https://www.bundestag.de/en/visittheBundestag/dome/registration-245686)では見学種別を選び、`Online registration` から日付、参加者情報、集合・入口案内を確認します。ドーム見学と本会議傍聴は同じ枠ではないため、選んだプログラム名を予約確認メールでも照合します。
+- **確認手順**：[BVG Traffic news](https://www.bvg.de/en/connections/traffic-news)では利用日と路線を選び、`Disruptions`、代替交通、エレベーター情報を確認します。ブラウザ翻訳後も路線記号、駅名、工事期間は原文へ戻して照合します。
+
+ページ全体をブラウザ翻訳した場合も、日付、時刻、人数、券名、入口、運休期間は原文表示へ戻して照合してください。
+
+## 注意点のまとめ
+
+以下は読者の落ち度を挙げる一覧ではなく、出発前に順番を変えるだけで避けやすい状況です。同行者と共有し、当日は該当する項目だけを確認してください。
+
 
 1. 二日で「ベルリン全部」を見ようとする。
 2. Reichstagを予約なしで確実に入れると思う。
@@ -141,7 +158,10 @@ Mitteへ車を持ち込むと、駐車料金、ホテルの入出庫、イベン
 - [ ] Pergamonmuseum本館の閉館状況を確認した
 - [ ] Berlin Hbfへ戻る時刻と荷物回収を旅程に入れた
 
-## 次に読むガイド
+ドイツ側の駅・宿・出発時に確認が必要なら、[観光で使える短いドイツ語フレーズ](/germany/ja/learn-german/travel-german-phrases/#予約-集合場所-入場口を確認する)を画面に開いておくと、番線、予約、集合場所をその場で照合できます。
 
-- OVpayと予約施設一つで組む都市なら[アムステルダム週末旅行](/germany/ja/living/amsterdam-weekend-trip/)
-- 港と徒歩圏を組み合わせるなら[ハンブルク週末旅行](/germany/ja/living/hamburg-weekend-trip/)
+## まとめ
+
+ベルリンは、初日にHbfからMuseumsinselまで東へ進み、二日目を壁・博物館・地区散策の一つに絞ると広さを管理できます。Reichstagの予約が取れた場合は、その時刻を唯一の固定点にします。
+
+雨天は屋外の記念地点を短くして一館へ寄せ、歩行制約がある場合は駅のエレベーターと乗換距離を優先します。すべてを見るより、方向を増やさない判断が週末の満足度を保ちます。

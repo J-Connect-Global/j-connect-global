@@ -31,12 +31,19 @@ official_sources:
   - title: "Batorama：乗船・券売案内"
     url: "https://www.batorama.com/en/informations/access-and-contact"
 ---
-
 # ドイツからストラスブール1泊2日｜鉄道・P+R・トラム実用ガイド
 
 ストラスブールが向くのは、ドイツから一泊で国境を越え、アルザスの旧市街、フランスの食事、トラムのある都市を無理なく体験したい人です。車で中心部の全地点へ乗り付けたい人、Petite France、大聖堂、船、欧州地区を日帰りで全部詰めたい人には向きません。
 
 最初に固定する判断は**到着方法**です。鉄道ならGare de Strasbourg、車なら宿の確実な駐車場かCTSのP+R、Kehl側からなら国境を越えるトラムを起点にします。中心部へ着いた後は徒歩とトラムに切り替え、車を動かし続けません。
+
+## 位置関係と基本ルート
+
+![Gare CentraleまたはP+RからPetite France、Grande Île、Cathédrale周辺、川沿いと帰路へ進む順序](/assets/images/living/routes/strasbourg-weekend-trip-route-overview.svg "位置関係を把握するための概略図です。縮尺・所要時間は目安で、当日の経路は公式交通情報で確認してください。")
+
+[パリで川沿いと一館に絞る週末案](/germany/ja/living/paris-weekend-trip/)と比べ、ドイツからの短い鉄道またはP+R到着で旧市街を歩きたい場合に向きます。
+
+ドイツ側の出発・帰着列車は、共通の[DB Navigatorと列車種別の確認手順](/germany/ja/living/germany-train-travel-guide/#db-navigatorで経路-列車種別-工事を確認する)で工事、列車種別、乗換を確認してから、この目的地固有の交通へ進みます。
 
 ## 国境では身分証と滞在資格を分けて考える
 
@@ -125,7 +132,17 @@ Eurométropole de Strasbourgには低排出ゾーンがあります。[市の公
 - **寒さ・強風**：船と塔を外し、Grande Îleの短い歩行＋屋内へ。
 - **到着遅延**：Petite Franceか大聖堂のどちらか一つを初日、残りを翌朝へ。
 
-## 国境週末で起きやすい失敗10件
+## 主要公式ページで旅程を固定する手順
+
+- **確認手順**：[Batorama Access & Contact](https://www.batorama.com/en/informations/access-and-contact)では `Batorama piers` を開き、訪問日の出航、A・B・Cの桟橋、乗船地点を確認します。予約確認の時刻と桟橋名を原文で照合し、大聖堂前の店舗と実際の乗り場を混同しません。
+- **確認手順**：[CTS Park-and-ride](https://cts-strasbourg.eu/en/know-us/our-network/parkings/Park-and-ride/)では利用するP+Rを選び、アクセス、営業時間、含まれる交通条件を確認します。車両人数と有効日を購入画面で照合し、中心部の一般駐車券と同じ扱いにしません。
+
+ページ全体をブラウザ翻訳した場合も、日付、時刻、人数、券名、入口、運休期間は原文表示へ戻して照合してください。
+
+## 注意点のまとめ
+
+以下は読者の落ち度を挙げる一覧ではなく、出発前に順番を変えるだけで避けやすい状況です。同行者と共有し、当日は該当する項目だけを確認してください。
+
 
 1. Schengen内だから旅券・IDが不要と思う。
 2. ドイツの在留カードだけで非EU市民の旅行書類が完結すると思う。
@@ -148,7 +165,10 @@ Eurométropole de Strasbourgには低排出ゾーンがあります。[市の公
 - [ ] 船か塔の予約を一つだけ優先した
 - [ ] 日曜・祝日の食事と帰路を前夜までに確認する
 
-## 次の週末候補
+ドイツ側の駅・宿・出発時に確認が必要なら、[観光で使える短いドイツ語フレーズ](/germany/ja/learn-german/travel-german-phrases/#駅でホーム-乗換-遅延を確認する)を画面に開いておくと、番線、予約、集合場所をその場で照合できます。
 
-- OVpayとP+Rの別ルールを比較するなら[アムステルダム週末旅行](/germany/ja/living/amsterdam-weekend-trip/)
-- 日帰りで大聖堂と旧市街へ行くなら[アーヘン日帰り旅行](/germany/ja/living/aachen-day-trip/)
+## まとめ
+
+ストラスブールは、GareまたはP+RからPetite France、Grande Île、大聖堂周辺へ進むと、国境週末を一方向で組めます。鉄道と車の入口を混ぜず、船か大聖堂の予約を一つだけ固定するのが重要です。
+
+雨や混雑が強い日は川沿いを短くし、歩行制約がある場合は石畳区間とトラム停留所を先に確認します。日曜や祝日は食事と帰路を早めに確定し、開いている施設を探して旧市街を往復しないようにします。

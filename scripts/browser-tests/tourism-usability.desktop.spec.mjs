@@ -14,6 +14,10 @@ const representativeRoutes = [
   "paris-weekend-trip"
 ];
 
+const routeMedia = (slug) => slug === 'bremen-weekend-trip'
+  ? { src: '/assets/img/living/bremen-city-guide-map-final.webp', width: 1536, height: 1024 }
+  : { src: `/assets/images/living/routes/${slug}-route-overview.svg`, width: 820, height: 520 };
+
 test.beforeEach(async ({ page }) => {
   installRuntimeDiagnostics(page);
 });
@@ -28,12 +32,13 @@ for (const slug of representativeRoutes) {
     await expect(page.locator(".article-sidebar")).toBeVisible();
     await expect(page.locator(".article-mobile-toc")).toBeHidden();
 
-    const routeImage = page.locator(`img[src$="/${slug}-route-overview.svg"]`);
+    const media = routeMedia(slug);
+    const routeImage = page.locator(`img[src="${media.src}"]`);
     await routeImage.scrollIntoViewIfNeeded();
     await expect(routeImage).toBeVisible();
-    await expect.poll(() => routeImage.evaluate((image) => image.naturalWidth)).toBe(820);
-    await expect(routeImage).toHaveAttribute("width", "820");
-    await expect(routeImage).toHaveAttribute("height", "520");
+    await expect.poll(() => routeImage.evaluate((image) => image.naturalWidth)).toBe(media.width);
+    await expect(routeImage).toHaveAttribute("width", String(media.width));
+    await expect(routeImage).toHaveAttribute("height", String(media.height));
 
     for (const selector of [".official-source-section", ".article-main > .related-section"]) {
       const list = page.locator(`${selector} ul`).first();

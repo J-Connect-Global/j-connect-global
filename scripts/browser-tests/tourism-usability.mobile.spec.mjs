@@ -13,6 +13,19 @@ const representativeRoutes = [
   "paris-weekend-trip"
 ];
 
+const routeMedia = (slug, viewportWidth) => {
+  if (slug === 'bremen-weekend-trip') {
+    return { locatorSrc: '/assets/img/living/bremen-city-guide-map-final.webp', expectedSource: 'bremen-city-guide-map-final.webp', width: 1536, height: 1024 };
+  }
+  const usesMobileSource = viewportWidth <= 600;
+  return {
+    locatorSrc: `/assets/images/living/routes/${slug}-route-overview.svg`,
+    expectedSource: usesMobileSource ? `${slug}-route-overview-mobile.svg` : `${slug}-route-overview.svg`,
+    width: usesMobileSource ? 480 : 820,
+    height: usesMobileSource ? 720 : 520
+  };
+};
+
 test.beforeEach(async ({ page }) => {
   installRuntimeDiagnostics(page);
 });
@@ -27,22 +40,15 @@ for (const slug of representativeRoutes) {
     await expect(page.locator(".article-sidebar")).toBeHidden();
     await expect(page.locator(".article-mobile-toc")).toBeVisible();
 
-    const routeImage = page.locator(`img[src$="/${slug}-route-overview.svg"]`);
+    const media = routeMedia(slug, page.viewportSize()?.width || 360);
+    const routeImage = page.locator(`img[src="${media.locatorSrc}"]`);
     await routeImage.scrollIntoViewIfNeeded();
     await expect(routeImage).toBeVisible();
-    const usesMobileSource = (page.viewportSize()?.width || 360) <= 600;
-    const expectedSource = usesMobileSource
-      ? `${slug}-route-overview-mobile.svg`
-      : `${slug}-route-overview.svg`;
     await expect.poll(() => routeImage.evaluate((image) => image.currentSrc)).toContain(
-      expectedSource
+      media.expectedSource
     );
-    await expect.poll(() => routeImage.evaluate((image) => image.naturalWidth)).toBe(
-      usesMobileSource ? 480 : 820
-    );
-    await expect.poll(() => routeImage.evaluate((image) => image.naturalHeight)).toBe(
-      usesMobileSource ? 720 : 520
-    );
+    await expect.poll(() => routeImage.evaluate((image) => image.naturalWidth)).toBe(media.width);
+    await expect.poll(() => routeImage.evaluate((image) => image.naturalHeight)).toBe(media.height);
 
     for (const selector of [".official-source-section", ".article-main > .related-section"]) {
       const list = page.locator(`${selector} ul`).first();

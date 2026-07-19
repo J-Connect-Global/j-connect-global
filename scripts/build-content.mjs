@@ -603,6 +603,9 @@ ${title ? `  <figcaption>${escapeHtml(title)}</figcaption>` : ''}
 }
 
 const INLINE_IMAGE_VARIANTS = Object.freeze({
+  '/assets/img/living/bremen-city-guide-map-final.webp': {
+    width: 1536, height: 1024
+  },
   '/assets/images/learn-german/hospital-appointment-prep.webp': {
     small: '/assets/images/learn-german/hospital-appointment-prep-480.webp', width: 820, height: 461
   },
@@ -629,8 +632,7 @@ function renderInlineArticleImage(src, alt) {
   const safeAlt = escapeAttribute(alt);
   if (variant) {
     return `<picture>
-    <source media="(max-width: 600px)" srcset="${escapeAttribute(variant.small)}">
-    <img src="${safeSrc}" alt="${safeAlt}" width="${variant.width}" height="${variant.height}" loading="lazy" decoding="async">
+${variant.small ? `    <source media="(max-width: 600px)" srcset="${escapeAttribute(variant.small)}">\n` : ''}    <img src="${safeSrc}" alt="${safeAlt}" width="${variant.width}" height="${variant.height}" loading="lazy" decoding="async">
   </picture>`;
   }
 

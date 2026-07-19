@@ -8,16 +8,10 @@
   --header-brand:var(--color-primary, #004f98);
   --header-soft:var(--color-primary-soft, #eaf4ff);
   --header-shadow:0 10px 28px rgba(15, 35, 58, .06);
-  --header-font-sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;
   --container:1220px;
   box-sizing:border-box;
   font-family:'Inter','Noto Sans JP',sans-serif;
   line-height:1.6;
-}
-
-body.portal3-home .site-header,
-body.portal3-home .page-footer{
-  font-family:var(--header-font-sans);
 }
 
 body .site-header{

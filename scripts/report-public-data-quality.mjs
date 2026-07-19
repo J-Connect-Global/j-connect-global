@@ -1,8 +1,24 @@
 import { appendFile, readFile, writeFile } from "node:fs/promises";
+import { createRequire } from "node:module";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+
+const require = createRequire(import.meta.url);
+const DIRECTORY_CAPABILITIES = require("../assets/js/directory-capabilities.js");
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const baselinePath = path.join(rootDir, "content", "quality-baselines", "public-data-quality.json");
+const directoryDatasetKeys = new Set(["eat", "shopping", "medical"]);
+
+const directoryCapabilityLabels = {
+  rating_filter: "rating filter",
+  review_filter: "review-count filter",
+  price_filter: "price-tier filter",
+  map_view: "map view",
+  detail_modal: "detail modal",
+  region_filter: "region filter",
+  category_filter: "category filter",
+  detail_category_filter: "detail-category filter"
+};
 
 const datasets = [
   {
@@ -90,7 +106,10 @@ export async function buildPublicDataQualityReport({ root = rootDir } = {}) {
       generated_count: Number(validation.generated_count ?? payload.items.length),
       excluded_by_reason: validation.excluded_by_reason || {},
       manual_correction_safe_ids: validation.manual_correction_safe_ids || {},
-      missing_fields: missingFields(payload.items, definition.fields)
+      missing_fields: missingFields(payload.items, definition.fields),
+      directory_capabilities: directoryDatasetKeys.has(definition.key)
+        ? DIRECTORY_CAPABILITIES.calculate(payload.items)
+        : null
     });
   }
   return report;
@@ -133,6 +152,29 @@ export function qualityMarkdown(report, errors = []) {
   for (const dataset of report.datasets) {
     const exclusions = Object.entries(dataset.excluded_by_reason).filter(([, count]) => Number(count) > 0).map(([reason, count]) => `${reason}: ${count}`).join(", ") || "—";
     lines.push(`| ${dataset.dataset} | ${dataset.public_count} | ${dataset.source_count} | ${dataset.explicitly_active_count} | ${dataset.eligible_count} | ${dataset.generated_count} | ${exclusions} |`);
+  }
+  const directoryReports = report.datasets.filter((dataset) => dataset.directory_capabilities);
+  if (directoryReports.length) {
+    const thresholds = directoryReports[0].directory_capabilities.thresholds;
+    const coverageCell = (coverage) => `${coverage.available}/${coverage.total} (${coverage.percent.toFixed(1)}%)`;
+    const labelsFor = (capabilities, enabled) => Object.entries(capabilities)
+      .filter(([, value]) => value === enabled)
+      .map(([key]) => directoryCapabilityLabels[key] || key)
+      .join(", ") || "—";
+
+    lines.push(
+      "",
+      "### Directory feature coverage",
+      "",
+      `Rating, review-count, price-tier, and map controls require at least ${thresholds.minimum_representative_values} populated values and ${(thresholds.representative_coverage * 100).toFixed(0)}% coverage. Taxonomy filters require ${thresholds.minimum_distinct_filter_options} meaningful options; map coordinates come only from the committed public snapshot.`,
+      "",
+      "| Dataset | Rating | Reviews | Price | Coordinates | Description | Phone | Hours | Detail-rich | Enabled | Withheld |",
+      "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |"
+    );
+    for (const dataset of directoryReports) {
+      const { coverage, capabilities } = dataset.directory_capabilities;
+      lines.push(`| ${dataset.dataset} | ${coverageCell(coverage.rating)} | ${coverageCell(coverage.reviews)} | ${coverageCell(coverage.price)} | ${coverageCell(coverage.coordinates)} | ${coverageCell(coverage.description)} | ${coverageCell(coverage.phone)} | ${coverageCell(coverage.opening_hours)} | ${coverageCell(coverage.detail)} | ${labelsFor(capabilities, true)} | ${labelsFor(capabilities, false)} |`);
+    }
   }
   lines.push("", "### Known missing public fields", "", "| Dataset | Field | Missing |", "| --- | --- | ---: |");
   for (const dataset of report.datasets) {

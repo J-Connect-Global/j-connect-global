@@ -226,10 +226,13 @@ jobs:
         run: node scripts/build-pages-artifact.mjs --site-dir _site
 
       - name: Validate generated public details
-        run: node scripts/test-public-detail-generation.mjs --site-dir _site
+        run: |
+          node scripts/test-public-detail-generation.mjs --site-dir _site
+          node scripts/test-production-seo.mjs
 
       - name: Validate public data quality and image budget
         run: |
+          node scripts/test-directory-capabilities.mjs
           node scripts/report-public-data-quality.mjs --check-baseline --github-summary
           node scripts/image-asset-budget.mjs --check --github-summary
 

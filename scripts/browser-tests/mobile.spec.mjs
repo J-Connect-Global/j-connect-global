@@ -3,6 +3,7 @@ import {
   activateDarkMode,
   assertCommunityCards,
   assertArticleHeroFrame,
+  assertNoHorizontalOverflow,
   assertNoIndex,
   assertNoRuntimeDiagnostics,
   assertPublicJobs,
@@ -85,6 +86,27 @@ test("mobile article hero frame remains a readable 16:9 crop", async ({ page }) 
     ? { minRatio: 1.95, maxRatio: 2.05 }
     : { minRatio: 1.72, maxRatio: 1.84 });
   await assertRouteReady(page);
+});
+
+test("mobile root 404 keeps every recovery destination reachable without overflow", async ({ page }) => {
+  const response = await page.goto("/mobile-missing-route/", { waitUntil: "load" });
+  expect(response, "missing route returned no main-document response").not.toBeNull();
+  expect(response.status()).toBe(404);
+  await expect(page.locator("main h1")).toHaveText("ページが見つかりません");
+  await assertNoIndex(page);
+  for (const href of [
+    "/germany/ja/",
+    "/germany/ja/search/",
+    "/germany/ja/community/",
+    "/germany/ja/living/",
+    "/germany/ja/jobs/",
+    "/germany/ja/events/",
+    "/germany/ja/learn-german/",
+    "/germany/ja/contact/"
+  ]) {
+    await expect(page.locator(`main .not-found-links a[href="${href}"]`)).toBeVisible();
+  }
+  await assertNoHorizontalOverflow(page);
 });
 
 test("mobile Community detail renders the requested fixture", async ({ page }) => {

@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { buildPublicDataQualityReport, baselineFromReport, validateQualityBaseline } from "./report-public-data-quality.mjs";
+import { buildPublicDataQualityReport, baselineFromReport, qualityMarkdown, validateQualityBaseline } from "./report-public-data-quality.mjs";
 
 const report = await buildPublicDataQualityReport();
 assert.deepEqual(report.datasets.map((dataset) => dataset.dataset), ["community", "jobs", "eat", "shopping", "medical"]);
@@ -9,6 +9,10 @@ assert.equal(eat.missing_fields.official_url.count, 5, "Eat official URL aliases
 assert.equal(eat.missing_fields.last_reviewed.count, 0, "Eat review date aliases were not evaluated with anyOf semantics");
 assert.equal(shopping.missing_fields.official_url.count, 14, "Shopping official URL aliases were not evaluated with anyOf semantics");
 assert.equal(shopping.missing_fields.last_reviewed.count, 0, "Shopping review date aliases were not evaluated with anyOf semantics");
+assert.equal(eat.directory_capabilities.coverage.coordinates.percent, 47.6, "Eat coordinate coverage must be reported from the committed snapshot");
+assert.equal(eat.directory_capabilities.capabilities.map_view, false, "Eat map availability must respect its coverage threshold");
+assert.equal(shopping.directory_capabilities.capabilities.rating_filter, false, "Shopping rating availability must respect its coverage threshold");
+assert.match(qualityMarkdown(report), /### Directory feature coverage/, "The GitHub Summary must include directory capability coverage");
 
 const baseline = baselineFromReport(report);
 assert.deepEqual(validateQualityBaseline(report, baseline), [], "a matching quality baseline must pass");

@@ -3,7 +3,7 @@ import { access, mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promise
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { buildJobPosting, generatePublicDetails, isIndexableJob } from "./generate-public-details.mjs";
+import { buildJobPosting, generatePublicDetails, isIndexableJob, jobSitemapLastmod } from "./generate-public-details.mjs";
 import { publicDetailOutputPath, publicDetailUrl } from "./public-detail-routes.mjs";
 import { analyzeContentFreshness, freshnessMarkdown } from "./report-content-freshness.mjs";
 
@@ -65,7 +65,7 @@ async function createFixture() {
   await writeFile(path.join(siteDir, "index.html"), "<!doctype html><meta name=robots content='index, follow'><h1>Home</h1>", "utf8");
   await mkdir(path.join(siteDir, "assets", "js"), { recursive: true });
   await writeFile(path.join(siteDir, "assets", "js", "search-index.js"), "window.JCONNECT_SEARCH_INDEX = [];\n", "utf8");
-  await writeFile(path.join(siteDir, "sitemap.xml"), "<?xml version=\"1.0\"?><urlset><url><loc>https://j-connect-global.com/</loc></url></urlset>\n", "utf8");
+  await writeFile(path.join(siteDir, "sitemap.xml"), "<?xml version=\"1.0\"?><urlset><url><loc>https://j-connect-global.com/</loc><lastmod>2026-07-01</lastmod></url></urlset>\n", "utf8");
   return siteDir;
 }
 
@@ -74,10 +74,57 @@ function extractJsonLd(html) {
   return match ? JSON.parse(match[1]) : null;
 }
 
+function sitemapEntries(xml) {
+  return [...xml.matchAll(/<url>\s*([\s\S]*?)<\/url>/g)].map((match) => {
+    const block = match[1];
+    return {
+      loc: block.match(/<loc>([\s\S]*?)<\/loc>/)?.[1]?.trim() || "",
+      lastmod: block.match(/<lastmod>([\s\S]*?)<\/lastmod>/)?.[1]?.trim() || ""
+    };
+  });
+}
+
+function sitemapEntry(entries, loc) {
+  return entries.find((entry) => entry.loc === loc);
+}
+
 async function assertProductionArtifact(siteDir) {
   const communityPayload = JSON.parse(await readFile(path.join(siteDir, "assets", "data", "community", "posts.json"), "utf8"));
   const jobsPayload = JSON.parse(await readFile(path.join(siteDir, "assets", "data", "jobs", "jobs.json"), "utf8"));
   const sitemap = await readFile(path.join(siteDir, "sitemap.xml"), "utf8");
+  const entries = sitemapEntries(sitemap);
+  const sourceEntries = sitemapEntries(await readFile(path.join(rootDir, "sitemap.xml"), "utf8"));
+  for (const entry of sourceEntries) {
+    const route = new URL(entry.loc).pathname;
+    if (/^\/germany\/ja\/jobs\/[^/]+\/$/.test(route) && route !== "/germany/ja/jobs/posting/") continue;
+    assert.deepEqual(sitemapEntry(entries, entry.loc), entry, `artifact must preserve static sitemap entry ${entry.loc}`);
+  }
+  const notFound = await readFile(path.join(siteDir, "404.html"), "utf8");
+  const notFoundMain = notFound.match(/<main\b[^>]*>[\s\S]*?<\/main>/i)?.[0] || "";
+  assert.match(notFound, /<html\b[^>]*\blang="ja"/i);
+  assert.match(notFound, /<meta name="viewport"/i);
+  assert.match(notFound, /<meta name="robots" content="noindex, follow">/i);
+  assert.match(notFound, /<title>ページが見つかりません\s*\|\s*J-Connect Germany<\/title>/);
+  assert.equal((notFound.match(/<h1(?:\s|>)/gi) || []).length, 1, "root 404 page must have one recovery heading");
+  for (const href of [
+    "/germany/ja/",
+    "/germany/ja/search/",
+    "/germany/ja/community/",
+    "/germany/ja/living/",
+    "/germany/ja/jobs/",
+    "/germany/ja/events/",
+    "/germany/ja/learn-german/",
+    "/germany/ja/contact/"
+  ]) {
+    assert.match(notFoundMain, new RegExp(`href="${href}"`));
+  }
+  assert.match(notFound, /<footer class="page-footer">/);
+  assert.match(notFound, /class="footer-logo"[^>]*\bwidth="900"[^>]*\bheight="217"/);
+  assert.match(notFound, /data-jconnect-theme-init/);
+  assert.match(notFound, /data-theme-toggle/);
+  assert.equal(/<link\b[^>]*\brel=["']canonical["']/i.test(notFound), false, "root 404 must not canonicalize to a live page");
+  assert.equal(/http-equiv=["']refresh|window\.location\.(?:replace|assign)|location\.href\s*=/i.test(notFound), false, "root 404 must not redirect away");
+  assert.equal(Boolean(sitemapEntry(entries, "https://j-connect-global.com/404.html")), false, "root 404 must stay out of the sitemap");
   for (const post of communityPayload.items) {
     const route = publicDetailUrl("community", post.id || post.post_id);
     assert.equal(post.detail_url, route);
@@ -94,9 +141,11 @@ async function assertProductionArtifact(siteDir) {
     assert.equal(item.detail_url, route);
     const html = await readFile(path.join(siteDir, ...publicDetailOutputPath("jobs", route, item.id || item.job_id).split("/")), "utf8");
     const shouldIndex = isIndexableJob(item);
+    const entry = sitemapEntry(entries, `https://j-connect-global.com${route}`);
     assert.equal(/<meta name="robots" content="index, follow">/.test(html), shouldIndex);
     assert.equal(Boolean(extractJsonLd(html)), Boolean(buildJobPosting(item, `https://j-connect-global.com${route}`)));
-    assert.equal(sitemap.includes(`https://j-connect-global.com${route}`), shouldIndex);
+    assert.equal(Boolean(entry), shouldIndex);
+    if (shouldIndex) assert.equal(entry.lastmod, jobSitemapLastmod(item));
     assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1);
     assert.ok(html.indexOf("<h1") < html.lastIndexOf("<script src="), "Jobs SSR content must precede client JavaScript");
     assert.match(html, /<meta name="twitter:description"/);
@@ -120,11 +169,12 @@ async function runFixtureTests() {
     const incomplete = job("job-incomplete", {
       apply_url: "", application_url: "", apply_method: "", salary_unit: "", salary_currency: ""
     });
+    const future = job("job-future", { published_at: "2026-07-18T10:00:00.000Z" });
     const expired = job("job-expired", { expires_at: "2026-07-01T00:00:00.000Z" });
     await writeJson(path.join(siteDir, "assets", "data", "community", "posts.json"), payload([safeCommunity]));
-    await writeJson(path.join(siteDir, "assets", "data", "jobs", "jobs.json"), payload([indexable, incomplete]));
+    await writeJson(path.join(siteDir, "assets", "data", "jobs", "jobs.json"), payload([indexable, incomplete, future]));
     const result = await generatePublicDetails({ siteDir, now: fixedNow });
-    assert.deepEqual({ community: result.community, jobs: result.jobs, indexableJobs: result.indexableJobs }, { community: 1, jobs: 2, indexableJobs: 2 });
+    assert.deepEqual({ community: result.community, jobs: result.jobs, indexableJobs: result.indexableJobs }, { community: 1, jobs: 3, indexableJobs: 2 });
 
     const communityHtml = await readFile(path.join(siteDir, "germany", "ja", "community", "posts", "post-safe", "index.html"), "utf8");
     assert.ok(!communityHtml.includes("<script>alert(1)</script>"));
@@ -151,10 +201,29 @@ async function runFixtureTests() {
     assert.ok(!incompleteHtml.includes("公開できる応募方法はありません"));
     assert.ok(!incompleteHtml.includes("検索エンジンへの掲載対象外"));
 
+    const futureHtml = await readFile(path.join(siteDir, "germany", "ja", "jobs", "job-future", "index.html"), "utf8");
+    assert.match(futureHtml, /<meta name="robots" content="noindex, follow">/);
+
     const sitemap = await readFile(path.join(siteDir, "sitemap.xml"), "utf8");
-    assert.equal((sitemap.match(/https:\/\/j-connect-global\.com\/germany\/ja\/jobs\/job-safe\//g) || []).length, 1);
-    assert.ok(sitemap.includes("job-incomplete"));
+    const entries = sitemapEntries(sitemap);
+    assert.deepEqual(sitemapEntry(entries, "https://j-connect-global.com/"), { loc: "https://j-connect-global.com/", lastmod: "2026-07-01" });
+    assert.deepEqual(
+      entries.filter((entry) => entry.loc.startsWith("https://j-connect-global.com/germany/ja/jobs/")).map((entry) => entry.loc),
+      ["https://j-connect-global.com/germany/ja/jobs/job-incomplete/", "https://j-connect-global.com/germany/ja/jobs/job-safe/"]
+    );
+    assert.equal(sitemapEntry(entries, "https://j-connect-global.com/germany/ja/jobs/job-safe/")?.lastmod, "2026-07-11");
+    assert.equal(sitemapEntry(entries, "https://j-connect-global.com/germany/ja/jobs/job-incomplete/")?.lastmod, "2026-07-11");
+    assert.equal(sitemapEntry(entries, "https://j-connect-global.com/germany/ja/jobs/job-future/"), undefined);
     assert.ok(!sitemap.includes("community/posts"));
+    assert.equal(jobSitemapLastmod({ last_modified_at: "2026-07-15", updated_at: "2026-07-14", published_at: "2026-07-13", posted_at: "2026-07-12", created_at: "2026-07-11" }), "2026-07-15");
+    assert.equal(jobSitemapLastmod({ updated_at: "2026-07-14", published_at: "2026-07-13", posted_at: "2026-07-12", created_at: "2026-07-11" }), "2026-07-14");
+    assert.equal(jobSitemapLastmod({ published_at: "2026-07-13", posted_at: "2026-07-12", created_at: "2026-07-11" }), "2026-07-13");
+    assert.equal(jobSitemapLastmod({ posted_at: "2026-07-12", created_at: "2026-07-11" }), "2026-07-12");
+    assert.equal(jobSitemapLastmod({ created_at: "2026-07-11" }), "2026-07-11");
+
+    await writeJson(path.join(siteDir, "assets", "data", "jobs", "jobs.json"), payload([future, incomplete, indexable]));
+    await generatePublicDetails({ siteDir, now: fixedNow });
+    assert.equal(await readFile(path.join(siteDir, "sitemap.xml"), "utf8"), sitemap, "sitemap ordering must be stable when Jobs JSON order changes");
 
     await writeJson(path.join(siteDir, "assets", "data", "jobs", "jobs.json"), payload([expired]));
     await assert.rejects(() => generatePublicDetails({ siteDir, now: fixedNow }), /expired/);

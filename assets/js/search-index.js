@@ -110,8 +110,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "買い物",
-    "description": "ドイツ生活で使える店舗、サービス、買い物スポットを探すディレクトリページです。",
+    "title": "デュッセルドルフの買い物・サービス",
+    "description": "デュッセルドルフの公開済み買い物・サービス情報を、カテゴリと住所の目安から確認できるディレクトリページです。",
     "url": "/germany/ja/shopping/",
     "category": "生活・手続き",
     "tags": [
@@ -121,8 +121,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "医療",
-    "description": "ドイツで病院、クリニック、緊急時の連絡先を探すための医療ディレクトリページです。",
+    "title": "医療・緊急の公式案内",
+    "description": "ドイツで医療につながる際の緊急番号、診療時間外、医師・専門医、薬局の公式確認先をまとめた案内です。現在、公開中の医療機関ディレクトリはありません。",
     "url": "/germany/ja/medical/",
     "category": "生活・手続き",
     "tags": [

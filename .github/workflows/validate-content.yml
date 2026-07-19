@@ -63,7 +63,9 @@ jobs:
         run: node scripts/test-public-data-pipeline.mjs
 
       - name: Report public data quality and reject regressions
-        run: node scripts/report-public-data-quality.mjs --check-baseline --github-summary
+        run: |
+          node scripts/test-directory-capabilities.mjs
+          node scripts/report-public-data-quality.mjs --check-baseline --github-summary
 
       - name: Enforce image asset budget
         run: node scripts/image-asset-budget.mjs --check --github-summary
@@ -93,6 +95,7 @@ jobs:
         run: |
           node scripts/build-pages-artifact.mjs --site-dir _site
           node scripts/test-public-detail-generation.mjs --site-dir _site
+          node scripts/test-production-seo.mjs
           node scripts/validate-production-seo.mjs --site-dir _site --github-summary
 
       - name: Install Chromium for runtime smoke tests

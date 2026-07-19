@@ -32,6 +32,14 @@ Running the content build and layout application updates:
 
 Search and sitemap are governed by the static page registry plus the Living, Events, and Learn German article registries. Retired routes such as `/germany/ja/guides/` must stay out of search, sitemap, and emitted internal links.
 
+### Sitemap ownership
+
+`scripts/build-content.mjs` owns the committed source `/sitemap.xml`: static JA registry pages and published editorial articles, including their registry-derived `lastmod` values. Do not add mutable Jobs or Community detail URLs to that source file by hand.
+
+`scripts/build-pages-artifact.mjs` copies the source sitemap and then calls `scripts/generate-public-details.mjs`. That artifact-only pass preserves every static sitemap entry and its `lastmod`, removes generated Community and stale Jobs detail entries, and appends only canonical `index, follow` Jobs detail pages. Jobs `lastmod` uses this exact priority: `last_modified_at`, `updated_at`, `published_at`, `posted_at`, then `created_at`. Community details, noindex forms and management pages, inactive or expired Jobs, legacy routes, and stale sample pages remain out of the artifact sitemap.
+
+The production SEO validator requires every canonical Japanese `index, follow` artifact page to be present in the sitemap unless it appears in the narrow documented exclusion map in `scripts/validate-production-seo.mjs`. Keep that map empty unless there is a reviewed, specific reason for an exception.
+
 Generated article pages include:
 
 - Shared J-Connect header/footer and CSS from `/templates/layout/ja-header.html` and `/templates/layout/ja-footer.html`.

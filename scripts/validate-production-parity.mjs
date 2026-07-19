@@ -162,10 +162,12 @@ function validateHomeEventBadges(html, label) {
 
 function validateMedicalMarkers(html, label) {
   for (const requiredText of [
-    '医療上の助言や診断ではありません',
-    '緊急時は112',
+    '医療上の助言や診断',
+    '救急番号 <strong>112</strong>',
+    '116117の医師・心理療法士検索',
+    '薬局の緊急サービス',
   ]) {
-    if (!html.includes(requiredText)) fail(`${label} missing Medical trust copy: ${requiredText}`);
+    if (!html.includes(requiredText)) fail(`${label} missing Medical official-guide copy: ${requiredText}`);
   }
 }
 

@@ -20,14 +20,14 @@
   </script>
 <script src="/assets/js/site-identity.js"></script>
 <title>グルメ・飲食 | ドイツの日本食・レストラン情報 | J-Connect Germany</title>
-  <meta name="description" content="ドイツの日本食、ラーメン、カフェ、レストラン情報を日本語で整理。地域、カテゴリ、評価、価格帯、地図リンクから飲食店を探せます。" />
+  <meta name="description" content="ドイツの掲載中の日本食、ラーメン、カフェ、レストラン情報を日本語で整理。カテゴリ、住所の目安、価格帯、公式サイト・地図リンクを確認できます。" />
   <meta name="theme-color" content="#f4f8fc" />
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/eat/" />
   <link rel="alternate" hreflang="ja" href="https://j-connect-global.com/germany/ja/eat/">
   <link rel="alternate" hreflang="x-default" href="https://j-connect-global.com/germany/ja/eat/">
   <meta property="og:title" content="グルメ・飲食 | ドイツの日本食・レストラン情報 | J-Connect Germany">
-  <meta property="og:description" content="ドイツの日本食、ラーメン、カフェ、レストラン情報を日本語で整理。地域、カテゴリ、評価、価格帯、地図リンクから飲食店を探せます。">
+  <meta property="og:description" content="ドイツの掲載中の日本食、ラーメン、カフェ、レストラン情報を日本語で整理。カテゴリ、住所の目安、価格帯、公式サイト・地図リンクを確認できます。">
   <meta property="og:url" content="https://j-connect-global.com/germany/ja/eat/">
   <meta property="og:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <meta property="og:type" content="website">
@@ -35,7 +35,7 @@
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="グルメ・飲食 | ドイツの日本食・レストラン情報 | J-Connect Germany">
-  <meta name="twitter:description" content="ドイツの日本食、ラーメン、カフェ、レストラン情報を日本語で整理。地域、カテゴリ、評価、価格帯、地図リンクから飲食店を探せます。">
+  <meta name="twitter:description" content="ドイツの掲載中の日本食、ラーメン、カフェ、レストラン情報を日本語で整理。カテゴリ、住所の目安、価格帯、公式サイト・地図リンクを確認できます。">
   <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
 
@@ -152,9 +152,9 @@
     <div class="hero-box jc-directory-hero-box">
       <div class="eyebrow"><span class="eyebrow-dot"></span>グルメ・飲食ガイド</div>
       <div class="jc-directory-breadcrumb"><a href="/germany/ja/living/">生活・手続き</a><span>食べる</span></div>
-      <h1>飲食店を地域・カテゴリから探す</h1>
+      <h1>掲載中の飲食店をカテゴリ・価格から探す</h1>
       <p>
-        レストラン、カフェ、専門店などをカテゴリ・地域・価格・評価から確認できます。
+        店舗名、カテゴリ、住所の目安、価格、公式サイト・地図リンク（ある場合）を確認できます。営業時間や予約条件は公式情報でご確認ください。
       </p>
     </div>
   </section>
@@ -163,7 +163,7 @@
     <div class="view-toggle" role="tablist" aria-label="表示切替">
       <button id="cardViewBtn" class="view-btn active" type="button" aria-pressed="true">リスト</button>
       <button id="gridViewBtn" class="view-btn" type="button" aria-pressed="false">グリッド</button>
-      <button id="mapViewBtn" class="view-btn" type="button" aria-pressed="false">マップ</button>
+      <button id="mapViewBtn" class="view-btn" type="button" aria-pressed="false" hidden>マップ</button>
     </div>
   </div>
 
@@ -180,32 +180,32 @@
           <input id="keywordInput" class="input" type="text" placeholder="店名・説明・タグ・住所など" />
         </div>
 
-        <div class="field">
+        <div class="field" id="regionField" hidden>
           <div class="label">地域</div>
           <div class="filter-chip-group jc-chip-group" id="regionChipGroup" role="group" aria-label="地域で絞り込み"></div>
         </div>
 
-        <div class="field">
+        <div class="field" id="categoryField" hidden>
           <div class="label">カテゴリ</div>
           <div class="filter-chip-group jc-chip-group" id="categoryChipGroup" role="group" aria-label="カテゴリで絞り込み"></div>
         </div>
 
-        <div class="field" id="detailCategoryField">
+        <div class="field" id="detailCategoryField" hidden>
           <div class="label">詳細カテゴリ</div>
           <div class="filter-chip-group jc-chip-group" id="detailCategoryChipGroup" role="group" aria-label="詳細カテゴリで絞り込み"></div>
         </div>
 
-        <div class="field">
+        <div class="field" id="ratingField" hidden>
           <div class="label">評価</div>
           <div class="filter-chip-group jc-chip-group" id="starChipGroup" role="group" aria-label="星評価で絞り込み"></div>
         </div>
 
-        <div class="field">
+        <div class="field" id="reviewField" hidden>
           <div class="label">レビュー数</div>
           <div class="filter-chip-group jc-chip-group" id="reviewChipGroup" role="group" aria-label="レビュー数で絞り込み"></div>
         </div>
 
-        <div class="field" id="priceField">
+        <div class="field" id="priceField" hidden>
           <div class="label">価格</div>
           <div class="filter-chip-group jc-chip-group" id="priceChipGroup" role="group" aria-label="価格帯で絞り込み"></div>
         </div>
@@ -245,10 +245,11 @@
       </div>
     </section>
 
-    <aside class="map-panel" id="mapPanel" aria-label="地図表示エリア">
+    <aside class="map-panel" id="mapPanel" aria-label="地図表示エリア" hidden>
       <div class="map-shell">
         <div id="map"></div>
       </div>
+      <p class="directory-map-coverage" id="mapCoverageNote" hidden></p>
     </aside>
   </main>
 
@@ -307,11 +308,13 @@
     crossorigin=""
   ></script>
 
-  <script src="/assets/js/common.js"></script>
+<script src="/assets/js/common.js"></script>
 <script src="/assets/js/data-sources.js"></script>
+  <script src="/assets/js/directory-capabilities.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
     const UI = window.JCONNECT_UI;
+    const DIRECTORY_CAPABILITIES = window.JCONNECT_DIRECTORY_CAPABILITIES;
     const STATIC_DATA_URL = DATA_SOURCES.staticData?.eat || "/assets/data/eat/items.json";
     const DATA_TIMEOUT_MS = 5000;
 
@@ -334,6 +337,12 @@
 
     const els = {
       keywordInput: document.getElementById("keywordInput"),
+      regionField: document.getElementById("regionField"),
+      categoryField: document.getElementById("categoryField"),
+      detailCategoryField: document.getElementById("detailCategoryField"),
+      ratingField: document.getElementById("ratingField"),
+      reviewField: document.getElementById("reviewField"),
+      priceField: document.getElementById("priceField"),
       regionChipGroup: document.getElementById("regionChipGroup"),
       categoryChipGroup: document.getElementById("categoryChipGroup"),
       detailCategoryChipGroup: document.getElementById("detailCategoryChipGroup"),
@@ -350,6 +359,7 @@
       gridViewBtn: document.getElementById("gridViewBtn"),
       mapViewBtn: document.getElementById("mapViewBtn"),
       mapPanel: document.getElementById("mapPanel"),
+      mapCoverageNote: document.getElementById("mapCoverageNote"),
       listingModal: document.getElementById("listingModal"),
       listingModalContent: document.getElementById("listingModalContent"),
       listingModalClose: document.getElementById("listingModalClose")
@@ -358,6 +368,7 @@
     let rawItems = [];
     let filteredItems = [];
     let categoryMap = {};
+    let directoryCapabilities = DIRECTORY_CAPABILITIES.calculate([]);
     let currentView = "list";
     const filterState = {
       region: "",
@@ -367,13 +378,6 @@
       rating: "",
       price: ""
     };
-
-    const REGION_OPTIONS = [
-      { value: "duesseldorf", label: "デュッセルドルフ" },
-      { value: "frankfurt", label: "フランクフルト" },
-      { value: "muenchen", label: "ミュンヘン" },
-      { value: "berlin", label: "ベルリン" }
-    ];
 
     const REVIEW_OPTIONS = [
       { value: "1000", label: "1000件以上" },
@@ -392,11 +396,9 @@
     let map = null;
     let markerLayer = null;
     let markerMap = new Map();
-    let geocodeCache = new Map();
     let activeItemId = null;
     let modalReturnFocus = null;
     let mapInitialized = false;
-    let geocodeRunToken = 0;
 
     function escapeHtml(value) {
       return String(value ?? "")
@@ -513,7 +515,7 @@ function getLastReviewed(item) {
     function getCardRatingHtml(item) {
       const scoreNumber = parseRating(getField(item, "rating", "totalScore", "score"));
       const hasScore = scoreNumber !== null;
-      const reviewsNumber = parseNumber(getField(item, "reviewsCount", "review_count", "reviews"));
+      const reviewsNumber = parseNumber(getField(item, "reviews_count", "reviewsCount", "review_count", "reviews"));
       const hasReviews = Number.isFinite(reviewsNumber);
 
       if (!hasScore && !hasReviews) return "";
@@ -577,8 +579,8 @@ function getLastReviewed(item) {
         const pb = parseNumber(getField(b, "priority")) ?? 999999;
         if (pa !== pb) return pa - pb;
 
-        const ra = parseNumber(getField(a, "reviewsCount", "review_count", "reviews")) ?? -1;
-        const rb = parseNumber(getField(b, "reviewsCount", "review_count", "reviews")) ?? -1;
+        const ra = parseNumber(getField(a, "reviews_count", "reviewsCount", "review_count", "reviews")) ?? -1;
+        const rb = parseNumber(getField(b, "reviews_count", "reviewsCount", "review_count", "reviews")) ?? -1;
         if (ra !== rb) return rb - ra;
 
         const sa = parseRating(getField(a, "rating", "totalScore", "score"));
@@ -631,18 +633,62 @@ function getLastReviewed(item) {
       });
     }
 
-    function renderFilterChips() {
-      const categoryOptions = optionList(Object.keys(categoryMap));
-      const detailOptions = filterState.category
-        ? optionList(categoryMap[filterState.category] || [])
-        : [];
-      const priceOptions = optionList(rawItems.map(item => getField(item, "price_range", "price")));
+    function setControlVisibility(field, enabled) {
+      if (!field) return;
+      field.hidden = !enabled;
+      if (!enabled) field.querySelector(".filter-chip-group")?.replaceChildren();
+    }
 
-      renderChipGroup(els.regionChipGroup, REGION_OPTIONS, "region", false);
+    function applyDirectoryCapabilities() {
+      directoryCapabilities = DIRECTORY_CAPABILITIES.calculate(rawItems);
+      const capabilities = directoryCapabilities.capabilities;
+
+      if (!capabilities.region_filter) filterState.region = "";
+      if (!capabilities.category_filter) filterState.category = "";
+      if (!capabilities.detail_category_filter) filterState.detailCategory = "";
+      if (!capabilities.rating_filter) filterState.rating = "";
+      if (!capabilities.review_filter) filterState.reviews = "";
+      if (!capabilities.price_filter) filterState.price = "";
+
+      setControlVisibility(els.regionField, capabilities.region_filter);
+      setControlVisibility(els.categoryField, capabilities.category_filter);
+      setControlVisibility(els.detailCategoryField, capabilities.detail_category_filter);
+      setControlVisibility(els.ratingField, capabilities.rating_filter);
+      setControlVisibility(els.reviewField, capabilities.review_filter);
+      setControlVisibility(els.priceField, capabilities.price_filter);
+
+      const mapCoverage = directoryCapabilities.coverage.coordinates;
+      els.mapViewBtn.hidden = !capabilities.map_view;
+      els.mapViewBtn.disabled = !capabilities.map_view;
+      els.mapViewBtn.setAttribute("aria-disabled", String(!capabilities.map_view));
+      els.mapPanel.hidden = !capabilities.map_view;
+      if (els.mapCoverageNote) {
+        const hasLimitation = capabilities.map_view && mapCoverage.available < mapCoverage.total;
+        els.mapCoverageNote.hidden = !hasLimitation;
+        els.mapCoverageNote.textContent = hasLimitation
+          ? `地図には位置情報を確認できる ${mapCoverage.available} 件 / 全 ${mapCoverage.total} 件を表示します。`
+          : "";
+      }
+      if (!capabilities.map_view && currentView === "map") setViewMode("list");
+    }
+
+    function renderFilterChips() {
+      const capabilities = directoryCapabilities.capabilities;
+      const categoryOptions = capabilities.category_filter
+        ? optionList(Object.keys(categoryMap).filter((value) => !DIRECTORY_CAPABILITIES.isPlaceholderCategory(value)))
+        : [];
+      const detailOptions = !capabilities.detail_category_filter ? [] : (filterState.category
+        ? optionList((categoryMap[filterState.category] || []).filter((value) => !DIRECTORY_CAPABILITIES.isPlaceholderCategory(value)))
+        : optionList(rawItems.map(getCategory2).filter((value) => !DIRECTORY_CAPABILITIES.isPlaceholderCategory(value))));
+      const priceOptions = capabilities.price_filter
+        ? optionList(rawItems.map(item => getField(item, "price_range", "price")))
+        : [];
+
+      renderChipGroup(els.regionChipGroup, capabilities.region_filter ? optionList(rawItems.map(getRegion)) : [], "region");
       renderChipGroup(els.categoryChipGroup, categoryOptions, "category");
       renderChipGroup(els.detailCategoryChipGroup, detailOptions, "detailCategory");
-      renderChipGroup(els.starChipGroup, RATING_OPTIONS, "rating", false);
-      renderChipGroup(els.reviewChipGroup, REVIEW_OPTIONS, "reviews", false);
+      renderChipGroup(els.starChipGroup, capabilities.rating_filter ? RATING_OPTIONS : [], "rating");
+      renderChipGroup(els.reviewChipGroup, capabilities.review_filter ? REVIEW_OPTIONS : [], "reviews");
       renderChipGroup(els.priceChipGroup, priceOptions, "price");
     }
 
@@ -655,16 +701,17 @@ function getLastReviewed(item) {
 
     function filterItems() {
       const keyword = normalize(els.keywordInput.value);
-      const minReviews = parseNumber(filterState.reviews) || 0;
-      const minStarRating = parseFloat(filterState.rating) || 0;
+      const capabilities = directoryCapabilities.capabilities;
+      const minReviews = capabilities.review_filter ? (parseNumber(filterState.reviews) || 0) : 0;
+      const minStarRating = capabilities.rating_filter ? (parseFloat(filterState.rating) || 0) : 0;
 
       filteredItems = rawItems.filter(item => {
         const matchesKeyword = !keyword || buildSearchText(item).includes(keyword);
-        const matchesCity = !filterState.region || normalizeCity(getRegion(item)) === filterState.region;
-        const matchesCategory1 = !filterState.category || getCategory1(item) === filterState.category;
-        const matchesCategory2 = !filterState.detailCategory || getCategory2(item) === filterState.detailCategory;
-        const matchesPrice = !filterState.price || getField(item, "price_range", "price") === filterState.price;
-        const reviews = parseNumber(getField(item, "reviewsCount", "review_count", "reviews")) || 0;
+        const matchesCity = !capabilities.region_filter || !filterState.region || normalizeCity(getRegion(item)) === normalizeCity(filterState.region);
+        const matchesCategory1 = !capabilities.category_filter || !filterState.category || getCategory1(item) === filterState.category;
+        const matchesCategory2 = !capabilities.detail_category_filter || !filterState.detailCategory || getCategory2(item) === filterState.detailCategory;
+        const matchesPrice = !capabilities.price_filter || !filterState.price || getField(item, "price_range", "price") === filterState.price;
+        const reviews = parseNumber(getField(item, "reviews_count", "reviewsCount", "review_count", "reviews")) || 0;
         const matchesReviews = !minReviews || reviews >= minReviews;
         const score = parseRating(getField(item, "rating", "totalScore", "score"));
         const matchesStarRating = !minStarRating || (score !== null && score >= minStarRating);
@@ -689,7 +736,7 @@ function getLastReviewed(item) {
       const chips = [];
       const optionLabel = (options, value) => options.find(option => option.value === value)?.label || value;
       if (els.keywordInput.value.trim()) chips.push(`キーワード: ${escapeHtml(els.keywordInput.value.trim())}`);
-      if (filterState.region) chips.push(`地域: ${escapeHtml(optionLabel(REGION_OPTIONS, filterState.region))}`);
+      if (filterState.region) chips.push(`地域: ${escapeHtml(filterState.region)}`);
       if (filterState.category) chips.push(`カテゴリ: ${escapeHtml(filterState.category)}`);
       if (filterState.detailCategory) chips.push(`詳細カテゴリ: ${escapeHtml(filterState.detailCategory)}`);
       if (filterState.rating) chips.push(`評価: ${escapeHtml(optionLabel(RATING_OPTIONS, filterState.rating))}`);
@@ -748,7 +795,7 @@ function getLastReviewed(item) {
     }
 
     function hasCoordinates(item) {
-      return Number.isFinite(item.__lat) && Number.isFinite(item.__lng);
+      return DIRECTORY_CAPABILITIES.validCoordinates({ latitude: item.__lat, longitude: item.__lng });
     }
 
     function renderCards() {
@@ -783,6 +830,7 @@ function getLastReviewed(item) {
         const showDescriptionInMeta = currentView !== "list" || !detailComment || detailComment !== description;
         const phone = getField(item, "phone", "telephone", "tel");
         const hours = getField(item, "opening_hours", "openingHours", "hours");
+        const hasDetail = DIRECTORY_CAPABILITIES.hasMeaningfulDetail(item);
         const tags = getTags(item).slice(0, 4);
 
         return `
@@ -807,7 +855,7 @@ function getLastReviewed(item) {
                 ${tags.length ? `<div class="eat-tags">${tags.map(tag => `<span class="eat-tag">${escapeHtml(tag)}</span>`).join("")}</div>` : ""}
 
                 <div class="link-row jc-result-actions">
-                  <button class="btn btn-secondary" type="button" data-detail>詳細を見る</button>
+                  ${hasDetail ? `<button class="btn btn-secondary" type="button" data-detail>詳細を見る</button>` : ""}
                   ${website ? `<a class="btn btn-primary" href="${escapeHtml(website)}" target="_blank" rel="noopener noreferrer">公式サイト</a>` : ""}
                   ${mapUrl ? `<a class="btn btn-secondary" href="${escapeHtml(mapUrl)}" target="_blank" rel="noopener noreferrer">地図を見る</a>` : ""}
                 </div>
@@ -868,6 +916,7 @@ function getLastReviewed(item) {
       const description = getShortDescription(item);
       const detailComment = getDetailComment(item);
       const hours = getField(item, "opening_hours", "openingHours", "hours");
+      const languages = getField(item, "language_support", "language", "languages");
       const ratingHtml = getCardRatingHtml(item);
 
       return `
@@ -883,6 +932,7 @@ function getLastReviewed(item) {
           ${detailRow("住所", address)}
           ${detailRow("電話", phone)}
           ${detailRow("営業時間", hours)}
+          ${detailRow("対応言語", languages)}
         </div>
 
         ${description ? `
@@ -969,86 +1019,6 @@ function getLastReviewed(item) {
       filterItems();
     }
 
-    function extractLatLngFromMapUrl(url) {
-      if (!url) return null;
-
-      let match = url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
-      if (match) {
-        return { lat: parseFloat(match[1]), lng: parseFloat(match[2]) };
-      }
-
-      match = url.match(/[?&]query=(-?\d+\.\d+),(-?\d+\.\d+)/);
-      if (match) {
-        return { lat: parseFloat(match[1]), lng: parseFloat(match[2]) };
-      }
-
-      match = url.match(/[?&]ll=(-?\d+\.\d+),(-?\d+\.\d+)/);
-      if (match) {
-        return { lat: parseFloat(match[1]), lng: parseFloat(match[2]) };
-      }
-
-      return null;
-    }
-
-    async function geocodeAddress(address) {
-      if (!address) return null;
-      if (geocodeCache.has(address)) return geocodeCache.get(address);
-
-      try {
-        const endpoint = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=${encodeURIComponent(address)}`;
-        const response = await fetch(endpoint, {
-          headers: {
-            "Accept": "application/json"
-          }
-        });
-        if (!response.ok) return null;
-
-        const data = await response.json();
-        const first = Array.isArray(data) ? data[0] : null;
-        const result = first && first.lat && first.lon
-          ? { lat: parseFloat(first.lat), lng: parseFloat(first.lon) }
-          : null;
-
-        geocodeCache.set(address, result);
-        await new Promise(resolve => setTimeout(resolve, 260));
-        return result;
-      } catch (error) {
-        console.warn("Geocode failed:", address, error);
-        geocodeCache.set(address, null);
-        return null;
-      }
-    }
-
-function hydrateCoordinatesFromMapUrl(items) {
-  items.forEach(item => {
-    if (hasCoordinates(item)) return;
-    const mapUrl = getMapUrl(item);
-    const fromUrl = extractLatLngFromMapUrl(mapUrl);
-    if (fromUrl) {
-      item.__lat = fromUrl.lat;
-      item.__lng = fromUrl.lng;
-    }
-  });
-}
-
-async function enrichCoordinates(items) {
-  const runToken = ++geocodeRunToken;
-
-  for (const item of items) {
-    if (hasCoordinates(item)) continue;
-
-    const address = buildAddress(item) || `${getField(item, "title", "name_ja")} Germany`;
-    const geo = await geocodeAddress(address);
-
-    if (runToken !== geocodeRunToken) return;
-
-    if (geo) {
-      item.__lat = geo.lat;
-      item.__lng = geo.lng;
-    }
-  }
-}
-
 function initMapIfNeeded() {
   if (mapInitialized) return;
 
@@ -1071,7 +1041,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       const website = getOfficialUrl(item);
       const mapUrl = getMapUrl(item);
       const score = formatScore(getField(item, "rating", "totalScore", "score"));
-      const reviews = formatReviews(getField(item, "reviewsCount", "review_count", "reviews"));
+      const reviews = formatReviews(getField(item, "reviews_count", "reviewsCount", "review_count", "reviews"));
       const price = getField(item, "price_range", "price");
 
       return `
@@ -1141,13 +1111,9 @@ function renderMapMarkers() {
   }, 120);
 }
 
-async function syncMapAfterFilter() {
+function syncMapAfterFilter() {
   initMapIfNeeded();
-
-  hydrateCoordinatesFromMapUrl(filteredItems);
   renderCards();
-  renderMapMarkers();
-  await enrichCoordinates(filteredItems);
   renderMapMarkers();
 
   requestAnimationFrame(() => {
@@ -1156,6 +1122,7 @@ async function syncMapAfterFilter() {
 }
 
 function setViewMode(mode) {
+  if (mode === "map" && !directoryCapabilities.capabilities.map_view) return;
   currentView = mode;
 
   const isMap = mode === "map";
@@ -1174,11 +1141,11 @@ function setViewMode(mode) {
     initMapIfNeeded();
 
     requestAnimationFrame(() => {
-      requestAnimationFrame(async () => {
+      requestAnimationFrame(() => {
         if (map) {
           map.invalidateSize(true);
         }
-        await syncMapAfterFilter();
+        syncMapAfterFilter();
         setTimeout(() => {
           if (map) {
             map.invalidateSize(true);
@@ -1221,17 +1188,14 @@ rawItems = sortItems(items).map((item, index) => ({
 }));
 
 rawItems.forEach(preloadCoordinatesFromFields);
-        const hasMapItems = rawItems.some(hasCoordinates);
-        els.mapViewBtn.disabled = !hasMapItems;
-        els.mapViewBtn.setAttribute("aria-disabled", String(!hasMapItems));
-        if (!hasMapItems && currentView === "map") setViewMode("list");
-
+        applyDirectoryCapabilities();
         categoryMap = buildCategoryMap(rawItems);
         filterItems();
       } catch (error) {
         console.error("Eat static data load failed.", error);
         rawItems = [];
         filteredItems = [];
+        applyDirectoryCapabilities();
         renderDataLoadError();
       }
     }

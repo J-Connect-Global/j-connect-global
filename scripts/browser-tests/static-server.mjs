@@ -26,12 +26,44 @@ const contentTypes = new Map([
   [".woff2", "font/woff2"]
 ]);
 
-function sendText(response, statusCode, body) {
+function sendText(response, statusCode, body, method = "GET") {
   response.writeHead(statusCode, {
     "cache-control": "no-store",
     "content-type": "text/plain; charset=utf-8"
   });
-  response.end(body);
+  response.end(method === "HEAD" ? undefined : body);
+}
+
+function sendFile(response, resolved, statusCode, method) {
+  const type = contentTypes.get(path.extname(resolved.filePath).toLowerCase()) || "application/octet-stream";
+  response.writeHead(statusCode, {
+    "cache-control": "no-store",
+    "content-length": resolved.fileStat.size,
+    "content-type": type
+  });
+
+  if (method === "HEAD") {
+    response.end();
+    return;
+  }
+
+  createReadStream(resolved.filePath).pipe(response);
+}
+
+async function sendNotFound(response, method) {
+  try {
+    const filePath = path.join(root, "404.html");
+    const fileStat = await stat(filePath);
+    if (fileStat.isFile()) {
+      sendFile(response, { filePath, fileStat }, 404, method);
+      return;
+    }
+  } catch {
+    // Keep the local server useful for partial fixtures that intentionally omit
+    // the production error document.
+  }
+
+  sendText(response, 404, "Not found", method);
 }
 
 async function resolveRequestPath(requestUrl) {
@@ -57,36 +89,24 @@ async function resolveRequestPath(requestUrl) {
 
 const server = createServer(async (request, response) => {
   if (request.method !== "GET" && request.method !== "HEAD") {
-    sendText(response, 405, "Method not allowed");
+    sendText(response, 405, "Method not allowed", request.method);
     return;
   }
 
   try {
     const resolved = await resolveRequestPath(request.url);
     if (!resolved) {
-      sendText(response, 404, "Not found");
+      await sendNotFound(response, request.method);
       return;
     }
 
-    const type = contentTypes.get(path.extname(resolved.filePath).toLowerCase()) || "application/octet-stream";
-    response.writeHead(200, {
-      "cache-control": "no-store",
-      "content-length": resolved.fileStat.size,
-      "content-type": type
-    });
-
-    if (request.method === "HEAD") {
-      response.end();
-      return;
-    }
-
-    createReadStream(resolved.filePath).pipe(response);
+    sendFile(response, resolved, 200, request.method);
   } catch (error) {
     if (error?.code === "ENOENT" || error?.code === "ENOTDIR") {
-      sendText(response, 404, "Not found");
+      await sendNotFound(response, request.method);
       return;
     }
-    sendText(response, 500, "Internal server error");
+    sendText(response, 500, "Internal server error", request.method);
   }
 });
 

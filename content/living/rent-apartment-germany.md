@@ -1,19 +1,25 @@
 ---
 id: "L004"
-title: "ドイツで家を探す基本ガイド"
+title: "ドイツ賃貸の探し方｜必要書類・SCHUFA・契約の注意点"
 slug: "rent-apartment-germany"
 category: "住まい・契約"
 tags: ["賃貸","家探し","契約","SCHUFA","Anmeldung"]
-summary: "ドイツで賃貸物件を探すときの流れ、必要書類、内見、契約前の確認点、入居後の手続きをまとめた実務ガイド。"
+summary: "ドイツで賃貸を探す流れを実務目線で解説。応募書類、SCHUFA、内見、Kaution、詐欺対策、契約前と入居後の確認事項が分かります。"
 status: "published"
 published: true
 published_at: "2026-06-12"
-last_verified: "2026-06-16"
+updated_at: "2026-07-19"
+last_verified: "2026-07-19"
+next_review: "2026-10-19"
 canonical_url: "/germany/ja/living/rent-apartment-germany/"
 related_articles: ["schufa-guide","moving-checklist-germany","anmeldung-guide","rundfunkbeitrag-guide"]
 ---
 
-# ドイツで家を探す基本ガイド
+# ドイツ賃貸の探し方｜必要書類・SCHUFA・契約の注意点
+
+![自己紹介、支払能力、信用情報、本人確認をまとめたドイツ賃貸応募パック](/assets/images/living/rent-application-pack.svg "書類は先に準備し、個人情報は契約段階に応じて提出する")
+
+> **2026年7月19日再確認：** 住宅賃貸のKaution上限はBGB §551上、原則としてNebenkostenを除く月額賃料の3か月分です。応募初期からパスポート全ページや銀行情報を一括送付せず、相手と物件を確認しながら段階的に提出してください。
 
 ## この記事でわかること
 

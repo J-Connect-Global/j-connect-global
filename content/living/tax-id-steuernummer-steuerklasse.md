@@ -1,14 +1,16 @@
 ---
 id: "L007"
-title: "Tax ID・Steuernummer・Steuerklasseの違い"
+title: "ドイツのTax ID・Steuernummer・Steuerklasse｜違いと取得方法"
 slug: "tax-id-steuernummer-steuerklasse"
 category: "税金・行政"
 tags: ["税金","Tax ID","Steuernummer","Steuerklasse","行政手続き"]
-summary: "ドイツ生活でよく出てくる Tax ID、Steuernummer、Steuerklasse の違い、必要になる場面、勤務開始・確定申告・結婚後の確認ポイントを日本語で整理。"
+summary: "ドイツのTax ID、Steuernummer、Steuerklasseの違いと取得方法を解説。勤務開始、確定申告、結婚後にどの番号・区分を確認するかが分かります。"
 status: "published"
 published: true
 published_at: "2026-06-12"
-last_verified: "2026-06-16"
+updated_at: "2026-07-19"
+last_verified: "2026-07-19"
+next_review: "2026-10-19"
 canonical_url: "/germany/ja/living/tax-id-steuernummer-steuerklasse/"
 related_articles: ["germany-first-30-days","anmeldung-guide","bank-account-germany","health-insurance-guide"]
 official_links:
@@ -24,7 +26,11 @@ official_links:
     url: "https://www.finanzamt.nrw.de/steuerinfos/privatpersonen/arbeitnehmende/antrag-auf-lohnsteuer-ermaessigung-und-zu-den"
 ---
 
-# Tax ID・Steuernummer・Steuerklasseの違い
+# ドイツのTax ID・Steuernummer・Steuerklasse｜違いと取得方法
+
+![Tax ID、Steuernummer、Steuerklasseを個人、税務案件、給与計算で区別する図](/assets/images/living/tax-number-map.svg "Tax IDは個人、Steuernummerは税務案件、Steuerklasseは給与税計算区分")
+
+> **2026年7月19日再確認：** BZStによる税務識別番号は11桁で、原則として生涯有効です。初回の住民登録後に登録住所へ通知され、紛失時はBZStから再通知を申請できます。
 
 ドイツで生活を始めると、税金関係の手続きで似たような言葉が何度も出てきます。
 

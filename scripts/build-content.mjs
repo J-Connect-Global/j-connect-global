@@ -377,7 +377,7 @@ ${indent(renderArticleBackLink(item, config), 10)}
 ${indent(renderDisclaimer(item), 10)}
         </div>
       </article>
-${indent(renderArticleSidebar(type, item), 6)}
+${indent(renderArticleSidebar(type, item, toc), 6)}
     </div>
 ${indent(renderRelatedSection(item, allItems), 4)}
   </main>
@@ -1074,19 +1074,33 @@ function renderArticleToc(toc = []) {
     .map((entry) => `<a href="#${escapeAttribute(entry.id)}">${escapeHtml(entry.text)}</a>`)
     .join('\n');
 
-  return `<details class="article-mobile-toc" open>
-  <summary>目次</summary>
-  <nav aria-label="記事内目次">
+  return `<details class="article-mobile-toc">
+  <summary>目次（${toc.length}項目）</summary>
+  <nav aria-label="モバイル記事内目次">
 ${indent(links, 4)}
   </nav>
 </details>`;
 }
 
-function renderArticleSidebar(type, item) {
-  const sections = [`<section class="article-sidebar-card">
+function renderArticleSidebar(type, item, toc = []) {
+  const sections = [];
+
+  if (toc.length) {
+    const links = toc
+      .map((entry) => `<a href="#${escapeAttribute(entry.id)}">${escapeHtml(entry.text)}</a>`)
+      .join('\n');
+    sections.push(`<section class="article-sidebar-card article-sidebar-toc">
+  <h2>目次</h2>
+  <nav class="article-sidebar-toc-list" aria-label="記事内目次">
+${indent(links, 4)}
+  </nav>
+</section>`);
+  }
+
+  sections.push(`<section class="article-sidebar-card">
   <h2>記事情報</h2>
 ${indent(renderArticleSidebarFacts(type, item), 2)}
-</section>`];
+</section>`);
 
   return `<aside class="article-sidebar" aria-label="記事補助情報">
 ${indent(sections.join('\n'), 2)}
@@ -2277,7 +2291,14 @@ function normalizeRepoPath(value) {
 }
 
 function getArticleImageAlt(article) {
-  return article.title ? `${article.title} のイメージ` : `${SITE_NAME} のイメージ`;
+  return firstNonEmpty(
+    article.image_alt,
+    article.imageAlt,
+    article.hero_image_alt,
+    article.alt_text,
+    article.alt,
+    article.title ? `${article.title} のイメージ` : `${SITE_NAME} のイメージ`
+  );
 }
 
 function isLegacyPlaceholderImage(value) {

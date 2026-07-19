@@ -1,19 +1,21 @@
 ---
 id: "L003"
-title: "ドイツの健康保険の基本"
+title: "ドイツの健康保険2026｜GKV・PKV・保険料・加入手順"
 slug: "health-insurance-guide"
 category: "生活・手続き"
 tags: ["健康保険","GKV","PKV","医療","渡独後手続き"]
-summary: "ドイツの健康保険制度、GKVとPKVの違い、会社員・学生・自営業・家族帯同者の加入パターン、保険料、選び方、加入手続きの流れを解説。"
+summary: "ドイツの健康保険を2026年の基準額で解説。GKVとPKVの違い、会社員・学生・自営業・家族の加入条件、保険料、選び方、加入手順が分かります。"
 status: "published"
 published: true
 published_at: "2026-06-07"
-last_verified: "2026-06-16"
+updated_at: "2026-07-19"
+last_verified: "2026-07-19"
+next_review: "2026-10-19"
 canonical_url: "/germany/ja/living/health-insurance-guide/"
 related_articles: ["germany-first-30-days","anmeldung-guide"]
 ---
 
-# ドイツの健康保険の基本
+# ドイツの健康保険2026｜GKV・PKV・保険料・加入手順
 
 ドイツで生活を始めるうえで、健康保険は住民登録・銀行口座・税務IDと並ぶ最重要手続きです。  
 会社員として働く人、大学に入学する人、家族帯同で来る人、自営業として活動する人、ワーキングホリデーや求職ビザで滞在する人では、選べる保険や必要な証明が変わります。
@@ -21,6 +23,10 @@ related_articles: ["germany-first-30-days","anmeldung-guide"]
 この記事では、ドイツの健康保険制度を初めて使う日本人向けに、GKV・PKVの違い、保険料の考え方、加入手続き、家族保険、学生保険、よくある注意点まで整理します。
 
 ![保険証、医療書類、予約カレンダー、スマートフォン、聴診器を机に準備した様子](/assets/images/living/health-insurance-path.webp "AI生成イラスト：健康保険加入から受診予約まで")
+
+![会社員、学生、家族、自営業で健康保険の確認先を分ける判断図](/assets/images/living/health-insurance-decision.svg "保険は価格より先に、雇用・学生・家族・自営業の立場で分ける")
+
+> **2026年7月19日再確認：** BMG公表の2026年数値は、一般保険料率14.6%、平均Zusatzbeitrag 2.9%、Beitragsbemessungsgrenze 69,750ユーロ／年、Jahresarbeitsentgeltgrenze 77,400ユーロ／年です。Zusatzbeitragは保険会社ごとに異なります。
 
 ## この記事でわかること
 

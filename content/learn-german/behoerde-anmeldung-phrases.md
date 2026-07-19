@@ -1,23 +1,26 @@
 ---
 id: "G004"
-title: "役所・Anmeldungで使うドイツ語フレーズ"
+title: "Anmeldung・ドイツの役所で使う会話フレーズ"
 slug: "behoerde-anmeldung-phrases"
 category: "役所・Anmeldung"
-summary: "住民登録、予約確認、必要書類、不足書類、証明書の受け取りなど、役所で使いやすい基本表現です。"
+summary: "Anmeldungやドイツの役所で使う会話フレーズ集。住民登録、予約、必要書類、不足書類、次の手順、証明書の受け取りを短い表現で確認できます。"
 status: "published"
 published: true
 published_at: "2026-06-19"
-last_verified: "2026-07-06"
+updated_at: "2026-07-19"
+last_verified: "2026-07-19"
 tags: ["役所","Anmeldung","A1"]
 canonical_url: "/germany/ja/learn-german/behoerde-anmeldung-phrases/"
 ---
 
-# 役所・Anmeldungで使うドイツ語フレーズ
+# Anmeldung・ドイツの役所で使う会話フレーズ
 
 ## 使い方
 役所では、長く説明しようとするよりも、**短い文で用件・予約番号・不足書類・次にすること**を確認すると会話が進みやすくなります。事前に必要書類と質問をメモし、聞き取れなかった内容は紙やメールで確認してもらいましょう。
 
 このページはドイツ語表現のサポートです。手続き条件、必要書類、予約方法、期限は自治体によって異なります。実際に行く前に、必ず居住地の Bürgeramt / Einwohnermeldeamt / Meldebehörde の公式サイトで最新情報を確認してください。
+
+![用件、書類、不足、次の行動の順に役所で確認する4つのドイツ語フレーズ](/assets/images/learn-german/behoerde-dialogue-route.svg "役所では短い4段階の質問で次の行動まで確認する")
 
 ## まず覚える10文
 

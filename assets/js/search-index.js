@@ -452,8 +452,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツで家を探す基本ガイド",
-    "description": "ドイツで賃貸物件を探すときの流れ、必要書類、内見、契約前の確認点、入居後の手続きをまとめた実務ガイド。",
+    "title": "ドイツ賃貸の探し方｜必要書類・SCHUFA・契約の注意点",
+    "description": "ドイツで賃貸を探す流れを実務目線で解説。応募書類、SCHUFA、内見、Kaution、詐欺対策、契約前と入居後の確認事項が分かります。",
     "url": "/germany/ja/living/rent-apartment-germany/",
     "category": "生活・手続き",
     "tags": [
@@ -465,8 +465,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "SCHUFAとは？賃貸・契約で必要になる信用情報",
-    "description": "SCHUFAの意味、賃貸契約や携帯・銀行手続きで必要になる場面、取得方法、提出時の注意点を解説。",
+    "title": "SCHUFAとは？無料Datenkopieと賃貸提出用証明の違い",
+    "description": "SCHUFAの仕組みと取得方法を解説。無料のDatenkopieと賃貸提出用Bonitätsnachweisの違い、個人情報を渡す際の注意点が分かります。",
     "url": "/germany/ja/living/schufa-guide/",
     "category": "生活・手続き",
     "tags": [
@@ -476,8 +476,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツの銀行口座開設ガイド",
-    "description": "ドイツで銀行口座を開くために必要な書類、銀行の選び方、オンライン銀行と支店型銀行の違い、Basiskonto、開設後の設定まで解説。",
+    "title": "ドイツの銀行口座開設｜必要書類・選び方・Basiskonto",
+    "description": "ドイツで銀行口座を開くための必要書類、本人確認、支店型とオンライン銀行の選び方、手数料、Basiskonto、開設後の設定を解説。",
     "url": "/germany/ja/living/bank-account-germany/",
     "category": "生活・手続き",
     "tags": [
@@ -489,8 +489,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "Tax ID・Steuernummer・Steuerklasseの違い",
-    "description": "ドイツ生活でよく出てくる Tax ID、Steuernummer、Steuerklasse の違い、必要になる場面、勤務開始・確定申告・結婚後の確認ポイントを日本語で整理。",
+    "title": "ドイツのTax ID・Steuernummer・Steuerklasse｜違いと取得方法",
+    "description": "ドイツのTax ID、Steuernummer、Steuerklasseの違いと取得方法を解説。勤務開始、確定申告、結婚後にどの番号・区分を確認するかが分かります。",
     "url": "/germany/ja/living/tax-id-steuernummer-steuerklasse/",
     "category": "生活・手続き",
     "tags": [
@@ -574,8 +574,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツの健康保険の基本",
-    "description": "ドイツの健康保険制度、GKVとPKVの違い、会社員・学生・自営業・家族帯同者の加入パターン、保険料、選び方、加入手続きの流れを解説。",
+    "title": "ドイツの健康保険2026｜GKV・PKV・保険料・加入手順",
+    "description": "ドイツの健康保険を2026年の基準額で解説。GKVとPKVの違い、会社員・学生・自営業・家族の加入条件、保険料、選び方、加入手順が分かります。",
     "url": "/germany/ja/living/health-insurance-guide/",
     "category": "生活・手続き",
     "tags": [
@@ -694,8 +694,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "NATSU HIKARI Japan Festival Köln 2026 ガイド",
-    "description": "2026年8月22日にケルンで開催予定のNATSU HIKARI Japan Festival Kölnについて、内容、チケット、アクセス、子連れ・コスプレ参加時の確認ポイントを整理します。",
+    "title": "NATSU HIKARI Japan Festival Köln 2026｜チケット・回り方・注意点",
+    "description": "2026年8月22日にケルンで開かれるNATSU HIKARIを、最新の公式情報から実用的に整理。チケットの違い、ワークショップ、会場別の終了時刻、アクセス、子連れ・コスプレ参加の注意点が分かります。",
     "url": "/germany/ja/events/natsu-hikari-japan-festival-cologne/",
     "category": "ニュース・イベント",
     "tags": [
@@ -765,8 +765,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "役所・Anmeldungで使うドイツ語フレーズ",
-    "description": "住民登録、予約確認、必要書類、不足書類、証明書の受け取りなど、役所で使いやすい基本表現です。",
+    "title": "Anmeldung・ドイツの役所で使う会話フレーズ",
+    "description": "Anmeldungやドイツの役所で使う会話フレーズ集。住民登録、予約、必要書類、不足書類、次の手順、証明書の受け取りを短い表現で確認できます。",
     "url": "/germany/ja/learn-german/behoerde-anmeldung-phrases/",
     "category": "ドイツ語・学び",
     "tags": [

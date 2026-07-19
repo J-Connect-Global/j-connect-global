@@ -1,25 +1,31 @@
 ---
 id: "L006"
-title: "ドイツの銀行口座開設ガイド"
+title: "ドイツの銀行口座開設｜必要書類・選び方・Basiskonto"
 slug: "bank-account-germany"
 category: "銀行・お金"
 tags: ["銀行口座","Girokonto","Basiskonto","お金","初渡独"]
-summary: "ドイツで銀行口座を開くために必要な書類、銀行の選び方、オンライン銀行と支店型銀行の違い、Basiskonto、開設後の設定まで解説。"
+summary: "ドイツで銀行口座を開くための必要書類、本人確認、支店型とオンライン銀行の選び方、手数料、Basiskonto、開設後の設定を解説。"
 status: "published"
 published: true
 published_at: "2026-06-12"
-last_verified: "2026-06-16"
+updated_at: "2026-07-19"
+last_verified: "2026-07-19"
+next_review: "2026-10-19"
 canonical_url: "/germany/ja/living/bank-account-germany/"
 related_articles: ["germany-first-30-days","schufa-guide"]
 ---
 
-# ドイツの銀行口座開設ガイド
+# ドイツの銀行口座開設｜必要書類・選び方・Basiskonto
 
 ドイツで生活を始めると、家賃、給与、健康保険、携帯電話、電気、インターネット、放送負担金など、ほとんどの支払い・受け取りで銀行口座が必要になります。
 
 日本のクレジットカードや海外送金サービスだけでも一時的には生活できますが、ドイツで住居・仕事・保険・行政手続きを安定して進めるなら、早めに日常用の銀行口座、つまり **Girokonto** を用意しておくと便利です。
 
 この記事では、ドイツで銀行口座を開くときに確認すべきポイントを、初渡独者向けに整理します。
+
+![支店と現金、アプリと費用、Basiskontoの観点で銀行口座を選ぶ図](/assets/images/living/bank-account-choice.svg "銀行名より、日常の現金・カード・支店・本人確認の使い方を先に決める")
+
+> **2026年7月19日再確認：** BaFinは、Girokontoの費用・カード・現金利用などを比較する公的な口座比較を提供しています。「無料」は給与入金、年齢、カード、ATMの条件付きである場合があるため、価格表を保存してから申し込んでください。
 
 ## この記事でわかること
 

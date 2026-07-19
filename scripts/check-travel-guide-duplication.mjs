@@ -1,13 +1,9 @@
 import { execFileSync } from "node:child_process";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const guideSlugs = [
-  "bremen-weekend-trip", "brussels-weekend-trip", "copenhagen-weekend-trip", "hamburg-weekend-trip", "krakow-weekend-trip",
-  "london-weekend-trip", "munich-weekend-trip", "paris-weekend-trip", "prague-weekend-trip", "warsaw-weekend-trip"
-];
 const maximumDuplicateRatio = 0.15;
 
 function bodyOf(markdown) {
@@ -71,7 +67,27 @@ async function guideMarkdown(slug, gitRef = "") {
   return readFile(path.join(rootDir, relative), "utf8");
 }
 
+async function tourismGuideSlugs(gitRef = "") {
+  const relativeFiles = gitRef
+    ? execFileSync("git", ["ls-tree", "-r", "--name-only", gitRef, "content/living"], { cwd: rootDir, encoding: "utf8" })
+        .split(/\r?\n/u)
+        .filter((relative) => /^content\/living\/[^/]+\.md$/u.test(relative))
+    : (await readdir(path.join(rootDir, "content", "living"), { withFileTypes: true }))
+        .filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
+        .map((entry) => `content/living/${entry.name}`);
+  const candidates = relativeFiles
+    .map((relative) => path.posix.basename(relative, ".md"))
+    .sort((left, right) => left.localeCompare(right));
+  const tourismGuides = [];
+  for (const slug of candidates) {
+    const frontMatter = parseFrontMatter(await guideMarkdown(slug, gitRef));
+    if (frontMatter.category === "観光" && frontMatter.published !== "false") tourismGuides.push(slug);
+  }
+  return tourismGuides;
+}
+
 export async function analyzeTravelGuideDuplication({ gitRef = "" } = {}) {
+  const guideSlugs = await tourismGuideSlugs(gitRef);
   const entries = await Promise.all(guideSlugs.map(async (slug) => ({ slug, paragraphs: qualifyingParagraphs(await guideMarkdown(slug, gitRef)) })));
   const owners = new Map();
   for (const entry of entries) {
@@ -92,6 +108,7 @@ export async function analyzeTravelGuideDuplication({ gitRef = "" } = {}) {
 }
 
 export async function analyzeTravelGuideMetadata({ gitRef = "" } = {}) {
+  const guideSlugs = await tourismGuideSlugs(gitRef);
   const entries = await Promise.all(guideSlugs.map(async (slug) => {
     const frontMatter = parseFrontMatter(await guideMarkdown(slug, gitRef));
     return { slug, summary: String(frontMatter.summary || ''), related: Array.isArray(frontMatter.related_articles) ? frontMatter.related_articles : [] };

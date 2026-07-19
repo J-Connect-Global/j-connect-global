@@ -43,11 +43,12 @@ function main() {
 function applyCanonicalLayout(html, url, page) {
   const pillar = activePillar(url, page);
   const currentUrl = page?.status === 'legacy' && page.redirect_target ? normalizeUrl(page.redirect_target) : url;
+  const isHomeRoute = isPrimaryJaHomeRoute(url);
   let next = html;
   next = ensureThemeInitScript(next);
   next = ensureSiteIdentityScript(next);
   next = ensureHeaderFooterStylesheet(next);
-  next = ensureSocialShareStylesheet(next);
+  next = isHomeRoute ? removeHomePerformanceDependencies(next) : ensureSocialShareStylesheet(next);
   next = ensureRobotsMeta(next, page);
   next = ensureSiteIdentityMeta(next);
   next = ensureStaticSocialMeta(next, currentUrl, page);
@@ -56,7 +57,7 @@ function applyCanonicalLayout(html, url, page) {
   next = replaceLayoutBlock(next, 'ja-header', renderHeader(pillar, currentUrl), 'header');
   next = replaceLayoutBlock(next, 'ja-footer', renderFooter(), 'footer');
   next = ensureMainScript(next);
-  next = ensureSocialShareScript(next);
+  next = isHomeRoute ? removeHomePerformanceDependencies(next) : ensureSocialShareScript(next);
   return next;
 }
 
@@ -136,7 +137,7 @@ function ensureThemeInitScript(html) {
 }
 
 function ensureHeaderFooterStylesheet(html) {
-  const stylesheetHref = '/assets/css/ja-header-footer.css?v=portal8-hierarchy-20260711';
+  const stylesheetHref = '/assets/css/ja-header-footer.css?v=portal8-performance-a11y-20260719';
   const stylesheetLink = `  <link rel="stylesheet" href="${stylesheetHref}">`;
 
   // Remove any existing ja-header-footer.css link first, regardless of position/version.
@@ -195,6 +196,34 @@ function ensureMainScript(html) {
 function ensureSocialShareScript(html) {
   if (/<script\b[^>]*src=["']\/assets\/js\/social-share\.js(?:\?[^"']*)?["'][^>]*>/i.test(html)) return html;
   return html.replace(/(\s*)<\/body>/i, `\n<script src="${SOCIAL_SHARE_JS}"></script>$1</body>`);
+}
+
+function removeHomePerformanceDependencies(html) {
+  let next = removeStylesheetLink(html, '/assets/css/jconnect-ui.css');
+  next = removeStylesheetLink(next, SOCIAL_SHARE_CSS);
+  next = removeScriptSource(next, SOCIAL_SHARE_JS);
+  return next.replace(
+    /\s*<link\b(?=[^>]*\bhref=["']https:\/\/(?:fonts\.googleapis\.com|fonts\.gstatic\.com)(?:\/[^"']*)?["'])[^>]*>\s*/gi,
+    '\n'
+  );
+}
+
+function removeStylesheetLink(html, href) {
+  const source = escapeRegExp(href);
+  const pattern = new RegExp(
+    `\\s*<link\\b(?=[^>]*\\brel=["']stylesheet["'])(?=[^>]*\\bhref=["']${source}(?:\\?[^"']*)?["'])[^>]*>`,
+    'gi'
+  );
+  return html.replace(pattern, '\n');
+}
+
+function removeScriptSource(html, src) {
+  const source = escapeRegExp(src);
+  const pattern = new RegExp(
+    `\\s*<script\\b(?=[^>]*\\bsrc=["']${source}(?:\\?[^"']*)?["'])[^>]*>\\s*<\\/script>`,
+    'gi'
+  );
+  return html.replace(pattern, '\n');
 }
 
 function ensureRobotsMeta(html, page) {
@@ -576,6 +605,10 @@ function isCanonicalJaUrl(url) {
 
 function formatPageTitle(title) {
   return serviceTitle(cleanTitle(title));
+}
+
+function isPrimaryJaHomeRoute(url) {
+  return normalizeUrl(url) === normalizeUrl(PRIMARY_JA_PATH);
 }
 
 function cleanTitle(value) {

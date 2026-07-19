@@ -53,6 +53,20 @@ function imageInfo(buffer) {
       offset += 2 + length;
     }
   }
+  if (buffer.subarray(4, 8).toString("ascii") === "ftyp") {
+    // AVIF stores the primary image dimensions in an ISO-BMFF `ispe` box.
+    // The box can be nested, so scan for the first complete property record.
+    const ispe = Buffer.from("ispe", "ascii");
+    let offset = buffer.indexOf(ispe);
+    while (offset !== -1) {
+      if (offset + 16 <= buffer.length) {
+        const width = buffer.readUInt32BE(offset + 8);
+        const height = buffer.readUInt32BE(offset + 12);
+        if (width > 0 && height > 0) return { format: "AVIF", width, height };
+      }
+      offset = buffer.indexOf(ispe, offset + ispe.length);
+    }
+  }
   return { format: "UNKNOWN", width: null, height: null };
 }
 
@@ -133,6 +147,7 @@ export async function auditImageAssets({ root = rootDir } = {}) {
 export function validateImageBudget(report, budget) {
   const errors = [];
   const expectedFormatByExtension = new Map([
+    [".avif", "AVIF"],
     [".gif", "GIF"],
     [".jpeg", "JPEG"],
     [".jpg", "JPEG"],

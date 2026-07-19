@@ -2319,17 +2319,30 @@ function contentImageDimensionAttributes(src, className) {
   if (!dimensions?.width || !dimensions?.height) return '';
 
   let attributes = ` width="${dimensions.width}" height="${dimensions.height}"`;
-  const variantSrc = String(src).replace(/\.webp$/i, '-768w.webp');
-  const variantPath = path.join(root, variantSrc.replace(/^\/+/, ''));
-  try {
-    if (fs.existsSync(variantPath)) {
-      const variant = readWebpDimensions(fs.readFileSync(variantPath));
-      if (variant?.width) {
-        const sizes = /article-card-image|home-card-image/.test(className)
-          ? '(max-width: 760px) calc(100vw - 32px), (max-width: 1120px) 50vw, 320px'
-          : '(max-width: 760px) calc(100vw - 32px), min(960px, 100vw - 64px)';
-        attributes += ` srcset="${escapeAttribute(variantSrc)} ${variant.width}w, ${escapeAttribute(src)} ${dimensions.width}w" sizes="${sizes}"`;
+  const variants = [480, 768]
+    .map((width) => {
+      const variantSrc = String(src).replace(/\.webp$/i, `-${width}w.webp`);
+      const variantPath = path.join(root, variantSrc.replace(/^\/+/, ''));
+      try {
+        if (!fs.existsSync(variantPath)) return null;
+        const variant = readWebpDimensions(fs.readFileSync(variantPath));
+        if (!variant?.width) return null;
+        return { src: variantSrc, width: variant.width };
+      } catch {
+        return null;
       }
+    })
+    .filter(Boolean);
+  try {
+    if (variants.length) {
+      const sizes = /article-card-image|home-card-image/.test(className)
+        ? '(max-width: 760px) calc(100vw - 32px), (max-width: 1120px) 50vw, 320px'
+        : '(max-width: 760px) calc(100vw - 32px), min(960px, 100vw - 64px)';
+      const candidates = [...variants, { src, width: dimensions.width }]
+        .sort((left, right) => left.width - right.width)
+        .map((candidate) => `${escapeAttribute(candidate.src)} ${candidate.width}w`)
+        .join(', ');
+      attributes += ` srcset="${candidates}" sizes="${sizes}"`;
     }
   } catch {
     // A missing optional responsive variant must not block content generation.

@@ -8,6 +8,7 @@ const port = Number(process.env.PORT || 4173);
 const root = path.resolve(process.env.STATIC_ROOT || process.cwd());
 
 const contentTypes = new Map([
+  [".avif", "image/avif"],
   [".css", "text/css; charset=utf-8"],
   [".gif", "image/gif"],
   [".html", "text/html; charset=utf-8"],

@@ -297,6 +297,32 @@
     };
   }
 
+  // Detail pages retain the canonical full thumbnail URL. Listing surfaces can
+  // opt into a bounded Drive rendition without changing that public-detail
+  // contract or exposing any additional Drive information.
+  function communityThumbnailForWidth(src, width = 480) {
+    const normalized = normalizeImageSrc(src);
+    if (!normalized) return "";
+
+    const requestedWidth = Number.parseInt(width, 10);
+    const safeWidth = Number.isFinite(requestedWidth)
+      ? Math.min(Math.max(requestedWidth, 64), 480)
+      : 480;
+
+    try {
+      const url = new URL(normalized, window.location.href);
+      const isDriveThumbnail = url.hostname.toLowerCase() === "drive.google.com"
+        && /^\/thumbnail\/?$/.test(url.pathname)
+        && Boolean(url.searchParams.get("id"));
+      if (!isDriveThumbnail) return normalized;
+
+      url.searchParams.set("sz", `w${safeWidth}`);
+      return url.href;
+    } catch {
+      return normalized;
+    }
+  }
+
   // 投稿日 is the explicit publication timestamp when present, otherwise the
   // original creation timestamp. Administrative approval/update timestamps do
   // not affect newest sorting.
@@ -364,6 +390,7 @@
     isPubliclyVisible,
     isAllowedCommunityImageUrl,
     normalizeImageSrc,
+    communityThumbnailForWidth,
     communityDetailHref: communityStandaloneDetailHref,
     communityStandaloneDetailHref,
     communityBoardModalHref,

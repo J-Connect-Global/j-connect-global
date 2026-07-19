@@ -618,13 +618,69 @@ function renderInlineArticleImage(src, alt) {
   const variant = INLINE_IMAGE_VARIANTS[src];
   const safeSrc = escapeAttribute(src);
   const safeAlt = escapeAttribute(alt);
-  if (!variant) {
-    return `<img src="${safeSrc}" alt="${safeAlt}" loading="lazy" decoding="async">`;
-  }
-  return `<picture>
+  if (variant) {
+    return `<picture>
     <source media="(max-width: 600px)" srcset="${escapeAttribute(variant.small)}">
     <img src="${safeSrc}" alt="${safeAlt}" width="${variant.width}" height="${variant.height}" loading="lazy" decoding="async">
   </picture>`;
+  }
+
+  const localVariant = resolveLocalInlineWebpVariant(src);
+  if (!localVariant) {
+    return `<img src="${safeSrc}" alt="${safeAlt}" loading="lazy" decoding="async">`;
+  }
+
+  const candidates = [...localVariant.variants, { src, width: localVariant.width }]
+    .sort((left, right) => left.width - right.width);
+  const small = candidates.find((candidate) => candidate.width === 480);
+  const medium = candidates.find((candidate) => candidate.width === 768);
+  const srcset = candidates
+    .map((candidate) => `${escapeAttribute(candidate.src)} ${candidate.width}w`)
+    .join(', ');
+  const sizes = '(max-width: 600px) calc(100vw - 32px), (max-width: 960px) calc(100vw - 48px), min(820px, 100vw - 64px)';
+
+  return `<picture>
+${small ? `    <source media="(max-width: 600px)" srcset="${escapeAttribute(small.src)}">\n` : ''}${medium ? `    <source media="(max-width: 960px)" srcset="${escapeAttribute(medium.src)}">\n` : ''}    <img src="${safeSrc}" alt="${safeAlt}" width="${localVariant.width}" height="${localVariant.height}" srcset="${srcset}" sizes="${escapeAttribute(sizes)}" loading="lazy" decoding="async">
+  </picture>`;
+}
+
+function resolveLocalInlineWebpVariant(src) {
+  const value = String(src || '').trim();
+  if (!/^\/assets\/images\/[a-z0-9._/-]+\.webp$/i.test(value)) return null;
+
+  const relative = normalizeRepoPath(value);
+  const masterPath = path.resolve(root, relative);
+  const repositoryRoot = fs.realpathSync(root);
+  const repositoryPrefix = `${repositoryRoot}${path.sep}`;
+  const resolveRepositoryFile = (candidatePath) => {
+    if (!candidatePath.startsWith(`${root}${path.sep}`) || !fs.existsSync(candidatePath)) return null;
+    const realPath = fs.realpathSync(candidatePath);
+    if (!realPath.startsWith(repositoryPrefix) || !fs.statSync(realPath).isFile()) return null;
+    return realPath;
+  };
+
+  try {
+    const masterRealPath = resolveRepositoryFile(masterPath);
+    if (!masterRealPath) return null;
+    const dimensions = readWebpDimensions(fs.readFileSync(masterRealPath));
+    if (!dimensions?.width || !dimensions?.height) return null;
+
+    const variants = [480, 768]
+      .map((width) => {
+        const variantSrc = value.replace(/\.webp$/i, `-${width}w.webp`);
+        const variantPath = path.resolve(root, normalizeRepoPath(variantSrc));
+        const variantRealPath = resolveRepositoryFile(variantPath);
+        if (!variantRealPath) return null;
+        const variantDimensions = readWebpDimensions(fs.readFileSync(variantRealPath));
+        if (!variantDimensions?.width || !variantDimensions?.height) return null;
+        return { src: variantSrc, width: variantDimensions.width, height: variantDimensions.height };
+      })
+      .filter(Boolean);
+
+    return variants.length ? { ...dimensions, variants } : null;
+  } catch {
+    return null;
+  }
 }
 
 function collectList(lines, start, ordered, context) {

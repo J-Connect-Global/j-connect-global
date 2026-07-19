@@ -426,7 +426,7 @@ test("articles expose distinct editorial updates as visible semantic freshness",
   const freshness = page.locator(".article-freshness");
   await expect(freshness).toBeVisible();
   await expect(freshness.locator('time.article-date--published[datetime="2026-06-29"]')).toHaveText("公開: 2026-06-29");
-  await expect(freshness.locator('time.article-date--updated-verified[datetime="2026-07-16"]')).toHaveText("最終更新・確認: 2026-07-16");
+  await expect(freshness.locator('time.article-date--updated-verified[datetime="2026-07-19"]')).toHaveText("最終更新・確認: 2026-07-19");
   await expect(freshness.locator("time")).toHaveCount(2);
   await activateDarkMode(page);
   await assertWcagTextContrast(page, ".article-freshness", "article freshness in dark mode");

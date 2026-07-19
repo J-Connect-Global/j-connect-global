@@ -32,11 +32,16 @@ assert.equal(cappedSafeIds.at(-1), "excluded-50");
 
 const gasContractSource = read("apps-script/community-board-api.gs");
 const browserDataSources = read("assets/js/data-sources.js");
+const articleUiCss = read("assets/css/jconnect-ui.css");
+const mainBrowserScript = read("assets/js/main.js");
 const gasVersion = gasContractSource.match(/const\s+PUBLIC_DATA_API_VERSION\s*=\s*['"]([^'"]+)['"]/)?.[1];
 assert.equal(EXPECTED_API_VERSION, "2026-07-13.1");
 assert.equal(gasVersion, EXPECTED_API_VERSION, "Apps Script and sync public API versions diverged");
 assert.equal(/'application_email'|'apply_email'|'public_email'/.test(gasContractSource), false, "GAS public Jobs allowlist exposes email fields");
 assert.equal(/Spreadsheet ID|Drive folder ID/.test(browserDataSources), false, "public data-sources.js exposes internal source identifiers");
+assert.match(articleUiCss, /\.article-mobile-toc\{\s*display:none;/, "desktop must hide the inline article TOC");
+assert.match(articleUiCss, /@media \(max-width:960px\)\{[\s\S]*?\.article-mobile-toc\{[\s\S]*?display:block;/, "mobile must show the inline article TOC");
+assert.match(mainBrowserScript, /setAttribute\('aria-current', 'location'\)/, "active desktop TOC links must expose aria-current");
 
 const retainedContentCases = [
   { title: "test", body: "test" },
@@ -647,8 +652,13 @@ for (const [type, backText] of [
   for (const item of registry.filter((entry) => entry.published === true)) {
     const publicPath = String(item.url || item.canonical_url || `/germany/ja/${type}/${item.slug}/`).replace(/^\/+|\/+$/g, "");
     const html = read(path.posix.join(publicPath, "index.html"));
-    assert.ok((html.match(/aria-label="記事内目次"/g) || []).length <= 1, `${type}/${item.slug} has duplicate tables of contents`);
-    assert.equal((html.match(/article-sidebar-toc/g) || []).length, 0, `${type}/${item.slug} retains a duplicate sidebar TOC`);
+    const mobileTocCount = (html.match(/<details class="article-mobile-toc">/g) || []).length;
+    const sidebarTocCount = (html.match(/<section class="article-sidebar-card article-sidebar-toc">/g) || []).length;
+    assert.ok(mobileTocCount <= 1, `${type}/${item.slug} has duplicate mobile tables of contents`);
+    assert.equal((html.match(/<details class="article-mobile-toc" open>/g) || []).length, 0, `${type}/${item.slug} opens the mobile TOC by default`);
+    assert.equal(sidebarTocCount, mobileTocCount, `${type}/${item.slug} must render matching desktop and mobile TOCs`);
+    assert.equal((html.match(/aria-label="記事内目次"/g) || []).length, sidebarTocCount, `${type}/${item.slug} has an invalid desktop TOC label`);
+    assert.equal((html.match(/aria-label="モバイル記事内目次"/g) || []).length, mobileTocCount, `${type}/${item.slug} has an invalid mobile TOC label`);
     assert.ok((html.match(/>関連記事<\//g) || []).length <= 1, `${type}/${item.slug} has duplicate related-article headings`);
     assert.ok((html.match(new RegExp(backText, "g")) || []).length <= 1, `${type}/${item.slug} has duplicate back links`);
   }

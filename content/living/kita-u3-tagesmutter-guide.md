@@ -8,7 +8,9 @@ summary: "ドイツで保育先を探す日本人家庭向けに、U3、Kita、T
 status: "published"
 published: true
 published_at: "2026-06-12"
-last_verified: "2026-06-16"
+updated_at: "2026-07-19"
+last_verified: "2026-07-19"
+next_review: "2026-10-19"
 canonical_url: "/germany/ja/living/kita-u3-tagesmutter-guide/"
 related_articles: ["pregnancy-birth-germany","moving-checklist-germany"]
 ---
@@ -20,6 +22,10 @@ related_articles: ["pregnancy-birth-germany","moving-checklist-germany"]
 日本の「保育園」「幼稚園」と完全に同じではなく、州・自治体・施設ごとに申し込み方法、費用、預かり時間、優先順位が変わります。特にドイツで出産、育休、復職、引っ越しを予定している家庭は、妊娠中または出産後できるだけ早い段階で情報収集を始めるのが現実的です。
 
 この記事では、ドイツで保育先を探す日本人家庭向けに、基本用語、探し方、申し込みの流れ、見学時の確認ポイントを整理します。
+
+![自治体ポータル、施設への直接連絡、Jugendamt、代替保育を並行するKita探し](/assets/images/living/kita-search-timeline.svg "KitaだけでなくTagespflegeとJugendamt相談も並行する")
+
+> **2026年7月19日再確認：** 連邦Families Portalは、満1歳からKitaまたはKindertagespflegeの保育枠に法的請求権があると案内しています。ただし自動的に希望施設へ配席される制度ではないため、申請日・希望条件・Jugendamtとの連絡記録を残してください。
 
 ---
 

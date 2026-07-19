@@ -1,25 +1,31 @@
 ---
 id: "L005"
-title: "SCHUFAとは？賃貸・契約で必要になる信用情報"
+title: "SCHUFAとは？無料Datenkopieと賃貸提出用証明の違い"
 slug: "schufa-guide"
 category: "住まい・契約"
 tags: ["SCHUFA","賃貸","信用情報"]
-summary: "SCHUFAの意味、賃貸契約や携帯・銀行手続きで必要になる場面、取得方法、提出時の注意点を解説。"
+summary: "SCHUFAの仕組みと取得方法を解説。無料のDatenkopieと賃貸提出用Bonitätsnachweisの違い、個人情報を渡す際の注意点が分かります。"
 status: "published"
 published: true
 published_at: "2026-06-12"
-last_verified: "2026-06-16"
+updated_at: "2026-07-19"
+last_verified: "2026-07-19"
+next_review: "2026-10-19"
 canonical_url: "/germany/ja/living/schufa-guide/"
 related_articles: ["rent-apartment-germany","bank-account-germany"]
 ---
 
-# SCHUFAとは？賃貸・契約で必要になる信用情報
+# SCHUFAとは？無料Datenkopieと賃貸提出用証明の違い
 
 ドイツで部屋を借りる、携帯を契約する、銀行やクレジット関連サービスを使うときに、**SCHUFA（シューファ）**という言葉を聞くことがあります。
 
 日本でいう「信用情報」に近い仕組みですが、ドイツでは特に**賃貸応募**で重要になることが多く、ドイツに来たばかりの人にとっては少しわかりにくい分野です。
 
 この記事では、SCHUFAとは何か、どんな場面で必要になるか、どの書類を取得すればよいか、提出時に何に注意すべきかを整理します。
+
+![自己確認用のDatenkopieと賃貸提出用のBonitätsnachweisの違い](/assets/images/living/schufa-document-choice.svg "無料のデータコピーは自己確認用で詳細な個人情報を含む")
+
+> **2026年7月19日再確認：** Art. 15 DSGVOのDatenkopieは、自分について保存・処理されている情報を確認するためのもので、原則無料です。詳細な個人情報を含むため、賃貸提出用証明と同じ感覚で第三者へ丸ごと送らないでください。
 
 ## この記事でわかること
 

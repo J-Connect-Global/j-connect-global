@@ -499,7 +499,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function setActiveLink(id) {
     tocLinks.forEach(function (link) {
-      link.classList.toggle('is-active', link === linksById[id]);
+      var isActive = link === linksById[id];
+      link.classList.toggle('is-active', isActive);
+      if (isActive) {
+        link.setAttribute('aria-current', 'location');
+      } else {
+        link.removeAttribute('aria-current');
+      }
     });
   }
 

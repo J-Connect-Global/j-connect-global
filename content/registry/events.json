@@ -295,19 +295,19 @@
   },
   {
     "id": "E008",
-    "title": "NATSU HIKARI Japan Festival Köln 2026 ガイド",
+    "title": "NATSU HIKARI Japan Festival Köln 2026｜チケット・回り方・注意点",
     "slug": "natsu-hikari-japan-festival-cologne",
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
-    "image_alt": "Japan festival event card",
+    "image_alt": "工業建築のホールでライブ、フード、マーケットを楽しむ日本文化フェスティバルの編集イラスト",
     "category": "日本文化イベント",
-    "summary": "2026年8月22日にケルンで開催予定のNATSU HIKARI Japan Festival Kölnについて、内容、チケット、アクセス、子連れ・コスプレ参加時の確認ポイントを整理します。",
+    "summary": "2026年8月22日にケルンで開かれるNATSU HIKARIを、最新の公式情報から実用的に整理。チケットの違い、ワークショップ、会場別の終了時刻、アクセス、子連れ・コスプレ参加の注意点が分かります。",
     "url": "/germany/ja/events/natsu-hikari-japan-festival-cologne/",
     "markdown_path": "/content/events/natsu-hikari-japan-festival-cologne.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-06-29",
-    "last_verified": "2026-06-29",
+    "updated_at": "2026-07-19",
+    "last_verified": "2026-07-19",
     "tags": [
       "日本文化",
       "ケルン",
@@ -338,8 +338,9 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-29",
-      "next_review_due": "2026-08-22"
-    }
+      "last_reviewed_at": "2026-07-19",
+      "next_review_due": "2026-08-20"
+    },
+    "image": "/assets/img/events/natsu-hikari-editorial-v2.webp"
   }
 ]

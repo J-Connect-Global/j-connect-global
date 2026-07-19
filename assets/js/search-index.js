@@ -617,6 +617,19 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
+    "title": "ドイツの電車の乗り方｜DB Navigator・Deutschlandticket・長距離列車の基本",
+    "description": "ドイツ在住者の週末旅行で繰り返し使う、DB Navigatorの見方、列車種別、Deutschlandticketの範囲、工事・運休・検札・バリアフリー確認を一か所にまとめます。",
+    "url": "/germany/ja/living/germany-train-travel-guide/",
+    "category": "生活・手続き",
+    "tags": [
+      "DB Navigator",
+      "Deutschlandticket",
+      "ドイツ鉄道",
+      "週末旅行",
+      "交通"
+    ]
+  },
+  {
     "title": "デュッセルドルフ日本デーの基本ガイド",
     "description": "デュッセルドルフの日本デーについて、初めて行く人向けに見どころ、混雑、アクセス、子連れ・花火観覧の注意点を整理します。",
     "url": "/germany/ja/events/japan-day-duesseldorf/",
@@ -1287,6 +1300,29 @@ window.JCONNECT_SEARCH_INDEX = [
       "website",
       "B2plus",
       "free"
+    ]
+  },
+  {
+    "title": "観光・週末旅行で使えるドイツ語｜駅・ホテル・観光案内所のフレーズ",
+    "description": "駅の遅延・乗換、ホテルの荷物預け、観光案内所の当日券、予約時刻と入口を、画面を見せながら短く確認するドイツ語フレーズ集です。",
+    "url": "/germany/ja/learn-german/travel-german-phrases/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "旅行",
+      "駅",
+      "ホテル",
+      "観光案内所",
+      "ドイツ語フレーズ",
+      "phrase",
+      "travel",
+      "transport",
+      "hotel",
+      "daily-life",
+      "A1",
+      "A2",
+      "speaking",
+      "listening",
+      "10min"
     ]
   }
 ];

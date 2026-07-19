@@ -1576,5 +1576,66 @@
       "next_review_due": "2027-06-30"
     },
     "hero_image": "/assets/img/living/germany-wild-birds/germany-wild-birds-hero.webp"
+  },
+  {
+    "id": "L033",
+    "slug": "germany-train-travel-guide",
+    "url": "/germany/ja/living/germany-train-travel-guide/",
+    "markdown_path": "/content/living/germany-train-travel-guide.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 340,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "title": "ドイツの電車の乗り方｜DB Navigator・Deutschlandticket・長距離列車の基本",
+    "category": "交通・移動",
+    "summary": "ドイツ在住者の週末旅行で繰り返し使う、DB Navigatorの見方、列車種別、Deutschlandticketの範囲、工事・運休・検札・バリアフリー確認を一か所にまとめます。",
+    "published_at": "2026-07-19",
+    "last_verified": "2026-07-19",
+    "canonical_url": "/germany/ja/living/germany-train-travel-guide/",
+    "tags": [
+      "DB Navigator",
+      "Deutschlandticket",
+      "ドイツ鉄道",
+      "週末旅行",
+      "交通"
+    ],
+    "updated_at": "2026-07-19",
+    "related_articles": [
+      "berlin-weekend-trip",
+      "hamburg-weekend-trip",
+      "munich-weekend-trip"
+    ],
+    "official_sources": [
+      {
+        "title": "DB Navigator app",
+        "url": "https://int.bahn.de/en/booking-information/db-navigator"
+      },
+      {
+        "title": "Deutschland-Ticket: valid trains",
+        "url": "https://int.bahn.de/en/faq/deutschlandticket-which-trains"
+      },
+      {
+        "title": "Deutsche Bahn passenger rights",
+        "url": "https://int.bahn.de/en/booking-information/passenger-rights"
+      },
+      {
+        "title": "Accessible travel with Deutsche Bahn",
+        "url": "https://int.bahn.de/en/booking-information/accessible-travel"
+      },
+      {
+        "title": "Identification during ticket inspection",
+        "url": "https://int.bahn.de/en/faq/id-when-booking-or-during-ticket-inspection-on-the-train"
+      }
+    ],
+    "disclaimer_type": "living",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-19",
+      "next_review_due": "2026-10-19"
+    }
   }
 ]

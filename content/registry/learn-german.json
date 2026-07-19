@@ -1017,5 +1017,42 @@
       "last_reviewed_at": "2026-07-16",
       "next_review_due": "2026-12-28"
     }
+  },
+  {
+    "id": "G026",
+    "slug": "travel-german-phrases",
+    "url": "/germany/ja/learn-german/travel-german-phrases/",
+    "markdown_path": "/content/learn-german/travel-german-phrases.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 260,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "title": "観光・週末旅行で使えるドイツ語｜駅・ホテル・観光案内所のフレーズ",
+    "category": "旅行・交通",
+    "summary": "駅の遅延・乗換、ホテルの荷物預け、観光案内所の当日券、予約時刻と入口を、画面を見せながら短く確認するドイツ語フレーズ集です。",
+    "published_at": "2026-07-19",
+    "last_verified": "2026-07-19",
+    "canonical_url": "/germany/ja/learn-german/travel-german-phrases/",
+    "tags": ["旅行", "駅", "ホテル", "観光案内所", "ドイツ語フレーズ"],
+    "updated_at": "2026-07-19",
+    "content_type": "phrase",
+    "situation": ["travel", "transport", "hotel"],
+    "goal": ["daily-life", "travel"],
+    "level": ["A1", "A2"],
+    "skill": ["speaking", "listening"],
+    "duration": ["10min"],
+    "official_sources": [],
+    "disclaimer_type": "language_learning",
+    "related_articles": ["appointment-phrase", "telephone-phrases", "shopping-phrases"],
+    "related_living_guides": ["germany-train-travel-guide"],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-07-19",
+      "next_review_due": "2027-01-19"
+    }
   }
 ]

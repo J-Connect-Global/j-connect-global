@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="520" viewBox="0 0 820 520" role="img" aria-labelledby="title desc">
+  <title id="title">ハンブルク港へ西進する基本ルート</title>
+  <desc id="desc">Hamburg HbfからRathaus、Speicherstadt、HafenCityとElbphilharmonie、Landungsbrückenへ西進する順序。実線は基本ルート、破線は任意の分岐。縮尺は正確ではありません。</desc>
+  <defs>
+    <marker id="route-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#075b9a"/></marker>
+    <marker id="optional-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#147d75"/></marker>
+    <filter id="card-shadow" x="-15%" y="-20%" width="130%" height="150%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#12324a" flood-opacity="0.15"/></filter>
+  </defs>
+  <rect x="1" y="1" width="818" height="518" rx="20" fill="#f8fbfe" stroke="#a9c5dc" stroke-width="2"/>
+  <text x="34" y="44" fill="#062f55" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="800">ハンブルク港へ西進する基本ルート</text>
+  <g transform="translate(34 72)" aria-hidden="true">
+    <line x1="0" y1="0" x2="44" y2="0" stroke="#075b9a" stroke-width="7" stroke-linecap="round"/>
+    <text x="56" y="6" fill="#405e72" font-family="system-ui, -apple-system, sans-serif" font-size="16">基本ルート</text>
+    <line x1="178" y1="0" x2="222" y2="0" stroke="#147d75" stroke-width="5" stroke-dasharray="10 8" stroke-linecap="round"/>
+    <text x="234" y="6" fill="#405e72" font-family="system-ui, -apple-system, sans-serif" font-size="16">任意の追加</text>
+  </g>
+  <g aria-hidden="true">
+    <path d="M690 160 L545 215" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
+    <path d="M545 215 L420 315" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
+    <path d="M420 315 L270 345" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
+    <path d="M270 345 L110 280" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
+    <path d="M545 215 L465 125" fill="none" stroke="#147d75" stroke-width="5" stroke-dasharray="12 10" stroke-linecap="round" marker-end="url(#optional-arrow)"/></g>
+  <g filter="url(#card-shadow)">
+    <rect x="578" y="126" width="224" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="598" cy="160" r="9" fill="#075b9a"/>
+    <text x="690" y="156" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800"><tspan x="690" dy="0">Hamburg Hbf</tspan></text>
+    <text x="690" y="179" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="15">到着</text>
+  </g>
+<g filter="url(#card-shadow)">
+    <rect x="433" y="181" width="224" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="453" cy="215" r="9" fill="#075b9a"/>
+    <text x="545" y="211" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800"><tspan x="545" dy="0">Rathaus</tspan></text>
+    <text x="545" y="234" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="15">中心部</text>
+  </g>
+<g filter="url(#card-shadow)">
+    <rect x="308" y="281" width="224" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="328" cy="315" r="9" fill="#075b9a"/>
+    <text x="420" y="311" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800"><tspan x="420" dy="0">Speicherstadt</tspan></text>
+    <text x="420" y="334" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="15">赤レンガ地区</text>
+  </g>
+<g filter="url(#card-shadow)">
+    <rect x="158" y="311" width="224" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="178" cy="345" r="9" fill="#075b9a"/>
+    <text x="270" y="332" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800"><tspan x="270" dy="0">HafenCity /</tspan><tspan x="270" dy="20">Elbphilharmonie</tspan></text>
+    <text x="270" y="370" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="15">Plazaを確認</text>
+  </g>
+<g filter="url(#card-shadow)">
+    <rect x="-2" y="246" width="224" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
+    <circle cx="18" cy="280" r="9" fill="#075b9a"/>
+    <text x="110" y="276" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800"><tspan x="110" dy="0">Landungsbrücken</tspan></text>
+    <text x="110" y="299" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="15">港の終点</text>
+  </g>
+<g filter="url(#card-shadow)">
+    <rect x="353" y="91" width="224" height="68" rx="14" fill="#edf9f6" stroke="#4c9f96" stroke-width="2"/>
+    <circle cx="373" cy="125" r="9" fill="#147d75"/>
+    <text x="465" y="121" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800"><tspan x="465" dy="0">Alster</tspan></text>
+    <text x="465" y="144" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="15">別日の分岐</text>
+  </g>
+  <text x="786" y="493" text-anchor="end" fill="#526c7f" font-family="system-ui, -apple-system, sans-serif" font-size="15">概略図／縮尺は正確ではありません</text>
+</svg>

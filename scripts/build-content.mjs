@@ -198,6 +198,15 @@ function loadContentType(type) {
     for (const field of frontMatterComparableFields) {
       if (Object.prototype.hasOwnProperty.call(frontMatter, field)) source[field] = frontMatter[field];
     }
+    if (Array.isArray(frontMatter.official_sources)) {
+      const combinedSources = [
+        ...(Array.isArray(source.official_sources) ? source.official_sources : []),
+        ...frontMatter.official_sources
+      ];
+      source.official_sources = [...new Map(combinedSources
+        .filter((entry) => entry && typeof entry === 'object' && entry.url)
+        .map((entry) => [entry.url, entry])).values()];
+    }
     const merged = normalizeItem(type, { ...source, __frontmatter: frontMatter }, index);
 
     return {
@@ -625,6 +634,14 @@ function renderInlineArticleImage(src, alt) {
   </picture>`;
   }
 
+  const localSvg = resolveLocalInlineSvgVariant(src);
+  if (localSvg) {
+    return `<picture>
+    <source media="(max-width: 600px)" srcset="${escapeAttribute(localSvg.mobileSrc)}">
+    <img src="${safeSrc}" alt="${safeAlt}" width="${localSvg.width}" height="${localSvg.height}" loading="lazy" decoding="async">
+  </picture>`;
+  }
+
   const localVariant = resolveLocalInlineWebpVariant(src);
   if (!localVariant) {
     return `<img src="${safeSrc}" alt="${safeAlt}" loading="lazy" decoding="async">`;
@@ -642,6 +659,44 @@ function renderInlineArticleImage(src, alt) {
   return `<picture>
 ${small ? `    <source media="(max-width: 600px)" srcset="${escapeAttribute(small.src)}">\n` : ''}${medium ? `    <source media="(max-width: 960px)" srcset="${escapeAttribute(medium.src)}">\n` : ''}    <img src="${safeSrc}" alt="${safeAlt}" width="${localVariant.width}" height="${localVariant.height}" srcset="${srcset}" sizes="${escapeAttribute(sizes)}" loading="lazy" decoding="async">
   </picture>`;
+}
+
+function resolveLocalInlineSvgVariant(src) {
+  const value = String(src || '').trim();
+  if (!/^\/assets\/images\/[a-z0-9._/-]+\.svg$/i.test(value) || /-mobile\.svg$/i.test(value)) return null;
+
+  const relative = normalizeRepoPath(value);
+  const masterPath = path.resolve(root, relative);
+  const mobileSrc = value.replace(/\.svg$/i, '-mobile.svg');
+  const mobilePath = path.resolve(root, normalizeRepoPath(mobileSrc));
+  const repositoryRoot = fs.realpathSync(root);
+  const repositoryPrefix = `${repositoryRoot}${path.sep}`;
+
+  try {
+    for (const candidate of [masterPath, mobilePath]) {
+      if (!candidate.startsWith(`${root}${path.sep}`) || !fs.existsSync(candidate)) return null;
+      const realPath = fs.realpathSync(candidate);
+      if (!realPath.startsWith(repositoryPrefix) || !fs.statSync(realPath).isFile()) return null;
+    }
+
+    const dimensions = readLocalSvgDimensions(masterPath);
+    const mobileDimensions = readLocalSvgDimensions(mobilePath);
+    if (!dimensions || !mobileDimensions) return null;
+    return { ...dimensions, mobileSrc };
+  } catch {
+    return null;
+  }
+}
+
+function readLocalSvgDimensions(filePath) {
+  const source = fs.readFileSync(filePath, 'utf8');
+  const svg = source.match(/<svg\b[^>]*>/i)?.[0];
+  if (!svg) return null;
+  const width = Number(svg.match(/\bwidth=["'](\d+(?:\.\d+)?)["']/i)?.[1]);
+  const height = Number(svg.match(/\bheight=["'](\d+(?:\.\d+)?)["']/i)?.[1]);
+  const viewBox = svg.match(/\bviewBox=["']\s*([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s*["']/i);
+  if (!width || !height || !viewBox || Number(viewBox[3]) <= 0 || Number(viewBox[4]) <= 0) return null;
+  return { width, height };
 }
 
 function resolveLocalInlineWebpVariant(src) {
@@ -2194,6 +2249,27 @@ function parseYamlSubset(source) {
     const key = match[1];
     const rawValue = match[2].trim();
     if (rawValue === '') {
+      const objectValues = [];
+      let cursor = index + 1;
+      while (cursor < lines.length) {
+        const firstField = lines[cursor].match(/^\s{2}-\s+([A-Za-z0-9_]+):\s*(.*)$/);
+        if (!firstField) break;
+        const entry = { [firstField[1]]: parseScalar(firstField[2].trim()) };
+        cursor += 1;
+        while (cursor < lines.length) {
+          const nextField = lines[cursor].match(/^\s{4}([A-Za-z0-9_]+):\s*(.*)$/);
+          if (!nextField) break;
+          entry[nextField[1]] = parseScalar(nextField[2].trim());
+          cursor += 1;
+        }
+        objectValues.push(entry);
+      }
+      if (objectValues.length) {
+        data[key] = objectValues;
+        index = cursor - 1;
+        continue;
+      }
+
       const values = [];
       while (lines[index + 1] && /^\s*-\s+/.test(lines[index + 1])) {
         index += 1;

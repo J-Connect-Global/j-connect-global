@@ -6,6 +6,7 @@ import {
   assertCommunityCards,
   assertDirectoryModalKeyboard,
   assertArticleHeroFrame,
+  assertNoHorizontalOverflow,
   assertNoIndex,
   assertNoRuntimeDiagnostics,
   assertPublicJobs,
@@ -420,6 +421,50 @@ test("article hero frames preserve the desktop crop and article alignment", asyn
   }
 });
 
+test("articles expose distinct editorial updates as visible semantic freshness", async ({ page }) => {
+  await openRoute(page, "/germany/ja/living/hamburg-weekend-trip/");
+  const freshness = page.locator(".article-freshness");
+  await expect(freshness).toBeVisible();
+  await expect(freshness.locator('time.article-date--published[datetime="2026-06-29"]')).toHaveText("公開: 2026-06-29");
+  await expect(freshness.locator('time.article-date--updated-verified[datetime="2026-07-16"]')).toHaveText("最終更新・確認: 2026-07-16");
+  await expect(freshness.locator("time")).toHaveCount(2);
+  await activateDarkMode(page);
+  await assertWcagTextContrast(page, ".article-freshness", "article freshness in dark mode");
+  await assertRouteReady(page);
+});
+
+test("root 404 is a noindex, theme-aware recovery page", async ({ page }) => {
+  const response = await page.goto("/this-route-does-not-exist/", { waitUntil: "load" });
+  expect(response, "missing route returned no main-document response").not.toBeNull();
+  expect(response.status()).toBe(404);
+  expect(response.headers()["content-type"]).toContain("text/html");
+  await expect(page.locator("main h1")).toHaveText("ページが見つかりません");
+  await assertNoIndex(page);
+  await assertSharedLayout(page);
+
+  const recoveryLinks = page.locator("main .not-found-links");
+  for (const href of [
+    "/germany/ja/",
+    "/germany/ja/search/",
+    "/germany/ja/community/",
+    "/germany/ja/living/",
+    "/germany/ja/jobs/",
+    "/germany/ja/events/",
+    "/germany/ja/learn-german/",
+    "/germany/ja/contact/"
+  ]) {
+    await expect(recoveryLinks.locator(`a[href="${href}"]`)).toBeVisible();
+  }
+  const homeLink = recoveryLinks.locator('a[href="/germany/ja/"]').first();
+  await homeLink.focus();
+  await expect(homeLink).toBeFocused();
+
+  await activateDarkMode(page);
+  await assertWcagTextContrast(page, ".not-found-page .site-hero h1", "root 404 heading in dark mode");
+  await assertWcagTextContrast(page, ".not-found-page .not-found-links .site-chip", "root 404 navigation in dark mode");
+  await assertNoHorizontalOverflow(page);
+});
+
 test("Jobs empty fallback remains actionable when the public data is empty", async ({ page }) => {
   await page.route("**/assets/data/jobs/jobs.json", (route) => route.fulfill({
     contentType: "application/json",
@@ -446,10 +491,18 @@ test("Eat renders the committed fixture dataset", async ({ page }) => {
   await expect(page.locator("#cards [data-item-id]")).toHaveCount(eatFixture.items.length);
   await expect(page.locator("#resultsSummary")).toContainText(`全${eatFixture.items.length}件`);
   await expect(page.locator("#cards")).not.toContainText("★0.0");
-  const expectedRatedEat = eatFixture.items.filter((item) => Number(item.rating) >= 4).length;
-  await page.locator('#starChipGroup [data-value="4.0"]').click();
-  await expect(page.locator("#cards [data-item-id]")).toHaveCount(expectedRatedEat);
-  await page.locator('#starChipGroup [data-value=""]').click();
+  await expect(page.locator("#regionField")).toBeHidden();
+  await expect(page.locator("#categoryField")).toBeHidden();
+  await expect(page.locator("#ratingField")).toBeHidden();
+  await expect(page.locator("#mapViewBtn")).toBeHidden();
+  await expect(page.locator("#detailCategoryField")).toBeVisible();
+  await expect(page.locator("#reviewField")).toBeVisible();
+  await expect(page.locator("#priceField")).toBeVisible();
+  await expect(page.locator("#cards [data-detail]")).toHaveCount(0);
+  const expectedReviewedEat = eatFixture.items.filter((item) => Number(item.reviews_count) >= 1000).length;
+  await page.locator('#reviewChipGroup [data-value="1000"]').click();
+  await expect(page.locator("#cards [data-item-id]")).toHaveCount(expectedReviewedEat);
+  await page.locator('#reviewChipGroup [data-value=""]').click();
   const eatBranchGroups = new Map();
   for (const item of eatFixture.items) {
     if (!eatBranchGroups.has(item.name)) eatBranchGroups.set(item.name, []);
@@ -459,7 +512,6 @@ test("Eat renders the committed fixture dataset", async ({ page }) => {
   expect(eatBranch, "an Eat same-name branch fixture is required").toBeTruthy();
   const eatBranchCard = page.locator(`[data-item-id="${eatBranch.slug || eatBranch.id}"]`);
   await expect(eatBranchCard).toContainText(eatBranch.street || eatBranch.address);
-  await assertDirectoryModalKeyboard(page);
   await assertRouteReady(page);
 });
 
@@ -469,11 +521,110 @@ test("Shopping renders the committed fixture dataset", async ({ page }) => {
   await expect(page.locator("#cards [data-item-id]")).toHaveCount(shoppingFixture.items.length);
   await expect(page.locator("#resultsSummary")).toContainText(`全${shoppingFixture.items.length}件`);
   await expect(page.locator("#cards")).not.toContainText("★0.0");
-  const expectedRatedShopping = shoppingFixture.items.filter((item) => Number(item.rating) >= 4).length;
-  await page.locator('#starChipGroup [data-value="4.0"]').click();
-  await expect(page.locator("#cards [data-item-id]")).toHaveCount(expectedRatedShopping);
-  await page.locator('#starChipGroup [data-value=""]').click();
+  await expect(page.locator("h1")).toContainText("デュッセルドルフ");
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /デュッセルドルフ/);
+  await expect(page.locator("#resultsSummary")).toContainText("Düsseldorfの公開データ");
+  await expect(page.locator("#regionField")).toBeHidden();
+  await expect(page.locator("#ratingField")).toBeHidden();
+  await expect(page.locator("#priceField")).toBeHidden();
+  await expect(page.locator("#mapViewBtn")).toBeHidden();
+  await expect(page.locator("#categoryField")).toBeVisible();
+  await expect(page.locator("#detailCategoryField")).toBeVisible();
+  await expect(page.locator("#reviewField")).toBeVisible();
+  await expect(page.locator("#cards [data-detail]")).toHaveCount(0);
+  await page.locator('#categoryChipGroup [data-value="美容"]').click();
+  await expect(page.locator("#detailCategoryField")).toBeHidden();
+  await expect(page.locator("#detailCategoryChipGroup")).not.toContainText("その他・未分類");
+  await page.locator('#categoryChipGroup [data-value=""]').click();
+  const expectedReviewedShopping = shoppingFixture.items.filter((item) => Number(item.reviews_count) >= 1000).length;
+  await page.locator('#reviewChipGroup [data-value="1000"]').click();
+  await expect(page.locator("#cards [data-item-id]")).toHaveCount(expectedReviewedShopping);
+  await page.locator('#reviewChipGroup [data-value=""]').click();
+  await assertRouteReady(page);
+});
+
+test("Directory capabilities appear automatically at the documented coverage boundary", async ({ page }) => {
+  await page.addInitScript(() => {
+    const map = {
+      setView() { return this; },
+      invalidateSize() {},
+      fitBounds() {}
+    };
+    window.L = {
+      map: () => map,
+      tileLayer: () => ({ addTo() { return this; } }),
+      layerGroup: () => ({ addTo() { return this; }, clearLayers() {} }),
+      marker: () => ({ bindPopup() { return this; }, on() { return this; }, addTo() { return this; } })
+    };
+  });
+  const items = Array.from({ length: 10 }, (_, index) => {
+    const hasRepresentativeValue = index < 6;
+    return {
+      id: `capability-${index + 1}`,
+      slug: `capability-${index + 1}`,
+      status: "active",
+      name: `Capability ${index + 1}`,
+      title: `Capability ${index + 1}`,
+      category: index < 5 ? "Restaurant" : "Cafe",
+      category1: index < 5 ? "Restaurant" : "Cafe",
+      detail_category: index % 2 ? "Sushi" : "Ramen",
+      category2: index % 2 ? "Sushi" : "Ramen",
+      region: index < 5 ? "Berlin" : "Hamburg",
+      city: index < 5 ? "Berlin" : "Hamburg",
+      address: `Test street ${index + 1}, Germany`,
+      price: hasRepresentativeValue ? (index % 2 ? "€10–20" : "€20–30") : "",
+      rating: hasRepresentativeValue ? 4.4 : null,
+      reviews_count: 100 + index,
+      latitude: hasRepresentativeValue ? 51.2 + index / 100 : null,
+      longitude: hasRepresentativeValue ? 6.7 + index / 100 : null,
+      phone: index === 0 ? "+49 211 123456" : "",
+      opening_hours: "",
+      language_support: "",
+      short_description: "",
+      description: "",
+      detail_comment: "",
+      official_url: "",
+      website: "",
+      map_url: ""
+    };
+  });
+  const capabilityFixture = {
+    ...eatFixture,
+    count: items.length,
+    items,
+    validation: {
+      ...eatFixture.validation,
+      source_count: items.length,
+      explicitly_active_count: items.length,
+      eligible_count: items.length,
+      generated_count: items.length,
+      intentionally_empty: false
+    }
+  };
+  await page.route("**/assets/data/eat/items.json", (route) => route.fulfill({
+    contentType: "application/json",
+    body: JSON.stringify(capabilityFixture)
+  }));
+  await openDataRoute(page, "/germany/ja/eat/", "/assets/data/eat/items.json");
+  await expect(page.locator("#cards [data-item-id]")).toHaveCount(items.length);
+  for (const selector of [
+    "#regionField",
+    "#categoryField",
+    "#detailCategoryField",
+    "#ratingField",
+    "#reviewField",
+    "#priceField",
+    "#mapViewBtn"
+  ]) await expect(page.locator(selector)).toBeVisible();
+  await expect(page.locator("#mapCoverageNote")).toContainText("6 件 / 全 10 件");
+  await expect(page.locator("#cards [data-detail]")).toHaveCount(1);
+  await page.locator('#regionChipGroup [data-value="Berlin"]').click();
+  await expect(page.locator("#cards [data-item-id]")).toHaveCount(5);
+  await page.locator('#regionChipGroup [data-value=""]').click();
+  await expect(page.locator("#cards [data-item-id]")).toHaveCount(items.length);
   await assertDirectoryModalKeyboard(page);
+  await page.locator("#mapViewBtn").click();
+  await expect(page.locator("#mapCoverageNote")).toBeVisible();
   await assertRouteReady(page);
 });
 
@@ -481,15 +632,21 @@ test("Medical renders its intentional empty state and emergency guidance", async
   expect(medicalFixture.items).toHaveLength(0);
   expect(medicalFixture.validation?.intentionally_empty).toBe(true);
   await openDataRoute(page, "/germany/ja/medical/", "/assets/data/medical/items.json");
-  await expect(page.locator("#cards .jc-result-card")).toHaveCount(0);
-  await expect(page.locator("#statusBox")).toContainText("現在は医療機関を探すための基本ガイドを表示しています");
-  await expect(page.locator("#statusBox")).toContainText("112");
-  await expect(page.locator("#statusBox")).toContainText("116117");
+  await expect(page.locator("#main-content.medical-official-guide")).toBeVisible();
+  await expect(page.locator("#main-content")).toContainText("生命に関わる緊急時");
+  await expect(page.locator("#main-content")).toContainText("112");
+  await expect(page.locator("#main-content")).toContainText("116117");
+  await expect(page.locator('#main-content a[href="https://gesund.bund.de/wege-im-gesundheitswesen/erwachsenenleben/notfaelle/erste-hilfe"]')).toHaveCount(1);
+  await expect(page.locator('#main-content a[href="https://www.116117.de/de/englisch.php"]')).toHaveCount(1);
+  await expect(page.locator('#main-content a[href="https://arztsuche.116117.de/"]')).toHaveCount(1);
+  await expect(page.locator('#main-content a[href="https://www.abda.de/apotheke-in-deutschland/was-apotheken-leisten/immer-erreichbar-sein/apotheken-finden/"]')).toHaveCount(1);
+  await expect(page.locator('#main-content a[href="https://www.aponet.de/notdienstsuche/0"]')).toHaveCount(1);
+  await expect(page.locator("#medicalDirectory")).toBeHidden();
   await expect(page.locator(".view-toggle-wrap")).toBeHidden();
   await expect(page.locator(".filters")).toBeHidden();
   await expect(page.locator("#mapPanel")).toHaveAttribute("hidden", "");
-  await expect(page.locator('#statusBox a[href="https://gesund.bund.de/en/emergency-numbers"]')).toHaveCount(1);
-  await expect(page.locator('#statusBox a[href="https://www.116117.de/de/englisch.php"]')).toHaveCount(1);
+  await expect(page.locator("#statusBox")).toBeHidden();
+  await activateDarkMode(page);
   await assertRouteReady(page);
 
   const modalFixture = {
@@ -517,6 +674,8 @@ test("Medical renders its intentional empty state and emergency guidance", async
   }));
   await openDataRoute(page, "/germany/ja/medical/", "/assets/data/medical/items.json");
   await expect(page.locator("#cards .jc-result-card")).toHaveCount(1);
+  await expect(page.locator("#medicalDirectory")).toBeVisible();
+  await expect(page.locator("#main-content.medical-official-guide")).toBeVisible();
   await expect(page.locator(".view-toggle-wrap")).toBeVisible();
   await expect(page.locator(".filters")).toBeVisible();
   await assertDirectoryModalKeyboard(page);

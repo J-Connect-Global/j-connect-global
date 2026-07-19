@@ -279,19 +279,26 @@ function salaryLabel(job) {
   return period ? `${period} ${amount}` : `給与額 ${amount}（支給期間は各求人で確認）`;
 }
 
+const jobDatePriority = [
+  ["last_modified_at", "更新日"],
+  ["updated_at", "更新日"],
+  ["published_at", "掲載日"],
+  ["posted_at", "掲載日"],
+  ["created_at", "作成日"]
+];
+
 function preferredJobDate(job) {
-  const fields = [
-    ["last_modified_at", "更新日"],
-    ["updated_at", "更新日"],
-    ["published_at", "掲載日"],
-    ["posted_at", "掲載日"],
-    ["created_at", "作成日"]
-  ];
-  for (const [field, label] of fields) {
+  for (const [field, label] of jobDatePriority) {
     const value = displayDate(job[field]);
     if (value) return { field, label, value };
   }
   return null;
+}
+
+// Keep sitemap lastmod aligned with the date displayed on a Jobs detail page.
+// The source data may use any of these fields, in this deliberately ordered priority.
+export function jobSitemapLastmod(job) {
+  return preferredJobDate(job)?.value || "";
 }
 
 function jobTrustNotice() {
@@ -428,28 +435,58 @@ function sitemapOutputPath(siteDir, url) {
   return output;
 }
 
-async function updateSitemap(siteDir, indexableJobUrls) {
+function parseSitemapEntries(xml) {
+  return [...xml.matchAll(/<url>\s*([\s\S]*?)<\/url>/g)].map((match) => {
+    const block = match[1];
+    const loc = block.match(/<loc>([\s\S]*?)<\/loc>/)?.[1]?.trim() || "";
+    if (!loc) throw new Error("Sitemap entry is missing loc.");
+    return { loc, lastmod: block.match(/<lastmod>([\s\S]*?)<\/lastmod>/)?.[1]?.trim() || "" };
+  });
+}
+
+function renderSitemap(entries) {
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.map((entry) => `  <url>\n    <loc>${escapeHtml(entry.loc)}</loc>${entry.lastmod ? `\n    <lastmod>${escapeHtml(entry.lastmod)}</lastmod>` : ""}\n  </url>`).join("\n")}\n</urlset>\n`;
+}
+
+// The source sitemap owns static registry and article pages. This artifact-only
+// pass removes mutable detail routes from a prior build, then adds the current
+// indexable Jobs details. Keep a future static Jobs child route explicit here.
+const staticJobsSitemapPaths = new Set(["/germany/ja/jobs/posting/"]);
+
+function isGeneratedDetailSitemapEntry(url) {
+  const pathname = new URL(url).pathname;
+  if (/^\/germany\/ja\/community\/posts\/[^/]+\/$/.test(pathname)) return true;
+  return /^\/germany\/ja\/jobs\/[^/]+\/$/.test(pathname) && !staticJobsSitemapPaths.has(pathname);
+}
+
+function mergeSitemapEntries(staticEntries, indexableJobEntries) {
+  const merged = new Map();
+  const add = (entry, owner) => {
+    if (merged.has(entry.loc)) {
+      throw new Error(`Sitemap URL is duplicated by ${owner}: ${entry.loc}`);
+    }
+    merged.set(entry.loc, entry);
+  };
+  for (const entry of staticEntries) add(entry, "the source sitemap");
+  for (const entry of [...indexableJobEntries].sort((left, right) => left.loc < right.loc ? -1 : left.loc > right.loc ? 1 : 0)) {
+    add(entry, "generated Jobs details");
+  }
+  return [...merged.values()];
+}
+
+async function updateSitemap(siteDir, indexableJobEntries) {
   const file = path.join(siteDir, "sitemap.xml");
   const source = await readFile(file, "utf8");
-  const staticUrls = [...source.matchAll(/<loc>([^<]+)<\/loc>/g)]
-    .map((match) => match[1].trim())
-    .filter((url) => {
-      const pathname = new URL(url).pathname;
-      if (/^\/germany\/ja\/community\/posts\/[^/]+\/$/.test(pathname)) return false;
-      const jobMatch = pathname.match(/^\/germany\/ja\/jobs\/([^/]+)\/$/);
-      return !jobMatch || ["detail", "posting"].includes(jobMatch[1]);
-    });
-  const urls = [...staticUrls, ...indexableJobUrls];
-  if (new Set(urls).size !== urls.length) throw new Error("Sitemap contains duplicate URLs.");
-  for (const url of urls) {
-    const html = await readFile(sitemapOutputPath(siteDir, url), "utf8");
+  const staticEntries = parseSitemapEntries(source).filter((entry) => !isGeneratedDetailSitemapEntry(entry.loc));
+  const entries = mergeSitemapEntries(staticEntries, indexableJobEntries);
+  for (const entry of entries) {
+    const html = await readFile(sitemapOutputPath(siteDir, entry.loc), "utf8");
     if (/<meta\s+name=["']robots["'][^>]+content=["'][^"']*noindex/i.test(html)
         || /<meta\s+content=["'][^"']*noindex[^"']*["'][^>]+name=["']robots["']/i.test(html)) {
-      throw new Error(`Sitemap URL is noindex: ${url}`);
+      throw new Error(`Sitemap URL is noindex: ${entry.loc}`);
     }
   }
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((url) => `  <url>\n    <loc>${escapeHtml(url)}</loc>\n  </url>`).join("\n")}\n</urlset>\n`;
-  await writeFile(file, xml, "utf8");
+  await writeFile(file, renderSitemap(entries), "utf8");
 }
 
 export async function generatePublicDetails({ siteDir = path.join(rootDir, "_site"), now = new Date() } = {}) {
@@ -471,17 +508,21 @@ export async function generatePublicDetails({ siteDir = path.join(rootDir, "_sit
     const relative = publicDetailOutputPath("community", post.detail_url, post.id || post.post_id);
     await writeGenerated(resolvedSite, relative, communityPage(post, communityPayload.items, layouts.community, now), outputPaths);
   }
-  const indexableJobUrls = [];
+  const indexableJobEntries = [];
   for (const job of jobsPayload.items) {
     const relative = publicDetailOutputPath("jobs", job.detail_url, job.id || job.job_id);
     const rendered = jobPage(job, layouts.jobs, now);
     await writeGenerated(resolvedSite, relative, rendered.html, outputPaths);
-    if (rendered.indexable) indexableJobUrls.push(rendered.canonical);
+    if (rendered.indexable) {
+      const lastmod = jobSitemapLastmod(job);
+      if (!lastmod) throw new Error(`Indexable Job has no valid sitemap lastmod: ${rendered.canonical}`);
+      indexableJobEntries.push({ loc: rendered.canonical, lastmod });
+    }
   }
   if (outputPaths.size !== communityPayload.count + jobsPayload.count) throw new Error("Generated detail count does not match public JSON counts.");
   await updateSearchIndex(resolvedSite, communityPayload.items, jobsPayload.items);
-  await updateSitemap(resolvedSite, indexableJobUrls);
-  return { community: communityPayload.count, jobs: jobsPayload.count, indexableJobs: indexableJobUrls.length, outputPaths: [...outputPaths] };
+  await updateSitemap(resolvedSite, indexableJobEntries);
+  return { community: communityPayload.count, jobs: jobsPayload.count, indexableJobs: indexableJobEntries.length, outputPaths: [...outputPaths] };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

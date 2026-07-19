@@ -191,6 +191,7 @@ button{cursor:pointer}
   font-weight:900;
 }
 .field{margin-bottom:14px}.field:last-child{margin-bottom:0}.field.is-empty{display:none}
+.directory-map-coverage{margin:10px 0 0;color:var(--muted);font-size:.9rem;line-height:1.55}
 .label{display:block;margin-bottom:7px;color:#405060;font-size:12px;font-weight:900}
 .input,.select{
   width:100%;

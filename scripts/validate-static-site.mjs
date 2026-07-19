@@ -46,8 +46,17 @@ const coreIndexableUrls = new Set([
 const directoryStaticRequirements = new Map([
   ['/germany/ja/jobs/', ['jobs-list-loading', '求人情報を読み込んでいます。', '公開中の求人を一覧で確認できます。']],
   ['/germany/ja/eat/', ['directory-seed-card', '現在は基本ガイドを表示しています', '地図・営業時間・予約条件を公式情報で確認']],
-  ['/germany/ja/shopping/', ['directory-seed-card', '現在は基本ガイドを表示しています', '日本食材・生活用品は在庫と配送条件を確認']],
-  ['/germany/ja/medical/', ['directory-seed-card', '医療上の助言や診断ではありません', '重い症状は112', '116117']],
+  ['/germany/ja/shopping/', ['directory-seed-card', 'デュッセルドルフの公開データを確認できます', '日本食材・生活用品は在庫と配送条件を確認']],
+  ['/germany/ja/medical/', [
+    'medical-official-guide',
+    '公開中の医療機関ディレクトリはありません',
+    '生命に関わる緊急時',
+    'https://gesund.bund.de/wege-im-gesundheitswesen/erwachsenenleben/notfaelle/erste-hilfe',
+    'https://www.116117.de/de/englisch.php',
+    'https://arztsuche.116117.de/',
+    'https://www.abda.de/apotheke-in-deutschland/was-apotheken-leisten/immer-erreichbar-sein/apotheken-finden/',
+    'https://www.aponet.de/notdienstsuche/0'
+  ]],
   ['/germany/ja/community/', ['hero-safety', '受け渡しは公共の場所推奨', '投稿内容や取引の成立をサイトが保証するものではありません']],
   ['/germany/ja/events/', ['data-events-card', 'data-news-card', 'イベント一覧']],
 ]);
@@ -253,6 +262,10 @@ for (const required of requiredPages) {
   if (!localTargetExists(target)) {
     problems.push(`Missing required page: ${required}`);
   }
+}
+
+if (!fs.existsSync(path.join(root, '404.html'))) {
+  problems.push('Missing required branded root 404.html page.');
 }
 
 const searchIndexRel = searchIndexCandidates.find((candidate) => fs.existsSync(path.join(root, candidate)));
@@ -475,6 +488,7 @@ function validateTrustPlaceholders(rel, html) {
 
 function validateStaticContentQuality(rel, url, html) {
   if (url === '/germany/ja/') validateHomeStaticQuality(rel, html);
+  if (url === '/germany/ja/medical/') validateMedicalGuide(rel, html);
 
   if (url === '/germany/ja/events/' || url === '/germany/ja/community/') {
     const initialMarkup = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
@@ -490,7 +504,7 @@ function validateStaticContentQuality(rel, url, html) {
     if (!html.includes(text)) problems.push(`${rel} missing visible static guidance/trust text: ${text}`);
   }
 
-  if (/^\/germany\/ja\/(?:jobs|eat|shopping|medical)\/$/.test(url)) {
+  if (/^\/germany\/ja\/(?:jobs|eat|shopping)\/$/.test(url)) {
     if (/<div\b[^>]*id=["']cards["'][^>]*>\s*<\/div>/i.test(html)) {
       problems.push(`${rel} has an empty initial #cards container; public directory pages need static guidance before JavaScript runs.`);
     }
@@ -706,6 +720,18 @@ function hreflangEntries(html) {
     entries.push({ lang, href });
   }
   return entries;
+}
+
+function validateMedicalGuide(rel, html) {
+  if (!/<main\b[^>]*\bclass=["'][^"']*\bmedical-official-guide\b/i.test(html)) {
+    problems.push(`${rel} must expose the official medical guide in the primary main landmark.`);
+  }
+  if (!/<section\b[^>]*\bid=["']medicalDirectory["'][^>]*\bhidden(?:\s|=|>)/i.test(html)) {
+    problems.push(`${rel} must keep the empty public medical directory controls out of the initial rendering.`);
+  }
+  if (html.includes('https://gesund.bund.de/en/emergency-numbers')) {
+    problems.push(`${rel} retains the superseded medical emergency source URL.`);
+  }
 }
 
 function hasJsonLdType(html, type) {

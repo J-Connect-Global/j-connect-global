@@ -19,23 +19,23 @@
   })();
   </script>
 <script src="/assets/js/site-identity.js"></script>
-<title>買い物・サービス | ドイツ生活の店舗・サービス情報 | J-Connect Germany</title>
-  <meta name="description" content="ドイツ生活に必要なスーパー、食材店、薬局、日用品店、生活サービスを日本語で整理。地域、カテゴリ、評価、地図リンクから探せます。" />
+<title>デュッセルドルフの買い物・サービス | J-Connect Germany</title>
+  <meta name="description" content="デュッセルドルフの公開済み買い物・サービス情報を、カテゴリと住所の目安から確認できます。評価・位置情報・営業時間などは掲載状況により表示されません。" />
   <meta name="theme-color" content="#f4f8fc" />
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/shopping/" />
   <link rel="alternate" hreflang="ja" href="https://j-connect-global.com/germany/ja/shopping/">
   <link rel="alternate" hreflang="x-default" href="https://j-connect-global.com/germany/ja/shopping/">
-  <meta property="og:title" content="買い物・サービス | ドイツ生活の店舗・サービス情報 | J-Connect Germany">
-  <meta property="og:description" content="ドイツ生活に必要なスーパー、食材店、薬局、日用品店、生活サービスを日本語で整理。地域、カテゴリ、評価、地図リンクから探せます。">
+  <meta property="og:title" content="デュッセルドルフの買い物・サービス | J-Connect Germany">
+  <meta property="og:description" content="デュッセルドルフの公開済み買い物・サービス情報を、カテゴリと住所の目安から確認できます。評価・位置情報・営業時間などは掲載状況により表示されません。">
   <meta property="og:url" content="https://j-connect-global.com/germany/ja/shopping/">
   <meta property="og:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="J-Connect Germany">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="買い物・サービス | ドイツ生活の店舗・サービス情報 | J-Connect Germany">
-  <meta name="twitter:description" content="ドイツ生活に必要なスーパー、食材店、薬局、日用品店、生活サービスを日本語で整理。地域、カテゴリ、評価、地図リンクから探せます。">
+  <meta name="twitter:title" content="デュッセルドルフの買い物・サービス | J-Connect Germany">
+  <meta name="twitter:description" content="デュッセルドルフの公開済み買い物・サービス情報を、カテゴリと住所の目安から確認できます。評価・位置情報・営業時間などは掲載状況により表示されません。">
   <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
 
@@ -79,7 +79,7 @@
   document.head.appendChild(js);
 })();
 </script>
-  <script type="application/ld+json" data-jconnect-managed="page-structured-data">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://j-connect-global.com/germany/ja/"},{"@type":"ListItem","position":2,"name":"生活・手続き","item":"https://j-connect-global.com/germany/ja/living/"},{"@type":"ListItem","position":3,"name":"買い物","item":"https://j-connect-global.com/germany/ja/shopping/"}]}</script>
+  <script type="application/ld+json" data-jconnect-managed="page-structured-data">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://j-connect-global.com/germany/ja/"},{"@type":"ListItem","position":2,"name":"生活・手続き","item":"https://j-connect-global.com/germany/ja/living/"},{"@type":"ListItem","position":3,"name":"デュッセルドルフの買い物・サービス","item":"https://j-connect-global.com/germany/ja/shopping/"}]}</script>
 </head>
 <body>
   <!-- LAYOUT:ja-header:start -->
@@ -153,9 +153,9 @@
     <div class="hero-box jc-directory-hero-box">
       <div class="eyebrow"><span class="eyebrow-dot"></span>買い物・サービスガイド</div>
       <div class="jc-directory-breadcrumb"><a href="/germany/ja/living/">生活・手続き</a><span>買い物</span></div>
-      <h1>買い物・サービスを地域から探す</h1>
+      <h1>デュッセルドルフの買い物・サービスを探す</h1>
       <p>
-        スーパー、専門店、生活サービスをカテゴリ・地域・価格・評価から確認できます。
+        現在の公開データはデュッセルドルフの店舗・サービスです。カテゴリ、住所の目安、公式サイト・地図リンク（ある場合）を確認できます。
       </p>
     </div>
   </section>
@@ -164,7 +164,7 @@
     <div class="view-toggle" role="tablist" aria-label="表示切替">
       <button id="cardViewBtn" class="view-btn active" type="button" aria-pressed="true">リスト</button>
       <button id="gridViewBtn" class="view-btn" type="button" aria-pressed="false">グリッド</button>
-      <button id="mapViewBtn" class="view-btn" type="button" aria-pressed="false">マップ</button>
+      <button id="mapViewBtn" class="view-btn" type="button" aria-pressed="false" hidden>マップ</button>
     </div>
   </div>
 
@@ -181,27 +181,32 @@
           <input id="keywordInput" class="input" type="text" placeholder="店名・説明・タグ・住所など" />
         </div>
 
-        <div class="field">
+        <div class="field" id="regionField" hidden>
           <div class="label">地域</div>
           <div class="filter-chip-group jc-chip-group" id="regionChipGroup" role="group" aria-label="地域で絞り込み"></div>
         </div>
 
-        <div class="field">
+        <div class="field" id="categoryField" hidden>
           <div class="label">カテゴリ</div>
           <div class="filter-chip-group jc-chip-group" id="categoryChipGroup" role="group" aria-label="カテゴリで絞り込み"></div>
         </div>
 
-        <div class="field" id="detailCategoryField">
+        <div class="field" id="detailCategoryField" hidden>
           <div class="label">詳細カテゴリ</div>
           <div class="filter-chip-group jc-chip-group" id="detailCategoryChipGroup" role="group" aria-label="詳細カテゴリで絞り込み"></div>
         </div>
 
-        <div class="field">
+        <div class="field" id="ratingField" hidden>
           <div class="label">評価</div>
           <div class="filter-chip-group jc-chip-group" id="starChipGroup" role="group" aria-label="星評価で絞り込み"></div>
         </div>
 
-        <div class="field" id="priceField">
+        <div class="field" id="reviewField" hidden>
+          <div class="label">レビュー数</div>
+          <div class="filter-chip-group jc-chip-group" id="reviewChipGroup" role="group" aria-label="レビュー数で絞り込み"></div>
+        </div>
+
+        <div class="field" id="priceField" hidden>
           <div class="label">価格</div>
           <div class="filter-chip-group jc-chip-group" id="priceChipGroup" role="group" aria-label="価格帯で絞り込み"></div>
         </div>
@@ -213,7 +218,7 @@
       <div class="toolbar jc-results-toolbar">
         <div class="results-meta">
           <h2 class="results-title">買い物</h2>
-          <div class="results-sub" id="resultsSummary">現在は基本ガイドを表示しています</div>
+          <div class="results-sub" id="resultsSummary">デュッセルドルフの公開データを確認できます</div>
         </div>
         <div class="chips jc-active-chips" id="activeChips"></div>
       </div>
@@ -241,10 +246,11 @@
       </div>
     </section>
 
-    <aside class="map-panel" id="mapPanel" aria-label="地図表示エリア">
+    <aside class="map-panel" id="mapPanel" aria-label="地図表示エリア" hidden>
       <div class="map-shell">
         <div id="map"></div>
       </div>
+      <p class="directory-map-coverage" id="mapCoverageNote" hidden></p>
     </aside>
   </main>
 
@@ -303,11 +309,13 @@
     crossorigin=""
   ></script>
 
-  <script src="/assets/js/common.js"></script>
+<script src="/assets/js/common.js"></script>
 <script src="/assets/js/data-sources.js"></script>
+  <script src="/assets/js/directory-capabilities.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
     const UI = window.JCONNECT_UI;
+    const DIRECTORY_CAPABILITIES = window.JCONNECT_DIRECTORY_CAPABILITIES;
     const STATIC_DATA_URL = DATA_SOURCES.staticData?.shopping || "/assets/data/shopping/items.json";
     const DATA_TIMEOUT_MS = 5000;
 
@@ -330,10 +338,17 @@
 
     const els = {
       keywordInput: document.getElementById("keywordInput"),
+      regionField: document.getElementById("regionField"),
+      categoryField: document.getElementById("categoryField"),
+      detailCategoryField: document.getElementById("detailCategoryField"),
+      ratingField: document.getElementById("ratingField"),
+      reviewField: document.getElementById("reviewField"),
+      priceField: document.getElementById("priceField"),
       regionChipGroup: document.getElementById("regionChipGroup"),
       categoryChipGroup: document.getElementById("categoryChipGroup"),
       detailCategoryChipGroup: document.getElementById("detailCategoryChipGroup"),
       starChipGroup: document.getElementById("starChipGroup"),
+      reviewChipGroup: document.getElementById("reviewChipGroup"),
       priceChipGroup: document.getElementById("priceChipGroup"),
       resetFiltersBtn: document.getElementById("resetFiltersBtn"),
       resultsSummary: document.getElementById("resultsSummary"),
@@ -345,6 +360,7 @@
       gridViewBtn: document.getElementById("gridViewBtn"),
       mapViewBtn: document.getElementById("mapViewBtn"),
       mapPanel: document.getElementById("mapPanel"),
+      mapCoverageNote: document.getElementById("mapCoverageNote"),
       listingModal: document.getElementById("listingModal"),
       listingModalContent: document.getElementById("listingModalContent"),
       listingModalClose: document.getElementById("listingModalClose")
@@ -353,6 +369,7 @@
     let rawItems = [];
     let filteredItems = [];
     let categoryMap = {};
+    let directoryCapabilities = DIRECTORY_CAPABILITIES.calculate([]);
     let currentView = "list";
 
     const filterState = {
@@ -360,6 +377,7 @@
       category: "",
       detailCategory: "",
       rating: "",
+      reviews: "",
       price: ""
     };
 
@@ -370,14 +388,18 @@
       { value: "3.0", label: "★3.0以上" }
     ];
 
+    const REVIEW_OPTIONS = [
+      { value: "1000", label: "1000件以上" },
+      { value: "500", label: "500件以上" },
+      { value: "100", label: "100件以上" }
+    ];
+
     let map = null;
     let markerLayer = null;
     let markerMap = new Map();
-    let geocodeCache = new Map();
     let activeItemId = null;
     let modalReturnFocus = null;
     let mapInitialized = false;
-    let geocodeRunToken = 0;
 
     function escapeHtml(value) {
       return String(value ?? "")
@@ -517,7 +539,7 @@ function getLastReviewed(item) {
     }
 
     function getReviewCount(item) {
-      return getField(item, "reviewsCount", "review_count", "reviewCount", "reviews");
+      return getField(item, "reviews_count", "reviewsCount", "review_count", "reviewCount", "reviews");
     }
 
     function normalizeCity(value) {
@@ -613,16 +635,60 @@ function getLastReviewed(item) {
       });
     }
 
+    function setControlVisibility(field, enabled) {
+      if (!field) return;
+      field.hidden = !enabled;
+      if (!enabled) field.querySelector(".filter-chip-group")?.replaceChildren();
+    }
+
+    function applyDirectoryCapabilities() {
+      directoryCapabilities = DIRECTORY_CAPABILITIES.calculate(rawItems);
+      const capabilities = directoryCapabilities.capabilities;
+
+      if (!capabilities.region_filter) filterState.region = "";
+      if (!capabilities.category_filter) filterState.category = "";
+      if (!capabilities.detail_category_filter) filterState.detailCategory = "";
+      if (!capabilities.rating_filter) filterState.rating = "";
+      if (!capabilities.review_filter) filterState.reviews = "";
+      if (!capabilities.price_filter) filterState.price = "";
+
+      setControlVisibility(els.regionField, capabilities.region_filter);
+      setControlVisibility(els.categoryField, capabilities.category_filter);
+      setControlVisibility(els.detailCategoryField, capabilities.detail_category_filter);
+      setControlVisibility(els.ratingField, capabilities.rating_filter);
+      setControlVisibility(els.reviewField, capabilities.review_filter);
+      setControlVisibility(els.priceField, capabilities.price_filter);
+
+      const mapCoverage = directoryCapabilities.coverage.coordinates;
+      els.mapViewBtn.hidden = !capabilities.map_view;
+      els.mapViewBtn.disabled = !capabilities.map_view;
+      els.mapViewBtn.setAttribute("aria-disabled", String(!capabilities.map_view));
+      els.mapPanel.hidden = !capabilities.map_view;
+      if (els.mapCoverageNote) {
+        const hasLimitation = capabilities.map_view && mapCoverage.available < mapCoverage.total;
+        els.mapCoverageNote.hidden = !hasLimitation;
+        els.mapCoverageNote.textContent = hasLimitation
+          ? `地図には位置情報を確認できる ${mapCoverage.available} 件 / 全 ${mapCoverage.total} 件を表示します。`
+          : "";
+      }
+      if (!capabilities.map_view && currentView === "map") setViewMode("list");
+    }
+
     function renderFilterChips() {
-      const categoryOptions = optionList(Object.keys(categoryMap));
-      const detailOptions = filterState.category
-        ? optionList(categoryMap[filterState.category] || [])
-        : optionList(rawItems.map(getCategory2));
-      renderChipGroup(els.regionChipGroup, optionList(rawItems.map(getRegion)), "region", false);
+      const capabilities = directoryCapabilities.capabilities;
+      const categoryOptions = capabilities.category_filter
+        ? optionList(Object.keys(categoryMap).filter((value) => !DIRECTORY_CAPABILITIES.isPlaceholderCategory(value)))
+        : [];
+      const detailOptions = !capabilities.detail_category_filter ? [] : (filterState.category
+        ? optionList((categoryMap[filterState.category] || []).filter((value) => !DIRECTORY_CAPABILITIES.isPlaceholderCategory(value)))
+        : optionList(rawItems.map(getCategory2).filter((value) => !DIRECTORY_CAPABILITIES.isPlaceholderCategory(value))));
+      const priceOptions = capabilities.price_filter ? optionList(rawItems.map(getPrice)) : [];
+      renderChipGroup(els.regionChipGroup, capabilities.region_filter ? optionList(rawItems.map(getRegion)) : [], "region");
       renderChipGroup(els.categoryChipGroup, categoryOptions, "category");
       renderChipGroup(els.detailCategoryChipGroup, detailOptions, "detailCategory");
-      renderChipGroup(els.starChipGroup, RATING_OPTIONS, "rating", false);
-      renderChipGroup(els.priceChipGroup, optionList(rawItems.map(getPrice)), "price");
+      renderChipGroup(els.starChipGroup, capabilities.rating_filter ? RATING_OPTIONS : [], "rating");
+      renderChipGroup(els.reviewChipGroup, capabilities.review_filter ? REVIEW_OPTIONS : [], "reviews");
+      renderChipGroup(els.priceChipGroup, priceOptions, "price");
     }
 
     function getItemId(item, index = 0) {
@@ -634,17 +700,21 @@ function getLastReviewed(item) {
 
     function filterItems() {
       const keyword = normalize(els.keywordInput.value);
-      const minStarRating = parseFloat(filterState.rating) || 0;
+      const capabilities = directoryCapabilities.capabilities;
+      const minStarRating = capabilities.rating_filter ? (parseFloat(filterState.rating) || 0) : 0;
+      const minReviews = capabilities.review_filter ? (parseNumber(filterState.reviews) || 0) : 0;
 
       filteredItems = rawItems.filter(item => {
         const matchesKeyword = !keyword || buildSearchText(item).includes(keyword);
-        const matchesRegion = !filterState.region || normalize(getRegion(item)) === normalize(filterState.region);
-        const matchesCategory1 = !filterState.category || getCategory1(item) === filterState.category;
-        const matchesCategory2 = !filterState.detailCategory || getCategory2(item) === filterState.detailCategory;
-        const matchesPrice = !filterState.price || getPrice(item) === filterState.price;
+        const matchesRegion = !capabilities.region_filter || !filterState.region || normalize(getRegion(item)) === normalize(filterState.region);
+        const matchesCategory1 = !capabilities.category_filter || !filterState.category || getCategory1(item) === filterState.category;
+        const matchesCategory2 = !capabilities.detail_category_filter || !filterState.detailCategory || getCategory2(item) === filterState.detailCategory;
+        const matchesPrice = !capabilities.price_filter || !filterState.price || getPrice(item) === filterState.price;
         const score = parseRating(getRating(item));
         const matchesStarRating = !minStarRating || (score !== null && score >= minStarRating);
-        return matchesKeyword && matchesRegion && matchesCategory1 && matchesCategory2 && matchesPrice && matchesStarRating;
+        const reviews = parseNumber(getReviewCount(item)) || 0;
+        const matchesReviews = !minReviews || reviews >= minReviews;
+        return matchesKeyword && matchesRegion && matchesCategory1 && matchesCategory2 && matchesPrice && matchesStarRating && matchesReviews;
       }).map((item, index) => ({
         ...item,
         __id: getItemId(item, index)
@@ -665,20 +735,24 @@ function getLastReviewed(item) {
       const chips = [];
       if (els.keywordInput.value.trim()) chips.push(`キーワード: ${escapeHtml(els.keywordInput.value.trim())}`);
       const ratingLabel = RATING_OPTIONS.find(option => option.value === filterState.rating)?.label;
+      const reviewLabel = REVIEW_OPTIONS.find(option => option.value === filterState.reviews)?.label;
       if (filterState.region) chips.push(`地域: ${escapeHtml(filterState.region)}`);
       if (filterState.category) chips.push(`カテゴリ: ${escapeHtml(filterState.category)}`);
       if (filterState.detailCategory) chips.push(`詳細カテゴリ: ${escapeHtml(filterState.detailCategory)}`);
       if (filterState.price) chips.push(`価格: ${escapeHtml(filterState.price)}`);
       if (ratingLabel) chips.push(`評価: ${escapeHtml(ratingLabel)}`);
+      if (reviewLabel) chips.push(`レビュー数: ${escapeHtml(reviewLabel)}`);
       els.activeChips.innerHTML = chips.map(c => `<span class="chip">${c}</span>`).join("");
     }
 
     function renderSummary() {
-      els.resultsSummary.textContent = `${filteredItems.length}件を表示中 / 全${rawItems.length}件`;
+      const regions = directoryCapabilities.options.region;
+      const scope = regions.length === 1 ? `${regions[0]}の公開データ` : "公開データ";
+      els.resultsSummary.textContent = `${scope} ${filteredItems.length}件を表示中 / 全${rawItems.length}件`;
     }
 
     function hasCoordinates(item) {
-      return Number.isFinite(item.__lat) && Number.isFinite(item.__lng);
+      return DIRECTORY_CAPABILITIES.validCoordinates({ latitude: item.__lat, longitude: item.__lng });
     }
 
     function renderDirectoryStatus({ title, body, guidance = [], kind = "not-available", isError = false, showRetry = false, showReset = true }) {
@@ -754,6 +828,7 @@ function getLastReviewed(item) {
         const addressDiscriminator = getAddressDiscriminator(item);
         const lastReviewed = getLastReviewed(item);
         const tags = parseTags(getField(item, "tags", "keywords")).slice(0, 4);
+        const hasDetail = DIRECTORY_CAPABILITIES.hasMeaningfulDetail(item);
 
         return `
           <article class="card jc-result-card ${activeItemId === item.__id ? "active-map-item" : ""}" data-item-id="${escapeHtml(item.__id)}">
@@ -777,7 +852,7 @@ function getLastReviewed(item) {
                 ${description ? `<p class="card-desc">${escapeHtml(description)}</p>` : ""}
 
                 <div class="link-row jc-result-actions">
-                  <button class="btn btn-secondary" type="button" data-detail>詳細を見る</button>
+                  ${hasDetail ? `<button class="btn btn-secondary" type="button" data-detail>詳細を見る</button>` : ""}
                   ${website ? `<a class="btn btn-secondary" href="${escapeHtml(website)}" target="_blank" rel="noopener noreferrer">公式サイト</a>` : ""}
                   ${mapUrl ? `<a class="btn btn-primary" href="${escapeHtml(mapUrl)}" target="_blank" rel="noopener noreferrer">地図を見る</a>` : ""}
                 </div>
@@ -836,6 +911,7 @@ function getLastReviewed(item) {
       const description = getDescription(item);
       const detailComment = getDetailComment(item);
       const hours = getField(item, "opening_hours", "openingHours", "hours");
+      const languages = getField(item, "language_support", "language", "languages");
       const score = formatScore(getRating(item));
       const tags = parseTags(getField(item, "tags", "keywords")).join(" / ");
       const region = getRegion(item);
@@ -852,6 +928,7 @@ function getLastReviewed(item) {
           ${detailRow("住所", address)}
           ${detailRow("電話", phone)}
           ${detailRow("営業時間", hours)}
+          ${detailRow("対応言語", languages)}
           ${detailRow("タグ", tags)}
         </div>
 
@@ -940,86 +1017,6 @@ function getLastReviewed(item) {
       });
       filterItems();
     }
-
-    function extractLatLngFromMapUrl(url) {
-      if (!url) return null;
-
-      let match = url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
-      if (match) {
-        return { lat: parseFloat(match[1]), lng: parseFloat(match[2]) };
-      }
-
-      match = url.match(/[?&]query=(-?\d+\.\d+),(-?\d+\.\d+)/);
-      if (match) {
-        return { lat: parseFloat(match[1]), lng: parseFloat(match[2]) };
-      }
-
-      match = url.match(/[?&]ll=(-?\d+\.\d+),(-?\d+\.\d+)/);
-      if (match) {
-        return { lat: parseFloat(match[1]), lng: parseFloat(match[2]) };
-      }
-
-      return null;
-    }
-
-    async function geocodeAddress(address) {
-      if (!address) return null;
-      if (geocodeCache.has(address)) return geocodeCache.get(address);
-
-      try {
-        const endpoint = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=${encodeURIComponent(address)}`;
-        const response = await fetch(endpoint, {
-          headers: {
-            "Accept": "application/json"
-          }
-        });
-        if (!response.ok) return null;
-
-        const data = await response.json();
-        const first = Array.isArray(data) ? data[0] : null;
-        const result = first && first.lat && first.lon
-          ? { lat: parseFloat(first.lat), lng: parseFloat(first.lon) }
-          : null;
-
-        geocodeCache.set(address, result);
-        await new Promise(resolve => setTimeout(resolve, 260));
-        return result;
-      } catch (error) {
-        console.warn("Geocode failed:", address, error);
-        geocodeCache.set(address, null);
-        return null;
-      }
-    }
-
-function hydrateCoordinatesFromMapUrl(items) {
-  items.forEach(item => {
-    if (hasCoordinates(item)) return;
-    const mapUrl = getMapUrl(item);
-    const fromUrl = extractLatLngFromMapUrl(mapUrl);
-    if (fromUrl) {
-      item.__lat = fromUrl.lat;
-      item.__lng = fromUrl.lng;
-    }
-  });
-}
-
-async function enrichCoordinates(items) {
-  const runToken = ++geocodeRunToken;
-
-  for (const item of items) {
-    if (hasCoordinates(item)) continue;
-
-    const address = buildAddress(item) || `${getField(item, "title", "name_ja")} Germany`;
-    const geo = await geocodeAddress(address);
-
-    if (runToken !== geocodeRunToken) return;
-
-    if (geo) {
-      item.__lat = geo.lat;
-      item.__lng = geo.lng;
-    }
-  }
-}
 
 function initMapIfNeeded() {
   if (mapInitialized) return;
@@ -1112,13 +1109,9 @@ function renderMapMarkers() {
   }, 120);
 }
 
-async function syncMapAfterFilter() {
+function syncMapAfterFilter() {
   initMapIfNeeded();
-
-  hydrateCoordinatesFromMapUrl(filteredItems);
   renderCards();
-  renderMapMarkers();
-  await enrichCoordinates(filteredItems);
   renderMapMarkers();
 
   requestAnimationFrame(() => {
@@ -1127,6 +1120,7 @@ async function syncMapAfterFilter() {
 }
 
 function setViewMode(mode) {
+  if (mode === "map" && !directoryCapabilities.capabilities.map_view) return;
   currentView = mode;
 
   const isMap = mode === "map";
@@ -1145,11 +1139,11 @@ function setViewMode(mode) {
     initMapIfNeeded();
 
     requestAnimationFrame(() => {
-      requestAnimationFrame(async () => {
+      requestAnimationFrame(() => {
         if (map) {
           map.invalidateSize(true);
         }
-        await syncMapAfterFilter();
+        syncMapAfterFilter();
         setTimeout(() => {
           if (map) {
             map.invalidateSize(true);
@@ -1192,11 +1186,7 @@ rawItems = sortItems(items).map((item, index) => ({
 }));
 
         rawItems.forEach(preloadCoordinatesFromFields);
-        const hasMapItems = rawItems.some(hasCoordinates);
-        els.mapViewBtn.disabled = !hasMapItems;
-        els.mapViewBtn.setAttribute("aria-disabled", String(!hasMapItems));
-        if (!hasMapItems && currentView === "map") setViewMode("list");
-
+        applyDirectoryCapabilities();
         categoryMap = buildCategoryMap(rawItems);
         renderFilterChips();
         filterItems();
@@ -1204,6 +1194,7 @@ rawItems = sortItems(items).map((item, index) => ({
         console.error("Shopping static data load failed.", error);
         rawItems = [];
         filteredItems = [];
+        applyDirectoryCapabilities();
         renderDataLoadError();
       }
     }

@@ -3081,6 +3081,18 @@
     font-weight:800;
   }
 
+  .article-freshness{
+    display:inline-flex;
+    flex-wrap:wrap;
+    gap:8px;
+    align-items:center;
+  }
+
+  .article-date{
+    white-space:nowrap;
+    font-variant-numeric:tabular-nums;
+  }
+
   .article-hero-figure,
   .article-inline-figure{
     margin:10px 0 18px;

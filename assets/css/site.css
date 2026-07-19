@@ -275,6 +275,17 @@ button,input,select,textarea{font:inherit;}
   box-shadow:var(--site-focus-ring);
 }
 
+.not-found-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+}
+
+.not-found-links .site-chip{
+  min-height:44px;
+}
+
 /* Header */
 .site-header{
   box-sizing:border-box;

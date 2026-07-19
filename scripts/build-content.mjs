@@ -16,6 +16,21 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE_NAME = SERVICE_NAME;
 const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
 const DEFAULT_IMAGE = '/assets/img/placeholders/jconnect-default-card.webp';
+const THEME_INIT_SCRIPT = `  <script data-jconnect-theme-init>
+  (function () {
+    try {
+      var saved = localStorage.getItem('jconnect-theme');
+      var theme = saved === 'dark' || saved === 'light'
+        ? saved
+        : 'light';
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+    } catch (error) {
+      document.documentElement.dataset.theme = 'light';
+      document.documentElement.style.colorScheme = 'light';
+    }
+  })();
+  </script>`;
 let trackedFileSet;
 const contentImageDimensions = new Map();
 const articleImageDirs = {
@@ -251,6 +266,10 @@ function normalizeItem(type, item, index) {
     published,
     markdown_path: item.markdown_path || `/content/${type}/${slug}.md`,
     canonical_url: item.canonical_url || url,
+    // Keep the derived value for machine metadata while retaining the authored
+    // update date for visible editorial labels. A verification date must not be
+    // presented to readers as though the article text itself changed.
+    source_updated_at: firstNonEmpty(item.updated_at),
     updated_at: item.updated_at || item.last_verified || item.published_at || '',
     tags,
     home_visible: item.home_visible !== false,
@@ -316,6 +335,8 @@ function renderArticlePage(type, item, bodyHtml, allItems) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+${THEME_INIT_SCRIPT}
+  <script src="/assets/js/site-identity.js"></script>
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeAttribute(item.summary)}">
   <meta name="robots" content="index, follow">
@@ -326,7 +347,7 @@ ${indent(ogMeta, 2)}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal5-nav-20260618">
+  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-performance-a11y-20260719">
   <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <link rel="stylesheet" href="/assets/css/social-share.css">
@@ -344,8 +365,7 @@ ${renderHeader(type, item.url)}
           <p class="article-summary">${escapeHtml(item.summary)}</p>
           <div class="article-meta">
             ${item.tags.map((tag) => `<span class="article-chip">${escapeHtml(tag)}</span>`).join('\n          ')}
-            <span>公開: ${escapeHtml(item.published_at || '')}</span>
-${item.content_type === 'news' && item.last_verified ? `            <span>最終確認: ${escapeHtml(item.last_verified)}</span>` : ''}${metaBlock}
+${indent(renderArticleFreshness(item), 12)}${metaBlock}
           </div>
         </header>
 
@@ -804,6 +824,31 @@ function stripInlineMarkdown(value) {
   return String(value || '')
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
     .replace(/[*_`]/g, '');
+}
+
+function renderArticleFreshness(item) {
+  const publishedAt = firstNonEmpty(item.published_at);
+  const updatedAt = firstNonEmpty(item.source_updated_at);
+  const verifiedAt = firstNonEmpty(item.last_verified);
+  const hasDistinctUpdate = Boolean(updatedAt && updatedAt !== publishedAt);
+  const rows = [];
+
+  if (publishedAt) rows.push(renderArticleFreshnessTime('published', '公開', publishedAt));
+
+  if (hasDistinctUpdate && verifiedAt && updatedAt === verifiedAt) {
+    rows.push(renderArticleFreshnessTime('updated-verified', '最終更新・確認', updatedAt));
+  } else {
+    if (hasDistinctUpdate) rows.push(renderArticleFreshnessTime('updated', '最終更新', updatedAt));
+    if (verifiedAt) rows.push(renderArticleFreshnessTime('verified', '最終確認', verifiedAt));
+  }
+
+  return rows.length
+    ? `<span class="article-freshness">\n${indent(rows.join('\n'), 2)}\n</span>`
+    : '';
+}
+
+function renderArticleFreshnessTime(kind, label, value) {
+  return `<time class="article-date article-date--${escapeAttribute(kind)}" datetime="${escapeAttribute(value)}">${escapeHtml(label)}: ${escapeHtml(value)}</time>`;
 }
 
 function renderArticleMetaSpans(type, item) {

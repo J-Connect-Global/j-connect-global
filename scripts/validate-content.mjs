@@ -268,16 +268,8 @@ function validatePublishedFiles(type, item, label) {
   }
 
   validateArticleMetaOutput(html, item, htmlRel);
+  validateVisibleArticleFreshness(html, item, htmlRel);
   validateOfficialSourceOutput(html, item, htmlRel);
-  if (item.content_type !== 'news') {
-    const visibleHtml = html
-      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
-      .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '')
-      .replace(/<!--[\s\S]*?-->/g, '');
-    if (/最終確認|次回確認/.test(visibleHtml)) {
-      problems.push(`${htmlRel} exposes review dates in visible non-News content.`);
-    }
-  }
   validateNoMojibake(html, htmlRel);
   validateNoPlaceholderHash(html, htmlRel);
   validateInternalLinks(html, htmlRel);
@@ -410,6 +402,45 @@ function validateOfficialSourceOutput(html, item, relPath) {
     const htmlUrl = String(source.url || '').replaceAll('&', '&amp;').replaceAll('"', '&quot;');
     if (source.url && !html.includes(source.url) && !html.includes(htmlUrl)) {
       problems.push(`${relPath} missing official source URL: ${source.url}`);
+    }
+  }
+}
+
+function visibleArticleFreshnessEntries(item) {
+  const publishedAt = String(item.published_at || '').trim();
+  const updatedAt = String(item.updated_at || '').trim();
+  const verifiedAt = String(item.last_verified || '').trim();
+  const hasDistinctUpdate = Boolean(updatedAt && updatedAt !== publishedAt);
+  const entries = [];
+
+  if (publishedAt) entries.push({ kind: 'published', label: '公開', value: publishedAt });
+  if (hasDistinctUpdate && verifiedAt && updatedAt === verifiedAt) {
+    entries.push({ kind: 'updated-verified', label: '最終更新・確認', value: updatedAt });
+  } else {
+    if (hasDistinctUpdate) entries.push({ kind: 'updated', label: '最終更新', value: updatedAt });
+    if (verifiedAt) entries.push({ kind: 'verified', label: '最終確認', value: verifiedAt });
+  }
+
+  return entries;
+}
+
+function validateVisibleArticleFreshness(html, item, relPath) {
+  const freshness = html.match(/<span\b[^>]*\bclass=["']article-freshness["'][^>]*>[\s\S]*?<\/span>/i)?.[0] || '';
+  const expected = visibleArticleFreshnessEntries(item);
+  if (!freshness) {
+    problems.push(`${relPath} missing visible article freshness metadata.`);
+    return;
+  }
+
+  const actualTimeCount = (freshness.match(/<time\b/gi) || []).length;
+  if (actualTimeCount !== expected.length) {
+    problems.push(`${relPath} emits ${actualTimeCount} visible freshness dates; expected ${expected.length}.`);
+  }
+
+  for (const entry of expected) {
+    const expectedTime = `<time class="article-date article-date--${entry.kind}" datetime="${entry.value}">${entry.label}: ${entry.value}</time>`;
+    if (!freshness.includes(expectedTime)) {
+      problems.push(`${relPath} missing visible ${entry.label} date: ${entry.value}.`);
     }
   }
 }

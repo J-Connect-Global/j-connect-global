@@ -528,6 +528,34 @@ function validateInitialStateSafety(rel, url, html) {
 }
 
 function validateHomeStaticQuality(rel, html) {
+  const head = html.match(/<head\b[^>]*>[\s\S]*?<\/head>/i)?.[0] || '';
+  for (const dependency of [
+    'fonts.googleapis.com',
+    '/assets/css/jconnect-ui.css',
+    '/assets/css/social-share.css',
+  ]) {
+    if (head.includes(dependency)) problems.push(`${rel} Home must not retain the unused render-blocking dependency: ${dependency}`);
+  }
+  if (/\/assets\/js\/social-share\.js/i.test(html)) {
+    problems.push(`${rel} Home must not load the unused social-share runtime.`);
+  }
+
+  const homeImages = [...html.matchAll(/<img\b[^>]*\bclass=["'][^"']*\bhome-card-image\b[^"']*["'][^>]*>/gi)];
+  if (!homeImages.length) {
+    problems.push(`${rel} Home must retain generated editorial card images.`);
+  }
+  for (const match of homeImages) {
+    const image = match[0];
+    for (const attribute of ['width', 'height', 'srcset', 'sizes', 'loading', 'decoding']) {
+      if (!new RegExp(`\\b${attribute}=["']`, 'i').test(image)) {
+        problems.push(`${rel} Home editorial image is missing ${attribute}: ${image.slice(0, 180)}`);
+      }
+    }
+    if (!/-480w\.webp\s+480w/.test(image) || !/-768w\.webp\s+768w/.test(image)) {
+      problems.push(`${rel} Home editorial image must advertise 480w and 768w variants: ${image.slice(0, 180)}`);
+    }
+  }
+
   const eventsMarker = extractMarkedContent(html, 'home-events');
   if (!eventsMarker) {
     problems.push(`${rel} missing generated Home Events marker.`);

@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 import {
   activateDarkMode,
   activeCommunityPosts,
+  communityFixture,
   assertCommunityCards,
   assertDirectoryModalKeyboard,
   assertArticleHeroFrame,
@@ -50,6 +51,128 @@ test("home renders no more than four active Jobs and can activate dark mode", as
   await assertRouteReady(page);
 });
 
+test("Home uses modern responsive hero and bounded Community thumbnail delivery", async ({ page }) => {
+  const heroRequests = [];
+  const driveRequests = [];
+  page.on("request", (request) => {
+    if (request.resourceType() !== "image") return;
+    if (/\/assets\/images\/hero\/home-portal-hero/.test(request.url())) heroRequests.push(request.url());
+    if (request.url().startsWith("https://drive.google.com/thumbnail")) driveRequests.push(request.url());
+  });
+  await page.route("https://drive.google.com/**", (route) => route.fulfill({
+    body: '<svg xmlns="http://www.w3.org/2000/svg" width="2" height="2"><rect width="2" height="2" fill="#829ab1"/></svg>',
+    contentType: "image/svg+xml",
+    status: 200
+  }));
+
+  expect(fixturePhotoCommunityPost, "a Community fixture with a real image is required").toBeTruthy();
+  expect(fixtureNoImageCommunityPost, "an image-less Community fixture is required").toBeTruthy();
+  const homeFixture = {
+    ...communityFixture,
+    count: 2,
+    items: [fixturePhotoCommunityPost, fixtureNoImageCommunityPost]
+  };
+  await page.route("**/assets/data/community/posts.json", (route) => route.fulfill({
+    contentType: "application/json",
+    body: JSON.stringify(homeFixture)
+  }));
+  await openDataRoute(page, "/germany/ja/", [
+    "/assets/data/community/posts.json",
+    "/assets/data/jobs/jobs.json"
+  ]);
+
+  await expect(page.locator(".portal3-hero")).toBeVisible();
+  await expect.poll(() => heroRequests.length, { message: "Home hero must request an image" }).toBeGreaterThan(0);
+  expect(heroRequests).toHaveLength(1);
+  expect(heroRequests[0]).toMatch(/home-portal-hero-1440w\.(?:avif|webp)$/);
+  expect(heroRequests[0]).not.toContain("-dark-");
+
+  const photoId = String(fixturePhotoCommunityPost.post_id || fixturePhotoCommunityPost.id);
+  const noImageId = String(fixtureNoImageCommunityPost.post_id || fixtureNoImageCommunityPost.id);
+  const photoImages = page.locator(`[data-post-id="${photoId}"] img`);
+  await expect(photoImages).toHaveCount(2);
+  const [miniImage, cardImage] = await photoImages.all();
+  await expect(miniImage).toHaveAttribute("src", /https:\/\/drive\.google\.com\/thumbnail/);
+  await expect(miniImage).toHaveAttribute("src", /[?&]sz=w128(?:&|$)/);
+  await expect(cardImage).toHaveAttribute("src", /https:\/\/drive\.google\.com\/thumbnail/);
+  await expect(cardImage).toHaveAttribute("src", /[?&]sz=w480(?:&|$)/);
+  for (const image of [miniImage, cardImage]) {
+    await expect(image).toHaveAttribute("src", /https:\/\/drive\.google\.com\/thumbnail/);
+    await expect(image).not.toHaveAttribute("src", /[?&]sz=w1200(?:&|$)/);
+    await expect(image).toHaveAttribute("loading", "lazy");
+    await expect(image).toHaveAttribute("decoding", "async");
+    await expect(image).toHaveAttribute("width", /\d+/);
+    await expect(image).toHaveAttribute("height", /\d+/);
+  }
+  const noImageImages = page.locator(`[data-post-id="${noImageId}"] img`);
+  await expect(noImageImages).toHaveCount(2);
+  for (const image of await noImageImages.all()) {
+    await expect(image).toHaveAttribute("src", /\/assets\/img\/placeholders\/jconnect-default-card\.webp$/);
+  }
+  expect(new Set(driveRequests).size).toBe(2);
+  expect(driveRequests).toEqual(expect.arrayContaining([
+    expect.stringMatching(/[?&]sz=w128(?:&|$)/),
+    expect.stringMatching(/[?&]sz=w480(?:&|$)/)
+  ]));
+  await assertRouteReady(page);
+});
+
+test("Home keeps contrast, intrinsic images, and the footer readable in both themes", async ({ page }) => {
+  await page.setViewportSize({ width: 1366, height: 1000 });
+  await page.route("https://drive.google.com/**", (route) => route.fulfill({
+    body: '<svg xmlns="http://www.w3.org/2000/svg" width="2" height="2"><rect width="2" height="2" fill="#829ab1"/></svg>',
+    contentType: "image/svg+xml",
+    status: 200
+  }));
+  await openDataRoute(page, "/germany/ja/", [
+    "/assets/data/community/posts.json",
+    "/assets/data/jobs/jobs.json"
+  ]);
+
+  await expect(page.locator('link[href*="fonts.googleapis.com"]')).toHaveCount(0);
+  await expect(page.locator('link[href*="jconnect-ui.css"]')).toHaveCount(0);
+  await expect(page.locator('link[href*="social-share.css"]')).toHaveCount(0);
+  await expect(page.locator('script[src*="social-share.js"]')).toHaveCount(0);
+  await expect(page.locator("#cookie-banner")).toBeVisible();
+  for (const image of await page.locator(".brand-logo, .footer-logo").all()) {
+    await expect(image).toHaveAttribute("width", /\d+/);
+    await expect(image).toHaveAttribute("height", /\d+/);
+  }
+  await expect(page.locator('.portal3-section-buttons a[href="/germany/ja/jobs/"]')).toHaveAccessibleName(/求人を探す/);
+
+  const contrastTargets = [
+    [".portal3-community-date", "Community date"],
+    [".portal3-latest-date", "latest-content date"],
+    [".portal3-panel .portal3-mini small", "panel metadata"],
+    [".portal3-card small", "content-card metadata"],
+    [".portal3-job-card small", "Job card metadata"],
+    [".portal3-job-card em", "Job card emphasis"],
+    [".portal3-news-list small", "news metadata"],
+    [".event-date", "event date"],
+    [".event-date strong", "event date value"]
+  ];
+  for (const [selector, label] of contrastTargets) await assertWcagTextContrast(page, selector, `light-mode ${label}`);
+
+  const footerLight = await page.locator(".footer-left").evaluate((element) => {
+    const copy = element.querySelector(".footer-copy");
+    const relationship = element.querySelector(".footer-relationship");
+    const footer = element.closest(".page-footer");
+    return {
+      copyWidth: copy?.getBoundingClientRect().width || 0,
+      relationshipHeight: relationship?.getBoundingClientRect().height || 0,
+      footerWidth: footer?.clientWidth || 0,
+      footerScrollWidth: footer?.scrollWidth || 0
+    };
+  });
+  expect(footerLight.copyWidth).toBeGreaterThanOrEqual(180);
+  expect(footerLight.relationshipHeight).toBeLessThanOrEqual(52);
+  expect(footerLight.footerScrollWidth).toBeLessThanOrEqual(footerLight.footerWidth);
+
+  await activateDarkMode(page);
+  for (const [selector, label] of contrastTargets) await assertWcagTextContrast(page, selector, `dark-mode ${label}`);
+  await assertRouteReady(page);
+});
+
 test("Community renders active fixtures and links to the generated detail page", async ({ page }) => {
   await page.route("https://drive.google.com/**", (route) => route.fulfill({
     body: '<svg xmlns="http://www.w3.org/2000/svg" width="2" height="2"><rect width="2" height="2" fill="#829ab1"/></svg>',
@@ -70,6 +193,7 @@ test("Community renders active fixtures and links to the generated detail page",
   const photoSrc = await photoCard.locator("img").getAttribute("src");
   await expect(photoCard).toHaveAttribute("data-photo-count", /^[1-9]\d*$/);
   expect(photoSrc).toContain("https://drive.google.com/thumbnail");
+  expect(photoSrc).toMatch(/[?&]sz=w1200(?:&|$)/);
   expect(photoSrc).not.toContain(placeholderPath);
   await expect(noImageCard).toHaveAttribute("data-photo-count", "0");
   await expect(noImageCard.locator("img")).toHaveAttribute("src", placeholderPath);

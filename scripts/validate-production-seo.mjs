@@ -85,6 +85,9 @@ function artifactProblems({ html, file, siteDir, sitemapUrls }) {
     if (/article-hero-image|article-card-image|home-card-image/.test(classes) && src.startsWith("/assets/img/")) {
       if (!attribute(img, "width") || !attribute(img, "height")) errors.push(`${relative}: content image ${src} has no intrinsic width/height.`);
     }
+    if (/\bbrand-logo\b|\bfooter-logo\b/.test(classes) && (!attribute(img, "width") || !attribute(img, "height"))) {
+      errors.push(`${relative}: brand image ${src || "(missing src)"} has no intrinsic width/height.`);
+    }
   }
   return errors;
 }
@@ -96,12 +99,27 @@ async function responsiveImageProblems(html, file, siteDir) {
     const src = attribute(img, "src") || "";
     const classes = attribute(img, "class") || "";
     if (!/article-hero-image|article-card-image|home-card-image/.test(classes) || !src.startsWith("/assets/img/") || !src.endsWith(".webp")) continue;
-    const variant = path.join(siteDir, src.replace(/^\/+/, "").replace(/\.webp$/i, "-768w.webp"));
-    try {
-      await stat(variant);
-      if (!attribute(img, "srcset") || !attribute(img, "sizes")) errors.push(`${relative}: responsive image ${src} has a 768w asset but no srcset/sizes.`);
-    } catch {
-      // A responsive source is optional when no variant is stored for this image.
+    const widths = /\bhome-card-image\b/.test(classes) ? [480, 768] : [768];
+    const variants = widths.map((width) => ({
+      width,
+      path: path.join(siteDir, src.replace(/^\/+/, "").replace(/\.webp$/i, `-${width}w.webp`))
+    }));
+    const existing = [];
+    for (const variant of variants) {
+      try {
+        await stat(variant.path);
+        existing.push(variant);
+      } catch {
+        if (/\bhome-card-image\b/.test(classes)) errors.push(`${relative}: Home image ${src} is missing its ${variant.width}w responsive asset.`);
+      }
+    }
+    if (existing.length && (!attribute(img, "srcset") || !attribute(img, "sizes"))) {
+      errors.push(`${relative}: responsive image ${src} has stored variants but no srcset/sizes.`);
+    }
+    for (const variant of existing) {
+      if (!String(attribute(img, "srcset") || "").includes(`-${variant.width}w.webp ${variant.width}w`)) {
+        errors.push(`${relative}: responsive image ${src} does not advertise its ${variant.width}w variant.`);
+      }
     }
   }
   return errors;

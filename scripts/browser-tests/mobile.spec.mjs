@@ -23,12 +23,36 @@ test.afterEach(async ({ page }) => {
 });
 
 test("mobile Home has no overflow and can activate dark mode", async ({ page }) => {
+  const heroWidth = (page.viewportSize()?.width || 360) <= 480 ? 480 : 768;
+  const heroRequests = [];
+  page.on("request", (request) => {
+    if (request.resourceType() === "image" && /\/assets\/images\/hero\/home-portal-hero/.test(request.url())) {
+      heroRequests.push(request.url());
+    }
+  });
   await openDataRoute(page, "/germany/ja/", [
     "/assets/data/community/posts.json",
     "/assets/data/jobs/jobs.json"
   ]);
   await expect(page.locator("main h1")).toBeVisible();
+  await expect.poll(() => heroRequests.length, { message: "mobile Home must request its hero" }).toBeGreaterThan(0);
+  expect(heroRequests).toHaveLength(1);
+  expect(heroRequests[0]).toMatch(new RegExp(`home-portal-hero-${heroWidth}w\\.(?:avif|webp)$`));
   await activateDarkMode(page);
+  await expect.poll(() => heroRequests.length, { message: "dark mode must request its dark hero" }).toBe(2);
+  expect(heroRequests[1]).toMatch(new RegExp(`home-portal-hero-dark-${heroWidth}w\\.(?:avif|webp)$`));
+  for (const section of [
+    ".portal3-top-grid .portal3-panel:nth-child(2)",
+    ".portal3-top-grid .portal3-panel:nth-child(3)",
+    "#community",
+    "#living",
+    "#jobs",
+    "#news-events",
+    "#learn-german"
+  ]) {
+    await page.locator(section).scrollIntoViewIfNeeded();
+    await expect(page.locator(`${section} h2`)).toBeVisible();
+  }
   await assertRouteReady(page);
 });
 

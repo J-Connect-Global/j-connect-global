@@ -8,10 +8,16 @@
   --header-brand:var(--color-primary, #004f98);
   --header-soft:var(--color-primary-soft, #eaf4ff);
   --header-shadow:0 10px 28px rgba(15, 35, 58, .06);
+  --header-font-sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;
   --container:1220px;
   box-sizing:border-box;
   font-family:'Inter','Noto Sans JP',sans-serif;
   line-height:1.6;
+}
+
+body.portal3-home .site-header,
+body.portal3-home .page-footer{
+  font-family:var(--header-font-sans);
 }
 
 body .site-header{
@@ -570,11 +576,11 @@ body .site-header .language-dropdown a:focus-visible{
   backdrop-filter:none;
 }
 
-.footer-inner{
+.page-footer .footer-inner{
   width:min(var(--container), calc(100% - 32px));
   margin:0 auto;
   display:grid;
-  grid-template-columns:minmax(min(100%, 260px), 1fr) minmax(0, 3fr);
+  grid-template-columns:minmax(480px, 1.25fr) minmax(0, 1.75fr);
   align-items:start;
   gap:clamp(24px, 4vw, 44px);
 }
@@ -625,7 +631,7 @@ body .site-header .language-dropdown a:focus-visible{
   line-height:1.55;
 }
 
-.footer-links{
+.page-footer .footer-links{
   display:grid;
   grid-template-columns:repeat(3, minmax(0, 1fr));
   gap:8px clamp(18px, 3vw, 32px);
@@ -673,6 +679,22 @@ body.portal3-home .page-footer .footer-links a:hover{
   text-decoration:underline;
   text-underline-offset:3px;
   transform:none;
+}
+
+@media (max-width:1040px){
+  .page-footer .footer-inner{
+    grid-template-columns:minmax(360px, .95fr) minmax(0, 1.25fr);
+  }
+
+  .page-footer .footer-links{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width:900px){
+  .page-footer .footer-inner{
+    grid-template-columns:1fr;
+  }
 }
 
 @media (max-width:1160px){
@@ -817,13 +839,13 @@ body.portal3-home .page-footer .footer-links a:hover{
     padding:26px 0;
   }
 
-  .footer-inner{
+  .page-footer .footer-inner{
     width:min(var(--container), calc(100% - 24px));
     grid-template-columns:1fr;
     gap:22px;
   }
 
-  .footer-links{
+  .page-footer .footer-links{
     grid-template-columns:repeat(2, minmax(0, 1fr));
     gap:20px 28px;
   }
@@ -880,7 +902,7 @@ body.portal3-home .page-footer .footer-links a:hover{
     height:52px;
   }
 
-  .footer-links{
+  .page-footer .footer-links{
     grid-template-columns:1fr;
     gap:18px;
   }

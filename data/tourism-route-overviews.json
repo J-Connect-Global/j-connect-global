@@ -50,16 +50,21 @@
     },
     {
       "slug": "bremen-weekend-trip",
-      "asset": "/assets/img/living/bremen-city-guide-map-final.webp",
       "title": "ブレーメン旧市街の基本ルート",
-      "alt": "Bremen HbfからMarktplatz、Böttcherstraße、Schnoor、Schlachteへ進みViertelを翌日の候補にする順序",
+      "alt": "北側のBremen Hbfから旧市街のMarktplatzへ南下し、南西のBöttcherstraße、南東のSchnoor、西のWeser川沿いにあるSchlachteを回る順序。Viertelは旧市街の東側にある翌日の候補",
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "note": "公式観光案内の所在地とOpenStreetMapの地点・道路データで相対位置を確認。図は縮尺図ではない。"
+      },
       "nodes": [
-        { "id": "hbf", "label": "Bremen Hbf", "note": "荷物を預ける", "x": 360, "y": 115 },
-        { "id": "markt", "label": "Marktplatz", "note": "市庁舎・ローラント", "x": 360, "y": 220 },
-        { "id": "boettcher", "label": "Böttcherstraße", "note": "南へ通り抜け", "x": 505, "y": 300 },
-        { "id": "schnoor", "label": "Schnoor", "note": "石畳の路地", "x": 640, "y": 380 },
-        { "id": "schlachte", "label": "Schlachte", "note": "川沿い", "x": 330, "y": 420 },
-        { "id": "viertel", "label": "Viertel", "note": "翌日の追加", "x": 690, "y": 210, "optional": true }
+        { "id": "hbf", "label": "Bremen Hbf", "note": "荷物を預ける", "x": 570, "y": 110, "latitude": 53.0831456, "longitude": 8.8135421 },
+        { "id": "markt", "label": "Marktplatz", "note": "市庁舎・ローラント", "x": 360, "y": 205, "latitude": 53.0755914, "longitude": 8.8071412 },
+        { "id": "boettcher", "label": "Böttcherstraße", "note": "旧市街の南西", "x": 270, "y": 285, "latitude": 53.0750729, "longitude": 8.8057624 },
+        { "id": "schnoor", "label": "Schnoor", "note": "旧市街の南東", "x": 440, "y": 420, "latitude": 53.0728372, "longitude": 8.8096671 },
+        { "id": "schlachte", "label": "Schlachte", "note": "西側のWeser川沿い", "x": 120, "y": 365, "latitude": 53.0750692, "longitude": 8.8037182 },
+        { "id": "viertel", "label": "Viertel", "note": "旧市街の東・翌日", "x": 690, "y": 420, "latitude": 53.0729, "longitude": 8.822691, "optional": true }
       ],
       "edges": [["hbf", "markt"], ["markt", "boettcher"], ["boettcher", "schnoor"], ["schnoor", "schlachte"]],
       "optionalEdges": [["markt", "viertel"]]

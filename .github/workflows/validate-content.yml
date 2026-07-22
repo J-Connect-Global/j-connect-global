@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Install pinned runtime smoke dependencies
         run: npm ci
@@ -39,7 +39,9 @@ jobs:
         run: node scripts/check-content-metadata-regression.mjs --base-ref "origin/${{ github.base_ref }}"
 
       - name: Build generated content
-        run: node scripts/build-content.mjs
+        run: |
+          node scripts/generate-tourism-route-overviews.mjs
+          node scripts/build-content.mjs
 
       - name: Apply canonical JA layout
         run: node scripts/apply-layout.mjs

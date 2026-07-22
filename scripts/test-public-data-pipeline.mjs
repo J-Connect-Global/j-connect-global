@@ -512,11 +512,12 @@ const pageRegistry = JSON.parse(read("content/registry/pages.json"));
 for (const route of utilityHubRoutes) {
   const page = pageRegistry.find((entry) => entry.url === route);
   assert.ok(page, `missing utility hub registry entry: ${route}`);
-  assert.equal(page.search_visible, false, `${route} must remain noindex`);
-  assert.equal(page.sitemap_visible, false, `${route} must remain out of the sitemap`);
-  assert.equal(sitemap.includes(route), false, `${route} remains in sitemap.xml`);
+  assert.equal(page.search_visible, true, `${route} must remain discoverable after receiving substantive content`);
+  assert.equal(page.sitemap_visible, true, `${route} must remain in the sitemap after receiving substantive content`);
+  assert.equal(sitemap.includes(route), true, `${route} is missing from sitemap.xml`);
   const generatedHub = read(`${route.replace(/^\//, "")}index.html`);
-  assert.match(generatedHub, /<meta name="robots" content="noindex, follow">/, `${route} is missing noindex, follow`);
+  assert.match(generatedHub, /<meta name="robots" content="index, follow">/, `${route} is missing index, follow`);
+  assert.doesNotMatch(generatedHub, /準備中|このPRでは構造だけ/, `${route} regressed to placeholder content`);
 }
 for (const [relative, asset] of [
   ["germany/ja/learn-german/hospital-phrases/index.html", "hospital-appointment-prep"],

@@ -66,6 +66,50 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
+    "title": "地域・街別",
+    "description": "NRW、ドイツ国内、近隣国の観光ガイド20本を地域・街別に比較できる入口です。",
+    "url": "/germany/ja/living/travel/area/",
+    "category": "生活・手続き",
+    "tags": [
+      "生活",
+      "観光",
+      "地域"
+    ]
+  },
+  {
+    "title": "リラックス・自然",
+    "description": "NRWの自然とライン川を、路面、公共交通、設備、天候から選べる旅行ガイドです。",
+    "url": "/germany/ja/living/travel/relax/",
+    "category": "生活・手続き",
+    "tags": [
+      "生活",
+      "観光",
+      "自然"
+    ]
+  },
+  {
+    "title": "週末・日帰り旅行",
+    "description": "デュッセルドルフ・NRWからの日帰りと1泊旅行を、移動負担と現地時間から選べる15本のガイドです。",
+    "url": "/germany/ja/living/travel/weekend/",
+    "category": "生活・手続き",
+    "tags": [
+      "生活",
+      "観光",
+      "週末"
+    ]
+  },
+  {
+    "title": "家族・子連れ",
+    "description": "子連れ旅行を、年齢、雨天、ベビーカー、トイレ、休憩の条件から選べる観光ガイドです。",
+    "url": "/germany/ja/living/travel/family/",
+    "category": "生活・手続き",
+    "tags": [
+      "生活",
+      "観光",
+      "家族"
+    ]
+  },
+  {
     "title": "仕事・求人",
     "description": "ドイツで働きたい日本語話者向けに、求人、転職、アルバイト、勤務形態、ビザサポートなどの仕事情報を整理しています。",
     "url": "/germany/ja/jobs/",
@@ -336,7 +380,7 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "ブレーメン週末旅行｜徒歩で迷わない旧市街・Schnoorの1泊2日モデルコース",
-    "description": "ドイツから24〜36時間でブレーメンへ。マルクト広場、Schnoor、ヴェーザー川を一方向につなぎ、雨・石畳・到着遅延にも崩れにくい徒歩中心の実用プランです。",
+    "description": "デュッセルドルフ・NRWからブレーメンへ。旧市街の短い周回、1泊判断、雨天代替、車の注意点までまとめた24〜36時間の実用プランです。",
     "url": "/germany/ja/living/bremen-weekend-trip/",
     "category": "生活・手続き",
     "tags": [

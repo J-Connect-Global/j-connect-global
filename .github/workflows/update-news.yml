@@ -5,12 +5,21 @@ on:
     - cron: "0 5 * * *"
   workflow_dispatch:
 
-permissions:
-  contents: write
+permissions: {}
+
+concurrency:
+  group: update-news
+  cancel-in-progress: false
 
 jobs:
   update-news:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      changes_detected: ${{ steps.auto-commit-action.outputs.changes_detected }}
+      deployment_sha: ${{ steps.deployment-ref.outputs.commit_sha }}
 
     steps:
       - name: Checkout repository
@@ -19,13 +28,54 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Fetch news
         run: node scripts/fetch-news.mjs
 
       - name: Commit updated news data
-        uses: stefanzweifel/git-auto-commit-action@v5
+        id: auto-commit-action
+        uses: stefanzweifel/git-auto-commit-action@b863ae1933cb653a53c021fe36dbb774e1fb9403 # v5
         with:
           commit_message: "Update news data"
           file_pattern: assets/data/news.json
+
+      - name: Resolve exact deployment commit
+        id: deployment-ref
+        shell: bash
+        env:
+          CHANGES_DETECTED: ${{ steps.auto-commit-action.outputs.changes_detected }}
+          AUTO_COMMIT_SHA: ${{ steps.auto-commit-action.outputs.commit_hash }}
+        run: |
+          checked_out_sha="$(git rev-parse HEAD)"
+
+          if [[ "$CHANGES_DETECTED" == "true" ]]; then
+            if [[ ! "$AUTO_COMMIT_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+              echo "News changes were committed without a valid commit_hash output." >&2
+              exit 1
+            fi
+            if [[ "$checked_out_sha" != "$AUTO_COMMIT_SHA" ]]; then
+              echo "News checkout is $checked_out_sha, but the generated-data commit is $AUTO_COMMIT_SHA." >&2
+              exit 1
+            fi
+          fi
+
+          git fetch --no-tags --depth=1 origin refs/heads/main
+          current_main_sha="$(git rev-parse FETCH_HEAD)"
+          if [[ "$checked_out_sha" != "$current_main_sha" ]]; then
+            echo "Refusing to deploy news result $checked_out_sha because current main is $current_main_sha." >&2
+            exit 1
+          fi
+
+          echo "commit_sha=$checked_out_sha" >> "$GITHUB_OUTPUT"
+
+  deploy-pages:
+    if: github.ref == 'refs/heads/main' && (needs.update-news.outputs.changes_detected == 'true' || github.event_name == 'workflow_dispatch')
+    needs: update-news
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/pages-build-deploy.yml
+    with:
+      commit_sha: ${{ needs.update-news.outputs.deployment_sha }}

@@ -57,7 +57,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
+
+      - name: Verify generated site files are committed
+        run: |
+          node scripts/sync-content-frontmatter.mjs
+          node scripts/generate-tourism-route-overviews.mjs
+          node scripts/build-content.mjs
+          node scripts/apply-layout.mjs
+          git diff --exit-code
 
       - name: Validate Pages public-data artifacts
         shell: bash

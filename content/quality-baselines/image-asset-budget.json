@@ -3,8 +3,6 @@
   "max_single_file_bytes": 750000,
   "max_files_over_one_mebibyte": 0,
   "max_width": 1440,
-  "max_width_overrides": {
-    "/assets/img/living/bremen-city-guide-map-final.webp": 1536
-  },
+  "max_width_overrides": {},
   "required_format": "WEBP"
 }

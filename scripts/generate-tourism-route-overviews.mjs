@@ -48,8 +48,41 @@ function validateRoute(route) {
       throw new Error(`Desktop coordinates out of bounds in ${route.slug}: ${node.id}`);
     }
   }
+  if (route.geography) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(route.geography.verified_at || '')) {
+      throw new Error(`Invalid geography verification date in ${route.slug}`);
+    }
+    if (route.geography.orientation !== 'north-up' || !/^https:\/\//.test(route.geography.source || '')) {
+      throw new Error(`Geographic routes must be north-up and cite an HTTPS source: ${route.slug}`);
+    }
+    for (const node of route.nodes) {
+      if (!Number.isFinite(node.latitude) || node.latitude < -90 || node.latitude > 90
+        || !Number.isFinite(node.longitude) || node.longitude < -180 || node.longitude > 180) {
+        throw new Error(`Missing or invalid verified coordinates in ${route.slug}: ${node.id}`);
+      }
+    }
+    validateCardinalLayout(route);
+  }
   for (const [from, to] of [...(route.edges || []), ...(route.optionalEdges || [])]) {
     if (!ids.has(from) || !ids.has(to)) throw new Error(`Unknown edge ${from}->${to} in ${route.slug}`);
+  }
+}
+
+function validateCardinalLayout(route) {
+  const tolerance = 0.0015;
+  for (let leftIndex = 0; leftIndex < route.nodes.length; leftIndex += 1) {
+    for (let rightIndex = leftIndex + 1; rightIndex < route.nodes.length; rightIndex += 1) {
+      const left = route.nodes[leftIndex];
+      const right = route.nodes[rightIndex];
+      const longitudeDifference = right.longitude - left.longitude;
+      const latitudeDifference = right.latitude - left.latitude;
+      if (Math.abs(longitudeDifference) >= tolerance && Math.sign(right.x - left.x) !== Math.sign(longitudeDifference)) {
+        throw new Error(`East/west placement contradicts verified coordinates in ${route.slug}: ${left.id}/${right.id}`);
+      }
+      if (Math.abs(latitudeDifference) >= tolerance && Math.sign(left.y - right.y) !== Math.sign(latitudeDifference)) {
+        throw new Error(`North/south placement contradicts verified coordinates in ${route.slug}: ${left.id}/${right.id}`);
+      }
+    }
   }
 }
 
@@ -64,7 +97,7 @@ function renderDesktop(route) {
   ${defs()}
   <rect x="1" y="1" width="818" height="518" rx="20" fill="#f8fbfe" stroke="#a9c5dc" stroke-width="2"/>
   <text x="34" y="44" fill="#062f55" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="800">${escapeXml(route.title)}</text>
-  <g transform="translate(34 72)" aria-hidden="true">
+  ${route.geography ? '<text x="786" y="42" text-anchor="end" fill="#062f55" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="800">北 ↑</text>\n  ' : ''}<g transform="translate(34 72)" aria-hidden="true">
     <line x1="0" y1="0" x2="44" y2="0" stroke="#075b9a" stroke-width="7" stroke-linecap="round"/>
     <text x="56" y="6" fill="#405e72" font-family="system-ui, -apple-system, sans-serif" font-size="16">基本ルート</text>
     <line x1="178" y1="0" x2="222" y2="0" stroke="#147d75" stroke-width="5" stroke-dasharray="10 8" stroke-linecap="round"/>
@@ -72,7 +105,7 @@ function renderDesktop(route) {
   </g>
   <g aria-hidden="true">${edges}${optionalEdges}</g>
   ${cards}
-  <text x="786" y="493" text-anchor="end" fill="#526c7f" font-family="system-ui, -apple-system, sans-serif" font-size="15">概略図／縮尺は正確ではありません</text>
+  <text x="786" y="493" text-anchor="end" fill="#526c7f" font-family="system-ui, -apple-system, sans-serif" font-size="15">${route.geography ? `北が上／位置確認 ${escapeXml(route.geography.verified_at)}／縮尺は不正確` : '概略図／縮尺は正確ではありません'}</text>
 </svg>
 `;
 }

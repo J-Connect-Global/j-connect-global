@@ -89,6 +89,58 @@ const contentTypes = {
   }
 };
 
+const travelHubConfigs = [
+  {
+    slug: 'area',
+    title: '地域・街別',
+    lead: 'NRWの近場からドイツ国内、近隣国まで、公開中の観光ガイドを地域名から比較できます。まず移動時間ではなく、現地で確保できる時間と同行者の歩行負担を決めてください。',
+    decisions: [
+      ['NRWの近場', 'デュッセルドルフ、ケルン、アーヘンは日帰り候補。帰路時刻から逆算します。'],
+      ['ドイツ国内の1泊', 'ブレーメン、ハンブルク、ベルリン、ミュンヘンは一地区に絞ると崩れにくくなります。'],
+      ['近隣国', '国境書類、現地交通、予約施設を一つずつ公式情報で確認します。']
+    ]
+  },
+  {
+    slug: 'weekend',
+    title: '週末・日帰り旅行',
+    lead: 'デュッセルドルフ・NRWからの週末旅行を、日帰り、1泊、予約負担の三点で選びます。到着から帰路30分前までの現地時間が短い場合は、目的地を増やさず近場へ切り替えます。',
+    articleSlugs: [
+      'aachen-day-trip', 'rhine-river-relax-guide', 'bremen-weekend-trip',
+      'hamburg-weekend-trip', 'berlin-weekend-trip', 'munich-weekend-trip',
+      'amsterdam-weekend-trip', 'brussels-weekend-trip', 'strasbourg-weekend-trip',
+      'paris-weekend-trip', 'london-weekend-trip', 'copenhagen-weekend-trip',
+      'prague-weekend-trip', 'krakow-weekend-trip', 'warsaw-weekend-trip'
+    ],
+    decisions: [
+      ['日帰り', 'アーヘンやライン川など、往復検索後も現地で6時間前後を確保できる近場に絞ります。'],
+      ['1泊', '旧市街、夕方、翌朝のうち二つ以上を望む都市は1泊を基準にします。'],
+      ['予約リスク', '長距離列車、入場枠、国境条件の順に固定し、飲食店は候補を二つだけ保存します。']
+    ]
+  },
+  {
+    slug: 'family',
+    title: '家族・子連れ',
+    lead: '子連れの外出先は、名所の数より、年齢、昼寝、雨天、ベビーカー、トイレの条件から選びます。屋外一か所と屋内一施設を上限にすると、予定変更が容易です。',
+    articleSlugs: ['duesseldorf-family-trip', 'cologne-family-trip', 'nrw-nature-relax-guide'],
+    decisions: [
+      ['乳幼児', '昼寝と授乳・おむつ替え設備を先に確認し、移動区間を一つ減らします。'],
+      ['ベビーカー', '舗装、段差、混雑時の入口、公共交通のエレベーターを公式案内で確認します。'],
+      ['雨天', '屋内施設を当日探さず、前夜に一館だけ開館・予約状況を確認します。']
+    ]
+  },
+  {
+    slug: 'relax',
+    title: 'リラックス・自然',
+    lead: '自然の外出は、景色だけでなく路面、日陰、トイレ、途中短縮、雨後の状態で選びます。公共交通で戻れる地点を先に決め、歩行距離を現地で伸ばせる計画にします。',
+    articleSlugs: ['rhine-river-relax-guide', 'nrw-nature-relax-guide'],
+    decisions: [
+      ['川沿い', '風、増水、船の季節運航を確認し、鉄道で短縮できる区間を残します。'],
+      ['公園・森・湖', '路面、日陰、トイレ、遊泳可否を施設ごとの公式情報で照合します。'],
+      ['歩行を短くする', '同じ道を往復せず、駅・停留所・入口へ戻る時刻を先に決めます。']
+    ]
+  }
+];
+
 const learnGermanContentTypes = new Set(['phrase', 'route', 'resource']);
 const learnGermanMetadataFields = ['situation', 'goal', 'level', 'skill', 'duration'];
 const learnGermanResourceFields = ['resource_skills', 'resource_format', 'resource_level', 'resource_price_type'];
@@ -178,6 +230,7 @@ function main() {
     updateHub(type, items);
   }
 
+  updateTravelHubs(datasets.living, pages);
   updateHome(datasets);
   updateSearchIndex(allItems, pages);
   updateSitemap(allItems, pages);
@@ -353,8 +406,6 @@ ${THEME_INIT_SCRIPT}
 ${indent(renderJaHreflang(canonicalHref), 2)}
 ${indent(ogMeta, 2)}
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-performance-a11y-20260719">
   <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
@@ -603,9 +654,6 @@ ${title ? `  <figcaption>${escapeHtml(title)}</figcaption>` : ''}
 }
 
 const INLINE_IMAGE_VARIANTS = Object.freeze({
-  '/assets/img/living/bremen-city-guide-map-final.webp': {
-    width: 1536, height: 1024
-  },
   '/assets/images/learn-german/hospital-appointment-prep.webp': {
     small: '/assets/images/learn-german/hospital-appointment-prep-480.webp', width: 820, height: 461
   },
@@ -1517,6 +1565,161 @@ function hubGridPattern(type) {
   if (type === 'living') return /<div class="[^"]*\bjc-article-grid\b[^"]*"[^>]*data-living-results[^>]*>/;
   if (type === 'learn-german') return /<div class="jc-article-grid">/;
   return /<div class="jc-article-grid">/;
+}
+
+function updateTravelHubs(livingItems, pages) {
+  const tourismItems = livingItems.filter((item) => item.published && item.category === '観光');
+  const tourismBySlug = new Map(tourismItems.map((item) => [item.slug, item]));
+
+  for (const config of travelHubConfigs) {
+    const url = `/germany/ja/living/travel/${config.slug}/`;
+    const page = pages.find((entry) => entry.url === url);
+    if (!page) throw new Error(`Missing travel hub registry entry: ${url}`);
+
+    const items = config.articleSlugs
+      ? config.articleSlugs.map((slug) => {
+        const item = tourismBySlug.get(slug);
+        if (!item) throw new Error(`Travel hub ${config.slug} references missing tourism article: ${slug}`);
+        return item;
+      })
+      : tourismItems;
+
+    writeText(outputPathFromUrl(url), renderTravelHubPage(config, page, items));
+  }
+}
+
+function renderTravelHubPage(config, page, items) {
+  const canonicalHref = absoluteUrl(page.canonical_url || page.url);
+  const title = `${config.title} | 生活・手続き | ${SITE_NAME}`;
+  const description = page.description || config.lead;
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CollectionPage',
+        name: config.title,
+        description,
+        url: canonicalHref,
+        inLanguage: 'ja'
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'ホーム', item: absoluteUrl('/germany/ja/') },
+          { '@type': 'ListItem', position: 2, name: '生活・手続き', item: absoluteUrl('/germany/ja/living/') },
+          { '@type': 'ListItem', position: 3, name: config.title, item: canonicalHref }
+        ]
+      },
+      {
+        '@type': 'ItemList',
+        name: `${config.title}の観光記事`,
+        numberOfItems: items.length,
+        itemListElement: items.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: item.title,
+          url: absoluteUrl(item.url)
+        }))
+      }
+    ]
+  };
+  const decisionCards = config.decisions.map(([heading, body]) => `<article class="jc-article-card living-travel-decision-card">
+  <h3>${escapeHtml(heading)}</h3>
+  <p>${escapeHtml(body)}</p>
+</article>`).join('\n');
+  const articleCards = items.map(renderTravelHubCard).join('\n\n');
+
+  return `<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+${THEME_INIT_SCRIPT}
+  <script src="/assets/js/site-identity.js"></script>
+  <title>${escapeHtml(title)}</title>
+  <meta name="description" content="${escapeAttribute(description)}">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="${escapeAttribute(canonicalHref)}">
+${indent(renderJaHreflang(canonicalHref), 2)}
+  <meta property="og:title" content="${escapeAttribute(title)}">
+  <meta property="og:description" content="${escapeAttribute(description)}">
+  <meta property="og:url" content="${escapeAttribute(canonicalHref)}">
+  <meta property="og:image" content="${escapeAttribute(absoluteUrl(DEFAULT_IMAGE))}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="${escapeAttribute(SITE_NAME)}">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeAttribute(title)}">
+  <meta name="twitter:description" content="${escapeAttribute(description)}">
+  <meta name="twitter:image" content="${escapeAttribute(absoluteUrl(DEFAULT_IMAGE))}">
+  <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-performance-a11y-20260719">
+  <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
+  <link rel="stylesheet" href="/assets/css/cookie-consent.css">
+  <script src="/assets/js/cookie-consent.js" defer></script>
+  <script type="application/ld+json">${escapeJsonForHtml(structuredData)}</script>
+</head>
+<body>
+${renderHeader('living', page.url)}
+  <main class="jc-shell jc-main jc-stack living-subpage" data-travel-hub="${escapeAttribute(config.slug)}">
+    <section class="jc-page-hero living-subpage-hero">
+      <div class="jc-eyebrow"><span class="jc-dot"></span>観光</div>
+      <h1>${escapeHtml(config.title)}</h1>
+      <p>${escapeHtml(config.lead)}</p>
+    </section>
+    <section class="jc-section living-subpage-section" aria-labelledby="${escapeAttribute(config.slug)}DecisionTitle">
+      <div class="jc-section-head">
+        <div>
+          <h2 id="${escapeAttribute(config.slug)}DecisionTitle">先に決める3つの条件</h2>
+          <p>候補を開く前に、同行者と優先条件を一つずつ共有します。</p>
+        </div>
+      </div>
+      <div class="jc-article-grid living-travel-decision-grid">
+${indent(decisionCards, 8)}
+      </div>
+    </section>
+    <section class="jc-section living-subpage-section living-travel-related" aria-labelledby="${escapeAttribute(config.slug)}ArticlesTitle">
+      <div class="jc-section-head">
+        <div>
+          <h2 id="${escapeAttribute(config.slug)}ArticlesTitle">比較できる観光ガイド</h2>
+          <p>${items.length}本の公開記事から、現地時間、移動方法、天候時の短縮方法を比較できます。</p>
+        </div>
+      </div>
+      <div class="jc-article-grid living-hub-grid" data-travel-hub-results>
+${indent(articleCards, 8)}
+      </div>
+    </section>
+    <section class="living-travel-nav" aria-label="生活ページ内の移動">
+      <a class="jc-button" href="/germany/ja/living/">Livingトップへ戻る</a>
+      <a class="jc-button" href="/germany/ja/living/#travel">観光の入口へ戻る</a>
+      <a class="jc-button" href="/germany/ja/living/germany-train-travel-guide/">鉄道ガイドを確認</a>
+    </section>
+  </main>
+${renderFooter()}
+  <script src="/assets/js/common.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
+`;
+}
+
+function renderTravelHubCard(item) {
+  const media = renderCardMedia(item, 'living');
+  const mediaClass = media ? ' card--has-media' : '';
+  const chips = [item.category || '観光', ...item.tags.slice(0, 3)]
+    .map((tag) => `<span class="jc-chip">${escapeHtml(tag)}</span>`)
+    .join('\n');
+
+  return `<article class="jc-article-card living-column-card${mediaClass}" data-travel-hub-card data-slug="${escapeAttribute(item.slug)}">
+${media ? indent(media, 2) : ''}
+  <div class="jc-card-meta">
+${indent(chips, 4)}
+  </div>
+  <h3>${escapeHtml(item.title)}</h3>
+  <p>${escapeHtml(item.summary)}</p>
+  <a class="jc-read-more" href="${escapeAttribute(item.url)}">ガイドを読む</a>
+</article>`;
 }
 
 function renderHubCard(type, item) {

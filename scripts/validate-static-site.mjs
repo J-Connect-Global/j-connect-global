@@ -489,6 +489,7 @@ function validateTrustPlaceholders(rel, html) {
 function validateStaticContentQuality(rel, url, html) {
   if (url === '/germany/ja/') validateHomeStaticQuality(rel, html);
   if (url === '/germany/ja/medical/') validateMedicalGuide(rel, html);
+  if (html.includes('class="article-content-shell"')) validateArticlePerformance(rel, html);
 
   if (url === '/germany/ja/events/' || url === '/germany/ja/community/') {
     const initialMarkup = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
@@ -512,6 +513,13 @@ function validateStaticContentQuality(rel, url, html) {
     if (/^\s*(?:データを読み込んでいます|読み込み中)\.{0,3}\s*$/i.test(stripTags(statusBox))) {
       problems.push(`${rel} initial status box is loading-only instead of useful static guidance.`);
     }
+  }
+}
+
+function validateArticlePerformance(rel, html) {
+  const head = html.match(/<head\b[^>]*>[\s\S]*?<\/head>/i)?.[0] || '';
+  if (head.includes('fonts.googleapis.com') || head.includes('fonts.gstatic.com')) {
+    problems.push(`${rel} article must not load render-blocking third-party web fonts.`);
   }
 }
 

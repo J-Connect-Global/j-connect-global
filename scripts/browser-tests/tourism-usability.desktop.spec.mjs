@@ -14,9 +14,11 @@ const representativeRoutes = [
   "paris-weekend-trip"
 ];
 
-const routeMedia = (slug) => slug === 'bremen-weekend-trip'
-  ? { src: '/assets/img/living/bremen-city-guide-map-final.webp', width: 1536, height: 1024 }
-  : { src: `/assets/images/living/routes/${slug}-route-overview.svg`, width: 820, height: 520 };
+const routeMedia = (slug) => ({
+  src: `/assets/images/living/routes/${slug}-route-overview.svg`,
+  width: 820,
+  height: 520
+});
 
 test.beforeEach(async ({ page }) => {
   installRuntimeDiagnostics(page);

@@ -60,8 +60,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-07-19",
-    "last_verified": "2026-07-19",
+    "updated_at": "2026-07-22",
+    "last_verified": "2026-07-22",
     "tags": [
       "ケルン",
       "大聖堂",
@@ -94,7 +94,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-07-19",
+      "last_reviewed_at": "2026-07-22",
       "next_review_due": "2026-09-15"
     },
     "image_alt": "ケルン観光ガイドの記事イメージ"
@@ -517,14 +517,14 @@
     "title": "ブレーメン週末旅行｜徒歩で迷わない旧市街・Schnoorの1泊2日モデルコース",
     "slug": "bremen-weekend-trip",
     "category": "観光",
-    "summary": "ドイツから24〜36時間でブレーメンへ。マルクト広場、Schnoor、ヴェーザー川を一方向につなぎ、雨・石畳・到着遅延にも崩れにくい徒歩中心の実用プランです。",
+    "summary": "デュッセルドルフ・NRWからブレーメンへ。旧市街の短い周回、1泊判断、雨天代替、車の注意点までまとめた24〜36時間の実用プランです。",
     "url": "/germany/ja/living/bremen-weekend-trip/",
     "markdown_path": "/content/living/bremen-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-07-19",
-    "last_verified": "2026-07-19",
+    "updated_at": "2026-07-22",
+    "last_verified": "2026-07-22",
     "tags": [
       "ブレーメン",
       "週末旅行",
@@ -556,7 +556,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-07-19",
+      "last_reviewed_at": "2026-07-22",
       "next_review_due": "2026-10-15"
     }
   },

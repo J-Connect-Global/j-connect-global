@@ -10,6 +10,16 @@ const livingRegistry = JSON.parse(read('content/registry/living.json'));
 const routeSlugs = new Set(routeData.routes.map((route) => route.slug));
 const routesBySlug = new Map(routeData.routes.map((route) => [route.slug, route]));
 
+for (const route of routeData.routes.filter((item) => item.geography)) {
+  assert(!route.asset, `${route.slug}: verified geographic route must use a generated SVG, not a raster asset`);
+  assert(route.geography.orientation === 'north-up', `${route.slug}: verified geographic route must be north-up`);
+  assert(/^https:\/\//.test(route.geography.source || ''), `${route.slug}: verified geographic route must cite an HTTPS source`);
+  assert(/^\d{4}-\d{2}-\d{2}$/.test(route.geography.verified_at || ''), `${route.slug}: missing geography verification date`);
+  for (const node of route.nodes) {
+    assert(Number.isFinite(node.latitude) && Number.isFinite(node.longitude), `${route.slug}: ${node.id} lacks verified coordinates`);
+  }
+}
+
 const articles = fs.readdirSync(livingDir)
   .filter((name) => name.endsWith('.md'))
   .map((name) => {
@@ -25,6 +35,23 @@ const registrySlugs = new Set(livingRegistry.filter((item) => item.category === 
 const contentSlugs = new Set(articles.map((article) => article.meta.slug));
 assertSameSet(contentSlugs, registrySlugs, 'tourism content and living registry');
 assertSameSet(contentSlugs, routeSlugs, 'tourism content and route data');
+
+const travelHubExpectations = new Map([
+  ['area', 20],
+  ['weekend', 15],
+  ['family', 3],
+  ['relax', 2]
+]);
+const sitemap = read('sitemap.xml');
+for (const [slug, expectedCards] of travelHubExpectations) {
+  const url = `/germany/ja/living/travel/${slug}/`;
+  const html = read(`germany/ja/living/travel/${slug}/index.html`);
+  assert(count(html, 'data-travel-hub-card') === expectedCards, `${slug} travel hub must render ${expectedCards} registry-driven cards`);
+  assert(!/準備中|このPRでは構造だけ/.test(html), `${slug} travel hub still exposes placeholder copy`);
+  assert(/<meta name="robots" content="index, follow">/.test(html), `${slug} travel hub must be indexable after receiving substantive content`);
+  assert(!/fonts\.(?:googleapis|gstatic)\.com/.test(html), `${slug} travel hub must not load third-party web fonts`);
+  assert(sitemap.includes(`<loc>https://j-connect-global.com${url}</loc>`), `${slug} travel hub is missing from sitemap`);
+}
 
 for (const article of articles) {
   const { slug } = article.meta;

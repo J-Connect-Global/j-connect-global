@@ -14,9 +14,6 @@ const representativeRoutes = [
 ];
 
 const routeMedia = (slug, viewportWidth) => {
-  if (slug === 'bremen-weekend-trip') {
-    return { locatorSrc: '/assets/img/living/bremen-city-guide-map-final.webp', expectedSource: 'bremen-city-guide-map-final.webp', width: 1536, height: 1024 };
-  }
   const usesMobileSource = viewportWidth <= 600;
   return {
     locatorSrc: `/assets/images/living/routes/${slug}-route-overview.svg`,

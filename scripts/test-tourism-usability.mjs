@@ -10,13 +10,19 @@ const livingRegistry = JSON.parse(read('content/registry/living.json'));
 const routeSlugs = new Set(routeData.routes.map((route) => route.slug));
 const routesBySlug = new Map(routeData.routes.map((route) => [route.slug, route]));
 
-for (const route of routeData.routes.filter((item) => item.geography)) {
+for (const route of routeData.routes) {
   assert(!route.asset, `${route.slug}: verified geographic route must use a generated SVG, not a raster asset`);
+  const illustrationAsset = `/assets/images/living/routes/${route.slug}-illustrated-map.webp`;
+  assert(route.illustration?.asset === illustrationAsset, `${route.slug}: missing generated illustrated background reference`);
+  const illustrationFile = path.join(root, normalizeRepoPath(illustrationAsset));
+  assert(fs.existsSync(illustrationFile), `${route.slug}: generated illustrated background is missing`);
+  assert(fs.statSync(illustrationFile).size <= 750000, `${route.slug}: illustrated background exceeds 750 KB`);
   assert(route.geography.orientation === 'north-up', `${route.slug}: verified geographic route must be north-up`);
   assert(/^https:\/\//.test(route.geography.source || ''), `${route.slug}: verified geographic route must cite an HTTPS source`);
   assert(/^\d{4}-\d{2}-\d{2}$/.test(route.geography.verified_at || ''), `${route.slug}: missing geography verification date`);
   for (const node of route.nodes) {
     assert(Number.isFinite(node.latitude) && Number.isFinite(node.longitude), `${route.slug}: ${node.id} lacks verified coordinates`);
+    assert(/^https:\/\/www\.openstreetmap\.org\/(?:node|way|relation)\/\d+$/.test(node.source || ''), `${route.slug}: ${node.id} lacks a direct OpenStreetMap object source`);
   }
 }
 
@@ -56,10 +62,12 @@ for (const [slug, expectedCards] of travelHubExpectations) {
 for (const article of articles) {
   const { slug } = article.meta;
   const externalRouteAsset = routesBySlug.get(slug)?.asset || '';
+  const route = routesBySlug.get(slug);
   const routeSrc = externalRouteAsset || `/assets/images/living/routes/${slug}-route-overview.svg`;
   const routeMatches = article.body.match(new RegExp(escapeRegExp(routeSrc), 'g')) || [];
   assert(routeMatches.length === 1, `${slug}: expected one route overview in Markdown`);
   assert(article.body.indexOf(routeSrc) / article.body.length <= 0.25, `${slug}: route overview must be within the first 25% of the body`);
+  assert(article.body.includes(`![${route.alt}](${routeSrc} "${routeData.caption}")`), `${slug}: route overview alt text or disclosure caption is stale`);
 
   if (externalRouteAsset) {
     assert(fs.existsSync(path.join(root, normalizeRepoPath(routeSrc))), `${slug}: replacement WebP is missing`);
@@ -71,6 +79,8 @@ for (const article of articles) {
       assert(/<title\b[^>]*>[^<]+<\/title>/i.test(svg), `${relative}: missing title`);
       assert(/<desc\b[^>]*>[^<]+<\/desc>/i.test(svg), `${relative}: missing desc`);
       assert(!/<script\b|<foreignObject\b|\b(?:href|xlink:href)=["']https?:|data:image|base64/i.test(svg), `${relative}: contains prohibited active or external content`);
+      assert(svg.includes(`<image href="${route.illustration.asset}"`), `${relative}: generated background is not embedded`);
+      assert(svg.includes('AI背景') && svg.includes('OSM地点確認'), `${relative}: AI/OSM disclosure is missing`);
     }
   }
 
@@ -113,8 +123,7 @@ for (const relative of ['content/living/germany-train-travel-guide.md', 'content
   assert(fs.existsSync(path.join(root, relative)), `Missing shared guide: ${relative}`);
 }
 
-const externalRouteAssets = routeData.routes.filter((route) => route.asset).length;
-console.log(`Tourism usability validation passed for ${articles.length} articles, ${(articles.length - externalRouteAssets) * 2} responsive SVGs, and ${externalRouteAssets} external raster map.`);
+console.log(`Tourism usability validation passed for ${articles.length} articles, ${articles.length * 2} responsive SVG composites, and ${articles.length} generated illustrated backgrounds.`);
 
 function read(relative) {
   return fs.readFileSync(path.join(root, relative), 'utf8');

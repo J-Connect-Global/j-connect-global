@@ -36,7 +36,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![Aachen HbfからElisenbrunnen、DomとKatschhof、RathausとMarkt、Printen休憩へ進む順序](/assets/images/living/routes/aachen-day-trip-route-overview.svg "位置関係を把握するための概略図です。縮尺・所要時間は目安で、当日の経路は公式交通情報で確認してください。")
+![Aachen HbfからElisenbrunnen、DomとKatschhof、RathausとMarkt、Printen休憩へ進む順序](/assets/images/living/routes/aachen-day-trip-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
 
 [ケルン中心部を川まで歩く日帰り案](/germany/ja/living/cologne-city-guide/)と比べ、建築と温泉文化を短い徒歩圏でつなぎたい日に向きます。
 

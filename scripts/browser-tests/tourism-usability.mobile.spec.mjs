@@ -19,7 +19,7 @@ const routeMedia = (slug, viewportWidth) => {
     locatorSrc: `/assets/images/living/routes/${slug}-route-overview.svg`,
     expectedSource: usesMobileSource ? `${slug}-route-overview-mobile.svg` : `${slug}-route-overview.svg`,
     width: usesMobileSource ? 480 : 820,
-    height: usesMobileSource ? 720 : 520
+    height: usesMobileSource ? 740 : 520
   };
 };
 

@@ -1,52 +1,335 @@
 {
   "version": 1,
-  "caption": "位置関係を把握するための概略図です。縮尺・所要時間は目安で、当日の経路は公式交通情報で確認してください。",
+  "caption": "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。",
   "routes": [
     {
       "slug": "aachen-day-trip",
       "title": "アーヘン旧市街の基本ルート",
       "alt": "Aachen HbfからElisenbrunnen、DomとKatschhof、RathausとMarkt、Printen休憩へ進む順序",
       "nodes": [
-        { "id": "hbf", "label": "Aachen Hbf", "note": "到着・荷物", "x": 110, "y": 380 },
-        { "id": "elisen", "label": "Elisenbrunnen", "note": "旧市街の入口", "x": 245, "y": 300 },
-        { "id": "dom", "label": "Dom / Katschhof", "note": "見学の固定点", "x": 410, "y": 215 },
-        { "id": "markt", "label": "Rathaus / Markt", "note": "広場を通り抜け", "x": 575, "y": 150 },
-        { "id": "printen", "label": "Printen休憩", "note": "午後を選び直す", "x": 690, "y": 275 },
-        { "id": "therme", "label": "温泉施設", "note": "別目的の分岐", "x": 650, "y": 410, "optional": true }
+        {
+          "id": "hbf",
+          "label": "Aachen Hbf",
+          "note": "到着・荷物",
+          "x": 453.6,
+          "y": 430,
+          "latitude": 50.7677663,
+          "longitude": 6.0913818,
+          "source": "https://www.openstreetmap.org/node/3070631211"
+        },
+        {
+          "id": "elisen",
+          "label": "Elisenbrunnen",
+          "note": "旧市街の入口",
+          "x": 249.6,
+          "y": 301,
+          "latitude": 50.7741045,
+          "longitude": 6.0868638,
+          "source": "https://www.openstreetmap.org/way/80716477"
+        },
+        {
+          "id": "dom",
+          "label": "Dom / Katschhof",
+          "note": "見学の固定点",
+          "x": 119.6,
+          "y": 287.7,
+          "latitude": 50.7747551,
+          "longitude": 6.0839856,
+          "source": "https://www.openstreetmap.org/way/20470246"
+        },
+        {
+          "id": "markt",
+          "label": "Rathaus / Markt",
+          "note": "広場を通り抜け",
+          "x": 110,
+          "y": 260.9,
+          "latitude": 50.7760729,
+          "longitude": 6.0837735,
+          "source": "https://www.openstreetmap.org/way/8068434"
+        },
+        {
+          "id": "printen",
+          "label": "Printen休憩",
+          "note": "午後を選び直す",
+          "x": 136.4,
+          "y": 273.3,
+          "latitude": 50.7754632,
+          "longitude": 6.0843576,
+          "source": "https://www.openstreetmap.org/way/5168919"
+        },
+        {
+          "id": "therme",
+          "label": "温泉施設",
+          "note": "別目的の分岐",
+          "x": 710,
+          "y": 120,
+          "optional": true,
+          "latitude": 50.7829925,
+          "longitude": 6.0970593,
+          "source": "https://www.openstreetmap.org/way/105659501"
+        }
       ],
-      "edges": [["hbf", "elisen"], ["elisen", "dom"], ["dom", "markt"], ["markt", "printen"]],
-      "optionalEdges": [["printen", "therme"]]
+      "edges": [
+        [
+          "hbf",
+          "elisen"
+        ],
+        [
+          "elisen",
+          "dom"
+        ],
+        [
+          "dom",
+          "markt"
+        ],
+        [
+          "markt",
+          "printen"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "printen",
+          "therme"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/aachen-day-trip-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "amsterdam-weekend-trip",
       "title": "アムステルダム中心部の基本ルート",
       "alt": "Amsterdam Centraalから運河地区、JordaanとDe 9 Straatjes、Museumpleinへ進みVondelparkを任意で加える順序",
       "nodes": [
-        { "id": "centraal", "label": "Amsterdam Centraal", "note": "到着地点", "x": 410, "y": 120 },
-        { "id": "canal", "label": "Canal Belt", "note": "運河を南へ", "x": 420, "y": 225 },
-        { "id": "jordaan", "label": "Jordaan", "note": "西側の街歩き", "x": 245, "y": 280 },
-        { "id": "nine", "label": "De 9 Straatjes", "note": "通り抜け", "x": 405, "y": 335 },
-        { "id": "museum", "label": "Museumplein", "note": "予約施設は一つ", "x": 555, "y": 415 },
-        { "id": "vondel", "label": "Vondelpark", "note": "休憩の分岐", "x": 710, "y": 330, "optional": true }
+        {
+          "id": "centraal",
+          "label": "Amsterdam Centraal",
+          "note": "到着地点",
+          "x": 710,
+          "y": 120,
+          "latitude": 52.378901,
+          "longitude": 4.9005805,
+          "source": "https://www.openstreetmap.org/node/4290854847"
+        },
+        {
+          "id": "canal",
+          "label": "Canal Belt",
+          "note": "運河を南へ",
+          "x": 449.1,
+          "y": 218.9,
+          "latitude": 52.371979,
+          "longitude": 4.8847268,
+          "source": "https://www.openstreetmap.org/way/222278733"
+        },
+        {
+          "id": "jordaan",
+          "label": "Jordaan",
+          "note": "西側の街歩き",
+          "x": 389.4,
+          "y": 169.8,
+          "latitude": 52.3754157,
+          "longitude": 4.8810958,
+          "source": "https://www.openstreetmap.org/relation/12011952"
+        },
+        {
+          "id": "nine",
+          "label": "De 9 Straatjes",
+          "note": "通り抜け",
+          "x": 453.5,
+          "y": 263.6,
+          "latitude": 52.3688508,
+          "longitude": 4.8849938,
+          "source": "https://www.openstreetmap.org/relation/17947340"
+        },
+        {
+          "id": "museum",
+          "label": "Museumplein",
+          "note": "予約施設は一つ",
+          "x": 396.7,
+          "y": 429,
+          "latitude": 52.3572706,
+          "longitude": 4.8815398,
+          "source": "https://www.openstreetmap.org/way/25965389"
+        },
+        {
+          "id": "vondel",
+          "label": "Vondelpark",
+          "note": "休憩の分岐",
+          "x": 110,
+          "y": 430,
+          "optional": true,
+          "latitude": 52.3571974,
+          "longitude": 4.864119,
+          "source": "https://www.openstreetmap.org/relation/17080648"
+        }
       ],
-      "edges": [["centraal", "canal"], ["canal", "jordaan"], ["jordaan", "nine"], ["nine", "museum"]],
-      "optionalEdges": [["museum", "vondel"]]
+      "edges": [
+        [
+          "centraal",
+          "canal"
+        ],
+        [
+          "canal",
+          "jordaan"
+        ],
+        [
+          "jordaan",
+          "nine"
+        ],
+        [
+          "nine",
+          "museum"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "museum",
+          "vondel"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/amsterdam-weekend-trip-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "berlin-weekend-trip",
       "title": "ベルリン中心部を東へ進む基本ルート",
       "alt": "Berlin HbfからReichstag、Brandenburger Tor、Holocaust-Mahnmal、Unter den Linden、Museumsinselへ東進する順序",
       "nodes": [
-        { "id": "hbf", "label": "Berlin Hbf", "note": "到着", "x": 100, "y": 300 },
-        { "id": "reichstag", "label": "Reichstag", "note": "予約時刻を固定", "x": 225, "y": 210 },
-        { "id": "gate", "label": "Brandenburger Tor", "note": "東へ進む", "x": 365, "y": 250 },
-        { "id": "memorial", "label": "Holocaust-Mahnmal", "note": "南側", "x": 430, "y": 365 },
-        { "id": "linden", "label": "Unter den Linden", "note": "大通り", "x": 550, "y": 245 },
-        { "id": "island", "label": "Museumsinsel", "note": "初日の終点", "x": 700, "y": 190 },
-        { "id": "wall", "label": "壁・地区散策", "note": "2日目の選択", "x": 665, "y": 395, "optional": true }
+        {
+          "id": "hbf",
+          "label": "Berlin Hbf",
+          "note": "到着",
+          "x": 110,
+          "y": 283.9,
+          "latitude": 52.5250175,
+          "longitude": 13.369448,
+          "source": "https://www.openstreetmap.org/relation/3600565"
+        },
+        {
+          "id": "reichstag",
+          "label": "Reichstag",
+          "note": "予約時刻を固定",
+          "x": 245.6,
+          "y": 367.3,
+          "latitude": 52.5186538,
+          "longitude": 13.3761015,
+          "source": "https://www.openstreetmap.org/relation/2201742"
+        },
+        {
+          "id": "gate",
+          "label": "Brandenburger Tor",
+          "note": "東へ進む",
+          "x": 278.3,
+          "y": 398.6,
+          "latitude": 52.5162699,
+          "longitude": 13.3777034,
+          "source": "https://www.openstreetmap.org/way/518071791"
+        },
+        {
+          "id": "memorial",
+          "label": "Holocaust-Mahnmal",
+          "note": "南側",
+          "x": 299.3,
+          "y": 430,
+          "latitude": 52.5138731,
+          "longitude": 13.3787346,
+          "source": "https://www.openstreetmap.org/way/172234733"
+        },
+        {
+          "id": "linden",
+          "label": "Unter den Linden",
+          "note": "大通り",
+          "x": 613.6,
+          "y": 385.3,
+          "latitude": 52.5172847,
+          "longitude": 13.3941571,
+          "source": "https://www.openstreetmap.org/way/340498982"
+        },
+        {
+          "id": "island",
+          "label": "Museumsinsel",
+          "note": "初日の終点",
+          "x": 710,
+          "y": 385.6,
+          "latitude": 52.5172626,
+          "longitude": 13.3988844,
+          "source": "https://www.openstreetmap.org/node/9082329700"
+        },
+        {
+          "id": "wall",
+          "label": "壁・地区散策",
+          "note": "2日目の選択",
+          "x": 624.2,
+          "y": 120,
+          "optional": true,
+          "latitude": 52.5375133,
+          "longitude": 13.3946755,
+          "source": "https://www.openstreetmap.org/relation/14375945"
+        }
       ],
-      "edges": [["hbf", "reichstag"], ["reichstag", "gate"], ["gate", "memorial"], ["memorial", "linden"], ["linden", "island"]],
-      "optionalEdges": [["island", "wall"]]
+      "edges": [
+        [
+          "hbf",
+          "reichstag"
+        ],
+        [
+          "reichstag",
+          "gate"
+        ],
+        [
+          "gate",
+          "memorial"
+        ],
+        [
+          "memorial",
+          "linden"
+        ],
+        [
+          "linden",
+          "island"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "island",
+          "wall"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/berlin-weekend-trip-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "bremen-weekend-trip",
@@ -56,251 +339,1682 @@
         "verified_at": "2026-07-22",
         "orientation": "north-up",
         "source": "https://www.openstreetmap.org/copyright",
-        "note": "公式観光案内の所在地とOpenStreetMapの地点・道路データで相対位置を確認。図は縮尺図ではない。"
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
       },
       "nodes": [
-        { "id": "hbf", "label": "Bremen Hbf", "note": "荷物を預ける", "x": 570, "y": 110, "latitude": 53.0831456, "longitude": 8.8135421 },
-        { "id": "markt", "label": "Marktplatz", "note": "市庁舎・ローラント", "x": 360, "y": 205, "latitude": 53.0755914, "longitude": 8.8071412 },
-        { "id": "boettcher", "label": "Böttcherstraße", "note": "旧市街の南西", "x": 270, "y": 285, "latitude": 53.0750729, "longitude": 8.8057624 },
-        { "id": "schnoor", "label": "Schnoor", "note": "旧市街の南東", "x": 440, "y": 420, "latitude": 53.0728372, "longitude": 8.8096671 },
-        { "id": "schlachte", "label": "Schlachte", "note": "西側のWeser川沿い", "x": 120, "y": 365, "latitude": 53.0750692, "longitude": 8.8037182 },
-        { "id": "viertel", "label": "Viertel", "note": "旧市街の東・翌日", "x": 690, "y": 420, "latitude": 53.0729, "longitude": 8.822691, "optional": true }
+        {
+          "id": "hbf",
+          "label": "Bremen Hbf",
+          "note": "荷物を預ける",
+          "x": 491.1,
+          "y": 120,
+          "latitude": 53.0831456,
+          "longitude": 8.8135421,
+          "source": "https://www.openstreetmap.org/relation/3340527"
+        },
+        {
+          "id": "markt",
+          "label": "Marktplatz",
+          "note": "市庁舎・ローラント",
+          "x": 290.3,
+          "y": 344.2,
+          "latitude": 53.0755914,
+          "longitude": 8.8071412,
+          "source": "https://www.openstreetmap.org/relation/3316885"
+        },
+        {
+          "id": "boettcher",
+          "label": "Böttcherstraße",
+          "note": "旧市街の南西",
+          "x": 247.1,
+          "y": 359.6,
+          "latitude": 53.0750729,
+          "longitude": 8.8057624,
+          "source": "https://www.openstreetmap.org/way/165241891"
+        },
+        {
+          "id": "schnoor",
+          "label": "Schnoor",
+          "note": "旧市街の南東",
+          "x": 369.5,
+          "y": 425.9,
+          "latitude": 53.0728372,
+          "longitude": 8.8096671,
+          "source": "https://www.openstreetmap.org/way/15515629"
+        },
+        {
+          "id": "schlachte",
+          "label": "Schlachte",
+          "note": "西側のWeser川沿い",
+          "x": 110,
+          "y": 302.7,
+          "latitude": 53.0769907,
+          "longitude": 8.8013932,
+          "source": "https://www.openstreetmap.org/way/4020305"
+        },
+        {
+          "id": "viertel",
+          "label": "Viertel",
+          "note": "旧市街の東・翌日",
+          "x": 710,
+          "y": 430,
+          "latitude": 53.0726994,
+          "longitude": 8.820521,
+          "optional": true,
+          "source": "https://www.openstreetmap.org/way/43917771"
+        }
       ],
-      "edges": [["hbf", "markt"], ["markt", "boettcher"], ["boettcher", "schnoor"], ["schnoor", "schlachte"]],
-      "optionalEdges": [["markt", "viertel"]]
+      "edges": [
+        [
+          "hbf",
+          "markt"
+        ],
+        [
+          "markt",
+          "boettcher"
+        ],
+        [
+          "boettcher",
+          "schnoor"
+        ],
+        [
+          "schnoor",
+          "schlachte"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "markt",
+          "viertel"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/bremen-weekend-trip-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      }
     },
     {
       "slug": "brussels-weekend-trip",
       "title": "ブリュッセル中心部の基本ルート",
       "alt": "Bruxelles-CentralからGrand-Place、Mont des Arts、Sablon、Marollesへ進みEU地区を別分岐にする順序",
       "nodes": [
-        { "id": "central", "label": "Bruxelles-Central", "note": "到着", "x": 360, "y": 145 },
-        { "id": "grand", "label": "Grand-Place", "note": "下の街", "x": 250, "y": 245 },
-        { "id": "mont", "label": "Mont des Arts", "note": "上の街へ", "x": 420, "y": 270 },
-        { "id": "sablon", "label": "Sablon", "note": "南へ歩く", "x": 520, "y": 360 },
-        { "id": "marolles", "label": "Marolles", "note": "街歩きの終点", "x": 330, "y": 425 },
-        { "id": "eu", "label": "EU地区", "note": "別目的の分岐", "x": 700, "y": 220, "optional": true }
+        {
+          "id": "central",
+          "label": "Bruxelles-Central",
+          "note": "到着",
+          "x": 284.4,
+          "y": 160.3,
+          "latitude": 50.8454639,
+          "longitude": 4.3569867,
+          "source": "https://www.openstreetmap.org/node/3266203405"
+        },
+        {
+          "id": "grand",
+          "label": "Grand-Place",
+          "note": "下の街",
+          "x": 212.8,
+          "y": 120,
+          "latitude": 50.8467291,
+          "longitude": 4.3524081,
+          "source": "https://www.openstreetmap.org/way/991425177"
+        },
+        {
+          "id": "mont",
+          "label": "Mont des Arts",
+          "note": "上の街へ",
+          "x": 281,
+          "y": 211.4,
+          "latitude": 50.8438626,
+          "longitude": 4.3567662,
+          "source": "https://www.openstreetmap.org/node/10895578669"
+        },
+        {
+          "id": "sablon",
+          "label": "Sablon",
+          "note": "南へ歩く",
+          "x": 251.2,
+          "y": 296.8,
+          "latitude": 50.8411833,
+          "longitude": 4.3548653,
+          "source": "https://www.openstreetmap.org/way/41698337"
+        },
+        {
+          "id": "marolles",
+          "label": "Marolles",
+          "note": "街歩きの終点",
+          "x": 110,
+          "y": 430,
+          "latitude": 50.8370045,
+          "longitude": 4.3458407,
+          "source": "https://www.openstreetmap.org/way/1248912572"
+        },
+        {
+          "id": "eu",
+          "label": "EU地区",
+          "note": "別目的の分岐",
+          "x": 710,
+          "y": 249.3,
+          "optional": true,
+          "latitude": 50.8426716,
+          "longitude": 4.384182,
+          "source": "https://www.openstreetmap.org/way/183108274"
+        }
       ],
-      "edges": [["central", "grand"], ["grand", "mont"], ["mont", "sablon"], ["sablon", "marolles"]],
-      "optionalEdges": [["mont", "eu"]]
+      "edges": [
+        [
+          "central",
+          "grand"
+        ],
+        [
+          "grand",
+          "mont"
+        ],
+        [
+          "mont",
+          "sablon"
+        ],
+        [
+          "sablon",
+          "marolles"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "mont",
+          "eu"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/brussels-weekend-trip-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "cologne-city-guide",
       "title": "ケルン中心部とライン川の基本ルート",
       "alt": "Köln Hbfと大聖堂からAltstadt、Rheinufer、Hohenzollernbrücke、Deutz側へ進む順序",
       "nodes": [
-        { "id": "dom", "label": "Köln Hbf / Dom", "note": "到着・荷物", "x": 300, "y": 135 },
-        { "id": "altstadt", "label": "Altstadt", "note": "広場をつなぐ", "x": 300, "y": 245 },
-        { "id": "river", "label": "Rheinufer", "note": "川沿い", "x": 410, "y": 350 },
-        { "id": "bridge", "label": "Hohenzollernbrücke", "note": "渡るか途中判断", "x": 535, "y": 235 },
-        { "id": "deutz", "label": "Deutz側", "note": "対岸の眺め", "x": 690, "y": 315 },
-        { "id": "return", "label": "駅へ戻る", "note": "短縮ルート", "x": 120, "y": 315, "optional": true }
+        {
+          "id": "dom",
+          "label": "Köln Hbf / Dom",
+          "note": "到着・荷物",
+          "x": 110,
+          "y": 231,
+          "latitude": 50.9413035,
+          "longitude": 6.958138,
+          "source": "https://www.openstreetmap.org/way/4532022"
+        },
+        {
+          "id": "altstadt",
+          "label": "Altstadt",
+          "note": "広場をつなぐ",
+          "x": 199.8,
+          "y": 430,
+          "latitude": 50.9386483,
+          "longitude": 6.9601872,
+          "source": "https://www.openstreetmap.org/way/528946167"
+        },
+        {
+          "id": "river",
+          "label": "Rheinufer",
+          "note": "川沿い",
+          "x": 311.1,
+          "y": 406,
+          "latitude": 50.9389688,
+          "longitude": 6.9627291,
+          "source": "https://www.openstreetmap.org/way/4532046"
+        },
+        {
+          "id": "bridge",
+          "label": "Hohenzollernbrücke",
+          "note": "渡るか途中判断",
+          "x": 441.4,
+          "y": 220.9,
+          "latitude": 50.9414376,
+          "longitude": 6.9657041,
+          "source": "https://www.openstreetmap.org/way/268130024"
+        },
+        {
+          "id": "deutz",
+          "label": "Deutz側",
+          "note": "対岸の眺め",
+          "x": 710,
+          "y": 300,
+          "latitude": 50.9403829,
+          "longitude": 6.9718364,
+          "source": "https://www.openstreetmap.org/node/13396033603"
+        },
+        {
+          "id": "return",
+          "label": "駅へ戻る",
+          "note": "短縮ルート",
+          "x": 150.8,
+          "y": 120,
+          "optional": true,
+          "latitude": 50.9427839,
+          "longitude": 6.9590705,
+          "source": "https://www.openstreetmap.org/node/2399559029"
+        }
       ],
-      "edges": [["dom", "altstadt"], ["altstadt", "river"], ["river", "bridge"], ["bridge", "deutz"]],
-      "optionalEdges": [["river", "return"]]
+      "edges": [
+        [
+          "dom",
+          "altstadt"
+        ],
+        [
+          "altstadt",
+          "river"
+        ],
+        [
+          "river",
+          "bridge"
+        ],
+        [
+          "bridge",
+          "deutz"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "river",
+          "return"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/cologne-city-guide-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "cologne-family-trip",
       "title": "ケルン家族旅行の基本ルート",
-      "alt": "到着地点から屋内アンカー、Rheinparkの屋外休憩を経て帰路へ進み、動物園か博物館を選択する順序",
+      "alt": "南東のKöln Messe/Deutz駅から北のRheinparkへ進み、西側のKölnisches Stadtmuseumまたは北西対岸のKölner Zooを選ぶ位置関係",
       "nodes": [
-        { "id": "arrival", "label": "到着地点", "note": "荷物と昼寝を確認", "x": 125, "y": 260 },
-        { "id": "indoor", "label": "屋内アンカー", "note": "年齢で一つ選ぶ", "x": 310, "y": 180 },
-        { "id": "park", "label": "Rheinpark", "note": "屋外休憩", "x": 500, "y": 285 },
-        { "id": "return", "label": "帰路", "note": "余力を残す", "x": 680, "y": 390 },
-        { "id": "zoo", "label": "動物園", "note": "天候・年齢で選択", "x": 610, "y": 145, "optional": true }
+        {
+          "id": "arrival",
+          "label": "Köln Messe/Deutz",
+          "note": "到着・帰路",
+          "x": 671.3,
+          "y": 402.6,
+          "latitude": 50.9409887,
+          "longitude": 6.9751312,
+          "source": "https://www.openstreetmap.org/node/74880878"
+        },
+        {
+          "id": "park",
+          "label": "Rheinpark",
+          "note": "屋外の主役",
+          "x": 706.9,
+          "y": 284.5,
+          "latitude": 50.949472,
+          "longitude": 6.9764536,
+          "source": "https://www.openstreetmap.org/way/4532738"
+        },
+        {
+          "id": "indoor",
+          "label": "Kölnisches Stadtmuseum",
+          "note": "雨天・乳幼児",
+          "x": 110,
+          "y": 430,
+          "optional": true,
+          "latitude": 50.939021,
+          "longitude": 6.9542661,
+          "source": "https://www.openstreetmap.org/node/618164720"
+        },
+        {
+          "id": "zoo",
+          "label": "Kölner Zoo",
+          "note": "動物が主目的",
+          "x": 710,
+          "y": 120,
+          "optional": true,
+          "latitude": 50.9612923,
+          "longitude": 6.9765705,
+          "source": "https://www.openstreetmap.org/way/4936527"
+        }
       ],
-      "edges": [["arrival", "indoor"], ["indoor", "park"], ["park", "return"]],
-      "optionalEdges": [["park", "zoo"]]
+      "edges": [
+        [
+          "arrival",
+          "park"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "park",
+          "indoor"
+        ],
+        [
+          "park",
+          "zoo"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/cologne-family-trip-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "copenhagen-weekend-trip",
       "title": "コペンハーゲン港までの基本ルート",
       "alt": "København HからTivoli周辺、Indre By、Nyhavn、Christianshavnへ進む順序",
       "nodes": [
-        { "id": "h", "label": "København H", "note": "空港線の到着", "x": 145, "y": 375 },
-        { "id": "tivoli", "label": "Tivoli周辺", "note": "営業日を確認", "x": 260, "y": 300 },
-        { "id": "indre", "label": "Indre By", "note": "中心街", "x": 395, "y": 220 },
-        { "id": "nyhavn", "label": "Nyhavn", "note": "港へ", "x": 565, "y": 205 },
-        { "id": "christianshavn", "label": "Christianshavn", "note": "水辺で休む", "x": 680, "y": 345 },
-        { "id": "airport", "label": "空港", "note": "別レイヤー", "x": 120, "y": 145, "optional": true }
+        {
+          "id": "h",
+          "label": "København H",
+          "note": "空港線の到着",
+          "x": 110,
+          "y": 402.3,
+          "latitude": 55.6727587,
+          "longitude": 12.5646789,
+          "source": "https://www.openstreetmap.org/way/91260821"
+        },
+        {
+          "id": "tivoli",
+          "label": "Tivoli周辺",
+          "note": "営業日を確認",
+          "x": 211.4,
+          "y": 375.3,
+          "latitude": 55.6734266,
+          "longitude": 12.5691891,
+          "source": "https://www.openstreetmap.org/way/314752241"
+        },
+        {
+          "id": "indre",
+          "label": "Indre By / Højbro Plads",
+          "note": "中心街",
+          "x": 451.1,
+          "y": 175.1,
+          "latitude": 55.6783754,
+          "longitude": 12.5798507,
+          "source": "https://www.openstreetmap.org/way/549182399"
+        },
+        {
+          "id": "nyhavn",
+          "label": "Nyhavn",
+          "note": "港へ",
+          "x": 699.3,
+          "y": 120,
+          "latitude": 55.679736,
+          "longitude": 12.5908855,
+          "source": "https://www.openstreetmap.org/relation/6476337"
+        },
+        {
+          "id": "christianshavn",
+          "label": "Christianshavn",
+          "note": "水辺で休む",
+          "x": 710,
+          "y": 430,
+          "latitude": 55.6720743,
+          "longitude": 12.5913631,
+          "source": "https://www.openstreetmap.org/way/106934960"
+        },
+        {
+          "id": "airport",
+          "label": "空港",
+          "note": "別レイヤー",
+          "x": 700,
+          "y": 420,
+          "optional": true,
+          "inset": true,
+          "latitude": 55.6091282,
+          "longitude": 12.6509822,
+          "source": "https://www.openstreetmap.org/way/12786040"
+        }
       ],
-      "edges": [["h", "tivoli"], ["tivoli", "indre"], ["indre", "nyhavn"], ["nyhavn", "christianshavn"]],
-      "optionalEdges": [["h", "airport"]]
+      "edges": [
+        [
+          "h",
+          "tivoli"
+        ],
+        [
+          "tivoli",
+          "indre"
+        ],
+        [
+          "indre",
+          "nyhavn"
+        ],
+        [
+          "nyhavn",
+          "christianshavn"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "h",
+          "airport"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/copenhagen-weekend-trip-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "duesseldorf-city-guide",
       "title": "デュッセルドルフ中心部の基本ルート",
       "alt": "Düsseldorf HbfからImmermannstraße、Königsallee、AltstadtとBurgplatz、Rheinuferへ西進しMedienHafenを任意で加える順序",
       "nodes": [
-        { "id": "hbf", "label": "Düsseldorf Hbf", "note": "到着", "x": 700, "y": 290 },
-        { "id": "immermann", "label": "Immermannstraße", "note": "食事・買い物", "x": 570, "y": 245 },
-        { "id": "koe", "label": "Königsallee", "note": "西へ進む", "x": 430, "y": 300 },
-        { "id": "altstadt", "label": "Altstadt / Burgplatz", "note": "旧市街", "x": 270, "y": 220 },
-        { "id": "river", "label": "Rheinufer", "note": "川沿い", "x": 130, "y": 315 },
-        { "id": "hafen", "label": "MedienHafen", "note": "時間がある場合", "x": 230, "y": 420, "optional": true }
+        {
+          "id": "hbf",
+          "label": "Düsseldorf Hbf",
+          "note": "到着",
+          "x": 710,
+          "y": 329.9,
+          "latitude": 51.219734,
+          "longitude": 6.7943015,
+          "source": "https://www.openstreetmap.org/node/1880180223"
+        },
+        {
+          "id": "immermann",
+          "label": "Immermannstraße",
+          "note": "食事・買い物",
+          "x": 619.3,
+          "y": 223.6,
+          "latitude": 51.2234269,
+          "longitude": 6.7888916,
+          "source": "https://www.openstreetmap.org/way/327140965"
+        },
+        {
+          "id": "koe",
+          "label": "Königsallee",
+          "note": "西へ進む",
+          "x": 458.4,
+          "y": 139,
+          "latitude": 51.2263661,
+          "longitude": 6.7793031,
+          "source": "https://www.openstreetmap.org/way/621308780"
+        },
+        {
+          "id": "altstadt",
+          "label": "Altstadt / Burgplatz",
+          "note": "旧市街",
+          "x": 325.4,
+          "y": 120,
+          "latitude": 51.2270276,
+          "longitude": 6.7713702,
+          "source": "https://www.openstreetmap.org/relation/7360802"
+        },
+        {
+          "id": "river",
+          "label": "Rheinufer",
+          "note": "川沿い",
+          "x": 287.9,
+          "y": 215.5,
+          "latitude": 51.2237091,
+          "longitude": 6.7691356,
+          "source": "https://www.openstreetmap.org/way/150157819"
+        },
+        {
+          "id": "hafen",
+          "label": "MedienHafen",
+          "note": "時間がある場合",
+          "x": 110,
+          "y": 430,
+          "optional": true,
+          "latitude": 51.2162541,
+          "longitude": 6.7585304,
+          "source": "https://www.openstreetmap.org/relation/214907"
+        }
       ],
-      "edges": [["hbf", "immermann"], ["immermann", "koe"], ["koe", "altstadt"], ["altstadt", "river"]],
-      "optionalEdges": [["river", "hafen"]]
+      "edges": [
+        [
+          "hbf",
+          "immermann"
+        ],
+        [
+          "immermann",
+          "koe"
+        ],
+        [
+          "koe",
+          "altstadt"
+        ],
+        [
+          "altstadt",
+          "river"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "river",
+          "hafen"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/duesseldorf-city-guide-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "duesseldorf-family-trip",
       "title": "デュッセルドルフ家族外出の基本ルート",
-      "alt": "到着地点からNordparkの短い舗装ルート、Aquazooの屋内見学、帰路へ進む順序",
+      "alt": "東側のNordpark/Aquazoo停留所からAquazooとNordparkを回り、西寄りの日本庭園を任意で加えて同じ停留所へ戻る位置関係",
       "nodes": [
-        { "id": "arrival", "label": "Nordpark/Aquazoo駅", "note": "同じ停留所", "x": 140, "y": 345 },
-        { "id": "park", "label": "Nordpark", "note": "短い舗装ルート", "x": 325, "y": 230 },
-        { "id": "aquazoo", "label": "Aquazoo", "note": "屋内アンカー", "x": 530, "y": 245 },
-        { "id": "return", "label": "帰路", "note": "同じ駅へ戻る", "x": 690, "y": 365 },
-        { "id": "garden", "label": "日本庭園", "note": "余力がある場合", "x": 370, "y": 410, "optional": true }
+        {
+          "id": "arrival",
+          "label": "Nordpark/Aquazoo駅",
+          "note": "到着・帰路",
+          "x": 710,
+          "y": 196.9,
+          "latitude": 51.2565018,
+          "longitude": 6.7555763,
+          "source": "https://www.openstreetmap.org/way/161776029"
+        },
+        {
+          "id": "aquazoo",
+          "label": "Aquazoo",
+          "note": "屋内アンカー",
+          "x": 390.3,
+          "y": 202.5,
+          "latitude": 51.2564928,
+          "longitude": 6.7496195,
+          "source": "https://www.openstreetmap.org/node/672754483"
+        },
+        {
+          "id": "park",
+          "label": "Nordpark",
+          "note": "短い舗装ルート",
+          "x": 346.4,
+          "y": 120,
+          "latitude": 51.2566258,
+          "longitude": 6.7488009,
+          "source": "https://www.openstreetmap.org/way/38155856"
+        },
+        {
+          "id": "garden",
+          "label": "日本庭園",
+          "note": "余力がある場合",
+          "x": 110,
+          "y": 241.7,
+          "optional": true,
+          "latitude": 51.2564295,
+          "longitude": 6.7443959,
+          "source": "https://www.openstreetmap.org/way/455973746"
+        }
       ],
-      "edges": [["arrival", "park"], ["park", "aquazoo"], ["aquazoo", "return"]],
-      "optionalEdges": [["park", "garden"]]
+      "edges": [
+        [
+          "arrival",
+          "aquazoo"
+        ],
+        [
+          "aquazoo",
+          "park"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "park",
+          "garden"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/duesseldorf-family-trip-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "hamburg-weekend-trip",
       "title": "ハンブルク港へ西進する基本ルート",
       "alt": "Hamburg HbfからRathaus、Speicherstadt、HafenCityとElbphilharmonie、Landungsbrückenへ西進する順序",
       "nodes": [
-        { "id": "hbf", "label": "Hamburg Hbf", "note": "到着", "x": 690, "y": 160 },
-        { "id": "rathaus", "label": "Rathaus", "note": "中心部", "x": 545, "y": 215 },
-        { "id": "speicher", "label": "Speicherstadt", "note": "赤レンガ地区", "x": 420, "y": 315 },
-        { "id": "hafen", "label": "HafenCity / Elbphilharmonie", "note": "Plazaを確認", "x": 270, "y": 345 },
-        { "id": "landungs", "label": "Landungsbrücken", "note": "港の終点", "x": 110, "y": 280 },
-        { "id": "alster", "label": "Alster", "note": "別日の分岐", "x": 465, "y": 125, "optional": true }
+        {
+          "id": "hbf",
+          "label": "Hamburg Hbf",
+          "note": "到着",
+          "x": 710,
+          "y": 161.8,
+          "latitude": 53.5529844,
+          "longitude": 10.0067569,
+          "source": "https://www.openstreetmap.org/way/137538320"
+        },
+        {
+          "id": "rathaus",
+          "label": "Rathaus",
+          "note": "中心部",
+          "x": 493.6,
+          "y": 222.7,
+          "latitude": 53.5503287,
+          "longitude": 9.9925658,
+          "source": "https://www.openstreetmap.org/way/142944431"
+        },
+        {
+          "id": "speicher",
+          "label": "Speicherstadt",
+          "note": "赤レンガ地区",
+          "x": 408.4,
+          "y": 367.5,
+          "latitude": 53.5440149,
+          "longitude": 9.9869792,
+          "source": "https://www.openstreetmap.org/node/4417808181"
+        },
+        {
+          "id": "hafen",
+          "label": "HafenCity / Elbphilharmonie",
+          "note": "Plazaを確認",
+          "x": 366.2,
+          "y": 430,
+          "latitude": 53.5412917,
+          "longitude": 9.9842058,
+          "source": "https://www.openstreetmap.org/way/24981342"
+        },
+        {
+          "id": "landungs",
+          "label": "Landungsbrücken",
+          "note": "港の終点",
+          "x": 110,
+          "y": 338.4,
+          "latitude": 53.5452837,
+          "longitude": 9.9674055,
+          "source": "https://www.openstreetmap.org/way/57378505"
+        },
+        {
+          "id": "alster",
+          "label": "Alster",
+          "note": "別日の分岐",
+          "x": 534.9,
+          "y": 120,
+          "optional": true,
+          "latitude": 53.5548058,
+          "longitude": 9.99527,
+          "source": "https://www.openstreetmap.org/relation/6693624"
+        }
       ],
-      "edges": [["hbf", "rathaus"], ["rathaus", "speicher"], ["speicher", "hafen"], ["hafen", "landungs"]],
-      "optionalEdges": [["rathaus", "alster"]]
+      "edges": [
+        [
+          "hbf",
+          "rathaus"
+        ],
+        [
+          "rathaus",
+          "speicher"
+        ],
+        [
+          "speicher",
+          "hafen"
+        ],
+        [
+          "hafen",
+          "landungs"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "rathaus",
+          "alster"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/hamburg-weekend-trip-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "krakow-weekend-trip",
       "title": "クラクフを北から南へ進む基本ルート",
       "alt": "Kraków GłównyからRynek、Wawel、Kazimierzへ南下し川沿いを天候で加える順序",
       "nodes": [
-        { "id": "glowny", "label": "Kraków Główny", "note": "到着", "x": 470, "y": 115 },
-        { "id": "rynek", "label": "Rynek", "note": "旧市街の中心", "x": 395, "y": 230 },
-        { "id": "wawel", "label": "Wawel", "note": "券種を選ぶ", "x": 350, "y": 350 },
-        { "id": "kazimierz", "label": "Kazimierz", "note": "過ごす場所", "x": 500, "y": 425 },
-        { "id": "river", "label": "川沿い", "note": "好天時の追加", "x": 680, "y": 340, "optional": true }
+        {
+          "id": "glowny",
+          "label": "Kraków Główny",
+          "note": "到着",
+          "x": 710,
+          "y": 120,
+          "latitude": 50.0684238,
+          "longitude": 19.9478862,
+          "source": "https://www.openstreetmap.org/node/206270454"
+        },
+        {
+          "id": "rynek",
+          "label": "Rynek",
+          "note": "旧市街の中心",
+          "x": 235.1,
+          "y": 243.4,
+          "latitude": 50.0615174,
+          "longitude": 19.9371069,
+          "source": "https://www.openstreetmap.org/way/201133718"
+        },
+        {
+          "id": "wawel",
+          "label": "Wawel",
+          "note": "券種を選ぶ",
+          "x": 187.3,
+          "y": 370.5,
+          "latitude": 50.0544051,
+          "longitude": 19.9360223,
+          "source": "https://www.openstreetmap.org/relation/2270819"
+        },
+        {
+          "id": "kazimierz",
+          "label": "Kazimierz",
+          "note": "過ごす場所",
+          "x": 566,
+          "y": 418.1,
+          "latitude": 50.0517373,
+          "longitude": 19.9446185,
+          "source": "https://www.openstreetmap.org/relation/3915088"
+        },
+        {
+          "id": "river",
+          "label": "川沿い",
+          "note": "好天時の追加",
+          "x": 110,
+          "y": 430,
+          "optional": true,
+          "latitude": 50.051074,
+          "longitude": 19.9342686,
+          "source": "https://www.openstreetmap.org/way/247800795"
+        }
       ],
-      "edges": [["glowny", "rynek"], ["rynek", "wawel"], ["wawel", "kazimierz"]],
-      "optionalEdges": [["kazimierz", "river"]]
+      "edges": [
+        [
+          "glowny",
+          "rynek"
+        ],
+        [
+          "rynek",
+          "wawel"
+        ],
+        [
+          "wawel",
+          "kazimierz"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "kazimierz",
+          "river"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/krakow-weekend-trip-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "london-weekend-trip",
       "title": "ロンドン48時間の基本ルート",
-      "alt": "到着空港または主要駅から宿、Westminster、South Bankへ進み2日目に一地区または一館を選ぶ順序",
+      "alt": "南西のLondon VictoriaからWestminster、川の南東側にあるSouth Bankへ進み、北のKing’s CrossとBritish Museumを2日目の選択肢として示す位置関係",
       "nodes": [
-        { "id": "arrival", "label": "到着空港 / 主要駅", "note": "経路を一つ選ぶ", "x": 110, "y": 145 },
-        { "id": "hotel", "label": "宿", "note": "荷物を置く", "x": 270, "y": 220 },
-        { "id": "westminster", "label": "Westminster", "note": "初日の起点", "x": 420, "y": 315 },
-        { "id": "southbank", "label": "South Bank", "note": "川を一度渡る", "x": 600, "y": 350 },
-        { "id": "museum", "label": "一地区 / 一館", "note": "2日目の選択", "x": 680, "y": 185, "optional": true }
+        {
+          "id": "victoria",
+          "label": "London Victoria",
+          "note": "南西側の到着例",
+          "x": 110,
+          "y": 430,
+          "latitude": 51.4950525,
+          "longitude": -0.1448455,
+          "source": "https://www.openstreetmap.org/relation/6036811"
+        },
+        {
+          "id": "westminster",
+          "label": "Westminster",
+          "note": "初日の起点",
+          "x": 545.5,
+          "y": 394,
+          "latitude": 51.499387,
+          "longitude": -0.1244812,
+          "source": "https://www.openstreetmap.org/relation/1567699"
+        },
+        {
+          "id": "southbank",
+          "label": "South Bank",
+          "note": "川を一度渡る",
+          "x": 710,
+          "y": 341,
+          "latitude": 51.5057791,
+          "longitude": -0.116787,
+          "source": "https://www.openstreetmap.org/relation/1698905"
+        },
+        {
+          "id": "kingscross",
+          "label": "King’s Cross",
+          "note": "北側の到着例",
+          "x": 576.7,
+          "y": 120,
+          "optional": true,
+          "latitude": 51.5323954,
+          "longitude": -0.1230224,
+          "source": "https://www.openstreetmap.org/node/7159162454"
+        },
+        {
+          "id": "museum",
+          "label": "British Museum",
+          "note": "2日目の一館",
+          "x": 497.9,
+          "y": 228.6,
+          "optional": true,
+          "latitude": 51.5193118,
+          "longitude": -0.1267051,
+          "source": "https://www.openstreetmap.org/relation/177044"
+        }
       ],
-      "edges": [["arrival", "hotel"], ["hotel", "westminster"], ["westminster", "southbank"]],
-      "optionalEdges": [["southbank", "museum"]]
+      "edges": [
+        [
+          "victoria",
+          "westminster"
+        ],
+        [
+          "westminster",
+          "southbank"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "kingscross",
+          "museum"
+        ],
+        [
+          "southbank",
+          "museum"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/london-weekend-trip-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "munich-weekend-trip",
       "title": "ミュンヘン中心部の基本ルート",
-      "alt": "München HbfとKarlsplatzからMarienplatz、Residenz周辺へ進みKunstarealまたはIsarを選ぶ順序",
+      "alt": "西のMünchen HbfからKarlsplatz、Marienplatz、Residenzへ東進し、北西のKunstarealまたは北東のEnglischer Gartenを選ぶ位置関係",
       "nodes": [
-        { "id": "hbf", "label": "München Hbf / Karlsplatz", "note": "到着", "x": 120, "y": 320 },
-        { "id": "marien", "label": "Marienplatz", "note": "中心部", "x": 340, "y": 275 },
-        { "id": "residenz", "label": "Residenz周辺", "note": "初日の固定点", "x": 520, "y": 205 },
-        { "id": "kunst", "label": "Kunstareal", "note": "2日目A", "x": 675, "y": 120, "optional": true },
-        { "id": "isar", "label": "Isar / Englischer Garten", "note": "2日目B", "x": 675, "y": 390, "optional": true }
+        {
+          "id": "hbf",
+          "label": "München Hbf",
+          "note": "到着",
+          "x": 110,
+          "y": 342.8,
+          "latitude": 48.1407253,
+          "longitude": 11.5569426,
+          "source": "https://www.openstreetmap.org/node/2470201868"
+        },
+        {
+          "id": "karls",
+          "label": "Karlsplatz",
+          "note": "旧市街の入口",
+          "x": 245.4,
+          "y": 364.1,
+          "latitude": 48.1398497,
+          "longitude": 11.5646112,
+          "source": "https://www.openstreetmap.org/way/107975496"
+        },
+        {
+          "id": "marien",
+          "label": "Marienplatz",
+          "note": "中心部",
+          "x": 435.8,
+          "y": 430,
+          "latitude": 48.1371436,
+          "longitude": 11.5753989,
+          "source": "https://www.openstreetmap.org/node/2941687118"
+        },
+        {
+          "id": "residenz",
+          "label": "Residenz",
+          "note": "初日の固定点",
+          "x": 478.2,
+          "y": 323.4,
+          "latitude": 48.1415242,
+          "longitude": 11.5777992,
+          "source": "https://www.openstreetmap.org/node/617126144"
+        },
+        {
+          "id": "kunst",
+          "label": "Kunstareal",
+          "note": "2日目A",
+          "x": 264.4,
+          "y": 222.5,
+          "optional": true,
+          "latitude": 48.1456681,
+          "longitude": 11.5656895,
+          "source": "https://www.openstreetmap.org/way/4592385"
+        },
+        {
+          "id": "isar",
+          "label": "Englischer Garten",
+          "note": "2日目B",
+          "x": 710,
+          "y": 120,
+          "optional": true,
+          "latitude": 48.1498811,
+          "longitude": 11.5909339,
+          "source": "https://www.openstreetmap.org/way/257323684"
+        }
       ],
-      "edges": [["hbf", "marien"], ["marien", "residenz"]],
-      "optionalEdges": [["residenz", "kunst"], ["residenz", "isar"]]
+      "edges": [
+        [
+          "hbf",
+          "karls"
+        ],
+        [
+          "karls",
+          "marien"
+        ],
+        [
+          "marien",
+          "residenz"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "residenz",
+          "kunst"
+        ],
+        [
+          "residenz",
+          "isar"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/munich-weekend-trip-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "nrw-nature-relax-guide",
       "title": "NRW自然候補の相対位置",
       "alt": "RuhrとKölnを基準にGrugapark、Üfter Mark、Fühlinger See、Wilder Kermeter、Externsteineの候補を比較する概略図",
       "nodes": [
-        { "id": "ruhr", "label": "Ruhr主要都市", "note": "起点", "x": 340, "y": 210 },
-        { "id": "gruga", "label": "Grugapark", "note": "自然＋設備", "x": 190, "y": 175 },
-        { "id": "uefter", "label": "Üfter Mark", "note": "静かな森林", "x": 250, "y": 330 },
-        { "id": "koeln", "label": "Köln", "note": "起点", "x": 425, "y": 390 },
-        { "id": "fuehlinger", "label": "Fühlinger See", "note": "湖畔", "x": 545, "y": 300 },
-        { "id": "kermeter", "label": "Wilder Kermeter", "note": "段階的な森歩き", "x": 610, "y": 425 },
-        { "id": "extern", "label": "Externsteine", "note": "遠距離の候補", "x": 690, "y": 135, "optional": true }
+        {
+          "id": "ruhr",
+          "label": "Ruhr主要都市",
+          "note": "起点",
+          "x": 249.5,
+          "y": 223.2,
+          "latitude": 51.4514769,
+          "longitude": 7.0144679,
+          "source": "https://www.openstreetmap.org/node/3010827615"
+        },
+        {
+          "id": "gruga",
+          "label": "Grugapark",
+          "note": "自然＋設備",
+          "x": 241.9,
+          "y": 229.2,
+          "latitude": 51.4273654,
+          "longitude": 6.9833074,
+          "source": "https://www.openstreetmap.org/relation/4760873"
+        },
+        {
+          "id": "uefter",
+          "label": "Üfter Mark",
+          "note": "静かな森林",
+          "x": 222.6,
+          "y": 158,
+          "latitude": 51.715512,
+          "longitude": 6.9034775,
+          "source": "https://www.openstreetmap.org/node/4692450246"
+        },
+        {
+          "id": "koeln",
+          "label": "Köln",
+          "note": "起点",
+          "x": 235.8,
+          "y": 349.4,
+          "latitude": 50.9413035,
+          "longitude": 6.958138,
+          "source": "https://www.openstreetmap.org/way/4532022"
+        },
+        {
+          "id": "fuehlinger",
+          "label": "Fühlinger See",
+          "note": "湖畔",
+          "x": 227.3,
+          "y": 328.3,
+          "latitude": 51.0264652,
+          "longitude": 6.9227485,
+          "source": "https://www.openstreetmap.org/relation/1626029"
+        },
+        {
+          "id": "kermeter",
+          "label": "Wilder Kermeter",
+          "note": "段階的な森歩き",
+          "x": 110,
+          "y": 430,
+          "latitude": 50.6151418,
+          "longitude": 6.4382289,
+          "source": "https://www.openstreetmap.org/node/1248318175"
+        },
+        {
+          "id": "extern",
+          "label": "Externsteine",
+          "note": "遠距離の候補",
+          "x": 710,
+          "y": 120,
+          "optional": true,
+          "latitude": 51.8690902,
+          "longitude": 8.9171201,
+          "source": "https://www.openstreetmap.org/relation/10524800"
+        }
       ],
-      "edges": [["ruhr", "gruga"], ["ruhr", "uefter"], ["koeln", "fuehlinger"], ["koeln", "kermeter"]],
-      "optionalEdges": [["ruhr", "extern"]]
+      "edges": [
+        [
+          "ruhr",
+          "gruga"
+        ],
+        [
+          "ruhr",
+          "uefter"
+        ],
+        [
+          "koeln",
+          "fuehlinger"
+        ],
+        [
+          "koeln",
+          "kermeter"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "ruhr",
+          "extern"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/nrw-nature-relax-guide-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "paris-weekend-trip",
       "title": "パリ1泊2日の基本ルート",
       "alt": "到着駅と宿からMarais、Seineへ進みLouvreまたはOrsayの一館を選ぶ順序",
       "nodes": [
-        { "id": "arrival", "label": "到着駅 / 宿", "note": "荷物を置く", "x": 150, "y": 185 },
-        { "id": "marais", "label": "Marais", "note": "初日の終点", "x": 330, "y": 230 },
-        { "id": "seine", "label": "Seine", "note": "川沿い", "x": 450, "y": 345 },
-        { "id": "louvre", "label": "Louvre", "note": "一館を選ぶ", "x": 610, "y": 230, "optional": true },
-        { "id": "orsay", "label": "Orsay", "note": "一館を選ぶ", "x": 650, "y": 410, "optional": true }
+        {
+          "id": "arrival",
+          "label": "Gare du Nord",
+          "note": "鉄道到着例",
+          "x": 570,
+          "y": 120,
+          "latitude": 48.8819585,
+          "longitude": 2.3562878,
+          "source": "https://www.openstreetmap.org/way/736530618"
+        },
+        {
+          "id": "marais",
+          "label": "Marais",
+          "note": "初日の終点",
+          "x": 710,
+          "y": 425.9,
+          "latitude": 48.8550655,
+          "longitude": 2.3653311,
+          "source": "https://www.openstreetmap.org/way/18232134"
+        },
+        {
+          "id": "seine",
+          "label": "Seine",
+          "note": "川沿い",
+          "x": 433.6,
+          "y": 430,
+          "latitude": 48.8547051,
+          "longitude": 2.3474847,
+          "source": "https://www.openstreetmap.org/way/55693529"
+        },
+        {
+          "id": "louvre",
+          "label": "Louvre",
+          "note": "一館を選ぶ",
+          "x": 287.2,
+          "y": 356.7,
+          "optional": true,
+          "latitude": 48.8611473,
+          "longitude": 2.3380277,
+          "source": "https://www.openstreetmap.org/relation/7515426"
+        },
+        {
+          "id": "orsay",
+          "label": "Orsay",
+          "note": "一館を選ぶ",
+          "x": 110,
+          "y": 370.7,
+          "optional": true,
+          "latitude": 48.8599179,
+          "longitude": 2.3265849,
+          "source": "https://www.openstreetmap.org/way/63178753"
+        }
       ],
-      "edges": [["arrival", "marais"], ["marais", "seine"]],
-      "optionalEdges": [["seine", "louvre"], ["seine", "orsay"]]
+      "edges": [
+        [
+          "arrival",
+          "marais"
+        ],
+        [
+          "marais",
+          "seine"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "seine",
+          "louvre"
+        ],
+        [
+          "seine",
+          "orsay"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/paris-weekend-trip-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "prague-weekend-trip",
       "title": "プラハを上り公共交通・下り徒歩で回る基本ルート",
       "alt": "Praha hlavní nádražíと宿からStaré Město、Karlův mostへ歩き、トラムで城側へ上ってMalá Stranaへ下る順序",
       "nodes": [
-        { "id": "station", "label": "Praha hlavní nádraží / 宿", "note": "到着", "x": 660, "y": 380 },
-        { "id": "stare", "label": "Staré Město", "note": "旧市街", "x": 520, "y": 300 },
-        { "id": "bridge", "label": "Karlův most", "note": "朝に渡る", "x": 370, "y": 325 },
-        { "id": "castle", "label": "城側", "note": "トラムで上る", "x": 240, "y": 160 },
-        { "id": "mala", "label": "Malá Strana", "note": "徒歩で下る", "x": 150, "y": 330 }
+        {
+          "id": "station",
+          "label": "Praha hlavní nádraží / 宿",
+          "note": "到着",
+          "x": 710,
+          "y": 430,
+          "latitude": 50.0829628,
+          "longitude": 14.4360939,
+          "source": "https://www.openstreetmap.org/node/3134751791"
+        },
+        {
+          "id": "stare",
+          "label": "Staré Město",
+          "note": "旧市街",
+          "x": 454.9,
+          "y": 253,
+          "latitude": 50.0874453,
+          "longitude": 14.4209714,
+          "source": "https://www.openstreetmap.org/relation/2362716"
+        },
+        {
+          "id": "bridge",
+          "label": "Karlův most",
+          "note": "朝に渡る",
+          "x": 272.4,
+          "y": 285.3,
+          "latitude": 50.0866258,
+          "longitude": 14.4101485,
+          "source": "https://www.openstreetmap.org/way/119016167"
+        },
+        {
+          "id": "castle",
+          "label": "城側",
+          "note": "トラムで上る",
+          "x": 110,
+          "y": 120,
+          "latitude": 50.0908114,
+          "longitude": 14.4005225,
+          "source": "https://www.openstreetmap.org/relation/3312247"
+        },
+        {
+          "id": "mala",
+          "label": "Malá Strana",
+          "note": "徒歩で下る",
+          "x": 174.2,
+          "y": 226.5,
+          "latitude": 50.0881139,
+          "longitude": 14.4043312,
+          "source": "https://www.openstreetmap.org/relation/6750981"
+        }
       ],
-      "edges": [["station", "stare"], ["stare", "bridge"], ["bridge", "castle"], ["castle", "mala"]],
-      "optionalEdges": []
+      "edges": [
+        [
+          "station",
+          "stare"
+        ],
+        [
+          "stare",
+          "bridge"
+        ],
+        [
+          "bridge",
+          "castle"
+        ],
+        [
+          "castle",
+          "mala"
+        ]
+      ],
+      "optionalEdges": [],
+      "illustration": {
+        "asset": "/assets/images/living/routes/prague-weekend-trip-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "rhine-river-relax-guide",
       "title": "ライン川沿いの区間選択",
-      "alt": "KölnからBonnとKönigswinter、Linz、Bacharach、St. Goarへ南下する候補区間と短縮点",
+      "alt": "北のKölnからBonn、Königswinter、Linz、Koblenz、St. Goar、南のBacharachへ続くライン川沿いの位置関係",
       "nodes": [
-        { "id": "koeln", "label": "Köln", "note": "北側の起点", "x": 380, "y": 105 },
-        { "id": "bonn", "label": "Bonn / Königswinter", "note": "平地か山を選ぶ", "x": 430, "y": 205 },
-        { "id": "linz", "label": "Linz", "note": "対岸へ渡らない案", "x": 365, "y": 305 },
-        { "id": "bacharach", "label": "Bacharach", "note": "RB26を短縮点に", "x": 430, "y": 405 },
-        { "id": "goar", "label": "St. Goar", "note": "南側の候補", "x": 610, "y": 430 },
-        { "id": "ship", "label": "船区間", "note": "季節・水位で選択", "x": 650, "y": 250, "optional": true }
+        {
+          "id": "koeln",
+          "label": "Köln",
+          "note": "北側の起点",
+          "x": 110,
+          "y": 120,
+          "latitude": 50.9413035,
+          "longitude": 6.958138,
+          "source": "https://www.openstreetmap.org/way/4532022"
+        },
+        {
+          "id": "bonn",
+          "label": "Bonn",
+          "note": "平地の都市散歩",
+          "x": 212.5,
+          "y": 193.2,
+          "latitude": 50.7320436,
+          "longitude": 7.0967647,
+          "source": "https://www.openstreetmap.org/node/2713060210"
+        },
+        {
+          "id": "koenig",
+          "label": "Königswinter",
+          "note": "山側への分岐",
+          "x": 283.8,
+          "y": 211.9,
+          "latitude": 50.6788312,
+          "longitude": 7.1933425,
+          "source": "https://www.openstreetmap.org/node/4554623088"
+        },
+        {
+          "id": "linz",
+          "label": "Linz am Rhein",
+          "note": "短い町歩き",
+          "x": 344.6,
+          "y": 250,
+          "latitude": 50.5696973,
+          "longitude": 7.2755898,
+          "source": "https://www.openstreetmap.org/way/1082966669"
+        },
+        {
+          "id": "koblenz",
+          "label": "Koblenz",
+          "note": "中流域の接続点",
+          "x": 589.2,
+          "y": 321.7,
+          "latitude": 50.3649965,
+          "longitude": 7.6064752,
+          "source": "https://www.openstreetmap.org/node/30442968"
+        },
+        {
+          "id": "goar",
+          "label": "St. Goar",
+          "note": "Bacharachの北",
+          "x": 669,
+          "y": 396.9,
+          "latitude": 50.1500951,
+          "longitude": 7.7145404,
+          "source": "https://www.openstreetmap.org/node/3547509367"
+        },
+        {
+          "id": "bacharach",
+          "label": "Bacharach",
+          "note": "南側の候補",
+          "x": 710,
+          "y": 430,
+          "latitude": 50.0554626,
+          "longitude": 7.7699825,
+          "source": "https://www.openstreetmap.org/node/60621698"
+        }
       ],
-      "edges": [["koeln", "bonn"], ["bonn", "linz"], ["linz", "bacharach"], ["bacharach", "goar"]],
-      "optionalEdges": [["bonn", "ship"], ["ship", "goar"]]
+      "edges": [
+        [
+          "koeln",
+          "bonn"
+        ],
+        [
+          "bonn",
+          "koenig"
+        ],
+        [
+          "koenig",
+          "linz"
+        ],
+        [
+          "linz",
+          "koblenz"
+        ],
+        [
+          "koblenz",
+          "goar"
+        ],
+        [
+          "goar",
+          "bacharach"
+        ]
+      ],
+      "optionalEdges": [],
+      "illustration": {
+        "asset": "/assets/images/living/routes/rhine-river-relax-guide-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "strasbourg-weekend-trip",
       "title": "ストラスブール旧市街の基本ルート",
       "alt": "Gare CentraleまたはP+RからPetite France、Grande Île、Cathédrale周辺、川沿いと帰路へ進む順序",
       "nodes": [
-        { "id": "gare", "label": "Gare Centrale", "note": "鉄道の入口", "x": 120, "y": 215 },
-        { "id": "pr", "label": "P+R", "note": "車の入口", "x": 120, "y": 390, "optional": true },
-        { "id": "petite", "label": "Petite France", "note": "旧市街へ", "x": 300, "y": 300 },
-        { "id": "grande", "label": "Grande Île", "note": "中心部", "x": 450, "y": 220 },
-        { "id": "cathedral", "label": "Cathédrale周辺", "note": "予約を確認", "x": 600, "y": 275 },
-        { "id": "river", "label": "川沿い / 帰路", "note": "最後の調整", "x": 690, "y": 410 }
+        {
+          "id": "gare",
+          "label": "Gare Centrale",
+          "note": "鉄道の入口",
+          "x": 295.3,
+          "y": 294.8,
+          "latitude": 48.5852933,
+          "longitude": 7.7339249,
+          "source": "https://www.openstreetmap.org/node/3069229440"
+        },
+        {
+          "id": "pr",
+          "label": "P+R",
+          "note": "車の入口",
+          "x": 110,
+          "y": 120,
+          "optional": true,
+          "latitude": 48.5913272,
+          "longitude": 7.7251045,
+          "source": "https://www.openstreetmap.org/relation/2029654"
+        },
+        {
+          "id": "petite",
+          "label": "Petite France",
+          "note": "旧市街へ",
+          "x": 468.8,
+          "y": 408.6,
+          "latitude": 48.5813647,
+          "longitude": 7.7421809,
+          "source": "https://www.openstreetmap.org/node/2597701571"
+        },
+        {
+          "id": "grande",
+          "label": "Grande Île",
+          "note": "中心部",
+          "x": 548.2,
+          "y": 352.3,
+          "latitude": 48.5833106,
+          "longitude": 7.7459618,
+          "source": "https://www.openstreetmap.org/relation/9181975"
+        },
+        {
+          "id": "cathedral",
+          "label": "Cathédrale周辺",
+          "note": "予約を確認",
+          "x": 655.2,
+          "y": 393.5,
+          "latitude": 48.5818885,
+          "longitude": 7.7510521,
+          "source": "https://www.openstreetmap.org/relation/3541088"
+        },
+        {
+          "id": "river",
+          "label": "川沿い / 帰路",
+          "note": "最後の調整",
+          "x": 710,
+          "y": 430,
+          "latitude": 48.5806273,
+          "longitude": 7.7536601,
+          "source": "https://www.openstreetmap.org/way/15806747"
+        }
       ],
-      "edges": [["gare", "petite"], ["petite", "grande"], ["grande", "cathedral"], ["cathedral", "river"]],
-      "optionalEdges": [["pr", "petite"]]
+      "edges": [
+        [
+          "gare",
+          "petite"
+        ],
+        [
+          "petite",
+          "grande"
+        ],
+        [
+          "grande",
+          "cathedral"
+        ],
+        [
+          "cathedral",
+          "river"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "pr",
+          "petite"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/strasbourg-weekend-trip-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     },
     {
       "slug": "warsaw-weekend-trip",
       "title": "ワルシャワ中心部の基本ルート",
       "alt": "Warszawa Centralnaと宿からRoyal Route、Old Townへ進み2日目に博物館またはVistulaとPowiśleを選ぶ順序",
       "nodes": [
-        { "id": "central", "label": "Warszawa Centralna / 宿", "note": "到着", "x": 170, "y": 390 },
-        { "id": "royal", "label": "Royal Route", "note": "北へ歩く", "x": 370, "y": 300 },
-        { "id": "old", "label": "Old Town", "note": "歴史の一日", "x": 540, "y": 180 },
-        { "id": "museum", "label": "博物館", "note": "2日目A", "x": 690, "y": 110, "optional": true },
-        { "id": "vistula", "label": "Vistula / Powiśle", "note": "2日目B", "x": 680, "y": 370, "optional": true }
+        {
+          "id": "central",
+          "label": "Warszawa Centralna / 宿",
+          "note": "到着",
+          "x": 282.5,
+          "y": 430,
+          "latitude": 52.2288207,
+          "longitude": 21.00316,
+          "source": "https://www.openstreetmap.org/node/9814916146"
+        },
+        {
+          "id": "royal",
+          "label": "Royal Route",
+          "note": "北へ歩く",
+          "x": 603.8,
+          "y": 407.5,
+          "latitude": 52.2303418,
+          "longitude": 21.021785,
+          "source": "https://www.openstreetmap.org/way/4966682"
+        },
+        {
+          "id": "old",
+          "label": "Old Town",
+          "note": "歴史の一日",
+          "x": 431.5,
+          "y": 120,
+          "latitude": 52.2497952,
+          "longitude": 21.0117988,
+          "source": "https://www.openstreetmap.org/relation/6458642"
+        },
+        {
+          "id": "museum",
+          "label": "博物館",
+          "note": "2日目A",
+          "x": 110,
+          "y": 126.3,
+          "optional": true,
+          "latitude": 52.2493716,
+          "longitude": 20.9931609,
+          "source": "https://www.openstreetmap.org/way/186141946"
+        },
+        {
+          "id": "vistula",
+          "label": "Vistula / Powiśle",
+          "note": "2日目B",
+          "x": 710,
+          "y": 217.8,
+          "optional": true,
+          "latitude": 52.2431774,
+          "longitude": 21.0279408,
+          "source": "https://www.openstreetmap.org/way/503100788"
+        }
       ],
-      "edges": [["central", "royal"], ["royal", "old"]],
-      "optionalEdges": [["old", "museum"], ["old", "vistula"]]
+      "edges": [
+        [
+          "central",
+          "royal"
+        ],
+        [
+          "royal",
+          "old"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "old",
+          "museum"
+        ],
+        [
+          "old",
+          "vistula"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/routes/warsaw-weekend-trip-illustrated-map.webp",
+        "generated_at": "2026-07-22",
+        "style": "hand-painted watercolor-and-ink city guide",
+        "role": "decorative geographic context behind verified labels and route markers"
+      },
+      "geography": {
+        "verified_at": "2026-07-22",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
+      }
     }
   ]
 }

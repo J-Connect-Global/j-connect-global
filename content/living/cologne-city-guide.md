@@ -36,7 +36,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![Köln Hbfと大聖堂からAltstadt、Rheinufer、Hohenzollernbrücke、Deutz側へ進む順序](/assets/images/living/routes/cologne-city-guide-route-overview.svg "位置関係を把握するための概略図です。縮尺・所要時間は目安で、当日の経路は公式交通情報で確認してください。")
+![Köln Hbfと大聖堂からAltstadt、Rheinufer、Hohenzollernbrücke、Deutz側へ進む順序](/assets/images/living/routes/cologne-city-guide-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
 
 [デュッセルドルフの日本人街からライン川へ進むルート](/germany/ja/living/duesseldorf-city-guide/)と比べ、大聖堂と橋を主役にしたい日に向きます。
 

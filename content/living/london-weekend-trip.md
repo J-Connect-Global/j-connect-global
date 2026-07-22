@@ -33,7 +33,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![到着空港または主要駅から宿、Westminster、South Bankへ進み2日目に一地区または一館を選ぶ順序](/assets/images/living/routes/london-weekend-trip-route-overview.svg "位置関係を把握するための概略図です。縮尺・所要時間は目安で、当日の経路は公式交通情報で確認してください。")
+![南西のLondon VictoriaからWestminster、川の南東側にあるSouth Bankへ進み、北のKing’s CrossとBritish Museumを2日目の選択肢として示す位置関係](/assets/images/living/routes/london-weekend-trip-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
 
 [パリで川沿いと一館を組み合わせる週末案](/germany/ja/living/paris-weekend-trip/)と比べ、空港導線と地区選びを先に固定できる場合の選択肢です。
 

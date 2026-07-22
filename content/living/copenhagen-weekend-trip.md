@@ -33,7 +33,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![København HからTivoli周辺、Indre By、Nyhavn、Christianshavnへ進む順序](/assets/images/living/routes/copenhagen-weekend-trip-route-overview.svg "位置関係を把握するための概略図です。縮尺・所要時間は目安で、当日の経路は公式交通情報で確認してください。")
+![København HからTivoli周辺、Indre By、Nyhavn、Christianshavnへ進む順序](/assets/images/living/routes/copenhagen-weekend-trip-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
 
 [ハンブルクで赤レンガ地区から港へ進む週末案](/germany/ja/living/hamburg-weekend-trip/)と比べ、自転車都市の中心街と港を歩いてつなぎたい場合の選択肢です。
 

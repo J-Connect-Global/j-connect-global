@@ -1,60 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="720" viewBox="0 0 480 720" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="740" viewBox="0 0 480 740" role="img" aria-labelledby="title desc">
   <title id="title">ハンブルク港へ西進する基本ルート（モバイル）</title>
-  <desc id="desc">Hamburg HbfからRathaus、Speicherstadt、HafenCityとElbphilharmonie、Landungsbrückenへ西進する順序。読み順を優先した縦配置で、実線は基本ルート、破線は任意の分岐。縮尺は正確ではありません。</desc>
+  <desc id="desc">Hamburg HbfからRathaus、Speicherstadt、HafenCityとElbphilharmonie、Landungsbrückenへ西進する順序。上部は北向きの位置関係、下部は番号順の地点一覧。背景街並みはAI生成の編集イメージで、地点はOpenStreetMapで確認しています。</desc>
   <defs>
     <marker id="route-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#075b9a"/></marker>
     <marker id="optional-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#147d75"/></marker>
     <filter id="card-shadow" x="-15%" y="-20%" width="130%" height="150%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#12324a" flood-opacity="0.15"/></filter>
+    <clipPath id="map-clip"><rect x="1" y="1" width="818" height="518" rx="20"/></clipPath>
+    <clipPath id="mobile-map-clip"><path d="M19 1h442a18 18 0 0 1 18 18v299H1V19A18 18 0 0 1 19 1z"/></clipPath>
+    <linearGradient id="map-wash" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf0" stop-opacity="0.03"/><stop offset="1" stop-color="#fffaf0" stop-opacity="0.16"/></linearGradient>
   </defs>
-  <rect x="1" y="1" width="478" height="718" rx="18" fill="#f8fbfe" stroke="#a9c5dc" stroke-width="2"/>
-  <text x="24" y="40" fill="#062f55" font-family="system-ui, -apple-system, sans-serif" font-size="23" font-weight="800">ハンブルク港へ西進する基本ルート</text>
-  <g transform="translate(25 68)" aria-hidden="true">
-    <line x1="0" y1="0" x2="34" y2="0" stroke="#075b9a" stroke-width="7" stroke-linecap="round"/>
-    <text x="44" y="6" fill="#405e72" font-family="system-ui, -apple-system, sans-serif" font-size="16">基本</text>
-    <line x1="128" y1="0" x2="162" y2="0" stroke="#147d75" stroke-width="5" stroke-dasharray="9 7" stroke-linecap="round"/>
-    <text x="172" y="6" fill="#405e72" font-family="system-ui, -apple-system, sans-serif" font-size="16">任意</text>
+  <g clip-path="url(#mobile-map-clip)">
+    <image href="/assets/images/living/routes/hamburg-weekend-trip-illustrated-map.webp" x="1" y="1" width="478" height="318" preserveAspectRatio="xMidYMid slice"/>
+    <rect x="1" y="1" width="478" height="318" fill="url(#map-wash)"/>
+  </g>
+  <rect x="1" y="1" width="478" height="738" rx="18" fill="none" stroke="#173f68" stroke-width="2"/>
+  <g aria-hidden="true">
+    <path d="M427.7 119.4 L292.3 156.3" fill="none" stroke="#fffaf0" stroke-opacity="0.92" stroke-width="12" stroke-linecap="round"/>
+    <path d="M427.7 119.4 L292.3 156.3" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
+    <path d="M292.3 156.3 L239 244.1" fill="none" stroke="#fffaf0" stroke-opacity="0.92" stroke-width="12" stroke-linecap="round"/>
+    <path d="M292.3 156.3 L239 244.1" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
+    <path d="M239 244.1 L212.6 281.9" fill="none" stroke="#fffaf0" stroke-opacity="0.92" stroke-width="12" stroke-linecap="round"/>
+    <path d="M239 244.1 L212.6 281.9" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
+    <path d="M212.6 281.9 L52.3 226.4" fill="none" stroke="#fffaf0" stroke-opacity="0.92" stroke-width="12" stroke-linecap="round"/>
+    <path d="M212.6 281.9 L52.3 226.4" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
+    <path d="M292.3 156.3 L318.2 94.1" fill="none" stroke="#fffaf0" stroke-opacity="0.92" stroke-width="9" stroke-dasharray="12 10" stroke-linecap="round"/>
+    <path d="M292.3 156.3 L318.2 94.1" fill="none" stroke="#147d75" stroke-width="5" stroke-dasharray="12 10" stroke-linecap="round" marker-end="url(#optional-arrow)"/><g filter="url(#card-shadow)">
+      <circle cx="427.7" cy="119.4" r="14" fill="#fffaf0" fill-opacity="0.95"/>
+      <circle cx="427.7" cy="119.4" r="11" fill="#092f55"/>
+      <text x="427.7" y="123.5" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="900">1</text>
+    </g>
+<g filter="url(#card-shadow)">
+      <circle cx="292.3" cy="156.3" r="14" fill="#fffaf0" fill-opacity="0.95"/>
+      <circle cx="292.3" cy="156.3" r="11" fill="#092f55"/>
+      <text x="292.3" y="160.4" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="900">2</text>
+    </g>
+<g filter="url(#card-shadow)">
+      <circle cx="239" cy="244.1" r="14" fill="#fffaf0" fill-opacity="0.95"/>
+      <circle cx="239" cy="244.1" r="11" fill="#092f55"/>
+      <text x="239" y="248.2" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="900">3</text>
+    </g>
+<g filter="url(#card-shadow)">
+      <circle cx="212.6" cy="281.9" r="14" fill="#fffaf0" fill-opacity="0.95"/>
+      <circle cx="212.6" cy="281.9" r="11" fill="#092f55"/>
+      <text x="212.6" y="286" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="900">4</text>
+    </g>
+<g filter="url(#card-shadow)">
+      <circle cx="52.3" cy="226.4" r="14" fill="#fffaf0" fill-opacity="0.95"/>
+      <circle cx="52.3" cy="226.4" r="11" fill="#092f55"/>
+      <text x="52.3" y="230.5" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="900">5</text>
+    </g>
+<g filter="url(#card-shadow)">
+      <circle cx="318.2" cy="94.1" r="14" fill="#fffaf0" fill-opacity="0.95"/>
+      <circle cx="318.2" cy="94.1" r="11" fill="#147d75"/>
+      <text x="318.2" y="98.2" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="900">6</text>
+    </g></g>
+  <g aria-hidden="true" filter="url(#card-shadow)">
+    <rect x="12" y="12" width="400" height="58" rx="11" fill="#fffaf0" fill-opacity="0.96" stroke="#173f68" stroke-width="2"/>
+    <text x="25" y="37" fill="#092f55" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="900">ハンブルク港へ西進する基本ルート</text>
+    <text x="26" y="57" fill="#405e72" font-family="system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="800" letter-spacing="1">ILLUSTRATED ROUTE MAP</text>
   </g>
   <g aria-hidden="true">
-    <path d="M240 174 L240 206" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
-    <path d="M240 274 L240 306" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
-    <path d="M240 374 L240 406" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
-    <path d="M240 474 L240 506" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
-    <path d="M240 274 L240 606" fill="none" stroke="#147d75" stroke-width="5" stroke-dasharray="12 10" stroke-linecap="round" marker-end="url(#optional-arrow)"/></g>
-  <g filter="url(#card-shadow)">
-    <rect x="36" y="106" width="408" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
-    <circle cx="56" cy="140" r="9" fill="#075b9a"/>
-    <text x="240" y="136" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="800"><tspan x="240" dy="0">Hamburg Hbf</tspan></text>
-    <text x="240" y="159" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="16">到着</text>
+    <circle cx="442" cy="40" r="22" fill="#fffaf0" fill-opacity="0.94" stroke="#173f68" stroke-width="2"/>
+    <path d="M442 23 L436 44 L442 41 L448 44 Z" fill="#092f55"/>
+    <text x="442" y="13" text-anchor="middle" fill="#092f55" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="900">N</text>
   </g>
-<g filter="url(#card-shadow)">
-    <rect x="36" y="206" width="408" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
-    <circle cx="56" cy="240" r="9" fill="#075b9a"/>
-    <text x="240" y="236" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="800"><tspan x="240" dy="0">Rathaus</tspan></text>
-    <text x="240" y="259" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="16">中心部</text>
-  </g>
-<g filter="url(#card-shadow)">
-    <rect x="36" y="306" width="408" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
-    <circle cx="56" cy="340" r="9" fill="#075b9a"/>
-    <text x="240" y="336" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="800"><tspan x="240" dy="0">Speicherstadt</tspan></text>
-    <text x="240" y="359" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="16">赤レンガ地区</text>
-  </g>
-<g filter="url(#card-shadow)">
-    <rect x="36" y="406" width="408" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
-    <circle cx="56" cy="440" r="9" fill="#075b9a"/>
-    <text x="240" y="427" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="800"><tspan x="240" dy="0">HafenCity /</tspan><tspan x="240" dy="20">Elbphilharmonie</tspan></text>
-    <text x="240" y="465" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="16">Plazaを確認</text>
-  </g>
-<g filter="url(#card-shadow)">
-    <rect x="36" y="506" width="408" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
-    <circle cx="56" cy="540" r="9" fill="#075b9a"/>
-    <text x="240" y="536" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="800"><tspan x="240" dy="0">Landungsbrücken</tspan></text>
-    <text x="240" y="559" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="16">港の終点</text>
-  </g>
-<g filter="url(#card-shadow)">
-    <rect x="36" y="606" width="408" height="68" rx="14" fill="#edf9f6" stroke="#4c9f96" stroke-width="2"/>
-    <circle cx="56" cy="640" r="9" fill="#147d75"/>
-    <text x="240" y="636" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="800"><tspan x="240" dy="0">Alster</tspan></text>
-    <text x="240" y="659" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="16">別日の分岐</text>
-  </g>
-  <text x="456" y="695" text-anchor="end" fill="#526c7f" font-family="system-ui, -apple-system, sans-serif" font-size="16">概略図／縮尺は正確ではありません</text>
+  <rect x="1" y="318" width="478" height="420" fill="#fffaf0" fill-opacity="0.97"/>
+  <g aria-hidden="true">
+      <circle cx="30" cy="346" r="14" fill="#092f55"/>
+      <text x="30" y="351" text-anchor="middle" fill="#fff" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="900">1</text>
+      <text x="54" y="344" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="850">Hamburg Hbf</text>
+      <text x="54" y="362" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="12.5">到着</text>
+      <line x1="20" y1="368" x2="460" y2="368" stroke="#d7c8a7" stroke-width="1"/>
+    </g>
+<g aria-hidden="true">
+      <circle cx="30" cy="396" r="14" fill="#092f55"/>
+      <text x="30" y="401" text-anchor="middle" fill="#fff" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="900">2</text>
+      <text x="54" y="394" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="850">Rathaus</text>
+      <text x="54" y="412" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="12.5">中心部</text>
+      <line x1="20" y1="418" x2="460" y2="418" stroke="#d7c8a7" stroke-width="1"/>
+    </g>
+<g aria-hidden="true">
+      <circle cx="30" cy="446" r="14" fill="#092f55"/>
+      <text x="30" y="451" text-anchor="middle" fill="#fff" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="900">3</text>
+      <text x="54" y="444" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="850">Speicherstadt</text>
+      <text x="54" y="462" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="12.5">赤レンガ地区</text>
+      <line x1="20" y1="468" x2="460" y2="468" stroke="#d7c8a7" stroke-width="1"/>
+    </g>
+<g aria-hidden="true">
+      <circle cx="30" cy="496" r="14" fill="#092f55"/>
+      <text x="30" y="501" text-anchor="middle" fill="#fff" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="900">4</text>
+      <text x="54" y="494" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="850">HafenCity / Elbphilharmonie</text>
+      <text x="54" y="512" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="12.5">Plazaを確認</text>
+      <line x1="20" y1="518" x2="460" y2="518" stroke="#d7c8a7" stroke-width="1"/>
+    </g>
+<g aria-hidden="true">
+      <circle cx="30" cy="546" r="14" fill="#092f55"/>
+      <text x="30" y="551" text-anchor="middle" fill="#fff" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="900">5</text>
+      <text x="54" y="544" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="850">Landungsbrücken</text>
+      <text x="54" y="562" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="12.5">港の終点</text>
+      <line x1="20" y1="568" x2="460" y2="568" stroke="#d7c8a7" stroke-width="1"/>
+    </g>
+<g aria-hidden="true">
+      <circle cx="30" cy="596" r="14" fill="#147d75"/>
+      <text x="30" y="601" text-anchor="middle" fill="#fff" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="900">6</text>
+      <text x="54" y="594" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="850">Alster</text>
+      <text x="54" y="612" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="12.5">別日の分岐（任意）</text>
+      <line x1="20" y1="618" x2="460" y2="618" stroke="#d7c8a7" stroke-width="1"/>
+    </g>
+  <text x="24" y="719" fill="#526c7f" font-family="system-ui, -apple-system, sans-serif" font-size="12">AI背景／OSM地点確認 2026-07-22／縮尺・道路形状は不正確</text>
 </svg>

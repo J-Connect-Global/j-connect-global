@@ -35,7 +35,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![到着地点からNordparkの短い舗装ルート、Aquazooの屋内見学、帰路へ進む順序](/assets/images/living/routes/duesseldorf-family-trip-route-overview.svg "位置関係を把握するための概略図です。縮尺・所要時間は目安で、当日の経路は公式交通情報で確認してください。")
+![東側のNordpark/Aquazoo停留所からAquazooとNordparkを回り、西寄りの日本庭園を任意で加えて同じ停留所へ戻る位置関係](/assets/images/living/routes/duesseldorf-family-trip-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
 
 日本人街や旧市街も歩きたい場合は、同日に足さず[デュッセルドルフ中心部の西進ルート](/germany/ja/living/duesseldorf-city-guide/)を別日に選びます。
 

@@ -33,13 +33,16 @@ Scope: the Japanese Germany site, with the Bremen weekend guide as the first edi
 
 ## Next priorities
 
-1. Fix the news learner's source-language mismatch: the configured DW Germany feed is English while the UI labels it German learning material.
-2. Add response status, timeout, language, minimum-item, URL-scheme, and atomic-write guards to the news fetcher.
-3. Align `docs/living-content-workflow.md` with actual frontmatter/registry precedence and remove official-source dual management.
-4. Improve cookie-consent keyboard/focus semantics without changing consent defaults or legal copy.
-5. Replace the article TOC scroll scan with IntersectionObserver-driven state to reduce forced reflow.
-6. Add an accessible affordance for mobile horizontal-scroll tables, then evaluate card rendering for the itinerary table.
-7. Add a production deployment-SHA manifest so live parity checks detect a stale Pages deployment directly.
-8. Correct low-coverage source spreadsheet fields for Eat, Shopping, and Medical before enabling withheld UI capabilities.
-9. Consolidate the full validation contract behind a documented package script.
-10. Remove only re-verified unreferenced legacy CSS/images in a separate cleanup change.
+The first nine priorities were completed on 2026-07-23:
+
+1. The German-learning news panel now consumes and verifies DW's German feed.
+2. The news fetcher now checks HTTP status, timeout, language, minimum item count, HTTPS URLs, and atomic writes.
+3. Living documentation, front matter synchronization, registry precedence, and official-source handling now share one contract.
+4. Cookie consent now has explicit dialog semantics, focus entry/return, visible focus, and safe Escape behavior.
+5. Article TOC state is driven by `IntersectionObserver` without a scroll-time geometry scan.
+6. Responsive tables expose visible mobile instructions and a keyboard-focusable labeled region.
+7. Pages artifacts publish a commit-SHA manifest, and deployment/live parity checks compare it directly.
+8. Eat and Shopping rating data plus Medical status and official-source fields were corrected in the source spreadsheet and regenerated.
+9. `npm run build`, `npm run validate`, `npm run validate:all`, and `npm run validate:production` are the documented validation entry points.
+
+Priority 10 remains intentionally separate: remove only re-verified unreferenced legacy CSS/images in an isolated cleanup PR.

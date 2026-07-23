@@ -2,6 +2,10 @@
   "name": "j-connect-global",
   "private": true,
   "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "validate": "node scripts/validate-all.mjs",
+    "validate:all": "node scripts/validate-all.mjs --build --with-browser",
+    "validate:production": "node scripts/validate-production-parity.mjs",
     "test:browser": "playwright test --config=playwright.config.mjs"
   },
   "devDependencies": {

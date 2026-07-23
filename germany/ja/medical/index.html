@@ -209,12 +209,12 @@
           <button class="reset-btn" id="resetFiltersBtn" type="button">リセット</button>
         </div>
 
-        <div class="field">
+        <div class="field" id="regionField">
           <label class="label" for="keywordInput">キーワードで検索</label>
           <input id="keywordInput" class="input" type="text" placeholder="病院名・説明・タグ・住所など" />
         </div>
 
-        <div class="field">
+        <div class="field" id="categoryField">
           <div class="label">地域</div>
           <div class="filter-chip-group jc-chip-group" id="regionChipGroup" role="group" aria-label="地域で絞り込み"></div>
         </div>
@@ -318,9 +318,11 @@
   ></script>
 
   <script src="/assets/js/common.js"></script>
-<script src="/assets/js/data-sources.js"></script>
+  <script src="/assets/js/directory-capabilities.js"></script>
+  <script src="/assets/js/data-sources.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
+    const DIRECTORY_CAPABILITIES = window.JCONNECT_DIRECTORY_CAPABILITIES;
     const UI = window.JCONNECT_UI;
     const STATIC_DATA_URL = DATA_SOURCES.staticData?.medical || "/assets/data/medical/items.json";
     const DATA_TIMEOUT_MS = 5000;
@@ -357,6 +359,11 @@
       medicalDirectory: document.getElementById("medicalDirectory"),
       languageSelect: document.getElementById("languageSelect"),
       keywordInput: document.getElementById("keywordInput"),
+      regionField: document.getElementById("regionField"),
+      categoryField: document.getElementById("categoryField"),
+      detailCategoryField: document.getElementById("detailCategoryField"),
+      ratingField: document.getElementById("ratingField"),
+      languageField: document.getElementById("languageField"),
       regionChipGroup: document.getElementById("regionChipGroup"),
       categoryChipGroup: document.getElementById("categoryChipGroup"),
       detailCategoryChipGroup: document.getElementById("detailCategoryChipGroup"),
@@ -389,6 +396,7 @@
     let modalReturnFocus = null;
     let currentView = "list";
     let intentionallyEmpty = false;
+    let directoryCapabilities = DIRECTORY_CAPABILITIES.calculate([]);
     const filterState = {
       region: "",
       category: "",
@@ -566,11 +574,39 @@
     }
 
     function renderFilterChips() {
-      renderChipGroup(els.regionChipGroup, optionList(rawItems.map(i => i.region || i.city || i.area)), "region", false);
-      renderChipGroup(els.categoryChipGroup, optionList(rawItems.map(i => i.category)), "category");
-      renderChipGroup(els.detailCategoryChipGroup, optionList(rawItems.map(i => i.detailCategory)), "detailCategory");
-      renderChipGroup(els.ratingChipGroup, RATING_OPTIONS, "rating", false);
+      const capabilities = directoryCapabilities.capabilities;
+      renderChipGroup(els.regionChipGroup, capabilities.region_filter ? optionList(rawItems.map(i => i.region || i.city || i.area)) : [], "region", false);
+      renderChipGroup(els.categoryChipGroup, capabilities.category_filter ? optionList(rawItems.map(i => i.category)) : [], "category");
+      renderChipGroup(els.detailCategoryChipGroup, capabilities.detail_category_filter ? optionList(rawItems.map(i => i.detailCategory)) : [], "detailCategory");
+      renderChipGroup(els.ratingChipGroup, capabilities.rating_filter ? RATING_OPTIONS : [], "rating", false);
       renderChipGroup(els.languageChipGroup, optionList(rawItems.map(i => i.languageSupport)), "language");
+    }
+
+    function setControlVisibility(field, enabled) {
+      if (!field) return;
+      field.hidden = !enabled;
+      if (!enabled) field.querySelector(".filter-chip-group")?.replaceChildren();
+    }
+
+    function applyDirectoryCapabilities(sourceRows) {
+      directoryCapabilities = DIRECTORY_CAPABILITIES.calculate(sourceRows);
+      const capabilities = directoryCapabilities.capabilities;
+      if (!capabilities.region_filter) filterState.region = "";
+      if (!capabilities.category_filter) filterState.category = "";
+      if (!capabilities.detail_category_filter) filterState.detailCategory = "";
+      if (!capabilities.rating_filter) filterState.rating = "";
+
+      setControlVisibility(els.regionField, capabilities.region_filter);
+      setControlVisibility(els.categoryField, capabilities.category_filter);
+      setControlVisibility(els.detailCategoryField, capabilities.detail_category_filter);
+      setControlVisibility(els.ratingField, capabilities.rating_filter);
+      setControlVisibility(els.languageField, rawItems.some(item => item.languageSupport));
+
+      els.mapViewBtn.hidden = !capabilities.map_view;
+      els.mapViewBtn.disabled = !capabilities.map_view;
+      els.mapViewBtn.setAttribute("aria-disabled", String(!capabilities.map_view));
+      els.mapPanel.hidden = !capabilities.map_view;
+      if (!capabilities.map_view && currentView === "map") setView("list");
     }
 
     function applyFilters() {
@@ -759,7 +795,7 @@
               ${item.description ? `<p class="card-desc">${escapeHtml(item.description)}</p>` : ""}
 
               <div class="link-row jc-result-actions">
-                <button class="btn btn-secondary" type="button" data-detail>詳細を見る</button>
+                ${directoryCapabilities.capabilities.detail_modal && (item.phone || item.hours || item.languageSupport) ? `<button class="btn btn-secondary" type="button" data-detail>詳細を見る</button>` : ""}
                 ${item.website ? `<a class="btn btn-secondary" href="${escapeHtml(item.website)}" target="_blank" rel="noopener">公式サイト</a>` : ""}
                 ${mapUrl ? `<a class="btn btn-primary" href="${escapeHtml(mapUrl)}" target="_blank" rel="noopener">地図を見る</a>` : ""}
               </div>
@@ -1094,10 +1130,7 @@
         setMedicalDirectoryVisible(hasDirectoryData);
         setMedicalEmptyMode(!hasDirectoryData);
         if (!hasDirectoryData) return;
-        const hasMapItems = rawItems.some(item => item.lat !== null && item.lng !== null);
-        els.mapViewBtn.disabled = !hasMapItems;
-        els.mapViewBtn.setAttribute("aria-disabled", String(!hasMapItems));
-        if (!hasMapItems && currentView === "map") setView("list");
+        applyDirectoryCapabilities(rows);
 
         renderFilterChips();
         applyFilters();

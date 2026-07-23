@@ -1,6 +1,6 @@
 # Directory capability policy
 
-Eat and Shopping expose only controls that the committed, same-origin public JSON can support. The browser calculates the capability set on every load, so a future published snapshot enables a control automatically when it crosses the documented boundary. It never depends on a hard-coded list of cities, categories, or ratings.
+Eat, Shopping, and Medical expose only controls that the committed, same-origin public JSON can support. The browser calculates the capability set on every load, so a published snapshot enables a control automatically when it crosses the documented boundary. It never depends on a hard-coded list of cities, categories, or ratings.
 
 ## Thresholds
 
@@ -17,10 +17,11 @@ The shared calculation lives in [`assets/js/directory-capabilities.js`](../asset
 
 | Dataset | Items | Rating | Reviews | Price | Coordinates | Description | Phone | Hours | Enabled controls |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| Eat | 63 | 4/63 (6.3%) | 63/63 (100%) | 52/63 (82.5%) | 30/63 (47.6%) | 0/63 (0%) | 0/63 (0%) | 0/63 (0%) | review-count, price-tier, detailed-category |
-| Shopping | 45 | 4/45 (8.9%) | 45/45 (100%) | 0/45 (0%) | 8/45 (17.8%) | 0/45 (0%) | 0/45 (0%) | 0/45 (0%) | review-count, category, detailed-category |
+| Eat | 63 | 62/63 (98.4%) | 63/63 (100%) | 52/63 (82.5%) | 30/63 (47.6%) | 0/63 (0%) | 0/63 (0%) | 0/63 (0%) | rating, review-count, price-tier, detailed-category |
+| Shopping | 45 | 44/45 (97.8%) | 45/45 (100%) | 0/45 (0%) | 8/45 (17.8%) | 0/45 (0%) | 0/45 (0%) | 0/45 (0%) | rating, review-count, category, detailed-category |
+| Medical | 23 | 0/23 (0%) | 23/23 (100%) | 0/23 (0%) | 11/23 (47.8%) | 23/23 (100%) | 0/23 (0%) | 0/23 (0%) | review-count, region, category |
 
-Both current datasets contain only `Düsseldorf` as their meaningful region, so a region selector is intentionally absent. Shopping’s H1, metadata, and result summary state that scope rather than implying Germany-wide coverage.
+Eat and Shopping contain only `Düsseldorf` as their meaningful region, so their region selectors remain absent. Medical has multiple meaningful areas and categories. Maps and detail dialogs remain withheld because verified coordinate and contact-detail coverage is still below policy thresholds.
 
 ## Verification and reporting
 

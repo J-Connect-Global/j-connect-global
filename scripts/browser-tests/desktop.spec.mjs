@@ -36,6 +36,44 @@ test.afterEach(async ({ page }) => {
   await assertNoRuntimeDiagnostics(page);
 });
 
+test("Cookie consent exposes keyboard-safe dialog and focus behavior", async ({ page }) => {
+  await openRoute(page, "/germany/ja/");
+  const banner = page.getByRole("dialog", { name: "Cookie設定" });
+  const accept = page.getByRole("button", { name: "同意する" });
+  const decline = page.getByRole("button", { name: "拒否する" });
+  await expect(banner).toBeVisible();
+  await expect(banner).toHaveAttribute("aria-modal", "false");
+  await expect(accept).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(decline).toBeFocused();
+  await page.keyboard.press("Escape");
+  await expect(banner).toBeVisible();
+  await expect(page.locator("main")).toBeFocused();
+  expect(await page.evaluate(() => localStorage.getItem("jconnect_cookie_consent"))).toBeNull();
+  await accept.click();
+  await expect(banner).toBeHidden();
+  expect(await page.evaluate(() => localStorage.getItem("jconnect_cookie_consent"))).toBe("accepted");
+  await expect(page.locator("main")).toBeFocused();
+});
+
+test("Article TOC uses observer state and tables expose scroll instructions", async ({ page }) => {
+  await openRoute(page, "/germany/ja/learn-german/appointment-phrase/");
+  const tableRegion = page.getByRole("region", { name: "記事内の情報表（横スクロール可能）" }).first();
+  const hintId = await tableRegion.getAttribute("aria-describedby");
+  expect(hintId).toBeTruthy();
+  await expect(page.locator(`#${hintId}`)).toContainText("左右の矢印キー");
+  await tableRegion.focus();
+  await expect(tableRegion).toBeFocused();
+
+  const tocLinks = page.locator('.article-sidebar-toc a[href^="#"]');
+  await expect(tocLinks.first()).toHaveAttribute("aria-current", "location");
+  const lastHref = await tocLinks.last().getAttribute("href");
+  expect(lastHref).toMatch(/^#/);
+  await page.locator(lastHref).evaluate((heading) => heading.scrollIntoView({ block: "start" }));
+  await expect(tocLinks.last()).toHaveAttribute("aria-current", "location");
+  await assertRouteReady(page);
+});
+
 test("home renders no more than four active Jobs and can activate dark mode", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/", [
     "/assets/data/community/posts.json",
@@ -493,7 +531,7 @@ test("Eat renders the committed fixture dataset", async ({ page }) => {
   await expect(page.locator("#cards")).not.toContainText("★0.0");
   await expect(page.locator("#regionField")).toBeHidden();
   await expect(page.locator("#categoryField")).toBeHidden();
-  await expect(page.locator("#ratingField")).toBeHidden();
+  await expect(page.locator("#ratingField")).toBeVisible();
   await expect(page.locator("#mapViewBtn")).toBeHidden();
   await expect(page.locator("#detailCategoryField")).toBeVisible();
   await expect(page.locator("#reviewField")).toBeVisible();
@@ -503,6 +541,10 @@ test("Eat renders the committed fixture dataset", async ({ page }) => {
   await page.locator('#reviewChipGroup [data-value="1000"]').click();
   await expect(page.locator("#cards [data-item-id]")).toHaveCount(expectedReviewedEat);
   await page.locator('#reviewChipGroup [data-value=""]').click();
+  const expectedHighlyRatedEat = eatFixture.items.filter((item) => Number(item.rating) >= 4.5).length;
+  await page.locator('#starChipGroup [data-value="4.5"]').click();
+  await expect(page.locator("#cards [data-item-id]")).toHaveCount(expectedHighlyRatedEat);
+  await page.locator('#starChipGroup [data-value=""]').click();
   const eatBranchGroups = new Map();
   for (const item of eatFixture.items) {
     if (!eatBranchGroups.has(item.name)) eatBranchGroups.set(item.name, []);
@@ -525,7 +567,7 @@ test("Shopping renders the committed fixture dataset", async ({ page }) => {
   await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /デュッセルドルフ/);
   await expect(page.locator("#resultsSummary")).toContainText("Düsseldorfの公開データ");
   await expect(page.locator("#regionField")).toBeHidden();
-  await expect(page.locator("#ratingField")).toBeHidden();
+  await expect(page.locator("#ratingField")).toBeVisible();
   await expect(page.locator("#priceField")).toBeHidden();
   await expect(page.locator("#mapViewBtn")).toBeHidden();
   await expect(page.locator("#categoryField")).toBeVisible();
@@ -540,6 +582,10 @@ test("Shopping renders the committed fixture dataset", async ({ page }) => {
   await page.locator('#reviewChipGroup [data-value="1000"]').click();
   await expect(page.locator("#cards [data-item-id]")).toHaveCount(expectedReviewedShopping);
   await page.locator('#reviewChipGroup [data-value=""]').click();
+  const expectedHighlyRatedShopping = shoppingFixture.items.filter((item) => Number(item.rating) >= 4.5).length;
+  await page.locator('#starChipGroup [data-value="4.5"]').click();
+  await expect(page.locator("#cards [data-item-id]")).toHaveCount(expectedHighlyRatedShopping);
+  await page.locator('#starChipGroup [data-value=""]').click();
   await assertRouteReady(page);
 });
 
@@ -628,9 +674,9 @@ test("Directory capabilities appear automatically at the documented coverage bou
   await assertRouteReady(page);
 });
 
-test("Medical renders its intentional empty state and emergency guidance", async ({ page }) => {
-  expect(medicalFixture.items).toHaveLength(0);
-  expect(medicalFixture.validation?.intentionally_empty).toBe(true);
+test("Medical renders reviewed listings while keeping low-coverage controls gated", async ({ page }) => {
+  expect(medicalFixture.items).toHaveLength(23);
+  expect(medicalFixture.validation?.intentionally_empty).toBe(false);
   await openDataRoute(page, "/germany/ja/medical/", "/assets/data/medical/items.json");
   await expect(page.locator("#main-content.medical-official-guide")).toBeVisible();
   await expect(page.locator("#main-content")).toContainText("生命に関わる緊急時");
@@ -641,11 +687,19 @@ test("Medical renders its intentional empty state and emergency guidance", async
   await expect(page.locator('#main-content a[href="https://arztsuche.116117.de/"]')).toHaveCount(1);
   await expect(page.locator('#main-content a[href="https://www.abda.de/apotheke-in-deutschland/was-apotheken-leisten/immer-erreichbar-sein/apotheken-finden/"]')).toHaveCount(1);
   await expect(page.locator('#main-content a[href="https://www.aponet.de/notdienstsuche/0"]')).toHaveCount(1);
-  await expect(page.locator("#medicalDirectory")).toBeHidden();
-  await expect(page.locator(".view-toggle-wrap")).toBeHidden();
-  await expect(page.locator(".filters")).toBeHidden();
+  await expect(page.locator("#medicalDirectory")).toBeVisible();
+  await expect(page.locator("#cards .jc-result-card")).toHaveCount(23);
+  await expect(page.locator(".view-toggle-wrap")).toBeVisible();
+  await expect(page.locator(".filters")).toBeVisible();
+  await expect(page.locator("#regionField")).toBeVisible();
+  await expect(page.locator("#categoryField")).toBeVisible();
+  await expect(page.locator("#detailCategoryField")).toBeHidden();
+  await expect(page.locator("#ratingField")).toBeHidden();
+  await expect(page.locator("#languageField")).toBeHidden();
+  await expect(page.locator("#mapViewBtn")).toBeHidden();
   await expect(page.locator("#mapPanel")).toHaveAttribute("hidden", "");
   await expect(page.locator("#statusBox")).toBeHidden();
+  await expect(page.locator("#cards [data-detail]")).toHaveCount(0);
   await activateDarkMode(page);
   await assertRouteReady(page);
 
@@ -658,7 +712,8 @@ test("Medical renders its intentional empty state and emergency guidance", async
       category: "病院",
       detail_category: "総合病院",
       region: "Berlin",
-      description: "キーボード操作確認用のローカルテストデータです。"
+      description: "キーボード操作確認用のローカルテストデータです。",
+      phone: "+49 30 123456"
     }],
     validation: {
       ...medicalFixture.validation,

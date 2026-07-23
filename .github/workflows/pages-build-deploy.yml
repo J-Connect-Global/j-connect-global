@@ -231,7 +231,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build clean Pages artifact
-        run: node scripts/build-pages-artifact.mjs --site-dir _site
+        run: node scripts/build-pages-artifact.mjs --site-dir _site --commit-sha "${{ inputs.commit_sha }}"
 
       - name: Validate generated public details
         run: |
@@ -292,3 +292,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+      - name: Verify production deployment SHA manifest
+        env:
+          DEPLOY_COMMIT_SHA: ${{ inputs.commit_sha }}
+          DEPLOYMENT_MANIFEST_URL: ${{ steps.deployment.outputs.page_url }}deployment-manifest.json
+        run: node scripts/verify-deployment-sha.mjs --expected-sha "$DEPLOY_COMMIT_SHA" --url "$DEPLOYMENT_MANIFEST_URL" --attempts 24 --delay-ms 5000

@@ -7,14 +7,9 @@ GitHub Pages deploys the committed repository contents from `main`; it does not 
 Run:
 
 ```bash
-node scripts/build-content.mjs
-node scripts/apply-layout.mjs
+npm run build
 git diff --exit-code
-node scripts/validate-content.mjs
-node scripts/validate-layout.mjs
-node scripts/validate-static-site.mjs
-node scripts/validate-production-parity.mjs
-node scripts/validate-jobs.mjs
+npm run validate:all
 ```
 
 If `git diff --exit-code` fails after build/layout, commit the generated output or fix the nondeterministic generator.
@@ -33,7 +28,7 @@ If `git diff --exit-code` fails after build/layout, commit the generated output 
 10. Run the manual live parity check:
 
 ```bash
-JCONNECT_VALIDATE_LIVE_PRODUCTION=1 node scripts/validate-production-parity.mjs
+JCONNECT_VALIDATE_LIVE_PRODUCTION=1 JCONNECT_EXPECTED_DEPLOYMENT_SHA=<full-main-sha> npm run validate:production
 ```
 
 ## Compare Production Source Locally
@@ -41,8 +36,8 @@ JCONNECT_VALIDATE_LIVE_PRODUCTION=1 node scripts/validate-production-parity.mjs
 Use these commands after the Pages deployment finishes:
 
 ```bash
-node scripts/validate-production-parity.mjs
-JCONNECT_VALIDATE_LIVE_PRODUCTION=1 node scripts/validate-production-parity.mjs
+npm run validate
+JCONNECT_VALIDATE_LIVE_PRODUCTION=1 JCONNECT_EXPECTED_DEPLOYMENT_SHA=<full-main-sha> npm run validate:production
 ```
 
 For a manual source comparison, save the live pages outside the repository and compare them with committed HTML:

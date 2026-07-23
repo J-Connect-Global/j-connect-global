@@ -142,11 +142,8 @@ Do not redesign pages as part of route governance. Fix only structural drift, br
 For generated article content:
 
 ```bash
-node scripts/build-content.mjs
-node scripts/apply-layout.mjs
-node scripts/validate-content.mjs
-node scripts/validate-layout.mjs
-node scripts/validate-static-site.mjs
+npm run build
+npm run validate:all
 ```
 
 For a new top-level directory page:
@@ -155,6 +152,6 @@ For a new top-level directory page:
 2. Add an entry to `/content/registry/pages.json`.
 3. Use `type: "directory"` and the correct conceptual `pillar`.
 4. Set `search_visible` and `sitemap_visible` deliberately.
-5. Run `node scripts/apply-layout.mjs`.
-6. Run `node scripts/validate-layout.mjs`.
+5. Run `npm run build`.
+6. Run `npm run validate:all`.
 7. Review the page, search index, and sitemap before opening a PR.

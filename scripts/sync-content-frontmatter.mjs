@@ -16,7 +16,7 @@ export const frontMatterRequiredFields = [
 export const frontMatterComparableFields = [
   ...frontMatterRequiredFields,
   'updated_at', 'related_articles', 'content_type', 'city', 'location', 'event_date',
-  'official_url', 'situation', 'goal', 'level', 'skill', 'duration',
+  'official_url', 'official_sources', 'situation', 'goal', 'level', 'skill', 'duration',
   'resource_skills', 'resource_format', 'resource_level', 'resource_price_type',
   'related_living_guides', 'image', 'image_url', 'hero_image', 'image_alt'
 ];
@@ -46,6 +46,27 @@ export function parseFrontMatter(markdown) {
     const key = entry[1];
     const rawValue = entry[2].trim();
     if (!rawValue) {
+      const objectValues = [];
+      let cursor = index + 1;
+      while (cursor < lines.length) {
+        const firstField = lines[cursor].match(/^\s{2}-\s+([A-Za-z0-9_]+):\s*(.*)$/);
+        if (!firstField) break;
+        const objectValue = { [firstField[1]]: parseScalar(firstField[2].trim()) };
+        cursor += 1;
+        while (cursor < lines.length) {
+          const nextField = lines[cursor].match(/^\s{4}([A-Za-z0-9_]+):\s*(.*)$/);
+          if (!nextField) break;
+          objectValue[nextField[1]] = parseScalar(nextField[2].trim());
+          cursor += 1;
+        }
+        objectValues.push(objectValue);
+      }
+      if (objectValues.length) {
+        data[key] = objectValues;
+        index = cursor - 1;
+        continue;
+      }
+
       const values = [];
       while (lines[index + 1] && /^\s*-\s+/.test(lines[index + 1])) {
         index += 1;
@@ -60,7 +81,7 @@ export function parseFrontMatter(markdown) {
 }
 
 export function normalizedMetadataValue(value) {
-  if (Array.isArray(value)) return JSON.stringify(value.map((entry) => String(entry).trim()));
+  if (Array.isArray(value) || (value && typeof value === 'object')) return JSON.stringify(value);
   if (typeof value === 'boolean') return String(value);
   return String(value ?? '').trim();
 }

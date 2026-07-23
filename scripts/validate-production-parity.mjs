@@ -1,5 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
+import { verifyDeploymentSha } from './verify-deployment-sha.mjs';
 
 const root = process.cwd();
 const SITE_ORIGIN = 'https://j-connect-global.com';
@@ -45,6 +47,17 @@ function readLocalHtml(relPath) {
 }
 
 async function validateLiveHome() {
+  try {
+    const expectedSha = String(process.env.JCONNECT_EXPECTED_DEPLOYMENT_SHA || '').trim()
+      || execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
+    await verifyDeploymentSha({
+      expectedSha,
+      url: `${SITE_ORIGIN}/deployment-manifest.json`
+    });
+  } catch (error) {
+    fail(`Live production deployment manifest failed: ${error.message}`);
+  }
+
   const homeHtml = await fetchLiveHtml('/germany/ja/', 'Home');
   if (homeHtml) validateHomeMarkers(homeHtml, `${SITE_ORIGIN}/germany/ja/ live production`);
 

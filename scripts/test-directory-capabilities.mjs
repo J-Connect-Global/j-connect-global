@@ -95,13 +95,15 @@ assert.equal(
 
 const eat = JSON.parse(await readFile(new URL("../assets/data/eat/items.json", import.meta.url), "utf8"));
 const shopping = JSON.parse(await readFile(new URL("../assets/data/shopping/items.json", import.meta.url), "utf8"));
+const medical = JSON.parse(await readFile(new URL("../assets/data/medical/items.json", import.meta.url), "utf8"));
 const eatCapabilities = capabilities.calculate(eat.items).capabilities;
 const shoppingCapabilities = capabilities.calculate(shopping.items).capabilities;
+const medicalCapabilities = capabilities.calculate(medical.items).capabilities;
 
 assert.deepEqual(
   eatCapabilities,
   {
-    rating_filter: false,
+    rating_filter: true,
     review_filter: true,
     price_filter: true,
     map_view: false,
@@ -115,7 +117,7 @@ assert.deepEqual(
 assert.deepEqual(
   shoppingCapabilities,
   {
-    rating_filter: false,
+    rating_filter: true,
     review_filter: true,
     price_filter: false,
     map_view: false,
@@ -125,6 +127,20 @@ assert.deepEqual(
     detail_category_filter: true
   },
   "Shopping controls must match its committed public coverage."
+);
+assert.deepEqual(
+  medicalCapabilities,
+  {
+    rating_filter: false,
+    review_filter: true,
+    price_filter: false,
+    map_view: false,
+    detail_modal: false,
+    region_filter: true,
+    category_filter: true,
+    detail_category_filter: false
+  },
+  "Medical controls must match its committed public coverage."
 );
 
 console.log("Directory capability tests passed.");

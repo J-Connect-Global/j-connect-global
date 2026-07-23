@@ -12,7 +12,9 @@ Living, Events, and Learn German articles are managed from Markdown source files
 - Learn German registry: `/content/registry/learn-german.json`
 - Learn German Markdown: `/content/learn-german/{slug}.md`
 
-The registry is the canonical metadata source. Markdown front matter may provide fallback values, but if the registry and front matter disagree, the registry wins.
+Markdown front matter is canonical for editorial metadata: titles, summaries, publication and verification dates, tags, article-specific metadata, images, related articles, and `official_sources`. `node scripts/sync-content-frontmatter.mjs --write` copies those values into the registries; the build also gives these front-matter fields precedence.
+
+The registries remain canonical for routing and operational controls that do not belong in article prose: `url`, `markdown_path`, Home order and visibility, hub/search/sitemap visibility, `disclaimer_type`, and reviewer identity/status. The sync maps front matter `last_verified` and `next_review` to `review.last_reviewed_at` and `review.next_review_due`. Do not maintain `official_sources` in both places; author them in Markdown.
 
 Events remain static article pages. Do not make Spreadsheet or GAS the primary Events source in this workflow.
 
@@ -167,27 +169,23 @@ Do not reintroduce `/germany/ja/guides/` as a current pillar or live internal li
 
 ## Commands
 
-This repo currently has no `package.json`, so run the scripts directly:
+Use the documented package scripts so local and CI validation stay aligned:
 
 ```bash
-node scripts/build-content.mjs
-node scripts/apply-layout.mjs
-node scripts/validate-content.mjs
-node scripts/validate-layout.mjs
-node scripts/validate-static-site.mjs
+npm run build
+npm run validate
+npm run validate:all
 ```
 
-CI also runs these checks through `.github/workflows/validate-content.yml`. The CI build fails if generated files are not committed.
+`validate` runs the deterministic repository checks. `validate:all` also runs the Playwright browser suite. CI runs the same contract through `.github/workflows/validate-content.yml` and fails if generated files are not committed.
 
 ## Pull Request Checklist
 
 1. Add or update Markdown and registry entries.
-2. Run `node scripts/build-content.mjs`.
-3. Run `node scripts/apply-layout.mjs`.
-4. Run `node scripts/validate-content.mjs`.
-5. Run `node scripts/validate-layout.mjs`.
-6. Run `node scripts/validate-static-site.mjs`.
-7. Review Home, the relevant hub, one generated article page, sitemap, and search index.
-8. Open a focused PR with source and generated files committed.
+2. Run `npm run build`.
+3. Run `npm run validate`.
+4. Run `npm run validate:all` before opening the PR.
+5. Review Home, the relevant hub, one generated article page, sitemap, and search index.
+6. Open a focused PR with source and generated files committed.
 
 After generation, do not manually edit generated article pages, generated hub cards, generated Home preview cards, sitemap entries, or generated search entries. Change the Markdown or registry and rebuild instead.

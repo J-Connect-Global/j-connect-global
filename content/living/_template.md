@@ -3,16 +3,21 @@ id: "L000"
 title: ""
 slug: ""
 category: "生活・手続き"
-chips: []
-description: ""
-hero_image: ""
+summary: ""
 status: "draft"
 published: false
 published_at: ""
+updated_at: ""
 last_verified: ""
-update_frequency: ""
-sources: []
+next_review: ""
+canonical_url: "/germany/ja/living/{slug}/"
+tags: []
+image_url: ""
+image_alt: ""
 related_articles: []
+official_sources:
+  - title: ""
+    url: "https://"
 ---
 
 # Title

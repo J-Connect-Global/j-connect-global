@@ -52,17 +52,24 @@ next_review: "2027-07-16"
 canonical_url: "/example/"
 tags: ["specific","human"]
 related_articles: ["related-one"]
+official_sources:
+  - title: "Current official source"
+    url: "https://example.org/current"
 ---`);
 const merged = mergeRegistryEntryFromFrontMatter({
   id: 'L001', title: 'Old registry title', slug: 'example', category: 'old', summary: 'old',
   status: 'published', published: true, published_at: '2026-06-01', updated_at: '2026-06-01',
   last_verified: '2026-06-01', canonical_url: '/example/', tags: ['old'],
-  related_articles: [], home_visible: true,
+  related_articles: [], official_sources: [{ title: 'Stale registry source', url: 'https://example.org/stale' }],
+  home_visible: true,
   review: { status: 'reviewed', last_reviewed_at: '2026-06-01', next_review_due: '2027-06-01' }
 }, frontMatter);
 assert.equal(merged.title, 'Human-edited title');
 assert.equal(merged.home_visible, true);
 assert.deepEqual(merged.tags, ['specific', 'human']);
+assert.deepEqual(merged.official_sources, [
+  { title: 'Current official source', url: 'https://example.org/current' }
+]);
 assert.equal(merged.review.last_reviewed_at, '2026-07-16');
 assert.equal(merged.review.next_review_due, '2027-07-16');
 

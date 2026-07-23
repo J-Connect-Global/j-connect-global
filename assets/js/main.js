@@ -509,31 +509,42 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  var ticking = false;
-
-  function updateActiveLink() {
-    var activeId = headings[0].id;
-    var offset = 130;
-
-    headings.forEach(function (heading) {
-      if (heading.getBoundingClientRect().top <= offset) {
-        activeId = heading.id;
-      }
+  function observerActiveHeadingId(passedHeadingIds, visibleHeadingIds) {
+    var activeIndex = 0;
+    headings.forEach(function (heading, index) {
+      if (passedHeadingIds.has(heading.id)) activeIndex = index;
     });
-
-    setActiveLink(activeId);
-    ticking = false;
+    for (var index = activeIndex; index < headings.length; index += 1) {
+      if (visibleHeadingIds.has(headings[index].id)) {
+        activeIndex = index;
+        break;
+      }
+    }
+    return headings[activeIndex].id;
   }
 
-  function requestActiveLinkUpdate() {
-    if (ticking) return;
-    ticking = true;
-    window.requestAnimationFrame(updateActiveLink);
-  }
+  setActiveLink(headings[0].id);
 
   if ('IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(requestActiveLinkUpdate, {
-      rootMargin: '-10% 0px -80% 0px',
+    var passedHeadingIds = new Set();
+    var visibleHeadingIds = new Set();
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var rootTop = entry.rootBounds ? entry.rootBounds.top : 130;
+        if (entry.isIntersecting) {
+          visibleHeadingIds.add(entry.target.id);
+        } else {
+          visibleHeadingIds.delete(entry.target.id);
+        }
+        if (!entry.isIntersecting && entry.boundingClientRect.top < rootTop) {
+          passedHeadingIds.add(entry.target.id);
+        } else {
+          passedHeadingIds.delete(entry.target.id);
+        }
+      });
+      setActiveLink(observerActiveHeadingId(passedHeadingIds, visibleHeadingIds));
+    }, {
+      rootMargin: '-130px 0px -55% 0px',
       threshold: 0
     });
 
@@ -541,8 +552,4 @@ document.addEventListener('DOMContentLoaded', function () {
       observer.observe(heading);
     });
   }
-
-  window.addEventListener('scroll', requestActiveLinkUpdate, { passive: true });
-  window.addEventListener('resize', requestActiveLinkUpdate);
-  updateActiveLink();
 });

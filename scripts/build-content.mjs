@@ -251,15 +251,6 @@ function loadContentType(type) {
     for (const field of frontMatterComparableFields) {
       if (Object.prototype.hasOwnProperty.call(frontMatter, field)) source[field] = frontMatter[field];
     }
-    if (Array.isArray(frontMatter.official_sources)) {
-      const combinedSources = [
-        ...(Array.isArray(source.official_sources) ? source.official_sources : []),
-        ...frontMatter.official_sources
-      ];
-      source.official_sources = [...new Map(combinedSources
-        .filter((entry) => entry && typeof entry === 'object' && entry.url)
-        .map((entry) => [entry.url, entry])).values()];
-    }
     const merged = normalizeItem(type, { ...source, __frontmatter: frontMatter }, index);
 
     return {
@@ -844,9 +835,12 @@ function collectTable(lines, start, context) {
 
   const head = `<thead><tr>${header.map((cell) => `<th>${renderInline(cell, context)}</th>`).join('')}</tr></thead>`;
   const bodyRows = rows.map((row) => `<tr>${row.map((cell) => `<td>${renderInline(cell, context)}</td>`).join('')}</tr>`).join('\n');
+  context.tableIndex = Number(context.tableIndex || 0) + 1;
+  const tableId = `${context.item.slug}-table-${context.tableIndex}`;
+  const hintId = `${tableId}-scroll-hint`;
 
   return {
-    html: `<div class="jc-table-wrap">\n  <table class="jc-info-table">\n    ${head}\n    <tbody>\n${indent(bodyRows, 6)}\n    </tbody>\n  </table>\n</div>`,
+    html: `<div class="jc-table-region">\n  <p class="jc-table-scroll-hint" id="${escapeAttribute(hintId)}">この表は横にスクロールできます。表にフォーカスした後、左右の矢印キーでも内容を確認できます。</p>\n  <div class="jc-table-wrap" role="region" aria-label="記事内の情報表（横スクロール可能）" aria-describedby="${escapeAttribute(hintId)}" tabindex="0">\n    <table class="jc-info-table">\n      ${head}\n      <tbody>\n${indent(bodyRows, 8)}\n      </tbody>\n    </table>\n  </div>\n</div>`,
     nextIndex: index
   };
 }

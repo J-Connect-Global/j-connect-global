@@ -32,7 +32,10 @@ async function loadGermanNewsLearningItems(list) {
     const response = await fetch(GERMAN_NEWS_DATA_URL, { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const items = await response.json();
-    renderGermanNewsLearningItems(list, Array.isArray(items) ? items.slice(0, 6) : []);
+    const germanItems = Array.isArray(items)
+      ? items.filter(isVerifiedGermanNewsItem).slice(0, 6)
+      : [];
+    renderGermanNewsLearningItems(list, germanItems);
   } catch (error) {
     console.warn("German news learning data load failed:", GERMAN_NEWS_DATA_URL, error);
     renderGermanNewsLearningError(list);
@@ -77,6 +80,17 @@ function renderGermanNewsLearningCard(item) {
   <div class="jc-chip-row"><span class="jc-chip">${escapeHtml(sourceName)}</span><span class="jc-chip">読解</span><span class="jc-chip">語彙</span></div>
   <span class="jc-read-more">外部記事で読む</span>
 </a>`;
+}
+
+function isVerifiedGermanNewsItem(item) {
+  if (!item || item.language !== "de") return false;
+  try {
+    const url = new URL(item.url);
+    const hostname = url.hostname.toLowerCase();
+    return url.protocol === "https:" && (hostname === "dw.com" || hostname.endsWith(".dw.com"));
+  } catch (_error) {
+    return false;
+  }
 }
 
 function firstNonEmpty(...values) {

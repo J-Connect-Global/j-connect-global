@@ -77,41 +77,81 @@
   // UI生成
   // -------------------------------
   function createBanner() {
+    const focusReturnTarget = document.activeElement instanceof HTMLElement
+      && document.activeElement !== document.body
+      && document.activeElement !== document.documentElement
+      ? document.activeElement
+      : null;
     const banner = document.createElement("div");
     banner.id = "cookie-banner";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-modal", "false");
+    banner.setAttribute("aria-labelledby", "cookie-consent-title");
+    banner.setAttribute("aria-describedby", "cookie-consent-description");
 
     banner.innerHTML = `
       <div class="cookie-inner">
         <div class="cookie-text">
-          このサイトでは、サイト改善のためにCookieを使用しています。
+          <h2 class="cookie-title" id="cookie-consent-title">Cookie設定</h2>
+          <p id="cookie-consent-description">このサイトでは、サイト改善のためにCookieを使用しています。</p>
         </div>
-        <div class="cookie-actions">
-          <button id="cookie-accept">同意する</button>
-          <button id="cookie-decline">拒否する</button>
+        <div class="cookie-actions" role="group" aria-label="Cookieの選択">
+          <button id="cookie-accept" type="button">同意する</button>
+          <button id="cookie-decline" type="button">拒否する</button>
         </div>
       </div>
     `;
 
     document.body.appendChild(banner);
+    const acceptButton = banner.querySelector("#cookie-accept");
+    const declineButton = banner.querySelector("#cookie-decline");
 
-    document.getElementById("cookie-accept").onclick = function () {
+    acceptButton.onclick = function () {
       localStorage.setItem(STORAGE_KEY, "accepted");
       localStorage.setItem(LEGACY_STORAGE_KEY, "accepted");
       loadGA();
-      removeBanner();
+      removeBanner(focusReturnTarget);
     };
 
-    document.getElementById("cookie-decline").onclick = function () {
+    declineButton.onclick = function () {
       localStorage.setItem(STORAGE_KEY, "denied");
       localStorage.setItem(LEGACY_STORAGE_KEY, "denied");
       denyGA();
-      removeBanner();
+      removeBanner(focusReturnTarget);
     };
+
+    banner.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      focusPageContent(focusReturnTarget);
+    });
+
+    window.requestAnimationFrame(function () {
+      acceptButton.focus();
+    });
   }
 
-  function removeBanner() {
+  function focusPageContent(preferredTarget) {
+    if (preferredTarget?.isConnected) {
+      preferredTarget.focus();
+      return;
+    }
+    const main = document.querySelector("main");
+    if (!main) return;
+    const hadTabindex = main.hasAttribute("tabindex");
+    if (!hadTabindex) main.setAttribute("tabindex", "-1");
+    main.focus();
+    if (!hadTabindex) {
+      main.addEventListener("blur", function () {
+        main.removeAttribute("tabindex");
+      }, { once: true });
+    }
+  }
+
+  function removeBanner(focusReturnTarget) {
     const banner = document.getElementById("cookie-banner");
     if (banner) banner.remove();
+    focusPageContent(focusReturnTarget);
   }
 
   function initCookieConsent() {

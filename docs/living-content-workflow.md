@@ -1,6 +1,6 @@
 # Living Content Workflow
 
-Living articles are managed through Markdown source files and the Living registry. The registry is the canonical metadata source; Markdown front matter can provide fallback data, but the registry wins when values differ.
+Living articles are managed through Markdown source files and the Living registry. Markdown front matter is canonical for editorial metadata. The registry remains canonical for routing, discovery, and operational review controls.
 
 ## Source and Public Files
 
@@ -18,8 +18,8 @@ Generated public pages, hub cards, Home preview cards, sitemap entries, and sear
 3. Set `url` and `canonical_url` to `/germany/ja/living/{slug}/`.
 4. Keep drafts as `published: false` and `status: "draft"`.
 5. Set `published_at`, `updated_at`, and `last_verified` before publishing.
-6. Run `node scripts/build-content.mjs`.
-7. Run `node scripts/validate-content.mjs`.
+6. Run `npm run build`.
+7. Run `npm run validate:all`.
 8. Open a GitHub PR with both source and generated files.
 
 ## Metadata Rules
@@ -27,6 +27,8 @@ Generated public pages, hub cards, Home preview cards, sitemap entries, and sear
 - IDs must be unique.
 - Slugs must be unique within Living.
 - Published items need `title`, `summary`, `published_at`, `updated_at`, `last_verified`, `markdown_path`, and `canonical_url`.
+- Front matter wins for editorial fields, including title, summary, dates, tags, images, related articles, and `official_sources`. The sync command copies those values into the registry.
+- The registry wins for `url`, `markdown_path`, `home_visible`, `home_order`, hub/search/sitemap visibility, `disclaimer_type`, and reviewer workflow fields. `review.last_reviewed_at` and `review.next_review_due` are synchronized from front matter dates.
 - `home_visible` and `home_order` control Home preview eligibility and ordering.
 - `hub_visible`, `search_visible`, and `sitemap_visible` control generated hub/search/sitemap output.
 

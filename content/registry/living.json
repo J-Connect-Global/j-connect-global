@@ -32,12 +32,28 @@
     ],
     "official_sources": [
       {
-        "title": "Visit Düsseldorf",
-        "url": "https://www.visitduesseldorf.de/"
+        "title": "Visit Düsseldorf：Little Tokyo",
+        "url": "https://www.visitduesseldorf.de/erleben/sehenswertes/little-tokyo-duesseldorf"
       },
       {
-        "title": "Landeshauptstadt Düsseldorf",
-        "url": "https://www.duesseldorf.de/"
+        "title": "Visit Düsseldorf：Little Tokyo Map",
+        "url": "https://www.visitduesseldorf.de/_Resources/Persistent/91698292dfbbdc276b61f057dd07db75a7a783ac/LittleTokyoMap_EN.pdf"
+      },
+      {
+        "title": "Rheinbahn：チケット・運賃",
+        "url": "https://www.rheinbahn.de/tickets-und-tarife"
+      },
+      {
+        "title": "VRR：eezy.nrw",
+        "url": "https://www.vrr.de/en/tickets-fares/eezynrw/"
+      },
+      {
+        "title": "Rheinbahn：バリアフリー",
+        "url": "https://www.rheinbahn.de/fahren/gut-zu-wissen/barrierefreiheit"
+      },
+      {
+        "title": "Düsseldorf市：環境ゾーン",
+        "url": "https://www.duesseldorf.de/kfz/feinstaub/faq-und-rechtliches"
       }
     ],
     "disclaimer_type": "tourism",
@@ -82,12 +98,28 @@
     ],
     "official_sources": [
       {
-        "title": "KölnTourismus",
-        "url": "https://www.koelntourismus.de/"
+        "title": "Kölner Dom：見学・塔・宝物館チケット",
+        "url": "https://tickets.koelner-dom.de/en"
       },
       {
-        "title": "Kölner Dom",
-        "url": "https://www.koelner-dom.de/"
+        "title": "DB Bahnhof：Köln Hbfロッカー",
+        "url": "https://www.bahnhof.de/koeln-hbf/schliessfaecher"
+      },
+      {
+        "title": "KVB：チケット一覧",
+        "url": "https://www.kvb.koeln/abos-und-tickets/alle-tickets/"
+      },
+      {
+        "title": "KVB：アプリとeezy.nrw",
+        "url": "https://www.kvb.koeln/abos-und-tickets/ticketkauf/kvb-app.html"
+      },
+      {
+        "title": "KVB：バリアフリー",
+        "url": "https://www.kvb.koeln/service/barrierefreiheit.html"
+      },
+      {
+        "title": "KölnTourismus：Brauhaus文化",
+        "url": "https://www.koelntourismus.de/essen-trinken/brauhaeuser"
       }
     ],
     "disclaimer_type": "tourism",
@@ -132,12 +164,28 @@
     ],
     "official_sources": [
       {
-        "title": "Aachen Tourismus",
-        "url": "https://www.aachen-tourismus.de/"
+        "title": "Aachener Dom：見学時間",
+        "url": "https://www.aachenerdom.de/oeffnungszeiten/"
       },
       {
-        "title": "Aachener Dom",
-        "url": "https://www.aachenerdom.de/"
+        "title": "Aachener Dom：見学FAQ",
+        "url": "https://www.aachenerdom.de/ort-der-besichtigung/faqs/"
+      },
+      {
+        "title": "Aachen Tourismus：Elisenbrunnen",
+        "url": "https://www.aachen-tourismus.de/aachen-entdecken/sehenswuerdigkeiten/details/elisenbrunnen/"
+      },
+      {
+        "title": "Aachen Tourismus：旅行FAQ",
+        "url": "https://www.aachen-tourismus.de/service/faq/"
+      },
+      {
+        "title": "ASEAG：movAアプリ",
+        "url": "https://www.aseag.de/mova-app"
+      },
+      {
+        "title": "ASEAG：路線・停留所図",
+        "url": "https://www.aseag.de/service/downloads/plaene"
       }
     ],
     "disclaimer_type": "tourism",
@@ -180,7 +228,40 @@
       "amsterdam-weekend-trip",
       "cologne-city-guide"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "Your Europe：EU市民の旅行書類",
+        "url": "https://europa.eu/youreurope/citizens/travel/entry-exit/eu-citizen/index_en.htm"
+      },
+      {
+        "title": "Your Europe：非EU市民の旅行書類",
+        "url": "https://europa.eu/youreurope/citizens/travel/entry-exit/non-eu-nationals/index_en.htm"
+      },
+      {
+        "title": "Strasbourg：低排出ゾーン",
+        "url": "https://int.strasbourg.eu/lez"
+      },
+      {
+        "title": "CTS：P+R",
+        "url": "https://cts-strasbourg.eu/en/know-us/our-network/parkings/Park-and-ride/"
+      },
+      {
+        "title": "CTS：トラム・バス",
+        "url": "https://cts-strasbourg.eu/en/know-us/our-network/tram-and-bus/"
+      },
+      {
+        "title": "CTS：券の有効化",
+        "url": "https://cts-strasbourg.eu/en/faq/travel-legally/"
+      },
+      {
+        "title": "Visit Strasbourg：主要観光地",
+        "url": "https://www.visitstrasbourg.fr/en/discover/must-see-attractions/"
+      },
+      {
+        "title": "Batorama：乗船・券売案内",
+        "url": "https://www.batorama.com/en/informations/access-and-contact"
+      }
+    ],
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
@@ -220,7 +301,36 @@
       "cologne-city-guide",
       "duesseldorf-city-guide"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "MittelrheinBahn：RB26運行・工事",
+        "url": "https://www.mittelrheinbahn.de/de/strecken/linien-fahrplaene"
+      },
+      {
+        "title": "MittelrheinBahn：チケット",
+        "url": "https://www.mittelrheinbahn.de/en/tickets/tickets"
+      },
+      {
+        "title": "MittelrheinBahn：バリアフリー",
+        "url": "https://www.mittelrheinbahn.de/de/tickets/informationen-rund-ums-ticket/barrierefreies-reisen"
+      },
+      {
+        "title": "KD：2026年時刻表",
+        "url": "https://www.k-d.com/downloads/"
+      },
+      {
+        "title": "KD：低水位による運航変更",
+        "url": "https://www.k-d.com/en/2026/07/niedrigwasser/"
+      },
+      {
+        "title": "Romantischer Rhein：谷の公共交通",
+        "url": "https://www.romantischer-rhein.de/service/unterwegs-im-tal-oepnv"
+      },
+      {
+        "title": "Rheinsteig：Siebengebirge区間",
+        "url": "https://www.rheinsteig.de/rheinsteig/rheinsteig-etappen/rheinsteig-etappen-siebengebirge"
+      }
+    ],
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
@@ -260,7 +370,36 @@
       "duesseldorf-family-trip",
       "aachen-day-trip"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "Grugapark Essen：来園案内",
+        "url": "https://grugapark.de/besuchen/besuchen_1.de.html"
+      },
+      {
+        "title": "Grugapark Essen：バリアフリー",
+        "url": "https://grugapark.de/besuchen/barrierefreiheit/barrierefreiheit_2.de.html"
+      },
+      {
+        "title": "Stadt Köln：Fühlinger See FAQ",
+        "url": "https://www.stadt-koeln.de/artikel/69905/index.html"
+      },
+      {
+        "title": "Nationalpark Eifel：Wilder Kermeter",
+        "url": "https://www.nationalpark-eifel.de/gs/nationalpark-erleben/barrierefrei-unterwegs/"
+      },
+      {
+        "title": "Nationalpark Eifel：公共交通アクセス",
+        "url": "https://www.nationalpark-eifel.de/en/arrival-accommodation/bus-train-or-car/"
+      },
+      {
+        "title": "Naturpark Hohe Mark：公式サイト",
+        "url": "https://naturpark-hohe-mark.de/"
+      },
+      {
+        "title": "Externsteine：2026年見学案内",
+        "url": "https://www.externsteine-info.de/tickets-und-anreise/tickets/"
+      }
+    ],
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
@@ -300,7 +439,32 @@
       "duesseldorf-city-guide",
       "nrw-nature-relax-guide"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "Düsseldorf市：Nordpark",
+        "url": "https://www.duesseldorf.de/stadtgruen/park/nordpark"
+      },
+      {
+        "title": "Düsseldorf市：日本庭園",
+        "url": "https://www.duesseldorf.de/stadtgruen/park/nordpark/japanischer-garten"
+      },
+      {
+        "title": "Aquazoo：来館案内",
+        "url": "https://www.duesseldorf.de/int/aquazoo-loebbecke-museum/plan-your-visit"
+      },
+      {
+        "title": "Düsseldorf市：水遊び場",
+        "url": "https://www.duesseldorf.de/stadtgruen/spielplaetze/wasserspielplaetze"
+      },
+      {
+        "title": "Rheinbahn：バリアフリー",
+        "url": "https://www.rheinbahn.de/fahren/gut-zu-wissen/barrierefreiheit"
+      },
+      {
+        "title": "Rheinbahn：路線図",
+        "url": "https://www.rheinbahn.de/fahren/verbindungen/netzplaene"
+      }
+    ],
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
@@ -340,7 +504,32 @@
       "cologne-city-guide",
       "nrw-nature-relax-guide"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "Stadt Köln：Rheinpark",
+        "url": "https://www.stadt-koeln.de/artikel/05321/index.html"
+      },
+      {
+        "title": "Stadt Köln：公共トイレ",
+        "url": "https://www.stadt-koeln.de/artikel/01841/index.html"
+      },
+      {
+        "title": "Kölner Zoo：来園案内",
+        "url": "https://koelnerzoo.de/besuch"
+      },
+      {
+        "title": "Kölner Seilbahn：2026年運行案内",
+        "url": "https://www.koelner-seilbahn.de/fahrten.html"
+      },
+      {
+        "title": "Kölnisches Stadtmuseum：見学案内",
+        "url": "https://museenkoeln.de/portal/Die-neue-Dauerausstellung-ndash-KoeLN-NEU-ERZaeHLT"
+      },
+      {
+        "title": "KVB：バリアフリー",
+        "url": "https://www.kvb.koeln/service/barrierefreiheit.html"
+      }
+    ],
     "disclaimer_type": "tourism",
     "review": {
       "status": "reviewed",
@@ -382,12 +571,32 @@
     ],
     "official_sources": [
       {
-        "title": "I amsterdam",
-        "url": "https://www.iamsterdam.com/en"
+        "title": "GVB：旅行者向け交通案内",
+        "url": "https://www.gvb.nl/en/tourist-en"
       },
       {
-        "title": "GVB - Public transport in Amsterdam",
-        "url": "https://www.gvb.nl/en/visit-amsterdam/gvb-public-transport-company-amsterdam"
+        "title": "NS：銀行カードでのチェックイン",
+        "url": "https://www.ns.nl/en/travel/check-in-check-out/debit-card"
+      },
+      {
+        "title": "Amsterdam市：P+R",
+        "url": "https://www.amsterdam.nl/en/parking/park-ride/"
+      },
+      {
+        "title": "Amsterdam市：低排出ゾーン",
+        "url": "https://www.amsterdam.nl/en/traffic-transport/low-emission-zone/rules-exemptions/"
+      },
+      {
+        "title": "Anne Frank House：公式チケット",
+        "url": "https://www.annefrank.org/en/museum/tickets/"
+      },
+      {
+        "title": "Rijksmuseum：公式チケット",
+        "url": "https://www.rijksmuseum.nl/en/tickets/articles"
+      },
+      {
+        "title": "I amsterdam：自転車利用",
+        "url": "https://www.iamsterdam.com/en/travel-stay/getting-around/cycling-in-amsterdam"
       }
     ],
     "disclaimer_type": "tourism",
@@ -435,8 +644,20 @@
         "url": "https://www.hamburg-travel.com/"
       },
       {
-        "title": "HVV - Hamburger Verkehrsverbund",
-        "url": "https://www.hvv.de/"
+        "title": "HVV",
+        "url": "https://www.hvv.de/en/"
+      },
+      {
+        "title": "Elbphilharmonie visitor information",
+        "url": "https://www.elbphilharmonie.de/en/visit"
+      },
+      {
+        "title": "Speicherstadt UNESCO Site",
+        "url": "https://www.hamburg.com/visitors/sights/architecture/speicherstadt-19324"
+      },
+      {
+        "title": "Landungsbrücken Piers",
+        "url": "https://www.hamburg.com/visitors/sights/architecture/landungsbruecken-19332"
       }
     ],
     "disclaimer_type": "tourism",
@@ -480,24 +701,32 @@
     ],
     "official_sources": [
       {
-        "title": "Visit Berlin：観光公式サイト",
-        "url": "https://www.visitberlin.de/en"
-      },
-      {
-        "title": "German Bundestag：Reichstag dome registration",
-        "url": "https://www.bundestag.de/en/visittheBundestag/dome/registration-245686"
-      },
-      {
-        "title": "Staatliche Museen zu Berlin：Tickets & Admission",
-        "url": "https://www.smb.museum/en/plan-your-visit/prices-tickets/"
-      },
-      {
-        "title": "BVG：tariff zones and information",
+        "title": "BVG：運賃ゾーン",
         "url": "https://www.bvg.de/en/subscriptions-and-tickets/tariff-zones-and-information"
       },
       {
-        "title": "Visit Berlin：Berlin environmental zone",
-        "url": "https://www.visitberlin.de/en/berlin-environmental-zone"
+        "title": "BVG：観光客向け交通とBER",
+        "url": "https://www.bvg.de/en/tourists/transportation-tariff-zones"
+      },
+      {
+        "title": "BVG：運休・エレベーター情報",
+        "url": "https://www.bvg.de/en/connections/traffic-news"
+      },
+      {
+        "title": "German Bundestag：Reichstagドーム予約",
+        "url": "https://www.bundestag.de/en/visittheBundestag/dome/registration-245686"
+      },
+      {
+        "title": "Pergamonmuseum：改修と再開予定",
+        "url": "https://www.smb.museum/en/museums-institutions/pergamonmuseum/plan-your-visit/"
+      },
+      {
+        "title": "Staatliche Museen zu Berlin：チケット",
+        "url": "https://www.smb.museum/en/plan-your-visit/prices-tickets/"
+      },
+      {
+        "title": "Berlin.de：環境ゾーン",
+        "url": "https://www.berlin.de/en/tourism/travel-information/1760452-2862820-environmental-zone.en.html"
       }
     ],
     "disclaimer_type": "tourism",
@@ -550,6 +779,38 @@
       {
         "title": "BSAG",
         "url": "https://www.bsag.de/"
+      },
+      {
+        "title": "Bremen Town Hall and Roland",
+        "url": "https://www.bremen.eu/tourism/sights/world-heritage-town-hall-and-roland"
+      },
+      {
+        "title": "Schnoor Quarter",
+        "url": "https://www.bremen.eu/tourism/sights/schnoor-quarter"
+      },
+      {
+        "title": "Accessible Bremen",
+        "url": "https://www.bremen.eu/tourism/activities/accessibility-in-bremen"
+      },
+      {
+        "title": "Böttcherstraße",
+        "url": "https://www.bremen.eu/tourism/sights/boettcherstrasse"
+      },
+      {
+        "title": "Schlachte Embankment",
+        "url": "https://www.bremen.eu/tourism/activities/maritime-bremen/schlachte-embankment"
+      },
+      {
+        "title": "Kunsthalle Bremen",
+        "url": "https://www.kunsthalle-bremen.de/en/plan-your-visit/your-visit"
+      },
+      {
+        "title": "Übersee-Museum Bremen",
+        "url": "https://www.uebersee-museum.de/en/visit-us/plan-your-visit/entrance-and-opening/"
+      },
+      {
+        "title": "Bremen Umweltzone",
+        "url": "https://umwelt.bremen.de/umwelt/luft/luftreinhalteplanung/umweltzone-bremen-24570"
       }
     ],
     "disclaimer_type": "tourism",
@@ -592,12 +853,20 @@
     ],
     "official_sources": [
       {
-        "title": "visit.brussels",
-        "url": "https://www.visit.brussels/en"
+        "title": "visit.brussels - Sablon and Marolles",
+        "url": "https://www.visit.brussels/en/visitors/plan-your-trip/the-sablon-and-marolles-districts-antiques-and-tradition"
       },
       {
-        "title": "STIB-MIVB",
-        "url": "https://www.stib-mivb.be/"
+        "title": "STIB-MIVB - Bank card as ticket",
+        "url": "https://www.stib-mivb.be/buy/your-bank-card-is-your-ticket"
+      },
+      {
+        "title": "Brussels City Museum - Accessibility",
+        "url": "https://www.brusselscitymuseum.brussels/en/your-visit/you-are/prm"
+      },
+      {
+        "title": "Royal Museums of Fine Arts - Visitors requiring assistance",
+        "url": "https://fine-arts-museum.be/en/visit/planning-my-visit/visitors-requiring-assistance"
       }
     ],
     "disclaimer_type": "tourism",
@@ -640,12 +909,24 @@
     ],
     "official_sources": [
       {
-        "title": "Paris je t’aime",
-        "url": "https://parisjetaime.com/eng/"
+        "title": "Paris je t’aime - Accessibility",
+        "url": "https://parisjetaime.com/eng/accessibility"
       },
       {
-        "title": "Île-de-France Mobilités",
-        "url": "https://www.iledefrance-mobilites.fr/en"
+        "title": "Île-de-France Mobilités - Paris Region Airports Ticket",
+        "url": "https://www.iledefrance-mobilites.fr/en/titres-et-tarifs/detail/ticket-paris-region-aeroports"
+      },
+      {
+        "title": "Île-de-France Mobilités - Dematerialised tickets",
+        "url": "https://www.iledefrance-mobilites.fr/en/comment-voyager-avec-ticket-dematerialise"
+      },
+      {
+        "title": "Louvre - Accessibility",
+        "url": "https://www.louvre.fr/en/visit/accessibility"
+      },
+      {
+        "title": "Musée d’Orsay - Accessibility services",
+        "url": "https://www.musee-orsay.fr/en/articles/accessibility-services-296252"
       }
     ],
     "disclaimer_type": "tourism",
@@ -688,12 +969,24 @@
     ],
     "official_sources": [
       {
-        "title": "Simply Munich",
-        "url": "https://www.munich.travel/en"
+        "title": "Simply Munich - Isarvorstadt",
+        "url": "https://www.munich.travel/en/topics/urban-districts/districts-of-munich/disctricts-isarvorstadt"
       },
       {
-        "title": "MVV",
-        "url": "https://www.mvv-muenchen.de/en/"
+        "title": "MVV - Airport-City-Day-Ticket",
+        "url": "https://www.mvv-muenchen.de/en/tickets-abos-preise/single-ticket-1-2-3/"
+      },
+      {
+        "title": "MVV - Single Ticket",
+        "url": "https://www.mvv-muenchen.de/en/tickets-abos-preise/single-ticket-1/"
+      },
+      {
+        "title": "Pinakotheken - Visit",
+        "url": "https://www.pinakothek.de/en/visit"
+      },
+      {
+        "title": "Munich Residence - Accessibility",
+        "url": "https://www.residenz-muenchen.de/englisch/tourist/mobility.htm"
       }
     ],
     "disclaimer_type": "tourism",
@@ -736,12 +1029,24 @@
     ],
     "official_sources": [
       {
-        "title": "Visit London",
-        "url": "https://www.visitlondon.com/"
+        "title": "GOV.UK - Electronic travel authorisation",
+        "url": "https://www.gov.uk/guidance/check-when-you-can-get-an-electronic-travel-authorisation-eta"
       },
       {
-        "title": "Transport for London",
-        "url": "https://tfl.gov.uk/"
+        "title": "Transport for London - Best ways for visitors to pay",
+        "url": "https://tfl.gov.uk/travel-information/visiting-london/getting-around-london/best-ways-for-visitors-to-pay"
+      },
+      {
+        "title": "Transport for London - Pay the right fare",
+        "url": "https://tfl.gov.uk/fares/pay-the-right-fare"
+      },
+      {
+        "title": "Visit London - South Bank sightseeing",
+        "url": "https://www.visitlondon.com/things-to-do/london-areas/south-bank/things-to-do/sightseeing"
+      },
+      {
+        "title": "British Museum - Accessibility",
+        "url": "https://www.britishmuseum.org/visit/accessibility-museum"
       }
     ],
     "disclaimer_type": "tourism",
@@ -784,12 +1089,24 @@
     ],
     "official_sources": [
       {
-        "title": "Visit Copenhagen",
-        "url": "https://www.visitcopenhagen.com/"
+        "title": "Visit Copenhagen - Christianshavn",
+        "url": "https://www.visitcopenhagen.com/copenhagen/areas/neighborhoods/what-to-see-and-do-in-christianshavn"
       },
       {
-        "title": "DOT - Public transport",
-        "url": "https://dinoffentligetransport.dk/en/"
+        "title": "Visit Copenhagen - Public transport zones",
+        "url": "https://www.visitcopenhagen.com/copenhagen/planning/transportation/zones"
+      },
+      {
+        "title": "Metro Service - The Metro",
+        "url": "https://metroservice.dk/en/what-we-do/the-metro/"
+      },
+      {
+        "title": "Tivoli - Practical information",
+        "url": "https://www.tivoli.dk/en/practical-information"
+      },
+      {
+        "title": "Designmuseum Danmark - Accessibility",
+        "url": "https://designmuseum.dk/en/accessibility/"
       }
     ],
     "disclaimer_type": "tourism",
@@ -832,12 +1149,24 @@
     ],
     "official_sources": [
       {
-        "title": "Warsaw Tourism",
-        "url": "https://warsawtour.pl/en/"
+        "title": "Warsaw Tourism - Old Town",
+        "url": "https://go2warsaw.pl/en/old-town/"
       },
       {
-        "title": "Warszawski Transport Publiczny",
-        "url": "https://www.wtp.waw.pl/en/"
+        "title": "Warsaw Tourism - Royal Route",
+        "url": "https://go2warsaw.pl/en/royal-route/"
+      },
+      {
+        "title": "Warsaw Tourism - Accessible Warsaw",
+        "url": "https://go2warsaw.pl/en/accessible-warsaw/"
+      },
+      {
+        "title": "Warsaw Tourism - Getting around",
+        "url": "https://go2warsaw.pl/en/getting-around-warsaw/"
+      },
+      {
+        "title": "Royal Castle - Architectural accessibility",
+        "url": "https://zamek-krolewski.pl/en/strona/accessibility/2508-description-architectural-accessibility-royal-castle"
       }
     ],
     "disclaimer_type": "tourism",
@@ -880,12 +1209,24 @@
     ],
     "official_sources": [
       {
-        "title": "Kraków Travel",
-        "url": "https://krakow.travel/en"
+        "title": "Kraków Travel - Wawel Hill",
+        "url": "https://krakow.travel/en/1-krakow-wawel-hill"
       },
       {
-        "title": "ZTP Kraków",
-        "url": "https://ztp.krakow.pl/en"
+        "title": "ZTP Kraków - KMK ticket guide",
+        "url": "https://ztp.krakow.pl/en/kmk-public-transport/kmk-ticket-guide"
+      },
+      {
+        "title": "ZTP Kraków - Buy a KMK ticket",
+        "url": "https://ztp.krakow.pl/en/kmk-public-transport/buy-a-kmk-ticket"
+      },
+      {
+        "title": "Wawel Royal Castle - Accessibility",
+        "url": "https://wawel.krakow.pl/en/accessibility"
+      },
+      {
+        "title": "Museum of Krakow - Rynek Underground visiting rules",
+        "url": "https://muzeumkrakowa.pl/en/branches/visiting-rules-for-the-permanent-exhibition-traces-of-krakows-european-identity-at-the-rynek-underground-branch"
       }
     ],
     "disclaimer_type": "tourism",
@@ -929,11 +1270,23 @@
     "official_sources": [
       {
         "title": "Prague City Tourism",
-        "url": "https://www.prague.eu/en"
+        "url": "https://prague.eu/en"
       },
       {
-        "title": "DPP - Prague Public Transit",
-        "url": "https://www.dpp.cz/en"
+        "title": "Prague City Tourism - Accessible gardens and heritage sites",
+        "url": "https://prague.eu/en/accessible-prague-gardens-and-heritage-sites/"
+      },
+      {
+        "title": "DPP - Welcome to Prague",
+        "url": "https://www.dpp.cz/en/welcome-to-prague"
+      },
+      {
+        "title": "DPP - Cashless payment of fare",
+        "url": "https://www.dpp.cz/en/fares/cashless-payment-of-fare"
+      },
+      {
+        "title": "Prague City Tourism - Lesser Town Bridge Towers",
+        "url": "https://prague.eu/en/objevujte/lesser-town-bridge-towers-malostranske-mostecke-veze"
       }
     ],
     "disclaimer_type": "tourism",
@@ -1554,20 +1907,7 @@
       "rhine-river-relax-guide",
       "duesseldorf-family-trip"
     ],
-    "official_sources": [
-      {
-        "title": "DDA: Vögel in Deutschland online（種別情報）",
-        "url": "https://www.dda-web.de/vid-online"
-      },
-      {
-        "title": "ornitho.de: ドイツの鳥類観察ポータル",
-        "url": "https://www.ornitho.de/index.php?langu=de&m_id=1"
-      },
-      {
-        "title": "LANUK NRW: NRWに定着した外来鳥類の背景",
-        "url": "https://www.lanuk.nrw.de/fileadmin/lanuvpubl/5_natur_in_nrw/50006_Natur_in_NRW_2_2008.pdf"
-      }
-    ],
+    "official_sources": [],
     "disclaimer_type": "living",
     "review": {
       "status": "reviewed",

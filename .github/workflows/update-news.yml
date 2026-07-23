@@ -30,8 +30,10 @@ jobs:
         with:
           node-version: 24
 
-      - name: Fetch news
-        run: node scripts/fetch-news.mjs
+      - name: Validate and fetch German news
+        run: |
+          node scripts/test-news-fetcher.mjs
+          node scripts/fetch-news.mjs
 
       - name: Commit updated news data
         id: auto-commit-action

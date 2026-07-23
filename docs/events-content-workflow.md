@@ -20,8 +20,8 @@ Generated public pages, hub cards, Home preview cards, sitemap entries, and sear
 3. Set `url` and `canonical_url` to `/germany/ja/events/{slug}/`.
 4. Add `city`, `location`, the event date field, and `official_url`.
 5. Keep drafts as `published: false` and `status: "draft"`.
-6. Run `node scripts/build-content.mjs`.
-7. Run `node scripts/validate-content.mjs`.
+6. Run `npm run build`.
+7. Run `npm run validate:all`.
 8. Open a GitHub PR with both source and generated files.
 
 ## Verification Rules

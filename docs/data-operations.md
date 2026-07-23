@@ -16,13 +16,9 @@ This repository publishes a static GitHub Pages site. Generated HTML and JSON ar
 ## Update Flow
 
 1. Update the source content or data source.
-2. Run `node scripts/build-content.mjs`.
-3. Run `node scripts/apply-layout.mjs`.
-4. Run validation:
-   - `node scripts/validate-content.mjs`
-   - `node scripts/validate-layout.mjs`
-   - `node scripts/validate-static-site.mjs`
-   - `node scripts/validate-production-parity.mjs`
+2. Run `npm run build`.
+3. Run `npm run validate`.
+4. Before opening a PR, run `npm run validate:all` to include browser smoke tests.
 5. Confirm `git diff` only contains intended source and generated output changes.
 6. Commit both source changes and generated files.
 7. Open a PR against `main`.
@@ -44,6 +40,7 @@ This repository publishes a static GitHub Pages site. Generated HTML and JSON ar
 - GAS/runtime data may replace static guidance when available, but generated output and any static fallback changes must be committed before merge.
 - Keep live production checks manual-only; normal PR validation must not depend on network availability.
 - Treat live production parity as a post-merge check after the `Deploy GitHub Pages` workflow finishes for `main`.
+- Every Pages artifact includes `/deployment-manifest.json`. After deployment, the workflow reads that file and compares its full SHA with the requested `main` SHA, so a stale Pages artifact fails directly instead of relying on visual markers.
 
 ## Jobs publication policy
 

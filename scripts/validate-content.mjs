@@ -2,6 +2,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
+import {
+  frontMatterComparableFields,
+  frontMatterRequiredFields,
+  parseFrontMatter
+} from './sync-content-frontmatter.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE_ORIGIN = 'https://j-connect-global.com';
@@ -63,13 +68,6 @@ const requiredFields = [
 ];
 const learnGermanContentTypes = new Set(['phrase', 'route', 'resource']);
 const learnGermanResourceFields = ['resource_skills', 'resource_format', 'resource_level', 'resource_price_type'];
-const frontMatterRequiredFields = ['id', 'title', 'slug', 'category', 'summary', 'status', 'published', 'published_at', 'last_verified', 'canonical_url', 'tags'];
-const frontMatterComparableFields = [
-  ...frontMatterRequiredFields,
-  'updated_at', 'related_articles', 'content_type', 'city', 'location', 'event_date',
-  'official_url', 'situation', 'goal', 'level', 'skill', 'duration',
-  ...learnGermanResourceFields, 'related_living_guides', 'image', 'image_url', 'hero_image', 'image_alt'
-];
 const livingOfficialSourceTargets = new Set([
   'anmeldung-guide',
   'health-insurance-guide',
@@ -335,42 +333,8 @@ function validateWildBirdCards() {
   }
 }
 
-function parseFrontMatter(markdown) {
-  const match = String(markdown || '').match(/^---\r?\n([\s\S]*?)\r?\n---/);
-  if (!match) return {};
-  const data = {};
-  const lines = match[1].split(/\r?\n/);
-  for (let index = 0; index < lines.length; index += 1) {
-    const entry = lines[index].match(/^([A-Za-z0-9_]+):\s*(.*)$/);
-    if (!entry) continue;
-    const key = entry[1];
-    const rawValue = entry[2].trim();
-    if (!rawValue) {
-      const values = [];
-      while (lines[index + 1] && /^\s*-\s+/.test(lines[index + 1])) {
-        index += 1;
-        values.push(unquoteMetadata(lines[index].replace(/^\s*-\s+/, '').trim()));
-      }
-      data[key] = values;
-    } else if (rawValue === 'true' || rawValue === 'false') {
-      data[key] = rawValue === 'true';
-    } else if (rawValue === '[]') {
-      data[key] = [];
-    } else if (/^\[.*\]$/.test(rawValue)) {
-      try { data[key] = JSON.parse(rawValue); } catch { data[key] = unquoteMetadata(rawValue); }
-    } else {
-      data[key] = unquoteMetadata(rawValue);
-    }
-  }
-  return data;
-}
-
-function unquoteMetadata(value) {
-  return String(value || '').replace(/^["']|["']$/g, '');
-}
-
 function normalizedMetadataValue(value) {
-  if (Array.isArray(value)) return JSON.stringify(value.map((entry) => String(entry).trim()));
+  if (Array.isArray(value) || (value && typeof value === 'object')) return JSON.stringify(value);
   if (typeof value === 'boolean') return String(value);
   return String(value ?? '').trim();
 }

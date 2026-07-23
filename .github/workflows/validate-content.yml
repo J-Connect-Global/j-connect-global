@@ -24,12 +24,6 @@ jobs:
       - name: Install pinned runtime smoke dependencies
         run: npm ci
 
-      - name: Verify Markdown-authored registry metadata
-        run: node scripts/sync-content-frontmatter.mjs
-
-      - name: Test content metadata synchronization and regression policy
-        run: node scripts/test-content-metadata.mjs
-
       - name: Fetch pull request base for metadata regression checks
         if: github.event_name == 'pull_request'
         run: git fetch --no-tags --depth=1 origin "${{ github.base_ref }}:refs/remotes/origin/${{ github.base_ref }}"
@@ -38,67 +32,14 @@ jobs:
         if: github.event_name == 'pull_request'
         run: node scripts/check-content-metadata-regression.mjs --base-ref "origin/${{ github.base_ref }}"
 
-      - name: Build generated content
-        run: |
-          node scripts/generate-tourism-route-overviews.mjs
-          node scripts/build-content.mjs
-
-      - name: Apply canonical JA layout
-        run: node scripts/apply-layout.mjs
-
-      - name: Validate Germany portal identity
-        run: node scripts/validate-site-identity.mjs
+      - name: Build generated content and canonical layout
+        run: npm run build
 
       - name: Check generated files are committed
         run: git diff --exit-code
 
-      - name: Validate Community workflows
-        run: node scripts/validate-community.mjs
-
-      - name: Validate Jobs data
-        run: node scripts/validate-jobs.mjs
-
-      - name: Validate Community and Jobs moderation
-        run: node scripts/validate-submission-moderation.mjs
-
-      - name: Test public data source and publication policy
-        run: node scripts/test-public-data-pipeline.mjs
-
-      - name: Report public data quality and reject regressions
-        run: |
-          node scripts/test-directory-capabilities.mjs
-          node scripts/report-public-data-quality.mjs --check-baseline --github-summary
-
-      - name: Enforce image asset budget
-        run: node scripts/image-asset-budget.mjs --check --github-summary
-
-      - name: Test GAS submission persistence and idempotency
-        run: node scripts/test-gas-submissions.mjs
-
-      - name: Validate content registry and generated output
-        run: node scripts/validate-content.mjs
-
-      - name: Report editorial freshness
-        run: node scripts/report-content-freshness.mjs --github-summary
-
-      - name: Reject repeated destination-guide prose
-        run: node scripts/check-travel-guide-duplication.mjs
-
-      - name: Validate JA route and layout governance
-        run: node scripts/validate-layout.mjs
-
-      - name: Validate static site
-        run: node scripts/validate-static-site.mjs
-
-      - name: Validate production parity markers
-        run: node scripts/validate-production-parity.mjs
-
-      - name: Build and test production Pages artifact
-        run: |
-          node scripts/build-pages-artifact.mjs --site-dir _site
-          node scripts/test-public-detail-generation.mjs --site-dir _site
-          node scripts/test-production-seo.mjs
-          node scripts/validate-production-seo.mjs --site-dir _site --github-summary
+      - name: Run deterministic validation contract
+        run: npm run validate
 
       - name: Install Chromium for runtime smoke tests
         run: npx playwright install --with-deps chromium

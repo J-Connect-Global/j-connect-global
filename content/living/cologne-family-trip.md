@@ -35,7 +35,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![到着地点から屋内アンカー、Rheinparkの屋外休憩を経て帰路へ進み、動物園か博物館を選択する順序](/assets/images/living/routes/cologne-family-trip-route-overview.svg "位置関係を把握するための概略図です。縮尺・所要時間は目安で、当日の経路は公式交通情報で確認してください。")
+![南東のKöln Messe/Deutz駅から北のRheinparkへ進み、西側のKölnisches Stadtmuseumまたは北西対岸のKölner Zooを選ぶ位置関係](/assets/images/living/routes/cologne-family-trip-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
 
 大聖堂と旧市街を優先するなら、家族向け施設を足す前に[ケルン中心部の一方向ルート](/germany/ja/living/cologne-city-guide/)へ切り替えるほうが分かりやすいです。
 

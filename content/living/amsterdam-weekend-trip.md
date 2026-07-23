@@ -38,7 +38,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![Amsterdam Centraalから運河地区、JordaanとDe 9 Straatjes、Museumpleinへ進みVondelparkを任意で加える順序](/assets/images/living/routes/amsterdam-weekend-trip-route-overview.svg "位置関係を把握するための概略図です。縮尺・所要時間は目安で、当日の経路は公式交通情報で確認してください。")
+![Amsterdam Centraalから運河地区、JordaanとDe 9 Straatjes、Museumpleinへ進みVondelparkを任意で加える順序](/assets/images/living/routes/amsterdam-weekend-trip-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
 
 [ブリュッセルの上の街・下の街を分ける週末案](/germany/ja/living/brussels-weekend-trip/)より、水辺と予約施設を軸に過ごしたい場合の選択肢です。
 

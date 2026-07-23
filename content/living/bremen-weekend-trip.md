@@ -43,7 +43,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![北側のブレーメン中央駅から旧市街へ南下し、マルクト広場の南西にベットヒャー通り、南東にシュノー地区、西のヴェーザー川沿いにシュラハテ、東側にフィアテルを示す概略図](/assets/images/living/routes/bremen-weekend-trip-route-overview.svg "公式観光案内とOpenStreetMapで地点の相対位置を確認した概略図です。狭い画面では読み順を優先した縦配置になります。縮尺や細かな道路形状は正確ではないため、移動時は地図アプリも併用してください。")
+![北側のBremen Hbfから旧市街のMarktplatzへ南下し、南西のBöttcherstraße、南東のSchnoor、西のWeser川沿いにあるSchlachteを回る順序。Viertelは旧市街の東側にある翌日の候補](/assets/images/living/routes/bremen-weekend-trip-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
 
 大型の屋内施設や夜の選択肢を重視するなら、先に[ハンブルク週末旅行の港・市街ルート](/germany/ja/living/hamburg-weekend-trip/)と比較できます。
 

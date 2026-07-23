@@ -36,7 +36,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![Düsseldorf HbfからImmermannstraße、Königsallee、AltstadtとBurgplatz、Rheinuferへ西進しMedienHafenを任意で加える順序](/assets/images/living/routes/duesseldorf-city-guide-route-overview.svg "位置関係を把握するための概略図です。縮尺・所要時間は目安で、当日の経路は公式交通情報で確認してください。")
+![Düsseldorf HbfからImmermannstraße、Königsallee、AltstadtとBurgplatz、Rheinuferへ西進しMedienHafenを任意で加える順序](/assets/images/living/routes/duesseldorf-city-guide-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
 
 [ケルン大聖堂からライン川へ進む都市ルート](/germany/ja/living/cologne-city-guide/)と比べ、日本人街での食事と買い物を起点にしたい日に向きます。
 

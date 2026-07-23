@@ -1,53 +1,112 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="520" viewBox="0 0 820 520" role="img" aria-labelledby="title desc">
   <title id="title">プラハを上り公共交通・下り徒歩で回る基本ルート</title>
-  <desc id="desc">Praha hlavní nádražíと宿からStaré Město、Karlův mostへ歩き、トラムで城側へ上ってMalá Stranaへ下る順序。実線は基本ルート、破線は任意の分岐。縮尺は正確ではありません。</desc>
+  <desc id="desc">Praha hlavní nádražíと宿からStaré Město、Karlův mostへ歩き、トラムで城側へ上ってMalá Stranaへ下る順序。背景街並みはAI生成の編集イメージ。番号付き地点の相対位置はOpenStreetMapで確認。実線は基本ルート、破線は任意の分岐。縮尺と道路形状は正確ではありません。</desc>
   <defs>
     <marker id="route-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#075b9a"/></marker>
     <marker id="optional-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#147d75"/></marker>
     <filter id="card-shadow" x="-15%" y="-20%" width="130%" height="150%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#12324a" flood-opacity="0.15"/></filter>
+    <clipPath id="map-clip"><rect x="1" y="1" width="818" height="518" rx="20"/></clipPath>
+    <clipPath id="mobile-map-clip"><path d="M19 1h442a18 18 0 0 1 18 18v299H1V19A18 18 0 0 1 19 1z"/></clipPath>
+    <linearGradient id="map-wash" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf0" stop-opacity="0.03"/><stop offset="1" stop-color="#fffaf0" stop-opacity="0.16"/></linearGradient>
   </defs>
-  <rect x="1" y="1" width="818" height="518" rx="20" fill="#f8fbfe" stroke="#a9c5dc" stroke-width="2"/>
-  <text x="34" y="44" fill="#062f55" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="800">プラハを上り公共交通・下り徒歩で回る基本ルート</text>
-  <g transform="translate(34 72)" aria-hidden="true">
-    <line x1="0" y1="0" x2="44" y2="0" stroke="#075b9a" stroke-width="7" stroke-linecap="round"/>
-    <text x="56" y="6" fill="#405e72" font-family="system-ui, -apple-system, sans-serif" font-size="16">基本ルート</text>
-    <line x1="178" y1="0" x2="222" y2="0" stroke="#147d75" stroke-width="5" stroke-dasharray="10 8" stroke-linecap="round"/>
-    <text x="234" y="6" fill="#405e72" font-family="system-ui, -apple-system, sans-serif" font-size="16">任意の追加</text>
+  <g clip-path="url(#map-clip)">
+    <image href="/assets/images/living/routes/prague-weekend-trip-illustrated-map.webp" x="1" y="1" width="818" height="518" preserveAspectRatio="xMidYMid slice"/>
+    <rect x="1" y="1" width="818" height="518" fill="url(#map-wash)"/>
+  </g>
+  <rect x="1" y="1" width="818" height="518" rx="20" fill="none" stroke="#173f68" stroke-width="2"/>
+  <g aria-hidden="true">
+    <path d="M710 430 L454.9 253" fill="none" stroke="#fffaf0" stroke-opacity="0.92" stroke-width="12" stroke-linecap="round"/>
+    <path d="M710 430 L454.9 253" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
+    <path d="M454.9 253 L272.4 285.3" fill="none" stroke="#fffaf0" stroke-opacity="0.92" stroke-width="12" stroke-linecap="round"/>
+    <path d="M454.9 253 L272.4 285.3" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
+    <path d="M272.4 285.3 L110 120" fill="none" stroke="#fffaf0" stroke-opacity="0.92" stroke-width="12" stroke-linecap="round"/>
+    <path d="M272.4 285.3 L110 120" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
+    <path d="M110 120 L174.2 226.5" fill="none" stroke="#fffaf0" stroke-opacity="0.92" stroke-width="12" stroke-linecap="round"/>
+    <path d="M110 120 L174.2 226.5" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/><g filter="url(#card-shadow)">
+      <circle cx="710" cy="430" r="17" fill="#fffaf0" fill-opacity="0.95"/>
+      <circle cx="710" cy="430" r="14" fill="#092f55"/>
+      <text x="710" y="435.1" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="900">1</text>
+    </g>
+<g filter="url(#card-shadow)">
+      <circle cx="454.9" cy="253" r="17" fill="#fffaf0" fill-opacity="0.95"/>
+      <circle cx="454.9" cy="253" r="14" fill="#092f55"/>
+      <text x="454.9" y="258.1" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="900">2</text>
+    </g>
+<g filter="url(#card-shadow)">
+      <circle cx="272.4" cy="285.3" r="17" fill="#fffaf0" fill-opacity="0.95"/>
+      <circle cx="272.4" cy="285.3" r="14" fill="#092f55"/>
+      <text x="272.4" y="290.4" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="900">3</text>
+    </g>
+<g filter="url(#card-shadow)">
+      <circle cx="110" cy="120" r="17" fill="#fffaf0" fill-opacity="0.95"/>
+      <circle cx="110" cy="120" r="14" fill="#092f55"/>
+      <text x="110" y="125.1" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="900">4</text>
+    </g>
+<g filter="url(#card-shadow)">
+      <circle cx="174.2" cy="226.5" r="17" fill="#fffaf0" fill-opacity="0.95"/>
+      <circle cx="174.2" cy="226.5" r="14" fill="#092f55"/>
+      <text x="174.2" y="231.6" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="900">5</text>
+    </g><path d="M710 430 L592 420" stroke="#fffaf0" stroke-width="5" stroke-linecap="round"/>
+    <path d="M710 430 L592 420" stroke="#173f68" stroke-width="2" stroke-linecap="round"/>
+    <g filter="url(#card-shadow)">
+      <rect x="592" y="396" width="210" height="48" rx="9" fill="#fffaf0" fill-opacity="0.96" stroke="#173f68" stroke-width="1.5"/>
+      <rect x="599" y="404" width="28" height="32" rx="7" fill="#173f68"/>
+      <text x="613" y="426" text-anchor="middle" fill="#fff" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="900">1</text>
+      <text x="635" y="416" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="13.5" font-weight="850">Praha hlavní nádraží / 宿</text>
+      <text x="635" y="433" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="11.5">到着</text>
+    </g>
+<path d="M454.9 253 L592 126" stroke="#fffaf0" stroke-width="5" stroke-linecap="round"/>
+    <path d="M454.9 253 L592 126" stroke="#173f68" stroke-width="2" stroke-linecap="round"/>
+    <g filter="url(#card-shadow)">
+      <rect x="592" y="102" width="210" height="48" rx="9" fill="#fffaf0" fill-opacity="0.96" stroke="#173f68" stroke-width="1.5"/>
+      <rect x="599" y="110" width="28" height="32" rx="7" fill="#173f68"/>
+      <text x="613" y="132" text-anchor="middle" fill="#fff" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="900">2</text>
+      <text x="635" y="122" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="13.5" font-weight="850">Staré Město</text>
+      <text x="635" y="139" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="11.5">旧市街</text>
+    </g>
+<path d="M272.4 285.3 L228 420" stroke="#fffaf0" stroke-width="5" stroke-linecap="round"/>
+    <path d="M272.4 285.3 L228 420" stroke="#173f68" stroke-width="2" stroke-linecap="round"/>
+    <g filter="url(#card-shadow)">
+      <rect x="18" y="396" width="210" height="48" rx="9" fill="#fffaf0" fill-opacity="0.96" stroke="#173f68" stroke-width="1.5"/>
+      <rect x="25" y="404" width="28" height="32" rx="7" fill="#173f68"/>
+      <text x="39" y="426" text-anchor="middle" fill="#fff" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="900">3</text>
+      <text x="61" y="416" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="13.5" font-weight="850">Karlův most</text>
+      <text x="61" y="433" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="11.5">朝に渡る</text>
+    </g>
+<path d="M110 120 L228 126" stroke="#fffaf0" stroke-width="5" stroke-linecap="round"/>
+    <path d="M110 120 L228 126" stroke="#173f68" stroke-width="2" stroke-linecap="round"/>
+    <g filter="url(#card-shadow)">
+      <rect x="18" y="102" width="210" height="48" rx="9" fill="#fffaf0" fill-opacity="0.96" stroke="#173f68" stroke-width="1.5"/>
+      <rect x="25" y="110" width="28" height="32" rx="7" fill="#173f68"/>
+      <text x="39" y="132" text-anchor="middle" fill="#fff" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="900">4</text>
+      <text x="61" y="122" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="13.5" font-weight="850">城側</text>
+      <text x="61" y="139" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="11.5">トラムで上る</text>
+    </g>
+<path d="M174.2 226.5 L228 273" stroke="#fffaf0" stroke-width="5" stroke-linecap="round"/>
+    <path d="M174.2 226.5 L228 273" stroke="#173f68" stroke-width="2" stroke-linecap="round"/>
+    <g filter="url(#card-shadow)">
+      <rect x="18" y="249" width="210" height="48" rx="9" fill="#fffaf0" fill-opacity="0.96" stroke="#173f68" stroke-width="1.5"/>
+      <rect x="25" y="257" width="28" height="32" rx="7" fill="#173f68"/>
+      <text x="39" y="279" text-anchor="middle" fill="#fff" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="900">5</text>
+      <text x="61" y="269" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="13.5" font-weight="850">Malá Strana</text>
+      <text x="61" y="286" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="11.5">徒歩で下る</text>
+    </g></g>
+  <g aria-hidden="true" filter="url(#card-shadow)">
+    <rect x="14" y="14" width="550" height="72" rx="12" fill="#fffaf0" fill-opacity="0.95" stroke="#173f68" stroke-width="2"/>
+    <text x="30" y="43" fill="#092f55" font-family="system-ui, -apple-system, sans-serif" font-size="21" font-weight="900">プラハを上り公共交通・下り徒歩で回る基本ルート</text>
+    <text x="31" y="67" fill="#405e72" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="800" letter-spacing="1.2">ILLUSTRATED ROUTE MAP</text>
   </g>
   <g aria-hidden="true">
-    <path d="M660 380 L520 300" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
-    <path d="M520 300 L370 325" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
-    <path d="M370 325 L240 160" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/>
-    <path d="M240 160 L150 330" fill="none" stroke="#075b9a" stroke-width="7" stroke-linecap="round" marker-end="url(#route-arrow)"/></g>
-  <g filter="url(#card-shadow)">
-    <rect x="548" y="346" width="224" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
-    <circle cx="568" cy="380" r="9" fill="#075b9a"/>
-    <text x="660" y="367" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800"><tspan x="660" dy="0">Praha hlavní nádraží /</tspan><tspan x="660" dy="20">宿</tspan></text>
-    <text x="660" y="405" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="15">到着</text>
+    <circle cx="770" cy="48" r="27" fill="#fffaf0" fill-opacity="0.94" stroke="#173f68" stroke-width="2"/>
+    <path d="M770 26 L764 52 L770 49 L776 52 Z" fill="#092f55"/>
+    <text x="770" y="16" text-anchor="middle" fill="#092f55" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="900">N</text>
   </g>
-<g filter="url(#card-shadow)">
-    <rect x="408" y="266" width="224" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
-    <circle cx="428" cy="300" r="9" fill="#075b9a"/>
-    <text x="520" y="296" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800"><tspan x="520" dy="0">Staré Město</tspan></text>
-    <text x="520" y="319" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="15">旧市街</text>
+  <g transform="translate(20 478)" aria-hidden="true">
+    <rect x="-8" y="-18" width="443" height="28" rx="8" fill="#fffaf0" fill-opacity="0.94"/>
+    <line x1="0" y1="-4" x2="34" y2="-4" stroke="#092f55" stroke-width="6" stroke-linecap="round"/>
+    <text x="43" y="1" fill="#294b66" font-family="system-ui, -apple-system, sans-serif" font-size="12">基本</text>
+    <line x1="84" y1="-4" x2="118" y2="-4" stroke="#147d75" stroke-width="5" stroke-dasharray="8 6" stroke-linecap="round"/>
+    <text x="127" y="1" fill="#294b66" font-family="system-ui, -apple-system, sans-serif" font-size="12">任意</text>
+    <text x="178" y="1" fill="#526c7f" font-family="system-ui, -apple-system, sans-serif" font-size="12">AI背景／OSM地点確認 2026-07-22／縮尺不正確</text>
   </g>
-<g filter="url(#card-shadow)">
-    <rect x="258" y="291" width="224" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
-    <circle cx="278" cy="325" r="9" fill="#075b9a"/>
-    <text x="370" y="321" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800"><tspan x="370" dy="0">Karlův most</tspan></text>
-    <text x="370" y="344" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="15">朝に渡る</text>
-  </g>
-<g filter="url(#card-shadow)">
-    <rect x="128" y="126" width="224" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
-    <circle cx="148" cy="160" r="9" fill="#075b9a"/>
-    <text x="240" y="156" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800"><tspan x="240" dy="0">城側</tspan></text>
-    <text x="240" y="179" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="15">トラムで上る</text>
-  </g>
-<g filter="url(#card-shadow)">
-    <rect x="38" y="296" width="224" height="68" rx="14" fill="#ffffff" stroke="#75a9d2" stroke-width="2"/>
-    <circle cx="58" cy="330" r="9" fill="#075b9a"/>
-    <text x="150" y="326" text-anchor="middle" fill="#092f4e" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="800"><tspan x="150" dy="0">Malá Strana</tspan></text>
-    <text x="150" y="349" text-anchor="middle" fill="#4d6779" font-family="system-ui, -apple-system, sans-serif" font-size="15">徒歩で下る</text>
-  </g>
-  <text x="786" y="493" text-anchor="end" fill="#526c7f" font-family="system-ui, -apple-system, sans-serif" font-size="15">概略図／縮尺は正確ではありません</text>
 </svg>

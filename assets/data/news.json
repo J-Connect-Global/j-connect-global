@@ -1,5 +1,25 @@
 [
   {
+    "id": "deutsche-welle-https-www-dw-com-de-news-kompakt-tausende-urlauber-in-s-c3-bcdfra",
+    "country": "germany",
+    "country_ja": "ドイツ",
+    "city": "nationwide",
+    "city_ja": "全国",
+    "category": "life",
+    "category_ja": "生活",
+    "topic": "general",
+    "topic_ja": "一般",
+    "importance": "normal",
+    "importance_ja": "通常",
+    "source_type": "media",
+    "source_name": "Deutsche Welle",
+    "language": "de",
+    "title": "News kompakt: Tausende Urlauber in Südfrankreich evakuiert",
+    "summary": "Südwestlich von Bordeaux wütet ein großer Waldbrand. Die USA und Saudi-Arabien schließen inmitten des Iran-Kriegs ein Atomabkommen. Der DW-Nachrichtenüberblick.",
+    "published_at": "Thu, 23 Jul 2026",
+    "url": "https://www.dw.com/de/news-kompakt-tausende-urlauber-in-s%C3%BCdfrankreich-evakuiert/a-78078448?maca=de-rss-de-news-1089-xml-mrss"
+  },
+  {
     "id": "deutsche-welle-https-www-dw-com-de-f-c3-bchrungsfiguren-des-k-c3-b6nigreichs-deu",
     "country": "germany",
     "country_ja": "ドイツ",
@@ -178,25 +198,5 @@
     "summary": "Militärschläge, verbale Drohungen und diplomatische Initiativen laufen parallel. Wird es eine neue Waffenruhe in den Angriffen zwischen den USA und dem Iran geben oder spitzt sich der Konflikt weiter zu?",
     "published_at": "Tue, 21 Jul 2026",
     "url": "https://www.dw.com/de/vermittler-sind-wieder-aktiv-neue-waffenruhe-im-iran-krieg/a-78045133?maca=de-rss-de-news-1089-xml-mrss"
-  },
-  {
-    "id": "deutsche-welle-https-www-dw-com-de-news-kompakt-trump-ordnet-neue-strafz-c3-b6ll",
-    "country": "germany",
-    "country_ja": "ドイツ",
-    "city": "nationwide",
-    "city_ja": "全国",
-    "category": "life",
-    "category_ja": "生活",
-    "topic": "general",
-    "topic_ja": "一般",
-    "importance": "normal",
-    "importance_ja": "通常",
-    "source_type": "media",
-    "source_name": "Deutsche Welle",
-    "language": "de",
-    "title": "News kompakt: Trump ordnet neue Strafzölle gegen Kanada an",
-    "summary": "Im Handelsstreit mit Kanada greift US-Präsident Trump zu einem von ihm geschätzten Druckmittel. Mexikos Drogenboss \"El Mayo\" wird in den USA zu lebenslanger Haft verurteilt. Der DW-Nachrichtenüberblick.",
-    "published_at": "Tue, 21 Jul 2026",
-    "url": "https://www.dw.com/de/news-kompakt-trump-ordnet-neue-strafz%C3%B6lle-gegen-kanada-an/a-78043143?maca=de-rss-de-news-1089-xml-mrss"
   }
 ]

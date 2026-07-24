@@ -168,15 +168,15 @@
     }
   ],
   "validation": {
-    "source_count": 5,
+    "source_count": 6,
     "explicitly_active_count": 5,
     "eligible_count": 5,
-    "excluded_count": 0,
+    "excluded_count": 1,
     "excluded_by_reason": {
-      "lifecycle_or_status": 0
+      "lifecycle_or_status": 1
     },
     "excluded_safe_ids": {},
     "generated_count": 5
   },
-  "generated_at": "2026-07-13T21:48:07.234Z"
+  "generated_at": "2026-07-24T15:02:22.369Z"
 }

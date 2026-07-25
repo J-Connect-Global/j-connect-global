@@ -27,7 +27,8 @@ for (const route of svgRoutes) {
   fs.writeFileSync(path.join(outputDir, `${route.slug}-route-overview-mobile.svg`), renderMobile(route), 'utf8');
 }
 
-console.log(`Generated ${svgRoutes.length * 2} responsive tourism route diagrams in ${path.relative(root, outputDir)}; ${data.routes.length - svgRoutes.length} route uses an external raster map.`);
+const rasterRouteCount = data.routes.length - svgRoutes.length;
+console.log(`Generated ${svgRoutes.length * 2} responsive tourism route diagrams in ${path.relative(root, outputDir)}; ${rasterRouteCount} ${rasterRouteCount === 1 ? 'route uses' : 'routes use'} an external raster map.`);
 
 function validateRoute(route) {
   if (!/^[a-z0-9-]+$/.test(route.slug || '')) throw new Error(`Invalid slug: ${route.slug}`);

@@ -7,25 +7,46 @@ import {
 } from "./support.mjs";
 
 const representativeRoutes = [
+  "aachen-day-trip",
   "bremen-weekend-trip",
   "cologne-city-guide",
   "duesseldorf-family-trip",
   "paris-weekend-trip"
 ];
 
+const rasterRoutes = {
+  "aachen-day-trip": {
+    width: 1230,
+    height: 780,
+    tabletHeight: 487,
+    mobileHeight: 740
+  },
+  "bremen-weekend-trip": {
+    width: 1046,
+    height: 683,
+    tabletHeight: 501,
+    mobileHeight: 313
+  }
+};
+
 const routeMedia = (slug, viewportWidth) => {
-  if (slug === "bremen-weekend-trip") {
+  const rasterRoute = rasterRoutes[slug];
+  if (rasterRoute) {
     const usesMobileSource = viewportWidth <= 600;
     const usesTabletSource = viewportWidth <= 960;
     return {
-      locatorSrc: "/assets/images/living/routes/bremen-weekend-trip-illustrated-map.webp",
+      locatorSrc: `/assets/images/living/routes/${slug}-illustrated-map.webp`,
       expectedSource: usesMobileSource
-        ? "bremen-weekend-trip-illustrated-map-480w.webp"
+        ? `${slug}-illustrated-map-480w.webp`
         : usesTabletSource
-          ? "bremen-weekend-trip-illustrated-map-768w.webp"
-          : "bremen-weekend-trip-illustrated-map.webp",
-      width: usesMobileSource ? 480 : usesTabletSource ? 768 : 1046,
-      height: usesMobileSource ? 313 : usesTabletSource ? 501 : 683
+          ? `${slug}-illustrated-map-768w.webp`
+          : `${slug}-illustrated-map.webp`,
+      width: usesMobileSource ? 480 : usesTabletSource ? 768 : rasterRoute.width,
+      height: usesMobileSource
+        ? rasterRoute.mobileHeight
+        : usesTabletSource
+          ? rasterRoute.tabletHeight
+          : rasterRoute.height
     };
   }
   const usesMobileSource = viewportWidth <= 600;

@@ -134,7 +134,7 @@ for (const relative of ['content/living/germany-train-travel-guide.md', 'content
 
 const rasterRouteCount = routeData.routes.filter((route) => route.asset).length;
 const svgRouteCount = routeData.routes.length - rasterRouteCount;
-console.log(`Tourism usability validation passed for ${articles.length} articles, ${svgRouteCount * 2} responsive SVG composites, ${rasterRouteCount} responsive WebP route map, and ${articles.length} illustrated backgrounds.`);
+console.log(`Tourism usability validation passed for ${articles.length} articles, ${svgRouteCount * 2} responsive SVG composites, ${rasterRouteCount} responsive WebP route ${rasterRouteCount === 1 ? 'map' : 'maps'}, and ${articles.length} illustrated backgrounds.`);
 
 function read(relative) {
   return fs.readFileSync(path.join(root, relative), 'utf8');

@@ -335,6 +335,11 @@
       "slug": "bremen-weekend-trip",
       "title": "ブレーメン旧市街の基本ルート",
       "alt": "北側のBremen Hbfから旧市街のMarktplatzへ南下し、南西のBöttcherstraße、南東のSchnoor、西のWeser川沿いにあるSchlachteを回る順序。Viertelは旧市街の東側にある翌日の候補",
+      "asset": "/assets/images/living/routes/bremen-weekend-trip-illustrated-map.webp",
+      "asset_dimensions": {
+        "width": 1046,
+        "height": 683
+      },
       "geography": {
         "verified_at": "2026-07-22",
         "orientation": "north-up",
@@ -431,9 +436,9 @@
       ],
       "illustration": {
         "asset": "/assets/images/living/routes/bremen-weekend-trip-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "generated_at": "2026-07-25",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "complete user-supplied route map with labels, legend, and route markers"
       }
     },
     {

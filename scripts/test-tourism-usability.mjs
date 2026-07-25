@@ -11,7 +11,6 @@ const routeSlugs = new Set(routeData.routes.map((route) => route.slug));
 const routesBySlug = new Map(routeData.routes.map((route) => [route.slug, route]));
 
 for (const route of routeData.routes) {
-  assert(!route.asset, `${route.slug}: verified geographic route must use a generated SVG, not a raster asset`);
   const illustrationAsset = `/assets/images/living/routes/${route.slug}-illustrated-map.webp`;
   assert(route.illustration?.asset === illustrationAsset, `${route.slug}: missing generated illustrated background reference`);
   const illustrationFile = path.join(root, normalizeRepoPath(illustrationAsset));
@@ -20,6 +19,14 @@ for (const route of routeData.routes) {
   assert(route.geography.orientation === 'north-up', `${route.slug}: verified geographic route must be north-up`);
   assert(/^https:\/\//.test(route.geography.source || ''), `${route.slug}: verified geographic route must cite an HTTPS source`);
   assert(/^\d{4}-\d{2}-\d{2}$/.test(route.geography.verified_at || ''), `${route.slug}: missing geography verification date`);
+  if (route.asset) {
+    assert(route.asset === illustrationAsset, `${route.slug}: external route asset must be the supplied illustrated map`);
+    assert(Number.isInteger(route.asset_dimensions?.width) && Number.isInteger(route.asset_dimensions?.height), `${route.slug}: external route asset dimensions are missing`);
+    for (const width of [480, 768]) {
+      const responsiveAsset = route.asset.replace(/\.webp$/i, `-${width}w.webp`);
+      assert(fs.existsSync(path.join(root, normalizeRepoPath(responsiveAsset))), `${route.slug}: responsive ${width}px route map is missing`);
+    }
+  }
   for (const node of route.nodes) {
     assert(Number.isFinite(node.latitude) && Number.isFinite(node.longitude), `${route.slug}: ${node.id} lacks verified coordinates`);
     assert(/^https:\/\/www\.openstreetmap\.org\/(?:node|way|relation)\/\d+$/.test(node.source || ''), `${route.slug}: ${node.id} lacks a direct OpenStreetMap object source`);
@@ -97,7 +104,9 @@ for (const article of articles) {
   const htmlRel = `germany/ja/living/${slug}/index.html`;
   const html = read(htmlRel);
   if (externalRouteAsset) {
-    assert(new RegExp(`<img src="${escapeRegExp(routeSrc)}"[^>]*width="1536"[^>]*height="1024"[^>]*loading="lazy"[^>]*decoding="async"`).test(html), `${slug}: generated HTML lacks WebP intrinsic dimensions or loading attributes`);
+    assert(new RegExp(`<img src="${escapeRegExp(routeSrc)}"[^>]*width="${route.asset_dimensions.width}"[^>]*height="${route.asset_dimensions.height}"[^>]*loading="lazy"[^>]*decoding="async"`).test(html), `${slug}: generated HTML lacks WebP intrinsic dimensions or loading attributes`);
+    assert(html.includes(routeSrc.replace(/\.webp$/i, '-480w.webp')), `${slug}: generated HTML lacks the 480px route map`);
+    assert(html.includes(routeSrc.replace(/\.webp$/i, '-768w.webp')), `${slug}: generated HTML lacks the 768px route map`);
   } else {
     assert(html.includes(`<source media="(max-width: 600px)" srcset="/assets/images/living/routes/${slug}-route-overview-mobile.svg">`), `${slug}: generated HTML does not use mobile SVG source`);
     assert(new RegExp(`<img src="${escapeRegExp(routeSrc)}"[^>]*width="820"[^>]*height="520"`).test(html), `${slug}: generated HTML lacks SVG intrinsic dimensions`);
@@ -123,7 +132,9 @@ for (const relative of ['content/living/germany-train-travel-guide.md', 'content
   assert(fs.existsSync(path.join(root, relative)), `Missing shared guide: ${relative}`);
 }
 
-console.log(`Tourism usability validation passed for ${articles.length} articles, ${articles.length * 2} responsive SVG composites, and ${articles.length} generated illustrated backgrounds.`);
+const rasterRouteCount = routeData.routes.filter((route) => route.asset).length;
+const svgRouteCount = routeData.routes.length - rasterRouteCount;
+console.log(`Tourism usability validation passed for ${articles.length} articles, ${svgRouteCount * 2} responsive SVG composites, ${rasterRouteCount} responsive WebP route map, and ${articles.length} illustrated backgrounds.`);
 
 function read(relative) {
   return fs.readFileSync(path.join(root, relative), 'utf8');

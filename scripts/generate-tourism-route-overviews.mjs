@@ -31,13 +31,21 @@ console.log(`Generated ${svgRoutes.length * 2} responsive tourism route diagrams
 
 function validateRoute(route) {
   if (!/^[a-z0-9-]+$/.test(route.slug || '')) throw new Error(`Invalid slug: ${route.slug}`);
-  if (route.asset && !/^\/assets\/img\/[a-z0-9._/-]+\.webp$/i.test(route.asset)) {
+  if (route.asset && !/^\/assets\/(?:img|images)\/[a-z0-9._/-]+\.webp$/i.test(route.asset)) {
     throw new Error(`Invalid external route asset for ${route.slug}: ${route.asset}`);
   }
   if (!route.title || !route.alt) throw new Error(`Missing accessible copy for ${route.slug}`);
   const expectedIllustration = `/assets/images/living/routes/${route.slug}-illustrated-map.webp`;
   if (route.illustration?.asset !== expectedIllustration) {
     throw new Error(`Missing or unexpected illustrated map background for ${route.slug}`);
+  }
+  if (route.asset) {
+    if (route.asset !== route.illustration.asset) {
+      throw new Error(`External route asset must match the illustrated map for ${route.slug}`);
+    }
+    if (!Number.isInteger(route.asset_dimensions?.width) || !Number.isInteger(route.asset_dimensions?.height)) {
+      throw new Error(`Missing external route asset dimensions for ${route.slug}`);
+    }
   }
   const illustrationPath = path.join(root, route.illustration.asset.replace(/^\//, ''));
   if (!fs.existsSync(illustrationPath)) throw new Error(`Missing illustrated map file: ${route.illustration.asset}`);

@@ -6,13 +6,13 @@
 
 - desktop: `/assets/images/living/routes/{slug}-route-overview.svg`
 - mobile: `/assets/images/living/routes/{slug}-route-overview-mobile.svg`
-- Bremenのみ: `/assets/images/living/routes/bremen-weekend-trip-illustrated-map.webp`（`-480w.webp`、`-768w.webp`あり）
+- Aachen・Bremen: `/assets/images/living/routes/{slug}-illustrated-map.webp`（`-480w.webp`、`-768w.webp`あり）
 
 ## ドイツ国内・NRW
 
 | slug | 基本ルート | 任意の分岐・補足 |
 | --- | --- | --- |
-| `aachen-day-trip` | Aachen Hbf → Elisenbrunnen → Dom/Katschhof → Rathaus/Markt → Printen休憩 | 温泉施設は日帰り観光とは別分岐 |
+| `aachen-day-trip` | Aachen Hbf → Elisenbrunnen → Dom/Katschhof → Rathaus/Markt → Printen休憩 | 温泉施設は日帰り観光とは別分岐。生成背景と検証済みオーバーレイを合成した完成画像を使用 |
 | `berlin-weekend-trip` | Berlin Hbf → Reichstag → Brandenburger Tor → Holocaust-Mahnmal → Unter den Linden → Museumsinsel | 2日目は壁・博物館・地区散策から一つ |
 | `bremen-weekend-trip` | Bremen Hbf → Wallanlagen → Marktplatz → Böttcherstraße → Schnoor → Schlachte | DomsheideからViertelは翌日の追加候補。承認済みの完成画像を使用 |
 | `cologne-city-guide` | Köln Hbf/Dom → Altstadt → Rheinufer → Hohenzollernbrücke → Deutz側 | 疲れた場合は橋を渡らず駅へ戻る |

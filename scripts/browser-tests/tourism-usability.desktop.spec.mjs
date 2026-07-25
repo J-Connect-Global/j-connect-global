@@ -8,17 +8,42 @@ import {
 } from "./support.mjs";
 
 const representativeRoutes = [
+  "aachen-day-trip",
   "bremen-weekend-trip",
   "cologne-city-guide",
   "duesseldorf-family-trip",
   "paris-weekend-trip"
 ];
 
-const routeMedia = (slug) => ({
-  src: `/assets/images/living/routes/${slug}-route-overview.svg`,
-  width: 820,
-  height: 520
-});
+const rasterRoutes = {
+  "aachen-day-trip": {
+    width: 1230,
+    height: 780
+  },
+  "bremen-weekend-trip": {
+    width: 1046,
+    height: 683
+  }
+};
+
+const routeMedia = (slug) => {
+  const rasterRoute = rasterRoutes[slug];
+  if (rasterRoute) {
+    return {
+      src: `/assets/images/living/routes/${slug}-illustrated-map.webp`,
+      expectedSource: `${slug}-illustrated-map.webp`,
+      naturalWidth: 820,
+      ...rasterRoute
+    };
+  }
+  return {
+    src: `/assets/images/living/routes/${slug}-route-overview.svg`,
+    expectedSource: `${slug}-route-overview.svg`,
+    naturalWidth: 820,
+    width: 820,
+    height: 520
+  };
+};
 
 test.beforeEach(async ({ page }) => {
   installRuntimeDiagnostics(page);
@@ -38,7 +63,10 @@ for (const slug of representativeRoutes) {
     const routeImage = page.locator(`img[src="${media.src}"]`);
     await routeImage.scrollIntoViewIfNeeded();
     await expect(routeImage).toBeVisible();
-    await expect.poll(() => routeImage.evaluate((image) => image.naturalWidth)).toBe(media.width);
+    await expect.poll(() => routeImage.evaluate((image) => image.currentSrc)).toContain(
+      media.expectedSource
+    );
+    await expect.poll(() => routeImage.evaluate((image) => image.naturalWidth)).toBe(media.naturalWidth);
     await expect(routeImage).toHaveAttribute("width", String(media.width));
     await expect(routeImage).toHaveAttribute("height", String(media.height));
 

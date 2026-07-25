@@ -6,6 +6,11 @@
       "slug": "aachen-day-trip",
       "title": "アーヘン旧市街の基本ルート",
       "alt": "Aachen HbfからElisenbrunnen、DomとKatschhof、RathausとMarkt、Printen休憩へ進む順序",
+      "asset": "/assets/images/living/routes/aachen-day-trip-illustrated-map.webp",
+      "asset_dimensions": {
+        "width": 1230,
+        "height": 780
+      },
       "nodes": [
         {
           "id": "hbf",
@@ -95,9 +100,9 @@
       ],
       "illustration": {
         "asset": "/assets/images/living/routes/aachen-day-trip-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "generated_at": "2026-07-25",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "complete generated route map with deterministic labels and route markers"
       },
       "geography": {
         "verified_at": "2026-07-22",

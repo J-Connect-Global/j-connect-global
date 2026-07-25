@@ -14,6 +14,20 @@ const representativeRoutes = [
 ];
 
 const routeMedia = (slug, viewportWidth) => {
+  if (slug === "bremen-weekend-trip") {
+    const usesMobileSource = viewportWidth <= 600;
+    const usesTabletSource = viewportWidth <= 960;
+    return {
+      locatorSrc: "/assets/images/living/routes/bremen-weekend-trip-illustrated-map.webp",
+      expectedSource: usesMobileSource
+        ? "bremen-weekend-trip-illustrated-map-480w.webp"
+        : usesTabletSource
+          ? "bremen-weekend-trip-illustrated-map-768w.webp"
+          : "bremen-weekend-trip-illustrated-map.webp",
+      width: usesMobileSource ? 480 : usesTabletSource ? 768 : 1046,
+      height: usesMobileSource ? 313 : usesTabletSource ? 501 : 683
+    };
+  }
   const usesMobileSource = viewportWidth <= 600;
   return {
     locatorSrc: `/assets/images/living/routes/${slug}-route-overview.svg`,

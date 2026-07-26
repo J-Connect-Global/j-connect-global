@@ -37,7 +37,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![RuhrとKölnを基準にGrugapark、Üfter Mark、Fühlinger See、Wilder Kermeter、Externsteineの候補を比較する概略図](/assets/images/living/routes/nrw-nature-relax-guide-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
+![NRWの公園、湖、森の代表的な自然エリアを正しい方向と離隔で示した広域観光案内図](/assets/images/living/nrw-nature-relax-guide-guide-map-v2.webp "NRW自然エリアの広域概略図（各エリア間は徒歩接続ではありません・縮尺不同）。地理参照：© OpenStreetMap contributors。")
 
 自然候補を区間ごとの川歩きに絞りたい場合は、[ライン川沿いの短縮しやすい区間ガイド](/germany/ja/living/rhine-river-relax-guide/)を選べます。
 

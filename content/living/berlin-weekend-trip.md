@@ -41,7 +41,7 @@ Reichstagドームへ入りたい場合だけ、そこを時刻固定点にし�
 
 ## 位置関係と基本ルート
 
-![Berlin HbfからReichstag、Brandenburger Tor、Holocaust-Mahnmal、Unter den Linden、Museumsinselへ東進する順序](/assets/images/living/routes/berlin-weekend-trip-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
+![Berlin HauptbahnhofからReichstag、Brandenburger Tor、Museum Islandへ向かう観光案内図](/assets/images/living/berlin-weekend-trip-guide-map-v2.webp "ベルリンMitte歴史ルートの概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。")
 
 [ハンブルク港へ西進する週末ルート](/germany/ja/living/hamburg-weekend-trip/)と比べ、歴史地点と博物館の選択を優先したい週末向けです。
 

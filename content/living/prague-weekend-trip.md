@@ -33,7 +33,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![Praha hlavní nádražíと宿からStaré Město、Karlův mostへ歩き、トラムで城側へ上ってMalá Stranaへ下る順序](/assets/images/living/routes/prague-weekend-trip-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
+![Praha hlavní nádražíからOld Town Square、Charles Bridge、Prague Castle、Vltava川沿いを巡る観光案内図](/assets/images/living/prague-weekend-trip-guide-map-v2.webp "プラハ旧市街・城ルートの概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。")
 
 [クラクフをRynekからWawelへ南下する週末案](/germany/ja/living/krakow-weekend-trip/)と比べ、高低差を公共交通で管理したい場合に向きます。
 

@@ -37,7 +37,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![北のKölnからBonn、Königswinter、Linz、Koblenz、St. Goar、南のBacharachへ続くライン川沿いの位置関係](/assets/images/living/routes/rhine-river-relax-guide-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
+![デュッセルドルフとケルンで主要観光地点からライン川沿いへ向かう短い散歩を別々に示した観光案内図](/assets/images/living/rhine-river-relax-guide-guide-map-v2.webp "DüsseldorfとKölnのライン川散歩を分けて示す広域概略図（都市間は徒歩接続ではありません・縮尺不同）。地理参照：© OpenStreetMap contributors。")
 
 川沿いに限定せず公園・湖・森林を比較したい場合は、[NRWの自然候補5タイプの比較ガイド](/germany/ja/living/nrw-nature-relax-guide/)へ切り替えられます。
 

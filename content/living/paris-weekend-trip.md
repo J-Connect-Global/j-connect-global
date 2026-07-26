@@ -33,7 +33,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![到着駅と宿からMarais、Seineへ進みLouvreまたはOrsayの一館を選ぶ順序](/assets/images/living/routes/paris-weekend-trip-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
+![Gare du Nord、Montmartre、Le Marais、Louvre、Seine川、Eiffel Towerの位置関係を示す観光案内図](/assets/images/living/paris-weekend-trip-guide-map-v2.webp "パリ中心部のエリア・公共交通ルート概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。")
 
 [ストラスブールで駅から旧市街を歩く国境週末案](/germany/ja/living/strasbourg-weekend-trip/)と比べ、一館と川沿いへ時間を集中できる場合の選択肢です。
 

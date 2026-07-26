@@ -31,7 +31,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![Bruxelles-CentralからGrand-Place、Mont des Arts、Sablon、Marollesへ進みEU地区を別分岐にする順序](/assets/images/living/routes/brussels-weekend-trip-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
+![Bruxelles-CentralからMont des Arts、Grand-Place、Galeries Royalesを巡る観光案内図](/assets/images/living/brussels-weekend-trip-guide-map-v2.webp "ブリュッセル中心部の徒歩ルート概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。")
 
 [アムステルダムの運河と予約施設を軸にする週末案](/germany/ja/living/amsterdam-weekend-trip/)と比べ、美術館と坂のある街区を組み合わせたい場合に向きます。
 

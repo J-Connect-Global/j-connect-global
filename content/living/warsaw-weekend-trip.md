@@ -33,7 +33,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![Warszawa Centralnaと宿からRoyal Route、Old Townへ進み2日目に博物館またはVistulaとPowiśleを選ぶ順序](/assets/images/living/routes/warsaw-weekend-trip-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
+![Warszawa Centralna、Old Town、Royal Route、Łazienki Park、Wisła川沿いの位置関係を示す観光案内図](/assets/images/living/warsaw-weekend-trip-guide-map-v2.webp "ワルシャワRoyal Routeと公共交通区間の概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。")
 
 [クラクフで広場・城・生活地区を南下する週末案](/germany/ja/living/krakow-weekend-trip/)と比べ、再建の歴史と現在の川辺を分けて見たい場合に向きます。
 

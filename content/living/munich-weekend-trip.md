@@ -33,7 +33,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![西のMünchen HbfからKarlsplatz、Marienplatz、Residenzへ東進し、北西のKunstarealまたは北東のEnglischer Gartenを選ぶ位置関係](/assets/images/living/routes/munich-weekend-trip-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
+![München HauptbahnhofからMarienplatz、Viktualienmarkt、Englischer Gartenへ向かう観光案内図](/assets/images/living/munich-weekend-trip-guide-map-v2.webp "ミュンヘン旧市街・公園ルートの概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。")
 
 [ベルリンで歴史地点と博物館を分ける週末案](/germany/ja/living/berlin-weekend-trip/)と比べ、旧市街と一つの美術館または川辺を組み合わせたい場合に向きます。
 

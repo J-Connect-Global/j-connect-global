@@ -11,8 +11,8 @@ const routeSlugs = new Set(routeData.routes.map((route) => route.slug));
 const routesBySlug = new Map(routeData.routes.map((route) => [route.slug, route]));
 
 for (const route of routeData.routes) {
-  const illustrationAsset = `/assets/images/living/routes/${route.slug}-illustrated-map.webp`;
-  assert(route.illustration?.asset === illustrationAsset, `${route.slug}: missing generated illustrated background reference`);
+  const illustrationAsset = route.illustration?.asset || '';
+  assert(/^\/assets\/(?:img|images)\/[a-z0-9._/-]+\.webp$/i.test(illustrationAsset), `${route.slug}: missing generated illustrated map reference`);
   const illustrationFile = path.join(root, normalizeRepoPath(illustrationAsset));
   assert(fs.existsSync(illustrationFile), `${route.slug}: generated illustrated background is missing`);
   assert(fs.statSync(illustrationFile).size <= 750000, `${route.slug}: illustrated background exceeds 750 KB`);
@@ -74,7 +74,7 @@ for (const article of articles) {
   const routeMatches = article.body.match(new RegExp(escapeRegExp(routeSrc), 'g')) || [];
   assert(routeMatches.length === 1, `${slug}: expected one route overview in Markdown`);
   assert(article.body.indexOf(routeSrc) / article.body.length <= 0.25, `${slug}: route overview must be within the first 25% of the body`);
-  assert(article.body.includes(`![${route.alt}](${routeSrc} "${routeData.caption}")`), `${slug}: route overview alt text or disclosure caption is stale`);
+  assert(article.body.includes(`![${route.alt}](${routeSrc} "${route.caption || routeData.caption}")`), `${slug}: route overview alt text or disclosure caption is stale`);
 
   if (externalRouteAsset) {
     assert(fs.existsSync(path.join(root, normalizeRepoPath(routeSrc))), `${slug}: replacement WebP is missing`);

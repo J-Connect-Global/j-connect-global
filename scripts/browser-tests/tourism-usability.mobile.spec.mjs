@@ -14,47 +14,18 @@ const representativeRoutes = [
   "paris-weekend-trip"
 ];
 
-const rasterRoutes = {
-  "aachen-day-trip": {
-    width: 1230,
-    height: 780,
-    tabletHeight: 487,
-    mobileHeight: 740
-  },
-  "bremen-weekend-trip": {
-    width: 1046,
-    height: 683,
-    tabletHeight: 501,
-    mobileHeight: 313
-  }
-};
-
 const routeMedia = (slug, viewportWidth) => {
-  const rasterRoute = rasterRoutes[slug];
-  if (rasterRoute) {
-    const usesMobileSource = viewportWidth <= 600;
-    const usesTabletSource = viewportWidth <= 960;
-    return {
-      locatorSrc: `/assets/images/living/routes/${slug}-illustrated-map.webp`,
-      expectedSource: usesMobileSource
-        ? `${slug}-illustrated-map-480w.webp`
-        : usesTabletSource
-          ? `${slug}-illustrated-map-768w.webp`
-          : `${slug}-illustrated-map.webp`,
-      width: usesMobileSource ? 480 : usesTabletSource ? 768 : rasterRoute.width,
-      height: usesMobileSource
-        ? rasterRoute.mobileHeight
-        : usesTabletSource
-          ? rasterRoute.tabletHeight
-          : rasterRoute.height
-    };
-  }
   const usesMobileSource = viewportWidth <= 600;
+  const usesTabletSource = viewportWidth <= 960;
   return {
-    locatorSrc: `/assets/images/living/routes/${slug}-route-overview.svg`,
-    expectedSource: usesMobileSource ? `${slug}-route-overview-mobile.svg` : `${slug}-route-overview.svg`,
-    width: usesMobileSource ? 480 : 820,
-    height: usesMobileSource ? 740 : 520
+    locatorSrc: `/assets/images/living/${slug}-guide-map-v2.webp`,
+    expectedSource: usesMobileSource
+      ? `${slug}-guide-map-v2-480w.webp`
+      : usesTabletSource
+        ? `${slug}-guide-map-v2-768w.webp`
+        : `${slug}-guide-map-v2.webp`,
+    width: usesMobileSource ? 480 : usesTabletSource ? 768 : 1440,
+    height: usesMobileSource ? 320 : usesTabletSource ? 512 : 960
   };
 };
 

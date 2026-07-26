@@ -5,11 +5,11 @@
     {
       "slug": "aachen-day-trip",
       "title": "アーヘン旧市街の基本ルート",
-      "alt": "Aachen HbfからElisenbrunnen、DomとKatschhof、RathausとMarkt、Printen休憩へ進む順序",
-      "asset": "/assets/images/living/routes/aachen-day-trip-illustrated-map.webp",
+      "alt": "アーヘン中央駅から大聖堂、旧市街、Elisenbrunnenを巡る観光案内図",
+      "asset": "/assets/images/living/aachen-day-trip-guide-map-v2.webp",
       "asset_dimensions": {
-        "width": 1230,
-        "height": 780
+        "width": 1440,
+        "height": 960
       },
       "nodes": [
         {
@@ -99,10 +99,10 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/aachen-day-trip-illustrated-map.webp",
-        "generated_at": "2026-07-25",
+        "asset": "/assets/images/living/aachen-day-trip-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "complete generated route map with deterministic labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -110,12 +110,13 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "caption": "アーヘン日帰りルートの概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "amsterdam-weekend-trip",
       "title": "アムステルダム中心部の基本ルート",
-      "alt": "Amsterdam Centraalから運河地区、JordaanとDe 9 Straatjes、Museumpleinへ進みVondelparkを任意で加える順序",
+      "alt": "Amsterdam Centraalから運河地区、Museumplein、Vondelparkを巡る観光案内図",
       "nodes": [
         {
           "id": "centraal",
@@ -204,10 +205,10 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/amsterdam-weekend-trip-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/amsterdam-weekend-trip-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -215,12 +216,18 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/amsterdam-weekend-trip-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "アムステルダム1泊2日ルートの概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "berlin-weekend-trip",
       "title": "ベルリン中心部を東へ進む基本ルート",
-      "alt": "Berlin HbfからReichstag、Brandenburger Tor、Holocaust-Mahnmal、Unter den Linden、Museumsinselへ東進する順序",
+      "alt": "Berlin HauptbahnhofからReichstag、Brandenburger Tor、Museum Islandへ向かう観光案内図",
       "nodes": [
         {
           "id": "hbf",
@@ -323,10 +330,10 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/berlin-weekend-trip-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/berlin-weekend-trip-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -334,16 +341,22 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/berlin-weekend-trip-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "ベルリンMitte歴史ルートの概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "bremen-weekend-trip",
       "title": "ブレーメン旧市街の基本ルート",
-      "alt": "北側のBremen Hbfから旧市街のMarktplatzへ南下し、南西のBöttcherstraße、南東のSchnoor、西のWeser川沿いにあるSchlachteを回る順序。Viertelは旧市街の東側にある翌日の候補",
-      "asset": "/assets/images/living/routes/bremen-weekend-trip-illustrated-map.webp",
+      "alt": "Bremen HauptbahnhofからMarktplatz、Schnoor、Weser川沿いを巡る観光案内図",
+      "asset": "/assets/images/living/bremen-weekend-trip-guide-map-v2.webp",
       "asset_dimensions": {
-        "width": 1046,
-        "height": 683
+        "width": 1440,
+        "height": 960
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -440,16 +453,17 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/bremen-weekend-trip-illustrated-map.webp",
-        "generated_at": "2026-07-25",
+        "asset": "/assets/images/living/bremen-weekend-trip-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "complete user-supplied route map with labels, legend, and route markers"
-      }
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
+      },
+      "caption": "ブレーメン中心部の徒歩ルート概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "brussels-weekend-trip",
       "title": "ブリュッセル中心部の基本ルート",
-      "alt": "Bruxelles-CentralからGrand-Place、Mont des Arts、Sablon、Marollesへ進みEU地区を別分岐にする順序",
+      "alt": "Bruxelles-CentralからMont des Arts、Grand-Place、Galeries Royalesを巡る観光案内図",
       "nodes": [
         {
           "id": "central",
@@ -538,10 +552,10 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/brussels-weekend-trip-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/brussels-weekend-trip-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -549,12 +563,18 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/brussels-weekend-trip-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "ブリュッセル中心部の徒歩ルート概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "cologne-city-guide",
       "title": "ケルン中心部とライン川の基本ルート",
-      "alt": "Köln Hbfと大聖堂からAltstadt、Rheinufer、Hohenzollernbrücke、Deutz側へ進む順序",
+      "alt": "Köln Hauptbahnhofから大聖堂、旧市街、ライン川沿い、Hohenzollernbrückeを巡る観光案内図",
       "nodes": [
         {
           "id": "dom",
@@ -643,10 +663,10 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/cologne-city-guide-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/cologne-city-guide-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -654,12 +674,18 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/cologne-city-guide-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "ケルン定番観光ルートの概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "cologne-family-trip",
       "title": "ケルン家族旅行の基本ルート",
-      "alt": "南東のKöln Messe/Deutz駅から北のRheinparkへ進み、西側のKölnisches Stadtmuseumまたは北西対岸のKölner Zooを選ぶ位置関係",
+      "alt": "子連れ向けにKöln Hauptbahnhof、大聖堂、休憩場所、ライン川沿いを結ぶ観光案内図",
       "nodes": [
         {
           "id": "arrival",
@@ -721,10 +747,10 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/cologne-family-trip-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/cologne-family-trip-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -732,12 +758,18 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/cologne-family-trip-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "家族向けケルン短時間ルートの概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "copenhagen-weekend-trip",
       "title": "コペンハーゲン港までの基本ルート",
-      "alt": "København HからTivoli周辺、Indre By、Nyhavn、Christianshavnへ進む順序",
+      "alt": "København HからStrøget、Nyhavn、Amalienborg、港沿いへ向かう観光案内図",
       "nodes": [
         {
           "id": "h",
@@ -827,10 +859,10 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/copenhagen-weekend-trip-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/copenhagen-weekend-trip-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -838,12 +870,18 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/copenhagen-weekend-trip-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "コペンハーゲン中心部の徒歩ルート概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "duesseldorf-city-guide",
       "title": "デュッセルドルフ中心部の基本ルート",
-      "alt": "Düsseldorf HbfからImmermannstraße、Königsallee、AltstadtとBurgplatz、Rheinuferへ西進しMedienHafenを任意で加える順序",
+      "alt": "Düsseldorf Hauptbahnhofから日本人街、Königsallee、旧市街、ライン川沿いへ歩く観光案内図",
       "nodes": [
         {
           "id": "hbf",
@@ -932,10 +970,10 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/duesseldorf-city-guide-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/duesseldorf-city-guide-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -943,12 +981,18 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/duesseldorf-city-guide-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "デュッセルドルフ中心部の半日ルート概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "duesseldorf-family-trip",
       "title": "デュッセルドルフ家族外出の基本ルート",
-      "alt": "東側のNordpark/Aquazoo停留所からAquazooとNordparkを回り、西寄りの日本庭園を任意で加えて同じ停留所へ戻る位置関係",
+      "alt": "子連れ向けに日本人街、Hofgarten、旧市街、ライン川沿いを結ぶ観光案内図",
       "nodes": [
         {
           "id": "arrival",
@@ -1009,10 +1053,10 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/duesseldorf-family-trip-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/duesseldorf-family-trip-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -1020,12 +1064,18 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/duesseldorf-family-trip-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "家族向けデュッセルドルフ公園・川沿いルートの概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "hamburg-weekend-trip",
       "title": "ハンブルク港へ西進する基本ルート",
-      "alt": "Hamburg HbfからRathaus、Speicherstadt、HafenCityとElbphilharmonie、Landungsbrückenへ西進する順序",
+      "alt": "Hamburg HauptbahnhofからBinnenalster、Speicherstadt、Elbphilharmonie、Landungsbrückenへ向かう観光案内図",
       "nodes": [
         {
           "id": "hbf",
@@ -1114,10 +1164,10 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/hamburg-weekend-trip-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/hamburg-weekend-trip-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -1125,12 +1175,18 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/hamburg-weekend-trip-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "ハンブルク港・運河ルートの概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "krakow-weekend-trip",
       "title": "クラクフを北から南へ進む基本ルート",
-      "alt": "Kraków GłównyからRynek、Wawel、Kazimierzへ南下し川沿いを天候で加える順序",
+      "alt": "Kraków GłównyからRynek Główny、Wawel、Wisła川沿い、Kazimierzを巡る観光案内図",
       "nodes": [
         {
           "id": "glowny",
@@ -1205,10 +1261,10 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/krakow-weekend-trip-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/krakow-weekend-trip-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -1216,12 +1272,18 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/krakow-weekend-trip-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "クラクフ旧市街・川沿いルートの概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "london-weekend-trip",
       "title": "ロンドン48時間の基本ルート",
-      "alt": "南西のLondon VictoriaからWestminster、川の南東側にあるSouth Bankへ進み、北のKing’s CrossとBritish Museumを2日目の選択肢として示す位置関係",
+      "alt": "St Pancras InternationalからBritish Museum、Covent Garden、Westminster、South Bankを結ぶ観光案内図",
       "nodes": [
         {
           "id": "victoria",
@@ -1297,10 +1359,10 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/london-weekend-trip-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/london-weekend-trip-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -1308,12 +1370,18 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/london-weekend-trip-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "ロンドン中心部の徒歩・公共交通ルート概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "munich-weekend-trip",
       "title": "ミュンヘン中心部の基本ルート",
-      "alt": "西のMünchen HbfからKarlsplatz、Marienplatz、Residenzへ東進し、北西のKunstarealまたは北東のEnglischer Gartenを選ぶ位置関係",
+      "alt": "München HauptbahnhofからMarienplatz、Viktualienmarkt、Englischer Gartenへ向かう観光案内図",
       "nodes": [
         {
           "id": "hbf",
@@ -1403,10 +1471,10 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/munich-weekend-trip-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/munich-weekend-trip-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -1414,12 +1482,18 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/munich-weekend-trip-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "ミュンヘン旧市街・公園ルートの概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "nrw-nature-relax-guide",
       "title": "NRW自然候補の相対位置",
-      "alt": "RuhrとKölnを基準にGrugapark、Üfter Mark、Fühlinger See、Wilder Kermeter、Externsteineの候補を比較する概略図",
+      "alt": "NRWの公園、湖、森の代表的な自然エリアを正しい方向と離隔で示した広域観光案内図",
       "nodes": [
         {
           "id": "ruhr",
@@ -1518,10 +1592,10 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/nrw-nature-relax-guide-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/nrw-nature-relax-guide-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -1529,12 +1603,18 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/nrw-nature-relax-guide-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "NRW自然エリアの広域概略図（各エリア間は徒歩接続ではありません・縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "paris-weekend-trip",
       "title": "パリ1泊2日の基本ルート",
-      "alt": "到着駅と宿からMarais、Seineへ進みLouvreまたはOrsayの一館を選ぶ順序",
+      "alt": "Gare du Nord、Montmartre、Le Marais、Louvre、Seine川、Eiffel Towerの位置関係を示す観光案内図",
       "nodes": [
         {
           "id": "arrival",
@@ -1610,10 +1690,10 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/paris-weekend-trip-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/paris-weekend-trip-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -1621,12 +1701,18 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/paris-weekend-trip-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "パリ中心部のエリア・公共交通ルート概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "prague-weekend-trip",
       "title": "プラハを上り公共交通・下り徒歩で回る基本ルート",
-      "alt": "Praha hlavní nádražíと宿からStaré Město、Karlův mostへ歩き、トラムで城側へ上ってMalá Stranaへ下る順序",
+      "alt": "Praha hlavní nádražíからOld Town Square、Charles Bridge、Prague Castle、Vltava川沿いを巡る観光案内図",
       "nodes": [
         {
           "id": "station",
@@ -1699,10 +1785,10 @@
       ],
       "optionalEdges": [],
       "illustration": {
-        "asset": "/assets/images/living/routes/prague-weekend-trip-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/prague-weekend-trip-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -1710,12 +1796,18 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/prague-weekend-trip-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "プラハ旧市街・城ルートの概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "rhine-river-relax-guide",
       "title": "ライン川沿いの区間選択",
-      "alt": "北のKölnからBonn、Königswinter、Linz、Koblenz、St. Goar、南のBacharachへ続くライン川沿いの位置関係",
+      "alt": "デュッセルドルフとケルンで主要観光地点からライン川沿いへ向かう短い散歩を別々に示した観光案内図",
       "nodes": [
         {
           "id": "koeln",
@@ -1816,10 +1908,10 @@
       ],
       "optionalEdges": [],
       "illustration": {
-        "asset": "/assets/images/living/routes/rhine-river-relax-guide-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/rhine-river-relax-guide-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -1827,12 +1919,18 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/rhine-river-relax-guide-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "DüsseldorfとKölnのライン川散歩を分けて示す広域概略図（都市間は徒歩接続ではありません・縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "strasbourg-weekend-trip",
       "title": "ストラスブール旧市街の基本ルート",
-      "alt": "Gare CentraleまたはP+RからPetite France、Grande Île、Cathédrale周辺、川沿いと帰路へ進む順序",
+      "alt": "Gare de StrasbourgからBarrage Vauban、Petite France、Grande Île、Cathédrale、Ill川沿いを巡る観光案内図",
       "nodes": [
         {
           "id": "gare",
@@ -1921,10 +2019,10 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/strasbourg-weekend-trip-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/strasbourg-weekend-trip-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -1932,12 +2030,18 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/strasbourg-weekend-trip-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "ストラスブール旧市街・川沿いルートの概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     },
     {
       "slug": "warsaw-weekend-trip",
       "title": "ワルシャワ中心部の基本ルート",
-      "alt": "Warszawa Centralnaと宿からRoyal Route、Old Townへ進み2日目に博物館またはVistulaとPowiśleを選ぶ順序",
+      "alt": "Warszawa Centralna、Old Town、Royal Route、Łazienki Park、Wisła川沿いの位置関係を示す観光案内図",
       "nodes": [
         {
           "id": "central",
@@ -2013,10 +2117,10 @@
         ]
       ],
       "illustration": {
-        "asset": "/assets/images/living/routes/warsaw-weekend-trip-illustrated-map.webp",
-        "generated_at": "2026-07-22",
+        "asset": "/assets/images/living/warsaw-weekend-trip-guide-map-v2.webp",
+        "generated_at": "2026-07-26",
         "style": "hand-painted watercolor-and-ink city guide",
-        "role": "decorative geographic context behind verified labels and route markers"
+        "role": "north-up bilingual illustrated guide map with deterministic labels and no route lines"
       },
       "geography": {
         "verified_at": "2026-07-22",
@@ -2024,7 +2128,13 @@
         "source": "https://www.openstreetmap.org/copyright",
         "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
         "note": "OpenStreetMapの地点データでマーカーの相対位置を確認。背景街並みはAI生成の編集イメージで、道路形状や縮尺の資料ではない。"
-      }
+      },
+      "asset": "/assets/images/living/warsaw-weekend-trip-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "caption": "ワルシャワRoyal Routeと公共交通区間の概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
     }
   ]
 }

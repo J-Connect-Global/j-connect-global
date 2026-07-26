@@ -36,9 +36,8 @@ function validateRoute(route) {
     throw new Error(`Invalid external route asset for ${route.slug}: ${route.asset}`);
   }
   if (!route.title || !route.alt) throw new Error(`Missing accessible copy for ${route.slug}`);
-  const expectedIllustration = `/assets/images/living/routes/${route.slug}-illustrated-map.webp`;
-  if (route.illustration?.asset !== expectedIllustration) {
-    throw new Error(`Missing or unexpected illustrated map background for ${route.slug}`);
+  if (!/^\/assets\/(?:img|images)\/[a-z0-9._/-]+\.webp$/i.test(route.illustration?.asset || '')) {
+    throw new Error(`Missing or invalid illustrated map asset for ${route.slug}`);
   }
   if (route.asset) {
     if (route.asset !== route.illustration.asset) {

@@ -39,7 +39,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![Gare CentraleまたはP+RからPetite France、Grande Île、Cathédrale周辺、川沿いと帰路へ進む順序](/assets/images/living/routes/strasbourg-weekend-trip-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
+![Gare de StrasbourgからBarrage Vauban、Petite France、Grande Île、Cathédrale、Ill川沿いを巡る観光案内図](/assets/images/living/strasbourg-weekend-trip-guide-map-v2.webp "ストラスブール旧市街・川沿いルートの概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。")
 
 [パリで川沿いと一館に絞る週末案](/germany/ja/living/paris-weekend-trip/)と比べ、ドイツからの短い鉄道またはP+R到着で旧市街を歩きたい場合に向きます。
 

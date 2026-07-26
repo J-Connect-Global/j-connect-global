@@ -33,7 +33,7 @@ official_sources:
 
 ## 位置関係と基本ルート
 
-![Kraków GłównyからRynek、Wawel、Kazimierzへ南下し川沿いを天候で加える順序](/assets/images/living/routes/krakow-weekend-trip-route-overview.svg "背景街並みはAI生成の編集イメージです。地点マーカーの相対位置はOpenStreetMapで確認しています。縮尺・細かな道路形状・所要時間は正確ではないため、移動時は公式交通情報と地図アプリを併用してください。")
+![Kraków GłównyからRynek Główny、Wawel、Wisła川沿い、Kazimierzを巡る観光案内図](/assets/images/living/krakow-weekend-trip-guide-map-v2.webp "クラクフ旧市街・川沿いルートの概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。")
 
 [プラハで城側へ公共交通で上る週末ルート](/germany/ja/living/prague-weekend-trip/)と比べ、広場・城・生活地区を南北に歩きたい場合に向きます。
 

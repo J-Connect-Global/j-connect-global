@@ -19,22 +19,22 @@
   })();
   </script>
 <script src="/assets/js/site-identity.js"></script>
-<title>求職者向けガイド | 仕事・求人 | J-Connect Germany</title>
-  <meta name="description" content="ドイツで求人に応募する前に確認したい、応募書類・言語条件・面接準備の基本をまとめます。">
-  <meta name="robots" content="noindex, follow">
+<title>ドイツで仕事を探す・応募する実用ガイド | J-Connect Germany</title>
+  <meta name="description" content="ドイツでの求人検索、就労資格、資格認定、CV・応募書類、面接、雇用条件の確認方法を公式情報とともに解説します。">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/jobs/guide/">
   <link rel="alternate" hreflang="ja" href="https://j-connect-global.com/germany/ja/jobs/guide/">
   <link rel="alternate" hreflang="x-default" href="https://j-connect-global.com/germany/ja/jobs/guide/">
-  <meta property="og:title" content="求職者向けガイド | 仕事・求人 | J-Connect Germany">
-  <meta property="og:description" content="ドイツで求人に応募する前に確認したい、応募書類・言語条件・面接準備の基本をまとめます。">
+  <meta property="og:title" content="ドイツで仕事を探す・応募する実用ガイド | J-Connect Germany">
+  <meta property="og:description" content="ドイツでの求人検索、就労資格、資格認定、CV・応募書類、面接、雇用条件の確認方法を公式情報とともに解説します。">
   <meta property="og:url" content="https://j-connect-global.com/germany/ja/jobs/guide/">
   <meta property="og:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="J-Connect Germany">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="求職者向けガイド | 仕事・求人 | J-Connect Germany">
-  <meta name="twitter:description" content="ドイツで求人に応募する前に確認したい、応募書類・言語条件・面接準備の基本をまとめます。">
+  <meta name="twitter:title" content="ドイツで仕事を探す・応募する実用ガイド | J-Connect Germany">
+  <meta name="twitter:description" content="ドイツでの求人検索、就労資格、資格認定、CV・応募書類、面接、雇用条件の確認方法を公式情報とともに解説します。">
   <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,38 +86,148 @@
       font-weight:700;
     }
 
+    .jobs-guide-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px 16px;
+      margin-top:12px;
+      color:#607080;
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .jobs-guide-summary{
+      margin-top:20px;
+      border:1px solid #b7d8f3;
+      border-radius:10px;
+      background:#eef7ff;
+      padding:16px;
+    }
+
+    .jobs-guide-summary h2{
+      margin:0 0 8px;
+      color:#173f68;
+      font-size:18px;
+      font-weight:900;
+    }
+
+    .jobs-guide-summary ol{
+      margin:0;
+      padding-left:1.35em;
+    }
+
+    .jobs-guide-summary li{
+      margin:4px 0;
+      color:#29445f;
+      font-size:14px;
+      line-height:1.65;
+      font-weight:750;
+    }
+
     .jobs-guide-section{
       border-top:1px solid #dbe5ef;
-      padding-top:16px;
-      margin-top:16px;
+      padding-top:22px;
+      margin-top:22px;
     }
 
     .jobs-guide-section h2{
-      margin:0 0 8px;
+      margin:0 0 10px;
       color:#1e3a5f;
-      font-size:18px;
+      font-size:21px;
       line-height:1.35;
       font-weight:900;
     }
 
+    .jobs-guide-section h3{
+      margin:18px 0 6px;
+      color:#263f5c;
+      font-size:16px;
+      line-height:1.45;
+      font-weight:900;
+    }
+
     .jobs-guide-section p,
-    .jobs-guide-section li{
+    .jobs-guide-section li,
+    .jobs-guide-table{
       color:#384552;
       font-size:14px;
       line-height:1.75;
       font-weight:700;
     }
 
-    .jobs-guide-section ul{
+    .jobs-guide-section ul,
+    .jobs-guide-section ol{
       margin:8px 0 0;
       padding-left:1.35em;
+    }
+
+    .jobs-guide-section li + li{
+      margin-top:6px;
+    }
+
+    .jobs-guide-table-wrap{
+      width:100%;
+      margin-top:12px;
+      overflow-x:auto;
+    }
+
+    .jobs-guide-table{
+      width:100%;
+      min-width:620px;
+      border-collapse:collapse;
+    }
+
+    .jobs-guide-table th,
+    .jobs-guide-table td{
+      border:1px solid #dbe5ef;
+      padding:10px 12px;
+      text-align:left;
+      vertical-align:top;
+    }
+
+    .jobs-guide-table th{
+      width:29%;
+      background:#f4f8fb;
+      color:#253e59;
+      font-weight:900;
+    }
+
+    .jobs-guide-callout{
+      margin-top:14px;
+      border-left:4px solid #e89d2f;
+      border-radius:6px;
+      background:#fff8e9;
+      padding:12px 14px;
+    }
+
+    .jobs-guide-callout strong{
+      color:#684315;
+    }
+
+    .jobs-guide-sources{
+      display:grid;
+      gap:10px;
+      margin-top:12px;
+      padding:0;
+      list-style:none;
+    }
+
+    .jobs-guide-sources li{
+      border:1px solid #dbe5ef;
+      border-radius:8px;
+      padding:12px;
+    }
+
+    .jobs-guide-sources a{
+      display:inline-block;
+      font-weight:900;
     }
 
     .jobs-guide-links{
       display:flex;
       flex-wrap:wrap;
       gap:8px;
-      margin-top:10px;
+      margin-top:16px;
     }
 
     @media (max-width:640px){
@@ -144,16 +254,50 @@
     }
 
     :root[data-theme="dark"] .jobs-guide-breadcrumb,
+    :root[data-theme="dark"] .jobs-guide-meta,
     :root[data-theme="dark"] .jobs-guide-lead,
     :root[data-theme="dark"] .jobs-guide-section p,
     :root[data-theme="dark"] .jobs-guide-section li{
       color:var(--surface-card-muted, #a8bad0);
     }
 
+    :root[data-theme="dark"] .jobs-guide-summary{
+      border-color:#315678;
+      background:#142c45;
+    }
+
+    :root[data-theme="dark"] .jobs-guide-summary h2,
+    :root[data-theme="dark"] .jobs-guide-summary li,
+    :root[data-theme="dark"] .jobs-guide-section h3{
+      color:var(--surface-card-heading, #f4f8ff);
+    }
+
     :root[data-theme="dark"] .jobs-guide-section{
       border-top-color:var(--color-border, #263a52);
     }
+
+    :root[data-theme="dark"] .jobs-guide-table th,
+    :root[data-theme="dark"] .jobs-guide-table td,
+    :root[data-theme="dark"] .jobs-guide-sources li{
+      border-color:var(--color-border, #263a52);
+    }
+
+    :root[data-theme="dark"] .jobs-guide-table th{
+      background:#14263c;
+      color:var(--surface-card-heading, #f4f8ff);
+    }
+
+    :root[data-theme="dark"] .jobs-guide-callout{
+      background:#332813;
+    }
+
+    :root[data-theme="dark"] .jobs-guide-callout strong{
+      color:#ffd58d;
+    }
   </style>
+
+  <script type="application/ld+json" data-jconnect-managed="page-structured-data">{"@context":"https://schema.org","@type":"WebPage","name":"ドイツで仕事を探す・応募する実用ガイド","description":"ドイツでの求人検索、就労資格、資格認定、CV・応募書類、面接、雇用条件の確認方法を公式情報とともに解説します。","inLanguage":"ja","url":"https://j-connect-global.com/germany/ja/jobs/guide/","isPartOf":{"@type":"WebSite","@id":"https://j-connect-global.com/#website","name":"J-Connect Global","url":"https://j-connect-global.com/"},"publisher":{"@type":"Organization","@id":"https://j-connect-global.com/#organization","name":"J-Connect Global","url":"https://j-connect-global.com/"}}</script>
+  <script type="application/ld+json" data-jconnect-managed="page-structured-data">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://j-connect-global.com/germany/ja/"},{"@type":"ListItem","position":2,"name":"仕事・求人","item":"https://j-connect-global.com/germany/ja/jobs/"},{"@type":"ListItem","position":3,"name":"ドイツで仕事を探す・応募する実用ガイド","item":"https://j-connect-global.com/germany/ja/jobs/guide/"}]}</script>
 </head>
 <body>
 <!-- LAYOUT:ja-header:start -->
@@ -225,34 +369,148 @@
 
 <main class="jobs-guide-shell">
   <article class="jobs-guide-card">
-    <div class="jobs-guide-breadcrumb"><a href="/germany/ja/jobs/">仕事・求人</a><span>求職者向けガイド</span></div>
-    <h1>求職者向けガイド</h1>
-    <p class="jobs-guide-lead">ドイツで求人に応募する前に確認したい、応募書類・言語条件・面接準備の基本をまとめます。</p>
+    <div class="jobs-guide-breadcrumb"><a href="/germany/ja/jobs/">ドイツの仕事・求人</a><span>仕事探し・応募ガイド</span></div>
+    <h1>ドイツで仕事を探す・応募する実用ガイド</h1>
+    <p class="jobs-guide-lead">日本語話者がドイツで仕事を探すときの流れを、就労資格の確認から求人検索、CV・応募書類、面接、雇用条件の確認まで順番に整理しました。</p>
+    <div class="jobs-guide-meta">
+      <span>対象：ドイツで就職・転職・アルバイトを探す方</span>
+      <span>公式リンク最終確認：2026年7月28日</span>
+    </div>
+
+    <aside class="jobs-guide-summary" aria-labelledby="jobs-guide-summary-title">
+      <h2 id="jobs-guide-summary-title">まず確認する6ステップ</h2>
+      <ol>
+        <li>自分の滞在資格で働けるか、資格認定が必要な職種かを確認する</li>
+        <li>職種・勤務地・言語を組み合わせて求人を探す</li>
+        <li>求人票の雇用形態、勤務時間、給与、言語条件を読む</li>
+        <li>募集要項に合わせてCVと応募書類を整える</li>
+        <li>経験・志望理由・勤務開始日を面接で説明できるようにする</li>
+        <li>内定後に契約書と雇用条件を文書で確認する</li>
+      </ol>
+    </aside>
 
     <section class="jobs-guide-section">
-      <h2>応募前に確認すること</h2>
-      <p>勤務地、雇用形態、勤務形態、必要な言語、ビザサポート、給与の表示単位を確認します。条件が曖昧な場合は、応募前に企業へ確認してください。</p>
-    </section>
-
-    <section class="jobs-guide-section">
-      <h2>CV・応募メール</h2>
-      <p>CVは職歴、使用言語、就労可能時期、ビザ状況を簡潔にまとめます。応募メールでは求人名、応募理由、連絡先を明記します。</p>
-    </section>
-
-    <section class="jobs-guide-section">
-      <h2>面接準備</h2>
-      <p>仕事内容への理解、過去の経験、勤務開始可能日、希望条件を整理しておきます。日本語以外の面接が想定される場合は、自己紹介と職務説明を事前に練習しておくと安心です。</p>
-    </section>
-
-    <section class="jobs-guide-section">
-      <h2>関連リンク</h2>
+      <h2>1. 就労資格と資格認定を最初に確認する</h2>
+      <p>ドイツで働ける条件は、国籍、現在の滞在資格、仕事内容によって異なります。滞在許可証や付属書に就労条件が記載されている場合もあるため、応募前に自分の状況を確認してください。</p>
       <ul>
-        <li><a href="/germany/ja/jobs/">求人一覧へ戻る</a></li>
-        <li><a href="/germany/ja/learn-german/">ドイツ語・学び</a></li>
+        <li><strong>就労資格：</strong><a href="https://www.make-it-in-germany.com/en/visa-residence/types">Make it in Germany「Types of visa」</a>で主な就労・滞在資格を確認する</li>
+        <li><strong>資格認定：</strong>医療、教育など規制職種に該当する可能性がある場合は、<a href="https://www.anerkennung-in-deutschland.de/html/en/index.php">Recognition in Germany</a>で認定の要否と窓口を確認する</li>
+      </ul>
+      <p class="jobs-guide-callout"><strong>注意：</strong>本ページは一般的な探し方の案内です。個別の就労可否やビザ要件は、担当官庁または専門家へ確認してください。</p>
+    </section>
+
+    <section class="jobs-guide-section">
+      <h2>2. 求人を探すキーワードと公式サイト</h2>
+      <p>「日本語だけで働ける仕事」に限定せず、職種、勤務地、対応言語を組み合わせると候補を広げられます。日本語は強みとして使いながら、英語・ドイツ語で掲載された求人も確認します。</p>
+      <div class="jobs-guide-table-wrap">
+        <table class="jobs-guide-table">
+          <thead>
+            <tr><th>検索したい条件</th><th>キーワード例</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>日本語を使う仕事</th><td>Japanisch、Japanese speaking、Japanese customer support</td></tr>
+            <tr><th>職種</th><td>Vertrieb（営業）、Buchhaltung（経理）、Assistenz（アシスタント）、IT Support</td></tr>
+            <tr><th>勤務地</th><td>Düsseldorf、Frankfurt、München、Berlin、Nordrhein-Westfalen</td></tr>
+            <tr><th>勤務形態</th><td>Vollzeit（フルタイム）、Teilzeit（パートタイム）、Werkstudent、Ausbildung</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li><a href="https://www.arbeitsagentur.de/jobsuche/">Bundesagentur für Arbeit「Jobsuche」</a>：ドイツ連邦雇用庁の求人検索</li>
+        <li><a href="https://www.make-it-in-germany.com/en/working-in-germany/job-listings">Make it in Germany「Job listings」</a>：海外人材向けの求人検索</li>
+        <li><a href="/germany/ja/jobs/">J-Connect Germanyのドイツ求人一覧</a>：日本語話者向けに掲載された求人</li>
+      </ul>
+    </section>
+
+    <section class="jobs-guide-section">
+      <h2>3. 求人票で確認する項目</h2>
+      <p>仕事内容だけで判断せず、次の条件を求人票と企業の公式サイトで照合します。不明点は応募前または面接時に質問できるよう、メモしておきます。</p>
+      <ul>
+        <li>勤務地、在宅・出社の条件、転勤の有無</li>
+        <li>雇用形態、契約期間、試用期間、週の勤務時間</li>
+        <li>必要なドイツ語・英語・日本語のレベル</li>
+        <li>勤務開始日、応募期限、必要書類、選考手順</li>
+        <li>給与が年額・月額・時給のどれか、額面（brutto）か手取り（netto）か</li>
+        <li>就労許可が必要な応募者への対応や、資格認定の条件</li>
+      </ul>
+    </section>
+
+    <section class="jobs-guide-section">
+      <h2>4. CV・応募書類を募集要項に合わせる</h2>
+      <p>ドイツの応募書類では、一般にカバーレター、表形式のCV、学位・資格・職歴を示す証明書などが求められます。ただし必要な書類と提出形式は企業ごとに異なるため、求人票の指定を優先してください。</p>
+      <h3>CVに入れる情報のチェック</h3>
+      <ul>
+        <li>氏名、居住地、連絡先</li>
+        <li>新しい順に整理した職歴と、担当業務・成果</li>
+        <li>学歴、資格、使用できるツールや専門スキル</li>
+        <li>ドイツ語、英語、日本語などの言語レベル</li>
+        <li>必要に応じて勤務開始可能日や就労資格に関する簡潔な説明</li>
+      </ul>
+      <h3>応募メール・カバーレターの要点</h3>
+      <ul>
+        <li>応募する求人名と、求人を見つけた場所を明記する</li>
+        <li>募集要件と自分の経験がどう結び付くかを具体的に書く</li>
+        <li>添付ファイル名を分かりやすくし、送信前に形式と容量を確認する</li>
+      </ul>
+      <p>書類の構成は<a href="https://www.make-it-in-germany.com/en/working-in-germany/job/application">Make it in Germany「The job application」</a>、CVの作成補助は<a href="https://europa.eu/europass/eportfolio/screen/cv-editor?lang=en">Europass CV editor</a>でも確認できます。</p>
+    </section>
+
+    <section class="jobs-guide-section">
+      <h2>5. 面接で説明する内容を準備する</h2>
+      <p>日本語以外での面接が想定される場合は、短い自己紹介と職務経験の説明を声に出して練習します。答えを暗記するより、具体例を一つずつ用意しておくと質問に対応しやすくなります。</p>
+      <ul>
+        <li>なぜこの会社・職種を選んだのか</li>
+        <li>過去の経験を、応募先の仕事でどう生かせるか</li>
+        <li>問題を解決した経験や、チームで協力した経験</li>
+        <li>使用できる言語と、仕事で使った場面</li>
+        <li>勤務開始可能日、希望する勤務形態、勤務地への対応</li>
+        <li>企業へ確認したい仕事内容、チーム体制、選考後の流れ</li>
+      </ul>
+    </section>
+
+    <section class="jobs-guide-section">
+      <h2>6. 内定後は契約条件と募集元を確認する</h2>
+      <p>口頭の説明だけで決めず、雇用主、職種、勤務地、勤務時間、給与、契約期間、休暇、試用期間、解約条件などを契約書で確認します。理解できない条項があれば、署名前に説明を求めてください。</p>
+      <div class="jobs-guide-callout">
+        <strong>求人トラブルを避けるために：</strong>
+        <ul>
+          <li>企業名、公式ドメイン、所在地、担当者を確認する</li>
+          <li>面接や契約前に「採用のため」と金銭を要求する求人に注意する</li>
+          <li>雇用主を確認できない段階で、銀行情報や身分証明書の完全な写しを送らない</li>
+          <li>条件が求人票と変わった場合は、変更内容を文書で確認する</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="jobs-guide-section">
+      <h2>応募前の最終チェックリスト</h2>
+      <ul>
+        <li>自分の就労資格と、資格認定の要否を確認した</li>
+        <li>求人票の必須条件と歓迎条件を分けて読んだ</li>
+        <li>CVの職歴・日付・連絡先に誤りがない</li>
+        <li>応募先に合わせて志望理由と経験を調整した</li>
+        <li>指定された書類、ファイル形式、応募期限を守っている</li>
+        <li>企業の公式サイトと連絡先を確認した</li>
+        <li>送信した求人名、日付、書類を記録した</li>
+      </ul>
+    </section>
+
+    <section class="jobs-guide-section">
+      <h2>公式情報・関連ガイド</h2>
+      <ul class="jobs-guide-sources">
+        <li><a href="https://www.arbeitsagentur.de/en/working-in-germany/how-to-find-a-job">Federal Employment Agency: How to find a job</a><br>ドイツでの求人検索、応募、相談窓口の公式案内</li>
+        <li><a href="https://www.make-it-in-germany.com/en/working-in-germany/job/application">Make it in Germany: The job application</a><br>応募書類と面接準備に関する公式ポータルの案内</li>
+        <li><a href="https://www.anerkennung-in-deutschland.de/html/en/index.php">Recognition in Germany</a><br>外国資格の認定が必要かを確認する公式ポータル</li>
+      </ul>
+      <h3>J-Connect Germanyで続けて読む</h3>
+      <ul>
         <li><a href="/germany/ja/learn-german/job-seeker-german-route/">求人探しのドイツ語準備</a></li>
+        <li><a href="/germany/ja/learn-german/work-email-phrases/">ビジネスメールで使うドイツ語表現</a></li>
+        <li><a href="/germany/ja/learn-german/workplace-conversation-phrases/">職場会話で使うドイツ語</a></li>
+        <li><a href="/germany/ja/learn-german/">ドイツ語学習・実用フレーズ一覧</a></li>
       </ul>
       <div class="jobs-guide-links">
-        <a class="jc-button is-primary" href="/germany/ja/jobs/">求人を見る</a>
+        <a class="jc-button is-primary" href="/germany/ja/jobs/">ドイツの求人を見る</a>
         <a class="jc-button" href="/germany/ja/jobs/posting/">企業・採用担当者へ</a>
       </div>
     </section>

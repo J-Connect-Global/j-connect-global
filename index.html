@@ -1,30 +1,231 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>J-Connect Global</title>
-  <meta name="description" content="J-Connect Global の日本語サイトは /germany/ja/ で公開しています。" />
-  <!-- JA is the current primary public version; keep this static entry pointed at /germany/ja/. -->
-  <meta name="robots" content="noindex, follow" />
-  <meta http-equiv="refresh" content="0; url=/germany/ja/" />
-  <link rel="canonical" href="https://j-connect-global.com/germany/ja/" />
-  <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png" />
-  <link rel="stylesheet" href="/assets/css/site.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script data-jconnect-theme-init>
+  (function () {
+    try {
+      var saved = localStorage.getItem('jconnect-theme');
+      var theme = saved === 'dark' || saved === 'light' ? saved : 'light';
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+    } catch (error) {
+      document.documentElement.dataset.theme = 'light';
+      document.documentElement.style.colorScheme = 'light';
+    }
+  })();
+  </script>
+  <title>J-Connect Global | ドイツ在住日本人の生活情報・求人・掲示板</title>
+  <meta name="description" content="J-Connect Globalは、ドイツで暮らす・働く・学ぶ日本語話者向けの情報ポータルです。生活手続き、求人、交流掲示板、ニュース・イベント、ドイツ語、観光情報を整理しています。">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#f4f8fc">
+  <link rel="canonical" href="https://j-connect-global.com/">
+  <meta property="og:title" content="J-Connect Global | ドイツ在住日本人の生活情報・求人・掲示板">
+  <meta property="og:description" content="ドイツで暮らす・働く・学ぶ日本語話者へ。生活手続き、求人、掲示板、ニュース・イベント、ドイツ語、観光情報を一か所で確認できます。">
+  <meta property="og:url" content="https://j-connect-global.com/">
+  <meta property="og:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="J-Connect Global">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="J-Connect Global | ドイツ在住日本人の生活情報・求人・掲示板">
+  <meta name="twitter:description" content="ドイツで暮らす・働く・学ぶ日本語話者向けの生活情報ポータルです。">
+  <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
+  <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/global-home.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://j-connect-global.com/#organization",
+        "name": "J-Connect Global",
+        "alternateName": "J-Connect",
+        "url": "https://j-connect-global.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://j-connect-global.com/assets/images/brand/favicon.png",
+          "width": 512,
+          "height": 512
+        },
+        "email": "contact@j-connect-global.com",
+        "subOrganization": {
+          "@type": "Organization",
+          "@id": "https://j-connect-global.com/germany/ja/#organization",
+          "name": "J-Connect Germany",
+          "url": "https://j-connect-global.com/germany/ja/",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Germany"
+          }
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://j-connect-global.com/#website",
+        "url": "https://j-connect-global.com/",
+        "name": "J-Connect Global",
+        "alternateName": "J-Connect",
+        "inLanguage": "ja",
+        "publisher": {
+          "@id": "https://j-connect-global.com/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://j-connect-global.com/#webpage",
+        "url": "https://j-connect-global.com/",
+        "name": "J-Connect Global | ドイツ在住日本人の生活情報・求人・掲示板",
+        "description": "ドイツで暮らす・働く・学ぶ日本語話者向けに、生活手続き、求人、交流掲示板、ニュース・イベント、ドイツ語、観光情報を整理するブランドページです。",
+        "inLanguage": "ja",
+        "isPartOf": {
+          "@id": "https://j-connect-global.com/#website"
+        },
+        "about": {
+          "@id": "https://j-connect-global.com/#organization"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
-<body>
-  <main class="main">
-    <section class="site-shell">
-      <div class="site-hero">
-        <p class="site-badge">J-Connect Global</p>
-        <h1>日本語サイトへ移動します</h1>
-        <p>J-Connect Global の現在の公開版は日本語サイトです。</p>
-        <p><a class="site-button" href="/germany/ja/">/germany/ja/ へ移動する</a></p>
+<body class="global-home">
+  <a class="global-skip-link" href="#main-content">本文へ移動</a>
+
+  <header class="global-header">
+    <div class="global-header-inner">
+      <a class="global-brand" href="/" aria-label="J-Connect Global ホーム">
+        <img src="/assets/images/brand/logo_header.png" alt="J-Connect" width="720" height="174">
+        <span>GLOBAL</span>
+      </a>
+      <a class="global-region-link" href="/germany/ja/">
+        <span aria-hidden="true">🇩🇪</span>
+        ドイツ向け日本語版
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content" class="global-main">
+    <section class="global-hero" aria-labelledby="global-title">
+      <div class="global-hero-copy">
+        <p class="global-kicker">J-Connect Global</p>
+        <h1 id="global-title">ドイツで暮らす日本人の、情報とつながりの入口。</h1>
+        <p class="global-lead">J-Connect Globalは、日本とドイツをつなぐ情報ブランドです。現在は「J-Connect Germany」で、ドイツ在住者・渡航予定者に必要な生活情報を日本語で提供しています。</p>
+        <div class="global-hero-actions">
+          <a class="global-primary-link" href="/germany/ja/">J-Connect Germanyを見る</a>
+          <a class="global-secondary-link" href="/germany/ja/about/">運営方針を確認する</a>
+        </div>
+      </div>
+
+      <aside class="global-country-card" aria-label="現在公開中の地域サイト">
+        <p class="global-country-label">CURRENT PORTAL</p>
+        <div class="global-country-heading">
+          <span class="global-country-flag" aria-hidden="true">🇩🇪</span>
+          <div>
+            <strong>J-Connect Germany</strong>
+            <span>日本語</span>
+          </div>
+        </div>
+        <p>ドイツ生活、手続き、求人、交流、イベント、ドイツ語学習をまとめた日本語ポータルです。</p>
+        <a href="/germany/ja/">ドイツ向けポータルへ進む <span aria-hidden="true">→</span></a>
+      </aside>
+    </section>
+
+    <section class="global-section" aria-labelledby="global-categories-title">
+      <div class="global-section-heading">
+        <p>EXPLORE</p>
+        <h2 id="global-categories-title">ドイツ生活の目的から探す</h2>
+        <span>検索したいテーマに近い入口を選べます。</span>
+      </div>
+
+      <div class="global-category-grid">
+        <a class="global-category-card" href="/germany/ja/living/">
+          <span class="global-card-number">01</span>
+          <strong>ドイツ生活・手続き</strong>
+          <p>住民登録、住まい、銀行、保険、税金、妊娠・出産、Kitaなどを確認。</p>
+        </a>
+        <a class="global-category-card" href="/germany/ja/community/">
+          <span class="global-card-number">02</span>
+          <strong>日本人向け交流掲示板</strong>
+          <p>売買・譲渡、質問、友達募集、レッスン、アルバイトの投稿を探す。</p>
+        </a>
+        <a class="global-category-card" href="/germany/ja/jobs/">
+          <span class="global-card-number">03</span>
+          <strong>ドイツの日本語求人</strong>
+          <p>求人、転職、アルバイトの情報と応募前に確認したい条件を整理。</p>
+        </a>
+        <a class="global-category-card" href="/germany/ja/events/">
+          <span class="global-card-number">04</span>
+          <strong>ニュース・イベント</strong>
+          <p>ドイツ生活に関係するニュース、NRWや日本関連イベントを確認。</p>
+        </a>
+        <a class="global-category-card" href="/germany/ja/learn-german/">
+          <span class="global-card-number">05</span>
+          <strong>ドイツ語学習・フレーズ</strong>
+          <p>役所、病院、住まい、仕事、子育てで使える実用ドイツ語を学ぶ。</p>
+        </a>
+        <a class="global-category-card" href="/germany/ja/living/travel/weekend/">
+          <span class="global-card-number">06</span>
+          <strong>ドイツ・欧州の観光</strong>
+          <p>NRWの日帰り旅行、ドイツ国内、近隣国の週末旅行を比較する。</p>
+        </a>
       </div>
     </section>
+
+    <section class="global-section global-start-section" aria-labelledby="global-start-title">
+      <div class="global-section-heading">
+        <p>START HERE</p>
+        <h2 id="global-start-title">初めてのドイツ生活に役立つガイド</h2>
+        <span>到着直後から仕事探しまで、よく検索される課題を順番に確認できます。</span>
+      </div>
+      <div class="global-start-list">
+        <a href="/germany/ja/living/germany-first-30-days/">
+          <strong>ドイツ生活最初の30日チェックリスト</strong>
+          <span>到着後の優先順位を時系列で確認</span>
+        </a>
+        <a href="/germany/ja/living/anmeldung-guide/">
+          <strong>ドイツ住民登録 Anmeldung 完全ガイド</strong>
+          <span>必要書類・予約・当日の流れ</span>
+        </a>
+        <a href="/germany/ja/living/health-insurance-guide/">
+          <strong>ドイツの健康保険ガイド</strong>
+          <span>GKV・PKV・加入手順の基本</span>
+        </a>
+        <a href="/germany/ja/jobs/guide/">
+          <strong>ドイツで仕事を探す・応募する実用ガイド</strong>
+          <span>求人検索・CV・面接・条件確認</span>
+        </a>
+        <a href="/germany/ja/living/duesseldorf-city-guide/">
+          <strong>デュッセルドルフ観光・日本人街ガイド</strong>
+          <span>日本人街から旧市街・ライン川へ</span>
+        </a>
+      </div>
+    </section>
+
+    <aside class="global-trust-note">
+      <strong>情報の確認について</strong>
+      <p>行政、税務、医療、保険、交通、イベントなどは変更される場合があります。各記事では公式情報への導線を示し、重要な判断は管轄機関や専門家の最新案内で再確認できるよう整理しています。</p>
+    </aside>
   </main>
-  <script>
-    window.location.replace('/germany/ja/');
-  </script>
+
+  <footer class="global-footer">
+    <div class="global-footer-inner">
+      <div>
+        <strong>J-Connect Global</strong>
+        <p>日本とドイツをつなぐ情報ブランド</p>
+      </div>
+      <nav aria-label="フッターナビゲーション">
+        <a href="/germany/ja/">J-Connect Germany</a>
+        <a href="/germany/ja/about/">このサイトについて</a>
+        <a href="/germany/ja/contact/">お問い合わせ</a>
+        <a href="/germany/ja/privacy/">プライバシー</a>
+        <a href="/germany/ja/impressum/">運営者情報</a>
+      </nav>
+      <p class="global-footer-meta">© 2026 J-Connect Global</p>
+    </div>
+  </footer>
 </body>
 </html>

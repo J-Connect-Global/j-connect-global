@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import {
   SITE_IDENTITY,
   SERVICE_NAME,
+  PARENT_BRAND_NAME,
   SITE_ORIGIN,
   PRIMARY_JA_PATH,
   serviceTitle,
@@ -315,8 +316,15 @@ function ensurePageStructuredData(html, url, page) {
       url: canonical,
       isPartOf: {
         '@type': 'WebSite',
-        name: SERVICE_NAME,
-        url: absoluteUrl('/germany/ja/')
+        '@id': `${SITE_ORIGIN}/#website`,
+        name: PARENT_BRAND_NAME,
+        url: absoluteUrl('/')
+      },
+      publisher: {
+        '@type': 'Organization',
+        '@id': `${SITE_ORIGIN}/#organization`,
+        name: PARENT_BRAND_NAME,
+        url: absoluteUrl('/')
       }
     }));
   }

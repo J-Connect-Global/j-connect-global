@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
+import { PARENT_BRAND_NAME } from './site-identity.mjs';
 
 const root = process.cwd();
 const scriptPath = path.relative(root, fileURLToPath(import.meta.url));
@@ -27,6 +28,7 @@ const requiredTwitterNames = [
 ];
 
 const coreIndexableUrls = new Set([
+  '/',
   '/germany/ja/',
   '/germany/ja/about/',
   '/germany/ja/contact/',
@@ -36,6 +38,7 @@ const coreIndexableUrls = new Set([
   '/germany/ja/community/',
   '/germany/ja/living/',
   '/germany/ja/jobs/',
+  '/germany/ja/jobs/guide/',
   '/germany/ja/events/',
   '/germany/ja/learn-german/',
   '/germany/ja/eat/',
@@ -71,6 +74,7 @@ const staleHomeEventBadgePatterns = [
 ];
 
 const requiredPages = [
+  '/',
   '/germany/ja/',
   '/germany/ja/about/',
   '/germany/ja/contact/',
@@ -79,6 +83,7 @@ const requiredPages = [
   '/germany/ja/learn-german/',
   '/germany/ja/living/',
   '/germany/ja/jobs/',
+  '/germany/ja/jobs/guide/',
   '/germany/ja/jobs/posting/',
   '/germany/ja/medical/',
   '/germany/ja/eat/',
@@ -363,7 +368,7 @@ for (const file of htmlFiles) {
 validateSitemap();
 
 function validateHtmlMetadata(rel, url, html, page) {
-  if (!url.startsWith(PRIMARY_JA_PATH)) return;
+  if (url !== '/' && !url.startsWith(PRIMARY_JA_PATH)) return;
 
   const title = extractTitle(html);
   const htmlLang = String(html).match(/<html\b[^>]*\blang=["']([^"']+)["']/i)?.[1]?.toLowerCase() || '';
@@ -390,9 +395,9 @@ function validateHtmlMetadata(rel, url, html, page) {
     problems.push(`${rel} canonical should be ${expectedCanonical}, got ${canonical || '(missing)'}.`);
   }
 
-  const shouldHaveJaAlternates = page
+  const shouldHaveJaAlternates = url.startsWith(PRIMARY_JA_PATH) && (page
     ? page.status === 'published'
-    : isArticleUrl(url, page);
+    : isArticleUrl(url, page));
   if (shouldHaveJaAlternates) {
     const alternates = hreflangEntries(html);
     if (alternates.length !== 2) problems.push(`${rel} must contain exactly ja and x-default hreflang alternates.`);
@@ -415,6 +420,16 @@ function validateHtmlMetadata(rel, url, html, page) {
 
   const ogUrl = extractMetaContent(html, 'property', 'og:url');
   if (ogUrl && ogUrl !== canonical) problems.push(`${rel} og:url should match canonical URL.`);
+
+  if (url === '/') {
+    if (extractMetaContent(html, 'property', 'og:site_name') !== PARENT_BRAND_NAME) {
+      problems.push(`${rel} root og:site_name must be ${PARENT_BRAND_NAME}.`);
+    }
+    if (!hasJsonLdType(html, 'WebSite')) problems.push(`${rel} root page missing WebSite JSON-LD.`);
+    if (!hasJsonLdType(html, 'Organization')) problems.push(`${rel} root page missing Organization JSON-LD.`);
+    if (/<meta\b(?=[^>]*http-equiv=["']refresh["'])/i.test(html)) problems.push(`${rel} root page must not use a meta refresh.`);
+    if (/\blocation\.(?:replace|assign)\s*\(/i.test(html)) problems.push(`${rel} root page must not use a JavaScript redirect.`);
+  }
 
   if (isArticleUrl(url, page)) {
     if (!hasJsonLdType(html, 'Article')) problems.push(`${rel} article page missing Article JSON-LD.`);
@@ -652,8 +667,8 @@ function validateSitemap() {
     if (seen.has(loc)) problems.push(`sitemap.xml contains duplicate URL: ${loc}`);
     seen.add(loc);
 
-    if (!loc.startsWith(`${SITE_ORIGIN}${PRIMARY_JA_PATH}`)) {
-      problems.push(`sitemap.xml URL should be a production JA URL: ${loc}`);
+    if (loc !== `${SITE_ORIGIN}/` && !loc.startsWith(`${SITE_ORIGIN}${PRIMARY_JA_PATH}`)) {
+      problems.push(`sitemap.xml URL should be the production root or a JA URL: ${loc}`);
       continue;
     }
 
@@ -673,6 +688,7 @@ function validateSitemap() {
 
 function fileToUrl(relPath) {
   const normalized = relPath.replace(/\\/g, '/');
+  if (normalized === 'index.html') return '/';
   if (normalized === 'germany/ja/index.html') return '/germany/ja/';
   if (normalized.endsWith('/index.html')) return `/${normalized.slice(0, -'index.html'.length)}`;
   return `/${normalized}`;
@@ -746,13 +762,19 @@ function hasJsonLdType(html, type) {
   for (const match of String(html || '').matchAll(/<script\b(?=[^>]*type=["']application\/ld\+json["'])[^>]*>([\s\S]*?)<\/script>/gi)) {
     try {
       const parsed = JSON.parse(match[1]);
-      const items = Array.isArray(parsed) ? parsed : [parsed];
-      if (items.some((item) => jsonLdTypes(item).includes(type))) return true;
+      if (jsonLdContainsType(parsed, type)) return true;
     } catch {
       return false;
     }
   }
   return false;
+}
+
+function jsonLdContainsType(value, type) {
+  if (Array.isArray(value)) return value.some((item) => jsonLdContainsType(item, type));
+  if (!value || typeof value !== 'object') return false;
+  if (jsonLdTypes(value).includes(type)) return true;
+  return Object.values(value).some((item) => jsonLdContainsType(item, type));
 }
 
 function jsonLdTypes(item) {

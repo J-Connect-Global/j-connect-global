@@ -28,6 +28,7 @@ const steps = [
   ["Travel guide duplication", "scripts/check-travel-guide-duplication.mjs"],
   ["JA layout governance", "scripts/validate-layout.mjs"],
   ["Static site", "scripts/validate-static-site.mjs"],
+  ["SEO intent map", "scripts/validate-seo-intents.mjs"],
   ["Site identity", "scripts/validate-site-identity.mjs"],
   ["Production parity markers", "scripts/validate-production-parity.mjs"],
   ["Build Pages artifact", "scripts/build-pages-artifact.mjs", "--site-dir", "_site"],

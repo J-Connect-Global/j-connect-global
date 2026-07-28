@@ -58,29 +58,32 @@ const job = {
 };
 
 const jobUrl = `${ORIGIN}${job.detail_url}`;
+const rootUrl = `${ORIGIN}/`;
 const staticUrl = `${ORIGIN}/germany/ja/in-sitemap/`;
 const unlistedUrl = `${ORIGIN}/germany/ja/unlisted/`;
 const originalExclusions = [...SITEMAP_EXCLUSIONS.entries()];
 
 const siteDir = await mkdtemp(path.join(os.tmpdir(), "jconnect-production-seo-"));
 try {
+  await writePage(siteDir, "/", indexedPage(rootUrl));
   await writePage(siteDir, "/germany/ja/in-sitemap/", indexedPage(staticUrl));
   await writePage(siteDir, job.detail_url, indexedPage(jobUrl));
   await mkdir(path.join(siteDir, "assets", "data", "jobs"), { recursive: true });
   await writeFile(path.join(siteDir, "assets", "data", "jobs", "jobs.json"), `${JSON.stringify({ count: 1, items: [job] })}\n`, "utf8");
   await writeFile(path.join(siteDir, "sitemap.xml"), sitemap([
+    { loc: rootUrl, lastmod: "2026-07-28" },
     { loc: staticUrl, lastmod: "2026-07-01" },
     { loc: jobUrl, lastmod: "2026-07-15" }
   ]), "utf8");
 
   let result = await validateProductionSeo({ siteDir });
   assert.deepEqual(result.errors, []);
-  assert.equal(result.indexable_ja_pages, 2);
+  assert.equal(result.indexable_pages, 3);
   assert.equal(result.indexable_jobs, 1);
 
   await writePage(siteDir, "/germany/ja/unlisted/", indexedPage(unlistedUrl));
   result = await validateProductionSeo({ siteDir });
-  assert.ok(result.errors.some((error) => error.includes("canonical index, follow JA URL is missing from sitemap.xml") && error.includes(unlistedUrl)));
+  assert.ok(result.errors.some((error) => error.includes("canonical index, follow URL is missing from sitemap.xml") && error.includes(unlistedUrl)));
 
   SITEMAP_EXCLUSIONS.set(unlistedUrl, "Synthetic fixture for explicit exclusion coverage.");
   result = await validateProductionSeo({ siteDir });
@@ -92,6 +95,7 @@ try {
   assert.deepEqual(result.errors, []);
 
   await writeFile(path.join(siteDir, "sitemap.xml"), sitemap([
+    { loc: rootUrl, lastmod: "2026-07-28" },
     { loc: staticUrl, lastmod: "2026-07-01" },
     { loc: jobUrl, lastmod: "2026-07-14" }
   ]), "utf8");

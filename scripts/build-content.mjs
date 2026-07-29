@@ -1110,8 +1110,19 @@ function renderStructuredData(type, item, title, canonicalHref) {
     },
     publisher: {
       '@type': 'Organization',
+      '@id': `${SITE_ORIGIN}/#organization`,
       name: PARENT_BRAND_NAME,
-      url: SITE_ORIGIN
+      url: absoluteUrl('/'),
+      logo: {
+        '@type': 'ImageObject',
+        url: absoluteUrl('/assets/images/brand/favicon.png')
+      }
+    },
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': `${SITE_ORIGIN}/#website`,
+      name: PARENT_BRAND_NAME,
+      url: absoluteUrl('/')
     },
     citation: item.official_sources.map((source) => source.url).filter(Boolean)
   };
@@ -2289,12 +2300,12 @@ function updateSitemap(allItems, pages) {
   const sitemapPath = 'sitemap.xml';
   const byLoc = new Map();
 
-  // JA is the current primary public version. DE/EN placeholders are
-  // intentionally noindex until completed, so do not preserve or add unfinished
-  // language placeholders, redirect-only pages, or non-JA URLs to the sitemap.
+  // The domain root is the parent brand homepage and JA is the current primary
+  // public regional version. Do not preserve or add unfinished DE/EN language
+  // placeholders, redirect-only pages, or unrelated non-JA URLs.
   for (const page of pages.filter((entry) => entry.status === 'published' && entry.sitemap_visible === true)) {
     const loc = absoluteUrl(page.canonical_url || page.url);
-    if (!isCanonicalJaUrl(loc)) continue;
+    if (!isSitemapCanonicalUrl(loc)) continue;
     byLoc.set(loc, {
       loc,
       lastmod: page.lastmod || ''
@@ -2830,6 +2841,11 @@ function absoluteUrl(url) {
 function isCanonicalJaUrl(url) {
   const absolute = absoluteUrl(url);
   return absolute === `${SITE_ORIGIN}${PRIMARY_JA_PATH}` || absolute.startsWith(`${SITE_ORIGIN}${PRIMARY_JA_PATH}`);
+}
+
+function isSitemapCanonicalUrl(url) {
+  const absolute = absoluteUrl(url);
+  return absolute === absoluteUrl('/') || isCanonicalJaUrl(absolute);
 }
 
 function indent(value, spaces) {

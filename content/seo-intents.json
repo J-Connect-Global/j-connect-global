@@ -1,0 +1,68 @@
+[
+  {
+    "url": "/",
+    "primary_query": "J-Connect Global",
+    "title_terms": ["J-Connect Global"],
+    "content_terms": ["J-Connect Global", "ドイツ", "在住日本人"]
+  },
+  {
+    "url": "/germany/ja/",
+    "primary_query": "ドイツ 在住 日本人 生活",
+    "title_terms": ["J-Connect Germany", "ドイツ在住日本人", "生活", "掲示板", "求人"],
+    "content_terms": ["ドイツ", "在住日本人", "生活", "掲示板", "求人"]
+  },
+  {
+    "url": "/germany/ja/community/",
+    "primary_query": "ドイツ 在住 日本人 掲示板",
+    "title_terms": ["ドイツ在住日本人", "掲示板", "売買", "友達募集"],
+    "content_terms": ["売ります", "買います", "質問", "友達募集"]
+  },
+  {
+    "url": "/germany/ja/living/",
+    "primary_query": "ドイツ 生活 手続き",
+    "title_terms": ["ドイツ生活", "手続き", "住民登録", "保険", "子育て"],
+    "content_terms": ["住民登録", "住まい", "銀行", "健康保険", "税金"]
+  },
+  {
+    "url": "/germany/ja/jobs/",
+    "primary_query": "ドイツ 日本語 求人",
+    "title_terms": ["ドイツ", "日本語求人", "転職", "アルバイト"],
+    "content_terms": ["ドイツ", "求人", "日本語", "転職", "アルバイト"]
+  },
+  {
+    "url": "/germany/ja/jobs/guide/",
+    "primary_query": "ドイツ 仕事 探し方 応募",
+    "title_terms": ["ドイツ", "仕事", "応募", "ガイド"],
+    "content_terms": ["求人検索", "就労資格", "CV", "面接", "雇用条件"]
+  },
+  {
+    "url": "/germany/ja/events/",
+    "primary_query": "ドイツ 日本人 イベント",
+    "title_terms": ["ドイツ", "ニュース", "イベント", "NRW"],
+    "content_terms": ["ドイツ", "ニュース", "イベント", "交流会"]
+  },
+  {
+    "url": "/germany/ja/learn-german/",
+    "primary_query": "ドイツ語 生活 フレーズ",
+    "title_terms": ["ドイツ語学習", "実用フレーズ", "役所", "病院", "仕事"],
+    "content_terms": ["日常生活", "役所", "病院", "住まい", "仕事"]
+  },
+  {
+    "url": "/germany/ja/eat/",
+    "primary_query": "ドイツ 日本食 レストラン",
+    "title_terms": ["ドイツ", "日本食", "レストラン", "カフェ"],
+    "content_terms": ["日本食", "レストラン", "カフェ", "価格"]
+  },
+  {
+    "url": "/germany/ja/shopping/",
+    "primary_query": "デュッセルドルフ 日本食材 スーパー",
+    "title_terms": ["デュッセルドルフ", "日本食材", "スーパー", "サービス"],
+    "content_terms": ["日本食材", "スーパー", "買い物", "住所"]
+  },
+  {
+    "url": "/germany/ja/medical/",
+    "primary_query": "ドイツ 医療 緊急連絡先",
+    "title_terms": ["ドイツ", "医療", "112", "116117", "薬局"],
+    "content_terms": ["緊急", "112", "116117", "医師", "薬局"]
+  }
+]

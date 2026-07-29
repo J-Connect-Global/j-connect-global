@@ -3,22 +3,24 @@
     "id": "page-root",
     "title": "J-Connect Global",
     "url": "/",
-    "type": "utility",
-    "pillar": "utility",
-    "status": "redirect",
-    "canonical_url": "/germany/ja/",
+    "type": "home",
+    "pillar": "home",
+    "status": "published",
+    "canonical_url": "/",
     "nav_visible": false,
     "footer_visible": false,
     "search_visible": false,
-    "sitemap_visible": false,
+    "sitemap_visible": true,
     "legacy": false,
-    "redirect_target": "/germany/ja/",
-    "layout": "redirect",
-    "hero_type": "none",
-    "description": "J-Connect Global の日本語サイトへ移動するルートページです。",
+    "redirect_target": "",
+    "layout": "global-home",
+    "hero_type": "home",
+    "description": "J-Connect Global は、海外で暮らす日本人の生活情報、交流掲示板、仕事・求人、現地ニュース、語学学習を地域別に届ける情報プラットフォームです。",
+    "lastmod": "2026-07-28",
     "tags": [
       "J-Connect Global",
-      "日本語"
+      "J-Connect",
+      "海外在住日本人"
     ]
   },
   {
@@ -46,7 +48,7 @@
   },
   {
     "id": "page-community",
-    "title": "交流・掲示板",
+    "title": "ドイツ在住日本人の交流・生活掲示板",
     "url": "/germany/ja/community/",
     "type": "listing",
     "pillar": "community",
@@ -62,14 +64,15 @@
     "hero_type": "listing",
     "description": "ドイツ在住日本人向けの交流掲示板。売ります・買います、質問、友達募集、生活サポートの投稿を探せます。",
     "tags": [
-      "掲示板",
-      "コミュニティ",
-      "投稿"
+      "ドイツ掲示板",
+      "在住日本人",
+      "売買",
+      "友達募集"
     ]
   },
   {
     "id": "page-living",
-    "title": "生活・手続き",
+    "title": "ドイツ生活・手続きガイド",
     "url": "/germany/ja/living/",
     "type": "hub",
     "pillar": "living",
@@ -83,11 +86,12 @@
     "redirect_target": "",
     "layout": "hub",
     "hero_type": "hub",
-    "description": "ドイツ生活に必要な住民登録、住まい、銀行、保険、税金、家族、教育などの生活ガイドを整理したハブです。",
+    "description": "ドイツ生活に必要な住民登録、住まい、銀行、健康保険、税金、子育て、教育、観光の日本語ガイドを手続き別に整理しています。",
     "tags": [
-      "生活",
-      "手続き",
-      "ドイツ生活"
+      "ドイツ生活",
+      "ドイツ手続き",
+      "住民登録",
+      "健康保険"
     ]
   },
   {
@@ -253,7 +257,7 @@
   },
   {
     "id": "page-jobs",
-    "title": "仕事・求人",
+    "title": "ドイツの仕事・求人",
     "url": "/germany/ja/jobs/",
     "type": "listing",
     "pillar": "jobs",
@@ -269,14 +273,15 @@
     "hero_type": "listing",
     "description": "ドイツで働きたい日本語話者向けに、求人、転職、アルバイト、勤務形態、ビザサポートなどの仕事情報を整理しています。",
     "tags": [
-      "求人",
-      "仕事",
-      "転職"
+      "ドイツ求人",
+      "日本語求人",
+      "転職",
+      "アルバイト"
     ]
   },
   {
     "id": "page-events",
-    "title": "ニュース・イベント",
+    "title": "ドイツのニュース・イベント",
     "url": "/germany/ja/events/",
     "type": "hub",
     "pillar": "events",
@@ -299,7 +304,7 @@
   },
   {
     "id": "page-learn-german",
-    "title": "ドイツ語・学び",
+    "title": "ドイツ語学習・実用フレーズ",
     "url": "/germany/ja/learn-german/",
     "type": "hub",
     "pillar": "learn-german",
@@ -322,7 +327,7 @@
   },
   {
     "id": "page-eat",
-    "title": "食べる",
+    "title": "ドイツの日本食・レストラン",
     "url": "/germany/ja/eat/",
     "type": "directory",
     "pillar": "living",
@@ -336,11 +341,12 @@
     "redirect_target": "",
     "layout": "directory",
     "hero_type": "directory",
-    "description": "ドイツ生活で使える日本食、レストラン、カフェ、飲食店情報を探すディレクトリページです。",
+    "description": "ドイツで日本食レストラン、カフェ、飲食店をカテゴリや価格帯から探せる日本語ディレクトリです。",
     "tags": [
-      "食べる",
+      "ドイツ日本食",
       "日本食",
-      "レストラン"
+      "レストラン",
+      "カフェ"
     ]
   },
   {
@@ -359,16 +365,17 @@
     "redirect_target": "",
     "layout": "directory",
     "hero_type": "directory",
-    "description": "デュッセルドルフの公開済み買い物・サービス情報を、カテゴリと住所の目安から確認できるディレクトリページです。",
+    "description": "デュッセルドルフの日本食材、スーパー、買い物、暮らしに役立つサービスをカテゴリと住所から探せるディレクトリです。",
     "tags": [
-      "買い物",
-      "店舗",
-      "サービス"
+      "デュッセルドルフ",
+      "日本食材",
+      "スーパー",
+      "生活サービス"
     ]
   },
   {
     "id": "page-medical",
-    "title": "医療・緊急の公式案内",
+    "title": "ドイツの医療・緊急連絡先",
     "url": "/germany/ja/medical/",
     "type": "directory",
     "pillar": "living",
@@ -382,11 +389,12 @@
     "redirect_target": "",
     "layout": "directory",
     "hero_type": "directory",
-    "description": "ドイツで医療につながる際の緊急番号、診療時間外、医師・専門医、薬局の公式確認先をまとめた案内です。現在、公開中の医療機関ディレクトリはありません。",
+    "description": "ドイツの救急番号112、診療時間外116117、医師・専門医、薬局を探す公式確認先を日本語でまとめた医療案内です。",
     "tags": [
-      "医療",
-      "病院",
-      "緊急"
+      "ドイツ医療",
+      "緊急連絡先",
+      "112",
+      "116117"
     ]
   },
   {
@@ -481,7 +489,7 @@
   },
   {
     "id": "page-jobs-guide",
-    "title": "求職者向けガイド",
+    "title": "ドイツで仕事を探す・応募する実用ガイド",
     "url": "/germany/ja/jobs/guide/",
     "type": "utility",
     "pillar": "jobs",
@@ -489,17 +497,20 @@
     "canonical_url": "/germany/ja/jobs/guide/",
     "nav_visible": false,
     "footer_visible": false,
-    "search_visible": false,
-    "sitemap_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
     "legacy": false,
     "redirect_target": "",
     "layout": "utility",
     "hero_type": "utility",
-    "description": "ドイツで求人に応募する前に確認したい、応募書類・言語条件・面接準備の基本をまとめます。",
+    "description": "ドイツでの求人検索、就労資格、資格認定、CV・応募書類、面接、雇用条件の確認方法を公式情報とともに解説します。",
+    "lastmod": "2026-07-28",
     "tags": [
-      "求人",
-      "求職者",
-      "ガイド"
+      "ドイツ就職",
+      "求人検索",
+      "CV",
+      "応募",
+      "面接"
     ]
   },
   {

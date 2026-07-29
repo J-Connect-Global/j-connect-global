@@ -412,8 +412,12 @@ async function updateSearchIndex(siteDir, community, jobs) {
   if (!match) throw new Error("Copied search index has an unsupported format.");
   let entries;
   try { entries = JSON.parse(match[1]); } catch (error) { throw new Error(`Copied search index is invalid: ${error.message}`); }
-  const dynamicPrefixes = ["/germany/ja/community/posts/", "/germany/ja/jobs/"];
-  entries = entries.filter((entry) => !dynamicPrefixes.some((prefix) => text(entry.url).startsWith(prefix)));
+  entries = entries.filter((entry) => {
+    const url = text(entry.url);
+    if (url.startsWith("/germany/ja/community/posts/")) return false;
+    if (/^\/germany\/ja\/jobs\/[^/]+\/$/.test(url) && !staticJobsPublicPaths.has(url)) return false;
+    return true;
+  });
   for (const post of community) {
     entries.push({ title: text(post.title), description: compact(post.summary || post.body, 240), url: post.detail_url, category: "交流・掲示板", tags: [post.category1, post.category2, post.city, post.region].map(text).filter(Boolean) });
   }
@@ -451,12 +455,16 @@ function renderSitemap(entries) {
 // The source sitemap owns static registry and article pages. This artifact-only
 // pass removes mutable detail routes from a prior build, then adds the current
 // indexable Jobs details. Keep a future static Jobs child route explicit here.
-const staticJobsSitemapPaths = new Set(["/germany/ja/jobs/posting/"]);
+const staticJobsPublicPaths = new Set([
+  "/germany/ja/jobs/",
+  "/germany/ja/jobs/posting/",
+  "/germany/ja/jobs/guide/"
+]);
 
 function isGeneratedDetailSitemapEntry(url) {
   const pathname = new URL(url).pathname;
   if (/^\/germany\/ja\/community\/posts\/[^/]+\/$/.test(pathname)) return true;
-  return /^\/germany\/ja\/jobs\/[^/]+\/$/.test(pathname) && !staticJobsSitemapPaths.has(pathname);
+  return /^\/germany\/ja\/jobs\/[^/]+\/$/.test(pathname) && !staticJobsPublicPaths.has(pathname);
 }
 
 function mergeSitemapEntries(staticEntries, indexableJobEntries) {

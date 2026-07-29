@@ -9,7 +9,7 @@ const SITE_ORIGIN = "https://j-connect-global.com";
 const requiredOg = ["og:title", "og:description", "og:url", "og:image", "og:type", "og:site_name", "og:locale"];
 const requiredTwitter = ["twitter:card", "twitter:title", "twitter:description", "twitter:image"];
 
-// Add an entry only for an intentional, indexable JA canonical URL that must
+// Add an entry only for an intentional, indexable production canonical URL that must
 // stay out of the sitemap. The value is the reviewable reason; stale or broad
 // exclusions fail validation below. There are no such exceptions today.
 export const SITEMAP_EXCLUSIONS = new Map();
@@ -66,7 +66,8 @@ function parseSitemapEntries(xml) {
 function parseProductionSitemapUrl(value) {
   try {
     const url = new URL(value);
-    if (url.origin !== SITE_ORIGIN || url.search || url.hash || !url.pathname.startsWith("/germany/ja/")) return null;
+    const allowedPath = url.pathname === "/" || url.pathname.startsWith("/germany/ja/");
+    if (url.origin !== SITE_ORIGIN || url.search || url.hash || !allowedPath) return null;
     return url;
   } catch {
     return null;
@@ -135,22 +136,22 @@ function sitemapCompletenessProblems(byUrl, sitemapUrls, siteDir) {
   const indexableCanonicalUrls = new Set();
   for (const { file, html } of byUrl.values()) {
     const route = urlForFile(siteDir, file);
-    if (!route.startsWith("/germany/ja/") || !isIndexFollow(metaValue(html, "name", "robots"))) continue;
+    if ((route !== "/" && !route.startsWith("/germany/ja/")) || !isIndexFollow(metaValue(html, "name", "robots"))) continue;
     const canonical = canonicalValue(html);
     if (!parseProductionSitemapUrl(canonical)) {
-      errors.push(`${path.relative(siteDir, file).split(path.sep).join("/")}: index, follow JA page needs a production JA canonical URL.`);
+      errors.push(`${path.relative(siteDir, file).split(path.sep).join("/")}: index, follow page needs an allowed production canonical URL.`);
       continue;
     }
     indexableCanonicalUrls.add(canonical);
     if (!sitemapUrls.has(canonical) && !SITEMAP_EXCLUSIONS.has(canonical)) {
-      errors.push(`${path.relative(siteDir, file).split(path.sep).join("/")}: canonical index, follow JA URL is missing from sitemap.xml: ${canonical}`);
+      errors.push(`${path.relative(siteDir, file).split(path.sep).join("/")}: canonical index, follow URL is missing from sitemap.xml: ${canonical}`);
     }
   }
   for (const [canonical, reason] of SITEMAP_EXCLUSIONS) {
-    if (!parseProductionSitemapUrl(canonical)) errors.push(`Sitemap exclusion has an invalid canonical JA URL: ${canonical}`);
+    if (!parseProductionSitemapUrl(canonical)) errors.push(`Sitemap exclusion has an invalid production canonical URL: ${canonical}`);
     if (!String(reason || "").trim()) errors.push(`Sitemap exclusion is missing a documented reason: ${canonical}`);
     if (sitemapUrls.has(canonical)) errors.push(`Sitemap exclusion is redundant because the URL is present in sitemap.xml: ${canonical}`);
-    if (!indexableCanonicalUrls.has(canonical)) errors.push(`Sitemap exclusion is stale because no indexable canonical JA page uses it: ${canonical}`);
+    if (!indexableCanonicalUrls.has(canonical)) errors.push(`Sitemap exclusion is stale because no indexable canonical page uses it: ${canonical}`);
   }
   return { errors, indexableCanonicalUrls };
 }
@@ -259,7 +260,7 @@ export async function validateProductionSeo({ siteDir = path.join(rootDir, "_sit
   for (const url of sitemapUrls) {
     const parsed = parseProductionSitemapUrl(url);
     if (!parsed) {
-      errors.push(`sitemap.xml contains an invalid production JA URL: ${url}.`);
+      errors.push(`sitemap.xml contains an invalid production URL: ${url}.`);
       continue;
     }
     const file = localFileForUrl(siteDir, url);
@@ -282,7 +283,7 @@ export async function validateProductionSeo({ siteDir = path.join(rootDir, "_sit
   return {
     html_files: files.length,
     sitemap_urls: sitemapUrls.length,
-    indexable_ja_pages: completeness.indexableCanonicalUrls.size,
+    indexable_pages: completeness.indexableCanonicalUrls.size,
     sitemap_exclusions: SITEMAP_EXCLUSIONS.size,
     indexable_jobs: jobs.indexableJobs,
     errors
@@ -294,7 +295,7 @@ export function seoMarkdown(result) {
     "## Production SEO and accessibility regression",
     "",
     `- ${result.html_files} generated HTML files checked; ${result.sitemap_urls} sitemap URLs checked.`,
-    `- ${result.indexable_ja_pages} canonical indexable JA pages accounted for; ${result.sitemap_exclusions} explicit sitemap exclusions; ${result.indexable_jobs} generated indexable Jobs checked.`,
+    `- ${result.indexable_pages} canonical indexable pages accounted for; ${result.sitemap_exclusions} explicit sitemap exclusions; ${result.indexable_jobs} generated indexable Jobs checked.`,
     `- ${result.errors.length ? "[FAIL]" : "[PASS]"} canonical, robots, metadata, H1, JSON-LD, image alt, and responsive-image checks.`
   ];
   if (result.errors.length) lines.push("", ...result.errors.map((error) => `- [FAIL] ${error}`));

@@ -60,12 +60,22 @@ async function createFixture() {
 </body></html>`;
   await mkdir(path.join(siteDir, "germany", "ja", "community"), { recursive: true });
   await mkdir(path.join(siteDir, "germany", "ja", "jobs"), { recursive: true });
+  await mkdir(path.join(siteDir, "germany", "ja", "jobs", "guide"), { recursive: true });
   await writeFile(path.join(siteDir, "germany", "ja", "community", "index.html"), layout, "utf8");
   await writeFile(path.join(siteDir, "germany", "ja", "jobs", "index.html"), layout, "utf8");
+  await writeFile(path.join(siteDir, "germany", "ja", "jobs", "guide", "index.html"), "<!doctype html><meta name=\"robots\" content=\"index, follow\"><h1>Guide</h1>", "utf8");
   await writeFile(path.join(siteDir, "index.html"), "<!doctype html><meta name=robots content='index, follow'><h1>Home</h1>", "utf8");
   await mkdir(path.join(siteDir, "assets", "js"), { recursive: true });
-  await writeFile(path.join(siteDir, "assets", "js", "search-index.js"), "window.JCONNECT_SEARCH_INDEX = [];\n", "utf8");
-  await writeFile(path.join(siteDir, "sitemap.xml"), "<?xml version=\"1.0\"?><urlset><url><loc>https://j-connect-global.com/</loc><lastmod>2026-07-01</lastmod></url></urlset>\n", "utf8");
+  await writeFile(
+    path.join(siteDir, "assets", "js", "search-index.js"),
+    'window.JCONNECT_SEARCH_INDEX = [{"title":"Guide","url":"/germany/ja/jobs/guide/"}];\n',
+    "utf8"
+  );
+  await writeFile(
+    path.join(siteDir, "sitemap.xml"),
+    "<?xml version=\"1.0\"?><urlset><url><loc>https://j-connect-global.com/</loc><lastmod>2026-07-01</lastmod></url><url><loc>https://j-connect-global.com/germany/ja/jobs/guide/</loc><lastmod>2026-07-16</lastmod></url></urlset>\n",
+    "utf8"
+  );
   return siteDir;
 }
 
@@ -96,7 +106,10 @@ async function assertProductionArtifact(siteDir) {
   const sourceEntries = sitemapEntries(await readFile(path.join(rootDir, "sitemap.xml"), "utf8"));
   for (const entry of sourceEntries) {
     const route = new URL(entry.loc).pathname;
-    if (/^\/germany\/ja\/jobs\/[^/]+\/$/.test(route) && route !== "/germany/ja/jobs/posting/") continue;
+    if (
+      /^\/germany\/ja\/jobs\/[^/]+\/$/.test(route)
+      && !["/germany/ja/jobs/posting/", "/germany/ja/jobs/guide/"].includes(route)
+    ) continue;
     assert.deepEqual(sitemapEntry(entries, entry.loc), entry, `artifact must preserve static sitemap entry ${entry.loc}`);
   }
   const notFound = await readFile(path.join(siteDir, "404.html"), "utf8");
@@ -209,8 +222,14 @@ async function runFixtureTests() {
     assert.deepEqual(sitemapEntry(entries, "https://j-connect-global.com/"), { loc: "https://j-connect-global.com/", lastmod: "2026-07-01" });
     assert.deepEqual(
       entries.filter((entry) => entry.loc.startsWith("https://j-connect-global.com/germany/ja/jobs/")).map((entry) => entry.loc),
-      ["https://j-connect-global.com/germany/ja/jobs/job-incomplete/", "https://j-connect-global.com/germany/ja/jobs/job-safe/"]
+      [
+        "https://j-connect-global.com/germany/ja/jobs/guide/",
+        "https://j-connect-global.com/germany/ja/jobs/job-incomplete/",
+        "https://j-connect-global.com/germany/ja/jobs/job-safe/"
+      ]
     );
+    const searchIndex = await readFile(path.join(siteDir, "assets", "js", "search-index.js"), "utf8");
+    assert.match(searchIndex, /"url": "\/germany\/ja\/jobs\/guide\/"/);
     assert.equal(sitemapEntry(entries, "https://j-connect-global.com/germany/ja/jobs/job-safe/")?.lastmod, "2026-07-11");
     assert.equal(sitemapEntry(entries, "https://j-connect-global.com/germany/ja/jobs/job-incomplete/")?.lastmod, "2026-07-11");
     assert.equal(sitemapEntry(entries, "https://j-connect-global.com/germany/ja/jobs/job-future/"), undefined);

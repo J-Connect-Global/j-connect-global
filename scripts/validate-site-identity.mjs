@@ -1,7 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { SITE_IDENTITY, SERVICE_NAME, PARENT_BRAND_NAME } from "./site-identity.mjs";
+import {
+  SITE_IDENTITY,
+  SERVICE_NAME,
+  PARENT_BRAND_NAME,
+  SITE_ORIGIN
+} from "./site-identity.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const siteDirIndex = process.argv.indexOf("--site-dir");
@@ -45,12 +50,26 @@ for (const file of jaFiles) {
   }
 }
 
-const home = fs.readFileSync(path.join(siteRoot, "germany/ja/index.html"), "utf8");
-if (!home.includes(`"@type": "WebSite"`) || !home.includes(`"name": "${SERVICE_NAME}"`)) {
-  problems.push("Home WebSite structured data does not use the Germany service name.");
+const rootHome = fs.readFileSync(path.join(siteRoot, "index.html"), "utf8");
+if (!rootHome.includes(`"@type": "WebSite"`) || !rootHome.includes(`"name": "${PARENT_BRAND_NAME}"`)) {
+  problems.push("Domain-root WebSite structured data does not use the parent brand name.");
 }
-if (!home.includes(`"name": "${PARENT_BRAND_NAME}"`)) {
-  problems.push("Home structured data does not identify the parent brand.");
+if (!rootHome.includes(`"@type": "Organization"`) || !rootHome.includes(`${SITE_ORIGIN}/#organization`)) {
+  problems.push("Domain-root structured data does not identify the parent organization.");
+}
+if (!rootHome.includes(`<meta property="og:site_name" content="${PARENT_BRAND_NAME}">`)) {
+  problems.push("Domain-root og:site_name does not use the parent brand name.");
+}
+
+const germanyHome = fs.readFileSync(path.join(siteRoot, "germany/ja/index.html"), "utf8");
+if (!germanyHome.includes(`"@type": "WebPage"`) || !germanyHome.includes(`"name": "${SERVICE_NAME}`)) {
+  problems.push("Germany home structured data does not identify the regional WebPage.");
+}
+if (!germanyHome.includes(`${SITE_ORIGIN}/#website`) || !germanyHome.includes(`${SITE_ORIGIN}/#organization`)) {
+  problems.push("Germany home structured data does not reference the root WebSite and organization.");
+}
+if (germanyHome.includes(`"@type": "WebSite"`)) {
+  problems.push("Germany subdirectory home must not declare a second WebSite entity.");
 }
 
 if (problems.length) {

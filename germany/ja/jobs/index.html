@@ -730,8 +730,13 @@
           <h2 class="results-title" id="jobListingsTitle">求人一覧</h2>
           <p class="results-sub">勤務地、雇用形態、言語条件などを確認しながら求人を探せます。</p>
           <p class="results-sub">新しい順は、最終更新日、更新日、掲載日、作成日の順で判定します。</p>
-          <div class="results-sub" id="resultsSummary" aria-live="polite">公開中の求人を一覧で確認できます。</div>
-          <p class="jobs-data-updated" id="jobsDataUpdated">データ最終更新: 読み込み中</p>
+          <div class="results-sub" id="resultsSummary" aria-live="polite"><!-- PUBLIC-SNAPSHOT:jobs-summary:start -->
+公開中の求人を4件表示しています。
+<!-- PUBLIC-SNAPSHOT:jobs-summary:end --></div>
+          <p class="jobs-data-updated" id="jobsDataUpdated"><!-- PUBLIC-SNAPSHOT:jobs-updated:start -->
+データ最終更新: 2026.07.16
+<!-- PUBLIC-SNAPSHOT:jobs-updated:end --></p>
+          <noscript><p class="jobs-data-updated">全公開求人を表示しています。検索・絞り込み・保存機能には JavaScript が必要です。</p></noscript>
         </div>
         <div class="jobs-results-controls" id="jobsResultsControls" aria-label="求人一覧の表示条件">
           <button class="jobs-result-control" id="savedOnlyBtn" type="button" aria-pressed="false">保存済</button>
@@ -741,7 +746,100 @@
       </div>
 
       <div id="cards" class="cards jc-result-grid" aria-live="polite">
-        <div class="jobs-list-loading" role="status">求人情報を読み込んでいます。</div>
+        <!-- PUBLIC-SNAPSHOT:jobs-list:start -->
+        <article class="card job-card jobs-card jc-result-card active" data-id="a" data-public-snapshot-item="jobs">
+          <button class="save-button" type="button" data-save-id="a" aria-label="保存する">☆</button>
+          <div class="job-card-body">
+            <div class="job-main">
+              <h3 class="job-title jobs-card-title jc-result-title">会計アシスタント（Japanese Desk）</h3>
+              <div class="jobs-card-company">A社 (求人サンプル)</div>
+              <p class="job-summary jobs-card-summary">日系クライアント向けの会計補助、月次処理サポート、文書翻訳を担当。</p>
+            </div>
+            <div class="job-side">
+              <div class="jobs-card-meta jc-result-meta">
+                <div class="jobs-card-meta-item"><span class="jobs-card-meta-label">勤務地</span><span class="jobs-card-meta-value">ハンブルク</span></div>
+                <div class="jobs-card-meta-item"><span class="jobs-card-meta-label">雇用形態</span><span class="jobs-card-meta-value">インターン</span></div>
+
+
+
+                <div class="jobs-card-meta-item"><span class="jobs-card-meta-label">給与</span><span class="jobs-card-meta-value">給与額 41,000–48,000 EUR（支給期間は各求人で確認）</span></div>
+              </div>
+              <div class="job-chip-row jobs-card-pill-row"><span class="job-chip primary">インターン</span></div>
+              <div class="jobs-card-date">更新 2026.07.12</div>
+            </div>
+            <div class="job-card-actions jc-result-actions"><a class="card-action primary" href="/germany/ja/jobs/a/" data-detail-page-link="a">詳細を見る</a></div>
+          </div>
+        </article>
+        <article class="card job-card jobs-card jc-result-card" data-id="b" data-public-snapshot-item="jobs">
+          <button class="save-button" type="button" data-save-id="b" aria-label="保存する">☆</button>
+          <div class="job-card-body">
+            <div class="job-main">
+              <h3 class="job-title jobs-card-title jc-result-title">物流オペレーション担当</h3>
+              <div class="jobs-card-company">B社 (求人サンプル)</div>
+              <p class="job-summary jobs-card-summary">倉庫・輸送管理、日系顧客対応。</p>
+            </div>
+            <div class="job-side">
+              <div class="jobs-card-meta jc-result-meta">
+                <div class="jobs-card-meta-item"><span class="jobs-card-meta-label">勤務地</span><span class="jobs-card-meta-value">デュッセルドルフ</span></div>
+                <div class="jobs-card-meta-item"><span class="jobs-card-meta-label">雇用形態</span><span class="jobs-card-meta-value">正社員</span></div>
+
+
+
+                <div class="jobs-card-meta-item"><span class="jobs-card-meta-label">給与</span><span class="jobs-card-meta-value">給与額 48,000–60,000 EUR（支給期間は各求人で確認）</span></div>
+              </div>
+              <div class="job-chip-row jobs-card-pill-row"><span class="job-chip primary">正社員</span></div>
+              <div class="jobs-card-date">更新 2026.07.12</div>
+            </div>
+            <div class="job-card-actions jc-result-actions"><a class="card-action primary" href="/germany/ja/jobs/b/" data-detail-page-link="b">詳細を見る</a></div>
+          </div>
+        </article>
+        <article class="card job-card jobs-card jc-result-card" data-id="c" data-public-snapshot-item="jobs">
+          <button class="save-button" type="button" data-save-id="c" aria-label="保存する">☆</button>
+          <div class="job-card-body">
+            <div class="job-main">
+              <h3 class="job-title jobs-card-title jc-result-title">サポートエンジニア</h3>
+              <div class="jobs-card-company">C社 (求人サンプル)</div>
+              <p class="job-summary jobs-card-summary">ITサポート業務。</p>
+            </div>
+            <div class="job-side">
+              <div class="jobs-card-meta jc-result-meta">
+                <div class="jobs-card-meta-item"><span class="jobs-card-meta-label">勤務地</span><span class="jobs-card-meta-value">デュッセルドルフ</span></div>
+                <div class="jobs-card-meta-item"><span class="jobs-card-meta-label">雇用形態</span><span class="jobs-card-meta-value">正社員</span></div>
+
+
+
+                <div class="jobs-card-meta-item"><span class="jobs-card-meta-label">給与</span><span class="jobs-card-meta-value">給与額 48,000–60,000 EUR（支給期間は各求人で確認）</span></div>
+              </div>
+              <div class="job-chip-row jobs-card-pill-row"><span class="job-chip primary">正社員</span></div>
+              <div class="jobs-card-date">更新 2026.07.12</div>
+            </div>
+            <div class="job-card-actions jc-result-actions"><a class="card-action primary" href="/germany/ja/jobs/c/" data-detail-page-link="c">詳細を見る</a></div>
+          </div>
+        </article>
+        <article class="card job-card jobs-card jc-result-card" data-id="d" data-public-snapshot-item="jobs">
+          <button class="save-button" type="button" data-save-id="d" aria-label="保存する">☆</button>
+          <div class="job-card-body">
+            <div class="job-main">
+              <h3 class="job-title jobs-card-title jc-result-title">営業担当（食品）</h3>
+              <div class="jobs-card-company">D社 (求人サンプル)</div>
+              <p class="job-summary jobs-card-summary">食品営業。</p>
+            </div>
+            <div class="job-side">
+              <div class="jobs-card-meta jc-result-meta">
+                <div class="jobs-card-meta-item"><span class="jobs-card-meta-label">勤務地</span><span class="jobs-card-meta-value">フランクフルト</span></div>
+                <div class="jobs-card-meta-item"><span class="jobs-card-meta-label">雇用形態</span><span class="jobs-card-meta-value">正社員</span></div>
+
+
+
+                <div class="jobs-card-meta-item"><span class="jobs-card-meta-label">給与</span><span class="jobs-card-meta-value">給与額 50,000–65,000 EUR（支給期間は各求人で確認）</span></div>
+              </div>
+              <div class="job-chip-row jobs-card-pill-row"><span class="job-chip primary">正社員</span></div>
+              <div class="jobs-card-date">更新 2026.07.12</div>
+            </div>
+            <div class="job-card-actions jc-result-actions"><a class="card-action primary" href="/germany/ja/jobs/d/" data-detail-page-link="d">詳細を見る</a></div>
+          </div>
+        </article>
+<!-- PUBLIC-SNAPSHOT:jobs-list:end -->
       </div>
       <div id="emptyBox" class="empty-box jc-empty-state" role="status" hidden></div>
     </section>
@@ -1271,9 +1369,14 @@
 
     function setJobsLoading(){
       setPublicEmptyMode(false);
+      const hasSnapshot = Boolean(els.cards.querySelector('[data-public-snapshot-item="jobs"]'));
+      els.cards.setAttribute('aria-busy', 'true');
+      if (hasSnapshot) {
+        els.emptyBox.hidden = true;
+        return;
+      }
       els.resultsSummary.textContent = '読み込み中...';
       els.jobsDataUpdated.textContent = 'データ最終更新: 読み込み中';
-      els.cards.setAttribute('aria-busy', 'true');
       els.emptyBox.hidden = false;
       els.emptyBox.className = 'empty-box jc-loading-state';
       UI.renderDataState(els.emptyBox, 'loading', {
@@ -1329,6 +1432,14 @@
 
       } catch (error) {
         console.warn('Jobs data load failed:', JOBS_STATIC_URL, error);
+
+        if (els.cards.querySelector('[data-public-snapshot-item="jobs"]')) {
+          els.cards.setAttribute('aria-busy', 'false');
+          els.resultsSummary.textContent = '保存済みの公開データを表示中';
+          els.emptyBox.hidden = true;
+          scrollToCurrentHash();
+          return;
+        }
 
         jobs = [];
         filtered = [];

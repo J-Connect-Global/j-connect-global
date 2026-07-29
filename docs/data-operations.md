@@ -5,7 +5,7 @@ This repository publishes a static GitHub Pages site. Generated HTML and JSON ar
 ## Source Of Truth
 
 - Editorial articles: `content/living/*.md`, `content/events/*.md`, `content/learn-german/*.md`, plus the matching `content/registry/*.json` files.
-- Generated article HTML, hub grids, Home article cards, `sitemap.xml`, and `assets/js/search-index.js`: output from `node scripts/build-content.mjs`.
+- Generated article HTML, hub grids, Home article cards, crawler-first Jobs/Community list snapshots, `sitemap.xml`, and `assets/js/search-index.js`: output from `node scripts/build-content.mjs`.
 - Shared Japanese header/footer, canonical social metadata, robots normalization, and registry page JSON-LD: output from `node scripts/apply-layout.mjs`.
 - Jobs: source spreadsheet or GAS -> scheduled/manual sync -> sanitized `assets/data/jobs/jobs.json` -> Home/list/detail UI.
 - Community: source spreadsheet or GAS -> scheduled/manual sync -> sanitized `assets/data/community/posts.json` -> Home/list/detail UI.
@@ -36,8 +36,9 @@ This repository publishes a static GitHub Pages site. Generated HTML and JSON ar
 - The scheduled public-data workflow resolves the Master GAS deployment from `assets/js/data-sources.js` and uses that one endpoint for Community and Jobs. Dataset-specific endpoint secrets are intentionally unsupported so a legacy deployment cannot override the Master source.
 - When the sync creates a data commit, the Pages job must check out the sync action's exact `commit_hash`; deploying the workflow trigger SHA can publish the previous JSON revision.
 - Jobs date display and sorting must use existing fields in this order: `last_modified_at`, `updated_at`, `published_at` / `posted_at`, then `created_at`. Do not copy `created_at` into `published_at`; keep the labels distinct in the UI.
-- Static seed/guidance cards are not public listings. They explain how to evaluate a directory or listing while runtime data loads.
-- GAS/runtime data may replace static guidance when available, but generated output and any static fallback changes must be committed before merge.
+- Jobs and Community initial HTML is generated from the same committed sanitized JSON used by the browser. `scripts/render-public-list-snapshots.mjs` reuses each dataset's existing lifecycle policy, emits normal canonical detail links, keeps the Home Jobs limit at four, and fails before rendering if the public payload contains a forbidden private field.
+- Browser JavaScript progressively replaces those snapshots after the same-origin JSON loads. If that request fails, it must retain the generated snapshot instead of replacing useful public content with a loading or error-only state.
+- Static seed/guidance cards on other directory surfaces are not public listings. They explain how to evaluate a directory while runtime data loads.
 - Keep live production checks manual-only; normal PR validation must not depend on network availability.
 - Treat live production parity as a post-merge check after the `Deploy GitHub Pages` workflow finishes for `main`.
 - Every Pages artifact includes `/deployment-manifest.json`. After deployment, the workflow reads that file and compares its full SHA with the requested `main` SHA, so a stale Pages artifact fails directly instead of relying on visual markers.

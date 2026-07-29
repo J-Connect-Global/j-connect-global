@@ -1,6 +1,8 @@
 import { expect, test } from "@playwright/test";
 import {
   activateDarkMode,
+  activeCommunityPosts,
+  activeJobs,
   assertCommunityCards,
   assertArticleHeroFrame,
   assertNoHorizontalOverflow,
@@ -77,6 +79,32 @@ test("mobile Jobs renders all active records without overflow", async ({ page })
   await openDataRoute(page, "/germany/ja/jobs/", "/assets/data/jobs/jobs.json");
   await assertPublicJobs(page);
   await assertRouteReady(page);
+});
+
+test("mobile crawler-first lists remain readable without JavaScript", async ({ browser }, testInfo) => {
+  const width = testInfo.project.name === "tablet-chromium" ? 768 : 360;
+  const height = testInfo.project.name === "tablet-chromium" ? 1024 : 800;
+  const context = await browser.newContext({
+    baseURL: testInfo.project.use.baseURL,
+    javaScriptEnabled: false,
+    locale: "ja-JP",
+    viewport: { width, height },
+    hasTouch: true
+  });
+  const page = await context.newPage();
+  try {
+    await page.goto("/germany/ja/jobs/", { waitUntil: "load" });
+    await expect(page.locator("#cards [data-public-snapshot-item='jobs']")).toHaveCount(activeJobs.length);
+    await expect(page.locator("#cards")).not.toContainText("読み込んでいます");
+    await assertNoHorizontalOverflow(page);
+
+    await page.goto("/germany/ja/community/", { waitUntil: "load" });
+    await expect(page.locator("#cards [data-public-snapshot-item='community']")).toHaveCount(activeCommunityPosts.length);
+    await expect(page.locator("#cards")).not.toContainText("読み込んでいます");
+    await assertNoHorizontalOverflow(page);
+  } finally {
+    await context.close();
+  }
 });
 
 test("mobile article hero frame remains a readable 16:9 crop", async ({ page }) => {

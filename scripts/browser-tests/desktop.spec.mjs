@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 import {
   activateDarkMode,
   activeCommunityPosts,
+  activeJobs,
   communityFixture,
   assertCommunityCards,
   assertDirectoryModalKeyboard,
@@ -90,6 +91,83 @@ test("home renders no more than four active Jobs and can activate dark mode", as
   await assertRouteReady(page);
 });
 
+test("crawler-first snapshots remain readable and canonical without JavaScript", async ({ browser }, testInfo) => {
+  const context = await browser.newContext({
+    baseURL: testInfo.project.use.baseURL,
+    javaScriptEnabled: false,
+    locale: "ja-JP",
+    viewport: { width: 1440, height: 1000 }
+  });
+  const page = await context.newPage();
+  try {
+    await page.goto("/germany/ja/", { waitUntil: "load" });
+    await expect(page.locator("#homeJobsCards [data-public-snapshot-item='jobs']")).toHaveCount(Math.min(activeJobs.length, 4));
+    await expect(page.locator("#homeCommunityCards [data-public-snapshot-item='community']")).toHaveCount(Math.min(activeCommunityPosts.length, 5));
+    await expect(page.locator("#homeJobsCards")).not.toContainText("読み込んでいます");
+    await expect(page.locator("#homeCommunityCards")).not.toContainText("読み込んでいます");
+
+    await page.goto("/germany/ja/jobs/", { waitUntil: "load" });
+    const jobCards = page.locator("#cards [data-public-snapshot-item='jobs']");
+    await expect(jobCards).toHaveCount(activeJobs.length);
+    await expect(page.locator("#cards")).not.toContainText("読み込んでいます");
+    await expect(jobCards.first().locator("a[href]")).toHaveAttribute("href", activeJobs[0].detail_url);
+    await assertNoHorizontalOverflow(page);
+
+    await page.goto("/germany/ja/community/", { waitUntil: "load" });
+    const communityCards = page.locator("#cards [data-public-snapshot-item='community']");
+    await expect(communityCards).toHaveCount(activeCommunityPosts.length);
+    await expect(page.locator("#cards")).not.toContainText("読み込んでいます");
+    await expect(communityCards.first().locator(".card-link")).toHaveAttribute("href", activeCommunityPosts[0].detail_url);
+    await communityCards.first().locator(".card-link").click();
+    await expect(page).toHaveURL(new RegExp(`${activeCommunityPosts[0].detail_url.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`));
+    await expect(page.locator(".public-detail-page h1")).toHaveText(activeCommunityPosts[0].title);
+  } finally {
+    await context.close();
+  }
+});
+
+test("public JSON failures retain the generated snapshots", async ({ page }) => {
+  await page.route("**/assets/data/community/posts.json", (route) => route.abort());
+  await page.route("**/assets/data/jobs/jobs.json", (route) => route.abort());
+
+  await openRoute(page, "/germany/ja/");
+  await expect(page.locator("#homeJobsCards [data-public-snapshot-item='jobs']")).toHaveCount(Math.min(activeJobs.length, 4));
+  await expect(page.locator("#homeCommunityCards [data-public-snapshot-item='community']")).toHaveCount(Math.min(activeCommunityPosts.length, 5));
+
+  await openRoute(page, "/germany/ja/jobs/");
+  await expect(page.locator("#cards [data-public-snapshot-item='jobs']")).toHaveCount(activeJobs.length);
+  await expect(page.locator("#resultsSummary")).toHaveText("保存済みの公開データを表示中");
+  await expect(page.locator("#emptyBox")).toBeHidden();
+
+  await openRoute(page, "/germany/ja/community/");
+  await expect(page.locator("#cards [data-public-snapshot-item='community']")).toHaveCount(activeCommunityPosts.length);
+  await expect(page.locator("#resultText")).toHaveText("保存済みの公開データを表示中");
+  await expect(page.locator("#emptyState")).toBeHidden();
+});
+
+test("Jobs runtime does not restore an expired public-data record", async ({ page }) => {
+  const expired = {
+    ...activeJobs[0],
+    id: "expired-runtime-fixture",
+    job_id: "expired-runtime-fixture",
+    detail_url: "/germany/ja/jobs/expired-runtime-fixture/",
+    expires_at: "2026-07-01T00:00:00.000Z",
+    updated_at: "2026-07-28T00:00:00.000Z"
+  };
+  await page.route("**/assets/data/jobs/jobs.json", (route) => route.fulfill({
+    body: JSON.stringify({
+      ...jobsFixture,
+      count: jobsFixture.items.length + 1,
+      items: [...jobsFixture.items, expired]
+    }),
+    contentType: "application/json",
+    status: 200
+  }));
+  await openDataRoute(page, "/germany/ja/jobs/", "/assets/data/jobs/jobs.json");
+  await assertPublicJobs(page, activeJobs);
+  await expect(page.locator('[data-id="expired-runtime-fixture"]')).toHaveCount(0);
+});
+
 test("Home uses modern responsive hero and bounded Community thumbnail delivery", async ({ page }) => {
   const heroRequests = [];
   const driveRequests = [];
@@ -148,11 +226,17 @@ test("Home uses modern responsive hero and bounded Community thumbnail delivery"
   for (const image of await noImageImages.all()) {
     await expect(image).toHaveAttribute("src", /\/assets\/img\/placeholders\/jconnect-default-card\.webp$/);
   }
-  expect(new Set(driveRequests).size).toBe(2);
-  expect(driveRequests).toEqual(expect.arrayContaining([
+  const uniqueDriveRequests = [...new Set(driveRequests)];
+  expect(uniqueDriveRequests.length).toBeGreaterThanOrEqual(2);
+  expect(uniqueDriveRequests.length).toBeLessThanOrEqual(activeCommunityPosts.length * 2);
+  expect(uniqueDriveRequests).toEqual(expect.arrayContaining([
     expect.stringMatching(/[?&]sz=w128(?:&|$)/),
     expect.stringMatching(/[?&]sz=w480(?:&|$)/)
   ]));
+  for (const requestUrl of uniqueDriveRequests) {
+    expect(requestUrl).toMatch(/[?&]sz=w(?:128|480)(?:&|$)/);
+    expect(requestUrl).not.toMatch(/[?&]sz=w1200(?:&|$)/);
+  }
   await assertRouteReady(page);
 });
 

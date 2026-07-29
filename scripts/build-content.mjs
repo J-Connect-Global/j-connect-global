@@ -11,6 +11,7 @@ import {
   SITE_ORIGIN,
   PRIMARY_JA_PATH
 } from './site-identity.mjs';
+import { renderPublicListSnapshots } from './render-public-list-snapshots.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE_NAME = SERVICE_NAME;
@@ -234,8 +235,9 @@ function main() {
   updateHome(datasets);
   updateSearchIndex(allItems, pages);
   updateSitemap(allItems, pages);
+  const publicSnapshots = renderPublicListSnapshots();
 
-  console.log(`Content build complete: ${allItems.filter((item) => item.published).length} published article pages processed.`);
+  console.log(`Content build complete: ${allItems.filter((item) => item.published).length} published article pages processed; ${publicSnapshots.community.length} Community and ${publicSnapshots.jobs.length} Jobs snapshot items rendered.`);
 }
 
 function loadContentType(type) {

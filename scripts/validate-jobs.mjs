@@ -32,7 +32,9 @@ function isValidSalary(value) {
 }
 
 function isActiveJob(job) {
-  return clean(job.status).toLowerCase() === "active";
+  const expiresAt = clean(job.expires_at);
+  const expired = expiresAt && isValidDate(expiresAt) && Date.parse(expiresAt) <= Date.now();
+  return clean(job.status).toLowerCase() === "active" && !expired;
 }
 
 function validateRows(items, sourceName, publicCache = false) {
@@ -58,7 +60,7 @@ function validateRows(items, sourceName, publicCache = false) {
       if (!isValidSalary(job[field])) problems.push(`${label} has invalid ${field}.`);
     }
     if (publicCache && !isActiveJob(job)) {
-      problems.push(`${label} appears in public JSON but status is not active.`);
+      problems.push(`${label} appears in public JSON but is not active or has expired.`);
     }
   });
 }

@@ -17,7 +17,11 @@ export const shoppingFixture = await readFixture("assets/data/shopping/items.jso
 export const medicalFixture = await readFixture("assets/data/medical/items.json");
 
 export const activeCommunityPosts = communityFixture.items.filter((post) => post.status === "active");
-export const activeJobs = jobsFixture.items.filter((job) => job.status === "active");
+export const activeJobs = jobsFixture.items.filter((job) => {
+  if (job.status !== "active") return false;
+  const expiry = Date.parse(String(job.expires_at || ""));
+  return !Number.isFinite(expiry) || expiry > Date.now();
+});
 export const fixtureCommunityPost = activeCommunityPosts[0];
 export const fixtureCommunityPostId = fixtureCommunityPost?.post_id || fixtureCommunityPost?.id || "";
 export const fixtureCommunityDetailPath = fixtureCommunityPost?.detail_url || `/germany/ja/community/post/?id=${encodeURIComponent(fixtureCommunityPostId)}`;

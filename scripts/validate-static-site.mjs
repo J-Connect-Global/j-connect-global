@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
 import { PARENT_BRAND_NAME } from './site-identity.mjs';
+import { loadPublicSnapshotData } from './render-public-list-snapshots.mjs';
 
 const root = process.cwd();
 const scriptPath = path.relative(root, fileURLToPath(import.meta.url));
@@ -47,7 +48,7 @@ const coreIndexableUrls = new Set([
 ]);
 
 const directoryStaticRequirements = new Map([
-  ['/germany/ja/jobs/', ['jobs-list-loading', '求人情報を読み込んでいます。', '公開中の求人を一覧で確認できます。']],
+  ['/germany/ja/jobs/', ['PUBLIC-SNAPSHOT:jobs-list:start', 'data-public-snapshot-item="jobs"', 'PUBLIC-SNAPSHOT:jobs-list:end']],
   ['/germany/ja/eat/', ['directory-seed-card', '現在は基本ガイドを表示しています', '地図・営業時間・予約条件を公式情報で確認']],
   ['/germany/ja/shopping/', ['directory-seed-card', 'デュッセルドルフの公開データを確認できます', '日本食材・生活用品は在庫と配送条件を確認']],
   ['/germany/ja/medical/', [
@@ -60,7 +61,7 @@ const directoryStaticRequirements = new Map([
     'https://www.abda.de/apotheke-in-deutschland/was-apotheken-leisten/immer-erreichbar-sein/apotheken-finden/',
     'https://www.aponet.de/notdienstsuche/0'
   ]],
-  ['/germany/ja/community/', ['hero-safety', '受け渡しは公共の場所推奨', '投稿内容や取引の成立をサイトが保証するものではありません']],
+  ['/germany/ja/community/', ['hero-safety', '受け渡しは公共の場所推奨', '投稿内容や取引の成立をサイトが保証するものではありません', 'PUBLIC-SNAPSHOT:community-list:start', 'data-public-snapshot-item="community"']],
   ['/germany/ja/events/', ['data-events-card', 'data-news-card', 'イベント一覧']],
 ]);
 
@@ -168,6 +169,11 @@ const htmlFiles = [];
 const textFiles = [];
 const problems = [];
 const pagesByUrl = loadPagesRegistry();
+const publicSnapshotData = loadPublicSnapshotData({ root });
+const generatedPublicTargetPaths = new Set(
+  [...publicSnapshotData.community, ...publicSnapshotData.jobs]
+    .map((item) => path.normalize(path.join(root, normalizeUrl(item.detail_url).slice(1))))
+);
 
 function walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -209,6 +215,7 @@ function loadPagesRegistry() {
 }
 
 function localTargetExists(targetPath) {
+  if (generatedPublicTargetPaths.has(path.normalize(targetPath))) return true;
   if (fs.existsSync(targetPath) && fs.statSync(targetPath).isFile()) return true;
   if (fs.existsSync(targetPath) && fs.statSync(targetPath).isDirectory()) {
     return fs.existsSync(path.join(targetPath, 'index.html'));

@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
+import { loadPublicSnapshotData } from './render-public-list-snapshots.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE_ORIGIN = 'https://j-connect-global.com';
@@ -85,8 +86,13 @@ const standardizedDirectoryListingUrls = new Set([
 ]);
 
 const problems = [];
+const generatedPublicDetailUrls = new Set();
 
 function main() {
+  const publicData = loadPublicSnapshotData({ root });
+  for (const item of [...publicData.community, ...publicData.jobs]) {
+    generatedPublicDetailUrls.add(normalizeUrl(item.detail_url));
+  }
   const pages = readPages();
   const contentItems = readContentItems();
   const articleUrls = new Set(contentItems.filter((item) => item.published === true).map((item) => normalizeUrl(item.url)));
@@ -796,6 +802,7 @@ function readSearchIndex() {
 function validateInternalLinks(html, rel, label) {
   for (const href of extractLocalUrls(html)) {
     if (!href.startsWith('/germany/ja/') && !href.startsWith('/assets/')) continue;
+    if (generatedPublicDetailUrls.has(normalizeUrl(href))) continue;
     if (!localTargetExists(urlToTargetPath(href))) {
       problems.push(`${label} has unresolved internal link in ${rel}: ${href}`);
     }

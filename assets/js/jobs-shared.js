@@ -95,8 +95,15 @@
     };
   }
 
+  function isExpiredJob(job, now = Date.now()) {
+    const value = clean(job?.expires_at);
+    if (!value) return false;
+    const timestamp = Date.parse(value);
+    return Number.isFinite(timestamp) && timestamp <= now;
+  }
+
   function isActiveJob(job) {
-    return normalize(job?.status) === "active";
+    return normalize(job?.status) === "active" && !isExpiredJob(job);
   }
 
   function getSortTimestamp(item) {
@@ -161,6 +168,7 @@
   window.JCONNECT_JOBS_SHARED = Object.freeze({
     normalizeJob,
     isActiveJob,
+    isExpiredJob,
     activeJobs,
     splitList,
     sortNewestFirst,

@@ -32,6 +32,7 @@ const steps = [
   ["Site identity", "scripts/validate-site-identity.mjs"],
   ["Production parity markers", "scripts/validate-production-parity.mjs"],
   ["Build Pages artifact", "scripts/build-pages-artifact.mjs", "--site-dir", "_site"],
+  ["Crawler-first public list snapshots", "scripts/test-public-list-snapshots.mjs", "--site-dir", "_site"],
   ["Public detail generation", "scripts/test-public-detail-generation.mjs", "--site-dir", "_site"],
   ["Production SEO unit tests", "scripts/test-production-seo.mjs"],
   ["Production SEO artifact", "scripts/validate-production-seo.mjs", "--site-dir", "_site", ...summaryArgs]

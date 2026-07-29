@@ -43,7 +43,12 @@ export async function buildPagesArtifact({
   if (resolvedSite === rootDir || !resolvedSite.startsWith(`${rootDir}${path.sep}`)) {
     throw new Error("Pages artifact directory must be a child of the repository root.");
   }
-  await rm(resolvedSite, { recursive: true, force: true });
+  await rm(resolvedSite, {
+    recursive: true,
+    force: true,
+    maxRetries: 5,
+    retryDelay: 100
+  });
   await mkdir(resolvedSite, { recursive: true });
 
   for (const directory of sourceDirectories) {

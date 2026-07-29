@@ -37,8 +37,7 @@
   <meta name="twitter:description" content="ドイツ在住日本人向けの交流掲示板投稿ページです。投稿詳細はページ読み込み後に表示されます。">
   <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
 <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-performance-a11y-20260719">
 <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
@@ -1249,6 +1248,7 @@
 
 <body>
 <!-- LAYOUT:ja-header:start -->
+<a class="jc-skip-link" href="#main-content">本文へ移動</a>
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
@@ -1315,7 +1315,7 @@
 </header>
 <!-- LAYOUT:ja-header:end -->
 
-<main class="main">
+<main id="main-content" tabindex="-1" class="main">
   <div class="container">
     <section id="detailMode" class="detail-page" aria-live="polite" hidden></section>
 
@@ -1460,7 +1460,7 @@
     </section>
     </div>
 
-    <div class="modal-shell" id="postPreviewModal" role="dialog" aria-modal="true" aria-labelledby="postPreviewTitle" hidden>
+    <div class="modal-shell" id="postPreviewModal" role="dialog" aria-modal="true" aria-label="投稿プレビュー" hidden>
       <div class="modal-backdrop" data-close-preview></div>
       <article class="modal-card" tabindex="-1">
         <button class="modal-close" type="button" aria-label="プレビューを閉じる" data-close-preview>×</button>

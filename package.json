@@ -9,6 +9,7 @@
     "test:browser": "playwright test --config=playwright.config.mjs"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.12.1",
     "@playwright/test": "1.61.1"
   }
 }

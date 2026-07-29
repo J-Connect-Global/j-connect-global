@@ -42,12 +42,6 @@
 
 
 
-<link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""
-  />
 <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-performance-a11y-20260719">
 <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
@@ -83,6 +77,7 @@
 
 <body>
   <!-- LAYOUT:ja-header:start -->
+  <a class="jc-skip-link" href="#main-content">本文へ移動</a>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
@@ -164,7 +159,7 @@
     </div>
   </section>
 
-  <main class="site-shell medical-official-guide" id="main-content" aria-labelledby="medical-guide-title">
+  <main class="site-shell medical-official-guide" id="main-content" aria-labelledby="medical-guide-title" tabindex="-1">
     <div class="site-stack">
       <section class="site-hero">
         <h2 id="medical-guide-title">まず確認する連絡先と探し方</h2>
@@ -311,15 +306,10 @@
   </footer>
   <!-- LAYOUT:ja-footer:end -->
 
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""
-  ></script>
-
   <script src="/assets/js/common.js"></script>
   <script src="/assets/js/directory-capabilities.js"></script>
   <script src="/assets/js/data-sources.js"></script>
+  <script src="/assets/js/leaflet-loader.js"></script>
   <script>
     const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
     const DIRECTORY_CAPABILITIES = window.JCONNECT_DIRECTORY_CAPABILITIES;
@@ -942,8 +932,9 @@
       }
     }
 
-    function ensureMap() {
+    async function ensureMap() {
       if (map) return;
+      await window.JCONNECT_LEAFLET.load();
 
       map = L.map("map", { zoomControl: true });
 
@@ -998,7 +989,7 @@
     }
 
     async function renderMarkers() {
-      ensureMap();
+      await ensureMap();
       markerLayer.clearLayers();
       markerMap.clear();
 
@@ -1052,7 +1043,7 @@
       }
     }
 
-    function setView(view) {
+    async function setView(view) {
       currentView = view;
       const isList = view === "list";
       const isGrid = view === "grid";
@@ -1069,7 +1060,7 @@
       els.mapViewBtn.setAttribute("aria-pressed", String(isMap));
 
       if (isMap) {
-        ensureMap();
+        await ensureMap();
         requestAnimationFrame(() => {
           if (map) map.invalidateSize();
           renderMarkers();

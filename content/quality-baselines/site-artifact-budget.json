@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "maximum_crawl_depth": 4,
+  "templates": {
+    "global": {
+      "html_bytes": 80000,
+      "css_bytes": 140000,
+      "js_bytes": 50000,
+      "shell_bytes": 250000
+    },
+    "portal": {
+      "html_bytes": 120000,
+      "css_bytes": 180000,
+      "js_bytes": 120000,
+      "shell_bytes": 380000
+    },
+    "hub": {
+      "html_bytes": 150000,
+      "css_bytes": 210000,
+      "js_bytes": 140000,
+      "shell_bytes": 450000
+    },
+    "article": {
+      "html_bytes": 140000,
+      "css_bytes": 190000,
+      "js_bytes": 110000,
+      "shell_bytes": 400000
+    },
+    "directory": {
+      "html_bytes": 140000,
+      "css_bytes": 220000,
+      "js_bytes": 150000,
+      "shell_bytes": 480000
+    },
+    "detail": {
+      "html_bytes": 110000,
+      "css_bytes": 210000,
+      "js_bytes": 130000,
+      "shell_bytes": 420000
+    },
+    "utility": {
+      "html_bytes": 140000,
+      "css_bytes": 220000,
+      "js_bytes": 150000,
+      "shell_bytes": 480000
+    }
+  }
+}

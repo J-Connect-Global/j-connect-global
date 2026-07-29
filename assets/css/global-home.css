@@ -390,7 +390,7 @@
 }
 
 .global-trust-note p{
-  color:var(--color-text-muted);
+  color:#52677e;
   font-size:13px;
   line-height:1.75;
 }

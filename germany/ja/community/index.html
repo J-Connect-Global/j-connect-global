@@ -48,9 +48,8 @@
   })();
   </script>
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/site.css">
+
+<link rel="stylesheet" href="/assets/css/site.css">
   <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-performance-a11y-20260719">
 <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
 <link rel="stylesheet" href="/assets/css/cookie-consent.css" />
@@ -64,6 +63,7 @@
   <a class="skip-link" href="#communityBoard">掲示板へ移動</a>
 
   <!-- LAYOUT:ja-header:start -->
+  <a class="jc-skip-link" href="#main-content">本文へ移動</a>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
@@ -130,7 +130,7 @@
   </header>
   <!-- LAYOUT:ja-header:end -->
 
-  <main class="community-shell jc-directory-page">
+  <main id="main-content" tabindex="-1" class="community-shell jc-directory-page">
     <section class="community-hero jc-directory-hero" aria-labelledby="communityTitle">
       <div class="hero-grid">
         <div class="hero-copy jc-directory-hero-copy">
@@ -267,7 +267,7 @@
               <button class="view-button active" type="button" data-view="list">リスト</button>
               <button class="view-button" type="button" data-view="grid">グリッド</button>
             </div>
-            <div class="active-filters jc-active-chips" id="activeFilters" aria-label="適用中の条件"></div>
+            <div class="active-filters jc-active-chips" id="activeFilters" role="group" aria-label="適用中の条件"></div>
           </div>
         </div>
 
@@ -278,7 +278,7 @@
             <a class="card-link" href="/germany/ja/community/posts/post_cd6cadde-3221-4de3-8f8d-935d66331457/" aria-label="Fiktionsbescheinigung中の一時帰国・再入国についての詳細ページを開く">
               <div class="card-media">
                 <div class="placeholder-art" data-icon="掲"></div>
-                <img src="/assets/img/placeholders/jconnect-default-card.webp" alt="Fiktionsbescheinigung中の一時帰国・再入国について のイメージ" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp">
+                <img src="/assets/img/placeholders/jconnect-default-card.webp" alt="Fiktionsbescheinigung中の一時帰国・再入国について のイメージ" width="480" height="300" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp">
 
               </div>
               <div class="card-body">
@@ -296,7 +296,7 @@
             <a class="card-link" href="/germany/ja/community/posts/post_79f6dfd5-86c4-4c68-bf50-f8a7a1993bfe/" aria-label="キッチン用水栓・高圧式タイプ（中古）をお譲りしますの詳細ページを開く">
               <div class="card-media">
                 <div class="placeholder-art" data-icon="掲"></div>
-                <img src="https://drive.google.com/thumbnail?id=1pWzlUMrb54_SGfQ47lXjeIOZnUn3jYrW&amp;sz=w1200" alt="キッチン用水栓・高圧式タイプ（中古）をお譲りします のイメージ" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp">
+                <img src="https://drive.google.com/thumbnail?id=1pWzlUMrb54_SGfQ47lXjeIOZnUn3jYrW&amp;sz=w1200" alt="キッチン用水栓・高圧式タイプ（中古）をお譲りします のイメージ" width="480" height="300" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp">
                 <span class="image-count">写真 3</span>
               </div>
               <div class="card-body">
@@ -314,7 +314,7 @@
             <a class="card-link" href="/germany/ja/community/posts/post_361ec368-085b-42da-86e4-2c6d3dd2c28a/" aria-label="【新品未使用】キッチン用水栓・高圧式の詳細ページを開く">
               <div class="card-media">
                 <div class="placeholder-art" data-icon="掲"></div>
-                <img src="https://drive.google.com/thumbnail?id=1zEaionHCJ_aZ1NXm6dt7INENoDA6DV2N&amp;sz=w1200" alt="【新品未使用】キッチン用水栓・高圧式 のイメージ" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp">
+                <img src="https://drive.google.com/thumbnail?id=1zEaionHCJ_aZ1NXm6dt7INENoDA6DV2N&amp;sz=w1200" alt="【新品未使用】キッチン用水栓・高圧式 のイメージ" width="480" height="300" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp">
                 <span class="image-count">写真 2</span>
               </div>
               <div class="card-body">
@@ -332,7 +332,7 @@
             <a class="card-link" href="/germany/ja/community/posts/post_23baeb1d-3d92-4438-9350-e04029bd3add/" aria-label="ドイツの家事代行サービスを探していますの詳細ページを開く">
               <div class="card-media">
                 <div class="placeholder-art" data-icon="掲"></div>
-                <img src="/assets/img/placeholders/jconnect-default-card.webp" alt="ドイツの家事代行サービスを探しています のイメージ" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp">
+                <img src="/assets/img/placeholders/jconnect-default-card.webp" alt="ドイツの家事代行サービスを探しています のイメージ" width="480" height="300" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp">
 
               </div>
               <div class="card-body">
@@ -350,7 +350,7 @@
             <a class="card-link" href="/germany/ja/community/posts/post_807cffe7-b1af-41c0-89ee-c54b57ce44c5/" aria-label="日本の運転免許証がもうすぐ期限切れになります。の詳細ページを開く">
               <div class="card-media">
                 <div class="placeholder-art" data-icon="掲"></div>
-                <img src="/assets/img/placeholders/jconnect-default-card.webp" alt="日本の運転免許証がもうすぐ期限切れになります。 のイメージ" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp">
+                <img src="/assets/img/placeholders/jconnect-default-card.webp" alt="日本の運転免許証がもうすぐ期限切れになります。 のイメージ" width="480" height="300" loading="lazy" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp">
 
               </div>
               <div class="card-body">
@@ -372,7 +372,7 @@
 
   </main>
 
-  <div class="modal-shell" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailTitle" aria-hidden="true">
+  <div class="modal-shell" id="detailModal" role="dialog" aria-modal="true" aria-label="投稿詳細" aria-hidden="true">
     <div class="modal-backdrop" data-close-modal></div>
     <article class="modal-card" tabindex="-1">
       <button class="modal-close" type="button" aria-label="詳細を閉じる" data-close-modal>×</button>

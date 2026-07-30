@@ -1,5 +1,7 @@
 import { AxeBuilder } from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
+import fs from "node:fs";
+import path from "node:path";
 import {
   activeJobs,
   assertNoRuntimeDiagnostics,
@@ -13,7 +15,6 @@ import {
 test.setTimeout(75_000);
 
 const representativeRoutes = [
-  { name: "global home", route: "/" },
   { name: "Japanese portal", route: "/germany/ja/", ready: true },
   { name: "Jobs list", route: "/germany/ja/jobs/", ready: true },
   { name: "Jobs detail", route: activeJobs[0].detail_url },
@@ -30,7 +31,6 @@ const representativeRoutes = [
 ];
 
 const darkModeRoutes = [
-  { name: "global home", route: "/" },
   { name: "Japanese portal", route: "/germany/ja/", ready: true },
   { name: "Jobs list", route: "/germany/ja/jobs/", ready: true },
   { name: "Community list", route: "/germany/ja/community/", ready: true },
@@ -84,6 +84,16 @@ for (const entry of representativeRoutes) {
     await expectNoAxeViolations(page, entry.name);
   });
 }
+
+test("root redirect fallback passes automated WCAG checks without navigation", async ({ page }) => {
+  const source = fs.readFileSync(path.resolve(process.cwd(), "index.html"), "utf8")
+    .replace(/<meta\b(?=[^>]*http-equiv=["']refresh["'])[^>]*>\s*/i, "")
+    .replace(/<script\b[^>]*>[\s\S]*?window\.location\.replace[\s\S]*?<\/script>\s*/i, "");
+  await page.setContent(source, { waitUntil: "load" });
+  await expect(page.locator("main h1")).toHaveText("J-Connect Germanyへ移動します。");
+  await expect(page.locator('a[href="/germany/ja/"]')).toBeVisible();
+  await expectNoAxeViolations(page, "root redirect fallback");
+});
 
 test("not-found page passes automated WCAG checks", async ({ page }) => {
   const response = await page.goto("/quality-audit-not-found/", { waitUntil: "load" });

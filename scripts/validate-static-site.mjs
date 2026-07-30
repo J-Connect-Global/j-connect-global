@@ -4,6 +4,11 @@ import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
 import { PARENT_BRAND_NAME } from './site-identity.mjs';
 import { loadPublicSnapshotData } from './render-public-list-snapshots.mjs';
+import {
+  ROOT_REDIRECT_TARGET,
+  ROOT_REDIRECT_TARGET_PATH,
+  validateRootRedirectHtml
+} from './root-redirect-contract.mjs';
 
 const root = process.cwd();
 const scriptPath = path.relative(root, fileURLToPath(import.meta.url));
@@ -29,7 +34,6 @@ const requiredTwitterNames = [
 ];
 
 const coreIndexableUrls = new Set([
-  '/',
   '/germany/ja/',
   '/germany/ja/about/',
   '/germany/ja/contact/',
@@ -383,7 +387,8 @@ function validateHtmlMetadata(rel, url, html, page) {
   const robots = normalizeRobots(extractMetaContent(html, 'name', 'robots'));
   const canonical = extractCanonical(html);
   const expectedCanonical = absoluteUrl(page?.canonical_url || url);
-  const shouldIndex = shouldIndexHtml(url, page);
+  const isRootRedirect = url === '/' && page?.status === 'redirect';
+  const shouldIndex = isRootRedirect || shouldIndexHtml(url, page);
   const hasNoindex = robots.includes('noindex');
 
   if (!title) problems.push(`${rel} missing <title>.`);
@@ -434,8 +439,23 @@ function validateHtmlMetadata(rel, url, html, page) {
     }
     if (!hasJsonLdType(html, 'WebSite')) problems.push(`${rel} root page missing WebSite JSON-LD.`);
     if (!hasJsonLdType(html, 'Organization')) problems.push(`${rel} root page missing Organization JSON-LD.`);
-    if (/<meta\b(?=[^>]*http-equiv=["']refresh["'])/i.test(html)) problems.push(`${rel} root page must not use a meta refresh.`);
-    if (/\blocation\.(?:replace|assign)\s*\(/i.test(html)) problems.push(`${rel} root page must not use a JavaScript redirect.`);
+    for (const problem of validateRootRedirectHtml(html)) {
+      problems.push(`${rel} ${problem}.`);
+    }
+    if (page?.canonical_url !== ROOT_REDIRECT_TARGET_PATH || page?.redirect_target !== ROOT_REDIRECT_TARGET_PATH) {
+      problems.push(`${rel} registry redirect destination must be ${ROOT_REDIRECT_TARGET_PATH}.`);
+    }
+    if (canonical === `${SITE_ORIGIN}/`) problems.push(`${rel} root redirect must not be self-canonical.`);
+    if (canonical !== ROOT_REDIRECT_TARGET) problems.push(`${rel} root redirect canonical must be ${ROOT_REDIRECT_TARGET}.`);
+  }
+
+  if (url === PRIMARY_JA_PATH) {
+    if (/<meta\b(?=[^>]*http-equiv=["']refresh["'])/i.test(html)) {
+      problems.push(`${rel} Germany home must not use a meta refresh.`);
+    }
+    if (/\b(?:window\.)?location\.(?:replace|assign)\s*\(/i.test(html) || /\b(?:window\.)?location\.href\s*=/.test(html)) {
+      problems.push(`${rel} Germany home must not redirect back to another route.`);
+    }
   }
 
   if (isArticleUrl(url, page)) {
@@ -674,8 +694,8 @@ function validateSitemap() {
     if (seen.has(loc)) problems.push(`sitemap.xml contains duplicate URL: ${loc}`);
     seen.add(loc);
 
-    if (loc !== `${SITE_ORIGIN}/` && !loc.startsWith(`${SITE_ORIGIN}${PRIMARY_JA_PATH}`)) {
-      problems.push(`sitemap.xml URL should be the production root or a JA URL: ${loc}`);
+    if (!loc.startsWith(`${SITE_ORIGIN}${PRIMARY_JA_PATH}`)) {
+      problems.push(`sitemap.xml URL should be a JA portal URL: ${loc}`);
       continue;
     }
 
@@ -690,6 +710,13 @@ function validateSitemap() {
     if (page && !shouldIndexHtml(url, page)) {
       problems.push(`sitemap.xml includes non-indexable registry page: ${url}`);
     }
+  }
+  if (urls.includes(`${SITE_ORIGIN}/`)) {
+    problems.push('sitemap.xml must exclude the redirect-only domain root.');
+  }
+  const germanyHomeCount = urls.filter((loc) => loc === ROOT_REDIRECT_TARGET).length;
+  if (germanyHomeCount !== 1) {
+    problems.push(`sitemap.xml must contain ${ROOT_REDIRECT_TARGET} exactly once, found ${germanyHomeCount}.`);
   }
 }
 

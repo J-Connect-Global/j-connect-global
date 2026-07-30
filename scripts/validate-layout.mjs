@@ -3,6 +3,7 @@ import path from 'node:path';
 import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
 import { loadPublicSnapshotData } from './render-public-list-snapshots.mjs';
+import { ROOT_REDIRECT_TARGET_PATH, ROOT_ROUTE } from './root-redirect-contract.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE_ORIGIN = 'https://j-connect-global.com';
@@ -226,6 +227,32 @@ function validatePagesRegistry(pages, pagesByUrl) {
 
     if ((page.search_visible === true || page.sitemap_visible === true) && page.status !== 'published') {
       problems.push(`${label} cannot be search/sitemap visible unless status=published.`);
+    }
+  }
+
+  const rootPage = pagesByUrl.get(ROOT_ROUTE);
+  if (!rootPage) {
+    problems.push(`${PAGE_REGISTRY_PATH} missing governed domain-root route.`);
+  } else {
+    const redirectContract = {
+      id: 'page-root',
+      url: ROOT_ROUTE,
+      status: 'redirect',
+      canonical_url: ROOT_REDIRECT_TARGET_PATH,
+      nav_visible: false,
+      footer_visible: false,
+      search_visible: false,
+      sitemap_visible: false,
+      legacy: false,
+      redirect_target: ROOT_REDIRECT_TARGET_PATH
+    };
+    for (const [field, expected] of Object.entries(redirectContract)) {
+      if (rootPage[field] !== expected) {
+        problems.push(`${PAGE_REGISTRY_PATH} root redirect must set ${field}=${JSON.stringify(expected)}.`);
+      }
+    }
+    if (!localTargetExists(urlToTargetPath(rootPage.redirect_target))) {
+      problems.push(`${PAGE_REGISTRY_PATH} root redirect target does not resolve: ${rootPage.redirect_target}`);
     }
   }
 

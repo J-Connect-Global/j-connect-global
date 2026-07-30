@@ -38,6 +38,52 @@ test.afterEach(async ({ page }) => {
   await assertNoRuntimeDiagnostics(page);
 });
 
+test("domain root and index alias replace history with the fixed Germany Japanese destination", async ({ page, request }) => {
+  const rootResponse = await request.get("/");
+  const indexResponse = await request.get("/index.html");
+  expect(rootResponse.status()).toBe(200);
+  expect(indexResponse.status()).toBe(200);
+  const rootHtml = await rootResponse.text();
+  expect(await indexResponse.text()).toBe(rootHtml);
+  expect(rootHtml).toMatch(/<meta\b(?=[^>]*http-equiv="refresh")(?=[^>]*content="0; url=https:\/\/j-connect-global\.com\/germany\/ja\/")[^>]*>/i);
+  expect(rootHtml).toContain('window.location.replace(destination + suffix);');
+  expect(rootHtml).toContain('<link rel="canonical" href="https://j-connect-global.com/germany/ja/">');
+  expect(rootHtml).toContain('<meta name="robots" content="index, follow">');
+  expect(rootHtml).toContain('<a href="/germany/ja/">こちらからドイツ向け日本語版を開いてください。</a>');
+  expect(rootHtml).not.toMatch(/\bnoindex\b/i);
+  expect(rootHtml).not.toContain('href="https://j-connect-global.com/" hreflang=');
+
+  await page.route("https://j-connect-global.com/germany/ja/**", (route) => {
+    if (route.request().resourceType() !== "document") return route.abort();
+    return route.fulfill({
+      status: 200,
+      contentType: "text/html; charset=utf-8",
+      body: "<!doctype html><html lang=\"ja\"><head><title>Redirect destination</title></head><body><main><h1>Germany</h1></main></body></html>"
+    });
+  });
+
+  await page.goto("/germany/ja/?history=before", { waitUntil: "load" });
+  const redirectInput = "?next=https%3A%2F%2Fevil.example%2Foutside&lang=de#fixed-fragment";
+  await page.goto(`/${redirectInput}`, { waitUntil: "load" });
+  let finalUrl = new URL(page.url());
+  expect(finalUrl.origin).toBe("https://j-connect-global.com");
+  expect(finalUrl.pathname).toBe("/germany/ja/");
+  expect(finalUrl.search).toBe("?next=https%3A%2F%2Fevil.example%2Foutside&lang=de");
+  expect(finalUrl.hash).toBe("#fixed-fragment");
+
+  await page.goBack({ waitUntil: "load" });
+  finalUrl = new URL(page.url());
+  expect(finalUrl.pathname).toBe("/germany/ja/");
+  expect(finalUrl.search).toBe("?history=before");
+
+  await page.goto(`/index.html${redirectInput}`, { waitUntil: "load" });
+  finalUrl = new URL(page.url());
+  expect(finalUrl.origin).toBe("https://j-connect-global.com");
+  expect(finalUrl.pathname).toBe("/germany/ja/");
+  expect(finalUrl.search).toBe("?next=https%3A%2F%2Fevil.example%2Foutside&lang=de");
+  expect(finalUrl.hash).toBe("#fixed-fragment");
+});
+
 test("Cookie consent exposes keyboard-safe dialog and focus behavior", async ({ page }) => {
   await openRoute(page, "/germany/ja/");
   const banner = page.getByRole("dialog", { name: "Cookie設定" });

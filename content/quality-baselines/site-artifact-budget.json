@@ -2,11 +2,11 @@
   "version": 1,
   "maximum_crawl_depth": 4,
   "templates": {
-    "global": {
-      "html_bytes": 80000,
-      "css_bytes": 140000,
-      "js_bytes": 50000,
-      "shell_bytes": 250000
+    "redirect": {
+      "html_bytes": 16000,
+      "css_bytes": 0,
+      "js_bytes": 0,
+      "shell_bytes": 16000
     },
     "portal": {
       "html_bytes": 120000,

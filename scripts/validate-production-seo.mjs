@@ -3,6 +3,11 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { isIndexableJob, jobSitemapLastmod } from "./generate-public-details.mjs";
 import { assertPublicDetailUrl } from "./public-detail-routes.mjs";
+import {
+  ROOT_REDIRECT_TARGET,
+  ROOT_REDIRECT_TARGET_PATH,
+  validateRootRedirectHtml
+} from "./root-redirect-contract.mjs";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE_ORIGIN = "https://j-connect-global.com";
@@ -40,6 +45,16 @@ function canonicalValue(html) {
     if ((attribute(tag, "rel") || "").toLowerCase().split(/\s+/).includes("canonical")) return attribute(tag, "href") || "";
   }
   return "";
+}
+
+function hreflangEntries(html) {
+  const entries = [];
+  for (const tag of html.match(/<link\b[^>]*>/gi) || []) {
+    const rel = (attribute(tag, "rel") || "").toLowerCase().split(/\s+/);
+    const lang = (attribute(tag, "hreflang") || "").toLowerCase();
+    if (rel.includes("alternate") && lang) entries.push({ lang, href: attribute(tag, "href") || "" });
+  }
+  return entries;
 }
 
 function urlForFile(siteDir, file) {
@@ -127,6 +142,31 @@ function artifactProblems({ html, file, siteDir, sitemapUrls }) {
     if (/\bbrand-logo\b|\bfooter-logo\b/.test(classes) && (!attribute(img, "width") || !attribute(img, "height"))) {
       errors.push(`${relative}: brand image ${src || "(missing src)"} has no intrinsic width/height.`);
     }
+  }
+  return errors;
+}
+
+function regionalHomeProblems(html) {
+  const errors = [];
+  if (canonicalValue(html) !== ROOT_REDIRECT_TARGET) {
+    errors.push(`Germany home canonical must be ${ROOT_REDIRECT_TARGET}.`);
+  }
+  if (!isIndexFollow(metaValue(html, "name", "robots"))) {
+    errors.push('Germany home must remain robots "index, follow".');
+  }
+  if (metaValue(html, "http-equiv", "refresh")) {
+    errors.push("Germany home must not use a meta refresh.");
+  }
+  if (/\b(?:window\.)?location\.(?:replace|assign)\s*\(|\b(?:window\.)?location\.href\s*=/.test(html)) {
+    errors.push("Germany home must not redirect to another route.");
+  }
+  const alternates = hreflangEntries(html);
+  for (const lang of ["ja", "x-default"]) {
+    const matches = alternates.filter((entry) => entry.lang === lang && entry.href === ROOT_REDIRECT_TARGET);
+    if (matches.length !== 1) errors.push(`Germany home must have exactly one ${lang} hreflang for ${ROOT_REDIRECT_TARGET}.`);
+  }
+  if (alternates.some((entry) => !["ja", "x-default"].includes(entry.lang))) {
+    errors.push("Germany home contains an unsupported hreflang.");
   }
   return errors;
 }
@@ -256,6 +296,25 @@ export async function validateProductionSeo({ siteDir = path.join(rootDir, "_sit
   }
   const files = await walkHtml(siteDir);
   const byUrl = new Map(await Promise.all(files.map(async (file) => [urlForFile(siteDir, file), { file, html: await readFile(file, "utf8") }])));
+
+  const rootEntry = byUrl.get("/");
+  if (!rootEntry) {
+    errors.push("Production artifact is missing the domain-root redirect document.");
+  } else {
+    errors.push(...validateRootRedirectHtml(rootEntry.html).map((error) => `index.html: ${error}.`));
+  }
+  const rootSitemapCount = sitemapUrls.filter((url) => url === `${SITE_ORIGIN}/`).length;
+  if (rootSitemapCount !== 0) errors.push(`sitemap.xml must exclude the domain root, found ${rootSitemapCount} entries.`);
+  const germanySitemapCount = sitemapUrls.filter((url) => url === ROOT_REDIRECT_TARGET).length;
+  if (germanySitemapCount !== 1) {
+    errors.push(`sitemap.xml must contain ${ROOT_REDIRECT_TARGET} exactly once, found ${germanySitemapCount}.`);
+  }
+  const germanyEntry = byUrl.get(ROOT_REDIRECT_TARGET_PATH);
+  if (!germanyEntry) {
+    errors.push("Production artifact is missing the Germany Japanese homepage.");
+  } else {
+    errors.push(...regionalHomeProblems(germanyEntry.html));
+  }
 
   for (const url of sitemapUrls) {
     const parsed = parseProductionSitemapUrl(url);

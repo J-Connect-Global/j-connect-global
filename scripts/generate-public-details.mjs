@@ -232,12 +232,12 @@ function communityPage(post, all, layout, now) {
   const imageAlt = text(post.image_alt) || text(post.title) || "投稿画像";
   const gallery = images.length ? `<section class="public-detail-section" aria-label="投稿画像"><div class="public-detail-gallery">${images.map((image, index) => {
     const alt = `${imageAlt}${images.length > 1 ? ` ${index + 1}` : ""}`;
-    return `<button class="public-detail-gallery-item" type="button" data-lightbox-open data-lightbox-index="${index}" aria-label="${escapeHtml(alt)}を拡大"><img src="${escapeHtml(image)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async"></button>`;
+    return `<button class="public-detail-gallery-item" type="button" data-lightbox-open data-lightbox-index="${index}" aria-label="${escapeHtml(alt)}を拡大"><img src="${escapeHtml(image)}" alt="${escapeHtml(alt)}" width="1200" height="900" loading="lazy" decoding="async"></button>`;
   }).join("")}</div></section>
         <dialog class="public-detail-lightbox" data-public-lightbox aria-label="投稿画像の拡大表示">
           <button class="public-detail-lightbox-close" type="button" data-lightbox-close aria-label="拡大表示を閉じる">×</button>
           <button class="public-detail-lightbox-nav public-detail-lightbox-prev" type="button" data-lightbox-prev aria-label="前の画像">‹</button>
-          <figure><img data-lightbox-image alt=""><figcaption data-lightbox-caption aria-live="polite"></figcaption></figure>
+          <figure><img data-lightbox-image alt="" width="1200" height="900"><figcaption data-lightbox-caption aria-live="polite"></figcaption></figure>
           <button class="public-detail-lightbox-nav public-detail-lightbox-next" type="button" data-lightbox-next aria-label="次の画像">›</button>
         </dialog>` : "";
   const body = `<main class="public-detail-page" id="main-content">

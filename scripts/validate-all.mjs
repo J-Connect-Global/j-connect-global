@@ -13,6 +13,7 @@ const steps = [
   ["News fetcher contract", "scripts/test-news-fetcher.mjs"],
   ["Deployment manifest contract", "scripts/test-deployment-manifest.mjs"],
   ["Accessibility behavior contracts", "scripts/test-accessibility-contracts.mjs"],
+  ["Artifact quality validator contracts", "scripts/test-artifact-quality.mjs"],
   ["Tourism usability", "scripts/test-tourism-usability.mjs"],
   ["Community data", "scripts/validate-community.mjs"],
   ["Jobs data", "scripts/validate-jobs.mjs"],
@@ -34,6 +35,7 @@ const steps = [
   ["Build Pages artifact", "scripts/build-pages-artifact.mjs", "--site-dir", "_site"],
   ["Crawler-first public list snapshots", "scripts/test-public-list-snapshots.mjs", "--site-dir", "_site"],
   ["Public detail generation", "scripts/test-public-detail-generation.mjs", "--site-dir", "_site"],
+  ["Artifact route, accessibility, and budget quality", "scripts/validate-artifact-quality.mjs", "--site-dir", "_site", ...summaryArgs],
   ["Production SEO unit tests", "scripts/test-production-seo.mjs"],
   ["Production SEO artifact", "scripts/validate-production-seo.mjs", "--site-dir", "_site", ...summaryArgs]
 ];

@@ -41,6 +41,14 @@ function communityFixtureImageUrls(post) {
 export const fixturePhotoCommunityPost = activeCommunityPosts.find((post) => communityFixtureImageUrls(post).length > 0);
 export const fixtureNoImageCommunityPost = activeCommunityPosts.find((post) => communityFixtureImageUrls(post).length === 0);
 
+export async function stubDriveImages(page) {
+  await page.route("https://drive.google.com/**", (route) => route.fulfill({
+    body: '<svg xmlns="http://www.w3.org/2000/svg" width="2" height="2"><rect width="2" height="2" fill="#829ab1"/></svg>',
+    contentType: "image/svg+xml",
+    status: 200
+  }));
+}
+
 export function installRuntimeDiagnostics(page) {
   const diagnostics = { pageErrors: [], consoleErrors: [], externalDataRequests: [] };
   diagnosticsByPage.set(page, diagnostics);

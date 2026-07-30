@@ -550,6 +550,7 @@ function markdownToHtml(markdown, context) {
 
   const lines = source.split('\n');
   const html = [];
+  const headingIdCounts = new Map();
   let index = 0;
 
   while (index < lines.length) {
@@ -569,7 +570,7 @@ function markdownToHtml(markdown, context) {
         continue;
       }
       const level = Math.min(heading[1].length + (heading[1].length === 1 ? 1 : 0), 3);
-      const headingId = createHeadingId(headingText);
+      const headingId = createUniqueHeadingId(headingText, headingIdCounts);
       const classAttribute = context.item.slug === 'berlin-weekend-trip' && /^公式情報/.test(headingText)
         ? ' class="official-source-section"'
         : '';
@@ -685,6 +686,11 @@ ${variant.small ? `    <source media="(max-width: 600px)" srcset="${escapeAttrib
   </picture>`;
   }
 
+  const standaloneSvg = resolveLocalInlineSvgDimensions(src);
+  if (standaloneSvg) {
+    return `<img src="${safeSrc}" alt="${safeAlt}" width="${standaloneSvg.width}" height="${standaloneSvg.height}" loading="lazy" decoding="async">`;
+  }
+
   const localVariant = resolveLocalInlineWebpVariant(src);
   if (!localVariant) {
     return `<img src="${safeSrc}" alt="${safeAlt}" loading="lazy" decoding="async">`;
@@ -740,6 +746,23 @@ function readLocalSvgDimensions(filePath) {
   const viewBox = svg.match(/\bviewBox=["']\s*([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s*["']/i);
   if (!width || !height || !viewBox || Number(viewBox[3]) <= 0 || Number(viewBox[4]) <= 0) return null;
   return { width, height };
+}
+
+function resolveLocalInlineSvgDimensions(src) {
+  const value = String(src || '').trim();
+  if (!/^\/assets\/images\/[a-z0-9._/-]+\.svg$/i.test(value)) return null;
+
+  const candidate = path.resolve(root, normalizeRepoPath(value));
+  const repositoryRoot = fs.realpathSync(root);
+  const repositoryPrefix = `${repositoryRoot}${path.sep}`;
+  try {
+    if (!candidate.startsWith(`${root}${path.sep}`) || !fs.existsSync(candidate)) return null;
+    const realPath = fs.realpathSync(candidate);
+    if (!realPath.startsWith(repositoryPrefix) || !fs.statSync(realPath).isFile()) return null;
+    return readLocalSvgDimensions(realPath);
+  } catch {
+    return null;
+  }
 }
 
 function resolveLocalInlineWebpVariant(src) {
@@ -1216,23 +1239,28 @@ function createHeadingId(value) {
   return id || 'section';
 }
 
+function createUniqueHeadingId(value, counts) {
+  const base = createHeadingId(value);
+  const count = (counts.get(base) || 0) + 1;
+  counts.set(base, count);
+  return count === 1 ? base : `${base}-${count}`;
+}
+
 function extractArticleToc(markdown, title) {
   const source = stripFrontMatter(markdown).replace(/\r\n/g, '\n').trim();
-  const skipTitles = new Set([
-    title,
-    '関連記事'
-  ]);
+  const counts = new Map();
+  const toc = [];
 
-  return source
-    .split('\n')
-    .map((line) => line.trim().match(/^##\s+(.+)$/))
-    .filter(Boolean)
-    .map((match) => stripInlineMarkdown(match[1]).trim())
-    .filter((text) => text && !skipTitles.has(text))
-    .map((text) => ({
-      id: createHeadingId(text),
-      text
-    }));
+  for (const line of source.split('\n')) {
+    const match = line.trim().match(/^(#{1,3})\s+(.+)$/);
+    if (!match) continue;
+    const text = stripInlineMarkdown(match[2]).trim();
+    if (!text || (match[1].length === 1 && text === title)) continue;
+    const id = createUniqueHeadingId(text, counts);
+    if (match[1].length === 2 && text !== '関連記事') toc.push({ id, text });
+  }
+
+  return toc;
 }
 
 function renderArticleToc(toc = []) {

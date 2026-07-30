@@ -14,7 +14,8 @@ import {
   fixtureCommunityPost,
   installRuntimeDiagnostics,
   openDataRoute,
-  openRoute
+  openRoute,
+  stubDriveImages
 } from "./support.mjs";
 
 test.beforeEach(async ({ page }) => {
@@ -92,6 +93,7 @@ test("mobile crawler-first lists remain readable without JavaScript", async ({ b
     hasTouch: true
   });
   const page = await context.newPage();
+  await stubDriveImages(page);
   try {
     await page.goto("/germany/ja/jobs/", { waitUntil: "load" });
     await expect(page.locator("#cards [data-public-snapshot-item='jobs']")).toHaveCount(activeJobs.length);

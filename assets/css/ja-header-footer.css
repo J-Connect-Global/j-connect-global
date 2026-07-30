@@ -10,8 +10,33 @@
   --header-shadow:0 10px 28px rgba(15, 35, 58, .06);
   --container:1220px;
   box-sizing:border-box;
-  font-family:'Inter','Noto Sans JP',sans-serif;
+  font-family:system-ui,-apple-system,'Segoe UI','Noto Sans JP',sans-serif;
   line-height:1.6;
+}
+
+.jc-skip-link{
+  position:fixed;
+  top:8px;
+  left:8px;
+  z-index:1000;
+  transform:translateY(-160%);
+  border:2px solid currentColor;
+  border-radius:8px;
+  background:#004f98;
+  color:#fff;
+  padding:10px 14px;
+  font-family:system-ui,-apple-system,'Segoe UI','Noto Sans JP',sans-serif;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.jc-skip-link:focus{
+  transform:translateY(0);
+}
+
+.jc-skip-target{
+  display:block;
+  scroll-margin-top:96px;
 }
 
 body .site-header{

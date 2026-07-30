@@ -49,6 +49,7 @@ function applyCanonicalLayout(html, url, page) {
   next = ensureThemeInitScript(next);
   next = ensureSiteIdentityScript(next);
   next = ensureHeaderFooterStylesheet(next);
+  next = removeThirdPartyFontDependencies(next);
   next = isHomeRoute ? removeHomePerformanceDependencies(next) : ensureSocialShareStylesheet(next);
   next = ensureRobotsMeta(next, page);
   next = ensureSiteIdentityMeta(next);
@@ -57,6 +58,7 @@ function applyCanonicalLayout(html, url, page) {
   next = ensurePageStructuredData(next, currentUrl, page);
   next = replaceLayoutBlock(next, 'ja-header', renderHeader(pillar, currentUrl), 'header');
   next = replaceLayoutBlock(next, 'ja-footer', renderFooter(), 'footer');
+  next = ensureMainContentTarget(next);
   next = ensureMainScript(next);
   next = isHomeRoute ? removeHomePerformanceDependencies(next) : ensureSocialShareScript(next);
   return next;
@@ -203,10 +205,41 @@ function removeHomePerformanceDependencies(html) {
   let next = removeStylesheetLink(html, '/assets/css/jconnect-ui.css');
   next = removeStylesheetLink(next, SOCIAL_SHARE_CSS);
   next = removeScriptSource(next, SOCIAL_SHARE_JS);
-  return next.replace(
+  return next;
+}
+
+function removeThirdPartyFontDependencies(html) {
+  return html.replace(
     /\s*<link\b(?=[^>]*\bhref=["']https:\/\/(?:fonts\.googleapis\.com|fonts\.gstatic\.com)(?:\/[^"']*)?["'])[^>]*>\s*/gi,
     '\n'
   );
+}
+
+function ensureMainContentTarget(html) {
+  const mainMatch = html.match(/<main\b[^>]*>/i);
+  if (!mainMatch || mainMatch.index === undefined) {
+    throw new Error('Unable to find the main content landmark.');
+  }
+
+  const mainTag = mainMatch[0];
+  const id = mainTag.match(/\sid=["']([^"']+)["']/i)?.[1] || '';
+  if (!id) {
+    const replacement = mainTag.replace(
+      /<main\b/i,
+      '<main id="main-content" tabindex="-1"'
+    );
+    return `${html.slice(0, mainMatch.index)}${replacement}${html.slice(mainMatch.index + mainTag.length)}`;
+  }
+
+  if (id === 'main-content') {
+    if (/\stabindex=["']-1["']/i.test(mainTag)) return html;
+    const replacement = mainTag.replace(/>$/, ' tabindex="-1">');
+    return `${html.slice(0, mainMatch.index)}${replacement}${html.slice(mainMatch.index + mainTag.length)}`;
+  }
+
+  if (/(?:^|\s)id=["']main-content["']/i.test(html)) return html;
+  const target = '<span class="jc-skip-target" id="main-content" tabindex="-1"></span>\n  ';
+  return `${html.slice(0, mainMatch.index)}${target}${html.slice(mainMatch.index)}`;
 }
 
 function removeStylesheetLink(html, href) {

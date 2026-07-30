@@ -38,11 +38,6 @@
   <meta name="twitter:description" content="J-Connect Germanyへのお問い合わせページ。掲載依頼、情報提供、修正依頼、コミュニティ関連の連絡先を日本語で確認できます。">
   <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet" />
-
-
 
 
 <link rel="stylesheet" href="/assets/css/site.css">
@@ -360,6 +355,7 @@ textarea:focus{
 </head>
 <body>
 <!-- LAYOUT:ja-header:start -->
+<a class="jc-skip-link" href="#main-content">本文へ移動</a>
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
@@ -426,7 +422,7 @@ textarea:focus{
 </header>
 <!-- LAYOUT:ja-header:end -->
 
-  <main class="wrap">
+  <main id="main-content" tabindex="-1" class="wrap">
     <section class="hero">
       <div class="hero-main">
         <div class="eyebrow">Contact J-Connect Germany</div>

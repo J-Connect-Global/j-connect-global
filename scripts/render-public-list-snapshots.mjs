@@ -296,7 +296,7 @@ function communityListCards(posts) {
             <a class="card-link" href="${escapeHtml(publicDetail("community", post))}" aria-label="${escapeHtml(post.title)}の詳細ページを開く">
               <div class="card-media">
                 <div class="placeholder-art" data-icon="掲"></div>
-                <img src="${escapeHtml(communityImage(post))}" alt="${escapeHtml(post.title)} のイメージ" loading="lazy" decoding="async" data-fallback-src="${DEFAULT_IMAGE}">
+                <img src="${escapeHtml(communityImage(post))}" alt="${escapeHtml(post.title)} のイメージ" width="480" height="300" loading="lazy" decoding="async" data-fallback-src="${DEFAULT_IMAGE}">
                 ${imageCount ? `<span class="image-count">写真 ${imageCount}</span>` : ""}
               </div>
               <div class="card-body">

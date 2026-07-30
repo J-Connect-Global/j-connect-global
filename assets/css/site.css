@@ -250,6 +250,10 @@ button,input,select,textarea{font:inherit;}
   font-weight:800;
 }
 
+.site-hero .site-badge{
+  color:var(--site-navy);
+}
+
 .site-badge{
   min-height:28px;
   border-radius:999px;
@@ -1263,6 +1267,20 @@ body > .site-footer{
   --article-ink:#dce8f6;
   --article-ink-strong:#f2f7ff;
   --article-muted:#a8bad0;
+}
+
+:root[data-theme="dark"] body .article-kicker{
+  border-color:var(--color-border);
+  background:var(--color-primary-soft);
+  color:var(--color-primary);
+}
+
+:root[data-theme="dark"] body .article-sidebar-facts dt{
+  color:var(--color-text);
+}
+
+:root[data-theme="dark"] body .article-sidebar-facts dd{
+  color:var(--color-text-muted);
 }
 
 :root[data-theme="dark"] body .article-body,

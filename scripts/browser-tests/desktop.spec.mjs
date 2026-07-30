@@ -26,7 +26,8 @@ import {
   medicalFixture,
   openDataRoute,
   openRoute,
-  shoppingFixture
+  shoppingFixture,
+  stubDriveImages
 } from "./support.mjs";
 
 test.beforeEach(async ({ page }) => {
@@ -99,6 +100,7 @@ test("crawler-first snapshots remain readable and canonical without JavaScript",
     viewport: { width: 1440, height: 1000 }
   });
   const page = await context.newPage();
+  await stubDriveImages(page);
   try {
     await page.goto("/germany/ja/", { waitUntil: "load" });
     await expect(page.locator("#homeJobsCards [data-public-snapshot-item='jobs']")).toHaveCount(Math.min(activeJobs.length, 4));
@@ -674,19 +676,11 @@ test("Shopping renders the committed fixture dataset", async ({ page }) => {
 });
 
 test("Directory capabilities appear automatically at the documented coverage boundary", async ({ page }) => {
-  await page.addInitScript(() => {
-    const map = {
-      setView() { return this; },
-      invalidateSize() {},
-      fitBounds() {}
-    };
-    window.L = {
-      map: () => map,
-      tileLayer: () => ({ addTo() { return this; } }),
-      layerGroup: () => ({ addTo() { return this; }, clearLayers() {} }),
-      marker: () => ({ bindPopup() { return this; }, on() { return this; }, addTo() { return this; } })
-    };
-  });
+  await page.route("https://*.tile.openstreetmap.org/**", (route) => route.fulfill({
+    body: '<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256"><rect width="256" height="256" fill="#dbe6f2"/></svg>',
+    contentType: "image/svg+xml",
+    status: 200
+  }));
   const items = Array.from({ length: 10 }, (_, index) => {
     const hasRepresentativeValue = index < 6;
     return {
@@ -755,6 +749,8 @@ test("Directory capabilities appear automatically at the documented coverage bou
   await assertDirectoryModalKeyboard(page);
   await page.locator("#mapViewBtn").click();
   await expect(page.locator("#mapCoverageNote")).toBeVisible();
+  await expect(page.locator('script[data-jconnect-leaflet="script"]')).toHaveCount(1);
+  await expect(page.locator("#map.leaflet-container")).toBeVisible();
   await assertRouteReady(page);
 });
 

@@ -1,26 +1,26 @@
 [
   {
     "id": "page-root",
-    "title": "J-Connect Global",
+    "title": "J-Connect Germanyへ移動します",
     "url": "/",
-    "type": "home",
+    "type": "utility",
     "pillar": "home",
-    "status": "published",
-    "canonical_url": "/",
+    "status": "redirect",
+    "canonical_url": "/germany/ja/",
     "nav_visible": false,
     "footer_visible": false,
     "search_visible": false,
-    "sitemap_visible": true,
+    "sitemap_visible": false,
     "legacy": false,
-    "redirect_target": "",
-    "layout": "global-home",
-    "hero_type": "home",
-    "description": "J-Connect Global は、海外で暮らす日本人の生活情報、交流掲示板、仕事・求人、現地ニュース、語学学習を地域別に届ける情報プラットフォームです。",
-    "lastmod": "2026-07-28",
+    "redirect_target": "/germany/ja/",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "J-Connect Global のドメインルートからドイツ向け日本語ポータルへ移動します。",
+    "lastmod": "2026-07-30",
     "tags": [
       "J-Connect Global",
-      "J-Connect",
-      "海外在住日本人"
+      "J-Connect Germany",
+      "ドイツ"
     ]
   },
   {

@@ -123,7 +123,7 @@ function textContent(value) {
 }
 
 function classifyTemplate(route, staticHtml) {
-  if (route === "/") return "global";
+  if (route === "/") return "redirect";
   if (route === "/germany/ja/") return "portal";
   if (
     /data-generated-public-detail/i.test(staticHtml)
@@ -435,7 +435,7 @@ export function renderArtifactQualitySummary(metrics) {
 - HTML pages: ${metrics.html_pages}
 - Indexable pages: ${metrics.indexable_pages}
 - Sitemap routes: ${metrics.sitemap_routes}
-- Maximum crawl depth from \`/\`: ${metrics.maximum_crawl_depth}
+- Maximum crawl depth through the root fallback link: ${metrics.maximum_crawl_depth}
 - Initial third-party CSS/JS dependencies: ${metrics.external_initial_dependencies}
 
 | Template | Pages | Max HTML | Max CSS | Max JS | Max shell |

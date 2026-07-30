@@ -1,11 +1,5 @@
 [
   {
-    "url": "/",
-    "primary_query": "J-Connect Global",
-    "title_terms": ["J-Connect Global"],
-    "content_terms": ["J-Connect Global", "ドイツ", "在住日本人"]
-  },
-  {
     "url": "/germany/ja/",
     "primary_query": "ドイツ 在住 日本人 生活",
     "title_terms": ["J-Connect Germany", "ドイツ在住日本人", "生活", "掲示板", "求人"],

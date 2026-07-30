@@ -2330,9 +2330,9 @@ function updateSitemap(allItems, pages) {
   const sitemapPath = 'sitemap.xml';
   const byLoc = new Map();
 
-  // The domain root is the parent brand homepage and JA is the current primary
-  // public regional version. Do not preserve or add unfinished DE/EN language
-  // placeholders, redirect-only pages, or unrelated non-JA URLs.
+  // Only the current primary JA portal and its published descendants belong in
+  // the sitemap. The domain root is a redirect route, while unfinished DE/EN
+  // placeholders and other redirect-only routes remain excluded.
   for (const page of pages.filter((entry) => entry.status === 'published' && entry.sitemap_visible === true)) {
     const loc = absoluteUrl(page.canonical_url || page.url);
     if (!isSitemapCanonicalUrl(loc)) continue;
@@ -2874,8 +2874,7 @@ function isCanonicalJaUrl(url) {
 }
 
 function isSitemapCanonicalUrl(url) {
-  const absolute = absoluteUrl(url);
-  return absolute === absoluteUrl('/') || isCanonicalJaUrl(absolute);
+  return isCanonicalJaUrl(url);
 }
 
 function indent(value, spaces) {

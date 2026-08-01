@@ -136,7 +136,10 @@ test("Learn German phrases use readable type and unclipped compact controls", as
   expect(Math.abs(filterBoxes[0].top - filterBoxes[1].top)).toBeLessThanOrEqual(1);
   expect(filterBoxes[1].left).toBeGreaterThan(filterBoxes[0].left);
 
-  await page.locator('[data-view-target="learningArticleGrid"] [data-view-mode="list"]').click({ force: true });
+  const phraseListViewButton = page.locator('[data-view-target="learningArticleGrid"] [data-view-mode="list"]');
+  await phraseListViewButton.scrollIntoViewIfNeeded();
+  await phraseListViewButton.click();
+  await expect(phraseListViewButton).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator("#learningArticleGrid")).toHaveClass(/is-list-view/);
   const metaMetrics = await page.locator("#learningArticleGrid .jc-card-meta").evaluateAll((elements) => elements.slice(0, 5).map((element) => ({
     clientHeight: element.clientHeight,

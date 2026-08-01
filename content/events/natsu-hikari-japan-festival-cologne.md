@@ -131,6 +131,5 @@ NATSU HIKARI Japan Festival Kölnは、日本文化、アニメ、音楽、フ�
 - [NATSU HIKARI公式ページ](https://www.dreamlight-labs.com/de/festival/hikari-japan-festival-koln)
 - 会場：Carlswerk Victoria & Club Volta Köln
 - 主催表記：Dreamlight Experiences
-- 最終確認：2026年7月19日
 
 J-Connectでは開催直前にも、時刻、チケット、ワークショップ、交通情報を再確認します。この記事と購入画面が違う場合は、購入画面と主催者の最新案内を優先してください。

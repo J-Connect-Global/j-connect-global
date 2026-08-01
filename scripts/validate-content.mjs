@@ -381,17 +381,11 @@ function validateOfficialSourceOutput(html, item, relPath) {
 function visibleArticleFreshnessEntries(item) {
   const publishedAt = String(item.published_at || '').trim();
   const updatedAt = String(item.updated_at || '').trim();
-  const verifiedAt = String(item.last_verified || '').trim();
   const hasDistinctUpdate = Boolean(updatedAt && updatedAt !== publishedAt);
   const entries = [];
 
   if (publishedAt) entries.push({ kind: 'published', label: '公開', value: publishedAt });
-  if (hasDistinctUpdate && verifiedAt && updatedAt === verifiedAt) {
-    entries.push({ kind: 'updated-verified', label: '最終更新・確認', value: updatedAt });
-  } else {
-    if (hasDistinctUpdate) entries.push({ kind: 'updated', label: '最終更新', value: updatedAt });
-    if (verifiedAt) entries.push({ kind: 'verified', label: '最終確認', value: verifiedAt });
-  }
+  if (hasDistinctUpdate) entries.push({ kind: 'updated', label: '最終更新', value: updatedAt });
 
   return entries;
 }
@@ -413,6 +407,18 @@ function validateVisibleArticleFreshness(html, item, relPath) {
     const expectedTime = `<time class="article-date article-date--${entry.kind}" datetime="${entry.value}">${entry.label}: ${entry.value}</time>`;
     if (!freshness.includes(expectedTime)) {
       problems.push(`${relPath} missing visible ${entry.label} date: ${entry.value}.`);
+    }
+  }
+
+  const disallowedReviewMetadata = [
+    /最終確認(?:日)?[:：]\s*\d{4}/,
+    /次回確認(?:目安|日)?[:：]\s*\d{4}/,
+    /最終更新・確認[:：]\s*\d{4}/,
+    /<dt>\s*(?:最終確認|次回確認)\s*<\/dt>/
+  ];
+  for (const pattern of disallowedReviewMetadata) {
+    if (pattern.test(html)) {
+      problems.push(`${relPath} exposes removed review-date metadata matching ${pattern}.`);
     }
   }
 }

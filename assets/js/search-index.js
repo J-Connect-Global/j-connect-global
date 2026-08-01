@@ -831,6 +831,119 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
+    "title": "gamescom 2026ケルン完全ガイド｜日程・チケット・混雑・子連れ準備",
+    "description": "2026年8月26〜30日にケルンで開かれるgamescomを、初参加者向けに整理。チケット、入場年齢、混雑を避ける回り方、鉄道、持ち物、子連れ判断まで公式情報をもとに説明します。",
+    "url": "/germany/ja/events/gamescom-2026-cologne-guide/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "gamescom",
+      "ケルン",
+      "NRW",
+      "ゲーム",
+      "子連れ",
+      "見本市"
+    ]
+  },
+  {
+    "title": "EKŌ-Haus 2026秋の日本文化イベント｜茶道・着物・書道・展覧会",
+    "description": "デュッセルドルフEKŌ-Hausで2026年8〜10月に行われる展覧会、茶道、着物、緑茶、書道、仏教行事を整理。予約、料金、言語、参加前の注意点が分かります。",
+    "url": "/germany/ja/events/eko-haus-autumn-2026/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "EKŌ-Haus",
+      "デュッセルドルフ",
+      "日本文化",
+      "茶道",
+      "着物",
+      "書道",
+      "NRW"
+    ]
+  },
+  {
+    "title": "ケルン東アジア美術館2026ガイド｜日本美術・企画展・料金・見学のコツ",
+    "description": "ケルン東アジア美術館の2026年の展覧会、日本関連展示、開館時間、料金、無料条件、アクセス、子連れ・初訪問の回り方を公式情報から整理します。",
+    "url": "/germany/ja/events/cologne-east-asian-art-museum-2026/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "ケルン",
+      "日本美術",
+      "東アジア美術",
+      "美術館",
+      "展覧会",
+      "NRW"
+    ]
+  },
+  {
+    "title": "Beethovenfest Bonn 2026ガイド｜無料公演・チケット・交通・家族向け",
+    "description": "2026年9月3日〜10月3日のBeethovenfest Bonnを、クラシック初心者にも分かるよう整理。無料公演、家族向け、割引、VRS交通券、会場選び、当日の注意点を説明します。",
+    "url": "/germany/ja/events/beethovenfest-bonn-2026-guide/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "Beethovenfest",
+      "ボン",
+      "クラシック",
+      "無料イベント",
+      "家族向け",
+      "NRW"
+    ]
+  },
+  {
+    "title": "NRWで小1の全日保育が権利に｜2026年8月開始のOGSを保護者向けに解説",
+    "description": "2026年8月から小学1年生に始まるGanztagsbetreuungの権利を、NRWのOGS、8時間、休暇中の扱い、申込先、満席時の確認方法まで日本語で整理します。",
+    "url": "/germany/ja/events/news/ganztag-primary-school-nrw-2026/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "Ganztag",
+      "OGS",
+      "小学校",
+      "子育て",
+      "NRW",
+      "学童保育"
+    ]
+  },
+  {
+    "title": "EU AI Actの透明性義務が2026年8月2日適用｜企業・発信者は何を表示する？",
+    "description": "EU AI Act第50条の透明性義務が2026年8月2日から適用。チャットボット、生成画像・音声、ディープフェイク、公益情報テキストの表示を、小規模事業者にも分かるよう整理します。",
+    "url": "/germany/ja/events/news/eu-ai-act-transparency-august-2026/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "EU AI Act",
+      "生成AI",
+      "透明性",
+      "AI画像",
+      "企業",
+      "ドイツ"
+    ]
+  },
+  {
+    "title": "EU修理権が2026年7月31日から適用｜ドイツで家電・スマホを直す時のポイント",
+    "description": "EUのRight to Repairが2026年7月31日から適用。対象製品、保証期間内外、修理費、交換との違い、追加1年の法定保証、店へ伝える内容を実務的に整理します。",
+    "url": "/germany/ja/events/news/eu-right-to-repair-2026-germany/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "修理権",
+      "家電",
+      "スマートフォン",
+      "消費者保護",
+      "EU",
+      "ドイツ"
+    ]
+  },
+  {
+    "title": "ドイツ建物近代化法が2026年7月29日施行｜暖房交換は何が変わった？",
+    "description": "2026年7月29日に施行されたGebäudemodernisierungsgesetzで、暖房の65%再エネ一律要件がどう変わったかを整理。所有者・賃貸入居者が急いで決める前の確認事項を説明します。",
+    "url": "/germany/ja/events/news/building-modernisation-law-germany-2026/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "暖房",
+      "Gebäudemodernisierungsgesetz",
+      "住宅",
+      "ガス",
+      "ヒートポンプ",
+      "ドイツ"
+    ]
+  },
+  {
     "title": "予約を取りたいときのドイツ語フレーズ",
     "description": "病院、美容室、役所などで使える予約依頼、空き確認、日時変更の基本表現です。",
     "url": "/germany/ja/learn-german/appointment-phrase/",

@@ -641,13 +641,15 @@ test("article hero frames preserve the desktop crop and article alignment", asyn
   }
 });
 
-test("articles expose distinct editorial updates as visible semantic freshness", async ({ page }) => {
+test("articles expose public dates without internal review metadata", async ({ page }) => {
   await openRoute(page, "/germany/ja/living/hamburg-weekend-trip/");
   const freshness = page.locator(".article-freshness");
   await expect(freshness).toBeVisible();
   await expect(freshness.locator('time.article-date--published[datetime="2026-06-29"]')).toHaveText("公開: 2026-06-29");
-  await expect(freshness.locator('time.article-date--updated-verified[datetime="2026-07-19"]')).toHaveText("最終更新・確認: 2026-07-19");
+  await expect(freshness.locator('time.article-date--updated[datetime="2026-07-19"]')).toHaveText("最終更新: 2026-07-19");
   await expect(freshness.locator("time")).toHaveCount(2);
+  await expect(page.locator("body")).not.toContainText("最終確認");
+  await expect(page.locator("body")).not.toContainText("次回確認");
   await activateDarkMode(page);
   await assertWcagTextContrast(page, ".article-freshness", "article freshness in dark mode");
   await assertRouteReady(page);

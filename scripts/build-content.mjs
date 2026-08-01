@@ -1012,18 +1012,11 @@ function stripInlineMarkdown(value) {
 function renderArticleFreshness(item) {
   const publishedAt = firstNonEmpty(item.published_at);
   const updatedAt = firstNonEmpty(item.source_updated_at);
-  const verifiedAt = firstNonEmpty(item.last_verified);
   const hasDistinctUpdate = Boolean(updatedAt && updatedAt !== publishedAt);
   const rows = [];
 
   if (publishedAt) rows.push(renderArticleFreshnessTime('published', '公開', publishedAt));
-
-  if (hasDistinctUpdate && verifiedAt && updatedAt === verifiedAt) {
-    rows.push(renderArticleFreshnessTime('updated-verified', '最終更新・確認', updatedAt));
-  } else {
-    if (hasDistinctUpdate) rows.push(renderArticleFreshnessTime('updated', '最終更新', updatedAt));
-    if (verifiedAt) rows.push(renderArticleFreshnessTime('verified', '最終確認', verifiedAt));
-  }
+  if (hasDistinctUpdate) rows.push(renderArticleFreshnessTime('updated', '最終更新', updatedAt));
 
   return rows.length
     ? `<span class="article-freshness">\n${indent(rows.join('\n'), 2)}\n</span>`
@@ -1060,10 +1053,6 @@ function renderArticleMetaSpans(type, item) {
       if (item.resource_format?.length) rows.push(`<span>形式: ${escapeHtml(formatLearnGermanMeta('resource_format', item.resource_format))}</span>`);
       if (item.resource_price_type?.length) rows.push(`<span>料金: ${escapeHtml(formatLearnGermanMeta('resource_price_type', item.resource_price_type))}</span>`);
     }
-  }
-
-  if (item.content_type === 'news' && item.review?.next_review_due) {
-    rows.push(`<span>次回確認目安: ${escapeHtml(item.review.next_review_due)}</span>`);
   }
 
   return rows.length ? `\n          ${rows.join('\n          ')}` : '';
@@ -1317,14 +1306,6 @@ function renderArticleSidebarFacts(type, item) {
   }
 
   facts.push(['カテゴリ', item.category || config.label]);
-
-  if (item.content_type === 'news' && item.last_verified) {
-    facts.push(['最終確認', item.last_verified]);
-  }
-
-  if (item.content_type === 'news' && item.review?.next_review_due) {
-    facts.push(['次回確認', item.review.next_review_due]);
-  }
 
   return `<dl class="article-sidebar-facts">
 ${indent(facts.map(([label, value]) => `<div>
@@ -1842,8 +1823,7 @@ function renderManualNewsHubCard(item) {
     'J-Connect解説'
   ];
   const meta = [
-    `公開: ${item.published_at || ''}`,
-    item.last_verified ? `最終確認: ${item.last_verified}` : ''
+    `公開: ${item.published_at || ''}`
   ].filter(Boolean);
 
   return `<article class="news-card manual-news-card${mediaClass}" data-news-card data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-search="${escapeAttribute(searchText)}" data-news-category="${escapeAttribute(newsFilters.category.join(' '))}" data-news-area="${escapeAttribute(newsFilters.area.join(' '))}" data-news-type="${escapeAttribute(newsFilters.type.join(' '))}" data-news-date="${escapeAttribute(item.published_at || '')}">

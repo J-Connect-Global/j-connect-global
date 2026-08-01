@@ -342,5 +342,538 @@
       "next_review_due": "2026-08-20"
     },
     "image": "/assets/img/events/natsu-hikari-editorial-v2.webp"
+  },
+  {
+    "id": "E009",
+    "title": "gamescom 2026ケルン完全ガイド｜日程・チケット・混雑・子連れ準備",
+    "slug": "gamescom-2026-cologne-guide",
+    "image_url": "/assets/img/events/gamescom-2026-cologne-guide.webp",
+    "image": "/assets/img/events/gamescom-2026-cologne-guide.webp",
+    "image_alt": "大規模ゲーム見本市へ入場する前にスマートフォンで予定を確認する来場者",
+    "image_caption": "AI生成の編集イメージ。実際のgamescom会場、出展内容、来場者を撮影したものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "ゲーム・大型イベント",
+    "summary": "2026年8月26〜30日にケルンで開かれるgamescomを、初参加者向けに整理。チケット、入場年齢、混雑を避ける回り方、鉄道、持ち物、子連れ判断まで公式情報をもとに説明します。",
+    "url": "/germany/ja/events/gamescom-2026-cologne-guide/",
+    "markdown_path": "/content/events/gamescom-2026-cologne-guide.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-01",
+    "updated_at": "2026-08-01",
+    "last_verified": "2026-08-01",
+    "tags": [
+      "gamescom",
+      "ケルン",
+      "NRW",
+      "ゲーム",
+      "子連れ",
+      "見本市"
+    ],
+    "home_visible": true,
+    "home_order": 10,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/gamescom-2026-cologne-guide/",
+    "city": "Köln",
+    "location": "Koelnmesse",
+    "event_date": "2026-08-26〜2026-08-30",
+    "official_url": "https://www.gamescom.global/en/",
+    "official_sources": [
+      {
+        "title": "gamescom 2026 公式サイト",
+        "url": "https://www.gamescom.global/en/"
+      },
+      {
+        "title": "gamescom 来場者情報",
+        "url": "https://www.gamescom.global/en/info/visitors"
+      },
+      {
+        "title": "gamescom チケット",
+        "url": "https://www.gamescom.global/en/tickets/buy-tickets"
+      },
+      {
+        "title": "gamescom 青少年保護",
+        "url": "https://www.gamescom.global/en/info/visitors/youth-protection"
+      },
+      {
+        "title": "gamescom 鉄道アクセス",
+        "url": "https://www.gamescom.global/en/info/arrival/arrival-by-train"
+      }
+    ],
+    "disclaimer_type": "event",
+    "related_articles": [
+      "natsu-hikari-japan-festival-cologne",
+      "family-weekend-events-nrw"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-01",
+      "next_review_due": "2026-08-24"
+    }
+  },
+  {
+    "id": "E010",
+    "title": "EKŌ-Haus 2026秋の日本文化イベント｜茶道・着物・書道・展覧会",
+    "slug": "eko-haus-autumn-2026",
+    "image_url": "/assets/img/events/eko-haus-autumn-2026.webp",
+    "image": "/assets/img/events/eko-haus-autumn-2026.webp",
+    "image_alt": "日本庭園を望む文化施設で茶道イベントの準備をする来場者",
+    "image_caption": "AI生成の編集イメージ。実際のEKŌ-Haus、講師、行事を撮影・再現したものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "日本文化イベント",
+    "summary": "デュッセルドルフEKŌ-Hausで2026年8〜10月に行われる展覧会、茶道、着物、緑茶、書道、仏教行事を整理。予約、料金、言語、参加前の注意点が分かります。",
+    "url": "/germany/ja/events/eko-haus-autumn-2026/",
+    "markdown_path": "/content/events/eko-haus-autumn-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-01",
+    "updated_at": "2026-08-01",
+    "last_verified": "2026-08-01",
+    "tags": [
+      "EKŌ-Haus",
+      "デュッセルドルフ",
+      "日本文化",
+      "茶道",
+      "着物",
+      "書道",
+      "NRW"
+    ],
+    "home_visible": true,
+    "home_order": 11,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/eko-haus-autumn-2026/",
+    "city": "Düsseldorf",
+    "location": "EKŌ-Haus der Japanischen Kultur",
+    "event_date": "2026-08-20〜2026-10-17",
+    "official_url": "https://eko-haus.de/en/events/",
+    "official_sources": [
+      {
+        "title": "EKŌ-Haus イベント一覧",
+        "url": "https://eko-haus.de/en/events/"
+      },
+      {
+        "title": "EKŌ-Haus 文化イベント",
+        "url": "https://eko-haus.de/en/events/culture/"
+      },
+      {
+        "title": "EKŌ-Haus 茶道イベント",
+        "url": "https://eko-haus.de/en/events/culture/tea-ceremonies/"
+      },
+      {
+        "title": "EKŌ-Haus 見学・開館情報",
+        "url": "https://eko-haus.de/en/visit/"
+      }
+    ],
+    "disclaimer_type": "event",
+    "related_articles": [
+      "japan-day-duesseldorf",
+      "natsu-hikari-japan-festival-cologne"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-01",
+      "next_review_due": "2026-08-18"
+    }
+  },
+  {
+    "id": "E011",
+    "title": "ケルン東アジア美術館2026ガイド｜日本美術・企画展・料金・見学のコツ",
+    "slug": "cologne-east-asian-art-museum-2026",
+    "image_url": "/assets/img/events/cologne-east-asian-art-museum-2026.webp",
+    "image": "/assets/img/events/cologne-east-asian-art-museum-2026.webp",
+    "image_alt": "東アジアの陶磁器や漆芸を展示する静かな美術館を見学する来館者",
+    "image_caption": "AI生成の編集イメージ。実際の美術館内装・展示作品・来館者を撮影または複製したものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "美術館・展覧会",
+    "summary": "ケルン東アジア美術館の2026年の展覧会、日本関連展示、開館時間、料金、無料条件、アクセス、子連れ・初訪問の回り方を公式情報から整理します。",
+    "url": "/germany/ja/events/cologne-east-asian-art-museum-2026/",
+    "markdown_path": "/content/events/cologne-east-asian-art-museum-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-01",
+    "updated_at": "2026-08-01",
+    "last_verified": "2026-08-01",
+    "tags": [
+      "ケルン",
+      "日本美術",
+      "東アジア美術",
+      "美術館",
+      "展覧会",
+      "NRW"
+    ],
+    "home_visible": true,
+    "home_order": 12,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/cologne-east-asian-art-museum-2026/",
+    "city": "Köln",
+    "location": "Museum für Ostasiatische Kunst Köln",
+    "event_date": "2026年の展覧会・催し",
+    "official_url": "https://museum-fuer-ostasiatische-kunst.de/Exhibitions",
+    "official_sources": [
+      {
+        "title": "ケルン東アジア美術館 展覧会一覧",
+        "url": "https://museum-fuer-ostasiatische-kunst.de/Exhibitions"
+      },
+      {
+        "title": "ケルン東アジア美術館 利用案内",
+        "url": "https://museum-fuer-ostasiatische-kunst.de/Information"
+      },
+      {
+        "title": "East Asia in Motion",
+        "url": "https://museum-fuer-ostasiatische-kunst.de/East-Asia-in-Motion"
+      },
+      {
+        "title": "Gods, spirits and demons 日本常設展示",
+        "url": "https://museum-fuer-ostasiatische-kunst.de/Gods-spirits-and-demons"
+      }
+    ],
+    "disclaimer_type": "event",
+    "related_articles": [
+      "eko-haus-autumn-2026",
+      "family-weekend-events-nrw"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-01",
+      "next_review_due": "2026-10-20"
+    }
+  },
+  {
+    "id": "E012",
+    "title": "Beethovenfest Bonn 2026ガイド｜無料公演・チケット・交通・家族向け",
+    "slug": "beethovenfest-bonn-2026-guide",
+    "image_url": "/assets/img/events/beethovenfest-bonn-2026-guide.webp",
+    "image": "/assets/img/events/beethovenfest-bonn-2026-guide.webp",
+    "image_alt": "コンサートホールの開演前にスマートフォンでチケットを確認する来場者",
+    "image_caption": "AI生成の編集イメージ。実際のBeethovenfest会場、出演者、公演を撮影・再現したものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "音楽・文化",
+    "summary": "2026年9月3日〜10月3日のBeethovenfest Bonnを、クラシック初心者にも分かるよう整理。無料公演、家族向け、割引、VRS交通券、会場選び、当日の注意点を説明します。",
+    "url": "/germany/ja/events/beethovenfest-bonn-2026-guide/",
+    "markdown_path": "/content/events/beethovenfest-bonn-2026-guide.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-01",
+    "updated_at": "2026-08-01",
+    "last_verified": "2026-08-01",
+    "tags": [
+      "Beethovenfest",
+      "ボン",
+      "クラシック",
+      "無料イベント",
+      "家族向け",
+      "NRW"
+    ],
+    "home_visible": true,
+    "home_order": 13,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/beethovenfest-bonn-2026-guide/",
+    "city": "Bonn",
+    "location": "Beethovenhalleほかボン市内各会場",
+    "event_date": "2026-09-03〜2026-10-03",
+    "official_url": "https://www.beethovenfest.de/en/",
+    "official_sources": [
+      {
+        "title": "Beethovenfest Bonn 2026",
+        "url": "https://www.beethovenfest.de/en/"
+      },
+      {
+        "title": "Beethovenfest 2026 プログラム",
+        "url": "https://www.beethovenfest.de/en/programm-tickets"
+      },
+      {
+        "title": "Beethovenfest チケット情報",
+        "url": "https://www.beethovenfest.de/en/ticketinfos"
+      },
+      {
+        "title": "Beethovenfest バリアフリー情報",
+        "url": "https://www.beethovenfest.de/en/barrierefreiheit"
+      }
+    ],
+    "disclaimer_type": "event",
+    "related_articles": [
+      "bonn-japanese-film-festival",
+      "family-weekend-events-nrw"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-01",
+      "next_review_due": "2026-09-01"
+    }
+  },
+  {
+    "id": "N003",
+    "title": "NRWで小1の全日保育が権利に｜2026年8月開始のOGSを保護者向けに解説",
+    "slug": "ganztag-primary-school-nrw-2026",
+    "image_url": "/assets/img/events/ganztag-primary-school-nrw-2026.webp",
+    "image": "/assets/img/events/ganztag-primary-school-nrw-2026.webp",
+    "image_alt": "NRWの小学校で全日保育について職員へ相談する保護者",
+    "image_caption": "AI生成の編集イメージ。実際の学校、職員、児童、申請手続きを撮影・再現したものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "子育て・教育",
+    "content_type": "news",
+    "source_type": "manual",
+    "area": "NRW / ドイツ全体",
+    "summary": "2026年8月から小学1年生に始まるGanztagsbetreuungの権利を、NRWのOGS、8時間、休暇中の扱い、申込先、満席時の確認方法まで日本語で整理します。",
+    "url": "/germany/ja/events/news/ganztag-primary-school-nrw-2026/",
+    "markdown_path": "/content/events/news/ganztag-primary-school-nrw-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-01",
+    "updated_at": "2026-08-01",
+    "last_verified": "2026-08-01",
+    "tags": [
+      "Ganztag",
+      "OGS",
+      "小学校",
+      "子育て",
+      "NRW",
+      "学童保育"
+    ],
+    "home_visible": false,
+    "home_order": 1,
+    "hub_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/news/ganztag-primary-school-nrw-2026/",
+    "city": "NRW / ドイツ全体",
+    "location": "",
+    "event_date": "2026-08-01施行",
+    "official_url": "https://www.schulministerium.nrw/ganztag-im-primarbereich",
+    "official_sources": [
+      {
+        "title": "ドイツ連邦政府：2026年8月の新制度",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/gesetzliche-neuregelungen-2448548"
+      },
+      {
+        "title": "NRW州教育省：Ganztag im Primarbereich",
+        "url": "https://www.schulministerium.nrw/ganztag-im-primarbereich"
+      },
+      {
+        "title": "NRW州教育省：OGS共同通達FAQ",
+        "url": "https://www.schulministerium.nrw/faq-gemeinsamer-ogs-erlass"
+      },
+      {
+        "title": "連邦家族ポータル：全日保育の権利",
+        "url": "https://familienportal.de/familienportal/meta/aktuelles/aktuelle-meldungen/rechtsanspruch-auf-ganztagsbetreuung-ab-2026-beschlossen-185662"
+      }
+    ],
+    "disclaimer_type": "news_explainer",
+    "related_articles": [],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-01",
+      "next_review_due": "2026-09-15"
+    }
+  },
+  {
+    "id": "N004",
+    "title": "EU AI Actの透明性義務が2026年8月2日適用｜企業・発信者は何を表示する？",
+    "slug": "eu-ai-act-transparency-august-2026",
+    "image_url": "/assets/img/events/eu-ai-act-transparency-august-2026.webp",
+    "image": "/assets/img/events/eu-ai-act-transparency-august-2026.webp",
+    "image_alt": "EUのAI透明性ルールに沿って生成コンテンツの公開方法を確認する担当者",
+    "image_caption": "AI生成の編集イメージ。画面、業務フロー、組織は架空で、法令への適合を保証するものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "AI・デジタル",
+    "content_type": "news",
+    "source_type": "manual",
+    "area": "ドイツ / EU",
+    "summary": "EU AI Act第50条の透明性義務が2026年8月2日から適用。チャットボット、生成画像・音声、ディープフェイク、公益情報テキストの表示を、小規模事業者にも分かるよう整理します。",
+    "url": "/germany/ja/events/news/eu-ai-act-transparency-august-2026/",
+    "markdown_path": "/content/events/news/eu-ai-act-transparency-august-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-01",
+    "updated_at": "2026-08-01",
+    "last_verified": "2026-08-01",
+    "tags": [
+      "EU AI Act",
+      "生成AI",
+      "透明性",
+      "AI画像",
+      "企業",
+      "ドイツ"
+    ],
+    "home_visible": false,
+    "home_order": 0,
+    "hub_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/news/eu-ai-act-transparency-august-2026/",
+    "city": "ドイツ / EU",
+    "location": "",
+    "event_date": "2026-08-02適用",
+    "official_url": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-transparency-ai-generated-content",
+    "official_sources": [
+      {
+        "title": "欧州委員会：AI Actの全体像",
+        "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+      },
+      {
+        "title": "欧州委員会：第50条透明性ガイドライン",
+        "url": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-transparency-ai-generated-content"
+      },
+      {
+        "title": "欧州委員会：透明性義務ガイドライン公開",
+        "url": "https://digital-strategy.ec.europa.eu/en/news/commission-publishes-guidelines-transparency-obligations-providers-and-deployers-certain-ai-systems"
+      },
+      {
+        "title": "欧州委員会：AI生成コンテンツ表示の行動規範",
+        "url": "https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content"
+      },
+      {
+        "title": "ドイツ連邦政府：2026年8月の新制度",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/gesetzliche-neuregelungen-2448548"
+      }
+    ],
+    "disclaimer_type": "news_explainer",
+    "related_articles": [],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-01",
+      "next_review_due": "2026-10-01"
+    }
+  },
+  {
+    "id": "N005",
+    "title": "EU修理権が2026年7月31日から適用｜ドイツで家電・スマホを直す時のポイント",
+    "slug": "eu-right-to-repair-2026-germany",
+    "image_url": "/assets/img/events/eu-right-to-repair-2026-germany.webp",
+    "image": "/assets/img/events/eu-right-to-repair-2026-germany.webp",
+    "image_alt": "修理工房でスマートフォンと小型家電の修理方法を相談する利用者",
+    "image_caption": "AI生成の編集イメージ。実在する店舗・製品・メーカー・修理条件を撮影または示したものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "消費者・買い物",
+    "content_type": "news",
+    "source_type": "manual",
+    "area": "ドイツ / EU",
+    "summary": "EUのRight to Repairが2026年7月31日から適用。対象製品、保証期間内外、修理費、交換との違い、追加1年の法定保証、店へ伝える内容を実務的に整理します。",
+    "url": "/germany/ja/events/news/eu-right-to-repair-2026-germany/",
+    "markdown_path": "/content/events/news/eu-right-to-repair-2026-germany.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-01",
+    "updated_at": "2026-08-01",
+    "last_verified": "2026-08-01",
+    "tags": [
+      "修理権",
+      "家電",
+      "スマートフォン",
+      "消費者保護",
+      "EU",
+      "ドイツ"
+    ],
+    "home_visible": false,
+    "home_order": 2,
+    "hub_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/news/eu-right-to-repair-2026-germany/",
+    "city": "ドイツ / EU",
+    "location": "",
+    "event_date": "2026-07-31適用",
+    "official_url": "https://commission.europa.eu/law/law-topic/consumer-protection-law/directive-repair-goods_en",
+    "official_sources": [
+      {
+        "title": "欧州委員会：Directive on repair of goods",
+        "url": "https://commission.europa.eu/law/law-topic/consumer-protection-law/directive-repair-goods_en"
+      },
+      {
+        "title": "EU理事会：Right to repair products",
+        "url": "https://www.consilium.europa.eu/en/policies/right-to-repair-products/"
+      },
+      {
+        "title": "EUR-Lex：修理促進指令の概要",
+        "url": "https://eur-lex.europa.eu/EN/legal-content/summary/common-rules-promoting-the-repair-of-goods-and-amending-related-eu-legislation.html"
+      },
+      {
+        "title": "ドイツ連邦政府：2026年8月の新制度",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/gesetzliche-neuregelungen-2448548"
+      }
+    ],
+    "disclaimer_type": "news_explainer",
+    "related_articles": [],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-01",
+      "next_review_due": "2026-11-01"
+    }
+  },
+  {
+    "id": "N006",
+    "title": "ドイツ建物近代化法が2026年7月29日施行｜暖房交換は何が変わった？",
+    "slug": "building-modernisation-law-germany-2026",
+    "image_url": "/assets/img/events/building-modernisation-law-germany-2026.webp",
+    "image": "/assets/img/events/building-modernisation-law-germany-2026.webp",
+    "image_alt": "ドイツの住宅で暖房設備の選択肢をエネルギー相談員と確認する住民",
+    "image_caption": "AI生成の編集イメージ。実在する設備・建物・助成制度を示すものではなく、特定方式を推奨していません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "住まい・エネルギー",
+    "content_type": "news",
+    "source_type": "manual",
+    "area": "ドイツ全体",
+    "summary": "2026年7月29日に施行されたGebäudemodernisierungsgesetzで、暖房の65%再エネ一律要件がどう変わったかを整理。所有者・賃貸入居者が急いで決める前の確認事項を説明します。",
+    "url": "/germany/ja/events/news/building-modernisation-law-germany-2026/",
+    "markdown_path": "/content/events/news/building-modernisation-law-germany-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-01",
+    "updated_at": "2026-08-01",
+    "last_verified": "2026-08-01",
+    "tags": [
+      "暖房",
+      "Gebäudemodernisierungsgesetz",
+      "住宅",
+      "ガス",
+      "ヒートポンプ",
+      "ドイツ"
+    ],
+    "home_visible": false,
+    "home_order": 3,
+    "hub_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/news/building-modernisation-law-germany-2026/",
+    "city": "ドイツ全体",
+    "location": "",
+    "event_date": "2026-07-29施行",
+    "official_url": "https://www.bundesregierung.de/breg-de/aktuelles/neues-gebaeudemodernisierungsgesetz-2430284",
+    "official_sources": [
+      {
+        "title": "ドイツ連邦政府：新しいGebäudemodernisierungsgesetz",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/neues-gebaeudemodernisierungsgesetz-2430284"
+      },
+      {
+        "title": "ドイツ連邦政府：2026年8月の新制度",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/gesetzliche-neuregelungen-2448548"
+      },
+      {
+        "title": "Bundesnetzagentur：エネルギー価格と Abschlag",
+        "url": "https://www.bundesnetzagentur.de/DE/Vportal/Energie/PreiseAbschlaege/start.html"
+      }
+    ],
+    "disclaimer_type": "news_explainer",
+    "related_articles": [],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-01",
+      "next_review_due": "2026-12-05"
+    }
   }
 ]

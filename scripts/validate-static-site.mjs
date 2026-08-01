@@ -529,6 +529,21 @@ function validateTrustPlaceholders(rel, html) {
 }
 
 function validateStaticContentQuality(rel, url, html) {
+  const visibleText = stripTags(
+    html
+      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
+      .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
+  ).replace(/\s+/g, ' ').trim();
+  for (const pattern of [
+    /最終確認(?:日)?[:：]\s*\d{4}/,
+    /次回確認(?:目安|日)?[:：]\s*\d{4}/,
+    /最終更新・確認[:：]\s*\d{4}/
+  ]) {
+    if (pattern.test(visibleText)) {
+      problems.push(`${rel} exposes internal review-date metadata matching ${pattern}.`);
+    }
+  }
+
   if (url === '/germany/ja/') validateHomeStaticQuality(rel, html);
   if (url === '/germany/ja/medical/') validateMedicalGuide(rel, html);
   if (html.includes('class="article-content-shell"')) validateArticlePerformance(rel, html);

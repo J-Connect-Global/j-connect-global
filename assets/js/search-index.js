@@ -693,6 +693,50 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
+    "title": "ドイツの滞在許可を申請・更新する方法｜Ausländerbehörde・eAT・Fiktionsbescheinigung",
+    "description": "EU域外国籍者がドイツ国内で滞在許可を初回申請・更新するときの流れを、管轄確認、期限前の申請、必要書類、eAT受け取り、Fiktionsbescheinigung、就労・渡航時の注意点まで整理します。",
+    "url": "/germany/ja/living/residence-permit-renewal-germany/",
+    "category": "生活・手続き",
+    "tags": [
+      "滞在許可",
+      "Aufenthaltstitel",
+      "Ausländerbehörde",
+      "eAT",
+      "Fiktionsbescheinigung",
+      "更新"
+    ]
+  },
+  {
+    "title": "ドイツで医師を探して予約する方法｜Hausarzt・Facharzt・116117・112",
+    "description": "ドイツで体調を崩したときに、Hausarzt、専門医、116117、救急外来、112をどう使い分けるかを整理し、医師検索、予約、持ち物、紹介状、eGK、eAU、E-Rezeptまで実務順に説明します。",
+    "url": "/germany/ja/living/doctor-appointment-germany/",
+    "category": "生活・手続き",
+    "tags": [
+      "医師",
+      "病院予約",
+      "Hausarzt",
+      "Facharzt",
+      "116117",
+      "112",
+      "健康保険"
+    ]
+  },
+  {
+    "title": "ドイツで電気・インターネットを契約する方法｜入居・引っ越し・解約チェックリスト",
+    "description": "ドイツの賃貸住宅で電気とインターネットを準備する流れを、契約に含まれる費用の確認、メーター撮影、Grundversorgung、料金比較、開通、引っ越し、解約、トラブル防止まで整理します。",
+    "url": "/germany/ja/living/electricity-internet-contracts-germany/",
+    "category": "生活・手続き",
+    "tags": [
+      "電気契約",
+      "インターネット",
+      "引っ越し",
+      "Strom",
+      "Grundversorgung",
+      "解約",
+      "Zählerstand"
+    ]
+  },
+  {
     "title": "デュッセルドルフ日本デーの基本ガイド",
     "description": "デュッセルドルフの日本デーについて、初めて行く人向けに見どころ、混雑、アクセス、子連れ・花火観覧の注意点を整理します。",
     "url": "/germany/ja/events/japan-day-duesseldorf/",
@@ -949,14 +993,18 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "買い物で使うドイツ語",
-    "description": "スーパー、ドラッグストア、返品、質問、会計でそのまま使える短いドイツ語フレーズです。",
+    "title": "買い物で使うドイツ語｜スーパー・レジ・返品で役立つフレーズ",
+    "description": "ドイツのスーパー、パン屋、ドラッグストア、衣料品店で、商品を探す、量を頼む、Pfandを返す、会計する、成分を確認する、返品・不良品を伝えるための実用フレーズ集です。",
     "url": "/germany/ja/learn-german/shopping-phrases/",
     "category": "ドイツ語・学び",
     "tags": [
       "買い物",
       "スーパー",
+      "レジ",
+      "Pfand",
+      "返品",
       "A1",
+      "A2",
       "phrase",
       "shopping",
       "daily-life",
@@ -989,14 +1037,17 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "電話でよく使うドイツ語",
-    "description": "電話のかけ始め、取り次ぎ、予約確認、留守電、聞き返しで使う基本フレーズです。",
+    "title": "電話でよく使うドイツ語｜名乗り方・聞き返し・予約・留守電フレーズ",
+    "description": "ドイツ語の電話で、名乗る、用件を伝える、担当者につないでもらう、数字を復唱する、予約を変更する、留守電を残す、メールへ切り替えるための実用フレーズ集です。",
     "url": "/germany/ja/learn-german/telephone-phrases/",
     "category": "ドイツ語・学び",
     "tags": [
       "電話",
       "予約",
+      "聞き返し",
+      "留守番電話",
       "A1",
+      "A2",
       "phrase",
       "phone",
       "appointment",
@@ -1386,6 +1437,77 @@ window.JCONNECT_SEARCH_INDEX = [
       "speaking",
       "listening",
       "10min"
+    ]
+  },
+  {
+    "title": "外国人局で使うドイツ語｜滞在許可・更新・Fiktionsbescheinigungのフレーズ",
+    "description": "Ausländerbehördeへの申請確認、滞在許可更新、不足書類、就労条件、Fiktionsbescheinigung、eAT受け取りを短く正確に尋ねるドイツ語フレーズ集です。",
+    "url": "/germany/ja/learn-german/auslaenderbehoerde-residence-phrases/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "外国人局",
+      "滞在許可",
+      "Fiktionsbescheinigung",
+      "eAT",
+      "A2",
+      "B1",
+      "phrase",
+      "administration",
+      "appointment",
+      "new-arrival",
+      "employment",
+      "speaking",
+      "reading",
+      "writing",
+      "15min"
+    ]
+  },
+  {
+    "title": "薬局・処方箋で使うドイツ語｜E-Rezept・在庫・服用方法のフレーズ",
+    "description": "ドイツの薬局でE-Rezeptを提示し、在庫、取り寄せ、服用量、相互作用、副作用、妊娠・授乳、自己負担を確認するための実用ドイツ語フレーズ集です。",
+    "url": "/germany/ja/learn-german/pharmacy-prescription-phrases/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "薬局",
+      "処方箋",
+      "E-Rezept",
+      "薬",
+      "A1",
+      "A2",
+      "phrase",
+      "medical",
+      "pharmacy",
+      "healthcare",
+      "daily-life",
+      "speaking",
+      "listening",
+      "reading",
+      "15min"
+    ]
+  },
+  {
+    "title": "電気・インターネット契約で使うドイツ語｜開通・引っ越し・解約のフレーズ",
+    "description": "電力会社・通信会社へ入居、メーター値、契約開始、回線工事、障害、引っ越し、解約、最終請求を正確に伝えるためのドイツ語フレーズとメール例です。",
+    "url": "/germany/ja/learn-german/utilities-internet-contract-phrases/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "電気",
+      "インターネット",
+      "引っ越し",
+      "解約",
+      "Zählerstand",
+      "A2",
+      "B1",
+      "phrase",
+      "housing",
+      "phone",
+      "business-email",
+      "housing-contract",
+      "daily-life",
+      "speaking",
+      "reading",
+      "writing",
+      "15min"
     ]
   }
 ];

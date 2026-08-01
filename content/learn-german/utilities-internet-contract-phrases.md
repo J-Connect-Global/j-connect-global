@@ -114,16 +114,16 @@ ZählernummerとZählerstandは似ています。
 
 障害連絡は「使えない」だけでなく、発生時刻と確認済みのことを伝えます。
 
-> Seit gestern um 18 Uhr funktioniert der Internetanschluss nicht.<br>
-> Ich habe den Router neu gestartet und die Kabel geprüft.<br>
-> Die Internet-Leuchte blinkt rot.<br>
+> Seit gestern um 18 Uhr funktioniert der Internetanschluss nicht.
+> Ich habe den Router neu gestartet und die Kabel geprüft.
+> Die Internet-Leuchte blinkt rot.
 > Liegt in meiner Gegend eine bekannte Störung vor?
 
 日本語：
 
-> 昨日18時からインターネットが使えません。<br>
-> ルーターを再起動し、ケーブルを確認しました。<br>
-> インターネットのランプが赤く点滅しています。<br>
+> 昨日18時からインターネットが使えません。
+> ルーターを再起動し、ケーブルを確認しました。
+> インターネットのランプが赤く点滅しています。
 > 私の地域で既知の障害がありますか。
 
 追加で使える表現：
@@ -160,12 +160,12 @@ ZählernummerとZählerstandは似ています。
 
 **Betreff:** Kündigung meines Vertrags – Kundennummer [番号]
 
-> Sehr geehrte Damen und Herren,<br>
->> hiermit kündige ich meinen Vertrag mit der Kundennummer [番号] zum nächstmöglichen Termin.<br>
-> Bitte bestätigen Sie mir schriftlich das Vertragsende und das Datum der letzten Belieferung.<br>
->> Meine Vertragsadresse lautet: [旧住所]<br>
-> Meine neue Anschrift für die Schlussrechnung lautet: [新住所]<br>
->> Mit freundlichen Grüßen<br>
+> Sehr geehrte Damen und Herren,
+> hiermit kündige ich meinen Vertrag mit der Kundennummer [番号] zum nächstmöglichen Termin.
+> Bitte bestätigen Sie mir schriftlich das Vertragsende und das Datum der letzten Belieferung.
+> Meine Vertragsadresse lautet: [旧住所]
+> Meine neue Anschrift für die Schlussrechnung lautet: [新住所]
+> Mit freundlichen Grüßen
 > [氏名]
 
 `zum nächstmöglichen Termin`は可能な最短日という意味です。特定の日付で終了できる根拠がある場合は、その日付と理由を明記します。
@@ -174,11 +174,11 @@ ZählernummerとZählerstandは似ています。
 
 **Betreff:** Zählerstand zum Einzug – [住所]
 
-> Sehr geehrte Damen und Herren,<br>
->> ich bin am [日付] in die Wohnung [住所] eingezogen.<br>
-> Die Zählernummer lautet [番号]. Der Zählerstand am Einzugstag betrug [数値] kWh. Ein Foto des Zählers ist beigefügt.<br>
->> Bitte bestätigen Sie mir den Vertragsbeginn und den erfassten Zählerstand schriftlich.<br>
->> Mit freundlichen Grüßen<br>
+> Sehr geehrte Damen und Herren,
+> ich bin am [日付] in die Wohnung [住所] eingezogen.
+> Die Zählernummer lautet [番号]. Der Zählerstand am Einzugstag betrug [数値] kWh. Ein Foto des Zählers ist beigefügt.
+> Bitte bestätigen Sie mir den Vertragsbeginn und den erfassten Zählerstand schriftlich.
+> Mit freundlichen Grüßen
 > [氏名]
 
 ## よく聞く返答

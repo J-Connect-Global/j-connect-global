@@ -122,6 +122,53 @@ test("Article TOC uses observer state and tables expose scroll instructions", as
   await assertRouteReady(page);
 });
 
+test("Learn German phrases use readable type and unclipped compact controls", async ({ page }) => {
+  await openRoute(page, "/germany/ja/learn-german/");
+
+  const phraseFilterColumns = await page.locator("#learnFilterPanel .learn-filter-options").first().evaluate((element) => (
+    getComputedStyle(element).gridTemplateColumns.split(" ").filter(Boolean).length
+  ));
+  expect(phraseFilterColumns).toBe(2);
+
+  const firstTwoFilters = page.locator("#learnFilterPanel .learn-filter-option").first().locator("xpath=..//button[position() <= 2]");
+  const filterBoxes = await firstTwoFilters.evaluateAll((elements) => elements.map((element) => element.getBoundingClientRect().toJSON()));
+  expect(filterBoxes).toHaveLength(2);
+  expect(Math.abs(filterBoxes[0].top - filterBoxes[1].top)).toBeLessThanOrEqual(1);
+  expect(filterBoxes[1].left).toBeGreaterThan(filterBoxes[0].left);
+
+  await page.locator('[data-view-target="learningArticleGrid"] [data-view-mode="list"]').click({ force: true });
+  await expect(page.locator("#learningArticleGrid")).toHaveClass(/is-list-view/);
+  const metaMetrics = await page.locator("#learningArticleGrid .jc-card-meta").evaluateAll((elements) => elements.slice(0, 5).map((element) => ({
+    clientHeight: element.clientHeight,
+    scrollHeight: element.scrollHeight,
+    overflow: getComputedStyle(element).overflow
+  })));
+  expect(metaMetrics.length).toBeGreaterThan(0);
+  for (const metrics of metaMetrics) {
+    expect(metrics.overflow).toBe("visible");
+    expect(metrics.scrollHeight).toBeLessThanOrEqual(metrics.clientHeight + 1);
+  }
+
+  await openRoute(page, "/germany/ja/living/doctor-appointment-germany/");
+  const typeMetrics = await page.locator(".article-body code").first().evaluate((element) => {
+    const style = getComputedStyle(element);
+    const parentStyle = getComputedStyle(element.parentElement);
+    return {
+      family: style.fontFamily,
+      parentFamily: parentStyle.fontFamily,
+      size: style.fontSize,
+      parentSize: parentStyle.fontSize,
+      weight: Number.parseInt(style.fontWeight, 10)
+    };
+  });
+  expect(typeMetrics.family).toBe(typeMetrics.parentFamily);
+  expect(typeMetrics.size).toBe(typeMetrics.parentSize);
+  expect(typeMetrics.weight).toBeGreaterThanOrEqual(600);
+  await expect(page.getByText("Wie soll ich das Medikament einnehmen?", { exact: true })).toHaveClass(/article-quote-line/);
+  await expect(page.locator(".article-body")).not.toContainText("<br>");
+  await assertRouteReady(page);
+});
+
 test("home renders no more than four active Jobs and can activate dark mode", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/", [
     "/assets/data/community/posts.json",

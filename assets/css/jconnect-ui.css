@@ -1765,6 +1765,10 @@
     grid-template-columns:repeat(2, minmax(0, 1fr));
   }
 
+  #learnFilterPanel .learn-filter-options{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+
   .learn-filter-option{
     display:flex;
     flex-wrap:wrap;
@@ -1948,6 +1952,13 @@
   .learn-card-grid.is-list-view .jc-chip-row{
     max-height:32px;
     overflow:hidden;
+  }
+
+  .learn-card-grid.is-list-view .jc-card-meta,
+  .learn-route-grid.is-list-view .jc-card-meta{
+    max-height:none;
+    overflow:visible;
+    line-height:1.35;
   }
 
   .living-column-grid.is-list-view .living-card-dates{
@@ -3240,6 +3251,14 @@
     color:var(--article-muted, #4f5f70);
   }
 
+  .article-body .article-quote-line{
+    display:block;
+  }
+
+  .article-body .article-quote-line:empty{
+    min-height:.8em;
+  }
+
   .article-body hr{
     margin:28px 0;
     border:0;
@@ -3251,7 +3270,13 @@
     border-radius:var(--jc-radius-sm);
     background:var(--jc-soft);
     color:var(--jc-navy);
-    font-size:.92em;
+    font-family:inherit;
+    font-size:1em;
+    font-weight:600;
+    line-height:inherit;
+    letter-spacing:normal;
+    -webkit-box-decoration-break:clone;
+    box-decoration-break:clone;
   }
 
   .bird-profile-grid{

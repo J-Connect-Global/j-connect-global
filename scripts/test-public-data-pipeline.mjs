@@ -41,6 +41,9 @@ assert.equal(/'application_email'|'apply_email'|'public_email'/.test(gasContract
 assert.equal(/Spreadsheet ID|Drive folder ID/.test(browserDataSources), false, "public data-sources.js exposes internal source identifiers");
 assert.match(articleUiCss, /\.article-mobile-toc\{\s*display:none;/, "desktop must hide the inline article TOC");
 assert.match(articleUiCss, /@media \(max-width:960px\)\{[\s\S]*?\.article-mobile-toc\{[\s\S]*?display:block;/, "mobile must show the inline article TOC");
+assert.match(articleUiCss, /\.article-body code\{[\s\S]*?font-family:inherit;[\s\S]*?font-size:1em;[\s\S]*?font-weight:600;/, "inline German terms must use the readable article typeface at body size");
+assert.match(articleUiCss, /\.learn-card-grid\.is-list-view \.jc-card-meta,[\s\S]*?max-height:none;[\s\S]*?overflow:visible;/, "Learn German list-card metadata must not be vertically clipped");
+assert.match(articleUiCss, /#learnFilterPanel \.learn-filter-options\{\s*grid-template-columns:repeat\(2, minmax\(0, 1fr\)\);/, "practical phrase filters must use the compact two-column layout");
 assert.match(mainBrowserScript, /setAttribute\('aria-current', 'location'\)/, "active desktop TOC links must expose aria-current");
 
 const retainedContentCases = [

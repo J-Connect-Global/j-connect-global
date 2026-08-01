@@ -70,10 +70,10 @@ Facharztは、皮膚科、眼科、整形外科、婦人科、耳鼻咽喉科な
 
 使える質問：
 
-> Brauche ich eine Überweisung?<br>
+> Brauche ich eine Überweisung?
 > 紹介状は必要ですか。
 
-> Benötige ich einen Vermittlungscode?<br>
+> Benötige ich einen Vermittlungscode?
 > 予約仲介コードは必要ですか。
 
 ## 医師を探す方法
@@ -112,7 +112,7 @@ Google Mapsの営業時間だけで判断せず、診療所公式サイトや留
 
 例：
 
-> Guten Tag. Ich bin neu in der Praxis und gesetzlich versichert. Ich habe seit drei Tagen starke Halsschmerzen und Fieber. Haben Sie kurzfristig einen Termin?<br>
+> Guten Tag. Ich bin neu in der Praxis und gesetzlich versichert. Ich habe seit drei Tagen starke Halsschmerzen und Fieber. Haben Sie kurzfristig einen Termin?
 > こんにちは。初診で、公的健康保険に入っています。3日前から強い喉の痛みと熱があります。近い日程で予約できますか。
 
 症状を大げさにする必要はありませんが、`seit wann`（いつから）、`wie stark`（どの程度）、`Fieber`（発熱）、`Schmerzen`（痛み）など、優先度判断に必要な情報は伝えます。
@@ -173,13 +173,13 @@ Google Mapsの営業時間だけで判断せず、診療所公式サイトや留
 
 例：
 
-> Wie soll ich das Medikament einnehmen?<br>
+> Wie soll ich das Medikament einnehmen?
 > この薬はどのように服用しますか。
 
-> Wann soll ich wiederkommen?<br>
+> Wann soll ich wiederkommen?
 > いつ再診すべきですか。
 
-> Bei welchen Symptomen soll ich sofort Hilfe holen?<br>
+> Bei welchen Symptomen soll ich sofort Hilfe holen?
 > どの症状が出たら、すぐ助けを求めるべきですか。
 
 ## IGeL・自己負担と言われたら
@@ -219,7 +219,7 @@ Google Mapsの営業時間だけで判断せず、診療所公式サイトや留
 
 行けなくなったら、早めに診療所へ連絡します。オンラインでキャンセルできる場合もあります。
 
-> Ich muss meinen Termin am [日付] leider absagen.<br>
+> Ich muss meinen Termin am [日付] leider absagen.
 > 残念ですが、[日付]の予約をキャンセルしなければなりません。
 
 診療所によっては、事前説明のうえで無断欠席や直前キャンセルに費用を請求する場合があります。予約確認メールの条件を確認してください。

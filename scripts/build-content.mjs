@@ -605,8 +605,11 @@ html.push(`<h${level}${classAttribute} id="${escapeAttribute(headingId)}">${rend
         quoteLines.push(lines[index].trim().replace(/^>\s?/, ''));
         index += 1;
       }
-      const quote = quoteLines.filter((entry) => !/^\[![A-Z]+\]/.test(entry)).join(' ');
-      html.push(`<blockquote><p>${renderInline(quote, context)}</p></blockquote>`);
+      const quote = quoteLines
+        .filter((entry) => !/^\[![A-Z]+\]/.test(entry))
+        .map((entry) => `<span class="article-quote-line">${renderInline(entry, context)}</span>`)
+        .join('\n');
+      html.push(`<blockquote><p>\n${indent(quote, 2)}\n</p></blockquote>`);
       continue;
     }
 

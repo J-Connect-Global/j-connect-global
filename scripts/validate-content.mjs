@@ -245,6 +245,11 @@ function validatePublishedFiles(type, item, label) {
 
   if (!exists(markdownRel)) {
     problems.push(`${label} markdown_path does not exist: ${item.markdown_path}`);
+  } else {
+    const markdown = readText(markdownRel);
+    if (/<br\s*\/?\s*>/i.test(markdown)) {
+      problems.push(`${markdownRel} contains a raw HTML line-break tag; use consecutive Markdown quote lines instead.`);
+    }
   }
 
   if (!exists(htmlRel)) {
@@ -253,6 +258,9 @@ function validatePublishedFiles(type, item, label) {
   }
 
   const html = readText(htmlRel);
+  if (/&lt;br\s*\/?&gt;/i.test(html)) {
+    problems.push(`${htmlRel} displays an escaped HTML line-break tag.`);
+  }
   if (!html.includes(item.title)) {
     problems.push(`${htmlRel} does not contain registry title: ${item.title}`);
   }

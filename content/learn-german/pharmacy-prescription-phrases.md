@@ -114,7 +114,7 @@ eGKに処方内容そのものが保存されているわけではなく、薬�
 
 数字は聞き間違えやすいため、薬の箱やラベルを指して確認します。
 
-> Können Sie die Dosierung bitte auf die Packung schreiben?<br>
+> Können Sie die Dosierung bitte auf die Packung schreiben?
 > 用量を箱に書いていただけますか。
 
 ## 相互作用・アレルギー・妊娠・授乳

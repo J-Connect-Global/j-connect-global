@@ -47,18 +47,18 @@ official_sources:
 
 次の順で言えば、担当者が案件を探しやすくなります。
 
-> Guten Tag. Mein Name ist [氏名], geboren am [生年月日].<br>
-> Mein Aktenzeichen lautet [番号].<br>
-> Mein Aufenthaltstitel läuft am [日付] ab.<br>
-> Ich habe am [日付] einen Antrag auf Verlängerung gestellt.<br>
+> Guten Tag. Mein Name ist [氏名], geboren am [生年月日].
+> Mein Aktenzeichen lautet [番号].
+> Mein Aufenthaltstitel läuft am [日付] ab.
+> Ich habe am [日付] einen Antrag auf Verlängerung gestellt.
 > Ich möchte wissen, ob noch Unterlagen fehlen.
 
 日本語：
 
-> こんにちは。[生年月日]生まれの[氏名]です。<br>
-> 案件番号は[番号]です。<br>
-> 滞在許可は[日付]に切れます。<br>
-> [日付]に更新申請をしました。<br>
+> こんにちは。[生年月日]生まれの[氏名]です。
+> 案件番号は[番号]です。
+> 滞在許可は[日付]に切れます。
+> [日付]に更新申請をしました。
 > 不足書類があるか確認したいです。
 
 Aktenzeichenがない場合は、`Ich habe noch kein Aktenzeichen erhalten.`（まだ案件番号を受け取っていません）と伝えます。
@@ -119,7 +119,7 @@ Aktenzeichenがない場合は、`Ich habe noch kein Aktenzeichen erhalten.`（�
 
 回答が `grundsätzlich`、`voraussichtlich`、`unter Vorbehalt` のように条件付きなら、何が条件なのか聞き返します。
 
-> Unter welcher Voraussetzung gilt das?<br>
+> Unter welcher Voraussetzung gilt das?
 > どの条件のもとで適用されますか。
 
 ## Fiktionsbescheinigungを確認する
@@ -135,7 +135,7 @@ Aktenzeichenがない場合は、`Ich habe noch kein Aktenzeichen erhalten.`（�
 
 国外旅行については、必ず別に確認します。
 
-> Darf ich mit dieser Fiktionsbescheinigung aus Deutschland ausreisen und wieder einreisen?<br>
+> Darf ich mit dieser Fiktionsbescheinigung aus Deutschland ausreisen und wieder einreisen?
 > このFiktionsbescheinigungでドイツから出国し、再入国できますか。
 
 `Kann ich reisen?`だけでは国内移動と国外旅行が曖昧です。`aus Deutschland ausreisen und wieder einreisen`まで言います。
@@ -173,18 +173,18 @@ Aktenzeichenがない場合は、`Ich habe noch kein Aktenzeichen erhalten.`（�
 
 番号は一桁ずつ復唱します。
 
-> Mein Aktenzeichen ist A-2-7-4-9. Habe ich die Nummer richtig wiederholt?<br>
+> Mein Aktenzeichen ist A-2-7-4-9. Habe ich die Nummer richtig wiederholt?
 > 案件番号はA-2-7-4-9です。正しく復唱できていますか。
 
 ## メール・問い合わせフォームのテンプレート
 
 **Betreff:** Nachfrage zum Antrag auf Verlängerung – Aktenzeichen [番号]
 
-> Sehr geehrte Damen und Herren,<br>
->> mein Name ist [氏名], geboren am [生年月日]. Mein Aktenzeichen lautet [番号].<br>
-> Ich habe meinen Antrag auf Verlängerung der Aufenthaltserlaubnis am [日付] über [申請方法] eingereicht. Mein aktueller Aufenthaltstitel läuft am [日付] ab.<br>
->> Könnten Sie mir bitte bestätigen, ob mein Antrag eingegangen ist und ob noch Unterlagen fehlen? Außerdem bitte ich um eine schriftliche Auskunft, ob meine bisherige Beschäftigung während der Bearbeitung weiterhin erlaubt ist.<br>
->> Mit freundlichen Grüßen<br>
+> Sehr geehrte Damen und Herren,
+> mein Name ist [氏名], geboren am [生年月日]. Mein Aktenzeichen lautet [番号].
+> Ich habe meinen Antrag auf Verlängerung der Aufenthaltserlaubnis am [日付] über [申請方法] eingereicht. Mein aktueller Aufenthaltstitel läuft am [日付] ab.
+> Könnten Sie mir bitte bestätigen, ob mein Antrag eingegangen ist und ob noch Unterlagen fehlen? Außerdem bitte ich um eine schriftliche Auskunft, ob meine bisherige Beschäftigung während der Bearbeitung weiterhin erlaubt ist.
+> Mit freundlichen Grüßen
 > [氏名]
 
 日本語の要点は「申請到着」「不足書類」「審査中の就労」の3つです。自分に不要な文は削除し、国外旅行など別の質問を詰め込みすぎないようにします。

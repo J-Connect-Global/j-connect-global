@@ -1977,5 +1977,206 @@
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-10-19"
     }
+  },
+  {
+    "id": "L034",
+    "title": "ドイツの滞在許可を申請・更新する方法｜Ausländerbehörde・eAT・Fiktionsbescheinigung",
+    "slug": "residence-permit-renewal-germany",
+    "category": "行政手続き",
+    "summary": "EU域外国籍者がドイツ国内で滞在許可を初回申請・更新するときの流れを、管轄確認、期限前の申請、必要書類、eAT受け取り、Fiktionsbescheinigung、就労・渡航時の注意点まで整理します。",
+    "url": "/germany/ja/living/residence-permit-renewal-germany/",
+    "markdown_path": "/content/living/residence-permit-renewal-germany.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-01",
+    "updated_at": "2026-08-01",
+    "last_verified": "2026-08-01",
+    "tags": [
+      "滞在許可",
+      "Aufenthaltstitel",
+      "Ausländerbehörde",
+      "eAT",
+      "Fiktionsbescheinigung",
+      "更新"
+    ],
+    "home_visible": true,
+    "home_order": 3,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/residence-permit-renewal-germany/",
+    "related_articles": [
+      "germany-first-30-days",
+      "anmeldung-guide",
+      "tax-id-steuernummer-steuerklasse",
+      "bank-account-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "Make it in Germany：ドイツの滞在資格の種類",
+        "url": "https://www.make-it-in-germany.com/en/visa-residence/types"
+      },
+      {
+        "title": "BAMF：電子滞在許可証（eAT）",
+        "url": "https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Migrathek/eAufenthaltstitel/eaufenthaltstitel-node.html"
+      },
+      {
+        "title": "連邦法務省：滞在法第81条（AufenthG § 81）",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__81.html"
+      },
+      {
+        "title": "Düsseldorf市：外国人局オンライン申請（NRWでの自治体例）",
+        "url": "https://service.duesseldorf.de/online-dienst-auslaenderbehoerde"
+      },
+      {
+        "title": "Düsseldorf市：Fiktionsbescheinigung（自治体例）",
+        "url": "https://service.duesseldorf.de/suche/-/egov-bis-detail/dienstleistung/72850/show"
+      }
+    ],
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-01",
+      "next_review_due": "2026-11-01"
+    },
+    "image_alt": "ドイツの滞在許可申請に必要なパスポート、書類フォルダー、予約画面を準備する様子"
+  },
+  {
+    "id": "L035",
+    "title": "ドイツで医師を探して予約する方法｜Hausarzt・Facharzt・116117・112",
+    "slug": "doctor-appointment-germany",
+    "category": "医療・健康",
+    "summary": "ドイツで体調を崩したときに、Hausarzt、専門医、116117、救急外来、112をどう使い分けるかを整理し、医師検索、予約、持ち物、紹介状、eGK、eAU、E-Rezeptまで実務順に説明します。",
+    "url": "/germany/ja/living/doctor-appointment-germany/",
+    "markdown_path": "/content/living/doctor-appointment-germany.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-01",
+    "updated_at": "2026-08-01",
+    "last_verified": "2026-08-01",
+    "tags": [
+      "医師",
+      "病院予約",
+      "Hausarzt",
+      "Facharzt",
+      "116117",
+      "112",
+      "健康保険"
+    ],
+    "home_visible": true,
+    "home_order": 4,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/doctor-appointment-germany/",
+    "related_articles": [
+      "health-insurance-guide",
+      "pregnancy-birth-germany",
+      "germany-first-30-days"
+    ],
+    "official_sources": [
+      {
+        "title": "gesund.bund.de：医師選びと予約検索",
+        "url": "https://gesund.bund.de/arztwahl-und-terminsuche"
+      },
+      {
+        "title": "gesund.bund.de：Hausarztによるプライマリケア",
+        "url": "https://gesund.bund.de/en/hausaerztliche-versorgung"
+      },
+      {
+        "title": "116117：患者サービス・医師検索・予約",
+        "url": "https://www.116117.de/"
+      },
+      {
+        "title": "gesund.bund.de：救急外来の使い方",
+        "url": "https://gesund.bund.de/notaufnahme"
+      },
+      {
+        "title": "連邦保健省：E-Rezept",
+        "url": "https://www.bundesgesundheitsministerium.de/e-rezept"
+      },
+      {
+        "title": "gesund.bund.de：電子就労不能証明（eAU）",
+        "url": "https://gesund.bund.de/die-elektronische-arbeitsunfaehigkeitsbescheinigung-eau"
+      }
+    ],
+    "disclaimer_type": "medical",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-01",
+      "next_review_due": "2026-11-01"
+    },
+    "image_alt": "ドイツの診療所で受付に健康保険証を提示し予約内容を確認する様子"
+  },
+  {
+    "id": "L036",
+    "title": "ドイツで電気・インターネットを契約する方法｜入居・引っ越し・解約チェックリスト",
+    "slug": "electricity-internet-contracts-germany",
+    "category": "住まい・契約",
+    "summary": "ドイツの賃貸住宅で電気とインターネットを準備する流れを、契約に含まれる費用の確認、メーター撮影、Grundversorgung、料金比較、開通、引っ越し、解約、トラブル防止まで整理します。",
+    "url": "/germany/ja/living/electricity-internet-contracts-germany/",
+    "markdown_path": "/content/living/electricity-internet-contracts-germany.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-01",
+    "updated_at": "2026-08-01",
+    "last_verified": "2026-08-01",
+    "tags": [
+      "電気契約",
+      "インターネット",
+      "引っ越し",
+      "Strom",
+      "Grundversorgung",
+      "解約",
+      "Zählerstand"
+    ],
+    "home_visible": true,
+    "home_order": 5,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/electricity-internet-contracts-germany/",
+    "related_articles": [
+      "moving-checklist-germany",
+      "rent-apartment-germany",
+      "anmeldung-guide",
+      "rundfunkbeitrag-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "Bundesnetzagentur：Grundversorgung",
+        "url": "https://www.bundesnetzagentur.de/DE/Vportal/Energie/Vertragsarten/Grundversorgung/start.html"
+      },
+      {
+        "title": "Bundesnetzagentur：エネルギー契約の解約",
+        "url": "https://www.bundesnetzagentur.de/DE/Vportal/Energie/KuendigungLieferantenwechsel/Kuendigung/start.html"
+      },
+      {
+        "title": "Bundesnetzagentur：電力会社の切り替え",
+        "url": "https://www.bundesnetzagentur.de/DE/Vportal/Energie/KuendigungLieferantenwechsel/Lieferantenwechsel/start.html"
+      },
+      {
+        "title": "Bundesnetzagentur：電話・インターネットの事業者変更と引っ越し",
+        "url": "https://www.bundesnetzagentur.de/DE/Vportal/TK/InternetTelefon/Wechsel/artikel.html"
+      },
+      {
+        "title": "Bundesnetzagentur：通信契約の期間と解約",
+        "url": "https://www.bundesnetzagentur.de/DE/Vportal/TK/InternetTelefon/Vertrag/start.html"
+      },
+      {
+        "title": "Verbraucherzentrale：引っ越し時の電気・ガス契約",
+        "url": "https://www.verbraucherzentrale.de/wissen/energie/preise-tarife-anbieterwechsel/was-passiert-beim-umzug-mit-stromvertrag-oder-gasvertrag-10915"
+      }
+    ],
+    "disclaimer_type": "consumer_contract",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-01",
+      "next_review_due": "2026-12-01"
+    },
+    "image_alt": "新居で電気メーターの数値を撮影し、ノートパソコンでインターネット契約を確認する様子"
   }
 ]

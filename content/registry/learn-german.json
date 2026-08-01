@@ -321,19 +321,19 @@
   },
   {
     "id": "G009",
-    "title": "買い物で使うドイツ語",
+    "title": "買い物で使うドイツ語｜スーパー・レジ・返品で役立つフレーズ",
     "slug": "shopping-phrases",
     "category": "買い物",
     "content_type": "phrase",
-    "summary": "スーパー、ドラッグストア、返品、質問、会計でそのまま使える短いドイツ語フレーズです。",
+    "summary": "ドイツのスーパー、パン屋、ドラッグストア、衣料品店で、商品を探す、量を頼む、Pfandを返す、会計する、成分を確認する、返品・不良品を伝えるための実用フレーズ集です。",
     "url": "/germany/ja/learn-german/shopping-phrases/",
     "markdown_path": "/content/learn-german/shopping-phrases.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-20",
-    "updated_at": "2026-06-20",
-    "last_verified": "2026-06-20",
-    "tags": ["買い物", "スーパー", "A1"],
+    "updated_at": "2026-08-01",
+    "last_verified": "2026-08-01",
+    "tags": ["買い物", "スーパー", "レジ", "Pfand", "返品", "A1", "A2"],
     "home_visible": false,
     "home_order": 90,
     "hub_visible": true,
@@ -347,14 +347,15 @@
     "duration": ["5min"],
     "official_sources": [],
     "disclaimer_type": "language_learning",
-    "related_articles": ["telephone-phrases", "appointment-phrase"],
+    "related_articles": ["telephone-phrases", "appointment-phrase", "pharmacy-prescription-phrases"],
     "related_living_guides": ["germany-first-30-days", "bank-account-germany"],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-20",
+      "last_reviewed_at": "2026-08-01",
       "next_review_due": "2026-12-20"
-    }
+    },
+    "image_alt": "ドイツのスーパーマーケットで商品ラベルを確認しながら買い物する様子"
   },
   {
     "id": "G010",
@@ -395,19 +396,19 @@
   },
   {
     "id": "G011",
-    "title": "電話でよく使うドイツ語",
+    "title": "電話でよく使うドイツ語｜名乗り方・聞き返し・予約・留守電フレーズ",
     "slug": "telephone-phrases",
     "category": "電話・予約",
     "content_type": "phrase",
-    "summary": "電話のかけ始め、取り次ぎ、予約確認、留守電、聞き返しで使う基本フレーズです。",
+    "summary": "ドイツ語の電話で、名乗る、用件を伝える、担当者につないでもらう、数字を復唱する、予約を変更する、留守電を残す、メールへ切り替えるための実用フレーズ集です。",
     "url": "/germany/ja/learn-german/telephone-phrases/",
     "markdown_path": "/content/learn-german/telephone-phrases.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-20",
-    "updated_at": "2026-06-20",
-    "last_verified": "2026-06-20",
-    "tags": ["電話", "予約", "A1"],
+    "updated_at": "2026-08-01",
+    "last_verified": "2026-08-01",
+    "tags": ["電話", "予約", "聞き返し", "留守番電話", "A1", "A2"],
     "home_visible": false,
     "home_order": 110,
     "hub_visible": true,
@@ -421,14 +422,15 @@
     "duration": ["5min"],
     "official_sources": [],
     "disclaimer_type": "language_learning",
-    "related_articles": ["appointment-phrase", "hospital-phrases", "workplace-conversation-phrases"],
+    "related_articles": ["appointment-phrase", "hospital-phrases", "work-email-phrases", "auslaenderbehoerde-residence-phrases"],
     "related_living_guides": ["anmeldung-guide", "health-insurance-guide", "bank-account-germany"],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-20",
+      "last_reviewed_at": "2026-08-01",
       "next_review_due": "2026-12-20"
-    }
+    },
+    "image_alt": "ドイツ語の電話に備えて名前、用件、電話番号、希望日時をノートに書いた様子"
   },
   {
     "id": "G012",
@@ -1054,5 +1056,166 @@
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2027-01-19"
     }
+  },
+  {
+    "id": "G027",
+    "title": "外国人局で使うドイツ語｜滞在許可・更新・Fiktionsbescheinigungのフレーズ",
+    "slug": "auslaenderbehoerde-residence-phrases",
+    "category": "外国人局・滞在許可",
+    "content_type": "phrase",
+    "summary": "Ausländerbehördeへの申請確認、滞在許可更新、不足書類、就労条件、Fiktionsbescheinigung、eAT受け取りを短く正確に尋ねるドイツ語フレーズ集です。",
+    "url": "/germany/ja/learn-german/auslaenderbehoerde-residence-phrases/",
+    "markdown_path": "/content/learn-german/auslaenderbehoerde-residence-phrases.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-01",
+    "updated_at": "2026-08-01",
+    "last_verified": "2026-08-01",
+    "tags": ["外国人局", "滞在許可", "Fiktionsbescheinigung", "eAT", "A2", "B1"],
+    "home_visible": true,
+    "home_order": 5,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/learn-german/auslaenderbehoerde-residence-phrases/",
+    "situation": ["administration", "appointment"],
+    "goal": ["new-arrival", "employment"],
+    "level": ["A2", "B1"],
+    "skill": ["speaking", "reading", "writing"],
+    "duration": ["15min"],
+    "official_sources": [
+      {
+        "title": "BAMF：電子滞在許可証（eAT）",
+        "url": "https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Migrathek/eAufenthaltstitel/eaufenthaltstitel-node.html"
+      },
+      {
+        "title": "連邦法務省：滞在法第81条",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__81.html"
+      }
+    ],
+    "disclaimer_type": "language_learning",
+    "related_articles": ["behoerde-anmeldung-phrases", "telephone-phrases", "work-email-phrases"],
+    "related_living_guides": ["residence-permit-renewal-germany", "anmeldung-guide", "germany-first-30-days"],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-01",
+      "next_review_due": "2027-02-01"
+    },
+    "home_phrase": {
+      "de": "Ich möchte meine Aufenthaltserlaubnis verlängern.",
+      "ja": "滞在許可を更新したいです。"
+    },
+    "image_alt": "外国人局の窓口でパスポートと滞在許可申請書を確認しながら話す様子"
+  },
+  {
+    "id": "G028",
+    "title": "薬局・処方箋で使うドイツ語｜E-Rezept・在庫・服用方法のフレーズ",
+    "slug": "pharmacy-prescription-phrases",
+    "category": "医療・薬局",
+    "content_type": "phrase",
+    "summary": "ドイツの薬局でE-Rezeptを提示し、在庫、取り寄せ、服用量、相互作用、副作用、妊娠・授乳、自己負担を確認するための実用ドイツ語フレーズ集です。",
+    "url": "/germany/ja/learn-german/pharmacy-prescription-phrases/",
+    "markdown_path": "/content/learn-german/pharmacy-prescription-phrases.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-01",
+    "updated_at": "2026-08-01",
+    "last_verified": "2026-08-01",
+    "tags": ["薬局", "処方箋", "E-Rezept", "薬", "A1", "A2"],
+    "home_visible": true,
+    "home_order": 6,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/learn-german/pharmacy-prescription-phrases/",
+    "situation": ["medical", "pharmacy"],
+    "goal": ["healthcare", "daily-life"],
+    "level": ["A1", "A2"],
+    "skill": ["speaking", "listening", "reading"],
+    "duration": ["15min"],
+    "official_sources": [
+      {
+        "title": "gesund.bund.de：ドイツの薬局",
+        "url": "https://gesund.bund.de/en/apotheken"
+      },
+      {
+        "title": "連邦保健省：E-Rezept",
+        "url": "https://www.bundesgesundheitsministerium.de/e-rezept"
+      },
+      {
+        "title": "aponet：公式データによる夜間・休日薬局検索",
+        "url": "https://www.aponet.de/notdienstsuche"
+      }
+    ],
+    "disclaimer_type": "medical_language",
+    "related_articles": ["hospital-phrases", "health-insurance-phrases", "telephone-phrases"],
+    "related_living_guides": ["doctor-appointment-germany", "health-insurance-guide"],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-01",
+      "next_review_due": "2027-02-01"
+    },
+    "home_phrase": {
+      "de": "Wie soll ich das Medikament einnehmen?",
+      "ja": "この薬はどう服用しますか。"
+    },
+    "image_alt": "ドイツの薬局で電子健康保険証を提示し薬剤師から薬の説明を受ける様子"
+  },
+  {
+    "id": "G029",
+    "title": "電気・インターネット契約で使うドイツ語｜開通・引っ越し・解約のフレーズ",
+    "slug": "utilities-internet-contract-phrases",
+    "category": "住まい・契約",
+    "content_type": "phrase",
+    "summary": "電力会社・通信会社へ入居、メーター値、契約開始、回線工事、障害、引っ越し、解約、最終請求を正確に伝えるためのドイツ語フレーズとメール例です。",
+    "url": "/germany/ja/learn-german/utilities-internet-contract-phrases/",
+    "markdown_path": "/content/learn-german/utilities-internet-contract-phrases.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-01",
+    "updated_at": "2026-08-01",
+    "last_verified": "2026-08-01",
+    "tags": ["電気", "インターネット", "引っ越し", "解約", "Zählerstand", "A2", "B1"],
+    "home_visible": true,
+    "home_order": 7,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/learn-german/utilities-internet-contract-phrases/",
+    "situation": ["housing", "phone", "business-email"],
+    "goal": ["housing-contract", "daily-life"],
+    "level": ["A2", "B1"],
+    "skill": ["speaking", "reading", "writing"],
+    "duration": ["15min"],
+    "official_sources": [
+      {
+        "title": "Bundesnetzagentur：Grundversorgung",
+        "url": "https://www.bundesnetzagentur.de/DE/Vportal/Energie/Vertragsarten/Grundversorgung/start.html"
+      },
+      {
+        "title": "Bundesnetzagentur：通信事業者の変更と引っ越し",
+        "url": "https://www.bundesnetzagentur.de/DE/Vportal/TK/InternetTelefon/Wechsel/artikel.html"
+      },
+      {
+        "title": "Bundesnetzagentur：通信契約",
+        "url": "https://www.bundesnetzagentur.de/DE/Vportal/TK/InternetTelefon/Vertrag/start.html"
+      }
+    ],
+    "disclaimer_type": "language_learning",
+    "related_articles": ["telephone-phrases", "landlord-housing-email-phrases", "work-email-phrases"],
+    "related_living_guides": ["electricity-internet-contracts-germany", "moving-checklist-germany", "rent-apartment-germany"],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-01",
+      "next_review_due": "2027-02-01"
+    },
+    "home_phrase": {
+      "de": "Bitte bestätigen Sie mir den Vertragsbeginn.",
+      "ja": "契約開始日を書面で確認してください。"
+    },
+    "image_alt": "新居の電気メーター番号とインターネット契約書を見ながらカスタマーサービスへ電話する様子"
   }
 ]

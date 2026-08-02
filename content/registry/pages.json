@@ -304,7 +304,7 @@
   },
   {
     "id": "page-learn-german",
-    "title": "ドイツ語学習・実用フレーズ",
+    "title": "ドイツ語学習・実用フレーズ・Web教材",
     "url": "/germany/ja/learn-german/",
     "type": "hub",
     "pillar": "learn-german",
@@ -318,11 +318,41 @@
     "redirect_target": "",
     "layout": "hub",
     "hero_type": "hub",
-    "description": "日常生活、役所、病院、仕事で使えるドイツ語フレーズと学習コンテンツをまとめたページです。",
+    "description": "日常生活、役所、病院、仕事で使えるドイツ語フレーズ、学習ルート、外部教材、J-ConnectオリジナルWeb教材をまとめたページです。",
     "tags": [
       "ドイツ語",
       "学習",
-      "フレーズ"
+      "フレーズ",
+      "暗記カード",
+      "Web教材"
+    ]
+  },
+  {
+    "id": "page-learn-german-flashcards",
+    "title": "ドイツ語暗記カード A1–B2",
+    "url": "/germany/ja/learn-german/flashcards/",
+    "type": "utility",
+    "pillar": "learn-german",
+    "status": "published",
+    "canonical_url": "/germany/ja/learn-german/flashcards/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "A1・A2・B1・B2のドイツ生活語彙200枚を、表裏カード、3段階評価、苦手復習、読み上げ、端末内保存で学べるJ-ConnectオリジナルWeb教材です。",
+    "lastmod": "2026-08-02",
+    "tags": [
+      "ドイツ語",
+      "暗記カード",
+      "A1",
+      "A2",
+      "B1",
+      "B2",
+      "Web教材"
     ]
   },
   {

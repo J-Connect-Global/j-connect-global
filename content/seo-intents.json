@@ -38,8 +38,14 @@
   {
     "url": "/germany/ja/learn-german/",
     "primary_query": "ドイツ語 生活 フレーズ",
-    "title_terms": ["ドイツ語学習", "実用フレーズ", "役所", "病院", "仕事"],
-    "content_terms": ["日常生活", "役所", "病院", "住まい", "仕事"]
+    "title_terms": ["ドイツ語学習", "実用フレーズ", "Web教材"],
+    "content_terms": ["日常生活", "役所", "病院", "住まい", "仕事", "暗記カード"]
+  },
+  {
+    "url": "/germany/ja/learn-german/flashcards/",
+    "primary_query": "ドイツ語 暗記カード A1 A2 B1 B2",
+    "title_terms": ["ドイツ語暗記カード", "A1", "B2"],
+    "content_terms": ["A1", "A2", "B1", "B2", "暗記カード", "端末"]
   },
   {
     "url": "/germany/ja/eat/",

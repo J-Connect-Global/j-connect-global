@@ -10,6 +10,7 @@ const summaryArgs = process.env.GITHUB_STEP_SUMMARY ? ["--github-summary"] : [];
 const steps = [
   ["Front-matter synchronization", "scripts/sync-content-frontmatter.mjs"],
   ["Content metadata policy", "scripts/test-content-metadata.mjs"],
+  ["Learn German flashcard data", "scripts/test-learn-german-flashcards.mjs"],
   ["News fetcher contract", "scripts/test-news-fetcher.mjs"],
   ["Deployment manifest contract", "scripts/test-deployment-manifest.mjs"],
   ["Accessibility behavior contracts", "scripts/test-accessibility-contracts.mjs"],

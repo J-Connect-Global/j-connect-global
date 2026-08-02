@@ -1,0 +1,58 @@
+import { expect, test } from "@playwright/test";
+import {
+  activateDarkMode,
+  assertNoHorizontalOverflow,
+  assertNoRuntimeDiagnostics,
+  assertRouteReady,
+  installRuntimeDiagnostics,
+  openDataRoute
+} from "./support.mjs";
+
+const decksPath = "/assets/data/learn-german/flashcards/decks.json";
+const a1CardsPath = "/assets/data/learn-german/flashcards/cards-a1.json";
+
+test.beforeEach(async ({ page }) => {
+  installRuntimeDiagnostics(page);
+  await page.addInitScript(() => localStorage.setItem("jconnect_cookie_consent", "denied"));
+});
+
+test.afterEach(async ({ page }) => {
+  await assertNoRuntimeDiagnostics(page);
+});
+
+test("mobile Learn German has a four-item page navigation without overflow", async ({ page }, testInfo) => {
+  await openDataRoute(page, "/germany/ja/learn-german/", decksPath);
+  await expect(page.locator(".learn-mobile-page-nav a")).toHaveCount(4);
+
+  if (testInfo.project.name === "tablet-chromium") {
+    await expect(page.locator(".learn-mobile-page-nav")).toBeHidden();
+    await expect(page.locator(".learn-pillar-ribbon")).toBeVisible();
+    await page.locator('.learn-pillar-ribbon a[href="#original-web-tools"]').click();
+    await expect(page).toHaveURL(/#original-web-tools$/);
+  } else {
+    await expect(page.locator(".learn-mobile-page-nav")).toBeVisible();
+    await page.locator('.learn-mobile-page-nav a[href="#original-web-tools"]').click();
+    await expect(page.locator('.learn-mobile-page-nav a[href="#original-web-tools"]')).toHaveAttribute("aria-current", "location");
+  }
+
+  await expect(page.locator("#originalDeckGrid .learn-deck-card")).toHaveCount(11);
+  await assertNoHorizontalOverflow(page);
+  await assertRouteReady(page);
+});
+
+test("mobile flashcard keeps progress, card, and primary controls readable at 360px", async ({ page }) => {
+  await openDataRoute(page, "/germany/ja/learn-german/flashcards/?deck=a1-life-basics", [decksPath, a1CardsPath]);
+  await page.locator("#flashcardsStart").tap();
+  await expect(page.locator("#flashcardsStudy")).toBeVisible();
+  await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
+  await expect(page.locator("#flashcardFlip")).toBeVisible();
+  await page.locator("#flashcardFlip").tap();
+  await expect(page.locator('[data-rating="again"]')).toBeVisible();
+  await expect(page.locator('[data-rating="unsure"]')).toBeVisible();
+  await expect(page.locator('[data-rating="known"]')).toBeVisible();
+  await page.locator('[data-rating="unsure"]').tap();
+  await expect(page.locator("#flashcardsPosition")).toHaveText("2 / 10");
+  await activateDarkMode(page);
+  await assertNoHorizontalOverflow(page);
+  await assertRouteReady(page);
+});

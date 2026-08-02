@@ -22,6 +22,7 @@ const representativeRoutes = [
   { name: "Community detail", route: fixtureCommunityDetailPath },
   { name: "Living article", route: "/germany/ja/living/health-insurance-guide/" },
   { name: "Learn article", route: "/germany/ja/learn-german/appointment-phrase/" },
+  { name: "Learn flashcards", route: "/germany/ja/learn-german/flashcards/?deck=a1-life-basics", ready: true },
   { name: "Events hub", route: "/germany/ja/events/" },
   { name: "Search", route: "/germany/ja/search/" },
   { name: "Community posting form", route: "/germany/ja/community/post/" },
@@ -35,6 +36,7 @@ const darkModeRoutes = [
   { name: "Jobs list", route: "/germany/ja/jobs/", ready: true },
   { name: "Community list", route: "/germany/ja/community/", ready: true },
   { name: "Living article", route: "/germany/ja/living/health-insurance-guide/" },
+  { name: "Learn flashcards", route: "/germany/ja/learn-german/flashcards/?deck=a1-life-basics", ready: true },
   { name: "posting form", route: "/germany/ja/community/post/" }
 ];
 

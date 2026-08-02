@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const steps = [
   ["Synchronize front matter", "scripts/sync-content-frontmatter.mjs", "--write"],
+  ["Generate Learn German flashcards", "scripts/generate-learn-german-flashcards.mjs"],
   ["Generate tourism route overviews", "scripts/generate-tourism-route-overviews.mjs"],
   ["Build content", "scripts/build-content.mjs"],
   ["Apply canonical layout", "scripts/apply-layout.mjs"]

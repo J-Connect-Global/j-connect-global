@@ -1,0 +1,2050 @@
+{
+  "schema_version": 1,
+  "level": "A2",
+  "updated_at": "2026-08-02",
+  "cards": [
+    {
+      "card_id": "a2-001",
+      "lemma": "unterwegs",
+      "display_de": "unterwegs",
+      "unit_type": "word",
+      "part_of_speech": "adverb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "daily",
+        "日常",
+        "work",
+        "仕事"
+      ],
+      "scene_tags": [
+        "daily",
+        "work"
+      ],
+      "japanese": "移動中で、出先で",
+      "example_de": "Ich bin noch unterwegs und komme zehn Minuten später.",
+      "example_ja": "まだ移動中で、10分遅れて着きます。",
+      "grammar": {
+        "usage": "場所・状態を表す副詞。sein と組み合わせる。"
+      },
+      "collocations": [
+        "noch unterwegs sein",
+        "unterwegs anrufen"
+      ],
+      "learning_note": "移動中であることを簡潔に伝える便利な表現です。",
+      "related_terms": [
+        "ankommen",
+        "sich verspäten"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-002",
+      "lemma": "sich beeilen",
+      "display_de": "sich beeilen",
+      "unit_type": "phrase",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "daily",
+        "日常"
+      ],
+      "scene_tags": [
+        "daily"
+      ],
+      "japanese": "急ぐ",
+      "example_de": "Wir müssen uns beeilen, sonst verpassen wir den Bus.",
+      "example_ja": "急がないとバスに乗り遅れます。",
+      "grammar": {
+        "third_person": "beeilt sich",
+        "past_participle": "beeilt",
+        "auxiliary": "haben",
+        "separable": false,
+        "reflexive": true,
+        "government": "sich (Akkusativ) beeilen"
+      },
+      "collocations": [
+        "sich ein bisschen beeilen",
+        "Bitte beeilen Sie sich."
+      ],
+      "learning_note": "再帰代名詞を忘れないでください。命令形でも Beeilen Sie sich! です。",
+      "related_terms": [
+        "eilig",
+        "zu spät"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-003",
+      "lemma": "Bescheid sagen",
+      "display_de": "Bescheid sagen",
+      "unit_type": "collocation",
+      "part_of_speech": "phrase",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "daily",
+        "日常",
+        "work",
+        "仕事",
+        "administration",
+        "外国人局・役所"
+      ],
+      "scene_tags": [
+        "daily",
+        "work",
+        "administration"
+      ],
+      "japanese": "知らせる",
+      "example_de": "Bitte sagen Sie mir Bescheid, wenn der Termin feststeht.",
+      "example_ja": "予約日時が決まったら知らせてください。",
+      "grammar": {
+        "usage": "jemandem (Dativ) Bescheid sagen; Bescheid はこの表現では無冠詞。"
+      },
+      "collocations": [
+        "rechtzeitig Bescheid sagen",
+        "jemandem kurz Bescheid geben"
+      ],
+      "learning_note": "相手は3格です。mir/dir/ihm Bescheid sagen の形で覚えます。",
+      "related_terms": [
+        "informieren",
+        "die Nachricht"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-004",
+      "lemma": "sich kümmern",
+      "display_de": "sich um etwas kümmern",
+      "unit_type": "phrase",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "daily",
+        "日常",
+        "housing",
+        "住まい",
+        "work",
+        "仕事"
+      ],
+      "scene_tags": [
+        "daily",
+        "housing",
+        "work"
+      ],
+      "japanese": "〜に対応する、世話をする",
+      "example_de": "Die Hausverwaltung kümmert sich um die Reparatur.",
+      "example_ja": "管理会社が修理に対応します。",
+      "grammar": {
+        "third_person": "kümmert sich",
+        "past_participle": "gekümmert",
+        "auxiliary": "haben",
+        "separable": false,
+        "reflexive": true,
+        "government": "um + Akkusativ"
+      },
+      "collocations": [
+        "sich um ein Problem kümmern",
+        "sich darum kümmern"
+      ],
+      "learning_note": "対象には必ず um + 4格を使います。",
+      "related_terms": [
+        "erledigen",
+        "betreuen"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-005",
+      "lemma": "erledigen",
+      "display_de": "erledigen",
+      "unit_type": "word",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "daily",
+        "日常",
+        "administration",
+        "外国人局・役所",
+        "work",
+        "仕事"
+      ],
+      "scene_tags": [
+        "daily",
+        "administration",
+        "work"
+      ],
+      "japanese": "済ませる、処理する",
+      "example_de": "Ich erledige den Antrag noch heute.",
+      "example_ja": "申請は今日中に済ませます。",
+      "grammar": {
+        "third_person": "erledigt",
+        "past_participle": "erledigt",
+        "auxiliary": "haben",
+        "separable": false,
+        "reflexive": false,
+        "government": "Akkusativ"
+      },
+      "collocations": [
+        "eine Aufgabe erledigen",
+        "etwas schnell erledigen"
+      ],
+      "learning_note": "用事や作業を完了する意味で広く使えます。",
+      "related_terms": [
+        "abschließen",
+        "bearbeiten"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-006",
+      "lemma": "ausfallen",
+      "display_de": "ausfallen",
+      "unit_type": "word",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "daily",
+        "日常",
+        "work",
+        "仕事"
+      ],
+      "scene_tags": [
+        "daily",
+        "work"
+      ],
+      "japanese": "中止になる、運休する",
+      "example_de": "Der Zug fällt heute aus.",
+      "example_ja": "その列車は今日運休です。",
+      "grammar": {
+        "third_person": "fällt aus",
+        "past_participle": "ausgefallen",
+        "auxiliary": "sein",
+        "separable": true,
+        "reflexive": false,
+        "government": "自動詞"
+      },
+      "collocations": [
+        "ein Termin fällt aus",
+        "wegen Krankheit ausfallen"
+      ],
+      "learning_note": "予定・交通・授業が中止になるときに使う自動詞です。完了形は sein。",
+      "related_terms": [
+        "absagen",
+        "stattfinden"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-007",
+      "lemma": "umtauschen",
+      "display_de": "umtauschen",
+      "unit_type": "word",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "shopping",
+        "買い物"
+      ],
+      "scene_tags": [
+        "shopping"
+      ],
+      "japanese": "交換する",
+      "example_de": "Kann ich den Pullover gegen eine andere Größe umtauschen?",
+      "example_ja": "このセーターを別のサイズに交換できますか。",
+      "grammar": {
+        "third_person": "tauscht um",
+        "past_participle": "umgetauscht",
+        "auxiliary": "haben",
+        "separable": true,
+        "reflexive": false,
+        "government": "Akkusativ; gegen + Akkusativ"
+      },
+      "collocations": [
+        "Ware umtauschen",
+        "gegen etwas umtauschen"
+      ],
+      "learning_note": "返品して返金を受ける zurückgeben と、品物を交換する umtauschen を区別します。",
+      "related_terms": [
+        "zurückgeben",
+        "reklamieren"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-008",
+      "lemma": "reklamieren",
+      "display_de": "reklamieren",
+      "unit_type": "word",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "shopping",
+        "買い物"
+      ],
+      "scene_tags": [
+        "shopping"
+      ],
+      "japanese": "商品・サービスの不具合を申し立てる",
+      "example_de": "Ich möchte diesen Artikel reklamieren.",
+      "example_ja": "この商品について不具合を申し立てたいです。",
+      "grammar": {
+        "third_person": "reklamiert",
+        "past_participle": "reklamiert",
+        "auxiliary": "haben",
+        "separable": false,
+        "reflexive": false,
+        "government": "Akkusativ"
+      },
+      "collocations": [
+        "einen Artikel reklamieren",
+        "einen Mangel reklamieren"
+      ],
+      "learning_note": "単なる返品ではなく、不具合や誤りを理由に申し立てるときの語です。",
+      "related_terms": [
+        "die Reklamation",
+        "beanstanden"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-009",
+      "lemma": "beschädigt",
+      "display_de": "beschädigt",
+      "unit_type": "word",
+      "part_of_speech": "adjective",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "shopping",
+        "買い物",
+        "housing",
+        "住まい"
+      ],
+      "scene_tags": [
+        "shopping",
+        "housing"
+      ],
+      "japanese": "破損した",
+      "example_de": "Die Verpackung war schon bei der Lieferung beschädigt.",
+      "example_ja": "配送時点ですでに包装が破損していました。",
+      "grammar": {
+        "usage": "動詞 beschädigen の過去分詞由来の形容詞。sein と使える。"
+      },
+      "collocations": [
+        "stark beschädigt",
+        "beschädigte Ware"
+      ],
+      "learning_note": "壊れて機能しない defekt と、外観などが傷んだ beschädigt を使い分けます。",
+      "related_terms": [
+        "defekt",
+        "der Schaden"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-010",
+      "lemma": "Sonderangebot",
+      "display_de": "das Sonderangebot",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "shopping",
+        "買い物"
+      ],
+      "scene_tags": [
+        "shopping"
+      ],
+      "japanese": "特売品、特別価格",
+      "example_de": "Das Sonderangebot gilt nur bis Samstag.",
+      "example_ja": "この特売は土曜日までです。",
+      "grammar": {
+        "article": "das",
+        "plural": "Sonderangebote"
+      },
+      "collocations": [
+        "im Sonderangebot",
+        "ein günstiges Sonderangebot"
+      ],
+      "learning_note": "im Sonderangebot sein で『特売になっている』と言えます。",
+      "related_terms": [
+        "der Rabatt",
+        "der Preis"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-011",
+      "lemma": "vorrätig",
+      "display_de": "vorrätig",
+      "unit_type": "word",
+      "part_of_speech": "adjective",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "shopping",
+        "買い物"
+      ],
+      "scene_tags": [
+        "shopping"
+      ],
+      "japanese": "在庫がある",
+      "example_de": "Ist dieses Modell noch vorrätig?",
+      "example_ja": "このモデルはまだ在庫がありますか。",
+      "grammar": {
+        "usage": "主に sein と使う。否定は nicht vorrätig。"
+      },
+      "collocations": [
+        "noch vorrätig",
+        "nicht mehr vorrätig"
+      ],
+      "learning_note": "店頭や薬局の在庫確認でよく使います。",
+      "related_terms": [
+        "auf Lager",
+        "bestellen"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-012",
+      "lemma": "Pfandbon",
+      "display_de": "der Pfandbon",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "shopping",
+        "買い物"
+      ],
+      "scene_tags": [
+        "shopping"
+      ],
+      "japanese": "返却した容器の預かり金引換券",
+      "example_de": "Vergessen Sie nicht, den Pfandbon an der Kasse einzulösen.",
+      "example_ja": "レジでPfandの引換券を使うのを忘れないでください。",
+      "grammar": {
+        "article": "der",
+        "plural": "Pfandbons"
+      },
+      "collocations": [
+        "einen Pfandbon bekommen",
+        "den Pfandbon einlösen"
+      ],
+      "learning_note": "返却機から出る券はレジで支払いに充当できます。",
+      "related_terms": [
+        "das Pfand",
+        "der Pfandautomat"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-013",
+      "lemma": "zurückerstatten",
+      "display_de": "zurückerstatten",
+      "unit_type": "word",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "shopping",
+        "買い物"
+      ],
+      "scene_tags": [
+        "shopping"
+      ],
+      "japanese": "返金する",
+      "example_de": "Der Betrag wird auf Ihre Karte zurückerstattet.",
+      "example_ja": "金額はカードへ返金されます。",
+      "grammar": {
+        "third_person": "erstattet zurück",
+        "past_participle": "zurückerstattet",
+        "auxiliary": "haben",
+        "separable": true,
+        "reflexive": false,
+        "government": "jemandem (Dativ) etwas (Akkusativ)"
+      },
+      "collocations": [
+        "den Kaufpreis zurückerstatten",
+        "vollständig zurückerstatten"
+      ],
+      "learning_note": "受け手は3格、返す金額は4格です。受動文でもよく見ます。",
+      "related_terms": [
+        "die Erstattung",
+        "zurückzahlen"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-014",
+      "lemma": "Aufenthaltserlaubnis",
+      "display_de": "die Aufenthaltserlaubnis",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "administration",
+        "外国人局・役所"
+      ],
+      "scene_tags": [
+        "administration"
+      ],
+      "japanese": "滞在許可",
+      "example_de": "Meine Aufenthaltserlaubnis ist noch bis Oktober gültig.",
+      "example_ja": "私の滞在許可は10月まで有効です。",
+      "grammar": {
+        "article": "die",
+        "plural": "Aufenthaltserlaubnisse"
+      },
+      "collocations": [
+        "eine Aufenthaltserlaubnis beantragen",
+        "die Aufenthaltserlaubnis verlängern"
+      ],
+      "learning_note": "日常的な総称 Aufenthaltstitel と、具体的な許可種別 Aufenthaltserlaubnis を区別します。",
+      "related_terms": [
+        "der Aufenthaltstitel",
+        "gültig"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-015",
+      "lemma": "verlängern",
+      "display_de": "verlängern",
+      "unit_type": "word",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "administration",
+        "外国人局・役所"
+      ],
+      "scene_tags": [
+        "administration"
+      ],
+      "japanese": "延長する、更新する",
+      "example_de": "Ich möchte meinen Aufenthaltstitel verlängern.",
+      "example_ja": "滞在許可証を更新したいです。",
+      "grammar": {
+        "third_person": "verlängert",
+        "past_participle": "verlängert",
+        "auxiliary": "haben",
+        "separable": false,
+        "reflexive": false,
+        "government": "Akkusativ"
+      },
+      "collocations": [
+        "einen Vertrag verlängern",
+        "eine Frist verlängern"
+      ],
+      "learning_note": "許可・契約・期限など期間のあるものに使えます。",
+      "related_terms": [
+        "die Verlängerung",
+        "erneuern"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-016",
+      "lemma": "Unterlagen",
+      "display_de": "die Unterlagen",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "administration",
+        "外国人局・役所",
+        "work",
+        "仕事",
+        "housing",
+        "住まい"
+      ],
+      "scene_tags": [
+        "administration",
+        "work",
+        "housing"
+      ],
+      "japanese": "書類一式",
+      "example_de": "Welche Unterlagen muss ich mitbringen?",
+      "example_ja": "どの書類を持参する必要がありますか。",
+      "grammar": {
+        "article": "die",
+        "plural": "通常は複数形 Unterlagen"
+      },
+      "collocations": [
+        "vollständige Unterlagen",
+        "Unterlagen einreichen"
+      ],
+      "learning_note": "複数の申請書類をまとめて指すため、通常は複数形です。",
+      "related_terms": [
+        "das Dokument",
+        "der Nachweis"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-017",
+      "lemma": "nachreichen",
+      "display_de": "nachreichen",
+      "unit_type": "word",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "administration",
+        "外国人局・役所",
+        "work",
+        "仕事"
+      ],
+      "scene_tags": [
+        "administration",
+        "work"
+      ],
+      "japanese": "後から提出する",
+      "example_de": "Den fehlenden Nachweis kann ich morgen nachreichen.",
+      "example_ja": "不足している証明書は明日追加提出できます。",
+      "grammar": {
+        "third_person": "reicht nach",
+        "past_participle": "nachgereicht",
+        "auxiliary": "haben",
+        "separable": true,
+        "reflexive": false,
+        "government": "Akkusativ"
+      },
+      "collocations": [
+        "Unterlagen nachreichen",
+        "per E-Mail nachreichen"
+      ],
+      "learning_note": "すでに一部を提出し、不足分を後日追加するときに使います。",
+      "related_terms": [
+        "einreichen",
+        "fehlen"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-018",
+      "lemma": "zuständig",
+      "display_de": "zuständig",
+      "unit_type": "word",
+      "part_of_speech": "adjective",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "administration",
+        "外国人局・役所",
+        "work",
+        "仕事"
+      ],
+      "scene_tags": [
+        "administration",
+        "work"
+      ],
+      "japanese": "担当である、管轄である",
+      "example_de": "Welche Stelle ist für meinen Antrag zuständig?",
+      "example_ja": "私の申請はどの窓口が担当ですか。",
+      "grammar": {
+        "usage": "für + Akkusativ zuständig sein"
+      },
+      "collocations": [
+        "dafür zuständig sein",
+        "die zuständige Stelle"
+      ],
+      "learning_note": "対象には für + 4格を使います。",
+      "related_terms": [
+        "die Zuständigkeit",
+        "verantwortlich"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-019",
+      "lemma": "beantragen",
+      "display_de": "beantragen",
+      "unit_type": "word",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "administration",
+        "外国人局・役所"
+      ],
+      "scene_tags": [
+        "administration"
+      ],
+      "japanese": "申請する",
+      "example_de": "Sie können die Bescheinigung online beantragen.",
+      "example_ja": "証明書はオンラインで申請できます。",
+      "grammar": {
+        "third_person": "beantragt",
+        "past_participle": "beantragt",
+        "auxiliary": "haben",
+        "separable": false,
+        "reflexive": false,
+        "government": "Akkusativ"
+      },
+      "collocations": [
+        "eine Erlaubnis beantragen",
+        "schriftlich beantragen"
+      ],
+      "learning_note": "antragen ではなく、非分離の beantragen として覚えます。",
+      "related_terms": [
+        "der Antrag",
+        "einreichen"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-020",
+      "lemma": "Meldebescheinigung",
+      "display_de": "die Meldebescheinigung",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "administration",
+        "外国人局・役所"
+      ],
+      "scene_tags": [
+        "administration"
+      ],
+      "japanese": "住民登録証明書",
+      "example_de": "Für die Bank brauche ich eine aktuelle Meldebescheinigung.",
+      "example_ja": "銀行手続きには最新の住民登録証明書が必要です。",
+      "grammar": {
+        "article": "die",
+        "plural": "Meldebescheinigungen"
+      },
+      "collocations": [
+        "eine Meldebescheinigung vorlegen",
+        "eine aktuelle Meldebescheinigung"
+      ],
+      "learning_note": "Anmeldung の完了を示す書類の名称です。",
+      "related_terms": [
+        "die Anmeldung",
+        "die Bescheinigung"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-021",
+      "lemma": "Bürgeramt",
+      "display_de": "das Bürgeramt",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "administration",
+        "外国人局・役所"
+      ],
+      "scene_tags": [
+        "administration"
+      ],
+      "japanese": "市民局、市民窓口",
+      "example_de": "Beim Bürgeramt gibt es Termine nur nach Vereinbarung.",
+      "example_ja": "市民局は予約制です。",
+      "grammar": {
+        "article": "das",
+        "plural": "Bürgerämter"
+      },
+      "collocations": [
+        "beim Bürgeramt",
+        "einen Termin beim Bürgeramt"
+      ],
+      "learning_note": "自治体により Bürgerbüro など別の名称もあります。",
+      "related_terms": [
+        "das Bürgerbüro",
+        "die Behörde"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-022",
+      "lemma": "vereinbaren",
+      "display_de": "vereinbaren",
+      "unit_type": "word",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "administration",
+        "外国人局・役所",
+        "medical",
+        "病院・薬局",
+        "work",
+        "仕事"
+      ],
+      "scene_tags": [
+        "administration",
+        "medical",
+        "work"
+      ],
+      "japanese": "取り決める、予約する",
+      "example_de": "Wir haben einen neuen Termin vereinbart.",
+      "example_ja": "新しい日時を取り決めました。",
+      "grammar": {
+        "third_person": "vereinbart",
+        "past_participle": "vereinbart",
+        "auxiliary": "haben",
+        "separable": false,
+        "reflexive": false,
+        "government": "Akkusativ; mit + Dativ"
+      },
+      "collocations": [
+        "einen Termin vereinbaren",
+        "schriftlich vereinbaren"
+      ],
+      "learning_note": "予約だけでなく、条件や手順を合意する意味でも使います。",
+      "related_terms": [
+        "absprechen",
+        "der Termin"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-023",
+      "lemma": "Untersuchung",
+      "display_de": "die Untersuchung",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "medical",
+        "病院・薬局"
+      ],
+      "scene_tags": [
+        "medical"
+      ],
+      "japanese": "検査、診察",
+      "example_de": "Vor der Untersuchung dürfen Sie nichts essen.",
+      "example_ja": "検査前は何も食べてはいけません。",
+      "grammar": {
+        "article": "die",
+        "plural": "Untersuchungen"
+      },
+      "collocations": [
+        "eine Untersuchung durchführen",
+        "zur Untersuchung kommen"
+      ],
+      "learning_note": "医師による診察にも具体的な検査にも使える語です。",
+      "related_terms": [
+        "untersuchen",
+        "der Befund"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-024",
+      "lemma": "verschreiben",
+      "display_de": "verschreiben",
+      "unit_type": "word",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "medical",
+        "病院・薬局"
+      ],
+      "scene_tags": [
+        "medical"
+      ],
+      "japanese": "処方する",
+      "example_de": "Die Ärztin hat mir ein Antibiotikum verschrieben.",
+      "example_ja": "医師が私に抗生物質を処方しました。",
+      "grammar": {
+        "third_person": "verschreibt",
+        "past_participle": "verschrieben",
+        "auxiliary": "haben",
+        "separable": false,
+        "reflexive": false,
+        "government": "jemandem (Dativ) etwas (Akkusativ)"
+      },
+      "collocations": [
+        "ein Medikament verschreiben",
+        "auf Rezept verschreiben"
+      ],
+      "learning_note": "処方される人は3格、薬は4格です。",
+      "related_terms": [
+        "das Rezept",
+        "verordnen"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-025",
+      "lemma": "Nebenwirkung",
+      "display_de": "die Nebenwirkung",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "medical",
+        "病院・薬局"
+      ],
+      "scene_tags": [
+        "medical"
+      ],
+      "japanese": "副作用",
+      "example_de": "Kann dieses Medikament Nebenwirkungen haben?",
+      "example_ja": "この薬には副作用がありますか。",
+      "grammar": {
+        "article": "die",
+        "plural": "Nebenwirkungen"
+      },
+      "collocations": [
+        "mögliche Nebenwirkungen",
+        "Nebenwirkungen bemerken"
+      ],
+      "learning_note": "多くの場合、複数形 Nebenwirkungen で尋ねます。",
+      "related_terms": [
+        "die Wirkung",
+        "die Wechselwirkung"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-026",
+      "lemma": "nüchtern",
+      "display_de": "nüchtern",
+      "unit_type": "word",
+      "part_of_speech": "adjective",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "medical",
+        "病院・薬局"
+      ],
+      "scene_tags": [
+        "medical"
+      ],
+      "japanese": "空腹の、飲食していない",
+      "example_de": "Muss ich zur Blutabnahme nüchtern kommen?",
+      "example_ja": "採血には空腹で来る必要がありますか。",
+      "grammar": {
+        "usage": "医療では『飲食していない状態』。一般語では『冷静な』の意味もある。"
+      },
+      "collocations": [
+        "nüchtern bleiben",
+        "nüchtern zur Untersuchung kommen"
+      ],
+      "learning_note": "検査ごとに水や薬の扱いが異なるため、具体的に確認します。",
+      "related_terms": [
+        "die Blutabnahme",
+        "essen"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-027",
+      "lemma": "überweisen",
+      "display_de": "überweisen",
+      "unit_type": "word",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "medical",
+        "病院・薬局"
+      ],
+      "scene_tags": [
+        "medical"
+      ],
+      "japanese": "紹介する、振り込む",
+      "example_de": "Der Hausarzt überweist mich zum Orthopäden.",
+      "example_ja": "かかりつけ医が整形外科へ紹介してくれます。",
+      "grammar": {
+        "third_person": "überweist",
+        "past_participle": "überwiesen",
+        "auxiliary": "haben",
+        "separable": false,
+        "reflexive": false,
+        "government": "jemanden (Akkusativ) zu + Dativ"
+      },
+      "collocations": [
+        "zum Facharzt überweisen",
+        "Geld überweisen"
+      ],
+      "learning_note": "医療では専門医への紹介、銀行では送金という意味です。",
+      "related_terms": [
+        "die Überweisung",
+        "der Facharzt"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-028",
+      "lemma": "Krankschreibung",
+      "display_de": "die Krankschreibung",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "medical",
+        "病院・薬局",
+        "work",
+        "仕事"
+      ],
+      "scene_tags": [
+        "medical",
+        "work"
+      ],
+      "japanese": "病欠証明、就労不能の証明",
+      "example_de": "Ich brauche eine Krankschreibung für meinen Arbeitgeber.",
+      "example_ja": "勤務先に出す病欠証明が必要です。",
+      "grammar": {
+        "article": "die",
+        "plural": "Krankschreibungen"
+      },
+      "collocations": [
+        "eine Krankschreibung bekommen",
+        "jemanden krankschreiben"
+      ],
+      "learning_note": "正式書類名は Arbeitsunfähigkeitsbescheinigung です。",
+      "related_terms": [
+        "die Arbeitsunfähigkeitsbescheinigung",
+        "sich krankmelden"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-029",
+      "lemma": "Versicherungskarte",
+      "display_de": "die Versicherungskarte",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "medical",
+        "病院・薬局"
+      ],
+      "scene_tags": [
+        "medical"
+      ],
+      "japanese": "保険証",
+      "example_de": "Bitte bringen Sie Ihre Versicherungskarte mit.",
+      "example_ja": "保険証を持参してください。",
+      "grammar": {
+        "article": "die",
+        "plural": "Versicherungskarten"
+      },
+      "collocations": [
+        "die Versicherungskarte einlesen",
+        "die Karte mitbringen"
+      ],
+      "learning_note": "公的健康保険の電子カードは Gesundheitskarte とも呼ばれます。",
+      "related_terms": [
+        "die Gesundheitskarte",
+        "die Krankenversicherung"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-030",
+      "lemma": "vertragen",
+      "display_de": "vertragen",
+      "unit_type": "word",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "medical",
+        "病院・薬局"
+      ],
+      "scene_tags": [
+        "medical"
+      ],
+      "japanese": "（薬・食べ物などが）体に合う、耐える",
+      "example_de": "Ich vertrage dieses Medikament nicht gut.",
+      "example_ja": "この薬は私にはあまり合いません。",
+      "grammar": {
+        "third_person": "verträgt",
+        "past_participle": "vertragen",
+        "auxiliary": "haben",
+        "separable": false,
+        "reflexive": false,
+        "government": "Akkusativ"
+      },
+      "collocations": [
+        "ein Medikament gut vertragen",
+        "etwas nicht vertragen"
+      ],
+      "learning_note": "アレルギーと断定せず、体に合わない感覚を伝えるときにも使えます。",
+      "related_terms": [
+        "die Unverträglichkeit",
+        "allergisch"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-031",
+      "lemma": "Nebenkosten",
+      "display_de": "die Nebenkosten",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "housing",
+        "住まい"
+      ],
+      "scene_tags": [
+        "housing"
+      ],
+      "japanese": "共益費・付帯費用",
+      "example_de": "Sind die Heizkosten in den Nebenkosten enthalten?",
+      "example_ja": "暖房費は共益費に含まれていますか。",
+      "grammar": {
+        "article": "die",
+        "plural": "複数形のみ"
+      },
+      "collocations": [
+        "Nebenkosten zahlen",
+        "in den Nebenkosten enthalten"
+      ],
+      "learning_note": "Kaltmiete に加えて支払う費用の総称です。含まれる項目を確認します。",
+      "related_terms": [
+        "die Warmmiete",
+        "die Heizkosten"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-032",
+      "lemma": "Hausordnung",
+      "display_de": "die Hausordnung",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "housing",
+        "住まい"
+      ],
+      "scene_tags": [
+        "housing"
+      ],
+      "japanese": "建物の利用規則",
+      "example_de": "Laut Hausordnung ist Ruhezeit ab 22 Uhr.",
+      "example_ja": "建物規則では22時から静粛時間です。",
+      "grammar": {
+        "article": "die",
+        "plural": "Hausordnungen"
+      },
+      "collocations": [
+        "die Hausordnung beachten",
+        "laut Hausordnung"
+      ],
+      "learning_note": "集合住宅の騒音・共用部・ごみなどの規則をまとめたものです。",
+      "related_terms": [
+        "die Ruhezeit",
+        "das Treppenhaus"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-033",
+      "lemma": "kündigen",
+      "display_de": "kündigen",
+      "unit_type": "word",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "housing",
+        "住まい",
+        "work",
+        "仕事"
+      ],
+      "scene_tags": [
+        "housing",
+        "work"
+      ],
+      "japanese": "解約する、退職を申し出る",
+      "example_de": "Wir möchten den Mietvertrag zum Monatsende kündigen.",
+      "example_ja": "月末で賃貸契約を解約したいです。",
+      "grammar": {
+        "third_person": "kündigt",
+        "past_participle": "gekündigt",
+        "auxiliary": "haben",
+        "separable": false,
+        "reflexive": false,
+        "government": "Akkusativ; jemandem (Dativ) kündigen"
+      },
+      "collocations": [
+        "einen Vertrag kündigen",
+        "fristgerecht kündigen"
+      ],
+      "learning_note": "契約を解約する場合は4格、雇用関係で人に解雇を通知する場合は3格も使います。",
+      "related_terms": [
+        "die Kündigung",
+        "die Kündigungsfrist"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-034",
+      "lemma": "einziehen",
+      "display_de": "einziehen",
+      "unit_type": "word",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "housing",
+        "住まい"
+      ],
+      "scene_tags": [
+        "housing"
+      ],
+      "japanese": "入居する",
+      "example_de": "Wir sind am ersten Juli eingezogen.",
+      "example_ja": "私たちは7月1日に入居しました。",
+      "grammar": {
+        "third_person": "zieht ein",
+        "past_participle": "eingezogen",
+        "auxiliary": "sein",
+        "separable": true,
+        "reflexive": false,
+        "government": "in + Akkusativ"
+      },
+      "collocations": [
+        "in eine Wohnung einziehen",
+        "neu einziehen"
+      ],
+      "learning_note": "場所の移動を表すこの意味の完了形は sein を使います。",
+      "related_terms": [
+        "ausziehen",
+        "der Einzug"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-035",
+      "lemma": "ausziehen",
+      "display_de": "ausziehen",
+      "unit_type": "word",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "housing",
+        "住まい"
+      ],
+      "scene_tags": [
+        "housing"
+      ],
+      "japanese": "退去する、引っ越し出る",
+      "example_de": "Wir ziehen Ende September aus.",
+      "example_ja": "9月末に退去します。",
+      "grammar": {
+        "third_person": "zieht aus",
+        "past_participle": "ausgezogen",
+        "auxiliary": "sein",
+        "separable": true,
+        "reflexive": false,
+        "government": "aus + Dativ"
+      },
+      "collocations": [
+        "aus der Wohnung ausziehen",
+        "zum Monatsende ausziehen"
+      ],
+      "learning_note": "衣服を脱がせる意味では目的語を取り、完了形に haben を使う場合があります。",
+      "related_terms": [
+        "einziehen",
+        "der Auszug"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-036",
+      "lemma": "Mangel",
+      "display_de": "der Mangel",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "housing",
+        "住まい",
+        "shopping",
+        "買い物"
+      ],
+      "scene_tags": [
+        "housing",
+        "shopping"
+      ],
+      "japanese": "欠陥、不具合",
+      "example_de": "Im Badezimmer gibt es einen Mangel.",
+      "example_ja": "浴室に不具合があります。",
+      "grammar": {
+        "article": "der",
+        "plural": "Mängel"
+      },
+      "collocations": [
+        "einen Mangel melden",
+        "ein erheblicher Mangel"
+      ],
+      "learning_note": "不足の意味もありますが、住居や商品の欠陥を表す法律・実務語としてよく使います。",
+      "related_terms": [
+        "der Schaden",
+        "defekt"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-037",
+      "lemma": "Besichtigung",
+      "display_de": "die Besichtigung",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "housing",
+        "住まい"
+      ],
+      "scene_tags": [
+        "housing"
+      ],
+      "japanese": "内見、見学",
+      "example_de": "Können wir einen Termin zur Besichtigung vereinbaren?",
+      "example_ja": "内見の予約を取れますか。",
+      "grammar": {
+        "article": "die",
+        "plural": "Besichtigungen"
+      },
+      "collocations": [
+        "eine Wohnung besichtigen",
+        "ein Besichtigungstermin"
+      ],
+      "learning_note": "物件の内見は Wohnungsbesichtigung とも言います。",
+      "related_terms": [
+        "besichtigen",
+        "der Besichtigungstermin"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-038",
+      "lemma": "Kaution",
+      "display_de": "die Kaution",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "housing",
+        "住まい"
+      ],
+      "scene_tags": [
+        "housing"
+      ],
+      "japanese": "敷金、保証金",
+      "example_de": "Die Kaution beträgt drei Kaltmieten.",
+      "example_ja": "敷金は冷家賃3か月分です。",
+      "grammar": {
+        "article": "die",
+        "plural": "Kautionen"
+      },
+      "collocations": [
+        "eine Kaution zahlen",
+        "die Kaution zurückzahlen"
+      ],
+      "learning_note": "金額の説明では betragen をよく使います。",
+      "related_terms": [
+        "die Mietkaution",
+        "die Kaltmiete"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-039",
+      "lemma": "Hausmeister",
+      "display_de": "der Hausmeister",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "housing",
+        "住まい"
+      ],
+      "scene_tags": [
+        "housing"
+      ],
+      "japanese": "管理人",
+      "example_de": "Der Hausmeister schaut sich die Heizung morgen an.",
+      "example_ja": "管理人が明日暖房を確認します。",
+      "grammar": {
+        "article": "der",
+        "plural": "Hausmeister"
+      },
+      "collocations": [
+        "den Hausmeister anrufen",
+        "der zuständige Hausmeister"
+      ],
+      "learning_note": "管理人がすべての修理責任を持つとは限らないため、まず担当範囲を確認します。",
+      "related_terms": [
+        "die Hausmeisterin",
+        "die Hausverwaltung"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-040",
+      "lemma": "Eingewöhnung",
+      "display_de": "die Eingewöhnung",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "kita-school",
+        "Kita・学校"
+      ],
+      "scene_tags": [
+        "kita-school"
+      ],
+      "japanese": "慣らし保育、適応期間",
+      "example_de": "Die Eingewöhnung dauert voraussichtlich drei Wochen.",
+      "example_ja": "慣らし保育は見込みで3週間かかります。",
+      "grammar": {
+        "article": "die",
+        "plural": "Eingewöhnungen"
+      },
+      "collocations": [
+        "mit der Eingewöhnung beginnen",
+        "eine behutsame Eingewöhnung"
+      ],
+      "learning_note": "Kitaに慣れる過程を指す実務的な語です。",
+      "related_terms": [
+        "sich eingewöhnen",
+        "die Bezugsperson"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-041",
+      "lemma": "Elternabend",
+      "display_de": "der Elternabend",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "kita-school",
+        "Kita・学校"
+      ],
+      "scene_tags": [
+        "kita-school"
+      ],
+      "japanese": "保護者会",
+      "example_de": "Der nächste Elternabend findet online statt.",
+      "example_ja": "次の保護者会はオンラインで行われます。",
+      "grammar": {
+        "article": "der",
+        "plural": "Elternabende"
+      },
+      "collocations": [
+        "am Elternabend teilnehmen",
+        "zum Elternabend kommen"
+      ],
+      "learning_note": "Kitaと学校のどちらでも使います。",
+      "related_terms": [
+        "die Eltern",
+        "stattfinden"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-042",
+      "lemma": "abmelden",
+      "display_de": "abmelden",
+      "unit_type": "word",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "kita-school",
+        "Kita・学校",
+        "administration",
+        "外国人局・役所"
+      ],
+      "scene_tags": [
+        "kita-school",
+        "administration"
+      ],
+      "japanese": "欠席連絡をする、登録を解除する",
+      "example_de": "Bitte melden Sie Ihr Kind vor acht Uhr ab.",
+      "example_ja": "8時までに子どもの欠席連絡をしてください。",
+      "grammar": {
+        "third_person": "meldet ab",
+        "past_participle": "abgemeldet",
+        "auxiliary": "haben",
+        "separable": true,
+        "reflexive": false,
+        "government": "jemanden/etwas (Akkusativ) abmelden; sich abmelden"
+      },
+      "collocations": [
+        "ein Kind abmelden",
+        "sich beim Bürgeramt abmelden"
+      ],
+      "learning_note": "対象を登録解除する形と、自分が登録解除する再帰形があります。",
+      "related_terms": [
+        "anmelden",
+        "die Abmeldung"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-043",
+      "lemma": "Vertretung",
+      "display_de": "die Vertretung",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "kita-school",
+        "Kita・学校",
+        "work",
+        "仕事"
+      ],
+      "scene_tags": [
+        "kita-school",
+        "work"
+      ],
+      "japanese": "代理、代行者",
+      "example_de": "Heute übernimmt eine Vertretung die Gruppe.",
+      "example_ja": "今日は代理の先生がグループを担当します。",
+      "grammar": {
+        "article": "die",
+        "plural": "Vertretungen"
+      },
+      "collocations": [
+        "eine Vertretung organisieren",
+        "die Vertretung übernehmen"
+      ],
+      "learning_note": "人そのものにも代理という仕組みにも使います。",
+      "related_terms": [
+        "vertreten",
+        "der Ersatz"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-044",
+      "lemma": "abholen lassen",
+      "display_de": "jemanden abholen lassen",
+      "unit_type": "collocation",
+      "part_of_speech": "phrase",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "kita-school",
+        "Kita・学校"
+      ],
+      "scene_tags": [
+        "kita-school"
+      ],
+      "japanese": "誰かに迎えに行ってもらう",
+      "example_de": "Heute lasse ich mein Kind von meiner Schwester abholen.",
+      "example_ja": "今日は姉（妹）に子どもを迎えに行ってもらいます。",
+      "grammar": {
+        "usage": "lassen + Akkusativ + 不定詞。実行者は von + Dativ で示せる。"
+      },
+      "collocations": [
+        "ein Kind abholen lassen",
+        "von einer Person abholen lassen"
+      ],
+      "learning_note": "迎えに行く人をKitaへ事前登録する必要がある場合があります。",
+      "related_terms": [
+        "abholen",
+        "die Abholberechtigung"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-045",
+      "lemma": "Rückmeldung",
+      "display_de": "die Rückmeldung",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "work",
+        "仕事",
+        "administration",
+        "外国人局・役所"
+      ],
+      "scene_tags": [
+        "work",
+        "administration"
+      ],
+      "japanese": "返答、フィードバック",
+      "example_de": "Vielen Dank für Ihre schnelle Rückmeldung.",
+      "example_ja": "早速のご返信ありがとうございます。",
+      "grammar": {
+        "article": "die",
+        "plural": "Rückmeldungen"
+      },
+      "collocations": [
+        "eine Rückmeldung geben",
+        "auf Rückmeldung warten"
+      ],
+      "learning_note": "メールの返信にも、内容へのフィードバックにも使えます。",
+      "related_terms": [
+        "antworten",
+        "das Feedback"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-046",
+      "lemma": "Schicht",
+      "display_de": "die Schicht",
+      "unit_type": "word",
+      "part_of_speech": "noun",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "work",
+        "仕事"
+      ],
+      "scene_tags": [
+        "work"
+      ],
+      "japanese": "勤務シフト、交代勤務",
+      "example_de": "Meine Schicht beginnt heute um sechs Uhr.",
+      "example_ja": "今日のシフトは6時に始まります。",
+      "grammar": {
+        "article": "die",
+        "plural": "Schichten"
+      },
+      "collocations": [
+        "eine Schicht übernehmen",
+        "in Schichten arbeiten"
+      ],
+      "learning_note": "早番 Frühschicht、遅番 Spätschicht、夜勤 Nachtschicht と組み合わせます。",
+      "related_terms": [
+        "der Dienstplan",
+        "die Arbeitszeit"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-047",
+      "lemma": "sich verspäten",
+      "display_de": "sich verspäten",
+      "unit_type": "phrase",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "work",
+        "仕事",
+        "daily",
+        "日常"
+      ],
+      "scene_tags": [
+        "work",
+        "daily"
+      ],
+      "japanese": "遅れる",
+      "example_de": "Ich verspäte mich wegen einer Zugstörung um etwa 15 Minuten.",
+      "example_ja": "列車のトラブルで15分ほど遅れます。",
+      "grammar": {
+        "third_person": "verspätet sich",
+        "past_participle": "verspätet",
+        "auxiliary": "haben",
+        "separable": false,
+        "reflexive": true,
+        "government": "um + 時間 / wegen + Genitiv または口語 Dativ"
+      },
+      "collocations": [
+        "sich um zehn Minuten verspäten",
+        "sich leider verspäten"
+      ],
+      "learning_note": "遅れる時間は um、理由は wegen で伝えます。",
+      "related_terms": [
+        "die Verspätung",
+        "zu spät kommen"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-048",
+      "lemma": "anhängen",
+      "display_de": "eine Datei anhängen",
+      "unit_type": "collocation",
+      "part_of_speech": "verb",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "work",
+        "仕事",
+        "administration",
+        "外国人局・役所"
+      ],
+      "scene_tags": [
+        "work",
+        "administration"
+      ],
+      "japanese": "ファイルを添付する",
+      "example_de": "Ich habe die Rechnung als PDF angehängt.",
+      "example_ja": "請求書をPDFで添付しました。",
+      "grammar": {
+        "third_person": "hängt an",
+        "past_participle": "angehängt",
+        "auxiliary": "haben",
+        "separable": true,
+        "reflexive": false,
+        "government": "Akkusativ; als + 形式"
+      },
+      "collocations": [
+        "eine Datei anhängen",
+        "im Anhang finden"
+      ],
+      "learning_note": "メール本文では Im Anhang finden Sie ... も定番です。",
+      "related_terms": [
+        "der Anhang",
+        "beifügen"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-049",
+      "lemma": "erreichbar",
+      "display_de": "erreichbar",
+      "unit_type": "word",
+      "part_of_speech": "adjective",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "work",
+        "仕事",
+        "daily",
+        "日常"
+      ],
+      "scene_tags": [
+        "work",
+        "daily"
+      ],
+      "japanese": "連絡がつく、到達できる",
+      "example_de": "Ich bin heute Nachmittag telefonisch erreichbar.",
+      "example_ja": "今日の午後は電話で連絡がつきます。",
+      "grammar": {
+        "usage": "sein と使い、手段は telefonisch/per E-Mail などで示す。"
+      },
+      "collocations": [
+        "telefonisch erreichbar",
+        "gut erreichbar"
+      ],
+      "learning_note": "人への連絡と場所へのアクセスの両方に使えます。",
+      "related_terms": [
+        "kontaktieren",
+        "verfügbar"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    },
+    {
+      "card_id": "a2-050",
+      "lemma": "Urlaub beantragen",
+      "display_de": "Urlaub beantragen",
+      "unit_type": "collocation",
+      "part_of_speech": "phrase",
+      "primary_level": "A2",
+      "level_tags": [
+        "A2"
+      ],
+      "topic_tags": [
+        "work",
+        "仕事"
+      ],
+      "scene_tags": [
+        "work"
+      ],
+      "japanese": "休暇を申請する",
+      "example_de": "Ich möchte für die erste Septemberwoche Urlaub beantragen.",
+      "example_ja": "9月第1週の休暇を申請したいです。",
+      "grammar": {
+        "usage": "Urlaub は通常無冠詞。beantragen は Akkusativ を取る。"
+      },
+      "collocations": [
+        "bezahlten Urlaub beantragen",
+        "einen Urlaubstag beantragen"
+      ],
+      "learning_note": "休暇は申請後の承認が必要なため、nehmen ではなくまず beantragen を使います。",
+      "related_terms": [
+        "der Urlaubsantrag",
+        "Urlaub nehmen"
+      ],
+      "source_note": "J-Connect original example and explanation",
+      "verification_status": "j-connect-initial-review",
+      "updated_at": "2026-08-02",
+      "verified_at": "2026-08-02"
+    }
+  ]
+}

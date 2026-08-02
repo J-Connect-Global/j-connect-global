@@ -135,14 +135,31 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツ語学習・実用フレーズ",
-    "description": "日常生活、役所、病院、仕事で使えるドイツ語フレーズと学習コンテンツをまとめたページです。",
+    "title": "ドイツ語学習・実用フレーズ・Web教材",
+    "description": "日常生活、役所、病院、仕事で使えるドイツ語フレーズ、学習ルート、外部教材、J-ConnectオリジナルWeb教材をまとめたページです。",
     "url": "/germany/ja/learn-german/",
     "category": "ドイツ語・学び",
     "tags": [
       "ドイツ語",
       "学習",
-      "フレーズ"
+      "フレーズ",
+      "暗記カード",
+      "Web教材"
+    ]
+  },
+  {
+    "title": "ドイツ語暗記カード A1–B2",
+    "description": "A1・A2・B1・B2のドイツ生活語彙200枚を、表裏カード、3段階評価、苦手復習、読み上げ、端末内保存で学べるJ-ConnectオリジナルWeb教材です。",
+    "url": "/germany/ja/learn-german/flashcards/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "ドイツ語",
+      "暗記カード",
+      "A1",
+      "A2",
+      "B1",
+      "B2",
+      "Web教材"
     ]
   },
   {

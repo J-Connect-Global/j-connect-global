@@ -416,26 +416,66 @@ function initializeViewToggles() {
 }
 
 function initializePageGuide() {
-  const guideLinks = Array.from(document.querySelectorAll(".learn-page-guide a"));
-  if (!guideLinks.length || !("IntersectionObserver" in window)) return;
-  const linkById = new Map(guideLinks.map(link => [link.getAttribute("href")?.slice(1), link]));
+  const guideLinks = Array.from(document.querySelectorAll(".learn-page-guide a, .learn-mobile-page-nav a"));
+  if (!guideLinks.length) return;
 
-  const observer = new IntersectionObserver(entries => {
-    const visible = entries
-      .filter(entry => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (!visible) return;
-    for (const link of guideLinks) link.classList.remove("is-active");
-    linkById.get(visible.target.id)?.classList.add("is-active");
-  }, {
-    rootMargin: "-20% 0px -55% 0px",
-    threshold: [0.1, 0.35, 0.6]
-  });
-
-  for (const id of linkById.keys()) {
-    const section = document.getElementById(id);
-    if (section) observer.observe(section);
+  const linksById = new Map();
+  for (const link of guideLinks) {
+    const id = link.getAttribute("href")?.slice(1);
+    if (!id) continue;
+    if (!linksById.has(id)) linksById.set(id, []);
+    linksById.get(id).push(link);
   }
+
+  const sections = Array.from(linksById.keys())
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+  if (!sections.length) return;
+
+  const setActiveSection = id => {
+    for (const link of guideLinks) {
+      const active = link.getAttribute("href") === `#${id}`;
+      link.classList.toggle("is-active", active);
+      if (active) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    }
+  };
+
+  let scheduled = false;
+  const update = () => {
+    scheduled = false;
+    const marker = Math.min(window.innerHeight * 0.32, 220);
+    let activeSection = sections[0];
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top <= marker) activeSection = section;
+      else break;
+    }
+    setActiveSection(activeSection.id);
+  };
+  const scheduleUpdate = () => {
+    if (scheduled) return;
+    scheduled = true;
+    window.requestAnimationFrame(update);
+  };
+
+  for (const link of guideLinks) {
+    link.addEventListener("click", () => {
+      const id = link.getAttribute("href")?.slice(1);
+      if (id) setActiveSection(id);
+      window.setTimeout(scheduleUpdate, 80);
+    });
+  }
+
+  window.addEventListener("scroll", scheduleUpdate, { passive: true });
+  window.addEventListener("resize", scheduleUpdate);
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(scheduleUpdate, {
+      rootMargin: "-18% 0px -58% 0px",
+      threshold: [0, 0.25, 0.6]
+    });
+    sections.forEach(section => observer.observe(section));
+  }
+  update();
 }
 
 function escapeHtml(value) {

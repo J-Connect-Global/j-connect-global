@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outputDir = path.join(rootDir, "assets/data/learn-german/flashcards");
 const verifiedDate = "2026-08-02";
+const generatedDate = "2026-08-08";
 
 const sceneLabels = {
   daily: "日常",
@@ -243,14 +244,19 @@ const rawCards = {
   ]
 };
 
-const levelFiles = {
-  A1: "cards-a1.json",
-  A2: "cards-a2.json",
-  B1: "cards-b1.json",
-  B2: "cards-b2.json"
-};
+const levels = ["A1", "A2", "B1", "B2", "C1", "C2"];
+const levelFiles = Object.fromEntries(levels.map((level) => [level, `cards-${level.toLowerCase()}.json`]));
+const cumulativeTargets = { A1: 650, A2: 1300, B1: 2400, B2: 4000, C1: 7000, C2: 10000 };
+const incrementalTargets = { A1: 650, A2: 650, B1: 1100, B2: 1600, C1: 3000, C2: 3000 };
+const sourceLexiconPath = path.join(rootDir, "content/learn-german/flashcards/cefr-lexicon-source.json");
 
-function normalizedCard(level, entry) {
+sceneLabels.general = "総合語彙";
+
+function lemmaKey(value) {
+  return String(value || "").normalize("NFC").replace(/\s+/g, " ").trim();
+}
+
+function normalizedCuratedCard(level, entry) {
   return {
     card_id: entry.id,
     lemma: entry.lemma,
@@ -269,20 +275,90 @@ function normalizedCard(level, entry) {
     learning_note: entry.learning_note,
     related_terms: entry.related_terms,
     source_note: "J-Connect original example and explanation",
-    verification_status: "j-connect-initial-review",
+    source_refs: ["j-connect-editorial"],
+    quality_tier: "editorial-reviewed",
+    verification_status: "j-connect-editorial-reviewed",
     updated_at: verifiedDate,
     verified_at: verifiedDate
   };
 }
 
-function validateCards() {
+function preferredJapanese(value) {
+  return [...new Set(String(value || "").split("、").map((item) => item.trim()).filter(Boolean))]
+    .sort((left, right) => [...left].length - [...right].length)
+    .slice(0, 3)
+    .join("、");
+}
+
+function normalizedReferenceCard(level, source, serial) {
+  return {
+    card_id: `${level.toLowerCase()}-${String(serial).padStart(4, "0")}`,
+    lemma: source.lemma,
+    display_de: source.display_de,
+    unit_type: source.lemma.includes(" ") ? "phrase" : "word",
+    part_of_speech: source.part_of_speech,
+    primary_level: level,
+    level_tags: [level],
+    topic_tags: ["general", sceneLabels.general],
+    scene_tags: ["general"],
+    japanese: preferredJapanese(source.japanese),
+    example_de: "",
+    example_ja: "",
+    grammar: source.grammar || {},
+    collocations: [],
+    learning_note: "独日辞書の見出し語をドイツ語コーパス頻度で並べた参照カードです。例文と語法は編集レビュー待ちです。",
+    related_terms: [],
+    source_note: "FreeDict/WikDict German-Japanese headword ranked with Leipzig Corpora Collection frequency samples; CEFR band is a J-Connect study target.",
+    source_refs: source.source_refs || ["freedict-deu-jpn", "leipzig-corpora"],
+    quality_tier: "reference",
+    verification_status: "source-aligned-needs-editorial-review",
+    frequency_rank: source.rank,
+    selection_score: source.selection_score,
+    corpus_coverage: source.corpus_coverage,
+    updated_at: generatedDate,
+    verified_at: null
+  };
+}
+
+const editorialA1Priority = new Map(`
+Abend Adresse Alter Antwort Apfel Arbeit Arzt Auto Bahnhof Bank Bauch Baum Bett Bier Bild Brot Bruder Buch Bus Computer Datum Dorf Dusche Ei Eltern Essen Familie Fenster Fisch Fleisch Frage Frau Freund Frühstück Fuß Garten Geld Geschäft Getränk Haus Hilfe Hotel Hund Hunger Jacke Jahr Kaffee Karte Katze Kind Kino Küche Land Lehrer Liebe Mann Milch Minute Mittwoch Monat Morgen Mutter Name Nacht Nummer Obst Papa Park Person Platz Polizei Problem Rechnung Restaurant Samstag Schule Schwester Sohn Sonntag Sprache Stadt Straße Student Stunde Tag Taxi Tee Telefon Tochter Toilette Tür Uhr Vater Wasser Weg Wetter Woche Wohnung Wort Zeit Zimmer Zug
+antworten arbeiten bezahlen bleiben brauchen essen fahren finden fragen geben gehen heißen helfen hören kaufen kommen lernen lesen machen nehmen öffnen sagen schlafen schließen schreiben sehen sein sprechen stehen studieren suchen trinken verstehen warten wohnen zeigen
+alt billig blau braun deutsch einfach falsch gelb gesund groß grün gut heiß hungrig jung kalt kaputt klein krank langsam neu offen rot schlecht schnell schön schwarz teuer warm weiß wichtig
+gestern heute hier immer jetzt links morgen nicht oben rechts sehr unten zusammen
+`.trim().split(/\s+/).map((lemma, index) => [lemma, index]));
+
+function sourceSelectionScore(source) {
+  const lemma = source.lemma;
+  const simpleLength = [...lemma.replace(/\s+/g, "")].length;
+  const essentialProperNames = new Set(["Deutschland", "Berlin", "Düsseldorf", "Europa"]);
+  const basicAnatomy = new Set(["Auge", "Arm", "Bauch", "Bein", "Blut", "Finger", "Fuß", "Haar", "Hand", "Haut", "Herz", "Knie", "Kopf", "Mund", "Nase", "Ohr", "Rücken", "Zahn"]);
+  let penalty = 0;
+  if (editorialA1Priority.has(lemma)) return editorialA1Priority.get(lemma);
+  if (source.proper_name && !essentialProperNames.has(lemma)) penalty += 8_000;
+  if (source.specialist_domain && !basicAnatomy.has(lemma)) penalty += 2_500;
+  if (source.corpus_coverage === 0) penalty += 5_000;
+  else if (source.corpus_coverage === 1) penalty += 1_800;
+  else if (source.corpus_coverage === 2) penalty += 500;
+  if (source.part_of_speech === "abbreviation") penalty += 4_000;
+  if (source.part_of_speech === "noun") penalty += 100;
+  if (lemma.includes(" ")) penalty += 700;
+  if (simpleLength > 20) penalty += 2_500;
+  else if (simpleLength > 15) penalty += 900;
+  else if (simpleLength > 11) penalty += 250;
+  if (/(?:ismus|isierung|ität|logie)$/i.test(lemma)) penalty += 1_800;
+  else if (/(?:schaft|tion|tät|ment)$/i.test(lemma)) penalty += 1_100;
+  else if (/(?:heit|keit|ung)$/i.test(lemma)) penalty += 650;
+  return Number(source.rank || 99_999) + penalty;
+}
+
+function validateCuratedCards() {
   const ids = new Set();
   for (const [level, entries] of Object.entries(rawCards)) {
-    if (entries.length !== 50) throw new Error(`${level} must contain exactly 50 cards; found ${entries.length}.`);
+    if (entries.length !== 50) throw new Error(`${level} must contain exactly 50 curated cards; found ${entries.length}.`);
     entries.forEach((entry) => {
-      if (ids.has(entry.id)) throw new Error(`Duplicate card ID: ${entry.id}`);
+      if (ids.has(entry.id)) throw new Error(`Duplicate curated card ID: ${entry.id}`);
       ids.add(entry.id);
-      if (!/^([ab][12])-\d{3}$/.test(entry.id)) throw new Error(`Invalid card ID: ${entry.id}`);
+      if (!/^([ab][12])-\d{3}$/.test(entry.id)) throw new Error(`Invalid curated card ID: ${entry.id}`);
       if (!entry.scenes.length || entry.scenes.some((scene) => !sceneLabels[scene])) throw new Error(`Invalid scenes for ${entry.id}`);
       if (!["word", "phrase", "collocation"].includes(entry.unit_type)) throw new Error(`Invalid unit type for ${entry.id}`);
       if (entry.part_of_speech === "noun" && (!entry.grammar.article || !entry.grammar.plural)) throw new Error(`Missing noun grammar for ${entry.id}`);
@@ -292,11 +368,66 @@ function validateCards() {
       }
     });
   }
-  if (ids.size !== 200) throw new Error(`Expected 200 unique cards; found ${ids.size}.`);
+  if (ids.size !== 200) throw new Error(`Expected 200 unique curated cards; found ${ids.size}.`);
 }
 
-function idsFor(level) {
-  return rawCards[level].map((entry) => entry.id);
+function buildLevelCards(sourceEntries) {
+  const curatedKeys = new Set(Object.values(rawCards).flat().map((entry) => lemmaKey(entry.lemma)));
+  const usedKeys = new Set(curatedKeys);
+  const selectedByLevel = {};
+  const rankedSources = sourceEntries
+    .map((source) => ({ ...source, selection_score: sourceSelectionScore(source) }))
+    .sort((left, right) => left.selection_score - right.selection_score || left.rank - right.rank);
+  let sourceIndex = 0;
+
+  for (const level of levels) {
+    const curated = (rawCards[level] || []).map((entry) => normalizedCuratedCard(level, entry));
+    const selected = [...curated];
+    while (selected.length < incrementalTargets[level]) {
+      const source = rankedSources[sourceIndex];
+      sourceIndex += 1;
+      if (!source) throw new Error(`Source lexicon ended while filling ${level}.`);
+      const key = lemmaKey(source.lemma);
+      if (!key || usedKeys.has(key) || source.source_dictionary !== "freedict-deu-jpn") continue;
+      usedKeys.add(key);
+      selected.push(normalizedReferenceCard(level, source, selected.length + 1));
+    }
+    selectedByLevel[level] = selected;
+  }
+
+  return selectedByLevel;
+}
+
+function validateGeneratedCards(cardsByLevel) {
+  const ids = new Set();
+  const lemmas = new Set();
+  for (const level of levels) {
+    const cards = cardsByLevel[level];
+    if (cards.length !== incrementalTargets[level]) throw new Error(`${level} expected ${incrementalTargets[level]} cards; found ${cards.length}.`);
+    for (const entry of cards) {
+      if (!/^(?:a1|a2|b1|b2|c1|c2)-\d{3,4}$/.test(entry.card_id)) throw new Error(`Invalid card ID: ${entry.card_id}`);
+      if (ids.has(entry.card_id)) throw new Error(`Duplicate card ID: ${entry.card_id}`);
+      ids.add(entry.card_id);
+      const key = lemmaKey(entry.lemma);
+      if (lemmas.has(key)) throw new Error(`Duplicate lemma across level inventories: ${entry.lemma}`);
+      lemmas.add(key);
+      for (const field of ["lemma", "display_de", "japanese", "part_of_speech", "quality_tier", "verification_status"]) {
+        if (!String(entry[field] || "").trim()) throw new Error(`Missing ${field} for ${entry.card_id}`);
+      }
+      if (entry.quality_tier === "editorial-reviewed" && (!entry.example_de || !entry.example_ja)) {
+        throw new Error(`Editorial card lacks examples: ${entry.card_id}`);
+      }
+    }
+  }
+  if (ids.size !== cumulativeTargets.C2) throw new Error(`Expected ${cumulativeTargets.C2} cards; found ${ids.size}.`);
+}
+
+function idsFor(level, cardsByLevel) {
+  return cardsByLevel[level].map((entry) => entry.card_id);
+}
+
+function idsThrough(level, cardsByLevel) {
+  return levels.slice(0, levels.indexOf(level) + 1).flatMap((current) => idsFor(current, cardsByLevel));
 }
 
 function idsForScene(scene, limit = 36) {
@@ -317,68 +448,91 @@ function idsForScene(scene, limit = 36) {
 }
 
 function levelsForIds(cardIds) {
-  return [...new Set(cardIds.map((id) => id.slice(0, 2).toUpperCase()))];
+  return levels.filter((level) => cardIds.some((id) => id.startsWith(level.toLowerCase())));
 }
 
-function createDeck(id, title, description, cardIds, scenes, minutes, featured = false) {
-  const levels = levelsForIds(cardIds);
+function createDeck(id, title, description, cardIds, scenes, minutes, options = {}) {
+  const deckLevels = levelsForIds(cardIds);
   return {
     deck_id: id,
     title_ja: title,
     description_ja: description,
-    primary_level: levels.length === 1 ? levels[0] : levels[0],
-    levels,
+    primary_level: options.primaryLevel || deckLevels.at(-1),
+    target_level: options.primaryLevel || deckLevels.at(-1),
+    levels: deckLevels,
     scenes,
     scene_labels: scenes.map((scene) => sceneLabels[scene]),
+    deck_kind: options.deckKind || "scene-practice",
     card_count: cardIds.length,
     estimated_minutes: minutes,
-    card_files: levels.map((level) => levelFiles[level]),
+    card_files: deckLevels.map((level) => levelFiles[level]),
     card_ids: cardIds,
-    featured
+    featured: Boolean(options.featured)
   };
 }
 
-function buildDecks() {
+function buildDecks(cardsByLevel) {
+  const allScenes = Object.keys(sceneLabels);
   return [
-    createDeck("a1-life-basics", "A1 ドイツ生活の基本50", "買い物、役所、病院、住まい、Kita、職場で最初に使う50枚です。", idsFor("A1"), Object.keys(sceneLabels), 25, true),
-    createDeck("a2-daily-independence", "A2 自分で進める生活ドイツ語50", "返品、追加書類、受診、賃貸、学校連絡、職場メールを一歩詳しく練習します。", idsFor("A2"), Object.keys(sceneLabels), 30, true),
-    createDeck("b1-explain-and-confirm", "B1 説明・確認の実践50", "理由、期限、制度、トラブルをまとまりのあるドイツ語で説明するための50枚です。", idsFor("B1"), Object.keys(sceneLabels), 35, true),
-    createDeck("b2-negotiate-and-document", "B2 交渉・文書対応50", "行政、医療、賃貸、教育、職場で根拠を示しながら調整するための50枚です。", idsFor("B2"), Object.keys(sceneLabels), 40, true),
-    createDeck("scene-daily", "日常生活のコア表現", "予定、移動、依頼、連絡で繰り返し使う表現をレベル横断で復習します。", idsForScene("daily", 32), ["daily"], 18),
-    createDeck("scene-shopping", "買い物・Pfand・返品", "スーパー、Pfand返却、交換・返金、消費者対応で役立つ表現です。", idsForScene("shopping", 28), ["shopping"], 16),
-    createDeck("scene-administration", "外国人局・役所の手続き", "Anmeldung、滞在許可、追加書類、期限、異議申立ての表現です。", idsForScene("administration", 36), ["administration"], 22),
-    createDeck("scene-medical", "病院・薬局・予約", "受診、検査、処方、副作用、治療方針を確認する表現です。", idsForScene("medical", 34), ["medical"], 20),
-    createDeck("scene-housing", "住まい・大家・契約", "内見、家賃、不具合、解約、契約条項を扱う表現です。", idsForScene("housing", 36), ["housing"], 22),
-    createDeck("scene-kita-school", "Kita・学校との連絡", "送迎、欠席、面談、支援制度について連絡する表現です。", idsForScene("kita-school", 30), ["kita-school"], 18),
-    createDeck("scene-work", "職場・メール・会議", "遅刻連絡、メール、会議、合意形成、優先順位づけに使う表現です。", idsForScene("work", 36), ["work"], 22)
+    createDeck("a1-life-basics", "A1 総合語彙650", "入門の身近な語彙を中心にしたJ-Connect累積目標650語です。", idsThrough("A1", cardsByLevel), allScenes, 325, { primaryLevel: "A1", deckKind: "cefr-comprehensive", featured: true }),
+    createDeck("a2-daily-independence", "A2 総合語彙1,300", "A1を含み、日常生活と基本的な用事へ広げる累積1,300語です。", idsThrough("A2", cardsByLevel), allScenes, 650, { primaryLevel: "A2", deckKind: "cefr-comprehensive", featured: true }),
+    createDeck("b1-explain-and-confirm", "B1 総合語彙2,400", "A1〜B1の身近な話題と社会生活を支える累積2,400語です。", idsThrough("B1", cardsByLevel), allScenes, 1200, { primaryLevel: "B1", deckKind: "cefr-comprehensive", featured: true }),
+    createDeck("b2-negotiate-and-document", "B2 総合語彙4,000", "一般語彙に専門・抽象トピックの土台を加えた累積4,000語です。", idsThrough("B2", cardsByLevel), allScenes, 2000, { primaryLevel: "B2", deckKind: "cefr-comprehensive", featured: true }),
+    createDeck("c1-broad-repertoire", "C1 総合語彙7,000", "幅広い語彙レパートリーと専門的な読解の土台を目指す累積7,000語です。", idsThrough("C1", cardsByLevel), allScenes, 3500, { primaryLevel: "C1", deckKind: "cefr-comprehensive", featured: true }),
+    createDeck("c2-nuance-repertoire", "C2 総合語彙10,000", "語感・含意・専門領域へ伸ばすためのJ-Connect累積目標10,000語です。", idsThrough("C2", cardsByLevel), allScenes, 5000, { primaryLevel: "C2", deckKind: "cefr-comprehensive", featured: true }),
+    createDeck("a1-practical-50", "A1 編集済み実践50", "例文・文法・語法を編集レビューした生活ドイツ語50枚です。", idsFor("A1", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 25, { primaryLevel: "A1", deckKind: "editorial-practice" }),
+    createDeck("a2-practical-50", "A2 編集済み実践50", "例文・文法・語法を編集レビューした生活ドイツ語50枚です。", idsFor("A2", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 30, { primaryLevel: "A2", deckKind: "editorial-practice" }),
+    createDeck("b1-practical-50", "B1 編集済み実践50", "例文・文法・語法を編集レビューした説明・確認の50枚です。", idsFor("B1", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 35, { primaryLevel: "B1", deckKind: "editorial-practice" }),
+    createDeck("b2-practical-50", "B2 編集済み実践50", "例文・文法・語法を編集レビューした交渉・文書対応の50枚です。", idsFor("B2", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 40, { primaryLevel: "B2", deckKind: "editorial-practice" }),
+    createDeck("scene-daily", "日常生活のコア表現", "予定、移動、依頼、連絡で繰り返し使う編集済み表現です。", idsForScene("daily", 32), ["daily"], 18),
+    createDeck("scene-shopping", "買い物・Pfand・返品", "スーパー、Pfand返却、交換・返金、消費者対応で役立つ編集済み表現です。", idsForScene("shopping", 28), ["shopping"], 16),
+    createDeck("scene-administration", "外国人局・役所の手続き", "Anmeldung、滞在許可、追加書類、期限、異議申立ての編集済み表現です。", idsForScene("administration", 36), ["administration"], 22),
+    createDeck("scene-medical", "病院・薬局・予約", "受診、検査、処方、副作用、治療方針を確認する編集済み表現です。", idsForScene("medical", 34), ["medical"], 20),
+    createDeck("scene-housing", "住まい・大家・契約", "内見、家賃、不具合、解約、契約条項を扱う編集済み表現です。", idsForScene("housing", 36), ["housing"], 22),
+    createDeck("scene-kita-school", "Kita・学校との連絡", "送迎、欠席、面談、支援制度について連絡する編集済み表現です。", idsForScene("kita-school", 30), ["kita-school"], 18),
+    createDeck("scene-work", "職場・メール・会議", "遅刻連絡、メール、会議、合意形成、優先順位づけに使う編集済み表現です。", idsForScene("work", 36), ["work"], 22)
   ];
 }
 
-function writeJson(fileName, value) {
-  fs.writeFileSync(path.join(outputDir, fileName), `${JSON.stringify(value, null, 2)}\n`, "utf8");
+function writeJson(fileName, value, pretty = false) {
+  fs.writeFileSync(path.join(outputDir, fileName), `${JSON.stringify(value, null, pretty ? 2 : 0)}\n`, "utf8");
 }
 
-validateCards();
+validateCuratedCards();
+if (!fs.existsSync(sourceLexiconPath)) {
+  throw new Error(`Missing prepared source lexicon: ${path.relative(rootDir, sourceLexiconPath)}. Run prepare-cefr-lexicon.mjs first.`);
+}
+const sourcePayload = JSON.parse(fs.readFileSync(sourceLexiconPath, "utf8"));
+const cardsByLevel = buildLevelCards(sourcePayload.entries || []);
+validateGeneratedCards(cardsByLevel);
 fs.mkdirSync(outputDir, { recursive: true });
 
-for (const [level, entries] of Object.entries(rawCards)) {
+for (const level of levels) {
   writeJson(levelFiles[level], {
-    schema_version: 1,
+    schema_version: 2,
     level,
-    updated_at: verifiedDate,
-    cards: entries.map((entry) => normalizedCard(level, entry))
+    band_card_count: incrementalTargets[level],
+    cumulative_target: cumulativeTargets[level],
+    updated_at: generatedDate,
+    cards: cardsByLevel[level]
   });
 }
 
-const decks = buildDecks();
+const decks = buildDecks(cardsByLevel);
 writeJson("decks.json", {
-  schema_version: 1,
-  updated_at: verifiedDate,
-  level_note_ja: "レベルはCEFR、Goethe等を参考にしたJ-Connect独自の学習目安です。",
+  schema_version: 2,
+  updated_at: generatedDate,
+  level_note_ja: "CEFRは能力記述であり、公式の全単語リストはありません。各帯の語彙割当とC1・C2を含む語数は、正式資料と頻度資料を基にしたJ-Connect独自の累積学習目標です。",
+  quality_note_ja: "200枚は例文・文法・語法まで編集済みです。残り9,800枚は出典付き参照カードで、例文・詳細語法は順次編集レビューします。",
   storage_note_ja: "学習記録はこの端末のブラウザに保存されます。",
+  license_note_ja: "FreeDict由来の辞書データを含む語彙カード部分はCC BY-SA 3.0で提供します。Leipzig Corpora Collectionの帰属情報も保持します。",
+  cumulative_targets: cumulativeTargets,
+  incremental_counts: incrementalTargets,
   scene_labels: sceneLabels,
   card_sources: levelFiles,
+  methodology_url: "#flashcardsSources",
+  sources: sourcePayload.licenses,
   decks
 });
 
-console.log(`Generated ${decks.length} flashcard decks and ${Object.values(rawCards).flat().length} cards.`);
+console.log(`Generated ${decks.length} flashcard decks and ${Object.values(cardsByLevel).flat().length} unique A1-C2 cards.`);

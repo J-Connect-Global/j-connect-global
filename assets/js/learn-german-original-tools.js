@@ -32,6 +32,8 @@
     A2: "A2",
     B1: "B1",
     B2: "B2",
+    C1: "C1",
+    C2: "C2",
     daily: "日常",
     shopping: "買い物",
     administration: "外国人局・役所",
@@ -39,6 +41,7 @@
     housing: "住まい",
     "kita-school": "Kita・学校",
     work: "仕事",
+    general: "総合語彙",
     unstarted: "未学習",
     reviewing: "復習中",
     mastered: "習得済み"
@@ -102,12 +105,12 @@
     const stats = deckProgress(deck);
     const article = createElement("article", "learn-deck-card");
     article.dataset.deckId = deck.deck_id;
-    article.dataset.level = deck.levels.join(" ");
+    article.dataset.level = deck.target_level || deck.primary_level || deck.levels.join(" ");
     article.dataset.scene = deck.scenes.join(" ");
     article.dataset.status = stats.status;
 
     const head = createElement("div", "learn-deck-card__head");
-    head.append(createElement("span", "learn-deck-card__level", deck.levels.join(" / ")));
+    head.append(createElement("span", "learn-deck-card__level", deck.target_level || deck.levels.join(" / ")));
     head.append(createElement("span", "learn-deck-card__state", valueLabels[stats.status]));
     head.lastElementChild.dataset.state = stats.status;
     article.append(head);
@@ -116,7 +119,8 @@
     article.append(createElement("p", "", deck.description_ja));
 
     const scenes = createElement("div", "learn-deck-card__head");
-    deck.scene_labels.forEach(label => scenes.append(createElement("span", "learn-deck-card__scene", label)));
+    const sceneLabels = deck.deck_kind === "cefr-comprehensive" ? ["累積総合語彙"] : deck.scene_labels;
+    sceneLabels.forEach(label => scenes.append(createElement("span", "learn-deck-card__scene", label)));
     article.append(scenes);
 
     const meta = createElement("div", "learn-deck-card__meta");
@@ -164,7 +168,7 @@
   function matches(deck) {
     const stats = deckProgress(deck);
     if (filterState.keyword && !searchableText(deck).includes(filterState.keyword)) return false;
-    if (filterState.level && !deck.levels.includes(filterState.level)) return false;
+    if (filterState.level && (deck.target_level || deck.primary_level) !== filterState.level) return false;
     if (filterState.scene && !deck.scenes.includes(filterState.scene)) return false;
     if (filterState.status && stats.status !== filterState.status) return false;
     return true;
@@ -249,7 +253,7 @@
       ]);
       if (!response.ok) throw new Error(`教材データの取得に失敗しました (${response.status})`);
       const payload = await response.json();
-      if (payload.schema_version !== 1 || !Array.isArray(payload.decks)) throw new Error("教材データの形式が正しくありません。");
+      if (![1, 2].includes(payload.schema_version) || !Array.isArray(payload.decks)) throw new Error("教材データの形式が正しくありません。");
       decks = payload.decks;
       progressByCardId = new Map(progress.map(entry => [entry.card_id, entry]));
       render();

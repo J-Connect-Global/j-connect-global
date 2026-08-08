@@ -66,6 +66,9 @@ test("mobile flashcard keeps progress, card, and primary controls readable at 36
   await expect(page.locator("#flashcardsStudy")).toBeVisible();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
   await expect(page.locator("#flashcardFlip")).toBeVisible();
+  await expect(page.locator(".flashcard__hint")).toHaveCount(0);
+  const cardBox = await page.locator("#flashcardFlip").boundingBox();
+  expect(cardBox.height).toBeLessThanOrEqual(240);
   await expect(page.locator('[data-rating="again"]')).toBeEnabled();
   await expect(page.locator('[data-rating="unsure"]')).toBeEnabled();
   await expect(page.locator('[data-rating="known"]')).toBeEnabled();

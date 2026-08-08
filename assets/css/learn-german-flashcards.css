@@ -678,8 +678,7 @@
   background: #eef6ff;
 }
 
-.flashcards-speech-icon[aria-pressed="true"],
-.flashcards-speech-icon.is-speaking {
+.flashcards-speech-icon[aria-pressed="true"] {
   border-color: var(--jc-blue);
   background: var(--jc-blue);
   color: #fff;

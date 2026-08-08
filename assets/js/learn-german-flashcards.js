@@ -196,9 +196,9 @@
 
   function createBadges(deck) {
     const fragment = document.createDocumentFragment();
-    if (deck.deck_kind === "cefr-comprehensive") {
+    if (deck.deck_kind === "cefr-level") {
       fragment.append(createElement("span", "flashcards-badge", deck.target_level));
-      fragment.append(createElement("span", "flashcards-badge", "累積総合語彙"));
+      fragment.append(createElement("span", "flashcards-badge", "レベル専用語彙"));
     } else {
       deck.levels.forEach(level => fragment.append(createElement("span", "flashcards-badge", level)));
       deck.scene_labels.forEach(scene => fragment.append(createElement("span", "flashcards-badge", scene)));

@@ -13,7 +13,7 @@ import {
 
 const decksPath = "/assets/data/learn-german/flashcards/decks.json";
 const a1CardsPath = "/assets/data/learn-german/flashcards/cards-a1.json";
-const allLevelCardPaths = ["a1", "a2", "b1", "b2", "c1", "c2"].map(level => `/assets/data/learn-german/flashcards/cards-${level}.json`);
+const c2CardsPath = "/assets/data/learn-german/flashcards/cards-c2.json";
 const flashcardsRoute = "/germany/ja/learn-german/flashcards/?deck=a1-life-basics";
 
 test.beforeEach(async ({ page }) => {
@@ -128,11 +128,11 @@ test("flashcard session supports keyboard flip, three ratings, completion, resul
   await assertRouteReady(page);
 });
 
-test("C2 cumulative deck loads all 10,000 cards and can start a bounded session", async ({ page }) => {
-  await openDataRoute(page, "/germany/ja/learn-german/flashcards/?deck=c2-nuance-repertoire", [decksPath, ...allLevelCardPaths]);
+test("C2 level-only deck loads 3,000 cards without lower levels and can start a bounded session", async ({ page }) => {
+  await openDataRoute(page, "/germany/ja/learn-german/flashcards/?deck=c2-nuance-repertoire", [decksPath, c2CardsPath]);
   await expect(page.locator("#flashcardsSetup")).toBeVisible();
-  await expect(page.locator("#sessionSetupTitle")).toContainText("10,000");
-  await expect(page.locator("#setupDeckBadges")).toContainText("10,000枚");
+  await expect(page.locator("#sessionSetupTitle")).toContainText("3,000");
+  await expect(page.locator("#setupDeckBadges")).toContainText("3,000枚");
   await page.locator("#flashcardsStart").click();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
 });

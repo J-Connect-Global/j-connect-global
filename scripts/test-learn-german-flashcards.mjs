@@ -6,8 +6,7 @@ import { fileURLToPath } from "node:url";
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dataDir = path.join(rootDir, "assets/data/learn-german/flashcards");
 const levels = ["A1", "A2", "B1", "B2", "C1", "C2"];
-const incrementalCounts = { A1: 650, A2: 650, B1: 1100, B2: 1600, C1: 3000, C2: 3000 };
-const cumulativeCounts = { A1: 650, A2: 1300, B1: 2400, B2: 4000, C1: 7000, C2: 10000 };
+const levelCounts = { A1: 650, A2: 650, B1: 1100, B2: 1600, C1: 3000, C2: 3000 };
 const requiredScenes = ["daily", "shopping", "administration", "medical", "housing", "kita-school", "work"];
 const requiredCardFields = [
   "card_id", "lemma", "display_de", "unit_type", "part_of_speech", "primary_level", "level_tags",
@@ -26,8 +25,9 @@ for (const level of levels) {
   const payload = readJson(`cards-${level.toLowerCase()}.json`);
   assert.equal(payload.schema_version, 2, `${level} schema version`);
   assert.equal(payload.level, level, `${level} payload level`);
-  assert.equal(payload.cards.length, incrementalCounts[level], `${level} incremental count`);
-  assert.equal(payload.cumulative_target, cumulativeCounts[level], `${level} cumulative target`);
+  assert.equal(payload.cards.length, levelCounts[level], `${level} level-only count`);
+  assert.equal(payload.level_card_count, levelCounts[level], `${level} declared level-only count`);
+  assert.equal(Object.hasOwn(payload, "cumulative_target"), false, `${level} must not expose a cumulative target`);
   cardsByLevel.set(level, payload.cards);
 
   const editorial = payload.cards.filter(card => card.quality_tier === "editorial-reviewed");
@@ -84,7 +84,12 @@ const deckPayload = readJson("decks.json");
 assert.equal(deckPayload.schema_version, 2);
 assert.match(deckPayload.level_note_ja, /公式の全単語リストはありません/);
 assert.match(deckPayload.level_note_ja, /J-Connect独自/);
+assert.match(deckPayload.level_note_ja, /下位レベルの語彙は含みません/);
 assert.match(deckPayload.quality_note_ja, /9,800/);
+assert.deepEqual(deckPayload.level_counts, levelCounts);
+assert.equal(deckPayload.total_card_count, 10000);
+assert.equal(Object.hasOwn(deckPayload, "cumulative_targets"), false, "deck payload must not expose cumulative targets");
+assert.equal(Object.hasOwn(deckPayload, "incremental_counts"), false, "deck payload must use level-only terminology");
 assert.equal(deckPayload.decks.length, 17, "six comprehensive, four editorial and seven scene decks");
 assert.equal(deckPayload.sources.find(source => source.source_id === "freedict-deu-jpn")?.license, "CC BY-SA 3.0");
 const cardsById = new Map(cards.map(card => [card.card_id, card]));
@@ -96,12 +101,26 @@ deckPayload.decks.forEach(deck => {
 });
 
 levels.forEach(level => {
-  const comprehensive = deckPayload.decks.find(deck => deck.deck_kind === "cefr-comprehensive" && deck.target_level === level);
-  assert(comprehensive, `${level} comprehensive deck`);
-  assert.equal(comprehensive.card_count, cumulativeCounts[level], `${level} comprehensive count`);
-  const expectedIds = levels.slice(0, levels.indexOf(level) + 1).flatMap(item => cardsByLevel.get(item).map(card => card.card_id));
-  assert.deepEqual(comprehensive.card_ids, expectedIds, `${level} cumulative inventory`);
+  const levelDeck = deckPayload.decks.find(deck => deck.deck_kind === "cefr-level" && deck.target_level === level);
+  assert(levelDeck, `${level} level-only deck`);
+  assert.equal(levelDeck.card_count, levelCounts[level], `${level} level-only count`);
+  assert.deepEqual(levelDeck.card_ids, cardsByLevel.get(level).map(card => card.card_id), `${level} level-only inventory`);
+  assert.deepEqual(levelDeck.card_files, [`cards-${level.toLowerCase()}.json`], `${level} must load only its own card file`);
 });
+
+for (let leftIndex = 0; leftIndex < levels.length; leftIndex += 1) {
+  const leftLevel = levels[leftIndex];
+  const leftDeck = deckPayload.decks.find(deck => deck.deck_kind === "cefr-level" && deck.target_level === leftLevel);
+  const leftIds = new Set(leftDeck.card_ids);
+  const leftLemmas = new Set(cardsByLevel.get(leftLevel).map(card => card.lemma.normalize("NFC")));
+  for (const rightLevel of levels.slice(leftIndex + 1)) {
+    const rightDeck = deckPayload.decks.find(deck => deck.deck_kind === "cefr-level" && deck.target_level === rightLevel);
+    const sharedIds = rightDeck.card_ids.filter(cardId => leftIds.has(cardId));
+    const sharedLemmas = cardsByLevel.get(rightLevel).filter(card => leftLemmas.has(card.lemma.normalize("NFC")));
+    assert.deepEqual(sharedIds, [], `${leftLevel}/${rightLevel} deck card overlap must be zero`);
+    assert.deepEqual(sharedLemmas, [], `${leftLevel}/${rightLevel} lemma overlap must be zero`);
+  }
+}
 
 for (const level of ["A1", "A2", "B1", "B2"]) {
   const editorial = deckPayload.decks.find(deck => deck.deck_kind === "editorial-practice" && deck.target_level === level);
@@ -115,15 +134,16 @@ const hubHtml = fs.readFileSync(path.join(rootDir, "germany/ja/learn-german/inde
 assert.equal((hubHtml.match(/class="learn-pillar-ribbon"[\s\S]*?<\/nav>/)?.[0].match(/<a\b/g) || []).length, 4, "hub pillar ribbon must have four links");
 assert(hubHtml.includes('id="original-web-tools"'), "hub original tools section");
 assert(hubHtml.includes('data-filter-value="C2"'), "hub C2 filter");
-assert(hubHtml.includes("累積最大10,000語"), "hub vocabulary target copy");
+assert(hubHtml.includes("合計10,000語"), "hub level-only vocabulary total copy");
 
 const flashcardsHtml = fs.readFileSync(path.join(rootDir, "germany/ja/learn-german/flashcards/index.html"), "utf8");
 for (const id of ["flashcardFlip", "flashcardsResults", "flashcardsDownloadCsv", "flashcardsBackup", "flashcardsRestore", "flashcardsResetDialog", "flashcardsSources"]) {
   assert(flashcardsHtml.includes(`id="${id}"`), `flashcards page missing ${id}`);
 }
-assert(flashcardsHtml.includes("A1・A2・B1・B2・C1・C2・累積10,000語"), "A1-C2 title");
+assert(flashcardsHtml.includes("A1・A2・B1・B2・C1・C2・レベル別10,000語"), "A1-C2 level-only title");
+assert(flashcardsHtml.includes("下位レベルの語彙を含めず"), "level-only explanation");
 assert(flashcardsHtml.includes("残り9,800枚"), "quality distinction");
 assert(!/<script\b[^>]*src=["']https?:\/\//i.test(flashcardsHtml), "flashcards page must not load external scripts");
 assert(fs.existsSync(path.join(dataDir, "NOTICE.md")), "vocabulary license notice");
 
-console.log("Learn German flashcard contracts passed (10,000 unique A1-C2 cards, 17 decks).");
+console.log("Learn German flashcard contracts passed (10,000 unique A1-C2 cards, six non-overlapping level decks, 17 decks total).");

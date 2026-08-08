@@ -119,7 +119,7 @@
     article.append(createElement("p", "", deck.description_ja));
 
     const scenes = createElement("div", "learn-deck-card__head");
-    const sceneLabels = deck.deck_kind === "cefr-comprehensive" ? ["累積総合語彙"] : deck.scene_labels;
+    const sceneLabels = deck.deck_kind === "cefr-level" ? ["レベル専用語彙"] : deck.scene_labels;
     sceneLabels.forEach(label => scenes.append(createElement("span", "learn-deck-card__scene", label)));
     article.append(scenes);
 

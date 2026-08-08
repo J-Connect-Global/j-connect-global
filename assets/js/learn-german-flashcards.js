@@ -105,6 +105,7 @@
     session: null,
     restoredSession: null,
     isFlipped: false,
+    isRating: false,
     activeSpeechButton: null,
     speechUtterance: null,
     toastTimer: null
@@ -447,7 +448,7 @@
     elements.front.setAttribute("aria-hidden", flipped ? "true" : "false");
     elements.back.setAttribute("aria-hidden", flipped ? "false" : "true");
     elements.detailsToggle.disabled = !flipped;
-    elements.ratingButtons.forEach(button => { button.disabled = !flipped; });
+    elements.ratingButtons.forEach(button => { button.disabled = state.isRating; });
     if (!flipped) setDetailsExpanded(false);
     updateExampleSpeechButton();
     const card = currentCard();
@@ -562,24 +563,31 @@
   }
 
   async function rateCurrentCard(rating) {
-    if (!state.isFlipped || !ratingLabels[rating]) return;
-    stopSpeech();
-    const cardId = currentCard().card_id;
-    addActiveTime();
-    state.session.ratings[cardId] = rating;
-    await updateCardProgress(cardId, rating);
-    const nextIndex = nextUnratedIndex();
-    if (nextIndex === -1) {
-      state.session.completed = true;
-      state.session.completed_at = new Date().toISOString();
+    if (!state.session || state.isRating || !ratingLabels[rating]) return;
+    state.isRating = true;
+    elements.ratingButtons.forEach(button => { button.disabled = true; });
+    try {
+      stopSpeech();
+      const cardId = currentCard().card_id;
+      addActiveTime();
+      state.session.ratings[cardId] = rating;
+      await updateCardProgress(cardId, rating);
+      const nextIndex = nextUnratedIndex();
+      if (nextIndex === -1) {
+        state.session.completed = true;
+        state.session.completed_at = new Date().toISOString();
+        await storage.putSession(state.session);
+        await renderResults();
+        return;
+      }
+      state.session.last_session_position = nextIndex;
       await storage.putSession(state.session);
-      await renderResults();
-      return;
+      renderCard();
+      elements.flipControl.focus();
+    } finally {
+      state.isRating = false;
+      if (!elements.study.hidden) elements.ratingButtons.forEach(button => { button.disabled = false; });
     }
-    state.session.last_session_position = nextIndex;
-    await storage.putSession(state.session);
-    renderCard();
-    elements.flipControl.focus();
   }
 
   async function moveCard(offset) {
@@ -956,20 +964,29 @@
     });
     document.addEventListener("keydown", event => {
       if (elements.study.hidden || event.altKey || event.ctrlKey || event.metaKey) return;
-      const interactive = event.target.closest("input, select, textarea, button, a, [contenteditable='true']");
+      const target = event.target instanceof Element ? event.target : null;
+      const isTextEntry = target?.closest("input, select, textarea, [contenteditable='true']");
+      if (isTextEntry) return;
+      if (["1", "2", "3"].includes(event.key)) {
+        event.preventDefault();
+        if (!event.repeat) rateCurrentCard({ 1: "again", 2: "unsure", 3: "known" }[event.key]);
+        return;
+      }
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        moveCard(-1);
+        return;
+      }
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        moveCard(1);
+        return;
+      }
+      const interactive = target?.closest("button, a");
       if (interactive) return;
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
         setFlipped(!state.isFlipped);
-      } else if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        moveCard(-1);
-      } else if (event.key === "ArrowRight") {
-        event.preventDefault();
-        moveCard(1);
-      } else if (["1", "2", "3"].includes(event.key) && state.isFlipped) {
-        event.preventDefault();
-        rateCurrentCard({ 1: "again", 2: "unsure", 3: "known" }[event.key]);
       }
     });
   }

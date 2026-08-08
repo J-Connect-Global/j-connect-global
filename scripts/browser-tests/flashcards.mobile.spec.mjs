@@ -66,6 +66,11 @@ test("mobile flashcard keeps progress, card, and primary controls readable at 36
   await expect(page.locator("#flashcardsStudy")).toBeVisible();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
   await expect(page.locator("#flashcardFlip")).toBeVisible();
+  await expect(page.locator('[data-rating="again"]')).toBeEnabled();
+  await expect(page.locator('[data-rating="unsure"]')).toBeEnabled();
+  await expect(page.locator('[data-rating="known"]')).toBeEnabled();
+  await page.locator('[data-rating="unsure"]').tap();
+  await expect(page.locator("#flashcardsPosition")).toHaveText("2 / 10");
   await page.locator("#flashcardFlip").tap();
   await expect(page.locator("#flashcardsSpeakExample")).toBeVisible();
   await expect(page.locator("#flashcardsSpeakExample")).toHaveCSS("width", "44px");
@@ -74,8 +79,8 @@ test("mobile flashcard keeps progress, card, and primary controls readable at 36
   await expect(page.locator('[data-rating="again"]')).toBeVisible();
   await expect(page.locator('[data-rating="unsure"]')).toBeVisible();
   await expect(page.locator('[data-rating="known"]')).toBeVisible();
-  await page.locator('[data-rating="unsure"]').tap();
-  await expect(page.locator("#flashcardsPosition")).toHaveText("2 / 10");
+  await page.locator('[data-rating="known"]').tap();
+  await expect(page.locator("#flashcardsPosition")).toHaveText("3 / 10");
   await activateDarkMode(page);
   await assertNoHorizontalOverflow(page);
   await assertRouteReady(page);

@@ -113,7 +113,7 @@ test("Learn German exposes four pillars and filters original decks without break
   await expect(page.locator('.portal3-chips a[href="/germany/ja/learn-german/#original-web-tools"]')).toBeVisible();
 });
 
-test("flashcard session supports keyboard flip, three ratings, completion, results, CSV, and dark mode", async ({ page }) => {
+test("flashcard session supports front and back keyboard ratings, buttons, completion, results, CSV, and dark mode", async ({ page }) => {
   await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
   await expect(page.locator("#flashcardsSetup")).toBeVisible();
   await expect(page.locator("#sessionSetupTitle")).toContainText("A1");
@@ -122,6 +122,25 @@ test("flashcard session supports keyboard flip, three ratings, completion, resul
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
 
   const flip = page.locator("#flashcardFlipControl");
+  const inventorySearch = page.locator("#flashcardsInventorySearch");
+  expect(await page.locator("[data-rating]").evaluateAll(buttons => buttons.every(button => !button.disabled))).toBe(true);
+  await inventorySearch.focus();
+  await page.keyboard.press("1");
+  await expect(inventorySearch).toHaveValue("1");
+  await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
+
+  await flip.focus();
+  await page.keyboard.press("1");
+  await expect(page.locator("#flashcardsPosition")).toHaveText("2 / 10");
+  await expect.poll(() => page.evaluate(async () => (await window.JConnectFlashcardStorage.getProgress("a1-001"))?.last_result)).toBe("again");
+  await expect(flip).toHaveAttribute("aria-pressed", "false");
+
+  await page.keyboard.press("ArrowRight");
+  await expect(page.locator("#flashcardsPosition")).toHaveText("3 / 10");
+  await page.keyboard.press("ArrowLeft");
+  await expect(page.locator("#flashcardsPosition")).toHaveText("2 / 10");
+  await page.keyboard.press("2");
+  await expect(page.locator("#flashcardsPosition")).toHaveText("3 / 10");
   await flip.focus();
   await page.keyboard.press("Space");
   await expect(flip).toHaveAttribute("aria-pressed", "true");
@@ -129,12 +148,12 @@ test("flashcard session supports keyboard flip, three ratings, completion, resul
   await page.locator("#flashcardsDetailsToggle").click();
   await expect(page.locator("#flashcardsDetailsToggle")).toHaveAttribute("aria-expanded", "true");
   await expect(page.locator("#flashcardsDetails")).toBeVisible();
-  await page.locator('[data-rating="again"]').click();
+  await flip.focus();
+  await page.keyboard.press("3");
+  await expect(page.locator("#flashcardsPosition")).toHaveText("4 / 10");
 
-  const ratings = ["unsure", "known", "known", "known", "known", "known", "known", "known", "known"];
-  for (const rating of ratings) {
-    await page.locator("#flashcardFlip").click();
-    await page.locator(`[data-rating="${rating}"]`).click();
+  for (let index = 0; index < 7; index += 1) {
+    await page.locator('[data-rating="known"]').click();
   }
 
   await expect(page.locator("#flashcardsResults")).toBeVisible();
@@ -166,7 +185,9 @@ test("German word and example audio can be played, switched, and stopped without
 
   const wordButton = page.locator("#flashcardsSpeak");
   const exampleButton = page.locator("#flashcardsSpeakExample");
-  const word = await page.locator("#flashcardPrompt").textContent();
+  const prompt = page.locator("#flashcardPrompt");
+  await expect(prompt).not.toHaveText("読み込み中");
+  const word = await prompt.textContent();
   await expect(wordButton).toHaveAccessibleName(new RegExp(word));
   await wordButton.click();
   await expect(wordButton).toHaveAttribute("aria-pressed", "true");

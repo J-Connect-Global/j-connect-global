@@ -120,6 +120,11 @@ test("flashcard session supports front and back keyboard ratings, buttons, compl
   await page.locator("#flashcardsStart").click();
   await expect(page.locator("#flashcardsStudy")).toBeVisible();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
+  await expect(page.locator(".flashcard__hint")).toHaveCount(0);
+
+  const cardBox = await page.locator("#flashcardFlip").boundingBox();
+  expect(cardBox.width).toBeLessThanOrEqual(861);
+  expect(cardBox.height).toBeLessThanOrEqual(241);
 
   const flip = page.locator("#flashcardFlipControl");
   const inventorySearch = page.locator("#flashcardsInventorySearch");

@@ -542,11 +542,13 @@
 .flashcard {
   position: relative;
   display: grid;
+  justify-self: center;
+  width: min(100%, 860px);
   min-width: 0;
-  min-height: 300px;
+  min-height: 240px;
   padding: 0;
   border: 0;
-  border-radius: clamp(16px, 3vw, 24px);
+  border-radius: clamp(14px, 2vw, 20px);
   background: transparent;
   color: inherit;
   font: inherit;
@@ -572,11 +574,11 @@
   z-index: 2;
   display: grid;
   min-width: 0;
-  min-height: 300px;
+  min-height: 240px;
   border: 1px solid var(--jc-line);
   border-radius: inherit;
   background: #fff;
-  box-shadow: 0 16px 38px rgba(0, 54, 109, .13);
+  box-shadow: 0 12px 28px rgba(0, 54, 109, .12);
   pointer-events: none;
   transform-style: preserve-3d;
   transition: transform .38s ease;
@@ -589,10 +591,10 @@
 .flashcard__face {
   grid-area: 1 / 1;
   display: grid;
-  gap: 12px;
+  gap: 10px;
   align-content: center;
   min-width: 0;
-  padding: clamp(22px, 5vw, 42px);
+  padding: clamp(18px, 3vw, 28px);
   border-radius: inherit;
   backface-visibility: hidden;
 }
@@ -617,30 +619,21 @@
   margin: 0;
   overflow-wrap: anywhere;
   color: var(--jc-navy);
-  font-size: clamp(28px, 6vw, 48px);
+  font-size: clamp(28px, 5vw, 44px);
   font-weight: 900;
   line-height: 1.25;
   text-align: center;
 }
 
 .flashcard__answer {
-  font-size: clamp(23px, 4.4vw, 38px);
-}
-
-.flashcard__hint {
-  margin: 0;
-  color: var(--jc-muted);
-  font-size: 13px;
-  font-weight: 800;
-  line-height: 1.6;
-  text-align: center;
+  font-size: clamp(22px, 3.8vw, 34px);
 }
 
 .flashcard__example {
   display: grid;
   gap: 6px;
   margin: 0;
-  padding: 12px 14px;
+  padding: 10px 12px;
   border-left: 4px solid var(--jc-blue);
   border-radius: var(--jc-radius-sm);
   background: var(--jc-soft);
@@ -1333,15 +1326,15 @@
 
   .flashcard,
   .flashcard__inner {
-    min-height: 255px;
+    min-height: 215px;
   }
 
   .flashcard__face {
-    padding: 20px 16px;
+    padding: 16px 14px;
   }
 
   .flashcard__back {
-    max-height: 360px;
+    max-height: 320px;
   }
 
   .flashcards-rating {

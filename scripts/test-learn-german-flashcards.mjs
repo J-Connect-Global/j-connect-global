@@ -138,7 +138,7 @@ assert(hubHtml.includes("合計10,000語"), "hub level-only vocabulary total cop
 
 const flashcardsHtml = fs.readFileSync(path.join(rootDir, "germany/ja/learn-german/flashcards/index.html"), "utf8");
 for (const id of [
-  "flashcardFlip", "flashcardsResults", "flashcardsDownloadCsv", "flashcardsBackup", "flashcardsRestore",
+  "flashcardFlip", "flashcardFlipControl", "flashcardsSpeakExample", "flashcardsResults", "flashcardsDownloadCsv", "flashcardsBackup", "flashcardsRestore",
   "flashcardsResetDialog", "flashcardsSources", "flashcardsInventory", "flashcardsInventorySearch",
   "flashcardsInventoryStatus", "flashcardsInventorySaved", "flashcardsInventoryPartOfSpeech",
   "flashcardsInventoryQuality", "flashcardsInventoryPageSize", "flashcardsInventoryBody",

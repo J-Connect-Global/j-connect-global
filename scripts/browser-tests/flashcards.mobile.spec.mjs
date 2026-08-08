@@ -11,6 +11,21 @@ import {
 const decksPath = "/assets/data/learn-german/flashcards/decks.json";
 const a1CardsPath = "/assets/data/learn-german/flashcards/cards-a1.json";
 
+async function installSpeechMock(page) {
+  await page.addInitScript(() => {
+    class MockSpeechSynthesisUtterance {
+      constructor(text) {
+        this.text = text;
+      }
+    }
+    Object.defineProperty(window, "SpeechSynthesisUtterance", { configurable: true, value: MockSpeechSynthesisUtterance });
+    Object.defineProperty(window, "speechSynthesis", {
+      configurable: true,
+      value: { cancel() {}, getVoices: () => [{ lang: "de-DE" }], speak() {} }
+    });
+  });
+}
+
 test.beforeEach(async ({ page }) => {
   installRuntimeDiagnostics(page);
   await page.addInitScript(() => localStorage.setItem("jconnect_cookie_consent", "denied"));
@@ -41,6 +56,7 @@ test("mobile Learn German has a four-item page navigation without overflow", asy
 });
 
 test("mobile flashcard keeps progress, card, and primary controls readable at 360px", async ({ page }) => {
+  await installSpeechMock(page);
   await openDataRoute(page, "/germany/ja/learn-german/flashcards/?deck=a1-life-basics", [decksPath, a1CardsPath]);
   await expect(page.locator("#flashcardsInventory")).toBeVisible();
   await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(50);
@@ -51,6 +67,10 @@ test("mobile flashcard keeps progress, card, and primary controls readable at 36
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
   await expect(page.locator("#flashcardFlip")).toBeVisible();
   await page.locator("#flashcardFlip").tap();
+  await expect(page.locator("#flashcardsSpeakExample")).toBeVisible();
+  await expect(page.locator("#flashcardsSpeakExample")).toHaveCSS("width", "44px");
+  await page.locator("#flashcardsSpeakExample").tap();
+  await expect(page.locator("#flashcardsSpeakExample")).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator('[data-rating="again"]')).toBeVisible();
   await expect(page.locator('[data-rating="unsure"]')).toBeVisible();
   await expect(page.locator('[data-rating="known"]')).toBeVisible();

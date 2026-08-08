@@ -227,7 +227,8 @@
           </div>
         </div>
 
-        <button id="flashcardFlip" class="flashcard" type="button" aria-pressed="false" aria-describedby="flashcardKeyboardHint">
+        <div id="flashcardFlip" class="flashcard">
+          <button id="flashcardFlipControl" class="flashcard__flip-control" type="button" aria-label="カードを裏返す" aria-pressed="false" aria-describedby="flashcardKeyboardHint"></button>
           <span class="flashcard__inner">
             <span class="flashcard__face flashcard__front">
               <span class="flashcard__label">表面</span>
@@ -237,10 +238,20 @@
             <span class="flashcard__face flashcard__back" aria-hidden="true">
               <span class="flashcard__label">裏面</span>
               <span id="flashcardAnswer" class="flashcard__answer"></span>
-              <span class="flashcard__example"><strong id="flashcardExampleDe"></strong><span id="flashcardExampleJa"></span></span>
+              <span class="flashcard__example">
+                <span class="flashcard__example-de-row">
+                  <strong id="flashcardExampleDe"></strong>
+                  <button id="flashcardsSpeakExample" class="flashcards-speech-icon" type="button" aria-pressed="false" hidden>
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                      <path d="M4 9v6h4l5 4V5L8 9H4Zm11.5 0a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </span>
+                <span id="flashcardExampleJa"></span>
+              </span>
             </span>
           </span>
-        </button>
+        </div>
         <p id="flashcardKeyboardHint" class="flashcards-rating-help">キーボード: Enter / Spaceで裏返す、1＝もう一度、2＝迷った、3＝覚えた、← / →で移動</p>
 
         <button id="flashcardsDetailsToggle" class="flashcards-details-toggle" type="button" aria-expanded="false" aria-controls="flashcardsDetails" disabled>例文・解説を表示</button>
@@ -409,7 +420,8 @@
       <ol>
         <li>A1〜C2のレベル専用教材、編集済み実践50、または買い物・役所・病院・住まい・Kita・仕事などの場面別教材を選びます。</li>
         <li>レベル専用教材では、全単語表を検索・並べ替えし、未学習・学習中・習得済み・保存済みなどで絞り込めます。</li>
-        <li>カードをクリックするかEnter / Spaceで裏返し、「もう一度」「迷った」「覚えた」で評価します。</li>
+        <li>カードをクリックするかEnter / Spaceで裏返します。音声対応ブラウザでは、単語と裏面のドイツ語例文をスピーカーボタンで読み上げられます。</li>
+        <li>「もう一度」「迷った」「覚えた」で評価します。</li>
         <li>終了後に苦手カードを復習し、Excelで開けるCSVや端末移行用のJSONを保存できます。</li>
       </ol>
       <h3>カード内容</h3>

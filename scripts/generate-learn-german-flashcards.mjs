@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outputDir = path.join(rootDir, "assets/data/learn-german/flashcards");
 const verifiedDate = "2026-08-02";
-const generatedDate = "2026-08-08";
+const generatedDate = "2026-08-09";
 
 const sceneLabels = {
   daily: "日常",
@@ -246,8 +246,8 @@ const rawCards = {
 
 const levels = ["A1", "A2", "B1", "B2", "C1", "C2"];
 const levelFiles = Object.fromEntries(levels.map((level) => [level, `cards-${level.toLowerCase()}.json`]));
-const cumulativeTargets = { A1: 650, A2: 1300, B1: 2400, B2: 4000, C1: 7000, C2: 10000 };
-const incrementalTargets = { A1: 650, A2: 650, B1: 1100, B2: 1600, C1: 3000, C2: 3000 };
+const levelTargets = { A1: 650, A2: 650, B1: 1100, B2: 1600, C1: 3000, C2: 3000 };
+const totalTarget = Object.values(levelTargets).reduce((sum, count) => sum + count, 0);
 const sourceLexiconPath = path.join(rootDir, "content/learn-german/flashcards/cefr-lexicon-source.json");
 
 sceneLabels.general = "総合語彙";
@@ -383,7 +383,7 @@ function buildLevelCards(sourceEntries) {
   for (const level of levels) {
     const curated = (rawCards[level] || []).map((entry) => normalizedCuratedCard(level, entry));
     const selected = [...curated];
-    while (selected.length < incrementalTargets[level]) {
+    while (selected.length < levelTargets[level]) {
       const source = rankedSources[sourceIndex];
       sourceIndex += 1;
       if (!source) throw new Error(`Source lexicon ended while filling ${level}.`);
@@ -403,7 +403,7 @@ function validateGeneratedCards(cardsByLevel) {
   const lemmas = new Set();
   for (const level of levels) {
     const cards = cardsByLevel[level];
-    if (cards.length !== incrementalTargets[level]) throw new Error(`${level} expected ${incrementalTargets[level]} cards; found ${cards.length}.`);
+    if (cards.length !== levelTargets[level]) throw new Error(`${level} expected ${levelTargets[level]} cards; found ${cards.length}.`);
     for (const entry of cards) {
       if (!/^(?:a1|a2|b1|b2|c1|c2)-\d{3,4}$/.test(entry.card_id)) throw new Error(`Invalid card ID: ${entry.card_id}`);
       if (ids.has(entry.card_id)) throw new Error(`Duplicate card ID: ${entry.card_id}`);
@@ -419,15 +419,11 @@ function validateGeneratedCards(cardsByLevel) {
       }
     }
   }
-  if (ids.size !== cumulativeTargets.C2) throw new Error(`Expected ${cumulativeTargets.C2} cards; found ${ids.size}.`);
+  if (ids.size !== totalTarget) throw new Error(`Expected ${totalTarget} cards; found ${ids.size}.`);
 }
 
 function idsFor(level, cardsByLevel) {
   return cardsByLevel[level].map((entry) => entry.card_id);
-}
-
-function idsThrough(level, cardsByLevel) {
-  return levels.slice(0, levels.indexOf(level) + 1).flatMap((current) => idsFor(current, cardsByLevel));
 }
 
 function idsForScene(scene, limit = 36) {
@@ -474,12 +470,12 @@ function createDeck(id, title, description, cardIds, scenes, minutes, options = 
 function buildDecks(cardsByLevel) {
   const allScenes = Object.keys(sceneLabels);
   return [
-    createDeck("a1-life-basics", "A1 総合語彙650", "入門の身近な語彙を中心にしたJ-Connect累積目標650語です。", idsThrough("A1", cardsByLevel), allScenes, 325, { primaryLevel: "A1", deckKind: "cefr-comprehensive", featured: true }),
-    createDeck("a2-daily-independence", "A2 総合語彙1,300", "A1を含み、日常生活と基本的な用事へ広げる累積1,300語です。", idsThrough("A2", cardsByLevel), allScenes, 650, { primaryLevel: "A2", deckKind: "cefr-comprehensive", featured: true }),
-    createDeck("b1-explain-and-confirm", "B1 総合語彙2,400", "A1〜B1の身近な話題と社会生活を支える累積2,400語です。", idsThrough("B1", cardsByLevel), allScenes, 1200, { primaryLevel: "B1", deckKind: "cefr-comprehensive", featured: true }),
-    createDeck("b2-negotiate-and-document", "B2 総合語彙4,000", "一般語彙に専門・抽象トピックの土台を加えた累積4,000語です。", idsThrough("B2", cardsByLevel), allScenes, 2000, { primaryLevel: "B2", deckKind: "cefr-comprehensive", featured: true }),
-    createDeck("c1-broad-repertoire", "C1 総合語彙7,000", "幅広い語彙レパートリーと専門的な読解の土台を目指す累積7,000語です。", idsThrough("C1", cardsByLevel), allScenes, 3500, { primaryLevel: "C1", deckKind: "cefr-comprehensive", featured: true }),
-    createDeck("c2-nuance-repertoire", "C2 総合語彙10,000", "語感・含意・専門領域へ伸ばすためのJ-Connect累積目標10,000語です。", idsThrough("C2", cardsByLevel), allScenes, 5000, { primaryLevel: "C2", deckKind: "cefr-comprehensive", featured: true }),
+    createDeck("a1-life-basics", "A1 レベル別語彙650", "A1だけの入門・身近な語彙650語です。下位レベルの語彙はありません。", idsFor("A1", cardsByLevel), allScenes, 325, { primaryLevel: "A1", deckKind: "cefr-level", featured: true }),
+    createDeck("a2-daily-independence", "A2 レベル別語彙650", "A1を除外した、A2だけの日常生活・基本的な用事の語彙650語です。", idsFor("A2", cardsByLevel), allScenes, 325, { primaryLevel: "A2", deckKind: "cefr-level", featured: true }),
+    createDeck("b1-explain-and-confirm", "B1 レベル別語彙1,100", "A1・A2を除外した、B1だけの身近な話題・社会生活の語彙1,100語です。", idsFor("B1", cardsByLevel), allScenes, 550, { primaryLevel: "B1", deckKind: "cefr-level", featured: true }),
+    createDeck("b2-negotiate-and-document", "B2 レベル別語彙1,600", "A1〜B1を除外した、B2だけの専門・抽象トピックの語彙1,600語です。", idsFor("B2", cardsByLevel), allScenes, 800, { primaryLevel: "B2", deckKind: "cefr-level", featured: true }),
+    createDeck("c1-broad-repertoire", "C1 レベル別語彙3,000", "A1〜B2を除外した、C1だけの幅広い・専門的な語彙3,000語です。", idsFor("C1", cardsByLevel), allScenes, 1500, { primaryLevel: "C1", deckKind: "cefr-level", featured: true }),
+    createDeck("c2-nuance-repertoire", "C2 レベル別語彙3,000", "A1〜C1を除外した、C2だけの語感・含意・専門領域の語彙3,000語です。", idsFor("C2", cardsByLevel), allScenes, 1500, { primaryLevel: "C2", deckKind: "cefr-level", featured: true }),
     createDeck("a1-practical-50", "A1 編集済み実践50", "例文・文法・語法を編集レビューした生活ドイツ語50枚です。", idsFor("A1", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 25, { primaryLevel: "A1", deckKind: "editorial-practice" }),
     createDeck("a2-practical-50", "A2 編集済み実践50", "例文・文法・語法を編集レビューした生活ドイツ語50枚です。", idsFor("A2", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 30, { primaryLevel: "A2", deckKind: "editorial-practice" }),
     createDeck("b1-practical-50", "B1 編集済み実践50", "例文・文法・語法を編集レビューした説明・確認の50枚です。", idsFor("B1", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 35, { primaryLevel: "B1", deckKind: "editorial-practice" }),
@@ -511,8 +507,7 @@ for (const level of levels) {
   writeJson(levelFiles[level], {
     schema_version: 2,
     level,
-    band_card_count: incrementalTargets[level],
-    cumulative_target: cumulativeTargets[level],
+    level_card_count: levelTargets[level],
     updated_at: generatedDate,
     cards: cardsByLevel[level]
   });
@@ -522,12 +517,12 @@ const decks = buildDecks(cardsByLevel);
 writeJson("decks.json", {
   schema_version: 2,
   updated_at: generatedDate,
-  level_note_ja: "CEFRは能力記述であり、公式の全単語リストはありません。各帯の語彙割当とC1・C2を含む語数は、正式資料と頻度資料を基にしたJ-Connect独自の累積学習目標です。",
+  level_note_ja: "CEFRは能力記述であり、公式の全単語リストはありません。各帯の語彙割当は、正式資料と頻度資料を基にしたJ-Connect独自のレベル別学習目標です。各レベル教材に下位レベルの語彙は含みません。",
   quality_note_ja: "200枚は例文・文法・語法まで編集済みです。残り9,800枚は出典付き参照カードで、例文・詳細語法は順次編集レビューします。",
   storage_note_ja: "学習記録はこの端末のブラウザに保存されます。",
   license_note_ja: "FreeDict由来の辞書データを含む語彙カード部分はCC BY-SA 3.0で提供します。Leipzig Corpora Collectionの帰属情報も保持します。",
-  cumulative_targets: cumulativeTargets,
-  incremental_counts: incrementalTargets,
+  level_counts: levelTargets,
+  total_card_count: totalTarget,
   scene_labels: sceneLabels,
   card_sources: levelFiles,
   methodology_url: "#flashcardsSources",

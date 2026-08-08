@@ -329,7 +329,7 @@
   },
   {
     "id": "page-learn-german-flashcards",
-    "title": "ドイツ語暗記カード A1・A2・B1・B2・C1・C2・累積10,000語",
+    "title": "ドイツ語暗記カード A1・A2・B1・B2・C1・C2・レベル別10,000語",
     "url": "/germany/ja/learn-german/flashcards/",
     "type": "utility",
     "pillar": "learn-german",
@@ -343,8 +343,8 @@
     "redirect_target": "",
     "layout": "utility",
     "hero_type": "utility",
-    "description": "A1からC2までのドイツ語を累積650〜10,000語で学べる暗記カード。編集済み実践200枚と、出典付き語彙9,800枚を収録しています。",
-    "lastmod": "2026-08-08",
+    "description": "A1からC2まで、下位レベルの語彙を含めずに分けた合計10,000語の暗記カード。編集済み実践200枚と、出典付き語彙9,800枚を収録しています。",
+    "lastmod": "2026-08-09",
     "tags": [
       "ドイツ語",
       "暗記カード",

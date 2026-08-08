@@ -7,4 +7,4 @@ The A1–C2 reference-card data in this directory contains mechanically transfor
 
 The derived lexical card data is distributed under **CC BY-SA 3.0**. This notice applies to the derived dictionary data, not automatically to J-Connect application code, page copy, or the original editorial examples.
 
-CEFR bands and cumulative targets are J-Connect study classifications. They are not official word-level certifications by the Council of Europe or Goethe-Institut.
+CEFR bands and level-specific targets are J-Connect study classifications. Each level deck excludes cards assigned to lower levels. They are not official word-level certifications by the Council of Europe or Goethe-Institut.

@@ -128,11 +128,69 @@ test("flashcard session supports keyboard flip, three ratings, completion, resul
   await assertRouteReady(page);
 });
 
+test("level deck inventory lists every word with sorting, filters, saved state, CSV, and filtered study", async ({ page }) => {
+  await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
+  const inventory = page.locator("#flashcardsInventory");
+  await expect(inventory).toBeVisible();
+  await expect(page.locator("#flashcardsInventoryTitle")).toContainText("全650語");
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText("650 / 650語");
+  await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(50);
+  await expect(page.locator("#flashcardsInventoryBody tr").first()).toContainText("der Termin");
+  await expect(page.locator("#flashcardsInventoryBody tr").first()).toContainText("明日は医師の予約があります");
+
+  const germanHeading = page.locator('[data-inventory-sort-column="display_de"]');
+  await germanHeading.locator("button").click();
+  await expect(germanHeading).toHaveAttribute("aria-sort", "ascending");
+  await germanHeading.locator("button").click();
+  await expect(germanHeading).toHaveAttribute("aria-sort", "descending");
+
+  await page.locator("#flashcardsInventoryQuality").selectOption("editorial-reviewed");
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText("50 / 650語");
+  await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(50);
+  await page.locator("#flashcardsInventoryReset").click();
+
+  const firstSave = page.locator("#flashcardsInventoryBody [data-inventory-save]").first();
+  await firstSave.click();
+  await expect.poll(() => page.evaluate(async () => (await window.JConnectFlashcardStorage.getProgress("a1-001"))?.saved)).toBe(true);
+  const backupDownloadPromise = page.waitForEvent("download");
+  await page.locator("#flashcardsBackup").click();
+  const backupPath = await (await backupDownloadPromise).path();
+  const backup = JSON.parse(await fs.readFile(backupPath, "utf8"));
+  expect(backup.progress.find(entry => entry.card_id === "a1-001")?.saved).toBe(true);
+  await page.locator("#flashcardsInventorySaved").selectOption("saved");
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText("1 / 650語");
+  await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(1);
+
+  const csvDownloadPromise = page.waitForEvent("download");
+  await page.locator("#flashcardsInventoryCsv").click();
+  const csvPath = await (await csvDownloadPromise).path();
+  const csvText = await fs.readFile(csvPath, "utf8");
+  expect(csvText).toContain('"order","saved","level","german"');
+  expect(csvText).toContain('"yes","A1","der Termin"');
+  expect(csvText.split("\r\n").filter(Boolean)).toHaveLength(2);
+
+  await page.locator("#flashcardsInventoryReset").click();
+  await page.locator("#flashcardsInventorySearch").fill("予約、約束の日時");
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText("1 / 650語");
+  await page.locator("#flashcardsInventoryStudyFiltered").click();
+  await expect(page.locator("#flashcardsStudy")).toBeVisible();
+  await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 1");
+  await page.locator("#flashcardFlip").click();
+  await page.locator('[data-rating="known"]').click();
+  await expect(page.locator("#flashcardsResults")).toBeVisible();
+  await page.locator("#flashcardsInventoryStatus").selectOption("reviewing");
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText("1 / 650語");
+  await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(1);
+  await expect(page.locator("#flashcardsInventoryBody tr").first()).toContainText("学習中");
+});
+
 test("C2 level-only deck loads 3,000 cards without lower levels and can start a bounded session", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/learn-german/flashcards/?deck=c2-nuance-repertoire", [decksPath, c2CardsPath]);
   await expect(page.locator("#flashcardsSetup")).toBeVisible();
   await expect(page.locator("#sessionSetupTitle")).toContainText("3,000");
   await expect(page.locator("#setupDeckBadges")).toContainText("3,000枚");
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText("3,000 / 3,000語");
+  await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(50);
   await page.locator("#flashcardsStart").click();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
 });

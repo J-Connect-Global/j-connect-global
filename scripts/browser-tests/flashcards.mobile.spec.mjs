@@ -42,6 +42,10 @@ test("mobile Learn German has a four-item page navigation without overflow", asy
 
 test("mobile flashcard keeps progress, card, and primary controls readable at 360px", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/learn-german/flashcards/?deck=a1-life-basics", [decksPath, a1CardsPath]);
+  await expect(page.locator("#flashcardsInventory")).toBeVisible();
+  await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(50);
+  expect(await page.locator(".flashcards-inventory-table-wrap").evaluate(element => element.scrollWidth > element.clientWidth)).toBe(true);
+  await assertNoHorizontalOverflow(page);
   await page.locator("#flashcardsStart").tap();
   await expect(page.locator("#flashcardsStudy")).toBeVisible();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");

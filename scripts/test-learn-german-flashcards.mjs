@@ -137,9 +137,19 @@ assert(hubHtml.includes('data-filter-value="C2"'), "hub C2 filter");
 assert(hubHtml.includes("合計10,000語"), "hub level-only vocabulary total copy");
 
 const flashcardsHtml = fs.readFileSync(path.join(rootDir, "germany/ja/learn-german/flashcards/index.html"), "utf8");
-for (const id of ["flashcardFlip", "flashcardsResults", "flashcardsDownloadCsv", "flashcardsBackup", "flashcardsRestore", "flashcardsResetDialog", "flashcardsSources"]) {
+for (const id of [
+  "flashcardFlip", "flashcardsResults", "flashcardsDownloadCsv", "flashcardsBackup", "flashcardsRestore",
+  "flashcardsResetDialog", "flashcardsSources", "flashcardsInventory", "flashcardsInventorySearch",
+  "flashcardsInventoryStatus", "flashcardsInventorySaved", "flashcardsInventoryPartOfSpeech",
+  "flashcardsInventoryQuality", "flashcardsInventoryPageSize", "flashcardsInventoryBody",
+  "flashcardsInventoryStudyFiltered", "flashcardsInventoryCsv"
+]) {
   assert(flashcardsHtml.includes(`id="${id}"`), `flashcards page missing ${id}`);
 }
+assert.equal((flashcardsHtml.match(/data-inventory-sort=/g) || []).length, 8, "inventory needs eight sortable columns");
+assert(flashcardsHtml.includes("未学習"), "inventory unstarted filter");
+assert(flashcardsHtml.includes("保存済み"), "inventory saved filter");
+assert(fs.existsSync(path.join(rootDir, "assets/js/learn-german-flashcards-inventory.js")), "lazy inventory script");
 assert(flashcardsHtml.includes("A1・A2・B1・B2・C1・C2・レベル別10,000語"), "A1-C2 level-only title");
 assert(flashcardsHtml.includes("下位レベルの語彙を含めず"), "level-only explanation");
 assert(flashcardsHtml.includes("残り9,800枚"), "quality distinction");

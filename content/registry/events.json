@@ -625,14 +625,14 @@
     "content_type": "news",
     "source_type": "manual",
     "area": "NRW / ドイツ全体",
-    "summary": "2026年8月から小学1年生に始まるGanztagsbetreuungの権利を、NRWのOGS、8時間、休暇中の扱い、申込先、満席時の確認方法まで日本語で整理します。",
+    "summary": "2026年8月から小学1年生に始まるGanztagsbetreuungの権利を、NRWのOGS、8時間、休暇中の扱い、費用、申込先、満席時の動き方まで実例・文例付きで整理します。",
     "url": "/germany/ja/events/news/ganztag-primary-school-nrw-2026/",
     "markdown_path": "/content/events/news/ganztag-primary-school-nrw-2026.md",
     "published": true,
     "status": "published",
     "published_at": "2026-08-01",
-    "updated_at": "2026-08-01",
-    "last_verified": "2026-08-01",
+    "updated_at": "2026-08-08",
+    "last_verified": "2026-08-08",
     "tags": [
       "Ganztag",
       "OGS",
@@ -657,6 +657,10 @@
         "url": "https://www.bundesregierung.de/breg-de/aktuelles/gesetzliche-neuregelungen-2448548"
       },
       {
+        "title": "ドイツ連邦政府：全日保育の権利が開始",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/recht-auf-ganztagsfoerderung-2386432"
+      },
+      {
         "title": "NRW州教育省：Ganztag im Primarbereich",
         "url": "https://www.schulministerium.nrw/ganztag-im-primarbereich"
       },
@@ -674,7 +678,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-01",
+      "last_reviewed_at": "2026-08-08",
       "next_review_due": "2026-09-15"
     }
   },
@@ -691,14 +695,14 @@
     "content_type": "news",
     "source_type": "manual",
     "area": "ドイツ / EU",
-    "summary": "EU AI Act第50条の透明性義務が2026年8月2日から適用。チャットボット、生成画像・音声、ディープフェイク、公益情報テキストの表示を、小規模事業者にも分かるよう整理します。",
+    "summary": "EU AI Act第50条の透明性義務が2026年8月2日から適用。チャットボット、生成画像・音声、ディープフェイク、公益情報テキストを、担当者向け判定手順・表示例・台帳付きで整理します。",
     "url": "/germany/ja/events/news/eu-ai-act-transparency-august-2026/",
     "markdown_path": "/content/events/news/eu-ai-act-transparency-august-2026.md",
     "published": true,
     "status": "published",
     "published_at": "2026-08-01",
-    "updated_at": "2026-08-01",
-    "last_verified": "2026-08-01",
+    "updated_at": "2026-08-08",
+    "last_verified": "2026-08-08",
     "tags": [
       "EU AI Act",
       "生成AI",
@@ -724,11 +728,11 @@
       },
       {
         "title": "欧州委員会：第50条透明性ガイドライン",
-        "url": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-transparency-ai-generated-content"
+        "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems"
       },
       {
-        "title": "欧州委員会：透明性義務ガイドライン公開",
-        "url": "https://digital-strategy.ec.europa.eu/en/news/commission-publishes-guidelines-transparency-obligations-providers-and-deployers-certain-ai-systems"
+        "title": "欧州委員会：第50条Q&A",
+        "url": "https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act"
       },
       {
         "title": "欧州委員会：AI生成コンテンツ表示の行動規範",
@@ -744,7 +748,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-01",
+      "last_reviewed_at": "2026-08-08",
       "next_review_due": "2026-10-01"
     }
   },
@@ -761,14 +765,14 @@
     "content_type": "news",
     "source_type": "manual",
     "area": "ドイツ / EU",
-    "summary": "EUのRight to Repairが2026年7月31日から適用。対象製品、保証期間内外、修理費、交換との違い、追加1年の法定保証、店へ伝える内容を実務的に整理します。",
+    "summary": "EUのRight to Repairが2026年7月31日から適用。対象製品、法定保証内外、追加1年、見積り、データ保護、修理失敗時の選択肢を実務手順と文例で整理します。",
     "url": "/germany/ja/events/news/eu-right-to-repair-2026-germany/",
     "markdown_path": "/content/events/news/eu-right-to-repair-2026-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-08-01",
-    "updated_at": "2026-08-01",
-    "last_verified": "2026-08-01",
+    "updated_at": "2026-08-08",
+    "last_verified": "2026-08-08",
     "tags": [
       "修理権",
       "家電",
@@ -793,6 +797,10 @@
         "url": "https://commission.europa.eu/law/law-topic/consumer-protection-law/directive-repair-goods_en"
       },
       {
+        "title": "欧州委員会：Right to Repair Q&A",
+        "url": "https://commission.europa.eu/document/download/2d443b31-dc2a-4e54-a9ec-5fbb61c895e9_en?filename=2024_07_18_QA_Right2repair_FINAL.pdf"
+      },
+      {
         "title": "EU理事会：Right to repair products",
         "url": "https://www.consilium.europa.eu/en/policies/right-to-repair-products/"
       },
@@ -810,7 +818,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-01",
+      "last_reviewed_at": "2026-08-08",
       "next_review_due": "2026-11-01"
     }
   },
@@ -827,14 +835,14 @@
     "content_type": "news",
     "source_type": "manual",
     "area": "ドイツ全体",
-    "summary": "2026年7月29日に施行されたGebäudemodernisierungsgesetzで、暖房の65%再エネ一律要件がどう変わったかを整理。所有者・賃貸入居者が急いで決める前の確認事項を説明します。",
+    "summary": "2026年7月29日施行の建物近代化法で暖房の65%再エネ一律要件がどう変わったかを、補助金、所有者・入居者・WEGの判断手順、見積り比較まで具体的に整理します。",
     "url": "/germany/ja/events/news/building-modernisation-law-germany-2026/",
     "markdown_path": "/content/events/news/building-modernisation-law-germany-2026.md",
     "published": true,
     "status": "published",
     "published_at": "2026-08-01",
-    "updated_at": "2026-08-01",
-    "last_verified": "2026-08-01",
+    "updated_at": "2026-08-08",
+    "last_verified": "2026-08-08",
     "tags": [
       "暖房",
       "Gebäudemodernisierungsgesetz",
@@ -852,18 +860,18 @@
     "city": "ドイツ全体",
     "location": "",
     "event_date": "2026-07-29施行",
-    "official_url": "https://www.bundesregierung.de/breg-de/aktuelles/neues-gebaeudemodernisierungsgesetz-2430284",
+    "official_url": "https://www.bundesregierung.de/breg-de/bundesregierung/bundeskanzleramt/neues-gebaeudemodernisierungsgesetz-2430284",
     "official_sources": [
       {
         "title": "ドイツ連邦政府：新しいGebäudemodernisierungsgesetz",
-        "url": "https://www.bundesregierung.de/breg-de/aktuelles/neues-gebaeudemodernisierungsgesetz-2430284"
+        "url": "https://www.bundesregierung.de/breg-de/bundesregierung/bundeskanzleramt/neues-gebaeudemodernisierungsgesetz-2430284"
       },
       {
         "title": "ドイツ連邦政府：2026年8月の新制度",
         "url": "https://www.bundesregierung.de/breg-de/aktuelles/gesetzliche-neuregelungen-2448548"
       },
       {
-        "title": "Bundesnetzagentur：エネルギー価格と Abschlag",
+        "title": "Bundesnetzagentur：エネルギー価格とAbschlag",
         "url": "https://www.bundesnetzagentur.de/DE/Vportal/Energie/PreiseAbschlaege/start.html"
       }
     ],
@@ -872,8 +880,505 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-01",
+      "last_reviewed_at": "2026-08-08",
       "next_review_due": "2026-12-05"
+    }
+  },
+  {
+    "id": "N007",
+    "title": "ドイツ失業者数が300万人台に｜2026年7月の雇用統計を転職者・企業はどう読む？",
+    "slug": "germany-unemployment-july-2026",
+    "image_url": "/assets/img/events/germany-unemployment-july-2026.webp",
+    "image": "/assets/img/events/germany-unemployment-july-2026.webp",
+    "image_alt": "ドイツで求人票と応募書類を確認しながら転職活動の計画を立てる日本人の会社員",
+    "image_caption": "AI生成の編集用イメージ。人物・企業・求人情報は架空です。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "仕事・経済",
+    "content_type": "news",
+    "source_type": "manual",
+    "area": "ドイツ全土",
+    "summary": "ドイツ連邦雇用庁の2026年7月統計では失業者が300万7,000人、失業率は6.4％。季節要因と基調を分けて読み、求職者・在独日本人・採用企業が今すぐ行う具体策をまとめます。",
+    "url": "/germany/ja/events/news/germany-unemployment-july-2026/",
+    "markdown_path": "/content/events/news/germany-unemployment-july-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-08",
+    "updated_at": "2026-08-08",
+    "last_verified": "2026-08-08",
+    "tags": [
+      "ドイツ雇用",
+      "失業率",
+      "転職",
+      "採用",
+      "連邦雇用庁",
+      "在独日本人"
+    ],
+    "home_visible": false,
+    "home_order": 4,
+    "hub_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/news/germany-unemployment-july-2026/",
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026年7月",
+    "official_url": "https://www.arbeitsagentur.de/presse/2026-30-arbeitsmarkt-im-juli-2026",
+    "official_sources": [
+      {
+        "title": "ドイツ連邦雇用庁：2026年7月の労働市場",
+        "url": "https://www.arbeitsagentur.de/presse/2026-30-arbeitsmarkt-im-juli-2026"
+      },
+      {
+        "title": "ドイツ連邦雇用庁：失業給付と求職・失業登録",
+        "url": "https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld"
+      }
+    ],
+    "disclaimer_type": "news_explainer",
+    "related_articles": [
+      "germany-gdp-q2-2026",
+      "germany-inflation-july-2026"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-08",
+      "next_review_due": "2026-08-31"
+    }
+  },
+  {
+    "id": "N008",
+    "title": "ドイツのインフレ率は2026年7月2.8％｜家計と事業者の実用チェック",
+    "slug": "germany-inflation-july-2026",
+    "image_url": "/assets/img/events/germany-inflation-july-2026.webp",
+    "image": "/assets/img/events/germany-inflation-july-2026.webp",
+    "image_alt": "ドイツの家庭で食料品のレシートと光熱費を確認する日本人の夫婦",
+    "image_caption": "AI生成の編集用イメージ。人物・商品・金額は架空です。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "暮らし・経済",
+    "content_type": "news",
+    "source_type": "manual",
+    "area": "ドイツ全土",
+    "summary": "ドイツの2026年7月消費者物価指数は前年同月比2.8％、前月比0.8％の暫定値。エネルギー・食品・コア指数を分け、家計の見直しと企業の価格判断に使える手順を整理します。",
+    "url": "/germany/ja/events/news/germany-inflation-july-2026/",
+    "markdown_path": "/content/events/news/germany-inflation-july-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-08",
+    "updated_at": "2026-08-08",
+    "last_verified": "2026-08-08",
+    "tags": [
+      "ドイツ物価",
+      "インフレ",
+      "家計",
+      "エネルギー",
+      "消費者物価指数",
+      "事業計画"
+    ],
+    "home_visible": false,
+    "home_order": 5,
+    "hub_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/news/germany-inflation-july-2026/",
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026年7月（暫定値）",
+    "official_url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/07/PD26_270_611.html",
+    "official_sources": [
+      {
+        "title": "ドイツ連邦統計局：2026年7月の消費者物価（暫定値）",
+        "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/07/PD26_270_611.html"
+      },
+      {
+        "title": "ドイツ連邦統計局：消費者物価指数の概要",
+        "url": "https://www.destatis.de/EN/Themes/Economic-Sectors-Enterprises/Prices/Consumer-Price-Index/_node.html"
+      }
+    ],
+    "disclaimer_type": "news_explainer",
+    "related_articles": [
+      "germany-import-prices-june-2026",
+      "germany-unemployment-july-2026"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-08",
+      "next_review_due": "2026-08-13"
+    }
+  },
+  {
+    "id": "N009",
+    "title": "ライン川・カウプで記録的低水位｜2026年8月の物流と旅行の実務対応",
+    "slug": "rhine-low-water-august-2026",
+    "image_url": "/assets/img/events/rhine-low-water-august-2026.webp",
+    "image": "/assets/img/events/rhine-low-water-august-2026.webp",
+    "image_alt": "低水位で川岸が広く見えるライン川を積載量を抑えた貨物船が航行する様子",
+    "image_caption": "AI生成の編集用イメージ。特定の船舶・企業・実際の水位を示すものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "交通・物流",
+    "content_type": "news",
+    "source_type": "manual",
+    "area": "ライン川流域 / ドイツ",
+    "summary": "ライン川カウプ観測所は2026年8月5日に17cmの日最低水位を記録。水位と航行可能水深の違い、荷主・事業者・旅行者が確認すべき運賃、在庫、代替輸送、運航情報を整理します。",
+    "url": "/germany/ja/events/news/rhine-low-water-august-2026/",
+    "markdown_path": "/content/events/news/rhine-low-water-august-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-08",
+    "updated_at": "2026-08-08",
+    "last_verified": "2026-08-08",
+    "tags": [
+      "ライン川",
+      "低水位",
+      "カウプ",
+      "物流",
+      "内陸水運",
+      "ドイツ旅行"
+    ],
+    "home_visible": false,
+    "home_order": 6,
+    "hub_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/news/rhine-low-water-august-2026/",
+    "city": "ライン川流域 / ドイツ",
+    "location": "",
+    "event_date": "2026年8月",
+    "official_url": "https://pegelonline.wsv.de/gast/stammdaten?pegelnr=25700100",
+    "official_sources": [
+      {
+        "title": "WSV PEGELONLINE：Kaub観測所",
+        "url": "https://pegelonline.wsv.de/gast/stammdaten?pegelnr=25700100"
+      },
+      {
+        "title": "WSV PEGELONLINE API：Kaubの測定値",
+        "url": "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations/25700100/W/measurements.json?start=P14D"
+      },
+      {
+        "title": "ELWIS：Kaub水位予測",
+        "url": "https://www.elwis.de/DE/dynamisch/Wasserstaende/Pegelvorhersage%3AKAUB"
+      },
+      {
+        "title": "ドイツ連邦水文学研究所：ライン川の現在の低水位監視",
+        "url": "https://undine.bafg.de/rhein/zustand-aktuell/rhein_nw_mon.html"
+      },
+      {
+        "title": "ドイツ連邦水文学研究所：2018年低水位の記録",
+        "url": "https://undine.bafg.de/rhein/extremereignisse/rhein_nw2018.html"
+      }
+    ],
+    "disclaimer_type": "news_explainer",
+    "related_articles": [
+      "germany-import-prices-june-2026"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-08",
+      "next_review_due": "2026-08-15"
+    }
+  },
+  {
+    "id": "N010",
+    "title": "EU包装・包装廃棄物規則（PPWR）が2026年8月12日から一般適用｜企業の実務ロードマップ",
+    "slug": "eu-packaging-regulation-august-2026",
+    "image_url": "/assets/img/events/eu-packaging-regulation-august-2026.webp",
+    "image": "/assets/img/events/eu-packaging-regulation-august-2026.webp",
+    "image_alt": "紙・ガラス・金属・プラスチックの包装を分類してEU包装規則への対応を確認する企業担当者",
+    "image_caption": "AI生成の編集用イメージ。製品・包装・表示は架空で、適合を保証するものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "ビジネス・EU規制",
+    "content_type": "news",
+    "source_type": "manual",
+    "area": "ドイツ / EU",
+    "summary": "EU包装・包装廃棄物規則（EU）2025/40は2026年8月12日から一般適用。ただし表示、空きスペース、再使用などの期限は段階的です。輸入・ECを含む企業が今行う棚卸しと証拠管理を整理します。",
+    "url": "/germany/ja/events/news/eu-packaging-regulation-august-2026/",
+    "markdown_path": "/content/events/news/eu-packaging-regulation-august-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-08",
+    "updated_at": "2026-08-08",
+    "last_verified": "2026-08-08",
+    "tags": [
+      "PPWR",
+      "EU包装規則",
+      "包装廃棄物",
+      "Eコマース",
+      "輸入",
+      "コンプライアンス"
+    ],
+    "home_visible": false,
+    "home_order": 7,
+    "hub_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/news/eu-packaging-regulation-august-2026/",
+    "city": "ドイツ / EU",
+    "location": "",
+    "event_date": "2026年8月12日一般適用",
+    "official_url": "https://eur-lex.europa.eu/eli/reg/2025/40/oj/eng",
+    "official_sources": [
+      {
+        "title": "EUR-Lex：包装・包装廃棄物規則（EU）2025/40",
+        "url": "https://eur-lex.europa.eu/eli/reg/2025/40/oj/eng"
+      },
+      {
+        "title": "欧州委員会：包装廃棄物の概要",
+        "url": "https://environment.ec.europa.eu/topics/waste-and-recycling/packaging-waste_en"
+      },
+      {
+        "title": "欧州委員会：PPWR適用に関する2026年ガイダンス",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A52026XC03084"
+      }
+    ],
+    "disclaimer_type": "news_explainer",
+    "related_articles": [
+      "germany-bureaucracy-costs-2026",
+      "germany-import-prices-june-2026"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-08",
+      "next_review_due": "2026-11-15"
+    }
+  },
+  {
+    "id": "N011",
+    "title": "ドイツ企業の官僚的負担は売上高の7％との調査｜中小企業が減らせる実務コスト",
+    "slug": "germany-bureaucracy-costs-2026",
+    "image_url": "/assets/img/events/germany-bureaucracy-costs-2026.webp",
+    "image": "/assets/img/events/germany-bureaucracy-costs-2026.webp",
+    "image_alt": "ドイツの中小企業で多くの行政書類とデジタル申請を確認する経営チーム",
+    "image_caption": "AI生成の編集用イメージ。人物・企業・書類は架空です。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "ビジネス・経営",
+    "content_type": "news",
+    "source_type": "manual",
+    "area": "ドイツ全土",
+    "summary": "ドイツ連邦銀行の企業調査では、企業が報告する官僚的負担コストの売上高比が2022年約5％から2024年約7％へ上昇。推計の限界を踏まえ、企業が30日で可視化・削減できる手順を示します。",
+    "url": "/germany/ja/events/news/germany-bureaucracy-costs-2026/",
+    "markdown_path": "/content/events/news/germany-bureaucracy-costs-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-08",
+    "updated_at": "2026-08-08",
+    "last_verified": "2026-08-08",
+    "tags": [
+      "ドイツ企業",
+      "官僚的負担",
+      "中小企業",
+      "業務改善",
+      "コンプライアンス",
+      "生産性"
+    ],
+    "home_visible": false,
+    "home_order": 8,
+    "hub_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/news/germany-bureaucracy-costs-2026/",
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026年7月公表",
+    "official_url": "https://publikationen.bundesbank.de/publikationen-en/reports-studies/monthly-reports/monthly-report-july-2026-1003480?article=bureaucratic-burdens-in-germany-s-corporate-sector-causes-and-effects-1001558",
+    "official_sources": [
+      {
+        "title": "ドイツ連邦銀行月報2026年7月：企業部門の官僚的負担",
+        "url": "https://publikationen.bundesbank.de/publikationen-en/reports-studies/monthly-reports/monthly-report-july-2026-1003480?article=bureaucratic-burdens-in-germany-s-corporate-sector-causes-and-effects-1001558"
+      }
+    ],
+    "disclaimer_type": "news_explainer",
+    "related_articles": [
+      "eu-packaging-regulation-august-2026",
+      "germany-gdp-q2-2026",
+      "eu-ai-act-transparency-august-2026"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-08",
+      "next_review_due": "2027-01-31"
+    }
+  },
+  {
+    "id": "N012",
+    "title": "ドイツGDPは2026年4〜6月期に0.2％成長｜企業と働く人のための読み方",
+    "slug": "germany-gdp-q2-2026",
+    "image_url": "/assets/img/events/germany-gdp-q2-2026.webp",
+    "image": "/assets/img/events/germany-gdp-q2-2026.webp",
+    "image_alt": "ドイツの工場で産業機械の生産と輸出準備を進める作業員",
+    "image_caption": "AI生成の編集用イメージ。工場・機械・企業は架空です。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "仕事・経済",
+    "content_type": "news",
+    "source_type": "manual",
+    "area": "ドイツ全土",
+    "summary": "ドイツの2026年第2四半期実質GDPは前期比0.2％増、前年同期比0.9％増の暫定値。輸出は増えた一方、消費は力強さを欠き、投資は減少。企業・求職者が判断に使う方法を解説します。",
+    "url": "/germany/ja/events/news/germany-gdp-q2-2026/",
+    "markdown_path": "/content/events/news/germany-gdp-q2-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-08",
+    "updated_at": "2026-08-08",
+    "last_verified": "2026-08-08",
+    "tags": [
+      "ドイツGDP",
+      "ドイツ経済",
+      "景気",
+      "企業計画",
+      "輸出",
+      "投資"
+    ],
+    "home_visible": false,
+    "home_order": 9,
+    "hub_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/news/germany-gdp-q2-2026/",
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026年第2四半期（暫定値）",
+    "official_url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/07/PD26_269_811.html",
+    "official_sources": [
+      {
+        "title": "ドイツ連邦統計局：2026年第2四半期GDP速報",
+        "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/07/PD26_269_811.html"
+      },
+      {
+        "title": "ドイツ連邦統計局：国民経済計算",
+        "url": "https://www.destatis.de/EN/Themes/Economic-Sectors-Enterprises/National-Accounts-Domestic-Product/_node.html"
+      }
+    ],
+    "disclaimer_type": "news_explainer",
+    "related_articles": [
+      "germany-unemployment-july-2026",
+      "germany-bureaucracy-costs-2026",
+      "germany-import-prices-june-2026"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-08",
+      "next_review_due": "2026-08-26"
+    }
+  },
+  {
+    "id": "N013",
+    "title": "ドイツ発の航空運賃が2026年上半期8.5％上昇｜旅行・出張の総額を抑える方法",
+    "slug": "germany-flight-prices-2026",
+    "image_url": "/assets/img/events/germany-flight-prices-2026.webp",
+    "image": "/assets/img/events/germany-flight-prices-2026.webp",
+    "image_alt": "ドイツの自宅で航空券の日程と旅行予算を比較する日本人の家族",
+    "image_caption": "AI生成の編集用イメージ。人物・航空会社・予約画面は架空です。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "旅行・交通",
+    "content_type": "news",
+    "source_type": "manual",
+    "area": "ドイツ全土",
+    "summary": "ドイツ発の国際航空運賃は2026年上半期に前年同期比8.5％上昇。欧州内は11.5％、国内線は9.5％。統計と実際の見積もりを分け、家族旅行・一時帰国・出張の総費用を比較します。",
+    "url": "/germany/ja/events/news/germany-flight-prices-2026/",
+    "markdown_path": "/content/events/news/germany-flight-prices-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-08",
+    "updated_at": "2026-08-08",
+    "last_verified": "2026-08-08",
+    "tags": [
+      "ドイツ航空券",
+      "一時帰国",
+      "旅行",
+      "出張",
+      "航空運賃",
+      "家計"
+    ],
+    "home_visible": false,
+    "home_order": 10,
+    "hub_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/news/germany-flight-prices-2026/",
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026年上半期",
+    "official_url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/07/PD26_N047_61.html?nn=2110",
+    "official_sources": [
+      {
+        "title": "ドイツ連邦統計局：2026年上半期の航空運賃",
+        "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/07/PD26_N047_61.html?nn=2110"
+      }
+    ],
+    "disclaimer_type": "news_explainer",
+    "related_articles": [
+      "germany-inflation-july-2026"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-08",
+      "next_review_due": "2027-01-31"
+    }
+  },
+  {
+    "id": "N014",
+    "title": "ドイツ輸入物価は2026年6月に前年比6.1％上昇｜原材料高を価格・在庫へ反映する方法",
+    "slug": "germany-import-prices-june-2026",
+    "image_url": "/assets/img/events/germany-import-prices-june-2026.webp",
+    "image": "/assets/img/events/germany-import-prices-june-2026.webp",
+    "image_alt": "金属コイルや工業材料の輸入コストと在庫を確認するドイツ企業の担当者",
+    "image_caption": "AI生成の編集用イメージ。人物・企業・資材・書類は架空です。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "ビジネス・経済",
+    "content_type": "news",
+    "source_type": "manual",
+    "area": "ドイツ全土",
+    "summary": "ドイツの2026年6月輸入物価は前年同月比6.1％上昇、前月比0.7％低下。エネルギー、銅、肥料、一次プラスチックの上昇を、仕入れ・価格・在庫判断へ落とす方法を整理します。",
+    "url": "/germany/ja/events/news/germany-import-prices-june-2026/",
+    "markdown_path": "/content/events/news/germany-import-prices-june-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-08",
+    "updated_at": "2026-08-08",
+    "last_verified": "2026-08-08",
+    "tags": [
+      "ドイツ輸入物価",
+      "原材料",
+      "仕入れ",
+      "エネルギー",
+      "価格転嫁",
+      "サプライチェーン"
+    ],
+    "home_visible": false,
+    "home_order": 11,
+    "hub_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/news/germany-import-prices-june-2026/",
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026年6月",
+    "official_url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/07/PD26_268_614.html",
+    "official_sources": [
+      {
+        "title": "ドイツ連邦統計局：2026年6月の輸出入物価",
+        "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/07/PD26_268_614.html"
+      },
+      {
+        "title": "ドイツ連邦統計局：輸出入物価指数",
+        "url": "https://www.destatis.de/EN/Themes/Economic-Sectors-Enterprises/Prices/Import-Export-Prices/_node.html"
+      }
+    ],
+    "disclaimer_type": "news_explainer",
+    "related_articles": [
+      "rhine-low-water-august-2026",
+      "eu-packaging-regulation-august-2026",
+      "germany-gdp-q2-2026"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-08",
+      "next_review_due": "2026-08-31"
     }
   }
 ]

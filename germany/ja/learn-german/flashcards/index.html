@@ -300,6 +300,97 @@
         </div>
       </section>
 
+      <section id="flashcardsInventory" class="flashcards-inventory" aria-labelledby="flashcardsInventoryTitle" hidden>
+        <div class="flashcards-section-head">
+          <div>
+            <p class="learn-web-tools__eyebrow">収録内容を確認</p>
+            <h2 id="flashcardsInventoryTitle">レベル別・全単語リスト</h2>
+            <p id="flashcardsInventoryDescription">選択した教材の表・裏・例文・文法・学習進捗を確認できます。</p>
+          </div>
+        </div>
+
+        <div class="flashcards-inventory-controls" aria-label="全単語リストの絞り込み">
+          <label class="flashcards-inventory-field">
+            <span>単語を検索</span>
+            <input id="flashcardsInventorySearch" type="search" placeholder="ドイツ語・日本語・例文" autocomplete="off">
+          </label>
+          <label class="flashcards-inventory-field">
+            <span>学習状態</span>
+            <select id="flashcardsInventoryStatus">
+              <option value="all">すべて</option>
+              <option value="unstarted">未学習</option>
+              <option value="reviewing">学習中</option>
+              <option value="mastered">習得済み</option>
+              <option value="due">復習期限</option>
+            </select>
+          </label>
+          <label class="flashcards-inventory-field">
+            <span>保存状態</span>
+            <select id="flashcardsInventorySaved">
+              <option value="all">すべて</option>
+              <option value="saved">保存済み</option>
+              <option value="unsaved">未保存</option>
+            </select>
+          </label>
+          <label class="flashcards-inventory-field">
+            <span>品詞</span>
+            <select id="flashcardsInventoryPartOfSpeech"><option value="all">すべて</option></select>
+          </label>
+          <label class="flashcards-inventory-field">
+            <span>カード品質</span>
+            <select id="flashcardsInventoryQuality">
+              <option value="all">すべて</option>
+              <option value="editorial-reviewed">例文・解説あり</option>
+              <option value="reference">参照カード</option>
+            </select>
+          </label>
+          <label class="flashcards-inventory-field">
+            <span>1ページの件数</span>
+            <select id="flashcardsInventoryPageSize">
+              <option value="50">50件</option>
+              <option value="100">100件</option>
+              <option value="250">250件</option>
+              <option value="all">全件</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="flashcards-inventory-actions">
+          <button id="flashcardsInventoryReset" class="flashcards-button" type="button">絞り込みを解除</button>
+          <button id="flashcardsInventoryStudyFiltered" class="flashcards-button is-primary" type="button">絞り込み結果を学習</button>
+          <button id="flashcardsInventoryCsv" class="flashcards-button" type="button">一覧をCSVで保存</button>
+        </div>
+        <p id="flashcardsInventorySummary" class="flashcards-inventory-summary" role="status" aria-live="polite"></p>
+
+        <div class="flashcards-inventory-table-wrap" tabindex="0" aria-label="左右にスクロールできる全単語表">
+          <table class="flashcards-inventory-table">
+            <caption>選択中のレベル教材に収録されている全単語</caption>
+            <thead>
+              <tr>
+                <th scope="col" data-inventory-sort-column="saved"><button type="button" data-inventory-sort="saved">保存<span aria-hidden="true">↕</span></button></th>
+                <th scope="col" data-inventory-sort-column="order"><button type="button" data-inventory-sort="order">番号<span aria-hidden="true">↕</span></button></th>
+                <th scope="col" data-inventory-sort-column="display_de"><button type="button" data-inventory-sort="display_de">表（ドイツ語）<span aria-hidden="true">↕</span></button></th>
+                <th scope="col" data-inventory-sort-column="japanese"><button type="button" data-inventory-sort="japanese">裏（日本語）<span aria-hidden="true">↕</span></button></th>
+                <th scope="col" data-inventory-sort-column="example"><button type="button" data-inventory-sort="example">例文<span aria-hidden="true">↕</span></button></th>
+                <th scope="col" data-inventory-sort-column="part_of_speech"><button type="button" data-inventory-sort="part_of_speech">品詞・文法<span aria-hidden="true">↕</span></button></th>
+                <th scope="col" data-inventory-sort-column="quality"><button type="button" data-inventory-sort="quality">品質<span aria-hidden="true">↕</span></button></th>
+                <th scope="col" data-inventory-sort-column="status"><button type="button" data-inventory-sort="status">進捗<span aria-hidden="true">↕</span></button></th>
+              </tr>
+            </thead>
+            <tbody id="flashcardsInventoryBody"></tbody>
+          </table>
+        </div>
+        <p id="flashcardsInventoryEmpty" class="flashcards-inventory-empty" hidden>条件に一致する単語がありません。</p>
+        <nav class="flashcards-inventory-pagination" aria-label="全単語リストのページ送り">
+          <button id="flashcardsInventoryFirst" class="flashcards-button" type="button">最初</button>
+          <button id="flashcardsInventoryPrevious" class="flashcards-button" type="button">前へ</button>
+          <span id="flashcardsInventoryPageStatus" aria-live="polite">1 / 1ページ</span>
+          <button id="flashcardsInventoryNext" class="flashcards-button" type="button">次へ</button>
+          <button id="flashcardsInventoryLast" class="flashcards-button" type="button">最後</button>
+        </nav>
+        <p class="flashcards-srs-note">★で保存した単語は「保存済み」で絞り込めます。保存状態と進捗はこの端末に保存され、JSONバックアップの対象です。</p>
+      </section>
+
       <dialog id="flashcardsResetDialog" class="flashcards-dialog" aria-labelledby="flashcardsResetTitle">
         <form method="dialog" class="flashcards-dialog__body">
           <h2 id="flashcardsResetTitle">学習記録を完全にリセットしますか？</h2>
@@ -317,6 +408,7 @@
       <h2 id="flashcardsHowToTitle">使い方</h2>
       <ol>
         <li>A1〜C2のレベル専用教材、編集済み実践50、または買い物・役所・病院・住まい・Kita・仕事などの場面別教材を選びます。</li>
+        <li>レベル専用教材では、全単語表を検索・並べ替えし、未学習・学習中・習得済み・保存済みなどで絞り込めます。</li>
         <li>カードをクリックするかEnter / Spaceで裏返し、「もう一度」「迷った」「覚えた」で評価します。</li>
         <li>終了後に苦手カードを復習し、Excelで開けるCSVや端末移行用のJSONを保存できます。</li>
       </ol>

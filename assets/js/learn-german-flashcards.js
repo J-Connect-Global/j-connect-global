@@ -6,6 +6,7 @@
 
   const DECKS_URL = "/assets/data/learn-german/flashcards/decks.json";
   const DATA_BASE = "/assets/data/learn-german/flashcards/";
+  const INVENTORY_SCRIPT_URL = "/assets/js/learn-german-flashcards-inventory.js";
   const BACKUP_SCHEMA_VERSION = 1;
   const LAST_DECK_KEY = "jconnect-flashcards-last-deck";
   const DAY_MS = 24 * 60 * 60 * 1000;
@@ -89,6 +90,7 @@
     reset: root.querySelector("#flashcardsReset"),
     resetDialog: root.querySelector("#flashcardsResetDialog"),
     confirmReset: root.querySelector("#flashcardsConfirmReset"),
+    inventory: root.querySelector("#flashcardsInventory"),
     toast: root.querySelector("#flashcardsToast")
   };
 
@@ -97,6 +99,7 @@
     decks: [],
     currentDeck: null,
     cardsById: new Map(),
+    inventoryController: null,
     session: null,
     restoredSession: null,
     isFlipped: false,
@@ -253,6 +256,75 @@
     state.cardsById = new Map(orderedCards.map(card => [card.card_id, card]));
   }
 
+  function emptyProgress(cardId) {
+    return {
+      card_id: cardId,
+      status: "unstarted",
+      attempts: 0,
+      known_count: 0,
+      unsure_count: 0,
+      again_count: 0,
+      current_streak: 0,
+      saved: false
+    };
+  }
+
+  let inventoryFeaturePromise = null;
+
+  function loadInventoryFeature() {
+    if (window.JConnectFlashcardInventory) return Promise.resolve(window.JConnectFlashcardInventory);
+    if (inventoryFeaturePromise) return inventoryFeaturePromise;
+    inventoryFeaturePromise = new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = INVENTORY_SCRIPT_URL;
+      script.async = true;
+      script.addEventListener("load", () => resolve(window.JConnectFlashcardInventory), { once: true });
+      script.addEventListener("error", () => {
+        inventoryFeaturePromise = null;
+        script.remove();
+        reject(new Error("Flashcard inventory feature could not be loaded."));
+      }, { once: true });
+      document.head.append(script);
+    });
+    return inventoryFeaturePromise;
+  }
+
+  async function startInventorySession(cardIds) {
+    if (!cardIds.length) return;
+    state.session = createSession(cardIds, {
+      direction: selectedValue("session-direction") || "de-ja",
+      size: String(cardIds.length),
+      order: "inventory-filter"
+    });
+    state.restoredSession = null;
+    await storage.putSession(state.session);
+    openStudy();
+  }
+
+  async function prepareInventory(deck) {
+    if (deck.deck_kind !== "cefr-level") {
+      state.inventoryController?.hide();
+      elements.inventory.hidden = true;
+      return;
+    }
+    const feature = await loadInventoryFeature();
+    if (!feature?.create) throw new Error("Flashcard inventory feature is unavailable.");
+    if (!state.inventoryController) {
+      state.inventoryController = feature.create({
+        root,
+        storage,
+        partOfSpeechLabels,
+        formatGrammar,
+        formatDate,
+        safeCsvValue,
+        downloadBlob,
+        showToast,
+        startSession: startInventorySession
+      });
+    }
+    await state.inventoryController.prepare(deck, state.cardsById);
+  }
+
   function validRestoredSession(session, deck) {
     return Boolean(
       session
@@ -271,6 +343,7 @@
   async function selectDeck(deckId) {
     const deck = state.decks.find(candidate => candidate.deck_id === deckId);
     if (!deck) {
+      elements.inventory.hidden = true;
       showOnly("picker");
       showToast("指定された教材が見つかりません。教材一覧から選んでください。");
       return;
@@ -288,6 +361,7 @@
       elements.setupBadges.replaceChildren(createBadges(deck));
       elements.studyTitle.textContent = deck.title_ja;
       elements.studyBadges.replaceChildren(createBadges(deck));
+      await prepareInventory(deck);
 
       const restored = await storage.getSession(deck.deck_id);
       state.restoredSession = validRestoredSession(restored, deck) && !restored.completed ? restored : null;
@@ -307,6 +381,7 @@
       showOnly("setup");
       elements.setup.scrollIntoView({ block: "start" });
     } catch (error) {
+      elements.inventory.hidden = true;
       showError("選択した教材を読み込めませんでした。教材一覧へ戻って再度お試しください。", error);
       showOnly("picker");
     }
@@ -440,15 +515,7 @@
   }
 
   async function updateCardProgress(cardId, rating) {
-    const previous = await storage.getProgress(cardId) || {
-      card_id: cardId,
-      status: "unstarted",
-      attempts: 0,
-      known_count: 0,
-      unsure_count: 0,
-      again_count: 0,
-      current_streak: 0
-    };
+    const previous = await storage.getProgress(cardId) || emptyProgress(cardId);
     const currentStreak = rating === "known"
       ? Number(previous.current_streak || 0) + 1
       : rating === "unsure" ? Math.max(0, Number(previous.current_streak || 0) - 1) : 0;
@@ -469,6 +536,7 @@
       selected_session_size: state.session.selected_session_size
     };
     await storage.putProgress(progress);
+    state.inventoryController?.setProgress(progress);
   }
 
   function nextUnratedIndex() {
@@ -699,6 +767,7 @@
     payload.progress.forEach(entry => {
       if (!entry || !/^(?:a1|a2|b1|b2|c1|c2)-\d{3,4}$/.test(entry.card_id || "")) throw new Error("不正なカードIDが含まれています。");
       if (!validStatuses.has(entry.status)) throw new Error("不正な学習状態が含まれています。");
+      if (entry.saved !== undefined && typeof entry.saved !== "boolean") throw new Error("不正な保存状態が含まれています。");
       for (const key of ["attempts", "known_count", "unsure_count", "again_count", "current_streak"]) {
         if (!isFiniteNonNegative(entry[key])) throw new Error(`不正な数値 ${key} が含まれています。`);
       }
@@ -734,6 +803,7 @@
     await storage.clearAll();
     state.session = null;
     state.restoredSession = null;
+    state.inventoryController?.clearProgress();
     elements.resume.hidden = true;
     elements.resumeNote.hidden = true;
     showToast("この端末の学習記録をすべて削除しました。");
@@ -756,6 +826,7 @@
       const url = new URL(window.location.href);
       url.searchParams.delete("deck");
       window.history.pushState({}, "", url);
+      elements.inventory.hidden = true;
       showOnly("picker");
       elements.picker.scrollIntoView({ block: "start" });
     });
@@ -784,7 +855,10 @@
     window.addEventListener("popstate", () => {
       const deckId = new URL(window.location.href).searchParams.get("deck");
       if (deckId) selectDeck(deckId);
-      else showOnly("picker");
+      else {
+        elements.inventory.hidden = true;
+        showOnly("picker");
+      }
     });
     document.addEventListener("keydown", event => {
       if (elements.study.hidden || event.altKey || event.ctrlKey || event.metaKey) return;

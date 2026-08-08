@@ -148,8 +148,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツ語暗記カード A1–B2",
-    "description": "A1・A2・B1・B2のドイツ生活語彙200枚を、表裏カード、3段階評価、苦手復習、読み上げ、端末内保存で学べるJ-ConnectオリジナルWeb教材です。",
+    "title": "ドイツ語暗記カード A1・A2・B1・B2・C1・C2・累積10,000語",
+    "description": "A1からC2までのドイツ語を累積650〜10,000語で学べる暗記カード。編集済み実践200枚と、出典付き語彙9,800枚を収録しています。",
     "url": "/germany/ja/learn-german/flashcards/",
     "category": "ドイツ語・学び",
     "tags": [
@@ -159,6 +159,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "A2",
       "B1",
       "B2",
+      "C1",
+      "C2",
       "Web教材"
     ]
   },

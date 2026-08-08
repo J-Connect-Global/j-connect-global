@@ -13,6 +13,7 @@ import {
 
 const decksPath = "/assets/data/learn-german/flashcards/decks.json";
 const a1CardsPath = "/assets/data/learn-german/flashcards/cards-a1.json";
+const allLevelCardPaths = ["a1", "a2", "b1", "b2", "c1", "c2"].map(level => `/assets/data/learn-german/flashcards/cards-${level}.json`);
 const flashcardsRoute = "/germany/ja/learn-german/flashcards/?deck=a1-life-basics";
 
 test.beforeEach(async ({ page }) => {
@@ -32,7 +33,7 @@ test("Learn German exposes four pillars and filters original decks without break
   await expect(page.locator(".learn-mobile-page-nav a")).toHaveCount(4);
   await expect(page.locator(".learn-page-guide a")).toHaveCount(4);
   await expect(page.locator('.learn-pillar-ribbon a[href="#original-web-tools"]')).toBeVisible();
-  await expect(page.locator("#originalDeckGrid .learn-deck-card")).toHaveCount(11);
+  await expect(page.locator("#originalDeckGrid .learn-deck-card")).toHaveCount(17);
 
   const a1Filter = page.locator('[data-deck-filter="level"][data-filter-value="A1"]');
   await a1Filter.click();
@@ -125,6 +126,15 @@ test("flashcard session supports keyboard flip, three ratings, completion, resul
   await activateDarkMode(page);
   await assertSharedLayout(page);
   await assertRouteReady(page);
+});
+
+test("C2 cumulative deck loads all 10,000 cards and can start a bounded session", async ({ page }) => {
+  await openDataRoute(page, "/germany/ja/learn-german/flashcards/?deck=c2-nuance-repertoire", [decksPath, ...allLevelCardPaths]);
+  await expect(page.locator("#flashcardsSetup")).toBeVisible();
+  await expect(page.locator("#sessionSetupTitle")).toContainText("10,000");
+  await expect(page.locator("#setupDeckBadges")).toContainText("10,000枚");
+  await page.locator("#flashcardsStart").click();
+  await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
 });
 
 test("incomplete progress resumes after reload and JSON backup, rejection, restore, and reset are safe", async ({ page }) => {

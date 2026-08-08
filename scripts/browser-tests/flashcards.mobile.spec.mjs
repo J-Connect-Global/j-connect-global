@@ -35,7 +35,7 @@ test("mobile Learn German has a four-item page navigation without overflow", asy
     await expect(page.locator('.learn-mobile-page-nav a[href="#original-web-tools"]')).toHaveAttribute("aria-current", "location");
   }
 
-  await expect(page.locator("#originalDeckGrid .learn-deck-card")).toHaveCount(11);
+  await expect(page.locator("#originalDeckGrid .learn-deck-card")).toHaveCount(17);
   await assertNoHorizontalOverflow(page);
   await assertRouteReady(page);
 });

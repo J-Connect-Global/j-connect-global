@@ -15,7 +15,14 @@
     verb: "動詞",
     adjective: "形容詞",
     adverb: "副詞",
-    phrase: "表現"
+    phrase: "表現",
+    abbreviation: "略語",
+    conjunction: "接続詞",
+    interjection: "間投詞",
+    numeral: "数詞",
+    particle: "助詞",
+    preposition: "前置詞",
+    pronoun: "代名詞"
   };
   const ratingLabels = { again: "もう一度", unsure: "迷った", known: "覚えた" };
   const sceneLabels = {
@@ -25,7 +32,8 @@
     medical: "病院・薬局",
     housing: "住まい",
     "kita-school": "Kita・学校",
-    work: "仕事"
+    work: "仕事",
+    general: "総合語彙"
   };
 
   const elements = {
@@ -164,12 +172,15 @@
 
   function formatGrammar(card) {
     const grammar = card.grammar || {};
+    const pending = card.quality_tier === "reference";
     if (card.part_of_speech === "noun") {
+      if (pending && !grammar.article && !grammar.plural) return "文法情報は編集レビュー待ちです。";
       return [`冠詞: ${grammar.article || "—"}`, `複数形: ${grammar.plural || "—"}`, grammar.declension || ""]
         .filter(Boolean)
         .join(" / ");
     }
     if (card.part_of_speech === "verb") {
+      if (pending) return "活用・格支配は編集レビュー待ちです。";
       const properties = [
         `三人称単数: ${grammar.third_person || "—"}`,
         `過去分詞: ${grammar.past_participle || "—"}`,
@@ -180,14 +191,19 @@
       ];
       return properties.filter(Boolean).join(" / ");
     }
-    return grammar.usage || grammar.government || "用例の語順をまとまりで確認してください。";
+    return grammar.usage || grammar.government || (pending ? "語法は編集レビュー待ちです。" : "用例の語順をまとまりで確認してください。");
   }
 
   function createBadges(deck) {
     const fragment = document.createDocumentFragment();
-    deck.levels.forEach(level => fragment.append(createElement("span", "flashcards-badge", level)));
-    deck.scene_labels.forEach(scene => fragment.append(createElement("span", "flashcards-badge", scene)));
-    fragment.append(createElement("span", "flashcards-badge", `${deck.card_count}枚`));
+    if (deck.deck_kind === "cefr-comprehensive") {
+      fragment.append(createElement("span", "flashcards-badge", deck.target_level));
+      fragment.append(createElement("span", "flashcards-badge", "累積総合語彙"));
+    } else {
+      deck.levels.forEach(level => fragment.append(createElement("span", "flashcards-badge", level)));
+      deck.scene_labels.forEach(scene => fragment.append(createElement("span", "flashcards-badge", scene)));
+    }
+    fragment.append(createElement("span", "flashcards-badge", `${Number(deck.card_count).toLocaleString("ja-JP")}枚`));
     return fragment;
   }
 
@@ -217,7 +233,7 @@
   }
 
   function validCardPayload(payload, fileName) {
-    if (payload?.schema_version !== 1 || !Array.isArray(payload.cards)) throw new Error(`${fileName} has an unsupported schema.`);
+    if (![1, 2].includes(payload?.schema_version) || !Array.isArray(payload.cards)) throw new Error(`${fileName} has an unsupported schema.`);
     payload.cards.forEach(card => {
       if (!card?.card_id || !card?.display_de || !card?.japanese) throw new Error(`${fileName} contains an invalid card.`);
     });
@@ -381,13 +397,13 @@
     const deToJa = state.session.selected_direction === "de-ja";
     elements.prompt.textContent = deToJa ? card.display_de : card.japanese;
     elements.answer.textContent = deToJa ? card.japanese : card.display_de;
-    elements.exampleDe.textContent = card.example_de;
-    elements.exampleJa.textContent = card.example_ja;
+    elements.exampleDe.textContent = card.example_de || "例文は編集レビュー待ちです。";
+    elements.exampleJa.textContent = card.example_ja || "出典付きの語彙参照カードとして先に公開しています。";
     elements.partOfSpeech.textContent = `${partOfSpeechLabels[card.part_of_speech] || card.part_of_speech} / ${card.unit_type}`;
     elements.grammar.textContent = formatGrammar(card);
-    elements.collocations.textContent = card.collocations.join(" / ") || "—";
+    elements.collocations.textContent = card.collocations.join(" / ") || (card.quality_tier === "reference" ? "編集レビュー待ち" : "—");
     elements.learningNote.textContent = card.learning_note;
-    elements.related.textContent = card.related_terms.join(" / ") || "—";
+    elements.related.textContent = card.related_terms.join(" / ") || (card.quality_tier === "reference" ? "編集レビュー待ち" : "—");
     elements.position.textContent = `${index + 1} / ${total}`;
     elements.progressText.textContent = `${percent}%`;
     elements.progressBar.style.width = `${percent}%`;
@@ -678,10 +694,10 @@
   function validateBackup(payload) {
     if (!payload || payload.schema_version !== BACKUP_SCHEMA_VERSION) throw new Error("対応していないバックアップ形式です。");
     if (!Array.isArray(payload.progress) || !Array.isArray(payload.sessions)) throw new Error("進捗またはセッションの配列がありません。");
-    if (payload.progress.length > 5000 || payload.sessions.length > 500) throw new Error("バックアップの件数が上限を超えています。");
+    if (payload.progress.length > 12000 || payload.sessions.length > 500) throw new Error("バックアップの件数が上限を超えています。");
     const validStatuses = new Set(["unstarted", "reviewing", "mastered"]);
     payload.progress.forEach(entry => {
-      if (!entry || !/^[ab][12]-\d{3}$/.test(entry.card_id || "")) throw new Error("不正なカードIDが含まれています。");
+      if (!entry || !/^(?:a1|a2|b1|b2|c1|c2)-\d{3,4}$/.test(entry.card_id || "")) throw new Error("不正なカードIDが含まれています。");
       if (!validStatuses.has(entry.status)) throw new Error("不正な学習状態が含まれています。");
       for (const key of ["attempts", "known_count", "unsure_count", "again_count", "current_streak"]) {
         if (!isFiniteNonNegative(entry[key])) throw new Error(`不正な数値 ${key} が含まれています。`);
@@ -690,8 +706,8 @@
     const validDeckIds = new Set(state.decks.map(deck => deck.deck_id));
     payload.sessions.forEach(session => {
       if (!session || !validDeckIds.has(session.deck_id)) throw new Error("不明な教材のセッションが含まれています。");
-      if (!Array.isArray(session.card_ids) || !session.card_ids.length || session.card_ids.length > 200) throw new Error("不正なセッションカード一覧です。");
-      if (session.card_ids.some(cardId => !/^[ab][12]-\d{3}$/.test(cardId))) throw new Error("セッションに不正なカードIDがあります。");
+      if (!Array.isArray(session.card_ids) || !session.card_ids.length || session.card_ids.length > 10000) throw new Error("不正なセッションカード一覧です。");
+      if (session.card_ids.some(cardId => !/^(?:a1|a2|b1|b2|c1|c2)-\d{3,4}$/.test(cardId))) throw new Error("セッションに不正なカードIDがあります。");
       if (!Number.isInteger(session.last_session_position) || session.last_session_position < 0 || session.last_session_position >= session.card_ids.length) throw new Error("不正な再開位置です。");
       if (!session.ratings || typeof session.ratings !== "object" || Array.isArray(session.ratings)) throw new Error("不正な評価データです。");
       if (Object.values(session.ratings).some(value => !ratingLabels[value])) throw new Error("不正な評価値があります。");
@@ -801,7 +817,7 @@
       const response = await fetch(DECKS_URL, { credentials: "same-origin" });
       if (!response.ok) throw new Error(`Deck data request failed (${response.status}).`);
       const payload = await response.json();
-      if (payload.schema_version !== 1 || !Array.isArray(payload.decks)) throw new Error("Unsupported deck data schema.");
+      if (![1, 2].includes(payload.schema_version) || !Array.isArray(payload.decks)) throw new Error("Unsupported deck data schema.");
       state.payload = payload;
       state.decks = payload.decks;
       renderDeckPicker();

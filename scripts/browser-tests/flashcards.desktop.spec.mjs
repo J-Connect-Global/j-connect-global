@@ -16,6 +16,37 @@ const a1CardsPath = "/assets/data/learn-german/flashcards/cards-a1.json";
 const c2CardsPath = "/assets/data/learn-german/flashcards/cards-c2.json";
 const flashcardsRoute = "/germany/ja/learn-german/flashcards/?deck=a1-life-basics";
 
+async function installSpeechMock(page) {
+  await page.addInitScript(() => {
+    const calls = [];
+    class MockSpeechSynthesisUtterance {
+      constructor(text) {
+        this.text = text;
+      }
+    }
+    const speechSynthesis = {
+      cancel() {
+        calls.push({ type: "cancel" });
+      },
+      getVoices() {
+        return [{ name: "Test German", lang: "de-DE" }];
+      },
+      speak(utterance) {
+        calls.push({
+          type: "speak",
+          text: utterance.text,
+          lang: utterance.lang,
+          rate: utterance.rate,
+          voice: utterance.voice?.lang || ""
+        });
+      }
+    };
+    Object.defineProperty(window, "SpeechSynthesisUtterance", { configurable: true, value: MockSpeechSynthesisUtterance });
+    Object.defineProperty(window, "speechSynthesis", { configurable: true, value: speechSynthesis });
+    Object.defineProperty(window, "__flashcardsSpeechCalls", { configurable: true, value: calls });
+  });
+}
+
 test.beforeEach(async ({ page }) => {
   installRuntimeDiagnostics(page);
   await page.addInitScript(() => localStorage.setItem("jconnect_cookie_consent", "denied"));
@@ -90,7 +121,7 @@ test("flashcard session supports keyboard flip, three ratings, completion, resul
   await expect(page.locator("#flashcardsStudy")).toBeVisible();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
 
-  const flip = page.locator("#flashcardFlip");
+  const flip = page.locator("#flashcardFlipControl");
   await flip.focus();
   await page.keyboard.press("Space");
   await expect(flip).toHaveAttribute("aria-pressed", "true");
@@ -126,6 +157,46 @@ test("flashcard session supports keyboard flip, three ratings, completion, resul
   await activateDarkMode(page);
   await assertSharedLayout(page);
   await assertRouteReady(page);
+});
+
+test("German word and example audio can be played, switched, and stopped without overlapping", async ({ page }) => {
+  await installSpeechMock(page);
+  await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
+  await page.locator("#flashcardsStart").click();
+
+  const wordButton = page.locator("#flashcardsSpeak");
+  const exampleButton = page.locator("#flashcardsSpeakExample");
+  const word = await page.locator("#flashcardPrompt").textContent();
+  await expect(wordButton).toHaveAccessibleName(new RegExp(word));
+  await wordButton.click();
+  await expect(wordButton).toHaveAttribute("aria-pressed", "true");
+
+  await page.locator("#flashcardFlip").click();
+  const example = await page.locator("#flashcardExampleDe").textContent();
+  await expect(exampleButton).toBeVisible();
+  await expect(exampleButton).toBeEnabled();
+  await expect(exampleButton).toHaveAccessibleName(new RegExp(example.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  await exampleButton.click();
+  await expect(wordButton).toHaveAttribute("aria-pressed", "false");
+  await expect(exampleButton).toHaveAttribute("aria-pressed", "true");
+  expect(await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === "speak"))).toEqual([
+    { type: "speak", text: word, lang: "de-DE", rate: 0.9, voice: "de-DE" },
+    { type: "speak", text: example, lang: "de-DE", rate: 0.9, voice: "de-DE" }
+  ]);
+
+  await exampleButton.click();
+  await expect(exampleButton).toHaveAttribute("aria-pressed", "false");
+  await page.locator("#flashcardsNext").click();
+  await expect(wordButton).toHaveAttribute("aria-pressed", "false");
+
+  await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
+  await page.locator("#flashcardsInventorySearch").fill("夕方、夜会");
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText("1 / 650語");
+  await page.locator("#flashcardsInventoryStudyFiltered").click();
+  await page.locator("#flashcardFlip").click();
+  await expect(page.locator("#flashcardExampleDe")).toContainText("編集レビュー待ち");
+  await expect(exampleButton).toBeHidden();
+  await assertNoHorizontalOverflow(page);
 });
 
 test("level deck inventory lists every word with sorting, filters, saved state, CSV, and filtered study", async ({ page }) => {

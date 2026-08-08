@@ -60,8 +60,10 @@
     progressBar: root.querySelector("#flashcardsProgressBar"),
     directionLabel: root.querySelector("#flashcardsDirectionLabel"),
     speak: root.querySelector("#flashcardsSpeak"),
+    speakExample: root.querySelector("#flashcardsSpeakExample"),
     speechFallback: root.querySelector("#flashcardsSpeechFallback"),
     flip: root.querySelector("#flashcardFlip"),
+    flipControl: root.querySelector("#flashcardFlipControl"),
     front: root.querySelector(".flashcard__front"),
     back: root.querySelector(".flashcard__back"),
     prompt: root.querySelector("#flashcardPrompt"),
@@ -103,6 +105,8 @@
     session: null,
     restoredSession: null,
     isFlipped: false,
+    activeSpeechButton: null,
+    speechUtterance: null,
     toastTimer: null
   };
 
@@ -436,21 +440,23 @@
   }
 
   function setFlipped(flipped) {
+    if (!flipped && state.activeSpeechButton === elements.speakExample) stopSpeech();
     state.isFlipped = flipped;
     elements.flip.classList.toggle("is-flipped", flipped);
-    elements.flip.setAttribute("aria-pressed", flipped ? "true" : "false");
+    elements.flipControl.setAttribute("aria-pressed", flipped ? "true" : "false");
     elements.front.setAttribute("aria-hidden", flipped ? "true" : "false");
     elements.back.setAttribute("aria-hidden", flipped ? "false" : "true");
     elements.detailsToggle.disabled = !flipped;
     elements.ratingButtons.forEach(button => { button.disabled = !flipped; });
     if (!flipped) setDetailsExpanded(false);
+    updateExampleSpeechButton();
     const card = currentCard();
     if (card) {
       const face = flipped ? "裏面" : "表面";
       const value = flipped
         ? (state.session.selected_direction === "de-ja" ? card.japanese : card.display_de)
         : (state.session.selected_direction === "de-ja" ? card.display_de : card.japanese);
-      elements.flip.setAttribute("aria-label", `${face}: ${value}。クリック、Enter、Spaceで${flipped ? "表" : "裏"}に切り替えます。`);
+      elements.flipControl.setAttribute("aria-label", `${face}: ${value}。クリック、Enter、Spaceで${flipped ? "表" : "裏"}に切り替えます。`);
     }
   }
 
@@ -461,6 +467,7 @@
   }
 
   function renderCard() {
+    stopSpeech();
     const card = currentCard();
     if (!card) {
       showError("セッション内のカードが見つかりませんでした。教材を選び直してください。");
@@ -474,6 +481,12 @@
     elements.answer.textContent = deToJa ? card.japanese : card.display_de;
     elements.exampleDe.textContent = card.example_de || "例文は編集レビュー待ちです。";
     elements.exampleJa.textContent = card.example_ja || "出典付きの語彙参照カードとして先に公開しています。";
+    elements.speak.dataset.speechIdleLabel = `ドイツ語「${card.display_de}」を読み上げる`;
+    elements.speak.setAttribute("aria-label", elements.speak.dataset.speechIdleLabel);
+    elements.speakExample.dataset.speechIdleLabel = card.example_de
+      ? `例文「${card.example_de}」をドイツ語で読み上げる`
+      : "ドイツ語例文は準備中です";
+    elements.speakExample.setAttribute("aria-label", elements.speakExample.dataset.speechIdleLabel);
     elements.partOfSpeech.textContent = `${partOfSpeechLabels[card.part_of_speech] || card.part_of_speech} / ${card.unit_type}`;
     elements.grammar.textContent = formatGrammar(card);
     elements.collocations.textContent = card.collocations.join(" / ") || (card.quality_tier === "reference" ? "編集レビュー待ち" : "—");
@@ -494,7 +507,7 @@
     renderCard();
     configureSpeech();
     elements.study.scrollIntoView({ block: "start" });
-    window.setTimeout(() => elements.flip.focus(), 80);
+    window.setTimeout(() => elements.flipControl.focus(), 80);
   }
 
   function addActiveTime() {
@@ -550,6 +563,7 @@
 
   async function rateCurrentCard(rating) {
     if (!state.isFlipped || !ratingLabels[rating]) return;
+    stopSpeech();
     const cardId = currentCard().card_id;
     addActiveTime();
     state.session.ratings[cardId] = rating;
@@ -565,7 +579,7 @@
     state.session.last_session_position = nextIndex;
     await storage.putSession(state.session);
     renderCard();
-    elements.flip.focus();
+    elements.flipControl.focus();
   }
 
   async function moveCard(offset) {
@@ -576,11 +590,12 @@
     state.session.last_session_position = nextIndex;
     await storage.putSession(state.session);
     renderCard();
-    elements.flip.focus();
+    elements.flipControl.focus();
   }
 
   async function pauseSession() {
     if (!state.session) return;
+    stopSpeech();
     addActiveTime();
     await storage.putSession(state.session);
     state.restoredSession = state.session;
@@ -592,21 +607,93 @@
     elements.setup.scrollIntoView({ block: "start" });
   }
 
+  function speechSupported() {
+    return typeof window.speechSynthesis?.speak === "function" && typeof window.SpeechSynthesisUtterance === "function";
+  }
+
+  function updateExampleSpeechButton() {
+    const hasExample = Boolean(currentCard()?.example_de?.trim());
+    const available = speechSupported() && hasExample;
+    elements.speakExample.hidden = !available;
+    elements.speakExample.disabled = !available || !state.isFlipped;
+    elements.speakExample.tabIndex = available && state.isFlipped ? 0 : -1;
+  }
+
+  function setSpeechButtonState(button, speaking) {
+    button.classList.toggle("is-speaking", speaking);
+    button.setAttribute("aria-pressed", speaking ? "true" : "false");
+    if (button === elements.speak) button.textContent = speaking ? "読み上げを停止" : "ドイツ語を読み上げる";
+    const idleLabel = button.dataset.speechIdleLabel || "ドイツ語を読み上げる";
+    button.setAttribute("aria-label", speaking ? `${idleLabel}（停止）` : idleLabel);
+  }
+
+  function resetSpeechState() {
+    [elements.speak, elements.speakExample].forEach(button => setSpeechButtonState(button, false));
+    state.activeSpeechButton = null;
+    state.speechUtterance = null;
+  }
+
+  function stopSpeech() {
+    if (speechSupported()) {
+      try {
+        window.speechSynthesis.cancel();
+      } catch {
+        // Some embedded browsers expose the API before its speech service is ready.
+      }
+    }
+    resetSpeechState();
+  }
+
   function configureSpeech() {
-    const supported = "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
+    const supported = speechSupported();
     elements.speak.hidden = !supported;
     elements.speechFallback.hidden = supported;
     elements.speak.disabled = !supported;
+    updateExampleSpeechButton();
+  }
+
+  function speakGerman(text, button) {
+    if (!text?.trim() || !speechSupported()) return;
+    if (state.activeSpeechButton === button) {
+      stopSpeech();
+      return;
+    }
+    stopSpeech();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "de-DE";
+    utterance.rate = 0.9;
+    const voices = typeof window.speechSynthesis.getVoices === "function" ? window.speechSynthesis.getVoices() : [];
+    utterance.voice = voices.find(voice => String(voice.lang).toLowerCase().startsWith("de")) || null;
+    state.activeSpeechButton = button;
+    state.speechUtterance = utterance;
+    setSpeechButtonState(button, true);
+    const finish = () => {
+      if (state.speechUtterance === utterance) resetSpeechState();
+    };
+    utterance.onend = finish;
+    utterance.onerror = event => {
+      const isCurrent = state.speechUtterance === utterance;
+      finish();
+      if (isCurrent && !["canceled", "interrupted"].includes(event.error)) {
+        showToast("音声を再生できませんでした。端末の音声設定を確認してください。");
+      }
+    };
+    try {
+      window.speechSynthesis.speak(utterance);
+    } catch {
+      finish();
+      showToast("音声を再生できませんでした。端末の音声設定を確認してください。");
+    }
   }
 
   function speakCurrentCard() {
     const card = currentCard();
-    if (!card || !("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) return;
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(card.display_de);
-    utterance.lang = "de-DE";
-    utterance.rate = 0.9;
-    window.speechSynthesis.speak(utterance);
+    if (card) speakGerman(card.display_de, elements.speak);
+  }
+
+  function speakCurrentExample() {
+    const card = currentCard();
+    if (state.isFlipped && card?.example_de) speakGerman(card.example_de, elements.speakExample);
   }
 
   function resultCounts() {
@@ -830,13 +917,20 @@
       showOnly("picker");
       elements.picker.scrollIntoView({ block: "start" });
     });
-    elements.flip.addEventListener("click", () => setFlipped(!state.isFlipped));
+    elements.flip.addEventListener("click", event => {
+      if (event.target.closest("#flashcardsSpeakExample")) return;
+      setFlipped(!state.isFlipped);
+    });
     elements.detailsToggle.addEventListener("click", () => setDetailsExpanded(elements.detailsToggle.getAttribute("aria-expanded") !== "true"));
     elements.ratingButtons.forEach(button => button.addEventListener("click", () => rateCurrentCard(button.dataset.rating)));
     elements.previous.addEventListener("click", () => moveCard(-1));
     elements.next.addEventListener("click", () => moveCard(1));
     elements.endSession.addEventListener("click", pauseSession);
     elements.speak.addEventListener("click", speakCurrentCard);
+    elements.speakExample.addEventListener("click", event => {
+      event.stopPropagation();
+      speakCurrentExample();
+    });
     elements.reviewWeak.addEventListener("click", startWeakReview);
     elements.restart.addEventListener("click", startNewSession);
     elements.downloadCsv.addEventListener("click", downloadCsv);

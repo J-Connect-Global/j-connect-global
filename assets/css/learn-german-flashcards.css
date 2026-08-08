@@ -467,7 +467,8 @@
 .flashcards-choice input:focus-visible + span,
 .flashcards-toggle-button:focus-visible,
 .flashcards-button:focus-visible,
-.flashcard:focus-visible,
+.flashcard__flip-control:focus-visible,
+.flashcards-speech-icon:focus-visible,
 .flashcards-details-toggle:focus-visible {
   outline: 3px solid rgba(0, 103, 201, .24);
   outline-offset: 2px;
@@ -554,8 +555,21 @@
   perspective: 1200px;
 }
 
+.flashcard__flip-control {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
 .flashcard__inner {
   position: relative;
+  z-index: 2;
   display: grid;
   min-width: 0;
   min-height: 300px;
@@ -563,6 +577,7 @@
   border-radius: inherit;
   background: #fff;
   box-shadow: 0 16px 38px rgba(0, 54, 109, .13);
+  pointer-events: none;
   transform-style: preserve-3d;
   transition: transform .38s ease;
 }
@@ -629,6 +644,50 @@
   border-left: 4px solid var(--jc-blue);
   border-radius: var(--jc-radius-sm);
   background: var(--jc-soft);
+}
+
+.flashcard__example .flashcard__example-de-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  color: var(--jc-text);
+  font-size: 16px;
+}
+
+.flashcards-speech-icon {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--jc-line);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--jc-blue);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.flashcards-speech-icon:hover:not(:disabled) {
+  border-color: var(--jc-blue);
+  background: #eef6ff;
+}
+
+.flashcards-speech-icon[aria-pressed="true"],
+.flashcards-speech-icon.is-speaking {
+  border-color: var(--jc-blue);
+  background: var(--jc-blue);
+  color: #fff;
+}
+
+.flashcards-speech-icon:disabled {
+  cursor: not-allowed;
+  opacity: .52;
 }
 
 .flashcard__example strong,
@@ -1136,6 +1195,7 @@
 :root[data-theme="dark"] body .flashcards-choice span,
 :root[data-theme="dark"] body .flashcards-toggle-button,
 :root[data-theme="dark"] body .flashcards-button,
+:root[data-theme="dark"] body .flashcards-speech-icon,
 :root[data-theme="dark"] body .flashcards-details-toggle {
   border-color: var(--color-border, #263a52);
   background: var(--color-chip-bg, #0f1d30);
@@ -1181,6 +1241,7 @@
 
 :root[data-theme="dark"] body .flashcards-choice input:checked + span,
 :root[data-theme="dark"] body .flashcards-toggle-button[aria-pressed="true"],
+:root[data-theme="dark"] body .flashcards-speech-icon[aria-pressed="true"],
 :root[data-theme="dark"] body .flashcards-button.is-primary {
   border-color: var(--color-primary, #67b7ff);
   background: var(--color-primary, #67b7ff);

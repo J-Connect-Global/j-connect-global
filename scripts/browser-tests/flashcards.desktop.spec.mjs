@@ -185,7 +185,9 @@ test("German word and example audio can be played, switched, and stopped without
 
   const wordButton = page.locator("#flashcardsSpeak");
   const exampleButton = page.locator("#flashcardsSpeakExample");
-  const word = await page.locator("#flashcardPrompt").textContent();
+  const prompt = page.locator("#flashcardPrompt");
+  await expect(prompt).not.toHaveText("読み込み中");
+  const word = await prompt.textContent();
   await expect(wordButton).toHaveAccessibleName(new RegExp(word));
   await wordButton.click();
   await expect(wordButton).toHaveAttribute("aria-pressed", "true");

@@ -7,6 +7,7 @@
   const DECKS_URL = "/assets/data/learn-german/flashcards/decks.json";
   const DATA_BASE = "/assets/data/learn-german/flashcards/";
   const INVENTORY_SCRIPT_URL = "/assets/js/learn-german-flashcards-inventory.js";
+  const TARGETS_SCRIPT_URL = "/assets/js/learn-german-flashcards-targets.js";
   const BACKUP_SCHEMA_VERSION = 1;
   const LAST_DECK_KEY = "jconnect-flashcards-last-deck";
   const DAY_MS = 24 * 60 * 60 * 1000;
@@ -101,6 +102,7 @@
     decks: [],
     currentDeck: null,
     cardsById: new Map(),
+    targetController: null,
     inventoryController: null,
     session: null,
     restoredSession: null,
@@ -274,24 +276,31 @@
     };
   }
 
-  let inventoryFeaturePromise = null;
+  const featurePromises = new Map();
 
-  function loadInventoryFeature() {
-    if (window.JConnectFlashcardInventory) return Promise.resolve(window.JConnectFlashcardInventory);
-    if (inventoryFeaturePromise) return inventoryFeaturePromise;
-    inventoryFeaturePromise = new Promise((resolve, reject) => {
+  function loadFeature(globalName, url) {
+    if (window[globalName]) return Promise.resolve(window[globalName]);
+    if (featurePromises.has(globalName)) return featurePromises.get(globalName);
+    const promise = new Promise((resolve, reject) => {
       const script = document.createElement("script");
-      script.src = INVENTORY_SCRIPT_URL;
+      script.src = url;
       script.async = true;
-      script.addEventListener("load", () => resolve(window.JConnectFlashcardInventory), { once: true });
+      script.addEventListener("load", () => resolve(window[globalName]), { once: true });
       script.addEventListener("error", () => {
-        inventoryFeaturePromise = null;
+        featurePromises.delete(globalName);
         script.remove();
         reject(new Error("Flashcard inventory feature could not be loaded."));
       }, { once: true });
       document.head.append(script);
     });
-    return inventoryFeaturePromise;
+    featurePromises.set(globalName, promise);
+    return promise;
+  }
+
+  async function prepareStudyTargets(deck) {
+    const feature = await loadFeature("JConnectFlashcardTargets", TARGETS_SCRIPT_URL);
+    if (!state.targetController) state.targetController = feature.create({ root, storage, emptyProgress, selectedValue });
+    await state.targetController.prepare(deck);
   }
 
   async function startInventorySession(cardIds) {
@@ -312,7 +321,7 @@
       elements.inventory.hidden = true;
       return;
     }
-    const feature = await loadInventoryFeature();
+    const feature = await loadFeature("JConnectFlashcardInventory", INVENTORY_SCRIPT_URL);
     if (!feature?.create) throw new Error("Flashcard inventory feature is unavailable.");
     if (!state.inventoryController) {
       state.inventoryController = feature.create({
@@ -324,6 +333,9 @@
         safeCsvValue,
         downloadBlob,
         showToast,
+        onProgressChange(progress) {
+          state.targetController?.setProgress(progress);
+        },
         startSession: startInventorySession
       });
     }
@@ -378,10 +390,13 @@
         setSelectedValue("session-size", state.restoredSession.selected_session_size);
         setSelectedValue("session-order", state.restoredSession.selected_order);
         setSelectedValue("session-direction", state.restoredSession.selected_direction);
+        setSelectedValue("session-target", state.restoredSession.selected_target || "all");
       } else {
         elements.resumeNote.hidden = true;
         elements.resume.hidden = true;
+        setSelectedValue("session-target", "all");
       }
+      await prepareStudyTargets(deck);
       elements.loading.hidden = true;
       showOnly("setup");
       elements.setup.scrollIntoView({ block: "start" });
@@ -403,6 +418,7 @@
       selected_direction: options.direction || selectedValue("session-direction") || "de-ja",
       selected_session_size: options.size || selectedValue("session-size") || "10",
       selected_order: options.order || selectedValue("session-order") || "ordered",
+      selected_target: options.target || selectedValue("session-target") || "all",
       started_at: new Date(now).toISOString(),
       last_activity_at: now,
       elapsed_ms: 0,
@@ -414,13 +430,20 @@
   function selectedSessionCardIds() {
     const order = selectedValue("session-order") || "ordered";
     const sizeValue = selectedValue("session-size") || "10";
-    const source = order === "shuffle" ? shuffle(state.currentDeck.card_ids) : [...state.currentDeck.card_ids];
+    const eligible = state.targetController?.cardIds() || [];
+    const source = order === "shuffle" ? shuffle(eligible) : eligible;
     const size = sizeValue === "all" ? source.length : Math.min(Number(sizeValue), source.length);
     return source.slice(0, size);
   }
 
   async function startNewSession() {
-    state.session = createSession(selectedSessionCardIds());
+    await state.targetController?.refresh();
+    const cardIds = selectedSessionCardIds();
+    if (!cardIds.length) {
+      showToast("選択した学習対象に該当するカードがありません。");
+      return;
+    }
+    state.session = createSession(cardIds);
     state.restoredSession = null;
     await storage.putSession(state.session);
     openStudy();
@@ -508,7 +531,10 @@
     renderCard();
     configureSpeech();
     elements.study.scrollIntoView({ block: "start" });
-    window.setTimeout(() => elements.flipControl.focus(), 80);
+    window.setTimeout(() => {
+      const active = document.activeElement;
+      if (!active || active === document.body || active === elements.start) elements.flipControl.focus();
+    }, 80);
   }
 
   function addActiveTime() {
@@ -550,6 +576,7 @@
       selected_session_size: state.session.selected_session_size
     };
     await storage.putProgress(progress);
+    state.targetController?.setProgress(progress);
     state.inventoryController?.setProgress(progress);
   }
 
@@ -607,6 +634,7 @@
     addActiveTime();
     await storage.putSession(state.session);
     state.restoredSession = state.session;
+    await state.targetController?.refresh();
     elements.resumeNote.textContent = `中断したセッションがあります（${state.session.last_session_position + 1}/${state.session.card_ids.length}枚目）。`;
     elements.resumeNote.hidden = false;
     elements.resume.hidden = false;
@@ -901,6 +929,8 @@
     state.inventoryController?.clearProgress();
     elements.resume.hidden = true;
     elements.resumeNote.hidden = true;
+    setSelectedValue("session-target", "all");
+    state.targetController?.clear();
     showToast("この端末の学習記録をすべて削除しました。");
     if (state.currentDeck) showOnly("setup");
     else showOnly("picker");
@@ -916,6 +946,8 @@
 
   function bindEvents() {
     elements.start.addEventListener("click", startNewSession);
+    root.querySelectorAll('input[name="session-size"], input[name="session-order"], input[name="session-direction"], input[name="session-target"]')
+      .forEach(input => input.addEventListener("change", () => state.targetController?.render()));
     elements.resume.addEventListener("click", resumeSession);
     elements.chooseAnother.addEventListener("click", () => {
       const url = new URL(window.location.href);

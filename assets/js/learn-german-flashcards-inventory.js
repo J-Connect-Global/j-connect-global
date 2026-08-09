@@ -11,6 +11,7 @@
       safeCsvValue,
       downloadBlob,
       showToast,
+      onProgressChange,
       startSession
     } = options;
     const elements = {
@@ -292,6 +293,7 @@
       const progress = { ...previous, saved: !previous.saved };
       await storage.putProgress(progress);
       state.progressByCardId.set(cardId, progress);
+      onProgressChange?.(progress);
       render();
       showToast(progress.saved ? "単語を保存しました。" : "単語を保存から外しました。");
     }

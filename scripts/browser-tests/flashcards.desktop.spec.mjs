@@ -117,6 +117,10 @@ test("flashcard session supports front and back keyboard ratings, buttons, compl
   await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
   await expect(page.locator("#flashcardsSetup")).toBeVisible();
   await expect(page.locator("#sessionSetupTitle")).toContainText("A1");
+  await expect(page.locator('[data-study-target-count="all"]')).toHaveText("650語");
+  await expect(page.locator('[data-study-target-count="unstarted"]')).toHaveText("650語");
+  await expect(page.locator('input[name="session-target"][value="studied"]')).toBeDisabled();
+  await expect(page.locator("#flashcardsStartSummary")).toContainText("すべて 650語から10枚");
   await page.locator("#flashcardsStart").click();
   await expect(page.locator("#flashcardsStudy")).toBeVisible();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
@@ -181,6 +185,55 @@ test("flashcard session supports front and back keyboard ratings, buttons, compl
   await activateDarkMode(page);
   await assertSharedLayout(page);
   await assertRouteReady(page);
+});
+
+test("study setup filters sessions by saved progress and last rating with live counts", async ({ page }) => {
+  await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
+  await page.evaluate(async () => {
+    const base = {
+      attempts: 1,
+      known_count: 0,
+      unsure_count: 0,
+      again_count: 0,
+      current_streak: 0,
+      saved: false
+    };
+    await Promise.all([
+      window.JConnectFlashcardStorage.putProgress({ ...base, card_id: "a1-001", status: "reviewing", again_count: 1, last_result: "again", next_review: "2999-01-01T00:00:00.000Z" }),
+      window.JConnectFlashcardStorage.putProgress({ ...base, card_id: "a1-002", status: "mastered", attempts: 3, known_count: 3, current_streak: 3, saved: true, last_result: "known", next_review: "2999-01-01T00:00:00.000Z" }),
+      window.JConnectFlashcardStorage.putProgress({ ...base, card_id: "a1-003", status: "reviewing", unsure_count: 1, last_result: "unsure", next_review: "2000-01-01T00:00:00.000Z" }),
+      window.JConnectFlashcardStorage.putProgress({ ...base, card_id: "a1-004", status: "unstarted", attempts: 0, saved: true })
+    ]);
+  });
+  await page.reload();
+  await expect(page.locator("#flashcardsSetup")).toBeVisible();
+
+  const expectedCounts = {
+    all: "650語",
+    unstarted: "647語",
+    studied: "3語",
+    again: "1語",
+    unsure: "1語",
+    known: "1語",
+    due: "1語",
+    saved: "2語"
+  };
+  for (const [target, count] of Object.entries(expectedCounts)) {
+    await expect(page.locator(`[data-study-target-count="${target}"]`)).toHaveText(count);
+  }
+
+  await page.locator('input[name="session-target"][value="again"]').check();
+  await expect(page.locator("#flashcardsStartSummary")).toHaveText("もう一度 1語から1枚を、収録順・独→日で出題します。");
+  await page.locator("#flashcardsStart").click();
+  await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 1");
+  await expect.poll(() => page.evaluate(async () => (await window.JConnectFlashcardStorage.getSession("a1-life-basics"))?.selected_target)).toBe("again");
+
+  await page.locator("#flashcardsEndSession").click();
+  await page.locator('input[name="session-target"][value="saved"]').check();
+  await expect(page.locator("#flashcardsStartSummary")).toContainText("保存済み 2語から2枚");
+  await page.locator("#flashcardsStart").click();
+  await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 2");
+  await expect.poll(() => page.evaluate(async () => (await window.JConnectFlashcardStorage.getSession("a1-life-basics"))?.card_ids)).toEqual(["a1-002", "a1-004"]);
 });
 
 test("German word and example audio can be played, switched, and stopped without overlapping", async ({ page }) => {

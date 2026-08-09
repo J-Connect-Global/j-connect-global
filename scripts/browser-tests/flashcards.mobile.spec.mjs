@@ -61,6 +61,12 @@ test("mobile flashcard keeps progress, card, and primary controls readable at 36
   await expect(page.locator("#flashcardsInventory")).toBeVisible();
   await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(50);
   expect(await page.locator(".flashcards-inventory-table-wrap").evaluate(element => element.scrollWidth > element.clientWidth)).toBe(true);
+  await expect(page.locator(".flashcards-study-target")).toBeVisible();
+  await expect(page.locator('[data-study-target-count="all"]')).toHaveText("650語");
+  await expect(page.locator("#flashcardsStart")).toHaveCSS("background-image", /linear-gradient/);
+  const startBox = await page.locator("#flashcardsStart").boundingBox();
+  const actionsBox = await page.locator(".flashcards-setup-actions").boundingBox();
+  expect(startBox.width).toBeGreaterThan(actionsBox.width * 0.95);
   await assertNoHorizontalOverflow(page);
   await page.locator("#flashcardsStart").tap();
   await expect(page.locator("#flashcardsStudy")).toBeVisible();

@@ -43,6 +43,11 @@
   <link rel="stylesheet" href="/assets/css/learn-german-flashcards.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <link rel="stylesheet" href="/assets/css/social-share.css">
+  <style data-flashcards-setup-ui>
+    .flashcards-study-target{grid-column:1/-1}.flashcards-fieldset-note{margin:0 0 10px;color:var(--jc-muted);font-size:12px;line-height:1.55}.flashcards-study-target-row{grid-template-columns:repeat(4,minmax(0,1fr))}.flashcards-study-target-option span{flex-direction:column;gap:3px;min-height:52px}.flashcards-study-target-option small{color:var(--jc-muted);font-size:11px;font-weight:800}.flashcards-study-target-option input:checked+span small{color:rgba(255,255,255,.84)}:root[data-theme="dark"] .flashcards-study-target-option input:checked+span small{color:#082b4c}.flashcards-choice input:disabled+span{cursor:not-allowed;opacity:.48}.flashcards-setup-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.flashcards-start-summary,#flashcardsStart{grid-column:1/-1}.flashcards-start-summary{margin:0;color:var(--jc-navy);font-size:13px;font-weight:800;line-height:1.55;text-align:center}#flashcardsStart{min-height:58px;padding:14px 24px;border-radius:var(--jc-radius-md);background:linear-gradient(135deg,var(--jc-blue),var(--jc-navy));box-shadow:0 12px 24px rgba(0,72,145,.2);font-size:16px;transition:box-shadow .18s ease,transform .18s ease}#flashcardsStart::after{margin-inline-start:9px;content:"→";font-size:19px;line-height:1}#flashcardsStart:hover:not(:disabled){background:linear-gradient(135deg,var(--jc-blue),var(--jc-navy));box-shadow:0 14px 28px rgba(0,72,145,.26);color:#fff;transform:translateY(-1px)}
+    @media(max-width:759px){.flashcards-study-target-row{grid-template-columns:repeat(2,minmax(0,1fr))}.flashcards-setup-actions{grid-template-columns:1fr}.flashcards-setup-actions>*{grid-column:1}}
+    @media(prefers-reduced-motion:reduce){#flashcardsStart{transition:none}#flashcardsStart:hover:not(:disabled){transform:none}}
+  </style>
   <script src="/assets/js/cookie-consent.js" defer></script>
 
   <script type="application/ld+json" data-jconnect-managed="page-structured-data">{"@context":"https://schema.org","@type":"WebPage","name":"ドイツ語暗記カード A1・A2・B1・B2・C1・C2・レベル別10,000語","description":"A1からC2まで、下位レベルの語彙を含めずに分けた合計10,000語の暗記カード。編集済み実践200枚と、出典付き語彙9,800枚を収録しています。","inLanguage":"ja","url":"https://j-connect-global.com/germany/ja/learn-german/flashcards/","isPartOf":{"@type":"WebSite","@id":"https://j-connect-global.com/#website","name":"J-Connect Global","url":"https://j-connect-global.com/"},"publisher":{"@type":"Organization","@id":"https://j-connect-global.com/#organization","name":"J-Connect Global","url":"https://j-connect-global.com/"}}</script>
@@ -190,11 +195,26 @@
               <label class="flashcards-choice"><input type="radio" name="session-direction" value="ja-de"><span>日→独</span></label>
             </div>
           </fieldset>
+          <fieldset class="flashcards-fieldset flashcards-study-target">
+            <legend>学習対象</legend>
+            <p class="flashcards-fieldset-note">この端末の学習記録・保存状態から、今回出題するカードを絞り込みます。</p>
+            <div class="flashcards-choice-row flashcards-study-target-row">
+              <label class="flashcards-choice flashcards-study-target-option"><input type="radio" name="session-target" value="all" checked><span>すべて<small data-study-target-count="all">0語</small></span></label>
+              <label class="flashcards-choice flashcards-study-target-option"><input type="radio" name="session-target" value="unstarted"><span>未学習<small data-study-target-count="unstarted">0語</small></span></label>
+              <label class="flashcards-choice flashcards-study-target-option"><input type="radio" name="session-target" value="studied"><span>学習済み<small data-study-target-count="studied">0語</small></span></label>
+              <label class="flashcards-choice flashcards-study-target-option"><input type="radio" name="session-target" value="again"><span>もう一度<small data-study-target-count="again">0語</small></span></label>
+              <label class="flashcards-choice flashcards-study-target-option"><input type="radio" name="session-target" value="unsure"><span>迷った<small data-study-target-count="unsure">0語</small></span></label>
+              <label class="flashcards-choice flashcards-study-target-option"><input type="radio" name="session-target" value="known"><span>覚えた<small data-study-target-count="known">0語</small></span></label>
+              <label class="flashcards-choice flashcards-study-target-option"><input type="radio" name="session-target" value="due"><span>復習期限<small data-study-target-count="due">0語</small></span></label>
+              <label class="flashcards-choice flashcards-study-target-option"><input type="radio" name="session-target" value="saved"><span>保存済み<small data-study-target-count="saved">0語</small></span></label>
+            </div>
+          </fieldset>
         </div>
 
         <p id="flashcardsResumeNote" class="flashcards-resume-note" hidden></p>
         <div class="flashcards-setup-actions">
-          <button id="flashcardsStart" class="flashcards-button is-primary" type="button">新しく学習を始める</button>
+          <p id="flashcardsStartSummary" class="flashcards-start-summary" aria-live="polite"></p>
+          <button id="flashcardsStart" class="flashcards-button flashcards-start-button is-primary" type="button">新しく学習を始める</button>
           <button id="flashcardsResume" class="flashcards-button" type="button" hidden>続きから再開</button>
           <button id="flashcardsChooseAnother" class="flashcards-button" type="button">別の教材を選ぶ</button>
         </div>

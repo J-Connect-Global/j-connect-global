@@ -50,7 +50,7 @@ test("mobile Learn German has a four-item page navigation without overflow", asy
     await expect(page.locator('.learn-mobile-page-nav a[href="#original-web-tools"]')).toHaveAttribute("aria-current", "location");
   }
 
-  await expect(page.locator("#originalDeckGrid .learn-deck-card")).toHaveCount(17);
+  await expect(page.locator("#originalDeckGrid .learn-deck-card")).toHaveCount(14);
   await assertNoHorizontalOverflow(page);
   await assertRouteReady(page);
 });
@@ -59,10 +59,10 @@ test("mobile flashcard keeps progress, card, and primary controls readable at 36
   await installSpeechMock(page);
   await openDataRoute(page, "/germany/ja/learn-german/flashcards/?deck=a1-life-basics", [decksPath, a1CardsPath]);
   await expect(page.locator("#flashcardsInventory")).toBeVisible();
-  await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(50);
+  await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(25);
   expect(await page.locator(".flashcards-inventory-table-wrap").evaluate(element => element.scrollWidth > element.clientWidth)).toBe(true);
   await expect(page.locator(".flashcards-study-target")).toBeVisible();
-  await expect(page.locator('[data-study-target-count="all"]')).toHaveText("650語");
+  await expect(page.locator('[data-study-target-count="all"]')).toHaveText("36語");
   await expect(page.locator("#flashcardsStart")).toHaveCSS("background-image", /linear-gradient/);
   const startBox = await page.locator("#flashcardsStart").boundingBox();
   const actionsBox = await page.locator(".flashcards-setup-actions").boundingBox();
@@ -90,6 +90,13 @@ test("mobile flashcard keeps progress, card, and primary controls readable at 36
   await expect(page.locator('[data-rating="known"]')).toBeVisible();
   await page.locator('[data-rating="known"]').tap();
   await expect(page.locator("#flashcardsPosition")).toHaveText("3 / 10");
+  for (let index = 0; index < 8; index += 1) {
+    await page.locator('[data-rating="known"]').tap();
+  }
+  await expect(page.locator("#flashcardsResults")).toBeVisible();
+  await expect(page.locator(".flashcards-result-score")).toContainText("90%");
+  await expect(page.locator(".flashcards-result-metrics")).toBeVisible();
+  await expect(page.locator(".flashcards-result-dashboard")).toHaveCSS("grid-template-columns", /\d+px/);
   await activateDarkMode(page);
   await assertNoHorizontalOverflow(page);
   await assertRouteReady(page);

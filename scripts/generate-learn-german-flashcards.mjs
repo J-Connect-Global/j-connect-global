@@ -4,8 +4,8 @@ import { fileURLToPath } from "node:url";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outputDir = path.join(rootDir, "assets/data/learn-german/flashcards");
-const verifiedDate = "2026-08-02";
-const generatedDate = "2026-08-09";
+const verifiedDate = "2026-08-14";
+const generatedDate = "2026-08-14";
 
 const sceneLabels = {
   daily: "日常",
@@ -244,11 +244,51 @@ const rawCards = {
   ]
 };
 
+const supplementalReviewedCards = {
+  A1: [
+    card("a1-051", "guten Morgen", "Guten Morgen!", "phrase", "phrase", "おはようございます", "Guten Morgen, Frau Weber!", "おはようございます、ヴェーバーさん。", ["daily", "work"], { usage: "朝に使う挨拶。挨拶として書くときは文頭の Guten を大文字にします。" }, ["Guten Morgen sagen"], "くだけた『おはよう』にも丁寧な朝の挨拶にも使えます。", ["hallo", "guten Tag"]),
+    card("a1-052", "pink", "pink", "word", "adjective", "ピンク色の", "Die Jacke ist pink.", "そのジャケットはピンク色です。", ["daily", "shopping"], { usage: "色を表す形容詞。述語では語尾変化せず、名詞の前では口語で eine pinke Jacke の形も使われます。" }, ["pink sein", "eine pinke Jacke"], "rosa も『ピンク色の』を表す基本語です。", ["rosa", "die Farbe"])
+  ],
+  A2: [
+    card("a2-051", "Daumen", "der Daumen", "word", "noun", "親指", "Ich habe mir den Daumen verletzt.", "親指をけがしました。", ["daily", "medical"], { article: "der", plural: "Daumen" }, ["den Daumen drücken", "sich am Daumen verletzen"], "den Daumen drücken は『幸運を祈る』という慣用表現です。", ["der Finger", "die Hand"]),
+    card("a2-052", "Musical", "das Musical", "word", "noun", "ミュージカル", "Wir sehen am Samstag ein Musical.", "土曜日にミュージカルを観ます。", ["daily"], { article: "das", plural: "Musicals" }, ["ein Musical sehen", "in einem Musical mitspielen"], "英語由来の語ですが、ドイツ語では中性名詞として使います。", ["das Theater", "die Musik"])
+  ],
+  C1: [
+    card("c1-001", "Wahrnehmung", "die Wahrnehmung", "word", "noun", "知覚、認識", "Unsere Wahrnehmung wird stark von früheren Erfahrungen beeinflusst.", "私たちの認識は過去の経験に強く影響されます。", ["daily", "work"], { article: "die", plural: "Wahrnehmungen" }, ["die öffentliche Wahrnehmung", "die Wahrnehmung beeinflussen"], "身体的な『知覚』にも、社会的な『受け止め方・認識』にも使われます。", ["wahrnehmen", "die Einschätzung"])
+  ],
+  C2: [
+    card("c2-001", "unbeschadet", "unbeschadet", "word", "preposition", "〜を損なうことなく、〜にかかわらず", "Unbeschadet weiterer Ansprüche können Sie zunächst eine Nachbesserung verlangen.", "その他の請求権を損なうことなく、まず修補を求めることができます。", ["administration", "work"], { usage: "主に文語・法律語で、通常はGenitivとともに使います。" }, ["unbeschadet weiterer Ansprüche", "unbeschadet dessen"], "権利や規則が引き続き有効であることを明示する改まった表現です。", ["ungeachtet", "vorbehaltlich"]),
+    card("c2-002", "etwas ad absurdum führen", "etwas ad absurdum führen", "collocation", "phrase", "〜の矛盾を明らかにする、〜をばかげた帰結に導く", "Diese Auslegung würde den Zweck der Regelung ad absurdum führen.", "この解釈では、その規則の目的が成り立たなくなってしまいます。", ["work"], { usage: "etwas (Akkusativ) ad absurdum führen。議論や規則の帰結が不合理になることを示します。" }, ["eine Argumentation ad absurdum führen"], "単なる『反対』ではなく、前提を押し進めると不合理になることを表します。", ["der Widerspruch", "widerlegen"]),
+    card("c2-003", "sich einer Sache nicht verschließen", "sich einer Sache nicht verschließen", "collocation", "phrase", "〜を頭から退けない、〜に心を閉ざさない", "Wir sollten uns der Möglichkeit einer Übergangslösung nicht verschließen.", "暫定的な解決策の可能性を頭から退けるべきではありません。", ["work"], { usage: "sich einer Sache (Dativ) nicht verschließen。慎重に提案を受け入れる余地を示します。" }, ["sich einem Vorschlag nicht verschließen"], "全面的な賛成ではなく、検討する用意があるという含みを持ちます。", ["offen sein für", "in Betracht ziehen"]),
+    card("c2-004", "etwas auf den Prüfstand stellen", "etwas auf den Prüfstand stellen", "collocation", "phrase", "〜を根本から検証し直す", "Nach dem Vorfall wurden sämtliche Kontrollprozesse auf den Prüfstand gestellt.", "その出来事を受け、すべての管理プロセスが根本から再検証されました。", ["work"], { usage: "etwas (Akkusativ) auf den Prüfstand stellen。制度・前提・手順を批判的に再検討する表現です。" }, ["eine Strategie auf den Prüfstand stellen"], "単なる確認よりも、変更の可能性を含む厳密な見直しを表します。", ["überprüfen", "hinterfragen"]),
+    card("c2-005", "Trugschluss", "der Trugschluss", "word", "noun", "誤った推論、思い違い", "Es wäre ein Trugschluss, aus der Korrelation unmittelbar auf eine Ursache zu schließen.", "相関関係から直ちに原因を推論するのは誤りです。", ["work"], { article: "der", plural: "Trugschlüsse" }, ["einem Trugschluss erliegen", "ein logischer Trugschluss"], "単なる事実誤認ではなく、推論の過程に誤りがあることを指します。", ["der Irrtum", "der Fehlschluss"]),
+    card("c2-006", "Ambivalenz", "die Ambivalenz", "word", "noun", "相反する感情・評価の併存、両価性", "Der Bericht macht die Ambivalenz der Reform deutlich.", "その報告書は改革に対する相反する評価の併存を明らかにしています。", ["daily", "work"], { article: "die", plural: "Ambivalenzen" }, ["eine gewisse Ambivalenz", "Ambivalenz empfinden"], "肯定と否定など、相反する二つの態度が同時に存在する状態です。", ["ambivalent", "der Zwiespalt"]),
+    card("c2-007", "nuanciert", "nuanciert", "word", "adjective", "微妙な差異を捉えた、ニュアンスに富む", "Die Autorin zeichnet ein nuanciertes Bild der gesellschaftlichen Folgen.", "著者は社会的影響を微妙な差異まで捉えて描いています。", ["work"], { usage: "評価・説明・議論が単純化を避け、細かな違いを示すことを表します。" }, ["nuanciert argumentieren", "eine nuancierte Darstellung"], "『詳しい』だけでなく、対立する側面や程度差を丁寧に区別する語です。", ["differenziert", "vielschichtig"]),
+    card("c2-008", "einer Sache Rechnung tragen", "einer Sache Rechnung tragen", "collocation", "phrase", "〜を十分に考慮する", "Die Planung muss den unterschiedlichen Bedürfnissen der Beteiligten Rechnung tragen.", "計画では関係者の異なるニーズを十分に考慮しなければなりません。", ["administration", "work"], { usage: "einer Sache (Dativ) Rechnung tragen。改まった文章や議論で使います。" }, ["den Umständen Rechnung tragen", "einer Entwicklung Rechnung tragen"], "berücksichtigen よりも、判断や設計へ実際に反映する含みが強い表現です。", ["berücksichtigen", "einbeziehen"]),
+    card("c2-009", "vorwegnehmen", "etwas vorwegnehmen", "word", "verb", "〜を先取りして述べる、〜を先に起こす", "Um das Ergebnis vorwegzunehmen: Die Maßnahme hatte kaum Wirkung.", "結論を先に述べると、その施策にはほとんど効果がありませんでした。", ["work"], { third_person: "nimmt vorweg", past_participle: "vorweggenommen", auxiliary: "haben", separable: true, reflexive: false, government: "Akkusativ" }, ["das Ergebnis vorwegnehmen", "eine Entwicklung vorwegnehmen"], "発表の結論を先に示す場合と、将来の展開を先取りする場合に使います。", ["vorab sagen", "antizipieren"]),
+    card("c2-010", "unter Vorbehalt", "unter Vorbehalt", "phrase", "phrase", "留保付きで、暫定的に", "Ich kann dem Vorschlag nur unter Vorbehalt zustimmen.", "その提案には留保付きでしか同意できません。", ["administration", "work"], { usage: "最終確認や条件の充足までは確定しないことを示します。" }, ["unter Vorbehalt zustimmen", "vorbehaltlich der Prüfung"], "同意や承認が無条件・最終的ではないことを明確にします。", ["vorläufig", "vorbehaltlich"]),
+    card("c2-011", "insofern, als ...", "insofern, als ...", "phrase", "conjunction", "〜という点において、〜である限り", "Die Kritik ist insofern berechtigt, als die Datengrundlage lückenhaft ist.", "データの根拠に欠落があるという点で、その批判は妥当です。", ["work"], { usage: "insofern ..., als ... の形で、判断が当てはまる範囲や理由を限定します。" }, ["insofern berechtigt, als"], "主張を全面的に認めず、成立する範囲を精密に限定する表現です。", ["soweit", "in dem Maße"]),
+    card("c2-012", "mitnichten", "mitnichten", "word", "adverb", "決して〜ではない、まったく〜ない", "Die Verzögerung war mitnichten unvermeidbar.", "その遅延は決して不可避ではありませんでした。", ["daily", "work"], { usage: "強い否定を表す文語的な副詞。皮肉や反論の響きを伴うことがあります。" }, ["mitnichten der Fall sein"], "日常会話の nicht より強く、やや古風または修辞的です。", ["keineswegs", "durchaus nicht"])
+  ]
+};
+
 const levels = ["A1", "A2", "B1", "B2", "C1", "C2"];
 const levelFiles = Object.fromEntries(levels.map((level) => [level, `cards-${level.toLowerCase()}.json`]));
-const levelTargets = { A1: 650, A2: 650, B1: 1100, B2: 1600, C1: 3000, C2: 3000 };
-const totalTarget = Object.values(levelTargets).reduce((sum, count) => sum + count, 0);
-const sourceLexiconPath = path.join(rootDir, "content/learn-german/flashcards/cefr-lexicon-source.json");
+
+const reviewedLevelMoves = {
+  A2: `a1-015 a1-016 a1-018 a1-021 a1-022 a1-029 a1-030 a1-032 a1-034 a1-037 a1-038 a1-039 a1-043 a1-044 a1-050`.split(" "),
+  B1: `a1-045 a2-003 a2-004 a2-005 a2-008 a2-009 a2-011 a2-013 a2-014 a2-016 a2-017 a2-018 a2-019 a2-020 a2-023 a2-024 a2-025 a2-026 a2-027 a2-028 a2-030 a2-031 a2-032 a2-033 a2-036 a2-037 a2-038 a2-040 a2-042 a2-043 a2-044 a2-045 a2-049`.split(" "),
+  B2: `b1-002 b1-004 b1-005 b1-006 b1-008 b1-012 b1-013 b1-014 b1-016 b1-018 b1-019 b1-022 b1-023 b1-028 b1-030 b1-031 b1-032 b1-034 b1-035 b1-036 b1-038 b1-040 b1-041 b1-042 b1-045 b1-048 b1-049 b1-050`.split(" "),
+  C1: `b1-009 b1-039 b2-008 b2-009 b2-010 b2-013 b2-015 b2-016 b2-017 b2-018 b2-019 b2-021 b2-023 b2-024 b2-027 b2-028 b2-033 b2-034 b2-035 b2-036 b2-037 b2-039 b2-041 b2-043 b2-049 c2-004 c2-005 c2-006 c2-007 c2-008 c2-009 c2-010`.split(" ")
+};
+
+const reviewedLevelById = new Map();
+for (const [level, ids] of Object.entries(reviewedLevelMoves)) {
+  ids.forEach((id) => {
+    if (reviewedLevelById.has(id)) throw new Error(`Card ${id} has more than one reviewed CEFR level.`);
+    reviewedLevelById.set(id, level);
+  });
+}
 
 sceneLabels.general = "総合語彙";
 
@@ -283,82 +323,27 @@ function normalizedCuratedCard(level, entry) {
   };
 }
 
-function preferredJapanese(value) {
-  return [...new Set(String(value || "").split("、").map((item) => item.trim()).filter(Boolean))]
-    .sort((left, right) => [...left].length - [...right].length)
-    .slice(0, 3)
-    .join("、");
-}
-
-function normalizedReferenceCard(level, source, serial) {
-  return {
-    card_id: `${level.toLowerCase()}-${String(serial).padStart(4, "0")}`,
-    lemma: source.lemma,
-    display_de: source.display_de,
-    unit_type: source.lemma.includes(" ") ? "phrase" : "word",
-    part_of_speech: source.part_of_speech,
-    primary_level: level,
-    level_tags: [level],
-    topic_tags: ["general", sceneLabels.general],
-    scene_tags: ["general"],
-    japanese: preferredJapanese(source.japanese),
-    example_de: "",
-    example_ja: "",
-    grammar: source.grammar || {},
-    collocations: [],
-    learning_note: "独日辞書の見出し語をドイツ語コーパス頻度で並べた参照カードです。例文と語法は編集レビュー待ちです。",
-    related_terms: [],
-    source_note: "FreeDict/WikDict German-Japanese headword ranked with Leipzig Corpora Collection frequency samples; CEFR band is a J-Connect study target.",
-    source_refs: source.source_refs || ["freedict-deu-jpn", "leipzig-corpora"],
-    quality_tier: "reference",
-    verification_status: "source-aligned-needs-editorial-review",
-    frequency_rank: source.rank,
-    selection_score: source.selection_score,
-    corpus_coverage: source.corpus_coverage,
-    updated_at: generatedDate,
-    verified_at: null
-  };
-}
-
-const editorialA1Priority = new Map(`
-Abend Adresse Alter Antwort Apfel Arbeit Arzt Auto Bahnhof Bank Bauch Baum Bett Bier Bild Brot Bruder Buch Bus Computer Datum Dorf Dusche Ei Eltern Essen Familie Fenster Fisch Fleisch Frage Frau Freund Frühstück Fuß Garten Geld Geschäft Getränk Haus Hilfe Hotel Hund Hunger Jacke Jahr Kaffee Karte Katze Kind Kino Küche Land Lehrer Liebe Mann Milch Minute Mittwoch Monat Morgen Mutter Name Nacht Nummer Obst Papa Park Person Platz Polizei Problem Rechnung Restaurant Samstag Schule Schwester Sohn Sonntag Sprache Stadt Straße Student Stunde Tag Taxi Tee Telefon Tochter Toilette Tür Uhr Vater Wasser Weg Wetter Woche Wohnung Wort Zeit Zimmer Zug
-antworten arbeiten bezahlen bleiben brauchen essen fahren finden fragen geben gehen heißen helfen hören kaufen kommen lernen lesen machen nehmen öffnen sagen schlafen schließen schreiben sehen sein sprechen stehen studieren suchen trinken verstehen warten wohnen zeigen
-alt billig blau braun deutsch einfach falsch gelb gesund groß grün gut heiß hungrig jung kalt kaputt klein krank langsam neu offen rot schlecht schnell schön schwarz teuer warm weiß wichtig
-gestern heute hier immer jetzt links morgen nicht oben rechts sehr unten zusammen
-`.trim().split(/\s+/).map((lemma, index) => [lemma, index]));
-
-function sourceSelectionScore(source) {
-  const lemma = source.lemma;
-  const simpleLength = [...lemma.replace(/\s+/g, "")].length;
-  const essentialProperNames = new Set(["Deutschland", "Berlin", "Düsseldorf", "Europa"]);
-  const basicAnatomy = new Set(["Auge", "Arm", "Bauch", "Bein", "Blut", "Finger", "Fuß", "Haar", "Hand", "Haut", "Herz", "Knie", "Kopf", "Mund", "Nase", "Ohr", "Rücken", "Zahn"]);
-  let penalty = 0;
-  if (editorialA1Priority.has(lemma)) return editorialA1Priority.get(lemma);
-  if (source.proper_name && !essentialProperNames.has(lemma)) penalty += 8_000;
-  if (source.specialist_domain && !basicAnatomy.has(lemma)) penalty += 2_500;
-  if (source.corpus_coverage === 0) penalty += 5_000;
-  else if (source.corpus_coverage === 1) penalty += 1_800;
-  else if (source.corpus_coverage === 2) penalty += 500;
-  if (source.part_of_speech === "abbreviation") penalty += 4_000;
-  if (source.part_of_speech === "noun") penalty += 100;
-  if (lemma.includes(" ")) penalty += 700;
-  if (simpleLength > 20) penalty += 2_500;
-  else if (simpleLength > 15) penalty += 900;
-  else if (simpleLength > 11) penalty += 250;
-  if (/(?:ismus|isierung|ität|logie)$/i.test(lemma)) penalty += 1_800;
-  else if (/(?:schaft|tion|tät|ment)$/i.test(lemma)) penalty += 1_100;
-  else if (/(?:heit|keit|ung)$/i.test(lemma)) penalty += 650;
-  return Number(source.rank || 99_999) + penalty;
+function allReviewedEntries() {
+  const entries = Object.entries(rawCards).flatMap(([sourceLevel, cards]) => cards.map((entry) => ({ sourceLevel, entry })));
+  for (const [sourceLevel, cards] of Object.entries(supplementalReviewedCards)) {
+    cards.forEach((entry) => entries.push({ sourceLevel, entry }));
+  }
+  return entries;
 }
 
 function validateCuratedCards() {
   const ids = new Set();
-  for (const [level, entries] of Object.entries(rawCards)) {
-    if (entries.length !== 50) throw new Error(`${level} must contain exactly 50 curated cards; found ${entries.length}.`);
-    entries.forEach((entry) => {
+  const lemmas = new Set();
+  const entries = allReviewedEntries();
+  for (const { sourceLevel, entry } of entries) {
       if (ids.has(entry.id)) throw new Error(`Duplicate curated card ID: ${entry.id}`);
       ids.add(entry.id);
-      if (!/^([ab][12])-\d{3}$/.test(entry.id)) throw new Error(`Invalid curated card ID: ${entry.id}`);
+      const lemma = lemmaKey(entry.lemma);
+      if (lemmas.has(lemma)) throw new Error(`Duplicate curated lemma: ${entry.lemma}`);
+      lemmas.add(lemma);
+      if (!/^(?:a1|a2|b1|b2|c1|c2)-\d{3,4}$/.test(entry.id)) throw new Error(`Invalid curated card ID: ${entry.id}`);
+      const assignedLevel = reviewedLevelById.get(entry.id) || sourceLevel;
+      if (!levels.includes(assignedLevel)) throw new Error(`Invalid reviewed CEFR level for ${entry.id}: ${assignedLevel}`);
       if (!entry.scenes.length || entry.scenes.some((scene) => !sceneLabels[scene])) throw new Error(`Invalid scenes for ${entry.id}`);
       if (!["word", "phrase", "collocation"].includes(entry.unit_type)) throw new Error(`Invalid unit type for ${entry.id}`);
       if (entry.part_of_speech === "noun" && (!entry.grammar.article || !entry.grammar.plural)) throw new Error(`Missing noun grammar for ${entry.id}`);
@@ -366,35 +351,20 @@ function validateCuratedCards() {
       for (const key of ["lemma", "display_de", "japanese", "example_de", "example_ja", "learning_note"]) {
         if (!String(entry[key] || "").trim()) throw new Error(`Missing ${key} for ${entry.id}`);
       }
-    });
+      if (!/[.!?]$/.test(entry.example_de)) throw new Error(`German example needs punctuation: ${entry.id}`);
+      if (/おはよーん|ピンクな/.test(entry.japanese)) throw new Error(`Unreviewed Japanese wording found in ${entry.id}`);
   }
-  if (ids.size !== 200) throw new Error(`Expected 200 unique curated cards; found ${ids.size}.`);
+  for (const id of reviewedLevelById.keys()) {
+    if (!ids.has(id)) throw new Error(`Reviewed CEFR assignment references unknown card ${id}.`);
+  }
 }
 
-function buildLevelCards(sourceEntries) {
-  const curatedKeys = new Set(Object.values(rawCards).flat().map((entry) => lemmaKey(entry.lemma)));
-  const usedKeys = new Set(curatedKeys);
-  const selectedByLevel = {};
-  const rankedSources = sourceEntries
-    .map((source) => ({ ...source, selection_score: sourceSelectionScore(source) }))
-    .sort((left, right) => left.selection_score - right.selection_score || left.rank - right.rank);
-  let sourceIndex = 0;
-
-  for (const level of levels) {
-    const curated = (rawCards[level] || []).map((entry) => normalizedCuratedCard(level, entry));
-    const selected = [...curated];
-    while (selected.length < levelTargets[level]) {
-      const source = rankedSources[sourceIndex];
-      sourceIndex += 1;
-      if (!source) throw new Error(`Source lexicon ended while filling ${level}.`);
-      const key = lemmaKey(source.lemma);
-      if (!key || usedKeys.has(key) || source.source_dictionary !== "freedict-deu-jpn") continue;
-      usedKeys.add(key);
-      selected.push(normalizedReferenceCard(level, source, selected.length + 1));
-    }
-    selectedByLevel[level] = selected;
+function buildLevelCards() {
+  const selectedByLevel = Object.fromEntries(levels.map((level) => [level, []]));
+  for (const { sourceLevel, entry } of allReviewedEntries()) {
+    const assignedLevel = reviewedLevelById.get(entry.id) || sourceLevel;
+    selectedByLevel[assignedLevel].push(normalizedCuratedCard(assignedLevel, entry));
   }
-
   return selectedByLevel;
 }
 
@@ -403,7 +373,7 @@ function validateGeneratedCards(cardsByLevel) {
   const lemmas = new Set();
   for (const level of levels) {
     const cards = cardsByLevel[level];
-    if (cards.length !== levelTargets[level]) throw new Error(`${level} expected ${levelTargets[level]} cards; found ${cards.length}.`);
+    if (!cards.length) throw new Error(`${level} must contain at least one reviewed card.`);
     for (const entry of cards) {
       if (!/^(?:a1|a2|b1|b2|c1|c2)-\d{3,4}$/.test(entry.card_id)) throw new Error(`Invalid card ID: ${entry.card_id}`);
       if (ids.has(entry.card_id)) throw new Error(`Duplicate card ID: ${entry.card_id}`);
@@ -414,26 +384,26 @@ function validateGeneratedCards(cardsByLevel) {
       for (const field of ["lemma", "display_de", "japanese", "part_of_speech", "quality_tier", "verification_status"]) {
         if (!String(entry[field] || "").trim()) throw new Error(`Missing ${field} for ${entry.card_id}`);
       }
-      if (entry.quality_tier === "editorial-reviewed" && (!entry.example_de || !entry.example_ja)) {
-        throw new Error(`Editorial card lacks examples: ${entry.card_id}`);
-      }
+      if (entry.quality_tier !== "editorial-reviewed") throw new Error(`Unreviewed card reached a public deck: ${entry.card_id}`);
+      if (entry.verification_status !== "j-connect-editorial-reviewed") throw new Error(`Unverified card reached a public deck: ${entry.card_id}`);
+      if (!entry.example_de || !entry.example_ja) throw new Error(`Editorial card lacks examples: ${entry.card_id}`);
     }
   }
-  if (ids.size !== totalTarget) throw new Error(`Expected ${totalTarget} cards; found ${ids.size}.`);
+  if (ids.size !== allReviewedEntries().length) throw new Error(`Expected ${allReviewedEntries().length} reviewed cards; found ${ids.size}.`);
 }
 
 function idsFor(level, cardsByLevel) {
   return cardsByLevel[level].map((entry) => entry.card_id);
 }
 
-function idsForScene(scene, limit = 36) {
-  const byLevel = Object.values(rawCards).map((entries) => entries.filter((entry) => entry.scenes.includes(scene)));
+function idsForScene(scene, cardsByLevel, limit = 36) {
+  const byLevel = levels.map((level) => cardsByLevel[level].filter((entry) => entry.scene_tags.includes(scene)));
   const selected = [];
   for (let index = 0; selected.length < limit; index += 1) {
     let added = false;
     for (const entries of byLevel) {
       if (entries[index]) {
-        selected.push(entries[index].id);
+        selected.push(entries[index].card_id);
         added = true;
         if (selected.length === limit) break;
       }
@@ -443,12 +413,13 @@ function idsForScene(scene, limit = 36) {
   return selected;
 }
 
-function levelsForIds(cardIds) {
-  return levels.filter((level) => cardIds.some((id) => id.startsWith(level.toLowerCase())));
+function levelsForIds(cardIds, levelByCardId) {
+  const selected = new Set(cardIds.map((id) => levelByCardId.get(id)).filter(Boolean));
+  return levels.filter((level) => selected.has(level));
 }
 
 function createDeck(id, title, description, cardIds, scenes, minutes, options = {}) {
-  const deckLevels = levelsForIds(cardIds);
+  const deckLevels = levelsForIds(cardIds, options.levelByCardId);
   return {
     deck_id: id,
     title_ja: title,
@@ -468,25 +439,42 @@ function createDeck(id, title, description, cardIds, scenes, minutes, options = 
 }
 
 function buildDecks(cardsByLevel) {
+  const levelByCardId = new Map(levels.flatMap((level) => cardsByLevel[level].map((entry) => [entry.card_id, level])));
+  const create = (id, title, description, cardIds, scenes, minutes, options = {}) => createDeck(
+    id,
+    title,
+    description,
+    cardIds,
+    scenes,
+    minutes,
+    { ...options, levelByCardId }
+  );
   const allScenes = Object.keys(sceneLabels);
+  const allReviewedIds = levels.flatMap((level) => idsFor(level, cardsByLevel));
+  const levelDeck = (level, id, title, description) => create(
+    id,
+    `${level} ${title}（${cardsByLevel[level].length}枚）`,
+    description,
+    idsFor(level, cardsByLevel),
+    allScenes,
+    Math.max(10, Math.ceil(cardsByLevel[level].length * 0.5)),
+    { primaryLevel: level, deckKind: "cefr-level", featured: true }
+  );
   return [
-    createDeck("a1-life-basics", "A1 レベル別語彙650", "A1だけの入門・身近な語彙650語です。下位レベルの語彙はありません。", idsFor("A1", cardsByLevel), allScenes, 325, { primaryLevel: "A1", deckKind: "cefr-level", featured: true }),
-    createDeck("a2-daily-independence", "A2 レベル別語彙650", "A1を除外した、A2だけの日常生活・基本的な用事の語彙650語です。", idsFor("A2", cardsByLevel), allScenes, 325, { primaryLevel: "A2", deckKind: "cefr-level", featured: true }),
-    createDeck("b1-explain-and-confirm", "B1 レベル別語彙1,100", "A1・A2を除外した、B1だけの身近な話題・社会生活の語彙1,100語です。", idsFor("B1", cardsByLevel), allScenes, 550, { primaryLevel: "B1", deckKind: "cefr-level", featured: true }),
-    createDeck("b2-negotiate-and-document", "B2 レベル別語彙1,600", "A1〜B1を除外した、B2だけの専門・抽象トピックの語彙1,600語です。", idsFor("B2", cardsByLevel), allScenes, 800, { primaryLevel: "B2", deckKind: "cefr-level", featured: true }),
-    createDeck("c1-broad-repertoire", "C1 レベル別語彙3,000", "A1〜B2を除外した、C1だけの幅広い・専門的な語彙3,000語です。", idsFor("C1", cardsByLevel), allScenes, 1500, { primaryLevel: "C1", deckKind: "cefr-level", featured: true }),
-    createDeck("c2-nuance-repertoire", "C2 レベル別語彙3,000", "A1〜C1を除外した、C2だけの語感・含意・専門領域の語彙3,000語です。", idsFor("C2", cardsByLevel), allScenes, 1500, { primaryLevel: "C2", deckKind: "cefr-level", featured: true }),
-    createDeck("a1-practical-50", "A1 編集済み実践50", "例文・文法・語法を編集レビューした生活ドイツ語50枚です。", idsFor("A1", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 25, { primaryLevel: "A1", deckKind: "editorial-practice" }),
-    createDeck("a2-practical-50", "A2 編集済み実践50", "例文・文法・語法を編集レビューした生活ドイツ語50枚です。", idsFor("A2", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 30, { primaryLevel: "A2", deckKind: "editorial-practice" }),
-    createDeck("b1-practical-50", "B1 編集済み実践50", "例文・文法・語法を編集レビューした説明・確認の50枚です。", idsFor("B1", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 35, { primaryLevel: "B1", deckKind: "editorial-practice" }),
-    createDeck("b2-practical-50", "B2 編集済み実践50", "例文・文法・語法を編集レビューした交渉・文書対応の50枚です。", idsFor("B2", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 40, { primaryLevel: "B2", deckKind: "editorial-practice" }),
-    createDeck("scene-daily", "日常生活のコア表現", "予定、移動、依頼、連絡で繰り返し使う編集済み表現です。", idsForScene("daily", 32), ["daily"], 18),
-    createDeck("scene-shopping", "買い物・Pfand・返品", "スーパー、Pfand返却、交換・返金、消費者対応で役立つ編集済み表現です。", idsForScene("shopping", 28), ["shopping"], 16),
-    createDeck("scene-administration", "外国人局・役所の手続き", "Anmeldung、滞在許可、追加書類、期限、異議申立ての編集済み表現です。", idsForScene("administration", 36), ["administration"], 22),
-    createDeck("scene-medical", "病院・薬局・予約", "受診、検査、処方、副作用、治療方針を確認する編集済み表現です。", idsForScene("medical", 34), ["medical"], 20),
-    createDeck("scene-housing", "住まい・大家・契約", "内見、家賃、不具合、解約、契約条項を扱う編集済み表現です。", idsForScene("housing", 36), ["housing"], 22),
-    createDeck("scene-kita-school", "Kita・学校との連絡", "送迎、欠席、面談、支援制度について連絡する編集済み表現です。", idsForScene("kita-school", 30), ["kita-school"], 18),
-    createDeck("scene-work", "職場・メール・会議", "遅刻連絡、メール、会議、合意形成、優先順位づけに使う編集済み表現です。", idsForScene("work", 36), ["work"], 22)
+    create("all-levels-reviewed", `A1–C2 全6レベル総合（${allReviewedIds.length}枚）`, "編集レビュー済みカードを全6レベル横断で学べます。レベルチップで出題範囲を選べます。", allReviewedIds, allScenes, Math.ceil(allReviewedIds.length * 0.5), { primaryLevel: "A1–C2", deckKind: "all-levels", featured: true }),
+    levelDeck("A1", "a1-life-basics", "基礎・身近な表現", "挨拶、買い物、時間、身近な人や物を扱う編集レビュー済みカードです。"),
+    levelDeck("A2", "a2-daily-independence", "日常生活・基本的な用事", "移動、住まい、買い物など、日常の用事を自分で進めるための編集レビュー済みカードです。"),
+    levelDeck("B1", "b1-explain-and-confirm", "説明・確認・手続き", "事情説明、確認、行政・医療・住まいの基本手続きを扱う編集レビュー済みカードです。"),
+    levelDeck("B2", "b2-negotiate-and-document", "交渉・文書対応", "契約、職場、医療などで根拠を示して調整するための編集レビュー済みカードです。"),
+    levelDeck("C1", "c1-broad-repertoire", "専門・抽象的な表現", "制度、権利、評価などを精密に説明するための編集レビュー済みカードです。"),
+    levelDeck("C2", "c2-nuance-repertoire", "含意・高度な論証", "留保、反論、精密な限定など、語感と含意を扱う編集レビュー済みカードです。"),
+    create("scene-daily", "日常生活のコア表現", "予定、移動、依頼、連絡で繰り返し使う編集済み表現です。", idsForScene("daily", cardsByLevel, 32), ["daily"], 18),
+    create("scene-shopping", "買い物・Pfand・返品", "スーパー、Pfand返却、交換・返金、消費者対応で役立つ編集済み表現です。", idsForScene("shopping", cardsByLevel, 28), ["shopping"], 16),
+    create("scene-administration", "外国人局・役所の手続き", "Anmeldung、滞在許可、追加書類、期限、異議申立ての編集済み表現です。", idsForScene("administration", cardsByLevel, 36), ["administration"], 22),
+    create("scene-medical", "病院・薬局・予約", "受診、検査、処方、副作用、治療方針を確認する編集済み表現です。", idsForScene("medical", cardsByLevel, 34), ["medical"], 20),
+    create("scene-housing", "住まい・大家・契約", "内見、家賃、不具合、解約、契約条項を扱う編集済み表現です。", idsForScene("housing", cardsByLevel, 36), ["housing"], 22),
+    create("scene-kita-school", "Kita・学校との連絡", "送迎、欠席、面談、支援制度について連絡する編集済み表現です。", idsForScene("kita-school", cardsByLevel, 30), ["kita-school"], 18),
+    create("scene-work", "職場・メール・会議", "遅刻連絡、メール、会議、合意形成、優先順位づけに使う編集済み表現です。", idsForScene("work", cardsByLevel, 36), ["work"], 22)
   ];
 }
 
@@ -495,19 +483,17 @@ function writeJson(fileName, value, pretty = false) {
 }
 
 validateCuratedCards();
-if (!fs.existsSync(sourceLexiconPath)) {
-  throw new Error(`Missing prepared source lexicon: ${path.relative(rootDir, sourceLexiconPath)}. Run prepare-cefr-lexicon.mjs first.`);
-}
-const sourcePayload = JSON.parse(fs.readFileSync(sourceLexiconPath, "utf8"));
-const cardsByLevel = buildLevelCards(sourcePayload.entries || []);
+const cardsByLevel = buildLevelCards();
 validateGeneratedCards(cardsByLevel);
 fs.mkdirSync(outputDir, { recursive: true });
+const levelCounts = Object.fromEntries(levels.map((level) => [level, cardsByLevel[level].length]));
+const totalCardCount = Object.values(levelCounts).reduce((sum, count) => sum + count, 0);
 
 for (const level of levels) {
   writeJson(levelFiles[level], {
     schema_version: 2,
     level,
-    level_card_count: levelTargets[level],
+    level_card_count: levelCounts[level],
     updated_at: generatedDate,
     cards: cardsByLevel[level]
   });
@@ -517,16 +503,20 @@ const decks = buildDecks(cardsByLevel);
 writeJson("decks.json", {
   schema_version: 2,
   updated_at: generatedDate,
-  level_note_ja: "CEFRは能力記述であり、公式の全単語リストはありません。各帯の語彙割当は、正式資料と頻度資料を基にしたJ-Connect独自のレベル別学習目標です。各レベル教材に下位レベルの語彙は含みません。",
-  quality_note_ja: "200枚は例文・文法・語法まで編集済みです。残り9,800枚は出典付き参照カードで、例文・詳細語法は順次編集レビューします。",
+  level_note_ja: "CEFRは能力記述であり、公式の全単語リストではありません。各カードのレベルは、使用場面・抽象度・語法の複雑さを個別に確認したJ-Connectの学習目安です。",
+  quality_note_ja: "公開カードはすべて、日本語訳、自然な独文例、例文訳、主要文法、学習メモを編集レビュー済みです。未校閲の辞書項目は学習デッキに含めません。",
   storage_note_ja: "学習記録はこの端末のブラウザに保存されます。",
-  license_note_ja: "FreeDict由来の辞書データを含む語彙カード部分はCC BY-SA 3.0で提供します。Leipzig Corpora Collectionの帰属情報も保持します。",
-  level_counts: levelTargets,
-  total_card_count: totalTarget,
+  license_note_ja: "カードの例文・訳・解説はJ-Connectが教材用に編集した内容です。外部教材の例文や語彙リスト本文は転載していません。",
+  level_counts: levelCounts,
+  total_card_count: totalCardCount,
   scene_labels: sceneLabels,
   card_sources: levelFiles,
   methodology_url: "#flashcardsSources",
-  sources: sourcePayload.licenses,
+  sources: [
+    { source_id: "cefr-companion-volume", title: "Council of Europe CEFR Companion Volume", usage: "能力記述と語彙範囲の設計参照", url: "https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4" },
+    { source_id: "goethe-exams", title: "Goethe-Institut Deutschprüfungen", usage: "A1〜C2の到達目標と試験場面の参照", url: "https://www.goethe.de/de/spr/prf.html" },
+    { source_id: "daflex", title: "DAFlex / CEFRLex", usage: "CEFR別教材コーパスにおける語彙分布の方法論参照", url: "https://cental.uclouvain.be/cefrlex/daflex/" }
+  ],
   decks
 });
 

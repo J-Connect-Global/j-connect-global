@@ -12,7 +12,7 @@
     saved: "保存済み"
   };
 
-  function create({ root, storage, emptyProgress, selectedValue }) {
+  function create({ root, storage, emptyProgress, selectedValue, eligibleCardIds }) {
     const inputs = Array.from(root.querySelectorAll('input[name="session-target"]'));
     const summary = root.querySelector("#flashcardsStartSummary");
     const start = root.querySelector("#flashcardsStart");
@@ -31,7 +31,8 @@
 
     function cardIds(target = selectedValue("session-target") || "all") {
       if (!deck) return [];
-      return deck.card_ids.filter(cardId => matches(progressByCardId.get(cardId) || emptyProgress(cardId), target));
+      const sourceIds = typeof eligibleCardIds === "function" ? eligibleCardIds() : deck.card_ids;
+      return sourceIds.filter(cardId => matches(progressByCardId.get(cardId) || emptyProgress(cardId), target));
     }
 
     function render() {

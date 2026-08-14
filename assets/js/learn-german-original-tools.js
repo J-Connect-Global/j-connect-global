@@ -105,7 +105,7 @@
     const stats = deckProgress(deck);
     const article = createElement("article", "learn-deck-card");
     article.dataset.deckId = deck.deck_id;
-    article.dataset.level = deck.target_level || deck.primary_level || deck.levels.join(" ");
+    article.dataset.level = deck.levels.join(" ");
     article.dataset.scene = deck.scenes.join(" ");
     article.dataset.status = stats.status;
 
@@ -119,7 +119,9 @@
     article.append(createElement("p", "", deck.description_ja));
 
     const scenes = createElement("div", "learn-deck-card__head");
-    const sceneLabels = deck.deck_kind === "cefr-level" ? ["レベル専用語彙"] : deck.scene_labels;
+    const sceneLabels = deck.deck_kind === "all-levels"
+      ? ["全6レベルから選択"]
+      : deck.deck_kind === "cefr-level" ? ["編集レビュー済み"] : deck.scene_labels;
     sceneLabels.forEach(label => scenes.append(createElement("span", "learn-deck-card__scene", label)));
     article.append(scenes);
 
@@ -168,7 +170,7 @@
   function matches(deck) {
     const stats = deckProgress(deck);
     if (filterState.keyword && !searchableText(deck).includes(filterState.keyword)) return false;
-    if (filterState.level && (deck.target_level || deck.primary_level) !== filterState.level) return false;
+    if (filterState.level && !deck.levels.includes(filterState.level)) return false;
     if (filterState.scene && !deck.scenes.includes(filterState.scene)) return false;
     if (filterState.status && stats.status !== filterState.status) return false;
     return true;

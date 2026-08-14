@@ -1,86 +1,81 @@
-# J-Connect A1–C2 語彙デッキの設計・出典・品質基準
+# J-Connect A1–C2 暗記カードのレベル設計・品質基準
 
-更新日: 2026-08-09
+更新日: 2026-08-14
 
 ## 結論
 
-CEFRは「そのレベルで何ができるか」を記述する枠組みであり、A1からC2までの公式な全単語リストではない。したがって、この教材の語数と単語ごとの帯分けは「公式必修語」ではなく、公開資料と再配布可能な辞書・頻度資料を組み合わせたJ-Connect独自のレベル別学習目標として表示する。各レベル教材は下位レベルの語彙を含まず、10,000語を6レベルへ重複なく割り当てる。
+CEFRは言語運用能力をA1からC2まで記述する枠組みであり、すべての言語に共通する公式の単語別レベル表ではない。J-Connectでは、頻度順位だけでカードを一括配分せず、語義・文法・使用場面・表現の抽象度をカード単位で確認してレベルを決める。
 
-| レベル | レベル専用カード | 下位レベルのカード |
-| --- | ---: | ---: |
-| A1 | 650 | 0 |
-| A2 | 650 | 0 |
-| B1 | 1,100 | 0 |
-| B2 | 1,600 | 0 |
-| C1 | 3,000 | 0 |
-| C2 | 3,000 | 0 |
-| 合計 | 10,000 | 0 |
+公開デッキには、次の品質ゲートを通過したカードだけを収録する。
 
-A1の約650、A2の約1,300、B1の約2,400というGoethe-Institut公開語彙リストの規模は到達範囲の参照値として使う。本教材では下位レベル相当の語彙を差し引き、A2は650語、B1は1,100語のレベル専用枠とする。Goethe-Institutが公開する語彙リストはA1〜B1であり、B2〜C2に同等の公式全語リストはない。B2〜C2の専用枠は、CEFRの語彙範囲記述と一般語彙・専門語彙の広がりを運用可能なデッキへ変換したJ-Connect基準である。
+- 日本語訳がそのカードで扱う語義と一致している
+- 独文例と自然な日本語訳がある
+- 名詞の性・複数形、動詞の活用・格支配など必要な文法情報がある
+- コロケーション、学習メモ、関連語を必要に応じて補っている
+- `quality_tier: "editorial-reviewed"` と `verification_status: "j-connect-editorial-reviewed"` を持つ
+- A1〜C2のうち、学習上もっとも適切な1レベルへ割り当てられている
+
+未レビューの辞書見出し語、機械訳、例文のないカードは、公開デッキへ入れない。カード数を増やすことより、表示内容を学習に使える状態へ揃えることを優先する。
+
+## 現在の収録数
+
+収録数は固定目標ではなく、レビューを完了したカード数である。正本は `assets/data/learn-german/flashcards/decks.json` と各 `cards-<level>.json` の件数とする。
+
+| レベル | 編集レビュー済みカード |
+| --- | ---: |
+| A1 | 36 |
+| A2 | 35 |
+| B1 | 53 |
+| B2 | 55 |
+| C1 | 33 |
+| C2 | 5 |
+| 合計 | 217 |
+
+教材は、全6レベルをまとめたデッキ、各レベル専用デッキ、場面別デッキから同じレビュー済みカードを参照する。場面別デッキではカードが再利用されるが、カードIDの正本はレベル別JSONに一つだけ存在する。
+
+## レベル判定
+
+カードは単なる出現頻度ではなく、次の観点を組み合わせて個別に判定する。
+
+1. CEFR Companion Volumeの語彙範囲・文法的正確さ・社会言語的適切さの記述
+2. Goethe-Institutの各レベル試験が想定するコミュニケーション場面
+3. 日常での基本性、意味の抽象度、語法や構文の複雑さ、ニュアンス制御の必要性
+4. DAFlex / CEFRLexが示す、レベル別教材コーパスで語彙分布を比較する方法論
+5. 日本語母語話者がその表現を誤解なく運用するために必要な説明量
+
+たとえば、`Guten Morgen!` や色名 `pink` は基本的な挨拶・描写なのでA1、`die Wahrnehmung` は抽象概念を扱うためC1、含意や論証を精密に調整する `mitnichten` や `etwas ad absurdum führen` はC2として扱う。
+
+個々のカードに「公式CEFR認定」という意味はない。レベル判断が割れる語は、カードが扱う語義・例文・構文を基準にし、変更理由をレビューで説明できるようにする。
 
 ## 参照資料
 
-- Council of Europe, *CEFR Companion Volume with New Descriptors*: A1からC2までの語彙範囲・語彙運用能力の記述。
-  - https://rm.coe.int/cefr-companion-volume-with-new-descriptors-2018/1680787989.pdf
-- Goethe-Institut, *Goethe-Zertifikat A1 Wortliste*: 約650語、能動的に使える語彙はその約半分という説明。
-  - https://www.goethe.de/pro/relaunch/prf/sr/A1_SD1_Wortliste_02.pdf
-- Goethe-Institut, *Goethe-Zertifikat A2 Wortliste*: 約1,300 lexical units。
-  - https://www.goethe.de/resources/files/pdf329/goethe-zertifikat_a2_wortliste.pdf
-- Goethe-Institut, *Goethe-Zertifikat B1 Wortliste*: 約2,400 lexical units。本文の複製・ネットワーク保存を許可なく行えない旨も明記されているため、J-Connectのカードデータへ語彙本文を転記しない。
-  - https://www.goethe.de/pro/relaunch/prf/id/Goethe-Zertifikat_B1_Wortliste.pdf
-- CEFRLex DAFlex: CEFR別教材・簡易読本に観察された語彙頻度を使う学術的方法の比較対象。CC BY-NC-SA 4.0のため、J-Connectの再配布データには取り込まず、設計の参照に限定する。
-  - https://cental.uclouvain.be/cefrlex/daflex/
+- Council of Europe, [*Common European Framework of Reference for Languages: Companion Volume*](https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4)
+- Goethe-Institut, [*Deutschprüfungen A1–C2*](https://www.goethe.de/de/spr/prf.html)
+- [CEFRLex DAFlex](https://cental.uclouvain.be/cefrlex/daflex/)（レベル別教材・簡易読本コーパスに基づく語彙分布の方法論参照）
 
-## 再配布する語彙データ
+これらはレベル判断の参照資料であり、著作権のある語彙リストや例文をカードへ転記するための資料ではない。カードの例文・解説はJ-Connectで作成する。
 
-### FreeDict German–Japanese
+## 生成時の自動品質ゲート
 
-- 版: `deu-jpn 2025.11.23`
-- 元データ: FreeDict + WikDict / Wiktionary / DBnary
-- ライセンス: CC BY-SA 3.0
-- 用途: ドイツ語見出し語、日本語語義、確認できる名詞の性
-- URL: https://download.freedict.org/dictionaries/deu-jpn/2025.11.23/
+`scripts/generate-learn-german-flashcards.mjs` は公開データ生成前に、全カードについて次を検査する。
 
-### Leipzig Corpora Collection
+- 必須フィールドとA1〜C2のレベル
+- 日本語文字を含む訳と例文訳
+- 独文例・和文例の欠落
+- 名詞・動詞に必要な文法情報
+- レビュー状態と確認日
+- 既知の誤訳（例: `おはよーん`、`ピンクな`）
+- カードIDと見出し語の重複
 
-- コーパス標本: `deu_mixed-typical_2011_100K`、`deu_news_2020_100K`、`deu_wikipedia_2021_100K`
-- ライセンス: CC BY
-- 用途: 一般頻度と複数コーパスでの出現範囲
-- URL: https://wortschatz.uni-leipzig.de/en/download/German
+検査に失敗した場合はJSONを出力しない。公開JSONを直接編集すると再生成で失われるため、恒久的な修正は生成スクリプト側の編集済みソースへ反映する。
 
-FreeDict由来のカードデータはCC BY-SA 3.0の継承条件に従う。コード、ページ本文、J-Connect独自の編集済み例文まで一律に同ライセンスへ変更するものではない。
+## 再生成と検証
 
-## 帯分け方法
-
-1. 既存の編集済み200枚を各A1〜B2の50枚として予約する。
-2. FreeDictの見出し語を正規化し、同一表記の重複を除く。ドイツ語では大小文字が語彙を区別するため、大小文字は保持する。
-3. Leipzigの3標本で正規化頻度とコーパス被覆を計算する。
-4. A1の身近な物・人・時間・基本動詞・基本形容詞はJ-Connect編集基準で優先する。
-5. 固有名、専門分野、略語、長い複合語、低被覆語、抽象語形成が明瞭な語には難度ペナルティを与える。
-6. 優先順に各レベルの専用枠へ一度だけ割り当て、全レベルでカードIDと見出し語を重複させない。
-
-生成後は6つのレベル教材を全組み合わせで比較し、共有カードIDと共有見出し語がともに0件であることを自動テストする。レベル教材の `card_files` も当該レベルのファイル1件だけに限定する。
-
-この方法は、個々の語に公的なCEFR認定を与えるものではない。多義語は語義単位ではなく見出し語単位であり、訳語はFreeDictの語義を短い順に最大3件表示する。固有名・同綴異義語・分野語には機械処理の限界が残るため、編集レビュー対象とする。
-
-## 品質区分
-
-- `editorial-reviewed`（200枚）: 日本語訳、自然な独文例、和訳、名詞・動詞の主要文法、コロケーション、学習メモをJ-Connectで編集済み。
-- `reference`（9,800枚）: 再配布可能な出典と頻度根拠を持つ見出し語カード。例文、複数形、動詞活用、格支配、細かな語義選択はレビュー待ち。
-
-参照カードを「完成済み」「公式」「全語を保証」と表示してはいけない。公開画面では品質差を常に説明する。
-
-## 再生成
-
-```powershell
-node scripts/prepare-cefr-lexicon.mjs `
-  --deu-jpn C:\path\to\deu-jpn.tei `
-  --leipzig-words C:\path\to\deu_mixed-typical_2011_100K-words.txt `
-  --leipzig-words C:\path\to\deu_news_2020_100K-words.txt `
-  --leipzig-words C:\path\to\deu_wikipedia_2021_100K-words.txt
-
+```bash
 node scripts/generate-learn-german-flashcards.mjs
 node scripts/test-learn-german-flashcards.mjs
+npm run build
+npm run validate
 ```
 
-更新時は入力版、ライセンス、生成件数、重複、A1/A2の先頭標本、各レベルの品詞分布、固有名・専門語の位置を必ず再確認する。
+カード追加時は、訳・例文・文法・レベルを個別レビューした後、データ契約テストとデスクトップ／モバイルのブラウザテストを通す。

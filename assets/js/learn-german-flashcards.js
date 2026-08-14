@@ -11,6 +11,7 @@
   const BACKUP_SCHEMA_VERSION = 1;
   const LAST_DECK_KEY = "jconnect-flashcards-last-deck";
   const DAY_MS = 24 * 60 * 60 * 1000;
+  const cefrLevels = ["A1", "A2", "B1", "B2", "C1", "C2"];
   const storage = window.JConnectFlashcardStorage;
   const partOfSpeechLabels = {
     noun: "名詞",
@@ -27,16 +28,6 @@
     pronoun: "代名詞"
   };
   const ratingLabels = { again: "もう一度", unsure: "迷った", known: "覚えた" };
-  const sceneLabels = {
-    daily: "日常",
-    shopping: "買い物",
-    administration: "外国人局・役所",
-    medical: "病院・薬局",
-    housing: "住まい",
-    "kita-school": "Kita・学校",
-    work: "仕事",
-    general: "総合語彙"
-  };
 
   const elements = {
     loading: root.querySelector("#flashcardsLoading"),
@@ -47,6 +38,8 @@
     setupTitle: root.querySelector("#sessionSetupTitle"),
     setupDescription: root.querySelector("#setupDeckDescription"),
     setupBadges: root.querySelector("#setupDeckBadges"),
+    levelFilter: root.querySelector("#flashcardsLevelFilter"),
+    levelChips: root.querySelector("#flashcardsLevelChips"),
     resumeNote: root.querySelector("#flashcardsResumeNote"),
     start: root.querySelector("#flashcardsStart"),
     resume: root.querySelector("#flashcardsResume"),
@@ -83,6 +76,7 @@
     next: root.querySelector("#flashcardsNext"),
     results: root.querySelector("#flashcardsResults"),
     resultStats: root.querySelector("#flashcardsResultStats"),
+    breakdownSection: root.querySelector("#flashcardsBreakdownSection"),
     breakdown: root.querySelector("#flashcardsBreakdown"),
     weakList: root.querySelector("#flashcardsWeakList"),
     reviewWeak: root.querySelector("#flashcardsReviewWeak"),
@@ -106,6 +100,7 @@
     inventoryController: null,
     session: null,
     restoredSession: null,
+    selectedLevels: new Set(),
     isFlipped: false,
     isRating: false,
     activeSpeechButton: null,
@@ -145,7 +140,6 @@
     try {
       localStorage.setItem(LAST_DECK_KEY, deckId);
     } catch {
-      // The deck query parameter remains the source of truth.
     }
   }
 
@@ -182,15 +176,12 @@
 
   function formatGrammar(card) {
     const grammar = card.grammar || {};
-    const pending = card.quality_tier === "reference";
     if (card.part_of_speech === "noun") {
-      if (pending && !grammar.article && !grammar.plural) return "文法情報は編集レビュー待ちです。";
       return [`冠詞: ${grammar.article || "—"}`, `複数形: ${grammar.plural || "—"}`, grammar.declension || ""]
         .filter(Boolean)
         .join(" / ");
     }
     if (card.part_of_speech === "verb") {
-      if (pending) return "活用・格支配は編集レビュー待ちです。";
       const properties = [
         `三人称単数: ${grammar.third_person || "—"}`,
         `過去分詞: ${grammar.past_participle || "—"}`,
@@ -201,16 +192,20 @@
       ];
       return properties.filter(Boolean).join(" / ");
     }
-    return grammar.usage || grammar.government || (pending ? "語法は編集レビュー待ちです。" : "用例の語順をまとまりで確認してください。");
+    return grammar.usage || grammar.government || "用例の語順をまとまりで確認してください。";
   }
 
   function createBadges(deck) {
     const fragment = document.createDocumentFragment();
     if (deck.deck_kind === "cefr-level") {
       fragment.append(createElement("span", "flashcards-badge", deck.target_level));
-      fragment.append(createElement("span", "flashcards-badge", "レベル専用語彙"));
+      fragment.append(createElement("span", "flashcards-badge", "編集レビュー済み"));
+    } else if (deck.deck_kind === "all-levels") {
+      fragment.append(createElement("span", "flashcards-badge", "A1–C2"));
+      fragment.append(createElement("span", "flashcards-badge", "全6レベル"));
     } else {
-      deck.levels.forEach(level => fragment.append(createElement("span", "flashcards-badge", level)));
+      const levelLabel = deck.levels.length > 1 ? `${deck.levels[0]}–${deck.levels.at(-1)}` : deck.levels[0];
+      if (levelLabel) fragment.append(createElement("span", "flashcards-badge", levelLabel));
       deck.scene_labels.forEach(scene => fragment.append(createElement("span", "flashcards-badge", scene)));
     }
     fragment.append(createElement("span", "flashcards-badge", `${Number(deck.card_count).toLocaleString("ja-JP")}枚`));
@@ -245,7 +240,12 @@
   function validCardPayload(payload, fileName) {
     if (![1, 2].includes(payload?.schema_version) || !Array.isArray(payload.cards)) throw new Error(`${fileName} has an unsupported schema.`);
     payload.cards.forEach(card => {
-      if (!card?.card_id || !card?.display_de || !card?.japanese) throw new Error(`${fileName} contains an invalid card.`);
+      if (!card?.card_id || !card?.display_de || !card?.japanese || !card?.example_de || !card?.example_ja) {
+        throw new Error(`${fileName} contains an incomplete card.`);
+      }
+      if (card.quality_tier !== "editorial-reviewed" || card.verification_status !== "j-connect-editorial-reviewed") {
+        throw new Error(`${fileName} contains an unreviewed card.`);
+      }
     });
     return payload.cards;
   }
@@ -261,6 +261,45 @@
     const orderedCards = deck.card_ids.map(cardId => allById.get(cardId));
     if (orderedCards.some(card => !card)) throw new Error(`Deck ${deck.deck_id} references a missing card.`);
     state.cardsById = new Map(orderedCards.map(card => [card.card_id, card]));
+  }
+
+  function activeCardIds() {
+    if (!state.currentDeck) return [];
+    if (state.currentDeck.deck_kind !== "all-levels") return [...state.currentDeck.card_ids];
+    return state.currentDeck.card_ids.filter(cardId => state.selectedLevels.has(state.cardsById.get(cardId)?.primary_level));
+  }
+
+  function renderLevelSelector(deck, preferredLevels = deck.levels) {
+    const available = new Set(deck.levels || []);
+    const preferred = new Set((preferredLevels || []).filter(level => available.has(level)));
+    state.selectedLevels = preferred.size ? preferred : new Set(available);
+    elements.levelChips.replaceChildren();
+    elements.levelFilter.hidden = deck.deck_kind !== "all-levels";
+    if (deck.deck_kind !== "all-levels") return;
+
+    deck.levels.forEach(level => {
+      const label = createElement("label", "flashcards-level-chip");
+      const input = document.createElement("input");
+      input.type = "checkbox";
+      input.name = "session-level";
+      input.value = level;
+      input.checked = state.selectedLevels.has(level);
+      const count = Number(state.payload?.level_counts?.[level] || 0);
+      const text = createElement("span", "", level);
+      text.append(createElement("small", "", `${count.toLocaleString("ja-JP")}枚`));
+      label.append(input, text);
+      elements.levelChips.append(label);
+      input.addEventListener("change", () => {
+        const checked = Array.from(elements.levelChips.querySelectorAll('input[name="session-level"]:checked'));
+        if (!checked.length) {
+          input.checked = true;
+          showToast("出題レベルを1つ以上選んでください。");
+          return;
+        }
+        state.selectedLevels = new Set(checked.map(item => item.value));
+        state.targetController?.render();
+      });
+    });
   }
 
   function emptyProgress(cardId) {
@@ -299,7 +338,9 @@
 
   async function prepareStudyTargets(deck) {
     const feature = await loadFeature("JConnectFlashcardTargets", TARGETS_SCRIPT_URL);
-    if (!state.targetController) state.targetController = feature.create({ root, storage, emptyProgress, selectedValue });
+    if (!state.targetController) {
+      state.targetController = feature.create({ root, storage, emptyProgress, selectedValue, eligibleCardIds: activeCardIds });
+    }
     await state.targetController.prepare(deck);
   }
 
@@ -316,7 +357,7 @@
   }
 
   async function prepareInventory(deck) {
-    if (deck.deck_kind !== "cefr-level") {
+    if (!["cefr-level", "all-levels"].includes(deck.deck_kind)) {
       state.inventoryController?.hide();
       elements.inventory.hidden = true;
       return;
@@ -372,6 +413,7 @@
     try {
       await loadDeckCards(deck);
       state.currentDeck = deck;
+      renderLevelSelector(deck);
       rememberDeck(deck.deck_id);
       elements.setupTitle.textContent = deck.title_ja;
       elements.setupDescription.textContent = deck.description_ja;
@@ -383,6 +425,7 @@
       const restored = await storage.getSession(deck.deck_id);
       state.restoredSession = validRestoredSession(restored, deck) && !restored.completed ? restored : null;
       if (state.restoredSession) {
+        renderLevelSelector(deck, state.restoredSession.selected_levels || deck.levels);
         const position = state.restoredSession.last_session_position + 1;
         elements.resumeNote.textContent = `中断したセッションがあります（${position}/${state.restoredSession.card_ids.length}枚目）。`;
         elements.resumeNote.hidden = false;
@@ -419,6 +462,7 @@
       selected_session_size: options.size || selectedValue("session-size") || "10",
       selected_order: options.order || selectedValue("session-order") || "ordered",
       selected_target: options.target || selectedValue("session-target") || "all",
+      selected_levels: [...state.selectedLevels],
       started_at: new Date(now).toISOString(),
       last_activity_at: now,
       elapsed_ms: 0,
@@ -503,8 +547,8 @@
     const deToJa = state.session.selected_direction === "de-ja";
     elements.prompt.textContent = deToJa ? card.display_de : card.japanese;
     elements.answer.textContent = deToJa ? card.japanese : card.display_de;
-    elements.exampleDe.textContent = card.example_de || "例文は編集レビュー待ちです。";
-    elements.exampleJa.textContent = card.example_ja || "出典付きの語彙参照カードとして先に公開しています。";
+    elements.exampleDe.textContent = card.example_de;
+    elements.exampleJa.textContent = card.example_ja;
     elements.speak.dataset.speechIdleLabel = `ドイツ語「${card.display_de}」を読み上げる`;
     elements.speak.setAttribute("aria-label", elements.speak.dataset.speechIdleLabel);
     elements.speakExample.dataset.speechIdleLabel = card.example_de
@@ -513,9 +557,9 @@
     elements.speakExample.setAttribute("aria-label", elements.speakExample.dataset.speechIdleLabel);
     elements.partOfSpeech.textContent = `${partOfSpeechLabels[card.part_of_speech] || card.part_of_speech} / ${card.unit_type}`;
     elements.grammar.textContent = formatGrammar(card);
-    elements.collocations.textContent = card.collocations.join(" / ") || (card.quality_tier === "reference" ? "編集レビュー待ち" : "—");
+    elements.collocations.textContent = card.collocations.join(" / ") || "—";
     elements.learningNote.textContent = card.learning_note;
-    elements.related.textContent = card.related_terms.join(" / ") || (card.quality_tier === "reference" ? "編集レビュー待ち" : "—");
+    elements.related.textContent = card.related_terms.join(" / ") || "—";
     elements.position.textContent = `${index + 1} / ${total}`;
     elements.progressText.textContent = `${percent}%`;
     elements.progressBar.style.width = `${percent}%`;
@@ -674,7 +718,6 @@
       try {
         window.speechSynthesis.cancel();
       } catch {
-        // Some embedded browsers expose the API before its speech service is ready.
       }
     }
     resetSpeechState();
@@ -748,45 +791,76 @@
       .filter(entry => entry.card);
   }
 
-  function appendResultStat(label, value) {
-    const item = createElement("div", "flashcards-result-stat");
-    item.append(createElement("span", "", label), createElement("strong", "", value));
-    elements.resultStats.append(item);
-  }
-
   async function renderResults() {
     const counts = resultCounts();
     const entries = resultCards();
-    const mastery = counts.total ? Math.round((counts.known / counts.total) * 100) : 0;
-    elements.resultStats.replaceChildren();
-    appendResultStat("学習カード", `${counts.total}枚`);
-    appendResultStat("覚えた", `${counts.known}枚`);
-    appendResultStat("迷った", `${counts.unsure}枚`);
-    appendResultStat("もう一度", `${counts.again}枚`);
-    appendResultStat("習得率", `${mastery}%`);
-    appendResultStat("所要時間", formatDuration(state.session.elapsed_ms));
+    const retention = counts.total ? Math.round((counts.known / counts.total) * 100) : 0;
+
+    const score = createElement("div", "flashcards-result-score");
+    score.append(
+      createElement("span", "flashcards-result-score__label", "今回の定着度"),
+      createElement("strong", "", `${retention}%`),
+      createElement("p", "", `覚えた ${counts.known}枚 / 全${counts.total}枚`)
+    );
+
+    const outcomes = createElement("div", "flashcards-result-outcomes");
+    const bar = createElement("div", "flashcards-result-bar");
+    bar.setAttribute("role", "img");
+    bar.setAttribute("aria-label", `覚えた${counts.known}枚、迷った${counts.unsure}枚、もう一度${counts.again}枚`);
+    [["known", counts.known], ["unsure", counts.unsure], ["again", counts.again]].forEach(([rating, count]) => {
+      const segment = createElement("span", `is-${rating}`);
+      segment.style.flexGrow = String(count);
+      segment.hidden = count === 0;
+      bar.append(segment);
+    });
+    const legend = createElement("div", "flashcards-result-legend");
+    [["known", "覚えた", counts.known], ["unsure", "迷った", counts.unsure], ["again", "もう一度", counts.again]].forEach(([rating, label, count]) => {
+      const item = createElement("span", `is-${rating}`);
+      item.append(createElement("i", ""), createElement("span", "", label), createElement("strong", "", `${count}枚`));
+      legend.append(item);
+    });
+    outcomes.append(bar, legend);
+
+    const metrics = createElement("div", "flashcards-result-metrics");
+    [["学習したカード", `${counts.total}枚`], ["復習対象", `${counts.unsure + counts.again}枚`], ["所要時間", formatDuration(state.session.elapsed_ms)]].forEach(([label, value]) => {
+      const item = createElement("div", "");
+      item.append(createElement("span", "", label), createElement("strong", "", value));
+      metrics.append(item);
+    });
+    elements.resultStats.replaceChildren(score, outcomes, metrics);
 
     const groups = new Map();
     entries.forEach(({ card, rating }) => {
-      const labels = [card.primary_level, ...card.scene_tags.map(scene => sceneLabels[scene] || scene)];
-      labels.forEach(label => {
-        const current = groups.get(label) || { total: 0, known: 0 };
-        current.total += 1;
-        if (rating === "known") current.known += 1;
-        groups.set(label, current);
-      });
+      const current = groups.get(card.primary_level) || { total: 0, known: 0 };
+      current.total += 1;
+      if (rating === "known") current.known += 1;
+      groups.set(card.primary_level, current);
     });
     elements.breakdown.replaceChildren();
-    [...groups.entries()].forEach(([label, values]) => {
-      const item = createElement("li", "");
-      item.append(createElement("span", "", label), createElement("strong", "", `${values.known}/${values.total}枚を「覚えた」`));
+    const orderedGroups = [...groups.entries()].sort((left, right) => cefrLevels.indexOf(left[0]) - cefrLevels.indexOf(right[0]));
+    orderedGroups.forEach(([label, values]) => {
+      const percent = values.total ? Math.round((values.known / values.total) * 100) : 0;
+      const item = createElement("div", "flashcards-breakdown-row");
+      const heading = createElement("div", "flashcards-breakdown-row__head");
+      heading.append(createElement("strong", "", label), createElement("span", "", `${percent}% · ${values.known}/${values.total}枚`));
+      const track = createElement("div", "flashcards-breakdown-row__track");
+      const fill = createElement("span", "");
+      fill.style.width = `${percent}%`;
+      track.setAttribute("role", "progressbar");
+      track.setAttribute("aria-label", `${label}の今回の定着度`);
+      track.setAttribute("aria-valuemin", "0");
+      track.setAttribute("aria-valuemax", "100");
+      track.setAttribute("aria-valuenow", String(percent));
+      track.append(fill);
+      item.append(heading, track);
       elements.breakdown.append(item);
     });
+    elements.breakdownSection.hidden = orderedGroups.length <= 1;
 
     const weak = entries.filter(entry => entry.rating !== "known");
     elements.weakList.replaceChildren();
     if (!weak.length) {
-      elements.weakList.append(createElement("li", "", "苦手カードはありません。すべて「覚えた」で完了しました。"));
+      elements.weakList.append(createElement("li", "flashcards-weak-list__empty", "復習対象はありません。すべて「覚えた」で完了しました。"));
     } else {
       weak.forEach(({ card, rating }) => {
         const item = createElement("li", "");

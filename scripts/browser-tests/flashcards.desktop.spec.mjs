@@ -309,6 +309,7 @@ test("level deck inventory lists every word with sorting, filters, saved state, 
   await expect(germanHeading).toHaveAttribute("aria-sort", "ascending");
   await germanHeading.locator("button").click();
   await expect(germanHeading).toHaveAttribute("aria-sort", "descending");
+  await page.locator("#flashcardsInventoryReset").click();
 
   const firstSave = page.locator("#flashcardsInventoryBody [data-inventory-save]").first();
   await firstSave.click();

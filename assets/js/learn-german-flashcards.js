@@ -77,6 +77,7 @@
     grammar: root.querySelector("#flashcardGrammar"),
     collocations: root.querySelector("#flashcardCollocations"),
     learningNote: root.querySelector("#flashcardLearningNote"),
+    exampleSource: root.querySelector("#flashcardExampleSource"),
     related: root.querySelector("#flashcardRelated"),
     ratingButtons: Array.from(root.querySelectorAll("[data-rating]")),
     previous: root.querySelector("#flashcardsPrevious"),
@@ -316,7 +317,7 @@
   }
 
   async function prepareInventory(deck) {
-    if (deck.deck_kind !== "cefr-level") {
+    if (!["cefr-level", "cefr-all"].includes(deck.deck_kind)) {
       state.inventoryController?.hide();
       elements.inventory.hidden = true;
       return;
@@ -515,6 +516,15 @@
     elements.grammar.textContent = formatGrammar(card);
     elements.collocations.textContent = card.collocations.join(" / ") || (card.quality_tier === "reference" ? "編集レビュー待ち" : "—");
     elements.learningNote.textContent = card.learning_note;
+    if (card.example_source?.source_id === "tatoeba" && card.example_source.sentence_id) {
+      const sourceLink = createElement("a", "", `Tatoeba 原文 #${card.example_source.sentence_id}・日本語訳 #${card.example_source.translation_id}`);
+      sourceLink.href = `https://tatoeba.org/en/sentences/show/${card.example_source.sentence_id}`;
+      sourceLink.target = "_blank";
+      sourceLink.rel = "noopener noreferrer";
+      elements.exampleSource.replaceChildren(sourceLink);
+    } else {
+      elements.exampleSource.textContent = card.quality_tier === "editorial-reviewed" ? "J-Connect編集" : "J-Connect確認済み例文";
+    }
     elements.related.textContent = card.related_terms.join(" / ") || (card.quality_tier === "reference" ? "編集レビュー待ち" : "—");
     elements.position.textContent = `${index + 1} / ${total}`;
     elements.progressText.textContent = `${percent}%`;
@@ -759,12 +769,10 @@
     const entries = resultCards();
     const mastery = counts.total ? Math.round((counts.known / counts.total) * 100) : 0;
     elements.resultStats.replaceChildren();
-    appendResultStat("学習カード", `${counts.total}枚`);
-    appendResultStat("覚えた", `${counts.known}枚`);
-    appendResultStat("迷った", `${counts.unsure}枚`);
-    appendResultStat("もう一度", `${counts.again}枚`);
-    appendResultStat("習得率", `${mastery}%`);
-    appendResultStat("所要時間", formatDuration(state.session.elapsed_ms));
+    appendResultStat("定着度", `${mastery}%`);
+    appendResultStat("覚えた", `${counts.known} / ${counts.total}`);
+    appendResultStat("要復習", `${counts.unsure + counts.again}枚`);
+    appendResultStat("学習時間", formatDuration(state.session.elapsed_ms));
 
     const groups = new Map();
     entries.forEach(({ card, rating }) => {
@@ -779,7 +787,8 @@
     elements.breakdown.replaceChildren();
     [...groups.entries()].forEach(([label, values]) => {
       const item = createElement("li", "");
-      item.append(createElement("span", "", label), createElement("strong", "", `${values.known}/${values.total}枚を「覚えた」`));
+      const percent = values.total ? Math.round((values.known / values.total) * 100) : 0;
+      item.append(createElement("span", "", label), createElement("strong", "", `${percent}%（${values.known}/${values.total}）`));
       elements.breakdown.append(item);
     });
 

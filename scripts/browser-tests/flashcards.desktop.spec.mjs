@@ -13,6 +13,10 @@ import {
 
 const decksPath = "/assets/data/learn-german/flashcards/decks.json";
 const a1CardsPath = "/assets/data/learn-german/flashcards/cards-a1.json";
+const a2CardsPath = "/assets/data/learn-german/flashcards/cards-a2.json";
+const b1CardsPath = "/assets/data/learn-german/flashcards/cards-b1.json";
+const b2CardsPath = "/assets/data/learn-german/flashcards/cards-b2.json";
+const c1CardsPath = "/assets/data/learn-german/flashcards/cards-c1.json";
 const c2CardsPath = "/assets/data/learn-german/flashcards/cards-c2.json";
 const flashcardsRoute = "/germany/ja/learn-german/flashcards/?deck=a1-life-basics";
 
@@ -64,7 +68,7 @@ test("Learn German exposes four pillars and filters original decks without break
   await expect(page.locator(".learn-mobile-page-nav a")).toHaveCount(4);
   await expect(page.locator(".learn-page-guide a")).toHaveCount(4);
   await expect(page.locator('.learn-pillar-ribbon a[href="#original-web-tools"]')).toBeVisible();
-  await expect(page.locator("#originalDeckGrid .learn-deck-card")).toHaveCount(17);
+  await expect(page.locator("#originalDeckGrid .learn-deck-card")).toHaveCount(18);
 
   const a1Filter = page.locator('[data-deck-filter="level"][data-filter-value="A1"]');
   await a1Filter.click();
@@ -166,8 +170,13 @@ test("flashcard session supports front and back keyboard ratings, buttons, compl
   }
 
   await expect(page.locator("#flashcardsResults")).toBeVisible();
-  await expect(page.locator("#flashcardsResultStats")).toContainText("10枚");
-  await expect(page.locator("#flashcardsResultStats")).toContainText("1枚");
+  await expect(page.locator("#flashcardsResultStats")).toContainText("定着度");
+  await expect(page.locator("#flashcardsResultStats")).toContainText("80%");
+  await expect(page.locator("#flashcardsResultStats")).toContainText("覚えた");
+  await expect(page.locator("#flashcardsResultStats")).toContainText("8 / 10");
+  await expect(page.locator("#flashcardsResultStats")).toContainText("要復習");
+  await expect(page.locator("#flashcardsResultStats")).toContainText("2枚");
+  await expect(page.locator("#flashcardsResultStats")).toContainText("学習時間");
   await expect(page.locator("#flashcardsWeakList li")).toHaveCount(2);
   await expect(page.locator("#flashcardsReviewWeak")).toBeEnabled();
 
@@ -273,8 +282,11 @@ test("German word and example audio can be played, switched, and stopped without
   await expect(page.locator("#flashcardsInventorySummary")).toContainText("1 / 650語");
   await page.locator("#flashcardsInventoryStudyFiltered").click();
   await page.locator("#flashcardFlip").click();
-  await expect(page.locator("#flashcardExampleDe")).toContainText("編集レビュー待ち");
-  await expect(exampleButton).toBeHidden();
+  await expect(page.locator("#flashcardExampleDe")).toHaveText("Guten Abend!");
+  await expect(page.locator("#flashcardExampleJa")).toHaveText("こんばんは。");
+  await expect(page.locator("#flashcardExampleSource a")).toHaveAttribute("href", /tatoeba\.org\/en\/sentences\/show\/438751/);
+  await expect(exampleButton).toBeVisible();
+  await expect(exampleButton).toBeEnabled();
   await assertNoHorizontalOverflow(page);
 });
 
@@ -285,7 +297,11 @@ test("level deck inventory lists every word with sorting, filters, saved state, 
   await expect(page.locator("#flashcardsInventoryTitle")).toContainText("全650語");
   await expect(page.locator("#flashcardsInventorySummary")).toContainText("650 / 650語");
   await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(50);
+  await expect(page.locator(".flashcards-inventory-table thead th")).toHaveCount(7);
+  await expect(page.locator("#flashcardsInventoryQuality")).toHaveCount(0);
+  await expect(page.locator("#flashcardsInventoryLevels")).toBeHidden();
   await expect(page.locator("#flashcardsInventoryBody tr").first()).toContainText("der Termin");
+  await expect(page.locator("#flashcardsInventoryBody tr").first()).toContainText("A1");
   await expect(page.locator("#flashcardsInventoryBody tr").first()).toContainText("明日は医師の予約があります");
 
   const germanHeading = page.locator('[data-inventory-sort-column="display_de"]');
@@ -293,11 +309,6 @@ test("level deck inventory lists every word with sorting, filters, saved state, 
   await expect(germanHeading).toHaveAttribute("aria-sort", "ascending");
   await germanHeading.locator("button").click();
   await expect(germanHeading).toHaveAttribute("aria-sort", "descending");
-
-  await page.locator("#flashcardsInventoryQuality").selectOption("editorial-reviewed");
-  await expect(page.locator("#flashcardsInventorySummary")).toContainText("50 / 650語");
-  await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(50);
-  await page.locator("#flashcardsInventoryReset").click();
 
   const firstSave = page.locator("#flashcardsInventoryBody [data-inventory-save]").first();
   await firstSave.click();
@@ -343,6 +354,33 @@ test("C2 level-only deck loads 500 cards without lower levels and can start a bo
   await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(50);
   await page.locator("#flashcardsStart").click();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
+});
+
+test("all-level deck exposes A1-C2 chips and filters the complete 4,000-card inventory", async ({ page }) => {
+  await openDataRoute(page, "/germany/ja/learn-german/flashcards/?deck=all-levels-4000", [
+    decksPath,
+    a1CardsPath,
+    a2CardsPath,
+    b1CardsPath,
+    b2CardsPath,
+    c1CardsPath,
+    c2CardsPath
+  ]);
+  await expect(page.locator("#sessionSetupTitle")).toContainText("4,000");
+  await expect(page.locator("#flashcardsInventoryTitle")).toContainText("全4,000語");
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText("4,000 / 4,000語");
+  await expect(page.locator("#flashcardsInventoryLevels")).toBeVisible();
+  await expect(page.locator("[data-inventory-level]")).toHaveCount(7);
+
+  const c2Chip = page.locator('[data-inventory-level="C2"]');
+  await c2Chip.click();
+  await expect(c2Chip).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText("500 / 4,000語");
+  await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(50);
+  expect(await page.locator("#flashcardsInventoryBody tr").evaluateAll(rows => rows.every(row => row.textContent.includes("C2")))).toBe(true);
+
+  await page.locator("#flashcardsInventoryReset").click();
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText("4,000 / 4,000語");
 });
 
 test("incomplete progress resumes after reload and JSON backup, rejection, restore, and reset are safe", async ({ page }) => {

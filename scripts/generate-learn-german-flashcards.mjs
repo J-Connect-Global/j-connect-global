@@ -4,8 +4,13 @@ import { fileURLToPath } from "node:url";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outputDir = path.join(rootDir, "assets/data/learn-german/flashcards");
+const tatoebaExamplePath = path.join(rootDir, "content/learn-german/flashcards/tatoeba-examples.json");
 const verifiedDate = "2026-08-02";
-const generatedDate = "2026-08-09";
+const generatedDate = "2026-08-15";
+const tatoebaPayload = fs.existsSync(tatoebaExamplePath)
+  ? JSON.parse(fs.readFileSync(tatoebaExamplePath, "utf8"))
+  : { entries: [] };
+const tatoebaExamples = new Map((tatoebaPayload.entries || []).map((entry) => [entry.lemma, entry]));
 
 const sceneLabels = {
   daily: "日常",
@@ -246,7 +251,7 @@ const rawCards = {
 
 const levels = ["A1", "A2", "B1", "B2", "C1", "C2"];
 const levelFiles = Object.fromEntries(levels.map((level) => [level, `cards-${level.toLowerCase()}.json`]));
-const levelTargets = { A1: 650, A2: 650, B1: 1100, B2: 1600, C1: 3000, C2: 3000 };
+const levelTargets = { A1: 650, A2: 650, B1: 1100, B2: 600, C1: 500, C2: 500 };
 const totalTarget = Object.values(levelTargets).reduce((sum, count) => sum + count, 0);
 const sourceLexiconPath = path.join(rootDir, "content/learn-german/flashcards/cefr-lexicon-source.json");
 
@@ -276,6 +281,7 @@ function normalizedCuratedCard(level, entry) {
     related_terms: entry.related_terms,
     source_note: "J-Connect original example and explanation",
     source_refs: ["j-connect-editorial"],
+    level_basis: "j-connect-editorial",
     quality_tier: "editorial-reviewed",
     verification_status: "j-connect-editorial-reviewed",
     updated_at: verifiedDate,
@@ -291,25 +297,40 @@ function preferredJapanese(value) {
 }
 
 function normalizedReferenceCard(level, source, serial) {
+  const reviewedExample = exampleOverrides.get(source.lemma) || exampleOverrides.get(String(source.lemma).toLocaleLowerCase("de-DE"));
+  const tatoebaExample = tatoebaExamples.get(source.lemma);
+  const sourcedExample = reviewedExample || tatoebaExample;
+  const exampleSourceId = reviewedExample ? "j-connect-editorial" : "tatoeba";
   return {
     card_id: `${level.toLowerCase()}-${String(serial).padStart(4, "0")}`,
     lemma: source.lemma,
-    display_de: source.display_de,
+    display_de: displayOverrides.get(source.lemma) || displayOverrides.get(String(source.lemma).toLocaleLowerCase("de-DE")) || source.display_de,
     unit_type: source.lemma.includes(" ") ? "phrase" : "word",
     part_of_speech: source.part_of_speech,
     primary_level: level,
     level_tags: [level],
     topic_tags: ["general", sceneLabels.general],
     scene_tags: ["general"],
-    japanese: preferredJapanese(source.japanese),
-    example_de: "",
-    example_ja: "",
+    japanese: japaneseOverrides.get(source.lemma) || japaneseOverrides.get(String(source.lemma).toLocaleLowerCase("de-DE")) || preferredJapanese(source.japanese),
+    example_de: sourcedExample?.example_de || "",
+    example_ja: sourcedExample?.example_ja || "",
     grammar: source.grammar || {},
     collocations: [],
-    learning_note: "独日辞書の見出し語をドイツ語コーパス頻度で並べた参照カードです。例文と語法は編集レビュー待ちです。",
+    learning_note: reviewedExample
+      ? "独日辞書と頻度資料による参照カードです。例文はJ-Connectが確認しています。語法全体は編集レビュー待ちです。"
+      : "独日辞書と頻度資料による参照カードです。例文はTatoebaの独日対訳から自動照合しており、語法全体は編集レビュー待ちです。",
     related_terms: [],
     source_note: "FreeDict/WikDict German-Japanese headword ranked with Leipzig Corpora Collection frequency samples; CEFR band is a J-Connect study target.",
-    source_refs: source.source_refs || ["freedict-deu-jpn", "leipzig-corpora"],
+    source_refs: [...new Set([...(source.source_refs || ["freedict-deu-jpn", "leipzig-corpora"]), exampleSourceId])],
+    level_basis: source.level_basis || "j-connect-frequency-model",
+    example_source: sourcedExample ? {
+      source_id: exampleSourceId,
+      ...(!reviewedExample && tatoebaExample ? {
+        sentence_id: tatoebaExample.tatoeba_sentence_id,
+        translation_id: tatoebaExample.tatoeba_translation_id,
+        license: "CC BY 2.0 FR"
+      } : {})
+    } : null,
     quality_tier: "reference",
     verification_status: "source-aligned-needs-editorial-review",
     frequency_rank: source.rank,
@@ -327,14 +348,86 @@ alt billig blau braun deutsch einfach falsch gelb gesund groß grün gut heiß h
 gestern heute hier immer jetzt links morgen nicht oben rechts sehr unten zusammen
 `.trim().split(/\s+/).map((lemma, index) => [lemma, index]));
 
+const properNameHomographWhitelist = new Set(["Essen", "Fisch", "Land", "Name", "Stadt", "Welt", "Grund", "Löwe"]);
+
+const levelOverrides = new Map([
+  ["guten morgen", "A1"],
+  ["pink", "A1"],
+  ["Pfannkuchen", "A1"],
+  ["Joghurt", "A1"],
+  ["Daumen", "A2"],
+  ["Musical", "A2"],
+  ["Aspirin", "A2"],
+  ["Cocktail", "A2"],
+  ["Jazz", "A2"],
+  ["Kochbuch", "A2"],
+  ["Pflaume", "A2"],
+  ["Pflaster", "A2"],
+  ["Reisepass", "A2"],
+  ["Literatur", "B1"],
+  ["Naturwissenschaft", "B1"],
+  ["Arbeitsstelle", "B1"],
+  ["Blutdruck", "B1"],
+  ["Blutgruppe", "B1"],
+  ["Heimweh", "B1"],
+  ["Lilie", "B1"],
+  ["Malaria", "B1"],
+  ["Musikinstrument", "B1"],
+  ["Weltall", "B1"],
+  ["Wortspiel", "B1"],
+  ["Gewalt", "B1"],
+  ["Wahrheit", "B1"],
+  ["Akupunktur", "B2"],
+  ["Säugling", "B2"],
+  ["Vegetarismus", "B2"],
+  ["Verschwörung", "B2"],
+  ["Wahrnehmung", "B2"]
+]);
+
+const japaneseOverrides = new Map([
+  ["guten morgen", "おはようございます"],
+  ["pink", "ピンク色の"],
+  ["und", "そして、〜と"],
+  ["in", "〜の中に、〜で"],
+  ["von", "〜から、〜の"],
+  ["mit", "〜と一緒に、〜を使って"],
+  ["für", "〜のために、〜向け"],
+  ["allerdings", "ただし、もっとも"],
+  ["schließlich", "最終的に、ついに"],
+  ["Essen", "食事、食べ物"],
+  ["Fisch", "魚"],
+  ["Land", "国、土地"],
+  ["Name", "名前"],
+  ["Stadt", "都市、町"],
+  ["Welt", "世界"],
+  ["Grund", "理由、根拠"],
+  ["Löwe", "ライオン"]
+]);
+
+const displayOverrides = new Map([
+  ["guten morgen", "Guten Morgen"],
+  ["Essen", "das Essen"],
+  ["Fisch", "der Fisch"],
+  ["Land", "das Land"],
+  ["Name", "der Name"],
+  ["Stadt", "die Stadt"],
+  ["Welt", "die Welt"],
+  ["Grund", "der Grund"],
+  ["Löwe", "der Löwe"]
+]);
+
+const exampleOverrides = new Map([
+  ["guten morgen", { example_de: "Guten Morgen! Wie geht es Ihnen?", example_ja: "おはようございます。お元気ですか。" }],
+  ["Musical", { example_de: "Wir sehen heute Abend ein Musical.", example_ja: "今夜、私たちはミュージカルを見ます。" }],
+  ["Wahrnehmung", { example_de: "Stress kann unsere Wahrnehmung verändern.", example_ja: "ストレスは私たちの知覚を変えることがあります。" }]
+]);
+
 function sourceSelectionScore(source) {
   const lemma = source.lemma;
   const simpleLength = [...lemma.replace(/\s+/g, "")].length;
-  const essentialProperNames = new Set(["Deutschland", "Berlin", "Düsseldorf", "Europa"]);
   const basicAnatomy = new Set(["Auge", "Arm", "Bauch", "Bein", "Blut", "Finger", "Fuß", "Haar", "Hand", "Haut", "Herz", "Knie", "Kopf", "Mund", "Nase", "Ohr", "Rücken", "Zahn"]);
   let penalty = 0;
   if (editorialA1Priority.has(lemma)) return editorialA1Priority.get(lemma);
-  if (source.proper_name && !essentialProperNames.has(lemma)) penalty += 8_000;
   if (source.specialist_domain && !basicAnatomy.has(lemma)) penalty += 2_500;
   if (source.corpus_coverage === 0) penalty += 5_000;
   else if (source.corpus_coverage === 1) penalty += 1_800;
@@ -376,21 +469,35 @@ function buildLevelCards(sourceEntries) {
   const usedKeys = new Set(curatedKeys);
   const selectedByLevel = {};
   const rankedSources = sourceEntries
+    .filter((source) => !source.proper_name || properNameHomographWhitelist.has(source.lemma))
+    .filter((source) => tatoebaExamples.has(source.lemma) || exampleOverrides.has(source.lemma) || exampleOverrides.has(String(source.lemma).toLocaleLowerCase("de-DE")))
     .map((source) => ({ ...source, selection_score: sourceSelectionScore(source) }))
     .sort((left, right) => left.selection_score - right.selection_score || left.rank - right.rank);
+  const forcedByLevel = new Map(levels.map((level) => [level, []]));
+  const unforced = [];
+  rankedSources.forEach((source) => {
+    const forcedLevel = levelOverrides.get(source.lemma) || levelOverrides.get(String(source.lemma).toLocaleLowerCase("de-DE"));
+    (forcedLevel ? forcedByLevel.get(forcedLevel) : unforced).push(source);
+  });
   let sourceIndex = 0;
 
   for (const level of levels) {
     const curated = (rawCards[level] || []).map((entry) => normalizedCuratedCard(level, entry));
     const selected = [...curated];
+    for (const source of forcedByLevel.get(level)) {
+      const key = lemmaKey(source.lemma);
+      if (!key || usedKeys.has(key)) continue;
+      usedKeys.add(key);
+      selected.push(normalizedReferenceCard(level, { ...source, level_basis: "j-connect-editorial-override" }, selected.length + 1));
+    }
     while (selected.length < levelTargets[level]) {
-      const source = rankedSources[sourceIndex];
+      const source = unforced[sourceIndex];
       sourceIndex += 1;
       if (!source) throw new Error(`Source lexicon ended while filling ${level}.`);
       const key = lemmaKey(source.lemma);
       if (!key || usedKeys.has(key) || source.source_dictionary !== "freedict-deu-jpn") continue;
       usedKeys.add(key);
-      selected.push(normalizedReferenceCard(level, source, selected.length + 1));
+      selected.push(normalizedReferenceCard(level, { ...source, level_basis: "j-connect-frequency-model" }, selected.length + 1));
     }
     selectedByLevel[level] = selected;
   }
@@ -417,6 +524,7 @@ function validateGeneratedCards(cardsByLevel) {
       if (entry.quality_tier === "editorial-reviewed" && (!entry.example_de || !entry.example_ja)) {
         throw new Error(`Editorial card lacks examples: ${entry.card_id}`);
       }
+      if (Boolean(entry.example_de) !== Boolean(entry.example_ja)) throw new Error(`Incomplete example pair: ${entry.card_id}`);
     }
   }
   if (ids.size !== totalTarget) throw new Error(`Expected ${totalTarget} cards; found ${ids.size}.`);
@@ -469,13 +577,15 @@ function createDeck(id, title, description, cardIds, scenes, minutes, options = 
 
 function buildDecks(cardsByLevel) {
   const allScenes = Object.keys(sceneLabels);
+  const allLevelIds = levels.flatMap((level) => idsFor(level, cardsByLevel));
   return [
+    createDeck("all-levels-4000", "A1〜C2 全レベル4,000語", "地名・人名などを除き、独日例文を確認できる6レベルの語彙をまとめて検索・絞り込み・学習できます。レベルチップで対象を切り替えられます。", allLevelIds, allScenes, 2000, { primaryLevel: "A1–C2", deckKind: "cefr-all", featured: true }),
     createDeck("a1-life-basics", "A1 レベル別語彙650", "A1だけの入門・身近な語彙650語です。下位レベルの語彙はありません。", idsFor("A1", cardsByLevel), allScenes, 325, { primaryLevel: "A1", deckKind: "cefr-level", featured: true }),
     createDeck("a2-daily-independence", "A2 レベル別語彙650", "A1を除外した、A2だけの日常生活・基本的な用事の語彙650語です。", idsFor("A2", cardsByLevel), allScenes, 325, { primaryLevel: "A2", deckKind: "cefr-level", featured: true }),
     createDeck("b1-explain-and-confirm", "B1 レベル別語彙1,100", "A1・A2を除外した、B1だけの身近な話題・社会生活の語彙1,100語です。", idsFor("B1", cardsByLevel), allScenes, 550, { primaryLevel: "B1", deckKind: "cefr-level", featured: true }),
-    createDeck("b2-negotiate-and-document", "B2 レベル別語彙1,600", "A1〜B1を除外した、B2だけの専門・抽象トピックの語彙1,600語です。", idsFor("B2", cardsByLevel), allScenes, 800, { primaryLevel: "B2", deckKind: "cefr-level", featured: true }),
-    createDeck("c1-broad-repertoire", "C1 レベル別語彙3,000", "A1〜B2を除外した、C1だけの幅広い・専門的な語彙3,000語です。", idsFor("C1", cardsByLevel), allScenes, 1500, { primaryLevel: "C1", deckKind: "cefr-level", featured: true }),
-    createDeck("c2-nuance-repertoire", "C2 レベル別語彙3,000", "A1〜C1を除外した、C2だけの語感・含意・専門領域の語彙3,000語です。", idsFor("C2", cardsByLevel), allScenes, 1500, { primaryLevel: "C2", deckKind: "cefr-level", featured: true }),
+    createDeck("b2-negotiate-and-document", "B2 レベル別語彙600", "A1〜B1を除外した、B2だけの専門・抽象トピックの語彙600語です。", idsFor("B2", cardsByLevel), allScenes, 300, { primaryLevel: "B2", deckKind: "cefr-level", featured: true }),
+    createDeck("c1-broad-repertoire", "C1 レベル別語彙500", "A1〜B2を除外した、C1だけの幅広い・専門的な語彙500語です。", idsFor("C1", cardsByLevel), allScenes, 250, { primaryLevel: "C1", deckKind: "cefr-level", featured: true }),
+    createDeck("c2-nuance-repertoire", "C2 レベル別語彙500", "A1〜C1を除外した、C2だけの語感・含意・専門領域の語彙500語です。", idsFor("C2", cardsByLevel), allScenes, 250, { primaryLevel: "C2", deckKind: "cefr-level", featured: true }),
     createDeck("a1-practical-50", "A1 編集済み実践50", "例文・文法・語法を編集レビューした生活ドイツ語50枚です。", idsFor("A1", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 25, { primaryLevel: "A1", deckKind: "editorial-practice" }),
     createDeck("a2-practical-50", "A2 編集済み実践50", "例文・文法・語法を編集レビューした生活ドイツ語50枚です。", idsFor("A2", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 30, { primaryLevel: "A2", deckKind: "editorial-practice" }),
     createDeck("b1-practical-50", "B1 編集済み実践50", "例文・文法・語法を編集レビューした説明・確認の50枚です。", idsFor("B1", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 35, { primaryLevel: "B1", deckKind: "editorial-practice" }),
@@ -501,6 +611,14 @@ if (!fs.existsSync(sourceLexiconPath)) {
 const sourcePayload = JSON.parse(fs.readFileSync(sourceLexiconPath, "utf8"));
 const cardsByLevel = buildLevelCards(sourcePayload.entries || []);
 validateGeneratedCards(cardsByLevel);
+const sourcedExampleCount = Object.values(cardsByLevel)
+  .flat()
+  .filter((entry) => entry.quality_tier === "reference" && entry.example_de)
+  .length;
+const tatoebaExampleCount = Object.values(cardsByLevel)
+  .flat()
+  .filter((entry) => entry.example_source?.source_id === "tatoeba")
+  .length;
 fs.mkdirSync(outputDir, { recursive: true });
 
 for (const level of levels) {
@@ -518,15 +636,20 @@ writeJson("decks.json", {
   schema_version: 2,
   updated_at: generatedDate,
   level_note_ja: "CEFRは能力記述であり、公式の全単語リストはありません。各帯の語彙割当は、正式資料と頻度資料を基にしたJ-Connect独自のレベル別学習目標です。各レベル教材に下位レベルの語彙は含みません。",
-  quality_note_ja: "200枚は例文・文法・語法まで編集済みです。残り9,800枚は出典付き参照カードで、例文・詳細語法は順次編集レビューします。",
+  quality_note_ja: `全${totalTarget.toLocaleString("ja-JP")}枚に独日例文を収録し、対応ブラウザでは見出し語と例文をドイツ語音声で再生できます。200枚は例文・文法・語法まで編集済みで、参照カード${sourcedExampleCount.toLocaleString("ja-JP")}枚のうち${tatoebaExampleCount.toLocaleString("ja-JP")}枚はTatoebaの出典IDを保持しています。`,
   storage_note_ja: "学習記録はこの端末のブラウザに保存されます。",
-  license_note_ja: "FreeDict由来の辞書データを含む語彙カード部分はCC BY-SA 3.0で提供します。Leipzig Corpora Collectionの帰属情報も保持します。",
+  license_note_ja: "FreeDict由来の辞書データを含む語彙カード部分はCC BY-SA 3.0で提供します。Leipzig Corpora Collectionの帰属情報を保持し、Tatoeba由来の例文はCC BY 2.0 FRとして帰属します。",
   level_counts: levelTargets,
   total_card_count: totalTarget,
   scene_labels: sceneLabels,
   card_sources: levelFiles,
   methodology_url: "#flashcardsSources",
-  sources: sourcePayload.licenses,
+  sources: [...sourcePayload.licenses, {
+    source_id: "tatoeba",
+    title: "Tatoeba German–Japanese sentence pairs",
+    license: "CC BY 2.0 FR",
+    url: "https://tatoeba.org/en/downloads"
+  }],
   decks
 });
 

@@ -334,12 +334,12 @@ test("level deck inventory lists every word with sorting, filters, saved state, 
   await expect(page.locator("#flashcardsInventoryBody tr").first()).toContainText("学習中");
 });
 
-test("C2 level-only deck loads 3,000 cards without lower levels and can start a bounded session", async ({ page }) => {
+test("C2 level-only deck loads 500 cards without lower levels and can start a bounded session", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/learn-german/flashcards/?deck=c2-nuance-repertoire", [decksPath, c2CardsPath]);
   await expect(page.locator("#flashcardsSetup")).toBeVisible();
-  await expect(page.locator("#sessionSetupTitle")).toContainText("3,000");
-  await expect(page.locator("#setupDeckBadges")).toContainText("3,000枚");
-  await expect(page.locator("#flashcardsInventorySummary")).toContainText("3,000 / 3,000語");
+  await expect(page.locator("#sessionSetupTitle")).toContainText("500");
+  await expect(page.locator("#setupDeckBadges")).toContainText("500枚");
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText("500 / 500語");
   await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(50);
   await page.locator("#flashcardsStart").click();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");

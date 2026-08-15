@@ -22,7 +22,8 @@
       status: root.querySelector("#flashcardsInventoryStatus"),
       saved: root.querySelector("#flashcardsInventorySaved"),
       partOfSpeech: root.querySelector("#flashcardsInventoryPartOfSpeech"),
-      quality: root.querySelector("#flashcardsInventoryQuality"),
+      levelField: root.querySelector("#flashcardsInventoryLevels"),
+      levelButtons: Array.from(root.querySelectorAll("[data-inventory-level]")),
       pageSize: root.querySelector("#flashcardsInventoryPageSize"),
       reset: root.querySelector("#flashcardsInventoryReset"),
       studyFiltered: root.querySelector("#flashcardsInventoryStudyFiltered"),
@@ -46,7 +47,7 @@
       status: "all",
       saved: "all",
       partOfSpeech: "all",
-      quality: "all",
+      level: "all",
       sortKey: "order",
       sortDirection: "asc",
       page: 1,
@@ -94,7 +95,7 @@
         status: "all",
         saved: "all",
         partOfSpeech: "all",
-        quality: "all",
+        level: "all",
         sortKey: "order",
         sortDirection: "asc",
         page: 1,
@@ -104,7 +105,11 @@
       elements.search.value = "";
       elements.status.value = "all";
       elements.saved.value = "all";
-      elements.quality.value = "all";
+      elements.levelButtons.forEach(button => {
+        const selected = button.dataset.inventoryLevel === "all";
+        button.classList.toggle("is-active", selected);
+        button.setAttribute("aria-pressed", selected ? "true" : "false");
+      });
       elements.pageSize.value = "50";
     }
 
@@ -120,10 +125,6 @@
       if (progress.status === "mastered") return "習得済み";
       if (progress.status === "reviewing") return "学習中";
       return "未学習";
-    }
-
-    function qualityLabel(card) {
-      return card.quality_tier === "editorial-reviewed" ? "例文・解説あり" : "参照カード";
     }
 
     function filteredEntries() {
@@ -155,7 +156,7 @@
         if (state.saved === "saved" && !progress.saved) return false;
         if (state.saved === "unsaved" && progress.saved) return false;
         if (state.partOfSpeech !== "all" && card.part_of_speech !== state.partOfSpeech) return false;
-        if (state.quality !== "all" && card.quality_tier !== state.quality) return false;
+        if (state.level !== "all" && card.primary_level !== state.level) return false;
         return true;
       });
 
@@ -165,11 +166,11 @@
         let comparison = 0;
         switch (state.sortKey) {
           case "saved": comparison = Number(left.progress.saved) - Number(right.progress.saved); break;
+          case "level": comparison = collator.compare(left.card.primary_level, right.card.primary_level); break;
           case "display_de": comparison = collator.compare(left.card.display_de, right.card.display_de); break;
           case "japanese": comparison = collator.compare(left.card.japanese, right.card.japanese); break;
           case "example": comparison = collator.compare(left.card.example_de || "", right.card.example_de || ""); break;
           case "part_of_speech": comparison = collator.compare(partOfSpeechLabels[left.card.part_of_speech] || left.card.part_of_speech, partOfSpeechLabels[right.card.part_of_speech] || right.card.part_of_speech); break;
-          case "quality": comparison = collator.compare(qualityLabel(left.card), qualityLabel(right.card)); break;
           case "status": comparison = statusOrder[left.progress.status] - statusOrder[right.progress.status]; break;
           default: comparison = left.order - right.order;
         }
@@ -187,7 +188,7 @@
     }
 
     function createRow(entry) {
-      const { card, order, progress } = entry;
+      const { card, progress } = entry;
       const row = document.createElement("tr");
       const saveButton = createElement("button", "flashcards-inventory-save", progress.saved ? "★" : "☆");
       saveButton.type = "button";
@@ -195,35 +196,30 @@
       saveButton.setAttribute("aria-pressed", progress.saved ? "true" : "false");
       saveButton.setAttribute("aria-label", `${card.display_de}を${progress.saved ? "保存から外す" : "保存する"}`);
       appendCell(row, saveButton);
-      appendCell(row, String(order));
+      appendCell(row, createElement("span", "flashcards-inventory-level", card.primary_level));
 
       const german = document.createElement("div");
       german.append(createElement("span", "flashcards-inventory-word", card.display_de));
-      if (card.lemma && card.lemma !== card.display_de) german.append(createElement("span", "flashcards-inventory-subtext", `見出し語: ${card.lemma}`));
       appendCell(row, german);
       appendCell(row, card.japanese);
 
       const example = document.createElement("div");
-      example.append(createElement("span", "", card.example_de || "例文は編集レビュー待ちです。"));
-      example.append(createElement("span", "flashcards-inventory-example-ja", card.example_ja || "日本語例文は編集レビュー待ちです。"));
+      example.className = "flashcards-inventory-example";
+      example.title = card.example_de ? `${card.example_de}\n${card.example_ja}` : "例文は準備中です";
+      example.append(createElement("span", "", card.example_de || "準備中"));
+      if (card.example_ja) example.append(createElement("span", "flashcards-inventory-example-ja", card.example_ja));
       appendCell(row, example);
 
       const grammar = document.createElement("div");
       grammar.append(createElement("span", "flashcards-inventory-badge", partOfSpeechLabels[card.part_of_speech] || card.part_of_speech));
       grammar.append(createElement("span", "flashcards-inventory-subtext", formatGrammar(card)));
       appendCell(row, grammar);
-      appendCell(row, createElement("span", "flashcards-inventory-badge", qualityLabel(card)));
-
       const progressCell = document.createElement("div");
       progressCell.append(createElement("span", `flashcards-inventory-badge is-${progress.status}`, statusLabel(progress)));
       if (isReviewDue(progress)) progressCell.append(createElement("span", "flashcards-inventory-badge is-due", "復習期限"));
-      if (Number(progress.attempts || 0) > 0) {
-        progressCell.append(createElement("span", "flashcards-inventory-subtext", `学習 ${Number(progress.attempts).toLocaleString("ja-JP")}回・覚えた ${Number(progress.known_count || 0).toLocaleString("ja-JP")}回`));
-      }
       const reviewed = formatDate(progress.last_reviewed);
-      if (reviewed) progressCell.append(createElement("span", "flashcards-inventory-subtext", `最終学習: ${reviewed}`));
       const nextReview = formatDate(progress.next_review);
-      if (nextReview) progressCell.append(createElement("span", "flashcards-inventory-subtext", `次回復習: ${nextReview}`));
+      progressCell.title = [Number(progress.attempts || 0) ? `学習 ${progress.attempts}回` : "", reviewed ? `最終学習: ${reviewed}` : "", nextReview ? `次回復習: ${nextReview}` : ""].filter(Boolean).join("\n");
       appendCell(row, progressCell);
       return row;
     }
@@ -281,8 +277,9 @@
       populatePartOfSpeechFilter();
       const allProgress = await storage.getAllProgress();
       state.progressByCardId = new Map(allProgress.map(progress => [progress.card_id, progress]));
-      elements.title.textContent = `${deck.target_level}・全${Number(deck.card_count).toLocaleString("ja-JP")}語リスト`;
-      elements.description.textContent = `${deck.target_level}だけに割り当てた語彙の表・裏・例文・文法・品質・端末内学習進捗です。見出しをクリックすると昇順・降順を切り替えられます。`;
+      elements.title.textContent = deck.deck_kind === "cefr-all" ? "A1〜C2・全4,000語リスト" : `${deck.target_level}・全${Number(deck.card_count).toLocaleString("ja-JP")}語リスト`;
+      elements.description.textContent = "ドイツ語・日本語・例文・文法・学習進捗を一覧できます。長い内容は省略表示され、カーソルを合わせると全文を確認できます。";
+      elements.levelField.hidden = deck.deck_kind !== "cefr-all";
       elements.section.hidden = false;
       render();
     }
@@ -335,10 +332,19 @@
       [elements.status, "status"],
       [elements.saved, "saved"],
       [elements.partOfSpeech, "partOfSpeech"],
-      [elements.quality, "quality"],
       [elements.pageSize, "pageSize"]
     ].forEach(([control, key]) => control.addEventListener("change", () => {
       state[key] = control.value;
+      state.page = 1;
+      render();
+    }));
+    elements.levelButtons.forEach(button => button.addEventListener("click", () => {
+      state.level = button.dataset.inventoryLevel;
+      elements.levelButtons.forEach(item => {
+        const selected = item === button;
+        item.classList.toggle("is-active", selected);
+        item.setAttribute("aria-pressed", selected ? "true" : "false");
+      });
       state.page = 1;
       render();
     }));

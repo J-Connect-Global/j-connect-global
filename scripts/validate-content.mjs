@@ -362,6 +362,9 @@ function isValidGeneratedArticleUrl(type, item) {
   if (type === 'events' && item.content_type === 'news') {
     return item.url === `/germany/ja/events/news/${item.slug}/`;
   }
+  if (type === 'events' && item.content_type === 'column') {
+    return item.url === `/germany/ja/events/columns/${item.slug}/`;
+  }
   return false;
 }
 

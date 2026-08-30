@@ -74,7 +74,7 @@ const contentTypes = {
     homeMarker: 'home-events',
     homeLimit: 3,
     cardText: 'イベント記事を読む',
-    backText: 'イベント一覧へ戻る'
+    backText: 'ニュース・イベント一覧へ戻る'
   },
   'learn-german': {
     label: 'ドイツ語・学び',
@@ -1034,6 +1034,9 @@ function renderArticleMetaSpans(type, item) {
     if (item.content_type === 'news') {
       if (item.area || item.city) rows.push(`<span>対象地域: ${escapeHtml(item.area || item.city)}</span>`);
       if (item.source_type === 'manual') rows.push('<span>種別: J-Connect編集部の日本語解説</span>');
+    } else if (item.content_type === 'column') {
+      if (item.area || item.city) rows.push(`<span>対象地域: ${escapeHtml(item.area || item.city)}</span>`);
+      rows.push('<span>種別: J-Connect編集部コラム</span>');
     } else {
       if (item.event_date) rows.push(`<span>日程: ${escapeHtml(item.event_date)}</span>`);
       if (item.city) rows.push(`<span>地域: ${escapeHtml(item.city)}</span>`);
@@ -1199,6 +1202,12 @@ function renderDisclaimer(item) {
   if (item.disclaimer_type === 'news_explainer') {
     return `<div class="article-disclaimer">
   本記事はJ-Connect編集部による日本語の生活解説です。速報や公式発表の代替ではありません。制度、交通、健康、安全に関わる判断は、自治体・交通機関・医療機関などの公式情報を確認してください。
+</div>`;
+  }
+
+  if (item.disclaimer_type === 'editorial_column') {
+    return `<div class="article-disclaimer">
+  本記事はJ-Connect編集部の一般的なコラムです。感じ方や適切な行動は、本人の状況・健康・人間関係・行政手続きの内容によって異なります。重要な判断では公式窓口や専門家の個別情報も確認してください。
 </div>`;
   }
 
@@ -1509,12 +1518,16 @@ function updateEventsHub(items) {
   let html = readText(hubPath);
 
   const eventCards = sortForHub(items)
-    .filter((item) => item.published && item.hub_visible && item.content_type !== 'news')
+    .filter((item) => item.published && item.hub_visible && !['news', 'column'].includes(item.content_type))
     .map((item) => renderHubCard('events', item))
     .join('\n\n');
   const newsCards = sortForHub(items)
     .filter((item) => item.published && item.content_type === 'news')
     .map(renderManualNewsHubCard)
+    .join('\n\n');
+  const columnCards = sortForHub(items)
+    .filter((item) => item.published && item.hub_visible && item.content_type === 'column')
+    .map(renderColumnHubCard)
     .join('\n\n');
 
   html = replaceMarkedDivContent(
@@ -1530,6 +1543,13 @@ function updateEventsHub(items) {
     /<div class="news-card-grid news-events-grid is-list-view" id="newsGrid"[^>]*>/,
     newsCards,
     14
+  );
+  html = replaceMarkedDivContent(
+    html,
+    'events-column-grid',
+    /<div class="news-card-grid news-events-grid is-grid-view" id="columnGrid"[^>]*>/,
+    columnCards,
+    10
   );
 
   writeText(hubPath, html);
@@ -1836,6 +1856,21 @@ ${media ? indent(media, 2) : ''}
 </article>`;
 }
 
+function renderColumnHubCard(item) {
+  const media = renderCardMedia(item, 'events');
+  const mediaClass = media ? ' card--has-media' : '';
+  const badges = [item.category || '暮らしの視点', item.area || item.city || 'ドイツ生活', 'J-Connectコラム'];
+
+  return `<article class="news-card manual-news-card${mediaClass}">
+${media ? indent(media, 2) : ''}
+  <div class="news-card__badges">${badges.map((badge) => `<span>${escapeHtml(badge)}</span>`).join('')}</div>
+  <h3>${escapeHtml(item.title)}</h3>
+  <p>${escapeHtml(item.summary)}</p>
+  <div class="news-card__meta"><span>公開: ${escapeHtml(item.published_at || '')}</span></div>
+  <a href="${escapeAttribute(item.url)}">コラムを読む</a>
+</article>`;
+}
+
 function manualNewsFilterValues(item) {
   const text = normalizeFilterText([
     item.title,
@@ -2056,7 +2091,7 @@ function updateHome(datasets) {
     .map((item) => renderHomeStandardArticleCard(item, 'living', 'portal3-card-img'))
     .join('\n\n');
   const newsList = renderHomeNewsList(homeNewsItems(datasets.events, 3));
-  const eventCards = homeItems(datasets.events, contentTypes.events.homeLimit, (item) => item.content_type !== 'news').map(renderHomeEventCard).join('\n\n');
+  const eventCards = homeItems(datasets.events, contentTypes.events.homeLimit, (item) => !['news', 'column'].includes(item.content_type)).map(renderHomeEventCard).join('\n\n');
   const learnGermanContent = homeItems(datasets['learn-german'], contentTypes['learn-german'].homeLimit).map(renderHomeLearnGermanCard).join('\n\n');
   const homeArticleItemsByUrl = new Map(Object.values(datasets).flatMap((items) => items).map((item) => [item.url, item]));
 

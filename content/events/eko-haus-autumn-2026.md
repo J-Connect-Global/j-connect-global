@@ -7,9 +7,9 @@ city: "Düsseldorf"
 location: "EKŌ-Haus der Japanischen Kultur"
 event_date: "2026-08-20〜2026-10-17"
 published_at: "2026-08-01"
-updated_at: "2026-08-01"
-last_verified: "2026-08-01"
-next_review: "2026-08-18"
+updated_at: "2026-08-29"
+last_verified: "2026-08-29"
+next_review: "2026-09-08"
 summary: "デュッセルドルフEKŌ-Hausで2026年8〜10月に行われる展覧会、茶道、着物、緑茶、書道、仏教行事を整理。予約、料金、言語、参加前の注意点が分かります。"
 tags: ["EKŌ-Haus", "デュッセルドルフ", "日本文化", "茶道", "着物", "書道", "NRW"]
 status: "published"
@@ -109,6 +109,8 @@ EKŌ-Hausの公式案内は、事前登録が必要な催しでは、申込み�
 6. 清潔な靴下、筆記具、必要な教材
 7. 撮影ルール
 8. 帰りのRheinbahn経路
+
+![デュッセルドルフで日本文化施設と周辺散策の順番を相談する様子](/assets/images/living/duesseldorf-japanese-quarter-choice-editorial-v1.webp "AI生成の編集イメージ。実際のEKŌ-Haus、参加者、催しではありません。")
 
 ## まとめ
 

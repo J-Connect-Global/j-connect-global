@@ -1075,6 +1075,146 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
+    "title": "Tag des offenen Denkmals 2026完全ガイド｜NRWで失敗しない選び方",
+    "description": "2026年9月13日のドイツ公開文化財の日を、在独日本人向けに解説。NRWの会場選び、予約、移動、子連れ、ドイツ語ツアー、当日の回り方まで一日計画に落とし込みます。",
+    "url": "/germany/ja/events/tag-des-offenen-denkmals-2026-guide/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "Tag des offenen Denkmals",
+      "文化遺産",
+      "建築",
+      "産業遺産",
+      "無料イベント",
+      "NRW"
+    ]
+  },
+  {
+    "title": "デュッセルドルフ・オクトーバーフェスト2026｜予約・服装・帰り方ガイド",
+    "description": "2026年9月10〜26日のデュッセルドルフ・オクトーバーフェストを初参加者向けに整理。日程選び、席の予約、服装、食事、飲酒、公共交通、グループ参加の注意点が分かります。",
+    "url": "/germany/ja/events/duesseldorf-oktoberfest-2026-guide/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "Düsseldorf",
+      "オクトーバーフェスト",
+      "秋イベント",
+      "ライブ音楽",
+      "公共交通",
+      "NRW"
+    ]
+  },
+  {
+    "title": "ケルンマラソン2026完全ガイド｜走る人・応援する人・住民の準備",
+    "description": "2026年10月4日のGenerali Köln Marathonを、参加者・応援者・市内移動が必要な人の三方向から解説。申込、健康、補給、待ち合わせ、交通規制、当日の判断まで整理します。",
+    "url": "/germany/ja/events/cologne-marathon-2026-guide/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "Köln Marathon",
+      "ケルン",
+      "マラソン",
+      "ランニング",
+      "交通規制",
+      "応援"
+    ]
+  },
+  {
+    "title": "フランクフルト・ブックフェア2026｜一般来場者の一日攻略ガイド",
+    "description": "2026年10月7〜11日のFrankfurter Buchmesseを一般来場者向けに解説。入場可能日、チェコのゲスト国企画、会場の回り方、子連れ、サイン会、交通と予算を一日計画にします。",
+    "url": "/germany/ja/events/frankfurt-book-fair-2026-guide/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "Frankfurter Buchmesse",
+      "フランクフルト",
+      "本",
+      "チェコ",
+      "国際見本市",
+      "日帰り"
+    ]
+  },
+  {
+    "title": "ART COLOGNE 2026初めての見方｜チケット・会場・作品との向き合い方",
+    "description": "2026年11月5〜8日の第59回ART COLOGNEを、購入予定のない初来場者にも分かるよう解説。チケット、ギャラリーの見方、質問、撮影、子連れ、予算、回り方を整理します。",
+    "url": "/germany/ja/events/art-cologne-2026-guide/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "ART COLOGNE",
+      "ケルン",
+      "現代美術",
+      "アートフェア",
+      "Koelnmesse",
+      "NRW"
+    ]
+  },
+  {
+    "title": "2026年9月からドイツで変わること｜表示・税相談・駅の飲酒ルール",
+    "description": "2026年9月に始まる環境表示の厳格化、Lohnsteuerhilfevereinの相談範囲拡大、DB駅構内の飲酒禁止を在独者向けに解説。誰に影響し、何を確認すべきかを整理します。",
+    "url": "/germany/ja/events/news/germany-september-2026-changes/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "2026年9月",
+      "制度変更",
+      "環境表示",
+      "税務相談",
+      "Deutsche Bahn",
+      "ドイツ生活"
+    ]
+  },
+  {
+    "title": "BauCode NRWが9月1日施行｜建築申請デジタル化と改修ルールを解説",
+    "description": "NRW州のBauCodeが2026年9月1日に施行。電子建築申請、既存建物の用途変更、屋根裏改修、測量義務、審査の迅速化を、所有者・借主・設計者の行動に分けて解説します。",
+    "url": "/germany/ja/events/news/baucode-nrw-september-2026/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "BauCode NRW",
+      "建築申請",
+      "デジタル行政",
+      "リノベーション",
+      "用途変更",
+      "住宅"
+    ]
+  },
+  {
+    "title": "ドイツ失業者306.1万人｜2026年8月雇用統計と9月の転職戦略",
+    "description": "ドイツの2026年8月失業者は306万1,000人、失業率6.5%。季節調整値、求人、就業、職業訓練を分け、求職者・転職者・採用企業が9月に行う改善策を整理します。",
+    "url": "/germany/ja/events/news/germany-labour-market-august-2026/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "ドイツ雇用",
+      "失業率",
+      "転職",
+      "求人",
+      "採用",
+      "Ausbildung"
+    ]
+  },
+  {
+    "title": "ドイツ生活の孤独を減らす｜居場所を3層でつくる30日プラン",
+    "description": "ドイツで知り合いはいても孤独を感じる人へ。顔見知り、役割のある場、深く話せる一人という3層で居場所を設計し、無理なく続ける30日間の行動に落とします。",
+    "url": "/germany/ja/events/columns/germany-belonging-three-layers/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "孤独",
+      "居場所",
+      "友人",
+      "Verein",
+      "日本人コミュニティ",
+      "ドイツ生活"
+    ]
+  },
+  {
+    "title": "ドイツ生活の情報疲れを減らす｜公式・経験談・AIの使い分け",
+    "description": "役所サイト、友人の経験、SNS、AIの答えが食い違うときの判断法。リスク別の情報源、日付・地域・対象者の確認、問い合わせ、証拠保存まで15分の型にします。",
+    "url": "/germany/ja/events/columns/germany-information-triage-guide/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "情報リテラシー",
+      "公式情報",
+      "AI",
+      "行政手続き",
+      "SNS",
+      "ドイツ生活"
+    ]
+  },
+  {
     "title": "予約を取りたいときのドイツ語フレーズ",
     "description": "病院、美容室、役所などで使える予約依頼、空き確認、日時変更の基本表現です。",
     "url": "/germany/ja/learn-german/appointment-phrase/",

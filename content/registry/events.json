@@ -429,8 +429,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-08-01",
-    "updated_at": "2026-08-01",
-    "last_verified": "2026-08-01",
+    "updated_at": "2026-08-29",
+    "last_verified": "2026-08-29",
     "tags": [
       "EKŌ-Haus",
       "デュッセルドルフ",
@@ -476,8 +476,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-01",
-      "next_review_due": "2026-08-18"
+      "last_reviewed_at": "2026-08-29",
+      "next_review_due": "2026-09-08"
     }
   },
   {
@@ -496,8 +496,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-08-01",
-    "updated_at": "2026-08-01",
-    "last_verified": "2026-08-01",
+    "updated_at": "2026-08-29",
+    "last_verified": "2026-08-29",
     "tags": [
       "ケルン",
       "日本美術",
@@ -542,7 +542,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-01",
+      "last_reviewed_at": "2026-08-29",
       "next_review_due": "2026-10-20"
     }
   },
@@ -562,8 +562,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-08-01",
-    "updated_at": "2026-08-01",
-    "last_verified": "2026-08-01",
+    "updated_at": "2026-08-29",
+    "last_verified": "2026-08-29",
     "tags": [
       "Beethovenfest",
       "ボン",
@@ -608,7 +608,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-01",
+      "last_reviewed_at": "2026-08-29",
       "next_review_due": "2026-09-01"
     }
   },
@@ -1379,6 +1379,603 @@
       "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-08",
       "next_review_due": "2026-08-31"
+    }
+  },
+  {
+    "id": "E013",
+    "title": "Tag des offenen Denkmals 2026完全ガイド｜NRWで失敗しない選び方",
+    "slug": "tag-des-offenen-denkmals-2026-guide",
+    "image_url": "/assets/img/events/tag-des-offenen-denkmals-2026-guide.webp",
+    "image": "/assets/img/events/tag-des-offenen-denkmals-2026-guide.webp",
+    "image_alt": "赤レンガの歴史的産業施設へガイドと入る見学者",
+    "image_caption": "AI生成の編集イメージ。実在する会場・2026年の見学会を撮影または再現したものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "建築・文化遺産",
+    "content_type": "event",
+    "summary": "2026年9月13日のドイツ公開文化財の日を、在独日本人向けに解説。NRWの会場選び、予約、移動、子連れ、ドイツ語ツアー、当日の回り方まで一日計画に落とし込みます。",
+    "url": "/germany/ja/events/tag-des-offenen-denkmals-2026-guide/",
+    "markdown_path": "/content/events/tag-des-offenen-denkmals-2026-guide.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-29",
+    "updated_at": "2026-08-29",
+    "last_verified": "2026-08-29",
+    "tags": [
+      "Tag des offenen Denkmals",
+      "文化遺産",
+      "建築",
+      "産業遺産",
+      "無料イベント",
+      "NRW"
+    ],
+    "home_visible": true,
+    "home_order": 1,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/tag-des-offenen-denkmals-2026-guide/",
+    "city": "NRW・ドイツ全土",
+    "location": "参加する歴史建築・産業遺産・インフラ施設",
+    "event_date": "2026-09-13",
+    "official_url": "https://www.tag-des-offenen-denkmals.de/",
+    "official_sources": [
+      {
+        "title": "Tag des offenen Denkmals 公式サイト・2026年プログラム",
+        "url": "https://www.tag-des-offenen-denkmals.de/"
+      },
+      {
+        "title": "Deutsche Stiftung Denkmalschutz：2026年開催案内",
+        "url": "https://www.denkmalschutz.de/denkmale-erleben/tag-des-offenen-denkmals/tag-des-offenen-denkmals-2026.html"
+      }
+    ],
+    "disclaimer_type": "event",
+    "related_articles": [
+      "cologne-east-asian-art-museum-2026",
+      "family-weekend-events-nrw"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-29",
+      "next_review_due": "2026-09-12"
+    }
+  },
+  {
+    "id": "E014",
+    "title": "デュッセルドルフ・オクトーバーフェスト2026｜予約・服装・帰り方ガイド",
+    "slug": "duesseldorf-oktoberfest-2026-guide",
+    "image_url": "/assets/img/events/duesseldorf-oktoberfest-2026-guide.webp",
+    "image": "/assets/img/events/duesseldorf-oktoberfest-2026-guide.webp",
+    "image_alt": "秋の祭典テントで食事と音楽を楽しむ日本人とドイツ人の友人",
+    "image_caption": "AI生成の編集イメージ。実際の2026年会場・出演者・来場者を撮影または再現したものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "季節イベント・音楽",
+    "content_type": "event",
+    "summary": "2026年9月10〜26日のデュッセルドルフ・オクトーバーフェストを初参加者向けに整理。日程選び、席の予約、服装、食事、飲酒、公共交通、グループ参加の注意点が分かります。",
+    "url": "/germany/ja/events/duesseldorf-oktoberfest-2026-guide/",
+    "markdown_path": "/content/events/duesseldorf-oktoberfest-2026-guide.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-29",
+    "updated_at": "2026-08-29",
+    "last_verified": "2026-08-29",
+    "tags": [
+      "Düsseldorf",
+      "オクトーバーフェスト",
+      "秋イベント",
+      "ライブ音楽",
+      "公共交通",
+      "NRW"
+    ],
+    "home_visible": true,
+    "home_order": 2,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/duesseldorf-oktoberfest-2026-guide/",
+    "city": "Düsseldorf",
+    "location": "Schützenplatz Düsseldorf-Eller",
+    "event_date": "2026-09-10〜2026-09-26",
+    "official_url": "https://www.visitduesseldorf.de/event/duesseldorfer-oktoberfest-2026-eb91e15a4a",
+    "official_sources": [
+      {
+        "title": "Visit Düsseldorf：Düsseldorfer Oktoberfest 2026",
+        "url": "https://www.visitduesseldorf.de/event/duesseldorfer-oktoberfest-2026-eb91e15a4a"
+      }
+    ],
+    "disclaimer_type": "event",
+    "related_articles": [
+      "eko-haus-autumn-2026",
+      "family-weekend-events-nrw"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-29",
+      "next_review_due": "2026-09-09"
+    }
+  },
+  {
+    "id": "E015",
+    "title": "ケルンマラソン2026完全ガイド｜走る人・応援する人・住民の準備",
+    "slug": "cologne-marathon-2026-guide",
+    "image_url": "/assets/img/events/cologne-marathon-2026-guide.webp",
+    "image": "/assets/img/events/cologne-marathon-2026-guide.webp",
+    "image_alt": "ケルン大聖堂を遠景に市街地を走る市民ランナー",
+    "image_caption": "AI生成の編集イメージ。実際の2026年大会、コース、参加者を撮影または再現したものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "スポーツ・市民イベント",
+    "content_type": "event",
+    "summary": "2026年10月4日のGenerali Köln Marathonを、参加者・応援者・市内移動が必要な人の三方向から解説。申込、健康、補給、待ち合わせ、交通規制、当日の判断まで整理します。",
+    "url": "/germany/ja/events/cologne-marathon-2026-guide/",
+    "markdown_path": "/content/events/cologne-marathon-2026-guide.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-29",
+    "updated_at": "2026-08-29",
+    "last_verified": "2026-08-29",
+    "tags": [
+      "Köln Marathon",
+      "ケルン",
+      "マラソン",
+      "ランニング",
+      "交通規制",
+      "応援"
+    ],
+    "home_visible": true,
+    "home_order": 3,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/cologne-marathon-2026-guide/",
+    "city": "Köln",
+    "location": "ケルン市内コース",
+    "event_date": "2026-10-04",
+    "official_url": "https://generali-koeln-marathon.de/en/",
+    "official_sources": [
+      {
+        "title": "Generali Köln Marathon 公式サイト",
+        "url": "https://generali-koeln-marathon.de/en/"
+      },
+      {
+        "title": "Generali Köln Marathon：マラソン案内",
+        "url": "https://generali-koeln-marathon.de/en/events/marathon/"
+      },
+      {
+        "title": "Generali Köln Marathon：申込案内",
+        "url": "https://generali-koeln-marathon.de/en/registration/"
+      }
+    ],
+    "disclaimer_type": "event",
+    "related_articles": [
+      "cologne-east-asian-art-museum-2026",
+      "germany-labour-market-august-2026"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-29",
+      "next_review_due": "2026-10-03"
+    }
+  },
+  {
+    "id": "E016",
+    "title": "フランクフルト・ブックフェア2026｜一般来場者の一日攻略ガイド",
+    "slug": "frankfurt-book-fair-2026-guide",
+    "image_url": "/assets/img/events/frankfurt-book-fair-2026-guide.webp",
+    "image": "/assets/img/events/frankfurt-book-fair-2026-guide.webp",
+    "image_alt": "国際ブックフェアの書棚で本を選ぶ日本人来場者",
+    "image_caption": "AI生成の編集イメージ。実際の2026年会場、出版社、書籍を撮影または再現したものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "本・国際文化",
+    "content_type": "event",
+    "summary": "2026年10月7〜11日のFrankfurter Buchmesseを一般来場者向けに解説。入場可能日、チェコのゲスト国企画、会場の回り方、子連れ、サイン会、交通と予算を一日計画にします。",
+    "url": "/germany/ja/events/frankfurt-book-fair-2026-guide/",
+    "markdown_path": "/content/events/frankfurt-book-fair-2026-guide.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-29",
+    "updated_at": "2026-08-29",
+    "last_verified": "2026-08-29",
+    "tags": [
+      "Frankfurter Buchmesse",
+      "フランクフルト",
+      "本",
+      "チェコ",
+      "国際見本市",
+      "日帰り"
+    ],
+    "home_visible": false,
+    "home_order": 4,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/frankfurt-book-fair-2026-guide/",
+    "city": "Frankfurt am Main",
+    "location": "Messe Frankfurt",
+    "event_date": "2026-10-07〜2026-10-11",
+    "official_url": "https://www.buchmesse.de/en",
+    "official_sources": [
+      {
+        "title": "Frankfurter Buchmesse 公式サイト",
+        "url": "https://www.buchmesse.de/en"
+      },
+      {
+        "title": "Frankfurter Buchmesse：来場案内",
+        "url": "https://www.buchmesse.de/en/visit"
+      }
+    ],
+    "disclaimer_type": "event",
+    "related_articles": [
+      "germany-information-triage-guide",
+      "cologne-east-asian-art-museum-2026"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-29",
+      "next_review_due": "2026-10-06"
+    }
+  },
+  {
+    "id": "E017",
+    "title": "ART COLOGNE 2026初めての見方｜チケット・会場・作品との向き合い方",
+    "slug": "art-cologne-2026-guide",
+    "image_url": "/assets/img/events/art-cologne-2026-guide.webp",
+    "image": "/assets/img/events/art-cologne-2026-guide.webp",
+    "image_alt": "現代美術の展示を静かに鑑賞する日本人と来場者",
+    "image_caption": "AI生成の編集イメージ。実際の2026年会場、出展ギャラリー、作品を撮影または再現したものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "現代美術・アートフェア",
+    "content_type": "event",
+    "summary": "2026年11月5〜8日の第59回ART COLOGNEを、購入予定のない初来場者にも分かるよう解説。チケット、ギャラリーの見方、質問、撮影、子連れ、予算、回り方を整理します。",
+    "url": "/germany/ja/events/art-cologne-2026-guide/",
+    "markdown_path": "/content/events/art-cologne-2026-guide.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-29",
+    "updated_at": "2026-08-29",
+    "last_verified": "2026-08-29",
+    "tags": [
+      "ART COLOGNE",
+      "ケルン",
+      "現代美術",
+      "アートフェア",
+      "Koelnmesse",
+      "NRW"
+    ],
+    "home_visible": false,
+    "home_order": 5,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/art-cologne-2026-guide/",
+    "city": "Köln",
+    "location": "Koelnmesse",
+    "event_date": "2026-11-05〜2026-11-08",
+    "official_url": "https://www.artcologne.com/",
+    "official_sources": [
+      {
+        "title": "ART COLOGNE 公式サイト",
+        "url": "https://www.artcologne.com/"
+      },
+      {
+        "title": "ART COLOGNE：日程・開場時間",
+        "url": "https://www.artcologne.com/for-visitors/dates-opening-hours/"
+      }
+    ],
+    "disclaimer_type": "event",
+    "related_articles": [
+      "cologne-east-asian-art-museum-2026",
+      "cologne-marathon-2026-guide"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-29",
+      "next_review_due": "2026-11-04"
+    }
+  },
+  {
+    "id": "N015",
+    "title": "2026年9月からドイツで変わること｜表示・税相談・駅の飲酒ルール",
+    "slug": "germany-september-2026-changes",
+    "image_url": "/assets/img/events/germany-september-2026-changes.webp",
+    "image": "/assets/img/events/germany-september-2026-changes.webp",
+    "image_alt": "ドイツの制度変更をタブレットと書類で確認する日本人の夫婦",
+    "image_caption": "AI生成の編集用イメージ。人物、画面、書類、商品は架空で、公式資料を再現していません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "生活・制度",
+    "content_type": "news",
+    "source_type": "manual",
+    "area": "ドイツ全土",
+    "summary": "2026年9月に始まる環境表示の厳格化、Lohnsteuerhilfevereinの相談範囲拡大、DB駅構内の飲酒禁止を在独者向けに解説。誰に影響し、何を確認すべきかを整理します。",
+    "url": "/germany/ja/events/news/germany-september-2026-changes/",
+    "markdown_path": "/content/events/news/germany-september-2026-changes.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-29",
+    "updated_at": "2026-08-29",
+    "last_verified": "2026-08-29",
+    "tags": [
+      "2026年9月",
+      "制度変更",
+      "環境表示",
+      "税務相談",
+      "Deutsche Bahn",
+      "ドイツ生活"
+    ],
+    "home_visible": false,
+    "home_order": 1,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/news/germany-september-2026-changes/",
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026年9月",
+    "official_url": "https://www.bundesregierung.de/breg-de/aktuelles/gesetzliche-neuregelungen-september-2026-2450158",
+    "official_sources": [
+      {
+        "title": "ドイツ連邦政府：2026年9月の法令・制度変更",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/gesetzliche-neuregelungen-september-2026-2450158"
+      }
+    ],
+    "disclaimer_type": "news_explainer",
+    "related_articles": [
+      "eu-right-to-repair-2026-germany",
+      "germany-bureaucracy-costs-2026",
+      "eu-ai-act-transparency-august-2026"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-29",
+      "next_review_due": "2026-10-01"
+    }
+  },
+  {
+    "id": "N016",
+    "title": "BauCode NRWが9月1日施行｜建築申請デジタル化と改修ルールを解説",
+    "slug": "baucode-nrw-september-2026",
+    "image_url": "/assets/img/events/baucode-nrw-september-2026.webp",
+    "image": "/assets/img/events/baucode-nrw-september-2026.webp",
+    "image_alt": "NRWの既存集合住宅前で改修計画をタブレットで確認する所有者と専門家",
+    "image_caption": "AI生成の編集用イメージ。人物、建物、計画図、端末画面は架空で、実在の申請案件ではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "NRW・住まい・行政",
+    "content_type": "news",
+    "source_type": "manual",
+    "area": "NRW",
+    "summary": "NRW州のBauCodeが2026年9月1日に施行。電子建築申請、既存建物の用途変更、屋根裏改修、測量義務、審査の迅速化を、所有者・借主・設計者の行動に分けて解説します。",
+    "url": "/germany/ja/events/news/baucode-nrw-september-2026/",
+    "markdown_path": "/content/events/news/baucode-nrw-september-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-29",
+    "updated_at": "2026-08-29",
+    "last_verified": "2026-08-29",
+    "tags": [
+      "BauCode NRW",
+      "建築申請",
+      "デジタル行政",
+      "リノベーション",
+      "用途変更",
+      "住宅"
+    ],
+    "home_visible": false,
+    "home_order": 2,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/news/baucode-nrw-september-2026/",
+    "city": "NRW",
+    "location": "",
+    "event_date": "2026-09-01施行",
+    "official_url": "https://www.land.nrw/pressemitteilung/baucode-nrw-drittes-update-zur-landesbauordnung-macht-bauen-einfacher-schneller",
+    "official_sources": [
+      {
+        "title": "NRW州政府：BauCode NRW・州建築法第3次改正",
+        "url": "https://www.land.nrw/pressemitteilung/baucode-nrw-drittes-update-zur-landesbauordnung-macht-bauen-einfacher-schneller"
+      }
+    ],
+    "disclaimer_type": "news_explainer",
+    "related_articles": [
+      "building-modernisation-law-germany-2026",
+      "germany-bureaucracy-costs-2026",
+      "germany-information-triage-guide"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-29",
+      "next_review_due": "2026-10-01"
+    }
+  },
+  {
+    "id": "N017",
+    "title": "ドイツ失業者306.1万人｜2026年8月雇用統計と9月の転職戦略",
+    "slug": "germany-labour-market-august-2026",
+    "image_url": "/assets/img/events/germany-labour-market-august-2026.webp",
+    "image": "/assets/img/events/germany-labour-market-august-2026.webp",
+    "image_alt": "ドイツでオンライン面接と応募書類を準備する日本人の求職者",
+    "image_caption": "AI生成の編集用イメージ。人物、企業、求人、画面、書類は架空です。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "仕事・経済",
+    "content_type": "news",
+    "source_type": "manual",
+    "area": "ドイツ全土",
+    "summary": "ドイツの2026年8月失業者は306万1,000人、失業率6.5%。季節調整値、求人、就業、職業訓練を分け、求職者・転職者・採用企業が9月に行う改善策を整理します。",
+    "url": "/germany/ja/events/news/germany-labour-market-august-2026/",
+    "markdown_path": "/content/events/news/germany-labour-market-august-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-29",
+    "updated_at": "2026-08-29",
+    "last_verified": "2026-08-29",
+    "tags": [
+      "ドイツ雇用",
+      "失業率",
+      "転職",
+      "求人",
+      "採用",
+      "Ausbildung"
+    ],
+    "home_visible": false,
+    "home_order": 3,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/news/germany-labour-market-august-2026/",
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026年8月",
+    "official_url": "https://www.arbeitsagentur.de/presse/2026-31-arbeitsmarkt-im-august-2026",
+    "official_sources": [
+      {
+        "title": "ドイツ連邦雇用庁：2026年8月の労働市場",
+        "url": "https://www.arbeitsagentur.de/presse/2026-31-arbeitsmarkt-im-august-2026"
+      },
+      {
+        "title": "ドイツ連邦雇用庁：求職・失業登録",
+        "url": "https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld"
+      }
+    ],
+    "disclaimer_type": "news_explainer",
+    "related_articles": [
+      "germany-unemployment-july-2026",
+      "germany-gdp-q2-2026",
+      "germany-bureaucracy-costs-2026"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-29",
+      "next_review_due": "2026-09-30"
+    }
+  },
+  {
+    "id": "C001",
+    "title": "ドイツ生活の孤独を減らす｜居場所を3層でつくる30日プラン",
+    "slug": "germany-belonging-three-layers",
+    "image_url": "/assets/img/events/germany-belonging-three-layers.webp",
+    "image": "/assets/img/events/germany-belonging-three-layers.webp",
+    "image_alt": "地域の交流会で次回の日程を相談する日本人とドイツ人の仲間",
+    "image_caption": "AI生成の編集用イメージ。人物、団体、会場は架空です。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "人間関係・ウェルビーイング",
+    "content_type": "column",
+    "source_type": "manual",
+    "area": "ドイツ生活",
+    "summary": "ドイツで知り合いはいても孤独を感じる人へ。顔見知り、役割のある場、深く話せる一人という3層で居場所を設計し、無理なく続ける30日間の行動に落とします。",
+    "url": "/germany/ja/events/columns/germany-belonging-three-layers/",
+    "markdown_path": "/content/events/columns/germany-belonging-three-layers.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-29",
+    "updated_at": "2026-08-29",
+    "last_verified": "2026-08-29",
+    "tags": [
+      "孤独",
+      "居場所",
+      "友人",
+      "Verein",
+      "日本人コミュニティ",
+      "ドイツ生活"
+    ],
+    "home_visible": false,
+    "home_order": 1,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/columns/germany-belonging-three-layers/",
+    "city": "ドイツ生活",
+    "location": "",
+    "event_date": "実践コラム",
+    "official_url": "https://www.telefonseelsorge.de/",
+    "official_sources": [
+      {
+        "title": "TelefonSeelsorge Deutschland",
+        "url": "https://www.telefonseelsorge.de/"
+      },
+      {
+        "title": "116117：心理療法へのアクセス",
+        "url": "https://www.116117.de/de/psychotherapie.php"
+      }
+    ],
+    "disclaimer_type": "editorial_column",
+    "related_articles": [
+      "family-weekend-events-nrw",
+      "eko-haus-autumn-2026",
+      "germany-information-triage-guide"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-29",
+      "next_review_due": "2027-02-28"
+    }
+  },
+  {
+    "id": "C002",
+    "title": "ドイツ生活の情報疲れを減らす｜公式・経験談・AIの使い分け",
+    "slug": "germany-information-triage-guide",
+    "image_url": "/assets/img/events/germany-information-triage-guide.webp",
+    "image": "/assets/img/events/germany-information-triage-guide.webp",
+    "image_alt": "公式サイト、経験談、AIの回答を分けて確認する日本人の生活者",
+    "image_caption": "AI生成の編集用イメージ。人物、画面、書類、サービスは架空です。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "category": "情報整理・デジタル生活",
+    "content_type": "column",
+    "source_type": "manual",
+    "area": "ドイツ生活",
+    "summary": "役所サイト、友人の経験、SNS、AIの答えが食い違うときの判断法。リスク別の情報源、日付・地域・対象者の確認、問い合わせ、証拠保存まで15分の型にします。",
+    "url": "/germany/ja/events/columns/germany-information-triage-guide/",
+    "markdown_path": "/content/events/columns/germany-information-triage-guide.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-08-29",
+    "updated_at": "2026-08-29",
+    "last_verified": "2026-08-29",
+    "tags": [
+      "情報リテラシー",
+      "公式情報",
+      "AI",
+      "行政手続き",
+      "SNS",
+      "ドイツ生活"
+    ],
+    "home_visible": false,
+    "home_order": 2,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/columns/germany-information-triage-guide/",
+    "city": "ドイツ生活",
+    "location": "",
+    "event_date": "実践コラム",
+    "official_url": "https://www.bundesregierung.de/breg-de/aktuelles/gesetzliche-neuregelungen-september-2026-2450158",
+    "official_sources": [
+      {
+        "title": "ドイツ連邦政府：法令・制度変更の例",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/gesetzliche-neuregelungen-september-2026-2450158"
+      },
+      {
+        "title": "NRW州政府：州制度発表の例",
+        "url": "https://www.land.nrw/pressemitteilung/baucode-nrw-drittes-update-zur-landesbauordnung-macht-bauen-einfacher-schneller"
+      }
+    ],
+    "disclaimer_type": "editorial_column",
+    "related_articles": [
+      "germany-september-2026-changes",
+      "eu-ai-act-transparency-august-2026",
+      "germany-bureaucracy-costs-2026"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-08-29",
+      "next_review_due": "2027-02-28"
     }
   }
 ]

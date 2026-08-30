@@ -7,8 +7,8 @@ city: "Bonn"
 location: "Beethovenhalleほかボン市内各会場"
 event_date: "2026-09-03〜2026-10-03"
 published_at: "2026-08-01"
-updated_at: "2026-08-01"
-last_verified: "2026-08-01"
+updated_at: "2026-08-29"
+last_verified: "2026-08-29"
 next_review: "2026-09-01"
 summary: "2026年9月3日〜10月3日のBeethovenfest Bonnを、クラシック初心者にも分かるよう整理。無料公演、家族向け、割引、VRS交通券、会場選び、当日の注意点を説明します。"
 tags: ["Beethovenfest", "ボン", "クラシック", "無料イベント", "家族向け", "NRW"]
@@ -127,6 +127,8 @@ Beethovenfest Bonn 2026は、2026年9月3日（木）から10月3日（土）ま
 5. バリアフリー席・子ども券
 6. 天候と屋外公演の変更
 7. 終演後の列車
+
+![ライン川沿いの鉄道と徒歩を組み合わせ、終演後の帰路を確認する様子](/assets/images/living/rhine-regional-train-walk-editorial-v1.webp "AI生成の編集イメージ。実際のBeethovenfest、会場、運行状況ではありません。")
 
 ## まとめ
 

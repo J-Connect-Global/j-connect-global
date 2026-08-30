@@ -7,8 +7,8 @@ city: "Köln"
 location: "Museum für Ostasiatische Kunst Köln"
 event_date: "2026年の展覧会・催し"
 published_at: "2026-08-01"
-updated_at: "2026-08-01"
-last_verified: "2026-08-01"
+updated_at: "2026-08-29"
+last_verified: "2026-08-29"
 next_review: "2026-10-20"
 summary: "ケルン東アジア美術館の2026年の展覧会、日本関連展示、開館時間、料金、無料条件、アクセス、子連れ・初訪問の回り方を公式情報から整理します。"
 tags: ["ケルン", "日本美術", "東アジア美術", "美術館", "展覧会", "NRW"]
@@ -106,6 +106,8 @@ Aachener Weiher沿いにあるため、悪天候時は屋内中心、晴天時�
 - 撮影・スケッチの規則
 - 大きな荷物を預けられるか
 - 子ども、車いす、ベビーカーの動線
+
+![ケルンのライン川沿いで美術館見学後の休憩と移動を相談する様子](/assets/images/living/cologne-rhine-handsfree-walk-editorial-v1.webp "AI生成の編集イメージ。実際の美術館、展示、来館者ではありません。")
 
 ## まとめ
 

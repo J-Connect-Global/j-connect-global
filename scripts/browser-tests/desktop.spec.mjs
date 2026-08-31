@@ -152,7 +152,7 @@ test("Learn German phrases use readable type and unclipped compact controls", as
     expect(metrics.scrollHeight).toBeLessThanOrEqual(metrics.clientHeight + 1);
   }
 
-  await openRoute(page, "/germany/ja/living/doctor-appointment-germany/");
+  await openRoute(page, "/germany/ja/learn-german/pharmacy-prescription-phrases/");
   const typeMetrics = await page.locator(".article-body code").first().evaluate((element) => {
     const style = getComputedStyle(element);
     const parentStyle = getComputedStyle(element.parentElement);
@@ -167,7 +167,7 @@ test("Learn German phrases use readable type and unclipped compact controls", as
   expect(typeMetrics.family).toBe(typeMetrics.parentFamily);
   expect(typeMetrics.size).toBe(typeMetrics.parentSize);
   expect(typeMetrics.weight).toBeGreaterThanOrEqual(600);
-  await expect(page.getByText("Wie soll ich das Medikament einnehmen?", { exact: true })).toHaveClass(/article-quote-line/);
+  await expect(page.getByText("Können Sie die Dosierung bitte auf die Packung schreiben?", { exact: true })).toHaveClass(/article-quote-line/);
   await expect(page.locator(".article-body")).not.toContainText("<br>");
   await assertRouteReady(page);
 });
@@ -646,7 +646,7 @@ test("articles expose public dates without internal review metadata", async ({ p
   const freshness = page.locator(".article-freshness");
   await expect(freshness).toBeVisible();
   await expect(freshness.locator('time.article-date--published[datetime="2026-06-29"]')).toHaveText("公開: 2026-06-29");
-  await expect(freshness.locator('time.article-date--updated[datetime="2026-07-19"]')).toHaveText("最終更新: 2026-07-19");
+  await expect(freshness.locator('time.article-date--updated[datetime="2026-08-31"]')).toHaveText("最終更新: 2026-08-31");
   await expect(freshness.locator("time")).toHaveCount(2);
   await expect(page.locator("body")).not.toContainText("最終確認");
   await expect(page.locator("body")).not.toContainText("次回確認");

@@ -32,4 +32,12 @@ Generated public pages, hub cards, Home preview cards, sitemap entries, and sear
 - Confirm internal links resolve and the generated page uses shared J-Connect CSS.
 - Do not manually edit generated article pages or generated card sections after running the build.
 
+## Reader-value Rules
+
+- Open with two to four sentences explaining the event, the intended reader, and what the guide will reveal.
+- Establish why the event exists or matters: its cultural background, regional connection, programme, works, performers, community, or atmosphere.
+- Let practical information support the experience. Keep only the access, ticket, age, accessibility, or weather details that can change a visit decision.
+- Do not turn the article into a minute-by-minute itinerary, packing list, return-trip checklist, or risk manual.
+- Use Japanese first. If an official German event or venue name is needed, identify it once in Japanese context; language practice belongs in Learn German.
+
 See `/docs/content-production-workflow.md` for the shared Living and Events workflow.

@@ -1,16 +1,16 @@
 [
   {
     "id": "T001",
-    "title": "デュッセルドルフ観光｜日本人街を起点にKö・旧市街・川を選ぶ",
+    "title": "デュッセルドルフ観光｜日本人街・旧市街・ライン川を歩く",
     "slug": "duesseldorf-city-guide",
     "category": "観光",
-    "summary": "Düsseldorf Hbfから日本人街で昼食・買い物を済ませ、Kö、Altstadt、Rheinuferを目的別に選ぶ一方向ルート。Rheinbahn、夜の旧市街、環境ゾーンも解説します。",
+    "summary": "デュッセルドルフを日本人街、ケーニヒスアレー、旧市街、ライン川という異なる都市文化から紹介。在住者にも旅行者にも役立つ街歩きガイドです。",
     "url": "/germany/ja/living/duesseldorf-city-guide/",
     "markdown_path": "/content/living/duesseldorf-city-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "デュッセルドルフ",
@@ -67,16 +67,16 @@
   },
   {
     "id": "T002",
-    "title": "ケルン観光ガイド｜Hbf・大聖堂・旧市街・Deutzを一方向で回る",
+    "title": "ケルン観光ガイド｜大聖堂・旧市街・ライン川から街を読む",
     "slug": "cologne-city-guide",
     "category": "観光",
-    "summary": "Köln Hbfで荷物を処理し、大聖堂、旧市街、ライン川、Hohenzollernbrücke、Deutzを逆戻りなく歩く半日〜1日ガイド。2026年7月開始の大聖堂見学券も解説します。",
+    "summary": "ケルンを大聖堂、ローマ都市、戦後復興、ライン川の街という四つの層から紹介。半日から一日で文化の輪郭をつかむ観光ガイドです。",
     "url": "/germany/ja/living/cologne-city-guide/",
     "markdown_path": "/content/living/cologne-city-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-07-22",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-22",
     "tags": [
       "ケルン",
@@ -133,16 +133,16 @@
   },
   {
     "id": "T003",
-    "title": "アーヘン日帰り観光｜大聖堂・旧市街・Printenを一方向で回る実用コース",
+    "title": "アーヘン日帰り観光｜皇帝の都の歴史と名物菓子を味わう",
     "slug": "aachen-day-trip",
     "category": "観光",
-    "summary": "Aachen HbfからElisenbrunnen、大聖堂、Katschhof、市庁舎を逆戻りなく歩き、見学予約、石畳、Printen休憩、温泉を入れる判断まで組み立てる日帰りガイドです。",
+    "summary": "アーヘンを皇帝都市、温泉地、国境の街という三つの背景から紹介。大聖堂、旧市街、名物菓子を味わう日帰り旅行を文化中心に案内します。",
     "url": "/germany/ja/living/aachen-day-trip/",
     "markdown_path": "/content/living/aachen-day-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "アーヘン",
@@ -199,16 +199,16 @@
   },
   {
     "id": "T004",
-    "title": "ドイツからストラスブール1泊2日｜鉄道・P+R・トラム実用ガイド",
+    "title": "ストラスブール1泊2日｜旧市街とフランス・ドイツ文化をたどる",
     "slug": "strasbourg-weekend-trip",
     "category": "観光",
-    "summary": "ドイツから鉄道・車・P+Rで入り、GareからPetite France、Grande Île、大聖堂を一方向に巡る1泊2日。身分証、Crit’Air、CTS券、予約、日曜も整理します。",
+    "summary": "ストラスブールを、大聖堂、川の産業、フランスとドイツの間で変化した都市、欧州統合、アルザス文化から読む週末ガイドです。",
     "url": "/germany/ja/living/strasbourg-weekend-trip/",
     "markdown_path": "/content/living/strasbourg-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "ストラスブール",
@@ -272,16 +272,16 @@
   },
   {
     "id": "T005",
-    "title": "ライン川の休日｜KölnからBacharachまで鉄道・船・徒歩で短く歩く",
+    "title": "ライン川の休日｜ケルンからバハラッハまで川辺の文化をたどる",
     "slug": "rhine-river-relax-guide",
     "category": "観光",
-    "summary": "Köln〜Mainzのライン左岸を対象に、都市散歩、Königswinter、Linz、Bacharach〜St. Goarを比較。鉄道と船で途中短縮できる休日を組み立てます。",
+    "summary": "ライン川を、都市の生活、城と通行税、ワイン、文学、世界遺産、現代の水運が重なる文化景観として紹介。一般旅行者向けに区間ごとの魅力を案内します。",
     "url": "/germany/ja/living/rhine-river-relax-guide/",
     "markdown_path": "/content/living/rhine-river-relax-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "ライン川",
@@ -341,16 +341,16 @@
   },
   {
     "id": "T006",
-    "title": "NRW自然スポット5選｜公園・湖・森・岩場を路面と設備で比較",
+    "title": "ノルトライン＝ヴェストファーレン州の自然5選｜公園・湖・森・岩場",
     "slug": "nrw-nature-relax-guide",
     "category": "観光",
-    "summary": "Grugapark、Fühlinger See、Wilder Kermeter、Üfter Mark、Externsteineを、公共交通、路面、トイレ、日陰、ベビーカー、保護ルール、雨後の状態で選ぶ実用比較です。",
+    "summary": "州内の公園、人工湖、国立公園、文化的な森、奇岩を、景観が生まれた歴史とともに紹介。自然を消費せず、地域との関係を味わう日帰りガイドです。",
     "url": "/germany/ja/living/nrw-nature-relax-guide/",
     "markdown_path": "/content/living/nrw-nature-relax-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "NRW",
@@ -410,16 +410,16 @@
   },
   {
     "id": "T007",
-    "title": "子連れデュッセルドルフ｜Nordpark＋Aquazooの短時間家族ルート",
+    "title": "子連れデュッセルドルフ｜北公園と水族館・自然博物館を楽しむ",
     "slug": "duesseldorf-family-trip",
     "category": "観光",
-    "summary": "Nordparkの短い舗装路とAquazooを一つの拠点にまとめ、年齢、雨、昼寝、ベビーカー、トイレ、予約判断から2〜6時間を組む家族向けプランです。",
+    "summary": "子どもとデュッセルドルフを訪れる家庭向けに、北公園、日本庭園、水族館・自然博物館の文化的な魅力を紹介。年齢や天候に合う楽しみ方を案内します。",
     "url": "/germany/ja/living/duesseldorf-family-trip/",
     "markdown_path": "/content/living/duesseldorf-family-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "子連れ",
@@ -475,16 +475,16 @@
   },
   {
     "id": "T008",
-    "title": "子連れケルン｜Rheinparkと屋内一施設で崩れない家族プラン",
+    "title": "子連れケルン｜ライン公園と屋内施設で街を楽しむ",
     "slug": "cologne-family-trip",
     "category": "観光",
-    "summary": "年齢と天候からRheinpark、Kölner Zoo、Kölnisches Stadtmuseumを選び、遊び・昼寝・トイレ・迷子対策まで含めて一日を組む家族向けケルンガイドです。",
+    "summary": "子どもとケルンを訪れる家庭向けに、ライン公園、動物園、市立博物館を遊びと文化の両面から紹介。年齢や天候に合う一日の考え方を案内します。",
     "url": "/germany/ja/living/cologne-family-trip/",
     "markdown_path": "/content/living/cologne-family-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-27",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "子連れ",
@@ -540,16 +540,16 @@
   },
   {
     "id": "T009",
-    "title": "アムステルダム週末旅行｜予約を一つに絞る1泊2日モデルコース",
+    "title": "アムステルダム週末旅行｜運河都市の成り立ちと市民文化を歩く",
     "slug": "amsterdam-weekend-trip",
     "category": "観光",
-    "summary": "Amsterdam Centraal到着後、予約施設を一つだけ固定し、運河帯とMuseumpleinまたはJordaanを一方向で巡る週末ルート。NS・GVB・OVpay・P+Rの境界も整理します。",
+    "summary": "アムステルダムを、運河、商業、市民の住まい、美術、自転車文化から読み解く1泊2日ガイド。定番を並べるのではなく、水と暮らす都市の個性を味わいます。",
     "url": "/germany/ja/living/amsterdam-weekend-trip/",
     "markdown_path": "/content/living/amsterdam-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "アムステルダム",
@@ -610,16 +610,16 @@
   },
   {
     "id": "T010",
-    "title": "ハンブルク1泊2日｜港・倉庫街・HVVフェリーを無理なく回る週末プラン",
+    "title": "ハンブルク1泊2日｜港・倉庫街・公共交通の船で水都を知る",
     "slug": "hamburg-weekend-trip",
     "category": "観光",
-    "summary": "SpeicherstadtからHafenCity、Landungsbrückenへ西進し、HVV港湾フェリーと屋内施設を天候で組み替えるハンブルク1泊2日の実用ガイドです。",
+    "summary": "ハンブルクを、ハンザ交易、港湾労働、倉庫街、現代建築、市民の水辺から読む週末ガイド。エルベ川と運河が街を変えてきた歴史をたどります。",
     "url": "/germany/ja/living/hamburg-weekend-trip/",
     "markdown_path": "/content/living/hamburg-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "ハンブルク",
@@ -670,16 +670,16 @@
   },
   {
     "id": "T011",
-    "title": "ベルリン1泊2日｜Mitteの歴史軸と二日目を一つ選ぶモデルコース",
+    "title": "ベルリン1泊2日｜分断と再統一、現代文化を歩いて知る",
     "slug": "berlin-weekend-trip",
     "category": "観光",
-    "summary": "Berlin HbfからMitteを一方向に歩き、二日目は壁・博物館・地区散策から一つだけ選択。BVGのAB/C、BER、Reichstag予約、Museum Islandの現況も整理します。",
+    "summary": "ベルリンを、帝国、独裁、分断、再統一の記憶が重なる都市として紹介。記念碑、博物館、旧東西の街並みから、歴史との向き合い方を考える週末旅行です。",
     "url": "/germany/ja/living/berlin-weekend-trip/",
     "markdown_path": "/content/living/berlin-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "ベルリン",
@@ -743,16 +743,16 @@
   },
   {
     "id": "T012",
-    "title": "ブレーメン週末旅行｜徒歩で迷わない旧市街・Schnoorの1泊2日モデルコース",
+    "title": "ブレーメン週末旅行｜ハンザ都市の歴史とシュノーア地区を歩く",
     "slug": "bremen-weekend-trip",
     "category": "観光",
-    "summary": "デュッセルドルフ・NRWからブレーメンへ。旧市街の短い周回、1泊判断、雨天代替、車の注意点までまとめた24〜36時間の実用プランです。",
+    "summary": "ブレーメンを、自治都市、ハンザ交易、童話、表現主義建築、港の記憶から読む週末ガイド。小さな旧市街に重なる市民文化を歩いて味わいます。",
     "url": "/germany/ja/living/bremen-weekend-trip/",
     "markdown_path": "/content/living/bremen-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-07-22",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-22",
     "tags": [
       "ブレーメン",
@@ -823,16 +823,16 @@
   },
   {
     "id": "T013",
-    "title": "ブリュッセル1泊2日｜グランプラスとサブロンを歩く週末ルート",
+    "title": "ブリュッセル1泊2日｜広場、職人街、欧州都市の多層性を歩く",
     "slug": "brussels-weekend-trip",
     "category": "観光",
-    "summary": "中央駅を起点に、グランプラス、サブロン、マロルを高低差と石畳を考慮して回り、STIBのタッチ決済で迷わない週末ガイドです。",
+    "summary": "ブリュッセルを、ギルドの広場、職人街、多言語社会、美術、食文化から紹介。首都の華やかさと生活の歴史を一泊二日で対比して歩きます。",
     "url": "/germany/ja/living/brussels-weekend-trip/",
     "markdown_path": "/content/living/brussels-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "ブリュッセル",
@@ -879,16 +879,16 @@
   },
   {
     "id": "T014",
-    "title": "パリ1泊2日｜セーヌ・Maraisと美術館一館に絞る週末ガイド",
+    "title": "パリ1泊2日｜セーヌ川・マレ地区と美術館一館を味わう",
     "slug": "paris-weekend-trip",
     "category": "観光",
-    "summary": "セーヌとMaraisを一方向に歩き、LouvreかOrsayの一館を選び、空港券と市内交通券の違いを理解するパリ週末ガイドです。",
+    "summary": "パリを、セーヌ川、王権、革命、都市改造、多様な地区、美術館の成り立ちから読む週末ガイド。名所を追わず、一つの街の物語として歩きます。",
     "url": "/germany/ja/living/paris-weekend-trip/",
     "markdown_path": "/content/living/paris-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "パリ",
@@ -939,16 +939,16 @@
   },
   {
     "id": "T015",
-    "title": "ミュンヘン週末旅行｜旧市街・美術館・Isarを選ぶ1泊2日プラン",
+    "title": "ミュンヘン週末旅行｜旧市街・美術館・イーザル川から選ぶ",
     "slug": "munich-weekend-trip",
     "category": "観光",
-    "summary": "Marienplatzを起点に、Residenz、Kunstareal、Isarを目的別に選び、MVVのゾーンと打刻条件を間違えない週末ガイドです。",
+    "summary": "ミュンヘンを、バイエルン王家、宗教、美術、ビール文化、二十世紀史、川辺の暮らしから紹介。華やかな州都の複雑な個性を歩いて知ります。",
     "url": "/germany/ja/living/munich-weekend-trip/",
     "markdown_path": "/content/living/munich-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "ミュンヘン",
@@ -999,16 +999,16 @@
   },
   {
     "id": "T016",
-    "title": "ロンドン1泊2日｜到着空港から逆算するWestminster・South Bank週末旅",
+    "title": "ロンドン1泊2日｜ウェストミンスターと南岸から都市を読む",
     "slug": "london-weekend-trip",
     "category": "観光",
-    "summary": "空港・宿・入国要件を先に固定し、WestminsterとSouth Bankを徒歩、2日目を一地区に絞るロンドン週末ガイドです。",
+    "summary": "ロンドンを、王権、議会、帝国、公共文化、多民族社会が重なる都市として紹介。ウェストミンスターとテムズ川南岸を軸に一泊二日で歩きます。",
     "url": "/germany/ja/living/london-weekend-trip/",
     "markdown_path": "/content/living/london-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "ロンドン",
@@ -1059,16 +1059,16 @@
   },
   {
     "id": "T017",
-    "title": "コペンハーゲン週末旅行｜港・Christianshavn・デザインを巡る1泊2日",
+    "title": "コペンハーゲン週末旅行｜港町の歴史と北欧デザインを巡る",
     "slug": "copenhagen-weekend-trip",
     "category": "観光",
-    "summary": "空港からのゾーンを理解し、Indre ByとChristianshavnを徒歩・メトロ・自転車から安全に選ぶ1泊2日の実用プランです。",
+    "summary": "コペンハーゲンを、海運、王室、市民生活、デザイン、自転車都市の歴史から紹介。港と街路を歩き、北欧らしさが生まれた背景を味わう週末旅行です。",
     "url": "/germany/ja/living/copenhagen-weekend-trip/",
     "markdown_path": "/content/living/copenhagen-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "コペンハーゲン",
@@ -1122,13 +1122,13 @@
     "title": "ワルシャワ1泊2日｜旧市街・王の道・ヴィスワ川をつなぐ週末旅",
     "slug": "warsaw-weekend-trip",
     "category": "観光",
-    "summary": "再建された旧市街と王の道を歴史として読み、2日目はヴィスワ川または博物館を選び、WTP券を正しく有効化するガイドです。",
+    "summary": "ワルシャワを、破壊と再建、王都、蜂起、ユダヤ人社会、社会主義期、現在の川辺文化から読む週末ガイド。街が記憶を形にする方法を歩きます。",
     "url": "/germany/ja/living/warsaw-weekend-trip/",
     "markdown_path": "/content/living/warsaw-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "ワルシャワ",
@@ -1179,16 +1179,16 @@
   },
   {
     "id": "T019",
-    "title": "クラクフ1泊2日｜Rynek・Wawel・Kazimierzを歩く週末計画",
+    "title": "クラクフ1泊2日｜中央市場・ヴァヴェル城・旧ユダヤ人街を歩く",
     "slug": "krakow-weekend-trip",
     "category": "観光",
-    "summary": "旧市街、Wawel、Kazimierzを一方向につなぎ、時間制のKMK乗車券を正しく有効化するクラクフ1泊2日の実用ガイドです。",
+    "summary": "クラクフを、王都、中世の市場、大学文化、ユダヤ人社会、戦争の記憶から読む週末ガイド。美しい旧市街の背後にある多層の歴史をたどります。",
     "url": "/germany/ja/living/krakow-weekend-trip/",
     "markdown_path": "/content/living/krakow-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "クラクフ",
@@ -1239,16 +1239,16 @@
   },
   {
     "id": "T020",
-    "title": "プラハ1泊2日｜朝のカレル橋と城下りで石畳を減らす週末ルート",
+    "title": "プラハ1泊2日｜王都の建築と市民文化をヴルタヴァ川沿いに歩く",
     "slug": "prague-weekend-trip",
     "category": "観光",
-    "summary": "旧市街とカレル橋を朝夕に分け、トラムで城へ上ってMalá Stranaへ下り、PID券を正しく有効化する週末ガイドです。",
+    "summary": "プラハを、王都、宗教改革、多民族社会、国民文化、二十世紀の自由をめぐる歴史から紹介。城と旧市街を川の両側から味わいます。",
     "url": "/germany/ja/living/prague-weekend-trip/",
     "markdown_path": "/content/living/prague-weekend-trip.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-31",
     "last_verified": "2026-07-19",
     "tags": [
       "プラハ",
@@ -1299,25 +1299,25 @@
   },
   {
     "id": "L011",
-    "title": "Rundfunkbeitragとは？ドイツの放送負担金・GEZの完全ガイド",
+    "title": "ドイツの放送負担金とは？一住戸一件の仕組みと手続き",
     "slug": "rundfunkbeitrag-guide",
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
-    "image_alt": "German living guide cards",
+    "image_alt": "ドイツの新居で住居に関する書類を確認する日本人の住民",
     "category": "生活・手続き",
-    "summary": "ドイツで住み始めたときに届くRundfunkbeitragの通知、支払い対象、登録・支払い・引っ越し時の確認点を整理。",
+    "summary": "ドイツの放送負担金について、テレビの所有ではなく住戸単位で負担する理由、金額、同居・共同生活、引っ越し、免除申請の考え方を説明します。",
     "url": "/germany/ja/living/rundfunkbeitrag-guide/",
     "markdown_path": "/content/living/rundfunkbeitrag-guide.md",
     "published": true,
     "status": "published",
-    "published_at": "2026-06-14",
-    "updated_at": "2026-06-14",
-    "last_verified": "2026-06-14",
+    "published_at": "2026-03-10",
+    "updated_at": "2026-08-30",
+    "last_verified": "2026-08-30",
     "tags": [
-      "Rundfunkbeitrag",
-      "GEZ",
-      "住まい",
-      "手続き",
-      "引っ越し"
+      "放送負担金",
+      "引っ越し",
+      "共同生活",
+      "学生寮",
+      "公共放送"
     ],
     "home_visible": true,
     "home_order": 15,
@@ -1326,44 +1326,49 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/rundfunkbeitrag-guide/",
     "related_articles": [
-      "anmeldung-guide",
-      "moving-checklist-germany"
+      "moving-checklist-germany",
+      "germany-first-30-days",
+      "anmeldung-guide"
     ],
     "official_sources": [
       {
-        "title": "Rundfunkbeitrag - official website",
-        "url": "https://www.rundfunkbeitrag.de/"
+        "title": "放送負担金公式サイト：市民向け案内",
+        "url": "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/informationen"
+      },
+      {
+        "title": "放送負担金公式サイト：英語案内",
+        "url": "https://www.rundfunkbeitrag.de/welcome/english"
       }
     ],
     "disclaimer_type": "administrative",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-14",
-      "next_review_due": "2027-06-14"
+      "last_reviewed_at": "2026-08-30",
+      "next_review_due": "2026-11-30"
     }
   },
   {
     "id": "L004",
-    "title": "ドイツ賃貸の探し方｜必要書類・SCHUFA・契約の注意点",
+    "title": "ドイツで賃貸を探す｜応募、内見、契約の全体ガイド",
     "slug": "rent-apartment-germany",
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
     "image_alt": "German housing guide cards",
     "category": "住まい・契約",
-    "summary": "ドイツで賃貸を探す流れを実務目線で解説。応募書類、SCHUFA、内見、Kaution、詐欺対策、契約前と入居後の確認事項が分かります。",
+    "summary": "ドイツで賃貸住宅を探す流れを、予算、応募書類、内見、契約、敷金、詐欺対策、入居時の記録まで日本語で解説します。",
     "url": "/germany/ja/living/rent-apartment-germany/",
     "markdown_path": "/content/living/rent-apartment-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-07-19",
-    "last_verified": "2026-07-19",
+    "updated_at": "2026-08-31",
+    "last_verified": "2026-08-31",
     "tags": [
       "賃貸",
       "家探し",
       "契約",
-      "SCHUFA",
-      "Anmeldung"
+      "信用情報",
+      "住民登録"
     ],
     "home_visible": true,
     "home_order": 10,
@@ -1375,7 +1380,7 @@
       "schufa-guide",
       "moving-checklist-germany",
       "anmeldung-guide",
-      "rundfunkbeitrag-guide"
+      "electricity-internet-contracts-germany"
     ],
     "official_sources": [
       {
@@ -1391,27 +1396,29 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-07-19",
-      "next_review_due": "2026-10-19"
+      "last_reviewed_at": "2026-08-31",
+      "next_review_due": "2026-11-30"
     }
   },
   {
     "id": "L005",
-    "title": "SCHUFAとは？無料Datenkopieと賃貸提出用証明の違い",
+    "title": "ドイツの信用情報SCHUFAとは？賃貸提出用と無料の自己確認用",
     "slug": "schufa-guide",
     "category": "住まい・契約",
-    "summary": "SCHUFAの仕組みと取得方法を解説。無料のDatenkopieと賃貸提出用Bonitätsnachweisの違い、個人情報を渡す際の注意点が分かります。",
+    "summary": "ドイツの信用情報機関SCHUFAについて、賃貸で求められる理由、相手へ渡す証明と自分で確認する無料データの違い、渡独直後の代替書類を説明します。",
     "url": "/germany/ja/living/schufa-guide/",
     "markdown_path": "/content/living/schufa-guide.md",
     "published": true,
     "status": "published",
-    "published_at": "2026-06-12",
-    "updated_at": "2026-07-19",
-    "last_verified": "2026-07-19",
+    "published_at": "2026-03-10",
+    "updated_at": "2026-08-30",
+    "last_verified": "2026-08-30",
     "tags": [
+      "信用情報",
       "SCHUFA",
       "賃貸",
-      "信用情報"
+      "個人情報",
+      "家探し"
     ],
     "home_visible": true,
     "home_order": 20,
@@ -1421,43 +1428,49 @@
     "canonical_url": "/germany/ja/living/schufa-guide/",
     "related_articles": [
       "rent-apartment-germany",
-      "bank-account-germany"
+      "bank-account-germany",
+      "germany-first-30-days"
     ],
     "official_sources": [
       {
-        "title": "SCHUFA - Kostenlose Datenkopie",
-        "url": "https://www.schufa.de/newsroom/bonitaet/schufa-auskunft-kostenlos-datenkopie/index.jsp"
+        "title": "SCHUFA：無料の個人データコピー",
+        "url": "https://www.schufa.de/datenkopie"
       },
       {
-        "title": "SCHUFA - Auskunft fuer Mieter",
-        "url": "https://www.schufa.de/newsroom/bonitaet/schufa-datenkopie-auskunft-mieter/"
+        "title": "SCHUFA：賃貸などへ提出する信用証明",
+        "url": "https://www.schufa.de/"
+      },
+      {
+        "title": "SCHUFA：個人データコピーを賃貸提出に使わない理由",
+        "url": "https://www.schufa.de/en/newsroom/schufa/schufa-data-copy-according-art-15-gdpr/index.jsp"
       }
     ],
     "disclaimer_type": "finance_contract",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-07-19",
-      "next_review_due": "2026-10-19"
-    }
+      "last_reviewed_at": "2026-08-30",
+      "next_review_due": "2026-11-30"
+    },
+    "image_alt": "ドイツの賃貸応募に使う信用証明と自己確認用データの違いを示す図"
   },
   {
     "id": "L006",
-    "title": "ドイツの銀行口座開設｜必要書類・選び方・Basiskonto",
+    "title": "ドイツの銀行口座開設｜暮らしに合う口座の選び方",
     "slug": "bank-account-germany",
     "category": "銀行・お金",
-    "summary": "ドイツで銀行口座を開くための必要書類、本人確認、支店型とオンライン銀行の選び方、手数料、Basiskonto、開設後の設定を解説。",
+    "summary": "ドイツ生活で使う銀行口座について、支店型とオンライン型の違い、費用・カード・現金の見方、必要書類、基本口座まで日本語で解説。",
     "url": "/germany/ja/living/bank-account-germany/",
     "markdown_path": "/content/living/bank-account-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-07-19",
-    "last_verified": "2026-07-19",
+    "updated_at": "2026-08-31",
+    "last_verified": "2026-08-31",
     "tags": [
       "銀行口座",
-      "Girokonto",
-      "Basiskonto",
+      "日常決済",
+      "基本口座",
       "お金",
       "初渡独"
     ],
@@ -1469,7 +1482,8 @@
     "canonical_url": "/germany/ja/living/bank-account-germany/",
     "related_articles": [
       "germany-first-30-days",
-      "schufa-guide"
+      "schufa-guide",
+      "anmeldung-guide"
     ],
     "official_sources": [
       {
@@ -1485,28 +1499,28 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-07-19",
-      "next_review_due": "2026-10-19"
+      "last_reviewed_at": "2026-08-31",
+      "next_review_due": "2026-11-30"
     }
   },
   {
     "id": "L007",
-    "title": "ドイツのTax ID・Steuernummer・Steuerklasse｜違いと取得方法",
+    "title": "ドイツの税務識別番号・税務署番号・給与税区分の違い",
     "slug": "tax-id-steuernummer-steuerklasse",
     "category": "税金・行政",
-    "summary": "ドイツのTax ID、Steuernummer、Steuerklasseの違いと取得方法を解説。勤務開始、確定申告、結婚後にどの番号・区分を確認するかが分かります。",
+    "summary": "ドイツで混同しやすい個人の税務識別番号、税務署が使う番号、給与税区分を日本語で整理。就職、結婚、副業、確定申告で何を確認するかを解説します。",
     "url": "/germany/ja/living/tax-id-steuernummer-steuerklasse/",
     "markdown_path": "/content/living/tax-id-steuernummer-steuerklasse.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-07-19",
-    "last_verified": "2026-07-19",
+    "updated_at": "2026-08-31",
+    "last_verified": "2026-08-31",
     "tags": [
       "税金",
-      "Tax ID",
-      "Steuernummer",
-      "Steuerklasse",
+      "税務識別番号",
+      "税務署番号",
+      "給与税区分",
       "行政手続き"
     ],
     "home_visible": true,
@@ -1518,8 +1532,7 @@
     "related_articles": [
       "germany-first-30-days",
       "anmeldung-guide",
-      "bank-account-germany",
-      "health-insurance-guide"
+      "bank-account-germany"
     ],
     "official_sources": [
       {
@@ -1535,31 +1548,30 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-07-19",
-      "next_review_due": "2026-10-19"
+      "last_reviewed_at": "2026-08-31",
+      "next_review_due": "2026-11-30"
     }
   },
   {
     "id": "L008",
-    "title": "ドイツで妊娠・出産したときの基本手続き：医療・保険・職場・出生届の流れ",
+    "title": "ドイツで妊娠・出産｜医療、仕事、出生届の全体ガイド",
     "slug": "pregnancy-birth-germany",
     "category": "家族・医療",
-    "summary": "ドイツで妊娠・出産する日本人家庭向けに、妊娠判明後の婦人科受診、助産師探し、出産施設、健康保険、職場報告、Mutterschutz、出生届、Elterngeld・Kindergeld申請までの流れを整理。",
+    "summary": "ドイツで妊娠・出産する日本人家庭向けに、婦人科、助産師、出産施設、健康保険、職場、出生届、育児給付、日本側の手続きを一つの流れで解説します。",
     "url": "/germany/ja/living/pregnancy-birth-germany/",
     "markdown_path": "/content/living/pregnancy-birth-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-07-19",
-    "last_verified": "2026-07-19",
+    "updated_at": "2026-08-31",
+    "last_verified": "2026-08-31",
     "tags": [
       "妊娠",
       "出産",
       "医療",
       "助産師",
-      "Mutterschutz",
-      "Elterngeld",
-      "Kindergeld",
+      "産前産後保護",
+      "育児給付",
       "出生届"
     ],
     "home_visible": true,
@@ -1570,7 +1582,8 @@
     "canonical_url": "/germany/ja/living/pregnancy-birth-germany/",
     "related_articles": [
       "health-insurance-guide",
-      "kita-u3-tagesmutter-guide"
+      "kita-u3-tagesmutter-guide",
+      "doctor-appointment-germany"
     ],
     "official_sources": [
       {
@@ -1586,29 +1599,28 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-07-19",
-      "next_review_due": "2026-10-19"
+      "last_reviewed_at": "2026-08-31",
+      "next_review_due": "2026-11-30"
     }
   },
   {
     "id": "L009",
-    "title": "Kita探しの基本：U3・Tagesmutter・Großtagespflegeの違いと申し込み手順",
+    "title": "ドイツの保育先探し｜施設保育と家庭的保育の違い",
     "slug": "kita-u3-tagesmutter-guide",
     "category": "家族・子育て",
-    "summary": "ドイツで保育先を探す日本人家庭向けに、U3、Kita、Tagesmutter、Großtagespflegeの違い、申し込み手順、費用、見学時の確認ポイントを整理。",
+    "summary": "ドイツの保育を、施設保育、家庭的保育、小規模共同保育の違いから解説。法的な利用権、探し方、慣らし保育、家庭に合う環境の見方を整理します。",
     "url": "/germany/ja/living/kita-u3-tagesmutter-guide/",
     "markdown_path": "/content/living/kita-u3-tagesmutter-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-07-19",
-    "last_verified": "2026-07-19",
+    "updated_at": "2026-08-31",
+    "last_verified": "2026-08-31",
     "tags": [
-      "Kita",
-      "U3",
-      "Tagesmutter",
-      "Großtagespflege",
-      "Jugendamt",
+      "保育施設",
+      "3歳未満保育",
+      "家庭的保育",
+      "青少年福祉局",
       "子育て",
       "保育"
     ],
@@ -1636,29 +1648,29 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-07-19",
-      "next_review_due": "2026-10-19"
+      "last_reviewed_at": "2026-08-31",
+      "next_review_due": "2026-11-30"
     }
   },
   {
     "id": "L010",
-    "title": "ドイツで引っ越すときの手続きチェックリスト",
+    "title": "ドイツ国内の引っ越し｜退去・入居・住所変更の全体ガイド",
     "slug": "moving-checklist-germany",
     "category": "住まい・手続き",
-    "summary": "ドイツ国内で引っ越すときに必要な住民登録、住所変更、退去・入居確認、電気・通信・保険・郵便転送などを時系列で整理。",
+    "summary": "ドイツ国内で引っ越すときに必要な旧居の解約、引渡し、新居の住民登録、電気・通信・保険の移転を、生活の流れに沿って解説します。",
     "url": "/germany/ja/living/moving-checklist-germany/",
     "markdown_path": "/content/living/moving-checklist-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-07-19",
-    "last_verified": "2026-07-19",
+    "updated_at": "2026-08-31",
+    "last_verified": "2026-08-31",
     "tags": [
       "引っ越し",
       "住所変更",
-      "手続き",
       "住民登録",
-      "賃貸"
+      "賃貸",
+      "公共料金"
     ],
     "home_visible": true,
     "home_order": 70,
@@ -1669,37 +1681,37 @@
     "related_articles": [
       "anmeldung-guide",
       "rent-apartment-germany",
-      "rundfunkbeitrag-guide"
+      "rundfunkbeitrag-guide",
+      "electricity-internet-contracts-germany"
     ],
     "official_sources": [],
     "disclaimer_type": "administrative",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-07-19",
-      "next_review_due": "2026-10-19"
+      "last_reviewed_at": "2026-08-31",
+      "next_review_due": "2026-11-30"
     }
   },
   {
     "id": "L001",
-    "title": "ドイツ住民登録 Anmeldung 完全ガイド｜必要書類・予約・当日の流れ",
+    "title": "ドイツの住民登録ガイド｜期限、入居証明、予約、登録後の流れ",
     "slug": "anmeldung-guide",
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
-    "image_alt": "German registration guide cards",
+    "image_alt": "ドイツの住民登録に必要な書類を自宅で準備する日本人の住民",
     "category": "行政手続き",
-    "summary": "ドイツで生活を始めるときに必要な住民登録 Anmeldung の完全ガイド。14日以内の登録ルール、必要書類、Wohnungsgeberbestätigung、予約方法、当日の流れ、税務IDとの関係、よくあるトラブルまで解説。",
+    "summary": "ドイツの住民登録について、入居後2週間の期限、入居証明、自治体での予約、当日の確認、登録証明と税務識別番号までを日本語で整理します。",
     "url": "/germany/ja/living/anmeldung-guide/",
     "markdown_path": "/content/living/anmeldung-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-07-19",
-    "last_verified": "2026-07-19",
+    "updated_at": "2026-08-30",
+    "last_verified": "2026-08-30",
     "tags": [
-      "Anmeldung",
       "住民登録",
-      "Bürgeramt",
-      "Wohnungsgeberbestätigung",
+      "入居証明",
+      "市民窓口",
       "初渡独",
       "引っ越し"
     ],
@@ -1718,37 +1730,49 @@
     ],
     "official_sources": [
       {
-        "title": "Berlin.de - Wohnsitz anmelden",
-        "url": "https://service.berlin.de/dienstleistung/120686/"
+        "title": "連邦住民登録法第17条：登録と転出",
+        "url": "https://www.gesetze-im-internet.de/bmg/__17.html"
+      },
+      {
+        "title": "連邦行政ポータル：住民登録",
+        "url": "https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99115005104001"
+      },
+      {
+        "title": "連邦行政ポータル：入居証明",
+        "url": "https://verwaltung.bund.de/leistungsverzeichnis/DE/leistung/99115008000000"
+      },
+      {
+        "title": "連邦住民登録法第19条：住居提供者の協力",
+        "url": "https://www.gesetze-im-internet.de/bmg/__19.html"
       }
     ],
     "disclaimer_type": "administrative",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-07-19",
-      "next_review_due": "2026-10-19"
+      "last_reviewed_at": "2026-08-30",
+      "next_review_due": "2026-11-30"
     }
   },
   {
     "id": "L002",
-    "title": "ドイツ生活最初の30日チェックリスト",
+    "title": "ドイツ生活、最初の30日｜手続きと暮らしの整え方",
     "slug": "germany-first-30-days",
     "category": "生活立ち上げ",
-    "summary": "ドイツ到着後30日以内に優先して進めたい住民登録、健康保険、銀行口座、税務ID、通信、滞在許可、放送負担金などを時系列で整理。",
+    "summary": "ドイツ到着後の1か月を、住所、健康保険、銀行、滞在資格という依存関係から整理。手続きだけでなく、新生活を無理なく整える考え方も紹介します。",
     "url": "/germany/ja/living/germany-first-30-days/",
     "markdown_path": "/content/living/germany-first-30-days.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-07-19",
-    "last_verified": "2026-07-19",
+    "updated_at": "2026-08-31",
+    "last_verified": "2026-08-31",
     "tags": [
       "初渡独",
       "住民登録",
       "健康保険",
       "銀行口座",
-      "税務ID",
+      "税務識別番号",
       "滞在許可"
     ],
     "home_visible": true,
@@ -1768,27 +1792,27 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-07-19",
-      "next_review_due": "2026-10-19"
+      "last_reviewed_at": "2026-08-31",
+      "next_review_due": "2026-11-30"
     }
   },
   {
     "id": "L003",
-    "title": "ドイツの健康保険2026｜GKV・PKV・保険料・加入手順",
+    "title": "ドイツの健康保険｜公的保険と民間保険をどう選ぶか",
     "slug": "health-insurance-guide",
     "category": "生活・手続き",
-    "summary": "ドイツの健康保険を2026年の基準額で解説。GKVとPKVの違い、会社員・学生・自営業・家族の加入条件、保険料、選び方、加入手順が分かります。",
+    "summary": "ドイツの健康保険を、会社員、学生、家族、自営業など立場別に解説。公的保険と民間保険の違い、2026年の基準、加入後の受診まで整理します。",
     "url": "/germany/ja/living/health-insurance-guide/",
     "markdown_path": "/content/living/health-insurance-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-07-19",
-    "last_verified": "2026-07-19",
+    "updated_at": "2026-08-31",
+    "last_verified": "2026-08-31",
     "tags": [
       "健康保険",
-      "GKV",
-      "PKV",
+      "公的医療保険",
+      "民間医療保険",
       "医療",
       "渡独後手続き"
     ],
@@ -1800,7 +1824,9 @@
     "canonical_url": "/germany/ja/living/health-insurance-guide/",
     "related_articles": [
       "germany-first-30-days",
-      "anmeldung-guide"
+      "anmeldung-guide",
+      "doctor-appointment-germany",
+      "pregnancy-birth-germany"
     ],
     "official_sources": [
       {
@@ -1816,27 +1842,27 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-07-19",
-      "next_review_due": "2026-10-19"
+      "last_reviewed_at": "2026-08-31",
+      "next_review_due": "2026-11-30"
     }
   },
   {
     "id": "L031",
-    "title": "ドイツでワールドカップ2026を見る方法：日本代表戦・無料放送・配信・スポーツバーの使い分け",
+    "title": "ドイツでワールドカップ2026を振り返る｜放送、観戦文化、日本代表",
     "slug": "world-cup-2026-watch-germany",
-    "category": "生活・手続き",
-    "summary": "ドイツ在住者向けに、FIFAワールドカップ2026をARD/ZDF、MagentaTV、スポーツバー、公式ハイライトで見る方法と、日本代表戦を追う実用ポイントを整理します。",
+    "category": "文化・スポーツ",
+    "summary": "2026年ワールドカップを、ドイツの公共放送、スポーツバー、街のパブリックビューイング、日本代表をめぐる交流から振り返ります。",
     "url": "/germany/ja/living/world-cup-2026-watch-germany/",
     "markdown_path": "/content/living/world-cup-2026-watch-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-06-29",
-    "last_verified": "2026-06-29",
+    "updated_at": "2026-08-30",
+    "last_verified": "2026-08-30",
     "tags": [
       "ワールドカップ",
       "サッカー",
-      "配信",
+      "観戦文化",
       "ドイツ生活",
       "日本代表"
     ],
@@ -1847,54 +1873,60 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/world-cup-2026-watch-germany/",
     "related_articles": [
-      "germany-first-30-days",
-      "rundfunkbeitrag-guide"
+      "rundfunkbeitrag-guide",
+      "germany-belonging-three-layers"
     ],
     "official_sources": [
       {
-        "title": "ZDF Presseportal: ARD und ZDF übertragen 60 Spiele",
-        "url": "https://presseportal.zdf.de/pressemitteilung/ard-und-zdf-uebertragen-60-spiele-der-fifa-fussball-wm-2026"
+        "title": "FIFA：2026年大会公式ページ",
+        "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026"
       },
       {
-        "title": "FIFA Japan fixtures",
+        "title": "FIFA：日本代表の試合結果",
         "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/japan/fixtures"
       },
       {
-        "title": "FIFA World Cup 2026",
-        "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026"
+        "title": "ZDF：ARDとZDFの放送概要",
+        "url": "https://presseportal.zdf.de/pressemitteilung/ard-und-zdf-uebertragen-60-spiele-der-fifa-fussball-wm-2026"
+      },
+      {
+        "title": "ドイツテレコム：全104試合の配信概要",
+        "url": "https://www.telekom.com/de/medien/medieninformationen/detail/telekom-und-sky-machen-die-fifa-wm-2026-in-ganz-deutschland-erlebbar-1104722"
       }
     ],
     "disclaimer_type": "living",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-29",
-      "next_review_due": "2026-07-06"
+      "last_reviewed_at": "2026-08-30",
+      "next_review_due": "2027-02-28"
     },
-    "hero_image": ""
+    "hero_image": "/assets/images/living/football-viewing-culture-editorial-v1.webp"
   },
   {
-    "id": "L032",
-    "title": "ドイツ・NRWでよく見かける野鳥図鑑",
+    "id": "L040",
+    "title": "ドイツ・NRWで出会う野鳥｜街、公園、ライン川の見分け方",
     "meta_title": "ドイツ・NRWでよく見かける野鳥図鑑｜日本語名とドイツ語名で見る身近な鳥",
     "slug": "germany-wild-birds-guide",
     "image": "/assets/img/living/germany-wild-birds/germany-wild-birds-hero.webp",
-    "image_alt": "ドイツ・NRWでよく見かける野鳥のイメージ",
-    "category": "コラム・自然",
-    "summary": "公園、ライン川、湖、住宅街で見かける鳥を、日本語名とドイツ語名で整理。NRW生活で役立つ身近な野鳥ガイド。",
+    "image_alt": "NRWの公園で見られるヨーロッパコマドリ、クロウタドリ、オオバン",
+    "category": "自然・暮らし",
+    "summary": "ドイツ西部の街、公園、川辺でよく出会う野鳥を、姿だけでなく鳴き声、行動、生息環境から紹介し、ライン地域ならではの鳥の風景を読み解きます。",
     "url": "/germany/ja/living/germany-wild-birds-guide/",
     "markdown_path": "/content/living/germany-wild-birds-guide.md",
     "published": true,
     "status": "published",
-    "published_at": "2026-06-30",
-    "updated_at": "2026-07-16",
-    "last_verified": "2026-07-16",
+    "published_at": "2026-08-05",
+    "updated_at": "2026-08-30",
+    "last_verified": "2026-08-30",
     "tags": [
-      "ドイツ生活",
       "野鳥",
       "NRW",
+      "ライン川",
+      "公園",
       "自然観察",
-      "ドイツ語"
+      "ケルン",
+      "デュッセルドルフ"
     ],
     "home_visible": true,
     "home_order": 2,
@@ -1905,20 +1937,37 @@
     "related_articles": [
       "nrw-nature-relax-guide",
       "rhine-river-relax-guide",
-      "duesseldorf-family-trip"
+      "cologne-family-trip"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "ドイツ自然保護連盟：よく見られる庭の鳥",
+        "url": "https://www.nabu.de/tiere-und-pflanzen/aktionen-und-projekte/stunde-der-gartenvoegel/portraets/index.html"
+      },
+      {
+        "title": "ドイツ自然保護連盟NRW：庭の鳥調査結果",
+        "url": "https://nrw.nabu.de/tiere-und-pflanzen/aktionen-und-projekte/stunde-der-gartenvoegel/ergebnisse/16755.html"
+      },
+      {
+        "title": "ケルン市：街に定着したインコの群れ",
+        "url": "https://www.stadt-koeln.de/leben-in-koeln/klima-umwelt-tiere/sittiche-am-schlafbaum-koeln"
+      },
+      {
+        "title": "バイエルン州鳥類保護協会：水鳥への餌やり",
+        "url": "https://www.lbv.de/ratgeber/lebensraum-garten/voegel-fuettern/soll-man-enten-fuettern/"
+      }
+    ],
     "disclaimer_type": "living",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-07-16",
-      "next_review_due": "2027-06-30"
+      "last_reviewed_at": "2026-08-30",
+      "next_review_due": "2027-02-28"
     },
     "hero_image": "/assets/img/living/germany-wild-birds/germany-wild-birds-hero.webp"
   },
   {
-    "id": "L033",
+    "id": "L039",
     "slug": "germany-train-travel-guide",
     "url": "/germany/ja/living/germany-train-travel-guide/",
     "markdown_path": "/content/living/germany-train-travel-guide.md",
@@ -1929,75 +1978,73 @@
     "hub_visible": true,
     "search_visible": true,
     "sitemap_visible": true,
-    "title": "ドイツの電車の乗り方｜DB Navigator・Deutschlandticket・長距離列車の基本",
-    "category": "交通・移動",
-    "summary": "ドイツ在住者の週末旅行で繰り返し使う、DB Navigatorの見方、列車種別、Deutschlandticketの範囲、工事・運休・検札・バリアフリー確認を一か所にまとめます。",
-    "published_at": "2026-07-19",
-    "last_verified": "2026-07-19",
+    "title": "ドイツの電車の乗り方｜列車の違い・切符・乗り換え・遅延",
+    "category": "交通・旅行",
+    "summary": "ドイツの鉄道を初めて使う人向けに、長距離列車と地域交通の違い、切符の選び方、駅表示の読み方、乗り換え、遅延時の考え方を整理します。",
+    "published_at": "2026-08-03",
+    "last_verified": "2026-08-30",
     "canonical_url": "/germany/ja/living/germany-train-travel-guide/",
     "tags": [
-      "DB Navigator",
-      "Deutschlandticket",
       "ドイツ鉄道",
-      "週末旅行",
-      "交通"
+      "電車",
+      "地域交通",
+      "長距離列車",
+      "切符",
+      "遅延"
     ],
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-08-30",
     "related_articles": [
-      "berlin-weekend-trip",
-      "hamburg-weekend-trip",
-      "munich-weekend-trip"
+      "cologne-city-guide",
+      "duesseldorf-city-guide",
+      "germany-first-30-days"
     ],
     "official_sources": [
       {
-        "title": "DB Navigator app",
+        "title": "ドイツ鉄道：公式アプリ",
         "url": "https://int.bahn.de/en/booking-information/db-navigator"
       },
       {
-        "title": "Deutschland-Ticket: valid trains",
-        "url": "https://int.bahn.de/en/faq/deutschlandticket-which-trains"
+        "title": "ドイツ鉄道：全国共通の地域交通定期券",
+        "url": "https://int.bahn.de/en/offers/regional/deutschland-ticket"
       },
       {
-        "title": "Deutsche Bahn passenger rights",
+        "title": "ドイツ鉄道：旅客の権利",
         "url": "https://int.bahn.de/en/booking-information/passenger-rights"
       },
       {
-        "title": "Accessible travel with Deutsche Bahn",
-        "url": "https://int.bahn.de/en/booking-information/accessible-travel"
-      },
-      {
-        "title": "Identification during ticket inspection",
-        "url": "https://int.bahn.de/en/faq/id-when-booking-or-during-ticket-inspection-on-the-train"
+        "title": "ドイツ鉄道：子どもと旅行する場合",
+        "url": "https://int.bahn.de/en/offers/additional-services/travelling-with-children"
       }
     ],
     "disclaimer_type": "living",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-07-19",
-      "next_review_due": "2026-10-19"
-    }
+      "last_reviewed_at": "2026-08-30",
+      "next_review_due": "2026-11-30"
+    },
+    "image_alt": "ドイツの駅で公式アプリを確認する日本人旅行者と地域列車"
   },
   {
-    "id": "L034",
-    "title": "ドイツの滞在許可を申請・更新する方法｜Ausländerbehörde・eAT・Fiktionsbescheinigung",
+    "id": "L037",
+    "title": "ドイツの滞在許可を申請・更新する方法｜期限、必要書類、審査中の証明",
     "slug": "residence-permit-renewal-germany",
-    "category": "行政手続き",
-    "summary": "EU域外国籍者がドイツ国内で滞在許可を初回申請・更新するときの流れを、管轄確認、期限前の申請、必要書類、eAT受け取り、Fiktionsbescheinigung、就労・渡航時の注意点まで整理します。",
+    "category": "行政・滞在",
+    "summary": "ドイツの滞在許可を申請・更新するときに、現在の許可条件、管轄、申請日、必要書類、審査中の滞在・就労・旅行をどう確認するかを整理します。",
     "url": "/germany/ja/living/residence-permit-renewal-germany/",
     "markdown_path": "/content/living/residence-permit-renewal-germany.md",
     "published": true,
     "status": "published",
-    "published_at": "2026-08-01",
-    "updated_at": "2026-08-01",
-    "last_verified": "2026-08-01",
+    "published_at": "2026-08-02",
+    "updated_at": "2026-08-30",
+    "last_verified": "2026-08-30",
     "tags": [
       "滞在許可",
-      "Aufenthaltstitel",
-      "Ausländerbehörde",
-      "eAT",
-      "Fiktionsbescheinigung",
-      "更新"
+      "更新",
+      "外国人局",
+      "電子滞在カード",
+      "就労条件",
+      "審査中"
     ],
     "home_visible": true,
     "home_order": 3,
@@ -2006,60 +2053,55 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/residence-permit-renewal-germany/",
     "related_articles": [
-      "germany-first-30-days",
       "anmeldung-guide",
-      "tax-id-steuernummer-steuerklasse",
-      "bank-account-germany"
+      "germany-first-30-days",
+      "moving-checklist-germany"
     ],
     "official_sources": [
       {
-        "title": "Make it in Germany：ドイツの滞在資格の種類",
-        "url": "https://www.make-it-in-germany.com/en/visa-residence/types"
-      },
-      {
-        "title": "BAMF：電子滞在許可証（eAT）",
-        "url": "https://www.bamf.de/EN/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Migrathek/eAufenthaltstitel/eaufenthaltstitel-node.html"
-      },
-      {
-        "title": "連邦法務省：滞在法第81条（AufenthG § 81）",
+        "title": "ドイツ滞在法第81条：滞在許可の申請",
         "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__81.html"
       },
       {
-        "title": "Düsseldorf市：外国人局オンライン申請（NRWでの自治体例）",
-        "url": "https://service.duesseldorf.de/online-dienst-auslaenderbehoerde"
+        "title": "連邦行政ポータル：滞在許可関連の手続き",
+        "url": "https://verwaltung.bund.de/"
       },
       {
-        "title": "Düsseldorf市：Fiktionsbescheinigung（自治体例）",
-        "url": "https://service.duesseldorf.de/suche/-/egov-bis-detail/dienstleistung/72850/show"
+        "title": "連邦政府の専門人材向けポータル：ビザと滞在",
+        "url": "https://www.make-it-in-germany.com/en/visa-residence"
+      },
+      {
+        "title": "ベルリン州公式サービス：審査中であることを示す証明",
+        "url": "https://service.berlin.de/dienstleistung/326233/en/"
       }
     ],
     "disclaimer_type": "administrative",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-01",
-      "next_review_due": "2026-11-01"
+      "last_reviewed_at": "2026-08-30",
+      "next_review_due": "2026-11-30"
     },
-    "image_alt": "ドイツの滞在許可申請に必要なパスポート、書類フォルダー、予約画面を準備する様子"
+    "image_alt": "ドイツの滞在許可に関する書類を自宅で整理する日本人の住民"
   },
   {
     "id": "L035",
-    "title": "ドイツで医師を探して予約する方法｜Hausarzt・Facharzt・116117・112",
+    "title": "ドイツで医師を探して予約する方法｜かかりつけ医・専門医・116117・112",
     "slug": "doctor-appointment-germany",
     "category": "医療・健康",
-    "summary": "ドイツで体調を崩したときに、Hausarzt、専門医、116117、救急外来、112をどう使い分けるかを整理し、医師検索、予約、持ち物、紹介状、eGK、eAU、E-Rezeptまで実務順に説明します。",
+    "summary": "ドイツで体調を崩したときの相談先を、かかりつけ医、専門医、時間外診療、救急に分け、医師探しから受診後まで日本語で整理します。",
     "url": "/germany/ja/living/doctor-appointment-germany/",
     "markdown_path": "/content/living/doctor-appointment-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-08-01",
-    "updated_at": "2026-08-01",
-    "last_verified": "2026-08-01",
+    "updated_at": "2026-08-30",
+    "last_verified": "2026-08-30",
     "tags": [
       "医師",
       "病院予約",
-      "Hausarzt",
-      "Facharzt",
+      "かかりつけ医",
+      "専門医",
       "116117",
       "112",
       "健康保険"
@@ -2077,27 +2119,23 @@
     ],
     "official_sources": [
       {
-        "title": "gesund.bund.de：医師選びと予約検索",
-        "url": "https://gesund.bund.de/arztwahl-und-terminsuche"
+        "title": "連邦保健省の健康情報：医師の選び方と予約",
+        "url": "https://gesund.bund.de/en/arztwahl-und-terminsuche"
       },
       {
-        "title": "gesund.bund.de：Hausarztによるプライマリケア",
-        "url": "https://gesund.bund.de/en/hausaerztliche-versorgung"
-      },
-      {
-        "title": "116117：患者サービス・医師検索・予約",
+        "title": "116117：患者サービス・医師検索・時間外診療",
         "url": "https://www.116117.de/"
       },
       {
-        "title": "gesund.bund.de：救急外来の使い方",
+        "title": "連邦保健省の健康情報：救急外来",
         "url": "https://gesund.bund.de/notaufnahme"
       },
       {
-        "title": "連邦保健省：E-Rezept",
+        "title": "連邦保健省：電子処方箋",
         "url": "https://www.bundesgesundheitsministerium.de/e-rezept"
       },
       {
-        "title": "gesund.bund.de：電子就労不能証明（eAU）",
+        "title": "連邦保健省の健康情報：電子就労不能証明",
         "url": "https://gesund.bund.de/die-elektronische-arbeitsunfaehigkeitsbescheinigung-eau"
       }
     ],
@@ -2105,32 +2143,31 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-01",
-      "next_review_due": "2026-11-01"
+      "last_reviewed_at": "2026-08-30",
+      "next_review_due": "2026-11-30"
     },
-    "image_alt": "ドイツの診療所で受付に健康保険証を提示し予約内容を確認する様子"
+    "image_alt": "ドイツの診療所で受付に健康保険証を提示する日本人の患者"
   },
   {
     "id": "L036",
-    "title": "ドイツで電気・インターネットを契約する方法｜入居・引っ越し・解約チェックリスト",
+    "title": "ドイツで電気・インターネットを契約する方法｜入居から解約まで",
     "slug": "electricity-internet-contracts-germany",
     "category": "住まい・契約",
-    "summary": "ドイツの賃貸住宅で電気とインターネットを準備する流れを、契約に含まれる費用の確認、メーター撮影、Grundversorgung、料金比較、開通、引っ越し、解約、トラブル防止まで整理します。",
+    "summary": "ドイツの賃貸住宅で電気とインターネットを準備する流れを、家賃に含まれる費用、入居時の記録、契約比較、開通、引っ越し、解約の順に整理します。",
     "url": "/germany/ja/living/electricity-internet-contracts-germany/",
     "markdown_path": "/content/living/electricity-internet-contracts-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-08-01",
-    "updated_at": "2026-08-01",
-    "last_verified": "2026-08-01",
+    "updated_at": "2026-08-30",
+    "last_verified": "2026-08-30",
     "tags": [
       "電気契約",
       "インターネット",
       "引っ越し",
-      "Strom",
-      "Grundversorgung",
+      "公共料金",
       "解約",
-      "Zählerstand"
+      "検針"
     ],
     "home_visible": true,
     "home_order": 5,
@@ -2146,27 +2183,23 @@
     ],
     "official_sources": [
       {
-        "title": "Bundesnetzagentur：Grundversorgung",
-        "url": "https://www.bundesnetzagentur.de/DE/Vportal/Energie/Vertragsarten/Grundversorgung/start.html"
-      },
-      {
-        "title": "Bundesnetzagentur：エネルギー契約の解約",
-        "url": "https://www.bundesnetzagentur.de/DE/Vportal/Energie/KuendigungLieferantenwechsel/Kuendigung/start.html"
-      },
-      {
-        "title": "Bundesnetzagentur：電力会社の切り替え",
+        "title": "連邦ネットワーク庁：電力会社の切り替え",
         "url": "https://www.bundesnetzagentur.de/DE/Vportal/Energie/KuendigungLieferantenwechsel/Lieferantenwechsel/start.html"
       },
       {
-        "title": "Bundesnetzagentur：電話・インターネットの事業者変更と引っ越し",
+        "title": "連邦ネットワーク庁：エネルギー契約の解約",
+        "url": "https://www.bundesnetzagentur.de/DE/Vportal/Energie/KuendigungLieferantenwechsel/Kuendigung/start.html"
+      },
+      {
+        "title": "連邦ネットワーク庁：電話・インターネットの事業者変更と引っ越し",
         "url": "https://www.bundesnetzagentur.de/DE/Vportal/TK/InternetTelefon/Wechsel/artikel.html"
       },
       {
-        "title": "Bundesnetzagentur：通信契約の期間と解約",
+        "title": "連邦ネットワーク庁：通信契約",
         "url": "https://www.bundesnetzagentur.de/DE/Vportal/TK/InternetTelefon/Vertrag/start.html"
       },
       {
-        "title": "Verbraucherzentrale：引っ越し時の電気・ガス契約",
+        "title": "消費者センター：引っ越し時の電気・ガス契約",
         "url": "https://www.verbraucherzentrale.de/wissen/energie/preise-tarife-anbieterwechsel/was-passiert-beim-umzug-mit-stromvertrag-oder-gasvertrag-10915"
       }
     ],
@@ -2174,9 +2207,9 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-01",
+      "last_reviewed_at": "2026-08-30",
       "next_review_due": "2026-12-01"
     },
-    "image_alt": "新居で電気メーターの数値を撮影し、ノートパソコンでインターネット契約を確認する様子"
+    "image_alt": "ドイツの新居で電気メーターと契約書を確認する日本人の夫婦"
   }
 ]

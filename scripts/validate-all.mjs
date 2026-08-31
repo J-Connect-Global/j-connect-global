@@ -9,6 +9,7 @@ const summaryArgs = process.env.GITHUB_STEP_SUMMARY ? ["--github-summary"] : [];
 
 const steps = [
   ["Front-matter synchronization", "scripts/sync-content-frontmatter.mjs"],
+  ["Editorial content quality", "scripts/validate-editorial-content.mjs"],
   ["Content metadata policy", "scripts/test-content-metadata.mjs"],
   ["Learn German flashcard data", "scripts/test-learn-german-flashcards.mjs"],
   ["News fetcher contract", "scripts/test-news-fetcher.mjs"],

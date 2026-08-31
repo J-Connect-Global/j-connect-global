@@ -40,4 +40,11 @@ Generated public pages, hub cards, Home preview cards, sitemap entries, and sear
 - Use the generated disclaimer and still encourage readers to check official or specialist sources.
 - Do not manually edit generated article pages or generated card sections after running the build.
 
+## Reader-value Rules
+
+- Open with two to four sentences explaining the topic, who needs it, and the decision or task the article makes clearer.
+- Write for an ordinary resident first. Separate genuine legal or administrative requirements from optional efficiency tips, and do not let edge cases bury the main route.
+- Use Japanese first. Show an official German term once only when readers need the spelling for a form, sign, search, or institution; then continue in Japanese.
+- Move German phrase practice and full German correspondence examples to Learn German, and link there from the relevant step.
+
 See `/docs/content-production-workflow.md` for the shared Living and Events workflow.

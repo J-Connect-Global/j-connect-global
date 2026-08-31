@@ -921,11 +921,11 @@ function renderBirdGrid(records, context) {
 
 function renderBirdCard(record, context) {
   const src = record.image || '';
-  const alt = record.alt || `ドイツで見られる ${record.de}（${record.jp}）のイメージ`;
+  const alt = record.alt || `ドイツで見られる${record.jp}の識別用イメージ`;
   const image = src
     ? `<figure class="bird-card-media"><img ${renderArticleImageAttributes(src, alt, 'bird-card-image')}></figure>`
     : '';
-  const title = `${record.jp}（${record.de}）`;
+  const title = record.jp;
 
   return `<article class="bird-profile-card">
 ${image ? indent(image, 2) : ''}
@@ -2761,7 +2761,7 @@ function readWebpDimensions(buffer) {
 }
 
 function contentImageDimensionAttributes(src, className) {
-  if (!String(src).startsWith('/assets/img/') || !String(src).endsWith('.webp')) return '';
+  if (!/^\/assets\/(?:img|images)\//.test(String(src)) || !String(src).endsWith('.webp')) return '';
   let dimensions = contentImageDimensions.get(src);
   if (dimensions === undefined) {
     const localPath = path.join(root, String(src).replace(/^\/+/, ''));

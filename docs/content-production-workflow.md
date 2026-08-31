@@ -18,6 +18,21 @@ The registries remain canonical for routing and operational controls that do not
 
 Events remain static article pages. Do not make Spreadsheet or GAS the primary Events source in this workflow.
 
+## Editorial Audience And Language
+
+Living, Events, and News articles are written for the broad shared audience of Japanese-speaking residents of Germany and people preparing to live in or visit Germany. A specialist may still find an article useful, but a general article must not be organized around a shipper, compliance officer, recruiter, architect, marketer, or other narrow professional role.
+
+Every article outside Learn German starts immediately after the H1 with two to four sentences of ordinary prose. The lead must tell readers what the article is about, who it is for, and what they will understand or be able to decide. Do not open with an image, blockquote, table, checklist, or a heading such as "3分で分かる一覧".
+
+Use Japanese first outside `/content/learn-german/`:
+
+- Explain an indispensable official German term in Japanese at first mention, with the German spelling in parentheses only when readers need it for a form, sign, search, or institution name.
+- Use the Japanese expression after that first mention. Do not repeatedly decorate prose or headings with German.
+- Do not include German phrase lists or full German email templates. Link to a matching Learn German article instead.
+- Proper names for an event, place, transport stop, product, or institution may remain when they identify the thing readers must find, but add Japanese context around the name.
+
+Event guides give culture, history, local meaning, atmosphere, works, performers, or programme enough space to answer "why is this worth experiencing?" Practical details should help a reader decide whether and how to attend; step-by-step instructions for every possible movement, item, or contingency should not dominate the article.
+
 ## Generated Files
 
 Running the content build and layout application updates:

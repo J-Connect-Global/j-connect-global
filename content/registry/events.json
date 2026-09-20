@@ -49,49 +49,61 @@
   },
   {
     "id": "E004",
-    "title": "デュッセルドルフ周辺のクリスマスマーケット基本ガイド",
+    "title": "デュッセルドルフのクリスマスマーケット2026｜冬の広場を楽しむ文化案内",
     "slug": "christmas-markets-duesseldorf",
     "category": "季節イベント",
-    "summary": "デュッセルドルフとNRWのクリスマスマーケットを、アドベントの過ごし方、広場に生まれる交流、地域ごとの食・工芸・光の表現から紹介。会場ごとの個性を味わう視点と最低限の訪問情報をまとめます。",
+    "summary": "2026年11月19日〜12月30日のデュッセルドルフ・クリスマスマーケットを、冬の広場、食、工芸品から楽しむ案内。会場の個性と、11月22日・12月25日の休業も確認できます。",
     "url": "/germany/ja/events/christmas-markets-duesseldorf/",
     "markdown_path": "/content/events/christmas-markets-duesseldorf.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-06-28",
-    "last_verified": "2026-06-28",
+    "updated_at": "2026-09-18",
+    "last_verified": "2026-09-17",
     "tags": [
-      "冬",
       "クリスマスマーケット",
+      "デュッセルドルフ",
+      "2026年11月",
+      "2026年12月",
       "アドベント",
-      "NRW",
-      "Düsseldorf",
-      "季節文化"
+      "冬"
     ],
     "home_visible": true,
-    "home_order": 20,
+    "home_order": 5,
     "hub_visible": true,
     "search_visible": true,
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/events/christmas-markets-duesseldorf/",
-    "city": "Düsseldorf / NRW",
-    "location": "Düsseldorf とNRW各都市",
-    "event_date": "年により異なる",
+    "city": "デュッセルドルフ",
+    "location": "旧市街・中心部の広場と通り",
+    "event_date": "2026-11-19〜2026-12-30",
     "official_url": "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf",
     "official_sources": [
       {
-        "title": "ドイツ観光局：ドイツのアドベントとクリスマスマーケット",
-        "url": "https://www.germany.travel/en/cities-culture/romantic-advent.html"
+        "title": "デュッセルドルフ観光局：2026年の会場・日程・営業時間",
+        "url": "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
       }
     ],
     "disclaimer_type": "event",
-    "related_articles": [],
+    "related_articles": [
+      "kommern-saint-martin-2026-guide",
+      "german-bread-culture",
+      "essen-light-festival-2026-guide"
+    ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-06-28",
-      "next_review_due": "2027-06-28"
-    }
+      "last_reviewed_at": "2026-09-17",
+      "next_review_due": "2026-11-18"
+    },
+    "content_type": "event",
+    "next_review": "2026-11-18",
+    "source_type": "manual",
+    "image": "/assets/img/events/christmas-markets-duesseldorf.webp",
+    "image_alt": "デュッセルドルフ市庁舎前のクリスマスマーケットの夜景",
+    "image_caption": "2022年12月、市庁舎前。2026年の会場配置や装飾を示すものではありません。",
+    "image_credit": "Kürschner / CC0（出典リンクは本文末）",
+    "image_url": "/assets/img/events/christmas-markets-duesseldorf.webp"
   },
   {
     "id": "E005",
@@ -1585,62 +1597,69 @@
   },
   {
     "id": "E016",
-    "title": "フランクフルト・ブックフェア2026｜本が国境を越える現場を見る",
+    "title": "フランクフルト・ブックフェア2026｜本とチェコ文化に出会う秋の週末",
     "slug": "frankfurt-book-fair-2026-guide",
     "image_url": "/assets/img/events/frankfurt-book-fair-2026-guide.webp",
     "image": "/assets/img/events/frankfurt-book-fair-2026-guide.webp",
-    "image_alt": "国際ブックフェアの書棚で本を選ぶ日本人来場者",
-    "image_caption": "AI生成の編集イメージ。実際の2026年会場、出版社、書籍を撮影または再現したものではありません。",
-    "image_credit": "AI-generated editorial image / J-Connect",
+    "image_alt": "フランクフルト・ブックフェアの会場風景",
+    "image_caption": "2024年のフランクフルト・ブックフェア。2026年の会場や出展内容を示すものではありません。",
+    "image_credit": "Matti Blume / CC BY-SA 4.0（出典リンクは本文末）",
     "category": "本・国際文化",
     "content_type": "event",
-    "summary": "2026年10月7〜11日のフランクフルト・ブックフェアを、出版社、著者、翻訳者、読者が本を国境の向こうへ届ける場として紹介。ゲスト国チェコと一般公開日の見どころを解説します。",
+    "summary": "フランクフルト・ブックフェア2026の一般公開は10月9〜11日。ゲスト国チェコの「海辺の国」というテーマ、翻訳や絵本の面白さを、日本語の読者にも楽しめる視点で案内します。",
     "url": "/germany/ja/events/frankfurt-book-fair-2026-guide/",
     "markdown_path": "/content/events/frankfurt-book-fair-2026-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-08-29",
-    "updated_at": "2026-08-30",
-    "last_verified": "2026-08-29",
+    "updated_at": "2026-09-18",
+    "last_verified": "2026-09-17",
     "tags": [
-      "フランクフルト・ブックフェア",
-      "本",
-      "翻訳",
+      "フランクフルト",
+      "ブックフェア",
+      "2026年10月",
       "チェコ",
-      "出版文化",
-      "国際交流"
+      "読書",
+      "翻訳"
     ],
-    "home_visible": false,
-    "home_order": 4,
+    "home_visible": true,
+    "home_order": 2,
     "hub_visible": true,
     "search_visible": true,
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/events/frankfurt-book-fair-2026-guide/",
-    "city": "Frankfurt am Main",
-    "location": "Messe Frankfurt",
+    "city": "フランクフルト",
+    "location": "フランクフルト見本市会場",
     "event_date": "2026-10-07〜2026-10-11",
-    "official_url": "https://www.buchmesse.de/en",
+    "official_url": "https://www.buchmesse.de/besuchen",
     "official_sources": [
       {
-        "title": "Frankfurter Buchmesse 公式サイト",
-        "url": "https://www.buchmesse.de/en"
+        "title": "ブックフェア主催者：来場日・一般公開時間",
+        "url": "https://www.buchmesse.de/besuchen"
       },
       {
-        "title": "Frankfurter Buchmesse：来場案内",
-        "url": "https://www.buchmesse.de/en/visit"
+        "title": "ブックフェア主催者：ゲスト国チェコ",
+        "url": "https://www.buchmesse.de/themen-programm/ehrengast"
+      },
+      {
+        "title": "ブックフェア主催者：チケット",
+        "url": "https://www.buchmesse.de/besuchen/tickets"
       }
     ],
     "disclaimer_type": "event",
     "related_articles": [
-      "germany-information-triage-guide",
-      "cologne-east-asian-art-museum-2026"
+      "essen-light-festival-2026-guide",
+      "spiel-essen-2026-guide",
+      "german-bread-culture"
     ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-29",
+      "last_reviewed_at": "2026-09-17",
       "next_review_due": "2026-10-06"
-    }
+    },
+    "next_review": "2026-10-06",
+    "source_type": "manual"
   },
   {
     "id": "E017",
@@ -2001,6 +2020,519 @@
       "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-29",
       "next_review_due": "2027-02-28"
+    }
+  },
+  {
+    "slug": "essen-light-festival-2026-guide",
+    "id": "E018",
+    "content_type": "event",
+    "category": "光のアート・街歩き",
+    "title": "エッセン光の祭典2026｜いつもの街が夜の美術館になる10日間",
+    "summary": "2026年10月2〜11日、エッセン中心街が光の展示空間へ。建物と映像の重なり、写真では伝わらない時間、子どもと楽しむ見方を紹介し、開催時間も整理します。",
+    "official_sources": [
+      {
+        "title": "ルール観光局：エッセン光の祭典2026",
+        "url": "https://www.ruhr-tourismus.de/event/essen-light-festival-2026/"
+      }
+    ],
+    "related_articles": [
+      "spiel-essen-2026-guide",
+      "frankfurt-book-fair-2026-guide",
+      "germany-autumn-forest-walk"
+    ],
+    "city": "エッセン",
+    "location": "エッセン中心街",
+    "event_date": "2026-10-02〜2026-10-11",
+    "next_review": "2026-10-01",
+    "tags": [
+      "エッセン",
+      "光の祭典",
+      "2026年10月",
+      "秋",
+      "アート",
+      "街歩き"
+    ],
+    "published": true,
+    "status": "published",
+    "source_type": "manual",
+    "published_at": "2026-09-18",
+    "updated_at": "2026-09-18",
+    "last_verified": "2026-09-17",
+    "canonical_url": "/germany/ja/events/essen-light-festival-2026-guide/",
+    "official_url": "https://www.ruhr-tourismus.de/event/essen-light-festival-2026/",
+    "image": "/assets/img/events/essen-light-festival-2026-guide.webp",
+    "image_alt": "エッセンの街路を彩るシャンデリア型の光の作品",
+    "image_caption": "2018年のエッセン光の祭典。2026年の作品構成を示す写真ではありません。",
+    "image_credit": "Wiki05 / CC BY-SA 4.0（出典リンクは本文末）",
+    "url": "/germany/ja/events/essen-light-festival-2026-guide/",
+    "markdown_path": "/content/events/essen-light-festival-2026-guide.md",
+    "image_url": "/assets/img/events/essen-light-festival-2026-guide.webp",
+    "home_visible": true,
+    "home_order": 1,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-09-17",
+      "next_review_due": "2026-10-01"
+    }
+  },
+  {
+    "slug": "spiel-essen-2026-guide",
+    "id": "E019",
+    "content_type": "event",
+    "category": "ボードゲーム・遊びの文化",
+    "title": "エッセン・ボードゲーム見本市2026｜遊んで分かる、ドイツの卓上文化",
+    "summary": "10月22〜25日のエッセン・ボードゲーム見本市を、初めての人にも分かる文化案内に。1983年の始まり、試遊の楽しさ、言葉の負担を見分けるコツ、オンライン限定の入場券を紹介します。",
+    "official_sources": [
+      {
+        "title": "見本市主催者：入場券・開場時間・試遊",
+        "url": "https://www.spiel-essen.de/de/besuchen/tickets-oeffnungszeiten"
+      },
+      {
+        "title": "見本市主催者：1983年からの歴史",
+        "url": "https://www.spiel-essen.de/de/ueber-uns/historie"
+      }
+    ],
+    "related_articles": [
+      "essen-light-festival-2026-guide",
+      "frankfurt-book-fair-2026-guide",
+      "kommern-saint-martin-2026-guide"
+    ],
+    "city": "エッセン",
+    "location": "エッセン見本市会場",
+    "event_date": "2026-10-22〜2026-10-25",
+    "next_review": "2026-10-21",
+    "tags": [
+      "エッセン",
+      "ボードゲーム",
+      "2026年10月",
+      "家族",
+      "遊び",
+      "文化"
+    ],
+    "published": true,
+    "status": "published",
+    "source_type": "manual",
+    "published_at": "2026-09-18",
+    "updated_at": "2026-09-18",
+    "last_verified": "2026-09-17",
+    "canonical_url": "/germany/ja/events/spiel-essen-2026-guide/",
+    "official_url": "https://www.spiel-essen.de/de/besuchen/tickets-oeffnungszeiten",
+    "image": "/assets/img/events/spiel-essen-2026-guide.webp",
+    "image_alt": "エッセンのボードゲーム見本市のホールと来場者",
+    "image_caption": "2024年の見本市、第6ホール。2026年の配置・出展内容とは異なります。",
+    "image_credit": "Schrapers~commonswiki / CC BY 4.0（出典リンクは本文末）",
+    "url": "/germany/ja/events/spiel-essen-2026-guide/",
+    "markdown_path": "/content/events/spiel-essen-2026-guide.md",
+    "image_url": "/assets/img/events/spiel-essen-2026-guide.webp",
+    "home_visible": true,
+    "home_order": 3,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-09-17",
+      "next_review_due": "2026-10-21"
+    }
+  },
+  {
+    "slug": "kommern-saint-martin-2026-guide",
+    "id": "E020",
+    "content_type": "event",
+    "category": "季節文化・家族",
+    "title": "コメルンの聖マルティン祭2026｜ランタンの灯りと「分け合う」物語",
+    "summary": "2026年11月8日、コメルン野外博物館で聖マルティンの行列が開催予定。ランタン、マントを分ける物語、人形型のパンから、ラインラントで受け継がれる秋の文化を読み解きます。",
+    "official_sources": [
+      {
+        "title": "コメルン野外博物館：2026年11月8日の聖マルティン行列",
+        "url": "https://kommern.lvr.de/de/veranstaltungen/martinszug_wie_frueher_auf_dem_dorf.html"
+      },
+      {
+        "title": "ドイツ・ユネスコ委員会：ラインラントの聖マルティンの伝統",
+        "url": "https://www.unesco.de/staette/martinstradition-im-rheinland/"
+      }
+    ],
+    "related_articles": [
+      "christmas-markets-duesseldorf",
+      "german-bread-culture",
+      "germany-autumn-forest-walk"
+    ],
+    "city": "メヒャーニヒ",
+    "location": "コメルン野外博物館",
+    "event_date": "2026-11-08",
+    "next_review": "2026-11-01",
+    "tags": [
+      "聖マルティン祭",
+      "ランタン",
+      "コメルン",
+      "2026年11月",
+      "家族",
+      "地域文化"
+    ],
+    "published": true,
+    "status": "published",
+    "source_type": "manual",
+    "published_at": "2026-09-18",
+    "updated_at": "2026-09-18",
+    "last_verified": "2026-09-17",
+    "canonical_url": "/germany/ja/events/kommern-saint-martin-2026-guide/",
+    "official_url": "https://kommern.lvr.de/de/veranstaltungen/martinszug_wie_frueher_auf_dem_dorf.html",
+    "image": "/assets/img/events/kommern-saint-martin-2026-guide.webp",
+    "image_alt": "コメルン野外博物館に移築された木組みの貯蔵建物",
+    "image_caption": "2020年撮影、コメルンの歴史的建築。2026年の行列当日の写真ではありません。",
+    "image_credit": "Rigorius / CC BY-SA 4.0（出典リンクは本文末）",
+    "url": "/germany/ja/events/kommern-saint-martin-2026-guide/",
+    "markdown_path": "/content/events/kommern-saint-martin-2026-guide.md",
+    "image_url": "/assets/img/events/kommern-saint-martin-2026-guide.webp",
+    "home_visible": true,
+    "home_order": 4,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-09-17",
+      "next_review_due": "2026-11-01"
+    }
+  },
+  {
+    "slug": "germany-inflation-august-2026",
+    "id": "N018",
+    "content_type": "news",
+    "category": "暮らし・物価",
+    "title": "ドイツの8月物価は2.9％上昇｜食費とエネルギーで違う家計の実感",
+    "summary": "ドイツの2026年8月物価は前年比2.9％上昇。食品全体、燃料、家庭向けエネルギーの違いを整理し、全国平均と自分の家計の実感がずれる理由を身近な買い物から解説します。",
+    "official_sources": [
+      {
+        "title": "ドイツ連邦統計局：2026年8月の消費者物価・確定値",
+        "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/09/PD26_320_611.html"
+      },
+      {
+        "title": "連邦統計局：消費者物価指数",
+        "url": "https://www.destatis.de/DE/Themen/Wirtschaft/Preise/Verbraucherpreisindex/_inhalt.html"
+      },
+      {
+        "title": "連邦統計局：支出割合を変えて考える物価計算",
+        "url": "https://service.destatis.de/inflationsrechner/"
+      }
+    ],
+    "related_articles": [
+      "germany-labour-market-august-2026",
+      "germany-september-2026-changes",
+      "german-bread-culture"
+    ],
+    "city": "ドイツ全土",
+    "area": "ドイツ全土",
+    "location": "",
+    "event_date": "2026年8月統計・9月10日発表",
+    "next_review": "2026-10-15",
+    "tags": [
+      "物価",
+      "インフレ",
+      "家計",
+      "食品",
+      "エネルギー",
+      "ドイツ生活"
+    ],
+    "published": true,
+    "status": "published",
+    "source_type": "manual",
+    "published_at": "2026-09-18",
+    "updated_at": "2026-09-18",
+    "last_verified": "2026-09-17",
+    "canonical_url": "/germany/ja/events/news/germany-inflation-august-2026/",
+    "official_url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/09/PD26_320_611.html",
+    "image": "/assets/img/events/germany-inflation-august-2026.webp",
+    "image_alt": "ハンブルクの食品スーパーの店内",
+    "image_caption": "2014年の資料写真。写っている商品や価格は2026年8月の物価を表しません。",
+    "image_credit": "Andrea Lang / CC BY-SA 4.0（出典リンクは本文末）",
+    "url": "/germany/ja/events/news/germany-inflation-august-2026/",
+    "markdown_path": "/content/events/news/germany-inflation-august-2026.md",
+    "image_url": "/assets/img/events/germany-inflation-august-2026.webp",
+    "home_visible": false,
+    "home_order": 6,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-09-17",
+      "next_review_due": "2026-10-15"
+    }
+  },
+  {
+    "slug": "cologne-antwerp-direct-ice-2026",
+    "id": "N019",
+    "content_type": "news",
+    "category": "鉄道・近隣国旅行",
+    "title": "ケルンからアントワープへ直通ICEが開業｜ベルギー旅行の選択肢が広がる",
+    "summary": "9月7日、ケルン―アントワープ間に毎日各方向2便の直通ICEが開業。ルーヴェンとブリュッセル空港にも停まる新路線を、ドイツ西部からの街歩きや旅行の選択肢として解説します。",
+    "official_sources": [
+      {
+        "title": "ベルギー国鉄：新しいケルン―アントワープ直通ICE",
+        "url": "https://www.b-europe.com/EN/Trains/ICE"
+      },
+      {
+        "title": "ブリュッセル航空：2026年9月7日の開業発表",
+        "url": "https://press.brusselsairlines.com/deutsche-bahns-first-high-speed-train-at-brussels-airport-in-collaboration-with-brussels-airlines"
+      },
+      {
+        "title": "ドイツ鉄道：全国交通券の利用範囲",
+        "url": "https://www.bahn.de/angebot/regio/deutschland-ticket"
+      }
+    ],
+    "related_articles": [
+      "germany-autumn-forest-walk",
+      "frankfurt-book-fair-2026-guide",
+      "germany-inflation-august-2026"
+    ],
+    "city": "ケルン・ベルギー",
+    "area": "ドイツ西部・ベルギー",
+    "location": "",
+    "event_date": "2026-09-07 開業",
+    "next_review": "2026-10-18",
+    "tags": [
+      "ICE",
+      "ケルン",
+      "アントワープ",
+      "ベルギー",
+      "ブリュッセル空港",
+      "鉄道旅行"
+    ],
+    "published": true,
+    "status": "published",
+    "source_type": "manual",
+    "published_at": "2026-09-18",
+    "updated_at": "2026-09-18",
+    "last_verified": "2026-09-17",
+    "canonical_url": "/germany/ja/events/news/cologne-antwerp-direct-ice-2026/",
+    "official_url": "https://www.b-europe.com/EN/Trains/ICE",
+    "image": "/assets/img/events/cologne-antwerp-direct-ice-2026.webp",
+    "image_alt": "ケルンのメッセ・ドイツ駅を通るICE車両",
+    "image_caption": "2015年撮影のICE。新路線の開業当日や使用車両を示す写真ではありません。",
+    "image_credit": "Rolf Heinrich, Köln / CC BY 3.0（出典リンクは本文末）",
+    "url": "/germany/ja/events/news/cologne-antwerp-direct-ice-2026/",
+    "markdown_path": "/content/events/news/cologne-antwerp-direct-ice-2026.md",
+    "image_url": "/assets/img/events/cologne-antwerp-direct-ice-2026.webp",
+    "home_visible": false,
+    "home_order": 7,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-09-17",
+      "next_review_due": "2026-10-18"
+    }
+  },
+  {
+    "slug": "germany-warning-day-2026-results",
+    "id": "N020",
+    "content_type": "news",
+    "category": "暮らし・公共サービス",
+    "title": "全国警報訓練2026、当局は良好と評価｜スマホが鳴った後に知っておきたいこと",
+    "summary": "9月10日の全国警報訓練について、連邦当局は初期評価を良好と発表。スマホへの一斉配信、サイレン、アプリの役割と、速報的な評価だけでは分からない点を住民向けに説明します。",
+    "official_sources": [
+      {
+        "title": "連邦市民保護・災害救援庁：2026年全国警報訓練の初期評価",
+        "url": "https://www.bbk.bund.de/SharedDocs/Pressemitteilungen/DE/2026/09/pm-10-bundesweiter-warntag.html"
+      },
+      {
+        "title": "連邦市民保護・災害救援庁：警報手段の役割",
+        "url": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warnung-in-Deutschland/So-werden-Sie-gewarnt/so-werden-sie-gewarnt_node.html"
+      },
+      {
+        "title": "連邦の警報ポータル",
+        "url": "https://warnung.bund.de/"
+      }
+    ],
+    "related_articles": [
+      "germany-information-triage-guide",
+      "germany-september-2026-changes",
+      "germany-inflation-august-2026"
+    ],
+    "city": "ドイツ全土",
+    "area": "ドイツ全土",
+    "location": "",
+    "event_date": "2026-09-10 全国警報訓練",
+    "next_review": "2026-10-18",
+    "tags": [
+      "全国警報訓練",
+      "防災",
+      "スマートフォン",
+      "サイレン",
+      "公共サービス",
+      "ドイツ生活"
+    ],
+    "published": true,
+    "status": "published",
+    "source_type": "manual",
+    "published_at": "2026-09-18",
+    "updated_at": "2026-09-18",
+    "last_verified": "2026-09-17",
+    "canonical_url": "/germany/ja/events/news/germany-warning-day-2026-results/",
+    "official_url": "https://www.bbk.bund.de/SharedDocs/Pressemitteilungen/DE/2026/09/pm-10-bundesweiter-warntag.html",
+    "image": "/assets/img/events/germany-warning-day-2026-results.webp",
+    "image_alt": "ドイツの屋外に設置された電子サイレン",
+    "image_caption": "2016年撮影、バイエルン州の電子サイレン。2026年の訓練当日の写真ではありません。",
+    "image_credit": "Ampelseite / CC BY-SA 4.0（出典リンクは本文末）",
+    "url": "/germany/ja/events/news/germany-warning-day-2026-results/",
+    "markdown_path": "/content/events/news/germany-warning-day-2026-results.md",
+    "image_url": "/assets/img/events/germany-warning-day-2026-results.webp",
+    "home_visible": false,
+    "home_order": 8,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-09-17",
+      "next_review_due": "2026-10-18"
+    }
+  },
+  {
+    "slug": "german-bread-culture",
+    "id": "C003",
+    "content_type": "column",
+    "category": "食文化・暮らし",
+    "title": "ドイツのパンは、なぜこんなに違う？｜一切れから暮らしを知る",
+    "summary": "ドイツのパンを「硬い」で終わらせず、酸味、皮、切り口、食卓の組み合わせから味わうコラム。地域の歴史と季節の形を知り、次の一つを自分の好みで選ぶ楽しみを紹介します。",
+    "official_sources": [
+      {
+        "title": "ドイツ・ユネスコ委員会：ドイツのパン文化",
+        "url": "https://www.unesco.de/staette/deutsche-brotkultur/"
+      },
+      {
+        "title": "バイエルン州消費者センター：色や種だけでは全粒粉パンを判断できない",
+        "url": "https://www.verbraucherzentrale.bayern/faq/ist-mehrkornbrot-immer-auch-vollkornbrot-8688"
+      }
+    ],
+    "related_articles": [
+      "kommern-saint-martin-2026-guide",
+      "christmas-markets-duesseldorf",
+      "germany-autumn-forest-walk"
+    ],
+    "city": "ドイツ全土",
+    "area": "ドイツの食文化",
+    "location": "",
+    "event_date": "暮らしのコラム",
+    "next_review": "2027-03-18",
+    "tags": [
+      "パン",
+      "食文化",
+      "ドイツ生活",
+      "ライ麦",
+      "地域文化",
+      "季節"
+    ],
+    "published": true,
+    "status": "published",
+    "source_type": "manual",
+    "published_at": "2026-09-18",
+    "updated_at": "2026-09-18",
+    "last_verified": "2026-09-17",
+    "canonical_url": "/germany/ja/events/columns/german-bread-culture/",
+    "official_url": "https://www.unesco.de/staette/deutsche-brotkultur/",
+    "image": "/assets/img/events/german-bread-culture.webp",
+    "image_alt": "ベルリンのパン店が作るライ麦パン",
+    "image_caption": "2025年撮影、ベルリンのUfaベーカリーのライ麦パン。皮と中身の違いも味わいの一部です。",
+    "image_credit": "Leonhard Lenz / CC0（出典リンクは本文末）",
+    "url": "/germany/ja/events/columns/german-bread-culture/",
+    "markdown_path": "/content/events/columns/german-bread-culture.md",
+    "image_url": "/assets/img/events/german-bread-culture.webp",
+    "home_visible": false,
+    "home_order": 9,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-09-17",
+      "next_review_due": "2027-03-18"
+    }
+  },
+  {
+    "slug": "germany-autumn-forest-walk",
+    "id": "C004",
+    "content_type": "column",
+    "category": "自然・季節の暮らし",
+    "title": "ドイツの秋、同じ森をもう一度歩く｜紅葉の先に見える小さな変化",
+    "summary": "同じ森を繰り返し歩くと、葉の色、光、落ち葉の音が少しずつ変わります。紅葉と土の仕組みを手がかりに、名所へ遠出しなくても味わえるドイツの秋の楽しみを紹介します。",
+    "official_sources": [
+      {
+        "title": "森林情報サイト・スイス森林研究機関：秋の葉の色の変化",
+        "url": "https://www.waldwissen.net/de/lebensraum-wald/baeume-und-waldpflanzen/herbstlliche-laubverfaerbung"
+      },
+      {
+        "title": "バイエルン州森林研究機関：落ち葉と腐植",
+        "url": "https://www.lwf.bayern.de/wissenstransfer/forstcastnet/239764/index.php"
+      },
+      {
+        "title": "NRW州森林機関：森での自然体験",
+        "url": "https://www.wald-und-holz.nrw.de/wald-erleben"
+      }
+    ],
+    "related_articles": [
+      "essen-light-festival-2026-guide",
+      "kommern-saint-martin-2026-guide",
+      "german-bread-culture"
+    ],
+    "city": "ドイツ全土",
+    "area": "ドイツの森・身近な緑地",
+    "location": "",
+    "event_date": "秋のコラム",
+    "next_review": "2027-09-01",
+    "tags": [
+      "秋",
+      "森",
+      "散歩",
+      "紅葉",
+      "自然観察",
+      "ドイツ生活"
+    ],
+    "published": true,
+    "status": "published",
+    "source_type": "manual",
+    "published_at": "2026-09-18",
+    "updated_at": "2026-09-18",
+    "last_verified": "2026-09-17",
+    "canonical_url": "/germany/ja/events/columns/germany-autumn-forest-walk/",
+    "official_url": "https://www.waldwissen.net/de/lebensraum-wald/baeume-und-waldpflanzen/herbstlliche-laubverfaerbung",
+    "image": "/assets/img/events/germany-autumn-forest-walk.webp",
+    "image_alt": "ベルリンのデュッペルの森を彩る秋のブナ",
+    "image_caption": "2016年11月撮影の秋の森。紅葉の進み方は場所や年の天候で変わります。",
+    "image_credit": "Alexander Grams / CC BY-SA 4.0（出典リンクは本文末）",
+    "url": "/germany/ja/events/columns/germany-autumn-forest-walk/",
+    "markdown_path": "/content/events/columns/germany-autumn-forest-walk.md",
+    "image_url": "/assets/img/events/germany-autumn-forest-walk.webp",
+    "home_visible": false,
+    "home_order": 10,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-09-17",
+      "next_review_due": "2027-09-01"
     }
   }
 ]

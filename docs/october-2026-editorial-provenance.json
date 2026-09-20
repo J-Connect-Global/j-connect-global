@@ -1,0 +1,1115 @@
+{
+  "edition": "October–December 2026",
+  "published_at": "2026-09-18",
+  "last_verified": "2026-09-17",
+  "scope": "5 event guides (3 new, 2 refreshed), 3 news explainers, 2 columns",
+  "articles": [
+    {
+      "slug": "essen-light-festival-2026-guide",
+      "id": "E018",
+      "type": "event",
+      "change": "new",
+      "markdown_path": "/content/events/essen-light-festival-2026-guide.md",
+      "canonical_url": "/germany/ja/events/essen-light-festival-2026-guide/",
+      "manuscript_characters": 1993,
+      "official_sources": [
+        {
+          "title": "ルール観光局：エッセン光の祭典2026",
+          "url": "https://www.ruhr-tourismus.de/event/essen-light-festival-2026/"
+        }
+      ],
+      "images": [
+        {
+          "key": "light-5",
+          "source_title": "File:Essen Light Festival 2018 (11).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Essen_Light_Festival_2018_(11).jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Essen_Light_Festival_2018_%2811%29.jpg",
+          "credit": "Wiki05",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_date": "2018-10-28 19:50:40",
+          "alt": "エッセンの街路を彩るシャンデリア型の光の作品",
+          "caption": "2018年のエッセン光の祭典。2026年の作品構成を示す写真ではありません。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/img/events/essen-light-festival-2026-guide.webp",
+              "bytes": 72986,
+              "sha256": "b740fa7bc31547fa5cd2ffc6c0b7aa1d1b52a765a8127accf5de62d7e445e8f2"
+            },
+            {
+              "path": "/assets/img/events/essen-light-festival-2026-guide-480w.webp",
+              "bytes": 20780,
+              "sha256": "8ce2cfbd0f5fba21a3788e7d26e80a42e02036945e8e82a5c906ef28415ba4de"
+            },
+            {
+              "path": "/assets/img/events/essen-light-festival-2026-guide-768w.webp",
+              "bytes": 44590,
+              "sha256": "47e049690338c64d5b787672670632e1bccd3596dbfddd24fff70e32f56e2fe8"
+            }
+          ]
+        },
+        {
+          "key": "light-4",
+          "source_title": "File:Essen Light Festival 2018 (01).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Essen_Light_Festival_2018_(01).jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Essen_Light_Festival_2018_%2801%29.jpg",
+          "credit": "Wiki05",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_date": "2018-10-28 19:52:54",
+          "alt": "エッセンの通りに浮かぶ巨大な月の作品",
+          "caption": "2018年の展示「Museum of the Moon」。街の建物と作品の大きさを見比べられます。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-light-4.webp",
+              "bytes": 57350,
+              "sha256": "5d5c714727c606210a3ad05a3582ebae8e55ada3a718900f54362d4d9d00af01"
+            },
+            {
+              "path": "/assets/images/events/october2026-light-4-480w.webp",
+              "bytes": 13098,
+              "sha256": "a6ec91f7c9e163e5fed39e598d02724569067419515654a69425c90122e70633"
+            },
+            {
+              "path": "/assets/images/events/october2026-light-4-768w.webp",
+              "bytes": 32536,
+              "sha256": "683922dd4aac84f4844ecc406adedf9bae9168326f905f87fefbbc531e1ca422"
+            }
+          ]
+        },
+        {
+          "key": "light-0",
+          "source_title": "File:Essen Light Festival 2016 12.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Essen_Light_Festival_2016_12.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Essen_Light_Festival_2016_12.jpg",
+          "credit": "Wiki05",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_date": "2016-11-02",
+          "alt": "夜のエッセンで光を受ける教会の外壁",
+          "caption": "2016年のエッセン光の祭典、クロイツ教会。建物の形が鑑賞の一部になります。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-light-0.webp",
+              "bytes": 26488,
+              "sha256": "9d1e6d2206ead3a92bdac1220f183404f1d5799f63d3c0f7035c3f27f8341e3e"
+            },
+            {
+              "path": "/assets/images/events/october2026-light-0-480w.webp",
+              "bytes": 6168,
+              "sha256": "1aaa212edbabcc51757f4c76d1f36cceeb00f1aa25689acd1eee7867f9fbebdc"
+            },
+            {
+              "path": "/assets/images/events/october2026-light-0-768w.webp",
+              "bytes": 14588,
+              "sha256": "118c430c4b9b4b17bef44c0843b4e1c799b4d784377f7e1a72974202fb3737d8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "frankfurt-book-fair-2026-guide",
+      "id": "E016",
+      "type": "event",
+      "change": "refreshed",
+      "markdown_path": "/content/events/frankfurt-book-fair-2026-guide.md",
+      "canonical_url": "/germany/ja/events/frankfurt-book-fair-2026-guide/",
+      "manuscript_characters": 2314,
+      "official_sources": [
+        {
+          "title": "ブックフェア主催者：来場日・一般公開時間",
+          "url": "https://www.buchmesse.de/besuchen"
+        },
+        {
+          "title": "ブックフェア主催者：ゲスト国チェコ",
+          "url": "https://www.buchmesse.de/themen-programm/ehrengast"
+        },
+        {
+          "title": "ブックフェア主催者：チケット",
+          "url": "https://www.buchmesse.de/besuchen/tickets"
+        }
+      ],
+      "images": [
+        {
+          "key": "book-0",
+          "source_title": "File:Buchmesse 2024, Frankfurt am Main (P1200815).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Buchmesse_2024,_Frankfurt_am_Main_(P1200815).jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Buchmesse_2024%2C_Frankfurt_am_Main_%28P1200815%29.jpg",
+          "credit": "Matti Blume",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+          "source_date": "2024-10-19 12:12:53",
+          "alt": "フランクフルト・ブックフェアの会場風景",
+          "caption": "2024年のフランクフルト・ブックフェア。2026年の会場や出展内容を示すものではありません。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/img/events/frankfurt-book-fair-2026-guide.webp",
+              "bytes": 162890,
+              "sha256": "3897072e4bf1b8345dddd4054ad0c0d49d120debdbcaf1ec401ce1c2a00620bc"
+            },
+            {
+              "path": "/assets/img/events/frankfurt-book-fair-2026-guide-480w.webp",
+              "bytes": 38694,
+              "sha256": "5c6956fee53d619e1fc89887e72ce085ec0b9fa74e56a5fd91568da18c87dd09"
+            },
+            {
+              "path": "/assets/img/events/frankfurt-book-fair-2026-guide-768w.webp",
+              "bytes": 93186,
+              "sha256": "bc0284afa65a7c7fe4f79939833af78ae81807c4c91b38249256b235659cadfa"
+            }
+          ]
+        },
+        {
+          "key": "book-2",
+          "source_title": "File:Buchmesse 2024, Frankfurt am Main (P1200841).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Buchmesse_2024,_Frankfurt_am_Main_(P1200841).jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Buchmesse_2024%2C_Frankfurt_am_Main_%28P1200841%29.jpg",
+          "credit": "Matti Blume",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+          "source_date": "2024-10-19 14:14:53",
+          "alt": "ブックフェアの舞台で対話するイタリアの作家たち",
+          "caption": "2024年のイタリア作家による討論。本を通じて異なる文化の声に触れられる場です。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-book-2.webp",
+              "bytes": 44900,
+              "sha256": "138c08c8a7f7523a1488e0aa0ad15fff57114befcd870a8f82a8f69a721747c4"
+            },
+            {
+              "path": "/assets/images/events/october2026-book-2-480w.webp",
+              "bytes": 14702,
+              "sha256": "9d577da03c541244a22114b4658fe95fc46dd4d7979fbffc4080cb6c5b524372"
+            },
+            {
+              "path": "/assets/images/events/october2026-book-2-768w.webp",
+              "bytes": 29042,
+              "sha256": "8b7b0cdbf03997f8b99e487ecdd3b894d4c8829e70c3e74a260483e0f1983968"
+            }
+          ]
+        },
+        {
+          "key": "book-6",
+          "source_title": "File:MKr364725 Kohei Saito (Frankfurter Buchmesse 2024).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:MKr364725_Kohei_Saito_(Frankfurter_Buchmesse_2024).jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/MKr364725_Kohei_Saito_%28Frankfurter_Buchmesse_2024%29.jpg",
+          "credit": "Martin Kraft",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_date": "2024-10-16",
+          "alt": "2024年のブックフェアに登壇した斎藤幸平氏",
+          "caption": "2024年の記録写真。斎藤幸平氏の2026年の出演を示すものではありません。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-book-6.webp",
+              "bytes": 40544,
+              "sha256": "03a1d6587e4718199fecc23c34b48feb55497d9051da93454a33d938f0de7af2"
+            },
+            {
+              "path": "/assets/images/events/october2026-book-6-480w.webp",
+              "bytes": 9658,
+              "sha256": "32c2193938af35ae5b8d3f452b76550880809f638d318952755a7ed66898b7ee"
+            },
+            {
+              "path": "/assets/images/events/october2026-book-6-768w.webp",
+              "bytes": 23706,
+              "sha256": "af66c704da33640edd8d258263bdd6453040cb7f5379e47d5ccb7570f8035ff5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "spiel-essen-2026-guide",
+      "id": "E019",
+      "type": "event",
+      "change": "new",
+      "markdown_path": "/content/events/spiel-essen-2026-guide.md",
+      "canonical_url": "/germany/ja/events/spiel-essen-2026-guide/",
+      "manuscript_characters": 2202,
+      "official_sources": [
+        {
+          "title": "見本市主催者：入場券・開場時間・試遊",
+          "url": "https://www.spiel-essen.de/de/besuchen/tickets-oeffnungszeiten"
+        },
+        {
+          "title": "見本市主催者：1983年からの歴史",
+          "url": "https://www.spiel-essen.de/de/ueber-uns/historie"
+        }
+      ],
+      "images": [
+        {
+          "key": "spiel-3",
+          "source_title": "File:Spiel Essen.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Spiel_Essen.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Spiel_Essen.jpg",
+          "credit": "Schrapers~commonswiki",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "source_date": "2024-10-05 15:59:42",
+          "alt": "エッセンのボードゲーム見本市のホールと来場者",
+          "caption": "2024年の見本市、第6ホール。2026年の配置・出展内容とは異なります。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/img/events/spiel-essen-2026-guide.webp",
+              "bytes": 161648,
+              "sha256": "1389879e7c993e8247f6e713df8a60edeba7091cfb5aa15b38d03cad0e458e9b"
+            },
+            {
+              "path": "/assets/img/events/spiel-essen-2026-guide-480w.webp",
+              "bytes": 41770,
+              "sha256": "9f23c8d25562ddf2b8a7d8ad1c5bea7f915403e72dbcdd6a0d20cd8396abbd0d"
+            },
+            {
+              "path": "/assets/img/events/spiel-essen-2026-guide-768w.webp",
+              "bytes": 96200,
+              "sha256": "afa4ba0bb453d8c46fc244577839d787ef67cc8f74fb614a5093bcd610d37c41"
+            }
+          ]
+        },
+        {
+          "key": "spiel2-4",
+          "source_title": "File:HABA SPIEL Essen 2022.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:HABA_SPIEL_Essen_2022.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/HABA_SPIEL_Essen_2022.jpg",
+          "credit": "Miriam Schieck",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_date": "2023-11-16",
+          "alt": "ボードゲーム見本市のHABA展示ブース",
+          "caption": "2022年のHABAブース（写真説明による）。2026年の出展予定を示すものではありません。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-spiel2-4.webp",
+              "bytes": 111566,
+              "sha256": "e28a3e3145dbf9d86a8dfd7d1360b394cf3c98e1c860ad55db31afcc8fa530d4"
+            },
+            {
+              "path": "/assets/images/events/october2026-spiel2-4-480w.webp",
+              "bytes": 47840,
+              "sha256": "24a9746a4d7fa10948a4f58ad6deec2520fecf3d6c00284c3a47fb5b31c5b8a9"
+            }
+          ]
+        },
+        {
+          "key": "game-4",
+          "source_title": "File:Carcassonne game.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Carcassonne_game.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Carcassonne_game.jpg",
+          "credit": "Tom & Katrien",
+          "license": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+          "source_date": "2006-10-29 23:35:30",
+          "alt": "テーブルを囲んでカルカソンヌを遊ぶ人々",
+          "caption": "2006年撮影。試遊を考える参考として掲載した遊びの場面で、見本市の会場写真ではありません。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-game-4.webp",
+              "bytes": 46486,
+              "sha256": "3b4620f34a1d59c14a6b856d54668ab7d129b8a809fe70674b565ea08cf4050f"
+            },
+            {
+              "path": "/assets/images/events/october2026-game-4-480w.webp",
+              "bytes": 13904,
+              "sha256": "7037991b0d5dec94b83dc8b7720ba49256f77bc5e7d8c6f19a8628defbbc1966"
+            },
+            {
+              "path": "/assets/images/events/october2026-game-4-768w.webp",
+              "bytes": 29200,
+              "sha256": "378c15cd5246ac96575bd9eaf931fab23b2b92d97618f99adf3f3f82641f617a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "kommern-saint-martin-2026-guide",
+      "id": "E020",
+      "type": "event",
+      "change": "new",
+      "markdown_path": "/content/events/kommern-saint-martin-2026-guide.md",
+      "canonical_url": "/germany/ja/events/kommern-saint-martin-2026-guide/",
+      "manuscript_characters": 2169,
+      "official_sources": [
+        {
+          "title": "コメルン野外博物館：2026年11月8日の聖マルティン行列",
+          "url": "https://kommern.lvr.de/de/veranstaltungen/martinszug_wie_frueher_auf_dem_dorf.html"
+        },
+        {
+          "title": "ドイツ・ユネスコ委員会：ラインラントの聖マルティンの伝統",
+          "url": "https://www.unesco.de/staette/martinstradition-im-rheinland/"
+        }
+      ],
+      "images": [
+        {
+          "key": "kommern2-2",
+          "source_title": "File:Speicher aus Luerrip 56 1996.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Speicher_aus_Luerrip_56_1996.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Speicher_aus_Luerrip_56_1996.jpg",
+          "credit": "Rigorius",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_date": "2020-08-04",
+          "alt": "コメルン野外博物館に移築された木組みの貯蔵建物",
+          "caption": "2020年撮影、コメルンの歴史的建築。2026年の行列当日の写真ではありません。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/img/events/kommern-saint-martin-2026-guide.webp",
+              "bytes": 220426,
+              "sha256": "b9ebcd20f5ed4d7ceae32d395619e02361ecc66fbf882f750cb72af7f98b24e2"
+            },
+            {
+              "path": "/assets/img/events/kommern-saint-martin-2026-guide-480w.webp",
+              "bytes": 41218,
+              "sha256": "bd43e51411a91c02752cb40b7d69e348878887c9a969c95932d09485ef618fd3"
+            },
+            {
+              "path": "/assets/img/events/kommern-saint-martin-2026-guide-768w.webp",
+              "bytes": 116640,
+              "sha256": "a5e45bf6d052ed8f9ecd3869d6351cb26e6ba7956b8a1deebac834301436ef93"
+            }
+          ]
+        },
+        {
+          "key": "martin-0",
+          "source_title": "File:Bundesarchiv Bild 194-0273-38, Sankt Martinszug.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_194-0273-38,_Sankt_Martinszug.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Bundesarchiv_Bild_194-0273-38%2C_Sankt_Martinszug.jpg",
+          "credit": "Bundesarchiv, Bild 194-0273-38 / Hans Lachmann",
+          "license": "CC BY-SA 3.0 de",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+          "source_date": "1949date QS:P571,+1949-00-00T00:00:00Z/9",
+          "alt": "ランタンを持って聖マルティンの行列に参加する子どもたち",
+          "caption": "1949年の聖マルティン行列の記録。コメルンの2026年行事を写したものではありません。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-martin-0.webp",
+              "bytes": 31748,
+              "sha256": "48a8c7d608b0148b14c9d7e1b1d896f27d902499e3f25bfbcf9b7d8c7e532a76"
+            },
+            {
+              "path": "/assets/images/events/october2026-martin-0-480w.webp",
+              "bytes": 14348,
+              "sha256": "516e91643a5d328a20b72e7e45c2d3847927c64e36259216e8b660bfd27e527c"
+            },
+            {
+              "path": "/assets/images/events/october2026-martin-0-768w.webp",
+              "bytes": 27928,
+              "sha256": "29301a23d6aa8f48f836d7dc48a7a955bbc53e7d76229937579acecaf3a176e5"
+            }
+          ]
+        },
+        {
+          "key": "kommern2-1",
+          "source_title": "File:RFK-004-Fachwerk-mit-Strohdach-17-Jh.JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:RFK-004-Fachwerk-mit-Strohdach-17-Jh.JPG",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/RFK-004-Fachwerk-mit-Strohdach-17-Jh.JPG",
+          "credit": "HOWI -  Horsch, Willy",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "source_date": "2007-10-20",
+          "alt": "コメルン野外博物館の木組みとわらぶき屋根",
+          "caption": "2007年撮影。壁や屋根の素材にも、地域の暮らしの歴史が表れます。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-kommern2-1.webp",
+              "bytes": 71462,
+              "sha256": "96e925006fef0f424ac7c9ce014e463d29e627fd8807646a0aacbfba557c29f5"
+            },
+            {
+              "path": "/assets/images/events/october2026-kommern2-1-480w.webp",
+              "bytes": 28000,
+              "sha256": "99042877a1f49470847484e29f81349ff3ebae899759ff8015d77127dbefa542"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "christmas-markets-duesseldorf",
+      "id": "E004",
+      "type": "event",
+      "change": "refreshed",
+      "markdown_path": "/content/events/christmas-markets-duesseldorf.md",
+      "canonical_url": "/germany/ja/events/christmas-markets-duesseldorf/",
+      "manuscript_characters": 2364,
+      "official_sources": [
+        {
+          "title": "デュッセルドルフ観光局：2026年の会場・日程・営業時間",
+          "url": "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
+        }
+      ],
+      "images": [
+        {
+          "key": "christmas2-5",
+          "source_title": "File:Düsseldorf, Weihnachtsmarkt vor dem Rathaus, Dezember 2022.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:D%C3%BCsseldorf,_Weihnachtsmarkt_vor_dem_Rathaus,_Dezember_2022.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/05/D%C3%BCsseldorf%2C_Weihnachtsmarkt_vor_dem_Rathaus%2C_Dezember_2022.jpg",
+          "credit": "Kürschner",
+          "license": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "source_date": "2022-12-14",
+          "alt": "デュッセルドルフ市庁舎前のクリスマスマーケットの夜景",
+          "caption": "2022年12月、市庁舎前。2026年の会場配置や装飾を示すものではありません。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/img/events/christmas-markets-duesseldorf.webp",
+              "bytes": 43146,
+              "sha256": "ccd607b8ccabcda8a2d45c2b9db213220b04232926313c69cd887fa59c283975"
+            },
+            {
+              "path": "/assets/img/events/christmas-markets-duesseldorf-480w.webp",
+              "bytes": 14018,
+              "sha256": "4f42c49c1731a2c36d3220dea5be3fe194afb4354b06cc03607e57971067f8b8"
+            },
+            {
+              "path": "/assets/img/events/christmas-markets-duesseldorf-768w.webp",
+              "bytes": 27604,
+              "sha256": "c34c36d8069b79d92020825e36a37c5b053ea28d8e25204912a1e2d7bc2aab6b"
+            }
+          ]
+        },
+        {
+          "key": "christmas2-1",
+          "source_title": "File:Düsseldorf, Weihnachtsmarkt 2018, vor dem Rathaus (1).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:D%C3%BCsseldorf,_Weihnachtsmarkt_2018,_vor_dem_Rathaus_(1).jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/D%C3%BCsseldorf%2C_Weihnachtsmarkt_2018%2C_vor_dem_Rathaus_%281%29.jpg",
+          "credit": "Kürschner",
+          "license": "Public domain",
+          "license_url": "",
+          "source_date": "Taken on 18 November 2018",
+          "alt": "市庁舎を背景に準備が進むデュッセルドルフの屋台",
+          "caption": "2018年11月、開幕前の市庁舎前。昼には建物と屋台の細部が見えます。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-christmas2-1.webp",
+              "bytes": 126488,
+              "sha256": "20099d3e497b3ec1ec8d06f36a33b9572855fe6c8b8fd09eead41875b43d58e2"
+            },
+            {
+              "path": "/assets/images/events/october2026-christmas2-1-480w.webp",
+              "bytes": 24104,
+              "sha256": "cfe83de0402f094085876051429319df2ec2bcc0e6f80ec2a11b9aaaccfeca12"
+            },
+            {
+              "path": "/assets/images/events/october2026-christmas2-1-768w.webp",
+              "bytes": 66378,
+              "sha256": "7c96395541568827308c75950a73fb51cb5f880811c245030d2bdb1aadb9f31c"
+            }
+          ]
+        },
+        {
+          "key": "christmas2-6",
+          "source_title": "File:Weihnachtsmarkt Düsseldorf, November 2025 (06).jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Weihnachtsmarkt_D%C3%BCsseldorf,_November_2025_(06).jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Weihnachtsmarkt_D%C3%BCsseldorf%2C_November_2025_%2806%29.jpg",
+          "credit": "Kürschner",
+          "license": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "source_date": "2025-11-25",
+          "alt": "デュッセルドルフのクリスマスマーケットに飾られたツリー",
+          "caption": "2025年11月のマーケット。季節の飾りも、冬の街歩きの楽しみです。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-christmas2-6.webp",
+              "bytes": 90584,
+              "sha256": "47044bdf9930dbc8c947bcc892ae9692eb9c2961a2ba9846f13f0e67597f1ef8"
+            },
+            {
+              "path": "/assets/images/events/october2026-christmas2-6-480w.webp",
+              "bytes": 46384,
+              "sha256": "e310a9d6fd6dc4581ac5863ffbfb560630559b0dd2f4affa7305b57466134067"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "germany-inflation-august-2026",
+      "id": "N018",
+      "type": "news",
+      "change": "new",
+      "markdown_path": "/content/events/news/germany-inflation-august-2026.md",
+      "canonical_url": "/germany/ja/events/news/germany-inflation-august-2026/",
+      "manuscript_characters": 2096,
+      "official_sources": [
+        {
+          "title": "ドイツ連邦統計局：2026年8月の消費者物価・確定値",
+          "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/09/PD26_320_611.html"
+        },
+        {
+          "title": "連邦統計局：消費者物価指数",
+          "url": "https://www.destatis.de/DE/Themen/Wirtschaft/Preise/Verbraucherpreisindex/_inhalt.html"
+        },
+        {
+          "title": "連邦統計局：支出割合を変えて考える物価計算",
+          "url": "https://service.destatis.de/inflationsrechner/"
+        }
+      ],
+      "images": [
+        {
+          "key": "groceries-6",
+          "source_title": "File:Edeka in der Rindermarkthalle 2014.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Edeka_in_der_Rindermarkthalle_2014.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Edeka_in_der_Rindermarkthalle_2014.jpg",
+          "credit": "Andrea Lang",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_date": "2014-09-24",
+          "alt": "ハンブルクの食品スーパーの店内",
+          "caption": "2014年の資料写真。写っている商品や価格は2026年8月の物価を表しません。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/img/events/germany-inflation-august-2026.webp",
+              "bytes": 103904,
+              "sha256": "b2984eafb0964259a4a07a0c27a62ca3566f1576a041a08b7b10b669f5cd4283"
+            },
+            {
+              "path": "/assets/img/events/germany-inflation-august-2026-480w.webp",
+              "bytes": 26096,
+              "sha256": "2cdbfe85eeda841bb854dbef75168e1c5abe1a79bd653900cf6b55b34667b3a2"
+            },
+            {
+              "path": "/assets/img/events/germany-inflation-august-2026-768w.webp",
+              "bytes": 61414,
+              "sha256": "e002d4c073c6dedf8568ef2f7e435d73c42d1e6f43d2ce0125f51250ffd9b052"
+            }
+          ]
+        },
+        {
+          "key": "groceries-0",
+          "source_title": "File:(20240906) Berlin supermarket 05.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:(20240906)_Berlin_supermarket_05.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/%2820240906%29_Berlin_supermarket_05.jpg",
+          "credit": "Roy Zuo",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_date": "2024-09-06 17:24:37",
+          "alt": "ベルリンのスーパーに並ぶ野菜",
+          "caption": "2024年の野菜売り場。食品全体の指数と、個々の商品価格は分けて考えます。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-groceries-0.webp",
+              "bytes": 203956,
+              "sha256": "ffda20d2bd3e6c4b2dd3fd927ac07ba52bd20249999e4b97058b803f20bf7075"
+            },
+            {
+              "path": "/assets/images/events/october2026-groceries-0-480w.webp",
+              "bytes": 44856,
+              "sha256": "8d5ec30d0909191d20b90450f92e31bbdf899371874ee42a3295de32d518a7d6"
+            },
+            {
+              "path": "/assets/images/events/october2026-groceries-0-768w.webp",
+              "bytes": 113572,
+              "sha256": "7d5d12895f54b3dfc26628f1d08b0daaaf0b6bc6861edc44bd8075696263a599"
+            }
+          ]
+        },
+        {
+          "key": "groceries-7",
+          "source_title": "File:Shopping in the supermarket with multicultural result.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Shopping_in_the_supermarket_with_multicultural_result.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Shopping_in_the_supermarket_with_multicultural_result.jpg",
+          "credit": "Pittigrilli",
+          "license": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "source_date": "2023-12-05 20:00:59",
+          "alt": "レジに並べられた食品などの買い物",
+          "caption": "2023年の買い物の一例。家計ごとの購入品目の違いを考える参考写真です。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-groceries-7.webp",
+              "bytes": 92584,
+              "sha256": "afc928fa9b4addb3fc50fae3162854be0a73dc70139e27148e54e31bafe37c7d"
+            },
+            {
+              "path": "/assets/images/events/october2026-groceries-7-480w.webp",
+              "bytes": 29186,
+              "sha256": "092b5b79108c482a9a8a28ef8f702be8e328866b4099d846cfa2c5f6e5552df9"
+            },
+            {
+              "path": "/assets/images/events/october2026-groceries-7-768w.webp",
+              "bytes": 58760,
+              "sha256": "cc07d500eec066ef59110c84b8313bdcd3d0730af369f3eceabbdd4973a67ee0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "cologne-antwerp-direct-ice-2026",
+      "id": "N019",
+      "type": "news",
+      "change": "new",
+      "markdown_path": "/content/events/news/cologne-antwerp-direct-ice-2026.md",
+      "canonical_url": "/germany/ja/events/news/cologne-antwerp-direct-ice-2026/",
+      "manuscript_characters": 2127,
+      "official_sources": [
+        {
+          "title": "ベルギー国鉄：新しいケルン―アントワープ直通ICE",
+          "url": "https://www.b-europe.com/EN/Trains/ICE"
+        },
+        {
+          "title": "ブリュッセル航空：2026年9月7日の開業発表",
+          "url": "https://press.brusselsairlines.com/deutsche-bahns-first-high-speed-train-at-brussels-airport-in-collaboration-with-brussels-airlines"
+        },
+        {
+          "title": "ドイツ鉄道：全国交通券の利用範囲",
+          "url": "https://www.bahn.de/angebot/regio/deutschland-ticket"
+        }
+      ],
+      "images": [
+        {
+          "key": "rail-0",
+          "source_title": "File:ICE 3 Köln-Deutz 2015-11-02.JPG",
+          "source_page": "https://commons.wikimedia.org/wiki/File:ICE_3_K%C3%B6ln-Deutz_2015-11-02.JPG",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/05/ICE_3_K%C3%B6ln-Deutz_2015-11-02.JPG",
+          "credit": "Rolf Heinrich, Köln",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "source_date": "2015-11-02",
+          "alt": "ケルンのメッセ・ドイツ駅を通るICE車両",
+          "caption": "2015年撮影のICE。新路線の開業当日や使用車両を示す写真ではありません。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/img/events/cologne-antwerp-direct-ice-2026.webp",
+              "bytes": 131784,
+              "sha256": "3050d97752d10e1e69ca5290c31865ef5f5df3fbbb38ab5e35019d5f6b99492e"
+            },
+            {
+              "path": "/assets/img/events/cologne-antwerp-direct-ice-2026-480w.webp",
+              "bytes": 28198,
+              "sha256": "db6a7c683c74f7466c6e58dbfae9fd63372adbe3462c399e54899efd725770d7"
+            },
+            {
+              "path": "/assets/img/events/cologne-antwerp-direct-ice-2026-768w.webp",
+              "bytes": 72116,
+              "sha256": "81f280628e99e65077b5dad4e48845389e560bb7468041251650c73a987fe4db"
+            }
+          ]
+        },
+        {
+          "key": "antwerp-4",
+          "source_title": "File:Antwerpen Centraal Station 2023-05-16.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Antwerpen_Centraal_Station_2023-05-16.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Antwerpen_Centraal_Station_2023-05-16.jpg",
+          "credit": "Renée Kools",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "source_date": "2023-05-16 18:09:47",
+          "alt": "アントワープ中央駅の大きなホールと装飾",
+          "caption": "2023年のアントワープ中央駅。駅の空間そのものも、鉄道で訪れる旅の見どころです。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-antwerp-4.webp",
+              "bytes": 250370,
+              "sha256": "85414abe232dea8a83c14636b8b56c563f22f7a9540e83f0e53993f0d859dc26"
+            },
+            {
+              "path": "/assets/images/events/october2026-antwerp-4-480w.webp",
+              "bytes": 57856,
+              "sha256": "2c71a76c6170996dfbecd2756c5ddeec637d4e341b618e587ba791c765c90466"
+            },
+            {
+              "path": "/assets/images/events/october2026-antwerp-4-768w.webp",
+              "bytes": 143136,
+              "sha256": "a722b657b746f3566b3c05c4dce28b433c8d15ba7c96965fe888d7f041318896"
+            }
+          ]
+        },
+        {
+          "key": "airport3-5",
+          "source_title": "File:Station Brussels Airport-Zaventem Hal.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Station_Brussels_Airport-Zaventem_Hal.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Station_Brussels_Airport-Zaventem_Hal.jpg",
+          "credit": "Japplemedia",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_date": "2021-03-26 19:24:54",
+          "alt": "ブリュッセル空港駅のコンコース",
+          "caption": "2021年撮影、ザベンテムのブリュッセル空港駅。新路線の停車する空港です。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-airport3-5.webp",
+              "bytes": 100362,
+              "sha256": "e8254ffeed2f991ae7965ef424b4eb1eb381282c4475cdc2700d29de8e6567cc"
+            },
+            {
+              "path": "/assets/images/events/october2026-airport3-5-480w.webp",
+              "bytes": 20694,
+              "sha256": "e3bf53ebfca0c6594e005be80ff2ec4c4f970f29b3a9e1ef2618839599364f7d"
+            },
+            {
+              "path": "/assets/images/events/october2026-airport3-5-768w.webp",
+              "bytes": 54342,
+              "sha256": "edd4e7f816e238b81bb5d77f8af7346cae6a7e02e6ce1f25b2d23257b567dc6b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "germany-warning-day-2026-results",
+      "id": "N020",
+      "type": "news",
+      "change": "new",
+      "markdown_path": "/content/events/news/germany-warning-day-2026-results.md",
+      "canonical_url": "/germany/ja/events/news/germany-warning-day-2026-results/",
+      "manuscript_characters": 2094,
+      "official_sources": [
+        {
+          "title": "連邦市民保護・災害救援庁：2026年全国警報訓練の初期評価",
+          "url": "https://www.bbk.bund.de/SharedDocs/Pressemitteilungen/DE/2026/09/pm-10-bundesweiter-warntag.html"
+        },
+        {
+          "title": "連邦市民保護・災害救援庁：警報手段の役割",
+          "url": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warnung-in-Deutschland/So-werden-Sie-gewarnt/so-werden-sie-gewarnt_node.html"
+        },
+        {
+          "title": "連邦の警報ポータル",
+          "url": "https://warnung.bund.de/"
+        }
+      ],
+      "images": [
+        {
+          "key": "siren3-2",
+          "source_title": "File:Elektronische Sirene Hörmann ECL 400 Grafing-Bahnhof.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Elektronische_Sirene_H%C3%B6rmann_ECL_400_Grafing-Bahnhof.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Elektronische_Sirene_H%C3%B6rmann_ECL_400_Grafing-Bahnhof.jpg",
+          "credit": "Ampelseite",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_date": "2016-08-20 11:54:40",
+          "alt": "ドイツの屋外に設置された電子サイレン",
+          "caption": "2016年撮影、バイエルン州の電子サイレン。2026年の訓練当日の写真ではありません。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/img/events/germany-warning-day-2026-results.webp",
+              "bytes": 19276,
+              "sha256": "3911cf5b69277db2a9bbe8478419443792ee60c9136ad83896cb96a404eab9a7"
+            },
+            {
+              "path": "/assets/img/events/germany-warning-day-2026-results-480w.webp",
+              "bytes": 9186,
+              "sha256": "790557ba84ab476f78f22dbf0d1202646aa687327c9221f062cc5d7a76dd3d0b"
+            },
+            {
+              "path": "/assets/img/events/germany-warning-day-2026-results-768w.webp",
+              "bytes": 17532,
+              "sha256": "47b51514f12f87b70b12c9d4fdf54d724a070f36b2b486a5b1205c4f3408711c"
+            }
+          ]
+        },
+        {
+          "key": "phone-4",
+          "source_title": "File:Bundesweiter Warntag 2023 - Cell Broadcast.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Bundesweiter_Warntag_2023_-_Cell_Broadcast.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Bundesweiter_Warntag_2023_-_Cell_Broadcast.jpg",
+          "credit": "Michał Beim",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_date": "2023-09-14",
+          "alt": "全国警報訓練の携帯電話への一斉配信を表示した画面",
+          "caption": "2023年9月14日の訓練時の表示。現在の災害を知らせる通知ではありません。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-phone-4.webp",
+              "bytes": 73520,
+              "sha256": "5139e1858638305104de78f5ed8db82cf66ca8ca055c8f8923346a051c2178f3"
+            },
+            {
+              "path": "/assets/images/events/october2026-phone-4-480w.webp",
+              "bytes": 35940,
+              "sha256": "3c5231d89f8395533fb0fe61c2fefc419a173517ed1f54309d191bcbc8871a3e"
+            },
+            {
+              "path": "/assets/images/events/october2026-phone-4-768w.webp",
+              "bytes": 62940,
+              "sha256": "5cd4c982fd2b70f7205de6770b0528dbef4cae1a481fe2de595f47ca5c6aeb40"
+            }
+          ]
+        },
+        {
+          "key": "radio-2",
+          "source_title": "File:Pure Elan 2.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Pure_Elan_2.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Pure_Elan_2.jpg",
+          "credit": "Plaretyagain",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0",
+          "source_date": "2024-05-04",
+          "alt": "携帯型のデジタルラジオ受信機",
+          "caption": "2024年撮影のラジオ。音による注意喚起の後、詳しい状況を伝える経路の一つです。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-radio-2.webp",
+              "bytes": 152580,
+              "sha256": "a20eed31d2d6a0a017cc6edab65a9333acc8ce1ce509093c4ae415f633618ba2"
+            },
+            {
+              "path": "/assets/images/events/october2026-radio-2-480w.webp",
+              "bytes": 29442,
+              "sha256": "092b23958f04502c578d4511c6f85ec24d4af909be111ecd3553da5b8a09bfe4"
+            },
+            {
+              "path": "/assets/images/events/october2026-radio-2-768w.webp",
+              "bytes": 82618,
+              "sha256": "617f691b52ef8f13c84d6405f0a419c2169e1e205176801ed6ae365c68e73307"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "german-bread-culture",
+      "id": "C003",
+      "type": "column",
+      "change": "new",
+      "markdown_path": "/content/events/columns/german-bread-culture.md",
+      "canonical_url": "/germany/ja/events/columns/german-bread-culture/",
+      "manuscript_characters": 2405,
+      "official_sources": [
+        {
+          "title": "ドイツ・ユネスコ委員会：ドイツのパン文化",
+          "url": "https://www.unesco.de/staette/deutsche-brotkultur/"
+        },
+        {
+          "title": "バイエルン州消費者センター：色や種だけでは全粒粉パンを判断できない",
+          "url": "https://www.verbraucherzentrale.bayern/faq/ist-mehrkornbrot-immer-auch-vollkornbrot-8688"
+        }
+      ],
+      "images": [
+        {
+          "key": "bread-1",
+          "source_title": "File:Rye bread Roggenbengel 2025-02-14 03.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Rye_bread_Roggenbengel_2025-02-14_03.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Rye_bread_Roggenbengel_2025-02-14_03.jpg",
+          "credit": "Leonhard Lenz",
+          "license": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "source_date": "2025-02-12 21:45:06",
+          "alt": "ベルリンのパン店が作るライ麦パン",
+          "caption": "2025年撮影、ベルリンのUfaベーカリーのライ麦パン。皮と中身の違いも味わいの一部です。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/img/events/german-bread-culture.webp",
+              "bytes": 57404,
+              "sha256": "473747c1c347bbca3fe69f1cf085c5be39121c59070f18e2b9fd19d4e693de60"
+            },
+            {
+              "path": "/assets/img/events/german-bread-culture-480w.webp",
+              "bytes": 16270,
+              "sha256": "89af0fe69ac11024100f0d94be3cf867c6b1759e28debeb5daaa415530c063d2"
+            },
+            {
+              "path": "/assets/img/events/german-bread-culture-768w.webp",
+              "bytes": 35230,
+              "sha256": "1ad741e732590822e3472700e408de872b6f0e33f153a731f781bd685f150150"
+            }
+          ]
+        },
+        {
+          "key": "bread-5",
+          "source_title": "File:Slice of rye bread Kartoffelkruste 2025-02-14 01.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Slice_of_rye_bread_Kartoffelkruste_2025-02-14_01.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Slice_of_rye_bread_Kartoffelkruste_2025-02-14_01.jpg",
+          "credit": "Leonhard Lenz",
+          "license": "CC0",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "source_date": "2025-02-14 09:03:08",
+          "alt": "ライ麦パンの一切れと気泡のある切り口",
+          "caption": "2025年撮影。切り口を見ると、皮の色だけでは分からない食感の手がかりがあります。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-bread-5.webp",
+              "bytes": 123338,
+              "sha256": "50a1147f6f42a8e369cb16d1a31fae4cc6277fc0ccc7b1c569dbc4324c5c50c2"
+            },
+            {
+              "path": "/assets/images/events/october2026-bread-5-480w.webp",
+              "bytes": 30964,
+              "sha256": "3134940c8f3c435024d9ababf2e558d9445cd0b4610114a0f2357ec04b2f8865"
+            },
+            {
+              "path": "/assets/images/events/october2026-bread-5-768w.webp",
+              "bytes": 72658,
+              "sha256": "ffcd41a169676e90289043dc2eb979a86a4290dbd08b7b43fffe748f369d811b"
+            }
+          ]
+        },
+        {
+          "key": "bread3-0",
+          "source_title": "File:20251111 181731 Stutenkerl und Klaushähnchen.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:20251111_181731_Stutenkerl_und_Klaush%C3%A4hnchen.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/25/20251111_181731_Stutenkerl_und_Klaush%C3%A4hnchen.jpg",
+          "credit": "Ramsch",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_date": "2025-11-11 18:17:31",
+          "alt": "人形と鳥の形をした季節のパン",
+          "caption": "2025年11月撮影。人形型のパンと、テックレンブルク地方で親しまれる鳥形のパン。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-bread3-0.webp",
+              "bytes": 89970,
+              "sha256": "0fc95d3e1ce491af0b137f44664087b751bc33fd71f60f96054afd4085fac82e"
+            },
+            {
+              "path": "/assets/images/events/october2026-bread3-0-480w.webp",
+              "bytes": 19560,
+              "sha256": "f44086490aa1d5a5bd61079735f18df2a600d047bddd4695af3066b3a36ae093"
+            },
+            {
+              "path": "/assets/images/events/october2026-bread3-0-768w.webp",
+              "bytes": 50140,
+              "sha256": "88343555d725327ddb5ab3bcd870a4a3d140a58190eccadf28aab1baf9636755"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "germany-autumn-forest-walk",
+      "id": "C004",
+      "type": "column",
+      "change": "new",
+      "markdown_path": "/content/events/columns/germany-autumn-forest-walk.md",
+      "canonical_url": "/germany/ja/events/columns/germany-autumn-forest-walk/",
+      "manuscript_characters": 2243,
+      "official_sources": [
+        {
+          "title": "森林情報サイト・スイス森林研究機関：秋の葉の色の変化",
+          "url": "https://www.waldwissen.net/de/lebensraum-wald/baeume-und-waldpflanzen/herbstlliche-laubverfaerbung"
+        },
+        {
+          "title": "バイエルン州森林研究機関：落ち葉と腐植",
+          "url": "https://www.lwf.bayern.de/wissenstransfer/forstcastnet/239764/index.php"
+        },
+        {
+          "title": "NRW州森林機関：森での自然体験",
+          "url": "https://www.wald-und-holz.nrw.de/wald-erleben"
+        }
+      ],
+      "images": [
+        {
+          "key": "forest2-2",
+          "source_title": "File:Buchenwald-Herbst-LSG-Düppeler-Forst.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Buchenwald-Herbst-LSG-D%C3%BCppeler-Forst.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Buchenwald-Herbst-LSG-D%C3%BCppeler-Forst.jpg",
+          "credit": "Alexander Grams",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_date": "2016-11-02 14:28:09",
+          "alt": "ベルリンのデュッペルの森を彩る秋のブナ",
+          "caption": "2016年11月撮影の秋の森。紅葉の進み方は場所や年の天候で変わります。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/img/events/germany-autumn-forest-walk.webp",
+              "bytes": 260420,
+              "sha256": "97fe02d16bb52706c8c522f128786e2ff2a72b9a6285771aa5ed6210e8afc70f"
+            },
+            {
+              "path": "/assets/img/events/germany-autumn-forest-walk-480w.webp",
+              "bytes": 53288,
+              "sha256": "8239e64e7e3776f94a520f1d7440f5108c800dc6edf0b38720c13e00d58af9bc"
+            },
+            {
+              "path": "/assets/img/events/germany-autumn-forest-walk-768w.webp",
+              "bytes": 143056,
+              "sha256": "177387464e82cd8055c1ef99beca02c540d00d716646901006719b96fafc3da9"
+            }
+          ]
+        },
+        {
+          "key": "forest2-1",
+          "source_title": "File:Baumberge Herbst, Moos, Pilze.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Baumberge_Herbst,_Moos,_Pilze.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Baumberge_Herbst%2C_Moos%2C_Pilze.jpg",
+          "credit": "ArtJanny",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source_date": "2015-10-11 14:30:52",
+          "alt": "NRWのバウムベルゲの森に生えるコケとキノコ",
+          "caption": "2015年10月、NRWの森。足元にも季節の変化を見つけられます。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-forest2-1.webp",
+              "bytes": 130876,
+              "sha256": "e8be191a08b932ff3ebd3725b1ec24ff76115d014077014c923ed9b888a8f5db"
+            },
+            {
+              "path": "/assets/images/events/october2026-forest2-1-480w.webp",
+              "bytes": 33178,
+              "sha256": "7c700b2e48e1c7729ad4d57a53f84d77c974b217e965dee7b2cf4663716cdf47"
+            },
+            {
+              "path": "/assets/images/events/october2026-forest2-1-768w.webp",
+              "bytes": 78144,
+              "sha256": "0362e58d562f6f0017a06a16bb64cf624f72293f95e5ff5f6269960594db5210"
+            }
+          ]
+        },
+        {
+          "key": "forest2-4",
+          "source_title": "File:Gehrdener Berg Buchenwald Herbst.jpg",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Gehrdener_Berg_Buchenwald_Herbst.jpg",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Gehrdener_Berg_Buchenwald_Herbst.jpg",
+          "credit": "Axel Hindemith",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "source_date": "2011-11",
+          "alt": "霧と落ち葉に包まれたゲーアデンのブナ林",
+          "caption": "2011年11月、ニーダーザクセン州。葉の色だけでなく、光や湿り気も森の印象を変えます。",
+          "modifications": "EXIF orientation applied; proportionally resized; WebP conversion. No crop or generated content.",
+          "files": [
+            {
+              "path": "/assets/images/events/october2026-forest2-4.webp",
+              "bytes": 112896,
+              "sha256": "e5b043a827364e90ab76d4a435c00466e57e5b416815b8620fb128cef9bc1b24"
+            },
+            {
+              "path": "/assets/images/events/october2026-forest2-4-480w.webp",
+              "bytes": 20468,
+              "sha256": "5ba0cf1d96dadfa462331e7f1ef1d60ebcbfbf1f5582327fa4744a7d9af257e4"
+            },
+            {
+              "path": "/assets/images/events/october2026-forest2-4-768w.webp",
+              "bytes": 57122,
+              "sha256": "7249456b34a435f03760b23340f6d5495a6bbc72a393b70cd91812cf6147f44e"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -588,10 +588,11 @@ html.push(`<h${level}${classAttribute} id="${escapeAttribute(headingId)}">${rend
       continue;
     }
 
-    if (isBirdGridStart(lines, index)) {
-      const birdGrid = collectBirdGrid(lines, index, context);
-      html.push(birdGrid.html);
-      index = birdGrid.nextIndex;
+    if (isBirdGridStart(lines, index) || isBreadGridStart(lines, index)) {
+      const renderer = isBreadGridStart(lines, index) ? renderBreadGrid : renderBirdGrid;
+      const grid = collectProfileGrid(lines, index, context, renderer);
+      html.push(grid.html);
+      index = grid.nextIndex;
       continue;
     }
 
@@ -774,7 +775,7 @@ function resolveLocalInlineSvgDimensions(src) {
 
 function resolveLocalInlineWebpVariant(src) {
   const value = String(src || '').trim();
-  if (!/^\/assets\/images\/[a-z0-9._/-]+\.webp$/i.test(value)) return null;
+  if (!/^\/assets\/(?:img|images)\/[a-z0-9._/-]+\.webp$/i.test(value)) return null;
 
   const relative = normalizeRepoPath(value);
   const masterPath = path.resolve(root, relative);
@@ -881,7 +882,11 @@ function isBirdGridStart(lines, index) {
   return String(lines[index] || '').trim() === ':::bird-grid';
 }
 
-function collectBirdGrid(lines, start, context) {
+function isBreadGridStart(lines, index) {
+  return String(lines[index] || '').trim() === ':::bread-grid';
+}
+
+function collectProfileGrid(lines, start, context, renderer) {
   const records = [];
   let current = {};
   let index = start + 1;
@@ -909,7 +914,7 @@ function collectBirdGrid(lines, start, context) {
   }
 
   return {
-    html: renderBirdGrid(records, context),
+    html: renderer(records, context),
     nextIndex: index
   };
 }
@@ -943,6 +948,32 @@ ${image ? indent(image, 2) : ''}
 </article>`;
 }
 
+function renderBreadGrid(records, context) {
+  const cards = records.map((record) => {
+    const required = ['id', 'number', 'jp', 'de', 'image', 'alt', 'caption', 'look', 'taste', 'pairing', 'note'];
+    if (required.some((key) => !record[key]) || !/^[a-z0-9-]+$/.test(record.id)) {
+      throw new Error('Bread guide cards require an id, names, image, caption, and all four comparison fields.');
+    }
+    const credit = renderArticlePhotoCredit(record.image);
+    if (!credit) throw new Error(`Bread guide photo has no registered attribution: ${record.image}`);
+    const fields = [['look', '見た目の手掛かり'], ['taste', '味と食感'], ['pairing', '合わせるなら'], ['note', '選ぶときに']];
+    return `<section class="bread-profile-card" aria-labelledby="bread-${escapeAttribute(record.id)}">
+  <div class="bread-card-heading">
+    <h3 id="bread-${escapeAttribute(record.id)}"><span class="bread-card-number" aria-hidden="true">${escapeHtml(record.number)}</span>${renderInline(record.jp, context)}</h3>
+    <p class="bread-card-name" lang="de">${escapeHtml(record.de)}</p>
+  </div>
+  <figure class="bread-card-media">
+    <img ${renderArticleImageAttributes(record.image, record.alt, 'bread-card-image')}>
+    <figcaption>${renderInline(record.caption, context)}${credit}</figcaption>
+  </figure>
+  <dl class="bread-card-facts">
+${fields.map(([key, label]) => `    <div><dt>${label}</dt><dd>${renderInline(record[key], context)}</dd></div>`).join('\n')}
+  </dl>
+</section>`;
+  });
+  return `<div class="bread-profile-grid">\n${indent(cards.join('\n'), 2)}\n</div>`;
+}
+
 function splitTableRow(line) {
   return line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((cell) => cell.trim());
 }
@@ -955,6 +986,7 @@ function isBlockStart(lines, index) {
     || /^\s*[-*]\s+/.test(lines[index])
     || /^\s*\d+\.\s+/.test(lines[index])
     || isBirdGridStart(lines, index)
+    || isBreadGridStart(lines, index)
     || isTableStart(lines, index);
 }
 
@@ -2795,7 +2827,9 @@ function contentImageDimensionAttributes(src, className) {
     .filter(Boolean);
   try {
     if (variants.length) {
-      const sizes = /article-card-image|home-card-image/.test(className)
+      const sizes = /bread-card-image/.test(className)
+        ? '(max-width: 600px) calc(100vw - 64px), (max-width: 900px) 44vw, 420px'
+        : /article-card-image|home-card-image/.test(className)
         ? '(max-width: 760px) calc(100vw - 32px), (max-width: 1120px) 50vw, 320px'
         : '(max-width: 760px) calc(100vw - 32px), min(960px, 100vw - 64px)';
       const candidates = [...variants, { src, width: dimensions.width }]

@@ -15,6 +15,7 @@ import {
 test.setTimeout(75_000);
 
 const representativeRoutes = [
+  { name: "Bread guide", route: "/germany/ja/living/germany-bread-guide/" },
   { name: "Japanese portal", route: "/germany/ja/", ready: true },
   { name: "Jobs list", route: "/germany/ja/jobs/", ready: true },
   { name: "Jobs detail", route: activeJobs[0].detail_url },
@@ -32,6 +33,7 @@ const representativeRoutes = [
 ];
 
 const darkModeRoutes = [
+  { name: "Bread guide", route: "/germany/ja/living/germany-bread-guide/" },
   { name: "Japanese portal", route: "/germany/ja/", ready: true },
   { name: "Jobs list", route: "/germany/ja/jobs/", ready: true },
   { name: "Community list", route: "/germany/ja/community/", ready: true },

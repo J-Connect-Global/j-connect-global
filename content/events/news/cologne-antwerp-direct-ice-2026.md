@@ -30,7 +30,7 @@ official_url: "https://www.b-europe.com/EN/Trains/ICE"
 image: "/assets/img/events/cologne-antwerp-direct-ice-2026.webp"
 image_alt: "ケルンのメッセ・ドイツ駅を通るICE車両"
 image_caption: "2015年撮影のICE。新路線の開業当日や使用車両を示す写真ではありません。"
-image_credit: "Rolf Heinrich, Köln / CC BY 3.0（出典リンクは本文末）"
+image_credit: "Rolf Heinrich, Köln / CC BY 3.0 / Wikimedia Commons"
 ---
 
 # ケルンからアントワープへ直通ICEが開業｜ベルギー旅行の選択肢が広がる

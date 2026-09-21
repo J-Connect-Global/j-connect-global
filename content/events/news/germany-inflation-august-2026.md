@@ -30,7 +30,7 @@ official_url: "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/09/PD26
 image: "/assets/img/events/germany-inflation-august-2026.webp"
 image_alt: "ハンブルクの食品スーパーの店内"
 image_caption: "2014年の資料写真。写っている商品や価格は2026年8月の物価を表しません。"
-image_credit: "Andrea Lang / CC BY-SA 4.0（出典リンクは本文末）"
+image_credit: "Andrea Lang / CC BY-SA 4.0 / Wikimedia Commons"
 ---
 
 # ドイツの8月物価は2.9％上昇｜食費とエネルギーで違う家計の実感

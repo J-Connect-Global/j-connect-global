@@ -25,7 +25,7 @@ official_url: "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnacht
 image: "/assets/img/events/christmas-markets-duesseldorf.webp"
 image_alt: "デュッセルドルフ市庁舎前のクリスマスマーケットの夜景"
 image_caption: "2022年12月、市庁舎前。2026年の会場配置や装飾を示すものではありません。"
-image_credit: "Kürschner / CC0（出典リンクは本文末）"
+image_credit: "Kürschner / CC0 / Wikimedia Commons"
 ---
 
 # デュッセルドルフのクリスマスマーケット2026｜冬の広場を楽しむ文化案内

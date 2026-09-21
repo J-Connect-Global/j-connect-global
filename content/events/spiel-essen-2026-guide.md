@@ -27,7 +27,7 @@ official_url: "https://www.spiel-essen.de/de/besuchen/tickets-oeffnungszeiten"
 image: "/assets/img/events/spiel-essen-2026-guide.webp"
 image_alt: "エッセンのボードゲーム見本市のホールと来場者"
 image_caption: "2024年の見本市、第6ホール。2026年の配置・出展内容とは異なります。"
-image_credit: "Schrapers~commonswiki / CC BY 4.0（出典リンクは本文末）"
+image_credit: "Schrapers~commonswiki / CC BY 4.0 / Wikimedia Commons"
 ---
 
 # エッセン・ボードゲーム見本市2026｜遊んで分かる、ドイツの卓上文化

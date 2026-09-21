@@ -12,8 +12,10 @@ import {
   PRIMARY_JA_PATH
 } from './site-identity.mjs';
 import { renderPublicListSnapshots } from './render-public-list-snapshots.mjs';
+import { loadArticlePhotoCredits } from './article-photo-credits.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const articlePhotoCredits = loadArticlePhotoCredits(root);
 const SITE_NAME = SERVICE_NAME;
 const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
 const DEFAULT_IMAGE = '/assets/img/placeholders/jconnect-default-card.webp';
@@ -455,11 +457,12 @@ function renderArticleHeroFigure(item) {
   const src = resolveContentImage(item);
   const alt = getArticleImageAlt(item);
   const caption = firstNonEmpty(item.hero_image_caption);
+  const photoCredit = renderArticlePhotoCredit(src);
   return `<figure class="article-hero-figure">
   <div class="article-hero-frame"${firstNonEmpty(item.hero_image_position) ? ` style="--article-hero-position:${escapeHtml(firstNonEmpty(item.hero_image_position))}"` : ''}>
     <img ${renderArticleImageAttributes(src, alt, 'article-hero-image', 'eager')}>
   </div>
-${caption ? `  <figcaption>${escapeHtml(caption)}</figcaption>` : ''}
+${caption || photoCredit ? `  <figcaption>${escapeHtml(caption)}${photoCredit}</figcaption>` : ''}
 </figure>`;
 }
 
@@ -617,9 +620,10 @@ html.push(`<h${level}${classAttribute} id="${escapeAttribute(headingId)}">${rend
     if (image) {
       const [, alt, src, title] = image;
       const normalizedSrc = normalizeHref(src, context);
+      const photoCredit = renderArticlePhotoCredit(normalizedSrc);
       html.push(`<figure class="article-inline-figure">
   ${renderInlineArticleImage(normalizedSrc, stripInlineMarkdown(alt).trim())}
-${title ? `  <figcaption>${escapeHtml(title)}</figcaption>` : ''}
+${title || photoCredit ? `  <figcaption>${title ? escapeHtml(title) : ''}${photoCredit}</figcaption>` : ''}
 </figure>`);
       index += 1;
       continue;
@@ -2823,12 +2827,13 @@ function renderCardMedia(item, section) {
 function renderArticleHeroMedia(type, item) {
   const src = getArticleImageSrc(item, type);
   const alt = getArticleImageAlt(item);
+  const photoCredit = renderArticlePhotoCredit(src);
   const captionParts = [
     item.image_caption,
-    item.image_credit ? `Credit: ${item.image_credit}` : ''
+    !photoCredit && item.image_credit ? `Credit: ${item.image_credit}` : ''
   ].filter(Boolean);
-  const caption = captionParts.length
-    ? `\n  <figcaption class="article-image-caption">${captionParts.map(escapeHtml).join(' / ')}</figcaption>`
+  const caption = captionParts.length || photoCredit
+    ? `\n  <figcaption class="article-image-caption">${captionParts.map(escapeHtml).join(' / ')}${photoCredit}</figcaption>`
     : '';
 
   return `<figure class="article-hero-media">
@@ -2836,6 +2841,12 @@ function renderArticleHeroMedia(type, item) {
     <img ${renderArticleImageAttributes(src, alt, 'article-hero-image', 'eager')}>
   </div>${caption}
 </figure>`;
+}
+
+function renderArticlePhotoCredit(src) {
+  const credit = articlePhotoCredits.get(src);
+  if (!credit) return '';
+  return `<span class="article-photo-credit">出典：<a href="${escapeAttribute(credit.source_url)}">${escapeHtml(credit.source_name)}</a> ／ 作者：${escapeHtml(credit.author)} ／ 利用条件：<a href="${escapeAttribute(credit.license_url)}">${escapeHtml(credit.license)}</a> ／ 加工：${escapeHtml(credit.modifications)}</span>`;
 }
 
 function uniqueArray(values) {

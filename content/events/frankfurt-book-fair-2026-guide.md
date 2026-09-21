@@ -29,7 +29,7 @@ official_url: "https://www.buchmesse.de/besuchen"
 image: "/assets/img/events/frankfurt-book-fair-2026-guide.webp"
 image_alt: "フランクフルト・ブックフェアの会場風景"
 image_caption: "2024年のフランクフルト・ブックフェア。2026年の会場や出展内容を示すものではありません。"
-image_credit: "Matti Blume / CC BY-SA 4.0（出典リンクは本文末）"
+image_credit: "Matti Blume / CC BY-SA 4.0 / Wikimedia Commons"
 ---
 
 # フランクフルト・ブックフェア2026｜本とチェコ文化に出会う秋の週末

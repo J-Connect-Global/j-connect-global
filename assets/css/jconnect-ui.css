@@ -3182,6 +3182,20 @@
     line-height:1.55;
   }
 
+  .article-photo-credit{
+    display:block;
+    margin-top:6px;
+    font-size:13px;
+    font-weight:400;
+    line-height:1.65;
+    overflow-wrap:anywhere;
+  }
+
+  .article-photo-credit a{
+    text-decoration:underline;
+    text-underline-offset:2px;
+  }
+
   .article-body{
     color:var(--article-ink, #1f2933);
     font-size:16px;

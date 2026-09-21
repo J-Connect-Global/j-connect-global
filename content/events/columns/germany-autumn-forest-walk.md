@@ -30,7 +30,7 @@ official_url: "https://www.waldwissen.net/de/lebensraum-wald/baeume-und-waldpfla
 image: "/assets/img/events/germany-autumn-forest-walk.webp"
 image_alt: "ベルリンのデュッペルの森を彩る秋のブナ"
 image_caption: "2016年11月撮影の秋の森。紅葉の進み方は場所や年の天候で変わります。"
-image_credit: "Alexander Grams / CC BY-SA 4.0（出典リンクは本文末）"
+image_credit: "Alexander Grams / CC BY-SA 4.0 / Wikimedia Commons"
 ---
 
 # ドイツの秋、同じ森をもう一度歩く｜紅葉の先に見える小さな変化

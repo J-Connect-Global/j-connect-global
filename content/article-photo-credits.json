@@ -1,0 +1,392 @@
+{
+  "schema_version": 1,
+  "images": [
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Essen_Light_Festival_2018_(11).jpg",
+      "author": "Wiki05",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/img/events/essen-light-festival-2026-guide.webp",
+        "/assets/img/events/essen-light-festival-2026-guide-480w.webp",
+        "/assets/img/events/essen-light-festival-2026-guide-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Essen_Light_Festival_2018_(01).jpg",
+      "author": "Wiki05",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-light-4.webp",
+        "/assets/images/events/october2026-light-4-480w.webp",
+        "/assets/images/events/october2026-light-4-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Essen_Light_Festival_2016_12.jpg",
+      "author": "Wiki05",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-light-0.webp",
+        "/assets/images/events/october2026-light-0-480w.webp",
+        "/assets/images/events/october2026-light-0-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Buchmesse_2024,_Frankfurt_am_Main_(P1200815).jpg",
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/img/events/frankfurt-book-fair-2026-guide.webp",
+        "/assets/img/events/frankfurt-book-fair-2026-guide-480w.webp",
+        "/assets/img/events/frankfurt-book-fair-2026-guide-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Buchmesse_2024,_Frankfurt_am_Main_(P1200841).jpg",
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-book-2.webp",
+        "/assets/images/events/october2026-book-2-480w.webp",
+        "/assets/images/events/october2026-book-2-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:MKr364725_Kohei_Saito_(Frankfurter_Buchmesse_2024).jpg",
+      "author": "Martin Kraft",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-book-6.webp",
+        "/assets/images/events/october2026-book-6-480w.webp",
+        "/assets/images/events/october2026-book-6-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Spiel_Essen.jpg",
+      "author": "Schrapers~commonswiki",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/img/events/spiel-essen-2026-guide.webp",
+        "/assets/img/events/spiel-essen-2026-guide-480w.webp",
+        "/assets/img/events/spiel-essen-2026-guide-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:HABA_SPIEL_Essen_2022.jpg",
+      "author": "Miriam Schieck",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-spiel2-4.webp",
+        "/assets/images/events/october2026-spiel2-4-480w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Carcassonne_game.jpg",
+      "author": "Tom & Katrien",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-game-4.webp",
+        "/assets/images/events/october2026-game-4-480w.webp",
+        "/assets/images/events/october2026-game-4-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Speicher_aus_Luerrip_56_1996.jpg",
+      "author": "Rigorius",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/img/events/kommern-saint-martin-2026-guide.webp",
+        "/assets/img/events/kommern-saint-martin-2026-guide-480w.webp",
+        "/assets/img/events/kommern-saint-martin-2026-guide-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_194-0273-38,_Sankt_Martinszug.jpg",
+      "author": "Bundesarchiv, Bild 194-0273-38 / Hans Lachmann",
+      "license": "CC BY-SA 3.0 de",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-martin-0.webp",
+        "/assets/images/events/october2026-martin-0-480w.webp",
+        "/assets/images/events/october2026-martin-0-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:RFK-004-Fachwerk-mit-Strohdach-17-Jh.JPG",
+      "author": "HOWI -  Horsch, Willy",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-kommern2-1.webp",
+        "/assets/images/events/october2026-kommern2-1-480w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:D%C3%BCsseldorf,_Weihnachtsmarkt_vor_dem_Rathaus,_Dezember_2022.jpg",
+      "author": "Kürschner",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/img/events/christmas-markets-duesseldorf.webp",
+        "/assets/img/events/christmas-markets-duesseldorf-480w.webp",
+        "/assets/img/events/christmas-markets-duesseldorf-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:D%C3%BCsseldorf,_Weihnachtsmarkt_2018,_vor_dem_Rathaus_(1).jpg",
+      "author": "Kürschner",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:D%C3%BCsseldorf,_Weihnachtsmarkt_2018,_vor_dem_Rathaus_(1).jpg#Summary",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-christmas2-1.webp",
+        "/assets/images/events/october2026-christmas2-1-480w.webp",
+        "/assets/images/events/october2026-christmas2-1-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Weihnachtsmarkt_D%C3%BCsseldorf,_November_2025_(06).jpg",
+      "author": "Kürschner",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-christmas2-6.webp",
+        "/assets/images/events/october2026-christmas2-6-480w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Edeka_in_der_Rindermarkthalle_2014.jpg",
+      "author": "Andrea Lang",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/img/events/germany-inflation-august-2026.webp",
+        "/assets/img/events/germany-inflation-august-2026-480w.webp",
+        "/assets/img/events/germany-inflation-august-2026-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:(20240906)_Berlin_supermarket_05.jpg",
+      "author": "Roy Zuo",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-groceries-0.webp",
+        "/assets/images/events/october2026-groceries-0-480w.webp",
+        "/assets/images/events/october2026-groceries-0-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Shopping_in_the_supermarket_with_multicultural_result.jpg",
+      "author": "Pittigrilli",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-groceries-7.webp",
+        "/assets/images/events/october2026-groceries-7-480w.webp",
+        "/assets/images/events/october2026-groceries-7-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:ICE_3_K%C3%B6ln-Deutz_2015-11-02.JPG",
+      "author": "Rolf Heinrich, Köln",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/img/events/cologne-antwerp-direct-ice-2026.webp",
+        "/assets/img/events/cologne-antwerp-direct-ice-2026-480w.webp",
+        "/assets/img/events/cologne-antwerp-direct-ice-2026-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Antwerpen_Centraal_Station_2023-05-16.jpg",
+      "author": "Renée Kools",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-antwerp-4.webp",
+        "/assets/images/events/october2026-antwerp-4-480w.webp",
+        "/assets/images/events/october2026-antwerp-4-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Station_Brussels_Airport-Zaventem_Hal.jpg",
+      "author": "Japplemedia",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-airport3-5.webp",
+        "/assets/images/events/october2026-airport3-5-480w.webp",
+        "/assets/images/events/october2026-airport3-5-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Elektronische_Sirene_H%C3%B6rmann_ECL_400_Grafing-Bahnhof.jpg",
+      "author": "Ampelseite",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/img/events/germany-warning-day-2026-results.webp",
+        "/assets/img/events/germany-warning-day-2026-results-480w.webp",
+        "/assets/img/events/germany-warning-day-2026-results-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bundesweiter_Warntag_2023_-_Cell_Broadcast.jpg",
+      "author": "Michał Beim",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-phone-4.webp",
+        "/assets/images/events/october2026-phone-4-480w.webp",
+        "/assets/images/events/october2026-phone-4-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Pure_Elan_2.jpg",
+      "author": "Plaretyagain",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-radio-2.webp",
+        "/assets/images/events/october2026-radio-2-480w.webp",
+        "/assets/images/events/october2026-radio-2-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rye_bread_Roggenbengel_2025-02-14_03.jpg",
+      "author": "Leonhard Lenz",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/img/events/german-bread-culture.webp",
+        "/assets/img/events/german-bread-culture-480w.webp",
+        "/assets/img/events/german-bread-culture-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Slice_of_rye_bread_Kartoffelkruste_2025-02-14_01.jpg",
+      "author": "Leonhard Lenz",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-bread-5.webp",
+        "/assets/images/events/october2026-bread-5-480w.webp",
+        "/assets/images/events/october2026-bread-5-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:20251111_181731_Stutenkerl_und_Klaush%C3%A4hnchen.jpg",
+      "author": "Ramsch",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-bread3-0.webp",
+        "/assets/images/events/october2026-bread3-0-480w.webp",
+        "/assets/images/events/october2026-bread3-0-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Buchenwald-Herbst-LSG-D%C3%BCppeler-Forst.jpg",
+      "author": "Alexander Grams",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/img/events/germany-autumn-forest-walk.webp",
+        "/assets/img/events/germany-autumn-forest-walk-480w.webp",
+        "/assets/img/events/germany-autumn-forest-walk-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Baumberge_Herbst,_Moos,_Pilze.jpg",
+      "author": "ArtJanny",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-forest2-1.webp",
+        "/assets/images/events/october2026-forest2-1-480w.webp",
+        "/assets/images/events/october2026-forest2-1-768w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gehrdener_Berg_Buchenwald_Herbst.jpg",
+      "author": "Axel Hindemith",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        "/assets/images/events/october2026-forest2-4.webp",
+        "/assets/images/events/october2026-forest2-4-480w.webp",
+        "/assets/images/events/october2026-forest2-4-768w.webp"
+      ]
+    }
+  ]
+}

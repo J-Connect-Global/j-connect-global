@@ -30,7 +30,7 @@ official_url: "https://www.bbk.bund.de/SharedDocs/Pressemitteilungen/DE/2026/09/
 image: "/assets/img/events/germany-warning-day-2026-results.webp"
 image_alt: "ドイツの屋外に設置された電子サイレン"
 image_caption: "2016年撮影、バイエルン州の電子サイレン。2026年の訓練当日の写真ではありません。"
-image_credit: "Ampelseite / CC BY-SA 4.0（出典リンクは本文末）"
+image_credit: "Ampelseite / CC BY-SA 4.0 / Wikimedia Commons"
 ---
 
 # 全国警報訓練2026、当局は良好と評価｜スマホが鳴った後に知っておきたいこと

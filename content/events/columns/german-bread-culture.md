@@ -28,7 +28,7 @@ official_url: "https://www.unesco.de/staette/deutsche-brotkultur/"
 image: "/assets/img/events/german-bread-culture.webp"
 image_alt: "ベルリンのパン店が作るライ麦パン"
 image_caption: "2025年撮影、ベルリンのUfaベーカリーのライ麦パン。皮と中身の違いも味わいの一部です。"
-image_credit: "Leonhard Lenz / CC0（出典リンクは本文末）"
+image_credit: "Leonhard Lenz / CC0 / Wikimedia Commons"
 ---
 
 # ドイツのパンは、なぜこんなに違う？｜一切れから暮らしを知る

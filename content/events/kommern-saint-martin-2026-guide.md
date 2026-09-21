@@ -27,7 +27,7 @@ official_url: "https://kommern.lvr.de/de/veranstaltungen/martinszug_wie_frueher_
 image: "/assets/img/events/kommern-saint-martin-2026-guide.webp"
 image_alt: "コメルン野外博物館に移築された木組みの貯蔵建物"
 image_caption: "2020年撮影、コメルンの歴史的建築。2026年の行列当日の写真ではありません。"
-image_credit: "Rigorius / CC BY-SA 4.0（出典リンクは本文末）"
+image_credit: "Rigorius / CC BY-SA 4.0 / Wikimedia Commons"
 ---
 
 # コメルンの聖マルティン祭2026｜ランタンの灯りと「分け合う」物語

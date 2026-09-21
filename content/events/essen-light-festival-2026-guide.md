@@ -25,7 +25,7 @@ official_url: "https://www.ruhr-tourismus.de/event/essen-light-festival-2026/"
 image: "/assets/img/events/essen-light-festival-2026-guide.webp"
 image_alt: "エッセンの街路を彩るシャンデリア型の光の作品"
 image_caption: "2018年のエッセン光の祭典。2026年の作品構成を示す写真ではありません。"
-image_credit: "Wiki05 / CC BY-SA 4.0（出典リンクは本文末）"
+image_credit: "Wiki05 / CC BY-SA 4.0 / Wikimedia Commons"
 ---
 
 # エッセン光の祭典2026｜いつもの街が夜の美術館になる10日間

@@ -1,0 +1,414 @@
+{
+  "verified_at": "2026-09-21",
+  "article": "/germany/ja/living/germany-bread-guide/",
+  "photos": [
+    {
+      "key": "bread-basket",
+      "commons_title": "File:Brotkorb verschiedene Brotsorten.JPG",
+      "commons_page_id": 6977900,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Brotkorb_verschiedene_Brotsorten.JPG",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Brotkorb_verschiedene_Brotsorten.JPG",
+      "retrieved_thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Brotkorb_verschiedene_Brotsorten.JPG/1280px-Brotkorb_verschiedene_Brotsorten.JPG",
+      "author": "Gerhard Ziemer / Partyservice Ziemer",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "requested_attribution": "",
+      "description": "Eine Zusammenstellung verschiedener Brotsorten. Dieser kommt beispielsweise bei kalten Buffets zum Einsatz.",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        {
+          "path": "/assets/img/living/germany-bread-guide/bread-basket.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 142920,
+          "sha256": "8745ff236b3807bc164214bf365f0859c3890152c129eb00304f774c13809105"
+        },
+        {
+          "path": "/assets/img/living/germany-bread-guide/bread-basket-480w.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 26264,
+          "sha256": "7964d9c87b62472b9876376f85224879368d035f294089efee2ed2a6b460a3d6"
+        },
+        {
+          "path": "/assets/img/living/germany-bread-guide/bread-basket-768w.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 65672,
+          "sha256": "6b76601f068d81f3cf41bb62b324d06e97937c4de6fda360c0e8013632fe52bd"
+        }
+      ]
+    },
+    {
+      "key": "broetchen",
+      "commons_title": "File:Kaisersemmel-.jpg",
+      "commons_page_id": 761509,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kaisersemmel-.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Kaisersemmel-.jpg",
+      "retrieved_thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Kaisersemmel-.jpg/1280px-Kaisersemmel-.jpg",
+      "author": "Kobako",
+      "license": "CC BY-SA 2.5",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+      "requested_attribution": "",
+      "description": "Kaisersemmel (Maschinensemmel)",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        {
+          "path": "/assets/img/living/germany-bread-guide/broetchen.webp",
+          "width": 768,
+          "height": 697,
+          "bytes": 55064,
+          "sha256": "b6876e27c2c137e4b93e9e7a1fe236f0ab0eb6db2dd8659b6fa33fdcb9e8d8f3"
+        },
+        {
+          "path": "/assets/img/living/germany-bread-guide/broetchen-480w.webp",
+          "width": 480,
+          "height": 436,
+          "bytes": 20402,
+          "sha256": "f113ed7adfc70a3a5fc62a399d9ee7f834b4e2cfad18d51f312ae57fb7fb1a19"
+        }
+      ]
+    },
+    {
+      "key": "laugenbrezel",
+      "commons_title": "File:Laugenbrezel (fcm).jpg",
+      "commons_page_id": 926703,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Laugenbrezel_(fcm).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Laugenbrezel_%28fcm%29.jpg",
+      "retrieved_thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Laugenbrezel_%28fcm%29.jpg/1280px-Laugenbrezel_%28fcm%29.jpg",
+      "author": "Frank C. Müller",
+      "license": "CC BY-SA 2.5",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+      "requested_attribution": "",
+      "description": "Laugenbrezel mit Messer",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        {
+          "path": "/assets/img/living/germany-bread-guide/laugenbrezel.webp",
+          "width": 768,
+          "height": 576,
+          "bytes": 98116,
+          "sha256": "2099f0128a9bccddd568c5abbb47b92a1e5218a845699ca9583bfefc54d17bbc"
+        },
+        {
+          "path": "/assets/img/living/germany-bread-guide/laugenbrezel-480w.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 37968,
+          "sha256": "ba211ae6be083b6d21d5273fdb7f0e36e3d47233a1f14b26d4ec75605ba133af"
+        }
+      ]
+    },
+    {
+      "key": "weizenbrot",
+      "commons_title": "File:Weißbrot-1.jpg",
+      "commons_page_id": 597239,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wei%C3%9Fbrot-1.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Wei%C3%9Fbrot-1.jpg",
+      "retrieved_thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Wei%C3%9Fbrot-1.jpg/1280px-Wei%C3%9Fbrot-1.jpg",
+      "author": "Rainer Zenz",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "requested_attribution": "",
+      "description": "French white bread, cut off at the front.",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        {
+          "path": "/assets/img/living/germany-bread-guide/weizenbrot.webp",
+          "width": 768,
+          "height": 576,
+          "bytes": 59922,
+          "sha256": "666f5dedee40b90b0687064a088d4c59f76171f123b6995f4f4b4df8e661f705"
+        },
+        {
+          "path": "/assets/img/living/germany-bread-guide/weizenbrot-480w.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 19956,
+          "sha256": "58881707a27921f36081f143d646c749cb6cc51a1947934dc5ae4a32a0fb952f"
+        }
+      ]
+    },
+    {
+      "key": "weizenmischbrot",
+      "commons_title": "File:Kasseler Brot.png",
+      "commons_page_id": 24124190,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kasseler_Brot.png",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Kasseler_Brot.png",
+      "retrieved_thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Kasseler_Brot.png/1280px-Kasseler_Brot.png",
+      "author": "Benutzer paul",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "requested_attribution": "",
+      "description": "angeschnittenes Kasseler Brot",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        {
+          "path": "/assets/img/living/germany-bread-guide/weizenmischbrot.webp",
+          "width": 768,
+          "height": 514,
+          "bytes": 81700,
+          "sha256": "27c7b508ee73c4f54ed31f0a340ad130253596c4a948688bdc3335786470b564"
+        },
+        {
+          "path": "/assets/img/living/germany-bread-guide/weizenmischbrot-480w.webp",
+          "width": 480,
+          "height": 321,
+          "bytes": 33994,
+          "sha256": "7f3bb6f97bbd21ba19cb6e05b550ac39ca490574145c14a0d3e294646c8d956a"
+        }
+      ]
+    },
+    {
+      "key": "roggenmischbrot",
+      "commons_title": "File:Mischbrot-1.jpg",
+      "commons_page_id": 597244,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mischbrot-1.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Mischbrot-1.jpg",
+      "retrieved_thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Mischbrot-1.jpg/1280px-Mischbrot-1.jpg",
+      "author": "Rainer Zenz",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "requested_attribution": "",
+      "description": "Roggenmischbrot aus Österreich. Eigene Aufnahme.\n(white rye-type bread)\n\nAndere Version: File:Krume Kruste.jpg",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        {
+          "path": "/assets/img/living/germany-bread-guide/roggenmischbrot.webp",
+          "width": 768,
+          "height": 576,
+          "bytes": 72136,
+          "sha256": "6dfbeecc8dadbc97b5c39eec48e3cd907d7d97c7de1eefbf46fd0694174db5aa"
+        },
+        {
+          "path": "/assets/img/living/germany-bread-guide/roggenmischbrot-480w.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 23390,
+          "sha256": "904e0f2162096efa6fb84b5108f0130c7f6982438446c23c06cc16e026f503fe"
+        }
+      ]
+    },
+    {
+      "key": "vollkornbrot",
+      "commons_title": "File:Vollkornbrot z01.JPG",
+      "commons_page_id": 1775744,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Vollkornbrot_z01.JPG",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Vollkornbrot_z01.JPG",
+      "retrieved_thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Vollkornbrot_z01.JPG",
+      "author": "Zyance",
+      "license": "CC BY-SA 2.5",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+      "requested_attribution": "",
+      "description": "Volkornbrote",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        {
+          "path": "/assets/img/living/germany-bread-guide/vollkornbrot.webp",
+          "width": 768,
+          "height": 576,
+          "bytes": 88100,
+          "sha256": "a6b0a685271180526ce57af7957f794a2a7cff1cd9e0d8f47f6325f829386f6d"
+        },
+        {
+          "path": "/assets/img/living/germany-bread-guide/vollkornbrot-480w.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 39158,
+          "sha256": "7a55bf0d02114e77272336775bea0dce93e934f190f98ff413e67793d3c1b705"
+        }
+      ]
+    },
+    {
+      "key": "dinkelbrot",
+      "commons_title": "File:Dinkelbrot-4.jpg",
+      "commons_page_id": 48239681,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dinkelbrot-4.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Dinkelbrot-4.jpg",
+      "retrieved_thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Dinkelbrot-4.jpg/1280px-Dinkelbrot-4.jpg",
+      "author": "MartinThoma",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "requested_attribution": "",
+      "description": "Dinkelbrot",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        {
+          "path": "/assets/img/living/germany-bread-guide/dinkelbrot.webp",
+          "width": 768,
+          "height": 576,
+          "bytes": 79450,
+          "sha256": "0a81b8fa2aadb5046752a3b9c6c14f450a556c588085b6784ccf66fdb9ddd297"
+        },
+        {
+          "path": "/assets/img/living/germany-bread-guide/dinkelbrot-480w.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 31666,
+          "sha256": "015bddc715cf3e855d5e3b4691e42f7124453b304d5af2a3a2ffb7580f5047e2"
+        }
+      ]
+    },
+    {
+      "key": "mehrkornbrot",
+      "commons_title": "File:Mehrkornbrot (5857104166).jpg",
+      "commons_page_id": 89957590,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mehrkornbrot_(5857104166).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Mehrkornbrot_%285857104166%29.jpg",
+      "retrieved_thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Mehrkornbrot_%285857104166%29.jpg/1280px-Mehrkornbrot_%285857104166%29.jpg",
+      "author": "Katrin Gilger",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "requested_attribution": "",
+      "description": "Rezept hier:\n\n<a href=\"http://www.morenz.de/2011/06/21/mehrkornbrot/\" rel=\"nofollow\">www.morenz.de/2011/06/21/mehrkornbrot/</a>",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        {
+          "path": "/assets/img/living/germany-bread-guide/mehrkornbrot.webp",
+          "width": 768,
+          "height": 513,
+          "bytes": 70916,
+          "sha256": "be194882052ac00bdd8c158c633dcb9c75c2c9e5cac38ed0ef7f597ff64a1828"
+        },
+        {
+          "path": "/assets/img/living/germany-bread-guide/mehrkornbrot-480w.webp",
+          "width": 480,
+          "height": 321,
+          "bytes": 31740,
+          "sha256": "4d1ccdf8aed35e2848dc39e37de7530473517aa78ddc48af8056aea77c98e5bf"
+        }
+      ]
+    },
+    {
+      "key": "kernbrot",
+      "commons_title": "File:Sonnenblumenkernbrot.jpg",
+      "commons_page_id": 100385613,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sonnenblumenkernbrot.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Sonnenblumenkernbrot.jpg",
+      "retrieved_thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Sonnenblumenkernbrot.jpg/1280px-Sonnenblumenkernbrot.jpg",
+      "author": "Shisma",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "requested_attribution": "",
+      "description": "Sonnenblumenkernbrot",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        {
+          "path": "/assets/img/living/germany-bread-guide/kernbrot.webp",
+          "width": 768,
+          "height": 1024,
+          "bytes": 175450,
+          "sha256": "8ba855429b46269e0874a500b5e23bfaf17653c83a6fa7cd4a30b1c54aa4c56c"
+        },
+        {
+          "path": "/assets/img/living/germany-bread-guide/kernbrot-480w.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 76586,
+          "sha256": "ef4723c6567cb03cc5f50b3429fb18cf8d1cef3d2211f3548716bf8712f4f281"
+        }
+      ]
+    },
+    {
+      "key": "pumpernickel",
+      "commons_title": "File:Pumpernickel bread.jpg",
+      "commons_page_id": 68109822,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Pumpernickel_bread.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Pumpernickel_bread.jpg",
+      "retrieved_thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Pumpernickel_bread.jpg/1280px-Pumpernickel_bread.jpg",
+      "author": "Thomon",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "requested_attribution": "",
+      "description": "Pumpernickel.",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        {
+          "path": "/assets/img/living/germany-bread-guide/pumpernickel.webp",
+          "width": 768,
+          "height": 576,
+          "bytes": 17292,
+          "sha256": "e0312ca960ddd943c01aa3bba98a8e052ebb0216dbc79113ed231f7fbbe997ff"
+        },
+        {
+          "path": "/assets/img/living/germany-bread-guide/pumpernickel-480w.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 9846,
+          "sha256": "94c55cd1dfcfe7664c99d258abc5cdc365a6c5e171c4324edd5012668f0a1d46"
+        }
+      ]
+    },
+    {
+      "key": "roeggelchen",
+      "commons_title": "File:2018-01-04-Röggelchen-5767.jpg",
+      "commons_page_id": 65262505,
+      "source_url": "https://commons.wikimedia.org/wiki/File:2018-01-04-R%C3%B6ggelchen-5767.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/2018-01-04-R%C3%B6ggelchen-5767.jpg",
+      "retrieved_thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/2018-01-04-R%C3%B6ggelchen-5767.jpg/1280px-2018-01-04-R%C3%B6ggelchen-5767.jpg",
+      "author": "© Superbass",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "requested_attribution": "© Superbass / CC BY-SA 4.0 (via Wikimedia Commons)",
+      "description": "Röggelchen",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        {
+          "path": "/assets/img/living/germany-bread-guide/roeggelchen.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 62046,
+          "sha256": "7158519536c394d4d066cd5206cce1726515ac602be852183fbfe732104634ec"
+        },
+        {
+          "path": "/assets/img/living/germany-bread-guide/roeggelchen-480w.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 22044,
+          "sha256": "34779eace18848ab0d10449c9e6e962fc1cd995a056cdc7b48328f812011ec93"
+        }
+      ]
+    },
+    {
+      "key": "abendbrot",
+      "commons_title": "File:Rustikales, deftiges Abendbrot.jpg",
+      "commons_page_id": 33020021,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rustikales,_deftiges_Abendbrot.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Rustikales%2C_deftiges_Abendbrot.jpg",
+      "retrieved_thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Rustikales%2C_deftiges_Abendbrot.jpg/1280px-Rustikales%2C_deftiges_Abendbrot.jpg",
+      "author": "Manfred&Barbara Aulbach",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "requested_attribution": "",
+      "description": "Mit Rotwein, Apfelwein, Gänsefett, Butter, Leberwurst, Roggenbrot, Wurst & Käse, gekochte Eier, Käsmatte (Kräuterquark), Rettichsalat, Tomaten, Knoblauch, Zwiebeln}. It is our so called  'Ahmbrot' (= special evening meal with rye bread). - Our Ahmbrot recipe (in German) you can find here: http://aulbach-rezepte.de/html/ahmbrot_hdt___abendbrot_.html",
+      "modifications": "縮小・WebP変換",
+      "files": [
+        {
+          "path": "/assets/img/living/germany-bread-guide/abendbrot.webp",
+          "width": 1200,
+          "height": 900,
+          "bytes": 158926,
+          "sha256": "7aae763e184543aba12498fef163ef5048647aee42edfa7b6c06fd7b79c65292"
+        },
+        {
+          "path": "/assets/img/living/germany-bread-guide/abendbrot-480w.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 34410,
+          "sha256": "a74541cd11a69810e2f09e3a166b420e34d905e5d335cd2b96b18769fb22dda1"
+        },
+        {
+          "path": "/assets/img/living/germany-bread-guide/abendbrot-768w.webp",
+          "width": 768,
+          "height": 576,
+          "bytes": 74410,
+          "sha256": "591685ae8428294f8a9416b65cf98a26e5586c4af3a7079b7661aa4987a0ef77"
+        }
+      ]
+    }
+  ],
+  "reused_photos": [
+    "/assets/img/events/german-bread-culture.webp",
+    "/assets/images/events/october2026-bread-5.webp"
+  ]
+}

@@ -1,5 +1,75 @@
 [
   {
+    "id": "L041",
+    "title": "ドイツのパン図鑑｜定番12タイプの味・見分け方・楽しみ方",
+    "slug": "germany-bread-guide",
+    "category": "食文化・暮らし",
+    "summary": "ブレートヒェンからプンパーニッケルまで、ドイツで出会う12タイプのパンを写真で紹介。小麦・ライ麦・全粒粉の違い、味と食感、食べ合わせ、パン屋での選び方と保存を日本語で案内します。",
+    "url": "/germany/ja/living/germany-bread-guide/",
+    "markdown_path": "/content/living/germany-bread-guide.md",
+    "published": true,
+    "status": "published",
+    "home_visible": true,
+    "home_order": 0,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "living",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-09-21",
+      "next_review_due": "2027-03-21"
+    },
+    "published_at": "2026-09-21",
+    "last_verified": "2026-09-21",
+    "canonical_url": "/germany/ja/living/germany-bread-guide/",
+    "tags": [
+      "パン",
+      "食文化",
+      "買い物",
+      "朝食",
+      "NRW",
+      "ライ麦",
+      "全粒粉"
+    ],
+    "updated_at": "2026-09-21",
+    "related_articles": [
+      "german-bread-culture",
+      "germany-wild-birds-guide",
+      "cologne-city-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "ドイツ食品典委員会：パン・小型パンの表示指針（2026年3月改訂版PDF）",
+        "url": "https://www.deutsche-lebensmittelbuch-kommission.de/fileadmin/Dokumente/LS/leitsaetze_fuer_brot_und_kleingebaeck_barrierefrei_maerz_2026.pdf"
+      },
+      {
+        "title": "ドイツUNESCO委員会：ドイツのパン文化",
+        "url": "https://www.unesco.de/staette/deutsche-brotkultur/"
+      },
+      {
+        "title": "連邦栄養センター：食品の保存方法",
+        "url": "https://www.bzfe.de/kueche-und-alltag/kochen/lebensmittel-richtig-lagern"
+      },
+      {
+        "title": "連邦の食品ロス削減事業：パンの保存・冷凍・カビへの対応",
+        "url": "https://www.zugutfuerdietonne.de/lebensmittel-az/b/brot"
+      },
+      {
+        "title": "メルツェニヒ：ケルンのレッゲルヒェンと原材料表示",
+        "url": "https://baeckerei-merzenich.de/produkt/koelner-roeggelchen-3er-pack/"
+      },
+      {
+        "title": "セリアック病財団：グルテンを含む穀物（スペルト小麦を含む）",
+        "url": "https://celiac.org/what-is-gluten/"
+      }
+    ],
+    "image": "/assets/img/living/germany-bread-guide/bread-basket.webp",
+    "hero_image": "/assets/img/living/germany-bread-guide/bread-basket.webp",
+    "image_alt": "小型パンや種入りパンなど、形と焼き色の異なるパンを盛ったかご"
+  },
+  {
     "id": "T001",
     "title": "デュッセルドルフ観光｜日本人街・旧市街・ライン川を歩く",
     "slug": "duesseldorf-city-guide",

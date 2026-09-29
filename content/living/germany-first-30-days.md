@@ -1,23 +1,36 @@
 ---
 id: "L002"
-title: "ドイツ生活、最初の30日｜手続きと暮らしの整え方"
+title: "ドイツ移住後の手続きチェックリスト｜最初の30日にすること"
 slug: "germany-first-30-days"
 category: "生活立ち上げ"
 tags: ["初渡独","住民登録","健康保険","銀行口座","税務識別番号","滞在許可"]
-summary: "ドイツ到着後の1か月を、住所、健康保険、銀行、滞在資格という依存関係から整理。手続きだけでなく、新生活を無理なく整える考え方も紹介します。"
+summary: "ドイツ移住・赴任後の最初の30日にすることを時期別に整理。住民登録、保険、銀行、滞在許可の準備と、郵便・買い物・ごみ分別など暮らしの立ち上げを確認できます。"
 status: "published"
 published: true
 published_at: "2026-06-07"
-updated_at: "2026-08-31"
+updated_at: "2026-09-28"
 last_verified: "2026-08-31"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/germany-first-30-days/"
-related_articles: ["anmeldung-guide","health-insurance-guide","bank-account-germany","tax-id-steuernummer-steuerklasse"]
+related_articles: ["anmeldung-guide","health-insurance-guide","bank-account-germany","tax-id-steuernummer-steuerklasse","germany-waste-sorting-guide","germany-pfand-return-guide"]
 ---
 
-# ドイツ生活、最初の30日｜手続きと暮らしの整え方
+# ドイツ移住後の手続きチェックリスト｜最初の30日にすること
 
-この記事は、ドイツへ移住した人が、到着後の一か月に何をどの順番で整えればよいかをつかむための全体ガイドです。住民登録、健康保険、銀行、滞在許可がどうつながるかに加え、買物や医療、郵便など日常生活の立ち上げも説明します。すべてを同時に終わらせようとせず、自分に期限があるものから進めるために使ってください。
+ドイツへ移住・赴任したら、まず郵便が届く住所、健康保険、連絡手段を確保し、住民登録と自分の滞在・就労条件を確認します。この記事は、到着後の一か月に必要な手続きと日常生活の準備を、順番に確認するためのガイドです。「30日以内に全部終わる」という意味ではなく、個別の期限がある手続きを優先して使ってください。
+
+## 最初の30日のチェックリスト
+
+| 時期の目安 | 優先すること | 次に読む記事・確認先 |
+| --- | --- | --- |
+| 到着前〜直後 | 保険の開始日、滞在・就労の条件、書類の原本を確認 | 勤務先・学校・保険会社・管轄の外国人局 |
+| 最初の数日 | 郵便受けの名前、電話、食料、交通を確保 | 以下の「到着から数日」 |
+| 一週目 | 住民登録の予約・必要書類と在留関係の期限を確認 | [住民登録](/germany/ja/living/anmeldung-guide/) |
+| 一〜二週目 | 保険の加入証明、給与・家賃の支払手段を整える | [健康保険](/germany/ja/living/health-insurance-guide/)・[銀行口座](/germany/ja/living/bank-account-germany/) |
+| 二〜四週目 | 未着書類と未完了申請を確認し、生活上の契約を整理 | [税務IDなどの違い](/germany/ja/living/tax-id-steuernummer-steuerklasse/) |
+| 最初の買い物から | 返却する飲料容器と家庭ごみを分ける | [Pfand返却](/germany/ja/living/germany-pfand-return-guide/)・[ごみ分別](/germany/ja/living/germany-waste-sorting-guide/) |
+
+これは準備の目安であり、法定期限の一覧ではありません。保険や就労資格など、開始前に確認が必要なものを「二週目まで待ってよい」と読まないでください。
 
 ![住居、住民登録、保険、銀行、通信、交通に使うものを順に並べた机](/assets/images/living/first-month-checklist.webp "AI生成イラスト：ドイツ生活の最初の一か月は、住所と連絡手段から整えていく")
 
@@ -59,6 +72,8 @@ related_articles: ["anmeldung-guide","health-insurance-guide","bank-account-germ
 ### 食料と移動
 
 日曜・祝日は多くの小売店が閉まります。到着日が週末なら、駅や空港の店舗を当てにしすぎず、最初の食料と日用品を確保しておきます。交通は毎回切符を買うより、居住地と通勤・通学先を基準に定期券やドイツチケットが合うかを見ます。
+
+飲料の容器には預り金が付くものがあり、空になったらスーパーへ返します。潰さず、ラベルを残して保管することから始めてください。[Pfand返却ガイド](/germany/ja/living/germany-pfand-return-guide/)では機械に断られた場合も整理しています。建物のごみ置場と回収日は家主に確認し、[自治体別の分別の見方](/germany/ja/living/germany-waste-sorting-guide/)を使って紙・包装・生ごみを分けましょう。
 
 ## 一週目：期限と前提条件を確認する
 

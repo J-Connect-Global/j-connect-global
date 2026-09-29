@@ -1,5 +1,125 @@
 [
   {
+    "id": "L042",
+    "slug": "germany-waste-sorting-guide",
+    "url": "/germany/ja/living/germany-waste-sorting-guide/",
+    "markdown_path": "/content/living/germany-waste-sorting-guide.md",
+    "published": true,
+    "status": "published",
+    "home_visible": true,
+    "home_order": 1,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "living",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-09-28",
+      "next_review_due": "2027-03-28"
+    },
+    "title": "ドイツのゴミ分別｜デュッセルドルフの捨て方・収集日・よくある間違い",
+    "category": "買い物・暮らし",
+    "summary": "ドイツのごみ分別を日本語の早見表で確認。デュッセルドルフの黄色い資源容器の地域ルール、紙・生ごみ・ガラスの間違いやすい品目、収集日と公式検索の使い方を案内します。",
+    "published_at": "2026-09-28",
+    "last_verified": "2026-09-28",
+    "canonical_url": "/germany/ja/living/germany-waste-sorting-guide/",
+    "tags": [
+      "ごみ分別",
+      "デュッセルドルフ",
+      "NRW",
+      "リサイクル",
+      "引っ越し",
+      "生活立ち上げ"
+    ],
+    "updated_at": "2026-09-28",
+    "related_articles": [
+      "germany-pfand-return-guide",
+      "moving-checklist-germany",
+      "germany-first-30-days"
+    ],
+    "official_sources": [
+      {
+        "title": "連邦環境庁：家庭のごみ分別",
+        "url": "https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/richtiger-muelltrennung-ressourcen-schonen-umwelt"
+      },
+      {
+        "title": "AWISTA Kommunal：デュッセルドルフの資源容器",
+        "url": "https://www.awista-kommunal.de/wertstofftonne"
+      },
+      {
+        "title": "AWISTA Kommunal：品目別分別検索",
+        "url": "https://www.awista-kommunal.de/abfall-abc"
+      },
+      {
+        "title": "AWISTA Kommunal：住所別収集カレンダー",
+        "url": "https://www.awista-kommunal.de/abfallkalender"
+      },
+      {
+        "title": "連邦環境庁：ガラスの分別",
+        "url": "https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/altglas-richtig-trennen-entsorgen"
+      },
+      {
+        "title": "AWISTA Kommunal：生ごみにプラスチックを入れない",
+        "url": "https://www.awista-kommunal.de/wirfuerbio"
+      }
+    ],
+    "image": "/assets/img/living/germany-waste-sorting-guide.webp",
+    "image_alt": "包装用の黄色い容器とデュッセルドルフの資源容器の違い"
+  },
+  {
+    "id": "L043",
+    "slug": "germany-pfand-return-guide",
+    "url": "/germany/ja/living/germany-pfand-return-guide/",
+    "markdown_path": "/content/living/germany-pfand-return-guide.md",
+    "published": true,
+    "status": "published",
+    "home_visible": true,
+    "home_order": 2,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "living",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-09-28",
+      "next_review_due": "2027-03-28"
+    },
+    "title": "ドイツのPfand返却方法｜25セント・返金券・機械で返せないとき",
+    "category": "買い物・暮らし",
+    "summary": "ドイツのPfandを、使い捨て容器とリユース瓶の違いから解説。スーパーでの返却手順、別の店で返せる条件、返金券の使い方、潰れた容器を機械が受け付けないときの対応を整理します。",
+    "published_at": "2026-09-28",
+    "last_verified": "2026-09-28",
+    "canonical_url": "/germany/ja/living/germany-pfand-return-guide/",
+    "tags": [
+      "Pfand",
+      "買い物",
+      "スーパー",
+      "ペットボトル",
+      "返金",
+      "リサイクル"
+    ],
+    "updated_at": "2026-09-28",
+    "related_articles": [
+      "germany-waste-sorting-guide",
+      "germany-first-30-days",
+      "germany-bread-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "DPG：消費者向けFAQ",
+        "url": "https://dpg-pfandsystem.de/de/faq-verbraucherfragen-umwelt.html"
+      },
+      {
+        "title": "消費者センター：使い捨て容器の預り金・返却条件",
+        "url": "https://www.verbraucherzentrale.de/wissen/umwelt-haushalt/abfall/fragen-und-antworten-alles-zum-einwegpfand-und-dosenpfand-11505"
+      }
+    ],
+    "image": "/assets/img/living/germany-pfand-return-guide.webp",
+    "image_alt": "使い捨て容器とリユース瓶で異なる預り金・返却先"
+  },
+  {
     "id": "L041",
     "title": "ドイツのパン図鑑｜定番12タイプの味・見分け方・楽しみ方",
     "slug": "germany-bread-guide",
@@ -1724,16 +1844,16 @@
   },
   {
     "id": "L010",
-    "title": "ドイツ国内の引っ越し｜退去・入居・住所変更の全体ガイド",
+    "title": "ドイツの引っ越しチェックリスト｜退去・入居・住所変更の順番",
     "slug": "moving-checklist-germany",
     "category": "住まい・手続き",
-    "summary": "ドイツ国内で引っ越すときに必要な旧居の解約、引渡し、新居の住民登録、電気・通信・保険の移転を、生活の流れに沿って解説します。",
+    "summary": "ドイツ国内の引っ越しで何をいつ行うかをチェックリストに整理。退去・鍵の引渡し、住民登録、住所変更、電気・通信に加え、粗大ごみと新居のごみ収集の確認まで案内します。",
     "url": "/germany/ja/living/moving-checklist-germany/",
     "markdown_path": "/content/living/moving-checklist-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-08-31",
+    "updated_at": "2026-09-28",
     "last_verified": "2026-08-31",
     "tags": [
       "引っ越し",
@@ -1752,7 +1872,8 @@
       "anmeldung-guide",
       "rent-apartment-germany",
       "rundfunkbeitrag-guide",
-      "electricity-internet-contracts-germany"
+      "electricity-internet-contracts-germany",
+      "germany-waste-sorting-guide"
     ],
     "official_sources": [],
     "disclaimer_type": "administrative",
@@ -1826,16 +1947,16 @@
   },
   {
     "id": "L002",
-    "title": "ドイツ生活、最初の30日｜手続きと暮らしの整え方",
+    "title": "ドイツ移住後の手続きチェックリスト｜最初の30日にすること",
     "slug": "germany-first-30-days",
     "category": "生活立ち上げ",
-    "summary": "ドイツ到着後の1か月を、住所、健康保険、銀行、滞在資格という依存関係から整理。手続きだけでなく、新生活を無理なく整える考え方も紹介します。",
+    "summary": "ドイツ移住・赴任後の最初の30日にすることを時期別に整理。住民登録、保険、銀行、滞在許可の準備と、郵便・買い物・ごみ分別など暮らしの立ち上げを確認できます。",
     "url": "/germany/ja/living/germany-first-30-days/",
     "markdown_path": "/content/living/germany-first-30-days.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-08-31",
+    "updated_at": "2026-09-28",
     "last_verified": "2026-08-31",
     "tags": [
       "初渡独",
@@ -1855,7 +1976,9 @@
       "anmeldung-guide",
       "health-insurance-guide",
       "bank-account-germany",
-      "tax-id-steuernummer-steuerklasse"
+      "tax-id-steuernummer-steuerklasse",
+      "germany-waste-sorting-guide",
+      "germany-pfand-return-guide"
     ],
     "official_sources": [],
     "disclaimer_type": "administrative",

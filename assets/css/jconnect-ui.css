@@ -3174,11 +3174,6 @@
     .article-hero-frame{aspect-ratio:16 / 9;}
   }
 
-  /* Keep all five labelled parts visible in the stroller explanation graphic. */
-  .article-hero-frame:has(.article-hero-image[src="/assets/images/living/stroller-five-piece-set-ja.webp"]){
-    aspect-ratio:4 / 3;
-  }
-
   .article-image-caption{
     margin:0;
     color:var(--article-muted, #4f5f70);

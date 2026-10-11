@@ -12,9 +12,9 @@ last_verified: "2026-10-11"
 next_review: "2027-01-11"
 canonical_url: "/germany/ja/living/stroller-buying-guide-germany/"
 tags: ["ベビーカー","出産準備","5点セット","チャイルドシート","ISOFIX","デュッセルドルフ"]
-image_url: "/assets/images/living/stroller-five-piece-set-ja.webp"
-image_caption: "AI生成の日本語説明図。実在製品の仕様・取り付け手順を示すものではありません。"
-image_alt: "ベビーカー本体、ベビーコット、乳児用カーシート、ISOFIXベース、接続アダプターの5点と用途を示す日本語図解"
+image_url: "/assets/images/living/stroller-germany-thumbnail.webp"
+image_caption: "AI生成のイメージ画像。実在する製品や使用実績を示すものではありません。"
+image_alt: "緑豊かなドイツの公園の小道に置かれたベージュのベビーカー"
 related_articles: ["pregnancy-birth-germany","germany-train-travel-guide","kita-u3-tagesmutter-guide"]
 official_sources:
   - title: "BIÖG：ベビーカーの安全チェックリスト"

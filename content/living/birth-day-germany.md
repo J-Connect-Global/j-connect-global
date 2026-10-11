@@ -1,5 +1,5 @@
 ---
-id: "L044"
+id: "L045"
 title: "ドイツの出産当日ガイド｜陣痛・破水から赤ちゃん誕生まで"
 slug: "birth-day-germany"
 category: "家族・医療"

@@ -1753,7 +1753,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-08-31",
+    "updated_at": "2026-10-11",
     "last_verified": "2026-08-31",
     "tags": [
       "妊娠",
@@ -1773,7 +1773,8 @@
     "related_articles": [
       "health-insurance-guide",
       "kita-u3-tagesmutter-guide",
-      "doctor-appointment-germany"
+      "doctor-appointment-germany",
+      "stroller-buying-guide-germany"
     ],
     "official_sources": [
       {
@@ -2404,5 +2405,77 @@
       "next_review_due": "2026-12-01"
     },
     "image_alt": "ドイツの新居で電気メーターと契約書を確認する日本人の夫婦"
+  },
+  {
+    "id": "L044",
+    "slug": "stroller-buying-guide-germany",
+    "title": "ドイツのベビーカーの選び方｜5点セット・車との適合・購入チェック",
+    "category": "家族・子育て",
+    "summary": "ドイツで出産準備をする家庭向けに、ベビーカー5点セットの役割、ベビーコットと乳児用カーシートの違い、ISOFIX・アダプターの適合、階段・石畳・車に合う選び方を図解します。",
+    "url": "/germany/ja/living/stroller-buying-guide-germany/",
+    "markdown_path": "/content/living/stroller-buying-guide-germany.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-10-11",
+    "updated_at": "2026-10-11",
+    "last_verified": "2026-10-11",
+    "home_visible": true,
+    "home_order": 15,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/stroller-buying-guide-germany/",
+    "disclaimer_type": "medical_family",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-11",
+      "next_review_due": "2027-01-11"
+    },
+    "tags": [
+      "ベビーカー",
+      "出産準備",
+      "5点セット",
+      "チャイルドシート",
+      "ISOFIX",
+      "デュッセルドルフ"
+    ],
+    "related_articles": [
+      "pregnancy-birth-germany",
+      "germany-train-travel-guide",
+      "kita-u3-tagesmutter-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "BIÖG：ベビーカーの安全チェックリスト",
+        "url": "https://www.kindergesundheit-info.de/fileadmin/user_upload/kindergesundheit-info.de/Download/Unfallverhuetung/Checklisten_Kindersicherheit/Checkliste-Kinderwagen_BIOEG_kindergesundheit-info.pdf"
+      },
+      {
+        "title": "ADAC：乳児用カーシートの選び方",
+        "url": "https://www.adac.de/rund-ums-fahrzeug/ausstattung-technik-zubehoer/kindersitze/kindersitzberater/babyschalen/"
+      },
+      {
+        "title": "ADAC：購入時の試着・車への取り付け確認",
+        "url": "https://www.adac.de/rund-ums-fahrzeug/ausstattung-technik-zubehoer/kindersitze/kindersitzberater/kindersitzkauf-tipps/"
+      },
+      {
+        "title": "ADAC：チャイルドシートの認可規格",
+        "url": "https://www.adac.de/rund-ums-fahrzeug/ausstattung-technik-zubehoer/kindersitze/kindersitzberater/kindersitz-normen/"
+      },
+      {
+        "title": "ABC Design：Salsa 5 Airの製品仕様",
+        "url": "https://www.abc-design.de/kombi-kinderwagen-salsa-5-air-avocado/"
+      },
+      {
+        "title": "ABC Design：ベビーカー接続アダプターの適合一覧",
+        "url": "https://www.abc-design.de/universal-babyschalen-adapter-fuer-kinderwagen-salsa-samba-zoom"
+      },
+      {
+        "title": "Rheinbahn：ベビーカー利用時のバス乗車口",
+        "url": "https://www.rheinbahn.de/fahren/gut-zu-wissen/buseinstieg"
+      }
+    ],
+    "image_url": "/assets/images/living/stroller-five-piece-set-ja.webp",
+    "image_alt": "ベビーカー本体、ベビーコット、乳児用カーシート、ISOFIXベース、接続アダプターの5点と用途を示す日本語図解"
   }
 ]

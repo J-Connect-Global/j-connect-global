@@ -8,11 +8,11 @@ summary: "ドイツで妊娠・出産する日本人家庭向けに、婦人科�
 status: "published"
 published: true
 published_at: "2026-06-12"
-updated_at: "2026-08-31"
+updated_at: "2026-10-11"
 last_verified: "2026-08-31"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/pregnancy-birth-germany/"
-related_articles: ["health-insurance-guide","kita-u3-tagesmutter-guide","doctor-appointment-germany"]
+related_articles: ["health-insurance-guide","kita-u3-tagesmutter-guide","doctor-appointment-germany","stroller-buying-guide-germany"]
 ---
 
 # ドイツで妊娠・出産｜医療、仕事、出生届の全体ガイド
@@ -54,6 +54,10 @@ related_articles: ["health-insurance-guide","kita-u3-tagesmutter-guide","doctor-
 特に産後の家庭訪問を希望する場合は、出産施設が決まる前でも探し始めて構いません。候補には、対応地域、出産予定時期、希望する支援、健康保険を短く伝えます。
 
 助産師との関係は、正解を教えてもらうだけのものではありません。授乳や睡眠、産後の過ごし方について日本と異なる助言を受けたら、理由を聞き、自分と赤ちゃんに合う方法を一緒に考えます。
+
+## 赤ちゃんの移動用品を準備する
+
+ベビーカーは、散歩用の寝台と車用の乳児シートの役割を分けて選びます。自宅での保管、車への積み込み、必要な接続部品を確認する手順は、[ドイツのベビーカーの選び方・5点セット図解](/germany/ja/living/stroller-buying-guide-germany/)にまとめています。
 
 ## 出産する場所を選ぶ
 

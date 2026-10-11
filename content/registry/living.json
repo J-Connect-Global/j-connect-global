@@ -1,5 +1,68 @@
 [
   {
+    "id": "L044",
+    "slug": "birth-day-germany",
+    "url": "/germany/ja/living/birth-day-germany/",
+    "markdown_path": "/content/living/birth-day-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 51,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "medical_family",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI source check; clinical review pending",
+      "last_reviewed_at": "2026-10-11",
+      "next_review_due": "2027-01-11"
+    },
+    "title": "ドイツの出産当日ガイド｜陣痛・破水から赤ちゃん誕生まで",
+    "category": "家族・医療",
+    "summary": "ドイツの病院で出産する日の流れを日本語の図で確認。陣痛・破水時の連絡、112が必要な緊急時、病院到着後のケア、付き添いの役割を整理します。",
+    "published_at": "2026-10-11",
+    "last_verified": "2026-10-11",
+    "canonical_url": "/germany/ja/living/birth-day-germany/",
+    "tags": [
+      "出産",
+      "陣痛",
+      "破水",
+      "分娩室",
+      "付き添い"
+    ],
+    "updated_at": "2026-10-11",
+    "related_articles": [
+      "pregnancy-birth-germany",
+      "health-insurance-guide",
+      "doctor-appointment-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "ドイツ連邦保健ポータル：出産の流れ",
+        "url": "https://gesund.bund.de/geburt"
+      },
+      {
+        "title": "連邦公衆衛生研究所：分娩の各段階",
+        "url": "https://www.familienplanung.de/geburt/rund-um-die-geburt/wie-verlaeuft-eine-geburt/"
+      },
+      {
+        "title": "ドイツ連邦保健ポータル：緊急電話番号",
+        "url": "https://gesund.bund.de/notfallnummern"
+      },
+      {
+        "title": "NRW家族ポータル：早産のサイン",
+        "url": "https://www.familienportal.nrw/de/schwangerschaft/gesundheit/fruehgeburt"
+      },
+      {
+        "title": "英国NHS：陣痛・破水などの相談が必要なサイン",
+        "url": "https://www.nhs.uk/pregnancy/labour-and-birth/signs-that-labour-has-begun/"
+      }
+    ],
+    "image": "/assets/img/living/pregnancy-birth-germany.webp",
+    "image_alt": "赤ちゃんの衣類と持ち物を用意して出産に備える妊婦"
+  },
+  {
     "id": "L042",
     "slug": "germany-waste-sorting-guide",
     "url": "/germany/ja/living/germany-waste-sorting-guide/",

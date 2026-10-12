@@ -8,7 +8,7 @@ summary: "ドイツの病院で出産する日の流れを日本語の図で確�
 status: "published"
 published: true
 published_at: "2026-10-11"
-updated_at: "2026-10-11"
+updated_at: "2026-10-12"
 last_verified: "2026-10-11"
 next_review: "2027-01-11"
 canonical_url: "/germany/ja/living/birth-day-germany/"
@@ -105,7 +105,7 @@ official_sources:
 
 ### この図は出生届や手当の申請も扱う？
 
-このページは出産当日の医療の流れに絞っています。出生届、子どもの保険、育児給付、日本への届出は、[妊娠・出産の全体ガイド](/germany/ja/living/pregnancy-birth-germany/)で別に確認できます。
+このページは出産当日の医療の流れに絞っています。出生届、子どもの保険、育児給付、日本への届出、旅券・滞在許可は、[ドイツ出産の手続き完全ガイド](/germany/ja/living/birth-procedures-germany/)で、時系列と必要書類を確認できます。
 
 ## 公式情報・参考ソース
 

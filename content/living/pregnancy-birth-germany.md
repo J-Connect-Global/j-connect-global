@@ -8,7 +8,7 @@ summary: "ドイツで妊娠・出産する日本人家庭向けに、婦人科�
 status: "published"
 published: true
 published_at: "2026-06-12"
-updated_at: "2026-10-11"
+updated_at: "2026-10-12"
 last_verified: "2026-08-31"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/pregnancy-birth-germany/"
@@ -121,6 +121,8 @@ related_articles: ["health-insurance-guide","kita-u3-tagesmutter-guide","doctor-
 育児給付は、出生証明、収入資料、雇用主の証明などをそろえて、子どもの居住地を管轄する窓口へ申請します。児童手当は別制度で、原則として連邦雇用庁の家族給付窓口へ申請します。
 
 外国籍の親は、在留資格によって対象条件が変わります。家族の一人に任せきりにせず、どの給付を誰の名義で、いつまでに申請するかを共有します。
+
+出生証明書、子どもの保険、育児給付・児童手当、日本の出生届、国籍・旅券・滞在許可を実際に進めるときは、[ドイツ出産の手続き完全ガイド](/germany/ja/living/birth-procedures-germany/)の時系列図とチェックリストを利用してください。
 
 ## 日本側の出生届は三か月以内
 

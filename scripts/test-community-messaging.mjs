@@ -169,7 +169,7 @@ assert(!JSON.stringify(c.cmTable_('notifications',false).rows).includes('#access
 assert(call('communityEndConversation',{id:cid,session:owner.session,block:'true'}).ok,'Block failed.');
 assert(!call('communitySendMessage',{id:cid,session:guest.session,body:'blocked',request_id:'blocked-message'}).ok,'Blocked send allowed.');
 const conversationsBefore=c.cmTable_('conversations',false).rows.length;
-call('communityCreateConversation',form({request_id:'blocked-new'}));assert(c.cmTable_('conversations',false).rows.length===conversationsBefore,'Block allowed new inquiry.');
+const blockedResponse=call('communityCreateConversation',form({request_id:'blocked-new'}));assert(blockedResponse.id && blockedResponse.confirmation_required,'Blocked response shape discloses block membership.');assert(c.cmTable_('conversations',false).rows.length===conversationsBefore,'Block allowed new inquiry.');
 // Fresh access may still read closed/blocked history, while sending remains denied.
 const recoveryKnown=call('communityRequestAccess',{kind:'conversation',id:cid,email:'owner@example.com',form_started_at:String(now-5000)});
 const recoveryUnknown=call('communityRequestAccess',{kind:'conversation',id:cid,email:'unknown@example.com',form_started_at:String(now-5000)});
@@ -195,6 +195,9 @@ replySheet.getDataRange=()=>{replyReads++;return oldRead();};
 const serialized=c.listPosts_({bypassCache:'true'});assert(serialized.ok && replyReads===1,'Post list rereads replies per post.');
 assert(serialized.posts.find(p=>p.post_id==='question-1').public_replies.length===1,'Indexed reply serialization lost content.');
 replySheet.getDataRange=oldRead;
+const cacheGetter=c.CacheService.getScriptCache;c.CacheService.getScriptCache=()=>({get:()=>null,put:()=>{throw new Error('QUOTA_TEST');}});
+assert(c.listPosts_({bypassCache:'true'}).posts.length===serialized.posts.length,'Oversized reply payload cache failure breaks public API.');
+c.CacheService.getScriptCache=cacheGetter;
 assert(call('communityReport',{kind:'reply',id:rid,reason:'確認してください',form_started_at:String(now-5000)}).ok,'Public report failed.');
 assert(call('communityPublicReplies',{post_id:'question-1'}).replies.length===1,'Report auto-hid content.');
 assert(call('communityDeleteReply',{id:rid,session:replySession.session}).ok,'Own reply hide failed.');

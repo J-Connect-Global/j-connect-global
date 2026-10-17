@@ -746,7 +746,9 @@ function listPosts_(params) {
       excluded_by_reason: { lifecycle_or_status: sourceRows.length - posts.length }
     }
   };
-  cache.put(cacheKey, JSON.stringify(payload), COMMUNITY_CACHE_SECONDS);
+  // Large approved reply threads can exceed the cache item limit.
+  try { cache.put(cacheKey, JSON.stringify(payload), COMMUNITY_CACHE_SECONDS); }
+  catch (error) { console.warn('Community public cache write skipped.'); }
   return payload;
 }
 

@@ -216,7 +216,7 @@ function cmCreateConversation_(params, jobs) {
   if (!cmRate_('submit:' + form.email, 4, 3600) || !cmRate_('submit:all', 100, 3600)) return cmFail_('RATE_LIMITED');
   // A blocked sender receives the same generic accepted response; no mailbox
   // owner or block-list membership is disclosed.
-  if (cmBlocked_(form.email, ownerEmail)) return { ok: true, success: true, confirmation_required: true };
+  if (cmBlocked_(form.email, ownerEmail)) return { ok: true, success: true, id: cmId_('conversation'), confirmation_required: true };
   let conversation = cmTable_('conversations', false).rows.find((row) => row.post_id === form.post_id && row.request_id === form.request_id);
   if (conversation) {
     const guest = cmTable_('participants', false).rows.find((row) => row.conversation_id === conversation.conversation_id && row.role === 'inquirer');

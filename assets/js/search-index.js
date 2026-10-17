@@ -620,15 +620,16 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツの銀行口座開設｜暮らしに合う口座の選び方",
-    "description": "ドイツ生活で使う銀行口座について、支店型とオンライン型の違い、費用・カード・現金の見方、必要書類、基本口座まで日本語で解説。",
+    "title": "ドイツの銀行口座開設｜必要書類・選び方・Basiskonto",
+    "description": "ドイツの銀行口座開設を日本語で解説。必要書類、Girokontoの選び方、支店型とオンライン型、本人確認、カード・ATM、Basiskontoまで整理します。",
     "url": "/germany/ja/living/bank-account-germany/",
     "category": "生活・手続き",
     "tags": [
       "銀行口座",
-      "日常決済",
-      "基本口座",
-      "お金",
+      "口座開設",
+      "必要書類",
+      "Girokonto",
+      "Basiskonto",
       "初渡独"
     ]
   },

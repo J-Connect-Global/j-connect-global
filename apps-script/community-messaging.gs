@@ -15,7 +15,7 @@ const CM_TABLES = {
   access: ['Community Access', ['access_id', 'token_hash', 'purpose', 'target_id', 'expires_at', 'consumed_at', 'created_at']],
   reports: ['Community Message Reports', ['report_id', 'kind', 'target_id', 'participant_id', 'reason', 'created_at']],
   blocks: ['Community Blocks', ['blocker_hash', 'blocked_hash', 'created_at']],
-  notifications: ['Community Notifications', ['notification_id', 'email_private', 'purpose', 'target_id', 'kind', 'scope_id', 'subject', 'body', 'status', 'attempts', 'next_attempt_at', 'created_at']]
+  notifications: ['Community Notifications', ['notification_id', 'email_private', 'purpose', 'target_id', 'kind', 'scope_id', 'source_id', 'subject', 'body', 'status', 'attempts', 'next_attempt_at', 'created_at']]
 };
 
 function cmMode_(post) {
@@ -138,9 +138,9 @@ function cmBlocked_(left, right) {
     (row.blocker_hash === a && row.blocked_hash === b) || (row.blocker_hash === b && row.blocked_hash === a));
 }
 
-function cmLink_(jobs, email, purpose, target, kind, id, queued) {
+function cmLink_(jobs, email, purpose, target, kind, id, queued, sourceId) {
   const notification = queued || cmAppend_('notifications', { notification_id: cmId_('notification'), email_private: email,
-    purpose, target_id: target, kind, scope_id: id, subject: '', body: '', status: 'pending', attempts: '0', next_attempt_at: cmNow_(), created_at: cmNow_() });
+    purpose, target_id: target, kind, scope_id: id, source_id: String(sourceId || ''), subject: '', body: '', status: 'pending', attempts: '0', next_attempt_at: cmNow_(), created_at: cmNow_() });
   const raw = randomToken_(32);
   cmAppend_('access', {
     access_id: cmId_('access'), token_hash: sha256Hex_(raw), purpose, target_id: target,
@@ -326,14 +326,17 @@ function cmSendMessage_(params, jobs) {
   if (!body || body.length > 4000 || !cmValidId_(params.request_id)) return cmFail_('INVALID_INPUT');
   const messages = cmTable_('messages', false).rows.filter((row) => row.conversation_id === context.conversation.conversation_id);
   const repeated = messages.find((row) => row.participant_id === context.viewer.participant_id && row.request_id === params.request_id);
-  if (repeated) return { ok: true, success: true, id: repeated.message_id };
+  if (repeated) {
+    const notification = cmTable_('notifications', false).rows.find((row) => row.source_id === repeated.message_id && row.scope_id === context.conversation.conversation_id);
+    return { ok: true, success: true, id: repeated.message_id, notification_pending: !notification || notification.status !== 'sent' };
+  }
   if (messages.length >= 500) return cmFail_('LIMIT');
   if (!cmRate_('message:' + context.viewer.participant_id, 1, 10)
     || !cmRate_('message:all', 300, 3600)) return cmFail_('RATE_LIMITED');
   const id = cmId_('message');
   cmAppend_('messages', { message_id: id, conversation_id: context.conversation.conversation_id, participant_id: context.viewer.participant_id, body, created_at: cmNow_(), request_id: params.request_id });
   context.conversation.updated_at = cmNow_(); cmSave_('conversations', context.conversation);
-  cmLink_(jobs, context.other.email_private, 'conversation_login', context.other.participant_id, 'conversation', context.conversation.conversation_id);
+  cmLink_(jobs, context.other.email_private, 'conversation_login', context.other.participant_id, 'conversation', context.conversation.conversation_id, null, id);
   return { ok: true, success: true, id };
 }
 
@@ -383,10 +386,20 @@ function cmReport_(params, jobs) {
   return { ok: true, success: true };
 }
 
-function cmPublicRepliesForPost_(post) {
+function cmPublicReplyIndex_() {
+  const index = Object.create(null);
+  cmTable_('replies', false).rows.forEach((row) => {
+    if (!index[row.post_id]) index[row.post_id] = [];
+    index[row.post_id].push(row);
+  });
+  return index;
+}
+
+function cmPublicRepliesForPost_(post, replyRows) {
   if (!post || cmMode_(post) !== 'public' || !isPubliclyVisible_(post)) return [];
   const id = String(post.post_id || post.id || '');
-  return cmTable_('replies', false).rows.filter((row) => row.post_id === id && row.status === 'approved' && row.verified_at && Number.isFinite(Date.parse(row.published_at))
+  const rows = Array.isArray(replyRows) ? replyRows : cmTable_('replies', false).rows;
+  return rows.filter((row) => row.post_id === id && row.status === 'approved' && row.verified_at && Number.isFinite(Date.parse(row.published_at))
     && cmValidId_(row.reply_id) && String(row.nickname || '').trim() && String(row.body || '').trim()
     && !/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i.test(row.body + row.nickname)
     && !/[?&#](?:token|access|session|secret|manage_token)=/i.test(row.body))

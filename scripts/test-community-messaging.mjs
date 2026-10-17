@@ -157,6 +157,12 @@ sent = call('communitySendMessage',{id:cid,session:guest.session,body:'土曜日
 runtime.advanceTime(11000);
 assert(call('communitySendMessage',{id:cid,session:owner.session,body:'了解です。',request_id:'owner-message-2'}).ok,'Second round-trip failed.');
 history=call('communityGetConversation',{id:cid,session:guest.session});assert(history.messages.length===4,'Conversation history incomplete.');safe(history);
+runtime.advanceTime(11000);failMail=true;
+const failedSend={id:cid,session:owner.session,body:'通知失敗の返信',request_id:'lost-response-message'};
+assert(call('communitySendMessage',failedSend).notification_pending,'Initial failed notification state missing.');failMail=false;
+const retryCount=c.cmTable_('messages',false).rows.length;
+assert(call('communitySendMessage',failedSend).notification_pending,'Idempotent retry lost notification state.');
+assert(c.cmTable_('messages',false).rows.length===retryCount,'Lost response retry duplicated message.');
 mails.forEach((mail)=>assert(!mail.replyTo && !mail.body.includes('owner@example.com') && !mail.body.includes('guest@example.com') && !mail.body.includes('土曜日'),'Mail disclosed counterpart address/content.'));
 assert(!JSON.stringify(c.cmTable_('access',false).rows).includes(guest.session),'Raw access secret persisted.');
 assert(!JSON.stringify(c.cmTable_('notifications',false).rows).includes('#access='),'Outbox persisted raw link.');
@@ -184,6 +190,11 @@ assert(call('communityPublicReplies',{post_id:'question-1'}).replies.length===0,
 runtime.spreadsheet.activeSheet=runtime.spreadsheet.getSheetByName('Community Replies');c.approveSelectedCommunityReply();
 const publicReplies=call('communityPublicReplies',{post_id:'question-1'});assert(publicReplies.replies.length===1,'Approved reply missing.');safe(publicReplies);
 assert(c.publicPostPayload_({post_id:'question-1',category1:'質問',status:'active'}).public_replies.length===1,'Snapshot excluded approved reply.');
+const replySheet=runtime.spreadsheet.getSheetByName('Community Replies');const oldRead=replySheet.getDataRange.bind(replySheet);let replyReads=0;
+replySheet.getDataRange=()=>{replyReads++;return oldRead();};
+const serialized=c.listPosts_({bypassCache:'true'});assert(serialized.ok && replyReads===1,'Post list rereads replies per post.');
+assert(serialized.posts.find(p=>p.post_id==='question-1').public_replies.length===1,'Indexed reply serialization lost content.');
+replySheet.getDataRange=oldRead;
 assert(call('communityReport',{kind:'reply',id:rid,reason:'確認してください',form_started_at:String(now-5000)}).ok,'Public report failed.');
 assert(call('communityPublicReplies',{post_id:'question-1'}).replies.length===1,'Report auto-hid content.');
 assert(call('communityDeleteReply',{id:rid,session:replySession.session}).ok,'Own reply hide failed.');

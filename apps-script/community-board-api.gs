@@ -499,7 +499,7 @@ function isPubliclyVisible_(post) {
   return !isExpired_(post);
 }
 
-function publicPostPayload_(post) {
+function publicPostPayload_(post, replyRows) {
   const status = normalizeStatus_(post.status);
   const payload = {};
   PUBLIC_POST_FIELDS.forEach((field) => {
@@ -518,7 +518,7 @@ function publicPostPayload_(post) {
   payload.isExpired = isExpired_(post);
   PRIVATE_POST_FIELDS.forEach((field) => delete payload[field]);
   delete payload._rowNumber;
-  if (typeof cmPublicRepliesForPost_ === 'function') payload.public_replies = cmPublicRepliesForPost_(post);
+  if (typeof cmPublicRepliesForPost_ === 'function') payload.public_replies = cmPublicRepliesForPost_(post, replyRows);
   return payload;
 }
 
@@ -730,9 +730,10 @@ function listPosts_(params) {
   const sourceRows = context.values.slice(context.dataStartIndex)
     .map((row, index) => rowToObject_(context.headers, row, context.dataStartIndex + index + 1));
   const explicitlyActive = sourceRows.filter((post) => String(cleanCell_(post.status || '')).trim().toLowerCase() === 'active').length;
+  const replyIndex = typeof cmPublicReplyIndex_ === 'function' ? cmPublicReplyIndex_() : null;
   const posts = sourceRows
     .filter((post) => isPubliclyVisible_(post, params))
-    .map(publicPostPayload_)
+    .map((post) => publicPostPayload_(post, replyIndex ? replyIndex[String(post.post_id || post.id || '')] || [] : undefined))
     .sort(compareCommunityPublicationDates_);
   const payload = {
     ok: true,

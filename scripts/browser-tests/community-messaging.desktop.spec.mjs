@@ -37,7 +37,9 @@ test('private inquiry explains account-free repeated replies and no public conse
 test('old backend disables contact form without falling back to email forwarding',async({page})=>{
   await page.route('https://script.google.com/**',route=>route.fulfill({json:{ok:false,error:'Unsupported action.'}}));
   await page.goto('/germany/ja/community/contact/?post_id='+encodeURIComponent(q.id));
-  await expect(page.locator('#contactForm fieldset')).toBeDisabled();
+  await expect(page.locator('#contactForm fieldset')).toHaveAttribute('disabled', '');
+  await expect(page.getByRole('button',{name:'確認メールを送る',exact:true})).toBeDisabled();
+  await expect(page.locator('#email')).toBeDisabled();
   await expect(page.locator('#contactStatus')).not.toHaveText('投稿と受付状況を確認中…');
 });
 test('private access is consumed only by explicit confirmation in a POST body; conversation supports repeated replies',async({page})=>{

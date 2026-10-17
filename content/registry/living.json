@@ -1789,13 +1789,13 @@
     "title": "ドイツの税務識別番号・税務署番号・給与税区分の違い",
     "slug": "tax-id-steuernummer-steuerklasse",
     "category": "税金・行政",
-    "summary": "ドイツで混同しやすい個人の税務識別番号、税務署が使う番号、給与税区分を日本語で整理。就職、結婚、副業、確定申告で何を確認するかを解説します。",
+    "summary": "ドイツの税務ID・税務署番号・給与税区分の違いを整理。税務IDが届かないときの住所確認、公式の再通知手続き、初回給与計算前に勤務先へ伝えることを解説します。",
     "url": "/germany/ja/living/tax-id-steuernummer-steuerklasse/",
     "markdown_path": "/content/living/tax-id-steuernummer-steuerklasse.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-08-31",
+    "updated_at": "2026-10-17",
     "last_verified": "2026-08-31",
     "tags": [
       "税金",
@@ -1817,12 +1817,24 @@
     ],
     "official_sources": [
       {
-        "title": "BZSt - The identification number",
-        "url": "https://www.bzst.de/EN/Private_individuals/Tax_identification_number/tax_identification_number_node.html"
+        "title": "ドイツ連邦中央税務庁：税務識別番号",
+        "url": "https://www.bzst.de/DE/Privatpersonen/SteuerlicheIdentifikationsnummer/steuerlicheidentifikationsnummer_node.html"
       },
       {
-        "title": "BZSt - Tax identification number FAQ",
-        "url": "https://www.bzst.de/EN/Private_individuals/Tax_identification_number/FAQ/faq_tin_node.html"
+        "title": "ドイツ連邦ポータル：税務識別番号",
+        "url": "https://verwaltung.bund.de/leistungsverzeichnis/DE/leistung/99102044101000/herausgeber/LeiKa-102730390/region/000000000000"
+      },
+      {
+        "title": "ノルトライン＝ヴェストファーレン州税務当局：給与税区分",
+        "url": "https://www.finanzamt.nrw.de/steuerinfos/privatpersonen/arbeitnehmende/lohnsteuerklassen"
+      },
+      {
+        "title": "連邦中央税務庁：税務IDが未着・紛失した場合の再通知",
+        "url": "https://online.portal.bzst.de/SharedDocs/Leistungsbeschreibung/DE/erneute_mitteilung_der_ID-Nr.html"
+      },
+      {
+        "title": "ELSTER：開業時の税務登録",
+        "url": "https://www.portal.elster.de/elsterweb/infoseite/unternehmensgruendung"
       }
     ],
     "disclaimer_type": "tax",
@@ -2046,16 +2058,16 @@
     "id": "L001",
     "title": "ドイツの住民登録ガイド｜期限、入居証明、予約、登録後の流れ",
     "slug": "anmeldung-guide",
-    "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
+    "image_url": "/assets/images/living/japanese-resident-paperwork-editorial-v1.webp",
     "image_alt": "ドイツの住民登録に必要な書類を自宅で準備する日本人の住民",
     "category": "行政手続き",
-    "summary": "ドイツの住民登録について、入居後2週間の期限、入居証明、自治体での予約、当日の確認、登録証明と税務識別番号までを日本語で整理します。",
+    "summary": "ドイツの住民登録を、入居後2週間の期限、入居証明など必要書類の取得先・提出先、デュッセルドルフの予約、登録後の税務IDまで整理します。",
     "url": "/germany/ja/living/anmeldung-guide/",
     "markdown_path": "/content/living/anmeldung-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-08-30",
+    "updated_at": "2026-10-17",
     "last_verified": "2026-08-30",
     "tags": [
       "住民登録",
@@ -2093,6 +2105,10 @@
       {
         "title": "連邦住民登録法第19条：住居提供者の協力",
         "url": "https://www.gesetze-im-internet.de/bmg/__19.html"
+      },
+      {
+        "title": "デュッセルドルフ市：住民登録・必要書類・予約",
+        "url": "https://service.duesseldorf.de/suche/-/vr-bis-detail/dienstleistung/227/show"
       }
     ],
     "disclaimer_type": "administrative",
@@ -2108,13 +2124,13 @@
     "title": "ドイツ移住後の手続きチェックリスト｜最初の30日にすること",
     "slug": "germany-first-30-days",
     "category": "生活立ち上げ",
-    "summary": "ドイツ移住・赴任後の最初の30日にすることを時期別に整理。住民登録、保険、銀行、滞在許可の準備と、郵便・買い物・ごみ分別など暮らしの立ち上げを確認できます。",
+    "summary": "ドイツ移住・赴任後の手続きを時期別に整理。住民登録、保険、銀行、税務ID、滞在許可を並行して進める順番と、書類未着・予約待ちで止まった場合の確認先が分かります。",
     "url": "/germany/ja/living/germany-first-30-days/",
     "markdown_path": "/content/living/germany-first-30-days.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-09-28",
+    "updated_at": "2026-10-17",
     "last_verified": "2026-08-31",
     "tags": [
       "初渡独",
@@ -2135,8 +2151,8 @@
       "health-insurance-guide",
       "bank-account-germany",
       "tax-id-steuernummer-steuerklasse",
-      "germany-waste-sorting-guide",
-      "germany-pfand-return-guide"
+      "residence-permit-renewal-germany",
+      "moving-checklist-germany"
     ],
     "official_sources": [],
     "disclaimer_type": "administrative",
@@ -2152,13 +2168,13 @@
     "title": "ドイツの健康保険｜公的保険と民間保険をどう選ぶか",
     "slug": "health-insurance-guide",
     "category": "生活・手続き",
-    "summary": "ドイツの健康保険を、会社員、学生、家族、自営業など立場別に解説。公的保険と民間保険の違い、2026年の基準、加入後の受診まで整理します。",
+    "summary": "ドイツの健康保険を会社員・学生・家族など立場別に解説。公的保険と民間保険、2026年の基準、加入証明の提出先、保険証が届く前の受診用証明まで整理します。",
     "url": "/germany/ja/living/health-insurance-guide/",
     "markdown_path": "/content/living/health-insurance-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-08-31",
+    "updated_at": "2026-10-17",
     "last_verified": "2026-08-31",
     "tags": [
       "健康保険",
@@ -2177,16 +2193,21 @@
       "germany-first-30-days",
       "anmeldung-guide",
       "doctor-appointment-germany",
+      "residence-permit-renewal-germany",
       "pregnancy-birth-germany"
     ],
     "official_sources": [
       {
-        "title": "Bundesministerium fuer Gesundheit - Gesetzlich Versicherte",
-        "url": "https://www.bundesgesundheitsministerium.de/gesetzlich-versicherte"
+        "title": "連邦保健省：公的医療保険の加入者・2026年の基準",
+        "url": "https://www.bundesgesundheitsministerium.de/gesetzlich-versicherte/seite"
       },
       {
-        "title": "Bundesministerium fuer Gesundheit - Ratgeber GKV",
-        "url": "https://www.bundesgesundheitsministerium.de/gkv"
+        "title": "連邦保健省：公的保険と民間保険の変更",
+        "url": "https://www.bundesgesundheitsministerium.de/themen/krankenversicherung/online-ratgeber-krankenversicherung/krankenversicherung/wechsel-zwischen-gkv-und-pkv"
+      },
+      {
+        "title": "AOK：保険証が未着の場合を含む代替証明の案内",
+        "url": "https://www.aok.de/pk/versichertenservice/ersatzbescheinigung-krankenkasse/"
       }
     ],
     "disclaimer_type": "medical_insurance",
@@ -2195,7 +2216,9 @@
       "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-31",
       "next_review_due": "2026-11-30"
-    }
+    },
+    "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
+    "image_alt": "ドイツの診療所で保険と受診について受付に確認するイメージ"
   },
   {
     "id": "L031",
@@ -2387,7 +2410,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-08-02",
-    "updated_at": "2026-08-30",
+    "updated_at": "2026-10-17",
     "last_verified": "2026-08-30",
     "tags": [
       "滞在許可",
@@ -2409,6 +2432,22 @@
       "moving-checklist-germany"
     ],
     "official_sources": [
+      {
+        "title": "ドイツ滞在令第41条：日本国籍者等の入国後申請",
+        "url": "https://www.gesetze-im-internet.de/aufenthv/__41.html"
+      },
+      {
+        "title": "在日ドイツ公館：長期滞在ビザ",
+        "url": "https://japan.diplo.de/ja-ja/service/longterm-899240"
+      },
+      {
+        "title": "デュッセルドルフ市：申請方法・転入後の手続き",
+        "url": "https://www.duesseldorf.de/auslaenderamt/aktuelles"
+      },
+      {
+        "title": "Mettmann郡：滞在許可の申請・更新・写真",
+        "url": "https://www.kreis-mettmann.de/Kreisverwaltung/Dienstleistungen/Aufenthaltstitel.php?FID=2023.254.1&ModID=10&NavID=3718.31.1&k_sub=1&object=tx%2C3718.2.1"
+      },
       {
         "title": "ドイツ滞在法第81条：滞在許可の申請",
         "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__81.html"

@@ -4,20 +4,22 @@ title: "ドイツ移住後の手続きチェックリスト｜最初の30日に�
 slug: "germany-first-30-days"
 category: "生活立ち上げ"
 tags: ["初渡独","住民登録","健康保険","銀行口座","税務識別番号","滞在許可"]
-summary: "ドイツ移住・赴任後の最初の30日にすることを時期別に整理。住民登録、保険、銀行、滞在許可の準備と、郵便・買い物・ごみ分別など暮らしの立ち上げを確認できます。"
+summary: "ドイツ移住・赴任後の手続きを時期別に整理。住民登録、保険、銀行、税務ID、滞在許可を並行して進める順番と、書類未着・予約待ちで止まった場合の確認先が分かります。"
 status: "published"
 published: true
 published_at: "2026-06-07"
-updated_at: "2026-09-28"
+updated_at: "2026-10-17"
 last_verified: "2026-08-31"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/germany-first-30-days/"
-related_articles: ["anmeldung-guide","health-insurance-guide","bank-account-germany","tax-id-steuernummer-steuerklasse","germany-waste-sorting-guide","germany-pfand-return-guide"]
+related_articles: ["anmeldung-guide","health-insurance-guide","bank-account-germany","tax-id-steuernummer-steuerklasse","residence-permit-renewal-germany","moving-checklist-germany"]
 ---
 
 # ドイツ移住後の手続きチェックリスト｜最初の30日にすること
 
 ドイツへ移住・赴任したら、まず郵便が届く住所、健康保険、連絡手段を確保し、住民登録と自分の滞在・就労条件を確認します。この記事は、到着後の一か月に必要な手続きと日常生活の準備を、順番に確認するためのガイドです。「30日以内に全部終わる」という意味ではなく、個別の期限がある手続きを優先して使ってください。
+
+勤務開始日と保険の開始日、実際の入居日、現在の在留期限は別々に確認します。税務IDの到着を待つ間も、保険や滞在許可の相談は並行して進めてください。個別の提出方法は[渡独直後の手続き案内](/germany/ja/living/routes/new-arrival/)から選べます。
 
 ## 最初の30日のチェックリスト
 
@@ -91,7 +93,9 @@ related_articles: ["anmeldung-guide","health-insurance-guide","bank-account-germ
 
 ### 滞在許可
 
-日本国籍者は、一定の目的では入国後に滞在許可を申請できる場合がありますが、就労や長期滞在の権利が無条件に続くわけではありません。入国日、ビザの有無、就労開始日、申請期限を自分の書類で確認します。予約待ちの間に在留期限が近づく場合は、管轄の外国人局へ早めに連絡してください。
+日本国籍でビザなし入国後に滞在許可を申請する場合は、[滞在令第41条](https://www.gesetze-im-internet.de/aufenthv/__41.html)の枠組みでは原則として入国後90日以内に必要な許可を申請します。これは「90日間なら自由に働ける」という制度ではありません。[在日ドイツ公館の長期滞在案内](https://japan.diplo.de/ja-ja/service/longterm-899240)で国籍・目的に応じた入口を確認し、外国籍の配偶者や子には同じ条件を自動的に当てはめないでください。
+
+すでにビザや滞在許可がある人は、その有効期限と就労条件を確認します。予約待ちの間に期限が近づく場合は、管轄局が指定する方法で期限前に申請を届け、受領記録を残します。予約、申請、審査中の証明の違いは[滞在許可の申請・更新ガイド](/germany/ja/living/residence-permit-renewal-germany/)で確認できます。
 
 ## 二週目：収入と支払いをつなぐ
 
@@ -141,6 +145,18 @@ related_articles: ["anmeldung-guide","health-insurance-guide","bank-account-germ
 
 生活手続きに加えて、滞在資格、税務登録、健康保険、請求書の要件が関わります。会社員向けの順番をそのまま当てはめず、活動開始前に税務署や専門家へ確認する方が安全です。
 
+## 手続きが止まったとき、次に連絡する相手
+
+| 止まっていること | 次にすること | 詳しい案内 |
+| --- | --- | --- |
+| 家主の入居証明がない | 発行・訂正を依頼し、期限に間に合わない場合は住民登録窓口へ速やかに事情を伝える | [住民登録：書類の取得先と不足時の対応](/germany/ja/living/anmeldung-guide/) |
+| 登録したが税務IDが未着 | 住所・郵便受け・過去の番号を確認し、給与担当へ未着を連絡。必要に応じて税務庁の再通知手続きへ | [税務IDが届かないとき](/germany/ja/living/tax-id-steuernummer-steuerklasse/) |
+| 保険証がまだない | 保険者へ加入状況と受診用の代替証明を確認し、受診先へ伝える | [保険加入と保険証待ちの対応](/germany/ja/living/health-insurance-guide/) |
+| 滞在許可の面談予約が期限後 | 予約だけで正式申請が済んだかを確認し、未申請なら指定の方法で申請を届ける | [申請記録と審査中の証明](/germany/ja/living/residence-permit-renewal-germany/) |
+| 口座開設の本人確認で止まった | エラー内容を保存し、対応旅券・在留書類、別の本人確認方法を銀行へ確認する | [銀行口座の本人確認・支払い準備](/germany/ja/living/bank-account-germany/) |
+
+受付番号、送信日、添付書類、次の連絡予定を一か所に記録します。下書きを作っただけ、問い合わせを送っただけ、予約しただけの状態を「申請完了」と数えないことが大切です。
+
 ## 一か月で「終わらなくてもよい」もの
 
 役所の予約や郵便を待つ手続きは、30日で完了しないことがあります。大切なのは、申請期限を確認し、必要な連絡を行い、受付記録を残していることです。
@@ -157,3 +173,6 @@ related_articles: ["anmeldung-guide","health-insurance-guide","bank-account-germ
 - [ドイツ連邦保健省：健康保険の案内](https://www.bundesgesundheitsministerium.de/gesetzlich-versicherte/seite)
 - [ドイツ連邦ポータル：行政サービス検索](https://verwaltung.bund.de/)
 - [在ドイツ日本国大使館：領事情報](https://www.de.emb-japan.go.jp/itpr_ja/konsular.html)
+
+- [ドイツ滞在令第41条：日本国籍者等の入国後申請](https://www.gesetze-im-internet.de/aufenthv/__41.html)
+- [在日ドイツ公館：長期滞在ビザ](https://japan.diplo.de/ja-ja/service/longterm-899240)

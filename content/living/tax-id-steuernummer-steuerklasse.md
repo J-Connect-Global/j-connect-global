@@ -4,22 +4,24 @@ title: "ドイツの税務識別番号・税務署番号・給与税区分の違
 slug: "tax-id-steuernummer-steuerklasse"
 category: "税金・行政"
 tags: ["税金","税務識別番号","税務署番号","給与税区分","行政手続き"]
-summary: "ドイツで混同しやすい個人の税務識別番号、税務署が使う番号、給与税区分を日本語で整理。就職、結婚、副業、確定申告で何を確認するかを解説します。"
+summary: "ドイツの税務ID・税務署番号・給与税区分の違いを整理。税務IDが届かないときの住所確認、公式の再通知手続き、初回給与計算前に勤務先へ伝えることを解説します。"
 status: "published"
 published: true
 published_at: "2026-06-12"
-updated_at: "2026-08-31"
+updated_at: "2026-10-17"
 last_verified: "2026-08-31"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/tax-id-steuernummer-steuerklasse/"
 related_articles: ["germany-first-30-days","anmeldung-guide","bank-account-germany"]
-official_links:
+official_sources:
   - title: "ドイツ連邦中央税務庁：税務識別番号"
     url: "https://www.bzst.de/DE/Privatpersonen/SteuerlicheIdentifikationsnummer/steuerlicheidentifikationsnummer_node.html"
   - title: "ドイツ連邦ポータル：税務識別番号"
     url: "https://verwaltung.bund.de/leistungsverzeichnis/DE/leistung/99102044101000/herausgeber/LeiKa-102730390/region/000000000000"
   - title: "ノルトライン＝ヴェストファーレン州税務当局：給与税区分"
     url: "https://www.finanzamt.nrw.de/steuerinfos/privatpersonen/arbeitnehmende/lohnsteuerklassen"
+  - title: "連邦中央税務庁：税務IDが未着・紛失した場合の再通知"
+    url: "https://online.portal.bzst.de/SharedDocs/Leistungsbeschreibung/DE/erneute_mitteilung_der_ID-Nr.html"
   - title: "ELSTER：開業時の税務登録"
     url: "https://www.portal.elster.de/elsterweb/infoseite/unternehmensgruendung"
 ---
@@ -29,6 +31,8 @@ official_links:
 この記事は、ドイツで就職や確定申告をするときに出会う三つの税務情報を、役割ごとに整理するガイドです。個人に一生付く番号、税務署が案件を管理する番号、毎月の給与から税を仮に差し引く区分の違いを説明します。読み終えると、勤務先や税務署から何を求められているかを見分け、違う番号を提出する混乱を防げます。
 
 ![ドイツの税務書類を番号の役割ごとに整理する日本人居住者](/assets/images/living/japanese-resident-paperwork-editorial-v1.webp "税務の書類は、個人・税務署の案件・給与計算に分けて考える")
+
+住民登録から始める人は[最初の30日チェックリスト](/germany/ja/living/germany-first-30-days/)、ほかの手続きで止まっている人は[渡独直後の案内](/germany/ja/living/routes/new-arrival/)も利用してください。
 
 ## 三つは、目的も発行元も違う
 
@@ -53,6 +57,19 @@ official_links:
 まず郵便受けに自分の名前があり、住民登録の住所が正しいかを確認します。以前ドイツに住んだことがある人には新しい番号は発行されず、過去の番号が引き続き有効です。
 
 通知を紛失した場合は、過去の給与税証明や税額決定通知を確認します。見つからなければ、連邦中央税務庁のオンライン手続きで再通知を依頼できます。個人情報保護のため、番号は登録住所へ郵送され、通常は電話やメールだけでは教えてもらえません。
+
+### 未着・紛失・給与計算を急ぐ場合の確認先
+
+| 状況 | 先に確認すること | 連絡・提出先 |
+| --- | --- | --- |
+| ドイツで初めて住民登録し、通知が来ない | 登録日、住所の綴り、郵便受けの氏名。3か月たっても未着なら税務庁の案内から再通知を依頼 | 住所の誤りは住民登録窓口、番号の再通知は連邦中央税務庁 |
+| 過去にドイツに住んだことがある | 以前の給与税証明・税額決定通知に十一桁の番号がないか探す。引っ越しで別の番号を作り直さない | 旧書類で見つからなければ税務庁の再通知手続き |
+| 通知を紛失した | 既存の税務書類を確認し、見つからなければ再通知。電話やメールで番号を受け取ろうとしない | 連邦中央税務庁の公式案内にあるフォーム |
+| 初回の給与計算が近い | 番号が未着であること、住民登録日、分かっている本人情報を給与担当へ連絡し、後日の提出・訂正方法を確認 | 勤務先の給与担当。税務署番号を代わりに出さない |
+
+[連邦中央税務庁の再通知案内](https://online.portal.bzst.de/SharedDocs/Leistungsbeschreibung/DE/erneute_mitteilung_der_ID-Nr.html)には、初回住民登録から3か月以内に通知が届かなかった場合の手順が掲載されています。この3か月は、給与担当への相談や住所の訂正を待つ期間ではありません。フォームの送信記録を保存し、番号の通知が届いたら必要な相手に提出してください。
+
+税務IDを受け取ったことと、ドイツで働ける在留条件を満たすことは別です。就労開始の可否は[滞在許可のガイド](/germany/ja/living/residence-permit-renewal-germany/)と、自分の許可書類で確認します。
 
 ### 安全な扱い方
 

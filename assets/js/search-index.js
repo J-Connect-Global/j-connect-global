@@ -36,7 +36,7 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "初めてドイツに来た人",
-    "description": "到着直後に確認したい住民登録、健康保険、銀行口座、税番号まわりの記事をまとめたルートです。",
+    "description": "渡独直後の手続きを、住民登録・税務ID・保険・銀行・滞在許可から選べます。書類未着や予約待ちで止まった場合の案内もまとめています。",
     "url": "/germany/ja/living/routes/new-arrival/",
     "category": "生活・手続き",
     "tags": [
@@ -635,7 +635,7 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "ドイツの税務識別番号・税務署番号・給与税区分の違い",
-    "description": "ドイツで混同しやすい個人の税務識別番号、税務署が使う番号、給与税区分を日本語で整理。就職、結婚、副業、確定申告で何を確認するかを解説します。",
+    "description": "ドイツの税務ID・税務署番号・給与税区分の違いを整理。税務IDが届かないときの住所確認、公式の再通知手続き、初回給与計算前に勤務先へ伝えることを解説します。",
     "url": "/germany/ja/living/tax-id-steuernummer-steuerklasse/",
     "category": "生活・手続き",
     "tags": [
@@ -691,7 +691,7 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "ドイツの住民登録ガイド｜期限、入居証明、予約、登録後の流れ",
-    "description": "ドイツの住民登録について、入居後2週間の期限、入居証明、自治体での予約、当日の確認、登録証明と税務識別番号までを日本語で整理します。",
+    "description": "ドイツの住民登録を、入居後2週間の期限、入居証明など必要書類の取得先・提出先、デュッセルドルフの予約、登録後の税務IDまで整理します。",
     "url": "/germany/ja/living/anmeldung-guide/",
     "category": "生活・手続き",
     "tags": [
@@ -704,7 +704,7 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "ドイツ移住後の手続きチェックリスト｜最初の30日にすること",
-    "description": "ドイツ移住・赴任後の最初の30日にすることを時期別に整理。住民登録、保険、銀行、滞在許可の準備と、郵便・買い物・ごみ分別など暮らしの立ち上げを確認できます。",
+    "description": "ドイツ移住・赴任後の手続きを時期別に整理。住民登録、保険、銀行、税務ID、滞在許可を並行して進める順番と、書類未着・予約待ちで止まった場合の確認先が分かります。",
     "url": "/germany/ja/living/germany-first-30-days/",
     "category": "生活・手続き",
     "tags": [
@@ -718,7 +718,7 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "ドイツの健康保険｜公的保険と民間保険をどう選ぶか",
-    "description": "ドイツの健康保険を、会社員、学生、家族、自営業など立場別に解説。公的保険と民間保険の違い、2026年の基準、加入後の受診まで整理します。",
+    "description": "ドイツの健康保険を会社員・学生・家族など立場別に解説。公的保険と民間保険、2026年の基準、加入証明の提出先、保険証が届く前の受診用証明まで整理します。",
     "url": "/germany/ja/living/health-insurance-guide/",
     "category": "生活・手続き",
     "tags": [

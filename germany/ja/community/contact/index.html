@@ -160,6 +160,7 @@
   document.head.appendChild(js);
 })();
 </script>
+<link rel="stylesheet" href="/assets/css/community-messaging.css">
 </head>
 <body>
   <!-- LAYOUT:ja-header:start -->
@@ -230,85 +231,24 @@
   </header>
   <!-- LAYOUT:ja-header:end -->
 
-  <main id="main-content" tabindex="-1" class="main"><div class="container">
+  <main id="main-content" tabindex="-1" class="cm-shell">
   <p><a href="../">← 掲示板へ戻る</a></p>
-  <h1>投稿者に連絡する</h1>
-  <p id="contactStatus" aria-live="polite"></p>
-  <form id="contactForm">
-    <input name="action" type="hidden" value="submitInquiry">
-    <input name="post_id" id="post_id" type="hidden">
-    <input name="form_started_at" id="form_started_at" type="hidden">
-    <label class="contact-honeypot" aria-hidden="true">Webサイト<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
-    <label for="sender_name">あなたの名前</label><input id="sender_name" name="sender_name" maxlength="120" autocomplete="name" required>
-    <label for="sender_email">あなたのメール</label><input id="sender_email" name="sender_email" type="email" maxlength="254" autocomplete="email" required>
-    <label for="subject">件名</label><input id="subject" name="subject" maxlength="200">
-    <label for="message">メッセージ</label><textarea id="message" name="message" maxlength="6000" required></textarea>
-    <p class="form-privacy-notice">送信した情報は投稿者への連絡の取次ぎと不正利用防止のために処理します。詳しくは <a href="/germany/ja/privacy/">プライバシーポリシー</a> をご確認ください。</p>
-    <button type="submit">送信する</button>
-  </form>
+  <h1 id="contactTitle">返信・会話</h1>
+  <p id="contactPost"></p><p id="contactMode"></p>
+  <p id="contactStatus" role="status">投稿と受付状況を確認中…</p>
+  <form id="contactForm" class="cm-panel"><fieldset disabled>
+    <label class="cm-honeypot" aria-hidden="true">Webサイト<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
+    <label for="nickname">ニックネーム</label><input id="nickname" name="nickname" maxlength="60" autocomplete="nickname" required>
+    <label for="email">確認・通知用メールアドレス（相手に非公開）</label><input id="email" name="email" type="email" maxlength="254" autocomplete="email" required>
+    <label for="body">返信・メッセージ</label><textarea id="body" name="body" maxlength="4000" required></textarea>
+    <label id="publicConsentLabel" class="cm-consent" hidden><input id="public_consent" name="public_consent" type="checkbox"><span>ニックネームと本文をインターネット上に公開することに同意します。</span></label>
+    <p>メールアドレスは本人確認と通知、不正利用防止のために運営が処理します。<a href="/germany/ja/privacy/">プライバシーポリシー</a></p>
+    <button type="submit">確認メールを送る</button>
+  </fieldset></form><noscript><p>送信にはJavaScriptを有効にしてください。</p></noscript>
+  </main>
   <script src="/assets/js/common.js"></script>
-<script src="/assets/js/data-sources.js"></script>
-  <script>
-    const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
-    const GAS_URL = DATA_SOURCES.communityDataEndpoint;
-    const COMMUNITY_STATIC_POSTS_URL = DATA_SOURCES.staticData?.communityPosts || '/assets/data/community/posts.json';
-    const postId = new URLSearchParams(location.search).get('post_id') || '';
-    const form = document.getElementById('contactForm');
-    const status = document.getElementById('contactStatus');
-    document.getElementById('post_id').value = postId;
-    document.getElementById('form_started_at').value = String(Date.now());
-
-    async function checkPostStatus() {
-      const disableForm = (message) => {
-        form.querySelectorAll('input, textarea, button').forEach((item) => item.disabled = true);
-        status.textContent = message;
-      };
-      if (!postId) {
-        disableForm('連絡する投稿が指定されていません。投稿詳細ページから開いてください。');
-        return;
-      }
-      try {
-        const data = await DATA_SOURCES.fetchJsonWithTimeout(COMMUNITY_STATIC_POSTS_URL, 5000);
-        const post = DATA_SOURCES.normalizePayload(data).find((item) => String(item.post_id || item.id || '') === String(postId));
-        if (!post) disableForm('この投稿は見つからないか、現在公開されていません。');
-      } catch (error) {
-        console.warn('Community contact public JSON check failed:', COMMUNITY_STATIC_POSTS_URL, error);
-        disableForm('投稿情報を読み込めませんでした。時間をおいて再度お試しください。');
-      }
-    }
-
-    checkPostStatus();
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      if (!form.reportValidity()) return;
-      const submitButton = form.querySelector('button[type="submit"]');
-      submitButton.disabled = true;
-      submitButton.textContent = '送信中…';
-      status.className = '';
-      status.textContent = '';
-      const fd = new FormData(e.target);
-      try {
-        const res = await fetch(GAS_URL, { method:'POST', body: fd });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const data = await res.json();
-        if (data.ok) location.assign(`./complete/?post_id=${encodeURIComponent(postId)}`);
-        else {
-          console.error('Community contact submit failed:', GAS_URL, data.error || data);
-          status.className = 'is-error';
-          status.textContent = data.error || '送信に失敗しました。入力内容を確認して、もう一度お試しください。';
-        }
-      } catch (error) {
-        console.error('Community contact submit failed:', GAS_URL, error);
-        status.className = 'is-error';
-        status.textContent = '送信に失敗しました。時間をおいて、もう一度お試しください。';
-      } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = '送信する';
-      }
-    });
-  </script>
-
-  </div></main>
+  <script src="/assets/js/data-sources.js"></script>
+  <script src="/assets/js/community-messaging.js"></script>
   <!-- LAYOUT:ja-footer:start -->
   <footer class="page-footer">
     <div class="footer-inner">

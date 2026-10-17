@@ -197,6 +197,7 @@ function ensureMainScript(html) {
 }
 
 function ensureSocialShareScript(html) {
+  if (html.includes('id="conversationStatus"')) return html;
   if (/<script\b[^>]*src=["']\/assets\/js\/social-share\.js(?:\?[^"']*)?["'][^>]*>/i.test(html)) return html;
   return html.replace(/(\s*)<\/body>/i, `\n<script src="${SOCIAL_SHARE_JS}"></script>$1</body>`);
 }

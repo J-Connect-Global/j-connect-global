@@ -301,6 +301,11 @@ function onOpen() {
     .addItem('選択した投稿を承認・公開', 'approveSelectedSubmission')
     .addItem('選択した投稿を却下', 'rejectSelectedSubmission')
     .addItem('公開確認を再試行', 'retrySelectedPublication')
+    .addSeparator()
+    .addItem('選択した公開返信を承認', 'approveSelectedCommunityReply')
+    .addItem('選択した公開返信を非表示', 'hideSelectedCommunityReply')
+    .addItem('会話用シートを初期設定', 'initializeCommunityMessaging')
+    .addItem('会話の通知を再試行', 'processCommunityMessagingNotifications')
     .addToUi();
 }
 
@@ -311,7 +316,10 @@ function dispatchCommunityRequest_(e) {
     const sheetKey = String(params.sheet || '').trim().toLowerCase();
     let payload;
 
-    if (Object.prototype.hasOwnProperty.call(DIRECTORY_SHEET_NAMES, sheetKey)) payload = listDirectory_(sheetKey);
+    if (/^community[A-Z]/.test(action)) payload = typeof cmDispatch_ === 'function'
+      ? cmDispatch_(action, params, Boolean(e && e.postData))
+      : { ok: false, code: 'UNAVAILABLE', error: '現在この機能を利用できません。' };
+    else if (Object.prototype.hasOwnProperty.call(DIRECTORY_SHEET_NAMES, sheetKey)) payload = listDirectory_(sheetKey);
     else if (action === 'getJobs' || action === 'listJobs'
       || (action === 'listPosts' && sheetKey === 'jobs')) payload = listJobs_(params);
     else if (action === 'getPosts' || action === 'listPosts') payload = listPosts_(params);
@@ -510,6 +518,7 @@ function publicPostPayload_(post) {
   payload.isExpired = isExpired_(post);
   PRIVATE_POST_FIELDS.forEach((field) => delete payload[field]);
   delete payload._rowNumber;
+  if (typeof cmPublicRepliesForPost_ === 'function') payload.public_replies = cmPublicRepliesForPost_(post);
   return payload;
 }
 
@@ -1465,6 +1474,7 @@ function requestCommunityPublicDataSync_() {
 }
 
 function processWaitingCommunityApprovalNotifications() {
+  if (typeof processCommunityMessagingNotifications === 'function') processCommunityMessagingNotifications();
   return processWaitingApprovalNotifications();
 }
 
@@ -1673,37 +1683,9 @@ function submitInquiry_(params) {
   if (!isReasonableFormCompletion_(fields.values.form_started_at)) return safeFormFailure_('FORM_TIMING');
   if (!acquireSubmissionRateLimit_('submitInquiry', fields.values.sender_email)) return safeFormFailure_('RATE_LIMITED');
 
-  const found = findPostById_(fields.values.post_id);
-  if (!found) return { ok: false, error: 'Post not found.' };
-  const status = normalizeStatus_(found.post.status);
-  if (status !== 'active' || isExpired_(found.post)) {
-    return { ok: false, error: 'This post is closed.' };
-  }
-  const to = String(found.post.contact_email_private || '').trim();
-  if (!isJConnectValidEmail_(to)) {
-    return { ok: false, error: 'Contact email is unavailable.' };
-  }
-  const senderName = fields.values.sender_name;
-  const senderEmail = fields.values.sender_email;
-  const subject = fields.values.subject || 'J-Connect Global 掲示板の投稿への問い合わせ';
-  const message = fields.values.message;
-  sendZohoEmail_({
-    to,
-    replyTo: senderEmail,
-    name: 'J-Connect Global',
-    subject: `【J-Connect Global】${subject}`,
-    body: [
-      'J-Connect Global 掲示板の投稿に問い合わせが届きました。',
-      '',
-      `投稿ID: ${found.post.post_id || found.post.id || ''}`,
-      `投稿タイトル: ${found.post.title || ''}`,
-      `送信者: ${senderName}`,
-      `送信者メール: ${senderEmail}`,
-      '',
-      message
-    ].join('\n')
-  });
-  return { ok: true, success: true };
+  // Retire the legacy email forwarding path: it disclosed the sender's email.
+  return { ok: false, success: false, code: 'MESSAGING_REQUIRED',
+    error: '投稿詳細から、新しい公開返信・非公開会話フォームを開いてください。' };
 }
 
 function submitReport_(params) {

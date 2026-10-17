@@ -323,14 +323,14 @@ function testCommunityInquiryPrivacyAndAbuseControls() {
   };
 
   const result = runtime.sandbox.submitInquiry_(params);
-  assert(result.ok && result.success, "Privacy-safe Community inquiry did not succeed.");
+  assert(!result.ok && result.code === "MESSAGING_REQUIRED", "Legacy inquiry must not disclose sender email.");
   assert(!JSON.stringify(result).includes("poster@example.com"), "Community inquiry response exposed the poster email.");
-  assert(emails.length === 1 && emails[0].to === "poster@example.com", "Community inquiry was not proxied to the poster.");
-  assert(emails[0].replyTo === "sender@example.com", "Community inquiry did not preserve the sender reply-to address.");
+  assert(emails.length === 0, "Legacy inquiry forwarded an email.");
+
 
   const repeated = runtime.sandbox.submitInquiry_(params);
   assert(!repeated.ok && repeated.code === "RATE_LIMITED", "Repeated Community inquiry was not rate limited.");
-  assert(emails.length === 1, "Rate-limited Community inquiry sent another email.");
+  assert(emails.length === 0, "Rate-limited Community inquiry sent an email.");
 
   const bot = runtime.sandbox.submitInquiry_({
     ...params,
@@ -338,7 +338,7 @@ function testCommunityInquiryPrivacyAndAbuseControls() {
     website: "https://spam.example"
   });
   assert(!bot.ok && bot.code === "HONEYPOT", "Community inquiry honeypot was not enforced.");
-  assert(emails.length === 1, "Honeypot Community inquiry sent an email.");
+  assert(emails.length === 0, "Honeypot Community inquiry sent an email.");
 }
 
 function testPublicPayloadCredentialSanitization() {

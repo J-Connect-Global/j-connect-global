@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="referrer" content="no-referrer">
+  <script>
+  // Remove the one-use secret before any other page script can observe the URL.
+  (function(){var p=new URLSearchParams(location.hash.slice(1));window.JCONNECT_PENDING_ACCESS=p.get('access')||'';if(location.hash)history.replaceState(null,'',location.pathname+location.search);})();
+  </script>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script data-jconnect-theme-init>
+  (function () {
+    try {
+      var saved = localStorage.getItem('jconnect-theme');
+      var theme = saved === 'dark' || saved === 'light'
+        ? saved
+        : 'light';
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+    } catch (error) {
+      document.documentElement.dataset.theme = 'light';
+      document.documentElement.style.colorScheme = 'light';
+    }
+  })();
+  </script>
+<script src="/assets/js/site-identity.js"></script>
+<title>非公開会話・返信の管理 | J-Connect Germany</title>
+  <meta name="description" content="メールの専用リンクで開く会話・返信の管理ページです。">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://j-connect-global.com/germany/ja/community/conversation/">
+  <link rel="alternate" hreflang="ja" href="https://j-connect-global.com/germany/ja/community/conversation/">
+  <link rel="alternate" hreflang="x-default" href="https://j-connect-global.com/germany/ja/community/conversation/">
+  <meta property="og:title" content="非公開会話・返信の管理 | J-Connect Germany">
+  <meta property="og:description" content="メールの専用リンクで開く会話・返信の管理ページです。">
+  <meta property="og:url" content="https://j-connect-global.com/germany/ja/community/conversation/">
+  <meta property="og:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="J-Connect Germany">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="非公開会話・返信の管理 | J-Connect Germany">
+  <meta name="twitter:description" content="メールの専用リンクで開く会話・返信の管理ページです。">
+  <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card.webp">
+  <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
+<link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-performance-a11y-20260719">
+<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
+  <link rel="stylesheet" href="/assets/css/social-share.css">
+<style>
+/* Page-specific styles. Shared site styles live in the common site stylesheet. */
+:root{
+  --cream:#f4f8fc;
+  --ink:#1a1014;
+  --muted:#6b5e68;
+  --border:#dce4ee;
+  --card:0 10px 30px rgba(26,16,20,.07);
+}
+
+.wrap{max-width:980px;margin:0 auto;padding:28px 18px 60px}
+
+.panel{background:#fff;border:1px solid var(--border);border-radius:9px;box-shadow:var(--card);padding:22px}
+
+.main > .container > p,
+    .main > .container > h1,
+    .main > .container > form{width:min(760px, calc(100% - 32px));margin-left:auto;margin-right:auto}
+
+.main > .container > p:first-of-type{margin-top:24px}
+
+.main > .container > p a{
+  display:inline-flex;
+  min-height:38px;
+  align-items:center;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:#fff;
+  color:var(--site-navy);
+  padding:0 14px;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.main > .container > h1{
+  margin-top:18px;
+  color:var(--site-navy);
+  font-size:clamp(28px,5vw,42px);
+  letter-spacing:0;
+}
+
+.main > .container > form{
+  background:rgba(255,255,255,.94);
+  border:1px solid var(--line);
+  border-radius:9px;
+  box-shadow:0 8px 18px rgba(30,58,95,.06);
+  padding:22px;
+}
+
+.main > .container > form label{
+  display:block;
+  margin-top:14px;
+  color:var(--site-navy);
+  font-weight:900;
+}
+
+.main > .container > form input,
+    .main > .container > form textarea{
+  width:100%;
+  padding:12px 14px;
+  margin:8px 0 0;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+}
+
+.main > .container > form input:focus,
+.main > .container > form textarea:focus{
+  border-color:var(--site-navy);
+  outline:none;
+  box-shadow:var(--site-focus-ring);
+}
+
+.main > .container > form textarea{min-height:150px;resize:vertical}
+
+.main > .container > form button{
+  min-height:44px;
+  margin-top:16px;
+  padding:0 18px;
+  border:none;
+  border-radius:14px;
+  background:var(--site-navy);
+  color:#fff;
+  font-weight:900;
+}
+
+.contact-honeypot{position:absolute!important;left:-9999px!important;opacity:0!important;pointer-events:none!important}
+#contactStatus.is-error{color:#9b1c1c;font-weight:800}
+#contactStatus.is-success{color:#166534;font-weight:800}
+
+@media (max-width:640px){
+  .main > .container > p,
+  .main > .container > h1,
+  .main > .container > form{width:min(100% - 24px, 760px)}
+  .main > .container > form{border-radius:18px;padding:18px}
+}
+</style>
+
+<link rel="stylesheet" href="/assets/css/community-messaging.css">
+</head>
+<body>
+  <!-- LAYOUT:ja-header:start -->
+  <a class="jc-skip-link" href="#main-content">本文へ移動</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
+        <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany（J-Connect Global）" width="720" height="174">
+        <span class="brand-copy">
+          <span class="brand-title">J-CONNECT GERMANY</span>
+          <span class="brand-sub">J-Connect Global のドイツ向け生活ポータル</span>
+        </span>
+      </a>
+      <div class="header-actions">
+        <nav class="header-nav" aria-label="主要ナビゲーション">
+          <a href="/germany/ja/">ホーム</a>
+          <a href="/germany/ja/about/">このサイトについて</a>
+        </nav>
+        <details class="header-category header-category-menu" aria-label="カテゴリ選択">
+          <summary class="header-category-trigger" aria-haspopup="true">
+            <span>カテゴリ</span>
+            <span class="header-category-chevron" aria-hidden="true">▼</span>
+          </summary>
+          <div class="category-dropdown">
+            <a href="/germany/ja/community/" class="active" aria-current="page">交流・掲示板</a>
+            <a href="/germany/ja/living/">生活・手続き</a>
+            <a href="/germany/ja/jobs/">仕事・求人</a>
+            <a href="/germany/ja/events/">ニュース・イベント</a>
+            <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+          </div>
+        </details>
+        <form class="header-search" action="/germany/ja/search/" method="get" role="search">
+          <label class="search-box" aria-label="サイト内検索">
+            <span class="search-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <circle cx="11" cy="11" r="6.5"></circle>
+                <path d="M16 16l4.5 4.5"></path>
+              </svg>
+            </span>
+            <input type="search" name="q" placeholder="検索">
+          </label>
+          <button class="search-btn" type="submit" aria-label="検索">
+            <span class="search-btn-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <circle cx="11" cy="11" r="6.5"></circle>
+                <path d="M16 16l4.5 4.5"></path>
+              </svg>
+            </span>
+          </button>
+        </form>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="ダークモードに切り替え">
+          <span class="theme-toggle-track" aria-hidden="true">
+            <span class="theme-toggle-icon theme-toggle-sun">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"></path>
+              </svg>
+            </span>
+            <span class="theme-toggle-icon theme-toggle-moon">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M20.4 14.6A7.7 7.7 0 0 1 9.4 3.6 8.9 8.9 0 1 0 20.4 14.6Z"></path>
+              </svg>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- LAYOUT:ja-header:end -->
+
+  <main id="main-content" tabindex="-1" class="cm-shell">
+  <p><a href="../">← 掲示板へ戻る</a></p><h1 id="conversationTitle">非公開会話・返信の管理</h1>
+  <p>アカウント登録は不要です。メールの専用リンクで本人確認します。専用リンクを他の人に転送しないでください。</p>
+  <p id="conversationStatus" role="status">受付状況を確認中…</p>
+  <section id="accessPanel" class="cm-panel" hidden><h2>メールの確認</h2><p>下のボタンを押すと、このリンクを一度使用してページを開きます。</p><button id="confirmAccess" type="button">確認して開く</button></section>
+  <section id="recoveryPanel" class="cm-panel" hidden><h2>新しいリンクを受け取る</h2><p>リンクの有効期限は1時間です。登録時のメールアドレスを入力してください。</p>
+    <form id="recoveryForm"><label for="recoveryEmail">メールアドレス</label><input id="recoveryEmail" name="email" type="email" maxlength="254" autocomplete="email" required>
+      <label class="cm-honeypot" aria-hidden="true">Webサイト<input name="website" tabindex="-1" autocomplete="off"></label><button type="submit">確認リンクを再送する</button></form>
+  </section>
+  <section id="conversationPanel" hidden>
+    <h2 id="privatePostTitle"></h2><p id="conversationState"></p>
+    <div class="cm-actions"><button id="refreshMessages" type="button">最新の会話を表示</button><button id="olderMessages" type="button" hidden>以前のメッセージ</button><button id="leaveConversation" type="button">この端末で閉じる</button></div>
+    <div id="privateMessages" aria-label="会話履歴"></div>
+    <form id="messageForm" class="cm-panel"><label for="messageBody">メッセージ（相手だけに表示）</label><textarea id="messageBody" maxlength="4000" required></textarea><button type="submit">返信する</button></form>
+    <details class="cm-panel"><summary>会話を終了・通報する</summary><p>終了すると両者が新しく送信できなくなります。ブロックすると同じ相手からの新しい問い合わせも止めます。</p><div class="cm-actions"><button id="closeConversation" type="button">会話を終了</button><button id="blockConversation" type="button">相手をブロックして終了</button></div>
+    <form id="privateReportForm"><label for="reportReason">通報理由（運営のみ閲覧）</label><textarea id="reportReason" maxlength="1000" required></textarea><button type="submit">運営に通報する</button></form></details>
+  </section>
+  <section id="replyPanel" class="cm-panel" hidden><h2>自分の公開返信</h2><p id="replyState"></p><p id="replyBody" class="cm-body"></p><p><a id="replyPostLink" href="../">投稿へ戻る</a></p><button id="deleteReply" type="button">この返信を非表示にする</button><button id="leaveReply" type="button">この端末で閉じる</button></section>
+  <noscript><p>会話を開くにはJavaScriptを有効にしてください。</p></noscript>
+  </main>
+  <script src="/assets/js/data-sources.js"></script>
+  <script src="/assets/js/community-messaging.js"></script>
+  <script src="/assets/js/community-conversation.js"></script>
+  <!-- LAYOUT:ja-footer:start -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany（J-Connect Global）" width="900" height="217" loading="lazy" decoding="async">
+        <div class="footer-copy">
+          <div class="footer-title">J-CONNECT GERMANY</div>
+          <div class="footer-sub">J-Connect Global のドイツ向け生活ポータル</div>
+          <div class="footer-relationship">J-Connect Germany は、J-Connect Global のドイツ向けポータルです。</div>
+          <div class="footer-meta">© 2026 J-Connect Global</div>
+        </div>
+      </div>
+      <div class="footer-links" aria-label="フッターサイトマップ">
+        <div class="footer-group">
+          <div class="footer-heading">サイト</div>
+          <a href="/germany/ja/">ホーム</a>
+          <a href="/germany/ja/about/">このサイトについて</a>
+          <a href="/germany/ja/living/">ガイド</a>
+        </div>
+        <div class="footer-group">
+          <div class="footer-heading">主要カテゴリ</div>
+          <a href="/germany/ja/community/">交流・掲示板</a>
+          <a href="/germany/ja/living/">生活・手続き</a>
+          <a href="/germany/ja/jobs/">仕事・求人</a>
+          <a href="/germany/ja/events/">ニュース・イベント</a>
+          <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+        </div>
+        <div class="footer-group">
+          <div class="footer-heading">サポート・運営情報</div>
+          <a href="/germany/ja/jobs/posting/">求人掲載について</a>
+          <a href="/germany/ja/contact/">お問い合わせ</a>
+          <a href="mailto:contact@j-connect-global.com">contact@j-connect-global.com</a>
+          <a href="/germany/ja/terms/">利用規約</a>
+          <a href="/germany/ja/privacy/">プライバシー</a>
+          <a href="/germany/ja/impressum/">運営者情報</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- LAYOUT:ja-footer:end -->
+<script src="/assets/js/common.js"></script>
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

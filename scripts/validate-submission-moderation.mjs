@@ -47,7 +47,10 @@ expect(count(/^function onOpen\(/gm, gas) === 1, "GAS must contain exactly one o
 expect(count(/^function doGet\(/gm, gas) === 1 && count(/^function doPost\(/gm, gas) === 1, "GAS entry points are duplicated.");
 const onOpen = gas.slice(gas.indexOf("function onOpen()"), gas.indexOf("function dispatchCommunityRequest_"));
 expect(onOpen.includes("createMenu('J-Connect管理')"), "Unified administrator menu is missing.");
-expect(count(/\.addItem\(/g, onOpen) === 3, "Administrator menu must contain exactly three normal items.");
+expect(count(/\.addItem\(/g, onOpen) === 7, "Administrator menu must include existing moderation and four messaging actions.");
+for (const handler of ["approveSelectedCommunityReply", "hideSelectedCommunityReply", "initializeCommunityMessaging", "processCommunityMessagingNotifications"]) {
+  expect(onOpen.includes(handler) && read("apps-script/community-messaging.gs").includes(`function ${handler}(`), `Missing messaging menu handler ${handler}.`);
+}
 for (const handler of ["approveSelectedSubmission", "rejectSelectedSubmission", "retrySelectedPublication"]) {
   expect(gas.includes(`function ${handler}(`), `Missing moderation handler ${handler}.`);
 }

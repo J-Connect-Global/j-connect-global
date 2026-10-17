@@ -266,6 +266,7 @@
       region,
       city,
       nickname: pick(post, ["nickname", "display_name"]),
+      public_replies: Array.isArray(post.public_replies) ? post.public_replies : [],
       price: pick(post, ["price", "fee", "salary", "budget"]),
       availability_date: pick(post, ["availability_date", "event_date"]),
       tags: pick(post, ["tags"]),

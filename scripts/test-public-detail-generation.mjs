@@ -178,6 +178,7 @@ async function runFixtureTests() {
   const siteDir = await createFixture();
   try {
     const safeCommunity = community();
+    safeCommunity.public_replies = [{id:'reply-approved',post_id:safeCommunity.id,nickname:'回答者 <b>safe</b>',body:'回答 </script><img src=x onerror=alert(1)>',reply_to:'',published_at:'2026-07-15T10:00:00Z',is_post_author:true}];
     const indexable = job();
     const incomplete = job("job-incomplete", {
       apply_url: "", application_url: "", apply_method: "", salary_unit: "", salary_currency: ""
@@ -197,6 +198,11 @@ async function runFixtureTests() {
     assert.match(communityHtml, /\/germany\/ja\/community\/contact\/\?post_id=post-safe/);
     assert.match(communityHtml, /\/germany\/ja\/community\/report\/\?post_id=post-safe/);
     assert.match(communityHtml, /data-public-lightbox/);
+    assert.match(communityHtml, /公開返信する/);
+    assert.match(communityHtml, /id="reply-reply-approved"/);
+    assert.match(communityHtml, /回答者 &lt;b&gt;safe&lt;\/b&gt;/);
+    assert.ok(!communityHtml.includes('<img src=x onerror=alert(1)>'));
+    assert.match(communityHtml, /data-community-replies/);
 
     const jobHtml = await readFile(path.join(siteDir, "germany", "ja", "jobs", "job-safe", "index.html"), "utf8");
     assert.match(jobHtml, /<meta name="robots" content="index, follow">/);

@@ -12,6 +12,8 @@
 
 `doGet`、`doPost`、`onOpen`を別途増やさず、既存のScript PropertiesとデプロイURLを維持してください。IDや認証情報をリポジトリ、画面、ログにコピーしません。
 
+既存プロジェクトではAPIが `JConnectApiComplete.gs`、メール処理が `ZohoMail.gs` という名前になっている場合があります。その既存ファイルの内容を上記の対応するソースで更新します。旧 `Config.gs` に `ZOHO_ACCESS_TOKEN_CACHE_KEY` やメール検証関数などが重複している場合は、ヘルパーを `ZohoMail.gs` に統合し、`Config.gs` は移行を説明するコメントだけにします。Script Propertiesの実際の設定値は変更しません。旧バージョンはProject Historyと既存デプロイのバージョンで復旧可能な状態にしてから更新します。
+
 エディターで `initializeCommunityMessaging` を実行すると、Master Spreadsheetに次の非公開の管理シートを追加します。既存投稿や求人の列は変更しません。
 
 - Community Replies：公開返信と本人確認・承認の状態

@@ -8,16 +8,28 @@ summary: "ドイツで妊娠・出産する日本人家庭向けに、婦人科�
 status: "published"
 published: true
 published_at: "2026-06-12"
-updated_at: "2026-10-12"
+updated_at: "2026-10-17"
 last_verified: "2026-08-31"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/pregnancy-birth-germany/"
-related_articles: ["health-insurance-guide","kita-u3-tagesmutter-guide","doctor-appointment-germany","stroller-buying-guide-germany"]
+related_articles: ["birth-day-germany","birth-procedures-germany","stroller-buying-guide-germany","kita-u3-tagesmutter-guide","health-insurance-guide"]
 ---
 
 # ドイツで妊娠・出産｜医療、仕事、出生届の全体ガイド
 
 この記事は、ドイツで妊娠・出産を迎える日本人家庭が、妊娠判明から産後までの全体像を理解するためのガイドです。婦人科、助産師、出産施設、健康保険、職場、ドイツと日本の出生届がそれぞれ何を担うかを説明します。母体と赤ちゃんの安全を中心に、家族が必要な時期に必要な相手へつながるために使ってください。
+
+## 今の時期から、次にすることを選ぶ
+
+| 時期 | 先に決めること | 詳しく確認する記事 |
+| --- | --- | --- |
+| 妊娠が分かったら | 婦人科の予約、保険の範囲、産後の助産師探し | このページの医療・助産師の項目と[健康保険ガイド](/germany/ja/living/health-insurance-guide/) |
+| 出産前 | 出産施設、職場への通知、親の出生・婚姻書類、退院時の移動手段 | [出生登録などの書類準備](/germany/ja/living/birth-procedures-germany/)と[ベビーカー・車用シートの選び方](/germany/ja/living/stroller-buying-guide-germany/) |
+| 陣痛・破水から出産当日 | 連絡先、医療者の指示、付き添いの役割 | [出産当日ガイド](/germany/ja/living/birth-day-germany/) |
+| 出生直後から | 退院後の健診、出生証明書、子の保険、給付、日本の出生届 | [出産後の手続きガイド](/germany/ja/living/birth-procedures-germany/) |
+| 保育と復職を考えたら | 開始希望日、必要時間、自治体への申込み | [保育園・U3申込みガイド](/germany/ja/living/kita-u3-tagesmutter-guide/) |
+
+医療と書類の担当を分け、各記事は必要な段階で開いてください。[家族・子育ての案内ページ](/germany/ja/living/routes/family/)からも時期別に選べます。
 
 ![ドイツの診療所で妊娠中の受診について受付と確認する様子](/assets/images/living/german-clinic-reception-editorial-v1.webp "妊娠が分かったら、まず婦人科と健康保険へつながる")
 
@@ -78,8 +90,6 @@ related_articles: ["health-insurance-guide","kita-u3-tagesmutter-guide","doctor-
 
 ## 妊娠中の仕事と産前産後の保護
 
-出産当日の陣痛・破水時の連絡と、病院での流れは[ドイツの出産当日ガイド](/germany/ja/living/birth-day-germany/)で、日本語の全体フローとともに確認できます。
-
 妊娠を職場へ伝える時期に一律の正解はありません。ただし、夜勤、重量物、感染、高温、化学物質など仕事上の危険がある場合は、早めに伝えることで職場が安全対策を取れます。雇用主が妊娠証明を求めた場合、その証明費用は原則として雇用主が負担します。
 
 産前産後保護（Mutterschutz）の期間は、通常、出産予定日の六週間前から出産後八週間までです。産前は本人が明確に希望すれば働けますが、その意思は撤回できます。産後は原則として就業できません。早産、多胎、障害のある子どもの出生などでは、産後期間が十二週間になる場合があります。
@@ -94,7 +104,7 @@ related_articles: ["health-insurance-guide","kita-u3-tagesmutter-guide","doctor-
 
 ## 育児休業と育児給付は別の制度
 
-育児休業（Elternzeit）は、雇用関係を保ちながら仕事を休む権利です。各親が子ども一人につき最長三年取得でき、一部を八歳になる前までに取れます。通常、開始の七週間前までに雇用主へ文字で通知します。
+育児休業（Elternzeit）は、雇用関係を保ちながら仕事を休む権利です。各親が子ども一人につき最長三年取得でき、一部を八歳になる前までに取れます。現在これから生まれる子どもの育休を準備する場合、三歳の誕生日前の休業は開始の七週間前まで、三歳から八歳の誕生日前の休業は十三週間前までに雇用主へ通知します。メールなどのテキスト形式で通知でき、開始日・終了日と受領確認を残します。過去に生まれた子どもや急な早産などの扱いは、[連邦家族ポータルの通知案内](https://familienportal.de/familienportal/familienleistungen/elternzeit/faq/wann-und-wie-muss-ich-elternzeit-beantragen--124810)で確認してください。
 
 育児給付（Elterngeld）は、子どもの出生後、収入の減少を補う給付です。休業を取らなくても条件を満たせば受けられますが、受給中の就労は原則週32時間までです。課税所得が17万5,000ユーロを超える親・世帯は対象外です。
 
@@ -115,6 +125,8 @@ related_articles: ["health-insurance-guide","kita-u3-tagesmutter-guide","doctor-
 出生後は、親の健康保険者へ子どもの加入を申請します。公的保険の家族加入が可能でも、自動登録ではありません。両親の保険の種類と収入により、子どもの加入先が変わる場合があります。
 
 退院後の健診と予防接種を担う小児科も早めに探します。都市部では新規患者枠が限られるため、出産前に「出生後に受け入れ可能か」を確認して構いません。
+
+退院時には、赤ちゃんの[U2健診（通常、生後3～10日）](https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u2-untersuchung/)が済んでいるか、未実施の検査をいつ・どこで受けるかを医療者に確認します。自宅出産や早い退院では、家族が速やかに予約する必要があります。[U3健診は通常、生後4～5週](https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u3-untersuchung/)で、出生後早めに小児科へ連絡します。書類がそろうのを待たず、受診の手配と保険手続きを並行してください。
 
 ### 育児給付と児童手当
 
@@ -161,3 +173,5 @@ related_articles: ["health-insurance-guide","kita-u3-tagesmutter-guide","doctor-
 - [ドイツ連邦家族ポータル：育児給付の申請](https://familienportal.de/familienportal/familienleistungen/elterngeld/faq/wie-kann-ich-elterngeld-beantragen--124762)
 - [ドイツ連邦家族ポータル：出生登録](https://familienportal.de/familienportal/lebenslagen/schwangerschaft-geburt/anmeldung-standesamt)
 - [在ドイツ日本国大使館：出生届](https://www.de.emb-japan.go.jp/itpr_ja/konsular_koseki04.html)
+- [BIÖG：U2健診と退院後の予約](https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u2-untersuchung/)
+- [BIÖG：U3健診](https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u3-untersuchung/)

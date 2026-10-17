@@ -58,7 +58,7 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "家族・子育ての手続きを知りたい人",
-    "description": "妊娠・出産、健康保険、Kita探しなど家族に関わる既存記事をまとめたルートです。",
+    "description": "妊娠中の準備、出産当日、出生後の届出・保険・給付、保育申込みを時期別に案内します。",
     "url": "/germany/ja/living/routes/family/",
     "category": "生活・手続き",
     "tags": [
@@ -662,17 +662,18 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツの保育先探し｜施設保育と家庭的保育の違い",
-    "description": "ドイツの保育を、施設保育、家庭的保育、小規模共同保育の違いから解説。法的な利用権、探し方、慣らし保育、家庭に合う環境の見方を整理します。",
+    "title": "ドイツのKita・U3申込み｜NRWの保育先・必要書類",
+    "description": "ドイツの保育施設と家庭的保育の違い、NRWの原則6か月前の需要申告、デュッセルドルフ・Erkrathの申込み、必要情報・書類、入園決定と費用確認を整理します。",
     "url": "/germany/ja/living/kita-u3-tagesmutter-guide/",
     "category": "生活・手続き",
     "tags": [
       "保育施設",
       "3歳未満保育",
       "家庭的保育",
-      "青少年福祉局",
-      "子育て",
-      "保育"
+      "NRW",
+      "デュッセルドルフ",
+      "Erkrath",
+      "保育申込み"
     ]
   },
   {

@@ -7,7 +7,7 @@ summary: "ドイツで出産する日本人・国際家庭向けに、出産前�
 status: "published"
 published: true
 published_at: "2026-10-12"
-updated_at: "2026-10-12"
+updated_at: "2026-10-17"
 last_verified: "2026-10-12"
 next_review: "2027-01-12"
 canonical_url: "/germany/ja/living/birth-procedures-germany/"
@@ -71,6 +71,8 @@ official_sources:
     url: "https://online.portal.bzst.de/SharedDocs/Leistungsbeschreibung/DE/erneute_mitteilung_der_ID-Nr.html?nn=23996"
   - title: "外務省：在留届に出生した子どもを追加する方法"
     url: "https://www.ezairyu.mofa.go.jp/RRnet/faq.html"
+  - title: "BIÖG：小児健診U2と退院後の予約"
+    url: "https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u2-untersuchung/"
   - title: "BIÖG：小児健診U3"
     url: "https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u3-untersuchung/"
   - title: "ドイツ年金保険：育児期間の申告・両親間の配分"
@@ -82,6 +84,8 @@ official_sources:
 ドイツで赤ちゃんが生まれると、出生の登録、健康保険、手当、日本への届出など、複数の手続きが同時に始まります。この記事は、日本国籍の親がいる家庭や国際家庭に向けて、出産前から産後までの主な手続きを、期限・申請先・必要書類とともに整理したガイドです。自分の家庭に必要な項目を選び、夫婦や家族で分担して進めるために使ってください。
 
 病院の選び方や妊婦健診は[妊娠・出産の全体ガイド](/germany/ja/living/pregnancy-birth-germany/)、陣痛・破水から入院までの流れは[出産当日のガイド](/germany/ja/living/birth-day-germany/)で確認できます。ここでは、役所、保険、職場、給付、公館に提出する書類に重点を置きます。
+
+妊娠中の準備から保育申込みまでの記事は、[家族・子育ての案内](/germany/ja/living/routes/family/)から時期別に選べます。
 
 ## まず全体像：出生証明書を起点に、複数の申請を並行する
 
@@ -302,6 +306,8 @@ TKでは出生後に家族加入を申請でき、条件を満たす場合の加
 
 行政手続きと並行して、退院後の支援もつなぎます。病院で受けた赤ちゃんの検査と、退院後に予約する健診を区別し、退院書類と黄色い健診冊子を保管してください。
 
+退院前には、小児健診U2が済んでいるか、未実施の検査と受診先を確認します。U2は通常、生後3～10日ですが、早く退院した場合や自宅出産では家族が速やかに予約し、未実施の新生児検査を含めた時期を医療者と確認する必要があります。[BIÖGのU2案内](https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u2-untersuchung/)を参照してください。
+
 小児健診U3の標準的な時期は、生後4～5週です。小児科に出生日を伝えて予約し、保険証の発行待ちであれば、受診に使う加入確認の方法を保険者へ聞きます。[BIÖGのU3案内](https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u3-untersuchung/)で確認できます。
 
 産後訪問の助産師には出産・退院を連絡し、母親の産後診察は婦人科の案内に沿って予約します。書類作業は分担し、母体の回復と赤ちゃんの受診予定を後回しにしないことが大切です。
@@ -438,7 +444,7 @@ NRWの総領事館は、戸籍への反映に約4～6週間、旅券は審査終
 
 出産手当や育児給付を受けた年は、税率計算や確定申告に関わります。給付の証明を保管し、確定申告では子どもの付表（Anlage Kind）も確認します。児童手当と子の控除は、税務署が有利な扱いを比較する仕組みです。[家族向け税負担軽減の公式案内](https://familienportal.de/familienportal/familienleistungen/steuerentlastungen)を参照してください。
 
-保育園や家庭的保育を使いたい場合は、自治体の申込み時期と予約方法も確認します。育休終了の直前に探し始めると間に合わない地域もあります。[U3・保育ガイド](/germany/ja/living/kita-u3-tagesmutter-guide/)を使い、希望する復職時期から逆算してください。
+保育園や家庭的保育を使いたい場合は、自治体の申込み時期と予約方法も確認します。育休終了の直前に探し始めると間に合わない地域もあります。[保育園・U3申込みガイド](/germany/ja/living/kita-u3-tagesmutter-guide/)で、NRWの需要申告、デュッセルドルフ・Erkrathの登録後の手順を確認し、希望する復職時期から逆算してください。
 
 日本以外の外国籍の親がいる家庭は、その国の出生登録、国籍確認、旅券申請も追加します。両国籍の取得を旅券の有無だけで判断せず、それぞれの公館へ確認します。日本の公的医療保険に引き続き加入する駐在家庭などは、日本側の出産給付や保険者への通知の対象になるかも、加入先で確認してください。
 

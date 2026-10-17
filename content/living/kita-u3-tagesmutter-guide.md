@@ -1,23 +1,56 @@
 ---
 id: "L009"
-title: "ドイツの保育先探し｜施設保育と家庭的保育の違い"
+title: "ドイツのKita・U3申込み｜NRWの保育先・必要書類"
 slug: "kita-u3-tagesmutter-guide"
 category: "家族・子育て"
-tags: ["保育施設","3歳未満保育","家庭的保育","青少年福祉局","子育て","保育"]
-summary: "ドイツの保育を、施設保育、家庭的保育、小規模共同保育の違いから解説。法的な利用権、探し方、慣らし保育、家庭に合う環境の見方を整理します。"
+tags: ["保育施設","3歳未満保育","家庭的保育","NRW","デュッセルドルフ","Erkrath","保育申込み"]
+summary: "ドイツの保育施設と家庭的保育の違い、NRWの原則6か月前の需要申告、デュッセルドルフ・Erkrathの申込み、必要情報・書類、入園決定と費用確認を整理します。"
 status: "published"
 published: true
 published_at: "2026-06-12"
-updated_at: "2026-08-31"
+updated_at: "2026-10-17"
 last_verified: "2026-08-31"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/kita-u3-tagesmutter-guide/"
-related_articles: ["pregnancy-birth-germany","moving-checklist-germany"]
+image_url: "/assets/images/living/childcare-first-visit-editorial-v1.webp"
+image_alt: "保育施設を家族で訪れ、保育者と子どもの様子を確認するイメージ"
+related_articles: ["pregnancy-birth-germany","birth-procedures-germany","moving-checklist-germany"]
+official_sources:
+  - title: "連邦社会法第8編第24条：保育を利用する権利"
+    url: "https://www.gesetze-im-internet.de/sgb_8/__24.html"
+  - title: "NRW州保育法：2026年8月施行版・第5条の需要申告"
+    url: "https://recht.nrw.de/lrgv/gesetz/01082026-gesetz-zur-fruehen-bildung-und-foerderung-von-kindern-kinderbildungsgesetz/"
+  - title: "デュッセルドルフ市：Kita-Navigatorと入園手順"
+    url: "https://www.duesseldorf.de/familie/kinderbetreuung/kita-navigator"
+  - title: "デュッセルドルフ市：家庭的保育の需要申告"
+    url: "https://www.duesseldorf.de/familie/kinderbetreuung/kindertagespflege"
+  - title: "デュッセルドルフ市：1歳未満の利用要件の証明"
+    url: "https://www.duesseldorf.de/fileadmin/Amt51/Familie/Kita-Navigator/nachweis_u1_platzberechtigung.pdf"
+  - title: "NRW家族ポータル・Erkrath市青少年局：保育園の登録"
+    url: "https://www.guterstart.nrw.de/fhiangebot/details/id/135490"
+  - title: "Erkrath市公式保育ポータル：家庭的保育の申請"
+    url: "https://mykitavm.trinuts.de/mykitavm/erkrath/institution/detail/1192/"
+  - title: "デュッセルドルフ市：現行の保育料と料金表"
+    url: "https://www.duesseldorf.de/familie/kinderbetreuung/elternbeitrag"
+  - title: "デュッセルドルフ市：2027年8月以降の保育料案内"
+    url: "https://www.duesseldorf.de/familie/kinderbetreuung/elternbeitrag-2027"
 ---
 
-# ドイツの保育先探し｜施設保育と家庭的保育の違い
+# ドイツのKita・U3申込み｜NRWの保育先・必要書類
 
-この記事は、ドイツで子どもの保育先を探す家庭が、施設の種類と選び方の全体像を理解するためのガイドです。保育施設、家庭的保育、小規模な共同保育の違いに加え、子どもの慣れ方、言葉、食事、家庭との関係をどう見ればよいかを説明します。読み終えると、空きの有無だけでなく、子どもと家族に合う環境を考えながら探せるようになります。
+ドイツで保育先を探す家庭向けに、施設保育と家庭的保育の違いから、申込み、入園決定、慣らし保育までを整理します。全国共通の利用権を押さえたうえで、NRW州、特にデュッセルドルフとErkrathの窓口・必要情報を確認できます。オンライン登録後に何をするか、復職までに何を確定するかを判断するために使ってください。
+
+## 最初に、開始日・年齢・申込み先を決める
+
+| 今の状況 | 先にすること |
+| --- | --- |
+| NRWで開始希望日が決まっている | 原則として開始6か月前までに、青少年福祉局へ開始日・必要時間・保育の種類を申告する |
+| 急な転居・就職で6か月を切っている | すぐに担当局へ需要を伝える。短期の需要への対応も州法に定められており、期限を過ぎたからと諦めない |
+| 開始時に1歳未満 | 就労・求職・就学や子の発達上の必要など、利用条件と証明方法を確認する |
+| ポータル登録だけ済んでいる | 需要申告として受理されているか、園への連絡や対面確認が必要かを確認する |
+| 内定・入園案内が来た | 返答期限、契約、保育料の申告、慣らし保育の日程を別々に確認する |
+
+原則6か月前という手順は[NRW州保育法第5条](https://recht.nrw.de/lrgv/gesetz/01082026-gesetz-zur-fruehen-bildung-und-foerderung-von-kindern-kinderbildungsgesetz/)によります。他州の申込期限や自治体ごとの選考日程まで全国共通とは考えないでください。[家族・子育ての案内](/germany/ja/living/routes/family/)から、出産準備・出生後の届出にも戻れます。
 
 ![ドイツの保育先を初めて訪れ、保育者と子どもの様子を見る日本人家族](/assets/images/living/childcare-first-visit-editorial-v1.webp "保育先選びでは、設備だけでなく子どもと大人の関わり方を見たい")
 
@@ -43,11 +76,15 @@ related_articles: ["pregnancy-birth-germany","moving-checklist-germany"]
 
 子どもは原則として、満一歳から施設保育または家庭的保育を利用する法的な権利があります。三歳から就学までは、施設保育を利用する権利があります。一歳未満でも、親の就労・求職・就学や子どもの発達上の必要など、条件を満たせば対象になる場合があります。
 
+根拠は[連邦社会法第8編第24条](https://www.gesetze-im-internet.de/sgb_8/__24.html)です。一歳未満で申込む場合は「U3枠だから年齢だけで利用できる」と判断せず、担当窓口で必要な証明を確認します。
+
 ただし、この権利は「第一希望の園」「自宅から最も近い園」「希望どおりの時間」が必ず提供されるという意味ではありません。空きが見つからない場合は、保育者や施設だけでなく、自治体の**青少年福祉局（Jugendamt）**へ、必要な開始日と保育時間を書面で伝えて相談します。
 
-## 探し始める時期
+## NRWで探し始める時期
 
 多くの自治体や施設は、夏から新しい保育年度を始めますが、申込時期と選考方法は全国共通ではありません。都市部では妊娠中や出産直後から情報を集める家庭もあります。
+
+NRWの保育年度は8月1日に始まります。原則6か月前の需要申告に加え、自治体の入園手順に合わせて見学と登録を進めます。デュッセルドルフ市は、翌年度の入園に向けて前年秋の早めの登録を勧めています。年度途中の開始希望も、8月まで待たずに相談してください。
 
 早く登録しただけで優先されるとは限りません。それでも、開始希望日、必要時間、通える範囲を早めに整理しておけば、自治体ポータル、施設への連絡、家庭的保育の相談を並行できます。引っ越し予定がある場合は、現住所ではなく、保育開始時に住む自治体の制度を確認します。
 
@@ -72,6 +109,37 @@ related_articles: ["pregnancy-birth-germany","moving-checklist-germany"]
 ### 4. 必要な開始日を行政へ伝える
 
 希望先から断られたり返事がなかったりしても、それだけで行政側が家庭の需要を把握しているとは限りません。保育が必要な開始日、週の時間数、申込み済みの候補を整理し、担当窓口へ相談します。復職日が決まっている場合は、その根拠も添えます。
+
+## デュッセルドルフとErkrathの申込みを分ける
+
+| 居住地・保育の種類 | 入口 | 登録後に確認すること |
+| --- | --- | --- |
+| デュッセルドルフの施設保育 | 市の[Kita-Navigator案内](https://www.duesseldorf.de/familie/kinderbetreuung/kita-navigator)から家族アカウントを作り、希望園を登録 | 登録は待機リストへの事前登録。園からの連絡を確認し、提示された返答・契約期限を守る。困ったら市の家族相談窓口へ |
+| デュッセルドルフの家庭的保育 | 市の[家庭的保育案内](https://www.duesseldorf.de/familie/kinderbetreuung/kindertagespflege)にある需要申告と相談窓口 | 施設保育の登録だけで済ませず、保育需要を別途申告。紹介・相談、利用時間、費用の手続きを確認 |
+| Erkrathの施設保育 | [市青少年局の登録案内](https://www.guterstart.nrw.de/fhiangebot/details/id/135490)からmykitaVMへ | 希望順位を登録し、第一希望園で対面確認を行う。オンライン入力だけで申込みを終えず、当年度の日程を園・市に確認 |
+| Erkrathの家庭的保育 | [市の家庭的保育窓口](https://mykitavm.trinuts.de/mykitavm/erkrath/institution/detail/1192/)で需要を相談 | 自分で保育者を見つけても登録・相談が必要。保護者と保育者が署名した利用助成申請を市の青少年福祉局へ提出 |
+
+**デュッセルドルフで待機を続ける場合は、登録の更新にも注意します。** 市の案内では、翌保育年度の入園を希望し、まだ枠が決まっていない家庭は、7月30日までに保護者用ログインなどで待機登録を更新する必要があります。希望年度がさらに先の場合は扱いが異なります。園や市から届く当年度の通知を確認し、前年のカレンダーをそのまま使わないでください。
+
+## 必要情報・書類は、提出する段階ごとにそろえる
+
+全国共通の一式を最初からすべて提出するわけではありません。登録画面と窓口の指示を確認し、原本を求められているか、後で提出できるかも区別します。
+
+| 段階 | 手元に用意する情報・確認する書類 | 確認先 |
+| --- | --- | --- |
+| 需要申告・希望園の登録 | 子の氏名・生年月日、保護者の連絡先、現住所と転居予定、開始希望日、必要な曜日・時間 | 自治体ポータル・青少年福祉局 |
+| 1歳未満の利用条件の確認 | 就労・求職・就学などの該当理由と指定の証明。デュッセルドルフでは[1歳未満の利用要件の書式](https://www.duesseldorf.de/fileadmin/Amt51/Familie/Kita-Navigator/nachweis_u1_platzberechtigung.pdf)を確認 | 自治体の担当窓口 |
+| 入園案内・契約 | 子と保護者の情報、親権・送迎者・緊急連絡先など、園から指定された書類 | 決定した園・運営団体 |
+| 保育料・家庭的保育の助成 | 収入申告・証明、きょうだいや給付に関する資料など、指定されたもの。助成申請と保育契約の両方が必要か確認 | 自治体の保育料担当・家庭的保育窓口 |
+| 通い始める前 | 健康・アレルギー情報、予防接種や健診の記録など、園が確認する資料 | 園・保育者。必要に応じて小児科 |
+
+たとえばデュッセルドルフの[オンライン事前登録の案内](https://service.duesseldorf.de/suche/-/vr-bis-detail/dienstleistung/5237/show)では、その段階で必要な提出書類は「なし」とされています。これは、契約や保育料の申告、通い始めるときの証明まで不要という意味ではありません。
+
+## 枠が決まらないときと、決まった後
+
+枠が見つからないときは、申込日、開始希望日、必要な曜日・時間、候補園、返答をまとめ、担当局へ相談します。「登録されているか」「施設保育以外に紹介できる保育先はあるか」「次の連絡時期はいつか」を確認し、受付や返信を保存してください。NRWでは需要申告の受領を原則1か月以内に確認する規定がありますが、受領確認と入園決定は別です。
+
+案内を受けたら、返答、契約、費用、開始日・慣らし保育を順に確定します。開園時間と契約できる時間は同じとは限りません。週何時間かに加え、毎日の送迎時刻、休園日、家庭的保育者が休む日の代替体制も確認してください。
 
 ## 見学で感じ取りたいこと
 
@@ -102,6 +170,8 @@ related_articles: ["pregnancy-birth-germany","moving-checklist-germany"]
 ## 費用は自治体ごとに違う
 
 保護者負担は州と自治体、子どもの年齢、保育時間、世帯収入、きょうだいの有無などで変わります。食費や行事費が別になる施設もあります。ネット上の他都市の金額を当てはめず、居住地の料金表を確認してください。
+
+デュッセルドルフは[現行の料金表・申告書](https://www.duesseldorf.de/familie/kinderbetreuung/elternbeitrag)と、[2027年8月以降の案内](https://www.duesseldorf.de/familie/kinderbetreuung/elternbeitrag-2027)を分けて掲載しています。申込んだ日ではなく実際に利用する期間の規則を確認し、翌年度の制度を現在の費用に当てはめないようにします。保育料の免除と食費の免除も同じ扱いとは限りません。
 
 一定の公的給付を受ける家庭は、保育料の免除や軽減の対象になる場合があります。保育料を払うのが難しい場合も、申込みを諦める前に自治体へ相談します。
 

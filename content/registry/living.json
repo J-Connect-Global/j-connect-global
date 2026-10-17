@@ -31,9 +31,11 @@
       "分娩室",
       "付き添い"
     ],
-    "updated_at": "2026-10-12",
+    "updated_at": "2026-10-17",
     "related_articles": [
       "pregnancy-birth-germany",
+      "birth-procedures-germany",
+      "stroller-buying-guide-germany",
       "health-insurance-guide",
       "doctor-appointment-germany"
     ],
@@ -1842,7 +1844,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-10-12",
+    "updated_at": "2026-10-17",
     "last_verified": "2026-08-31",
     "tags": [
       "妊娠",
@@ -1860,10 +1862,11 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/pregnancy-birth-germany/",
     "related_articles": [
-      "health-insurance-guide",
+      "birth-day-germany",
+      "birth-procedures-germany",
+      "stroller-buying-guide-germany",
       "kita-u3-tagesmutter-guide",
-      "doctor-appointment-germany",
-      "stroller-buying-guide-germany"
+      "health-insurance-guide"
     ],
     "official_sources": [
       {
@@ -1885,24 +1888,25 @@
   },
   {
     "id": "L009",
-    "title": "ドイツの保育先探し｜施設保育と家庭的保育の違い",
+    "title": "ドイツのKita・U3申込み｜NRWの保育先・必要書類",
     "slug": "kita-u3-tagesmutter-guide",
     "category": "家族・子育て",
-    "summary": "ドイツの保育を、施設保育、家庭的保育、小規模共同保育の違いから解説。法的な利用権、探し方、慣らし保育、家庭に合う環境の見方を整理します。",
+    "summary": "ドイツの保育施設と家庭的保育の違い、NRWの原則6か月前の需要申告、デュッセルドルフ・Erkrathの申込み、必要情報・書類、入園決定と費用確認を整理します。",
     "url": "/germany/ja/living/kita-u3-tagesmutter-guide/",
     "markdown_path": "/content/living/kita-u3-tagesmutter-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-08-31",
+    "updated_at": "2026-10-17",
     "last_verified": "2026-08-31",
     "tags": [
       "保育施設",
       "3歳未満保育",
       "家庭的保育",
-      "青少年福祉局",
-      "子育て",
-      "保育"
+      "NRW",
+      "デュッセルドルフ",
+      "Erkrath",
+      "保育申込み"
     ],
     "home_visible": true,
     "home_order": 60,
@@ -1912,16 +1916,45 @@
     "canonical_url": "/germany/ja/living/kita-u3-tagesmutter-guide/",
     "related_articles": [
       "pregnancy-birth-germany",
+      "birth-procedures-germany",
       "moving-checklist-germany"
     ],
     "official_sources": [
       {
-        "title": "Familienportal - Kinderbetreuung",
-        "url": "https://familienportal.de/familienportal/lebenslagen/ausbildung-beruf/kinderbetreuung"
+        "title": "連邦社会法第8編第24条：保育を利用する権利",
+        "url": "https://www.gesetze-im-internet.de/sgb_8/__24.html"
       },
       {
-        "title": "Familienportal - Kindertagespflege",
-        "url": "https://familienportal.de/familienportal/lebenslagen/ausbildung-beruf/kinderbetreuung/was-ist-kindertagespflege--125528"
+        "title": "NRW州保育法：2026年8月施行版・第5条の需要申告",
+        "url": "https://recht.nrw.de/lrgv/gesetz/01082026-gesetz-zur-fruehen-bildung-und-foerderung-von-kindern-kinderbildungsgesetz/"
+      },
+      {
+        "title": "デュッセルドルフ市：Kita-Navigatorと入園手順",
+        "url": "https://www.duesseldorf.de/familie/kinderbetreuung/kita-navigator"
+      },
+      {
+        "title": "デュッセルドルフ市：家庭的保育の需要申告",
+        "url": "https://www.duesseldorf.de/familie/kinderbetreuung/kindertagespflege"
+      },
+      {
+        "title": "デュッセルドルフ市：1歳未満の利用要件の証明",
+        "url": "https://www.duesseldorf.de/fileadmin/Amt51/Familie/Kita-Navigator/nachweis_u1_platzberechtigung.pdf"
+      },
+      {
+        "title": "NRW家族ポータル・Erkrath市青少年局：保育園の登録",
+        "url": "https://www.guterstart.nrw.de/fhiangebot/details/id/135490"
+      },
+      {
+        "title": "Erkrath市公式保育ポータル：家庭的保育の申請",
+        "url": "https://mykitavm.trinuts.de/mykitavm/erkrath/institution/detail/1192/"
+      },
+      {
+        "title": "デュッセルドルフ市：現行の保育料と料金表",
+        "url": "https://www.duesseldorf.de/familie/kinderbetreuung/elternbeitrag"
+      },
+      {
+        "title": "デュッセルドルフ市：2027年8月以降の保育料案内",
+        "url": "https://www.duesseldorf.de/familie/kinderbetreuung/elternbeitrag-2027"
       }
     ],
     "disclaimer_type": "family_administrative",
@@ -1930,7 +1963,9 @@
       "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-31",
       "next_review_due": "2026-11-30"
-    }
+    },
+    "image_url": "/assets/images/living/childcare-first-visit-editorial-v1.webp",
+    "image_alt": "保育施設を家族で訪れ、保育者と子どもの様子を確認するイメージ"
   },
   {
     "id": "L010",
@@ -2539,7 +2574,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-11",
-    "updated_at": "2026-10-11",
+    "updated_at": "2026-10-17",
     "last_verified": "2026-10-11",
     "home_visible": true,
     "home_order": 15,
@@ -2564,6 +2599,7 @@
     ],
     "related_articles": [
       "pregnancy-birth-germany",
+      "birth-day-germany",
       "germany-train-travel-guide",
       "kita-u3-tagesmutter-guide"
     ],
@@ -2635,7 +2671,7 @@
       "パスポート",
       "NRW"
     ],
-    "updated_at": "2026-10-12",
+    "updated_at": "2026-10-17",
     "related_articles": [
       "pregnancy-birth-germany",
       "birth-day-germany",
@@ -2750,6 +2786,10 @@
       {
         "title": "外務省：在留届に出生した子どもを追加する方法",
         "url": "https://www.ezairyu.mofa.go.jp/RRnet/faq.html"
+      },
+      {
+        "title": "BIÖG：小児健診U2と退院後の予約",
+        "url": "https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u2-untersuchung/"
       },
       {
         "title": "BIÖG：小児健診U3",

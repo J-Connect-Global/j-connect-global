@@ -8,13 +8,13 @@ summary: "ドイツの病院で出産する日の流れを日本語の図で確�
 status: "published"
 published: true
 published_at: "2026-10-11"
-updated_at: "2026-10-12"
+updated_at: "2026-10-17"
 last_verified: "2026-10-11"
 next_review: "2027-01-11"
 canonical_url: "/germany/ja/living/birth-day-germany/"
 image: "/assets/img/living/pregnancy-birth-germany.webp"
 image_alt: "赤ちゃんの衣類と持ち物を用意して出産に備える妊婦"
-related_articles: ["pregnancy-birth-germany","health-insurance-guide","doctor-appointment-germany"]
+related_articles: ["pregnancy-birth-germany","birth-procedures-germany","stroller-buying-guide-germany","health-insurance-guide","doctor-appointment-germany"]
 official_sources:
   - title: "ドイツ連邦保健ポータル：出産の流れ"
     url: "https://gesund.bund.de/geburt"
@@ -31,6 +31,8 @@ official_sources:
 # ドイツの出産当日ガイド｜陣痛・破水から赤ちゃん誕生まで
 
 ドイツの病院で出産する日は、症状に気づいて連絡するところから、母体と赤ちゃんの産後の観察まで続きます。このページは、出産する本人と付き添いの人が「今は誰に連絡し、何を伝えるか」を共有するための日本語ガイドです。一般的な病院出産を扱い、病院・助産師から受けた個別の指示を優先します。
+
+出産前の医療・施設選びは[妊娠・出産の全体ガイド](/germany/ja/living/pregnancy-birth-germany/)、出生登録・保険・給付は[出生後の手続きガイド](/germany/ja/living/birth-procedures-germany/)へ進んでください。[家族・子育ての案内](/germany/ja/living/routes/family/)から時期別にも選べます。
 
 ## まず連絡先を確認する
 

@@ -7,7 +7,7 @@ summary: "ドイツで出産準備をする家庭向けに、ベビーカー5点
 status: "published"
 published: true
 published_at: "2026-10-11"
-updated_at: "2026-10-11"
+updated_at: "2026-10-17"
 last_verified: "2026-10-11"
 next_review: "2027-01-11"
 canonical_url: "/germany/ja/living/stroller-buying-guide-germany/"
@@ -15,7 +15,7 @@ tags: ["ベビーカー","出産準備","5点セット","チャイルドシー�
 image_url: "/assets/images/living/stroller-germany-thumbnail.webp"
 image_caption: "AI生成のイメージ画像。実在する製品や使用実績を示すものではありません。"
 image_alt: "緑豊かなドイツの公園の小道に置かれたベージュのベビーカー"
-related_articles: ["pregnancy-birth-germany","germany-train-travel-guide","kita-u3-tagesmutter-guide"]
+related_articles: ["pregnancy-birth-germany","birth-day-germany","germany-train-travel-guide","kita-u3-tagesmutter-guide"]
 official_sources:
   - title: "BIÖG：ベビーカーの安全チェックリスト"
     url: "https://www.kindergesundheit-info.de/fileadmin/user_upload/kindergesundheit-info.de/Download/Unfallverhuetung/Checklisten_Kindersicherheit/Checkliste-Kinderwagen_BIOEG_kindergesundheit-info.pdf"
@@ -36,6 +36,8 @@ official_sources:
 # ドイツのベビーカーの選び方｜5点セット・車との適合・購入チェック
 
 ドイツでベビーカーを選ぶときは、ブランドやセットの点数よりも、**新生児が寝られる場所、自宅での保管・持ち運び、車への取り付け**を先に確認すると選びやすくなります。この記事は、出産準備をする日本人家庭に向けて、よくある「5点セット」の役割と、生活に合う一台を選ぶ手順を説明します。散歩、買い物、通院をどう組み合わせるかを整理し、購入前に必要な部品と適合を確認できるようにします。
+
+出産準備全体は[妊娠・出産のガイド](/germany/ja/living/pregnancy-birth-germany/)、入院前に確認する移動と持ち物は[出産当日ガイド](/germany/ja/living/birth-day-germany/)も併せて確認してください。[家族・子育ての案内](/germany/ja/living/routes/family/)に時期別の入口をまとめています。
 
 ## まず結論：散歩用と車用を分けて考える
 

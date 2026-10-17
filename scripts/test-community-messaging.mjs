@@ -216,3 +216,7 @@ runtime.advanceTime(31*24*60*60*1000);assert(!call('communityGetReply',{id:rid,s
 const reports=runtime.spreadsheet.getSheetByName('Community Message Reports');reports.appendRow([]);const gap=c.cmAppend_('reports',{report_id:'gap-report',reason:'=SUM(1,2)'});gap.reason='+test';c.cmSave_('reports',gap);assert(c.cmFind_('reports','report_id','gap-report').reason==='+test','Blank sheet row corrupts write.');assert(reports.rows.at(-1)[4]==="'+test",'Spreadsheet formula not escaped.');
 assert(!call('communityGetConversation',{id:cid,session:guest.session},false).ok,'GET private history accepted.');
 console.log('Community messaging: verification, repeated conversations, isolation, moderation, abuse controls and notification retries passed.');
+
+const manifest = JSON.parse(fs.readFileSync(path.join(root, 'apps-script/appsscript.json'), 'utf8'));
+assert(manifest.oauthScopes.length === 4 && manifest.oauthScopes.every(scope => /^https:\/\/www\.googleapis\.com\/auth\/(?:spreadsheets|drive|script\.external_request|script\.scriptapp)$/.test(scope)), 'Manifest requests an unexpected account permission.');
+assert(manifest.runtimeVersion === 'V8' && manifest.webapp.executeAs === 'USER_DEPLOYING' && manifest.webapp.access === 'ANYONE_ANONYMOUS', 'Manifest changes the existing web-app execution or access policy.');

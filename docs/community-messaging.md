@@ -9,6 +9,7 @@
 1. `apps-script/community-board-api.gs`（既存ファイルを更新）
 2. `apps-script/zoho-mail.gs`（既存のメール処理を維持）
 3. `apps-script/community-messaging.gs`（追加）
+4. `apps-script/appsscript.json`（マニフェスト。既存のタイムゾーン・公開設定を保ち、`oauthScopes`を明示）
 
 `doGet`、`doPost`、`onOpen`を別途増やさず、既存のScript PropertiesとデプロイURLを維持してください。IDや認証情報をリポジトリ、画面、ログにコピーしません。
 
@@ -25,6 +26,10 @@
 これらのシートを「ウェブに公開」したり、公開用データ同期へ追加したりしないでください。公開JSONには、承認・メール確認済みの返信の明示した公開項目のみを、元の公開質問に入れます。
 
 **Deploy → Manage deployments → Edit → New version** で、既存Webアプリのバージョンを更新します。別のWebアプリを新規作成する必要はありません。既存の5分トリガー `processWaitingCommunityApprovalNotifications` は通知の再試行も実行します。
+
+## Googleの実行権限
+
+マニフェストでは、投稿画像の既存Drive処理、Spreadsheetの読み書き、Zohoなどへの外部HTTP通信、既存の時間トリガー管理に必要な4スコープだけを指定します。Googleのメールサービスへのアクセス権は要求しません。Googleはコード中のコメントからも権限を自動推定する場合があるため、マニフェストを含めて反映してください。メールは引き続きZoho Mailで処理します。
 
 ## 利用の流れ
 

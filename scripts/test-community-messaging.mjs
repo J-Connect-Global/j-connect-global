@@ -7,6 +7,38 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const gas = fs.readFileSync(path.join(root, "apps-script/community-board-api.gs"), "utf8");
 
+// Exercise the real transport with the existing Zoho Mail /api base-path format.
+{
+  const requests = [];
+  const properties = {
+    JCONNECT_PUBLIC_EMAIL: 'contact@j-connect-global.com',
+    JCONNECT_ADMIN_EMAIL: 'contact@j-connect-global.com',
+    ZOHO_ACCOUNT_ID: 'synthetic-account',
+    ZOHO_ACCOUNTS_BASE_URL: 'https://accounts.zoho.eu/',
+    ZOHO_MAIL_API_BASE_URL: 'https://mail.zoho.eu/api/',
+    ZOHO_CLIENT_ID: 'synthetic-client', ZOHO_CLIENT_SECRET: 'synthetic-secret',
+    ZOHO_REFRESH_TOKEN: 'synthetic-refresh'
+  };
+  const transport = vm.createContext({
+    console,
+    PropertiesService: { getScriptProperties: () => ({ getProperty: name => properties[name] }) },
+    CacheService: { getScriptCache: () => ({ get: () => null, put: () => {} }) },
+    UrlFetchApp: { fetch: (url, options) => {
+      requests.push({ url, options });
+      return { getResponseCode: () => 200, getContentText: () => JSON.stringify({ access_token: 'synthetic-access', expires_in: 3600 }) };
+    } }
+  });
+  vm.runInContext(fs.readFileSync(path.join(root, 'apps-script/zoho-mail.gs'), 'utf8'), transport);
+  transport.sendZohoEmail_({ to: 'reader@example.com', subject: 'Synthetic test', body: 'Hello' });
+  assert(requests[0].url === 'https://accounts.zoho.eu/oauth/v2/token', 'Zoho authentication URL changed.');
+  assert(requests[1].url === 'https://mail.zoho.eu/api/accounts/synthetic-account/messages', 'Zoho Mail /api base path was lost.');
+  for (const invalid of ['http://mail.zoho.eu/api', 'https://mail.zoho.eu/api?token=x', 'https://mail.zoho.eu/api#secret', 'https://mail.zoho.eu/other']) {
+    let rejected = false;
+    try { transport.normalizeZohoBaseUrl_(invalid); } catch { rejected = true; }
+    assert(rejected, 'Invalid Zoho URL was accepted.');
+  }
+}
+
 function assert(condition, message) {
   if (!condition) throw new Error(message);
 }

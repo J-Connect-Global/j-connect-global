@@ -41,7 +41,7 @@ function validateJConnectEmailConfiguration_() {
 
 function normalizeZohoBaseUrl_(value) {
   const normalized = String(value || '').trim().replace(/\/+$/, '');
-  if (!/^https:\/\/[a-z0-9.-]+$/i.test(normalized)) {
+  if (!/^https:\/\/[a-z0-9.-]+(?:\/api)?$/i.test(normalized)) {
     throw new Error('INVALID_ZOHO_BASE_URL');
   }
   return normalized;

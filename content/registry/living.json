@@ -1603,19 +1603,19 @@
   },
   {
     "id": "L004",
-    "title": "ドイツで賃貸を探す｜応募、内見、契約の全体ガイド",
+    "title": "ドイツの賃貸・家探し｜必要書類・内見・契約・敷金",
     "slug": "rent-apartment-germany",
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
-    "image_alt": "German housing guide cards",
+    "image_alt": "明るい住居の机に置かれた鍵、間取り図、ノートパソコン",
     "category": "住まい・契約",
-    "summary": "ドイツで賃貸住宅を探す流れを、予算、応募書類、内見、契約、敷金、詐欺対策、入居時の記録まで日本語で解説します。",
+    "summary": "ドイツの賃貸・家探しを日本語で解説。応募書類の取得先と提出時期、家賃の内訳、内見、契約、敷金の上限・分割払い、詐欺対策、入居後の手続きをまとめます。",
     "url": "/germany/ja/living/rent-apartment-germany/",
     "markdown_path": "/content/living/rent-apartment-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-08-31",
-    "last_verified": "2026-08-31",
+    "updated_at": "2026-10-17",
+    "last_verified": "2026-10-17",
     "tags": [
       "賃貸",
       "家探し",
@@ -1637,35 +1637,47 @@
     ],
     "official_sources": [
       {
-        "title": "Gesetze im Internet - BGB Section 535 Mietvertrag",
-        "url": "https://www.gesetze-im-internet.de/bgb/__535.html"
+        "title": "ドイツ民法551条：敷金の上限と分割払い",
+        "url": "https://www.gesetze-im-internet.de/bgb/__551.html"
       },
       {
-        "title": "Verbraucherzentrale - Mietvertrag und Wohnungssuche",
-        "url": "https://www.verbraucherzentrale.de/laura-zieht-aus/mietvertrag"
+        "title": "ドイツ民法573c条：通常解約の期限",
+        "url": "https://www.gesetze-im-internet.de/bgb/__573c.html"
+      },
+      {
+        "title": "データ保護監督当局：賃貸応募者の情報取得（2026年版）",
+        "url": "https://datenschutz.hessen.de/sites/datenschutz.hessen.de/files/2026-06/oh_einholung_von_selbstauskuenften_mietinteressenten_01_2026.pdf"
+      },
+      {
+        "title": "連邦登録法19条：入居確認書",
+        "url": "https://www.gesetze-im-internet.de/bmg/__19.html"
+      },
+      {
+        "title": "デュッセルドルフ市：市内転居の住所変更",
+        "url": "https://service.duesseldorf.de/suche/-/vr-bis-detail/dienstleistung/208/show"
       }
     ],
     "disclaimer_type": "housing",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-31",
-      "next_review_due": "2026-11-30"
+      "last_reviewed_at": "2026-10-17",
+      "next_review_due": "2027-01-17"
     }
   },
   {
     "id": "L005",
-    "title": "ドイツの信用情報SCHUFAとは？賃貸提出用と無料の自己確認用",
+    "title": "SCHUFAの取得方法｜賃貸用証明・無料データ・新スコア",
     "slug": "schufa-guide",
     "category": "住まい・契約",
-    "summary": "ドイツの信用情報機関SCHUFAについて、賃貸で求められる理由、相手へ渡す証明と自分で確認する無料データの違い、渡独直後の代替書類を説明します。",
+    "summary": "SCHUFAの取得方法と書類の選び方を日本語で解説。賃貸提出用の信用証明、無料データコピー、無料アカウント、2026年の新スコア、履歴がない場合の代替資料を整理します。",
     "url": "/germany/ja/living/schufa-guide/",
     "markdown_path": "/content/living/schufa-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-03-10",
-    "updated_at": "2026-08-30",
-    "last_verified": "2026-08-30",
+    "updated_at": "2026-10-17",
+    "last_verified": "2026-10-17",
     "tags": [
       "信用情報",
       "SCHUFA",
@@ -1687,23 +1699,27 @@
     "official_sources": [
       {
         "title": "SCHUFA：無料の個人データコピー",
-        "url": "https://www.schufa.de/datenkopie"
+        "url": "https://www.meineschufa.de/service/datenkopie"
       },
       {
         "title": "SCHUFA：賃貸などへ提出する信用証明",
-        "url": "https://www.schufa.de/"
+        "url": "https://www.meineschufa.de/produkte"
       },
       {
-        "title": "SCHUFA：個人データコピーを賃貸提出に使わない理由",
-        "url": "https://www.schufa.de/en/newsroom/schufa/schufa-data-copy-according-art-15-gdpr/index.jsp"
+        "title": "SCHUFA：無料アカウントと新スコア",
+        "url": "https://www.schufa.de/scoring-daten/schufa-score-kostenlos/"
+      },
+      {
+        "title": "データ保護監督当局：賃貸応募者の情報取得（2026年版）",
+        "url": "https://datenschutz.hessen.de/sites/datenschutz.hessen.de/files/2026-06/oh_einholung_von_selbstauskuenften_mietinteressenten_01_2026.pdf"
       }
     ],
     "disclaimer_type": "finance_contract",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-30",
-      "next_review_due": "2026-11-30"
+      "last_reviewed_at": "2026-10-17",
+      "next_review_due": "2027-01-17"
     },
     "image_alt": "ドイツの賃貸応募に使う信用証明と自己確認用データの違いを示す図"
   },
@@ -1921,14 +1937,14 @@
     "title": "ドイツの引っ越しチェックリスト｜退去・入居・住所変更の順番",
     "slug": "moving-checklist-germany",
     "category": "住まい・手続き",
-    "summary": "ドイツ国内の引っ越しで何をいつ行うかをチェックリストに整理。退去・鍵の引渡し、住民登録、住所変更、電気・通信に加え、粗大ごみと新居のごみ収集の確認まで案内します。",
+    "summary": "ドイツの引っ越し手続きを時系列で確認。旧居の解約形式と期限、引渡し記録、住所変更先と必要書類、住民登録、電気・通信、敷金精算を日本語で整理します。",
     "url": "/germany/ja/living/moving-checklist-germany/",
     "markdown_path": "/content/living/moving-checklist-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-09-28",
-    "last_verified": "2026-08-31",
+    "updated_at": "2026-10-17",
+    "last_verified": "2026-10-17",
     "tags": [
       "引っ越し",
       "住所変更",
@@ -1949,13 +1965,46 @@
       "electricity-internet-contracts-germany",
       "germany-waste-sorting-guide"
     ],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "ドイツ民法568条：住宅賃貸の解約形式",
+        "url": "https://www.gesetze-im-internet.de/bgb/__568.html"
+      },
+      {
+        "title": "ドイツ民法573c条：通常解約の期限",
+        "url": "https://www.gesetze-im-internet.de/bgb/__573c.html"
+      },
+      {
+        "title": "連邦登録法17条：住所登録の期限",
+        "url": "https://www.gesetze-im-internet.de/bmg/__17.html"
+      },
+      {
+        "title": "連邦登録法19条：入居確認書",
+        "url": "https://www.gesetze-im-internet.de/bmg/__19.html"
+      },
+      {
+        "title": "連邦ネットワーク庁：電力会社の切替えと転居",
+        "url": "https://www.bundesnetzagentur.de/DE/Vportal/Energie/KuendigungLieferantenwechsel/Lieferantenwechsel/start.html"
+      },
+      {
+        "title": "連邦ネットワーク庁：通信契約の引っ越し",
+        "url": "https://www.bundesnetzagentur.de/DE/Vportal/TK/InternetTelefon/Wechsel/artikel.html"
+      },
+      {
+        "title": "デュッセルドルフ市：市内転居の住所変更",
+        "url": "https://service.duesseldorf.de/suche/-/vr-bis-detail/dienstleistung/208/show"
+      },
+      {
+        "title": "デュッセルドルフ市：市外からの住所登録",
+        "url": "https://service.duesseldorf.de/suche/-/vr-bis-detail/dienstleistung/227/show"
+      }
+    ],
     "disclaimer_type": "administrative",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-31",
-      "next_review_due": "2026-11-30"
+      "last_reviewed_at": "2026-10-17",
+      "next_review_due": "2027-01-17"
     }
   },
   {

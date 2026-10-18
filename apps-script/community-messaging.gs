@@ -76,7 +76,7 @@ function cmFind_(kind, key, value) {
 }
 
 function cmId_(prefix) { return prefix + '-' + Utilities.getUuid(); }
-function cmNow_() { return new Date().toISOString(); }
+function cmNow_() { return nowIso_(); }
 function cmNickname_(value) { const text = String(value || '').trim().slice(0, 60); return /@|[?&#](?:access|token|session)=/i.test(text) ? '参加者' : text || '参加者'; }
 function cmEmail_(value) { return String(value || '').trim().toLowerCase(); }
 function cmValidId_(value) { return /^[A-Za-z0-9][A-Za-z0-9_-]{0,159}$/.test(String(value || '')); }
@@ -146,7 +146,7 @@ function cmLink_(jobs, email, purpose, target, kind, id, queued, sourceId) {
   const raw = randomToken_(32);
   cmAppend_('access', {
     access_id: cmId_('access'), token_hash: sha256Hex_(raw), purpose, target_id: target,
-    expires_at: new Date(Date.now() + CM_HOUR).toISOString(), consumed_at: '', created_at: cmNow_()
+    expires_at: berlinTimestamp_(new Date(Date.now() + CM_HOUR)), consumed_at: '', created_at: cmNow_()
   });
   // Fragment is never sent in a web request or a referrer. No recipient address
   // or message content is included in another participant's notification.
@@ -169,7 +169,7 @@ function cmNotice_(jobs, subject, body, email) {
 function cmSession_(kind, row, scope) {
   const raw = randomToken_(32);
   row.session_hash = sha256Hex_(raw);
-  row.session_expires_at = new Date(Date.now() + CM_SESSION_LIFETIME).toISOString();
+  row.session_expires_at = berlinTimestamp_(new Date(Date.now() + CM_SESSION_LIFETIME));
   cmSave_(kind, row);
   return { ok: true, success: true, scope, id: scope === 'reply' ? row.reply_id : row.conversation_id, session: raw };
 }
@@ -260,7 +260,7 @@ function cmCreateConversation_(params, jobs) {
   const owner = cmAppend_('participants', { participant_id: cmId_('participant'), conversation_id: id, role: 'owner', nickname: cmNickname_(reply ? reply.nickname : post.nickname || '元の投稿者'), email_private: ownerEmail });
   const session = sha256Hex_(params.creation_key + ':' + id);
   const guest = cmAppend_('participants', { participant_id: cmId_('participant'), conversation_id: id, role: 'inquirer', nickname: cmNickname_(form.nickname), email_private: form.email,
-    session_hash: sha256Hex_(session), session_expires_at: new Date(Date.now() + CM_SESSION_LIFETIME).toISOString(), verified_at: '' });
+    session_hash: sha256Hex_(session), session_expires_at: berlinTimestamp_(new Date(Date.now() + CM_SESSION_LIFETIME)), verified_at: '' });
   cmAppend_('messages', { message_id: cmId_('message'), conversation_id: id, participant_id: guest.participant_id, body: form.body, created_at: cmNow_(), request_id: form.request_id });
   cmLink_(jobs, owner.email_private, 'conversation_login', owner.participant_id, 'conversation', id);
   cmLink_(jobs, form.email, 'conversation_login', guest.participant_id, 'conversation', id);
@@ -530,7 +530,7 @@ function cmDeliver_(jobs) {
         notification.status = 'sent';
       } catch (error) { delivered = false; console.warn('Community notification delivery will be retried.'); }
       notification.attempts = String(Number(notification.attempts || 0) + 1);
-      notification.next_attempt_at = new Date(Date.now() + Math.min(24, Math.pow(2, Number(notification.attempts))) * CM_HOUR).toISOString();
+      notification.next_attempt_at = berlinTimestamp_(new Date(Date.now() + Math.min(24, Math.pow(2, Number(notification.attempts))) * CM_HOUR));
       cmSave_('notifications', notification);
     });
   } finally { if (lock.hasLock()) lock.releaseLock(); }

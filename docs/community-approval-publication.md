@@ -34,6 +34,7 @@
 
 ## 安全性とトラブル対応
 
+- 管理日時は `Europe/Berlin` のISO形式で記録します。夏は `2026-10-18T09:22:05.298+02:00`、冬は `+01:00` となり、タイムゾーンのない日時や固定の2時間加算は使いません。既存記録は、最新版を保存後にApps Scriptから `useBerlinManagementTimestamps` を1回実行して変換できます。この処理は `created_at` を持つ表の `_at` 列だけを対象とし、数式・日付のみの項目・本文・履歴JSONは変更せず、メールも送信しません。同じ処理の再実行で時刻がずれることはありません。新規投稿と会話にも適用するため、既存Webアプリを新バージョンへ更新します。
 - IDのある投稿行を選択しても「ヘッダー行、空行、IDのない行は処理できません」と出る場合は、Master GAS側の `getSpreadsheet_` を最新版へ更新して保存してください。同じIDのSpreadsheetを画面で開いている場合はそのアクティブオブジェクトを使い、`openById` で開き直して選択行を失わないようにしています。メニュー操作は保存済みコードを使うため、この修正だけならWebアプリの再デプロイは不要です。行全体の選択でも単一セルの選択でも利用できます。
 - `pending`, `rejected`, `hidden`, `deleted`, `spam` などは公開されず、公開同期の対象は厳密に `status=active` だけです。
 - `contact_email_private`, `contact_email`, `contact_name`, 管理トークン、審査列、`submission_key` は公開JSONへ出力しません。公開応募先メールが必要な求人は、データ元で `application_email` / `public_email` など明示的な公開列を使用します。

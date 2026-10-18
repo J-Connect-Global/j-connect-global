@@ -459,7 +459,58 @@ function writeExistingFields_(context, rowNumber, updates) {
 }
 
 function nowIso_() {
-  return new Date().toISOString();
+  return berlinTimestamp_(new Date());
+}
+
+function berlinTimestamp_(date) {
+  // Keep an explicit offset so parsing, expiry checks and sorting retain the
+  // same instant through both summer time (+02:00) and winter time (+01:00).
+  return Utilities.formatDate(date, 'Europe/Berlin', "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+    .replace(/([+-]\d{2})(\d{2})$/, '$1:$2');
+}
+
+function previewBerlinManagementTimestamps() {
+  return useBerlinManagementTimestamps(true);
+}
+
+function useBerlinManagementTimestamps(dryRun) {
+  const lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+  try {
+    const spreadsheet = getSpreadsheet_();
+    if (dryRun !== true) spreadsheet.setSpreadsheetTimeZone('Europe/Berlin');
+    let changed = 0;
+    const sheets = [];
+    spreadsheet.getSheets().forEach((sheet) => {
+      let sheetChanges = 0;
+      const range = sheet.getDataRange();
+      const values = range.getValues();
+      const formulas = range.getFormulas();
+      const headerIndex = values.slice(0, 5).findIndex((row) => row.some((cell) => String(cell).trim() === 'created_at'));
+      if (headerIndex < 0) return;
+      values[headerIndex].forEach((header, column) => {
+        if (!/_at$/.test(String(header).trim())) return;
+        for (let row = headerIndex + 1; row < values.length; row += 1) {
+          const value = values[row][column];
+          if (formulas[row][column] || !value) continue;
+          if (!(value instanceof Date) && !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:?\d{2})$/.test(String(value))) continue;
+          const date = new Date(value);
+          if (!Number.isFinite(date.getTime())) continue;
+          const formatted = berlinTimestamp_(date);
+          if (formatted === value) continue;
+          if (dryRun !== true) sheet.getRange(row + 1, column + 1).setValue(formatted);
+          changed += 1;
+          sheetChanges += 1;
+        }
+      });
+      if (sheetChanges) sheets.push({ name: sheet.getName(), cells: sheetChanges });
+    });
+    const result = { ok: true, changed, sheets, dryRun: dryRun === true, timeZone: 'Europe/Berlin' };
+    console.info(JSON.stringify(result));
+    return result;
+  } finally {
+    if (lock.hasLock()) lock.releaseLock();
+  }
 }
 
 function normalizeStatus_(value) {

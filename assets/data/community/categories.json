@@ -1,11 +1,12 @@
 {
   "api_version": "2026-07-13.1",
   "source": "master-gas:community",
-  "count": 5,
+  "count": 6,
   "groups": [
     {
       "field": "category1",
       "values": [
+        "アルバイト",
         "質問",
         "譲ります"
       ]
@@ -14,6 +15,7 @@
       "field": "category2",
       "values": [
         "ビザ・滞在許可",
+        "リモート",
         "家具・家電",
         "生活一般"
       ]
@@ -22,7 +24,8 @@
       "field": "city",
       "values": [
         "-",
-        "デュッセルドルフ周辺"
+        "デュッセルドルフ周辺",
+        "ドイツ国内全地域"
       ]
     },
     {
@@ -32,5 +35,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-13T21:48:07.234Z"
+  "generated_at": "2026-10-18T09:02:14.736Z"
 }

@@ -1,3 +1,4 @@
+import fs from "node:fs/promises";
 import { expect, test } from "@playwright/test";
 import {
   activateDarkMode,
@@ -8,6 +9,7 @@ import {
   openDataRoute
 } from "./support.mjs";
 
+const vocabulary = JSON.parse(await fs.readFile(new URL('../../assets/data/learn-german/flashcards/decks.json', import.meta.url), 'utf8'));
 const decksPath = "/assets/data/learn-german/flashcards/decks.json";
 const a1CardsPath = "/assets/data/learn-german/flashcards/cards-a1.json";
 
@@ -62,7 +64,7 @@ test("mobile flashcard keeps progress, card, and primary controls readable at 36
   await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(50);
   expect(await page.locator(".flashcards-inventory-table-wrap").evaluate(element => element.scrollWidth > element.clientWidth)).toBe(true);
   await expect(page.locator(".flashcards-study-target")).toBeVisible();
-  await expect(page.locator('[data-study-target-count="all"]')).toHaveText("650語");
+  await expect(page.locator('[data-study-target-count="all"]')).toHaveText(`${vocabulary.level_counts.A1}語`);
   await expect(page.locator("#flashcardsStart")).toHaveCSS("background-image", /linear-gradient/);
   const startBox = await page.locator("#flashcardsStart").boundingBox();
   const actionsBox = await page.locator(".flashcards-setup-actions").boundingBox();
@@ -93,4 +95,15 @@ test("mobile flashcard keeps progress, card, and primary controls readable at 36
   await activateDarkMode(page);
   await assertNoHorizontalOverflow(page);
   await assertRouteReady(page);
+});
+
+
+test("C2 contextual exercise stays readable on narrow screens", async ({ page }, testInfo) => {
+  await openDataRoute(page, '/germany/ja/learn-german/flashcards/?deck=c2-nuance-repertoire', [decksPath, '/assets/data/learn-german/flashcards/cards-c2.json']);
+  await page.locator("#flashcardsStart").click();
+  await expect(page.locator("#flashcardPractice")).toBeVisible();
+  await expect(page.locator("#flashcardBasisSummary")).toContainText("独自編集");
+  await assertNoHorizontalOverflow(page);
+  await page.locator("#flashcardsStudy").scrollIntoViewIfNeeded();
+  await page.screenshot({ path: testInfo.outputPath(`vocabulary-c2-context-${testInfo.project.name}.png`) });
 });

@@ -148,8 +148,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツ語暗記カード A1・A2・B1・B2・C1・C2・レベル別4,000語",
-    "description": "A1からC2まで、下位レベルと不要な固有名詞を除いて分けた合計4,000語の暗記カード。全カードに独日例文とドイツ語読み上げを用意しています。",
+    "title": "ドイツ語暗記カード A1・A2・B1・B2・C1・C2｜語彙と表現練習",
+    "description": "A1〜B1の資料掲載語と、B2〜C2の独自表現練習。分類根拠・収録数・独日例文を確認しながら、ブラウザで学べます。",
     "url": "/germany/ja/learn-german/flashcards/",
     "category": "ドイツ語・学び",
     "tags": [

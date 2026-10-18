@@ -262,7 +262,7 @@ if (selected.length < 9_900) {
 const payload = {
   schema_version: 1,
   generated_at: "2026-08-08",
-  methodology: "FreeDict German-Japanese headwords ranked by normalized frequency across three Leipzig Corpora Collection samples. CEFR bands are assigned later by the J-Connect generator; they are not official per-word labels.",
+  methodology: "FreeDict German-Japanese headwords ranked by normalized frequency across three Leipzig Corpora Collection samples. Frequency is not CEFR evidence. Publication and placement require separate explicit evidence; missing words are withheld rather than promoted.",
   licenses: [
     {
       source_id: "freedict-deu-jpn",

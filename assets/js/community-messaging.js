@@ -176,7 +176,6 @@
     if (initial.replyTo) { const found = replies.find(r => r.id === initial.replyTo); if (found) target.value = summary(found); }
     if (initial.visibility === 'private') { privateRadio.checked = true; publicRadio.checked = false; updateMode(); }
     status.textContent = closed ? 'この投稿は受付を終了しています。' : '受付状況を確認中…';
-    root.parentElement.querySelectorAll('[data-cm-private-for]').forEach(button => { if (button.dataset.cmPrivateFor === postId) button.addEventListener('click', () => choose(null, 'private')); });
     if (closed) return;
     try { await available(true); await refresh(); if (initial.replyTo) { const chosen = replies.find(r => r.id === initial.replyTo && !r.deleted); if (chosen) target.value = summary(chosen); } fieldset.disabled = false; password.input.disabled = privateRadio.checked; ready = true; status.textContent = ''; updateContext(); }
     catch (error) { status.textContent = error.message; }

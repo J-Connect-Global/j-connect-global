@@ -1442,9 +1442,6 @@
       const closedNotice = post._isClosed
         ? `<div class="closed-detail-notice" role="status"><strong>この投稿は募集終了しました。</strong><span>この投稿への新規問い合わせは現在できません。</span></div>`
         : "";
-      const contactAction = post._isClosed
-        ? `<span class="btn btn-primary is-disabled" aria-disabled="true">募集終了</span>`
-        : `<button class="btn btn-primary" type="button" data-cm-private-for="${escapeHtml(post._id)}">非公開で連絡する</button>`;
       const galleryHtml = `
           <div class="detail-gallery">
             <div class="detail-main-image" id="detailMainImage">
@@ -1491,7 +1488,6 @@
             <p class="detail-body">${escapeHtml(post._body || "詳細本文は未設定です。")}</p>
             <div data-cm-dynamic></div>
             <div class="detail-actions">
-              ${contactAction}
               <a class="btn btn-secondary" href="${escapeHtml(shareHref)}" target="_blank" rel="noopener noreferrer">新しいタブで詳細</a>
               <a class="btn btn-secondary" href="${escapeHtml(manageHref)}">投稿者管理</a>
               <button class="save-button inline ${saved ? "saved" : ""}" type="button" id="detailSaveButton" aria-pressed="${saved ? "true" : "false"}" aria-label="${saved ? "保存を解除" : "保存する"}">${saved ? "★ 保存済み" : "☆ 保存"}</button>

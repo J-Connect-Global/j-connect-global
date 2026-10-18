@@ -107,3 +107,27 @@ test("C2 contextual exercise stays readable on narrow screens", async ({ page },
   await page.locator("#flashcardsStudy").scrollIntoViewIfNeeded();
   await page.screenshot({ path: testInfo.outputPath(`vocabulary-c2-context-${testInfo.project.name}.png`) });
 });
+
+
+test("word audio and the default-OFF switch fit touch screens without flipping the card", async ({ page }, testInfo) => {
+  await installSpeechMock(page);
+  await openDataRoute(page, '/germany/ja/learn-german/flashcards/?deck=a1-life-basics', [decksPath,a1CardsPath]);
+  await page.locator('#flashcardsStart').tap();
+  const toggle=page.getByRole('switch',{name:'単語の自動読み上げ',exact:true});
+  await expect(toggle).not.toBeChecked();
+  await page.locator('#flashcardsSpeak').tap();
+  await expect(page.locator('#flashcardFlipControl')).toHaveAttribute('aria-pressed','false');
+  await expect(page.locator('#flashcardsSpeak')).toHaveAttribute('aria-pressed','true');
+  await toggle.check();
+  await expect(page.locator('#flashcardsAutoSpeakStatus')).toHaveText('ON');
+  await page.locator('#flashcardsNext').tap();
+  await expect(page.locator('#flashcardsPosition')).toHaveText('2 / 10');
+  await expect(page.locator('#flashcardsSpeak')).toHaveAttribute('aria-pressed','true');
+  await toggle.uncheck();
+  await expect(page.locator('#flashcardsSpeak')).toHaveAttribute('aria-pressed','false');
+  await assertNoHorizontalOverflow(page);
+  await page.locator('.flashcards-word-audio').scrollIntoViewIfNeeded();
+  await page.screenshot({path:testInfo.outputPath(`word-audio-default-off-${testInfo.project.name}.png`)});
+  await activateDarkMode(page);
+  await assertNoHorizontalOverflow(page);
+});

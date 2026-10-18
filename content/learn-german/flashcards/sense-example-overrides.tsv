@@ -1,4 +1,4 @@
-lemma	japanese	example_de	example_ja
+lemma	japanese	example_de	example_ja	learning_note
 Weg	道・通り道	Der Weg zum Bahnhof führt durch den Park.	駅へ向かう道は公園を通っています。
 Fest	祭り・祝祭	Am Wochenende feiern wir ein Fest im Dorf.	週末に村で祭りを開きます。
 Weiß	白色	Das Weiß der Wand wirkt im Sonnenlicht besonders hell.	壁の白色は日光の中で特に明るく見えます。
@@ -62,3 +62,5 @@ zweite	二番目の	Die zweite Aufgabe ist etwas schwieriger.	二番目の課題
 mitnehmen	持っていく・連れていく	Kannst du mich morgen zum Bahnhof mitnehmen?	明日、私を駅まで連れていってくれますか。
 türkisch	トルコの	Wir probieren heute ein türkisches Gericht.	今日はトルコ料理を一品試してみます。
 Rock	スカート	Sie trägt einen blauen Rock.	彼女は青いスカートをはいています。
+abfahren	出発する	Der Bus fährt gleich ab.	バスはまもなく出発します。	基本的な現在形で分離動詞 abfahren を練習します。fährt ... ab の語順を確認してください。
+vierundzwanzig	二十四	Der Tag hat vierundzwanzig Stunden.	一日は24時間です。	数詞 vierundzwanzig を、日常的な時間の表現の中で練習します。

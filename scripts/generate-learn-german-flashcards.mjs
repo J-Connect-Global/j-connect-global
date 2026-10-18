@@ -297,7 +297,7 @@ const sourcePayload = read('cefr-lexicon-source.json');
 const sourceByLemma = new Map(sourcePayload.entries.map(entry => [entry.lemma, entry]));
 const senseLines = fs.readFileSync(path.join(contentDir, 'sense-example-overrides.tsv'), 'utf8').trimEnd().split('\n').map(line => line.split('\t'));
 senseLines.shift();
-const senseOverrides = new Map(senseLines.map(([lemma, japanese, example_de, example_ja]) => [lemma, { japanese, example_de, example_ja }]));
+const senseOverrides = new Map(senseLines.map(([lemma, japanese, example_de, example_ja, learning_note]) => [lemma, { japanese, example_de, example_ja, learning_note }]));
 const originalById = new Map(Object.values(rawCards).flat().map(entry => [entry.id, entry]));
 const documents = new Map(evidence.documents.map(doc => [doc.source_id, doc]));
 // Reject incomplete or unsupported evidence rather than silently filling a level.
@@ -347,7 +347,7 @@ function legacyCard(row) {
     japanese:original?.japanese || senseOverride?.japanese || override(japaneseOverrides) || source.japanese,
     example_de:example.example_de, example_ja:example.example_ja,
     grammar:original?.grammar || source.grammar || {}, collocations:original?.collocations || [],
-    learning_note:original?.learning_note || (senseOverride ? '同綴りの別品詞・別語義を避け、この語義を使う独自例文に差し替えました。専門家の全件認定を意味しません。' : '辞書の語義と自動照合した対訳例文を参照できます。語義と例文の対応・詳しい語法は専門家による全件確認済みではありません。'),
+    learning_note:original?.learning_note || (senseOverride ? (senseOverride.learning_note || '同綴りの別品詞・別語義を避け、この語義を使う独自例文に差し替えました。専門家の全件認定を意味しません。') : '辞書の語義と自動照合した対訳例文を参照できます。語義と例文の対応・詳しい語法は専門家による全件確認済みではありません。'),
     related_terms:original?.related_terms || [],
     source_note:original ? 'J-Connect original example and explanation; CEFR placement uses the separately cited evidence.' : 'FreeDict/WikDict headword; example attribution is recorded separately. Explicit sense corrections use J-Connect original examples. Frequency is not used for CEFR placement.',
     source_refs:[...(original ? ['j-connect-original'] : ['freedict-deu-jpn', 'leipzig-corpora']), exampleSource.source_id, ...(decision.level ? ['goethe-'+decision.level.toLowerCase()] : [])].filter((id,index,all)=>all.indexOf(id)===index),

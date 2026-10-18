@@ -85,7 +85,7 @@ for (const card of cards) {
   } else assert.equal(card.example_source.source_id, 'j-connect-original');
 }
 // Explicit sense corrections must not regress to a case-insensitive homograph match.
-for (const [lemma, text] of [['Weg','Der Weg zum Bahnhof'], ['Schloss','Das alte Schloss'], ['Stimme','deine Stimme'], ['Fliege','Eine Fliege'], ['braun','Schuhe sind braun'], ['essen','Wir essen']]) {
+for (const [lemma, text] of [['abfahren','Der Bus fährt gleich ab.'], ['vierundzwanzig','Der Tag hat vierundzwanzig Stunden.'], ['Weg','Der Weg zum Bahnhof'], ['Schloss','Das alte Schloss'], ['Stimme','deine Stimme'], ['Fliege','Eine Fliege'], ['braun','Schuhe sind braun'], ['essen','Wir essen']]) {
   const card = cards.find(item => item.lemma === lemma);
   assert(card?.example_de.includes(text), `${lemma}: correct part of speech and sense`);
   assert.equal(card.example_source.source_id, 'j-connect-original');

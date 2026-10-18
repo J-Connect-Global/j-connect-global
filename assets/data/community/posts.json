@@ -31,7 +31,7 @@
       "image_url_3": "",
       "created_at": "2026-09-07T18:27:51.691Z",
       "published_at": "2026-10-18T07:22:05.298Z",
-      "updated_at": "2026-10-18T07:22:05.298Z",
+      "updated_at": "2026-10-18T09:44:22.009Z",
       "expires_at": "",
       "public_replies": [],
       "status": "active"
@@ -101,7 +101,44 @@
       "published_at": "2026-07-04T15:53:13.853Z",
       "updated_at": "2026-07-12T18:08:18.115Z",
       "expires_at": "",
-      "public_replies": [],
+      "public_replies": [
+        {
+          "id": "reply-cfb2e4e7-b20d-40e3-a0e1-9906190649ca",
+          "post_id": "post_79f6dfd5-86c4-4c68-bf50-f8a7a1993bfe",
+          "nickname": "テスト返信1",
+          "number": 1,
+          "deleted": false,
+          "body": "テスト返信1",
+          "reply_to_number": 0,
+          "reply_to": "",
+          "published_at": "2026-10-18T12:38:19.041Z",
+          "is_post_author": false
+        },
+        {
+          "id": "reply-3938bd9b-a60f-4fd8-be19-9d3a561a7b9f",
+          "post_id": "post_79f6dfd5-86c4-4c68-bf50-f8a7a1993bfe",
+          "nickname": "テスト返信2",
+          "number": 2,
+          "deleted": false,
+          "body": "Test 2",
+          "reply_to_number": 0,
+          "reply_to": "",
+          "published_at": "2026-10-18T12:38:41.507Z",
+          "is_post_author": false
+        },
+        {
+          "id": "reply-6b06fc0f-a1d5-4cc4-938c-1d4978fbf602",
+          "post_id": "post_79f6dfd5-86c4-4c68-bf50-f8a7a1993bfe",
+          "nickname": "テスト",
+          "number": 3,
+          "deleted": false,
+          "body": "Test 3 to 1",
+          "reply_to_number": 1,
+          "reply_to": "reply-cfb2e4e7-b20d-40e3-a0e1-9906190649ca",
+          "published_at": "2026-10-18T12:39:20.481Z",
+          "is_post_author": false
+        }
+      ],
       "status": "active"
     },
     {
@@ -205,15 +242,15 @@
     }
   ],
   "validation": {
-    "source_count": 7,
+    "source_count": 8,
     "explicitly_active_count": 6,
     "eligible_count": 6,
-    "excluded_count": 1,
+    "excluded_count": 2,
     "excluded_by_reason": {
-      "lifecycle_or_status": 1
+      "lifecycle_or_status": 2
     },
     "excluded_safe_ids": {},
     "generated_count": 6
   },
-  "generated_at": "2026-10-18T09:02:14.736Z"
+  "generated_at": "2026-10-18T13:30:46.301Z"
 }

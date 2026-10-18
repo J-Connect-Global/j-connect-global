@@ -45,4 +45,15 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run browser runtime smoke tests
+        env:
+          PLAYWRIGHT_OUTPUT_DIR: ${{ runner.temp }}/j-connect-browser-results
         run: npm run test:browser
+
+      - name: Save browser screenshots and failure traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-test-results
+          path: ${{ runner.temp }}/j-connect-browser-results
+          if-no-files-found: ignore
+          retention-days: 3

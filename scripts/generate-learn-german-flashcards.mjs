@@ -295,6 +295,9 @@ const legacy = read('legacy-card-index.json');
 const evidence = read('level-evidence.json');
 const sourcePayload = read('cefr-lexicon-source.json');
 const sourceByLemma = new Map(sourcePayload.entries.map(entry => [entry.lemma, entry]));
+const senseLines = fs.readFileSync(path.join(contentDir, 'sense-example-overrides.tsv'), 'utf8').trimEnd().split('\n').map(line => line.split('\t'));
+senseLines.shift();
+const senseOverrides = new Map(senseLines.map(([lemma, japanese, example_de, example_ja]) => [lemma, { japanese, example_de, example_ja }]));
 const originalById = new Map(Object.values(rawCards).flat().map(entry => [entry.id, entry]));
 const documents = new Map(evidence.documents.map(doc => [doc.source_id, doc]));
 // Reject incomplete or unsupported evidence rather than silently filling a level.
@@ -330,7 +333,8 @@ function legacyCard(row) {
   const original = originalById.get(id);
   const source = sourceByLemma.get(lemma);
   if (!original && !source) throw new Error(`Missing original source for ${id}: ${lemma}`);
-  const curatedExample = exampleOverrides.get(lemma) || exampleOverrides.get(lemma.toLocaleLowerCase('de-DE'));
+  const senseOverride = senseOverrides.get(lemma);
+  const curatedExample = senseOverride || exampleOverrides.get(lemma) || exampleOverrides.get(lemma.toLocaleLowerCase('de-DE'));
   const example = original || curatedExample || tatoebaExamples.get(lemma);
   if (!example?.example_de || !example?.example_ja) throw new Error(`Missing example pair: ${id}`);
   const exampleSource = original || curatedExample ? {source_id:'j-connect-original'} : {source_id:'tatoeba',sentence_id:example.tatoeba_sentence_id,translation_id:example.tatoeba_translation_id,license:'CC BY 2.0 FR'};
@@ -340,12 +344,12 @@ function legacyCard(row) {
     unit_type:original?.unit_type || (lemma.includes(' ') ? 'phrase' : 'word'), part_of_speech:pos,
     primary_level:decision.level, level_tags:decision.level ? [decision.level] : [],
     scene_tags:original?.scenes || ['general'], topic_tags:original?.scenes || ['general'],
-    japanese:original?.japanese || override(japaneseOverrides) || source.japanese,
+    japanese:original?.japanese || senseOverride?.japanese || override(japaneseOverrides) || source.japanese,
     example_de:example.example_de, example_ja:example.example_ja,
     grammar:original?.grammar || source.grammar || {}, collocations:original?.collocations || [],
-    learning_note:original?.learning_note || '辞書の語義と自動照合した対訳例文を参照できます。語義と例文の対応・詳しい語法は専門家による全件確認済みではありません。',
+    learning_note:original?.learning_note || (senseOverride ? '同綴りの別品詞・別語義を避け、この語義を使う独自例文に差し替えました。専門家の全件認定を意味しません。' : '辞書の語義と自動照合した対訳例文を参照できます。語義と例文の対応・詳しい語法は専門家による全件確認済みではありません。'),
     related_terms:original?.related_terms || [],
-    source_note:original ? 'J-Connect original example and explanation; CEFR placement uses the separately cited evidence.' : 'FreeDict/WikDict meaning and Tatoeba reference example. Frequency is not used for CEFR placement.',
+    source_note:original ? 'J-Connect original example and explanation; CEFR placement uses the separately cited evidence.' : 'FreeDict/WikDict headword; example attribution is recorded separately. Explicit sense corrections use J-Connect original examples. Frequency is not used for CEFR placement.',
     source_refs:[...(original ? ['j-connect-original'] : ['freedict-deu-jpn', 'leipzig-corpora']), exampleSource.source_id, ...(decision.level ? ['goethe-'+decision.level.toLowerCase()] : [])].filter((id,index,all)=>all.indexOf(id)===index),
     level_basis:decision.level ? 'exam-list-attestation' : 'unclassified-practical', level_assignment:attestation(decision),
     example_source:exampleSource, quality_tier:original ? 'editorial-original' : 'reference',
@@ -372,7 +376,7 @@ function advancedCard(row) {
     card_id:row.card_id, lemma:row.expression, display_de:row.expression, unit_type:'collocation',part_of_speech:'phrase',
     primary_level:row.level, level_tags:[row.level], scene_tags:['general'], topic_tags:[contextual ? 'register-and-connotation' : 'argumentation'],
     japanese:row.japanese,example_de:row.example_de,example_ja:row.example_ja,grammar:{usage:'まとまりの語義・文体を用例の中で練習します。'},collocations:[],related_terms:[],learning_note:row.learning_note,
-    practice_prompt_ja:contextual ? '用例の話者は何を評価・批判していますか。字義通りの意味と含意、相手への響きの違いを説明してください。' : '用例の中でこの表現が果たす役割を説明し、より平易な表現で言い換えてください。',
+    practice_prompt_ja:contextual ? '用例での含意を説明し、中立的な表現で言い換えてください。場面や聞き手が変わると、どのように響きが変わりますか。' : '用例の中でこの表現が果たす役割を説明し、より平易な表現で言い換えてください。',
     task_type:contextual ? 'register-and-connotation' : 'reasoned-expression',
     level_basis:'cefr-descriptor-editorial-target',
     level_assignment:{kind:'cefr-descriptor-editorial-target',label_ja:`${row.level}向け表現練習・独自編集`,rationale_ja:(contextual ? 'CEFRのC2にある含意・慣用表現・文体の運用を練習する目安です。この表現を初めて学ぶレベルがC2だという認定ではありません。' : 'CEFRの語彙範囲・論述能力を参考にした練習目標です。個々の表現に公的なCEFR認定があるという意味ではありません。')+' '+row.learning_note,evidence:[{source_id:'cefr-companion-2020',url:'https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4#page=131',pages:[131]}]},

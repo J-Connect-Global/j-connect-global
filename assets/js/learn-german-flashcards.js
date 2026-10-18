@@ -6,8 +6,8 @@
 
   const DECKS_URL = "/assets/data/learn-german/flashcards/decks.json";
   const DATA_BASE = "/assets/data/learn-german/flashcards/";
-  const INVENTORY_SCRIPT_URL = "/assets/js/learn-german-flashcards-inventory.js";
-  const TARGETS_SCRIPT_URL = "/assets/js/learn-german-flashcards-targets.js";
+  const INVENTORY_SCRIPT_URL = "/assets/js/learn-german-flashcards-inventory.js?v=lexicon-evidence-20261018";
+  const TARGETS_SCRIPT_URL = "/assets/js/learn-german-flashcards-targets.js?v=lexicon-evidence-20261018";
   const BACKUP_SCHEMA_VERSION = 1;
   const LAST_DECK_KEY = "jconnect-flashcards-last-deck";
   const DAY_MS = 24 * 60 * 60 * 1000;
@@ -258,7 +258,7 @@
   }
 
   async function loadDeckCards(deck) {
-    const responses = await Promise.all(deck.card_files.map(fileName => fetch(`${DATA_BASE}${fileName}`, { credentials: "same-origin" })));
+    const responses = await Promise.all(deck.card_files.map(fileName => fetch(`${DATA_BASE}${fileName}`, { credentials: "same-origin", cache: "no-cache" })));
     responses.forEach((response, index) => {
       if (!response.ok) throw new Error(`${deck.card_files[index]} could not be loaded (${response.status}).`);
     });
@@ -1060,7 +1060,7 @@
     bindEvents();
     configureSpeech();
     try {
-      const response = await fetch(DECKS_URL, { credentials: "same-origin" });
+      const response = await fetch(DECKS_URL, { credentials: "same-origin", cache: "no-cache" });
       if (!response.ok) throw new Error(`Deck data request failed (${response.status}).`);
       const payload = await response.json();
       if (![1, 2].includes(payload.schema_version) || !Array.isArray(payload.decks)) throw new Error("Unsupported deck data schema.");

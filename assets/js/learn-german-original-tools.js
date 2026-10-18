@@ -249,7 +249,7 @@
   async function load() {
     try {
       const [response, progress] = await Promise.all([
-        fetch(DATA_URL, { credentials: "same-origin" }),
+        fetch(DATA_URL, { credentials: "same-origin", cache: "no-cache" }),
         window.JConnectFlashcardStorage?.getAllProgress?.() || Promise.resolve([])
       ]);
       if (!response.ok) throw new Error(`教材データの取得に失敗しました (${response.status})`);

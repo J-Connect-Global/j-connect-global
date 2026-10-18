@@ -267,7 +267,7 @@
       };
       const total = state.cardsById.size;
       const rangeText = entries.length ? `${start + 1}〜${start + visible.length}件目` : "0件";
-      elements.summary.textContent = `${entries.length.toLocaleString("ja-JP")} / ${total.toLocaleString("ja-JP")}語（${rangeText}）｜未学習 ${counts.unstarted.toLocaleString("ja-JP")}・学習中 ${counts.reviewing.toLocaleString("ja-JP")}・習得済み ${counts.mastered.toLocaleString("ja-JP")}・保存済み ${counts.saved.toLocaleString("ja-JP")}`;
+      elements.summary.textContent = `${entries.length.toLocaleString("ja-JP")} / ${total.toLocaleString("ja-JP")}項目（${rangeText}）｜未学習 ${counts.unstarted.toLocaleString("ja-JP")}・学習中 ${counts.reviewing.toLocaleString("ja-JP")}・習得済み ${counts.mastered.toLocaleString("ja-JP")}・保存済み ${counts.saved.toLocaleString("ja-JP")}`;
       elements.empty.hidden = entries.length !== 0;
       elements.tableWrap.hidden = entries.length === 0;
       elements.pageStatus.textContent = `${state.page.toLocaleString("ja-JP")} / ${pageCount.toLocaleString("ja-JP")}ページ`;
@@ -287,7 +287,7 @@
       populatePartOfSpeechFilter();
       const allProgress = await storage.getAllProgress();
       state.progressByCardId = new Map(allProgress.map(progress => [progress.card_id, progress]));
-      elements.title.textContent = `${deck.target_level || "A1〜C2"}・全${Number(deck.card_count).toLocaleString("ja-JP")}語リスト`;
+      elements.title.textContent = `${deck.target_level || "A1〜C2"}・全${Number(deck.card_count).toLocaleString("ja-JP")}項目リスト`;
       elements.description.textContent = "ドイツ語・日本語・例文・文法・学習進捗を一覧できます。長い内容は省略表示され、カーソルを合わせると全文を確認できます。";
       elements.levelField.hidden = deck.deck_kind !== "cefr-all";
       elements.section.hidden = false;
@@ -332,7 +332,7 @@
       ]);
       const csv = `\uFEFF${[columns, ...rows].map(row => row.map(safeCsvValue).join(",")).join("\r\n")}\r\n`;
       downloadBlob(`jconnect-${state.deck.deck_id}-all-words.csv`, csv, "text/csv;charset=utf-8");
-      showToast(`${rows.length.toLocaleString("ja-JP")}語の一覧CSVを保存しました。`);
+      showToast(`${rows.length.toLocaleString("ja-JP")}項目の一覧CSVを保存しました。`);
     }
 
     elements.search.addEventListener("input", () => {

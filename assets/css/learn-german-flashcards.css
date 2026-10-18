@@ -1421,3 +1421,5 @@
 .flashcards-practice p:first-child { font-weight: 600; }
 #flashcardLevelBasis { overflow-wrap: anywhere; }
 #flashcardLevelBasis p { margin-top: 0; }
+
+.flashcards-study { scroll-margin-top: 6rem; }

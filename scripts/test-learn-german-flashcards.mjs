@@ -92,7 +92,7 @@ for (const [lemma, text] of [['Weg','Der Weg zum Bahnhof'], ['Schloss','Das alte
 }
 // Independent concrete failures reported in the old upper-level material.
 for (const [lemma, level, page] of [
-  ['abfahren','A1',9], ['Briefmarke','A1',12], ['Kugelschreiber','A1',19],
+  ['Abend','A1',7], ['abfahren','A1',9], ['Briefmarke','A1',12], ['Kugelschreiber','A1',19],
   ['Quittung','B1',72], ['vierundzwanzig','A1',7], ['sich beeilen','A2',10]
 ]) {
   const matches = cards.filter(card => card.lemma === lemma);

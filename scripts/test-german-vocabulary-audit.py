@@ -21,9 +21,13 @@ class GeometryTests(unittest.TestCase):
         self.assertNotIn('Donaudampfschiff', entries)
         self.assertEqual(groups,{})
     def test_word_group_pages_and_explicit_aliases(self):
-        audit.fitz.open = lambda _: [Page([(10,100,80,110,'vierundzwanzig')])]
+        audit.fitz.open = lambda _: [Page([(10,100,80,110,'vierundzwanzig'),(10,120,80,130,'Abend,-e'),(10,140,80,150,'Samstag/Sonnabend'),(10,160,80,170,'(Kita)'),(10,180,80,190,'Seite')])]
         _, groups = audit.extract('fixture',2,1,[],[0])
         self.assertEqual(groups['vierundzwanzig'], [1])
+        self.assertEqual(groups['Abend'], [1])
+        self.assertEqual(groups['Sonnabend'], [1])
+        self.assertEqual(groups['Kita'], [1])
+        self.assertNotIn('Seite', groups)
         self.assertEqual(audit.comparison_keys('sich beeilen'), ['sich beeilen','beeilen'])
         self.assertEqual(audit.comparison_keys('Schmerzen'), ['Schmerzen','Schmerz'])
         self.assertEqual(audit.comparison_keys('Wasser'), ['Wasser'])

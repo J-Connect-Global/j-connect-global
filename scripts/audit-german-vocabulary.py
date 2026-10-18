@@ -31,8 +31,13 @@ def extract(pdf,start,end,ranges,group_pages):
                 if len(clean)>=2:entries.setdefault(clean,[]).append(pno+1)
     for pno in group_pages:
         for word in doc[pno].get_text('words'):
-            value=word[4].strip(',;().:!?/–-')
-            if re.fullmatch('[A-Za-zÄÖÜäöüßẞ]{2,}',value):groups.setdefault(value,[]).append(pno+1)
+            # Word groups attach inflection notes (Abend,-e) and slash alternatives.
+            # Strip the grammatical suffix, never infer arbitrary related words.
+            for token in word[4].split('/'):
+                value=re.split(r'[,;(]',token.strip(',;().:!?–-'))[0].strip('.:!?–-')
+                if re.fullmatch('[A-Za-zÄÖÜäöüßẞ]{2,}',value):groups.setdefault(value,[]).append(pno+1)
+    # Page furniture, example addresses and compound fragments are not standalone group entries.
+    for excluded in ['Seite','Berlin','Last','West']:groups.pop(excluded,None)
     return entries,groups
 
 def comparison_keys(lemma):

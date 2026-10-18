@@ -38,7 +38,7 @@
       if (!deck) return;
       const counts = new Map(inputs.map(input => {
         const count = cardIds(input.value).length;
-        root.querySelector(`[data-study-target-count="${CSS.escape(input.value)}"]`).textContent = `${count.toLocaleString("ja-JP")}語`;
+        root.querySelector(`[data-study-target-count="${CSS.escape(input.value)}"]`).textContent = `${count.toLocaleString("ja-JP")}項目`;
         input.disabled = input.value !== "all" && count === 0 && !input.checked;
         return [input.value, count];
       }));
@@ -49,7 +49,7 @@
       const order = selectedValue("session-order") === "shuffle" ? "シャッフル" : "収録順";
       const direction = selectedValue("session-direction") === "ja-de" ? "日→独" : "独→日";
       summary.textContent = available
-        ? `${labels[target]} ${available.toLocaleString("ja-JP")}語から${size.toLocaleString("ja-JP")}枚を、${order}・${direction}で出題します。`
+        ? `${labels[target]} ${available.toLocaleString("ja-JP")}項目から${size.toLocaleString("ja-JP")}枚を、${order}・${direction}で出題します。`
         : `${labels[target]}に該当するカードはまだありません。別の学習対象を選んでください。`;
       start.disabled = available === 0;
     }

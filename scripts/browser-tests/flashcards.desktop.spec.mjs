@@ -125,10 +125,10 @@ test("flashcard session supports front and back keyboard ratings, buttons, compl
   await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
   await expect(page.locator("#flashcardsSetup")).toBeVisible();
   await expect(page.locator("#sessionSetupTitle")).toContainText("A1");
-  await expect(page.locator('[data-study-target-count="all"]')).toHaveText(`${a1Count}語`);
-  await expect(page.locator('[data-study-target-count="unstarted"]')).toHaveText(`${a1Count}語`);
+  await expect(page.locator('[data-study-target-count="all"]')).toHaveText(`${a1Count}項目`);
+  await expect(page.locator('[data-study-target-count="unstarted"]')).toHaveText(`${a1Count}項目`);
   await expect(page.locator('input[name="session-target"][value="studied"]')).toBeDisabled();
-  await expect(page.locator("#flashcardsStartSummary")).toContainText(`すべて ${a1Count}語から10枚`);
+  await expect(page.locator("#flashcardsStartSummary")).toContainText(`すべて ${a1Count}項目から10枚`);
   await page.locator("#flashcardsStart").click();
   await expect(page.locator("#flashcardsStudy")).toBeVisible();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
@@ -222,28 +222,28 @@ test("study setup filters sessions by saved progress and last rating with live c
   await expect(page.locator("#flashcardsSetup")).toBeVisible();
 
   const expectedCounts = {
-    all: `${a1Count}語`,
-    unstarted: `${a1Count - 3}語`,
-    studied: "3語",
-    again: "1語",
-    unsure: "1語",
-    known: "1語",
-    due: "1語",
-    saved: "2語"
+    all: `${a1Count}項目`,
+    unstarted: `${a1Count - 3}項目`,
+    studied: "3項目",
+    again: "1項目",
+    unsure: "1項目",
+    known: "1項目",
+    due: "1項目",
+    saved: "2項目"
   };
   for (const [target, count] of Object.entries(expectedCounts)) {
     await expect(page.locator(`[data-study-target-count="${target}"]`)).toHaveText(count);
   }
 
   await page.locator('input[name="session-target"][value="again"]').check();
-  await expect(page.locator("#flashcardsStartSummary")).toHaveText("もう一度 1語から1枚を、収録順・独→日で出題します。");
+  await expect(page.locator("#flashcardsStartSummary")).toHaveText("もう一度 1項目から1枚を、収録順・独→日で出題します。");
   await page.locator("#flashcardsStart").click();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 1");
   await expect.poll(() => page.evaluate(async () => (await window.JConnectFlashcardStorage.getSession("a1-life-basics"))?.selected_target)).toBe("again");
 
   await page.locator("#flashcardsEndSession").click();
   await page.locator('input[name="session-target"][value="saved"]').check();
-  await expect(page.locator("#flashcardsStartSummary")).toContainText("保存済み 2語から2枚");
+  await expect(page.locator("#flashcardsStartSummary")).toContainText("保存済み 2項目から2枚");
   await page.locator("#flashcardsStart").click();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 2");
   await expect.poll(() => page.evaluate(async () => (await window.JConnectFlashcardStorage.getSession("a1-life-basics"))?.card_ids)).toEqual(["a1-002", "a1-004"]);
@@ -282,8 +282,8 @@ test("German word and example audio can be played, switched, and stopped without
   await expect(wordButton).toHaveAttribute("aria-pressed", "false");
 
   await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
-  await page.locator("#flashcardsInventorySearch").fill("夕方、夜会");
-  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`1 / ${a1Count}語`);
+  await page.locator("#flashcardsInventorySearch").fill("der Abend");
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`1 / ${a1Count}項目`);
   await page.locator("#flashcardsInventoryStudyFiltered").click();
   await page.locator("#flashcardFlip").click();
   await expect(page.locator("#flashcardExampleDe")).toHaveText("Guten Abend!");
@@ -298,8 +298,8 @@ test("level deck inventory lists every word with sorting, filters, saved state, 
   await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
   const inventory = page.locator("#flashcardsInventory");
   await expect(inventory).toBeVisible();
-  await expect(page.locator("#flashcardsInventoryTitle")).toContainText(`全${a1Count}語`);
-  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${a1Count} / ${a1Count}語`);
+  await expect(page.locator("#flashcardsInventoryTitle")).toContainText(`全${a1Count}項目`);
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${a1Count} / ${a1Count}項目`);
   await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(50);
   await expect(page.locator(".flashcards-inventory-table thead th")).toHaveCount(7);
   await expect(page.locator("#flashcardsInventoryQuality")).toHaveCount(0);
@@ -324,7 +324,7 @@ test("level deck inventory lists every word with sorting, filters, saved state, 
   const backup = JSON.parse(await fs.readFile(backupPath, "utf8"));
   expect(backup.progress.find(entry => entry.card_id === "a1-001")?.saved).toBe(true);
   await page.locator("#flashcardsInventorySaved").selectOption("saved");
-  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`1 / ${a1Count}語`);
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`1 / ${a1Count}項目`);
   await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(1);
 
   const csvDownloadPromise = page.waitForEvent("download");
@@ -337,7 +337,7 @@ test("level deck inventory lists every word with sorting, filters, saved state, 
 
   await page.locator("#flashcardsInventoryReset").click();
   await page.locator("#flashcardsInventorySearch").fill("予約、約束の日時");
-  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`1 / ${a1Count}語`);
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`1 / ${a1Count}項目`);
   await page.locator("#flashcardsInventoryStudyFiltered").click();
   await expect(page.locator("#flashcardsStudy")).toBeVisible();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 1");
@@ -345,7 +345,7 @@ test("level deck inventory lists every word with sorting, filters, saved state, 
   await page.locator('[data-rating="known"]').click();
   await expect(page.locator("#flashcardsResults")).toBeVisible();
   await page.locator("#flashcardsInventoryStatus").selectOption("reviewing");
-  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`1 / ${a1Count}語`);
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`1 / ${a1Count}項目`);
   await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(1);
   await expect(page.locator("#flashcardsInventoryBody tr").first()).toContainText("学習中");
 });
@@ -355,7 +355,7 @@ test("C2 expression practice exposes contextual tasks and can start a bounded se
   await expect(page.locator("#flashcardsSetup")).toBeVisible();
   await expect(page.locator("#sessionSetupTitle")).toContainText(String(c2Count));
   await expect(page.locator("#setupDeckBadges")).toContainText(`${c2Count}枚`);
-  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${c2Count} / ${c2Count}語`);
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${c2Count} / ${c2Count}項目`);
   await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(Math.min(50, c2Count));
   await page.locator("#flashcardsStart").click();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
@@ -379,20 +379,20 @@ test("all-level deck exposes A1-C2 chips and filters the actual published invent
     c2CardsPath
   ]);
   await expect(page.locator("#sessionSetupTitle")).toContainText(totalCount);
-  await expect(page.locator("#flashcardsInventoryTitle")).toContainText(`全${totalCount}語`);
-  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${totalCount} / ${totalCount}語`);
+  await expect(page.locator("#flashcardsInventoryTitle")).toContainText(`全${totalCount}項目`);
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${totalCount} / ${totalCount}項目`);
   await expect(page.locator("#flashcardsInventoryLevels")).toBeVisible();
   await expect(page.locator("[data-inventory-level]")).toHaveCount(7);
 
   const c2Chip = page.locator('[data-inventory-level="C2"]');
   await c2Chip.click();
   await expect(c2Chip).toHaveAttribute("aria-pressed", "true");
-  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${c2Count} / ${totalCount}語`);
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${c2Count} / ${totalCount}項目`);
   await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(Math.min(50, c2Count));
   expect(await page.locator("#flashcardsInventoryBody tr").evaluateAll(rows => rows.every(row => row.textContent.includes("C2")))).toBe(true);
 
   await page.locator("#flashcardsInventoryReset").click();
-  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${totalCount} / ${totalCount}語`);
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${totalCount} / ${totalCount}項目`);
 });
 
 test("incomplete progress resumes after reload and JSON backup, rejection, restore, and reset are safe", async ({ page }) => {

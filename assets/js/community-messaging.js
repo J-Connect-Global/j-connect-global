@@ -29,6 +29,8 @@
     } catch (_) { throw new Error('返信機能を現在利用できません。時間をおいて再度お試しください。'); }
   }
   function node(tag, text, className) { const el = document.createElement(tag); if (text !== undefined) el.textContent = text; if (className) el.className = className; return el; }
+  const berlinDate = new Intl.DateTimeFormat('ja-JP', { timeZone: 'Europe/Berlin', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false });
+  function formatTime(value) { const date = new Date(value); return Number.isNaN(date.getTime()) ? '' : berlinDate.format(date) + '（ベルリン時間）'; }
   async function deletionKey(password, salt) {
     if (!crypto.subtle || !/^[a-f0-9]{64}$/.test(salt)) throw new Error('このブラウザーでは削除用パスワードを安全に処理できません。');
     const material = await crypto.subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveBits']);
@@ -129,7 +131,7 @@
           relation.addEventListener('click', event => { const el = [...list.children].find(item => item.id === 'reply-' + reply.reply_to); if (!el) return; event.preventDefault(); scrollTo(el); el.classList.add('cm-highlight'); setTimeout(() => el.classList.remove('cm-highlight'), 2200); }); card.append(relation);
         } else card.append(node('p', '元の投稿への返信', 'cm-muted'));
         card.append(node('p', reply.deleted ? 'この返信は削除されました。' : reply.body, 'cm-body'));
-        const date = new Date(reply.published_at); if (!Number.isNaN(date.getTime())) { const time = node('time', date.toLocaleString('ja-JP')); time.dateTime = reply.published_at; card.append(time); }
+        const dateLabel = formatTime(reply.published_at); if (dateLabel) { const time = node('time', dateLabel); time.dateTime = reply.published_at; card.append(time); }
         if (!reply.deleted) {
           const actions = node('div', undefined, 'cm-actions'); const respond = node('button', '返信する'); respond.type = 'button'; respond.disabled = Boolean(closed); respond.addEventListener('click', () => choose(reply));
           const remove = node('button', '削除'); remove.type = 'button'; remove.addEventListener('click', () => deleteForm(card, reply, refresh));
@@ -188,7 +190,7 @@
       if (!post) throw new Error('投稿が見つかりません。'); await mount(root, post, { visibility: params.get('visibility'), replyTo: params.get('reply_to') });
     } catch (error) { root.textContent = error.message; }
   }
-  window.JConnectMessaging = Object.freeze({ api, available, mode: () => 'public', mount, node, requestId: id });
+  window.JConnectMessaging = Object.freeze({ api, available, formatTime, mode: () => 'public', mount, node, requestId: id });
   document.querySelectorAll('[data-community-replies]').forEach(root => {
     mount(root, { id: root.dataset.communityReplies, title: root.dataset.postTitle, status: root.dataset.postStatus || 'active' });
   });

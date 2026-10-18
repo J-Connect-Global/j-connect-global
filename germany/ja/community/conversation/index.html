@@ -215,7 +215,7 @@
 
   <main id="main-content" tabindex="-1" class="cm-shell">
   <p><a href="../">← 掲示板へ戻る</a></p><h1 id="conversationTitle">非公開会話・返信の管理</h1>
-  <p>アカウント登録は不要です。メールの専用リンクで本人確認します。専用リンクを他の人に転送しないでください。</p>
+  <p id="conversationIntro">アカウント登録は不要です。メールの専用リンクで本人確認します。専用リンクを他の人に転送しないでください。</p>
   <p id="conversationStatus" role="status">受付状況を確認中…</p>
   <section id="accessPanel" class="cm-panel" hidden><h2>メールの確認</h2><p>下のボタンを押すと、このリンクを一度使用してページを開きます。</p><button id="confirmAccess" type="button">確認して開く</button></section>
   <section id="recoveryPanel" class="cm-panel" hidden><h2>新しいリンクを受け取る</h2><p>リンクの有効期限は1時間です。登録時のメールアドレスを入力してください。</p>
@@ -224,9 +224,11 @@
   </section>
   <section id="conversationPanel" hidden>
     <h2 id="privatePostTitle"></h2><p id="conversationState"></p>
-    <div class="cm-actions"><button id="refreshMessages" type="button">最新の会話を表示</button><button id="olderMessages" type="button" hidden>以前のメッセージ</button><button id="leaveConversation" type="button">この端末で閉じる</button></div>
-    <div id="privateMessages" aria-label="会話履歴"></div>
-    <form id="messageForm" class="cm-panel"><label for="messageBody">メッセージ（相手だけに表示）</label><textarea id="messageBody" maxlength="4000" required></textarea><button type="submit">返信する</button></form>
+    <div class="cm-actions"><button id="refreshMessages" type="button">会話を更新</button><button id="olderMessages" type="button" hidden>以前のメッセージ</button><button id="leaveConversation" type="button">この端末で閉じる</button></div>
+    <p id="conversationUpdates" class="cm-muted" role="status"></p>
+    <div id="privateMessages" role="region" aria-label="会話履歴" tabindex="0"></div>
+    <button id="showNewMessages" type="button" hidden>新しいメッセージを表示</button>
+    <form id="messageForm" class="cm-panel"><fieldset id="messageFields"><label for="messageBody">メッセージ（相手だけに表示）</label><textarea id="messageBody" maxlength="4000" required></textarea><button type="submit">返信する</button></fieldset><p id="messageStatus" role="status" aria-atomic="true"></p></form>
     <details class="cm-panel"><summary>会話を終了・通報する</summary><p>終了すると両者が新しく送信できなくなります。ブロックすると同じ相手からの新しい問い合わせも止めます。</p><div class="cm-actions"><button id="closeConversation" type="button">会話を終了</button><button id="blockConversation" type="button">相手をブロックして終了</button></div>
     <form id="privateReportForm"><label for="reportReason">通報理由（運営のみ閲覧）</label><textarea id="reportReason" maxlength="1000" required></textarea><button type="submit">運営に通報する</button></form></details>
   </section>

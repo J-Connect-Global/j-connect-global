@@ -80,7 +80,7 @@ test('private send immediately opens the scoped conversation and routes to the c
   await page.getByRole('radio',{name:'非公開返信',exact:true}).check();await composer(page).getByRole('checkbox').check();await page.getByRole('button',{name:'送信する',exact:true}).click();
   await expect(page.locator('#conversationPanel')).toBeVisible();expect(page.url()).not.toContain(session);
   expect(submitted.action).toBe('communityCreateConversation');expect(submitted.reply_to).toBe('reply-browser-3');expect(submitted.deletion_key).toBeUndefined();expect(submitted.private_consent).toBe('true');
-  await expect(page.locator('#conversationState')).toContainText('公開返信を書いた方');
+  await expect(page.locator('#conversationState')).toContainText('公開返信から始まった');
 });
 test('old backend disables the new composer without legacy email forwarding',async({page})=>{
   await page.route('https://script.google.com/**',route=>route.fulfill({json:{ok:true,messaging_version:'2026-10-17.1',public_replies:true,private_conversations:true}}));

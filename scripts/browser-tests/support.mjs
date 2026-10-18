@@ -82,7 +82,10 @@ export function installRuntimeDiagnostics(page) {
     if (!["fetch", "xhr"].includes(request.resourceType())) return;
     const url = new URL(request.url());
     if (url.hostname === "script.google.com" || url.hostname === "script.googleusercontent.com") {
-      diagnostics.externalDataRequests.push(`${request.method()} ${url.origin}${url.pathname}`);
+      const action = new URLSearchParams(request.postData() || '').get('action');
+      // Inline replies need live freshness. Directory/post rendering still uses
+      // the static snapshot; only these two read-only messaging actions may run.
+      if (!['communityMessagingStatus', 'communityPublicReplies'].includes(action)) diagnostics.externalDataRequests.push(`${request.method()} ${url.origin}${url.pathname}`);
     }
   });
 }

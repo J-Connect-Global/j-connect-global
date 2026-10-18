@@ -38,7 +38,7 @@ expect(detail.includes('save-button inline') && css.includes('min-inline-size:11
 expect(report.includes('id="reportTarget"') && report.includes('COMMUNITY_STATIC_POSTS_URL'), 'Report page does not load its canonical target from public JSON.');
 expect(report.includes('form_started_at') && report.includes('website'), 'Report form is missing anti-abuse fields.');
 expect(report.includes('./complete/?post_id=') && !report.includes("location.assign('../thanks/')"), 'Report success must redirect to report/complete with post_id.');
-expect(messaging.includes('communityCreateReply') && messaging.includes('communityCreateConversation') && messaging.includes('data.notification_pending') && messaging.includes('確認メールを送信しました'), 'Contact must use verified public/private flows with honest notification state.');
+expect(messaging.includes('communityCreateReply') && messaging.includes('communityCreateConversation') && messaging.includes('data.reply') && messaging.includes('公開しました') && messaging.includes('inline_replies'), 'Contact must use immediate public/private flows with backend capability gating.');
 expect(reportComplete.includes('通報を受け付けました') && reportComplete.includes('reportedPostLink'), 'Report completion page is missing required content or post return action.');
 expect(contactComplete.includes('確認メールをご確認ください') && contactComplete.includes('contactedPostLink'), 'Contact completion page is missing required content or post return action.');
 expect(!thanks.includes('submissionSummary') && !thanks.includes('cancelCommunityPostRequest') && !thanks.includes('別の投稿を作成する'), 'Legacy thanks page still contains post-specific submission or cancellation behavior.');
@@ -52,7 +52,7 @@ expect(listing.includes('COMMUNITY_STATIC_POSTS_URL') && !listing.includes('GAS_
 expect(detail.includes('COMMUNITY_STATIC_POSTS_URL') && !detail.includes('GAS_FALLBACK_TIMEOUT_MS'), 'Community detail is not public-JSON-only.');
 expect(detail.includes('この投稿は見つからないか、現在公開されていません。') && detail.includes('noindex, follow'), 'Community detail lacks the safe non-public state.');
 expect(messaging.includes('sources.staticData.communityPosts') && report.includes('COMMUNITY_STATIC_POSTS_URL'), 'Community contact/report target reads do not use public JSON.');
-expect(messaging.includes('form_started_at') && contact.includes('website') && contact.includes('/privacy/') && contact.includes('public_consent'), 'Community contact form is missing privacy or anti-abuse controls.');
+expect(messaging.includes('form_started_at') && messaging.includes('website') && messaging.includes('/privacy/') && messaging.includes('public_consent') && messaging.includes('private_consent'), 'Community contact form is missing privacy or anti-abuse controls.');
 expect(!detail.includes('CITY_OPTIONS_BY_COUNTRY') && detail.includes('communityLocationConfig'), 'Post form does not use the shared Community location configuration.');
 expect(listing.includes('communityLocationConfig') && listing.includes('normalizeCommunityCountry'), 'Listing does not use the shared Community location configuration.');
 expect(!listing.includes('最新データを取得できませんでした。保存済みの表示を継続しています。'), 'Community cache warning is still embedded in initial HTML.');

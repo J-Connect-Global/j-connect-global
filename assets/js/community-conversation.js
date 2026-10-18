@@ -29,7 +29,12 @@
       const card = node('article', undefined, 'cm-message' + (message.mine ? ' cm-message--mine' : ''));
       card.append(node('h3', message.nickname + (message.mine ? '（あなた）' : '')));
       const time = new Date(message.created_at); if (!Number.isNaN(time.getTime())) { const label = node('time', time.toLocaleString('ja-JP')); label.dateTime = message.created_at; card.append(label); }
-      card.append(node('p', message.body, 'cm-body')); fragment.append(card);
+      card.append(node('p', message.deleted ? 'このメッセージは削除されました。' : message.body, 'cm-body'));
+      if (message.mine && !message.deleted) {
+        const remove = node('button', 'このメッセージを削除'); remove.type = 'button';
+        remove.addEventListener('click', () => { if (confirm('このメッセージを削除しますか？')) task(remove, async () => { await scoped('communityDeleteMessage', { message_id: message.id }); await load(); }); }); card.append(remove);
+      }
+      fragment.append(card);
     });
     if (prepend) el('privateMessages').prepend(fragment); else el('privateMessages').replaceChildren(fragment);
   }
@@ -37,13 +42,13 @@
     if (kind === 'reply') {
       const reply = await scoped('communityGetReply'); el('accessPanel').hidden = true; el('recoveryPanel').hidden = true; el('replyPanel').hidden = false;
       el('replyBody').textContent = reply.body;
-      el('replyState').textContent = ({ pending: 'メール確認済み・運営の承認待ちです。', approved: '公開されています。', hidden: '非表示です。' })[reply.status] || '確認待ちです。';
+      el('replyState').textContent = ({ pending: 'メール確認済み・運営の承認待ちです。', approved: '公開されています。', published: '公開されています。', hidden: '非表示です。' })[reply.status] || '確認待ちです。';
       el('deleteReply').disabled = reply.status === 'hidden'; el('replyPostLink').href = '../post/?id=' + encodeURIComponent(reply.post_id); status.textContent = ''; return;
     }
     const data = await scoped('communityGetConversation', older && before ? { before } : {});
     el('accessPanel').hidden = true; el('recoveryPanel').hidden = true; el('conversationPanel').hidden = false;
     el('conversationTitle').textContent = '非公開の会話'; el('privatePostTitle').textContent = data.post_title;
-    el('conversationState').textContent = data.status === 'active' ? '参加者はあなたと ' + data.other_nickname + ' さんです。メールアドレスは互いに表示されません。' : data.status === 'blocked' ? 'ブロックにより新しい送信を停止しています。' : 'この会話は終了しています。';
+    el('conversationState').textContent = data.status === 'active' ? '参加者はあなたと ' + data.other_nickname + ' さんです。' + (data.target_reply_id ? '公開返信を書いた方への連絡です。' : '元の投稿者への連絡です。') + 'メールアドレスは互いに表示されません。' : data.status === 'blocked' ? 'ブロックにより新しい送信を停止しています。' : 'この会話は終了しています。';
     el('messageForm').hidden = data.status !== 'active';
     el('closeConversation').disabled = data.status !== 'active'; el('blockConversation').disabled = data.status === 'blocked';
     showMessages(data.messages || [], older); before = data.before || ''; el('olderMessages').hidden = !data.has_more; status.textContent = '';

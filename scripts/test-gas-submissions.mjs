@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
 import { fileURLToPath } from "node:url";
+import { formatDate } from "./test-helpers/gas-format-date.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const gas = fs.readFileSync(path.join(root, "apps-script/community-board-api.gs"), "utf8");
@@ -21,7 +22,7 @@ class MockSheet {
   getParent() { return this.parent; }
   getSheetId() { return this.name === "Jobs" ? 2 : 1; }
   getLastRow() { return this.rows.length; }
-  getDataRange() { return { getValues: () => this.rows.map((row) => row.slice()) }; }
+  getDataRange() { return { getValues: () => this.rows.map((row) => row.slice()), getFormulas: () => this.rows.map((row) => row.map(() => '')) }; }
   getActiveRange() { return { getRow: () => Math.max(2, this.rows.length) }; }
   appendRow(row) { this.rows.push(row.slice()); }
   getRange(row, column, rowCount = 1, columnCount = 1) {
@@ -47,6 +48,8 @@ class MockSpreadsheet {
     this.activeSheet = sheets[0];
   }
   getSheetByName(name) { return this.sheets[name] || null; }
+  getSheets() { return Object.values(this.sheets); }
+  setSpreadsheetTimeZone(value) { this.timeZone = value; }
   getId() { return this.id || "mock-spreadsheet"; }
   getActiveSheet() { return this.activeSheet; }
   getUrl() { return "https://docs.google.com/spreadsheets/d/mock"; }
@@ -99,6 +102,7 @@ function createRuntime(sheets, sendEmail, options = {}) {
       })
     },
     Utilities: {
+      formatDate,
       DigestAlgorithm: { SHA_256: "sha256" },
       Charset: { UTF_8: "utf8" },
       getUuid: () => `00000000-0000-4000-8000-${String(++uuidCounter).padStart(12, "0")}`,
@@ -214,6 +218,31 @@ function testBoundModerationSelection() {
     assert(rejected, "Header selection was accepted for moderation.");
     visible.getActiveRange = () => ({ getRow: () => 9 });
   }
+}
+
+function testBerlinTimestamps() {
+  const { sandbox } = createRuntime([], () => {});
+  for (const [utc, expected] of [
+    ['2026-10-18T07:22:05.298Z', '2026-10-18T09:22:05.298+02:00'],
+    ['2026-12-18T07:22:05.298Z', '2026-12-18T08:22:05.298+01:00'],
+    ['2026-10-25T00:30:00.000Z', '2026-10-25T02:30:00.000+02:00'],
+    ['2026-10-25T01:30:00.000Z', '2026-10-25T02:30:00.000+01:00']
+  ]) {
+    const formatted = sandbox.berlinTimestamp_(new Date(utc));
+    assert(formatted === expected, `Incorrect Berlin timestamp: ${formatted}`);
+    assert(Date.parse(formatted) === Date.parse(utc), 'Timestamp conversion changed the instant.');
+  }
+  const community = new MockSheet('Community Posts', ['post_id', 'created_at', 'updated_at', 'body', 'availability_date']);
+  appendObjectRow(community, { post_id: 'post-old', created_at: '2026-10-18T07:22:05.298Z', updated_at: '2026-12-18T07:22:05.298Z', body: '=private content', availability_date: '2026-10-18' });
+  const runtime = createRuntime([community], () => { throw new Error('Migration must not send email'); });
+  const preview = runtime.sandbox.previewBerlinManagementTimestamps();
+  assert(preview.dryRun && preview.changed === 2 && rowObject(community).created_at.endsWith('Z'), 'Migration preview wrote to a cell.');
+  const first = runtime.sandbox.useBerlinManagementTimestamps();
+  assert(first.changed === 2 && runtime.spreadsheet.timeZone === 'Europe/Berlin', 'Existing timestamp migration failed.');
+  const row = rowObject(community);
+  assert(row.created_at === '2026-10-18T09:22:05.298+02:00' && row.updated_at === '2026-12-18T08:22:05.298+01:00', 'Migration did not handle summer and winter dates.');
+  assert(row.body === '=private content' && row.availability_date === '2026-10-18', 'Migration modified unrelated data.');
+  assert(runtime.sandbox.useBerlinManagementTimestamps().changed === 0, 'Migration is not idempotent.');
 }
 
 function testJobPersistenceIdempotencyAndThrottling() {
@@ -469,6 +498,7 @@ function testPublicPayloadCredentialSanitization() {
 
 testSpreadsheetResolution();
 testBoundModerationSelection();
+testBerlinTimestamps();
 testJobPersistenceIdempotencyAndThrottling();
 testCommunityAdminFailureIsolation();
 testCommunityPublicLifecycleAndCacheBypass();

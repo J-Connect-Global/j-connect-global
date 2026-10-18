@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
 import { fileURLToPath } from "node:url";
+import { formatDate } from "./test-helpers/gas-format-date.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const gas = fs.readFileSync(path.join(root, "apps-script/community-board-api.gs"), "utf8");
@@ -132,6 +133,7 @@ function createRuntime(sheets, sendEmail, options = {}) {
       })
     },
     Utilities: {
+      formatDate,
       DigestAlgorithm: { SHA_256: "sha256" },
       Charset: { UTF_8: "utf8" },
       getUuid: () => `00000000-0000-4000-8000-${String(++uuidCounter).padStart(12, "0")}`,

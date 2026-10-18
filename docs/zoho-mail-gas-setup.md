@@ -44,7 +44,7 @@ Do not copy values from the execution log into tickets or pull requests. The tra
 
 ## 5. Redeploy the existing web app
 
-Add both `community-board-api.gs` and `zoho-mail.gs` to the existing Apps Script project. Then use **Deploy → Manage deployments → Edit**, select **New version**, and deploy it using the existing web-app deployment. This keeps the existing deployment URL used by the Community, contact, and job-posting pages.
+Add `community-board-api.gs`, `zoho-mail.gs`, and `community-messaging.gs` to the existing Apps Script project. Then use **Deploy → Manage deployments → Edit**, select **New version**, and deploy it using the existing web-app deployment. This keeps the existing deployment URL used by the Community, contact, and job-posting pages.
 
 Confirm the web app is still authorized to use the Spreadsheet, Drive (if community image uploads are enabled), Cache, Lock, and external HTTP services.
 
@@ -52,7 +52,7 @@ Confirm the web app is still authorized to use the Spreadsheet, Drive (if commun
 
 After deploying a new version, test with non-sensitive data:
 
-- Community post creation, confirmation email, inquiry forwarding, report, and cancellation request.
+- Community post creation, confirmation email, verified public replies and private conversations, report, and cancellation request.
 - General contact form, including the submitter receipt.
 - Job-posting form, including the company contact receipt.
 - Missing required fields, malformed email, malformed URL, hidden honeypot, overly long fields, form submitted too quickly, and repeated submissions.
@@ -63,3 +63,5 @@ Verify each message is visibly sent from `contact@j-connect-global.com`, the Com
 ## 7. Retire the previous form service
 
 Only retire the previous hosted-form account after the production deployment, successful test messages, and browser submission tests have been verified. Keep the provider configuration available until that evidence is recorded, then remove it according to the account's retention and billing policy.
+
+For the account-free conversation setup and moderation flow, see [Community messaging](community-messaging.md).

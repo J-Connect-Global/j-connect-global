@@ -401,6 +401,19 @@ export function communityPublicationDate(row) {
     || toIsoDate(first(row, ["created_at", "createdAt", "date", "timestamp"]));
 }
 
+export function normalizePublicReplies(rows, postId, category) {
+  if (!['質問', '相談', '質問・相談'].includes(category) || !Array.isArray(rows)) return [];
+  return rows.filter((row) => row && String(row.post_id) === String(postId)
+    && /^[A-Za-z0-9][A-Za-z0-9_-]{0,159}$/.test(String(row.id || ''))
+    && String(row.nickname || '').trim() && String(row.body || '').trim()
+    && Number.isFinite(Date.parse(row.published_at))
+    && !/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i.test(String(row.body) + String(row.nickname))
+    && !/[?&#](?:token|access|session|secret|manage_token)=/i.test(String(row.body)))
+    .slice(-200).map((row) => ({ id: String(row.id), post_id: String(postId), nickname: String(row.nickname).slice(0, 60),
+      body: String(row.body).slice(0, 4000), reply_to: /^[A-Za-z0-9][A-Za-z0-9_-]{0,159}$/.test(String(row.reply_to || '')) ? row.reply_to : '',
+      published_at: new Date(row.published_at).toISOString(), is_post_author: row.is_post_author === true }));
+}
+
 export function normalizeCommunityPost(row, index) {
   const title = first(row, ["title", "name", "subject"]);
   const body = first(row, ["body", "description", "message", "content"]);
@@ -429,6 +442,7 @@ export function normalizeCommunityPost(row, index) {
     created_at: createdAt, published_at: publishedAt,
     updated_at: toIsoDate(first(row, ["updated_at", "updatedAt", "last_updated"])),
     expires_at: toIsoDate(first(row, ["expires_at", "expiresAt", "expiration_date"])),
+    public_replies: normalizePublicReplies(row.public_replies, id, category1),
     status: "active"
   };
 }

@@ -191,6 +191,7 @@ function documentShell({ head, header, footer, kind, body }) {
   <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <link rel="stylesheet" href="/assets/css/public-detail-pages.css">
+  ${kind === "community" ? '<link rel="stylesheet" href="/assets/css/community-messaging.css">' : ""}
   <script src="/assets/js/site-identity.js"></script>
 </head>
 <body>
@@ -200,6 +201,7 @@ ${footer}
 <script src="/assets/js/common.js"></script>
 <script src="/assets/js/cookie-consent.js" defer></script>
 <script src="/assets/js/public-detail-pages.js" defer></script>
+${kind === "community" ? '<script src="/assets/js/data-sources.js"></script><script src="/assets/js/community-messaging.js" defer></script>' : ""}
 </body>
 </html>
 `;
@@ -229,6 +231,9 @@ function communityPage(post, all, layout, now) {
   const contactHref = `/germany/ja/community/contact/?post_id=${encodeURIComponent(post.id)}`;
   const reportHref = `/germany/ja/community/report/?post_id=${encodeURIComponent(post.id)}`;
   const canContact = text(post.status) === "active" && !isExpired(post, now);
+  const isQuestion = ['質問', '相談', '質問・相談'].includes(text(post.category1));
+  const replies = isQuestion && Array.isArray(post.public_replies) ? post.public_replies : [];
+  const replySection = isQuestion ? `<section class="public-detail-section cm-thread" data-community-replies="${escapeHtml(post.id)}"><h2>公開返信</h2><p>ニックネームと本文を公開します。メール確認・運営承認後に掲載します。</p><div data-reply-items>${replies.length ? replies.map((reply) => `<article class="cm-reply" id="reply-${escapeHtml(reply.id)}"><h3>${escapeHtml(reply.nickname)}${reply.is_post_author ? '（投稿者）' : ''}</h3><p class="cm-body">${escapeHtml(reply.body)}</p><time datetime="${escapeHtml(reply.published_at)}">${escapeHtml(displayDate(reply.published_at))}</time><p><a href="${escapeHtml(contactHref)}&amp;reply_to=${encodeURIComponent(reply.id)}">この返信に返信する</a></p></article>`).join('') : '<p>公開返信はまだありません。</p>'}</div></section>` : '';
   const imageAlt = text(post.image_alt) || text(post.title) || "投稿画像";
   const gallery = images.length ? `<section class="public-detail-section" aria-label="投稿画像"><div class="public-detail-gallery">${images.map((image, index) => {
     const alt = `${imageAlt}${images.length > 1 ? ` ${index + 1}` : ""}`;
@@ -251,7 +256,8 @@ function communityPage(post, all, layout, now) {
         ${facts([["カテゴリ", [post.category1, post.category2].map(text).filter(Boolean).join(" / ")], ["地域", [post.city, post.region].map(text).filter(Boolean).join(" / ")], ["価格・条件", post.price], ["予定日", post.event_date || post.availability_date]])}
         ${gallery}
         <section class="public-detail-section"><h2>投稿内容</h2><div class="public-detail-copy">${escapeHtml(post.body || post.summary || "内容はありません。")}</div></section>
-        <section class="public-detail-section"><h2>連絡・通報</h2><p>投稿者のメールアドレスを公開せず、${SITE_NAME} がメッセージを取り次ぎます。</p><div class="public-detail-actions">${canContact ? `<a class="public-detail-button" href="${escapeHtml(contactHref)}">投稿者に連絡</a>` : '<span class="public-detail-button public-detail-button--disabled" aria-disabled="true">この投稿の受付は終了しました</span>'}<a class="public-detail-button public-detail-button--secondary" href="${escapeHtml(reportHref)}">投稿を通報</a></div></section>
+        ${replySection}
+        <section class="public-detail-section"><h2>${isQuestion ? "公開返信・通報" : "非公開の会話・通報"}</h2><p>${isQuestion ? "返信は誰でも閲覧できます。連絡先や個人情報は書かないでください。" : "メールの専用リンクで当事者だけが会話できます。アカウント登録は不要で、メールアドレスは相手に表示されません。"}</p><div class="public-detail-actions">${canContact ? `<a class="public-detail-button" href="${escapeHtml(contactHref)}">${isQuestion ? "公開返信する" : "非公開で連絡する"}</a>` : '<span class="public-detail-button public-detail-button--disabled" aria-disabled="true">この投稿の受付は終了しました</span>'}<a class="public-detail-button public-detail-button--secondary" href="${escapeHtml(reportHref)}">投稿を通報</a></div></section>
         <section class="public-detail-section"><h2>関連する投稿</h2><div class="public-detail-related">${related.length ? related.map((item) => `<a href="${escapeHtml(assertPublicDetailUrl("community", item.detail_url, item.id || item.post_id))}"><strong>${escapeHtml(item.title)}</strong><span>${escapeHtml([item.category1, item.city || item.region].map(text).filter(Boolean).join(" / "))}</span></a>`).join("") : "<p>関連する公開投稿はまだありません。</p>"}</div></section>
       </div>
     </article>

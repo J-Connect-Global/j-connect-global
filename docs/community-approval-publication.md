@@ -4,7 +4,7 @@
 
 ## 初回設定と更新時の注意
 
-1. 既存Apps Scriptプロジェクトの `community-board-api.gs` と `zoho-mail.gs` を更新し、既存Webアプリを新しいバージョンとして再デプロイします。`apps-script/community-board-api.gs` が Master GAS プロジェクトへコピーする完全な正式ソースです。別の `doGet`、`doPost`、`onOpen` は追加しません。
+1. 既存Apps Scriptプロジェクトの `community-board-api.gs` と `zoho-mail.gs` を更新し、`community-messaging.gs` を追加して、既存Webアプリを新しいバージョンとして再デプロイします。この3ファイルが Master GAS プロジェクトへコピーする正式ソースです。別の `doGet`、`doPost`、`onOpen` は追加しません。
 2. 既存の5分トリガー `processWaitingCommunityApprovalNotifications` は互換ラッパーとして残っており、CommunityとJobsの両方を確認します。すでに本番トリガーがあれば作り直す必要はありません。
 3. トリガーが存在しない場合だけ、Apps Scriptエディターから `installCommunityApprovalNotificationTrigger` を手動実行します。この保守関数は通常メニューには表示されません。
 4. 統合Spreadsheetは Script Property の `MASTER_SPREADSHEET_ID` で指定することを推奨します。未設定時のみ従来の `COMMUNITY_SPREADSHEET_ID`、さらに両方が未設定の場合のみアクティブSpreadsheetを使用します。値の前後の空白は無視されます。IDをソース、ログ、クライアントへ記載しないでください。
@@ -48,3 +48,5 @@
 4. 別のテスト行を理由付きで却下し、`rejected` と理由が保存され、公開JSONに出ず、理由付きメールが届くことを確認します。
 5. `sent` 行で **公開確認を再試行** を実行し、「すでに公開通知済みです」と表示され、メールが増えないことを確認します。
 6. `Community Posts` / `Jobs` 以外のシートとヘッダー行で各メニューを実行し、安全な日本語警告だけが表示されることを確認します。
+
+公開返信の承認と非公開会話の導入は [community-messaging.md](community-messaging.md) を参照してください。

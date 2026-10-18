@@ -14,6 +14,7 @@ import {
   communityPublicationDate,
   isPublicCommunityPost,
   normalizeCommunityPost,
+  normalizePublicReplies,
   normalizeDirectoryItem,
   normalizeJob,
   publicPayload,
@@ -463,7 +464,8 @@ for (const stateKind of ["loading", "empty", "not-available", "error", "invalid"
 assert.match(commonImageSource, /escapeHtml\(title\)[\s\S]*escapeHtml\(body\)/, "shared data-state renderer does not escape visible copy");
 assert.equal(/buildCommunityUrl\(\{\s*action:\s*["'](?:getPosts|listPosts|getPost)/.test(home + communityList + communityDetail + communityContact + communityReport), false, "Community public display still reads GAS");
 assert.equal(/buildDirectoryUrl\(\{[\s\S]{0,180}(?:directorySheets\.jobs|sheet:\s*["']jobs)/.test(home + jobsList + jobsDetail), false, "Jobs public display still reads GAS");
-assert.equal(communityContact.includes("COMMUNITY_STATIC_POSTS_URL"), true);
+assert.equal(communityContact.includes("/assets/js/community-messaging.js"), true);
+assert.equal(read("assets/js/community-messaging.js").includes("sources.staticData.communityPosts"), true);
 assert.equal(communityReport.includes("COMMUNITY_STATIC_POSTS_URL"), true);
 
 assert.match(communityDetail, /この投稿は見つからないか、現在公開されていません。/);
@@ -731,3 +733,10 @@ try {
 }
 
 console.log("Public data pipeline validation passed.");
+
+const replyDto = {id:'reply-safe',post_id:'question-safe',nickname:'回答者',body:'回答 <script>alert(1)</script>',published_at:'2026-10-17T10:00:00Z',is_post_author:true,email_private:'must-not-export@example.com',session_hash:'private',moderation_status:'approved'};
+const normalizedReplies = normalizePublicReplies([replyDto,{...replyDto,id:'reply-wrong-post',post_id:'other'},{...replyDto,id:'reply-pii',body:'secret@example.com'}], 'question-safe', '質問');
+assert.equal(normalizedReplies.length,1);
+assert.deepEqual(Object.keys(normalizedReplies[0]).sort(),['id','post_id','nickname','body','reply_to','published_at','is_post_author'].sort());
+assertNoPrivateFields(normalizedReplies);
+assert.deepEqual(normalizePublicReplies([replyDto],'question-safe','譲ります'),[]);

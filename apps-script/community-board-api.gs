@@ -301,6 +301,11 @@ function onOpen() {
     .addItem('選択した投稿を承認・公開', 'approveSelectedSubmission')
     .addItem('選択した投稿を却下', 'rejectSelectedSubmission')
     .addItem('公開確認を再試行', 'retrySelectedPublication')
+    .addSeparator()
+    .addItem('選択した公開返信を承認', 'approveSelectedCommunityReply')
+    .addItem('選択した公開返信を非表示', 'hideSelectedCommunityReply')
+    .addItem('会話用シートを初期設定', 'initializeCommunityMessaging')
+    .addItem('会話の通知を再試行', 'processCommunityMessagingNotifications')
     .addToUi();
 }
 
@@ -311,7 +316,10 @@ function dispatchCommunityRequest_(e) {
     const sheetKey = String(params.sheet || '').trim().toLowerCase();
     let payload;
 
-    if (Object.prototype.hasOwnProperty.call(DIRECTORY_SHEET_NAMES, sheetKey)) payload = listDirectory_(sheetKey);
+    if (/^community[A-Z]/.test(action)) payload = typeof cmDispatch_ === 'function'
+      ? cmDispatch_(action, params, Boolean(e && e.postData))
+      : { ok: false, code: 'UNAVAILABLE', error: '現在この機能を利用できません。' };
+    else if (Object.prototype.hasOwnProperty.call(DIRECTORY_SHEET_NAMES, sheetKey)) payload = listDirectory_(sheetKey);
     else if (action === 'getJobs' || action === 'listJobs'
       || (action === 'listPosts' && sheetKey === 'jobs')) payload = listJobs_(params);
     else if (action === 'getPosts' || action === 'listPosts') payload = listPosts_(params);
@@ -491,7 +499,7 @@ function isPubliclyVisible_(post) {
   return !isExpired_(post);
 }
 
-function publicPostPayload_(post) {
+function publicPostPayload_(post, replyRows) {
   const status = normalizeStatus_(post.status);
   const payload = {};
   PUBLIC_POST_FIELDS.forEach((field) => {
@@ -510,6 +518,7 @@ function publicPostPayload_(post) {
   payload.isExpired = isExpired_(post);
   PRIVATE_POST_FIELDS.forEach((field) => delete payload[field]);
   delete payload._rowNumber;
+  if (typeof cmPublicRepliesForPost_ === 'function') payload.public_replies = cmPublicRepliesForPost_(post, replyRows);
   return payload;
 }
 
@@ -721,9 +730,10 @@ function listPosts_(params) {
   const sourceRows = context.values.slice(context.dataStartIndex)
     .map((row, index) => rowToObject_(context.headers, row, context.dataStartIndex + index + 1));
   const explicitlyActive = sourceRows.filter((post) => String(cleanCell_(post.status || '')).trim().toLowerCase() === 'active').length;
+  const replyIndex = typeof cmPublicReplyIndex_ === 'function' ? cmPublicReplyIndex_() : null;
   const posts = sourceRows
     .filter((post) => isPubliclyVisible_(post, params))
-    .map(publicPostPayload_)
+    .map((post) => publicPostPayload_(post, replyIndex ? replyIndex[String(post.post_id || post.id || '')] || [] : undefined))
     .sort(compareCommunityPublicationDates_);
   const payload = {
     ok: true,
@@ -736,7 +746,9 @@ function listPosts_(params) {
       excluded_by_reason: { lifecycle_or_status: sourceRows.length - posts.length }
     }
   };
-  cache.put(cacheKey, JSON.stringify(payload), COMMUNITY_CACHE_SECONDS);
+  // Large approved reply threads can exceed the cache item limit.
+  try { cache.put(cacheKey, JSON.stringify(payload), COMMUNITY_CACHE_SECONDS); }
+  catch (error) { console.warn('Community public cache write skipped.'); }
   return payload;
 }
 
@@ -1465,6 +1477,7 @@ function requestCommunityPublicDataSync_() {
 }
 
 function processWaitingCommunityApprovalNotifications() {
+  if (typeof processCommunityMessagingNotifications === 'function') processCommunityMessagingNotifications();
   return processWaitingApprovalNotifications();
 }
 
@@ -1673,37 +1686,9 @@ function submitInquiry_(params) {
   if (!isReasonableFormCompletion_(fields.values.form_started_at)) return safeFormFailure_('FORM_TIMING');
   if (!acquireSubmissionRateLimit_('submitInquiry', fields.values.sender_email)) return safeFormFailure_('RATE_LIMITED');
 
-  const found = findPostById_(fields.values.post_id);
-  if (!found) return { ok: false, error: 'Post not found.' };
-  const status = normalizeStatus_(found.post.status);
-  if (status !== 'active' || isExpired_(found.post)) {
-    return { ok: false, error: 'This post is closed.' };
-  }
-  const to = String(found.post.contact_email_private || '').trim();
-  if (!isJConnectValidEmail_(to)) {
-    return { ok: false, error: 'Contact email is unavailable.' };
-  }
-  const senderName = fields.values.sender_name;
-  const senderEmail = fields.values.sender_email;
-  const subject = fields.values.subject || 'J-Connect Global 掲示板の投稿への問い合わせ';
-  const message = fields.values.message;
-  sendZohoEmail_({
-    to,
-    replyTo: senderEmail,
-    name: 'J-Connect Global',
-    subject: `【J-Connect Global】${subject}`,
-    body: [
-      'J-Connect Global 掲示板の投稿に問い合わせが届きました。',
-      '',
-      `投稿ID: ${found.post.post_id || found.post.id || ''}`,
-      `投稿タイトル: ${found.post.title || ''}`,
-      `送信者: ${senderName}`,
-      `送信者メール: ${senderEmail}`,
-      '',
-      message
-    ].join('\n')
-  });
-  return { ok: true, success: true };
+  // Retire the legacy email forwarding path: it disclosed the sender's email.
+  return { ok: false, success: false, code: 'MESSAGING_REQUIRED',
+    error: '投稿詳細から、新しい公開返信・非公開会話フォームを開いてください。' };
 }
 
 function submitReport_(params) {

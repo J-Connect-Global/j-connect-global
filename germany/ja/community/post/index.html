@@ -1244,6 +1244,7 @@
 }
 
 </style>
+<link rel="stylesheet" href="/assets/css/community-messaging.css">
 </head>
 
 <body>
@@ -1349,6 +1350,7 @@
       </div>
 
       <div class="panel">
+        <p class="form-privacy-notice">質問・相談にはニックネームで公開返信が付きます。売買・友達募集などの連絡は、メールで本人確認する非公開の会話ページで行います。</p>
         <form id="postForm" class="form-grid" novalidate>
           <input type="hidden" name="action" value="submitPost">
 
@@ -1514,6 +1516,7 @@
 
 <script src="/assets/js/common.js"></script>
 <script src="/assets/js/data-sources.js"></script>
+<script src="/assets/js/community-messaging.js"></script>
 <script src="/assets/js/community-shared.js"></script>
 <script>
 const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
@@ -2980,7 +2983,7 @@ function renderStandaloneDetail(post, posts) {
     : '';
   const contactAction = post._isClosed
     ? '<span class="btn btn-primary is-disabled" aria-disabled="true">募集終了</span>'
-    : '<a class="btn btn-primary" href="' + escapeHtml(contactHref) + '">投稿者に連絡</a>';
+    : '<a class="btn btn-primary" href="' + escapeHtml(contactHref) + '">' + (['質問', '相談', '質問・相談'].includes(post._postType) ? '公開返信する' : '非公開で連絡する') + '</a>';
   const relatedGroup = comparablePosts(posts, post, 4);
   const related = relatedGroup.items;
   const marker = escapeHtml(CATEGORY_ICONS[post._subcategory] || CATEGORY_ICONS[post._postType] || CATEGORY_ICONS['その他']);
@@ -3036,6 +3039,7 @@ function renderStandaloneDetail(post, posts) {
           ${updatedText ? `<span class="fact">更新日: ${escapeHtml(updatedText)}</span>` : ''}
         </div>
         <p class="detail-body">${escapeHtml(post._body || '詳細本文は未設定です。')}</p>
+        <div data-cm-dynamic></div>
         <div class="detail-actions community-detail-actions">
           ${contactAction}
           <a class="btn btn-secondary" href="${escapeHtml(manageHref)}">投稿者管理</a>
@@ -3056,6 +3060,7 @@ function renderStandaloneDetail(post, posts) {
 
   `;
 
+  window.JConnectMessaging?.mount(detailMode.querySelector("[data-cm-dynamic]"), post);
   detailMode.querySelectorAll('.detail-thumb-button').forEach(function(button) {
     button.addEventListener('click', function() {
       const img = document.getElementById('detailMainPhoto');

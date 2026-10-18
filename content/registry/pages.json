@@ -638,7 +638,7 @@
   },
   {
     "id": "page-community-contact",
-    "title": "投稿者に連絡する",
+    "title": "公開返信・非公開会話",
     "url": "/germany/ja/community/contact/",
     "type": "utility",
     "pillar": "community",
@@ -652,7 +652,7 @@
     "redirect_target": "",
     "layout": "utility",
     "hero_type": "utility",
-    "description": "掲示板の投稿者へ連絡するためのフォームページです。",
+    "description": "掲示板の公開返信・非公開会話をメール確認して始めるフォームです。",
     "tags": [
       "掲示板",
       "連絡"
@@ -764,7 +764,11 @@
     "layout": "utility",
     "hero_type": "utility",
     "description": "掲示板投稿の通報完了ページです。",
-    "tags": ["掲示板", "通報", "送信完了"]
+    "tags": [
+      "掲示板",
+      "通報",
+      "送信完了"
+    ]
   },
   {
     "id": "page-community-contact-complete",
@@ -782,8 +786,12 @@
     "redirect_target": "",
     "layout": "utility",
     "hero_type": "utility",
-    "description": "掲示板投稿者へのメッセージ送信完了ページです。",
-    "tags": ["掲示板", "投稿者連絡", "送信完了"]
+    "description": "メールの専用リンクから公開返信・非公開会話の確認を行ってください。",
+    "tags": [
+      "掲示板",
+      "投稿者連絡",
+      "送信完了"
+    ]
   },
   {
     "id": "page-community-manage",
@@ -938,6 +946,28 @@
     "tags": [
       "運営者情報",
       "Impressum"
+    ]
+  },
+  {
+    "id": "page-community-conversation",
+    "title": "非公開会話・返信の管理",
+    "url": "/germany/ja/community/conversation/",
+    "type": "utility",
+    "pillar": "community",
+    "status": "published",
+    "canonical_url": "/germany/ja/community/conversation/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "メールの専用リンクで開く会話・返信の管理ページです。",
+    "tags": [
+      "掲示板",
+      "非公開会話"
     ]
   }
 ]

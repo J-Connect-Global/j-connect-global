@@ -3,24 +3,22 @@
  * Private tables never participate in the public data export. Bearer access
  * links use URL fragments, one-hour single-use challenges, and hashed sessions.
  */
-const CM_VERSION = '2026-10-17.1';
+const CM_VERSION = '2026-10-18.1';
 const CM_PATH = '/germany/ja/community/conversation/';
 const CM_HOUR = 60 * 60 * 1000;
 const CM_SESSION_LIFETIME = 30 * 24 * CM_HOUR;
 const CM_TABLES = {
-  replies: ['Community Replies', ['reply_id', 'post_id', 'nickname', 'body', 'email_private', 'reply_to', 'status', 'created_at', 'verified_at', 'published_at', 'session_hash', 'session_expires_at', 'request_id']],
-  conversations: ['Community Conversations', ['conversation_id', 'post_id', 'status', 'created_at', 'updated_at', 'request_id']],
-  participants: ['Community Participants', ['participant_id', 'conversation_id', 'role', 'nickname', 'email_private', 'session_hash', 'session_expires_at']],
-  messages: ['Community Messages', ['message_id', 'conversation_id', 'participant_id', 'body', 'created_at', 'request_id']],
+  replies: ['Community Replies', ['reply_id', 'post_id', 'nickname', 'body', 'email_private', 'reply_to', 'status', 'created_at', 'verified_at', 'published_at', 'session_hash', 'session_expires_at', 'request_id', 'reply_number', 'deletion_salt', 'deletion_hash']],
+  conversations: ['Community Conversations', ['conversation_id', 'post_id', 'status', 'created_at', 'updated_at', 'request_id', 'target_reply_id', 'creation_hash']],
+  participants: ['Community Participants', ['participant_id', 'conversation_id', 'role', 'nickname', 'email_private', 'session_hash', 'session_expires_at', 'verified_at']],
+  messages: ['Community Messages', ['message_id', 'conversation_id', 'participant_id', 'body', 'created_at', 'request_id', 'deleted_at']],
   access: ['Community Access', ['access_id', 'token_hash', 'purpose', 'target_id', 'expires_at', 'consumed_at', 'created_at']],
   reports: ['Community Message Reports', ['report_id', 'kind', 'target_id', 'participant_id', 'reason', 'created_at']],
   blocks: ['Community Blocks', ['blocker_hash', 'blocked_hash', 'created_at']],
   notifications: ['Community Notifications', ['notification_id', 'email_private', 'purpose', 'target_id', 'kind', 'scope_id', 'source_id', 'subject', 'body', 'status', 'attempts', 'next_attempt_at', 'created_at']]
 };
 
-function cmMode_(post) {
-  return ['質問', '相談', '質問・相談'].indexOf(String(post.category1 || '').trim()) !== -1 ? 'public' : 'private';
-}
+function cmMode_() { return 'public'; }
 
 // Read operations must not create sheets or alter an existing workbook.
 function cmTable_(kind, create) {
@@ -35,7 +33,11 @@ function cmTable_(kind, create) {
   }
   if (!sheet) return { sheet: null, headers: definition[1], rows: [] };
   const values = sheet.getDataRange().getValues();
-  if (JSON.stringify(values[0]) !== JSON.stringify(definition[1])) throw new Error('CM_SCHEMA_MISMATCH');
+  const headers = values[0];
+  // Only an exact prefix of the reviewed schema can be upgraded. Reads never
+  // mutate sheets; initializeCommunityMessaging performs the append-only upgrade.
+  if (headers.length > definition[1].length || headers.some((name, i) => name !== definition[1][i])) throw new Error('CM_SCHEMA_MISMATCH');
+  if (create && headers.length < definition[1].length) sheet.getRange(1, 1, 1, definition[1].length).setValues([definition[1]]);
   return {
     sheet, headers: definition[1],
     rows: values.slice(1).map((row, index) => {
@@ -63,7 +65,7 @@ function cmAppend_(kind, row) {
 }
 
 function cmSave_(kind, row) {
-  const table = cmTable_(kind, false);
+  const table = cmTable_(kind, true);
   if (!table.sheet || !row._row) throw new Error('CM_ROW_MISSING');
   table.sheet.getRange(row._row, 1, 1, table.headers.length)
     .setValues([table.headers.map((key) => cmWriteCell_(row[key]))]);
@@ -149,8 +151,8 @@ function cmLink_(jobs, email, purpose, target, kind, id, queued, sourceId) {
   // Fragment is never sent in a web request or a referrer. No recipient address
   // or message content is included in another participant's notification.
   const url = COMMUNITY_SITE_ORIGIN + CM_PATH + '?kind=' + kind + '&id=' + encodeURIComponent(id) + '#access=' + raw;
-  jobs.push({ notification_id: notification.notification_id, to: email, name: 'J-Connect Germany', subject: '【J-Connect】確認・会話用リンク', body: [
-    'J-Connect Germanyの確認・会話用リンクです。',
+  jobs.push({ notification_id: notification.notification_id, to: email, name: 'J-Connect Germany', subject: kind === 'reply' ? '【J-Connect】公開返信の管理リンク' : '【J-Connect】非公開会話のお知らせ', body: [
+    kind === 'reply' ? '公開返信の管理ページを開くリンクです。' : '非公開メッセージを送信したか、受信したためお知らせします。',
     'リンクを開き、画面の確認ボタンを押してください。リンクは1時間有効で、一度だけ使用できます。',
     '', url, '', '心当たりがない場合は、このメールを無視してください。',
     '会話や返信は、サイト内の専用ページから行ってください。この通知メールへの返信は相手に届きません。'
@@ -180,57 +182,89 @@ function cmAuth_(kind, params) {
     row.session_hash === digest && Date.parse(row.session_expires_at) > Date.now()) || null;
 }
 
+// Client-side PBKDF2-HMAC-SHA256 (600,000 rounds) derives a per-reply key.
+// Only an HMAC under a server-only pepper is stored; no raw password or key is
+// persisted, queued for email, included in DTOs, or exported to GitHub.
+function cmDeletionDigest_(key) {
+  const pepper = getRequiredScriptProperty_('CM_DELETION_PEPPER');
+  return Utilities.computeHmacSha256Signature(key, pepper).map(function(byte) { return ('0' + (byte & 255).toString(16)).slice(-2); }).join('');
+}
+
+function cmPublicPostUrl_(id) { return COMMUNITY_SITE_ORIGIN + '/germany/ja/community/posts/' + encodeURIComponent(id) + '/'; }
+
+function cmReplyNumbers_(rows) {
+  const counts = Object.create(null);
+  return rows.map(function(row) {
+    const number = Number(row.reply_number) || (Number(counts[row.post_id] || 0) + 1);
+    counts[row.post_id] = Math.max(Number(counts[row.post_id] || 0), number);
+    return Object.assign({}, row, { reply_number: String(number) });
+  });
+}
+
 function cmCreateReply_(params, jobs) {
   const form = cmForm_(params);
-  if (!form || params.public_consent !== 'true') return cmFail_('INVALID_INPUT');
+  if (!form || params.public_consent !== 'true' || !cmToken_(params.deletion_key) || !cmToken_(params.deletion_salt)) return cmFail_('INVALID_INPUT');
   const post = cmParent_(form.post_id, false);
   if (!post) return cmFail_('CLOSED');
-  if (cmMode_(post) !== 'public') return cmFail_('WRONG_MODE');
   if (/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i.test(form.body + form.nickname)
     || /[?&#](?:token|access|session|secret|manage_token)=/i.test(form.body)) return cmFail_('PUBLIC_CONTACT');
-  if (!cmRate_('submit:' + form.email, 4, 3600) || !cmRate_('submit:all', 100, 3600)) return cmFail_('RATE_LIMITED');
-  let row = cmTable_('replies', false).rows.find((item) => item.post_id === form.post_id &&
-    item.email_private === form.email && item.request_id === form.request_id);
-  if (row && row.status !== 'pending_email') return { ok: true, success: true, id: row.reply_id, confirmation_required: false };
-  if (!row) {
-    if (form.reply_to && !cmPublicRepliesForPost_(post).some((reply) => reply.id === form.reply_to)) return cmFail_('INVALID_INPUT');
-    row = cmAppend_('replies', {
-      reply_id: cmId_('reply'), post_id: form.post_id, nickname: form.nickname, body: form.body,
-      email_private: form.email, reply_to: form.reply_to, status: 'pending_email', created_at: cmNow_(),
-      verified_at: '', published_at: '', session_hash: '', session_expires_at: '', request_id: form.request_id
-    });
+  const rows = cmReplyNumbers_(cmTable_('replies', false).rows);
+  let row = rows.find(item => item.post_id === form.post_id && item.email_private === form.email && item.request_id === form.request_id);
+  if (row) {
+    if (!row.deletion_hash || row.deletion_hash !== cmDeletionDigest_(params.deletion_key)) return cmFail_('INVALID_ACCESS');
+    return { ok: true, success: true, id: row.reply_id, reply: cmPublicRepliesForPost_(post, [row])[0], confirmation_required: false, notification_pending: true };
   }
-  cmLink_(jobs, row.email_private, 'reply_verify', row.reply_id, 'reply', row.reply_id);
-  return { ok: true, success: true, id: row.reply_id, confirmation_required: true };
+  if (form.reply_to && !cmPublicRepliesForPost_(post, rows).some(reply => reply.id === form.reply_to && !reply.deleted)) return cmFail_('INVALID_INPUT');
+  if (!cmRate_('submit:' + form.email, 10, 3600) || !cmRate_('submit:all', 100, 3600)) return cmFail_('RATE_LIMITED');
+  const number = rows.filter(item => item.post_id === form.post_id).reduce((max, item) => Math.max(max, Number(item.reply_number)), 0) + 1;
+  row = cmAppend_('replies', {
+    reply_id: cmId_('reply'), post_id: form.post_id, nickname: form.nickname, body: form.body,
+    email_private: form.email, reply_to: form.reply_to, status: 'published', created_at: cmNow_(),
+    verified_at: '', published_at: cmNow_(), session_hash: '', session_expires_at: '', request_id: form.request_id,
+    reply_number: String(number), deletion_salt: params.deletion_salt, deletion_hash: cmDeletionDigest_(params.deletion_key)
+  });
+  cmInvalidatePublic_(true);
+  cmNotice_(jobs, '【J-Connect】公開返信を投稿しました',
+    '公開返信 #' + number + 'を投稿しました。\n' + cmPublicPostUrl_(form.post_id) + '#reply-' + row.reply_id +
+    '\n削除する場合は返信の「削除」から、ご自身で設定した削除用パスワードを入力してください。パスワードはメールに記載しません。' +
+    '\n身に覚えがない場合は、ページの通報から運営へお知らせください。', form.email);
+  const recipientReply = form.reply_to ? rows.find(item => item.reply_id === form.reply_to && item.post_id === form.post_id) : null;
+  const recipientEmail = cmEmail_(recipientReply ? recipientReply.email_private : post.contact_email_private);
+  if (isJConnectValidEmail_(recipientEmail) && recipientEmail !== form.email) cmNotice_(jobs,
+    '【J-Connect】公開返信が届きました', '公開返信 #' + number + 'が届きました。投稿ページでご確認ください。\n' + cmPublicPostUrl_(form.post_id) + '#reply-' + row.reply_id, recipientEmail);
+  return { ok: true, success: true, id: row.reply_id, reply: cmPublicRepliesForPost_(post, [row])[0], confirmation_required: false, notification_pending: true };
 }
 
 function cmCreateConversation_(params, jobs) {
   const form = cmForm_(params);
-  if (!form) return cmFail_('INVALID_INPUT');
+  if (!form || params.private_consent !== 'true' || !cmToken_(params.creation_key)) return cmFail_('INVALID_INPUT');
   const post = cmParent_(form.post_id, false);
   if (!post) return cmFail_('CLOSED');
-  if (cmMode_(post) !== 'private') return cmFail_('WRONG_MODE');
-  const ownerEmail = cmEmail_(post.contact_email_private);
+  const reply = form.reply_to ? cmFind_('replies', 'reply_id', form.reply_to) : null;
+  if (form.reply_to && (!reply || reply.post_id !== form.post_id || ['approved', 'published'].indexOf(reply.status) === -1)) return cmFail_('INVALID_INPUT');
+  const ownerEmail = cmEmail_(reply ? reply.email_private : post.contact_email_private);
   if (!isJConnectValidEmail_(ownerEmail)) return cmFail_('UNAVAILABLE');
   if (ownerEmail === form.email) return cmFail_('SELF_CONTACT');
-  if (!cmRate_('submit:' + form.email, 4, 3600) || !cmRate_('submit:all', 100, 3600)) return cmFail_('RATE_LIMITED');
-  // A blocked sender receives the same generic accepted response; no mailbox
-  // owner or block-list membership is disclosed.
-  if (cmBlocked_(form.email, ownerEmail)) return { ok: true, success: true, id: cmId_('conversation'), confirmation_required: true };
-  let conversation = cmTable_('conversations', false).rows.find((row) => row.post_id === form.post_id && row.request_id === form.request_id);
+  let conversation = cmTable_('conversations', false).rows.find(row => row.post_id === form.post_id && row.request_id === form.request_id);
   if (conversation) {
-    const guest = cmTable_('participants', false).rows.find((row) => row.conversation_id === conversation.conversation_id && row.role === 'inquirer');
-    if (!guest || guest.email_private !== form.email) return cmFail_('INVALID_INPUT');
-    cmLink_(jobs, form.email, conversation.status === 'pending_email' ? 'conversation_verify' : 'conversation_login', guest.participant_id, 'conversation', conversation.conversation_id);
-    return { ok: true, success: true, id: conversation.conversation_id, confirmation_required: true };
+    if (conversation.creation_hash !== sha256Hex_(params.creation_key)) return cmFail_('INVALID_ACCESS');
+    const guest = cmTable_('participants', false).rows.find(row => row.conversation_id === conversation.conversation_id && row.role === 'inquirer');
+    if (!guest || guest.email_private !== form.email || Date.parse(conversation.created_at) + CM_SESSION_LIFETIME <= Date.now()) return cmFail_('INVALID_ACCESS');
+    const session = sha256Hex_(params.creation_key + ':' + conversation.conversation_id);
+    return { ok: true, success: true, id: conversation.conversation_id, scope: 'conversation', session: guest.session_hash === sha256Hex_(session) ? session : '', confirmation_required: false, notification_pending: true };
   }
+  if (!cmRate_('submit:' + form.email, 10, 3600) || !cmRate_('submit:all', 100, 3600)) return cmFail_('RATE_LIMITED');
+  if (cmBlocked_(form.email, ownerEmail)) return { ok: true, success: true, id: cmId_('conversation'), scope: 'conversation', session: randomToken_(32), confirmation_required: false, notification_pending: true };
   const id = cmId_('conversation');
-  conversation = cmAppend_('conversations', { conversation_id: id, post_id: form.post_id, status: 'pending_email', created_at: cmNow_(), updated_at: cmNow_(), request_id: form.request_id });
-  cmAppend_('participants', { participant_id: cmId_('participant'), conversation_id: id, role: 'owner', nickname: cmNickname_(post.nickname || '投稿者'), email_private: ownerEmail });
-  const guest = cmAppend_('participants', { participant_id: cmId_('participant'), conversation_id: id, role: 'inquirer', nickname: cmNickname_(form.nickname), email_private: form.email });
+  conversation = cmAppend_('conversations', { conversation_id: id, post_id: form.post_id, status: 'active', created_at: cmNow_(), updated_at: cmNow_(), request_id: form.request_id, target_reply_id: form.reply_to, creation_hash: sha256Hex_(params.creation_key) });
+  const owner = cmAppend_('participants', { participant_id: cmId_('participant'), conversation_id: id, role: 'owner', nickname: cmNickname_(reply ? reply.nickname : post.nickname || '元の投稿者'), email_private: ownerEmail });
+  const session = sha256Hex_(params.creation_key + ':' + id);
+  const guest = cmAppend_('participants', { participant_id: cmId_('participant'), conversation_id: id, role: 'inquirer', nickname: cmNickname_(form.nickname), email_private: form.email,
+    session_hash: sha256Hex_(session), session_expires_at: berlinTimestamp_(new Date(Date.now() + CM_SESSION_LIFETIME)), verified_at: '' });
   cmAppend_('messages', { message_id: cmId_('message'), conversation_id: id, participant_id: guest.participant_id, body: form.body, created_at: cmNow_(), request_id: form.request_id });
-  cmLink_(jobs, form.email, 'conversation_verify', guest.participant_id, 'conversation', id);
-  return { ok: true, success: true, id, confirmation_required: true };
+  cmLink_(jobs, owner.email_private, 'conversation_login', owner.participant_id, 'conversation', id);
+  cmLink_(jobs, form.email, 'conversation_login', guest.participant_id, 'conversation', id);
+  return { ok: true, success: true, id, scope: 'conversation', session, confirmation_required: false, notification_pending: true };
 }
 
 function cmUseAccess_(params, jobs) {
@@ -245,7 +279,7 @@ function cmUseAccess_(params, jobs) {
       if (row.status !== 'pending_email' || !cmParent_(row.post_id, false)) return cmFail_('CLOSED');
       row.verified_at = cmNow_(); row.status = 'pending'; cmSave_('replies', row);
       cmNotice_(jobs, '【J-Connect】公開返信の審査待ち', 'Community Repliesで確認する返信ID: ' + row.reply_id + '\n投稿ID: ' + row.post_id);
-    } else if (!row.verified_at) return cmFail_('INVALID_ACCESS');
+    } else { row.verified_at = cmNow_(); cmSave_('replies', row); }
     access.consumed_at = cmNow_(); cmSave_('access', access);
     return cmSession_('replies', row, 'reply');
   }
@@ -264,6 +298,7 @@ function cmUseAccess_(params, jobs) {
     const owner = participants.find((item) => item.role === 'owner');
     cmLink_(jobs, owner.email_private, 'conversation_login', owner.participant_id, 'conversation', conversation.conversation_id);
   } else if (conversation.status === 'pending_email') return cmFail_('INVALID_ACCESS');
+  row.verified_at = cmNow_();
   access.consumed_at = cmNow_(); cmSave_('access', access);
   return cmSession_('participants', row, 'conversation');
 }
@@ -275,7 +310,7 @@ function cmRequestAccess_(params, jobs) {
   if (params.kind === 'reply') {
     const row = cmFind_('replies', 'reply_id', id);
     if (row && row.email_private === email && cmParent_(row.post_id, true))
-      cmLink_(jobs, email, row.verified_at ? 'reply_login' : 'reply_verify', row.reply_id, 'reply', id);
+      cmLink_(jobs, email, ['published', 'approved', 'hidden'].indexOf(row.status) !== -1 ? 'reply_login' : 'reply_verify', row.reply_id, 'reply', id);
   } else if (params.kind === 'conversation') {
     const conversation = cmFind_('conversations', 'conversation_id', id);
     const row = cmTable_('participants', false).rows.find((item) => item.conversation_id === id && item.email_private === email);
@@ -309,10 +344,10 @@ function cmGetConversation_(params) {
   const start = Math.max(0, end - 50);
   return {
     ok: true, id: context.conversation.conversation_id, post_id: context.conversation.post_id,
-    post_title: String(context.post.title || ''), nickname: cmNickname_(context.viewer.nickname), other_nickname: cmNickname_(context.other.nickname),
+    post_title: String(context.post.title || ''), target_reply_id: context.conversation.target_reply_id || '', nickname: cmNickname_(context.viewer.nickname), other_nickname: cmNickname_(context.other.nickname),
     status: context.blocked ? 'blocked' : context.conversation.status, has_more: start > 0,
     before: rows[start] ? rows[start].message_id : '',
-    messages: rows.slice(start, end).map((row) => ({ id: row.message_id, body: row.body, created_at: row.created_at,
+    messages: rows.slice(start, end).map((row) => ({ id: row.message_id, body: row.deleted_at ? '' : row.body, deleted: Boolean(row.deleted_at), created_at: row.created_at,
       mine: row.participant_id === context.viewer.participant_id,
       nickname: cmNickname_(row.participant_id === context.viewer.participant_id ? context.viewer.nickname : context.other.nickname) }))
   };
@@ -343,7 +378,7 @@ function cmSendMessage_(params, jobs) {
 function cmEndConversation_(params) {
   const context = cmConversationContext_(params);
   if (!context) return cmFail_('INVALID_ACCESS');
-  if (params.block === 'true' && !context.blocked) cmAppend_('blocks', {
+  if (params.block === 'true' && !context.blocked && context.viewer.verified_at && context.other.verified_at) cmAppend_('blocks', {
     blocker_hash: sha256Hex_(context.viewer.email_private), blocked_hash: sha256Hex_(context.other.email_private), created_at: cmNow_()
   });
   context.conversation.status = params.block === 'true' ? 'blocked' : 'closed';
@@ -357,10 +392,31 @@ function cmGetReply_(params) {
   return { ok: true, id: row.reply_id, post_id: row.post_id, nickname: row.nickname, body: row.body, status: row.status };
 }
 
+function cmReplyDeleteChallenge_(params) {
+  const row = cmFind_('replies', 'reply_id', params.id);
+  if (!row || !row.deletion_salt || !cmParent_(row.post_id, false) || ['published', 'approved'].indexOf(row.status) === -1) return cmFail_('INVALID_INPUT');
+  return { ok: true, salt: row.deletion_salt, iterations: 600000 };
+}
+
 function cmDeleteReply_(params) {
-  const row = cmAuth_('replies', params);
-  if (!row) return cmFail_('INVALID_ACCESS');
-  row.status = 'hidden'; cmSave_('replies', row); cmInvalidatePublic_();
+  let row = cmAuth_('replies', params);
+  if (!row) {
+    if (!cmValidId_(params.id) || !cmToken_(params.deletion_key)) return cmFail_('INVALID_ACCESS');
+    if (!cmRate_('delete:' + params.id, 5, 600)) return cmFail_('RATE_LIMITED');
+    row = cmFind_('replies', 'reply_id', params.id);
+    if (!row || !row.deletion_hash || row.deletion_hash !== cmDeletionDigest_(params.deletion_key)) return cmFail_('INVALID_ACCESS');
+  }
+  if (!cmParent_(row.post_id, true)) return cmFail_('CLOSED');
+  row.status = 'hidden'; cmSave_('replies', row); cmInvalidatePublic_(true);
+  return { ok: true, success: true };
+}
+
+function cmDeleteMessage_(params) {
+  const context = cmConversationContext_(params);
+  if (!context) return cmFail_('INVALID_ACCESS');
+  const message = cmFind_('messages', 'message_id', params.message_id);
+  if (!message || message.conversation_id !== context.conversation.conversation_id || message.participant_id !== context.viewer.participant_id) return cmFail_('INVALID_ACCESS');
+  message.deleted_at = cmNow_(); cmSave_('messages', message);
   return { ok: true, success: true };
 }
 
@@ -373,7 +429,7 @@ function cmReport_(params, jobs) {
   } else if (params.kind === 'reply') {
     const reply = cmFind_('replies', 'reply_id', params.id);
     const post = reply && cmParent_(reply.post_id, false);
-    if (!reply || reply.status !== 'approved' || !post || cmMode_(post) !== 'public') return cmFail_('INVALID_INPUT');
+    if (!reply || ['approved', 'published'].indexOf(reply.status) === -1 || !post) return cmFail_('INVALID_INPUT');
     if (params.website || !isReasonableFormCompletion_(params.form_started_at)) return cmFail_('INVALID_INPUT');
   } else return cmFail_('INVALID_INPUT');
   const reason = String(params.reason || '').trim();
@@ -396,29 +452,43 @@ function cmPublicReplyIndex_() {
 }
 
 function cmPublicRepliesForPost_(post, replyRows) {
-  if (!post || cmMode_(post) !== 'public' || !isPubliclyVisible_(post)) return [];
+  if (!post || !isPubliclyVisible_(post)) return [];
   const id = String(post.post_id || post.id || '');
-  const rows = Array.isArray(replyRows) ? replyRows : cmTable_('replies', false).rows;
-  return rows.filter((row) => row.post_id === id && row.status === 'approved' && row.verified_at && Number.isFinite(Date.parse(row.published_at))
+  const rows = cmReplyNumbers_(Array.isArray(replyRows) ? replyRows : cmTable_('replies', false).rows);
+  return rows.filter(row => row.post_id === id && ['approved', 'published', 'hidden'].indexOf(row.status) !== -1 && Number.isFinite(Date.parse(row.published_at))
     && cmValidId_(row.reply_id) && String(row.nickname || '').trim() && String(row.body || '').trim()
     && !/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i.test(row.body + row.nickname)
     && !/[?&#](?:token|access|session|secret|manage_token)=/i.test(row.body))
-    .slice(-200).map((row) => ({
-      id: row.reply_id, post_id: row.post_id, nickname: row.nickname, body: row.body,
-      reply_to: row.reply_to || '', published_at: row.published_at,
-      is_post_author: cmEmail_(row.email_private) === cmEmail_(post.contact_email_private)
-    }));
+    .slice(-200).map(row => {
+      const parent = rows.find(item => item.reply_id === row.reply_to && item.post_id === id);
+      const deleted = row.status === 'hidden';
+      return { id: row.reply_id, post_id: row.post_id, number: Number(row.reply_number), nickname: deleted ? '削除済み' : cmNickname_(row.nickname), body: deleted ? '' : row.body,
+        deleted, reply_to: row.reply_to || '', reply_to_number: parent ? Number(parent.reply_number) : 0, published_at: row.published_at,
+        is_post_author: !deleted && Boolean(row.verified_at) && cmEmail_(row.email_private) === cmEmail_(post.contact_email_private) };
+    });
 }
 
-function cmInvalidatePublic_() {
-  CacheService.getScriptCache().remove(COMMUNITY_CACHE_KEY);
-  // Existing scheduled sync is the fallback if a dispatch cannot be sent.
-  try { requestCommunityPublicDataSync_(); } catch (error) { console.warn('Community reply sync queued for scheduled sync.'); }
+function cmInvalidatePublic_(defer) {
+  try { CacheService.getScriptCache().remove(COMMUNITY_CACHE_KEY); } catch (_) {}
+  PropertiesService.getScriptProperties().setProperty('CM_PUBLIC_DIRTY', 'true');
+  if (!defer) cmFlushPublic_();
+}
+
+function cmFlushPublic_() {
+  const properties = PropertiesService.getScriptProperties();
+  if (properties.getProperty('CM_PUBLIC_DIRTY') !== 'true') return;
+  try { const result = requestCommunityPublicDataSync_(); if (result && result.dispatched) properties.deleteProperty('CM_PUBLIC_DIRTY'); }
+  catch (_) { console.warn('Community reply sync queued for scheduled sync.'); }
 }
 
 function initializeCommunityMessaging() {
   const lock = LockService.getScriptLock();
-  try { lock.waitLock(10000); Object.keys(CM_TABLES).forEach((kind) => cmTable_(kind, true)); }
+  try {
+    lock.waitLock(10000); Object.keys(CM_TABLES).forEach(kind => cmTable_(kind, true));
+    const properties = PropertiesService.getScriptProperties();
+    if (!properties.getProperty('CM_DELETION_PEPPER')) properties.setProperty('CM_DELETION_PEPPER', randomToken_(32));
+    cmReplyNumbers_(cmTable_('replies', false).rows).forEach(row => cmSave_('replies', row));
+  }
   finally { if (lock.hasLock()) lock.releaseLock(); }
 }
 
@@ -433,7 +503,7 @@ function cmModerateSelectedReply_(status) {
     lock.waitLock(10000);
     const row = cmTable_('replies', false).rows.find((item) => item._row === sheet.getActiveRange().getRow());
     const post = row && cmParent_(row.post_id, false);
-    if (!row || !row.verified_at || (status === 'approved' && (!post || cmMode_(post) !== 'public'))) throw new Error('確認済みの公開返信を選択してください。');
+    if (!row || (status === 'approved' && (!post || (!row.verified_at && row.status !== 'published' && row.status !== 'hidden')))) throw new Error('確認済みの公開返信を選択してください。');
     if (status === 'approved' && row.status === 'approved') return;
     row.status = status; if (status === 'approved') row.published_at = cmNow_(); cmSave_('replies', row);
     cmInvalidatePublic_();
@@ -484,10 +554,11 @@ function processCommunityMessagingNotifications() {
     });
   } finally { if (lock.hasLock()) lock.releaseLock(); }
   cmDeliver_(jobs);
+  cmFlushPublic_();
 }
 
 function cmDispatch_(action, params, isPost) {
-  if (action === 'communityMessagingStatus') return { ok: true, messaging_version: CM_VERSION, public_replies: true, private_conversations: true };
+  if (action === 'communityMessagingStatus') return { ok: true, messaging_version: CM_VERSION, public_replies: true, private_conversations: true, inline_replies: true, instant_publish: true };
   if (action === 'communityPublicReplies') {
     const post = cmParent_(params.post_id, false);
     return { ok: true, replies: post ? cmPublicRepliesForPost_(post) : [] };
@@ -508,12 +579,16 @@ function cmDispatch_(action, params, isPost) {
       communityEndConversation: () => cmEndConversation_(params),
       communityGetReply: () => cmGetReply_(params),
       communityDeleteReply: () => cmDeleteReply_(params),
+      communityReplyDeleteChallenge: () => cmReplyDeleteChallenge_(params),
+      communityDeleteMessage: () => cmDeleteMessage_(params),
       communityReport: () => cmReport_(params, jobs)
     };
     result = actions[action] ? actions[action]() : cmFail_('INVALID_INPUT');
   } catch (error) {
     console.warn('Community messaging request failed.'); result = cmFail_('UNAVAILABLE');
   } finally { if (lock.hasLock()) lock.releaseLock(); }
-  if (!cmDeliver_(jobs) && result.ok) result.notification_pending = true;
+  // Public posting and first private contact respond after durable storage;
+  // the existing five-minute worker delivers notices without delaying display.
+  if (['communityCreateReply', 'communityCreateConversation'].indexOf(action) === -1 && !cmDeliver_(jobs) && result.ok) result.notification_pending = true;
   return result;
 }

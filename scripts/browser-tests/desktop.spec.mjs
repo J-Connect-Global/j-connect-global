@@ -429,7 +429,8 @@ test("Community renders active fixtures and links to the generated detail page",
   ]);
   await expect(page.locator(".public-detail-page h1")).toHaveText(fixturePhotoCommunityPost.title);
   await expect(page.locator(".public-detail-gallery img").first()).toHaveAttribute("src", photoSrc);
-  await expect(page.locator(`a[href="/germany/ja/community/contact/?post_id=${encodeURIComponent(photoPostId)}"]`)).toBeVisible();
+  await expect(page.locator(`[data-cm-private-for="${photoPostId}"]`)).toBeVisible();
+  await expect(page.locator("[data-cm-form]")).toBeVisible();
   await expect(page.locator(`a[href="/germany/ja/community/report/?post_id=${encodeURIComponent(photoPostId)}"]`)).toBeVisible();
   const galleryTrigger = page.locator("[data-lightbox-open]").first();
   const lightbox = page.locator("[data-public-lightbox]");
@@ -918,14 +919,15 @@ test("Medical renders reviewed listings while keeping low-coverage controls gate
 test("legal trust pages expose the operator clearly in light and dark modes", async ({ page }) => {
   await openRoute(page, "/germany/ja/impressum/");
   await expect(page.locator("main h1")).toHaveText("運営者情報");
-  await expect(page.locator("main")).toContainText("Yoshihiro Nagamatsu");
-  await expect(page.locator("main")).toContainText("Am Rosenberg 9");
-  await expect(page.locator("main")).toContainText("§ 18 Abs. 2 MStV");
+  await expect(page.locator('main a[href="mailto:contact@j-connect-global.com"]')).toBeVisible();
+  await expect(page.locator('main')).not.toContainText('準備中');
   await assertRouteReady(page);
 
   await openRoute(page, "/germany/ja/privacy/");
   await expect(page.locator("main h1")).toHaveText("プライバシーポリシー");
-  await expect(page.locator("main")).toContainText("G-BSKBFKQY19");
+  await expect(page.locator("main")).toContainText("Google Consent Mode");
+  await expect(page.locator("main")).toContainText("拒否時は GA4 を読み込みません");
+  await expect(page.locator('main a[href="/germany/ja/impressum/"]')).toBeVisible();
   await activateDarkMode(page);
   await assertWcagTextContrast(page, "main", "dark-mode privacy text");
   await assertRouteReady(page);

@@ -2983,7 +2983,7 @@ function renderStandaloneDetail(post, posts) {
     : '';
   const contactAction = post._isClosed
     ? '<span class="btn btn-primary is-disabled" aria-disabled="true">募集終了</span>'
-    : '<a class="btn btn-primary" href="' + escapeHtml(contactHref) + '">' + (['質問', '相談', '質問・相談'].includes(post._postType) ? '公開返信する' : '非公開で連絡する') + '</a>';
+    : '<button class="btn btn-primary" type="button" data-cm-private-for="' + escapeHtml(post._id) + '">非公開で連絡する</button>';
   const relatedGroup = comparablePosts(posts, post, 4);
   const related = relatedGroup.items;
   const marker = escapeHtml(CATEGORY_ICONS[post._subcategory] || CATEGORY_ICONS[post._postType] || CATEGORY_ICONS['その他']);

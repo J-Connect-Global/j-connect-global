@@ -234,17 +234,7 @@
   <main id="main-content" tabindex="-1" class="cm-shell">
   <p><a href="../">← 掲示板へ戻る</a></p>
   <h1 id="contactTitle">返信・会話</h1>
-  <p id="contactPost"></p><p id="contactMode"></p>
-  <p id="contactStatus" role="status">投稿と受付状況を確認中…</p>
-  <form id="contactForm" class="cm-panel"><fieldset disabled>
-    <label class="cm-honeypot" aria-hidden="true">Webサイト<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
-    <label for="nickname">ニックネーム</label><input id="nickname" name="nickname" maxlength="60" autocomplete="nickname" required>
-    <label for="email">確認・通知用メールアドレス（相手に非公開）</label><input id="email" name="email" type="email" maxlength="254" autocomplete="email" required>
-    <label for="body">返信・メッセージ</label><textarea id="body" name="body" maxlength="4000" required></textarea>
-    <label id="publicConsentLabel" class="cm-consent" hidden><input id="public_consent" name="public_consent" type="checkbox"><span>ニックネームと本文をインターネット上に公開することに同意します。</span></label>
-    <p>メールアドレスは本人確認と通知、不正利用防止のために運営が処理します。<a href="/germany/ja/privacy/">プライバシーポリシー</a></p>
-    <button type="submit">確認メールを送る</button>
-  </fieldset></form><noscript><p>送信にはJavaScriptを有効にしてください。</p></noscript>
+  <div id="contactMessaging"></div><noscript><p>送信にはJavaScriptを有効にしてください。</p></noscript>
   </main>
   <script src="/assets/js/common.js"></script>
   <script src="/assets/js/data-sources.js"></script>

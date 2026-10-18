@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test';
 import crypto from 'node:crypto';
 import { activeCommunityPosts, assertNoHorizontalOverflow, stubDriveImages } from './support.mjs';
+test.beforeEach(async ({page}) => { await page.addInitScript(() => localStorage.setItem('jconnect_cookie_consent','denied')); });
+
 const q = activeCommunityPosts.find(p => p.category1 === '質問');
 const sale = activeCommunityPosts.find(p => p.category1 !== '質問');
 const status = { ok:true, messaging_version:'2026-10-18.1', public_replies:true, private_conversations:true, inline_replies:true, instant_publish:true };

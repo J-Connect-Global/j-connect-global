@@ -36,7 +36,7 @@
     return [...new Uint8Array(bits)].map(b => b.toString(16).padStart(2, '0')).join('');
   }
   const summary = reply => '#' + reply.number + ' ' + reply.nickname + '「' + String(reply.body).replace(/\s+/g, ' ').slice(0, 36) + '」';
-  function scrollTo(el, focus) { el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' }); if (focus) focus.focus({ preventScroll: true }); }
+  function scrollTo(el, focus) { el.scrollIntoView({ behavior: 'instant', block: 'start' }); if (focus) focus.focus({ preventScroll: true }); }
   function parsedReplies(root, postId) {
     return [...root.querySelectorAll('[data-reply-id]')].map(card => ({ id: card.dataset.replyId, post_id: postId, number: Number(card.dataset.replyNumber), reply_to: card.dataset.replyTo || '', reply_to_number: Number(card.dataset.replyToNumber || 0),
       nickname: card.querySelector('[data-reply-nickname]')?.textContent || '', body: card.querySelector('[data-reply-body]')?.textContent || '', published_at: card.querySelector('time')?.dateTime || '', deleted: card.dataset.deleted === 'true', is_post_author: card.dataset.postAuthor === 'true' }));

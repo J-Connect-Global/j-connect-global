@@ -1,5 +1,7 @@
 import { expect, test } from '@playwright/test';
 import { activeCommunityPosts, assertNoHorizontalOverflow, stubDriveImages } from './support.mjs';
+test.beforeEach(async ({page}) => { await page.addInitScript(() => localStorage.setItem('jconnect_cookie_consent','denied')); });
+
 test('inline public/private composer, reply selection and access confirmation fit mobile and tablet',async({page})=>{
   await stubDriveImages(page);
   const post=activeCommunityPosts[0];

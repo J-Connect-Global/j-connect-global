@@ -33,6 +33,21 @@ const gas = fs.readFileSync(path.join(root, "apps-script/community-board-api.gs"
   transport.sendZohoEmail_({ to: 'reader@example.com', subject: 'Synthetic test', body: 'Hello' });
   assert(requests[0].url === 'https://accounts.zoho.eu/oauth/v2/token', 'Zoho authentication URL changed.');
   assert(requests[1].url === 'https://mail.zoho.eu/api/accounts/synthetic-account/messages', 'Zoho Mail /api base path was lost.');
+  const accessUrl = 'https://j-connect-global.com/germany/ja/community/conversation/?kind=conversation&id=conversation-test#access=' + 'a'.repeat(64);
+  const body = '確認リンク\n' + accessUrl + '\n<これは本文です> & そのまま表示';
+  transport.sendZohoEmail_({ to: 'reader@example.com', subject: 'Access-link regression', body });
+  const plainPayload = JSON.parse(requests.at(-1).options.payload);
+  assert(plainPayload.mailFormat === 'plaintext', 'Plain notifications must be sent as text/plain, without a generated HTML alternative.');
+  assert(plainPayload.content === body, 'Plain notification content or its access URL was escaped.');
+  const receivedUrl = new URL(plainPayload.content.split('\n')[1]);
+  assert(receivedUrl.searchParams.get('id') === 'conversation-test' && receivedUrl.hash === '#access=' + 'a'.repeat(64), 'The email access link no longer identifies the intended conversation.');
+  transport.sendZohoEmail_({ to: 'reader@example.com', subject: 'Plain reply address', body, replyTo: 'author@example.com' });
+  const plainReply = JSON.parse(requests.at(-1).options.payload);
+  assert(plainReply.mailFormat === 'plaintext' && plainReply.content.startsWith(body) && plainReply.content.endsWith('mailto:author@example.com'), 'Plain reply instructions must preserve the link and avoid HTML markup.');
+  const html = '<p>Explicit HTML &amp; existing formatting</p>';
+  transport.sendZohoEmail_({ to: 'reader@example.com', subject: 'HTML compatibility', html, replyTo: 'author@example.com' });
+  const htmlPayload = JSON.parse(requests.at(-1).options.payload);
+  assert(htmlPayload.mailFormat === 'html' && htmlPayload.content.startsWith(html) && htmlPayload.content.includes('<a href="mailto:author@example.com">'), 'Explicit HTML messages and their reply-address links must retain HTML formatting.');
   for (const invalid of ['http://mail.zoho.eu/api', 'https://mail.zoho.eu/api?token=x', 'https://mail.zoho.eu/api#secret', 'https://mail.zoho.eu/other']) {
     let rejected = false;
     try { transport.normalizeZohoBaseUrl_(invalid); } catch { rejected = true; }

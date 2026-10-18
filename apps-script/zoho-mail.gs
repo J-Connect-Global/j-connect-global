@@ -94,14 +94,22 @@ function sendZohoEmail_(message) {
   const config = validateJConnectEmailConfiguration_();
   const to = String(message && message.to || '').trim();
   const subject = String(message && message.subject || '').trim();
-  let content = String(message && (message.html || message.htmlBody) || '').trim()
-    || textToSafeEmailHtml_(message && message.body);
+  const htmlContent = String(message && (message.html || message.htmlBody) || '').trim();
+  // Preserve URLs in the actual text/plain MIME part. Converting a plain body
+  // to escaped HTML makes Zoho's generated text alternative retain &amp; in
+  // query strings, breaking email-link authentication in plain-text clients.
+  const mailFormat = htmlContent ? 'html' : 'plaintext';
+  let content = htmlContent || String(message && message.body || '');
   const replyTo = String(message && message.replyTo || '').trim();
   if (isJConnectValidEmail_(replyTo)) {
-    const safeReplyTo = textToSafeEmailHtml_(replyTo);
-    content += `<p><strong>返信先メールアドレス:</strong><br><a href="mailto:${safeReplyTo}">mailto:${safeReplyTo}</a></p>`;
+    if (mailFormat === 'html') {
+      const safeReplyTo = textToSafeEmailHtml_(replyTo);
+      content += `<p><strong>返信先メールアドレス:</strong><br><a href="mailto:${safeReplyTo}">mailto:${safeReplyTo}</a></p>`;
+    } else {
+      content += `\n\n返信先メールアドレス:\nmailto:${replyTo}`;
+    }
   }
-  if (!isJConnectValidEmail_(to) || !subject || !content) {
+  if (!isJConnectValidEmail_(to) || !subject || !content.trim()) {
     throw new Error('INVALID_EMAIL_MESSAGE');
   }
 
@@ -116,7 +124,7 @@ function sendZohoEmail_(message) {
         toAddress: to,
         subject,
         content,
-        mailFormat: 'html'
+        mailFormat
       }),
       muteHttpExceptions: true
     }

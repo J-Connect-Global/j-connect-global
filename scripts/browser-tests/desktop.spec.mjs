@@ -429,7 +429,7 @@ test("Community renders active fixtures and links to the generated detail page",
   ]);
   await expect(page.locator(".public-detail-page h1")).toHaveText(fixturePhotoCommunityPost.title);
   await expect(page.locator(".public-detail-gallery img").first()).toHaveAttribute("src", photoSrc);
-  await expect(page.locator(`[data-cm-private-for="${photoPostId}"]`)).toBeVisible();
+  await expect(page.getByRole("button", {name:"非公開で連絡する", exact:true})).toHaveCount(0);
   await expect(page.locator("[data-cm-form]")).toBeVisible();
   await expect(page.locator(`a[href="/germany/ja/community/report/?post_id=${encodeURIComponent(photoPostId)}"]`)).toBeVisible();
   const galleryTrigger = page.locator("[data-lightbox-open]").first();

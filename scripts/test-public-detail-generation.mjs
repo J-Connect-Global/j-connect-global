@@ -195,10 +195,10 @@ async function runFixtureTests() {
     assert.ok(communityHtml.includes("&lt;script&gt;alert(1)&lt;/script&gt;"));
     assert.equal((communityHtml.match(/<h1(?:\s|>)/g) || []).length, 1);
     assert.ok(!communityHtml.includes("DiscussionForumPosting"));
-    assert.match(communityHtml, /data-cm-private-for="post-safe"/);
+    assert.doesNotMatch(communityHtml, /data-cm-private-for/);
     assert.match(communityHtml, /\/germany\/ja\/community\/report\/\?post_id=post-safe/);
     assert.match(communityHtml, /data-public-lightbox/);
-    assert.match(communityHtml, /非公開で連絡する/);
+    assert.doesNotMatch(communityHtml, /非公開で連絡する|返信・連絡・通報/);
     assert.match(communityHtml, /id="reply-reply-approved"/);
     assert.match(communityHtml, /回答者 &lt;b&gt;safe&lt;\/b&gt;/);
     assert.ok(!communityHtml.includes('<img src=x onerror=alert(1)>'));

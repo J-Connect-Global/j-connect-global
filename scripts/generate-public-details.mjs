@@ -255,9 +255,9 @@ function communityPage(post, all, layout, now) {
         ${facts([["カテゴリ", [post.category1, post.category2].map(text).filter(Boolean).join(" / ")], ["地域", [post.city, post.region].map(text).filter(Boolean).join(" / ")], ["価格・条件", post.price], ["予定日", post.event_date || post.availability_date]])}
         ${gallery}
         <section class="public-detail-section"><h2>投稿内容</h2><div class="public-detail-copy">${escapeHtml(post.body || post.summary || "内容はありません。")}</div></section>
-        <section class="public-detail-section"><h2>返信・連絡・通報</h2><p>公開返信・非公開の会話を、下のフォームで選べます。非公開の会話ではメールアドレスを相手に表示しません。</p><div class="public-detail-actions">${canContact ? `<button class="public-detail-button" type="button" data-cm-private-for="${escapeHtml(post.id)}">非公開で連絡する</button>` : '<span class="public-detail-button public-detail-button--disabled" aria-disabled="true">この投稿の受付は終了しました</span>'}<a class="public-detail-button public-detail-button--secondary" href="${escapeHtml(reportHref)}">投稿を通報</a></div></section>
-        <section class="public-detail-section"><h2>関連する投稿</h2><div class="public-detail-related">${related.length ? related.map((item) => `<a href="${escapeHtml(assertPublicDetailUrl("community", item.detail_url, item.id || item.post_id))}"><strong>${escapeHtml(item.title)}</strong><span>${escapeHtml([item.category1, item.city || item.region].map(text).filter(Boolean).join(" / "))}</span></a>`).join("") : "<p>関連する公開投稿はまだありません。</p>"}</div></section>
         ${replySection}
+        <div class="public-detail-section public-detail-actions"><a class="public-detail-button public-detail-button--secondary" href="${escapeHtml(reportHref)}">投稿を通報</a></div>
+        <section class="public-detail-section"><h2>関連する投稿</h2><div class="public-detail-related">${related.length ? related.map((item) => `<a href="${escapeHtml(assertPublicDetailUrl("community", item.detail_url, item.id || item.post_id))}"><strong>${escapeHtml(item.title)}</strong><span>${escapeHtml([item.category1, item.city || item.region].map(text).filter(Boolean).join(" / "))}</span></a>`).join("") : "<p>関連する公開投稿はまだありません。</p>"}</div></section>
       </div>
     </article>
   </div>

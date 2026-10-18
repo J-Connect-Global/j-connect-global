@@ -33,7 +33,7 @@ expect(!listing.includes('copyShareUrl'), 'Community modal still contains copySh
 expect(!detail.includes('copyDetailUrl'), 'Standalone detail still contains copyDetailUrl.');
 expect(!detail.includes('URLをコピー'), 'Standalone detail still contains a URL-copy action.');
 expect(!detail.includes('安心の目安'), 'Standalone detail renderer still contains the safety section.');
-expect(detail.includes('btn btn-primary') && detail.includes('btn btn-soft'), 'Standalone detail action hierarchy is missing shared primary/soft buttons.');
+expect(detail.includes('data-cm-dynamic') && detail.includes('btn btn-soft'), 'Standalone detail is missing its reply composer or report action.');
 expect(detail.includes('save-button inline') && css.includes('min-inline-size:112px'), 'Save actions do not reserve width for 保存済み.');
 expect(report.includes('id="reportTarget"') && report.includes('COMMUNITY_STATIC_POSTS_URL'), 'Report page does not load its canonical target from public JSON.');
 expect(report.includes('form_started_at') && report.includes('website'), 'Report form is missing anti-abuse fields.');

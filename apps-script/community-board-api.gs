@@ -369,8 +369,14 @@ function getSpreadsheet_() {
   const properties = PropertiesService.getScriptProperties();
   const spreadsheetId = String(properties.getProperty('MASTER_SPREADSHEET_ID') || '').trim()
     || String(properties.getProperty('COMMUNITY_SPREADSHEET_ID') || '').trim();
-  if (spreadsheetId) return SpreadsheetApp.openById(spreadsheetId);
-  return SpreadsheetApp.getActiveSpreadsheet();
+  const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  // Menu actions need the browser's active sheet/range. Reopening the same file
+  // by ID can lose that UI selection; reuse it only when the configured ID matches.
+  if (spreadsheetId) {
+    if (activeSpreadsheet && activeSpreadsheet.getId() === spreadsheetId) return activeSpreadsheet;
+    return SpreadsheetApp.openById(spreadsheetId);
+  }
+  return activeSpreadsheet;
 }
 
 function getSheetContext_() {

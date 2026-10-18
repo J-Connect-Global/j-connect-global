@@ -1414,3 +1414,12 @@
     visibility: hidden;
   }
 }
+
+/* Context remains visible while the answer face is hidden. */
+.flashcards-practice { padding: 1rem 1.2rem; margin: 1rem 0; border: 1px solid var(--jc-border, #8a9eb3); border-radius: 1rem; background: var(--jc-surface, transparent); overflow-wrap: anywhere; }
+.flashcards-practice p { margin: .35rem 0; line-height: 1.7; }
+.flashcards-practice p:first-child { font-weight: 600; }
+#flashcardLevelBasis { overflow-wrap: anywhere; }
+#flashcardLevelBasis p { margin-top: 0; }
+
+.flashcards-study { scroll-margin-top: 6rem; }

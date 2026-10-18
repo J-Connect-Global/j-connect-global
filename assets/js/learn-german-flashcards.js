@@ -6,8 +6,8 @@
 
   const DECKS_URL = "/assets/data/learn-german/flashcards/decks.json";
   const DATA_BASE = "/assets/data/learn-german/flashcards/";
-  const INVENTORY_SCRIPT_URL = "/assets/js/learn-german-flashcards-inventory.js";
-  const TARGETS_SCRIPT_URL = "/assets/js/learn-german-flashcards-targets.js";
+  const INVENTORY_SCRIPT_URL = "/assets/js/learn-german-flashcards-inventory.js?v=lexicon-evidence-20261018";
+  const TARGETS_SCRIPT_URL = "/assets/js/learn-german-flashcards-targets.js?v=lexicon-evidence-20261018";
   const BACKUP_SCHEMA_VERSION = 1;
   const LAST_DECK_KEY = "jconnect-flashcards-last-deck";
   const DAY_MS = 24 * 60 * 60 * 1000;
@@ -67,6 +67,11 @@
     flipControl: root.querySelector("#flashcardFlipControl"),
     front: root.querySelector(".flashcard__front"),
     back: root.querySelector(".flashcard__back"),
+    practice: root.querySelector("#flashcardPractice"),
+    practicePrompt: root.querySelector("#flashcardPracticePrompt"),
+    practiceContext: root.querySelector("#flashcardPracticeContext"),
+    basis: root.querySelector("#flashcardLevelBasis"),
+    basisSummary: root.querySelector("#flashcardBasisSummary"),
     prompt: root.querySelector("#flashcardPrompt"),
     answer: root.querySelector("#flashcardAnswer"),
     exampleDe: root.querySelector("#flashcardExampleDe"),
@@ -209,11 +214,12 @@
     const fragment = document.createDocumentFragment();
     if (deck.deck_kind === "cefr-level") {
       fragment.append(createElement("span", "flashcards-badge", deck.target_level));
-      fragment.append(createElement("span", "flashcards-badge", "レベル専用語彙"));
+      fragment.append(createElement("span", "flashcards-badge", ["A1", "A2", "B1"].includes(deck.target_level) ? "資料掲載語・学習目安" : "独自の表現練習"));
     } else {
       deck.levels.forEach(level => fragment.append(createElement("span", "flashcards-badge", level)));
       deck.scene_labels.forEach(scene => fragment.append(createElement("span", "flashcards-badge", scene)));
     }
+    if (deck.has_unclassified) fragment.append(createElement("span", "flashcards-badge", "CEFR未判定を含む"));
     fragment.append(createElement("span", "flashcards-badge", `${Number(deck.card_count).toLocaleString("ja-JP")}枚`));
     return fragment;
   }
@@ -252,7 +258,7 @@
   }
 
   async function loadDeckCards(deck) {
-    const responses = await Promise.all(deck.card_files.map(fileName => fetch(`${DATA_BASE}${fileName}`, { credentials: "same-origin" })));
+    const responses = await Promise.all(deck.card_files.map(fileName => fetch(`${DATA_BASE}${fileName}`, { credentials: "same-origin", cache: "no-cache" })));
     responses.forEach((response, index) => {
       if (!response.ok) throw new Error(`${deck.card_files[index]} could not be loaded (${response.status}).`);
     });
@@ -502,6 +508,18 @@
     const total = state.session.card_ids.length;
     const percent = Math.round(((index + 1) / total) * 100);
     const deToJa = state.session.selected_direction === "de-ja";
+    elements.practice.hidden = !card.practice_prompt_ja;
+    elements.practicePrompt.textContent = card.practice_prompt_ja || "";
+    elements.practiceContext.textContent = card.practice_prompt_ja ? card.example_de : "";
+    elements.basisSummary.textContent = card.level_assignment.label_ja;
+    elements.basis.replaceChildren(createElement("p", "", card.level_assignment.rationale_ja));
+    for (const reference of card.level_assignment.evidence) {
+      const link = createElement("a", "", `${reference.source_id}・${reference.pages.join("、")}ページ`);
+      link.href = reference.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      elements.basis.append(link, document.createTextNode(" "));
+    }
     elements.prompt.textContent = deToJa ? card.display_de : card.japanese;
     elements.answer.textContent = deToJa ? card.japanese : card.display_de;
     elements.exampleDe.textContent = card.example_de || "例文は編集レビュー待ちです。";
@@ -523,7 +541,7 @@
       sourceLink.rel = "noopener noreferrer";
       elements.exampleSource.replaceChildren(sourceLink);
     } else {
-      elements.exampleSource.textContent = card.quality_tier === "editorial-reviewed" ? "J-Connect編集" : "J-Connect確認済み例文";
+      elements.exampleSource.textContent = "J-Connect独自作成例文";
     }
     elements.related.textContent = card.related_terms.join(" / ") || (card.quality_tier === "reference" ? "編集レビュー待ち" : "—");
     elements.position.textContent = `${index + 1} / ${total}`;
@@ -844,7 +862,7 @@
     const progress = new Map((await storage.getAllProgress()).map(entry => [entry.card_id, entry]));
     const columns = [
       "level", "deck", "german", "japanese", "unit_type", "part_of_speech", "grammar_info",
-      "example_de", "example_ja", "result", "attempts", "known_count", "last_reviewed_at", "next_review_at"
+      "example_de", "example_ja", "level_basis", "level_evidence", "result", "attempts", "known_count", "last_reviewed_at", "next_review_at"
     ];
     const rows = resultCards().map(({ card, rating }) => {
       const saved = progress.get(card.card_id) || {};
@@ -858,6 +876,8 @@
         formatGrammar(card),
         card.example_de,
         card.example_ja,
+        card.level_assignment.label_ja,
+        card.level_assignment.evidence.map(item => item.url).join(" | "),
         rating,
         saved.attempts || 0,
         saved.known_count || 0,
@@ -1040,10 +1060,15 @@
     bindEvents();
     configureSpeech();
     try {
-      const response = await fetch(DECKS_URL, { credentials: "same-origin" });
+      const response = await fetch(DECKS_URL, { credentials: "same-origin", cache: "no-cache" });
       if (!response.ok) throw new Error(`Deck data request failed (${response.status}).`);
       const payload = await response.json();
       if (![1, 2].includes(payload.schema_version) || !Array.isArray(payload.decks)) throw new Error("Unsupported deck data schema.");
+      const coverage = document.querySelector("#flashcardsVocabularyStatus");
+      if (coverage && payload.audit_summary) {
+        const audit = payload.audit_summary;
+        coverage.textContent = `${Object.entries(payload.level_counts).map(([level, count]) => `${level} ${count.toLocaleString("ja-JP")}項目`).join(" ／ ")}。レベル別計${audit.cefr_card_count.toLocaleString("ja-JP")}項目、場面用語（未判定）${audit.practical_unclassified_count}項目。旧${audit.legacy_total.toLocaleString("ja-JP")}項目のうち${audit.legacy_withheld.toLocaleString("ja-JP")}項目は公開を保留し、新規${audit.new_items}項目を追加しました。`;
+      }
       state.payload = payload;
       state.decks = payload.decks;
       renderDeckPicker();

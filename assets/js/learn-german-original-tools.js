@@ -119,7 +119,8 @@
     article.append(createElement("p", "", deck.description_ja));
 
     const scenes = createElement("div", "learn-deck-card__head");
-    const sceneLabels = deck.deck_kind === "cefr-level" ? ["レベル専用語彙"] : deck.scene_labels;
+    const sceneLabels = deck.deck_kind === "cefr-level" ? [["A1", "A2", "B1"].includes(deck.target_level) ? "資料掲載語・学習目安" : "独自の表現練習"] : [...deck.scene_labels];
+    if (deck.has_unclassified) sceneLabels.push("CEFR未判定を含む");
     sceneLabels.forEach(label => scenes.append(createElement("span", "learn-deck-card__scene", label)));
     article.append(scenes);
 
@@ -248,13 +249,18 @@
   async function load() {
     try {
       const [response, progress] = await Promise.all([
-        fetch(DATA_URL, { credentials: "same-origin" }),
+        fetch(DATA_URL, { credentials: "same-origin", cache: "no-cache" }),
         window.JConnectFlashcardStorage?.getAllProgress?.() || Promise.resolve([])
       ]);
       if (!response.ok) throw new Error(`教材データの取得に失敗しました (${response.status})`);
       const payload = await response.json();
       if (![1, 2].includes(payload.schema_version) || !Array.isArray(payload.decks)) throw new Error("教材データの形式が正しくありません。");
       decks = payload.decks;
+      const coverage = document.querySelector("#originalVocabularyStatus");
+      if (coverage && payload.audit_summary) {
+        const audit = payload.audit_summary;
+        coverage.textContent = `${Object.entries(payload.level_counts).map(([level, count]) => `${level} ${count.toLocaleString("ja-JP")}項目`).join(" ／ ")}。旧${audit.legacy_total.toLocaleString("ja-JP")}項目のうち${audit.legacy_withheld.toLocaleString("ja-JP")}項目を公開保留。詳しくは変更一覧で確認できます。`;
+      }
       progressByCardId = new Map(progress.map(entry => [entry.card_id, entry]));
       render();
     } catch (error) {

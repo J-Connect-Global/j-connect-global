@@ -5,8 +5,7 @@ import { fileURLToPath } from "node:url";
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outputDir = path.join(rootDir, "assets/data/learn-german/flashcards");
 const tatoebaExamplePath = path.join(rootDir, "content/learn-german/flashcards/tatoeba-examples.json");
-const verifiedDate = "2026-08-02";
-const generatedDate = "2026-08-15";
+const generatedDate = "2026-10-18";
 const tatoebaPayload = fs.existsSync(tatoebaExamplePath)
   ? JSON.parse(fs.readFileSync(tatoebaExamplePath, "utf8"))
   : { entries: [] };
@@ -249,140 +248,6 @@ const rawCards = {
   ]
 };
 
-const levels = ["A1", "A2", "B1", "B2", "C1", "C2"];
-const levelFiles = Object.fromEntries(levels.map((level) => [level, `cards-${level.toLowerCase()}.json`]));
-const levelTargets = { A1: 650, A2: 650, B1: 1100, B2: 600, C1: 500, C2: 500 };
-const totalTarget = Object.values(levelTargets).reduce((sum, count) => sum + count, 0);
-const sourceLexiconPath = path.join(rootDir, "content/learn-german/flashcards/cefr-lexicon-source.json");
-
-sceneLabels.general = "総合語彙";
-
-function lemmaKey(value) {
-  return String(value || "").normalize("NFC").replace(/\s+/g, " ").trim();
-}
-
-function normalizedCuratedCard(level, entry) {
-  return {
-    card_id: entry.id,
-    lemma: entry.lemma,
-    display_de: entry.display_de,
-    unit_type: entry.unit_type,
-    part_of_speech: entry.part_of_speech,
-    primary_level: level,
-    level_tags: [level],
-    topic_tags: [...new Set(entry.scenes.flatMap((scene) => [scene, sceneLabels[scene]]))],
-    scene_tags: entry.scenes,
-    japanese: entry.japanese,
-    example_de: entry.example_de,
-    example_ja: entry.example_ja,
-    grammar: entry.grammar,
-    collocations: entry.collocations,
-    learning_note: entry.learning_note,
-    related_terms: entry.related_terms,
-    source_note: "J-Connect original example and explanation",
-    source_refs: ["j-connect-editorial"],
-    level_basis: "j-connect-editorial",
-    quality_tier: "editorial-reviewed",
-    verification_status: "j-connect-editorial-reviewed",
-    updated_at: verifiedDate,
-    verified_at: verifiedDate
-  };
-}
-
-function preferredJapanese(value) {
-  return [...new Set(String(value || "").split("、").map((item) => item.trim()).filter(Boolean))]
-    .sort((left, right) => [...left].length - [...right].length)
-    .slice(0, 3)
-    .join("、");
-}
-
-function normalizedReferenceCard(level, source, serial) {
-  const reviewedExample = exampleOverrides.get(source.lemma) || exampleOverrides.get(String(source.lemma).toLocaleLowerCase("de-DE"));
-  const tatoebaExample = tatoebaExamples.get(source.lemma);
-  const sourcedExample = reviewedExample || tatoebaExample;
-  const exampleSourceId = reviewedExample ? "j-connect-editorial" : "tatoeba";
-  return {
-    card_id: `${level.toLowerCase()}-${String(serial).padStart(4, "0")}`,
-    lemma: source.lemma,
-    display_de: displayOverrides.get(source.lemma) || displayOverrides.get(String(source.lemma).toLocaleLowerCase("de-DE")) || source.display_de,
-    unit_type: source.lemma.includes(" ") ? "phrase" : "word",
-    part_of_speech: source.part_of_speech,
-    primary_level: level,
-    level_tags: [level],
-    topic_tags: ["general", sceneLabels.general],
-    scene_tags: ["general"],
-    japanese: japaneseOverrides.get(source.lemma) || japaneseOverrides.get(String(source.lemma).toLocaleLowerCase("de-DE")) || preferredJapanese(source.japanese),
-    example_de: sourcedExample?.example_de || "",
-    example_ja: sourcedExample?.example_ja || "",
-    grammar: source.grammar || {},
-    collocations: [],
-    learning_note: reviewedExample
-      ? "独日辞書と頻度資料による参照カードです。例文はJ-Connectが確認しています。語法全体は編集レビュー待ちです。"
-      : "独日辞書と頻度資料による参照カードです。例文はTatoebaの独日対訳から自動照合しており、語法全体は編集レビュー待ちです。",
-    related_terms: [],
-    source_note: "FreeDict/WikDict German-Japanese headword ranked with Leipzig Corpora Collection frequency samples; CEFR band is a J-Connect study target.",
-    source_refs: [...new Set([...(source.source_refs || ["freedict-deu-jpn", "leipzig-corpora"]), exampleSourceId])],
-    level_basis: source.level_basis || "j-connect-frequency-model",
-    example_source: sourcedExample ? {
-      source_id: exampleSourceId,
-      ...(!reviewedExample && tatoebaExample ? {
-        sentence_id: tatoebaExample.tatoeba_sentence_id,
-        translation_id: tatoebaExample.tatoeba_translation_id,
-        license: "CC BY 2.0 FR"
-      } : {})
-    } : null,
-    quality_tier: "reference",
-    verification_status: "source-aligned-needs-editorial-review",
-    frequency_rank: source.rank,
-    selection_score: source.selection_score,
-    corpus_coverage: source.corpus_coverage,
-    updated_at: generatedDate,
-    verified_at: null
-  };
-}
-
-const editorialA1Priority = new Map(`
-Abend Adresse Alter Antwort Apfel Arbeit Arzt Auto Bahnhof Bank Bauch Baum Bett Bier Bild Brot Bruder Buch Bus Computer Datum Dorf Dusche Ei Eltern Essen Familie Fenster Fisch Fleisch Frage Frau Freund Frühstück Fuß Garten Geld Geschäft Getränk Haus Hilfe Hotel Hund Hunger Jacke Jahr Kaffee Karte Katze Kind Kino Küche Land Lehrer Liebe Mann Milch Minute Mittwoch Monat Morgen Mutter Name Nacht Nummer Obst Papa Park Person Platz Polizei Problem Rechnung Restaurant Samstag Schule Schwester Sohn Sonntag Sprache Stadt Straße Student Stunde Tag Taxi Tee Telefon Tochter Toilette Tür Uhr Vater Wasser Weg Wetter Woche Wohnung Wort Zeit Zimmer Zug
-antworten arbeiten bezahlen bleiben brauchen essen fahren finden fragen geben gehen heißen helfen hören kaufen kommen lernen lesen machen nehmen öffnen sagen schlafen schließen schreiben sehen sein sprechen stehen studieren suchen trinken verstehen warten wohnen zeigen
-alt billig blau braun deutsch einfach falsch gelb gesund groß grün gut heiß hungrig jung kalt kaputt klein krank langsam neu offen rot schlecht schnell schön schwarz teuer warm weiß wichtig
-gestern heute hier immer jetzt links morgen nicht oben rechts sehr unten zusammen
-`.trim().split(/\s+/).map((lemma, index) => [lemma, index]));
-
-const properNameHomographWhitelist = new Set(["Essen", "Fisch", "Land", "Name", "Stadt", "Welt", "Grund", "Löwe"]);
-
-const levelOverrides = new Map([
-  ["guten morgen", "A1"],
-  ["pink", "A1"],
-  ["Pfannkuchen", "A1"],
-  ["Joghurt", "A1"],
-  ["Daumen", "A2"],
-  ["Musical", "A2"],
-  ["Aspirin", "A2"],
-  ["Cocktail", "A2"],
-  ["Jazz", "A2"],
-  ["Kochbuch", "A2"],
-  ["Pflaume", "A2"],
-  ["Pflaster", "A2"],
-  ["Reisepass", "A2"],
-  ["Literatur", "B1"],
-  ["Naturwissenschaft", "B1"],
-  ["Arbeitsstelle", "B1"],
-  ["Blutdruck", "B1"],
-  ["Blutgruppe", "B1"],
-  ["Heimweh", "B1"],
-  ["Lilie", "B1"],
-  ["Malaria", "B1"],
-  ["Musikinstrument", "B1"],
-  ["Weltall", "B1"],
-  ["Wortspiel", "B1"],
-  ["Gewalt", "B1"],
-  ["Wahrheit", "B1"],
-  ["Akupunktur", "B2"],
-  ["Säugling", "B2"],
-  ["Vegetarismus", "B2"],
-  ["Verschwörung", "B2"],
-  ["Wahrnehmung", "B2"]
-]);
 
 const japaneseOverrides = new Map([
   ["guten morgen", "おはようございます"],
@@ -422,235 +287,147 @@ const exampleOverrides = new Map([
   ["Wahrnehmung", { example_de: "Stress kann unsere Wahrnehmung verändern.", example_ja: "ストレスは私たちの知覚を変えることがあります。" }]
 ]);
 
-function sourceSelectionScore(source) {
-  const lemma = source.lemma;
-  const simpleLength = [...lemma.replace(/\s+/g, "")].length;
-  const basicAnatomy = new Set(["Auge", "Arm", "Bauch", "Bein", "Blut", "Finger", "Fuß", "Haar", "Hand", "Haut", "Herz", "Knie", "Kopf", "Mund", "Nase", "Ohr", "Rücken", "Zahn"]);
-  let penalty = 0;
-  if (editorialA1Priority.has(lemma)) return editorialA1Priority.get(lemma);
-  if (source.specialist_domain && !basicAnatomy.has(lemma)) penalty += 2_500;
-  if (source.corpus_coverage === 0) penalty += 5_000;
-  else if (source.corpus_coverage === 1) penalty += 1_800;
-  else if (source.corpus_coverage === 2) penalty += 500;
-  if (source.part_of_speech === "abbreviation") penalty += 4_000;
-  if (source.part_of_speech === "noun") penalty += 100;
-  if (lemma.includes(" ")) penalty += 700;
-  if (simpleLength > 20) penalty += 2_500;
-  else if (simpleLength > 15) penalty += 900;
-  else if (simpleLength > 11) penalty += 250;
-  if (/(?:ismus|isierung|ität|logie)$/i.test(lemma)) penalty += 1_800;
-  else if (/(?:schaft|tion|tät|ment)$/i.test(lemma)) penalty += 1_100;
-  else if (/(?:heit|keit|ung)$/i.test(lemma)) penalty += 650;
-  return Number(source.rank || 99_999) + penalty;
-}
-
-function validateCuratedCards() {
-  const ids = new Set();
-  for (const [level, entries] of Object.entries(rawCards)) {
-    if (entries.length !== 50) throw new Error(`${level} must contain exactly 50 curated cards; found ${entries.length}.`);
-    entries.forEach((entry) => {
-      if (ids.has(entry.id)) throw new Error(`Duplicate curated card ID: ${entry.id}`);
-      ids.add(entry.id);
-      if (!/^([ab][12])-\d{3}$/.test(entry.id)) throw new Error(`Invalid curated card ID: ${entry.id}`);
-      if (!entry.scenes.length || entry.scenes.some((scene) => !sceneLabels[scene])) throw new Error(`Invalid scenes for ${entry.id}`);
-      if (!["word", "phrase", "collocation"].includes(entry.unit_type)) throw new Error(`Invalid unit type for ${entry.id}`);
-      if (entry.part_of_speech === "noun" && (!entry.grammar.article || !entry.grammar.plural)) throw new Error(`Missing noun grammar for ${entry.id}`);
-      if (entry.part_of_speech === "verb" && (!entry.grammar.third_person || !entry.grammar.past_participle || !entry.grammar.auxiliary)) throw new Error(`Missing verb grammar for ${entry.id}`);
-      for (const key of ["lemma", "display_de", "japanese", "example_de", "example_ja", "learning_note"]) {
-        if (!String(entry[key] || "").trim()) throw new Error(`Missing ${key} for ${entry.id}`);
-      }
-    });
-  }
-  if (ids.size !== 200) throw new Error(`Expected 200 unique curated cards; found ${ids.size}.`);
-}
-
-function buildLevelCards(sourceEntries) {
-  const curatedKeys = new Set(Object.values(rawCards).flat().map((entry) => lemmaKey(entry.lemma)));
-  const usedKeys = new Set(curatedKeys);
-  const selectedByLevel = {};
-  const rankedSources = sourceEntries
-    .filter((source) => !source.proper_name || properNameHomographWhitelist.has(source.lemma))
-    .filter((source) => tatoebaExamples.has(source.lemma) || exampleOverrides.has(source.lemma) || exampleOverrides.has(String(source.lemma).toLocaleLowerCase("de-DE")))
-    .map((source) => ({ ...source, selection_score: sourceSelectionScore(source) }))
-    .sort((left, right) => left.selection_score - right.selection_score || left.rank - right.rank);
-  const forcedByLevel = new Map(levels.map((level) => [level, []]));
-  const unforced = [];
-  rankedSources.forEach((source) => {
-    const forcedLevel = levelOverrides.get(source.lemma) || levelOverrides.get(String(source.lemma).toLocaleLowerCase("de-DE"));
-    (forcedLevel ? forcedByLevel.get(forcedLevel) : unforced).push(source);
-  });
-  let sourceIndex = 0;
-
-  for (const level of levels) {
-    const curated = (rawCards[level] || []).map((entry) => normalizedCuratedCard(level, entry));
-    const selected = [...curated];
-    for (const source of forcedByLevel.get(level)) {
-      const key = lemmaKey(source.lemma);
-      if (!key || usedKeys.has(key)) continue;
-      usedKeys.add(key);
-      selected.push(normalizedReferenceCard(level, { ...source, level_basis: "j-connect-editorial-override" }, selected.length + 1));
+// Placement is an explicit, inspectable decision. Frequency and target counts never assign a level.
+const levels = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+const contentDir = path.join(rootDir, 'content/learn-german/flashcards');
+const read = name => JSON.parse(fs.readFileSync(path.join(contentDir, name), 'utf8'));
+const legacy = read('legacy-card-index.json');
+const evidence = read('level-evidence.json');
+const sourcePayload = read('cefr-lexicon-source.json');
+const sourceByLemma = new Map(sourcePayload.entries.map(entry => [entry.lemma, entry]));
+const senseLines = fs.readFileSync(path.join(contentDir, 'sense-example-overrides.tsv'), 'utf8').trimEnd().split('\n').map(line => line.split('\t'));
+senseLines.shift();
+const senseOverrides = new Map(senseLines.map(([lemma, japanese, example_de, example_ja, learning_note]) => [lemma, { japanese, example_de, example_ja, learning_note }]));
+const originalById = new Map(Object.values(rawCards).flat().map(entry => [entry.id, entry]));
+const documents = new Map(evidence.documents.map(doc => [doc.source_id, doc]));
+// Reject incomplete or unsupported evidence rather than silently filling a level.
+const allowedStatuses = new Set(['exam-list-attestation','practical-only','withheld-unclassified','duplicate','withheld-proper-name']);
+for (const [id] of legacy.entries) {
+  const decision = evidence.assignments[id];
+  if (!decision || !allowedStatuses.has(decision.status)) throw new Error(`Missing or unsupported evidence: ${id}`);
+  if (decision.level) {
+    if (!['A1','A2','B1'].includes(decision.level) || decision.status !== 'exam-list-attestation' || decision.matches?.[0]?.level !== decision.level) throw new Error(`Unsupported level evidence: ${id}`);
+    for (const match of decision.matches) {
+      const doc = documents.get(match.source_id);
+      if (!doc || doc.level !== match.level || !match.pages?.length || match.pages.some(page => !Number.isInteger(page) || page < 1 || page > doc.pages)) throw new Error(`Invalid source pages: ${id}`);
     }
-    while (selected.length < levelTargets[level]) {
-      const source = unforced[sourceIndex];
-      sourceIndex += 1;
-      if (!source) throw new Error(`Source lexicon ended while filling ${level}.`);
-      const key = lemmaKey(source.lemma);
-      if (!key || usedKeys.has(key) || source.source_dictionary !== "freedict-deu-jpn") continue;
-      usedKeys.add(key);
-      selected.push(normalizedReferenceCard(level, { ...source, level_basis: "j-connect-frequency-model" }, selected.length + 1));
-    }
-    selectedByLevel[level] = selected;
-  }
-
-  return selectedByLevel;
+  } else if (decision.status === 'exam-list-attestation') throw new Error(`Missing attested level: ${id}`);
 }
+const normalizedKey = value => value.normalize('NFC').replace(/^sich /, '').trim().toLocaleLowerCase('de-DE');
+sceneLabels.general = '総合';
 
-function validateGeneratedCards(cardsByLevel) {
-  const ids = new Set();
-  const lemmas = new Set();
-  for (const level of levels) {
-    const cards = cardsByLevel[level];
-    if (cards.length !== levelTargets[level]) throw new Error(`${level} expected ${levelTargets[level]} cards; found ${cards.length}.`);
-    for (const entry of cards) {
-      if (!/^(?:a1|a2|b1|b2|c1|c2)-\d{3,4}$/.test(entry.card_id)) throw new Error(`Invalid card ID: ${entry.card_id}`);
-      if (ids.has(entry.card_id)) throw new Error(`Duplicate card ID: ${entry.card_id}`);
-      ids.add(entry.card_id);
-      const key = lemmaKey(entry.lemma);
-      if (lemmas.has(key)) throw new Error(`Duplicate lemma across level inventories: ${entry.lemma}`);
-      lemmas.add(key);
-      for (const field of ["lemma", "display_de", "japanese", "part_of_speech", "quality_tier", "verification_status"]) {
-        if (!String(entry[field] || "").trim()) throw new Error(`Missing ${field} for ${entry.card_id}`);
-      }
-      if (entry.quality_tier === "editorial-reviewed" && (!entry.example_de || !entry.example_ja)) {
-        throw new Error(`Editorial card lacks examples: ${entry.card_id}`);
-      }
-      if (Boolean(entry.example_de) !== Boolean(entry.example_ja)) throw new Error(`Incomplete example pair: ${entry.card_id}`);
-    }
-  }
-  if (ids.size !== totalTarget) throw new Error(`Expected ${totalTarget} cards; found ${ids.size}.`);
-}
-
-function idsFor(level, cardsByLevel) {
-  return cardsByLevel[level].map((entry) => entry.card_id);
-}
-
-function idsForScene(scene, limit = 36) {
-  const byLevel = Object.values(rawCards).map((entries) => entries.filter((entry) => entry.scenes.includes(scene)));
-  const selected = [];
-  for (let index = 0; selected.length < limit; index += 1) {
-    let added = false;
-    for (const entries of byLevel) {
-      if (entries[index]) {
-        selected.push(entries[index].id);
-        added = true;
-        if (selected.length === limit) break;
-      }
-    }
-    if (!added) break;
-  }
-  return selected;
-}
-
-function levelsForIds(cardIds) {
-  return levels.filter((level) => cardIds.some((id) => id.startsWith(level.toLowerCase())));
-}
-
-function createDeck(id, title, description, cardIds, scenes, minutes, options = {}) {
-  const deckLevels = levelsForIds(cardIds);
+function attestation(decision) {
+  if (!decision.level) return { kind: 'scene-only', label_ja: 'CEFR未判定・場面練習', rationale_ja: '生活場面の用語として収録。語の難度を裏づける資料が不足するため、レベル別教材には含めません。', evidence: [] };
+  const match = decision.matches.find(item => item.level === decision.level);
+  const doc = documents.get(match.source_id);
   return {
-    deck_id: id,
-    title_ja: title,
-    description_ja: description,
-    primary_level: options.primaryLevel || deckLevels.at(-1),
-    target_level: options.primaryLevel || deckLevels.at(-1),
-    levels: deckLevels,
-    scenes,
-    scene_labels: scenes.map((scene) => sceneLabels[scene]),
-    deck_kind: options.deckKind || "scene-practice",
-    card_count: cardIds.length,
-    estimated_minutes: minutes,
-    card_files: deckLevels.map((level) => levelFiles[level]),
-    card_ids: cardIds,
-    featured: Boolean(options.featured)
+    kind: 'exam-list-attestation', label_ja: `Goethe ${decision.level}掲載・学習目安`,
+    rationale_ja: '掲載を確認できた最も低い資料を学習目安としています。これは語義別の最低CEFRレベルの認定ではなく、下位レベルに現れないことを保証するものでもありません。',
+    evidence: [{source_id: doc.source_id, url: doc.url + '#page=' + match.pages[0], pages: match.pages, match_kind: match.match_kind, matched_lemma: match.matched_lemma}]
   };
 }
-
-function buildDecks(cardsByLevel) {
-  const allScenes = Object.keys(sceneLabels);
-  const allLevelIds = levels.flatMap((level) => idsFor(level, cardsByLevel));
-  return [
-    createDeck("all-levels-4000", "A1〜C2 全レベル4,000語", "地名・人名などを除き、独日例文を確認できる6レベルの語彙をまとめて検索・絞り込み・学習できます。レベルチップで対象を切り替えられます。", allLevelIds, allScenes, 2000, { primaryLevel: "A1–C2", deckKind: "cefr-all", featured: true }),
-    createDeck("a1-life-basics", "A1 レベル別語彙650", "A1だけの入門・身近な語彙650語です。下位レベルの語彙はありません。", idsFor("A1", cardsByLevel), allScenes, 325, { primaryLevel: "A1", deckKind: "cefr-level", featured: true }),
-    createDeck("a2-daily-independence", "A2 レベル別語彙650", "A1を除外した、A2だけの日常生活・基本的な用事の語彙650語です。", idsFor("A2", cardsByLevel), allScenes, 325, { primaryLevel: "A2", deckKind: "cefr-level", featured: true }),
-    createDeck("b1-explain-and-confirm", "B1 レベル別語彙1,100", "A1・A2を除外した、B1だけの身近な話題・社会生活の語彙1,100語です。", idsFor("B1", cardsByLevel), allScenes, 550, { primaryLevel: "B1", deckKind: "cefr-level", featured: true }),
-    createDeck("b2-negotiate-and-document", "B2 レベル別語彙600", "A1〜B1を除外した、B2だけの専門・抽象トピックの語彙600語です。", idsFor("B2", cardsByLevel), allScenes, 300, { primaryLevel: "B2", deckKind: "cefr-level", featured: true }),
-    createDeck("c1-broad-repertoire", "C1 レベル別語彙500", "A1〜B2を除外した、C1だけの幅広い・専門的な語彙500語です。", idsFor("C1", cardsByLevel), allScenes, 250, { primaryLevel: "C1", deckKind: "cefr-level", featured: true }),
-    createDeck("c2-nuance-repertoire", "C2 レベル別語彙500", "A1〜C1を除外した、C2だけの語感・含意・専門領域の語彙500語です。", idsFor("C2", cardsByLevel), allScenes, 250, { primaryLevel: "C2", deckKind: "cefr-level", featured: true }),
-    createDeck("a1-practical-50", "A1 編集済み実践50", "例文・文法・語法を編集レビューした生活ドイツ語50枚です。", idsFor("A1", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 25, { primaryLevel: "A1", deckKind: "editorial-practice" }),
-    createDeck("a2-practical-50", "A2 編集済み実践50", "例文・文法・語法を編集レビューした生活ドイツ語50枚です。", idsFor("A2", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 30, { primaryLevel: "A2", deckKind: "editorial-practice" }),
-    createDeck("b1-practical-50", "B1 編集済み実践50", "例文・文法・語法を編集レビューした説明・確認の50枚です。", idsFor("B1", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 35, { primaryLevel: "B1", deckKind: "editorial-practice" }),
-    createDeck("b2-practical-50", "B2 編集済み実践50", "例文・文法・語法を編集レビューした交渉・文書対応の50枚です。", idsFor("B2", cardsByLevel).slice(0, 50), allScenes.filter((scene) => scene !== "general"), 40, { primaryLevel: "B2", deckKind: "editorial-practice" }),
-    createDeck("scene-daily", "日常生活のコア表現", "予定、移動、依頼、連絡で繰り返し使う編集済み表現です。", idsForScene("daily", 32), ["daily"], 18),
-    createDeck("scene-shopping", "買い物・Pfand・返品", "スーパー、Pfand返却、交換・返金、消費者対応で役立つ編集済み表現です。", idsForScene("shopping", 28), ["shopping"], 16),
-    createDeck("scene-administration", "外国人局・役所の手続き", "Anmeldung、滞在許可、追加書類、期限、異議申立ての編集済み表現です。", idsForScene("administration", 36), ["administration"], 22),
-    createDeck("scene-medical", "病院・薬局・予約", "受診、検査、処方、副作用、治療方針を確認する編集済み表現です。", idsForScene("medical", 34), ["medical"], 20),
-    createDeck("scene-housing", "住まい・大家・契約", "内見、家賃、不具合、解約、契約条項を扱う編集済み表現です。", idsForScene("housing", 36), ["housing"], 22),
-    createDeck("scene-kita-school", "Kita・学校との連絡", "送迎、欠席、面談、支援制度について連絡する編集済み表現です。", idsForScene("kita-school", 30), ["kita-school"], 18),
-    createDeck("scene-work", "職場・メール・会議", "遅刻連絡、メール、会議、合意形成、優先順位づけに使う編集済み表現です。", idsForScene("work", 36), ["work"], 22)
-  ];
+function legacyCard(row) {
+  const [id, lemma, , pos] = row;
+  const decision = evidence.assignments[id];
+  if (!decision || decision.status.startsWith('withheld-') || decision.status === 'duplicate') return null;
+  const original = originalById.get(id);
+  const source = sourceByLemma.get(lemma);
+  if (!original && !source) throw new Error(`Missing original source for ${id}: ${lemma}`);
+  const senseOverride = senseOverrides.get(lemma);
+  const curatedExample = senseOverride || exampleOverrides.get(lemma) || exampleOverrides.get(lemma.toLocaleLowerCase('de-DE'));
+  const example = original || curatedExample || tatoebaExamples.get(lemma);
+  if (!example?.example_de || !example?.example_ja) throw new Error(`Missing example pair: ${id}`);
+  const exampleSource = original || curatedExample ? {source_id:'j-connect-original'} : {source_id:'tatoeba',sentence_id:example.tatoeba_sentence_id,translation_id:example.tatoeba_translation_id,license:'CC BY 2.0 FR'};
+  const override = map => map.get(lemma) || map.get(lemma.toLocaleLowerCase('de-DE'));
+  return {
+    card_id:id, lemma, display_de:original?.display_de || override(displayOverrides) || source.display_de,
+    unit_type:original?.unit_type || (lemma.includes(' ') ? 'phrase' : 'word'), part_of_speech:pos,
+    primary_level:decision.level, level_tags:decision.level ? [decision.level] : [],
+    scene_tags:original?.scenes || ['general'], topic_tags:original?.scenes || ['general'],
+    japanese:original?.japanese || senseOverride?.japanese || override(japaneseOverrides) || source.japanese,
+    example_de:example.example_de, example_ja:example.example_ja,
+    grammar:original?.grammar || source.grammar || {}, collocations:original?.collocations || [],
+    learning_note:original?.learning_note || (senseOverride ? (senseOverride.learning_note || '同綴りの別品詞・別語義を避け、この語義を使う独自例文に差し替えました。専門家の全件認定を意味しません。') : '辞書の語義と自動照合した対訳例文を参照できます。語義と例文の対応・詳しい語法は専門家による全件確認済みではありません。'),
+    related_terms:original?.related_terms || [],
+    source_note:original ? 'J-Connect original example and explanation; CEFR placement uses the separately cited evidence.' : 'FreeDict/WikDict headword; example attribution is recorded separately. Explicit sense corrections use J-Connect original examples. Frequency is not used for CEFR placement.',
+    source_refs:[...(original ? ['j-connect-original'] : ['freedict-deu-jpn', 'leipzig-corpora']), exampleSource.source_id, ...(decision.level ? ['goethe-'+decision.level.toLowerCase()] : [])].filter((id,index,all)=>all.indexOf(id)===index),
+    level_basis:decision.level ? 'exam-list-attestation' : 'unclassified-practical', level_assignment:attestation(decision),
+    example_source:exampleSource, quality_tier:original ? 'editorial-original' : 'reference',
+    verification_status:original ? 'original-example-not-expert-certified' : 'source-reference-not-sense-certified',
+    updated_at:generatedDate, verified_at:null
+  };
 }
-
-function writeJson(fileName, value, pretty = false) {
-  fs.writeFileSync(path.join(outputDir, fileName), `${JSON.stringify(value, null, pretty ? 2 : 0)}\n`, "utf8");
-}
-
-validateCuratedCards();
-if (!fs.existsSync(sourceLexiconPath)) {
-  throw new Error(`Missing prepared source lexicon: ${path.relative(rootDir, sourceLexiconPath)}. Run prepare-cefr-lexicon.mjs first.`);
-}
-const sourcePayload = JSON.parse(fs.readFileSync(sourceLexiconPath, "utf8"));
-const cardsByLevel = buildLevelCards(sourcePayload.entries || []);
-validateGeneratedCards(cardsByLevel);
-const sourcedExampleCount = Object.values(cardsByLevel)
-  .flat()
-  .filter((entry) => entry.quality_tier === "reference" && entry.example_de)
-  .length;
-const tatoebaExampleCount = Object.values(cardsByLevel)
-  .flat()
-  .filter((entry) => entry.example_source?.source_id === "tatoeba")
-  .length;
-fs.mkdirSync(outputDir, { recursive: true });
-
-for (const level of levels) {
-  writeJson(levelFiles[level], {
-    schema_version: 2,
-    level,
-    level_card_count: levelTargets[level],
-    updated_at: generatedDate,
-    cards: cardsByLevel[level]
+function readAdvanced() {
+  const text = fs.readFileSync(path.join(contentDir,'advanced-practice.tsv'),'utf8').trimEnd();
+  // CSV-compatible TSV: quoted fields are supported, tabs/newlines inside fields are not used here.
+  const lines = text.split('\n').map(line => line.split('\t').map(value => value.startsWith('"') && value.endsWith('"') ? value.slice(1,-1).replaceAll('""','"') : value));
+  const headers = lines.shift();
+  return lines.map(columns => {
+    if (columns.length !== headers.length) throw new Error('Malformed advanced-practice row.');
+    return Object.fromEntries(headers.map((key,index)=>[key,columns[index]]));
   });
 }
-
-const decks = buildDecks(cardsByLevel);
-writeJson("decks.json", {
-  schema_version: 2,
-  updated_at: generatedDate,
-  level_note_ja: "CEFRは能力記述であり、公式の全単語リストはありません。各帯の語彙割当は、正式資料と頻度資料を基にしたJ-Connect独自のレベル別学習目標です。各レベル教材に下位レベルの語彙は含みません。",
-  quality_note_ja: `全${totalTarget.toLocaleString("ja-JP")}枚に独日例文を収録し、対応ブラウザでは見出し語と例文をドイツ語音声で再生できます。200枚は例文・文法・語法まで編集済みで、参照カード${sourcedExampleCount.toLocaleString("ja-JP")}枚のうち${tatoebaExampleCount.toLocaleString("ja-JP")}枚はTatoebaの出典IDを保持しています。`,
-  storage_note_ja: "学習記録はこの端末のブラウザに保存されます。",
-  license_note_ja: "FreeDict由来の辞書データを含む語彙カード部分はCC BY-SA 3.0で提供します。Leipzig Corpora Collectionの帰属情報を保持し、Tatoeba由来の例文はCC BY 2.0 FRとして帰属します。",
-  level_counts: levelTargets,
-  total_card_count: totalTarget,
-  scene_labels: sceneLabels,
-  card_sources: levelFiles,
-  methodology_url: "#flashcardsSources",
-  sources: [...sourcePayload.licenses, {
-    source_id: "tatoeba",
-    title: "Tatoeba German–Japanese sentence pairs",
-    license: "CC BY 2.0 FR",
-    url: "https://tatoeba.org/en/downloads"
-  }],
-  decks
-});
-
-console.log(`Generated ${decks.length} flashcard decks and ${Object.values(cardsByLevel).flat().length} unique A1-C2 cards.`);
+function advancedCard(row) {
+  if (!['B2','C1','C2'].includes(row.level) || !/^(?:b1|b2|c1|c2)-\d{3,4}$/.test(row.card_id)) throw new Error(`Invalid advanced target: ${row.card_id}`);
+  const baseline = evidence.assignments[row.card_id];
+  if (baseline?.level) throw new Error(`An attested lower-level item cannot be promoted: ${row.card_id}`);
+  const contextual = row.level === 'C2';
+  return {
+    card_id:row.card_id, lemma:row.expression, display_de:row.expression, unit_type:'collocation',part_of_speech:'phrase',
+    primary_level:row.level, level_tags:[row.level], scene_tags:['general'], topic_tags:[contextual ? 'register-and-connotation' : 'argumentation'],
+    japanese:row.japanese,example_de:row.example_de,example_ja:row.example_ja,grammar:{usage:'まとまりの語義・文体を用例の中で練習します。'},collocations:[],related_terms:[],learning_note:row.learning_note,
+    practice_prompt_ja:contextual ? '用例での含意を説明し、中立的な表現で言い換えてください。場面や聞き手が変わると、どのように響きが変わりますか。' : '用例の中でこの表現が果たす役割を説明し、より平易な表現で言い換えてください。',
+    task_type:contextual ? 'register-and-connotation' : 'reasoned-expression',
+    level_basis:'cefr-descriptor-editorial-target',
+    level_assignment:{kind:'cefr-descriptor-editorial-target',label_ja:`${row.level}向け表現練習・独自編集`,rationale_ja:(contextual ? 'CEFRのC2にある含意・慣用表現・文体の運用を練習する目安です。この表現を初めて学ぶレベルがC2だという認定ではありません。' : 'CEFRの語彙範囲・論述能力を参考にした練習目標です。個々の表現に公的なCEFR認定があるという意味ではありません。')+' '+row.learning_note,evidence:[{source_id:'cefr-companion-2020',url:'https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4#page=131',pages:[131]}]},
+    source_note:'J-Connect original practice item; editorial learning target, not an official per-word CEFR label.',source_refs:['j-connect-original','cefr-companion-2020'],
+    example_source:{source_id:'j-connect-original'},quality_tier:'editorial-original',verification_status:'original-practice-not-expert-certified',updated_at:generatedDate,verified_at:null
+  };
+}
+const legacyCards = legacy.entries.map(legacyCard).filter(Boolean);
+const advanced = readAdvanced().map(advancedCard);
+if (new Set(advanced.map(card => card.card_id)).size !== advanced.length) throw new Error('Duplicate advanced ID.');
+const originalAliases = new Map([['b1-004','etwas in Anspruch nehmen'],['b2-003','unter der Voraussetzung, dass'],['b2-004','etwas in Betracht ziehen'],['b2-049','einen Vorschlag unterbreiten']]);
+const oldIds = new Set(legacy.entries.map(row => row[0]));
+for (const card of advanced) {
+  if (oldIds.has(card.card_id) && originalAliases.get(card.card_id) !== card.lemma) throw new Error(`Cannot reuse an old ID: ${card.card_id}`);
+}
+const byId = new Map(legacyCards.map(card=>[card.card_id,card]));
+for (const card of advanced) byId.set(card.card_id,card);
+const allCards = [...byId.values()];
+const cardsByLevel = Object.fromEntries(levels.map(level=>[level,allCards.filter(card=>card.primary_level===level)]));
+const practical = allCards.filter(card=>!card.primary_level);
+const cefrCards = levels.flatMap(level=>cardsByLevel[level]);
+const levelCounts = Object.fromEntries(levels.map(level=>[level,cardsByLevel[level].length]));
+for (const card of allCards) {
+  if (!card.example_de || !card.example_ja || !card.level_assignment?.rationale_ja) throw new Error(`Incomplete learning item: ${card.card_id}`);
+  if (card.primary_level && !levels.includes(card.primary_level)) throw new Error(`Unsupported placement: ${card.card_id}`);
+}
+if (new Set(allCards.map(card=>card.card_id)).size !== allCards.length) throw new Error('Duplicate IDs.');
+if (new Set(advanced.map(card=>normalizedKey(card.lemma))).size !== advanced.length) throw new Error('Duplicate advanced expression.');
+const fileFor = card => card.primary_level ? `cards-${card.primary_level.toLowerCase()}.json` : 'cards-practical.json';
+const idsFor = level => cardsByLevel[level].map(card=>card.card_id);
+function deck(id,title,description,ids,scenes=[],target=null,kind='scene-practice',featured=false) {
+  const cards=ids.map(id=>byId.get(id));if(cards.some(card=>!card))throw new Error(`Missing card in ${id}`);
+  const actualLevels=levels.filter(level=>cards.some(card=>card.primary_level===level));
+  return {deck_id:id,title_ja:title,description_ja:description,primary_level:target || (kind==='cefr-all'?'A1–C2':'場面別'),target_level:target || (kind==='cefr-all'?'A1–C2':'場面別'),levels:actualLevels,scenes,scene_labels:scenes.map(scene=>sceneLabels[scene]),deck_kind:kind,card_count:ids.length,estimated_minutes:Math.ceil(ids.length/2),card_files:[...new Set(cards.map(fileFor))],card_ids:ids,has_unclassified:cards.some(card=>!card.primary_level),featured};
+}
+const levelDecks=[['A1','a1-life-basics','身近な語彙'],['A2','a2-daily-independence','日常の語彙'],['B1','b1-explain-and-confirm','社会生活の語彙'],['B2','b2-negotiate-and-document','説明・意見の表現練習'],['C1','c1-broad-repertoire','論証・抽象表現の練習'],['C2','c2-nuance-repertoire','含意・文体の表現練習']].map(([level,id,title])=>deck(id,`${level} ${title}・${levelCounts[level].toLocaleString('ja-JP')}項目`,['A1','A2','B1'].includes(level)?'Goetheの掲載資料に基づく学習目安です。下位語を含まないことや試験範囲の網羅を保証する教材ではありません。':'CEFRの能力記述を参考にした独自編集の練習です。公式必修語数・単語の最低難度を表すものではありません。',idsFor(level),['general'],level,'cefr-level',true));
+const practiceDecks=Object.entries(rawCards).map(([oldLevel,entries])=>deck(`${oldLevel.toLowerCase()}-practical-50`,`${({A1:'生活の基本',A2:'生活の用事',B1:'説明と確認',B2:'文書と交渉'})[oldLevel]}・場面練習`, '旧レベル名による分類を廃止した生活表現集です。レベル未判定の専門用語も含みます。',entries.map(entry=>entry.id).filter(id=>byId.has(id)),Object.keys(sceneLabels).filter(scene=>scene!=='general')));
+const sceneDecks=Object.entries(sceneLabels).filter(([scene])=>scene!=='general').map(([scene,label])=>deck('scene-'+scene,label+'の実践表現','生活場面で選ぶ表現集です。CEFR未判定の用語も含みます。',Object.values(rawCards).flat().filter(card=>card.scenes.includes(scene)&&byId.has(card.id)).map(card=>card.id),[scene]));
+const decks=[deck('all-levels-4000',`根拠付きレベル別・${cefrCards.length.toLocaleString('ja-JP')}項目`,'資料掲載語と独自編集の表現練習をまとめて検索できます。レベル未判定の場面用語は含めません。',cefrCards.map(card=>card.card_id),['general'],null,'cefr-all',true),...levelDecks,...practiceDecks,...sceneDecks];
+const legacyIds=new Set(legacy.entries.map(row=>row[0]));
+const legacyPublished=allCards.filter(card=>legacyIds.has(card.card_id)).length;
+const auditSummary={legacy_total:legacy.entries.length,legacy_published:legacyPublished,legacy_withheld:legacy.entries.length-legacyPublished,new_items:allCards.length-legacyPublished,cefr_card_count:cefrCards.length,practical_unclassified_count:practical.length,status_counts:Object.fromEntries([...new Set(Object.values(evidence.assignments).map(d=>d.status))].map(status=>[status,Object.values(evidence.assignments).filter(d=>d.status===status).length]))};
+fs.mkdirSync(outputDir,{recursive:true});
+function write(name,value){fs.writeFileSync(path.join(outputDir,name),JSON.stringify(value)+'\n');}
+for(const level of levels)write(`cards-${level.toLowerCase()}.json`,{schema_version:2,level,level_card_count:levelCounts[level],updated_at:generatedDate,cards:cardsByLevel[level]});
+write('cards-practical.json',{schema_version:2,level:null,level_card_count:practical.length,updated_at:generatedDate,cards:practical});
+write('decks.json',{schema_version:2,updated_at:generatedDate,level_note_ja:'語数の固定枠を廃止しました。A1〜B1は掲載資料に基づく学習目安、B2〜C2は能力記述を参考にした独自編集の表現練習です。公式の必修語数・試験範囲・下位語の完全除外を示しません。',quality_note_ja:`レベル別${cefrCards.length.toLocaleString('ja-JP')}項目と、CEFR未判定の場面用語${practical.length}項目を収録。辞書・対訳例文の参照情報と独自編集を区別し、各カードで分類根拠を表示します。`,storage_note_ja:'旧カードIDの意味を保ち、学習記録を削除しません。公開対象から外れたカードの記録もバックアップに残ります。',license_note_ja:'FreeDict由来はCC BY-SA 3.0。Leipzigは頻度資料の帰属のみでCEFR分類には使いません。Tatoeba例文はCC BY 2.0 FR。',level_counts:levelCounts,total_card_count:allCards.length,cefr_card_count:cefrCards.length,audit_summary:auditSummary,audit_url:'/assets/data/learn-german/flashcards/vocabulary-audit.csv',scene_labels:sceneLabels,card_sources:{...Object.fromEntries(levels.map(level=>[level,`cards-${level.toLowerCase()}.json`])),practical:'cards-practical.json'},methodology_url:'#flashcardsSources',sources:[...sourcePayload.licenses,...evidence.documents.map(doc=>({source_id:doc.source_id,title:`Goethe-Zertifikat ${doc.level} Wortliste（掲載照合のみ）`,url:doc.url,license:'語彙表の本文・例文は再配布しません'})),{source_id:'cefr-companion-2020',title:'Council of Europe CEFR Companion Volume 2020, Vocabulary range',url:'https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4#page=131',license:'能力記述の参照'},{source_id:'tatoeba',title:'Tatoeba German–Japanese sentence pairs',url:'https://tatoeba.org/en/downloads',license:'CC BY 2.0 FR'}],decks});
+const auditRows=legacy.entries.map(([id,lemma,old])=>{const current=byId.get(id);const decision=evidence.assignments[id];return {card_id:id,lemma,previous_level:old,current_level:current?.primary_level||'',status:current?.level_basis||decision.status,duplicate_of:decision.duplicate_of||'',evidence:JSON.stringify(current?.level_assignment?.evidence||decision.matches),note:current?.level_assignment?.rationale_ja||'分類根拠不足・重複・固有名標識のためCEFR教材への掲載を停止。旧IDを別の語に再利用しません。'};});
+for(const card of advanced.filter(card=>!legacyIds.has(card.card_id)))auditRows.push({card_id:card.card_id,lemma:card.lemma,previous_level:'',current_level:card.primary_level,status:card.level_basis,duplicate_of:'',evidence:JSON.stringify(card.level_assignment.evidence),note:card.level_assignment.rationale_ja});
+write('vocabulary-audit.json',{schema_version:1,audited_at:generatedDate,summary:auditSummary,level_counts:levelCounts,documents:evidence.documents,rows:auditRows});
+const fields=['card_id','lemma','previous_level','current_level','status','duplicate_of','evidence','note'];
+const csv=value=>'"'+String(value??'').replaceAll('"','""')+'"';
+fs.writeFileSync(path.join(outputDir,'vocabulary-audit.csv'),'\uFEFF'+fields.map(csv).join(',')+'\n'+auditRows.map(row=>fields.map(field=>csv(row[field])).join(',')).join('\n')+'\n');
+console.log(JSON.stringify({published:allCards.length,level_counts:levelCounts,audit:auditSummary,decks:decks.length}));

@@ -166,7 +166,7 @@
         let comparison = 0;
         switch (state.sortKey) {
           case "saved": comparison = Number(left.progress.saved) - Number(right.progress.saved); break;
-          case "level": comparison = collator.compare(left.card.primary_level, right.card.primary_level); break;
+          case "level": comparison = collator.compare(left.card.primary_level || "", right.card.primary_level || ""); break;
           case "display_de": comparison = collator.compare(left.card.display_de, right.card.display_de); break;
           case "japanese": comparison = collator.compare(left.card.japanese, right.card.japanese); break;
           case "example": comparison = collator.compare(left.card.example_de || "", right.card.example_de || ""); break;
@@ -196,10 +196,20 @@
       saveButton.setAttribute("aria-pressed", progress.saved ? "true" : "false");
       saveButton.setAttribute("aria-label", `${card.display_de}を${progress.saved ? "保存から外す" : "保存する"}`);
       appendCell(row, saveButton);
-      appendCell(row, createElement("span", "flashcards-inventory-level", card.primary_level));
+      appendCell(row, createElement("span", "flashcards-inventory-level", card.primary_level || "未判定"));
 
       const german = document.createElement("div");
       german.append(createElement("span", "flashcards-inventory-word", card.display_de));
+      const reference = card.level_assignment.evidence[0];
+      const basis = createElement(reference ? "a" : "span", "flashcards-inventory-subtext", card.level_assignment.label_ja);
+      basis.title = card.level_assignment.rationale_ja;
+      if (reference) {
+        basis.href = reference.url;
+        basis.target = "_blank";
+        basis.rel = "noopener noreferrer";
+        basis.textContent += `・${reference.pages.join("、")}頁`;
+      }
+      german.append(basis);
       appendCell(row, german);
       appendCell(row, card.japanese);
 
@@ -257,7 +267,7 @@
       };
       const total = state.cardsById.size;
       const rangeText = entries.length ? `${start + 1}〜${start + visible.length}件目` : "0件";
-      elements.summary.textContent = `${entries.length.toLocaleString("ja-JP")} / ${total.toLocaleString("ja-JP")}語（${rangeText}）｜未学習 ${counts.unstarted.toLocaleString("ja-JP")}・学習中 ${counts.reviewing.toLocaleString("ja-JP")}・習得済み ${counts.mastered.toLocaleString("ja-JP")}・保存済み ${counts.saved.toLocaleString("ja-JP")}`;
+      elements.summary.textContent = `${entries.length.toLocaleString("ja-JP")} / ${total.toLocaleString("ja-JP")}項目（${rangeText}）｜未学習 ${counts.unstarted.toLocaleString("ja-JP")}・学習中 ${counts.reviewing.toLocaleString("ja-JP")}・習得済み ${counts.mastered.toLocaleString("ja-JP")}・保存済み ${counts.saved.toLocaleString("ja-JP")}`;
       elements.empty.hidden = entries.length !== 0;
       elements.tableWrap.hidden = entries.length === 0;
       elements.pageStatus.textContent = `${state.page.toLocaleString("ja-JP")} / ${pageCount.toLocaleString("ja-JP")}ページ`;
@@ -277,7 +287,7 @@
       populatePartOfSpeechFilter();
       const allProgress = await storage.getAllProgress();
       state.progressByCardId = new Map(allProgress.map(progress => [progress.card_id, progress]));
-      elements.title.textContent = deck.deck_kind === "cefr-all" ? "A1〜C2・全4,000語リスト" : `${deck.target_level}・全${Number(deck.card_count).toLocaleString("ja-JP")}語リスト`;
+      elements.title.textContent = `${deck.target_level || "A1〜C2"}・全${Number(deck.card_count).toLocaleString("ja-JP")}項目リスト`;
       elements.description.textContent = "ドイツ語・日本語・例文・文法・学習進捗を一覧できます。長い内容は省略表示され、カーソルを合わせると全文を確認できます。";
       elements.levelField.hidden = deck.deck_kind !== "cefr-all";
       elements.section.hidden = false;
@@ -299,7 +309,7 @@
       if (!state.deck || !state.filteredEntries.length) return;
       const columns = [
         "order", "saved", "level", "german", "lemma", "japanese", "example_de", "example_ja",
-        "part_of_speech", "grammar_info", "quality", "status", "attempts", "last_reviewed_at", "next_review_at"
+        "part_of_speech", "grammar_info", "quality", "level_basis", "level_evidence", "status", "attempts", "last_reviewed_at", "next_review_at"
       ];
       const rows = state.filteredEntries.map(({ card, order, progress }) => [
         order,
@@ -313,6 +323,8 @@
         card.part_of_speech,
         formatGrammar(card),
         card.quality_tier,
+        card.level_assignment.label_ja,
+        card.level_assignment.evidence.map(item => item.url).join(" | "),
         progress.status,
         progress.attempts || 0,
         progress.last_reviewed || "",
@@ -320,7 +332,7 @@
       ]);
       const csv = `\uFEFF${[columns, ...rows].map(row => row.map(safeCsvValue).join(",")).join("\r\n")}\r\n`;
       downloadBlob(`jconnect-${state.deck.deck_id}-all-words.csv`, csv, "text/csv;charset=utf-8");
-      showToast(`${rows.length.toLocaleString("ja-JP")}語の一覧CSVを保存しました。`);
+      showToast(`${rows.length.toLocaleString("ja-JP")}項目の一覧CSVを保存しました。`);
     }
 
     elements.search.addEventListener("input", () => {

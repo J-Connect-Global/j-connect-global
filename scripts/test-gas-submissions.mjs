@@ -47,6 +47,7 @@ class MockSpreadsheet {
     this.activeSheet = sheets[0];
   }
   getSheetByName(name) { return this.sheets[name] || null; }
+  getId() { return this.id || "mock-spreadsheet"; }
   getActiveSheet() { return this.activeSheet; }
   getUrl() { return "https://docs.google.com/spreadsheets/d/mock"; }
 }
@@ -151,7 +152,7 @@ function jobSheet() {
 }
 
 function testSpreadsheetResolution() {
-  const active = { source: "active" };
+  const active = { source: "active", getId: () => "active-id" };
   const master = { source: "master" };
   const legacy = { source: "legacy" };
   const primaryRuntime = createRuntime([], () => {}, {
@@ -176,6 +177,43 @@ function testSpreadsheetResolution() {
   });
   assert(activeRuntime.sandbox.getSpreadsheet_() === active, "Active Spreadsheet was not used when both properties were blank.");
   assert(activeRuntime.openedSpreadsheetIds.length === 0, "A configured Spreadsheet was opened for blank properties.");
+
+  const headlessRuntime = createRuntime([], () => {}, {
+    activeSpreadsheet: active,
+    properties: { MASTER_SPREADSHEET_ID: "master-id" },
+    spreadsheetsById: { "master-id": master }
+  });
+  headlessRuntime.sandbox.SpreadsheetApp.getActiveSpreadsheet = () => null;
+  assert(headlessRuntime.sandbox.getSpreadsheet_() === master, "Headless API/trigger lost its configured Spreadsheet.");
+}
+
+function testBoundModerationSelection() {
+  // openById can refer to the same file without the browser's selected row.
+  const headers = ["post_id", "status", "category1", "title", "body"];
+  const visible = new MockSheet("Community Posts", headers);
+  visible.rows.unshift([]); // Production has an instruction row above its headers.
+  while (visible.rows.length < 8) visible.rows.push([]);
+  visible.rows.push(["post-selected", "active", "質問", "Selected post", "Body"]);
+  visible.getActiveRange = () => ({ getRow: () => 9 });
+  const bound = new MockSpreadsheet([visible]);
+  bound.id = "master-id";
+  const reopened = new MockSheet("Community Posts", headers);
+  reopened.rows = visible.rows.map(row => row.slice());
+  reopened.getActiveRange = () => ({ getRow: () => 1 });
+  for (const property of ["MASTER_SPREADSHEET_ID", "COMMUNITY_SPREADSHEET_ID"]) {
+    const runtime = createRuntime([reopened], () => {}, {
+      activeSpreadsheet: bound,
+      properties: { [property]: " master-id " }
+    });
+    const selected = runtime.sandbox.getSelectedModerationContext_();
+    assert(selected.rowNumber === 9 && selected.item.post_id === "post-selected", "Menu lost the browser's selected submission.");
+    assert(runtime.openedSpreadsheetIds.length === 0, "Menu reopened its active Spreadsheet and discarded selection.");
+    visible.getActiveRange = () => ({ getRow: () => 2 });
+    let rejected = false;
+    try { runtime.sandbox.getSelectedModerationContext_(); } catch (error) { rejected = error.message === "SELECT_SUBMISSION_ROW"; }
+    assert(rejected, "Header selection was accepted for moderation.");
+    visible.getActiveRange = () => ({ getRow: () => 9 });
+  }
 }
 
 function testJobPersistenceIdempotencyAndThrottling() {
@@ -430,6 +468,7 @@ function testPublicPayloadCredentialSanitization() {
 }
 
 testSpreadsheetResolution();
+testBoundModerationSelection();
 testJobPersistenceIdempotencyAndThrottling();
 testCommunityAdminFailureIsolation();
 testCommunityPublicLifecycleAndCacheBypass();

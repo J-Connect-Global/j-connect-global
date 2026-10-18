@@ -34,6 +34,7 @@
 
 ## 安全性とトラブル対応
 
+- IDのある投稿行を選択しても「ヘッダー行、空行、IDのない行は処理できません」と出る場合は、Master GAS側の `getSpreadsheet_` を最新版へ更新して保存してください。同じIDのSpreadsheetを画面で開いている場合はそのアクティブオブジェクトを使い、`openById` で開き直して選択行を失わないようにしています。メニュー操作は保存済みコードを使うため、この修正だけならWebアプリの再デプロイは不要です。行全体の選択でも単一セルの選択でも利用できます。
 - `pending`, `rejected`, `hidden`, `deleted`, `spam` などは公開されず、公開同期の対象は厳密に `status=active` だけです。
 - `contact_email_private`, `contact_email`, `contact_name`, 管理トークン、審査列、`submission_key` は公開JSONへ出力しません。公開応募先メールが必要な求人は、データ元で `application_email` / `public_email` など明示的な公開列を使用します。
 - 管理者通知や申請者メールが失敗しても、保存済み行は削除しません。外部レスポンスやUIへOAuth情報、管理者メール、Spreadsheet ID、内部例外を表示しません。

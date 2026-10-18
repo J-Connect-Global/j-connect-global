@@ -257,10 +257,7 @@
       if (![1, 2].includes(payload.schema_version) || !Array.isArray(payload.decks)) throw new Error("教材データの形式が正しくありません。");
       decks = payload.decks;
       const coverage = document.querySelector("#originalVocabularyStatus");
-      if (coverage && payload.audit_summary) {
-        const audit = payload.audit_summary;
-        coverage.textContent = `${Object.entries(payload.level_counts).map(([level, count]) => `${level} ${count.toLocaleString("ja-JP")}項目`).join(" ／ ")}。旧${audit.legacy_total.toLocaleString("ja-JP")}項目のうち${audit.legacy_withheld.toLocaleString("ja-JP")}項目を公開保留。詳しくは変更一覧で確認できます。`;
-      }
+      if (coverage) coverage.textContent = payload.coverage_note_ja || payload.quality_note_ja || "";
       progressByCardId = new Map(progress.map(entry => [entry.card_id, entry]));
       render();
     } catch (error) {

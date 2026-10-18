@@ -40,6 +40,7 @@ async function installSpeechMock(page) {
         return [{ name: "Test German", lang: "de-DE" }];
       },
       speak(utterance) {
+        window.__flashcardsLastUtterance = utterance;
         calls.push({
           type: "speak",
           text: utterance.text,
@@ -470,4 +471,144 @@ test("C1 practice presents a full expression, context and honest provenance", as
   await assertNoHorizontalOverflow(page);
   await page.locator("#flashcardsStudy").scrollIntoViewIfNeeded();
   await page.screenshot({ path: testInfo.outputPath('vocabulary-c1-context-desktop.png') });
+});
+
+
+test("word playback is explicit and automatic word speech defaults OFF", async ({ page }, testInfo) => {
+  await installSpeechMock(page);
+  await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
+  await page.locator("#flashcardsStart").click();
+  const toggle = page.getByRole('switch', { name: '単語の自動読み上げ', exact: true });
+  await expect(toggle).not.toBeChecked();
+  await expect(page.locator('#flashcardsAutoSpeakStatus')).toHaveText('OFF');
+  expect(await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak'))).toHaveLength(0);
+  await page.locator('#flashcardsNext').click();
+  await expect(page.locator('#flashcardsPosition')).toHaveText('2 / 10');
+  await page.locator('#flashcardFlipControl').click();
+  expect(await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak'))).toHaveLength(0);
+  await page.locator('#flashcardsSpeak').click();
+  await expect(page.locator('#flashcardsSpeak')).toHaveText('■ 単語の再生を停止');
+  await expect(page.locator('#flashcardFlipControl')).toHaveAttribute('aria-pressed', 'true');
+  expect((await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak'))).at(-1).text).toBe('die Uhrzeit');
+  await page.locator('#flashcardsSpeak').click();
+  await expect(page.locator('#flashcardsSpeak')).toHaveText('🔊 単語を再生');
+  await expect(toggle).not.toBeChecked();
+  await page.locator('#flashcardFlipControl').click();
+  await assertNoHorizontalOverflow(page);
+  await page.locator('.flashcards-word-audio').scrollIntoViewIfNeeded();
+  await page.screenshot({path:testInfo.outputPath('word-audio-default-off-desktop.png')});
+});
+
+for (const direction of ['de-ja', 'ja-de']) {
+  test(`automatic word speech follows cards only after opt-in (${direction})`, async ({ page }) => {
+    await installSpeechMock(page);
+    await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
+    await page.locator(`input[name="session-direction"][value="${direction}"]`).check();
+    await page.locator('#flashcardsStart').click();
+    const toggle = page.getByRole('switch', { name:'単語の自動読み上げ', exact:true });
+    await toggle.check();
+    await expect(page.locator('#flashcardsAutoSpeakStatus')).toHaveText('ON');
+    expect((await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak'))).map(call=>call.text)).toEqual(['der Termin']);
+    await page.locator('#flashcardsNext').click();
+    await expect(page.locator('#flashcardsPosition')).toHaveText('2 / 10');
+    await page.locator('[data-rating="known"]').click();
+    await expect(page.locator('#flashcardsPosition')).toHaveText('3 / 10');
+    expect((await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak'))).map(call=>call.text)).toEqual(['der Termin','die Uhrzeit','heute']);
+    await page.locator('#flashcardsPrevious').click();
+    await expect(page.locator('#flashcardsPosition')).toHaveText('2 / 10');
+    expect((await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak'))).at(-1).text).toBe('die Uhrzeit');
+    const spoken = await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak').length);
+    await page.locator('#flashcardFlipControl').click();
+    expect(await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak').length)).toBe(spoken);
+    await toggle.uncheck();
+    await expect(page.locator('#flashcardsSpeak')).toHaveAttribute('aria-pressed','false');
+    await page.locator('#flashcardsNext').click();
+    await expect(page.locator('#flashcardsPosition')).toHaveText('3 / 10');
+    expect(await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak').length)).toBe(spoken);
+    await toggle.check();
+    await page.locator('#flashcardsEndSession').click();
+    await expect(toggle).not.toBeChecked();
+    await page.locator('#flashcardsResume').click();
+    await expect(page.locator('#flashcardsStudy')).toBeVisible();
+    await expect(toggle).not.toBeChecked();
+    const pausedCount = await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak').length);
+    await page.locator('#flashcardsNext').click();
+    await expect(page.locator('#flashcardsPosition')).toHaveText('4 / 10');
+    expect(await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak').length)).toBe(pausedCount);
+    await toggle.check();
+    await page.reload();
+    await expect(page.locator('#flashcardsSetup')).toBeVisible();
+    await page.locator('#flashcardsResume').click();
+    await expect(page.locator('#flashcardsStudy')).toBeVisible();
+    await expect(toggle).not.toBeChecked();
+    expect(await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak'))).toHaveLength(0);
+  });
+}
+
+test("leaving the tab disarms automatic speech and returning stays silent", async ({ page }) => {
+  await installSpeechMock(page);
+  await page.addInitScript(() => {
+    let hidden = false;
+    Object.defineProperty(document,'hidden',{configurable:true,get:()=>hidden});
+    window.__setSpeechTestHidden = value => {hidden=value;document.dispatchEvent(new Event('visibilitychange'));};
+  });
+  await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
+  await page.locator('#flashcardsStart').click();
+  const toggle=page.getByRole('switch',{name:'単語の自動読み上げ',exact:true});
+  await toggle.check();
+  await page.evaluate(()=>window.__setSpeechTestHidden(true));
+  await expect(toggle).not.toBeChecked();
+  await expect(page.locator('#flashcardsSpeak')).toHaveAttribute('aria-pressed','false');
+  await page.evaluate(()=>window.__setSpeechTestHidden(false));
+  await page.locator('#flashcardsNext').click();
+  await expect(page.locator('#flashcardsPosition')).toHaveText('2 / 10');
+  expect(await page.evaluate(()=>window.__flashcardsSpeechCalls.filter(call=>call.type==='speak'))).toHaveLength(1);
+});
+
+test("unavailable speech disables the opt-in switch and explains the limitation", async ({ page }) => {
+  await page.addInitScript(()=>{
+    Object.defineProperty(window,'speechSynthesis',{configurable:true,value:undefined});
+    Object.defineProperty(window,'SpeechSynthesisUtterance',{configurable:true,value:undefined});
+  });
+  await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
+  await page.locator('#flashcardsStart').click();
+  const toggle=page.getByRole('switch',{name:'単語の自動読み上げ',exact:true});
+  await expect(toggle).not.toBeChecked();
+  await expect(toggle).toBeDisabled();
+  await expect(page.locator('#flashcardsSpeak')).toBeHidden();
+  await expect(page.locator('#flashcardsSpeechFallback')).toBeVisible();
+});
+
+test("a blocked speech request disarms autoplay instead of retrying on every card", async ({ page }) => {
+  await installSpeechMock(page);
+  await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
+  await page.locator('#flashcardsStart').click();
+  const toggle=page.getByRole('switch',{name:'単語の自動読み上げ',exact:true});
+  await toggle.check();
+  await page.evaluate(()=>window.__flashcardsLastUtterance.onerror({error:'not-allowed'}));
+  await expect(toggle).not.toBeChecked();
+  await expect(page.locator('#flashcardsToast')).toContainText('音声を再生できませんでした');
+  await page.locator('#flashcardsNext').click();
+  await expect(page.locator('#flashcardsPosition')).toHaveText('2 / 10');
+  expect(await page.evaluate(()=>window.__flashcardsSpeechCalls.filter(call=>call.type==='speak'))).toHaveLength(1);
+});
+
+
+test("completing a session disarms autoplay before a new session starts", async ({ page }) => {
+  await installSpeechMock(page);
+  await openDataRoute(page, flashcardsRoute, [decksPath,a1CardsPath]);
+  await page.locator('#flashcardsStart').click();
+  const toggle=page.getByRole('switch',{name:'単語の自動読み上げ',exact:true});
+  await toggle.check();
+  for(let index=0;index<10;index++) {
+    await expect(page.locator('#flashcardsPosition')).toHaveText(`${index+1} / 10`);
+    await page.locator('[data-rating="known"]').click();
+  }
+  await expect(page.locator('#flashcardsResults')).toBeVisible();
+  expect(await page.locator('#flashcardsAutoSpeak').isChecked()).toBe(false);
+  expect(await page.evaluate(()=>window.__flashcardsSpeechCalls.filter(call=>call.type==='speak'))).toHaveLength(10);
+  await page.locator('#flashcardsRestart').click();
+  await expect(page.locator('#flashcardsStudy')).toBeVisible();
+  await expect(toggle).not.toBeChecked();
+  expect(await page.evaluate(()=>window.__flashcardsSpeechCalls.filter(call=>call.type==='speak'))).toHaveLength(10);
 });

@@ -61,6 +61,8 @@
     progressBar: root.querySelector("#flashcardsProgressBar"),
     directionLabel: root.querySelector("#flashcardsDirectionLabel"),
     speak: root.querySelector("#flashcardsSpeak"),
+    autoSpeak: root.querySelector("#flashcardsAutoSpeak"),
+    autoSpeakStatus: root.querySelector("#flashcardsAutoSpeakStatus"),
     speakExample: root.querySelector("#flashcardsSpeakExample"),
     speechFallback: root.querySelector("#flashcardsSpeechFallback"),
     flip: root.querySelector("#flashcardFlip"),
@@ -116,6 +118,7 @@
     isRating: false,
     activeSpeechButton: null,
     speechUtterance: null,
+    autoSpeak: false,
     toastTimer: null
   };
 
@@ -141,6 +144,7 @@
   }
 
   function showOnly(section) {
+    if (section !== "study") disableAutoSpeech();
     elements.picker.hidden = section !== "picker";
     elements.setup.hidden = section !== "setup";
     elements.study.hidden = section !== "study";
@@ -365,6 +369,7 @@
   }
 
   async function selectDeck(deckId) {
+    disableAutoSpeech();
     const deck = state.decks.find(candidate => candidate.deck_id === deckId);
     if (!deck) {
       elements.inventory.hidden = true;
@@ -524,7 +529,7 @@
     elements.answer.textContent = deToJa ? card.japanese : card.display_de;
     elements.exampleDe.textContent = card.example_de || "例文は編集レビュー待ちです。";
     elements.exampleJa.textContent = card.example_ja || "出典付きの語彙参照カードとして先に公開しています。";
-    elements.speak.dataset.speechIdleLabel = `ドイツ語「${card.display_de}」を読み上げる`;
+    elements.speak.dataset.speechIdleLabel = `単語「${card.display_de}」をドイツ語で再生`;
     elements.speak.setAttribute("aria-label", elements.speak.dataset.speechIdleLabel);
     elements.speakExample.dataset.speechIdleLabel = card.example_de
       ? `例文「${card.example_de}」をドイツ語で読み上げる`
@@ -552,6 +557,7 @@
     elements.previous.disabled = index === 0;
     elements.next.disabled = index >= total - 1;
     setFlipped(false);
+    if (state.autoSpeak && !document.hidden && !elements.study.hidden) speakCurrentCard();
   }
 
   function openStudy() {
@@ -658,7 +664,7 @@
 
   async function pauseSession() {
     if (!state.session) return;
-    stopSpeech();
+    disableAutoSpeech();
     addActiveTime();
     await storage.putSession(state.session);
     state.restoredSession = state.session;
@@ -686,7 +692,7 @@
   function setSpeechButtonState(button, speaking) {
     button.classList.toggle("is-speaking", speaking);
     button.setAttribute("aria-pressed", speaking ? "true" : "false");
-    if (button === elements.speak) button.textContent = speaking ? "読み上げを停止" : "ドイツ語を読み上げる";
+    if (button === elements.speak) button.textContent = speaking ? "■ 単語の再生を停止" : "🔊 単語を再生";
     const idleLabel = button.dataset.speechIdleLabel || "ドイツ語を読み上げる";
     button.setAttribute("aria-label", speaking ? `${idleLabel}（停止）` : idleLabel);
   }
@@ -713,7 +719,16 @@
     elements.speak.hidden = !supported;
     elements.speechFallback.hidden = supported;
     elements.speak.disabled = !supported;
+    if (elements.autoSpeak) elements.autoSpeak.disabled = !supported;
+    if (!supported) disableAutoSpeech();
     updateExampleSpeechButton();
+  }
+
+  function disableAutoSpeech() {
+    state.autoSpeak = false;
+    if (elements.autoSpeak) elements.autoSpeak.checked = false;
+    if (elements.autoSpeakStatus) elements.autoSpeakStatus.textContent = "OFF";
+    stopSpeech();
   }
 
   function speakGerman(text, button) {
@@ -739,6 +754,7 @@
       const isCurrent = state.speechUtterance === utterance;
       finish();
       if (isCurrent && !["canceled", "interrupted"].includes(event.error)) {
+        disableAutoSpeech();
         showToast("音声を再生できませんでした。端末の音声設定を確認してください。");
       }
     };
@@ -746,6 +762,7 @@
       window.speechSynthesis.speak(utterance);
     } catch {
       finish();
+      disableAutoSpeech();
       showToast("音声を再生できませんでした。端末の音声設定を確認してください。");
     }
   }
@@ -974,6 +991,25 @@
   }
 
   function bindEvents() {
+    // Intentionally page/session-local: never restore an audible preference from storage.
+    disableAutoSpeech();
+    elements.autoSpeak?.addEventListener("change", () => {
+      if (!elements.autoSpeak.checked || !speechSupported() || elements.study.hidden || document.hidden) {
+        disableAutoSpeech();
+        return;
+      }
+      state.autoSpeak = true;
+      elements.autoSpeakStatus.textContent = "ON";
+      stopSpeech();
+      speakCurrentCard();
+    });
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) disableAutoSpeech();
+    });
+    window.addEventListener("pagehide", disableAutoSpeech);
+    window.addEventListener("pageshow", event => {
+      if (event.persisted || !state.autoSpeak) disableAutoSpeech();
+    });
     elements.start.addEventListener("click", startNewSession);
     root.querySelectorAll('input[name="session-size"], input[name="session-order"], input[name="session-direction"], input[name="session-target"]')
       .forEach(input => input.addEventListener("change", () => state.targetController?.render()));
@@ -1065,10 +1101,7 @@
       const payload = await response.json();
       if (![1, 2].includes(payload.schema_version) || !Array.isArray(payload.decks)) throw new Error("Unsupported deck data schema.");
       const coverage = document.querySelector("#flashcardsVocabularyStatus");
-      if (coverage && payload.audit_summary) {
-        const audit = payload.audit_summary;
-        coverage.textContent = `${Object.entries(payload.level_counts).map(([level, count]) => `${level} ${count.toLocaleString("ja-JP")}項目`).join(" ／ ")}。レベル別計${audit.cefr_card_count.toLocaleString("ja-JP")}項目、場面用語（未判定）${audit.practical_unclassified_count}項目。旧${audit.legacy_total.toLocaleString("ja-JP")}項目のうち${audit.legacy_withheld.toLocaleString("ja-JP")}項目は公開を保留し、新規${audit.new_items}項目を追加しました。`;
-      }
+      if (coverage) coverage.textContent = payload.coverage_note_ja || payload.quality_note_ja || "";
       state.payload = payload;
       state.decks = payload.decks;
       renderDeckPicker();

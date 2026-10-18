@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-performance-a11y-20260719">
 <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
-  <link rel="stylesheet" href="/assets/css/learn-german-flashcards.css?v=lexicon-evidence-20261018">
+  <link rel="stylesheet" href="/assets/css/learn-german-flashcards.css?v=word-audio-20261018">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <link rel="stylesheet" href="/assets/css/social-share.css">
   <style data-flashcards-setup-ui>
@@ -241,10 +241,6 @@
 
         <div class="flashcards-study-controls">
           <span id="flashcardsDirectionLabel" class="flashcards-study-meta">ドイツ語 → 日本語</span>
-          <div class="flashcards-study-actions">
-            <button id="flashcardsSpeak" class="flashcards-toggle-button" type="button">ドイツ語を読み上げる</button>
-            <span id="flashcardsSpeechFallback" class="flashcards-study-meta" hidden>このブラウザは読み上げに対応していません。</span>
-          </div>
         </div>
 
         <aside id="flashcardPractice" class="flashcards-practice" aria-label="表現の練習課題" hidden>
@@ -252,6 +248,16 @@
           <p id="flashcardPracticeContext" lang="de"></p>
         </aside>
         <p id="flashcardBasisSummary" class="flashcards-study-meta"></p>
+        <div class="flashcards-word-audio" role="group" aria-label="単語の音声">
+          <button id="flashcardsSpeak" class="flashcards-toggle-button" type="button" aria-pressed="false">🔊 単語を再生</button>
+          <label class="flashcards-auto-speech" for="flashcardsAutoSpeak">
+            <input id="flashcardsAutoSpeak" type="checkbox" role="switch" autocomplete="off" aria-label="単語の自動読み上げ" aria-describedby="flashcardsAutoSpeakHelp">
+            <span>単語の自動読み上げ</span>
+            <strong id="flashcardsAutoSpeakStatus" aria-hidden="true">OFF</strong>
+          </label>
+          <p id="flashcardsAutoSpeakHelp">初期設定はOFF。ONにすると今の単語から再生し、カードの切替時にも読み上げます。中断・タブ切替・ページ移動でOFFに戻ります。</p>
+          <span id="flashcardsSpeechFallback" class="flashcards-study-meta" hidden>このブラウザは読み上げに対応していません。</span>
+        </div>
         <div id="flashcardFlip" class="flashcard">
           <button id="flashcardFlipControl" class="flashcard__flip-control" type="button" aria-label="カードを裏返す" aria-pressed="false" aria-describedby="flashcardKeyboardHint"></button>
           <span class="flashcard__inner">
@@ -446,7 +452,7 @@
       <ol>
         <li>レベル別の語彙・表現練習、または買い物・役所・病院・住まい・Kita・仕事などの場面別教材を選びます。</li>
         <li>レベル別教材では、全単語表を検索・並べ替えし、未学習・学習中・習得済み・保存済みなどで絞り込めます。</li>
-        <li>カードをクリックするかEnter / Spaceで裏返します。音声対応ブラウザでは、単語と裏面のドイツ語例文をスピーカーボタンで読み上げられます。</li>
+        <li>カードをクリックするかEnter / Spaceで裏返します。音声対応ブラウザでは「単語を再生」と裏面の例文ボタンで音声を聞けます。「単語の自動読み上げ」をONにすると、カードの切替時に単語が再生されます。初期設定はOFFで、中断・タブ切替・ページ移動でもOFFに戻ります。</li>
         <li>「もう一度」「迷った」「覚えた」で評価します。</li>
         <li>終了後に苦手カードを復習し、Excelで開けるCSVや端末移行用のJSONを保存できます。</li>
       </ol>
@@ -513,7 +519,7 @@
   <script src="/assets/js/common.js"></script>
   <script src="/assets/js/main.js"></script>
   <script src="/assets/js/learn-german-flashcards-storage.js"></script>
-  <script src="/assets/js/learn-german-flashcards.js?v=lexicon-evidence-20261018"></script>
+  <script src="/assets/js/learn-german-flashcards.js?v=word-audio-20261018"></script>
 <script src="/assets/js/social-share.js"></script>
 </body>
 </html>

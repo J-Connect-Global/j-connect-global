@@ -1423,3 +1423,71 @@
 #flashcardLevelBasis p { margin-top: 0; }
 
 .flashcards-study { scroll-margin-top: 6rem; }
+
+.flashcards-word-audio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 22px;
+  padding: 12px 0;
+  margin: 0 0 12px;
+}
+
+.flashcards-auto-speech {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  color: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.flashcards-auto-speech input {
+  appearance: none;
+  position: relative;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 28px;
+  margin: 0;
+  border: 2px solid #64748b;
+  border-radius: 20px;
+  background: #e2e8f0;
+  cursor: pointer;
+}
+
+.flashcards-auto-speech input::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #334155;
+}
+
+.flashcards-auto-speech input:checked {
+  border-color: var(--jc-blue);
+  background: var(--jc-blue);
+}
+
+.flashcards-auto-speech input:checked::before {
+  left: 21px;
+  background: #fff;
+}
+
+.flashcards-auto-speech input:focus-visible {
+  outline: 3px solid #0067c9;
+  outline-offset: 3px;
+}
+
+.flashcards-auto-speech input:disabled { opacity: .5; cursor: not-allowed; }
+.flashcards-auto-speech strong { min-width: 2.3em; font-size: 12px; }
+#flashcardsAutoSpeakHelp { flex-basis: 100%; margin: 0; color: var(--flashcards-muted); font-size: 12px; line-height: 1.65; }
+
+@media (max-width: 479px) {
+  .flashcards-word-audio { gap: 5px 12px; }
+  .flashcards-auto-speech { font-size: 12px; }
+}

@@ -2,8 +2,40 @@
   "api_version": "2026-07-13.1",
   "source": "master-gas:community",
   "endpoint": "canonicalMasterEndpoint?action=getPosts&bypassCache=true&includeClosed=false",
-  "count": 5,
+  "count": 6,
   "items": [
+    {
+      "id": "post_6a3a2ebd-71fd-4209-898d-6ac5947b5842",
+      "post_id": "post_6a3a2ebd-71fd-4209-898d-6ac5947b5842",
+      "slug": "美容健康に興味がある女性のビジネスパートナー募集-ドイツ国内全地域-ドイツ-post-6a3a2ebd-71fd-4209-898d-6ac5947b5842",
+      "detail_url": "/germany/ja/community/posts/post_6a3a2ebd-71fd-4209-898d-6ac5947b5842/",
+      "title": "美容健康に興味がある女性のビジネスパートナー募集",
+      "body": "【パートナー募集】\n新規事業立ち上げのため、\n🇩🇪に在住女性ビジネスパートナーを3名探しています！\n・本気で自分自身変わりたい方\n・フリーランスの働き方に興味がある方\n・時間と場所に捉われたくない方\n・旅行が好きな方\n・女性として自立されたい方\n・駐在生活中も、自分の未来につながる何かを始めたい人\nお人柄重視します\n気になる方はご連絡をお待ちしています🍀",
+      "summary": "",
+      "category1": "アルバイト",
+      "category2": "リモート",
+      "postType": "アルバイト",
+      "subcategory": "リモート",
+      "country": "ドイツ",
+      "region": "ドイツ",
+      "city": "ドイツ国内全地域",
+      "price": "要相談",
+      "event_date": "",
+      "availability_date": "2026-09-06T22:00:00.000Z",
+      "tags": "",
+      "image_url": "",
+      "image_alt": "美容健康に興味がある女性のビジネスパートナー募集",
+      "image_urls": [],
+      "image_url_1": "",
+      "image_url_2": "",
+      "image_url_3": "",
+      "created_at": "2026-09-07T18:27:51.691Z",
+      "published_at": "2026-10-18T07:22:05.298Z",
+      "updated_at": "2026-10-18T07:22:05.298Z",
+      "expires_at": "",
+      "public_replies": [],
+      "status": "active"
+    },
     {
       "id": "post_cd6cadde-3221-4de3-8f8d-935d66331457",
       "post_id": "post_cd6cadde-3221-4de3-8f8d-935d66331457",
@@ -33,6 +65,7 @@
       "published_at": "2026-07-07T05:01:23.414Z",
       "updated_at": "2026-07-12T18:07:55.805Z",
       "expires_at": "",
+      "public_replies": [],
       "status": "active"
     },
     {
@@ -68,6 +101,7 @@
       "published_at": "2026-07-04T15:53:13.853Z",
       "updated_at": "2026-07-12T18:08:18.115Z",
       "expires_at": "",
+      "public_replies": [],
       "status": "active"
     },
     {
@@ -102,6 +136,7 @@
       "published_at": "2026-07-04T15:33:34.592Z",
       "updated_at": "2026-07-12T18:08:12.342Z",
       "expires_at": "",
+      "public_replies": [],
       "status": "active"
     },
     {
@@ -133,6 +168,7 @@
       "published_at": "2026-07-04T15:20:59.479Z",
       "updated_at": "2026-07-12T18:08:07.511Z",
       "expires_at": "",
+      "public_replies": [],
       "status": "active"
     },
     {
@@ -164,19 +200,20 @@
       "published_at": "2026-07-04T15:16:15.761Z",
       "updated_at": "2026-07-12T18:08:01.761Z",
       "expires_at": "",
+      "public_replies": [],
       "status": "active"
     }
   ],
   "validation": {
     "source_count": 7,
-    "explicitly_active_count": 5,
-    "eligible_count": 5,
-    "excluded_count": 2,
+    "explicitly_active_count": 6,
+    "eligible_count": 6,
+    "excluded_count": 1,
     "excluded_by_reason": {
-      "lifecycle_or_status": 2
+      "lifecycle_or_status": 1
     },
     "excluded_safe_ids": {},
-    "generated_count": 5
+    "generated_count": 6
   },
-  "generated_at": "2026-09-07T20:52:59.337Z"
+  "generated_at": "2026-10-18T09:02:14.736Z"
 }

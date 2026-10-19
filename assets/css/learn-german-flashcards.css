@@ -212,7 +212,10 @@
 .learn-original-deck-grid.is-list-view .learn-deck-card__action-row { grid-area: action; }
 
 .flashcards-page {
-  --flashcards-muted: #52677f;
+  --flashcards-text: #17324d;
+  --flashcards-muted: #465c73;
+  --flashcards-surface: #f1f6fc;
+  --jc-muted: var(--flashcards-muted);
   min-width: 0;
 }
 
@@ -633,10 +636,10 @@
   display: grid;
   gap: 6px;
   margin: 0;
-  padding: 10px 12px;
+  padding: 12px 14px;
   border-left: 4px solid var(--jc-blue);
   border-radius: var(--jc-radius-sm);
-  background: var(--jc-soft);
+  background: var(--flashcards-surface);
 }
 
 .flashcard__example .flashcard__example-de-row {
@@ -644,8 +647,8 @@
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 10px;
   align-items: center;
-  color: var(--jc-text);
-  font-size: 16px;
+  color: var(--flashcards-text);
+  font-size: 18px;
 }
 
 .flashcards-speech-icon {
@@ -688,9 +691,17 @@
   line-height: 1.55;
 }
 
-.flashcard__example span {
-  color: var(--jc-muted);
-  font-size: 13px;
+#flashcardExampleDe {
+  color: var(--flashcards-text);
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+#flashcardExampleJa {
+  color: var(--flashcards-text);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.75;
 }
 
 .flashcards-details-toggle {
@@ -1185,7 +1196,9 @@
 }
 
 :root[data-theme="dark"] body .flashcards-page {
-  --flashcards-muted: #b8c8d9;
+  --flashcards-text: #e8f1fb;
+  --flashcards-muted: #c2d1e1;
+  --flashcards-surface: #13273e;
 }
 
 :root[data-theme="dark"] body .learn-deck-card__level,
@@ -1423,3 +1436,121 @@
 #flashcardLevelBasis p { margin-top: 0; }
 
 .flashcards-study { scroll-margin-top: 6rem; }
+
+.flashcards-word-audio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: center;
+  justify-content: space-between;
+  align-items: center;
+  width: min(100%, 860px);
+  gap: 10px 20px;
+  padding: 14px 16px;
+  border: 1px solid var(--jc-line);
+  border-radius: var(--jc-radius-md);
+  background: var(--flashcards-surface, var(--jc-soft));
+}
+
+.flashcards-word-audio #flashcardsSpeak {
+  gap: 8px;
+  min-height: 46px;
+  border-color: var(--jc-blue);
+  background: var(--jc-blue);
+  color: #fff;
+}
+
+.flashcards-word-audio #flashcardsSpeak:hover:not(:disabled),
+.flashcards-word-audio #flashcardsSpeak[aria-pressed="true"] {
+  border-color: var(--jc-navy);
+  background: var(--jc-navy);
+  color: #fff;
+}
+
+.flashcards-auto-speech {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  color: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.flashcards-auto-speech input {
+  appearance: none;
+  position: relative;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 28px;
+  margin: 0;
+  border: 2px solid #64748b;
+  border-radius: 20px;
+  background: #e2e8f0;
+  cursor: pointer;
+}
+
+.flashcards-auto-speech input::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #334155;
+}
+
+.flashcards-auto-speech input:checked {
+  border-color: var(--jc-blue);
+  background: var(--jc-blue);
+}
+
+.flashcards-auto-speech input:checked::before {
+  left: 21px;
+  background: #fff;
+}
+
+.flashcards-auto-speech input:focus-visible {
+  outline: 3px solid #0067c9;
+  outline-offset: 3px;
+}
+
+.flashcards-auto-speech input:disabled { opacity: .5; cursor: not-allowed; }
+.flashcards-auto-speech strong { min-width: 2.3em; font-size: 12px; }
+#flashcardsAutoSpeakHelp { flex-basis: 100%; margin: 0; color: var(--flashcards-muted); font-size: 12px; line-height: 1.65; }
+
+.flashcards-rating .flashcards-button { min-height: 46px; }
+.flashcards-button[data-rating="again"] { background: #fff2f2; }
+.flashcards-button[data-rating="unsure"] { background: #fff7e7; }
+.flashcards-button[data-rating="known"] { background: #edf8f0; }
+
+:root[data-theme="dark"] body .flashcards-word-audio #flashcardsSpeak {
+  border-color: #67b7ff;
+  background: #67b7ff;
+  color: #061321;
+}
+
+:root[data-theme="dark"] body .flashcards-word-audio #flashcardsSpeak[aria-pressed="true"],
+:root[data-theme="dark"] body .flashcards-word-audio #flashcardsSpeak:hover:not(:disabled) {
+  border-color: #a1d4ff;
+  background: #a1d4ff;
+  color: #061321;
+}
+
+:root[data-theme="dark"] body .flashcards-button[data-rating="again"] { background: #381f2b; color: #ffb9b9; border-color: #c47b87; }
+:root[data-theme="dark"] body .flashcards-button[data-rating="unsure"] { background: #392e17; color: #ffe0a2; border-color: #bd9b58; }
+:root[data-theme="dark"] body .flashcards-button[data-rating="known"] { background: #17372c; color: #a9e5c7; border-color: #6baf92; }
+
+@media (forced-colors: active) {
+  .flashcards-auto-speech input { appearance: auto; }
+  .flashcards-auto-speech input::before { content: none; }
+}
+
+@media (max-width: 479px) {
+  .flashcards-word-audio { gap: 10px; padding: 12px; }
+  .flashcards-word-audio #flashcardsSpeak { width: 100%; }
+  .flashcards-auto-speech { width: 100%; font-size: 13px; }
+  .flashcards-auto-speech strong { margin-left: auto; }
+  .flashcard__example .flashcard__example-de-row { font-size: 16px; }
+}

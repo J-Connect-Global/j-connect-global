@@ -61,6 +61,8 @@
     progressBar: root.querySelector("#flashcardsProgressBar"),
     directionLabel: root.querySelector("#flashcardsDirectionLabel"),
     speak: root.querySelector("#flashcardsSpeak"),
+    autoSpeak: root.querySelector("#flashcardsAutoSpeak"),
+    autoSpeakStatus: root.querySelector("#flashcardsAutoSpeakStatus"),
     speakExample: root.querySelector("#flashcardsSpeakExample"),
     speechFallback: root.querySelector("#flashcardsSpeechFallback"),
     flip: root.querySelector("#flashcardFlip"),
@@ -141,6 +143,7 @@
   }
 
   function showOnly(section) {
+    if (section !== "study") disableAutoSpeech();
     elements.picker.hidden = section !== "picker";
     elements.setup.hidden = section !== "setup";
     elements.study.hidden = section !== "study";
@@ -365,6 +368,7 @@
   }
 
   async function selectDeck(deckId) {
+    disableAutoSpeech();
     const deck = state.decks.find(candidate => candidate.deck_id === deckId);
     if (!deck) {
       elements.inventory.hidden = true;
@@ -521,7 +525,9 @@
       elements.basis.append(link, document.createTextNode(" "));
     }
     elements.prompt.textContent = deToJa ? card.display_de : card.japanese;
+    elements.prompt.lang = deToJa ? "de" : "ja";
     elements.answer.textContent = deToJa ? card.japanese : card.display_de;
+    elements.answer.lang = deToJa ? "ja" : "de";
     elements.exampleDe.textContent = card.example_de || "例文は編集レビュー待ちです。";
     elements.exampleJa.textContent = card.example_ja || "出典付きの語彙参照カードとして先に公開しています。";
     elements.speak.dataset.speechIdleLabel = `ドイツ語「${card.display_de}」を読み上げる`;
@@ -552,6 +558,7 @@
     elements.previous.disabled = index === 0;
     elements.next.disabled = index >= total - 1;
     setFlipped(false);
+    if (elements.autoSpeak.checked && !document.hidden && !elements.study.hidden) speakCurrentCard();
   }
 
   function openStudy() {
@@ -658,7 +665,7 @@
 
   async function pauseSession() {
     if (!state.session) return;
-    stopSpeech();
+    disableAutoSpeech();
     addActiveTime();
     await storage.putSession(state.session);
     state.restoredSession = state.session;
@@ -686,7 +693,7 @@
   function setSpeechButtonState(button, speaking) {
     button.classList.toggle("is-speaking", speaking);
     button.setAttribute("aria-pressed", speaking ? "true" : "false");
-    if (button === elements.speak) button.textContent = speaking ? "読み上げを停止" : "ドイツ語を読み上げる";
+    if (button === elements.speak) button.lastElementChild.textContent = speaking ? "単語の再生を停止" : "単語を再生";
     const idleLabel = button.dataset.speechIdleLabel || "ドイツ語を読み上げる";
     button.setAttribute("aria-label", speaking ? `${idleLabel}（停止）` : idleLabel);
   }
@@ -698,22 +705,28 @@
   }
 
   function stopSpeech() {
-    if (speechSupported()) {
-      try {
-        window.speechSynthesis.cancel();
-      } catch {
-        // Some embedded browsers expose the API before its speech service is ready.
-      }
-    }
     resetSpeechState();
+    try { window.speechSynthesis?.cancel(); } catch {}
   }
 
   function configureSpeech() {
     const supported = speechSupported();
     elements.speak.hidden = !supported;
     elements.speechFallback.hidden = supported;
-    elements.speak.disabled = !supported;
+    elements.speak.disabled = elements.autoSpeak.disabled = !supported;
+    if (!supported) disableAutoSpeech();
     updateExampleSpeechButton();
+  }
+
+  function disableAutoSpeech() {
+    elements.autoSpeak.checked = false;
+    elements.autoSpeakStatus.textContent = "OFF";
+    stopSpeech();
+  }
+
+  function speechFailed() {
+    disableAutoSpeech();
+    showToast("音声を再生できませんでした。端末の音声設定を確認してください。");
   }
 
   function speakGerman(text, button) {
@@ -739,14 +752,13 @@
       const isCurrent = state.speechUtterance === utterance;
       finish();
       if (isCurrent && !["canceled", "interrupted"].includes(event.error)) {
-        showToast("音声を再生できませんでした。端末の音声設定を確認してください。");
+        speechFailed();
       }
     };
     try {
       window.speechSynthesis.speak(utterance);
     } catch {
-      finish();
-      showToast("音声を再生できませんでした。端末の音声設定を確認してください。");
+      speechFailed();
     }
   }
 
@@ -974,6 +986,20 @@
   }
 
   function bindEvents() {
+    disableAutoSpeech();
+    elements.autoSpeak.addEventListener("change", () => {
+      if (!elements.autoSpeak.checked || !speechSupported() || elements.study.hidden || document.hidden) {
+        disableAutoSpeech();
+        return;
+      }
+      elements.autoSpeakStatus.textContent = "ON";
+      speakCurrentCard();
+    });
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) disableAutoSpeech();
+    });
+    window.addEventListener("pagehide", disableAutoSpeech);
+    window.addEventListener("pageshow", disableAutoSpeech);
     elements.start.addEventListener("click", startNewSession);
     root.querySelectorAll('input[name="session-size"], input[name="session-order"], input[name="session-direction"], input[name="session-target"]')
       .forEach(input => input.addEventListener("change", () => state.targetController?.render()));

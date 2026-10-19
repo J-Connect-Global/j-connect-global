@@ -595,6 +595,7 @@ test("automatic speech ends with the session and a fresh session stays silent", 
   await page.locator("#flashcardsInventorySearch").fill("der Abend");
   await page.locator("#flashcardsInventoryStudyFiltered").click();
   const toggle = page.locator("#flashcardsAutoSpeak");
+  await expect(page.locator("#flashcardsStudy")).toBeVisible();
   await toggle.press("Space");
   await expect(toggle).toBeChecked();
   await expect(page.locator("#flashcardFlipControl")).toHaveAttribute("aria-pressed", "false");
@@ -604,6 +605,41 @@ test("automatic speech ends with the session and a fresh session stays silent", 
   await page.locator("#flashcardsRestart").click();
   await expect(toggle).not.toBeChecked();
   expect(await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === "speak"))).toHaveLength(1);
+});
+
+test("page load preserves explicit audio opt-in while history restoration stays silent", async ({ page }) => {
+  await installSpeechMock(page);
+  await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
+  await page.locator('#flashcardsStart').click();
+  await expect(page.locator('#flashcardsStudy')).toBeVisible();
+  const toggle = page.locator('#flashcardsAutoSpeak');
+  // A restored checkbox alone must never arm audio playback.
+  await page.evaluate(() => {
+    document.querySelector('#flashcardsAutoSpeak').checked = true;
+    window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: false }));
+  });
+  await expect(toggle).not.toBeChecked();
+  await toggle.check();
+  await page.evaluate(() => window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: false })));
+  await expect(toggle).toBeChecked();
+  await page.locator('#flashcardsNext').click();
+  await expect(page.locator('#flashcardsPosition')).toHaveText('2 / 10');
+  expect(await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak').map(call => call.text))).toEqual(['der Termin', 'die Uhrzeit']);
+  await page.evaluate(() => window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true })));
+  await expect(toggle).not.toBeChecked();
+  await page.locator('#flashcardsNext').click();
+  await expect(page.locator('#flashcardsPosition')).toHaveText('3 / 10');
+  expect(await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak'))).toHaveLength(2);
+});
+
+test("enabling automatic speech during manual playback reads the current word again", async ({ page }) => {
+  await installSpeechMock(page);
+  await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
+  await page.locator('#flashcardsStart').click();
+  await page.locator('#flashcardsSpeak').click();
+  await page.locator('#flashcardsAutoSpeak').check();
+  await expect(page.locator('#flashcardsSpeak')).toHaveAttribute('aria-pressed', 'true');
+  expect(await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak').map(call => call.text))).toEqual(['der Termin', 'der Termin']);
 });
 
 for (const dark of [false, true]) {

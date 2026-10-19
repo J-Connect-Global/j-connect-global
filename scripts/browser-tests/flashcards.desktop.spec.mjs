@@ -505,7 +505,7 @@ for (const direction of ['de-ja', 'ja-de']) {
     await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
     await page.locator(`input[name="session-direction"][value="${direction}"]`).check();
     await page.locator('#flashcardsStart').click();
-    const toggle = page.getByRole('switch', { name:'単語の自動読み上げ', exact:true });
+    const toggle = page.locator('#flashcardsAutoSpeak');
     await toggle.check();
     await expect(page.locator('#flashcardsAutoSpeakStatus')).toHaveText('ON');
     expect((await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak'))).map(call=>call.text)).toEqual(['der Termin']);
@@ -515,13 +515,15 @@ for (const direction of ['de-ja', 'ja-de']) {
     await expect(page.locator('#flashcardsPosition')).toHaveText('3 / 10');
     expect((await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak'))).map(call=>call.text)).toEqual(['der Termin','die Uhrzeit','heute']);
     await page.locator('#flashcardsPrevious').click();
-    expect((await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak'))).at(-1).text).toBe('die Uhrzeit');
+    await expect(page.locator('#flashcardsPosition')).toHaveText('2 / 10');
+    await expect.poll(() => page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak').at(-1)?.text)).toBe('die Uhrzeit');
     const spoken = await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak').length);
     await page.locator('#flashcardFlipControl').click();
     expect(await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak').length)).toBe(spoken);
     await toggle.uncheck();
     await expect(page.locator('#flashcardsSpeak')).toHaveAttribute('aria-pressed','false');
     await page.locator('#flashcardsNext').click();
+    await expect(page.locator('#flashcardsPosition')).toHaveText('3 / 10');
     expect(await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak').length)).toBe(spoken);
     await toggle.check();
     await page.locator('#flashcardsEndSession').click();
@@ -530,6 +532,7 @@ for (const direction of ['de-ja', 'ja-de']) {
     await expect(toggle).not.toBeChecked();
     const pausedCount = await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak').length);
     await page.locator('#flashcardsNext').click();
+    await expect(page.locator('#flashcardsPosition')).toHaveText('4 / 10');
     expect(await page.evaluate(() => window.__flashcardsSpeechCalls.filter(call => call.type === 'speak').length)).toBe(pausedCount);
     await toggle.check();
     await page.reload();
@@ -591,7 +594,7 @@ test("automatic speech ends with the session and a fresh session stays silent", 
   await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
   await page.locator("#flashcardsInventorySearch").fill("der Abend");
   await page.locator("#flashcardsInventoryStudyFiltered").click();
-  const toggle = page.getByRole("switch", { name: "単語の自動読み上げ", exact: true });
+  const toggle = page.locator("#flashcardsAutoSpeak");
   await toggle.press("Space");
   await expect(toggle).toBeChecked();
   await expect(page.locator("#flashcardFlipControl")).toHaveAttribute("aria-pressed", "false");

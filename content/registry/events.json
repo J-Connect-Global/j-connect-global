@@ -58,8 +58,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-09-18",
-    "last_verified": "2026-09-17",
+    "updated_at": "2026-10-19",
+    "last_verified": "2026-10-19",
     "tags": [
       "クリスマスマーケット",
       "デュッセルドルフ",
@@ -69,7 +69,7 @@
       "冬"
     ],
     "home_visible": true,
-    "home_order": 5,
+    "home_order": 4,
     "hub_visible": true,
     "search_visible": true,
     "sitemap_visible": true,
@@ -88,12 +88,12 @@
     "related_articles": [
       "kommern-saint-martin-2026-guide",
       "german-bread-culture",
-      "essen-light-festival-2026-guide"
+      "germany-winter-time-2026"
     ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-09-17",
+      "last_reviewed_at": "2026-10-19",
       "next_review_due": "2026-11-18"
     },
     "content_type": "event",
@@ -344,7 +344,7 @@
       "茶文化",
       "文化交流"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 5,
     "hub_visible": true,
     "search_visible": true,
@@ -398,7 +398,7 @@
       "インディーゲーム",
       "ファン文化"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 10,
     "hub_visible": true,
     "search_visible": true,
@@ -469,7 +469,7 @@
       "書",
       "NRW"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 11,
     "hub_visible": true,
     "search_visible": true,
@@ -601,7 +601,7 @@
       "家族向け",
       "NRW"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 13,
     "hub_visible": true,
     "search_visible": true,
@@ -1437,7 +1437,7 @@
       "インフラ",
       "NRW"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 1,
     "hub_visible": true,
     "search_visible": true,
@@ -1496,7 +1496,7 @@
       "秋イベント",
       "NRW"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 2,
     "hub_visible": true,
     "search_visible": true,
@@ -1559,7 +1559,7 @@
       "都市文化",
       "ランニング"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 3,
     "hub_visible": true,
     "search_visible": true,
@@ -1597,7 +1597,7 @@
   },
   {
     "id": "E016",
-    "title": "フランクフルト・ブックフェア2026｜本とチェコ文化に出会う秋の週末",
+    "title": "【終了】フランクフルト・ブックフェア2026｜本とチェコ文化の記録",
     "slug": "frankfurt-book-fair-2026-guide",
     "image_url": "/assets/img/events/frankfurt-book-fair-2026-guide.webp",
     "image": "/assets/img/events/frankfurt-book-fair-2026-guide.webp",
@@ -1606,14 +1606,14 @@
     "image_credit": "Matti Blume / CC BY-SA 4.0 / Wikimedia Commons",
     "category": "本・国際文化",
     "content_type": "event",
-    "summary": "フランクフルト・ブックフェア2026の一般公開は10月9〜11日。ゲスト国チェコの「海辺の国」というテーマ、翻訳や絵本の面白さを、日本語の読者にも楽しめる視点で案内します。",
+    "summary": "2026年のフランクフルト・ブックフェアは10月11日に終了しました。ゲスト国チェコのテーマや、翻訳・絵本を楽しむ視点を残した開催記録です。次回の訪問案内ではありません。",
     "url": "/germany/ja/events/frankfurt-book-fair-2026-guide/",
     "markdown_path": "/content/events/frankfurt-book-fair-2026-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-08-29",
-    "updated_at": "2026-09-18",
-    "last_verified": "2026-09-17",
+    "updated_at": "2026-10-19",
+    "last_verified": "2026-10-19",
     "tags": [
       "フランクフルト",
       "ブックフェア",
@@ -1622,7 +1622,7 @@
       "読書",
       "翻訳"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 2,
     "hub_visible": true,
     "search_visible": true,
@@ -1655,8 +1655,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-09-17",
-      "next_review_due": "2026-10-06"
+      "last_reviewed_at": "2026-10-19",
+      "next_review_due": "2027-07-01"
     },
     "next_review": "2026-10-06",
     "source_type": "manual"
@@ -1678,8 +1678,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-08-29",
-    "updated_at": "2026-08-30",
-    "last_verified": "2026-08-29",
+    "updated_at": "2026-10-19",
+    "last_verified": "2026-10-19",
     "tags": [
       "ART COLOGNE",
       "ケルン",
@@ -1688,8 +1688,8 @@
       "ギャラリー",
       "美術市場"
     ],
-    "home_visible": false,
-    "home_order": 5,
+    "home_visible": true,
+    "home_order": 2,
     "hub_visible": true,
     "search_visible": true,
     "sitemap_visible": true,
@@ -1705,19 +1705,24 @@
       },
       {
         "title": "ART COLOGNE：日程・開場時間",
-        "url": "https://www.artcologne.com/for-visitors/dates-opening-hours/"
+        "url": "https://www.artcologne.de/fuer-besucher/termine-oeffnungszeiten/"
+      },
+      {
+        "title": "ART COLOGNE：2026年チケット",
+        "url": "https://www.artcologne.de/fuer-besucher/tickets/tickets-kaufen/"
       }
     ],
     "disclaimer_type": "event",
     "related_articles": [
       "cologne-east-asian-art-museum-2026",
-      "cologne-marathon-2026-guide"
+      "spiel-essen-2026-guide",
+      "kommern-saint-martin-2026-guide"
     ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-29",
-      "next_review_due": "2026-11-04"
+      "last_reviewed_at": "2026-10-19",
+      "next_review_due": "2026-11-09"
     }
   },
   {
@@ -2027,8 +2032,8 @@
     "id": "E018",
     "content_type": "event",
     "category": "光のアート・街歩き",
-    "title": "エッセン光の祭典2026｜いつもの街が夜の美術館になる10日間",
-    "summary": "2026年10月2〜11日、エッセン中心街が光の展示空間へ。建物と映像の重なり、写真では伝わらない時間、子どもと楽しむ見方を紹介し、開催時間も整理します。",
+    "title": "【終了】エッセン光の祭典2026｜街と光を楽しむ文化の記録",
+    "summary": "2026年のエッセン光の祭典は10月11日に終了しました。建物と映像の重なりや、写真では伝わらない時間の楽しみ方を残した開催記録です。次回の開催案内ではありません。",
     "official_sources": [
       {
         "title": "ルール観光局：エッセン光の祭典2026",
@@ -2056,8 +2061,8 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-09-18",
-    "updated_at": "2026-09-18",
-    "last_verified": "2026-09-17",
+    "updated_at": "2026-10-19",
+    "last_verified": "2026-10-19",
     "canonical_url": "/germany/ja/events/essen-light-festival-2026-guide/",
     "official_url": "https://www.ruhr-tourismus.de/event/essen-light-festival-2026/",
     "image": "/assets/img/events/essen-light-festival-2026-guide.webp",
@@ -2067,7 +2072,7 @@
     "url": "/germany/ja/events/essen-light-festival-2026-guide/",
     "markdown_path": "/content/events/essen-light-festival-2026-guide.md",
     "image_url": "/assets/img/events/essen-light-festival-2026-guide.webp",
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 1,
     "hub_visible": true,
     "search_visible": true,
@@ -2076,8 +2081,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-09-17",
-      "next_review_due": "2026-10-01"
+      "last_reviewed_at": "2026-10-19",
+      "next_review_due": "2027-08-01"
     }
   },
   {
@@ -2098,8 +2103,8 @@
       }
     ],
     "related_articles": [
-      "essen-light-festival-2026-guide",
-      "frankfurt-book-fair-2026-guide",
+      "art-cologne-2026-guide",
+      "germany-winter-time-2026",
       "kommern-saint-martin-2026-guide"
     ],
     "city": "エッセン",
@@ -2118,8 +2123,8 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-09-18",
-    "updated_at": "2026-09-18",
-    "last_verified": "2026-09-17",
+    "updated_at": "2026-10-19",
+    "last_verified": "2026-10-19",
     "canonical_url": "/germany/ja/events/spiel-essen-2026-guide/",
     "official_url": "https://www.spiel-essen.de/de/besuchen/tickets-oeffnungszeiten",
     "image": "/assets/img/events/spiel-essen-2026-guide.webp",
@@ -2130,7 +2135,7 @@
     "markdown_path": "/content/events/spiel-essen-2026-guide.md",
     "image_url": "/assets/img/events/spiel-essen-2026-guide.webp",
     "home_visible": true,
-    "home_order": 3,
+    "home_order": 1,
     "hub_visible": true,
     "search_visible": true,
     "sitemap_visible": true,
@@ -2138,8 +2143,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-09-17",
-      "next_review_due": "2026-10-21"
+      "last_reviewed_at": "2026-10-19",
+      "next_review_due": "2026-10-26"
     }
   },
   {
@@ -2152,7 +2157,7 @@
     "official_sources": [
       {
         "title": "コメルン野外博物館：2026年11月8日の聖マルティン行列",
-        "url": "https://kommern.lvr.de/de/veranstaltungen/martinszug_wie_frueher_auf_dem_dorf.html"
+        "url": "https://www.lvr.de/kultur/aktuelles/veranstaltungen/"
       },
       {
         "title": "ドイツ・ユネスコ委員会：ラインラントの聖マルティンの伝統",
@@ -2180,10 +2185,10 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-09-18",
-    "updated_at": "2026-09-18",
-    "last_verified": "2026-09-17",
+    "updated_at": "2026-10-19",
+    "last_verified": "2026-10-19",
     "canonical_url": "/germany/ja/events/kommern-saint-martin-2026-guide/",
-    "official_url": "https://kommern.lvr.de/de/veranstaltungen/martinszug_wie_frueher_auf_dem_dorf.html",
+    "official_url": "https://www.lvr.de/kultur/aktuelles/veranstaltungen/",
     "image": "/assets/img/events/kommern-saint-martin-2026-guide.webp",
     "image_alt": "コメルン野外博物館に移築された木組みの貯蔵建物",
     "image_caption": "2020年撮影、コメルンの歴史的建築。2026年の行列当日の写真ではありません。",
@@ -2192,7 +2197,7 @@
     "markdown_path": "/content/events/kommern-saint-martin-2026-guide.md",
     "image_url": "/assets/img/events/kommern-saint-martin-2026-guide.webp",
     "home_visible": true,
-    "home_order": 4,
+    "home_order": 3,
     "hub_visible": true,
     "search_visible": true,
     "sitemap_visible": true,
@@ -2200,8 +2205,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-09-17",
-      "next_review_due": "2026-11-01"
+      "last_reviewed_at": "2026-10-19",
+      "next_review_due": "2026-11-09"
     }
   },
   {
@@ -2534,5 +2539,186 @@
       "last_reviewed_at": "2026-09-17",
       "next_review_due": "2027-09-01"
     }
+  },
+  {
+    "slug": "deutschlandticket-2027-price-consent",
+    "id": "N021",
+    "content_type": "news",
+    "category": "交通・暮らし",
+    "title": "Deutschlandticketは2027年66.80ユーロへ｜DB利用者は11月30日までに確認",
+    "summary": "Deutschlandticketは2027年1月から月66.80ユーロへ値上げ。DBから購入した既存契約では11月30日までの同意が必要になるため、購入者、期限、未回答時の扱いを整理します。",
+    "official_sources": [
+      {
+        "title": "Deutsche Bahn：Deutschlandticketの契約変更FAQ",
+        "url": "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
+      }
+    ],
+    "related_articles": [
+      "db-2027-timetable-family-ticket",
+      "germany-train-travel-guide",
+      "cologne-antwerp-direct-ice-2026"
+    ],
+    "city": "ドイツ全土",
+    "area": "ドイツ全土",
+    "location": "",
+    "event_date": "2027年1月1日から新料金",
+    "next_review": "2026-12-01",
+    "tags": [
+      "Deutschlandticket",
+      "公共交通",
+      "定期券",
+      "値上げ",
+      "Deutsche Bahn",
+      "2027年"
+    ],
+    "published": true,
+    "status": "published",
+    "source_type": "manual",
+    "published_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "last_verified": "2026-10-19",
+    "canonical_url": "/germany/ja/events/news/deutschlandticket-2027-price-consent/",
+    "official_url": "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt",
+    "url": "/germany/ja/events/news/deutschlandticket-2027-price-consent/",
+    "markdown_path": "/content/events/news/deutschlandticket-2027-price-consent.md",
+    "home_visible": false,
+    "home_order": 20,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-19",
+      "next_review_due": "2026-12-01"
+    },
+    "image": "/assets/images/living/german-regional-train-editorial-v1.webp",
+    "image_alt": "地域列車のホームで公式アプリを確認する旅行者の編集イメージ",
+    "image_caption": "AI生成の編集イメージ。実在の駅、列車、乗客や契約画面ではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "image_url": "/assets/images/living/german-regional-train-editorial-v1.webp"
+  },
+  {
+    "slug": "db-2027-timetable-family-ticket",
+    "id": "N022",
+    "content_type": "news",
+    "category": "交通・旅行",
+    "title": "DBの2027年ダイヤが予約開始｜家族券99.99ユーロとNRW―ベルリン工事の注意点",
+    "summary": "DBの2027年ダイヤは12月13日開始。新しい家族向け往復券、定期券の値下げ、国際列車の拡充と、工事で約80分延びるNRW―ベルリン移動を生活者向けに整理します。",
+    "official_sources": [
+      {
+        "title": "Deutsche Bahn：2027年ダイヤと新商品",
+        "url": "https://www.deutschebahn.com/de/presse/pressestart_zentrales_uebersicht/Fahrplan-2027-stabile-Preise-neue-Sprinter-mehr-europaeische-Verbindungen-14065322"
+      }
+    ],
+    "related_articles": [
+      "deutschlandticket-2027-price-consent",
+      "germany-train-travel-guide",
+      "cologne-antwerp-direct-ice-2026"
+    ],
+    "city": "ドイツ全土",
+    "area": "ドイツ全土・欧州",
+    "location": "",
+    "event_date": "2026-12-13から2027年ダイヤ",
+    "next_review": "2026-12-12",
+    "tags": [
+      "Deutsche Bahn",
+      "ICE",
+      "2027年ダイヤ",
+      "Familienticket",
+      "鉄道旅行",
+      "NRW"
+    ],
+    "published": true,
+    "status": "published",
+    "source_type": "manual",
+    "published_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "last_verified": "2026-10-19",
+    "canonical_url": "/germany/ja/events/news/db-2027-timetable-family-ticket/",
+    "official_url": "https://www.deutschebahn.com/de/presse/pressestart_zentrales_uebersicht/Fahrplan-2027-stabile-Preise-neue-Sprinter-mehr-europaeische-Verbindungen-14065322",
+    "url": "/germany/ja/events/news/db-2027-timetable-family-ticket/",
+    "markdown_path": "/content/events/news/db-2027-timetable-family-ticket.md",
+    "home_visible": false,
+    "home_order": 20,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-19",
+      "next_review_due": "2026-12-12"
+    },
+    "image": "/assets/img/events/cologne-antwerp-direct-ice-2026.webp",
+    "image_alt": "ケルンのメッセ・ドイツ駅を通るICE車両の資料写真",
+    "image_caption": "2015年撮影のICE。2027年ダイヤの新列車や使用車両を示す写真ではありません。",
+    "image_credit": "Rolf Heinrich, Köln / CC BY 3.0 / Wikimedia Commons",
+    "image_url": "/assets/img/events/cologne-antwerp-direct-ice-2026.webp"
+  },
+  {
+    "slug": "germany-winter-time-2026",
+    "id": "C005",
+    "content_type": "column",
+    "category": "季節・暮らし",
+    "title": "ドイツの冬時間は10月25日から｜「1時間戻る」日に暮らしはどう変わる？",
+    "summary": "2026年10月25日、ドイツは夏時間から標準時へ。時計を1時間戻す仕組み、日本との時差、日曜の朝に確認したい機器や予定を、季節の暮らしとして紹介します。",
+    "official_sources": [
+      {
+        "title": "欧州委員会ドイツ代表部：時間変更と2026年の日程",
+        "url": "https://germany.representation.ec.europa.eu/zeitumstellung_de"
+      },
+      {
+        "title": "ドイツ物理工学研究所：法定時刻と夏時間の仕組み",
+        "url": "https://www.ptb.de/cms/fileadmin/internet/presse_aktuelles/broschueren/zur_zeit/Flyer_Zeit_2017_web-print.pdf"
+      }
+    ],
+    "related_articles": [
+      "germany-autumn-forest-walk",
+      "db-2027-timetable-family-ticket",
+      "spiel-essen-2026-guide"
+    ],
+    "city": "ドイツ全土",
+    "area": "ドイツ全土",
+    "location": "",
+    "event_date": "2026-10-25 夏時間終了",
+    "next_review": "2027-10-01",
+    "tags": [
+      "冬時間",
+      "時間変更",
+      "ドイツ生活",
+      "日本との時差",
+      "秋",
+      "時計"
+    ],
+    "published": true,
+    "status": "published",
+    "source_type": "manual",
+    "published_at": "2026-10-19",
+    "updated_at": "2026-10-19",
+    "last_verified": "2026-10-19",
+    "canonical_url": "/germany/ja/events/columns/germany-winter-time-2026/",
+    "official_url": "https://germany.representation.ec.europa.eu/zeitumstellung_de",
+    "url": "/germany/ja/events/columns/germany-winter-time-2026/",
+    "markdown_path": "/content/events/columns/germany-winter-time-2026.md",
+    "home_visible": false,
+    "home_order": 20,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-19",
+      "next_review_due": "2027-10-01"
+    },
+    "image": "/assets/img/events/germany-autumn-forest-walk.webp",
+    "image_alt": "ベルリンのデュッペルの森を彩る秋のブナの資料写真",
+    "image_caption": "2016年11月撮影の秋の森。時間変更当日の明るさを示す写真ではありません。",
+    "image_credit": "Alexander Grams / CC BY-SA 4.0 / Wikimedia Commons",
+    "image_url": "/assets/img/events/germany-autumn-forest-walk.webp"
   }
 ]

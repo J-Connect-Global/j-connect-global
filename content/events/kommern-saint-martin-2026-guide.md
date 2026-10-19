@@ -7,23 +7,23 @@ title: "コメルンの聖マルティン祭2026｜ランタンの灯りと「�
 summary: "2026年11月8日、コメルン野外博物館で聖マルティンの行列が開催予定。ランタン、マントを分ける物語、人形型のパンから、ラインラントで受け継がれる秋の文化を読み解きます。"
 official_sources:
   - title: "コメルン野外博物館：2026年11月8日の聖マルティン行列"
-    url: "https://kommern.lvr.de/de/veranstaltungen/martinszug_wie_frueher_auf_dem_dorf.html"
+    url: "https://www.lvr.de/kultur/aktuelles/veranstaltungen/"
   - title: "ドイツ・ユネスコ委員会：ラインラントの聖マルティンの伝統"
     url: "https://www.unesco.de/staette/martinstradition-im-rheinland/"
 related_articles: ["christmas-markets-duesseldorf", "german-bread-culture", "germany-autumn-forest-walk"]
 city: "メヒャーニヒ"
 location: "コメルン野外博物館"
 event_date: "2026-11-08"
-next_review: "2026-11-01"
+next_review: "2026-11-09"
 tags: ["聖マルティン祭", "ランタン", "コメルン", "2026年11月", "家族", "地域文化"]
 published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-09-18"
-updated_at: "2026-09-18"
-last_verified: "2026-09-17"
+updated_at: "2026-10-19"
+last_verified: "2026-10-19"
 canonical_url: "/germany/ja/events/kommern-saint-martin-2026-guide/"
-official_url: "https://kommern.lvr.de/de/veranstaltungen/martinszug_wie_frueher_auf_dem_dorf.html"
+official_url: "https://www.lvr.de/kultur/aktuelles/veranstaltungen/"
 image: "/assets/img/events/kommern-saint-martin-2026-guide.webp"
 image_alt: "コメルン野外博物館に移築された木組みの貯蔵建物"
 image_caption: "2020年撮影、コメルンの歴史的建築。2026年の行列当日の写真ではありません。"
@@ -36,7 +36,7 @@ image_credit: "Rigorius / CC BY-SA 4.0 / Wikimedia Commons"
 
 ## なぜ、馬に乗った人がマントを分けるのか
 
-行列の中心にいるのは、聖マルティン役の騎馬人物です。よく知られる伝承では、寒さの中にいた貧しい人のため、兵士だったマルティンが自分のマントを分け与えます。コメルンでも、行列の後、大きなたき火の前でこの場面が演じられる予定です。[博物館の2026年案内](https://kommern.lvr.de/de/veranstaltungen/martinszug_wie_frueher_auf_dem_dorf.html)
+行列の中心にいるのは、聖マルティン役の騎馬人物です。よく知られる伝承では、寒さの中にいた貧しい人のため、兵士だったマルティンが自分のマントを分け与えます。コメルンでも、行列の後、大きなたき火の前でこの場面が演じられる予定です。LVRの中央イベント一覧で、11月8日17時から19時の開催を確認できます。
 
 ここで見たいのは、衣装の華やかさだけではありません。物語の核は、目の前の人の困りごとに気づき、自分の持つ物を分けること。言葉が十分に聞き取れなくても、マントを分ける動作には、話の中心を伝える強さがあります。
 
@@ -64,7 +64,7 @@ image_credit: "Rigorius / CC BY-SA 4.0 / Wikimedia Commons"
 
 ## 人の形のパンも、季節の記憶になる
 
-この時期に見かける人形型の焼き菓子パンは、地域で「ヴェックマン」などと呼ばれます。コメルンの案内では、パンはウェブショップで購入できるとされています。入場に自動的に含まれるとは案内されていないので、欲しい場合は購入条件を別に見ておきましょう。
+この時期に見かける人形型の焼き菓子パンは、地域で「ヴェックマン」などと呼ばれます。販売や配布の有無は年によって変わり得るため、当日の案内で確認してください。入場に含まれると決めつけず、文化の一部として形や香りにも目を向けると楽しめます。
 
 行列、灯り、物語に、食べ物の形や香りが加わることで、季節の行事は覚えやすくなります。日本でも特定の祭りと結び付く食べ物があるように、「この形を見かけると、その季節だと分かる」という感覚は、異なる土地の暮らしを知る入口です。
 
@@ -74,13 +74,12 @@ image_credit: "Rigorius / CC BY-SA 4.0 / Wikimedia Commons"
 
 | 項目 | 内容 |
 | --- | --- |
-| 日程・開始 | 2026年11月8日（日）17:00 |
+| 日程 | 2026年11月8日（日）17:00〜19:00 |
 | 場所 | コメルン野外博物館、メヒャーニヒ市コメルン地区 |
 | 主な内容 | 騎馬の聖マルティン、ランタン行列、たき火前でのマント分け |
-| 当日の入場 | 来場者が入場料を自分で決める特別日 |
-| 人形型のパン | 博物館のウェブショップで別途購入案内あり |
+| 入場・受付 | 料金と受付方法は開催直前の公式案内で確認 |
 
-公式イベントページは17時開始と明記しています。同じサイトの通常の冬季開館時間は16時までですが、これは特別行事の開始時刻とは別の案内です。訪問前には、イベントページに追記される入場方法や当日の受付を確認してください。
+LVRの中央イベント一覧は17時から19時と案内しています。個別イベントページは10月19日の確認時点で安定して開けなかったため、料金や受付方法は断定していません。訪問前に中央一覧から最新の個別案内へ進むか、博物館へ確認してください。
 
 会場は屋外で、11月の夕方は暗くなります。歩く距離や路面が気になる場合は博物館に確認し、明るいうちの建物見学も組み合わせるなら当日の運用に合わせてください。普段の博物館の時間表だけで予定を立てないことが、この催しで必要な実用上の要点です。
 

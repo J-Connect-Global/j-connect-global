@@ -492,9 +492,9 @@ function validateHome(datasets) {
   for (const [type, items] of Object.entries(datasets)) {
     const config = contentTypes[type];
     const selectableItems = type === 'events'
-      ? items.filter((item) => item.content_type !== 'news')
+      ? items.filter((item) => !['news', 'column'].includes(item.content_type))
       : items;
-    const selected = homeItems(selectableItems, config.homeLimit);
+    const selected = homeItems(selectableItems, config.homeLimit, type === 'events');
     const markerContent = extractMarker(html, config.homeMarker);
 
     for (const item of selected) {
@@ -642,11 +642,11 @@ function localTargetExists(url) {
   return fs.existsSync(`${target}.html`);
 }
 
-function homeItems(items, limit) {
+function homeItems(items, limit, eventOrder = false) {
   return items
     .map((item, index) => ({ item, index }))
     .filter(({ item }) => item.published === true && item.home_visible === true)
-    .sort(compareHomeItemEntries)
+    .sort((a, b) => (eventOrder ? (a.item.home_order ?? Infinity) - (b.item.home_order ?? Infinity) : 0) || compareHomeItemEntries(a, b))
     .slice(0, limit)
     .map(({ item }) => item);
 }

@@ -118,6 +118,7 @@
     isRating: false,
     activeSpeechButton: null,
     speechUtterance: null,
+    autoSpeak: false,
     toastTimer: null
   };
 
@@ -154,7 +155,6 @@
     try {
       localStorage.setItem(LAST_DECK_KEY, deckId);
     } catch {
-      // The deck query parameter remains the source of truth.
     }
   }
 
@@ -558,7 +558,7 @@
     elements.previous.disabled = index === 0;
     elements.next.disabled = index >= total - 1;
     setFlipped(false);
-    if (elements.autoSpeak.checked && !document.hidden && !elements.study.hidden) speakCurrentCard();
+    if (state.autoSpeak && !document.hidden && !elements.study.hidden) speakCurrentCard();
   }
 
   function openStudy() {
@@ -719,7 +719,7 @@
   }
 
   function disableAutoSpeech() {
-    elements.autoSpeak.checked = false;
+    state.autoSpeak = elements.autoSpeak.checked = false;
     elements.autoSpeakStatus.textContent = "OFF";
     stopSpeech();
   }
@@ -992,14 +992,16 @@
         disableAutoSpeech();
         return;
       }
+      state.autoSpeak = true;
       elements.autoSpeakStatus.textContent = "ON";
+      stopSpeech();
       speakCurrentCard();
     });
     document.addEventListener("visibilitychange", () => {
       if (document.hidden) disableAutoSpeech();
     });
     window.addEventListener("pagehide", disableAutoSpeech);
-    window.addEventListener("pageshow", disableAutoSpeech);
+    window.addEventListener("pageshow", event => (event.persisted || !state.autoSpeak) && disableAutoSpeech());
     elements.start.addEventListener("click", startNewSession);
     root.querySelectorAll('input[name="session-size"], input[name="session-order"], input[name="session-direction"], input[name="session-target"]')
       .forEach(input => input.addEventListener("change", () => state.targetController?.render()));

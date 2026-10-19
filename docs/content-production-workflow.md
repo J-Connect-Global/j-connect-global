@@ -167,8 +167,8 @@ Optional hub card images can be added to Living, Events, and Learn German regist
 Use `home_visible` and `home_order` in the registry:
 
 - `home_visible: true` allows the article to be considered for Home preview cards.
-- `home_order` sorts Home candidates ascending.
-- The build then sorts by `home_order` ascending, then `published_at` descending.
+- Event preview cards use `home_order` ascending, then the newest editorial date (`updated_at` or `published_at`). Mark ended events `home_visible: false` during the editorial cycle; dates are not automatically inferred from the free-text event date field.
+- Other Home previews and the news list use the newest editorial date, with registry position as the tie-breaker. The news list selects published news independently of `home_visible`.
 - Home uses the current compact preview layout for Living, Events, and Learn German.
 
 ## Adding A Static JA Page

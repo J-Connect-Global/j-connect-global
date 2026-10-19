@@ -2127,7 +2127,7 @@ function updateHome(datasets) {
     .map((item) => renderHomeStandardArticleCard(item, 'living', 'portal3-card-img'))
     .join('\n\n');
   const newsList = renderHomeNewsList(homeNewsItems(datasets.events, 3));
-  const eventCards = homeItems(datasets.events, contentTypes.events.homeLimit, (item) => !['news', 'column'].includes(item.content_type)).map(renderHomeEventCard).join('\n\n');
+  const eventCards = homeItems(datasets.events, contentTypes.events.homeLimit, (item) => !['news', 'column'].includes(item.content_type), compareHomeEventEntries).map(renderHomeEventCard).join('\n\n');
   const learnGermanContent = homeItems(datasets['learn-german'], contentTypes['learn-german'].homeLimit).map(renderHomeLearnGermanCard).join('\n\n');
   const homeArticleItemsByUrl = new Map(Object.values(datasets).flatMap((items) => items).map((item) => [item.url, item]));
 
@@ -2274,11 +2274,11 @@ function eventBadge(item) {
   return { top: '公式情報', main: '確認中', sub: '' };
 }
 
-function homeItems(items, limit, predicate = () => true) {
+function homeItems(items, limit, predicate = () => true, compare = compareHomeItemEntries) {
   return items
     .map((item, index) => ({ item, index }))
     .filter(({ item }) => item.published && item.home_visible && predicate(item))
-    .sort(compareHomeItemEntries)
+    .sort(compare)
     .slice(0, limit)
     .map(({ item }) => item);
 }
@@ -2290,6 +2290,10 @@ function homeNewsItems(items, limit) {
     .sort(compareHomeItemEntries)
     .slice(0, limit)
     .map(({ item }) => item);
+}
+
+function compareHomeEventEntries(a, b) {
+  return (a.item.home_order ?? Infinity) - (b.item.home_order ?? Infinity) || compareHomeItemEntries(a, b);
 }
 
 function compareHomeItemEntries(a, b) {

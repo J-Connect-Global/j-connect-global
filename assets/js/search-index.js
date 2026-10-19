@@ -1251,8 +1251,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "フランクフルト・ブックフェア2026｜本とチェコ文化に出会う秋の週末",
-    "description": "フランクフルト・ブックフェア2026の一般公開は10月9〜11日。ゲスト国チェコの「海辺の国」というテーマ、翻訳や絵本の面白さを、日本語の読者にも楽しめる視点で案内します。",
+    "title": "【終了】フランクフルト・ブックフェア2026｜本とチェコ文化の記録",
+    "description": "2026年のフランクフルト・ブックフェアは10月11日に終了しました。ゲスト国チェコのテーマや、翻訳・絵本を楽しむ視点を残した開催記録です。次回の訪問案内ではありません。",
     "url": "/germany/ja/events/frankfurt-book-fair-2026-guide/",
     "category": "ニュース・イベント",
     "tags": [
@@ -1349,8 +1349,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "エッセン光の祭典2026｜いつもの街が夜の美術館になる10日間",
-    "description": "2026年10月2〜11日、エッセン中心街が光の展示空間へ。建物と映像の重なり、写真では伝わらない時間、子どもと楽しむ見方を紹介し、開催時間も整理します。",
+    "title": "【終了】エッセン光の祭典2026｜街と光を楽しむ文化の記録",
+    "description": "2026年のエッセン光の祭典は10月11日に終了しました。建物と映像の重なりや、写真では伝わらない時間の楽しみ方を残した開催記録です。次回の開催案内ではありません。",
     "url": "/germany/ja/events/essen-light-festival-2026-guide/",
     "category": "ニュース・イベント",
     "tags": [
@@ -1458,6 +1458,48 @@ window.JCONNECT_SEARCH_INDEX = [
       "紅葉",
       "自然観察",
       "ドイツ生活"
+    ]
+  },
+  {
+    "title": "Deutschlandticketは2027年66.80ユーロへ｜DB利用者は11月30日までに確認",
+    "description": "Deutschlandticketは2027年1月から月66.80ユーロへ値上げ。DBから購入した既存契約では11月30日までの同意が必要になるため、購入者、期限、未回答時の扱いを整理します。",
+    "url": "/germany/ja/events/news/deutschlandticket-2027-price-consent/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "Deutschlandticket",
+      "公共交通",
+      "定期券",
+      "値上げ",
+      "Deutsche Bahn",
+      "2027年"
+    ]
+  },
+  {
+    "title": "DBの2027年ダイヤが予約開始｜家族券99.99ユーロとNRW―ベルリン工事の注意点",
+    "description": "DBの2027年ダイヤは12月13日開始。新しい家族向け往復券、定期券の値下げ、国際列車の拡充と、工事で約80分延びるNRW―ベルリン移動を生活者向けに整理します。",
+    "url": "/germany/ja/events/news/db-2027-timetable-family-ticket/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "Deutsche Bahn",
+      "ICE",
+      "2027年ダイヤ",
+      "Familienticket",
+      "鉄道旅行",
+      "NRW"
+    ]
+  },
+  {
+    "title": "ドイツの冬時間は10月25日から｜「1時間戻る」日に暮らしはどう変わる？",
+    "description": "2026年10月25日、ドイツは夏時間から標準時へ。時計を1時間戻す仕組み、日本との時差、日曜の朝に確認したい機器や予定を、季節の暮らしとして紹介します。",
+    "url": "/germany/ja/events/columns/germany-winter-time-2026/",
+    "category": "ニュース・イベント",
+    "tags": [
+      "冬時間",
+      "時間変更",
+      "ドイツ生活",
+      "日本との時差",
+      "秋",
+      "時計"
     ]
   },
   {

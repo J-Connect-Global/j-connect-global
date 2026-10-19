@@ -10,18 +10,18 @@ official_sources:
     url: "https://www.spiel-essen.de/de/besuchen/tickets-oeffnungszeiten"
   - title: "見本市主催者：1983年からの歴史"
     url: "https://www.spiel-essen.de/de/ueber-uns/historie"
-related_articles: ["essen-light-festival-2026-guide", "frankfurt-book-fair-2026-guide", "kommern-saint-martin-2026-guide"]
+related_articles: ["art-cologne-2026-guide", "germany-winter-time-2026", "kommern-saint-martin-2026-guide"]
 city: "エッセン"
 location: "エッセン見本市会場"
 event_date: "2026-10-22〜2026-10-25"
-next_review: "2026-10-21"
+next_review: "2026-10-26"
 tags: ["エッセン", "ボードゲーム", "2026年10月", "家族", "遊び", "文化"]
 published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-09-18"
-updated_at: "2026-09-18"
-last_verified: "2026-09-17"
+updated_at: "2026-10-19"
+last_verified: "2026-10-19"
 canonical_url: "/germany/ja/events/spiel-essen-2026-guide/"
 official_url: "https://www.spiel-essen.de/de/besuchen/tickets-oeffnungszeiten"
 image: "/assets/img/events/spiel-essen-2026-guide.webp"
@@ -89,11 +89,15 @@ image_credit: "Schrapers~commonswiki / CC BY 4.0 / Wikimedia Commons"
 | 10月22日（木）〜24日（土） | 10:00〜19:00 |
 | 10月25日（日） | 10:00〜18:00 |
 | 入場券 | 公式オンライン販売のみ。現地の販売窓口なし |
+| 大人1日券 | 25ユーロ |
+| 子ども1日券（4〜12歳） | 16ユーロ。4歳未満は無料 |
+| 割引1日券 | 22ユーロ |
+| 家族1日券 | 67ユーロ（大人2人と4〜12歳の子ども最大3人） |
 | 試遊 | 入場後の追加料金なし。空席は保証されない |
 
-券種・販売状況は[公式チケット案内](https://www.spiel-essen.de/de/besuchen/tickets-oeffnungszeiten)を確認してください。会場写真は過去開催の記録で、2026年の配置や出展内容を示すものではありません。卓上で遊ぶ写真は、会場外の参考写真です。
+料金は8月5日以降の公式価格です。券種・販売状況は[公式チケット案内](https://www.spiel-essen.de/de/besuchen/tickets-oeffnungszeiten)を確認してください。会場写真は過去開催の記録で、2026年の配置や出展内容を示すものではありません。卓上で遊ぶ写真は、会場外の参考写真です。
 
-同じ10月にエッセンを訪れるなら、2〜11日の[光の祭典](/germany/ja/events/essen-light-festival-2026-guide/)も別の選択肢です。見本市で味わえるのは、人と人が同じルールを共有して、しばらく別の世界で過ごす時間。ドイツの秋に室内で楽しめることを探している人にも、興味深い入口になるでしょう。
+エッセンの光の祭典は10月11日で終了しています。これからの屋内文化イベントなら、11月5〜8日の[ART COLOGNE](/germany/ja/events/art-cologne-2026-guide/)も別の選択肢です。見本市で味わえるのは、人と人が同じルールを共有して、しばらく別の世界で過ごす時間。ドイツの秋に室内で楽しめることを探している人にも、興味深い入口になるでしょう。
 
 ## 写真の出典
 

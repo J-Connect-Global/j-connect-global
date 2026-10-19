@@ -1,23 +1,25 @@
 ---
 id: "G009"
-title: "買い物で使うドイツ語｜スーパー・レジ・返品で役立つフレーズ"
+title: "買い物のドイツ語｜スーパー・返品・配送問い合わせのフレーズ"
 slug: "shopping-phrases"
 category: "買い物"
-summary: "ドイツのスーパー、パン屋、ドラッグストア、衣料品店で、商品を探す、量を頼む、Pfandを返す、会計する、成分を確認する、返品・不良品を伝えるための実用フレーズ集です。"
+summary: "ドイツのスーパー、パン屋、ドラッグストア、衣料品店で、商品を探す、量を頼む、Pfandを返す、会計する、成分を確認する、返品・不良品・配送の未着を伝える実用フレーズ集。販売店へのメール文も日本語訳付きで紹介します。"
 status: "published"
 published: true
 published_at: "2026-06-20"
-updated_at: "2026-08-01"
+updated_at: "2026-10-19"
 last_verified: "2026-08-01"
 tags: ["買い物", "スーパー", "レジ", "Pfand", "返品", "A1", "A2"]
 canonical_url: "/germany/ja/learn-german/shopping-phrases/"
-image_alt: "ドイツのスーパーマーケットで商品ラベルを確認しながら買い物する様子"
 related_articles: ["telephone-phrases", "appointment-phrase", "pharmacy-prescription-phrases"]
+image: "/assets/img/learn-german/shopping-phrases.webp"
+image_alt: "店頭では商品とレシート、通販では注文番号と追跡番号を準備する学習用メモ"
+image_caption: "図解：J-Connect編集部作成。店頭と通販で伝える情報を整理した学習用メモです。"
 ---
 
-# 買い物で使うドイツ語｜スーパー・レジ・返品で役立つフレーズ
+# 買い物のドイツ語｜スーパー・返品・配送問い合わせのフレーズ
 
-ドイツでの買い物は、セルフサービスだけで終わらず、パン・肉の量を伝える、青果を量る、Pfandを返す、レジで支払方法を答える、返品理由を説明する場面があります。
+ドイツでの買い物は、セルフサービスだけで終わらず、パン・肉の量を伝える、青果を量る、Pfandを返す、レジで支払方法を答える、返品理由を説明する場面があります。通販では、荷物が届かないことや一部だけ届いたことを販売店に伝える表現も役立ちます。
 
 長い文は不要です。**探している物＋必要な量・条件＋確認したいこと**の順で伝えれば、短いドイツ語で対応できます。
 
@@ -203,6 +205,56 @@ Pfand対象のボトル・缶は、店内の返却機へ入れ、`Pfandbon`を�
 > Welche Möglichkeiten habe ich: Rückgabe, Umtausch oder Reparatur?
 > 返品、交換、修理のどの選択肢がありますか。
 
+## 配送状況・未配達を問い合わせる
+
+まず**注文番号（Bestellnummer）**と**追跡番号（Sendungsnummer）**を分けて控えます。注文が複数の箱で届く場合は、どの箱の追跡番号が未着なのかを伝えます。確認手順は[DHLが配達済みなのに届かない場合](/germany/ja/living/dhl-delivered-but-not-received/)を参照してください。
+
+| 状況 | ドイツ語 | 日本語 |
+| --- | --- | --- |
+| 発送日 | Wann wird meine Bestellung versendet? | 注文はいつ発送されますか。 |
+| 追跡番号 | Könnten Sie mir bitte die Sendungsnummer mitteilen? | 追跡番号を教えていただけますか。 |
+| 配達済みだが未受領 | Laut Sendungsverfolgung wurde das Paket zugestellt, aber ich habe es nicht erhalten. | 追跡では配達済みですが、荷物を受け取っていません。 |
+| 隣人を確認 | Ich habe bei den angegebenen Nachbarn nachgefragt. Das Paket ist dort nicht. | 表示された隣人に確認しましたが、荷物はそこにありません。 |
+| 置き配場所を確認 | Am angegebenen Ablageort liegt kein Paket. | 表示された置き配場所に荷物がありません。 |
+| 箱が未着 | Von zwei Paketen ist nur eines angekommen. Das zweite Paket fehlt noch. | 2箱のうち1箱しか届いていません。もう1箱が未着です。 |
+| 内容品が不足 | Das Paket ist angekommen, aber ein Teil des Inhalts fehlt. | 箱は届きましたが、中身の一部が足りません。 |
+| 調査を依頼 | Könnten Sie bitte eine Nachforschung veranlassen? | 調査を手配していただけますか。 |
+| 再送を相談 | Ist eine Ersatzlieferung möglich? | 代替品の発送は可能ですか。 |
+| 回答日 | Bis wann kann ich mit einer Rückmeldung rechnen? | いつまでに回答をいただけますか。 |
+
+`Ein Teil fehlt.`だけでは、部品不足か箱の未着か曖昧になります。箱が一つ未着なら`Das zweite Paket fehlt noch.`、箱の中の部品不足なら`Ein Bauteil fehlt.`など、何が足りないかを具体的に言います。`zugestellt`は配達済み、`versendet`は発送済みで、同じ状態ではありません。
+
+### 販売店へのメール：配達済みだが届かない
+
+**件名：** Bestellung [注文番号] – Paket nicht erhalten
+
+> Guten Tag,
+>
+> laut Sendungsverfolgung wurde mein Paket mit der Sendungsnummer [追跡番号] am [日付] zugestellt. Ich habe es jedoch nicht erhalten. Bisher habe ich Folgendes überprüft: [確認内容].
+>
+> Könnten Sie bitte den Verbleib des Pakets prüfen und mir mitteilen, wie wir weiter vorgehen? Bitte bestätigen Sie den Eingang meiner Nachricht.
+>
+> Vielen Dank im Voraus.
+>
+> Mit freundlichen Grüßen
+> [氏名]
+
+**日本語：** 追跡番号[番号]の荷物は[日付]に配達済みと出ていますが、受け取っていません。[場所・相手]は確認済みです。荷物の所在を確認し、今後の対応を教えていただけますか。この連絡の受領確認もお願いします。
+
+隣人に聞いていなければ、聞いたとは書かないでください。確認した事実だけを入れます。
+
+### 2箱のうち一つだけ届いた場合の差し替え文
+
+> Meine Bestellung besteht aus zwei Paketen. Paket 1 mit der Sendungsnummer [番号1] ist angekommen. Paket 2 mit der Sendungsnummer [番号2] habe ich noch nicht erhalten. Bitte prüfen Sie die Zustellung von Paket 2.
+>
+> 注文は2箱に分かれています。追跡番号[番号1]の1箱目は届きましたが、[番号2]の2箱目は受け取っていません。2箱目の配送を確認してください。
+
+残りの追跡番号が不明なら、`Könnten Sie mir bitte die Sendungsnummer des zweiten Pakets mitteilen?`（2箱目の追跡番号を教えていただけますか）と聞きます。返金・再送が決まったと断定する表現ではなく、まず可能な対応を確認する文章です。
+
+### ロッカーのコードについて聞く
+
+`Ich kann mein Paket an der Packstation nicht abholen. Mir fehlt der Benachrichtigungscode.`（ロッカーで荷物を受け取れません。通知コードがありません）と状況を伝えられます。通常の直接指定の受取コードが出ない場合は、最後を`In der App wird kein Abholcode angezeigt.`（アプリに受取コードが表示されません）へ変えます。どちらが必要かは[Packstationの使い方](/germany/ja/living/dhl-packstation-guide/)で確認します。
+
 ## 価格表示・セールを確認する
 
 | 表示・質問 | 日本語 |
@@ -252,6 +304,8 @@ Pfand対象のボトル・缶は、店内の返却機へ入れ、`Pfandbon`を�
 
 ## 関連記事
 
+- [DHLの未着・配達済み表示の確認手順](/germany/ja/living/dhl-delivered-but-not-received/)
+- [DHL Packstationの登録・受取方法](/germany/ja/living/dhl-packstation-guide/)
 - [電話でよく使うドイツ語](/germany/ja/learn-german/telephone-phrases/)
 - [薬局・処方箋で使うドイツ語](/germany/ja/learn-german/pharmacy-prescription-phrases/)
 - [A1から生活で困らないレベルを目指すドイツ語ルート](/germany/ja/learn-german/a1-daily-life-german-route/)

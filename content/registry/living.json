@@ -2841,5 +2841,133 @@
     ],
     "image_url": "/assets/images/living/birth-procedures-germany.webp",
     "image_alt": "赤ちゃんの衣類と靴下、書類を入れるフォルダーを机に並べた出産手続きのイメージ"
+  },
+  {
+    "id": "L047",
+    "slug": "dhl-packstation-guide",
+    "url": "/germany/ja/living/dhl-packstation-guide/",
+    "markdown_path": "/content/living/dhl-packstation-guide.md",
+    "published": true,
+    "status": "published",
+    "home_visible": true,
+    "home_order": 3,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "living",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "AI editorial official-source verification",
+      "last_reviewed_at": "2026-10-19",
+      "next_review_due": "2027-01-19"
+    },
+    "title": "ドイツのDHL Packstationの使い方｜登録・宛先・受取コード・保管期限",
+    "category": "買い物・暮らし",
+    "summary": "DHL Packstationで荷物を受け取る方法を日本語で解説。直接指定と不在後の移送、アプリと通知票のコード、宛先の書き方、画面なしロッカー、7日・9日の保管期限、コードが出ない場合を整理します。",
+    "published_at": "2026-10-19",
+    "last_verified": "2026-10-19",
+    "canonical_url": "/germany/ja/living/dhl-packstation-guide/",
+    "tags": [
+      "DHL",
+      "Packstation",
+      "宅配ロッカー",
+      "荷物",
+      "通販",
+      "受け取り"
+    ],
+    "updated_at": "2026-10-19",
+    "related_articles": [
+      "dhl-delivered-but-not-received",
+      "germany-first-30-days",
+      "moving-checklist-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "DHL：Packstationでの受取・保管期限",
+        "url": "https://www.dhl.de/de/privatkunden/hilfe-kundenservice/packstation/empfangen.html"
+      },
+      {
+        "title": "DHL：登録・本人確認・端末の有効化",
+        "url": "https://www.dhl.de/de/privatkunden/pakete-empfangen/an-einem-abholort-empfangen/packstation/packstation-registrierung.html"
+      },
+      {
+        "title": "DHL：宛先の書き方と受取の流れ",
+        "url": "https://www.dhl.de/de/privatkunden/pakete-empfangen/an-einem-abholort-empfangen/packstation/empfangen-packstation.html"
+      },
+      {
+        "title": "DHL：受取コードのヘルプ",
+        "url": "https://www.dhl.de/de/privatkunden/hilfe-kundenservice/packstation/abholcode.html"
+      },
+      {
+        "title": "DHL：ロッカー・アプリの不具合",
+        "url": "https://www.dhl.de/de/privatkunden/hilfe-kundenservice/packstation/probleme-loesungen.html"
+      }
+    ],
+    "image": "/assets/img/living/dhl-packstation-guide.webp",
+    "image_alt": "Packstationを直接指定した場合はアプリ、不在後に移された場合は通知のコードを確認する"
+  },
+  {
+    "id": "L048",
+    "slug": "dhl-delivered-but-not-received",
+    "url": "/germany/ja/living/dhl-delivered-but-not-received/",
+    "markdown_path": "/content/living/dhl-delivered-but-not-received.md",
+    "published": true,
+    "status": "published",
+    "home_visible": true,
+    "home_order": 4,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "living",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "AI editorial official-source verification",
+      "last_reviewed_at": "2026-10-19",
+      "next_review_due": "2027-01-19"
+    },
+    "title": "ドイツのDHLが配達済みなのに届かない｜確認場所・問い合わせ・複数個口",
+    "category": "買い物・暮らし",
+    "summary": "DHL Paketで配達済みなのに荷物がない場合の確認順序を解説。追跡の受取人・返送履歴、隣人・置き配・ロッカー、販売店への連絡、複数個口の一部未着、遅延との違いを整理します。",
+    "published_at": "2026-10-19",
+    "last_verified": "2026-10-19",
+    "canonical_url": "/germany/ja/living/dhl-delivered-but-not-received/",
+    "tags": [
+      "DHL",
+      "配達済み",
+      "届かない",
+      "通販",
+      "未配達",
+      "複数個口"
+    ],
+    "updated_at": "2026-10-19",
+    "related_articles": [
+      "dhl-packstation-guide",
+      "germany-first-30-days",
+      "moving-checklist-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "DHL：配達済みだが受け取っていない場合・内容品の不足",
+        "url": "https://www.dhl.de/de/privatkunden/hilfe-kundenservice/empfangen/zustellung/paket-geliefert.html"
+      },
+      {
+        "title": "DHL：未配達・追跡が更新されない場合",
+        "url": "https://www.dhl.de/de/privatkunden/hilfe-kundenservice/empfangen/zustellung/paket-nicht-geliefert.html"
+      },
+      {
+        "title": "DHL：追跡の問題と調査依頼",
+        "url": "https://www.dhl.de/de/privatkunden/hilfe-kundenservice/sendungsverfolgung/probleme-loesungen.html"
+      },
+      {
+        "title": "DHL：置き配の指定・通知",
+        "url": "https://www.dhl.de/de/privatkunden/hilfe-kundenservice/empfangen/zustellung/ablageort.html"
+      },
+      {
+        "title": "消費者センター：発送した荷物の紛失・調査依頼",
+        "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/worauf-sie-achten-sollten-wenn-sie-ein-paket-verschicken-12323"
+      }
+    ],
+    "image": "/assets/img/living/dhl-delivered-but-not-received.webp",
+    "image_alt": "荷物がないときは追跡詳細、受取場所、販売店とDHLへの連絡の順で確認する"
   }
 ]

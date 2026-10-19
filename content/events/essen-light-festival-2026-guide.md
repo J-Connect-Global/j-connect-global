@@ -3,8 +3,8 @@ slug: "essen-light-festival-2026-guide"
 id: "E018"
 content_type: "event"
 category: "光のアート・街歩き"
-title: "エッセン光の祭典2026｜いつもの街が夜の美術館になる10日間"
-summary: "2026年10月2〜11日、エッセン中心街が光の展示空間へ。建物と映像の重なり、写真では伝わらない時間、子どもと楽しむ見方を紹介し、開催時間も整理します。"
+title: "【終了】エッセン光の祭典2026｜街と光を楽しむ文化の記録"
+summary: "2026年のエッセン光の祭典は10月11日に終了しました。建物と映像の重なりや、写真では伝わらない時間の楽しみ方を残した開催記録です。次回の開催案内ではありません。"
 official_sources:
   - title: "ルール観光局：エッセン光の祭典2026"
     url: "https://www.ruhr-tourismus.de/event/essen-light-festival-2026/"
@@ -12,14 +12,14 @@ related_articles: ["spiel-essen-2026-guide", "frankfurt-book-fair-2026-guide", "
 city: "エッセン"
 location: "エッセン中心街"
 event_date: "2026-10-02〜2026-10-11"
-next_review: "2026-10-01"
+next_review: "2027-08-01"
 tags: ["エッセン", "光の祭典", "2026年10月", "秋", "アート", "街歩き"]
 published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-09-18"
-updated_at: "2026-09-18"
-last_verified: "2026-09-17"
+updated_at: "2026-10-19"
+last_verified: "2026-10-19"
 canonical_url: "/germany/ja/events/essen-light-festival-2026-guide/"
 official_url: "https://www.ruhr-tourismus.de/event/essen-light-festival-2026/"
 image: "/assets/img/events/essen-light-festival-2026-guide.webp"
@@ -28,7 +28,9 @@ image_caption: "2018年のエッセン光の祭典。2026年の作品構成を�
 image_credit: "Wiki05 / CC BY-SA 4.0 / Wikimedia Commons"
 ---
 
-# エッセン光の祭典2026｜いつもの街が夜の美術館になる10日間
+# 【終了】エッセン光の祭典2026｜街と光を楽しむ文化の記録
+
+2026年の光の祭典は10月11日に終了しました。以下は開催当時の文化案内を残したもので、次回の開催日や作品の再展示を示すものではありません。今後エッセンを訪れる予定なら、10月22〜25日の[ボードゲーム見本市](/germany/ja/events/spiel-essen-2026-guide/)も確認できます。
 
 10月2〜11日、エッセンの中心街に光の作品が現れ、建物や広場が夜だけの展示空間へ変わります。美術館では少し構えてしまう人にも、街歩きや写真が好きな人にも楽しみやすい「エッセン・ライト・フェスティバル」です。光の派手さだけで終わらない見方と、この街で開かれる意味、2026年の開催情報を紹介します。
 

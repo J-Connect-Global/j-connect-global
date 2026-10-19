@@ -3,8 +3,8 @@ slug: "frankfurt-book-fair-2026-guide"
 id: "E016"
 content_type: "event"
 category: "本・国際文化"
-title: "フランクフルト・ブックフェア2026｜本とチェコ文化に出会う秋の週末"
-summary: "フランクフルト・ブックフェア2026の一般公開は10月9〜11日。ゲスト国チェコの「海辺の国」というテーマ、翻訳や絵本の面白さを、日本語の読者にも楽しめる視点で案内します。"
+title: "【終了】フランクフルト・ブックフェア2026｜本とチェコ文化の記録"
+summary: "2026年のフランクフルト・ブックフェアは10月11日に終了しました。ゲスト国チェコのテーマや、翻訳・絵本を楽しむ視点を残した開催記録です。次回の訪問案内ではありません。"
 official_sources:
   - title: "ブックフェア主催者：来場日・一般公開時間"
     url: "https://www.buchmesse.de/besuchen"
@@ -16,14 +16,14 @@ related_articles: ["essen-light-festival-2026-guide", "spiel-essen-2026-guide", 
 city: "フランクフルト"
 location: "フランクフルト見本市会場"
 event_date: "2026-10-07〜2026-10-11"
-next_review: "2026-10-06"
+next_review: "2027-07-01"
 published_at: "2026-08-29"
 tags: ["フランクフルト", "ブックフェア", "2026年10月", "チェコ", "読書", "翻訳"]
 published: true
 status: "published"
 source_type: "manual"
-updated_at: "2026-09-18"
-last_verified: "2026-09-17"
+updated_at: "2026-10-19"
+last_verified: "2026-10-19"
 canonical_url: "/germany/ja/events/frankfurt-book-fair-2026-guide/"
 official_url: "https://www.buchmesse.de/besuchen"
 image: "/assets/img/events/frankfurt-book-fair-2026-guide.webp"
@@ -32,7 +32,9 @@ image_caption: "2024年のフランクフルト・ブックフェア。2026年�
 image_credit: "Matti Blume / CC BY-SA 4.0 / Wikimedia Commons"
 ---
 
-# フランクフルト・ブックフェア2026｜本とチェコ文化に出会う秋の週末
+# 【終了】フランクフルト・ブックフェア2026｜本とチェコ文化の記録
+
+2026年の会期は10月11日に終了しました。以下は開催当時の文化案内を保存したもので、今後参加できるイベントや次回のチケット情報ではありません。これから出かける場所を探す人は、[エッセンのボードゲーム見本市](/germany/ja/events/spiel-essen-2026-guide/)や[ART COLOGNE](/germany/ja/events/art-cologne-2026-guide/)の開催日を確認してください。
 
 10月7〜11日に開かれるフランクフルト・ブックフェアは、出版の仕事をする人だけでなく、一般の読者も週末に楽しめる本の祭典です。2026年のゲスト国はチェコで、文学、翻訳、絵本、著者のトークなどを入口に、普段の書店とは違う出会いがあります。読書が好きな人や、ドイツ語の長い講演には不安がある人に向け、自分なりに楽しめる見方と一般公開日を紹介します。
 

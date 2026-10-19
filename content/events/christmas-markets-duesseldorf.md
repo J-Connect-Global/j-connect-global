@@ -8,7 +8,7 @@ summary: "2026年11月19日〜12月30日のデュッセルドルフ・クリス�
 official_sources:
   - title: "デュッセルドルフ観光局：2026年の会場・日程・営業時間"
     url: "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
-related_articles: ["kommern-saint-martin-2026-guide", "german-bread-culture", "essen-light-festival-2026-guide"]
+related_articles: ["kommern-saint-martin-2026-guide", "german-bread-culture", "germany-winter-time-2026"]
 city: "デュッセルドルフ"
 location: "旧市街・中心部の広場と通り"
 event_date: "2026-11-19〜2026-12-30"
@@ -18,8 +18,8 @@ tags: ["クリスマスマーケット", "デュッセルドルフ", "2026年11�
 published: true
 status: "published"
 source_type: "manual"
-updated_at: "2026-09-18"
-last_verified: "2026-09-17"
+updated_at: "2026-10-19"
+last_verified: "2026-10-19"
 canonical_url: "/germany/ja/events/christmas-markets-duesseldorf/"
 official_url: "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
 image: "/assets/img/events/christmas-markets-duesseldorf.webp"
@@ -92,7 +92,9 @@ image_credit: "Kürschner / CC0 / Wikimedia Commons"
 | 12月24日（木） | 11:00〜15:00 |
 | 12月26日（土） | 14:00〜21:00 |
 
-上表は中心部のマーケットについての公式案内です。個々の出店者には延長営業の余地があり、観覧車やスケートなど別の企画にはそれぞれの時間・料金があります。「クリスマス当日なら必ず開いている」とは限らない点に注意してください。[営業時間と休業日の公式FAQ](https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf)
+上表は中心部のマーケットについての公式案内です。個々の出店者は各日22時まで延長する場合があります。観覧車やスケートなど別の企画にはそれぞれの時間・料金があります。「クリスマス当日なら必ず開いている」とは限らない点に注意してください。[営業時間と休業日の公式FAQ](https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf)
+
+市の観光案内は公共交通での来場を勧めています。中心部の複数会場を歩くなら、地下鉄のHeinrich-Heine-Allee駅を起点の一つにできます。週末の夜は混雑を見込み、当日の運行情報も確認してください。
 
 11月前半から冬の文化に触れたいなら、[コメルンの聖マルティン祭](/germany/ja/events/kommern-saint-martin-2026-guide/)も一つの入口です。ランタンを持って歩く行列と、広場に集まるクリスマスマーケット。それぞれの灯りを見比べると、ドイツの冬には一つではない、人が集まる形があると分かります。
 

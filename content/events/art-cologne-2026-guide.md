@@ -7,9 +7,9 @@ city: "Köln"
 location: "Koelnmesse"
 event_date: "2026-11-05〜2026-11-08"
 published_at: "2026-08-29"
-updated_at: "2026-08-30"
-last_verified: "2026-08-29"
-next_review: "2026-11-04"
+updated_at: "2026-10-19"
+last_verified: "2026-10-19"
+next_review: "2026-11-09"
 summary: "2026年11月5〜8日のART COLOGNEを、購入予定のない人にも開かれた現代美術の観察場所として紹介。美術館との違い、ギャラリーの選択、価格と評価、作品との対話を解説します。"
 tags: ["ART COLOGNE", "ケルン", "現代美術", "アートフェア", "ギャラリー", "美術市場"]
 status: "published"
@@ -20,12 +20,14 @@ image: "/assets/img/events/art-cologne-2026-guide.webp"
 image_alt: "現代美術の展示を静かに鑑賞する日本人と来場者"
 image_caption: "AI生成の編集イメージ。実際の2026年会場、出展ギャラリー、作品を撮影または再現したものではありません。"
 image_credit: "AI-generated editorial image / J-Connect"
-related_articles: ["cologne-east-asian-art-museum-2026", "cologne-marathon-2026-guide"]
+related_articles: ["cologne-east-asian-art-museum-2026", "spiel-essen-2026-guide", "kommern-saint-martin-2026-guide"]
 official_sources:
   - title: "ART COLOGNE 公式サイト"
     url: "https://www.artcologne.com/"
   - title: "ART COLOGNE：日程・開場時間"
-    url: "https://www.artcologne.com/for-visitors/dates-opening-hours/"
+    url: "https://www.artcologne.de/fuer-besucher/termine-oeffnungszeiten/"
+  - title: "ART COLOGNE：2026年チケット"
+    url: "https://www.artcologne.de/fuer-besucher/tickets/tickets-kaufen/"
 ---
 
 # ART COLOGNE 2026｜作品・ギャラリー・市場をどう見る？
@@ -39,9 +41,17 @@ official_sources:
 | 会期 | 2026年11月5〜8日 |
 | 回数 | 第59回 |
 | 会場 | ケルン見本市会場 |
-| 出展・開場時間 | 公式サイトの当年情報で確認 |
+| 11月5日（木） | 一般向けヴェルニサージュ 16:00〜20:00 |
+| 11月6日（金）・7日（土） | 11:00〜19:00 |
+| 11月8日（日） | 11:00〜18:00 |
+| 一般1日券 | 34ユーロ |
+| 割引1日券 | 29ユーロ |
+| 16時以降券 | 29ユーロ |
+| ヴェルニサージュ券 | 60ユーロ |
 
-出展者や作品は販売と貸出の状況で変わることがあります。前年の会場図や価格ではなく、2026年版の案内を使います。
+12歳以下は保護者同伴で無料です。ドイツの美術大学の学生は11月6日に無料入場できます。出展者や作品は販売と貸出の状況で変わることがあります。前年の会場図や価格ではなく、2026年版の案内を使います。
+
+入場はKoelnmesseの南入口です。手荷物・人物検査があり、飲食物と犬は会場へ持ち込めないと主催者が案内しています。条件変更に備え、来場前に[開場時間](https://www.artcologne.de/fuer-besucher/termine-oeffnungszeiten/)と[チケット](https://www.artcologne.de/fuer-besucher/tickets/tickets-kaufen/)を再確認してください。
 
 ## 美術館とアートフェアは何が違う？
 
@@ -89,4 +99,4 @@ official_sources:
 
 ART COLOGNEの価値は、有名作家を何人見たかだけではありません。作品を選ぶギャラリー、価格が作る関係、観客の反応を一緒に見ると、現代美術が文化と市場の間で動く姿が見えます。テーマを一つ持ち、三作品と深く向き合うだけでも十分です。
 
-> 開場時間、チケット、出展者、会場案内は、来場前に2026年の公式情報を確認してください。
+> 開場時間、チケット、出展者、会場案内は、来場前に2026年の公式情報を確認してください。入場検査を見込み、予約した時間に余裕を持って向かいましょう。

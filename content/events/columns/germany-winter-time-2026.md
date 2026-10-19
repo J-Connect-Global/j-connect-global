@@ -1,0 +1,87 @@
+---
+slug: "germany-winter-time-2026"
+id: "C005"
+content_type: "column"
+category: "季節・暮らし"
+title: "ドイツの冬時間は10月25日から｜「1時間戻る」日に暮らしはどう変わる？"
+summary: "2026年10月25日、ドイツは夏時間から標準時へ。時計を1時間戻す仕組み、日本との時差、日曜の朝に確認したい機器や予定を、季節の暮らしとして紹介します。"
+official_sources:
+  - title: "欧州委員会ドイツ代表部：時間変更と2026年の日程"
+    url: "https://germany.representation.ec.europa.eu/zeitumstellung_de"
+  - title: "ドイツ物理工学研究所：法定時刻と夏時間の仕組み"
+    url: "https://www.ptb.de/cms/fileadmin/internet/presse_aktuelles/broschueren/zur_zeit/Flyer_Zeit_2017_web-print.pdf"
+related_articles: ["germany-autumn-forest-walk", "db-2027-timetable-family-ticket", "spiel-essen-2026-guide"]
+city: "ドイツ全土"
+area: "ドイツ全土"
+location: ""
+event_date: "2026-10-25 夏時間終了"
+next_review: "2027-10-01"
+tags: ["冬時間", "時間変更", "ドイツ生活", "日本との時差", "秋", "時計"]
+published: true
+status: "published"
+source_type: "manual"
+published_at: "2026-10-19"
+updated_at: "2026-10-19"
+last_verified: "2026-10-19"
+canonical_url: "/germany/ja/events/columns/germany-winter-time-2026/"
+official_url: "https://germany.representation.ec.europa.eu/zeitumstellung_de"
+image: "/assets/img/events/germany-autumn-forest-walk.webp"
+image_alt: "ベルリンのデュッペルの森を彩る秋のブナの資料写真"
+image_caption: "2016年11月撮影の秋の森。時間変更当日の明るさを示す写真ではありません。"
+image_credit: "Alexander Grams / CC BY-SA 4.0 / Wikimedia Commons"
+---
+
+# ドイツの冬時間は10月25日から｜「1時間戻る」日に暮らしはどう変わる？
+
+2026年10月25日の日曜日、ドイツでは夏時間が終わり、標準時に戻ります。午前3時になった時、時計は午前2時へ戻ります。「一時間得をする日」と言われることもありますが、暮らしの中では、時計、約束、日本との連絡時間を一度見直す日です。
+
+## 3時が、もう一度2時になる
+
+春は時計を一時間進め、秋は一時間戻します。日曜の早朝に切り替わるため、多くの人は眠っている間に変化を迎えます。朝起きたら、スマートフォンの時刻と家の時計がずれていて気づくこともあります。
+
+スマートフォンやインターネットにつながる機器は、通常は自動で時刻を直します。一方、オーブン、電子レンジ、車、壁掛け時計、古い腕時計は手動のことがあります。日曜の朝に一つずつ確認すると、月曜の出発時刻を間違えにくくなります。
+
+## 「冬時間」は正式には標準時
+
+日常ではWinterzeitと呼ばれますが、中央ヨーロッパ時間（MEZ/CET）が標準時です。夏に一時間進めた中央ヨーロッパ夏時間（MESZ/CEST）から、本来の標準時へ戻ると考えると分かりやすくなります。
+
+この切り替えで、日本との時差は7時間から8時間になります。ドイツの朝9時は、日本の午後5時です。日本の家族や同僚との定例通話をドイツ時間で固定している場合、日本側では一時間遅い時間になります。
+
+## 同じ「2時台」が二度ある
+
+10月25日は、午前2時台が二度現れます。普段の生活で大きな問題になることは少ないものの、夜行列車、深夜便、交代勤務、システムの記録では区別が必要です。
+
+移動予定がある人は、券面や公式アプリに表示される現地時刻を使い、自己流で一時間足したり引いたりしないほうが安全です。カレンダーの招待も、タイムゾーンが「Europe/Berlin」か、単なる固定時刻かで表示が変わることがあります。
+
+## 暗くなる時間が急に早く感じる
+
+![秋の光が差すベルリンのブナ林](/assets/img/events/germany-autumn-forest-walk.webp "2016年11月撮影。季節の参考写真で、時間変更当日の光景ではありません。")
+
+時計を戻した日から、夕方の暗さが一段早く来たように感じます。太陽の動きが一晩で変わるのではなく、社会の時計を標準時へ戻すためです。
+
+仕事や学校の後に散歩していた人は、同じ時刻でも明るさが違います。秋の予定を詰めるより、明るいうちにしたい用事を週末の前半へ置く、帰宅後の過ごし方を室内へ移すなど、季節に合わせた小さな組み替えができます。
+
+## 廃止案はあるが、今年も変更する
+
+EUでは季節ごとの時間変更をやめる提案が2018年に出され、欧州議会も2019年に支持しました。しかし加盟国を代表する理事会の共通方針はまだ決まっていません。欧州委員会は、2026年10月25日を次の変更日として案内しています。
+
+「もう廃止されたはず」という過去のニュースだけで予定を立てないことが大切です。制度の議論が続いていても、現行ルールが変わったとは限りません。
+
+## 日曜に整える小さなこと
+
+![霧と落ち葉に包まれた秋の森](/assets/images/events/october2026-forest2-4.webp "2011年11月、ニーダーザクセン州。秋から冬へ向かう季節の資料写真です。")
+
+- 自動更新されない時計を一時間戻す
+- 月曜朝の目覚ましと交通アプリを確認する
+- 日本との通話やオンライン会議の表示時刻を見る
+- 深夜移動がある場合は運行会社の案内を確認する
+
+時間変更は、時計の針だけの話に見えます。それでも、夕方の光、日本との距離感、いつもの機器に触れるきっかけになります。秋から冬へ向かう暮らしの区切りとして、一時間を静かに整える日にしてみてください。
+
+## 写真の出典
+
+- [ベルリンの秋のブナ林](https://commons.wikimedia.org/wiki/File:Buchenwald-Herbst-LSG-D%C3%BCppeler-Forst.jpg) — Alexander Grams / [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)。
+- [ゲーアデンの秋のブナ林](https://commons.wikimedia.org/wiki/File:Gehrdener_Berg_Buchenwald_Herbst.jpg) — Axel Hindemith / [CC BY 3.0](https://creativecommons.org/licenses/by/3.0)。
+
+写真は縦横比を保って縮小し、WebPへ変換しています。
+

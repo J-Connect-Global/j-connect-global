@@ -845,6 +845,34 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
+    "title": "ドイツのDHL Packstationの使い方｜登録・宛先・受取コード・保管期限",
+    "description": "DHL Packstationで荷物を受け取る方法を日本語で解説。直接指定と不在後の移送、アプリと通知票のコード、宛先の書き方、画面なしロッカー、7日・9日の保管期限、コードが出ない場合を整理します。",
+    "url": "/germany/ja/living/dhl-packstation-guide/",
+    "category": "生活・手続き",
+    "tags": [
+      "DHL",
+      "Packstation",
+      "宅配ロッカー",
+      "荷物",
+      "通販",
+      "受け取り"
+    ]
+  },
+  {
+    "title": "ドイツのDHLが配達済みなのに届かない｜確認場所・問い合わせ・複数個口",
+    "description": "DHL Paketで配達済みなのに荷物がない場合の確認順序を解説。追跡の受取人・返送履歴、隣人・置き配・ロッカー、販売店への連絡、複数個口の一部未着、遅延との違いを整理します。",
+    "url": "/germany/ja/living/dhl-delivered-but-not-received/",
+    "category": "生活・手続き",
+    "tags": [
+      "DHL",
+      "配達済み",
+      "届かない",
+      "通販",
+      "未配達",
+      "複数個口"
+    ]
+  },
+  {
     "title": "デュッセルドルフ日本デー｜ライン川に映る日独交流と日本文化",
     "description": "デュッセルドルフ日本デーを、食・武道・舞台・ポップカルチャー・花火が集まる催しとして紹介。大きな日本人コミュニティと街の関係、現地で見たい文化の交わりを解説します。",
     "url": "/germany/ja/events/japan-day-duesseldorf/",
@@ -1475,14 +1503,18 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "予約を取りたいときのドイツ語フレーズ",
-    "description": "病院、美容室、役所などで使える予約依頼、空き確認、日時変更の基本表現です。",
+    "title": "予約のドイツ語フレーズ｜電話・メールで予約・変更・キャンセルする",
+    "description": "病院・美容室・役所の予約に使うドイツ語を、電話の会話例とメール文で紹介。空きの確認、希望日時、日付と時刻の聞き返し、予約変更・キャンセル、確認メールの依頼まで、初級者向けに日本語訳付きで整理します。",
     "url": "/germany/ja/learn-german/appointment-phrase/",
     "category": "ドイツ語・学び",
     "tags": [
       "予約",
-      "日常会話",
+      "電話",
+      "メール",
+      "キャンセル",
+      "日時変更",
       "A1",
+      "A2",
       "phrase",
       "phone",
       "appointment",
@@ -1490,7 +1522,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "new-arrival",
       "speaking",
       "listening",
-      "5min"
+      "writing",
+      "10min"
     ]
   },
   {
@@ -1637,8 +1670,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "買い物で使うドイツ語｜スーパー・レジ・返品で役立つフレーズ",
-    "description": "ドイツのスーパー、パン屋、ドラッグストア、衣料品店で、商品を探す、量を頼む、Pfandを返す、会計する、成分を確認する、返品・不良品を伝えるための実用フレーズ集です。",
+    "title": "買い物のドイツ語｜スーパー・返品・配送問い合わせのフレーズ",
+    "description": "ドイツのスーパー、パン屋、ドラッグストア、衣料品店で、商品を探す、量を頼む、Pfandを返す、会計する、成分を確認する、返品・不良品・配送の未着を伝える実用フレーズ集。販売店へのメール文も日本語訳付きで紹介します。",
     "url": "/germany/ja/learn-german/shopping-phrases/",
     "category": "ドイツ語・学び",
     "tags": [
@@ -1655,6 +1688,7 @@ window.JCONNECT_SEARCH_INDEX = [
       "new-arrival",
       "speaking",
       "listening",
+      "writing",
       "5min"
     ]
   },

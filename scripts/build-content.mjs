@@ -1542,7 +1542,7 @@ function updateHub(type, items) {
     config.gridMarker,
     hubGridPattern(type),
     cards,
-    8
+    0 // Avoid repeating outer indentation across the growing Living card inventory.
   );
 
   writeText(hubPath, nextHtml);

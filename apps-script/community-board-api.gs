@@ -35,6 +35,11 @@ const COMMUNITY_GITHUB_WORKFLOW_URL = 'https://api.github.com/repos/J-Connect-Gl
 const COMMUNITY_APPROVAL_TRIGGER_HANDLER = 'processWaitingCommunityApprovalNotifications';
 const COMMUNITY_APPROVAL_TIMEOUT_MS = 90 * 60 * 1000;
 const COMMUNITY_APPROVAL_MAX_ROWS_PER_RUN = 12;
+const COMMUNITY_PUBLIC_SYNC_RETRY_MS = 5 * 60 * 1000;
+const COMMUNITY_PUBLIC_SYNC_ATTEMPT_PROPERTY = 'COMMUNITY_PUBLIC_SYNC_LAST_ATTEMPT_AT';
+const COMMUNITY_PUBLIC_SYNC_SUCCESS_PROPERTY = 'COMMUNITY_PUBLIC_SYNC_LAST_DISPATCH_AT';
+const COMMUNITY_PUBLIC_SYNC_ERROR_PROPERTY = 'COMMUNITY_PUBLIC_SYNC_LAST_ERROR';
+const COMMUNITY_APPROVAL_CURSOR_PROPERTY = 'COMMUNITY_APPROVAL_CHECK_CURSOR';
 const MODERATION_HEADERS = [
   'status',
   'updated_at',
@@ -1451,7 +1456,13 @@ function queueSelectedApproval_(isRetry) {
       ui.alert('投稿は公開状態にしましたが、通知先メールを確認できません。');
       return { ok: false, status: 'publish_error' };
     }
-    ui.alert('公開同期を開始しました。公開確認後に申請者へメールを送信します。');
+    ui.alert(dispatch.dispatched
+      ? '公開同期を開始しました。公開確認後に申請者へメールを送信します。'
+      : dispatch.queued
+        ? '投稿を承認しました。公開同期は処理待ちです。公開確認後に申請者へメールを送信します。'
+        : dispatch.error === 'SCHEDULED_SYNC_FALLBACK'
+          ? '投稿を承認しました。即時同期が未設定のため定期同期を待っています。公開が遅れる場合は管理者が同期設定を確認してください。'
+          : '投稿を承認しましたが、即時同期を開始できませんでした。自動で再試行し、公開確認後に申請者へメールを送信します。');
     return { ok: true, status: 'waiting_publish', id: submissionId };
   } catch (error) {
     ui.alert(moderationUiErrorMessage_(error));
@@ -1507,11 +1518,18 @@ function moderationRecipient_(selected) {
 }
 
 function requestCommunityPublicDataSync_() {
-  const token = String(PropertiesService.getScriptProperties().getProperty('GITHUB_ACTIONS_TOKEN') || '').trim();
+  const properties = PropertiesService.getScriptProperties();
+  const token = String(properties.getProperty('GITHUB_ACTIONS_TOKEN') || '').trim();
   if (!token) {
     console.info('Immediate public-data dispatch unavailable; relying on the scheduled five-minute workflow.');
     return { dispatched: false, error: 'SCHEDULED_SYNC_FALLBACK' };
   }
+  const previousAttempt = Date.parse(properties.getProperty(COMMUNITY_PUBLIC_SYNC_ATTEMPT_PROPERTY) || '');
+  const elapsed = Date.now() - previousAttempt;
+  if (Number.isFinite(elapsed) && elapsed >= 0 && elapsed < COMMUNITY_PUBLIC_SYNC_RETRY_MS) {
+    return { dispatched: false, queued: true };
+  }
+  properties.setProperty(COMMUNITY_PUBLIC_SYNC_ATTEMPT_PROPERTY, nowIso_());
   try {
     const response = UrlFetchApp.fetch(COMMUNITY_GITHUB_WORKFLOW_URL, {
       method: 'post',
@@ -1524,13 +1542,40 @@ function requestCommunityPublicDataSync_() {
       payload: JSON.stringify({ ref: 'main' }),
       muteHttpExceptions: true
     });
-    if (response.getResponseCode() >= 200 && response.getResponseCode() < 300) return { dispatched: true };
+    if (response.getResponseCode() >= 200 && response.getResponseCode() < 300) {
+      properties.setProperty(COMMUNITY_PUBLIC_SYNC_SUCCESS_PROPERTY, nowIso_());
+      properties.deleteProperty(COMMUNITY_PUBLIC_SYNC_ERROR_PROPERTY);
+      return { dispatched: true };
+    }
+    properties.setProperty(COMMUNITY_PUBLIC_SYNC_ERROR_PROPERTY, 'WORKFLOW_DISPATCH_FAILED');
     console.warn(`Community workflow dispatch failed (HTTP ${response.getResponseCode()}).`);
     return { dispatched: false, error: 'WORKFLOW_DISPATCH_FAILED' };
   } catch (error) {
+    properties.setProperty(COMMUNITY_PUBLIC_SYNC_ERROR_PROPERTY, 'WORKFLOW_DISPATCH_FAILED');
     console.warn('Community workflow dispatch failed.');
     return { dispatched: false, error: 'WORKFLOW_DISPATCH_FAILED' };
   }
+}
+
+// Run only from the Apps Script editor. No credentials, posts or recipients are logged.
+function inspectCommunityPublicationSync() {
+  const properties = PropertiesService.getScriptProperties();
+  const safeTimestamp = function (name) {
+    const value = String(properties.getProperty(name) || '');
+    return /^\d{4}-\d{2}-\d{2}T[0-9:.]+(?:Z|[+-]\d{2}:\d{2})$/.test(value) && Number.isFinite(Date.parse(value)) ? value : '';
+  };
+  const error = String(properties.getProperty(COMMUNITY_PUBLIC_SYNC_ERROR_PROPERTY) || '');
+  const health = {
+    immediate_sync_configured: Boolean(String(properties.getProperty('GITHUB_ACTIONS_TOKEN') || '').trim()),
+    notification_trigger_configured: ScriptApp.getProjectTriggers().some(function (trigger) {
+      return trigger.getHandlerFunction() === COMMUNITY_APPROVAL_TRIGGER_HANDLER;
+    }),
+    last_dispatch_attempt_at: safeTimestamp(COMMUNITY_PUBLIC_SYNC_ATTEMPT_PROPERTY),
+    last_dispatch_at: safeTimestamp(COMMUNITY_PUBLIC_SYNC_SUCCESS_PROPERTY),
+    last_dispatch_error: error === 'WORKFLOW_DISPATCH_FAILED' ? error : error ? 'UNKNOWN_SYNC_ERROR' : ''
+  };
+  console.info(JSON.stringify(health));
+  return health;
 }
 
 function processWaitingCommunityApprovalNotifications() {
@@ -1542,24 +1587,33 @@ function processWaitingApprovalNotifications() {
   const lock = LockService.getScriptLock();
   try {
     lock.waitLock(5000);
-    let processed = 0;
     const spreadsheet = getSpreadsheet_();
+    const candidates = [];
     const targets = [
       { type: 'community', sheet: spreadsheet.getSheetByName(COMMUNITY_SHEET_NAME) },
       { type: 'job', sheet: spreadsheet.getSheetByName(JOBS_SHEET_NAME) }
     ];
-    for (let targetIndex = 0; targetIndex < targets.length && processed < COMMUNITY_APPROVAL_MAX_ROWS_PER_RUN; targetIndex += 1) {
+    for (let targetIndex = 0; targetIndex < targets.length; targetIndex += 1) {
       const target = targets[targetIndex];
       if (!target.sheet) continue;
       let context = getSheetContextForSheet_(target.sheet, target.type);
       context = ensureHeaders_(context, MODERATION_HEADERS);
-      for (let index = context.dataStartIndex; index < context.values.length && processed < COMMUNITY_APPROVAL_MAX_ROWS_PER_RUN; index += 1) {
+      for (let index = context.dataStartIndex; index < context.values.length; index += 1) {
         const item = rowToObject_(context.headers, context.values[index], index + 1);
-        if (String(item.approval_notified_status || '').trim().toLowerCase() !== 'waiting_publish') continue;
-        processWaitingApprovalNotification_({ type: target.type, context, item, rowNumber: index + 1 });
-        processed += 1;
+        const status = String(item.approval_notified_status || '').trim().toLowerCase();
+        if (status === 'waiting_publish' || status === 'publish_timeout') {
+          candidates.push({ type: target.type, context, item, rowNumber: index + 1 });
+        }
       }
     }
+    const properties = PropertiesService.getScriptProperties();
+    const cursor = Number(properties.getProperty(COMMUNITY_APPROVAL_CURSOR_PROPERTY) || 0);
+    const start = candidates.length && Number.isSafeInteger(cursor) && cursor >= 0 ? cursor % candidates.length : 0;
+    const processed = Math.min(candidates.length, COMMUNITY_APPROVAL_MAX_ROWS_PER_RUN);
+    for (let offset = 0; offset < processed; offset += 1) {
+      processWaitingApprovalNotification_(candidates[(start + offset) % candidates.length]);
+    }
+    properties.setProperty(COMMUNITY_APPROVAL_CURSOR_PROPERTY, String(candidates.length ? (start + processed) % candidates.length : 0));
     return { ok: true, processed };
   } catch (error) {
     console.warn(`Approval notification processor failed: ${safeApprovalErrorCode_(error)}`);
@@ -1576,11 +1630,6 @@ function processWaitingApprovalNotification_(selected) {
     return;
   }
   const queuedAt = dateTime_(selected.item.approval_notified_queued_at || selected.item.published_at || selected.item.updated_at);
-  if (queuedAt && Date.now() - queuedAt > COMMUNITY_APPROVAL_TIMEOUT_MS) {
-    writeExistingFields_(selected.context, selected.rowNumber, { approval_notified_status: 'publish_timeout', approval_notified_error: 'PUBLICATION_TIMEOUT' });
-    return;
-  }
-
   let published;
   try {
     published = isSubmissionInDeployedJson_(selected.type, submissionId);
@@ -1589,7 +1638,15 @@ function processWaitingApprovalNotification_(selected) {
     return;
   }
   if (!published) {
-    writeExistingFields_(selected.context, selected.rowNumber, { approval_notified_error: 'PUBLICATION_NOT_FOUND' });
+    if (String(selected.item.approval_notified_status || '').toLowerCase() === 'publish_timeout'
+      || (queuedAt && Date.now() - queuedAt > COMMUNITY_APPROVAL_TIMEOUT_MS)) {
+      writeExistingFields_(selected.context, selected.rowNumber, { approval_notified_status: 'publish_timeout', approval_notified_error: 'PUBLICATION_TIMEOUT' });
+      return;
+    }
+    const dispatch = requestCommunityPublicDataSync_();
+    const updates = { approval_notified_error: dispatch.error || 'PUBLICATION_NOT_FOUND' };
+    if (dispatch.dispatched) updates.approval_sync_requested_at = nowIso_();
+    writeExistingFields_(selected.context, selected.rowNumber, updates);
     return;
   }
 

@@ -2,7 +2,7 @@
 
 This repository publishes Community, Jobs, Eat, Shopping, and Medical through one pipeline:
 
-`Master Spreadsheet -> versioned GAS response -> GitHub Actions validation -> committed same-origin JSON -> GitHub Pages`
+`Master Spreadsheet -> versioned GAS response -> GitHub Actions validation -> committed same-origin JSON + generated Home/Community/Jobs list HTML -> GitHub Pages`
 
 The browser does not use GAS for normal public rendering. The canonical Web App URL remains unchanged.
 

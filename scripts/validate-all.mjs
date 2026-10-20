@@ -23,6 +23,7 @@ const steps = [
   ["Jobs data", "scripts/validate-jobs.mjs"],
   ["Submission moderation", "scripts/validate-submission-moderation.mjs"],
   ["Public data pipeline", "scripts/test-public-data-pipeline.mjs"],
+  ["Public data publication", "scripts/test-public-data-publication.mjs"],
   ["Public data quality unit tests", "scripts/test-public-data-quality.mjs"],
   ["Directory capabilities", "scripts/test-directory-capabilities.mjs"],
   ["Public data quality baseline", "scripts/report-public-data-quality.mjs", "--check-baseline", ...summaryArgs],

@@ -37,6 +37,8 @@ official_sources:
 
 ![ドイツの駅で公式アプリを確認する日本人旅行者と地域列車](/assets/images/living/german-regional-train-editorial-v1.webp "AI生成の編集イメージ。実在の駅、列車、乗客ではありません。")
 
+車での移動を検討している方は、冬季の道路状況によって装着義務が生じる[ドイツの冬タイヤ義務と確認方法](/germany/ja/living/winter-tires-germany-2026/)も確認してください。
+
 ## 長距離列車と地域交通の違い
 
 | 種類 | 表示例 | 主な役割 | 座席予約 |

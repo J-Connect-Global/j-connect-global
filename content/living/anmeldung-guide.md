@@ -8,7 +8,7 @@ summary: "ドイツの住民登録を、入居後2週間の期限、入居証明
 status: "published"
 published: true
 published_at: "2026-06-07"
-updated_at: "2026-10-17"
+updated_at: "2026-10-20"
 last_verified: "2026-08-30"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/anmeldung-guide/"
@@ -160,7 +160,6 @@ official_sources:
 
 住所の綴り、住戸番号、郵便受けの名前を確認します。行政郵便は転送されない場合もあるため、住所変更後は各機関へ個別に知らせます。
 
-![行政書類を自宅で整理し、次の手続きを確認する日本人の住民](/assets/images/living/japanese-resident-paperwork-editorial-v1.webp "AI生成の編集イメージ。実在の登録証明、個人情報、申請者ではありません。")
 
 ## 手続きの全体像
 

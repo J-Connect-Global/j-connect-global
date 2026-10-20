@@ -12,8 +12,8 @@ last_verified: "2026-10-20"
 next_review: "2027-10-01"
 canonical_url: "/germany/ja/living/winter-tires-germany-2026/"
 tags: ["冬タイヤ", "ドイツ運転", "オールシーズンタイヤ", "交通安全", "2026年"]
-image_url: "/assets/images/living/winter-tires-road-conditions-2026.svg"
-image_alt: "冬タイヤ義務が路面状況によって変わることを説明する図解"
+image_url: "/assets/img/living/winter-tires-germany-2026.webp"
+image_alt: "雪の残る路面に接した車の冬用タイヤと深い溝"
 related_articles: ["germany-train-travel-guide", "duesseldorf-family-trip", "germany-first-30-days"]
 official_sources:
   - title: "ドイツ道路交通規則第2条3a項：冬季路面でのタイヤ要件"
@@ -24,6 +24,8 @@ official_sources:
     url: "https://www.adac.de/rund-ums-fahrzeug/ausstattung-technik-zubehoer/reifen/sicherheit/winterreifenpflicht-deutschland/"
   - title: "ADAC：オールシーズンタイヤの冬季利用"
     url: "https://www.adac.de/rund-ums-fahrzeug/ausstattung-technik-zubehoer/reifen/sicherheit/ganzjahresreifen-im-winter/"
+image_caption: "AI生成の編集イメージ。実在の人物・書類・場所を記録したものではありません。路面状況やタイヤの適合性を示すものではありません。表示・要件は本文で確認してください。"
+image_credit: "AI-generated editorial image / J-Connect"
 ---
 
 # ドイツの冬タイヤ義務2026｜交換時期・雪マーク・オールシーズンタイヤ

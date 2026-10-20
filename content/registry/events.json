@@ -2575,7 +2575,7 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-20",
     "last_verified": "2026-10-19",
     "canonical_url": "/germany/ja/events/news/deutschlandticket-2027-price-consent/",
     "official_url": "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt",
@@ -2638,7 +2638,7 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-20",
     "last_verified": "2026-10-19",
     "canonical_url": "/germany/ja/events/news/db-2027-timetable-family-ticket/",
     "official_url": "https://www.deutschebahn.com/de/presse/pressestart_zentrales_uebersicht/Fahrplan-2027-stabile-Preise-neue-Sprinter-mehr-europaeische-Verbindungen-14065322",
@@ -2656,11 +2656,11 @@
       "last_reviewed_at": "2026-10-19",
       "next_review_due": "2026-12-12"
     },
-    "image": "/assets/img/events/cologne-antwerp-direct-ice-2026.webp",
-    "image_alt": "ケルンのメッセ・ドイツ駅を通るICE車両の資料写真",
-    "image_caption": "2015年撮影のICE。2027年ダイヤの新列車や使用車両を示す写真ではありません。",
-    "image_credit": "Rolf Heinrich, Köln / CC BY 3.0 / Wikimedia Commons",
-    "image_url": "/assets/img/events/cologne-antwerp-direct-ice-2026.webp"
+    "image": "/assets/img/events/db-2027-timetable-family-ticket.webp",
+    "image_alt": "荷物を持ち長距離列車へ乗り込む家族",
+    "image_caption": "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。2027年の使用車両を示すものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "image_url": "/assets/img/events/db-2027-timetable-family-ticket.webp"
   },
   {
     "slug": "germany-winter-time-2026",
@@ -2701,7 +2701,7 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-19",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-20",
     "last_verified": "2026-10-19",
     "canonical_url": "/germany/ja/events/columns/germany-winter-time-2026/",
     "official_url": "https://germany.representation.ec.europa.eu/zeitumstellung_de",
@@ -2719,10 +2719,10 @@
       "last_reviewed_at": "2026-10-19",
       "next_review_due": "2027-10-01"
     },
-    "image": "/assets/img/events/germany-autumn-forest-walk.webp",
-    "image_alt": "ベルリンのデュッペルの森を彩る秋のブナの資料写真",
-    "image_caption": "2016年11月撮影の秋の森。時間変更当日の明るさを示す写真ではありません。",
-    "image_credit": "Alexander Grams / CC BY-SA 4.0 / Wikimedia Commons",
-    "image_url": "/assets/img/events/germany-autumn-forest-walk.webp"
+    "image": "/assets/img/events/germany-winter-time-2026.webp",
+    "image_alt": "秋の朝にアナログ時計を調整する手",
+    "image_caption": "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。正確な切替時刻は本文の図で確認してください。",
+    "image_credit": "AI-generated editorial image / J-Connect",
+    "image_url": "/assets/img/events/germany-winter-time-2026.webp"
   }
 ]

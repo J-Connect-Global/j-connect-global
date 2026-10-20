@@ -8,13 +8,13 @@ tags: ["Pfand", "買い物", "スーパー", "ペットボトル", "返金", "�
 published: true
 status: "published"
 published_at: "2026-09-28"
-updated_at: "2026-09-28"
+updated_at: "2026-10-20"
 last_verified: "2026-09-28"
 next_review: "2027-03-28"
 canonical_url: "/germany/ja/living/germany-pfand-return-guide/"
 image: "/assets/img/living/germany-pfand-return-guide.webp"
-image_alt: "使い捨て容器とリユース瓶で異なる預り金・返却先"
-image_caption: "J-Connect編集部作成の図解。DPG・消費者センターの案内に基づく（2026年9月28日確認）。実物のマークを再現したものではありません。"
+image_alt: "スーパーの返却機に空のペットボトルを入れる様子"
+image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。"
 related_articles: ["germany-waste-sorting-guide", "germany-first-30-days", "germany-bread-guide"]
 official_sources:
   - title: "DPG：消費者向けFAQ"

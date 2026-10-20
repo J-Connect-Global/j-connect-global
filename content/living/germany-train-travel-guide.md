@@ -8,11 +8,11 @@ summary: "ドイツの鉄道を初めて使う人向けに、長距離列車と�
 status: "published"
 published: true
 published_at: "2026-08-03"
-updated_at: "2026-08-30"
+updated_at: "2026-10-20"
 last_verified: "2026-08-30"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/germany-train-travel-guide/"
-image_alt: "ドイツの駅で公式アプリを確認する日本人旅行者と地域列車"
+image_alt: "スーツケースを持ち長距離列車の横に立つ旅行者"
 related_articles: ["cologne-city-guide", "duesseldorf-city-guide", "germany-first-30-days"]
 official_sources:
   - title: "ドイツ鉄道：公式アプリ"
@@ -23,6 +23,8 @@ official_sources:
     url: "https://int.bahn.de/en/booking-information/passenger-rights"
   - title: "ドイツ鉄道：子どもと旅行する場合"
     url: "https://int.bahn.de/en/offers/additional-services/travelling-with-children"
+image: "/assets/img/living/germany-train-travel-guide.webp"
+image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。"
 ---
 
 # ドイツの電車の乗り方｜列車の違い・切符・乗り換え・遅延

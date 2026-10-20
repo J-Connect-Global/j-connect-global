@@ -8,12 +8,12 @@ summary: "ドイツの病院で出産する日の流れを日本語の図で確�
 status: "published"
 published: true
 published_at: "2026-10-11"
-updated_at: "2026-10-17"
+updated_at: "2026-10-20"
 last_verified: "2026-10-11"
 next_review: "2027-01-11"
 canonical_url: "/germany/ja/living/birth-day-germany/"
-image: "/assets/img/living/pregnancy-birth-germany.webp"
-image_alt: "赤ちゃんの衣類と持ち物を用意して出産に備える妊婦"
+image: "/assets/img/living/birth-day-germany.webp"
+image_alt: "出産用バッグを持ち病院へ向かう妊婦と付き添い"
 related_articles: ["pregnancy-birth-germany","birth-procedures-germany","stroller-buying-guide-germany","health-insurance-guide","doctor-appointment-germany"]
 official_sources:
   - title: "ドイツ連邦保健ポータル：出産の流れ"
@@ -26,6 +26,7 @@ official_sources:
     url: "https://www.familienportal.nrw/de/schwangerschaft/gesundheit/fruehgeburt"
   - title: "英国NHS：陣痛・破水などの相談が必要なサイン"
     url: "https://www.nhs.uk/pregnancy/labour-and-birth/signs-that-labour-has-begun/"
+image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。"
 ---
 
 # ドイツの出産当日ガイド｜陣痛・破水から赤ちゃん誕生まで

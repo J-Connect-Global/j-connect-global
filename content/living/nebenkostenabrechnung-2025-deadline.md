@@ -12,8 +12,8 @@ last_verified: "2026-10-20"
 next_review: "2027-01-10"
 canonical_url: "/germany/ja/living/nebenkostenabrechnung-2025-deadline/"
 tags: ["共益費", "Nebenkosten", "賃貸", "暖房費", "2025年", "2026年末"]
-image_url: "/assets/images/living/nebenkosten-2025-timeline.svg"
-image_alt: "2025年分の共益費精算と2026年末の期限を示す図解"
+image_url: "/assets/img/living/nebenkostenabrechnung-2025-deadline.webp"
+image_alt: "自宅で精算書と電卓を見比べて共益費を確認する借主"
 related_articles: ["rent-apartment-germany", "electricity-internet-contracts-germany", "moving-checklist-germany"]
 official_sources:
   - title: "ドイツ民法第556条：共益費の精算・期限・証憑閲覧"
@@ -24,6 +24,8 @@ official_sources:
     url: "https://www.verbraucherzentrale.de/wissen/energie/preise-tarife-anbieterwechsel/nachzahlungsschock-hilfe-bei-hoher-betriebs-und-heizkostenabrechnung-83065"
   - title: "ドイツ消費者センター：暖房費精算の確認方法"
     url: "https://www.verbraucherzentrale.de/wissen/energie/heizen-und-warmwasser/heizkostenabrechnungen-pruefen-so-erkennen-sie-teure-fehler-29217"
+image_caption: "AI生成の編集イメージ。実在の人物・書類・場所を記録したものではありません。"
+image_credit: "AI-generated editorial image / J-Connect"
 ---
 
 # ドイツの2025年共益費精算｜2026年末の期限・追加請求・異議申立て

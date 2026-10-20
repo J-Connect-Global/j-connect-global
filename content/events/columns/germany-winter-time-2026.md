@@ -21,14 +21,15 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-19"
-updated_at: "2026-10-19"
+updated_at: "2026-10-20"
 last_verified: "2026-10-19"
 canonical_url: "/germany/ja/events/columns/germany-winter-time-2026/"
 official_url: "https://germany.representation.ec.europa.eu/zeitumstellung_de"
-image: "/assets/img/events/germany-autumn-forest-walk.webp"
-image_alt: "ベルリンのデュッペルの森を彩る秋のブナの資料写真"
-image_caption: "2016年11月撮影の秋の森。時間変更当日の明るさを示す写真ではありません。"
-image_credit: "Alexander Grams / CC BY-SA 4.0 / Wikimedia Commons"
+image: "/assets/img/events/germany-winter-time-2026.webp"
+image_alt: "秋の朝にアナログ時計を調整する手"
+image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。正確な切替時刻は本文の図で確認してください。"
+image_credit: "AI-generated editorial image / J-Connect"
+
 ---
 
 # ドイツの冬時間は10月25日から｜「1時間戻る」日に暮らしはどう変わる？
@@ -55,7 +56,7 @@ image_credit: "Alexander Grams / CC BY-SA 4.0 / Wikimedia Commons"
 
 ## 暗くなる時間が急に早く感じる
 
-![秋の光が差すベルリンのブナ林](/assets/img/events/germany-autumn-forest-walk.webp "2016年11月撮影。季節の参考写真で、時間変更当日の光景ではありません。")
+![午前3時を午前2時へ戻し、日本との時差が8時間になる図](/assets/images/events/winter-time-2026-clock-change.svg "図解：J-Connect編集部。根拠：欧州委員会ドイツ代表部・PTB。2026年10月19日確認。")
 
 時計を戻した日から、夕方の暗さが一段早く来たように感じます。太陽の動きが一晩で変わるのではなく、社会の時計を標準時へ戻すためです。
 
@@ -80,7 +81,6 @@ EUでは季節ごとの時間変更をやめる提案が2018年に出され、�
 
 ## 写真の出典
 
-- [ベルリンの秋のブナ林](https://commons.wikimedia.org/wiki/File:Buchenwald-Herbst-LSG-D%C3%BCppeler-Forst.jpg) — Alexander Grams / [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)。
 - [ゲーアデンの秋のブナ林](https://commons.wikimedia.org/wiki/File:Gehrdener_Berg_Buchenwald_Herbst.jpg) — Axel Hindemith / [CC BY 3.0](https://creativecommons.org/licenses/by/3.0)。
 
 写真は縦横比を保って縮小し、WebPへ変換しています。

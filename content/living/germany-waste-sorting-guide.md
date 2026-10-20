@@ -8,13 +8,13 @@ tags: ["ごみ分別", "デュッセルドルフ", "NRW", "リサイクル", "�
 published: true
 status: "published"
 published_at: "2026-09-28"
-updated_at: "2026-09-28"
+updated_at: "2026-10-20"
 last_verified: "2026-09-28"
 next_review: "2027-03-28"
 canonical_url: "/germany/ja/living/germany-waste-sorting-guide/"
 image: "/assets/img/living/germany-waste-sorting-guide.webp"
-image_alt: "包装用の黄色い容器とデュッセルドルフの資源容器の違い"
-image_caption: "J-Connect編集部作成の図解。AWISTA Kommunalの分別案内に基づく（2026年9月28日確認）。写真ではありません。"
+image_alt: "青い資源容器へ段ボールを入れる住民"
+image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。容器の色・回収対象は自治体により異なります。地域の分別方法は本文の公式案内で確認してください。"
 related_articles: ["germany-pfand-return-guide", "moving-checklist-germany", "germany-first-30-days"]
 official_sources:
   - title: "連邦環境庁：家庭のごみ分別"

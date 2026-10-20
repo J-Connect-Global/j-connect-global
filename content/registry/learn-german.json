@@ -4,7 +4,7 @@
     "title": "予約のドイツ語フレーズ｜電話・メールで予約・変更・キャンセルする",
     "slug": "appointment-phrase",
     "image_url": "/assets/img/learn-german/appointment-phrase.webp",
-    "image_alt": "予約連絡で用意する用件、希望日時、氏名・連絡先、確認事項の四項目",
+    "image_alt": "カレンダーを確認しながら電話で予約する女性",
     "category": "電話・窓口",
     "content_type": "phrase",
     "summary": "病院・美容室・役所の予約に使うドイツ語を、電話の会話例とメール文で紹介。空きの確認、希望日時、日付と時刻の聞き返し、予約変更・キャンセル、確認メールの依頼まで、初級者向けに日本語訳付きで整理します。",
@@ -13,7 +13,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-09",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-20",
     "last_verified": "2026-10-19",
     "tags": ["予約", "電話", "メール", "キャンセル", "日時変更", "A1", "A2"],
     "home_visible": true,
@@ -332,7 +332,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-20",
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-20",
     "last_verified": "2026-08-01",
     "tags": ["買い物", "スーパー", "レジ", "Pfand", "返品", "A1", "A2"],
     "home_visible": false,
@@ -356,7 +356,7 @@
       "last_reviewed_at": "2026-08-01",
       "next_review_due": "2026-12-20"
     },
-    "image_alt": "店頭では商品とレシート、通販では注文番号と追跡番号を準備する学習用メモ",
+    "image_alt": "スーパーのレジでカード払いをする女性と買い物袋",
     "image": "/assets/img/learn-german/shopping-phrases.webp"
   },
   {
@@ -1041,7 +1041,7 @@
     "last_verified": "2026-07-19",
     "canonical_url": "/germany/ja/learn-german/travel-german-phrases/",
     "tags": ["旅行", "駅", "ホテル", "観光案内所", "ドイツ語フレーズ"],
-    "updated_at": "2026-07-19",
+    "updated_at": "2026-10-20",
     "content_type": "phrase",
     "situation": ["travel", "transport", "hotel"],
     "goal": ["daily-life", "travel"],
@@ -1057,7 +1057,9 @@
       "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2027-01-19"
-    }
+    },
+    "image": "/assets/img/learn-german/travel-german-phrases.webp",
+    "image_alt": "ホテルの受付で地図を指して道を尋ねる旅行者"
   },
   {
     "id": "G027",

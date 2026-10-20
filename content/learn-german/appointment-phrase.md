@@ -7,14 +7,14 @@ summary: "病院・美容室・役所の予約に使うドイツ語を、電話�
 status: "published"
 published: true
 published_at: "2026-06-09"
-updated_at: "2026-10-19"
+updated_at: "2026-10-20"
 last_verified: "2026-10-19"
 next_review: "2027-04-19"
 tags: ["予約", "電話", "メール", "キャンセル", "日時変更", "A1", "A2"]
 canonical_url: "/germany/ja/learn-german/appointment-phrase/"
 image: "/assets/img/learn-german/appointment-phrase.webp"
-image_alt: "予約連絡で用意する用件、希望日時、氏名・連絡先、確認事項の四項目"
-image_caption: "図解：J-Connect編集部作成。予約前に書き出す内容を示す学習用メモです。"
+image_alt: "カレンダーを確認しながら電話で予約する女性"
+image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。"
 related_articles: ["telephone-phrases", "hospital-phrases", "behoerde-anmeldung-phrases", "work-email-phrases"]
 ---
 

@@ -8,7 +8,7 @@ summary: "ドイツの健康保険を会社員・学生・家族など立場別�
 status: "published"
 published: true
 published_at: "2026-06-07"
-updated_at: "2026-10-17"
+updated_at: "2026-10-20"
 last_verified: "2026-08-31"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/health-insurance-guide/"
@@ -130,7 +130,6 @@ official_sources:
 
 たとえば[AOKの公式案内](https://www.aok.de/pk/versichertenservice/ersatzbescheinigung-krankenkasse/)では、新規加入でカードが届いていない人も代替証明を依頼できます。申請方法は保険者や地域で異なるため、自分の加入先の窓口・アプリを使います。加入申請の下書きや送信画面だけを保険の有効な証明と考えず、カードの未着と、加入自体が未確定の状態を区別してください。必要な受診は先延ばしにせず、保険者と受診先に状況を伝えます。
 
-![ドイツの診療所受付で保険証と予約内容を確認する様子](/assets/images/living/german-clinic-reception-editorial-v1.webp "加入後は、保険証を持って診療所の受付へ行く")
 
 ## 保険に入った後の受診
 

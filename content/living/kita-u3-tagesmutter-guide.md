@@ -8,7 +8,7 @@ summary: "ドイツの保育施設と家庭的保育の違い、NRWの原則6か
 status: "published"
 published: true
 published_at: "2026-06-12"
-updated_at: "2026-10-17"
+updated_at: "2026-10-20"
 last_verified: "2026-08-31"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/kita-u3-tagesmutter-guide/"
@@ -52,7 +52,7 @@ official_sources:
 
 原則6か月前という手順は[NRW州保育法第5条](https://recht.nrw.de/lrgv/gesetz/01082026-gesetz-zur-fruehen-bildung-und-foerderung-von-kindern-kinderbildungsgesetz/)によります。他州の申込期限や自治体ごとの選考日程まで全国共通とは考えないでください。[家族・子育ての案内](/germany/ja/living/routes/family/)から、出産準備・出生後の届出にも戻れます。
 
-![ドイツの保育先を初めて訪れ、保育者と子どもの様子を見る日本人家族](/assets/images/living/childcare-first-visit-editorial-v1.webp "保育先選びでは、設備だけでなく子どもと大人の関わり方を見たい")
+![明るい保育室で子どもと保育者が積み木をする様子](/assets/images/living/childcare-play-editorial-v2.webp "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。")
 
 ## ドイツの保育は、地域社会への最初の入口
 

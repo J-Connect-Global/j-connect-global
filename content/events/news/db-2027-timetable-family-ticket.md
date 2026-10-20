@@ -21,14 +21,15 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-19"
-updated_at: "2026-10-19"
+updated_at: "2026-10-20"
 last_verified: "2026-10-19"
 canonical_url: "/germany/ja/events/news/db-2027-timetable-family-ticket/"
 official_url: "https://www.deutschebahn.com/de/presse/pressestart_zentrales_uebersicht/Fahrplan-2027-stabile-Preise-neue-Sprinter-mehr-europaeische-Verbindungen-14065322"
-image: "/assets/img/events/cologne-antwerp-direct-ice-2026.webp"
-image_alt: "ケルンのメッセ・ドイツ駅を通るICE車両の資料写真"
-image_caption: "2015年撮影のICE。2027年ダイヤの新列車や使用車両を示す写真ではありません。"
-image_credit: "Rolf Heinrich, Köln / CC BY 3.0 / Wikimedia Commons"
+image: "/assets/img/events/db-2027-timetable-family-ticket.webp"
+image_alt: "荷物を持ち長距離列車へ乗り込む家族"
+image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。2027年の使用車両を示すものではありません。"
+image_credit: "AI-generated editorial image / J-Connect"
+
 ---
 
 # DBの2027年ダイヤが予約開始｜家族券99.99ユーロとNRW―ベルリン工事の注意点

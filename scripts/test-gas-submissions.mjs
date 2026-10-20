@@ -69,11 +69,15 @@ function createRuntime(sheets, sendEmail, options = {}) {
     static now() { return now; }
   }
   const sandbox = {
-    console,
+    console: options.console || console,
     Date: MockDate,
     JSON,
     PropertiesService: {
-      getScriptProperties: () => ({ getProperty: (name) => properties[name] || "" })
+      getScriptProperties: () => ({
+        getProperty: (name) => properties[name] || "",
+        setProperty: (name, value) => { properties[name] = String(value); },
+        deleteProperty: (name) => { delete properties[name]; }
+      })
     },
     SpreadsheetApp: {
       getActiveSpreadsheet: () => activeSpreadsheet,
@@ -496,6 +500,115 @@ function testPublicPayloadCredentialSanitization() {
   assert(directory.rating === "" && directory.totalScore === 4.6, "GAS did not normalize Directory rating semantics.");
 }
 
+function publicationSheet(name = 'Community Posts') {
+  return new MockSheet(name, [
+    'post_id', 'job_id', 'created_at', 'updated_at', 'status', 'category1', 'title', 'body',
+    'position_title', 'contact_email_private', 'contact_email', 'published_at',
+    'approval_notified_status', 'approval_notified_queued_at', 'approval_sync_requested_at',
+    'approval_notified_error', 'approval_notified_at', 'approval_notified_to'
+  ]);
+}
+
+function addPublication(sheet, id, values = {}) {
+  appendObjectRow(sheet, {
+    post_id: id, job_id: id, status: 'active', category1: '質問', title: id, body: 'Synthetic test',
+    position_title: id, contact_email_private: 'operator@example.com', contact_email: 'operator@example.com',
+    published_at: '2026-10-20T09:00:00Z', approval_notified_queued_at: '2026-10-20T09:00:00Z',
+    approval_notified_status: 'waiting_publish', ...values
+  });
+}
+
+function publicationRuntime(sheets, options = {}) {
+  const emails = [], dispatches = [], logs = [];
+  const properties = options.properties || { GITHUB_ACTIONS_TOKEN: 'synthetic-private-token' };
+  const published = new Set(options.published || []);
+  const runtime = createRuntime(sheets, message => emails.push(message), {
+    now: Date.parse('2026-10-20T09:10:00Z'), properties,
+    console: { info: text => logs.push(text), warn: text => logs.push(text) }
+  });
+  runtime.sandbox.UrlFetchApp.fetch = (url, request) => {
+    if (url.startsWith('https://api.github.com/')) {
+      dispatches.push({ url, request });
+      return { getResponseCode: () => options.dispatchCode || 204, getContentText: () => 'Untrusted response with credentials must not be logged' };
+    }
+    return { getResponseCode: () => 200, getContentText: () => JSON.stringify({ items: [...published].map(id => ({ id, post_id: id, job_id: id, status: 'active' })) }) };
+  };
+  return { ...runtime, emails, dispatches, properties, published, logs };
+}
+
+function testPublicationDispatchRetries() {
+  const missing = publicationRuntime([], { properties: {} });
+  const absent = missing.sandbox.requestCommunityPublicDataSync_();
+  assert(absent.error === 'SCHEDULED_SYNC_FALLBACK' && missing.dispatches.length === 0, 'Missing dispatch configuration must not perform an HTTP request.');
+
+  const community = publicationSheet();
+  addPublication(community, 'post-first'); addPublication(community, 'post-second');
+  const runtime = publicationRuntime([community], { dispatchCode: 503 });
+  runtime.sandbox.processWaitingApprovalNotifications();
+  assert(runtime.dispatches.length === 1, 'A waiting batch started duplicate workflow runs.');
+  assert(runtime.properties.COMMUNITY_PUBLIC_SYNC_LAST_ERROR === 'WORKFLOW_DISPATCH_FAILED', 'Dispatch failure was not recorded.');
+  runtime.sandbox.processWaitingApprovalNotifications();
+  assert(runtime.dispatches.length === 1, 'A failed dispatch ignored the cooldown.');
+  runtime.advanceTime(5 * 60 * 1000);
+  runtime.sandbox.UrlFetchApp.fetch = (url, request) => {
+    if (url.startsWith('https://api.github.com/')) {
+      runtime.dispatches.push({ url, request });
+      return { getResponseCode: () => 204 };
+    }
+    return { getResponseCode: () => 200, getContentText: () => JSON.stringify({ items: [] }) };
+  };
+  runtime.sandbox.processWaitingApprovalNotifications();
+  assert(runtime.dispatches.length === 2, 'The five-minute processor did not retry publication automatically.');
+  assert(runtime.properties.COMMUNITY_PUBLIC_SYNC_LAST_DISPATCH_AT && !runtime.properties.COMMUNITY_PUBLIC_SYNC_LAST_ERROR, 'Successful retry did not clear the dispatch error.');
+  assert(rowObject(community).approval_sync_requested_at, 'Successful retry did not record its request time.');
+  assert(runtime.emails.length === 0, 'An approval email was sent before deployed JSON confirmed publication.');
+  assert(!runtime.logs.join(' ').includes('synthetic-private-token') && !runtime.logs.join(' ').includes('Untrusted response'), 'Dispatch diagnostics exposed confidential material.');
+}
+
+function testLatePublicationNotificationRecovery() {
+  const community = publicationSheet();
+  addPublication(community, 'post-late', { approval_notified_queued_at: '2026-10-20T06:00:00Z' });
+  addPublication(community, 'post-timed-out', { approval_notified_status: 'publish_timeout', approval_notified_queued_at: '2026-10-20T06:00:00Z' });
+  addPublication(community, 'post-closed', { status: 'closed' });
+  const runtime = publicationRuntime([community], { published: ['post-late', 'post-closed'] });
+  runtime.sandbox.processWaitingApprovalNotifications();
+  assert(rowObject(community, 1).approval_notified_status === 'sent', 'A late but actually deployed post was incorrectly timed out.');
+  assert(rowObject(community, 2).approval_notified_status === 'publish_timeout', 'An absent timed-out post was treated as published.');
+  assert(rowObject(community, 3).approval_notified_status === 'publish_error', 'A closed post remained eligible for notification.');
+  assert(runtime.emails.length === 1 && runtime.dispatches.length === 0, 'Timeout processing dispatched new runs or sent an invalid notification.');
+  runtime.published.add('post-timed-out');
+  runtime.sandbox.processWaitingApprovalNotifications();
+  assert(rowObject(community, 2).approval_notified_status === 'sent' && runtime.emails.length === 2, 'A deployed post did not recover automatically from publish_timeout.');
+  runtime.sandbox.processWaitingApprovalNotifications();
+  assert(runtime.emails.length === 2, 'Recovered publication notifications were duplicated.');
+}
+
+function testApprovalCheckFairness() {
+  const community = publicationSheet(), jobs = publicationSheet('Jobs');
+  for (let i = 0; i < 14; i += 1) addPublication(community, `post-timeout-${i}`, { approval_notified_status: 'publish_timeout', approval_notified_queued_at: '2026-10-20T06:00:00Z' });
+  addPublication(jobs, 'job-ready');
+  const runtime = publicationRuntime([community, jobs], { published: ['job-ready'] });
+  assert(runtime.sandbox.processWaitingApprovalNotifications().processed === 12, 'Publication checker exceeded its per-run limit.');
+  runtime.sandbox.processWaitingApprovalNotifications();
+  assert(rowObject(jobs).approval_notified_status === 'sent' && runtime.emails.length === 1, 'Old Community timeouts starved a ready Jobs notification.');
+}
+
+function testPublicationHealthAndAdministratorFeedback() {
+  const community = publicationSheet(); addPublication(community, 'post-admin', { status: 'pending', approval_notified_status: '' });
+  const runtime = publicationRuntime([community], { properties: {} });
+  const alerts = [];
+  runtime.sandbox.SpreadsheetApp.getUi = () => ({ ButtonSet: { YES_NO: 'YES_NO' }, Button: { YES: 'YES' }, alert: (...args) => { alerts.push(args); return 'YES'; } });
+  runtime.sandbox.queueSelectedApproval_(false);
+  assert(alerts.at(-1)[0].includes('即時同期が未設定') && !alerts.at(-1)[0].includes('同期を開始'), 'Administrator was told that an unconfigured synchronization had started.');
+  runtime.sandbox.ScriptApp = { getProjectTriggers: () => [{ getHandlerFunction: () => 'processWaitingCommunityApprovalNotifications' }] };
+  runtime.properties.GITHUB_ACTIONS_TOKEN = 'synthetic-private-token';
+  const before = JSON.stringify(runtime.properties);
+  const health = runtime.sandbox.inspectCommunityPublicationSync();
+  assert(health.immediate_sync_configured && health.notification_trigger_configured, 'Health inspection did not report configured publication services.');
+  assert(JSON.stringify(runtime.properties) === before && runtime.dispatches.length === 0 && runtime.emails.length === 0, 'Health inspection changed settings or contacted recipients.');
+  assert(!JSON.stringify(health).includes('synthetic-private-token') && !runtime.logs.join(' ').includes('synthetic-private-token'), 'Health inspection exposed its dispatch credential.');
+}
+
 testSpreadsheetResolution();
 testBoundModerationSelection();
 testBerlinTimestamps();
@@ -504,4 +617,8 @@ testCommunityAdminFailureIsolation();
 testCommunityPublicLifecycleAndCacheBypass();
 testCommunityInquiryPrivacyAndAbuseControls();
 testPublicPayloadCredentialSanitization();
+testPublicationDispatchRetries();
+testLatePublicationNotificationRecovery();
+testApprovalCheckFairness();
+testPublicationHealthAndAdministratorFeedback();
 console.log("GAS submission tests passed.");

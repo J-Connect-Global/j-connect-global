@@ -2,8 +2,16 @@ name: Sync public data
 
 on:
   schedule:
-    - cron: "2,7,12,17,22,27,32,37,42,47,52,57 * * * *"
+    - cron: "3,8,13,18,23,28,33,38,43,48,53,58 * * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/sync-public-data.yml
+      - apps-script/community-board-api.gs
+  workflow_run:
+    workflows: [Deploy GitHub Pages, Update news data]
+    types: [completed]
 
 permissions: {}
 
@@ -13,7 +21,12 @@ concurrency:
 
 jobs:
   sync-public-data:
-    if: github.ref == 'refs/heads/main'
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == 'main' &&
+       github.event.workflow_run.head_repository.full_name == github.repository))
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -33,12 +46,15 @@ jobs:
       - name: Sync all public data
         run: node scripts/sync-public-data.mjs
 
+      - name: Regenerate public list snapshots from the synchronized JSON
+        run: node scripts/render-public-list-snapshots.mjs
+
       - name: Commit updated public data
         id: auto-commit-action
         uses: stefanzweifel/git-auto-commit-action@b863ae1933cb653a53c021fe36dbb774e1fb9403 # v5
         with:
           commit_message: "chore(data): sync public data"
-          file_pattern: assets/data/community/*.json assets/data/jobs/*.json assets/data/eat/*.json assets/data/shopping/*.json assets/data/medical/*.json
+          file_pattern: assets/data/community/*.json assets/data/jobs/*.json assets/data/eat/*.json assets/data/shopping/*.json assets/data/medical/*.json germany/ja/index.html germany/ja/community/index.html germany/ja/jobs/index.html
 
       - name: Resolve exact deployment commit
         id: deployment-ref

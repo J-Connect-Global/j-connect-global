@@ -1,0 +1,32 @@
+name: One-time editorial build validation and sync
+on:
+  push:
+    branches:
+      - automation/publish-winter-tires-nebenkosten-20261020
+    paths:
+      - .github/workflows/editorial-one-shot-generate-20261020.yml
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build and validate
+        run: |
+          npm run build
+          npm run validate
+      - name: Store generated output and remove one-time workflow
+        run: |
+          git rm -f .github/workflows/editorial-one-shot-generate-20261020.yml
+          git add -A
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git diff --cached --check
+          git commit -m "Regenerate and validate final published articles"
+          git push

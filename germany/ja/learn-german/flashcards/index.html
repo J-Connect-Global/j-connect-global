@@ -50,7 +50,7 @@
   </style>
   <script src="/assets/js/cookie-consent.js" defer></script>
 
-  <script type="application/ld+json" data-jconnect-managed="page-structured-data">{"@context":"https://schema.org","@type":"WebPage","name":"ドイツ語暗記カード A1・A2・B1・B2・C1・C2｜語彙と表現練習","description":"A1〜B1の資料掲載語と、B2〜C2の独自表現練習。分類根拠・収録数・独日例文を確認しながら、ブラウザで学べます。","inLanguage":"ja","url":"https://j-connect-global.com/germany/ja/learn-german/flashcards/","isPartOf":{"@type":"WebSite","@id":"https://j-connect-global.com/#website","name":"J-Connect Global","url":"https://j-connect-global.com/"},"publisher":{"@type":"Organization","@id":"https://j-connect-global.com/#organization","name":"J-Connect Global","url":"https://j-connect-global.com/"}}</script>
+  <script type="application/ld+json" data-jconnect-managed="page-structured-data">{"@context":"https://schema.org","@type":"WebPage","name":"ドイツ語暗記カード A1・A2・B1・B2・C1・C2｜語彙と表現練習","description":"A1〜C2の単語・熟語・表現17,635項目を、例文・和訳・音声とともに学べます。レベル別の収録数・分類根拠・出典も確認できます。","inLanguage":"ja","url":"https://j-connect-global.com/germany/ja/learn-german/flashcards/","isPartOf":{"@type":"WebSite","@id":"https://j-connect-global.com/#website","name":"J-Connect Global","url":"https://j-connect-global.com/"},"publisher":{"@type":"Organization","@id":"https://j-connect-global.com/#organization","name":"J-Connect Global","url":"https://j-connect-global.com/"}}</script>
   <script type="application/ld+json" data-jconnect-managed="page-structured-data">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://j-connect-global.com/germany/ja/"},{"@type":"ListItem","position":2,"name":"ドイツ語・学び","item":"https://j-connect-global.com/germany/ja/learn-german/"},{"@type":"ListItem","position":3,"name":"ドイツ語暗記カード A1・A2・B1・B2・C1・C2｜語彙と表現練習","item":"https://j-connect-global.com/germany/ja/learn-german/flashcards/"}]}</script>
 </head>
 <body>
@@ -131,7 +131,7 @@
     <section class="jc-page-hero" aria-labelledby="flashcardsPageTitle">
       <div class="jc-eyebrow"><span class="jc-dot"></span>J-ConnectオリジナルWeb教材</div>
       <h1 id="flashcardsPageTitle">ドイツ生活で使うドイツ語暗記カード</h1>
-      <p>語数の固定枠を廃止し、根拠を確認できる項目から教材を作り直しました。A1〜B1は資料掲載語、B2〜C2は論証・含意・文体を練習する表現教材です。</p>
+      <p>A1〜C2の単語・熟語・表現を17,635項目収録。例文と和訳を確認しながら、レベル別・生活場面別に学べます。1回10枚から始められます。</p>
       <div class="jc-hero-actions">
         <a class="jc-button is-primary" href="#flashcardsApp">教材を選ぶ</a>
         <a class="jc-button" href="#flashcardsHowTo">使い方を見る</a>
@@ -296,6 +296,8 @@
             <dt>よく使う組み合わせ</dt><dd id="flashcardCollocations"></dd>
             <dt>学習メモ</dt><dd id="flashcardLearningNote"></dd>
             <dt>例文の出典</dt><dd id="flashcardExampleSource"></dd>
+            <dt>語義・文法の出典</dt><dd id="flashcardLexicalSource"></dd>
+            <dt>ライセンス</dt><dd id="flashcardLicense"></dd>
             <dt>関連語</dt><dd id="flashcardRelated"></dd>
           </dl>
         </div>
@@ -397,7 +399,7 @@
               <option value="50">50件</option>
               <option value="100">100件</option>
               <option value="250">250件</option>
-              <option value="all">全件</option>
+              <option value="500">500件</option>
             </select>
           </label>
         </div>
@@ -467,16 +469,17 @@
 
     <section class="flashcards-static-info" id="flashcardsSources" aria-labelledby="flashcardsSourcesTitle">
       <h2 id="flashcardsSourcesTitle">レベル設計・出典・ライセンス</h2>
-      <p id="flashcardsVocabularyStatus">収録数を読み込み中です。</p>
-      <p><a href="/assets/data/learn-german/flashcards/vocabulary-audit.csv" download>旧4,000項目と追加項目の変更一覧（CSV）</a>には旧レベル・新しい扱い・保留理由・参照ページを掲載しています。保留は分類根拠不足などによるもので、その語が不要という意味ではありません。</p>
-      <h3>A1〜B1：資料掲載に基づく学習目安</h3>
-      <p>既存の見出し語をGoetheの公開資料と照合し、掲載を確認できた最初の資料を配置の目安にしました。照合した資料にない語を、自動的に上位へ移す処理は行いません。綴りの一致は全語義・例文の難度まで認定するものではなく、下位語の完全除外も保証しません。</p>
+      <p id="flashcardsVocabularyStatus">A1 810 ／ A2 989 ／ B1 2,236 ／ B2 2,100 ／ C1 3,500 ／ C2 8,000項目。全17,635項目に例文・和訳を収録。和訳11,231件は機械翻訳・要校閲です。</p>
+      <p><a href="/assets/data/learn-german/flashcards/vocabulary-audit.csv" download>語彙の配置・変更一覧（CSV）</a>に、旧レベル・現在の配置・除外理由・参照先を記録しています。学習記録は旧IDのまま保持します。</p>
+      <h3>A1〜B1：資料掲載と独自編集</h3>
+      <p>Goetheの公開語彙資料との照合による項目と、独自編集の項目を含みます。カードごとに分類根拠を表示します。資料への掲載は語義や例文の最低CEFRレベルの認定ではなく、下位語の完全除外も保証しません。</p>
       <p>Goethe資料の約650（A1）・約1,300（A2）・約2,400（B1）は、それぞれの資料が述べる語彙規模です。差し引いて各レベルの必修数を算出することはできません。本教材の数は単語・句・表現を合わせた「収録項目数」であり、試験に必要な総語数ではありません。</p>
       <p><a href="https://www.goethe.de/pro/relaunch/prf/de/A1_SD1_Wortliste_02.pdf" rel="noopener noreferrer">Goethe A1語彙資料</a> ／ <a href="https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_A2_Wortliste.pdf" rel="noopener noreferrer">Goethe A2語彙資料</a> ／ <a href="https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_B1_Wortliste.pdf" rel="noopener noreferrer">Goethe B1語彙資料</a>。本文や例文はカードへ複製せず、掲載ページを参照情報として保持しています。</p>
-      <h3>B2〜C2：独自編集の表現練習</h3>
-      <p><a href="https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4#page=131" rel="noopener noreferrer">Council of Europe CEFR Companion Volume 2020（語彙範囲・131ページ）</a>を参考に、B2は説明・意見、C1は論証・抽象的な整理、C2は慣用表現の含意・文体を練習します。各表現に公的なレベル認定があるという意味ではありません。早い段階で習う表現でも、C2では使い分けを課題にできます。収録は限られた練習項目で、各レベルの総語彙を網羅しません。</p>
+      <h3>B2〜C2：幅広い語彙・表現の学習目安</h3>
+      <p>承認された語彙原本を基に、頻度・収録順や学習範囲を参考に独自配置しています。<a href="https://rm.coe.int/common-european-framework-of-reference-for-languages-learning-teaching/16809ea0d4#page=131" rel="noopener noreferrer">CEFRの能力記述</a>は学習の参考であり、個々の単語に公的な認定があるという意味ではありません。専門用語や、より早い段階で習う語も含みます。</p>
       <h3>辞書・例文の出典</h3>
-      <p>参照カードの見出し語・日本語訳は <a href="https://download.freedict.org/dictionaries/deu-jpn/2025.11.23/" rel="noopener noreferrer">FreeDict German–Japanese 2025.11.23</a>（CC BY-SA 3.0）に基づきます。独日例文は <a href="https://tatoeba.org/en/downloads" rel="noopener noreferrer">Tatoeba</a>（CC BY 2.0 FR）の出典ID、または独自作成の表示を付けています。<a href="https://wortschatz.uni-leipzig.de/en/download/German" rel="noopener noreferrer">Leipzig Corpora Collection</a>（CC BY）は既存資料への帰属として記録し、CEFRの分類には使いません。</p>
+      <p>語義は <a href="https://download.freedict.org/dictionaries/deu-jpn/2025.11.23/" rel="noopener noreferrer">FreeDict / WikDict 独日辞書</a>・<a href="https://download.freedict.org/dictionaries/jpn-deu/0.2.0/" rel="noopener noreferrer">日独辞書</a>（CC BY-SA 3.0）と <a href="https://www.edrdg.org/jmdict/j_jmdict.html" rel="noopener noreferrer">JMdict / EDRDG</a>（CC BY-SA 4.0）を参照し、独自訳・表記修正を含みます。文法は <a href="https://kaikki.org/dictionary/German/" rel="noopener noreferrer">Wiktionary contributors / Kaikki</a>・<a href="https://github.com/gambolputty/german-nouns" rel="noopener noreferrer">german-nouns</a>（CC BY-SA 4.0）を参照しています。</p>
+      <p>例文は <a href="https://tatoeba.org/en/downloads" rel="noopener noreferrer">Tatoeba contributors</a>（CC BY 2.0 FR）、Wiktionary contributors、<a href="https://arxiv.org/abs/1907.05791" rel="noopener noreferrer">WikiMatrix / Wikipedia contributors（Schwenk et al., 2019）</a>（CC BY-SA 4.0）、独自作例を区別して表示します。機械翻訳の和訳には「要校閲」と表示しています。内容は専門家による全件校閲済みではありません。引用・再利用の際は各カードの出典・ライセンスを確認してください。</p>
     </section>
   </main>
   <!-- LAYOUT:ja-footer:start -->
@@ -522,7 +525,7 @@
   <script src="/assets/js/common.js"></script>
   <script src="/assets/js/main.js"></script>
   <script src="/assets/js/learn-german-flashcards-storage.js"></script>
-  <script src="/assets/js/learn-german-flashcards.js?v=word-audio-20261019"></script>
+  <script src="/assets/js/learn-german-flashcards.js?v=approved-vocabulary-20261020"></script>
 <script src="/assets/js/social-share.js"></script>
 </body>
 </html>

@@ -1,13 +1,13 @@
 # Codex向け: CEFR語彙カード編集レビュー用プロンプト
 
-次のプロンプトは、`quality_tier: "reference"` のカードを100枚ずつ編集済みに昇格させるために使う。4,000枚を一度に処理せず、レベル・頻度順の小さなバッチでレビューする。
+2026-10-20更新: 現在の公開原本は `approved-vocabulary.json` の17,635項目。編集は原本のGoogle Sheetとスナップショットに反映し、生成ファイルを直接修正しない。100項目程度の小さなバッチで語義・例文を確認する。利用者の掲載承認と専門家による校閲は区別し、AIで辞書照合しただけで専門家確認済みの日付や状態を付けない。
 
 ```text
 あなたは日本語母語話者向けドイツ語教材の編集者です。
 
 対象:
-- assets/data/learn-german/flashcards/cards-<level>.json のうち
-  verification_status が source-aligned-needs-editorial-review のカードを、frequency_rank順に最大100枚
+- content/learn-german/flashcards/approved-vocabulary.json のうち
+  語義・文法・用例に確認が必要な項目を最大100件。特に機械翻訳・要校閲の注記を優先する。
 
 必須作業:
 1. 見出し語と日本語訳を、Duden、DWDS、Wiktionary/FreeDictなど確認可能な辞書資料で照合する。
@@ -17,7 +17,7 @@
 5. その語義に対応する自然で短い独文例を新規作成し、日本語訳を付ける。出典の例文をコピーしない。
 6. よく使うコロケーションを0〜3件、学習上必要な注意を1〜2文、関連語を0〜3件追加する。
 7. CEFR帯が明らかに不適切なら、理由を記録し、重複を生まない形で正しい帯へ移す。
-8. 完了したカードだけ quality_tier を editorial-reviewed、verification_status を j-connect-editorial-reviewed にし、verified_at を当日に更新する。
+8. 確認内容・出典・残る不確実性を原本の注記に記録する。利用者の承認を専門家の校閲済み状態へ読み替えない。
 
 禁止:
 - 未確認の語形、訳、例文を断定しない。
@@ -33,4 +33,4 @@
 最後に、レビュー済み件数、移動した語、除外した語、判断保留、参照した資料、テスト結果を報告してください。
 ```
 
-生成ファイルを直接編集すると次回の生成で上書きされる。恒久的な編集結果は、将来 `content/learn-german/flashcards/editorial-overrides.json` のようなソースファイルへ保存し、生成器で適用する構造へ移行すること。
+恒久的な修正は原本に書き戻し、最新エクスポートを `scripts/import-german-vocabulary.py` で取り込む。詳しくは `docs/learn-german-cefr-vocabulary-methodology.md` を参照。原本と公開データが食い違う上書き用ファイルを別途増やさない。

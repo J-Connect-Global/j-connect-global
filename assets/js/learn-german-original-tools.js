@@ -119,7 +119,7 @@
     article.append(createElement("p", "", deck.description_ja));
 
     const scenes = createElement("div", "learn-deck-card__head");
-    const sceneLabels = deck.deck_kind === "cefr-level" ? [["A1", "A2", "B1"].includes(deck.target_level) ? "資料掲載語・学習目安" : "独自の表現練習"] : [...deck.scene_labels];
+    const sceneLabels = deck.deck_kind === "cefr-level" ? [deck.basis_label_ja || "語彙・表現の学習目安"] : [...deck.scene_labels];
     if (deck.has_unclassified) sceneLabels.push("CEFR未判定を含む");
     sceneLabels.forEach(label => scenes.append(createElement("span", "learn-deck-card__scene", label)));
     article.append(scenes);
@@ -259,7 +259,7 @@
       const coverage = document.querySelector("#originalVocabularyStatus");
       if (coverage && payload.audit_summary) {
         const audit = payload.audit_summary;
-        coverage.textContent = `${Object.entries(payload.level_counts).map(([level, count]) => `${level} ${count.toLocaleString("ja-JP")}項目`).join(" ／ ")}。旧${audit.legacy_total.toLocaleString("ja-JP")}項目のうち${audit.legacy_withheld.toLocaleString("ja-JP")}項目を公開保留。詳しくは変更一覧で確認できます。`;
+        coverage.textContent = `${Object.entries(payload.level_counts).map(([level, count]) => `${level} ${count.toLocaleString("ja-JP")}項目`).join(" ／ ")}。計${audit.cefr_card_count.toLocaleString("ja-JP")}項目。${payload.quality_note_ja}`;
       }
       progressByCardId = new Map(progress.map(entry => [entry.card_id, entry]));
       render();

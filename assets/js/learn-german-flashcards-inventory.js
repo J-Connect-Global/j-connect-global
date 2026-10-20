@@ -207,7 +207,7 @@
         basis.href = reference.url;
         basis.target = "_blank";
         basis.rel = "noopener noreferrer";
-        basis.textContent += `・${reference.pages.join("、")}頁`;
+        if (reference.pages.length) basis.textContent += `・${reference.pages.join("、")}頁`;
       }
       german.append(basis);
       appendCell(row, german);
@@ -218,6 +218,7 @@
       example.title = card.example_de ? `${card.example_de}\n${card.example_ja}` : "例文は準備中です";
       example.append(createElement("span", "", card.example_de || "準備中"));
       if (card.example_ja) example.append(createElement("span", "flashcards-inventory-example-ja", card.example_ja));
+      if (card.translation_status === "machine-unreviewed") example.append(createElement("span", "flashcards-inventory-subtext", "和訳：機械翻訳・要校閲"));
       appendCell(row, example);
 
       const grammar = document.createElement("div");
@@ -309,7 +310,7 @@
       if (!state.deck || !state.filteredEntries.length) return;
       const columns = [
         "order", "saved", "level", "german", "lemma", "japanese", "example_de", "example_ja",
-        "part_of_speech", "grammar_info", "quality", "level_basis", "level_evidence", "status", "attempts", "last_reviewed_at", "next_review_at"
+        "part_of_speech", "grammar_info", "quality", "translation_status", "lexical_source", "example_source", "license", "level_basis", "level_evidence", "status", "attempts", "last_reviewed_at", "next_review_at"
       ];
       const rows = state.filteredEntries.map(({ card, order, progress }) => [
         order,
@@ -323,6 +324,10 @@
         card.part_of_speech,
         formatGrammar(card),
         card.quality_tier,
+        card.translation_status,
+        card.lexical_source?.attribution,
+        card.example_source?.attribution,
+        card.license_note,
         card.level_assignment.label_ja,
         card.level_assignment.evidence.map(item => item.url).join(" | "),
         progress.status,

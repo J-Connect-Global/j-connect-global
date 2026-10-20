@@ -6,7 +6,7 @@
 
   const DECKS_URL = "/assets/data/learn-german/flashcards/decks.json";
   const DATA_BASE = "/assets/data/learn-german/flashcards/";
-  const INVENTORY_SCRIPT_URL = "/assets/js/learn-german-flashcards-inventory.js?v=lexicon-evidence-20261018";
+  const INVENTORY_SCRIPT_URL = "/assets/js/learn-german-flashcards-inventory.js?v=approved-vocabulary-20261020";
   const TARGETS_SCRIPT_URL = "/assets/js/learn-german-flashcards-targets.js?v=lexicon-evidence-20261018";
   const BACKUP_SCHEMA_VERSION = 1;
   const LAST_DECK_KEY = "jconnect-flashcards-last-deck";
@@ -190,34 +190,14 @@
   }
 
   function formatGrammar(card) {
-    const grammar = card.grammar || {};
-    const pending = card.quality_tier === "reference";
-    if (card.part_of_speech === "noun") {
-      if (pending && !grammar.article && !grammar.plural) return "文法情報は編集レビュー待ちです。";
-      return [`冠詞: ${grammar.article || "—"}`, `複数形: ${grammar.plural || "—"}`, grammar.declension || ""]
-        .filter(Boolean)
-        .join(" / ");
-    }
-    if (card.part_of_speech === "verb") {
-      if (pending) return "活用・格支配は編集レビュー待ちです。";
-      const properties = [
-        `三人称単数: ${grammar.third_person || "—"}`,
-        `過去分詞: ${grammar.past_participle || "—"}`,
-        `助動詞: ${grammar.auxiliary || "—"}`,
-        grammar.separable ? "分離動詞" : "非分離動詞",
-        grammar.reflexive ? "再帰動詞" : "非再帰",
-        grammar.government ? `格・前置詞: ${grammar.government}` : ""
-      ];
-      return properties.filter(Boolean).join(" / ");
-    }
-    return grammar.usage || grammar.government || (pending ? "語法は編集レビュー待ちです。" : "用例の語順をまとまりで確認してください。");
+    return card.grammar?.source_text || "文法情報は教材の出典欄で確認してください。";
   }
 
   function createBadges(deck) {
     const fragment = document.createDocumentFragment();
     if (deck.deck_kind === "cefr-level") {
       fragment.append(createElement("span", "flashcards-badge", deck.target_level));
-      fragment.append(createElement("span", "flashcards-badge", ["A1", "A2", "B1"].includes(deck.target_level) ? "資料掲載語・学習目安" : "独自の表現練習"));
+      fragment.append(createElement("span", "flashcards-badge", deck.basis_label_ja || "語彙・表現の学習目安"));
     } else {
       deck.levels.forEach(level => fragment.append(createElement("span", "flashcards-badge", level)));
       deck.scene_labels.forEach(scene => fragment.append(createElement("span", "flashcards-badge", scene)));
@@ -518,7 +498,7 @@
     elements.basisSummary.textContent = card.level_assignment.label_ja;
     elements.basis.replaceChildren(createElement("p", "", card.level_assignment.rationale_ja));
     for (const reference of card.level_assignment.evidence) {
-      const link = createElement("a", "", `${reference.source_id}・${reference.pages.join("、")}ページ`);
+      const link = createElement("a", "", `${reference.source_id}${reference.pages.length ? `・${reference.pages.join("、")}ページ` : ""}`);
       link.href = reference.url;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
@@ -540,15 +520,9 @@
     elements.grammar.textContent = formatGrammar(card);
     elements.collocations.textContent = card.collocations.join(" / ") || (card.quality_tier === "reference" ? "編集レビュー待ち" : "—");
     elements.learningNote.textContent = card.learning_note;
-    if (card.example_source?.source_id === "tatoeba" && card.example_source.sentence_id) {
-      const sourceLink = createElement("a", "", `Tatoeba 原文 #${card.example_source.sentence_id}・日本語訳 #${card.example_source.translation_id}`);
-      sourceLink.href = `https://tatoeba.org/en/sentences/show/${card.example_source.sentence_id}`;
-      sourceLink.target = "_blank";
-      sourceLink.rel = "noopener noreferrer";
-      elements.exampleSource.replaceChildren(sourceLink);
-    } else {
-      elements.exampleSource.textContent = "J-Connect独自作成例文";
-    }
+    renderSource(elements.exampleSource, card.example_source);
+    renderSource(root.querySelector("#flashcardLexicalSource"), card.lexical_source);
+    root.querySelector("#flashcardLicense").textContent = card.license_note || "出典の条件を参照してください。";
     elements.related.textContent = card.related_terms.join(" / ") || (card.quality_tier === "reference" ? "編集レビュー待ち" : "—");
     elements.position.textContent = `${index + 1} / ${total}`;
     elements.progressText.textContent = `${percent}%`;
@@ -874,7 +848,7 @@
     const progress = new Map((await storage.getAllProgress()).map(entry => [entry.card_id, entry]));
     const columns = [
       "level", "deck", "german", "japanese", "unit_type", "part_of_speech", "grammar_info",
-      "example_de", "example_ja", "level_basis", "level_evidence", "result", "attempts", "known_count", "last_reviewed_at", "next_review_at"
+      "example_de", "example_ja", "translation_status", "lexical_source", "example_source", "license", "level_basis", "level_evidence", "result", "attempts", "known_count", "last_reviewed_at", "next_review_at"
     ];
     const rows = resultCards().map(({ card, rating }) => {
       const saved = progress.get(card.card_id) || {};
@@ -888,6 +862,10 @@
         formatGrammar(card),
         card.example_de,
         card.example_ja,
+        card.translation_status,
+        card.lexical_source?.attribution,
+        card.example_source?.attribution,
+        card.license_note,
         card.level_assignment.label_ja,
         card.level_assignment.evidence.map(item => item.url).join(" | "),
         rating,
@@ -923,13 +901,35 @@
     return Number.isFinite(Number(value)) && Number(value) >= 0;
   }
 
+  function validCardId(value) {
+    return /^(?:(?:a1|a2|b1|b2|c1|c2)-\d{3,4}|edit-(?:a1|a2|b1|b2|c1|c2)-\d{4}|expand-(?:a1|a2|b1|b2|c1|c2)-(?:\d{5}|redemittel-\d{4}))$/.test(value || "");
+  }
+
+  function renderSource(container, source) {
+    if (!container) return;
+    container.replaceChildren();
+    const text = source?.attribution || "出典はライセンス欄を参照してください。";
+    const pattern = /https:\/\/[^\s;]+/gu;
+    let end = 0;
+    for (const match of text.matchAll(pattern)) {
+      container.append(document.createTextNode(text.slice(end, match.index)));
+      const link = createElement("a", "", new URL(match[0]).hostname.replace(/^www\./, ""));
+      link.href = match[0];
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      container.append(link);
+      end = match.index + match[0].length;
+    }
+    container.append(document.createTextNode(text.slice(end)));
+  }
+
   function validateBackup(payload) {
     if (!payload || payload.schema_version !== BACKUP_SCHEMA_VERSION) throw new Error("対応していないバックアップ形式です。");
     if (!Array.isArray(payload.progress) || !Array.isArray(payload.sessions)) throw new Error("進捗またはセッションの配列がありません。");
-    if (payload.progress.length > 12000 || payload.sessions.length > 500) throw new Error("バックアップの件数が上限を超えています。");
+    if (payload.progress.length > 100000 || payload.sessions.length > 500) throw new Error("バックアップの件数が上限を超えています。");
     const validStatuses = new Set(["unstarted", "reviewing", "mastered"]);
     payload.progress.forEach(entry => {
-      if (!entry || !/^(?:a1|a2|b1|b2|c1|c2)-\d{3,4}$/.test(entry.card_id || "")) throw new Error("不正なカードIDが含まれています。");
+      if (!entry || !validCardId(entry.card_id)) throw new Error("不正なカードIDが含まれています。");
       if (!validStatuses.has(entry.status)) throw new Error("不正な学習状態が含まれています。");
       if (entry.saved !== undefined && typeof entry.saved !== "boolean") throw new Error("不正な保存状態が含まれています。");
       for (const key of ["attempts", "known_count", "unsure_count", "again_count", "current_streak"]) {
@@ -939,8 +939,8 @@
     const validDeckIds = new Set(state.decks.map(deck => deck.deck_id));
     payload.sessions.forEach(session => {
       if (!session || !validDeckIds.has(session.deck_id)) throw new Error("不明な教材のセッションが含まれています。");
-      if (!Array.isArray(session.card_ids) || !session.card_ids.length || session.card_ids.length > 10000) throw new Error("不正なセッションカード一覧です。");
-      if (session.card_ids.some(cardId => !/^(?:a1|a2|b1|b2|c1|c2)-\d{3,4}$/.test(cardId))) throw new Error("セッションに不正なカードIDがあります。");
+      if (!Array.isArray(session.card_ids) || !session.card_ids.length || session.card_ids.length > 100000) throw new Error("不正なセッションカード一覧です。");
+      if (session.card_ids.some(cardId => !validCardId(cardId))) throw new Error("セッションに不正なカードIDがあります。");
       if (!Number.isInteger(session.last_session_position) || session.last_session_position < 0 || session.last_session_position >= session.card_ids.length) throw new Error("不正な再開位置です。");
       if (!session.ratings || typeof session.ratings !== "object" || Array.isArray(session.ratings)) throw new Error("不正な評価データです。");
       if (Object.values(session.ratings).some(value => !ratingLabels[value])) throw new Error("不正な評価値があります。");
@@ -950,7 +950,7 @@
 
   async function restoreBackup(file) {
     if (!file) return;
-    if (file.size > 5 * 1024 * 1024) throw new Error("バックアップファイルが大きすぎます（上限5MB）。");
+    if (file.size > 50 * 1024 * 1024) throw new Error("バックアップファイルが大きすぎます（上限50MB）。");
     let parsed;
     try {
       parsed = JSON.parse(await file.text());
@@ -1095,7 +1095,7 @@
       const coverage = document.querySelector("#flashcardsVocabularyStatus");
       if (coverage && payload.audit_summary) {
         const audit = payload.audit_summary;
-        coverage.textContent = `${Object.entries(payload.level_counts).map(([level, count]) => `${level} ${count.toLocaleString("ja-JP")}項目`).join(" ／ ")}。レベル別計${audit.cefr_card_count.toLocaleString("ja-JP")}項目、場面用語（未判定）${audit.practical_unclassified_count}項目。旧${audit.legacy_total.toLocaleString("ja-JP")}項目のうち${audit.legacy_withheld.toLocaleString("ja-JP")}項目は公開を保留し、新規${audit.new_items}項目を追加しました。`;
+        coverage.textContent = `${Object.entries(payload.level_counts).map(([level, count]) => `${level} ${count.toLocaleString("ja-JP")}項目`).join(" ／ ")}。計${audit.cefr_card_count.toLocaleString("ja-JP")}項目。${payload.quality_note_ja}`;
       }
       state.payload = payload;
       state.decks = payload.decks;

@@ -355,9 +355,9 @@ test("level deck inventory lists every word with sorting, filters, saved state, 
 test("C2 expression practice exposes contextual tasks and can start a bounded session", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/learn-german/flashcards/?deck=c2-nuance-repertoire", [decksPath, c2CardsPath]);
   await expect(page.locator("#flashcardsSetup")).toBeVisible();
-  await expect(page.locator("#sessionSetupTitle")).toContainText(String(c2Count));
-  await expect(page.locator("#setupDeckBadges")).toContainText(`${c2Count}枚`);
-  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${c2Count} / ${c2Count}項目`);
+  await expect(page.locator("#sessionSetupTitle")).toContainText(c2Count.toLocaleString("ja-JP"));
+  await expect(page.locator("#setupDeckBadges")).toContainText(`${c2Count.toLocaleString("ja-JP")}枚`);
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${c2Count.toLocaleString("ja-JP")} / ${c2Count.toLocaleString("ja-JP")}項目`);
   await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(Math.min(50, c2Count));
   await page.locator("#flashcardsStart").click();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
@@ -389,12 +389,45 @@ test("all-level deck exposes A1-C2 chips and filters the actual published invent
   const c2Chip = page.locator('[data-inventory-level="C2"]');
   await c2Chip.click();
   await expect(c2Chip).toHaveAttribute("aria-pressed", "true");
-  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${c2Count} / ${totalCount}項目`);
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${c2Count.toLocaleString("ja-JP")} / ${totalCount}項目`);
   await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(Math.min(50, c2Count));
   expect(await page.locator("#flashcardsInventoryBody tr").evaluateAll(rows => rows.every(row => row.textContent.includes("C2")))).toBe(true);
 
   await page.locator("#flashcardsInventoryReset").click();
   await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${totalCount} / ${totalCount}項目`);
+});
+
+test("expanded corpus retains machine translation attribution and bounds large tables", async ({ page }) => {
+  await openDataRoute(page, "/germany/ja/learn-german/flashcards/?deck=c2-nuance-repertoire", [decksPath, c2CardsPath]);
+  await page.locator("#flashcardsInventoryPageSize").selectOption("500");
+  await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(500);
+  await page.locator("#flashcardsInventoryLast").click();
+  await expect(page.locator("#flashcardsInventoryPageStatus")).toHaveText("16 / 16ページ");
+  await expect(page.locator('#flashcardsInventoryBody [data-inventory-save="expand-c2-07912"]')).toBeVisible();
+  await page.locator("#flashcardsInventorySearch").fill("この覚書は、イギリス");
+  await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(1);
+  await expect(page.locator("#flashcardsInventoryBody tr")).toContainText("機械翻訳・要校閲");
+  await expect(page.locator("#flashcardsInventoryBody tr")).toContainText("覚書；メモ");
+  await page.locator("#flashcardsInventoryStudyFiltered").click();
+  await page.locator("#flashcardFlipControl").click();
+  await page.locator("#flashcardsDetailsToggle").click();
+  await expect(page.locator("#flashcardExampleSource")).toContainText("WikiMatrix / Wikipedia contributors");
+  await expect(page.locator("#flashcardExampleSource")).toContainText("機械翻訳");
+  await expect(page.locator("#flashcardLexicalSource")).toContainText("JMdict ID");
+  await expect(page.locator("#flashcardLicense")).toContainText("CC BY-SA 4.0");
+});
+
+test("new vocabulary IDs survive progress backup and restoration", async ({ page }) => {
+  await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
+  await page.locator("#flashcardsInventorySearch").fill("一度も〜ない");
+  await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(1);
+  await page.locator('[data-inventory-save="expand-a1-00001"]').click();
+  const downloadPromise = page.waitForEvent("download");
+  await page.locator("#flashcardsBackup").click();
+  const backupPath = await (await downloadPromise).path();
+  await page.evaluate(() => window.JConnectFlashcardStorage.clearAll());
+  await page.locator("#flashcardsRestore").setInputFiles(backupPath);
+  await expect.poll(() => page.evaluate(async () => (await window.JConnectFlashcardStorage.getProgress("expand-a1-00001"))?.saved)).toBe(true);
 });
 
 test("incomplete progress resumes after reload and JSON backup, rejection, restore, and reset are safe", async ({ page }) => {

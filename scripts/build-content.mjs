@@ -411,7 +411,7 @@ ${indent(structuredData, 2)}
 </head>
 <body>
 ${renderHeader(type, item.url)}
-  <main class="container article-main">
+  <main id="main-content" tabindex="-1" class="container article-main">
     <div class="article-layout">
       <article class="article-content-shell">
         <header class="article-header">
@@ -1533,7 +1533,7 @@ function updateHub(type, items) {
   const hubPath = config.hubPath;
   const cards = sortForHub(items)
     .filter((item) => item.published && item.hub_visible)
-    .map((item) => renderHubCard(type, item))
+    .map((item) => renderHubCard(type, item).replace(/^[ \t]+/gm, '')) // Omit generated card indentation to preserve room for image alt text.
     .join('\n\n');
 
   const html = readText(hubPath);
@@ -1737,7 +1737,7 @@ ${indent(renderJaHreflang(canonicalHref), 2)}
 </head>
 <body>
 ${renderHeader('living', page.url)}
-  <main class="jc-shell jc-main jc-stack living-subpage" data-travel-hub="${escapeAttribute(config.slug)}">
+  <main id="main-content" tabindex="-1" class="jc-shell jc-main jc-stack living-subpage" data-travel-hub="${escapeAttribute(config.slug)}">
     <section class="jc-page-hero living-subpage-hero">
       <div class="jc-eyebrow"><span class="jc-dot"></span>観光</div>
       <h1>${escapeHtml(config.title)}</h1>

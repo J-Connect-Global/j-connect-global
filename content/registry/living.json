@@ -31,7 +31,7 @@
       "分娩室",
       "付き添い"
     ],
-    "updated_at": "2026-10-17",
+    "updated_at": "2026-10-20",
     "related_articles": [
       "pregnancy-birth-germany",
       "birth-procedures-germany",
@@ -61,8 +61,8 @@
         "url": "https://www.nhs.uk/pregnancy/labour-and-birth/signs-that-labour-has-begun/"
       }
     ],
-    "image": "/assets/img/living/pregnancy-birth-germany.webp",
-    "image_alt": "赤ちゃんの衣類と持ち物を用意して出産に備える妊婦"
+    "image": "/assets/img/living/birth-day-germany.webp",
+    "image_alt": "出産用バッグを持ち病院へ向かう妊婦と付き添い"
   },
   {
     "id": "L042",
@@ -97,7 +97,7 @@
       "引っ越し",
       "生活立ち上げ"
     ],
-    "updated_at": "2026-09-28",
+    "updated_at": "2026-10-20",
     "related_articles": [
       "germany-pfand-return-guide",
       "moving-checklist-germany",
@@ -130,7 +130,7 @@
       }
     ],
     "image": "/assets/img/living/germany-waste-sorting-guide.webp",
-    "image_alt": "包装用の黄色い容器とデュッセルドルフの資源容器の違い"
+    "image_alt": "青い資源容器へ段ボールを入れる住民"
   },
   {
     "id": "L043",
@@ -165,7 +165,7 @@
       "返金",
       "リサイクル"
     ],
-    "updated_at": "2026-09-28",
+    "updated_at": "2026-10-20",
     "related_articles": [
       "germany-waste-sorting-guide",
       "germany-first-30-days",
@@ -182,7 +182,7 @@
       }
     ],
     "image": "/assets/img/living/germany-pfand-return-guide.webp",
-    "image_alt": "使い捨て容器とリユース瓶で異なる預り金・返却先"
+    "image_alt": "スーパーの返却機に空のペットボトルを入れる様子"
   },
   {
     "id": "L041",
@@ -1909,7 +1909,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-10-17",
+    "updated_at": "2026-10-20",
     "last_verified": "2026-08-31",
     "tags": [
       "保育施設",
@@ -2067,7 +2067,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-10-17",
+    "updated_at": "2026-10-20",
     "last_verified": "2026-08-30",
     "tags": [
       "住民登録",
@@ -2174,7 +2174,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-10-17",
+    "updated_at": "2026-10-20",
     "last_verified": "2026-08-31",
     "tags": [
       "健康保険",
@@ -2231,7 +2231,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-29",
-    "updated_at": "2026-08-30",
+    "updated_at": "2026-10-20",
     "last_verified": "2026-08-30",
     "tags": [
       "ワールドカップ",
@@ -2366,7 +2366,7 @@
       "切符",
       "遅延"
     ],
-    "updated_at": "2026-08-30",
+    "updated_at": "2026-10-20",
     "related_articles": [
       "cologne-city-guide",
       "duesseldorf-city-guide",
@@ -2397,7 +2397,8 @@
       "last_reviewed_at": "2026-08-30",
       "next_review_due": "2026-11-30"
     },
-    "image_alt": "ドイツの駅で公式アプリを確認する日本人旅行者と地域列車"
+    "image_alt": "スーツケースを持ち長距離列車の横に立つ旅行者",
+    "image": "/assets/img/living/germany-train-travel-guide.webp"
   },
   {
     "id": "L037",
@@ -2875,7 +2876,7 @@
       "通販",
       "受け取り"
     ],
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-20",
     "related_articles": [
       "dhl-delivered-but-not-received",
       "germany-first-30-days",
@@ -2904,7 +2905,7 @@
       }
     ],
     "image": "/assets/img/living/dhl-packstation-guide.webp",
-    "image_alt": "Packstationを直接指定した場合はアプリ、不在後に移された場合は通知のコードを確認する"
+    "image_alt": "黄色い宅配ロッカーから荷物を受け取る人とスマートフォン"
   },
   {
     "id": "L048",
@@ -2939,7 +2940,7 @@
       "未配達",
       "複数個口"
     ],
-    "updated_at": "2026-10-19",
+    "updated_at": "2026-10-20",
     "related_articles": [
       "dhl-packstation-guide",
       "germany-first-30-days",
@@ -2968,6 +2969,6 @@
       }
     ],
     "image": "/assets/img/living/dhl-delivered-but-not-received.webp",
-    "image_alt": "荷物がないときは追跡詳細、受取場所、販売店とDHLへの連絡の順で確認する"
+    "image_alt": "荷物のない玄関とスマートフォンを確認する住民"
   }
 ]

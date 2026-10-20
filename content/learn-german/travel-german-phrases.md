@@ -9,9 +9,12 @@ tags: ["旅行", "駅", "ホテル", "観光案内所", "ドイツ語フレー�
 status: "published"
 published: true
 published_at: "2026-07-19"
-updated_at: "2026-07-19"
+updated_at: "2026-10-20"
 last_verified: "2026-07-19"
 canonical_url: "/germany/ja/learn-german/travel-german-phrases/"
+image: "/assets/img/learn-german/travel-german-phrases.webp"
+image_alt: "ホテルの受付で地図を指して道を尋ねる旅行者"
+image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。"
 ---
 
 # 観光・週末旅行で使えるドイツ語｜駅・ホテル・観光案内所のフレーズ

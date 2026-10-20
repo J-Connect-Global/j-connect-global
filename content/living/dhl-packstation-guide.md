@@ -7,14 +7,14 @@ summary: "DHL Packstationで荷物を受け取る方法を日本語で解説。�
 status: "published"
 published: true
 published_at: "2026-10-19"
-updated_at: "2026-10-19"
+updated_at: "2026-10-20"
 last_verified: "2026-10-19"
 next_review: "2027-01-19"
 canonical_url: "/germany/ja/living/dhl-packstation-guide/"
 tags: ["DHL", "Packstation", "宅配ロッカー", "荷物", "通販", "受け取り"]
 image: "/assets/img/living/dhl-packstation-guide.webp"
-image_alt: "Packstationを直接指定した場合はアプリ、不在後に移された場合は通知のコードを確認する"
-image_caption: "図解：J-Connect編集部。DHL公式案内に基づき2026年10月19日作成。公式アプリ画面の再現ではありません。"
+image_alt: "黄色い宅配ロッカーから荷物を受け取る人とスマートフォン"
+image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。"
 related_articles: ["dhl-delivered-but-not-received", "germany-first-30-days", "moving-checklist-germany"]
 official_sources:
   - title: "DHL：Packstationでの受取・保管期限"

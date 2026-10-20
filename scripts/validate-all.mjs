@@ -11,6 +11,7 @@ const steps = [
   ["Front-matter synchronization", "scripts/sync-content-frontmatter.mjs"],
   ["Editorial content quality", "scripts/validate-editorial-content.mjs"],
   ["Article photo credits", "scripts/validate-article-photo-credits.mjs"],
+  ["Article image sequence", "scripts/validate-article-images.mjs"],
   ["Content metadata policy", "scripts/test-content-metadata.mjs"],
   ["Learn German flashcard data", "scripts/test-learn-german-flashcards.mjs"],
   ["News fetcher contract", "scripts/test-news-fetcher.mjs"],

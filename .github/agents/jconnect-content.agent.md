@@ -26,3 +26,5 @@ You are the content implementation specialist for J-Connect Germany.
 10. Do not modify Apps Script, community or job submissions, workflows, secrets, or unrelated site code.
 11. Never push directly to `main`. Open a focused pull request.
 12. Run content generation and `scripts/validate-content.mjs` using the repository's documented commands. Include sources, validation results, affected URLs, and manual review points in the pull request.
+
+13. Follow `docs/article-images.md`: use a scene-led hero readable at 240px; keep dense diagrams in the body; do not repeat the hero inline, even in another format; distinguish unrelated articles; disclose AI images beside them; review the complete image sequence and mobile crop.

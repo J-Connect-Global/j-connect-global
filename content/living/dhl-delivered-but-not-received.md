@@ -7,14 +7,14 @@ summary: "DHL Paketで配達済みなのに荷物がない場合の確認順序�
 status: "published"
 published: true
 published_at: "2026-10-19"
-updated_at: "2026-10-19"
+updated_at: "2026-10-20"
 last_verified: "2026-10-19"
 next_review: "2027-01-19"
 canonical_url: "/germany/ja/living/dhl-delivered-but-not-received/"
 tags: ["DHL", "配達済み", "届かない", "通販", "未配達", "複数個口"]
 image: "/assets/img/living/dhl-delivered-but-not-received.webp"
-image_alt: "荷物がないときは追跡詳細、受取場所、販売店とDHLへの連絡の順で確認する"
-image_caption: "図解：J-Connect編集部。DHL公式案内を基に2026年10月19日作成。補償や返金を保証する図ではありません。"
+image_alt: "荷物のない玄関とスマートフォンを確認する住民"
+image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。"
 related_articles: ["dhl-packstation-guide", "germany-first-30-days", "moving-checklist-germany"]
 official_sources:
   - title: "DHL：配達済みだが受け取っていない場合・内容品の不足"

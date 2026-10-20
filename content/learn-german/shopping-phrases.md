@@ -7,14 +7,14 @@ summary: "ドイツのスーパー、パン屋、ドラッグストア、衣料�
 status: "published"
 published: true
 published_at: "2026-06-20"
-updated_at: "2026-10-19"
+updated_at: "2026-10-20"
 last_verified: "2026-08-01"
 tags: ["買い物", "スーパー", "レジ", "Pfand", "返品", "A1", "A2"]
 canonical_url: "/germany/ja/learn-german/shopping-phrases/"
 related_articles: ["telephone-phrases", "appointment-phrase", "pharmacy-prescription-phrases"]
 image: "/assets/img/learn-german/shopping-phrases.webp"
-image_alt: "店頭では商品とレシート、通販では注文番号と追跡番号を準備する学習用メモ"
-image_caption: "図解：J-Connect編集部作成。店頭と通販で伝える情報を整理した学習用メモです。"
+image_alt: "スーパーのレジでカード払いをする女性と買い物袋"
+image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。"
 ---
 
 # 買い物のドイツ語｜スーパー・返品・配送問い合わせのフレーズ

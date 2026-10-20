@@ -19,7 +19,7 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-19"
-updated_at: "2026-10-19"
+updated_at: "2026-10-20"
 last_verified: "2026-10-19"
 canonical_url: "/germany/ja/events/news/deutschlandticket-2027-price-consent/"
 official_url: "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
@@ -35,7 +35,7 @@ Deutschlandticketの月額は、2027年1月1日から66.80ユーロになりま�
 
 ## 何が変わる？
 
-![地域列車のホームでスマートフォンを確認する旅行者](/assets/images/living/german-regional-train-editorial-v1.webp "AI生成の編集イメージ。実在の駅、列車、乗客や契約画面ではありません。")
+![購入先、契約者のアカウント、通知の期限と回答結果を確認する図](/assets/images/events/deutschlandticket-contract-check.svg "図解：J-Connect編集部。本文のDB公式FAQに基づく。公式画面の再現ではありません。")
 
 | 項目 | 内容 |
 | --- | --- |

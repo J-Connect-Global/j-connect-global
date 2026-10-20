@@ -14,7 +14,7 @@ hero_image: "/assets/images/living/football-viewing-culture-editorial-v1.webp"
 status: "published"
 published: true
 published_at: "2026-06-29"
-updated_at: "2026-08-30"
+updated_at: "2026-10-20"
 last_verified: "2026-08-30"
 next_review: "2027-02-28"
 update_frequency: "大会終了後の記録記事"
@@ -43,7 +43,7 @@ tags: ["ワールドカップ", "サッカー", "観戦文化", "ドイツ生活
 
 これは全員が熱心なファンだからというより、サッカーが共通の時間を作りやすいからです。ルールを詳しく知らなくても、得点の瞬間、判定への驚き、試合後の感想には加われます。移民の多い都市では、ドイツ以外の代表を応援する人が同じ空間に集まり、街が持つ複数の帰属意識が見える場にもなります。
 
-![ドイツの地域のパブで国際試合を一緒に見る日本人と地元の友人](/assets/images/living/football-viewing-culture-editorial-v1.webp "AI生成の編集イメージ。実在の試合、店舗、観客ではありません。")
+![自宅のテレビでサッカーを観戦する大人の友人たち](/assets/images/living/football-home-viewing-editorial-v2.webp "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。")
 
 ## 2026年大会をドイツの人々はどう見たか
 

@@ -2970,5 +2970,128 @@
     ],
     "image": "/assets/img/living/dhl-delivered-but-not-received.webp",
     "image_alt": "荷物のない玄関とスマートフォンを確認する住民"
+  },
+  {
+    "id": "L049",
+    "slug": "winter-tires-germany-2026",
+    "title": "ドイツの冬タイヤ義務2026｜交換時期・雪マーク・オールシーズンタイヤ",
+    "category": "交通・暮らし",
+    "summary": "ドイツの冬タイヤは日付ではなく路面状況で義務が決まります。2026年のAlpineマーク、M+Sのみのタイヤ、オールシーズンタイヤ、溝の深さ、罰金、レンタカーを確認します。",
+    "url": "/germany/ja/living/winter-tires-germany-2026/",
+    "markdown_path": "/content/living/winter-tires-germany-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-10-20",
+    "updated_at": "2026-10-20",
+    "last_verified": "2026-10-20",
+    "home_visible": false,
+    "home_order": 6,
+    "hub_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/winter-tires-germany-2026/",
+    "disclaimer_type": "living",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI source verification; expert review pending",
+      "last_reviewed_at": "2026-10-20",
+      "next_review_due": "2027-10-01"
+    },
+    "tags": [
+      "冬タイヤ",
+      "ドイツ運転",
+      "オールシーズンタイヤ",
+      "交通安全",
+      "2026年"
+    ],
+    "related_articles": [
+      "germany-train-travel-guide",
+      "duesseldorf-family-trip",
+      "germany-first-30-days"
+    ],
+    "official_sources": [
+      {
+        "title": "ドイツ道路交通規則第2条3a項：冬季路面でのタイヤ要件",
+        "url": "https://www.gesetze-im-internet.de/stvo_2013/__2.html"
+      },
+      {
+        "title": "ドイツ車両登録規則第36条：冬タイヤ表示と最低溝深さ",
+        "url": "https://www.gesetze-im-internet.de/stvzo_2012/__36.html"
+      },
+      {
+        "title": "ADAC：冬タイヤ義務の解説（2026年10月8日更新）",
+        "url": "https://www.adac.de/rund-ums-fahrzeug/ausstattung-technik-zubehoer/reifen/sicherheit/winterreifenpflicht-deutschland/"
+      },
+      {
+        "title": "ADAC：オールシーズンタイヤの冬季利用",
+        "url": "https://www.adac.de/rund-ums-fahrzeug/ausstattung-technik-zubehoer/reifen/sicherheit/ganzjahresreifen-im-winter/"
+      }
+    ],
+    "image_url": "/assets/img/living/winter-tires-germany-2026.webp",
+    "image_alt": "雪の残る路面に接した車の冬用タイヤと深い溝",
+    "image_caption": "AI生成の編集イメージ。実在の人物・書類・場所を記録したものではありません。路面状況やタイヤの適合性を示すものではありません。表示・要件は本文で確認してください。",
+    "image_credit": "AI-generated editorial image / J-Connect"
+  },
+  {
+    "id": "L050",
+    "slug": "nebenkostenabrechnung-2025-deadline",
+    "title": "ドイツの2025年共益費精算｜2026年末の期限・追加請求・異議申立て",
+    "category": "住まい・契約",
+    "summary": "ドイツの2025年分の共益費・暖房費精算はいつ届く？暦年契約なら2026年12月31日が基本期限。追加請求、返金、証憑確認、異議申立ての手順を日本語で解説します。",
+    "url": "/germany/ja/living/nebenkostenabrechnung-2025-deadline/",
+    "markdown_path": "/content/living/nebenkostenabrechnung-2025-deadline.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-10-20",
+    "updated_at": "2026-10-20",
+    "last_verified": "2026-10-20",
+    "home_visible": false,
+    "home_order": 7,
+    "hub_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/nebenkostenabrechnung-2025-deadline/",
+    "disclaimer_type": "consumer_contract",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI source verification; expert review pending",
+      "last_reviewed_at": "2026-10-20",
+      "next_review_due": "2027-01-10"
+    },
+    "tags": [
+      "共益費",
+      "Nebenkosten",
+      "賃貸",
+      "暖房費",
+      "2025年",
+      "2026年末"
+    ],
+    "related_articles": [
+      "rent-apartment-germany",
+      "electricity-internet-contracts-germany",
+      "moving-checklist-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "ドイツ民法第556条：共益費の精算・期限・証憑閲覧",
+        "url": "https://www.gesetze-im-internet.de/bgb/__556.html"
+      },
+      {
+        "title": "ドイツ民法第556a条：共益費の按分基準",
+        "url": "https://www.gesetze-im-internet.de/bgb/__556a.html"
+      },
+      {
+        "title": "ドイツ消費者センター：高額な共益費・暖房費精算への対応",
+        "url": "https://www.verbraucherzentrale.de/wissen/energie/preise-tarife-anbieterwechsel/nachzahlungsschock-hilfe-bei-hoher-betriebs-und-heizkostenabrechnung-83065"
+      },
+      {
+        "title": "ドイツ消費者センター：暖房費精算の確認方法",
+        "url": "https://www.verbraucherzentrale.de/wissen/energie/heizen-und-warmwasser/heizkostenabrechnungen-pruefen-so-erkennen-sie-teure-fehler-29217"
+      }
+    ],
+    "image_url": "/assets/img/living/nebenkostenabrechnung-2025-deadline.webp",
+    "image_alt": "自宅で精算書と電卓を見比べて共益費を確認する借主",
+    "image_caption": "AI生成の編集イメージ。実在の人物・書類・場所を記録したものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect"
   }
 ]

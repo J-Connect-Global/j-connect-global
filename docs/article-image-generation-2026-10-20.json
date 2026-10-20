@@ -155,5 +155,27 @@
     "exported": true,
     "tool": "built-in image_gen",
     "created": "2026-10-20"
+  },
+  {
+    "slug": "winter-tires-germany-2026",
+    "section": "living",
+    "dest": "assets/img/living/winter-tires-germany-2026.webp",
+    "alt": "雪の残る路面に接した車の冬用タイヤと深い溝",
+    "prompt": "Use case: photorealistic-natural. Wide 16:9 editorial hero and 240px thumbnail for a Japanese-language guide to winter tires in Germany. Close three-quarter photograph of a car's winter tire with realistic deep winter tread on a lightly snow-dusted road, cool German winter morning, car body softly visible, wheel and tread dominant and central. Clear immediately recognizable winter-driving subject. No text overlay, no diagram, no logos, no invented certification or legible tire sidewall markings. Fictional illustrative image, not an actual weather report or product endorsement.",
+    "source_png": "exec-d0bfb970-f306-4a7a-a2ce-8f004cf79f99.png",
+    "tool": "built-in image_gen",
+    "created": "2026-10-20",
+    "caption": "AI生成の編集イメージ。実在の人物・書類・場所を記録したものではありません。路面状況やタイヤの適合性を示すものではありません。表示・要件は本文で確認してください。"
+  },
+  {
+    "slug": "nebenkostenabrechnung-2025-deadline",
+    "section": "living",
+    "dest": "assets/img/living/nebenkostenabrechnung-2025-deadline.webp",
+    "alt": "自宅で精算書と電卓を見比べて共益費を確認する借主",
+    "prompt": "Use case: photorealistic-natural. Wide 16:9 editorial hero and 240px thumbnail for a Japanese-language Germany rental utility bill guide. Japanese adult tenant at a simple apartment table carefully comparing two paper utility statements with a calculator, a radiator softly visible behind. Medium close view of hands, bills, calculator and thoughtful face, uncluttered warm daylight, strong recognizable household bill-checking scene. No legible document words, numbers, personal information, official form, logos, text overlay or watermark. One coherent fictional illustrative scene.",
+    "source_png": "exec-7ab9cae4-70f7-4181-9b90-a30ed277e16d.png",
+    "tool": "built-in image_gen",
+    "created": "2026-10-20",
+    "caption": "AI生成の編集イメージ。実在の人物・書類・場所を記録したものではありません。"
   }
 ]

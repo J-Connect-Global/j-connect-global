@@ -28,6 +28,7 @@ official_url: "https://germany.representation.ec.europa.eu/zeitumstellung_de"
 image: "/assets/img/events/germany-winter-time-2026.webp"
 image_alt: "秋の朝にアナログ時計を調整する手"
 image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。正確な切替時刻は本文の図で確認してください。"
+image_credit: "AI-generated editorial image / J-Connect"
 
 ---
 

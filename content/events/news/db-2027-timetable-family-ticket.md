@@ -28,6 +28,7 @@ official_url: "https://www.deutschebahn.com/de/presse/pressestart_zentrales_uebe
 image: "/assets/img/events/db-2027-timetable-family-ticket.webp"
 image_alt: "荷物を持ち長距離列車へ乗り込む家族"
 image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。2027年の使用車両を示すものではありません。"
+image_credit: "AI-generated editorial image / J-Connect"
 
 ---
 

@@ -102,9 +102,12 @@ function assertRepositorySnapshots(siteDir = "") {
   assert.equal(countItems(communityList, "community"), result.community.length, "Community initial HTML must contain every eligible public post");
   assert.equal(countItems(homeJobs, "jobs"), Math.min(result.jobs.length, 4), "Home Jobs must preserve its four-item cap");
   assert.equal(countItems(homeCommunity, "community"), Math.min(result.community.length, 5), "Home Community must preserve its five-item cap");
-  if (/https:\/\/drive\.google\.com\/thumbnail/.test(`${homeCommunityMini}${homeCommunity}`)) {
-    assert.match(homeCommunityMini, /[?&](?:amp;)?sz=w128(?:&|&amp;|")/, "Home mini thumbnails must request the bounded 128 px rendition");
-    assert.match(homeCommunity, /[?&](?:amp;)?sz=w480(?:&|&amp;|")/, "Home cards must request the bounded 480 px rendition");
+  // The newest posts decide which snapshot shows photos, so each size is
+  // checked only where that snapshot actually contains a Drive thumbnail.
+  const driveThumbnail = /https:\/\/drive\.google\.com\/thumbnail/;
+  if (driveThumbnail.test(`${homeCommunityMini}${homeCommunity}`)) {
+    if (driveThumbnail.test(homeCommunityMini)) assert.match(homeCommunityMini, /[?&](?:amp;)?sz=w128(?:&|&amp;|")/, "Home mini thumbnails must request the bounded 128 px rendition");
+    if (driveThumbnail.test(homeCommunity)) assert.match(homeCommunity, /[?&](?:amp;)?sz=w480(?:&|&amp;|")/, "Home cards must request the bounded 480 px rendition");
     assert.doesNotMatch(`${homeCommunityMini}${homeCommunity}`, /[?&](?:amp;)?sz=w1200(?:&|&amp;|")/, "Home snapshots must not request full-size Drive thumbnails");
   }
 

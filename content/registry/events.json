@@ -2784,5 +2784,79 @@
     "image_caption": "イラスト：J-Connect編集部。制度変更のテーマを表したもので、公式資料を再現していません。",
     "image_credit": "Illustration / J-Connect",
     "image_url": "/assets/img/events/germany-january-2027-changes.webp"
+  },
+  {
+    "slug": "europe-protests-mofa-october-2026",
+    "id": "N024",
+    "content_type": "news",
+    "category": "暮らし・安全",
+    "title": "欧州で広がる抗議活動、外務省「広域情報」をドイツ在住者目線で読む｜10月31日のデモと備え",
+    "summary": "外務省が2026年10月21日に出した広域情報「欧州での抗議活動を受けた注意喚起」をドイツ在住者向けに解説。フランスの抗議の背景、10月31日にNRWなど全国21都市で予定されるデモ、在留届・たびレジなど今日できる備えを整理します。",
+    "official_sources": [
+      {
+        "title": "外務省 海外安全ホームページ：欧州での抗議活動を受けた注意喚起（広域情報、2026年10月21日）",
+        "url": "https://www.anzen.mofa.go.jp/info/pcwideareaspecificinfo_2026C052.html"
+      },
+      {
+        "title": "外務省：在留届（ORRnet）",
+        "url": "https://www.ezairyu.mofa.go.jp/RRnet/index.html"
+      },
+      {
+        "title": "外務省：たびレジ",
+        "url": "https://www.ezairyu.mofa.go.jp/tabireg/index.html"
+      },
+      {
+        "title": "在デュッセルドルフ日本国総領事館",
+        "url": "https://www.dus.emb-japan.go.jp/itpr_ja/index.html"
+      },
+      {
+        "title": "連邦市民保護・災害救援庁：警報アプリNINA",
+        "url": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/warn-app-nina_node.html"
+      }
+    ],
+    "related_articles": [
+      "germany-warning-day-2026-results",
+      "germany-information-triage-guide",
+      "germany-inflation-august-2026"
+    ],
+    "city": "ドイツ全土",
+    "area": "ドイツ全土 / 欧州",
+    "location": "",
+    "event_date": "2026-10-31 ドイツ21都市でデモ予定",
+    "next_review": "2026-10-30",
+    "tags": [
+      "安全情報",
+      "外務省",
+      "デモ",
+      "フランス",
+      "NRW",
+      "在留届",
+      "たびレジ",
+      "ドイツ生活"
+    ],
+    "published": true,
+    "status": "published",
+    "source_type": "manual",
+    "published_at": "2026-10-21",
+    "updated_at": "2026-10-21",
+    "last_verified": "2026-10-21",
+    "canonical_url": "/germany/ja/events/news/europe-protests-mofa-october-2026/",
+    "official_url": "https://www.anzen.mofa.go.jp/info/pcwideareaspecificinfo_2026C052.html",
+    "url": "/germany/ja/events/news/europe-protests-mofa-october-2026/",
+    "markdown_path": "/content/events/news/europe-protests-mofa-october-2026.md",
+    "home_visible": false,
+    "home_order": 21,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-21",
+      "next_review_due": "2026-10-30"
+    },
+    "image": "/assets/img/events/europe-protests-mofa-october-2026.webp",
+    "image_alt": "プラカードを掲げる人々と、カメラに禁止マークが付いたスマートフォンのイラスト"
   }
 ]

@@ -21,7 +21,7 @@ canonical_url: "/germany/ja/events/news/germany-january-2027-changes/"
 official_url: ""
 image: "/assets/img/events/germany-january-2027-changes.webp"
 image_alt: "2027年1月のカレンダーと、ユーロ硬貨・乗車券・医療保険・子どもを表すアイコンのイラスト"
-image_caption: "イラスト：J-Connect編集部。制度変更のテーマを表したもので、公式資料を再現していません。"
+image_caption: "イラスト：J-Connect。制度変更のテーマを表したもので、公式資料を再現していません。"
 image_credit: "Illustration / J-Connect"
 related_articles: ["deutschlandticket-2027-price-consent", "db-2027-timetable-family-ticket", "germany-september-2026-changes"]
 official_sources:
@@ -37,7 +37,7 @@ official_sources:
 
 ## まず結論：決定済み／未確定の早見表
 
-![最低賃金・ミニジョブ・ドイツチケットは決定済み、社会保険の上限は同意待ち、児童手当と控除は政府案であることを示す図](/assets/images/events/january-2027-status-overview.svg "図解：J-Connect編集部。本文の参考情報に基づく（2026年10月21日時点）。")
+![最低賃金・ミニジョブ・ドイツチケットは決定済み、社会保険の上限は同意待ち、児童手当と控除は政府案であることを示す図](/assets/images/events/january-2027-status-overview.svg "図解：J-Connect。本文の参考情報に基づく（2026年10月21日時点）。")
 
 | 項目 | 2026年 | 2027年 | 状況（2026年10月21日時点） |
 | --- | --- | --- | --- |
@@ -88,7 +88,7 @@ official_sources:
 
 社会保険料は、給与のうち一定額（保険料算定上限、Beitragsbemessungsgrenze）までにしか掛かりません。この上限が2027年に引き上げられる予定で、上限付近以上の給与を受け取っている方は手取りが減ります。
 
-![公的医療・介護保険と年金・失業保険の保険料算定上限を2026年と2027年で比べた棒グラフ](/assets/images/events/social-insurance-ceiling-2027.svg "図解：J-Connect編集部。2027年の値は閣議決定済み・連邦参議院の同意待ち（2026年10月21日時点）。")
+![公的医療・介護保険と年金・失業保険の保険料算定上限を2026年と2027年で比べた棒グラフ](/assets/images/events/social-insurance-ceiling-2027.svg "図解：J-Connect。2027年の値は閣議決定済み・連邦参議院の同意待ち（2026年10月21日時点）。")
 
 | 項目 | 2026年 | 2027年（予定） |
 | --- | --- | --- |

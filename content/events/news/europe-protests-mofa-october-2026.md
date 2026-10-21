@@ -33,7 +33,7 @@ canonical_url: "/germany/ja/events/news/europe-protests-mofa-october-2026/"
 official_url: "https://www.anzen.mofa.go.jp/info/pcwideareaspecificinfo_2026C052.html"
 image: "/assets/img/events/europe-protests-mofa-october-2026.webp"
 image_alt: "プラカードを掲げる人々と、カメラに禁止マークが付いたスマートフォンのイラスト"
-image_caption: "イラスト：J-Connect編集部。注意喚起のテーマを表したもので、実際の抗議の現場を再現していません。"
+image_caption: "イラスト：J-Connect。注意喚起のテーマを表したもので、実際の抗議の現場を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---
 
@@ -51,7 +51,7 @@ image_credit: "Illustration / J-Connect"
 2. **行動の指針**：報道やSNSで最新情報を集める。抗議の現場には不用意に近づかず、遭遇したらすぐ離れる。人が多く集まる場所では、スマートフォン等での撮影は「厳に」行わない。
 3. **備え**：在留者は「在留届」、旅行者は「たびレジ」に必ず登録する。家族や職場に日程と連絡先を伝えておく。
 
-![外務省の注意喚起の3つのポイント「近づかない・撮らない・登録しておく」を示す図](/assets/images/events/europe-protests-mofa-three-points.svg "図解：J-Connect編集部。外務省の広域情報（2026年10月21日）に基づく。")
+![外務省の注意喚起の3つのポイント「近づかない・撮らない・登録しておく」を示す図](/assets/images/events/europe-protests-mofa-three-points.svg "図解：J-Connect。外務省の広域情報（2026年10月21日）に基づく。")
 
 公式情報とSNSの情報が食い違うときの見分け方は、「[ドイツ生活の情報疲れを減らす｜公式情報・経験談・AIの役割](/germany/ja/events/columns/germany-information-triage-guide/)」で解説しています。
 
@@ -67,7 +67,7 @@ image_credit: "Illustration / J-Connect"
 | 燃料・エネルギー | 9月15日ごろから | 軽油価格が1リットル2.37ユーロと過去最高水準に。漁業者や農家が港や燃料拠点を封鎖 |
 | 労働組合 | 10月初旬にCGTなど主要組合が合流 | 賃金・年金、物価、公務員給与の凍結を含む540億ユーロ規模の2027年予算案 |
 
-![高校生、燃料・エネルギー、労働組合の3つの抗議が合流し、10月17日の全国一斉デモにつながったことを示す図](/assets/images/events/france-protests-three-streams-2026.svg "図解：J-Connect編集部。本文の参考情報に基づく（2026年10月21日時点）。")
+![高校生、燃料・エネルギー、労働組合の3つの抗議が合流し、10月17日の全国一斉デモにつながったことを示す図](/assets/images/events/france-protests-three-streams-2026.svg "図解：J-Connect。本文の参考情報に基づく（2026年10月21日時点）。")
 
 ピークは10月17日（土）の全国一斉デモです。参加者は仏政府発表で約55万人（うちパリ11万人）、主催者推計で約80万人。パリ、マルセイユ、リヨンなどで放火や略奪が起き、リモージュでは市庁舎が火災で大きく損壊しました（[Al Jazeera](https://www.aljazeera.com/news/2026/10/18/why-have-frances-school-protests-become-a-wider-political-crisis)）。逮捕者数や警察官の負傷者数は報道によって大きく異なるため、ここでは挙げません。
 

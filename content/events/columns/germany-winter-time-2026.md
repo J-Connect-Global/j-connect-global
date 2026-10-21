@@ -56,7 +56,7 @@ image_credit: "AI-generated editorial image / J-Connect"
 
 ## 暗くなる時間が急に早く感じる
 
-![午前3時を午前2時へ戻し、日本との時差が8時間になる図](/assets/images/events/winter-time-2026-clock-change.svg "図解：J-Connect編集部。根拠：欧州委員会ドイツ代表部・PTB。2026年10月19日確認。")
+![午前3時を午前2時へ戻し、日本との時差が8時間になる図](/assets/images/events/winter-time-2026-clock-change.svg "図解：J-Connect。根拠：欧州委員会ドイツ代表部・PTB。2026年10月19日確認。")
 
 時計を戻した日から、夕方の暗さが一段早く来たように感じます。太陽の動きが一晩で変わるのではなく、社会の時計を標準時へ戻すためです。
 

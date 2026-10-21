@@ -3830,6 +3830,23 @@
   }
 }
 
+  .article-ai-notice{
+    margin:16px 0 0;
+    padding:10px 14px;
+    border:1px solid var(--jc-line);
+    border-radius:var(--jc-radius-md);
+    background:var(--jc-soft-2);
+    color:var(--article-muted, #4f5f70);
+    font-size:13px;
+    line-height:1.7;
+  }
+
+  .article-ai-notice a{
+    color:inherit;
+    text-decoration:underline;
+    text-underline-offset:2px;
+  }
+
   .article-disclaimer{
     margin-top:32px;
     padding:15px;

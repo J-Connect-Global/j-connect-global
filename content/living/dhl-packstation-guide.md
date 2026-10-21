@@ -45,7 +45,7 @@ DHLの宅配ロッカー（Packstation／パックステーション）は、自
 
 根拠：[DHLの受取案内](https://www.dhl.de/de/privatkunden/hilfe-kundenservice/packstation/empfangen.html)と[宛先・受取の説明](https://www.dhl.de/de/privatkunden/pakete-empfangen/an-einem-abholort-empfangen/packstation/empfangen-packstation.html)。
 
-![直接指定、不在後の移送、通販サイトの登録なしサービスで確認する通知を分けた図](/assets/images/living/seo/packstation-receipt-routes.svg "図解：J-Connect編集部。根拠：DHL公式の受取案内。2026年10月19日確認。")
+![直接指定、不在後の移送、通販サイトの登録なしサービスで確認する通知を分けた図](/assets/images/living/seo/packstation-receipt-routes.svg "図解：J-Connect。根拠：DHL公式の受取案内。2026年10月19日確認。")
 
 ## 通販の宛先として使うための登録
 
@@ -99,7 +99,7 @@ DHLの宅配ロッカー（Packstation／パックステーション）は、自
 
 暦日は土日も数えます。通常の保管期間の延長はできず、期限を過ぎると差出人へ返送されるため、**自分の通知に出ている受取期限を優先して**早めに取りに行きます。店舗での保管日数と混同しないでください。
 
-![通常の直接指定は7暦日、不在後に移された荷物は9暦日、いずれも通知の期限を確認する図](/assets/images/living/seo/packstation-storage-days.svg "図解：J-Connect編集部。根拠：DHL公式FAQの保管期間。2026年10月19日確認。通販サイトの特別な受取サービスは個別通知を確認。")
+![通常の直接指定は7暦日、不在後に移された荷物は9暦日、いずれも通知の期限を確認する図](/assets/images/living/seo/packstation-storage-days.svg "図解：J-Connect。根拠：DHL公式FAQの保管期間。2026年10月19日確認。通販サイトの特別な受取サービスは個別通知を確認。")
 
 ## コードが出ない・扉が開かないとき
 

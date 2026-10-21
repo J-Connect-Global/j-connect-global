@@ -422,6 +422,7 @@ ${renderHeader(type, item.url)}
             ${item.tags.map((tag) => `<span class="article-chip">${escapeHtml(tag)}</span>`).join('\n          ')}
 ${indent(renderArticleFreshness(item), 12)}${metaBlock}
           </div>
+${indent(renderArticleAiNotice(), 10)}
         </header>
 
 ${indent(primaryHeroMedia, 8)}
@@ -444,6 +445,12 @@ ${extraScripts ? `${indent(extraScripts, 2)}\n` : ''}  <script src="/assets/js/c
 </body>
 </html>
 `;
+}
+
+function renderArticleAiNotice() {
+  return `<p class="article-ai-notice">
+  この記事は生成AIで作成しており、公開前の事実確認は行っていません。内容はご自身の判断でご利用ください。誤りを見つけた場合は<a href="/germany/ja/contact/">お問い合わせ</a>からお知らせください。（<a href="/germany/ja/about/#ai-policy">生成AIの利用について</a>）
+</p>`;
 }
 
 function renderArticleBodyHtml(type, item, bodyHtml) {
@@ -1069,10 +1076,10 @@ function renderArticleMetaSpans(type, item) {
   if (type === 'events') {
     if (item.content_type === 'news') {
       if (item.area || item.city) rows.push(`<span>対象地域: ${escapeHtml(item.area || item.city)}</span>`);
-      if (item.source_type === 'manual') rows.push('<span>種別: J-Connect編集部の日本語解説</span>');
+      if (item.source_type === 'manual') rows.push('<span>種別: J-Connectの日本語解説</span>');
     } else if (item.content_type === 'column') {
       if (item.area || item.city) rows.push(`<span>対象地域: ${escapeHtml(item.area || item.city)}</span>`);
-      rows.push('<span>種別: J-Connect編集部コラム</span>');
+      rows.push('<span>種別: J-Connectコラム</span>');
     } else {
       if (item.event_date) rows.push(`<span>日程: ${escapeHtml(item.event_date)}</span>`);
       if (item.city) rows.push(`<span>地域: ${escapeHtml(item.city)}</span>`);
@@ -1237,13 +1244,13 @@ function renderDisclaimer(item) {
 
   if (item.disclaimer_type === 'news_explainer') {
     return `<div class="article-disclaimer">
-  本記事はJ-Connect編集部による日本語の生活解説です。速報や公式発表の代替ではありません。制度、交通、健康、安全に関わる判断は、自治体・交通機関・医療機関などの公式情報を確認してください。
+  本記事は生成AIで作成した日本語の生活解説です。速報や公式発表の代替ではありません。制度、交通、健康、安全に関わる判断は、自治体・交通機関・医療機関などの公式情報を確認してください。
 </div>`;
   }
 
   if (item.disclaimer_type === 'editorial_column') {
     return `<div class="article-disclaimer">
-  本記事はJ-Connect編集部の一般的なコラムです。感じ方や適切な行動は、本人の状況・健康・人間関係・行政手続きの内容によって異なります。重要な判断では公式窓口や専門家の個別情報も確認してください。
+  本記事は生成AIで作成した一般的なコラムです。感じ方や適切な行動は、本人の状況・健康・人間関係・行政手続きの内容によって異なります。重要な判断では公式窓口や専門家の個別情報も確認してください。
 </div>`;
   }
 

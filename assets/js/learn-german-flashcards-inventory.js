@@ -138,13 +138,11 @@
         if (query) {
           const searchable = normalizedSearchText([
             card.display_de,
-            card.lemma,
             card.japanese,
             card.example_de,
             card.example_ja,
             formatGrammar(card),
-            ...(card.collocations || []),
-            ...(card.related_terms || [])
+            card.usage_note_ja || ""
           ].join(" "));
           if (!searchable.includes(query)) return false;
         }
@@ -200,16 +198,7 @@
 
       const german = document.createElement("div");
       german.append(createElement("span", "flashcards-inventory-word", card.display_de));
-      const reference = card.level_assignment.evidence[0];
-      const basis = createElement(reference ? "a" : "span", "flashcards-inventory-subtext", card.level_assignment.label_ja);
-      basis.title = card.level_assignment.rationale_ja;
-      if (reference) {
-        basis.href = reference.url;
-        basis.target = "_blank";
-        basis.rel = "noopener noreferrer";
-        basis.textContent += `・${reference.pages.join("、")}頁`;
-      }
-      german.append(basis);
+      if (card.category_ja) german.append(createElement("span", "flashcards-inventory-subtext", card.category_ja));
       appendCell(row, german);
       appendCell(row, card.japanese);
 
@@ -308,23 +297,20 @@
     function downloadCsv() {
       if (!state.deck || !state.filteredEntries.length) return;
       const columns = [
-        "order", "saved", "level", "german", "lemma", "japanese", "example_de", "example_ja",
-        "part_of_speech", "grammar_info", "quality", "level_basis", "level_evidence", "status", "attempts", "last_reviewed_at", "next_review_at"
+        "order", "saved", "level", "category", "german", "japanese", "example_de", "example_ja",
+        "grammar_info", "usage_note", "status", "attempts", "last_reviewed_at", "next_review_at"
       ];
       const rows = state.filteredEntries.map(({ card, order, progress }) => [
         order,
         progress.saved ? "yes" : "no",
         card.primary_level,
+        card.category_ja || "",
         card.display_de,
-        card.lemma,
         card.japanese,
         card.example_de,
         card.example_ja,
-        card.part_of_speech,
         formatGrammar(card),
-        card.quality_tier,
-        card.level_assignment.label_ja,
-        card.level_assignment.evidence.map(item => item.url).join(" | "),
+        card.usage_note_ja || "",
         progress.status,
         progress.attempts || 0,
         progress.last_reviewed || "",

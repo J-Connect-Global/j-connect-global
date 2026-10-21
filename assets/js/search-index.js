@@ -149,7 +149,7 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "ドイツ語暗記カード A1・A2・B1・B2・C1・C2｜語彙と表現練習",
-    "description": "A1〜B1の資料掲載語と、B2〜C2の独自表現練習。分類根拠・収録数・独日例文を確認しながら、ブラウザで学べます。",
+    "description": "A1〜C2の語彙をレベル別・生活場面別に、独日例文つきでブラウザで学べるドイツ語暗記カードです。",
     "url": "/germany/ja/learn-german/flashcards/",
     "category": "ドイツ語・学び",
     "tags": [

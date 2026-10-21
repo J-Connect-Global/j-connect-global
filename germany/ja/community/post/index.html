@@ -3092,9 +3092,15 @@ async function loadStandaloneDetail(id) {
     let post = posts.find(function(item) { return String(item._id) === String(id); });
     if (!post) {
       // Posts are published on submission; a new post is not in the snapshot yet.
-      const live = await DATA_SOURCES.fetchLiveCommunityPosts(data);
-      posts = DATA_SOURCES.normalizePayload(live).map(normalizePost).filter(isPublicBoardPost);
-      post = posts.find(function(item) { return String(item._id) === String(id); });
+      // When the snapshot loaded, a slow or unreachable live list means "not found".
+      try {
+        const live = await DATA_SOURCES.fetchLiveCommunityPosts(data, 8000);
+        posts = DATA_SOURCES.normalizePayload(live).map(normalizePost).filter(isPublicBoardPost);
+        post = posts.find(function(item) { return String(item._id) === String(id); });
+      } catch (liveError) {
+        if (!data) throw liveError;
+        console.warn('Live community posts unavailable; using the published snapshot.', liveError);
+      }
     }
     if (!post) {
       renderNotFound();

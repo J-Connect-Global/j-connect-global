@@ -132,10 +132,26 @@ function sendZohoEmail_(message) {
 
   const status = response.getResponseCode();
   if (status < 200 || status >= 300) {
-    console.warn(`Zoho mail send failed (HTTP ${status}).`);
+    console.warn(`Zoho mail send failed (HTTP ${status}${zohoErrorSummary_(response)}).`);
     throw new Error('ZOHO_SEND_FAILED');
   }
   return { sent: true };
+}
+
+// Zoho's error code and description (for example a sending limit) explain a
+// delivery outage; the request, recipients and message are never logged.
+function zohoErrorSummary_(response) {
+  try {
+    const payload = JSON.parse(response.getContentText());
+    // Addresses are redacted before punctuation is stripped, so "a@b.com"
+    // cannot survive as "ab.com".
+    const safe = (value) => String(value || '').replace(/[^\s@<>"']*@[^\s@<>"']*/g, '[redacted]').replace(/[^\w .:\[\]-]/g, '').slice(0, 80);
+    const code = safe(payload && payload.data && (payload.data.errorCode || payload.data.moreInfo));
+    const description = safe(payload && payload.status && payload.status.description);
+    return [code, description].filter(Boolean).map((value) => ', ' + value).join('');
+  } catch (error) {
+    return '';
+  }
 }
 
 function isJConnectValidEmail_(value) {

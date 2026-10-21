@@ -50,7 +50,7 @@
 
 Script Propertiesの既存値は変更しません。旧Config.gsの重複ヘルパーを戻さないでください。`initializeCommunityMessaging` は既存の8つの非公開シートのヘッダー末尾に必要な列（2026-10-21は `Community Replies` と `Community Participants` の `access_revoked_at`）だけを追加し、番号と内部pepperを準備します。既存行の削除やテーブルの作り直しはしません。未確認・未承認の旧返信を自動で公開しません。
 
-**Deploy → Manage deployments → Edit → New version** で既存Webアプリを更新します。公開状態APIに `messaging_version:2026-10-21.2`、`inline_replies:true`、`instant_publish:true`、`persistent_links:true` があることを確認します。サイトと旧API、旧サイトと新APIのどちらの組み合わせでも会話は開けます（旧APIの間はリンクが1時間で失効します）。古いAPIの場合はフォームを停止し、旧メール転送へ戻しません。
+**Deploy → Manage deployments → Edit → New version** で既存Webアプリを更新します。公開状態APIに `messaging_version:2026-10-21.3`、`inline_replies:true`、`instant_publish:true`、`persistent_links:true` があることを確認します。サイトと旧API、旧サイトと新APIのどちらの組み合わせでも会話は開けます（旧APIの間はリンクが1時間で失効します）。古いAPIの場合はフォームを停止し、旧メール転送へ戻しません。
 
 非公開シートやScript Propertiesを公開JSONへ追加しません。静的同期は `CM_PUBLIC_DIRTY` を既存5分トリガーで処理し、通常の定期同期も維持します。公開詳細の既存noindex方針を維持し、会話ページには解析・シェアスクリプトを読み込みません。
 
@@ -59,6 +59,8 @@ Script Propertiesの既存値は変更しません。旧Config.gsの重複ヘル
 会話画面では送信中・成功・失敗を入力欄のすぐ下に表示し、通信中は本文の編集と再送を止めます。保存後の再読込だけに失敗した場合は「送信済み」を明示します。通信失敗後に同じ本文を再送すると同じrequest_idを使い、本文を変えた場合は新しいrequest_idを使います。
 
 参加者の説明は両側から読める文言にし、公開返信・非公開会話の日時は閲覧端末にかかわらずEurope/Berlin（夏時間対応）で表示します。会話の表示中は1分ごとに新着を確認し、非表示タブ・送信処理中・取得中は追加の取得を止めます。過去の履歴を読んでいる場合は位置を保ち、新着ボタンから末尾へ移動できます。取得の失敗でも履歴と入力中の本文を保持し、端末で閉じた後に遅い応答が返っても会話を再表示しません。
+
+通知メールの送信に失敗した場合は、次の5分トリガーから5分・10分・20分…と間隔を倍にして（最長1日）再送します。失敗時はZohoのエラーコードと説明だけをログに残し、宛先や本文は記録しません。投稿完了メールも管理用リンクの `&token=` を保つためテキスト形式で送ります。
 
 通知本文を文字列で組み立てたメールはZohoへ `mailFormat: plaintext` で送信します。実メールのテキスト版でURLの `&id=` が `&amp;id=` に変換される不具合を確認したためです。明示的な `html` / `htmlBody` があるメールだけ従来のHTML形式を使います。受信した生MIMEでも、リンクのクエリとフラグメントが元のまま届くことを確認します。
 

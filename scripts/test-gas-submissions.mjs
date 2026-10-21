@@ -315,6 +315,8 @@ function testCommunityAdminFailureIsolation() {
   assert(saved.status === "active" && saved.published_at, "Community submission was not published immediately.");
   assert(sandbox.listPosts_({}).items.some((post) => post.post_id === saved.post_id), "New community post is missing from the live list.");
   assert(emails.length === 1 && emails[0].to === "poster@example.com" && /掲載しました/.test(emails[0].subject) && !/確認後/.test(emails[0].body), "Submitter email does not confirm immediate publication.");
+  // Sent as plain text so the manage link's "&token=" is not escaped to "&amp;token=".
+  assert(!emails[0].html && !emails[0].htmlBody && /\/manage\/\?post=post_[\w-]+&token=[a-f0-9]{64}/.test(emails[0].body), "Submitter email is HTML or its manage link is not intact.");
   // Immediate publication is throttled per address instead of reviewed.
   for (let i = 0; i < 4; i += 1) assert(sandbox.createPost_({ category1: "質問", category2: "生活", title: "連投" + i, body: "本文", contact_email_private: "poster@example.com", website: "" }).ok, "Normal repeated posting rejected.");
   assert(!sandbox.createPost_({ category1: "質問", category2: "生活", title: "連投超過", body: "本文", contact_email_private: "poster@example.com", website: "" }).ok, "Post flood was not throttled.");

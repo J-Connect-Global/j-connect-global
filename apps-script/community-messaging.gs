@@ -5,7 +5,7 @@
  * server-only pepper; nothing that can reproduce it is stored in the workbook.
  * Links do not expire with time. Revoking access rotates the derivation input.
  */
-const CM_VERSION = '2026-10-21.2';
+const CM_VERSION = '2026-10-21.3';
 const CM_PATH = '/germany/ja/community/conversation/';
 const CM_HOUR = 60 * 60 * 1000;
 const CM_TABLES = {
@@ -598,7 +598,9 @@ function cmDeliver_(jobs) {
         notification.status = 'sent';
       } catch (error) { delivered = false; console.warn('Community notification delivery will be retried.'); }
       notification.attempts = String(Number(notification.attempts || 0) + 1);
-      notification.next_attempt_at = berlinTimestamp_(new Date(Date.now() + Math.min(24, Math.pow(2, Number(notification.attempts))) * CM_HOUR));
+      // Retry a transient failure on the next five-minute run, then back off
+      // (5, 10, 20, 40 minutes ...) up to once a day.
+      notification.next_attempt_at = berlinTimestamp_(new Date(Date.now() + Math.min(24 * CM_HOUR, 5 * 60 * 1000 * Math.pow(2, Number(notification.attempts) - 1))));
       cmSave_('notifications', notification);
     });
   } finally { if (lock.hasLock()) lock.releaseLock(); }

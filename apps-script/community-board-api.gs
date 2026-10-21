@@ -1762,23 +1762,12 @@ function sendCreateConfirmationEmail_(params, info) {
   if (!isJConnectValidEmail_(to)) return { sent: false, error: 'INVALID_RECIPIENT' };
   try {
     const title = info.title || 'J-Connect Global 掲示板投稿';
-    const safeTitle = escapeHtmlForEmail_(title);
-    const safeManageUrl = escapeHtmlForEmail_(info.manageUrl);
-    const safePublicPostUrl = escapeHtmlForEmail_(info.publicPostUrl);
-    const htmlBody = [
-      '<p>J-Connect Global 掲示板に投稿を掲載しました。</p>',
-      `<p><strong>投稿タイトル:</strong><br>${safeTitle}</p>`,
-      '<p><strong>管理用リンク:</strong><br>下記URLから、投稿内容の編集、募集停止、再募集、非公開化ができます。<br>このリンクは投稿管理専用です。第三者には共有しないでください。</p>',
-      `<p><a href="${safeManageUrl}">${safeManageUrl}</a></p>`,
-      '<p><strong>公開投稿リンク:</strong><br>下記ページで投稿内容を閲覧できます。</p>',
-      `<p><a href="${safePublicPostUrl}">${safePublicPostUrl}</a></p>`,
-      '<p>J-Connect Global がログイン情報、銀行情報、公的ID番号を求めることはありません。</p>'
-    ].join('');
+    // Plain text only: Zoho's generated text part of an HTML mail turns the
+    // manage link's "&token=" into "&amp;token=", breaking it in text clients.
     sendZohoEmail_({
       to,
       subject: `【J-Connect Global】投稿を掲載しました: ${title}`,
       name: 'J-Connect Global',
-      htmlBody,
       body: `J-Connect Global 掲示板に投稿を掲載しました。\n\n投稿タイトル:\n${title}\n\n管理用リンク:\n下記URLから、投稿内容の編集、募集停止、再募集、非公開化ができます。\nこのリンクは投稿管理専用です。第三者には共有しないでください。\n\n${info.manageUrl}\n\n公開投稿リンク:\n下記ページで投稿内容を閲覧できます。\n\n${info.publicPostUrl}\n\nJ-Connect Global がログイン情報、銀行情報、公的ID番号を求めることはありません。`
     });
     return { sent: true };

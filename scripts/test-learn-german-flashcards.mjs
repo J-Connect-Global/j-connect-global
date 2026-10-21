@@ -3,141 +3,126 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
+
+// 暗記カードの公開データが、正本スプレッドシートのスナップショット（vocabulary-sheet.json）と
+// 1件単位で一致すること、Web 表示列（A〜I列）以外を含まないことを確認する。
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dataDir = path.join(root, 'assets/data/learn-german/flashcards');
 const sourceDir = path.join(root, 'content/learn-german/flashcards');
 const read = (dir, name) => JSON.parse(fs.readFileSync(path.join(dir, name), 'utf8'));
-const levels = ['A1','A2','B1','B2','C1','C2'];
+const levels = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+const sheet = read(sourceDir, 'vocabulary-sheet.json');
+const scenes = read(sourceDir, 'scene-decks.json');
 const decks = read(dataDir, 'decks.json');
-const legacy = read(sourceDir, 'legacy-card-index.json');
-const evidence = read(sourceDir, 'level-evidence.json');
-const audit = read(dataDir, 'vocabulary-audit.json');
-const legacyMap = new Map(legacy.entries.map(row => [row[0], row]));
+
+assert.deepEqual(sheet.columns, ['card_id', 'level', 'category', 'display_de', 'japanese', 'example_de', 'example_ja', 'grammar', 'usage_note']);
+assert.equal(sheet.rows.length, sheet.total);
+const sheetById = new Map(sheet.rows.map(row => [row[0], Object.fromEntries(sheet.columns.map((key, index) => [key, row[index]]))]));
+assert.equal(sheetById.size, sheet.rows.length, 'unique sheet IDs');
+
 const counts = {};
 const cards = [];
-for (const level of [...levels, null]) {
-  const payload = read(dataDir, `cards-${level?.toLowerCase() || 'practical'}.json`);
-  assert.equal(payload.schema_version, 2);
+for (const level of levels) {
+  const payload = read(dataDir, `cards-${level.toLowerCase()}.json`);
+  assert.equal(payload.schema_version, 3);
   assert.equal(payload.level, level);
   assert.equal(payload.level_card_count, payload.cards.length);
-  if (level) counts[level] = payload.cards.length;
   for (const card of payload.cards) assert.equal(card.primary_level, level, `${card.card_id}: file placement`);
+  counts[level] = payload.cards.length;
   cards.push(...payload.cards);
 }
+for (const obsolete of ['cards-practical.json', 'vocabulary-audit.csv', 'vocabulary-audit.json']) {
+  assert(!fs.existsSync(path.join(dataDir, obsolete)), `${obsolete} must not be published`);
+}
+
+// 件数：レベル別にシートと1件単位で一致
+assert.deepEqual(counts, sheet.level_counts, 'level counts match the sheet');
+assert.deepEqual(decks.level_counts, sheet.level_counts);
+assert.equal(cards.length, sheet.total);
+assert.equal(decks.total_card_count, sheet.total);
+
+// 内容：Web 表示列だけを、シートのとおりに出す
+const unitTypes = { 単語: 'word', 熟語: 'phrase', その他: 'other' };
+const allowedKeys = new Set(['card_id', 'primary_level', 'unit_type', 'category_ja', 'part_of_speech', 'display_de', 'japanese', 'example_de', 'example_ja', 'grammar_ja', 'usage_note_ja', 'scene_tags']);
+const sourceWording = /FreeDict|JMdict|WikiMatrix|Wiktionary|Tatoeba|Goethe|CC BY|和訳:|Google Sheets/;
 const cardMap = new Map(cards.map(card => [card.card_id, card]));
-assert.equal(cardMap.size, cards.length, 'unique IDs');
-assert.deepEqual(decks.level_counts, counts, 'counts reflect published items, never quotas');
-assert.equal(decks.total_card_count, cards.length);
-assert.equal(decks.cefr_card_count, cards.filter(card => card.primary_level).length);
-assert.equal(legacyMap.size, 4000, 'immutable pre-repair baseline');
-assert.deepEqual(Object.keys(evidence.assignments).sort(), [...legacyMap.keys()].sort(), 'every old item audited');
-const docs = new Map(evidence.documents.map(doc => [doc.source_id, doc]));
-for (const doc of docs.values()) {
-  assert.match(doc.sha256, /^[a-f0-9]{64}$/);
-  assert.equal(new URL(doc.url).hostname, 'www.goethe.de');
-}
-const editorialAliases = new Map([
-  ['b1-004', 'etwas in Anspruch nehmen'], ['b2-003', 'unter der Voraussetzung, dass'],
-  ['b2-004', 'etwas in Betracht ziehen'], ['b2-049', 'einen Vorschlag unterbreiten']
-]);
+assert.equal(cardMap.size, cards.length, 'unique card IDs');
 for (const card of cards) {
-  assert.match(card.card_id, /^(?:a1|a2|b1|b2|c1|c2)-\d{3,4}$/);
-  for (const field of ['lemma','display_de','japanese','example_de','example_ja','learning_note','verification_status']) assert(card[field], `${card.card_id}: ${field}`);
-  assert(/[ぁ-んァ-ン一-龯]/.test(card.japanese));
-  assert(/[ぁ-んァ-ン一-龯]/.test(card.example_ja));
-  assert(!/[ぁ-んァ-ン一-龯]/.test(card.example_de));
-  assert.equal(card.verified_at, null, 'no invented expert review date');
-  assert.notEqual(card.quality_tier, 'editorial-reviewed');
-  const old = legacyMap.get(card.card_id);
-  if (old) assert.equal(card.lemma, editorialAliases.get(card.card_id) || old[1], 'old ID cannot be assigned to another word');
-  assert(card.level_assignment?.label_ja && card.level_assignment.rationale_ja);
-  assert.notEqual(card.level_basis, 'j-connect-frequency-model');
-  if (['A1','A2','B1'].includes(card.primary_level)) {
-    const decision = evidence.assignments[card.card_id];
-    assert.equal(decision.status, 'exam-list-attestation');
-    assert.equal(decision.matches[0].level, card.primary_level, 'earliest attested list');
-    assert.equal(card.level_basis, 'exam-list-attestation');
-    assert(card.level_assignment.evidence.length);
-    for (const reference of card.level_assignment.evidence) {
-      const doc = docs.get(reference.source_id);
-      assert(doc);
-      assert(reference.pages.every(page => Number.isInteger(page) && page > 0 && page <= doc.pages));
-      assert(reference.url.startsWith(doc.url + '#page='));
-      assert(decision.matches.some(match => match.source_id === reference.source_id && match.matched_lemma === reference.matched_lemma));
-    }
-  } else if (card.primary_level) {
-    assert.equal(card.level_basis, 'cefr-descriptor-editorial-target');
-    assert.equal(card.unit_type, 'collocation');
-    assert(card.practice_prompt_ja && card.task_type, 'advanced work must have a contextual task');
-    assert.match(card.level_assignment.rationale_ja, /認定/);
-    assert.equal(card.level_assignment.evidence[0].source_id, 'cefr-companion-2020');
-    assert(!evidence.assignments[card.card_id]?.level, 'cannot promote an attested beginner item');
-    if (card.primary_level === 'C2') assert.equal(card.task_type, 'register-and-connotation');
-  } else {
-    assert.equal(card.level_basis, 'unclassified-practical');
-    assert.deepEqual(card.level_tags, []);
-    assert.deepEqual(card.level_assignment.evidence, []);
+  const row = sheetById.get(card.card_id);
+  assert(row, `${card.card_id}: exists in the sheet`);
+  for (const key of Object.keys(card)) assert(allowedKeys.has(key), `${card.card_id}: unexpected field ${key}`);
+  assert.equal(card.primary_level, row.level);
+  assert.equal(card.category_ja, row.category);
+  assert.equal(card.unit_type, unitTypes[row.category]);
+  assert.equal(card.display_de, row.display_de);
+  assert.equal(card.japanese, row.japanese);
+  assert.equal(card.example_de, row.example_de);
+  assert.equal(card.example_ja, row.example_ja);
+  assert.equal(card.grammar_ja, row.grammar);
+  assert.equal(card.usage_note_ja || '', row.usage_note);
+  for (const field of ['display_de', 'japanese', 'example_de', 'example_ja', 'grammar_ja', 'part_of_speech']) assert(card[field], `${card.card_id}: ${field}`);
+  assert(/[ぁ-んァ-ン一-龯]/.test(card.japanese), `${card.card_id}: Japanese meaning`);
+  assert(/[ぁ-んァ-ン一-龯]/.test(card.example_ja), `${card.card_id}: Japanese example`);
+  for (const field of ['japanese', 'grammar_ja', 'usage_note_ja']) {
+    if (card[field]) assert(!sourceWording.test(card[field]), `${card.card_id}: ${field} must not show source or translation notes`);
   }
-  if (card.example_source.source_id === 'tatoeba') {
-    assert(card.example_source.sentence_id && card.example_source.translation_id);
-    assert.equal(card.example_source.license, 'CC BY 2.0 FR');
-    assert(card.source_refs.includes('tatoeba'));
-  } else assert.equal(card.example_source.source_id, 'j-connect-original');
+  if (card.scene_tags) {
+    assert.deepEqual(card.scene_tags, scenes.scene_tags[card.card_id]);
+    for (const scene of card.scene_tags) assert(scenes.scene_labels[scene], `${card.card_id}: known scene ${scene}`);
+  }
 }
-// Explicit sense corrections must not regress to a case-insensitive homograph match.
-for (const [lemma, text] of [['abfahren','Der Bus fährt gleich ab.'], ['vierundzwanzig','Der Tag hat vierundzwanzig Stunden.'], ['Weg','Der Weg zum Bahnhof'], ['Schloss','Das alte Schloss'], ['Stimme','deine Stimme'], ['Fliege','Eine Fliege'], ['braun','Schuhe sind braun'], ['essen','Wir essen']]) {
-  const card = cards.find(item => item.lemma === lemma);
-  assert(card?.example_de.includes(text), `${lemma}: correct part of speech and sense`);
-  assert.equal(card.example_source.source_id, 'j-connect-original');
+
+// 学習進捗：これまで公開していたIDは、残っているか、除外記録で統合済みのどちらか
+const excluded = new Map(sheet.excluded_ids);
+for (const id of scenes.previously_published_ids) {
+  if (cardMap.has(id)) continue;
+  assert(excluded.has(id), `${id}: previously published card disappeared without an exclusion record`);
+  const mergedInto = excluded.get(id);
+  if (mergedInto) assert(cardMap.has(mergedInto), `${id}: merged target ${mergedInto} exists`);
 }
-// Independent concrete failures reported in the old upper-level material.
-for (const [lemma, level, page] of [
-  ['Abend','A1',7], ['abfahren','A1',9], ['Briefmarke','A1',12], ['Kugelschreiber','A1',19],
-  ['Quittung','B1',72], ['vierundzwanzig','A1',7], ['sich beeilen','A2',10]
-]) {
-  const matches = cards.filter(card => card.lemma === lemma);
-  assert.equal(matches.length, 1, `${lemma}: one canonical item`);
-  assert.equal(matches[0].primary_level, level, `${lemma}: reference placement`);
-  assert(matches[0].level_assignment.evidence[0].pages.includes(page), `${lemma}: physical PDF page`);
-}
-for (const lemma of ['Henry','WikiLeaks']) assert(!cards.some(card => card.lemma === lemma), `${lemma}: excluded proper name`);
-for (const [id, decision] of Object.entries(evidence.assignments)) {
-  if (decision.status.startsWith('withheld-') || decision.status === 'duplicate') assert(!cardMap.has(id), `${id}: withheld cannot leak into materials`);
-}
-assert.equal(audit.rows.length, legacy.entries.length + cards.filter(card => !legacyMap.has(card.card_id)).length);
-assert.equal(new Set(audit.rows.map(row => row.card_id)).size, audit.rows.length);
-for (const row of audit.rows) {
-  const old = legacyMap.get(row.card_id);
-  assert.equal(row.previous_level, old?.[2] || '');
-  assert.equal(row.current_level, cardMap.get(row.card_id)?.primary_level || '');
-}
-assert.equal(audit.summary.legacy_withheld, legacy.entries.filter(([id]) => !cardMap.has(id)).length);
-assert.deepEqual(audit.summary, decks.audit_summary);
-assert.equal(audit.summary.legacy_total, audit.summary.legacy_published + audit.summary.legacy_withheld);
-assert.equal(cards.length, audit.summary.legacy_published + audit.summary.new_items);
-assert.equal(decks.decks.length, 18, 'existing deck URLs retained');
+for (const [id] of excluded) assert(!cardMap.has(id), `${id}: excluded item must not be published`);
+
+// 教材：既存の教材URLを維持し、件数と目安時間を再計算する
+const expectedDeckIds = [
+  'all-levels-4000', 'a1-life-basics', 'a2-daily-independence', 'b1-explain-and-confirm', 'b2-negotiate-and-document',
+  'c1-broad-repertoire', 'c2-nuance-repertoire', 'a1-practical-50', 'a2-practical-50', 'b1-practical-50', 'b2-practical-50',
+  'scene-daily', 'scene-shopping', 'scene-administration', 'scene-medical', 'scene-housing', 'scene-kita-school', 'scene-work'
+];
+assert.deepEqual(decks.decks.map(deck => deck.deck_id), expectedDeckIds, 'existing deck URLs retained');
+const deckById = new Map(decks.decks.map(deck => [deck.deck_id, deck]));
 for (const deck of decks.decks) {
-  assert.equal(deck.card_count, deck.card_ids.length);
-  assert.equal(new Set(deck.card_ids).size, deck.card_ids.length);
-  for (const id of deck.card_ids) {
+  const ids = deck.card_ids || deck.card_ids_from_decks.flatMap(deckId => deckById.get(deckId).card_ids);
+  assert.equal(deck.card_count, ids.length, `${deck.deck_id}: card_count`);
+  assert.equal(new Set(ids).size, ids.length, `${deck.deck_id}: unique IDs`);
+  assert.equal(deck.estimated_minutes, Math.ceil(ids.length * 0.5), `${deck.deck_id}: 0.5 minutes per card`);
+  assert(!/Goethe|CEFR未判定|資料掲載/.test(deck.title_ja + deck.description_ja), `${deck.deck_id}: description reflects J-Connect editing`);
+  for (const id of ids) {
     const card = cardMap.get(id);
     assert(card, `${deck.deck_id}: known item ${id}`);
-    const file = `cards-${card.primary_level?.toLowerCase() || 'practical'}.json`;
-    assert(deck.card_files.includes(file), `${id}: loading follows new placement, not old ID prefix`);
+    assert(deck.card_files.includes(`cards-${card.primary_level.toLowerCase()}.json`), `${id}: loading follows level placement`);
     if (deck.deck_kind === 'cefr-level') assert.equal(card.primary_level, deck.target_level);
-    if (deck.deck_kind === 'cefr-all') assert(card.primary_level, 'unclassified scene words excluded');
   }
 }
-for (const level of levels) assert.equal(decks.decks.find(deck => deck.deck_kind === 'cefr-level' && deck.target_level === level).card_count, counts[level]);
+for (const level of levels) assert.equal(decks.decks.find(deck => deck.deck_kind === 'cefr-level' && deck.target_level === level).card_count, sheet.level_counts[level]);
+assert.equal(deckById.get('all-levels-4000').card_count, sheet.total);
+
+// ページ：古い説明を残さず、帰属表示をまとめて載せる
 const html = fs.readFileSync(path.join(root, 'germany/ja/learn-german/flashcards/index.html'), 'utf8');
-for (const id of ['flashcardPractice','flashcardPracticePrompt','flashcardLevelBasis','flashcardBasisSummary','flashcardsSources','flashcardsVocabularyStatus','flashcardsBackup','flashcardsRestore']) assert(html.includes(`id="${id}"`));
-for (const claim of ['下位レベルの語彙は含みません','レベル別4,000語','全4,000枚に','3,797枚']) assert(!html.includes(claim), `remove unsupported claim: ${claim}`);
-// Regeneration must preserve the complete published corpus and audit, byte for byte.
-const generatedFiles = fs.readdirSync(dataDir).filter(name => /^(cards-.*\.json|decks\.json|vocabulary-audit\.(json|csv))$/.test(name));
+for (const id of ['flashcardBasisSummary', 'flashcardPartOfSpeech', 'flashcardGrammar', 'flashcardUsageNote', 'flashcardsSources', 'flashcardsVocabularyStatus', 'flashcardsBackup', 'flashcardsRestore']) assert(html.includes(`id="${id}"`), `page keeps #${id}`);
+for (const claim of ['vocabulary-audit', '分類根拠', 'Goetheの掲載資料', 'CEFR未判定', '下位レベルの語彙は含みません', 'レベル別4,000語']) assert(!html.includes(claim), `remove outdated claim: ${claim}`);
+const credits = html.slice(html.indexOf('id="flashcardsSources"'));
+for (const source of decks.sources) {
+  assert(credits.includes(source.url), `credits link ${source.source_id}`);
+  assert(credits.includes(source.license), `credits license ${source.source_id}`);
+}
+const hub = fs.readFileSync(path.join(root, 'germany/ja/learn-german/index.html'), 'utf8');
+assert(!hub.includes('vocabulary-audit'), 'hub no longer links the retired audit CSV');
+
+// 生成の再現性
+const generatedFiles = fs.readdirSync(dataDir).filter(name => /^(cards-.*\.json|decks\.json)$/.test(name));
 const before = new Map(generatedFiles.map(name => [name, fs.readFileSync(path.join(dataDir, name))]));
 const result = spawnSync(process.execPath, ['scripts/generate-learn-german-flashcards.mjs'], { cwd: root, encoding: 'utf8' });
 assert.equal(result.status, 0, result.stderr);
 for (const [name, buffer] of before) assert.deepEqual(fs.readFileSync(path.join(dataDir, name)), buffer, `${name}: reproducible generation`);
-const extractionTests = spawnSync('python3', ['scripts/test-german-vocabulary-audit.py'], { cwd: root, encoding: 'utf8' });
-assert.equal(extractionTests.status, 0, extractionTests.stderr);
-console.log(`Vocabulary evidence contracts passed: ${cards.length} published items; ${audit.summary.legacy_withheld} legacy items withheld, all ${legacy.entries.length} accounted for.`);
+
+console.log(`Flashcard data matches the vocabulary sheet: ${cards.length} cards (${levels.map(level => `${level} ${counts[level]}`).join(', ')}); ${decks.decks.length} decks.`);

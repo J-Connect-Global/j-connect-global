@@ -119,7 +119,7 @@
     article.append(createElement("p", "", deck.description_ja));
 
     const scenes = createElement("div", "learn-deck-card__head");
-    const sceneLabels = deck.deck_kind === "cefr-level" ? [["A1", "A2", "B1"].includes(deck.target_level) ? "資料掲載語・学習目安" : "独自の表現練習"] : [...deck.scene_labels];
+    const sceneLabels = deck.deck_kind === "cefr-level" ? ["J-Connect独自配置"] : [...deck.scene_labels];
     if (deck.has_unclassified) sceneLabels.push("CEFR未判定を含む");
     sceneLabels.forEach(label => scenes.append(createElement("span", "learn-deck-card__scene", label)));
     article.append(scenes);
@@ -254,12 +254,18 @@
       ]);
       if (!response.ok) throw new Error(`教材データの取得に失敗しました (${response.status})`);
       const payload = await response.json();
-      if (![1, 2].includes(payload.schema_version) || !Array.isArray(payload.decks)) throw new Error("教材データの形式が正しくありません。");
+      if (![1, 2, 3].includes(payload.schema_version) || !Array.isArray(payload.decks)) throw new Error("教材データの形式が正しくありません。");
+      const decksById = new Map(payload.decks.map(deck => [deck.deck_id, deck]));
+      payload.decks.forEach(deck => {
+        if (!Array.isArray(deck.card_ids) && Array.isArray(deck.card_ids_from_decks)) {
+          deck.card_ids = deck.card_ids_from_decks.flatMap(deckId => decksById.get(deckId)?.card_ids || []);
+        }
+      });
       decks = payload.decks;
       const coverage = document.querySelector("#originalVocabularyStatus");
-      if (coverage && payload.audit_summary) {
-        const audit = payload.audit_summary;
-        coverage.textContent = `${Object.entries(payload.level_counts).map(([level, count]) => `${level} ${count.toLocaleString("ja-JP")}項目`).join(" ／ ")}。旧${audit.legacy_total.toLocaleString("ja-JP")}項目のうち${audit.legacy_withheld.toLocaleString("ja-JP")}項目を公開保留。詳しくは変更一覧で確認できます。`;
+      if (coverage && payload.level_counts) {
+        const total = payload.total_card_count || Object.values(payload.level_counts).reduce((sum, value) => sum + value, 0);
+        coverage.textContent = `${Object.entries(payload.level_counts).map(([level, count]) => `${level} ${count.toLocaleString("ja-JP")}項目`).join(" ／ ")}。合計${total.toLocaleString("ja-JP")}項目。`;
       }
       progressByCardId = new Map(progress.map(entry => [entry.card_id, entry]));
       render();

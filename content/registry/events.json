@@ -2724,5 +2724,65 @@
     "image_caption": "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。正確な切替時刻は本文の図で確認してください。",
     "image_credit": "AI-generated editorial image / J-Connect",
     "image_url": "/assets/img/events/germany-winter-time-2026.webp"
+  },
+  {
+    "slug": "germany-january-2027-changes",
+    "id": "N023",
+    "content_type": "news",
+    "category": "生活・制度",
+    "title": "【2027年1月から】ドイツで何が変わる？ 最低賃金・ドイツチケット・社会保険・児童手当まとめ",
+    "summary": "2027年1月からドイツで変わる制度を、在独日本人の生活に関わる項目に絞って整理。決定済みのものと、まだ法案段階のものを分けて解説します。",
+    "official_sources": [
+      {
+        "title": "Deutsche Bahn：Deutschlandticketの契約変更FAQ",
+        "url": "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
+      }
+    ],
+    "related_articles": [
+      "deutschlandticket-2027-price-consent",
+      "db-2027-timetable-family-ticket",
+      "germany-september-2026-changes"
+    ],
+    "city": "ドイツ全土",
+    "area": "ドイツ全土",
+    "location": "",
+    "event_date": "2027年1月1日前後",
+    "next_review": "2026-12-01",
+    "tags": [
+      "ドイツ生活",
+      "制度改正",
+      "最低賃金",
+      "ドイツチケット",
+      "社会保険",
+      "児童手当",
+      "税金"
+    ],
+    "published": true,
+    "status": "published",
+    "source_type": "manual",
+    "published_at": "2026-10-21",
+    "updated_at": "2026-10-21",
+    "last_verified": "2026-10-21",
+    "canonical_url": "/germany/ja/events/news/germany-january-2027-changes/",
+    "official_url": "",
+    "url": "/germany/ja/events/news/germany-january-2027-changes/",
+    "markdown_path": "/content/events/news/germany-january-2027-changes.md",
+    "home_visible": false,
+    "home_order": 20,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-21",
+      "next_review_due": "2026-12-01"
+    },
+    "image": "/assets/img/events/germany-january-2027-changes.webp",
+    "image_alt": "2027年1月のカレンダーと、ユーロ硬貨・乗車券・医療保険・子どもを表すアイコンのイラスト",
+    "image_caption": "イラスト：J-Connect編集部。制度変更のテーマを表したもので、公式資料を再現していません。",
+    "image_credit": "Illustration / J-Connect",
+    "image_url": "/assets/img/events/germany-january-2027-changes.webp"
   }
 ]

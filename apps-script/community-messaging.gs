@@ -1,16 +1,17 @@
 /**
  * Community messaging. Deploy alongside community-board-api.gs and zoho-mail.gs.
- * Private tables never participate in the public data export. Bearer access
- * links use URL fragments, one-hour single-use challenges, and hashed sessions.
+ * Private tables never participate in the public data export. Each participant
+ * (and each public reply) has one reusable bearer link derived by HMAC from a
+ * server-only pepper; nothing that can reproduce it is stored in the workbook.
+ * Links do not expire with time. Revoking access rotates the derivation input.
  */
-const CM_VERSION = '2026-10-18.1';
+const CM_VERSION = '2026-10-21.1';
 const CM_PATH = '/germany/ja/community/conversation/';
 const CM_HOUR = 60 * 60 * 1000;
-const CM_SESSION_LIFETIME = 30 * 24 * CM_HOUR;
 const CM_TABLES = {
-  replies: ['Community Replies', ['reply_id', 'post_id', 'nickname', 'body', 'email_private', 'reply_to', 'status', 'created_at', 'verified_at', 'published_at', 'session_hash', 'session_expires_at', 'request_id', 'reply_number', 'deletion_salt', 'deletion_hash']],
+  replies: ['Community Replies', ['reply_id', 'post_id', 'nickname', 'body', 'email_private', 'reply_to', 'status', 'created_at', 'verified_at', 'published_at', 'session_hash', 'session_expires_at', 'request_id', 'reply_number', 'deletion_salt', 'deletion_hash', 'access_revoked_at']],
   conversations: ['Community Conversations', ['conversation_id', 'post_id', 'status', 'created_at', 'updated_at', 'request_id', 'target_reply_id', 'creation_hash']],
-  participants: ['Community Participants', ['participant_id', 'conversation_id', 'role', 'nickname', 'email_private', 'session_hash', 'session_expires_at', 'verified_at']],
+  participants: ['Community Participants', ['participant_id', 'conversation_id', 'role', 'nickname', 'email_private', 'session_hash', 'session_expires_at', 'verified_at', 'access_revoked_at']],
   messages: ['Community Messages', ['message_id', 'conversation_id', 'participant_id', 'body', 'created_at', 'request_id', 'deleted_at']],
   access: ['Community Access', ['access_id', 'token_hash', 'purpose', 'target_id', 'expires_at', 'consumed_at', 'created_at']],
   reports: ['Community Message Reports', ['report_id', 'kind', 'target_id', 'participant_id', 'reason', 'created_at']],
@@ -87,7 +88,7 @@ function cmFail_(code) {
     UNAVAILABLE: '現在この機能を利用できません。時間をおいて再度お試しください。',
     INVALID_INPUT: '入力内容をご確認ください。',
     PUBLIC_CONTACT: '公開返信にはメールアドレスや個人用リンクを記載しないでください。',
-    INVALID_ACCESS: 'リンクの期限が切れているか、使用済みです。メールから新しいリンクを取得してください。',
+    INVALID_ACCESS: 'このリンクでは開けません。リンクが取り消されたか、URLの一部が欠けている可能性があります。メール内のリンクをもう一度開くか、下のフォームから同じリンクを再送してください。',
     RATE_LIMITED: '短時間の送信が多いため、しばらくしてからお試しください。',
     CLOSED: 'この投稿・会話では新しい送信を受け付けていません。',
     WRONG_MODE: 'この投稿の連絡方法を、投稿詳細ページで確認してください。',
@@ -140,21 +141,53 @@ function cmBlocked_(left, right) {
     (row.blocker_hash === a && row.blocked_hash === b) || (row.blocker_hash === b && row.blocked_hash === a));
 }
 
+// Pepper for access links. Created once and never rotated: rotating it would
+// revoke every link that has been emailed.
+function cmAccessPepper_() {
+  const properties = PropertiesService.getScriptProperties();
+  let pepper = String(properties.getProperty('CM_ACCESS_PEPPER') || '');
+  if (!/^[a-f0-9]{64}$/.test(pepper)) { pepper = randomToken_(32); properties.setProperty('CM_ACCESS_PEPPER', pepper); }
+  return pepper;
+}
+
+// The same row always yields the same 256-bit link until its access is revoked,
+// so every email (including resent ones) carries an equally valid link.
+function cmLinkToken_(kind, row) {
+  const subject = kind === 'reply' ? row.reply_id : row.participant_id;
+  const message = 'cm-access-link:v1:' + kind + ':' + subject + ':' + String(row.access_revoked_at || '');
+  return Utilities.computeHmacSha256Signature(message, cmAccessPepper_()).map(function(byte) { return ('0' + (byte & 255).toString(16)).slice(-2); }).join('');
+}
+
+function cmSameToken_(left, right) {
+  if (!cmToken_(left) || !cmToken_(right)) return false;
+  let difference = 0;
+  for (let i = 0; i < 64; i += 1) difference |= left.charCodeAt(i) ^ right.charCodeAt(i);
+  return difference === 0;
+}
+
+// Legacy access rows (one-hour links sent before 2026-10-21) stay usable unless
+// their subject revoked access after they were issued.
+function cmLegacyAccessValid_(access, row) {
+  if (!access) return false;
+  const revoked = Date.parse(String(row.access_revoked_at || '').split(' ')[0]);
+  return !Number.isFinite(revoked) || Date.parse(access.created_at) > revoked;
+}
+
 function cmLink_(jobs, email, purpose, target, kind, id, queued, sourceId) {
+  const row = cmFind_(kind === 'reply' ? 'replies' : 'participants', kind === 'reply' ? 'reply_id' : 'participant_id', target);
+  if (!row) return;
   const notification = queued || cmAppend_('notifications', { notification_id: cmId_('notification'), email_private: email,
     purpose, target_id: target, kind, scope_id: id, source_id: String(sourceId || ''), subject: '', body: '', status: 'pending', attempts: '0', next_attempt_at: cmNow_(), created_at: cmNow_() });
-  const raw = randomToken_(32);
-  cmAppend_('access', {
-    access_id: cmId_('access'), token_hash: sha256Hex_(raw), purpose, target_id: target,
-    expires_at: berlinTimestamp_(new Date(Date.now() + CM_HOUR)), consumed_at: '', created_at: cmNow_()
-  });
   // Fragment is never sent in a web request or a referrer. No recipient address
   // or message content is included in another participant's notification.
-  const url = COMMUNITY_SITE_ORIGIN + CM_PATH + '?kind=' + kind + '&id=' + encodeURIComponent(id) + '#access=' + raw;
+  const url = COMMUNITY_SITE_ORIGIN + CM_PATH + '?kind=' + kind + '&id=' + encodeURIComponent(id) + '#access=' + cmLinkToken_(kind, row);
+  const message = kind === 'reply' ? '公開返信の管理ページを開くリンクです。'
+    : notification.source_id ? '非公開の会話に新しいメッセージが届きました。' : '非公開の会話が始まりました。';
   jobs.push({ notification_id: notification.notification_id, to: email, name: 'J-Connect Germany', subject: kind === 'reply' ? '【J-Connect】公開返信の管理リンク' : '【J-Connect】非公開会話のお知らせ', body: [
-    kind === 'reply' ? '公開返信の管理ページを開くリンクです。' : '非公開メッセージを送信したか、受信したためお知らせします。',
-    'リンクを開き、画面の確認ボタンを押してください。リンクは1時間有効で、一度だけ使用できます。',
-    '', url, '', '心当たりがない場合は、このメールを無視してください。',
+    message, '下のリンクから会話を開いてください。',
+    '', url, '',
+    'このリンクには期限がなく、何度でも同じ会話を開けます。あなた専用のリンクですので、他の人に転送しないでください。',
+    '心当たりがない場合は、このメールを無視してください。',
     '会話や返信は、サイト内の専用ページから行ってください。この通知メールへの返信は相手に届きません。'
   ].join('\n') });
 }
@@ -166,20 +199,19 @@ function cmNotice_(jobs, subject, body, email) {
   jobs.push({ notification_id: notification.notification_id, to, name: 'J-Connect Germany', subject, body });
 }
 
-function cmSession_(kind, row, scope) {
-  const raw = randomToken_(32);
-  row.session_hash = sha256Hex_(raw);
-  row.session_expires_at = berlinTimestamp_(new Date(Date.now() + CM_SESSION_LIFETIME));
-  cmSave_(kind, row);
-  return { ok: true, success: true, scope, id: scope === 'reply' ? row.reply_id : row.conversation_id, session: raw };
+function cmSession_(kind, row) {
+  return { ok: true, success: true, scope: kind, id: kind === 'reply' ? row.reply_id : row.conversation_id, session: cmLinkToken_(kind, row) };
 }
 
+// The bearer value is either the participant's current link token or, for
+// tabs opened before 2026-10-21, a hashed session that is no longer time-limited.
 function cmAuth_(kind, params) {
   if (!cmToken_(params.session) || !cmValidId_(params.id)) return null;
+  const linkKind = kind === 'replies' ? 'reply' : 'conversation';
   const digest = sha256Hex_(params.session);
   return cmTable_(kind, false).rows.find((row) =>
     (kind === 'replies' ? row.reply_id : row.conversation_id) === params.id &&
-    row.session_hash === digest && Date.parse(row.session_expires_at) > Date.now()) || null;
+    (cmSameToken_(params.session, cmLinkToken_(linkKind, row)) || (cmToken_(row.session_hash) && row.session_hash === digest))) || null;
 }
 
 // Client-side PBKDF2-HMAC-SHA256 (600,000 rounds) derives a per-reply key.
@@ -249,68 +281,85 @@ function cmCreateConversation_(params, jobs) {
   if (conversation) {
     if (conversation.creation_hash !== sha256Hex_(params.creation_key)) return cmFail_('INVALID_ACCESS');
     const guest = cmTable_('participants', false).rows.find(row => row.conversation_id === conversation.conversation_id && row.role === 'inquirer');
-    if (!guest || guest.email_private !== form.email || Date.parse(conversation.created_at) + CM_SESSION_LIFETIME <= Date.now()) return cmFail_('INVALID_ACCESS');
-    const session = sha256Hex_(params.creation_key + ':' + conversation.conversation_id);
-    return { ok: true, success: true, id: conversation.conversation_id, scope: 'conversation', session: guest.session_hash === sha256Hex_(session) ? session : '', confirmation_required: false, notification_pending: true };
+    if (!guest || guest.email_private !== form.email) return cmFail_('INVALID_ACCESS');
+    return { ok: true, success: true, id: conversation.conversation_id, scope: 'conversation', session: cmLinkToken_('conversation', guest), confirmation_required: false, notification_pending: true };
   }
   if (!cmRate_('submit:' + form.email, 10, 3600) || !cmRate_('submit:all', 100, 3600)) return cmFail_('RATE_LIMITED');
   if (cmBlocked_(form.email, ownerEmail)) return { ok: true, success: true, id: cmId_('conversation'), scope: 'conversation', session: randomToken_(32), confirmation_required: false, notification_pending: true };
   const id = cmId_('conversation');
   conversation = cmAppend_('conversations', { conversation_id: id, post_id: form.post_id, status: 'active', created_at: cmNow_(), updated_at: cmNow_(), request_id: form.request_id, target_reply_id: form.reply_to, creation_hash: sha256Hex_(params.creation_key) });
   const owner = cmAppend_('participants', { participant_id: cmId_('participant'), conversation_id: id, role: 'owner', nickname: cmNickname_(reply ? reply.nickname : post.nickname || '元の投稿者'), email_private: ownerEmail });
-  const session = sha256Hex_(params.creation_key + ':' + id);
   const guest = cmAppend_('participants', { participant_id: cmId_('participant'), conversation_id: id, role: 'inquirer', nickname: cmNickname_(form.nickname), email_private: form.email,
-    session_hash: sha256Hex_(session), session_expires_at: berlinTimestamp_(new Date(Date.now() + CM_SESSION_LIFETIME)), verified_at: '' });
+    session_hash: '', session_expires_at: '', verified_at: '' });
   cmAppend_('messages', { message_id: cmId_('message'), conversation_id: id, participant_id: guest.participant_id, body: form.body, created_at: cmNow_(), request_id: form.request_id });
   cmLink_(jobs, owner.email_private, 'conversation_login', owner.participant_id, 'conversation', id);
   cmLink_(jobs, form.email, 'conversation_login', guest.participant_id, 'conversation', id);
-  return { ok: true, success: true, id, scope: 'conversation', session, confirmation_required: false, notification_pending: true };
+  return { ok: true, success: true, id, scope: 'conversation', session: cmLinkToken_('conversation', guest), confirmation_required: false, notification_pending: true };
 }
 
+// Opening a link never consumes it. The response is the subject's current link
+// token, so a legacy one-hour link is upgraded to the permanent one.
 function cmUseAccess_(params, jobs) {
-  if (!cmToken_(params.access)) return cmFail_('INVALID_ACCESS');
-  const access = cmFind_('access', 'token_hash', sha256Hex_(params.access));
-  if (!access || access.consumed_at || !(Date.parse(access.expires_at) > Date.now())) return cmFail_('INVALID_ACCESS');
-  let row;
-  if (access.purpose === 'reply_verify' || access.purpose === 'reply_login') {
-    row = cmFind_('replies', 'reply_id', access.target_id);
-    if (!row || params.kind !== 'reply' || params.id !== row.reply_id) return cmFail_('INVALID_ACCESS');
-    if (access.purpose === 'reply_verify') {
-      if (row.status !== 'pending_email' || !cmParent_(row.post_id, false)) return cmFail_('CLOSED');
+  if (!cmToken_(params.access) || !cmValidId_(params.id) || ['reply', 'conversation'].indexOf(params.kind) === -1) return cmFail_('INVALID_ACCESS');
+  if (!cmRate_('access:' + params.id, 60, 600)) return cmFail_('RATE_LIMITED');
+  const tableKind = params.kind === 'reply' ? 'replies' : 'participants';
+  const scopeKey = params.kind === 'reply' ? 'reply_id' : 'conversation_id';
+  let purpose = params.kind === 'reply' ? 'reply_login' : 'conversation_login';
+  let row = cmTable_(tableKind, false).rows.find((item) => item[scopeKey] === params.id && cmSameToken_(params.access, cmLinkToken_(params.kind, item))) || null;
+  if (!row) {
+    const access = cmFind_('access', 'token_hash', sha256Hex_(params.access));
+    const purposes = params.kind === 'reply' ? ['reply_verify', 'reply_login'] : ['conversation_verify', 'conversation_login'];
+    row = access && purposes.indexOf(access.purpose) !== -1 ? cmFind_(tableKind, params.kind === 'reply' ? 'reply_id' : 'participant_id', access.target_id) : null;
+    if (!row || row[scopeKey] !== params.id || !cmLegacyAccessValid_(access, row)) return cmFail_('INVALID_ACCESS');
+    purpose = access.purpose;
+  }
+  if (params.kind === 'reply') {
+    if (purpose === 'reply_verify' && row.status === 'pending_email') {
+      if (!cmParent_(row.post_id, false)) return cmFail_('CLOSED');
       row.verified_at = cmNow_(); row.status = 'pending'; cmSave_('replies', row);
       cmNotice_(jobs, '【J-Connect】公開返信の審査待ち', 'Community Repliesで確認する返信ID: ' + row.reply_id + '\n投稿ID: ' + row.post_id);
-    } else { row.verified_at = cmNow_(); cmSave_('replies', row); }
-    access.consumed_at = cmNow_(); cmSave_('access', access);
-    return cmSession_('replies', row, 'reply');
+    } else if (!row.verified_at) { row.verified_at = cmNow_(); cmSave_('replies', row); }
+    return cmSession_('reply', row);
   }
-  if (['conversation_verify', 'conversation_login'].indexOf(access.purpose) === -1) return cmFail_('INVALID_ACCESS');
-  row = cmFind_('participants', 'participant_id', access.target_id);
-  if (!row || params.kind !== 'conversation' || params.id !== row.conversation_id) return cmFail_('INVALID_ACCESS');
   const conversation = cmFind_('conversations', 'conversation_id', row.conversation_id);
-  const post = conversation && cmParent_(conversation.post_id, access.purpose !== 'conversation_verify');
+  const post = conversation && cmParent_(conversation.post_id, true);
   if (!conversation || !post) return cmFail_('CLOSED');
   const participants = cmTable_('participants', false).rows.filter((item) => item.conversation_id === row.conversation_id);
   if (participants.length !== 2) return cmFail_('CLOSED');
-  if (access.purpose === 'conversation_verify' && cmBlocked_(participants[0].email_private, participants[1].email_private)) return cmFail_('CLOSED');
-  if (access.purpose === 'conversation_verify') {
-    if (row.role !== 'inquirer' || conversation.status !== 'pending_email') return cmFail_('INVALID_ACCESS');
+  if (conversation.status === 'pending_email') {
+    // Conversations created before instant delivery wait for the inquirer.
+    if (row.role !== 'inquirer' || cmBlocked_(participants[0].email_private, participants[1].email_private)) return cmFail_('INVALID_ACCESS');
     conversation.status = 'active'; conversation.updated_at = cmNow_(); cmSave_('conversations', conversation);
     const owner = participants.find((item) => item.role === 'owner');
     cmLink_(jobs, owner.email_private, 'conversation_login', owner.participant_id, 'conversation', conversation.conversation_id);
-  } else if (conversation.status === 'pending_email') return cmFail_('INVALID_ACCESS');
-  row.verified_at = cmNow_();
-  access.consumed_at = cmNow_(); cmSave_('access', access);
-  return cmSession_('participants', row, 'conversation');
+  }
+  if (!row.verified_at) { row.verified_at = cmNow_(); cmSave_('participants', row); }
+  return cmSession_('conversation', row);
+}
+
+// Revoking invalidates every emailed link and open tab for this participant or
+// reply. The current tab continues with the new link, which is also emailed.
+function cmRevokeAccess_(params, jobs) {
+  const reply = params.kind === 'reply';
+  const row = reply ? cmAuth_('replies', params) : (cmConversationContext_(params) || {}).viewer;
+  if (!row) return cmFail_('INVALID_ACCESS');
+  if (!cmRate_('revoke:' + params.id, 3, 3600)) return cmFail_('RATE_LIMITED');
+  // A trailing nonce keeps Sheets from converting the marker into a date, which
+  // would change the link derivation input after the next read.
+  row.access_revoked_at = cmNow_() + ' ' + randomToken_(8); row.session_hash = ''; row.session_expires_at = '';
+  cmSave_(reply ? 'replies' : 'participants', row);
+  cmLink_(jobs, row.email_private, reply ? 'reply_login' : 'conversation_login', reply ? row.reply_id : row.participant_id, params.kind, params.id);
+  return cmSession_(params.kind, row);
 }
 
 function cmRequestAccess_(params, jobs) {
   const id = String(params.id || ''); const email = cmEmail_(params.email);
   if (!cmValidId_(id) || !isJConnectValidEmail_(email) || params.website || !isReasonableFormCompletion_(params.form_started_at)) return cmFail_('INVALID_INPUT');
-  if (!cmRate_('recover:' + email, 2, 600) || !cmRate_('recover:all', 100, 3600)) return cmFail_('RATE_LIMITED');
+  if (!cmRate_('recover:' + email, 3, 600) || !cmRate_('recover:' + id, 5, 600) || !cmRate_('recover:all', 100, 3600)) return cmFail_('RATE_LIMITED');
   if (params.kind === 'reply') {
     const row = cmFind_('replies', 'reply_id', id);
     if (row && row.email_private === email && cmParent_(row.post_id, true))
-      cmLink_(jobs, email, ['published', 'approved', 'hidden'].indexOf(row.status) !== -1 ? 'reply_login' : 'reply_verify', row.reply_id, 'reply', id);
+      cmLink_(jobs, email, row.status === 'pending_email' ? 'reply_verify' : 'reply_login', row.reply_id, 'reply', id);
   } else if (params.kind === 'conversation') {
     const conversation = cmFind_('conversations', 'conversation_id', id);
     const row = cmTable_('participants', false).rows.find((item) => item.conversation_id === id && item.email_private === email);
@@ -514,8 +563,8 @@ function cmModerateSelectedReply_(status) {
   cmDeliver_(jobs);
 }
 
-// Persist only delivery metadata. Access secrets exist only in a transient mail
-// job; retrying mints a fresh challenge. Delivery is serialized by the script
+// Persist only delivery metadata. Access links exist only in a transient mail
+// job; a retry derives the same link again. Delivery is serialized by the script
 // lock so a scheduled retry cannot race a foreground send.
 function cmDeliver_(jobs) {
   let delivered = true;
@@ -558,7 +607,7 @@ function processCommunityMessagingNotifications() {
 }
 
 function cmDispatch_(action, params, isPost) {
-  if (action === 'communityMessagingStatus') return { ok: true, messaging_version: CM_VERSION, public_replies: true, private_conversations: true, inline_replies: true, instant_publish: true };
+  if (action === 'communityMessagingStatus') return { ok: true, messaging_version: CM_VERSION, public_replies: true, private_conversations: true, inline_replies: true, instant_publish: true, persistent_links: true };
   if (action === 'communityPublicReplies') {
     const post = cmParent_(params.post_id, false);
     return { ok: true, replies: post ? cmPublicRepliesForPost_(post) : [] };
@@ -574,6 +623,7 @@ function cmDispatch_(action, params, isPost) {
       communityCreateConversation: () => cmCreateConversation_(params, jobs),
       communityUseAccess: () => cmUseAccess_(params, jobs),
       communityRequestAccess: () => cmRequestAccess_(params, jobs),
+      communityRevokeAccess: () => cmRevokeAccess_(params, jobs),
       communityGetConversation: () => cmGetConversation_(params),
       communitySendMessage: () => cmSendMessage_(params, jobs),
       communityEndConversation: () => cmEndConversation_(params),

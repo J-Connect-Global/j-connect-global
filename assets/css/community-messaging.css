@@ -15,6 +15,7 @@
 #messageForm label{margin-top:0}
 #messageBody{min-height:112px;resize:vertical}
 #messageStatus{margin:8px 0 0;min-height:1.5em}
+#messageStatus.is-error{color:#9b1c1c;font-weight:700}
 #showNewMessages{width:100%;background:#173d65;color:#fff}
 @media(max-width:480px){#conversationPanel .cm-actions button{font-size:.9rem;padding:8px 10px}.cm-shell .cm-panel{padding:16px}#privateMessages{max-height:48vh}#privateMessages .cm-message{padding:12px}#privateMessages .cm-message--mine{margin-left:12px}#privateMessages .cm-message:not(.cm-message--mine){margin-right:12px}#messageForm button[type=submit]{width:100%}}
 

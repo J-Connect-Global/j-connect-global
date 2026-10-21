@@ -86,43 +86,73 @@ test('old backend disables the new composer without legacy email forwarding',asy
   await page.route('https://script.google.com/**',route=>route.fulfill({json:{ok:true,messaging_version:'2026-10-17.1',public_replies:true,private_conversations:true}}));
   await page.goto(q.detail_url);await expect(composer(page).locator('[data-compose-status]')).toContainText('現在利用できません');await expect(page.getByRole('button',{name:'送信する',exact:true})).toBeDisabled();
 });
-test('private access is consumed only by explicit confirmation in a POST body; conversation supports repeated replies',async({page})=>{
+test('email link opens directly, can be reopened and reused in another browser; conversation supports repeated replies',async({page,browser})=>{
   const access='a'.repeat(64), session='b'.repeat(64);let exchanges=0;let sent=0;
   const messages=[{id:'message-1',nickname:'投稿者',body:'<img src=x onerror=alert(1)>',created_at:'2026-10-17T10:00:00Z',mine:false}];
-  await mock(page,(values,request)=>{
+  const handler=(values,request)=>{
     expect(request.method()).toBe('POST');expect(request.url()).not.toContain(access);expect(request.url()).not.toContain(session);
+    expect(request.headers()['referer']||'').not.toContain(access);
     switch(values.get('action')){
       case 'communityUseAccess': exchanges++;expect(values.get('access')).toBe(access);return {ok:true,scope:'conversation',id:'conversation-browser',session};
       case 'communityGetConversation': expect(values.get('session')).toBe(session);return {ok:true,post_title:'机の受け渡し',status:'active',other_nickname:'投稿者',messages,has_more:false};
       case 'communitySendMessage': sent++;messages.push({id:'message-'+(sent+1),nickname:'自分',body:values.get('body'),mine:true,created_at:'2026-10-17T11:00:00Z'});return {ok:true};
       default:return {ok:true};
     }
-  });
-  await page.goto('/germany/ja/community/conversation/?kind=conversation&id=conversation-browser#access='+access);
-  await expect(page.getByRole('button',{name:'確認して開く',exact:true})).toBeVisible();
-  expect(exchanges).toBe(0);expect(page.url()).not.toContain('#');
-  expect(await page.locator('script[src*="cookie-consent"],script[src*="social-share"]').count()).toBe(0);
-  await page.getByRole('button',{name:'確認して開く',exact:true}).click();
+  };
+  await mock(page,handler);
+  const link='/germany/ja/community/conversation/?kind=conversation&id=conversation-browser#access='+access;
+  await page.goto(link);
   await expect(page.locator('#conversationPanel')).toBeVisible();
+  expect(exchanges).toBe(1);expect(page.url()).not.toContain('#');expect(page.url()).not.toContain(access);
+  expect(await page.locator('script[src*="cookie-consent"],script[src*="social-share"],script[src*="googletagmanager"],script[src*="gtag"]').count()).toBe(0);
   await expect(page.locator('#privateMessages')).toContainText('<img src=x onerror=alert(1)>');
   expect(await page.locator('#privateMessages img').count()).toBe(0);
   for(const body of ['一度目の返信','二度目の返信']){
     await page.locator('#messageBody').fill(body);await page.getByRole('button',{name:'返信する',exact:true}).click();
     await expect(page.locator('#privateMessages')).toContainText(body);
   }
-  expect(sent).toBe(2);expect(exchanges).toBe(1);
+  expect(sent).toBe(2);
   await page.reload();await expect(page.locator('#conversationPanel')).toBeVisible();expect(exchanges).toBe(1);
+  await expect(page.locator('#privateMessages .cm-message')).toHaveCount(3);
+  // Reopening the same email link later, and in a separate browser, still works.
+  await page.goto('about:blank');await page.goto(link);await expect(page.locator('#conversationPanel')).toBeVisible();expect(exchanges).toBe(2);
+  const other=await browser.newContext({baseURL:test.info().project.use.baseURL});const second=await other.newPage();await mock(second,handler);
+  await second.goto(link);await expect(second.locator('#conversationPanel')).toBeVisible();await expect(second.locator('#privateMessages')).toContainText('二度目の返信');await other.close();
   await page.getByRole('button',{name:'この端末で閉じる',exact:true}).first().click();
   await expect(page.locator('#privateMessages')).toBeEmpty();await expect(page.locator('#recoveryPanel')).toBeVisible();
+  await expect(page.locator('#conversationStatus')).toContainText('同じリンクから');
   await assertNoHorizontalOverflow(page);
 });
-test('expired link displays recovery without exposing registered emails',async({page})=>{
-  await mock(page,(values)=> values.get('action')==='communityUseAccess' ? {ok:false,code:'INVALID_ACCESS',error:'リンクの期限が切れているか、使用済みです。'} : {ok:true,accepted:true});
-  await page.goto('/germany/ja/community/conversation/?kind=reply&id=reply-expired#access='+'f'.repeat(64));
-  await page.getByRole('button',{name:'確認して開く',exact:true}).click();
-  await expect(page.locator('#conversationStatus')).toContainText('リンクの期限');
+test('invalid, truncated and closed links explain the cause and offer a resend without exposing registered emails',async({page})=>{
+  let exchanges=0;
+  await mock(page,(values)=> values.get('action')==='communityUseAccess' ? (exchanges++, values.get('id')==='conversation-closed' ? {ok:false,code:'CLOSED',error:'closed'} : {ok:false,code:'INVALID_ACCESS',error:'このリンクでは開けません。リンクが取り消されたか、URLの一部が欠けている可能性があります。'}) : {ok:true,accepted:true});
+  await page.goto('/germany/ja/community/conversation/?kind=reply&id=reply-revoked#access='+'f'.repeat(64));
+  await expect(page.locator('#conversationStatus')).toContainText('取り消された');
   await expect(page.locator('#recoveryPanel')).toBeVisible();
   await page.getByLabel('メールアドレス',{exact:true}).fill('unknown@example.com');
-  await page.getByRole('button',{name:'確認リンクを再送する',exact:true}).click();
+  await page.getByRole('button',{name:'リンクを再送する',exact:true}).click();
   await expect(page.locator('#conversationStatus')).toContainText('登録内容が一致した場合');
+  await page.goto('/germany/ja/community/conversation/?kind=conversation&id=conversation-cut#access=abc123');
+  await expect(page.locator('#conversationStatus')).toContainText('リンクの一部が欠けている');expect(exchanges).toBe(1);expect(page.url()).not.toContain('abc123');
+  await page.goto('/germany/ja/community/conversation/?kind=conversation&id=conversation-closed#access='+'e'.repeat(64));
+  await expect(page.locator('#conversationStatus')).toContainText('元の投稿が削除・非公開');
+});
+test('participant can revoke earlier links and keep using the current tab',async({page})=>{
+  const access='a'.repeat(64), first='b'.repeat(64), next='c'.repeat(64);let current=first;
+  await mock(page,values=>{
+    switch(values.get('action')){
+      case 'communityUseAccess': return {ok:true,scope:'conversation',id:'conversation-revoke',session:first};
+      case 'communityRevokeAccess': expect(values.get('session')).toBe(first);current=next;return {ok:true,scope:'conversation',id:'conversation-revoke',session:next};
+      case 'communityGetConversation': return values.get('session')===current ? {ok:true,post_title:'取消しの確認',status:'active',other_nickname:'相手',messages:[],has_more:false} : {ok:false,code:'INVALID_ACCESS',error:'このリンクでは開けません。'};
+      default:return {ok:true};
+    }
+  });
+  await page.goto('/germany/ja/community/conversation/?kind=conversation&id=conversation-revoke#access='+access);
+  await expect(page.locator('#conversationPanel')).toBeVisible();
+  page.once('dialog',dialog=>dialog.accept());
+  await page.locator('summary',{hasText:'リンクの管理'}).click();
+  await page.getByRole('button',{name:'以前のリンクを無効にする',exact:true}).click();
+  await expect(page.locator('#conversationStatus')).toContainText('以前のリンクを無効にしました');
+  await page.reload();await expect(page.locator('#conversationPanel')).toBeVisible();
+  expect(await page.evaluate(()=>sessionStorage.getItem('jconnect:conversation:conversation:conversation-revoke'))).toBe(next);
 });

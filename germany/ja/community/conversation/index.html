@@ -3,8 +3,8 @@
 <head>
   <meta name="referrer" content="no-referrer">
   <script>
-  // Remove the one-use secret before any other page script can observe the URL.
-  (function(){var p=new URLSearchParams(location.hash.slice(1));window.JCONNECT_PENDING_ACCESS=p.get('access')||'';if(location.hash)history.replaceState(null,'',location.pathname+location.search);})();
+  // Remove the access link secret before any other page script can observe the URL.
+  (function(){var p=new URLSearchParams(location.hash.slice(1));window.JCONNECT_PENDING_ACCESS=(p.get('access')||'').toLowerCase();window.JCONNECT_LINK_FRAGMENT=/(^|[#&])access=/.test(location.hash);if(location.hash)history.replaceState(null,'',location.pathname+location.search);})();
   </script>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script data-jconnect-theme-init>
@@ -217,10 +217,9 @@
   <p><a href="../">← 掲示板へ戻る</a></p><h1 id="conversationTitle">非公開会話・返信の管理</h1>
   <p id="conversationIntro">アカウント登録は不要です。メールの専用リンクで本人確認します。専用リンクを他の人に転送しないでください。</p>
   <p id="conversationStatus" role="status">受付状況を確認中…</p>
-  <section id="accessPanel" class="cm-panel" hidden><h2>メールの確認</h2><p>下のボタンを押すと、このリンクを一度使用してページを開きます。</p><button id="confirmAccess" type="button">確認して開く</button></section>
-  <section id="recoveryPanel" class="cm-panel" hidden><h2>新しいリンクを受け取る</h2><p>リンクの有効期限は1時間です。登録時のメールアドレスを入力してください。</p>
+  <section id="recoveryPanel" class="cm-panel" hidden><h2>リンクを再送する</h2><p>メールのリンクには期限がなく、何度でも使えます。メールが見つからない場合は、この会話で登録したメールアドレスを入力してください。</p>
     <form id="recoveryForm"><label for="recoveryEmail">メールアドレス</label><input id="recoveryEmail" name="email" type="email" maxlength="254" autocomplete="email" required>
-      <label class="cm-honeypot" aria-hidden="true">Webサイト<input name="website" tabindex="-1" autocomplete="off"></label><button type="submit">確認リンクを再送する</button></form>
+      <label class="cm-honeypot" aria-hidden="true">Webサイト<input name="website" tabindex="-1" autocomplete="off"></label><button type="submit">リンクを再送する</button></form>
   </section>
   <section id="conversationPanel" hidden>
     <h2 id="privatePostTitle"></h2><p id="conversationState"></p>
@@ -229,15 +228,16 @@
     <div id="privateMessages" role="region" aria-label="会話履歴" tabindex="0"></div>
     <button id="showNewMessages" type="button" hidden>新しいメッセージを表示</button>
     <form id="messageForm" class="cm-panel"><fieldset id="messageFields"><label for="messageBody">メッセージ（相手だけに表示）</label><textarea id="messageBody" maxlength="4000" required></textarea><button type="submit">返信する</button></fieldset><p id="messageStatus" role="status" aria-atomic="true"></p></form>
-    <details class="cm-panel"><summary>会話を終了・通報する</summary><p>終了すると両者が新しく送信できなくなります。ブロックすると同じ相手からの新しい問い合わせも止めます。</p><div class="cm-actions"><button id="closeConversation" type="button">会話を終了</button><button id="blockConversation" type="button">相手をブロックして終了</button></div>
+    <details class="cm-panel"><summary>会話の終了・通報・リンクの管理</summary><p>終了すると両者が新しく送信できなくなります。ブロックすると同じ相手からの新しい問い合わせも止めます。</p><div class="cm-actions"><button id="closeConversation" type="button">会話を終了</button><button id="blockConversation" type="button">相手をブロックして終了</button></div>
+    <p>リンクを他の人に知られた場合は、以前のリンクを無効にできます。</p><div class="cm-actions"><button id="revokeAccess" type="button">以前のリンクを無効にする</button></div>
     <form id="privateReportForm"><label for="reportReason">通報理由（運営のみ閲覧）</label><textarea id="reportReason" maxlength="1000" required></textarea><button type="submit">運営に通報する</button></form></details>
   </section>
   <section id="replyPanel" class="cm-panel" hidden><h2>自分の公開返信</h2><p id="replyState"></p><p id="replyBody" class="cm-body"></p><p><a id="replyPostLink" href="../">投稿へ戻る</a></p><button id="deleteReply" type="button">この返信を非表示にする</button><button id="leaveReply" type="button">この端末で閉じる</button></section>
   <noscript><p>会話を開くにはJavaScriptを有効にしてください。</p></noscript>
   </main>
   <script src="/assets/js/data-sources.js"></script>
-  <script src="/assets/js/community-messaging.js"></script>
-  <script src="/assets/js/community-conversation.js"></script>
+  <script src="/assets/js/community-messaging.js?v=20261021"></script>
+  <script src="/assets/js/community-conversation.js?v=20261021"></script>
   <!-- LAYOUT:ja-footer:start -->
   <footer class="page-footer">
     <div class="footer-inner">

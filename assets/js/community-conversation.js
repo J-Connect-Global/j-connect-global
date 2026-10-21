@@ -3,6 +3,7 @@
   const { api, available, formatTime, node, requestId } = window.JConnectMessaging;
   const query = new URLSearchParams(location.search); const kind = query.get('kind'); const scopeId = query.get('id') || '';
   let access = window.JCONNECT_PENDING_ACCESS || ''; delete window.JCONNECT_PENDING_ACCESS;
+  const linkWasPresent = Boolean(window.JCONNECT_LINK_FRAGMENT); delete window.JCONNECT_LINK_FRAGMENT;
   let session = ''; let before = ''; let sendingDraft = null; const opened = Date.now();
   let generation = 0; let tasks = 0; let loads = 0; let loadQueue = Promise.resolve();
   let history = []; let unread = 0; let refreshTimer; let conversationState = '';
@@ -10,9 +11,12 @@
   const key = 'jconnect:conversation:' + kind + ':' + scopeId;
   const el = (id) => document.getElementById(id);
   const status = el('conversationStatus');
+  const closedMessage = '元の投稿が削除・非公開になったため、この会話を開けません。';
+  const brokenLinkMessage = 'リンクの一部が欠けているため開けません。メールのリンク全体を開くか、下のフォームから同じリンクを再送してください。';
+  function store(value) { session = value; try { sessionStorage.setItem(key, value); } catch (_) {} }
   function recover(message) {
     clearTimeout(refreshTimer);
-    status.textContent = message; el('accessPanel').hidden = true; el('recoveryPanel').hidden = false;
+    status.textContent = message; el('recoveryPanel').hidden = false;
     el('conversationPanel').hidden = true; el('replyPanel').hidden = true;
     el('conversationIntro').hidden = false;
   }
@@ -20,13 +24,14 @@
     generation++; history = []; unread = 0; before = ''; sendingDraft = null;
     session = ''; access = ''; try { sessionStorage.removeItem(key); } catch (_) {}
     el('privateMessages').replaceChildren(); el('replyBody').textContent = ''; el('messageBody').value = ''; el('messageStatus').textContent = '';
-    recover('この端末で会話を閉じました。再び開くには、メールの新しいリンクを使用してください。');
+    recover('この端末で会話を閉じました。メールの同じリンクから、いつでも開き直せます。');
   }
   async function scoped(action, values = {}) {
     const current = generation;
     try { return await api(action, { ...values, kind, id: scopeId, session }); }
     catch (error) {
       if (error.code === 'INVALID_ACCESS' && current === generation) { forget(); recover(error.message); }
+      else if (error.code === 'CLOSED' && current === generation) recover(closedMessage);
       throw error;
     }
   }
@@ -71,14 +76,14 @@
   async function loadData(older, followLatest, current) {
     if (kind === 'reply') {
       const reply = await scoped('communityGetReply'); if (current !== generation) return;
-      el('accessPanel').hidden = true; el('recoveryPanel').hidden = true; el('replyPanel').hidden = false;
+      el('recoveryPanel').hidden = true; el('replyPanel').hidden = false;
       el('replyBody').textContent = reply.body;
       el('replyState').textContent = ({ pending: 'メール確認済み・運営の承認待ちです。', approved: '公開されています。', published: '公開されています。', hidden: '非表示です。' })[reply.status] || '確認待ちです。';
       el('deleteReply').disabled = reply.status === 'hidden'; el('replyPostLink').href = '../post/?id=' + encodeURIComponent(reply.post_id); status.textContent = ''; return;
     }
     const data = await scoped('communityGetConversation', older && before ? { before } : {});
     if (current !== generation) return;
-    el('accessPanel').hidden = true; el('recoveryPanel').hidden = true; el('conversationPanel').hidden = false;
+    el('recoveryPanel').hidden = true; el('conversationPanel').hidden = false;
     el('conversationIntro').hidden = true;
     el('conversationTitle').textContent = '非公開の会話'; el('privatePostTitle').textContent = data.post_title;
     conversationState = data.status;
@@ -97,7 +102,10 @@
     output.textContent = options.pending || '処理しています…';
     if (output === el('messageStatus')) output.scrollIntoView({ block: 'nearest' });
     try { await action(); }
-    catch (error) { if (current === generation) output.textContent = error.message; button.disabled = false; }
+    catch (error) {
+      if (current === generation) { output.textContent = options.failed ? options.failed + '（' + error.message + '）' : error.message; output.classList.toggle('is-error', Boolean(options.failed)); }
+      button.disabled = false;
+    }
     finally {
       tasks--; button.textContent = label; button.removeAttribute('aria-busy');
       if (!['closeConversation', 'blockConversation', 'deleteReply'].includes(button.id)) button.disabled = false;
@@ -116,15 +124,20 @@
       scheduleRefresh();
     }, refreshDelay);
   }
-  el('confirmAccess').addEventListener('click', () => task(el('confirmAccess'), async () => {
-    const result = await api('communityUseAccess', { kind, id: scopeId, access }); access = '';
-    if (result.scope !== kind || result.id !== scopeId || !/^[a-f0-9]{64}$/.test(result.session)) throw new Error('確認結果を読み取れませんでした。新しいリンクを取得してください。');
-    session = result.session; try { sessionStorage.setItem(key, session); } catch (_) {}
+  // Email links are reusable, so opening one exchanges it without a confirmation step.
+  async function openLink() {
+    status.textContent = 'メールのリンクを確認しています…';
+    let result;
+    try { result = await api('communityUseAccess', { kind, id: scopeId, access }); }
+    catch (error) { access = ''; recover(error.code === 'CLOSED' ? closedMessage : error.message); return; }
+    access = '';
+    if (result.scope !== kind || result.id !== scopeId || !/^[a-f0-9]{64}$/.test(result.session)) { recover('確認結果を読み取れませんでした。メールのリンクをもう一度開いてください。'); return; }
+    store(result.session);
     await load();
-  }).catch(() => {}));
+  }
   el('recoveryForm').addEventListener('submit', (event) => {
     event.preventDefault(); const form = event.currentTarget; const button = form.querySelector('button');
-    task(button, async () => { await api('communityRequestAccess', { kind, id: scopeId, ...Object.fromEntries(new FormData(form)), form_started_at: String(opened) }); status.textContent = '登録内容が一致した場合にメールを送信します。迷惑メールフォルダーもご確認ください。'; });
+    task(button, async () => { await api('communityRequestAccess', { kind, id: scopeId, ...Object.fromEntries(new FormData(form)), form_started_at: String(opened) }); status.textContent = '登録内容が一致した場合に、この会話のリンクをメールで再送します。迷惑メールフォルダーもご確認ください。'; });
   });
   el('refreshMessages').addEventListener('click', () => task(el('refreshMessages'), () => load(), { output: el('conversationUpdates'), label: '更新中…', pending: '新しいメッセージを確認しています…' }));
   el('olderMessages').addEventListener('click', () => task(el('olderMessages'), () => load(true), { output: el('conversationUpdates'), label: '読み込み中…', pending: '以前のメッセージを読み込んでいます…' }));
@@ -141,16 +154,24 @@
       el('messageFields').disabled = true;
       const result = await scoped('communitySendMessage', { body, request_id: sendingDraft.id });
       if (current !== generation) return;
-      sendingDraft = null; el('messageBody').value = '';
+      sendingDraft = null; el('messageBody').value = ''; el('messageStatus').classList.remove('is-error');
       const saved = result.notification_pending ? '返信を保存しました。通知メールは再試行中です。' : '返信を送信し、相手にメールで通知しました。';
       try { await load(false, true); if (current === generation) el('messageStatus').textContent = saved; }
       catch (_) { if (current === generation) el('messageStatus').textContent = saved + ' 会話の表示を更新できませんでした。「会話を更新」を押してください。'; }
-    }, { output: el('messageStatus'), label: '送信中…', pending: '返信を送信しています。そのままお待ちください。' }).finally(() => { el('messageFields').disabled = false; });
+    }, { output: el('messageStatus'), label: '送信中…', pending: '返信を送信しています。そのままお待ちください。', failed: '未送信：本文はそのまま残しています。もう一度「返信する」を押すと、重複せずに再送します。' }).finally(() => { el('messageFields').disabled = false; });
   });
   ['closeConversation', 'blockConversation'].forEach((name) => el(name).addEventListener('click', () => {
     if (!confirm(name === 'blockConversation' ? '相手をブロックし、会話を終了しますか？' : 'この会話を終了しますか？終了後は両者とも送信できません。')) return;
     task(el(name), async () => { await scoped('communityEndConversation', { block: name === 'blockConversation' ? 'true' : 'false' }); await load(); });
   }));
+  el('revokeAccess').addEventListener('click', () => {
+    if (!confirm('これまでにメールで届いたリンクと、他の端末で開いている画面を無効にします。この画面は引き続き使え、新しいリンクを登録メールに送ります。よろしいですか？')) return;
+    task(el('revokeAccess'), async () => {
+      const result = await scoped('communityRevokeAccess');
+      if (!/^[a-f0-9]{64}$/.test(result.session || '')) throw new Error('取消し結果を読み取れませんでした。');
+      store(result.session); status.textContent = '以前のリンクを無効にしました。新しいリンクを登録メールに送りました。';
+    });
+  });
   el('privateReportForm').addEventListener('submit', (event) => { event.preventDefault(); const button = event.currentTarget.querySelector('button');
     task(button, async () => { await scoped('communityReport', { reason: el('reportReason').value }); status.textContent = '通報を受け付けました。運営が確認します。'; el('reportReason').value = ''; });
   });
@@ -163,9 +184,10 @@
     if (!['reply', 'conversation'].includes(kind) || !/^[A-Za-z0-9][A-Za-z0-9_-]{0,159}$/.test(scopeId)) { status.textContent = 'メールの専用リンク、または送信後に表示された確認ページから開いてください。'; return; }
     try {
       await available();
-      if (access) { el('accessPanel').hidden = false; el('recoveryPanel').hidden = false; status.textContent = 'メールのリンクを確認してください。'; return; }
+      if (/^[a-f0-9]{64}$/.test(access)) { await openLink(); return; }
+      if (linkWasPresent) { recover(brokenLinkMessage); return; }
       try { session = sessionStorage.getItem(key) || ''; } catch (_) {}
-      if (session) await load(); else recover('メールから開くか、新しい確認リンクを受け取ってください。');
+      if (session) await load(); else recover('メールに届いたリンクから開いてください。リンクは何度でも使えます。メールが見つからない場合は、下のフォームから再送できます。');
     } catch (error) { recover(error.message); }
   })();
 })();

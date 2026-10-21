@@ -200,12 +200,14 @@ function cmMessageMailLines_(recipient, messageId) {
   const usable = message && message.conversation_id === recipient.conversation_id && !message.deleted_at;
   const own = usable && message.participant_id === recipient.participant_id;
   const sender = usable && !own ? cmFind_('participants', 'participant_id', message.participant_id) : null;
+  // Resends and revocations carry no message: they only deliver the link.
+  const linkOnly = !messageId;
   const lines = [
-    own ? 'あなたが送信した非公開メッセージの控えです。' : usable ? cmNickname_(sender && sender.nickname) + 'さんから非公開メッセージが届きました。' : '非公開の会話に新しいメッセージがあります。',
+    linkOnly ? '非公開の会話を開くリンクをお送りします。' : own ? 'あなたが送信した非公開メッセージの控えです。' : usable ? cmNickname_(sender && sender.nickname) + 'さんから非公開メッセージが届きました。' : '非公開の会話に新しいメッセージがあります。',
     '投稿：' + String(post && post.post.title || '掲示板の投稿')
   ];
   if (usable) lines.push('', '----- メッセージ -----', String(message.body), '----------------------');
-  lines.subject = own ? '【J-Connect】非公開メッセージを送信しました' : '【J-Connect】非公開メッセージが届きました';
+  lines.subject = linkOnly ? '【J-Connect】非公開会話のリンク' : own ? '【J-Connect】非公開メッセージを送信しました' : '【J-Connect】非公開メッセージが届きました';
   return lines;
 }
 

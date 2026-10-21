@@ -293,6 +293,7 @@ const reports=runtime.spreadsheet.getSheetByName('Community Message Reports');re
   assert(!call('communityGetConversation',{id:fresh.id,session:fresh.session}).ok && !use(revokerMail,'conversation',fresh.id).ok,'Revoked link still opens the conversation.');
   assert(call('communityGetConversation',{id:fresh.id,session:revoked.session}).ok && call('communityGetConversation',{id:fresh.id,session:friend.session}).ok,'Revocation locked out the current tab or the other participant.');
   assert(mails.length===before+1 && mails.at(-1).to==='revoker@example.com' && rawAccess(mails.at(-1))===revoked.session,'New link was not emailed to the revoking participant.');
+  assert(mails.at(-1).subject==='【J-Connect】非公開会話のリンク' && !/届きました|新しいメッセージ/.test(mails.at(-1).body),'Link-only mail claims a new message.');
   // Recovery resends the same permanent link without revealing whether the address matched.
   runtime.advanceTime(11*60*1000);const resend=mails.length;
   assert(call('communityRequestAccess',{kind:'conversation',id:fresh.id,email:'friend@example.com',form_started_at:String(c.Date.now()-5000)}).ok && mails.length===resend+1 && rawAccess(mails.at(-1))===friend.session,'Resent link differs from the original.');

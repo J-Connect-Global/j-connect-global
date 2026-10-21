@@ -55,7 +55,7 @@ official_sources:
 
 ただし、電気製品、電池・充電池、ガスボンベ、薬品や塗料の付いた包装などはこの容器の対象ではありません。材質だけでは決められない物は、[AWISTAの品目別検索](https://www.awista-kommunal.de/abfall-abc)で確認します。近隣のErkrathやNeussなどでは、各市の分別案内を使ってください。
 
-![包装用の黄色い容器とデュッセルドルフの資源容器を比較した図](/assets/images/living/seo/waste-local-rules.svg "図解：J-Connect編集部。根拠：AWISTA Kommunalの資源容器案内。黄色という色だけで全国共通と判断しない。")
+![包装用の黄色い容器とデュッセルドルフの資源容器を比較した図](/assets/images/living/seo/waste-local-rules.svg "図解：J-Connect。根拠：AWISTA Kommunalの資源容器案内。黄色という色だけで全国共通と判断しない。")
 
 空の包装は、きれいに洗う必要はありません。中身を使い切り、ヨーグルト容器のアルミ蓋など外せる部分を分け、異なる素材を重ねて詰め込まないようにします。[AWISTAの対象・対象外一覧](https://www.awista-kommunal.de/wertstofftonne)から個別の条件を確認できます。
 
@@ -77,7 +77,7 @@ official_sources:
 
 ガラス容器は透明・茶・緑に分け、青などその他の色は緑へ入れます。ただしガラスのコップや耐熱容器は、瓶と溶け方が違うため混ぜません。電球・LEDもガラス容器の回収先ではありません。
 
-![預り金付きの瓶、通常の空き瓶、ガラス食器を別の回収先へ分ける図](/assets/images/living/seo/waste-glass-routes.svg "図解：J-Connect編集部。根拠：連邦環境庁のガラス分別案内。容器の用途を確認してから色で分ける。")
+![預り金付きの瓶、通常の空き瓶、ガラス食器を別の回収先へ分ける図](/assets/images/living/seo/waste-glass-routes.svg "図解：J-Connect。根拠：連邦環境庁のガラス分別案内。容器の用途を確認してから色で分ける。")
 
 瓶を投入できる時間は現地の表示に従い、日曜や夜間の騒音に注意します。満杯でも袋や瓶を容器の横に置かず、別の回収場所を探してください。[連邦環境庁のガラス案内](https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/altglas-richtig-trennen-entsorgen)と[デュッセルドルフの回収場所マップ](https://www.awista-kommunal.de/privathaushalte/abgabemoeglichkeiten/depotcontainer)が役立ちます。
 
@@ -116,4 +116,4 @@ official_sources:
 
 ## 確認日と図の出典
 
-2026年9月28日に上記の公式案内を確認しました。図は公式写真の転載ではなく、J-Connect編集部が説明用に作成したものです。料金・回収日・個別品目の扱いは、居住地の最新案内を優先してください。
+2026年9月28日に上記の公式案内を確認しました。図は公式写真の転載ではなく、J-Connectが説明用に作成したものです。料金・回収日・個別品目の扱いは、居住地の最新案内を優先してください。

@@ -35,7 +35,7 @@ Deutschlandticketの月額は、2027年1月1日から66.80ユーロになりま�
 
 ## 何が変わる？
 
-![購入先、契約者のアカウント、通知の期限と回答結果を確認する図](/assets/images/events/deutschlandticket-contract-check.svg "図解：J-Connect編集部。本文のDB公式FAQに基づく。公式画面の再現ではありません。")
+![購入先、契約者のアカウント、通知の期限と回答結果を確認する図](/assets/images/events/deutschlandticket-contract-check.svg "図解：J-Connect。本文のDB公式FAQに基づく。公式画面の再現ではありません。")
 
 | 項目 | 内容 |
 | --- | --- |

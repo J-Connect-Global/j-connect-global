@@ -20,7 +20,7 @@
   </script>
 <script src="/assets/js/site-identity.js"></script>
 <title>投稿フォーム | J-Connect Germany</title>
-<meta name="description" content="J-Connect Germanyの交流・掲示板に投稿するためのフォームです。投稿は管理者確認後に掲載されます。">
+<meta name="description" content="J-Connect Germanyの交流・掲示板に投稿するためのフォームです。投稿は送信後すぐに掲載されます。">
 <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://j-connect-global.com/germany/ja/community/post/">
   <link rel="alternate" hreflang="ja" href="https://j-connect-global.com/germany/ja/community/post/">
@@ -1326,7 +1326,7 @@
         <h1 id="page-title">交流・掲示板に投稿する</h1>
         <p class="hero-desc">
           売ります・買います、住まい、イベント、質問、仲間募集など、ドイツ生活に関する情報を投稿できます。
-          投稿は送信後に管理者確認となります。
+          投稿は送信後すぐに掲載されます。
         </p>
         <p class="hero-desc hero-safety-note">
           本文には住所、電話番号、勤務先などの個人情報を書きすぎないようにしてください。
@@ -1455,7 +1455,7 @@
         </form>
 
         <p class="subtle">
-          送信後、投稿内容は管理者確認後に掲載されます。確認が完了するまで、反映に時間がかかる場合があります。画像を添付した場合も、内容確認後に表示されます。
+          送信後、投稿はすぐに掲示板に掲載されます。編集・募集終了・非公開にする場合は、投稿完了メールの管理用リンクから行えます。不適切な投稿は運営が事後に非表示にすることがあります。
           投稿者メール宛に確認用の連絡が届く場合があります。
         </p>
       </div>
@@ -3087,9 +3087,15 @@ async function loadStandaloneDetail(id) {
   renderDetailLoading();
 
   try {
-    const data = await fetchCommunityPostsData();
-    const posts = DATA_SOURCES.normalizePayload(data).map(normalizePost).filter(isPublicBoardPost);
-    const post = posts.find(function(item) { return String(item._id) === String(id); });
+    const data = await fetchCommunityPostsData().catch(function() { return null; });
+    let posts = data ? DATA_SOURCES.normalizePayload(data).map(normalizePost).filter(isPublicBoardPost) : [];
+    let post = posts.find(function(item) { return String(item._id) === String(id); });
+    if (!post) {
+      // Posts are published on submission; a new post is not in the snapshot yet.
+      const live = await DATA_SOURCES.fetchLiveCommunityPosts(data);
+      posts = DATA_SOURCES.normalizePayload(live).map(normalizePost).filter(isPublicBoardPost);
+      post = posts.find(function(item) { return String(item._id) === String(id); });
+    }
     if (!post) {
       renderNotFound();
       return;

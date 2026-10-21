@@ -924,6 +924,10 @@ function validateCreatePostParams_(params) {
 function createPost_(params) {
   const validation = validateCreatePostParams_(params);
   if (!validation.ok) return validation;
+  if (String(params.website || '').trim()) return safeFormFailure_('HONEYPOT');
+  const posterEmail = String(params.contact_email_private || '').trim().toLowerCase();
+  // Posts appear without review, so repeated submissions are throttled instead.
+  if (!acquireCommunityPostQuota_('email:' + posterEmail, 5) || !acquireCommunityPostQuota_('all', 60)) return safeFormFailure_('RATE_LIMITED');
 
   const context = getSheetContext_();
   const now = nowIso_();
@@ -953,6 +957,8 @@ function createPost_(params) {
     if (saveLock.hasLock()) saveLock.releaseLock();
   }
   invalidateCommunityCache_();
+  // The board reads new posts live; static pages follow on the next sync.
+  PropertiesService.getScriptProperties().setProperty('CM_PUBLIC_DIRTY', 'true');
 
   try {
     sendCommunitySubmissionAdminEmail_(context, rowToObject_(context.headers, row, context.sheet.getLastRow()));
@@ -979,6 +985,21 @@ function createPost_(params) {
     email_sent: emailResult.sent,
     email_error: emailResult.error || ''
   };
+}
+
+function acquireCommunityPostQuota_(bucket, maximum) {
+  const cache = CacheService.getScriptCache();
+  const key = 'community-post-quota:' + sha256Hex_(bucket);
+  const lock = LockService.getScriptLock();
+  try {
+    lock.waitLock(5000);
+    const count = Number(cache.get(key) || 0);
+    if (count >= maximum) return false;
+    cache.put(key, String(count + 1), 3600);
+    return true;
+  } finally {
+    if (lock.hasLock()) lock.releaseLock();
+  }
 }
 
 function listJobs_() {
@@ -1104,7 +1125,7 @@ function sendCommunitySubmissionAdminEmail_(context, post) {
     image_url_1: post.image_url_1,
     image_url_2: post.image_url_2,
     image_url_3: post.image_url_3,
-    status: 'pending',
+    status: 'active',
     created_at: post.created_at,
     spreadsheet_url: spreadsheetUrl
   };
@@ -1113,20 +1134,21 @@ function sendCommunitySubmissionAdminEmail_(context, post) {
     country: '国', region: '地域', city: '市区町村', nickname: 'ニックネーム', price: '価格',
     availability_date: '日付', body: '本文', contact_email_private: '投稿者の非公開メールアドレス',
     image_url_1: '画像URL 1', image_url_2: '画像URL 2', image_url_3: '画像URL 3', status: 'status',
-    created_at: '投稿日時', spreadsheet_url: 'Spreadsheetで確認・承認'
+    created_at: '投稿日時', spreadsheet_url: '問題がある場合はSpreadsheetで status を hidden に変更'
   };
   sendZohoEmail_({
     to: config.adminEmail,
-    subject: `【J-Connect管理】Community新規投稿: ${title}`,
-    html: emailDefinitionListWithLabels_('Community新規投稿（Spreadsheetで確認・承認してください）', values, labels)
+    subject: `【J-Connect管理】Community新規投稿（掲載済み）: ${title}`,
+    html: emailDefinitionListWithLabels_('Community新規投稿（承認不要で掲載済み・確認のみ）', values, labels)
   });
 }
 
 function createPostValue_(header, params, generated) {
   if (header === 'id' || header === 'post_id') return generated.postId;
   if (header === 'created_at' || header === 'updated_at' || header === 'last_modified_at') return generated.now;
-  if (header === 'published_at') return '';
-  if (header === 'status') return 'pending';
+  // Community posts are published on submission; moderation happens afterwards.
+  if (header === 'published_at') return generated.now;
+  if (header === 'status') return 'active';
   if (header === 'priority') return params.priority || '';
   if (header === 'manage_token_hash') return sha256Hex_(generated.manageToken);
   if (header === 'manage_url') return generated.manageUrl;
@@ -1268,6 +1290,7 @@ function appendHistory_(raw, record) {
 
 function invalidateCommunityCache_() {
   const cache = CacheService.getScriptCache();
+  cache.remove(COMMUNITY_CACHE_KEY);
   cache.remove(`${COMMUNITY_CACHE_KEY}:true`);
   cache.remove(`${COMMUNITY_CACHE_KEY}:false`);
 }
@@ -1743,21 +1766,20 @@ function sendCreateConfirmationEmail_(params, info) {
     const safeManageUrl = escapeHtmlForEmail_(info.manageUrl);
     const safePublicPostUrl = escapeHtmlForEmail_(info.publicPostUrl);
     const htmlBody = [
-      '<p>J-Connect Global 掲示板への投稿を受け付けました。</p>',
+      '<p>J-Connect Global 掲示板に投稿を掲載しました。</p>',
       `<p><strong>投稿タイトル:</strong><br>${safeTitle}</p>`,
-      '<p>投稿は管理者が確認後に掲載されます。<br>掲載まで数時間から数日かかる場合があります。</p>',
       '<p><strong>管理用リンク:</strong><br>下記URLから、投稿内容の編集、募集停止、再募集、非公開化ができます。<br>このリンクは投稿管理専用です。第三者には共有しないでください。</p>',
       `<p><a href="${safeManageUrl}">${safeManageUrl}</a></p>`,
-      '<p><strong>公開投稿リンク:</strong><br>管理者が投稿内容を確認・承認後、下記ページで投稿内容を閲覧できるようになります。</p>',
+      '<p><strong>公開投稿リンク:</strong><br>下記ページで投稿内容を閲覧できます。</p>',
       `<p><a href="${safePublicPostUrl}">${safePublicPostUrl}</a></p>`,
       '<p>J-Connect Global がログイン情報、銀行情報、公的ID番号を求めることはありません。</p>'
     ].join('');
     sendZohoEmail_({
       to,
-      subject: `【J-Connect Global】投稿を受け付けました: ${title}`,
+      subject: `【J-Connect Global】投稿を掲載しました: ${title}`,
       name: 'J-Connect Global',
       htmlBody,
-      body: `J-Connect Global 掲示板への投稿を受け付けました。\n\n投稿タイトル:\n${title}\n\n投稿は管理者が確認後に掲載されます。\n掲載まで数時間から数日かかる場合があります。\n\n管理用リンク:\n下記URLから、投稿内容の編集、募集停止、再募集、非公開化ができます。\nこのリンクは投稿管理専用です。第三者には共有しないでください。\n\n${info.manageUrl}\n\n公開投稿リンク:\n管理者が投稿内容を確認・承認後、下記ページで投稿内容を閲覧できるようになります。\n\n${info.publicPostUrl}\n\nJ-Connect Global がログイン情報、銀行情報、公的ID番号を求めることはありません。`
+      body: `J-Connect Global 掲示板に投稿を掲載しました。\n\n投稿タイトル:\n${title}\n\n管理用リンク:\n下記URLから、投稿内容の編集、募集停止、再募集、非公開化ができます。\nこのリンクは投稿管理専用です。第三者には共有しないでください。\n\n${info.manageUrl}\n\n公開投稿リンク:\n下記ページで投稿内容を閲覧できます。\n\n${info.publicPostUrl}\n\nJ-Connect Global がログイン情報、銀行情報、公的ID番号を求めることはありません。`
     });
     return { sent: true };
   } catch (error) {

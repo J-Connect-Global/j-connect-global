@@ -384,9 +384,9 @@
 
     <section class="thanks-hero jc-page-hero" aria-labelledby="page-title">
       <div class="jc-eyebrow"><span class="jc-dot"></span>COMMUNITY BOARD</div>
-      <h1 id="page-title">投稿を受け付けました</h1>
+      <h1 id="page-title">投稿を掲載しました</h1>
       <p class="hero-desc">
-        投稿は管理者確認後に掲載されます。確認が完了するまで、反映に時間がかかる場合があります。
+        投稿は掲示板に掲載されました。編集・募集終了・非公開にする場合は、下の管理用リンク（メールにも記載）から行えます。
       </p>
       <div class="thanks-actions">
         <a class="jc-button is-primary" href="../">掲示板に戻る</a>
@@ -402,12 +402,6 @@
           <p>この表示は送信直後の確認用です。非公開メールアドレスや内部項目は表示していません。</p>
         </div>
         <div id="submissionSummary"></div>
-        <div class="cancel-panel" aria-labelledby="cancel-title">
-          <h2 id="cancel-title">投稿を取り消したい場合</h2>
-          <p>管理者確認前に掲載を止めたい場合は、取り消し依頼を作成できます。</p>
-          <button id="cancelSubmissionButton" class="jc-button cancel-button" type="button">投稿取り消し</button>
-          <p id="cancelStatus" class="cancel-status" aria-live="polite"></p>
-        </div>
         <div class="thanks-actions bottom-actions">
           <a class="jc-button is-primary" href="../">掲示板に戻る</a>
           <a class="jc-button" href="../post/">別の投稿を作成する</a>
@@ -463,12 +457,7 @@
 <script src="/assets/js/data-sources.js"></script>
 <script>
 (function() {
-  const DATA_SOURCES = window.JCONNECT_DATA_SOURCES;
-  const GAS_URL = DATA_SOURCES.communityDataEndpoint;
   const LAST_SUBMISSION_KEY = 'jconnectCommunityLastSubmission';
-  const CANCEL_ACCEPTED_MESSAGE = '投稿取り消しの依頼を受け付けました。管理者確認前のため、掲載されないよう確認します。';
-  const ADMIN_EMAIL_NOT_CONFIGURED_MESSAGE = '投稿取り消し依頼の送信先が管理者側で設定されていません。時間をおいて再度お試しください。';
-  const CANCEL_FAILED_MESSAGE = '投稿取り消し依頼を送信できませんでした。時間をおいて再度お試しください。';
 
   function escapeHtml(value) {
     return String(value || '')
@@ -492,17 +481,6 @@
       }
     }
     return null;
-  }
-
-  function saveStoredSnapshot(snapshot) {
-    const value = JSON.stringify(snapshot);
-    try {
-      sessionStorage.setItem(LAST_SUBMISSION_KEY, value);
-    } catch (error) {
-      try {
-        localStorage.setItem(LAST_SUBMISSION_KEY, value);
-      } catch (storageError) {}
-    }
   }
 
   function formatDateTime(value) {
@@ -572,7 +550,7 @@
     if (!container) return;
 
     if (!snapshot) {
-      container.innerHTML = '<div class="fallback-message">送信内容の一時表示データが見つかりませんでした。投稿内容は管理者確認後に掲載されます。</div>';
+      container.innerHTML = '<div class="fallback-message">送信内容の一時表示データが見つかりませんでした。投稿は掲示板に掲載されています。管理用リンクは投稿完了メールをご確認ください。</div>';
       return;
     }
 
@@ -593,108 +571,8 @@
     `;
   }
 
-  function updateCancelButton(snapshot) {
-    const button = document.getElementById('cancelSubmissionButton');
-    const status = document.getElementById('cancelStatus');
-    if (!button || !status) return;
-    if (snapshot && snapshot.cancellationRequested) {
-      button.textContent = '取り消し依頼済み';
-      button.disabled = true;
-      status.textContent = '取り消し依頼の状態をこのブラウザに保存しました。';
-    }
-  }
-
-  function appendPayloadValue(payload, key, value) {
-    payload.append(key, value === undefined || value === null ? '' : String(value));
-  }
-
-  function buildCancellationPayload(snapshot) {
-    const payload = new URLSearchParams();
-    appendPayloadValue(payload, 'action', 'cancelCommunityPostRequest');
-    appendPayloadValue(payload, 'request_type', 'community_post_cancellation');
-    appendPayloadValue(payload, 'site', 'J-Connect Global');
-    appendPayloadValue(payload, 'cancellation_requested_at', new Date().toISOString());
-    appendPayloadValue(payload, 'submitted_at', snapshot.submittedAt);
-    appendPayloadValue(payload, 'responsePostId', snapshot.responsePostId);
-    appendPayloadValue(payload, 'title', snapshot.title);
-    appendPayloadValue(payload, 'body', snapshot.body);
-    appendPayloadValue(payload, 'category1', snapshot.category1);
-    appendPayloadValue(payload, 'category2', snapshot.category2);
-    appendPayloadValue(payload, 'country', snapshot.country);
-    appendPayloadValue(payload, 'city', snapshot.city);
-    appendPayloadValue(payload, 'price', snapshot.price);
-    appendPayloadValue(payload, 'availability_date', snapshot.date_value || snapshot.availability_date);
-    appendPayloadValue(payload, 'nickname', snapshot.nickname);
-    return payload;
-  }
-
-  async function postCancellationRequest(snapshot) {
-    const response = await fetch(GAS_URL, {
-      method: 'POST',
-      body: buildCancellationPayload(snapshot)
-    });
-    if (!response.ok) {
-      throw new Error('HTTP ' + response.status);
-    }
-    return await response.json();
-  }
-
-  function isAdminEmailMissing(data) {
-    const value = [
-      data && data.error,
-      data && data.code,
-      data && data.reason,
-      data && data.message
-    ].filter(Boolean).join(' ');
-    return value.includes('ADMIN_EMAIL_NOT_CONFIGURED');
-  }
-
-  async function handleCancellation() {
-    const snapshot = readStoredSnapshot() || {};
-    const button = document.getElementById('cancelSubmissionButton');
-    const status = document.getElementById('cancelStatus');
-    if (!window.confirm('この投稿の取り消しを依頼しますか？')) return;
-
-    if (button) {
-      button.disabled = true;
-      button.textContent = '送信中...';
-    }
-
-    try {
-      const data = await postCancellationRequest(snapshot);
-      if (!data || data.ok !== true) {
-        if (isAdminEmailMissing(data)) {
-          window.alert(ADMIN_EMAIL_NOT_CONFIGURED_MESSAGE);
-        } else {
-          window.alert(CANCEL_FAILED_MESSAGE);
-        }
-        if (button) {
-          button.disabled = false;
-          button.textContent = '投稿取り消し';
-        }
-        return;
-      }
-
-      window.alert(CANCEL_ACCEPTED_MESSAGE);
-      snapshot.cancellationRequested = true;
-      saveStoredSnapshot(snapshot);
-      updateCancelButton(snapshot);
-    } catch (error) {
-      window.alert(CANCEL_FAILED_MESSAGE);
-      if (button) {
-        button.disabled = false;
-        button.textContent = '投稿取り消し';
-      }
-      if (status) {
-        status.textContent = '投稿取り消し依頼を送信できませんでした。時間をおいて再度お試しください。';
-      }
-    }
-  }
-
   const snapshot = readStoredSnapshot();
   renderSummary(snapshot);
-  updateCancelButton(snapshot);
-  document.getElementById('cancelSubmissionButton')?.addEventListener('click', handleCancellation);
   document.querySelectorAll('[data-copy-target]').forEach(function(button) {
     button.addEventListener('click', async function() {
       const target = document.getElementById(button.dataset.copyTarget || '');

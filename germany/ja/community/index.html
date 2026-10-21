@@ -1673,6 +1673,17 @@
       `;
     }
 
+    // New posts appear without review; add them before the static data syncs.
+    async function refreshLiveCommunityPosts(staticData) {
+      try {
+        const live = await DATA_SOURCES.fetchLiveCommunityPosts(staticData);
+        writeCommunityPostsCache(live);
+        renderCommunityPostsPayload(live);
+      } catch (error) {
+        console.warn("Live community posts unavailable; showing the published snapshot.", error);
+      }
+    }
+
     async function loadPosts() {
       const cached = readCommunityPostsCache();
       const hasSnapshot = Boolean(els.cards.querySelector('[data-public-snapshot-item="community"]'));
@@ -1697,7 +1708,9 @@
         const data = await fetchCommunityPostsData();
         writeCommunityPostsCache(data);
         renderCommunityPostsPayload(data);
+        refreshLiveCommunityPosts(data);
       } catch (error) {
+        refreshLiveCommunityPosts(null);
         console.warn("Community posts load failed:", COMMUNITY_STATIC_POSTS_URL, error);
         if (cached) {
           state.loading = false;

@@ -84,10 +84,11 @@ export function installRuntimeDiagnostics(page) {
     if (url.hostname === "script.google.com" || url.hostname === "script.googleusercontent.com") {
       let originRequest = request;
       while (originRequest.redirectedFrom()) originRequest = originRequest.redirectedFrom();
-      const action = new URLSearchParams(originRequest.postData() || '').get('action');
-      // Inline replies need live freshness. Directory/post rendering still uses
-      // the static snapshot; only these two read-only messaging actions may run.
-      if (!['communityMessagingStatus', 'communityPublicReplies'].includes(action)) diagnostics.externalDataRequests.push(`${request.method()} ${url.origin}${url.pathname}`);
+      const action = new URLSearchParams(originRequest.postData() || '').get('action') || new URL(originRequest.url()).searchParams.get('action');
+      // Inline replies need live freshness, and Community posts are published
+      // without review, so the board refreshes its static snapshot with the
+      // read-only live list. Other rendering still uses the static snapshots.
+      if (!['communityMessagingStatus', 'communityPublicReplies', 'getPosts'].includes(action)) diagnostics.externalDataRequests.push(`${request.method()} ${url.origin}${url.pathname}`);
     }
   });
 }

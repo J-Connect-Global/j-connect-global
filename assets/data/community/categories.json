@@ -1,7 +1,7 @@
 {
   "api_version": "2026-07-13.1",
   "source": "master-gas:community",
-  "count": 7,
+  "count": 6,
   "groups": [
     {
       "field": "category1",
@@ -35,5 +35,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-21T13:54:01.155Z"
+  "generated_at": "2026-10-21T20:03:58.320Z"
 }

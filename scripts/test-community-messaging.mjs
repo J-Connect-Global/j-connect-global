@@ -59,7 +59,7 @@ const gas = fs.readFileSync(path.join(root, "apps-script/community-board-api.gs"
   vm.runInContext(fs.readFileSync(path.join(root, 'apps-script/zoho-mail.gs'), 'utf8'), failing);
   let failed = false;
   try { failing.sendZohoEmail_({ to: 'reader@example.com', subject: 'Limit', body: 'x' }); } catch (error) { failed = error.message === 'ZOHO_SEND_FAILED'; }
-  assert(failed && warnings.some(w => w.includes('HTTP 553') && w.includes('OUTGOING_LIMIT') && w.includes('Sending limit exceeded')) && !warnings.join('').includes('reader@example.com'), 'Zoho failure reason is not logged safely.');
+  assert(failed && warnings.some(w => w.includes('HTTP 553') && w.includes('OUTGOING_LIMIT') && w.includes('Sending limit exceeded')) && warnings.some(w => w.includes('[redacted]')) && !/reader|example\.com/.test(warnings.join('')), 'Zoho failure reason is not logged safely.');
   for (const invalid of ['http://mail.zoho.eu/api', 'https://mail.zoho.eu/api?token=x', 'https://mail.zoho.eu/api#secret', 'https://mail.zoho.eu/other']) {
     let rejected = false;
     try { transport.normalizeZohoBaseUrl_(invalid); } catch { rejected = true; }

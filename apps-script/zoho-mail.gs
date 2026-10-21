@@ -143,8 +143,11 @@ function sendZohoEmail_(message) {
 function zohoErrorSummary_(response) {
   try {
     const payload = JSON.parse(response.getContentText());
-    const code = String(payload && payload.data && (payload.data.errorCode || payload.data.moreInfo) || '').replace(/[^\w .:-]/g, '').slice(0, 80);
-    const description = String(payload && payload.status && payload.status.description || '').replace(/[^\w .:-]/g, '').slice(0, 80);
+    // Addresses are redacted before punctuation is stripped, so "a@b.com"
+    // cannot survive as "ab.com".
+    const safe = (value) => String(value || '').replace(/[^\s@<>"']*@[^\s@<>"']*/g, '[redacted]').replace(/[^\w .:\[\]-]/g, '').slice(0, 80);
+    const code = safe(payload && payload.data && (payload.data.errorCode || payload.data.moreInfo));
+    const description = safe(payload && payload.status && payload.status.description);
     return [code, description].filter(Boolean).map((value) => ', ' + value).join('');
   } catch (error) {
     return '';

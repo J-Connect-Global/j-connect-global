@@ -173,3 +173,9 @@ test('a post published without review appears on the board and its detail page b
   await expect(composer(page).getByRole('button',{name:'送信する',exact:true})).toBeEnabled();
   expect(liveReads).toBeGreaterThan(0);
 });
+test('an unreachable live list still reports a missing post as not found',async({page})=>{
+  await stubDriveImages(page);
+  await page.route('https://script.google.com/**',()=>{});
+  await page.goto('/germany/ja/community/post/?id=post_missing-everywhere');
+  await expect(page.locator('h1:visible')).toHaveText('投稿が見つかりません',{timeout:15000});
+});

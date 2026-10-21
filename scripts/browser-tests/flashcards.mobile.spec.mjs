@@ -98,11 +98,10 @@ test("mobile flashcard keeps progress, card, and primary controls readable at 36
 });
 
 
-test("C2 contextual exercise stays readable on narrow screens", async ({ page }, testInfo) => {
+test("C2 cards stay readable on narrow screens", async ({ page }, testInfo) => {
   await openDataRoute(page, '/germany/ja/learn-german/flashcards/?deck=c2-nuance-repertoire', [decksPath, '/assets/data/learn-german/flashcards/cards-c2.json']);
   await page.locator("#flashcardsStart").click();
-  await expect(page.locator("#flashcardPractice")).toBeVisible();
-  await expect(page.locator("#flashcardBasisSummary")).toContainText("独自編集");
+  await expect(page.locator("#flashcardBasisSummary")).toContainText("C2・");
   await assertNoHorizontalOverflow(page);
   await page.locator("#flashcardsStudy").scrollIntoViewIfNeeded();
   await page.screenshot({ path: testInfo.outputPath(`vocabulary-c2-context-${testInfo.project.name}.png`) });

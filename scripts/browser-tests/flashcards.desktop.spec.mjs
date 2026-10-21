@@ -15,7 +15,7 @@ import {
 const vocabulary = JSON.parse(await fs.readFile(new URL('../../assets/data/learn-german/flashcards/decks.json', import.meta.url), 'utf8'));
 const a1Count = vocabulary.level_counts.A1;
 const c2Count = vocabulary.level_counts.C2;
-const totalCount = vocabulary.cefr_card_count.toLocaleString('ja-JP');
+const totalCount = vocabulary.total_card_count.toLocaleString('ja-JP');
 const decksPath = "/assets/data/learn-german/flashcards/decks.json";
 const a1CardsPath = "/assets/data/learn-german/flashcards/cards-a1.json";
 const a2CardsPath = "/assets/data/learn-german/flashcards/cards-a2.json";
@@ -290,7 +290,7 @@ test("German word and example audio can be played, switched, and stopped without
   await page.locator("#flashcardFlip").click();
   await expect(page.locator("#flashcardExampleDe")).toHaveText("Guten Abend!");
   await expect(page.locator("#flashcardExampleJa")).toHaveText("こんばんは。");
-  await expect(page.locator("#flashcardExampleSource a")).toHaveAttribute("href", /tatoeba\.org\/en\/sentences\/show\/438751/);
+  await expect(page.locator("#flashcardExampleSource")).toHaveCount(0);
   await expect(exampleButton).toBeVisible();
   await expect(exampleButton).toBeEnabled();
   await assertNoHorizontalOverflow(page);
@@ -333,8 +333,8 @@ test("level deck inventory lists every word with sorting, filters, saved state, 
   await page.locator("#flashcardsInventoryCsv").click();
   const csvPath = await (await csvDownloadPromise).path();
   const csvText = await fs.readFile(csvPath, "utf8");
-  expect(csvText).toContain('"order","saved","level","german"');
-  expect(csvText).toContain('"yes","A1","der Termin"');
+  expect(csvText).toContain('"order","saved","level","category","german"');
+  expect(csvText).toContain('"yes","A1","単語","der Termin"');
   expect(csvText.split("\r\n").filter(Boolean)).toHaveLength(2);
 
   await page.locator("#flashcardsInventoryReset").click();
@@ -352,22 +352,23 @@ test("level deck inventory lists every word with sorting, filters, saved state, 
   await expect(page.locator("#flashcardsInventoryBody tr").first()).toContainText("学習中");
 });
 
-test("C2 expression practice exposes contextual tasks and can start a bounded session", async ({ page }) => {
+test("C2 deck starts a bounded session with the sheet's card fields only", async ({ page }) => {
   await openDataRoute(page, "/germany/ja/learn-german/flashcards/?deck=c2-nuance-repertoire", [decksPath, c2CardsPath]);
   await expect(page.locator("#flashcardsSetup")).toBeVisible();
-  await expect(page.locator("#sessionSetupTitle")).toContainText(String(c2Count));
-  await expect(page.locator("#setupDeckBadges")).toContainText(`${c2Count}枚`);
-  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${c2Count} / ${c2Count}項目`);
+  await expect(page.locator("#sessionSetupTitle")).toContainText(c2Count.toLocaleString("ja-JP"));
+  await expect(page.locator("#setupDeckBadges")).toContainText(`${c2Count.toLocaleString("ja-JP")}枚`);
+  await expect(page.locator("#setupDeckBadges")).toContainText("J-Connect独自配置");
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${c2Count.toLocaleString("ja-JP")} / ${c2Count.toLocaleString("ja-JP")}項目`);
   await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(Math.min(50, c2Count));
   await page.locator("#flashcardsStart").click();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
-  await expect(page.locator("#flashcardPractice")).toBeVisible();
-  await expect(page.locator("#flashcardPracticeContext")).not.toBeEmpty();
-  await expect(page.locator("#flashcardPracticePrompt")).toContainText("含意");
-  await expect(page.locator("#flashcardBasisSummary")).toContainText("独自編集");
+  await expect(page.locator("#flashcardPractice")).toBeHidden();
+  await expect(page.locator("#flashcardBasisSummary")).toContainText("C2・");
   await page.locator("#flashcardFlipControl").click();
   await page.locator("#flashcardsDetailsToggle").click();
-  await expect(page.locator("#flashcardLevelBasis")).toContainText("認定ではありません");
+  await expect(page.locator("#flashcardGrammar")).not.toBeEmpty();
+  await expect(page.locator("#flashcardLevelBasis")).toHaveCount(0);
+  await expect(page.locator("#flashcardsDetails")).not.toContainText(/Goethe|Tatoeba|FreeDict|機械翻訳/);
 });
 
 test("all-level deck exposes A1-C2 chips and filters the actual published inventory", async ({ page }) => {
@@ -389,7 +390,7 @@ test("all-level deck exposes A1-C2 chips and filters the actual published invent
   const c2Chip = page.locator('[data-inventory-level="C2"]');
   await c2Chip.click();
   await expect(c2Chip).toHaveAttribute("aria-pressed", "true");
-  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${c2Count} / ${totalCount}項目`);
+  await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${c2Count.toLocaleString("ja-JP")} / ${totalCount}項目`);
   await expect(page.locator("#flashcardsInventoryBody tr")).toHaveCount(Math.min(50, c2Count));
   expect(await page.locator("#flashcardsInventoryBody tr").evaluateAll(rows => rows.every(row => row.textContent.includes("C2")))).toBe(true);
 
@@ -452,8 +453,8 @@ test("a former C1 item retains its identity and progress in the A1 material", as
   await page.locator("#flashcardsInventorySearch").fill("abfahren");
   const row = page.locator("#flashcardsInventoryBody tr").first();
   await expect(row).toContainText("A1");
-  await expect(row).toContainText("Goethe A1掲載");
-  await expect(row.locator('a[href*="#page=9"]')).toBeVisible();
+  await expect(row).toContainText("単語");
+  await expect(row.locator("a")).toHaveCount(0);
   await row.locator('[data-inventory-save="c1-0001"]').click();
   await expect.poll(() => page.evaluate(async () => (await window.JConnectFlashcardStorage.getProgress('c1-0001'))?.saved)).toBe(true);
   await assertNoHorizontalOverflow(page);
@@ -461,17 +462,21 @@ test("a former C1 item retains its identity and progress in the A1 material", as
   await page.screenshot({ path: testInfo.outputPath('vocabulary-a1-reference-desktop.png') });
 });
 
-test("C1 practice presents a full expression, context and honest provenance", async ({ page }, testInfo) => {
-  await openDataRoute(page, '/germany/ja/learn-german/flashcards/?deck=c1-broad-repertoire', [decksPath, c1CardsPath]);
+test("card details show category, grammar and the web usage note from the sheet", async ({ page }, testInfo) => {
+  await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
   await page.locator('input[name="session-order"][value="ordered"]').check();
   await page.locator("#flashcardsStart").click();
-  await expect(page.locator("#flashcardPractice")).toBeVisible();
-  await expect(page.locator("#flashcardPracticeContext")).toContainText("Prämisse");
-  await expect(page.locator("#flashcardPrompt")).toContainText("hinterfragen");
-  await expect(page.locator("#flashcardBasisSummary")).toContainText("C1向け表現練習");
+  await expect(page.locator("#flashcardPrompt")).toHaveText("der Termin");
+  await expect(page.locator("#flashcardBasisSummary")).toHaveText("A1・単語");
+  await page.locator("#flashcardFlipControl").click();
+  await page.locator("#flashcardsDetailsToggle").click();
+  await expect(page.locator("#flashcardPartOfSpeech")).toHaveText("単語");
+  await expect(page.locator("#flashcardGrammar")).toHaveText("名詞 / 冠詞: der / 複数: Termine");
+  await expect(page.locator("#flashcardUsageNote")).toBeVisible();
+  await expect(page.locator("#flashcardUsageNote")).toContainText("einen Termin vereinbaren");
   await assertNoHorizontalOverflow(page);
   await page.locator("#flashcardsStudy").scrollIntoViewIfNeeded();
-  await page.screenshot({ path: testInfo.outputPath('vocabulary-c1-context-desktop.png') });
+  await page.screenshot({ path: testInfo.outputPath('vocabulary-a1-details-desktop.png') });
 });
 
 

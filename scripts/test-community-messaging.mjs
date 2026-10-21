@@ -48,6 +48,18 @@ const gas = fs.readFileSync(path.join(root, "apps-script/community-board-api.gs"
   transport.sendZohoEmail_({ to: 'reader@example.com', subject: 'HTML compatibility', html, replyTo: 'author@example.com' });
   const htmlPayload = JSON.parse(requests.at(-1).options.payload);
   assert(htmlPayload.mailFormat === 'html' && htmlPayload.content.startsWith(html) && htmlPayload.content.includes('<a href="mailto:author@example.com">'), 'Explicit HTML messages and their reply-address links must retain HTML formatting.');
+  // A failed send logs Zoho's error code and description, never the recipient.
+  const warnings = [];
+  const failing = vm.createContext({
+    console: { warn: message => warnings.push(String(message)), info() {}, error() {} },
+    PropertiesService: { getScriptProperties: () => ({ getProperty: name => properties[name] }) },
+    CacheService: { getScriptCache: () => ({ get: () => 'cached-token', put: () => {} }) },
+    UrlFetchApp: { fetch: () => ({ getResponseCode: () => 553, getContentText: () => JSON.stringify({ status: { code: 553, description: 'Sending limit exceeded <reader@example.com>' }, data: { errorCode: 'OUTGOING_LIMIT' } }) }) }
+  });
+  vm.runInContext(fs.readFileSync(path.join(root, 'apps-script/zoho-mail.gs'), 'utf8'), failing);
+  let failed = false;
+  try { failing.sendZohoEmail_({ to: 'reader@example.com', subject: 'Limit', body: 'x' }); } catch (error) { failed = error.message === 'ZOHO_SEND_FAILED'; }
+  assert(failed && warnings.some(w => w.includes('HTTP 553') && w.includes('OUTGOING_LIMIT') && w.includes('Sending limit exceeded')) && !warnings.join('').includes('reader@example.com'), 'Zoho failure reason is not logged safely.');
   for (const invalid of ['http://mail.zoho.eu/api', 'https://mail.zoho.eu/api?token=x', 'https://mail.zoho.eu/api#secret', 'https://mail.zoho.eu/other']) {
     let rejected = false;
     try { transport.normalizeZohoBaseUrl_(invalid); } catch { rejected = true; }
@@ -263,7 +275,7 @@ const childSession=use(childMail,'reply',child.id);assert(childSession.ok,'Manag
 assert(!call('communityDeleteReply',{id:child.id,session:guest.session}).ok,'Cross-scope deletion accepted.');
 assert(call('communityDeleteReply',{id:child.id,session:childSession.session}).ok,'Email management deletion failed.');
 // Notification failures do not roll back public posts; retry never persists secrets.
-failMail=true;c.processCommunityMessagingNotifications();failMail=false;runtime.advanceTime(3*60*60*1000);const beforeRetry=mails.length;c.processCommunityMessagingNotifications();assert(mails.length>beforeRetry,'Queued mail not retried.');
+failMail=true;c.processCommunityMessagingNotifications();failMail=false;runtime.advanceTime(6*60*1000);const beforeRetry=mails.length;c.processCommunityMessagingNotifications();assert(mails.length>beforeRetry,'A transient mail failure was not retried on the next five-minute run.');
 assert(!JSON.stringify(c.cmTable_('notifications',false).rows).includes('#access='),'Outbox persisted raw link.');
 mails.forEach(mail=>assert(!mail.replyTo && !mail.body.includes('owner@example.com') && !mail.body.includes('guest@example.com') && !mail.body.includes('c'.repeat(64)), 'Mail disclosed an email address or a deletion credential.'));
 // Message notifications carry the message text so it can be read in the mail itself.

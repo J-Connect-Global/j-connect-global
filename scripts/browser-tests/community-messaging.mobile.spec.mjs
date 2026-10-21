@@ -9,7 +9,7 @@ test('inline public/private composer, reply selection and access confirmation fi
   await page.goto(post.detail_url);await expect(page.getByLabel('ニックネーム',{exact:true})).toBeEnabled();
   await page.locator('#reply-reply-mobile').getByRole('button',{name:'返信する',exact:true}).click();await expect(page.locator('.cm-target-context')).toContainText('#3');await assertNoHorizontalOverflow(page);
   await page.getByRole('radio',{name:'非公開返信',exact:true}).check();await expect(page.locator('.cm-mode-notice')).toContainText('非公開');await expect(page.getByRole('button',{name:'送信する',exact:true})).toBeVisible();await assertNoHorizontalOverflow(page);
-  await page.goto('/germany/ja/community/conversation/?kind=conversation&id=conversation-mobile#access='+'a'.repeat(64));await expect(page.getByRole('button',{name:'確認して開く',exact:true})).toBeVisible();expect(page.url()).not.toContain('#');await assertNoHorizontalOverflow(page);
+  await page.goto('/germany/ja/community/conversation/?kind=conversation&id=conversation-mobile#access='+'a'.repeat(64));await expect(page.locator('#recoveryPanel')).toBeVisible();expect(page.url()).not.toContain('#');await assertNoHorizontalOverflow(page);
 });
 
 test('private conversation keeps long text, timestamps and send feedback usable on mobile and tablet',async({page},testInfo)=>{
@@ -23,7 +23,6 @@ test('private conversation keeps long text, timestamps and send feedback usable 
     await route.fulfill({json:data});
   });
   await page.goto('/germany/ja/community/conversation/?kind=conversation&id=conversation-mobile-ui#access='+'a'.repeat(64));
-  await page.getByRole('button',{name:'確認して開く',exact:true}).click();
   await expect(page.locator('#privateMessages .cm-message')).toHaveCount(6);
   await expect(page.locator('#privateMessages time').first()).toContainText('17:18（ベルリン時間）');
   await assertNoHorizontalOverflow(page);

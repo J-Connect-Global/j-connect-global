@@ -14,7 +14,6 @@ async function setup(page, handler = () => ({ok:true})) {
     await route.fulfill({json:data});
   });
   await page.goto(url);
-  await page.getByRole('button',{name:'確認して開く',exact:true}).click();
   await expect(page.locator('#conversationPanel')).toBeVisible();
 }
 

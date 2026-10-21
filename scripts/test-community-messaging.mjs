@@ -208,8 +208,15 @@ assert(mails.some(mail=>mail.to==='guest@example.com') && mails.some(mail=>mail.
 const ownerMail=mails.find(mail=>mail.to==='owner@example.com'), guestMail=mails.find(mail=>mail.to==='guest@example.com');
 assert(!use(ownerMail,'conversation','wrong-id').ok,'Cross-conversation token accepted.');
 const owner=use(ownerMail,'conversation',cid),guest=use(guestMail,'conversation',cid);
-assert(owner.ok && guest.ok,'Mail access failed.');assert(!use(ownerMail,'conversation',cid).ok,'Replayed access accepted.');
-assert(!call('communityGetConversation',{id:cid,session:initialGuestSession}).ok,'Mail login did not rotate session.');
+assert(owner.ok && guest.ok,'Mail access failed.');
+// Links are reusable credentials: opening one again, on another device, or a
+// year later reaches the same conversation without logging out other tabs.
+const ownerAgain=use(ownerMail,'conversation',cid);assert(ownerAgain.ok && ownerAgain.session===owner.session,'Reopening the same email link failed.');
+assert(guest.session===initialGuestSession && rawAccess(guestMail)===initialGuestSession,'Creator tab and emailed link are not the same credential.');
+assert(call('communityGetConversation',{id:cid,session:initialGuestSession}).ok,'Opening the email link logged out the creating device.');
+assert(!use(ownerMail,'conversation','wrong-id').ok && !call('communityGetConversation',{id:cid,session:rawAccess(ownerMail).replace(/^./,c=>c==='a'?'b':'a')}).ok,'Altered or cross-scope link accepted.');
+const workbook=()=>JSON.stringify(Object.values(runtime.spreadsheet.sheets).map(sheet=>sheet.rows));
+assert(!workbook().includes(owner.session) && !workbook().includes(guest.session),'Plain access link stored in the workbook.');
 assert(!call('communityGetConversation',{id:'other',session:owner.session}).ok,'IDOR read allowed.');
 assert(!call('communitySendMessage',{id:cid,session:'f'.repeat(64),body:'intruder',request_id:'evil'}).ok,'Unauthenticated send allowed.');
 let sent=call('communitySendMessage',{id:cid,session:owner.session,body:'土曜日はいかがですか？',request_id:'owner-message-1'});assert(sent.ok,'Owner send failed.');const ownMessage=sent.id;
@@ -265,9 +272,40 @@ const conversationsBefore=c.cmTable_('conversations',false).rows.length;
 const blocked=call('communityCreateConversation',form({request_id:'blocked-new'}));assert(blocked.ok && blocked.session && c.cmTable_('conversations',false).rows.length===conversationsBefore,'Block allowed new inquiry or changed acceptance shape.');
 community.rows[1][1]='hidden';assert(!call('communityGetConversation',{id:cid,session:guest.session}).ok,'Hidden post still exposes conversations.');community.rows[1][1]='active';
 assert(!call('communityGetConversation',{id:cid,session:guest.session},false).ok,'GET credentials accepted.');
-runtime.advanceTime(31*24*60*60*1000);assert(!call('communityGetReply',{id:child.id,session:childSession.session}).ok,'Expired session accepted.');
+runtime.advanceTime(400*24*60*60*1000);assert(call('communityGetReply',{id:child.id,session:childSession.session}).ok,'Reply management link expired with time.');
+assert(use(ownerMail,'conversation',cid).ok && call('communityGetConversation',{id:cid,session:guest.session}).ok,'Conversation link or tab expired with time.');
 const reports=runtime.spreadsheet.getSheetByName('Community Message Reports');reports.appendRow([]);const gap=c.cmAppend_('reports',{report_id:'gap-report',reason:'=SUM(1,2)'});gap.reason='+test';c.cmSave_('reports',gap);assert(c.cmFind_('reports','report_id','gap-report').reason==='+test','Blank row corrupts write.');assert(reports.rows.at(-1)[4]==="'+test",'Formula not escaped.');
-console.log('Community messaging: immediate publication, stable threads, password deletion, private isolation, append-only migration and notification retries passed.');
+// Explicit revocation: old links and tabs stop, the other participant is unaffected,
+// and the new link is emailed only to the revoking participant.
+{
+  const fresh=call('communityCreateConversation',form({post_id:'friend-1',request_id:'revoke-test',email:'revoker@example.com',creation_key:'e'.repeat(64),form_started_at:String(c.Date.now()-5000)}));assert(fresh.ok,'Revocation fixture failed.');
+  c.processCommunityMessagingNotifications();
+  const revokerMail=mails.findLast(mail=>mail.to==='revoker@example.com'), friendMail=mails.findLast(mail=>mail.to==='friend@example.com' && mail.body.includes(fresh.id));
+  const friend=use(friendMail,'conversation',fresh.id);assert(friend.ok,'Recipient link failed.');
+  const before=mails.length;const revoked=call('communityRevokeAccess',{kind:'conversation',id:fresh.id,session:fresh.session});
+  assert(revoked.ok && revoked.session!==fresh.session,'Revocation did not issue a new credential.');
+  assert(!call('communityGetConversation',{id:fresh.id,session:fresh.session}).ok && !use(revokerMail,'conversation',fresh.id).ok,'Revoked link still opens the conversation.');
+  assert(call('communityGetConversation',{id:fresh.id,session:revoked.session}).ok && call('communityGetConversation',{id:fresh.id,session:friend.session}).ok,'Revocation locked out the current tab or the other participant.');
+  assert(mails.length===before+1 && mails.at(-1).to==='revoker@example.com' && rawAccess(mails.at(-1))===revoked.session,'New link was not emailed to the revoking participant.');
+  // Recovery resends the same permanent link without revealing whether the address matched.
+  runtime.advanceTime(11*60*1000);const resend=mails.length;
+  assert(call('communityRequestAccess',{kind:'conversation',id:fresh.id,email:'friend@example.com',form_started_at:String(c.Date.now()-5000)}).ok && mails.length===resend+1 && rawAccess(mails.at(-1))===friend.session,'Resent link differs from the original.');
+  assert(call('communityRequestAccess',{kind:'conversation',id:fresh.id,email:'stranger@example.com',form_started_at:String(c.Date.now()-5000)}).ok && mails.length===resend+1,'Recovery mailed an unregistered address.');
+  // Closing the conversation stops new sends but keeps the history readable.
+  assert(call('communityEndConversation',{id:fresh.id,session:friend.session,block:'false'}).ok,'Close failed.');
+  assert(!call('communitySendMessage',{id:fresh.id,session:revoked.session,body:'after close',request_id:'after-close'}).ok && call('communityGetConversation',{id:fresh.id,session:revoked.session}).status==='closed','Closed conversation still accepts messages.');
+}
+// One-hour links emailed before this release remain usable unless revoked.
+{
+  const participant=c.cmTable_('participants',false).rows.find(p=>p.conversation_id===cid && p.role==='owner');
+  const legacy='9'.repeat(64);
+  c.cmAppend_('access',{access_id:'access-legacy',token_hash:c.sha256Hex_(legacy),purpose:'conversation_login',target_id:participant.participant_id,expires_at:new Date(c.Date.now()-90*24*3600*1000).toISOString(),consumed_at:new Date(c.Date.now()-89*24*3600*1000).toISOString(),created_at:new Date(c.Date.now()-90*24*3600*1000).toISOString()});
+  const upgraded=call('communityUseAccess',{kind:'conversation',id:cid,access:legacy});assert(upgraded.ok && upgraded.session===owner.session,'Legacy email link no longer opens the conversation.');
+  assert(!call('communityUseAccess',{kind:'conversation',id:'conversation-other',access:legacy}).ok,'Legacy link opened another conversation.');
+  assert(call('communityRevokeAccess',{kind:'conversation',id:cid,session:owner.session}).ok && !call('communityUseAccess',{kind:'conversation',id:cid,access:legacy}).ok,'Revocation left a legacy link usable.');
+}
+assert(/^[a-f0-9]{64}$/.test(runtime.sandbox.PropertiesService.getScriptProperties().getProperty('CM_ACCESS_PEPPER')),'Access pepper missing.');
+console.log('Community messaging: immediate publication, stable threads, password deletion, private isolation, permanent reusable links, revocation, legacy links, append-only migration and notification retries passed.');
 
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'apps-script/appsscript.json'), 'utf8'));
 assert(manifest.oauthScopes.length === 4 && manifest.oauthScopes.every(scope => /^https:\/\/www\.googleapis\.com\/auth\/(?:spreadsheets|drive|script\.external_request|script\.scriptapp)$/.test(scope)), 'Manifest requests an unexpected account permission.');

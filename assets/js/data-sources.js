@@ -59,6 +59,24 @@
     }
   }
 
+  // Community posts are published on submission without review. The static
+  // snapshot renders first; the live list then adds new posts and drops posts
+  // hidden since the last sync. Static detail URLs are kept for synced posts.
+  async function fetchLiveCommunityPosts(staticPayload, timeoutMs) {
+    const live = await fetchJsonWithTimeout(buildUrl(communityDataEndpoint, { action: "getPosts" }), timeoutMs || 15000);
+    const items = normalizePayload(live);
+    if (!live || live.ok !== true || !Array.isArray(live.items || live.posts)) throw new Error("Live community posts unavailable");
+    const known = new Map((staticPayload ? normalizePayload(staticPayload) : []).map((post) => [String(post.post_id || post.id || ""), post]));
+    return {
+      ok: true,
+      source: "live",
+      items: items.map((post) => {
+        const synced = known.get(String(post.post_id || post.id || ""));
+        return synced && synced.detail_url && !post.detail_url ? Object.assign({}, post, { detail_url: synced.detail_url }) : post;
+      })
+    };
+  }
+
   window.JCONNECT_DATA_SOURCES = Object.freeze({
     directoryDataEndpoint,
     directorySheets,
@@ -71,6 +89,7 @@
       return buildUrl(communityDataEndpoint, params);
     },
     normalizePayload,
-    fetchJsonWithTimeout
+    fetchJsonWithTimeout,
+    fetchLiveCommunityPosts
   });
 })(window);

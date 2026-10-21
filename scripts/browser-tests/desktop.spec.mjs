@@ -939,7 +939,7 @@ test("legal trust pages expose the operator clearly in light and dark modes", as
 
 test("post and report completion utilities are distinct noindex pages with the shared layout", async ({ page }) => {
   await openRoute(page, "/germany/ja/community/complete/");
-  await expect(page.locator("main h1")).toHaveText("投稿を受け付けました");
+  await expect(page.locator("main h1")).toHaveText("投稿を掲載しました");
   const postCompletion = await page.locator("main").innerText();
   await assertNoIndex(page);
   await assertSharedLayout(page);

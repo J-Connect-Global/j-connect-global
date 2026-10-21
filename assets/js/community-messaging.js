@@ -186,7 +186,8 @@
   async function startContact() {
     const root = document.getElementById('contactMessaging'); if (!root) return;
     const params = new URLSearchParams(location.search);
-    try { const payload = await sources.fetchJsonWithTimeout(sources.staticData.communityPosts, 8000); const post = sources.normalizePayload(payload).find(p => String(p.post_id || p.id) === params.get('post_id'));
+    try { const payload = await sources.fetchJsonWithTimeout(sources.staticData.communityPosts, 8000).catch(() => null); const match = data => sources.normalizePayload(data).find(p => String(p.post_id || p.id) === params.get('post_id'));
+      const post = (payload && match(payload)) || match(await sources.fetchLiveCommunityPosts(payload));
       if (!post) throw new Error('投稿が見つかりません。'); await mount(root, post, { visibility: params.get('visibility'), replyTo: params.get('reply_to') });
     } catch (error) { root.textContent = error.message; }
   }

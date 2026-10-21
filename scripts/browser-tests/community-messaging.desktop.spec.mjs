@@ -156,3 +156,20 @@ test('participant can revoke earlier links and keep using the current tab',async
   await page.reload();await expect(page.locator('#conversationPanel')).toBeVisible();
   expect(await page.evaluate(()=>sessionStorage.getItem('jconnect:conversation:conversation:conversation-revoke'))).toBe(next);
 });
+test('a post published without review appears on the board and its detail page before the static sync',async({page})=>{
+  const fresh={...sale,id:'post_live-only',post_id:'post_live-only',title:'同期前の新しい投稿',detail_url:undefined,created_at:'2026-10-21T12:00:00Z',published_at:'2026-10-21T12:00:00Z'};
+  let liveReads=0;
+  await stubDriveImages(page);
+  await page.route('https://script.google.com/**',async route=>{
+    const url=new URL(route.request().url());const values=new URLSearchParams(route.request().postData()||url.search);
+    const action=values.get('action');
+    const data=action==='getPosts'?(liveReads++,{ok:true,items:[fresh,...activeCommunityPosts]}):action==='communityMessagingStatus'?status:action==='communityPublicReplies'?{ok:true,replies:[]}:{ok:true};
+    await route.fulfill({json:data,headers:{'Access-Control-Allow-Origin':'*'}});
+  });
+  await page.goto('/germany/ja/community/');
+  await expect(page.getByText('同期前の新しい投稿').first()).toBeVisible();
+  await page.goto('/germany/ja/community/post/?id=post_live-only');
+  await expect(page.getByRole('heading',{name:'同期前の新しい投稿'})).toBeVisible();
+  await expect(composer(page).getByRole('button',{name:'送信する',exact:true})).toBeEnabled();
+  expect(liveReads).toBeGreaterThan(0);
+});

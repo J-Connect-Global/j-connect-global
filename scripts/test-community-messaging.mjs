@@ -265,7 +265,13 @@ assert(call('communityDeleteReply',{id:child.id,session:childSession.session}).o
 // Notification failures do not roll back public posts; retry never persists secrets.
 failMail=true;c.processCommunityMessagingNotifications();failMail=false;runtime.advanceTime(3*60*60*1000);const beforeRetry=mails.length;c.processCommunityMessagingNotifications();assert(mails.length>beforeRetry,'Queued mail not retried.');
 assert(!JSON.stringify(c.cmTable_('notifications',false).rows).includes('#access='),'Outbox persisted raw link.');
-mails.forEach(mail=>assert(!mail.replyTo && !mail.body.includes('owner@example.com') && !mail.body.includes('guest@example.com') && !mail.body.includes('土曜日') && !mail.body.includes('c'.repeat(64)), 'Mail disclosed private content or a credential.'));
+mails.forEach(mail=>assert(!mail.replyTo && !mail.body.includes('owner@example.com') && !mail.body.includes('guest@example.com') && !mail.body.includes('c'.repeat(64)), 'Mail disclosed an email address or a deletion credential.'));
+// Message notifications carry the message text so it can be read in the mail itself.
+assert(ownerMail.body.includes('ゲストさんから非公開メッセージが届きました') && ownerMail.body.includes('受け取りを相談したいです。') && ownerMail.body.includes('投稿：机') && ownerMail.subject.includes('届きました'),'Recipient mail lacks the first message.');
+assert(guestMail.body.includes('控え') && guestMail.body.includes('受け取りを相談したいです。'),'Sender copy lacks the first message.');
+assert(mails.some(mail=>mail.to==='guest@example.com' && mail.body.includes('土曜日はいかがですか？') && mail.body.includes('持ち主さんから')),'Reply notification lacks the message text.');
+const guestRow=c.cmTable_('participants',false).rows.find(p=>p.conversation_id===cid && p.role==='inquirer');
+assert(!c.cmMessageMailLines_(guestRow,ownMessage).join('\n').includes('土曜日はいかがですか？'),'A deleted message would still be mailed on retry.');
 assert(call('communityEndConversation',{id:cid,session:owner.session,block:'true'}).ok,'Block failed.');
 assert(!call('communitySendMessage',{id:cid,session:guest.session,body:'blocked',request_id:'blocked-message'}).ok,'Blocked send allowed.');
 const conversationsBefore=c.cmTable_('conversations',false).rows.length;
@@ -287,6 +293,7 @@ const reports=runtime.spreadsheet.getSheetByName('Community Message Reports');re
   assert(!call('communityGetConversation',{id:fresh.id,session:fresh.session}).ok && !use(revokerMail,'conversation',fresh.id).ok,'Revoked link still opens the conversation.');
   assert(call('communityGetConversation',{id:fresh.id,session:revoked.session}).ok && call('communityGetConversation',{id:fresh.id,session:friend.session}).ok,'Revocation locked out the current tab or the other participant.');
   assert(mails.length===before+1 && mails.at(-1).to==='revoker@example.com' && rawAccess(mails.at(-1))===revoked.session,'New link was not emailed to the revoking participant.');
+  assert(mails.at(-1).subject==='【J-Connect】非公開会話のリンク' && !/届きました|新しいメッセージ/.test(mails.at(-1).body),'Link-only mail claims a new message.');
   // Recovery resends the same permanent link without revealing whether the address matched.
   runtime.advanceTime(11*60*1000);const resend=mails.length;
   assert(call('communityRequestAccess',{kind:'conversation',id:fresh.id,email:'friend@example.com',form_started_at:String(c.Date.now()-5000)}).ok && mails.length===resend+1 && rawAccess(mails.at(-1))===friend.session,'Resent link differs from the original.');

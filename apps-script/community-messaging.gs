@@ -5,7 +5,7 @@
  * server-only pepper; nothing that can reproduce it is stored in the workbook.
  * Links do not expire with time. Revoking access rotates the derivation input.
  */
-const CM_VERSION = '2026-10-21.1';
+const CM_VERSION = '2026-10-21.2';
 const CM_PATH = '/germany/ja/community/conversation/';
 const CM_HOUR = 60 * 60 * 1000;
 const CM_TABLES = {
@@ -178,18 +178,37 @@ function cmLink_(jobs, email, purpose, target, kind, id, queued, sourceId) {
   if (!row) return;
   const notification = queued || cmAppend_('notifications', { notification_id: cmId_('notification'), email_private: email,
     purpose, target_id: target, kind, scope_id: id, source_id: String(sourceId || ''), subject: '', body: '', status: 'pending', attempts: '0', next_attempt_at: cmNow_(), created_at: cmNow_() });
-  // Fragment is never sent in a web request or a referrer. No recipient address
-  // or message content is included in another participant's notification.
+  // Fragment is never sent in a web request or a referrer. Email addresses are
+  // never included; the message text is, so it can be read without the link.
   const url = COMMUNITY_SITE_ORIGIN + CM_PATH + '?kind=' + kind + '&id=' + encodeURIComponent(id) + '#access=' + cmLinkToken_(kind, row);
-  const message = kind === 'reply' ? '公開返信の管理ページを開くリンクです。'
-    : notification.source_id ? '非公開の会話に新しいメッセージが届きました。' : '非公開の会話が始まりました。';
-  jobs.push({ notification_id: notification.notification_id, to: email, name: 'J-Connect Germany', subject: kind === 'reply' ? '【J-Connect】公開返信の管理リンク' : '【J-Connect】非公開会話のお知らせ', body: [
-    message, '下のリンクから会話を開いてください。',
+  const lines = kind === 'reply' ? ['公開返信の管理ページを開くリンクです。'] : cmMessageMailLines_(row, notification.source_id);
+  jobs.push({ notification_id: notification.notification_id, to: email, name: 'J-Connect Germany', subject: kind === 'reply' ? '【J-Connect】公開返信の管理リンク' : lines.subject, body: [
+    ...lines, '', '返信や過去のやり取りは、下のリンクから会話を開いてください。',
     '', url, '',
     'このリンクには期限がなく、何度でも同じ会話を開けます。あなた専用のリンクですので、他の人に転送しないでください。',
     '心当たりがない場合は、このメールを無視してください。',
     '会話や返信は、サイト内の専用ページから行ってください。この通知メールへの返信は相手に届きません。'
   ].join('\n') });
+}
+
+// The notified message is read from the messages sheet when the mail is built,
+// so a deleted message is never sent and the outbox never stores message text.
+function cmMessageMailLines_(recipient, messageId) {
+  const conversation = cmFind_('conversations', 'conversation_id', recipient.conversation_id);
+  const post = conversation && findPostById_(conversation.post_id);
+  const message = messageId ? cmFind_('messages', 'message_id', messageId) : null;
+  const usable = message && message.conversation_id === recipient.conversation_id && !message.deleted_at;
+  const own = usable && message.participant_id === recipient.participant_id;
+  const sender = usable && !own ? cmFind_('participants', 'participant_id', message.participant_id) : null;
+  // Resends and revocations carry no message: they only deliver the link.
+  const linkOnly = !messageId;
+  const lines = [
+    linkOnly ? '非公開の会話を開くリンクをお送りします。' : own ? 'あなたが送信した非公開メッセージの控えです。' : usable ? cmNickname_(sender && sender.nickname) + 'さんから非公開メッセージが届きました。' : '非公開の会話に新しいメッセージがあります。',
+    '投稿：' + String(post && post.post.title || '掲示板の投稿')
+  ];
+  if (usable) lines.push('', '----- メッセージ -----', String(message.body), '----------------------');
+  lines.subject = linkOnly ? '【J-Connect】非公開会話のリンク' : own ? '【J-Connect】非公開メッセージを送信しました' : '【J-Connect】非公開メッセージが届きました';
+  return lines;
 }
 
 function cmNotice_(jobs, subject, body, email) {
@@ -291,9 +310,9 @@ function cmCreateConversation_(params, jobs) {
   const owner = cmAppend_('participants', { participant_id: cmId_('participant'), conversation_id: id, role: 'owner', nickname: cmNickname_(reply ? reply.nickname : post.nickname || '元の投稿者'), email_private: ownerEmail });
   const guest = cmAppend_('participants', { participant_id: cmId_('participant'), conversation_id: id, role: 'inquirer', nickname: cmNickname_(form.nickname), email_private: form.email,
     session_hash: '', session_expires_at: '', verified_at: '' });
-  cmAppend_('messages', { message_id: cmId_('message'), conversation_id: id, participant_id: guest.participant_id, body: form.body, created_at: cmNow_(), request_id: form.request_id });
-  cmLink_(jobs, owner.email_private, 'conversation_login', owner.participant_id, 'conversation', id);
-  cmLink_(jobs, form.email, 'conversation_login', guest.participant_id, 'conversation', id);
+  const first = cmAppend_('messages', { message_id: cmId_('message'), conversation_id: id, participant_id: guest.participant_id, body: form.body, created_at: cmNow_(), request_id: form.request_id });
+  cmLink_(jobs, owner.email_private, 'conversation_login', owner.participant_id, 'conversation', id, null, first.message_id);
+  cmLink_(jobs, form.email, 'conversation_login', guest.participant_id, 'conversation', id, null, first.message_id);
   return { ok: true, success: true, id, scope: 'conversation', session: cmLinkToken_('conversation', guest), confirmation_required: false, notification_pending: true };
 }
 

@@ -1,6 +1,6 @@
 # Community / Jobs 審査・公開運用
 
-`apps-script/community-board-api.gs` が Community と求人掲載依頼を受け付ける正式な統合 Apps Script です。管理者は Master Spreadsheet の `Community Posts` と `Jobs` を同じメニューで審査します。Spreadsheet 上で `active` にしただけでは公開完了とせず、本番JSONにIDが現れた後に申請者へ公開通知を1回だけ送信します。
+`apps-script/community-board-api.gs` が Community と求人掲載依頼を受け付ける正式な統合 Apps Script です。Community投稿は承認不要で即時掲載し、求人（`Jobs`）だけを Master Spreadsheet のメニューで審査します。Spreadsheet 上で `active` にしただけでは公開完了とせず、本番JSONにIDが現れた後に申請者へ公開通知を1回だけ送信します。
 
 ## 初回設定と更新時の注意
 
@@ -15,14 +15,15 @@
 - 共通: `status`, `updated_at`, `published_at`, `approval_notified_status`, `approval_notified_at`, `approval_notified_to`, `approval_notified_error`, `approval_notified_queued_at`, `approval_sync_requested_at`, `rejection_reason`, `rejected_at`, `last_modified_at`, `last_modified_action`
 - Jobs受付時: 上記に加え、存在しない管理項目の `job_id`（`id`があれば再利用）, `status`, `created_at`, `updated_at`, `published_at`, `submission_key`
 
-## Communityの審査
+## Communityの掲載（2026-10-21から承認不要）
 
-1. 管理者通知メール「Community新規投稿」を確認します。メールに管理用トークンや投稿者用管理URLは含まれません。
-2. `Community Posts` の `pending` 行で、投稿内容と非公開連絡先を確認して行を選択します。
-3. Spreadsheetを再読み込みすると表示される **J-Connect管理** から、**選択した投稿を承認・公開** または **選択した投稿を却下** を実行します。
-4. 承認時は確認ダイアログ後に `active` となり、既存の `sync-public-data.yml` が要求されます。本番 `assets/data/community/posts.json` に `post_id` が現れた後、投稿者へ公開URLを送信します。
-5. 却下時は空欄不可の理由を入力し、最終確認後に `rejected` と理由・日時を保存して投稿者へ通知します。
-6. 未公開の間は5分トリガーで同期要求を再試行します。同じプロジェクトからの同期要求は5分間隔にまとめます。90分を超えると `publish_timeout` になりますが、その後も本番JSONを確認し、遅れて公開された場合は通知を回復します。各回最大12件を巡回し、Communityの古い行でJobsの確認が止まらないようにします。手動の **公開確認を再試行** も利用でき、`sent` の行は再送しません。
+Community投稿と返信は、運営の承認なしで送信時に掲載します。Spreadsheetでの承認操作やGitHubの同期待ちは不要です。
+
+1. `createPost_` は `status=active`・`published_at=送信日時` で保存し、投稿者へ「投稿を掲載しました」メール（公開URLと管理用リンク）を送ります。管理者通知メールは「掲載済み・確認のみ」で、操作は不要です。
+2. 掲示板一覧・投稿詳細・連絡ページは、静的な `assets/data/community/posts.json` で先に表示し、続けて読み取り専用の `getPosts` で最新の公開投稿を取得して、新しい投稿の追加と非公開化された投稿の除去を行います。静的JSONと詳細ページは従来どおり定期同期で追随します（SEO用）。
+3. 審査の代わりに、ハニーポット（`website`）と、同じメールアドレスから1時間に5件・全体で1時間に60件までの投稿制限を設けています。
+4. 不適切な投稿は事後に対応します。投稿者は管理用リンクから非公開にでき、運営は `Community Posts` の `status` を `hidden` にするか通報から対応します。投稿完了ページの「取り消し依頼」は廃止し、管理用リンクに置き換えました。
+5. 承認メニュー（**選択した投稿を承認・公開** など）は求人（Jobs）の審査用に残っています。Communityでは使用しません。既存の `pending` 行は自動では公開しません。
 
 ## Jobsの審査
 

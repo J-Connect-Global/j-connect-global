@@ -422,6 +422,7 @@ ${renderHeader(type, item.url)}
             ${item.tags.map((tag) => `<span class="article-chip">${escapeHtml(tag)}</span>`).join('\n          ')}
 ${indent(renderArticleFreshness(item), 12)}${metaBlock}
           </div>
+${indent(renderArticleAiNotice(), 10)}
         </header>
 
 ${indent(primaryHeroMedia, 8)}
@@ -444,6 +445,12 @@ ${extraScripts ? `${indent(extraScripts, 2)}\n` : ''}  <script src="/assets/js/c
 </body>
 </html>
 `;
+}
+
+function renderArticleAiNotice() {
+  return `<p class="article-ai-notice">
+  この記事は生成AIで作成しており、公開前の事実確認は行っていません。内容はご自身の判断でご利用ください。誤りを見つけた場合は<a href="/germany/ja/contact/">お問い合わせ</a>からお知らせください。（<a href="/germany/ja/about/#ai-policy">生成AIの利用について</a>）
+</p>`;
 }
 
 function renderArticleBodyHtml(type, item, bodyHtml) {

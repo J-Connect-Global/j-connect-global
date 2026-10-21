@@ -1237,6 +1237,7 @@ body > .site-footer{
 :root[data-theme="dark"] body .jc-phrase-row,
 :root[data-theme="dark"] body .article-body blockquote,
 :root[data-theme="dark"] body .article-disclaimer,
+:root[data-theme="dark"] body .article-ai-notice,
 :root[data-theme="dark"] body .article-sidebar-highlight,
 :root[data-theme="dark"] body .article-sidebar-facts div,
 :root[data-theme="dark"] body .news-disclaimer,

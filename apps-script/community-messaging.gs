@@ -5,7 +5,7 @@
  * server-only pepper; nothing that can reproduce it is stored in the workbook.
  * Links do not expire with time. Revoking access rotates the derivation input.
  */
-const CM_VERSION = '2026-10-21.3';
+const CM_VERSION = '2026-10-23.1';
 const CM_PATH = '/germany/ja/community/conversation/';
 const CM_HOUR = 60 * 60 * 1000;
 const CM_TABLES = {
@@ -582,6 +582,11 @@ function cmModerateSelectedReply_(status) {
   cmDeliver_(jobs);
 }
 
+function cmQueuePostConfirmation_(email, postId) {
+  cmAppend_('notifications', { notification_id: cmId_('notification'), email_private: email, purpose: 'post_confirmation', target_id: postId, kind: 'post', scope_id: postId,
+    source_id: '', subject: '', body: '', status: 'pending', attempts: '1', next_attempt_at: berlinTimestamp_(new Date(Date.now() + 5 * 60 * 1000)), created_at: cmNow_() });
+}
+
 // Persist only delivery metadata. Access links exist only in a transient mail
 // job; a retry derives the same link again. Delivery is serialized by the script
 // lock so a scheduled retry cannot race a foreground send.
@@ -594,9 +599,18 @@ function cmDeliver_(jobs) {
       const notification = cmFind_('notifications', 'notification_id', job.notification_id);
       if (!notification || notification.status === 'sent') return;
       try {
-        sendZohoEmail_({ to: job.to, name: job.name, subject: job.subject, body: job.body });
+        sendZohoEmail_({ to: job.to, name: job.name, subject: job.subject, body: job.body, throttle: true });
         notification.status = 'sent';
-      } catch (error) { delivered = false; console.warn('Community notification delivery will be retried.'); }
+      } catch (error) {
+        delivered = false;
+        // Over the outgoing rate limit: wait for the next run without backing off.
+        if (error && error.message === 'ZOHO_RATE_DEFERRED') {
+          notification.next_attempt_at = berlinTimestamp_(new Date(Date.now() + 5 * 60 * 1000));
+          cmSave_('notifications', notification);
+          return;
+        }
+        console.warn('Community notification delivery will be retried.');
+      }
       notification.attempts = String(Number(notification.attempts || 0) + 1);
       // Retry a transient failure on the next five-minute run, then back off
       // (5, 10, 20, 40 minutes ...) up to once a day.
@@ -614,7 +628,12 @@ function processCommunityMessagingNotifications() {
     lock.waitLock(10000);
     cmTable_('notifications', false).rows.filter((row) => row.status === 'pending' && Date.parse(row.next_attempt_at) <= Date.now()).slice(0, 10).forEach((row) => {
       if (row.purpose === 'notice') jobs.push({ notification_id: row.notification_id, to: row.email_private, name: 'J-Connect Germany', subject: row.subject, body: row.body });
-      else {
+      else if (row.purpose === 'post_confirmation') {
+        // Built at send time so the manage link is never stored in the outbox.
+        const mail = postConfirmationMailForRetry_(row.target_id, row.email_private);
+        if (!mail) { row.status = 'cancelled'; cmSave_('notifications', row); return; }
+        jobs.push(Object.assign({ notification_id: row.notification_id }, mail));
+      } else {
         // Do not notify an owner of an unverified or removed conversation.
         const target = cmFind_(row.kind === 'reply' ? 'replies' : 'participants', row.kind === 'reply' ? 'reply_id' : 'participant_id', row.target_id);
         const parent = row.kind === 'reply' ? target : target && cmFind_('conversations', 'conversation_id', target.conversation_id);

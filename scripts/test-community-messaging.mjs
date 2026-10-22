@@ -48,6 +48,22 @@ const gas = fs.readFileSync(path.join(root, "apps-script/community-board-api.gs"
   transport.sendZohoEmail_({ to: 'reader@example.com', subject: 'HTML compatibility', html, replyTo: 'author@example.com' });
   const htmlPayload = JSON.parse(requests.at(-1).options.payload);
   assert(htmlPayload.mailFormat === 'html' && htmlPayload.content.startsWith(html) && htmlPayload.content.includes('<a href="mailto:author@example.com">'), 'Explicit HTML messages and their reply-address links must retain HTML formatting.');
+  // Automatic notifications are limited to 4 external sends per minute and 15
+  // per hour; the site's own domain and non-throttled mail are not limited.
+  {
+    const counters = new Map(); const sent = [];
+    const limited = vm.createContext({
+      console: { warn() {}, info() {}, error() {} }, Date,
+      PropertiesService: { getScriptProperties: () => ({ getProperty: name => properties[name] }) },
+      CacheService: { getScriptCache: () => ({ get: key => key === 'jconnect_zoho_access_token_v1' ? 'cached-token' : counters.get(key) ?? null, put: (key, value) => counters.set(key, value) }) },
+      UrlFetchApp: { fetch: (url, options) => { sent.push(JSON.parse(options.payload).toAddress); return { getResponseCode: () => 200, getContentText: () => '{}' }; } }
+    });
+    vm.runInContext(fs.readFileSync(path.join(root, 'apps-script/zoho-mail.gs'), 'utf8'), limited);
+    const outcome = message => { try { limited.sendZohoEmail_(message); return 'sent'; } catch (error) { return error.message; } };
+    const results = [1, 2, 3, 4, 5].map(i => outcome({ to: `user${i}@example.com`, subject: 's', body: 'b', throttle: true }));
+    assert(results.slice(0, 4).every(r => r === 'sent') && results[4] === 'ZOHO_RATE_DEFERRED' && sent.length === 4, 'External notification burst was not limited.');
+    assert(outcome({ to: 'contact@j-connect-global.com', subject: 's', body: 'b', throttle: true }) === 'sent' && outcome({ to: 'user6@example.com', subject: 's', body: 'b' }) === 'sent', 'Internal or non-throttled mail was limited.');
+  }
   // A failed send logs Zoho's error code and description, never the recipient.
   const warnings = [];
   const failing = vm.createContext({
@@ -188,7 +204,7 @@ function createRuntime(sheets, sendEmail, options = {}) {
 }
 
 const now = Date.parse('2026-10-18T10:00:00Z');
-const community = new MockSheet('Community Posts', ['post_id','status','category1','title','nickname','body','contact_email_private','expires_at']);
+const community = new MockSheet('Community Posts', ['post_id','status','category1','title','nickname','body','contact_email_private','expires_at','manage_token_hash','manage_url']);
 community.appendRow(['sale-1','active','譲ります','机','持ち主','公開本文','owner@example.com','']);
 community.appendRow(['question-1','active','質問','生活の質問','質問者','質問本文','author@example.com','']);
 community.appendRow(['friend-1','active','友達募集','友達募集','友達','本文','friend@example.com','']);
@@ -324,6 +340,35 @@ const reports=runtime.spreadsheet.getSheetByName('Community Message Reports');re
   assert(call('communityRevokeAccess',{kind:'conversation',id:cid,session:owner.session}).ok && !call('communityUseAccess',{kind:'conversation',id:cid,access:legacy}).ok,'Revocation left a legacy link usable.');
 }
 assert(/^[a-f0-9]{64}$/.test(runtime.sandbox.PropertiesService.getScriptProperties().getProperty('CM_ACCESS_PEPPER')),'Access pepper missing.');
+// A failed or throttled post confirmation is queued and retried with a working
+// manage link; a sheet without a stored link gets a freshly minted token.
+{
+  const pending = () => c.cmTable_('notifications',false).rows.filter(r=>r.purpose==='post_confirmation' && r.status==='pending');
+  failMail=true;
+  const created=c.createPost_({category1:'質問',category2:'生活',title:'再送テスト',body:'本文',contact_email_private:'poster@example.com',website:'',country:'',city:''});
+  failMail=false;
+  assert(created.ok && !created.email_sent && pending().length===1 && !JSON.stringify(pending()).includes('token='),'Failed confirmation was not queued, or the outbox stores the manage link.');
+  const before=mails.length;c.processCommunityMessagingNotifications();assert(mails.length===before,'Queued confirmation retried before its delay.');
+  runtime.advanceTime(6*60*1000);c.processCommunityMessagingNotifications();
+  const retried=mails.at(-1);assert(mails.length===before+1 && retried.to==='poster@example.com' && retried.subject.includes('投稿を掲載しました'),'Queued confirmation was not retried.');
+  const token=new URL(retried.body.match(/https:\/\/\S+\/manage\/\S+/)[0]).searchParams.get('token');
+  assert(c.verifyAccess_({post:created.post_id,token}).ok,'Retried confirmation carries an invalid manage link.');
+  failMail=true;
+  const second=c.createPost_({category1:'質問',category2:'生活',title:'リンク再発行',body:'本文',contact_email_private:'poster2@example.com',website:'',country:'',city:''});
+  failMail=false;
+  const row=c.findPostById_(second.post_id);row.context.sheet.getRange(row.rowNumber,row.context.indexes.manage_url+1).setValue('');
+  runtime.advanceTime(6*60*1000);c.processCommunityMessagingNotifications();
+  const minted=new URL(mails.at(-1).body.match(/https:\/\/\S+\/manage\/\S+/)[0]).searchParams.get('token');
+  assert(c.verifyAccess_({post:second.post_id,token:minted}).ok && !c.verifyAccess_({post:second.post_id,token:new URL(second.manage_url).searchParams.get('token')}).ok,'Missing manage link was not re-issued safely.');
+}
+// Throttled notification sends wait for the next run without backing off.
+{
+  const fresh=call('communityCreateConversation',form({post_id:'friend-1',request_id:'throttle-test',email:'throttle@example.com',creation_key:'9'.repeat(64),form_started_at:String(c.Date.now()-5000)}));assert(fresh.ok,'Throttle fixture failed.');
+  const realSend=c.sendZohoEmail_;c.sendZohoEmail_=()=>{throw new Error('ZOHO_RATE_DEFERRED');};
+  runtime.advanceTime(6*60*1000);c.processCommunityMessagingNotifications();c.sendZohoEmail_=realSend;
+  const deferred=c.cmTable_('notifications',false).rows.filter(r=>r.scope_id===fresh.id);
+  assert(deferred.length===2 && deferred.every(r=>r.status==='pending' && r.attempts==='0' && Date.parse(r.next_attempt_at)-c.Date.now()<=5*60*1000+1000),'Throttled notifications were backed off or lost.');
+}
 console.log('Community messaging: immediate publication, stable threads, password deletion, private isolation, permanent reusable links, revocation, legacy links, append-only migration and notification retries passed.');
 
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'apps-script/appsscript.json'), 'utf8'));

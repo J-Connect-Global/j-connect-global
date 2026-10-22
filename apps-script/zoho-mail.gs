@@ -112,6 +112,11 @@ function sendZohoEmail_(message) {
   if (!isJConnectValidEmail_(to) || !subject || !content.trim()) {
     throw new Error('INVALID_EMAIL_MESSAGE');
   }
+  // Automatic notifications opt in to the outgoing limit. A deferred mail is
+  // retried by its caller's queue instead of being sent.
+  if (message.throttle && !reserveZohoExternalSend_(to, config.publicEmail)) {
+    throw new Error('ZOHO_RATE_DEFERRED');
+  }
 
   const response = UrlFetchApp.fetch(
     `${config.mailApiBaseUrl}/accounts/${encodeURIComponent(config.accountId)}/messages`,
@@ -136,6 +141,22 @@ function sendZohoEmail_(message) {
     throw new Error('ZOHO_SEND_FAILED');
   }
   return { sent: true };
+}
+
+// Zoho blocks outgoing mail ("550 5.4.6 Unusual sending activity") after a
+// burst of external sends. Mail to the site's own domain does not count.
+const ZOHO_EXTERNAL_SEND_LIMITS = [[60, 4], [3600, 15]];
+
+function reserveZohoExternalSend_(to, fromAddress) {
+  const domain = (value) => String(value || '').trim().toLowerCase().split('@').pop();
+  if (domain(to) === domain(fromAddress)) return true;
+  const cache = CacheService.getScriptCache();
+  const now = Math.floor(Date.now() / 1000);
+  const keys = ZOHO_EXTERNAL_SEND_LIMITS.map(([seconds, maximum]) => ({ key: `zoho-external:${seconds}:${Math.floor(now / seconds)}`, seconds, maximum }));
+  const counts = keys.map((window) => Number(cache.get(window.key) || 0));
+  if (keys.some((window, index) => counts[index] >= window.maximum)) return false;
+  keys.forEach((window, index) => cache.put(window.key, String(counts[index] + 1), window.seconds));
+  return true;
 }
 
 // Zoho's error code and description (for example a sending limit) explain a

@@ -399,14 +399,33 @@ test("all-level deck exposes A1-C2 chips and filters the actual published invent
 
   await expect(page.locator("#flashcardsStudyLevels")).toBeVisible();
   await expect(page.locator("#setupDeckBadges")).not.toContainText("A1");
-  await expect(page.locator('[data-study-level-count="all"]')).toHaveText(`${totalCount}項目`);
-  await expect(page.locator('[data-study-level-count="C2"]')).toHaveText(`${c2Count.toLocaleString("ja-JP")}項目`);
+  await expect(page.locator('[data-study-facet-count="level:all"]')).toHaveText(`${totalCount}項目`);
+  await expect(page.locator('[data-study-facet-count="level:C2"]')).toHaveText(`${c2Count.toLocaleString("ja-JP")}項目`);
   await page.locator('#flashcardsStudyLevels label:has(input[value="C2"])').click();
   await expect(page.locator('[data-study-target-count="all"]')).toHaveText(`${c2Count.toLocaleString("ja-JP")}項目`);
   await expect(page.locator("#flashcardsStartSummary")).toContainText(`C2・すべて ${c2Count.toLocaleString("ja-JP")}項目から10枚`);
+
+  const c2Cards = JSON.parse(await fs.readFile(new URL(`../..${c2CardsPath}`, import.meta.url), "utf8")).cards;
+  const c2Verbs = c2Cards.filter(card => card.unit_type !== "phrase" && card.part_of_speech === "verb").length;
+  await expect(page.locator("#flashcardsStudyPartsOfSpeech")).toBeVisible();
+  await expect(page.locator('[data-study-facet-count="pos:verb"]')).toHaveText(`${c2Verbs.toLocaleString("ja-JP")}項目`);
+  await page.locator('#flashcardsStudyPartsOfSpeech label:has(input[value="verb"])').click();
+  await expect(page.locator("#flashcardsStartSummary")).toContainText(`C2・動詞・すべて ${c2Verbs.toLocaleString("ja-JP")}項目から10枚`);
+
+  await page.locator('#flashcardsStudyLevels label:has(input[value="all"])').click();
+  await page.locator('#flashcardsStudyPartsOfSpeech label:has(input[value="all"])').click();
+  await page.locator('#flashcardsStudyScenes label:has(input[value="medical"])').click();
+  await expect(page.locator("#flashcardsStartSummary")).toContainText("病院・薬局・すべて");
+
+  await page.locator('#flashcardsStudyScenes label:has(input[value="all"])').click();
+  await page.locator('#flashcardsStudyLevels label:has(input[value="C2"])').click();
+  await page.locator('#flashcardsStudyPartsOfSpeech label:has(input[value="verb"])').click();
   await page.locator("#flashcardsStart").click();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
   await expect(page.locator("#flashcardBasisSummary")).toContainText("C2・");
+  await page.locator("#flashcardFlipControl").click();
+  await page.locator("#flashcardsDetailsToggle").click();
+  await expect(page.locator("#flashcardGrammar")).toContainText("動詞");
 });
 
 test("incomplete progress resumes after reload and JSON backup, rejection, restore, and reset are safe", async ({ page }) => {

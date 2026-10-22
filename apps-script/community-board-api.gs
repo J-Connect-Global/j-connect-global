@@ -1762,19 +1762,42 @@ function sendCreateConfirmationEmail_(params, info) {
   if (!isJConnectValidEmail_(to)) return { sent: false, error: 'INVALID_RECIPIENT' };
   try {
     const title = info.title || 'J-Connect Global 掲示板投稿';
-    // Plain text only: Zoho's generated text part of an HTML mail turns the
-    // manage link's "&token=" into "&amp;token=", breaking it in text clients.
-    sendZohoEmail_({
-      to,
-      subject: `【J-Connect Global】投稿を掲載しました: ${title}`,
-      name: 'J-Connect Global',
-      body: `J-Connect Global 掲示板に投稿を掲載しました。\n\n投稿タイトル:\n${title}\n\n管理用リンク:\n下記URLから、投稿内容の編集、募集停止、再募集、非公開化ができます。\nこのリンクは投稿管理専用です。第三者には共有しないでください。\n\n${info.manageUrl}\n\n公開投稿リンク:\n下記ページで投稿内容を閲覧できます。\n\n${info.publicPostUrl}\n\nJ-Connect Global がログイン情報、銀行情報、公的ID番号を求めることはありません。`
-    });
+    sendZohoEmail_(Object.assign(postConfirmationMail_(to, title, info.manageUrl, info.publicPostUrl), { throttle: true }));
     return { sent: true };
   } catch (error) {
+    // The poster's only copy of the manage link is this mail, so a failed or
+    // throttled send is queued and retried by the five-minute trigger.
     console.warn(`Community confirmation email failed: ${safeEmailErrorCode_(error)}`);
+    if (typeof cmQueuePostConfirmation_ === 'function') cmQueuePostConfirmation_(to, info.postId);
     return { sent: false, error: safeEmailErrorCode_(error) };
   }
+}
+
+// Plain text only: Zoho's generated text part of an HTML mail turns the
+// manage link's "&token=" into "&amp;token=", breaking it in text clients.
+function postConfirmationMail_(to, title, manageUrl, publicPostUrl) {
+  return {
+    to,
+    subject: `【J-Connect Global】投稿を掲載しました: ${title}`,
+    name: 'J-Connect Global',
+    body: `J-Connect Global 掲示板に投稿を掲載しました。\n\n投稿タイトル:\n${title}\n\n管理用リンク:\n下記URLから、投稿内容の編集、募集停止、再募集、非公開化ができます。\nこのリンクは投稿管理専用です。第三者には共有しないでください。\n\n${manageUrl}\n\n公開投稿リンク:\n下記ページで投稿内容を閲覧できます。\n\n${publicPostUrl}\n\nJ-Connect Global がログイン情報、銀行情報、公的ID番号を求めることはありません。`
+  };
+}
+
+// Rebuilds a queued confirmation. The post's stored manage link is reused;
+// a sheet without one gets a fresh token, which replaces the stored hash.
+function postConfirmationMailForRetry_(postId, to) {
+  const found = findPostById_(postId);
+  if (!found || !isPubliclyVisible_(found.post)) return null;
+  const id = String(found.post.post_id || found.post.id || postId);
+  let manageUrl = String(cleanCell_(found.post.manage_url || '')).trim();
+  if (!/[?&]token=[a-f0-9]{64}$/.test(manageUrl)) {
+    const token = randomToken_(32);
+    manageUrl = `${COMMUNITY_SITE_ORIGIN}${COMMUNITY_MANAGE_PATH}?post=${encodeURIComponent(id)}&token=${encodeURIComponent(token)}`;
+    writeExistingFields_(found.context, found.rowNumber, { manage_token_hash: sha256Hex_(token), manage_url: manageUrl });
+  }
+  const publicPostUrl = `${COMMUNITY_SITE_ORIGIN}${COMMUNITY_PUBLIC_POST_PATH}?id=${encodeURIComponent(id)}`;
+  return postConfirmationMail_(to, String(cleanCell_(found.post.title || '')).trim() || 'J-Connect Global 掲示板投稿', manageUrl, publicPostUrl);
 }
 
 function escapeHtmlForEmail_(value) {

@@ -39,6 +39,9 @@
     housing: "住まい",
     "kita-school": "Kita・学校",
     work: "仕事",
+    "banking-insurance": "銀行・保険",
+    transport: "交通",
+    tax: "税金",
     general: "総合語彙"
   };
 
@@ -287,6 +290,20 @@
     return promise;
   }
 
+  const mainPartsOfSpeech = new Set(["noun", "verb", "adjective", "adverb"]);
+  const facetCache = new Map();
+
+  function cardFacets(cardId) {
+    if (facetCache.has(cardId)) return facetCache.get(cardId);
+    const card = state.cardsById.get(cardId) || {};
+    const pos = card.unit_type === "phrase" || card.part_of_speech === "phrase"
+      ? "phrase"
+      : mainPartsOfSpeech.has(card.part_of_speech) ? card.part_of_speech : "other";
+    const facets = { level: card.primary_level, pos, scene: card.scene_tags || [] };
+    facetCache.set(cardId, facets);
+    return facets;
+  }
+
   async function prepareStudyTargets(deck) {
     const feature = await loadFeature("JConnectFlashcardTargets", TARGETS_SCRIPT_URL);
     if (!state.targetController) {
@@ -295,7 +312,7 @@
         storage,
         emptyProgress,
         selectedValue,
-        cardLevel: cardId => state.cardsById.get(cardId)?.primary_level
+        cardFacets
       });
     }
     await state.targetController.prepare(deck);
@@ -392,11 +409,13 @@
         setSelectedValue("session-direction", state.restoredSession.selected_direction);
         setSelectedValue("session-target", state.restoredSession.selected_target || "all");
         setSelectedValue("session-level", state.restoredSession.selected_level || "all");
+        setSelectedValue("session-pos", state.restoredSession.selected_pos || "all");
+        setSelectedValue("session-scene", state.restoredSession.selected_scene || "all");
       } else {
         elements.resumeNote.hidden = true;
         elements.resume.hidden = true;
         setSelectedValue("session-target", "all");
-        setSelectedValue("session-level", "all");
+        ["session-level", "session-pos", "session-scene"].forEach(name => setSelectedValue(name, "all"));
       }
       await prepareStudyTargets(deck);
       elements.loading.hidden = true;
@@ -407,6 +426,15 @@
       showError("選択した教材を読み込めませんでした。教材一覧へ戻って再度お試しください。", error);
       showOnly("picker");
     }
+  }
+
+  function facetSelection() {
+    const selection = state.targetController?.selectedFacets() || {};
+    return {
+      selected_level: selection.level || "all",
+      selected_pos: selection.pos || "all",
+      selected_scene: selection.scene || "all"
+    };
   }
 
   function createSession(cardIds, options = {}) {
@@ -421,7 +449,7 @@
       selected_session_size: options.size || selectedValue("session-size") || "10",
       selected_order: options.order || selectedValue("session-order") || "ordered",
       selected_target: options.target || selectedValue("session-target") || "all",
-      selected_level: options.level || state.targetController?.selectedLevel() || "all",
+      ...facetSelection(),
       started_at: new Date(now).toISOString(),
       last_activity_at: now,
       elapsed_ms: 0,
@@ -976,7 +1004,7 @@
     window.addEventListener("pagehide", disableAutoSpeech);
     window.addEventListener("pageshow", event => (event.persisted || !state.autoSpeak) && disableAutoSpeech());
     elements.start.addEventListener("click", startNewSession);
-    root.querySelectorAll('input[name="session-size"], input[name="session-order"], input[name="session-direction"], input[name="session-target"], input[name="session-level"]')
+    root.querySelectorAll('input[name="session-size"], input[name="session-order"], input[name="session-direction"], input[name="session-target"], input[name="session-level"], input[name="session-pos"], input[name="session-scene"]')
       .forEach(input => input.addEventListener("change", () => state.targetController?.render()));
     elements.resume.addEventListener("click", resumeSession);
     elements.chooseAnother.addEventListener("click", () => {

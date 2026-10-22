@@ -15,7 +15,7 @@ const sheet = read(sourceDir, 'vocabulary-sheet.json');
 const scenes = read(sourceDir, 'scene-decks.json');
 const decks = read(dataDir, 'decks.json');
 
-assert.deepEqual(sheet.columns, ['card_id', 'level', 'category', 'display_de', 'japanese', 'example_de', 'example_ja', 'grammar', 'usage_note']);
+assert.deepEqual(sheet.columns, ['card_id', 'level', 'category', 'display_de', 'japanese', 'example_de', 'example_ja', 'grammar', 'usage_note', 'scene']);
 assert.equal(sheet.rows.length, sheet.total);
 const sheetById = new Map(sheet.rows.map(row => [row[0], Object.fromEntries(sheet.columns.map((key, index) => [key, row[index]]))]));
 assert.equal(sheetById.size, sheet.rows.length, 'unique sheet IDs');
@@ -66,10 +66,9 @@ for (const card of cards) {
   for (const field of ['japanese', 'grammar_ja', 'usage_note_ja']) {
     if (card[field]) assert(!sourceWording.test(card[field]), `${card.card_id}: ${field} must not show source or translation notes`);
   }
-  if (card.scene_tags) {
-    assert.deepEqual(card.scene_tags, scenes.scene_tags[card.card_id]);
-    for (const scene of card.scene_tags) assert(scenes.scene_labels[scene], `${card.card_id}: known scene ${scene}`);
-  }
+  const sheetScenes = row.scene ? row.scene.split('、') : [];
+  assert.deepEqual((card.scene_tags || []).map(scene => scenes.scene_labels[scene]), sheetScenes, `${card.card_id}: scene tags match the sheet`);
+  if (card.scene_tags) assert(!card.scene_tags.includes('general'), `${card.card_id}: general is a deck label, not a card scene`);
 }
 
 // 学習進捗：これまで公開していたIDは、残っているか、除外記録で統合済みのどちらか

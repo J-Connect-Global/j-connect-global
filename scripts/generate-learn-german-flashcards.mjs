@@ -4,8 +4,8 @@ import { fileURLToPath } from "node:url";
 
 // 暗記カードのデータは Google スプレッドシート「German Vocabulary」が正本。
 // content/learn-german/flashcards/vocabulary-sheet.json はそのスナップショットで、
-// Web に表示する A〜I 列（ID・レベル・分類・表・裏・例文・例文の和訳・品詞・文法・用法・注意）だけを含む。
-// 場面タグはシートにないため、scene-decks.json に固定した既存カードのタグを ID で引き継ぐ。
+// Web に表示する A〜I 列（ID・レベル・分類・表・裏・例文・例文の和訳・品詞・文法・用法・注意）と
+// 「場面」列（「、」区切りの場面名）だけを含む。場面名とキーの対応と場面別教材の収録順は scene-decks.json にある。
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const contentDir = path.join(rootDir, "content/learn-german/flashcards");
@@ -29,10 +29,18 @@ function partOfSpeechFor(grammar, unitType) {
 const sheet = read("vocabulary-sheet.json");
 const scenes = read("scene-decks.json");
 const columns = sheet.columns;
-const expectedColumns = ["card_id", "level", "category", "display_de", "japanese", "example_de", "example_ja", "grammar", "usage_note"];
+const expectedColumns = ["card_id", "level", "category", "display_de", "japanese", "example_de", "example_ja", "grammar", "usage_note", "scene"];
 if (JSON.stringify(columns) !== JSON.stringify(expectedColumns)) throw new Error(`Unexpected sheet columns: ${columns.join(", ")}`);
 
-const sceneLabels = Object.fromEntries(Object.entries(scenes.scene_labels).filter(([scene]) => scene !== "general"));
+const sceneKeyByLabel = new Map(Object.entries(scenes.scene_labels).filter(([scene]) => scene !== "general").map(([scene, label]) => [label, scene]));
+
+function sceneTagsFor(cardId, value) {
+  return value.split("、").map(label => label.trim()).filter(Boolean).map(label => {
+    const scene = sceneKeyByLabel.get(label);
+    if (!scene) throw new Error(`${cardId}: unknown scene ${label}`);
+    return scene;
+  });
+}
 const cards = sheet.rows.map(row => {
   const entry = Object.fromEntries(columns.map((key, index) => [key, row[index]]));
   const unitType = unitTypes[entry.category];
@@ -51,8 +59,8 @@ const cards = sheet.rows.map(row => {
     grammar_ja: entry.grammar
   };
   if (entry.usage_note) card.usage_note_ja = entry.usage_note;
-  const tags = scenes.scene_tags[entry.card_id];
-  if (tags?.length) card.scene_tags = tags;
+  const tags = sceneTagsFor(entry.card_id, entry.scene || "");
+  if (tags.length) card.scene_tags = tags;
   return card;
 });
 
@@ -159,4 +167,4 @@ write("decks.json", decksPayload);
 for (const obsolete of ["cards-practical.json", "vocabulary-audit.csv", "vocabulary-audit.json"]) {
   fs.rmSync(path.join(outputDir, obsolete), { force: true });
 }
-console.log(JSON.stringify({ published: cards.length, level_counts: levelCounts, decks: decks.length, scene_cards: Object.keys(scenes.scene_tags).filter(id => byId.has(id)).length }));
+console.log(JSON.stringify({ published: cards.length, level_counts: levelCounts, decks: decks.length, scene_cards: cards.filter(card => card.scene_tags).length }));

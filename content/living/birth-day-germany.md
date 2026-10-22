@@ -118,4 +118,4 @@ image_caption: "AI生成の編集イメージ。実在の人物・施設・出�
 - [NRW家族ポータル：早産のサイン](https://www.familienportal.nrw/de/schwangerschaft/gesundheit/fruehgeburt)
 - [英国NHS：陣痛・破水などの相談が必要なサイン](https://www.nhs.uk/pregnancy/labour-and-birth/signs-that-labour-has-begun/)
 
-確認日：2026年10月11日。一般的な情報であり、診断や個別の来院指示の代わりにはなりません。
+参照日：2026年10月11日。一般的な情報であり、診断や個別の来院指示の代わりにはなりません。

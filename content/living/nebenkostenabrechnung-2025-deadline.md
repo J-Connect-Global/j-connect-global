@@ -121,4 +121,4 @@ image_credit: "AI-generated editorial image / J-Connect"
 - [消費者センター：高額な共益費・暖房費精算への対応](https://www.verbraucherzentrale.de/wissen/energie/preise-tarife-anbieterwechsel/nachzahlungsschock-hilfe-bei-hoher-betriebs-und-heizkostenabrechnung-83065)
 - [消費者センター：暖房費精算の確認方法](https://www.verbraucherzentrale.de/wissen/energie/heizen-und-warmwasser/heizkostenabrechnungen-pruefen-so-erkennen-sie-teure-fehler-29217)
 
-**確認日：2026年10月20日。** 本記事は一般的な居住用賃貸契約を対象とする説明であり、個別の契約や法的紛争の結論を保証するものではありません。
+**参照日：2026年10月20日。** 本記事は一般的な居住用賃貸契約を対象とする説明であり、個別の契約や法的紛争の結論を保証するものではありません。

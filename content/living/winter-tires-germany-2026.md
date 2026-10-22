@@ -104,4 +104,4 @@ ADACの2026年10月8日付解説では、冬季路面で不適合タイヤを使
 - [ADAC：ドイツの冬タイヤ義務（2026年10月8日更新）](https://www.adac.de/rund-ums-fahrzeug/ausstattung-technik-zubehoer/reifen/sicherheit/winterreifenpflicht-deutschland/)
 - [ADAC：オールシーズンタイヤの冬季利用](https://www.adac.de/rund-ums-fahrzeug/ausstattung-technik-zubehoer/reifen/sicherheit/ganzjahresreifen-im-winter/)
 
-**確認日：2026年10月20日。** 本記事は一般的な乗用車の利用者向けです。特殊車両・一輪車両等には例外があり、個別の事故・保険・行政処分については専門家または当局へ確認してください。
+**参照日：2026年10月20日。** 本記事は一般的な乗用車の利用者向けです。特殊車両・一輪車両等には例外があり、個別の事故・保険・行政処分については専門家または当局へ確認してください。

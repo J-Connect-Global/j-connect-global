@@ -414,6 +414,13 @@ test("all-level deck exposes A1-C2 chips and filters the actual published invent
 
   await page.locator('#flashcardsStudyLevels label:has(input[value="all"])').click();
   await page.locator('#flashcardsStudyPartsOfSpeech label:has(input[value="all"])').click();
+  const allCards = (await Promise.all([a1CardsPath, a2CardsPath, b1CardsPath, b2CardsPath, c1CardsPath, c2CardsPath]
+    .map(async cardsPath => JSON.parse(await fs.readFile(new URL(`../..${cardsPath}`, import.meta.url), "utf8")).cards))).flat();
+  for (const scene of ["banking-insurance", "transport", "tax"]) {
+    const sceneCount = allCards.filter(card => card.scene_tags?.includes(scene)).length;
+    expect(sceneCount).toBeGreaterThan(0);
+    await expect(page.locator(`[data-study-facet-count="scene:${scene}"]`)).toHaveText(`${sceneCount.toLocaleString("ja-JP")}項目`);
+  }
   await page.locator('#flashcardsStudyScenes label:has(input[value="medical"])').click();
   await expect(page.locator("#flashcardsStartSummary")).toContainText("病院・薬局・すべて");
 

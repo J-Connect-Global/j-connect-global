@@ -39,6 +39,9 @@
     housing: "住まい",
     "kita-school": "Kita・学校",
     work: "仕事",
+    "banking-insurance": "銀行・保険",
+    transport: "交通",
+    tax: "税金",
     general: "総合語彙"
   };
 

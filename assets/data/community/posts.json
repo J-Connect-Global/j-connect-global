@@ -2,40 +2,8 @@
   "api_version": "2026-07-13.1",
   "source": "master-gas:community",
   "endpoint": "canonicalMasterEndpoint?action=getPosts&bypassCache=true&includeClosed=false",
-  "count": 7,
+  "count": 6,
   "items": [
-    {
-      "id": "post_8b6bc55d-976b-4064-95ce-ecc7e925dbe2",
-      "post_id": "post_8b6bc55d-976b-4064-95ce-ecc7e925dbe2",
-      "slug": "運営テスト4-メール形式の確認-すぐ削除します-デュッセルドルフ周辺-ドイツ-post-8b6bc55d-976b-4064-95ce-ecc7e925dbe2",
-      "detail_url": "/germany/ja/community/posts/post_8b6bc55d-976b-4064-95ce-ecc7e925dbe2/",
-      "title": "【運営テスト4】メール形式の確認（すぐ削除します）",
-      "body": "運営によるGmailでの非公開メッセージ往復テストです。すぐに削除します。返信・連絡しないでください。",
-      "summary": "",
-      "category1": "質問",
-      "category2": "ビザ・滞在許可",
-      "postType": "質問",
-      "subcategory": "ビザ・滞在許可",
-      "country": "ドイツ",
-      "region": "ドイツ",
-      "city": "デュッセルドルフ周辺",
-      "price": "",
-      "event_date": "",
-      "availability_date": "",
-      "tags": "",
-      "image_url": "",
-      "image_alt": "【運営テスト4】メール形式の確認（すぐ削除します）",
-      "image_urls": [],
-      "image_url_1": "",
-      "image_url_2": "",
-      "image_url_3": "",
-      "created_at": "2026-10-21T20:53:44.053Z",
-      "published_at": "2026-10-21T20:53:44.053Z",
-      "updated_at": "2026-10-21T20:53:44.053Z",
-      "expires_at": "",
-      "public_replies": [],
-      "status": "active"
-    },
     {
       "id": "post_6a3a2ebd-71fd-4209-898d-6ac5947b5842",
       "post_id": "post_6a3a2ebd-71fd-4209-898d-6ac5947b5842",
@@ -274,15 +242,15 @@
     }
   ],
   "validation": {
-    "source_count": 12,
-    "explicitly_active_count": 7,
-    "eligible_count": 7,
-    "excluded_count": 5,
+    "source_count": 13,
+    "explicitly_active_count": 6,
+    "eligible_count": 6,
+    "excluded_count": 7,
     "excluded_by_reason": {
-      "lifecycle_or_status": 5
+      "lifecycle_or_status": 7
     },
     "excluded_safe_ids": {},
-    "generated_count": 7
+    "generated_count": 6
   },
-  "generated_at": "2026-10-21T21:00:07.702Z"
+  "generated_at": "2026-10-22T21:52:59.296Z"
 }

@@ -265,7 +265,6 @@
 .flashcards-setup,
 .flashcards-study,
 .flashcards-results,
-.flashcards-data-tools,
 .flashcards-inventory {
   display: grid;
   gap: 16px;
@@ -500,7 +499,6 @@
 }
 
 .flashcards-resume-note,
-.flashcards-storage-note,
 .flashcards-srs-note {
   margin: 0;
   padding: 11px 13px;
@@ -832,11 +830,6 @@
   color: var(--jc-text);
   font-size: 13px;
   line-height: 1.5;
-}
-
-.flashcards-data-tools {
-  padding-top: 17px;
-  border-top: 1px solid var(--jc-line);
 }
 
 .flashcards-inventory {
@@ -1173,7 +1166,6 @@
 :root[data-theme="dark"] body .flashcards-deck-summary,
 :root[data-theme="dark"] body .flashcards-fieldset,
 :root[data-theme="dark"] body .flashcards-resume-note,
-:root[data-theme="dark"] body .flashcards-storage-note,
 :root[data-theme="dark"] body .flashcards-srs-note,
 :root[data-theme="dark"] body .flashcard__inner,
 :root[data-theme="dark"] body .flashcard__example,

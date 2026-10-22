@@ -396,6 +396,17 @@ test("all-level deck exposes A1-C2 chips and filters the actual published invent
 
   await page.locator("#flashcardsInventoryReset").click();
   await expect(page.locator("#flashcardsInventorySummary")).toContainText(`${totalCount} / ${totalCount}項目`);
+
+  await expect(page.locator("#flashcardsStudyLevels")).toBeVisible();
+  await expect(page.locator("#setupDeckBadges")).not.toContainText("A1");
+  await expect(page.locator('[data-study-level-count="all"]')).toHaveText(`${totalCount}項目`);
+  await expect(page.locator('[data-study-level-count="C2"]')).toHaveText(`${c2Count.toLocaleString("ja-JP")}項目`);
+  await page.locator('#flashcardsStudyLevels label:has(input[value="C2"])').click();
+  await expect(page.locator('[data-study-target-count="all"]')).toHaveText(`${c2Count.toLocaleString("ja-JP")}項目`);
+  await expect(page.locator("#flashcardsStartSummary")).toContainText(`C2・すべて ${c2Count.toLocaleString("ja-JP")}項目から10枚`);
+  await page.locator("#flashcardsStart").click();
+  await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
+  await expect(page.locator("#flashcardBasisSummary")).toContainText("C2・");
 });
 
 test("incomplete progress resumes after reload and JSON backup, rejection, restore, and reset are safe", async ({ page }) => {

@@ -194,13 +194,13 @@
     return card.grammar_ja || "—";
   }
 
-  function createBadges(deck) {
+  function createBadges(deck, { showLevels = true } = {}) {
     const fragment = document.createDocumentFragment();
     if (deck.deck_kind === "cefr-level") {
       fragment.append(createElement("span", "flashcards-badge", deck.target_level));
       fragment.append(createElement("span", "flashcards-badge", "J-Connect独自配置"));
     } else {
-      deck.levels.forEach(level => fragment.append(createElement("span", "flashcards-badge", level)));
+      if (showLevels) deck.levels.forEach(level => fragment.append(createElement("span", "flashcards-badge", level)));
       deck.scene_labels.forEach(scene => fragment.append(createElement("span", "flashcards-badge", scene)));
     }
     fragment.append(createElement("span", "flashcards-badge", `${Number(deck.card_count).toLocaleString("ja-JP")}枚`));
@@ -289,7 +289,15 @@
 
   async function prepareStudyTargets(deck) {
     const feature = await loadFeature("JConnectFlashcardTargets", TARGETS_SCRIPT_URL);
-    if (!state.targetController) state.targetController = feature.create({ root, storage, emptyProgress, selectedValue });
+    if (!state.targetController) {
+      state.targetController = feature.create({
+        root,
+        storage,
+        emptyProgress,
+        selectedValue,
+        cardLevel: cardId => state.cardsById.get(cardId)?.primary_level
+      });
+    }
     await state.targetController.prepare(deck);
   }
 
@@ -366,7 +374,8 @@
       rememberDeck(deck.deck_id);
       elements.setupTitle.textContent = deck.title_ja;
       elements.setupDescription.textContent = deck.description_ja;
-      elements.setupBadges.replaceChildren(createBadges(deck));
+      // 総合教材のレベルは下の「レベル」欄で選ぶため、表示だけのバッジは出さない
+      elements.setupBadges.replaceChildren(createBadges(deck, { showLevels: deck.deck_kind !== "cefr-all" }));
       elements.studyTitle.textContent = deck.title_ja;
       elements.studyBadges.replaceChildren(createBadges(deck));
       await prepareInventory(deck);
@@ -382,10 +391,12 @@
         setSelectedValue("session-order", state.restoredSession.selected_order);
         setSelectedValue("session-direction", state.restoredSession.selected_direction);
         setSelectedValue("session-target", state.restoredSession.selected_target || "all");
+        setSelectedValue("session-level", state.restoredSession.selected_level || "all");
       } else {
         elements.resumeNote.hidden = true;
         elements.resume.hidden = true;
         setSelectedValue("session-target", "all");
+        setSelectedValue("session-level", "all");
       }
       await prepareStudyTargets(deck);
       elements.loading.hidden = true;
@@ -410,6 +421,7 @@
       selected_session_size: options.size || selectedValue("session-size") || "10",
       selected_order: options.order || selectedValue("session-order") || "ordered",
       selected_target: options.target || selectedValue("session-target") || "all",
+      selected_level: options.level || state.targetController?.selectedLevel() || "all",
       started_at: new Date(now).toISOString(),
       last_activity_at: now,
       elapsed_ms: 0,
@@ -964,7 +976,7 @@
     window.addEventListener("pagehide", disableAutoSpeech);
     window.addEventListener("pageshow", event => (event.persisted || !state.autoSpeak) && disableAutoSpeech());
     elements.start.addEventListener("click", startNewSession);
-    root.querySelectorAll('input[name="session-size"], input[name="session-order"], input[name="session-direction"], input[name="session-target"]')
+    root.querySelectorAll('input[name="session-size"], input[name="session-order"], input[name="session-direction"], input[name="session-target"], input[name="session-level"]')
       .forEach(input => input.addEventListener("change", () => state.targetController?.render()));
     elements.resume.addEventListener("click", resumeSession);
     elements.chooseAnother.addEventListener("click", () => {

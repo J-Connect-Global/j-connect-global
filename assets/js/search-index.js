@@ -331,6 +331,47 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
+    "title": "Kindergeld 2027年の支給日一覧｜番号末尾0〜9で確認",
+    "description": "ドイツの児童手当はKindergeld番号の末尾0〜9で振込日が異なります。2027年の公式支給日を月別一覧で確認し、初回支給・遡及申請・入金が遅れたときの確認順を整理します。",
+    "url": "/germany/ja/living/kindergeld-auszahlungstermine-2027/",
+    "category": "生活・手続き",
+    "tags": [
+      "Kindergeld",
+      "児童手当",
+      "支給日",
+      "2027年",
+      "出生後の手続き"
+    ]
+  },
+  {
+    "title": "ドイツの電子患者記録（ePA）入門｜アクセス期間・拒否・アプリ管理",
+    "description": "ドイツの電子患者記録（ePA）について、医療機関と薬局の標準アクセス期間、文書の非表示、施設単位のアクセス拒否、アプリを使わない場合の相談先を整理します。",
+    "url": "/germany/ja/living/epa-guide-germany/",
+    "category": "生活・手続き",
+    "tags": [
+      "電子患者記録",
+      "ePA",
+      "健康保険",
+      "医療情報",
+      "プライバシー",
+      "2026年"
+    ]
+  },
+  {
+    "title": "NRWの学校休暇2026/27年度｜2027年の春・夏・年末年始",
+    "description": "ノルトライン＝ヴェストファーレン州の2026/27年度の学校休暇を一覧化。2027年の春・夏・年末年始、学校ごとの移動休日、Kitaの休園日との違いを確認できます。",
+    "url": "/germany/ja/living/nrw-school-holidays-2026-2027/",
+    "category": "生活・手続き",
+    "tags": [
+      "NRW",
+      "学校休暇",
+      "2027年",
+      "家族旅行",
+      "保育",
+      "休暇計画"
+    ]
+  },
+  {
     "title": "デュッセルドルフ観光｜日本人街・旧市街・ライン川を歩く",
     "description": "デュッセルドルフを日本人街、ケーニヒスアレー、旧市街、ライン川という異なる都市文化から紹介。在住者にも旅行者にも役立つ街歩きガイドです。",
     "url": "/germany/ja/living/duesseldorf-city-guide/",
@@ -663,7 +704,7 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "ドイツのKita・U3申込み｜NRWの保育先・必要書類",
-    "description": "ドイツの保育施設と家庭的保育の違い、NRWの原則6か月前の需要申告、デュッセルドルフ・Erkrathの申込み、必要情報・書類、入園決定と費用確認を整理します。",
+    "description": "ドイツの保育施設と家庭的保育の違い、NRWの原則6か月前の需要申告、デュッセルドルフ・Erkrathの申込み、必要書類と費用を整理。学校休暇とKitaの休園日の違いも確認できます。",
     "url": "/germany/ja/living/kita-u3-tagesmutter-guide/",
     "category": "生活・手続き",
     "tags": [
@@ -718,7 +759,7 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "ドイツの健康保険｜公的保険と民間保険をどう選ぶか",
-    "description": "ドイツの健康保険を会社員・学生・家族など立場別に解説。公的保険と民間保険、2026年の基準、加入証明の提出先、保険証が届く前の受診用証明まで整理します。",
+    "description": "ドイツの健康保険を会社員・学生・家族など立場別に解説。公的保険と民間保険、2026年の基準、加入証明、電子患者記録（ePA）のアクセス管理まで整理。",
     "url": "/germany/ja/living/health-insurance-guide/",
     "category": "生活・手続き",
     "tags": [

@@ -6,7 +6,7 @@ on:
       - codex/content-cycle-20261024
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build-generated-output:
@@ -23,24 +23,18 @@ jobs:
         run: npm ci
       - name: Build generated site files
         run: npm run build
-      - name: Package only changed content outputs
+      - name: Commit generated content outputs
         shell: bash
         run: |
           set -euo pipefail
-          out="/tmp/content-cycle-generated"
-          mkdir -p "$out"
-          git ls-files -m -o --exclude-standard | grep -E '^(content/registry/(living|events)\.json|germany/ja/index\.html|germany/ja/living/.*|germany/ja/events/.*|assets/data/search-index\.json|assets/js/search-index\.js|sitemap\.xml)$' > "$out/changed-files.txt" || true
-          while IFS= read -r file; do
-            [ -f "$file" ] || continue
-            mkdir -p "$out/$(dirname "$file")"
-            cp "$file" "$out/$file"
-          done < "$out/changed-files.txt"
-          test -s "$out/changed-files.txt"
-          echo "Packaged $(wc -l < "$out/changed-files.txt") changed path(s)."
-      - name: Upload generated output
-        uses: actions/upload-artifact@v4
-        with:
-          name: content-cycle-generated-output
-          path: /tmp/content-cycle-generated/
-          if-no-files-found: error
-          retention-days: 1
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/registry/living.json content/registry/events.json
+          git add germany/ja/living/ germany/ja/events/ germany/ja/index.html
+          git add assets/js/search-index.js sitemap.xml
+          if git diff --cached --quiet; then
+            echo "No generated content changes."
+            exit 0
+          fi
+          git commit -m "Generate content pages and search index"
+          git push origin HEAD:codex/content-cycle-20261024

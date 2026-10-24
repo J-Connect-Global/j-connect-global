@@ -9,8 +9,8 @@ city: "ドイツ全土"
 location: ""
 event_date: "2027年1月1日前後"
 published_at: "2026-10-21"
-updated_at: "2026-10-21"
-last_verified: "2026-10-21"
+updated_at: "2026-10-24"
+last_verified: "2026-10-24"
 next_review: "2026-12-01"
 summary: "2027年1月からドイツで変わる制度を、在独日本人の生活に関わる項目に絞って整理。決定済みのものと、まだ法案段階のものを分けて解説します。"
 tags: ["ドイツ生活", "制度改正", "最低賃金", "ドイツチケット", "社会保険", "児童手当", "税金"]
@@ -23,23 +23,27 @@ image: "/assets/img/events/germany-january-2027-changes.webp"
 image_alt: "2027年1月のカレンダーと、ユーロ硬貨・乗車券・医療保険・子どもを表すアイコンのイラスト"
 image_caption: "イラスト：J-Connect。制度変更のテーマを表したもので、公式資料を再現していません。"
 image_credit: "Illustration / J-Connect"
-related_articles: ["deutschlandticket-2027-price-consent", "db-2027-timetable-family-ticket", "germany-september-2026-changes"]
+related_articles: ["deutschlandticket-2027-price-consent","db-2027-timetable-family-ticket","germany-september-2026-changes","kindergeld-auszahlungstermine-2027"]
 official_sources:
   - title: "Deutsche Bahn：Deutschlandticketの契約変更FAQ"
     url: "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
+  - title: "Minijob-Zentrale：最低賃金とMinijob上限（2026・2027年）"
+    url: "https://magazin.minijob-zentrale.de/minijob-mindestlohn-2026-2027/"
+  - title: "連邦雇用庁：Kindergeldの2026年・2027年支給日"
+    url: "https://www.arbeitsagentur.de/familie-und-kinder/auszahlungstermine"
 ---
 
 # 【2027年1月から】ドイツで何が変わる？ 最低賃金・ドイツチケット・社会保険・児童手当まとめ
 
 年末が近づくと、ドイツでは「来年から何が変わるか」というニュースが増えます。この記事では、2027年1月1日前後に変わる制度のうち、ドイツで働く・暮らす日本人に関係が深いものを整理しました。
 
-ただし、すでに決まっているものと、まだ政府案・法案の段階のものが混ざっています。本記事では各項目に状況を明記しています（2026年10月21日時点）。
+ただし、すでに決まっているものと、まだ政府案・法案の段階のものが混ざっています。本記事では各項目に状況を明記しています（2026年10月24日時点）。
 
 ## まず結論：決定済み／未確定の早見表
 
-![最低賃金・ミニジョブ・ドイツチケットは決定済み、社会保険の上限は同意待ち、児童手当と控除は政府案であることを示す図](/assets/images/events/january-2027-status-overview.svg "図解：J-Connect。本文の参考情報に基づく（2026年10月21日時点）。")
+![最低賃金・ミニジョブ・ドイツチケットは決定済み、社会保険の上限は同意待ち、児童手当と控除は政府案であることを示す図](/assets/images/events/january-2027-status-overview.svg "図解：J-Connect。本文の参考情報に基づく（2026年10月24日時点）。")
 
-| 項目 | 2026年 | 2027年 | 状況（2026年10月21日時点） |
+| 項目 | 2026年 | 2027年 | 状況（2026年10月24日時点） |
 | --- | --- | --- | --- |
 | 法定最低賃金（時給・額面） | 13.90ユーロ | 14.60ユーロ | 決定済み（政令で確定） |
 | ミニジョブ上限（月額） | 603ユーロ | 633ユーロ | 最低賃金に連動して上昇 |
@@ -66,7 +70,7 @@ official_sources:
 
 ## 2. ミニジョブの上限が月633ユーロに
 
-ミニジョブ（Minijob）の月収上限は、法律で「最低賃金×週10時間相当」に連動する仕組みです。最低賃金の引き上げにより、2027年1月から月633ユーロ（2026年は603ユーロ）に上がります。
+ミニジョブ（Minijob）の月収上限は、最低賃金を基準に週10時間相当の勤務を想定して計算します。2027年1月から月633ユーロ（2026年は603ユーロ）に上がり、年間の目安は7,596ユーロです。計算は14.60ユーロ×130÷3＝632.67ユーロを1ユーロ単位に切り上げたものです。時給14.60ユーロで働く場合、月の上限時間は約43.4時間が目安になります。実際の時間は時給や勤務日によって変わるため、月額上限と年間見込みの両方を確認してください。収入が変動する場合や上限超過が見込まれる場合は、Minijob-Zentraleの公式条件を確認し、通常の勤務で自由に上限を超えてよいと解釈しないでください。
 
 配偶者ビザで滞在しながらミニジョブで働いている方などは、上限が上がった分だけ勤務時間を増やせるかどうか、雇用主と相談する余地があります。
 
@@ -88,7 +92,7 @@ official_sources:
 
 社会保険料は、給与のうち一定額（保険料算定上限、Beitragsbemessungsgrenze）までにしか掛かりません。この上限が2027年に引き上げられる予定で、上限付近以上の給与を受け取っている方は手取りが減ります。
 
-![公的医療・介護保険と年金・失業保険の保険料算定上限を2026年と2027年で比べた棒グラフ](/assets/images/events/social-insurance-ceiling-2027.svg "図解：J-Connect。2027年の値は閣議決定済み・連邦参議院の同意待ち（2026年10月21日時点）。")
+![公的医療・介護保険と年金・失業保険の保険料算定上限を2026年と2027年で比べた棒グラフ](/assets/images/events/social-insurance-ceiling-2027.svg "図解：J-Connect。2027年の値は閣議決定済み・連邦参議院の同意待ち（2026年10月24日時点）。")
 
 | 項目 | 2026年 | 2027年（予定） |
 | --- | --- | --- |
@@ -128,13 +132,15 @@ official_sources:
 3. **医療保険の通知をチェック**：保険組合から届く2027年の追加保険料率のお知らせを見落とさない。
 4. **児童手当・税制は続報待ち**：政府案の段階なので、成立を確認してから家計の計画に組み込む。
 
-## 参考情報（2026年10月21日確認）
+## 参考情報（2026年10月24日確認）
 
 - 連邦法務省「Fünfte Mindestlohnanpassungsverordnung（MiLoV5）」— gesetze-im-internet.de
 - 連邦政府「Beitragsbemessungsgrenzen 2027 – Im Kabinett beschlossen」（2026年10月12日）— bundesregierung.de
 - ドイツ年金保険（DRV）「Beitragsbemessungsgrenzen 2027 sollen steigen」（2026年10月8日）— deutsche-rentenversicherung.de
 - epd／Sonntagsblatt「Verkehrsminister: Deutschlandticket ab Januar 3,80 Euro teurer」（2026年9月30日）
 - NWB Experten-Blog「Update: Deutschlandticket wird ab 1.1.2027 teurer」（2026年10月3日）
+- Minijob-Zentrale「最低賃金とMinijob上限（2026・2027年）」— https://magazin.minijob-zentrale.de/minijob-mindestlohn-2026-2027/
+- 連邦雇用庁「Kindergeldの2026年・2027年支給日」— https://www.arbeitsagentur.de/familie-und-kinder/auszahlungstermine
 - Stuttgarter Zeitung「Rente, Kindergeld, Mindestlohn: Hier gibt es ab 2027 mehr Geld」（2026年10月15日）
 
 ※本記事は一般的な情報提供を目的としたもので、税務・法律上の助言ではありません。個別のケースは税理士（Steuerberater）や加入先の保険組合にご確認ください。

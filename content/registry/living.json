@@ -255,6 +255,172 @@
     "image_alt": "小型パンや種入りパンなど、形と焼き色の異なるパンを盛ったかご"
   },
   {
+    "id": "L051",
+    "title": "Kindergeld 2027年の支給日一覧｜番号末尾0〜9で確認",
+    "slug": "kindergeld-auszahlungstermine-2027",
+    "category": "家族・手続き",
+    "summary": "ドイツの児童手当はKindergeld番号の末尾0〜9で振込日が異なります。2027年の公式支給日を月別一覧で確認し、初回支給・遡及申請・入金が遅れたときの確認順を整理します。",
+    "url": "/germany/ja/living/kindergeld-auszahlungstermine-2027/",
+    "markdown_path": "/content/living/kindergeld-auszahlungstermine-2027.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-10-24",
+    "updated_at": "2026-10-24",
+    "last_verified": "2026-10-24",
+    "tags": [
+      "Kindergeld",
+      "児童手当",
+      "支給日",
+      "2027年",
+      "出生後の手続き"
+    ],
+    "home_visible": false,
+    "home_order": 100,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/kindergeld-auszahlungstermine-2027/",
+    "official_sources": [
+      {
+        "title": "連邦雇用庁：Kindergeld・Kinderzuschlagの2026年・2027年支給日",
+        "url": "https://www.arbeitsagentur.de/familie-und-kinder/auszahlungstermine"
+      },
+      {
+        "title": "連邦雇用庁：Kindergeldの金額・受給資格・期間",
+        "url": "https://www.arbeitsagentur.de/familie-und-kinder/infos-rund-um-kindergeld/kindergeld-anspruch-hoehe-dauer"
+      },
+      {
+        "title": "連邦家族ポータル：Kindergeldの申請と遡及支給",
+        "url": "https://familienportal.de/familienportal/familienleistungen/kindergeld/faq/wie-wird-kindergeld-beantragt-und-ausgezahlt--124954"
+      }
+    ],
+    "disclaimer_type": "medical_family",
+    "related_articles": [
+      "birth-procedures-germany",
+      "pregnancy-birth-germany",
+      "kita-u3-tagesmutter-guide",
+      "germany-january-2027-changes"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "AI editorial official-source verification",
+      "last_reviewed_at": "2026-10-24",
+      "next_review_due": "2027-01-24"
+    },
+    "image_url": "/assets/images/living/childcare-play-editorial-v2.webp",
+    "image_alt": "保育施設で子どもたちが遊ぶ様子を描いたイメージ",
+    "image_caption": "AI生成の編集イメージ。実際の家庭や施設を記録したものではありません。"
+  },
+  {
+    "id": "L052",
+    "title": "ドイツの電子患者記録（ePA）入門｜アクセス期間・拒否・アプリ管理",
+    "slug": "epa-guide-germany",
+    "category": "健康・医療",
+    "summary": "ドイツの電子患者記録（ePA）について、医療機関と薬局の標準アクセス期間、文書の非表示、施設単位のアクセス拒否、アプリを使わない場合の相談先を整理します。",
+    "url": "/germany/ja/living/epa-guide-germany/",
+    "markdown_path": "/content/living/epa-guide-germany.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-10-24",
+    "updated_at": "2026-10-24",
+    "last_verified": "2026-10-24",
+    "tags": [
+      "電子患者記録",
+      "ePA",
+      "健康保険",
+      "医療情報",
+      "プライバシー",
+      "2026年"
+    ],
+    "home_visible": false,
+    "home_order": 101,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/epa-guide-germany/",
+    "official_sources": [
+      {
+        "title": "連邦保健省：電子患者記録（ePA für alle）",
+        "url": "https://www.bundesgesundheitsministerium.de/themen/digitalisierung/elektronische-patientenakte/epa-fuer-alle"
+      },
+      {
+        "title": "連邦健康情報ポータル：ePAの管理・アクセス権",
+        "url": "https://gesund.bund.de/wie-verwalte-ich-meine-epa"
+      },
+      {
+        "title": "連邦健康情報ポータル：電子患者記録の概要",
+        "url": "https://gesund.bund.de/die-elektronische-patientenakte"
+      }
+    ],
+    "disclaimer_type": "medical_insurance",
+    "related_articles": [
+      "health-insurance-guide",
+      "doctor-appointment-germany"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-24",
+      "next_review_due": "2027-01-24"
+    },
+    "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
+    "image_alt": "ドイツの診療所で受付に相談する様子を描いたイメージ",
+    "image_caption": "AI生成の編集イメージ。実在の診療所や人物を記録した写真ではありません。"
+  },
+  {
+    "id": "L053",
+    "title": "NRWの学校休暇2026/27年度｜2027年の春・夏・年末年始",
+    "slug": "nrw-school-holidays-2026-2027",
+    "category": "家族・子育て",
+    "summary": "ノルトライン＝ヴェストファーレン州の2026/27年度の学校休暇を一覧化。2027年の春・夏・年末年始、学校ごとの移動休日、Kitaの休園日との違いを確認できます。",
+    "url": "/germany/ja/living/nrw-school-holidays-2026-2027/",
+    "markdown_path": "/content/living/nrw-school-holidays-2026-2027.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-10-24",
+    "updated_at": "2026-10-24",
+    "last_verified": "2026-10-24",
+    "tags": [
+      "NRW",
+      "学校休暇",
+      "2027年",
+      "家族旅行",
+      "保育",
+      "休暇計画"
+    ],
+    "home_visible": false,
+    "home_order": 102,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/nrw-school-holidays-2026-2027/",
+    "official_sources": [
+      {
+        "title": "ドイツ州文部大臣会議：2026/27年度の州別学校休暇カレンダー",
+        "url": "https://www.kmk.org/service/ferienregelung/ferienkalender.html"
+      },
+      {
+        "title": "NRW州学校教育省の告示：学校休暇日程（BASS NRW 12-65 Nr. 1）",
+        "url": "https://bass.schule.nrw/191.htm"
+      }
+    ],
+    "disclaimer_type": "family_administrative",
+    "related_articles": [
+      "kita-u3-tagesmutter-guide",
+      "family-weekend-events-nrw",
+      "germany-first-30-days"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-24",
+      "next_review_due": "2027-01-24"
+    },
+    "image_url": "/assets/images/living/duesseldorf-family-park-rest-editorial-v1.webp",
+    "image_alt": "家族が公園で休憩する様子を描いたイメージ",
+    "image_caption": "AI生成の編集イメージ。実在の家族や公園を記録した写真ではありません。"
+  },
+  {
     "id": "T001",
     "title": "デュッセルドルフ観光｜日本人街・旧市街・ライン川を歩く",
     "slug": "duesseldorf-city-guide",
@@ -1903,14 +2069,14 @@
     "title": "ドイツのKita・U3申込み｜NRWの保育先・必要書類",
     "slug": "kita-u3-tagesmutter-guide",
     "category": "家族・子育て",
-    "summary": "ドイツの保育施設と家庭的保育の違い、NRWの原則6か月前の需要申告、デュッセルドルフ・Erkrathの申込み、必要情報・書類、入園決定と費用確認を整理します。",
+    "summary": "ドイツの保育施設と家庭的保育の違い、NRWの原則6か月前の需要申告、デュッセルドルフ・Erkrathの申込み、必要書類と費用を整理。学校休暇とKitaの休園日の違いも確認できます。",
     "url": "/germany/ja/living/kita-u3-tagesmutter-guide/",
     "markdown_path": "/content/living/kita-u3-tagesmutter-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-10-20",
-    "last_verified": "2026-08-31",
+    "updated_at": "2026-10-24",
+    "last_verified": "2026-10-24",
     "tags": [
       "保育施設",
       "3歳未満保育",
@@ -1929,7 +2095,8 @@
     "related_articles": [
       "pregnancy-birth-germany",
       "birth-procedures-germany",
-      "moving-checklist-germany"
+      "moving-checklist-germany",
+      "nrw-school-holidays-2026-2027"
     ],
     "official_sources": [
       {
@@ -1967,17 +2134,26 @@
       {
         "title": "デュッセルドルフ市：2027年8月以降の保育料案内",
         "url": "https://www.duesseldorf.de/familie/kinderbetreuung/elternbeitrag-2027"
+      },
+      {
+        "title": "ドイツ州文部大臣会議：2026/27年度の州別学校休暇カレンダー",
+        "url": "https://www.kmk.org/service/ferienregelung/ferienkalender.html"
+      },
+      {
+        "title": "NRW州学校教育省の告示：学校休暇日程（BASS NRW 12-65 Nr. 1）",
+        "url": "https://bass.schule.nrw/191.htm"
       }
     ],
     "disclaimer_type": "family_administrative",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-31",
-      "next_review_due": "2026-11-30"
+      "last_reviewed_at": "2026-10-24",
+      "next_review_due": "2027-01-24"
     },
     "image_url": "/assets/images/living/childcare-first-visit-editorial-v1.webp",
-    "image_alt": "保育施設を家族で訪れ、保育者と子どもの様子を確認するイメージ"
+    "image_alt": "保育施設を家族で訪れ、保育者と子どもの様子を確認するイメージ",
+    "next_review": "2027-01-24"
   },
   {
     "id": "L010",
@@ -2168,14 +2344,14 @@
     "title": "ドイツの健康保険｜公的保険と民間保険をどう選ぶか",
     "slug": "health-insurance-guide",
     "category": "生活・手続き",
-    "summary": "ドイツの健康保険を会社員・学生・家族など立場別に解説。公的保険と民間保険、2026年の基準、加入証明の提出先、保険証が届く前の受診用証明まで整理します。",
+    "summary": "ドイツの健康保険を会社員・学生・家族など立場別に解説。公的保険と民間保険、2026年の基準、加入証明、電子患者記録（ePA）のアクセス管理まで整理。",
     "url": "/germany/ja/living/health-insurance-guide/",
     "markdown_path": "/content/living/health-insurance-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-10-20",
-    "last_verified": "2026-08-31",
+    "updated_at": "2026-10-24",
+    "last_verified": "2026-10-24",
     "tags": [
       "健康保険",
       "公的医療保険",
@@ -2194,7 +2370,8 @@
       "anmeldung-guide",
       "doctor-appointment-germany",
       "residence-permit-renewal-germany",
-      "pregnancy-birth-germany"
+      "pregnancy-birth-germany",
+      "epa-guide-germany"
     ],
     "official_sources": [
       {
@@ -2208,17 +2385,26 @@
       {
         "title": "AOK：保険証が未着の場合を含む代替証明の案内",
         "url": "https://www.aok.de/pk/versichertenservice/ersatzbescheinigung-krankenkasse/"
+      },
+      {
+        "title": "連邦保健省：電子患者記録（ePA für alle）",
+        "url": "https://www.bundesgesundheitsministerium.de/themen/digitalisierung/elektronische-patientenakte/epa-fuer-alle"
+      },
+      {
+        "title": "連邦健康情報ポータル：ePAの管理・アクセス権",
+        "url": "https://gesund.bund.de/wie-verwalte-ich-meine-epa"
       }
     ],
     "disclaimer_type": "medical_insurance",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-31",
-      "next_review_due": "2026-11-30"
+      "last_reviewed_at": "2026-10-24",
+      "next_review_due": "2027-01-24"
     },
-    "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
-    "image_alt": "ドイツの診療所で保険と受診について受付に確認するイメージ"
+    "image_url": "/assets/img/living/health-insurance-guide.webp",
+    "image_alt": "ドイツの健康保険に関する書類と保険証を確認するイメージ",
+    "next_review": "2027-01-24"
   },
   {
     "id": "L031",
@@ -2692,14 +2878,14 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "AI editorial official-source verification",
-      "last_reviewed_at": "2026-10-12",
-      "next_review_due": "2027-01-12"
+      "last_reviewed_at": "2026-10-24",
+      "next_review_due": "2027-01-24"
     },
     "title": "ドイツ出産の手続き完全ガイド｜出生届・保険・手当・国籍・パスポート",
     "category": "家族・手続き",
     "summary": "ドイツで出産する日本人・国際家庭向けに、出産前の職場への連絡、出生証明書、子どもの保険、育児給付、児童手当、日本の出生届、国籍・旅券・滞在許可までを時系列で解説。期限、必要書類、公式申請先、実用チェックリストをまとめます。",
     "published_at": "2026-10-12",
-    "last_verified": "2026-10-12",
+    "last_verified": "2026-10-24",
     "canonical_url": "/germany/ja/living/birth-procedures-germany/",
     "tags": [
       "出産手続き",
@@ -2711,12 +2897,13 @@
       "パスポート",
       "NRW"
     ],
-    "updated_at": "2026-10-17",
+    "updated_at": "2026-10-24",
     "related_articles": [
       "pregnancy-birth-germany",
       "birth-day-germany",
       "health-insurance-guide",
-      "kita-u3-tagesmutter-guide"
+      "kita-u3-tagesmutter-guide",
+      "kindergeld-auszahlungstermine-2027"
     ],
     "official_sources": [
       {
@@ -2838,10 +3025,15 @@
       {
         "title": "ドイツ年金保険：育児期間の申告・両親間の配分",
         "url": "https://www.deutsche-rentenversicherung.de/BadenWuerttemberg/DE/Presse/Pressemitteilungen/2025/250505_kindererziehungszeiten.html"
+      },
+      {
+        "title": "連邦雇用庁：Kindergeldの2026年・2027年支給日",
+        "url": "https://www.arbeitsagentur.de/familie-und-kinder/auszahlungstermine"
       }
     ],
     "image_url": "/assets/images/living/birth-procedures-germany.webp",
-    "image_alt": "赤ちゃんの衣類と靴下、書類を入れるフォルダーを机に並べた出産手続きのイメージ"
+    "image_alt": "赤ちゃんの衣類と靴下、書類を入れるフォルダーを机に並べた出産手続きのイメージ",
+    "next_review": "2027-01-24"
   },
   {
     "id": "L047",

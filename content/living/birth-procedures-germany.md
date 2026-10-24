@@ -7,15 +7,15 @@ summary: "ドイツで出産する日本人・国際家庭向けに、出産前�
 status: "published"
 published: true
 published_at: "2026-10-12"
-updated_at: "2026-10-17"
-last_verified: "2026-10-12"
-next_review: "2027-01-12"
+updated_at: "2026-10-24"
+last_verified: "2026-10-24"
+next_review: "2027-01-24"
 canonical_url: "/germany/ja/living/birth-procedures-germany/"
 tags: ["出産手続き","出生届","出生証明書","育児給付","児童手当","国籍留保","パスポート","NRW"]
 image_url: "/assets/images/living/birth-procedures-germany.webp"
 image_alt: "赤ちゃんの衣類と靴下、書類を入れるフォルダーを机に並べた出産手続きのイメージ"
 image_caption: "AI生成のイメージ画像。実際の申請書類を示すものではありません。"
-related_articles: ["pregnancy-birth-germany","birth-day-germany","health-insurance-guide","kita-u3-tagesmutter-guide"]
+related_articles: ["pregnancy-birth-germany","birth-day-germany","health-insurance-guide","kita-u3-tagesmutter-guide","kindergeld-auszahlungstermine-2027"]
 official_sources:
   - title: "連邦家族ポータル：出生登録と出生証明書"
     url: "https://familienportal.de/familienportal/lebenslagen/schwangerschaft-geburt/anmeldung-standesamt"
@@ -77,6 +77,8 @@ official_sources:
     url: "https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u3-untersuchung/"
   - title: "ドイツ年金保険：育児期間の申告・両親間の配分"
     url: "https://www.deutsche-rentenversicherung.de/BadenWuerttemberg/DE/Presse/Pressemitteilungen/2025/250505_kindererziehungszeiten.html"
+  - title: "連邦雇用庁：Kindergeldの2026年・2027年支給日"
+    url: "https://www.arbeitsagentur.de/familie-und-kinder/auszahlungstermine"
 ---
 
 # ドイツ出産の手続き完全ガイド｜出生届・保険・手当・国籍・パスポート
@@ -366,7 +368,7 @@ BundIDのログイン方法によって、完全なペーパーレス申請に�
 
 [連邦雇用庁の家族・子ども向け入口](https://www.arbeitsagentur.de/familie-und-kinder)から出生後の申請へ進めます。完全オンライン提出ができる本人確認方法と、印刷・署名・送付が必要な方法があるため、画面の最終案内に従ってください。
 
-支給の遡及は原則最大6か月です。日本の出生届の3か月期限や育児給付の3生後月とは別で、児童手当に一律の「出生後3か月以内」という申請期限があるわけではありません。それでも給付開始と追加資料の確認に時間がかかるため、早めに進めます。[申請と遡及の公式案内](https://familienportal.de/familienportal/familienleistungen/kindergeld/faq/wie-wird-kindergeld-beantragt-und-ausgezahlt--124954)を確認してください。
+支給の遡及は原則最大6か月です。2027年の送金日はKindergeld番号の末尾で異なるため、[Kindergeld 2027年の支給日一覧](/germany/ja/living/kindergeld-auszahlungstermine-2027/)で該当月を確認できます。日本の出生届の3か月期限や育児給付の3生後月とは別で、児童手当に一律の「出生後3か月以内」という申請期限があるわけではありません。それでも給付開始と追加資料の確認に時間がかかるため、早めに進めます。[申請と遡及の公式案内](https://familienportal.de/familienportal/familienleistungen/kindergeld/faq/wie-wird-kindergeld-beantragt-und-ausgezahlt--124954)を確認してください。
 
 ## 日本の出生届：3か月以内の到着を最優先にする
 

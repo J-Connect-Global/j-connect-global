@@ -4,17 +4,17 @@ title: "ドイツの健康保険｜公的保険と民間保険をどう選ぶか
 slug: "health-insurance-guide"
 category: "生活・手続き"
 tags: ["健康保険","公的医療保険","民間医療保険","医療","渡独後手続き"]
-summary: "ドイツの健康保険を会社員・学生・家族など立場別に解説。公的保険と民間保険、2026年の基準、加入証明の提出先、保険証が届く前の受診用証明まで整理します。"
+summary: "ドイツの健康保険を会社員・学生・家族など立場別に解説。公的保険と民間保険、2026年の基準、加入証明、電子患者記録（ePA）のアクセス管理まで整理。"
 status: "published"
 published: true
 published_at: "2026-06-07"
-updated_at: "2026-10-20"
-last_verified: "2026-08-31"
-next_review: "2026-11-30"
+updated_at: "2026-10-24"
+last_verified: "2026-10-24"
+next_review: "2027-01-24"
 canonical_url: "/germany/ja/living/health-insurance-guide/"
-image_url: "/assets/images/living/german-clinic-reception-editorial-v1.webp"
-image_alt: "ドイツの診療所で保険と受診について受付に確認するイメージ"
-related_articles: ["germany-first-30-days","anmeldung-guide","doctor-appointment-germany","residence-permit-renewal-germany","pregnancy-birth-germany"]
+image_url: "/assets/img/living/health-insurance-guide.webp"
+image_alt: "ドイツの健康保険に関する書類と保険証を確認するイメージ"
+related_articles: ["germany-first-30-days","anmeldung-guide","doctor-appointment-germany","residence-permit-renewal-germany","pregnancy-birth-germany","epa-guide-germany"]
 official_sources:
   - title: "連邦保健省：公的医療保険の加入者・2026年の基準"
     url: "https://www.bundesgesundheitsministerium.de/gesetzlich-versicherte/seite"
@@ -22,6 +22,10 @@ official_sources:
     url: "https://www.bundesgesundheitsministerium.de/themen/krankenversicherung/online-ratgeber-krankenversicherung/krankenversicherung/wechsel-zwischen-gkv-und-pkv"
   - title: "AOK：保険証が未着の場合を含む代替証明の案内"
     url: "https://www.aok.de/pk/versichertenservice/ersatzbescheinigung-krankenkasse/"
+  - title: "連邦保健省：電子患者記録（ePA für alle）"
+    url: "https://www.bundesgesundheitsministerium.de/themen/digitalisierung/elektronische-patientenakte/epa-fuer-alle"
+  - title: "連邦健康情報ポータル：ePAの管理・アクセス権"
+    url: "https://gesund.bund.de/wie-verwalte-ich-meine-epa"
 ---
 
 # ドイツの健康保険｜公的保険と民間保険をどう選ぶか
@@ -172,6 +176,14 @@ official_sources:
 
 予約や受付で使う短い表現は、[病院で使う言葉](/germany/ja/learn-german/hospital-phrases/)にまとめています。受診前に保険証、症状、服薬、希望日時を日本語で整理しておくと、必要な部分だけ確認できます。
 
+## 電子患者記録（ePA）のアクセス管理も確認する
+
+公的医療保険では、利用を拒否していない加入者に電子患者記録（ePA）が用意されます。医療機関は電子健康保険証を読み取った後、通常90日間、薬局は通常3日間アクセスできます。標準期間はアプリで短縮・延長できる場合があります。
+
+アプリでは文書の表示・非表示、アクセス履歴、医療機関ごとのアクセス拒否を確認できます。ただし、通常の文書を特定の医療機関だけに隠すことはできません。文書を非表示にすると原則として医療機関から見えなくなり、特定の医療機関のアクセスを止める場合は、その施設のePA全体へのアクセスを制限します。薬の一覧には、施設ごとに非表示にできる例外があります。
+
+アプリを使わない場合は、加入先の保険者のオンブズ窓口に管理方法を確認してください。保険者やオンブズ窓口自身はePAの内容を閲覧できません。設定と注意点は[ドイツの電子患者記録（ePA）入門](/germany/ja/living/epa-guide-germany/)で詳しく説明しています。
+
 ## まとめ
 
 ドイツの健康保険は、滞在資格のための書類ではなく、日常の受診と家族の安心を支える仕組みです。まず自分が会社員、学生、家族、自営業のどれに当たるかを確認し、その後で保険料、家族加入、サービス、将来の変更しやすさを比べます。加入後は保険証を受け取って終わりにせず、近所の家庭医と緊急時の連絡先まで把握しておくと、実際に役立つ備えになります。
@@ -182,3 +194,5 @@ official_sources:
 - [ドイツ連邦保健省：公的保険と民間保険の変更](https://www.bundesgesundheitsministerium.de/themen/krankenversicherung/online-ratgeber-krankenversicherung/krankenversicherung/wechsel-zwischen-gkv-und-pkv)
 - [ドイツ連邦保健省：公的医療保険の財源](https://www.bundesgesundheitsministerium.de/finanzierung-gkv)
 - [連邦健康情報ポータル：医師選びと予約](https://gesund.bund.de/en/arztwahl-und-terminsuche)
+- [連邦保健省：電子患者記録（ePA für alle）](https://www.bundesgesundheitsministerium.de/themen/digitalisierung/elektronische-patientenakte/epa-fuer-alle)
+- [連邦健康情報ポータル：ePAの管理・アクセス権](https://gesund.bund.de/wie-verwalte-ich-meine-epa)

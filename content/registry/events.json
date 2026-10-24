@@ -2736,12 +2736,21 @@
       {
         "title": "Deutsche Bahn：Deutschlandticketの契約変更FAQ",
         "url": "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
+      },
+      {
+        "title": "Minijob-Zentrale：最低賃金とMinijob上限（2026・2027年）",
+        "url": "https://magazin.minijob-zentrale.de/minijob-mindestlohn-2026-2027/"
+      },
+      {
+        "title": "連邦雇用庁：Kindergeldの2026年・2027年支給日",
+        "url": "https://www.arbeitsagentur.de/familie-und-kinder/auszahlungstermine"
       }
     ],
     "related_articles": [
       "deutschlandticket-2027-price-consent",
       "db-2027-timetable-family-ticket",
-      "germany-september-2026-changes"
+      "germany-september-2026-changes",
+      "kindergeld-auszahlungstermine-2027"
     ],
     "city": "ドイツ全土",
     "area": "ドイツ全土",
@@ -2761,8 +2770,8 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-21",
-    "updated_at": "2026-10-21",
-    "last_verified": "2026-10-21",
+    "updated_at": "2026-10-24",
+    "last_verified": "2026-10-24",
     "canonical_url": "/germany/ja/events/news/germany-january-2027-changes/",
     "official_url": "",
     "url": "/germany/ja/events/news/germany-january-2027-changes/",
@@ -2776,7 +2785,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-21",
+      "last_reviewed_at": "2026-10-24",
       "next_review_due": "2026-12-01"
     },
     "image": "/assets/img/events/germany-january-2027-changes.webp",

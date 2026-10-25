@@ -1,12 +1,12 @@
-# J-Connect Germany — 2026-10-24 編集改善計画
+# J-Connect Germany — 2026-10-25 編集改善計画
 
 **状態：未公開の編集作業資料。**  
-確認日時：2026-10-24 04:31〜05:00（Europe/Berlin）  
+確認日時：2026-10-25 03:55〜04:35（Europe/Berlin）  
 基準main：0a79a7ece0ff64d489fc9519437fe59e71db3f5c
 
 ## 目的と範囲
 
-既存記事の検索意図と重複を確認し、新規記事3本を content/living/ に下書きとして保存しました。公開レジストリ、生成HTML、検索インデックス、サイトマップには追加していません。ユーザー投稿、求人、連絡フォーム、管理システム、語彙データ、プライバシー処理のコード変更もありません。
+既存記事の検索意図と重複を確認し、新規記事4本を content/living/ に下書きとして保存しました。公開レジストリ、生成HTML、検索インデックス、サイトマップには追加していません。ユーザー投稿、求人、連絡フォーム、管理システム、語彙データ、プライバシー処理のコード変更もありません。
 
 ## 新規下書き
 
@@ -15,14 +15,15 @@
 | content/living/kindergeld-auszahlungstermine-2027.md | /germany/ja/living/kindergeld-auszahlungstermine-2027/ | 2027年の児童手当送金日を番号末尾から確認する |
 | content/living/epa-guide-germany.md | /germany/ja/living/epa-guide-germany/ | ePAの閲覧期間、文書の非表示、施設単位のアクセス制限を理解する |
 | content/living/nrw-school-holidays-2026-2027.md | /germany/ja/living/nrw-school-holidays-2026-2027/ | NRWの学校休暇と学校ごとの移動休日、保育施設休園日の違いを確認する |
+| content/living/nrw-public-holidays-2027.md | /germany/ja/living/nrw-public-holidays-2027/ | NRWの法定祝日11日、曜日、ブリッジデー、学校・Kitaの日程との違いを確認する |
 
-3本とも status: draft、published: false で、公開レジストリには未登録です。公開URL、canonical、サイトマップ、検索一覧は発生しません。
+4本とも status: draft、published: false で、公開レジストリには未登録です。ePA記事には、薬の一覧を施設ごとに非表示にできる例外を公式情報に基づいて追記しました。Kindergeld記事は公式支給日表の全日程を再照合し、本文の不要な保育施設画像を削除しました。公開URL、canonical、サイトマップ、検索一覧は発生しません。
 
 ## 一次情報と照合した事項
 
 ### Kindergeld
 
-- 連邦雇用庁の公式支給日表を2026-10-24に確認。番号末尾0〜9の2027年全日程を照合しました。
+- 連邦雇用庁の公式支給日表を2026-10-25に確認。番号末尾0〜9の2027年全日程を照合しました。
 - 週末・祝日には入金日が前後する場合があり、特定日の送金を保証する権利がない旨を反映しました。
 - 初回支給は受給資格のある月について全額となること、遡及支給は条件付きで最大6か月であることを公式案内へのリンク付きで説明しています。
 - 支給日と2027年の支給額は分け、未成立の金額案を確定額として扱っていません。
@@ -52,6 +53,18 @@
 公式情報：
 - https://www.kmk.org/service/ferienregelung/ferienkalender.html
 - https://www.land.nrw/schulferien-nordrhein-westfalen
+
+### NRWの法定祝日2027
+
+- NRW州の「日曜・祝日に関する法律」で祝日の種類を確認し、2027年の曜日・日付を民間の祝日カレンダーでも照合しました。
+- NRWでは2027年に11日の法定祝日があり、5月6日（木）のキリスト昇天祭と5月27日（木）の聖体祭の翌日を休暇にすると、土日休みの人は4連休にできます。
+- 祝日が週末に重なった場合の自動的な振替休日を前提にしないよう明記。学校休暇とKitaの休園日は別途確認する構成です。
+
+確認先：
+- https://recht.nrw.de/system/files/BH/9785-4368.htm
+- https://www.land.nrw/schulferien-nordrhein-westfalen
+- https://www.kmk.org/service/ferienregelung/ferienkalender.html
+- https://www.feiertage-deutschland.de/bundesland/nordrhein-westfalen/
 
 ## 既存記事4本への改善差分案
 
@@ -135,6 +148,6 @@ URL：https://j-connect-global.com/germany/ja/events/news/germany-january-2027-c
 
 ## 制約
 
-- GSC Wizardは有効な契約がなく、28日・3か月の実測クエリ、表示回数、CTR、順位は取得できませんでした。
+- GSC Wizardは有効な契約がなく、28日・3か月の実測クエリ、表示回数、CTR、順位は取得できませんでした。2026-10-25にも再試行し、同じ subscription_required エラーを確認したため、これ以上の再試行はしていません。
 - Gmail／Apps Scriptにサインインしたブラウザープロファイルがありません。非公開会話の実送受信、通知再送、管理リンクを使ったデータ削除は未検証です。
 - 本PRは下書き保存用であり、本番公開を意味しません。

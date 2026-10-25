@@ -17,7 +17,7 @@
 | content/living/nrw-school-holidays-2026-2027.md | /germany/ja/living/nrw-school-holidays-2026-2027/ | NRWの学校休暇と学校ごとの移動休日、保育施設休園日の違いを確認する |
 | content/living/nrw-public-holidays-2027.md | /germany/ja/living/nrw-public-holidays-2027/ | NRWの法定祝日11日、曜日、ブリッジデー、学校・Kitaの日程との違いを確認する |
 
-4本とも status: draft、published: false で、公開レジストリには未登録です。ePA記事には、薬の一覧を施設ごとに非表示にできる例外を公式情報に基づいて追記しました。Kindergeld記事は公式支給日表の全日程を再照合し、Kindergeld記事では、保育施設の画像を申請先を整理する既存図へ差し替えました。NRW祝日記事には、他記事のサムネイルを使い回さないよう、祝日とブリッジデーの2点のオリジナルSVG図を追加しました。公開URL、canonical、サイトマップ、検索一覧は発生しません。
+4本とも status: draft、published: false で、公開レジストリには未登録です。ePA記事には、薬の一覧を施設ごとに非表示にできる例外を公式情報に基づいて追記しました。Kindergeld記事は公式支給日表の全日程を再照合し、Kindergeld記事では、保育施設の画像を申請先を整理する既存図へ差し替えました。NRW祝日記事には、他記事のサムネイルを使い回さないよう、固有のヒーローSVGと、本文用のブリッジデー・週末重複のオリジナルSVG図2点を用意しました。ヒーロー画像を本文で再掲しない構成です。公開URL、canonical、サイトマップ、検索一覧は発生しません。
 
 ## 一次情報と照合した事項
 

@@ -1,6 +1,6 @@
 ---
 id: "L051"
-title: "Kindergeld 2027年の支給日一覧｜番号末尾0〜9で確認"
+title: "Kindergeld（ドイツの児童手当）2027年の支給日一覧｜番号末尾0〜9で確認"
 slug: "kindergeld-auszahlungstermine-2027"
 category: "家族・手続き"
 summary: "ドイツの児童手当は番号末尾0〜9で送金日が異なります。2027年の公式日程、初回支給、遡及申請、入金が遅れた場合の確認順をまとめます。"
@@ -25,7 +25,7 @@ official_sources:
     url: "https://familienportal.de/familienportal/familienleistungen/kindergeld/faq/wie-wird-kindergeld-beantragt-und-ausgezahlt--124954"
 ---
 
-# Kindergeld 2027年の支給日一覧｜番号末尾0〜9で確認
+# Kindergeld（ドイツの児童手当）2027年の支給日一覧｜番号末尾0〜9で確認
 
 ドイツの児童手当（Kindergeld）は、受給資格を満たす家庭に毎月支給されます。2027年の送金日は、Kindergeld番号の最後の数字によって異なります。この記事では、連邦雇用庁の公式日程を月別にまとめ、初回支給、申請が遅れた場合、予定日に入金が見えない場合の確認方法を説明します。
 

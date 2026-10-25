@@ -12,8 +12,8 @@ last_verified: "2026-10-25"
 next_review: "2027-01-25"
 canonical_url: "/germany/ja/living/nrw-public-holidays-2027/"
 tags: ["NRW","祝日","2027年","連休","休暇計画","学校休暇"]
-image_url: "/assets/images/living/duesseldorf-family-park-rest-editorial-v1.webp"
-image_alt: "家族が公園で休日を過ごすイメージ"
+image_url: "/assets/images/living/nrw-public-holidays-2027-overview.svg"
+image_alt: "NRWの2027年の連休候補と祝日をまとめた案内図"
 image_caption: "AI生成の編集イメージ。特定の公園やイベントを撮影した写真ではありません。"
 related_articles: ["nrw-school-holidays-2026-2027","kita-u3-tagesmutter-guide","duesseldorf-family-trip"]
 official_sources:
@@ -29,7 +29,7 @@ official_sources:
 
 ノルトライン＝ヴェストファーレン州（NRW）で暮らす人向けに、2027年の法定祝日11日を曜日つきでまとめました。祝日が木曜日に当たる日に休暇を1日取ると連休を作りやすい一方、土日と重なる祝日が平日に自動で振り替わるわけではありません。仕事の休暇申請、家族の予定、学校や保育施設の休みを決める前に、州の祝日と各施設の年間予定を分けて確認できます。
 
-![家族が公園で休日を過ごすイメージ。AI生成で、特定の公園を撮影した写真ではありません。](/assets/images/living/duesseldorf-family-park-rest-editorial-v1.webp "AI生成の編集イメージ。特定の公園やイベントを撮影した写真ではありません。")
+![NRWの2027年の連休候補と祝日をまとめた案内図](/assets/images/living/nrw-public-holidays-2027-overview.svg "J-Connect制作のオリジナル図。祝日名と日付は本文の情報源に基づいています。")
 
 ## NRWの2027年の法定祝日一覧
 
@@ -62,7 +62,7 @@ NRW州の祝日法に定められた祝日を、2027年の暦日に当てはめ�
 
 これは休暇申請の計画例であり、勤務先が休暇を承認することや、すべての職種が土日休みであることを保証するものではありません。交代勤務、シフト勤務、サービス業などでは、契約や勤務表によって扱いが異なります。
 
-![ケルンのライン川沿いの公園でベビーカーと休憩する家族](/assets/images/living/cologne-rheinpark-family-rest-editorial-v1.webp "AI生成の編集イメージ。実際の現地写真ではありません。")
+![2027年5月の木曜祝日、翌金曜の休暇、土日をつないだ4連休の案内図](/assets/images/living/nrw-public-holidays-2027-bridge-days.svg "木曜祝日と翌金曜の休暇申請で4連休にする計画例。休暇の承認は勤務先の規則によります。")
 
 「ブリッジデー」は祝日と週末の間にある平日を指す一般的な呼び方で、それ自体が法定祝日になるわけではありません。休暇を申請する場合は、会社の申請期限、チーム内の調整、休暇残日数を先に確認してください。
 

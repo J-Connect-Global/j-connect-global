@@ -1,7 +1,7 @@
 # J-Connect Germany — 2026-10-25 編集改善計画
 
 **状態：未公開の編集作業資料。**  
-確認日時：2026-10-25 03:55〜04:35（Europe/Berlin）  
+確認日時：2026-10-25 03:55〜04:01（Europe/Berlin）  
 基準main：0a79a7ece0ff64d489fc9519437fe59e71db3f5c
 
 ## 目的と範囲
@@ -17,7 +17,7 @@
 | content/living/nrw-school-holidays-2026-2027.md | /germany/ja/living/nrw-school-holidays-2026-2027/ | NRWの学校休暇と学校ごとの移動休日、保育施設休園日の違いを確認する |
 | content/living/nrw-public-holidays-2027.md | /germany/ja/living/nrw-public-holidays-2027/ | NRWの法定祝日11日、曜日、ブリッジデー、学校・Kitaの日程との違いを確認する |
 
-4本とも status: draft、published: false で、公開レジストリには未登録です。ePA記事には、薬の一覧を施設ごとに非表示にできる例外を公式情報に基づいて追記しました。Kindergeld記事は公式支給日表の全日程を再照合し、本文の不要な保育施設画像を削除しました。公開URL、canonical、サイトマップ、検索一覧は発生しません。
+4本とも status: draft、published: false で、公開レジストリには未登録です。ePA記事には、薬の一覧を施設ごとに非表示にできる例外を公式情報に基づいて追記しました。Kindergeld記事は公式支給日表の全日程を再照合し、Kindergeld記事では、保育施設の画像を申請先を整理する既存図へ差し替え、本文画像の関連性を改善しました。公開URL、canonical、サイトマップ、検索一覧は発生しません。
 
 ## 一次情報と照合した事項
 

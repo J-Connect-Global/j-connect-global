@@ -7,9 +7,9 @@ summary: "ノルトライン＝ヴェストファーレン州の2026/27年度の
 status: "draft"
 published: false
 published_at: ""
-updated_at: "2026-10-24"
-last_verified: "2026-10-24"
-next_review: "2027-01-24"
+updated_at: "2026-10-25"
+last_verified: "2026-10-25"
+next_review: "2027-01-25"
 canonical_url: "/germany/ja/living/nrw-school-holidays-2026-2027/"
 tags: ["NRW","学校休暇","2027年","家族旅行","保育","休暇計画"]
 image_url: "/assets/images/living/childcare-first-visit-editorial-v1.webp"
@@ -42,7 +42,7 @@ official_sources:
 | 聖霊降臨祭の休暇2027 | 2027年5月18日 | 2027年5月18日 |
 | 夏休み2027 | 2027年7月19日 | 2027年8月31日 |
 
-公式カレンダーの表示日は2025年10月9日です。2026年10月24日に日程を再確認しました。今後、州や学校から新しい案内が出た場合は、そちらを優先してください。
+公式カレンダーの表示日は2025年10月9日です。2026年10月25日に日程を再確認しました。今後、州や学校から新しい案内が出た場合は、そちらを優先してください。
 
 ## 学校ごとの移動休日も確認する
 

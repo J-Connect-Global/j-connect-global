@@ -12,7 +12,7 @@ last_verified: "2026-10-25"
 next_review: "2027-01-25"
 canonical_url: "/germany/ja/living/nrw-school-holidays-2026-2027/"
 tags: ["NRW","学校休暇","2027年","家族旅行","保育","休暇計画"]
-image_url: "/assets/images/living/childcare-first-visit-editorial-v1.webp"
+image_url: "/assets/images/living/nrw-school-holidays-2026-2027-overview.svg"
 image_alt: "保育施設を家族で訪れ、保育者と子どもの様子を確認するイメージ"
 image_caption: "AI生成の編集イメージ。実際の保育施設を撮影した写真ではありません。"
 related_articles: ["kita-u3-tagesmutter-guide","duesseldorf-family-trip","family-weekend-events-nrw"]

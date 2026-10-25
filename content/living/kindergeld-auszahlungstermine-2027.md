@@ -12,9 +12,9 @@ last_verified: "2026-10-25"
 next_review: "2027-01-25"
 canonical_url: "/germany/ja/living/kindergeld-auszahlungstermine-2027/"
 tags: ["Kindergeld","児童手当","支給日","2027年","出産後の手続き"]
-image_url: "/assets/images/living/birth-procedures-germany.webp"
+image_url: "/assets/images/living/kindergeld-payment-2027-overview.svg"
 image_alt: "赤ちゃん用品と出産後の行政手続きに使う書類フォルダー"
-image_caption: "AI生成の編集イメージ。実際の申請書類を示すものではありません。"
+image_caption: "J-Connect制作のオリジナル図。支給日を確認する手順を示しています。"
 related_articles: ["birth-procedures-germany","pregnancy-birth-germany","kita-u3-tagesmutter-guide"]
 official_sources:
   - title: "連邦雇用庁：Kindergeld・子ども加算の支給日"

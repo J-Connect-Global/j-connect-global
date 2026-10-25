@@ -12,7 +12,7 @@ last_verified: "2026-10-25"
 next_review: "2027-01-25"
 canonical_url: "/germany/ja/living/epa-guide-germany/"
 tags: ["電子患者記録","ePA","健康保険","医療情報","プライバシー"]
-image_url: "/assets/images/living/german-clinic-reception-editorial-v1.webp"
+image_url: "/assets/images/living/epa-privacy-overview.svg"
 image_alt: "ドイツの診療所で健康保険と受診について受付に確認するイメージ"
 image_caption: "AI生成の編集イメージ。実在の診療所や患者を撮影した写真ではありません。"
 related_articles: ["health-insurance-guide","doctor-appointment-germany","pregnancy-birth-germany"]

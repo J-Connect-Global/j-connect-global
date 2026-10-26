@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">NRWの祝日2027年と連休候補</title>
+  <desc id="desc">NRW州の2027年の祝日から、1月1日、復活祭、5月の木曜祝日、11月1日を中心に連休計画の要点を示す案内図。</desc>
+  <rect width="1200" height="630" rx="28" fill="#f5f2eb"/>
+  <rect x="48" y="44" width="1104" height="542" rx="24" fill="#ffffff" stroke="#d7dedf" stroke-width="2"/>
+  <text x="88" y="112" fill="#17324d" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="44" font-weight="800">NRWの祝日 2027</text>
+  <text x="90" y="154" fill="#4f6474" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="23">法定祝日11日｜休暇を計画するための早見図</text>
+  <g transform="translate(88 198)">
+    <rect width="322" height="250" rx="18" fill="#e9f2f0" stroke="#c7ded9" stroke-width="2"/>
+    <text x="24" y="42" fill="#2f7771" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="18" font-weight="700">連休候補 1</text>
+    <text x="24" y="88" fill="#17324d" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="34" font-weight="800">5月6日（木）</text>
+    <text x="24" y="128" fill="#17324d" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="22">キリスト昇天祭</text>
+    <path d="M24 153 H298" stroke="#b6d2cd" stroke-width="2"/>
+    <text x="24" y="190" fill="#17324d" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="22" font-weight="700">5月7日（金）に休暇</text>
+    <text x="24" y="224" fill="#2f7771" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="24" font-weight="800">→ 4連休</text>
+  </g>
+  <g transform="translate(439 198)">
+    <rect width="322" height="250" rx="18" fill="#eef1f8" stroke="#d0d8ea" stroke-width="2"/>
+    <text x="24" y="42" fill="#47658b" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="18" font-weight="700">連休候補 2</text>
+    <text x="24" y="88" fill="#17324d" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="34" font-weight="800">5月27日（木）</text>
+    <text x="24" y="128" fill="#17324d" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="22">聖体祭</text>
+    <path d="M24 153 H298" stroke="#ccd5e7" stroke-width="2"/>
+    <text x="24" y="190" fill="#17324d" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="22" font-weight="700">5月28日（金）に休暇</text>
+    <text x="24" y="224" fill="#47658b" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="24" font-weight="800">→ 4連休</text>
+  </g>
+  <g transform="translate(790 198)">
+    <rect width="322" height="250" rx="18" fill="#f7efe5" stroke="#ead6bd" stroke-width="2"/>
+    <text x="24" y="42" fill="#9a6130" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="18" font-weight="700">週末と重なる祝日</text>
+    <text x="24" y="88" fill="#17324d" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="34" font-weight="800">10月3日（日）</text>
+    <text x="24" y="128" fill="#17324d" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="22">ドイツ統一の日</text>
+    <path d="M24 153 H298" stroke="#e7d0b4" stroke-width="2"/>
+    <text x="24" y="190" fill="#9a6130" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="20" font-weight="700">自動振替を前提に</text>
+    <text x="24" y="220" fill="#9a6130" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="20" font-weight="700">予定を組まない</text>
+  </g>
+  <text x="90" y="504" fill="#4f6474" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="19">学校休暇・Kitaの休園日・勤務先の休日は別途確認してください。</text>
+  <text x="90" y="546" fill="#7b8a91" font-family="'Noto Sans JP', system-ui, sans-serif" font-size="15">J-Connect制作｜日付・曜日確認：2026年10月25日</text>
+</svg>

@@ -7,14 +7,14 @@ summary: "ドイツの児童手当は番号末尾0〜9で送金日が異なり�
 status: "draft"
 published: false
 published_at: ""
-updated_at: "2026-10-25"
-last_verified: "2026-10-25"
-next_review: "2027-01-25"
+updated_at: "2026-10-26"
+last_verified: "2026-10-26"
+next_review: "2027-01-26"
 canonical_url: "/germany/ja/living/kindergeld-auszahlungstermine-2027/"
 tags: ["Kindergeld","児童手当","支給日","2027年","出産後の手続き"]
 image_url: "/assets/images/living/kindergeld-payment-2027-overview.svg"
-image_alt: "赤ちゃん用品と出産後の行政手続きに使う書類フォルダー"
-image_caption: "J-Connect制作のオリジナル図。支給日を確認する手順を示しています。"
+image_alt: "Kindergeld番号の末尾を確認して2027年の支給日を探す手順を示す図"
+image_caption: "J-Connect制作のオリジナル図。番号末尾ごとの支給日を確認する手順を示しています。"
 related_articles: ["birth-procedures-germany","pregnancy-birth-germany","kita-u3-tagesmutter-guide"]
 official_sources:
   - title: "連邦雇用庁：Kindergeld・子ども加算の支給日"
@@ -28,8 +28,6 @@ official_sources:
 # Kindergeld（ドイツの児童手当）2027年の支給日一覧｜番号末尾0〜9で確認
 
 ドイツの児童手当（Kindergeld）は、受給資格を満たす家庭に毎月支給されます。2027年の送金日は、Kindergeld番号の最後の数字によって異なります。この記事では、連邦雇用庁の公式日程を月別にまとめ、初回支給、申請が遅れた場合、予定日に入金が見えない場合の確認方法を説明します。
-
-![赤ちゃん用品と行政手続き用の書類フォルダー。AI生成の編集イメージで、実際の申請書類ではありません。](/assets/images/living/birth-procedures-germany.webp "AI生成の編集イメージ。実際の申請書類を示すものではありません。")
 
 ## 先に確認すること
 

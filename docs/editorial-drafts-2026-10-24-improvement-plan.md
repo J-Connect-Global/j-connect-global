@@ -61,7 +61,7 @@
 - 祝日が週末に重なった場合の自動的な振替休日を前提にしないよう明記。学校休暇とKitaの休園日は別途確認する構成です。
 
 確認先：
-- https://recht.nrw.de/system/files/BH/9785-4368.htm
+- https://recht.nrw.de/lrgv/gesetz/01012000-bekanntmachung-der-neufassung-des-gesetzes-ueber-die-sonn-und-feiertage/
 - https://www.land.nrw/schulferien-nordrhein-westfalen
 - https://www.kmk.org/service/ferienregelung/ferienkalender.html
 - https://www.feiertage-deutschland.de/bundesland/nordrhein-westfalen/
@@ -127,6 +127,14 @@ URL：https://j-connect-global.com/germany/ja/events/news/germany-january-2027-c
 公式情報：
 - https://magazin.minijob-zentrale.de/minijob-grenze-2027/
 - https://www.arbeitsagentur.de/familie-und-kinder/auszahlungstermine
+
+## 2026-10-26 の再確認と修正
+
+- Kindergeld 2027年の番号末尾0〜9の日程を連邦雇用庁の公式表で再確認しました。
+- ePAの標準アクセス期間（医療機関90日、薬局3日）と、文書の非表示・施設単位のアクセス制限の違いを連邦保健省および連邦健康情報ポータルで再確認しました。
+- NRWの2026/27年度の学校休暇日程をKMKの現行カレンダーで再確認しました。
+- NRW祝日記事の出典URLが、祝日法ではなく店舗営業時間法を指していたため、NRW州の「日曜・祝日に関する法律」の公式ページへ修正しました。
+- 4本の下書きについて、ヒーロー画像の代替テキスト・キャプションと実画像の不一致を修正し、本文中のテーマに合わないストック風イメージを削除しました。
 
 ## 競合・カニバリゼーション
 

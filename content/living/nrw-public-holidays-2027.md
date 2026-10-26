@@ -7,18 +7,18 @@ summary: "NRWの2027年の法定祝日11日を曜日つきで一覧化。休暇�
 status: "draft"
 published: false
 published_at: ""
-updated_at: "2026-10-25"
-last_verified: "2026-10-25"
-next_review: "2027-01-25"
+updated_at: "2026-10-26"
+last_verified: "2026-10-26"
+next_review: "2027-01-26"
 canonical_url: "/germany/ja/living/nrw-public-holidays-2027/"
 tags: ["NRW","祝日","2027年","連休","休暇計画","学校休暇"]
 image_url: "/assets/images/living/nrw-public-holidays-2027-overview.svg"
-image_alt: "NRWの2027年の連休候補と祝日をまとめた案内図"
-image_caption: "AI生成の編集イメージ。特定の公園やイベントを撮影した写真ではありません。"
+image_alt: "NRWの2027年の法定祝日と連休候補をまとめた図"
+image_caption: "J-Connect制作のオリジナル図。NRW州の2027年の法定祝日と連休候補をまとめています。"
 related_articles: ["nrw-school-holidays-2026-2027","kita-u3-tagesmutter-guide","duesseldorf-family-trip"]
 official_sources:
   - title: "NRW州：日曜・祝日に関する法律"
-    url: "https://recht.nrw.de/system/files/BH/9785-4368.htm"
+    url: "https://recht.nrw.de/lrgv/gesetz/01012000-bekanntmachung-der-neufassung-des-gesetzes-ueber-die-sonn-und-feiertage/"
   - title: "NRW州：学校休暇"
     url: "https://www.land.nrw/schulferien-nordrhein-westfalen"
   - title: "州文部大臣会議：学校休暇カレンダー"

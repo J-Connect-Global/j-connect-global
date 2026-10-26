@@ -7,14 +7,14 @@ summary: "ドイツの電子患者記録について、医療機関の標準ア�
 status: "draft"
 published: false
 published_at: ""
-updated_at: "2026-10-25"
-last_verified: "2026-10-25"
-next_review: "2027-01-25"
+updated_at: "2026-10-26"
+last_verified: "2026-10-26"
+next_review: "2027-01-26"
 canonical_url: "/germany/ja/living/epa-guide-germany/"
 tags: ["電子患者記録","ePA","健康保険","医療情報","プライバシー"]
 image_url: "/assets/images/living/epa-privacy-overview.svg"
-image_alt: "ドイツの診療所で健康保険と受診について受付に確認するイメージ"
-image_caption: "AI生成の編集イメージ。実在の診療所や患者を撮影した写真ではありません。"
+image_alt: "医療機関90日、薬局3日の標準アクセス期間と、文書・施設ごとのアクセス管理を示す図"
+image_caption: "J-Connect制作のオリジナル図。ePAの標準アクセス期間と管理方法を整理しています。"
 related_articles: ["health-insurance-guide","doctor-appointment-germany","pregnancy-birth-germany"]
 official_sources:
   - title: "連邦保健省：電子患者記録"
@@ -28,8 +28,6 @@ official_sources:
 # ドイツの電子患者記録（ePA）入門｜閲覧権限・非表示・アプリ管理
 
 ドイツの電子患者記録（ePA）は、診療に関する文書や薬の情報をまとめて管理する仕組みです。公的医療保険に加入している人が、誰にどのくらい情報を見られるのか、見せたくない文書をどう管理するのかを理解するためのガイドです。標準のアクセス期間、アプリでできること、アプリを使わない場合の相談先を整理します。
-
-![ドイツの診療所で健康保険と受診について受付に確認するイメージ。AI生成で、実在の患者や施設を示すものではありません。](/assets/images/living/german-clinic-reception-editorial-v1.webp "AI生成の編集イメージ。実在の診療所を撮影した写真ではありません。")
 
 ## まず押さえるポイント
 
@@ -69,8 +67,6 @@ ePAアプリでは、文書を非表示にしたり、保存されている内�
 スマートフォンがない、本人確認の設定が難しい、アプリを使いたくない場合は、加入している健康保険者の相談窓口へ連絡してください。保険者のオンブズ窓口を通じて、医療機関のアクセスを制限する方法を相談できる場合があります。
 
 連邦健康情報ポータルの説明では、健康保険者やオンブズ窓口自身はePA内の診療記録を閲覧できません。管理方法を案内することと、診療記録の内容を見ることは別です。
-
-![健康保険の選択肢と確認先を整理した図。ePAの利用方法は加入先の公式案内で確認してください。](/assets/images/living/health-insurance-decision.svg "健康保険の確認先を整理した図。個別の医療判断を示すものではありません。")
 
 ## 初回に確認する手順
 

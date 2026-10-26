@@ -103,7 +103,7 @@ NRW州では、2027年の法定祝日は11日です。ただし、そのうち�
 
 ## 公式情報
 
-- [NRW州：日曜・祝日に関する法律](https://recht.nrw.de/system/files/BH/9785-4368.htm)
+- [NRW州：日曜・祝日に関する法律](https://recht.nrw.de/lrgv/gesetz/01012000-bekanntmachung-der-neufassung-des-gesetzes-ueber-die-sonn-und-feiertage/)
 - [NRW州：学校休暇](https://www.land.nrw/schulferien-nordrhein-westfalen)
 - [州文部大臣会議：学校休暇カレンダー](https://www.kmk.org/service/ferienregelung/ferienkalender.html)
 - [NRWの祝日の日付・曜日の照合用カレンダー（民間サイト）](https://www.feiertage-deutschland.de/bundesland/nordrhein-westfalen/)

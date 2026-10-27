@@ -12,9 +12,9 @@ last_verified: "2026-10-27"
 next_review: "2027-01-27"
 canonical_url: "/germany/ja/living/nrw-school-holidays-2026-2027/"
 tags: ["NRW","学校休暇","2027年","家族旅行","保育","休暇計画"]
-image_url: "/assets/images/living/nrw-school-holidays-2026-2027-overview.svg"
-image_alt: "NRWの2026/27年度の学校休暇を示す図。春休み、夏休み、年末年始の日程を確認できます。"
-image_caption: "J-Connect制作のオリジナル図。NRWの学校休暇の日程を整理しています。"
+image_url: "/assets/images/living/childcare-play-editorial-v2.webp"
+image_alt: "明るい保育室で子どもと保育者が積み木をする様子"
+image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。"
 related_articles: ["kita-u3-tagesmutter-guide","duesseldorf-family-trip","family-weekend-events-nrw"]
 official_sources:
   - title: "州文部大臣会議：2026/27年度の学校休暇カレンダー"
@@ -29,9 +29,9 @@ official_sources:
 
 ノルトライン＝ヴェストファーレン州（NRW）の学校休暇は、ドイツ全土で同じ日程ではありません。公式カレンダーでは、2027年の春休みは3月22日から4月3日、夏休みは7月19日から8月31日です。家族旅行や勤務先への休暇申請を決める前に、州共通の日程に加えて学校ごとの移動休日と保育施設の休園日も確認してください。
 
-## 2026/27年度の学校休暇一覧
+## 2026年秋〜2027年夏の学校休暇一覧
 
-以下は、州文部大臣会議が公表する2026/27年度の州別カレンダーに掲載されたNRWの日程です。開始日と最終日を含みます。
+以下は、NRW州の学校休暇を2026年秋から2027年夏まで連続して確認するための実用一覧です。開始日と最終日を含みます。夏休み2027は州の公式表では2027/28年度欄に掲載されるため、学校年度の表示が異なる点に注意してください。
 
 | 休暇 | 開始日 | 最終日 |
 | --- | --- | --- |

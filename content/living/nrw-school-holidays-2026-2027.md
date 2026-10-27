@@ -4,12 +4,12 @@ title: "NRWの学校休暇2026/27年度｜2027年の春・夏・年末年始"
 slug: "nrw-school-holidays-2026-2027"
 category: "家族・子育て"
 summary: "ノルトライン＝ヴェストファーレン州の2026/27年度の学校休暇を一覧化。州共通の日程と学校ごとの移動休日、保育施設の休園日との違いを確認できます。"
-status: "draft"
-published: false
-published_at: ""
-updated_at: "2026-10-26"
-last_verified: "2026-10-26"
-next_review: "2027-01-26"
+status: "published"
+published: true
+published_at: "2026-10-27"
+updated_at: "2026-10-27"
+last_verified: "2026-10-27"
+next_review: "2027-01-27"
 canonical_url: "/germany/ja/living/nrw-school-holidays-2026-2027/"
 tags: ["NRW","学校休暇","2027年","家族旅行","保育","休暇計画"]
 image_url: "/assets/images/living/nrw-school-holidays-2026-2027-overview.svg"
@@ -21,6 +21,8 @@ official_sources:
     url: "https://www.kmk.org/service/ferienregelung/ferienkalender.html"
   - title: "ノルトライン＝ヴェストファーレン州：学校休暇"
     url: "https://www.land.nrw/schulferien-nordrhein-westfalen"
+  - title: "NRW州学校省：学校休暇規則（BASS）"
+    url: "https://bass.schule.nrw/191.htm"
 ---
 
 # NRWの学校休暇2026/27年度｜2027年の春・夏・年末年始
@@ -40,7 +42,7 @@ official_sources:
 | 聖霊降臨祭の休暇2027 | 2027年5月18日 | 2027年5月18日 |
 | 夏休み2027 | 2027年7月19日 | 2027年8月31日 |
 
-公式カレンダーの表示日は2025年10月9日です。2026年10月25日に日程を再確認しました。今後、州や学校から新しい案内が出た場合は、そちらを優先してください。
+2026年10月27日に、NRW州の学校休暇規則（BASS）と州文部大臣会議のカレンダーを照合しました。NRW州の公式表では夏休み2027が2027/28年度欄に掲載されるため、ここでは2026年秋から2027年夏までの予定を連続して確認できるように並べています。学校ごとの移動休日や行事は、学校から配布される年間予定表を優先してください。
 
 ## 学校ごとの移動休日も確認する
 
@@ -84,3 +86,4 @@ NRWの公式カレンダーでは、学校ごとに決める移動休日が3日�
 
 - [州文部大臣会議：2026/27年度の学校休暇カレンダー](https://www.kmk.org/service/ferienregelung/ferienkalender.html)
 - [NRW州：学校休暇](https://www.land.nrw/schulferien-nordrhein-westfalen)
+- [NRW州学校省：学校休暇規則（BASS）](https://bass.schule.nrw/191.htm)

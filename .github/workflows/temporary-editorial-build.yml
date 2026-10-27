@@ -5,10 +5,7 @@ on:
     branches:
       - editorial/jc-content-drafts-20261026-clean
     paths:
-      - "content/living/**"
       - "content/registry/living.json"
-      - "content/events/news/germany-january-2027-changes.md"
-      - "assets/images/living/**"
       - ".github/workflows/temporary-editorial-build.yml"
 
 permissions:

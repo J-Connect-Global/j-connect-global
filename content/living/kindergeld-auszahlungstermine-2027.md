@@ -4,12 +4,12 @@ title: "Kindergeld（ドイツの児童手当）2027年の支給日一覧｜番�
 slug: "kindergeld-auszahlungstermine-2027"
 category: "家族・手続き"
 summary: "2027年の公式支給日、申請なし支給の段階導入、支給額の法案状況を整理。番号末尾0〜9別の日程と、入金が見えない場合の確認順も説明します。"
-status: "draft"
-published: false
-published_at: ""
-updated_at: "2026-10-26"
-last_verified: "2026-10-26"
-next_review: "2027-01-26"
+status: "published"
+published: true
+published_at: "2026-10-27"
+updated_at: "2026-10-27"
+last_verified: "2026-10-27"
+next_review: "2027-01-27"
 canonical_url: "/germany/ja/living/kindergeld-auszahlungstermine-2027/"
 tags: ["Kindergeld","児童手当","支給日","2027年","出産後の手続き"]
 image_url: "/assets/images/living/kindergeld-payment-2027-overview.svg"
@@ -27,6 +27,8 @@ official_sources:
     url: "https://www.bundestag.de/dokumente/textarchiv/2026/kw21-de-kindergeld-1174720"
   - title: "連邦財務省：申請なし支給の導入計画"
     url: "https://www.bundesfinanzministerium.de/Content/DE/Pressemitteilungen/Finanzpolitik/2026/03/2026-03-18-antragsloses-kindergeld.html"
+  - title: "連邦政府：申請なし支給の導入時期・条件（連邦参議院の同意）"
+    url: "https://www.bundesregierung.de/breg-de/aktuelles/kindergeld-ohne-antrag-2412916"
   - title: "連邦議会：2027年所得税改革法案の審議状況"
     url: "https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520"
 ---
@@ -40,7 +42,7 @@ official_sources:
 - Kindergeld番号の最後の数字が支給日の目安です。銀行口座番号や子どもの誕生日ではありません。
 - 末尾0は月初、末尾9は月末に近い日程です。
 - 表の日付は連邦雇用庁が公表する送金日です。週末や祝日には入金日が前後することがあり、特定の日に必ず送金される権利があるわけではありません。
-- 支給日と支給額は別の情報です。2026年10月26日時点で公式案内に掲載されている金額を、2027年の確定額と読み替えないでください。
+- 支給日と支給額は別の情報です。2026年10月27日時点で公式案内に掲載されている金額を、2027年の確定額と読み替えないでください。
 
 ## 2027年の公式支給日
 
@@ -81,9 +83,9 @@ Kindergeldは、対象となる子どもについてFamilienkasseへ申請しま
 
 ## 2027年の支給額と申請方法の変更
 
-支給日表は振込日を示す資料で、支給額を決める資料ではありません。2026年10月26日時点で、2027年1月から月267ユーロ、2028年1月から月272ユーロへ引き上げる案を含む所得税改革法案は、10月8日の連邦議会第1読会後、委員会での審議に回されています。したがって、267ユーロはこの確認時点で確定額ではありません。成立後は連邦雇用庁の公式案内で確認してください。
+支給日表は振込日を示す資料で、支給額を決める資料ではありません。2026年10月27日時点で、2027年1月から月267ユーロ、2028年1月から月272ユーロへ引き上げる案を含む所得税改革法案は、10月8日の連邦議会第1読会後、委員会での審議に回されています。したがって、267ユーロはこの確認時点で確定額ではありません。成立後は連邦雇用庁の公式案内で確認してください。
 
-一方、申請なしの児童手当支給を可能にする法案は連邦議会で可決され、連邦財務省は2027年1月1日からの施行を予定した段階導入計画を公表しています。連邦財務省が公表した導入計画では、2027年3月頃に、すでに児童手当を受け取っている家庭の第2子以降を対象に開始し、2027年11月頃に第1子へ拡大する見込みです。
+一方、申請なしの児童手当支給を可能にする法案は、連邦議会が2026年7月9日に可決し、連邦参議院も同年9月25日に同意しました。政府の公式案内では2027年1月1日施行予定で、実際の自動支給は2027年3月頃に第2子以降、11月頃に第1子へ段階的に拡大する見込みです。具体的な対象条件と例外は[連邦政府の公式案内](https://www.bundesregierung.de/breg-de/aktuelles/kindergeld-ohne-antrag-2412916)で確認してください。
 
 第1子の段階では、少なくとも親の一人が子どもとドイツ国内に居住し、その親のIBAN（国際銀行口座番号）が把握され、少なくとも親の一人がドイツ国内で働いていることなどの条件があります。必要な情報がそろわない場合は、従来どおり案内と事前入力済み申請が送られることがあります。自動化は受給資格の審査や必要な届出義務をなくすものではありません。対象か不明な場合は、申請を見送らず家族給付窓口の公式案内を確認してください。
 
@@ -122,4 +124,5 @@ Kindergeldは、対象となる子どもについてFamilienkasseへ申請しま
 - [連邦家族ポータル：申請と支給](https://familienportal.de/familienportal/familienleistungen/kindergeld/faq/wie-wird-kindergeld-beantragt-und-ausgezahlt--124954)
 - [連邦議会：申請なしの児童手当支給に関する法案・採決](https://www.bundestag.de/dokumente/textarchiv/2026/kw21-de-kindergeld-1174720)
 - [連邦財務省：申請なし支給の導入計画](https://www.bundesfinanzministerium.de/Content/DE/Pressemitteilungen/Finanzpolitik/2026/03/2026-03-18-antragsloses-kindergeld.html)
+- [連邦政府：申請なし支給の導入時期・条件（連邦参議院の同意）](https://www.bundesregierung.de/breg-de/aktuelles/kindergeld-ohne-antrag-2412916)
 - [連邦議会：2027年所得税改革法案の審議状況](https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520)

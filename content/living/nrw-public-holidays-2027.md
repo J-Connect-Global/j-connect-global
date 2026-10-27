@@ -4,12 +4,12 @@ title: "NRWの祝日2027年一覧｜連休・ブリッジデー・学校休暇�
 slug: "nrw-public-holidays-2027"
 category: "生活・手続き"
 summary: "NRWの2027年の法定祝日11日を曜日つきで一覧化。休暇を1日取ると連休になる日、週末に重なる祝日の注意点、学校休暇やKitaの休園日との違いを整理します。"
-status: "draft"
-published: false
-published_at: ""
-updated_at: "2026-10-26"
-last_verified: "2026-10-26"
-next_review: "2027-01-26"
+status: "published"
+published: true
+published_at: "2026-10-27"
+updated_at: "2026-10-27"
+last_verified: "2026-10-27"
+next_review: "2027-01-27"
 canonical_url: "/germany/ja/living/nrw-public-holidays-2027/"
 tags: ["NRW","祝日","2027年","連休","休暇計画","学校休暇"]
 image_url: "/assets/images/living/nrw-public-holidays-2027-overview.svg"
@@ -48,6 +48,8 @@ NRW州の祝日法に定められた祝日を、2027年の暦日に当てはめ�
 | 11月1日 | 月 | 諸聖人の日 | 土日と合わせて3連休になりやすい日程です。 |
 | 12月25日 | 土 | クリスマス第1日 | 土曜日に重なります。 |
 | 12月26日 | 日 | クリスマス第2日 | 日曜日に重なります。 |
+
+日付と曜日は2026年10月27日にNRW州の祝日法と公式カレンダーを照合しています。勤務先の休日や個別の勤務表は別途確認してください。
 
 この一覧はNRW州の法定祝日を対象にしています。ドイツ全土で祝日がすべて同じというわけではなく、州によって追加の祝日が異なります。たとえば、宗教改革記念日はNRW州の法定祝日ではありません。
 

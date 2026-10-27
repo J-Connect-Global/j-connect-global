@@ -9,7 +9,7 @@ city: "ドイツ全土"
 location: ""
 event_date: "2027年1月1日前後"
 published_at: "2026-10-21"
-updated_at: "2026-10-21"
+updated_at: "2026-10-27"
 last_verified: "2026-10-21"
 next_review: "2026-12-01"
 summary: "2027年1月からドイツで変わる制度を、在独日本人の生活に関わる項目に絞って整理。決定済みのものと、まだ法案段階のものを分けて解説します。"
@@ -23,10 +23,14 @@ image: "/assets/img/events/germany-january-2027-changes.webp"
 image_alt: "2027年1月のカレンダーと、ユーロ硬貨・乗車券・医療保険・子どもを表すアイコンのイラスト"
 image_caption: "イラスト：J-Connect。制度変更のテーマを表したもので、公式資料を再現していません。"
 image_credit: "Illustration / J-Connect"
-related_articles: ["deutschlandticket-2027-price-consent", "db-2027-timetable-family-ticket", "germany-september-2026-changes"]
+related_articles: ["deutschlandticket-2027-price-consent", "db-2027-timetable-family-ticket", "germany-september-2026-changes", "kindergeld-auszahlungstermine-2027"]
 official_sources:
   - title: "Deutsche Bahn：Deutschlandticketの契約変更FAQ"
     url: "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
+  - title: "連邦政府：申請なし支給の導入時期・条件（連邦参議院の同意）"
+    url: "https://www.bundesregierung.de/breg-de/aktuelles/kindergeld-ohne-antrag-2412916"
+  - title: "連邦議会：2027年所得税改革法案の審議状況"
+    url: "https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520"
 ---
 
 # 【2027年1月から】ドイツで何が変わる？ 最低賃金・ドイツチケット・社会保険・児童手当まとめ
@@ -103,7 +107,7 @@ official_sources:
 - 年収が84,150ユーロを超えないと、公的医療保険（GKV）から民間医療保険（PKV）へ移れなくなります。2027年にPKVへの切り替えを検討している方は、この新しい基準額を前提に判断してください。
 - 医療保険の追加保険料率（Zusatzbeitrag）は保険組合ごとに決まり、2027年の水準は例年秋〜年末に発表されます。加入している保険組合からの通知を確認しましょう。
 
-## 5. 児童手当・基礎控除の引き上げは「まだ案」
+## 5. 児童手当の支給額引き上げは「まだ案」／申請なし支給は導入決定
 
 2027年に向けた所得税改革（Einkommensteuerreform 2027）の政府案が、2026年9月に閣議決定されました。主な内容は次のとおりです。
 
@@ -112,9 +116,11 @@ official_sources:
 - 被用者概算控除（Arbeitnehmer-Pauschbetrag）：1,230ユーロ → 1,430ユーロ
 - 家事・修理などの手工業者費用控除（Handwerkerbonus）：控除率20%・上限1,200ユーロ → 15%・上限900ユーロに縮小
 
-ただし、これらは連邦議会・連邦参議院で可決されるまで確定ではありません。金額や時期が変わる可能性があります。特に「Handwerkerbonus」は縮小方向の案なので、リフォームなどを予定している方は、成立状況を見ながら支払時期を検討するとよいでしょう。
+この表の金額変更は、2026年10月27日時点で連邦議会・連邦参議院の最終承認を経ていない法案の内容です。金額や時期が変わる可能性があります。特に「Handwerkerbonus」は縮小方向の案なので、リフォームなどを予定している方は成立状況を見ながら支払時期を検討してください。
 
-成立した時点で、J-Connectでも続報をお届けします。
+これとは別に、Kindergeldを申請なしで支給する手続きの改正は、連邦議会が2026年7月9日に可決し、連邦参議院も9月25日に同意しました。政府の公式案内では2027年1月1日施行予定で、実際の自動支給は2027年3月頃に第2子以降、11月頃に第1子へ段階的に広げる見込みです。ただし、第1子の段階では国内居住、既知のIBAN、少なくとも親の一人の国内就労などの条件があり、情報が不足する場合は従来どおり申請が必要になることがあります。支給日・番号末尾別の日程・条件は[Kindergeld 2027年の支給日一覧](/germany/ja/living/kindergeld-auszahlungstermine-2027/)で確認してください。
+
+支給額の法案が成立した場合は、金額表と本記事を更新します。
 
 ## 6. 2027年中のその他の変更
 
@@ -128,7 +134,7 @@ official_sources:
 3. **医療保険の通知をチェック**：保険組合から届く2027年の追加保険料率のお知らせを見落とさない。
 4. **児童手当・税制は続報待ち**：政府案の段階なので、成立を確認してから家計の計画に組み込む。
 
-## 参考情報（2026年10月21日確認）
+## 参考情報（初回確認：2026年10月21日／児童手当関連の更新：2026年10月27日）
 
 - 連邦法務省「Fünfte Mindestlohnanpassungsverordnung（MiLoV5）」— gesetze-im-internet.de
 - 連邦政府「Beitragsbemessungsgrenzen 2027 – Im Kabinett beschlossen」（2026年10月12日）— bundesregierung.de
@@ -136,5 +142,8 @@ official_sources:
 - epd／Sonntagsblatt「Verkehrsminister: Deutschlandticket ab Januar 3,80 Euro teurer」（2026年9月30日）
 - NWB Experten-Blog「Update: Deutschlandticket wird ab 1.1.2027 teurer」（2026年10月3日）
 - Stuttgarter Zeitung「Rente, Kindergeld, Mindestlohn: Hier gibt es ab 2027 mehr Geld」（2026年10月15日）
+- [連邦政府：申請なしKindergeldの導入時期・条件](https://www.bundesregierung.de/breg-de/aktuelles/kindergeld-ohne-antrag-2412916)
+- [連邦議会：2027年所得税改革法案の審議状況](https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520)
+- [Kindergeld 2027年の支給日一覧（J-Connect）](/germany/ja/living/kindergeld-auszahlungstermine-2027/)
 
 ※本記事は一般的な情報提供を目的としたもので、税務・法律上の助言ではありません。個別のケースは税理士（Steuerberater）や加入先の保険組合にご確認ください。

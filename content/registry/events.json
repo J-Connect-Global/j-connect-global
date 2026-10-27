@@ -3309,5 +3309,295 @@
     ],
     "image": "/assets/img/events/rhineland-carnival-11-11.webp",
     "image_alt": "11時11分を指す時計と、紙吹雪、道化の帽子を描いたイラスト"
+  },
+  {
+    "slug": "germany-tap-water-drinkable",
+    "id": "C011",
+    "content_type": "column",
+    "url": "/germany/ja/events/columns/germany-tap-water-drinkable/",
+    "markdown_path": "/content/events/columns/germany-tap-water-drinkable.md",
+    "canonical_url": "/germany/ja/events/columns/germany-tap-water-drinkable/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 917,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-27",
+      "next_review_due": "2027-10-01"
+    },
+    "title": "ドイツの水道水はそのまま飲める？｜「硬水」の正体と、古い建物で気をつけたいこと",
+    "category": "ドイツ雑学・暮らし",
+    "summary": "ドイツの水道水は、国の検査で「良い〜とても良い」と評価されています。それでも白い水あかがつくのはなぜ？ 水の硬さの決まり、デュッセルドルフやケルンの水の硬さ、古い建物の鉛管と「朝いちばんの水」の注意点まで、連邦環境庁などの資料をもとに紹介します。",
+    "published_at": "2026-10-27",
+    "last_verified": "2026-10-27",
+    "tags": [
+      "水道水",
+      "硬水",
+      "ドイツ雑学",
+      "ドイツ生活",
+      "鉛管",
+      "デュッセルドルフ",
+      "ケルン",
+      "NRW"
+    ],
+    "updated_at": "2026-10-27",
+    "related_articles": [
+      "germany-winter-mold-ventilation",
+      "rent-apartment-germany",
+      "germany-sunday-rest-shops-closed"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "ドイツ雑学のコラム",
+    "official_url": "https://www.umweltbundesamt.de/themen/wasser/trinkwasser/trinkwasserqualitaet",
+    "official_sources": [
+      {
+        "title": "連邦環境庁（UBA）：水道水の水質",
+        "url": "https://www.umweltbundesamt.de/themen/wasser/trinkwasser/trinkwasserqualitaet"
+      },
+      {
+        "title": "連邦保健省・連邦環境庁：水道水の水質報告（2020〜2022年）",
+        "url": "https://www.umweltbundesamt.de/publikationen/bericht-des-bundesministeriums-fuer-gesundheit-des-5"
+      },
+      {
+        "title": "洗剤法 第9条（水の硬さの区分）",
+        "url": "https://www.gesetze-im-internet.de/wrmg/__9.html"
+      },
+      {
+        "title": "連邦環境庁（UBA）：鉛管と水道水",
+        "url": "https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/bleirohre-blei-im-trinkwasser-ist"
+      },
+      {
+        "title": "デュッセルドルフ都市公社：水の硬さ",
+        "url": "https://www.swd-ag.de/pk/strom-gas-wasser/wasser/wasserhaerte/"
+      },
+      {
+        "title": "消費者センター：水の硬さを調べる",
+        "url": "https://www.verbraucherzentrale.de/wissen/umwelt-haushalt/wasser/wasserhaerte-bestimmen-habe-ich-weiches-oder-hartes-wasser-5532"
+      }
+    ],
+    "image": "/assets/img/events/germany-tap-water-drinkable.webp",
+    "image_alt": "キッチンの蛇口からグラスに水を注ぐ様子を描いたイラスト"
+  },
+  {
+    "slug": "germany-public-holidays-by-state",
+    "id": "C012",
+    "content_type": "column",
+    "url": "/germany/ja/events/columns/germany-public-holidays-by-state/",
+    "markdown_path": "/content/events/columns/germany-public-holidays-by-state.md",
+    "canonical_url": "/germany/ja/events/columns/germany-public-holidays-by-state/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 918,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-27",
+      "next_review_due": "2027-10-01"
+    },
+    "title": "ドイツの祝日は州ごとに違う？｜国が決めた祝日は1日だけ、NRWの2027年の祝日一覧つき",
+    "category": "ドイツ雑学・暮らし",
+    "summary": "ドイツで国の法律が決めている祝日は10月3日の「ドイツ統一の日」だけ。ほかの祝日はすべて州が決めています。11月1日の万聖節がNRWでは休みなのに隣の州では平日、という違いの理由と、州ごとの珍しい祝日、NRWの2027年の祝日一覧を紹介します。",
+    "published_at": "2026-10-27",
+    "last_verified": "2026-10-27",
+    "tags": [
+      "祝日",
+      "州",
+      "ドイツ雑学",
+      "ドイツ生活",
+      "NRW",
+      "万聖節",
+      "聖体祭",
+      "2027年"
+    ],
+    "updated_at": "2026-10-27",
+    "related_articles": [
+      "germany-sunday-rest-shops-closed",
+      "rhineland-carnival-11-11",
+      "christmas-markets-duesseldorf"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "ドイツ雑学のコラム",
+    "official_url": "https://www.bmi.bund.de/DE/themen/verfassung/staatliche-symbole/nationale-feiertage/nationale-feiertage-node.html",
+    "official_sources": [
+      {
+        "title": "連邦内務省：国の祝日",
+        "url": "https://www.bmi.bund.de/DE/themen/verfassung/staatliche-symbole/nationale-feiertage/nationale-feiertage-node.html"
+      },
+      {
+        "title": "連邦内務省 用語集：ドイツの祝日",
+        "url": "https://www.bmi.bund.de/DE/service/lexikon/functions/bmi-lexikon.html?lv3=9398012&lv2=9391102"
+      },
+      {
+        "title": "NRW州 日曜・祝日法",
+        "url": "https://recht.nrw.de/lrgv/gesetz/01012000-bekanntmachung-der-neufassung-des-gesetzes-ueber-die-sonn-und-feiertage/"
+      },
+      {
+        "title": "連邦政府：ドイツ統一の日",
+        "url": "https://www.bundesregierung.de/breg-de/schwerpunkte/deutsche-einheit/tag-der-deutschen-einheit-243150"
+      },
+      {
+        "title": "ザクセン州 日曜・祝日法",
+        "url": "https://www.revosax.sachsen.de/vorschrift_gesamt/3997/26160.pdf"
+      },
+      {
+        "title": "ケルン大司教区：2026年と2027年の移動祝日",
+        "url": "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Katholische-bewegliche-Feiertage-und-Hochfeste/"
+      }
+    ],
+    "image": "/assets/img/events/germany-public-holidays-by-state.webp",
+    "image_alt": "赤い丸の付いたカレンダーと、色分けされたドイツの州の形を描いたイラスト"
+  },
+  {
+    "slug": "advent-wreath-calendar-origin",
+    "id": "C013",
+    "content_type": "column",
+    "url": "/germany/ja/events/columns/advent-wreath-calendar-origin/",
+    "markdown_path": "/content/events/columns/advent-wreath-calendar-origin.md",
+    "canonical_url": "/germany/ja/events/columns/advent-wreath-calendar-origin/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 919,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-27",
+      "next_review_due": "2027-11-01"
+    },
+    "title": "アドベントクランツとアドベントカレンダーはドイツ生まれ？｜ろうそく4本と24の扉の物語",
+    "category": "ドイツ雑学・季節文化",
+    "summary": "クリスマス前の4週間、ドイツの家庭や街を彩るアドベントクランツとアドベントカレンダー。どちらもドイツで生まれた習慣です。1839年にハンブルクで生まれたろうそくの輪、母親の手作りから始まった印刷のカレンダー、2026年のアドベントの日程を紹介します。",
+    "published_at": "2026-10-27",
+    "last_verified": "2026-10-27",
+    "tags": [
+      "アドベント",
+      "クリスマス",
+      "アドベントクランツ",
+      "アドベントカレンダー",
+      "ドイツ雑学",
+      "季節文化",
+      "ハンブルク"
+    ],
+    "updated_at": "2026-10-27",
+    "related_articles": [
+      "christmas-markets-duesseldorf",
+      "rhineland-carnival-11-11",
+      "germany-public-holidays-by-state"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026-11-29 第1アドベント",
+    "official_url": "https://katholisch.de/artikel/15632-der-erfinder-des-adventskranzes",
+    "official_sources": [
+      {
+        "title": "カトリック教会ポータル（katholisch.de）：アドベントクランツを考えた人",
+        "url": "https://katholisch.de/artikel/15632-der-erfinder-des-adventskranzes"
+      },
+      {
+        "title": "ラウエス・ハウス：ラウエス・ハウスの歴史",
+        "url": "https://www.rauheshaus.de/ueber-uns/geschichte-des-rauhen-hauses/"
+      },
+      {
+        "title": "ドイツ福音主義教会（EKD）：最初のアドベントクランツが170年",
+        "url": "https://www.ekd.de/news_2009_11_27_2_wichern_adventskranz.htm"
+      },
+      {
+        "title": "カトリック教会ポータル（katholisch.de）：アドベントカレンダーの歴史",
+        "url": "https://katholisch.de/artikel/42099-die-geschichte-des-adventskalenders"
+      },
+      {
+        "title": "ドイツ福音主義教会（EKD）：アドベントカレンダー",
+        "url": "https://www.ekd.de/news_081128_adventskalender.htm"
+      },
+      {
+        "title": "ケルン大司教区：2026年と2027年の移動祝日",
+        "url": "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Katholische-bewegliche-Feiertage-und-Hochfeste/"
+      }
+    ],
+    "image": "/assets/img/events/advent-wreath-calendar-origin.webp",
+    "image_alt": "ろうそくが4本立つモミの枝の輪と、小さな扉が並ぶカレンダーを描いたイラスト"
+  },
+  {
+    "slug": "germany-cash-payment-habits",
+    "id": "C014",
+    "content_type": "column",
+    "url": "/germany/ja/events/columns/germany-cash-payment-habits/",
+    "markdown_path": "/content/events/columns/germany-cash-payment-habits.md",
+    "canonical_url": "/germany/ja/events/columns/germany-cash-payment-habits/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 920,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-27",
+      "next_review_due": "2027-07-01"
+    },
+    "title": "ドイツ人はなぜ現金が好き？｜ドイツ連邦銀行の調査で見る、支払いの「今」",
+    "category": "ドイツ雑学・暮らし",
+    "summary": "「ドイツはカードが使えない店が多い」と言われてきましたが、変化が進んでいます。ドイツ連邦銀行の調査によると、2025年には初めて、現金を使わない支払いが件数で半分を超えました。それでも現金が根強い理由、デビットカード「ギロカード」の存在、暮らしで困らないコツを紹介します。",
+    "published_at": "2026-10-27",
+    "last_verified": "2026-10-27",
+    "tags": [
+      "現金",
+      "キャッシュレス",
+      "ギロカード",
+      "ドイツ雑学",
+      "ドイツ生活",
+      "買い物",
+      "支払い"
+    ],
+    "updated_at": "2026-10-27",
+    "related_articles": [
+      "bank-account-germany",
+      "germany-sunday-rest-shops-closed",
+      "christmas-markets-duesseldorf"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "ドイツ雑学のコラム",
+    "official_url": "https://www.bundesbank.de/de/presse/pressemitteilungen/zahlungsverhalten-in-deutschland-2025-964736",
+    "official_sources": [
+      {
+        "title": "ドイツ連邦銀行：2025年の支払い行動（プレスリリース）",
+        "url": "https://www.bundesbank.de/de/presse/pressemitteilungen/zahlungsverhalten-in-deutschland-2025-964736"
+      },
+      {
+        "title": "ドイツ連邦銀行：ドイツの支払い行動 2025（報告書）",
+        "url": "https://www.bundesbank.de/resource/blob/997848/1b30fa6978e2f05229d91beceeaf78cc/472B63F073F071307366337C94F8C870/zahlungsverhalten-in-deutschland-2025-data.pdf"
+      },
+      {
+        "title": "ドイツ連邦銀行：ドイツの支払い行動 2023",
+        "url": "https://www.bundesbank.de/de/presse/pressenotizen/zahlungsverhalten-in-deutschland-2023-934828"
+      },
+      {
+        "title": "ドイツ連邦銀行：ドイツ社会の中の現金（月報 2025年4月）",
+        "url": "https://publikationen.bundesbank.de/publikationen-de/berichte-studien/monatsberichte/bargeld-in-der-deutschen-gesellschaft-ein-aktuelles-meinungsbild-954600"
+      }
+    ],
+    "image": "/assets/img/events/germany-cash-payment-habits.webp",
+    "image_alt": "ユーロの紙幣と硬貨、カードとスマートフォンが並ぶレジ台を描いたイラスト"
   }
 ]

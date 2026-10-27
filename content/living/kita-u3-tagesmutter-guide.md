@@ -8,13 +8,13 @@ summary: "ドイツの保育施設と家庭的保育の違い、NRWの原則6か
 status: "published"
 published: true
 published_at: "2026-06-12"
-updated_at: "2026-10-20"
+updated_at: "2026-10-27"
 last_verified: "2026-08-31"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/kita-u3-tagesmutter-guide/"
 image_url: "/assets/images/living/childcare-first-visit-editorial-v1.webp"
 image_alt: "保育施設を家族で訪れ、保育者と子どもの様子を確認するイメージ"
-related_articles: ["pregnancy-birth-germany","birth-procedures-germany","moving-checklist-germany"]
+related_articles: ["pregnancy-birth-germany","birth-procedures-germany","moving-checklist-germany","nrw-school-holidays-2026-2027"]
 official_sources:
   - title: "連邦社会法第8編第24条：保育を利用する権利"
     url: "https://www.gesetze-im-internet.de/sgb_8/__24.html"
@@ -34,6 +34,8 @@ official_sources:
     url: "https://www.duesseldorf.de/familie/kinderbetreuung/elternbeitrag"
   - title: "デュッセルドルフ市：2027年8月以降の保育料案内"
     url: "https://www.duesseldorf.de/familie/kinderbetreuung/elternbeitrag-2027"
+  - title: "NRW州学校省：学校休暇規則（BASS）"
+    url: "https://bass.schule.nrw/191.htm"
 ---
 
 # ドイツのKita・U3申込み｜NRWの保育先・必要書類
@@ -174,6 +176,10 @@ NRWの保育年度は8月1日に始まります。原則6か月前の需要申�
 デュッセルドルフは[現行の料金表・申告書](https://www.duesseldorf.de/familie/kinderbetreuung/elternbeitrag)と、[2027年8月以降の案内](https://www.duesseldorf.de/familie/kinderbetreuung/elternbeitrag-2027)を分けて掲載しています。申込んだ日ではなく実際に利用する期間の規則を確認し、翌年度の制度を現在の費用に当てはめないようにします。保育料の免除と食費の免除も同じ扱いとは限りません。
 
 一定の公的給付を受ける家庭は、保育料の免除や軽減の対象になる場合があります。保育料を払うのが難しい場合も、申込みを諦める前に自治体へ相談します。
+
+## 学校休暇とKitaの休園日は別々に確認する
+
+NRWの学校休暇は州共通の日程がありますが、学校ごとの移動休日や行事もあります。一方、Kitaの休園日は学校休暇と同じとは限らず、施設や運営者が独自に設定することがあります。2026年秋から2027年夏までの州共通日程は[NRWの学校休暇2026/27年度](/germany/ja/living/nrw-school-holidays-2026-2027/)で確認できます。勤務先への休暇申請や代替保育を決める前に、学校と保育施設の年間予定を別々に確認してください。学校休暇の日程は2026年10月27日にNRW州の公式規則と照合しました。
 
 ## 日本人家庭が準備しておくとよいこと
 

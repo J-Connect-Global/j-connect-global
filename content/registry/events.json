@@ -2736,12 +2736,21 @@
       {
         "title": "Deutsche Bahn：Deutschlandticketの契約変更FAQ",
         "url": "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
+      },
+      {
+        "title": "連邦政府：申請なし支給の導入時期・条件（連邦参議院の同意）",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/kindergeld-ohne-antrag-2412916"
+      },
+      {
+        "title": "連邦議会：2027年所得税改革法案の審議状況",
+        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520"
       }
     ],
     "related_articles": [
       "deutschlandticket-2027-price-consent",
       "db-2027-timetable-family-ticket",
-      "germany-september-2026-changes"
+      "germany-september-2026-changes",
+      "kindergeld-auszahlungstermine-2027"
     ],
     "city": "ドイツ全土",
     "area": "ドイツ全土",
@@ -2761,7 +2770,7 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-21",
-    "updated_at": "2026-10-21",
+    "updated_at": "2026-10-27",
     "last_verified": "2026-10-21",
     "canonical_url": "/germany/ja/events/news/germany-january-2027-changes/",
     "official_url": "",

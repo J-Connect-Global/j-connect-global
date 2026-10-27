@@ -35,7 +35,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- germany/ja assets/js/search-index.js sitemap.xml
+          git add -- germany/ja assets/js/search-index.js sitemap.xml content/registry/living.json content/registry/events.json
           if git diff --cached --quiet; then
             echo "No generated files changed."
             exit 0

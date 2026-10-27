@@ -2372,7 +2372,7 @@ function updateSearchIndex(allItems, pages) {
     seen.add(entry.url);
   }
 
-  writeText(searchPath, `window.JCONNECT_SEARCH_INDEX = ${JSON.stringify(next, null, 2)};\n`);
+  writeText(searchPath, `window.JCONNECT_SEARCH_INDEX = ${JSON.stringify(next)};\n`);
 }
 
 function pageToSearchEntry(page) {

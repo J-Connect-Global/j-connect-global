@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">Kindergeld 2027 支給日の確認</title><desc id="desc">児童手当の支給日は番号末尾ごとに異なるため、公式表で対象月と番号末尾を確認する手順を示す。</desc>
+<rect width="1200" height="630" rx="28" fill="#f5f2eb"/><rect x="48" y="44" width="1104" height="542" rx="24" fill="#fff" stroke="#d7dedf" stroke-width="2"/>
+<text x="88" y="112" fill="#17324d" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="44" font-weight="800">Kindergeld 2027</text>
+<text x="90" y="154" fill="#4f6474" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="23">児童手当の支給日は、番号末尾で変わります</text>
+<text x="90" y="218" fill="#17324d" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="23" font-weight="700">最初に確認すること</text>
+<rect x="90" y="245" width="170" height="62" rx="15" fill="#e9f2f0" stroke="#c7ded9" stroke-width="2"/><text x="175" y="284" text-anchor="middle" fill="#17324d" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="23" font-weight="800">末尾 0</text>
+<rect x="300" y="245" width="170" height="62" rx="15" fill="#eef1f8" stroke="#d0d8ea" stroke-width="2"/><text x="385" y="284" text-anchor="middle" fill="#17324d" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="23" font-weight="800">末尾 1</text>
+<rect x="510" y="245" width="170" height="62" rx="15" fill="#e9f2f0" stroke="#c7ded9" stroke-width="2"/><text x="595" y="284" text-anchor="middle" fill="#17324d" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="23" font-weight="800">末尾 2</text>
+<rect x="720" y="245" width="170" height="62" rx="15" fill="#eef1f8" stroke="#d0d8ea" stroke-width="2"/><text x="805" y="284" text-anchor="middle" fill="#17324d" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="23" font-weight="800">末尾 3</text>
+<rect x="930" y="245" width="170" height="62" rx="15" fill="#e9f2f0" stroke="#c7ded9" stroke-width="2"/><text x="1015" y="284" text-anchor="middle" fill="#17324d" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="23" font-weight="800">末尾 4</text>
+<rect x="90" y="335" width="170" height="62" rx="15" fill="#eef1f8" stroke="#d0d8ea" stroke-width="2"/><text x="175" y="374" text-anchor="middle" fill="#17324d" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="23" font-weight="800">末尾 5</text>
+<rect x="300" y="335" width="170" height="62" rx="15" fill="#e9f2f0" stroke="#c7ded9" stroke-width="2"/><text x="385" y="374" text-anchor="middle" fill="#17324d" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="23" font-weight="800">末尾 6</text>
+<rect x="510" y="335" width="170" height="62" rx="15" fill="#eef1f8" stroke="#d0d8ea" stroke-width="2"/><text x="595" y="374" text-anchor="middle" fill="#17324d" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="23" font-weight="800">末尾 7</text>
+<rect x="720" y="335" width="170" height="62" rx="15" fill="#e9f2f0" stroke="#c7ded9" stroke-width="2"/><text x="805" y="374" text-anchor="middle" fill="#17324d" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="23" font-weight="800">末尾 8</text>
+<rect x="930" y="335" width="170" height="62" rx="15" fill="#eef1f8" stroke="#d0d8ea" stroke-width="2"/><text x="1015" y="374" text-anchor="middle" fill="#17324d" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="23" font-weight="800">末尾 9</text>
+<text x="90" y="452" fill="#17324d" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="23" font-weight="700">番号末尾と対象月を、公式支給日表で照合</text>
+<text x="90" y="496" fill="#4f6474" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="19">支給日と支給額は別の情報です。2027年の金額は別途公式案内を確認してください。</text>
+<text x="90" y="546" fill="#7b8a91" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="15">J-Connect制作｜確認日：2026年10月25日</text>
+</svg>

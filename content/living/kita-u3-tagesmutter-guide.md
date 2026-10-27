@@ -8,13 +8,13 @@ summary: "ドイツの保育施設と家庭的保育の違い、NRWの原則6か
 status: "published"
 published: true
 published_at: "2026-06-12"
-updated_at: "2026-10-20"
+updated_at: "2026-10-27"
 last_verified: "2026-08-31"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/kita-u3-tagesmutter-guide/"
 image_url: "/assets/images/living/childcare-first-visit-editorial-v1.webp"
 image_alt: "保育施設を家族で訪れ、保育者と子どもの様子を確認するイメージ"
-related_articles: ["pregnancy-birth-germany","birth-procedures-germany","moving-checklist-germany"]
+related_articles: ["pregnancy-birth-germany","birth-procedures-germany","moving-checklist-germany","nrw-school-holidays-2026-2027"]
 official_sources:
   - title: "連邦社会法第8編第24条：保育を利用する権利"
     url: "https://www.gesetze-im-internet.de/sgb_8/__24.html"
@@ -34,6 +34,10 @@ official_sources:
     url: "https://www.duesseldorf.de/familie/kinderbetreuung/elternbeitrag"
   - title: "デュッセルドルフ市：2027年8月以降の保育料案内"
     url: "https://www.duesseldorf.de/familie/kinderbetreuung/elternbeitrag-2027"
+  - title: "州文部大臣会議：2026/27年度の学校休暇カレンダー"
+    url: "https://www.kmk.org/service/ferienregelung/ferienkalender.html"
+  - title: "ノルトライン＝ヴェストファーレン州：学校休暇"
+    url: "https://www.land.nrw/schulferien-nordrhein-westfalen"
 ---
 
 # ドイツのKita・U3申込み｜NRWの保育先・必要書類
@@ -202,6 +206,12 @@ NRWの保育年度は8月1日に始まります。原則6か月前の需要申�
 ## まとめ
 
 ドイツの保育先探しでは、空席だけでなく、子どもが誰とどのような一日を過ごすかを見ることが大切です。施設保育、家庭的保育、小規模共同保育にはそれぞれの良さがあり、子どもの年齢、気質、家族の働き方によって合う環境は変わります。自治体の制度を入口に複数の選択肢を持ち、慣らし保育を子どもとの新しい関係づくりの時間として考えてください。
+
+## 学校休暇とKitaの休園日は別に確認する
+
+NRW州の学校休暇カレンダーは、学校の休暇日を示すもので、保育施設（Kita）の休園日を一律に決めるものではありません。学校が休みでもKitaが通常どおり開いている場合があり、反対に、施設が独自の夏季休園などを設けることもあります。
+
+勤務先への休暇申請や代替保育を決める前に、学校とKitaの年間予定を別々に確認してください。NRWの州共通日程と学校ごとの移動休日は、[NRWの学校休暇2026/27年度](/germany/ja/living/nrw-school-holidays-2026-2027/)で確認できます。
 
 ## 公式情報
 

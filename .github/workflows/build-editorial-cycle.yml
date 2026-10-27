@@ -1,0 +1,44 @@
+name: One-time editorial build
+
+on:
+  push:
+    branches:
+      - editorial/jc-content-cycle-20261027b
+
+permissions:
+  contents: write
+
+jobs:
+  build-generated-content:
+    if: github.ref == 'refs/heads/editorial/jc-content-cycle-20261027b'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout editorial branch
+        uses: actions/checkout@v4
+        with:
+          ref: editorial/jc-content-cycle-20261027b
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install pinned dependencies
+        run: npm ci
+      - name: Build generated site files
+        run: npm run build
+      - name: Validate generated content and run browser tests
+        run: |
+          npm run validate
+          npm run test:browser
+      - name: Commit generated public pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- germany/ja assets/js/search-index.js sitemap.xml
+          if git diff --cached --quiet; then
+            echo "No generated files changed."
+            exit 0
+          fi
+          git commit -m "Build generated pages for 2026-10-27 editorial cycle"
+          git push origin HEAD:editorial/jc-content-cycle-20261027b

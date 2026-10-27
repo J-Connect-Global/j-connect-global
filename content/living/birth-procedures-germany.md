@@ -7,7 +7,7 @@ summary: "ドイツで出産する日本人・国際家庭向けに、出産前�
 status: "published"
 published: true
 published_at: "2026-10-12"
-updated_at: "2026-10-17"
+updated_at: "2026-10-27"
 last_verified: "2026-10-12"
 next_review: "2027-01-12"
 canonical_url: "/germany/ja/living/birth-procedures-germany/"
@@ -15,7 +15,7 @@ tags: ["出産手続き","出生届","出生証明書","育児給付","児童手
 image_url: "/assets/images/living/birth-procedures-germany.webp"
 image_alt: "赤ちゃんの衣類と靴下、書類を入れるフォルダーを机に並べた出産手続きのイメージ"
 image_caption: "AI生成のイメージ画像。実際の申請書類を示すものではありません。"
-related_articles: ["pregnancy-birth-germany","birth-day-germany","health-insurance-guide","kita-u3-tagesmutter-guide"]
+related_articles: ["pregnancy-birth-germany","birth-day-germany","health-insurance-guide","kita-u3-tagesmutter-guide","kindergeld-auszahlungstermine-2027"]
 official_sources:
   - title: "連邦家族ポータル：出生登録と出生証明書"
     url: "https://familienportal.de/familienportal/lebenslagen/schwangerschaft-geburt/anmeldung-standesamt"
@@ -77,6 +77,12 @@ official_sources:
     url: "https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u3-untersuchung/"
   - title: "ドイツ年金保険：育児期間の申告・両親間の配分"
     url: "https://www.deutsche-rentenversicherung.de/BadenWuerttemberg/DE/Presse/Pressemitteilungen/2025/250505_kindererziehungszeiten.html"
+  - title: "連邦雇用庁：Kindergeld・子ども加算の支給日"
+    url: "https://www.arbeitsagentur.de/familie-und-kinder/auszahlungstermine"
+  - title: "連邦議会：申請なしの児童手当支給に関する法案・採決"
+    url: "https://www.bundestag.de/dokumente/textarchiv/2026/kw21-de-kindergeld-1174720"
+  - title: "連邦財務省：申請なし支給の導入計画"
+    url: "https://www.bundesfinanzministerium.de/Content/DE/Pressemitteilungen/Finanzpolitik/2026/03/2026-03-18-antragsloses-kindergeld.html"
 ---
 
 # ドイツ出産の手続き完全ガイド｜出生届・保険・手当・国籍・パスポート
@@ -355,6 +361,8 @@ BundIDのログイン方法によって、完全なペーパーレス申請に�
 ## 児童手当：育児給付とは別の申請をする
 
 児童手当（Kindergeld）は、親の育児休業を補う給付とは別制度です。2026年の支給額は、対象の子ども1人につき月259ユーロです。外国籍の親は滞在資格なども審査されるため、ドイツで生まれたことだけで受給が決まるわけではありません。
+
+2027年は、申請なしで支給する手続きの段階導入が予定されています。ただし、すべての家庭が自動的に対象になるわけではありません。連邦議会は2026年7月9日に関連法案を可決し、連邦財務省の計画では第2子以降を2027年3月頃、第1子を同年秋（計画では11月頃）から段階的に対象にする見込みです。必要な情報がそろわない場合や条件を満たさない場合は、従来の案内・申請が必要になることがあります。支給日と支給額は別の情報なので、[Kindergeld 2027年の支給日一覧](/germany/ja/living/kindergeld-auszahlungstermine-2027/)で番号末尾別の日程と最新の制度状況を確認してください。
 
 ### 両親が同じ子について二重に申請しない
 

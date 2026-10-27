@@ -9,10 +9,10 @@ city: "ドイツ全土"
 location: ""
 event_date: "2027年1月1日前後"
 published_at: "2026-10-21"
-updated_at: "2026-10-21"
-last_verified: "2026-10-21"
+updated_at: "2026-10-27"
+last_verified: "2026-10-27"
 next_review: "2026-12-01"
-summary: "2027年1月からドイツで変わる制度を、在独日本人の生活に関わる項目に絞って整理。決定済みのものと、まだ法案段階のものを分けて解説します。"
+summary: "2027年1月からドイツで変わる制度を、決定済みの内容と法案・提案段階の内容に分けて整理。最低賃金、ミニジョブ、社会保険、児童手当の申請なし支給と支給額案を区別します。"
 tags: ["ドイツ生活", "制度改正", "最低賃金", "ドイツチケット", "社会保険", "児童手当", "税金"]
 status: "published"
 published: true
@@ -23,23 +23,33 @@ image: "/assets/img/events/germany-january-2027-changes.webp"
 image_alt: "2027年1月のカレンダーと、ユーロ硬貨・乗車券・医療保険・子どもを表すアイコンのイラスト"
 image_caption: "イラスト：J-Connect。制度変更のテーマを表したもので、公式資料を再現していません。"
 image_credit: "Illustration / J-Connect"
-related_articles: ["deutschlandticket-2027-price-consent", "db-2027-timetable-family-ticket", "germany-september-2026-changes"]
+related_articles: ["deutschlandticket-2027-price-consent", "db-2027-timetable-family-ticket", "germany-september-2026-changes", "kindergeld-auszahlungstermine-2027"]
 official_sources:
   - title: "Deutsche Bahn：Deutschlandticketの契約変更FAQ"
     url: "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
+  - title: "Minijob-Zentrale：2027年の最低賃金・収入上限"
+    url: "https://magazin.minijob-zentrale.de/minijob-grenze-2027/"
+  - title: "連邦雇用庁：Kindergeld・子ども加算の支給日"
+    url: "https://www.arbeitsagentur.de/familie-und-kinder/auszahlungstermine"
+  - title: "連邦議会：申請なしの児童手当支給に関する法案・採決"
+    url: "https://www.bundestag.de/dokumente/textarchiv/2026/kw21-de-kindergeld-1174720"
+  - title: "連邦財務省：申請なし支給の導入計画"
+    url: "https://www.bundesfinanzministerium.de/Content/DE/Pressemitteilungen/Finanzpolitik/2026/03/2026-03-18-antragsloses-kindergeld.html"
+  - title: "連邦議会：児童手当267ユーロ案（緑の党の提案）"
+    url: "https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520"
 ---
 
 # 【2027年1月から】ドイツで何が変わる？ 最低賃金・ドイツチケット・社会保険・児童手当まとめ
 
 年末が近づくと、ドイツでは「来年から何が変わるか」というニュースが増えます。この記事では、2027年1月1日前後に変わる制度のうち、ドイツで働く・暮らす日本人に関係が深いものを整理しました。
 
-ただし、すでに決まっているものと、まだ政府案・法案の段階のものが混ざっています。本記事では各項目に状況を明記しています（2026年10月21日時点）。
+ただし、すでに決まっているものと、まだ政府案・法案の段階のものが混ざっています。本記事では各項目に状況を明記しています（2026年10月27日時点）。
 
 ## まず結論：決定済み／未確定の早見表
 
-![最低賃金・ミニジョブ・ドイツチケットは決定済み、社会保険の上限は同意待ち、児童手当と控除は政府案であることを示す図](/assets/images/events/january-2027-status-overview.svg "図解：J-Connect。本文の参考情報に基づく（2026年10月21日時点）。")
+![最低賃金・ミニジョブ・ドイツチケットは決定済み、社会保険の上限は同意待ち、児童手当と控除は政府案であることを示す図](/assets/images/events/january-2027-status-overview.svg "図解：J-Connect。本文の参考情報に基づく（2026年10月27日時点）。")
 
-| 項目 | 2026年 | 2027年 | 状況（2026年10月21日時点） |
+| 項目 | 2026年 | 2027年 | 状況（2026年10月27日時点） |
 | --- | --- | --- | --- |
 | 法定最低賃金（時給・額面） | 13.90ユーロ | 14.60ユーロ | 決定済み（政令で確定） |
 | ミニジョブ上限（月額） | 603ユーロ | 633ユーロ | 最低賃金に連動して上昇 |
@@ -47,7 +57,7 @@ official_sources:
 | 公的医療・介護保険の保険料算定上限（月額） | 5,812.50ユーロ | 6,375ユーロ | 閣議決定済み・連邦参議院の同意待ち |
 | 年金・失業保険の保険料算定上限（月額） | 8,450ユーロ | 8,850ユーロ | 閣議決定済み・連邦参議院の同意待ち |
 | 公的医療保険の加入義務上限（年額） | 77,400ユーロ | 84,150ユーロ | 閣議決定済み・連邦参議院の同意待ち |
-| 児童手当 Kindergeld（子ども1人・月額） | 259ユーロ | 267ユーロ（案） | 政府案（未成立） |
+| 児童手当 Kindergeld（子ども1人・月額） | 259ユーロ | 267ユーロ（提案） | 未確定（267ユーロは緑の党の提案） |
 | 所得税の基礎控除 Grundfreibetrag | 12,348ユーロ | 12,564ユーロ（案） | 政府案（未成立） |
 | 被用者概算控除 Arbeitnehmer-Pauschbetrag | 1,230ユーロ | 1,430ユーロ（案） | 政府案（未成立） |
 
@@ -88,7 +98,7 @@ official_sources:
 
 社会保険料は、給与のうち一定額（保険料算定上限、Beitragsbemessungsgrenze）までにしか掛かりません。この上限が2027年に引き上げられる予定で、上限付近以上の給与を受け取っている方は手取りが減ります。
 
-![公的医療・介護保険と年金・失業保険の保険料算定上限を2026年と2027年で比べた棒グラフ](/assets/images/events/social-insurance-ceiling-2027.svg "図解：J-Connect。2027年の値は閣議決定済み・連邦参議院の同意待ち（2026年10月21日時点）。")
+![公的医療・介護保険と年金・失業保険の保険料算定上限を2026年と2027年で比べた棒グラフ](/assets/images/events/social-insurance-ceiling-2027.svg "図解：J-Connect。2027年の値は閣議決定済み・連邦参議院の同意待ち（2026年10月27日時点）。")
 
 | 項目 | 2026年 | 2027年（予定） |
 | --- | --- | --- |
@@ -103,18 +113,23 @@ official_sources:
 - 年収が84,150ユーロを超えないと、公的医療保険（GKV）から民間医療保険（PKV）へ移れなくなります。2027年にPKVへの切り替えを検討している方は、この新しい基準額を前提に判断してください。
 - 医療保険の追加保険料率（Zusatzbeitrag）は保険組合ごとに決まり、2027年の水準は例年秋〜年末に発表されます。加入している保険組合からの通知を確認しましょう。
 
-## 5. 児童手当・基礎控除の引き上げは「まだ案」
+## 5. 児童手当の申請なし支給は段階導入、支給額の改定案は未確定
 
-2027年に向けた所得税改革（Einkommensteuerreform 2027）の政府案が、2026年9月に閣議決定されました。主な内容は次のとおりです。
+### 申請なし支給の段階導入は、支給額の変更とは別
 
-- 児童手当（Kindergeld）：子ども1人あたり月259ユーロ → 267ユーロ（2028年に272ユーロ）
-- 基礎控除（Grundfreibetrag）：12,348ユーロ → 12,564ユーロ（2028年に12,900ユーロ）
-- 被用者概算控除（Arbeitnehmer-Pauschbetrag）：1,230ユーロ → 1,430ユーロ
-- 家事・修理などの手工業者費用控除（Handwerkerbonus）：控除率20%・上限1,200ユーロ → 15%・上限900ユーロに縮小
+連邦議会は2026年7月9日、申請なしで児童手当を支給できるようにする法案を可決しました。連邦財務省が公表した導入計画では、既存の受給情報を利用できる第2子以降を2027年3月頃から対象にし、第1子には2027年秋（計画では11月頃）から段階的に広げる見込みです。
 
-ただし、これらは連邦議会・連邦参議院で可決されるまで確定ではありません。金額や時期が変わる可能性があります。特に「Handwerkerbonus」は縮小方向の案なので、リフォームなどを予定している方は、成立状況を見ながら支払時期を検討するとよいでしょう。
+ただし、**すべての家庭が自動的に支給されるわけではありません。** 受給資格に疑いがなく、必要な情報と銀行口座が把握されていることなどが条件です。第1子の段階では、子どもの国内居住や、少なくとも親の一人がドイツ国内で働いていることなどの条件が示されています。国外との関係がある家庭、情報が不足している家庭、複雑な家族関係などでは、案内や申請が必要になる場合があります。
 
-成立した時点で、J-Connectでも続報をお届けします。
+手続きの導入時期・対象条件と、月ごとの送金日は別です。番号末尾別の日程は[Kindergeld 2027年の支給日一覧](/germany/ja/living/kindergeld-auszahlungstermine-2027/)で確認してください。
+
+### 2027年の267ユーロ案は法定額ではない
+
+2026年10月8日の連邦議会審議資料では、児童手当を2027年に月267ユーロ、2028年に月272ユーロへ引き上げる案が、**緑の党の提案**として掲載されています。これは政府が確定した支給額ではなく、法定額として扱えません。2027年の金額を家計計画に使う前に、成立した法律と連邦雇用庁の公式案内を確認してください。
+
+### 基礎控除などは別の政府法案
+
+基礎控除（Grundfreibetrag）や被用者概算控除（Arbeitnehmer-Pauschbetrag）などについては、別の所得税改革案が審議されています。これらも法案の成立前に確定額として扱わないでください。家事・修理などの手工業者費用控除（Handwerkerbonus）の縮小案も含まれるため、リフォームを予定している場合は、契約・請求・支払時期に関する最新の成立状況を確認しましょう。
 
 ## 6. 2027年中のその他の変更
 
@@ -128,7 +143,7 @@ official_sources:
 3. **医療保険の通知をチェック**：保険組合から届く2027年の追加保険料率のお知らせを見落とさない。
 4. **児童手当・税制は続報待ち**：政府案の段階なので、成立を確認してから家計の計画に組み込む。
 
-## 参考情報（2026年10月21日確認）
+## 参考情報（2026年10月27日確認）
 
 - 連邦法務省「Fünfte Mindestlohnanpassungsverordnung（MiLoV5）」— gesetze-im-internet.de
 - 連邦政府「Beitragsbemessungsgrenzen 2027 – Im Kabinett beschlossen」（2026年10月12日）— bundesregierung.de
@@ -138,3 +153,12 @@ official_sources:
 - Stuttgarter Zeitung「Rente, Kindergeld, Mindestlohn: Hier gibt es ab 2027 mehr Geld」（2026年10月15日）
 
 ※本記事は一般的な情報提供を目的としたもので、税務・法律上の助言ではありません。個別のケースは税理士（Steuerberater）や加入先の保険組合にご確認ください。
+
+
+### 追加の公式情報（2026年10月27日確認）
+
+- [Minijob-Zentrale：2027年の最低賃金・収入上限](https://magazin.minijob-zentrale.de/minijob-grenze-2027/)
+- [連邦雇用庁：Kindergeld・子ども加算の支給日](https://www.arbeitsagentur.de/familie-und-kinder/auszahlungstermine)
+- [連邦議会：申請なしの児童手当支給に関する法案・採決](https://www.bundestag.de/dokumente/textarchiv/2026/kw21-de-kindergeld-1174720)
+- [連邦財務省：申請なし支給の導入計画](https://www.bundesfinanzministerium.de/Content/DE/Pressemitteilungen/Finanzpolitik/2026/03/2026-03-18-antragsloses-kindergeld.html)
+- [連邦議会：児童手当267ユーロ案（緑の党の提案）](https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520)

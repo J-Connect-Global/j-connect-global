@@ -1,0 +1,71 @@
+name: Temporary editorial artifact build
+
+on:
+  push:
+    branches:
+      - editorial/jc-content-drafts-20261026-clean
+    paths:
+      - "content/living/**"
+      - "content/registry/living.json"
+      - "content/events/news/germany-january-2027-changes.md"
+      - "assets/images/living/**"
+      - ".github/workflows/temporary-editorial-build.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: temporary-editorial-build-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-validate-commit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout editorial branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install pinned dependencies
+        run: npm ci
+      - name: Install Chromium for browser smoke tests
+        run: npx playwright install --with-deps chromium
+      - name: Build generated content and canonical layout
+        run: npm run build
+      - name: Run deterministic validation contract
+        run: npm run validate
+      - name: Run browser runtime smoke tests
+        env:
+          PLAYWRIGHT_OUTPUT_DIR: ${{ runner.temp }}/j-connect-browser-results
+        run: npm run test:browser
+      - name: Check whitespace and protect unrelated systems
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --check
+          git status --short | awk '{print substr($0,4)}' > "${{ runner.temp }}/changed-paths.txt"
+          if grep -E '^(apps-script/|content/learn-german/|assets/data/learn-german/flashcards/|germany/ja/learn-german/|assets/data/community/|germany/ja/community/|assets/data/jobs/|germany/ja/jobs/)' "${{ runner.temp }}/changed-paths.txt"; then
+            echo "Unexpected change to an unrelated system; refusing to commit generated output."
+            exit 1
+          fi
+      - name: Commit generated site artifacts to this branch only
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Build generated pages for verified editorial content"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          else
+            echo "Build produced no changes."
+          fi

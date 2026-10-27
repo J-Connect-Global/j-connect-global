@@ -3190,10 +3190,9 @@
         "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520"
       }
     ],
-    "image_url": "/assets/images/living/kindergeld-payment-2027-overview.svg",
-    "image_alt": "Kindergeld番号の末尾を確認して2027年の支給日を探す手順を示す図",
-    "image_caption": "J-Connect制作のオリジナル図。番号末尾ごとの支給日を確認する手順を示しています。",
-    "image_credit": "J-Connect original SVG diagram"
+    "image_url": "/assets/images/living/birth-procedures-germany.webp",
+    "image_alt": "赤ちゃんの衣類と靴下、書類を入れるフォルダーを机に並べた出産手続きのイメージ",
+    "image_caption": "赤ちゃんの衣類と書類を準備するイメージ。支給日程は公式の支給日表で確認してください。"
   },
   {
     "id": "L052",
@@ -3247,10 +3246,9 @@
         "url": "https://gesund.bund.de/die-elektronische-patientenakte"
       }
     ],
-    "image_url": "/assets/images/living/epa-privacy-overview.svg",
-    "image_alt": "医療機関90日、薬局3日の標準アクセス期間と、文書・施設ごとのアクセス管理を示す図",
-    "image_caption": "J-Connect制作のオリジナル図。ePAの標準アクセス期間と管理方法を整理しています。",
-    "image_credit": "J-Connect original SVG diagram"
+    "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
+    "image_alt": "ドイツの診療所で保険と受診について受付に確認するイメージ",
+    "image_caption": "ドイツの診療所の受付を示すイメージ。実際の診療内容や特定の医療機関を示すものではありません。"
   },
   {
     "id": "L053",
@@ -3301,10 +3299,9 @@
         "url": "https://www.land.nrw/schulferien-nordrhein-westfalen"
       }
     ],
-    "image_url": "/assets/images/living/nrw-school-holidays-2026-2027-overview.svg",
-    "image_alt": "NRWの2026/27年度の学校休暇を示す図。春休み、夏休み、年末年始の日程を確認できます。",
-    "image_caption": "J-Connect制作のオリジナル図。NRWの学校休暇の日程を整理しています。",
-    "image_credit": "J-Connect original SVG diagram"
+    "image_url": "/assets/images/living/childcare-first-visit-editorial-v1.webp",
+    "image_alt": "保育施設を家族で訪れ、保育者と子どもの様子を確認するイメージ",
+    "image_caption": "保育施設を訪れる家族のイメージ。学校休暇の日程は公式カレンダーで確認してください。"
   },
   {
     "id": "L054",
@@ -3359,9 +3356,9 @@
         "url": "https://www.kmk.org/service/ferienregelung/ferienkalender.html"
       }
     ],
-    "image_url": "/assets/images/living/nrw-public-holidays-2027-overview.svg",
-    "image_alt": "NRWの2027年の法定祝日と連休候補をまとめた図",
-    "image_caption": "J-Connect制作のオリジナル図。NRW州の2027年の法定祝日と連休候補をまとめています。",
-    "image_credit": "J-Connect original SVG diagram"
+    "image_url": "/assets/images/living/german-regional-train-editorial-v1.webp",
+    "image_alt": "地域列車のホームで公式アプリを確認する旅行者の編集イメージ",
+    "image_caption": "AI生成の編集イメージ。実在の駅、列車、乗客や契約画面ではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect"
   }
 ]

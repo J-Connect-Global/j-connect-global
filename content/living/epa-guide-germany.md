@@ -12,10 +12,9 @@ last_verified: "2026-10-27"
 next_review: "2027-01-27"
 canonical_url: "/germany/ja/living/epa-guide-germany/"
 tags: ["電子患者記録","ePA","健康保険","医療情報","プライバシー"]
-image_url: "/assets/images/living/epa-privacy-overview.svg"
-image_alt: "医療機関90日、薬局3日の標準アクセス期間と、文書・施設ごとのアクセス管理を示す図"
-image_caption: "J-Connect制作のオリジナル図。ePAの標準アクセス期間と管理方法を整理しています。"
-image_credit: "J-Connect original SVG diagram"
+image_url: "/assets/images/living/german-clinic-reception-editorial-v1.webp"
+image_alt: "ドイツの診療所で保険と受診について受付に確認するイメージ"
+image_caption: "ドイツの診療所の受付を示すイメージ。実際の診療内容や特定の医療機関を示すものではありません。"
 related_articles: ["health-insurance-guide","doctor-appointment-germany","pregnancy-birth-germany"]
 official_sources:
   - title: "連邦保健省：電子患者記録"

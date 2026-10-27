@@ -12,10 +12,9 @@ last_verified: "2026-10-27"
 next_review: "2027-01-27"
 canonical_url: "/germany/ja/living/nrw-school-holidays-2026-2027/"
 tags: ["NRW","学校休暇","2027年","家族旅行","保育","休暇計画"]
-image_url: "/assets/images/living/nrw-school-holidays-2026-2027-overview.svg"
-image_alt: "NRWの2026/27年度の学校休暇を示す図。春休み、夏休み、年末年始の日程を確認できます。"
-image_caption: "J-Connect制作のオリジナル図。NRWの学校休暇の日程を整理しています。"
-image_credit: "J-Connect original SVG diagram"
+image_url: "/assets/images/living/childcare-first-visit-editorial-v1.webp"
+image_alt: "保育施設を家族で訪れ、保育者と子どもの様子を確認するイメージ"
+image_caption: "保育施設を訪れる家族のイメージ。学校休暇の日程は公式カレンダーで確認してください。"
 related_articles: ["kita-u3-tagesmutter-guide","duesseldorf-family-trip","family-weekend-events-nrw"]
 official_sources:
   - title: "州文部大臣会議：2026/27年度の学校休暇カレンダー"

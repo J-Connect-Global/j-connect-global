@@ -12,17 +12,17 @@ last_verified: "2026-10-27"
 next_review: "2027-01-27"
 canonical_url: "/germany/ja/living/nrw-public-holidays-2027/"
 tags: ["NRW","祝日","2027年","連休","休暇計画","学校休暇"]
-image_url: "/assets/images/living/nrw-public-holidays-2027-overview.svg"
-image_alt: "NRWの2027年の法定祝日と連休候補をまとめた図"
-image_caption: "J-Connect制作のオリジナル図。NRW州の2027年の法定祝日と連休候補をまとめています。"
-image_credit: "J-Connect original SVG diagram"
+image_url: "/assets/images/living/german-regional-train-editorial-v1.webp"
+image_alt: "地域列車のホームで公式アプリを確認する旅行者の編集イメージ"
+image_caption: "AI生成の編集イメージ。実在の駅、列車、乗客や契約画面ではありません。"
+image_credit: "AI-generated editorial image / J-Connect"
 related_articles: ["nrw-school-holidays-2026-2027","kita-u3-tagesmutter-guide","duesseldorf-family-trip"]
 official_sources:
   - title: "NRW州：日曜・祝日に関する法律"
     url: "https://recht.nrw.de/lrgv/gesetz/01012000-bekanntmachung-der-neufassung-des-gesetzes-ueber-die-sonn-und-feiertage/"
-  - title: "NRW州：学校休暇"
+  - title: "ノルトライン＝ヴェストファーレン州：学校休暇"
     url: "https://www.land.nrw/schulferien-nordrhein-westfalen"
-  - title: "州文部大臣会議：学校休暇カレンダー"
+  - title: "州文部大臣会議：2026/27年度の学校休暇カレンダー"
     url: "https://www.kmk.org/service/ferienregelung/ferienkalender.html"
 ---
 

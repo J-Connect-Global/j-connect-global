@@ -3599,5 +3599,223 @@
     ],
     "image": "/assets/img/events/germany-cash-payment-habits.webp",
     "image_alt": "ユーロの紙幣と硬貨、カードとスマートフォンが並ぶレジ台を描いたイラスト"
+  },
+  {
+    "slug": "christmas-tree-origin-germany",
+    "id": "C015",
+    "content_type": "column",
+    "url": "/germany/ja/events/columns/christmas-tree-origin-germany/",
+    "markdown_path": "/content/events/columns/christmas-tree-origin-germany.md",
+    "canonical_url": "/germany/ja/events/columns/christmas-tree-origin-germany/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 921,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-27",
+      "next_review_due": "2027-11-01"
+    },
+    "title": "クリスマスツリーはドイツから広まった？｜リンゴを飾った「楽園の木」と、年に2,000万本以上の今",
+    "category": "ドイツ雑学・季節文化",
+    "summary": "世界中で飾られるクリスマスツリーは、ドイツ語圏で育った習慣です。中世の「楽園の木」の劇、1605年のシュトラスブルクの記録、教会の反対からろうそくの普及まで、ツリーがドイツの家庭に広まるまでの道のりと、今のドイツのツリー事情を紹介します。",
+    "published_at": "2026-10-27",
+    "last_verified": "2026-10-27",
+    "tags": [
+      "クリスマス",
+      "クリスマスツリー",
+      "もみの木",
+      "ドイツ雑学",
+      "季節文化",
+      "冬"
+    ],
+    "updated_at": "2026-10-27",
+    "related_articles": [
+      "advent-wreath-calendar-origin",
+      "christmas-markets-duesseldorf",
+      "germany-autumn-forest-walk"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "クリスマスの季節（12月）",
+    "official_url": "https://katholisch.de/artikel/317-weihnachtsbaum",
+    "official_sources": [
+      {
+        "title": "カトリック教会ポータル（katholisch.de）：クリスマスツリー",
+        "url": "https://katholisch.de/artikel/317-weihnachtsbaum"
+      },
+      {
+        "title": "カトリック教会ポータル（katholisch.de）：もみの木の勝利",
+        "url": "https://katholisch.de/artikel/7286-siegeszug-eines-nadelholzes"
+      },
+      {
+        "title": "ドイツ森林保護協会（SDW）：クリスマスツリー",
+        "url": "https://www.sdw.de/ueber-den-wald/waldwissen/weihnachtsbaum/"
+      },
+      {
+        "title": "連邦統計局：アドベントとクリスマス",
+        "url": "https://www.destatis.de/DE/Themen/Querschnitt/Weihnachten/Advent/_inhalt.html"
+      },
+      {
+        "title": "連邦環境庁（UBA）：クリスマスツリーの選び方",
+        "url": "https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/haushalt-wohnen/weihnachtsbaum"
+      }
+    ],
+    "image": "/assets/img/events/christmas-tree-origin-germany.webp",
+    "image_alt": "赤いリンゴとろうそくを飾ったもみの木を描いたイラスト"
+  },
+  {
+    "slug": "deutsche-bahn-delays-why",
+    "id": "C016",
+    "content_type": "column",
+    "url": "/germany/ja/events/columns/deutsche-bahn-delays-why/",
+    "markdown_path": "/content/events/columns/deutsche-bahn-delays-why.md",
+    "canonical_url": "/germany/ja/events/columns/deutsche-bahn-delays-why/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 922,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-27",
+      "next_review_due": "2027-04-01"
+    },
+    "title": "ドイツの鉄道はなぜ遅れる？｜長距離列車の定時率60%の意味と、遅れたときにお金が戻るしくみ",
+    "category": "ドイツ雑学・暮らし",
+    "summary": "「ドイツの電車は時間どおりに来ない」とよく言われます。ドイツ鉄道によると、2025年の長距離列車の定時率は60.1%。「6分未満」という定時の基準、遅れの主な原因、進行中の大規模改修、そして60分以上遅れたときに運賃の一部が戻るEUの乗客の権利まで、数字で整理します。",
+    "published_at": "2026-10-27",
+    "last_verified": "2026-10-27",
+    "tags": [
+      "ドイツ鉄道",
+      "遅延",
+      "定時率",
+      "乗客の権利",
+      "払い戻し",
+      "ドイツ雑学",
+      "ドイツ生活",
+      "ICE"
+    ],
+    "updated_at": "2026-10-27",
+    "related_articles": [
+      "germany-train-travel-guide",
+      "germany-autobahn-speed-limit",
+      "db-2027-timetable-family-ticket"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "ドイツ雑学のコラム",
+    "official_url": "https://www.bahn.de/faq/pk/service/buchung/fahrgastrechte",
+    "official_sources": [
+      {
+        "title": "ドイツ鉄道：2025年決算（プレスリリース）",
+        "url": "https://www.deutschebahn.com/resource/blob/13792052/bdef59b876537ee9fb47f0e2c59f9270/DB-Presseinformation-Bilanz-2025-data.pdf"
+      },
+      {
+        "title": "ドイツ鉄道：2025年 年次報告書",
+        "url": "https://www.deutschebahn.com/resource/blob/13792156/aad46242a2c8ef86ccf66b2a98287644/GB_2025-data.pdf"
+      },
+      {
+        "title": "ドイツ鉄道：乗客の権利（よくある質問）",
+        "url": "https://www.bahn.de/faq/pk/service/buchung/fahrgastrechte"
+      },
+      {
+        "title": "連邦交通省：鉄道の乗客の権利",
+        "url": "https://www.bmv.de/SharedDocs/DE/Artikel/E/schiene-schienenpersonenverkehr/fahrgastrechte-zug.html"
+      },
+      {
+        "title": "連邦鉄道庁（EBA）：乗客の権利の例と例外",
+        "url": "https://www.eba.bund.de/DE/Themen/Fahrgastrechte/Bahn/Beispiele_Ausnahmen/beispiele_ausnahmen_node.html"
+      },
+      {
+        "title": "消費者センター：列車が遅れたときの払い戻し",
+        "url": "https://www.verbraucherzentrale.de/wissen/reise-mobilitaet/unterwegs-sein/erstattung-bei-zugverspaetung-so-gibts-geld-zurueck-12080"
+      }
+    ],
+    "image": "/assets/img/events/deutsche-bahn-delays-why.webp",
+    "image_alt": "駅のホームで発車案内板の遅れの表示を見上げる乗客を描いたイラスト"
+  },
+  {
+    "slug": "german-wine-regions-guide",
+    "id": "C017",
+    "content_type": "column",
+    "url": "/germany/ja/events/columns/german-wine-regions-guide/",
+    "markdown_path": "/content/events/columns/german-wine-regions-guide.md",
+    "canonical_url": "/germany/ja/events/columns/german-wine-regions-guide/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 923,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-27",
+      "next_review_due": "2027-04-01"
+    },
+    "title": "ドイツワインは「白」の国？｜13の産地、リースリング、ラベルの「カビネット」「シュペートレーゼ」の読み方",
+    "category": "ドイツ雑学・食文化",
+    "summary": "ビールの国として知られるドイツは、実はワインの国でもあります。13ある産地、最も多く植えられているリースリング、約7割を占める白ワイン、そしてラベルに書かれた「カビネット」「トロッケン」などの言葉の意味を、ドイツワイン協会と連邦統計局の資料をもとに紹介します。",
+    "published_at": "2026-10-27",
+    "last_verified": "2026-10-27",
+    "tags": [
+      "ワイン",
+      "ドイツワイン",
+      "リースリング",
+      "モーゼル",
+      "ドイツ雑学",
+      "食文化",
+      "ライン川"
+    ],
+    "updated_at": "2026-10-27",
+    "related_articles": [
+      "german-beer-purity-law",
+      "rhine-river-relax-guide",
+      "german-bread-culture"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "ドイツ雑学のコラム",
+    "official_url": "https://www.deutscheweine.de/regionen",
+    "official_sources": [
+      {
+        "title": "ドイツワイン協会（DWI）：13の産地",
+        "url": "https://www.deutscheweine.de/regionen"
+      },
+      {
+        "title": "ドイツワイン協会（DWI）：13の産地のプロフィール",
+        "url": "https://www.deutscheweine.de/news-medien/meldungen/meldung/783/die-13-deutschen-weinbaugebiete-im-profil"
+      },
+      {
+        "title": "ドイツワイン協会（DWI）：プレディカート（品質の段階）",
+        "url": "https://www.deutscheweine.de/qualitaetstandard/449/pr%C3%A4dikate"
+      },
+      {
+        "title": "ドイツワイン協会（DWI）：味の表示",
+        "url": "https://www.deutscheweine.de/wein-probieren/195/geschmacksrichtungen"
+      },
+      {
+        "title": "連邦統計局：2025年のワイン生産",
+        "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/03/PD26_105_412.html"
+      },
+      {
+        "title": "ワイン法 第20条（プレディカートワインの品質審査）",
+        "url": "https://www.gesetze-im-internet.de/weing_1994/__20.html"
+      }
+    ],
+    "image": "/assets/img/events/german-wine-regions-guide.webp",
+    "image_alt": "川沿いの斜面に広がるぶどう畑と、白ワインのグラスを描いたイラスト"
   }
 ]

@@ -8,13 +8,13 @@ summary: "ドイツの健康保険を会社員・学生・家族など立場別�
 status: "published"
 published: true
 published_at: "2026-06-07"
-updated_at: "2026-10-20"
+updated_at: "2026-10-27"
 last_verified: "2026-08-31"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/health-insurance-guide/"
 image_url: "/assets/images/living/german-clinic-reception-editorial-v1.webp"
 image_alt: "ドイツの診療所で保険と受診について受付に確認するイメージ"
-related_articles: ["germany-first-30-days","anmeldung-guide","doctor-appointment-germany","residence-permit-renewal-germany","pregnancy-birth-germany"]
+related_articles: ["germany-first-30-days","anmeldung-guide","doctor-appointment-germany","residence-permit-renewal-germany","pregnancy-birth-germany","epa-guide-germany"]
 official_sources:
   - title: "連邦保健省：公的医療保険の加入者・2026年の基準"
     url: "https://www.bundesgesundheitsministerium.de/gesetzlich-versicherte/seite"
@@ -22,6 +22,10 @@ official_sources:
     url: "https://www.bundesgesundheitsministerium.de/themen/krankenversicherung/online-ratgeber-krankenversicherung/krankenversicherung/wechsel-zwischen-gkv-und-pkv"
   - title: "AOK：保険証が未着の場合を含む代替証明の案内"
     url: "https://www.aok.de/pk/versichertenservice/ersatzbescheinigung-krankenkasse/"
+  - title: "連邦保健省：電子患者記録（ePA）"
+    url: "https://www.bundesgesundheitsministerium.de/themen/digitalisierung/elektronische-patientenakte/epa-fuer-alle"
+  - title: "連邦健康情報ポータル：ePAの管理とアクセス"
+    url: "https://gesund.bund.de/wie-verwalte-ich-meine-epa"
 ---
 
 # ドイツの健康保険｜公的保険と民間保険をどう選ぶか
@@ -138,6 +142,12 @@ official_sources:
 公的保険でも、すべてが無料とは限りません。処方薬、入院、補助具などには法定自己負担があり、歯科の追加治療や個室などは自費になる場合があります。医療機関から「保険外」と説明されたら、内容と金額を書面で確認してから同意します。
 
 夜間や休日に急ぎの診療が必要で、生命の危険まではない場合は116117、生命に関わる緊急事態は112です。通常の予約方法は[ドイツで病院を予約する方法](/germany/ja/living/doctor-appointment-germany/)で詳しく説明しています。
+
+## 電子患者記録（ePA）のアクセスも確認する
+
+公的医療保険の加入者には、利用を拒否しない限り電子患者記録（ePA）が用意されます。本人がアプリを使うかどうかと、医療機関が制度上ePAを利用することは別です。医療機関の標準アクセス期間は通常90日、薬局は電子健康保険証を読み取った後の通常3日です。文書を非表示にすることと、施設ごとにアクセスを拒否することは範囲が異なり、薬の一覧には施設単位の制限という例外があります。民間医療保険の場合は、ePAの提供状況や登録方法を加入先に確認してください。
+
+スマートフォンのアプリを使わない場合でも、加入先の保険者のオンブズ窓口でアクセス制限を相談できる場合があります。保険者やオンブズ窓口自身が診療記録の内容を閲覧できるわけではありません。具体的な操作は[ドイツの電子患者記録（ePA）入門](/germany/ja/living/epa-guide-germany/)で図解しています。ePAのアクセス情報は2026年10月27日に公式情報で確認しました。
 
 ## 民間保険を選ぶ前の長期確認
 

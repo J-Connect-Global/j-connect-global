@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">電子患者記録のアクセス管理</title><desc id="desc">電子患者記録の標準アクセス期間は医療機関が通常90日、薬局が通常3日で、文書と施設ごとのアクセス設定を確認する必要がある。</desc>
+<rect width="1200" height="630" rx="28" fill="#f5f2eb"/><rect x="48" y="44" width="1104" height="542" rx="24" fill="#fff" stroke="#d7dedf" stroke-width="2"/>
+<text x="88" y="112" fill="#17324d" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="44" font-weight="800">電子患者記録（ePA）</text>
+<text x="90" y="154" fill="#4f6474" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="23">誰が・いつ・何を見られるかを理解する</text>
+<g transform="translate(90 202)"><rect width="470" height="180" rx="20" fill="#e9f2f0" stroke="#c7ded9" stroke-width="2"/><text x="28" y="46" fill="#2f7771" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="20" font-weight="700">医療機関の標準アクセス期間</text><text x="28" y="112" fill="#17324d" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="62" font-weight="800">90日</text><text x="28" y="150" fill="#4f6474" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="18">設定や個別の条件を確認</text></g>
+<g transform="translate(600 202)"><rect width="470" height="180" rx="20" fill="#eef1f8" stroke="#d0d8ea" stroke-width="2"/><text x="28" y="46" fill="#47658b" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="20" font-weight="700">薬局の標準アクセス期間</text><text x="28" y="112" fill="#17324d" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="62" font-weight="800">3日</text><text x="28" y="150" fill="#4f6474" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="18">標準設定の目安です</text></g>
+<text x="90" y="448" fill="#17324d" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="22" font-weight="700">2025年10月1日から、医療提供者はePAの利用が義務化</text>
+<text x="90" y="496" fill="#4f6474" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="18">文書の非表示と医療機関単位のアクセス制限は、影響範囲が異なります。</text>
+<text x="90" y="546" fill="#7b8a91" font-family="'Noto Sans JP',system-ui,sans-serif" font-size="15">J-Connect制作｜公式情報確認：2026年10月25日</text>
+</svg>

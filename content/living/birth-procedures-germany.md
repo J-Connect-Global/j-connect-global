@@ -7,7 +7,7 @@ summary: "ドイツで出産する日本人・国際家庭向けに、出産前�
 status: "published"
 published: true
 published_at: "2026-10-12"
-updated_at: "2026-10-17"
+updated_at: "2026-10-27"
 last_verified: "2026-10-12"
 next_review: "2027-01-12"
 canonical_url: "/germany/ja/living/birth-procedures-germany/"
@@ -15,7 +15,7 @@ tags: ["出産手続き","出生届","出生証明書","育児給付","児童手
 image_url: "/assets/images/living/birth-procedures-germany.webp"
 image_alt: "赤ちゃんの衣類と靴下、書類を入れるフォルダーを机に並べた出産手続きのイメージ"
 image_caption: "AI生成のイメージ画像。実際の申請書類を示すものではありません。"
-related_articles: ["pregnancy-birth-germany","birth-day-germany","health-insurance-guide","kita-u3-tagesmutter-guide"]
+related_articles: ["pregnancy-birth-germany","birth-day-germany","health-insurance-guide","kita-u3-tagesmutter-guide","kindergeld-auszahlungstermine-2027"]
 official_sources:
   - title: "連邦家族ポータル：出生登録と出生証明書"
     url: "https://familienportal.de/familienportal/lebenslagen/schwangerschaft-geburt/anmeldung-standesamt"
@@ -53,6 +53,8 @@ official_sources:
     url: "https://familienportal.de/familienportal/familienleistungen/kindergeld/faq/wie-wird-kindergeld-beantragt-und-ausgezahlt--124954"
   - title: "連邦雇用庁：2026年の児童手当額"
     url: "https://www.arbeitsagentur.de/presse/2025-53-kindergeld-steigt-ab-januar-2026"
+  - title: "連邦政府：申請なし支給の導入時期・条件（連邦参議院の同意）"
+    url: "https://www.bundesregierung.de/breg-de/aktuelles/kindergeld-ohne-antrag-2412916"
   - title: "在デュッセルドルフ日本国総領事館：出生届・国籍留保"
     url: "https://www.dus.emb-japan.go.jp/itpr_ja/konsular_koseki_04.html"
   - title: "在デュッセルドルフ日本国総領事館：旅券・未成年者の申請"
@@ -355,6 +357,8 @@ BundIDのログイン方法によって、完全なペーパーレス申請に�
 ## 児童手当：育児給付とは別の申請をする
 
 児童手当（Kindergeld）は、親の育児休業を補う給付とは別制度です。2026年の支給額は、対象の子ども1人につき月259ユーロです。外国籍の親は滞在資格なども審査されるため、ドイツで生まれたことだけで受給が決まるわけではありません。
+
+2027年は、支給日を確認するだけでなく、申請なし支給の段階導入にも注意してください。連邦議会は2026年7月9日に関連法案を可決し、連邦参議院も9月25日に同意しました。政府の公式案内では2027年1月1日施行予定で、実際の自動支給は2027年3月頃に第2子以降、11月頃に第1子へ段階的に広げる予定です。ただし、必要な口座情報や居住・就労条件などが確認できない家庭は、従来どおり申請が必要になる場合があります。支給日と支給額の改定は別の情報です。2027年の送金日は[Kindergeld 2027年の支給日一覧](/germany/ja/living/kindergeld-auszahlungstermine-2027/)で番号末尾別に確認できます。この制度の状況は2026年10月27日に政府公式案内で確認しました。
 
 ### 両親が同じ子について二重に申請しない
 

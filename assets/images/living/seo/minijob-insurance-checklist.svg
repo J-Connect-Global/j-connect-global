@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">ミニジョブで確認する税金・年金・健康保険</title>
+  <desc id="desc">税金の書類、年金を表す盾、健康保険を表す十字の3つのアイコン。</desc>
+  <rect width="1200" height="675" fill="#F4F1E8"/>
+  <g transform="translate(100 125)">
+    <rect width="280" height="410" rx="30" fill="#FFFFFF" stroke="#19364E" stroke-width="9"/>
+    <rect x="55" y="55" width="170" height="230" rx="18" fill="#E3EEF3" stroke="#6C9FB8" stroke-width="7"/>
+    <rect x="85" y="100" width="110" height="13" rx="6" fill="#6C9FB8"/>
+    <rect x="85" y="137" width="110" height="13" rx="6" fill="#A8C6D6"/>
+    <rect x="85" y="174" width="80" height="13" rx="6" fill="#A8C6D6"/>
+    <circle cx="140" cy="325" r="48" fill="#E6B54F" stroke="#19364E" stroke-width="7"/>
+    <path d="M140 294 V325 L160 339" fill="none" stroke="#19364E" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(460 125)">
+    <rect width="280" height="410" rx="30" fill="#E5F0EA" stroke="#19364E" stroke-width="9"/>
+    <path d="M140 70 L215 98 V190 C215 250 174 290 140 310 C106 290 65 250 65 190 V98 Z" fill="#FFFFFF" stroke="#5B927E" stroke-width="9" stroke-linejoin="round"/>
+    <path d="M102 185 L129 212 L180 156" fill="none" stroke="#5B927E" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M72 350 H208" stroke="#9FC8B8" stroke-width="14" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(820 125)">
+    <rect width="280" height="410" rx="30" fill="#FFFFFF" stroke="#19364E" stroke-width="9"/>
+    <circle cx="140" cy="200" r="100" fill="#F7E7E4" stroke="#B85C4A" stroke-width="9"/>
+    <rect x="117" y="130" width="46" height="140" rx="8" fill="#B85C4A"/>
+    <rect x="70" y="177" width="140" height="46" rx="8" fill="#B85C4A"/>
+    <path d="M80 335 H200" stroke="#D8B1AA" stroke-width="14" stroke-linecap="round"/>
+  </g>
+</svg>

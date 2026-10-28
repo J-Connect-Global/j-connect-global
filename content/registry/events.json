@@ -80,7 +80,7 @@
     "official_url": "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf",
     "official_sources": [
       {
-        "title": "デュッセルドルフ観光局：2026年の会場・日程・営業時間",
+        "title": "デュッセルドルフ観光局：2026年の会場・日程・営業時間・アクセス",
         "url": "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
       },
       {
@@ -94,6 +94,7 @@
     ],
     "disclaimer_type": "event",
     "related_articles": [
+      "kommern-saint-martin-2026-guide",
       "germany-train-travel-guide",
       "germany-sunday-rest-shops-closed",
       "nrw-christmas-opening-hours-2026"
@@ -2764,10 +2765,6 @@
       {
         "title": "ミニジョブ・センター：複数の仕事",
         "url": "https://www.minijob-zentrale.de/DE/die-minijobs/mehrere-jobs/mehrere-jobs_node.html"
-      },
-      {
-        "title": "ミニジョブ・センター：税金の扱い",
-        "url": "https://www.minijob-zentrale.de/DE/meta/faq-bereich/steuer/27_was_ist_die_einheitliche_pauschsteuer/faq_27_was_ist_die_einheitliche_pauschsteuer"
       }
     ],
     "related_articles": [
@@ -3109,16 +3106,16 @@
         "url": "https://recht.nrw.de/lrgv/gesetz/30032018-gesetz-zur-regelung-der-ladenoeffnungszeiten-ladenoeffnungsgesetz-loeg-nrw/"
       },
       {
+        "title": "NRW州：日曜・祝日に関する法律",
+        "url": "https://recht.nrw.de/lrgv/gesetz/01012000-bekanntmachung-der-neufassung-des-gesetzes-ueber-die-sonn-und-feiertage/"
+      },
+      {
         "title": "労働時間法 第9条（日曜・祝日の休息）",
         "url": "https://www.gesetze-im-internet.de/arbzg/BJNR117100994.html"
       },
       {
         "title": "機械騒音防止令（32. BImSchV）第7条",
         "url": "https://www.gesetze-im-internet.de/bimschv_32/__7.html"
-      },
-      {
-        "title": "NRW州：日曜・祝日に関する法律",
-        "url": "https://recht.nrw.de/lrgv/gesetz/01012000-bekanntmachung-der-neufassung-des-gesetzes-ueber-die-sonn-und-feiertage/"
       }
     ],
     "image": "/assets/img/events/germany-sunday-rest-shops-closed.webp",

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">NRWの2026年クリスマス前後のカレンダー</title>
+  <desc id="desc">12月24日から27日までの日付を、通常営業可能日、祝日、日曜日の違いで色分けした図。</desc>
+  <rect width="1200" height="675" fill="#F5F0E6"/>
+  <rect x="75" y="80" width="1050" height="515" rx="34" fill="#FFFFFF" stroke="#1B394E" stroke-width="8"/>
+  <rect x="75" y="80" width="1050" height="105" rx="34" fill="#1B394E"/>
+  <rect x="75" y="150" width="1050" height="35" fill="#1B394E"/>
+  <g font-family="Arial, sans-serif" font-size="52" font-weight="700" text-anchor="middle" fill="#FFFFFF">
+    <text x="202" y="149">24</text><text x="467" y="149">25</text><text x="732" y="149">26</text><text x="997" y="149">27</text>
+  </g>
+  <rect x="118" y="220" width="168" height="220" rx="22" fill="#F6E6BF" stroke="#D9A542" stroke-width="7"/>
+  <rect x="383" y="220" width="168" height="220" rx="22" fill="#F5DEDA" stroke="#B85C4A" stroke-width="7"/>
+  <rect x="648" y="220" width="168" height="220" rx="22" fill="#F5DEDA" stroke="#B85C4A" stroke-width="7"/>
+  <rect x="913" y="220" width="168" height="220" rx="22" fill="#E7EAEC" stroke="#7E939E" stroke-width="7"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="12">
+    <circle cx="202" cy="330" r="42" stroke="#9A6B16"/><path d="M202 300 V330 L224 343" stroke="#9A6B16"/>
+    <path d="M430 305 L504 379 M504 305 L430 379" stroke="#B85C4A"/>
+    <path d="M695 305 L769 379 M769 305 L695 379" stroke="#B85C4A"/>
+    <path d="M955 378 H1039 M970 378 V323 H1024 V378 M981 323 V302 H1013 V323" stroke="#526A76"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle">
+    <text x="202" y="494" fill="#9A6B16">14時まで</text>
+    <text x="467" y="494" fill="#B85C4A">祝日</text>
+    <text x="732" y="494" fill="#B85C4A">祝日</text>
+    <text x="997" y="494" fill="#526A76">日曜日</text>
+  </g>
+</svg>

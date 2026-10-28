@@ -58,8 +58,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-10-19",
-    "last_verified": "2026-10-19",
+    "updated_at": "2026-10-28",
+    "last_verified": "2026-10-28",
     "tags": [
       "クリスマスマーケット",
       "デュッセルドルフ",
@@ -82,18 +82,26 @@
       {
         "title": "デュッセルドルフ観光局：2026年の会場・日程・営業時間",
         "url": "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
+      },
+      {
+        "title": "ラインバーン：公共交通の案内",
+        "url": "https://www.rheinbahn.de/"
+      },
+      {
+        "title": "デュッセルドルフ空港：P+R駐車場案内",
+        "url": "https://www.dus.com/de-de/parken/park-,-a-,-ride"
       }
     ],
     "disclaimer_type": "event",
     "related_articles": [
-      "kommern-saint-martin-2026-guide",
-      "german-bread-culture",
-      "germany-winter-time-2026"
+      "germany-train-travel-guide",
+      "germany-sunday-rest-shops-closed",
+      "nrw-christmas-opening-hours-2026"
     ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-19",
+      "last_reviewed_at": "2026-10-28",
       "next_review_due": "2026-11-18"
     },
     "content_type": "event",
@@ -2744,13 +2752,30 @@
       {
         "title": "連邦議会：2027年所得税改革法案の審議状況",
         "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520"
+      },
+      {
+        "title": "連邦労働社会省：第5次最低賃金調整令",
+        "url": "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/fuenfte-mindestlohnanpassungsverordnung-milov5.html"
+      },
+      {
+        "title": "社会法典第4編第8条：軽微な雇用と収入上限の計算式",
+        "url": "https://www.gesetze-im-internet.de/sgb_4/__8.html"
+      },
+      {
+        "title": "ミニジョブ・センター：複数の仕事",
+        "url": "https://www.minijob-zentrale.de/DE/die-minijobs/mehrere-jobs/mehrere-jobs_node.html"
+      },
+      {
+        "title": "ミニジョブ・センター：税金の扱い",
+        "url": "https://www.minijob-zentrale.de/DE/meta/faq-bereich/steuer/27_was_ist_die_einheitliche_pauschsteuer/faq_27_was_ist_die_einheitliche_pauschsteuer"
       }
     ],
     "related_articles": [
       "deutschlandticket-2027-price-consent",
       "db-2027-timetable-family-ticket",
       "germany-september-2026-changes",
-      "kindergeld-auszahlungstermine-2027"
+      "kindergeld-auszahlungstermine-2027",
+      "minijob-grenze-2027"
     ],
     "city": "ドイツ全土",
     "area": "ドイツ全土",
@@ -2770,7 +2795,7 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-21",
-    "updated_at": "2026-10-27",
+    "updated_at": "2026-10-28",
     "last_verified": "2026-10-21",
     "canonical_url": "/germany/ja/events/news/germany-january-2027-changes/",
     "official_url": "",
@@ -3059,11 +3084,12 @@
       "NRW",
       "祝日"
     ],
-    "updated_at": "2026-10-26",
+    "updated_at": "2026-10-28",
     "related_articles": [
       "germany-winter-time-2026",
       "german-bread-culture",
-      "germany-autumn-forest-walk"
+      "germany-autumn-forest-walk",
+      "nrw-christmas-opening-hours-2026"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3089,6 +3115,10 @@
       {
         "title": "機械騒音防止令（32. BImSchV）第7条",
         "url": "https://www.gesetze-im-internet.de/bimschv_32/__7.html"
+      },
+      {
+        "title": "NRW州：日曜・祝日に関する法律",
+        "url": "https://recht.nrw.de/lrgv/gesetz/01012000-bekanntmachung-der-neufassung-des-gesetzes-ueber-die-sonn-und-feiertage/"
       }
     ],
     "image": "/assets/img/events/germany-sunday-rest-shops-closed.webp",

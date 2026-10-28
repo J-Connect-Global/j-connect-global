@@ -71,13 +71,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add content/registry/living.json content/registry/events.json
-          git add germany/ja/living/ germany/ja/events/ germany/ja/index.html
-          git add germany/ja/living/index.html germany/ja/events/index.html
-          git add germany/ja/events/news/index.html germany/ja/events/columns/index.html
-          git add germany/ja/search/ sitemap.xml robots.txt
-          git add assets/data/search-index.json assets/data/search-suggestions.json assets/data/seo-pages.json
-          git add assets/img/living/minijob-grenze-2027.webp assets/img/living/nrw-christmas-opening-hours-2026.webp
+          # The generated layout differs slightly between repository configurations;
+          # stage the validated working tree rather than naming optional paths.
+          # The preceding guard rejects any changes to messaging, jobs or learning data.
+          git add -A
           if git diff --cached --quiet; then
             echo "No generated changes to commit."
             exit 0

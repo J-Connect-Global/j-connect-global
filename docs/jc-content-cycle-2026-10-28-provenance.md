@@ -1,13 +1,14 @@
 # J-Connect Germany — Editorial cycle 2026-10-28
 
-**Status at preparation:** source review and editorial changes are on `editorial/jc-content-cycle-20261028`. The generated HTML, sitemap, image conversion, build validation and browser tests are pending the branch-only build workflow. Do not treat the articles as published until the PR is merged and the live URLs are checked.
+**Status at review:** source review and editorial changes are on `editorial/jc-content-cycle-20261028`. The branch build completed, generated HTML/search artifacts and sitemap were committed, and `npm run validate`, `npm run test:browser`, `git diff --check`, and the unrelated-path guard passed. The articles are still unpublished on production until a review PR is merged and the live URLs are checked.
 
 ## 1. Priority-one existing tasks
 
-- The live Apps Script read-only status endpoint reports messaging version `2026-10-23.1`, persistent conversation links enabled and resend capability enabled. The version matches the repository's current messaging implementation.
-- The public conversation page now explains that the link does not expire and exposes the resend path. No real email was sent during this audit; delivery to a real recipient and end-to-end recovery remain unverified because there is no safe test conversation/inbox available in the current session.
-- The main-branch German flashcard manifest reports 17,635 cards. A live browser count still needs to be confirmed; the underlying dataset count is no longer 2,039.
-- The recent article-thumbnail audit changes are already merged. The separate EES/ETIAS guide remains in draft PR #384 because immigration-specific review is still pending.
+- The public Apps Script status endpoint was checked on 2026-10-28 and returns `messaging_version: 2026-10-23.1`, `persistent_links: true`, `inline_replies: true`, and `instant_publish: true`. The live conversation page displays permanent-link and resend guidance, uses `noindex, follow`, and sets `no-referrer`.
+- No real email was sent or received during this audit. Delivery and end-to-end recovery remain unverified because no safe test conversation/inbox is available; no test notification was sent to real users.
+- The main-branch flashcard manifest and a live browser session both confirm 17,635 items: A1 650, A2 650, B1 1,100, B2 2,600, C1 5,000, C2 7,635. The earlier zero/loading text came from a non-waiting content snapshot; the browser confirmed the UI loads correctly. No learning data was changed.
+- The four articles merged in PR #377 are live, self-canonical, `index, follow`, and all four URLs appear in the 168-URL production sitemap.
+- PR #384 remains a draft. The official EU ETIAS page still says the system is not in operation and accepts no applications; immigration-specific review remains pending.
 
 ## 2. New article intents
 
@@ -39,7 +40,7 @@
 ## 3. Existing article improvements
 
 1. `germany-january-2027-changes`: added a direct link to the detailed Minijob guide and added visible primary-source links. The broad overview remains the landing page for general January changes.
-2. `christmas-markets-duesseldorf`: verified the official 19 November–30 December 2026 dates, regular hours, 22/25 December closures, 24/26 December special hours, central public-transport access and the airport P13 P+R information. The existing article was updated instead of creating a duplicate market page.
+2. `christmas-markets-duesseldorf`: verified the official 19 November–30 December 2026 dates, regular hours, the 22 November and 25 December closures, 24 and 26 December special hours, central public-transport access and the airport P13 P+R information. The existing article was updated instead of creating a duplicate market page.
 3. `germany-sunday-rest-shops-closed`: added a date-specific NRW Christmas shopping note and link to the new guide.
 4. `germany-train-travel-guide`: added seasonal-event planning advice focused on return journeys and separate long-distance/local transit checks.
 
@@ -55,4 +56,7 @@ The two hero illustrations and four inline diagrams are original J-Connect SVG a
 
 ## 6. Validation status
 
-Pending: convert hero SVGs to WebP, build generated article HTML and search artifacts, run `npm run validate` and `npm run test:browser`, inspect the full diff, remove the temporary build workflow, create the reviewable PR, then verify the merged production URLs, canonical tags and sitemap. The EES/ETIAS draft remains separate and unpublished.
+- The branch-only workflow converted the two hero SVGs to WebP, ran `npm run build`, `npm run validate`, and `npm run test:browser`, checked whitespace, and passed the guard against changes to messaging, jobs, and German-learning data. Generated article HTML, registry output, search artifacts, and sitemap were committed in `3e9406cd1da6ae67b8fcb42d171885b6e07e6fb7`.
+- The temporary branch-only workflow is a build aid, not production code; it is being removed before the review PR.
+- Production publication is not claimed. New article URLs, canonicals, and sitemap entries must be checked after an approved merge. Search Console data remains unavailable because the connected GSC access returned an expired-subscription error.
+- The separate EES/ETIAS draft remains unpublished.

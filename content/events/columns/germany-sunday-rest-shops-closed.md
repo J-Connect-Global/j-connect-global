@@ -12,11 +12,13 @@ official_sources:
     url: "https://www.bundesverfassungsgericht.de/SharedDocs/Pressemitteilungen/DE/2009/bvg09-134.html"
   - title: "ノルトライン＝ヴェストファーレン州 閉店法（LÖG NRW）"
     url: "https://recht.nrw.de/lrgv/gesetz/30032018-gesetz-zur-regelung-der-ladenoeffnungszeiten-ladenoeffnungsgesetz-loeg-nrw/"
+  - title: "NRW州：日曜・祝日に関する法律"
+    url: "https://recht.nrw.de/lrgv/gesetz/01012000-bekanntmachung-der-neufassung-des-gesetzes-ueber-die-sonn-und-feiertage/"
   - title: "労働時間法 第9条（日曜・祝日の休息）"
     url: "https://www.gesetze-im-internet.de/arbzg/BJNR117100994.html"
   - title: "機械騒音防止令（32. BImSchV）第7条"
     url: "https://www.gesetze-im-internet.de/bimschv_32/__7.html"
-related_articles: ["germany-winter-time-2026", "german-bread-culture", "germany-autumn-forest-walk"]
+related_articles: ["germany-winter-time-2026", "german-bread-culture", "germany-autumn-forest-walk", "nrw-christmas-opening-hours-2026"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""
@@ -27,7 +29,7 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-26"
-updated_at: "2026-10-26"
+updated_at: "2026-10-28"
 last_verified: "2026-10-26"
 canonical_url: "/germany/ja/events/columns/germany-sunday-rest-shops-closed/"
 official_url: "https://www.gesetze-im-internet.de/gg/art_140.html"
@@ -142,7 +144,11 @@ NRW州では、市や町が条例で日曜営業日を決めます。ルール�
 
 ドイツの日曜日は、少し不便で、とても静かです。その静けさが憲法から近所の芝刈り機までつながっていると知ると、日曜の朝の散歩が、少し違って見えてくるかもしれません。
 
-## 参考情報（2026年10月26日参照）
+### 年末の買い物は、日曜ルールに加えて州の祝日と店舗時刻を確認
+
+2026年は12月24日が木曜日、25日が金曜日、26日が土曜日、27日が日曜日です。NRWでは12月24日の一般小売店は法律上14時まで営業できますが、店舗ごとに早く閉まる場合があります。25日と26日は法定祝日、27日は日曜日のため、通常のスーパーが営業すると考えない方が安全です。薬局の緊急当番や公共交通の確認方法は、[NRWのクリスマス2026・営業日チェック](/germany/ja/living/nrw-christmas-opening-hours-2026/)にまとめました。州によって規則は異なるため、他州へ移動する場合は現地の案内を確認してください。
+
+## 参考情報（全体：2026年10月26日／NRWの年末営業時間：2026年10月28日参照）
 
 - [基本法 第140条](https://www.gesetze-im-internet.de/gg/art_140.html)
 - [連邦政治教育センター：ワイマール憲法（1919年）の抜粋](https://www.bpb.de/themen/menschenrechte/grundgesetz/44201/auszug-aus-der-deutschen-verfassung-vom-11-august-1919-weimarer-verfassung/)

@@ -57,6 +57,6 @@ The two hero illustrations and four inline diagrams are original J-Connect SVG a
 ## 6. Validation status
 
 - The branch-only workflow converted the two hero SVGs to WebP, ran `npm run build`, `npm run validate`, and `npm run test:browser`, checked whitespace, and passed the guard against changes to messaging, jobs, and German-learning data. Generated article HTML, registry output, search artifacts, and sitemap were committed in `3e9406cd1da6ae67b8fcb42d171885b6e07e6fb7`.
-- The temporary branch-only workflow is a build aid, not production code; it is being removed before the review PR.
+- The temporary branch-only workflow was removed from the branch before the review PR; it is not production code.
 - Production publication is not claimed. New article URLs, canonicals, and sitemap entries must be checked after an approved merge. Search Console data remains unavailable because the connected GSC access returned an expired-subscription error.
 - The separate EES/ETIAS draft remains unpublished.

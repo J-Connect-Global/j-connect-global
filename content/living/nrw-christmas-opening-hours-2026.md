@@ -12,7 +12,7 @@ last_verified: "2026-10-28"
 next_review: "2026-12-01"
 canonical_url: "/germany/ja/living/nrw-christmas-opening-hours-2026/"
 tags: ["NRW", "クリスマス", "営業時間", "スーパー", "薬局", "公共交通", "2026年"]
-image: "/assets/img/living/nrw-christmas-opening-hours-2026.svg"
+image: "/assets/img/living/nrw-christmas-opening-hours-2026.webp"
 image_alt: "買い物袋、薬局の十字、公共交通を表す車両を組み合わせたJ-Connectのイラスト"
 image_caption: "J-Connect作成の模式図。実際の店舗や交通機関の運行状況を示すものではありません。"
 image_credit: "Illustration / J-Connect"
@@ -43,6 +43,8 @@ official_sources:
 | 12月26日 | 土曜日 | クリスマス第2日。NRWの法定祝日で、一般の小売店は原則休業です。 | 例外店舗の営業を当てにせず、必要品を事前に確保する。 |
 | 12月27日 | 日曜日 | 通常の日曜日と同じく、一般の小売店は原則休業です。 | 年末の買い足しは、営業する店舗を個別に確認する。 |
 
+![12月24日から27日までの営業日を確認するカレンダー図](/assets/images/living/seo/nrw-christmas-calendar-2026.svg "J-Connect作成のカレンダー図。実際の営業時間は各店舗の案内で確認してください。")
+
 NRWの店舗営業時間法では、12月24日が平日に当たる場合、一般の店舗は14時まで営業できます。これは「14時まで開いている義務」ではなく、法律上の上限です。店舗ごとの営業時間は短い場合があるため、Googleマップの表示だけでなく、チェーンや支店の公式ページも確認してください。
 
 12月25日と26日はNRWの法定祝日です。駅、空港、ガソリンスタンドなどには例外的な販売ルールがありますが、通常のスーパーや専門店が営業するとは限りません。例外店舗があることを前提に、必要な買い物を先延ばしにしないのが安全です。
@@ -67,6 +69,8 @@ NRWの店舗営業時間法では、12月24日が平日に当たる場合、一�
 祝日や年末は、列車・地下鉄・バスの時刻表が通常の平日と異なることがあります。遠距離の列車は[ドイツ鉄道の公式アプリ](https://int.bahn.de/en/booking-information/db-navigator)、デュッセルドルフ周辺の地下鉄・バスは[ラインバーンの公式案内](https://www.rheinbahn.de/)で確認してください。
 
 クリスマスマーケットへ行く場合は、開催時間だけでなく、最寄り駅、帰りの乗り換え、最終便も確認します。[デュッセルドルフのクリスマスマーケット2026ガイド](/germany/ja/events/christmas-markets-duesseldorf/)には、公式の開催時間とアクセス情報をまとめています。
+
+![買い物、薬局の緊急当番、公共交通の確認先をまとめたチェックリスト図](/assets/images/living/seo/nrw-christmas-checklist-2026.svg "J-Connect作成の模式図。実際の営業状況や運行情報は公式案内を確認してください。")
 
 ## 出発前のチェックリスト
 

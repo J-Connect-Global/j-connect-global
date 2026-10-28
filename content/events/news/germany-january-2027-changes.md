@@ -149,5 +149,9 @@ official_sources:
 - [連邦政府：申請なしKindergeldの導入時期・条件](https://www.bundesregierung.de/breg-de/aktuelles/kindergeld-ohne-antrag-2412916)
 - [連邦議会：2027年所得税改革法案の審議状況](https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520)
 - [Kindergeld 2027年の支給日一覧（J-Connect）](/germany/ja/living/kindergeld-auszahlungstermine-2027/)
+- [連邦労働社会省：第5次最低賃金調整令](https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/fuenfte-mindestlohnanpassungsverordnung-milov5.html)
+- [社会法典第4編第8条：ミニジョブの収入上限の計算式](https://www.gesetze-im-internet.de/sgb_4/__8.html)
+- [ミニジョブ・センター：複数の仕事](https://www.minijob-zentrale.de/DE/die-minijobs/mehrere-jobs/mehrere-jobs_node.html)
+- [ミニジョブ・センター：税金の扱い](https://www.minijob-zentrale.de/DE/meta/faq-bereich/steuer/27_was_ist_die_einheitliche_pauschsteuer/faq_27_was_ist_die_einheitliche_pauschsteuer)
 
 ※本記事は一般的な情報提供を目的としたもので、税務・法律上の助言ではありません。個別のケースは税理士（Steuerberater）や加入先の保険組合にご確認ください。

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">ミニジョブ上限の計算式</title>
+  <desc id="desc">最低賃金14.60ユーロと法定計算式から、月633ユーロの上限を導く図。</desc>
+  <rect width="1200" height="675" fill="#F5F7F8"/>
+  <rect x="70" y="70" width="1060" height="535" rx="36" fill="#FFFFFF" stroke="#19364E" stroke-width="8"/>
+  <rect x="115" y="125" width="270" height="185" rx="24" fill="#E3EEF3"/>
+  <circle cx="250" cy="217" r="70" fill="#FFFFFF" stroke="#6C9FB8" stroke-width="9"/>
+  <path d="M250 168 V217 L286 239" fill="none" stroke="#19364E" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="465" y="125" width="270" height="185" rx="24" fill="#E5F0EA"/>
+  <rect x="505" y="166" width="190" height="22" rx="11" fill="#78A895"/>
+  <rect x="505" y="207" width="145" height="22" rx="11" fill="#B7D4C8"/>
+  <rect x="505" y="248" width="170" height="22" rx="11" fill="#B7D4C8"/>
+  <rect x="815" y="125" width="270" height="185" rx="24" fill="#FAEECF"/>
+  <circle cx="950" cy="217" r="68" fill="#E6B54F" stroke="#19364E" stroke-width="8"/>
+  <circle cx="950" cy="217" r="48" fill="none" stroke="#FFF8E4" stroke-width="5"/>
+  <path d="M950 180 V217 H982" fill="none" stroke="#19364E" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M405 218 H445 M755 218 H795" stroke="#19364E" stroke-width="9" stroke-linecap="round"/>
+  <path d="M430 200 L448 218 L430 236 M780 200 L798 218 L780 236" fill="none" stroke="#19364E" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="72" font-weight="700" text-anchor="middle" fill="#19364E">14.60 × 130 ÷ 3</text>
+  <path d="M600 448 V482" stroke="#6C9FB8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M580 466 L600 486 L620 466" fill="none" stroke="#6C9FB8" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="600" y="555" font-family="Arial, sans-serif" font-size="64" font-weight="700" text-anchor="middle" fill="#3D7B67">633 € / Monat</text>
+</svg>

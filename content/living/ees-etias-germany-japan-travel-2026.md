@@ -20,6 +20,8 @@ official_sources:
     url: "https://travel-europe.europa.eu/de/etias"
   - title: "EU公式：ETIASの対象・有効期間・入国審査"
     url: "https://travel-europe.europa.eu/etias/ltr/about-etias/what-is-etias.html"
+  - title: "EU公式：ETIAS FAQ（滞在許可保持者の免除・料金）"
+    url: "https://travel-europe.europa.eu/etias/faq"
   - title: "EU公式：EESのよくある質問"
     url: "https://travel-europe.europa.eu/de/ees/ltr/faq"
   - title: "EU公式：EESの対象外となる人"
@@ -121,6 +123,7 @@ ETIASは、ビザ免除で短期滞在する旅行者が、対象となる欧州
 
 - [EU公式：ETIASの現在の運用状況](https://travel-europe.europa.eu/de/etias)
 - [EU公式：ETIASの対象・有効期間・入国審査](https://travel-europe.europa.eu/etias/ltr/about-etias/what-is-etias.html)
+- [EU公式：ETIAS FAQ（滞在許可保持者の免除・料金）](https://travel-europe.europa.eu/etias/faq)
 - [EU公式：EESのよくある質問](https://travel-europe.europa.eu/de/ees/ltr/faq)
 - [EU公式：EESの対象外となる人](https://travel-europe.europa.eu/de/ees/ltr/to-whom-does-ees-not-apply.html)
 - [ドイツ外務省：EESの概要](https://www.germany.info/us-en/2735594-2735594)

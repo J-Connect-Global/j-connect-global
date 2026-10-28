@@ -9,7 +9,7 @@ city: "ドイツ全土"
 location: ""
 event_date: "2027年1月1日前後"
 published_at: "2026-10-21"
-updated_at: "2026-10-27"
+updated_at: "2026-10-28"
 last_verified: "2026-10-21"
 next_review: "2026-12-01"
 summary: "2027年1月からドイツで変わる制度を、在独日本人の生活に関わる項目に絞って整理。決定済みのものと、まだ法案段階のものを分けて解説します。"
@@ -23,7 +23,7 @@ image: "/assets/img/events/germany-january-2027-changes.webp"
 image_alt: "2027年1月のカレンダーと、ユーロ硬貨・乗車券・医療保険・子どもを表すアイコンのイラスト"
 image_caption: "イラスト：J-Connect。制度変更のテーマを表したもので、公式資料を再現していません。"
 image_credit: "Illustration / J-Connect"
-related_articles: ["deutschlandticket-2027-price-consent", "db-2027-timetable-family-ticket", "germany-september-2026-changes", "kindergeld-auszahlungstermine-2027"]
+related_articles: ["deutschlandticket-2027-price-consent", "db-2027-timetable-family-ticket", "germany-september-2026-changes", "kindergeld-auszahlungstermine-2027", "minijob-grenze-2027"]
 official_sources:
   - title: "Deutsche Bahn：Deutschlandticketの契約変更FAQ"
     url: "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
@@ -31,6 +31,12 @@ official_sources:
     url: "https://www.bundesregierung.de/breg-de/aktuelles/kindergeld-ohne-antrag-2412916"
   - title: "連邦議会：2027年所得税改革法案の審議状況"
     url: "https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520"
+  - title: "連邦労働社会省：第5次最低賃金調整令"
+    url: "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/fuenfte-mindestlohnanpassungsverordnung-milov5.html"
+  - title: "社会法典第4編第8条：軽微な雇用と収入上限の計算式"
+    url: "https://www.gesetze-im-internet.de/sgb_4/__8.html"
+  - title: "ミニジョブ・センター：複数の仕事"
+    url: "https://www.minijob-zentrale.de/DE/die-minijobs/mehrere-jobs/mehrere-jobs_node.html"
 ---
 
 # 【2027年1月から】ドイツで何が変わる？ 最低賃金・ドイツチケット・社会保険・児童手当まとめ
@@ -70,11 +76,9 @@ official_sources:
 
 ## 2. ミニジョブの上限が月633ユーロに
 
-ミニジョブ（Minijob）の月収上限は、法律で「最低賃金×週10時間相当」に連動する仕組みです。最低賃金の引き上げにより、2027年1月から月633ユーロ（2026年は603ユーロ）に上がります。
+ミニジョブ（Minijob）の月収上限は、最低賃金に連動する法定計算式で決まります。2027年1月1日からの上限は、時給14.60ユーロを式に当てはめると月633ユーロです（2026年は月603ユーロ）。これは自動的に非課税になる枠ではありません。
 
-配偶者ビザで滞在しながらミニジョブで働いている方などは、上限が上がった分だけ勤務時間を増やせるかどうか、雇用主と相談する余地があります。
-
-なお、雇用主が負担する一括税（Pauschsteuer）を2%から5%に上げる案が税制改正の政府案に含まれていますが、こちらは未成立です。
+勤務時間の目安、掛け持ち、税金・年金・健康保険の扱いは、[ドイツのMinijob 2027ガイド](/germany/ja/living/minijob-grenze-2027/)でケース別に整理しました。収入上限だけでなく、他の仕事を含めた見込み収入も雇用主に伝えて確認してください。
 
 ## 3. ドイツチケットは月66.80ユーロに値上げ
 
@@ -134,7 +138,7 @@ official_sources:
 3. **医療保険の通知をチェック**：保険組合から届く2027年の追加保険料率のお知らせを見落とさない。
 4. **児童手当・税制は続報待ち**：政府案の段階なので、成立を確認してから家計の計画に組み込む。
 
-## 参考情報（初回確認：2026年10月21日／児童手当関連の更新：2026年10月27日）
+## 参考情報（初回確認：2026年10月21日／児童手当関連の更新：2026年10月27日／最低賃金・ミニジョブ詳細：2026年10月28日）
 
 - 連邦法務省「Fünfte Mindestlohnanpassungsverordnung（MiLoV5）」— gesetze-im-internet.de
 - 連邦政府「Beitragsbemessungsgrenzen 2027 – Im Kabinett beschlossen」（2026年10月12日）— bundesregierung.de

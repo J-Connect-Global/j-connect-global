@@ -40,8 +40,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y librsvg2-bin webp
           for slug in minijob-grenze-2027 nrw-christmas-opening-hours-2026; do
-            rsvg-convert -w 1200 -h 675 "assets/images/living/seo/${slug}-hero.svg" -o "/tmp/${slug}.png"
-            cwebp -quiet -q 82 -m 6 "/tmp/${slug}.png" -o "assets/img/living/${slug}.webp"
+            rsvg-convert -w 1024 -h 576 "assets/images/living/seo/${slug}-hero.svg" -o "/tmp/${slug}.png"
+            cwebp -quiet -q 60 -m 6 "/tmp/${slug}.png" -o "assets/img/living/${slug}.webp"
           done
           git add assets/img/living/minijob-grenze-2027.webp assets/img/living/nrw-christmas-opening-hours-2026.webp
 

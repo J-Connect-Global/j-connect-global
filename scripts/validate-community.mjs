@@ -34,6 +34,7 @@ expect(!detail.includes('copyDetailUrl'), 'Standalone detail still contains copy
 expect(!detail.includes('URLをコピー'), 'Standalone detail still contains a URL-copy action.');
 expect(!detail.includes('安心の目安'), 'Standalone detail renderer still contains the safety section.');
 expect(detail.includes('data-cm-dynamic') && detail.includes('btn btn-soft'), 'Standalone detail is missing its reply composer or report action.');
+expect(detail.includes('公開中の投稿では、カテゴリにかかわらず') && detail.includes('公開返信」（初期選択）または「非公開返信') && !detail.includes('質問・相談にはニックネームで公開返信が付きます'), 'New-post form copy must explain that public replies are the default for all categories and private replies are optional.');
 expect(detail.includes('save-button inline') && css.includes('min-inline-size:112px'), 'Save actions do not reserve width for 保存済み.');
 expect(report.includes('id="reportTarget"') && report.includes('COMMUNITY_STATIC_POSTS_URL'), 'Report page does not load its canonical target from public JSON.');
 expect(report.includes('form_started_at') && report.includes('website'), 'Report form is missing anti-abuse fields.');

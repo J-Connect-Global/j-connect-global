@@ -149,6 +149,8 @@ NRW州では、市や町が条例で日曜営業日を決めます。ルール�
 2026年は12月24日が木曜日、25日が金曜日、26日が土曜日、27日が日曜日です。NRWでは12月24日の一般小売店は法律上14時まで営業できますが、店舗ごとに早く閉まる場合があります。25日と26日は法定祝日、27日は日曜日のため、通常のスーパーが営業すると考えない方が安全です。薬局の緊急当番や公共交通の確認方法は、[NRWのクリスマス2026・営業日チェック](/germany/ja/living/nrw-christmas-opening-hours-2026/)にまとめました。州によって規則は異なるため、他州へ移動する場合は現地の案内を確認してください。
 
 ## 参考情報（全体：2026年10月26日／NRWの年末営業時間：2026年10月28日参照）
+- [NRW州：日曜・祝日に関する法律](https://recht.nrw.de/lrgv/gesetz/01012000-bekanntmachung-der-neufassung-des-gesetzes-ueber-die-sonn-und-feiertage/)
+- [NRWのクリスマス2026・営業日チェック（J-Connect）](/germany/ja/living/nrw-christmas-opening-hours-2026/)
 
 - [基本法 第140条](https://www.gesetze-im-internet.de/gg/art_140.html)
 - [連邦政治教育センター：ワイマール憲法（1919年）の抜粋](https://www.bpb.de/themen/menschenrechte/grundgesetz/44201/auszug-aus-der-deutschen-verfassung-vom-11-august-1919-weimarer-verfassung/)

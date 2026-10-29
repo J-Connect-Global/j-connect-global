@@ -8,12 +8,12 @@ summary: "ドイツの鉄道を初めて使う人向けに、長距離列車と�
 status: "published"
 published: true
 published_at: "2026-08-03"
-updated_at: "2026-10-20"
+updated_at: "2026-10-28"
 last_verified: "2026-08-30"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/germany-train-travel-guide/"
 image_alt: "スーツケースを持ち長距離列車の横に立つ旅行者"
-related_articles: ["cologne-city-guide", "duesseldorf-city-guide", "germany-first-30-days"]
+related_articles: ["cologne-city-guide", "duesseldorf-city-guide", "germany-first-30-days", "christmas-markets-duesseldorf"]
 official_sources:
   - title: "ドイツ鉄道：公式アプリ"
     url: "https://int.bahn.de/en/booking-information/db-navigator"
@@ -23,6 +23,8 @@ official_sources:
     url: "https://int.bahn.de/en/booking-information/passenger-rights"
   - title: "ドイツ鉄道：子どもと旅行する場合"
     url: "https://int.bahn.de/en/offers/additional-services/travelling-with-children"
+  - title: "ラインバーン：公共交通の案内"
+    url: "https://www.rheinbahn.de/"
 image: "/assets/img/living/germany-train-travel-guide.webp"
 image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。"
 ---
@@ -101,6 +103,12 @@ ICEは高速列車、ICとECは都市間列車です。REやRBは地域の駅を
 長距離切符と地域交通の定期券を別々に買っている場合、地域列車の遅れで予約した長距離列車に乗れなくても、一つの通し切符と同じ扱いにならないことがあります。重要な予定や空港接続では、安さだけで切符を分けず、乗り継ぎ全体の余裕も考えます。
 
 大幅な遅延、運休、乗り継ぎ失敗には旅客の権利があり、状況に応じて払い戻しや補償を申請できます。切符、実際に乗った列車、到着時刻、追加で支払った費用の領収書を保存します。
+
+## 季節イベントへ行く日は、帰りの便まで先に確認
+
+クリスマスマーケットや大規模イベントの日は、行きの経路だけでなく、帰りの最終便、乗換、駅から会場までの徒歩時間も確認しておきます。デュッセルドルフの2026年クリスマスマーケットは11月19日〜12月30日で、11月22日・12月25日は休業、12月24日と26日は特別営業時間です。詳しい日程とアクセスは[デュッセルドルフのクリスマスマーケット2026ガイド](/germany/ja/events/christmas-markets-duesseldorf/)を参照してください。
+
+遠距離列車は[ドイツ鉄道の公式アプリ](https://int.bahn.de/en/booking-information/db-navigator)、デュッセルドルフ市内の地下鉄・バスは[ラインバーンの公式案内](https://www.rheinbahn.de/)で別々に確認します。祝日・イベント時は通常の平日ダイヤを前提にせず、出発当日に運行情報を再確認してください。
 
 ## 子どもと乗る場合
 

@@ -2380,11 +2380,12 @@
       "切符",
       "遅延"
     ],
-    "updated_at": "2026-10-20",
+    "updated_at": "2026-10-28",
     "related_articles": [
       "cologne-city-guide",
       "duesseldorf-city-guide",
-      "germany-first-30-days"
+      "germany-first-30-days",
+      "christmas-markets-duesseldorf"
     ],
     "official_sources": [
       {
@@ -2402,6 +2403,10 @@
       {
         "title": "ドイツ鉄道：子どもと旅行する場合",
         "url": "https://int.bahn.de/en/offers/additional-services/travelling-with-children"
+      },
+      {
+        "title": "ラインバーン：公共交通の案内",
+        "url": "https://www.rheinbahn.de/"
       }
     ],
     "disclaimer_type": "living",
@@ -3363,5 +3368,151 @@
         "url": "https://www.kmk.org/service/ferienregelung/ferienkalender.html"
       }
     ]
+  },
+  {
+    "id": "L056",
+    "slug": "minijob-grenze-2027",
+    "title": "ドイツのMinijob（ミニジョブ）2027｜月633ユーロの上限・勤務時間・税金と保険",
+    "category": "生活・手続き",
+    "summary": "2027年1月1日からのミニジョブの月収上限は、法定最低賃金と計算式から月633ユーロ。上限内の勤務時間、掛け持ち、税金・年金・健康保険の注意点を具体例で整理します。",
+    "url": "/germany/ja/living/minijob-grenze-2027/",
+    "markdown_path": "/content/living/minijob-grenze-2027.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-10-28",
+    "updated_at": "2026-10-28",
+    "last_verified": "2026-10-28",
+    "next_review": "2027-01-15",
+    "home_visible": false,
+    "home_order": 109,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/minijob-grenze-2027/",
+    "disclaimer_type": "employment",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; employment-law review pending",
+      "last_reviewed_at": "2026-10-28",
+      "next_review_due": "2027-01-15"
+    },
+    "tags": [
+      "Minijob",
+      "ミニジョブ",
+      "最低賃金",
+      "2027年",
+      "副業",
+      "税金",
+      "社会保険"
+    ],
+    "related_articles": [
+      "germany-january-2027-changes",
+      "tax-id-steuernummer-steuerklasse",
+      "germany-first-30-days"
+    ],
+    "official_sources": [
+      {
+        "title": "連邦労働社会省：第5次最低賃金調整令",
+        "url": "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/fuenfte-mindestlohnanpassungsverordnung-milov5.html"
+      },
+      {
+        "title": "社会法典第4編第8条：軽微な雇用と収入上限の計算式",
+        "url": "https://www.gesetze-im-internet.de/sgb_4/__8.html"
+      },
+      {
+        "title": "ミニジョブ・センター：収入上限のあるミニジョブ",
+        "url": "https://www.minijob-zentrale.de/DE/die-minijobs/minijob-mit-verdienstgrenze/minijob-mit-verdienstgrenze_node.html"
+      },
+      {
+        "title": "ミニジョブ・センター：複数の仕事",
+        "url": "https://www.minijob-zentrale.de/DE/die-minijobs/mehrere-jobs/mehrere-jobs_node.html"
+      },
+      {
+        "title": "ミニジョブ・センター：年金保険の加入義務",
+        "url": "https://www.minijob-zentrale.de/DE/die-minijobs/rentenversicherungspflicht"
+      },
+      {
+        "title": "ミニジョブ・センター：税金の扱い",
+        "url": "https://www.minijob-zentrale.de/DE/meta/faq-bereich/steuer/27_was_ist_die_einheitliche_pauschsteuer/faq_27_was_ist_die_einheitliche_pauschsteuer"
+      },
+      {
+        "title": "ミニジョブ・センター：保険の扱い",
+        "url": "https://www.minijob-zentrale.de/DE/die-minijobs/versicherungen"
+      }
+    ],
+    "image_url": "/assets/img/living/minijob-grenze-2027.webp",
+    "image_alt": "給与明細、勤務時間を示す時計、ユーロ硬貨を並べたJ-Connectのイラスト",
+    "image_caption": "J-Connect作成の模式図。実際の給与明細や特定の職場を示すものではありません。",
+    "image_credit": "Illustration / J-Connect",
+    "image": "/assets/img/living/minijob-grenze-2027.webp"
+  },
+  {
+    "id": "L057",
+    "slug": "nrw-christmas-opening-hours-2026",
+    "title": "NRWのクリスマス2026｜スーパー・薬局・公共交通の営業日チェック",
+    "category": "買い物・暮らし",
+    "summary": "2026年12月24〜27日のノルトライン＝ヴェストファーレン州で、スーパーの閉店時刻、祝日の営業例外、薬局の緊急当番、公共交通の確認手順を整理。州法と個別店舗の営業時間を分けて案内します。",
+    "url": "/germany/ja/living/nrw-christmas-opening-hours-2026/",
+    "markdown_path": "/content/living/nrw-christmas-opening-hours-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-10-28",
+    "updated_at": "2026-10-28",
+    "last_verified": "2026-10-28",
+    "next_review": "2026-12-01",
+    "home_visible": false,
+    "home_order": 110,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/nrw-christmas-opening-hours-2026/",
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; local retail-law review pending",
+      "last_reviewed_at": "2026-10-28",
+      "next_review_due": "2026-12-01"
+    },
+    "tags": [
+      "NRW",
+      "クリスマス",
+      "営業時間",
+      "スーパー",
+      "薬局",
+      "公共交通",
+      "2026年"
+    ],
+    "related_articles": [
+      "germany-sunday-rest-shops-closed",
+      "nrw-public-holidays-2027",
+      "christmas-markets-duesseldorf"
+    ],
+    "official_sources": [
+      {
+        "title": "NRW州：店舗営業時間法（LÖG NRW）",
+        "url": "https://recht.nrw.de/lrgv/gesetz/30032018-gesetz-zur-regelung-der-ladenoeffnungszeiten-ladenoeffnungsgesetz-loeg-nrw/"
+      },
+      {
+        "title": "NRW州：日曜・祝日に関する法律",
+        "url": "https://recht.nrw.de/lrgv/gesetz/01012000-bekanntmachung-der-neufassung-des-gesetzes-ueber-die-sonn-und-feiertage/"
+      },
+      {
+        "title": "アポネット：薬局の緊急当番検索",
+        "url": "https://www.aponet.de/notdienstsuche"
+      },
+      {
+        "title": "ラインバーン：公共交通の案内",
+        "url": "https://www.rheinbahn.de/"
+      },
+      {
+        "title": "ドイツ鉄道：公式アプリ",
+        "url": "https://int.bahn.de/en/booking-information/db-navigator"
+      }
+    ],
+    "image_url": "/assets/img/living/nrw-christmas-opening-hours-2026.webp",
+    "image_alt": "買い物袋、薬局の十字、公共交通を表す車両を組み合わせたJ-Connectのイラスト",
+    "image_caption": "J-Connect作成の模式図。実際の店舗や交通機関の運行状況を示すものではありません。",
+    "image_credit": "Illustration / J-Connect",
+    "image": "/assets/img/living/nrw-christmas-opening-hours-2026.webp"
   }
 ]

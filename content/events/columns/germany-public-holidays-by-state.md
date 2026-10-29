@@ -34,7 +34,7 @@ last_verified: "2026-10-27"
 canonical_url: "/germany/ja/events/columns/germany-public-holidays-by-state/"
 official_url: "https://www.bmi.bund.de/DE/themen/verfassung/staatliche-symbole/nationale-feiertage/nationale-feiertage-node.html"
 image: "/assets/img/events/germany-public-holidays-by-state.webp"
-image_alt: "赤い丸の付いたカレンダーと、色分けされたドイツの州の形を描いたイラスト"
+image_alt: "祝日の朝、お店が閉まった静かな旧市街の広場を歩く家族を描いたイラスト"
 image_caption: "イラスト：J-Connect。祝日のテーマを表したもので、州の正確な形や境界を示すものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

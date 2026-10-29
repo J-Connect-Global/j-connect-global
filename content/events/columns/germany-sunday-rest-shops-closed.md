@@ -34,7 +34,7 @@ last_verified: "2026-10-26"
 canonical_url: "/germany/ja/events/columns/germany-sunday-rest-shops-closed/"
 official_url: "https://www.gesetze-im-internet.de/gg/art_140.html"
 image: "/assets/img/events/germany-sunday-rest-shops-closed.webp"
-image_alt: "日曜日の朝、シャッターの下りた商店街と、開いているパン屋さんを描いたイラスト"
+image_alt: "日曜の朝、お店が閉まった静かな歩行者天国を歩く人を描いたイラスト"
 image_caption: "イラスト：J-Connect。日曜日の街のテーマを表したもので、特定の場所を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

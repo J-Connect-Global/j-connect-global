@@ -32,7 +32,7 @@ last_verified: "2026-10-21"
 canonical_url: "/germany/ja/events/news/europe-protests-mofa-october-2026/"
 official_url: "https://www.anzen.mofa.go.jp/info/pcwideareaspecificinfo_2026C052.html"
 image: "/assets/img/events/europe-protests-mofa-october-2026.webp"
-image_alt: "プラカードを掲げる人々と、カメラに禁止マークが付いたスマートフォンのイラスト"
+image_alt: "ヨーロッパの大きな駅で、スマートフォンで安全情報を確認する旅行者を描いたイラスト"
 image_caption: "イラスト：J-Connect。注意喚起のテーマを表したもので、実際の抗議の現場を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

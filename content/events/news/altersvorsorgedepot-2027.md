@@ -34,7 +34,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/news/altersvorsorgedepot-2027/"
 official_url: "https://www.bundesregierung.de/breg-de/aktuelles/reform-private-altersvorsorge-2400072"
 image: "/assets/img/events/altersvorsorgedepot-2027.webp"
-image_alt: "少しずつ積み上がるコインの山と、育っていく若木、ユーロのマークを描いたイラスト"
+image_alt: "台所のテーブルで、右肩上がりのグラフが表示されたタブレットを操作する手元を描いたイラスト"
 image_caption: "イラスト：J-Connect。老後の資産づくりのテーマを表したもので、特定の金融商品を示すものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

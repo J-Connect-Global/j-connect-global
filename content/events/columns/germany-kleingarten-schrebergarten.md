@@ -34,7 +34,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/columns/germany-kleingarten-schrebergarten/"
 official_url: "https://kleingarten-bund.de/de/bundesverband/zahlen-und-fakten"
 image: "/assets/img/events/germany-kleingarten-schrebergarten.webp"
-image_alt: "垣根で区切られた小さな庭が並び、それぞれに小さな木の小屋と野菜の畑がある様子を描いたイラスト"
+image_alt: "小さな木の小屋と野菜の畑がある、ドイツの市民農園の区画を描いたイラスト"
 image_caption: "イラスト：J-Connect。市民農園のテーマを表したもので、特定の農園を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

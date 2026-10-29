@@ -34,7 +34,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/columns/ruhr-coal-mining-history/"
 official_url: "https://www.unesco.de/staette/industriekomplex-zeche-zollverein-in-essen/"
 image: "/assets/img/events/ruhr-coal-mining-history.webp"
-image_alt: "夕焼けの空を背景に、赤い鉄骨の立坑櫓（たてこうやぐら）と工場の建物を描いたイラスト"
+image_alt: "夕日に照らされたルール地方の旧炭鉱の立坑やぐらを描いたイラスト"
 image_caption: "イラスト：J-Connect。ルール地方の炭鉱のテーマを表したもので、特定の施設を正確に再現したものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

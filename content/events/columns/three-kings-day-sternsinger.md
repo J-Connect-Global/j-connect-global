@@ -34,7 +34,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/columns/three-kings-day-sternsinger/"
 official_url: "https://www.sternsinger.de/sternsingen/"
 image: "/assets/img/events/three-kings-day-sternsinger.webp"
-image_alt: "冠をかぶり星の棒を持った3人の子どもが、雪の残る家のドアの前に立っている様子を描いたイラスト"
+image_alt: "冠をかぶり星の棒を持った3人の子どもが、雪の残る家のドアの前に立つ様子を描いたイラスト"
 image_caption: "イラスト：J-Connect。シュテルンジンガーのテーマを表したもので、特定の地域や団体の活動を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

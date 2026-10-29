@@ -32,7 +32,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/news/flu-covid-vaccination-2026-27/"
 official_url: "https://www.rki.de/DE/Themen/Infektionskrankheiten/Impfen/Impfungen-A-Z/COVID-19/Impfempfehlung-Zusfassung.html"
 image: "/assets/img/events/flu-covid-vaccination-2026-27.webp"
-image_alt: "注射器とワクチンの小瓶、予防接種手帳、窓の外に雪が降る診察室を描いたイラスト"
+image_alt: "診察室で大人の腕にワクチンを接種する医師の手元を描いたイラスト"
 image_caption: "イラスト：J-Connect。予防接種のテーマを表したもので、特定のワクチンや医療機関を描いたものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

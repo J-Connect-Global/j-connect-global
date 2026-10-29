@@ -34,7 +34,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/columns/cancel-contracts-germany/"
 official_url: "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/gesetz-fuer-fairere-vertraege-mehr-schutz-bei-kosten-und-laufzeiten-55274"
 image: "/assets/img/events/cancel-contracts-germany.webp"
-image_alt: "スマートフォンの画面の解約ボタンと、ジムのダンベル、契約書にはさみが入っている様子を描いたイラスト"
+image_alt: "ソファでスマートフォンを操作する人と、横に置かれたジムのバッグを描いたイラスト"
 image_caption: "イラスト：J-Connect。契約の解約のテーマを表したもので、特定の会社やサービスを描いたものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

@@ -34,7 +34,7 @@ last_verified: "2026-10-27"
 canonical_url: "/germany/ja/events/columns/advent-wreath-calendar-origin/"
 official_url: "https://katholisch.de/artikel/15632-der-erfinder-des-adventskranzes"
 image: "/assets/img/events/advent-wreath-calendar-origin.webp"
-image_alt: "ろうそくが4本立つモミの枝の輪と、小さな扉が並ぶカレンダーを描いたイラスト"
+image_alt: "1本目のろうそくが灯るアドベントリースと、後ろのアドベントカレンダーを描いたイラスト"
 image_caption: "イラスト：J-Connect。アドベントの習慣のテーマを表したもので、特定の家庭や施設を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

@@ -34,7 +34,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/columns/germany-silvester-fireworks-rules/"
 official_url: "https://www.bmi.bund.de/SharedDocs/faqs/DE/themen/bevoelkerungsschutz/silvester/silvester.html"
 image: "/assets/img/events/germany-silvester-fireworks-rules.webp"
-image_alt: "夜空に上がる色とりどりの花火と、川沿いの街のシルエットを描いたイラスト"
+image_alt: "大みそかの夜、ドイツの街の上空に上がる花火を描いたイラスト"
 image_caption: "イラスト：J-Connect。大晦日の花火のテーマを表したもので、特定の街や催しを再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

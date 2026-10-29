@@ -34,7 +34,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/columns/saint-nicholas-day-germany/"
 official_url: "https://www.katholisch.de/kirche-erklaert/riten-braeuche-und-traditionen/nikolaus"
 image: "/assets/img/events/saint-nicholas-day-germany.webp"
-image_alt: "玄関の前に置かれた子どもの長靴に、みかんやチョコレートが入っている様子を描いたイラスト"
+image_alt: "玄関に置かれたブーツに、みかんやくるみ、チョコレートが入っている様子を描いたイラスト"
 image_caption: "イラスト：J-Connect。聖ニコラウスの日のテーマを表したもので、特定の家庭を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

@@ -32,7 +32,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/news/wohngeld-reform-2027/"
 official_url: "https://www.bundestag.de/presse/hib/kurzmeldungen-1222360"
 image: "/assets/img/events/wohngeld-reform-2027.webp"
-image_alt: "集合住宅の建物と、暖房のラジエーター、ユーロ硬貨の入った封筒を描いたイラスト"
+image_alt: "秋の夕方、窓に明かりが灯るドイツの集合住宅を描いたイラスト"
 image_caption: "イラスト：J-Connect。住宅手当のテーマを表したもので、特定の建物や制度の書類を描いたものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

@@ -36,7 +36,7 @@ last_verified: "2026-10-26"
 canonical_url: "/germany/ja/events/news/health-insurance-zusatzbeitrag-2027/"
 official_url: "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/ergebnisse-gkv-schaetzerkreis-zusatzbeitragssatz"
 image: "/assets/img/events/health-insurance-zusatzbeitrag-2027.webp"
-image_alt: "保険証のカードと、上向き・横向き・下向きの3本の矢印、電卓を描いたイラスト"
+image_alt: "台所のテーブルで手紙を見比べ、電卓で計算する人を描いたイラスト"
 image_caption: "イラスト：J-Connect。追加保険料率のテーマを表したもので、実在の保険証や公式資料を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

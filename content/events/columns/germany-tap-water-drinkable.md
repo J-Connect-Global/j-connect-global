@@ -34,7 +34,7 @@ last_verified: "2026-10-27"
 canonical_url: "/germany/ja/events/columns/germany-tap-water-drinkable/"
 official_url: "https://www.umweltbundesamt.de/themen/wasser/trinkwasser/trinkwasserqualitaet"
 image: "/assets/img/events/germany-tap-water-drinkable.webp"
-image_alt: "キッチンの蛇口からグラスに水を注ぐ様子を描いたイラスト"
+image_alt: "台所の蛇口から、グラスに注がれる透明な水道水を描いたイラスト"
 image_caption: "イラスト：J-Connect。水道水のテーマを表したもので、特定の住宅を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

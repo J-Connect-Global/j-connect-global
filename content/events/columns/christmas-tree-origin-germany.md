@@ -32,7 +32,7 @@ last_verified: "2026-10-27"
 canonical_url: "/germany/ja/events/columns/christmas-tree-origin-germany/"
 official_url: "https://katholisch.de/artikel/317-weihnachtsbaum"
 image: "/assets/img/events/christmas-tree-origin-germany.webp"
-image_alt: "赤いリンゴとろうそくを飾ったもみの木を描いたイラスト"
+image_alt: "わらの星やりんごで飾られたクリスマスツリーと、暖かい居間を描いたイラスト"
 image_caption: "イラスト：J-Connect。昔のクリスマスツリーのテーマを表したもので、特定の家庭や時代を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

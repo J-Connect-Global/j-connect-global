@@ -20,7 +20,7 @@ source_type: "manual"
 canonical_url: "/germany/ja/events/news/germany-january-2027-changes/"
 official_url: ""
 image: "/assets/img/events/germany-january-2027-changes.webp"
-image_alt: "2027年1月のカレンダーと、ユーロ硬貨・乗車券・医療保険・子どもを表すアイコンのイラスト"
+image_alt: "壁の1月のカレンダーと、机の上のノートパソコンと書類を描いたイラスト"
 image_caption: "イラスト：J-Connect。制度変更のテーマを表したもので、公式資料を再現していません。"
 image_credit: "Illustration / J-Connect"
 related_articles: ["deutschlandticket-2027-price-consent", "db-2027-timetable-family-ticket", "germany-september-2026-changes", "kindergeld-auszahlungstermine-2027", "minijob-grenze-2027"]

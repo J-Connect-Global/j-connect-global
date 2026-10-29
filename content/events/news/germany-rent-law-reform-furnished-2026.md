@@ -32,7 +32,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/news/germany-rent-law-reform-furnished-2026/"
 official_url: "https://www.bmjv.de/SharedDocs/Pressemitteilungen/DE/2026/0429_Miete_II.html"
 image: "/assets/img/events/germany-rent-law-reform-furnished-2026.webp"
-image_alt: "ソファとテーブル、ランプが置かれた家具付きの部屋と、賃貸契約書と鍵を描いたイラスト"
+image_alt: "家具がそろった明るい賃貸アパートの居間と、テーブルの上の鍵を描いたイラスト"
 image_caption: "イラスト：J-Connect。家具付き賃貸のテーマを表したもので、特定の物件を描いたものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

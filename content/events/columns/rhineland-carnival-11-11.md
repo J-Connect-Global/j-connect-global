@@ -34,7 +34,7 @@ last_verified: "2026-10-26"
 canonical_url: "/germany/ja/events/columns/rhineland-carnival-11-11/"
 official_url: "https://www.stadt-koeln.de/artikel/08212/index.html"
 image: "/assets/img/events/rhineland-carnival-11-11.webp"
-image_alt: "11時11分を指す時計と、紙吹雪、道化の帽子を描いたイラスト"
+image_alt: "カラフルな仮装をした人々でにぎわう、ラインラントの旧市街の通りを描いたイラスト"
 image_caption: "イラスト：J-Connect。カーニバルの始まりのテーマを表したもので、特定の催しを再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

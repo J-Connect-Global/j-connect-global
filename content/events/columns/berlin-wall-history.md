@@ -34,7 +34,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/columns/berlin-wall-history/"
 official_url: "https://www.stiftung-berliner-mauer.de/de/ueber-uns/leichte-sprache/geschichte"
 image: "/assets/img/events/berlin-wall-history.webp"
-image_alt: "灰色のコンクリートの壁の一部と、その向こうに見えるテレビ塔のシルエットを描いたイラスト"
+image_alt: "記念の場所に残る灰色のコンクリートの壁と、地面に続く2列の石畳を描いたイラスト"
 image_caption: "イラスト：J-Connect。ベルリンの壁のテーマを表したもので、特定の場所を正確に再現したものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

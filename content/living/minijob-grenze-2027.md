@@ -13,8 +13,8 @@ next_review: "2027-01-15"
 canonical_url: "/germany/ja/living/minijob-grenze-2027/"
 tags: ["Minijob", "ミニジョブ", "最低賃金", "2027年", "副業", "税金", "社会保険"]
 image: "/assets/img/living/minijob-grenze-2027.webp"
-image_alt: "給与明細、勤務時間を示す時計、ユーロ硬貨を並べたJ-Connectのイラスト"
-image_caption: "J-Connect作成の模式図。実際の給与明細や特定の職場を示すものではありません。"
+image_alt: "小さなカフェのカウンターで働く人と、コーヒーマシンを描いたイラスト"
+image_caption: "イラスト：J-Connect。ミニジョブのテーマを表したもので、特定の職場や給与明細を描いたものではありません。"
 image_credit: "Illustration / J-Connect"
 related_articles: ["germany-january-2027-changes", "tax-id-steuernummer-steuerklasse", "germany-first-30-days"]
 official_sources:

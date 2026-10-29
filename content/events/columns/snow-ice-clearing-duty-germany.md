@@ -32,7 +32,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/columns/snow-ice-clearing-duty-germany/"
 official_url: "https://www.duesseldorf.de/umweltamt/umwelt-und-verbraucherthemen-von-a-z/strassenreinigung/winterdienst"
 image: "/assets/img/events/snow-ice-clearing-duty-germany.webp"
-image_alt: "雪が積もった集合住宅の前の歩道を、スコップで雪かきしている人と、滑り止めの砂の袋を描いたイラスト"
+image_alt: "朝早く、集合住宅の前の歩道の雪をスコップで片付ける人を描いたイラスト"
 image_caption: "イラスト：J-Connect。冬の雪かきのテーマを表したもので、特定の場所や人物を描いたものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

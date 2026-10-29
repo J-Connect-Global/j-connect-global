@@ -6,8 +6,8 @@
 
   const DECKS_URL = "/assets/data/learn-german/flashcards/decks.json";
   const DATA_BASE = "/assets/data/learn-german/flashcards/";
-  const INVENTORY_SCRIPT_URL = "/assets/js/learn-german-flashcards-inventory.js?v=vocabulary-sheet-20261021";
-  const TARGETS_SCRIPT_URL = "/assets/js/learn-german-flashcards-targets.js?v=vocabulary-sheet-20261021";
+  const INVENTORY_SCRIPT_URL = "/assets/js/learn-german-flashcards-inventory.js?v=vocabulary-sheet-20261029";
+  const TARGETS_SCRIPT_URL = "/assets/js/learn-german-flashcards-targets.js?v=vocabulary-sheet-20261029";
   const BACKUP_SCHEMA_VERSION = 1;
   const CARD_ID_PATTERN = /^(?:(?:expand|edit)-)?(?:a1|a2|b1|b2|c1|c2)-(?:[a-z]+-)?\d{3,5}$/;
   const MAX_BACKUP_PROGRESS = 60000;

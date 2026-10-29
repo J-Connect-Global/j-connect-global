@@ -4509,5 +4509,216 @@
     ],
     "image": "/assets/img/events/german-school-grades-1-to-6.webp",
     "image_alt": "机の上に置かれた成績表と、赤い数字の1が書かれたテスト用紙、鉛筆を描いたイラスト"
+  },
+  {
+    "slug": "germany-inflation-september-2026",
+    "id": "N026",
+    "content_type": "news",
+    "url": "/germany/ja/events/news/germany-inflation-september-2026/",
+    "markdown_path": "/content/events/news/germany-inflation-september-2026.md",
+    "canonical_url": "/germany/ja/events/news/germany-inflation-september-2026/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 933,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2026-11-15"
+    },
+    "title": "ドイツの9月物価は3.3％上昇｜2023年12月以来の高さ、エネルギーが14.9％上昇",
+    "category": "暮らし・物価",
+    "summary": "ドイツの2026年9月の消費者物価は前年同月比3.3％上昇し、2023年12月以来の高い伸びになりました。主な原因は暖房用灯油やガソリンなどのエネルギーで、前年比14.9％の上昇です。一方、食品は0.4％とほぼ横ばい。10月から始まった燃料税の一時的な引き下げとあわせて、家計への影響を整理します。",
+    "published_at": "2026-10-29",
+    "last_verified": "2026-10-29",
+    "tags": [
+      "物価",
+      "インフレ",
+      "家計",
+      "エネルギー",
+      "ガソリン",
+      "燃料税",
+      "ドイツ生活"
+    ],
+    "updated_at": "2026-10-29",
+    "related_articles": [
+      "germany-inflation-august-2026",
+      "germany-january-2027-changes",
+      "health-insurance-zusatzbeitrag-2027"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026年9月統計・10月13日発表",
+    "official_url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_364_611.html",
+    "official_sources": [
+      {
+        "title": "連邦統計局：2026年9月の消費者物価・確定値（10月13日）",
+        "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_364_611.html"
+      },
+      {
+        "title": "連邦統計局：2026年9月の消費者物価・速報値（9月30日）",
+        "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/09/PD26_348_611.html"
+      },
+      {
+        "title": "連邦統計局：消費者物価指数",
+        "url": "https://www.destatis.de/DE/Themen/Wirtschaft/Preise/Verbraucherpreisindex/_inhalt.html"
+      },
+      {
+        "title": "連邦政府：2026年10月の法改正（燃料税の引き下げ）",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/gesetzliche-neuregelungen-oktober-2026-2454624"
+      },
+      {
+        "title": "連邦議会：燃料税の一時引き下げを可決（2026年9月25日）",
+        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw39-de-versicherung-aufsicht-1216898"
+      }
+    ],
+    "image": "/assets/img/events/germany-inflation-september-2026.webp",
+    "image_alt": "右肩上がりの折れ線グラフと、ガソリンスタンドの給油ノズル、灯油のタンクを描いたイラスト"
+  },
+  {
+    "slug": "sugar-drink-tax-germany-2027",
+    "id": "N027",
+    "content_type": "news",
+    "url": "/germany/ja/events/news/sugar-drink-tax-germany-2027/",
+    "markdown_path": "/content/events/news/sugar-drink-tax-germany-2027.md",
+    "canonical_url": "/germany/ja/events/news/sugar-drink-tax-germany-2027/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 934,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2026-12-15"
+    },
+    "title": "ドイツで「砂糖入り飲料税」導入へ｜2027年7月から、コーラや甘いジュースに1リットル26〜32セント",
+    "category": "生活・制度",
+    "summary": "ドイツ政府は2026年10月14日、砂糖を加えた飲み物に課税する法案をまとめました。100ミリリットルあたり5グラム以上の砂糖を含む飲み物が対象で、2027年7月1日からの導入を目指します。税額の2段階、対象になる飲み物とならない飲み物、税収の使い道、今後の手続きを整理します。",
+    "published_at": "2026-10-29",
+    "last_verified": "2026-10-29",
+    "tags": [
+      "砂糖入り飲料税",
+      "砂糖税",
+      "清涼飲料",
+      "健康保険",
+      "税金",
+      "2027年",
+      "ドイツ生活"
+    ],
+    "updated_at": "2026-10-29",
+    "related_articles": [
+      "health-insurance-zusatzbeitrag-2027",
+      "germany-inflation-september-2026",
+      "germany-january-2027-changes"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2027-07-01 導入予定（連邦議会の議決が必要）",
+    "official_url": "https://www.bundesfinanzministerium.de/Content/DE/Pressemitteilungen/Finanzpolitik/2026/10/2026-10-14-gesetzentwurf-zuckergetraenkesteuer.html",
+    "official_sources": [
+      {
+        "title": "連邦財務省：砂糖入り飲料税の法案を閣議決定（2026年10月14日）",
+        "url": "https://www.bundesfinanzministerium.de/Content/DE/Pressemitteilungen/Finanzpolitik/2026/10/2026-10-14-gesetzentwurf-zuckergetraenkesteuer.html"
+      },
+      {
+        "title": "連邦政府：閣議で砂糖入り飲料への課税",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/zuckergetraenkesteuer-2457018"
+      },
+      {
+        "title": "連邦議会：砂糖税の計画の詳細",
+        "url": "https://www.bundestag.de/presse/hib/kurzmeldungen-1185020"
+      },
+      {
+        "title": "連邦議会調査局：英国などの砂糖入り飲料税",
+        "url": "https://www.bundestag.de/resource/blob/1161518/WD-4-012-26-WD-8-014-26.pdf"
+      }
+    ],
+    "image": "/assets/img/events/sugar-drink-tax-germany-2027.webp",
+    "image_alt": "清涼飲料のボトルと缶、角砂糖、ユーロ硬貨を描いたイラスト"
+  },
+  {
+    "slug": "altersvorsorgedepot-2027",
+    "id": "N028",
+    "content_type": "news",
+    "url": "/germany/ja/events/news/altersvorsorgedepot-2027/",
+    "markdown_path": "/content/events/news/altersvorsorgedepot-2027.md",
+    "canonical_url": "/germany/ja/events/news/altersvorsorgedepot-2027/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 935,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2026-12-31"
+    },
+    "title": "【2027年1月から】リースターに代わる「老後資金口座」スタート｜ETFも対象、国の補助は最大年540ユーロ",
+    "category": "お金・制度",
+    "summary": "ドイツの個人年金制度が2027年1月1日から大きく変わります。これまでのリースター年金に代わり、ETFなどで運用できる「老後資金口座（Altersvorsorgedepot）」が始まります。国の補助の計算方法、年間の上限、費用の上限、既存のリースター契約の扱い、注意点を整理します。",
+    "published_at": "2026-10-29",
+    "last_verified": "2026-10-29",
+    "tags": [
+      "年金",
+      "老後資金",
+      "リースター",
+      "ETF",
+      "補助金",
+      "2027年",
+      "お金",
+      "ドイツ生活"
+    ],
+    "updated_at": "2026-10-29",
+    "related_articles": [
+      "germany-january-2027-changes",
+      "germany-inflation-september-2026",
+      "health-insurance-zusatzbeitrag-2027"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2027-01-01 開始",
+    "official_url": "https://www.bundesregierung.de/breg-de/aktuelles/reform-private-altersvorsorge-2400072",
+    "official_sources": [
+      {
+        "title": "連邦議会：個人年金の改革を可決（2026年3月）",
+        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw13-de-altersvorsorge-1156798"
+      },
+      {
+        "title": "連邦議会：委員会での修正（費用の上限など）",
+        "url": "https://www.bundestag.de/presse/hib/kurzmeldungen-1157838"
+      },
+      {
+        "title": "連邦政府：個人年金の改革",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/reform-private-altersvorsorge-2400072"
+      },
+      {
+        "title": "連邦財務省：個人年金の改革に関するよくある質問",
+        "url": "https://www.bundesfinanzministerium.de/Content/DE/FAQ/reform-der-privaten-altersvorsorge.html"
+      },
+      {
+        "title": "ドイツ年金保険：連邦参議院が改革を承認（2026年5月8日）",
+        "url": "https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Meldungen/2026/260508-bundesrat-reform-private-altersvorsorge"
+      },
+      {
+        "title": "消費者センター：新しい老後資金口座の注意点",
+        "url": "https://www.verbraucherzentrale.de/wissen/geld-versicherungen/altersvorsorge/neues-altersvorsorgedepot-rentenchance-oder-teure-verkaufsfalle-118178"
+      }
+    ],
+    "image": "/assets/img/events/altersvorsorgedepot-2027.webp",
+    "image_alt": "少しずつ積み上がるコインの山と、育っていく若木、ユーロのマークを描いたイラスト"
   }
 ]

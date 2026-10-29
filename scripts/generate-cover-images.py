@@ -4,7 +4,9 @@
 Reads a manifest such as docs/article-image-generation-2026-10-29.json, generates one
 16:9 image per pending entry, writes <slug>.webp / -768w / -480w next to the article's
 current hero, and updates image_alt / image_caption / image_credit in the article
-frontmatter. The API key is read from GEMINI_API_KEY and is never printed.
+frontmatter. Authentication: either the environment's network secret adds the
+`x-goog-api-key` header for generativelanguage.googleapis.com (preferred; the key
+never enters the session), or GEMINI_API_KEY is set. The key is never printed.
 
 Usage:
   python3 scripts/generate-cover-images.py --manifest docs/article-image-generation-2026-10-29.json --limit 5
@@ -34,8 +36,10 @@ def generate(prompt, model, key):
         "instances": [{"prompt": prompt}],
         "parameters": {"sampleCount": 1, "aspectRatio": "16:9", "personGeneration": "allow_adult"},
     }).encode()
-    req = urllib.request.Request(API.format(model=model), data=body, method="POST",
-                                 headers={"Content-Type": "application/json", "x-goog-api-key": key})
+    headers = {"Content-Type": "application/json"}
+    if key:
+        headers["x-goog-api-key"] = key
+    req = urllib.request.Request(API.format(model=model), data=body, method="POST", headers=headers)
     for attempt in range(4):
         try:
             with urllib.request.urlopen(req, timeout=180) as res:
@@ -46,6 +50,10 @@ def generate(prompt, model, key):
             return base64.b64decode(preds[0]["bytesBase64Encoded"])
         except urllib.error.HTTPError as err:
             detail = err.read().decode(errors="replace")[:300]
+            if err.code in (401, 403) and not key:
+                raise RuntimeError(f"HTTP {err.code}: authentication failed. Check that the network secret "
+                                   "uses header x-goog-api-key with an empty prefix for "
+                                   f"generativelanguage.googleapis.com. {detail}") from None
             if err.code in (429, 500, 503) and attempt < 3:
                 time.sleep(2 ** (attempt + 2))
                 continue
@@ -104,7 +112,8 @@ def main():
     entries = json.load(open(manifest_path, encoding="utf-8"))
     key = os.environ.get("GEMINI_API_KEY", "")
     if not key and not args.from_png:
-        sys.exit("GEMINI_API_KEY is not set.")
+        print("GEMINI_API_KEY is not set; relying on the environment's network secret "
+              "to add x-goog-api-key for generativelanguage.googleapis.com.")
     os.makedirs(args.raw_dir, exist_ok=True)
 
     if args.only:

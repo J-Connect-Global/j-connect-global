@@ -10,7 +10,9 @@
 
 ## 必要なもの
 
-- 環境変数 `GEMINI_API_KEY`（Gemini APIのキー。環境設定のNetwork secretsか環境変数として登録し、新しいセッションで読み込みます）
+- Gemini APIのキー。次のどちらかで登録し、新しいセッションで読み込みます。
+  - **Network secrets（推奨）**：Allowed websites に `generativelanguage.googleapis.com`、Header name に `x-goog-api-key`、Prefix は空、Value にキー。キーはセッションの中に入らず、送信時に自動で付きます。スクリプトは `GEMINI_API_KEY` がなくても、このまま動きます。
+  - **環境変数**：`GEMINI_API_KEY=<キー>`
 - 必要なら `GEMINI_IMAGE_MODEL` でモデルを変更（既定は `imagen-4.0-generate-001`）
 
 ## 手順

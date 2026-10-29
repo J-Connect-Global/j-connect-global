@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+<title id="title">花火を使用してはいけない場所</title>
+<desc id="desc">ドイツの法令は、教会、病院、子ども・高齢者施設、特に火災に弱い建物や設備のすぐ近くで花火を使用することを禁じています。自治体の追加規制もあります。</desc>
+<rect width="1200" height="650" rx="28" fill="#f3f6f9"/>
+<text x="600" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#263746">花火の前に場所を確認</text>
+<g font-family="Arial, sans-serif" fill="#263746">
+<rect x="70" y="115" width="500" height="175" rx="22" fill="#ffffff" stroke="#b84b4b" stroke-width="3"/>
+<circle cx="135" cy="175" r="30" fill="#fbe9e9" stroke="#b84b4b" stroke-width="2"/>
+<path d="M120 160 L150 190 M150 160 L120 190" stroke="#b84b4b" stroke-width="6" stroke-linecap="round"/>
+<text x="190" y="165" font-size="24" font-weight="700">教会・病院</text>
+<text x="190" y="205" font-size="19">すぐ近くでの使用は禁止</text>
+<text x="190" y="238" font-size="17">法令上の禁止場所</text>
+<rect x="630" y="115" width="500" height="175" rx="22" fill="#ffffff" stroke="#b84b4b" stroke-width="3"/>
+<circle cx="695" cy="175" r="30" fill="#fbe9e9" stroke="#b84b4b" stroke-width="2"/>
+<path d="M680 160 L710 190 M710 160 L680 190" stroke="#b84b4b" stroke-width="6" stroke-linecap="round"/>
+<text x="750" y="165" font-size="24" font-weight="700">子ども・高齢者施設</text>
+<text x="750" y="205" font-size="19">すぐ近くでの使用は禁止</text>
+<text x="750" y="238" font-size="17">施設周辺を避ける</text>
+<rect x="70" y="320" width="500" height="175" rx="22" fill="#ffffff" stroke="#b84b4b" stroke-width="3"/>
+<circle cx="135" cy="380" r="30" fill="#fbe9e9" stroke="#b84b4b" stroke-width="2"/>
+<path d="M120 365 L150 395 M150 365 L120 395" stroke="#b84b4b" stroke-width="6" stroke-linecap="round"/>
+<text x="190" y="370" font-size="24" font-weight="700">特に火災に弱い建物</text>
+<text x="190" y="410" font-size="19">すぐ近くでの使用は禁止</text>
+<text x="190" y="443" font-size="17">建物の構造・周囲に注意</text>
+<rect x="630" y="320" width="500" height="175" rx="22" fill="#fff4e5" stroke="#b97722" stroke-width="3"/>
+<text x="695" y="372" font-size="23" font-weight="700" fill="#8a5519">追加の地域規制</text>
+<text x="695" y="410" font-size="19">自治体が区域・時間を制限する場合</text>
+<text x="695" y="443" font-size="17">年末の最新告知を確認</text>
+<text x="600" y="555" text-anchor="middle" font-size="18" fill="#526474">模式図。距離や自治体の禁止区域を地図上に示すものではありません。</text>
+</g>
+</svg>

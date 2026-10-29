@@ -4293,5 +4293,221 @@
     ],
     "image": "/assets/img/events/ruhr-coal-mining-history.webp",
     "image_alt": "夕焼けの空を背景に、赤い鉄骨の立坑櫓（たてこうやぐら）と工場の建物を描いたイラスト"
+  },
+  {
+    "slug": "three-kings-day-sternsinger",
+    "id": "C024",
+    "content_type": "column",
+    "url": "/germany/ja/events/columns/three-kings-day-sternsinger/",
+    "markdown_path": "/content/events/columns/three-kings-day-sternsinger.md",
+    "canonical_url": "/germany/ja/events/columns/three-kings-day-sternsinger/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 930,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2027-11-01"
+    },
+    "title": "ドアに書かれた「20*C+M+B+27」とは？｜1月6日の三賢王の日と、家々を回る子どもたち「シュテルンジンガー」",
+    "category": "ドイツ雑学・季節文化",
+    "summary": "年が明けると、ドイツの家のドアの上にチョークで「20*C+M+B+27」と書かれているのを見かけます。三賢王の姿をした子どもたち「シュテルンジンガー」が残していく祝福のしるしです。C+M+Bの意味、1959年から続く子どもたちの募金活動、ケルン大聖堂の三賢王の聖遺物とのつながりを紹介します。",
+    "published_at": "2026-10-29",
+    "last_verified": "2026-10-29",
+    "tags": [
+      "三賢王の日",
+      "シュテルンジンガー",
+      "1月6日",
+      "年末年始",
+      "ドイツ雑学",
+      "季節文化",
+      "ケルン",
+      "募金"
+    ],
+    "updated_at": "2026-10-29",
+    "related_articles": [
+      "cologne-cathedral-632-years",
+      "saint-nicholas-day-germany",
+      "christmas-tree-origin-germany"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2027-01-06 三賢王の日",
+    "official_url": "https://www.sternsinger.de/sternsingen/",
+    "official_sources": [
+      {
+        "title": "シュテルンジンガー（子ども宣教会）：シュテルンジンガーがやってくる",
+        "url": "https://www.sternsinger.de/sternsingen/"
+      },
+      {
+        "title": "シュテルンジンガー：2027年の活動の開幕",
+        "url": "https://www.sternsinger.de/presse/pressemitteilungen/detail/sternsingerinnen-und-sternsinger-feiern-in-muenster-die-eroeffnung-ihrer-aktion-dreikoenigssingen-2027/"
+      },
+      {
+        "title": "シュテルンジンガー：2026年の募金結果",
+        "url": "https://www.sternsinger.de/sternsingen/sammelergebnis-2026/"
+      },
+      {
+        "title": "カトリック教会ポータル（katholisch.de）：C+M+B",
+        "url": "https://katholisch.de/lexikon/897-cmb"
+      },
+      {
+        "title": "カトリック教会ポータル（katholisch.de）：家の祝福の歴史",
+        "url": "https://katholisch.de/artikel/42843-aelter-als-die-sternsinger-die-geschichte-der-haussegnung"
+      },
+      {
+        "title": "ドイツ・ユネスコ委員会：シュテルンジンゲン（無形文化遺産）",
+        "url": "https://www.unesco.de/staette/sternsingen/"
+      }
+    ],
+    "image": "/assets/img/events/three-kings-day-sternsinger.webp",
+    "image_alt": "冠をかぶり星の棒を持った3人の子どもが、雪の残る家のドアの前に立っている様子を描いたイラスト"
+  },
+  {
+    "slug": "berlin-wall-history",
+    "id": "C025",
+    "content_type": "column",
+    "url": "/germany/ja/events/columns/berlin-wall-history/",
+    "markdown_path": "/content/events/columns/berlin-wall-history.md",
+    "canonical_url": "/germany/ja/events/columns/berlin-wall-history/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 931,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2027-10-01"
+    },
+    "title": "ベルリンの壁はどこにあった？｜1961年から28年間、155kmの壁と、1989年11月9日の夜",
+    "category": "ドイツ雑学・歴史",
+    "summary": "ベルリンの街を東西に分けていた壁は、1961年8月13日に造られ始め、1989年11月9日に開かれました。全長約155km、壁で命を落とした人は少なくとも140人。壁ができた理由、壁の構造、記者会見の「言い間違い」から始まった壁の崩壊、今も残る壁のあとと記念の場所を紹介します。",
+    "published_at": "2026-10-29",
+    "last_verified": "2026-10-29",
+    "tags": [
+      "ベルリンの壁",
+      "ベルリン",
+      "東西ドイツ",
+      "冷戦",
+      "ドイツ統一",
+      "ドイツ雑学",
+      "歴史"
+    ],
+    "updated_at": "2026-10-29",
+    "related_articles": [
+      "berlin-weekend-trip",
+      "germany-public-holidays-by-state",
+      "ruhr-coal-mining-history"
+    ],
+    "city": "ベルリン",
+    "location": "ベルリンの壁記念センター（ベルナウアー通り）など",
+    "event_date": "ドイツ雑学のコラム",
+    "official_url": "https://www.stiftung-berliner-mauer.de/de/ueber-uns/leichte-sprache/geschichte",
+    "official_sources": [
+      {
+        "title": "ベルリンの壁財団：ベルリンの壁の歴史",
+        "url": "https://www.stiftung-berliner-mauer.de/de/ueber-uns/leichte-sprache/geschichte"
+      },
+      {
+        "title": "ベルリンの壁財団：ベルリンの壁の犠牲者",
+        "url": "https://www.stiftung-berliner-mauer.de/sites/default/files/media/standorte/sbm/historischer%20ort/themen/2017_08_08_hertle_nooke_berliner_mauer_todesopfer.pdf"
+      },
+      {
+        "title": "連邦政治教育センター：1961年 ベルリンの壁の建設",
+        "url": "https://www.bpb.de/kurz-knapp/hintergrund-aktuell/337560/1961-bau-der-berliner-mauer/"
+      },
+      {
+        "title": "連邦政治教育センター：1989年11月9日",
+        "url": "https://www.bpb.de/themen/deutsche-einheit/deutsche-teilung-deutsche-einheit/43731/der-9-november-1989/"
+      },
+      {
+        "title": "連邦政治教育センター：壁の崩壊",
+        "url": "https://www.bpb.de/themen/deutsche-teilung/ddr-kompakt/521628/mauerfall/"
+      },
+      {
+        "title": "ベルリンの壁財団：ベルナウアー通り",
+        "url": "https://www.stiftung-berliner-mauer.de/en/berlin-wall-memorial/historical-site/bernauer-strasse"
+      }
+    ],
+    "image": "/assets/img/events/berlin-wall-history.webp",
+    "image_alt": "灰色のコンクリートの壁の一部と、その向こうに見えるテレビ塔のシルエットを描いたイラスト"
+  },
+  {
+    "slug": "german-school-grades-1-to-6",
+    "id": "C026",
+    "content_type": "column",
+    "url": "/germany/ja/events/columns/german-school-grades-1-to-6/",
+    "markdown_path": "/content/events/columns/german-school-grades-1-to-6.md",
+    "canonical_url": "/germany/ja/events/columns/german-school-grades-1-to-6/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 932,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2027-08-01"
+    },
+    "title": "ドイツの学校は「成績1」が一番いい？｜1〜6の成績の意味と、高校の「15点満点」",
+    "category": "ドイツ雑学・暮らし",
+    "summary": "ドイツの学校の成績は、1が「とてもよい」、6が「不十分」。日本の5段階評価とは数字の向きが逆です。NRW州の学校法が定める6段階の意味、小学校1・2年生では成績を付けないこと、高校（ギムナジウム上級段階）の0〜15点の仕組み、成績表の読み方を紹介します。",
+    "published_at": "2026-10-29",
+    "last_verified": "2026-10-29",
+    "tags": [
+      "学校",
+      "成績",
+      "成績表",
+      "ギムナジウム",
+      "アビトゥーア",
+      "子育て",
+      "ドイツ雑学",
+      "NRW"
+    ],
+    "updated_at": "2026-10-29",
+    "related_articles": [
+      "kita-u3-tagesmutter-guide",
+      "nrw-school-holidays-2026-2027",
+      "germany-public-holidays-by-state"
+    ],
+    "city": "NRW（ノルトライン＝ヴェストファーレン州）",
+    "location": "",
+    "event_date": "ドイツ雑学のコラム",
+    "official_url": "https://www.schulministerium.nrw/wie-kommt-eine-zeugnisnote-zustande",
+    "official_sources": [
+      {
+        "title": "NRW州 学校法 第48条（成績評価の原則）",
+        "url": "https://recht.nrw.de/lmi/owa/br_bes_detail?sg=0&menu=1&bes_id=7345&anw_nr=2&aufgehoben=N&det_id=703715"
+      },
+      {
+        "title": "NRW州学校省：成績表の成績はどう決まる？",
+        "url": "https://www.schulministerium.nrw/wie-kommt-eine-zeugnisnote-zustande"
+      },
+      {
+        "title": "NRW州学校省：小学校のAからZ",
+        "url": "https://www.schulministerium.nrw/die-grundschule-von-bis-z"
+      },
+      {
+        "title": "常設各州文部大臣会議（KMK）：ギムナジウム上級段階とアビトゥーアに関する協定",
+        "url": "https://www.kmk.org/fileadmin/Dateien/pdf/PresseUndAktuelles/2023/2023_03_16-Vereinb-GymnOberstufe-Abitur.pdf"
+      }
+    ],
+    "image": "/assets/img/events/german-school-grades-1-to-6.webp",
+    "image_alt": "机の上に置かれた成績表と、赤い数字の1が書かれたテスト用紙、鉛筆を描いたイラスト"
   }
 ]

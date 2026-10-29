@@ -3370,6 +3370,76 @@
     ]
   },
   {
+    "id": "L055",
+    "slug": "ees-etias-germany-japan-travel-2026",
+    "url": "/germany/ja/living/ees-etias-germany-japan-travel-2026/",
+    "markdown_path": "/content/living/ees-etias-germany-japan-travel-2026.md",
+    "published": false,
+    "status": "draft",
+    "home_visible": false,
+    "home_order": 109,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; immigration-law review pending",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2026-11-04"
+    },
+    "title": "ドイツ入国のEES・ETIASとは？2026年の日本人旅行者・在住者向けガイド",
+    "category": "行政・滞在",
+    "summary": "EESは2026年4月10日に全面運用、ETIASは2026年10月29日時点で申請受付前です。日本人の短期旅行者と、ドイツの滞在許可を持つ在住者で必要な対応を分けて説明します。",
+    "published_at": "",
+    "last_verified": "2026-10-29",
+    "next_review": "2026-11-04",
+    "canonical_url": "/germany/ja/living/ees-etias-germany-japan-travel-2026/",
+    "tags": [
+      "EES",
+      "ETIAS",
+      "ドイツ入国",
+      "日本人旅行者",
+      "シェンゲン圏",
+      "滞在許可",
+      "2026年"
+    ],
+    "updated_at": "2026-10-29",
+    "related_articles": [
+      "residence-permit-renewal-germany",
+      "germany-first-30-days",
+      "germany-train-travel-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "EU公式：ETIASの現在の運用状況",
+        "url": "https://travel-europe.europa.eu/de/etias"
+      },
+      {
+        "title": "EU公式：ETIASの対象・有効期間・入国審査",
+        "url": "https://travel-europe.europa.eu/etias/ltr/about-etias/what-is-etias.html"
+      },
+      {
+        "title": "EU公式：ETIAS FAQ（滞在許可保持者の免除・料金）",
+        "url": "https://travel-europe.europa.eu/etias/faq"
+      },
+      {
+        "title": "EU公式：EESのよくある質問",
+        "url": "https://travel-europe.europa.eu/de/ees/ltr/faq"
+      },
+      {
+        "title": "EU公式：EESの対象外となる人",
+        "url": "https://travel-europe.europa.eu/de/ees/ltr/to-whom-does-ees-not-apply.html"
+      },
+      {
+        "title": "ドイツ外務省：EESの概要",
+        "url": "https://www.germany.info/us-en/2735594-2735594"
+      }
+    ],
+    "image_url": "",
+    "image_alt": ""
+  },
+  {
     "id": "L056",
     "slug": "minijob-grenze-2027",
     "title": "ドイツのMinijob（ミニジョブ）2027｜月633ユーロの上限・勤務時間・税金と保険",

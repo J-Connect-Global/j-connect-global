@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+<title id="title">任意申告か義務申告かを確認する判断フロー</title>
+<desc id="desc">まず申告義務がある事情を確認します。義務がない場合に限り、2022年分の任意申告の期限として2026年12月31日を確認します。迷う場合は税務当局や専門家へ相談します。</desc>
+<rect width="1200" height="640" rx="28" fill="#f3f6f9"/>
+<text x="600" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#263746">提出期限を確認する前に</text>
+<rect x="300" y="115" width="600" height="100" rx="20" fill="#ffffff" stroke="#536b7d" stroke-width="3"/>
+<text x="600" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#263746">申告義務がある事情は？</text>
+<text x="600" y="187" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#526474">税クラス・複数勤務先・その他の所得など</text>
+<path d="M600 215 V252 H300 V280 M600 252 H900 V280" fill="none" stroke="#536b7d" stroke-width="4" stroke-linecap="round"/>
+<rect x="80" y="280" width="440" height="150" rx="20" fill="#fff4e5" stroke="#b97722" stroke-width="3"/>
+<text x="300" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#8a5519">ある・分からない</text>
+<text x="300" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#263746">義務申告の条件と期限を確認</text>
+<text x="300" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#526474">必要なら税務専門家へ相談</text>
+<rect x="680" y="280" width="440" height="150" rx="20" fill="#edf4fa" stroke="#2e6688" stroke-width="3"/>
+<text x="900" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#2e6688">ない</text>
+<text x="900" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#263746">任意申告の期限を確認</text>
+<text x="900" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#526474">2022年分：2026年12月31日</text>
+<text x="600" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#526474">これは一般的な判断の目安であり、個別の申告義務を確定するものではありません。</text>
+<text x="600" y="540" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#526474">出典：ノルトライン＝ヴェストファーレン州税務当局の公式案内</text>
+</svg>

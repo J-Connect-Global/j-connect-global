@@ -3514,5 +3514,125 @@
     "image_caption": "J-Connect作成の模式図。実際の店舗や交通機関の運行状況を示すものではありません。",
     "image_credit": "Illustration / J-Connect",
     "image": "/assets/img/living/nrw-christmas-opening-hours-2026.webp"
+  },
+  {
+    "id": "L058",
+    "slug": "germany-tax-return-voluntary-2022-deadline",
+    "title": "ドイツの2022年分の所得税申告｜任意申告の期限は2026年12月31日",
+    "category": "税金・行政",
+    "summary": "ドイツで所得税申告が義務でない人は、2022年分の任意申告を原則2026年12月31日まで提出できます。義務申告との違い、ELSTERでの提出手順、必要書類と締切直前の確認事項を整理します。",
+    "url": "/germany/ja/living/germany-tax-return-voluntary-2022-deadline/",
+    "markdown_path": "/content/living/germany-tax-return-voluntary-2022-deadline.md",
+    "published": false,
+    "status": "draft",
+    "published_at": "",
+    "updated_at": "2026-10-29",
+    "last_verified": "2026-10-29",
+    "next_review": "2026-11-30",
+    "home_visible": false,
+    "home_order": 111,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "canonical_url": "/germany/ja/living/germany-tax-return-voluntary-2022-deadline/",
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; tax-specialist review not performed",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2026-11-30"
+    },
+    "tags": [
+      "所得税",
+      "確定申告",
+      "税金還付",
+      "ELSTER",
+      "2022年分",
+      "2026年期限",
+      "ドイツ生活"
+    ],
+    "related_articles": [
+      "tax-id-steuernummer-steuerklasse",
+      "germany-first-30-days",
+      "moving-checklist-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "ノルトライン＝ヴェストファーレン州税務当局：よくある質問（任意申告の期限）",
+        "url": "https://www.finanzamt.nrw.de/faq"
+      },
+      {
+        "title": "ノルトライン＝ヴェストファーレン州税務当局：申告義務と提出期限",
+        "url": "https://www.finanzamt.nrw.de/steuerinfos/weitere-themen/steuererklaerung/abgabepflichten-und-fristen"
+      },
+      {
+        "title": "ELSTER：個人向け電子申告",
+        "url": "https://www.elster.de/elsterweb/infoseite/privatpersonen"
+      },
+      {
+        "title": "ノルトライン＝ヴェストファーレン州税務当局：申告書類と証憑",
+        "url": "https://www.finanzamt.nrw.de/steuerinfos/weitere-themen/steuererklaerung/belege-zur-steuererklaerung"
+      }
+    ],
+    "image_url": "",
+    "image_alt": ""
+  },
+  {
+    "id": "L059",
+    "slug": "germany-new-years-eve-fireworks-2026",
+    "title": "ドイツの年越し花火2026/27｜販売日・使用日・禁止場所と安全ルール",
+    "category": "交通・暮らし",
+    "summary": "2026年の一般消費者向け年越し花火は、対象製品の販売期間が12月29〜31日、使用できる日は原則12月31日と1月1日です。年齢制限、法律上の禁止場所、自治体の追加規制と安全確認を整理します。",
+    "url": "/germany/ja/living/germany-new-years-eve-fireworks-2026/",
+    "markdown_path": "/content/living/germany-new-years-eve-fireworks-2026.md",
+    "published": false,
+    "status": "draft",
+    "published_at": "",
+    "updated_at": "2026-10-29",
+    "last_verified": "2026-10-29",
+    "next_review": "2026-12-15",
+    "home_visible": false,
+    "home_order": 112,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "canonical_url": "/germany/ja/living/germany-new-years-eve-fireworks-2026/",
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; local restrictions require pre-publication review",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2026-12-15"
+    },
+    "tags": [
+      "年越し",
+      "花火",
+      "大晦日",
+      "安全",
+      "ドイツの法律",
+      "2026年",
+      "2027年"
+    ],
+    "related_articles": [
+      "germany-public-holidays-by-state",
+      "germany-sunday-rest-shops-closed",
+      "nrw-christmas-opening-hours-2026"
+    ],
+    "official_sources": [
+      {
+        "title": "ドイツ火薬法施行令第22条：一般消費者への販売期間",
+        "url": "https://www.gesetze-im-internet.de/sprengv_1/__22.html"
+      },
+      {
+        "title": "ドイツ火薬法施行令第23条：使用日と禁止場所",
+        "url": "https://www.gesetze-im-internet.de/sprengv_1/__23.html"
+      },
+      {
+        "title": "NRW州警察：年越し花火の安全な購入・使用",
+        "url": "https://siegen-wittgenstein.polizei.nrw/artikel/silvester-den-jahresausklang-gemeinsam-richtig-feiern-aber-mit-sicherheit"
+      }
+    ],
+    "image_url": "",
+    "image_alt": ""
   }
 ]

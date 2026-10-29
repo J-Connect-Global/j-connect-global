@@ -494,7 +494,7 @@ function validateHome(datasets) {
     const selectableItems = type === 'events'
       ? items.filter((item) => !['news', 'column'].includes(item.content_type))
       : items;
-    const selected = homeItems(selectableItems, config.homeLimit, type === 'events');
+    const selected = homeItems(selectableItems, config.homeLimit, type === 'events', latestContentDate(Object.values(datasets).flat()));
     const markerContent = extractMarker(html, config.homeMarker);
 
     for (const item of selected) {
@@ -642,13 +642,38 @@ function localTargetExists(url) {
   return fs.existsSync(`${target}.html`);
 }
 
-function homeItems(items, limit, eventOrder = false) {
+function homeItems(items, limit, eventOrder = false, referenceDate = '') {
   return items
     .map((item, index) => ({ item, index }))
     .filter(({ item }) => item.published === true && item.home_visible === true)
-    .sort((a, b) => (eventOrder ? (a.item.home_order ?? Infinity) - (b.item.home_order ?? Infinity) : 0) || compareHomeItemEntries(a, b))
+    .sort((a, b) => (eventOrder ? compareHomeEventEntries(a, b, referenceDate) : 0) || compareHomeItemEntries(a, b))
     .slice(0, limit)
     .map(({ item }) => item);
+}
+
+// Mirrors build-content.mjs: upcoming events first, then undated, then past events.
+function compareHomeEventEntries(a, b, referenceDate) {
+  const rank = (item) => {
+    const dates = String(item.event_date || '').match(/20\d{2}-\d{2}-\d{2}/g);
+    const end = dates ? dates[dates.length - 1] : '';
+    if (!end) return [1, 0];
+    return end >= referenceDate ? [0, Date.parse(end)] : [2, -Date.parse(end)];
+  };
+  const [ra, va] = rank(a.item);
+  const [rb, vb] = rank(b.item);
+  if (ra !== rb) return ra - rb;
+  if (va !== vb) return va - vb;
+  return (a.item.home_order ?? Infinity) - (b.item.home_order ?? Infinity);
+}
+
+function latestContentDate(items) {
+  return items.reduce((latest, item) => {
+    for (const field of ['updated_at', 'published_at']) {
+      const value = String(item?.[field] || '').slice(0, 10);
+      if (/^20\d{2}-\d{2}-\d{2}$/.test(value) && value > latest) latest = value;
+    }
+    return latest;
+  }, '');
 }
 
 function compareHomeItemEntries(a, b) {

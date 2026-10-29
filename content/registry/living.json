@@ -13,8 +13,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "medical_family",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI source check; clinical review pending",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-10-11",
       "next_review_due": "2027-01-11"
     },
@@ -78,8 +78,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "living",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-09-28",
       "next_review_due": "2027-03-28"
     },
@@ -146,8 +146,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "living",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-09-28",
       "next_review_due": "2027-03-28"
     },
@@ -201,8 +201,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "living",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-09-21",
       "next_review_due": "2027-03-21"
     },
@@ -313,8 +313,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-10-01"
     },
@@ -379,8 +379,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-22",
       "next_review_due": "2026-09-15"
     },
@@ -445,8 +445,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-10-15"
     },
@@ -519,8 +519,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-09-15"
     }
@@ -588,8 +588,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-09-01"
     }
@@ -657,8 +657,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-09-30"
     }
@@ -722,8 +722,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-10-01"
     }
@@ -787,8 +787,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-09-15"
     }
@@ -856,8 +856,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-10-01"
     },
@@ -917,8 +917,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-10-15"
     }
@@ -986,8 +986,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-09-30"
     },
@@ -1070,8 +1070,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-22",
       "next_review_due": "2026-10-15"
     }
@@ -1126,8 +1126,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-10-15"
     }
@@ -1186,8 +1186,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-10-15"
     }
@@ -1246,8 +1246,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-10-15"
     }
@@ -1306,8 +1306,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-10-15"
     }
@@ -1366,8 +1366,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-10-15"
     }
@@ -1426,8 +1426,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-10-15"
     }
@@ -1486,8 +1486,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-10-15"
     }
@@ -1546,8 +1546,8 @@
     ],
     "disclaimer_type": "tourism",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-10-15"
     }
@@ -1597,8 +1597,8 @@
     ],
     "disclaimer_type": "administrative",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-08-30",
       "next_review_due": "2026-11-30"
     }
@@ -1661,8 +1661,8 @@
     ],
     "disclaimer_type": "housing",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-10-17",
       "next_review_due": "2027-01-17"
     }
@@ -1718,8 +1718,8 @@
     ],
     "disclaimer_type": "finance_contract",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-10-17",
       "next_review_due": "2027-01-17"
     },
@@ -1778,8 +1778,8 @@
     ],
     "disclaimer_type": "finance",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-10-17",
       "next_review_due": "2027-04-17"
     }
@@ -1839,8 +1839,8 @@
     ],
     "disclaimer_type": "tax",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-08-31",
       "next_review_due": "2026-11-30"
     }
@@ -1892,8 +1892,8 @@
     ],
     "disclaimer_type": "medical_family",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-08-31",
       "next_review_due": "2026-11-30"
     }
@@ -1976,8 +1976,8 @@
     ],
     "disclaimer_type": "family_administrative",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-08-31",
       "next_review_due": "2026-11-30"
     },
@@ -2053,8 +2053,8 @@
     ],
     "disclaimer_type": "administrative",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-10-17",
       "next_review_due": "2027-01-17"
     }
@@ -2118,8 +2118,8 @@
     ],
     "disclaimer_type": "administrative",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-08-30",
       "next_review_due": "2026-11-30"
     }
@@ -2162,8 +2162,8 @@
     "official_sources": [],
     "disclaimer_type": "administrative",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-08-31",
       "next_review_due": "2026-11-30"
     }
@@ -2226,8 +2226,8 @@
     ],
     "disclaimer_type": "medical_insurance",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-08-31",
       "next_review_due": "2026-11-30"
     },
@@ -2284,8 +2284,8 @@
     ],
     "disclaimer_type": "living",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-08-30",
       "next_review_due": "2027-02-28"
     },
@@ -2347,8 +2347,8 @@
     ],
     "disclaimer_type": "living",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-08-30",
       "next_review_due": "2027-02-28"
     },
@@ -2411,8 +2411,8 @@
     ],
     "disclaimer_type": "living",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-08-30",
       "next_review_due": "2026-11-30"
     },
@@ -2487,8 +2487,8 @@
     ],
     "disclaimer_type": "administrative",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-08-30",
       "next_review_due": "2026-11-30"
     },
@@ -2551,8 +2551,8 @@
     ],
     "disclaimer_type": "medical",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-08-30",
       "next_review_due": "2026-11-30"
     },
@@ -2615,8 +2615,8 @@
     ],
     "disclaimer_type": "consumer_contract",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-08-30",
       "next_review_due": "2026-12-01"
     },
@@ -2643,8 +2643,8 @@
     "canonical_url": "/germany/ja/living/stroller-buying-guide-germany/",
     "disclaimer_type": "medical_family",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-10-11",
       "next_review_due": "2027-01-11"
     },
@@ -2709,8 +2709,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "medical_family",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "AI editorial official-source verification",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-10-12",
       "next_review_due": "2027-01-12"
     },
@@ -2881,8 +2881,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "living",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "AI editorial official-source verification",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-10-19",
       "next_review_due": "2027-01-19"
     },
@@ -2945,8 +2945,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "living",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "AI editorial official-source verification",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-10-19",
       "next_review_due": "2027-01-19"
     },
@@ -3016,8 +3016,8 @@
     "canonical_url": "/germany/ja/living/winter-tires-germany-2026/",
     "disclaimer_type": "living",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI source verification; expert review pending",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-10-20",
       "next_review_due": "2027-10-01"
     },
@@ -3077,8 +3077,8 @@
     "canonical_url": "/germany/ja/living/nebenkostenabrechnung-2025-deadline/",
     "disclaimer_type": "consumer_contract",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI source verification; expert review pending",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-10-20",
       "next_review_due": "2027-01-10"
     },
@@ -3132,8 +3132,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "family_administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI source verification; legal/tax review pending",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-10-27",
       "next_review_due": "2027-01-27"
     },
@@ -3207,8 +3207,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "medical",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI source verification; clinical review pending",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-10-27",
       "next_review_due": "2027-01-27"
     },
@@ -3265,8 +3265,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "family_administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-10-27",
       "next_review_due": "2027-01-27"
     },
@@ -3324,8 +3324,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; legal review pending",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-10-27",
       "next_review_due": "2027-01-27"
     },
@@ -3391,8 +3391,8 @@
     "canonical_url": "/germany/ja/living/minijob-grenze-2027/",
     "disclaimer_type": "employment",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; employment-law review pending",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-10-28",
       "next_review_due": "2027-01-15"
     },
@@ -3468,8 +3468,8 @@
     "canonical_url": "/germany/ja/living/nrw-christmas-opening-hours-2026/",
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; local retail-law review pending",
+      "status": "ai_drafted_editor_checked",
+      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
       "last_reviewed_at": "2026-10-28",
       "next_review_due": "2026-12-01"
     },

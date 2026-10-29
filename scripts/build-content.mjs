@@ -449,7 +449,7 @@ ${extraScripts ? `${indent(extraScripts, 2)}\n` : ''}  <script src="/assets/js/c
 
 function renderArticleAiNotice() {
   return `<p class="article-ai-notice">
-  この記事は生成AIで作成しており、公開前の事実確認は行っていません。内容はご自身の判断でご利用ください。誤りを見つけた場合は<a href="/germany/ja/contact/">お問い合わせ</a>からお知らせください。（<a href="/germany/ja/about/#ai-policy">生成AIの利用について</a>）
+  この記事は生成AIを使って作成しています。編集者も公式情報との照合に努めていますが、誤りや古い情報が残っている場合があります。その際はご容赦ください。手続きや契約など大切な判断の前には、公式窓口でもご確認ください。誤りに気づいたら<a href="/germany/ja/contact/">お問い合わせ</a>からお知らせください。（<a href="/germany/ja/about/#ai-policy">生成AIの利用について</a>）
 </p>`;
 }
 
@@ -874,7 +874,8 @@ function collectTable(lines, start, context) {
   }
 
   const head = `<thead><tr>${header.map((cell) => `<th>${renderInline(cell, context)}</th>`).join('')}</tr></thead>`;
-  const bodyRows = rows.map((row) => `<tr>${row.map((cell) => `<td>${renderInline(cell, context)}</td>`).join('')}</tr>`).join('\n');
+  const headerLabels = header.map((cell) => renderInline(cell, context).replace(/<[^>]+>/g, '').trim());
+  const bodyRows = rows.map((row) => `<tr>${row.map((cell, cellIndex) => `<td data-label="${escapeAttribute(headerLabels[cellIndex] || '')}">${renderInline(cell, context)}</td>`).join('')}</tr>`).join('\n');
   context.tableIndex = Number(context.tableIndex || 0) + 1;
   const tableId = `${context.item.slug}-table-${context.tableIndex}`;
   const hintId = `${tableId}-scroll-hint`;
@@ -1244,13 +1245,13 @@ function renderDisclaimer(item) {
 
   if (item.disclaimer_type === 'news_explainer') {
     return `<div class="article-disclaimer">
-  本記事は生成AIで作成した日本語の生活解説です。速報や公式発表の代替ではありません。制度、交通、健康、安全に関わる判断は、自治体・交通機関・医療機関などの公式情報を確認してください。
+  本記事は日本語の生活解説です。速報や公式発表の代わりにはなりません。制度、交通、健康、安全に関わる判断は、自治体・交通機関・医療機関などの公式情報を確認してください。
 </div>`;
   }
 
   if (item.disclaimer_type === 'editorial_column') {
     return `<div class="article-disclaimer">
-  本記事は生成AIで作成した一般的なコラムです。感じ方や適切な行動は、本人の状況・健康・人間関係・行政手続きの内容によって異なります。重要な判断では公式窓口や専門家の個別情報も確認してください。
+  本記事は一般的なコラムです。感じ方や適切な行動は、本人の状況・健康・人間関係・行政手続きの内容によって異なります。重要な判断では公式窓口や専門家の個別情報も確認してください。
 </div>`;
   }
 
@@ -2134,7 +2135,8 @@ function updateHome(datasets) {
     .map((item) => renderHomeStandardArticleCard(item, 'living', 'portal3-card-img'))
     .join('\n\n');
   const newsList = renderHomeNewsList(homeNewsItems(datasets.events, 3));
-  const eventCards = homeItems(datasets.events, contentTypes.events.homeLimit, (item) => !['news', 'column'].includes(item.content_type), compareHomeEventEntries).map(renderHomeEventCard).join('\n\n');
+  const homeEventReferenceDate = latestContentDate(Object.values(datasets).flat());
+  const eventCards = homeItems(datasets.events, contentTypes.events.homeLimit, (item) => !['news', 'column'].includes(item.content_type), (a, b) => compareHomeEventEntries(a, b, homeEventReferenceDate)).map(renderHomeEventCard).join('\n\n');
   const learnGermanContent = homeItems(datasets['learn-german'], contentTypes['learn-german'].homeLimit).map(renderHomeLearnGermanCard).join('\n\n');
   const homeArticleItemsByUrl = new Map(Object.values(datasets).flatMap((items) => items).map((item) => [item.url, item]));
 
@@ -2299,8 +2301,34 @@ function homeNewsItems(items, limit) {
     .map(({ item }) => item);
 }
 
-function compareHomeEventEntries(a, b) {
+// Upcoming events first (nearest first), then undated, then past events (most recent first).
+// The reference date is the newest content date, so the output stays deterministic.
+function compareHomeEventEntries(a, b, referenceDate = '') {
+  const rank = (item) => {
+    const end = eventEndDate(item);
+    if (!end) return [1, 0];
+    return end >= referenceDate ? [0, Date.parse(end)] : [2, -Date.parse(end)];
+  };
+  const [ra, va] = rank(a.item);
+  const [rb, vb] = rank(b.item);
+  if (ra !== rb) return ra - rb;
+  if (va !== vb) return va - vb;
   return (a.item.home_order ?? Infinity) - (b.item.home_order ?? Infinity) || compareHomeItemEntries(a, b);
+}
+
+function eventEndDate(item) {
+  const dates = String(item.event_date || '').match(/20\d{2}-\d{2}-\d{2}/g);
+  return dates ? dates[dates.length - 1] : '';
+}
+
+function latestContentDate(items) {
+  return items.reduce((latest, item) => {
+    for (const field of ['updated_at', 'published_at']) {
+      const value = String(item?.[field] || '').slice(0, 10);
+      if (/^20\d{2}-\d{2}-\d{2}$/.test(value) && value > latest) latest = value;
+    }
+    return latest;
+  }, '');
 }
 
 function compareHomeItemEntries(a, b) {
@@ -2920,8 +2948,8 @@ function normalizeSources(value) {
 function normalizeReview(item) {
   const reviewed = item.review?.last_reviewed_at || item.last_verified || item.updated_at || item.published_at || '';
   return {
-    status: item.review?.status || (reviewed ? 'reviewed' : 'pending'),
-    reviewed_by: item.review?.reviewed_by || `${SITE_NAME} editorial`,
+    status: item.review?.status || 'ai_drafted_editor_checked',
+    reviewed_by: item.review?.reviewed_by || 'Generative AI draft; checked by J-Connect editors',
     last_reviewed_at: reviewed,
     next_review_due: item.review?.next_review_due || ''
   };

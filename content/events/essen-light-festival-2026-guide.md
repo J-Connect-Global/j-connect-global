@@ -2,7 +2,7 @@
 slug: "essen-light-festival-2026-guide"
 id: "E018"
 content_type: "event"
-category: "光のアート・街歩き"
+category: "芸術・文化"
 title: "エッセン光の祭典2026｜いつもの街が夜の美術館になる10日間"
 summary: "2026年10月2〜11日、エッセン中心街が光の展示空間へ。建物と映像の重なり、写真では伝わらない時間、子どもと楽しむ見方を紹介し、開催時間も整理します。"
 official_sources:
@@ -13,7 +13,7 @@ city: "エッセン"
 location: "エッセン中心街"
 event_date: "2026-10-02〜2026-10-11"
 next_review: "2027-08-01"
-tags: ["エッセン", "光の祭典", "2026年10月", "秋", "アート", "街歩き"]
+tags: ["エッセン", "光の祭典", "秋", "アート", "街歩き"]
 published: true
 status: "published"
 source_type: "manual"

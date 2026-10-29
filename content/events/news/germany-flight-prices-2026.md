@@ -2,7 +2,7 @@
 id: "N013"
 title: "ドイツ発の航空運賃が2026年上半期8.5％上昇｜一時帰国と家族旅行の考え方"
 slug: "germany-flight-prices-2026"
-category: "旅行・交通"
+category: "旅行・おでかけ"
 content_type: "news"
 area: "ドイツ全土"
 event_date: "2026年上半期"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-08"
 next_review: "2027-01-31"
 summary: "ドイツ発の国際航空運賃は2026年上半期に前年同期比8.5％上昇。統計と個別運賃の違いを押さえ、一時帰国や家族旅行で荷物、空港移動、変更条件まで含めた総額を比べる方法を解説します。"
-tags: ["ドイツ航空券", "一時帰国", "家族旅行", "航空運賃", "空港", "家計"]
+tags: ["航空運賃", "一時帰国", "子連れ", "空港", "家計"]
 status: "published"
 published: true
 source_type: "manual"

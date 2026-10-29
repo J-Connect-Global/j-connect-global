@@ -2,7 +2,7 @@
 slug: "europe-protests-mofa-october-2026"
 id: "N024"
 content_type: "news"
-category: "暮らし・安全"
+category: "旅行・おでかけ"
 title: "欧州で広がる抗議活動、外務省「広域情報」をドイツ在住者目線で読む｜10月31日のデモと備え"
 summary: "外務省が2026年10月21日に出した広域情報「欧州での抗議活動を受けた注意喚起」をドイツ在住者向けに解説。フランスの抗議の背景、10月31日にNRWなど全国21都市で予定されるデモ、在留届・たびレジなど今日できる備えを整理します。"
 official_sources:
@@ -22,7 +22,7 @@ area: "ドイツ全土 / 欧州"
 location: ""
 event_date: "2026-10-31 ドイツ21都市でデモ予定"
 next_review: "2026-10-30"
-tags: ["安全情報", "外務省", "デモ", "フランス", "NRW", "在留届", "たびレジ", "ドイツ生活"]
+tags: ["安全情報", "外務省", "デモ", "フランス", "NRW"]
 published: true
 status: "published"
 source_type: "manual"

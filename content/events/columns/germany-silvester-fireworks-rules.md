@@ -2,7 +2,7 @@
 slug: "germany-silvester-fireworks-rules"
 id: "C019"
 content_type: "column"
-category: "ドイツ雑学・季節文化"
+category: "季節・文化"
 title: "ドイツの大晦日はなぜ花火だらけ？｜花火が買えるのは年に3日だけ、という法律と街の禁止区域"
 summary: "ドイツの大晦日（Silvester）の夜は、街じゅうで花火が上がります。実は一般の人が花火を買えるのは12月29日〜31日の3日間だけ、打ち上げてよいのは12月31日と1月1日だけと法律で決まっています。花火のルール、教会や病院の近くでの禁止、デュッセルドルフやケルンの禁止区域、微小粒子状物質の問題までを紹介します。"
 official_sources:
@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2026-12-31 大晦日"
 next_review: "2026-12-10"
-tags: ["大晦日", "シルベスター", "花火", "年末年始", "ドイツ雑学", "季節文化", "デュッセルドルフ", "ケルン"]
+tags: ["大晦日", "シルベスター", "花火", "年末年始", "季節行事"]
 published: true
 status: "published"
 source_type: "manual"

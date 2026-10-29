@@ -2,7 +2,7 @@
 slug: "frankfurt-book-fair-2026-guide"
 id: "E016"
 content_type: "event"
-category: "本・国際文化"
+category: "芸術・文化"
 title: "フランクフルト・ブックフェア2026｜本とチェコ文化に出会う秋の週末"
 summary: "フランクフルト・ブックフェア2026の一般公開は10月9〜11日。ゲスト国チェコの「海辺の国」というテーマ、翻訳や絵本の面白さを、日本語の読者にも楽しめる視点で案内します。"
 official_sources:
@@ -18,7 +18,7 @@ location: "フランクフルト見本市会場"
 event_date: "2026-10-07〜2026-10-11"
 next_review: "2027-07-01"
 published_at: "2026-08-29"
-tags: ["フランクフルト", "ブックフェア", "2026年10月", "チェコ", "読書", "翻訳"]
+tags: ["フランクフルト", "ブックフェア", "チェコ", "読書", "翻訳"]
 published: true
 status: "published"
 source_type: "manual"

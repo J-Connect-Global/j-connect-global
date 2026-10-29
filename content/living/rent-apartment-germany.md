@@ -2,8 +2,8 @@
 id: "L004"
 title: "ドイツの賃貸・家探し｜必要書類・内見・契約・敷金"
 slug: "rent-apartment-germany"
-category: "住まい・契約"
-tags: ["賃貸","家探し","契約","信用情報","住民登録"]
+category: "住まい"
+tags: ["賃貸", "契約", "信用情報", "住民登録"]
 summary: "ドイツの賃貸・家探しを日本語で解説。応募書類の取得先と提出時期、家賃の内訳、内見、契約、敷金の上限・分割払い、詐欺対策、入居後の手続きをまとめます。"
 status: "published"
 published: true

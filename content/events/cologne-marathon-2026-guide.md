@@ -2,7 +2,7 @@
 id: "E015"
 title: "ケルンマラソン2026｜街がコースになる日を走る・応援する"
 slug: "cologne-marathon-2026-guide"
-category: "スポーツ・市民イベント"
+category: "遊び・スポーツ・家族"
 city: "Köln"
 location: "ケルン市内コース"
 event_date: "2026-10-04"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-29"
 next_review: "2026-10-03"
 summary: "2026年10月4日のケルンマラソンを、市民ランナーの挑戦、沿道の応援、街路が一日だけ共有空間になる都市文化として紹介。走らない人にも見える大会の魅力を解説します。"
-tags: ["ケルンマラソン", "ケルン", "市民スポーツ", "沿道応援", "都市文化", "ランニング"]
+tags: ["ケルンマラソン", "ケルン", "市民スポーツ", "沿道応援", "都市文化"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/cologne-marathon-2026-guide/"

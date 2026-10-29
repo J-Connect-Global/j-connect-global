@@ -2,7 +2,7 @@
 id: "E013"
 title: "ドイツ公開文化財の日2026｜建物の向こうにある暮らしとインフラを読む"
 slug: "tag-des-offenen-denkmals-2026-guide"
-category: "建築・文化遺産"
+category: "芸術・文化"
 city: "NRW・ドイツ全土"
 location: "参加する歴史建築・産業遺産・インフラ施設"
 event_date: "2026-09-13"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-29"
 next_review: "2026-09-12"
 summary: "2026年9月13日のドイツ公開文化財の日を、普段入れない建物を見るだけでなく、保存の理由、働いた人、都市を支えた交通・水道・産業のつながりから楽しむガイドです。"
-tags: ["公開文化財の日", "文化遺産", "建築", "産業遺産", "インフラ", "NRW"]
+tags: ["公開文化財の日", "文化遺産", "建築", "産業遺産", "インフラ"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/tag-des-offenen-denkmals-2026-guide/"

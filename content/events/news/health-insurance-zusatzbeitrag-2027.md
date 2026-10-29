@@ -2,7 +2,7 @@
 slug: "health-insurance-zusatzbeitrag-2027"
 id: "N025"
 content_type: "news"
-category: "生活・制度"
+category: "医療・健康"
 title: "【2027年】ドイツの健康保険料は上がる？ 追加保険料率「平均2.9%据え置き」の意味と乗り換え方"
 summary: "2027年の公的医療保険の追加保険料率は、計算上の平均が2.9%で据え置きの見通しです。ただし実際の率は加入先ごとに決まり、2026年7月からは値上げのお知らせの手紙も義務ではなくなりました。負担差の計算例、特別解約権、乗り換えの手順を整理します。"
 official_sources:
@@ -26,7 +26,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2026-11-01までに2027年の平均追加保険料率を告示"
 next_review: "2026-12-15"
-tags: ["健康保険", "公的医療保険", "追加保険料", "Zusatzbeitrag", "保険組合", "乗り換え", "2027年", "ドイツ生活", "手取り"]
+tags: ["健康保険", "追加保険料", "Zusatzbeitrag", "保険組合", "乗り換え"]
 published: true
 status: "published"
 source_type: "manual"

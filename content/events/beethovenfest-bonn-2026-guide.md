@@ -2,7 +2,7 @@
 id: "E012"
 title: "ベートーヴェン音楽祭ボン2026｜生誕の街で音楽を聴き直す1か月"
 slug: "beethovenfest-bonn-2026-guide"
-category: "音楽・文化"
+category: "芸術・文化"
 city: "Bonn"
 location: "Beethovenhalleほかボン市内各会場"
 event_date: "2026-09-03〜2026-10-03"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-29"
 next_review: "2026-09-01"
 summary: "2026年9月3日〜10月3日のベートーヴェン音楽祭を、生誕地ボンと作曲家の遺産、現代音楽・屋外公演・家族企画との対話から紹介。クラシック初心者の入口も案内します。"
-tags: ["ベートーヴェン音楽祭", "ボン", "クラシック", "現代音楽", "家族向け", "NRW"]
+tags: ["ベートーヴェン音楽祭", "ボン", "クラシック", "現代音楽", "子連れ"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/beethovenfest-bonn-2026-guide/"

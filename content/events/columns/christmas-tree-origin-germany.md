@@ -2,7 +2,7 @@
 slug: "christmas-tree-origin-germany"
 id: "C015"
 content_type: "column"
-category: "ドイツ雑学・季節文化"
+category: "季節・文化"
 title: "クリスマスツリーはドイツから広まった？｜リンゴを飾った「楽園の木」と、年に2,000万本以上の今"
 summary: "世界中で飾られるクリスマスツリーは、ドイツ語圏で育った習慣です。中世の「楽園の木」の劇、1605年のシュトラスブルクの記録、教会の反対からろうそくの普及まで、ツリーがドイツの家庭に広まるまでの道のりと、今のドイツのツリー事情を紹介します。"
 official_sources:
@@ -22,7 +22,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "クリスマスの季節（12月）"
 next_review: "2027-11-01"
-tags: ["クリスマス", "クリスマスツリー", "もみの木", "ドイツ雑学", "季節文化", "冬"]
+tags: ["クリスマス", "もみの木", "季節行事", "冬"]
 published: true
 status: "published"
 source_type: "manual"

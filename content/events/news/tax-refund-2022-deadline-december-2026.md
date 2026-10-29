@@ -2,7 +2,7 @@
 slug: "tax-refund-2022-deadline-december-2026"
 id: "N033"
 content_type: "news"
-category: "お金・制度"
+category: "お金・税金"
 title: "2022年分の税金の還付申告は2026年12月31日まで｜会社員が自分から出す申告は4年が期限"
 summary: "ドイツでは、申告の義務がない会社員でも、自分から確定申告を出せば払いすぎた所得税が戻ることがあります。この「任意の申告」は4年以内が期限で、2022年分は2026年12月31日までに税務署に届く必要があり、延長はできません。戻りやすい人の例と、間に合わせるための手順を整理します。"
 official_sources:
@@ -20,7 +20,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2026-12-31 2022年分の任意の申告の期限"
 next_review: "2027-01-15"
-tags: ["確定申告", "税金", "還付", "ELSTER", "所得税", "会社員", "期限", "お金", "ドイツ生活"]
+tags: ["税金", "ELSTER", "会社員", "お金"]
 published: true
 status: "published"
 source_type: "manual"

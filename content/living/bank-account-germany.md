@@ -2,8 +2,8 @@
 id: "L006"
 title: "ドイツの銀行口座開設｜必要書類・選び方・Basiskonto"
 slug: "bank-account-germany"
-category: "銀行・お金"
-tags: ["銀行口座","口座開設","必要書類","Girokonto","Basiskonto","初渡独"]
+category: "お金・税金"
+tags: ["銀行口座", "口座開設", "必要書類", "Girokonto", "Basiskonto"]
 summary: "ドイツの銀行口座開設を日本語で解説。必要書類、Girokontoの選び方、支店型とオンライン型、本人確認、カード・ATM、Basiskontoまで整理します。"
 status: "published"
 published: true

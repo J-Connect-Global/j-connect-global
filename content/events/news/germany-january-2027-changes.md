@@ -2,7 +2,7 @@
 id: "N023"
 title: "【2027年1月から】ドイツで何が変わる？ 最低賃金・ドイツチケット・社会保険・児童手当まとめ"
 slug: "germany-january-2027-changes"
-category: "生活・制度"
+category: "お金・税金"
 content_type: "news"
 area: "ドイツ全土"
 city: "ドイツ全土"
@@ -13,7 +13,7 @@ updated_at: "2026-10-28"
 last_verified: "2026-10-21"
 next_review: "2026-12-01"
 summary: "2027年1月からドイツで変わる制度を、在独日本人の生活に関わる項目に絞って整理。決定済みのものと、まだ法案段階のものを分けて解説します。"
-tags: ["ドイツ生活", "制度改正", "最低賃金", "ドイツチケット", "社会保険", "児童手当", "税金"]
+tags: ["制度改正", "最低賃金", "ドイツチケット", "社会保険", "児童手当"]
 status: "published"
 published: true
 source_type: "manual"

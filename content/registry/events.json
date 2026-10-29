@@ -5,7 +5,7 @@
     "slug": "japan-day-duesseldorf",
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
     "image_alt": "Local event calendar card",
-    "category": "日本文化イベント",
+    "category": "日本文化",
     "summary": "デュッセルドルフ日本デーを、食・武道・舞台・ポップカルチャー・花火が集まる催しとして紹介。大きな日本人コミュニティと街の関係、現地で見たい文化の交わりを解説します。",
     "url": "/germany/ja/events/japan-day-duesseldorf/",
     "markdown_path": "/content/events/japan-day-duesseldorf.md",
@@ -17,10 +17,9 @@
     "tags": [
       "日本文化",
       "日独交流",
-      "Düsseldorf",
+      "デュッセルドルフ",
       "日本人コミュニティ",
-      "花火",
-      "NRW"
+      "花火"
     ],
     "home_visible": true,
     "home_order": 10,
@@ -51,7 +50,7 @@
     "id": "E004",
     "title": "デュッセルドルフのクリスマスマーケット2026｜冬の広場を楽しむ文化案内",
     "slug": "christmas-markets-duesseldorf",
-    "category": "季節イベント",
+    "category": "季節行事",
     "summary": "2026年11月19日〜12月30日のデュッセルドルフ・クリスマスマーケットを案内。通常営業時間に加え、11月22日・12月25日の休業、12月24日・26日の特別時間、公共交通と空港P+Rの確認先を整理します。",
     "url": "/germany/ja/events/christmas-markets-duesseldorf/",
     "markdown_path": "/content/events/christmas-markets-duesseldorf.md",
@@ -63,8 +62,6 @@
     "tags": [
       "クリスマスマーケット",
       "デュッセルドルフ",
-      "2026年11月",
-      "2026年12月",
       "アドベント",
       "冬"
     ],
@@ -120,7 +117,7 @@
     "slug": "family-weekend-events-nrw",
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
     "image_alt": "Weekend event calendar card",
-    "category": "家族・週末",
+    "category": "遊び・スポーツ・家族",
     "summary": "NRWの博物館、産業遺産、市民祭、自然、図書館などを、子どもの年齢だけでなく「何を一緒に発見したいか」から選ぶガイド。家族の会話が残る週末の作り方を紹介します。",
     "url": "/germany/ja/events/family-weekend-events-nrw/",
     "markdown_path": "/content/events/family-weekend-events-nrw.md",
@@ -130,12 +127,11 @@
     "updated_at": "2026-06-12",
     "last_verified": "2026-07-06",
     "tags": [
-      "家族向け",
-      "週末",
+      "子連れ",
+      "週末旅行",
       "NRW",
       "博物館",
-      "市民祭",
-      "地域文化"
+      "市民祭"
     ],
     "home_visible": true,
     "home_order": 30,
@@ -161,7 +157,7 @@
     "id": "E002",
     "title": "ケルンの蚤の市・フリーマーケットの楽しみ方",
     "slug": "cologne-flea-market",
-    "category": "おでかけ",
+    "category": "遊び・スポーツ・家族",
     "summary": "ケルンの蚤の市を、中古品を安く買う場所だけでなく、物を使い継ぐ文化、地域の交流、品物の来歴に出会う週末体験として紹介。会場の違いと買う前の大切な見方を整理します。",
     "url": "/germany/ja/events/cologne-flea-market/",
     "markdown_path": "/content/events/cologne-flea-market.md",
@@ -173,7 +169,7 @@
     "tags": [
       "マーケット",
       "中古文化",
-      "週末",
+      "週末旅行",
       "ケルン",
       "地域交流"
     ],
@@ -201,7 +197,7 @@
     "id": "E003",
     "title": "ボンで日本映画に出会う｜上映会から文化を読む楽しみ方",
     "slug": "bonn-japanese-film-festival",
-    "category": "文化・映画",
+    "category": "日本文化",
     "summary": "ボンの映画館、大学、文化施設で出会える日本映画を、作品の時代・地域・作家性、字幕、上映後トークから深く楽しむガイド。単発上映や特集を見つける情報源も紹介します。",
     "url": "/germany/ja/events/bonn-japanese-film-festival/",
     "markdown_path": "/content/events/bonn-japanese-film-festival.md",
@@ -215,8 +211,7 @@
       "映画文化",
       "ボン",
       "字幕上映",
-      "大学",
-      "文化交流"
+      "大学"
     ],
     "home_visible": true,
     "home_order": 50,
@@ -244,7 +239,7 @@
     "slug": "europe-heatwave-basic-checks",
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
     "image_alt": "暑い日の生活チェックリスト",
-    "category": "生活・気候",
+    "category": "医療・健康",
     "content_type": "news",
     "source_type": "manual",
     "area": "ドイツ全体 / EU",
@@ -260,9 +255,7 @@
       "熱波",
       "夏",
       "住まい",
-      "健康",
-      "都市",
-      "ドイツ生活"
+      "医療・健康"
     ],
     "home_visible": false,
     "home_order": 900,
@@ -290,7 +283,7 @@
     "slug": "world-cup-germany-basic-checks",
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
     "image_alt": "イベント期間中の交通チェックリスト",
-    "category": "生活・イベント",
+    "category": "季節・文化",
     "content_type": "news",
     "source_type": "manual",
     "area": "ドイツ全体",
@@ -307,7 +300,6 @@
       "サッカー",
       "パブリックビューイング",
       "応援文化",
-      "ドイツ",
       "時差"
     ],
     "home_visible": false,
@@ -336,7 +328,7 @@
     "slug": "natsu-hikari-japan-festival-cologne",
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
     "image_alt": "工業建築のホールでライブ、フード、マーケットを楽しむ日本文化フェスティバルの編集イラスト",
-    "category": "日本文化イベント",
+    "category": "日本文化",
     "summary": "ケルンのNATSU HIKARI 2026を、アニメ、音楽、茶、食、マーケットが同居する現代の日本文化イベントとして紹介。二つの会場が作る雰囲気と文化の交わりを読み解きます。",
     "url": "/germany/ja/events/natsu-hikari-japan-festival-cologne/",
     "markdown_path": "/content/events/natsu-hikari-japan-festival-cologne.md",
@@ -350,8 +342,7 @@
       "ケルン",
       "アニメ",
       "音楽",
-      "茶文化",
-      "文化交流"
+      "茶文化"
     ],
     "home_visible": false,
     "home_order": 5,
@@ -390,7 +381,7 @@
     "image_alt": "大規模ゲーム見本市へ入場する前にスマートフォンで予定を確認する来場者",
     "image_caption": "AI生成の編集イメージ。実際のgamescom会場、出展内容、来場者を撮影したものではありません。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "ゲーム・大型イベント",
+    "category": "遊び・スポーツ・家族",
     "summary": "2026年8月26〜30日のgamescomを、新作試遊だけでなく、開発者、配信者、コスプレ、インディー作品、国際的なファン文化が集まる場として紹介。初参加で見たい文化的な層を解説します。",
     "url": "/germany/ja/events/gamescom-2026-cologne-guide/",
     "markdown_path": "/content/events/gamescom-2026-cologne-guide.md",
@@ -404,8 +395,7 @@
       "ケルン",
       "ゲーム文化",
       "ゲーム開発",
-      "インディーゲーム",
-      "ファン文化"
+      "インディーゲーム"
     ],
     "home_visible": false,
     "home_order": 10,
@@ -460,7 +450,7 @@
     "image_alt": "日本庭園を望む文化施設で茶道イベントの準備をする来場者",
     "image_caption": "AI生成の編集イメージ。実際のEKŌ-Haus、講師、行事を撮影・再現したものではありません。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "日本文化イベント",
+    "category": "日本文化",
     "summary": "デュッセルドルフのEKŌ-Hausで2026年秋に行われる展覧会、茶、着物、書、仏教行事を紹介。文化施設と寺院が同居する場所で、所作・信仰・学びをどう見るかを解説します。",
     "url": "/germany/ja/events/eko-haus-autumn-2026/",
     "markdown_path": "/content/events/eko-haus-autumn-2026.md",
@@ -474,9 +464,7 @@
       "デュッセルドルフ",
       "日本文化",
       "仏教",
-      "茶",
-      "書",
-      "NRW"
+      "茶"
     ],
     "home_visible": false,
     "home_order": 11,
@@ -527,7 +515,7 @@
     "image_alt": "東アジアの陶磁器や漆芸を展示する静かな美術館を見学する来館者",
     "image_caption": "AI生成の編集イメージ。実際の美術館内装・展示作品・来館者を撮影または複製したものではありません。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "美術館・展覧会",
+    "category": "芸術・文化",
     "summary": "ケルン東アジア美術館の2026年展示を、日本美術だけ切り離さず、中国・韓国との共通点と違い、宗教・素材・現代作家の対話から紹介。作品を比較して見る視点を解説します。",
     "url": "/germany/ja/events/cologne-east-asian-art-museum-2026/",
     "markdown_path": "/content/events/cologne-east-asian-art-museum-2026.md",
@@ -541,8 +529,7 @@
       "日本美術",
       "中国美術",
       "韓国美術",
-      "東アジア美術",
-      "美術館"
+      "東アジア美術"
     ],
     "home_visible": true,
     "home_order": 12,
@@ -593,7 +580,7 @@
     "image_alt": "コンサートホールの開演前にスマートフォンでチケットを確認する来場者",
     "image_caption": "AI生成の編集イメージ。実際のBeethovenfest会場、出演者、公演を撮影・再現したものではありません。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "音楽・文化",
+    "category": "芸術・文化",
     "summary": "2026年9月3日〜10月3日のベートーヴェン音楽祭を、生誕地ボンと作曲家の遺産、現代音楽・屋外公演・家族企画との対話から紹介。クラシック初心者の入口も案内します。",
     "url": "/germany/ja/events/beethovenfest-bonn-2026-guide/",
     "markdown_path": "/content/events/beethovenfest-bonn-2026-guide.md",
@@ -607,8 +594,7 @@
       "ボン",
       "クラシック",
       "現代音楽",
-      "家族向け",
-      "NRW"
+      "子連れ"
     ],
     "home_visible": false,
     "home_order": 13,
@@ -659,7 +645,7 @@
     "image_alt": "NRWの小学校で全日保育について職員へ相談する保護者",
     "image_caption": "AI生成の編集イメージ。実際の学校、職員、児童、申請手続きを撮影・再現したものではありません。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "子育て・教育",
+    "category": "家族・子育て",
     "content_type": "news",
     "source_type": "manual",
     "area": "NRW / ドイツ全体",
@@ -676,8 +662,7 @@
       "小学校",
       "子育て",
       "NRW",
-      "学童保育",
-      "学校生活"
+      "学童保育"
     ],
     "home_visible": false,
     "home_order": 1,
@@ -729,7 +714,7 @@
     "image_alt": "画像や音声にAI生成・改変の表示があるかを画面で確かめる利用者",
     "image_caption": "AI生成の編集イメージ。画面、業務フロー、組織は架空で、法令への適合を保証するものではありません。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "AI・デジタル",
+    "category": "暮らし・買い物",
     "content_type": "news",
     "source_type": "manual",
     "area": "ドイツ / EU",
@@ -746,8 +731,7 @@
       "生成AI",
       "AI表示",
       "ディープフェイク",
-      "消費者",
-      "ドイツ"
+      "消費者"
     ],
     "home_visible": false,
     "home_order": 0,
@@ -799,7 +783,7 @@
     "image_alt": "修理工房でスマートフォンと小型家電の修理方法を相談する利用者",
     "image_caption": "AI生成の編集イメージ。実在する店舗・製品・メーカー・修理条件を撮影または示したものではありません。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "消費者・買い物",
+    "category": "暮らし・買い物",
     "content_type": "news",
     "source_type": "manual",
     "area": "ドイツ / EU",
@@ -816,8 +800,7 @@
       "家電",
       "スマートフォン",
       "消費者保護",
-      "EU",
-      "ドイツ"
+      "EU"
     ],
     "home_visible": false,
     "home_order": 2,
@@ -869,7 +852,7 @@
     "image_alt": "ドイツの住宅で暖房設備の選択肢をエネルギー相談員と確認する住民",
     "image_caption": "AI生成の編集イメージ。実在する設備・建物・助成制度を示すものではなく、特定方式を推奨していません。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "住まい・エネルギー",
+    "category": "住まい",
     "content_type": "news",
     "source_type": "manual",
     "area": "ドイツ全体",
@@ -884,10 +867,9 @@
     "tags": [
       "暖房",
       "建物近代化法",
-      "住宅",
+      "住まい",
       "ガス",
-      "ヒートポンプ",
-      "家計"
+      "ヒートポンプ"
     ],
     "home_visible": false,
     "home_order": 3,
@@ -931,7 +913,7 @@
     "image_alt": "ドイツで求人票と応募書類を確認しながら転職活動の計画を立てる日本人の会社員",
     "image_caption": "AI生成の編集用イメージ。人物・企業・求人情報は架空です。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "仕事・経済",
+    "category": "仕事",
     "content_type": "news",
     "source_type": "manual",
     "area": "ドイツ全土",
@@ -944,10 +926,9 @@
     "updated_at": "2026-08-30",
     "last_verified": "2026-08-08",
     "tags": [
-      "ドイツ雇用",
-      "失業率",
+      "雇用",
+      "失業",
       "求職",
-      "失業給付",
       "健康保険",
       "在留資格"
     ],
@@ -992,7 +973,7 @@
     "image_alt": "ドイツの家庭で食料品のレシートと光熱費を確認する日本人の夫婦",
     "image_caption": "AI生成の編集用イメージ。人物・商品・金額は架空です。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "暮らし・経済",
+    "category": "お金・税金",
     "content_type": "news",
     "source_type": "manual",
     "area": "ドイツ全土",
@@ -1005,12 +986,10 @@
     "updated_at": "2026-08-30",
     "last_verified": "2026-08-08",
     "tags": [
-      "ドイツ物価",
-      "インフレ",
+      "物価",
       "家計",
       "エネルギー",
-      "食品",
-      "消費者物価"
+      "食品"
     ],
     "home_visible": false,
     "home_order": 5,
@@ -1053,7 +1032,7 @@
     "image_alt": "低水位で川岸が広く見えるライン川を積載量を抑えた貨物船が航行する様子",
     "image_caption": "AI生成の編集用イメージ。特定の船舶・企業・実際の水位を示すものではありません。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "旅行・交通",
+    "category": "旅行・おでかけ",
     "content_type": "news",
     "source_type": "manual",
     "area": "ライン川流域 / ドイツ",
@@ -1070,8 +1049,7 @@
       "低水位",
       "カウプ",
       "観光船",
-      "フェリー",
-      "ドイツ旅行"
+      "フェリー"
     ],
     "home_visible": false,
     "home_order": 6,
@@ -1125,7 +1103,7 @@
     "image_alt": "紙・ガラス・金属・プラスチックの包装表示を家庭で確認する生活者",
     "image_caption": "AI生成の編集用イメージ。製品・包装・表示は架空で、適合を保証するものではありません。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "暮らし・環境",
+    "category": "暮らし・買い物",
     "content_type": "news",
     "source_type": "manual",
     "area": "ドイツ / EU",
@@ -1142,8 +1120,7 @@
       "包装廃棄物",
       "リサイクル",
       "オンライン注文",
-      "買い物",
-      "環境"
+      "買い物"
     ],
     "home_visible": false,
     "home_order": 7,
@@ -1190,7 +1167,7 @@
     "image_alt": "ドイツの小さな職場で行政書類とデジタル申請に時間を使う人々",
     "image_caption": "AI生成の編集用イメージ。人物・企業・書類は架空です。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "仕事・経済",
+    "category": "仕事",
     "content_type": "news",
     "source_type": "manual",
     "area": "ドイツ全土",
@@ -1207,7 +1184,6 @@
       "行政手続き",
       "中小企業",
       "働き方",
-      "サービス",
       "ドイツ経済"
     ],
     "home_visible": false,
@@ -1248,7 +1224,7 @@
     "image_alt": "ドイツの工場で産業機械の生産と輸出準備を進める作業員",
     "image_caption": "AI生成の編集用イメージ。工場・機械・企業は架空です。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "仕事・経済",
+    "category": "仕事",
     "content_type": "news",
     "source_type": "manual",
     "area": "ドイツ全土",
@@ -1261,12 +1237,9 @@
     "updated_at": "2026-08-30",
     "last_verified": "2026-08-08",
     "tags": [
-      "ドイツGDP",
       "ドイツ経済",
-      "景気",
       "家計",
-      "雇用",
-      "暮らし"
+      "雇用"
     ],
     "home_visible": false,
     "home_order": 9,
@@ -1310,7 +1283,7 @@
     "image_alt": "ドイツの自宅で航空券の日程と旅行予算を比較する日本人の家族",
     "image_caption": "AI生成の編集用イメージ。人物・航空会社・予約画面は架空です。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "旅行・交通",
+    "category": "旅行・おでかけ",
     "content_type": "news",
     "source_type": "manual",
     "area": "ドイツ全土",
@@ -1323,10 +1296,9 @@
     "updated_at": "2026-08-30",
     "last_verified": "2026-08-08",
     "tags": [
-      "ドイツ航空券",
-      "一時帰国",
-      "家族旅行",
       "航空運賃",
+      "一時帰国",
+      "子連れ",
       "空港",
       "家計"
     ],
@@ -1366,7 +1338,7 @@
     "image_alt": "輸入材料の価格変化が製造と家庭の買い物へ届くまでを考える様子",
     "image_caption": "AI生成の編集用イメージ。人物・企業・資材・書類は架空です。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "暮らし・経済",
+    "category": "お金・税金",
     "content_type": "news",
     "source_type": "manual",
     "area": "ドイツ全土",
@@ -1379,12 +1351,9 @@
     "updated_at": "2026-08-30",
     "last_verified": "2026-08-08",
     "tags": [
-      "ドイツ輸入物価",
       "物価",
       "家計",
-      "エネルギー",
-      "日用品",
-      "ドイツ生活"
+      "エネルギー"
     ],
     "home_visible": false,
     "home_order": 11,
@@ -1428,7 +1397,7 @@
     "image_alt": "赤レンガの歴史的産業施設へガイドと入る見学者",
     "image_caption": "AI生成の編集イメージ。実在する会場・2026年の見学会を撮影または再現したものではありません。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "建築・文化遺産",
+    "category": "芸術・文化",
     "content_type": "event",
     "summary": "2026年9月13日のドイツ公開文化財の日を、普段入れない建物を見るだけでなく、保存の理由、働いた人、都市を支えた交通・水道・産業のつながりから楽しむガイドです。",
     "url": "/germany/ja/events/tag-des-offenen-denkmals-2026-guide/",
@@ -1443,8 +1412,7 @@
       "文化遺産",
       "建築",
       "産業遺産",
-      "インフラ",
-      "NRW"
+      "インフラ"
     ],
     "home_visible": false,
     "home_order": 1,
@@ -1487,7 +1455,7 @@
     "image_alt": "秋の祭典テントで食事と音楽を楽しむ日本人とドイツ人の友人",
     "image_caption": "AI生成の編集イメージ。実際の2026年会場・出演者・来場者を撮影または再現したものではありません。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "季節イベント・音楽",
+    "category": "季節行事",
     "content_type": "event",
     "summary": "2026年9月10〜26日のデュッセルドルフ・オクトーバーフェストを、単なるビールイベントではなく、ミュンヘンで始まった祭りの歴史、バイエルンの服装・料理、現代の音楽テント文化から紹介します。",
     "url": "/germany/ja/events/duesseldorf-oktoberfest-2026-guide/",
@@ -1498,12 +1466,11 @@
     "updated_at": "2026-08-30",
     "last_verified": "2026-08-29",
     "tags": [
-      "Düsseldorf",
+      "デュッセルドルフ",
       "オクトーバーフェスト",
       "バイエルン文化",
       "ライブ音楽",
-      "秋イベント",
-      "NRW"
+      "秋イベント"
     ],
     "home_visible": false,
     "home_order": 2,
@@ -1550,7 +1517,7 @@
     "image_alt": "ケルン大聖堂を遠景に市街地を走る市民ランナー",
     "image_caption": "AI生成の編集イメージ。実際の2026年大会、コース、参加者を撮影または再現したものではありません。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "スポーツ・市民イベント",
+    "category": "遊び・スポーツ・家族",
     "content_type": "event",
     "summary": "2026年10月4日のケルンマラソンを、市民ランナーの挑戦、沿道の応援、街路が一日だけ共有空間になる都市文化として紹介。走らない人にも見える大会の魅力を解説します。",
     "url": "/germany/ja/events/cologne-marathon-2026-guide/",
@@ -1565,8 +1532,7 @@
       "ケルン",
       "市民スポーツ",
       "沿道応援",
-      "都市文化",
-      "ランニング"
+      "都市文化"
     ],
     "home_visible": false,
     "home_order": 3,
@@ -1613,7 +1579,7 @@
     "image_alt": "フランクフルト・ブックフェアの会場風景",
     "image_caption": "2024年のフランクフルト・ブックフェア。2026年の会場や出展内容を示すものではありません。",
     "image_credit": "Matti Blume / CC BY-SA 4.0 / Wikimedia Commons",
-    "category": "本・国際文化",
+    "category": "芸術・文化",
     "content_type": "event",
     "summary": "フランクフルト・ブックフェア2026の一般公開は10月9〜11日。ゲスト国チェコの「海辺の国」というテーマ、翻訳や絵本の面白さを、日本語の読者にも楽しめる視点で案内します。",
     "url": "/germany/ja/events/frankfurt-book-fair-2026-guide/",
@@ -1626,7 +1592,6 @@
     "tags": [
       "フランクフルト",
       "ブックフェア",
-      "2026年10月",
       "チェコ",
       "読書",
       "翻訳"
@@ -1679,7 +1644,7 @@
     "image_alt": "現代美術の展示を静かに鑑賞する日本人と来場者",
     "image_caption": "AI生成の編集イメージ。実際の2026年会場、出展ギャラリー、作品を撮影または再現したものではありません。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "現代美術・アートフェア",
+    "category": "芸術・文化",
     "content_type": "event",
     "summary": "2026年11月5〜8日のART COLOGNEを、購入予定のない人にも開かれた現代美術の観察場所として紹介。美術館との違い、ギャラリーの選択、価格と評価、作品との対話を解説します。",
     "url": "/germany/ja/events/art-cologne-2026-guide/",
@@ -1694,8 +1659,7 @@
       "ケルン",
       "現代美術",
       "アートフェア",
-      "ギャラリー",
-      "美術市場"
+      "ギャラリー"
     ],
     "home_visible": true,
     "home_order": 2,
@@ -1743,7 +1707,7 @@
     "image_alt": "ドイツの制度変更をタブレットと書類で確認する日本人の夫婦",
     "image_caption": "AI生成の編集用イメージ。人物、画面、書類、商品は架空で、公式資料を再現していません。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "生活・制度",
+    "category": "暮らし・買い物",
     "content_type": "news",
     "source_type": "manual",
     "area": "ドイツ全土",
@@ -1756,12 +1720,10 @@
     "updated_at": "2026-08-30",
     "last_verified": "2026-08-29",
     "tags": [
-      "2026年9月",
       "制度変更",
       "環境表示",
       "税務相談",
-      "ドイツ鉄道",
-      "ドイツ生活"
+      "ドイツ鉄道"
     ],
     "home_visible": false,
     "home_order": 1,
@@ -1801,7 +1763,7 @@
     "image_alt": "NRWの既存集合住宅前で改修計画をタブレットで確認する所有者と専門家",
     "image_caption": "AI生成の編集用イメージ。人物、建物、計画図、端末画面は架空で、実在の申請案件ではありません。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "NRW・住まい・行政",
+    "category": "住まい",
     "content_type": "news",
     "source_type": "manual",
     "area": "NRW",
@@ -1816,10 +1778,9 @@
     "tags": [
       "NRW",
       "建築ルール",
-      "住宅",
+      "住まい",
       "リノベーション",
-      "用途変更",
-      "電子行政"
+      "用途変更"
     ],
     "home_visible": false,
     "home_order": 2,
@@ -1859,7 +1820,7 @@
     "image_alt": "ドイツでオンライン面接と応募書類を準備する日本人の求職者",
     "image_caption": "AI生成の編集用イメージ。人物、企業、求人、画面、書類は架空です。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "仕事・経済",
+    "category": "仕事",
     "content_type": "news",
     "source_type": "manual",
     "area": "ドイツ全土",
@@ -1872,12 +1833,11 @@
     "updated_at": "2026-08-30",
     "last_verified": "2026-08-29",
     "tags": [
-      "ドイツ雇用",
-      "失業率",
+      "雇用",
+      "失業",
       "転職",
       "求人",
-      "求職",
-      "仕事"
+      "求職"
     ],
     "home_visible": false,
     "home_order": 3,
@@ -1921,7 +1881,7 @@
     "image_alt": "地域の交流会で次回の日程を相談する日本人とドイツ人の仲間",
     "image_caption": "AI生成の編集用イメージ。人物、団体、会場は架空です。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "人間関係・ウェルビーイング",
+    "category": "暮らし・買い物",
     "content_type": "column",
     "source_type": "manual",
     "area": "ドイツ生活",
@@ -1938,8 +1898,7 @@
       "居場所",
       "友人",
       "地域コミュニティ",
-      "日本人コミュニティ",
-      "ドイツ生活"
+      "日本人コミュニティ"
     ],
     "home_visible": false,
     "home_order": 1,
@@ -1983,7 +1942,7 @@
     "image_alt": "公式サイト、経験談、AIの回答を分けて確認する日本人の生活者",
     "image_caption": "AI生成の編集用イメージ。人物、画面、書類、サービスは架空です。",
     "image_credit": "AI-generated editorial image / J-Connect",
-    "category": "情報整理・デジタル生活",
+    "category": "暮らし・買い物",
     "content_type": "column",
     "source_type": "manual",
     "area": "ドイツ生活",
@@ -1997,11 +1956,9 @@
     "last_verified": "2026-08-29",
     "tags": [
       "情報リテラシー",
-      "公式情報",
       "AI",
       "行政手続き",
-      "SNS",
-      "ドイツ生活"
+      "SNS"
     ],
     "home_visible": false,
     "home_order": 2,
@@ -2040,7 +1997,7 @@
     "slug": "essen-light-festival-2026-guide",
     "id": "E018",
     "content_type": "event",
-    "category": "光のアート・街歩き",
+    "category": "芸術・文化",
     "title": "エッセン光の祭典2026｜いつもの街が夜の美術館になる10日間",
     "summary": "2026年10月2〜11日、エッセン中心街が光の展示空間へ。建物と映像の重なり、写真では伝わらない時間、子どもと楽しむ見方を紹介し、開催時間も整理します。",
     "official_sources": [
@@ -2061,7 +2018,6 @@
     "tags": [
       "エッセン",
       "光の祭典",
-      "2026年10月",
       "秋",
       "アート",
       "街歩き"
@@ -2098,7 +2054,7 @@
     "slug": "spiel-essen-2026-guide",
     "id": "E019",
     "content_type": "event",
-    "category": "ボードゲーム・遊びの文化",
+    "category": "遊び・スポーツ・家族",
     "title": "エッセン・ボードゲーム見本市2026｜遊んで分かる、ドイツの卓上文化",
     "summary": "10月22〜25日のエッセン・ボードゲーム見本市を、初めての人にも分かる文化案内に。1983年の始まり、試遊の楽しさ、言葉の負担を見分けるコツ、オンライン限定の入場券を紹介します。",
     "official_sources": [
@@ -2123,10 +2079,7 @@
     "tags": [
       "エッセン",
       "ボードゲーム",
-      "2026年10月",
-      "家族",
-      "遊び",
-      "文化"
+      "子連れ"
     ],
     "published": true,
     "status": "published",
@@ -2160,7 +2113,7 @@
     "slug": "kommern-saint-martin-2026-guide",
     "id": "E020",
     "content_type": "event",
-    "category": "季節文化・家族",
+    "category": "季節行事",
     "title": "コメルンの聖マルティン祭2026｜ランタンの灯りと「分け合う」物語",
     "summary": "2026年11月8日、コメルン野外博物館で聖マルティンの行列。ランタン、マントを分ける物語、人形型のパンから、ラインラントで受け継がれる秋の文化を読み解きます。",
     "official_sources": [
@@ -2186,8 +2139,7 @@
       "聖マルティン祭",
       "ランタン",
       "コメルン",
-      "2026年11月",
-      "家族",
+      "子連れ",
       "地域文化"
     ],
     "published": true,
@@ -2222,7 +2174,7 @@
     "slug": "germany-inflation-august-2026",
     "id": "N018",
     "content_type": "news",
-    "category": "暮らし・物価",
+    "category": "お金・税金",
     "title": "ドイツの8月物価は2.9％上昇｜食費とエネルギーで違う家計の実感",
     "summary": "ドイツの2026年8月物価は前年比2.9％上昇。食品全体、燃料、家庭向けエネルギーの違いを整理し、全国平均と自分の家計の実感がずれる理由を身近な買い物から解説します。",
     "official_sources": [
@@ -2251,11 +2203,9 @@
     "next_review": "2026-10-15",
     "tags": [
       "物価",
-      "インフレ",
       "家計",
       "食品",
-      "エネルギー",
-      "ドイツ生活"
+      "エネルギー"
     ],
     "published": true,
     "status": "published",
@@ -2289,7 +2239,7 @@
     "slug": "cologne-antwerp-direct-ice-2026",
     "id": "N019",
     "content_type": "news",
-    "category": "鉄道・近隣国旅行",
+    "category": "旅行・おでかけ",
     "title": "ケルンからアントワープへ直通ICEが開業｜ベルギー旅行の選択肢が広がる",
     "summary": "9月7日、ケルン―アントワープ間に毎日各方向2便の直通ICEが開業。ルーヴェンとブリュッセル空港にも停まる新路線を、ドイツ西部からの街歩きや旅行の選択肢として解説します。",
     "official_sources": [
@@ -2321,8 +2271,7 @@
       "ケルン",
       "アントワープ",
       "ベルギー",
-      "ブリュッセル空港",
-      "鉄道旅行"
+      "ブリュッセル空港"
     ],
     "published": true,
     "status": "published",
@@ -2356,7 +2305,7 @@
     "slug": "germany-warning-day-2026-results",
     "id": "N020",
     "content_type": "news",
-    "category": "暮らし・公共サービス",
+    "category": "暮らし・買い物",
     "title": "全国警報訓練2026、当局は良好と評価｜スマホが鳴った後に知っておきたいこと",
     "summary": "9月10日の全国警報訓練について、連邦当局は初期評価を良好と発表。スマホへの一斉配信、サイレン、アプリの役割と、速報的な評価だけでは分からない点を住民向けに説明します。",
     "official_sources": [
@@ -2388,8 +2337,7 @@
       "防災",
       "スマートフォン",
       "サイレン",
-      "公共サービス",
-      "ドイツ生活"
+      "公共サービス"
     ],
     "published": true,
     "status": "published",
@@ -2423,7 +2371,7 @@
     "slug": "german-bread-culture",
     "id": "C003",
     "content_type": "column",
-    "category": "食文化・暮らし",
+    "category": "季節・文化",
     "title": "ドイツのパンは、なぜこんなに違う？｜一切れから暮らしを知る",
     "summary": "ドイツのパンを「硬い」で終わらせず、酸味、皮、切り口、食卓の組み合わせから味わうコラム。地域の歴史と季節の形を知り、次の一つを自分の好みで選ぶ楽しみを紹介します。",
     "official_sources": [
@@ -2449,10 +2397,8 @@
     "tags": [
       "パン",
       "食文化",
-      "ドイツ生活",
       "ライ麦",
-      "地域文化",
-      "季節"
+      "地域文化"
     ],
     "published": true,
     "status": "published",
@@ -2486,7 +2432,7 @@
     "slug": "germany-autumn-forest-walk",
     "id": "C004",
     "content_type": "column",
-    "category": "自然・季節の暮らし",
+    "category": "季節・文化",
     "title": "ドイツの秋、同じ森をもう一度歩く｜紅葉の先に見える小さな変化",
     "summary": "同じ森を繰り返し歩くと、葉の色、光、落ち葉の音が少しずつ変わります。紅葉と土の仕組みを手がかりに、名所へ遠出しなくても味わえるドイツの秋の楽しみを紹介します。",
     "official_sources": [
@@ -2518,8 +2464,7 @@
       "森",
       "散歩",
       "紅葉",
-      "自然観察",
-      "ドイツ生活"
+      "自然観察"
     ],
     "published": true,
     "status": "published",
@@ -2553,7 +2498,7 @@
     "slug": "deutschlandticket-2027-price-consent",
     "id": "N021",
     "content_type": "news",
-    "category": "交通・暮らし",
+    "category": "交通・車",
     "title": "Deutschlandticketは2027年66.80ユーロへ｜DB利用者は11月30日までに確認",
     "summary": "Deutschlandticketは2027年1月から月66.80ユーロへ値上げ。DBから購入した既存契約では11月30日までの同意が必要になるため、購入者、期限、未回答時の扱いを整理します。",
     "official_sources": [
@@ -2573,12 +2518,11 @@
     "event_date": "2027年1月1日から新料金",
     "next_review": "2026-12-01",
     "tags": [
-      "Deutschlandticket",
+      "ドイツチケット",
       "公共交通",
       "定期券",
       "値上げ",
-      "Deutsche Bahn",
-      "2027年"
+      "ドイツ鉄道"
     ],
     "published": true,
     "status": "published",
@@ -2612,7 +2556,7 @@
     "slug": "db-2027-timetable-family-ticket",
     "id": "N022",
     "content_type": "news",
-    "category": "交通・旅行",
+    "category": "交通・車",
     "title": "DBの2027年ダイヤが予約開始｜家族券99.99ユーロとNRW―ベルリン工事の注意点",
     "summary": "DBの2027年ダイヤは12月13日開始。新しい家族向け往復券、定期券の値下げ、国際列車の拡充と、工事で約80分延びるNRW―ベルリン移動を生活者向けに整理します。",
     "official_sources": [
@@ -2636,12 +2580,11 @@
     "event_date": "2026-12-13から2027年ダイヤ",
     "next_review": "2026-12-12",
     "tags": [
-      "Deutsche Bahn",
+      "ドイツ鉄道",
       "ICE",
       "2027年ダイヤ",
       "Familienticket",
-      "鉄道旅行",
-      "NRW"
+      "鉄道"
     ],
     "published": true,
     "status": "published",
@@ -2675,7 +2618,7 @@
     "slug": "germany-winter-time-2026",
     "id": "C005",
     "content_type": "column",
-    "category": "季節・暮らし",
+    "category": "季節・文化",
     "title": "ドイツの冬時間は10月25日から｜「1時間戻る」日に暮らしはどう変わる？",
     "summary": "2026年10月25日、ドイツは夏時間から標準時へ。時計を1時間戻す仕組み、日本との時差、日曜の朝に確認したい機器や予定を、季節の暮らしとして紹介します。",
     "official_sources": [
@@ -2699,9 +2642,7 @@
     "event_date": "2026-10-25 夏時間終了",
     "next_review": "2027-10-01",
     "tags": [
-      "冬時間",
       "時間変更",
-      "ドイツ生活",
       "日本との時差",
       "秋",
       "時計"
@@ -2738,7 +2679,7 @@
     "slug": "germany-january-2027-changes",
     "id": "N023",
     "content_type": "news",
-    "category": "生活・制度",
+    "category": "お金・税金",
     "title": "【2027年1月から】ドイツで何が変わる？ 最低賃金・ドイツチケット・社会保険・児童手当まとめ",
     "summary": "2027年1月からドイツで変わる制度を、在独日本人の生活に関わる項目に絞って整理。決定済みのものと、まだ法案段階のものを分けて解説します。",
     "official_sources": [
@@ -2780,13 +2721,11 @@
     "event_date": "2027年1月1日前後",
     "next_review": "2026-12-01",
     "tags": [
-      "ドイツ生活",
       "制度改正",
       "最低賃金",
       "ドイツチケット",
       "社会保険",
-      "児童手当",
-      "税金"
+      "児童手当"
     ],
     "published": true,
     "status": "published",
@@ -2820,7 +2759,7 @@
     "slug": "europe-protests-mofa-october-2026",
     "id": "N024",
     "content_type": "news",
-    "category": "暮らし・安全",
+    "category": "旅行・おでかけ",
     "title": "欧州で広がる抗議活動、外務省「広域情報」をドイツ在住者目線で読む｜10月31日のデモと備え",
     "summary": "外務省が2026年10月21日に出した広域情報「欧州での抗議活動を受けた注意喚起」をドイツ在住者向けに解説。フランスの抗議の背景、10月31日にNRWなど全国21都市で予定されるデモ、在留届・たびレジなど今日できる備えを整理します。",
     "official_sources": [
@@ -2860,10 +2799,7 @@
       "外務省",
       "デモ",
       "フランス",
-      "NRW",
-      "在留届",
-      "たびレジ",
-      "ドイツ生活"
+      "NRW"
     ],
     "published": true,
     "status": "published",
@@ -2912,20 +2848,16 @@
       "next_review_due": "2026-12-15"
     },
     "title": "【2027年】ドイツの健康保険料は上がる？ 追加保険料率「平均2.9%据え置き」の意味と乗り換え方",
-    "category": "生活・制度",
+    "category": "医療・健康",
     "summary": "2027年の公的医療保険の追加保険料率は、計算上の平均が2.9%で据え置きの見通しです。ただし実際の率は加入先ごとに決まり、2026年7月からは値上げのお知らせの手紙も義務ではなくなりました。負担差の計算例、特別解約権、乗り換えの手順を整理します。",
     "published_at": "2026-10-26",
     "last_verified": "2026-10-26",
     "tags": [
       "健康保険",
-      "公的医療保険",
       "追加保険料",
       "Zusatzbeitrag",
       "保険組合",
-      "乗り換え",
-      "2027年",
-      "ドイツ生活",
-      "手取り"
+      "乗り換え"
     ],
     "updated_at": "2026-10-26",
     "related_articles": [
@@ -2992,7 +2924,7 @@
       "next_review_due": "2027-10-01"
     },
     "title": "ドイツの冬のカビ・結露対策｜換気・暖房・湿度の目安と、カビが出たときの対処",
-    "category": "季節・暮らし",
+    "category": "住まい",
     "summary": "暖房が始まるとドイツの住まいでは結露やカビの相談が増えます。連邦環境庁と消費者センターの目安をもとに、湿度・室温・換気の具体的な数字、洗濯物の室内干し、カビが出たときの掃除と大家さんへの連絡までを整理します。",
     "published_at": "2026-10-26",
     "last_verified": "2026-10-26",
@@ -3001,11 +2933,7 @@
       "結露",
       "換気",
       "暖房",
-      "湿度",
-      "冬",
-      "賃貸",
-      "ドイツ生活",
-      "Lüften"
+      "湿度"
     ],
     "updated_at": "2026-10-26",
     "related_articles": [
@@ -3068,15 +2996,13 @@
       "next_review_due": "2027-10-01"
     },
     "title": "ドイツの日曜日はなぜこんなに静か？｜お店が閉まる理由と、日曜に開いている場所",
-    "category": "ドイツ雑学・暮らし",
+    "category": "暮らし・買い物",
     "summary": "ドイツでは日曜日にスーパーも洋服店も閉まります。その背景にある憲法の「日曜日の保護」、州ごとの閉店法、年に数回の日曜営業日、芝刈り機の音まで含めた「静かな日曜」の仕組みを、ノルトライン＝ヴェストファーレン州（NRW）を例に紹介します。",
     "published_at": "2026-10-26",
     "last_verified": "2026-10-26",
     "tags": [
       "日曜日",
       "閉店法",
-      "ドイツ雑学",
-      "ドイツ生活",
       "買い物",
       "NRW",
       "祝日"
@@ -3143,19 +3069,16 @@
       "next_review_due": "2027-04-01"
     },
     "title": "アウトバーンは本当に速度無制限？｜「推奨130km/h」の意味と、最初のアウトバーンがケルンにあった話",
-    "category": "ドイツ雑学・暮らし",
+    "category": "交通・車",
     "summary": "「ドイツの高速道路は速度無制限」は半分正解です。法律で決まっているのは推奨速度130km/hで、制限のない区間は全体の約7割。推奨速度の意味、車種ごとの制限、2026年の国会での議論、そして1932年にケルンとボンの間で開通した最初のアウトバーンまで紹介します。",
     "published_at": "2026-10-26",
     "last_verified": "2026-10-26",
     "tags": [
       "アウトバーン",
       "速度制限",
-      "ドイツ雑学",
       "車",
       "運転",
-      "ケルン",
-      "ボン",
-      "NRW"
+      "ケルン"
     ],
     "updated_at": "2026-10-26",
     "related_articles": [
@@ -3218,19 +3141,16 @@
       "next_review_due": "2027-04-23"
     },
     "title": "ドイツの「ビール純粋令」とは？｜1516年の決まりと、ケルシュ・アルトまで広がる今のビール",
-    "category": "ドイツ雑学・食文化",
+    "category": "季節・文化",
     "summary": "1516年にバイエルンで定められた「ビール純粋令」は、500年以上たった今もドイツのビールづくりに生きています。もともとの材料、今の法律での決まり、EUの判決、ケルンのケルシュやデュッセルドルフのアルトとの関係、最新の統計までを紹介します。",
     "published_at": "2026-10-26",
     "last_verified": "2026-10-26",
     "tags": [
       "ビール",
-      "ビール純粋令",
-      "ドイツ雑学",
       "食文化",
       "ケルシュ",
       "アルトビール",
-      "バイエルン",
-      "NRW"
+      "バイエルン"
     ],
     "updated_at": "2026-10-26",
     "related_articles": [
@@ -3293,7 +3213,7 @@
       "next_review_due": "2027-03-01"
     },
     "title": "なぜカーニバルは11月11日11時11分に始まる？｜ケルンとデュッセルドルフの「第5の季節」",
-    "category": "ドイツ雑学・季節文化",
+    "category": "季節・文化",
     "summary": "ラインラントのカーニバルは、毎年11月11日の11時11分に始まります。「11」が道化の数とされる理由、待降節前の断食とのつながり、1823年のケルンの改革、デュッセルドルフのホッペディッツ、「アラーフ」と「ヘラウ」の違い、2026/27年シーズンの日程を紹介します。",
     "published_at": "2026-10-26",
     "last_verified": "2026-10-26",
@@ -3302,10 +3222,7 @@
       "11月11日",
       "ケルン",
       "デュッセルドルフ",
-      "ドイツ雑学",
-      "季節文化",
-      "NRW",
-      "ラインラント"
+      "季節行事"
     ],
     "updated_at": "2026-10-26",
     "related_articles": [
@@ -3368,19 +3285,16 @@
       "next_review_due": "2027-10-01"
     },
     "title": "ドイツの水道水はそのまま飲める？｜「硬水」の正体と、古い建物で気をつけたいこと",
-    "category": "ドイツ雑学・暮らし",
+    "category": "暮らし・買い物",
     "summary": "ドイツの水道水は、国の検査で「良い〜とても良い」と評価されています。それでも白い水あかがつくのはなぜ？ 水の硬さの決まり、デュッセルドルフやケルンの水の硬さ、古い建物の鉛管と「朝いちばんの水」の注意点まで、連邦環境庁などの資料をもとに紹介します。",
     "published_at": "2026-10-27",
     "last_verified": "2026-10-27",
     "tags": [
       "水道水",
       "硬水",
-      "ドイツ雑学",
-      "ドイツ生活",
       "鉛管",
       "デュッセルドルフ",
-      "ケルン",
-      "NRW"
+      "ケルン"
     ],
     "updated_at": "2026-10-27",
     "related_articles": [
@@ -3443,19 +3357,16 @@
       "next_review_due": "2027-10-01"
     },
     "title": "ドイツの祝日は州ごとに違う？｜国が決めた祝日は1日だけ、NRWの2027年の祝日一覧つき",
-    "category": "ドイツ雑学・暮らし",
+    "category": "季節・文化",
     "summary": "ドイツで国の法律が決めている祝日は10月3日の「ドイツ統一の日」だけ。ほかの祝日はすべて州が決めています。11月1日の万聖節がNRWでは休みなのに隣の州では平日、という違いの理由と、州ごとの珍しい祝日、NRWの2027年の祝日一覧を紹介します。",
     "published_at": "2026-10-27",
     "last_verified": "2026-10-27",
     "tags": [
       "祝日",
       "州",
-      "ドイツ雑学",
-      "ドイツ生活",
       "NRW",
       "万聖節",
-      "聖体祭",
-      "2027年"
+      "聖体祭"
     ],
     "updated_at": "2026-10-27",
     "related_articles": [
@@ -3518,17 +3429,14 @@
       "next_review_due": "2027-11-01"
     },
     "title": "アドベントクランツとアドベントカレンダーはドイツ生まれ？｜ろうそく4本と24の扉の物語",
-    "category": "ドイツ雑学・季節文化",
+    "category": "季節・文化",
     "summary": "クリスマス前の4週間、ドイツの家庭や街を彩るアドベントクランツとアドベントカレンダー。どちらもドイツで生まれた習慣です。1839年にハンブルクで生まれたろうそくの輪、母親の手作りから始まった印刷のカレンダー、2026年のアドベントの日程を紹介します。",
     "published_at": "2026-10-27",
     "last_verified": "2026-10-27",
     "tags": [
       "アドベント",
       "クリスマス",
-      "アドベントクランツ",
-      "アドベントカレンダー",
-      "ドイツ雑学",
-      "季節文化",
+      "季節行事",
       "ハンブルク"
     ],
     "updated_at": "2026-10-27",
@@ -3592,7 +3500,7 @@
       "next_review_due": "2027-07-01"
     },
     "title": "ドイツ人はなぜ現金が好き？｜ドイツ連邦銀行の調査で見る、支払いの「今」",
-    "category": "ドイツ雑学・暮らし",
+    "category": "お金・税金",
     "summary": "「ドイツはカードが使えない店が多い」と言われてきましたが、変化が進んでいます。ドイツ連邦銀行の調査によると、2025年には初めて、現金を使わない支払いが件数で半分を超えました。それでも現金が根強い理由、デビットカード「ギロカード」の存在、暮らしで困らないコツを紹介します。",
     "published_at": "2026-10-27",
     "last_verified": "2026-10-27",
@@ -3600,8 +3508,6 @@
       "現金",
       "キャッシュレス",
       "ギロカード",
-      "ドイツ雑学",
-      "ドイツ生活",
       "買い物",
       "支払い"
     ],
@@ -3658,16 +3564,14 @@
       "next_review_due": "2027-11-01"
     },
     "title": "クリスマスツリーはドイツから広まった？｜リンゴを飾った「楽園の木」と、年に2,000万本以上の今",
-    "category": "ドイツ雑学・季節文化",
+    "category": "季節・文化",
     "summary": "世界中で飾られるクリスマスツリーは、ドイツ語圏で育った習慣です。中世の「楽園の木」の劇、1605年のシュトラスブルクの記録、教会の反対からろうそくの普及まで、ツリーがドイツの家庭に広まるまでの道のりと、今のドイツのツリー事情を紹介します。",
     "published_at": "2026-10-27",
     "last_verified": "2026-10-27",
     "tags": [
       "クリスマス",
-      "クリスマスツリー",
       "もみの木",
-      "ドイツ雑学",
-      "季節文化",
+      "季節行事",
       "冬"
     ],
     "updated_at": "2026-10-27",
@@ -3727,7 +3631,7 @@
       "next_review_due": "2027-04-01"
     },
     "title": "ドイツの鉄道はなぜ遅れる？｜長距離列車の定時率60%の意味と、遅れたときにお金が戻るしくみ",
-    "category": "ドイツ雑学・暮らし",
+    "category": "交通・車",
     "summary": "「ドイツの電車は時間どおりに来ない」とよく言われます。ドイツ鉄道によると、2025年の長距離列車の定時率は60.1%。「6分未満」という定時の基準、遅れの主な原因、進行中の大規模改修、そして60分以上遅れたときに運賃の一部が戻るEUの乗客の権利まで、数字で整理します。",
     "published_at": "2026-10-27",
     "last_verified": "2026-10-27",
@@ -3736,10 +3640,7 @@
       "遅延",
       "定時率",
       "乗客の権利",
-      "払い戻し",
-      "ドイツ雑学",
-      "ドイツ生活",
-      "ICE"
+      "払い戻し"
     ],
     "updated_at": "2026-10-27",
     "related_articles": [
@@ -3802,16 +3703,14 @@
       "next_review_due": "2027-04-01"
     },
     "title": "ドイツワインは「白」の国？｜13の産地、リースリング、ラベルの「カビネット」「シュペートレーゼ」の読み方",
-    "category": "ドイツ雑学・食文化",
+    "category": "季節・文化",
     "summary": "ビールの国として知られるドイツは、実はワインの国でもあります。13ある産地、最も多く植えられているリースリング、約7割を占める白ワイン、そしてラベルに書かれた「カビネット」「トロッケン」などの言葉の意味を、ドイツワイン協会と連邦統計局の資料をもとに紹介します。",
     "published_at": "2026-10-27",
     "last_verified": "2026-10-27",
     "tags": [
       "ワイン",
-      "ドイツワイン",
       "リースリング",
       "モーゼル",
-      "ドイツ雑学",
       "食文化",
       "ライン川"
     ],
@@ -3876,16 +3775,12 @@
       "next_review_due": "2027-10-01"
     },
     "title": "ドイツの「クラインガルテン」とは？｜線路沿いに並ぶ小さな庭と、法律で決まった小屋の大きさ",
-    "category": "ドイツ雑学・暮らし",
+    "category": "季節・文化",
     "summary": "電車の窓から見える、小屋つきの小さな庭がずらりと並ぶ風景。ドイツには約87万の市民農園「クラインガルテン（Kleingarten）」があります。貧しい人のための庭から始まった歴史、「シュレーバーガルテン」という呼び名の由来、小屋は24平方メートルまでという法律の決まり、デュッセルドルフとケルンの事情を紹介します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
     "tags": [
       "クラインガルテン",
-      "市民農園",
-      "シュレーバーガルテン",
-      "ドイツ雑学",
-      "ドイツ生活",
       "庭",
       "デュッセルドルフ",
       "ケルン"
@@ -3951,7 +3846,7 @@
       "next_review_due": "2026-12-10"
     },
     "title": "ドイツの大晦日はなぜ花火だらけ？｜花火が買えるのは年に3日だけ、という法律と街の禁止区域",
-    "category": "ドイツ雑学・季節文化",
+    "category": "季節・文化",
     "summary": "ドイツの大晦日（Silvester）の夜は、街じゅうで花火が上がります。実は一般の人が花火を買えるのは12月29日〜31日の3日間だけ、打ち上げてよいのは12月31日と1月1日だけと法律で決まっています。花火のルール、教会や病院の近くでの禁止、デュッセルドルフやケルンの禁止区域、微小粒子状物質の問題までを紹介します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -3960,10 +3855,7 @@
       "シルベスター",
       "花火",
       "年末年始",
-      "ドイツ雑学",
-      "季節文化",
-      "デュッセルドルフ",
-      "ケルン"
+      "季節行事"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4026,7 +3918,7 @@
       "next_review_due": "2027-11-01"
     },
     "title": "クリスマスマーケットのグリューワインとは？｜EUの法律で決まった「定義」と、ラベルに材料が書かれない理由",
-    "category": "ドイツ雑学・食文化",
+    "category": "季節・文化",
     "summary": "クリスマスマーケットの屋台で湯気を立てるグリューワイン（Glühwein）。実はEUの規則で、材料やアルコール度数が決まっています。シナモンやクローブで香りをつけること、アルコール7%以上、水を加えてはいけないこと、2026年の改正でロゼも使えるようになったこと、材料表示がない理由、子ども向けの飲み物の選び方までを紹介します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -4035,9 +3927,7 @@
       "クリスマスマーケット",
       "クリスマス",
       "ワイン",
-      "ドイツ雑学",
-      "食文化",
-      "冬"
+      "食文化"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4096,7 +3986,7 @@
       "next_review_due": "2027-11-01"
     },
     "title": "聖ニコラウスの日とは？｜12月6日の朝、靴にお菓子が入っている理由と、ラインラントの「ヴェックマン」",
-    "category": "ドイツ雑学・季節文化",
+    "category": "季節・文化",
     "summary": "ドイツでは12月5日の夜に子どもたちが靴を玄関に置き、6日の朝にはお菓子が入っています。4世紀の司教ニコラウスの伝説、靴を置く習慣の始まり、黒い服の従者クネヒト・ループレヒト、ラインラントのパン「ヴェックマン」、サンタクロースとの関係までを紹介します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -4105,10 +3995,7 @@
       "12月6日",
       "クリスマス",
       "アドベント",
-      "ヴェックマン",
-      "ドイツ雑学",
-      "季節文化",
-      "ラインラント"
+      "ヴェックマン"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4171,18 +4058,16 @@
       "next_review_due": "2027-10-01"
     },
     "title": "ケルン大聖堂は完成までに632年かかった？｜300年以上止まった工事と、塔の上に残ったクレーン",
-    "category": "ドイツ雑学・歴史",
+    "category": "季節・文化",
     "summary": "ケルン中央駅を出ると目の前にそびえるケルン大聖堂。1248年に工事が始まり、完成したのは1880年でした。工事が300年以上止まっていた理由、塔の上に残された木のクレーン、19世紀の完成を支えた市民、世界遺産と「危機遺産」の話、東方三博士の聖遺物まで紹介します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
     "tags": [
-      "ケルン大聖堂",
+      "大聖堂",
       "ケルン",
       "世界遺産",
       "ゴシック",
-      "ドイツ雑学",
-      "歴史",
-      "NRW"
+      "歴史"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4241,7 +4126,7 @@
       "next_review_due": "2027-10-01"
     },
     "title": "ルール地方は炭鉱の街だった？｜2018年に閉じた最後の炭鉱と、世界遺産ツォルフェアアインの今",
-    "category": "ドイツ雑学・歴史",
+    "category": "季節・文化",
     "summary": "エッセン、ドルトムント、ボーフムなどが連なるルール地方は、かつてヨーロッパ有数の炭鉱地帯でした。1950年代の最盛期、炭鉱の危機と閉山、2018年12月に閉じたドイツ最後の炭鉱、そして世界遺産になった炭鉱ツォルフェアアインまで、ルール地方の150年を紹介します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -4250,10 +4135,7 @@
       "炭鉱",
       "ツォルフェアアイン",
       "世界遺産",
-      "エッセン",
-      "ドイツ雑学",
-      "歴史",
-      "NRW"
+      "エッセン"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4316,7 +4198,7 @@
       "next_review_due": "2027-11-01"
     },
     "title": "ドアに書かれた「20*C+M+B+27」とは？｜1月6日の三賢王の日と、家々を回る子どもたち「シュテルンジンガー」",
-    "category": "ドイツ雑学・季節文化",
+    "category": "季節・文化",
     "summary": "年が明けると、ドイツの家のドアの上にチョークで「20*C+M+B+27」と書かれているのを見かけます。三賢王の姿をした子どもたち「シュテルンジンガー」が残していく祝福のしるしです。C+M+Bの意味、1959年から続く子どもたちの募金活動、ケルン大聖堂の三賢王の聖遺物とのつながりを紹介します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -4325,10 +4207,7 @@
       "シュテルンジンガー",
       "1月6日",
       "年末年始",
-      "ドイツ雑学",
-      "季節文化",
-      "ケルン",
-      "募金"
+      "季節行事"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4391,7 +4270,7 @@
       "next_review_due": "2027-10-01"
     },
     "title": "ベルリンの壁はどこにあった？｜1961年から28年間、155kmの壁と、1989年11月9日の夜",
-    "category": "ドイツ雑学・歴史",
+    "category": "季節・文化",
     "summary": "ベルリンの街を東西に分けていた壁は、1961年8月13日に造られ始め、1989年11月9日に開かれました。全長約155km、壁で命を落とした人は少なくとも140人。壁ができた理由、壁の構造、記者会見の「言い間違い」から始まった壁の崩壊、今も残る壁のあとと記念の場所を紹介します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -4400,9 +4279,7 @@
       "ベルリン",
       "東西ドイツ",
       "冷戦",
-      "ドイツ統一",
-      "ドイツ雑学",
-      "歴史"
+      "ドイツ統一"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4465,7 +4342,7 @@
       "next_review_due": "2027-08-01"
     },
     "title": "ドイツの学校は「成績1」が一番いい？｜1〜6の成績の意味と、高校の「15点満点」",
-    "category": "ドイツ雑学・暮らし",
+    "category": "家族・子育て",
     "summary": "ドイツの学校の成績は、1が「とてもよい」、6が「不十分」。日本の5段階評価とは数字の向きが逆です。NRW州の学校法が定める6段階の意味、小学校1・2年生では成績を付けないこと、高校（ギムナジウム上級段階）の0〜15点の仕組み、成績表の読み方を紹介します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -4474,10 +4351,7 @@
       "成績",
       "成績表",
       "ギムナジウム",
-      "アビトゥーア",
-      "子育て",
-      "ドイツ雑学",
-      "NRW"
+      "アビトゥーア"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4532,18 +4406,16 @@
       "next_review_due": "2026-11-15"
     },
     "title": "ドイツの9月物価は3.3％上昇｜2023年12月以来の高さ、エネルギーが14.9％上昇",
-    "category": "暮らし・物価",
+    "category": "お金・税金",
     "summary": "ドイツの2026年9月の消費者物価は前年同月比3.3％上昇し、2023年12月以来の高い伸びになりました。主な原因は暖房用灯油やガソリンなどのエネルギーで、前年比14.9％の上昇です。一方、食品は0.4％とほぼ横ばい。10月から始まった燃料税の一時的な引き下げとあわせて、家計への影響を整理します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
     "tags": [
       "物価",
-      "インフレ",
       "家計",
       "エネルギー",
       "ガソリン",
-      "燃料税",
-      "ドイツ生活"
+      "燃料税"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4602,7 +4474,7 @@
       "next_review_due": "2026-12-15"
     },
     "title": "ドイツで「砂糖入り飲料税」導入へ｜2027年7月から、コーラや甘いジュースに1リットル26〜32セント",
-    "category": "生活・制度",
+    "category": "暮らし・買い物",
     "summary": "ドイツ政府は2026年10月14日、砂糖を加えた飲み物に課税する法案をまとめました。100ミリリットルあたり5グラム以上の砂糖を含む飲み物が対象で、2027年7月1日からの導入を目指します。税額の2段階、対象になる飲み物とならない飲み物、税収の使い道、今後の手続きを整理します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -4611,9 +4483,7 @@
       "砂糖税",
       "清涼飲料",
       "健康保険",
-      "税金",
-      "2027年",
-      "ドイツ生活"
+      "税金"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4668,7 +4538,7 @@
       "next_review_due": "2026-12-31"
     },
     "title": "【2027年1月から】リースターに代わる「老後資金口座」スタート｜ETFも対象、国の補助は最大年540ユーロ",
-    "category": "お金・制度",
+    "category": "お金・税金",
     "summary": "ドイツの個人年金制度が2027年1月1日から大きく変わります。これまでのリースター年金に代わり、ETFなどで運用できる「老後資金口座（Altersvorsorgedepot）」が始まります。国の補助の計算方法、年間の上限、費用の上限、既存のリースター契約の扱い、注意点を整理します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -4677,10 +4547,7 @@
       "老後資金",
       "リースター",
       "ETF",
-      "補助金",
-      "2027年",
-      "お金",
-      "ドイツ生活"
+      "補助金"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4743,7 +4610,7 @@
       "next_review_due": "2026-12-15"
     },
     "title": "ドイツの介護保険が改革へ｜子どものいない人は2027年から上乗せ0.9％、扶養の配偶者にも負担案",
-    "category": "生活・制度",
+    "category": "医療・健康",
     "summary": "ドイツ政府は、公的介護保険の財政を立て直すための改革法案（介護再編法）を閣議決定しました。保険料率3.6％は据え置く一方、子どものいない人の上乗せを2027年1月から0.6％から0.9％へ引き上げ、2028年からは扶養に入っている配偶者の分にも上乗せを求める案です。手取りへの影響の計算例と、今後の流れを整理します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -4752,11 +4619,7 @@
       "社会保険",
       "保険料",
       "子どものいない人",
-      "扶養",
-      "配偶者",
-      "2027年",
-      "手取り",
-      "ドイツ生活"
+      "扶養"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4815,7 +4678,7 @@
       "next_review_due": "2026-12-15"
     },
     "title": "家具付き・短期・インデックス賃貸のルールが変わる？｜ドイツの賃貸法改正案、連邦議会で公聴会",
-    "category": "住まい・制度",
+    "category": "住まい",
     "summary": "ドイツ政府の賃貸法改正案「賃貸法II」について、連邦議会の法務委員会が2026年10月14日に公聴会を開きました。家具付き物件の家具代の明示、短期賃貸は原則6か月まで、物価に連動するインデックス賃料の上昇を抑える仕組みなどが柱です。駐在や留学で家具付き物件を借りることが多い日本人にも関係する内容を整理します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -4824,10 +4687,7 @@
       "家具付き物件",
       "短期賃貸",
       "インデックス賃料",
-      "家賃",
-      "法改正",
-      "住まい",
-      "ドイツ生活"
+      "法改正"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4886,19 +4746,16 @@
       "next_review_due": "2026-12-15"
     },
     "title": "ドイツの住宅手当が2027年に見直しへ｜2年ごとの引き上げを止め、暖房費の分を半分に",
-    "category": "お金・制度",
+    "category": "住まい",
     "summary": "ドイツ政府は、家賃の負担を助ける住宅手当（Wohngeld）の法律を改正する案を連邦議会に出しました。2027年1月に予定されていた支給額の定期的な引き上げを見送り、暖房費の分を半分にする一方、収入の計算の手続きを簡単にする内容です。誰に関係するのか、何が変わるのか、連邦参議院の批判と今後の流れを整理します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
     "tags": [
       "住宅手当",
       "Wohngeld",
-      "家賃",
-      "暖房費",
-      "社会保障",
-      "2027年",
-      "お金",
-      "ドイツ生活"
+      "賃貸",
+      "暖房",
+      "社会保障"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4957,7 +4814,7 @@
       "next_review_due": "2027-02-01"
     },
     "title": "【2026/27年の冬】インフルエンザとコロナのワクチン、誰が受ける？｜コロナの定期接種は75歳以上に変更",
-    "category": "暮らし・健康",
+    "category": "医療・健康",
     "summary": "ドイツの予防接種委員会（STIKO）は2026年7月、新型コロナワクチンの勧告を見直し、毎年の接種を標準とする年齢を60歳以上から75歳以上に引き上げました。インフルエンザは引き続き60歳以上に毎年の接種を勧めています。誰が対象か、費用は保険で出るのか、どこで受けられるのかを整理します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -4966,10 +4823,7 @@
       "新型コロナ",
       "ワクチン",
       "予防接種",
-      "STIKO",
-      "健康",
-      "冬",
-      "ドイツ生活"
+      "STIKO"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -5028,20 +4882,15 @@
       "next_review_due": "2027-01-15"
     },
     "title": "2022年分の税金の還付申告は2026年12月31日まで｜会社員が自分から出す申告は4年が期限",
-    "category": "お金・制度",
+    "category": "お金・税金",
     "summary": "ドイツでは、申告の義務がない会社員でも、自分から確定申告を出せば払いすぎた所得税が戻ることがあります。この「任意の申告」は4年以内が期限で、2022年分は2026年12月31日までに税務署に届く必要があり、延長はできません。戻りやすい人の例と、間に合わせるための手順を整理します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
     "tags": [
-      "確定申告",
       "税金",
-      "還付",
       "ELSTER",
-      "所得税",
       "会社員",
-      "期限",
-      "お金",
-      "ドイツ生活"
+      "お金"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -5096,7 +4945,7 @@
       "next_review_due": "2027-10-15"
     },
     "title": "車の保険を見直すなら11月30日まで｜2026年の乗り換え期限と、値上げのときの特別解約",
-    "category": "交通・暮らし",
+    "category": "交通・車",
     "summary": "ドイツの自動車保険の多くは、1年ごとの契約で、乗り換えるには11月30日までに解約の連絡が保険会社に届いている必要があります。2026年の11月30日は月曜日です。値上げの通知が来たときの特別な解約の権利、乗り換えで失敗しないための順番、日本の無事故の実績の扱いを整理します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -5105,10 +4954,7 @@
       "車",
       "乗り換え",
       "解約",
-      "11月30日",
-      "節約",
-      "交通",
-      "ドイツ生活"
+      "節約"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -5163,7 +5009,7 @@
       "next_review_due": "2026-12-15"
     },
     "title": "ドイツで病気で仕事を休むときのルール｜電話での診断書は廃止の方針、子どもの看病休暇は年15日",
-    "category": "仕事・制度",
+    "category": "仕事",
     "summary": "ドイツでは、病気で仕事を休むとき、まず会社に連絡し、多くの場合は4日目から医師の診断書が必要です。診断書は今は電子で保険組合に送られます。政府の連立与党は、電話で出せる診断書をやめ、1日目から診断書を必要にする方針を決めましたが、2026年10月時点では今のルールが続いています。子どもの看病で休めるのは、親1人につき子ども1人あたり年15日です。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -5172,10 +5018,7 @@
       "診断書",
       "仕事",
       "eAU",
-      "子どもの看病",
-      "健康保険",
-      "働き方",
-      "ドイツ生活"
+      "子どもの看病"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -5238,7 +5081,7 @@
       "next_review_due": "2027-10-15"
     },
     "title": "雪の朝、家の前の歩道は誰が掃除する？｜ドイツの「雪かき・凍結対策の義務」と時間のルール",
-    "category": "暮らしの知恵・制度",
+    "category": "住まい",
     "summary": "ドイツでは、雪や氷で歩道が滑りやすくなったとき、家の前の歩道を掃除して滑り止めをまくのは、原則として建物の持ち主の役目です。賃貸契約で借りる人に任されている場合もあります。ケルンとデュッセルドルフの決まりを例に、何時までに、どのくらいの幅を、何を使って掃除するのか、借りている人が確認したいことを整理します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -5247,11 +5090,7 @@
       "冬",
       "凍結",
       "歩道",
-      "賃貸",
-      "住まい",
-      "ケルン",
-      "デュッセルドルフ",
-      "ドイツ生活"
+      "賃貸"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -5310,18 +5149,16 @@
       "next_review_due": "2027-10-15"
     },
     "title": "ネットで買った物は14日以内なら返品できる？｜ドイツの「撤回の権利」と、ブラックフライデー前に知っておきたいこと",
-    "category": "暮らしの知恵・制度",
+    "category": "暮らし・買い物",
     "summary": "ドイツでは、ネットで買った物の多くは、受け取ってから14日以内なら理由を言わずに契約をやめられます。返品の送料は誰が払うのか、元の箱がなくても返せるのか、返金はいつか、対象にならない物は何か。2026年6月に始まった「撤回ボタン」と、11月27日のブラックフライデーで気をつけたい値引き表示もあわせて紹介します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
     "tags": [
-      "ネット通販",
+      "通販",
       "返品",
       "撤回",
       "ブラックフライデー",
-      "消費者",
-      "買い物",
-      "ドイツ生活"
+      "消費者"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -5384,7 +5221,7 @@
       "next_review_due": "2027-10-15"
     },
     "title": "11月のドイツはなぜ静か？｜万聖節・国民哀悼の日・死者の日曜日と、ダンスが禁止される「静かな祝日」",
-    "category": "ドイツ雑学・季節文化",
+    "category": "季節・文化",
     "summary": "11月のドイツには、亡くなった人を思う日が続きます。NRWでは11月1日の万聖節、戦争などの犠牲者を悼む国民哀悼の日、プロテスタントの死者の日曜日が「静かな祝日」とされ、ダンスのイベントや市場などが時間を区切って禁止されます。2026年の日付、NRWの決まり、墓地に灯るろうそくの意味を紹介します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -5393,11 +5230,7 @@
       "万聖節",
       "国民哀悼の日",
       "死者の日曜日",
-      "11月",
-      "祝日",
-      "NRW",
-      "ドイツ雑学",
-      "季節文化"
+      "11月"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -5452,7 +5285,7 @@
       "next_review_due": "2027-10-15"
     },
     "title": "残った有給休暇は年末で消える？｜ドイツの休暇は「その年のうちに」が原則、3月末までの持ち越しと会社の通知義務",
-    "category": "暮らしの知恵・制度",
+    "category": "仕事",
     "summary": "ドイツの法律では、有給休暇はその年のうちに取るのが原則で、特別な理由があるときだけ翌年3月31日まで持ち越せます。ただし、会社が休暇を取るよう促し、取らなければ消えることを知らせていなかった場合は、休暇は消えないと裁判所が判断しています。最低の日数、病気のときの扱い、退職のときの扱いを整理します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -5461,9 +5294,7 @@
       "休暇",
       "仕事",
       "労働法",
-      "年末",
-      "働き方",
-      "ドイツ生活"
+      "年末"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -5526,7 +5357,7 @@
       "next_review_due": "2027-10-15"
     },
     "title": "ジムやスマホの契約、ドイツではどうやって解約する？｜最初の期間が過ぎれば「1か月前」でOK、ネット契約には解約ボタン",
-    "category": "暮らしの知恵・制度",
+    "category": "暮らし・買い物",
     "summary": "ドイツの契約は「自動で1年延長」「3か月前までに解約」が当たり前だと思われがちですが、2022年3月1日以降に結んだ契約は、最初の契約期間が過ぎれば、1か月前の通知でいつでも解約できます。ネットで結べる契約には、ウェブサイトに解約ボタンを置くことも義務です。古い契約との違い、解約の手順、日本に帰るときの注意点を紹介します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -5534,12 +5365,8 @@
       "契約",
       "解約",
       "ジム",
-      "スマホ",
-      "インターネット",
-      "サブスク",
-      "消費者",
-      "帰国",
-      "ドイツ生活"
+      "スマートフォン",
+      "インターネット"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -5602,7 +5429,7 @@
       "next_review_due": "2027-10-15"
     },
     "title": "ドイツで仕事を辞めるときの解約の期間｜原則4週間、試用期間は2週間、退職届は「手書きの署名」が必要",
-    "category": "暮らしの知恵・制度",
+    "category": "仕事",
     "summary": "ドイツで仕事を辞めるときや、会社から解雇を告げられたときには、法律で決められた「解約の期間」があります。原則は4週間で、試用期間中は2週間。会社から解約する場合は、勤めた年数が長いほど期間が長くなります。退職の通知は紙に手書きで署名して渡す必要があり、メールでは無効です。職業安定所への届け出の期限もあわせて整理します。",
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
@@ -5611,10 +5438,7 @@
       "解約",
       "解雇",
       "試用期間",
-      "仕事",
-      "労働法",
-      "転職",
-      "ドイツ生活"
+      "仕事"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [

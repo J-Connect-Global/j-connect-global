@@ -2,7 +2,7 @@
 slug: "germany-winter-mold-ventilation"
 id: "C006"
 content_type: "column"
-category: "季節・暮らし"
+category: "住まい"
 title: "ドイツの冬のカビ・結露対策｜換気・暖房・湿度の目安と、カビが出たときの対処"
 summary: "暖房が始まるとドイツの住まいでは結露やカビの相談が増えます。連邦環境庁と消費者センターの目安をもとに、湿度・室温・換気の具体的な数字、洗濯物の室内干し、カビが出たときの掃除と大家さんへの連絡までを整理します。"
 official_sources:
@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "暖房シーズン（10月〜4月ごろ）"
 next_review: "2027-10-01"
-tags: ["カビ", "結露", "換気", "暖房", "湿度", "冬", "賃貸", "ドイツ生活", "Lüften"]
+tags: ["カビ", "結露", "換気", "暖房", "湿度"]
 published: true
 status: "published"
 source_type: "manual"

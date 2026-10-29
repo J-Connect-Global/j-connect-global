@@ -2,8 +2,8 @@
 id: "L007"
 title: "ドイツの税務識別番号・税務署番号・給与税区分の違い"
 slug: "tax-id-steuernummer-steuerklasse"
-category: "税金・行政"
-tags: ["税金","税務識別番号","税務署番号","給与税区分","行政手続き"]
+category: "お金・税金"
+tags: ["税金", "行政手続き"]
 summary: "ドイツの税務ID・税務署番号・給与税区分の違いを整理。税務IDが届かないときの住所確認、公式の再通知手続き、初回給与計算前に勤務先へ伝えることを解説します。"
 status: "published"
 published: true

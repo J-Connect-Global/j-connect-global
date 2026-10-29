@@ -2,14 +2,14 @@
 id: "E002"
 title: "ケルンの蚤の市・フリーマーケットの楽しみ方"
 slug: "cologne-flea-market"
-category: "おでかけ"
+category: "遊び・スポーツ・家族"
 city: "Köln"
 location: "Köln 周辺の各会場"
 event_date: "会場により異なる"
 published_at: "2026-06-12"
 last_verified: "2026-07-06"
 summary: "ケルンの蚤の市を、中古品を安く買う場所だけでなく、物を使い継ぐ文化、地域の交流、品物の来歴に出会う週末体験として紹介。会場の違いと買う前の大切な見方を整理します。"
-tags: ["マーケット", "中古文化", "週末", "ケルン", "地域交流"]
+tags: ["マーケット", "中古文化", "週末旅行", "ケルン", "地域交流"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/cologne-flea-market/"

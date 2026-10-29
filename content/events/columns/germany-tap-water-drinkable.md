@@ -2,7 +2,7 @@
 slug: "germany-tap-water-drinkable"
 id: "C011"
 content_type: "column"
-category: "ドイツ雑学・暮らし"
+category: "暮らし・買い物"
 title: "ドイツの水道水はそのまま飲める？｜「硬水」の正体と、古い建物で気をつけたいこと"
 summary: "ドイツの水道水は、国の検査で「良い〜とても良い」と評価されています。それでも白い水あかがつくのはなぜ？ 水の硬さの決まり、デュッセルドルフやケルンの水の硬さ、古い建物の鉛管と「朝いちばんの水」の注意点まで、連邦環境庁などの資料をもとに紹介します。"
 official_sources:
@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "ドイツ雑学のコラム"
 next_review: "2027-10-01"
-tags: ["水道水", "硬水", "ドイツ雑学", "ドイツ生活", "鉛管", "デュッセルドルフ", "ケルン", "NRW"]
+tags: ["水道水", "硬水", "鉛管", "デュッセルドルフ", "ケルン"]
 published: true
 status: "published"
 source_type: "manual"

@@ -2,7 +2,7 @@
 id: "E014"
 title: "デュッセルドルフ・オクトーバーフェスト2026｜歴史・音楽・テント文化を楽しむ"
 slug: "duesseldorf-oktoberfest-2026-guide"
-category: "季節イベント・音楽"
+category: "季節行事"
 city: "Düsseldorf"
 location: "Schützenplatz Düsseldorf-Eller"
 event_date: "2026-09-10〜2026-09-26"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-29"
 next_review: "2026-09-09"
 summary: "2026年9月10〜26日のデュッセルドルフ・オクトーバーフェストを、単なるビールイベントではなく、ミュンヘンで始まった祭りの歴史、バイエルンの服装・料理、現代の音楽テント文化から紹介します。"
-tags: ["Düsseldorf", "オクトーバーフェスト", "バイエルン文化", "ライブ音楽", "秋イベント", "NRW"]
+tags: ["デュッセルドルフ", "オクトーバーフェスト", "バイエルン文化", "ライブ音楽", "秋イベント"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/duesseldorf-oktoberfest-2026-guide/"

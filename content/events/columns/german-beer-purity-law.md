@@ -2,7 +2,7 @@
 slug: "german-beer-purity-law"
 id: "C009"
 content_type: "column"
-category: "ドイツ雑学・食文化"
+category: "季節・文化"
 title: "ドイツの「ビール純粋令」とは？｜1516年の決まりと、ケルシュ・アルトまで広がる今のビール"
 summary: "1516年にバイエルンで定められた「ビール純粋令」は、500年以上たった今もドイツのビールづくりに生きています。もともとの材料、今の法律での決まり、EUの判決、ケルンのケルシュやデュッセルドルフのアルトとの関係、最新の統計までを紹介します。"
 official_sources:
@@ -24,7 +24,7 @@ area: "ドイツの食文化"
 location: ""
 event_date: "ドイツ雑学のコラム"
 next_review: "2027-04-23"
-tags: ["ビール", "ビール純粋令", "ドイツ雑学", "食文化", "ケルシュ", "アルトビール", "バイエルン", "NRW"]
+tags: ["ビール", "食文化", "ケルシュ", "アルトビール", "バイエルン"]
 published: true
 status: "published"
 source_type: "manual"

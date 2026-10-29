@@ -2,7 +2,7 @@
 id: "N017"
 title: "ドイツの失業者306.1万人｜2026年8月雇用統計を仕事探しにどう読む？"
 slug: "germany-labour-market-august-2026"
-category: "仕事・経済"
+category: "仕事"
 content_type: "news"
 area: "ドイツ全土"
 event_date: "2026年8月"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-29"
 next_review: "2026-09-30"
 summary: "ドイツの2026年8月登録失業者は306万1,000人、失業率6.5％。季節要因と全国平均の限界を押さえ、求職中の人や転職を考える人が自分の職種・地域の状況を確かめる方法を解説します。"
-tags: ["ドイツ雇用", "失業率", "転職", "求人", "求職", "仕事"]
+tags: ["雇用", "失業", "転職", "求人", "求職"]
 status: "published"
 published: true
 source_type: "manual"

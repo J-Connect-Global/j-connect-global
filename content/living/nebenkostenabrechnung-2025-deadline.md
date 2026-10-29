@@ -2,7 +2,7 @@
 id: "L050"
 title: "ドイツの2025年共益費精算｜2026年末の期限・追加請求・異議申立て"
 slug: "nebenkostenabrechnung-2025-deadline"
-category: "住まい・契約"
+category: "住まい"
 summary: "ドイツの2025年分の共益費・暖房費精算はいつ届く？暦年契約なら2026年12月31日が基本期限。追加請求、返金、証憑確認、異議申立ての手順を日本語で解説します。"
 status: "published"
 published: true
@@ -11,7 +11,7 @@ updated_at: "2026-10-20"
 last_verified: "2026-10-20"
 next_review: "2027-01-10"
 canonical_url: "/germany/ja/living/nebenkostenabrechnung-2025-deadline/"
-tags: ["共益費", "Nebenkosten", "賃貸", "暖房費", "2025年", "2026年末"]
+tags: ["共益費", "Nebenkosten", "賃貸", "暖房"]
 image_url: "/assets/img/living/nebenkostenabrechnung-2025-deadline.webp"
 image_alt: "自宅で精算書と電卓を見比べて共益費を確認する借主"
 related_articles: ["rent-apartment-germany", "electricity-internet-contracts-germany", "moving-checklist-germany"]

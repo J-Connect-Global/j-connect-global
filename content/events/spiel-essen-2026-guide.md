@@ -2,7 +2,7 @@
 slug: "spiel-essen-2026-guide"
 id: "E019"
 content_type: "event"
-category: "ボードゲーム・遊びの文化"
+category: "遊び・スポーツ・家族"
 title: "エッセン・ボードゲーム見本市2026｜遊んで分かる、ドイツの卓上文化"
 summary: "10月22〜25日のエッセン・ボードゲーム見本市を、初めての人にも分かる文化案内に。1983年の始まり、試遊の楽しさ、言葉の負担を見分けるコツ、オンライン限定の入場券を紹介します。"
 official_sources:
@@ -15,7 +15,7 @@ city: "エッセン"
 location: "エッセン見本市会場"
 event_date: "2026-10-22〜2026-10-25"
 next_review: "2026-10-26"
-tags: ["エッセン", "ボードゲーム", "2026年10月", "家族", "遊び", "文化"]
+tags: ["エッセン", "ボードゲーム", "子連れ"]
 published: true
 status: "published"
 source_type: "manual"

@@ -2,7 +2,7 @@
 id: "N008"
 title: "ドイツのインフレ率は2026年7月2.8％｜自分の家計との比べ方"
 slug: "germany-inflation-july-2026"
-category: "暮らし・経済"
+category: "お金・税金"
 content_type: "news"
 area: "ドイツ全土"
 event_date: "2026年7月（暫定値）"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-08"
 next_review: "2026-08-13"
 summary: "ドイツの2026年7月消費者物価指数は前年同月比2.8％、前月比0.8％の暫定値。全国平均と各家庭の負担が違う理由、食費・エネルギー・固定費を自分の家計で確かめる方法を解説します。"
-tags: ["ドイツ物価", "インフレ", "家計", "エネルギー", "食品", "消費者物価"]
+tags: ["物価", "家計", "エネルギー", "食品"]
 status: "published"
 published: true
 source_type: "manual"

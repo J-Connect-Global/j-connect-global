@@ -2,7 +2,7 @@
 id: "L031"
 title: "ドイツでワールドカップ2026を振り返る｜放送、観戦文化、日本代表"
 slug: "world-cup-2026-watch-germany"
-category: "文化・スポーツ"
+category: "季節・文化"
 chips:
   - "ワールドカップ"
   - "サッカー"
@@ -30,7 +30,7 @@ official_sources:
 related_articles: ["rundfunkbeitrag-guide", "germany-belonging-three-layers"]
 summary: "2026年ワールドカップを、ドイツの公共放送、スポーツバー、街のパブリックビューイング、日本代表をめぐる交流から振り返ります。"
 canonical_url: "/germany/ja/living/world-cup-2026-watch-germany/"
-tags: ["ワールドカップ", "サッカー", "観戦文化", "ドイツ生活", "日本代表"]
+tags: ["ワールドカップ", "サッカー", "観戦文化", "日本代表"]
 ---
 
 # ドイツでワールドカップ2026を振り返る｜放送、観戦文化、日本代表

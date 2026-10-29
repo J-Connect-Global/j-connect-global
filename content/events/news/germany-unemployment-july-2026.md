@@ -2,7 +2,7 @@
 id: "N007"
 title: "ドイツの失業者が300万人台に｜2026年7月統計の正しい読み方"
 slug: "germany-unemployment-july-2026"
-category: "仕事・経済"
+category: "仕事"
 content_type: "news"
 area: "ドイツ全土"
 event_date: "2026年7月"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-08"
 next_review: "2026-08-31"
 summary: "ドイツの2026年7月登録失業者は300万7,000人、失業率6.4％。季節要因、登録失業と求職登録の違い、仕事の終了が見えた人が早めに確認したい給付・保険・在留手続きを解説します。"
-tags: ["ドイツ雇用", "失業率", "求職", "失業給付", "健康保険", "在留資格"]
+tags: ["雇用", "失業", "求職", "健康保険", "在留資格"]
 status: "published"
 published: true
 source_type: "manual"

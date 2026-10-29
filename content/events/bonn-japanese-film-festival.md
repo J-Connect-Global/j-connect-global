@@ -2,14 +2,14 @@
 id: "E003"
 title: "ボンで日本映画に出会う｜上映会から文化を読む楽しみ方"
 slug: "bonn-japanese-film-festival"
-category: "文化・映画"
+category: "日本文化"
 city: "Bonn"
 location: "Bonn 周辺の映画館・文化施設"
 event_date: "上映企画により異なる"
 published_at: "2026-06-12"
 last_verified: "2026-07-06"
 summary: "ボンの映画館、大学、文化施設で出会える日本映画を、作品の時代・地域・作家性、字幕、上映後トークから深く楽しむガイド。単発上映や特集を見つける情報源も紹介します。"
-tags: ["日本映画", "映画文化", "ボン", "字幕上映", "大学", "文化交流"]
+tags: ["日本映画", "映画文化", "ボン", "字幕上映", "大学"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/bonn-japanese-film-festival/"

@@ -2,7 +2,7 @@
 id: "N010"
 title: "EUの包装ルールが2026年8月から適用｜買い物や宅配はどう変わる？"
 slug: "eu-packaging-regulation-august-2026"
-category: "暮らし・環境"
+category: "暮らし・買い物"
 content_type: "news"
 area: "ドイツ / EU"
 event_date: "2026年8月12日一般適用"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-08"
 next_review: "2026-11-15"
 summary: "EUの包装・包装廃棄物規則が2026年8月12日から一般適用。すべてが同日に変わるわけではない点を押さえ、表示、過剰包装、再使用、詰め替え、オンライン注文への影響を消費者向けに解説します。"
-tags: ["EU包装規則", "包装廃棄物", "リサイクル", "オンライン注文", "買い物", "環境"]
+tags: ["EU包装規則", "包装廃棄物", "リサイクル", "オンライン注文", "買い物"]
 status: "published"
 published: true
 source_type: "manual"

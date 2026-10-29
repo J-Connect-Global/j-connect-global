@@ -2,7 +2,7 @@
 slug: "germany-winter-time-2026"
 id: "C005"
 content_type: "column"
-category: "季節・暮らし"
+category: "季節・文化"
 title: "ドイツの冬時間は10月25日から｜「1時間戻る」日に暮らしはどう変わる？"
 summary: "2026年10月25日、ドイツは夏時間から標準時へ。時計を1時間戻す仕組み、日本との時差、日曜の朝に確認したい機器や予定を、季節の暮らしとして紹介します。"
 official_sources:
@@ -16,7 +16,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2026-10-25 夏時間終了"
 next_review: "2027-10-01"
-tags: ["冬時間", "時間変更", "ドイツ生活", "日本との時差", "秋", "時計"]
+tags: ["時間変更", "日本との時差", "秋", "時計"]
 published: true
 status: "published"
 source_type: "manual"

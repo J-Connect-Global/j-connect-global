@@ -2,7 +2,7 @@
 slug: "snow-ice-clearing-duty-germany"
 id: "C027"
 content_type: "column"
-category: "暮らしの知恵・制度"
+category: "住まい"
 title: "雪の朝、家の前の歩道は誰が掃除する？｜ドイツの「雪かき・凍結対策の義務」と時間のルール"
 summary: "ドイツでは、雪や氷で歩道が滑りやすくなったとき、家の前の歩道を掃除して滑り止めをまくのは、原則として建物の持ち主の役目です。賃貸契約で借りる人に任されている場合もあります。ケルンとデュッセルドルフの決まりを例に、何時までに、どのくらいの幅を、何を使って掃除するのか、借りている人が確認したいことを整理します。"
 official_sources:
@@ -22,7 +22,7 @@ area: "NRW"
 location: ""
 event_date: "暮らしのコラム（冬）"
 next_review: "2027-10-15"
-tags: ["雪かき", "冬", "凍結", "歩道", "賃貸", "住まい", "ケルン", "デュッセルドルフ", "ドイツ生活"]
+tags: ["雪かき", "冬", "凍結", "歩道", "賃貸"]
 published: true
 status: "published"
 source_type: "manual"

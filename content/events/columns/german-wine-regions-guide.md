@@ -2,7 +2,7 @@
 slug: "german-wine-regions-guide"
 id: "C017"
 content_type: "column"
-category: "ドイツ雑学・食文化"
+category: "季節・文化"
 title: "ドイツワインは「白」の国？｜13の産地、リースリング、ラベルの「カビネット」「シュペートレーゼ」の読み方"
 summary: "ビールの国として知られるドイツは、実はワインの国でもあります。13ある産地、最も多く植えられているリースリング、約7割を占める白ワイン、そしてラベルに書かれた「カビネット」「トロッケン」などの言葉の意味を、ドイツワイン協会と連邦統計局の資料をもとに紹介します。"
 official_sources:
@@ -24,7 +24,7 @@ area: "ドイツの食文化"
 location: ""
 event_date: "ドイツ雑学のコラム"
 next_review: "2027-04-01"
-tags: ["ワイン", "ドイツワイン", "リースリング", "モーゼル", "ドイツ雑学", "食文化", "ライン川"]
+tags: ["ワイン", "リースリング", "モーゼル", "食文化", "ライン川"]
 published: true
 status: "published"
 source_type: "manual"

@@ -2,7 +2,7 @@
 id: "N014"
 title: "ドイツの輸入物価は2026年6月に6.1％上昇｜家計の値段にどう届く？"
 slug: "germany-import-prices-june-2026"
-category: "暮らし・経済"
+category: "お金・税金"
 content_type: "news"
 area: "ドイツ全土"
 event_date: "2026年6月"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-08"
 next_review: "2026-08-31"
 summary: "ドイツの2026年6月輸入物価は前年同月比6.1％上昇、前月比0.7％低下。輸入段階の値上がりがエネルギー、家電、日用品、食品などの店頭価格へ届くまでを生活者向けに説明します。"
-tags: ["ドイツ輸入物価", "物価", "家計", "エネルギー", "日用品", "ドイツ生活"]
+tags: ["物価", "家計", "エネルギー"]
 status: "published"
 published: true
 source_type: "manual"

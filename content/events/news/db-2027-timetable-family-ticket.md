@@ -2,7 +2,7 @@
 slug: "db-2027-timetable-family-ticket"
 id: "N022"
 content_type: "news"
-category: "交通・旅行"
+category: "交通・車"
 title: "DBの2027年ダイヤが予約開始｜家族券99.99ユーロとNRW―ベルリン工事の注意点"
 summary: "DBの2027年ダイヤは12月13日開始。新しい家族向け往復券、定期券の値下げ、国際列車の拡充と、工事で約80分延びるNRW―ベルリン移動を生活者向けに整理します。"
 official_sources:
@@ -16,7 +16,7 @@ area: "ドイツ全土・欧州"
 location: ""
 event_date: "2026-12-13から2027年ダイヤ"
 next_review: "2026-12-12"
-tags: ["Deutsche Bahn", "ICE", "2027年ダイヤ", "Familienticket", "鉄道旅行", "NRW"]
+tags: ["ドイツ鉄道", "ICE", "2027年ダイヤ", "Familienticket", "鉄道"]
 published: true
 status: "published"
 source_type: "manual"

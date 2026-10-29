@@ -2,7 +2,7 @@
 id: "E011"
 title: "ケルン東アジア美術館2026｜日本・中国・韓国を比べて見る"
 slug: "cologne-east-asian-art-museum-2026"
-category: "美術館・展覧会"
+category: "芸術・文化"
 city: "Köln"
 location: "Museum für Ostasiatische Kunst Köln"
 event_date: "2026年の展覧会・催し"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-29"
 next_review: "2026-10-20"
 summary: "ケルン東アジア美術館の2026年展示を、日本美術だけ切り離さず、中国・韓国との共通点と違い、宗教・素材・現代作家の対話から紹介。作品を比較して見る視点を解説します。"
-tags: ["ケルン", "日本美術", "中国美術", "韓国美術", "東アジア美術", "美術館"]
+tags: ["ケルン", "日本美術", "中国美術", "韓国美術", "東アジア美術"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/cologne-east-asian-art-museum-2026/"

@@ -2,7 +2,7 @@
 id: "N009"
 title: "ライン川の低水位は暮らしや旅行にどう影響する？｜2026年8月の見方"
 slug: "rhine-low-water-august-2026"
-category: "旅行・交通"
+category: "旅行・おでかけ"
 content_type: "news"
 area: "ライン川流域 / ドイツ"
 event_date: "2026年8月"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-08"
 next_review: "2026-08-15"
 summary: "ライン川カウプ観測所で2026年8月に非常に低い水位を観測。川の数字の正しい読み方と、観光船・フェリー・旅行、燃料や配送など暮らしへの影響を一般の利用者向けに整理します。"
-tags: ["ライン川", "低水位", "カウプ", "観光船", "フェリー", "ドイツ旅行"]
+tags: ["ライン川", "低水位", "カウプ", "観光船", "フェリー"]
 status: "published"
 published: true
 source_type: "manual"

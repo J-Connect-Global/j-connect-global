@@ -2,7 +2,7 @@
 id: "N004"
 title: "EUのAI透明性ルールが2026年8月から適用｜利用者が知っておきたい表示"
 slug: "eu-ai-act-transparency-august-2026"
-category: "AI・デジタル"
+category: "暮らし・買い物"
 content_type: "news"
 area: "ドイツ / EU"
 event_date: "2026-08-02適用"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-08"
 next_review: "2026-10-01"
 summary: "EUの人工知能規則による透明性義務が2026年8月2日から適用。AIチャット、生成画像・音声、ディープフェイクで利用者がどんな表示を見かけるのか、表示が保証しないことも含めて解説します。"
-tags: ["EU人工知能規則", "生成AI", "AI表示", "ディープフェイク", "消費者", "ドイツ"]
+tags: ["EU人工知能規則", "生成AI", "AI表示", "ディープフェイク", "消費者"]
 status: "published"
 published: true
 source_type: "manual"

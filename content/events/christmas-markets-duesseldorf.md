@@ -2,7 +2,7 @@
 slug: "christmas-markets-duesseldorf"
 id: "E004"
 content_type: "event"
-category: "季節イベント"
+category: "季節行事"
 title: "デュッセルドルフのクリスマスマーケット2026｜冬の広場を楽しむ文化案内"
 summary: "2026年11月19日〜12月30日のデュッセルドルフ・クリスマスマーケットを案内。通常営業時間に加え、11月22日・12月25日の休業、12月24日・26日の特別時間、公共交通と空港P+Rの確認先を整理します。"
 official_sources:
@@ -18,7 +18,7 @@ location: "旧市街・中心部の広場と通り"
 event_date: "2026-11-19〜2026-12-30"
 next_review: "2026-11-18"
 published_at: "2026-06-12"
-tags: ["クリスマスマーケット", "デュッセルドルフ", "2026年11月", "2026年12月", "アドベント", "冬"]
+tags: ["クリスマスマーケット", "デュッセルドルフ", "アドベント", "冬"]
 published: true
 status: "published"
 source_type: "manual"

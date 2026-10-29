@@ -2,7 +2,7 @@
 id: "C001"
 title: "ドイツ生活の孤独を減らす｜居場所は「親友」より三つの層で育つ"
 slug: "germany-belonging-three-layers"
-category: "人間関係・ウェルビーイング"
+category: "暮らし・買い物"
 content_type: "column"
 area: "ドイツ生活"
 event_date: "実践コラム"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-29"
 next_review: "2027-02-28"
 summary: "移住後、知り合いはいても孤独を感じる人へ。顔見知り、役割のある場、深く話せる一人という三つの層から、関係が育つ時間と日本語・現地コミュニティの役割を考えます。"
-tags: ["孤独", "居場所", "友人", "地域コミュニティ", "日本人コミュニティ", "ドイツ生活"]
+tags: ["孤独", "居場所", "友人", "地域コミュニティ", "日本人コミュニティ"]
 status: "published"
 published: true
 source_type: "manual"

@@ -2,7 +2,7 @@
 slug: "quiet-holidays-november-germany"
 id: "C029"
 content_type: "column"
-category: "ドイツ雑学・季節文化"
+category: "季節・文化"
 title: "11月のドイツはなぜ静か？｜万聖節・国民哀悼の日・死者の日曜日と、ダンスが禁止される「静かな祝日」"
 summary: "11月のドイツには、亡くなった人を思う日が続きます。NRWでは11月1日の万聖節、戦争などの犠牲者を悼む国民哀悼の日、プロテスタントの死者の日曜日が「静かな祝日」とされ、ダンスのイベントや市場などが時間を区切って禁止されます。2026年の日付、NRWの決まり、墓地に灯るろうそくの意味を紹介します。"
 official_sources:
@@ -20,7 +20,7 @@ area: "NRW"
 location: ""
 event_date: "2026-11-01 万聖節／11-15 国民哀悼の日／11-22 死者の日曜日"
 next_review: "2027-10-15"
-tags: ["静かな祝日", "万聖節", "国民哀悼の日", "死者の日曜日", "11月", "祝日", "NRW", "ドイツ雑学", "季節文化"]
+tags: ["静かな祝日", "万聖節", "国民哀悼の日", "死者の日曜日", "11月"]
 published: true
 status: "published"
 source_type: "manual"

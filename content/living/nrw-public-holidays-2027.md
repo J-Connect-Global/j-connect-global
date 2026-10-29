@@ -2,7 +2,7 @@
 id: "L054"
 title: "NRWの祝日2027年一覧｜連休・ブリッジデー・学校休暇との違い"
 slug: "nrw-public-holidays-2027"
-category: "生活・手続き"
+category: "暮らし・買い物"
 summary: "NRWの2027年の法定祝日11日を曜日つきで一覧化。休暇を1日取ると連休になる日、週末に重なる祝日の注意点、学校休暇やKitaの休園日との違いを整理します。"
 status: "published"
 published: true
@@ -11,7 +11,7 @@ updated_at: "2026-10-27"
 last_verified: "2026-10-27"
 next_review: "2027-01-27"
 canonical_url: "/germany/ja/living/nrw-public-holidays-2027/"
-tags: ["NRW","祝日","2027年","連休","休暇計画","学校休暇"]
+tags: ["NRW", "祝日", "2027年", "連休", "休暇計画"]
 image_url: "/assets/img/living/nrw-nature-relax-guide.webp"
 image_alt: "NRW州の公園や自然の中で休暇を過ごすイメージ"
 image_caption: "AI生成の編集イメージ。特定の場所や実際の休日を記録した写真ではありません。"

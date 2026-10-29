@@ -2,7 +2,7 @@
 id: "N015"
 title: "2026年9月からドイツで変わること｜表示・税相談・駅の飲酒ルール"
 slug: "germany-september-2026-changes"
-category: "生活・制度"
+category: "暮らし・買い物"
 content_type: "news"
 area: "ドイツ全土"
 event_date: "2026年9月"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-29"
 next_review: "2026-10-01"
 summary: "2026年9月に始まる環境表示の厳格化、給与所得者向け税務相談の対象拡大、ドイツ鉄道の駅構内での飲酒制限を生活者向けに解説。開始日、対象、自分への影響を分けて整理します。"
-tags: ["2026年9月", "制度変更", "環境表示", "税務相談", "ドイツ鉄道", "ドイツ生活"]
+tags: ["制度変更", "環境表示", "税務相談", "ドイツ鉄道"]
 status: "published"
 published: true
 source_type: "manual"

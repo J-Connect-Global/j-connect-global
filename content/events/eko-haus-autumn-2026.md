@@ -2,7 +2,7 @@
 id: "E010"
 title: "EKŌ-Haus 2026秋｜寺院・庭・芸術がつなぐ日本文化"
 slug: "eko-haus-autumn-2026"
-category: "日本文化イベント"
+category: "日本文化"
 city: "Düsseldorf"
 location: "EKŌ-Haus der Japanischen Kultur"
 event_date: "2026-08-20〜2026-10-17"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-29"
 next_review: "2026-09-08"
 summary: "デュッセルドルフのEKŌ-Hausで2026年秋に行われる展覧会、茶、着物、書、仏教行事を紹介。文化施設と寺院が同居する場所で、所作・信仰・学びをどう見るかを解説します。"
-tags: ["EKŌ-Haus", "デュッセルドルフ", "日本文化", "仏教", "茶", "書", "NRW"]
+tags: ["EKŌ-Haus", "デュッセルドルフ", "日本文化", "仏教", "茶"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/eko-haus-autumn-2026/"

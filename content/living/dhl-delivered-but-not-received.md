@@ -2,7 +2,7 @@
 id: "L048"
 title: "ドイツのDHLが配達済みなのに届かない｜確認場所・問い合わせ・複数個口"
 slug: "dhl-delivered-but-not-received"
-category: "買い物・暮らし"
+category: "暮らし・買い物"
 summary: "DHL Paketで配達済みなのに荷物がない場合の確認順序を解説。追跡の受取人・返送履歴、隣人・置き配・ロッカー、販売店への連絡、複数個口の一部未着、遅延との違いを整理します。"
 status: "published"
 published: true
@@ -11,7 +11,7 @@ updated_at: "2026-10-20"
 last_verified: "2026-10-19"
 next_review: "2027-01-19"
 canonical_url: "/germany/ja/living/dhl-delivered-but-not-received/"
-tags: ["DHL", "配達済み", "届かない", "通販", "未配達", "複数個口"]
+tags: ["DHL", "配達済み", "届かない", "通販", "未配達"]
 image: "/assets/img/living/dhl-delivered-but-not-received.webp"
 image_alt: "荷物のない玄関とスマートフォンを確認する住民"
 image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。"

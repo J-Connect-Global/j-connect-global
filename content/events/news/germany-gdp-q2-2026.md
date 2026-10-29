@@ -2,7 +2,7 @@
 id: "N012"
 title: "ドイツGDPは2026年4〜6月期に0.2％増｜暮らしと仕事への意味"
 slug: "germany-gdp-q2-2026"
-category: "仕事・経済"
+category: "仕事"
 content_type: "news"
 area: "ドイツ全土"
 event_date: "2026年第2四半期（暫定値）"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-08"
 next_review: "2026-08-26"
 summary: "ドイツの2026年第2四半期実質GDPは前期比0.2％増。小幅なプラスを好景気と即断せず、仕事、賃金、家計、求人とどう結び付けて読むかを一般の生活者向けに解説します。"
-tags: ["ドイツGDP", "ドイツ経済", "景気", "家計", "雇用", "暮らし"]
+tags: ["ドイツ経済", "家計", "雇用"]
 status: "published"
 published: true
 source_type: "manual"

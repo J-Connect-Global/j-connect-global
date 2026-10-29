@@ -2,7 +2,7 @@
 id: "N005"
 title: "EUの修理促進ルールが2026年7月から適用｜家電・スマホで何が変わる？"
 slug: "eu-right-to-repair-2026-germany"
-category: "消費者・買い物"
+category: "暮らし・買い物"
 content_type: "news"
 area: "ドイツ / EU"
 event_date: "2026-07-31適用"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-08"
 next_review: "2026-11-01"
 summary: "EUの修理促進ルールが2026年7月31日から適用。無料修理の制度ではない点、販売店への法定請求とメーカーへの有料修理の違い、見積り・データ保護・買替え判断を消費者向けに解説します。"
-tags: ["修理", "家電", "スマートフォン", "消費者保護", "EU", "ドイツ"]
+tags: ["修理", "家電", "スマートフォン", "消費者保護", "EU"]
 status: "published"
 published: true
 source_type: "manual"

@@ -2,7 +2,7 @@
 id: "C002"
 title: "ドイツ生活の情報疲れを減らす｜公式情報・経験談・AIの役割"
 slug: "germany-information-triage-guide"
-category: "情報整理・デジタル生活"
+category: "暮らし・買い物"
 content_type: "column"
 area: "ドイツ生活"
 event_date: "実践コラム"
@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-29"
 next_review: "2027-02-28"
 summary: "役所サイト、友人の経験、SNS、AIの答えが食い違うとき、それぞれを何に使うかを解説。日付・地域・対象者を確かめ、不明点を安全に残したまま次の行動を決める方法を紹介します。"
-tags: ["情報リテラシー", "公式情報", "AI", "行政手続き", "SNS", "ドイツ生活"]
+tags: ["情報リテラシー", "AI", "行政手続き", "SNS"]
 status: "published"
 published: true
 source_type: "manual"

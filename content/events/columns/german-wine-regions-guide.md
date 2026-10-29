@@ -34,7 +34,7 @@ last_verified: "2026-10-27"
 canonical_url: "/germany/ja/events/columns/german-wine-regions-guide/"
 official_url: "https://www.deutscheweine.de/regionen"
 image: "/assets/img/events/german-wine-regions-guide.webp"
-image_alt: "川沿いの斜面に広がるぶどう畑と、白ワインのグラスを描いたイラスト"
+image_alt: "秋の日差しに照らされた、川沿いの急斜面のぶどう畑を描いたイラスト"
 image_caption: "イラスト：J-Connect。ドイツのぶどう畑のテーマを表したもので、特定の産地や醸造所を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

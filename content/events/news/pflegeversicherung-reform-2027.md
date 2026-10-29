@@ -32,7 +32,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/news/pflegeversicherung-reform-2027/"
 official_url: "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/kabinett-beschliesst-pflegeneuordnungsgesetz"
 image: "/assets/img/events/pflegeversicherung-reform-2027.webp"
-image_alt: "車いすに座る高齢者に、介護をする人が手を差し伸べている様子と、保険料の書類を描いたイラスト"
+image_alt: "ひじ掛け椅子に座る高齢者の手を、介護をする人がそっと握る様子を描いたイラスト"
 image_caption: "イラスト：J-Connect。介護保険のテーマを表したもので、特定の人物や施設を描いたものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

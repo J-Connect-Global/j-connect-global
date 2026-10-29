@@ -34,7 +34,7 @@ last_verified: "2026-10-27"
 canonical_url: "/germany/ja/events/columns/deutsche-bahn-delays-why/"
 official_url: "https://www.bahn.de/faq/pk/service/buchung/fahrgastrechte"
 image: "/assets/img/events/deutsche-bahn-delays-why.webp"
-image_alt: "駅のホームで発車案内板の遅れの表示を見上げる乗客を描いたイラスト"
+image_alt: "曇りの日、ホームに到着する赤い列車と、荷物を持って待つ乗客を描いたイラスト"
 image_caption: "イラスト：J-Connect。鉄道の遅れのテーマを表したもので、特定の駅や列車を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

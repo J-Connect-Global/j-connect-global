@@ -30,7 +30,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/columns/quiet-holidays-november-germany/"
 official_url: "https://www.stadt-koeln.de/politik-und-verwaltung/presseservice/stille-feiertage-2"
 image: "/assets/img/events/quiet-holidays-november-germany.webp"
-image_alt: "霧の中の墓地に、赤いろうそくの灯りがいくつも並び、落ち葉が散っている様子を描いたイラスト"
+image_alt: "霧の11月の夕方、墓地に赤いろうそくの灯りが並ぶ様子を描いたイラスト"
 image_caption: "イラスト：J-Connect。11月の静かな祝日のテーマを表したもので、特定の墓地を描いたものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

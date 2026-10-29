@@ -32,7 +32,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/columns/cologne-cathedral-632-years/"
 official_url: "https://www.koelner-dom.de/erleben/geschichte"
 image: "/assets/img/events/cologne-cathedral-632-years.webp"
-image_alt: "ライン川の向こうにそびえる、2本の尖塔を持つゴシック様式の大聖堂を描いたイラスト"
+image_alt: "夕暮れのライン川のほとりにそびえるゴシック様式の大聖堂の2本の尖塔を描いたイラスト"
 image_caption: "イラスト：J-Connect。大聖堂のテーマを表したもので、建物の細部を正確に再現したものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

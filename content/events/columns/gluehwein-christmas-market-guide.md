@@ -32,7 +32,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/columns/gluehwein-christmas-market-guide/"
 official_url: "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32014R0251"
 image: "/assets/img/events/gluehwein-christmas-market-guide.webp"
-image_alt: "クリスマスマーケットの屋台の灯りの前で、湯気の立つマグカップとシナモン、オレンジを描いたイラスト"
+image_alt: "クリスマスマーケットで湯気の立つグリューワインのマグを持つ手を描いたイラスト"
 image_caption: "イラスト：J-Connect。グリューワインのテーマを表したもので、特定のマーケットや商品を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

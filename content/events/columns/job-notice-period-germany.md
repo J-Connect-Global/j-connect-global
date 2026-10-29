@@ -32,7 +32,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/columns/job-notice-period-germany/"
 official_url: "https://www.gesetze-im-internet.de/bgb/__622.html"
 image: "/assets/img/events/job-notice-period-germany.webp"
-image_alt: "机の上に置かれた退職の手紙と万年筆、カレンダー、段ボール箱に入った私物を描いたイラスト"
+image_alt: "机で手紙に万年筆で署名する人と、私物を入れた段ボール箱を描いたイラスト"
 image_caption: "イラスト：J-Connect。退職の手続きのテーマを表したもので、特定の会社や書類を描いたものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

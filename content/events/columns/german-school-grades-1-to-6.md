@@ -30,7 +30,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/columns/german-school-grades-1-to-6/"
 official_url: "https://www.schulministerium.nrw/wie-kommt-eine-zeugnisnote-zustande"
 image: "/assets/img/events/german-school-grades-1-to-6.webp"
-image_alt: "机の上に置かれた成績表と、赤い数字の1が書かれたテスト用紙、鉛筆を描いたイラスト"
+image_alt: "子どもの学習机のノートを、親が指さしている手元を描いたイラスト"
 image_caption: "イラスト：J-Connect。学校の成績のテーマを表したもので、実在の成績表を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

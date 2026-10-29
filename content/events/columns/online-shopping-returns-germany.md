@@ -34,7 +34,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/columns/online-shopping-returns-germany/"
 official_url: "https://www.verbraucherzentrale.de/wissen/digitale-welt/onlinehandel/widerruf-im-internet-was-tun-wenn-sich-der-onlineshop-quer-stellt-60076"
 image: "/assets/img/events/online-shopping-returns-germany.webp"
-image_alt: "伝票が貼られた段ボール箱と、スマートフォンの買い物画面、返品を表す矢印を描いたイラスト"
+image_alt: "机の上の返品用の段ボール箱と、スマートフォン、返品を表す矢印を描いたイラスト"
 image_caption: "イラスト：J-Connect。ネット通販の返品のテーマを表したもので、特定のショップを描いたものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

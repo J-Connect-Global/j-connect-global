@@ -34,7 +34,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/news/sick-note-rules-germany-2026/"
 official_url: "https://www.bundesregierung.de/breg-de/aktuelles/telefonische-krankschreibung-1800026"
 image: "/assets/img/events/sick-note-rules-germany-2026.webp"
-image_alt: "ベッドで毛布にくるまって休む人と、体温計、スマートフォン、温かい飲み物を描いたイラスト"
+image_alt: "ベッドで休む人と、枕元の体温計とお茶を描いたイラスト"
 image_caption: "イラスト：J-Connect。病気で仕事を休むテーマを表したもので、特定の人物や医療機関を描いたものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

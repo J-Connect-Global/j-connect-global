@@ -34,7 +34,7 @@ last_verified: "2026-10-26"
 canonical_url: "/germany/ja/events/columns/german-beer-purity-law/"
 official_url: "https://brauer-bund.de/reinheitsgebot/fragen-und-antworten/"
 image: "/assets/img/events/german-beer-purity-law.webp"
-image_alt: "大麦の穂とホップ、水のしずくの横に、泡の立ったビールグラスを描いたイラスト"
+image_alt: "木のテーブルの上のビールのグラスと、大麦とホップを描いたイラスト"
 image_caption: "イラスト：J-Connect。ビールの材料のテーマを表したもので、特定の銘柄や醸造所を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

@@ -32,7 +32,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/news/germany-inflation-september-2026/"
 official_url: "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_364_611.html"
 image: "/assets/img/events/germany-inflation-september-2026.webp"
-image_alt: "右肩上がりの折れ線グラフと、ガソリンスタンドの給油ノズル、灯油のタンクを描いたイラスト"
+image_alt: "スーパーのレジで野菜と卵の入ったかごと、レシートを持つ手を描いたイラスト"
 image_caption: "イラスト：J-Connect。物価とエネルギーのテーマを表したもので、実際の統計グラフではありません。"
 image_credit: "Illustration / J-Connect"
 ---

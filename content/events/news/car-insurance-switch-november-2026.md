@@ -30,7 +30,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/news/car-insurance-switch-november-2026/"
 official_url: "https://www.verbraucherzentrale.de/wissen/geld-versicherungen/weitere-versicherungen/kfzversicherung-ueberpruefen-und-mehrere-hundert-euro-sparen-11490"
 image: "/assets/img/events/car-insurance-switch-november-2026.webp"
-image_alt: "道路を走る青い車と、チェックの印が付いた保険の書類を描いたイラスト"
+image_alt: "11月の住宅街に止められた車と、書類を持って歩く人を描いたイラスト"
 image_caption: "イラスト：J-Connect。自動車保険のテーマを表したもので、特定の保険会社や商品を描いたものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

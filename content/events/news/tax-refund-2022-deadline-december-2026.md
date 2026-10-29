@@ -30,7 +30,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/news/tax-refund-2022-deadline-december-2026/"
 official_url: "https://www.elster.de/eportal/helpGlobal?themaGlobal=help_est_ufa_10_2022"
 image: "/assets/img/events/tax-refund-2022-deadline-december-2026.webp"
-image_alt: "ノートパソコンの画面の申告書と、電卓、領収書の束、12月31日に印が付いたカレンダーを描いたイラスト"
+image_alt: "ノートパソコンと電卓、領収書が並ぶ自宅の机を描いたイラスト"
 image_caption: "イラスト：J-Connect。確定申告のテーマを表したもので、実際の申告画面を再現したものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

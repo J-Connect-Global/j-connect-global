@@ -30,7 +30,7 @@ last_verified: "2026-10-27"
 canonical_url: "/germany/ja/events/columns/germany-cash-payment-habits/"
 official_url: "https://www.bundesbank.de/de/presse/pressemitteilungen/zahlungsverhalten-in-deutschland-2025-964736"
 image: "/assets/img/events/germany-cash-payment-habits.webp"
-image_alt: "ユーロの紙幣と硬貨、カードとスマートフォンが並ぶレジ台を描いたイラスト"
+image_alt: "パン屋のカウンターで、ユーロの硬貨と紙幣で支払う手元を描いたイラスト"
 image_caption: "イラスト：J-Connect。支払いのテーマを表したもので、実在の紙幣や特定のお店を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

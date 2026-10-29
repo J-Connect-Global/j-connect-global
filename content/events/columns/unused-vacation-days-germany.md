@@ -34,7 +34,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/columns/unused-vacation-days-germany/"
 official_url: "https://www.gesetze-im-internet.de/burlg/__7.html"
 image: "/assets/img/events/unused-vacation-days-germany.webp"
-image_alt: "休暇の日に印が付いたカレンダーと、スーツケース、飛行機を描いたイラスト"
+image_alt: "玄関に置かれたスーツケースと冬のコート、12月の休暇の出発前を描いたイラスト"
 image_caption: "イラスト：J-Connect。有給休暇のテーマを表したもので、特定の会社や制度の書類を描いたものではありません。"
 image_credit: "Illustration / J-Connect"
 ---

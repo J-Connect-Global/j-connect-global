@@ -34,7 +34,7 @@ last_verified: "2026-10-26"
 canonical_url: "/germany/ja/events/columns/germany-autobahn-speed-limit/"
 official_url: "https://www.gesetze-im-internet.de/babrigeschwv_1978/BJNR018240978.html"
 image: "/assets/img/events/germany-autobahn-speed-limit.webp"
-image_alt: "なだらかな丘の間をのびるアウトバーンと、速度制限解除の標識を描いたイラスト"
+image_alt: "緑の田園地帯を通るアウトバーンと、走る車を描いたイラスト"
 image_caption: "イラスト：J-Connect。アウトバーンのテーマを表したもので、特定の区間を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

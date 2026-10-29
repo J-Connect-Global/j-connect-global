@@ -30,7 +30,7 @@ last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/news/sugar-drink-tax-germany-2027/"
 official_url: "https://www.bundesfinanzministerium.de/Content/DE/Pressemitteilungen/Finanzpolitik/2026/10/2026-10-14-gesetzentwurf-zuckergetraenkesteuer.html"
 image: "/assets/img/events/sugar-drink-tax-germany-2027.webp"
-image_alt: "清涼飲料のボトルと缶、角砂糖、ユーロ硬貨を描いたイラスト"
+image_alt: "スーパーの冷蔵棚に並ぶ色とりどりの清涼飲料と、手前の水のボトルを描いたイラスト"
 image_caption: "イラスト：J-Connect。砂糖入り飲料税のテーマを表したもので、実在の商品を再現していません。"
 image_credit: "Illustration / J-Connect"
 ---

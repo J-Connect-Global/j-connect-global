@@ -4073,5 +4073,225 @@
     ],
     "image": "/assets/img/events/gluehwein-christmas-market-guide.webp",
     "image_alt": "クリスマスマーケットの屋台の灯りの前で、湯気の立つマグカップとシナモン、オレンジを描いたイラスト"
+  },
+  {
+    "slug": "saint-nicholas-day-germany",
+    "id": "C021",
+    "content_type": "column",
+    "url": "/germany/ja/events/columns/saint-nicholas-day-germany/",
+    "markdown_path": "/content/events/columns/saint-nicholas-day-germany.md",
+    "canonical_url": "/germany/ja/events/columns/saint-nicholas-day-germany/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 927,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2027-11-01"
+    },
+    "title": "聖ニコラウスの日とは？｜12月6日の朝、靴にお菓子が入っている理由と、ラインラントの「ヴェックマン」",
+    "category": "ドイツ雑学・季節文化",
+    "summary": "ドイツでは12月5日の夜に子どもたちが靴を玄関に置き、6日の朝にはお菓子が入っています。4世紀の司教ニコラウスの伝説、靴を置く習慣の始まり、黒い服の従者クネヒト・ループレヒト、ラインラントのパン「ヴェックマン」、サンタクロースとの関係までを紹介します。",
+    "published_at": "2026-10-29",
+    "last_verified": "2026-10-29",
+    "tags": [
+      "聖ニコラウス",
+      "12月6日",
+      "クリスマス",
+      "アドベント",
+      "ヴェックマン",
+      "ドイツ雑学",
+      "季節文化",
+      "ラインラント"
+    ],
+    "updated_at": "2026-10-29",
+    "related_articles": [
+      "advent-wreath-calendar-origin",
+      "kommern-saint-martin-2026-guide",
+      "christmas-tree-origin-germany"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026-12-06 聖ニコラウスの日",
+    "official_url": "https://www.katholisch.de/kirche-erklaert/riten-braeuche-und-traditionen/nikolaus",
+    "official_sources": [
+      {
+        "title": "カトリック教会ポータル（katholisch.de）：聖ニコラウス",
+        "url": "https://www.katholisch.de/kirche-erklaert/riten-braeuche-und-traditionen/nikolaus"
+      },
+      {
+        "title": "カトリック教会ポータル（katholisch.de）：ニコラウス 確かな事実",
+        "url": "https://www.katholisch.de/artikel/15722-nikolaus-die-harten-fakten"
+      },
+      {
+        "title": "ケルン大司教区：ミラのニコラウスの3つの物語",
+        "url": "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Nikolaus-von-Myra-Drei-Geschichten-aus-dem-Leben-des-Heiligen/"
+      },
+      {
+        "title": "カトリック教会ポータル（katholisch.de）：いつもクリストキントとは限らない",
+        "url": "https://katholisch.de/artikel/4466-nicht-immer-das-christkind"
+      },
+      {
+        "title": "LVR：ヴェックマンのラインラントの祖先",
+        "url": "https://www.lvr.de/de/nav_main/derlvr/presse_1/pressemeldungen/press_report_archiv_31360.jsp"
+      },
+      {
+        "title": "LVR 方言地図：ヴェックマン",
+        "url": "https://dat-portal.lvr.de/orte/regiolektkarten/wortkarten-regiolekt/weckmann"
+      }
+    ],
+    "image": "/assets/img/events/saint-nicholas-day-germany.webp",
+    "image_alt": "玄関の前に置かれた子どもの長靴に、みかんやチョコレートが入っている様子を描いたイラスト"
+  },
+  {
+    "slug": "cologne-cathedral-632-years",
+    "id": "C022",
+    "content_type": "column",
+    "url": "/germany/ja/events/columns/cologne-cathedral-632-years/",
+    "markdown_path": "/content/events/columns/cologne-cathedral-632-years.md",
+    "canonical_url": "/germany/ja/events/columns/cologne-cathedral-632-years/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 928,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2027-10-01"
+    },
+    "title": "ケルン大聖堂は完成までに632年かかった？｜300年以上止まった工事と、塔の上に残ったクレーン",
+    "category": "ドイツ雑学・歴史",
+    "summary": "ケルン中央駅を出ると目の前にそびえるケルン大聖堂。1248年に工事が始まり、完成したのは1880年でした。工事が300年以上止まっていた理由、塔の上に残された木のクレーン、19世紀の完成を支えた市民、世界遺産と「危機遺産」の話、東方三博士の聖遺物まで紹介します。",
+    "published_at": "2026-10-29",
+    "last_verified": "2026-10-29",
+    "tags": [
+      "ケルン大聖堂",
+      "ケルン",
+      "世界遺産",
+      "ゴシック",
+      "ドイツ雑学",
+      "歴史",
+      "NRW"
+    ],
+    "updated_at": "2026-10-29",
+    "related_articles": [
+      "cologne-city-guide",
+      "cologne-family-trip",
+      "rhineland-carnival-11-11"
+    ],
+    "city": "ケルン",
+    "location": "ケルン大聖堂（Kölner Dom）",
+    "event_date": "ドイツ雑学のコラム",
+    "official_url": "https://www.koelner-dom.de/erleben/geschichte",
+    "official_sources": [
+      {
+        "title": "ケルン大聖堂：歴史",
+        "url": "https://www.koelner-dom.de/erleben/geschichte"
+      },
+      {
+        "title": "ケルン大聖堂：ケルン大聖堂工房の歴史",
+        "url": "https://www.koelner-dom.de/fileadmin/media/PDF/newsroom/Geschichte_der_Koelner_Dombauhuette.pdf"
+      },
+      {
+        "title": "ドイツ・ユネスコ委員会：ケルン大聖堂",
+        "url": "https://www.unesco.de/staette/koelner-dom/"
+      },
+      {
+        "title": "ユネスコ世界遺産センター：ケルン大聖堂",
+        "url": "https://whc.unesco.org/en/list/292/"
+      },
+      {
+        "title": "ケルン大聖堂：東方三博士の巡礼",
+        "url": "https://www.koelner-dom.de/dreikoenigswallfahrt"
+      }
+    ],
+    "image": "/assets/img/events/cologne-cathedral-632-years.webp",
+    "image_alt": "ライン川の向こうにそびえる、2本の尖塔を持つゴシック様式の大聖堂を描いたイラスト"
+  },
+  {
+    "slug": "ruhr-coal-mining-history",
+    "id": "C023",
+    "content_type": "column",
+    "url": "/germany/ja/events/columns/ruhr-coal-mining-history/",
+    "markdown_path": "/content/events/columns/ruhr-coal-mining-history.md",
+    "canonical_url": "/germany/ja/events/columns/ruhr-coal-mining-history/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 929,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2027-10-01"
+    },
+    "title": "ルール地方は炭鉱の街だった？｜2018年に閉じた最後の炭鉱と、世界遺産ツォルフェアアインの今",
+    "category": "ドイツ雑学・歴史",
+    "summary": "エッセン、ドルトムント、ボーフムなどが連なるルール地方は、かつてヨーロッパ有数の炭鉱地帯でした。1950年代の最盛期、炭鉱の危機と閉山、2018年12月に閉じたドイツ最後の炭鉱、そして世界遺産になった炭鉱ツォルフェアアインまで、ルール地方の150年を紹介します。",
+    "published_at": "2026-10-29",
+    "last_verified": "2026-10-29",
+    "tags": [
+      "ルール地方",
+      "炭鉱",
+      "ツォルフェアアイン",
+      "世界遺産",
+      "エッセン",
+      "ドイツ雑学",
+      "歴史",
+      "NRW"
+    ],
+    "updated_at": "2026-10-29",
+    "related_articles": [
+      "duesseldorf-city-guide",
+      "nrw-nature-relax-guide",
+      "cologne-cathedral-632-years"
+    ],
+    "city": "ルール地方（エッセン・ボットロップなど）",
+    "location": "ツォルフェアアイン炭鉱業遺産群（エッセン）など",
+    "event_date": "ドイツ雑学のコラム",
+    "official_url": "https://www.unesco.de/staette/industriekomplex-zeche-zollverein-in-essen/",
+    "official_sources": [
+      {
+        "title": "連邦政治教育センター：ルールの炭鉱業",
+        "url": "https://www.bpb.de/shop/zeitschriften/apuz/283262/der-ruhrbergbau/"
+      },
+      {
+        "title": "LWL：20世紀の経済史（工業）",
+        "url": "https://www.lwl.org/westfaelische-geschichte/portal/Internet/input_felder/langDatensatz_ebene4.php?urlID=359&url_tabelle=tab_websegmente"
+      },
+      {
+        "title": "ルール地域連合（RVR）：ルール地方の炭鉱との別れ",
+        "url": "https://www.rvr.ruhr/news/startseite-news/news/blick-zurueck-nach-vorn-das-ruhrgebiet-verabschiedet-sich-vom-bergbau-zahlreiche-ausstellungen-und-aktionen/"
+      },
+      {
+        "title": "ドイツ鉱山博物館：プロスパー・ハニエル炭鉱の歴史",
+        "url": "https://www.bergbaumuseum.de/en/research/research-projects/geschichte-des-bergwerks-prosper-haniel"
+      },
+      {
+        "title": "ドイツ・ユネスコ委員会：ツォルフェアアイン炭鉱業遺産群",
+        "url": "https://www.unesco.de/staette/industriekomplex-zeche-zollverein-in-essen/"
+      },
+      {
+        "title": "ツォルフェアアイン：歴史",
+        "url": "https://www.zollverein.de/ueber-zollverein/geschichte/"
+      }
+    ],
+    "image": "/assets/img/events/ruhr-coal-mining-history.webp",
+    "image_alt": "夕焼けの空を背景に、赤い鉄骨の立坑櫓（たてこうやぐら）と工場の建物を描いたイラスト"
   }
 ]

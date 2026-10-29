@@ -3853,5 +3853,225 @@
     ],
     "image": "/assets/img/events/german-wine-regions-guide.webp",
     "image_alt": "川沿いの斜面に広がるぶどう畑と、白ワインのグラスを描いたイラスト"
+  },
+  {
+    "slug": "germany-kleingarten-schrebergarten",
+    "id": "C018",
+    "content_type": "column",
+    "url": "/germany/ja/events/columns/germany-kleingarten-schrebergarten/",
+    "markdown_path": "/content/events/columns/germany-kleingarten-schrebergarten.md",
+    "canonical_url": "/germany/ja/events/columns/germany-kleingarten-schrebergarten/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 924,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2027-10-01"
+    },
+    "title": "ドイツの「クラインガルテン」とは？｜線路沿いに並ぶ小さな庭と、法律で決まった小屋の大きさ",
+    "category": "ドイツ雑学・暮らし",
+    "summary": "電車の窓から見える、小屋つきの小さな庭がずらりと並ぶ風景。ドイツには約87万の市民農園「クラインガルテン（Kleingarten）」があります。貧しい人のための庭から始まった歴史、「シュレーバーガルテン」という呼び名の由来、小屋は24平方メートルまでという法律の決まり、デュッセルドルフとケルンの事情を紹介します。",
+    "published_at": "2026-10-29",
+    "last_verified": "2026-10-29",
+    "tags": [
+      "クラインガルテン",
+      "市民農園",
+      "シュレーバーガルテン",
+      "ドイツ雑学",
+      "ドイツ生活",
+      "庭",
+      "デュッセルドルフ",
+      "ケルン"
+    ],
+    "updated_at": "2026-10-29",
+    "related_articles": [
+      "germany-autumn-forest-walk",
+      "germany-sunday-rest-shops-closed",
+      "nrw-nature-relax-guide"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "ドイツ雑学のコラム",
+    "official_url": "https://kleingarten-bund.de/de/bundesverband/zahlen-und-fakten",
+    "official_sources": [
+      {
+        "title": "ドイツ市民農園連盟（BKD）：数字と事実",
+        "url": "https://kleingarten-bund.de/de/bundesverband/zahlen-und-fakten"
+      },
+      {
+        "title": "ドイツ市民農園連盟（BKD）：連邦市民農園法",
+        "url": "https://kleingarten-bund.de/der-verband/ueber-uns/das-bundeskleingartengesetz/"
+      },
+      {
+        "title": "連邦市民農園法（BKleingG）",
+        "url": "https://www.gesetze-im-internet.de/bkleingg/BJNR002100983.html"
+      },
+      {
+        "title": "ライプツィヒ市：市民農園",
+        "url": "https://www.leipzig.de/leben-in-leipzig/natur-und-umwelt/parks-waelder-und-friedhoefe/kleingartenanlagen"
+      },
+      {
+        "title": "デュッセルドルフ市：市民農園",
+        "url": "https://www.duesseldorf.de/stadtgruen/freizeit/kleingaerten"
+      },
+      {
+        "title": "ケルン市：市民農園のデータ",
+        "url": "https://www.stadt-koeln.de/artikel/67103/index.html"
+      }
+    ],
+    "image": "/assets/img/events/germany-kleingarten-schrebergarten.webp",
+    "image_alt": "垣根で区切られた小さな庭が並び、それぞれに小さな木の小屋と野菜の畑がある様子を描いたイラスト"
+  },
+  {
+    "slug": "germany-silvester-fireworks-rules",
+    "id": "C019",
+    "content_type": "column",
+    "url": "/germany/ja/events/columns/germany-silvester-fireworks-rules/",
+    "markdown_path": "/content/events/columns/germany-silvester-fireworks-rules.md",
+    "canonical_url": "/germany/ja/events/columns/germany-silvester-fireworks-rules/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 925,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2026-12-10"
+    },
+    "title": "ドイツの大晦日はなぜ花火だらけ？｜花火が買えるのは年に3日だけ、という法律と街の禁止区域",
+    "category": "ドイツ雑学・季節文化",
+    "summary": "ドイツの大晦日（Silvester）の夜は、街じゅうで花火が上がります。実は一般の人が花火を買えるのは12月29日〜31日の3日間だけ、打ち上げてよいのは12月31日と1月1日だけと法律で決まっています。花火のルール、教会や病院の近くでの禁止、デュッセルドルフやケルンの禁止区域、微小粒子状物質の問題までを紹介します。",
+    "published_at": "2026-10-29",
+    "last_verified": "2026-10-29",
+    "tags": [
+      "大晦日",
+      "シルベスター",
+      "花火",
+      "年末年始",
+      "ドイツ雑学",
+      "季節文化",
+      "デュッセルドルフ",
+      "ケルン"
+    ],
+    "updated_at": "2026-10-29",
+    "related_articles": [
+      "germany-public-holidays-by-state",
+      "nrw-christmas-opening-hours-2026",
+      "christmas-tree-origin-germany"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026-12-31 大晦日",
+    "official_url": "https://www.bmi.bund.de/SharedDocs/faqs/DE/themen/bevoelkerungsschutz/silvester/silvester.html",
+    "official_sources": [
+      {
+        "title": "爆発物法 第1施行令（1. SprengV）第22条",
+        "url": "https://www.gesetze-im-internet.de/sprengv_1/__22.html"
+      },
+      {
+        "title": "爆発物法 第1施行令（1. SprengV）第23条",
+        "url": "https://www.gesetze-im-internet.de/sprengv_1/__23.html"
+      },
+      {
+        "title": "連邦内務省：花火の取り扱い（よくある質問）",
+        "url": "https://www.bmi.bund.de/SharedDocs/faqs/DE/themen/bevoelkerungsschutz/silvester/silvester.html"
+      },
+      {
+        "title": "連邦環境庁（UBA）：大晦日の花火による微小粒子状物質",
+        "url": "https://www.umweltbundesamt.de/themen/luft/luftschadstoffe/feinstaub/feinstaub-durch-silvesterfeuerwerk"
+      },
+      {
+        "title": "デュッセルドルフ市：旧市街の花火禁止（2025/26年）",
+        "url": "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/feuerwerksverbot-an-silvester-und-neujahr-2025-26-mehr-sicherheit-in-der-duesseldorfer-altstadt"
+      },
+      {
+        "title": "ケルン市：爆竹禁止区域（2025/26年）",
+        "url": "https://www.stadt-koeln.de/politik-und-verwaltung/presse/mitteilungen/28087/index.html"
+      }
+    ],
+    "image": "/assets/img/events/germany-silvester-fireworks-rules.webp",
+    "image_alt": "夜空に上がる色とりどりの花火と、川沿いの街のシルエットを描いたイラスト"
+  },
+  {
+    "slug": "gluehwein-christmas-market-guide",
+    "id": "C020",
+    "content_type": "column",
+    "url": "/germany/ja/events/columns/gluehwein-christmas-market-guide/",
+    "markdown_path": "/content/events/columns/gluehwein-christmas-market-guide.md",
+    "canonical_url": "/germany/ja/events/columns/gluehwein-christmas-market-guide/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 926,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "editorial_column",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2027-11-01"
+    },
+    "title": "クリスマスマーケットのグリューワインとは？｜EUの法律で決まった「定義」と、ラベルに材料が書かれない理由",
+    "category": "ドイツ雑学・食文化",
+    "summary": "クリスマスマーケットの屋台で湯気を立てるグリューワイン（Glühwein）。実はEUの規則で、材料やアルコール度数が決まっています。シナモンやクローブで香りをつけること、アルコール7%以上、水を加えてはいけないこと、2026年の改正でロゼも使えるようになったこと、材料表示がない理由、子ども向けの飲み物の選び方までを紹介します。",
+    "published_at": "2026-10-29",
+    "last_verified": "2026-10-29",
+    "tags": [
+      "グリューワイン",
+      "クリスマスマーケット",
+      "クリスマス",
+      "ワイン",
+      "ドイツ雑学",
+      "食文化",
+      "冬"
+    ],
+    "updated_at": "2026-10-29",
+    "related_articles": [
+      "christmas-markets-duesseldorf",
+      "german-wine-regions-guide",
+      "christmas-tree-origin-germany"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "クリスマスマーケットの季節（11月下旬〜12月）",
+    "official_url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32014R0251",
+    "official_sources": [
+      {
+        "title": "EU規則 第251/2014号（香りをつけたワイン製品）",
+        "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32014R0251"
+      },
+      {
+        "title": "EU規則 第2026/471号（ワイン関連規則の改正）",
+        "url": "https://eur-lex.europa.eu/legal-content/DE/ALL/?uri=CELEX%3A32026R0471"
+      },
+      {
+        "title": "消費者センター（Lebensmittelklarheit）：グリューワインの材料表示",
+        "url": "https://www.lebensmittelklarheit.de/informationen/erlaubt-kein-zutatenverzeichnis-bei-gluehwein"
+      },
+      {
+        "title": "消費者センター（Lebensmittelklarheit）：グリューワインの材料と表示の調査",
+        "url": "https://www.lebensmittelklarheit.de/news/zutaten-bei-gluehwein-der-kennzeichnung-hapert-es-noch"
+      },
+      {
+        "title": "消費者センター：食品に隠れたアルコール",
+        "url": "https://www.verbraucherzentrale.de/wissen/lebensmittel/kennzeichnung-und-inhaltsstoffe/alkohol-in-lebensmitteln-wie-erkenne-ich-versteckte-zutaten-59477"
+      }
+    ],
+    "image": "/assets/img/events/gluehwein-christmas-market-guide.webp",
+    "image_alt": "クリスマスマーケットの屋台の灯りの前で、湯気の立つマグカップとシナモン、オレンジを描いたイラスト"
   }
 ]

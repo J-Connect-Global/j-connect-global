@@ -4720,5 +4720,219 @@
     ],
     "image": "/assets/img/events/altersvorsorgedepot-2027.webp",
     "image_alt": "少しずつ積み上がるコインの山と、育っていく若木、ユーロのマークを描いたイラスト"
+  },
+  {
+    "slug": "pflegeversicherung-reform-2027",
+    "id": "N029",
+    "content_type": "news",
+    "url": "/germany/ja/events/news/pflegeversicherung-reform-2027/",
+    "markdown_path": "/content/events/news/pflegeversicherung-reform-2027.md",
+    "canonical_url": "/germany/ja/events/news/pflegeversicherung-reform-2027/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 936,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2026-12-15"
+    },
+    "title": "ドイツの介護保険が改革へ｜子どものいない人は2027年から上乗せ0.9％、扶養の配偶者にも負担案",
+    "category": "生活・制度",
+    "summary": "ドイツ政府は、公的介護保険の財政を立て直すための改革法案（介護再編法）を閣議決定しました。保険料率3.6％は据え置く一方、子どものいない人の上乗せを2027年1月から0.6％から0.9％へ引き上げ、2028年からは扶養に入っている配偶者の分にも上乗せを求める案です。手取りへの影響の計算例と、今後の流れを整理します。",
+    "published_at": "2026-10-29",
+    "last_verified": "2026-10-29",
+    "tags": [
+      "介護保険",
+      "社会保険",
+      "保険料",
+      "子どものいない人",
+      "扶養",
+      "配偶者",
+      "2027年",
+      "手取り",
+      "ドイツ生活"
+    ],
+    "updated_at": "2026-10-29",
+    "related_articles": [
+      "health-insurance-zusatzbeitrag-2027",
+      "germany-january-2027-changes",
+      "health-insurance-guide"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2027-01-01 施行予定（連邦議会の議決が必要）",
+    "official_url": "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/kabinett-beschliesst-pflegeneuordnungsgesetz",
+    "official_sources": [
+      {
+        "title": "連邦保健省：介護再編法を閣議決定",
+        "url": "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/kabinett-beschliesst-pflegeneuordnungsgesetz"
+      },
+      {
+        "title": "連邦政府：閣議で介護再編法",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/pflegeneuordnungsgesetz-2454862"
+      },
+      {
+        "title": "連邦保健省：介護再編法（PNOG）のよくある質問",
+        "url": "https://www.bundesgesundheitsministerium.de/service/gesetze-und-verordnungen/guv-21-lp/pnog"
+      },
+      {
+        "title": "連邦保健省：介護再編法の政府案（PDF）",
+        "url": "https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/3_Downloads/Gesetze_und_Verordnungen/GuV/P/Kabinett-GE_Pflegeneuordnungsgesetz_PNOG.pdf"
+      },
+      {
+        "title": "連邦議会：介護保険の再編を審議（2026年11月5日）",
+        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw45-de-pflegeneuordnungsgesetz-1225076"
+      }
+    ],
+    "image": "/assets/img/events/pflegeversicherung-reform-2027.webp",
+    "image_alt": "車いすに座る高齢者に、介護をする人が手を差し伸べている様子と、保険料の書類を描いたイラスト"
+  },
+  {
+    "slug": "germany-rent-law-reform-furnished-2026",
+    "id": "N030",
+    "content_type": "news",
+    "url": "/germany/ja/events/news/germany-rent-law-reform-furnished-2026/",
+    "markdown_path": "/content/events/news/germany-rent-law-reform-furnished-2026.md",
+    "canonical_url": "/germany/ja/events/news/germany-rent-law-reform-furnished-2026/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 937,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2026-12-15"
+    },
+    "title": "家具付き・短期・インデックス賃貸のルールが変わる？｜ドイツの賃貸法改正案、連邦議会で公聴会",
+    "category": "住まい・制度",
+    "summary": "ドイツ政府の賃貸法改正案「賃貸法II」について、連邦議会の法務委員会が2026年10月14日に公聴会を開きました。家具付き物件の家具代の明示、短期賃貸は原則6か月まで、物価に連動するインデックス賃料の上昇を抑える仕組みなどが柱です。駐在や留学で家具付き物件を借りることが多い日本人にも関係する内容を整理します。",
+    "published_at": "2026-10-29",
+    "last_verified": "2026-10-29",
+    "tags": [
+      "賃貸",
+      "家具付き物件",
+      "短期賃貸",
+      "インデックス賃料",
+      "家賃",
+      "法改正",
+      "住まい",
+      "ドイツ生活"
+    ],
+    "updated_at": "2026-10-29",
+    "related_articles": [
+      "rent-apartment-germany",
+      "building-modernisation-law-germany-2026",
+      "germany-inflation-september-2026"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026-10-14 連邦議会で公聴会（法案は審議中）",
+    "official_url": "https://www.bmjv.de/SharedDocs/Pressemitteilungen/DE/2026/0429_Miete_II.html",
+    "official_sources": [
+      {
+        "title": "連邦司法・消費者保護省：賃貸法改正案を閣議決定（2026年4月29日）",
+        "url": "https://www.bmjv.de/SharedDocs/Pressemitteilungen/DE/2026/0429_Miete_II.html"
+      },
+      {
+        "title": "連邦司法・消費者保護省：政府案のよくある質問（PDF）",
+        "url": "https://www.bmjv.de/SharedDocs/Downloads/DE/Gesetzgebung/FAQ/FAQ_RegE_Miete_II.pdf?__blob=publicationFile&v=5"
+      },
+      {
+        "title": "連邦司法・消費者保護省：政府案の概要（PDF）",
+        "url": "https://www.bmjv.de/SharedDocs/Downloads/DE/Gesetzgebung/Dokumente/InfoPapier_RegE_Miete_II.pdf?__blob=publicationFile&v=5"
+      },
+      {
+        "title": "連邦議会：専門家が賃貸法の改正を評価（2026年10月14日の公聴会）",
+        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw42-pa-recht-mieten-1221718"
+      },
+      {
+        "title": "連邦議会：賃貸法の改正案への賛否",
+        "url": "https://www.bundestag.de/presse/hib/kurzmeldungen-1224894"
+      }
+    ],
+    "image": "/assets/img/events/germany-rent-law-reform-furnished-2026.webp",
+    "image_alt": "ソファとテーブル、ランプが置かれた家具付きの部屋と、賃貸契約書と鍵を描いたイラスト"
+  },
+  {
+    "slug": "wohngeld-reform-2027",
+    "id": "N031",
+    "content_type": "news",
+    "url": "/germany/ja/events/news/wohngeld-reform-2027/",
+    "markdown_path": "/content/events/news/wohngeld-reform-2027.md",
+    "canonical_url": "/germany/ja/events/news/wohngeld-reform-2027/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 938,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-29",
+      "next_review_due": "2026-12-15"
+    },
+    "title": "ドイツの住宅手当が2027年に見直しへ｜2年ごとの引き上げを止め、暖房費の分を半分に",
+    "category": "お金・制度",
+    "summary": "ドイツ政府は、家賃の負担を助ける住宅手当（Wohngeld）の法律を改正する案を連邦議会に出しました。2027年1月に予定されていた支給額の定期的な引き上げを見送り、暖房費の分を半分にする一方、収入の計算の手続きを簡単にする内容です。誰に関係するのか、何が変わるのか、連邦参議院の批判と今後の流れを整理します。",
+    "published_at": "2026-10-29",
+    "last_verified": "2026-10-29",
+    "tags": [
+      "住宅手当",
+      "Wohngeld",
+      "家賃",
+      "暖房費",
+      "社会保障",
+      "2027年",
+      "お金",
+      "ドイツ生活"
+    ],
+    "updated_at": "2026-10-29",
+    "related_articles": [
+      "germany-rent-law-reform-furnished-2026",
+      "rent-apartment-germany",
+      "germany-january-2027-changes"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2027-01-01 施行予定（連邦議会の議決と連邦参議院の同意が必要）",
+    "official_url": "https://www.bundestag.de/presse/hib/kurzmeldungen-1222360",
+    "official_sources": [
+      {
+        "title": "連邦議会：連邦政府が住宅手当を見直し（2026年10月5日）",
+        "url": "https://www.bundestag.de/presse/hib/kurzmeldungen-1222360"
+      },
+      {
+        "title": "連邦議会：住宅手当法の簡素化と改正（第1読会）",
+        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-wohngeldgesetz-1217564"
+      },
+      {
+        "title": "連邦議会印刷物 21/8284：住宅手当法の簡素化と改正に関する政府案（PDF）",
+        "url": "https://dserver.bundestag.de/btd/21/082/2108284.pdf"
+      },
+      {
+        "title": "連邦議会：法案の審議の経過（DIP）",
+        "url": "https://dip.bundestag.de/vorgang/gesetz-zur-vereinfachung-und-fortentwicklung-des-wohngeldgesetzes/338373"
+      },
+      {
+        "title": "連邦住宅・都市開発・建設省：政府案（PDF）",
+        "url": "https://www.bmwsb.bund.de/SharedDocs/gesetzgebungsverfahren/DE/wohngeld-2026/kabinettsentwurf.pdf?__blob=publicationFile&v=2"
+      }
+    ],
+    "image": "/assets/img/events/wohngeld-reform-2027.webp",
+    "image_alt": "集合住宅の建物と、暖房のラジエーター、ユーロ硬貨の入った封筒を描いたイラスト"
   }
 ]

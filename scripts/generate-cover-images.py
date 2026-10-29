@@ -27,27 +27,40 @@ import urllib.request
 from PIL import Image
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-API = "https://generativelanguage.googleapis.com/v1beta/models/{model}:predict"
+API = "https://generativelanguage.googleapis.com/v1beta/models/{model}:{method}"
 SIZES = ((1200, ""), (768, "-768w"), (480, "-480w"))
 
 
 def generate(prompt, model, key):
-    body = json.dumps({
-        "instances": [{"prompt": prompt}],
-        "parameters": {"sampleCount": 1, "aspectRatio": "16:9", "personGeneration": "allow_adult"},
-    }).encode()
+    """Imagen models use :predict; Gemini image models use :generateContent."""
+    if model.startswith("imagen"):
+        method = "predict"
+        body = {"instances": [{"prompt": prompt}],
+                "parameters": {"sampleCount": 1, "aspectRatio": "16:9", "personGeneration": "allow_adult"}}
+    else:
+        method = "generateContent"
+        body = {"contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": "16:9"}}}
     headers = {"Content-Type": "application/json"}
     if key:
         headers["x-goog-api-key"] = key
-    req = urllib.request.Request(API.format(model=model), data=body, method="POST", headers=headers)
+    req = urllib.request.Request(API.format(model=model, method=method), data=json.dumps(body).encode(),
+                                 method="POST", headers=headers)
     for attempt in range(4):
         try:
-            with urllib.request.urlopen(req, timeout=180) as res:
+            with urllib.request.urlopen(req, timeout=300) as res:
                 data = json.load(res)
-            preds = data.get("predictions") or []
-            if not preds or "bytesBase64Encoded" not in preds[0]:
-                raise RuntimeError(f"no image in response (possibly filtered): {str(data)[:300]}")
-            return base64.b64decode(preds[0]["bytesBase64Encoded"])
+            if method == "predict":
+                preds = data.get("predictions") or []
+                if preds and "bytesBase64Encoded" in preds[0]:
+                    return base64.b64decode(preds[0]["bytesBase64Encoded"])
+            else:
+                for cand in data.get("candidates") or []:
+                    for part in (cand.get("content") or {}).get("parts") or []:
+                        inline = part.get("inlineData") or part.get("inline_data")
+                        if inline and inline.get("data"):
+                            return base64.b64decode(inline["data"])
+            raise RuntimeError(f"no image in response (possibly filtered): {str(data)[:300]}")
         except urllib.error.HTTPError as err:
             detail = err.read().decode(errors="replace")[:300]
             if err.code in (401, 403) and not key:
@@ -100,7 +113,7 @@ def update_markdown(entry):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--manifest", required=True)
-    ap.add_argument("--model", default=os.environ.get("GEMINI_IMAGE_MODEL", "imagen-4.0-generate-001"))
+    ap.add_argument("--model", default=os.environ.get("GEMINI_IMAGE_MODEL", "gemini-3-pro-image"))
     ap.add_argument("--only", action="append", default=[])
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--from-png", help="use a local PNG instead of calling the API (pipeline test)")

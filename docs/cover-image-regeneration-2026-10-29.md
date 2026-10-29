@@ -13,7 +13,8 @@
 - Gemini APIのキー。次のどちらかで登録し、新しいセッションで読み込みます。
   - **Network secrets（推奨）**：Allowed websites に `generativelanguage.googleapis.com`、Header name に `x-goog-api-key`、Prefix は空、Value にキー。キーはセッションの中に入らず、送信時に自動で付きます。スクリプトは `GEMINI_API_KEY` がなくても、このまま動きます。
   - **環境変数**：`GEMINI_API_KEY=<キー>`
-- 必要なら `GEMINI_IMAGE_MODEL` でモデルを変更（既定は `imagen-4.0-generate-001`）
+- 必要なら `GEMINI_IMAGE_MODEL` でモデルを変更（既定は `gemini-3-pro-image`。`imagen-` で始まるモデル名なら Imagen の方式で送ります）
+- 画像生成は無料枠では使えません（上限0）。Google AI Studio でプロジェクトの課金設定が必要です
 
 ## 手順
 

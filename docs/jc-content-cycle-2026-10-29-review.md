@@ -97,3 +97,15 @@ The repository's `Validate content` workflow runs the content generator and then
 - Search Console metrics were not available because the GSC Wizard connection reports an expired subscription. No impressions, CTR, ranking, or query figures are inferred.
 - Project Instructions were not accessible through the connected Notion search in this run.
 - The existing draft PRs remain unpublished. No generated HTML, sitemap, canonical, or hreflang output was changed.
+
+### Duplicate check against published tax page
+
+- Main already publishes N033 at /germany/ja/events/news/tax-refund-2022-deadline-december-2026/. It covers the exact 2022 voluntary-return deadline, the four-year rule, ELSTER submission, common refund situations, foreign-income caution, and the distinction between voluntary and mandatory filing.
+- Do **not** publish the new L058 draft as a second URL for the same deadline/search intent. Its useful additions (AO §§169–170 explanation and a more explicit mandatory-filing decision table) should be merged into N033 after the existing site-improvement PR is reviewed. PR #398 already touches N033 metadata, so avoid a competing edit branch.
+- The tax draft remains hidden and is retained only as editorial source material until consolidation.
+
+### Competitor and search-intent notes
+
+- EES/ETIAS: the Japanese-language Federal Foreign Office page is a useful baseline; a September 2026 Japanese business-travel article also covers the current no-application status. The J-Connect draft's differentiator is the explicit split between short-stay visitors and German residents with valid residence permits, plus the warning not to infer re-entry rights from a temporary residence certificate. Do not claim that the EU's Q4 2026 forecast has been withdrawn; the current EU homepage still displays it.
+- Tax: competitors cover generic four-year voluntary filing windows, but the exact 2022 deadline is already served by J-Connect's published N033. Improve that existing page rather than create a second URL.
+- Fireworks: the existing C019 column is already the canonical coverage. Update it rather than publish a second fireworks URL.

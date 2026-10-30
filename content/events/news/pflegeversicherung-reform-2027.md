@@ -47,7 +47,7 @@ image_credit: "Illustration / J-Connect"
 
 連邦保健省によると、連邦政府は介護再編法の政府案を閣議で決定しました（[連邦保健省](https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/kabinett-beschliesst-pflegeneuordnungsgesetz)）。目的は、介護保険の財政を安定させることです。対策をとらなければ、2027年には約76億ユーロの赤字になるおそれがあったとされています（[連邦政府](https://www.bundesregierung.de/breg-de/aktuelles/pflegeneuordnungsgesetz-2454862)）。
 
-政府は、一般の保険料率を**3.6％のまま**保つとしています。そのかわり、次のような方法で収入を増やす案です（同上）。
+政府は、一般の保険料率を**3.6％のまま**保つとしています。そのかわり、次のような方法で収入を増やす案です（[連邦政府](https://www.bundesregierung.de/breg-de/aktuelles/pflegeneuordnungsgesetz-2454862)）。
 
 | 変更の案 | 時期 |
 | --- | --- |
@@ -74,7 +74,7 @@ image_credit: "Illustration / J-Connect"
 
 （J-Connectによる概算。保険料を計算する月収の上限6,375ユーロを超える部分には、保険料はかかりません。）
 
-なお、今の制度では、23歳未満の人には上乗せがかかりません。また、子どもがいる人は上乗せの対象外です。日本で生まれた子どもも含め、子どもがいることを保険組合に届け出ていない場合は、一度確認しておくと安心です。
+なお、今の制度では、23歳未満の人には上乗せがかかりません。また、子どもがいる人は上乗せの対象外です。日本で生まれた子どもも含め、子どもがいることを保険組合に届け出ていない場合は、届け出が済んでいるか一度確認しましょう。
 
 ## 扶養に入っている配偶者がいる家庭：2028年から上乗せ案
 
@@ -82,7 +82,7 @@ image_credit: "Illustration / J-Connect"
 
 改革案では、**2028年1月1日から**、家族保険で入っている配偶者や登録パートナーがいる場合、その保険の元になっている加入者の保険料に**0.52％**の上乗せをするとしています（[連邦保健省：よくある質問](https://www.bundesgesundheitsministerium.de/service/gesetze-und-verordnungen/guv-21-lp/pnog)）。たとえば、月の給与が4,000ユーロなら、月約21ユーロの負担増になる計算です（J-Connectによる概算）。
 
-ただし、次のような場合は上乗せがかからないとされています（同上）。
+ただし、次のような場合は上乗せがかからないとされています（[連邦保健省：よくある質問](https://www.bundesgesundheitsministerium.de/service/gesetze-und-verordnungen/guv-21-lp/pnog)）。
 
 - 家庭に一定の年齢未満の子どもがいる
 - 自分で生活できない障害のある子どもがいる

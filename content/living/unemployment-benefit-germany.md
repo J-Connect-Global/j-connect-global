@@ -46,7 +46,7 @@ official_sources:
 2. **加入期間**：失業の届け出の前の**30か月**のうち、**12か月以上**、失業保険に入って働いていた
 3. **届け出**：職業安定所に失業の届け出をして、仕事を探していること
 
-短い期間の仕事が多かった人は、条件を満たせば6か月の加入でもよい場合があります（同上）。
+短い期間の仕事が多かった人は、条件を満たせば6か月の加入でもよい場合があります（[連邦雇用エージェンシー](https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/finanzielle-hilfen/arbeitslosengeld-anspruch-hoehe-dauer)）。
 
 ## 金額：手取りの給与の60％（子どもがいれば67％）
 
@@ -76,11 +76,11 @@ official_sources:
 1. **求職者としての届け出**（Arbeitsuchendmeldung）：仕事が終わる日が3か月以上先に分かっている場合は、遅くとも**3か月前**まで。3か月ない場合は、仕事が終わると分かってから**3日以内**（[連邦雇用エージェンシー](https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/ihre-schritte-wenn-sie-arbeitslos-werden/wie-sie-sich-arbeitsuchend-melden)）
 2. **失業の届け出**（Arbeitslosmeldung）：遅くとも失業した最初の日に
 
-求職者としての届け出が遅れると、失業手当が1週間止められること（Sperrzeit）があります（同上）。どちらの届け出もオンラインでできます。
+求職者としての届け出が遅れると、失業手当が1週間止められること（Sperrzeit）があります（[連邦雇用エージェンシー](https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/ihre-schritte-wenn-sie-arbeitslos-werden/wie-sie-sich-arbeitsuchend-melden)）。どちらの届け出もオンラインでできます。
 
 ### 自分から辞めた場合は注意
 
-自分から仕事を辞めたり、合意で契約を終えたりした場合は、正当な理由がないと、失業手当が最長12週間止められることがあります。辞める前に、職業安定所に相談すると安心です。
+自分から仕事を辞めたり、合意で契約を終えたりした場合は、正当な理由がないと、失業手当が最長12週間止められることがあります。辞める前に、職業安定所に相談しましょう。
 
 ![仕事が終わることが分かったら、3か月前までに求職者として届け出て、遅くとも失業の初日に失業の届け出をし、自分から辞めた場合は最長12週間止められることがあるという流れを示した図](/assets/images/living/unemployment-benefit-steps.svg "図解：J-Connect。連邦雇用エージェンシーの資料に基づく（2026年10月29日参照）。")
 

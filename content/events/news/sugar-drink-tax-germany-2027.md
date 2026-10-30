@@ -45,7 +45,7 @@ image_credit: "Illustration / J-Connect"
 
 連邦財務省によると、連邦政府は2026年10月14日、砂糖入り飲料税（Zuckergetränkesteuer）の法案を閣議で取りまとめました。法案は、与党の会派が連邦議会に提出する形で進められます（[連邦財務省](https://www.bundesfinanzministerium.de/Content/DE/Pressemitteilungen/Finanzpolitik/2026/10/2026-10-14-gesetzentwurf-zuckergetraenkesteuer.html)）。
 
-税金がかかるのは、**100ミリリットルあたり5グラム以上の砂糖**を含む飲み物です。砂糖の量によって、税額は2段階に分かれます（同上）。
+税金がかかるのは、**100ミリリットルあたり5グラム以上の砂糖**を含む飲み物です。砂糖の量によって、税額は2段階に分かれます（[連邦財務省](https://www.bundesfinanzministerium.de/Content/DE/Pressemitteilungen/Finanzpolitik/2026/10/2026-10-14-gesetzentwurf-zuckergetraenkesteuer.html)）。
 
 | 砂糖の量（100mlあたり） | 税額（1リットルあたり） |
 | --- | --- |
@@ -54,7 +54,7 @@ image_credit: "Illustration / J-Connect"
 
 たとえば、砂糖が100mlあたり8グラム以上入った1.5リットルのボトルなら、税額は約48セントになる計算です。
 
-連邦議会で法案が可決されれば、この税は**2027年7月1日**から導入される予定です（同上）。
+連邦議会で法案が可決されれば、この税は**2027年7月1日**から導入される予定です（[連邦財務省](https://www.bundesfinanzministerium.de/Content/DE/Pressemitteilungen/Finanzpolitik/2026/10/2026-10-14-gesetzentwurf-zuckergetraenkesteuer.html)）。
 
 ![100ミリリットルあたり砂糖5グラム未満は課税なし、5〜8グラム未満は1リットル26セント、8グラム以上は1リットル32セントという2段階の税額を示した図](/assets/images/events/sugar-drink-tax-tiers.svg "図解：J-Connect。連邦財務省の発表に基づく（2026年10月29日参照）。")
 
@@ -69,13 +69,13 @@ image_credit: "Illustration / J-Connect"
 - 砂糖を加えたネクターや、ジュースの濃縮液
 - 飲み物を作るための砂糖入りのシロップや濃縮液
 
-一方、次のものは対象になりません（同上）。
+一方、次のものは対象になりません（[連邦財務省](https://www.bundesfinanzministerium.de/Content/DE/Pressemitteilungen/Finanzpolitik/2026/10/2026-10-14-gesetzentwurf-zuckergetraenkesteuer.html)）。
 
 - **甘味料で甘くした飲み物**（砂糖を使わない「ゼロ」「ライト」の飲み物など）
 - **牛乳、オーツ麦や米の飲み物**
 - **果汁100％や野菜100％のジュース**
 
-また、年間の生産量が7万リットル以下の小さな独立した製造者は、対象から外す特例も考えられています（同上）。
+また、年間の生産量が7万リットル以下の小さな独立した製造者は、対象から外す特例も考えられています（[連邦財務省](https://www.bundesfinanzministerium.de/Content/DE/Pressemitteilungen/Finanzpolitik/2026/10/2026-10-14-gesetzentwurf-zuckergetraenkesteuer.html)）。
 
 ![砂糖入り飲料税の対象になる炭酸飲料、アイスティー、エナジードリンク、シロップなどと、対象外の甘味料入り飲料、牛乳や植物性ミルク、果汁100％ジュースを分けて示した図](/assets/images/events/sugar-drink-tax-scope.svg "図解：J-Connect。連邦財務省の発表に基づく（2026年10月29日参照）。")
 

@@ -64,7 +64,7 @@ image_credit: "Illustration / J-Connect"
 
 改正案では、家具付きの物件を貸すとき、家主は家具の分の上乗せを、家賃とは分けて契約に書く必要があります。書かれていない場合は、家具なしの物件として家賃ブレーキが当てはめられます（[連邦司法・消費者保護省：よくある質問](https://www.bmjv.de/SharedDocs/Downloads/DE/Gesetzgebung/FAQ/FAQ_RegE_Miete_II.pdf?__blob=publicationFile&v=5)）。
 
-家具の上乗せは、家具の今の価値をもとに決めるのが原則です。すべての家具がそろった物件については、家具を除いた家賃（Nettokaltmiete）の**10％**までを目安として使えるようにする案です（同上）。
+家具の上乗せは、家具の今の価値をもとに決めるのが原則です。すべての家具がそろった物件については、家具を除いた家賃（Nettokaltmiete）の**10％**までを目安として使えるようにする案です（[連邦司法・消費者保護省：よくある質問](https://www.bmjv.de/SharedDocs/Downloads/DE/Gesetzgebung/FAQ/FAQ_RegE_Miete_II.pdf?__blob=publicationFile&v=5)）。
 
 たとえば、家具を除いた家賃が1,000ユーロの物件なら、家具の上乗せは100ユーロが目安になります。今は、家具付きというだけで家賃がかなり高く設定されている物件もあるため、借りる人にとっては、家賃が妥当かどうかを確かめやすくなります。
 

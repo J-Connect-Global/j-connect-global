@@ -43,7 +43,7 @@ image_credit: "Illustration / J-Connect"
 
 年が明けてしばらくすると、ドイツの家のドアの上や玄関の柱に、チョークで「20*C+M+B+27」のような文字が書かれているのを見かけます。いたずら書きではありません。冠をかぶった子どもたちが家々を回り、残していく祝福のしるしです。
 
-このコラムでは、ドイツで年末年始を過ごす方や、子どもが幼稚園や学校に通っている家庭に向けて、1月6日の「三賢王の日」と、家々を回る子どもたち「シュテルンジンガー（Sternsinger）」について紹介します。ドアの文字の意味、子どもたちが集めている募金の使い道、そしてケルン大聖堂との意外なつながりが分かれば、玄関のベルが鳴ったときに安心して迎えられるはずです。
+1月6日の「三賢王の日」の前後に家々を回る、シュテルンジンガー（Sternsinger）です。ドアの文字の意味、集めた募金の使い道、ケルン大聖堂とのつながりを紹介します。玄関のベルが鳴ったときにどう迎えればよいかも分かります。
 
 ## 1月6日は「三賢王の日」
 
@@ -57,7 +57,7 @@ image_credit: "Illustration / J-Connect"
 
 子どもたちは玄関で歌や詩を披露し、その家に祝福のしるしを書き、世界の子どもたちのための募金を集めます。ドイツでの活動は、子ども宣教会（Kindermissionswerk „Die Sternsinger“）と、カトリック青年団体の連合会（BDKJ）が全国の窓口になっています（[シュテルンジンガー](https://www.sternsinger.de/sternsingen/)）。
 
-活動の期間は、12月27日から1月の第3金曜日までと決められています（[シュテルンジンガー：2027年の活動の開幕](https://www.sternsinger.de/presse/pressemitteilungen/detail/sternsingerinnen-und-sternsinger-feiern-in-muenster-die-eroeffnung-ihrer-aktion-dreikoenigssingen-2027/)）。全国の開幕式は、2026年12月29日にミュンスターで行われる予定です（同上）。
+活動の期間は、12月27日から1月の第3金曜日までと決められています（[シュテルンジンガー：2027年の活動の開幕](https://www.sternsinger.de/presse/pressemitteilungen/detail/sternsingerinnen-und-sternsinger-feiern-in-muenster-die-eroeffnung-ihrer-aktion-dreikoenigssingen-2027/)）。全国の開幕式は、2026年12月29日にミュンスターで行われる予定です（[シュテルンジンガー：2027年の活動の開幕](https://www.sternsinger.de/presse/pressemitteilungen/detail/sternsingerinnen-und-sternsinger-feiern-in-muenster-die-eroeffnung-ihrer-aktion-dreikoenigssingen-2027/)）。
 
 ### 2015年、無形文化遺産に
 

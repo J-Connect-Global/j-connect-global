@@ -47,7 +47,7 @@ image_credit: "Illustration / J-Connect"
 
 給与だけをもらっている会社員の多くは、申告の義務がありません。それでも自分から申告を出すと、税務署が1年分の税金を計算し直し、払いすぎた分を返してくれます。
 
-NRW州の財務行政によると、自分から出す申告は、**税金が発生した年から4年以内**に出す必要があります（[NRW州財務行政](https://www.finanzverwaltung.nrw.de/steuertipps-fuer-arbeitnehmerinnen-und-arbeitnehmer)）。期限を過ぎると、払いすぎた税金を返してもらうことは、原則としてできなくなります（同上）。
+NRW州の財務行政によると、自分から出す申告は、**税金が発生した年から4年以内**に出す必要があります（[NRW州財務行政](https://www.finanzverwaltung.nrw.de/steuertipps-fuer-arbeitnehmerinnen-und-arbeitnehmer)）。期限を過ぎると、払いすぎた税金を返してもらうことは、原則としてできなくなります（[NRW州財務行政](https://www.finanzverwaltung.nrw.de/steuertipps-fuer-arbeitnehmerinnen-und-arbeitnehmer)）。
 
 そのため、**2022年分の申告は、2026年12月31日までに税務署に届いている必要があります**。ELSTERの案内によると、この期限は延長できません（[ELSTER：2022年分の申告の手引き](https://www.elster.de/eportal/helpGlobal?themaGlobal=help_est_ufa_10_2022)）。2026年12月31日は木曜日です。年末は郵便も混むので、オンラインのELSTERで出すのが確実です。
 
@@ -64,7 +64,7 @@ NRW州の財務行政によると、自分から出す申告は、**税金が発
 5. **仕事のための引っ越しや、語学学校・資格の費用を自分で払った人**
 6. **教会税を払っている人や、寄付をした人**
 
-逆に、申告した結果、税金を追加で払うことになる場合もあります。申告を出す前に、市販の税金計算ソフトやアプリで、戻るのか払うのかの見当をつけておくと安心です。
+逆に、申告した結果、税金を追加で払うことになる場合もあります。申告を出す前に、市販の税金計算ソフトやアプリで、戻るのか払うのかの見当をつけておきましょう。
 
 ## 日本の収入があった年は注意
 

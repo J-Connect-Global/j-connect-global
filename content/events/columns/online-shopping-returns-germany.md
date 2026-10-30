@@ -43,7 +43,7 @@ image_credit: "Illustration / J-Connect"
 
 ドイツでは、ネットで服を何サイズか注文して、合わなかった物を返す人が少なくありません。これができるのは、ネットで買った物について、法律で「撤回の権利（Widerrufsrecht）」が決められているからです。
 
-このコラムでは、ドイツでネット通販を使う方に向けて、返品のルールを分かりやすく紹介します。いつまでに返せるのか、送料は誰が払うのか、元の箱がなくても返せるのか、そして返せない物は何か。2026年11月27日のブラックフライデーの前に知っておくと、安心して買い物ができるはずです。
+いつまでに返せるのか、送料は誰が払うのか、元の箱がなくても返せるのか、返せない物は何か。撤回の権利の基本を説明します。2026年11月27日のブラックフライデーの前に確認しておきましょう。
 
 ## 受け取ってから14日間、理由を言わずにやめられる
 
@@ -53,7 +53,7 @@ image_credit: "Illustration / J-Connect"
 
 ### 「やめます」とはっきり伝える
 
-撤回するときは、ショップに**撤回することをはっきり伝える**必要があります。ショップのウェブサイトの返品手続き、メール、撤回の書式などを使います。物を送り返すだけでなく、撤回の意思を伝えた記録を残しておくと、後でもめたときに安心です。
+撤回するときは、ショップに**撤回することをはっきり伝える**必要があります。ショップのウェブサイトの返品手続き、メール、撤回の書式などを使います。物を送り返すだけでなく、撤回の意思を伝えた記録を残しておくと、後でもめたときの証拠になります。
 
 2026年6月19日からは、ネットで契約を結べるショップやサービスは、ウェブサイトに**撤回のためのボタン**（撤回の機能）を用意することが義務になりました。撤回の権利そのものは変わりませんが、手続きが分かりやすくなります（[消費者センター：撤回ボタン](https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/widerrufsbutton-ab-juni-2026-onlinevertraege-einfacher-widerrufen-118449)）。
 
@@ -63,7 +63,7 @@ image_credit: "Illustration / J-Connect"
 
 ここは、ショップによって違います。消費者センターによると、返品の送料を誰が払うかは、ショップが撤回についての案内（Widerrufsbelehrung）や利用規約に書いた内容で決まります。多くのショップが送料を負担し、無料の返品ラベルを用意していますが、そうする義務はありません（[消費者センター](https://www.verbraucherzentrale.de/wissen/digitale-welt/onlinehandel/widerruf-im-internet-was-tun-wenn-sich-der-onlineshop-quer-stellt-60076)）。
 
-特に、**ヨーロッパの外にあるショップ**では、返品の送料がとても高くなることがあります。買う前に、ショップの所在地と返品の条件を確認しましょう（同上）。
+特に、**ヨーロッパの外にあるショップ**では、返品の送料がとても高くなることがあります。買う前に、ショップの所在地と返品の条件を確認しましょう（[消費者センター](https://www.verbraucherzentrale.de/wissen/digitale-welt/onlinehandel/widerruf-im-internet-was-tun-wenn-sich-der-onlineshop-quer-stellt-60076)）。
 
 ## 元の箱がなくても返せる？
 
@@ -95,7 +95,7 @@ image_credit: "Illustration / J-Connect"
 
 1. **「定価から○％引き」に注意**：比べている値段が、メーカーの希望小売価格（UVP）だけの場合、実際の店頭の値段とは違うことがあります。消費者センターも、希望小売価格からの値引きはよく確かめるよう呼びかけています（[消費者センター：ブラックフライデー](https://www.verbraucherzentrale.de/wissen/digitale-welt/onlinehandel/prime-days-black-friday-cyber-monday-tipps-fuer-die-schnaeppchenjagd-37835)）。
 2. **値下げは「過去30日の一番安い値段」と比べる**：ドイツでは、ショップが「値下げ」と表示するときは、その前の30日間で一番安かった値段を基準にする決まりがあります。
-3. **お得でなかったら撤回できる**：消費者センターによると、買った後で「思ったほど安くなかった」と分かった場合も、撤回の権利は使えます。ただし、返品の送料がかかる場合もあります（同上）。
+3. **お得でなかったら撤回できる**：消費者センターによると、買った後で「思ったほど安くなかった」と分かった場合も、撤回の権利は使えます。ただし、返品の送料がかかる場合もあります（[消費者センター：ブラックフライデー](https://www.verbraucherzentrale.de/wissen/digitale-welt/onlinehandel/prime-days-black-friday-cyber-monday-tipps-fuer-die-schnaeppchenjagd-37835)）。
 4. **撤回と保証は別のもの**：壊れていた物の修理や交換を求める権利（2年間の法定保証）は、14日の撤回とは別にあります。
 
 荷物の受け取りについては「[DHLのパックステーションの使い方](/germany/ja/living/dhl-packstation-guide/)」も参考にしてください。

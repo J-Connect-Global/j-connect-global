@@ -76,7 +76,7 @@ image_credit: "Illustration / J-Connect"
 
 「平均2.9%」は、全保険組合の支出をまかなうのに計算上必要な率で、いわば目安です。各組合はこれと関係なく自分の率を決められ、年の途中で引き上げることもあります。実際、2026年の計算上の平均も2.9%でしたが、各組合が実際に課している率の平均は約3.1%、幅は2.18%〜4.39%と報じられています（[Apotheken Umschau](https://www.apotheken-umschau.de/gesundheitspolitik/zusatzbeitrag-2027-bleibt-bei-2-9-prozent-doch-kassen-warnen-1605019.html)）。
 
-公的医療保険の全国組織である GKV-Spitzenverband のオリバー・ブラット氏は、年明けの時点で法定の最低準備金を積み終えていない組合が残るとして、そうした組合では資金需要が高まりうると述べています（同上）。つまり**2027年に引き上げる組合も、引き下げる組合もありうる**というのが正確な理解です。
+公的医療保険の全国組織である GKV-Spitzenverband のオリバー・ブラット氏は、年明けの時点で法定の最低準備金を積み終えていない組合が残るとして、そうした組合では資金需要が高まりうると述べています（[Apotheken Umschau](https://www.apotheken-umschau.de/gesundheitspolitik/zusatzbeitrag-2027-bleibt-bei-2-9-prozent-doch-kassen-warnen-1605019.html)）。つまり**2027年に引き上げる組合も、引き下げる組合もありうる**というのが正確な理解です。
 
 ## 手取りへの影響：計算例
 
@@ -99,7 +99,7 @@ image_credit: "Illustration / J-Connect"
 
 これまで保険組合は、追加保険料率を引き上げる場合、遅くとも1か月前までに加入者へ手紙で知らせ、特別解約権があることも伝える義務がありました。消費者センターによると、この通知義務はGKV保険料率安定化法によってなくなりました。2026年7月30日の施行以降は、手紙で個別に知らせる義務も、デジタルで知らせる一般的な義務もありません（[消費者センター](https://www.verbraucherzentrale.de/wissen/geld-versicherungen/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581)）。
 
-アプリやデジタル会員誌で引き続き知らせるとしている組合もありますが、2027年1月の値上げは、**自分から確認しないと気づかない**可能性があります。ただし、値上げのときに乗り換えられる特別解約権そのものは残っています（同上）。
+アプリやデジタル会員誌で引き続き知らせるとしている組合もありますが、2027年1月の値上げは、**自分から確認しないと気づかない**可能性があります。ただし、値上げのときに乗り換えられる特別解約権そのものは残っています（[消費者センター](https://www.verbraucherzentrale.de/wissen/geld-versicherungen/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581)）。
 
 ## 値上げされたら使える「特別解約権」
 
@@ -163,7 +163,7 @@ image_credit: "Illustration / J-Connect"
 
 ### 乗り換えると、治療中の病院や処方に影響はある？
 
-公的医療保険の基本的な給付は法律で決まっているため、どの組合でも大きくは変わりません。ただし、組合独自の追加給付や、すでに承認を受けている治療の扱いは、移る前に新旧の組合に確認しておくと安心です。
+公的医療保険の基本的な給付は法律で決まっているため、どの組合でも大きくは変わりません。ただし、組合独自の追加給付や、すでに承認を受けている治療の扱いは、移る前に新旧の組合に確認しておきましょう。
 
 ### 民間医療保険（PKV）に入っている場合は？
 

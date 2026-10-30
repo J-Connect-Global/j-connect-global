@@ -62,3 +62,38 @@
 ## Implementation note
 
 The repository's `Validate content` workflow runs the content generator and then requires generated HTML, hub cards, search index and sitemap to be committed with the source. This run has no local repository runtime or dependency installation, so published-page source edits were not committed without their generated artifacts. The new articles are staged as hidden drafts; the existing-page candidates above are source-verified and documented for the next generated-build cycle.
+
+## Recheck — 2026-10-30 (Europe/Berlin)
+
+### EES / ETIAS draft
+
+- The German Federal Foreign Office's current EES explainer confirms full operation from **10 April 2026** and lists holders of residence permits and long-stay visas among those exempt from EES: https://www.germany.info/us-en/2735594-2735594
+- The EU ETIAS homepage still gives **Q4 2026** as the expected operational period: https://travel-europe.europa.eu/etias
+- The EU FAQ separately confirms that ETIAS is **not yet operational and is not collecting applications**, and that the specific start date will be announced several months before launch: https://travel-europe.europa.eu/etias/faq
+- Editorial correction: do not describe Q4 2026 as withdrawn or as a confirmed launch date. State it as the current forecast while making clear that no exact start date or application intake exists yet.
+- The draft was updated on 30 October. Immigration-specific review remains required before publication, especially for temporary residence certificates and re-entry.
+
+### Voluntary 2022 tax return
+
+- Added the statutory basis: AO §169(2) provides the regular four-year assessment limitation period; AO §170(1) determines the general start of that period: https://www.gesetze-im-internet.de/ao_1977/__169.html and https://www.gesetze-im-internet.de/ao_1977/__170.html
+- The article now distinguishes this voluntary-return limitation period from mandatory filing deadlines. The Finanzamt NRW FAQ remains the direct practical confirmation for 31 December 2026: https://www.finanzamt.nrw.de/faq
+- A tax specialist has not reviewed the article. Keep it unpublished until that review is completed.
+
+### Fireworks draft — cannibalization finding
+
+- The proposed new page overlaps substantially with the existing public column C019 at content/events/columns/germany-silvester-fireworks-rules.md, which already covers national sale/use dates, age restrictions, prohibited locations, Düsseldorf and Cologne examples, safety, and environmental effects.
+- Do **not** publish the new fireworks draft as a separate URL. Its useful 2026/27 material should be merged into the existing column when current local notices are available. For local restrictions, add the legal basis in 1. SprengV §24: https://www.gesetze-im-internet.de/sprengv_1/__24.html
+- The existing article labels the city examples as 2025/26; do not present them as current 2026/27 restrictions. Recheck Düsseldorf, Cologne, and other municipal notices closer to year-end.
+
+### Existing internal-link improvements already present on main
+
+- The health-insurance guide already links to the ePA guide.
+- The childbirth-procedures guide already links to the 2027 Kindergeld payment calendar.
+- The Kita guide already links to the NRW 2026/27 school-holiday guide and explicitly distinguishes school holidays from Kita closures.
+- No duplicate edits were made to these pages in this cycle.
+
+### Access and verification limits
+
+- Search Console metrics were not available because the GSC Wizard connection reports an expired subscription. No impressions, CTR, ranking, or query figures are inferred.
+- Project Instructions were not accessible through the connected Notion search in this run.
+- The existing draft PRs remain unpublished. No generated HTML, sitemap, canonical, or hreflang output was changed.

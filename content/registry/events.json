@@ -5650,5 +5650,231 @@
     ],
     "image": "/assets/img/events/job-notice-period-germany.webp",
     "image_alt": "机で手紙に万年筆で署名する人と、私物を入れた段ボール箱を描いたイラスト"
+  },
+  {
+    "slug": "cologne-christmas-markets-2026-guide",
+    "id": "E021",
+    "content_type": "event",
+    "category": "季節行事",
+    "title": "ケルンのクリスマスマーケット2026｜大聖堂の下で、広場ごとに違う冬の物語",
+    "summary": "2026年のケルンのクリスマスマーケットを、大聖堂前・天使の市場・旧市街の小人伝説から案内。11月16日に始まる大聖堂前の日程と営業時間、11月22日の休業、各会場の雰囲気の違いを整理します。",
+    "official_sources": [
+      {
+        "title": "大聖堂前のクリスマスマーケット：営業時間・休業日",
+        "url": "https://www.koelnerweihnachtsmarkt.com/de/faq-items/zu-welchen-uhrzeiten-ist-der-weihnachtsmarkt-am-koelner-dom-geoeffnet/"
+      },
+      {
+        "title": "大聖堂前のクリスマスマーケット：2026年の舞台プログラム",
+        "url": "https://www.koelnerweihnachtsmarkt.com/de/buehnenprogramm/"
+      },
+      {
+        "title": "ケルン観光局：大聖堂前のクリスマスマーケット2026",
+        "url": "https://www.koelntourismus.de/erlebnisse-lifestyle/veranstaltungen/detail/weihnachtsmarkt-am-koelner-dom"
+      },
+      {
+        "title": "koeln.de：ノイマルクトの天使の市場2026",
+        "url": "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-neumarkt/"
+      },
+      {
+        "title": "koeln.de：旧市街のクリスマスマーケット2026",
+        "url": "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-altstadt/"
+      }
+    ],
+    "related_articles": [
+      "christmas-markets-duesseldorf",
+      "aachen-christmas-market-2026-guide",
+      "gluehwein-christmas-market-guide",
+      "cologne-cathedral-632-years",
+      "nrw-christmas-opening-hours-2026"
+    ],
+    "city": "ケルン",
+    "location": "大聖堂前のロンカリ広場、ノイマルクト、旧市街ほか",
+    "event_date": "2026-11-16〜2026-12-23",
+    "next_review": "2026-11-15",
+    "tags": [
+      "クリスマスマーケット",
+      "ケルン",
+      "2026年11月",
+      "2026年12月",
+      "アドベント",
+      "冬"
+    ],
+    "published": true,
+    "status": "published",
+    "source_type": "manual",
+    "published_at": "2026-10-30",
+    "updated_at": "2026-10-30",
+    "last_verified": "2026-10-30",
+    "canonical_url": "/germany/ja/events/cologne-christmas-markets-2026-guide/",
+    "official_url": "https://www.koelnerweihnachtsmarkt.com/de/",
+    "image": "/assets/img/events/cologne-christmas-markets-2026-guide.webp",
+    "image_alt": "夜の大聖堂を背に、ツリーから屋台の上へ光の天蓋が広がるクリスマスマーケットを描いたイラスト",
+    "image_caption": "イラスト：J-Connect。大聖堂前のクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。",
+    "image_credit": "Illustration / J-Connect",
+    "url": "/germany/ja/events/cologne-christmas-markets-2026-guide/",
+    "markdown_path": "/content/events/cologne-christmas-markets-2026-guide.md",
+    "image_url": "/assets/img/events/cologne-christmas-markets-2026-guide.webp",
+    "home_visible": true,
+    "home_order": 5,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-30",
+      "next_review_due": "2026-11-15"
+    }
+  },
+  {
+    "slug": "aachen-christmas-market-2026-guide",
+    "id": "E022",
+    "content_type": "event",
+    "category": "季節行事",
+    "title": "アーヘン・クリスマスマーケット2026｜カール大帝の都で、プリンテンの香りに包まれる",
+    "summary": "2026年11月20日〜12月23日のアーヘン・クリスマスマーケットを案内。大聖堂と市庁舎に挟まれた広場の歴史、名物の焼き菓子プリンテン、国境の街らしいにぎわいと、11月22日・12月12日・23日の特別時間を整理します。",
+    "official_sources": [
+      {
+        "title": "アーヘン観光局：アーヘン・クリスマスマーケット",
+        "url": "https://www.aachen-tourismus.de/aachen-entdecken/details/event/aachener-weihnachtsmarkt/"
+      },
+      {
+        "title": "アーヘン市：2026年の開催案内",
+        "url": "https://www.aachen.de/kalender/2026/q4/weihnachten/2026-11-20-aachener-weihnachtsmarkt/"
+      },
+      {
+        "title": "主催団体MAC：アーヘン・クリスマスマーケット",
+        "url": "https://www.mac-aachen.de/aachener-weihnachtsmarkt/"
+      },
+      {
+        "title": "アーヘン観光局：カール大帝の宮廷跡カッチュホーフ",
+        "url": "https://www.aachen-tourismus.de/aachen-entdecken/sehenswuerdigkeiten/details/katschhof/"
+      },
+      {
+        "title": "アーヘン市：プリンテンと旧市街",
+        "url": "https://www.aachen.de/aachen-entdecken/typisch-aachen/printen-bend-und-altstadtflair/"
+      }
+    ],
+    "related_articles": [
+      "aachen-day-trip",
+      "cologne-christmas-markets-2026-guide",
+      "christmas-markets-duesseldorf",
+      "gluehwein-christmas-market-guide"
+    ],
+    "city": "アーヘン",
+    "location": "市庁舎前のマルクト広場、カッチュホーフ、大聖堂周辺",
+    "event_date": "2026-11-20〜2026-12-23",
+    "next_review": "2026-11-19",
+    "tags": [
+      "クリスマスマーケット",
+      "アーヘン",
+      "2026年11月",
+      "2026年12月",
+      "アドベント",
+      "冬"
+    ],
+    "published": true,
+    "status": "published",
+    "source_type": "manual",
+    "published_at": "2026-10-30",
+    "updated_at": "2026-10-30",
+    "last_verified": "2026-10-30",
+    "canonical_url": "/germany/ja/events/aachen-christmas-market-2026-guide/",
+    "official_url": "https://www.aachen-tourismus.de/aachen-entdecken/details/event/aachener-weihnachtsmarkt/",
+    "image": "/assets/img/events/aachen-christmas-market-2026-guide.webp",
+    "image_alt": "石造りの市庁舎の前で、焼き菓子プリンテンを並べた屋台に灯りがともる冬の夕暮れを描いたイラスト",
+    "image_caption": "イラスト：J-Connect。アーヘンのクリスマスマーケットのテーマを表したもので、実際の建物や屋台を再現していません。",
+    "image_credit": "Illustration / J-Connect",
+    "url": "/germany/ja/events/aachen-christmas-market-2026-guide/",
+    "markdown_path": "/content/events/aachen-christmas-market-2026-guide.md",
+    "image_url": "/assets/img/events/aachen-christmas-market-2026-guide.webp",
+    "home_visible": true,
+    "home_order": 6,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-30",
+      "next_review_due": "2026-11-19"
+    }
+  },
+  {
+    "slug": "nuremberg-christkindlesmarkt-2026-guide",
+    "id": "E023",
+    "content_type": "event",
+    "category": "季節行事",
+    "title": "ニュルンベルクのクリスマスマーケット2026｜クリストキントの言葉で始まる、旧市街の4週間",
+    "summary": "2026年11月27日〜12月24日のニュルンベルク・クリストキンドレスマルクトを案内。11月27日17時30分の開幕の口上、赤白の屋根が並ぶ約180の屋台、1678年までさかのぼる歴史、名物の焼き菓子とソーセージ、子ども向けの市を紹介します。",
+    "official_sources": [
+      {
+        "title": "ニュルンベルク・クリストキンドレスマルクト公式サイト",
+        "url": "https://www.christkindlesmarkt.de/"
+      },
+      {
+        "title": "ニュルンベルク市：クリストキンドレスマルクト2026の案内",
+        "url": "https://www.nuernberg.de/internet/marktamt/christkindlesmarkt.html"
+      },
+      {
+        "title": "ニュルンベルク市：2026年の開催概要（PDF）",
+        "url": "https://www.nuernberg.de/imperia/md/kommunikation_stadtmarketing/dokumente/internet/ckm/ckm_26_ausblick.pdf"
+      },
+      {
+        "title": "公式サイト：市の歴史に関する新たな調査結果",
+        "url": "https://www.christkindlesmarkt.de/der-markt/geschichte-des-marktes/neue-erkenntnisse-zur-geschichte-des-nurnberger-christkindlesmarkts-1.14862745"
+      },
+      {
+        "title": "公式サイト：子どものクリスマス市",
+        "url": "https://www.christkindlesmarkt.de/en/for-children/children-s-christmas-market-kinderweihnacht-1.2373258"
+      }
+    ],
+    "related_articles": [
+      "munich-weekend-trip",
+      "cologne-christmas-markets-2026-guide",
+      "advent-wreath-calendar-origin",
+      "germany-train-travel-guide"
+    ],
+    "city": "ニュルンベルク",
+    "location": "旧市街の中央広場（ハウプトマルクト）",
+    "event_date": "2026-11-27〜2026-12-24",
+    "next_review": "2026-11-26",
+    "tags": [
+      "クリスマスマーケット",
+      "ニュルンベルク",
+      "バイエルン",
+      "2026年11月",
+      "2026年12月",
+      "アドベント"
+    ],
+    "published": true,
+    "status": "published",
+    "source_type": "manual",
+    "published_at": "2026-10-30",
+    "updated_at": "2026-10-30",
+    "last_verified": "2026-10-30",
+    "canonical_url": "/germany/ja/events/nuremberg-christkindlesmarkt-2026-guide/",
+    "official_url": "https://www.christkindlesmarkt.de/",
+    "image": "/assets/img/events/nuremberg-christkindlesmarkt-2026-guide.webp",
+    "image_alt": "階段状の破風の教会と木組みの家々の前に、赤と白の縞の屋根の屋台が並ぶ夜の広場を描いたイラスト",
+    "image_caption": "イラスト：J-Connect。ニュルンベルクのクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。",
+    "image_credit": "Illustration / J-Connect",
+    "url": "/germany/ja/events/nuremberg-christkindlesmarkt-2026-guide/",
+    "markdown_path": "/content/events/nuremberg-christkindlesmarkt-2026-guide.md",
+    "image_url": "/assets/img/events/nuremberg-christkindlesmarkt-2026-guide.webp",
+    "home_visible": true,
+    "home_order": 7,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-30",
+      "next_review_due": "2026-11-26"
+    }
   }
 ]

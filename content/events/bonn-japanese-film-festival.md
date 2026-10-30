@@ -2,7 +2,7 @@
 id: "E003"
 title: "ボンで日本映画に出会う｜上映会から文化を読む楽しみ方"
 slug: "bonn-japanese-film-festival"
-category: "文化・映画"
+category: "日本文化"
 city: "Bonn"
 location: "Bonn 周辺の映画館・文化施設"
 event_date: "上映企画により異なる"

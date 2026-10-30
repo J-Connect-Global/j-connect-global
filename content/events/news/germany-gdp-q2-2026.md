@@ -2,7 +2,7 @@
 id: "N012"
 title: "ドイツGDPは2026年4〜6月期に0.2％増｜暮らしと仕事への意味"
 slug: "germany-gdp-q2-2026"
-category: "仕事・経済"
+category: "仕事"
 content_type: "news"
 area: "ドイツ全土"
 event_date: "2026年第2四半期（暫定値）"

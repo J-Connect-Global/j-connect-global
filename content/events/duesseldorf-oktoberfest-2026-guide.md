@@ -2,7 +2,7 @@
 id: "E014"
 title: "デュッセルドルフ・オクトーバーフェスト2026｜歴史・音楽・テント文化を楽しむ"
 slug: "duesseldorf-oktoberfest-2026-guide"
-category: "季節イベント・音楽"
+category: "季節行事"
 city: "Düsseldorf"
 location: "Schützenplatz Düsseldorf-Eller"
 event_date: "2026-09-10〜2026-09-26"

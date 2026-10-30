@@ -57,7 +57,7 @@ const directoryStaticRequirements = new Map([
   ['/germany/ja/shopping/', ['directory-seed-card', 'デュッセルドルフの公開データを確認できます', '日本食材・生活用品は在庫と配送条件を確認']],
   ['/germany/ja/medical/', [
     'medical-official-guide',
-    '公開中の医療機関ディレクトリはありません',
+    'デュッセルドルフの病院・家庭医・クリニックを一覧で探せます',
     '生命に関わる緊急時',
     'https://gesund.bund.de/wege-im-gesundheitswesen/erwachsenenleben/notfaelle/erste-hilfe',
     'https://www.116117.de/de/englisch.php',

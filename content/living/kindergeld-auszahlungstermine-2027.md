@@ -2,7 +2,7 @@
 id: "L051"
 title: "Kindergeld（ドイツの児童手当）2027年の支給日一覧｜番号末尾0〜9で確認"
 slug: "kindergeld-auszahlungstermine-2027"
-category: "家族・手続き"
+category: "家族・子育て"
 summary: "2027年の公式支給日、申請なし支給の段階導入、支給額の法案状況を整理。番号末尾0〜9別の日程と、入金が見えない場合の確認順も説明します。"
 status: "published"
 published: true

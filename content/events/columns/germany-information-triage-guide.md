@@ -2,7 +2,7 @@
 id: "C002"
 title: "ドイツ生活の情報疲れを減らす｜公式情報・経験談・AIの役割"
 slug: "germany-information-triage-guide"
-category: "情報整理・デジタル生活"
+category: "暮らし・買い物"
 content_type: "column"
 area: "ドイツ生活"
 event_date: "実践コラム"

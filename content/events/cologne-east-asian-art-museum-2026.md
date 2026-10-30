@@ -2,7 +2,7 @@
 id: "E011"
 title: "ケルン東アジア美術館2026｜日本・中国・韓国を比べて見る"
 slug: "cologne-east-asian-art-museum-2026"
-category: "美術館・展覧会"
+category: "芸術・文化"
 city: "Köln"
 location: "Museum für Ostasiatische Kunst Köln"
 event_date: "2026年の展覧会・催し"

@@ -2,7 +2,7 @@
 id: "N017"
 title: "ドイツの失業者306.1万人｜2026年8月雇用統計を仕事探しにどう読む？"
 slug: "germany-labour-market-august-2026"
-category: "仕事・経済"
+category: "仕事"
 content_type: "news"
 area: "ドイツ全土"
 event_date: "2026年8月"

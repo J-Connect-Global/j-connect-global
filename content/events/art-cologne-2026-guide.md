@@ -2,7 +2,7 @@
 id: "E017"
 title: "ART COLOGNE 2026｜作品・ギャラリー・市場をどう見る？"
 slug: "art-cologne-2026-guide"
-category: "現代美術・アートフェア"
+category: "芸術・文化"
 city: "Köln"
 location: "Koelnmesse"
 event_date: "2026-11-05〜2026-11-08"

@@ -2,7 +2,7 @@
 id: "N006"
 title: "ドイツの暖房ルールが2026年7月改正｜家主・持ち家・借主への影響"
 slug: "building-modernisation-law-germany-2026"
-category: "住まい・エネルギー"
+category: "住まい"
 content_type: "news"
 area: "ドイツ全体"
 event_date: "2026-07-29施行"

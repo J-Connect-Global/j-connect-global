@@ -2,7 +2,7 @@
 id: "N004"
 title: "EUのAI透明性ルールが2026年8月から適用｜利用者が知っておきたい表示"
 slug: "eu-ai-act-transparency-august-2026"
-category: "AI・デジタル"
+category: "暮らし・買い物"
 content_type: "news"
 area: "ドイツ / EU"
 event_date: "2026-08-02適用"

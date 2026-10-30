@@ -2,7 +2,7 @@
 id: "L049"
 title: "ドイツの冬タイヤ義務2026｜交換時期・雪マーク・オールシーズンタイヤ"
 slug: "winter-tires-germany-2026"
-category: "交通・暮らし"
+category: "交通・車"
 summary: "ドイツの冬タイヤは日付ではなく路面状況で義務が決まります。2026年のAlpineマーク、M+Sのみのタイヤ、オールシーズンタイヤ、溝の深さ、罰金、レンタカーを確認します。"
 status: "published"
 published: true

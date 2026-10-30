@@ -2,7 +2,7 @@
 slug: "deutschlandticket-2027-price-consent"
 id: "N021"
 content_type: "news"
-category: "交通・暮らし"
+category: "交通・車"
 title: "Deutschlandticketは2027年66.80ユーロへ｜DB利用者は11月30日までに確認"
 summary: "Deutschlandticketは2027年1月から月66.80ユーロへ値上げ。DBから購入した既存契約では11月30日までの同意が必要になるため、購入者、期限、未回答時の扱いを整理します。"
 official_sources:

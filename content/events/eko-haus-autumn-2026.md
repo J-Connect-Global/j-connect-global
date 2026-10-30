@@ -2,7 +2,7 @@
 id: "E010"
 title: "EKŌ-Haus 2026秋｜寺院・庭・芸術がつなぐ日本文化"
 slug: "eko-haus-autumn-2026"
-category: "日本文化イベント"
+category: "日本文化"
 city: "Düsseldorf"
 location: "EKŌ-Haus der Japanischen Kultur"
 event_date: "2026-08-20〜2026-10-17"

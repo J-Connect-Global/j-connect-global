@@ -2,7 +2,7 @@
 id: "L047"
 title: "ドイツのDHL Packstationの使い方｜登録・宛先・受取コード・保管期限"
 slug: "dhl-packstation-guide"
-category: "買い物・暮らし"
+category: "暮らし・買い物"
 summary: "DHL Packstationで荷物を受け取る方法を日本語で解説。直接指定と不在後の移送、アプリと通知票のコード、宛先の書き方、画面なしロッカー、7日・9日の保管期限、コードが出ない場合を整理します。"
 status: "published"
 published: true

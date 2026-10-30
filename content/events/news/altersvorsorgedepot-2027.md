@@ -2,7 +2,7 @@
 slug: "altersvorsorgedepot-2027"
 id: "N028"
 content_type: "news"
-category: "お金・制度"
+category: "お金・税金"
 title: "【2027年1月から】リースターに代わる「老後資金口座」スタート｜ETFも対象、国の補助は最大年540ユーロ"
 summary: "ドイツの個人年金制度が2027年1月1日から大きく変わります。これまでのリースター年金に代わり、ETFなどで運用できる「老後資金口座（Altersvorsorgedepot）」が始まります。国の補助の計算方法、年間の上限、費用の上限、既存のリースター契約の扱い、注意点を整理します。"
 official_sources:

@@ -2,7 +2,7 @@
 id: "L056"
 title: "ドイツのMinijob（ミニジョブ）2027｜月633ユーロの上限・勤務時間・税金と保険"
 slug: "minijob-grenze-2027"
-category: "生活・手続き"
+category: "仕事"
 summary: "2027年1月1日からのミニジョブの月収上限は、法定最低賃金と計算式から月633ユーロ。上限内の勤務時間、掛け持ち、税金・年金・健康保険の注意点を具体例で整理します。"
 status: "published"
 published: true

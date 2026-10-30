@@ -2,7 +2,7 @@
 id: "N007"
 title: "ドイツの失業者が300万人台に｜2026年7月統計の正しい読み方"
 slug: "germany-unemployment-july-2026"
-category: "仕事・経済"
+category: "仕事"
 content_type: "news"
 area: "ドイツ全土"
 event_date: "2026年7月"

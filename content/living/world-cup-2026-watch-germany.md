@@ -2,7 +2,7 @@
 id: "L031"
 title: "ドイツでワールドカップ2026を振り返る｜放送、観戦文化、日本代表"
 slug: "world-cup-2026-watch-germany"
-category: "文化・スポーツ"
+category: "季節・文化"
 chips:
   - "ワールドカップ"
   - "サッカー"

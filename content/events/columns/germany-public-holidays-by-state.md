@@ -2,7 +2,7 @@
 slug: "germany-public-holidays-by-state"
 id: "C012"
 content_type: "column"
-category: "ドイツ雑学・暮らし"
+category: "季節・文化"
 title: "ドイツの祝日は州ごとに違う？｜国が決めた祝日は1日だけ、NRWの2027年の祝日一覧つき"
 summary: "ドイツで国の法律が決めている祝日は10月3日の「ドイツ統一の日」だけ。ほかの祝日はすべて州が決めています。11月1日の万聖節がNRWでは休みなのに隣の州では平日、という違いの理由と、州ごとの珍しい祝日、NRWの2027年の祝日一覧を紹介します。"
 official_sources:

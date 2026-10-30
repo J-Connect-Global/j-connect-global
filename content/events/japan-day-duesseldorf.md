@@ -2,7 +2,7 @@
 id: "E001"
 title: "デュッセルドルフ日本デー｜ライン川に映る日独交流と日本文化"
 slug: "japan-day-duesseldorf"
-category: "日本文化イベント"
+category: "日本文化"
 city: "Düsseldorf"
 location: "Rheinuferpromenade 周辺"
 event_date: "次回日程は公式発表を確認"

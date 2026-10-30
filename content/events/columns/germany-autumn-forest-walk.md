@@ -2,7 +2,7 @@
 slug: "germany-autumn-forest-walk"
 id: "C004"
 content_type: "column"
-category: "自然・季節の暮らし"
+category: "季節・文化"
 title: "ドイツの秋、同じ森をもう一度歩く｜紅葉の先に見える小さな変化"
 summary: "同じ森を繰り返し歩くと、葉の色、光、落ち葉の音が少しずつ変わります。紅葉と土の仕組みを手がかりに、名所へ遠出しなくても味わえるドイツの秋の楽しみを紹介します。"
 official_sources:

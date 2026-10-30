@@ -2,7 +2,7 @@
 id: "E002"
 title: "ケルンの蚤の市・フリーマーケットの楽しみ方"
 slug: "cologne-flea-market"
-category: "おでかけ"
+category: "遊び・スポーツ・家族"
 city: "Köln"
 location: "Köln 周辺の各会場"
 event_date: "会場により異なる"

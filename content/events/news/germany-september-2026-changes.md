@@ -2,7 +2,7 @@
 id: "N015"
 title: "2026年9月からドイツで変わること｜表示・税相談・駅の飲酒ルール"
 slug: "germany-september-2026-changes"
-category: "生活・制度"
+category: "暮らし・買い物"
 content_type: "news"
 area: "ドイツ全土"
 event_date: "2026年9月"

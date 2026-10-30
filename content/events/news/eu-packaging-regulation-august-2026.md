@@ -2,7 +2,7 @@
 id: "N010"
 title: "EUの包装ルールが2026年8月から適用｜買い物や宅配はどう変わる？"
 slug: "eu-packaging-regulation-august-2026"
-category: "暮らし・環境"
+category: "暮らし・買い物"
 content_type: "news"
 area: "ドイツ / EU"
 event_date: "2026年8月12日一般適用"

@@ -2,9 +2,9 @@
 slug: "kommern-saint-martin-2026-guide"
 id: "E020"
 content_type: "event"
-category: "季節文化・家族"
+category: "季節行事"
 title: "コメルンの聖マルティン祭2026｜ランタンの灯りと「分け合う」物語"
-summary: "2026年11月8日、コメルン野外博物館で聖マルティンの行列が開催予定。ランタン、マントを分ける物語、人形型のパンから、ラインラントで受け継がれる秋の文化を読み解きます。"
+summary: "2026年11月8日、コメルン野外博物館で聖マルティンの行列。ランタン、マントを分ける物語、人形型のパンから、ラインラントで受け継がれる秋の文化を読み解きます。"
 official_sources:
   - title: "コメルン野外博物館：2026年11月8日の聖マルティン行列"
     url: "https://www.lvr.de/kultur/aktuelles/veranstaltungen/"

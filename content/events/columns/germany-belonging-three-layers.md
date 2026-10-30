@@ -2,7 +2,7 @@
 id: "C001"
 title: "ドイツ生活の孤独を減らす｜居場所は「親友」より三つの層で育つ"
 slug: "germany-belonging-three-layers"
-category: "人間関係・ウェルビーイング"
+category: "暮らし・買い物"
 content_type: "column"
 area: "ドイツ生活"
 event_date: "実践コラム"

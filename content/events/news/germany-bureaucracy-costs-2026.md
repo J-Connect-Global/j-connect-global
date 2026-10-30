@@ -2,7 +2,7 @@
 id: "N011"
 title: "ドイツ企業の手続き負担は売上高の約7％との調査｜暮らしへの影響"
 slug: "germany-bureaucracy-costs-2026"
-category: "仕事・経済"
+category: "仕事"
 content_type: "news"
 area: "ドイツ全土"
 event_date: "2026年7月公表"

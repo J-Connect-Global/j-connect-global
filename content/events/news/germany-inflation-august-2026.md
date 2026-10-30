@@ -2,7 +2,7 @@
 slug: "germany-inflation-august-2026"
 id: "N018"
 content_type: "news"
-category: "暮らし・物価"
+category: "お金・税金"
 title: "ドイツの8月物価は2.9％上昇｜食費とエネルギーで違う家計の実感"
 summary: "ドイツの2026年8月物価は前年比2.9％上昇。食品全体、燃料、家庭向けエネルギーの違いを整理し、全国平均と自分の家計の実感がずれる理由を身近な買い物から解説します。"
 official_sources:

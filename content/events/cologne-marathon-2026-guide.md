@@ -2,7 +2,7 @@
 id: "E015"
 title: "ケルンマラソン2026｜街がコースになる日を走る・応援する"
 slug: "cologne-marathon-2026-guide"
-category: "スポーツ・市民イベント"
+category: "遊び・スポーツ・家族"
 city: "Köln"
 location: "ケルン市内コース"
 event_date: "2026-10-04"

@@ -2,7 +2,7 @@
 id: "L005"
 title: "SCHUFAの取得方法｜賃貸用証明・無料データ・新スコア"
 slug: "schufa-guide"
-category: "住まい・契約"
+category: "住まい"
 tags: ["信用情報", "SCHUFA", "賃貸", "個人情報", "家探し"]
 summary: "SCHUFAの取得方法と書類の選び方を日本語で解説。賃貸提出用の信用証明、無料データコピー、無料アカウント、2026年の新スコア、履歴がない場合の代替資料を整理します。"
 status: "published"

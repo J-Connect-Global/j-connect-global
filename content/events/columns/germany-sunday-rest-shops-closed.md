@@ -2,7 +2,7 @@
 slug: "germany-sunday-rest-shops-closed"
 id: "C007"
 content_type: "column"
-category: "ドイツ雑学・暮らし"
+category: "暮らし・買い物"
 title: "ドイツの日曜日はなぜこんなに静か？｜お店が閉まる理由と、日曜に開いている場所"
 summary: "ドイツでは日曜日にスーパーも洋服店も閉まります。その背景にある憲法の「日曜日の保護」、州ごとの閉店法、年に数回の日曜営業日、芝刈り機の音まで含めた「静かな日曜」の仕組みを、ノルトライン＝ヴェストファーレン州（NRW）を例に紹介します。"
 official_sources:

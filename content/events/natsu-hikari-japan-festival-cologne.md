@@ -2,7 +2,7 @@
 id: "E008"
 title: "NATSU HIKARI Japan Festival Köln 2026｜ケルンで交わる日本文化"
 slug: "natsu-hikari-japan-festival-cologne"
-category: "日本文化イベント"
+category: "日本文化"
 city: "Köln"
 location: "Carlswerk Victoria & Club Volta Köln"
 event_date: "2026-08-22 09:00-21:00"

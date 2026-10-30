@@ -2,7 +2,7 @@
 slug: "cologne-antwerp-direct-ice-2026"
 id: "N019"
 content_type: "news"
-category: "鉄道・近隣国旅行"
+category: "旅行・おでかけ"
 title: "ケルンからアントワープへ直通ICEが開業｜ベルギー旅行の選択肢が広がる"
 summary: "9月7日、ケルン―アントワープ間に毎日各方向2便の直通ICEが開業。ルーヴェンとブリュッセル空港にも停まる新路線を、ドイツ西部からの街歩きや旅行の選択肢として解説します。"
 official_sources:

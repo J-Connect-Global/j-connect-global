@@ -2,7 +2,7 @@
 id: "N016"
 title: "NRW州の建築ルールが2026年9月改正｜住まいには何が変わる？"
 slug: "baucode-nrw-september-2026"
-category: "NRW・住まい・行政"
+category: "住まい"
 content_type: "news"
 area: "NRW"
 event_date: "2026-09-01施行"

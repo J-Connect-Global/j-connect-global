@@ -2,7 +2,7 @@
 id: "N003"
 title: "NRWで小学1年生の全日保育が権利に｜2026年8月から家族はどう変わる？"
 slug: "ganztag-primary-school-nrw-2026"
-category: "子育て・教育"
+category: "家族・子育て"
 content_type: "news"
 area: "NRW / ドイツ全体"
 event_date: "2026-08-01施行"

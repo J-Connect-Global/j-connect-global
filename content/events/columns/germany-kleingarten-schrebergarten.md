@@ -2,7 +2,7 @@
 slug: "germany-kleingarten-schrebergarten"
 id: "C018"
 content_type: "column"
-category: "ドイツ雑学・暮らし"
+category: "季節・文化"
 title: "ドイツの「クラインガルテン」とは？｜線路沿いに並ぶ小さな庭と、法律で決まった小屋の大きさ"
 summary: "電車の窓から見える、小屋つきの小さな庭がずらりと並ぶ風景。ドイツには約87万の市民農園「クラインガルテン（Kleingarten）」があります。貧しい人のための庭から始まった歴史、「シュレーバーガルテン」という呼び名の由来、小屋は24平方メートルまでという法律の決まり、デュッセルドルフとケルンの事情を紹介します。"
 official_sources:

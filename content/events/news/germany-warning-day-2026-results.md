@@ -2,7 +2,7 @@
 slug: "germany-warning-day-2026-results"
 id: "N020"
 content_type: "news"
-category: "暮らし・公共サービス"
+category: "暮らし・買い物"
 title: "全国警報訓練2026、当局は良好と評価｜スマホが鳴った後に知っておきたいこと"
 summary: "9月10日の全国警報訓練について、連邦当局は初期評価を良好と発表。スマホへの一斉配信、サイレン、アプリの役割と、速報的な評価だけでは分からない点を住民向けに説明します。"
 official_sources:

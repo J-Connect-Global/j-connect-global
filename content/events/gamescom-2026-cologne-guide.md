@@ -2,7 +2,7 @@
 id: "E009"
 title: "gamescom 2026ケルン｜ゲーム文化・開発者・ファンが交わる5日間"
 slug: "gamescom-2026-cologne-guide"
-category: "ゲーム・大型イベント"
+category: "遊び・スポーツ・家族"
 city: "Köln"
 location: "Koelnmesse"
 event_date: "2026-08-26〜2026-08-30"

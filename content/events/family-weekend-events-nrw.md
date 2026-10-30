@@ -2,7 +2,7 @@
 id: "E005"
 title: "NRWの週末を家族で楽しむ｜子どもと地域文化に出会うイベント選び"
 slug: "family-weekend-events-nrw"
-category: "家族・週末"
+category: "遊び・スポーツ・家族"
 city: "NRW"
 location: "NRW各地"
 event_date: "週末ごとに異なる"

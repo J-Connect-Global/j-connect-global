@@ -2,7 +2,7 @@
 id: "L046"
 title: "ドイツ出産の手続き完全ガイド｜出生届・保険・手当・国籍・パスポート"
 slug: "birth-procedures-germany"
-category: "家族・手続き"
+category: "家族・子育て"
 summary: "ドイツで出産する日本人・国際家庭向けに、出産前の職場への連絡、出生証明書、子どもの保険、育児給付、児童手当、日本の出生届、国籍・旅券・滞在許可までを時系列で解説。期限、必要書類、公式申請先、実用チェックリストをまとめます。"
 status: "published"
 published: true

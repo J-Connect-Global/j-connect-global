@@ -2,7 +2,7 @@
 id: "L057"
 title: "NRWのクリスマス2026｜スーパー・薬局・公共交通の営業日チェック"
 slug: "nrw-christmas-opening-hours-2026"
-category: "買い物・暮らし"
+category: "暮らし・買い物"
 summary: "2026年12月24〜27日のノルトライン＝ヴェストファーレン州で、スーパーの閉店時刻、祝日の営業例外、薬局の緊急当番、公共交通の確認手順を整理。州法と個別店舗の営業時間を分けて案内します。"
 status: "published"
 published: true

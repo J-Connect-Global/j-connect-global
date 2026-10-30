@@ -2,7 +2,7 @@
 id: "L036"
 title: "ドイツで電気・インターネットを契約する方法｜入居から解約まで"
 slug: "electricity-internet-contracts-germany"
-category: "住まい・契約"
+category: "住まい"
 tags: ["電気契約", "インターネット", "引っ越し", "公共料金", "解約", "検針"]
 summary: "ドイツの賃貸住宅で電気とインターネットを準備する流れを、家賃に含まれる費用、入居時の記録、契約比較、開通、引っ越し、解約の順に整理します。"
 status: "published"

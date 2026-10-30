@@ -2,7 +2,7 @@
 id: "E013"
 title: "ドイツ公開文化財の日2026｜建物の向こうにある暮らしとインフラを読む"
 slug: "tag-des-offenen-denkmals-2026-guide"
-category: "建築・文化遺産"
+category: "芸術・文化"
 city: "NRW・ドイツ全土"
 location: "参加する歴史建築・産業遺産・インフラ施設"
 event_date: "2026-09-13"

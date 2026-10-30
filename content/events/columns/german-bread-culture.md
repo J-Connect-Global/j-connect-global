@@ -2,7 +2,7 @@
 slug: "german-bread-culture"
 id: "C003"
 content_type: "column"
-category: "食文化・暮らし"
+category: "季節・文化"
 title: "ドイツのパンは、なぜこんなに違う？｜一切れから暮らしを知る"
 summary: "ドイツのパンを「硬い」で終わらせず、酸味、皮、切り口、食卓の組み合わせから味わうコラム。地域の歴史と季節の形を知り、次の一つを自分の好みで選ぶ楽しみを紹介します。"
 official_sources:

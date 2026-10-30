@@ -167,9 +167,16 @@ document.addEventListener('DOMContentLoaded', function () {
       var categories = livingUnique(livingCards.map(function (card) {
         return card.dataset.category;
       }));
-      var tags = livingUnique(livingCards.reduce(function (items, card) {
-        return items.concat(livingSplitValues(card.dataset.tags));
-      }, []));
+      // Offer only tags shared by at least three articles, so the list stays short and useful.
+      var tagCounts = {};
+      livingCards.forEach(function (card) {
+        livingUnique(livingSplitValues(card.dataset.tags)).forEach(function (tag) {
+          tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+        });
+      });
+      var tags = livingUnique(Object.keys(tagCounts).filter(function (tag) {
+        return tagCounts[tag] >= 3;
+      }));
 
       addLivingOptions(livingCategory, categories);
       addLivingOptions(livingTag, tags);

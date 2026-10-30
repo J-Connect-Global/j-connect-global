@@ -2,7 +2,7 @@
 id: "N009"
 title: "ライン川の低水位は暮らしや旅行にどう影響する？｜2026年8月の見方"
 slug: "rhine-low-water-august-2026"
-category: "旅行・交通"
+category: "旅行・おでかけ"
 content_type: "news"
 area: "ライン川流域 / ドイツ"
 event_date: "2026年8月"

@@ -7,8 +7,8 @@ summary: "ドイツで所得税申告が義務でない人は、2022年分の任
 status: "draft"
 published: false
 published_at: ""
-updated_at: "2026-10-29"
-last_verified: "2026-10-29"
+updated_at: "2026-10-30"
+last_verified: "2026-10-30"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/germany-tax-return-voluntary-2022-deadline/"
 tags: ["所得税", "確定申告", "税金還付", "ELSTER", "2022年分", "2026年期限", "ドイツ生活"]
@@ -24,6 +24,10 @@ official_sources:
     url: "https://www.elster.de/elsterweb/infoseite/privatpersonen"
   - title: "ノルトライン＝ヴェストファーレン州税務当局：申告書類と証憑"
     url: "https://www.finanzamt.nrw.de/steuerinfos/weitere-themen/steuererklaerung/belege-zur-steuererklaerung"
+  - title: "連邦法務省：租税通則法第169条（確定期間）"
+    url: "https://www.gesetze-im-internet.de/ao_1977/__169.html"
+  - title: "連邦法務省：租税通則法第170条（確定期間の開始）"
+    url: "https://www.gesetze-im-internet.de/ao_1977/__170.html"
 ---
 
 # ドイツの2022年分の所得税申告｜任意申告の期限は2026年12月31日
@@ -52,6 +56,8 @@ official_sources:
 ## 2022年分の任意申告は、なぜ2026年末が期限？
 
 州税務当局のFAQは、申告義務がない人が任意に申告する場合、対象年の後の4年間に提出できると説明しています。同じ案内で、**2022年分は2026年12月31日まで**と明示されています。
+
+法的な背景は、税額を確定できる期間（確定期間）です。租税通則法第169条第2項は通常の確定期間を4年とし、第170条第1項は原則としてその期間の開始を、税が発生した暦年の終了時と定めています。2022年分の任意申告では、通常のケースで2026年12月31日が目安になります。これは義務申告の期限を4年間延長する制度ではありません。申告義務がある人や、特別な事情で期間の開始・停止が変わる人は、別途確認が必要です。
 
 この日付は、2022年分の任意申告に関する期限です。2025年分や2026年分の期限を意味するものではありません。また、義務申告をしなければならない人が、未提出の申告を任意申告として扱えるという意味でもありません。
 

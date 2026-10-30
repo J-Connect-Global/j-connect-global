@@ -1,0 +1,118 @@
+card_id,列,修正前,修正後
+a1-0056,example_ja,うん、君は？,元気だよ。君は？
+b1-1019,example_ja,お米2合炊いといて。,お米を300グラム炊いて！
+b1-0462,display_de,die Adler,der Adler
+expand-a1-00043,display_de,der Großeltern,die Großeltern
+expand-a1-00043,grammar,名詞 / 冠詞: der / 複数: Großeltern,名詞 / 冠詞: die / 複数形のみ
+expand-a1-00047,example_de,Ankunft in New York war am 12. April.,Die Ankunft in Frankfurt ist um 14 Uhr.
+expand-a1-00047,example_ja,ニューヨークに到着したのは1698年4月2日だった。,フランクフルトへの到着は14時です。
+expand-a2-00146,japanese,回廊,見学ツアー、一巡り
+expand-a2-00146,example_de,"Das Gebäude wurde 1927 als Geschenk des Marburger Universitätsbundes zum 400-jährigen Bestehen der Universität eröffnet und wird seit 2011 saniert, wobei das Museum neu konzipiert wird (neue Rundgänge, neuer Eingangs- und Servicebereich).",Nach dem Essen machten wir einen Rundgang durch die Altstadt.
+expand-a2-00146,example_ja,この美術館の建物は、1927年にマールブルク大学創立400年にマールブルク大学学友会から寄贈された建物で2011年から2013年に修復され、この際美術館として新たなコンセプトを与えられた（新しい回廊、新しいエントランス・サービス・スペース）。,食事の後、私たちは旧市街を一巡りした。
+expand-b1-00367,japanese,回復,休養、回復
+expand-b1-00367,example_de,Erholung hat Vorrang.,Nach der Operation braucht sie vor allem Erholung.
+expand-b1-00367,example_ja,回復優先タイプ。,手術の後、彼女には何より休養が必要だ。
+expand-b1-00544,example_ja,最小限の介入で最大限の効果。,最大の効果を生む、15の小さな工夫。
+expand-b1-00565,japanese,美術館,画廊、ギャラリー
+expand-b1-00565,example_de,Zum weiteren Verlauf siehe unten in der Galerie.,In der Galerie werden Bilder junger Künstler ausgestellt.
+expand-b1-00565,example_ja,詳細は下のギャラリーをご覧ください。,その画廊では、若い画家の絵が展示されている。
+expand-b2-00070,japanese,ラン,走ること、流れ、経過
+expand-b2-00070,example_de,geriet mit seinem Lauf in die Falle.,Im Lauf der Zeit hat sich die Stadt stark verändert.
+expand-b2-00070,example_ja,逃げようとして罠にはまった。,時がたつにつれて、その街は大きく変わった。
+expand-b2-00606,example_de,Eine Königstochter ist eine Prinzessin.,In vielen Märchen heiratet der Held am Ende die Königstochter.
+expand-b2-00606,example_ja,王女は王女である。,多くのおとぎ話では、主人公が最後に王女と結婚する。
+expand-b2-01089,example_de,"In: Profil, 12. Juli 1982.",Bitte ergänzen Sie Ihr Profil mit einem Foto.
+expand-b2-01089,example_ja,プロフィール：1982年7月30日生まれ。,プロフィールに写真を追加してください。
+expand-c1-00517,example_de,Saraiki hat 16 Vokale und 48 Konsonanten.,Im Wort „Brot“ stehen zwei Konsonanten am Anfang.
+expand-c1-00517,example_ja,ジャラワ語は6つの母音と16の子音を持つ。,「Brot」という単語は、最初に子音が2つ並んでいます。
+expand-c1-01149,example_de,Im Jahre 2000 wurde Jordan schließlich wegen sexuellen Missbrauchs verurteilt.,Der Missbrauch von Medikamenten kann gefährlich sein.
+expand-c1-01149,example_ja,エストラーダは、1977年に、児童性的虐待の容疑で有罪判決を受けた。,薬の乱用は危険なことがあります。
+expand-c1-01371,example_de,1981 wurde er zum Senator auf Lebenszeit ernannt.,Er wurde zum Richter auf Lebenszeit ernannt.
+expand-c1-01371,example_ja,1984年、終身上院議員に指名された。,彼は終身の裁判官に任命された。
+expand-c1-01661,example_de,"Zwar drohte Ludwig XVI. 10 000 bis 12 000 Soldaten in Givet zusammenziehen, doch derartige Vorbereitungen konnten nicht beobachtet werden.",Bei Kälte zieht sich das Metall zusammen.
+expand-c1-01661,example_ja,ルイ16世はジヴェに1万から1万2千人の兵士を集結させると脅迫したが、そのような準備は一切見られなかった。,寒いと金属は縮みます。
+expand-c1-01671,example_de,1983 war die Einwohnerzahl auf 480 angewachsen.,Die Einwohnerzahl der Stadt ist in den letzten Jahren stark angewachsen.
+expand-c1-01671,example_ja,1948年には人口は480人にまで増加した。,この街の人口は、ここ数年で大きく増えた。
+expand-c1-01701,japanese,一覧する,目を通す、点検する
+expand-c1-01777,example_de,"Deshalb waren die Jahre 1700, 1800 und 1900 keine Schaltjahre.",2028 ist wieder ein Schaltjahr.
+expand-c1-01777,example_ja,例えば1700年、1800年、1900年は平年であり、2000年は閏年である。,2028年はまた閏年です。
+expand-c1-01872,example_de,"Russische Ikone, 12. Jahrhundert.",In der Kirche hängt eine alte russische Ikone.
+expand-c1-01872,example_ja,15世紀、ロシアのイコン。,その教会には、古いロシアのイコンが掛かっています。
+expand-c1-01977,example_ja,6015卒業生は毎年があります。,その研究所からは、毎年650人の卒業生が出ます。
+expand-c1-02178,example_de,"Ein Jahr später gründete ihre Familie die ""Linda Creed Breast Cancer Foundation"" (Linda Creed Brustkrebs Stiftung).",Frauen ab 50 werden regelmäßig zur Früherkennung von Brustkrebs eingeladen.
+expand-c1-02178,example_ja,翌1987年、遺族や友人たちが「リンダ・クリード乳がん基金」（Linda Creed Breast Cancer Foundation）を設立した。,50歳以上の女性には、乳がんの早期発見の検診の案内が定期的に届きます。
+expand-c1-02786,example_de,"Nachdem der Krieg von 1812 beendet war, konnten die Vereinigten Staaten ihre Aufmerksamkeit erneut Nordafrika zuwenden.",Sie wandte sich wieder ihrer Arbeit zu.
+expand-c1-02786,example_ja,1815年2月に米英戦争が終わり、アメリカ合衆国は再度北アフリカに注意を向けることができるようになった。,彼女は再び仕事に向き直った。
+expand-c1-02863,example_de,Derzeit ist die Thailänderin Supattra Sasupan (* 5. August 2000) im Guinness-Buch der Rekorde als das haarigste Mädchen der Welt aufgeführt.,"Unser Hund ist sehr haarig, deshalb müssen wir oft staubsaugen."
+expand-c1-02863,example_ja,2011年、スパットラー・サスパン (タイ語: สุพัตรา สะสุพันธ์; 2000年8月5日生)というタイ出身の11歳の多毛症の少女が世界で最も毛深い少女としてギネス記録に認定された。,うちの犬は毛が多いので、よく掃除機をかけなければなりません。
+expand-c1-02888,example_de,Im Jahr 2009 war sie schon einmal positiv auf Marihuana getestet worden.,In Deutschland ist der Besitz kleiner Mengen Marihuana für Erwachsene seit 2024 erlaubt.
+expand-c1-02888,example_ja,2003年にもマリファナの陽性反応が出た。,ドイツでは2024年から、大人が少量のマリファナを持つことが認められています。
+expand-c1-02946,example_de,"Im September verhaftete Georgien vier russische Offiziere, denen es Spionage vorgeworfen wurde.",Der Mann wurde wegen Spionage verhaftet.
+expand-c1-02946,example_ja,9月27日 - グルジア治安当局が、スパイ行為を行ったとしてロシア軍将校ら十数人を拘束。,その男はスパイ行為の疑いで逮捕された。
+expand-c1-03022,example_de,Am 28. und 30. November beschoss sie Daressalaam.,Im Krieg wurde die Stadt tagelang beschossen.
+expand-c1-03022,example_ja,1914年11月28日と11月30日にはダルエスサラームを砲撃した。,戦争中、その街は何日も砲撃された。
+expand-c1-03100,example_de,Etwa 250.000 Sprecher leben im Südwesten Ghanas (2003).,Freiburg liegt im Südwesten Deutschlands.
+expand-c1-03100,example_ja,"話者はガーナ南西部に1,050,000人いる(2003年)。",フライブルクはドイツの南西部にあります。
+expand-c2-00932,japanese,累月,何か月も続く
+expand-c2-01284,example_de,Šaka (Ast) und sakai (Harz) stehen also keineswegs beieinander.,Aus dem Baum tritt klebriges Harz aus.
+expand-c2-01284,example_ja,したがって、シャカ（枝）とサカイ（樹脂）は関連がない。,その木からは、ねばねばした樹脂が出ている。
+expand-c2-01537,japanese,内緒,口の堅さ、守秘
+expand-c2-03212,japanese,拓殖,植民地化
+expand-c2-03553,japanese,ポリゴン,多角形
+expand-c2-03579,example_de,Windgeschwindigkeiten von bis zu 80 km/h wirkten sich auf Jacksonville aus und verursachten in Jacksonville Beach geringe Schäden.,Heute werden Windgeschwindigkeiten von bis zu 80 km/h erwartet.
+expand-c2-03579,example_ja,ジャクソンビル都市圏での風速は50マイル/時 (22 m/s) までであり、ジャクソンビルビーチで小さな被害が出ただけだった。,今日は最大で時速80キロの風が予想されています。
+expand-c2-03785,example_de,"Anfang 1974 lieferte Pullman-Standard 750 Stück 22,86-m-lange U-Bahn-Wagen in Edelstahl an die New York City Transit Authority.",Die Spüle in unserer Küche ist aus Edelstahl.
+expand-c2-03785,example_ja,1974年初頭、プルマン・スタンダード社は、全長80フィートのステンレス製地下鉄車両750両をニューヨーク市交通局に納入した。,うちの台所の流しはステンレス製です。
+expand-c2-03808,example_de,"Obwohl die Weibchen 77 bis 109 Eizellen pro Jahr produzieren, werden diese nicht alle abgelegt.",Bei der künstlichen Befruchtung werden Eizellen außerhalb des Körpers befruchtet.
+expand-c2-03808,example_ja,雌は年間77–109個の卵子を生産するが、全てが排卵されるわけではなく、産卵に至るのは9-41個である。,体外受精では、卵子を体の外で受精させます。
+expand-c2-03811,japanese,子持ち,親であること、親の立場
+expand-c2-03811,example_de,Die Abstammung (Elternschaft) ist aber unbekannt.,Die Elternschaft verändert das Leben grundlegend.
+expand-c2-03811,example_ja,しかし、彼の出自は不明である。,親になると、生活は根本から変わる。
+expand-c2-03880,example_de,"Der Flughafen hat aktuell eine Kapazität von 1 Mio. Fluggästen im Jahr, pro Stunde können 300 Personen abgefertigt werden.",Der Flughafen fertigt jährlich rund 20 Millionen Fluggäste ab.
+expand-c2-03880,example_ja,"空港の処理能力は年間2,500万人で、1時間当たり12,000人の旅客を取り扱うことが可能である。","この空港では、年間およそ2,000万人の旅客を取り扱っています。"
+expand-c2-03888,japanese,伝える,（sich fortpflanzen で）繁殖する
+expand-c2-03888,display_de,fortpflanzen,sich fortpflanzen
+expand-c2-03981,example_de,Die Heilkunde in Japan und Japanische Ärzte.,Die traditionelle chinesische Heilkunde wird auch in Deutschland angeboten.
+expand-c2-03981,example_ja,日本医師会と日本医学会統合。,ドイツでも、中国の伝統医学の治療を受けられる。
+expand-c2-04694,example_de,Italien – Italien hat etwa ein Dutzend Babyklappen der „Bewegung für das Leben“.,In Deutschland gibt es an einigen Krankenhäusern eine Babyklappe.
+expand-c2-04694,example_ja,イタリア ― イタリアには、「生命のための運動」が運営する赤ちゃん孵化場が10ヶ所ほどある。,ドイツには、赤ちゃんポストを設けている病院がいくつかあります。
+expand-c2-04944,example_de,"Er war ein Methodist, ein Freimaurer, ein United States Army Veteran des Zweiten Weltkriegs in den siebzehnten und einundziebzigsten Infanterieregimentern, sowie ein Mitglied der American Legion.",Mozart war Mitglied einer Loge der Freimaurer.
+expand-c2-04944,example_ja,彼はメソジスト教徒で、フリーメイソンであり、第二次世界大戦中はアメリカ陸軍第17歩兵連隊と第71歩兵連隊に所属した退役軍人で、アメリカ在郷軍人会の会員でもありました。,モーツァルトはフリーメイソンの支部の会員でした。
+expand-c2-05124,example_de,"Im Zuge ihres Erfolgs verzeichnet auch Bob ein persönliches Erlebnis, indem er seine Jungfräulichkeit verliert (December, 1963 (Oh, What a Night)).",In vielen Kulturen hatte die Jungfräulichkeit vor der Ehe eine große Bedeutung.
+expand-c2-05124,example_ja,成功の余波で、ボブは童貞を失うという個人的な経験もする（1963年12月（ああ、なんて夜だ））。,多くの文化で、結婚前の純潔は大きな意味を持っていました。
+expand-c2-05189,example_de,Das Unternehmen wurde 1887 als Japans erster Hersteller von Kunstdünger gegründet.,Viele Bauern verzichten inzwischen auf Kunstdünger.
+expand-c2-05189,example_ja,1887年（明治20年）4月、日本初の化学肥料製造会社として誕生した。,今では、化学肥料を使わない農家も多くなっています。
+expand-c2-05376,example_de,"Dissertation, Leipzig 1884 (veröffentlicht in: Leipziger Studien zur classischen Philologie.","Sie studiert Germanistik, also deutsche Philologie."
+expand-c2-05376,example_ja,1878年からは『ライプツィヒ古典文献学研究』(Leipziger Studien zur classischen Philologie)を発行した。,彼女はドイツ文学、つまりドイツ文献学を専攻しています。
+expand-c2-06056,example_de,"17. Wir fordern eine unseren nationalen Bedürfnissen angepaßte Bodenreform, Schaffung eines Gesetzes zur unentgeltlichen Enteignung von Boden für gemeinnützige Zwecke.",Für den Bau der Autobahn kam es zu mehreren Enteignungen.
+expand-c2-06056,example_ja,我々は、我が国民の要求に適した土地改革、公益目的のための土地の無償収用を定める法の制定、地代徴収の禁止と土地投機の制限を要求する。,高速道路の建設のために、何件かの土地収用が行われた。
+expand-c2-06142,example_de,Vom Gesellschaftsvertrag oder Prinzipien des politischen Rechtes (französisch Du contrat social ou Principes du droit politique) ist das politisch-theoretische Hauptwerk des Genfer Philosophen Jean-Jacques Rousseau.,Rousseau gilt als wichtigster Denker des Gesellschaftsvertrags.
+expand-c2-06142,example_ja,"『社会契約論』（しゃかいけいやくろん、仏: Du Contrat Social ou Principes du droit politique, 社会契約について、もしくは政治的権利の原理）は、思想家ジャン＝ジャック・ルソーによって執筆され、1762年にフランスで公刊された政治哲学の著作である。",ルソーは、社会契約の最も重要な思想家とされています。
+expand-c2-06212,example_de,Zum Inkrafttreten werden 35 staatliche Ratifikationen benötigt.,Das Gesetz wird mit seinem Inkrafttreten am 1. Januar wirksam.
+expand-c2-06212,example_ja,発効には15ヶ国の批准が必要）。,その法律は、1月1日の施行とともに効力を持ちます。
+expand-c2-06403,example_de,2000 unterstützte sie Al Gore im US-amerikanischen Präsidentschaftswahlkampf.,Im Präsidentschaftswahlkampf wurde vor allem über die Wirtschaft gestritten.
+expand-c2-06403,example_ja,1988年の合衆国大統領選挙ではアル・ゴアを支持し、テキサス州の民主党大統領選挙予備選でゴアのキャンペーンマネージャーを務める。,大統領選では、主に経済が争点になった。
+expand-c2-06429,example_de,Wiederaufbau und Restaurierung waren im Jahr 1890 abgeschlossen.,Die Restaurierung des Gemäldes dauerte zwei Jahre.
+expand-c2-06429,example_ja,移築および修復は1885年には完了した。,その絵画の修復には2年かかった。
+expand-c2-06801,japanese,ブーケ,（ワインの）香り、ブーケ
+expand-c2-06801,example_de,Michel Bouquet (* 6. November 1925 in Paris) ist ein französischer Schauspieler.,Dieser Rotwein hat ein volles Bouquet.
+expand-c2-06801,example_ja,ミシェル・ブーケ（Michel Bouquet、1926年11月6日 - ）はフランス・パリ出身の俳優。,この赤ワインは豊かな香りがある。
+expand-c2-06841,example_de,21:30 Uhr* – Die zweite Detonation am Stade de France.,Die Detonation war kilometerweit zu hören.
+expand-c2-06841,example_ja,21時（14日5時）30分 - スタッド・ド・フランスで2度目の爆発。,その爆発音は何キロも先まで聞こえた。
+expand-c2-06910,example_de,Im Herbst 2013 wurden die Parkplätze und die Fahrradständer erweitert.,Vor dem Bahnhof gibt es einen großen Fahrradständer.
+expand-c2-06910,example_ja,秋頃 - 自転車置き場が拡張。,駅前には大きな自転車置き場があります。
+expand-c2-06923,example_de,"Die Expedition landete am 24. November 1635 nahe der Flussmündung, am Westufer des heutigen Old Saybrook und fand das an einen Baum genagelte holländische Wappen.",Hamburg liegt nicht direkt an der Flussmündung der Elbe.
+expand-c2-06923,example_ja,この遠征隊は11月24日に河口近くの西岸、今日のオールドセイブルックに上陸し、オランダの紋章を刻みつけてある木を特定した。,ハンブルクは、エルベ川の河口に直接面しているわけではありません。
+expand-c2-07212,example_de,Zum Inkrafttreten werden 35 staatliche Ratifikationen benötigt.,Der Vertrag tritt erst nach der Ratifikation durch alle Mitgliedstaaten in Kraft.
+expand-c2-07212,example_ja,発効には15ヶ国の批准が必要）。,その条約は、すべての加盟国が批准して初めて発効する。
+expand-c2-07244,example_de,Ein unterstöchiometrisches Tantalcarbid besitzt mit einem Schmelzpunkt von 3983 °C einen der höchsten Schmelzpunkte aller Substanzen.,Der Schmelzpunkt von Eis liegt bei 0 °C.
+expand-c2-07244,example_ja,炭化タンタルと炭化ハフニウムは、それぞれ3983℃と3928℃という高い融点を持つ物質である。,氷の融点は0℃です。
+expand-c2-07479,example_de,"Seit dem Börsengang von LinkedIn am 19. Mai 2011 besitzt Hoffman einen Anteil von geschätzten US$ 2,34 Mrd. Darin nicht enthalten sind jegliche Gewinne von Greylock Partners, von denen er 2009 zum Partner ernannt worden war.",Nach dem Börsengang stieg der Aktienkurs stark an.
+expand-c2-07479,example_ja,2011年5月19日のLinkedInの新規株式公開（IPO）以来、ホフマン氏は推定23億4000万ドル相当の株式を保有している。これには、彼が2009年にパートナーに就任したグレイロック・パートナーズからの利益は含まれていない。,株式公開の後、株価は大きく上がった。
+expand-c2-07521,example_de,"Die Emissionen von Kohlenstoffdioxid (1.130 Tonnen/TWh), Schwefeldioxid (4 Tonnen/TWh) und Stickoxiden (10 Tonnen/TWh) sind ein kleiner Bruchteil der Durchschnittswerte der Industrie im nordöstlichen Teil Nordamerikas.",Der Durchschnittswert lag in diesem Jahr bei 12 Grad.
+expand-c2-07521,example_ja,"二酸化炭素(13,635トン/TWh)、二酸化硫黄(24トン/TWh)、窒素酸化物(23トン/TWh)の排出量は北米東北部の産業平均値より30倍から38倍低い量である。",今年の平均値は12度だった。
+expand-c2-07547,japanese,延長,延長、拡張
+expand-c2-07547,example_de,Im Jahre 1998 wurde das Sonny Bono Copyright Term Extension Act im United States Congress verabschiedet.,"Für diese Software gibt es eine Extension, die das Übersetzen erleichtert."
+expand-c2-07547,example_ja,1998年、ソニー・ボノ著作権延長法によってアメリカでの著作権の保護期間が20年延長された。,このソフトウェアには、翻訳を楽にする拡張機能がある。
+expand-c2-07901,example_de,Die Zertifizierung fand im August 2005 statt.,Die Zertifizierung des Betriebs fand im August statt.
+expand-c2-07901,example_ja,1995年8月に認証を取得した。,その事業所の認証は8月に行われた。

@@ -22,7 +22,7 @@ area: "ドイツ全土 / 欧州"
 location: ""
 event_date: "2026-10-31 ドイツ21都市でデモ予定"
 next_review: "2026-10-30"
-tags: ["安全情報", "外務省", "デモ", "フランス", "NRW"]
+tags: ["安全情報", "外務省", "デモ", "フランス", "NRW", "在留届", "たびレジ", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

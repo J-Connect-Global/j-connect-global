@@ -20,7 +20,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2027-07-01 導入予定（連邦議会の議決が必要）"
 next_review: "2026-12-15"
-tags: ["砂糖入り飲料税", "砂糖税", "清涼飲料", "健康保険", "税金"]
+tags: ["砂糖入り飲料税", "砂糖税", "清涼飲料", "健康保険", "税金", "2027年", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

@@ -11,7 +11,7 @@ updated_at: "2026-10-27"
 last_verified: "2026-10-12"
 next_review: "2027-01-12"
 canonical_url: "/germany/ja/living/birth-procedures-germany/"
-tags: ["出産", "出生届", "出生証明書", "子育て", "児童手当"]
+tags: ["出産手続き","出生届","出生証明書","育児給付","児童手当","国籍留保","パスポート","NRW"]
 image_url: "/assets/images/living/birth-procedures-germany.webp"
 image_alt: "赤ちゃんの衣類と靴下、書類を入れるフォルダーを机に並べた出産手続きのイメージ"
 image_caption: "AI生成のイメージ画像。実際の申請書類を示すものではありません。"

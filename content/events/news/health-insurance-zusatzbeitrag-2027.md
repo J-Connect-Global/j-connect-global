@@ -26,7 +26,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2026-11-01までに2027年の平均追加保険料率を告示"
 next_review: "2026-12-15"
-tags: ["健康保険", "追加保険料", "Zusatzbeitrag", "保険組合", "乗り換え"]
+tags: ["健康保険", "公的医療保険", "追加保険料", "Zusatzbeitrag", "保険組合", "乗り換え", "2027年", "ドイツ生活", "手取り"]
 published: true
 status: "published"
 source_type: "manual"

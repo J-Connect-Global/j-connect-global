@@ -11,7 +11,7 @@ updated_at: "2026-10-20"
 last_verified: "2026-10-19"
 next_review: "2027-01-19"
 canonical_url: "/germany/ja/living/dhl-delivered-but-not-received/"
-tags: ["DHL", "配達済み", "届かない", "通販", "未配達"]
+tags: ["DHL", "配達済み", "届かない", "通販", "未配達", "複数個口"]
 image: "/assets/img/living/dhl-delivered-but-not-received.webp"
 image_alt: "荷物のない玄関とスマートフォンを確認する住民"
 image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。"

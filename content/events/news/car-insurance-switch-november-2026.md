@@ -20,7 +20,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2026-11-30 多くの契約の乗り換え期限"
 next_review: "2027-10-15"
-tags: ["自動車保険", "車", "乗り換え", "解約", "節約"]
+tags: ["自動車保険", "車", "乗り換え", "解約", "11月30日", "節約", "交通", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

@@ -22,7 +22,7 @@ area: "ケルン"
 location: "ケルン大聖堂（Kölner Dom）"
 event_date: "ドイツ雑学のコラム"
 next_review: "2027-10-01"
-tags: ["大聖堂", "ケルン", "世界遺産", "ゴシック", "歴史"]
+tags: ["ケルン大聖堂", "ケルン", "世界遺産", "ゴシック", "ドイツ雑学", "歴史", "NRW"]
 published: true
 status: "published"
 source_type: "manual"

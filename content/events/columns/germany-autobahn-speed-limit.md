@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "ドイツ雑学のコラム"
 next_review: "2027-04-01"
-tags: ["アウトバーン", "速度制限", "車", "運転", "ケルン"]
+tags: ["アウトバーン", "速度制限", "ドイツ雑学", "車", "運転", "ケルン", "ボン", "NRW"]
 published: true
 status: "published"
 source_type: "manual"

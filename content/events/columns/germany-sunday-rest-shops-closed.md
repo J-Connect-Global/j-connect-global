@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "毎週日曜日"
 next_review: "2027-10-01"
-tags: ["日曜日", "閉店法", "買い物", "NRW", "祝日"]
+tags: ["日曜日", "閉店法", "ドイツ雑学", "ドイツ生活", "買い物", "NRW", "祝日"]
 published: true
 status: "published"
 source_type: "manual"

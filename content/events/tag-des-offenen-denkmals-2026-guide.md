@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-29"
 next_review: "2026-09-12"
 summary: "2026年9月13日のドイツ公開文化財の日を、普段入れない建物を見るだけでなく、保存の理由、働いた人、都市を支えた交通・水道・産業のつながりから楽しむガイドです。"
-tags: ["公開文化財の日", "文化遺産", "建築", "産業遺産", "インフラ"]
+tags: ["公開文化財の日", "文化遺産", "建築", "産業遺産", "インフラ", "NRW"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/tag-des-offenen-denkmals-2026-guide/"

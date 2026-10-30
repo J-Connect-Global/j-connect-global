@@ -11,7 +11,7 @@ updated_at: "2026-10-19"
 last_verified: "2026-10-19"
 next_review: "2026-11-09"
 summary: "2026年11月5〜8日のART COLOGNEを、購入予定のない人にも開かれた現代美術の観察場所として紹介。美術館との違い、ギャラリーの選択、価格と評価、作品との対話を解説します。"
-tags: ["ART COLOGNE", "ケルン", "現代美術", "アートフェア", "ギャラリー"]
+tags: ["ART COLOGNE", "ケルン", "現代美術", "アートフェア", "ギャラリー", "美術市場"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/art-cologne-2026-guide/"

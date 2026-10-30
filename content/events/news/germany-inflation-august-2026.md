@@ -18,7 +18,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2026年8月統計・9月10日発表"
 next_review: "2026-10-15"
-tags: ["物価", "家計", "食品", "エネルギー"]
+tags: ["物価", "インフレ", "家計", "食品", "エネルギー", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

@@ -9,7 +9,7 @@ event_date: "週末ごとに異なる"
 published_at: "2026-06-12"
 last_verified: "2026-07-06"
 summary: "NRWの博物館、産業遺産、市民祭、自然、図書館などを、子どもの年齢だけでなく「何を一緒に発見したいか」から選ぶガイド。家族の会話が残る週末の作り方を紹介します。"
-tags: ["子連れ", "週末旅行", "NRW", "博物館", "市民祭"]
+tags: ["家族向け", "週末", "NRW", "博物館", "市民祭", "地域文化"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/family-weekend-events-nrw/"

@@ -16,7 +16,7 @@ area: "ドイツ全土・欧州"
 location: ""
 event_date: "2026-12-13から2027年ダイヤ"
 next_review: "2026-12-12"
-tags: ["ドイツ鉄道", "ICE", "2027年ダイヤ", "Familienticket", "鉄道"]
+tags: ["Deutsche Bahn", "ICE", "2027年ダイヤ", "Familienticket", "鉄道旅行", "NRW"]
 published: true
 status: "published"
 source_type: "manual"

@@ -18,7 +18,7 @@ area: "ドイツの森・身近な緑地"
 location: ""
 event_date: "秋のコラム"
 next_review: "2027-09-01"
-tags: ["秋", "森", "散歩", "紅葉", "自然観察"]
+tags: ["秋", "森", "散歩", "紅葉", "自然観察", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

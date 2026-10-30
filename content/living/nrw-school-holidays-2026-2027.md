@@ -11,7 +11,7 @@ updated_at: "2026-10-27"
 last_verified: "2026-10-27"
 next_review: "2027-01-27"
 canonical_url: "/germany/ja/living/nrw-school-holidays-2026-2027/"
-tags: ["NRW", "学校休暇", "2027年", "子連れ", "保育施設"]
+tags: ["NRW","学校休暇","2027年","家族旅行","保育","休暇計画"]
 image_url: "/assets/images/living/childcare-play-editorial-v2.webp"
 image_alt: "明るい保育室で子どもと保育者が積み木をする様子"
 image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。"

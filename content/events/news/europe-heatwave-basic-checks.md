@@ -5,7 +5,7 @@ slug: "europe-heatwave-basic-checks"
 category: "医療・健康"
 area: "ドイツ全体 / EU"
 summary: "ドイツで高温が続くとき、冷房の少ない住宅、夜間の蓄熱、子ども・高齢者、移動へどんな影響が出るかを解説。必要な暑さ対策と危険症状を絞ってまとめます。"
-tags: ["熱波", "夏", "住まい", "医療・健康"]
+tags: ["熱波", "夏", "住まい", "健康", "都市", "ドイツ生活"]
 status: "published"
 published: true
 published_at: "2026-06-28"

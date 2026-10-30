@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-29"
 next_review: "2027-02-28"
 summary: "役所サイト、友人の経験、SNS、AIの答えが食い違うとき、それぞれを何に使うかを解説。日付・地域・対象者を確かめ、不明点を安全に残したまま次の行動を決める方法を紹介します。"
-tags: ["情報リテラシー", "AI", "行政手続き", "SNS"]
+tags: ["情報リテラシー", "公式情報", "AI", "行政手続き", "SNS", "ドイツ生活"]
 status: "published"
 published: true
 source_type: "manual"

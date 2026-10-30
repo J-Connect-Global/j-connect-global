@@ -22,7 +22,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2027-01-01 施行予定（連邦議会の議決と連邦参議院の同意が必要）"
 next_review: "2026-12-15"
-tags: ["住宅手当", "Wohngeld", "賃貸", "暖房", "社会保障"]
+tags: ["住宅手当", "Wohngeld", "家賃", "暖房費", "社会保障", "2027年", "お金", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

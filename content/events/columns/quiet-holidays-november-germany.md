@@ -20,7 +20,7 @@ area: "NRW"
 location: ""
 event_date: "2026-11-01 万聖節／11-15 国民哀悼の日／11-22 死者の日曜日"
 next_review: "2027-10-15"
-tags: ["静かな祝日", "万聖節", "国民哀悼の日", "死者の日曜日", "11月"]
+tags: ["静かな祝日", "万聖節", "国民哀悼の日", "死者の日曜日", "11月", "祝日", "NRW", "ドイツ雑学", "季節文化"]
 published: true
 status: "published"
 source_type: "manual"

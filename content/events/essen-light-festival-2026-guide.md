@@ -13,7 +13,7 @@ city: "エッセン"
 location: "エッセン中心街"
 event_date: "2026-10-02〜2026-10-11"
 next_review: "2027-08-01"
-tags: ["エッセン", "光の祭典", "秋", "アート", "街歩き"]
+tags: ["エッセン", "光の祭典", "2026年10月", "秋", "アート", "街歩き"]
 published: true
 status: "published"
 source_type: "manual"

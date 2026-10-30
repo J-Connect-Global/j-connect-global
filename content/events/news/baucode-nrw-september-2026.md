@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-29"
 next_review: "2026-10-01"
 summary: "NRW州の建築ルール改正が2026年9月1日に施行。電子申請、既存建物の住宅転用、屋根裏改修などが、住宅所有者、購入検討者、借主にどう関係するかを一般向けに解説します。"
-tags: ["NRW", "建築ルール", "住まい", "リノベーション", "用途変更"]
+tags: ["NRW", "建築ルール", "住宅", "リノベーション", "用途変更", "電子行政"]
 status: "published"
 published: true
 source_type: "manual"

@@ -4,7 +4,7 @@ title: "ドイツのPfand返却方法｜25セント・返金券・機械で返�
 slug: "germany-pfand-return-guide"
 category: "暮らし・買い物"
 summary: "ドイツのPfandを、使い捨て容器とリユース瓶の違いから解説。スーパーでの返却手順、別の店で返せる条件、返金券の使い方、潰れた容器を機械が受け付けないときの対応を整理します。"
-tags: ["Pfand", "買い物", "スーパー", "ペットボトル", "返金"]
+tags: ["Pfand", "買い物", "スーパー", "ペットボトル", "返金", "リサイクル"]
 published: true
 status: "published"
 published_at: "2026-09-28"

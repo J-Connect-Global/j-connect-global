@@ -22,7 +22,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2026-10-14 連邦議会で公聴会（法案は審議中）"
 next_review: "2026-12-15"
-tags: ["賃貸", "家具付き物件", "短期賃貸", "インデックス賃料", "法改正"]
+tags: ["賃貸", "家具付き物件", "短期賃貸", "インデックス賃料", "家賃", "法改正", "住まい", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

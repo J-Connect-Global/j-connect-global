@@ -16,7 +16,7 @@ area: "ドイツの食文化"
 location: ""
 event_date: "暮らしのコラム"
 next_review: "2027-03-18"
-tags: ["パン", "食文化", "ライ麦", "地域文化"]
+tags: ["パン", "食文化", "ドイツ生活", "ライ麦", "地域文化", "季節"]
 published: true
 status: "published"
 source_type: "manual"

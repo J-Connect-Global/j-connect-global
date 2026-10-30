@@ -15,7 +15,7 @@ city: "メヒャーニヒ"
 location: "コメルン野外博物館"
 event_date: "2026-11-08"
 next_review: "2026-11-09"
-tags: ["聖マルティン祭", "ランタン", "コメルン", "子連れ", "地域文化"]
+tags: ["聖マルティン祭", "ランタン", "コメルン", "2026年11月", "家族", "地域文化"]
 published: true
 status: "published"
 source_type: "manual"

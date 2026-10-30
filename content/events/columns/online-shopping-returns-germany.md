@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "暮らしのコラム（2026年11月27日はブラックフライデー）"
 next_review: "2027-10-15"
-tags: ["通販", "返品", "撤回", "ブラックフライデー", "消費者"]
+tags: ["ネット通販", "返品", "撤回", "ブラックフライデー", "消費者", "買い物", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

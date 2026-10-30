@@ -3,7 +3,7 @@ id: "L009"
 title: "ドイツのKita・U3申込み｜NRWの保育先・必要書類"
 slug: "kita-u3-tagesmutter-guide"
 category: "家族・子育て"
-tags: ["保育施設", "3歳未満保育", "家庭的保育", "NRW", "デュッセルドルフ"]
+tags: ["保育施設","3歳未満保育","家庭的保育","NRW","デュッセルドルフ","Erkrath","保育申込み"]
 summary: "ドイツの保育施設と家庭的保育の違い、NRWの原則6か月前の需要申告、デュッセルドルフ・Erkrathの申込み、必要情報・書類、入園決定と費用確認を整理します。"
 status: "published"
 published: true

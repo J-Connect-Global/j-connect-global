@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "暮らしのコラム（年末・翌年3月31日が目安）"
 next_review: "2027-10-15"
-tags: ["有給休暇", "休暇", "仕事", "労働法", "年末"]
+tags: ["有給休暇", "休暇", "仕事", "労働法", "年末", "働き方", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

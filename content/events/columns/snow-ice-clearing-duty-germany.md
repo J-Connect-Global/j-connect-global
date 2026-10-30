@@ -22,7 +22,7 @@ area: "NRW"
 location: ""
 event_date: "暮らしのコラム（冬）"
 next_review: "2027-10-15"
-tags: ["雪かき", "冬", "凍結", "歩道", "賃貸"]
+tags: ["雪かき", "冬", "凍結", "歩道", "賃貸", "住まい", "ケルン", "デュッセルドルフ", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

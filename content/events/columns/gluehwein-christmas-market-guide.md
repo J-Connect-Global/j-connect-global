@@ -22,7 +22,7 @@ area: "ドイツの食文化"
 location: ""
 event_date: "クリスマスマーケットの季節（11月下旬〜12月）"
 next_review: "2027-11-01"
-tags: ["グリューワイン", "クリスマスマーケット", "クリスマス", "ワイン", "食文化"]
+tags: ["グリューワイン", "クリスマスマーケット", "クリスマス", "ワイン", "ドイツ雑学", "食文化", "冬"]
 published: true
 status: "published"
 source_type: "manual"

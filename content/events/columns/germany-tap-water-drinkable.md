@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "ドイツ雑学のコラム"
 next_review: "2027-10-01"
-tags: ["水道水", "硬水", "鉛管", "デュッセルドルフ", "ケルン"]
+tags: ["水道水", "硬水", "ドイツ雑学", "ドイツ生活", "鉛管", "デュッセルドルフ", "ケルン", "NRW"]
 published: true
 status: "published"
 source_type: "manual"

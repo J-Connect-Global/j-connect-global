@@ -20,7 +20,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "ドイツ雑学のコラム"
 next_review: "2027-07-01"
-tags: ["現金", "キャッシュレス", "ギロカード", "買い物", "支払い"]
+tags: ["現金", "キャッシュレス", "ギロカード", "ドイツ雑学", "ドイツ生活", "買い物", "支払い"]
 published: true
 status: "published"
 source_type: "manual"

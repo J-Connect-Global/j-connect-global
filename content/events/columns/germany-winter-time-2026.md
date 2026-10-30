@@ -16,7 +16,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2026-10-25 夏時間終了"
 next_review: "2027-10-01"
-tags: ["時間変更", "日本との時差", "秋", "時計"]
+tags: ["冬時間", "時間変更", "ドイツ生活", "日本との時差", "秋", "時計"]
 published: true
 status: "published"
 source_type: "manual"

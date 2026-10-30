@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2026-12-31 大晦日"
 next_review: "2026-12-10"
-tags: ["大晦日", "シルベスター", "花火", "年末年始", "季節行事"]
+tags: ["大晦日", "シルベスター", "花火", "年末年始", "ドイツ雑学", "季節文化", "デュッセルドルフ", "ケルン"]
 published: true
 status: "published"
 source_type: "manual"

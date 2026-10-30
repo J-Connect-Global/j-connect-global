@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2026-11-29 第1アドベント"
 next_review: "2027-11-01"
-tags: ["アドベント", "クリスマス", "季節行事", "ハンブルク"]
+tags: ["アドベント", "クリスマス", "アドベントクランツ", "アドベントカレンダー", "ドイツ雑学", "季節文化", "ハンブルク"]
 published: true
 status: "published"
 source_type: "manual"

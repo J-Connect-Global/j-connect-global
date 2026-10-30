@@ -22,7 +22,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2026/27年の冬のシーズン"
 next_review: "2027-02-01"
-tags: ["インフルエンザ", "新型コロナ", "ワクチン", "予防接種", "STIKO"]
+tags: ["インフルエンザ", "新型コロナ", "ワクチン", "予防接種", "STIKO", "健康", "冬", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

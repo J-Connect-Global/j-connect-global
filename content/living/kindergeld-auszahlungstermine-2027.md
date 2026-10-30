@@ -11,7 +11,7 @@ updated_at: "2026-10-27"
 last_verified: "2026-10-27"
 next_review: "2027-01-27"
 canonical_url: "/germany/ja/living/kindergeld-auszahlungstermine-2027/"
-tags: ["児童手当", "2027年", "出産"]
+tags: ["Kindergeld","児童手当","支給日","2027年","出産後の手続き"]
 image_url: "/assets/images/living/birth-procedures-germany.webp"
 image_alt: "赤ちゃんの衣類と靴下、書類を入れるフォルダーを机に並べた出産手続きのイメージ"
 image_caption: "AI生成のイメージ画像。実際の申請書類を示すものではありません。"

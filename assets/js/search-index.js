@@ -297,7 +297,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "デュッセルドルフ",
       "NRW",
       "リサイクル",
-      "引っ越し"
+      "引っ越し",
+      "生活立ち上げ"
     ]
   },
   {
@@ -310,7 +311,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "買い物",
       "スーパー",
       "ペットボトル",
-      "返金"
+      "返金",
+      "リサイクル"
     ]
   },
   {
@@ -323,7 +325,9 @@ window.JCONNECT_SEARCH_INDEX = [
       "食文化",
       "買い物",
       "朝食",
-      "NRW"
+      "NRW",
+      "ライ麦",
+      "全粒粉"
     ]
   },
   {
@@ -451,7 +455,8 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "ハンブルク",
       "週末旅行",
-      "港町"
+      "港町",
+      "ドイツ"
     ]
   },
   {
@@ -595,6 +600,7 @@ window.JCONNECT_SEARCH_INDEX = [
     "category": "生活・手続き",
     "tags": [
       "賃貸",
+      "家探し",
       "契約",
       "信用情報",
       "住民登録"
@@ -609,7 +615,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "信用情報",
       "SCHUFA",
       "賃貸",
-      "個人情報"
+      "個人情報",
+      "家探し"
     ]
   },
   {
@@ -622,7 +629,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "口座開設",
       "必要書類",
       "Girokonto",
-      "Basiskonto"
+      "Basiskonto",
+      "初渡独"
     ]
   },
   {
@@ -632,6 +640,9 @@ window.JCONNECT_SEARCH_INDEX = [
     "category": "生活・手続き",
     "tags": [
       "税金",
+      "税務識別番号",
+      "税務署番号",
+      "給与税区分",
       "行政手続き"
     ]
   },
@@ -643,9 +654,11 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "妊娠",
       "出産",
-      "医療・健康",
+      "医療",
       "助産師",
-      "産前産後保護"
+      "産前産後保護",
+      "育児給付",
+      "出生届"
     ]
   },
   {
@@ -658,7 +671,9 @@ window.JCONNECT_SEARCH_INDEX = [
       "3歳未満保育",
       "家庭的保育",
       "NRW",
-      "デュッセルドルフ"
+      "デュッセルドルフ",
+      "Erkrath",
+      "保育申込み"
     ]
   },
   {
@@ -697,7 +712,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "住民登録",
       "健康保険",
       "銀行口座",
-      "税金"
+      "税務識別番号",
+      "滞在許可"
     ]
   },
   {
@@ -707,8 +723,9 @@ window.JCONNECT_SEARCH_INDEX = [
     "category": "生活・手続き",
     "tags": [
       "健康保険",
+      "公的医療保険",
       "民間医療保険",
-      "医療・健康",
+      "医療",
       "渡独後手続き"
     ]
   },
@@ -721,6 +738,7 @@ window.JCONNECT_SEARCH_INDEX = [
       "ワールドカップ",
       "サッカー",
       "観戦文化",
+      "ドイツ生活",
       "日本代表"
     ]
   },
@@ -734,7 +752,9 @@ window.JCONNECT_SEARCH_INDEX = [
       "NRW",
       "ライン川",
       "公園",
-      "自然観察"
+      "自然観察",
+      "ケルン",
+      "デュッセルドルフ"
     ]
   },
   {
@@ -744,10 +764,11 @@ window.JCONNECT_SEARCH_INDEX = [
     "category": "生活・手続き",
     "tags": [
       "ドイツ鉄道",
-      "鉄道",
+      "電車",
       "地域交通",
       "長距離列車",
-      "切符"
+      "切符",
+      "遅延"
     ]
   },
   {
@@ -757,6 +778,7 @@ window.JCONNECT_SEARCH_INDEX = [
     "category": "生活・手続き",
     "tags": [
       "滞在許可",
+      "更新",
       "外国人局",
       "電子滞在カード",
       "就労条件",
@@ -773,7 +795,9 @@ window.JCONNECT_SEARCH_INDEX = [
       "病院予約",
       "かかりつけ医",
       "専門医",
-      "116117"
+      "116117",
+      "112",
+      "健康保険"
     ]
   },
   {
@@ -786,7 +810,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "インターネット",
       "引っ越し",
       "公共料金",
-      "解約"
+      "解約",
+      "検針"
     ]
   },
   {
@@ -796,10 +821,11 @@ window.JCONNECT_SEARCH_INDEX = [
     "category": "生活・手続き",
     "tags": [
       "ベビーカー",
-      "出産",
+      "出産準備",
       "5点セット",
       "チャイルドシート",
-      "ISOFIX"
+      "ISOFIX",
+      "デュッセルドルフ"
     ]
   },
   {
@@ -808,11 +834,14 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/living/birth-procedures-germany/",
     "category": "生活・手続き",
     "tags": [
-      "出産",
+      "出産手続き",
       "出生届",
       "出生証明書",
-      "子育て",
-      "児童手当"
+      "育児給付",
+      "児童手当",
+      "国籍留保",
+      "パスポート",
+      "NRW"
     ]
   },
   {
@@ -825,7 +854,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "Packstation",
       "宅配ロッカー",
       "荷物",
-      "通販"
+      "通販",
+      "受け取り"
     ]
   },
   {
@@ -838,7 +868,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "配達済み",
       "届かない",
       "通販",
-      "未配達"
+      "未配達",
+      "複数個口"
     ]
   },
   {
@@ -850,7 +881,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "冬タイヤ",
       "ドイツ運転",
       "オールシーズンタイヤ",
-      "交通安全"
+      "交通安全",
+      "2026年"
     ]
   },
   {
@@ -862,7 +894,9 @@ window.JCONNECT_SEARCH_INDEX = [
       "共益費",
       "Nebenkosten",
       "賃貸",
-      "暖房"
+      "暖房費",
+      "2025年",
+      "2026年末"
     ]
   },
   {
@@ -871,9 +905,11 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/living/kindergeld-auszahlungstermine-2027/",
     "category": "生活・手続き",
     "tags": [
+      "Kindergeld",
       "児童手当",
+      "支給日",
       "2027年",
-      "出産"
+      "出産後の手続き"
     ]
   },
   {
@@ -882,6 +918,7 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/living/epa-guide-germany/",
     "category": "生活・手続き",
     "tags": [
+      "電子患者記録",
       "ePA",
       "健康保険",
       "医療情報",
@@ -897,8 +934,9 @@ window.JCONNECT_SEARCH_INDEX = [
       "NRW",
       "学校休暇",
       "2027年",
-      "子連れ",
-      "保育施設"
+      "家族旅行",
+      "保育",
+      "休暇計画"
     ]
   },
   {
@@ -911,7 +949,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "祝日",
       "2027年",
       "連休",
-      "休暇計画"
+      "休暇計画",
+      "学校休暇"
     ]
   },
   {
@@ -920,11 +959,13 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/living/minijob-grenze-2027/",
     "category": "生活・手続き",
     "tags": [
+      "Minijob",
       "ミニジョブ",
       "最低賃金",
       "2027年",
       "副業",
-      "税金"
+      "税金",
+      "社会保険"
     ]
   },
   {
@@ -937,7 +978,9 @@ window.JCONNECT_SEARCH_INDEX = [
       "クリスマス",
       "営業時間",
       "スーパー",
-      "薬局"
+      "薬局",
+      "公共交通",
+      "2026年"
     ]
   },
   {
@@ -948,9 +991,10 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "日本文化",
       "日独交流",
-      "デュッセルドルフ",
+      "Düsseldorf",
       "日本人コミュニティ",
-      "花火"
+      "花火",
+      "NRW"
     ]
   },
   {
@@ -961,6 +1005,8 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "クリスマスマーケット",
       "デュッセルドルフ",
+      "2026年11月",
+      "2026年12月",
       "アドベント",
       "冬"
     ]
@@ -971,11 +1017,12 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/events/family-weekend-events-nrw/",
     "category": "ニュース・イベント",
     "tags": [
-      "子連れ",
-      "週末旅行",
+      "家族向け",
+      "週末",
       "NRW",
       "博物館",
-      "市民祭"
+      "市民祭",
+      "地域文化"
     ]
   },
   {
@@ -986,7 +1033,7 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "マーケット",
       "中古文化",
-      "週末旅行",
+      "週末",
       "ケルン",
       "地域交流"
     ]
@@ -1001,7 +1048,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "映画文化",
       "ボン",
       "字幕上映",
-      "大学"
+      "大学",
+      "文化交流"
     ]
   },
   {
@@ -1013,7 +1061,9 @@ window.JCONNECT_SEARCH_INDEX = [
       "熱波",
       "夏",
       "住まい",
-      "医療・健康"
+      "健康",
+      "都市",
+      "ドイツ生活"
     ]
   },
   {
@@ -1026,6 +1076,7 @@ window.JCONNECT_SEARCH_INDEX = [
       "サッカー",
       "パブリックビューイング",
       "応援文化",
+      "ドイツ",
       "時差"
     ]
   },
@@ -1039,7 +1090,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "ケルン",
       "アニメ",
       "音楽",
-      "茶文化"
+      "茶文化",
+      "文化交流"
     ]
   },
   {
@@ -1052,7 +1104,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "ケルン",
       "ゲーム文化",
       "ゲーム開発",
-      "インディーゲーム"
+      "インディーゲーム",
+      "ファン文化"
     ]
   },
   {
@@ -1065,7 +1118,9 @@ window.JCONNECT_SEARCH_INDEX = [
       "デュッセルドルフ",
       "日本文化",
       "仏教",
-      "茶"
+      "茶",
+      "書",
+      "NRW"
     ]
   },
   {
@@ -1078,7 +1133,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "日本美術",
       "中国美術",
       "韓国美術",
-      "東アジア美術"
+      "東アジア美術",
+      "美術館"
     ]
   },
   {
@@ -1091,7 +1147,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "ボン",
       "クラシック",
       "現代音楽",
-      "子連れ"
+      "家族向け",
+      "NRW"
     ]
   },
   {
@@ -1104,7 +1161,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "小学校",
       "子育て",
       "NRW",
-      "学童保育"
+      "学童保育",
+      "学校生活"
     ]
   },
   {
@@ -1117,7 +1175,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "生成AI",
       "AI表示",
       "ディープフェイク",
-      "消費者"
+      "消費者",
+      "ドイツ"
     ]
   },
   {
@@ -1130,7 +1189,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "家電",
       "スマートフォン",
       "消費者保護",
-      "EU"
+      "EU",
+      "ドイツ"
     ]
   },
   {
@@ -1141,9 +1201,10 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "暖房",
       "建物近代化法",
-      "住まい",
+      "住宅",
       "ガス",
-      "ヒートポンプ"
+      "ヒートポンプ",
+      "家計"
     ]
   },
   {
@@ -1152,9 +1213,10 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/events/news/germany-unemployment-july-2026/",
     "category": "ニュース・イベント",
     "tags": [
-      "雇用",
-      "失業",
+      "ドイツ雇用",
+      "失業率",
       "求職",
+      "失業給付",
       "健康保険",
       "在留資格"
     ]
@@ -1165,10 +1227,12 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/events/news/germany-inflation-july-2026/",
     "category": "ニュース・イベント",
     "tags": [
-      "物価",
+      "ドイツ物価",
+      "インフレ",
       "家計",
       "エネルギー",
-      "食品"
+      "食品",
+      "消費者物価"
     ]
   },
   {
@@ -1181,7 +1245,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "低水位",
       "カウプ",
       "観光船",
-      "フェリー"
+      "フェリー",
+      "ドイツ旅行"
     ]
   },
   {
@@ -1194,7 +1259,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "包装廃棄物",
       "リサイクル",
       "オンライン注文",
-      "買い物"
+      "買い物",
+      "環境"
     ]
   },
   {
@@ -1207,6 +1273,7 @@ window.JCONNECT_SEARCH_INDEX = [
       "行政手続き",
       "中小企業",
       "働き方",
+      "サービス",
       "ドイツ経済"
     ]
   },
@@ -1216,9 +1283,12 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/events/news/germany-gdp-q2-2026/",
     "category": "ニュース・イベント",
     "tags": [
+      "ドイツGDP",
       "ドイツ経済",
+      "景気",
       "家計",
-      "雇用"
+      "雇用",
+      "暮らし"
     ]
   },
   {
@@ -1227,9 +1297,10 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/events/news/germany-flight-prices-2026/",
     "category": "ニュース・イベント",
     "tags": [
-      "航空運賃",
+      "ドイツ航空券",
       "一時帰国",
-      "子連れ",
+      "家族旅行",
+      "航空運賃",
       "空港",
       "家計"
     ]
@@ -1240,9 +1311,12 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/events/news/germany-import-prices-june-2026/",
     "category": "ニュース・イベント",
     "tags": [
+      "ドイツ輸入物価",
       "物価",
       "家計",
-      "エネルギー"
+      "エネルギー",
+      "日用品",
+      "ドイツ生活"
     ]
   },
   {
@@ -1255,7 +1329,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "文化遺産",
       "建築",
       "産業遺産",
-      "インフラ"
+      "インフラ",
+      "NRW"
     ]
   },
   {
@@ -1264,11 +1339,12 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/events/duesseldorf-oktoberfest-2026-guide/",
     "category": "ニュース・イベント",
     "tags": [
-      "デュッセルドルフ",
+      "Düsseldorf",
       "オクトーバーフェスト",
       "バイエルン文化",
       "ライブ音楽",
-      "秋イベント"
+      "秋イベント",
+      "NRW"
     ]
   },
   {
@@ -1281,7 +1357,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "ケルン",
       "市民スポーツ",
       "沿道応援",
-      "都市文化"
+      "都市文化",
+      "ランニング"
     ]
   },
   {
@@ -1292,6 +1369,7 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "フランクフルト",
       "ブックフェア",
+      "2026年10月",
       "チェコ",
       "読書",
       "翻訳"
@@ -1307,7 +1385,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "ケルン",
       "現代美術",
       "アートフェア",
-      "ギャラリー"
+      "ギャラリー",
+      "美術市場"
     ]
   },
   {
@@ -1316,10 +1395,12 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/events/news/germany-september-2026-changes/",
     "category": "ニュース・イベント",
     "tags": [
+      "2026年9月",
       "制度変更",
       "環境表示",
       "税務相談",
-      "ドイツ鉄道"
+      "ドイツ鉄道",
+      "ドイツ生活"
     ]
   },
   {
@@ -1330,9 +1411,10 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "NRW",
       "建築ルール",
-      "住まい",
+      "住宅",
       "リノベーション",
-      "用途変更"
+      "用途変更",
+      "電子行政"
     ]
   },
   {
@@ -1341,11 +1423,12 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/events/news/germany-labour-market-august-2026/",
     "category": "ニュース・イベント",
     "tags": [
-      "雇用",
-      "失業",
+      "ドイツ雇用",
+      "失業率",
       "転職",
       "求人",
-      "求職"
+      "求職",
+      "仕事"
     ]
   },
   {
@@ -1358,7 +1441,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "居場所",
       "友人",
       "地域コミュニティ",
-      "日本人コミュニティ"
+      "日本人コミュニティ",
+      "ドイツ生活"
     ]
   },
   {
@@ -1368,9 +1452,11 @@ window.JCONNECT_SEARCH_INDEX = [
     "category": "ニュース・イベント",
     "tags": [
       "情報リテラシー",
+      "公式情報",
       "AI",
       "行政手続き",
-      "SNS"
+      "SNS",
+      "ドイツ生活"
     ]
   },
   {
@@ -1381,6 +1467,7 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "エッセン",
       "光の祭典",
+      "2026年10月",
       "秋",
       "アート",
       "街歩き"
@@ -1394,7 +1481,10 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "エッセン",
       "ボードゲーム",
-      "子連れ"
+      "2026年10月",
+      "家族",
+      "遊び",
+      "文化"
     ]
   },
   {
@@ -1406,7 +1496,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "聖マルティン祭",
       "ランタン",
       "コメルン",
-      "子連れ",
+      "2026年11月",
+      "家族",
       "地域文化"
     ]
   },
@@ -1417,9 +1508,11 @@ window.JCONNECT_SEARCH_INDEX = [
     "category": "ニュース・イベント",
     "tags": [
       "物価",
+      "インフレ",
       "家計",
       "食品",
-      "エネルギー"
+      "エネルギー",
+      "ドイツ生活"
     ]
   },
   {
@@ -1432,7 +1525,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "ケルン",
       "アントワープ",
       "ベルギー",
-      "ブリュッセル空港"
+      "ブリュッセル空港",
+      "鉄道旅行"
     ]
   },
   {
@@ -1445,7 +1539,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "防災",
       "スマートフォン",
       "サイレン",
-      "公共サービス"
+      "公共サービス",
+      "ドイツ生活"
     ]
   },
   {
@@ -1456,8 +1551,10 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "パン",
       "食文化",
+      "ドイツ生活",
       "ライ麦",
-      "地域文化"
+      "地域文化",
+      "季節"
     ]
   },
   {
@@ -1470,7 +1567,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "森",
       "散歩",
       "紅葉",
-      "自然観察"
+      "自然観察",
+      "ドイツ生活"
     ]
   },
   {
@@ -1479,11 +1577,12 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/events/news/deutschlandticket-2027-price-consent/",
     "category": "ニュース・イベント",
     "tags": [
-      "ドイツチケット",
+      "Deutschlandticket",
       "公共交通",
       "定期券",
       "値上げ",
-      "ドイツ鉄道"
+      "Deutsche Bahn",
+      "2027年"
     ]
   },
   {
@@ -1492,11 +1591,12 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/events/news/db-2027-timetable-family-ticket/",
     "category": "ニュース・イベント",
     "tags": [
-      "ドイツ鉄道",
+      "Deutsche Bahn",
       "ICE",
       "2027年ダイヤ",
       "Familienticket",
-      "鉄道"
+      "鉄道旅行",
+      "NRW"
     ]
   },
   {
@@ -1505,7 +1605,9 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/events/columns/germany-winter-time-2026/",
     "category": "ニュース・イベント",
     "tags": [
+      "冬時間",
       "時間変更",
+      "ドイツ生活",
       "日本との時差",
       "秋",
       "時計"
@@ -1517,11 +1619,13 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/events/news/germany-january-2027-changes/",
     "category": "ニュース・イベント",
     "tags": [
+      "ドイツ生活",
       "制度改正",
       "最低賃金",
       "ドイツチケット",
       "社会保険",
-      "児童手当"
+      "児童手当",
+      "税金"
     ]
   },
   {
@@ -1534,7 +1638,10 @@ window.JCONNECT_SEARCH_INDEX = [
       "外務省",
       "デモ",
       "フランス",
-      "NRW"
+      "NRW",
+      "在留届",
+      "たびレジ",
+      "ドイツ生活"
     ]
   },
   {
@@ -1544,10 +1651,14 @@ window.JCONNECT_SEARCH_INDEX = [
     "category": "ニュース・イベント",
     "tags": [
       "健康保険",
+      "公的医療保険",
       "追加保険料",
       "Zusatzbeitrag",
       "保険組合",
-      "乗り換え"
+      "乗り換え",
+      "2027年",
+      "ドイツ生活",
+      "手取り"
     ]
   },
   {
@@ -1560,7 +1671,11 @@ window.JCONNECT_SEARCH_INDEX = [
       "結露",
       "換気",
       "暖房",
-      "湿度"
+      "湿度",
+      "冬",
+      "賃貸",
+      "ドイツ生活",
+      "Lüften"
     ]
   },
   {
@@ -1571,6 +1686,8 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "日曜日",
       "閉店法",
+      "ドイツ雑学",
+      "ドイツ生活",
       "買い物",
       "NRW",
       "祝日"
@@ -1584,9 +1701,12 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "アウトバーン",
       "速度制限",
+      "ドイツ雑学",
       "車",
       "運転",
-      "ケルン"
+      "ケルン",
+      "ボン",
+      "NRW"
     ]
   },
   {
@@ -1596,10 +1716,13 @@ window.JCONNECT_SEARCH_INDEX = [
     "category": "ニュース・イベント",
     "tags": [
       "ビール",
+      "ビール純粋令",
+      "ドイツ雑学",
       "食文化",
       "ケルシュ",
       "アルトビール",
-      "バイエルン"
+      "バイエルン",
+      "NRW"
     ]
   },
   {
@@ -1612,7 +1735,10 @@ window.JCONNECT_SEARCH_INDEX = [
       "11月11日",
       "ケルン",
       "デュッセルドルフ",
-      "季節行事"
+      "ドイツ雑学",
+      "季節文化",
+      "NRW",
+      "ラインラント"
     ]
   },
   {
@@ -1623,9 +1749,12 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "水道水",
       "硬水",
+      "ドイツ雑学",
+      "ドイツ生活",
       "鉛管",
       "デュッセルドルフ",
-      "ケルン"
+      "ケルン",
+      "NRW"
     ]
   },
   {
@@ -1636,9 +1765,12 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "祝日",
       "州",
+      "ドイツ雑学",
+      "ドイツ生活",
       "NRW",
       "万聖節",
-      "聖体祭"
+      "聖体祭",
+      "2027年"
     ]
   },
   {
@@ -1649,7 +1781,10 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "アドベント",
       "クリスマス",
-      "季節行事",
+      "アドベントクランツ",
+      "アドベントカレンダー",
+      "ドイツ雑学",
+      "季節文化",
       "ハンブルク"
     ]
   },
@@ -1662,6 +1797,8 @@ window.JCONNECT_SEARCH_INDEX = [
       "現金",
       "キャッシュレス",
       "ギロカード",
+      "ドイツ雑学",
+      "ドイツ生活",
       "買い物",
       "支払い"
     ]
@@ -1673,8 +1810,10 @@ window.JCONNECT_SEARCH_INDEX = [
     "category": "ニュース・イベント",
     "tags": [
       "クリスマス",
+      "クリスマスツリー",
       "もみの木",
-      "季節行事",
+      "ドイツ雑学",
+      "季節文化",
       "冬"
     ]
   },
@@ -1688,7 +1827,10 @@ window.JCONNECT_SEARCH_INDEX = [
       "遅延",
       "定時率",
       "乗客の権利",
-      "払い戻し"
+      "払い戻し",
+      "ドイツ雑学",
+      "ドイツ生活",
+      "ICE"
     ]
   },
   {
@@ -1698,8 +1840,10 @@ window.JCONNECT_SEARCH_INDEX = [
     "category": "ニュース・イベント",
     "tags": [
       "ワイン",
+      "ドイツワイン",
       "リースリング",
       "モーゼル",
+      "ドイツ雑学",
       "食文化",
       "ライン川"
     ]
@@ -1711,6 +1855,10 @@ window.JCONNECT_SEARCH_INDEX = [
     "category": "ニュース・イベント",
     "tags": [
       "クラインガルテン",
+      "市民農園",
+      "シュレーバーガルテン",
+      "ドイツ雑学",
+      "ドイツ生活",
       "庭",
       "デュッセルドルフ",
       "ケルン"
@@ -1726,7 +1874,10 @@ window.JCONNECT_SEARCH_INDEX = [
       "シルベスター",
       "花火",
       "年末年始",
-      "季節行事"
+      "ドイツ雑学",
+      "季節文化",
+      "デュッセルドルフ",
+      "ケルン"
     ]
   },
   {
@@ -1739,7 +1890,9 @@ window.JCONNECT_SEARCH_INDEX = [
       "クリスマスマーケット",
       "クリスマス",
       "ワイン",
-      "食文化"
+      "ドイツ雑学",
+      "食文化",
+      "冬"
     ]
   },
   {
@@ -1752,7 +1905,10 @@ window.JCONNECT_SEARCH_INDEX = [
       "12月6日",
       "クリスマス",
       "アドベント",
-      "ヴェックマン"
+      "ヴェックマン",
+      "ドイツ雑学",
+      "季節文化",
+      "ラインラント"
     ]
   },
   {
@@ -1761,11 +1917,13 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/events/columns/cologne-cathedral-632-years/",
     "category": "ニュース・イベント",
     "tags": [
-      "大聖堂",
+      "ケルン大聖堂",
       "ケルン",
       "世界遺産",
       "ゴシック",
-      "歴史"
+      "ドイツ雑学",
+      "歴史",
+      "NRW"
     ]
   },
   {
@@ -1778,7 +1936,10 @@ window.JCONNECT_SEARCH_INDEX = [
       "炭鉱",
       "ツォルフェアアイン",
       "世界遺産",
-      "エッセン"
+      "エッセン",
+      "ドイツ雑学",
+      "歴史",
+      "NRW"
     ]
   },
   {
@@ -1791,7 +1952,10 @@ window.JCONNECT_SEARCH_INDEX = [
       "シュテルンジンガー",
       "1月6日",
       "年末年始",
-      "季節行事"
+      "ドイツ雑学",
+      "季節文化",
+      "ケルン",
+      "募金"
     ]
   },
   {
@@ -1804,7 +1968,9 @@ window.JCONNECT_SEARCH_INDEX = [
       "ベルリン",
       "東西ドイツ",
       "冷戦",
-      "ドイツ統一"
+      "ドイツ統一",
+      "ドイツ雑学",
+      "歴史"
     ]
   },
   {
@@ -1817,7 +1983,10 @@ window.JCONNECT_SEARCH_INDEX = [
       "成績",
       "成績表",
       "ギムナジウム",
-      "アビトゥーア"
+      "アビトゥーア",
+      "子育て",
+      "ドイツ雑学",
+      "NRW"
     ]
   },
   {
@@ -1827,10 +1996,12 @@ window.JCONNECT_SEARCH_INDEX = [
     "category": "ニュース・イベント",
     "tags": [
       "物価",
+      "インフレ",
       "家計",
       "エネルギー",
       "ガソリン",
-      "燃料税"
+      "燃料税",
+      "ドイツ生活"
     ]
   },
   {
@@ -1843,7 +2014,9 @@ window.JCONNECT_SEARCH_INDEX = [
       "砂糖税",
       "清涼飲料",
       "健康保険",
-      "税金"
+      "税金",
+      "2027年",
+      "ドイツ生活"
     ]
   },
   {
@@ -1856,7 +2029,10 @@ window.JCONNECT_SEARCH_INDEX = [
       "老後資金",
       "リースター",
       "ETF",
-      "補助金"
+      "補助金",
+      "2027年",
+      "お金",
+      "ドイツ生活"
     ]
   },
   {
@@ -1869,7 +2045,11 @@ window.JCONNECT_SEARCH_INDEX = [
       "社会保険",
       "保険料",
       "子どものいない人",
-      "扶養"
+      "扶養",
+      "配偶者",
+      "2027年",
+      "手取り",
+      "ドイツ生活"
     ]
   },
   {
@@ -1882,7 +2062,10 @@ window.JCONNECT_SEARCH_INDEX = [
       "家具付き物件",
       "短期賃貸",
       "インデックス賃料",
-      "法改正"
+      "家賃",
+      "法改正",
+      "住まい",
+      "ドイツ生活"
     ]
   },
   {
@@ -1893,9 +2076,12 @@ window.JCONNECT_SEARCH_INDEX = [
     "tags": [
       "住宅手当",
       "Wohngeld",
-      "賃貸",
-      "暖房",
-      "社会保障"
+      "家賃",
+      "暖房費",
+      "社会保障",
+      "2027年",
+      "お金",
+      "ドイツ生活"
     ]
   },
   {
@@ -1908,7 +2094,10 @@ window.JCONNECT_SEARCH_INDEX = [
       "新型コロナ",
       "ワクチン",
       "予防接種",
-      "STIKO"
+      "STIKO",
+      "健康",
+      "冬",
+      "ドイツ生活"
     ]
   },
   {
@@ -1917,10 +2106,15 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/events/news/tax-refund-2022-deadline-december-2026/",
     "category": "ニュース・イベント",
     "tags": [
+      "確定申告",
       "税金",
+      "還付",
       "ELSTER",
+      "所得税",
       "会社員",
-      "お金"
+      "期限",
+      "お金",
+      "ドイツ生活"
     ]
   },
   {
@@ -1933,7 +2127,10 @@ window.JCONNECT_SEARCH_INDEX = [
       "車",
       "乗り換え",
       "解約",
-      "節約"
+      "11月30日",
+      "節約",
+      "交通",
+      "ドイツ生活"
     ]
   },
   {
@@ -1946,7 +2143,10 @@ window.JCONNECT_SEARCH_INDEX = [
       "診断書",
       "仕事",
       "eAU",
-      "子どもの看病"
+      "子どもの看病",
+      "健康保険",
+      "働き方",
+      "ドイツ生活"
     ]
   },
   {
@@ -1959,7 +2159,11 @@ window.JCONNECT_SEARCH_INDEX = [
       "冬",
       "凍結",
       "歩道",
-      "賃貸"
+      "賃貸",
+      "住まい",
+      "ケルン",
+      "デュッセルドルフ",
+      "ドイツ生活"
     ]
   },
   {
@@ -1968,11 +2172,13 @@ window.JCONNECT_SEARCH_INDEX = [
     "url": "/germany/ja/events/columns/online-shopping-returns-germany/",
     "category": "ニュース・イベント",
     "tags": [
-      "通販",
+      "ネット通販",
       "返品",
       "撤回",
       "ブラックフライデー",
-      "消費者"
+      "消費者",
+      "買い物",
+      "ドイツ生活"
     ]
   },
   {
@@ -1985,7 +2191,11 @@ window.JCONNECT_SEARCH_INDEX = [
       "万聖節",
       "国民哀悼の日",
       "死者の日曜日",
-      "11月"
+      "11月",
+      "祝日",
+      "NRW",
+      "ドイツ雑学",
+      "季節文化"
     ]
   },
   {
@@ -1998,7 +2208,9 @@ window.JCONNECT_SEARCH_INDEX = [
       "休暇",
       "仕事",
       "労働法",
-      "年末"
+      "年末",
+      "働き方",
+      "ドイツ生活"
     ]
   },
   {
@@ -2010,8 +2222,12 @@ window.JCONNECT_SEARCH_INDEX = [
       "契約",
       "解約",
       "ジム",
-      "スマートフォン",
-      "インターネット"
+      "スマホ",
+      "インターネット",
+      "サブスク",
+      "消費者",
+      "帰国",
+      "ドイツ生活"
     ]
   },
   {
@@ -2024,7 +2240,10 @@ window.JCONNECT_SEARCH_INDEX = [
       "解約",
       "解雇",
       "試用期間",
-      "仕事"
+      "仕事",
+      "労働法",
+      "転職",
+      "ドイツ生活"
     ]
   },
   {

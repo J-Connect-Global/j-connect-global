@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2026-12-06 聖ニコラウスの日"
 next_review: "2027-11-01"
-tags: ["聖ニコラウス", "12月6日", "クリスマス", "アドベント", "ヴェックマン"]
+tags: ["聖ニコラウス", "12月6日", "クリスマス", "アドベント", "ヴェックマン", "ドイツ雑学", "季節文化", "ラインラント"]
 published: true
 status: "published"
 source_type: "manual"

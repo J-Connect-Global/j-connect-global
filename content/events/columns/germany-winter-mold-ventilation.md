@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "暖房シーズン（10月〜4月ごろ）"
 next_review: "2027-10-01"
-tags: ["カビ", "結露", "換気", "暖房", "湿度"]
+tags: ["カビ", "結露", "換気", "暖房", "湿度", "冬", "賃貸", "ドイツ生活", "Lüften"]
 published: true
 status: "published"
 source_type: "manual"

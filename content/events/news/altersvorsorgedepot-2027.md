@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2027-01-01 開始"
 next_review: "2026-12-31"
-tags: ["年金", "老後資金", "リースター", "ETF", "補助金"]
+tags: ["年金", "老後資金", "リースター", "ETF", "補助金", "2027年", "お金", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

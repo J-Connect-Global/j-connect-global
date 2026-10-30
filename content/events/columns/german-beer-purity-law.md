@@ -24,7 +24,7 @@ area: "ドイツの食文化"
 location: ""
 event_date: "ドイツ雑学のコラム"
 next_review: "2027-04-23"
-tags: ["ビール", "食文化", "ケルシュ", "アルトビール", "バイエルン"]
+tags: ["ビール", "ビール純粋令", "ドイツ雑学", "食文化", "ケルシュ", "アルトビール", "バイエルン", "NRW"]
 published: true
 status: "published"
 source_type: "manual"

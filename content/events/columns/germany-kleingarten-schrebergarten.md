@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "ドイツ雑学のコラム"
 next_review: "2027-10-01"
-tags: ["クラインガルテン", "庭", "デュッセルドルフ", "ケルン"]
+tags: ["クラインガルテン", "市民農園", "シュレーバーガルテン", "ドイツ雑学", "ドイツ生活", "庭", "デュッセルドルフ", "ケルン"]
 published: true
 status: "published"
 source_type: "manual"

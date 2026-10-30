@@ -11,7 +11,7 @@ updated_at: "2026-10-28"
 last_verified: "2026-10-28"
 next_review: "2027-01-15"
 canonical_url: "/germany/ja/living/minijob-grenze-2027/"
-tags: ["ミニジョブ", "最低賃金", "2027年", "副業", "税金"]
+tags: ["Minijob", "ミニジョブ", "最低賃金", "2027年", "副業", "税金", "社会保険"]
 image: "/assets/img/living/minijob-grenze-2027.webp"
 image_alt: "小さなカフェのカウンターで働く人と、コーヒーマシンを描いたイラスト"
 image_caption: "イラスト：J-Connect。ミニジョブのテーマを表したもので、特定の職場や給与明細を描いたものではありません。"

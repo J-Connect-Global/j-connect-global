@@ -11,7 +11,7 @@ updated_at: "2026-10-27"
 last_verified: "2026-10-27"
 next_review: "2027-01-27"
 canonical_url: "/germany/ja/living/nrw-public-holidays-2027/"
-tags: ["NRW", "祝日", "2027年", "連休", "休暇計画"]
+tags: ["NRW","祝日","2027年","連休","休暇計画","学校休暇"]
 image_url: "/assets/img/living/nrw-nature-relax-guide.webp"
 image_alt: "NRW州の公園や自然の中で休暇を過ごすイメージ"
 image_caption: "AI生成の編集イメージ。特定の場所や実際の休日を記録した写真ではありません。"

@@ -22,7 +22,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "暮らしのコラム"
 next_review: "2027-10-15"
-tags: ["退職", "解約", "解雇", "試用期間", "仕事"]
+tags: ["退職", "解約", "解雇", "試用期間", "仕事", "労働法", "転職", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

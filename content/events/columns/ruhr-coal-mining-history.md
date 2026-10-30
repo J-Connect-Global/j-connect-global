@@ -24,7 +24,7 @@ area: "ルール地方"
 location: "ツォルフェアアイン炭鉱業遺産群（エッセン）など"
 event_date: "ドイツ雑学のコラム"
 next_review: "2027-10-01"
-tags: ["ルール地方", "炭鉱", "ツォルフェアアイン", "世界遺産", "エッセン"]
+tags: ["ルール地方", "炭鉱", "ツォルフェアアイン", "世界遺産", "エッセン", "ドイツ雑学", "歴史", "NRW"]
 published: true
 status: "published"
 source_type: "manual"

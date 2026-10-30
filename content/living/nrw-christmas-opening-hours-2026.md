@@ -11,7 +11,7 @@ updated_at: "2026-10-28"
 last_verified: "2026-10-28"
 next_review: "2026-12-01"
 canonical_url: "/germany/ja/living/nrw-christmas-opening-hours-2026/"
-tags: ["NRW", "クリスマス", "営業時間", "スーパー", "薬局"]
+tags: ["NRW", "クリスマス", "営業時間", "スーパー", "薬局", "公共交通", "2026年"]
 image: "/assets/img/living/nrw-christmas-opening-hours-2026.webp"
 image_alt: "クリスマスの飾りがあるスーパーの入り口と、買い物袋を持つ人を描いたイラスト"
 image_caption: "イラスト：J-Connect。クリスマス時期の買い物のテーマを表したもので、特定の店舗を描いたものではありません。"

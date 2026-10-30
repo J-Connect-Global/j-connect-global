@@ -18,7 +18,7 @@ location: "フランクフルト見本市会場"
 event_date: "2026-10-07〜2026-10-11"
 next_review: "2027-07-01"
 published_at: "2026-08-29"
-tags: ["フランクフルト", "ブックフェア", "チェコ", "読書", "翻訳"]
+tags: ["フランクフルト", "ブックフェア", "2026年10月", "チェコ", "読書", "翻訳"]
 published: true
 status: "published"
 source_type: "manual"

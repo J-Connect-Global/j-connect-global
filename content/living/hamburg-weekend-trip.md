@@ -3,7 +3,7 @@ id: "T010"
 title: "ハンブルク1泊2日｜港・倉庫街・公共交通の船で水都を知る"
 slug: "hamburg-weekend-trip"
 category: "観光"
-tags: ["ハンブルク", "週末旅行", "港町"]
+tags: ["ハンブルク", "週末旅行", "港町", "ドイツ"]
 summary: "ハンブルクを、ハンザ交易、港湾労働、倉庫街、現代建築、市民の水辺から読む週末ガイド。エルベ川と運河が街を変えてきた歴史をたどります。"
 status: "published"
 published: true

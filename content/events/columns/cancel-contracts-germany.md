@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "暮らしのコラム"
 next_review: "2027-10-15"
-tags: ["契約", "解約", "ジム", "スマートフォン", "インターネット"]
+tags: ["契約", "解約", "ジム", "スマホ", "インターネット", "サブスク", "消費者", "帰国", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

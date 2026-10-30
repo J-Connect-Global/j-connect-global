@@ -17,9 +17,10 @@
     "tags": [
       "日本文化",
       "日独交流",
-      "デュッセルドルフ",
+      "Düsseldorf",
       "日本人コミュニティ",
-      "花火"
+      "花火",
+      "NRW"
     ],
     "home_visible": true,
     "home_order": 10,
@@ -40,8 +41,8 @@
     "disclaimer_type": "event",
     "related_articles": [],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-06-28",
       "next_review_due": "2027-06-28"
     }
@@ -62,6 +63,8 @@
     "tags": [
       "クリスマスマーケット",
       "デュッセルドルフ",
+      "2026年11月",
+      "2026年12月",
       "アドベント",
       "冬"
     ],
@@ -97,8 +100,8 @@
       "nrw-christmas-opening-hours-2026"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-28",
       "next_review_due": "2026-11-18"
     },
@@ -127,11 +130,12 @@
     "updated_at": "2026-06-12",
     "last_verified": "2026-07-06",
     "tags": [
-      "子連れ",
-      "週末旅行",
+      "家族向け",
+      "週末",
       "NRW",
       "博物館",
-      "市民祭"
+      "市民祭",
+      "地域文化"
     ],
     "home_visible": true,
     "home_order": 30,
@@ -147,8 +151,8 @@
     "disclaimer_type": "event",
     "related_articles": [],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-07-06",
       "next_review_due": "2027-06-12"
     }
@@ -169,7 +173,7 @@
     "tags": [
       "マーケット",
       "中古文化",
-      "週末旅行",
+      "週末",
       "ケルン",
       "地域交流"
     ],
@@ -187,8 +191,8 @@
     "disclaimer_type": "event",
     "related_articles": [],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-07-06",
       "next_review_due": "2027-06-12"
     }
@@ -211,7 +215,8 @@
       "映画文化",
       "ボン",
       "字幕上映",
-      "大学"
+      "大学",
+      "文化交流"
     ],
     "home_visible": true,
     "home_order": 50,
@@ -227,8 +232,8 @@
     "disclaimer_type": "event",
     "related_articles": [],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-07-06",
       "next_review_due": "2027-06-12"
     }
@@ -255,7 +260,9 @@
       "熱波",
       "夏",
       "住まい",
-      "医療・健康"
+      "健康",
+      "都市",
+      "ドイツ生活"
     ],
     "home_visible": false,
     "home_order": 900,
@@ -271,8 +278,8 @@
     "disclaimer_type": "news_explainer",
     "related_articles": [],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-07-06",
       "next_review_due": "2026-12-28"
     }
@@ -300,6 +307,7 @@
       "サッカー",
       "パブリックビューイング",
       "応援文化",
+      "ドイツ",
       "時差"
     ],
     "home_visible": false,
@@ -316,8 +324,8 @@
     "disclaimer_type": "news_explainer",
     "related_articles": [],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-07-06",
       "next_review_due": "2026-12-28"
     }
@@ -342,7 +350,8 @@
       "ケルン",
       "アニメ",
       "音楽",
-      "茶文化"
+      "茶文化",
+      "文化交流"
     ],
     "home_visible": false,
     "home_order": 5,
@@ -365,8 +374,8 @@
       "cologne-city-guide"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-07-19",
       "next_review_due": "2026-08-20"
     },
@@ -395,7 +404,8 @@
       "ケルン",
       "ゲーム文化",
       "ゲーム開発",
-      "インディーゲーム"
+      "インディーゲーム",
+      "ファン文化"
     ],
     "home_visible": false,
     "home_order": 10,
@@ -435,8 +445,8 @@
       "family-weekend-events-nrw"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-01",
       "next_review_due": "2026-08-24"
     }
@@ -464,7 +474,9 @@
       "デュッセルドルフ",
       "日本文化",
       "仏教",
-      "茶"
+      "茶",
+      "書",
+      "NRW"
     ],
     "home_visible": false,
     "home_order": 11,
@@ -500,8 +512,8 @@
       "natsu-hikari-japan-festival-cologne"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-29",
       "next_review_due": "2026-09-08"
     }
@@ -529,7 +541,8 @@
       "日本美術",
       "中国美術",
       "韓国美術",
-      "東アジア美術"
+      "東アジア美術",
+      "美術館"
     ],
     "home_visible": true,
     "home_order": 12,
@@ -565,8 +578,8 @@
       "family-weekend-events-nrw"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-29",
       "next_review_due": "2026-10-20"
     }
@@ -594,7 +607,8 @@
       "ボン",
       "クラシック",
       "現代音楽",
-      "子連れ"
+      "家族向け",
+      "NRW"
     ],
     "home_visible": false,
     "home_order": 13,
@@ -630,8 +644,8 @@
       "family-weekend-events-nrw"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-29",
       "next_review_due": "2026-09-01"
     }
@@ -662,7 +676,8 @@
       "小学校",
       "子育て",
       "NRW",
-      "学童保育"
+      "学童保育",
+      "学校生活"
     ],
     "home_visible": false,
     "home_order": 1,
@@ -699,8 +714,8 @@
     "disclaimer_type": "news_explainer",
     "related_articles": [],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-08",
       "next_review_due": "2026-09-15"
     }
@@ -731,7 +746,8 @@
       "生成AI",
       "AI表示",
       "ディープフェイク",
-      "消費者"
+      "消費者",
+      "ドイツ"
     ],
     "home_visible": false,
     "home_order": 0,
@@ -768,8 +784,8 @@
     "disclaimer_type": "news_explainer",
     "related_articles": [],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-08",
       "next_review_due": "2026-10-01"
     }
@@ -800,7 +816,8 @@
       "家電",
       "スマートフォン",
       "消費者保護",
-      "EU"
+      "EU",
+      "ドイツ"
     ],
     "home_visible": false,
     "home_order": 2,
@@ -837,8 +854,8 @@
     "disclaimer_type": "news_explainer",
     "related_articles": [],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-08",
       "next_review_due": "2026-11-01"
     }
@@ -867,9 +884,10 @@
     "tags": [
       "暖房",
       "建物近代化法",
-      "住まい",
+      "住宅",
       "ガス",
-      "ヒートポンプ"
+      "ヒートポンプ",
+      "家計"
     ],
     "home_visible": false,
     "home_order": 3,
@@ -898,8 +916,8 @@
     "disclaimer_type": "news_explainer",
     "related_articles": [],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-08",
       "next_review_due": "2026-12-05"
     }
@@ -926,9 +944,10 @@
     "updated_at": "2026-08-30",
     "last_verified": "2026-08-08",
     "tags": [
-      "雇用",
-      "失業",
+      "ドイツ雇用",
+      "失業率",
       "求職",
+      "失業給付",
       "健康保険",
       "在留資格"
     ],
@@ -958,8 +977,8 @@
       "germany-inflation-july-2026"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-08",
       "next_review_due": "2026-08-31"
     }
@@ -986,10 +1005,12 @@
     "updated_at": "2026-08-30",
     "last_verified": "2026-08-08",
     "tags": [
-      "物価",
+      "ドイツ物価",
+      "インフレ",
       "家計",
       "エネルギー",
-      "食品"
+      "食品",
+      "消費者物価"
     ],
     "home_visible": false,
     "home_order": 5,
@@ -1017,8 +1038,8 @@
       "germany-unemployment-july-2026"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-08",
       "next_review_due": "2026-08-13"
     }
@@ -1049,7 +1070,8 @@
       "低水位",
       "カウプ",
       "観光船",
-      "フェリー"
+      "フェリー",
+      "ドイツ旅行"
     ],
     "home_visible": false,
     "home_order": 6,
@@ -1088,8 +1110,8 @@
       "germany-import-prices-june-2026"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-08",
       "next_review_due": "2026-08-15"
     }
@@ -1120,7 +1142,8 @@
       "包装廃棄物",
       "リサイクル",
       "オンライン注文",
-      "買い物"
+      "買い物",
+      "環境"
     ],
     "home_visible": false,
     "home_order": 7,
@@ -1152,8 +1175,8 @@
       "germany-import-prices-june-2026"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-08",
       "next_review_due": "2026-11-15"
     }
@@ -1184,6 +1207,7 @@
       "行政手続き",
       "中小企業",
       "働き方",
+      "サービス",
       "ドイツ経済"
     ],
     "home_visible": false,
@@ -1209,8 +1233,8 @@
       "eu-ai-act-transparency-august-2026"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-08",
       "next_review_due": "2027-01-31"
     }
@@ -1237,9 +1261,12 @@
     "updated_at": "2026-08-30",
     "last_verified": "2026-08-08",
     "tags": [
+      "ドイツGDP",
       "ドイツ経済",
+      "景気",
       "家計",
-      "雇用"
+      "雇用",
+      "暮らし"
     ],
     "home_visible": false,
     "home_order": 9,
@@ -1268,8 +1295,8 @@
       "germany-import-prices-june-2026"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-08",
       "next_review_due": "2026-08-26"
     }
@@ -1296,9 +1323,10 @@
     "updated_at": "2026-08-30",
     "last_verified": "2026-08-08",
     "tags": [
-      "航空運賃",
+      "ドイツ航空券",
       "一時帰国",
-      "子連れ",
+      "家族旅行",
+      "航空運賃",
       "空港",
       "家計"
     ],
@@ -1323,8 +1351,8 @@
       "germany-inflation-july-2026"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-08",
       "next_review_due": "2027-01-31"
     }
@@ -1351,9 +1379,12 @@
     "updated_at": "2026-08-30",
     "last_verified": "2026-08-08",
     "tags": [
+      "ドイツ輸入物価",
       "物価",
       "家計",
-      "エネルギー"
+      "エネルギー",
+      "日用品",
+      "ドイツ生活"
     ],
     "home_visible": false,
     "home_order": 11,
@@ -1382,8 +1413,8 @@
       "germany-gdp-q2-2026"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-08",
       "next_review_due": "2026-08-31"
     }
@@ -1412,7 +1443,8 @@
       "文化遺産",
       "建築",
       "産業遺産",
-      "インフラ"
+      "インフラ",
+      "NRW"
     ],
     "home_visible": false,
     "home_order": 1,
@@ -1440,8 +1472,8 @@
       "family-weekend-events-nrw"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-29",
       "next_review_due": "2026-09-12"
     }
@@ -1466,11 +1498,12 @@
     "updated_at": "2026-08-30",
     "last_verified": "2026-08-29",
     "tags": [
-      "デュッセルドルフ",
+      "Düsseldorf",
       "オクトーバーフェスト",
       "バイエルン文化",
       "ライブ音楽",
-      "秋イベント"
+      "秋イベント",
+      "NRW"
     ],
     "home_visible": false,
     "home_order": 2,
@@ -1502,8 +1535,8 @@
       "family-weekend-events-nrw"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-29",
       "next_review_due": "2026-09-09"
     }
@@ -1532,7 +1565,8 @@
       "ケルン",
       "市民スポーツ",
       "沿道応援",
-      "都市文化"
+      "都市文化",
+      "ランニング"
     ],
     "home_visible": false,
     "home_order": 3,
@@ -1564,8 +1598,8 @@
       "germany-labour-market-august-2026"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-29",
       "next_review_due": "2026-10-03"
     }
@@ -1592,6 +1626,7 @@
     "tags": [
       "フランクフルト",
       "ブックフェア",
+      "2026年10月",
       "チェコ",
       "読書",
       "翻訳"
@@ -1627,8 +1662,8 @@
       "german-bread-culture"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-19",
       "next_review_due": "2027-07-01"
     },
@@ -1659,7 +1694,8 @@
       "ケルン",
       "現代美術",
       "アートフェア",
-      "ギャラリー"
+      "ギャラリー",
+      "美術市場"
     ],
     "home_visible": true,
     "home_order": 2,
@@ -1692,8 +1728,8 @@
       "kommern-saint-martin-2026-guide"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-19",
       "next_review_due": "2026-11-09"
     }
@@ -1720,10 +1756,12 @@
     "updated_at": "2026-08-30",
     "last_verified": "2026-08-29",
     "tags": [
+      "2026年9月",
       "制度変更",
       "環境表示",
       "税務相談",
-      "ドイツ鉄道"
+      "ドイツ鉄道",
+      "ドイツ生活"
     ],
     "home_visible": false,
     "home_order": 1,
@@ -1748,8 +1786,8 @@
       "eu-ai-act-transparency-august-2026"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-29",
       "next_review_due": "2026-10-01"
     }
@@ -1778,9 +1816,10 @@
     "tags": [
       "NRW",
       "建築ルール",
-      "住まい",
+      "住宅",
       "リノベーション",
-      "用途変更"
+      "用途変更",
+      "電子行政"
     ],
     "home_visible": false,
     "home_order": 2,
@@ -1805,8 +1844,8 @@
       "germany-information-triage-guide"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-29",
       "next_review_due": "2026-10-01"
     }
@@ -1833,11 +1872,12 @@
     "updated_at": "2026-08-30",
     "last_verified": "2026-08-29",
     "tags": [
-      "雇用",
-      "失業",
+      "ドイツ雇用",
+      "失業率",
       "転職",
       "求人",
-      "求職"
+      "求職",
+      "仕事"
     ],
     "home_visible": false,
     "home_order": 3,
@@ -1866,8 +1906,8 @@
       "germany-bureaucracy-costs-2026"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-29",
       "next_review_due": "2026-09-30"
     }
@@ -1898,7 +1938,8 @@
       "居場所",
       "友人",
       "地域コミュニティ",
-      "日本人コミュニティ"
+      "日本人コミュニティ",
+      "ドイツ生活"
     ],
     "home_visible": false,
     "home_order": 1,
@@ -1927,8 +1968,8 @@
       "germany-information-triage-guide"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-29",
       "next_review_due": "2027-02-28"
     }
@@ -1956,9 +1997,11 @@
     "last_verified": "2026-08-29",
     "tags": [
       "情報リテラシー",
+      "公式情報",
       "AI",
       "行政手続き",
-      "SNS"
+      "SNS",
+      "ドイツ生活"
     ],
     "home_visible": false,
     "home_order": 2,
@@ -1987,8 +2030,8 @@
       "germany-bureaucracy-costs-2026"
     ],
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-08-29",
       "next_review_due": "2027-02-28"
     }
@@ -2018,6 +2061,7 @@
     "tags": [
       "エッセン",
       "光の祭典",
+      "2026年10月",
       "秋",
       "アート",
       "街歩き"
@@ -2044,8 +2088,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "event",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-19",
       "next_review_due": "2027-08-01"
     }
@@ -2079,7 +2123,10 @@
     "tags": [
       "エッセン",
       "ボードゲーム",
-      "子連れ"
+      "2026年10月",
+      "家族",
+      "遊び",
+      "文化"
     ],
     "published": true,
     "status": "published",
@@ -2103,8 +2150,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "event",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-19",
       "next_review_due": "2026-10-26"
     }
@@ -2139,7 +2186,8 @@
       "聖マルティン祭",
       "ランタン",
       "コメルン",
-      "子連れ",
+      "2026年11月",
+      "家族",
       "地域文化"
     ],
     "published": true,
@@ -2164,8 +2212,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "event",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-19",
       "next_review_due": "2026-11-09"
     }
@@ -2203,9 +2251,11 @@
     "next_review": "2026-10-15",
     "tags": [
       "物価",
+      "インフレ",
       "家計",
       "食品",
-      "エネルギー"
+      "エネルギー",
+      "ドイツ生活"
     ],
     "published": true,
     "status": "published",
@@ -2229,8 +2279,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-09-17",
       "next_review_due": "2026-10-15"
     }
@@ -2271,7 +2321,8 @@
       "ケルン",
       "アントワープ",
       "ベルギー",
-      "ブリュッセル空港"
+      "ブリュッセル空港",
+      "鉄道旅行"
     ],
     "published": true,
     "status": "published",
@@ -2295,8 +2346,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-09-17",
       "next_review_due": "2026-10-18"
     }
@@ -2337,7 +2388,8 @@
       "防災",
       "スマートフォン",
       "サイレン",
-      "公共サービス"
+      "公共サービス",
+      "ドイツ生活"
     ],
     "published": true,
     "status": "published",
@@ -2361,8 +2413,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-09-17",
       "next_review_due": "2026-10-18"
     }
@@ -2397,8 +2449,10 @@
     "tags": [
       "パン",
       "食文化",
+      "ドイツ生活",
       "ライ麦",
-      "地域文化"
+      "地域文化",
+      "季節"
     ],
     "published": true,
     "status": "published",
@@ -2422,8 +2476,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-09-17",
       "next_review_due": "2027-03-18"
     }
@@ -2464,7 +2518,8 @@
       "森",
       "散歩",
       "紅葉",
-      "自然観察"
+      "自然観察",
+      "ドイツ生活"
     ],
     "published": true,
     "status": "published",
@@ -2488,8 +2543,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-09-17",
       "next_review_due": "2027-09-01"
     }
@@ -2518,11 +2573,12 @@
     "event_date": "2027年1月1日から新料金",
     "next_review": "2026-12-01",
     "tags": [
-      "ドイツチケット",
+      "Deutschlandticket",
       "公共交通",
       "定期券",
       "値上げ",
-      "ドイツ鉄道"
+      "Deutsche Bahn",
+      "2027年"
     ],
     "published": true,
     "status": "published",
@@ -2541,8 +2597,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-19",
       "next_review_due": "2026-12-01"
     },
@@ -2580,11 +2636,12 @@
     "event_date": "2026-12-13から2027年ダイヤ",
     "next_review": "2026-12-12",
     "tags": [
-      "ドイツ鉄道",
+      "Deutsche Bahn",
       "ICE",
       "2027年ダイヤ",
       "Familienticket",
-      "鉄道"
+      "鉄道旅行",
+      "NRW"
     ],
     "published": true,
     "status": "published",
@@ -2603,8 +2660,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-19",
       "next_review_due": "2026-12-12"
     },
@@ -2642,7 +2699,9 @@
     "event_date": "2026-10-25 夏時間終了",
     "next_review": "2027-10-01",
     "tags": [
+      "冬時間",
       "時間変更",
+      "ドイツ生活",
       "日本との時差",
       "秋",
       "時計"
@@ -2664,8 +2723,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-19",
       "next_review_due": "2027-10-01"
     },
@@ -2721,11 +2780,13 @@
     "event_date": "2027年1月1日前後",
     "next_review": "2026-12-01",
     "tags": [
+      "ドイツ生活",
       "制度改正",
       "最低賃金",
       "ドイツチケット",
       "社会保険",
-      "児童手当"
+      "児童手当",
+      "税金"
     ],
     "published": true,
     "status": "published",
@@ -2744,8 +2805,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-21",
       "next_review_due": "2026-12-01"
     },
@@ -2799,7 +2860,10 @@
       "外務省",
       "デモ",
       "フランス",
-      "NRW"
+      "NRW",
+      "在留届",
+      "たびレジ",
+      "ドイツ生活"
     ],
     "published": true,
     "status": "published",
@@ -2818,8 +2882,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-21",
       "next_review_due": "2026-10-30"
     },
@@ -2842,8 +2906,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-26",
       "next_review_due": "2026-12-15"
     },
@@ -2854,10 +2918,14 @@
     "last_verified": "2026-10-26",
     "tags": [
       "健康保険",
+      "公的医療保険",
       "追加保険料",
       "Zusatzbeitrag",
       "保険組合",
-      "乗り換え"
+      "乗り換え",
+      "2027年",
+      "ドイツ生活",
+      "手取り"
     ],
     "updated_at": "2026-10-26",
     "related_articles": [
@@ -2918,8 +2986,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-26",
       "next_review_due": "2027-10-01"
     },
@@ -2933,7 +3001,11 @@
       "結露",
       "換気",
       "暖房",
-      "湿度"
+      "湿度",
+      "冬",
+      "賃貸",
+      "ドイツ生活",
+      "Lüften"
     ],
     "updated_at": "2026-10-26",
     "related_articles": [
@@ -2990,8 +3062,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-26",
       "next_review_due": "2027-10-01"
     },
@@ -3003,6 +3075,8 @@
     "tags": [
       "日曜日",
       "閉店法",
+      "ドイツ雑学",
+      "ドイツ生活",
       "買い物",
       "NRW",
       "祝日"
@@ -3063,8 +3137,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-26",
       "next_review_due": "2027-04-01"
     },
@@ -3076,9 +3150,12 @@
     "tags": [
       "アウトバーン",
       "速度制限",
+      "ドイツ雑学",
       "車",
       "運転",
-      "ケルン"
+      "ケルン",
+      "ボン",
+      "NRW"
     ],
     "updated_at": "2026-10-26",
     "related_articles": [
@@ -3135,8 +3212,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-26",
       "next_review_due": "2027-04-23"
     },
@@ -3147,10 +3224,13 @@
     "last_verified": "2026-10-26",
     "tags": [
       "ビール",
+      "ビール純粋令",
+      "ドイツ雑学",
       "食文化",
       "ケルシュ",
       "アルトビール",
-      "バイエルン"
+      "バイエルン",
+      "NRW"
     ],
     "updated_at": "2026-10-26",
     "related_articles": [
@@ -3207,8 +3287,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-26",
       "next_review_due": "2027-03-01"
     },
@@ -3222,7 +3302,10 @@
       "11月11日",
       "ケルン",
       "デュッセルドルフ",
-      "季節行事"
+      "ドイツ雑学",
+      "季節文化",
+      "NRW",
+      "ラインラント"
     ],
     "updated_at": "2026-10-26",
     "related_articles": [
@@ -3279,8 +3362,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-27",
       "next_review_due": "2027-10-01"
     },
@@ -3292,9 +3375,12 @@
     "tags": [
       "水道水",
       "硬水",
+      "ドイツ雑学",
+      "ドイツ生活",
       "鉛管",
       "デュッセルドルフ",
-      "ケルン"
+      "ケルン",
+      "NRW"
     ],
     "updated_at": "2026-10-27",
     "related_articles": [
@@ -3351,8 +3437,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-27",
       "next_review_due": "2027-10-01"
     },
@@ -3364,9 +3450,12 @@
     "tags": [
       "祝日",
       "州",
+      "ドイツ雑学",
+      "ドイツ生活",
       "NRW",
       "万聖節",
-      "聖体祭"
+      "聖体祭",
+      "2027年"
     ],
     "updated_at": "2026-10-27",
     "related_articles": [
@@ -3423,8 +3512,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-27",
       "next_review_due": "2027-11-01"
     },
@@ -3436,7 +3525,10 @@
     "tags": [
       "アドベント",
       "クリスマス",
-      "季節行事",
+      "アドベントクランツ",
+      "アドベントカレンダー",
+      "ドイツ雑学",
+      "季節文化",
       "ハンブルク"
     ],
     "updated_at": "2026-10-27",
@@ -3494,8 +3586,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-27",
       "next_review_due": "2027-07-01"
     },
@@ -3508,6 +3600,8 @@
       "現金",
       "キャッシュレス",
       "ギロカード",
+      "ドイツ雑学",
+      "ドイツ生活",
       "買い物",
       "支払い"
     ],
@@ -3558,8 +3652,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-27",
       "next_review_due": "2027-11-01"
     },
@@ -3570,8 +3664,10 @@
     "last_verified": "2026-10-27",
     "tags": [
       "クリスマス",
+      "クリスマスツリー",
       "もみの木",
-      "季節行事",
+      "ドイツ雑学",
+      "季節文化",
       "冬"
     ],
     "updated_at": "2026-10-27",
@@ -3625,8 +3721,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-27",
       "next_review_due": "2027-04-01"
     },
@@ -3640,7 +3736,10 @@
       "遅延",
       "定時率",
       "乗客の権利",
-      "払い戻し"
+      "払い戻し",
+      "ドイツ雑学",
+      "ドイツ生活",
+      "ICE"
     ],
     "updated_at": "2026-10-27",
     "related_articles": [
@@ -3697,8 +3796,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-27",
       "next_review_due": "2027-04-01"
     },
@@ -3709,8 +3808,10 @@
     "last_verified": "2026-10-27",
     "tags": [
       "ワイン",
+      "ドイツワイン",
       "リースリング",
       "モーゼル",
+      "ドイツ雑学",
       "食文化",
       "ライン川"
     ],
@@ -3769,8 +3870,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-01"
     },
@@ -3781,6 +3882,10 @@
     "last_verified": "2026-10-29",
     "tags": [
       "クラインガルテン",
+      "市民農園",
+      "シュレーバーガルテン",
+      "ドイツ雑学",
+      "ドイツ生活",
       "庭",
       "デュッセルドルフ",
       "ケルン"
@@ -3840,8 +3945,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2026-12-10"
     },
@@ -3855,7 +3960,10 @@
       "シルベスター",
       "花火",
       "年末年始",
-      "季節行事"
+      "ドイツ雑学",
+      "季節文化",
+      "デュッセルドルフ",
+      "ケルン"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -3912,8 +4020,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-11-01"
     },
@@ -3927,7 +4035,9 @@
       "クリスマスマーケット",
       "クリスマス",
       "ワイン",
-      "食文化"
+      "ドイツ雑学",
+      "食文化",
+      "冬"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -3980,8 +4090,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-11-01"
     },
@@ -3995,7 +4105,10 @@
       "12月6日",
       "クリスマス",
       "アドベント",
-      "ヴェックマン"
+      "ヴェックマン",
+      "ドイツ雑学",
+      "季節文化",
+      "ラインラント"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4052,8 +4165,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-01"
     },
@@ -4063,11 +4176,13 @@
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
     "tags": [
-      "大聖堂",
+      "ケルン大聖堂",
       "ケルン",
       "世界遺産",
       "ゴシック",
-      "歴史"
+      "ドイツ雑学",
+      "歴史",
+      "NRW"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4120,8 +4235,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-01"
     },
@@ -4135,7 +4250,10 @@
       "炭鉱",
       "ツォルフェアアイン",
       "世界遺産",
-      "エッセン"
+      "エッセン",
+      "ドイツ雑学",
+      "歴史",
+      "NRW"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4192,8 +4310,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-11-01"
     },
@@ -4207,7 +4325,10 @@
       "シュテルンジンガー",
       "1月6日",
       "年末年始",
-      "季節行事"
+      "ドイツ雑学",
+      "季節文化",
+      "ケルン",
+      "募金"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4264,8 +4385,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-01"
     },
@@ -4279,7 +4400,9 @@
       "ベルリン",
       "東西ドイツ",
       "冷戦",
-      "ドイツ統一"
+      "ドイツ統一",
+      "ドイツ雑学",
+      "歴史"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4336,8 +4459,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-08-01"
     },
@@ -4351,7 +4474,10 @@
       "成績",
       "成績表",
       "ギムナジウム",
-      "アビトゥーア"
+      "アビトゥーア",
+      "子育て",
+      "ドイツ雑学",
+      "NRW"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4400,8 +4526,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2026-11-15"
     },
@@ -4412,10 +4538,12 @@
     "last_verified": "2026-10-29",
     "tags": [
       "物価",
+      "インフレ",
       "家計",
       "エネルギー",
       "ガソリン",
-      "燃料税"
+      "燃料税",
+      "ドイツ生活"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4468,8 +4596,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2026-12-15"
     },
@@ -4483,7 +4611,9 @@
       "砂糖税",
       "清涼飲料",
       "健康保険",
-      "税金"
+      "税金",
+      "2027年",
+      "ドイツ生活"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4532,8 +4662,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2026-12-31"
     },
@@ -4547,7 +4677,10 @@
       "老後資金",
       "リースター",
       "ETF",
-      "補助金"
+      "補助金",
+      "2027年",
+      "お金",
+      "ドイツ生活"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4604,8 +4737,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2026-12-15"
     },
@@ -4619,7 +4752,11 @@
       "社会保険",
       "保険料",
       "子どものいない人",
-      "扶養"
+      "扶養",
+      "配偶者",
+      "2027年",
+      "手取り",
+      "ドイツ生活"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4672,8 +4809,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2026-12-15"
     },
@@ -4687,7 +4824,10 @@
       "家具付き物件",
       "短期賃貸",
       "インデックス賃料",
-      "法改正"
+      "家賃",
+      "法改正",
+      "住まい",
+      "ドイツ生活"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4740,8 +4880,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2026-12-15"
     },
@@ -4753,9 +4893,12 @@
     "tags": [
       "住宅手当",
       "Wohngeld",
-      "賃貸",
-      "暖房",
-      "社会保障"
+      "家賃",
+      "暖房費",
+      "社会保障",
+      "2027年",
+      "お金",
+      "ドイツ生活"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4808,8 +4951,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-02-01"
     },
@@ -4823,7 +4966,10 @@
       "新型コロナ",
       "ワクチン",
       "予防接種",
-      "STIKO"
+      "STIKO",
+      "健康",
+      "冬",
+      "ドイツ生活"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4876,8 +5022,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-01-15"
     },
@@ -4887,10 +5033,15 @@
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
     "tags": [
+      "確定申告",
       "税金",
+      "還付",
       "ELSTER",
+      "所得税",
       "会社員",
-      "お金"
+      "期限",
+      "お金",
+      "ドイツ生活"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -4939,8 +5090,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-15"
     },
@@ -4954,7 +5105,10 @@
       "車",
       "乗り換え",
       "解約",
-      "節約"
+      "11月30日",
+      "節約",
+      "交通",
+      "ドイツ生活"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -5003,8 +5157,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2026-12-15"
     },
@@ -5018,7 +5172,10 @@
       "診断書",
       "仕事",
       "eAU",
-      "子どもの看病"
+      "子どもの看病",
+      "健康保険",
+      "働き方",
+      "ドイツ生活"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -5075,8 +5232,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-15"
     },
@@ -5090,7 +5247,11 @@
       "冬",
       "凍結",
       "歩道",
-      "賃貸"
+      "賃貸",
+      "住まい",
+      "ケルン",
+      "デュッセルドルフ",
+      "ドイツ生活"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -5143,8 +5304,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-15"
     },
@@ -5154,11 +5315,13 @@
     "published_at": "2026-10-29",
     "last_verified": "2026-10-29",
     "tags": [
-      "通販",
+      "ネット通販",
       "返品",
       "撤回",
       "ブラックフライデー",
-      "消費者"
+      "消費者",
+      "買い物",
+      "ドイツ生活"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -5215,8 +5378,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-15"
     },
@@ -5230,7 +5393,11 @@
       "万聖節",
       "国民哀悼の日",
       "死者の日曜日",
-      "11月"
+      "11月",
+      "祝日",
+      "NRW",
+      "ドイツ雑学",
+      "季節文化"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -5279,8 +5446,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-15"
     },
@@ -5294,7 +5461,9 @@
       "休暇",
       "仕事",
       "労働法",
-      "年末"
+      "年末",
+      "働き方",
+      "ドイツ生活"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -5351,8 +5520,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-15"
     },
@@ -5365,8 +5534,12 @@
       "契約",
       "解約",
       "ジム",
-      "スマートフォン",
-      "インターネット"
+      "スマホ",
+      "インターネット",
+      "サブスク",
+      "消費者",
+      "帰国",
+      "ドイツ生活"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
@@ -5423,8 +5596,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "editorial_column",
     "review": {
-      "status": "ai_drafted_editor_checked",
-      "reviewed_by": "Generative AI draft; checked by J-Connect editors",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-15"
     },
@@ -5438,7 +5611,10 @@
       "解約",
       "解雇",
       "試用期間",
-      "仕事"
+      "仕事",
+      "労働法",
+      "転職",
+      "ドイツ生活"
     ],
     "updated_at": "2026-10-29",
     "related_articles": [

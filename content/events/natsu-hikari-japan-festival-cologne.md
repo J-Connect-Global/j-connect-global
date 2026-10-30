@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-07-19"
 next_review: "2026-08-20"
 summary: "ケルンのNATSU HIKARI 2026を、アニメ、音楽、茶、食、マーケットが同居する現代の日本文化イベントとして紹介。二つの会場が作る雰囲気と文化の交わりを読み解きます。"
-tags: ["日本文化", "ケルン", "アニメ", "音楽", "茶文化"]
+tags: ["日本文化", "ケルン", "アニメ", "音楽", "茶文化", "文化交流"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/natsu-hikari-japan-festival-cologne/"

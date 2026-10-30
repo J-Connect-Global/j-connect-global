@@ -4358,7 +4358,6 @@
     }
   }
 
-/* Mobile: show article tables as stacked cards so nothing needs horizontal scrolling. */
 @media (max-width:640px){
   .jc-table-region .jc-table-scroll-hint{
     display:none;
@@ -4389,7 +4388,6 @@
   .jc-info-table tr,
   .jc-info-table td{
     display:block;
-    width:100%;
   }
 
   .jc-info-table tr{
@@ -4416,11 +4414,11 @@
 
   .jc-info-table td[data-label]:not([data-label=""])::before{
     content:attr(data-label);
+    content:attr(data-label) / "";
     display:block;
     margin-bottom:2px;
     color:var(--article-muted, #52606d);
     font-size:.78rem;
     font-weight:700;
-    line-height:1.4;
   }
 }

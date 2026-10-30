@@ -18,7 +18,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2026-09-10 全国警報訓練"
 next_review: "2026-10-18"
-tags: ["全国警報訓練", "防災", "スマートフォン", "サイレン", "公共サービス"]
+tags: ["全国警報訓練", "防災", "スマートフォン", "サイレン", "公共サービス", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

@@ -20,7 +20,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2026-12-31 2022年分の任意の申告の期限"
 next_review: "2027-01-15"
-tags: ["税金", "ELSTER", "会社員", "お金"]
+tags: ["確定申告", "税金", "還付", "ELSTER", "所得税", "会社員", "期限", "お金", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

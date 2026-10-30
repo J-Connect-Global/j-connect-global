@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-29"
 next_review: "2026-09-09"
 summary: "2026年9月10〜26日のデュッセルドルフ・オクトーバーフェストを、単なるビールイベントではなく、ミュンヘンで始まった祭りの歴史、バイエルンの服装・料理、現代の音楽テント文化から紹介します。"
-tags: ["デュッセルドルフ", "オクトーバーフェスト", "バイエルン文化", "ライブ音楽", "秋イベント"]
+tags: ["Düsseldorf", "オクトーバーフェスト", "バイエルン文化", "ライブ音楽", "秋イベント", "NRW"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/duesseldorf-oktoberfest-2026-guide/"

@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "ドイツ雑学のコラム"
 next_review: "2027-10-01"
-tags: ["祝日", "州", "NRW", "万聖節", "聖体祭"]
+tags: ["祝日", "州", "ドイツ雑学", "ドイツ生活", "NRW", "万聖節", "聖体祭", "2027年"]
 published: true
 status: "published"
 source_type: "manual"

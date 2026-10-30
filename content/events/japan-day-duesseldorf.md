@@ -9,7 +9,7 @@ event_date: "次回日程は公式発表を確認"
 published_at: "2026-06-12"
 last_verified: "2026-06-28"
 summary: "デュッセルドルフ日本デーを、食・武道・舞台・ポップカルチャー・花火が集まる催しとして紹介。大きな日本人コミュニティと街の関係、現地で見たい文化の交わりを解説します。"
-tags: ["日本文化", "日独交流", "デュッセルドルフ", "日本人コミュニティ", "花火"]
+tags: ["日本文化", "日独交流", "Düsseldorf", "日本人コミュニティ", "花火", "NRW"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/japan-day-duesseldorf/"

@@ -22,7 +22,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "クリスマスの季節（12月）"
 next_review: "2027-11-01"
-tags: ["クリスマス", "もみの木", "季節行事", "冬"]
+tags: ["クリスマス", "クリスマスツリー", "もみの木", "ドイツ雑学", "季節文化", "冬"]
 published: true
 status: "published"
 source_type: "manual"

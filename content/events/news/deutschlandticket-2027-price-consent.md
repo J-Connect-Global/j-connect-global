@@ -14,7 +14,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2027年1月1日から新料金"
 next_review: "2026-12-01"
-tags: ["ドイツチケット", "公共交通", "定期券", "値上げ", "ドイツ鉄道"]
+tags: ["Deutschlandticket", "公共交通", "定期券", "値上げ", "Deutsche Bahn", "2027年"]
 published: true
 status: "published"
 source_type: "manual"

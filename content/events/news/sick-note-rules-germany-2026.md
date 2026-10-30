@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2026年10月時点のルール（電話での診断書の廃止は未実施）"
 next_review: "2026-12-15"
-tags: ["病欠", "診断書", "仕事", "eAU", "子どもの看病"]
+tags: ["病欠", "診断書", "仕事", "eAU", "子どもの看病", "健康保険", "働き方", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

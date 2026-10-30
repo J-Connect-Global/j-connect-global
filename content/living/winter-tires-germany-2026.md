@@ -11,7 +11,7 @@ updated_at: "2026-10-20"
 last_verified: "2026-10-20"
 next_review: "2027-10-01"
 canonical_url: "/germany/ja/living/winter-tires-germany-2026/"
-tags: ["冬タイヤ", "ドイツ運転", "オールシーズンタイヤ", "交通安全"]
+tags: ["冬タイヤ", "ドイツ運転", "オールシーズンタイヤ", "交通安全", "2026年"]
 image_url: "/assets/img/living/winter-tires-germany-2026.webp"
 image_alt: "雪の残る路面に接した車の冬用タイヤと深い溝"
 related_articles: ["germany-train-travel-guide", "duesseldorf-family-trip", "germany-first-30-days"]

@@ -24,7 +24,7 @@ area: "ドイツの食文化"
 location: ""
 event_date: "ドイツ雑学のコラム"
 next_review: "2027-04-01"
-tags: ["ワイン", "リースリング", "モーゼル", "食文化", "ライン川"]
+tags: ["ワイン", "ドイツワイン", "リースリング", "モーゼル", "ドイツ雑学", "食文化", "ライン川"]
 published: true
 status: "published"
 source_type: "manual"

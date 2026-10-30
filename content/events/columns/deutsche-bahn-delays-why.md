@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "ドイツ雑学のコラム"
 next_review: "2027-04-01"
-tags: ["ドイツ鉄道", "遅延", "定時率", "乗客の権利", "払い戻し"]
+tags: ["ドイツ鉄道", "遅延", "定時率", "乗客の権利", "払い戻し", "ドイツ雑学", "ドイツ生活", "ICE"]
 published: true
 status: "published"
 source_type: "manual"

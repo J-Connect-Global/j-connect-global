@@ -18,7 +18,7 @@ area: "ドイツ西部・ベルギー"
 location: ""
 event_date: "2026-09-07 開業"
 next_review: "2026-10-18"
-tags: ["ICE", "ケルン", "アントワープ", "ベルギー", "ブリュッセル空港"]
+tags: ["ICE", "ケルン", "アントワープ", "ベルギー", "ブリュッセル空港", "鉄道旅行"]
 published: true
 status: "published"
 source_type: "manual"

@@ -24,7 +24,7 @@ area: "ベルリン"
 location: "ベルリンの壁記念センター（ベルナウアー通り）など"
 event_date: "ドイツ雑学のコラム"
 next_review: "2027-10-01"
-tags: ["ベルリンの壁", "ベルリン", "東西ドイツ", "冷戦", "ドイツ統一"]
+tags: ["ベルリンの壁", "ベルリン", "東西ドイツ", "冷戦", "ドイツ統一", "ドイツ雑学", "歴史"]
 published: true
 status: "published"
 source_type: "manual"

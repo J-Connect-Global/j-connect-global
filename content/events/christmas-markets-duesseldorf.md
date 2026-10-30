@@ -18,7 +18,7 @@ location: "旧市街・中心部の広場と通り"
 event_date: "2026-11-19〜2026-12-30"
 next_review: "2026-11-18"
 published_at: "2026-06-12"
-tags: ["クリスマスマーケット", "デュッセルドルフ", "アドベント", "冬"]
+tags: ["クリスマスマーケット", "デュッセルドルフ", "2026年11月", "2026年12月", "アドベント", "冬"]
 published: true
 status: "published"
 source_type: "manual"

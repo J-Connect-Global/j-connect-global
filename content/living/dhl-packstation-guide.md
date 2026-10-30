@@ -11,7 +11,7 @@ updated_at: "2026-10-20"
 last_verified: "2026-10-19"
 next_review: "2027-01-19"
 canonical_url: "/germany/ja/living/dhl-packstation-guide/"
-tags: ["DHL", "Packstation", "宅配ロッカー", "荷物", "通販"]
+tags: ["DHL", "Packstation", "宅配ロッカー", "荷物", "通販", "受け取り"]
 image: "/assets/img/living/dhl-packstation-guide.webp"
 image_alt: "黄色い宅配ロッカーから荷物を受け取る人とスマートフォン"
 image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。"

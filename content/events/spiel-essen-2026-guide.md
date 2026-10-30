@@ -15,7 +15,7 @@ city: "エッセン"
 location: "エッセン見本市会場"
 event_date: "2026-10-22〜2026-10-25"
 next_review: "2026-10-26"
-tags: ["エッセン", "ボードゲーム", "子連れ"]
+tags: ["エッセン", "ボードゲーム", "2026年10月", "家族", "遊び", "文化"]
 published: true
 status: "published"
 source_type: "manual"

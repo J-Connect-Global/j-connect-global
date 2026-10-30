@@ -20,7 +20,7 @@ area: "NRW"
 location: ""
 event_date: "ドイツ雑学のコラム"
 next_review: "2027-08-01"
-tags: ["学校", "成績", "成績表", "ギムナジウム", "アビトゥーア"]
+tags: ["学校", "成績", "成績表", "ギムナジウム", "アビトゥーア", "子育て", "ドイツ雑学", "NRW"]
 published: true
 status: "published"
 source_type: "manual"

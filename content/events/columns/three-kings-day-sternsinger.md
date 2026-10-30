@@ -24,7 +24,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2027-01-06 三賢王の日"
 next_review: "2027-11-01"
-tags: ["三賢王の日", "シュテルンジンガー", "1月6日", "年末年始", "季節行事"]
+tags: ["三賢王の日", "シュテルンジンガー", "1月6日", "年末年始", "ドイツ雑学", "季節文化", "ケルン", "募金"]
 published: true
 status: "published"
 source_type: "manual"

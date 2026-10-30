@@ -11,7 +11,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-08-01"
 next_review: "2026-08-24"
 summary: "2026年8月26〜30日のgamescomを、新作試遊だけでなく、開発者、配信者、コスプレ、インディー作品、国際的なファン文化が集まる場として紹介。初参加で見たい文化的な層を解説します。"
-tags: ["gamescom", "ケルン", "ゲーム文化", "ゲーム開発", "インディーゲーム"]
+tags: ["gamescom", "ケルン", "ゲーム文化", "ゲーム開発", "インディーゲーム", "ファン文化"]
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/gamescom-2026-cologne-guide/"

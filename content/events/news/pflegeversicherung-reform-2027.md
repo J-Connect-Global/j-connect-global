@@ -22,7 +22,7 @@ area: "ドイツ全土"
 location: ""
 event_date: "2027-01-01 施行予定（連邦議会の議決が必要）"
 next_review: "2026-12-15"
-tags: ["介護保険", "社会保険", "保険料", "子どものいない人", "扶養"]
+tags: ["介護保険", "社会保険", "保険料", "子どものいない人", "扶養", "配偶者", "2027年", "手取り", "ドイツ生活"]
 published: true
 status: "published"
 source_type: "manual"

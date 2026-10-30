@@ -873,15 +873,16 @@ function collectTable(lines, start, context) {
     index += 1;
   }
 
-  const head = `<thead><tr>${header.map((cell) => `<th>${renderInline(cell, context)}</th>`).join('')}</tr></thead>`;
+  // Explicit roles keep table semantics for screen readers when mobile CSS stacks rows as cards.
+  const head = `<thead role="rowgroup"><tr role="row">${header.map((cell) => `<th role="columnheader" scope="col">${renderInline(cell, context)}</th>`).join('')}</tr></thead>`;
   const headerLabels = header.map((cell) => renderInline(cell, context).replace(/<[^>]+>/g, '').trim());
-  const bodyRows = rows.map((row) => `<tr>${row.map((cell, cellIndex) => `<td data-label="${escapeAttribute(headerLabels[cellIndex] || '')}">${renderInline(cell, context)}</td>`).join('')}</tr>`).join('\n');
+  const bodyRows = rows.map((row) => `<tr role="row">${row.map((cell, cellIndex) => `<td role="cell" data-label="${escapeAttribute(headerLabels[cellIndex] || '')}">${renderInline(cell, context)}</td>`).join('')}</tr>`).join('\n');
   context.tableIndex = Number(context.tableIndex || 0) + 1;
   const tableId = `${context.item.slug}-table-${context.tableIndex}`;
   const hintId = `${tableId}-scroll-hint`;
 
   return {
-    html: `<div class="jc-table-region">\n  <p class="jc-table-scroll-hint" id="${escapeAttribute(hintId)}">この表は横にスクロールできます。表にフォーカスした後、左右の矢印キーでも内容を確認できます。</p>\n  <div class="jc-table-wrap" role="region" aria-label="記事内の情報表（横スクロール可能）" aria-describedby="${escapeAttribute(hintId)}" tabindex="0">\n    <table class="jc-info-table">\n      ${head}\n      <tbody>\n${indent(bodyRows, 8)}\n      </tbody>\n    </table>\n  </div>\n</div>`,
+    html: `<div class="jc-table-region">\n  <p class="jc-table-scroll-hint" id="${escapeAttribute(hintId)}">この表は横にスクロールできます。表にフォーカスした後、左右の矢印キーでも内容を確認できます。</p>\n  <div class="jc-table-wrap" role="region" aria-label="記事内の情報表（横スクロール可能）" aria-describedby="${escapeAttribute(hintId)}" tabindex="0">\n    <table class="jc-info-table" role="table">\n      ${head}\n      <tbody role="rowgroup">\n${indent(bodyRows, 8)}\n      </tbody>\n    </table>\n  </div>\n</div>`,
     nextIndex: index
   };
 }
@@ -2948,8 +2949,8 @@ function normalizeSources(value) {
 function normalizeReview(item) {
   const reviewed = item.review?.last_reviewed_at || item.last_verified || item.updated_at || item.published_at || '';
   return {
-    status: item.review?.status || 'ai_drafted_editor_checked',
-    reviewed_by: item.review?.reviewed_by || 'Generative AI draft; checked by J-Connect editors',
+    status: item.review?.status || (reviewed ? 'reviewed' : 'pending'),
+    reviewed_by: item.review?.reviewed_by || `${SITE_NAME} editorial`,
     last_reviewed_at: reviewed,
     next_review_due: item.review?.next_review_due || ''
   };

@@ -396,7 +396,7 @@ ${THEME_INIT_SCRIPT}
   <script src="/assets/js/site-identity.js"></script>
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeAttribute(item.summary)}">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="${item.sitemap_visible === false ? 'noindex, follow' : 'index, follow'}">
   <link rel="canonical" href="${escapeAttribute(canonicalHref)}">
 ${indent(renderJaHreflang(canonicalHref), 2)}
 ${indent(ogMeta, 2)}

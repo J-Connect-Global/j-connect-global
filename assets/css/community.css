@@ -134,6 +134,17 @@
       line-height:1.55;
       font-weight:700;
     }
+    .community-guide{margin-top:18px;padding:16px 18px}
+    .community-guide-body{color:var(--community-ink);font-size:15px;line-height:1.8}
+    .community-guide-body h3{margin:18px 0 6px;color:var(--community-navy);font-size:17px;line-height:1.4;font-weight:900}
+    .community-guide-body h3:first-child{margin-top:4px}
+    .community-guide-body p{margin:0 0 8px}
+    .community-guide-body ul{margin:0 0 8px;padding-left:1.3em}
+    .community-guide-body li{margin:0 0 6px}
+    .community-guide-body a{color:var(--community-accent);font-weight:700}
+    .community-guide-body details{border-top:1px solid var(--community-line);padding:8px 0}
+    .community-guide-body summary{cursor:pointer;font-weight:800;color:var(--community-ink)}
+    .community-guide-body details p{margin:6px 0 0;color:var(--community-muted)}
     .community-use-cases{
       display:grid;
       grid-template-columns:repeat(5,minmax(0,1fr));

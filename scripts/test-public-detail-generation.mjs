@@ -185,6 +185,9 @@ async function runFixtureTests() {
     });
     const future = job("job-future", { published_at: "2026-07-18T10:00:00.000Z" });
     const expired = job("job-expired", { expires_at: "2026-07-01T00:00:00.000Z" });
+    const sample = job("job-sample", { company_name: "A社 (求人サンプル)" });
+    assert.equal(isIndexableJob(sample, fixedNow), false, "sample listings must not be indexable");
+    assert.equal(buildJobPosting(sample, "https://j-connect-global.com/germany/ja/jobs/job-sample/", fixedNow), null, "sample listings must not emit JobPosting");
     await writeJson(path.join(siteDir, "assets", "data", "community", "posts.json"), payload([safeCommunity]));
     await writeJson(path.join(siteDir, "assets", "data", "jobs", "jobs.json"), payload([indexable, incomplete, future]));
     const result = await generatePublicDetails({ siteDir, now: fixedNow });

@@ -72,7 +72,14 @@ function hasSafeApplication(job) {
   return true;
 }
 
+// Sample listings demonstrate the layout and must never reach search engines as job postings.
+export function isSampleJob(job) {
+  if (job.is_sample === true || job.sample === true) return true;
+  return /サンプル|\bsample\b/i.test(`${text(job.company_name)} ${text(job.position_title)}`);
+}
+
 export function isIndexableJob(job, now = new Date()) {
+  if (isSampleJob(job)) return false;
   if (text(job.status) !== "active" || isExpired(job, now)) return false;
   if (text(job.expires_at) && validDate(job.expires_at) === null) return false;
   const published = validDate(job.published_at);

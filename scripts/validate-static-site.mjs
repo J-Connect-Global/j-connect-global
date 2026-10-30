@@ -173,6 +173,7 @@ const htmlFiles = [];
 const textFiles = [];
 const problems = [];
 const pagesByUrl = loadPagesRegistry();
+const hiddenArticleUrls = loadHiddenArticleUrls();
 const publicSnapshotData = loadPublicSnapshotData({ root });
 const generatedPublicTargetPaths = new Set(
   [...publicSnapshotData.community, ...publicSnapshotData.jobs]
@@ -216,6 +217,19 @@ function loadPagesRegistry() {
     problems.push(`Unable to parse ${PAGE_REGISTRY_PATH}: ${error.message}`);
     return new Map();
   }
+}
+
+// Published articles kept out of the sitemap stay readable but are rendered noindex.
+function loadHiddenArticleUrls() {
+  const urls = new Set();
+  for (const section of ['living', 'events', 'learn-german']) {
+    const fullPath = path.join(root, 'content', 'registry', `${section}.json`);
+    if (!fs.existsSync(fullPath)) continue;
+    for (const item of JSON.parse(fs.readFileSync(fullPath, 'utf8'))) {
+      if (item.published === true && item.sitemap_visible === false) urls.add(normalizeUrl(item.url));
+    }
+  }
+  return urls;
 }
 
 function localTargetExists(targetPath) {
@@ -399,7 +413,7 @@ function validateHtmlMetadata(rel, url, html, page) {
   if (shouldIndex) {
     if (robots !== 'index, follow') problems.push(`${rel} should use robots "index, follow", got "${robots || '(missing)'}".`);
     if (coreIndexableUrls.has(url) && hasNoindex) problems.push(`${rel} core public page must not be noindex.`);
-  } else if (page && robots !== 'noindex, follow') {
+  } else if ((page || hiddenArticleUrls.has(url)) && robots !== 'noindex, follow') {
     problems.push(`${rel} non-indexable registry page should use robots "noindex, follow", got "${robots || '(missing)'}".`);
   }
 
@@ -773,7 +787,7 @@ function normalizeRobots(value) {
 
 function shouldIndexHtml(url, page) {
   if (page) return page.status === 'published' && (page.search_visible === true || page.sitemap_visible === true);
-  return isArticleUrl(url, page);
+  return isArticleUrl(url, page) && !hiddenArticleUrls.has(url);
 }
 
 function isArticleUrl(url, page) {

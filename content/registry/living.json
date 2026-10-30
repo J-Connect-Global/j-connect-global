@@ -472,11 +472,11 @@
       "CTS",
       "P+R"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 203,
     "hub_visible": true,
     "search_visible": true,
-    "sitemap_visible": true,
+    "sitemap_visible": false,
     "canonical_url": "/germany/ja/living/strasbourg-weekend-trip/",
     "related_articles": [
       "aachen-day-trip",
@@ -813,11 +813,11 @@
       "OVpay",
       "美術館"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 208,
     "hub_visible": true,
     "search_visible": true,
-    "sitemap_visible": true,
+    "sitemap_visible": false,
     "canonical_url": "/germany/ja/living/amsterdam-weekend-trip/",
     "related_articles": [
       "berlin-weekend-trip",
@@ -1095,11 +1095,11 @@
       "ベルギー",
       "美術館"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 212,
     "hub_visible": true,
     "search_visible": true,
-    "sitemap_visible": true,
+    "sitemap_visible": false,
     "canonical_url": "/germany/ja/living/brussels-weekend-trip/",
     "related_articles": [
       "paris-weekend-trip",
@@ -1151,11 +1151,11 @@
       "フランス",
       "美術館"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 213,
     "hub_visible": true,
     "search_visible": true,
-    "sitemap_visible": true,
+    "sitemap_visible": false,
     "canonical_url": "/germany/ja/living/paris-weekend-trip/",
     "related_articles": [
       "brussels-weekend-trip",
@@ -1271,11 +1271,11 @@
       "イギリス",
       "美術館"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 215,
     "hub_visible": true,
     "search_visible": true,
-    "sitemap_visible": true,
+    "sitemap_visible": false,
     "canonical_url": "/germany/ja/living/london-weekend-trip/",
     "related_articles": [
       "brussels-weekend-trip",
@@ -1331,11 +1331,11 @@
       "デンマーク",
       "デザイン"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 216,
     "hub_visible": true,
     "search_visible": true,
-    "sitemap_visible": true,
+    "sitemap_visible": false,
     "canonical_url": "/germany/ja/living/copenhagen-weekend-trip/",
     "related_articles": [
       "hamburg-weekend-trip",
@@ -1391,11 +1391,11 @@
       "ポーランド",
       "公園"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 217,
     "hub_visible": true,
     "search_visible": true,
-    "sitemap_visible": true,
+    "sitemap_visible": false,
     "canonical_url": "/germany/ja/living/warsaw-weekend-trip/",
     "related_articles": [
       "krakow-weekend-trip",
@@ -1451,11 +1451,11 @@
       "ポーランド",
       "旧市街"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 218,
     "hub_visible": true,
     "search_visible": true,
-    "sitemap_visible": true,
+    "sitemap_visible": false,
     "canonical_url": "/germany/ja/living/krakow-weekend-trip/",
     "related_articles": [
       "prague-weekend-trip",
@@ -1511,11 +1511,11 @@
       "チェコ",
       "旧市街"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 219,
     "hub_visible": true,
     "search_visible": true,
-    "sitemap_visible": true,
+    "sitemap_visible": false,
     "canonical_url": "/germany/ja/living/prague-weekend-trip/",
     "related_articles": [
       "krakow-weekend-trip",

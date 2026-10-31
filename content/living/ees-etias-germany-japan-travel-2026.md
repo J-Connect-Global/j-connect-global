@@ -26,6 +26,8 @@ official_sources:
     url: "https://travel-europe.europa.eu/de/ees/ltr/faq"
   - title: "EU公式：EESの対象外となる人"
     url: "https://travel-europe.europa.eu/de/ees/ltr/to-whom-does-ees-not-apply.html"
+  - title: "ドイツ外務省：EES・ETIASの日本語案内"
+    url: "https://japan.diplo.de/ja-ja/service/2734076-2734076"
   - title: "ドイツ外務省：EESの概要"
     url: "https://www.germany.info/us-en/2735594-2735594"
 ---
@@ -127,6 +129,9 @@ ETIASは、ビザ免除で短期滞在する旅行者が、対象となる欧州
 - [EU公式：EESのよくある質問](https://travel-europe.europa.eu/de/ees/ltr/faq)
 - [EU公式：EESの対象外となる人](https://travel-europe.europa.eu/de/ees/ltr/to-whom-does-ees-not-apply.html)
 - [ドイツ外務省：EESの概要](https://www.germany.info/us-en/2735594-2735594)
+- [ドイツ外務省：EES・ETIASの日本語案内](https://japan.diplo.de/ja-ja/service/2734076-2734076)
+
+日本語の概要はドイツ外務省の案内でも確認できます。ただしETIASの申請受付・開始時期は変更されるため、渡航前の最終確認にはEU公式ページを優先してください。
 
 ## 関連記事
 

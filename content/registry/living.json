@@ -3385,14 +3385,14 @@
     "review": {
       "status": "needs_review",
       "reviewed_by": "AI official-source verification; immigration-law review pending",
-      "last_reviewed_at": "2026-10-29",
+      "last_reviewed_at": "2026-10-31",
       "next_review_due": "2026-11-04"
     },
     "title": "ドイツ入国のEES・ETIASとは？2026年の日本人旅行者・在住者向けガイド",
     "category": "行政・滞在",
-    "summary": "EESは2026年4月10日に全面運用、ETIASは2026年10月29日時点で申請受付前です。日本人の短期旅行者と、ドイツの滞在許可を持つ在住者で必要な対応を分けて説明します。",
+    "summary": "EESは2026年4月10日に全面運用、ETIASは2026年10月31日時点で申請受付前（EU公式の運用開始見通しは2026年第4四半期）です。日本人の短期旅行者と、ドイツの滞在許可を持つ在住者で必要な対応を分けて説明します。",
     "published_at": "",
-    "last_verified": "2026-10-29",
+    "last_verified": "2026-10-31",
     "next_review": "2026-11-04",
     "canonical_url": "/germany/ja/living/ees-etias-germany-japan-travel-2026/",
     "tags": [
@@ -3404,7 +3404,7 @@
       "滞在許可",
       "2026年"
     ],
-    "updated_at": "2026-10-29",
+    "updated_at": "2026-10-31",
     "related_articles": [
       "residence-permit-renewal-germany",
       "germany-first-30-days",

@@ -112,7 +112,7 @@ test('automatic updates pause while the tab is hidden and during a send',async({
   await page.clock.fastForward(55000);
   await page.locator('#messageBody').fill('送信中に取得しない');await page.getByRole('button',{name:'返信する',exact:true}).click();
   await page.clock.fastForward(5001);expect(reads).toBe(1);
-  release();await expect(page.locator('#messageStatus')).toContainText('返信を送信し');expect(reads).toBe(2);
+  release();await expect(page.locator('#messageStatus')).toContainText(/返信を送信し、相手にメールで通知しました|返信を保存しました。通知メールは再試行中です。/);expect(reads).toBe(2);
 });
 
 test('background failure keeps history and draft; ending the conversation stops automatic reads',async({page})=>{

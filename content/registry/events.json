@@ -5947,6 +5947,247 @@
     }
   },
   {
+    "slug": "frankfurt-christmas-market-2026-guide",
+    "id": "E030",
+    "url": "/germany/ja/events/frankfurt-christmas-market-2026-guide/",
+    "markdown_path": "/content/events/frankfurt-christmas-market-2026-guide.md",
+    "image_url": "/assets/img/events/frankfurt-christmas-market-2026-guide.webp",
+    "home_visible": true,
+    "home_order": 11,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-31",
+      "next_review_due": "2026-11-22"
+    },
+    "published": true,
+    "title": "フランクフルトのクリスマスマーケット2026｜1393年から続く、商人の街の冬の市",
+    "category": "季節行事",
+    "summary": "2026年11月23日〜12月22日のフランクフルト・クリスマスマーケットを案内。1393年から続く市の歴史、名物の焼き菓子ベートマンヒェンとプラム人形、営業時間を紹介します。",
+    "status": "published",
+    "published_at": "2026-10-31",
+    "last_verified": "2026-10-31",
+    "canonical_url": "/germany/ja/events/frankfurt-christmas-market-2026-guide/",
+    "tags": [
+      "クリスマスマーケット",
+      "フランクフルト",
+      "ヘッセン",
+      "2026年11月",
+      "2026年12月",
+      "アドベント"
+    ],
+    "updated_at": "2026-10-31",
+    "related_articles": [
+      "gluehwein-christmas-market-guide",
+      "christmas-tree-origin-germany",
+      "nuremberg-christkindlesmarkt-2026-guide",
+      "stuttgart-christmas-market-2026-guide",
+      "dresden-striezelmarkt-2026-guide",
+      "germany-train-travel-guide"
+    ],
+    "content_type": "event",
+    "city": "フランクフルト",
+    "location": "旧市庁舎前のレーマーベルク広場、パウルス広場、ハウプトヴァッヘ周辺、マイン川沿いほか",
+    "event_date": "2026-11-23〜2026-12-22",
+    "official_url": "https://www.visitfrankfurt.travel/erleben/feste-und-veranstaltungen/frankfurter-weihnachtsmarkt",
+    "official_sources": [
+      {
+        "title": "フランクフルト観光局：フランクフルト・クリスマスマーケット（2026年の日程・営業時間・プログラム）",
+        "url": "https://www.visitfrankfurt.travel/erleben/feste-und-veranstaltungen/frankfurter-weihnachtsmarkt"
+      },
+      {
+        "title": "フランクフルト市：クリスマスマーケット",
+        "url": "https://frankfurt.de/frankfurt-entdecken-und-erleben/stadtportrait/frankfurter-feste/weihnachtsmarkt"
+      },
+      {
+        "title": "フランクフルト観光局：クリスマスマーケットの歴史",
+        "url": "https://www.frankfurt-tourismus.de/Entdecken-und-Erleben/Feste-Veranstaltungen/frankfurter-weihnachtsmarkt/Die-Geschichte-des-Frankfurter-Weihnachtsmarktes"
+      },
+      {
+        "title": "フランクフルト市：焼き菓子ベートマンヒェン",
+        "url": "https://frankfurt.de/frankfurt-entdecken-und-erleben/stadtportrait/frankfurt-kulinarisch/nicht-nur-zur-weihnachtszeit---frankfurter-bethmaennchen"
+      },
+      {
+        "title": "フランクフルト市：プラムとクルミの人形",
+        "url": "https://frankfurt.de/frankfurt-entdecken-und-erleben/winter-special/quetschemaennche"
+      }
+    ],
+    "image": "/assets/img/events/frankfurt-christmas-market-2026-guide.webp",
+    "image_alt": "三角屋根が連なる木組みの家並みの前で、大きなツリーと屋台の灯りがともる夜の広場を描いたイラスト",
+    "next_review": "2026-11-22",
+    "source_type": "manual",
+    "image_caption": "AIの支援でコードから描画したイラスト（J-Connect）。フランクフルトのクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。",
+    "image_credit": "AI-assisted vector illustration / J-Connect"
+  },
+  {
+    "slug": "stuttgart-christmas-market-2026-guide",
+    "id": "E031",
+    "url": "/germany/ja/events/stuttgart-christmas-market-2026-guide/",
+    "markdown_path": "/content/events/stuttgart-christmas-market-2026-guide.md",
+    "image_url": "/assets/img/events/stuttgart-christmas-market-2026-guide.webp",
+    "home_visible": true,
+    "home_order": 12,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-31",
+      "next_review_due": "2026-11-24"
+    },
+    "published": true,
+    "title": "シュトゥットガルトのクリスマスマーケット2026｜屋根の上の小さな冬景色を見上げる市",
+    "category": "季節行事",
+    "summary": "2026年11月25日〜12月23日のシュトゥットガルト・クリスマスマーケットを案内。1692年に記録が残る歴史、屋台の屋根を飾る冬景色、開幕式と営業時間を紹介します。",
+    "status": "published",
+    "published_at": "2026-10-31",
+    "last_verified": "2026-10-31",
+    "canonical_url": "/germany/ja/events/stuttgart-christmas-market-2026-guide/",
+    "tags": [
+      "クリスマスマーケット",
+      "シュトゥットガルト",
+      "バーデン＝ヴュルテンベルク",
+      "2026年11月",
+      "2026年12月",
+      "アドベント"
+    ],
+    "updated_at": "2026-10-31",
+    "related_articles": [
+      "gluehwein-christmas-market-guide",
+      "christmas-tree-origin-germany",
+      "frankfurt-christmas-market-2026-guide",
+      "dresden-striezelmarkt-2026-guide",
+      "nuremberg-christkindlesmarkt-2026-guide",
+      "germany-train-travel-guide"
+    ],
+    "content_type": "event",
+    "city": "シュトゥットガルト",
+    "location": "旧宮殿周辺のシラー広場、マルクト広場、シュロス広場、カール広場",
+    "event_date": "2026-11-25〜2026-12-23",
+    "official_url": "https://www.stuttgarter-weihnachtsmarkt.de/",
+    "official_sources": [
+      {
+        "title": "シュトゥットガルト・クリスマスマーケット公式サイト（2026年の日程）",
+        "url": "https://www.stuttgarter-weihnachtsmarkt.de/"
+      },
+      {
+        "title": "公式サイト：営業時間・開幕日の案内",
+        "url": "https://www.stuttgarter-weihnachtsmarkt.de/en/service"
+      },
+      {
+        "title": "公式サイト：市の歴史",
+        "url": "https://www.stuttgarter-weihnachtsmarkt.de/en/general/history"
+      },
+      {
+        "title": "公式サイト：数字で見るクリスマスマーケット",
+        "url": "https://www.stuttgarter-weihnachtsmarkt.de/en/general/interesting-facts/"
+      },
+      {
+        "title": "公式サイト：屋台の屋根飾り",
+        "url": "https://www.stuttgarter-weihnachtsmarkt.de/de/allgemein/budenzauber/"
+      }
+    ],
+    "image": "/assets/img/events/stuttgart-christmas-market-2026-guide.webp",
+    "image_alt": "城のシルエットを背に、雪の家並みや人形、星、塔の飾りを屋根に載せた木の屋台が並ぶ夜の市を描いたイラスト",
+    "next_review": "2026-11-24",
+    "source_type": "manual",
+    "image_caption": "AIの支援でコードから描画したイラスト（J-Connect）。シュトゥットガルトのクリスマスマーケットのテーマを表したもので、実際の屋台や建物を再現していません。",
+    "image_credit": "AI-assisted vector illustration / J-Connect"
+  },
+  {
+    "slug": "dresden-striezelmarkt-2026-guide",
+    "id": "E032",
+    "url": "/germany/ja/events/dresden-striezelmarkt-2026-guide/",
+    "markdown_path": "/content/events/dresden-striezelmarkt-2026-guide.md",
+    "image_url": "/assets/img/events/dresden-striezelmarkt-2026-guide.webp",
+    "home_visible": true,
+    "home_order": 13,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-31",
+      "next_review_due": "2026-11-24"
+    },
+    "published": true,
+    "title": "ドレスデンのシュトリーツェルマルクト2026｜シュトレンの名を持つ、1434年からのクリスマス市",
+    "category": "季節行事",
+    "summary": "2026年11月25日〜12月24日の第592回ドレスデン・シュトリーツェルマルクトを案内。1434年からの歴史、名物シュトレン、12月5日のシュトレン祭り、営業時間を紹介します。",
+    "status": "published",
+    "published_at": "2026-10-31",
+    "last_verified": "2026-10-31",
+    "canonical_url": "/germany/ja/events/dresden-striezelmarkt-2026-guide/",
+    "tags": [
+      "クリスマスマーケット",
+      "ドレスデン",
+      "ザクセン",
+      "シュトレン",
+      "2026年11月",
+      "2026年12月",
+      "アドベント"
+    ],
+    "updated_at": "2026-10-31",
+    "related_articles": [
+      "germany-bread-guide",
+      "german-bread-culture",
+      "gluehwein-christmas-market-guide",
+      "advent-wreath-calendar-origin",
+      "frankfurt-christmas-market-2026-guide",
+      "stuttgart-christmas-market-2026-guide",
+      "nuremberg-christkindlesmarkt-2026-guide"
+    ],
+    "content_type": "event",
+    "city": "ドレスデン",
+    "location": "旧市街のアルトマルクト広場",
+    "event_date": "2026-11-25〜2026-12-24",
+    "official_url": "https://striezelmarkt.dresden.de/de/",
+    "official_sources": [
+      {
+        "title": "ドレスデン・シュトリーツェルマルクト公式サイト（2026年の日程）",
+        "url": "https://striezelmarkt.dresden.de/de/"
+      },
+      {
+        "title": "ドレスデン市：第592回シュトリーツェルマルクト2026の募集要項（日程・営業時間）",
+        "url": "https://www.dresden.de/media/pdf/wirtschaft/markte/STM-2026-Ausschreibungstext.pdf"
+      },
+      {
+        "title": "公式サイト：シュトリーツェルマルクトの歴史と伝統",
+        "url": "https://striezelmarkt.dresden.de/de/markttreiben/Dresdner-Striezelmarkt-Geschichte-Tradition.php"
+      },
+      {
+        "title": "ドレスデン市：2026年のシュトリーツェルマルクトのツリー",
+        "url": "https://www.dresden.de/de/rathaus/aktuelles/pressemitteilungen/2026/10/pm_077.php"
+      },
+      {
+        "title": "ドレスデン・シュトレン保護協会：ドレスデンのシュトレンの歴史と認証",
+        "url": "https://www.dresdnerstollen.com/en/dresden-christmas-stollen/"
+      },
+      {
+        "title": "ドレスデン・シュトレン保護協会：第31回シュトレン祭り（2026年12月5日）",
+        "url": "https://www.dresdnerstollen.com/herzlich-willkommen-ruth-liebscher/"
+      },
+      {
+        "title": "ドレスデン市：市内のほかのクリスマスマーケット",
+        "url": "https://www.dresden.de/de/tourismus/sehen/weihnachtszeit/weitere-weihnachtsmaerkte.php"
+      }
+    ],
+    "image": "/assets/img/events/dresden-striezelmarkt-2026-guide.webp",
+    "image_alt": "粉砂糖をかけた大きなシュトレンと、ろうそくが灯る多段の木のピラミッドが並ぶ冬の広場を描いたイラスト",
+    "next_review": "2026-11-24",
+    "source_type": "manual",
+    "image_caption": "AIの支援でコードから描画したイラスト（J-Connect）。ドレスデンのシュトリーツェルマルクトのテーマを表したもので、実際の建物や会場配置を再現していません。",
+    "image_credit": "AI-assisted vector illustration / J-Connect"
+  },
+  {
     "slug": "cologne-museumsnacht-2026-guide",
     "id": "E024",
     "content_type": "event",

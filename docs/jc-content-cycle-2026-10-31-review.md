@@ -116,6 +116,19 @@
 - https://travel-europe.europa.eu/etias/faq
 - https://www.germany.info/us-en/2735594-2735594
 
+## 4. 競合・検索意図の比較
+
+- **EES・ETIAS：** ドイツ外務省の日本語ページは2025年公開で、EESの段階導入予定を含む旧情報が残る。英語・ドイツ語の民間解説にも「2026年第4四半期の見込みは撤回された」とする記述があるが、10月31日時点のEU公式ページとドイツ連邦警察は第4四半期を見込みとして掲載している。L055は「Q4の見込み」と「申請受付前・具体的開始日未公表」を分けているため、情報更新価値がある。ただし移民法レビュー前は非公開。
+  - https://japan.diplo.de/ja-ja/service/2734076-2734076
+  - https://germanybound.de/updates/ees-biometric-border-checks-2026/
+  - https://bundespolizei.de/grenzkontrolle/etias
+- **Deutschlandticket：** NDRの2026年9月30日記事は66.80ユーロへの値上げと一般的な解約方法を説明する。一方、DB公式FAQはDB契約者の11月30日同意期限、契約者本人のみ同意可能、アプリ反映最大48時間、12月31日までの再有効化を具体的に説明する。N021は価格ニュースだけでなく、DB契約者の実務手順を中心に維持する。
+  - https://www.ndr.de/ratgeber/verbraucher/deutschlandticket-wird-2027-teurer-kosten-und-kuendigung,deutschlandticket104.html
+  - https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt
+- **年越し花火：** 消費者センターの2025年12月29日付ガイドは、CE表示、禁止区域、安全な購入・使用を説明している。C019は全国法、2025/26年の自治体例、環境面をすでに扱うため、L059を別URLで公開せず、法令引用と安全上の誤表現をC019に統合する方針が妥当。
+  - https://www.verbraucherzentrale.de/wissen/geld-versicherungen/weitere-versicherungen/silvesterfeuerwerk-was-ist-erlaubt-und-sicher-114630
+- **2022年分の任意申告：** 今回の日本語検索では、同じ期限・到着要件を扱う明確な競合記事を確認できなかった。ただし、N033が既に公開済みで検索実績はGSCから取得できていないため、新URLを増やす根拠にはしない。NRW税務当局の一次情報を加えて既存ページの信頼性を上げる。
+
 ## 5. PR・公開状況
 
 | PR | 状態 | 判断 |

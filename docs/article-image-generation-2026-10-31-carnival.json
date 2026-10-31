@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "cologne-carnival-2026-27-guide",
+    "section": "events",
+    "markdown": "content/events/cologne-carnival-2026-27-guide.md",
+    "dest": "assets/img/events/cologne-carnival-2026-27-guide.webp",
+    "alt": "パレードの山車から投げられたお菓子と小さな花束に、沿道の人々が手を伸ばす様子を描いたイラスト",
+    "prompt": "Asset type: article hero and thumbnail for a Japanese-language guide to the Rhineland street carnival. Wide 16:9 single coherent editorial illustration, warm painterly gouache style with clean shapes, festive winter daylight. Low viewpoint from the street edge: many raised hands of a cheerful crowd, seen from behind and in silhouette, reaching up toward wrapped candies and small bunches of tulips flying through the air in colourful confetti, the side of a generic decorated parade float in red and white with flowers and fabric bunting in the background. Main subject within the central 70%, clearly readable as a 240px thumbnail. No faces in detail, no identifiable people, no recognizable buildings or landmarks, no cathedral. No readable text, letters, numbers, signage, logos, brand names, flags, coats of arms or watermarks. Fictional illustrative scene, not a record of a real event.",
+    "caption": "イラスト：J-Connect。カーニバルの行列の雰囲気を表したもので、実在の人物・山車・催しを再現していません。",
+    "credit": "Illustration / J-Connect",
+    "status": "generated",
+    "created": "2026-10-31",
+    "tool": "Original SVG drawn in code, rendered with Chromium, exported as WebP quality 60 (Gemini image quota unavailable on 2026-10-31: HTTP 429, free-tier limit 0)",
+    "ai_generated": false
+  },
+  {
+    "slug": "duesseldorf-carnival-2026-27-guide",
+    "section": "events",
+    "markdown": "content/events/duesseldorf-carnival-2026-27-guide.md",
+    "dest": "assets/img/events/duesseldorf-carnival-2026-27-guide.webp",
+    "alt": "大きなマスタードの壺から、道化の帽子をかぶった人形が伸びをしながら目を覚ます様子を描いたイラスト",
+    "prompt": "Asset type: article hero and thumbnail for a Japanese-language guide to the Düsseldorf carnival season opening. Wide 16:9 single coherent editorial illustration, warm painterly gouache style with clean shapes, crisp late-autumn morning light. A whimsical oversized stoneware mustard pot stands in the centre of a generic cobblestone square; a cheerful cartoon jester puppet with a green-and-white fool's cap with bells is climbing out of it, stretching its arms as if just waking up. Confetti drifts in the air, a few colourful paper streamers, blurred suggestion of a festive crowd in the far background with no faces. Main subject large and within the central 70%, clearly readable as a 240px thumbnail. No identifiable people, no recognizable buildings, town halls or landmarks. No readable text, letters, numbers, labels on the pot, signage, logos, brand names, flags, coats of arms or watermarks. Fictional illustrative scene, not a record of a real event or a real costume.",
+    "caption": "イラスト：J-Connect。ホッペディッツの目覚めをテーマにしたもので、実際の人形・衣装・会場を再現していません。",
+    "credit": "Illustration / J-Connect",
+    "status": "generated",
+    "created": "2026-10-31",
+    "tool": "Original SVG drawn in code, rendered with Chromium, exported as WebP quality 60 (Gemini image quota unavailable on 2026-10-31: HTTP 429, free-tier limit 0)",
+    "ai_generated": false
+  }
+]

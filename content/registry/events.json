@@ -6162,5 +6162,211 @@
       "last_reviewed_at": "2026-10-30",
       "next_review_due": "2027-01-15"
     }
+  },
+  {
+    "slug": "cologne-carnival-2026-27-guide",
+    "id": "E027",
+    "content_type": "event",
+    "url": "/germany/ja/events/cologne-carnival-2026-27-guide/",
+    "markdown_path": "/content/events/cologne-carnival-2026-27-guide.md",
+    "canonical_url": "/germany/ja/events/cologne-carnival-2026-27-guide/",
+    "published": true,
+    "status": "published",
+    "image_url": "/assets/img/events/cologne-carnival-2026-27-guide.webp",
+    "home_visible": true,
+    "home_order": 1,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-31",
+      "next_review_due": "2026-11-09"
+    },
+    "related_articles": [
+      "rhineland-carnival-11-11",
+      "duesseldorf-carnival-2026-27-guide",
+      "cologne-city-guide",
+      "nrw-public-holidays-2027",
+      "nrw-school-holidays-2026-2027",
+      "cologne-christmas-markets-2026-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "ケルン市：カーニバルシーズンの日程",
+        "url": "https://www.stadt-koeln.de/artikel/08212/index.html"
+      },
+      {
+        "title": "ケルン市：11月11日の旧市街周辺の交通規制（2026年）",
+        "url": "https://www.stadt-koeln.de/leben-in-koeln/verkehr/verkehrskalender/stoerungen/10899/index.html"
+      },
+      {
+        "title": "ケルン市：11月11日のツュルピッヒャー通り周辺の交通規制（2026年）",
+        "url": "https://www.stadt-koeln.de/leben-in-koeln/verkehr/verkehrskalender/stoerungen/10900/index.html"
+      },
+      {
+        "title": "ケルン市：ガラス容器の持ち込み禁止に関する一般処分（2026年2月5日告示）",
+        "url": "https://www.stadt-koeln.de/mediaasset/content/bekanntmachungen/2026/2026.02.05_0018-01_av_karneval-2026_glasverbot.pdf"
+      },
+      {
+        "title": "ケルン・カーニバル祭典委員会：11月11日のケルン",
+        "url": "https://koelnerkarneval.de/elfterimelften"
+      },
+      {
+        "title": "ケルン・カーニバル祭典委員会：2027年のモットー",
+        "url": "https://koelnerkarneval.de/session/motto-2027"
+      },
+      {
+        "title": "ケルン・カーニバル祭典委員会：2027年の三人組（就任予定）",
+        "url": "https://koelnerkarneval.de/koelner-dreigestirne/koelner-dreigestirn"
+      },
+      {
+        "title": "ケルン・カーニバル祭典委員会：女性のカーニバルの日の行列",
+        "url": "https://koelnerkarneval.de/zuege/wieverfastelovendszoch"
+      },
+      {
+        "title": "ケルン・カーニバル祭典委員会：学校と地区の行列",
+        "url": "https://koelnerkarneval.de/zuege/schull-un-veedelszoech"
+      },
+      {
+        "title": "ケルン・カーニバル祭典委員会：ガイスターツーク",
+        "url": "https://koelnerkarneval.de/zuege/geisterzug"
+      },
+      {
+        "title": "ケルン・カーニバル祭典委員会：バラの月曜日の行列",
+        "url": "https://koelnerkarneval.de/zuege/rosenmontagszug"
+      },
+      {
+        "title": "ケルン・カーニバル祭典委員会：バラの月曜日の行列のルート",
+        "url": "https://koelnerkarneval.de/zuege/rosenmontagszug/zugweg"
+      },
+      {
+        "title": "ケルン市：ケルンのカーニバルの歴史",
+        "url": "https://www.stadt-koeln.de/artikel/05206/index.html"
+      }
+    ],
+    "title": "ケルンのカーニバル2026/27｜11月11日の開幕から、バラの月曜日の行列まで",
+    "category": "季節行事",
+    "summary": "ケルンのカーニバル2026/27年シーズンを、11月11日（水）の開幕から2027年2月4日〜10日の街頭カーニバルまで案内。今季のモットーと三人組、女性のカーニバルの日の「ヤンとグリート」の劇、日曜の学校・地区の行列、バラの月曜日の大行列、ガラス瓶の持ち込み禁止区域と混雑する場所を公式情報から整理します。",
+    "published_at": "2026-10-31",
+    "last_verified": "2026-10-31",
+    "tags": [
+      "カーニバル",
+      "ケルン",
+      "11月11日",
+      "2026年11月",
+      "2027年2月",
+      "バラの月曜日",
+      "NRW",
+      "季節行事"
+    ],
+    "updated_at": "2026-10-31",
+    "city": "ケルン",
+    "location": "旧市街（ホイマルクト、アルター・マルクト）、ツュルピッヒャー通り周辺、市中心部の行列ルートなど",
+    "event_date": "2026-11-11 シーズン開始／2027-02-04〜2027-02-10 街頭カーニバル",
+    "official_url": "https://koelnerkarneval.de/",
+    "image": "/assets/img/events/cologne-carnival-2026-27-guide.webp",
+    "image_alt": "パレードの山車から投げられたお菓子と小さな花束に、沿道の人々が手を伸ばす様子を描いたイラスト"
+  },
+  {
+    "slug": "duesseldorf-carnival-2026-27-guide",
+    "id": "E028",
+    "content_type": "event",
+    "url": "/germany/ja/events/duesseldorf-carnival-2026-27-guide/",
+    "markdown_path": "/content/events/duesseldorf-carnival-2026-27-guide.md",
+    "canonical_url": "/germany/ja/events/duesseldorf-carnival-2026-27-guide/",
+    "published": true,
+    "status": "published",
+    "image_url": "/assets/img/events/duesseldorf-carnival-2026-27-guide.webp",
+    "home_visible": true,
+    "home_order": 1,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-31",
+      "next_review_due": "2026-11-09"
+    },
+    "related_articles": [
+      "rhineland-carnival-11-11",
+      "cologne-carnival-2026-27-guide",
+      "duesseldorf-city-guide",
+      "nrw-public-holidays-2027",
+      "nrw-school-holidays-2026-2027",
+      "christmas-markets-duesseldorf"
+    ],
+    "official_sources": [
+      {
+        "title": "デュッセルドルフ・カーニバル委員会：2026/27年シーズンの催し",
+        "url": "https://www.helau.cc/de/pages/veranstaltungen-3"
+      },
+      {
+        "title": "デュッセルドルフ・カーニバル委員会：11月11日、ホッペディッツが目覚める",
+        "url": "https://www.helau.cc/de/News/231,am-1111-erwacht-unser-hoppeditz-in-dusseldorf"
+      },
+      {
+        "title": "デュッセルドルフ・カーニバル委員会：ホッペディッツ",
+        "url": "https://www.helau.cc/de/pages/hoppeditz"
+      },
+      {
+        "title": "デュッセルドルフ・カーニバル委員会：バラの月曜日の行列",
+        "url": "https://www.helau.cc/de/pages/rosenmontagszug"
+      },
+      {
+        "title": "デュッセルドルフ・カーニバル委員会：2027年のバラの月曜日の行列のルート",
+        "url": "https://www.helau.cc/de/pages/zugweg"
+      },
+      {
+        "title": "デュッセルドルフ観光局：ホッペディッツの目覚め",
+        "url": "https://www.visitduesseldorf.de/event/hoppeditz-erwachen-f5ee3197a3"
+      },
+      {
+        "title": "デュッセルドルフ市：ホッペディッツが目覚めた（2025年）",
+        "url": "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/karneval-in-duesseldorf-der-hoppeditz-ist-erwacht-2"
+      },
+      {
+        "title": "デュッセルドルフ市：カーニバル期間の旧市街のガラス禁止",
+        "url": "https://www.duesseldorf.de/ordnungsamt/service/scherbenfrei/"
+      },
+      {
+        "title": "デュッセルドルフ市：ガラス容器の持ち込み禁止に関する一般処分（2026年のカーニバル）",
+        "url": "https://www.duesseldorf.de/stadtrecht/3/32/32-303"
+      },
+      {
+        "title": "デュッセルドルフ市：ガラス禁止・仮設トイレ・リユース食器の案内（2026年）",
+        "url": "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/karneval-alle-infos-zu-glasverbot-mobilen-toiletten-und-mehrweggeschirr-auf-einen-blick-1"
+      },
+      {
+        "title": "デュッセルドルフ市：70万人がバラの月曜日の行列を祝った（2026年）",
+        "url": "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/mer-bliewe-bunt-ejal-wat-kuett-700000-feierten-beim-rosenmontagszug-in-duesseldorf"
+      }
+    ],
+    "title": "デュッセルドルフのカーニバル2026/27｜ホッペディッツの目覚めから、風刺の山車が進むバラの月曜日まで",
+    "category": "季節行事",
+    "summary": "デュッセルドルフのカーニバル2026/27年シーズンを、11月11日（水）のホッペディッツの目覚めから、2027年2月4日の女性のカーニバルの日、7日のケー通りの仮装散歩、8日のバラの月曜日の行列まで案内。今季のモットーと王子・ヴェネツィアの二人組、風刺の山車、旧市街のガラス瓶禁止を公式情報から整理します。",
+    "published_at": "2026-10-31",
+    "last_verified": "2026-10-31",
+    "tags": [
+      "カーニバル",
+      "デュッセルドルフ",
+      "11月11日",
+      "2026年11月",
+      "2027年2月",
+      "バラの月曜日",
+      "NRW",
+      "季節行事"
+    ],
+    "updated_at": "2026-10-31",
+    "city": "デュッセルドルフ",
+    "location": "市庁舎前のマルクト広場、旧市街、ケーニヒスアレー、市中心部の行列ルートなど",
+    "event_date": "2026-11-11 ホッペディッツの目覚め／2027-02-04〜2027-02-10 街頭カーニバル",
+    "official_url": "https://www.helau.cc/de/pages/veranstaltungen-3",
+    "image": "/assets/img/events/duesseldorf-carnival-2026-27-guide.webp",
+    "image_alt": "大きなマスタードの壺から、道化の帽子をかぶった人形が伸びをしながら目を覚ます様子を描いたイラスト"
   }
 ]

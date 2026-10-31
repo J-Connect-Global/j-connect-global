@@ -16,7 +16,7 @@ image: "/assets/img/living/minijob-grenze-2027.webp"
 image_alt: "小さなカフェのカウンターで働く人と、コーヒーマシンを描いたイラスト"
 image_caption: "イラスト：J-Connect。ミニジョブのテーマを表したもので、特定の職場や給与明細を描いたものではありません。"
 image_credit: "Illustration / J-Connect"
-related_articles: ["germany-january-2027-changes", "tax-id-steuernummer-steuerklasse", "germany-first-30-days"]
+related_articles: ["germany-january-2027-changes", "tax-id-steuernummer-steuerklasse", "germany-first-30-days", "sugar-drink-tax-germany-2027", "pflegeversicherung-reform-2027"]
 official_sources:
   - title: "連邦労働社会省：第5次最低賃金調整令"
     url: "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/fuenfte-mindestlohnanpassungsverordnung-milov5.html"

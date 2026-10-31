@@ -12,7 +12,7 @@ updated_at: "2026-08-31"
 last_verified: "2026-07-19"
 next_review: "2026-10-15"
 canonical_url: "/germany/ja/living/munich-weekend-trip/"
-related_articles: ["aachen-day-trip","krakow-weekend-trip","germany-first-30-days"]
+related_articles: ["aachen-day-trip", "germany-first-30-days", "german-beer-purity-law"]
 official_sources:
   - title: "Simply Munich - Isarvorstadt"
     url: "https://www.munich.travel/en/topics/urban-districts/districts-of-munich/disctricts-isarvorstadt"

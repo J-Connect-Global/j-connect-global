@@ -14,6 +14,7 @@ status: "published"
 published: true
 canonical_url: "/germany/ja/events/cologne-flea-market/"
 official_url: ""
+related_articles: ["family-weekend-events-nrw"]
 ---
 
 # ケルンの蚤の市・フリーマーケットの楽しみ方

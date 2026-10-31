@@ -14,7 +14,7 @@ official_sources:
     url: "https://presse.adac.de/meldungen/adac-se/versicherungen-finanzdienste/kfz-versicherung-die-meisten-autofahrer-haben-jetzt-ein-sonderkuendigungsrecht.html"
   - title: "Stiftung Warentest（test.de）：自動車保険の解約と乗り換え"
     url: "https://www.test.de/Kfz-Versicherung-wechseln-so-gehts-6160032-0/"
-related_articles: ["winter-tires-germany-2026", "germany-autobahn-speed-limit", "germany-inflation-september-2026"]
+related_articles: ["winter-tires-germany-2026", "germany-autobahn-speed-limit", "germany-inflation-september-2026", "buying-registering-car-germany"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

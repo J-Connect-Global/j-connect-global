@@ -16,7 +16,7 @@ image: "/assets/img/living/schools-germany-japanese-families.webp"
 image_alt: "ドイツの校舎の前を、かばんを背負った子どもたちと大人が歩く様子を描いたイラスト"
 image_caption: "イラスト：J-Connect。学校選びのテーマを表したもので、特定の学校を描いたものではありません。"
 image_credit: "Illustration / J-Connect"
-related_articles: ["german-school-grades-1-to-6", "kita-u3-tagesmutter-guide", "nrw-school-holidays-2026-2027"]
+related_articles: ["german-school-grades-1-to-6", "kita-u3-tagesmutter-guide", "nrw-school-holidays-2026-2027", "ganztag-primary-school-nrw-2026"]
 official_sources:
   - title: "NRW州学校省：学校の種類"
     url: "https://www.schulministerium.nrw/schule-bildung/schulorganisation/schulformen"

@@ -13,7 +13,7 @@ updated_at: "2026-08-31"
 last_verified: "2026-07-19"
 next_review: "2026-10-15"
 canonical_url: "/germany/ja/living/aachen-day-trip/"
-related_articles: ["cologne-city-guide", "nrw-nature-relax-guide", "strasbourg-weekend-trip"]
+related_articles: ["cologne-city-guide", "nrw-nature-relax-guide", "aachen-christmas-market-2026-guide"]
 official_sources:
   - title: "Aachener Dom：見学時間"
     url: "https://www.aachenerdom.de/oeffnungszeiten/"

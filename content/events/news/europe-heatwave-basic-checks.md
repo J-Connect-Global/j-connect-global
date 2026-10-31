@@ -13,6 +13,7 @@ updated_at: "2026-08-30"
 last_verified: "2026-07-06"
 canonical_url: "/germany/ja/events/news/europe-heatwave-basic-checks/"
 source_type: "manual"
+related_articles: ["flu-covid-vaccination-2026-27", "snow-ice-clearing-duty-germany", "landlord-housing-email-phrases"]
 ---
 
 # ドイツの熱波を暮らしから考える｜住まい・体調・街の暑さ

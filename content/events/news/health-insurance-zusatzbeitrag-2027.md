@@ -20,7 +20,7 @@ official_sources:
     url: "https://www.verbraucherzentrale.de/wissen/geld-versicherungen/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581"
   - title: "GKV-Spitzenverband：保険組合一覧と追加保険料率"
     url: "https://www.gkv-spitzenverband.de/service/krankenkassenliste/krankenkassen.jsp"
-related_articles: ["health-insurance-guide", "germany-january-2027-changes", "tax-id-steuernummer-steuerklasse"]
+related_articles: ["health-insurance-guide", "germany-january-2027-changes", "tax-id-steuernummer-steuerklasse", "sugar-drink-tax-germany-2027", "pflegeversicherung-reform-2027"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

@@ -31,6 +31,7 @@ official_sources:
     url: "https://eur-lex.europa.eu/EN/legal-content/summary/common-rules-promoting-the-repair-of-goods-and-amending-related-eu-legislation.html"
   - title: "ドイツ連邦政府：2026年8月の新制度"
     url: "https://www.bundesregierung.de/breg-de/aktuelles/gesetzliche-neuregelungen-2448548"
+related_articles: ["eu-ai-act-transparency-august-2026", "mobile-phone-sim-germany"]
 ---
 
 # EUの修理促進ルールが2026年7月から適用｜家電・スマホで何が変わる？

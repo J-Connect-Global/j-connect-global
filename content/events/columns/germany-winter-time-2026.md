@@ -10,7 +10,7 @@ official_sources:
     url: "https://germany.representation.ec.europa.eu/zeitumstellung_de"
   - title: "ドイツ物理工学研究所：法定時刻と夏時間の仕組み"
     url: "https://www.ptb.de/cms/fileadmin/internet/presse_aktuelles/broschueren/zur_zeit/Flyer_Zeit_2017_web-print.pdf"
-related_articles: ["germany-autumn-forest-walk", "db-2027-timetable-family-ticket", "spiel-essen-2026-guide"]
+related_articles: ["germany-autumn-forest-walk", "db-2027-timetable-family-ticket"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

@@ -14,7 +14,7 @@ official_sources:
     url: "https://www.schulministerium.nrw/die-grundschule-von-bis-z"
   - title: "常設各州文部大臣会議（KMK）：ギムナジウム上級段階とアビトゥーアに関する協定"
     url: "https://www.kmk.org/fileadmin/Dateien/pdf/PresseUndAktuelles/2023/2023_03_16-Vereinb-GymnOberstufe-Abitur.pdf"
-related_articles: ["kita-u3-tagesmutter-guide", "nrw-school-holidays-2026-2027", "germany-public-holidays-by-state"]
+related_articles: ["kita-u3-tagesmutter-guide", "nrw-school-holidays-2026-2027", "germany-public-holidays-by-state", "ganztag-primary-school-nrw-2026", "schools-germany-japanese-families"]
 city: "NRW（ノルトライン＝ヴェストファーレン州）"
 area: "NRW"
 location: ""

@@ -13,7 +13,7 @@ updated_at: "2026-08-31"
 last_verified: "2026-07-19"
 next_review: "2026-10-01"
 canonical_url: "/germany/ja/living/duesseldorf-city-guide/"
-related_articles: ["duesseldorf-family-trip", "cologne-city-guide", "rhine-river-relax-guide"]
+related_articles: ["duesseldorf-family-trip", "cologne-city-guide", "rhine-river-relax-guide", "rhine-low-water-august-2026"]
 official_sources:
   - title: "Visit Düsseldorf：Little Tokyo"
     url: "https://www.visitduesseldorf.de/erleben/sehenswertes/little-tokyo-duesseldorf"

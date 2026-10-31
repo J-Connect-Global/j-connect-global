@@ -18,7 +18,7 @@ official_sources:
     url: "https://www.unesco.de/staette/industriekomplex-zeche-zollverein-in-essen/"
   - title: "ツォルフェアアイン：歴史"
     url: "https://www.zollverein.de/ueber-zollverein/geschichte/"
-related_articles: ["duesseldorf-city-guide", "nrw-nature-relax-guide", "cologne-cathedral-632-years"]
+related_articles: ["duesseldorf-city-guide", "nrw-nature-relax-guide", "cologne-cathedral-632-years", "berlin-wall-history"]
 city: "ルール地方（エッセン・ボットロップなど）"
 area: "ルール地方"
 location: "ツォルフェアアイン炭鉱業遺産群（エッセン）など"

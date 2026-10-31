@@ -23,7 +23,7 @@ image: "/assets/img/events/germany-january-2027-changes.webp"
 image_alt: "壁の1月のカレンダーと、机の上のノートパソコンと書類を描いたイラスト"
 image_caption: "イラスト：J-Connect。制度変更のテーマを表したもので、公式資料を再現していません。"
 image_credit: "Illustration / J-Connect"
-related_articles: ["deutschlandticket-2027-price-consent", "db-2027-timetable-family-ticket", "germany-september-2026-changes", "kindergeld-auszahlungstermine-2027", "minijob-grenze-2027"]
+related_articles: ["deutschlandticket-2027-price-consent", "db-2027-timetable-family-ticket", "kindergeld-auszahlungstermine-2027", "minijob-grenze-2027", "tax-refund-2022-deadline-december-2026", "japan-germany-social-security-pension"]
 official_sources:
   - title: "Deutsche Bahn：Deutschlandticketの契約変更FAQ"
     url: "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"

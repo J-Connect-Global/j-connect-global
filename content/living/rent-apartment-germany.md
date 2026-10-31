@@ -13,7 +13,7 @@ last_verified: "2026-10-17"
 next_review: "2027-01-17"
 canonical_url: "/germany/ja/living/rent-apartment-germany/"
 image_alt: "明るい住居の机に置かれた鍵、間取り図、ノートパソコン"
-related_articles: ["schufa-guide","moving-checklist-germany","anmeldung-guide","electricity-internet-contracts-germany"]
+related_articles: ["schufa-guide", "moving-checklist-germany", "anmeldung-guide", "electricity-internet-contracts-germany", "liability-household-insurance-germany"]
 official_sources:
   - title: "ドイツ民法551条：敷金の上限と分割払い"
     url: "https://www.gesetze-im-internet.de/bgb/__551.html"

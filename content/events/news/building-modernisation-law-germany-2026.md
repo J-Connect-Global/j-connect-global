@@ -27,6 +27,7 @@ official_sources:
     url: "https://www.bundesregierung.de/breg-de/aktuelles/gesetzliche-neuregelungen-2448548"
   - title: "Bundesnetzagentur：エネルギー価格とAbschlag"
     url: "https://www.bundesnetzagentur.de/DE/Vportal/Energie/PreiseAbschlaege/start.html"
+related_articles: ["baucode-nrw-september-2026", "germany-winter-mold-ventilation"]
 ---
 
 # ドイツの暖房ルールが2026年7月改正｜家主・持ち家・借主への影響

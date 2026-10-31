@@ -20,7 +20,7 @@ image: "/assets/img/events/germany-information-triage-guide.webp"
 image_alt: "公式サイト、経験談、AIの回答を分けて確認する日本人の生活者"
 image_caption: "AI生成の編集用イメージ。人物、画面、書類、サービスは架空です。"
 image_credit: "AI-generated editorial image / J-Connect"
-related_articles: ["germany-september-2026-changes", "eu-ai-act-transparency-august-2026", "germany-bureaucracy-costs-2026"]
+related_articles: ["eu-ai-act-transparency-august-2026"]
 official_sources:
   - title: "ドイツ連邦政府：法令・制度変更の例"
     url: "https://www.bundesregierung.de/breg-de/aktuelles/gesetzliche-neuregelungen-september-2026-2450158"

@@ -14,7 +14,7 @@ official_sources:
     url: "https://www.bundesbank.de/de/presse/pressenotizen/zahlungsverhalten-in-deutschland-2023-934828"
   - title: "ドイツ連邦銀行：ドイツ社会の中の現金（月報 2025年4月）"
     url: "https://publikationen.bundesbank.de/publikationen-de/berichte-studien/monatsberichte/bargeld-in-der-deutschen-gesellschaft-ein-aktuelles-meinungsbild-954600"
-related_articles: ["bank-account-germany", "germany-sunday-rest-shops-closed", "christmas-markets-duesseldorf"]
+related_articles: ["bank-account-germany", "germany-sunday-rest-shops-closed", "christmas-markets-duesseldorf", "online-shopping-returns-germany"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

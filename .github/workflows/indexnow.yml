@@ -1,0 +1,50 @@
+name: Notify IndexNow
+
+# Runs after a successful production deploy and tells IndexNow (Bing and others)
+# which indexable pages changed. It never touches the deployment itself.
+on:
+  workflow_run:
+    workflows: ["Deploy GitHub Pages"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      all:
+        description: Submit every sitemap URL instead of only changed pages
+        type: boolean
+        default: false
+
+permissions: {}
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout deployed commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          fetch-depth: 2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Submit to IndexNow
+        shell: bash
+        env:
+          SUBMIT_ALL: ${{ github.event_name == 'workflow_dispatch' && inputs.all }}
+        run: |
+          if [[ "$SUBMIT_ALL" == "true" ]]; then
+            node scripts/submit-indexnow.mjs --all
+          else
+            node scripts/submit-indexnow.mjs --from "$(git rev-parse HEAD^1)" --to "$(git rev-parse HEAD)"
+          fi

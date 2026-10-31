@@ -10,7 +10,7 @@ official_sources:
     url: "https://www.unesco.de/staette/deutsche-brotkultur/"
   - title: "バイエルン州消費者センター：色や種だけでは全粒粉パンを判断できない"
     url: "https://www.verbraucherzentrale.bayern/faq/ist-mehrkornbrot-immer-auch-vollkornbrot-8688"
-related_articles: ["kommern-saint-martin-2026-guide", "christmas-markets-duesseldorf", "germany-autumn-forest-walk"]
+related_articles: ["kommern-saint-martin-2026-guide", "christmas-markets-duesseldorf", "germany-autumn-forest-walk", "germany-bread-guide", "german-wine-regions-guide"]
 city: "ドイツ全土"
 area: "ドイツの食文化"
 location: ""

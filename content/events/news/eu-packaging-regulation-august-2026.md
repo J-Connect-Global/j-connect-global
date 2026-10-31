@@ -27,6 +27,7 @@ official_sources:
     url: "https://environment.ec.europa.eu/topics/waste-and-recycling/packaging-waste_en"
   - title: "欧州委員会：PPWR適用に関する2026年ガイダンス"
     url: "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A52026XC03084"
+related_articles: ["germany-pfand-return-guide", "germany-waste-sorting-guide", "germany-sunday-rest-shops-closed"]
 ---
 
 # EUの包装ルールが2026年8月から適用｜買い物や宅配はどう変わる？

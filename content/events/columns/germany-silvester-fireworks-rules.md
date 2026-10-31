@@ -18,7 +18,7 @@ official_sources:
     url: "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/feuerwerksverbot-an-silvester-und-neujahr-2025-26-mehr-sicherheit-in-der-duesseldorfer-altstadt"
   - title: "ケルン市：爆竹禁止区域（2025/26年）"
     url: "https://www.stadt-koeln.de/politik-und-verwaltung/presse/mitteilungen/28087/index.html"
-related_articles: ["germany-public-holidays-by-state", "nrw-christmas-opening-hours-2026", "christmas-tree-origin-germany"]
+related_articles: ["germany-public-holidays-by-state", "nrw-christmas-opening-hours-2026", "christmas-tree-origin-germany", "three-kings-day-sternsinger"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

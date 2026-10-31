@@ -18,7 +18,7 @@ official_sources:
     url: "https://www.ekd.de/news_081128_adventskalender.htm"
   - title: "ケルン大司教区：2026年と2027年の移動祝日"
     url: "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Katholische-bewegliche-Feiertage-und-Hochfeste/"
-related_articles: ["christmas-markets-duesseldorf", "rhineland-carnival-11-11", "germany-public-holidays-by-state"]
+related_articles: ["christmas-markets-duesseldorf", "rhineland-carnival-11-11", "germany-public-holidays-by-state", "germany-silvester-fireworks-rules", "three-kings-day-sternsinger", "saint-nicholas-day-germany"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

@@ -31,6 +31,7 @@ official_sources:
     url: "https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content"
   - title: "ドイツ連邦政府：2026年8月の新制度"
     url: "https://www.bundesregierung.de/breg-de/aktuelles/gesetzliche-neuregelungen-2448548"
+related_articles: ["eu-right-to-repair-2026-germany", "online-shopping-returns-germany", "cancel-contracts-germany"]
 ---
 
 # EUのAI透明性ルールが2026年8月から適用｜利用者が知っておきたい表示

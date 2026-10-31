@@ -18,7 +18,7 @@ official_sources:
     url: "https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Meldungen/2026/260508-bundesrat-reform-private-altersvorsorge"
   - title: "消費者センター：新しい老後資金口座の注意点"
     url: "https://www.verbraucherzentrale.de/wissen/geld-versicherungen/altersvorsorge/neues-altersvorsorgedepot-rentenchance-oder-teure-verkaufsfalle-118178"
-related_articles: ["germany-january-2027-changes", "germany-inflation-september-2026", "health-insurance-zusatzbeitrag-2027"]
+related_articles: ["germany-january-2027-changes", "germany-inflation-september-2026", "health-insurance-zusatzbeitrag-2027", "wohngeld-reform-2027", "tax-refund-2022-deadline-december-2026"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

@@ -18,7 +18,7 @@ official_sources:
     url: "https://katholisch.de/artikel/42843-aelter-als-die-sternsinger-die-geschichte-der-haussegnung"
   - title: "ドイツ・ユネスコ委員会：シュテルンジンゲン（無形文化遺産）"
     url: "https://www.unesco.de/staette/sternsingen/"
-related_articles: ["cologne-cathedral-632-years", "saint-nicholas-day-germany", "christmas-tree-origin-germany"]
+related_articles: ["cologne-cathedral-632-years", "saint-nicholas-day-germany", "christmas-tree-origin-germany", "germany-silvester-fireworks-rules"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

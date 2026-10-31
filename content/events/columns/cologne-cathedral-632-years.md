@@ -16,7 +16,7 @@ official_sources:
     url: "https://whc.unesco.org/en/list/292/"
   - title: "ケルン大聖堂：東方三博士の巡礼"
     url: "https://www.koelner-dom.de/dreikoenigswallfahrt"
-related_articles: ["cologne-city-guide", "cologne-family-trip", "rhineland-carnival-11-11"]
+related_articles: ["cologne-city-guide", "cologne-family-trip", "rhineland-carnival-11-11", "berlin-wall-history"]
 city: "ケルン"
 area: "ケルン"
 location: "ケルン大聖堂（Kölner Dom）"

@@ -19,7 +19,7 @@ official_url: "https://museum-fuer-ostasiatische-kunst.de/Exhibitions"
 image_alt: "東アジアの陶磁器や漆芸を展示する静かな美術館を見学する来館者"
 image_caption: "AI生成の編集イメージ。実際の美術館内装・展示作品・来館者を撮影または複製したものではありません。"
 image_credit: "AI-generated editorial image / J-Connect"
-related_articles: ["eko-haus-autumn-2026", "family-weekend-events-nrw"]
+related_articles: ["family-weekend-events-nrw", "cologne-museumsnacht-2026-guide"]
 official_sources:
   - title: "ケルン東アジア美術館 展覧会一覧"
     url: "https://museum-fuer-ostasiatische-kunst.de/Exhibitions"

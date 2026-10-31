@@ -817,7 +817,7 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツの滞在許可を申請・更新する方法｜期限、必要書類、審査中の証明",
+    "title": "ドイツの滞在許可を申請・更新する方法｜期限、必要書類、審査中の証明（Fiktionsbescheinigung）",
     "description": "ドイツの滞在許可を申請・更新するときに、現在の許可条件、管轄、申請日、必要書類、審査中の滞在・就労・旅行をどう確認するかを整理します。",
     "url": "/germany/ja/living/residence-permit-renewal-germany/",
     "category": "生活・手続き",

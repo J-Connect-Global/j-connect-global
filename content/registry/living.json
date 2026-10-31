@@ -2450,7 +2450,7 @@
   },
   {
     "id": "L037",
-    "title": "ドイツの滞在許可を申請・更新する方法｜期限、必要書類、審査中の証明",
+    "title": "ドイツの滞在許可を申請・更新する方法｜期限、必要書類、審査中の証明（Fiktionsbescheinigung）",
     "slug": "residence-permit-renewal-germany",
     "category": "役所・滞在",
     "summary": "ドイツの滞在許可を申請・更新するときに、現在の許可条件、管轄、申請日、必要書類、審査中の滞在・就労・旅行をどう確認するかを整理します。",
@@ -2459,7 +2459,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-08-02",
-    "updated_at": "2026-10-17",
+    "updated_at": "2026-10-31",
     "last_verified": "2026-08-30",
     "tags": [
       "滞在許可",
@@ -2534,7 +2534,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-08-01",
-    "updated_at": "2026-08-30",
+    "updated_at": "2026-10-31",
     "last_verified": "2026-08-30",
     "tags": [
       "医師",

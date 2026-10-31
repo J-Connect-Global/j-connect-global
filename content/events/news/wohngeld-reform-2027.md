@@ -16,7 +16,7 @@ official_sources:
     url: "https://dip.bundestag.de/vorgang/gesetz-zur-vereinfachung-und-fortentwicklung-des-wohngeldgesetzes/338373"
   - title: "連邦住宅・都市開発・建設省：政府案（PDF）"
     url: "https://www.bmwsb.bund.de/SharedDocs/gesetzgebungsverfahren/DE/wohngeld-2026/kabinettsentwurf.pdf?__blob=publicationFile&v=2"
-related_articles: ["germany-rent-law-reform-furnished-2026", "rent-apartment-germany", "germany-january-2027-changes"]
+related_articles: ["germany-rent-law-reform-furnished-2026", "rent-apartment-germany", "germany-january-2027-changes", "altersvorsorgedepot-2027"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

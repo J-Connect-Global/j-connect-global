@@ -8,7 +8,7 @@ summary: "Deutschlandticketは2027年1月から月66.80ユーロへ値上げ。D
 official_sources:
   - title: "Deutsche Bahn：Deutschlandticketの契約変更FAQ"
     url: "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
-related_articles: ["db-2027-timetable-family-ticket", "germany-train-travel-guide", "cologne-antwerp-direct-ice-2026"]
+related_articles: ["db-2027-timetable-family-ticket", "germany-train-travel-guide", "cologne-antwerp-direct-ice-2026", "sugar-drink-tax-germany-2027", "pflegeversicherung-reform-2027", "wohngeld-reform-2027"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

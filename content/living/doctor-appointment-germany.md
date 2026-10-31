@@ -13,7 +13,7 @@ last_verified: "2026-08-30"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/doctor-appointment-germany/"
 image_alt: "ドイツの診療所で受付に健康保険証を提示する日本人の患者"
-related_articles: ["health-insurance-guide", "pregnancy-birth-germany", "germany-first-30-days"]
+related_articles: ["health-insurance-guide", "pregnancy-birth-germany", "germany-first-30-days", "epa-guide-germany", "japanese-speaking-doctors-germany", "dentist-germany-guide"]
 official_sources:
   - title: "連邦保健省の健康情報：医師の選び方と予約"
     url: "https://gesund.bund.de/en/arztwahl-und-terminsuche"

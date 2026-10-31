@@ -31,6 +31,7 @@ official_sources:
     url: "https://undine.bafg.de/rhein/zustand-aktuell/rhein_nw_mon.html"
   - title: "ドイツ連邦水文学研究所：2018年低水位の記録"
     url: "https://undine.bafg.de/rhein/extremereignisse/rhein_nw2018.html"
+related_articles: ["duesseldorf-city-guide", "cologne-city-guide", "rhine-river-relax-guide"]
 ---
 
 # ライン川の低水位は暮らしや旅行にどう影響する？｜2026年8月の見方

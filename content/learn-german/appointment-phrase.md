@@ -15,7 +15,7 @@ canonical_url: "/germany/ja/learn-german/appointment-phrase/"
 image: "/assets/img/learn-german/appointment-phrase.webp"
 image_alt: "カレンダーを確認しながら電話で予約する女性"
 image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。"
-related_articles: ["telephone-phrases", "hospital-phrases", "behoerde-anmeldung-phrases", "work-email-phrases"]
+related_articles: ["telephone-phrases", "hospital-phrases", "behoerde-anmeldung-phrases", "work-email-phrases", "pharmacy-prescription-phrases"]
 ---
 
 # 予約のドイツ語フレーズ｜電話・メールで予約・変更・キャンセルする

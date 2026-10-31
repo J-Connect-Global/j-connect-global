@@ -18,7 +18,7 @@ official_sources:
     url: "https://www.gesetze-im-internet.de/arbzg/BJNR117100994.html"
   - title: "機械騒音防止令（32. BImSchV）第7条"
     url: "https://www.gesetze-im-internet.de/bimschv_32/__7.html"
-related_articles: ["germany-winter-time-2026", "german-bread-culture", "germany-autumn-forest-walk", "nrw-christmas-opening-hours-2026"]
+related_articles: ["germany-winter-time-2026", "german-bread-culture", "germany-autumn-forest-walk", "nrw-christmas-opening-hours-2026", "germany-cash-payment-habits", "germany-bread-guide"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

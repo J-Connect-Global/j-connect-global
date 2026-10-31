@@ -29,7 +29,7 @@
     "duration": ["10min"],
     "official_sources": [],
     "disclaimer_type": "language_learning",
-    "related_articles": ["telephone-phrases", "hospital-phrases", "behoerde-anmeldung-phrases", "work-email-phrases"],
+    "related_articles": ["telephone-phrases", "hospital-phrases", "behoerde-anmeldung-phrases", "work-email-phrases", "pharmacy-prescription-phrases"],
     "related_living_guides": ["doctor-appointment-germany", "anmeldung-guide", "health-insurance-guide"],
     "review": {
       "status": "reviewed",
@@ -190,7 +190,7 @@
     "duration": ["15min"],
     "official_sources": [],
     "disclaimer_type": "language_learning",
-    "related_articles": ["work-email-phrases", "telephone-phrases"],
+    "related_articles": ["work-email-phrases", "telephone-phrases", "appointment-phrase"],
     "related_living_guides": ["rent-apartment-germany", "schufa-guide", "moving-checklist-germany", "rundfunkbeitrag-guide"],
     "review": {
       "status": "reviewed",
@@ -462,7 +462,7 @@
     "duration": ["15min"],
     "official_sources": [],
     "disclaimer_type": "business_language",
-    "related_articles": ["work-email-phrases", "telephone-phrases"],
+    "related_articles": ["work-email-phrases", "telephone-phrases", "appointment-phrase"],
     "related_living_guides": ["tax-id-steuernummer-steuerklasse", "bank-account-germany"],
     "review": {
       "status": "reviewed",

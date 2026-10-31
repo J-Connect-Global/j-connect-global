@@ -16,7 +16,7 @@ image: "/assets/img/living/eu-blue-card-germany.webp"
 image_alt: "青いカードとパスポート、ドイツの街並みのシルエットを描いたイラスト"
 image_caption: "イラスト：J-Connect。EUブルーカードのテーマを表したもので、実際のカードを描いたものではありません。"
 image_credit: "Illustration / J-Connect"
-related_articles: ["residence-permit-renewal-germany", "family-reunification-spouse-work-germany", "job-notice-period-germany"]
+related_articles: ["residence-permit-renewal-germany", "family-reunification-spouse-work-germany", "job-notice-period-germany", "unemployment-benefit-germany"]
 official_sources:
   - title: "Make it in Germany：EUブルーカードの概要（PDF）"
     url: "https://www.make-it-in-germany.com/pdf-blaue-karte-eu"

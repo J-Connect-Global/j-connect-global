@@ -16,7 +16,7 @@ image: "/assets/img/living/unemployment-benefit-germany.webp"
 image_alt: "机の上のノートパソコンとカレンダー、書類とマグカップを描いたイラスト"
 image_caption: "イラスト：J-Connect。失業手当のテーマを表したもので、特定の窓口や人物を描いたものではありません。"
 image_credit: "Illustration / J-Connect"
-related_articles: ["job-notice-period-germany", "residence-permit-renewal-germany", "germany-labour-market-august-2026"]
+related_articles: ["job-notice-period-germany", "residence-permit-renewal-germany", "family-reunification-spouse-work-germany", "eu-blue-card-germany"]
 official_sources:
   - title: "連邦雇用エージェンシー：失業手当の条件・金額・期間"
     url: "https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/finanzielle-hilfen/arbeitslosengeld-anspruch-hoehe-dauer"

@@ -13,7 +13,7 @@ last_verified: "2026-08-30"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/germany-train-travel-guide/"
 image_alt: "スーツケースを持ち長距離列車の横に立つ旅行者"
-related_articles: ["cologne-city-guide", "duesseldorf-city-guide", "germany-first-30-days", "christmas-markets-duesseldorf"]
+related_articles: ["cologne-city-guide", "duesseldorf-city-guide", "germany-first-30-days", "christmas-markets-duesseldorf", "deutsche-bahn-delays-why"]
 official_sources:
   - title: "ドイツ鉄道：公式アプリ"
     url: "https://int.bahn.de/en/booking-information/db-navigator"

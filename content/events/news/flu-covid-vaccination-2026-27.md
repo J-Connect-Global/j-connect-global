@@ -16,7 +16,7 @@ official_sources:
     url: "https://www.rki.de/SharedDocs/FAQs/DE/Impfen/Influenza/FAQ_Liste_Impfempfehlung.html"
   - title: "連邦公衆衛生研究所（infektionsschutz.de）：インフルエンザワクチンのよくある質問"
     url: "https://www.infektionsschutz.de/impfen/fuer-erwachsene/grippe-impfung-bei-erwachsenen/fragen-und-antworten-zur-grippeimpfung/"
-related_articles: ["doctor-appointment-germany", "health-insurance-guide", "sick-note-rules-germany-2026"]
+related_articles: ["doctor-appointment-germany", "health-insurance-guide", "sick-note-rules-germany-2026", "europe-heatwave-basic-checks"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

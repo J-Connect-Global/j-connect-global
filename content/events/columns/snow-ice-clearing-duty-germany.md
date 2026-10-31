@@ -16,7 +16,7 @@ official_sources:
     url: "https://www.stadt-koeln.de/mediaasset/content/satzungen/strassenreinigungssatzung_20251217.pdf"
   - title: "ドイツ借家人連盟：雪と氷のときの冬の雪かき"
     url: "https://mieterbund.de/aktuelles/meldungen/winterdienst-bei-eis-und-schnee/"
-related_articles: ["rent-apartment-germany", "winter-tires-germany-2026", "germany-winter-mold-ventilation"]
+related_articles: ["rent-apartment-germany", "winter-tires-germany-2026", "germany-winter-mold-ventilation", "europe-heatwave-basic-checks", "germany-rent-law-reform-furnished-2026"]
 city: "NRW（ケルン・デュッセルドルフ）"
 area: "NRW"
 location: ""

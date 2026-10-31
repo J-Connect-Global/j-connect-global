@@ -18,7 +18,7 @@ official_sources:
     url: "https://www.verbraucherzentrale.de/wissen/energie/strom-sparen/heizen-und-lueften-so-gehts-richtig-10426"
   - title: "ドイツ民法典 §536c（賃借人の欠陥通知義務）"
     url: "https://www.gesetze-im-internet.de/bgb/__536c.html"
-related_articles: ["rent-apartment-germany", "nebenkostenabrechnung-2025-deadline", "germany-winter-time-2026"]
+related_articles: ["rent-apartment-germany", "nebenkostenabrechnung-2025-deadline", "germany-winter-time-2026", "snow-ice-clearing-duty-germany", "building-modernisation-law-germany-2026"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

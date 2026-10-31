@@ -17,6 +17,7 @@ official_url: "https://www.visitduesseldorf.de/erleben/veranstaltungen/japan-tag
 official_sources:
   - title: "Visit Düsseldorf：デュッセルドルフの日本人コミュニティ"
     url: "https://www.visitduesseldorf.de/en/experience/sights/little-tokyo"
+related_articles: ["germany-belonging-three-layers"]
 ---
 
 # デュッセルドルフ日本デー｜ライン川に映る日独交流と日本文化

@@ -12,7 +12,7 @@ official_sources:
     url: "https://www.rheinbahn.de/"
   - title: "デュッセルドルフ空港：P+R駐車場案内"
     url: "https://www.dus.com/de-de/parken/park-,-a-,-ride"
-related_articles: ["kommern-saint-martin-2026-guide", "germany-train-travel-guide", "germany-sunday-rest-shops-closed", "nrw-christmas-opening-hours-2026"]
+related_articles: ["kommern-saint-martin-2026-guide", "germany-train-travel-guide", "germany-sunday-rest-shops-closed", "nrw-christmas-opening-hours-2026", "nuremberg-christkindlesmarkt-2026-guide", "cologne-museumsnacht-2026-guide"]
 city: "デュッセルドルフ"
 location: "旧市街・中心部の広場と通り"
 event_date: "2026-11-19〜2026-12-30"

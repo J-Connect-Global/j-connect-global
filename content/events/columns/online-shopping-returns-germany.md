@@ -18,7 +18,7 @@ official_sources:
     url: "https://www.gesetze-im-internet.de/bgb/__355.html"
   - title: "民法 第312g条（撤回の権利の例外）"
     url: "https://www.gesetze-im-internet.de/bgb/__312g.html"
-related_articles: ["dhl-packstation-guide", "dhl-delivered-but-not-received", "cancel-contracts-germany"]
+related_articles: ["dhl-packstation-guide", "dhl-delivered-but-not-received", "cancel-contracts-germany", "germany-cash-payment-habits"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

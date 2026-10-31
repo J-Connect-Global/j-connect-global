@@ -16,7 +16,7 @@ official_sources:
     url: "https://www.destatis.de/DE/Themen/Querschnitt/Weihnachten/Advent/_inhalt.html"
   - title: "連邦環境庁（UBA）：クリスマスツリーの選び方"
     url: "https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/haushalt-wohnen/weihnachtsbaum"
-related_articles: ["advent-wreath-calendar-origin", "christmas-markets-duesseldorf", "germany-autumn-forest-walk"]
+related_articles: ["advent-wreath-calendar-origin", "christmas-markets-duesseldorf", "germany-autumn-forest-walk", "germany-silvester-fireworks-rules", "three-kings-day-sternsinger"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

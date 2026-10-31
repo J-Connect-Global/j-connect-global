@@ -13,7 +13,7 @@ updated_at: "2026-08-31"
 last_verified: "2026-07-22"
 next_review: "2026-09-15"
 canonical_url: "/germany/ja/living/cologne-city-guide/"
-related_articles: ["cologne-family-trip", "rhine-river-relax-guide", "duesseldorf-city-guide"]
+related_articles: ["cologne-family-trip", "rhine-river-relax-guide", "duesseldorf-city-guide", "rhine-low-water-august-2026"]
 official_sources:
   - title: "Kölner Dom：見学・塔・宝物館チケット"
     url: "https://tickets.koelner-dom.de/en"

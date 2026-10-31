@@ -39,7 +39,9 @@
       }
     ],
     "disclaimer_type": "event",
-    "related_articles": [],
+    "related_articles": [
+      "germany-belonging-three-layers"
+    ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
@@ -97,7 +99,9 @@
       "kommern-saint-martin-2026-guide",
       "germany-train-travel-guide",
       "germany-sunday-rest-shops-closed",
-      "nrw-christmas-opening-hours-2026"
+      "nrw-christmas-opening-hours-2026",
+      "nuremberg-christkindlesmarkt-2026-guide",
+      "cologne-museumsnacht-2026-guide"
     ],
     "review": {
       "status": "reviewed",
@@ -149,7 +153,12 @@
     "official_url": "",
     "official_sources": [],
     "disclaimer_type": "event",
-    "related_articles": [],
+    "related_articles": [
+      "cologne-flea-market",
+      "kommern-saint-martin-2026-guide",
+      "german-bread-culture",
+      "cologne-museumsnacht-2026-guide"
+    ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
@@ -189,7 +198,9 @@
     "official_url": "",
     "official_sources": [],
     "disclaimer_type": "event",
-    "related_articles": [],
+    "related_articles": [
+      "family-weekend-events-nrw"
+    ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
@@ -276,7 +287,11 @@
     "official_url": "",
     "official_sources": [],
     "disclaimer_type": "news_explainer",
-    "related_articles": [],
+    "related_articles": [
+      "flu-covid-vaccination-2026-27",
+      "snow-ice-clearing-duty-germany",
+      "landlord-housing-email-phrases"
+    ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
@@ -574,8 +589,8 @@
     ],
     "disclaimer_type": "event",
     "related_articles": [
-      "eko-haus-autumn-2026",
-      "family-weekend-events-nrw"
+      "family-weekend-events-nrw",
+      "cologne-museumsnacht-2026-guide"
     ],
     "review": {
       "status": "reviewed",
@@ -712,7 +727,11 @@
       }
     ],
     "disclaimer_type": "news_explainer",
-    "related_articles": [],
+    "related_articles": [
+      "schools-germany-japanese-families",
+      "german-school-grades-1-to-6",
+      "parenting-phrases"
+    ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
@@ -782,7 +801,11 @@
       }
     ],
     "disclaimer_type": "news_explainer",
-    "related_articles": [],
+    "related_articles": [
+      "eu-right-to-repair-2026-germany",
+      "online-shopping-returns-germany",
+      "cancel-contracts-germany"
+    ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
@@ -852,7 +875,10 @@
       }
     ],
     "disclaimer_type": "news_explainer",
-    "related_articles": [],
+    "related_articles": [
+      "eu-ai-act-transparency-august-2026",
+      "mobile-phone-sim-germany"
+    ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
@@ -914,7 +940,10 @@
       }
     ],
     "disclaimer_type": "news_explainer",
-    "related_articles": [],
+    "related_articles": [
+      "baucode-nrw-september-2026",
+      "germany-winter-mold-ventilation"
+    ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
@@ -1107,7 +1136,9 @@
     ],
     "disclaimer_type": "news_explainer",
     "related_articles": [
-      "germany-import-prices-june-2026"
+      "duesseldorf-city-guide",
+      "cologne-city-guide",
+      "rhine-river-relax-guide"
     ],
     "review": {
       "status": "reviewed",
@@ -1171,8 +1202,9 @@
     ],
     "disclaimer_type": "news_explainer",
     "related_articles": [
-      "germany-bureaucracy-costs-2026",
-      "germany-import-prices-june-2026"
+      "germany-pfand-return-guide",
+      "germany-waste-sorting-guide",
+      "germany-sunday-rest-shops-closed"
     ],
     "review": {
       "status": "reviewed",
@@ -1724,7 +1756,6 @@
     "disclaimer_type": "event",
     "related_articles": [
       "cologne-east-asian-art-museum-2026",
-      "spiel-essen-2026-guide",
       "kommern-saint-martin-2026-guide"
     ],
     "review": {
@@ -1840,7 +1871,6 @@
     "disclaimer_type": "news_explainer",
     "related_articles": [
       "building-modernisation-law-germany-2026",
-      "germany-bureaucracy-costs-2026",
       "germany-information-triage-guide"
     ],
     "review": {
@@ -1964,8 +1994,8 @@
     "disclaimer_type": "editorial_column",
     "related_articles": [
       "family-weekend-events-nrw",
-      "eko-haus-autumn-2026",
-      "germany-information-triage-guide"
+      "germany-information-triage-guide",
+      "japan-day-duesseldorf"
     ],
     "review": {
       "status": "reviewed",
@@ -2025,9 +2055,7 @@
     ],
     "disclaimer_type": "editorial_column",
     "related_articles": [
-      "germany-september-2026-changes",
-      "eu-ai-act-transparency-august-2026",
-      "germany-bureaucracy-costs-2026"
+      "eu-ai-act-transparency-august-2026"
     ],
     "review": {
       "status": "reviewed",
@@ -2308,8 +2336,8 @@
     ],
     "related_articles": [
       "germany-autumn-forest-walk",
-      "frankfurt-book-fair-2026-guide",
-      "germany-inflation-august-2026"
+      "db-2027-timetable-family-ticket",
+      "deutsche-bahn-delays-why"
     ],
     "city": "ケルン・ベルギー",
     "area": "ドイツ西部・ベルギー",
@@ -2439,7 +2467,9 @@
     "related_articles": [
       "kommern-saint-martin-2026-guide",
       "christmas-markets-duesseldorf",
-      "germany-autumn-forest-walk"
+      "germany-autumn-forest-walk",
+      "germany-bread-guide",
+      "german-wine-regions-guide"
     ],
     "city": "ドイツ全土",
     "area": "ドイツの食文化",
@@ -2504,9 +2534,10 @@
       }
     ],
     "related_articles": [
-      "essen-light-festival-2026-guide",
       "kommern-saint-martin-2026-guide",
-      "german-bread-culture"
+      "german-bread-culture",
+      "germany-winter-time-2026",
+      "germany-wild-birds-guide"
     ],
     "city": "ドイツ全土",
     "area": "ドイツの森・身近な緑地",
@@ -2565,7 +2596,10 @@
     "related_articles": [
       "db-2027-timetable-family-ticket",
       "germany-train-travel-guide",
-      "cologne-antwerp-direct-ice-2026"
+      "cologne-antwerp-direct-ice-2026",
+      "sugar-drink-tax-germany-2027",
+      "pflegeversicherung-reform-2027",
+      "wohngeld-reform-2027"
     ],
     "city": "ドイツ全土",
     "area": "ドイツ全土",
@@ -2628,7 +2662,8 @@
     "related_articles": [
       "deutschlandticket-2027-price-consent",
       "germany-train-travel-guide",
-      "cologne-antwerp-direct-ice-2026"
+      "cologne-antwerp-direct-ice-2026",
+      "deutsche-bahn-delays-why"
     ],
     "city": "ドイツ全土",
     "area": "ドイツ全土・欧州",
@@ -2690,8 +2725,7 @@
     ],
     "related_articles": [
       "germany-autumn-forest-walk",
-      "db-2027-timetable-family-ticket",
-      "spiel-essen-2026-guide"
+      "db-2027-timetable-family-ticket"
     ],
     "city": "ドイツ全土",
     "area": "ドイツ全土",
@@ -2770,9 +2804,10 @@
     "related_articles": [
       "deutschlandticket-2027-price-consent",
       "db-2027-timetable-family-ticket",
-      "germany-september-2026-changes",
       "kindergeld-auszahlungstermine-2027",
-      "minijob-grenze-2027"
+      "minijob-grenze-2027",
+      "tax-refund-2022-deadline-december-2026",
+      "japan-germany-social-security-pension"
     ],
     "city": "ドイツ全土",
     "area": "ドイツ全土",
@@ -2846,9 +2881,7 @@
       }
     ],
     "related_articles": [
-      "germany-warning-day-2026-results",
-      "germany-information-triage-guide",
-      "germany-inflation-august-2026"
+      "germany-information-triage-guide"
     ],
     "city": "ドイツ全土",
     "area": "ドイツ全土 / 欧州",
@@ -2931,7 +2964,9 @@
     "related_articles": [
       "health-insurance-guide",
       "germany-january-2027-changes",
-      "tax-id-steuernummer-steuerklasse"
+      "tax-id-steuernummer-steuerklasse",
+      "sugar-drink-tax-germany-2027",
+      "pflegeversicherung-reform-2027"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3011,7 +3046,9 @@
     "related_articles": [
       "rent-apartment-germany",
       "nebenkostenabrechnung-2025-deadline",
-      "germany-winter-time-2026"
+      "germany-winter-time-2026",
+      "snow-ice-clearing-duty-germany",
+      "building-modernisation-law-germany-2026"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3086,7 +3123,9 @@
       "germany-winter-time-2026",
       "german-bread-culture",
       "germany-autumn-forest-walk",
-      "nrw-christmas-opening-hours-2026"
+      "nrw-christmas-opening-hours-2026",
+      "germany-cash-payment-habits",
+      "germany-bread-guide"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3311,7 +3350,8 @@
     "related_articles": [
       "kommern-saint-martin-2026-guide",
       "christmas-markets-duesseldorf",
-      "cologne-city-guide"
+      "cologne-city-guide",
+      "quiet-holidays-november-germany"
     ],
     "city": "ケルン・デュッセルドルフ",
     "location": "ケルン旧市街、デュッセルドルフ市庁舎前広場など",
@@ -3461,7 +3501,8 @@
     "related_articles": [
       "germany-sunday-rest-shops-closed",
       "rhineland-carnival-11-11",
-      "christmas-markets-duesseldorf"
+      "christmas-markets-duesseldorf",
+      "quiet-holidays-november-germany"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3535,7 +3576,10 @@
     "related_articles": [
       "christmas-markets-duesseldorf",
       "rhineland-carnival-11-11",
-      "germany-public-holidays-by-state"
+      "germany-public-holidays-by-state",
+      "germany-silvester-fireworks-rules",
+      "three-kings-day-sternsinger",
+      "saint-nicholas-day-germany"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3609,7 +3653,8 @@
     "related_articles": [
       "bank-account-germany",
       "germany-sunday-rest-shops-closed",
-      "christmas-markets-duesseldorf"
+      "christmas-markets-duesseldorf",
+      "online-shopping-returns-germany"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3674,7 +3719,9 @@
     "related_articles": [
       "advent-wreath-calendar-origin",
       "christmas-markets-duesseldorf",
-      "germany-autumn-forest-walk"
+      "germany-autumn-forest-walk",
+      "germany-silvester-fireworks-rules",
+      "three-kings-day-sternsinger"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3745,7 +3792,8 @@
     "related_articles": [
       "germany-train-travel-guide",
       "germany-autobahn-speed-limit",
-      "db-2027-timetable-family-ticket"
+      "db-2027-timetable-family-ticket",
+      "cologne-antwerp-direct-ice-2026"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3969,7 +4017,8 @@
     "related_articles": [
       "germany-public-holidays-by-state",
       "nrw-christmas-opening-hours-2026",
-      "christmas-tree-origin-germany"
+      "christmas-tree-origin-germany",
+      "three-kings-day-sternsinger"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -4188,7 +4237,8 @@
     "related_articles": [
       "cologne-city-guide",
       "cologne-family-trip",
-      "rhineland-carnival-11-11"
+      "rhineland-carnival-11-11",
+      "berlin-wall-history"
     ],
     "city": "ケルン",
     "location": "ケルン大聖堂（Kölner Dom）",
@@ -4259,7 +4309,8 @@
     "related_articles": [
       "duesseldorf-city-guide",
       "nrw-nature-relax-guide",
-      "cologne-cathedral-632-years"
+      "cologne-cathedral-632-years",
+      "berlin-wall-history"
     ],
     "city": "ルール地方（エッセン・ボットロップなど）",
     "location": "ツォルフェアアイン炭鉱業遺産群（エッセン）など",
@@ -4334,7 +4385,8 @@
     "related_articles": [
       "cologne-cathedral-632-years",
       "saint-nicholas-day-germany",
-      "christmas-tree-origin-germany"
+      "christmas-tree-origin-germany",
+      "germany-silvester-fireworks-rules"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -4483,7 +4535,9 @@
     "related_articles": [
       "kita-u3-tagesmutter-guide",
       "nrw-school-holidays-2026-2027",
-      "germany-public-holidays-by-state"
+      "germany-public-holidays-by-state",
+      "ganztag-primary-school-nrw-2026",
+      "schools-germany-japanese-families"
     ],
     "city": "NRW（ノルトライン＝ヴェストファーレン州）",
     "location": "",
@@ -4547,7 +4601,6 @@
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
-      "germany-inflation-august-2026",
       "germany-january-2027-changes",
       "health-insurance-zusatzbeitrag-2027"
     ],
@@ -4686,7 +4739,9 @@
     "related_articles": [
       "germany-january-2027-changes",
       "germany-inflation-september-2026",
-      "health-insurance-zusatzbeitrag-2027"
+      "health-insurance-zusatzbeitrag-2027",
+      "wohngeld-reform-2027",
+      "tax-refund-2022-deadline-december-2026"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -4833,7 +4888,9 @@
     "related_articles": [
       "rent-apartment-germany",
       "building-modernisation-law-germany-2026",
-      "germany-inflation-september-2026"
+      "germany-inflation-september-2026",
+      "wohngeld-reform-2027",
+      "snow-ice-clearing-duty-germany"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -4904,7 +4961,8 @@
     "related_articles": [
       "germany-rent-law-reform-furnished-2026",
       "rent-apartment-germany",
-      "germany-january-2027-changes"
+      "germany-january-2027-changes",
+      "altersvorsorgedepot-2027"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -4975,7 +5033,8 @@
     "related_articles": [
       "doctor-appointment-germany",
       "health-insurance-guide",
-      "sick-note-rules-germany-2026"
+      "sick-note-rules-germany-2026",
+      "europe-heatwave-basic-checks"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -5114,7 +5173,8 @@
     "related_articles": [
       "winter-tires-germany-2026",
       "germany-autobahn-speed-limit",
-      "germany-inflation-september-2026"
+      "germany-inflation-september-2026",
+      "buying-registering-car-germany"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -5257,7 +5317,9 @@
     "related_articles": [
       "rent-apartment-germany",
       "winter-tires-germany-2026",
-      "germany-winter-mold-ventilation"
+      "germany-winter-mold-ventilation",
+      "europe-heatwave-basic-checks",
+      "germany-rent-law-reform-furnished-2026"
     ],
     "city": "NRW（ケルン・デュッセルドルフ）",
     "location": "",
@@ -5327,7 +5389,8 @@
     "related_articles": [
       "dhl-packstation-guide",
       "dhl-delivered-but-not-received",
-      "cancel-contracts-germany"
+      "cancel-contracts-germany",
+      "germany-cash-payment-habits"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -5545,7 +5608,8 @@
     "related_articles": [
       "electricity-internet-contracts-germany",
       "online-shopping-returns-germany",
-      "moving-checklist-germany"
+      "moving-checklist-germany",
+      "mobile-phone-sim-germany"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -5620,7 +5684,8 @@
     "related_articles": [
       "unused-vacation-days-germany",
       "residence-permit-renewal-germany",
-      "germany-labour-market-august-2026"
+      "unemployment-benefit-germany",
+      "eu-blue-card-germany"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -5685,7 +5750,8 @@
       "aachen-christmas-market-2026-guide",
       "gluehwein-christmas-market-guide",
       "cologne-cathedral-632-years",
-      "nrw-christmas-opening-hours-2026"
+      "nrw-christmas-opening-hours-2026",
+      "nuremberg-christkindlesmarkt-2026-guide"
     ],
     "city": "ケルン",
     "location": "大聖堂前のロンカリ広場、ノイマルクト、旧市街ほか",
@@ -5760,7 +5826,9 @@
       "aachen-day-trip",
       "cologne-christmas-markets-2026-guide",
       "christmas-markets-duesseldorf",
-      "gluehwein-christmas-market-guide"
+      "gluehwein-christmas-market-guide",
+      "nuremberg-christkindlesmarkt-2026-guide",
+      "essen-motor-show-2026-guide"
     ],
     "city": "アーヘン",
     "location": "市庁舎前のマルクト広場、カッチュホーフ、大聖堂周辺",
@@ -5835,7 +5903,8 @@
       "munich-weekend-trip",
       "cologne-christmas-markets-2026-guide",
       "advent-wreath-calendar-origin",
-      "germany-train-travel-guide"
+      "germany-train-travel-guide",
+      "aachen-christmas-market-2026-guide"
     ],
     "city": "ニュルンベルク",
     "location": "旧市街の中央広場（ハウプトマルクト）",
@@ -5979,9 +6048,9 @@
     ],
     "related_articles": [
       "germany-autobahn-speed-limit",
-      "spiel-essen-2026-guide",
       "ruhr-coal-mining-history",
-      "boot-duesseldorf-2027-guide"
+      "boot-duesseldorf-2027-guide",
+      "christmas-markets-duesseldorf"
     ],
     "city": "エッセン",
     "location": "エッセン見本市会場",

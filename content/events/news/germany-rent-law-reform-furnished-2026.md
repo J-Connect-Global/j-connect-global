@@ -16,7 +16,7 @@ official_sources:
     url: "https://www.bundestag.de/dokumente/textarchiv/2026/kw42-pa-recht-mieten-1221718"
   - title: "連邦議会：賃貸法の改正案への賛否"
     url: "https://www.bundestag.de/presse/hib/kurzmeldungen-1224894"
-related_articles: ["rent-apartment-germany", "building-modernisation-law-germany-2026", "germany-inflation-september-2026"]
+related_articles: ["rent-apartment-germany", "building-modernisation-law-germany-2026", "germany-inflation-september-2026", "wohngeld-reform-2027", "snow-ice-clearing-duty-germany"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

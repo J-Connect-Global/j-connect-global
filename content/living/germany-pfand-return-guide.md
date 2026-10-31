@@ -15,7 +15,7 @@ canonical_url: "/germany/ja/living/germany-pfand-return-guide/"
 image: "/assets/img/living/germany-pfand-return-guide.webp"
 image_alt: "スーパーの返却機に空のペットボトルを入れる様子"
 image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。"
-related_articles: ["germany-waste-sorting-guide", "germany-first-30-days", "germany-bread-guide"]
+related_articles: ["germany-waste-sorting-guide", "germany-first-30-days", "germany-bread-guide", "germany-cash-payment-habits", "eu-packaging-regulation-august-2026"]
 official_sources:
   - title: "DPG：消費者向けFAQ"
     url: "https://dpg-pfandsystem.de/de/faq-verbraucherfragen-umwelt.html"

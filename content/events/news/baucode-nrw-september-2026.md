@@ -21,7 +21,7 @@ image: "/assets/img/events/baucode-nrw-september-2026.webp"
 image_alt: "NRWの既存集合住宅前で改修計画をタブレットで確認する所有者と専門家"
 image_caption: "AI生成の編集用イメージ。人物、建物、計画図、端末画面は架空で、実在の申請案件ではありません。"
 image_credit: "AI-generated editorial image / J-Connect"
-related_articles: ["building-modernisation-law-germany-2026", "germany-bureaucracy-costs-2026", "germany-information-triage-guide"]
+related_articles: ["building-modernisation-law-germany-2026", "germany-information-triage-guide"]
 official_sources:
   - title: "NRW州政府：BauCode NRW・州建築法第3次改正"
     url: "https://www.land.nrw/pressemitteilung/baucode-nrw-drittes-update-zur-landesbauordnung-macht-bauen-einfacher-schneller"

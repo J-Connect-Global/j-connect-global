@@ -20,7 +20,7 @@ image: "/assets/img/events/germany-belonging-three-layers.webp"
 image_alt: "地域の交流会で次回の日程を相談する日本人とドイツ人の仲間"
 image_caption: "AI生成の編集用イメージ。人物、団体、会場は架空です。"
 image_credit: "AI-generated editorial image / J-Connect"
-related_articles: ["family-weekend-events-nrw", "eko-haus-autumn-2026", "germany-information-triage-guide"]
+related_articles: ["family-weekend-events-nrw", "germany-information-triage-guide", "japan-day-duesseldorf"]
 official_sources:
   - title: "TelefonSeelsorge Deutschland"
     url: "https://www.telefonseelsorge.de/"

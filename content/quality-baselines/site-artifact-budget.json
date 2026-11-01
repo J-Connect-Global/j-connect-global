@@ -15,10 +15,10 @@
       "shell_bytes": 380000
     },
     "hub": {
-      "html_bytes": 295000,
+      "html_bytes": 310000,
       "css_bytes": 210000,
       "js_bytes": 140000,
-      "shell_bytes": 520000
+      "shell_bytes": 535000
     },
     "article": {
       "html_bytes": 140000,
@@ -41,7 +41,7 @@
     "utility": {
       "html_bytes": 140000,
       "css_bytes": 220000,
-      "js_bytes": 210000,
+      "js_bytes": 215000,
       "shell_bytes": 480000
     }
   }

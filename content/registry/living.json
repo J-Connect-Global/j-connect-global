@@ -4540,5 +4540,87 @@
     "image_caption": "イラスト：J-Connect。EUブルーカードのテーマを表したもので、実際のカードを描いたものではありません。",
     "image_credit": "Illustration / J-Connect",
     "image": "/assets/img/living/eu-blue-card-germany.webp"
+  },
+  {
+    "id": "L073",
+    "slug": "christmas-post-germany-to-japan-2026",
+    "url": "/germany/ja/living/christmas-post-germany-to-japan-2026/",
+    "markdown_path": "/content/living/christmas-post-germany-to-japan-2026.md",
+    "published": true,
+    "status": "published",
+    "home_visible": true,
+    "home_order": 2,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "living",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (Deutsche Post, DHL, Zoll); human review pending",
+      "last_reviewed_at": "2026-11-01",
+      "next_review_due": "2026-12-19"
+    },
+    "canonical_url": "/germany/ja/living/christmas-post-germany-to-japan-2026/",
+    "title": "ドイツから日本へクリスマス・年末の荷物と手紙を送る2026｜締切・料金・税関書類・送れない物",
+    "category": "暮らし・買い物",
+    "summary": "2026年にドイツから日本へクリスマスの荷物や手紙を送るなら、Deutsche Post・DHLの公式締切は手紙・はがきが11月25日、小包が11月26日、Expressが12月18日です。日本向けの料金、税関申告書CN22/CN23の書き方、電池・香水・肉製品など送れない物を整理します。",
+    "published_at": "2026-11-01",
+    "last_verified": "2026-11-01",
+    "tags": [
+      "日本へ荷物",
+      "国際郵便",
+      "DHL",
+      "Deutsche Post",
+      "クリスマス",
+      "年末年始",
+      "税関",
+      "2026年"
+    ],
+    "updated_at": "2026-11-01",
+    "related_articles": [
+      "dhl-packstation-guide",
+      "dhl-delivered-but-not-received",
+      "nrw-christmas-opening-hours-2026"
+    ],
+    "official_sources": [
+      {
+        "title": "Deutsche Post：2026年クリスマスの最終差出日（国内・国際）",
+        "url": "https://www.deutschepost.de/de/w/weihnachtspost.html"
+      },
+      {
+        "title": "DHL：2026年クリスマスの最終差出日と梱包の注意",
+        "url": "https://www.dhl.de/de/privatkunden/kampagnenseiten/weihnachten.html"
+      },
+      {
+        "title": "DHL：国際小包の料金表（ゾーン別）",
+        "url": "https://www.dhl.de/de/privatkunden/pakete-versenden/weltweit-versenden/preise-international.html"
+      },
+      {
+        "title": "DHL：国際小包・Päckchenのサイズとオプション",
+        "url": "https://www.dhl.de/de/privatkunden/pakete-versenden/weltweit-versenden/paket-und-paeckchen.html"
+      },
+      {
+        "title": "DHL：海外発送の5項目チェックリスト",
+        "url": "https://www.dhl.de/de/privatkunden/pakete-versenden/weltweit-versenden/checkliste-auslandsversand.html"
+      },
+      {
+        "title": "DHL：個人向け税関情報（CN22/CN23）",
+        "url": "https://www.dhl.de/de/toolbar/footer/informationen/zollinformationen.html"
+      },
+      {
+        "title": "DHL：国別の禁止・制限品リスト（英語PDF、2026年9月版）",
+        "url": "https://www.dhl.de/dam/jcr:ed5cc88c-38f1-4ac9-9c6e-7b460f050eb7/list-of-prohibited-articles.pdf"
+      },
+      {
+        "title": "Deutsche Post：国際郵便の手紙・はがき料金",
+        "url": "https://www.deutschepost.de/de/b/briefe-ins-ausland/brief-postkarte-international.html"
+      },
+      {
+        "title": "ドイツ税関：EU域外への郵便物の手続き",
+        "url": "https://www.zoll.de/DE/Privatpersonen/Postsendungen-Internetbestellungen/Sendungen-in-einen-Nicht-EU-Staat/Verfahren/verfahren_node.html"
+      }
+    ],
+    "image": "/assets/img/living/christmas-post-germany-to-japan-2026.webp",
+    "image_alt": "クリスマスの飾りがある部屋で、段ボール箱にテープを貼り、カードを添えて日本へ送る準備をする様子のイラスト"
   }
 ]

@@ -1213,6 +1213,22 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
+    "title": "ドイツから日本へクリスマス・年末の荷物と手紙を送る2026｜締切・料金・税関書類・送れない物",
+    "description": "2026年にドイツから日本へクリスマスの荷物や手紙を送るなら、Deutsche Post・DHLの公式締切は手紙・はがきが11月25日、小包が11月26日、Expressが12月18日です。日本向けの料金、税関申告書CN22/CN23の書き方、電池・香水・肉製品など送れない物を整理します。",
+    "url": "/germany/ja/living/christmas-post-germany-to-japan-2026/",
+    "category": "生活・手続き",
+    "tags": [
+      "日本へ荷物",
+      "国際郵便",
+      "DHL",
+      "Deutsche Post",
+      "クリスマス",
+      "年末年始",
+      "税関",
+      "2026年"
+    ]
+  },
+  {
     "title": "デュッセルドルフ日本デー｜ライン川に映る日独交流と日本文化",
     "description": "デュッセルドルフ日本デーを、食・武道・舞台・ポップカルチャー・花火が集まる催しとして紹介。大きな日本人コミュニティと街の関係、現地で見たい文化の交わりを解説します。",
     "url": "/germany/ja/events/japan-day-duesseldorf/",

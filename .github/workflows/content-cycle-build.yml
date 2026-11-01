@@ -34,13 +34,13 @@ jobs:
           import sharp from "sharp";
           import { rename } from "node:fs/promises";
           const files = [
-            ["assets/img/events/dresden-striezelmarkt-2026-guide.webp", 880],
+            ["assets/img/events/dresden-striezelmarkt-2026-guide.webp", 860],
             ["assets/img/events/dresden-striezelmarkt-2026-guide-768w.webp", 768],
             ["assets/img/events/dresden-striezelmarkt-2026-guide-480w.webp", 480],
-            ["assets/img/events/frankfurt-christmas-market-2026-guide.webp", 880],
+            ["assets/img/events/frankfurt-christmas-market-2026-guide.webp", 860],
             ["assets/img/events/frankfurt-christmas-market-2026-guide-768w.webp", 768],
             ["assets/img/events/frankfurt-christmas-market-2026-guide-480w.webp", 480],
-            ["assets/img/events/stuttgart-christmas-market-2026-guide.webp", 880],
+            ["assets/img/events/stuttgart-christmas-market-2026-guide.webp", 860],
             ["assets/img/events/stuttgart-christmas-market-2026-guide-768w.webp", 768],
             ["assets/img/events/stuttgart-christmas-market-2026-guide-480w.webp", 480]
           ];

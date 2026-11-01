@@ -48,7 +48,7 @@ jobs:
             const temp = file + ".optimized.webp";
             await sharp(file)
               .resize({ width, withoutEnlargement: true })
-              .webp({ quality: 27, effort: 6, smartSubsample: true })
+              .webp({ quality: 25, effort: 6, smartSubsample: true })
               .toFile(temp);
             await rename(temp, file);
           }

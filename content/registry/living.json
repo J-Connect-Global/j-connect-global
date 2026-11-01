@@ -2282,11 +2282,11 @@
       "ドイツ生活",
       "日本代表"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 1,
-    "hub_visible": true,
+    "hub_visible": false,
     "search_visible": true,
-    "sitemap_visible": true,
+    "sitemap_visible": false,
     "canonical_url": "/germany/ja/living/world-cup-2026-watch-germany/",
     "related_articles": [
       "rundfunkbeitrag-guide",

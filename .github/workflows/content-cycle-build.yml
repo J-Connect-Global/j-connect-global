@@ -25,6 +25,126 @@ jobs:
           git fetch origin main
           git merge --no-edit origin/main
       - run: npm ci
+      - name: Apply verified editorial corrections and fix the unpublished St Martin route
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFile, writeFile } from "node:fs/promises";
+          const replaceOnce = (text, oldText, newText, label) => {
+            const count = text.split(oldText).length - 1;
+            if (count !== 1) throw new Error(label + ": expected one match, got " + count);
+            return text.replace(oldText, newText);
+          };
+          const edit = async (path, fn) => {
+            const original = await readFile(path, "utf8");
+            await writeFile(path, fn(original));
+          };
+
+          await edit("content/events/news/tax-refund-2022-deadline-december-2026.md", s => {
+            s = replaceOnce(s,
+              'summary: "ドイツでは、申告の義務がない会社員でも、自分から確定申告を出せば払いすぎた所得税が戻ることがあります。この「任意の申告」は4年以内が期限で、2022年分は2026年12月31日までに税務署に届く必要があり、延長はできません。戻りやすい人の例と、間に合わせるための手順を整理します。"',
+              'summary: "ドイツでは、申告の義務がない会社員でも、自分から確定申告を出せば払いすぎた所得税が戻ることがあります。2022年分の任意申告は2026年12月31日までに提出する必要があります。税区分IVの係数方式などは申告義務になる場合があるため、最初に区別します。"',
+              "N033 summary");
+            s = replaceOnce(s,
+              '  - title: "ELSTER：2022年分の所得税申告の手引き（申告の期限・申告義務）"',
+              '  - title: "ELSTER：2022年分の所得税申告の手引き（記入方法）"',
+              "N033 ELSTER source title");
+            s = replaceOnce(s,
+              "そのため、**2022年分の申告は、2026年12月31日までに税務署に届いている必要があります**。ELSTERの案内によると、この期限は延長できません（[ELSTER：2022年分の申告の手引き](https://www.elster.de/eportal/helpGlobal?themaGlobal=help_est_ufa_10_2022)）。2026年12月31日は木曜日です。年末は郵便も混むので、オンラインのELSTERで出すのが確実です。",
+              "そのため、**2022年分は2026年12月31日までに提出してください**。これは任意申告に適用される4年の法定期間です。NRW州税務当局は、税務署側の処理にも時間が必要なため、年末ぎりぎりではなく余裕をもって提出するよう案内しています。2026年12月31日は木曜日です。オンラインで送信した場合は受付控えを保存してください。",
+              "N033 unsupported extension claim");
+            s = replaceOnce(s, "4. **12月31日までに送信する**", "3. **12月31日までに送信する**", "N033 step numbering");
+            return s;
+          });
+
+          await edit("content/events/columns/germany-silvester-fireworks-rules.md", s => {
+            s = replaceOnce(s,
+              "ドイツでは、大晦日に一般の人が使う花火（ロケット花火、爆竹、連発花火など）は「カテゴリー2（F2）」と呼ばれます。",
+              "ドイツでは、大晦日に一般の人が使う花火の多くは「カテゴリー2（F2）」に分類されます。ロケット花火、爆竹、連発花火などが含まれますが、F2でも一部の製品は許可・資格者に限られます。",
+              "C019 F2 scope");
+            s = replaceOnce(s,
+              "この3日間、スーパーやホームセンターの入口付近には、花火の特設売り場が並びます。買えるのは18歳以上の人だけです（[爆発物法 第1施行令 第20条](https://www.gesetze-im-internet.de/sprengv_1/__20.html)）。",
+              "この3日間、スーパーやホームセンターの入口付近には、花火の特設売り場が並びます。一般向けのF2花火を買えるのは18歳以上の人だけです（[爆発物法 第1施行令 第20条](https://www.gesetze-im-internet.de/sprengv_1/__20.html)）。ただし、F2の表示があっても、すべての製品を一般消費者が購入・使用できるわけではありません。第20条第4項は、閃光薬を使った一部の爆竹・連発花火、正味爆発物量が20gを超えるロケット、シュヴェルマー、単体の笛付き花火などを、許可・資格者に限定しています。購入時はF2表示だけで判断せず、製品の分類と説明書を確認してください。",
+              "C019 restricted F2 products");
+            return s;
+          });
+
+          await edit("content/events/frankfurt-christmas-market-2026-guide.md", s => {
+            s = replaceOnce(s,
+              'title: "フランクフルトのクリスマスマーケット2026｜1393年から続く、商人の街の冬の市"',
+              'title: "フランクフルトのクリスマスマーケット2026｜1393年の記録が残る、商人の街の冬の市"',
+              "Frankfurt title");
+            s = replaceOnce(s,
+              'summary: "2026年11月23日〜12月22日のフランクフルト・クリスマスマーケットを案内。1393年から続く市の歴史、名物の焼き菓子ベートマンヒェンとプラム人形、営業時間を紹介します。"',
+              'summary: "2026年11月23日〜12月22日のフランクフルト・クリスマスマーケットを案内。1393年の記録が残る市の歴史、名物の焼き菓子ベートマンヒェンとプラム人形、営業時間、アクセスとバリアフリー情報を紹介します。"',
+              "Frankfurt summary");
+            s = replaceOnce(s,
+              '  - title: "フランクフルト市：焼き菓子ベートマンヒェン"\n    url: "https://frankfurt.de/frankfurt-entdecken-und-erleben/stadtportrait/frankfurt-kulinarisch/nicht-nur-zur-weihnachtszeit---frankfurter-bethmaennchen"',
+              '  - title: "フランクフルト市：焼き菓子ベートマンヒェン"\n    url: "https://frankfurt.de/frankfurt-entdecken-und-erleben/stadtportrait/frankfurt-kulinarisch/nicht-nur-zur-weihnachtszeit---frankfurter-bethmaennchen"\n  - title: "フランクフルト市統計局：ベートマンヒェンの由来（1838年の伝承）"\n    url: "https://statistikportal.frankfurt.de/statistik_aktuell/2025/FSA_2025_17.html"',
+              "Frankfurt Bethmännchen source");
+            s = replaceOnce(s,
+              "# フランクフルトのクリスマスマーケット2026｜1393年から続く、商人の街の冬の市",
+              "# フランクフルトのクリスマスマーケット2026｜1393年の記録が残る、商人の街の冬の市",
+              "Frankfurt H1");
+            s = replaceOnce(s,
+              "フランクフルト中央駅からレーマーベルク広場までは、地下鉄で数駅、歩いても20分ほどです。NRW州からは長距離列車で日帰りしやすい距離にあり、空港を使う出張や一時帰国の前後に立ち寄ることもできます。列車の選び方は[ドイツの鉄道旅行ガイド](/germany/ja/living/germany-train-travel-guide/)を参考にしてください。",
+              "## アクセスとバリアフリー\n\nフランクフルト観光局は、会場全体をバリアフリーに配慮した会場として案内しています。11月23日の開幕式と12月6日の聖ニコラウス訪問時には、レーマーベルク広場の舞台前に車いす利用者向けの区画が設けられます。入口は舞台左側のリンプルガッセ側で、定員には限りがあります。必要な場合は当日の公式案内を確認してください。\n\nバリアフリー対応のトイレは、パウルス広場、パウルス教会、アルテ・マインツァー通り、ロスマルクト、フリードリヒ・シュトルツェ広場にあります。\n\n公共交通機関は、地下鉄U4・U5のドーム／レーマー駅、トラム11・12・14のレーマー／パウルス教会停留所が便利です。Sバーンやほかの地下鉄からはハウプトヴァッヘ駅で降り、レーマーベルクまで徒歩約5分。会場専用の駐車場はないため、観光局は公共交通機関の利用を勧めています。列車の選び方は[ドイツの鉄道旅行ガイド](/germany/ja/living/germany-train-travel-guide/)を参考にしてください。",
+              "Frankfurt access section");
+            return s;
+          });
+
+          await edit("content/events/stuttgart-christmas-market-2026-guide.md", s => {
+            s = replaceOnce(s,
+              '  - title: "公式サイト：市の歴史"\n    url: "https://www.stuttgarter-weihnachtsmarkt.de/en/general/history"',
+              '  - title: "公式サイト：市の歴史"\n    url: "https://www.stuttgarter-weihnachtsmarkt.de/en/general/history"\n  - title: "公式運営会社：三十年戦争後の再開を含む市場の歴史（PDF）"\n    url: "https://stuttgarter-weihnachtsmarkt.de/fileadmin/Weihnachtsmarkt/content/2014/PDFs/Stuttgarter_Weihnachtsmarkt_Geschichte.pdf"',
+              "Stuttgart history source");
+            s = replaceOnce(s,
+              "市はいつも順調だったわけではありません。17世紀の三十年戦争で商いは途絶え、再び市の話が聞かれるようになったのは1643年以降のことだといいます。戦乱の時代を越えて続いてきたことが、この市が街の人にとってどれほど大切だったかを物語っています。",
+              "市はいつも順調だったわけではありません。公式運営会社の歴史資料によると、三十年戦争で市は中断し、1643年には再び開かれています。[公式の歴史資料（PDF）](https://stuttgarter-weihnachtsmarkt.de/fileadmin/Weihnachtsmarkt/content/2014/PDFs/Stuttgarter_Weihnachtsmarkt_Geschichte.pdf)は、戦乱を越えて続いてきた市の歩みを紹介しています。",
+              "Stuttgart 1643 source");
+            s = replaceOnce(s,
+              "現在は毎年350万〜400万人が訪れる大きな市に成長し、約1,500人が直接・間接に市の運営に関わっています。",
+              "現在は毎年350万人以上が訪れる大きな市に成長し、約1,500人が直接・間接に市の運営に関わっています。",
+              "Stuttgart visitor figure");
+            return s;
+          });
+
+          await edit("content/events/columns/st-martin-day-germany.md", s =>
+            replaceOnce(s,
+              'canonical_url: "/germany/ja/events/columns/st-martin-day-germany/"',
+              'canonical_url: "/germany/ja/events/st-martin-day-germany/"',
+              "C033 canonical route")
+          );
+
+          const registryPath = "content/registry/events.json";
+          const registry = JSON.parse(await readFile(registryPath, "utf8"));
+          const c033 = registry.find(item => item.slug === "st-martin-day-germany");
+          if (!c033) throw new Error("C033 registry entry missing");
+          c033.url = "/germany/ja/events/st-martin-day-germany/";
+          c033.canonical_url = "/germany/ja/events/st-martin-day-germany/";
+          await writeFile(registryPath, JSON.stringify(registry, null, 2) + "\n");
+
+          const provenancePath = "docs/jc-content-cycle-2026-11-01-provenance.md";
+          const provenance = await readFile(provenancePath, "utf8");
+          if (!provenance.includes("## 6. 2026-11-01 follow-up and validation corrections")) {
+            await writeFile(provenancePath, provenance + `
+\n## 6. 2026-11-01 follow-up and validation corrections
+
+- Main is now at commit `f31830781d73b5c9f022af7c1891668466a445b3`. PR #412 (closed-conversation resend state) was merged; the associated validation and Pages deployment runs succeeded. The public conversation page loads. Its source contains `noindex, follow` and `no-referrer`; source inspection confirmed the tags after the browser summary did not expose them.
+- The current public sitemap has 186 URLs, all under `/germany/ja/`; no `/germany/en/` or `/germany/de/` URLs are listed.
+- The public pages for the Deutschlandticket, 2022 tax-refund deadline, and Silvester fireworks articles load. The three seasonal market guides remain on the editorial branch until the current validation sequence completes.
+- The image-asset budget remains unchanged at 40,200,000 bytes. The three new original vector cover sets were re-encoded to fit the existing budget; no budget increase was made.
+- A validation pass found a route mismatch in the unpublished St Martin draft: the registry and canonical URL incorrectly included `/columns/`, while the site router uses `/events/{slug}/`. The draft's URL and canonical URL are corrected to `/germany/ja/events/st-martin-day-germany/`. It remains unpublished and excluded from search, hubs, and sitemap.
+- Editorial corrections: the tax article no longer attributes a non-extendable deadline to the ELSTER form guide; it relies on the NRW tax authority's four-year guidance and keeps the mandatory-filing exception distinct. The fireworks article now explains that certain F2 items are restricted to permit holders. The Frankfurt guide adds official accessibility, accessible-toilet, public-transport, and no-parking details and cites the city statistics source for the Bethmännchen story. The Stuttgart guide links the official historical PDF for the 1643 restart and states the official visitor figure as more than 3.5 million.
+- The Dresden guide retains the disclosed discrepancy between the newer visitor page (16:00 opening) and the older city tender (16:30); the newer visitor information is preferred, and readers are told to reconfirm before travel. The visitor page was temporarily unavailable to direct retrieval during this run.
+- The previous recorded public Apps Script status check (2026-10-28) reported version `2026-10-23.1` and the persistent-link/inline-reply/instant-publication flags enabled. A live email end-to-end test and the five-minute notification trigger's presence still require access to the Google Apps Script project and an authorized test inbox. No real-user email was sent. The browser profile had no Google sign-in, so no authentication was bypassed.
+- The German-learning audio test still requires a physical device; no vocabulary, classification, user-post, contact-form, job, or privacy-processing data was changed.
+- GSC Wizard access was unavailable because the connection requires activation/subscription; no 28-day or 3-month performance values were available. The J-Connect Germany Project Instructions could not be retrieved through Notion in this non-interactive run; the repository's content-production workflow documents and the current user brief were followed.
+- Open PRs at the time of this follow-up: #406 internal review record, #407 EES/ETIAS draft awaiting legal review, #409 earlier seasonal-guide PR, and #413 temporary builder workflow. There are no open GitHub issues. The new editorial branch is intended to consolidate #409's three market guides and the three article improvements; the temporary workflow is not intended for main.
+`);
+          }
+          console.log("Applied all scoped editorial corrections.");
+          NODE
       - name: Re-encode only the three new original vector cover sets within the existing image budget
         shell: bash
         run: |
@@ -54,6 +174,7 @@ jobs:
           }
           console.log("Optimized nine new vector cover files; original source/captions remain unchanged.");
           NODE
+      - run: node scripts/sync-content-frontmatter.mjs --write
       - run: npm run build
       - run: npm run validate
       - run: npx playwright install --with-deps chromium
@@ -70,7 +191,7 @@ jobs:
           mapfile -t changed < <(git diff --name-only "$BASE")
           for path in "${changed[@]}"; do
             case "$path" in
-              content/events/news/deutschlandticket-2027-price-consent.md|content/events/news/tax-refund-2022-deadline-december-2026.md|content/events/columns/germany-silvester-fireworks-rules.md|content/events/columns/st-martin-day-germany.md|content/registry/events.json|content/events/frankfurt-christmas-market-2026-guide.md|content/events/stuttgart-christmas-market-2026-guide.md|content/events/dresden-striezelmarkt-2026-guide.md|assets/images/events/dresden-striezelmarkt-history.svg|assets/images/events/dresden-striezelmarkt-symbols.svg|assets/images/events/frankfurt-christmas-market-history.svg|assets/images/events/frankfurt-christmas-market-specialties.svg|assets/images/events/stuttgart-christmas-market-highlights.svg|assets/images/events/stuttgart-christmas-market-history.svg|assets/img/events/dresden-striezelmarkt-2026-guide.webp|assets/img/events/dresden-striezelmarkt-2026-guide-480w.webp|assets/img/events/dresden-striezelmarkt-2026-guide-768w.webp|assets/img/events/frankfurt-christmas-market-2026-guide.webp|assets/img/events/frankfurt-christmas-market-2026-guide-480w.webp|assets/img/events/frankfurt-christmas-market-2026-guide-768w.webp|assets/img/events/stuttgart-christmas-market-2026-guide.webp|assets/img/events/stuttgart-christmas-market-2026-guide-480w.webp|assets/img/events/stuttgart-christmas-market-2026-guide-768w.webp|docs/article-image-generation-2026-10-31.json|assets/images/events/tax-refund-voluntary-vs-mandatory.svg|assets/images/events/silvester-fireworks-calendar.svg|assets/images/events/st-martin-day-germany-timeline.svg|assets/images/events/st-martin-day-germany-checklist.svg|germany/ja/events/news/deutschlandticket-2027-price-consent/index.html|germany/ja/events/news/tax-refund-2022-deadline-december-2026/index.html|germany/ja/events/columns/germany-silvester-fireworks-rules/index.html|germany/ja/events/columns/st-martin-day-germany/index.html|germany/ja/events/dresden-striezelmarkt-2026-guide/index.html|germany/ja/events/frankfurt-christmas-market-2026-guide/index.html|germany/ja/events/stuttgart-christmas-market-2026-guide/index.html|germany/ja/events/index.html|germany/ja/events/news/index.html|germany/ja/events/columns/index.html|germany/ja/index.html|assets/js/search-index.js|sitemap.xml|docs/jc-content-cycle-2026-11-01-provenance.md|.github/workflows/content-cycle-build.yml) ;;
+              content/events/news/deutschlandticket-2027-price-consent.md|content/events/news/tax-refund-2022-deadline-december-2026.md|content/events/columns/germany-silvester-fireworks-rules.md|content/events/columns/st-martin-day-germany.md|content/registry/events.json|content/events/frankfurt-christmas-market-2026-guide.md|content/events/stuttgart-christmas-market-2026-guide.md|content/events/dresden-striezelmarkt-2026-guide.md|assets/images/events/dresden-striezelmarkt-history.svg|assets/images/events/dresden-striezelmarkt-symbols.svg|assets/images/events/frankfurt-christmas-market-history.svg|assets/images/events/frankfurt-christmas-market-specialties.svg|assets/images/events/stuttgart-christmas-market-highlights.svg|assets/images/events/stuttgart-christmas-market-history.svg|assets/img/events/dresden-striezelmarkt-2026-guide.webp|assets/img/events/dresden-striezelmarkt-2026-guide-480w.webp|assets/img/events/dresden-striezelmarkt-2026-guide-768w.webp|assets/img/events/frankfurt-christmas-market-2026-guide.webp|assets/img/events/frankfurt-christmas-market-2026-guide-480w.webp|assets/img/events/frankfurt-christmas-market-2026-guide-768w.webp|assets/img/events/stuttgart-christmas-market-2026-guide.webp|assets/img/events/stuttgart-christmas-market-2026-guide-480w.webp|assets/img/events/stuttgart-christmas-market-2026-guide-768w.webp|docs/article-image-generation-2026-10-31.json|assets/images/events/tax-refund-voluntary-vs-mandatory.svg|assets/images/events/silvester-fireworks-calendar.svg|assets/images/events/st-martin-day-germany-timeline.svg|assets/images/events/st-martin-day-germany-checklist.svg|germany/ja/events/news/deutschlandticket-2027-price-consent/index.html|germany/ja/events/news/tax-refund-2022-deadline-december-2026/index.html|germany/ja/events/columns/germany-silvester-fireworks-rules/index.html|germany/ja/events/st-martin-day-germany/index.html|germany/ja/events/dresden-striezelmarkt-2026-guide/index.html|germany/ja/events/frankfurt-christmas-market-2026-guide/index.html|germany/ja/events/stuttgart-christmas-market-2026-guide/index.html|germany/ja/events/index.html|germany/ja/events/news/index.html|germany/ja/events/columns/index.html|germany/ja/index.html|assets/js/search-index.js|sitemap.xml|docs/jc-content-cycle-2026-11-01-provenance.md|.github/workflows/content-cycle-build.yml) ;;
               *) echo "Unexpected changed path: $path"; exit 1 ;;
             esac
           done

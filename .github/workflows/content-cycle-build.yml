@@ -145,6 +145,8 @@ jobs:
             ].join("\n");
             await writeFile(provenancePath, provenance + followup + "\n");
           }
+          const provenanceText = await readFile("docs/jc-content-cycle-2026-11-01-provenance.md", "utf8");
+          await writeFile("docs/jc-content-cycle-2026-11-01-provenance.md", provenanceText.replace(/[ \\t]+$/gm, ""));
           console.log("Applied all scoped editorial corrections.");
           NODE
       - name: Re-encode only the three new original vector cover sets within the existing image budget

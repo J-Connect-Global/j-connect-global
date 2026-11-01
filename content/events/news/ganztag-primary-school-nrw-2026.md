@@ -31,6 +31,7 @@ official_sources:
     url: "https://www.schulministerium.nrw/faq-gemeinsamer-ogs-erlass"
   - title: "連邦家族ポータル：全日保育の権利"
     url: "https://familienportal.de/familienportal/meta/aktuelles/aktuelle-meldungen/rechtsanspruch-auf-ganztagsbetreuung-ab-2026-beschlossen-185662"
+related_articles: ["schools-germany-japanese-families", "german-school-grades-1-to-6", "parenting-phrases"]
 ---
 
 # NRWで小学1年生の全日保育が権利に｜2026年8月から家族はどう変わる？

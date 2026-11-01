@@ -10,7 +10,7 @@ official_sources:
     url: "https://www.deutschebahn.com/de/presse/pressestart_zentrales_uebersicht/Fahrplan-2027-stabile-Preise-neue-Sprinter-mehr-europaeische-Verbindungen-14065322"
   - title: "Deutsche Bahn：家族券の対象人数・年齢条件と新料金案内"
     url: "https://www.bahn.de/info/neue-angebote"
-related_articles: ["deutschlandticket-2027-price-consent", "germany-train-travel-guide", "cologne-antwerp-direct-ice-2026"]
+related_articles: ["deutschlandticket-2027-price-consent", "germany-train-travel-guide", "cologne-antwerp-direct-ice-2026", "deutsche-bahn-delays-why"]
 city: "ドイツ全土"
 area: "ドイツ全土・欧州"
 location: ""

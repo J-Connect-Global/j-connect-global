@@ -13,7 +13,7 @@ last_verified: "2026-10-17"
 next_review: "2027-01-17"
 canonical_url: "/germany/ja/living/schufa-guide/"
 image_alt: "ドイツの賃貸応募に使う信用証明と自己確認用データの違いを示す図"
-related_articles: ["rent-apartment-germany", "bank-account-germany", "germany-first-30-days"]
+related_articles: ["rent-apartment-germany", "bank-account-germany", "germany-first-30-days", "liability-household-insurance-germany"]
 official_sources:
   - title: "SCHUFA：無料の個人データコピー"
     url: "https://www.meineschufa.de/service/datenkopie"

@@ -16,6 +16,7 @@ const steps = [
   ["Learn German flashcard data", "scripts/test-learn-german-flashcards.mjs"],
   ["News fetcher contract", "scripts/test-news-fetcher.mjs"],
   ["Deployment manifest contract", "scripts/test-deployment-manifest.mjs"],
+  ["IndexNow submission", "scripts/test-indexnow.mjs"],
   ["Accessibility behavior contracts", "scripts/test-accessibility-contracts.mjs"],
   ["Artifact quality validator contracts", "scripts/test-artifact-quality.mjs"],
   ["Tourism usability", "scripts/test-tourism-usability.mjs"],

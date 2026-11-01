@@ -18,7 +18,7 @@ official_sources:
     url: "https://www.eba.bund.de/DE/Themen/Fahrgastrechte/Bahn/Beispiele_Ausnahmen/beispiele_ausnahmen_node.html"
   - title: "消費者センター：列車が遅れたときの払い戻し"
     url: "https://www.verbraucherzentrale.de/wissen/reise-mobilitaet/unterwegs-sein/erstattung-bei-zugverspaetung-so-gibts-geld-zurueck-12080"
-related_articles: ["germany-train-travel-guide", "germany-autobahn-speed-limit", "db-2027-timetable-family-ticket"]
+related_articles: ["germany-train-travel-guide", "germany-autobahn-speed-limit", "db-2027-timetable-family-ticket", "cologne-antwerp-direct-ice-2026"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

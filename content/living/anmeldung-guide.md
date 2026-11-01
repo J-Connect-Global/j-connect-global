@@ -1,16 +1,16 @@
 ---
 id: "L001"
-title: "ドイツの住民登録ガイド｜期限、入居証明、予約、登録後の流れ"
+title: "ドイツの住民登録（Anmeldung）のやり方｜期限・必要書類・予約・登録後の流れ"
 slug: "anmeldung-guide"
 category: "役所・滞在"
 tags: ["住民登録", "入居証明", "市民窓口", "初渡独", "引っ越し"]
-summary: "ドイツの住民登録を、入居後2週間の期限、入居証明など必要書類の取得先・提出先、デュッセルドルフの予約、登録後の税務IDまで整理します。"
+summary: "ドイツの住民登録（Anmeldung）を、入居後2週間の期限、入居証明など必要書類の取得先・提出先、予約の取り方、費用、期限に遅れた場合、登録後の税務IDまで整理します。"
 status: "published"
 published: true
 published_at: "2026-06-07"
-updated_at: "2026-10-20"
-last_verified: "2026-08-30"
-next_review: "2026-11-30"
+updated_at: "2026-10-31"
+last_verified: "2026-10-31"
+next_review: "2027-01-31"
 canonical_url: "/germany/ja/living/anmeldung-guide/"
 image_alt: "ドイツの住民登録に必要な書類を自宅で準備する日本人の住民"
 image_url: "/assets/images/living/japanese-resident-paperwork-editorial-v1.webp"
@@ -26,9 +26,13 @@ official_sources:
     url: "https://www.gesetze-im-internet.de/bmg/__19.html"
   - title: "デュッセルドルフ市：住民登録・必要書類・予約"
     url: "https://service.duesseldorf.de/suche/-/vr-bis-detail/dienstleistung/227/show"
+  - title: "デュッセルドルフ市：住民登録の義務と無料の登録確認書"
+    url: "https://www.duesseldorf.de/einwohnerangelegenheiten/meldeangelegenheiten/informationen-zur-meldepflicht"
+  - title: "連邦住民登録法第54条：過料"
+    url: "https://www.gesetze-im-internet.de/bmg/__54.html"
 ---
 
-# ドイツの住民登録ガイド｜期限、入居証明、予約、登録後の流れ
+# ドイツの住民登録（Anmeldung）のやり方｜期限・必要書類・予約・登録後の流れ
 
 ドイツで住居へ実際に入居したら、原則として2週間以内に自治体へ住所を登録します。この記事は、初めてドイツで暮らす人や国内で引っ越した人が、期限の起点、必要な入居証明、窓口の予約、登録後に届く書類までを一つの流れで理解するための案内です。読み終えると、部屋探しの段階で確認すべきことと、入居後の手続きを切り分けられるようになります。
 
@@ -171,6 +175,28 @@ official_sources:
 2. 賃貸契約とは別に入居証明が必要
 3. 自治体の公式サイトで予約・必要書類を確認
 4. 登録証明の内容と郵便受けの名前を確認
+
+## よくある質問
+
+### 費用はかかりますか？
+
+デュッセルドルフ市は、住民登録・住所変更・転出の手続きをしたことを示す登録確認書を無料で発行すると案内しています（[デュッセルドルフ市](https://www.duesseldorf.de/einwohnerangelegenheiten/meldeangelegenheiten/informationen-zur-meldepflicht)）。ほかの都市でも、登録そのものに費用がかかるかは、住む市の公式案内で確認してください。
+
+### 2週間の期限に遅れたらどうなりますか？
+
+期限内に登録しないことは、連邦住民登録法第54条で過料の対象になり、上限は1,000ユーロです（[連邦住民登録法第54条](https://www.gesetze-im-internet.de/bmg/__54.html)）。実際の扱いや金額は自治体によって異なり、期限を大きく過ぎてから科されることが多いとされています。予約が取れないときは、期限内に予約を試みた記録を残し、最初に取れる日で手続きしてください。
+
+### 滞在許可の手続きと、どちらが先ですか？
+
+先に住民登録をするのが基本の流れです。外国人局の手続きでは、住所の確認に登録確認書を求められることが多く、どの外国人局が担当するかも登録した住所で決まります。滞在許可の流れは[滞在許可の延長の記事](/germany/ja/living/residence-permit-renewal-germany/)で紹介しています。
+
+### 家族もまとめて登録できますか？
+
+一緒に引っ越した家族は、まとめて登録できることが多いです。デュッセルドルフ市の場合、成人の家族一人が窓口に行けますが、登録する全員の旅券などを持っていきます。条件は都市によって違うため、予約の前に確認してください。
+
+### 部屋を借りる前に登録できますか？
+
+できません。住民登録は、実際に住み始めた後の事実を登録する手続きです。部屋探しの段階では「入居証明を出してもらえるか」を確認しておき、入居してから登録します。
 
 ## 公式情報
 

@@ -1,16 +1,16 @@
 ---
 id: "L011"
-title: "ドイツの放送負担金とは？一住戸一件の仕組みと手続き"
+title: "ドイツの放送負担金（Rundfunkbeitrag・旧GEZ）とは？金額・同居・引っ越し・免除の手続き"
 slug: "rundfunkbeitrag-guide"
 category: "住まい"
 tags: ["放送負担金", "引っ越し", "共同生活", "学生寮", "公共放送"]
-summary: "ドイツの放送負担金について、テレビの所有ではなく住戸単位で負担する理由、金額、同居・共同生活、引っ越し、免除申請の考え方を説明します。"
+summary: "ドイツの放送負担金（Rundfunkbeitrag、旧GEZ）について、テレビの所有ではなく住戸単位で負担する理由、月18.36ユーロ・3か月ごとの支払い、同居・共同生活、引っ越し、免除申請の考え方を説明します。"
 status: "published"
 published: true
 published_at: "2026-03-10"
-updated_at: "2026-08-30"
-last_verified: "2026-08-30"
-next_review: "2026-11-30"
+updated_at: "2026-10-31"
+last_verified: "2026-10-31"
+next_review: "2027-01-15"
 canonical_url: "/germany/ja/living/rundfunkbeitrag-guide/"
 image_alt: "ドイツの新居で住居に関する書類を確認する日本人の住民"
 related_articles: ["moving-checklist-germany", "germany-first-30-days", "anmeldung-guide"]
@@ -19,15 +19,21 @@ official_sources:
     url: "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/informationen"
   - title: "放送負担金公式サイト：英語案内"
     url: "https://www.rundfunkbeitrag.de/welcome/english"
+  - title: "放送負担金公式サイト：支払いについて"
+    url: "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/informationen/zahlung"
+  - title: "放送負担金公式サイト：毎月払いはできる？（支払いの時期）"
+    url: "https://www.rundfunkbeitrag.de/presse-und-aktuelles/servicethemen/beitragsmythen-teil-1-ich-kann-den-rundfunkbeitrag-monatlich-zahlen-oder"
+  - title: "公共放送の財政需要を算定する委員会（KEF）：2027年からの金額の勧告"
+    url: "https://kef-online.de/presse/detail/kef-empfiehlt-deutlich-geringere-anhebung-des-rundfunkbeitrags"
 ---
 
-# ドイツの放送負担金とは？一住戸一件の仕組みと手続き
+# ドイツの放送負担金（Rundfunkbeitrag・旧GEZ）とは？金額・同居・引っ越し・免除の手続き
 
 ドイツには、テレビやラジオを持っているかにかかわらず、原則として住戸ごとに公共放送を支える負担金があります。この記事は、ドイツへ引っ越した人が「自分が新たに払うのか、同居人の登録に加わるのか」を判断し、手紙を放置せずに手続きするための案内です。読み終えると、制度の理由、金額、同居・学生寮・引っ越しでの違いが分かります。
 
 ## なぜ「テレビを持つ人」ではなく「住戸」が払うのか
 
-この制度の正式名称は **Rundfunkbeitrag** で、日本語では放送負担金と説明できます。公共テレビ、ラジオ、オンラインの報道・教育・文化番組を、広告や政府予算だけに依存せず支えるための仕組みです。
+この制度の正式名称は **Rundfunkbeitrag** で、日本語では放送負担金と説明できます。以前の徴収機関の名前から、今も「GEZ」と呼ぶ人がいます。公共テレビ、ラジオ、オンラインの報道・教育・文化番組を、広告や政府予算だけに依存せず支えるための仕組みです。
 
 現在の制度は受信機の台数を数えるのではなく、「一つの住戸に一件」を基本にしています。スマートフォンしか使わない人、公共放送を見ない人も、原則として対象です。利用量への料金ではなく、公共放送を社会全体で利用可能にしておくための負担と考えると、制度の位置づけが分かりやすくなります。
 
@@ -35,9 +41,13 @@ official_sources:
 
 ## 金額と支払い単位
 
-2026年8月30日時点の公式額は、一住戸あたり月18.36ユーロです。一人当たりではないため、夫婦や家族、共同生活で複数の大人が住んでいても、その住戸で一件を支払います。
+2026年10月31日時点の公式額は、一住戸あたり月18.36ユーロです。一人当たりではないため、夫婦や家族、共同生活で複数の大人が住んでいても、その住戸で一件を支払います。
 
-支払いは通常、数か月分をまとめて行います。公式サイトで口座引き落としなどの方法を選び、通知に記載された期限を確認します。家賃、電気代、インターネット料金とは別の制度であり、大家や通信会社へ払っていても自動的に含まれるわけではありません。
+支払いは、法律上3か月ごとです。1回の金額は55.08ユーロで、3か月の期間の真ん中の月の15日が期限になります。毎月払いは法律上の支払い方法ではありません（[放送負担金公式サイト](https://www.rundfunkbeitrag.de/presse-und-aktuelles/servicethemen/beitragsmythen-teil-1-ich-kann-den-rundfunkbeitrag-monatlich-zahlen-oder)）。
+
+金額を算定する委員会（KEF）は、2027年1月1日から月18.64ユーロにすることを勧告しています。ただし、これは勧告で、実際に変わるには州の決定が必要です（[KEF](https://kef-online.de/presse/detail/kef-empfiehlt-deutlich-geringere-anhebung-des-rundfunkbeitrags)）。
+
+公式サイトで口座引き落としなどの方法を選び、通知に記載された期限を確認します。家賃、電気代、インターネット料金とは別の制度であり、大家や通信会社へ払っていても自動的に含まれるわけではありません。
 
 ## 一人暮らし、家族、共同生活で何が違うか
 
@@ -93,6 +103,28 @@ official_sources:
 ## 言葉で困ったら
 
 本文では制度を日本語で理解することを優先しています。手紙への回答や住所変更の表現は[行政手続きで使うドイツ語](/germany/ja/learn-german/behoerde-anmeldung-phrases/)を参照してください。
+
+## よくある質問
+
+### テレビを持っていなくても払う必要がありますか？
+
+はい。受信機の有無ではなく、住戸ごとの負担です。スマートフォンしか使わない人や、公共放送を見ない人も原則として対象です。
+
+### 夫婦や家族で住んでいる場合、人数分払いますか？
+
+いいえ。一つの住戸につき一件です。住戸内の一人が支払い、ほかの大人は支払っている人の登録番号を伝えて、同じ住戸であることを回答します。
+
+### 毎月払えますか？
+
+法律上の支払いは3か月ごとで、1回55.08ユーロです。口座引き落としにしておくと、期限を忘れにくくなります。
+
+### 学生は免除されますか？
+
+学生であることだけでは免除されません。学生支援給付を受けているなど所定の条件を満たし、証明書を添えて申請した場合に免除の対象になります。
+
+### 日本に帰国するときは？
+
+住民登録の転出とあわせて、公式サイトから登録の解約を申請します。手続きが終わったことを示す確認は保存しておきます。
 
 ## 公式情報
 

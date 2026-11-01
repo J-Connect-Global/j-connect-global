@@ -16,7 +16,7 @@ image: "/assets/img/living/family-reunification-spouse-work-germany.webp"
 image_alt: "空港の到着ロビーで、スーツケースを持った家族が抱き合う様子を描いたイラスト"
 image_caption: "イラスト：J-Connect。家族の呼び寄せのテーマを表したもので、特定の家族や空港を描いたものではありません。"
 image_credit: "Illustration / J-Connect"
-related_articles: ["residence-permit-renewal-germany", "eu-blue-card-germany", "anmeldung-guide"]
+related_articles: ["residence-permit-renewal-germany", "eu-blue-card-germany", "anmeldung-guide", "unemployment-benefit-germany"]
 official_sources:
   - title: "連邦移民難民庁（BAMF）：第三国の人への家族の呼び寄せ"
     url: "https://www.bamf.de/DE/Themen/MigrationAufenthalt/ZuwandererDrittstaaten/Familie/NachzugZuDrittstaatlern/nachzug-zu-drittstaatlern-node.html"

@@ -18,7 +18,7 @@ official_sources:
     url: "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/fitnessstudios-was-in-vertraegen-nicht-erlaubt-ist-21641"
   - title: "民法 第312k条（解約ボタン）"
     url: "https://www.gesetze-im-internet.de/bgb/__312k.html"
-related_articles: ["electricity-internet-contracts-germany", "online-shopping-returns-germany", "moving-checklist-germany"]
+related_articles: ["electricity-internet-contracts-germany", "online-shopping-returns-germany", "moving-checklist-germany", "mobile-phone-sim-germany"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

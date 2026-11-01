@@ -16,7 +16,7 @@ official_sources:
     url: "https://www.essen-motorshow.de/news/detail-ems/klassiker-auf-der-essen-motor-show-starten-2026-neu-durch-2143"
   - title: "エッセン見本市：イベントカレンダー"
     url: "https://www.messe-essen.de/en/events-calendar/detail/essen-motor-show"
-related_articles: ["germany-autobahn-speed-limit", "spiel-essen-2026-guide", "ruhr-coal-mining-history", "boot-duesseldorf-2027-guide"]
+related_articles: ["germany-autobahn-speed-limit", "ruhr-coal-mining-history", "boot-duesseldorf-2027-guide", "christmas-markets-duesseldorf"]
 city: "エッセン"
 location: "エッセン見本市会場"
 event_date: "2026-11-27〜2026-12-06"

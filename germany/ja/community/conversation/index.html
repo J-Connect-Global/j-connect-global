@@ -217,7 +217,7 @@
   <p><a href="../">← 掲示板へ戻る</a></p><h1 id="conversationTitle">非公開会話・返信の管理</h1>
   <p id="conversationIntro">アカウント登録は不要です。メールの専用リンクで本人確認します。専用リンクを他の人に転送しないでください。</p>
   <p id="conversationStatus" role="status">受付状況を確認中…</p>
-  <section id="recoveryPanel" class="cm-panel" hidden><h2>リンクを再送する</h2><p>メールのリンクには期限がなく、何度でも使えます。メールが見つからない場合は、この会話で登録したメールアドレスを入力してください。</p>
+  <section id="recoveryPanel" class="cm-panel" hidden><h2 id="recoveryTitle">リンクを再送する</h2><p id="recoveryHelp">メールのリンクには期限がなく、何度でも使えます。メールが見つからない場合は、この会話で登録したメールアドレスを入力してください。</p><p id="recoveryNoResend" hidden>元の投稿が削除・非公開になっているため、この会話は開けません。リンクを再送しても復旧できません。掲示板で新しい投稿を探してください。</p>
     <form id="recoveryForm"><label for="recoveryEmail">メールアドレス</label><input id="recoveryEmail" name="email" type="email" maxlength="254" autocomplete="email" required>
       <label class="cm-honeypot" aria-hidden="true">Webサイト<input name="website" tabindex="-1" autocomplete="off"></label><button type="submit">リンクを再送する</button></form>
   </section>
@@ -237,7 +237,7 @@
   </main>
   <script src="/assets/js/data-sources.js"></script>
   <script src="/assets/js/community-messaging.js?v=20261021"></script>
-  <script src="/assets/js/community-conversation.js?v=20261021"></script>
+  <script src="/assets/js/community-conversation.js?v=2026-11-01.1"></script>
   <!-- LAYOUT:ja-footer:start -->
   <footer class="page-footer">
     <div class="footer-inner">

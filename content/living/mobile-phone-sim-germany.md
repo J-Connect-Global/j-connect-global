@@ -16,7 +16,7 @@ image: "/assets/img/living/mobile-phone-sim-germany.webp"
 image_alt: "机の上のスマートフォンとSIMカード、電波のマークを描いたイラスト"
 image_caption: "イラスト：J-Connect。携帯電話の契約のテーマを表したもので、特定の会社や料金プランを描いたものではありません。"
 image_credit: "Illustration / J-Connect"
-related_articles: ["germany-first-30-days", "cancel-contracts-germany", "electricity-internet-contracts-germany"]
+related_articles: ["germany-first-30-days", "cancel-contracts-germany", "electricity-internet-contracts-germany", "eu-right-to-repair-2026-germany"]
 official_sources:
   - title: "連邦ネットワーク庁：プリペイド携帯の本人確認"
     url: "https://www.bundesnetzagentur.de/DE/Fachthemen/Telekommunikation/OeffentlicheSicherheit/IdentverfahrenPrepaid/start.html"

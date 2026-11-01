@@ -14,6 +14,7 @@ status: "published"
 published: true
 canonical_url: "/germany/ja/events/family-weekend-events-nrw/"
 official_url: ""
+related_articles: ["cologne-flea-market", "kommern-saint-martin-2026-guide", "german-bread-culture", "cologne-museumsnacht-2026-guide"]
 ---
 
 # NRWの週末を家族で楽しむ｜子どもと地域文化に出会うイベント選び

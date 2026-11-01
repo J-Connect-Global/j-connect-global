@@ -16,7 +16,7 @@ canonical_url: "/germany/ja/living/berlin-weekend-trip/"
 hero_image: "/assets/images/living/berlin-weekend-route.svg"
 hero_image_alt: "Berlin HbfからMitte主要スポットを回る週末旅行ルート図"
 hero_image_caption: "初回ベルリンは、Berlin HbfからMitteの歴史スポットを線でつなぐと移動が読みやすくなります。"
-related_articles: ["amsterdam-weekend-trip", "munich-weekend-trip", "hamburg-weekend-trip"]
+related_articles: ["munich-weekend-trip", "hamburg-weekend-trip", "berlin-wall-history"]
 official_sources:
   - title: "BVG：運賃ゾーン"
     url: "https://www.bvg.de/en/subscriptions-and-tickets/tariff-zones-and-information"

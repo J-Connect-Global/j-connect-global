@@ -12,7 +12,7 @@ updated_at: "2026-10-17"
 last_verified: "2026-10-17"
 next_review: "2027-04-17"
 canonical_url: "/germany/ja/living/bank-account-germany/"
-related_articles: ["germany-first-30-days","schufa-guide","anmeldung-guide","tax-id-steuernummer-steuerklasse"]
+related_articles: ["germany-first-30-days", "schufa-guide", "anmeldung-guide", "tax-id-steuernummer-steuerklasse", "liability-household-insurance-germany", "mobile-phone-sim-germany"]
 official_sources:
   - title: "BaFin：Girokonto・Basiskontoの公的比較"
     url: "https://kontenvergleich.bafin.de/"

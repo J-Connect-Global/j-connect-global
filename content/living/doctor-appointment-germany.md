@@ -8,12 +8,12 @@ summary: "ドイツで体調を崩したときの相談先を、かかりつけ�
 status: "published"
 published: true
 published_at: "2026-08-01"
-updated_at: "2026-08-30"
+updated_at: "2026-10-31"
 last_verified: "2026-08-30"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/doctor-appointment-germany/"
 image_alt: "ドイツの診療所で受付に健康保険証を提示する日本人の患者"
-related_articles: ["health-insurance-guide", "pregnancy-birth-germany", "germany-first-30-days"]
+related_articles: ["health-insurance-guide", "pregnancy-birth-germany", "germany-first-30-days", "epa-guide-germany", "japanese-speaking-doctors-germany", "dentist-germany-guide"]
 official_sources:
   - title: "連邦保健省の健康情報：医師の選び方と予約"
     url: "https://gesund.bund.de/en/arztwahl-und-terminsuche"
@@ -120,6 +120,24 @@ official_sources:
 薬の名前と用量、次回予約、紹介先、支払った費用、悪化時の連絡先を一か所に残します。検査結果や診療情報の書面を受け取ったら、日付と診療科が分かる形で保管します。
 
 医療制度の言葉を覚えることより、自分の症状と次の行動を正確に共有できることが大切です。予約の表現に不安があるときは[病院・薬局で使うドイツ語](/germany/ja/learn-german/hospital-phrases/)を併用してください。
+
+## よくある質問
+
+### 夜や週末に具合が悪くなったら？
+
+命の危険がなければ116117に電話し、近くの時間外診療所や往診の案内を受けます。命に関わる可能性、急な悪化、意識や呼吸への影響があるときは、迷わず112に電話します。
+
+### 日本語が通じる医師を探せますか？
+
+都市によっては、日本語で相談できる診療所があります。探し方は[日本語で受診できる医師の探し方](/germany/ja/living/japanese-speaking-doctors-germany/)にまとめています。
+
+### 仕事を休むとき、病欠の証明はどうなりますか？
+
+医師が働けないと判断すると、電子の病欠証明が健康保険を通じて勤務先に提供されます。ただし、欠勤することと見込みの期間を勤務先へ早めに伝えるのは本人の役目です。最新のルールは[病欠証明のルールの記事](/germany/ja/events/news/sick-note-rules-germany-2026/)で確認できます。
+
+### 薬はどう受け取りますか？
+
+公的保険の処方薬は、原則として電子処方箋で出されます。健康保険証、公式アプリ、または診療所でもらう紙の控えを使って、薬局で受け取ります。
 
 ## 関連記事
 

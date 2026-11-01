@@ -16,7 +16,7 @@ official_sources:
     url: "https://www.bundesregierung.de/breg-de/aktuelles/gesetzliche-neuregelungen-oktober-2026-2454624"
   - title: "連邦議会：燃料税の一時引き下げを可決（2026年9月25日）"
     url: "https://www.bundestag.de/dokumente/textarchiv/2026/kw39-de-versicherung-aufsicht-1216898"
-related_articles: ["germany-inflation-august-2026", "germany-january-2027-changes", "health-insurance-zusatzbeitrag-2027"]
+related_articles: ["germany-january-2027-changes", "health-insurance-zusatzbeitrag-2027"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

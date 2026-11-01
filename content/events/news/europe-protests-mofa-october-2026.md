@@ -16,7 +16,7 @@ official_sources:
     url: "https://www.dus.emb-japan.go.jp/itpr_ja/index.html"
   - title: "連邦市民保護・災害救援庁：警報アプリNINA"
     url: "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/warn-app-nina_node.html"
-related_articles: ["germany-warning-day-2026-results", "germany-information-triage-guide", "germany-inflation-august-2026"]
+related_articles: ["germany-information-triage-guide"]
 city: "ドイツ全土"
 area: "ドイツ全土 / 欧州"
 location: ""

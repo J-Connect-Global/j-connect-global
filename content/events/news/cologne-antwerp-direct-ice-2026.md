@@ -12,7 +12,7 @@ official_sources:
     url: "https://press.brusselsairlines.com/deutsche-bahns-first-high-speed-train-at-brussels-airport-in-collaboration-with-brussels-airlines"
   - title: "ドイツ鉄道：全国交通券の利用範囲"
     url: "https://www.bahn.de/angebot/regio/deutschland-ticket"
-related_articles: ["germany-autumn-forest-walk", "frankfurt-book-fair-2026-guide", "germany-inflation-august-2026"]
+related_articles: ["germany-autumn-forest-walk", "db-2027-timetable-family-ticket", "deutsche-bahn-delays-why"]
 city: "ケルン・ベルギー"
 area: "ドイツ西部・ベルギー"
 location: ""

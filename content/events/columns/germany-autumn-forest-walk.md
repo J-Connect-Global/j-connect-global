@@ -12,7 +12,7 @@ official_sources:
     url: "https://www.lwf.bayern.de/wissenstransfer/forstcastnet/239764/index.php"
   - title: "NRW州森林機関：森での自然体験"
     url: "https://www.wald-und-holz.nrw.de/wald-erleben"
-related_articles: ["essen-light-festival-2026-guide", "kommern-saint-martin-2026-guide", "german-bread-culture"]
+related_articles: ["kommern-saint-martin-2026-guide", "german-bread-culture", "germany-winter-time-2026", "germany-wild-birds-guide"]
 city: "ドイツ全土"
 area: "ドイツの森・身近な緑地"
 location: ""

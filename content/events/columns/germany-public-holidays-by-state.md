@@ -18,7 +18,7 @@ official_sources:
     url: "https://www.revosax.sachsen.de/vorschrift_gesamt/3997/26160.pdf"
   - title: "ケルン大司教区：2026年と2027年の移動祝日"
     url: "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Katholische-bewegliche-Feiertage-und-Hochfeste/"
-related_articles: ["germany-sunday-rest-shops-closed", "rhineland-carnival-11-11", "christmas-markets-duesseldorf"]
+related_articles: ["germany-sunday-rest-shops-closed", "rhineland-carnival-11-11", "christmas-markets-duesseldorf", "quiet-holidays-november-germany"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

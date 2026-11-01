@@ -16,7 +16,7 @@ official_sources:
     url: "https://www.aachen-tourismus.de/aachen-entdecken/sehenswuerdigkeiten/details/katschhof/"
   - title: "アーヘン市：プリンテンと旧市街"
     url: "https://www.aachen.de/aachen-entdecken/typisch-aachen/printen-bend-und-altstadtflair/"
-related_articles: ["aachen-day-trip", "cologne-christmas-markets-2026-guide", "christmas-markets-duesseldorf", "gluehwein-christmas-market-guide"]
+related_articles: ["aachen-day-trip", "cologne-christmas-markets-2026-guide", "christmas-markets-duesseldorf", "gluehwein-christmas-market-guide", "nuremberg-christkindlesmarkt-2026-guide", "essen-motor-show-2026-guide"]
 city: "アーヘン"
 location: "市庁舎前のマルクト広場、カッチュホーフ、大聖堂周辺"
 event_date: "2026-11-20〜2026-12-23"

@@ -15,7 +15,7 @@ tags: ["NRW","学校休暇","2027年","家族旅行","保育","休暇計画"]
 image_url: "/assets/images/living/childcare-play-editorial-v2.webp"
 image_alt: "明るい保育室で子どもと保育者が積み木をする様子"
 image_caption: "AI生成の編集イメージ。実在の人物・施設・出来事を記録したものではありません。"
-related_articles: ["kita-u3-tagesmutter-guide","duesseldorf-family-trip","family-weekend-events-nrw"]
+related_articles: ["kita-u3-tagesmutter-guide", "duesseldorf-family-trip", "family-weekend-events-nrw", "nrw-public-holidays-2027"]
 official_sources:
   - title: "州文部大臣会議：2026/27年度の学校休暇カレンダー"
     url: "https://www.kmk.org/service/ferienregelung/ferienkalender.html"

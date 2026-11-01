@@ -18,7 +18,7 @@ official_sources:
     url: "https://www.stadt-koeln.de/artikel/08212/index.html"
   - title: "デュッセルドルフ市：ホッペディッツが目覚めた"
     url: "https://www.duesseldorf.de/aktuelles/news/detailansicht/newsdetail/der-hoppeditz-ist-erwacht-auftakt-des-karnevals/"
-related_articles: ["kommern-saint-martin-2026-guide", "christmas-markets-duesseldorf", "cologne-city-guide"]
+related_articles: ["kommern-saint-martin-2026-guide", "christmas-markets-duesseldorf", "cologne-city-guide", "quiet-holidays-november-germany"]
 city: "ケルン・デュッセルドルフ"
 area: "ラインラント"
 location: "ケルン旧市街、デュッセルドルフ市庁舎前広場など"

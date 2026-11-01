@@ -16,7 +16,7 @@ official_sources:
     url: "https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/ihre-schritte-wenn-sie-arbeitslos-werden/wie-sie-sich-arbeitsuchend-melden"
   - title: "連邦労働社会省：労働法の案内（PDF）"
     url: "https://www.bmas.de/SharedDocs/Downloads/DE/Publikationen/a711-arbeitsrecht.pdf?__blob=publicationFile&v=1"
-related_articles: ["unused-vacation-days-germany", "residence-permit-renewal-germany", "germany-labour-market-august-2026"]
+related_articles: ["unused-vacation-days-germany", "residence-permit-renewal-germany", "unemployment-benefit-germany", "eu-blue-card-germany"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""

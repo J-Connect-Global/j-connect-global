@@ -16,7 +16,7 @@ official_sources:
     url: "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-neumarkt/"
   - title: "koeln.de：旧市街のクリスマスマーケット2026"
     url: "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-altstadt/"
-related_articles: ["christmas-markets-duesseldorf", "aachen-christmas-market-2026-guide", "gluehwein-christmas-market-guide", "cologne-cathedral-632-years", "nrw-christmas-opening-hours-2026"]
+related_articles: ["christmas-markets-duesseldorf", "aachen-christmas-market-2026-guide", "gluehwein-christmas-market-guide", "cologne-cathedral-632-years", "nrw-christmas-opening-hours-2026", "nuremberg-christkindlesmarkt-2026-guide"]
 city: "ケルン"
 location: "大聖堂前のロンカリ広場、ノイマルクト、旧市街ほか"
 event_date: "2026-11-16〜2026-12-23"

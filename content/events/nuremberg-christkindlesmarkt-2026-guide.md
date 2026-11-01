@@ -16,7 +16,7 @@ official_sources:
     url: "https://www.christkindlesmarkt.de/der-markt/geschichte-des-marktes/neue-erkenntnisse-zur-geschichte-des-nurnberger-christkindlesmarkts-1.14862745"
   - title: "公式サイト：子どものクリスマス市"
     url: "https://www.christkindlesmarkt.de/en/for-children/children-s-christmas-market-kinderweihnacht-1.2373258"
-related_articles: ["munich-weekend-trip", "cologne-christmas-markets-2026-guide", "advent-wreath-calendar-origin", "germany-train-travel-guide"]
+related_articles: ["munich-weekend-trip", "cologne-christmas-markets-2026-guide", "advent-wreath-calendar-origin", "germany-train-travel-guide", "aachen-christmas-market-2026-guide"]
 city: "ニュルンベルク"
 location: "旧市街の中央広場（ハウプトマルクト）"
 event_date: "2026-11-27〜2026-12-24"

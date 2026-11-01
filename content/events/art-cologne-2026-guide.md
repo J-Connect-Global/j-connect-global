@@ -20,7 +20,7 @@ image: "/assets/img/events/art-cologne-2026-guide.webp"
 image_alt: "現代美術の展示を静かに鑑賞する日本人と来場者"
 image_caption: "AI生成の編集イメージ。実際の2026年会場、出展ギャラリー、作品を撮影または再現したものではありません。"
 image_credit: "AI-generated editorial image / J-Connect"
-related_articles: ["cologne-east-asian-art-museum-2026", "spiel-essen-2026-guide", "kommern-saint-martin-2026-guide"]
+related_articles: ["cologne-east-asian-art-museum-2026", "kommern-saint-martin-2026-guide"]
 official_sources:
   - title: "ART COLOGNE 公式サイト"
     url: "https://www.artcologne.com/"

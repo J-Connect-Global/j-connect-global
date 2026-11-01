@@ -39,7 +39,9 @@
       }
     ],
     "disclaimer_type": "event",
-    "related_articles": [],
+    "related_articles": [
+      "germany-belonging-three-layers"
+    ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
@@ -97,7 +99,9 @@
       "kommern-saint-martin-2026-guide",
       "germany-train-travel-guide",
       "germany-sunday-rest-shops-closed",
-      "nrw-christmas-opening-hours-2026"
+      "nrw-christmas-opening-hours-2026",
+      "nuremberg-christkindlesmarkt-2026-guide",
+      "cologne-museumsnacht-2026-guide"
     ],
     "review": {
       "status": "reviewed",
@@ -149,7 +153,12 @@
     "official_url": "",
     "official_sources": [],
     "disclaimer_type": "event",
-    "related_articles": [],
+    "related_articles": [
+      "cologne-flea-market",
+      "kommern-saint-martin-2026-guide",
+      "german-bread-culture",
+      "cologne-museumsnacht-2026-guide"
+    ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
@@ -189,7 +198,9 @@
     "official_url": "",
     "official_sources": [],
     "disclaimer_type": "event",
-    "related_articles": [],
+    "related_articles": [
+      "family-weekend-events-nrw"
+    ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
@@ -268,7 +279,7 @@
     "home_order": 900,
     "hub_visible": false,
     "search_visible": true,
-    "sitemap_visible": true,
+    "sitemap_visible": false,
     "canonical_url": "/germany/ja/events/news/europe-heatwave-basic-checks/",
     "city": "ドイツ全体 / EU",
     "location": "",
@@ -276,7 +287,11 @@
     "official_url": "",
     "official_sources": [],
     "disclaimer_type": "news_explainer",
-    "related_articles": [],
+    "related_articles": [
+      "flu-covid-vaccination-2026-27",
+      "snow-ice-clearing-duty-germany",
+      "landlord-housing-email-phrases"
+    ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
@@ -574,8 +589,8 @@
     ],
     "disclaimer_type": "event",
     "related_articles": [
-      "eko-haus-autumn-2026",
-      "family-weekend-events-nrw"
+      "family-weekend-events-nrw",
+      "cologne-museumsnacht-2026-guide"
     ],
     "review": {
       "status": "reviewed",
@@ -712,7 +727,11 @@
       }
     ],
     "disclaimer_type": "news_explainer",
-    "related_articles": [],
+    "related_articles": [
+      "schools-germany-japanese-families",
+      "german-school-grades-1-to-6",
+      "parenting-phrases"
+    ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
@@ -782,7 +801,11 @@
       }
     ],
     "disclaimer_type": "news_explainer",
-    "related_articles": [],
+    "related_articles": [
+      "eu-right-to-repair-2026-germany",
+      "online-shopping-returns-germany",
+      "cancel-contracts-germany"
+    ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
@@ -852,7 +875,10 @@
       }
     ],
     "disclaimer_type": "news_explainer",
-    "related_articles": [],
+    "related_articles": [
+      "eu-ai-act-transparency-august-2026",
+      "mobile-phone-sim-germany"
+    ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
@@ -914,7 +940,10 @@
       }
     ],
     "disclaimer_type": "news_explainer",
-    "related_articles": [],
+    "related_articles": [
+      "baucode-nrw-september-2026",
+      "germany-winter-mold-ventilation"
+    ],
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
@@ -1077,7 +1106,7 @@
     "home_order": 6,
     "hub_visible": false,
     "search_visible": true,
-    "sitemap_visible": true,
+    "sitemap_visible": false,
     "canonical_url": "/germany/ja/events/news/rhine-low-water-august-2026/",
     "city": "ライン川流域 / ドイツ",
     "location": "",
@@ -1107,7 +1136,9 @@
     ],
     "disclaimer_type": "news_explainer",
     "related_articles": [
-      "germany-import-prices-june-2026"
+      "duesseldorf-city-guide",
+      "cologne-city-guide",
+      "rhine-river-relax-guide"
     ],
     "review": {
       "status": "reviewed",
@@ -1171,8 +1202,9 @@
     ],
     "disclaimer_type": "news_explainer",
     "related_articles": [
-      "germany-bureaucracy-costs-2026",
-      "germany-import-prices-june-2026"
+      "germany-pfand-return-guide",
+      "germany-waste-sorting-guide",
+      "germany-sunday-rest-shops-closed"
     ],
     "review": {
       "status": "reviewed",
@@ -1724,7 +1756,6 @@
     "disclaimer_type": "event",
     "related_articles": [
       "cologne-east-asian-art-museum-2026",
-      "spiel-essen-2026-guide",
       "kommern-saint-martin-2026-guide"
     ],
     "review": {
@@ -1840,7 +1871,6 @@
     "disclaimer_type": "news_explainer",
     "related_articles": [
       "building-modernisation-law-germany-2026",
-      "germany-bureaucracy-costs-2026",
       "germany-information-triage-guide"
     ],
     "review": {
@@ -1964,8 +1994,8 @@
     "disclaimer_type": "editorial_column",
     "related_articles": [
       "family-weekend-events-nrw",
-      "eko-haus-autumn-2026",
-      "germany-information-triage-guide"
+      "germany-information-triage-guide",
+      "japan-day-duesseldorf"
     ],
     "review": {
       "status": "reviewed",
@@ -2025,9 +2055,7 @@
     ],
     "disclaimer_type": "editorial_column",
     "related_articles": [
-      "germany-september-2026-changes",
-      "eu-ai-act-transparency-august-2026",
-      "germany-bureaucracy-costs-2026"
+      "eu-ai-act-transparency-august-2026"
     ],
     "review": {
       "status": "reviewed",
@@ -2308,8 +2336,8 @@
     ],
     "related_articles": [
       "germany-autumn-forest-walk",
-      "frankfurt-book-fair-2026-guide",
-      "germany-inflation-august-2026"
+      "db-2027-timetable-family-ticket",
+      "deutsche-bahn-delays-why"
     ],
     "city": "ケルン・ベルギー",
     "area": "ドイツ西部・ベルギー",
@@ -2439,7 +2467,9 @@
     "related_articles": [
       "kommern-saint-martin-2026-guide",
       "christmas-markets-duesseldorf",
-      "germany-autumn-forest-walk"
+      "germany-autumn-forest-walk",
+      "germany-bread-guide",
+      "german-wine-regions-guide"
     ],
     "city": "ドイツ全土",
     "area": "ドイツの食文化",
@@ -2504,9 +2534,10 @@
       }
     ],
     "related_articles": [
-      "essen-light-festival-2026-guide",
       "kommern-saint-martin-2026-guide",
-      "german-bread-culture"
+      "german-bread-culture",
+      "germany-winter-time-2026",
+      "germany-wild-birds-guide"
     ],
     "city": "ドイツ全土",
     "area": "ドイツの森・身近な緑地",
@@ -2555,37 +2586,46 @@
     "content_type": "news",
     "category": "交通・車",
     "title": "Deutschlandticketは2027年66.80ユーロへ｜DB利用者は11月30日までに確認",
-    "summary": "Deutschlandticketは2027年1月から月66.80ユーロへ値上げ。DBから購入した既存契約では11月30日までの同意が必要になるため、購入者、期限、未回答時の扱いを整理します。",
+    "summary": "Deutschlandticketは2027年1月から月66.80ユーロへ。DBの既存契約は11月30日までの回答が必要です。同意後は撤回できませんが通常の解約は可能。学生向け定期券の例外も整理します。",
     "official_sources": [
       {
-        "title": "Deutsche Bahn：Deutschlandticketの契約変更FAQ",
+        "title": "Deutsche Bahn：Deutschlandticketの契約変更FAQ（回答期限・撤回・48時間の反映）",
         "url": "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
+      },
+      {
+        "title": "Deutsche Bahn：Deutschlandticket全般・Deutschland-SemesterticketのFAQ",
+        "url": "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket"
       }
     ],
     "related_articles": [
       "db-2027-timetable-family-ticket",
       "germany-train-travel-guide",
-      "cologne-antwerp-direct-ice-2026"
+      "cologne-antwerp-direct-ice-2026",
+      "sugar-drink-tax-germany-2027",
+      "pflegeversicherung-reform-2027",
+      "wohngeld-reform-2027"
     ],
     "city": "ドイツ全土",
     "area": "ドイツ全土",
     "location": "",
     "event_date": "2027年1月1日から新料金",
-    "next_review": "2026-12-01",
+    "next_review": "2026-11-15",
     "tags": [
       "Deutschlandticket",
       "公共交通",
       "定期券",
       "値上げ",
       "Deutsche Bahn",
-      "2027年"
+      "2027年",
+      "Deutschland-Semesterticket",
+      "学生"
     ],
     "published": true,
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-19",
-    "updated_at": "2026-10-20",
-    "last_verified": "2026-10-19",
+    "updated_at": "2026-11-01",
+    "last_verified": "2026-11-01",
     "canonical_url": "/germany/ja/events/news/deutschlandticket-2027-price-consent/",
     "official_url": "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt",
     "url": "/germany/ja/events/news/deutschlandticket-2027-price-consent/",
@@ -2599,8 +2639,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-19",
-      "next_review_due": "2026-12-01"
+      "last_reviewed_at": "2026-11-01",
+      "next_review_due": "2026-11-15"
     },
     "image": "/assets/images/living/german-regional-train-editorial-v1.webp",
     "image_alt": "地域列車のホームで公式アプリを確認する旅行者の編集イメージ",
@@ -2628,7 +2668,8 @@
     "related_articles": [
       "deutschlandticket-2027-price-consent",
       "germany-train-travel-guide",
-      "cologne-antwerp-direct-ice-2026"
+      "cologne-antwerp-direct-ice-2026",
+      "deutsche-bahn-delays-why"
     ],
     "city": "ドイツ全土",
     "area": "ドイツ全土・欧州",
@@ -2690,8 +2731,7 @@
     ],
     "related_articles": [
       "germany-autumn-forest-walk",
-      "db-2027-timetable-family-ticket",
-      "spiel-essen-2026-guide"
+      "db-2027-timetable-family-ticket"
     ],
     "city": "ドイツ全土",
     "area": "ドイツ全土",
@@ -2770,9 +2810,10 @@
     "related_articles": [
       "deutschlandticket-2027-price-consent",
       "db-2027-timetable-family-ticket",
-      "germany-september-2026-changes",
       "kindergeld-auszahlungstermine-2027",
-      "minijob-grenze-2027"
+      "minijob-grenze-2027",
+      "tax-refund-2022-deadline-december-2026",
+      "japan-germany-social-security-pension"
     ],
     "city": "ドイツ全土",
     "area": "ドイツ全土",
@@ -2846,9 +2887,7 @@
       }
     ],
     "related_articles": [
-      "germany-warning-day-2026-results",
-      "germany-information-triage-guide",
-      "germany-inflation-august-2026"
+      "germany-information-triage-guide"
     ],
     "city": "ドイツ全土",
     "area": "ドイツ全土 / 欧州",
@@ -2877,9 +2916,9 @@
     "markdown_path": "/content/events/news/europe-protests-mofa-october-2026.md",
     "home_visible": false,
     "home_order": 21,
-    "hub_visible": true,
+    "hub_visible": false,
     "search_visible": true,
-    "sitemap_visible": true,
+    "sitemap_visible": false,
     "disclaimer_type": "news_explainer",
     "review": {
       "status": "reviewed",
@@ -2931,7 +2970,9 @@
     "related_articles": [
       "health-insurance-guide",
       "germany-january-2027-changes",
-      "tax-id-steuernummer-steuerklasse"
+      "tax-id-steuernummer-steuerklasse",
+      "sugar-drink-tax-germany-2027",
+      "pflegeversicherung-reform-2027"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3011,7 +3052,9 @@
     "related_articles": [
       "rent-apartment-germany",
       "nebenkostenabrechnung-2025-deadline",
-      "germany-winter-time-2026"
+      "germany-winter-time-2026",
+      "snow-ice-clearing-duty-germany",
+      "building-modernisation-law-germany-2026"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3086,7 +3129,9 @@
       "germany-winter-time-2026",
       "german-bread-culture",
       "germany-autumn-forest-walk",
-      "nrw-christmas-opening-hours-2026"
+      "nrw-christmas-opening-hours-2026",
+      "germany-cash-payment-habits",
+      "germany-bread-guide"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3311,7 +3356,8 @@
     "related_articles": [
       "kommern-saint-martin-2026-guide",
       "christmas-markets-duesseldorf",
-      "cologne-city-guide"
+      "cologne-city-guide",
+      "quiet-holidays-november-germany"
     ],
     "city": "ケルン・デュッセルドルフ",
     "location": "ケルン旧市街、デュッセルドルフ市庁舎前広場など",
@@ -3461,7 +3507,8 @@
     "related_articles": [
       "germany-sunday-rest-shops-closed",
       "rhineland-carnival-11-11",
-      "christmas-markets-duesseldorf"
+      "christmas-markets-duesseldorf",
+      "quiet-holidays-november-germany"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3535,7 +3582,10 @@
     "related_articles": [
       "christmas-markets-duesseldorf",
       "rhineland-carnival-11-11",
-      "germany-public-holidays-by-state"
+      "germany-public-holidays-by-state",
+      "germany-silvester-fireworks-rules",
+      "three-kings-day-sternsinger",
+      "saint-nicholas-day-germany"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3609,7 +3659,8 @@
     "related_articles": [
       "bank-account-germany",
       "germany-sunday-rest-shops-closed",
-      "christmas-markets-duesseldorf"
+      "christmas-markets-duesseldorf",
+      "online-shopping-returns-germany"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3674,7 +3725,9 @@
     "related_articles": [
       "advent-wreath-calendar-origin",
       "christmas-markets-duesseldorf",
-      "germany-autumn-forest-walk"
+      "germany-autumn-forest-walk",
+      "germany-silvester-fireworks-rules",
+      "three-kings-day-sternsinger"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3745,7 +3798,8 @@
     "related_articles": [
       "germany-train-travel-guide",
       "germany-autobahn-speed-limit",
-      "db-2027-timetable-family-ticket"
+      "db-2027-timetable-family-ticket",
+      "cologne-antwerp-direct-ice-2026"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3947,14 +4001,14 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-29",
+      "last_reviewed_at": "2026-11-01",
       "next_review_due": "2026-12-10"
     },
-    "title": "ドイツの大晦日はなぜ花火だらけ？｜花火が買えるのは年に3日だけ、という法律と街の禁止区域",
+    "title": "ドイツの大晦日はなぜ花火だらけ？｜販売期間・使用日・禁止区域のルール",
     "category": "季節・文化",
-    "summary": "ドイツの大晦日（Silvester）の夜は、街じゅうで花火が上がります。実は一般の人が花火を買えるのは12月29日〜31日の3日間だけ、打ち上げてよいのは12月31日と1月1日だけと法律で決まっています。花火のルール、教会や病院の近くでの禁止、デュッセルドルフやケルンの禁止区域、微小粒子状物質の問題までを紹介します。",
+    "summary": "ドイツの一般向けF2花火は、原則12月29〜31日に販売され、18歳以上の人が12月31日・1月1日に使用できます。販売期間の日曜例外、教会・病院周辺の禁止、自治体の追加規制、環境面を一次情報で整理します。",
     "published_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "last_verified": "2026-11-01",
     "tags": [
       "大晦日",
       "シルベスター",
@@ -3965,11 +4019,12 @@
       "デュッセルドルフ",
       "ケルン"
     ],
-    "updated_at": "2026-10-29",
+    "updated_at": "2026-11-01",
     "related_articles": [
       "germany-public-holidays-by-state",
       "nrw-christmas-opening-hours-2026",
-      "christmas-tree-origin-germany"
+      "christmas-tree-origin-germany",
+      "three-kings-day-sternsinger"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -3977,12 +4032,20 @@
     "official_url": "https://www.bmi.bund.de/SharedDocs/faqs/DE/themen/bevoelkerungsschutz/silvester/silvester.html",
     "official_sources": [
       {
-        "title": "爆発物法 第1施行令（1. SprengV）第22条",
+        "title": "爆発物法 第1施行令（1. SprengV）第20条（年齢制限）",
+        "url": "https://www.gesetze-im-internet.de/sprengv_1/__20.html"
+      },
+      {
+        "title": "爆発物法 第1施行令（1. SprengV）第22条（販売期間）",
         "url": "https://www.gesetze-im-internet.de/sprengv_1/__22.html"
       },
       {
-        "title": "爆発物法 第1施行令（1. SprengV）第23条",
+        "title": "爆発物法 第1施行令（1. SprengV）第23条（使用日・禁止場所）",
         "url": "https://www.gesetze-im-internet.de/sprengv_1/__23.html"
+      },
+      {
+        "title": "爆発物法 第1施行令（1. SprengV）第24条（自治体の追加規制）",
+        "url": "https://www.gesetze-im-internet.de/sprengv_1/__24.html"
       },
       {
         "title": "連邦内務省：花火の取り扱い（よくある質問）",
@@ -4002,7 +4065,8 @@
       }
     ],
     "image": "/assets/img/events/germany-silvester-fireworks-rules.webp",
-    "image_alt": "大みそかの夜、ドイツの街の上空に上がる花火を描いたイラスト"
+    "image_alt": "大みそかの夜、ドイツの街の上空に上がる花火を描いたイラスト",
+    "next_review": "2026-12-10"
   },
   {
     "slug": "gluehwein-christmas-market-guide",
@@ -4188,7 +4252,8 @@
     "related_articles": [
       "cologne-city-guide",
       "cologne-family-trip",
-      "rhineland-carnival-11-11"
+      "rhineland-carnival-11-11",
+      "berlin-wall-history"
     ],
     "city": "ケルン",
     "location": "ケルン大聖堂（Kölner Dom）",
@@ -4259,7 +4324,8 @@
     "related_articles": [
       "duesseldorf-city-guide",
       "nrw-nature-relax-guide",
-      "cologne-cathedral-632-years"
+      "cologne-cathedral-632-years",
+      "berlin-wall-history"
     ],
     "city": "ルール地方（エッセン・ボットロップなど）",
     "location": "ツォルフェアアイン炭鉱業遺産群（エッセン）など",
@@ -4334,7 +4400,8 @@
     "related_articles": [
       "cologne-cathedral-632-years",
       "saint-nicholas-day-germany",
-      "christmas-tree-origin-germany"
+      "christmas-tree-origin-germany",
+      "germany-silvester-fireworks-rules"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -4483,7 +4550,9 @@
     "related_articles": [
       "kita-u3-tagesmutter-guide",
       "nrw-school-holidays-2026-2027",
-      "germany-public-holidays-by-state"
+      "germany-public-holidays-by-state",
+      "ganztag-primary-school-nrw-2026",
+      "schools-germany-japanese-families"
     ],
     "city": "NRW（ノルトライン＝ヴェストファーレン州）",
     "location": "",
@@ -4547,7 +4616,6 @@
     ],
     "updated_at": "2026-10-29",
     "related_articles": [
-      "germany-inflation-august-2026",
       "germany-january-2027-changes",
       "health-insurance-zusatzbeitrag-2027"
     ],
@@ -4686,7 +4754,9 @@
     "related_articles": [
       "germany-january-2027-changes",
       "germany-inflation-september-2026",
-      "health-insurance-zusatzbeitrag-2027"
+      "health-insurance-zusatzbeitrag-2027",
+      "wohngeld-reform-2027",
+      "tax-refund-2022-deadline-december-2026"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -4833,7 +4903,9 @@
     "related_articles": [
       "rent-apartment-germany",
       "building-modernisation-law-germany-2026",
-      "germany-inflation-september-2026"
+      "germany-inflation-september-2026",
+      "wohngeld-reform-2027",
+      "snow-ice-clearing-duty-germany"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -4904,7 +4976,8 @@
     "related_articles": [
       "germany-rent-law-reform-furnished-2026",
       "rent-apartment-germany",
-      "germany-january-2027-changes"
+      "germany-january-2027-changes",
+      "altersvorsorgedepot-2027"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -4975,7 +5048,8 @@
     "related_articles": [
       "doctor-appointment-germany",
       "health-insurance-guide",
-      "sick-note-rules-germany-2026"
+      "sick-note-rules-germany-2026",
+      "europe-heatwave-basic-checks"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -5024,14 +5098,14 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-29",
-      "next_review_due": "2027-01-15"
+      "last_reviewed_at": "2026-11-01",
+      "next_review_due": "2026-12-15"
     },
     "title": "2022年分の税金の還付申告は2026年12月31日まで｜会社員が自分から出す申告は4年が期限",
     "category": "お金・税金",
     "summary": "ドイツでは、申告の義務がない会社員でも、自分から確定申告を出せば払いすぎた所得税が戻ることがあります。この「任意の申告」は4年以内が期限で、2022年分は2026年12月31日までに税務署に届く必要があり、延長はできません。戻りやすい人の例と、間に合わせるための手順を整理します。",
     "published_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "last_verified": "2026-11-01",
     "tags": [
       "確定申告",
       "税金",
@@ -5043,7 +5117,7 @@
       "お金",
       "ドイツ生活"
     ],
-    "updated_at": "2026-10-29",
+    "updated_at": "2026-11-01",
     "related_articles": [
       "tax-id-steuernummer-steuerklasse",
       "germany-january-2027-changes",
@@ -5055,8 +5129,24 @@
     "official_url": "https://www.elster.de/eportal/helpGlobal?themaGlobal=help_est_ufa_10_2022",
     "official_sources": [
       {
-        "title": "ELSTER：2022年分の所得税申告の手引き（申告の期限）",
+        "title": "ELSTER：2022年分の所得税申告の手引き（申告の期限・申告義務）",
         "url": "https://www.elster.de/eportal/helpGlobal?themaGlobal=help_est_ufa_10_2022"
+      },
+      {
+        "title": "NRW州税務当局：よくある質問（任意申告の4年期限・2022年分の提出期限）",
+        "url": "https://www.finanzamt.nrw.de/faq"
+      },
+      {
+        "title": "NRW州税務当局：申告義務と提出期限（税区分IVの係数方式など）",
+        "url": "https://www.finanzamt.nrw.de/steuerinfos/weitere-themen/steuererklaerung/abgabepflichten-und-fristen"
+      },
+      {
+        "title": "連邦司法省：所得税法 第46条（給与所得者の申告義務）",
+        "url": "https://www.gesetze-im-internet.de/estg/__46.html"
+      },
+      {
+        "title": "連邦司法省：租税通則法 第169条（課税の確定期間）",
+        "url": "https://www.gesetze-im-internet.de/ao_1977/__169.html"
       },
       {
         "title": "NRW州財務行政：会社員のための税のヒント（様式N）",
@@ -5072,7 +5162,8 @@
       }
     ],
     "image": "/assets/img/events/tax-refund-2022-deadline-december-2026.webp",
-    "image_alt": "ノートパソコンと電卓、領収書が並ぶ自宅の机を描いたイラスト"
+    "image_alt": "ノートパソコンと電卓、領収書が並ぶ自宅の机を描いたイラスト",
+    "next_review": "2026-12-15"
   },
   {
     "slug": "car-insurance-switch-november-2026",
@@ -5114,7 +5205,8 @@
     "related_articles": [
       "winter-tires-germany-2026",
       "germany-autobahn-speed-limit",
-      "germany-inflation-september-2026"
+      "germany-inflation-september-2026",
+      "buying-registering-car-germany"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -5257,7 +5349,9 @@
     "related_articles": [
       "rent-apartment-germany",
       "winter-tires-germany-2026",
-      "germany-winter-mold-ventilation"
+      "germany-winter-mold-ventilation",
+      "europe-heatwave-basic-checks",
+      "germany-rent-law-reform-furnished-2026"
     ],
     "city": "NRW（ケルン・デュッセルドルフ）",
     "location": "",
@@ -5327,7 +5421,8 @@
     "related_articles": [
       "dhl-packstation-guide",
       "dhl-delivered-but-not-received",
-      "cancel-contracts-germany"
+      "cancel-contracts-germany",
+      "germany-cash-payment-habits"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -5545,7 +5640,8 @@
     "related_articles": [
       "electricity-internet-contracts-germany",
       "online-shopping-returns-germany",
-      "moving-checklist-germany"
+      "moving-checklist-germany",
+      "mobile-phone-sim-germany"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -5620,7 +5716,8 @@
     "related_articles": [
       "unused-vacation-days-germany",
       "residence-permit-renewal-germany",
-      "germany-labour-market-august-2026"
+      "unemployment-benefit-germany",
+      "eu-blue-card-germany"
     ],
     "city": "ドイツ全土",
     "location": "",
@@ -5650,6 +5747,75 @@
     ],
     "image": "/assets/img/events/job-notice-period-germany.webp",
     "image_alt": "机で手紙に万年筆で署名する人と、私物を入れた段ボール箱を描いたイラスト"
+  },
+  {
+    "id": "C033",
+    "content_type": "column",
+    "slug": "st-martin-day-germany",
+    "url": "/germany/ja/events/columns/st-martin-day-germany/",
+    "markdown_path": "/content/events/columns/st-martin-day-germany.md",
+    "published": false,
+    "status": "draft",
+    "home_visible": false,
+    "home_order": 110,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; editorial review pending",
+      "last_reviewed_at": "2026-11-01",
+      "next_review_due": "2026-11-08"
+    },
+    "title": "ドイツの聖マルティン祭とは？｜11月11日のランタン行列と参加前の確認",
+    "category": "季節・文化",
+    "summary": "聖マルティン祭は毎年11月11日。2026年は水曜日ですが、ランタン行列は地域ごとに前後の日へ分かれます。NRWの自治体が公表した開催例をもとに、参加できる行事の探し方、当日の流れ、子どものランタンの安全を整理します。",
+    "published_at": "",
+    "last_verified": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "next_review": "2026-11-08",
+    "canonical_url": "/germany/ja/events/columns/st-martin-day-germany/",
+    "tags": [
+      "聖マルティン祭",
+      "ランタン行列",
+      "Martinstag",
+      "11月",
+      "ドイツ文化",
+      "2026年",
+      "NRW"
+    ],
+    "related_articles": [
+      "quiet-holidays-november-germany",
+      "cologne-carnival-2026-27-guide",
+      "duesseldorf-carnival-2026-27-guide",
+      "germany-public-holidays-by-state"
+    ],
+    "official_sources": [
+      {
+        "title": "ケルン大司教区：聖マルティン祭の由来と習慣",
+        "url": "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Sankt-Martin-Braeuche-zum-Martinsfest-mit-Laternen-Liedern-und-Gaensen/"
+      },
+      {
+        "title": "Meerbusch市：2026年の聖マルティン行列",
+        "url": "https://meerbusch.de/aktuelles/nachrichten/details/sankt-martin-in-meerbusch-starten-die-zuege-am-sonntag"
+      },
+      {
+        "title": "Duisburg市：2026年の聖マルティン行列",
+        "url": "https://www.duisburg.de/pressemitteilungen/pm/2026/oktober/st.martinszuege-lichterglanz-in-der-duisburger-innenstadt-und-in-den-stadtteilen"
+      },
+      {
+        "title": "Bergkamen消防署：聖マルティン祭の安全",
+        "url": "https://www.feuerwehr-bergkamen.de/buergerinformationen/verhalten-im-notfall/sicherheitstipps-zum-martinstag/"
+      }
+    ],
+    "official_url": "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Sankt-Martin-Braeuche-zum-Martinsfest-mit-Laternen-Liedern-und-Gaensen/",
+    "city": "ドイツ全土（2026年の開催例はNRW）",
+    "area": "ドイツ全土",
+    "location": "",
+    "event_date": "2026-11-11 Martinstag",
+    "image_url": "",
+    "image_alt": ""
   },
   {
     "slug": "cologne-christmas-markets-2026-guide",
@@ -5685,7 +5851,8 @@
       "aachen-christmas-market-2026-guide",
       "gluehwein-christmas-market-guide",
       "cologne-cathedral-632-years",
-      "nrw-christmas-opening-hours-2026"
+      "nrw-christmas-opening-hours-2026",
+      "nuremberg-christkindlesmarkt-2026-guide"
     ],
     "city": "ケルン",
     "location": "大聖堂前のロンカリ広場、ノイマルクト、旧市街ほか",
@@ -5760,7 +5927,9 @@
       "aachen-day-trip",
       "cologne-christmas-markets-2026-guide",
       "christmas-markets-duesseldorf",
-      "gluehwein-christmas-market-guide"
+      "gluehwein-christmas-market-guide",
+      "nuremberg-christkindlesmarkt-2026-guide",
+      "essen-motor-show-2026-guide"
     ],
     "city": "アーヘン",
     "location": "市庁舎前のマルクト広場、カッチュホーフ、大聖堂周辺",
@@ -5835,7 +6004,8 @@
       "munich-weekend-trip",
       "cologne-christmas-markets-2026-guide",
       "advent-wreath-calendar-origin",
-      "germany-train-travel-guide"
+      "germany-train-travel-guide",
+      "aachen-christmas-market-2026-guide"
     ],
     "city": "ニュルンベルク",
     "location": "旧市街の中央広場（ハウプトマルクト）",
@@ -5979,9 +6149,9 @@
     ],
     "related_articles": [
       "germany-autobahn-speed-limit",
-      "spiel-essen-2026-guide",
       "ruhr-coal-mining-history",
-      "boot-duesseldorf-2027-guide"
+      "boot-duesseldorf-2027-guide",
+      "christmas-markets-duesseldorf"
     ],
     "city": "エッセン",
     "location": "エッセン見本市会場",
@@ -6093,5 +6263,444 @@
       "last_reviewed_at": "2026-10-30",
       "next_review_due": "2027-01-15"
     }
+  },
+  {
+    "slug": "cologne-carnival-2026-27-guide",
+    "id": "E027",
+    "content_type": "event",
+    "url": "/germany/ja/events/cologne-carnival-2026-27-guide/",
+    "markdown_path": "/content/events/cologne-carnival-2026-27-guide.md",
+    "canonical_url": "/germany/ja/events/cologne-carnival-2026-27-guide/",
+    "published": true,
+    "status": "published",
+    "image_url": "/assets/img/events/cologne-carnival-2026-27-guide.webp",
+    "home_visible": true,
+    "home_order": 1,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-31",
+      "next_review_due": "2026-11-09"
+    },
+    "related_articles": [
+      "rhineland-carnival-11-11",
+      "duesseldorf-carnival-2026-27-guide",
+      "cologne-city-guide",
+      "nrw-public-holidays-2027",
+      "nrw-school-holidays-2026-2027",
+      "cologne-christmas-markets-2026-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "ケルン市：カーニバルシーズンの日程",
+        "url": "https://www.stadt-koeln.de/artikel/08212/index.html"
+      },
+      {
+        "title": "ケルン市：11月11日の旧市街周辺の交通規制（2026年）",
+        "url": "https://www.stadt-koeln.de/leben-in-koeln/verkehr/verkehrskalender/stoerungen/10899/index.html"
+      },
+      {
+        "title": "ケルン市：11月11日のツュルピッヒャー通り周辺の交通規制（2026年）",
+        "url": "https://www.stadt-koeln.de/leben-in-koeln/verkehr/verkehrskalender/stoerungen/10900/index.html"
+      },
+      {
+        "title": "ケルン市：ガラス容器の持ち込み禁止に関する一般処分（2026年2月5日告示）",
+        "url": "https://www.stadt-koeln.de/mediaasset/content/bekanntmachungen/2026/2026.02.05_0018-01_av_karneval-2026_glasverbot.pdf"
+      },
+      {
+        "title": "ケルン・カーニバル祭典委員会：11月11日のケルン",
+        "url": "https://koelnerkarneval.de/elfterimelften"
+      },
+      {
+        "title": "ケルン・カーニバル祭典委員会：2027年のモットー",
+        "url": "https://koelnerkarneval.de/session/motto-2027"
+      },
+      {
+        "title": "ケルン・カーニバル祭典委員会：2027年の三人組（就任予定）",
+        "url": "https://koelnerkarneval.de/koelner-dreigestirne/koelner-dreigestirn"
+      },
+      {
+        "title": "ケルン・カーニバル祭典委員会：女性のカーニバルの日の行列",
+        "url": "https://koelnerkarneval.de/zuege/wieverfastelovendszoch"
+      },
+      {
+        "title": "ケルン・カーニバル祭典委員会：学校と地区の行列",
+        "url": "https://koelnerkarneval.de/zuege/schull-un-veedelszoech"
+      },
+      {
+        "title": "ケルン・カーニバル祭典委員会：ガイスターツーク",
+        "url": "https://koelnerkarneval.de/zuege/geisterzug"
+      },
+      {
+        "title": "ケルン・カーニバル祭典委員会：バラの月曜日の行列",
+        "url": "https://koelnerkarneval.de/zuege/rosenmontagszug"
+      },
+      {
+        "title": "ケルン・カーニバル祭典委員会：バラの月曜日の行列のルート",
+        "url": "https://koelnerkarneval.de/zuege/rosenmontagszug/zugweg"
+      },
+      {
+        "title": "ケルン市：ケルンのカーニバルの歴史",
+        "url": "https://www.stadt-koeln.de/artikel/05206/index.html"
+      }
+    ],
+    "title": "ケルンのカーニバル2026/27｜11月11日の開幕から、バラの月曜日の行列まで",
+    "category": "季節行事",
+    "summary": "ケルンのカーニバル2026/27年シーズンを、11月11日（水）の開幕から2027年2月4日〜10日の街頭カーニバルまで案内。今季のモットーと三人組、女性のカーニバルの日の「ヤンとグリート」の劇、日曜の学校・地区の行列、バラの月曜日の大行列、ガラス瓶の持ち込み禁止区域と混雑する場所を公式情報から整理します。",
+    "published_at": "2026-10-31",
+    "last_verified": "2026-10-31",
+    "tags": [
+      "カーニバル",
+      "ケルン",
+      "11月11日",
+      "2026年11月",
+      "2027年2月",
+      "バラの月曜日",
+      "NRW",
+      "季節行事"
+    ],
+    "updated_at": "2026-10-31",
+    "city": "ケルン",
+    "location": "旧市街（ホイマルクト、アルター・マルクト）、ツュルピッヒャー通り周辺、市中心部の行列ルートなど",
+    "event_date": "2026-11-11 シーズン開始／2027-02-04〜2027-02-10 街頭カーニバル",
+    "official_url": "https://koelnerkarneval.de/",
+    "image": "/assets/img/events/cologne-carnival-2026-27-guide.webp",
+    "image_alt": "パレードの山車から投げられたお菓子と小さな花束に、沿道の人々が手を伸ばす様子を描いたイラスト"
+  },
+  {
+    "slug": "duesseldorf-carnival-2026-27-guide",
+    "id": "E028",
+    "content_type": "event",
+    "url": "/germany/ja/events/duesseldorf-carnival-2026-27-guide/",
+    "markdown_path": "/content/events/duesseldorf-carnival-2026-27-guide.md",
+    "canonical_url": "/germany/ja/events/duesseldorf-carnival-2026-27-guide/",
+    "published": true,
+    "status": "published",
+    "image_url": "/assets/img/events/duesseldorf-carnival-2026-27-guide.webp",
+    "home_visible": true,
+    "home_order": 1,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-10-31",
+      "next_review_due": "2026-11-09"
+    },
+    "related_articles": [
+      "rhineland-carnival-11-11",
+      "cologne-carnival-2026-27-guide",
+      "duesseldorf-city-guide",
+      "nrw-public-holidays-2027",
+      "nrw-school-holidays-2026-2027",
+      "christmas-markets-duesseldorf"
+    ],
+    "official_sources": [
+      {
+        "title": "デュッセルドルフ・カーニバル委員会：2026/27年シーズンの催し",
+        "url": "https://www.helau.cc/de/pages/veranstaltungen-3"
+      },
+      {
+        "title": "デュッセルドルフ・カーニバル委員会：11月11日、ホッペディッツが目覚める",
+        "url": "https://www.helau.cc/de/News/231,am-1111-erwacht-unser-hoppeditz-in-dusseldorf"
+      },
+      {
+        "title": "デュッセルドルフ・カーニバル委員会：ホッペディッツ",
+        "url": "https://www.helau.cc/de/pages/hoppeditz"
+      },
+      {
+        "title": "デュッセルドルフ・カーニバル委員会：バラの月曜日の行列",
+        "url": "https://www.helau.cc/de/pages/rosenmontagszug"
+      },
+      {
+        "title": "デュッセルドルフ・カーニバル委員会：2027年のバラの月曜日の行列のルート",
+        "url": "https://www.helau.cc/de/pages/zugweg"
+      },
+      {
+        "title": "デュッセルドルフ観光局：ホッペディッツの目覚め",
+        "url": "https://www.visitduesseldorf.de/event/hoppeditz-erwachen-f5ee3197a3"
+      },
+      {
+        "title": "デュッセルドルフ市：ホッペディッツが目覚めた（2025年）",
+        "url": "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/karneval-in-duesseldorf-der-hoppeditz-ist-erwacht-2"
+      },
+      {
+        "title": "デュッセルドルフ市：カーニバル期間の旧市街のガラス禁止",
+        "url": "https://www.duesseldorf.de/ordnungsamt/service/scherbenfrei/"
+      },
+      {
+        "title": "デュッセルドルフ市：ガラス容器の持ち込み禁止に関する一般処分（2026年のカーニバル）",
+        "url": "https://www.duesseldorf.de/stadtrecht/3/32/32-303"
+      },
+      {
+        "title": "デュッセルドルフ市：ガラス禁止・仮設トイレ・リユース食器の案内（2026年）",
+        "url": "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/karneval-alle-infos-zu-glasverbot-mobilen-toiletten-und-mehrweggeschirr-auf-einen-blick-1"
+      },
+      {
+        "title": "デュッセルドルフ市：70万人がバラの月曜日の行列を祝った（2026年）",
+        "url": "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/mer-bliewe-bunt-ejal-wat-kuett-700000-feierten-beim-rosenmontagszug-in-duesseldorf"
+      }
+    ],
+    "title": "デュッセルドルフのカーニバル2026/27｜ホッペディッツの目覚めから、風刺の山車が進むバラの月曜日まで",
+    "category": "季節行事",
+    "summary": "デュッセルドルフのカーニバル2026/27年シーズンを、11月11日（水）のホッペディッツの目覚めから、2027年2月4日の女性のカーニバルの日、7日のケー通りの仮装散歩、8日のバラの月曜日の行列まで案内。今季のモットーと王子・ヴェネツィアの二人組、風刺の山車、旧市街のガラス瓶禁止を公式情報から整理します。",
+    "published_at": "2026-10-31",
+    "last_verified": "2026-10-31",
+    "tags": [
+      "カーニバル",
+      "デュッセルドルフ",
+      "11月11日",
+      "2026年11月",
+      "2027年2月",
+      "バラの月曜日",
+      "NRW",
+      "季節行事"
+    ],
+    "updated_at": "2026-10-31",
+    "city": "デュッセルドルフ",
+    "location": "市庁舎前のマルクト広場、旧市街、ケーニヒスアレー、市中心部の行列ルートなど",
+    "event_date": "2026-11-11 ホッペディッツの目覚め／2027-02-04〜2027-02-10 街頭カーニバル",
+    "official_url": "https://www.helau.cc/de/pages/veranstaltungen-3",
+    "image": "/assets/img/events/duesseldorf-carnival-2026-27-guide.webp",
+    "image_alt": "大きなマスタードの壺から、道化の帽子をかぶった人形が伸びをしながら目を覚ます様子を描いたイラスト"
+  },
+  {
+    "slug": "frankfurt-christmas-market-2026-guide",
+    "id": "E030",
+    "url": "/germany/ja/events/frankfurt-christmas-market-2026-guide/",
+    "markdown_path": "/content/events/frankfurt-christmas-market-2026-guide.md",
+    "image_url": "/assets/img/events/frankfurt-christmas-market-2026-guide.webp",
+    "home_visible": true,
+    "home_order": 11,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-11-01",
+      "next_review_due": "2026-11-22"
+    },
+    "published": true,
+    "title": "フランクフルトのクリスマスマーケット2026｜1393年から続く、商人の街の冬の市",
+    "category": "季節行事",
+    "summary": "2026年11月23日〜12月22日のフランクフルト・クリスマスマーケットを案内。1393年から続く市の歴史、名物の焼き菓子ベートマンヒェンとプラム人形、営業時間を紹介します。",
+    "status": "published",
+    "published_at": "2026-11-01",
+    "last_verified": "2026-11-01",
+    "canonical_url": "/germany/ja/events/frankfurt-christmas-market-2026-guide/",
+    "tags": [
+      "クリスマスマーケット",
+      "フランクフルト",
+      "ヘッセン",
+      "2026年11月",
+      "2026年12月",
+      "アドベント"
+    ],
+    "updated_at": "2026-11-01",
+    "related_articles": [
+      "gluehwein-christmas-market-guide",
+      "christmas-tree-origin-germany",
+      "nuremberg-christkindlesmarkt-2026-guide",
+      "stuttgart-christmas-market-2026-guide",
+      "dresden-striezelmarkt-2026-guide",
+      "germany-train-travel-guide"
+    ],
+    "content_type": "event",
+    "city": "フランクフルト",
+    "location": "旧市庁舎前のレーマーベルク広場、パウルス広場、ハウプトヴァッヘ周辺、マイン川沿いほか",
+    "event_date": "2026-11-23〜2026-12-22",
+    "official_url": "https://www.visitfrankfurt.travel/erleben/feste-und-veranstaltungen/frankfurter-weihnachtsmarkt",
+    "official_sources": [
+      {
+        "title": "フランクフルト観光局：フランクフルト・クリスマスマーケット（2026年の日程・営業時間・プログラム）",
+        "url": "https://www.visitfrankfurt.travel/erleben/feste-und-veranstaltungen/frankfurter-weihnachtsmarkt"
+      },
+      {
+        "title": "フランクフルト観光局：クリスマスマーケットのプレス発表（1393年からの記録）",
+        "url": "https://www.visitfrankfurt.travel/presse/pressemeldungen/details/frankfurter-weihnachtsmarkt-2024"
+      },
+      {
+        "title": "フランクフルト市統計局：クリスマスの歴史と習慣（ベートマンヒェンの由来）",
+        "url": "https://statistikportal.frankfurt.de/statistik_aktuell/2025/FSA_2025_17.html"
+      }
+    ],
+    "image": "/assets/img/events/frankfurt-christmas-market-2026-guide.webp",
+    "image_alt": "三角屋根が連なる木組みの家並みの前で、大きなツリーと屋台の灯りがともる夜の広場を描いたイラスト",
+    "next_review": "2026-11-22",
+    "source_type": "manual",
+    "image_caption": "AIの支援でコードから描画したイラスト（J-Connect）。フランクフルトのクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。",
+    "image_credit": "AI-assisted vector illustration / J-Connect"
+  },
+  {
+    "slug": "stuttgart-christmas-market-2026-guide",
+    "id": "E031",
+    "url": "/germany/ja/events/stuttgart-christmas-market-2026-guide/",
+    "markdown_path": "/content/events/stuttgart-christmas-market-2026-guide.md",
+    "image_url": "/assets/img/events/stuttgart-christmas-market-2026-guide.webp",
+    "home_visible": true,
+    "home_order": 12,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-11-01",
+      "next_review_due": "2026-11-24"
+    },
+    "published": true,
+    "title": "シュトゥットガルトのクリスマスマーケット2026｜屋根の上の小さな冬景色を見上げる市",
+    "category": "季節行事",
+    "summary": "2026年11月25日〜12月23日のシュトゥットガルト・クリスマスマーケットを案内。1692年に記録が残る歴史、屋台の屋根を飾る冬景色、開幕式と営業時間を紹介します。",
+    "status": "published",
+    "published_at": "2026-11-01",
+    "last_verified": "2026-11-01",
+    "canonical_url": "/germany/ja/events/stuttgart-christmas-market-2026-guide/",
+    "tags": [
+      "クリスマスマーケット",
+      "シュトゥットガルト",
+      "バーデン＝ヴュルテンベルク",
+      "2026年11月",
+      "2026年12月",
+      "アドベント"
+    ],
+    "updated_at": "2026-11-01",
+    "related_articles": [
+      "gluehwein-christmas-market-guide",
+      "christmas-tree-origin-germany",
+      "frankfurt-christmas-market-2026-guide",
+      "dresden-striezelmarkt-2026-guide",
+      "nuremberg-christkindlesmarkt-2026-guide",
+      "germany-train-travel-guide"
+    ],
+    "content_type": "event",
+    "city": "シュトゥットガルト",
+    "location": "旧宮殿周辺のシラー広場、マルクト広場、シュロス広場、カール広場",
+    "event_date": "2026-11-25〜2026-12-23",
+    "official_url": "https://www.stuttgarter-weihnachtsmarkt.de/",
+    "official_sources": [
+      {
+        "title": "シュトゥットガルト・クリスマスマーケット公式サイト（2026年の日程）",
+        "url": "https://www.stuttgarter-weihnachtsmarkt.de/"
+      },
+      {
+        "title": "公式サイト：営業時間・開幕日の案内",
+        "url": "https://www.stuttgarter-weihnachtsmarkt.de/en/service"
+      },
+      {
+        "title": "公式サイト：市の歴史",
+        "url": "https://www.stuttgarter-weihnachtsmarkt.de/en/general/history"
+      },
+      {
+        "title": "公式サイト：数字で見るクリスマスマーケット",
+        "url": "https://www.stuttgarter-weihnachtsmarkt.de/en/general/interesting-facts/"
+      },
+      {
+        "title": "公式サイト：屋台の屋根飾り",
+        "url": "https://www.stuttgarter-weihnachtsmarkt.de/de/allgemein/budenzauber/"
+      }
+    ],
+    "image": "/assets/img/events/stuttgart-christmas-market-2026-guide.webp",
+    "image_alt": "城のシルエットを背に、雪の家並みや人形、星、塔の飾りを屋根に載せた木の屋台が並ぶ夜の市を描いたイラスト",
+    "next_review": "2026-11-24",
+    "source_type": "manual",
+    "image_caption": "AIの支援でコードから描画したイラスト（J-Connect）。シュトゥットガルトのクリスマスマーケットのテーマを表したもので、実際の屋台や建物を再現していません。",
+    "image_credit": "AI-assisted vector illustration / J-Connect"
+  },
+  {
+    "slug": "dresden-striezelmarkt-2026-guide",
+    "id": "E032",
+    "url": "/germany/ja/events/dresden-striezelmarkt-2026-guide/",
+    "markdown_path": "/content/events/dresden-striezelmarkt-2026-guide.md",
+    "image_url": "/assets/img/events/dresden-striezelmarkt-2026-guide.webp",
+    "home_visible": true,
+    "home_order": 13,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-11-01",
+      "next_review_due": "2026-11-24"
+    },
+    "published": true,
+    "title": "ドレスデンのシュトリーツェルマルクト2026｜シュトレンの名を持つ、1434年からのクリスマス市",
+    "category": "季節行事",
+    "summary": "2026年11月25日〜12月24日の第592回ドレスデン・シュトリーツェルマルクトを案内。1434年からの歴史、名物シュトレン、12月5日のシュトレン祭り、営業時間を紹介します。",
+    "status": "published",
+    "published_at": "2026-11-01",
+    "last_verified": "2026-11-01",
+    "canonical_url": "/germany/ja/events/dresden-striezelmarkt-2026-guide/",
+    "tags": [
+      "クリスマスマーケット",
+      "ドレスデン",
+      "ザクセン",
+      "シュトレン",
+      "2026年11月",
+      "2026年12月",
+      "アドベント"
+    ],
+    "updated_at": "2026-11-01",
+    "related_articles": [
+      "germany-bread-guide",
+      "german-bread-culture",
+      "gluehwein-christmas-market-guide",
+      "advent-wreath-calendar-origin",
+      "frankfurt-christmas-market-2026-guide",
+      "stuttgart-christmas-market-2026-guide",
+      "nuremberg-christkindlesmarkt-2026-guide"
+    ],
+    "content_type": "event",
+    "city": "ドレスデン",
+    "location": "旧市街のアルトマルクト広場",
+    "event_date": "2026-11-25〜2026-12-24",
+    "official_url": "https://striezelmarkt.dresden.de/de/",
+    "official_sources": [
+      {
+        "title": "ドレスデン・シュトリーツェルマルクト公式サイト（2026年の日程）",
+        "url": "https://striezelmarkt.dresden.de/de/"
+      },
+      {
+        "title": "ドレスデン市：第592回シュトリーツェルマルクト2026の募集要項（日程・営業時間）",
+        "url": "https://www.dresden.de/media/pdf/wirtschaft/markte/STM-2026-Ausschreibungstext.pdf"
+      },
+      {
+        "title": "公式サイト：シュトリーツェルマルクトの歴史と伝統",
+        "url": "https://striezelmarkt.dresden.de/de/markttreiben/Dresdner-Striezelmarkt-Geschichte-Tradition.php"
+      },
+      {
+        "title": "ドレスデン市：2026年のシュトリーツェルマルクトのツリー",
+        "url": "https://www.dresden.de/de/rathaus/aktuelles/pressemitteilungen/2026/10/pm_077.php"
+      },
+      {
+        "title": "ドレスデン・シュトレン保護協会：ドレスデンのシュトレンの歴史と認証",
+        "url": "https://www.dresdnerstollen.com/en/dresden-christmas-stollen/"
+      },
+      {
+        "title": "ドレスデン・シュトレン保護協会：第31回シュトレン祭り（2026年12月5日）",
+        "url": "https://www.dresdnerstollen.com/herzlich-willkommen-ruth-liebscher/"
+      },
+      {
+        "title": "ドレスデン市：市内のほかのクリスマスマーケット",
+        "url": "https://www.dresden.de/de/tourismus/sehen/weihnachtszeit/weitere-weihnachtsmaerkte.php"
+      }
+    ],
+    "image": "/assets/img/events/dresden-striezelmarkt-2026-guide.webp",
+    "image_alt": "粉砂糖をかけた大きなシュトレンと、ろうそくが灯る多段の木のピラミッドが並ぶ冬の広場を描いたイラスト",
+    "next_review": "2026-11-24",
+    "source_type": "manual",
+    "image_caption": "AIの支援でコードから描画したイラスト（J-Connect）。ドレスデンのシュトリーツェルマルクトのテーマを表したもので、実際の建物や会場配置を再現していません。",
+    "image_credit": "AI-assisted vector illustration / J-Connect"
   }
 ]

@@ -1,0 +1,41 @@
+[
+  {
+    "slug": "frankfurt-christmas-market-2026-guide",
+    "section": "events",
+    "markdown": "content/events/frankfurt-christmas-market-2026-guide.md",
+    "dest": "assets/img/events/frankfurt-christmas-market-2026-guide.webp",
+    "alt": "三角屋根が連なる木組みの家並みの前で、大きなツリーと屋台の灯りがともる夜の広場を描いたイラスト",
+    "prompt": "Asset type: article hero and thumbnail for a Japanese-language guide to life in Germany. Wide 16:9 warm painterly digital illustration, storybook editorial style, not a photograph. A winter evening on a historic old-town square in a German city: a row of tall half-timbered houses with stepped and pointed gables, a very tall decorated Christmas tree with warm lights in the centre, wooden market stalls with glowing garland lights and small trays of marzipan almond sweets and little dried-plum figurines, gentle crowd silhouettes, soft snow in the air, warm amber and deep blue palette. Main subject (tree and stalls) within the central 70%, clearly readable as a 240px thumbnail. Fictional scene that does not reproduce any specific real building or layout. No readable text, letters, numbers, signage text, logos, brand names or watermarks. People are small, fictional and not identifiable.",
+    "caption": "AIの支援でコードから描画したイラスト（J-Connect）。フランクフルトのクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。",
+    "credit": "AI-assisted vector illustration / J-Connect",
+    "status": "generated",
+    "created": "2026-10-31",
+    "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted on 2026-10-31; the prompt above was not used)"
+  },
+  {
+    "slug": "stuttgart-christmas-market-2026-guide",
+    "section": "events",
+    "markdown": "content/events/stuttgart-christmas-market-2026-guide.md",
+    "dest": "assets/img/events/stuttgart-christmas-market-2026-guide.webp",
+    "alt": "城のシルエットを背に、雪の家並みや人形、星、塔の飾りを屋根に載せた木の屋台が並ぶ夜の市を描いたイラスト",
+    "prompt": "Asset type: article hero and thumbnail for a Japanese-language guide to life in Germany. Wide 16:9 warm painterly digital illustration, storybook editorial style, not a photograph. Dusk at a German Christmas market: a row of wooden market stalls whose ROOFS are the stars of the image, each roof elaborately decorated with miniature snowy village scenes, small wooden Christmas figures, fir branches and twinkling fairy lights, like little dioramas on top of the stalls; a stone castle courtyard silhouette softly in the background, light snow, deep blue sky with warm golden lights. Decorated roofs large and centred within the central 70%, clearly readable as a 240px thumbnail. Fictional scene that does not reproduce any specific real stall or building. No readable text, letters, numbers, signage text, logos, brand names or watermarks. People, if any, are small, fictional and not identifiable.",
+    "caption": "AIの支援でコードから描画したイラスト（J-Connect）。シュトゥットガルトのクリスマスマーケットのテーマを表したもので、実際の屋台や建物を再現していません。",
+    "credit": "AI-assisted vector illustration / J-Connect",
+    "status": "generated",
+    "created": "2026-10-31",
+    "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted on 2026-10-31; the prompt above was not used)"
+  },
+  {
+    "slug": "dresden-striezelmarkt-2026-guide",
+    "section": "events",
+    "markdown": "content/events/dresden-striezelmarkt-2026-guide.md",
+    "dest": "assets/img/events/dresden-striezelmarkt-2026-guide.webp",
+    "alt": "粉砂糖をかけた大きなシュトレンと、ろうそくが灯る多段の木のピラミッドが並ぶ冬の広場を描いたイラスト",
+    "prompt": "Asset type: article hero and thumbnail for a Japanese-language guide to life in Germany. Wide 16:9 warm painterly digital illustration, storybook editorial style, not a photograph. Foreground: a large loaf of German Christmas stollen dusted thickly with powdered sugar on a wooden board, one slice cut showing raisins and candied fruit. Behind it, on a winter evening market square, a tall multi-tiered wooden Christmas pyramid in Erzgebirge folk-art style with candles and a turning propeller on top, carved figures on each tier, surrounded by wooden market stalls with warm lights and light snow; baroque domed skyline only as a soft silhouette. Stollen and pyramid large and centred within the central 70%, clearly readable as a 240px thumbnail. Fictional scene that does not reproduce any specific real building or layout. No readable text, letters, numbers, signage text, logos, seals, brand names or watermarks. People, if any, are small, fictional and not identifiable.",
+    "caption": "AIの支援でコードから描画したイラスト（J-Connect）。ドレスデンのシュトリーツェルマルクトのテーマを表したもので、実際の建物や会場配置を再現していません。",
+    "credit": "AI-assisted vector illustration / J-Connect",
+    "status": "generated",
+    "created": "2026-10-31",
+    "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted on 2026-10-31; the prompt above was not used)"
+  }
+]

@@ -8,7 +8,7 @@ const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const sourceDirectories = ["assets", "germany", "de", "en", "ja"];
 const sourceFiles = [
   "index.html", "404.html", "robots.txt", "sitemap.xml", "CNAME", "favicon.ico",
-  "site.webmanifest", "manifest.json", "browserconfig.xml"
+  "site.webmanifest", "manifest.json", "browserconfig.xml", "indexnow-key.txt"
 ];
 const rootImagePattern = /\.(?:webp|png|jpe?g|svg)$/i;
 export const deploymentManifestFilename = "deployment-manifest.json";

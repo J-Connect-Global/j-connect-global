@@ -169,7 +169,9 @@
     "related_articles": [
       "germany-waste-sorting-guide",
       "germany-first-30-days",
-      "germany-bread-guide"
+      "germany-bread-guide",
+      "germany-cash-payment-habits",
+      "eu-packaging-regulation-august-2026"
     ],
     "official_sources": [
       {
@@ -283,7 +285,8 @@
     "related_articles": [
       "duesseldorf-family-trip",
       "cologne-city-guide",
-      "rhine-river-relax-guide"
+      "rhine-river-relax-guide",
+      "rhine-low-water-august-2026"
     ],
     "official_sources": [
       {
@@ -349,7 +352,8 @@
     "related_articles": [
       "cologne-family-trip",
       "rhine-river-relax-guide",
-      "duesseldorf-city-guide"
+      "duesseldorf-city-guide",
+      "rhine-low-water-august-2026"
     ],
     "official_sources": [
       {
@@ -415,7 +419,7 @@
     "related_articles": [
       "cologne-city-guide",
       "nrw-nature-relax-guide",
-      "strasbourg-weekend-trip"
+      "aachen-christmas-market-2026-guide"
     ],
     "official_sources": [
       {
@@ -890,8 +894,8 @@
     "canonical_url": "/germany/ja/living/hamburg-weekend-trip/",
     "related_articles": [
       "bremen-weekend-trip",
-      "copenhagen-weekend-trip",
-      "cologne-city-guide"
+      "cologne-city-guide",
+      "advent-wreath-calendar-origin"
     ],
     "official_sources": [
       {
@@ -950,9 +954,9 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/berlin-weekend-trip/",
     "related_articles": [
-      "amsterdam-weekend-trip",
       "munich-weekend-trip",
-      "hamburg-weekend-trip"
+      "hamburg-weekend-trip",
+      "berlin-wall-history"
     ],
     "official_sources": [
       {
@@ -1219,8 +1223,8 @@
     "canonical_url": "/germany/ja/living/munich-weekend-trip/",
     "related_articles": [
       "aachen-day-trip",
-      "krakow-weekend-trip",
-      "germany-first-30-days"
+      "germany-first-30-days",
+      "german-beer-purity-law"
     ],
     "official_sources": [
       {
@@ -1554,19 +1558,19 @@
   },
   {
     "id": "L011",
-    "title": "ドイツの放送負担金とは？一住戸一件の仕組みと手続き",
+    "title": "ドイツの放送負担金（Rundfunkbeitrag・旧GEZ）とは？金額・同居・引っ越し・免除の手続き",
     "slug": "rundfunkbeitrag-guide",
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
     "image_alt": "ドイツの新居で住居に関する書類を確認する日本人の住民",
     "category": "住まい",
-    "summary": "ドイツの放送負担金について、テレビの所有ではなく住戸単位で負担する理由、金額、同居・共同生活、引っ越し、免除申請の考え方を説明します。",
+    "summary": "ドイツの放送負担金（Rundfunkbeitrag、旧GEZ）について、テレビの所有ではなく住戸単位で負担する理由、月18.36ユーロ・3か月ごとの支払い、同居・共同生活、引っ越し、免除申請の考え方を説明します。",
     "url": "/germany/ja/living/rundfunkbeitrag-guide/",
     "markdown_path": "/content/living/rundfunkbeitrag-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-03-10",
-    "updated_at": "2026-08-30",
-    "last_verified": "2026-08-30",
+    "updated_at": "2026-10-31",
+    "last_verified": "2026-10-31",
     "tags": [
       "放送負担金",
       "引っ越し",
@@ -1593,14 +1597,26 @@
       {
         "title": "放送負担金公式サイト：英語案内",
         "url": "https://www.rundfunkbeitrag.de/welcome/english"
+      },
+      {
+        "title": "放送負担金公式サイト：支払いについて",
+        "url": "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/informationen/zahlung"
+      },
+      {
+        "title": "放送負担金公式サイト：毎月払いはできる？（支払いの時期）",
+        "url": "https://www.rundfunkbeitrag.de/presse-und-aktuelles/servicethemen/beitragsmythen-teil-1-ich-kann-den-rundfunkbeitrag-monatlich-zahlen-oder"
+      },
+      {
+        "title": "公共放送の財政需要を算定する委員会（KEF）：2027年からの金額の勧告",
+        "url": "https://kef-online.de/presse/detail/kef-empfiehlt-deutlich-geringere-anhebung-des-rundfunkbeitrags"
       }
     ],
     "disclaimer_type": "administrative",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-30",
-      "next_review_due": "2026-11-30"
+      "last_reviewed_at": "2026-10-31",
+      "next_review_due": "2027-01-15"
     }
   },
   {
@@ -1635,7 +1651,8 @@
       "schufa-guide",
       "moving-checklist-germany",
       "anmeldung-guide",
-      "electricity-internet-contracts-germany"
+      "electricity-internet-contracts-germany",
+      "liability-household-insurance-germany"
     ],
     "official_sources": [
       {
@@ -1696,7 +1713,8 @@
     "related_articles": [
       "rent-apartment-germany",
       "bank-account-germany",
-      "germany-first-30-days"
+      "germany-first-30-days",
+      "liability-household-insurance-germany"
     ],
     "official_sources": [
       {
@@ -1756,7 +1774,9 @@
       "germany-first-30-days",
       "schufa-guide",
       "anmeldung-guide",
-      "tax-id-steuernummer-steuerklasse"
+      "tax-id-steuernummer-steuerklasse",
+      "liability-household-insurance-germany",
+      "mobile-phone-sim-germany"
     ],
     "official_sources": [
       {
@@ -2061,19 +2081,19 @@
   },
   {
     "id": "L001",
-    "title": "ドイツの住民登録ガイド｜期限、入居証明、予約、登録後の流れ",
+    "title": "ドイツの住民登録（Anmeldung）のやり方｜期限・必要書類・予約・登録後の流れ",
     "slug": "anmeldung-guide",
     "image_url": "/assets/images/living/japanese-resident-paperwork-editorial-v1.webp",
     "image_alt": "ドイツの住民登録に必要な書類を自宅で準備する日本人の住民",
     "category": "役所・滞在",
-    "summary": "ドイツの住民登録を、入居後2週間の期限、入居証明など必要書類の取得先・提出先、デュッセルドルフの予約、登録後の税務IDまで整理します。",
+    "summary": "ドイツの住民登録（Anmeldung）を、入居後2週間の期限、入居証明など必要書類の取得先・提出先、予約の取り方、費用、期限に遅れた場合、登録後の税務IDまで整理します。",
     "url": "/germany/ja/living/anmeldung-guide/",
     "markdown_path": "/content/living/anmeldung-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-10-20",
-    "last_verified": "2026-08-30",
+    "updated_at": "2026-10-31",
+    "last_verified": "2026-10-31",
     "tags": [
       "住民登録",
       "入居証明",
@@ -2114,14 +2134,22 @@
       {
         "title": "デュッセルドルフ市：住民登録・必要書類・予約",
         "url": "https://service.duesseldorf.de/suche/-/vr-bis-detail/dienstleistung/227/show"
+      },
+      {
+        "title": "デュッセルドルフ市：住民登録の義務と無料の登録確認書",
+        "url": "https://www.duesseldorf.de/einwohnerangelegenheiten/meldeangelegenheiten/informationen-zur-meldepflicht"
+      },
+      {
+        "title": "連邦住民登録法第54条：過料",
+        "url": "https://www.gesetze-im-internet.de/bmg/__54.html"
       }
     ],
     "disclaimer_type": "administrative",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-30",
-      "next_review_due": "2026-11-30"
+      "last_reviewed_at": "2026-10-31",
+      "next_review_due": "2027-01-31"
     }
   },
   {
@@ -2170,17 +2198,17 @@
   },
   {
     "id": "L003",
-    "title": "ドイツの健康保険｜公的保険と民間保険をどう選ぶか",
+    "title": "ドイツの健康保険の選び方｜公的保険と民間保険、保険料率、2026年の基準、加入の流れ",
     "slug": "health-insurance-guide",
     "category": "医療・健康",
-    "summary": "ドイツの健康保険を会社員・学生・家族など立場別に解説。公的保険と民間保険、2026年の基準、加入証明の提出先、保険証が届く前の受診用証明まで整理します。",
+    "summary": "ドイツの健康保険を会社員・学生・家族など立場別に解説。公的保険と民間保険の違い、保険料率（14.6%＋追加保険料）、2026年の基準、加入証明の提出先、保険証が届く前の受診用証明まで整理します。",
     "url": "/germany/ja/living/health-insurance-guide/",
     "markdown_path": "/content/living/health-insurance-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-10-27",
-    "last_verified": "2026-08-31",
+    "updated_at": "2026-10-31",
+    "last_verified": "2026-10-31",
     "tags": [
       "健康保険",
       "公的医療保険",
@@ -2228,8 +2256,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-31",
-      "next_review_due": "2026-11-30"
+      "last_reviewed_at": "2026-10-31",
+      "next_review_due": "2027-01-15"
     },
     "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
     "image_alt": "ドイツの診療所で保険と受診について受付に確認するイメージ"
@@ -2254,11 +2282,11 @@
       "ドイツ生活",
       "日本代表"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 1,
-    "hub_visible": true,
+    "hub_visible": false,
     "search_visible": true,
-    "sitemap_visible": true,
+    "sitemap_visible": false,
     "canonical_url": "/germany/ja/living/world-cup-2026-watch-germany/",
     "related_articles": [
       "rundfunkbeitrag-guide",
@@ -2385,7 +2413,8 @@
       "cologne-city-guide",
       "duesseldorf-city-guide",
       "germany-first-30-days",
-      "christmas-markets-duesseldorf"
+      "christmas-markets-duesseldorf",
+      "deutsche-bahn-delays-why"
     ],
     "official_sources": [
       {
@@ -2421,7 +2450,7 @@
   },
   {
     "id": "L037",
-    "title": "ドイツの滞在許可を申請・更新する方法｜期限、必要書類、審査中の証明",
+    "title": "ドイツの滞在許可を申請・更新する方法｜期限、必要書類、審査中の証明（Fiktionsbescheinigung）",
     "slug": "residence-permit-renewal-germany",
     "category": "役所・滞在",
     "summary": "ドイツの滞在許可を申請・更新するときに、現在の許可条件、管轄、申請日、必要書類、審査中の滞在・就労・旅行をどう確認するかを整理します。",
@@ -2430,7 +2459,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-08-02",
-    "updated_at": "2026-10-17",
+    "updated_at": "2026-10-31",
     "last_verified": "2026-08-30",
     "tags": [
       "滞在許可",
@@ -2505,7 +2534,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-08-01",
-    "updated_at": "2026-08-30",
+    "updated_at": "2026-10-31",
     "last_verified": "2026-08-30",
     "tags": [
       "医師",
@@ -2525,7 +2554,10 @@
     "related_articles": [
       "health-insurance-guide",
       "pregnancy-birth-germany",
-      "germany-first-30-days"
+      "germany-first-30-days",
+      "epa-guide-germany",
+      "japanese-speaking-doctors-germany",
+      "dentist-germany-guide"
     ],
     "official_sources": [
       {
@@ -2589,7 +2621,8 @@
       "moving-checklist-germany",
       "rent-apartment-germany",
       "anmeldung-guide",
-      "rundfunkbeitrag-guide"
+      "rundfunkbeitrag-guide",
+      "utilities-internet-contract-phrases"
     ],
     "official_sources": [
       {
@@ -3289,7 +3322,8 @@
     "related_articles": [
       "kita-u3-tagesmutter-guide",
       "duesseldorf-family-trip",
-      "family-weekend-events-nrw"
+      "family-weekend-events-nrw",
+      "nrw-public-holidays-2027"
     ],
     "image_url": "/assets/images/living/childcare-play-editorial-v2.webp",
     "image_alt": "明るい保育室で子どもと保育者が積み木をする様子",
@@ -3482,7 +3516,9 @@
     "related_articles": [
       "germany-january-2027-changes",
       "tax-id-steuernummer-steuerklasse",
-      "germany-first-30-days"
+      "germany-first-30-days",
+      "sugar-drink-tax-germany-2027",
+      "pflegeversicherung-reform-2027"
     ],
     "official_sources": [
       {
@@ -3770,7 +3806,8 @@
     "related_articles": [
       "germany-first-30-days",
       "cancel-contracts-germany",
-      "electricity-internet-contracts-germany"
+      "electricity-internet-contracts-germany",
+      "eu-right-to-repair-2026-germany"
     ],
     "official_sources": [
       {
@@ -3840,7 +3877,8 @@
     "related_articles": [
       "job-notice-period-germany",
       "residence-permit-renewal-germany",
-      "germany-labour-market-august-2026"
+      "family-reunification-spouse-work-germany",
+      "eu-blue-card-germany"
     ],
     "official_sources": [
       {
@@ -3910,7 +3948,8 @@
     "related_articles": [
       "german-school-grades-1-to-6",
       "kita-u3-tagesmutter-guide",
-      "nrw-school-holidays-2026-2027"
+      "nrw-school-holidays-2026-2027",
+      "ganztag-primary-school-nrw-2026"
     ],
     "official_sources": [
       {
@@ -4408,7 +4447,8 @@
     "related_articles": [
       "residence-permit-renewal-germany",
       "eu-blue-card-germany",
-      "anmeldung-guide"
+      "anmeldung-guide",
+      "unemployment-benefit-germany"
     ],
     "official_sources": [
       {
@@ -4474,7 +4514,8 @@
     "related_articles": [
       "residence-permit-renewal-germany",
       "family-reunification-spouse-work-germany",
-      "job-notice-period-germany"
+      "job-notice-period-germany",
+      "unemployment-benefit-germany"
     ],
     "official_sources": [
       {

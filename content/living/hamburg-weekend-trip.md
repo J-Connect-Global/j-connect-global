@@ -12,7 +12,7 @@ updated_at: "2026-08-31"
 last_verified: "2026-07-19"
 next_review: "2026-10-15"
 canonical_url: "/germany/ja/living/hamburg-weekend-trip/"
-related_articles: ["bremen-weekend-trip", "copenhagen-weekend-trip", "cologne-city-guide"]
+related_articles: ["bremen-weekend-trip", "cologne-city-guide", "advent-wreath-calendar-origin"]
 official_sources:
   - title: "Hamburg Tourismus"
     url: "https://www.hamburg-travel.com/"

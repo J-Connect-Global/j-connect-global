@@ -4,23 +4,25 @@ id: "N021"
 content_type: "news"
 category: "交通・車"
 title: "Deutschlandticketは2027年66.80ユーロへ｜DB利用者は11月30日までに確認"
-summary: "Deutschlandticketは2027年1月から月66.80ユーロへ値上げ。DBから購入した既存契約では11月30日までの同意が必要になるため、購入者、期限、未回答時の扱いを整理します。"
+summary: "Deutschlandticketは2027年1月から月66.80ユーロへ。DBの既存契約は11月30日までの回答が必要です。同意後は撤回できませんが通常の解約は可能。学生向け定期券の例外も整理します。"
 official_sources:
-  - title: "Deutsche Bahn：Deutschlandticketの契約変更FAQ"
+  - title: "Deutsche Bahn：Deutschlandticketの契約変更FAQ（回答期限・撤回・48時間の反映）"
     url: "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
-related_articles: ["db-2027-timetable-family-ticket", "germany-train-travel-guide", "cologne-antwerp-direct-ice-2026"]
+  - title: "Deutsche Bahn：Deutschlandticket全般・Deutschland-SemesterticketのFAQ"
+    url: "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket"
+related_articles: ["db-2027-timetable-family-ticket", "germany-train-travel-guide", "cologne-antwerp-direct-ice-2026", "sugar-drink-tax-germany-2027", "pflegeversicherung-reform-2027", "wohngeld-reform-2027"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""
 event_date: "2027年1月1日から新料金"
-next_review: "2026-12-01"
-tags: ["Deutschlandticket", "公共交通", "定期券", "値上げ", "Deutsche Bahn", "2027年"]
+next_review: "2026-11-15"
+tags: ["Deutschlandticket", "公共交通", "定期券", "値上げ", "Deutsche Bahn", "2027年", "Deutschland-Semesterticket", "学生"]
 published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-19"
-updated_at: "2026-10-20"
-last_verified: "2026-10-19"
+updated_at: "2026-11-01"
+last_verified: "2026-11-01"
 canonical_url: "/germany/ja/events/news/deutschlandticket-2027-price-consent/"
 official_url: "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
 image: "/assets/images/living/german-regional-train-editorial-v1.webp"
@@ -54,13 +56,21 @@ DBは、期限までに同意しない、または継続を拒否した契約を
 
 期限を過ぎても、解約日として登録された12月31日まではAboportalまたはDB Navigatorの「Abo reaktivieren」から再開できます。2027年に入ってから必要になった場合は、新料金で新しい契約を申し込みます。
 
-10月15日以降にDBで注文した人は、申込時に新料金と条件を知らされているため、別の同意操作は不要とされています。アプリ表示の更新には時間がかかる場合があるので、回答後は「Vertragsänderung einsehen」で受付結果も確認できます。
+10月15日以降にDBで注文した人は、申込時に新料金と条件を知らされているため、別の同意操作は不要とされています。DBは、回答後の画面表示が更新されるまで最大48時間かかる場合があると案内しています。すぐに反映されなくても、Aboportalまたはチケット画面で「Vertragsänderung einsehen」を開き、受付日時と結果を確認してください。確認画面やメールは保存しておくと安心です。
+
+いったん同意すると、その同意自体を後から取り消すことはできません。ただし、契約そのものは通常の解約期限に従って解約できます。DBは、毎月10日までの解約でその月末に終了すると案内しています。値上げを受け入れるか迷う場合は、同意する前に、補足条件と家計への影響を確認してください。
 
 ## DB以外で買った人は購入先を確認
 
 今回の11月30日という手続きは、DBが販売した契約についての案内です。Rheinbahn、KVB、VRR内の別事業者などから購入している場合は、その事業者のメール、アプリ、契約者ページに従ってください。DBの画面に契約が見えないからといって、定期券が無効という意味ではありません。
 
 まずカード明細や契約メールで販売事業者を確認し、次にその事業者からの料金改定通知を読みます。迷惑メールフォルダと、契約者アカウントの登録メールアドレスも見直すと、期限を見落としにくくなります。
+
+## 大学のDeutschland-Semesterticketは別扱い
+
+大学の学生向け定期券であるDeutschland-Semesterticketは、通常のDB購入契約と同じ手続きではありません。DBの公式FAQでは、2027年の価格変更は2026/27年の冬学期と2027年の夏学期には影響せず、この時点で個別の同意操作は不要と案内されています。現行の運賃条件では、2027年6月1日以降に始まる学期から新しい割引価格が適用され、大学や学生自治会が学期料金を事前に知らせます（[DBのDeutschlandticket・Semesterticket FAQ](https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket)）。
+
+したがって、学生向け定期券を持っている人は、DBの11月30日という通常契約の期限をそのまま当てはめず、所属大学・学生自治会・交通窓口の案内を確認してください。大学が販売する券と、個人でDBから購入したDeutschlandticketは、購入先と契約条件を分けて判断する必要があります。
 
 ## 家計では年額も見ておく
 

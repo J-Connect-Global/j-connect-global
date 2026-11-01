@@ -13,7 +13,7 @@ last_verified: "2026-08-30"
 next_review: "2026-12-01"
 canonical_url: "/germany/ja/living/electricity-internet-contracts-germany/"
 image_alt: "ドイツの新居で電気メーターと契約書を確認する日本人の夫婦"
-related_articles: ["moving-checklist-germany", "rent-apartment-germany", "anmeldung-guide", "rundfunkbeitrag-guide"]
+related_articles: ["moving-checklist-germany", "rent-apartment-germany", "anmeldung-guide", "rundfunkbeitrag-guide", "utilities-internet-contract-phrases"]
 official_sources:
   - title: "連邦ネットワーク庁：電力会社の切り替え"
     url: "https://www.bundesnetzagentur.de/DE/Vportal/Energie/KuendigungLieferantenwechsel/Lieferantenwechsel/start.html"

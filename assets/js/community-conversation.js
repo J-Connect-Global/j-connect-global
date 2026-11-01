@@ -11,12 +11,18 @@
   const key = 'jconnect:conversation:' + kind + ':' + scopeId;
   const el = (id) => document.getElementById(id);
   const status = el('conversationStatus');
-  const closedMessage = '元の投稿が削除・非公開になったため、この会話を開けません。';
+  const closedMessage = '元の投稿が削除・非公開のため、この会話は開けません。リンクを再送しても復旧できません。';
   const brokenLinkMessage = 'リンクの一部が欠けているため開けません。メールのリンク全体を開くか、下のフォームから同じリンクを再送してください。';
   function store(value) { session = value; try { sessionStorage.setItem(key, value); } catch (_) {} }
-  function recover(message) {
+  function recover(message, options = {}) {
     clearTimeout(refreshTimer);
-    status.textContent = message; el('recoveryPanel').hidden = false;
+    const canResend = options.canResend !== false;
+    status.textContent = message;
+    el('recoveryPanel').hidden = false;
+    el('recoveryTitle').textContent = canResend ? 'リンクを再送する' : 'この会話は開けません';
+    el('recoveryHelp').hidden = !canResend;
+    el('recoveryForm').hidden = !canResend;
+    el('recoveryNoResend').hidden = canResend;
     el('conversationPanel').hidden = true; el('replyPanel').hidden = true;
     el('conversationIntro').hidden = false;
   }
@@ -31,7 +37,7 @@
     try { return await api(action, { ...values, kind, id: scopeId, session }); }
     catch (error) {
       if (error.code === 'INVALID_ACCESS' && current === generation) { forget(); recover(error.message); }
-      else if (error.code === 'CLOSED' && current === generation) recover(closedMessage);
+      else if (error.code === 'CLOSED' && current === generation) recover(closedMessage, { canResend: false });
       throw error;
     }
   }
@@ -129,11 +135,20 @@
     status.textContent = 'メールのリンクを確認しています…';
     let result;
     try { result = await api('communityUseAccess', { kind, id: scopeId, access }); }
-    catch (error) { access = ''; recover(error.code === 'CLOSED' ? closedMessage : error.message); return; }
+    catch (error) {
+      access = '';
+      if (error.code === 'CLOSED') recover(closedMessage, { canResend: false });
+      else recover(error.message);
+      return;
+    }
     access = '';
     if (result.scope !== kind || result.id !== scopeId || !/^[a-f0-9]{64}$/.test(result.session)) { recover('確認結果を読み取れませんでした。メールのリンクをもう一度開いてください。'); return; }
     store(result.session);
-    await load();
+    try { await load(); }
+    catch (error) {
+      if (error.code === 'CLOSED') recover(closedMessage, { canResend: false });
+      else recover(error.message);
+    }
   }
   el('recoveryForm').addEventListener('submit', (event) => {
     event.preventDefault(); const form = event.currentTarget; const button = form.querySelector('button');

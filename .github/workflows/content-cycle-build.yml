@@ -34,13 +34,13 @@ jobs:
           import sharp from "sharp";
           import { rename } from "node:fs/promises";
           const files = [
-            ["assets/img/events/dresden-striezelmarkt-2026-guide.webp", 1024],
+            ["assets/img/events/dresden-striezelmarkt-2026-guide.webp", 960],
             ["assets/img/events/dresden-striezelmarkt-2026-guide-768w.webp", 768],
             ["assets/img/events/dresden-striezelmarkt-2026-guide-480w.webp", 480],
-            ["assets/img/events/frankfurt-christmas-market-2026-guide.webp", 1024],
+            ["assets/img/events/frankfurt-christmas-market-2026-guide.webp", 960],
             ["assets/img/events/frankfurt-christmas-market-2026-guide-768w.webp", 768],
             ["assets/img/events/frankfurt-christmas-market-2026-guide-480w.webp", 480],
-            ["assets/img/events/stuttgart-christmas-market-2026-guide.webp", 1024],
+            ["assets/img/events/stuttgart-christmas-market-2026-guide.webp", 960],
             ["assets/img/events/stuttgart-christmas-market-2026-guide-768w.webp", 768],
             ["assets/img/events/stuttgart-christmas-market-2026-guide-480w.webp", 480]
           ];
@@ -48,7 +48,7 @@ jobs:
             const temp = file + ".optimized.webp";
             await sharp(file)
               .resize({ width, withoutEnlargement: true })
-              .webp({ quality: 38, effort: 6, smartSubsample: true })
+              .webp({ quality: 35, effort: 6, smartSubsample: true })
               .toFile(temp);
             await rename(temp, file);
           }

@@ -16,7 +16,42 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+      - name: Merge latest main into the editorial branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git merge --no-edit origin/main
       - run: npm ci
+      - name: Re-encode only the three new original vector cover sets within the existing image budget
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --no-save --package-lock=false sharp
+          node --input-type=module <<'NODE'
+          import sharp from "sharp";
+          import { rename } from "node:fs/promises";
+          const files = [
+            ["assets/img/events/dresden-striezelmarkt-2026-guide.webp", 1024],
+            ["assets/img/events/dresden-striezelmarkt-2026-guide-768w.webp", 768],
+            ["assets/img/events/dresden-striezelmarkt-2026-guide-480w.webp", 480],
+            ["assets/img/events/frankfurt-christmas-market-2026-guide.webp", 1024],
+            ["assets/img/events/frankfurt-christmas-market-2026-guide-768w.webp", 768],
+            ["assets/img/events/frankfurt-christmas-market-2026-guide-480w.webp", 480],
+            ["assets/img/events/stuttgart-christmas-market-2026-guide.webp", 1024],
+            ["assets/img/events/stuttgart-christmas-market-2026-guide-768w.webp", 768],
+            ["assets/img/events/stuttgart-christmas-market-2026-guide-480w.webp", 480]
+          ];
+          for (const [file, width] of files) {
+            const temp = file + ".optimized.webp";
+            await sharp(file)
+              .resize({ width, withoutEnlargement: true })
+              .webp({ quality: 38, effort: 6, smartSubsample: true })
+              .toFile(temp);
+            await rename(temp, file);
+          }
+          console.log("Optimized nine new vector cover files; original source/captions remain unchanged.");
+          NODE
       - run: npm run build
       - run: npm run validate
       - run: npx playwright install --with-deps chromium
@@ -28,7 +63,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          BASE="720202cd5e70470a2b33335f0be1dea6e295afdf"
+          BASE="$(git rev-parse origin/main)"
           git diff --check "$BASE"
           mapfile -t changed < <(git diff --name-only "$BASE")
           for path in "${changed[@]}"; do

@@ -127,21 +127,23 @@ jobs:
           const provenancePath = "docs/jc-content-cycle-2026-11-01-provenance.md";
           const provenance = await readFile(provenancePath, "utf8");
           if (!provenance.includes("## 6. 2026-11-01 follow-up and validation corrections")) {
-            await writeFile(provenancePath, provenance + `
-\n## 6. 2026-11-01 follow-up and validation corrections
-
-- Main is now at commit `f31830781d73b5c9f022af7c1891668466a445b3`. PR #412 (closed-conversation resend state) was merged; the associated validation and Pages deployment runs succeeded. The public conversation page loads. Its source contains `noindex, follow` and `no-referrer`; source inspection confirmed the tags after the browser summary did not expose them.
-- The current public sitemap has 186 URLs, all under `/germany/ja/`; no `/germany/en/` or `/germany/de/` URLs are listed.
-- The public pages for the Deutschlandticket, 2022 tax-refund deadline, and Silvester fireworks articles load. The three seasonal market guides remain on the editorial branch until the current validation sequence completes.
-- The image-asset budget remains unchanged at 40,200,000 bytes. The three new original vector cover sets were re-encoded to fit the existing budget; no budget increase was made.
-- A validation pass found a route mismatch in the unpublished St Martin draft: the registry and canonical URL incorrectly included `/columns/`, while the site router uses `/events/{slug}/`. The draft's URL and canonical URL are corrected to `/germany/ja/events/st-martin-day-germany/`. It remains unpublished and excluded from search, hubs, and sitemap.
-- Editorial corrections: the tax article no longer attributes a non-extendable deadline to the ELSTER form guide; it relies on the NRW tax authority's four-year guidance and keeps the mandatory-filing exception distinct. The fireworks article now explains that certain F2 items are restricted to permit holders. The Frankfurt guide adds official accessibility, accessible-toilet, public-transport, and no-parking details and cites the city statistics source for the Bethmännchen story. The Stuttgart guide links the official historical PDF for the 1643 restart and states the official visitor figure as more than 3.5 million.
-- The Dresden guide retains the disclosed discrepancy between the newer visitor page (16:00 opening) and the older city tender (16:30); the newer visitor information is preferred, and readers are told to reconfirm before travel. The visitor page was temporarily unavailable to direct retrieval during this run.
-- The previous recorded public Apps Script status check (2026-10-28) reported version `2026-10-23.1` and the persistent-link/inline-reply/instant-publication flags enabled. A live email end-to-end test and the five-minute notification trigger's presence still require access to the Google Apps Script project and an authorized test inbox. No real-user email was sent. The browser profile had no Google sign-in, so no authentication was bypassed.
-- The German-learning audio test still requires a physical device; no vocabulary, classification, user-post, contact-form, job, or privacy-processing data was changed.
-- GSC Wizard access was unavailable because the connection requires activation/subscription; no 28-day or 3-month performance values were available. The J-Connect Germany Project Instructions could not be retrieved through Notion in this non-interactive run; the repository's content-production workflow documents and the current user brief were followed.
-- Open PRs at the time of this follow-up: #406 internal review record, #407 EES/ETIAS draft awaiting legal review, #409 earlier seasonal-guide PR, and #413 temporary builder workflow. There are no open GitHub issues. The new editorial branch is intended to consolidate #409's three market guides and the three article improvements; the temporary workflow is not intended for main.
-`);
+            const followup = [
+              "",
+              "## 6. 2026-11-01 follow-up and validation corrections",
+              "",
+              "- Main is now at commit f31830781d73b5c9f022af7c1891668466a445b3. PR #412 (closed-conversation resend state) was merged; validation and Pages deployment succeeded. The public conversation page loads. Its source contains noindex, follow and no-referrer.",
+              "- The current public sitemap has 186 URLs, all under /germany/ja/; no /germany/en/ or /germany/de/ URLs are listed.",
+              "- The public pages for the Deutschlandticket, 2022 tax-refund deadline, and Silvester fireworks articles load. The three seasonal market guides remain on the editorial branch until validation completes.",
+              "- The image-asset budget remains unchanged at 40,200,000 bytes. The three new original vector cover sets were re-encoded to fit the existing budget; no budget increase was made.",
+              "- A validation pass found a route mismatch in the unpublished St Martin draft: the registry and canonical URL incorrectly included /columns/, while the site router uses /events/{slug}/. The draft URL and canonical URL are corrected to /germany/ja/events/st-martin-day-germany/. It remains unpublished and excluded from search, hubs, and sitemap.",
+              "- Editorial corrections: the tax article no longer attributes a non-extendable deadline to the ELSTER form guide; it relies on the NRW tax authority four-year guidance and keeps the mandatory-filing exception distinct. The fireworks article now explains that certain F2 items are restricted to permit holders. The Frankfurt guide adds official accessibility, accessible-toilet, public-transport, and no-parking details and cites the city statistics source for the Bethmännchen story. The Stuttgart guide links the official historical PDF for the 1643 restart and states the official visitor figure as more than 3.5 million.",
+              "- The Dresden guide retains the disclosed discrepancy between the newer visitor page (16:00 opening) and the older city tender (16:30); the newer visitor information is preferred, and readers are told to reconfirm before travel. The visitor page was temporarily unavailable to direct retrieval during this run.",
+              "- The previous recorded public Apps Script status check (2026-10-28) reported version 2026-10-23.1 and the persistent-link, inline-reply, and instant-publication flags enabled. A live email end-to-end test and the five-minute notification trigger still require access to the Google Apps Script project and an authorized test inbox. No real-user email was sent. The browser profile had no Google sign-in.",
+              "- The German-learning audio test still requires a physical device; no vocabulary, classification, user-post, contact-form, job, or privacy-processing data was changed.",
+              "- GSC Wizard access was unavailable because activation or subscription is required; no 28-day or 3-month performance values were available. The J-Connect Germany Project Instructions could not be retrieved through Notion in this non-interactive run; repository content-production documents and the current user brief were followed.",
+              "- Open PRs at the time of this follow-up: #406 internal review record, #407 EES/ETIAS draft awaiting legal review, #409 earlier seasonal-guide PR, and #413 temporary builder workflow. There are no open GitHub issues. The new editorial branch consolidates #409's three market guides and the three article improvements; the temporary workflow is not intended for main."
+            ].join("\n");
+            await writeFile(provenancePath, provenance + followup + "\n");
           }
           console.log("Applied all scoped editorial corrections.");
           NODE

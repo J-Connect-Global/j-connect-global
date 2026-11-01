@@ -3408,25 +3408,25 @@
     "slug": "ees-etias-germany-japan-travel-2026",
     "url": "/germany/ja/living/ees-etias-germany-japan-travel-2026/",
     "markdown_path": "/content/living/ees-etias-germany-japan-travel-2026.md",
-    "published": false,
-    "status": "draft",
+    "published": true,
+    "status": "published",
     "home_visible": false,
     "home_order": 109,
-    "hub_visible": false,
-    "search_visible": false,
-    "sitemap_visible": false,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; immigration-law review pending",
-      "last_reviewed_at": "2026-10-31",
-      "next_review_due": "2026-11-04"
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (AI-assisted; official sources checked, no immigration-law review)",
+      "last_reviewed_at": "2026-11-01",
+      "next_review_due": "2026-11-15"
     },
     "title": "ドイツ入国のEES・ETIASとは？2026年の日本人旅行者・在住者向けガイド",
     "category": "行政・滞在",
-    "summary": "EESは2026年4月10日に全面運用、ETIASは2026年10月31日時点で申請受付前（EU公式の運用開始見通しは2026年第4四半期）です。日本人の短期旅行者と、ドイツの滞在許可を持つ在住者で必要な対応を分けて説明します。",
-    "published_at": "",
-    "last_verified": "2026-10-31",
+    "summary": "EESは2026年4月10日に全面運用、ETIASは2026年11月1日時点で申請受付前（EU公式の運用開始見通しは2026年第4四半期）です。日本人の短期旅行者と、ドイツの滞在許可を持つ在住者で必要な対応を分けて説明します。",
+    "published_at": "2026-11-01",
+    "last_verified": "2026-11-01",
     "next_review": "2026-11-04",
     "canonical_url": "/germany/ja/living/ees-etias-germany-japan-travel-2026/",
     "tags": [
@@ -3438,7 +3438,7 @@
       "滞在許可",
       "2026年"
     ],
-    "updated_at": "2026-10-31",
+    "updated_at": "2026-11-01",
     "related_articles": [
       "residence-permit-renewal-germany",
       "germany-first-30-days",
@@ -3474,8 +3474,9 @@
         "url": "https://www.germany.info/us-en/2735594-2735594"
       }
     ],
-    "image_url": "",
-    "image_alt": ""
+    "image_url": "/assets/img/living/ees-etias-germany-japan-travel-2026.webp",
+    "image_alt": "パスポートと搭乗券、指紋とカメラの読み取り機がある入国審査のブース、飛び立つ飛行機を描いたイラスト",
+    "image": "/assets/img/living/ees-etias-germany-japan-travel-2026.webp"
   },
   {
     "id": "L056",

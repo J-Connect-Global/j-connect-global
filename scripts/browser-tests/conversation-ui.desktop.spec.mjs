@@ -149,3 +149,23 @@ test('a deleted or hidden original post explains that resend cannot restore the 
   await expect(page.locator('#conversationPanel')).toBeHidden();
   await assertNoHorizontalOverflow(page);
 });
+
+test('a closed conversation response after access exchange also suppresses resend',async({page})=>{
+  await page.route('https://script.google.com/**',async route=>{
+    const action=new URLSearchParams(route.request().postData()||'').get('action');
+    const data=action==='communityMessagingStatus'
+      ? {ok:true,messaging_version:'2026-10-23.1',public_replies:true,private_conversations:true,persistent_links:true}
+      : action==='communityUseAccess'
+        ? {ok:true,id:'conversation-ui',scope:'conversation',session}
+        : action==='communityGetConversation'
+          ? {ok:false,code:'CLOSED',error:'元の投稿が削除・非公開になっています。'}
+          : {ok:true};
+    await route.fulfill({json:data});
+  });
+  await page.goto(url);
+  await expect(page.locator('#recoveryPanel')).toBeVisible();
+  await expect(page.locator('#recoveryTitle')).toHaveText('この会話は開けません');
+  await expect(page.locator('#recoveryNoResend')).toBeVisible();
+  await expect(page.locator('#recoveryForm')).toBeHidden();
+  await assertNoHorizontalOverflow(page);
+});

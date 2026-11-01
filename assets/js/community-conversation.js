@@ -135,11 +135,20 @@
     status.textContent = 'メールのリンクを確認しています…';
     let result;
     try { result = await api('communityUseAccess', { kind, id: scopeId, access }); }
-    catch (error) { access = ''; recover(error.code === 'CLOSED' ? closedMessage : error.message); return; }
+    catch (error) {
+      access = '';
+      if (error.code === 'CLOSED') recover(closedMessage, { canResend: false });
+      else recover(error.message);
+      return;
+    }
     access = '';
     if (result.scope !== kind || result.id !== scopeId || !/^[a-f0-9]{64}$/.test(result.session)) { recover('確認結果を読み取れませんでした。メールのリンクをもう一度開いてください。'); return; }
     store(result.session);
-    await load();
+    try { await load(); }
+    catch (error) {
+      if (error.code === 'CLOSED') recover(closedMessage, { canResend: false });
+      else recover(error.message);
+    }
   }
   el('recoveryForm').addEventListener('submit', (event) => {
     event.preventDefault(); const form = event.currentTarget; const button = form.querySelector('button');

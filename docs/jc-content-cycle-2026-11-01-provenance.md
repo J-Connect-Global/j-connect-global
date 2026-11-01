@@ -8,13 +8,15 @@
 - 実体リポジトリは `J-Connect-Global/j-connect-global`。候補 `NihonGatewayGermany/nihon-gateway-germany` は現行の実体ではない。
 - Project Instructions はこの接続から取得できず、現行コード、公開ページ、編集記録を基準にした。
 - PR #411 はmainにマージ済み。デュッセルドルフのカーニバルの道化師イラストを赤・白へ修正済み。
-- 未完PRは #406（内部編集記録）、#407（EES・ETIAS非公開ドラフト）、#409（3都市のクリスマスマーケット）。#409はDresdenの開場時刻に一次情報の食い違いがあり、画像予算拡大も未承認のため、マージを止めるコメントを追加した。
+- 未完PRは #406（内部編集記録）、#407（EES・ETIAS非公開ドラフト）、#409（3都市のクリスマスマーケット）、#412（削除済み投稿の再送案内UI）。#409の3記事・画像は本ブランチに統合して再検証する。ドレスデンは10月30日更新の来場者向け公式ページの16:00を採用し、4月の募集要項にある16:30との差を記事内に明記。PR #409の既存CIでは画像総量38.09 MiB、ブラウザーテスト138件成功。現行の40.2MB上限内に収まるため、画像予算の拡大は行わない。
 - 掲示板・非公開会話の公開状態APIは `messaging_version: 2026-10-23.1`。永続リンク、公開返信、インライン返信、即時公開の各機能フラグは有効。実ユーザーへの通知メールは送信していない。
 - 安全なテスト専用受信箱とGoogleログイン済みApps Script管理セッションがないため、実メール配送、返信、再送、5分トリガー登録状態は未検証。APIフラグだけでメールE2E成功とは扱わない。
 - ドイツ語学習カードは前回確認値17,635件（A1 1,800、A2 3,000、B1 3,400、B2 4,200、C1 4,100、C2 1,135）。自動読み上げは初期OFF、音声ボタンは表示されたが、実際の音声再生は未検証。学習データ・進捗は変更していない。
 - 不審な求人・掲示板投稿は投稿者、仕事内容、報酬、費用を独立確認できないため変更・削除していない。既存の投稿・求人・管理コードはこのブランチで変更しない。
 
-## 2. 新規候補 C033（非公開ドラフト）
+## 2. 新規コンテンツ候補
+
+### C033 — 聖マルティン祭（非公開ドラフト）
 
 **タイトル：** ドイツの聖マルティン祭とは？｜11月11日のランタン行列と参加前の確認  
 **候補URL：** `/germany/ja/events/columns/st-martin-day-germany/`  
@@ -33,6 +35,18 @@
 - https://www.duisburg.de/pressemitteilungen/pm/2026/oktober/st.martinszuege-lichterglanz-in-der-duisburger-innenstadt-und-in-den-stadtteilen
 - https://www.erzbistum-koeln.de/presse_und_medien/magazin/Sankt-Martin-Braeuche-zum-Martinsfest-mit-Laternen-Liedern-und-Gaensen/
 - https://www.feuerwehr-bergkamen.de/buergerinformationen/verhalten-im-notfall/sicherheitstipps-zum-martinstag/
+
+### E030–E032 — 2026年クリスマスマーケット3都市ガイド（公開候補）
+
+- **E030 フランクフルト：** [Frankfurt Christmas Market 2026](/germany/ja/events/frankfurt-christmas-market-2026-guide/) — 11月23日〜12月22日。公式ページは月〜土10:00–21:00、日11:00–21:00、11月23日17:10の開幕、18:00の塔上トランペットを案内。1393年の記録はVisit Frankfurtの公式歴史説明、Bethmännchenの1838年起源はフランクフルト市の統計記事で確認。
+- **E031 シュトゥットガルト：** [Stuttgart Christmas Market 2026](/germany/ja/events/stuttgart-christmas-market-2026-guide/) — 11月25日〜12月23日、毎日11:00–21:00。公式サイトは11月25日17:00の開幕と18:00の塔上トランペットを案内。1507年の市場特権、1643年以降の再開、1692年の初出記録は公式歴史資料で確認。
+- **E032 ドレスデン：** [Striezelmarkt 2026](/germany/ja/events/dresden-striezelmarkt-2026-guide/) — 11月25日〜12月24日、第592回。通常10:00–21:00、12月24日は10:00–14:00。10月30日更新の来場者向け公式ページは開幕日16:00、4月の出店者募集要項は16:30と異なるため、最新の来場者向けページを優先し差を本文で説明。第31回シュトレン祭りは12月5日と公式協会が告知。
+- 画像は外部写真を使わず、AI支援でコードから描画したオリジナルのベクターイラストと図解。PR #409のCIでは画像総量38.09 MiB、現行上限40.2MB以内。上限変更はしない。
+
+一次情報：
+- Frankfurt: https://www.visitfrankfurt.travel/en/experience/festival-and-events/frankfurt-christmas-market ; https://www.visitfrankfurt.travel/presse/pressemeldungen/details/frankfurter-weihnachtsmarkt-2024 ; https://statistikportal.frankfurt.de/statistik_aktuell/2025/FSA_2025_17.html
+- Stuttgart: https://www.stuttgarter-weihnachtsmarkt.de/en/service ; https://www.stuttgarter-weihnachtsmarkt.de/en/general/history
+- Dresden: https://striezelmarkt.dresden.de/de/ ; https://www.dresden.de/media/pdf/wirtschaft/markte/STM-2026-Ausschreibungstext.pdf ; https://www.dresdnerstollen.com/herzlich-willkommen-ruth-liebscher/
 
 ## 3. 既存記事の改善
 

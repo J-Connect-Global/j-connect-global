@@ -6896,5 +6896,272 @@
     ],
     "image": "/assets/img/events/nrw-ice-rinks-winter-2026-27.webp",
     "image_alt": "夜の工場の煙突と炉のシルエットを背に、親子が光に照らされた細長いスケートリンクを滑る様子を描いたイラスト"
+  },
+  {
+    "slug": "munich-christmas-markets-2026-guide",
+    "id": "E035",
+    "url": "/germany/ja/events/munich-christmas-markets-2026-guide/",
+    "markdown_path": "/content/events/munich-christmas-markets-2026-guide.md",
+    "image_url": "/assets/img/events/munich-christmas-markets-2026-guide.webp",
+    "home_visible": true,
+    "home_order": 14,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-11-01",
+      "next_review_due": "2026-11-19"
+    },
+    "published": true,
+    "status": "published",
+    "title": "ミュンヘンのクリスマスマーケット2026｜市庁舎のツリーと、聖ペーター教会前のクリッペ市",
+    "category": "季節行事",
+    "summary": "2026年11月20日〜12月24日のミュンヘン・マリエン広場のクリスマスマーケットを案内。14世紀にさかのぼる市の歴史、毎年違う村から贈られる大きなツリー、1757年から続く降誕の人形の市、12月13日のクランプスの行列、宮殿や中世風の市まで、2026年の日程と営業時間を整理します。",
+    "published_at": "2026-11-01",
+    "last_verified": "2026-11-01",
+    "canonical_url": "/germany/ja/events/munich-christmas-markets-2026-guide/",
+    "tags": [
+      "クリスマスマーケット",
+      "ミュンヘン",
+      "バイエルン",
+      "2026年11月",
+      "2026年12月",
+      "アドベント"
+    ],
+    "updated_at": "2026-11-01",
+    "related_articles": [
+      "munich-weekend-trip",
+      "nuremberg-christkindlesmarkt-2026-guide",
+      "stuttgart-christmas-market-2026-guide",
+      "gluehwein-christmas-market-guide",
+      "advent-wreath-calendar-origin",
+      "christmas-tree-origin-germany"
+    ],
+    "content_type": "event",
+    "city": "ミュンヘン",
+    "location": "マリエン広場とリンダーマルクト、聖ペーター教会前ほか",
+    "event_date": "2026-11-20〜2026-12-24",
+    "official_url": "https://www.muenchen.de/veranstaltungen/muenchner-christkindlmarkt-marienplatz",
+    "official_sources": [
+      {
+        "title": "ミュンヘン市：マリエン広場のクリスマスマーケット2026",
+        "url": "https://www.muenchen.de/veranstaltungen/muenchner-christkindlmarkt-marienplatz"
+      },
+      {
+        "title": "ミュンヘン市：マリエン広場のツリー2026",
+        "url": "https://www.muenchen.de/veranstaltungen/muenchner-christkindlmarkt/christbaum-am-marienplatz-2026"
+      },
+      {
+        "title": "ミュンヘン市：聖ペーター教会前のクリッペ市2026",
+        "url": "https://www.muenchen.de/veranstaltungen/freizeit/weihnachtsmarkt-christkindlmarkt/kripperlmarkt-muenchner-christkindlmarkt-2026"
+      },
+      {
+        "title": "ミュンヘン市：市内のクリスマスマーケット一覧2026",
+        "url": "https://www.muenchen.de/veranstaltungen/weihnachtsmaerkte-christkindlmaerkte-2026"
+      },
+      {
+        "title": "ミュンヘン市：レジデンツのクリスマス村2026",
+        "url": "https://www.muenchen.de/veranstaltungen/freizeit/weihnachtsmarkt-christkindlmarkt/weihnachtsdorf-der-residenz"
+      },
+      {
+        "title": "ミュンヘン市：ヴィッテルスバッハー広場の中世風の市2026",
+        "url": "https://www.muenchen.de/veranstaltungen/freizeit/weihnachtsmarkt-christkindlmarkt/muenchner-adventsspektakel"
+      },
+      {
+        "title": "ミュンヘン市：トールウッド冬祭り2026",
+        "url": "https://www.muenchen.de/veranstaltungen/freizeit/weihnachtsmarkt-christkindlmarkt/tollwood-winterfestival-2026"
+      },
+      {
+        "title": "ミュンヘン市：ピンク・クリスマス2026",
+        "url": "https://www.muenchen.de/veranstaltungen/freizeit/weihnachtsmarkt-christkindlmarkt/pink-christmas"
+      },
+      {
+        "title": "ミュンヘン市：シュヴァービングのクリスマスマーケット2026",
+        "url": "https://www.muenchen.de/veranstaltungen/freizeit/weihnachtsmarkt-christkindlmarkt/schwabinger-weihnachtsmarkt"
+      }
+    ],
+    "image": "/assets/img/events/munich-christmas-markets-2026-guide.webp",
+    "image_alt": "尖塔のある市庁舎を背に、大きなツリーと木の屋台が並び、手前の屋台に小さな降誕の人形と馬小屋が飾られた夜の広場を描いたイラスト",
+    "next_review": "2026-11-19",
+    "source_type": "manual",
+    "image_caption": "AIの支援でコードから描画したイラスト（J-Connect）。ミュンヘンのクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。",
+    "image_credit": "AI-assisted vector illustration / J-Connect"
+  },
+  {
+    "slug": "berlin-christmas-markets-2026-guide",
+    "id": "E036",
+    "url": "/germany/ja/events/berlin-christmas-markets-2026-guide/",
+    "markdown_path": "/content/events/berlin-christmas-markets-2026-guide.md",
+    "image_url": "/assets/img/events/berlin-christmas-markets-2026-guide.webp",
+    "home_visible": true,
+    "home_order": 15,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-11-01",
+      "next_review_due": "2026-11-12"
+    },
+    "published": true,
+    "status": "published",
+    "title": "ベルリンのクリスマスマーケット2026｜広場ごとに歴史が違う、首都の冬の市",
+    "category": "季節行事",
+    "summary": "2026年のベルリンのクリスマスマーケットを、ジャンダルメンマルクトの白いテントの市、シャルロッテンブルク宮殿前、赤の市庁舎、記念教会の広場、北欧風のルチア市から案内。11月23日に始まる主な市の日程、営業時間、入場料と、それぞれの場所が持つ歴史を整理します。",
+    "published_at": "2026-11-01",
+    "last_verified": "2026-11-01",
+    "canonical_url": "/germany/ja/events/berlin-christmas-markets-2026-guide/",
+    "tags": [
+      "クリスマスマーケット",
+      "ベルリン",
+      "2026年11月",
+      "2026年12月",
+      "アドベント",
+      "冬"
+    ],
+    "updated_at": "2026-11-01",
+    "related_articles": [
+      "berlin-weekend-trip",
+      "dresden-striezelmarkt-2026-guide",
+      "berlin-wall-history",
+      "gluehwein-christmas-market-guide",
+      "saint-nicholas-day-germany",
+      "advent-wreath-calendar-origin"
+    ],
+    "content_type": "event",
+    "city": "ベルリン",
+    "location": "ジャンダルメンマルクト、シャルロッテンブルク宮殿前、赤の市庁舎前、ブライトシャイト広場、クルトゥーアブラウエライほか",
+    "event_date": "2026-11-13〜2027-01-03",
+    "official_url": "https://www.visitberlin.de/de/weihnachtsmaerkte-berlin",
+    "official_sources": [
+      {
+        "title": "ベルリン観光局：ベルリンのクリスマスマーケット2026",
+        "url": "https://www.visitberlin.de/de/weihnachtsmaerkte-berlin"
+      },
+      {
+        "title": "ベルリン観光局：ジャンダルメンマルクトのクリスマスマーケット",
+        "url": "https://www.visitberlin.de/de/weihnachtsmarkt-weihnachtszauber-gendarmenmarkt-berlin"
+      },
+      {
+        "title": "ベルリン観光局：シャルロッテンブルク宮殿前のクリスマスマーケット",
+        "url": "https://www.visitberlin.de/de/weihnachtsmarkt-am-schloss-charlottenburg-berlin"
+      },
+      {
+        "title": "ベルリン観光局：赤の市庁舎前のクリスマスマーケット",
+        "url": "https://www.visitberlin.de/de/weihnachtsmarkt-berliner-weihnachtszeit-berlin"
+      },
+      {
+        "title": "ベルリン市：記念教会前のクリスマスマーケット2026",
+        "url": "https://www.berlin.de/en/christmas-markets/3240274-3230598-christmas-market-at-kaiser-wilhelm-memor.en.html"
+      },
+      {
+        "title": "ベルリン市：ブライトシャイト広場の追悼の場「金色の亀裂」",
+        "url": "https://www.berlin.de/en/attractions-and-sights/4999992-3104052-golden-crack-memorial-victims-terrorist-.en.html"
+      },
+      {
+        "title": "ベルリン市：クルトゥーアブラウエライのルチア・クリスマスマーケット",
+        "url": "https://www.berlin.de/en/christmas-markets/3240367-3230598-lucia-christmas-market-at-kulturbrauerei.en.html"
+      },
+      {
+        "title": "ルチア・クリスマスマーケット公式サイト（2026年の営業時間）",
+        "url": "https://www.lucia-weihnachtsmarkt.de/"
+      }
+    ],
+    "image": "/assets/img/events/berlin-christmas-markets-2026-guide.webp",
+    "image_alt": "二つの丸屋根の建物と柱の並ぶ建物を背に、内側から光る白いテントの屋台が並ぶ夜の広場を描いたイラスト",
+    "next_review": "2026-11-12",
+    "source_type": "manual",
+    "image_caption": "AIの支援でコードから描画したイラスト（J-Connect）。ベルリンのクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。",
+    "image_credit": "AI-assisted vector illustration / J-Connect"
+  },
+  {
+    "slug": "hamburg-christmas-markets-2026-guide",
+    "id": "E037",
+    "url": "/germany/ja/events/hamburg-christmas-markets-2026-guide/",
+    "markdown_path": "/content/events/hamburg-christmas-markets-2026-guide.md",
+    "image_url": "/assets/img/events/hamburg-christmas-markets-2026-guide.webp",
+    "home_visible": true,
+    "home_order": 16,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-11-01",
+      "next_review_due": "2026-11-17"
+    },
+    "published": true,
+    "status": "published",
+    "title": "ハンブルクのクリスマスマーケット2026｜市庁舎の空を飛ぶサンタと、湖に浮かぶ光のツリー",
+    "category": "季節行事",
+    "summary": "2026年のハンブルクのクリスマスマーケットを、市庁舎前の歴史的な市、湖畔のユングフェルンシュティーク、ザンクト・パウリの大人の市から案内。11月23日〜12月23日の市庁舎前の市と1日3回の空飛ぶサンタ、11月18日開幕の湖畔の市など、2026年の日程と営業時間を整理します。",
+    "published_at": "2026-11-01",
+    "last_verified": "2026-11-01",
+    "canonical_url": "/germany/ja/events/hamburg-christmas-markets-2026-guide/",
+    "tags": [
+      "クリスマスマーケット",
+      "ハンブルク",
+      "北ドイツ",
+      "2026年11月",
+      "2026年12月",
+      "アドベント"
+    ],
+    "updated_at": "2026-11-01",
+    "related_articles": [
+      "hamburg-weekend-trip",
+      "berlin-christmas-markets-2026-guide",
+      "gluehwein-christmas-market-guide",
+      "saint-nicholas-day-germany",
+      "christmas-markets-duesseldorf",
+      "germany-train-travel-guide"
+    ],
+    "content_type": "event",
+    "city": "ハンブルク",
+    "location": "市庁舎前広場、ユングフェルンシュティーク、ザンクト・パウリのシュピールブーデン広場ほか",
+    "event_date": "2026-11-18〜2026-12-23",
+    "official_url": "https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/weihnachtsmarkt-rathausmarkt-301092",
+    "official_sources": [
+      {
+        "title": "ハンブルク市：ハンブルクのクリスマスマーケット一覧2026",
+        "url": "https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg"
+      },
+      {
+        "title": "ハンブルク市：市庁舎前の歴史的クリスマスマーケット",
+        "url": "https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/weihnachtsmarkt-rathausmarkt-301092"
+      },
+      {
+        "title": "ハンブルク市：ユングフェルンシュティークのクリスマスマーケット",
+        "url": "https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/weihnachtsmarkt-jungfernstieg-301080"
+      },
+      {
+        "title": "ハンブルク市：ザンクト・パウリのクリスマスマーケット",
+        "url": "https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/santa-pauli-weihnachtsmarkt-307258"
+      },
+      {
+        "title": "ハンブルク市：聖ペトリ教会のクリスマスマーケット",
+        "url": "https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/weihnachtsmarkt-petrikirche-301062"
+      },
+      {
+        "title": "ハンブルク市：フレートインゼルのクリスマスマーケット",
+        "url": "https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/weihnachtsmarkt-auf-der-fleetinsel-301114"
+      },
+      {
+        "title": "ハンブルク市：ハンブルガー・ドーム（冬のドーム2026）",
+        "url": "https://www.hamburg.de/freizeit/dom"
+      }
+    ],
+    "image": "/assets/img/events/hamburg-christmas-markets-2026-guide.webp",
+    "image_alt": "緑の屋根の高い塔がある市庁舎を背に木の屋台が並び、夜空をトナカイのそりが渡り、湖の上に光の円すい形のツリーが浮かぶ様子を描いたイラスト",
+    "next_review": "2026-11-17",
+    "source_type": "manual",
+    "image_caption": "AIの支援でコードから描画したイラスト（J-Connect）。ハンブルクのクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。",
+    "image_credit": "AI-assisted vector illustration / J-Connect"
   }
 ]

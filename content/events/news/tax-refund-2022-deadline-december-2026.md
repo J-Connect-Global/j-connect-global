@@ -8,8 +8,14 @@ summary: "ドイツでは、申告の義務がない会社員でも、自分か�
 official_sources:
   - title: "ELSTER：2022年分の所得税申告の手引き（申告の期限・申告義務）"
     url: "https://www.elster.de/eportal/helpGlobal?themaGlobal=help_est_ufa_10_2022"
+  - title: "NRW州税務当局：よくある質問（任意申告の4年期限・2022年分の提出期限）"
+    url: "https://www.finanzamt.nrw.de/faq"
+  - title: "NRW州税務当局：申告義務と提出期限（税区分IVの係数方式など）"
+    url: "https://www.finanzamt.nrw.de/steuerinfos/weitere-themen/steuererklaerung/abgabepflichten-und-fristen"
   - title: "連邦司法省：所得税法 第46条（給与所得者の申告義務）"
     url: "https://www.gesetze-im-internet.de/estg/__46.html"
+  - title: "連邦司法省：租税通則法 第169条（課税の確定期間）"
+    url: "https://www.gesetze-im-internet.de/ao_1977/__169.html"
   - title: "NRW州財務行政：会社員のための税のヒント（様式N）"
     url: "https://www.finanzverwaltung.nrw.de/steuertipps-fuer-arbeitnehmerinnen-und-arbeitnehmer"
   - title: "消費者センター：確定申告は誰がいつ出すのか"
@@ -49,7 +55,7 @@ image_credit: "Illustration / J-Connect"
 
 給与だけをもらっている会社員の多くは、申告の義務がありません。それでも自分から申告を出すと、税務署が1年分の税金を計算し直し、払いすぎた分を返してくれます。
 
-NRW州の財務行政によると、自分から出す申告は、**税金が発生した年から4年以内**に出す必要があります（[NRW州財務行政](https://www.finanzverwaltung.nrw.de/steuertipps-fuer-arbeitnehmerinnen-und-arbeitnehmer)）。期限を過ぎると、払いすぎた税金を返してもらうことは、原則としてできなくなります（[NRW州財務行政](https://www.finanzverwaltung.nrw.de/steuertipps-fuer-arbeitnehmerinnen-und-arbeitnehmer)）。
+NRW州税務当局は、申告義務のない人が自分から申告する場合、原則として**対象年の終了後4年以内**に提出できると案内しています。2022年分は**2026年12月31日までに税務署へ到着**する必要があり、期限後は原則として還付を受けられません（[NRW州税務当局のFAQ](https://www.finanzamt.nrw.de/faq)、[申告義務と提出期限](https://www.finanzamt.nrw.de/steuerinfos/weitere-themen/steuererklaerung/abgabepflichten-und-fristen)）。
 
 そのため、**2022年分の申告は、2026年12月31日までに税務署に届いている必要があります**。ELSTERの案内によると、この期限は延長できません（[ELSTER：2022年分の申告の手引き](https://www.elster.de/eportal/helpGlobal?themaGlobal=help_est_ufa_10_2022)）。2026年12月31日は木曜日です。年末は郵便も混むので、オンラインのELSTERで出すのが確実です。
 
@@ -101,7 +107,10 @@ ELSTERの2022年分手引きは、夫婦双方が給与を受け取り、一方�
 ## 参考情報（2026年11月1日参照）
 
 - [ELSTER：2022年分の所得税申告の手引き](https://www.elster.de/eportal/helpGlobal?themaGlobal=help_est_ufa_10_2022)
+- [NRW州税務当局：任意申告の4年期限に関するFAQ](https://www.finanzamt.nrw.de/faq)
+- [NRW州税務当局：申告義務と提出期限](https://www.finanzamt.nrw.de/steuerinfos/weitere-themen/steuererklaerung/abgabepflichten-und-fristen)
 - [所得税法 第46条：給与所得者の申告義務](https://www.gesetze-im-internet.de/estg/__46.html)
+- [租税通則法 第169条：課税の確定期間](https://www.gesetze-im-internet.de/ao_1977/__169.html)
 - [NRW州財務行政：会社員のための税のヒント](https://www.finanzverwaltung.nrw.de/steuertipps-fuer-arbeitnehmerinnen-und-arbeitnehmer)
 - [消費者センター：確定申告は誰がいつ出すのか](https://www.verbraucherzentrale.de/wissen/geld-versicherungen/sparen-und-anlegen/steuererklaerung-wer-sie-wann-beim-finanzamt-abgeben-muss-24899)
 - [連邦財務省：租税通則法 第170条](https://ao.bundesfinanzministerium.de/ao/2022/Abgabenordnung/Vierter-Teil/Dritter-Abschnitt/Erster-Unterabschnitt/II/Paragraf-170/inhalt.html)

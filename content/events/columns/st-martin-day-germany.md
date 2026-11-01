@@ -21,14 +21,18 @@ location: ""
 event_date: "2026-11-11 Martinstag"
 next_review: "2026-11-08"
 tags: ["聖マルティン祭", "ランタン行列", "Martinstag", "11月", "ドイツ文化", "2026年", "NRW"]
-published: false
-status: "draft"
+published: true
+status: "published"
 source_type: "manual"
-published_at: ""
+published_at: "2026-11-01"
 updated_at: "2026-11-01"
 last_verified: "2026-11-01"
 canonical_url: "/germany/ja/events/columns/st-martin-day-germany/"
 official_url: "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Sankt-Martin-Braeuche-zum-Martinsfest-mit-Laternen-Liedern-und-Gaensen/"
+image: "/assets/img/events/st-martin-day-germany.webp"
+image_alt: "夜の街並みに、丸・星・月の形の色とりどりの紙ランタンが棒の先で灯っている様子を描いたイラスト"
+image_caption: "イラスト：J-Connect。ランタン行列のイメージで、特定の行事や場所を再現していません。"
+image_credit: "Illustration / J-Connect"
 ---
 
 # ドイツの聖マルティン祭とは？｜11月11日のランタン行列と参加前の確認

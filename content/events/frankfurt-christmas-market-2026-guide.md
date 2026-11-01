@@ -8,14 +8,10 @@ summary: "2026年11月23日〜12月22日のフランクフルト・クリスマ�
 official_sources:
   - title: "フランクフルト観光局：フランクフルト・クリスマスマーケット（2026年の日程・営業時間・プログラム）"
     url: "https://www.visitfrankfurt.travel/erleben/feste-und-veranstaltungen/frankfurter-weihnachtsmarkt"
-  - title: "フランクフルト市：クリスマスマーケット"
-    url: "https://frankfurt.de/frankfurt-entdecken-und-erleben/stadtportrait/frankfurter-feste/weihnachtsmarkt"
-  - title: "フランクフルト観光局：クリスマスマーケットの歴史"
-    url: "https://www.frankfurt-tourismus.de/Entdecken-und-Erleben/Feste-Veranstaltungen/frankfurter-weihnachtsmarkt/Die-Geschichte-des-Frankfurter-Weihnachtsmarktes"
-  - title: "フランクフルト市：焼き菓子ベートマンヒェン"
-    url: "https://frankfurt.de/frankfurt-entdecken-und-erleben/stadtportrait/frankfurt-kulinarisch/nicht-nur-zur-weihnachtszeit---frankfurter-bethmaennchen"
-  - title: "フランクフルト市：プラムとクルミの人形"
-    url: "https://frankfurt.de/frankfurt-entdecken-und-erleben/winter-special/quetschemaennche"
+  - title: "フランクフルト観光局：クリスマスマーケットのプレス発表（1393年からの記録）"
+    url: "https://www.visitfrankfurt.travel/presse/pressemeldungen/details/frankfurter-weihnachtsmarkt-2024"
+  - title: "フランクフルト市統計局：クリスマスの歴史と習慣（ベートマンヒェンの由来）"
+    url: "https://statistikportal.frankfurt.de/statistik_aktuell/2025/FSA_2025_17.html"
 related_articles: ["gluehwein-christmas-market-guide", "christmas-tree-origin-germany", "nuremberg-christkindlesmarkt-2026-guide", "stuttgart-christmas-market-2026-guide", "dresden-striezelmarkt-2026-guide", "germany-train-travel-guide"]
 city: "フランクフルト"
 location: "旧市庁舎前のレーマーベルク広場、パウルス広場、ハウプトヴァッヘ周辺、マイン川沿いほか"
@@ -42,7 +38,7 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 
 ## 金融の街に残る、600年以上の市の記憶
 
-フランクフルトは中世から見本市と商業で栄えた街です。市の記録によると、クリスマスの時期の市は1393年から文書で確認でき、当時は「クリストキントヒェスマルクト」（幼子キリストの市）と呼ばれていました。[フランクフルト観光局の歴史解説](https://www.frankfurt-tourismus.de/Entdecken-und-Erleben/Feste-Veranstaltungen/frankfurter-weihnachtsmarkt/Die-Geschichte-des-Frankfurter-Weihnachtsmarktes)
+フランクフルトは中世から見本市と商業で栄えた街です。市の記録によると、クリスマスの時期の市は1393年から文書で確認でき、当時は「クリストキントヒェスマルクト」（幼子キリストの市）と呼ばれていました。[フランクフルト観光局のプレス発表](https://www.visitfrankfurt.travel/presse/pressemeldungen/details/frankfurter-weihnachtsmarkt-2024)
 
 興味深いのは、この市が長いあいだ「フランクフルトの人のための市」だったことです。よその土地の商人は加わることを許されず、地元の職人が作る確かな品物、おもちゃ、お菓子が並びました。19世紀の後半まで、フランクフルトの親たちは子どもへのおもちゃをほとんどこの市で買っていたといいます。今では当たり前のクリスマスツリーも、当時の市にはまだありませんでした。モミの木を飾る習慣が街に根づいたのは19世紀に入ってからです。ツリーの由来は[クリスマスツリーのコラム](/germany/ja/events/columns/christmas-tree-origin-germany/)で詳しく紹介しています。
 
@@ -55,15 +51,15 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 
 市の中心は、旧市庁舎「レーマー」と、三角屋根の木組みの家並みに囲まれたレーマーベルク広場です。広場には毎年大きなクリスマスツリーが立ち、開幕の夕方に初めて明かりがともります。
 
-屋台は広場の中だけでなく、北の繁華街ハウプトヴァッヘやロスマルクト広場から、パウルス教会の前のパウルス広場、レーマーベルク広場を通り、マイン川沿いまで続きます。観光局は200を超える飾りつけの凝った屋台が並ぶと案内しています。川沿いには子ども向けのエリアもあり、街の中心を北から南へ歩きながら、場所ごとに違う雰囲気を楽しめます。[フランクフルト市の案内](https://frankfurt.de/frankfurt-entdecken-und-erleben/stadtportrait/frankfurter-feste/weihnachtsmarkt)
+屋台は広場の中だけでなく、北の繁華街ハウプトヴァッヘやロスマルクト広場から、パウルス教会の前のパウルス広場、レーマーベルク広場を通り、マイン川沿いまで続きます。観光局は230を超える飾りつけの凝った屋台が並ぶと案内しています。川沿いには子ども向けのエリアもあり、街の中心を北から南へ歩きながら、場所ごとに違う雰囲気を楽しめます。[フランクフルト観光局の案内](https://www.visitfrankfurt.travel/erleben/feste-und-veranstaltungen/frankfurter-weihnachtsmarkt)
 
 レーマーベルク広場に面した旧ニコライ教会では、塔の上から金管楽器の奏者がクリスマスの曲を吹く習慣があります。2026年の公式プログラムでは、開幕日と、その後の毎週水曜・土曜の18時から演奏が予定されています。冷えた空気の中、広場の上から響く音を聞きながらグリューワインを手にする時間は、この市ならではの体験です。グリューワインの決まりごとは[グリューワインのコラム](/germany/ja/events/columns/gluehwein-christmas-market-guide/)で紹介しています。
 
 ## 名物は、銀行家の名前がついた焼き菓子
 
-フランクフルトのクリスマスの味として欠かせないのが、マジパンを丸めて三つのアーモンドの半割りを貼りつけた小さな焼き菓子「ベートマンヒェン」です。名前は、この街の銀行家ベートマン家に由来します。市の紹介によると、1838年にベートマン家に仕えた菓子職人が考案したという言い伝えがあり、アーモンドは一家の息子たちを表していました。初めは四つでしたが、息子の一人が1845年に亡くなってから三つになったと伝えられています。[フランクフルト市のベートマンヒェン紹介](https://frankfurt.de/frankfurt-entdecken-und-erleben/stadtportrait/frankfurt-kulinarisch/nicht-nur-zur-weihnachtszeit---frankfurter-bethmaennchen)
+フランクフルトのクリスマスの味として欠かせないのが、マジパンを丸めて三つのアーモンドの半割りを貼りつけた小さな焼き菓子「ベートマンヒェン」です。名前は、この街の銀行家ベートマン家に由来します。市の紹介によると、1838年にベートマン家に仕えた菓子職人が考案したという言い伝えがあり、アーモンドは一家の息子たちを表していました。初めは四つでしたが、息子の一人が1845年に亡くなってから三つになったと伝えられています。[フランクフルト市統計局の解説](https://statistikportal.frankfurt.de/statistik_aktuell/2025/FSA_2025_17.html)
 
-もう一つの名物は、干しプラムとクルミで作る小さな人形です。19世紀のフランクフルトでは、この人形が求愛の贈り物として使われたといいます。受け取った人が人形を手元に残せば好意のしるし、送り返せば断りの返事だった――そんな物語を知ってから屋台をのぞくと、素朴な人形が少し違って見えてきます。[フランクフルト市のプラム人形紹介](https://frankfurt.de/frankfurt-entdecken-und-erleben/winter-special/quetschemaennche)
+もう一つの名物は、干しプラムとクルミで作る小さな人形です。19世紀のフランクフルトでは、この人形が求愛の贈り物として使われたといいます。受け取った人が人形を手元に残せば好意のしるし、送り返せば断りの返事だった――そんな物語を知ってから屋台をのぞくと、素朴な人形が少し違って見えてきます。[フランクフルト観光局のプラム人形の紹介](https://www.visitfrankfurt.travel/erleben/feste-und-veranstaltungen/frankfurter-weihnachtsmarkt)
 
 焼き菓子のほかに、ソーセージや揚げ菓子、ナッツの屋台も並びます。ドイツのパンや焼き菓子の種類は[ドイツのパン図鑑](/germany/ja/living/germany-bread-guide/)も参考にしてください。
 

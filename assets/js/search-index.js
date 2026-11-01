@@ -1787,7 +1787,7 @@ window.JCONNECT_SEARCH_INDEX = [
   },
   {
     "title": "Deutschlandticketは2027年66.80ユーロへ｜DB利用者は11月30日までに確認",
-    "description": "Deutschlandticketは2027年1月から月66.80ユーロへ値上げ。DBから購入した既存契約では11月30日までの同意が必要になるため、購入者、期限、未回答時の扱いを整理します。",
+    "description": "Deutschlandticketは2027年1月から月66.80ユーロへ。DBの既存契約は11月30日までの回答が必要です。同意後は撤回できませんが通常の解約は可能。学生向け定期券の例外も整理します。",
     "url": "/germany/ja/events/news/deutschlandticket-2027-price-consent/",
     "category": "ニュース・イベント",
     "tags": [
@@ -1796,7 +1796,9 @@ window.JCONNECT_SEARCH_INDEX = [
       "定期券",
       "値上げ",
       "Deutsche Bahn",
-      "2027年"
+      "2027年",
+      "Deutschland-Semesterticket",
+      "学生"
     ]
   },
   {
@@ -2079,8 +2081,8 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
-    "title": "ドイツの大晦日はなぜ花火だらけ？｜花火が買えるのは年に3日だけ、という法律と街の禁止区域",
-    "description": "ドイツの大晦日（Silvester）の夜は、街じゅうで花火が上がります。実は一般の人が花火を買えるのは12月29日〜31日の3日間だけ、打ち上げてよいのは12月31日と1月1日だけと法律で決まっています。花火のルール、教会や病院の近くでの禁止、デュッセルドルフやケルンの禁止区域、微小粒子状物質の問題までを紹介します。",
+    "title": "ドイツの大晦日はなぜ花火だらけ？｜販売期間・使用日・禁止区域のルール",
+    "description": "ドイツの一般向けF2花火は、原則12月29〜31日に販売され、18歳以上の人が12月31日・1月1日に使用できます。販売期間の日曜例外、教会・病院周辺の禁止、自治体の追加規制、環境面を一次情報で整理します。",
     "url": "/germany/ja/events/columns/germany-silvester-fireworks-rules/",
     "category": "ニュース・イベント",
     "tags": [

@@ -2586,11 +2586,15 @@
     "content_type": "news",
     "category": "交通・車",
     "title": "Deutschlandticketは2027年66.80ユーロへ｜DB利用者は11月30日までに確認",
-    "summary": "Deutschlandticketは2027年1月から月66.80ユーロへ。DBの既存契約は11月30日までの同意が必要ですが、Deutschland-Semesterticketは当面別扱いです。購入先、契約者、未回答時の扱いを整理します。",
+    "summary": "Deutschlandticketは2027年1月から月66.80ユーロへ。DBの既存契約は11月30日までの回答が必要です。同意後は撤回できませんが通常の解約は可能。学生向け定期券の例外も整理します。",
     "official_sources": [
       {
-        "title": "Deutsche Bahn：Deutschlandticketの契約変更FAQ",
+        "title": "Deutsche Bahn：Deutschlandticketの契約変更FAQ（回答期限・撤回・48時間の反映）",
         "url": "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
+      },
+      {
+        "title": "Deutsche Bahn：Deutschlandticket全般・Deutschland-SemesterticketのFAQ",
+        "url": "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket"
       }
     ],
     "related_articles": [
@@ -4032,11 +4036,11 @@
         "url": "https://www.gesetze-im-internet.de/sprengv_1/__20.html"
       },
       {
-        "title": "爆発物法 第1施行令（1. SprengV）第22条",
+        "title": "爆発物法 第1施行令（1. SprengV）第22条（販売期間）",
         "url": "https://www.gesetze-im-internet.de/sprengv_1/__22.html"
       },
       {
-        "title": "爆発物法 第1施行令（1. SprengV）第23条",
+        "title": "爆発物法 第1施行令（1. SprengV）第23条（使用日・禁止場所）",
         "url": "https://www.gesetze-im-internet.de/sprengv_1/__23.html"
       },
       {
@@ -5125,12 +5129,24 @@
     "official_url": "https://www.elster.de/eportal/helpGlobal?themaGlobal=help_est_ufa_10_2022",
     "official_sources": [
       {
-        "title": "ELSTER：2022年分の所得税申告の手引き（申告の期限）",
+        "title": "ELSTER：2022年分の所得税申告の手引き（申告の期限・申告義務）",
         "url": "https://www.elster.de/eportal/helpGlobal?themaGlobal=help_est_ufa_10_2022"
+      },
+      {
+        "title": "NRW州税務当局：よくある質問（任意申告の4年期限・2022年分の提出期限）",
+        "url": "https://www.finanzamt.nrw.de/faq"
+      },
+      {
+        "title": "NRW州税務当局：申告義務と提出期限（税区分IVの係数方式など）",
+        "url": "https://www.finanzamt.nrw.de/steuerinfos/weitere-themen/steuererklaerung/abgabepflichten-und-fristen"
       },
       {
         "title": "連邦司法省：所得税法 第46条（給与所得者の申告義務）",
         "url": "https://www.gesetze-im-internet.de/estg/__46.html"
+      },
+      {
+        "title": "連邦司法省：租税通則法 第169条（課税の確定期間）",
+        "url": "https://www.gesetze-im-internet.de/ao_1977/__169.html"
       },
       {
         "title": "NRW州財務行政：会社員のための税のヒント（様式N）",
@@ -5734,6 +5750,7 @@
   },
   {
     "id": "C033",
+    "content_type": "column",
     "slug": "st-martin-day-germany",
     "url": "/germany/ja/events/columns/st-martin-day-germany/",
     "markdown_path": "/content/events/columns/st-martin-day-germany.md",

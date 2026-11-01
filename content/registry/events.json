@@ -2586,7 +2586,7 @@
     "content_type": "news",
     "category": "交通・車",
     "title": "Deutschlandticketは2027年66.80ユーロへ｜DB利用者は11月30日までに確認",
-    "summary": "Deutschlandticketは2027年1月から月66.80ユーロへ値上げ。DBから購入した既存契約では11月30日までの同意が必要になるため、購入者、期限、未回答時の扱いを整理します。",
+    "summary": "Deutschlandticketは2027年1月から月66.80ユーロへ。DBの既存契約は11月30日までの同意が必要ですが、Deutschland-Semesterticketは当面別扱いです。購入先、契約者、未回答時の扱いを整理します。",
     "official_sources": [
       {
         "title": "Deutsche Bahn：Deutschlandticketの契約変更FAQ",
@@ -2605,21 +2605,23 @@
     "area": "ドイツ全土",
     "location": "",
     "event_date": "2027年1月1日から新料金",
-    "next_review": "2026-12-01",
+    "next_review": "2026-11-15",
     "tags": [
       "Deutschlandticket",
       "公共交通",
       "定期券",
       "値上げ",
       "Deutsche Bahn",
-      "2027年"
+      "2027年",
+      "Deutschland-Semesterticket",
+      "学生"
     ],
     "published": true,
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-19",
-    "updated_at": "2026-10-20",
-    "last_verified": "2026-10-19",
+    "updated_at": "2026-11-01",
+    "last_verified": "2026-11-01",
     "canonical_url": "/germany/ja/events/news/deutschlandticket-2027-price-consent/",
     "official_url": "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt",
     "url": "/germany/ja/events/news/deutschlandticket-2027-price-consent/",
@@ -2633,8 +2635,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-19",
-      "next_review_due": "2026-12-01"
+      "last_reviewed_at": "2026-11-01",
+      "next_review_due": "2026-11-15"
     },
     "image": "/assets/images/living/german-regional-train-editorial-v1.webp",
     "image_alt": "地域列車のホームで公式アプリを確認する旅行者の編集イメージ",
@@ -3995,14 +3997,14 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-29",
+      "last_reviewed_at": "2026-11-01",
       "next_review_due": "2026-12-10"
     },
-    "title": "ドイツの大晦日はなぜ花火だらけ？｜花火が買えるのは年に3日だけ、という法律と街の禁止区域",
+    "title": "ドイツの大晦日はなぜ花火だらけ？｜販売期間・使用日・禁止区域のルール",
     "category": "季節・文化",
-    "summary": "ドイツの大晦日（Silvester）の夜は、街じゅうで花火が上がります。実は一般の人が花火を買えるのは12月29日〜31日の3日間だけ、打ち上げてよいのは12月31日と1月1日だけと法律で決まっています。花火のルール、教会や病院の近くでの禁止、デュッセルドルフやケルンの禁止区域、微小粒子状物質の問題までを紹介します。",
+    "summary": "ドイツの一般向けF2花火は、原則12月29〜31日に販売され、18歳以上の人が12月31日・1月1日に使用できます。販売期間の日曜例外、教会・病院周辺の禁止、自治体の追加規制、環境面を一次情報で整理します。",
     "published_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "last_verified": "2026-11-01",
     "tags": [
       "大晦日",
       "シルベスター",
@@ -4013,7 +4015,7 @@
       "デュッセルドルフ",
       "ケルン"
     ],
-    "updated_at": "2026-10-29",
+    "updated_at": "2026-11-01",
     "related_articles": [
       "germany-public-holidays-by-state",
       "nrw-christmas-opening-hours-2026",
@@ -4026,12 +4028,20 @@
     "official_url": "https://www.bmi.bund.de/SharedDocs/faqs/DE/themen/bevoelkerungsschutz/silvester/silvester.html",
     "official_sources": [
       {
+        "title": "爆発物法 第1施行令（1. SprengV）第20条（年齢制限）",
+        "url": "https://www.gesetze-im-internet.de/sprengv_1/__20.html"
+      },
+      {
         "title": "爆発物法 第1施行令（1. SprengV）第22条",
         "url": "https://www.gesetze-im-internet.de/sprengv_1/__22.html"
       },
       {
         "title": "爆発物法 第1施行令（1. SprengV）第23条",
         "url": "https://www.gesetze-im-internet.de/sprengv_1/__23.html"
+      },
+      {
+        "title": "爆発物法 第1施行令（1. SprengV）第24条（自治体の追加規制）",
+        "url": "https://www.gesetze-im-internet.de/sprengv_1/__24.html"
       },
       {
         "title": "連邦内務省：花火の取り扱い（よくある質問）",
@@ -4051,7 +4061,8 @@
       }
     ],
     "image": "/assets/img/events/germany-silvester-fireworks-rules.webp",
-    "image_alt": "大みそかの夜、ドイツの街の上空に上がる花火を描いたイラスト"
+    "image_alt": "大みそかの夜、ドイツの街の上空に上がる花火を描いたイラスト",
+    "next_review": "2026-12-10"
   },
   {
     "slug": "gluehwein-christmas-market-guide",
@@ -5083,14 +5094,14 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-29",
-      "next_review_due": "2027-01-15"
+      "last_reviewed_at": "2026-11-01",
+      "next_review_due": "2026-12-15"
     },
     "title": "2022年分の税金の還付申告は2026年12月31日まで｜会社員が自分から出す申告は4年が期限",
     "category": "お金・税金",
     "summary": "ドイツでは、申告の義務がない会社員でも、自分から確定申告を出せば払いすぎた所得税が戻ることがあります。この「任意の申告」は4年以内が期限で、2022年分は2026年12月31日までに税務署に届く必要があり、延長はできません。戻りやすい人の例と、間に合わせるための手順を整理します。",
     "published_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "last_verified": "2026-11-01",
     "tags": [
       "確定申告",
       "税金",
@@ -5102,7 +5113,7 @@
       "お金",
       "ドイツ生活"
     ],
-    "updated_at": "2026-10-29",
+    "updated_at": "2026-11-01",
     "related_articles": [
       "tax-id-steuernummer-steuerklasse",
       "germany-january-2027-changes",
@@ -5118,6 +5129,10 @@
         "url": "https://www.elster.de/eportal/helpGlobal?themaGlobal=help_est_ufa_10_2022"
       },
       {
+        "title": "連邦司法省：所得税法 第46条（給与所得者の申告義務）",
+        "url": "https://www.gesetze-im-internet.de/estg/__46.html"
+      },
+      {
         "title": "NRW州財務行政：会社員のための税のヒント（様式N）",
         "url": "https://www.finanzverwaltung.nrw.de/steuertipps-fuer-arbeitnehmerinnen-und-arbeitnehmer"
       },
@@ -5131,7 +5146,8 @@
       }
     ],
     "image": "/assets/img/events/tax-refund-2022-deadline-december-2026.webp",
-    "image_alt": "ノートパソコンと電卓、領収書が並ぶ自宅の机を描いたイラスト"
+    "image_alt": "ノートパソコンと電卓、領収書が並ぶ自宅の机を描いたイラスト",
+    "next_review": "2026-12-15"
   },
   {
     "slug": "car-insurance-switch-november-2026",
@@ -5715,6 +5731,74 @@
     ],
     "image": "/assets/img/events/job-notice-period-germany.webp",
     "image_alt": "机で手紙に万年筆で署名する人と、私物を入れた段ボール箱を描いたイラスト"
+  },
+  {
+    "id": "C033",
+    "slug": "st-martin-day-germany",
+    "url": "/germany/ja/events/columns/st-martin-day-germany/",
+    "markdown_path": "/content/events/columns/st-martin-day-germany.md",
+    "published": false,
+    "status": "draft",
+    "home_visible": false,
+    "home_order": 110,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "disclaimer_type": "event",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; editorial review pending",
+      "last_reviewed_at": "2026-11-01",
+      "next_review_due": "2026-11-08"
+    },
+    "title": "ドイツの聖マルティン祭とは？｜11月11日のランタン行列と参加前の確認",
+    "category": "季節・文化",
+    "summary": "聖マルティン祭は毎年11月11日。2026年は水曜日ですが、ランタン行列は地域ごとに前後の日へ分かれます。NRWの自治体が公表した開催例をもとに、参加できる行事の探し方、当日の流れ、子どものランタンの安全を整理します。",
+    "published_at": "",
+    "last_verified": "2026-11-01",
+    "updated_at": "2026-11-01",
+    "next_review": "2026-11-08",
+    "canonical_url": "/germany/ja/events/columns/st-martin-day-germany/",
+    "tags": [
+      "聖マルティン祭",
+      "ランタン行列",
+      "Martinstag",
+      "11月",
+      "ドイツ文化",
+      "2026年",
+      "NRW"
+    ],
+    "related_articles": [
+      "quiet-holidays-november-germany",
+      "cologne-carnival-2026-27-guide",
+      "duesseldorf-carnival-2026-27-guide",
+      "germany-public-holidays-by-state"
+    ],
+    "official_sources": [
+      {
+        "title": "ケルン大司教区：聖マルティン祭の由来と習慣",
+        "url": "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Sankt-Martin-Braeuche-zum-Martinsfest-mit-Laternen-Liedern-und-Gaensen/"
+      },
+      {
+        "title": "Meerbusch市：2026年の聖マルティン行列",
+        "url": "https://meerbusch.de/aktuelles/nachrichten/details/sankt-martin-in-meerbusch-starten-die-zuege-am-sonntag"
+      },
+      {
+        "title": "Duisburg市：2026年の聖マルティン行列",
+        "url": "https://www.duisburg.de/pressemitteilungen/pm/2026/oktober/st.martinszuege-lichterglanz-in-der-duisburger-innenstadt-und-in-den-stadtteilen"
+      },
+      {
+        "title": "Bergkamen消防署：聖マルティン祭の安全",
+        "url": "https://www.feuerwehr-bergkamen.de/buergerinformationen/verhalten-im-notfall/sicherheitstipps-zum-martinstag/"
+      }
+    ],
+    "official_url": "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Sankt-Martin-Braeuche-zum-Martinsfest-mit-Laternen-Liedern-und-Gaensen/",
+    "city": "ドイツ全土（2026年の開催例はNRW）",
+    "area": "ドイツ全土",
+    "location": "",
+    "event_date": "2026-11-11 Martinstag",
+    "image_url": "",
+    "image_alt": ""
   },
   {
     "slug": "cologne-christmas-markets-2026-guide",

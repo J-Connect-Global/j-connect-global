@@ -1,0 +1,51 @@
+name: Temporary content cycle build (removed after successful run)
+on:
+  push:
+    branches:
+      - editorial/jc-content-cycle-20261101
+permissions:
+  contents: write
+jobs:
+  build-generated-content:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: npm run build
+      - run: npm run validate
+      - run: npx playwright install --with-deps chromium
+      - name: Browser tests
+        env:
+          PLAYWRIGHT_OUTPUT_DIR: ${{ runner.temp }}/j-connect-browser-results
+        run: npm run test:browser
+      - name: Check whitespace and protect unrelated systems
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE="720202cd5e70470a2b33335f0be1dea6e295afdf"
+          git diff --check "$BASE"
+          mapfile -t changed < <(git diff --name-only "$BASE")
+          for path in "${changed[@]}"; do
+            case "$path" in
+              content/events/news/deutschlandticket-2027-price-consent.md|content/events/news/tax-refund-2022-deadline-december-2026.md|content/events/columns/germany-silvester-fireworks-rules.md|content/events/columns/st-martin-day-germany.md|content/registry/events.json|assets/images/events/tax-refund-voluntary-vs-mandatory.svg|assets/images/events/silvester-fireworks-calendar.svg|assets/images/events/st-martin-day-germany-timeline.svg|assets/images/events/st-martin-day-germany-checklist.svg|germany/ja/events/news/deutschlandticket-2027-price-consent/index.html|germany/ja/events/news/tax-refund-2022-deadline-december-2026/index.html|germany/ja/events/columns/germany-silvester-fireworks-rules/index.html|germany/ja/events/columns/st-martin-day-germany/index.html|germany/ja/events/index.html|germany/ja/events/news/index.html|germany/ja/events/columns/index.html|germany/ja/index.html|assets/js/search-index.js|sitemap.xml|docs/jc-content-cycle-2026-11-01-provenance.md|.github/workflows/content-cycle-build.yml) ;;
+              *) echo "Unexpected changed path: $path"; exit 1 ;;
+            esac
+          done
+          echo "Change-scope guard passed."
+      - name: Remove temporary builder and commit generated output
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/content-cycle-build.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Build generated pages for verified editorial updates"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

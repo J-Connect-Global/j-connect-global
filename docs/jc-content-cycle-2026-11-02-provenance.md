@@ -26,7 +26,7 @@ The article-level `last_verified` date remains 2026-10-21 because only the socia
 
 ## Implementation and limitations
 
-- Source Markdown, registry metadata, generated article HTML, and sitemap were updated together.
+- Source Markdown, registry metadata, generated article HTML, the Japanese homepage latest-news list, and sitemap were updated together.
 - The title, summary, canonical URL, indexability, language targeting, and unrelated user-posting, jobs, messaging, admin and German-learning systems were not changed.
 - Search Console metrics were not available in this run, so no traffic or ranking claims are made.
 - Full repository build and browser regression tests must be confirmed by the pull-request CI; a local repository clone was unavailable in this environment.

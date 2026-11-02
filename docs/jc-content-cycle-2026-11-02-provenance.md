@@ -7,7 +7,7 @@ Updated the existing N023 article, “【2027年1月から】ドイツで何が�
 - Clarified that the 2027 contribution assessment ceilings affect people whose earnings were already above the prior ceilings; BMAS says the majority of insured people will see no change.
 - Added monthly and annual equivalents for the 2026 and proposed 2027 health/care, pension/unemployment and general statutory-health-insurance compulsory-coverage thresholds.
 - Distinguished the general annual earnings threshold from the contribution assessment ceiling.
-- Clarified that crossing the general threshold does not automatically move an employee to private insurance; eligible employees may remain voluntarily insured in GKV or choose PKV, subject to the applicable rules.
+- Clarified that crossing the general threshold does not automatically move an employee to private insurance; eligible employees may remain voluntarily insured in GKV or choose PKV, subject to the applicable rules, and added the BMG warning that returning from PKV to GKV is restricted.
 - Added direct internal links to the general health-insurance guide and the 2027 additional-contribution-rate article.
 - Updated the article modified date and sitemap lastmod to 2026-11-02.
 

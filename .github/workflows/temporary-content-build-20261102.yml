@@ -50,3 +50,5 @@ jobs:
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
 
+
+# Trigger the canonical build after editorial source updates.

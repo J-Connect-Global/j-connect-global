@@ -9,7 +9,7 @@ city: "ドイツ全土"
 location: ""
 event_date: "2027年1月1日前後"
 published_at: "2026-10-21"
-updated_at: "2026-10-28"
+updated_at: "2026-11-02"
 last_verified: "2026-10-21"
 next_review: "2026-12-01"
 summary: "2027年1月からドイツで変わる制度を、在独日本人の生活に関わる項目に絞って整理。決定済みのものと、まだ法案段階のものを分けて解説します。"
@@ -25,6 +25,14 @@ image_caption: "イラスト：J-Connect。制度変更のテーマを表した�
 image_credit: "Illustration / J-Connect"
 related_articles: ["deutschlandticket-2027-price-consent", "db-2027-timetable-family-ticket", "kindergeld-auszahlungstermine-2027", "minijob-grenze-2027", "tax-refund-2022-deadline-december-2026", "japan-germany-social-security-pension"]
 official_sources:
+  - title: "連邦労働社会省：2027年の社会保険計算値を閣議決定（2026年10月7日）"
+    url: "https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2026/bundeskabinett-beschliesst-sozialversicherungsrechengroessen-2027.html"
+  - title: "連邦労働社会省：社会保険計算値令2027の審議状況と数値"
+    url: "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/sozialversicherungs-rechengroessenverordnung-2027.html"
+  - title: "ドイツ年金保険：2027年の保険料算定上限（2026年10月8日）"
+    url: "https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Meldungen/2026/261008-bundeskabinett-sv-rechengroessen-2027"
+  - title: "連邦保健省：公的医療保険と民間医療保険の切り替え条件"
+    url: "https://www.bundesgesundheitsministerium.de/themen/krankenversicherung/online-ratgeber-krankenversicherung/krankenversicherung/wechsel-zwischen-gkv-und-pkv"
   - title: "Deutsche Bahn：Deutschlandticketの契約変更FAQ"
     url: "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
   - title: "連邦政府：申請なし支給の導入時期・条件（連邦参議院の同意）"
@@ -94,22 +102,22 @@ official_sources:
 
 ## 4. 社会保険料の「算定上限」が上がる（高所得者ほど負担増）
 
-社会保険料は、給与のうち一定額（保険料算定上限、Beitragsbemessungsgrenze）までにしか掛かりません。この上限が2027年に引き上げられる予定で、上限付近以上の給与を受け取っている方は手取りが減ります。
+社会保険料は、給与のうち各保険の保険料算定上限（Beitragsbemessungsgrenze）までを基礎に計算します。2027年の上限引き上げで影響を受けるのは、原則として2026年の上限をすでに超える給与を受け取っていた人です。連邦労働社会省（BMAS）は、被保険者の大多数には変化がないと説明しています。
 
 ![公的医療・介護保険と年金・失業保険の保険料算定上限を2026年と2027年で比べた棒グラフ](/assets/images/events/social-insurance-ceiling-2027.svg "図解：J-Connect。2027年の値は閣議決定済み・連邦参議院の同意待ち（2026年10月21日時点）。")
 
 | 項目 | 2026年 | 2027年（予定） |
 | --- | --- | --- |
-| 公的医療・介護保険（月額） | 5,812.50ユーロ | 6,375ユーロ |
-| 年金・失業保険（全国一律・月額） | 8,450ユーロ | 8,850ユーロ |
-| 公的医療保険の加入義務上限（年額） | 77,400ユーロ | 84,150ユーロ |
+| 公的医療・介護保険の保険料算定上限 | 月5,812.50ユーロ（年69,750ユーロ） | 月6,375ユーロ（年76,500ユーロ） |
+| 年金・失業保険の保険料算定上限 | 月8,450ユーロ（年101,400ユーロ） | 月8,850ユーロ（年106,200ユーロ） |
+| 公的医療保険の一般加入義務上限 | 年77,400ユーロ（月6,450ユーロ） | 年84,150ユーロ（月7,012.50ユーロ） |
 
-連邦政府は2026年10月にこの「社会保険計算値令2027」を閣議決定しました。施行には連邦参議院（Bundesrat）の同意がまだ必要です。例年は大きな変更なく承認されています。
+2026年10月7日、連邦内閣は2027年の社会保険計算値令を閣議決定しました。2026年11月2日時点で、BMASの制度ページは連邦参議院（Bundesrat）の同意が必要と案内しており、正式な公布前です。施行予定日は2027年1月1日です。BMASによると、引き上げの影響を受けるのは従来の上限を超えていた人で、被保険者の大多数には変化がありません。
 
 ### 駐在員・現地採用の方へ
 
-- 年収が84,150ユーロを超えないと、公的医療保険（GKV）から民間医療保険（PKV）へ移れなくなります。2027年にPKVへの切り替えを検討している方は、この新しい基準額を前提に判断してください。
-- 医療保険の追加保険料率（Zusatzbeitrag）は保険組合ごとに決まり、2027年の水準は例年秋〜年末に発表されます。加入している保険組合からの通知を確認しましょう。
+- 公的医療保険の一般加入義務上限は、保険料算定上限とは別の基準です。2027年は年84,150ユーロ（月7,012.50ユーロ）になる予定です。会社員の加入義務が年末で終了するかどうかは、当年と翌年の基準、および継続的な給与見込みなどで判定されます。基準を超えても自動的に民間保険へ移るわけではなく、条件を満たす人は公的保険の任意加入として残るか、民間保険へ移るかを選べます。2002年12月31日以前から民間保険に加入していた一部の人には別の特別上限が適用される場合があるため、切り替え前に加入先へ確認してください。
+- 医療保険の追加保険料率（Zusatzbeitrag）は保険組合ごとに異なります。平均値の意味や乗り換え条件は[2027年の健康保険追加保険料率ガイド](/germany/ja/events/news/health-insurance-zusatzbeitrag-2027/)を、公的保険と民間保険の違いは[ドイツの健康保険ガイド](/germany/ja/living/health-insurance-guide/)を確認してください。
 
 ## 5. 児童手当の支給額引き上げは「まだ案」／申請なし支給は導入決定
 
@@ -136,8 +144,12 @@ official_sources:
 3. **医療保険の通知をチェック**：保険組合から届く2027年の追加保険料率のお知らせを見落とさない。
 4. **児童手当・税制は続報待ち**：政府案の段階なので、成立を確認してから家計の計画に組み込む。
 
-## 参考情報（初回確認：2026年10月21日／児童手当関連の更新：2026年10月27日／最低賃金・ミニジョブ詳細：2026年10月28日）
+## 参考情報（初回確認：2026年10月21日／児童手当関連の更新：2026年10月27日／最低賃金・ミニジョブ詳細：2026年10月28日／社会保険の再確認：2026年11月2日）
 
+- [連邦労働社会省：2027年の社会保険計算値を閣議決定（2026年10月7日）](https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2026/bundeskabinett-beschliesst-sozialversicherungsrechengroessen-2027.html)
+- [連邦労働社会省：社会保険計算値令2027の審議状況と数値](https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/sozialversicherungs-rechengroessenverordnung-2027.html)
+- [ドイツ年金保険：2027年の保険料算定上限（2026年10月8日）](https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Meldungen/2026/261008-bundeskabinett-sv-rechengroessen-2027)
+- [連邦保健省：公的医療保険と民間医療保険の切り替え条件](https://www.bundesgesundheitsministerium.de/themen/krankenversicherung/online-ratgeber-krankenversicherung/krankenversicherung/wechsel-zwischen-gkv-und-pkv)
 - 連邦法務省「Fünfte Mindestlohnanpassungsverordnung（MiLoV5）」— gesetze-im-internet.de
 - 連邦政府「Beitragsbemessungsgrenzen 2027 – Im Kabinett beschlossen」（2026年10月12日）— bundesregierung.de
 - ドイツ年金保険（DRV）「Beitragsbemessungsgrenzen 2027 sollen steigen」（2026年10月8日）— deutsche-rentenversicherung.de

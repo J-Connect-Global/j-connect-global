@@ -2783,20 +2783,20 @@
     "summary": "2027年1月からドイツで変わる制度を、在独日本人の生活に関わる項目に絞って整理。決定済みのものと、まだ法案段階のものを分けて解説します。",
     "official_sources": [
       {
-        "title": "連邦保健省：公的医療保険と民間医療保険の切り替え条件",
-        "url": "https://www.bundesgesundheitsministerium.de/themen/krankenversicherung/online-ratgeber-krankenversicherung/krankenversicherung/wechsel-zwischen-gkv-und-pkv"
-      },
-      {
-        "title": "ドイツ年金保険：2027年の保険料算定上限（2026年10月8日）",
-        "url": "https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Meldungen/2026/261008-bundeskabinett-sv-rechengroessen-2027"
+        "title": "連邦労働社会省：2027年の社会保険計算値を閣議決定（2026年10月7日）",
+        "url": "https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2026/bundeskabinett-beschliesst-sozialversicherungsrechengroessen-2027.html"
       },
       {
         "title": "連邦労働社会省：社会保険計算値令2027の審議状況と数値",
         "url": "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/sozialversicherungs-rechengroessenverordnung-2027.html"
       },
       {
-        "title": "連邦労働社会省：2027年の社会保険計算値を閣議決定（2026年10月7日）",
-        "url": "https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2026/bundeskabinett-beschliesst-sozialversicherungsrechengroessen-2027.html"
+        "title": "ドイツ年金保険：2027年の保険料算定上限（2026年10月8日）",
+        "url": "https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Meldungen/2026/261008-bundeskabinett-sv-rechengroessen-2027"
+      },
+      {
+        "title": "連邦保健省：公的医療保険と民間医療保険の切り替え条件",
+        "url": "https://www.bundesgesundheitsministerium.de/themen/krankenversicherung/online-ratgeber-krankenversicherung/krankenversicherung/wechsel-zwischen-gkv-und-pkv"
       },
       {
         "title": "Deutsche Bahn：Deutschlandticketの契約変更FAQ",

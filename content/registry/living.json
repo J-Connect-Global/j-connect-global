@@ -3039,8 +3039,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-20",
-    "updated_at": "2026-10-20",
-    "last_verified": "2026-10-20",
+    "updated_at": "2026-11-02",
+    "last_verified": "2026-11-02",
     "home_visible": false,
     "home_order": 6,
     "hub_visible": false,
@@ -3051,8 +3051,8 @@
     "review": {
       "status": "needs_review",
       "reviewed_by": "AI source verification; expert review pending",
-      "last_reviewed_at": "2026-10-20",
-      "next_review_due": "2027-10-01"
+      "last_reviewed_at": "2026-11-02",
+      "next_review_due": "2027-09-01"
     },
     "tags": [
       "冬タイヤ",
@@ -3074,6 +3074,10 @@
       {
         "title": "ドイツ車両登録規則第36条：冬タイヤ表示と最低溝深さ",
         "url": "https://www.gesetze-im-internet.de/stvzo_2012/__36.html"
+      },
+      {
+        "title": "道路交通規則第52条：M+Sタイヤの移行措置は2024年9月30日まで",
+        "url": "https://www.gesetze-im-internet.de/stvo_2013/__52.html"
       },
       {
         "title": "ADAC：冬タイヤ義務の解説（2026年10月8日更新）",
@@ -3419,14 +3423,14 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial (AI-assisted; official sources checked, no immigration-law review)",
-      "last_reviewed_at": "2026-11-01",
-      "next_review_due": "2026-11-15"
+      "last_reviewed_at": "2026-11-02",
+      "next_review_due": "2026-11-09"
     },
     "title": "ドイツ入国のEES・ETIASとは？2026年の日本人旅行者・在住者向けガイド",
     "category": "行政・滞在",
-    "summary": "EESは2026年4月10日に全面運用、ETIASは2026年11月1日時点で申請受付前（EU公式の運用開始見通しは2026年第4四半期）です。日本人の短期旅行者と、ドイツの滞在許可を持つ在住者で必要な対応を分けて説明します。",
+    "summary": "EESは2026年4月10日に全面運用。ETIASは2026年11月2日現在、EU公式ページで未稼働・申請受付前、具体的な開始日は未公表です。日本人の短期旅行者と、ドイツの滞在許可を持つ在住者で必要な対応を分けて説明します。",
     "published_at": "2026-11-01",
-    "last_verified": "2026-11-01",
+    "last_verified": "2026-11-02",
     "next_review": "2026-11-04",
     "canonical_url": "/germany/ja/living/ees-etias-germany-japan-travel-2026/",
     "tags": [
@@ -3438,7 +3442,7 @@
       "滞在許可",
       "2026年"
     ],
-    "updated_at": "2026-11-01",
+    "updated_at": "2026-11-02",
     "related_articles": [
       "residence-permit-renewal-germany",
       "germany-first-30-days",
@@ -3446,8 +3450,8 @@
     ],
     "official_sources": [
       {
-        "title": "EU公式：ETIASの現在の運用状況",
-        "url": "https://travel-europe.europa.eu/de/etias"
+        "title": "EU公式：ETIASの現在の運用状況（未稼働・申請受付前・開始日未公表）",
+        "url": "https://travel-europe.europa.eu/en/etias/about-etias"
       },
       {
         "title": "EU公式：ETIASの対象・有効期間・入国審査",
@@ -3483,14 +3487,14 @@
     "slug": "minijob-grenze-2027",
     "title": "ドイツのMinijob（ミニジョブ）2027｜月633ユーロの上限・勤務時間・税金と保険",
     "category": "仕事",
-    "summary": "2027年1月1日からのミニジョブの月収上限は、法定最低賃金と計算式から月633ユーロ。上限内の勤務時間、掛け持ち、税金・年金・健康保険の注意点を具体例で整理します。",
+    "summary": "2027年1月1日からのミニジョブの月収上限は月633ユーロ。上限の計算、例外的な超過が認められる条件、勤務時間、掛け持ち、税金・保険の注意点を具体例で整理します。",
     "url": "/germany/ja/living/minijob-grenze-2027/",
     "markdown_path": "/content/living/minijob-grenze-2027.md",
     "published": true,
     "status": "published",
     "published_at": "2026-10-28",
-    "updated_at": "2026-10-28",
-    "last_verified": "2026-10-28",
+    "updated_at": "2026-11-02",
+    "last_verified": "2026-11-02",
     "next_review": "2027-01-15",
     "home_visible": false,
     "home_order": 109,
@@ -3502,8 +3506,8 @@
     "review": {
       "status": "needs_review",
       "reviewed_by": "AI official-source verification; employment-law review pending",
-      "last_reviewed_at": "2026-10-28",
-      "next_review_due": "2027-01-15"
+      "last_reviewed_at": "2026-11-02",
+      "next_review_due": "2026-12-15"
     },
     "tags": [
       "Minijob",
@@ -3525,6 +3529,10 @@
       {
         "title": "連邦労働社会省：第5次最低賃金調整令",
         "url": "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/fuenfte-mindestlohnanpassungsverordnung-milov5.html"
+      },
+      {
+        "title": "ミニジョブ・センター：2027年の収入上限と最低賃金（2026年10月7日公開）",
+        "url": "https://magazin.minijob-zentrale.de/minijob-grenze-2027/"
       },
       {
         "title": "社会法典第4編第8条：軽微な雇用と収入上限の計算式",

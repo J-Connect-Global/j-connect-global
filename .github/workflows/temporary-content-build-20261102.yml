@@ -52,3 +52,5 @@ jobs:
 
 
 # Trigger the canonical build after editorial source updates.
+
+# Trigger canonical build at the current branch tip.

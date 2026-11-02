@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d"><title id="t">社会保険の保険料算定上限：2026年と2027年（予定）</title><desc id="d">公的医療・介護保険は月5,812.50ユーロから6,375ユーロへ、年金・失業保険は月8,450ユーロから8,850ユーロへ引き上げ予定</desc><rect width="1200" height="675" rx="28" fill="#eef5fb"/><g font-family="Noto Sans CJK JP, Noto Sans JP, sans-serif"><text x="60" y="95" font-size="40" font-weight="700" fill="#153452">保険料算定上限（月額）の比較</text><text x="60" y="145" font-size="24" fill="#405a71">上限を超える部分の給与には保険料が掛かりません。上限が上がると高所得者の負担が増えます。</text><text x="60" y="235" font-size="27" font-weight="700" fill="#153452">公的医療・介護保険</text><rect x="60" y="255" width="590" height="44" rx="10" fill="#9fb6c9"/><text x="670" y="287" font-size="25" fill="#29465f">2026年 5,812.50ユーロ</text><rect x="60" y="310" width="647" height="44" rx="10" fill="#1f4e79"/><text x="727" y="342" font-size="25" font-weight="700" fill="#153452">2027年 6,375ユーロ（予定）</text><text x="60" y="425" font-size="27" font-weight="700" fill="#153452">年金・失業保険</text><rect x="60" y="445" width="857" height="44" rx="10" fill="#9fb6c9"/><text x="937" y="477" font-size="25" fill="#29465f">2026年 8,450ユーロ</text><rect x="60" y="500" width="898" height="44" rx="10" fill="#1f4e79"/><text x="978" y="532" font-size="25" font-weight="700" fill="#153452">2027年 8,850</text><text x="978" y="562" font-size="20" fill="#29465f">ユーロ（予定）</text><text x="60" y="625" font-size="22" fill="#405a71">図解：J-Connect。2027年の値は閣議決定済み・連邦参議院の同意待ち（2026年10月21日時点）。</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="t d">
+<title id="t">2026年と2027年の社会保険の月額上限</title>
+<desc id="d">公的医療保険は月5,812.50ユーロから6,375ユーロ、介護保険は月5,812.50ユーロから6,075ユーロ、年金・失業保険は月8,450ユーロから8,850ユーロ、公的医療保険の一般加入義務上限は月6,450ユーロから7,012.50ユーロに変わる予定。</desc>
+<rect width="1200" height="760" rx="28" fill="#eef5fb"/>
+<g font-family="Noto Sans CJK JP, Noto Sans JP, sans-serif">
+  <text x="60" y="78" font-size="38" font-weight="700" fill="#153452">2027年の社会保険：上限は保険ごとに異なる</text>
+  <text x="60" y="118" font-size="22" fill="#405a71">月額の比較。2027年の数値は閣議決定済み・連邦参議院の同意待ち</text>
+  <text x="60" y="180" font-size="25" font-weight="700" fill="#153452">公的医療保険の保険料算定上限</text>
+  <rect x="60" y="195" width="329" height="26" rx="8" fill="#9fb6c9"/><text x="590" y="216" font-size="22" fill="#29465f">2026年 5,812.50ユーロ</text>
+  <rect x="60" y="229" width="360" height="26" rx="8" fill="#1f4e79"/><text x="590" y="250" font-size="22" font-weight="700" fill="#153452">2027年 6,375ユーロ（予定）</text>
+  <text x="60" y="310" font-size="25" font-weight="700" fill="#153452">介護保険の保険料算定上限</text>
+  <rect x="60" y="325" width="329" height="26" rx="8" fill="#9fb6c9"/><text x="590" y="346" font-size="22" fill="#29465f">2026年 5,812.50ユーロ</text>
+  <rect x="60" y="359" width="343" height="26" rx="8" fill="#1f4e79"/><text x="590" y="380" font-size="22" font-weight="700" fill="#153452">2027年 6,075ユーロ（予定）</text>
+  <text x="60" y="440" font-size="25" font-weight="700" fill="#153452">年金・失業保険の保険料算定上限</text>
+  <rect x="60" y="455" width="477" height="26" rx="8" fill="#9fb6c9"/><text x="590" y="476" font-size="22" fill="#29465f">2026年 8,450ユーロ</text>
+  <rect x="60" y="489" width="500" height="26" rx="8" fill="#1f4e79"/><text x="590" y="510" font-size="22" font-weight="700" fill="#153452">2027年 8,850ユーロ（予定）</text>
+  <text x="60" y="570" font-size="25" font-weight="700" fill="#153452">公的医療保険の一般加入義務上限</text>
+  <rect x="60" y="585" width="364" height="26" rx="8" fill="#9fb6c9"/><text x="590" y="606" font-size="22" fill="#29465f">2026年 6,450ユーロ</text>
+  <rect x="60" y="619" width="396" height="26" rx="8" fill="#1f4e79"/><text x="590" y="640" font-size="22" font-weight="700" fill="#153452">2027年 7,012.50ユーロ（予定）</text>
+  <text x="60" y="710" font-size="20" fill="#405a71">図解：J-Connect。2027年の値は2026年11月2日時点で連邦参議院の同意待ち。</text>
+</g>
+</svg>

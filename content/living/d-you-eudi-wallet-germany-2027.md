@@ -11,6 +11,8 @@ updated_at: "2026-11-03"
 last_verified: "2026-11-03"
 next_review: "2026-11-21"
 canonical_url: "/germany/ja/living/d-you-eudi-wallet-germany-2027/"
+image: "/assets/images/living/seo/d-you-eudi-wallet-germany-2027-hero.svg"
+image_alt: "スマートフォンの画面にデジタル身分証と安全確認のマークを表示したイラスト"
 tags: ["d-you", "EUDI Wallet", "デジタル身分証", "行政手続", "ドイツ", "2027年", "プライバシー"]
 related_articles: ["germany-january-2027-changes"]
 official_sources:

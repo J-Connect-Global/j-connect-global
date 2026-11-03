@@ -11,6 +11,8 @@ updated_at: "2026-11-03"
 last_verified: "2026-11-03"
 next_review: "2026-11-10"
 canonical_url: "/germany/ja/living/germany-import-fees-japan-packages-2026/"
+image: "/assets/images/living/seo/germany-import-fees-japan-packages-2026-hero.svg"
+image_alt: "日本からドイツへ届く段ボール箱と税関書類を示すイラスト"
 tags: ["日本からドイツ", "個人輸入", "関税", "EU取扱手数料", "輸入消費税", "国際郵便", "贈り物", "2026年"]
 related_articles: ["christmas-post-germany-to-japan-2026", "dhl-delivered-but-not-received"]
 official_sources:

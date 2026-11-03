@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">日本からドイツへ届く荷物と税関手続き</title>
+  <desc id="desc">日本からドイツへ届く段ボール箱、税関書類、配送ラベルを描いたJ-Connectオリジナルのイラスト。</desc>
+  <rect width="1200" height="675" rx="28" fill="#F5F1E8"/>
+  <circle cx="960" cy="170" r="120" fill="#E6DED0"/>
+  <circle cx="220" cy="530" r="145" fill="#E9E3D8"/>
+  <path d="M180 220 L430 125 L680 220 L430 315 Z" fill="#D7B98D" stroke="#8E6E48" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M180 220 L180 475 L430 575 L430 315 Z" fill="#C69A66" stroke="#8E6E48" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M680 220 L680 475 L430 575 L430 315 Z" fill="#B9824F" stroke="#8E6E48" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M430 315 L430 575" stroke="#8E6E48" stroke-width="6"/>
+  <path d="M330 180 L430 218 L530 180" fill="none" stroke="#8E6E48" stroke-width="5" stroke-linecap="round"/>
+  <rect x="470" y="345" width="155" height="108" rx="10" fill="#FFFDF8" stroke="#52616B" stroke-width="4"/>
+  <text x="547" y="386" text-anchor="middle" fill="#1F2933" font-size="25" font-weight="700" font-family="Arial,sans-serif">JP → DE</text>
+  <line x1="495" y1="407" x2="600" y2="407" stroke="#AAB7B8" stroke-width="4"/>
+  <line x1="495" y1="426" x2="575" y2="426" stroke="#AAB7B8" stroke-width="4"/>
+  <g transform="translate(760 260)">
+    <rect width="250" height="190" rx="20" fill="#FFFFFF" stroke="#C8D2D4" stroke-width="4"/>
+    <rect x="28" y="28" width="78" height="58" rx="8" fill="#47727A"/>
+    <path d="M45 57 L61 72 L89 40" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="132" y="62" fill="#1F2933" font-size="24" font-weight="700" font-family="Arial,sans-serif">税関書類</text>
+    <line x1="28" y1="112" x2="220" y2="112" stroke="#AAB7B8" stroke-width="5"/>
+    <line x1="28" y1="139" x2="195" y2="139" stroke="#AAB7B8" stroke-width="5"/>
+    <line x1="28" y1="166" x2="165" y2="166" stroke="#AAB7B8" stroke-width="5"/>
+  </g>
+  <text x="760" y="520" fill="#1F2933" font-size="44" font-weight="700" font-family="Arial,sans-serif">日本からドイツへ</text>
+  <text x="760" y="570" fill="#52616B" font-size="28" font-family="Arial,sans-serif">関税・取扱手数料の確認</text>
+</svg>

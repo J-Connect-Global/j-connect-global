@@ -3169,6 +3169,10 @@ async function submitForm(event) {
     return;
   }
 
+  if (window.jcTrack) {
+    window.jcTrack('community_post_submit', { post_category: getValue('category1') });
+  }
+
   const submitButton = document.getElementById('submitButton');
   submitButton.disabled = true;
   submitButton.textContent = '送信中...';

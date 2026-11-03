@@ -44,12 +44,24 @@
       document.head.appendChild(script);
     }
 
-    window.gtag("js", new Date());
-    window.gtag("config", GA_MEASUREMENT_ID, {
+    const config = {
       anonymize_ip: true,
       allow_ad_personalization_signals: false,
       allow_google_signals: false
-    });
+    };
+    try { // ?internal=on|off -> GA4 internal traffic
+      const mode = new URLSearchParams(location.search).get("internal");
+      if (mode === "on") localStorage.jc_internal = "1";
+      if (mode === "off") localStorage.removeItem("jc_internal");
+      if (localStorage.jc_internal === "1") config.traffic_type = "internal";
+    } catch (error) {}
+
+    window.gtag("js", new Date());
+    window.gtag("config", GA_MEASUREMENT_ID, config);
+
+    const events = document.createElement("script");
+    events.src = "/assets/js/analytics-events.js";
+    document.head.appendChild(events);
   }
 
   function denyGA() {

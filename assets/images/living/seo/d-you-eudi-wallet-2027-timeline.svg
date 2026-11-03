@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
   <title id="title">d-you EUDI Walletの開始予定</title>
-  <desc id="desc">2026年10月15日の連邦議会可決、11月20日の連邦参議院第二読会予定、2027年1月2日の開始目標を示す時系列図。</desc>
+  <desc id="desc">2026年10月15日の連邦議会可決、11月20日の連邦参議院の第2次審議予定、2027年1月初旬の開始予定を示す時系列図。</desc>
   <rect width="1200" height="675" rx="28" fill="#F5F1E8"/>
-  <text x="64" y="82" fill="#1F2933" font-size="38" font-weight="700" font-family="Arial,sans-serif">d-you：法案審議から開始目標まで</text>
+  <text x="64" y="82" fill="#1F2933" font-size="38" font-weight="700" font-family="Arial,sans-serif">d-you：法案審議から開始予定まで</text>
   <text x="64" y="126" fill="#52616B" font-size="22" font-family="Arial,sans-serif">2026年11月3日時点。予定と確定事項を分けて確認。</text>
   <line x1="170" y1="320" x2="1030" y2="320" stroke="#AAB7B8" stroke-width="10" stroke-linecap="round"/>
   <g transform="translate(170 320)">
@@ -19,14 +19,14 @@
     <rect x="-150" y="100" width="300" height="135" rx="18" fill="#FFFFFF" stroke="#D9C6A7" stroke-width="2"/>
     <text x="-122" y="140" fill="#A46E34" font-size="24" font-weight="700" font-family="Arial,sans-serif">2026年11月20日</text>
     <text x="-122" y="180" fill="#1F2933" font-size="26" font-weight="700" font-family="Arial,sans-serif">連邦参議院</text>
-    <text x="-122" y="214" fill="#52616B" font-size="20" font-family="Arial,sans-serif">第二読会の予定</text>
+    <text x="-122" y="214" fill="#52616B" font-size="20" font-family="Arial,sans-serif">第2次審議の予定</text>
   </g>
   <g transform="translate(1030 320)">
     <circle r="28" fill="#687A63"/>
     <line x1="0" y1="-28" x2="0" y2="-95" stroke="#687A63" stroke-width="4"/>
     <rect x="-130" y="-230" width="260" height="130" rx="18" fill="#FFFFFF" stroke="#C8D2D4" stroke-width="2"/>
-    <text x="-104" y="-190" fill="#687A63" font-size="24" font-weight="700" font-family="Arial,sans-serif">2027年1月2日</text>
-    <text x="-104" y="-148" fill="#1F2933" font-size="26" font-weight="700" font-family="Arial,sans-serif">開始目標</text>
+    <text x="-104" y="-190" fill="#687A63" font-size="24" font-weight="700" font-family="Arial,sans-serif">2027年1月初旬</text>
+    <text x="-104" y="-148" fill="#1F2933" font-size="26" font-weight="700" font-family="Arial,sans-serif">開始予定</text>
     <text x="-104" y="-115" fill="#52616B" font-size="19" font-family="Arial,sans-serif">予定。全機能ではない</text>
   </g>
   <text x="64" y="590" fill="#52616B" font-size="22" font-family="Arial,sans-serif">11月20日の審議後、成立状況・対応書類・初期版の機能を再確認する。</text>

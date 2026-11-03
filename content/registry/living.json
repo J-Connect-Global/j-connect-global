@@ -4684,7 +4684,9 @@
         "title": "ドイツ税関：郵便・通販荷物と贈り物の案内",
         "url": "https://www.zoll.de/SharedDocs/Downloads/DE/Publikation/Broschuere/Reise-Post/faltblatt_zoll_post_internethandel.pdf?__blob=publicationFile&v=4"
       }
-    ]
+    ],
+    "image": "/assets/images/living/seo/germany-import-fees-japan-packages-2026-hero.svg",
+    "image_alt": "日本からドイツへ届く段ボール箱と税関書類を示すイラスト"
   },
   {
     "id": "L075",
@@ -4745,6 +4747,8 @@
         "title": "EU規則2024/1183：欧州デジタルIDの法的枠組み",
         "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1183"
       }
-    ]
+    ],
+    "image": "/assets/images/living/seo/d-you-eudi-wallet-germany-2027-hero.svg",
+    "image_alt": "スマートフォンの画面にデジタル身分証と安全確認のマークを表示したイラスト"
   }
 ]

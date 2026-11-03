@@ -20,7 +20,7 @@
     <text x="28" y="72" fill="#A46E34" font-size="24" font-weight="700" font-family="Arial,sans-serif">2026年7月1日から</text>
     <text x="28" y="145" fill="#1F2933" font-size="66" font-weight="700" font-family="Arial,sans-serif">3 €</text>
     <text x="28" y="190" fill="#1F2933" font-size="28" font-weight="700" font-family="Arial,sans-serif">定額関税</text>
-    <text x="28" y="245" fill="#52616B" font-size="22" font-family="Arial,sans-serif">150 €以下の対象通販</text>
+    <text x="28" y="245" fill="#52616B" font-size="22" font-family="Arial,sans-serif">150 €未満の小口通販</text>
     <text x="28" y="280" fill="#52616B" font-size="22" font-family="Arial,sans-serif">税関上の品目ごと</text>
     <text x="28" y="315" fill="#52616B" font-size="22" font-family="Arial,sans-serif">暫定措置</text>
   </g>

@@ -2,7 +2,7 @@
   <title id="title">EU域外通販に関係する費用の比較</title>
   <desc id="desc">2026年11月の2ユーロ取扱手数料、2026年7月の3ユーロ定額関税、輸入消費税と配送会社手数料の違いを比較する図。</desc>
   <rect width="1200" height="675" rx="28" fill="#F5F1E8"/>
-  <text x="64" y="82" fill="#1F2933" font-size="38" font-weight="700" font-family="Arial,sans-serif">EU域外通販に関係する3つの費用</text>
+  <text x="64" y="82" fill="#1F2933" font-size="38" font-weight="700" font-family="Arial,sans-serif">EU域外通販に関係する費用の比較</text>
   <text x="64" y="126" fill="#52616B" font-size="22" font-family="Arial,sans-serif">日本からドイツへ届くオンライン購入品の確認用</text>
   <g transform="translate(64 178)">
     <rect width="330" height="350" rx="22" fill="#FFFFFF" stroke="#C8D2D4" stroke-width="2"/>
@@ -11,7 +11,7 @@
     <text x="28" y="145" fill="#1F2933" font-size="66" font-weight="700" font-family="Arial,sans-serif">2 €</text>
     <text x="28" y="190" fill="#1F2933" font-size="28" font-weight="700" font-family="Arial,sans-serif">EU取扱手数料</text>
     <text x="28" y="245" fill="#52616B" font-size="22" font-family="Arial,sans-serif">距離販売が対象</text>
-    <text x="28" y="280" fill="#52616B" font-size="22" font-family="Arial,sans-serif">税関上の品目ごと</text>
+    <text x="28" y="280" fill="#52616B" font-size="22" font-family="Arial,sans-serif">税関申告の品目行ごと</text>
     <text x="28" y="315" fill="#52616B" font-size="22" font-family="Arial,sans-serif">150 €の価格上限なし</text>
   </g>
   <g transform="translate(435 178)">
@@ -20,8 +20,8 @@
     <text x="28" y="72" fill="#A46E34" font-size="24" font-weight="700" font-family="Arial,sans-serif">2026年7月1日から</text>
     <text x="28" y="145" fill="#1F2933" font-size="66" font-weight="700" font-family="Arial,sans-serif">3 €</text>
     <text x="28" y="190" fill="#1F2933" font-size="28" font-weight="700" font-family="Arial,sans-serif">定額関税</text>
-    <text x="28" y="245" fill="#52616B" font-size="22" font-family="Arial,sans-serif">150 €未満の小口通販</text>
-    <text x="28" y="280" fill="#52616B" font-size="22" font-family="Arial,sans-serif">税関上の品目ごと</text>
+    <text x="28" y="245" fill="#52616B" font-size="22" font-family="Arial,sans-serif">150 €以下の対象通販</text>
+    <text x="28" y="280" fill="#52616B" font-size="22" font-family="Arial,sans-serif">税関申告の品目行ごと</text>
     <text x="28" y="315" fill="#52616B" font-size="22" font-family="Arial,sans-serif">暫定措置</text>
   </g>
   <g transform="translate(806 178)">
@@ -34,5 +34,5 @@
     <text x="28" y="260" fill="#1F2933" font-size="27" font-weight="700" font-family="Arial,sans-serif">配送会社の手数料</text>
     <text x="28" y="302" fill="#52616B" font-size="22" font-family="Arial,sans-serif">会社・契約ごとに異なる</text>
   </g>
-  <text x="64" y="590" fill="#52616B" font-size="22" font-family="Arial,sans-serif">注意：2 €・3 €はいずれも荷物1個単位ではなく、税関上の品目単位で計算されます。</text>
+  <text x="64" y="590" fill="#52616B" font-size="22" font-family="Arial,sans-serif">注意：2 €・3 €はいずれも荷物1個・商品1個単位ではなく、税関申告の品目行ごとに計算されます。</text>
 </svg>

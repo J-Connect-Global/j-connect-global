@@ -9,7 +9,7 @@ city: "ドイツ全土"
 location: ""
 event_date: "2027年1月1日前後"
 published_at: "2026-10-21"
-updated_at: "2026-10-28"
+updated_at: "2026-11-02"
 last_verified: "2026-10-21"
 next_review: "2026-12-01"
 summary: "2027年1月からドイツで変わる制度を、在独日本人の生活に関わる項目に絞って整理。決定済みのものと、まだ法案段階のものを分けて解説します。"
@@ -25,41 +25,45 @@ image_caption: "イラスト：J-Connect。制度変更のテーマを表した�
 image_credit: "Illustration / J-Connect"
 related_articles: ["deutschlandticket-2027-price-consent", "db-2027-timetable-family-ticket", "kindergeld-auszahlungstermine-2027", "minijob-grenze-2027", "tax-refund-2022-deadline-december-2026", "japan-germany-social-security-pension"]
 official_sources:
-  - title: "Deutsche Bahn：Deutschlandticketの契約変更FAQ"
-    url: "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
-  - title: "連邦政府：申請なし支給の導入時期・条件（連邦参議院の同意）"
-    url: "https://www.bundesregierung.de/breg-de/aktuelles/kindergeld-ohne-antrag-2412916"
-  - title: "連邦議会：2027年所得税改革法案の審議状況"
-    url: "https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520"
-  - title: "連邦労働社会省：第5次最低賃金調整令"
-    url: "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/fuenfte-mindestlohnanpassungsverordnung-milov5.html"
-  - title: "社会法典第4編第8条：軽微な雇用と収入上限の計算式"
-    url: "https://www.gesetze-im-internet.de/sgb_4/__8.html"
-  - title: "ミニジョブ・センター：複数の仕事"
-    url: "https://www.minijob-zentrale.de/DE/die-minijobs/mehrere-jobs/mehrere-jobs_node.html"
+  - title: "連邦労働社会省：2027年の社会保険計算値を閣議決定（2026年10月7日）"
+    url: "https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2026/bundeskabinett-beschliesst-sozialversicherungsrechengroessen-2027.html"
+  - title: "連邦労働社会省：社会保険計算値令2027の審議状況と数値"
+    url: "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/sozialversicherungs-rechengroessenverordnung-2027.html"
+  - title: "社会介護保険法第55条：介護保険の保険料算定上限"
+    url: "https://www.gesetze-im-internet.de/sgb_11/__55.html"
+  - title: "公的医療保険法第6条：一般・特別加入義務上限"
+    url: "https://www.gesetze-im-internet.de/sgb_5/__6.html"
+  - title: "公的医療保険法第223条：2027年の保険料算定上限"
+    url: "https://www.gesetze-im-internet.de/sgb_5/__223.html"
+  - title: "連邦保健省：公的医療保険と民間医療保険の切り替え条件"
+    url: "https://www.bundesgesundheitsministerium.de/themen/krankenversicherung/online-ratgeber-krankenversicherung/krankenversicherung/wechsel-zwischen-gkv-und-pkv"
+
 ---
 
 # 【2027年1月から】ドイツで何が変わる？ 最低賃金・ドイツチケット・社会保険・児童手当まとめ
 
 年末が近づくと、ドイツでは「来年から何が変わるか」というニュースが増えます。この記事では、2027年1月1日前後に変わる制度のうち、ドイツで働く・暮らす日本人に関係が深いものを整理しました。
 
-ただし、すでに決まっているものと、まだ政府案・法案の段階のものが混ざっています。本記事では各項目に状況を明記しています（2026年10月21日時点）。
+ただし、すでに決まっているものと、まだ政府案・法案の段階のものが混ざっています。本記事では、各項目の決定状況と確認日を区別して記載します。
 
 ## まず結論：決定済み／未確定の早見表
 
 ![最低賃金・ミニジョブ・ドイツチケットは決定済み、社会保険の上限は同意待ち、児童手当と控除は政府案であることを示す図](/assets/images/events/january-2027-status-overview.svg "図解：J-Connect。本文の参考情報に基づく（2026年10月21日時点）。")
 
-| 項目 | 2026年 | 2027年 | 状況（2026年10月21日時点） |
+| 項目 | 2026年 | 2027年 | 状況 |
 | --- | --- | --- | --- |
 | 法定最低賃金（時給・額面） | 13.90ユーロ | 14.60ユーロ | 決定済み（政令で確定） |
 | ミニジョブ上限（月額） | 603ユーロ | 633ユーロ | 最低賃金に連動して上昇 |
 | ドイツチケット（月額） | 63ユーロ | 66.80ユーロ | 交通大臣会議で決定と報道 |
-| 公的医療・介護保険の保険料算定上限（月額） | 5,812.50ユーロ | 6,375ユーロ | 閣議決定済み・連邦参議院の同意待ち |
+| 公的医療保険の保険料算定上限（月額） | 5,812.50ユーロ | 6,375ユーロ | 閣議決定済み・連邦参議院の同意待ち |
+| 介護保険の保険料算定上限（月額） | 5,812.50ユーロ | 6,075ユーロ | 閣議決定済み・連邦参議院の同意待ち |
 | 年金・失業保険の保険料算定上限（月額） | 8,450ユーロ | 8,850ユーロ | 閣議決定済み・連邦参議院の同意待ち |
 | 公的医療保険の加入義務上限（年額） | 77,400ユーロ | 84,150ユーロ | 閣議決定済み・連邦参議院の同意待ち |
 | 児童手当 Kindergeld（子ども1人・月額） | 259ユーロ | 267ユーロ（案） | 政府案（未成立） |
 | 所得税の基礎控除 Grundfreibetrag | 12,348ユーロ | 12,564ユーロ（案） | 政府案（未成立） |
 | 被用者概算控除 Arbeitnehmer-Pauschbetrag | 1,230ユーロ | 1,430ユーロ（案） | 政府案（未成立） |
+
+※社会保険の数値・審議状況は2026年11月2日に再確認しました。その他の項目は、各節に記載した確認日と公表元を参照してください。
 
 以下、項目ごとに見ていきます。
 
@@ -94,22 +98,27 @@ official_sources:
 
 ## 4. 社会保険料の「算定上限」が上がる（高所得者ほど負担増）
 
-社会保険料は、給与のうち一定額（保険料算定上限、Beitragsbemessungsgrenze）までにしか掛かりません。この上限が2027年に引き上げられる予定で、上限付近以上の給与を受け取っている方は手取りが減ります。
+社会保険料は、給与のうち各保険の保険料算定上限までを基礎に計算します。2027年の上限引き上げで影響を受けるのは、原則として2026年の上限をすでに超える給与を受け取っていた人です。連邦労働社会省（BMAS）は、被保険者の大多数には変化がないと説明しています。
 
-![公的医療・介護保険と年金・失業保険の保険料算定上限を2026年と2027年で比べた棒グラフ](/assets/images/events/social-insurance-ceiling-2027.svg "図解：J-Connect。2027年の値は閣議決定済み・連邦参議院の同意待ち（2026年10月21日時点）。")
+公的医療保険と介護保険の上限は、2027年に同じ額ではありません。公的医療保険の保険料算定上限は月6,375ユーロ（年76,500ユーロ）ですが、介護保険は別の法律上の基準を参照するため月6,075ユーロ（年72,900ユーロ）です。BMASが追加引き上げを説明しているのは公的医療保険の上限と一般加入義務上限であり、介護保険の上限と混同しないよう注意してください。
+
+![公的医療保険・介護保険・年金・失業保険の保険料算定上限と、公的医療保険の一般加入義務上限を2026年と2027年で比較した図](/assets/images/events/social-insurance-ceiling-2027.svg "図解：J-Connect。2027年の値は閣議決定済み・連邦参議院の同意待ち（2026年11月2日確認）。")
 
 | 項目 | 2026年 | 2027年（予定） |
 | --- | --- | --- |
-| 公的医療・介護保険（月額） | 5,812.50ユーロ | 6,375ユーロ |
-| 年金・失業保険（全国一律・月額） | 8,450ユーロ | 8,850ユーロ |
-| 公的医療保険の加入義務上限（年額） | 77,400ユーロ | 84,150ユーロ |
+| 公的医療保険の保険料算定上限 | 月5,812.50ユーロ（年69,750ユーロ） | 月6,375ユーロ（年76,500ユーロ） |
+| 介護保険の保険料算定上限 | 月5,812.50ユーロ（年69,750ユーロ） | 月6,075ユーロ（年72,900ユーロ） |
+| 年金・失業保険の保険料算定上限 | 月8,450ユーロ（年101,400ユーロ） | 月8,850ユーロ（年106,200ユーロ） |
+| 公的医療保険の一般加入義務上限 | 年77,400ユーロ（月6,450ユーロ） | 年84,150ユーロ（月7,012.50ユーロ） |
 
-連邦政府は2026年10月にこの「社会保険計算値令2027」を閣議決定しました。施行には連邦参議院（Bundesrat）の同意がまだ必要です。例年は大きな変更なく承認されています。
+介護保険の上限は、社会介護保険法第55条第2項が公的医療保険法第6条第7項の基準を参照するため、一般加入義務上限とは別の数字になります。公的医療保険の保険料算定上限は公的医療保険法第223条第4項で別に定められ、2027年は月6,375ユーロです。
 
-### 駐在員・現地採用の方へ
+2026年10月7日、連邦内閣は2027年の社会保険計算値令を閣議決定しました。2026年11月2日時点で、BMASの制度ページは連邦参議院（Bundesrat）の同意が必要と案内しており、正式な公布前です。施行予定日は2027年1月1日です。BMASによると、引き上げの影響を受けるのは従来の上限を超えていた人で、被保険者の大多数には変化がありません。
 
-- 年収が84,150ユーロを超えないと、公的医療保険（GKV）から民間医療保険（PKV）へ移れなくなります。2027年にPKVへの切り替えを検討している方は、この新しい基準額を前提に判断してください。
-- 医療保険の追加保険料率（Zusatzbeitrag）は保険組合ごとに決まり、2027年の水準は例年秋〜年末に発表されます。加入している保険組合からの通知を確認しましょう。
+### 会社員として働く人が確認したいこと
+
+- 公的医療保険の一般加入義務上限は、保険料算定上限とは別の基準です。2027年は年84,150ユーロ（月7,012.50ユーロ）になる予定です。会社員の加入義務が年末で終了するかどうかは、当年と翌年の基準、および継続的な給与見込みなどで判定されます。基準を超えても自動的に民間保険へ移るわけではなく、条件を満たす人は公的保険の任意加入として残るか、民間保険へ移るかを選べます。民間保険から公的保険への復帰には厳しい条件があるため、保険料だけで決めず、保障内容と将来の選択肢を確認してください。
+- 医療保険の追加保険料率（Zusatzbeitrag）は保険組合ごとに異なります。平均値の意味や乗り換え条件は[2027年の健康保険追加保険料率ガイド](/germany/ja/events/news/health-insurance-zusatzbeitrag-2027/)を、公的保険と民間保険の違いは[ドイツの健康保険ガイド](/germany/ja/living/health-insurance-guide/)を確認してください。介護保険料率や子どもの有無による負担の違いは[2027年の介護保険改革ガイド](/germany/ja/events/news/pflegeversicherung-reform-2027/)で別途解説しています。
 
 ## 5. 児童手当の支給額引き上げは「まだ案」／申請なし支給は導入決定
 
@@ -136,20 +145,19 @@ official_sources:
 3. **医療保険の通知をチェック**：保険組合から届く2027年の追加保険料率のお知らせを見落とさない。
 4. **児童手当・税制は続報待ち**：政府案の段階なので、成立を確認してから家計の計画に組み込む。
 
-## 参考情報（初回確認：2026年10月21日／児童手当関連の更新：2026年10月27日／最低賃金・ミニジョブ詳細：2026年10月28日）
+## 参考情報（初回確認：2026年10月21日／児童手当関連の更新：2026年10月27日／最低賃金・ミニジョブ詳細：2026年10月28日／社会保険の再確認：2026年11月2日）
 
-- 連邦法務省「Fünfte Mindestlohnanpassungsverordnung（MiLoV5）」— gesetze-im-internet.de
-- 連邦政府「Beitragsbemessungsgrenzen 2027 – Im Kabinett beschlossen」（2026年10月12日）— bundesregierung.de
-- ドイツ年金保険（DRV）「Beitragsbemessungsgrenzen 2027 sollen steigen」（2026年10月8日）— deutsche-rentenversicherung.de
-- epd／Sonntagsblatt「Verkehrsminister: Deutschlandticket ab Januar 3,80 Euro teurer」（2026年9月30日）
-- NWB Experten-Blog「Update: Deutschlandticket wird ab 1.1.2027 teurer」（2026年10月3日）
-- Stuttgarter Zeitung「Rente, Kindergeld, Mindestlohn: Hier gibt es ab 2027 mehr Geld」（2026年10月15日）
-- [連邦政府：申請なしKindergeldの導入時期・条件](https://www.bundesregierung.de/breg-de/aktuelles/kindergeld-ohne-antrag-2412916)
+- [連邦労働社会省：2027年の社会保険計算値を閣議決定（2026年10月7日）](https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2026/bundeskabinett-beschliesst-sozialversicherungsrechengroessen-2027.html)
+- [連邦労働社会省：社会保険計算値令2027の審議状況と数値](https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/sozialversicherungs-rechengroessenverordnung-2027.html)
+- [社会介護保険法第55条：介護保険の保険料算定上限](https://www.gesetze-im-internet.de/sgb_11/__55.html)
+- [公的医療保険法第6条：一般・特別加入義務上限](https://www.gesetze-im-internet.de/sgb_5/__6.html)
+- [公的医療保険法第223条：2027年の保険料算定上限](https://www.gesetze-im-internet.de/sgb_5/__223.html)
+- [連邦保健省：公的医療保険と民間医療保険の切り替え条件](https://www.bundesgesundheitsministerium.de/themen/krankenversicherung/online-ratgeber-krankenversicherung/krankenversicherung/wechsel-zwischen-gkv-und-pkv)
+- [Deutsche Bahn：Deutschlandticketの契約変更FAQ](https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt)
+- [連邦政府：申請なし支給の導入時期・条件（連邦参議院の同意）](https://www.bundesregierung.de/breg-de/aktuelles/kindergeld-ohne-antrag-2412916)
 - [連邦議会：2027年所得税改革法案の審議状況](https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520)
-- [Kindergeld 2027年の支給日一覧（J-Connect）](/germany/ja/living/kindergeld-auszahlungstermine-2027/)
 - [連邦労働社会省：第5次最低賃金調整令](https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/fuenfte-mindestlohnanpassungsverordnung-milov5.html)
 - [社会法典第4編第8条：ミニジョブの収入上限の計算式](https://www.gesetze-im-internet.de/sgb_4/__8.html)
 - [ミニジョブ・センター：複数の仕事](https://www.minijob-zentrale.de/DE/die-minijobs/mehrere-jobs/mehrere-jobs_node.html)
-- [ミニジョブ・センター：税金の扱い](https://www.minijob-zentrale.de/DE/meta/faq-bereich/steuer/27_was_ist_die_einheitliche_pauschsteuer/faq_27_was_ist_die_einheitliche_pauschsteuer)
 
 ※本記事は一般的な情報提供を目的としたもので、税務・法律上の助言ではありません。個別のケースは税理士（Steuerberater）や加入先の保険組合にご確認ください。

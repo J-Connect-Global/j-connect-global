@@ -18,6 +18,8 @@ related_articles: ["christmas-post-germany-to-japan-2026", "dhl-delivered-but-no
 official_sources:
   - title: "EU理事会：小口荷物へのEU措置（3ユーロ関税・2ユーロ取扱手数料）"
     url: "https://www.consilium.europa.eu/de/policies/eu-action-influx-of-small-parcels/"
+  - title: "EU理事会：3ユーロ定額関税の最終承認（2026年2月11日）"
+    url: "https://www.consilium.europa.eu/en/press/press-releases/2026/02/11/council-gives-final-green-light-to-new-customs-duty-rules-for-small-parcels/"
   - title: "欧州委員会：EU税関改革と取扱手数料"
     url: "https://taxation-customs.ec.europa.eu/customs/eu-customs-reform_en"
   - title: "EU規則2026/2108：第20条・取扱手数料"

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">日本人居住者がd-you開始前に確認すること</title>
+  <desc id="desc">EU法上の対象に居住者が含まれること、ドイツでの第三国籍住民の登録条件が未確認であること、現物の身分証を保管することを示す図。</desc>
+  <rect width="1200" height="675" rx="28" fill="#F5F1E8"/>
+  <text x="64" y="82" fill="#1F2933" font-size="38" font-weight="700" font-family="Arial,sans-serif">日本人居住者が確認する3つのこと</text>
+  <g transform="translate(64 150)">
+    <rect width="320" height="360" rx="22" fill="#FFFFFF" stroke="#C8D2D4" stroke-width="2"/>
+    <circle cx="60" cy="65" r="34" fill="#47727A"/>
+    <text x="60" y="77" fill="#FFFFFF" font-size="32" text-anchor="middle" font-weight="700" font-family="Arial,sans-serif">1</text>
+    <text x="30" y="140" fill="#1F2933" font-size="28" font-weight="700" font-family="Arial,sans-serif">EU法の対象</text>
+    <text x="30" y="198" fill="#52616B" font-size="23" font-family="Arial,sans-serif">市民だけでなく</text>
+    <text x="30" y="236" fill="#52616B" font-size="23" font-family="Arial,sans-serif">EU域内の居住者も</text>
+    <text x="30" y="274" fill="#52616B" font-size="23" font-family="Arial,sans-serif">対象に含まれる</text>
+  </g>
+  <g transform="translate(440 150)">
+    <rect width="320" height="360" rx="22" fill="#FFFFFF" stroke="#D9C6A7" stroke-width="2"/>
+    <circle cx="60" cy="65" r="34" fill="#C28B4B"/>
+    <text x="60" y="77" fill="#FFFFFF" font-size="32" text-anchor="middle" font-weight="700" font-family="Arial,sans-serif">2</text>
+    <text x="30" y="140" fill="#1F2933" font-size="28" font-weight="700" font-family="Arial,sans-serif">登録書類</text>
+    <text x="30" y="198" fill="#52616B" font-size="23" font-family="Arial,sans-serif">在留カード・日本の</text>
+    <text x="30" y="236" fill="#52616B" font-size="23" font-family="Arial,sans-serif">パスポートの対応は</text>
+    <text x="30" y="274" fill="#A46E34" font-size="23" font-weight="700" font-family="Arial,sans-serif">公式案内待ち</text>
+  </g>
+  <g transform="translate(816 150)">
+    <rect width="320" height="360" rx="22" fill="#FFFFFF" stroke="#C8D2D4" stroke-width="2"/>
+    <circle cx="60" cy="65" r="34" fill="#687A63"/>
+    <text x="60" y="77" fill="#FFFFFF" font-size="32" text-anchor="middle" font-weight="700" font-family="Arial,sans-serif">3</text>
+    <text x="30" y="140" fill="#1F2933" font-size="28" font-weight="700" font-family="Arial,sans-serif">今できる準備</text>
+    <text x="30" y="198" fill="#52616B" font-size="23" font-family="Arial,sans-serif">現物の身分証を保管</text>
+    <text x="30" y="236" fill="#52616B" font-size="23" font-family="Arial,sans-serif">スマホを安全に更新</text>
+    <text x="30" y="274" fill="#52616B" font-size="23" font-family="Arial,sans-serif">正式アプリを待つ</text>
+  </g>
+  <rect x="64" y="565" width="1072" height="58" rx="14" fill="#E8E1D5"/>
+  <text x="88" y="602" fill="#1F2933" font-size="22" font-weight="700" font-family="Arial,sans-serif">EU法上の居住者対象と、ドイツでの初期登録条件は別に確認する。</text>
+</svg>

@@ -4645,7 +4645,7 @@
     "canonical_url": "/germany/ja/living/germany-import-fees-japan-packages-2026/",
     "title": "日本からドイツに届く荷物の関税は？2026年11月の2ユーロ手数料と3ユーロ定額関税",
     "category": "暮らし・買い物",
-    "summary": "2026年11月1日から、EU域外からの通販商品には税関上の品目ごとに2ユーロの取扱手数料が適用されます。物品価値150ユーロ未満の小口通販には7月開始の3ユーロ定額関税も別途あり、個人間ギフトは別ルールです。",
+    "summary": "2026年11月1日から、EU域外の消費者向け通販には税関申告の品目行ごとに2ユーロの取扱手数料が適用されています。物品価値150ユーロ以下の対象通販には3ユーロの定額関税も別途あり、輸入消費税と個人間ギフトの条件を分けて確認できます。",
     "published_at": null,
     "last_verified": "2026-11-03",
     "tags": [
@@ -4687,6 +4687,14 @@
       {
         "title": "ドイツ税関：郵便・通販荷物と贈り物の案内",
         "url": "https://www.zoll.de/SharedDocs/Downloads/DE/Publikation/Broschuere/Reise-Post/faltblatt_zoll_post_internethandel.pdf?__blob=publicationFile&v=4"
+      },
+      {
+        "title": "欧州委員会：3ユーロ定額関税とEU取扱手数料の技術ガイダンス（PDF）",
+        "url": "https://taxation-customs.ec.europa.eu/document/download/053e5b4e-f0be-4f20-9a23-3e3b659a6676_en?filename=Customs+Guidance+on+EUR+3+customs+duty.pdf"
+      },
+      {
+        "title": "欧州委員会：150ユーロ以下の小口輸入に関する暫定措置の案内",
+        "url": "https://taxation-customs.ec.europa.eu/news/guidance-and-legal-text-temporary-flat-fee-low-value-imports-which-will-apply-until-1-july-2028-2026-06-08_en"
       }
     ],
     "image": "/assets/images/living/seo/germany-import-fees-japan-packages-2026-hero.svg",
@@ -4714,7 +4722,7 @@
     "canonical_url": "/germany/ja/living/d-you-eudi-wallet-germany-2027/",
     "title": "ドイツのデジタル身分証「d-you」とは？2027年1月開始予定と日本人居住者の注意点",
     "category": "役所・滞在",
-    "summary": "ドイツのEUデジタル身分証ウォレット「d-you」は2027年1月2日の開始が予定されています。連邦議会は10月15日に関連法案を可決しましたが、連邦参議院の第二読会は11月20日に予定されています。外国籍住民の本人確認方法と初期版の機能は未確定です。",
+    "summary": "ドイツのEUデジタル身分証ウォレット「d-you」は2027年1月初旬の開始が予定されています。連邦議会は10月15日に関連法案を可決しましたが、連邦参議院での第2次審議は11月20日に予定されています。外国籍住民の本人確認方法と初期版の機能は未確定です。",
     "published_at": null,
     "last_verified": "2026-11-03",
     "tags": [

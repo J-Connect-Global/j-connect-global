@@ -61,7 +61,7 @@ official_sources:
 - 収入が低い会社員やパート勤務者
 - 年金額が低く、住居費の負担が重い人
 - 低所得の子育て世帯、ひとり親、共働き世帯
-- 世帯全体が原則として職業訓練支援の対象になるわけではない学生世帯
+- 在学する課程が原則として職業訓練支援の対象にならない学生など
 - 一定の条件を満たす介護施設の入居者
 
 ただし、これらは確認を始める目安であり、該当すれば必ず受給できるという意味ではありません。収入と住宅費の両方を確認する必要があります。
@@ -114,11 +114,13 @@ official_sources:
 
 ## どこに申請する？
 
+外国籍の人は、在留資格や他の社会給付との関係によって扱いが変わることがあります。対象になるか迷う場合は、滞在許可の種類と世帯状況を担当窓口に伝えて確認してください。
+
 申請先は、住んでいる住宅の所在地を担当する住宅手当窓口です。市、郡、郡独立市などの自治体が担当します。ジョブセンターや外国人局に申請する制度ではありません。
 
 申請方法は自治体によって異なります。連邦住宅省によると、多くの州・自治体ではオンライン申請が利用できますが、紙の申請書を郵送・窓口提出する地域もあります。
 
-1. 連邦行政ポータルで「Wohngeld」を検索し、住所を担当する窓口を確認する。
+1. 連邦行政ポータルで「Wohngeld」を検索し、住所を担当する窓口を確認する。ポータルの申請案内は州ごとに異なるため、表示された地域の説明を確認する。
 2. その自治体の公式ページでオンライン申請の有無と申請書を確認する。
 3. 申請フォームと必要書類をまとめて提出する。
 4. 受付確認や追加資料の依頼を保管し、期限内に対応する。
@@ -151,7 +153,7 @@ official_sources:
 
 通常の給付期間は12か月です。見込まれる収入や住宅費などの状況が安定している場合は、最長24か月まで認められることがあります。給付期間の終わりが近づいたら、次の期間の申請時期を自治体に確認してください。
 
-審査が長引いている場合、連邦住宅省のFAQは、受給可能性が高く決定まで時間がかかると見込まれるケースについて、住宅手当法第26a条に基づく暫定支給を申請できると案内しています。自動的に支給されるものではないため、該当しそうな場合は担当窓口に相談してください。
+審査が長引いている場合、連邦住宅省のFAQは、受給可能性が高く決定まで時間がかかると見込まれるケースについて、住宅手当法第26a条に基づく暫定支給を申請できると案内しています。これは自動支給ではなく、担当窓口が条件を確認して判断します。自動的に支給されるものではないため、該当しそうな場合は担当窓口に相談してください。
 
 ## 受給中に収入や家賃が変わったら？
 
@@ -188,19 +190,21 @@ official_sources:
 
 ## 関連記事
 
-- [ドイツの求職者向け基礎保障：旧Bürgergeldからの変更と申請方法](/germany/ja/living/grundsicherung-buergergeld-germany-2026/)
 - [ドイツの失業手当：受給条件・金額・期間と届け出](/germany/ja/living/unemployment-benefit-germany/)
+- [ドイツの住宅手当が2027年に見直しへ](/germany/ja/events/news/wohngeld-reform-2027/)
 - [ドイツの住宅手当が2027年に見直しへ](/germany/ja/events/news/wohngeld-reform-2027/)
 
 ## 公式情報・参考ソース
 
 - [連邦住宅省：住宅手当のよくある質問](https://www.bmwsb.bund.de/SharedDocs/faqs/DE/buergerkom/wohngeld-plus/wohngeld-FAQ-artikel.html)
 - [連邦住宅省：住宅手当計算機（2025年1月1日版）](https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeldrechner/wohngeldrechner-2025_artikel.html)
-- [連邦行政ポータル：住宅手当の申請先・家賃補助と持ち家向け補助](https://verwaltung.bund.de/leistungsverzeichnis/DE/leistung/99107023037000/herausgeber/BY-24752/region/092725214138)
+- [連邦行政ポータル：居住地に応じた行政窓口の検索](https://verwaltung.bund.de/portal/)
+- [連邦行政ポータル：住宅手当の申請案内（バイエルン州の地域例。実際の手続きは自治体により異なる）](https://verwaltung.bund.de/leistungsverzeichnis/DE/leistung/99107023037000/herausgeber/BY-24752/region/092725214138)
 - [住宅手当法 §7：他の給付を受ける場合の除外](https://www.gesetze-im-internet.de/wogg/__7.html)
 - [住宅手当法 §22：申請が必要であること](https://www.gesetze-im-internet.de/wogg/__22.html)
 - [住宅手当法 §25：給付期間と開始月](https://www.gesetze-im-internet.de/wogg/__25.html)
 - [住宅手当法 §27：給付期間中の変更](https://www.gesetze-im-internet.de/wogg/__27.html)
+- [住宅手当法 §26a：暫定支給](https://www.gesetze-im-internet.de/wogg/__26a.html)
 - [デュッセルドルフ市：住宅手当のオンライン申請と書類入手先](https://www2.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/mehr-service-vor-ort-wohnungsamt-erweitert-angebot)
 
 **確認日：2026年11月4日。** この記事は一般的な申請手順の説明です。実際の受給資格・金額・必要書類は、世帯の状況と担当自治体の審査によって異なります。2027年の改正案は、成立・施行されるまで現行制度として扱いません。専門家レビューが完了するまで公開しません。

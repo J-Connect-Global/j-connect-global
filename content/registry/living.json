@@ -4858,6 +4858,10 @@
       {
         "title": "社会法典第2編 §31a：義務違反時の給付減額",
         "url": "https://www.gesetze-im-internet.de/sgb_2/__31a.html"
+      },
+      {
+        "title": "連邦労働・社会省：新しい求職者向け基礎保障のFAQ",
+        "url": "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/FAQ-Gesetz-zur-Umgestaltung-der-Grundsicherung-fuer-Arbeitsuchende/faq-gesetz-zur-umgestaltung-der-grundsicherung-fuer-arbeitsuchende-art.html"
       }
     ]
   },
@@ -4912,10 +4916,6 @@
         "url": "https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeldrechner/wohngeldrechner-2025_artikel.html"
       },
       {
-        "title": "連邦行政ポータル：住宅手当の申請先・家賃補助と持ち家向け補助",
-        "url": "https://verwaltung.bund.de/leistungsverzeichnis/DE/leistung/99107023037000/herausgeber/BY-24752/region/092725214138"
-      },
-      {
         "title": "住宅手当法 §7：他の給付を受ける場合の除外",
         "url": "https://www.gesetze-im-internet.de/wogg/__7.html"
       },
@@ -4934,6 +4934,18 @@
       {
         "title": "デュッセルドルフ市：住宅手当のオンライン申請と書類入手先（2026年5月28日）",
         "url": "https://www2.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/mehr-service-vor-ort-wohnungsamt-erweitert-angebot"
+      },
+      {
+        "title": "連邦行政ポータル：居住地に応じた行政窓口の検索",
+        "url": "https://verwaltung.bund.de/portal/"
+      },
+      {
+        "title": "連邦行政ポータル：住宅手当の申請案内（バイエルン州の地域例。実際の手続きは自治体により異なる）",
+        "url": "https://verwaltung.bund.de/leistungsverzeichnis/DE/leistung/99107023037000/herausgeber/BY-24752/region/092725214138"
+      },
+      {
+        "title": "住宅手当法 §26a：暫定支給",
+        "url": "https://www.gesetze-im-internet.de/wogg/__26a.html"
       }
     ]
   }

@@ -87,7 +87,7 @@ official_sources:
 
 失業保険は、過去の保険加入に基づく給付です。新しい基礎保障は、現在の世帯の必要と収入・資産を審査する制度です。失業保険の金額が不足する場合でも、条件を満たせば基礎保障による補足を検討できます。
 
-また、働いている世帯では住宅手当や子ども加算などの優先給付が先に検討されます。それらを受けても生活上の困窮を解消できない場合に、求職者向け基礎保障が関係することがあります。住宅手当の仕組みは[ドイツの住宅手当の申請ガイド](/germany/ja/living/wohngeld-antrag-germany-2026/)で整理しています。
+また、働いている世帯では住宅手当や子ども加算などの優先給付が先に検討されます。それらを受けても生活上の困窮を解消できない場合に、求職者向け基礎保障が関係することがあります。住宅手当の制度改正案の進捗は、[2027年の住宅手当見直しに関するニュース解説](/germany/ja/events/news/wohngeld-reform-2027/)で整理しています。
 
 ## 外国籍の人が先に確認したいこと
 
@@ -166,6 +166,7 @@ official_sources:
 
 - [連邦政府：新しい求職者向け基礎保障の概要](https://www.bundesregierung.de/breg-de/aktuelles/neue-grundsicherung-2399562)
 - [連邦政府：社会扶助と新しい基礎保障のFAQ](https://www.bundesregierung.de/breg-de/aktuelles/sozialhilfe-und-grundsicherung-2253064)
+- [連邦労働・社会省：新しい求職者向け基礎保障のFAQ](https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/FAQ-Gesetz-zur-Umgestaltung-der-Grundsicherung-fuer-Arbeitsuchende/faq-gesetz-zur-umgestaltung-der-grundsicherung-fuer-arbeitsuchende-art.html)
 - [連邦雇用エージェンシー：オンライン申請・継続申請](https://www.arbeitsagentur.de/grundsicherung/online-services-im-ueberblick)
 - [連邦雇用エージェンシー：2026年7月1日の制度変更と既存受給者の扱い](https://www.arbeitsagentur.de/presse/2026-20-reform-der-grundsicherung-fuer-arbeitsuchende-tritt-am-1-juli-2026-in-kraft)
 - [社会法典第2編 §7：対象者と給付除外](https://www.gesetze-im-internet.de/sgb_2/__7.html)

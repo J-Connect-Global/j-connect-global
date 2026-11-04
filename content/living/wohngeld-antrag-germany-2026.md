@@ -216,5 +216,6 @@ official_sources:
 - [住宅手当法 §26a：暫定支給](https://www.gesetze-im-internet.de/wogg/__26a.html)
 - [住宅手当法 §26a：暫定支給](https://www.gesetze-im-internet.de/wogg/__26a.html)
 - [デュッセルドルフ市：住宅手当のオンライン申請と書類入手先](https://www2.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/mehr-service-vor-ort-wohnungsamt-erweitert-angebot)
+- [ドイツ連邦議会：住宅手当法改正案21/8284の概要（2026年10月5日）](https://www.bundestag.de/presse/hib/kurzmeldungen-1222360)
 
 **確認日：2026年11月4日。** この記事は一般的な申請手順の説明です。実際の受給資格・金額・必要書類は、世帯の状況と担当自治体の審査によって異なります。2027年の改正案は、成立・施行されるまで現行制度として扱いません。専門家レビューが完了するまで公開しません。

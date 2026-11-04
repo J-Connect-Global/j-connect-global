@@ -52,7 +52,7 @@
 - N031「2027年住宅手当見直し」ニュースと重複させず、現行制度の対象・計算・申請・必要書類を扱う実務ガイド。
 - 賃貸のMietzuschussと自己所有住宅のLastenzuschuss、世帯人数・総収入・認定家賃・自治体の家賃区分による計算を説明。
 - 公式計算機は初期目安であり法的決定ではないこと、申請月の初日から給付期間が始まること、通常12か月・条件により最長24か月、SGB II/SGB XIIなどとの併用制限を整理。
-- 2027年改正案は2026-11-04時点で現行法として扱わず、N031へリンク。
+- 2027年改正案は2026-11-04時点で現行法として扱わず、連邦議会の法案21/8284（2026-10-05公表）とN031へリンク。案の主な内容は定期改定の一時停止、暖房費加算の半減、計算・手続きの簡素化。
 - 要レビュー：住宅手当・行政法。確認日2026-11-04、次回確認2026-11-18。
 
 ## 4. 既存ドラフトの改善
@@ -80,6 +80,7 @@
 
 ### 住宅手当
 - BMWSB FAQ https://www.bmwsb.bund.de/SharedDocs/faqs/DE/buergerkom/wohngeld-plus/wohngeld-FAQ-artikel.html
+- ドイツ連邦議会：法案21/8284（2026-10-05） https://www.bundestag.de/presse/hib/kurzmeldungen-1222360
 - BMWSB公式計算機（2025年1月1日版） https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeldrechner/wohngeldrechner-2025_artikel.html
 - Bundesportal：Miet-/Lastenzuschuss https://verwaltung.bund.de/leistungsverzeichnis/DE/leistung/99107023037000/herausgeber/BY-24752/region/092725214138
 - WoGG §§7, 22, 25, 27（各記事front matterにリンク）

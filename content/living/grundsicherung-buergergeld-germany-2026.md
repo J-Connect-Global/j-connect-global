@@ -11,6 +11,10 @@ updated_at: "2026-11-04"
 last_verified: "2026-11-04"
 next_review: "2026-11-18"
 canonical_url: "/germany/ja/living/grundsicherung-buergergeld-germany-2026/"
+image: "/assets/images/living/seo/grundsicherung-buergergeld-germany-2026-hero.svg"
+image_alt: "申請書と書類を机で確認する人、住居と書類フォルダーを描いたイラスト"
+image_caption: "求職者向け基礎保障の申請準備をイメージしたJ-Connectオリジナル図"
+image_credit: "J-Connect Global制作（2026年11月4日）"
 tags: ["Grundsicherungsgeld", "Bürgergeld", "失業", "低所得", "社会保障", "Jobcenter", "滞在許可", "2026年"]
 related_articles: ["unemployment-benefit-germany", "wohngeld-reform-2027", "residence-permit-renewal-germany", "family-reunification-spouse-work-germany", "wohngeld-antrag-germany-2026"]
 official_sources:
@@ -41,6 +45,8 @@ official_sources:
 # ドイツの求職者向け基礎保障とは？旧Bürgergeldからの変更と申請方法【2026年】
 
 ドイツでは2026年7月1日から、求職者向けの基礎保障制度が旧Bürgergeld（市民手当）から新しい制度へ移行しました。仕事を探している人だけでなく、働いていても世帯収入だけでは生活費をまかなえない人が対象になる場合があります。この記事では、失業保険との違い、対象条件、申請先と必要書類、外国籍の人が先に確認すべき点を整理します。
+
+![求職者向け基礎保障の確認ポイント：年齢・就労能力、家計、在留資格、申請先の4段階](/assets/images/living/seo/grundsicherung-buergergeld-2026-eligibility-flow.svg "図解：J-Connect作成。SGB IIと連邦政府の案内に基づく確認フロー。2026年11月4日確認。")
 
 ## 先に結論
 
@@ -113,6 +119,8 @@ official_sources:
 オンラインサービスを使う方法があります。申請画面や通知には旧Bürgergeldという名称が残っている場合がありますが、2026年7月1日以降の審査は新しい法令に基づいて行われます。
 
 生活費の給付は、原則として申請した月の初日から扱われますが、申請前の過去の月まで自由にさかのぼれる制度ではありません。収入が足りないと分かったら、必要書類が全部そろうのを待って申請を遅らせず、担当窓口に早めに相談してください。具体的な給付開始日は申請内容と法律上の条件で決まります。
+
+![求職者向け基礎保障の申請資料チェックリスト：身分証、世帯、収入・資産、住居費、他の給付](/assets/images/living/seo/grundsicherung-buergergeld-2026-application-checklist.svg "図解：J-Connect作成。連邦雇用エージェンシーの申請案内に基づく整理。2026年11月4日確認。")
 
 ### 3. よく求められる資料を準備する
 

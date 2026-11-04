@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">住宅手当の申請5ステップ</title>
+<desc id="desc">担当窓口を探す、公式計算機で概算する、必要書類を集める、申請する、決定通知と変更を管理する流れ。</desc>
+<rect width="1200" height="675" rx="28" fill="#F5F1E8"/>
+<text x="64" y="80" fill="#1F2933" font-size="40" font-weight="700" font-family="Arial,sans-serif">住宅手当の申請は5ステップ</text>
+<path d="M150 285 H1050" stroke="#C8D2D4" stroke-width="14" stroke-linecap="round"/>
+<g transform="translate(64 175)">
+<circle cx="86" cy="110" r="64" fill="#47727A"/><text x="86" y="128" text-anchor="middle" fill="#FFFFFF" font-size="44" font-weight="700" font-family="Arial,sans-serif">1</text>
+<text x="86" y="220" text-anchor="middle" fill="#1F2933" font-size="28" font-weight="700" font-family="Arial,sans-serif">窓口を探す</text>
+<text x="86" y="260" text-anchor="middle" fill="#52616B" font-size="21" font-family="Arial,sans-serif">住所で担当を確認</text>
+</g>
+<g transform="translate(280 175)">
+<circle cx="86" cy="110" r="64" fill="#C28B4B"/><text x="86" y="128" text-anchor="middle" fill="#FFFFFF" font-size="44" font-weight="700" font-family="Arial,sans-serif">2</text>
+<text x="86" y="220" text-anchor="middle" fill="#1F2933" font-size="28" font-weight="700" font-family="Arial,sans-serif">概算する</text>
+<text x="86" y="260" text-anchor="middle" fill="#52616B" font-size="21" font-family="Arial,sans-serif">公式計算機を利用</text>
+</g>
+<g transform="translate(496 175)">
+<circle cx="86" cy="110" r="64" fill="#687A63"/><text x="86" y="128" text-anchor="middle" fill="#FFFFFF" font-size="44" font-weight="700" font-family="Arial,sans-serif">3</text>
+<text x="86" y="220" text-anchor="middle" fill="#1F2933" font-size="28" font-weight="700" font-family="Arial,sans-serif">資料を集める</text>
+<text x="86" y="260" text-anchor="middle" fill="#52616B" font-size="21" font-family="Arial,sans-serif">収入・住宅費など</text>
+</g>
+<g transform="translate(712 175)">
+<circle cx="86" cy="110" r="64" fill="#47727A"/><text x="86" y="128" text-anchor="middle" fill="#FFFFFF" font-size="44" font-weight="700" font-family="Arial,sans-serif">4</text>
+<text x="86" y="220" text-anchor="middle" fill="#1F2933" font-size="28" font-weight="700" font-family="Arial,sans-serif">申請する</text>
+<text x="86" y="260" text-anchor="middle" fill="#52616B" font-size="21" font-family="Arial,sans-serif">申請月内に提出</text>
+</g>
+<g transform="translate(928 175)">
+<circle cx="86" cy="110" r="64" fill="#C28B4B"/><text x="86" y="128" text-anchor="middle" fill="#FFFFFF" font-size="44" font-weight="700" font-family="Arial,sans-serif">5</text>
+<text x="86" y="220" text-anchor="middle" fill="#1F2933" font-size="28" font-weight="700" font-family="Arial,sans-serif">通知を管理</text>
+<text x="86" y="260" text-anchor="middle" fill="#52616B" font-size="21" font-family="Arial,sans-serif">追加資料・更新を確認</text>
+</g>
+<rect x="64" y="520" width="1072" height="100" rx="18" fill="#E8E1D5"/>
+<text x="90" y="562" fill="#1F2933" font-size="26" font-weight="700" font-family="Arial,sans-serif">申請月の初日から給付期間が始まるのが原則。</text>
+<text x="90" y="598" fill="#52616B" font-size="22" font-family="Arial,sans-serif">申請を遅らせず、担当自治体の最新の提出方法を確認してください。</text>
+</svg>

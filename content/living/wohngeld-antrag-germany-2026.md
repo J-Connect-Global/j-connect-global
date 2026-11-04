@@ -11,6 +11,10 @@ updated_at: "2026-11-04"
 last_verified: "2026-11-04"
 next_review: "2026-11-18"
 canonical_url: "/germany/ja/living/wohngeld-antrag-germany-2026/"
+image: "/assets/images/living/seo/wohngeld-antrag-germany-2026-hero.svg"
+image_alt: "住宅、賃貸契約書、電卓とコインを組み合わせた住宅手当のイラスト"
+image_caption: "住宅手当の申請と住宅費の確認をイメージしたJ-Connectオリジナル図"
+image_credit: "J-Connect Global制作（2026年11月4日）"
 tags: ["Wohngeld", "住宅手当", "家賃", "低所得", "申請", "住まい", "Lastenzuschuss", "Mietzuschuss"]
 related_articles: ["grundsicherung-buergergeld-germany-2026", "wohngeld-reform-2027", "unemployment-benefit-germany"]
 official_sources:
@@ -42,6 +46,8 @@ official_sources:
 - 賃貸住宅向けの「Mietzuschuss」と、自己所有住宅向けの「Lastenzuschuss」があります。
 - 受給可否と金額は、世帯人数、世帯の収入、認定対象となる家賃・住宅費、自治体の家賃区分で決まります。全国一律の単純な所得上限はありません。
 - 住宅費がすでに別の社会給付に含まれている場合は、原則として対象外になることがあります。求職者向け基礎保障や社会扶助との違いを確認してください。
+
+![住宅手当の計算要素：世帯人数、世帯収入、認定対象の住宅費、自治体の家賃区分](/assets/images/living/seo/wohngeld-antrag-2026-calculation-factors.svg "図解：J-Connect作成。連邦住宅省の計算機と住宅手当法に基づく独自整理。2026年11月4日確認。")
 
 ## 住宅手当は何を支える制度？
 
@@ -111,6 +117,8 @@ official_sources:
 計算機のページは「2025年1月1日版」と表示されています。2026年11月4日時点で、連邦政府が案内する公式計算機として確認できるものですが、結果はあくまで最初の目安です。計算機の結果だけで受給が決まるわけではなく、法的に有効な判断は担当の住宅手当窓口が行います。
 
 計算結果を保存し、入力した収入・家賃・世帯人数が現在の状況に合っているか確認してから申請してください。
+
+![住宅手当の申請5ステップ：窓口確認、概算、書類準備、申請、通知管理](/assets/images/living/seo/wohngeld-antrag-2026-application-steps.svg "図解：J-Connect作成。連邦行政ポータルと住宅手当法に基づく独自整理。2026年11月4日確認。")
 
 ## どこに申請する？
 

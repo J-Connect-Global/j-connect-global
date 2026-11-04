@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">住宅手当の金額を左右する4つの要素</title>
+<desc id="desc">世帯人数、世帯収入、認定対象の住宅費、自治体の家賃区分が住宅手当の計算に使われることを示す図。</desc>
+<rect width="1200" height="675" rx="28" fill="#F5F1E8"/>
+<text x="64" y="80" fill="#1F2933" font-size="40" font-weight="700" font-family="Arial,sans-serif">住宅手当の計算に使われる4つの要素</text>
+<g transform="translate(64 155)">
+<rect width="500" height="170" rx="22" fill="#FFFFFF" stroke="#C8D2D4" stroke-width="3"/>
+<circle cx="80" cy="85" r="48" fill="#47727A"/><circle cx="65" cy="70" r="13" fill="#FFFFFF"/><circle cx="95" cy="70" r="13" fill="#FFFFFF"/><path d="M45 115 Q80 80 115 115" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+<text x="160" y="72" fill="#1F2933" font-size="34" font-weight="700" font-family="Arial,sans-serif">世帯人数</text>
+<text x="160" y="118" fill="#52616B" font-size="24" font-family="Arial,sans-serif">誰が同じ世帯として扱われるか</text>
+</g>
+<g transform="translate(636 155)">
+<rect width="500" height="170" rx="22" fill="#FFFFFF" stroke="#D9C6A7" stroke-width="3"/>
+<circle cx="80" cy="85" r="48" fill="#C28B4B"/><text x="80" y="102" text-anchor="middle" fill="#FFFFFF" font-size="42" font-weight="700" font-family="Arial,sans-serif">€</text>
+<text x="160" y="72" fill="#1F2933" font-size="34" font-weight="700" font-family="Arial,sans-serif">世帯の収入</text>
+<text x="160" y="118" fill="#52616B" font-size="24" font-family="Arial,sans-serif">認定期間中に見込まれる収入</text>
+</g>
+<g transform="translate(64 365)">
+<rect width="500" height="170" rx="22" fill="#FFFFFF" stroke="#D9C6A7" stroke-width="3"/>
+<path d="M35 100 L80 55 L125 100 V140 H35 Z" fill="#E7E3D8" stroke="#687A63" stroke-width="7" stroke-linejoin="round"/>
+<text x="160" y="72" fill="#1F2933" font-size="34" font-weight="700" font-family="Arial,sans-serif">認定対象の住宅費</text>
+<text x="160" y="118" fill="#52616B" font-size="24" font-family="Arial,sans-serif">家賃・付帯費用または持ち家の負担</text>
+</g>
+<g transform="translate(636 365)">
+<rect width="500" height="170" rx="22" fill="#FFFFFF" stroke="#C8D2D4" stroke-width="3"/>
+<path d="M80 45 L120 70 V120 L80 145 L40 120 V70 Z" fill="#47727A"/>
+<path d="M60 95 H100 M80 75 V115" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+<text x="160" y="72" fill="#1F2933" font-size="34" font-weight="700" font-family="Arial,sans-serif">自治体の家賃区分</text>
+<text x="160" y="118" fill="#52616B" font-size="24" font-family="Arial,sans-serif">地域ごとの住宅費上限に関係</text>
+</g>
+<rect x="64" y="575" width="1072" height="56" rx="14" fill="#E8E1D5"/>
+<text x="88" y="612" fill="#1F2933" font-size="23" font-weight="700" font-family="Arial,sans-serif">公式計算機は目安。最終的な受給可否・金額は担当窓口が決定。</text>
+</svg>

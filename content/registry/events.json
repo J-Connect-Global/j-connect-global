@@ -7163,5 +7163,121 @@
     "source_type": "manual",
     "image_caption": "AIの支援でコードから描画したイラスト（J-Connect）。ハンブルクのクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。",
     "image_credit": "AI-assisted vector illustration / J-Connect"
+  },
+  {
+    "id": "N036",
+    "slug": "germany-inflation-october-2026",
+    "content_type": "news",
+    "url": "/germany/ja/events/news/germany-inflation-october-2026/",
+    "markdown_path": "/content/events/news/germany-inflation-october-2026.md",
+    "canonical_url": "/germany/ja/events/news/germany-inflation-october-2026/",
+    "published": false,
+    "status": "draft",
+    "home_visible": false,
+    "home_order": 9999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; human editorial review pending",
+      "last_reviewed_at": "2026-11-04",
+      "next_review_due": "2026-11-11"
+    },
+    "title": "ドイツの物価は2026年10月に2.8％上昇｜9月から鈍化、エネルギー高は続く",
+    "category": "お金・税金",
+    "summary": "ドイツ連邦統計局の10月速報では、消費者物価は前年同月比2.8％上昇、前月比0.2％低下。9月の3.3％から伸びは鈍化しましたが、エネルギーは前年比12.2％上昇しています。速報値の読み方と家計で確認すべき点を整理します。",
+    "published_at": null,
+    "updated_at": "2026-11-04",
+    "last_verified": "2026-11-04",
+    "tags": [
+      "物価",
+      "インフレ",
+      "家計",
+      "エネルギー",
+      "消費者物価",
+      "ドイツ生活"
+    ],
+    "related_articles": [
+      "germany-inflation-september-2026",
+      "germany-january-2027-changes"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026年10月統計・10月30日速報",
+    "official_url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_382_611.html",
+    "official_sources": [
+      {
+        "title": "連邦統計局：2026年10月の消費者物価・速報値（10月30日）",
+        "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_382_611.html"
+      },
+      {
+        "title": "連邦統計局：消費者物価指数とインフレ率",
+        "url": "https://www.destatis.de/DE/Themen/Wirtschaft/Preise/Verbraucherpreisindex/_inhalt.html"
+      },
+      {
+        "title": "連邦統計局：2026年9月の消費者物価・確定値（10月13日）",
+        "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_364_611.html"
+      }
+    ]
+  },
+  {
+    "id": "N037",
+    "slug": "germany-labour-market-october-2026",
+    "content_type": "news",
+    "url": "/germany/ja/events/news/germany-labour-market-october-2026/",
+    "markdown_path": "/content/events/news/germany-labour-market-october-2026.md",
+    "canonical_url": "/germany/ja/events/news/germany-labour-market-october-2026/",
+    "published": false,
+    "status": "draft",
+    "home_visible": false,
+    "home_order": 9999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; human editorial review pending",
+      "last_reviewed_at": "2026-11-04",
+      "next_review_due": "2026-11-30"
+    },
+    "title": "ドイツの失業者は2026年10月に295.5万人｜秋の改善は弱く、季節調整後は増加",
+    "category": "仕事",
+    "summary": "連邦雇用庁の2026年10月統計では、登録失業者は295万5,000人で前月比4万人減。ただし季節調整後は4,000人増、前年同月比では4万4,000人増でした。求人・失業率・広い意味の未就業指標を分け、求職者が地域や職種の状況を確認する方法を整理します。",
+    "published_at": null,
+    "updated_at": "2026-11-04",
+    "last_verified": "2026-11-04",
+    "tags": [
+      "ドイツ雇用",
+      "失業率",
+      "転職",
+      "求人",
+      "求職",
+      "労働市場"
+    ],
+    "related_articles": [
+      "germany-labour-market-august-2026",
+      "unemployment-benefit-germany"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026年10月統計・10月30日公表",
+    "official_url": "https://www.arbeitsagentur.de/presse/2026-41-arbeitsmarkt-im-oktober-2026",
+    "official_sources": [
+      {
+        "title": "連邦雇用庁：2026年10月の労働市場（10月30日）",
+        "url": "https://www.arbeitsagentur.de/presse/2026-41-arbeitsmarkt-im-oktober-2026"
+      },
+      {
+        "title": "連邦雇用庁：2026年の失業者数・失業率",
+        "url": "https://www.arbeitsagentur.de/news/arbeitsmarkt"
+      },
+      {
+        "title": "連邦雇用庁：求人検索",
+        "url": "https://www.arbeitsagentur.de/jobsuche/"
+      }
+    ]
   }
 ]

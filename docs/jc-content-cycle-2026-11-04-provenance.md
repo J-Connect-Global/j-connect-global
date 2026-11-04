@@ -92,9 +92,9 @@
 
 - N036・N037は `published:false`、`status:draft`。Home、hub、search、sitemapはすべて非表示。
 - Elterngeldはdocs内ドラフトであり、現行ページ・registryに未登録。
-- 今回は画像を追加しない。公的統計表と公式リンクで記事の目的を満たすため、無関係な画像やライセンス不明素材を使わない。
+- 物価・労働市場の記事に、数値を直接読めるオリジナルSVG図表を各2点、計4点追加した。第三者写真・ストック画像は使用せず、SVG内にtitle/desc、Markdown側に日本語altを付けた。
 - 公開HTML、canonical、hreflang、sitemap、既存の投稿・求人・連絡フォーム・管理機能・語彙データ・プライバシー処理は変更しない。
-- ローカル実行環境にリポジトリ全体と依存関係がないため、ローカルの `npm run build` は実行していない。draftのみのPRでGitHub Actionsの `Validate content` を確認する。
+- ローカル実行環境にリポジトリ全体と依存関係がないため、ローカルの `npm run build` は実行していない。PRの初回 `Validate content` は本文画像が0点という品質ルールで失敗したため、各記事にオリジナルSVGを2点ずつ追加した。修正後のCIを再確認する。
 - 公開判断は人の専門レビュー後。CI成功だけで行政・給付記事を公開しない。
 
 ## 7. 次回の候補

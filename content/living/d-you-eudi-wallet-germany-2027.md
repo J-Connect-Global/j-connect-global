@@ -7,8 +7,8 @@ summary: "ドイツのEUデジタル身分証ウォレット「d-you」は2027�
 status: "draft"
 published: false
 published_at: ""
-updated_at: "2026-11-03"
-last_verified: "2026-11-03"
+updated_at: "2026-11-04"
+last_verified: "2026-11-04"
 next_review: "2026-11-21"
 canonical_url: "/germany/ja/living/d-you-eudi-wallet-germany-2027/"
 image: "/assets/images/living/seo/d-you-eudi-wallet-germany-2027-hero.svg"
@@ -18,6 +18,8 @@ related_articles: ["germany-january-2027-changes"]
 official_sources:
   - title: "連邦政府：デジタルブリーフケース「d-you」の開始計画"
     url: "https://www.bundesregierung.de/breg-de/aktuelles/digitale-brieftasche-2431500"
+  - title: "連邦政府：d-youの2027年1月初旬開始、参加パートナー、無料・任意利用（現行案内）"
+    url: "https://www.bundesregierung.de/breg-de/aktuelles/digital-wallet-2452384"
   - title: "ドイツ連邦議会：EUDI Wallet関連法案と専門家公聴会"
     url: "https://www.bundestag.de/dokumente/textarchiv/2026/kw42-de-digitale-identitaeten-gesetz-1223586"
   - title: "ベルリン州政府：2026年11月20日の連邦参議院会議予定"
@@ -30,7 +32,7 @@ official_sources:
 
 # ドイツのデジタル身分証「d-you」とは？2027年1月開始予定と日本人居住者の注意点
 
-ドイツ政府は、EU共通のデジタル身分証ウォレット「d-you」を2027年1月初旬に開始する計画です。連邦議会は2026年10月15日に関連法案を可決しましたが、連邦参議院での第2次審議は11月20日に予定されており、現時点では法的手続きが完了していません。日本人を含む外国籍の居住者に向けて、EU法上の対象、開始時に期待できる機能、まだ確認できない点を分けて説明します。
+連邦政府の現行案内は、EU共通のデジタル身分証ウォレット「d-you」を2027年1月初旬に開始する計画と説明しています。連邦議会は2026年10月15日に関連法案を可決しましたが、連邦参議院での第2次審議は11月20日に予定されており、現時点では法的手続きが完了していません。日本人を含む外国籍の居住者に向けて、EU法上の対象、開始時に期待できる機能、まだ確認できない点を分けて説明します。
 
 ![連邦議会可決、連邦参議院審議予定、2027年1月の開始目標を示す時系列図](/assets/images/living/seo/d-you-eudi-wallet-2027-timeline.svg "図解：J-Connect作成。連邦議会と連邦参議院の公表資料に基づく。2026年11月3日確認。")
 
@@ -41,7 +43,7 @@ official_sources:
 - 日本人など第三国籍の居住者が確認すべき本人確認書類
 - 初期版の機能、任意利用、プライバシー上の注意点
 
-## 2026年11月3日時点の結論
+## 2026年11月4日時点の結論
 
 - ドイツのウォレット名は「d-you」。政府は2027年1月初旬の開始を予定しています。
 - 連邦議会は2026年10月15日にデジタルID関連法案を可決しました。
@@ -80,7 +82,7 @@ EU規則の説明では、デジタルIDウォレットはEU市民だけでな�
 
 ![日本人居住者がd-youの開始前に確認する対象範囲、登録書類、準備事項を示す図](/assets/images/living/seo/d-you-eudi-wallet-2027-resident-checklist.svg "図解：J-Connect作成。EU規則とドイツ政府の公表情報に基づく。2026年11月3日確認。")
 
-ただし、ドイツ政府の説明で具体例として示されているのは、ドイツの身分証明書をスマートフォンに登録する仕組みです。日本人の在留カード、電子滞在許可証、日本のパスポートのどれを、どの方法で本人確認に使えるのかは、2026年11月3日時点の公開案内では確認できません。
+ただし、ドイツ政府の説明で具体例として示されているのは、ドイツの身分証明書をスマートフォンに登録する仕組みです。日本人の在留カード、電子滞在許可証、日本のパスポートのどれを、どの方法で本人確認に使えるのかは、2026年11月4日時点の公開案内では確認できません。
 
 そのため、次の点は正式な登録手順が公表されてから判断してください。
 
@@ -111,7 +113,7 @@ EUの枠組みは、利用者が共有する情報を選び、必要以上の個
 
 ## 今から準備すること
 
-2026年11月3日時点では、急いで登録したり、非公式アプリを探したりする必要はありません。次の準備にとどめてください。
+2026年11月4日時点では、急いで登録したり、非公式アプリを探したりする必要はありません。次の準備にとどめてください。
 
 - パスポート、在留カード、電子滞在許可証など現物の有効期限を確認する。
 - スマートフォンがOSのセキュリティ更新を受けられる状態か確認する。
@@ -144,6 +146,7 @@ EUの枠組みは居住者を対象に含みます。ただし、ドイツ版の
 ## 公式情報・参考ソース
 
 - [連邦政府：デジタルブリーフケース「d-you」の開始計画（2026年10月15日）](https://www.bundesregierung.de/breg-de/aktuelles/digitale-brieftasche-2431500)
+- [連邦政府：d-youの2027年1月初旬開始、参加パートナー、無料・任意利用に関する現行案内](https://www.bundesregierung.de/breg-de/aktuelles/digital-wallet-2452384)
 - [ドイツ連邦議会：EUDI Wallet関連法案・公聴会・決議（2026年10月15日までの審議）](https://www.bundestag.de/dokumente/textarchiv/2026/kw42-de-digitale-identitaeten-gesetz-1223586)
 - [ベルリン州政府：2026年11月20日の連邦参議院会議予定（2026年10月30日現在）](https://www.berlin.de/rbmskzl/politik/senatskanzlei/bundesangelegenheiten/der-bundesrat/vorschau-auf-die-bundesratssitzung-1616077.php)
 - [欧州委員会：European Digital Identity Wallet](https://digital-strategy.ec.europa.eu/en/factpages/european-digital-identity-wallet)

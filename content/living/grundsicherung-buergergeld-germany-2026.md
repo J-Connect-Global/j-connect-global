@@ -159,7 +159,7 @@ official_sources:
 ## 関連記事
 
 - [ドイツの失業手当：受給条件・金額・期間と届け出](/germany/ja/living/unemployment-benefit-germany/)
-- [ドイツの住宅手当：対象・申請方法・必要書類](/germany/ja/living/wohngeld-antrag-germany-2026/)
+- [ドイツの住宅手当が2027年に見直しへ](/germany/ja/events/news/wohngeld-reform-2027/)
 - [ドイツの滞在許可を申請・更新する方法](/germany/ja/living/residence-permit-renewal-germany/)
 
 ## 公式情報・参考ソース
@@ -172,6 +172,8 @@ official_sources:
 - [社会法典第2編 §7：対象者と給付除外](https://www.gesetze-im-internet.de/sgb_2/__7.html)
 - [社会法典第2編 §8：就労能力](https://www.gesetze-im-internet.de/sgb_2/__8.html)
 - [社会法典第2編 §9：困窮状態の判定](https://www.gesetze-im-internet.de/sgb_2/__9.html)
+- [社会法典第2編 §22：住居費と暖房費](https://www.gesetze-im-internet.de/sgb_2/__22.html)
+- [社会法典第2編 §31a：義務違反時の給付減額](https://www.gesetze-im-internet.de/sgb_2/__31a.html)
 - [社会法典第2編 §37：申請と給付開始](https://www.gesetze-im-internet.de/sgb_2/__37.html)
 
 **確認日：2026年11月4日。** この記事は制度の概要を説明するもので、個別の受給資格・給付額・滞在許可への影響を確定するものではありません。制度運用や法令の変更、個別事情によって結論は異なります。専門家レビューが完了するまで公開しません。

@@ -200,10 +200,12 @@ official_sources:
 - [連邦住宅省：住宅手当計算機（2025年1月1日版）](https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeldrechner/wohngeldrechner-2025_artikel.html)
 - [連邦行政ポータル：居住地に応じた行政窓口の検索](https://verwaltung.bund.de/portal/)
 - [連邦行政ポータル：住宅手当の申請案内（バイエルン州の地域例。実際の手続きは自治体により異なる）](https://verwaltung.bund.de/leistungsverzeichnis/DE/leistung/99107023037000/herausgeber/BY-24752/region/092725214138)
+- [住宅手当法 §3：受給対象者](https://www.gesetze-im-internet.de/wogg/__3.html)
 - [住宅手当法 §7：他の給付を受ける場合の除外](https://www.gesetze-im-internet.de/wogg/__7.html)
 - [住宅手当法 §22：申請が必要であること](https://www.gesetze-im-internet.de/wogg/__22.html)
 - [住宅手当法 §25：給付期間と開始月](https://www.gesetze-im-internet.de/wogg/__25.html)
 - [住宅手当法 §27：給付期間中の変更](https://www.gesetze-im-internet.de/wogg/__27.html)
+- [住宅手当法 §26a：暫定支給](https://www.gesetze-im-internet.de/wogg/__26a.html)
 - [住宅手当法 §26a：暫定支給](https://www.gesetze-im-internet.de/wogg/__26a.html)
 - [デュッセルドルフ市：住宅手当のオンライン申請と書類入手先](https://www2.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/mehr-service-vor-ort-wohnungsamt-erweitert-angebot)
 

@@ -10,7 +10,7 @@
 <g>
 <rect x="190" y="182" width="230" height="52" rx="10" fill="#28658a"/><rect x="190" y="290" width="238" height="52" rx="10" fill="#28658a"/><rect x="190" y="398" width="271" height="52" rx="10" fill="#28658a"/><rect x="190" y="506" width="230" height="52" rx="10" fill="#28658a"/>
 <rect x="480" y="182" width="197" height="52" rx="10" fill="#5d8b76"/><rect x="480" y="290" width="197" height="52" rx="10" fill="#5d8b76"/><rect x="480" y="398" width="197" height="52" rx="10" fill="#5d8b76"/><rect x="480" y="506" width="172" height="52" rx="10" fill="#5d8b76"/>
-<rect x="735" y="182" width="680" height="52" rx="10" fill="#d18b35"/><rect x="735" y="290" width="680" height="52" rx="10" fill="#d18b35"/><rect x="735" y="398" width="680" height="52" rx="10" fill="#d18b35"/><rect x="735" y="506" width="680" height="52" rx="10" fill="#d18b35"/>
+<rect x="735" y="182" width="212" height="52" rx="10" fill="#d18b35"/><rect x="735" y="290" width="268" height="52" rx="10" fill="#d18b35"/><rect x="735" y="398" width="380" height="52" rx="10" fill="#d18b35"/><rect x="735" y="506" width="311" height="52" rx="10" fill="#d18b35"/>
 </g>
 <g font-size="19" font-weight="700" fill="#ffffff">
 <text x="205" y="216">全体 2.8%</text><text x="205" y="324">全体 2.9%</text><text x="205" y="432">全体 3.3%</text><text x="205" y="540">全体 2.8%</text>

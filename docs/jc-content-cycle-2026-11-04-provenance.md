@@ -169,3 +169,19 @@
 4. Apps Scriptの5分トリガーとメールE2Eは、Google認証済み管理セッションとテスト専用受信箱が利用可能になった段階で再確認する。
 5. フラッシュカード音声はAndroid実機と別のブラウザーで再生テストする。
 6. 12月中旬に自治体別の花火規制を再調査する。
+
+
+### N037の実用補足案（2026-11-04）
+
+- 連邦雇用庁の2026年4月23日・8月19日の公式案内を確認し、雇用終了時の「求職登録」と「失業登録」を区別する補足案を `docs/drafts/n037-jobseeker-registration-addendum-2026-11-04.md` に追加。
+- 求職登録は原則として雇用終了日の3か月前まで。終了まで3か月未満の時点で終了を知った場合は、知った日から3日以内。失業登録は別手続きで、失業初日までに必要。求職登録だけでは失業登録を代替しない。
+- N037の本文・registry・生成HTMLはまだ変更していない。適用条件を中央の公式案内で再照合し、サイトの生成ビルドを実行できる環境が利用可能になった段階で反映する。
+- 一次情報：
+  - https://www.arbeitsagentur.de/vor-ort/ingolstadt/presse/2026-14-zur-agentur-fur-arbeit-am-besten-online
+  - https://www.arbeitsagentur.de/vor-ort/stralsund/presse/2026-40-jetzt-schon-an-das-saisonende-denken
+  - https://www.arbeitsagentur.de/arbeitslos-melden
+
+### CIの追加確認
+
+- PR #423の既存コンテンツ変更に対する「Validate content」は、head `92a912bb8c5e755ade7d7dc226b5afcd05f2118e` で成功していた。
+- その後の追加は `docs/drafts/` とprovenance文書だけで、サイトソース・registry・生成ファイルを変更していない。GitHub API経由のdocs-onlyコミット後に新しいworkflow runは作成されていないため、今回の追加文書はCI未実行として扱う。既存CI成功を今回のdocs-only差分のテスト結果と混同しない。

@@ -11,7 +11,7 @@
     <text x="28" y="145" fill="#1F2933" font-size="66" font-weight="700" font-family="Arial,sans-serif">2 €</text>
     <text x="28" y="190" fill="#1F2933" font-size="28" font-weight="700" font-family="Arial,sans-serif">EU取扱手数料</text>
     <text x="28" y="245" fill="#52616B" font-size="22" font-family="Arial,sans-serif">距離販売が対象</text>
-    <text x="28" y="280" fill="#52616B" font-size="22" font-family="Arial,sans-serif">税関申告の品目行ごと</text>
+    <text x="28" y="280" fill="#52616B" font-size="22" font-family="Arial,sans-serif">異なる関税分類の品目区分ごと</text>
     <text x="28" y="315" fill="#52616B" font-size="22" font-family="Arial,sans-serif">150 €の価格上限なし</text>
   </g>
   <g transform="translate(435 178)">
@@ -20,7 +20,7 @@
     <text x="28" y="72" fill="#A46E34" font-size="24" font-weight="700" font-family="Arial,sans-serif">2026年7月1日から</text>
     <text x="28" y="145" fill="#1F2933" font-size="66" font-weight="700" font-family="Arial,sans-serif">3 €</text>
     <text x="28" y="190" fill="#1F2933" font-size="28" font-weight="700" font-family="Arial,sans-serif">定額関税</text>
-    <text x="28" y="245" fill="#52616B" font-size="22" font-family="Arial,sans-serif">150 €以下の対象通販</text>
+    <text x="28" y="245" fill="#52616B" font-size="22" font-family="Arial,sans-serif">150 €未満の対象通販</text>
     <text x="28" y="280" fill="#52616B" font-size="22" font-family="Arial,sans-serif">税関申告の品目行ごと</text>
     <text x="28" y="315" fill="#52616B" font-size="22" font-family="Arial,sans-serif">暫定措置</text>
   </g>
@@ -34,5 +34,5 @@
     <text x="28" y="260" fill="#1F2933" font-size="27" font-weight="700" font-family="Arial,sans-serif">配送会社の手数料</text>
     <text x="28" y="302" fill="#52616B" font-size="22" font-family="Arial,sans-serif">会社・契約ごとに異なる</text>
   </g>
-  <text x="64" y="590" fill="#52616B" font-size="22" font-family="Arial,sans-serif">注意：2 €・3 €はいずれも荷物1個・商品1個単位ではなく、税関申告の品目行ごとに計算されます。</text>
+  <text x="64" y="590" fill="#52616B" font-size="22" font-family="Arial,sans-serif">注意：2 €は税関申告の品目行ごと、3 €は異なる関税分類の品目区分ごとに計算されます。</text>
 </svg>

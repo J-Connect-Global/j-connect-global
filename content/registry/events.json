@@ -5764,9 +5764,9 @@
     "disclaimer_type": "event",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial (AI-assisted; official sources checked 2026-11-01)",
-      "last_reviewed_at": "2026-11-01",
-      "next_review_due": "2026-11-08"
+      "reviewed_by": "J-Connect Global editorial (AI-assisted; official sources checked 2026-11-05)",
+      "last_reviewed_at": "2026-11-05",
+      "next_review_due": "2026-11-10"
     },
     "title": "ドイツの聖マルティン祭とは？｜11月11日のランタン行列と参加前の確認",
     "category": "季節・文化",
@@ -5803,6 +5803,10 @@
       {
         "title": "Duisburg市：2026年の聖マルティン行列",
         "url": "https://www.duisburg.de/pressemitteilungen/pm/2026/oktober/st.martinszuege-lichterglanz-in-der-duisburger-innenstadt-und-in-den-stadtteilen"
+      },
+      {
+        "title": "Düsseldorf市：2026年11月10日の旧市街行列",
+        "url": "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/sankt-martin-reitet-wieder-durch-die-stadt-12"
       },
       {
         "title": "Bergkamen消防署：聖マルティン祭の安全",

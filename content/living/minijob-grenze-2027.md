@@ -7,8 +7,8 @@ summary: "2027年1月1日からのミニジョブの月収上限は月633ユー�
 status: "published"
 published: true
 published_at: "2026-10-28"
-updated_at: "2026-11-02"
-last_verified: "2026-11-02"
+updated_at: "2026-11-05"
+last_verified: "2026-11-05"
 next_review: "2026-12-15"
 canonical_url: "/germany/ja/living/minijob-grenze-2027/"
 tags: ["Minijob", "ミニジョブ", "最低賃金", "2027年", "副業", "税金", "社会保険"]

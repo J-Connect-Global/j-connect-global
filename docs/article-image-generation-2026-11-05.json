@@ -11,5 +11,18 @@
     "status": "generated",
     "created": "2026-11-05",
     "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted on 2026-11-05; the prompt above was not used)"
+  },
+  {
+    "slug": "christmas-new-year-greetings",
+    "section": "learn-german",
+    "markdown": "content/learn-german/christmas-new-year-greetings.md",
+    "dest": "assets/img/learn-german/christmas-new-year-greetings.webp",
+    "alt": "もみの枝と星形のクッキー、ろうそくの横に、封筒とクリスマスカードを置いた机のイラスト",
+    "prompt": "Asset type: article hero and thumbnail for a Japanese-language German phrase guide. Wide 16:9 warm flat vector illustration. A wooden table on a winter evening: a lit white candle with a soft glow, a fir branch with a red bauble, an open envelope with a blank Christmas card showing a small decorated tree, star-shaped cookies and a pen; a green garland with warm lights across a deep blue background. Card and envelope large and centred within the central 70%, readable as a 240px thumbnail. No readable text, letters, numbers, logos or brand names. No people.",
+    "caption": "AIの支援でコードから描画したイラスト（J-Connect）。季節のカードを書く場面を表したもので、実在のカードや商品を描いたものではありません。",
+    "credit": "AI-assisted vector illustration / J-Connect",
+    "status": "generated",
+    "created": "2026-11-05",
+    "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted on 2026-11-05; the prompt above was not used)"
   }
 ]

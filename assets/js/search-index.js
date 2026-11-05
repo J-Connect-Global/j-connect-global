@@ -3441,5 +3441,28 @@ window.JCONNECT_SEARCH_INDEX = [
       "writing",
       "15min"
     ]
+  },
+  {
+    "title": "クリスマス・年末年始のドイツ語あいさつ｜カード・メール・職場で使う言い方と返し方",
+    "description": "Frohe Weihnachten、Guten Rutsch、Frohes neues Jahrをいつまで使うか、近所の人・同僚・先生へのカードやメールの文例、言われたときの返し方、休暇中の自動返信、職場の忘年会やプレゼント交換の表現をまとめます。",
+    "url": "/germany/ja/learn-german/christmas-new-year-greetings/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "クリスマス",
+      "年末年始",
+      "あいさつ",
+      "カード",
+      "メール",
+      "A1",
+      "A2",
+      "phrase",
+      "work",
+      "business-email",
+      "daily-life",
+      "employment",
+      "speaking",
+      "writing",
+      "15min"
+    ]
   }
 ];

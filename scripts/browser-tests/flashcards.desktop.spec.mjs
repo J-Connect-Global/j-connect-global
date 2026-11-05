@@ -541,6 +541,28 @@ test("word playback is explicit and automatic word speech defaults OFF", async (
   await page.screenshot({path:testInfo.outputPath('word-audio-default-off-desktop.png')});
 });
 
+test("word audio reports request, start, completion, and failure states", async ({ page }) => {
+  await installSpeechMock(page);
+  await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
+  await page.locator("#flashcardsStart").click();
+
+  const status = page.locator("#flashcardsSpeechStatus");
+  const wordButton = page.locator("#flashcardsSpeak");
+  await wordButton.click();
+  await expect(status).toContainText("音声再生を要求しました");
+  await page.evaluate(() => window.__flashcardsLastUtterance.onstart?.());
+  await expect(status).toHaveText("再生中…");
+  await page.evaluate(() => window.__flashcardsLastUtterance.onend?.());
+  await expect(status).toHaveText("再生が完了しました。");
+
+  await wordButton.click();
+  await expect(status).toContainText("音声再生を要求しました");
+  await page.evaluate(() => window.__flashcardsLastUtterance.onerror?.({ error: "not-allowed" }));
+  await expect(status).toContainText("音声を再生できませんでした");
+  await expect(page.locator("#flashcardsToast")).toContainText("音声を再生できませんでした");
+  await expect(page.locator("#flashcardsAutoSpeak")).not.toBeChecked();
+});
+
 for (const direction of ['de-ja', 'ja-de']) {
   test(`automatic word speech follows cards only after opt-in (${direction})`, async ({ page }) => {
     await installSpeechMock(page);

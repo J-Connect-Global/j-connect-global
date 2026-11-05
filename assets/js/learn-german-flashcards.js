@@ -750,9 +750,6 @@
     const finish = () => {
       if (state.speechUtterance === utterance) resetSpeechState();
     };
-    utterance.onstart = () => {
-      if (state.speechUtterance === utterance) showToast("ドイツ語音声を再生中です。");
-    };
     utterance.onend = () => {
       const isCurrent = state.speechUtterance === utterance;
       finish();

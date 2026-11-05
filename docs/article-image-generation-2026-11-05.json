@@ -1,0 +1,15 @@
+[
+  {
+    "slug": "income-tax-return-germany",
+    "section": "living",
+    "markdown": "content/living/income-tax-return-germany.md",
+    "dest": "assets/img/living/income-tax-return-germany.webp",
+    "alt": "机の上に書類の束、電卓、ノートパソコン、領収書を並べ、1年分の税金を整理する様子のイラスト",
+    "prompt": "Asset type: article hero and thumbnail for a Japanese-language guide to life in Germany. Wide 16:9 warm painterly digital illustration, storybook editorial style, not a photograph. A tidy wooden desk by a window on a calm winter afternoon in a German apartment: a closed laptop next to a neat stack of paper documents held by a clip, a desk calculator, a small pile of receipts, a mug of tea, a pen and a small potted plant; soft daylight, muted teal, cream and warm amber palette. The calculator and document stack are large and centred within the central 70%, clearly readable as a 240px thumbnail. Fictional scene. No readable text, letters, numbers, form fields, logos, official seals, flags, brand names or watermarks; any paper shows only abstract grey lines. No people.",
+    "caption": "AIの支援でコードから描画したイラスト（J-Connect）。確定申告の準備を表したもので、実在の書類・画面・人物を描いたものではありません。",
+    "credit": "AI-assisted vector illustration / J-Connect",
+    "status": "generated",
+    "created": "2026-11-05",
+    "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted on 2026-11-05; the prompt above was not used)"
+  }
+]

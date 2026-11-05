@@ -4622,5 +4622,104 @@
     ],
     "image": "/assets/img/living/christmas-post-germany-to-japan-2026.webp",
     "image_alt": "クリスマスの飾りがある部屋で、段ボール箱にテープを貼り、カードを添えて日本へ送る準備をする様子のイラスト"
+  },
+  {
+    "id": "L074",
+    "slug": "income-tax-return-germany",
+    "url": "/germany/ja/living/income-tax-return-germany/",
+    "markdown_path": "/content/living/income-tax-return-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": true,
+    "home_order": 1,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "tax",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: EStG, AO; Verbraucherzentrale); human tax review pending",
+      "last_reviewed_at": "2026-11-05",
+      "next_review_due": "2027-03-01"
+    },
+    "canonical_url": "/germany/ja/living/income-tax-return-germany/",
+    "title": "ドイツの確定申告（Steuererklärung）入門｜会社員の義務・任意の見分け方、期限、ELSTERの流れ",
+    "category": "お金・税金",
+    "summary": "ドイツで働く会社員が確定申告を出す義務があるか、任意で出すと税金が戻りやすいのはどんな年かを、所得税法の条件に沿って整理します。2026年分の期限は2027年8月2日、任意申告は4年以内。通勤・在宅勤務の控除額、ELSTERの登録から税額決定通知の確認までの流れ、日本の収入がある年の注意点も説明します。",
+    "published_at": "2026-11-05",
+    "last_verified": "2026-11-05",
+    "tags": [
+      "確定申告",
+      "所得税",
+      "ELSTER",
+      "還付",
+      "会社員",
+      "通勤控除",
+      "在宅勤務",
+      "税金"
+    ],
+    "updated_at": "2026-11-05",
+    "related_articles": [
+      "tax-id-steuernummer-steuerklasse",
+      "minijob-grenze-2027",
+      "returning-to-japan-checklist",
+      "germany-first-30-days"
+    ],
+    "official_sources": [
+      {
+        "title": "所得税法第46条：給与所得者に申告義務が生じる条件",
+        "url": "https://www.gesetze-im-internet.de/estg/__46.html"
+      },
+      {
+        "title": "租税通則法第149条：申告書の提出期限",
+        "url": "https://www.gesetze-im-internet.de/ao_1977/__149.html"
+      },
+      {
+        "title": "租税通則法第108条：期限が土日・祝日に当たる場合",
+        "url": "https://www.gesetze-im-internet.de/ao_1977/__108.html"
+      },
+      {
+        "title": "租税通則法第152条：期限後の提出に対する加算金",
+        "url": "https://www.gesetze-im-internet.de/ao_1977/__152.html"
+      },
+      {
+        "title": "租税通則法第169条・第170条：課税を確定できる期間（任意申告の4年）",
+        "url": "https://www.gesetze-im-internet.de/ao_1977/__169.html"
+      },
+      {
+        "title": "租税通則法第355条：税額決定への異議申立ての期間",
+        "url": "https://www.gesetze-im-internet.de/ao_1977/__355.html"
+      },
+      {
+        "title": "所得税法第9条：通勤費の控除（1kmあたり0.38ユーロ）",
+        "url": "https://www.gesetze-im-internet.de/estg/__9.html"
+      },
+      {
+        "title": "所得税法第9a条：給与所得者の概算控除（1,230ユーロ）",
+        "url": "https://www.gesetze-im-internet.de/estg/__9a.html"
+      },
+      {
+        "title": "所得税法第4条第5項第6c号：在宅勤務の1日6ユーロの控除",
+        "url": "https://www.gesetze-im-internet.de/estg/__4.html"
+      },
+      {
+        "title": "所得税法第32b条：税率を決めるときだけ加える収入（累進の留保）",
+        "url": "https://www.gesetze-im-internet.de/estg/__32b.html"
+      },
+      {
+        "title": "所得税法第35a条：家事サービス・職人工事の税額控除",
+        "url": "https://www.gesetze-im-internet.de/estg/__35a.html"
+      },
+      {
+        "title": "ELSTER：ドイツ税務当局のオンライン申告ポータル",
+        "url": "https://www.elster.de/eportal/start"
+      },
+      {
+        "title": "消費者センター：確定申告は誰がいつ出すのか",
+        "url": "https://www.verbraucherzentrale.de/wissen/geld-versicherungen/sparen-und-anlegen/steuererklaerung-wer-sie-wann-beim-finanzamt-abgeben-muss-24899"
+      }
+    ],
+    "image": "/assets/img/living/income-tax-return-germany.webp",
+    "image_alt": "机の上に書類の束、電卓、ノートパソコン、領収書を並べ、1年分の税金を整理する様子のイラスト"
   }
 ]

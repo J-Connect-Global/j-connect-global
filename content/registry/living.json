@@ -3497,8 +3497,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-28",
-    "updated_at": "2026-11-02",
-    "last_verified": "2026-11-02",
+    "updated_at": "2026-11-05",
+    "last_verified": "2026-11-05",
     "next_review": "2027-01-15",
     "home_visible": false,
     "home_order": 109,
@@ -3510,7 +3510,7 @@
     "review": {
       "status": "needs_review",
       "reviewed_by": "AI official-source verification; employment-law review pending",
-      "last_reviewed_at": "2026-11-02",
+      "last_reviewed_at": "2026-11-05",
       "next_review_due": "2026-12-15"
     },
     "tags": [

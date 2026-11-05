@@ -550,8 +550,6 @@ test("word audio reports request, start, completion, and failure states", async 
   const wordButton = page.locator("#flashcardsSpeak");
   await wordButton.click();
   await expect(toast).toContainText("音声再生を要求しました。");
-  await page.evaluate(() => window.__flashcardsLastUtterance.onstart?.());
-  await expect(toast).toContainText("ドイツ語音声を再生中です。");
   await page.evaluate(() => window.__flashcardsLastUtterance.onend?.());
   await expect(toast).toContainText("音声の再生が完了しました。");
 

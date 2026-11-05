@@ -7185,16 +7185,16 @@
     "disclaimer_type": "news_explainer",
     "review": {
       "status": "needs_review",
-      "reviewed_by": "AI official-source verification; human editorial review pending",
-      "last_reviewed_at": "2026-11-04",
+      "reviewed_by": "AI official-source verification; human editorial review pending (Destatis checked 2026-11-05)",
+      "last_reviewed_at": "2026-11-05",
       "next_review_due": "2026-11-11"
     },
     "title": "ドイツの物価は2026年10月に2.8％上昇｜9月から鈍化、エネルギー高は続く",
     "category": "お金・税金",
     "summary": "ドイツ連邦統計局の10月速報では、消費者物価は前年同月比2.8％上昇、前月比0.2％低下。9月の3.3％から伸びは鈍化しましたが、エネルギーは前年比12.2％上昇しています。速報値の読み方と家計で確認すべき点を整理します。",
     "published_at": null,
-    "updated_at": "2026-11-04",
-    "last_verified": "2026-11-04",
+    "updated_at": "2026-11-05",
+    "last_verified": "2026-11-05",
     "tags": [
       "物価",
       "インフレ",
@@ -7243,16 +7243,16 @@
     "disclaimer_type": "news_explainer",
     "review": {
       "status": "needs_review",
-      "reviewed_by": "AI official-source verification; human editorial review pending",
-      "last_reviewed_at": "2026-11-04",
+      "reviewed_by": "AI official-source verification; human editorial review pending (BA and SGB III checked 2026-11-05)",
+      "last_reviewed_at": "2026-11-05",
       "next_review_due": "2026-11-30"
     },
-    "title": "ドイツの失業者は2026年10月に295.5万人｜秋の改善は弱く、季節調整後は増加",
+    "title": "ドイツの失業率は2026年10月に6.3％｜登録失業者295.5万人、季節調整後は増加",
     "category": "仕事",
-    "summary": "連邦雇用庁の2026年10月統計では、登録失業者は295万5,000人で前月比4万人減。ただし季節調整後は4,000人増、前年同月比では4万4,000人増でした。求人・失業率・広義の雇用不足指標を分け、求職者が地域や職種の状況を確認する方法を整理します。",
+    "summary": "連邦雇用庁の2026年10月統計では、登録失業者は295万5,000人、失業率は6.3％でした。前月比4万人減でも、季節調整後は4,000人増、前年同月比では4万4,000人増です。求人と広義の雇用不足指標を分け、求職者が地域・職種の状況を確認する方法を整理します。",
     "published_at": null,
-    "updated_at": "2026-11-04",
-    "last_verified": "2026-11-04",
+    "updated_at": "2026-11-05",
+    "last_verified": "2026-11-05",
     "tags": [
       "ドイツ雇用",
       "失業率",
@@ -7293,6 +7293,14 @@
       {
         "title": "連邦雇用庁：失業登録",
         "url": "https://www.arbeitsagentur.de/arbeitslos-melden"
+      },
+      {
+        "title": "法令：社会法典第3編第38条（求職登録）",
+        "url": "https://www.gesetze-im-internet.de/sgb_3/__38.html"
+      },
+      {
+        "title": "法令：社会法典第3編第141条（失業登録）",
+        "url": "https://www.gesetze-im-internet.de/sgb_3/__141.html"
       }
     ]
   },

@@ -1831,6 +1831,7 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/tax-id-steuernummer-steuerklasse/",
     "related_articles": [
+      "income-tax-return-germany",
       "germany-first-30-days",
       "anmeldung-guide",
       "bank-account-germany"
@@ -2476,6 +2477,7 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/residence-permit-renewal-germany/",
     "related_articles": [
+      "permanent-residence-germany",
       "anmeldung-guide",
       "germany-first-30-days",
       "moving-checklist-germany"
@@ -4721,5 +4723,103 @@
     ],
     "image": "/assets/img/living/income-tax-return-germany.webp",
     "image_alt": "机の上に書類の束、電卓、ノートパソコン、領収書を並べ、1年分の税金を整理する様子のイラスト"
+  },
+  {
+    "id": "L075",
+    "slug": "permanent-residence-germany",
+    "url": "/germany/ja/living/permanent-residence-germany/",
+    "markdown_path": "/content/living/permanent-residence-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 45,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: AufenthG, AufenthV, BeschV, StAG); human immigration review pending",
+      "last_reviewed_at": "2026-11-05",
+      "next_review_due": "2027-05-01"
+    },
+    "canonical_url": "/germany/ja/living/permanent-residence-germany/",
+    "title": "ドイツの永住許可（Niederlassungserlaubnis）｜5年・3年・21か月の条件、日本人が確認したい点、失効の注意",
+    "category": "役所・滞在",
+    "summary": "ドイツの無期限の滞在許可（永住許可）は、一般的には5年・年金60か月・ドイツ語B1が目安ですが、専門人材は3年、EUブルーカードは最短21か月、ドイツ人の配偶者は3年の特例があります。日本国籍者向けの就労許可では特例が使えない場合があること、6か月以上の出国で失効する点、手数料113ユーロと申請の流れを、滞在法の条文に沿って整理します。",
+    "published_at": "2026-11-05",
+    "last_verified": "2026-11-05",
+    "tags": [
+      "永住許可",
+      "Niederlassungserlaubnis",
+      "滞在許可",
+      "外国人局",
+      "ブルーカード",
+      "ドイツ語B1",
+      "年金"
+    ],
+    "updated_at": "2026-11-05",
+    "related_articles": [
+      "residence-permit-renewal-germany",
+      "eu-blue-card-germany",
+      "japan-germany-social-security-pension",
+      "family-reunification-spouse-work-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "滞在法第9条：永住許可（一般の条件）",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__9.html"
+      },
+      {
+        "title": "滞在法第18c条：専門人材・EUブルーカード保持者の永住許可",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__18c.html"
+      },
+      {
+        "title": "滞在法第28条：ドイツ人の家族の滞在と永住許可",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__28.html"
+      },
+      {
+        "title": "滞在法第9a条：EU長期滞在許可",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__9a.html"
+      },
+      {
+        "title": "滞在法第51条：滞在許可の失効",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__51.html"
+      },
+      {
+        "title": "滞在法第2条：ドイツ語能力の段階（A1・A2・B1・B2）",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__2.html"
+      },
+      {
+        "title": "滞在法第19c条：資格によらない就労のための滞在許可",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__19c.html"
+      },
+      {
+        "title": "就労令第26条：日本国籍者などの就労",
+        "url": "https://www.gesetze-im-internet.de/beschv_2013/__26.html"
+      },
+      {
+        "title": "滞在令第44条：永住許可の手数料",
+        "url": "https://www.gesetze-im-internet.de/aufenthv/__44.html"
+      },
+      {
+        "title": "国籍法第10条：ドイツ国籍の取得（帰化）の条件",
+        "url": "https://www.gesetze-im-internet.de/stag/__10.html"
+      },
+      {
+        "title": "連邦政府の専門人材向けポータル：ビザと滞在",
+        "url": "https://www.make-it-in-germany.com/en/visa-residence"
+      },
+      {
+        "title": "デュッセルドルフ市：外国人局のお知らせと申請方法",
+        "url": "https://www.duesseldorf.de/auslaenderamt/aktuelles"
+      },
+      {
+        "title": "日本の国籍法（e-Gov法令検索）",
+        "url": "https://laws.e-gov.go.jp/law/325AC0000000147"
+      }
+    ],
+    "image": "/assets/img/living/permanent-residence-germany.webp",
+    "image_alt": "窓辺に植木鉢が並ぶ集合住宅の玄関前で、鍵と滞在カードを思わせる無地のカードが置かれた様子のイラスト"
   }
 ]

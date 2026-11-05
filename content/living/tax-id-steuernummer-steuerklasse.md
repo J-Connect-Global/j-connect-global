@@ -12,7 +12,7 @@ updated_at: "2026-10-17"
 last_verified: "2026-08-31"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/tax-id-steuernummer-steuerklasse/"
-related_articles: ["germany-first-30-days","anmeldung-guide","bank-account-germany"]
+related_articles: ["income-tax-return-germany","germany-first-30-days","anmeldung-guide","bank-account-germany"]
 official_sources:
   - title: "ドイツ連邦中央税務庁：税務識別番号"
     url: "https://www.bzst.de/DE/Privatpersonen/SteuerlicheIdentifikationsnummer/steuerlicheidentifikationsnummer_node.html"

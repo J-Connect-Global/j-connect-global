@@ -24,5 +24,18 @@
     "status": "generated",
     "created": "2026-11-05",
     "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted on 2026-11-05; the prompt above was not used)"
+  },
+  {
+    "slug": "permanent-residence-germany",
+    "section": "living",
+    "markdown": "content/living/permanent-residence-germany.md",
+    "dest": "assets/img/living/permanent-residence-germany.webp",
+    "alt": "窓辺に植木鉢が並ぶ集合住宅の玄関前で、鍵と滞在カードを思わせる無地のカードが置かれた様子のイラスト",
+    "prompt": "Asset type: article hero and thumbnail for a Japanese-language guide to life in Germany. Wide 16:9 warm flat vector illustration. Front of a cream-coloured German apartment house with a red tiled roof, window boxes with flowers, a green arched double door with two potted plants, a bicycle on the left; on a small wooden table in the foreground a blank ID-style card with abstract grey lines and a brass house key. Door and card readable as a 240px thumbnail. No readable text, letters, numbers, flags, official seals, logos or brand names. No people.",
+    "caption": "AIの支援でコードから描画したイラスト（J-Connect）。ドイツに長く暮らすことを表したもので、実在の建物や公的書類を描いたものではありません。",
+    "credit": "AI-assisted vector illustration / J-Connect",
+    "status": "generated",
+    "created": "2026-11-05",
+    "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted on 2026-11-05; the prompt above was not used)"
   }
 ]

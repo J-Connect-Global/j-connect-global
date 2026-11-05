@@ -1458,17 +1458,6 @@
   color: #fff;
 }
 
-.flashcards-speech-status {
-  flex-basis: 100%;
-  margin: 0;
-  color: var(--flashcards-muted, var(--jc-muted));
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.6;
-}
-
-.flashcards-speech-status:empty { display: none; }
-
 .flashcards-auto-speech {
   display: inline-flex;
   align-items: center;

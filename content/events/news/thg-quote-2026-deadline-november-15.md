@@ -9,8 +9,8 @@ city: "ドイツ全土"
 location: ""
 event_date: "2026年の申告期限・11月15日（日）"
 published_at: ""
-updated_at: "2026-11-04"
-last_verified: "2026-11-04"
+updated_at: "2026-11-05"
+last_verified: "2026-11-05"
 next_review: "2026-11-10"
 summary: "ドイツで登録した純電気自動車の2026年分THG-Quoteは、非公開充電の定額推計なら11月15日が法定期限です。公共充電設備の翌年2月28日との違い、2026年からの環境庁審査手数料、仲介事業者の受付期限と中古車の確認点を解説します。"
 tags: ["THG-Quote", "電気自動車", "EV", "交通・車", "申請期限", "環境庁"]
@@ -142,4 +142,4 @@ official_sources:
 - [法令：38番目の連邦排出規制令 第7条](https://www.gesetze-im-internet.de/bimschv_38_2017/__7.html)
 - [ADAC：2026年のTHG-Quoteと申請の仕組み（2026年6月24日）](https://www.adac.de/rund-ums-fahrzeug/elektromobilitaet/elektroauto/thg-quote/)
 
-<small>確認日：2026年11月4日。申請期限、審査手数料、事業者の受付状況は変更される可能性があります。申込み前に環境庁と利用する事業者の最新案内を確認してください。税務上の扱いは個別の状況により異なる場合があります。</small>
+<small>確認日：2026年11月5日。申請期限、審査手数料、事業者の受付状況は変更される可能性があります。申込み前に環境庁と利用する事業者の最新案内を確認してください。税務上の扱いは個別の状況により異なる場合があります。</small>

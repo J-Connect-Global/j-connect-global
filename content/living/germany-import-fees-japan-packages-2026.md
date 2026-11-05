@@ -18,6 +18,8 @@ related_articles: ["christmas-post-germany-to-japan-2026", "dhl-delivered-but-no
 official_sources:
   - title: "EU理事会：小口荷物へのEU措置（3ユーロ関税・2ユーロ取扱手数料）"
     url: "https://www.consilium.europa.eu/de/policies/eu-action-influx-of-small-parcels/"
+  - title: "欧州委員会DG TAXUD：3ユーロ関税・2ユーロ取扱手数料の技術ガイダンス（2026年10月5日版、法的拘束力なし）"
+    url: "https://taxation-customs.ec.europa.eu/document/download/053e5b4e-f0be-4f20-9a23-3e3b659a6676_en?filename=Customs+Guidance+on+EUR+3+customs+duty.pdf"
   - title: "EU理事会：3ユーロ定額関税の最終承認（2026年2月11日）"
     url: "https://www.consilium.europa.eu/en/press/press-releases/2026/02/11/council-gives-final-green-light-to-new-customs-duty-rules-for-small-parcels/"
   - title: "欧州委員会：EU税関改革と取扱手数料"
@@ -146,6 +148,7 @@ EU委員会の技術ガイダンスでは、主な債務者は税関申告を行
 ## 公式情報・参考ソース
 
 - [EU理事会：小口荷物へのEU措置](https://www.consilium.europa.eu/de/policies/eu-action-influx-of-small-parcels/)
+- [欧州委員会DG TAXUD：3ユーロ関税・2ユーロ取扱手数料の技術ガイダンス（2026年10月5日版、法的拘束力なし）](https://taxation-customs.ec.europa.eu/document/download/053e5b4e-f0be-4f20-9a23-3e3b659a6676_en?filename=Customs+Guidance+on+EUR+3+customs+duty.pdf)
 - [EU理事会：3ユーロ定額関税の最終承認（2026年2月11日）](https://www.consilium.europa.eu/en/press/press-releases/2026/02/11/council-gives-final-green-light-to-new-customs-duty-rules-for-small-parcels/)
 - [EU規則2026/382：150ユーロ以下の小口輸入に関する定額関税](https://eur-lex.europa.eu/eli/reg/2026/382/oj/eng)
 - [欧州委員会：EU税関改革](https://taxation-customs.ec.europa.eu/customs/eu-customs-reform_en)

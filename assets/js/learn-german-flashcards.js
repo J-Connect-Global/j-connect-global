@@ -70,6 +70,7 @@
     speak: root.querySelector("#flashcardsSpeak"),
     autoSpeak: root.querySelector("#flashcardsAutoSpeak"),
     autoSpeakStatus: root.querySelector("#flashcardsAutoSpeakStatus"),
+    speechStatus: root.querySelector("#flashcardsSpeechStatus"),
     speakExample: root.querySelector("#flashcardsSpeakExample"),
     speechFallback: root.querySelector("#flashcardsSpeechFallback"),
     flip: root.querySelector("#flashcardFlip"),
@@ -523,6 +524,7 @@
 
   function renderCard() {
     stopSpeech();
+    elements.speechStatus.textContent = "";
     const card = currentCard();
     if (!card) {
       showError("セッション内のカードが見つかりませんでした。教材を選び直してください。");
@@ -721,9 +723,11 @@
   }
 
   function disableAutoSpeech() {
+    const wasSpeaking = Boolean(state.speechUtterance);
     state.autoSpeak = elements.autoSpeak.checked = false;
     elements.autoSpeakStatus.textContent = "OFF";
     stopSpeech();
+    if (wasSpeaking) elements.speechStatus.textContent = "自動読み上げを停止しました。";
   }
 
   function speechFailed() {
@@ -735,9 +739,11 @@
     if (!text?.trim() || !speechSupported()) return;
     if (state.activeSpeechButton === button) {
       stopSpeech();
+      elements.speechStatus.textContent = "再生を停止しました。";
       return;
     }
     stopSpeech();
+    elements.speechStatus.textContent = "";
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = "de-DE";
     utterance.rate = 0.9;
@@ -749,17 +755,30 @@
     const finish = () => {
       if (state.speechUtterance === utterance) resetSpeechState();
     };
-    utterance.onend = finish;
+    utterance.onstart = () => {
+      if (state.speechUtterance === utterance) elements.speechStatus.textContent = "再生中…";
+    };
+    utterance.onend = () => {
+      const isCurrent = state.speechUtterance === utterance;
+      finish();
+      if (isCurrent) elements.speechStatus.textContent = "再生が完了しました。";
+    };
     utterance.onerror = event => {
       const isCurrent = state.speechUtterance === utterance;
       finish();
-      if (isCurrent && !["canceled", "interrupted"].includes(event.error)) {
+      if (!isCurrent) return;
+      if (!["canceled", "interrupted"].includes(event.error)) {
+        elements.speechStatus.textContent = "音声を再生できませんでした。端末の音声設定を確認してください。";
         speechFailed();
+      } else {
+        elements.speechStatus.textContent = "再生を停止しました。";
       }
     };
+    elements.speechStatus.textContent = "音声再生を要求しました。再生されない場合は端末の音声設定を確認してください。";
     try {
       window.speechSynthesis.speak(utterance);
     } catch {
+      elements.speechStatus.textContent = "音声を再生できませんでした。端末の音声設定を確認してください。";
       speechFailed();
     }
   }

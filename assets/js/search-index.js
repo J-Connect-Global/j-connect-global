@@ -1260,6 +1260,21 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
+    "title": "ドイツの育児給付（Elterngeld）の計算と受け取り方｜手取りの65〜67％、ElterngeldPlus、パートナーボーナス、外国籍の条件",
+    "description": "ドイツの育児給付は、出生前の手取りのおおむね65〜67％、月300〜1,800ユーロです。金額の計算方法、時短勤務と組み合わせるElterngeldPlus、両親が週24〜32時間働くパートナーボーナス、14か月の分け方、日本国籍の親の受給条件、給与税区分や確定申告との関係を、連邦両親手当・育児休業法の条文に沿って具体例で整理します。",
+    "url": "/germany/ja/living/elterngeld-guide-germany/",
+    "category": "生活・手続き",
+    "tags": [
+      "Elterngeld",
+      "育児給付",
+      "ElterngeldPlus",
+      "育児休業",
+      "出産後の手続き",
+      "共働き",
+      "給付金"
+    ]
+  },
+  {
     "title": "デュッセルドルフ日本デー｜ライン川に映る日独交流と日本文化",
     "description": "デュッセルドルフ日本デーを、食・武道・舞台・ポップカルチャー・花火が集まる催しとして紹介。大きな日本人コミュニティと街の関係、現地で見たい文化の交わりを解説します。",
     "url": "/germany/ja/events/japan-day-duesseldorf/",

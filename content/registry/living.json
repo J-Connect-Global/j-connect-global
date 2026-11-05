@@ -1897,6 +1897,7 @@
     "related_articles": [
       "birth-day-germany",
       "birth-procedures-germany",
+      "elterngeld-guide-germany",
       "stroller-buying-guide-germany",
       "kita-u3-tagesmutter-guide",
       "health-insurance-guide"
@@ -2768,6 +2769,7 @@
     "updated_at": "2026-10-27",
     "related_articles": [
       "pregnancy-birth-germany",
+      "elterngeld-guide-germany",
       "birth-day-germany",
       "health-insurance-guide",
       "kita-u3-tagesmutter-guide",
@@ -4821,5 +4823,103 @@
     ],
     "image": "/assets/img/living/permanent-residence-germany.webp",
     "image_alt": "窓辺に植木鉢が並ぶ集合住宅の玄関前で、鍵と滞在カードを思わせる無地のカードが置かれた様子のイラスト"
+  },
+  {
+    "id": "L076",
+    "slug": "elterngeld-guide-germany",
+    "url": "/germany/ja/living/elterngeld-guide-germany/",
+    "markdown_path": "/content/living/elterngeld-guide-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 55,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "family_administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: BEEG, EStG); human review pending",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-02-01"
+    },
+    "canonical_url": "/germany/ja/living/elterngeld-guide-germany/",
+    "title": "ドイツの育児給付（Elterngeld）の計算と受け取り方｜手取りの65〜67％、ElterngeldPlus、パートナーボーナス、外国籍の条件",
+    "category": "家族・子育て",
+    "summary": "ドイツの育児給付は、出生前の手取りのおおむね65〜67％、月300〜1,800ユーロです。金額の計算方法、時短勤務と組み合わせるElterngeldPlus、両親が週24〜32時間働くパートナーボーナス、14か月の分け方、日本国籍の親の受給条件、給与税区分や確定申告との関係を、連邦両親手当・育児休業法の条文に沿って具体例で整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "Elterngeld",
+      "育児給付",
+      "ElterngeldPlus",
+      "育児休業",
+      "出産後の手続き",
+      "共働き",
+      "給付金"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "birth-procedures-germany",
+      "pregnancy-birth-germany",
+      "kindergeld-auszahlungstermine-2027",
+      "income-tax-return-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "連邦両親手当・育児休業法第1条：受給できる人、外国籍の条件、所得の上限",
+        "url": "https://www.gesetze-im-internet.de/beeg/__1.html"
+      },
+      {
+        "title": "連邦両親手当・育児休業法第2条：金額（65〜100％、300〜1,800ユーロ）",
+        "url": "https://www.gesetze-im-internet.de/beeg/__2.html"
+      },
+      {
+        "title": "連邦両親手当・育児休業法第2a条：きょうだい加算・多胎加算",
+        "url": "https://www.gesetze-im-internet.de/beeg/__2a.html"
+      },
+      {
+        "title": "連邦両親手当・育児休業法第2b条・第2c条：計算の対象期間と所得",
+        "url": "https://www.gesetze-im-internet.de/beeg/__2c.html"
+      },
+      {
+        "title": "連邦両親手当・育児休業法第3条：出産手当などとの調整",
+        "url": "https://www.gesetze-im-internet.de/beeg/__3.html"
+      },
+      {
+        "title": "連邦両親手当・育児休業法第4条：受給期間と同時受給",
+        "url": "https://www.gesetze-im-internet.de/beeg/__4.html"
+      },
+      {
+        "title": "連邦両親手当・育児休業法第4a条・第4b条：ElterngeldPlusとパートナーボーナス",
+        "url": "https://www.gesetze-im-internet.de/beeg/__4b.html"
+      },
+      {
+        "title": "連邦両親手当・育児休業法第7条：申請とさかのぼれる期間",
+        "url": "https://www.gesetze-im-internet.de/beeg/__7.html"
+      },
+      {
+        "title": "所得税法第46条：給付を受けた年の確定申告",
+        "url": "https://www.gesetze-im-internet.de/estg/__46.html"
+      },
+      {
+        "title": "連邦家族ポータル：育児給付の概要",
+        "url": "https://familienportal.de/familienportal/familienleistungen/elterngeld"
+      },
+      {
+        "title": "連邦家族ポータル：2024年4月以降の出生での変更点",
+        "url": "https://familienportal.de/familienportal/familienleistungen/elterngeld/faq/was-aendert-sich-fuer-geburten-ab-1-april-2024-beim-elterngeld-237122"
+      },
+      {
+        "title": "連邦家族ポータル：育児給付の申請方法",
+        "url": "https://familienportal.de/familienportal/familienleistungen/elterngeld/faq/wie-kann-ich-elterngeld-beantragen--124762"
+      },
+      {
+        "title": "NRW家族ポータル：育児給付の窓口とオンライン申請",
+        "url": "https://www.familienportal.nrw/de/elterngeld"
+      }
+    ],
+    "image": "/assets/img/living/elterngeld-guide-germany.webp",
+    "image_alt": "ベビーカーと小さな靴、カレンダー、電卓を置いた明るい部屋で、育児の期間とお金を計画する様子のイラスト"
   }
 ]

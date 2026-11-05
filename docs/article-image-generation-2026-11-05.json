@@ -37,5 +37,18 @@
     "status": "generated",
     "created": "2026-11-05",
     "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted on 2026-11-05; the prompt above was not used)"
+  },
+  {
+    "slug": "elterngeld-guide-germany",
+    "section": "living",
+    "markdown": "content/living/elterngeld-guide-germany.md",
+    "dest": "assets/img/living/elterngeld-guide-germany.webp",
+    "alt": "ベビーカーと小さな靴、カレンダー、電卓を置いた明るい部屋で、育児の期間とお金を計画する様子のイラスト",
+    "prompt": "Asset type: article hero and thumbnail for a Japanese-language guide to life in Germany. Wide 16:9 warm flat vector illustration. A bright living room: a blue baby pram in the centre, a wall calendar with one highlighted week and a small heart, a shelf with a plant and a teddy bear, a window with curtains, small red baby shoes on the floor and a calculator with a few coins on a rug. Pram and calendar readable as a 240px thumbnail. No readable text, letters, numbers, logos or brand names. No people.",
+    "caption": "AIの支援でコードから描画したイラスト（J-Connect）。育児給付の計画を表したもので、実在の人物・書類・画面を描いたものではありません。",
+    "credit": "AI-assisted vector illustration / J-Connect",
+    "status": "generated",
+    "created": "2026-11-06",
+    "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted; the prompt above was not used)"
   }
 ]

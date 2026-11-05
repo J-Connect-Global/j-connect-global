@@ -12,7 +12,7 @@ updated_at: "2026-10-17"
 last_verified: "2026-08-31"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/pregnancy-birth-germany/"
-related_articles: ["birth-day-germany","birth-procedures-germany","stroller-buying-guide-germany","kita-u3-tagesmutter-guide","health-insurance-guide"]
+related_articles: ["birth-day-germany","birth-procedures-germany","elterngeld-guide-germany","stroller-buying-guide-germany","kita-u3-tagesmutter-guide","health-insurance-guide"]
 ---
 
 # ドイツで妊娠・出産｜医療、仕事、出生届の全体ガイド

@@ -9,8 +9,8 @@ city: "ドイツ全土"
 location: ""
 event_date: "2026年10月統計・10月30日速報"
 published_at: ""
-updated_at: "2026-11-04"
-last_verified: "2026-11-04"
+updated_at: "2026-11-05"
+last_verified: "2026-11-05"
 next_review: "2026-11-11"
 summary: "ドイツ連邦統計局の10月速報では、消費者物価は前年同月比2.8％上昇、前月比0.2％低下。9月の3.3％から伸びは鈍化しましたが、エネルギーは前年比12.2％上昇しています。速報値の読み方と家計で確認すべき点を整理します。"
 tags: ["物価", "インフレ", "家計", "エネルギー", "消費者物価", "ドイツ生活"]
@@ -99,4 +99,4 @@ official_sources:
 - [連邦統計局：消費者物価指数](https://www.destatis.de/DE/Themen/Wirtschaft/Preise/Verbraucherpreisindex/_inhalt.html)
 - [連邦統計局：2026年9月の消費者物価・確定値（2026年10月13日）](https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_364_611.html)
 
-<small>確認日：2026年11月4日。10月分は速報値です。2026年11月11日の確定値公表後に再確認します。</small>
+<small>確認日：2026年11月5日。10月分は速報値です。2026年11月11日の確定値公表後に再確認します。</small>

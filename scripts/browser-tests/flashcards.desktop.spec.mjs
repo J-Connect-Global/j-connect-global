@@ -541,7 +541,7 @@ test("word playback is explicit and automatic word speech defaults OFF", async (
   await page.screenshot({path:testInfo.outputPath('word-audio-default-off-desktop.png')});
 });
 
-test("word audio reports request, start, completion, and failure states", async ({ page }) => {
+test("word audio reports request, completion, and failure states", async ({ page }) => {
   await installSpeechMock(page);
   await openDataRoute(page, flashcardsRoute, [decksPath, a1CardsPath]);
   await page.locator("#flashcardsStart").click();
@@ -554,10 +554,9 @@ test("word audio reports request, start, completion, and failure states", async 
   await expect(toast).toContainText("音声の再生が完了しました。");
 
   await wordButton.click();
-  await expect(status).toContainText("音声再生を要求しました");
+  await expect(toast).toContainText("音声再生を要求しました。");
   await page.evaluate(() => window.__flashcardsLastUtterance.onerror?.({ error: "not-allowed" }));
   await expect(toast).toContainText("音声を再生できませんでした");
-  await expect(page.locator("#flashcardsToast")).toContainText("音声を再生できませんでした");
   await expect(page.locator("#flashcardsAutoSpeak")).not.toBeChecked();
 });
 

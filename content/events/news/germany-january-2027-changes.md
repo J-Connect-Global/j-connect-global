@@ -9,7 +9,7 @@ city: "ドイツ全土"
 location: ""
 event_date: "2027年1月1日前後"
 published_at: "2026-10-21"
-updated_at: "2026-11-02"
+updated_at: "2026-11-05"
 last_verified: "2026-10-21"
 next_review: "2026-12-01"
 summary: "2027年1月からドイツで変わる制度を、在独日本人の生活に関わる項目に絞って整理。決定済みのものと、まだ法案段階のものを分けて解説します。"
@@ -23,7 +23,7 @@ image: "/assets/img/events/germany-january-2027-changes.webp"
 image_alt: "壁の1月のカレンダーと、机の上のノートパソコンと書類を描いたイラスト"
 image_caption: "イラスト：J-Connect。制度変更のテーマを表したもので、公式資料を再現していません。"
 image_credit: "Illustration / J-Connect"
-related_articles: ["deutschlandticket-2027-price-consent", "db-2027-timetable-family-ticket", "kindergeld-auszahlungstermine-2027", "minijob-grenze-2027", "tax-refund-2022-deadline-december-2026", "japan-germany-social-security-pension"]
+related_articles: ["deutschlandticket-2027-price-consent", "db-2027-timetable-family-ticket", "kindergeld-auszahlungstermine-2027", "minijob-grenze-2027", "tax-refund-2022-deadline-december-2026", "japan-germany-social-security-pension", "eu-blue-card-germany", "rundfunkbeitrag-guide"]
 official_sources:
   - title: "連邦労働社会省：2027年の社会保険計算値を閣議決定（2026年10月7日）"
     url: "https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2026/bundeskabinett-beschliesst-sozialversicherungsrechengroessen-2027.html"
@@ -135,6 +135,8 @@ official_sources:
 
 ## 6. 2027年中のその他の変更
 
+- **EUブルーカードの年収の条件**：年金保険の保険料算定上限に連動して毎年変わります。2027年の金額は年末に連邦官報で告示される見込みで、上限の政府案どおりなら原則5万3,100ユーロ、人手が足りない職業などは4万8,108.60ユーロです（J-Connectによる計算）。詳しくは[EUブルーカードのガイド](/germany/ja/living/eu-blue-card-germany/)を参照してください。
+- **放送負担金（Rundfunkbeitrag）**：算定委員会（KEF）は2027年1月から月18.36ユーロを月18.64ユーロにすることを勧告していますが、実際に変わるには州の決定が必要です。最新の状況は[放送負担金のガイド](/germany/ja/living/rundfunkbeitrag-guide/)で確認してください。
 - **EU域内の現金払い上限（2027年7月10日〜）**：EUのマネーロンダリング対策規則により、事業者との取引で現金払いできるのは最大10,000ユーロまでになります。個人間の取引は対象外です。
 - **新しい私的年金制度**：リースター年金（Riester-Rente）に代わり、ETFなどで運用できる国の補助付き「老後資産形成口座（Altersvorsorgedepot）」が2027年から始まる予定です。
 

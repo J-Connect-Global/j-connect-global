@@ -8,7 +8,7 @@ summary: "ドイツの鉄道を初めて使う人向けに、長距離列車と�
 status: "published"
 published: true
 published_at: "2026-08-03"
-updated_at: "2026-10-28"
+updated_at: "2026-11-05"
 last_verified: "2026-08-30"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/germany-train-travel-guide/"
@@ -76,7 +76,7 @@ ICEは高速列車、ICとECは都市間列車です。REやRBは地域の駅を
 
 ## 全国共通の地域交通定期券
 
-全国共通の地域交通定期券（正式名称 **Deutschlandticket**）は、ドイツ国内の地域列車、近郊列車、地下鉄、路面電車、バスで使える月額制の定期券です。2026年8月時点の公式価格は月63ユーロです。
+全国共通の地域交通定期券（正式名称 **Deutschlandticket**）は、ドイツ国内の地域列車、近郊列車、地下鉄、路面電車、バスで使える月額制の定期券です。2026年8月時点の公式価格は月63ユーロです。2027年1月からは月66.80ユーロへの値上げが決まっており、DBで購入した既存の契約は2026年11月30日までに新料金への同意が必要な場合があります。手順は「[Deutschlandticketは2027年66.80ユーロへ](/germany/ja/events/news/deutschlandticket-2027-price-consent/)」で確認できます。
 
 重要なのは、原則としてICE、IC、ECなどの長距離列車には使えないことです。経路検索に高速列車が混ざった場合、その区間には別の切符が必要です。一部の例外区間もあるため、列車種別とアプリの有効券表示を確認します。
 

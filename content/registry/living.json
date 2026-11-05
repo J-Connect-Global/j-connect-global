@@ -2207,7 +2207,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-10-31",
+    "updated_at": "2026-11-05",
     "last_verified": "2026-10-31",
     "tags": [
       "健康保険",
@@ -2408,7 +2408,7 @@
       "切符",
       "遅延"
     ],
-    "updated_at": "2026-10-28",
+    "updated_at": "2026-11-05",
     "related_articles": [
       "cologne-city-guide",
       "duesseldorf-city-guide",
@@ -2763,7 +2763,7 @@
       "パスポート",
       "NRW"
     ],
-    "updated_at": "2026-10-27",
+    "updated_at": "2026-11-05",
     "related_articles": [
       "pregnancy-birth-germany",
       "birth-day-germany",
@@ -4489,7 +4489,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-29",
-    "updated_at": "2026-10-29",
+    "updated_at": "2026-11-05",
     "last_verified": "2026-10-29",
     "next_review": "2027-01-15",
     "home_visible": false,
@@ -4526,6 +4526,10 @@
       {
         "title": "連邦経済エネルギー省：EUブルーカードのよくある質問（PDF）",
         "url": "https://www.make-it-in-germany.com/fileadmin/1_Rebrush_2022/b_Arbeitgeber/PDF-Dateien/BMWE_Fragen_und_Antworten_zur_Blauen_Karte_EU_DE.pdf"
+      },
+      {
+        "title": "連邦官報：2026年のEUブルーカード最低年収の告示（2025年12月18日）",
+        "url": "https://www.bundesanzeiger.de/pub/publication/REViP4bN6jVdpGxPaiQ/content/REViP4bN6jVdpGxPaiQ/BAnz%20AT%2018.12.2025%20B3.pdf"
       },
       {
         "title": "滞在法 第18g条（EUブルーカード）",

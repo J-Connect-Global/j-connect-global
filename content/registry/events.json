@@ -2813,7 +2813,9 @@
       "kindergeld-auszahlungstermine-2027",
       "minijob-grenze-2027",
       "tax-refund-2022-deadline-december-2026",
-      "japan-germany-social-security-pension"
+      "japan-germany-social-security-pension",
+      "eu-blue-card-germany",
+      "rundfunkbeitrag-guide"
     ],
     "city": "ドイツ全土",
     "area": "ドイツ全土",
@@ -2833,7 +2835,7 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-21",
-    "updated_at": "2026-11-02",
+    "updated_at": "2026-11-05",
     "last_verified": "2026-10-21",
     "canonical_url": "/germany/ja/events/news/germany-january-2027-changes/",
     "official_url": "",

@@ -15,7 +15,7 @@ tags: ["出産手続き","出生届","出生証明書","育児給付","児童手
 image_url: "/assets/images/living/birth-procedures-germany.webp"
 image_alt: "赤ちゃんの衣類と靴下、書類を入れるフォルダーを机に並べた出産手続きのイメージ"
 image_caption: "AI生成のイメージ画像。実際の申請書類を示すものではありません。"
-related_articles: ["pregnancy-birth-germany","birth-day-germany","health-insurance-guide","kita-u3-tagesmutter-guide","kindergeld-auszahlungstermine-2027"]
+related_articles: ["pregnancy-birth-germany","elterngeld-guide-germany","birth-day-germany","health-insurance-guide","kita-u3-tagesmutter-guide","kindergeld-auszahlungstermine-2027"]
 official_sources:
   - title: "連邦家族ポータル：出生登録と出生証明書"
     url: "https://familienportal.de/familienportal/lebenslagen/schwangerschaft-geburt/anmeldung-standesamt"
@@ -316,7 +316,7 @@ TKでは出生後に家族加入を申請でき、条件を満たす場合の加
 
 ## 育児給付：休業計画を生後月に合わせて申請する
 
-育児給付（Elterngeld）は、子どもの養育による収入減少などを支える制度です。勤務先へ育休を通知するだけでは受給できず、子どもの居住地を担当する給付窓口へ、出生後に申請します。
+育児給付（Elterngeld）は、子どもの養育による収入減少などを支える制度です。勤務先へ育休を通知するだけでは受給できず、子どもの居住地を担当する給付窓口へ、出生後に申請します。金額の計算例やElterngeldPlus・パートナーボーナスの使い分けは「[ドイツの育児給付（Elterngeld）の計算と受け取り方](/germany/ja/living/elterngeld-guide-germany/)」で詳しく説明しています。
 
 ### 受給資格を先に確認する
 

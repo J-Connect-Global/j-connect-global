@@ -1221,5 +1221,43 @@
       "ja": "契約開始日を書面で確認してください。"
     },
     "image_alt": "新居の電気メーター番号とインターネット契約書を見ながらカスタマーサービスへ電話する様子"
+  },
+  {
+    "id": "G030",
+    "title": "クリスマス・年末年始のドイツ語あいさつ｜カード・メール・職場で使う言い方と返し方",
+    "slug": "christmas-new-year-greetings",
+    "category": "季節・あいさつ",
+    "content_type": "phrase",
+    "summary": "Frohe Weihnachten、Guten Rutsch、Frohes neues Jahrをいつまで使うか、近所の人・同僚・先生へのカードやメールの文例、言われたときの返し方、休暇中の自動返信、職場の忘年会やプレゼント交換の表現をまとめます。",
+    "url": "/germany/ja/learn-german/christmas-new-year-greetings/",
+    "markdown_path": "/content/learn-german/christmas-new-year-greetings.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-11-05",
+    "updated_at": "2026-11-05",
+    "last_verified": "2026-11-05",
+    "tags": ["クリスマス", "年末年始", "あいさつ", "カード", "メール", "A1", "A2"],
+    "home_visible": true,
+    "home_order": 1,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/learn-german/christmas-new-year-greetings/",
+    "situation": ["work", "business-email"],
+    "goal": ["daily-life", "employment"],
+    "level": ["A1", "A2"],
+    "skill": ["speaking", "writing"],
+    "duration": ["15min"],
+    "official_sources": [],
+    "disclaimer_type": "language_learning",
+    "related_articles": ["work-email-phrases", "workplace-conversation-phrases", "kita-school-inquiry-phrases", "landlord-housing-email-phrases"],
+    "related_living_guides": ["christmas-post-germany-to-japan-2026", "nrw-christmas-opening-hours-2026"],
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI draft; native-speaker review pending",
+      "last_reviewed_at": "2026-11-05",
+      "next_review_due": "2027-11-01"
+    },
+    "image_alt": "もみの枝と星形のクッキー、ろうそくの横に、封筒とクリスマスカードを置いた机のイラスト"
   }
 ]

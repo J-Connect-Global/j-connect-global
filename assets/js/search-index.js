@@ -1229,6 +1229,37 @@ window.JCONNECT_SEARCH_INDEX = [
     ]
   },
   {
+    "title": "ドイツの確定申告（Steuererklärung）入門｜会社員の義務・任意の見分け方、期限、ELSTERの流れ",
+    "description": "ドイツで働く会社員が確定申告を出す義務があるか、任意で出すと税金が戻りやすいのはどんな年かを、所得税法の条件に沿って整理します。2026年分の期限は2027年8月2日、任意申告は4年以内。通勤・在宅勤務の控除額、ELSTERの登録から税額決定通知の確認までの流れ、日本の収入がある年の注意点も説明します。",
+    "url": "/germany/ja/living/income-tax-return-germany/",
+    "category": "生活・手続き",
+    "tags": [
+      "確定申告",
+      "所得税",
+      "ELSTER",
+      "還付",
+      "会社員",
+      "通勤控除",
+      "在宅勤務",
+      "税金"
+    ]
+  },
+  {
+    "title": "ドイツの永住許可（Niederlassungserlaubnis）｜5年・3年・21か月の条件、日本人が確認したい点、失効の注意",
+    "description": "ドイツの無期限の滞在許可（永住許可）は、一般的には5年・年金60か月・ドイツ語B1が目安ですが、専門人材は3年、EUブルーカードは最短21か月、ドイツ人の配偶者は3年の特例があります。日本国籍者向けの就労許可では特例が使えない場合があること、6か月以上の出国で失効する点、手数料113ユーロと申請の流れを、滞在法の条文に沿って整理します。",
+    "url": "/germany/ja/living/permanent-residence-germany/",
+    "category": "生活・手続き",
+    "tags": [
+      "永住許可",
+      "Niederlassungserlaubnis",
+      "滞在許可",
+      "外国人局",
+      "ブルーカード",
+      "ドイツ語B1",
+      "年金"
+    ]
+  },
+  {
     "title": "デュッセルドルフ日本デー｜ライン川に映る日独交流と日本文化",
     "description": "デュッセルドルフ日本デーを、食・武道・舞台・ポップカルチャー・花火が集まる催しとして紹介。大きな日本人コミュニティと街の関係、現地で見たい文化の交わりを解説します。",
     "url": "/germany/ja/events/japan-day-duesseldorf/",
@@ -3422,6 +3453,29 @@ window.JCONNECT_SEARCH_INDEX = [
       "daily-life",
       "speaking",
       "reading",
+      "writing",
+      "15min"
+    ]
+  },
+  {
+    "title": "クリスマス・年末年始のドイツ語あいさつ｜カード・メール・職場で使う言い方と返し方",
+    "description": "Frohe Weihnachten、Guten Rutsch、Frohes neues Jahrをいつまで使うか、近所の人・同僚・先生へのカードやメールの文例、言われたときの返し方、休暇中の自動返信、職場の忘年会やプレゼント交換の表現をまとめます。",
+    "url": "/germany/ja/learn-german/christmas-new-year-greetings/",
+    "category": "ドイツ語・学び",
+    "tags": [
+      "クリスマス",
+      "年末年始",
+      "あいさつ",
+      "カード",
+      "メール",
+      "A1",
+      "A2",
+      "phrase",
+      "work",
+      "business-email",
+      "daily-life",
+      "employment",
+      "speaking",
       "writing",
       "15min"
     ]

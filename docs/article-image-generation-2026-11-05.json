@@ -1,0 +1,41 @@
+[
+  {
+    "slug": "income-tax-return-germany",
+    "section": "living",
+    "markdown": "content/living/income-tax-return-germany.md",
+    "dest": "assets/img/living/income-tax-return-germany.webp",
+    "alt": "机の上に書類の束、電卓、ノートパソコン、領収書を並べ、1年分の税金を整理する様子のイラスト",
+    "prompt": "Asset type: article hero and thumbnail for a Japanese-language guide to life in Germany. Wide 16:9 warm painterly digital illustration, storybook editorial style, not a photograph. A tidy wooden desk by a window on a calm winter afternoon in a German apartment: a closed laptop next to a neat stack of paper documents held by a clip, a desk calculator, a small pile of receipts, a mug of tea, a pen and a small potted plant; soft daylight, muted teal, cream and warm amber palette. The calculator and document stack are large and centred within the central 70%, clearly readable as a 240px thumbnail. Fictional scene. No readable text, letters, numbers, form fields, logos, official seals, flags, brand names or watermarks; any paper shows only abstract grey lines. No people.",
+    "caption": "AIの支援でコードから描画したイラスト（J-Connect）。確定申告の準備を表したもので、実在の書類・画面・人物を描いたものではありません。",
+    "credit": "AI-assisted vector illustration / J-Connect",
+    "status": "generated",
+    "created": "2026-11-05",
+    "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted on 2026-11-05; the prompt above was not used)"
+  },
+  {
+    "slug": "christmas-new-year-greetings",
+    "section": "learn-german",
+    "markdown": "content/learn-german/christmas-new-year-greetings.md",
+    "dest": "assets/img/learn-german/christmas-new-year-greetings.webp",
+    "alt": "もみの枝と星形のクッキー、ろうそくの横に、封筒とクリスマスカードを置いた机のイラスト",
+    "prompt": "Asset type: article hero and thumbnail for a Japanese-language German phrase guide. Wide 16:9 warm flat vector illustration. A wooden table on a winter evening: a lit white candle with a soft glow, a fir branch with a red bauble, an open envelope with a blank Christmas card showing a small decorated tree, star-shaped cookies and a pen; a green garland with warm lights across a deep blue background. Card and envelope large and centred within the central 70%, readable as a 240px thumbnail. No readable text, letters, numbers, logos or brand names. No people.",
+    "caption": "AIの支援でコードから描画したイラスト（J-Connect）。季節のカードを書く場面を表したもので、実在のカードや商品を描いたものではありません。",
+    "credit": "AI-assisted vector illustration / J-Connect",
+    "status": "generated",
+    "created": "2026-11-05",
+    "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted on 2026-11-05; the prompt above was not used)"
+  },
+  {
+    "slug": "permanent-residence-germany",
+    "section": "living",
+    "markdown": "content/living/permanent-residence-germany.md",
+    "dest": "assets/img/living/permanent-residence-germany.webp",
+    "alt": "窓辺に植木鉢が並ぶ集合住宅の玄関前で、鍵と滞在カードを思わせる無地のカードが置かれた様子のイラスト",
+    "prompt": "Asset type: article hero and thumbnail for a Japanese-language guide to life in Germany. Wide 16:9 warm flat vector illustration. Front of a cream-coloured German apartment house with a red tiled roof, window boxes with flowers, a green arched double door with two potted plants, a bicycle on the left; on a small wooden table in the foreground a blank ID-style card with abstract grey lines and a brass house key. Door and card readable as a 240px thumbnail. No readable text, letters, numbers, flags, official seals, logos or brand names. No people.",
+    "caption": "AIの支援でコードから描画したイラスト（J-Connect）。ドイツに長く暮らすことを表したもので、実在の建物や公的書類を描いたものではありません。",
+    "credit": "AI-assisted vector illustration / J-Connect",
+    "status": "generated",
+    "created": "2026-11-05",
+    "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted on 2026-11-05; the prompt above was not used)"
+  }
+]

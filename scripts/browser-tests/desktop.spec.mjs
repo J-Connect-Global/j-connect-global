@@ -225,6 +225,7 @@ test("crawler-first snapshots remain readable and canonical without JavaScript",
 });
 
 test("public JSON failures retain the generated snapshots", async ({ page }) => {
+  await page.route("https://script.google.com/**", (route) => route.abort());
   await page.route("**/assets/data/community/posts.json", (route) => route.abort());
   await page.route("**/assets/data/jobs/jobs.json", (route) => route.abort());
 
@@ -266,6 +267,35 @@ test("Jobs runtime does not restore an expired public-data record", async ({ pag
   await expect(page.locator('[data-id="expired-runtime-fixture"]')).toHaveCount(0);
 });
 
+test("Home shows a post published after the last static sync and drops a hidden one", async ({ page }) => {
+  await stubDriveImages(page);
+  const fresh = {
+    ...activeCommunityPosts[0],
+    id: "post_home-live-only",
+    post_id: "post_home-live-only",
+    title: "同期前にホームへ出る新しい投稿",
+    detail_url: undefined,
+    created_at: "2099-01-01T12:00:00Z",
+    published_at: "2099-01-01T12:00:00Z",
+    updated_at: "2099-01-01T12:00:00Z"
+  };
+  const hidden = activeCommunityPosts[0];
+  let liveReads = 0;
+  await page.route("https://script.google.com/**", (route) => {
+    liveReads += 1;
+    return route.fulfill({
+      json: { ok: true, items: [fresh, ...activeCommunityPosts.slice(1)] },
+      headers: { "Access-Control-Allow-Origin": "*" }
+    });
+  });
+  await openRoute(page, "/germany/ja/");
+  await expect(page.locator("#homeCommunityMini")).toContainText("同期前にホームへ出る新しい投稿");
+  await expect(page.locator("#homeCommunityCards")).toContainText("同期前にホームへ出る新しい投稿");
+  await expect(page.locator(`#homeCommunityCards a[data-post-id="${hidden.id || hidden.post_id}"]`)).toHaveCount(0);
+  expect(liveReads).toBeGreaterThan(0);
+  await assertRouteReady(page);
+});
+
 test("Home uses modern responsive hero and bounded Community thumbnail delivery", async ({ page }) => {
   const heroRequests = [];
   const driveRequests = [];
@@ -290,6 +320,10 @@ test("Home uses modern responsive hero and bounded Community thumbnail delivery"
   await page.route("**/assets/data/community/posts.json", (route) => route.fulfill({
     contentType: "application/json",
     body: JSON.stringify(homeFixture)
+  }));
+  await page.route("https://script.google.com/**", (route) => route.fulfill({
+    json: { ok: true, items: homeFixture.items },
+    headers: { "Access-Control-Allow-Origin": "*" }
   }));
   await openDataRoute(page, "/germany/ja/", [
     "/assets/data/community/posts.json",

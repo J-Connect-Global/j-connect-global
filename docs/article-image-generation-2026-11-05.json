@@ -50,5 +50,18 @@
     "status": "generated",
     "created": "2026-11-06",
     "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted; the prompt above was not used)"
+  },
+  {
+    "slug": "einbuergerung-germany-japanese",
+    "section": "living",
+    "markdown": "content/living/einbuergerung-germany-japanese.md",
+    "dest": "assets/img/living/einbuergerung-germany-japanese.webp",
+    "alt": "二つの道が分かれる場所に立つ道しるべと、遠くに見えるドイツの街並みと日本の山並みを描いたイラスト",
+    "prompt": "Asset type: article hero and thumbnail for a Japanese-language guide to life in Germany. Wide 16:9 warm flat vector illustration. A country road forking in two directions with a wooden signpost with two blank arrow signs in the centre; on the left horizon a silhouette of a European old town with steep gables and a church spire, on the right horizon a mountain range with a snowy peak; soft sun, green fields, a few birds. Signpost readable as a 240px thumbnail. No readable text, letters, flags, emblems, logos or brand names. No people.",
+    "caption": "AIの支援でコードから描画したイラスト（J-Connect）。国籍の選択を表したもので、実在の場所・書類・人物を描いたものではありません。",
+    "credit": "AI-assisted vector illustration / J-Connect",
+    "status": "generated",
+    "created": "2026-11-06",
+    "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted; the prompt above was not used)"
   }
 ]

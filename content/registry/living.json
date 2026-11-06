@@ -2209,8 +2209,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-10-31",
-    "last_verified": "2026-10-31",
+    "updated_at": "2026-11-06",
+    "last_verified": "2026-11-06",
     "tags": [
       "健康保険",
       "公的医療保険",
@@ -2258,7 +2258,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-31",
+      "last_reviewed_at": "2026-11-06",
       "next_review_due": "2027-01-15"
     },
     "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
@@ -2400,7 +2400,7 @@
     "category": "交通・車",
     "summary": "ドイツの鉄道を初めて使う人向けに、長距離列車と地域交通の違い、切符の選び方、駅表示の読み方、乗り換え、遅延時の考え方を整理します。",
     "published_at": "2026-08-03",
-    "last_verified": "2026-08-30",
+    "last_verified": "2026-11-06",
     "canonical_url": "/germany/ja/living/germany-train-travel-guide/",
     "tags": [
       "ドイツ鉄道",
@@ -2410,7 +2410,7 @@
       "切符",
       "遅延"
     ],
-    "updated_at": "2026-10-28",
+    "updated_at": "2026-11-06",
     "related_articles": [
       "cologne-city-guide",
       "duesseldorf-city-guide",
@@ -2444,8 +2444,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-30",
-      "next_review_due": "2026-11-30"
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-02-28"
     },
     "image_alt": "スーツケースを持ち長距離列車の横に立つ旅行者",
     "image": "/assets/img/living/germany-train-travel-guide.webp"
@@ -2766,7 +2766,7 @@
       "パスポート",
       "NRW"
     ],
-    "updated_at": "2026-10-27",
+    "updated_at": "2026-11-06",
     "related_articles": [
       "pregnancy-birth-germany",
       "elterngeld-guide-germany",
@@ -4662,7 +4662,7 @@
       "在宅勤務",
       "税金"
     ],
-    "updated_at": "2026-11-05",
+    "updated_at": "2026-11-06",
     "related_articles": [
       "tax-id-steuernummer-steuerklasse",
       "minijob-grenze-2027",
@@ -4763,6 +4763,7 @@
     "updated_at": "2026-11-05",
     "related_articles": [
       "residence-permit-renewal-germany",
+      "einbuergerung-germany-japanese",
       "eu-blue-card-germany",
       "japan-germany-social-security-pension",
       "family-reunification-spouse-work-germany"
@@ -4921,5 +4922,91 @@
     ],
     "image": "/assets/img/living/elterngeld-guide-germany.webp",
     "image_alt": "ベビーカーと小さな靴、カレンダー、電卓を置いた明るい部屋で、育児の期間とお金を計画する様子のイラスト"
+  },
+  {
+    "id": "L077",
+    "slug": "einbuergerung-germany-japanese",
+    "url": "/germany/ja/living/einbuergerung-germany-japanese/",
+    "markdown_path": "/content/living/einbuergerung-germany-japanese.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 46,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: StAG); Japanese Nationality Act and Family Register Act cited from e-Gov but not fetched from this environment; human legal review pending",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-05-01"
+    },
+    "canonical_url": "/germany/ja/living/einbuergerung-germany-japanese/",
+    "title": "ドイツ国籍の取得（Einbürgerung）と日本国籍｜5年の条件、B1・帰化テスト、日本国籍を失う仕組み、子どもの二重国籍",
+    "category": "役所・滞在",
+    "summary": "ドイツ国籍の取得は、原則5年の合法的な滞在、期限のない滞在権など、生計の自立、ドイツ語B1、帰化テストが条件です。一方、日本人が自分の意思でドイツ国籍を取ると日本国籍を失います。永住許可との違い、手数料255ユーロ、国籍喪失届、ドイツで生まれた子どもの国籍留保と国籍選択まで、両国の法律に沿って整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "ドイツ国籍",
+      "帰化",
+      "Einbürgerung",
+      "日本国籍",
+      "二重国籍",
+      "国籍留保",
+      "永住許可"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "permanent-residence-germany",
+      "residence-permit-renewal-germany",
+      "birth-procedures-germany",
+      "returning-to-japan-checklist"
+    ],
+    "official_sources": [
+      {
+        "title": "ドイツ国籍法第10条：帰化の条件（5年、B1、帰化テスト）",
+        "url": "https://www.gesetze-im-internet.de/stag/__10.html"
+      },
+      {
+        "title": "ドイツ国籍法第9条：ドイツ人の配偶者の帰化",
+        "url": "https://www.gesetze-im-internet.de/stag/__9.html"
+      },
+      {
+        "title": "ドイツ国籍法第12a条：考慮されない軽い処罰",
+        "url": "https://www.gesetze-im-internet.de/stag/__12a.html"
+      },
+      {
+        "title": "ドイツ国籍法第12b条：国外滞在と滞在期間",
+        "url": "https://www.gesetze-im-internet.de/stag/__12b.html"
+      },
+      {
+        "title": "ドイツ国籍法第4条：ドイツで生まれた子どもの国籍",
+        "url": "https://www.gesetze-im-internet.de/stag/__4.html"
+      },
+      {
+        "title": "ドイツ国籍法第38条：手数料",
+        "url": "https://www.gesetze-im-internet.de/stag/__38.html"
+      },
+      {
+        "title": "日本の国籍法（e-Gov法令検索）：第11条・第12条・第14条",
+        "url": "https://laws.e-gov.go.jp/law/325AC0000000147"
+      },
+      {
+        "title": "日本の戸籍法（e-Gov法令検索）：第103条・第104条",
+        "url": "https://laws.e-gov.go.jp/law/322AC0000000224"
+      },
+      {
+        "title": "在デュッセルドルフ日本国総領事館：出生届・国籍留保",
+        "url": "https://www.dus.emb-japan.go.jp/itpr_ja/konsular_koseki_04.html"
+      },
+      {
+        "title": "連邦政府の専門人材向けポータル：ビザと滞在",
+        "url": "https://www.make-it-in-germany.com/en/visa-residence"
+      }
+    ],
+    "image": "/assets/img/living/einbuergerung-germany-japanese.webp",
+    "image_alt": "二つの道が分かれる場所に立つ道しるべと、遠くに見えるドイツの街並みと日本の山並みを描いたイラスト"
   }
 ]

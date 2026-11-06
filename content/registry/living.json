@@ -5012,5 +5012,400 @@
     ],
     "image": "/assets/img/living/einbuergerung-germany-japanese.webp",
     "image_alt": "二つの道が分かれる場所に立つ道しるべと、遠くに見えるドイツの街並みと日本の山並みを描いたイラスト"
+  },
+  {
+    "id": "L078",
+    "slug": "germany-visa-types-japanese",
+    "url": "/germany/ja/living/germany-visa-types-japanese/",
+    "markdown_path": "/content/living/germany-visa-types-japanese.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 47,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: AufenthG, AufenthV, BeschV); embassy pages not reachable from this environment; human legal review pending",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-05-01"
+    },
+    "canonical_url": "/germany/ja/living/germany-visa-types-japanese/",
+    "title": "ドイツのビザ・滞在許可の種類｜日本人がビザなしで入国して申請できるしくみと、目的別の選び方",
+    "category": "役所・滞在",
+    "summary": "日本国籍の人は、ビザなしでドイツに入国し、入国後90日以内に滞在許可を国内で申請できます。就労（専門人材・ブルーカード・日本国籍者向けの就労許可）、留学、語学学校、職業訓練、求職（チャンスカード）、ワーキングホリデー、家族、自営業まで、主な滞在許可の種類と条件、働ける範囲、手数料を滞在法の条文に沿って整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "ビザ",
+      "滞在許可",
+      "外国人局",
+      "就労ビザ",
+      "学生ビザ",
+      "日本人",
+      "Aufenthaltserlaubnis"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "residence-permit-renewal-germany",
+      "eu-blue-card-germany",
+      "permanent-residence-germany",
+      "family-reunification-spouse-work-germany",
+      "germany-first-30-days"
+    ],
+    "official_sources": [
+      {
+        "title": "滞在令第41条：日本国籍者などのビザなし入国と国内での申請",
+        "url": "https://www.gesetze-im-internet.de/aufenthv/__41.html"
+      },
+      {
+        "title": "滞在法第4条：滞在許可が必要であること",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__4.html"
+      },
+      {
+        "title": "滞在法第4a条：就労できる範囲",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__4a.html"
+      },
+      {
+        "title": "滞在法第16a条：職業訓練",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__16a.html"
+      },
+      {
+        "title": "滞在法第16b条：大学での留学",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__16b.html"
+      },
+      {
+        "title": "滞在法第16f条：語学学校",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__16f.html"
+      },
+      {
+        "title": "滞在法第18a条・第18b条：専門人材",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__18b.html"
+      },
+      {
+        "title": "滞在法第19c条：そのほかの就労",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__19c.html"
+      },
+      {
+        "title": "就労令第26条：日本国籍者などの就労",
+        "url": "https://www.gesetze-im-internet.de/beschv_2013/__26.html"
+      },
+      {
+        "title": "滞在法第20a条：チャンスカード（求職）",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__20a.html"
+      },
+      {
+        "title": "滞在法第21条：自営業",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__21.html"
+      },
+      {
+        "title": "滞在令第45条：滞在許可の手数料",
+        "url": "https://www.gesetze-im-internet.de/aufenthv/__45.html"
+      }
+    ],
+    "image": "/assets/img/living/germany-visa-types-japanese.webp",
+    "image_alt": "パスポートと複数の色のカード、スーツケースが机の上に並ぶ、ドイツでの滞在の準備を表したイラスト"
+  },
+  {
+    "id": "L079",
+    "slug": "chancenkarte-germany-japanese",
+    "url": "/germany/ja/living/chancenkarte-germany-japanese/",
+    "markdown_path": "/content/living/chancenkarte-germany-japanese.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 48,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: AufenthG, AufenthV, BeschV, BBiG, SGB V); embassy and agency pages not reachable from this environment, cross-checked via search summaries; human legal review pending",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-05-01"
+    },
+    "canonical_url": "/germany/ja/living/chancenkarte-germany-japanese/",
+    "title": "ドイツのチャンスカード（求職ビザ）｜6点の点数制、生活費の証明、週20時間の就労、日本で申請する流れ",
+    "category": "役所・滞在",
+    "summary": "チャンスカードは、大学の学位や2年以上の職業資格を持つ人が、最長1年ドイツで仕事を探せる滞在許可です。ドイツ語A1または英語B2と、6点以上の点数（資格の認定、語学、職務経験、年齢など）が条件で、探している間は週20時間まで働けます。点数の計算、生活費の目安（月1,091ユーロ）、日本で申請する理由、仕事が見つかった後の切り替えを滞在法の条文に沿って整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "チャンスカード",
+      "Chancenkarte",
+      "求職ビザ",
+      "ドイツ就職",
+      "滞在許可",
+      "点数制",
+      "転職"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "germany-visa-types-japanese",
+      "eu-blue-card-germany",
+      "working-holiday-germany",
+      "residence-permit-renewal-germany",
+      "health-insurance-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "滞在法第20a条：チャンスカード",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__20a.html"
+      },
+      {
+        "title": "滞在法第20b条：チャンスカードの点数",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__20b.html"
+      },
+      {
+        "title": "滞在法の別表：点数表と最低6点",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/anlage.html"
+      },
+      {
+        "title": "滞在法第18条：専門人材（Fachkraft）の定義",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__18.html"
+      },
+      {
+        "title": "滞在法第2条：ドイツ語能力の段階",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__2.html"
+      },
+      {
+        "title": "滞在令第41条：日本国籍者などのビザなし入国",
+        "url": "https://www.gesetze-im-internet.de/aufenthv/__41.html"
+      },
+      {
+        "title": "連邦雇用エージェンシー：チャンスカード（2026年のニュースレター）",
+        "url": "https://www.arbeitsagentur.de/vor-ort/zav/working-and-living-in-germany/newsletter-iss/02-2026/chancenkarte"
+      }
+    ],
+    "image": "/assets/img/living/chancenkarte-germany-japanese.webp",
+    "image_alt": "ノートパソコンと履歴書、コーヒーが置かれた机の窓の外に、ドイツの街並みが見えるイラスト"
+  },
+  {
+    "id": "L080",
+    "slug": "working-holiday-germany",
+    "url": "/germany/ja/living/working-holiday-germany/",
+    "markdown_path": "/content/living/working-holiday-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 49,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: AufenthG, AufenthV, BeschV, BBiG, SGB V); embassy and agency pages not reachable from this environment, cross-checked via search summaries; human legal review pending",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-03-01"
+    },
+    "canonical_url": "/germany/ja/living/working-holiday-germany/",
+    "title": "ドイツのワーキングホリデー｜18〜30歳の条件、資金の目安、保険、申請の流れ、到着後の手続きと仕事探し",
+    "category": "役所・滞在",
+    "summary": "日本とドイツのワーキングホリデー制度では、18〜30歳の日本人が最長1年、ドイツで休暇を過ごしながら働けます。在日ドイツ大使館・総領事館での申請に必要な書類、資金の目安、滞在中の健康保険、ドイツ到着後の住民登録や税番号、仕事の探し方、滞在後に就労や留学へ切り替える方法までを整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "ワーキングホリデー",
+      "ワーホリ",
+      "ドイツ",
+      "ビザ",
+      "滞在許可",
+      "アルバイト",
+      "海外旅行保険"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "germany-visa-types-japanese",
+      "germany-first-30-days",
+      "anmeldung-guide",
+      "tax-id-steuernummer-steuerklasse",
+      "chancenkarte-germany-japanese"
+    ],
+    "official_sources": [
+      {
+        "title": "在日ドイツ大使館：ワーキングホリデーの案内（PDF）",
+        "url": "https://japan.diplo.de/resource/blob/2780828/346c1dbe106108ce931b2e5c95f390fc/wh-info-data.pdf"
+      },
+      {
+        "title": "滞在令第41条：日本国籍者などのビザなし入国と国内での申請",
+        "url": "https://www.gesetze-im-internet.de/aufenthv/__41.html"
+      },
+      {
+        "title": "滞在法第4a条：就労できる範囲",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__4a.html"
+      },
+      {
+        "title": "就労令第26条：日本国籍者などの就労",
+        "url": "https://www.gesetze-im-internet.de/beschv_2013/__26.html"
+      },
+      {
+        "title": "最低賃金法第1条：最低賃金",
+        "url": "https://www.gesetze-im-internet.de/milog/__1.html"
+      },
+      {
+        "title": "社会法典第4編第8条：ミニジョブ",
+        "url": "https://www.gesetze-im-internet.de/sgb_4/__8.html"
+      }
+    ],
+    "image": "/assets/img/living/working-holiday-germany.webp",
+    "image_alt": "バックパックとスーツケースを置いた駅のホームに、ドイツの長距離列車が到着する様子のイラスト"
+  },
+  {
+    "id": "L081",
+    "slug": "study-in-germany-student-visa",
+    "url": "/germany/ja/living/study-in-germany-student-visa/",
+    "markdown_path": "/content/living/study-in-germany-student-visa.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 50,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: AufenthG, AufenthV, BeschV, BBiG, SGB V); embassy and agency pages not reachable from this environment, cross-checked via search summaries; human legal review pending",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-03-01"
+    },
+    "canonical_url": "/germany/ja/living/study-in-germany-student-visa/",
+    "title": "ドイツの大学に留学する｜学費、入学資格、生活費の証明（月992ユーロ）、学生の滞在許可、働ける日数、卒業後の就職",
+    "category": "役所・滞在",
+    "summary": "ドイツの州立大学の多くは授業料が無料ですが、学期ごとの学生納付金や、一部の州・大学の留学生向け授業料があります。日本人が正規留学するときの入学資格と語学の条件、生活費の証明（2026年は月992ユーロ・年1万1,904ユーロ）、学生の健康保険、年140日分まで働ける新しい数え方、卒業後18か月の求職期間までを滞在法の条文に沿って整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "ドイツ留学",
+      "大学",
+      "学生ビザ",
+      "滞在許可",
+      "閉鎖口座",
+      "学費",
+      "アルバイト"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "germany-visa-types-japanese",
+      "health-insurance-guide",
+      "bank-account-germany",
+      "minijob-grenze-2027",
+      "rent-apartment-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "滞在法第16b条：大学での留学（働ける日数を含む）",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__16b.html"
+      },
+      {
+        "title": "滞在法第17条：大学の出願準備のための滞在",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__17.html"
+      },
+      {
+        "title": "滞在法第20条：卒業後の求職",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__20.html"
+      },
+      {
+        "title": "滞在令第41条：日本国籍者などのビザなし入国",
+        "url": "https://www.gesetze-im-internet.de/aufenthv/__41.html"
+      },
+      {
+        "title": "社会法典第5編第5条：学生の健康保険の加入義務",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__5.html"
+      },
+      {
+        "title": "社会法典第5編第245条：学生の保険料率",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__245.html"
+      },
+      {
+        "title": "滞在令第45条：滞在許可の手数料",
+        "url": "https://www.gesetze-im-internet.de/aufenthv/__45.html"
+      }
+    ],
+    "image": "/assets/img/living/study-in-germany-student-visa.webp",
+    "image_alt": "大学の図書館の長い机に、ノートと本、ノートパソコンが置かれ、窓の外に古い大学の建物が見えるイラスト"
+  },
+  {
+    "id": "L082",
+    "slug": "ausbildung-germany-japanese",
+    "url": "/germany/ja/living/ausbildung-germany-japanese/",
+    "markdown_path": "/content/living/ausbildung-germany-japanese.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 51,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "employment",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: AufenthG, AufenthV, BeschV, BBiG, SGB V); embassy and agency pages not reachable from this environment, cross-checked via search summaries; human legal review pending",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-05-01"
+    },
+    "canonical_url": "/germany/ja/living/ausbildung-germany-japanese/",
+    "title": "ドイツの職業訓練（Ausbildung）｜給料をもらいながら資格を取るしくみ、2027年の最低手当764ユーロ、日本人の滞在許可とドイツ語",
+    "category": "仕事・お金",
+    "summary": "ドイツの職業訓練は、会社で働きながら職業学校で学び、2〜3年半で国家資格を取るしくみです。訓練中は毎月の手当が支払われ、2027年に始める訓練の最低額は1年目764ユーロです。訓練先の探し方、日本人が使う職業訓練の滞在許可とドイツ語B1の条件、訓練中に週20時間まで働けること、修了後の就職と永住への道を整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "職業訓練",
+      "Ausbildung",
+      "アウスビルドゥング",
+      "滞在許可",
+      "ドイツ就職",
+      "資格",
+      "手当"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "germany-visa-types-japanese",
+      "employment-contract-germany",
+      "chancenkarte-germany-japanese",
+      "permanent-residence-germany",
+      "health-insurance-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "職業訓練法第17条：訓練手当と最低額",
+        "url": "https://www.gesetze-im-internet.de/bbig_2005/__17.html"
+      },
+      {
+        "title": "職業訓練法第11条：訓練契約に書く内容",
+        "url": "https://www.gesetze-im-internet.de/bbig_2005/__11.html"
+      },
+      {
+        "title": "職業訓練法第20条：試用期間",
+        "url": "https://www.gesetze-im-internet.de/bbig_2005/__20.html"
+      },
+      {
+        "title": "職業訓練法第22条：訓練契約の解約",
+        "url": "https://www.gesetze-im-internet.de/bbig_2005/__22.html"
+      },
+      {
+        "title": "滞在法第16a条：職業訓練の滞在許可",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__16a.html"
+      },
+      {
+        "title": "滞在法第17条：訓練先を探すための滞在",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__17.html"
+      },
+      {
+        "title": "滞在法第20条：修了後の求職",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__20.html"
+      },
+      {
+        "title": "滞在法第18a条：職業資格を持つ専門人材",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__18a.html"
+      }
+    ],
+    "image": "/assets/img/living/ausbildung-germany-japanese.webp",
+    "image_alt": "作業台の上に工具とノート、パン職人の帽子と料理人のエプロンが並ぶ、職業訓練を表したイラスト"
   }
 ]

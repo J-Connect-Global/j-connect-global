@@ -13,9 +13,9 @@ next_review: "2027-09-01"
 canonical_url: "/germany/ja/living/mold-ventilation-germany/"
 tags: ["カビ", "換気", "結露", "暖房", "湿度", "賃貸", "冬"]
 image: "/assets/img/living/mold-ventilation-germany.webp"
-image_alt: "冬の窓を大きく開けて換気する部屋に、暖房器具と観葉植物、湿度計が置かれたイラスト"
-image_caption: "AIの支援で作成したイラスト（J-Connect）。冬の換気を表したもので、実在の住まいを描いたものではありません。"
-image_credit: "AI-assisted illustration / J-Connect"
+image_alt: "雪の舞う冬の窓を大きく開けて換気する部屋に、暖房器具と湿度計、観葉植物があるイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。冬の換気を表したもので、実在の住まいを描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 related_articles: ["rent-apartment-germany", "nebenkostenabrechnung-2025-deadline", "electricity-internet-contracts-germany", "liability-household-insurance-germany", "moving-checklist-germany"]
 official_sources:
   - title: "連邦環境庁：暖房と室温、正しい換気"

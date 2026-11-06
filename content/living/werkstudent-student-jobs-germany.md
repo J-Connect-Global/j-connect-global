@@ -13,9 +13,9 @@ next_review: "2027-03-01"
 canonical_url: "/germany/ja/living/werkstudent-student-jobs-germany/"
 tags: ["ワークスチューデント", "Werkstudent", "学生", "アルバイト", "ミニジョブ", "インターン", "社会保険"]
 image: "/assets/img/living/werkstudent-student-jobs-germany.webp"
-image_alt: "オフィスの机でノートパソコンに向かいながら、横に大学の教科書とリュックが置かれた、学生の仕事を表したイラスト"
-image_caption: "AIの支援で作成したイラスト（J-Connect）。学生が働く場面を表したもので、実在の会社や人物を描いたものではありません。"
-image_credit: "AI-assisted illustration / J-Connect"
+image_alt: "オフィスの机でノートパソコンが開かれ、横に大学の教科書とリュックが置かれた、学生の仕事を表したイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。学生が働く場面を表したもので、実在の会社や人物を描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 related_articles: ["study-in-germany-student-visa", "minijob-grenze-2027", "employment-contract-germany", "tax-id-steuernummer-steuerklasse", "income-tax-return-germany"]
 official_sources:
   - title: "社会法典第5編第6条：学生の健康保険の加入義務の免除"

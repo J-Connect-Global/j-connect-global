@@ -13,9 +13,9 @@ next_review: "2027-05-01"
 canonical_url: "/germany/ja/living/employment-contract-germany/"
 tags: ["労働契約", "試用期間", "有給休暇", "解約", "解雇", "労働時間", "ドイツ就職"]
 image: "/assets/img/living/employment-contract-germany.webp"
-image_alt: "机の上に置かれた契約書と万年筆、眼鏡、観葉植物のイラスト"
-image_caption: "AIの支援で作成したイラスト（J-Connect）。契約書を確認する場面を表したもので、実在の書類を描いたものではありません。"
-image_credit: "AI-assisted illustration / J-Connect"
+image_alt: "木の机の上に契約書のような2枚の書類と万年筆、眼鏡、観葉植物が置かれたイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。契約書を確認する場面を表したもので、実在の書類を描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 related_articles: ["sick-leave-germany", "tax-id-steuernummer-steuerklasse", "unemployment-benefit-germany", "minijob-grenze-2027", "werkstudent-student-jobs-germany"]
 official_sources:
   - title: "証明書法第2条：労働条件を書面で渡す義務"

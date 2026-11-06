@@ -13,9 +13,9 @@ next_review: "2027-05-01"
 canonical_url: "/germany/ja/living/church-tax-germany/"
 tags: ["教会税", "Kirchensteuer", "住民登録", "宗教", "給与明細", "税金", "教会離脱"]
 image: "/assets/img/living/church-tax-germany.webp"
-image_alt: "石造りの教会の塔が見える街並みの手前に、電卓と給与明細を思わせる紙が置かれたイラスト"
-image_caption: "AIの支援で作成したイラスト（J-Connect）。教会税を表したもので、実在の教会や書類を描いたものではありません。"
-image_credit: "AI-assisted illustration / J-Connect"
+image_alt: "時計のある教会の塔と街並みを背に、机の上に電卓と書類が置かれた、教会税を表したイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。教会税を表したもので、実在の教会や書類を描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 related_articles: ["anmeldung-guide", "tax-id-steuernummer-steuerklasse", "income-tax-return-germany", "employment-contract-germany", "returning-to-japan-checklist"]
 official_sources:
   - title: "所得税法第51a条：教会税などの付加税の計算"

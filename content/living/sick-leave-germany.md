@@ -13,9 +13,9 @@ next_review: "2027-01-15"
 canonical_url: "/germany/ja/living/sick-leave-germany/"
 tags: ["病欠", "病気休暇", "診断書", "傷病手当金", "子どもの看病", "給与", "健康保険"]
 image: "/assets/img/living/sick-leave-germany.webp"
-image_alt: "ベッドの横の小さな机に、体温計とハーブティー、スマートフォンが置かれた、病気で休む日を表したイラスト"
-image_caption: "AIの支援で作成したイラスト（J-Connect）。病気で休む日を表したもので、実在の人物や医療機関を描いたものではありません。"
-image_credit: "AI-assisted illustration / J-Connect"
+image_alt: "ベッドの横の小さな机に、湯気の立つマグカップと体温計、スマートフォンが置かれた、病気で休む日を表したイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。病気で休む日を表したもので、実在の人物や医療機関を描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 related_articles: ["doctor-appointment-germany", "health-insurance-guide", "employment-contract-germany", "japanese-speaking-doctors-germany", "kita-u3-tagesmutter-guide"]
 official_sources:
   - title: "賃金継続支払法第3条：病気のときの給与（6週間）"

@@ -13,9 +13,9 @@ next_review: "2027-03-01"
 canonical_url: "/germany/ja/living/working-holiday-germany/"
 tags: ["ワーキングホリデー", "ワーホリ", "ドイツ", "ビザ", "滞在許可", "アルバイト", "海外旅行保険"]
 image: "/assets/img/living/working-holiday-germany.webp"
-image_alt: "バックパックとスーツケースを置いた駅のホームに、ドイツの長距離列車が到着する様子のイラスト"
-image_caption: "AIの支援で作成したイラスト（J-Connect）。旅と暮らしの始まりを表したもので、実在の駅や列車を描いたものではありません。"
-image_credit: "AI-assisted illustration / J-Connect"
+image_alt: "街並みを背に赤い列車が停まる駅のホームに、スーツケースとリュックが置かれたイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。旅と暮らしの始まりを表したもので、実在の駅や列車を描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 related_articles: ["germany-visa-types-japanese", "germany-first-30-days", "anmeldung-guide", "tax-id-steuernummer-steuerklasse", "chancenkarte-germany-japanese"]
 official_sources:
   - title: "在日ドイツ大使館：ワーキングホリデーの案内（PDF）"

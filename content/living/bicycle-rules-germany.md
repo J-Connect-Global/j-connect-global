@@ -13,9 +13,9 @@ next_review: "2027-05-01"
 canonical_url: "/germany/ja/living/bicycle-rules-germany/"
 tags: ["自転車", "交通ルール", "罰金", "自転車道", "電動自転車", "子ども", "盗難"]
 image: "/assets/img/living/bicycle-rules-germany.webp"
-image_alt: "赤く塗られた自転車道を、ライトをつけた自転車が走り、横に並木と石畳の歩道があるドイツの街並みのイラスト"
-image_caption: "AIの支援で作成したイラスト（J-Connect）。自転車で街を走る場面を表したもので、実在の道路を描いたものではありません。"
-image_credit: "AI-assisted illustration / J-Connect"
+image_alt: "赤く塗られた自転車道を、ライトをつけた自転車が走り、並木と石畳の歩道、街並みが見えるイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。自転車で街を走る場面を表したもので、実在の道路を描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 related_articles: ["germany-train-travel-guide", "drivers-license-japan-germany", "liability-household-insurance-germany", "germany-first-30-days", "winter-tires-germany-2026"]
 official_sources:
   - title: "道路交通規則第2条：自転車道と歩道、子どもの自転車"

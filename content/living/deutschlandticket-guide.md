@@ -13,9 +13,9 @@ next_review: "2027-01-15"
 canonical_url: "/germany/ja/living/deutschlandticket-guide/"
 tags: ["ドイツチケット", "Deutschlandticket", "定期券", "電車", "バス", "通勤", "2027年"]
 image: "/assets/img/living/deutschlandticket-guide.webp"
-image_alt: "駅のホームに赤い地域列車と路面電車が並び、手前にスマートフォンの画面の定期券が見えるイラスト"
-image_caption: "AIの支援で作成したイラスト（J-Connect）。地域の電車に乗る場面を表したもので、実在の駅や車両、アプリを描いたものではありません。"
-image_credit: "AI-assisted illustration / J-Connect"
+image_alt: "駅のホームに赤い地域列車と黄色の路面電車が並び、手前にスマートフォンの画面の定期券が見えるイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。地域の電車に乗る場面を表したもので、実在の駅や車両、アプリを描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 related_articles: ["germany-train-travel-guide", "bicycle-rules-germany", "germany-first-30-days", "cologne-city-guide", "duesseldorf-city-guide"]
 official_sources:
   - title: "地域化法第9条：ドイツチケット（デジタル、月ごとに解約できる定期券）"

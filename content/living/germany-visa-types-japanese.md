@@ -13,9 +13,9 @@ next_review: "2027-05-01"
 canonical_url: "/germany/ja/living/germany-visa-types-japanese/"
 tags: ["ビザ", "滞在許可", "外国人局", "就労ビザ", "学生ビザ", "日本人", "Aufenthaltserlaubnis"]
 image: "/assets/img/living/germany-visa-types-japanese.webp"
-image_alt: "パスポートと複数の色のカード、スーツケースが机の上に並ぶ、ドイツでの滞在の準備を表したイラスト"
-image_caption: "AIの支援で作成したイラスト（J-Connect）。滞在の準備を表したもので、実在の公的書類を描いたものではありません。"
-image_credit: "AI-assisted illustration / J-Connect"
+image_alt: "窓辺の机に、表紙の無地のパスポートと色違いの3枚のカード、マグカップが置かれ、横にスーツケースと観葉植物があるイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。滞在の準備を表したもので、実在の公的書類を描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 related_articles: ["residence-permit-renewal-germany", "eu-blue-card-germany", "permanent-residence-germany", "family-reunification-spouse-work-germany", "germany-first-30-days"]
 official_sources:
   - title: "滞在令第41条：日本国籍者などのビザなし入国と国内での申請"

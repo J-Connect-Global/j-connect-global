@@ -13,9 +13,9 @@ next_review: "2027-04-01"
 canonical_url: "/germany/ja/living/japanese-passport-consulate-germany/"
 tags: ["パスポート", "旅券", "総領事館", "大使館", "在留届", "在留証明", "署名証明"]
 image: "/assets/img/living/japanese-passport-consulate-germany.webp"
-image_alt: "旅行かばんの上に表紙の無地のパスポートと航空券、ドイツの街並みの絵はがきが置かれたイラスト"
-image_caption: "AIの支援で作成したイラスト（J-Connect）。パスポートと旅を表したもので、実在の公的書類を描いたものではありません。"
-image_credit: "AI-assisted illustration / J-Connect"
+image_alt: "旅行かばんの上に、表紙の無地のパスポートと航空券、ドイツの街並みの絵はがきが置かれたイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。パスポートと旅を表したもので、実在の公的書類を描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 related_articles: ["overseas-voting-japan", "birth-procedures-germany", "drivers-license-japan-germany", "leaving-japan-before-moving-germany", "returning-to-japan-checklist"]
 official_sources:
   - title: "在ドイツ日本国大使館：大使館・総領事館の管轄"

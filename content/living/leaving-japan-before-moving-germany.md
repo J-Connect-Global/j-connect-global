@@ -13,9 +13,9 @@ next_review: "2027-05-01"
 canonical_url: "/germany/ja/living/leaving-japan-before-moving-germany/"
 tags: ["海外転出届", "マイナンバーカード", "国民年金", "住民税", "在留届", "海外赴任", "ドイツ移住"]
 image: "/assets/img/living/leaving-japan-before-moving-germany.webp"
-image_alt: "段ボール箱とスーツケースが並ぶ部屋に、チェックリストの書かれていないメモと日本の鉢植えが置かれた、出発準備のイラスト"
-image_caption: "AIの支援で作成したイラスト（J-Connect）。引っ越しの準備を表したもので、実在の書類や住まいを描いたものではありません。"
-image_credit: "AI-assisted illustration / J-Connect"
+image_alt: "段ボール箱とスーツケースが並ぶ部屋に、メモと盆栽が置かれた、引っ越しの準備を表したイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。引っ越しの準備を表したもので、実在の書類や住まいを描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 related_articles: ["germany-first-30-days", "germany-visa-types-japanese", "drivers-license-japan-germany", "japan-germany-social-security-pension", "anmeldung-guide"]
 official_sources:
   - title: "日本学生支援機構：海外留学の前にする役所の手続き"

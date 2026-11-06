@@ -13,9 +13,9 @@ next_review: "2027-05-01"
 canonical_url: "/germany/ja/living/chancenkarte-germany-japanese/"
 tags: ["チャンスカード", "Chancenkarte", "求職ビザ", "ドイツ就職", "滞在許可", "点数制", "転職"]
 image: "/assets/img/living/chancenkarte-germany-japanese.webp"
-image_alt: "ノートパソコンと履歴書、コーヒーが置かれた机の窓の外に、ドイツの街並みが見えるイラスト"
-image_caption: "AIの支援で作成したイラスト（J-Connect）。仕事探しを表したもので、実在の人物や書類を描いたものではありません。"
-image_credit: "AI-assisted illustration / J-Connect"
+image_alt: "窓の外に教会の塔と街並みが見える机に、ノートパソコンと書類、マグカップが置かれた、仕事探しを表したイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。仕事探しを表したもので、実在の人物や書類を描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 related_articles: ["germany-visa-types-japanese", "eu-blue-card-germany", "working-holiday-germany", "residence-permit-renewal-germany", "health-insurance-guide"]
 official_sources:
   - title: "滞在法第20a条：チャンスカード"

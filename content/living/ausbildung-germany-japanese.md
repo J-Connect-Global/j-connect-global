@@ -13,9 +13,9 @@ next_review: "2027-05-01"
 canonical_url: "/germany/ja/living/ausbildung-germany-japanese/"
 tags: ["職業訓練", "Ausbildung", "アウスビルドゥング", "滞在許可", "ドイツ就職", "資格", "手当"]
 image: "/assets/img/living/ausbildung-germany-japanese.webp"
-image_alt: "作業台の上に工具とノート、パン職人の帽子と料理人のエプロンが並ぶ、職業訓練を表したイラスト"
-image_caption: "AIの支援で作成したイラスト（J-Connect）。職業訓練を表したもので、実在の職場を描いたものではありません。"
-image_credit: "AI-assisted illustration / J-Connect"
+image_alt: "工具が掛かった壁の前の作業台に、料理人の帽子とエプロン、焼きたてのパン、工具が並ぶ、職業訓練を表したイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。職業訓練を表したもので、実在の職場を描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 related_articles: ["germany-visa-types-japanese", "employment-contract-germany", "chancenkarte-germany-japanese", "permanent-residence-germany", "health-insurance-guide"]
 official_sources:
   - title: "職業訓練法第17条：訓練手当と最低額"

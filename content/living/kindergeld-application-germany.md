@@ -13,9 +13,9 @@ next_review: "2027-01-15"
 canonical_url: "/germany/ja/living/kindergeld-application-germany/"
 tags: ["Kindergeld", "児童手当", "子育て", "家族手当金庫", "申請", "滞在許可", "税番号"]
 image: "/assets/img/living/kindergeld-application-germany.webp"
-image_alt: "テーブルの上に子どものおもちゃの積み木と封筒、ノートパソコンが置かれた、家族の手続きを表したイラスト"
-image_caption: "AIの支援で作成したイラスト（J-Connect）。子育ての手続きを表したもので、実在の書類や人物を描いたものではありません。"
-image_credit: "AI-assisted illustration / J-Connect"
+image_alt: "机の上にノートパソコンと封筒、子どものおもちゃの積み木が置かれた、家族の手続きを表したイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。子育ての手続きを表したもので、実在の書類や人物を描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 related_articles: ["kindergeld-auszahlungstermine-2027", "birth-procedures-germany", "elterngeld-guide-germany", "tax-id-steuernummer-steuerklasse", "family-reunification-spouse-work-germany"]
 official_sources:
   - title: "所得税法第62条：児童手当を受け取れる人（外国人の条件）"

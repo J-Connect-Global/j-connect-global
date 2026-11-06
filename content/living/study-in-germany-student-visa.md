@@ -13,9 +13,9 @@ next_review: "2027-03-01"
 canonical_url: "/germany/ja/living/study-in-germany-student-visa/"
 tags: ["ドイツ留学", "大学", "学生ビザ", "滞在許可", "閉鎖口座", "学費", "アルバイト"]
 image: "/assets/img/living/study-in-germany-student-visa.webp"
-image_alt: "大学の図書館の長い机に、ノートと本、ノートパソコンが置かれ、窓の外に古い大学の建物が見えるイラスト"
-image_caption: "AIの支援で作成したイラスト（J-Connect）。大学で学ぶ場面を表したもので、実在の大学を描いたものではありません。"
-image_credit: "AI-assisted illustration / J-Connect"
+image_alt: "窓の外に古い大学の建物が見え、本棚の前の机に教科書とノートパソコン、メモが置かれたイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。大学で学ぶ場面を表したもので、実在の大学を描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 related_articles: ["germany-visa-types-japanese", "health-insurance-guide", "bank-account-germany", "minijob-grenze-2027", "rent-apartment-germany"]
 official_sources:
   - title: "滞在法第16b条：大学での留学（働ける日数を含む）"

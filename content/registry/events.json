@@ -7167,5 +7167,137 @@
     "source_type": "manual",
     "image_caption": "AIの支援でコードから描画したイラスト（J-Connect）。ハンブルクのクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。",
     "image_credit": "AI-assisted vector illustration / J-Connect"
+  },
+  {
+    "id": "N038",
+    "title": "ドイツの放送負担金、2026年11月8日から全国データ照合｜手紙が届いたら",
+    "slug": "rundfunkbeitrag-meldedatenabgleich-2026",
+    "category": "住まい",
+    "summary": "2026年11月8日から始まるドイツの全国住民データ照合について、対象者、データ送信期間、12月中旬からの通知、同居人がすでに支払っている場合の回答方法、未登録時の扱いを整理します。",
+    "url": "/germany/ja/events/news/rundfunkbeitrag-meldedatenabgleich-2026/",
+    "markdown_path": "/content/events/news/rundfunkbeitrag-meldedatenabgleich-2026.md",
+    "published": false,
+    "status": "draft",
+    "published_at": "",
+    "updated_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "next_review": "2026-11-08",
+    "tags": [
+      "放送負担金",
+      "住民登録",
+      "2026年11月",
+      "共同生活",
+      "個人情報",
+      "ドイツ行政"
+    ],
+    "home_visible": false,
+    "home_order": 1000,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "canonical_url": "/germany/ja/events/news/rundfunkbeitrag-meldedatenabgleich-2026/",
+    "official_sources": [
+      {
+        "title": "放送負担金事務局：2026年の全国住民データ照合開始に関する2026年11月5日付発表",
+        "url": "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026"
+      },
+      {
+        "title": "放送負担金事務局：2026年全国住民データ照合の質問と回答（2026年11月時点）",
+        "url": "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/informationen/informationen-zum-meldedatenabgleich/fragen-und-antworten-zum-bundesweiten-meldedatenabgleich"
+      },
+      {
+        "title": "バイエルン州法令データベース：放送負担金州間協定第11条（個人データの処理）",
+        "url": "https://www.gesetze-bayern.de/Content/Document/RBeitrStV-11"
+      },
+      {
+        "title": "放送負担金事務局：支払い状況のオンライン確認",
+        "url": "https://www.rundfunkbeitrag.de/kontostand"
+      }
+    ],
+    "disclaimer_type": "administrative",
+    "related_articles": [
+      "rundfunkbeitrag-guide",
+      "anmeldung-guide",
+      "moving-checklist-germany"
+    ],
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "J-Connect editorial — automated source check completed; human editorial review pending",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2026-11-08"
+    },
+    "content_type": "news",
+    "city": "ドイツ全土",
+    "location": "ドイツ全土",
+    "event_date": "2026-11-08〜2026-12-14（通知開始予定）",
+    "official_url": "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026",
+    "image": "/assets/img/living/anmeldung-guide.webp",
+    "image_url": "/assets/img/living/anmeldung-guide.webp",
+    "image_alt": "ドイツの住民登録に関する書類を確認する人を描いたイラスト",
+    "image_caption": "イラスト：J-Connect。住民登録情報の照合を説明するためのイメージです。実在の通知書・人物・行政機関を再現したものではありません。",
+    "image_credit": "Illustration / J-Connect",
+    "source_type": "manual"
+  },
+  {
+    "id": "N039",
+    "title": "Euro 7は2026年11月29日から新型車に適用｜ドイツで車を買う人向け",
+    "slug": "euro-7-germany-2026",
+    "category": "交通・車",
+    "summary": "EUの新しい車両排出基準Euro 7について、2026年11月29日の新型式認証と2027年11月29日の新車適用を区別し、既存車への影響、ブレーキ・タイヤの摩耗粉、電動車のバッテリー耐久性を解説します。",
+    "url": "/germany/ja/events/news/euro-7-germany-2026/",
+    "markdown_path": "/content/events/news/euro-7-germany-2026.md",
+    "published": false,
+    "status": "draft",
+    "published_at": "",
+    "updated_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "next_review": "2026-11-29",
+    "tags": [
+      "Euro 7",
+      "排出基準",
+      "新車",
+      "車購入",
+      "2026年11月",
+      "電気自動車"
+    ],
+    "home_visible": false,
+    "home_order": 1000,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "canonical_url": "/germany/ja/events/news/euro-7-germany-2026/",
+    "official_sources": [
+      {
+        "title": "ドイツ連邦環境庁：乗用車・軽商用車の排出基準（2026年8月13日更新）",
+        "url": "https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge"
+      },
+      {
+        "title": "EU規則2024/1257（Euro 7）：車両排出とバッテリー耐久性に関する型式認証規則",
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1257/oj"
+      }
+    ],
+    "disclaimer_type": "technical-news",
+    "related_articles": [
+      "buying-registering-car-germany",
+      "winter-tires-germany-2026",
+      "car-insurance-switch-november-2026"
+    ],
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "J-Connect editorial — automated source check completed; human editorial review pending",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2026-11-29"
+    },
+    "content_type": "news",
+    "city": "ドイツ全土",
+    "location": "ドイツ全土",
+    "event_date": "2026-11-29 / 2027-11-29",
+    "official_url": "https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge",
+    "image": "/assets/img/living/buying-registering-car-germany.webp",
+    "image_url": "/assets/img/living/buying-registering-car-germany.webp",
+    "image_alt": "ドイツの道路を走る車と登録書類を描いたイラスト",
+    "image_caption": "イラスト：J-Connect。車の購入をイメージしたもので、実際の車種や排出試験を示すものではありません。",
+    "image_credit": "Illustration / J-Connect",
+    "source_type": "manual"
   }
 ]

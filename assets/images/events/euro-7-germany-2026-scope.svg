@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Euro 7が扱う主な環境性能</title>
+<desc id="desc">排気管からの排出、ブレーキとタイヤの摩耗、電動車の駆動用バッテリー耐久性を示す図。</desc>
+<rect width="1200" height="675" rx="32" fill="#F5F3EE"/>
+<text x="72" y="82" font-family="sans-serif" font-size="36" font-weight="700" fill="#263445">Euro 7は排気管だけを対象にしない</text>
+<g>
+<rect x="70" y="160" width="330" height="380" rx="24" fill="#FFFFFF" stroke="#D8D5CC" stroke-width="2"/>
+<circle cx="235" cy="270" r="62" fill="#E8D8C5"/>
+<path d="M190 284h90v-26h-90z M205 258v-30h60v30" fill="none" stroke="#8B6847" stroke-width="12" stroke-linejoin="round"/>
+<circle cx="280" cy="222" r="8" fill="#B77D48"/><circle cx="300" cy="202" r="6" fill="#B77D48"/><circle cx="317" cy="226" r="5" fill="#B77D48"/>
+<text x="235" y="390" text-anchor="middle" font-family="sans-serif" font-size="27" font-weight="700" fill="#263445">排気管からの排出</text>
+<text x="235" y="438" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#56616C">微小粒子の測定範囲を</text>
+<text x="235" y="470" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#56616C">より小さい粒子まで拡大</text>
+</g>
+<g>
+<rect x="435" y="160" width="330" height="380" rx="24" fill="#FFFFFF" stroke="#D8D5CC" stroke-width="2"/>
+<circle cx="600" cy="270" r="62" fill="#D9E6E4"/>
+<circle cx="600" cy="270" r="42" fill="none" stroke="#3D6C73" stroke-width="14"/>
+<circle cx="600" cy="270" r="12" fill="#3D6C73"/>
+<path d="M600 220v-18 M645 270h18 M555 270h-18 M600 320v18" stroke="#3D6C73" stroke-width="8" stroke-linecap="round"/>
+<circle cx="671" cy="222" r="7" fill="#B77D48"/><circle cx="682" cy="244" r="5" fill="#B77D48"/>
+<text x="600" y="390" text-anchor="middle" font-family="sans-serif" font-size="27" font-weight="700" fill="#263445">ブレーキ・タイヤ</text>
+<text x="600" y="438" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#56616C">摩耗による粒子も</text>
+<text x="600" y="470" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#56616C">段階的に規制</text>
+</g>
+<g>
+<rect x="800" y="160" width="330" height="380" rx="24" fill="#FFFFFF" stroke="#D8D5CC" stroke-width="2"/>
+<circle cx="965" cy="270" r="62" fill="#E6E0EC"/>
+<rect x="920" y="232" width="88" height="76" rx="10" fill="none" stroke="#6C5D83" stroke-width="10"/>
+<rect x="1008" y="254" width="12" height="32" rx="4" fill="#6C5D83"/>
+<path d="M960 245l-18 28h22l-10 24 28-34h-22z" fill="#6C5D83"/>
+<text x="965" y="390" text-anchor="middle" font-family="sans-serif" font-size="27" font-weight="700" fill="#263445">駆動用バッテリー</text>
+<text x="965" y="438" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#56616C">電動車・プラグイン</text>
+<text x="965" y="470" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#56616C">ハイブリッドの耐久性</text>
+</g>
+<text x="72" y="600" font-family="sans-serif" font-size="18" fill="#6B747C">出典：EU規則2024/1257、ドイツ連邦環境庁。要件は車種・駆動方式・適用段階で異なります。</text>
+</svg>

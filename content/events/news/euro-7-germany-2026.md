@@ -1,5 +1,5 @@
 ---
-id: "N039"
+id: "N040"
 title: "Euro 7は2026年11月29日から新型車に適用｜ドイツで車を買う人向け"
 slug: "euro-7-germany-2026"
 category: "交通・車"

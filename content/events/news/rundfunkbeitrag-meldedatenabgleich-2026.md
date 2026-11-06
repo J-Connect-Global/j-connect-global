@@ -1,5 +1,5 @@
 ---
-id: "N038"
+id: "N039"
 title: "ドイツの放送負担金、2026年11月8日から全国データ照合｜手紙が届いたら"
 slug: "rundfunkbeitrag-meldedatenabgleich-2026"
 category: "住まい"

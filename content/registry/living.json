@@ -5407,5 +5407,388 @@
     ],
     "image": "/assets/img/living/ausbildung-germany-japanese.webp",
     "image_alt": "作業台の上に工具とノート、パン職人の帽子と料理人のエプロンが並ぶ、職業訓練を表したイラスト"
+  },
+  {
+    "id": "L083",
+    "slug": "sick-leave-germany",
+    "url": "/germany/ja/living/sick-leave-germany/",
+    "markdown_path": "/content/living/sick-leave-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 52,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "employment",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: BGB, BUrlG, ArbZG, KSchG, TzBfG, NachwG, GewO, EntgFG, SGB III/IV/V, EStG, MiLoG, BMG; justiz.nrw); search summaries for 2027 status; human review pending",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-01-15"
+    },
+    "canonical_url": "/germany/ja/living/sick-leave-germany/",
+    "title": "ドイツで病気になって仕事を休むとき｜連絡と診断書、電子の病欠証明、6週間の給与、傷病手当金、子どもの看病休暇（2027年は10日に）",
+    "category": "仕事・お金",
+    "summary": "ドイツで病気のため仕事を休むときは、すぐに職場へ連絡し、4日目以降は医師の病欠証明が必要です。公的保険の人は証明が電子で会社に届きます。会社は最長6週間給与を払い続け、その後は健康保険から手取りの最大90%の傷病手当金が出ます。子どもの看病のための休暇は2026年は1人15日ですが、法律が変わらなければ2027年は10日に戻ります。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "病欠",
+      "病気休暇",
+      "診断書",
+      "傷病手当金",
+      "子どもの看病",
+      "給与",
+      "健康保険"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "doctor-appointment-germany",
+      "health-insurance-guide",
+      "employment-contract-germany",
+      "japanese-speaking-doctors-germany",
+      "kita-u3-tagesmutter-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "賃金継続支払法第3条：病気のときの給与（6週間）",
+        "url": "https://www.gesetze-im-internet.de/entgfg/__3.html"
+      },
+      {
+        "title": "賃金継続支払法第5条：連絡と病欠証明の義務",
+        "url": "https://www.gesetze-im-internet.de/entgfg/__5.html"
+      },
+      {
+        "title": "社会法典第5編第44条：傷病手当金",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__44.html"
+      },
+      {
+        "title": "社会法典第5編第47条：傷病手当金の額",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__47.html"
+      },
+      {
+        "title": "社会法典第5編第48条：傷病手当金の期間",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__48.html"
+      },
+      {
+        "title": "社会法典第5編第45条：子どもの看病のための傷病手当金",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__45.html"
+      },
+      {
+        "title": "連邦休暇法第9条：休暇中の病気",
+        "url": "https://www.gesetze-im-internet.de/burlg/__9.html"
+      }
+    ],
+    "image": "/assets/img/living/sick-leave-germany.webp",
+    "image_alt": "ベッドの横の小さな机に、体温計とハーブティー、スマートフォンが置かれた、病気で休む日を表したイラスト"
+  },
+  {
+    "id": "L084",
+    "slug": "employment-contract-germany",
+    "url": "/germany/ja/living/employment-contract-germany/",
+    "markdown_path": "/content/living/employment-contract-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 53,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "employment",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: BGB, BUrlG, ArbZG, KSchG, TzBfG, NachwG, GewO, EntgFG, SGB III/IV/V, EStG, MiLoG, BMG; justiz.nrw); search summaries for 2027 status; human review pending",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-05-01"
+    },
+    "canonical_url": "/germany/ja/living/employment-contract-germany/",
+    "title": "ドイツの労働契約で確認したいこと｜試用期間、解約の予告期間、有給休暇、労働時間と休憩、有期契約、解雇されたときの3週間",
+    "category": "仕事・お金",
+    "summary": "ドイツで働き始める前に、労働契約で確認したい項目を法律に沿って整理します。試用期間は最長6か月で予告は2週間、通常の予告期間は4週間、有給休暇は週5日勤務で最低20日、1日の労働時間は原則8時間、退職や解雇は紙に署名した書面でのみ有効です。有期契約の上限、解雇されたときに3週間以内に取るべき行動、退職時の勤務証明書までを日本人向けに説明します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "労働契約",
+      "試用期間",
+      "有給休暇",
+      "解約",
+      "解雇",
+      "労働時間",
+      "ドイツ就職"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "sick-leave-germany",
+      "tax-id-steuernummer-steuerklasse",
+      "unemployment-benefit-germany",
+      "minijob-grenze-2027",
+      "werkstudent-student-jobs-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "証明書法第2条：労働条件を書面で渡す義務",
+        "url": "https://www.gesetze-im-internet.de/nachwg/__2.html"
+      },
+      {
+        "title": "民法第622条：解約の予告期間と試用期間",
+        "url": "https://www.gesetze-im-internet.de/bgb/__622.html"
+      },
+      {
+        "title": "民法第623条：解約は書面でのみ有効",
+        "url": "https://www.gesetze-im-internet.de/bgb/__623.html"
+      },
+      {
+        "title": "連邦休暇法第3条：最低24日（週6日換算）の休暇",
+        "url": "https://www.gesetze-im-internet.de/burlg/__3.html"
+      },
+      {
+        "title": "連邦休暇法第4条・第5条・第7条：休暇の取得と繰り越し",
+        "url": "https://www.gesetze-im-internet.de/burlg/__7.html"
+      },
+      {
+        "title": "労働時間法第3条：1日の労働時間",
+        "url": "https://www.gesetze-im-internet.de/arbzg/__3.html"
+      },
+      {
+        "title": "労働時間法第4条：休憩",
+        "url": "https://www.gesetze-im-internet.de/arbzg/__4.html"
+      },
+      {
+        "title": "労働時間法第5条：勤務間の休息",
+        "url": "https://www.gesetze-im-internet.de/arbzg/__5.html"
+      },
+      {
+        "title": "解雇保護法第1条：社会的に正当でない解雇",
+        "url": "https://www.gesetze-im-internet.de/kschg/__1.html"
+      },
+      {
+        "title": "解雇保護法第4条：3週間以内の訴え",
+        "url": "https://www.gesetze-im-internet.de/kschg/__4.html"
+      },
+      {
+        "title": "解雇保護法第23条：適用される事業所の規模",
+        "url": "https://www.gesetze-im-internet.de/kschg/__23.html"
+      },
+      {
+        "title": "パートタイム・有期労働法第14条：有期契約",
+        "url": "https://www.gesetze-im-internet.de/tzbfg/__14.html"
+      },
+      {
+        "title": "営業法第109条：勤務証明書",
+        "url": "https://www.gesetze-im-internet.de/gewo/__109.html"
+      }
+    ],
+    "image": "/assets/img/living/employment-contract-germany.webp",
+    "image_alt": "机の上に置かれた契約書と万年筆、眼鏡、観葉植物のイラスト"
+  },
+  {
+    "id": "L085",
+    "slug": "werkstudent-student-jobs-germany",
+    "url": "/germany/ja/living/werkstudent-student-jobs-germany/",
+    "markdown_path": "/content/living/werkstudent-student-jobs-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 54,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "employment",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: BGB, BUrlG, ArbZG, KSchG, TzBfG, NachwG, GewO, EntgFG, SGB III/IV/V, EStG, MiLoG, BMG; justiz.nrw); search summaries for 2027 status; human review pending",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-03-01"
+    },
+    "canonical_url": "/germany/ja/living/werkstudent-student-jobs-germany/",
+    "title": "ドイツの学生の働き方｜ワークスチューデント・ミニジョブ・インターンの違い、週20時間の目安、社会保険と税金、留学生の日数の上限",
+    "category": "仕事・お金",
+    "summary": "ドイツの大学生は、ワークスチューデント、ミニジョブ、インターンなどの形で働けます。講義期間中に週20時間までのワークスチューデントは健康保険・失業保険の保険料がかからず、年金の保険料だけを払います。それぞれの社会保険と税金の扱い、2026年の所得税の基礎控除1万2,348ユーロ、インターンの最低賃金、日本人留学生の年140日分の上限を整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "ワークスチューデント",
+      "Werkstudent",
+      "学生",
+      "アルバイト",
+      "ミニジョブ",
+      "インターン",
+      "社会保険"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "study-in-germany-student-visa",
+      "minijob-grenze-2027",
+      "employment-contract-germany",
+      "tax-id-steuernummer-steuerklasse",
+      "income-tax-return-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "社会法典第5編第6条：学生の健康保険の加入義務の免除",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__6.html"
+      },
+      {
+        "title": "社会法典第3編第27条：学生の失業保険の免除",
+        "url": "https://www.gesetze-im-internet.de/sgb_3/__27.html"
+      },
+      {
+        "title": "社会法典第4編第8条：ミニジョブ",
+        "url": "https://www.gesetze-im-internet.de/sgb_4/__8.html"
+      },
+      {
+        "title": "社会法典第4編第20条：収入の移行ゾーン（月2,000ユーロまで）",
+        "url": "https://www.gesetze-im-internet.de/sgb_4/__20.html"
+      },
+      {
+        "title": "所得税法第32a条：所得税の税率と基礎控除",
+        "url": "https://www.gesetze-im-internet.de/estg/__32a.html"
+      },
+      {
+        "title": "最低賃金法第22条：インターンへの最低賃金の適用",
+        "url": "https://www.gesetze-im-internet.de/milog/__22.html"
+      },
+      {
+        "title": "滞在法第16b条：留学生の働ける日数",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__16b.html"
+      }
+    ],
+    "image": "/assets/img/living/werkstudent-student-jobs-germany.webp",
+    "image_alt": "オフィスの机でノートパソコンに向かいながら、横に大学の教科書とリュックが置かれた、学生の仕事を表したイラスト"
+  },
+  {
+    "id": "L086",
+    "slug": "kindergeld-application-germany",
+    "url": "/germany/ja/living/kindergeld-application-germany/",
+    "markdown_path": "/content/living/kindergeld-application-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 55,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "family_administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: BGB, BUrlG, ArbZG, KSchG, TzBfG, NachwG, GewO, EntgFG, SGB III/IV/V, EStG, MiLoG, BMG; justiz.nrw); search summaries for 2027 status; human review pending",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-01-15"
+    },
+    "canonical_url": "/germany/ja/living/kindergeld-application-germany/",
+    "title": "ドイツの児童手当（Kindergeld）の申請｜日本人がもらえる滞在許可、月259ユーロ、必要書類、6か月の遡及、日本に住む子どもの扱い",
+    "category": "子育て・家族",
+    "summary": "ドイツに住む家族は、子ども1人につき月259ユーロ（2026年）の児童手当を受け取れます。日本国籍の親は、就労できる滞在許可などを持っていることが条件で、学生や求職のための滞在許可では対象外です。家族手当金庫への申請方法、税番号などの必要書類、申請が遅れたときの6か月の遡及、18歳以降の延長、日本に住む子どもの扱い、2027年からの申請なしの支給を整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "Kindergeld",
+      "児童手当",
+      "子育て",
+      "家族手当金庫",
+      "申請",
+      "滞在許可",
+      "税番号"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "kindergeld-auszahlungstermine-2027",
+      "birth-procedures-germany",
+      "elterngeld-guide-germany",
+      "tax-id-steuernummer-steuerklasse",
+      "family-reunification-spouse-work-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "所得税法第62条：児童手当を受け取れる人（外国人の条件）",
+        "url": "https://www.gesetze-im-internet.de/estg/__62.html"
+      },
+      {
+        "title": "所得税法第63条：対象となる子ども",
+        "url": "https://www.gesetze-im-internet.de/estg/__63.html"
+      },
+      {
+        "title": "所得税法第32条：18歳以降の子どもの扱い",
+        "url": "https://www.gesetze-im-internet.de/estg/__32.html"
+      },
+      {
+        "title": "所得税法第66条：児童手当の額",
+        "url": "https://www.gesetze-im-internet.de/estg/__66.html"
+      },
+      {
+        "title": "所得税法第67条：申請",
+        "url": "https://www.gesetze-im-internet.de/estg/__67.html"
+      },
+      {
+        "title": "所得税法第70条：支給と6か月の遡及",
+        "url": "https://www.gesetze-im-internet.de/estg/__70.html"
+      }
+    ],
+    "image": "/assets/img/living/kindergeld-application-germany.webp",
+    "image_alt": "テーブルの上に子どものおもちゃの積み木と封筒、ノートパソコンが置かれた、家族の手続きを表したイラスト"
+  },
+  {
+    "id": "L087",
+    "slug": "church-tax-germany",
+    "url": "/germany/ja/living/church-tax-germany/",
+    "markdown_path": "/content/living/church-tax-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 56,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "tax",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: BGB, BUrlG, ArbZG, KSchG, TzBfG, NachwG, GewO, EntgFG, SGB III/IV/V, EStG, MiLoG, BMG; justiz.nrw); search summaries for 2027 status; human review pending",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-05-01"
+    },
+    "canonical_url": "/germany/ja/living/church-tax-germany/",
+    "title": "ドイツの教会税｜住民登録の宗教欄、税率8%・9%、日本で洗礼を受けた人の注意、離脱の手続きと費用",
+    "category": "税金・保険",
+    "summary": "ドイツでは、カトリックやプロテスタントなどの教会に属する人に、所得税の8%または9%の教会税がかかります。多くの日本人は対象外ですが、住民登録の宗教欄の書き方や、日本でキリスト教の洗礼を受けたことがある場合は注意が必要です。給与明細での確認方法、教会員でない配偶者の扱い、離脱の手続き（NRW州は区裁判所で30ユーロ）、確定申告での控除を整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "教会税",
+      "Kirchensteuer",
+      "住民登録",
+      "宗教",
+      "給与明細",
+      "税金",
+      "教会離脱"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "anmeldung-guide",
+      "tax-id-steuernummer-steuerklasse",
+      "income-tax-return-germany",
+      "employment-contract-germany",
+      "returning-to-japan-checklist"
+    ],
+    "official_sources": [
+      {
+        "title": "所得税法第51a条：教会税などの付加税の計算",
+        "url": "https://www.gesetze-im-internet.de/estg/__51a.html"
+      },
+      {
+        "title": "所得税法第10条：教会税の控除（特別支出）",
+        "url": "https://www.gesetze-im-internet.de/estg/__10.html"
+      },
+      {
+        "title": "連邦住民登録法第3条：登録される情報（宗教を含む）",
+        "url": "https://www.gesetze-im-internet.de/bmg/__3.html"
+      },
+      {
+        "title": "ノルトライン＝ヴェストファーレン州司法省：教会からの離脱",
+        "url": "https://www.justiz.nrw/node/1133"
+      }
+    ],
+    "image": "/assets/img/living/church-tax-germany.webp",
+    "image_alt": "石造りの教会の塔が見える街並みの手前に、電卓と給与明細を思わせる紙が置かれたイラスト"
   }
 ]

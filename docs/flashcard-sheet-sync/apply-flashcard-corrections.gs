@@ -137,7 +137,9 @@ function run_(apply) {
     '\n例文出典の更新: ' + counts.sourceUpdated + ' 行' +
     (apply && (counts.applied || counts.sourceUpdated) ? '\n\nバックアップをマイドライブに作成しました。' : '') +
     '\n詳細は「' + LOG_SHEET_NAME + '」シートを見てください。';
-  try { SpreadsheetApp.getUi().alert(summary); } catch (e) { Logger.log(summary); }
+  // toast does not block the script, so the execution ends right away (an alert would wait for OK and could time out).
+  Logger.log(summary);
+  try { ss.toast(summary, apply ? '修正を反映しました' : '確認結果', 30); } catch (e) {}
 }
 
 function norm_(s) { return String(s).replace(/\r\n?/g, '\n').replace(/\u00a0/g, ' ').trim(); }

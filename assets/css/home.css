@@ -457,8 +457,7 @@ body.portal3-home > .page-footer{
 
 .portal3-panel-head > a,
 .portal3-section-head > a,
-.portal3-section-more,
-.more-news{
+.portal3-section-more{
   color:var(--portal3-blue);
   display:inline-flex;
   align-items:center;
@@ -485,15 +484,13 @@ body.portal3-home > .page-footer{
 
 .portal3-panel-head > a::after,
 .portal3-section-head > a::after,
-.portal3-section-more::after,
-.more-news::after{
+.portal3-section-more::after{
   content:" ›";
 }
 
 .portal3-panel-head > a:hover,
 .portal3-section-head > a:hover,
-.portal3-section-more:hover,
-.more-news:hover{
+.portal3-section-more:hover{
   border-color:#0d60bd;
   background:#eef7ff;
   box-shadow:0 4px 12px rgba(0,45,95,.10);
@@ -501,8 +498,7 @@ body.portal3-home > .page-footer{
 
 .portal3-panel-head > a:focus-visible,
 .portal3-section-head > a:focus-visible,
-.portal3-section-more:focus-visible,
-.more-news:focus-visible{
+.portal3-section-more:focus-visible{
   outline:3px solid rgba(13,96,189,.28);
   outline-offset:3px;
 }
@@ -741,7 +737,7 @@ body.portal3-home > .page-footer{
 .thumb-office::before{content:"🏢";}
 .thumb-hike::before{content:"🥾";}
 .thumb-laptop::before{content:"💻";}
-.thumb-medical::before{content:"🏥";}
+
 .thumb-mountain::before{content:"⛰️";}
 
 /* Sections */
@@ -955,12 +951,6 @@ body.portal3-home > .page-footer{
   margin:0;
 }
 
-.portal3-chips .chip-primary{
-  background:#0d60bd;
-  border-color:#0d60bd;
-  color:#fff;
-}
-
 /* Cards */
 
 .portal3-card-row,
@@ -970,8 +960,7 @@ body.portal3-home > .page-footer{
   gap:12px;
 }
 
-.portal3-card,
-.portal3-emergency{
+.portal3-card{
   position:relative;
   min-width:0;
   min-height:166px;
@@ -1101,10 +1090,7 @@ body.portal3-home > .page-footer{
 .img-family::before{content:"👥";}
 .img-piano::before{content:"🎹";}
 .img-cafe::before{content:"☕";}
-.img-anmeldung::before{content:"🏢";}
-.img-paper::before{content:"📝";}
-.img-food::before{content:"🍱";}
-.img-view::before{content:"🏞️";}
+
 .img-office::before{content:"🏛️";}
 .img-hospital::before{content:"🏥";}
 .img-meeting::before{content:"💼";}
@@ -1115,63 +1101,8 @@ body.portal3-home > .page-footer{
 .img-family{background:linear-gradient(135deg,#eafaf2,#f7fbff);}
 .img-piano{background:linear-gradient(135deg,#f4f0ff,#ffffff);}
 .img-cafe{background:linear-gradient(135deg,#fff4e5,#ffffff);}
-.img-anmeldung{background:linear-gradient(135deg,#eaf3ff,#ffffff);}
-.img-paper{background:linear-gradient(135deg,#f4f8ff,#ffffff);}
-.img-food{background:linear-gradient(135deg,#fff4e5,#ffffff);}
-.img-view{background:linear-gradient(135deg,#eafaf2,#eaf3ff);}
 
 /* Emergency */
-
-.portal3-emergency{
-  padding:15px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:8px;
-  border-color:#ef9aa3;
-  background:linear-gradient(180deg,#fff7f7,#ffffff);
-  text-align:left;
-}
-
-.portal3-emergency span{
-  display:grid;
-  place-items:center;
-  width:38px;
-  height:38px;
-  border-radius:8px;
-  background:var(--portal3-red);
-  color:#fff;
-  font-size:20px;
-  font-weight:800;
-}
-
-.portal3-emergency strong{
-  color:var(--portal3-red);
-  font-size:15px;
-  line-height:1.35;
-  font-weight:800;
-}
-
-.portal3-emergency p{
-  margin:0;
-  color:#6c3b43;
-  font-size:12px;
-  line-height:1.55;
-  font-weight:600;
-}
-
-.portal3-emergency b{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:86px;
-  height:31px;
-  border-radius:5px;
-  background:var(--portal3-red);
-  color:#fff;
-  font-size:12px;
-  font-weight:800;
-}
 
 /* Jobs */
 
@@ -1328,12 +1259,6 @@ body.portal3-home > .page-footer{
   font-weight:700;
 }
 
-.more-news{
-  display:block;
-  margin-top:8px;
-  text-align:right;
-}
-
 .portal3-event-row{
   display:grid;
   grid-template-columns:repeat(3, minmax(0, 1fr));
@@ -1446,53 +1371,6 @@ body.portal3-home > .page-footer{
 }
 
 /* Learn */
-
-.portal3-phrase{
-  min-height:166px;
-  padding:15px;
-  border:1px solid #e7bd6f;
-  border-radius:7px;
-  background:linear-gradient(180deg,#fff8e6,#fff);
-  box-shadow:0 2px 7px rgba(0,45,95,.06);
-}
-
-.portal3-phrase span{
-  display:inline-flex;
-  padding:3px 9px;
-  border-radius:999px;
-  background:#fff0c7;
-  color:#8a5700;
-  font-size:11px;
-  font-weight:800;
-}
-
-.portal3-phrase strong{
-  display:block;
-  margin-top:8px;
-  color:#173e68;
-  font-size:15px;
-  line-height:1.4;
-  font-weight:800;
-}
-
-.portal3-phrase p{
-  margin:4px 0 10px;
-  color:#67583e;
-  font-size:12px;
-  font-weight:700;
-}
-
-.portal3-phrase button{
-  height:31px;
-  padding:0 12px;
-  border:1px solid #e7bd6f;
-  border-radius:999px;
-  background:#fff;
-  color:#9b6500;
-  font-size:12px;
-  font-weight:800;
-  cursor:pointer;
-}
 
 /* These long editorial sections are below the first mobile viewport. Keep their
    document space while allowing supporting browsers to defer their rendering. */
@@ -1700,8 +1578,7 @@ body.portal3-home > .page-footer{
 :root[data-theme="dark"] body.portal3-home .portal3-job-mini strong,
 :root[data-theme="dark"] body.portal3-home .portal3-card strong,
 :root[data-theme="dark"] body.portal3-home .portal3-job-card strong,
-:root[data-theme="dark"] body.portal3-home .portal3-event-card strong,
-:root[data-theme="dark"] body.portal3-home .portal3-phrase strong{
+:root[data-theme="dark"] body.portal3-home .portal3-event-card strong{
   color:var(--portal3-text);
 }
 
@@ -1722,7 +1599,6 @@ body.portal3-home > .page-footer{
 :root[data-theme="dark"] body.portal3-home .portal3-news-list time,
 :root[data-theme="dark"] body.portal3-home .portal3-news-list small,
 :root[data-theme="dark"] body.portal3-home .portal3-event-card small,
-:root[data-theme="dark"] body.portal3-home .portal3-phrase p,
 :root[data-theme="dark"] body.portal3-home .portal3-latest-date,
 :root[data-theme="dark"] body.portal3-home .portal3-community-date{
   color:var(--portal3-muted);
@@ -1749,8 +1625,7 @@ body.portal3-home > .page-footer{
 :root[data-theme="dark"] body.portal3-home .portal3-card,
 :root[data-theme="dark"] body.portal3-home .portal3-job-card,
 :root[data-theme="dark"] body.portal3-home .portal3-news-list,
-:root[data-theme="dark"] body.portal3-home .portal3-event-card,
-:root[data-theme="dark"] body.portal3-home .portal3-phrase{
+:root[data-theme="dark"] body.portal3-home .portal3-event-card{
   border-color:var(--portal3-line);
   background:var(--portal3-surface);
   color:var(--portal3-text);
@@ -1781,11 +1656,9 @@ body.portal3-home > .page-footer{
 :root[data-theme="dark"] body.portal3-home .portal3-panel-head > a,
 :root[data-theme="dark"] body.portal3-home .portal3-section-head > a,
 :root[data-theme="dark"] body.portal3-home .portal3-section-more,
-:root[data-theme="dark"] body.portal3-home .more-news,
 :root[data-theme="dark"] body.portal3-home .portal3-chips a,
 :root[data-theme="dark"] body.portal3-home .portal3-section-buttons a:last-child,
-:root[data-theme="dark"] body.portal3-home .portal3-fallback-actions a,
-:root[data-theme="dark"] body.portal3-home .portal3-phrase button{
+:root[data-theme="dark"] body.portal3-home .portal3-fallback-actions a{
   border-color:var(--portal3-line-2);
   background:var(--portal3-chip-bg);
   color:var(--portal3-blue);
@@ -1795,7 +1668,6 @@ body.portal3-home > .page-footer{
 :root[data-theme="dark"] body.portal3-home .portal3-panel-head > a:hover,
 :root[data-theme="dark"] body.portal3-home .portal3-section-head > a:hover,
 :root[data-theme="dark"] body.portal3-home .portal3-section-more:hover,
-:root[data-theme="dark"] body.portal3-home .more-news:hover,
 :root[data-theme="dark"] body.portal3-home .portal3-chips a:hover,
 :root[data-theme="dark"] body.portal3-home .portal3-fallback-actions a:hover{
   border-color:rgba(103,183,255,.62);
@@ -1803,7 +1675,6 @@ body.portal3-home > .page-footer{
 }
 
 :root[data-theme="dark"] body.portal3-home .portal3-section-buttons a:first-child,
-:root[data-theme="dark"] body.portal3-home .portal3-chips .chip-primary,
 :root[data-theme="dark"] body.portal3-home .portal3-fallback-actions a:first-child{
   border-color:var(--portal3-blue);
   background:var(--portal3-blue);
@@ -1823,25 +1694,10 @@ body.portal3-home > .page-footer{
 :root[data-theme="dark"] body.portal3-home .portal3-community-mini em,
 :root[data-theme="dark"] body.portal3-home .portal3-card em,
 :root[data-theme="dark"] body.portal3-home .portal3-job-card em,
-:root[data-theme="dark"] body.portal3-home .portal3-event-card em,
-:root[data-theme="dark"] body.portal3-home .portal3-phrase span{
+:root[data-theme="dark"] body.portal3-home .portal3-event-card em{
   border-color:var(--portal3-line);
   background:rgba(103,183,255,.14);
   color:var(--portal3-blue);
-}
-
-:root[data-theme="dark"] body.portal3-home .portal3-emergency{
-  border-color:rgba(255,125,139,.44);
-  background:linear-gradient(180deg, rgba(97,31,43,.72), #101f33);
-  color:var(--portal3-text);
-}
-
-:root[data-theme="dark"] body.portal3-home .portal3-emergency strong{
-  color:#ff8d9a;
-}
-
-:root[data-theme="dark"] body.portal3-home .portal3-emergency p{
-  color:#f2bdc5;
 }
 
 /* Home information hierarchy */

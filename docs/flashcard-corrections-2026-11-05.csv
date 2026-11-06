@@ -1,0 +1,392 @@
+card_id,列,修正前,修正後
+a1-0348,example_de,Er ist am 28. Juli 1888 geboren.,Mein Geburtstag ist im Juli.
+a1-0348,example_ja,彼は1888年7月28日に生まれました。,私の誕生日は7月です。
+c1-0272,example_de,"Wenn Sie Ihren Brief bis neunzehn Uhr in den Kasten werfen, dann wird er schon morgen sein Ziel erreichen.",Der Laden ist bis neunzehn Uhr geöffnet.
+c1-0272,example_ja,19時までに投函すれば、明日には届きますよ。,その店は19時まで開いています。
+b1-0546,example_de,1847 erklärten sie ihre Unabhängigkeit.,"Viele junge Leute ziehen aus, weil sie Unabhängigkeit wollen."
+b1-0546,example_ja,１８４７年、彼らは独立を宣言した。,自立したいという理由で家を出る若者は多い。
+c1-9031,usage_note,修正を意味し、必ず全面撤回とは限りません。見直しの根拠を伴わせます。,これまでの評価を修正することを表し、全面的な撤回とは限りません。新しいデータや理由と一緒に使うのが一般的です。
+expand-a1-00018,example_de,"Die Schwäche dieses Buches ist, dass es an Überzeugungskraft mangelt, wenn der Autor, der selbst verheiratet ist, zum Nichtheiraten rät.",Sind Sie verheiratet?
+expand-a1-00018,example_ja,この本の弱点は、著者自身が既婚者でありながら、結婚に反対する意見を述べる際に、説得力に欠ける点だ。,結婚していますか？
+expand-a1-00084,example_de,"Meistens kann der Absender mit U. N. Owen abgekürzt werden, was man unknown (engl. „unbekannt“) aussprechen kann.",Auf dem Brief steht kein Absender.
+expand-a1-00084,example_ja,差出人は通常、U. N. Owenと略され、「アンノウン」と発音されます。,その手紙には差出人が書かれていない。
+expand-a1-00085,example_de,"Eine Selbstversorgung der Gäste ist nicht nur durch ein kleines Lebensmittelgeschäft mit Bäckerei und Kiosk möglich, sondern kann auch durch landwirtschaftliche Produkte – direkt und frisch vom Erzeuger zu beziehen – gewährleistet werden.",Am Kiosk kann ich auch sonntags Milch kaufen.
+expand-a1-00085,example_ja,ゲストの自炊は、パン屋とキオスクを併設した小さな食料品店だけでなく、生産者から直接仕入れた新鮮な農産物を利用することでも可能です。,売店なら日曜日でも牛乳が買える。
+expand-a1-00094,example_de,"was kann ich für Euch tun, meine Herrin?","„Was kann ich für Euch tun, meine Herrin?“, fragte der Diener."
+expand-a1-00094,example_ja,何かご用でしょうか？,「奥様、何なりとお申し付けください」と召使いは尋ねた。
+expand-a1-00094,japanese,奥方,女主人；奥方
+expand-a1-00097,example_de,Die Quellen gehen aber vom Geburtsjahr 1763 aus.,Bitte tragen Sie hier Ihr Geburtsjahr ein.
+expand-a1-00097,example_ja,しかし、資料によると彼女の生年は1763年となっています。,ここに生まれた年を記入してください。
+expand-a2-00006,example_de,dafür kämpfen.,Ich habe keine Zeit dafür.
+expand-a2-00006,example_ja,戦え。,そのための時間がありません。
+expand-a2-00012,example_de,Heute ehrt die Schule das Andenken an ihre berühmte Schülerin und hat die Bibliothek nach ihr benannt.,Sie ist die beste Schülerin in ihrer Klasse.
+expand-a2-00012,example_ja,今日、学校は著名な生徒の功績を称え、図書館を彼女の名前にちなんで命名しました。,彼女はクラスでいちばん成績のよい生徒だ。
+expand-a2-00031,example_de,"Dieser Prozess wurde in den 1920er Jahren abgeschlossen, so dass Castle Island seither keine Insel im eigentlichen Sinne mehr ist.",Im Sommer fahren wir auf eine Insel in der Nordsee.
+expand-a2-00031,example_ja,この作業は1920年代に完了したため、キャッスル島はそれ以来、文字通りの意味で島ではなくなりました。,夏には北海の島へ行きます。
+expand-a2-00036,example_de,"1632 wurde die Stadt von Hessen ausgeplündert, die Einwohner flohen zweimal aus der Stadt.",Ich war schon zweimal in Berlin.
+expand-a2-00036,example_ja,1632年、この町はヘッセン兵に略奪されました。住民たちは町から二度逃げ出した。,ベルリンにはもう2回行ったことがあります。
+expand-a2-00074,example_de,"Über solche Gegenden, die die Entdecker nicht unmittelbar erlebt hatten, berichteten sie fantastisch über Rassen menschlicher Monster und sagenhaften Reichtum an Gold, Silber und Perlen.",Das Essen in dem neuen Restaurant war fantastisch.
+expand-a2-00074,example_ja,探検家たちが直接訪れたことのない地域について、彼らは怪物のような人種や、金、銀、真珠の莫大な富について空想的に書き記した。,新しいレストランの料理は素晴らしかった。
+expand-a2-00074,japanese,すてき,素晴らしい；空想的な
+expand-a2-00121,example_de,"1912 starb der österreichische Schneider Franz Reichelt, als er vom ersten Stock des Eiffelturms sprang, um seine Erfindung, den Fallschirmmantel, zu testen, der nicht funktionierte.",Sie spricht mit einem leichten österreichischen Akzent.
+expand-a2-00121,example_ja,1912年、オーストリアの仕立て屋のフランツ・ライヒェルトは、パラシュート・コートという彼の新しい発明をテストするため、エッフェル塔の2階から飛び降りたが、発明品は上手く動作しなかったため、彼は死亡した・・・,彼女は少しオーストリアなまりのドイツ語を話す。
+expand-a2-00147,example_de,Er kehrte 1846 in die Heimat zurück und nahm das Sekretariat der Handelskammer in Düsseldorf an.,Die Anmeldung für den Kurs erfolgt im Sekretariat.
+expand-a2-00147,example_ja,彼は1846年に帰国し、デュッセルドルフ商工会議所の秘書に就任しました。,コースの申し込みは事務室で行います。
+expand-a2-00149,usage_note,語義を用例に合わせて独自訳・校正。掲示板の意味とは区別。,携帯電話の留守番電話サービスの意味でもよく使います（auf die Mailbox sprechen＝留守電にメッセージを残す）。
+expand-b1-00024,example_de,leicht wütend.,"Er wurde wütend, weil der Zug schon wieder Verspätung hatte."
+expand-b1-00024,example_ja,少し怒っています。,電車がまた遅れたので、彼は腹を立てた。
+expand-b1-00024,japanese,激怒した,怒った；激怒した
+expand-b1-00072,example_de,"Nach Odhners Tod führten seine Söhne Alexander und Georg und sein Schwiegersohn Karl Siewert die Produktion fort und etwa 23.000 Rechner wurden hergestellt, bis die Fabrik 1918 schließen musste.",Mein alter Rechner ist zu langsam für diese Software.
+expand-b1-00072,example_ja,"オドネルの死語、彼の息子のアレクサンデル（Alexander）、イェオリ（Georg）と義理の息子のカール・ジーヴェルト（Karl Siewert）は、1918年に工場を閉鎖せざるをえなくなるまでに約23,000台の計算機を生産し続けた。",私の古いパソコンはこのソフトには遅すぎる。
+expand-b1-00072,japanese,計算機,計算機；コンピューター
+expand-b1-00083,example_de,aus der Erfahrung stammen.,Meine Großeltern stammen aus Bayern.
+expand-b1-00083,example_ja,経験から。,私の祖父母はバイエルン出身だ。
+expand-b1-00083,japanese,来る,（～の）出身である；由来する
+expand-b1-00098,example_de,neugierige Zuschauer.,Unsere Nachbarin ist sehr neugierig und fragt immer nach allem.
+expand-b1-00098,example_ja,好奇心旺盛な見物人たち。,隣の女性はとても好奇心が強く、いつも何でも聞いてくる。
+expand-b1-00098,japanese,根掘り葉掘り,好奇心の強い；詮索好きな
+expand-b1-00124,example_de,nach / vor Geld stinken.,Der Müll in der Küche stinkt.
+expand-b1-00124,example_ja,金持ちの匂いがする。,台所のごみが臭い。
+expand-b1-00129,example_de,steigender Anspruch.,Sie haben Anspruch auf 30 Tage Urlaub im Jahr.
+expand-b1-00129,example_ja,権利意識の高まり。,あなたには年30日の休暇を取る権利があります。
+expand-b1-00129,japanese,要求,請求権；要求
+expand-b1-00193,example_de,"die Möglichkeit ausschließen, dass ...","Wir können nicht ausschließen, dass der Termin verschoben wird."
+expand-b1-00193,example_ja,可能性を排除するために…,予定が延期される可能性は排除できません。
+expand-b1-00193,japanese,締め出す,除外する；排除する；締め出す
+expand-b1-00214,example_de,sich weiterhin dafür einsetzen.,Sie setzt sich seit Jahren für die Rechte von Kindern ein.
+expand-b1-00214,example_ja,引き続きこれを提唱する。,彼女は何年も前から子どもの権利のために尽力している。
+expand-b1-00214,japanese,入れる,投入する；（sich ~）尽力する
+expand-b1-00263,example_de,Allerdings wurden noch abwesende Statthalter bis 1795 ernannt.,"Der Chef ist heute abwesend, bitte rufen Sie morgen wieder an."
+expand-b1-00263,example_ja,しかし、1795年まで不在の知事が任命されていました。,上司は本日不在です。明日またお電話ください。
+expand-b1-00263,japanese,外出中,不在の；上の空の
+expand-b1-00297,example_de,stufenweise einführen.,Die Stadt will die neue Mülltrennung stufenweise einführen.
+expand-b1-00297,example_ja,徐々に紹介する。,市は新しいごみの分別を段階的に導入する予定だ。
+expand-b1-00297,japanese,輸入する,導入する；輸入する
+expand-b1-00310,example_de,"1912 starb der österreichische Schneider Franz Reichelt, als er vom ersten Stock des Eiffelturms sprang, um seine Erfindung, den Fallschirmmantel, zu testen, der nicht funktionierte.","Bevor du das Programm installierst, solltest du es testen."
+expand-b1-00310,example_ja,1912年、オーストリアの仕立て屋のフランツ・ライヒェルトは、パラシュート・コートという彼の新しい発明をテストするため、エッフェル塔の2階から飛び降りたが、発明品は上手く動作しなかったため、彼は死亡した・・・,そのプログラムをインストールする前に、試してみたほうがいい。
+expand-b1-00368,example_de,Insgesamt arbeiten in der Klinik rund 1100 Mitarbeiter.,Nach der Operation musste sie drei Tage in der Klinik bleiben.
+expand-b1-00368,example_ja,クリニックには合計約1100人が勤務している。,手術のあと、彼女は3日間入院しなければならなかった。
+expand-b1-00373,example_de,öffentlicher Auftritt.,Vor ihrem ersten Auftritt war die Sängerin sehr nervös.
+expand-b1-00373,example_ja,公の場での出来事。,その歌手は初めてのステージの前、とても緊張していた。
+expand-b1-00373,japanese,登場,出演；登場
+expand-b1-00407,example_de,Der als Slawenapostel bekannte Byzantiner/Grieche Method von Saloniki soll aufgrund einer Verschwörung der bayerischen Bischöfe etwa zweieinhalb Jahre (870–873) im Kloster-Gefängnis inhaftiert gewesen sein.,Meine Kollegin ist Griechin und kommt aus Athen.
+expand-b1-00407,example_ja,スラヴ人の使徒として知られるビザンツ/ギリシャ人のテッサロニキのメトドゥスは、バイエルン司教たちの陰謀により、約2年半（870年～873年）修道院の牢獄に投獄されたと言われています。,私の同僚はギリシャ人で、アテネ出身だ。
+expand-b1-00407,japanese,ギリシャ人,ギリシャ人（女性）
+expand-b1-00443,example_de,Supranationale Organisationen zeichnen sich durch eine ausgeprägte und ausbalancierte Organisationsstruktur sowie durch eine enge rechtliche Bindung zwischen ihren Mitgliedstaaten aus.,Ist das rechtlich erlaubt?
+expand-b1-00443,example_ja,超国家組織は、高度に発達しバランスの取れた組織構造と、加盟国間の緊密な法的関係を特徴としています。,それは法律上許されていますか？
+expand-b1-00447,example_de,Diese Zahlung erfolgte erst 1699.,Die Zahlung ist bis Ende des Monats fällig.
+expand-b1-00447,example_ja,この支払いは1699年まで行われませんでした。,支払いは月末が期限です。
+expand-b1-00447,japanese,払い,支払い
+expand-b1-00462,example_de,"Als eine Hauptursache dafür, dass die heftigen Regenfälle so viele Menschenleben forderten, wird angeführt, dass die Verwaltung gezögert habe, die Evakuierungsempfehlung auszusprechen.",Die Verwaltung der Universität hat neue Regeln beschlossen.
+expand-b1-00462,example_ja,豪雨によって多くの命が失われた主な理由の一つとして挙げられているのは、行政が避難勧告の発令をためらったことである。,大学の事務当局が新しい規則を決めた。
+expand-b1-00462,japanese,経営,行政；管理；運営
+expand-b1-00487,example_de,"Das 5 ha große Elsbeerwäldle, beiderseits der Autobahn 81 direkt an der Ausfahrt Weinsberg gelegen, wurde am 2. September 1991 als Schonwald (Nr. 302) ausgewiesen, um die Elsbeer- und Speierlingbestände zu schützen.",Nehmen Sie die nächste Ausfahrt Richtung Flughafen.
+expand-b1-00487,example_ja,A81高速道路のヴァインスベルク出口付近の両側に位置する5ヘクタールのエルスベールヴェルドル（サービスベリー林）は、サービスベリーと野生のサービスツリーの個体群を保護するため、1991年9月2日に保護林（第302号）に指定されました。,次の出口で空港方面に出てください。
+expand-b1-00545,example_de,"Stempeln, denen zudem Ortsnamen wie der Wohnort, der Geburtsort etc. beigefügt ist, sind vielfach in China zu finden.",Bitte geben Sie Ihren Wohnort und Ihre Adresse an.
+expand-b1-00545,example_ja,中国では、居住地や出生地などの地名も記載された切手がよく見られます。,居住地と住所を記入してください。
+expand-b1-00545,japanese,居所,居住地
+expand-b1-00556,example_de,"Am produktivsten war der 1710 geborene Lubert Diedrich Bahlmann, dessen Stempel häufig auf noch vorhandenem Zinngerät eingeschlagen ist.",Ohne Stempel ist das Formular nicht gültig.
+expand-b1-00556,example_ja,最も多作だったのは、1710年生まれのルベルト・ディードリッヒ・バールマンで、彼の刻印は現存するピューター製品によく見られます。,スタンプのない用紙は無効です。
+expand-b1-00556,japanese,極印,スタンプ；はんこ；消印
+expand-b1-00585,example_de,Die königliche Urkunde trug das Datum vom 3. Juni 1814.,Für den Antrag brauchen Sie Ihre Geburtsurkunde und Ihre Heiratsurkunde.
+expand-b1-00585,example_ja,国王の証書は1814年6月3日付で発行されている。,申請には出生証明書と婚姻証明書が必要です。
+expand-b2-00015,example_de,stiller Alarm.,Im Wald war es ganz still.
+expand-b2-00015,example_ja,サイレントアラーム。,森の中はとても静かだった。
+expand-b2-00015,japanese,ひっそり,静かな；ひっそりした
+expand-b2-00050,example_de,"Man hat sich zwar vorgenommen, daran etwas zu ändern, aber die Versuche sind bald wieder eingeschlafen.",Ich bin gestern vor dem Fernseher eingeschlafen.
+expand-b2-00050,example_ja,これを変えようとする計画はあったが、それらの試みはすぐに立ち消えになった。,昨日はテレビの前で眠ってしまった。
+expand-b2-00050,japanese,しびれる,眠り込む；（手足が）しびれる；立ち消えになる
+expand-b2-00071,example_de,angesehener Beruf.,Er ist ein angesehener Arzt in unserer Stadt.
+expand-b2-00071,example_ja,尊敬される職業。,彼は私たちの町で評判のよい医師だ。
+expand-b2-00071,japanese,れっきとした,評判のよい；尊敬されている
+expand-b2-00092,example_de,gegenseitige Achtung.,In unserem Team helfen wir uns gegenseitig.
+expand-b2-00092,example_ja,相互尊重。,私たちのチームではお互いに助け合っています。
+expand-b2-00107,example_de,wohl überlegte Entscheidung.,Das war eine gut überlegte Entscheidung.
+expand-b2-00107,example_ja,よく考えられた決断だ。,それはよく考えた末の決断だった。
+expand-b2-00107,japanese,翼々,よく考えた；慎重な
+expand-b2-00135,example_de,geistige Prozesse.,Rätsel halten im Alter geistig fit.
+expand-b2-00135,example_ja,精神過程。,パズルは年を取っても頭の働きを保つのに役立つ。
+expand-b2-00208,example_de,die Zeit vertreiben.,Wir haben uns die Zeit mit Kartenspielen vertrieben.
+expand-b2-00208,example_ja,時間つぶしに。,私たちはトランプをして時間をつぶした。
+expand-b2-00208,japanese,払う,追い払う；販売する；（Zeit ~）時間をつぶす
+expand-b2-00228,example_de,großzügiges Angebot.,Vielen Dank für Ihr großzügiges Angebot.
+expand-b2-00228,example_ja,寛大な申し出です。,寛大なお申し出をありがとうございます。
+expand-b2-00415,example_de,vor seinen Problemen weglaufen.,Unser Hund ist gestern weggelaufen.
+expand-b2-00415,example_ja,彼は自分の問題から逃げている。,うちの犬が昨日逃げ出してしまった。
+expand-b2-00420,example_de,"Die Mitbewohner, die früher zur Vertreibung bereit waren, müssen eine Mitbewohnerin auswählen, bei der sie der Meinung war, dass sie ein perfekter Partner im Vertreibungsprozess sein würde.",Mein Mitbewohner kocht fast jeden Abend.
+expand-b2-00420,example_ja,以前から退去させる意思があったルームメイトは、退去手続きにおいて理想的なパートナーとなると思われる女性のルームメイトを一人選ばなければならない。,私のルームメイトはほとんど毎晩料理をする。
+expand-b2-00463,example_de,wesentlich dazu beitragen.,Jeder kann etwas zum Umweltschutz beitragen.
+expand-b2-00463,example_ja,それに大きく貢献する。,誰もが環境保護に何らかの貢献ができる。
+expand-b2-00463,japanese,資する,貢献する；寄与する
+expand-b2-00464,example_de,Dieser Zweig wurde nach den Kriegszerstörungen bevorzugt wieder aufgegriffen und die Honsel-Werke wurden relativ bald zur größten deutschen Kundengießerei auf dem Aluminiumsektor und verblieben als solche noch lange Jahre im Familienbesitz.,Geschwisterkinder werden bei der Vergabe der Kita-Plätze oft bevorzugt.
+expand-b2-00464,example_ja,この部門は戦後の破壊から復興し、ホンゼル工場は比較的短期間でドイツ最大のアルミニウム鋳造工場となり、長年にわたり家族経営を続けました。,Kitaの枠の割り当てでは、きょうだいがすでに通っている子どもが優先されることが多い。
+expand-b2-00478,example_de,"Ich glaube, jemand der Sprachwissenschaft ernsthaft betreibt ist entweder jemand, der von der Notwendigkeit dazu gedrängt wird, oder jemand, der Sprachwissenschaft wirklich von Herzen liebt.","Ich sehe keine Notwendigkeit, das Auto zu verkaufen."
+expand-b2-00478,example_ja,語学を真剣にやってるのって、必要に迫られてる人か、本当に心から好きでやってる人かのどっちかだと思う。,車を売る必要はないと思う。
+expand-b2-00485,example_de,"Ich frage mich, ob ich ich mir im Selbststudium ein absolutes Gehör aneignen kann.","Ich frage mich, ob ich mir im Selbststudium ein absolutes Gehör aneignen kann."
+expand-b2-00510,example_de,"Erasmus von Rotterdam veröffentlichte bereits im Jahr 1500 Sprüche und Wendungen lateinischer Autoren, und Rabelais beschreibt in seinem 1564 erschienenen Roman Pantagruel unter anderem eine Sprichwörterinsel.",Auf ihrer Tasse steht ein lustiger Spruch.
+expand-b2-00510,example_ja,エラスムスは1500年には既に、ラテン語のことわざや格言の収集を出版しており、フランソワ・ラブレーも、1564年に出版した小説『ガルガンチュワとパンタグリュエル』において寓意の島を主題としている。,彼女のマグカップには面白い言葉が書いてある。
+expand-b2-00510,japanese,格言,格言；決まり文句；（短い）言葉
+expand-b2-00599,example_de,In den folgenden unruhigen Jahren der Weimarer Republik konnte die NSDAP hier schnell Fuß fassen.,"Das Kind hat unruhig geschlafen, weil es Fieber hatte."
+expand-b2-00599,example_ja,その後のワイマール共和国時代の激動の時代において、ナチ党はこの地で急速に足場を築くことができた。,熱があったので、その子は落ち着かずよく眠れなかった。
+expand-b2-00599,japanese,うろうろ,落ち着かない；不安な
+expand-b2-00632,example_de,"Abt Bertho war siegreich, zerstörte die Burg Wartenberg und belohnte die Lauterbacher am 16. März 1266 mit der Verleihung der Stadtrechte.",Für seine harte Arbeit wurde er mit einer Prämie belohnt.
+expand-b2-00632,example_ja,修道院長はヴァルテンベルク城を破壊し、ラウターバッハに対しては1266年3月16日に都市権を与えることで報いた。,彼は懸命な働きに対してボーナスで報われた。
+expand-b2-00680,example_de,jemanden in ein Gefängnis einsperren.,Nachts sperren wir die Hühner in den Stall ein.
+expand-b2-00680,example_ja,誰かを投獄する。,夜は鶏を小屋に閉じ込めておく。
+expand-b2-01000,example_de,S. 53. Carl Troll: Die geographische Landschaft und ihre Erforschung.,Im Märchen wohnt ein Troll unter der Brücke.
+expand-b2-01000,example_ja,53 ^ カール・トロール：地理的な風景とその探検。,そのおとぎ話では、橋の下にトロールが住んでいる。
+expand-b2-01032,example_de,"Aber auch ganz alltägliche Dinge wie die chemischen oder physikalischen Eigenschaften verschiedener Stoffe (Farbe, Ferromagnetismus, elektrische Leitfähigkeit usw.) lassen sich nur quantenphysikalisch verstehen.",Staus gehören hier zum alltäglichen Leben.
+expand-b2-01032,example_ja,しかし、様々な物質の化学的または物理的性質（色、強磁性、電気伝導性など）といった日常的な事柄でさえ、量子物理学を通してのみ理解できる。,ここでは渋滞は日常生活の一部だ。
+expand-b2-01123,example_de,"Als Fachwerkkirche 1708 für alle drei Kolonien gebaut, wurde sie 1767 durch einen massiven Saalbau ersetzt.",Der Tisch ist aus massivem Holz.
+expand-b2-01123,example_ja,1708年に3つの植民地のために木骨造りの教会として建てられたが、1767年に堅固なホール型の教会に建て替えられた。,そのテーブルは無垢材でできている。
+expand-b2-01123,japanese,堅牢,頑丈な；無垢の；大規模な
+expand-b2-01140,example_de,"Im Jahre 1842 gelang es ihm, ein bewegliches Schiff zu zerstören, zur Zufriedenheit der United States Navy und des Präsidenten James K. Polk.",Zu unserer Zufriedenheit wurde das Problem schnell gelöst.
+expand-b2-01140,example_ja,1842年、1隻の船を破壊することに成功したので海軍とジョン・タイラー大統領の満足を得ることができた。,問題がすぐに解決され、私たちは満足した。
+expand-b2-01258,example_de,einmalige Gebühr.,Für die Anmeldung zahlen Sie eine einmalige Gebühr von 20 Euro.
+expand-b2-01258,example_ja,一回限りの料金。,登録には1回限りの手数料20ユーロを払います。
+expand-b2-01258,japanese,無二,一回限りの；またとない
+expand-c1-00155,example_de,laufende Gebühr.,Die laufenden Kosten für das Auto sind höher als gedacht.
+expand-c1-00155,example_ja,継続的な料金。,車の維持費は思っていたより高い。
+expand-c1-00155,japanese,当座,継続的な；現在の
+expand-c1-00404,example_de,überwältigende Zustimmung.,Der Vorschlag wurde mit überwältigender Mehrheit angenommen.
+expand-c1-00404,example_ja,圧倒的な一致。,その提案は圧倒的多数で可決された。
+expand-c1-00642,example_de,Nach diesen für die Bevölkerung einschneidenden Ereignissen mit ständigen kriegsbedingten Belastungen kam es 1816 zum Jahr ohne Sommer.,Die Pflege der Eltern ist eine große Belastung für die Familie.
+expand-c1-00642,example_ja,こうした壊滅的な出来事が住民を襲い、絶え間ない戦争関連の苦難が続いた1816年は、「夏のない年」となった。,親の介護は家族にとって大きな負担だ。
+expand-c1-00642,japanese,荷重,負担；ストレス；荷重
+expand-c1-00646,example_de,Die oberen Stockwerke und das eindrucksvolle Dachgebälk entstanden 1480.,Der Blick von der Burg ist wirklich eindrucksvoll.
+expand-c1-00646,example_ja,上層階と印象的な屋根のトラスは1480年に建てられた。,城からの眺めは本当に印象的だ。
+expand-c1-00679,example_de,"Dabei handelte es sich um kurze, vermeintlich sachlich gehaltene Dokumentationsfilme über kulturelle, naturwissenschaftliche und andere Themen; hier wurden Themen wie Rassenlehre und Antisemitismus behandelt.",Bitte bleiben Sie sachlich.
+expand-c1-00679,example_ja,これらは文化、科学、その他のテーマを扱った、事実に基づいているとされる短いドキュメンタリーで、人種理論や反ユダヤ主義といった題材を扱っていました。,冷静に、事実に即して話してください。
+expand-c1-00884,example_de,1885 wurde daraus eine Tageszeitung.,Mein Vater liest jeden Morgen die Tageszeitung.
+expand-c1-00884,example_ja,1885年に日刊紙となった。,父は毎朝、日刊紙を読む。
+expand-c1-00920,example_de,"Für seine Doktorarbeit, in der er aktuellste Kenntnisse der Astrophysik auf das Wackelverhalten von Underboobs angewandt hat, ist er von der Universitätspräsidentin öffentlich ausgezeichnet worden.",Sie schreibt ihre Doktorarbeit über erneuerbare Energien.
+expand-c1-00920,example_ja,彼は最新の宇宙物理学の知見を下乳の揺れ方に応用させた博士論文で大学の学長から表彰された。,彼女は再生可能エネルギーについて博士論文を書いている。
+expand-c1-00953,example_de,Am 21. Oktober 2006 wurde im Boston Common ein neuer Weltrekord aufgestellt: 30.128 Laternen des Typs Jack O’Lantern wurden gleichzeitig während des Life is good Pumpkin Festival angezündet.,Beim Martinsumzug tragen die Kinder bunte Laternen.
+expand-c1-00953,example_ja,"2006年10月21日、ボストン・コモンで新たな世界記録が樹立された。ライフ・イズ・グッド・パンプキン・フェスティバルで、30,128個のジャック・オー・ランタンが同時に点灯されたのだ。",聖マルティンの行列では、子どもたちが色とりどりのランタンを持つ。
+expand-c1-01042,example_de,juristische Konsequenzen.,Das kann juristische Konsequenzen haben.
+expand-c1-01042,example_ja,法的影響。,それは法的な結果を招くおそれがある。
+expand-c1-01236,example_de,"Elle Nicole McLemore (* 16. September 1991 in Honolulu, Hawaii) ist eine US-amerikanische Schauspielerin.",Die Elle ist einer der beiden Knochen im Unterarm.
+expand-c1-01236,example_ja,"エル・マクルモア（Elle McLemore, 1991年9月16日 - ）は、アメリカ合衆国ホノルル出身の女優である。",尺骨は前腕にある2本の骨のうちの1本だ。
+expand-c1-01236,japanese,エル,尺骨；エレ（昔の長さの単位）
+expand-c1-01325,example_de,ausdrückliche Erlaubnis.,Fotos dürfen nur mit ausdrücklicher Erlaubnis veröffentlicht werden.
+expand-c1-01325,example_ja,明示的な許可。,写真は明確な許可がある場合にのみ公開できる。
+expand-c1-01399,example_de,"Wie weit der jeweilige Lautwandel bereits fortgeschritten war und wie zuverlässig er sich schon in der (damals noch nicht orthographisch geregelten) Schreibweise niedergeschlagen hatte, war jedoch regional sehr unterschiedlich.",Für manche Wörter gibt es zwei richtige Schreibweisen.
+expand-c1-01399,example_ja,しかし、それぞれの音韻変化がどの程度進行していたか、そして（当時まだ規則化されていなかった）綴りにどれほど正確に反映されていたかは、地域によって大きく異なっていた。,単語によっては正しい綴りが2通りある。
+expand-c1-01399,japanese,書きぶり,綴り；表記
+expand-c1-01432,example_de,Der Bribery Act 2010 (engl. bribery = Bestechung) ist ein Antikorruptionsgesetz des Vereinigten Königreichs.,Der Beamte wurde wegen Bestechung angeklagt.
+expand-c1-01432,example_ja,2010年贈収賄法（bribery = bribery）は、英国の汚職防止法です。,その公務員は贈収賄の罪で起訴された。
+expand-c1-01485,example_de,Jährlich fallen auf dem Oktoberfest knapp 1000 Tonnen Restmüll an.,Das Oktoberfest in München beginnt jedes Jahr im September.
+expand-c1-01485,example_ja,"オクトーバーフェストでは毎年およそ1,000トンのごみが出る。",ミュンヘンのオクトーバーフェストは毎年9月に始まる。
+expand-c1-01662,example_de,zusehends schlechter.,Nach der Operation ging es ihm zusehends besser.
+expand-c1-01662,example_ja,事態は悪化の一途を辿る。,手術のあと、彼は目に見えて回復していった。
+expand-c1-01806,example_de,in den Vordergrund rücken.,Im neuen Konzept rückt der Kundenservice in den Vordergrund.
+expand-c1-01806,example_ja,前面に押し出す。,新しいコンセプトでは顧客サービスが前面に押し出されている。
+expand-c1-01806,japanese,フォアグラウンド,前景；表立ったところ
+expand-c1-01815,example_de,Samuel Bowles (* 1939) ist ein US-amerikanischer Ökonom.,Viele Ökonomen erwarten im nächsten Jahr ein schwaches Wachstum.
+expand-c1-01815,example_ja,サミュエル・ボウルズ（1939年生まれ）はアメリカの経済学者である。,多くの経済学者は来年の成長が鈍いと予想している。
+expand-c1-01839,example_de,Der Landkreis Hof weist eine weit überdurchschnittliche Industriedichte auf (Anzahl der Beschäftigten je 1000 Einwohner).,Die Firma hat rund 200 Beschäftigte.
+expand-c1-01839,example_ja,"ホーフ地区は、平均をはるかに上回る工業密度（人口1,000人当たりの従業員数）を誇る。",その会社には約200人の従業員がいる。
+expand-c1-01839,japanese,使用人,従業員；就業者
+expand-c1-01859,example_de,"John Herbert Dillinger (* 22. Juni 1903 in Indianapolis, Indiana; † 22. Juli 1934 in Chicago, Illinois) war ein US-amerikanischer Gangster, der sich mit seiner Bande auf Bankraub spezialisierte.",In dem Film spielt er einen Gangster aus Chicago.
+expand-c1-01859,example_ja,ジョン・ハーバート・ディリンジャー（1903年6月22日、インディアナ州インディアナポリス生まれ、1934年7月22日、イリノイ州シカゴ没）は、銀行強盗を専門とするアメリカのギャングで、一味を率いていました。,その映画で彼はシカゴのギャングを演じている。
+expand-c1-01926,example_de,Michel Fourniret (* 4. April 1942 in Sedan in Frankreich) ist ein französischer Serienmörder.,Der Krimi handelt von der Suche nach einem Serienmörder.
+expand-c1-01926,example_ja,ミシェル・フルニレ（Michel Fourniret、1942年4月4日 - ）は、フランスの連続殺人犯である。,その推理小説は連続殺人犯の捜査を描いている。
+expand-c1-02091,example_de,"Auch wenn es noch einige Lücken gab, gab es beispielsweise für die Reiseziele Ägypten, Thailand und die Schweiz beziehungsweise für das Reisethema Radfahren bereits umfangreiche Informationen.",Spanien ist ein beliebtes Reiseziel der Deutschen.
+expand-c1-02091,example_ja,まだ多少の不足はあったものの、エジプト、タイ、スイスといった旅行先や、サイクリング旅行に関する情報は既に豊富に入手できた。,スペインはドイツ人に人気の旅行先だ。
+expand-c1-02162,example_de,Am 18. Dezember 1715 unternahm Karl XII. einen Ausfall mit 1800 Soldaten.,Wegen des Streiks gibt es heute viele Ausfälle bei der Bahn.
+expand-c1-02162,example_ja,1715年12月18日、カール12世は1800人の兵士を率いて出撃した。,ストライキのため、今日は鉄道の運休が多い。
+expand-c1-02162,japanese,出撃,運休；欠航；停止；（軍事）出撃
+expand-c1-02205,example_de,Bereits 1273 und 1292 gab es Gewerbe in der Stadt.,"Wer sich selbstständig macht, muss ein Gewerbe anmelden."
+expand-c1-02205,example_ja,この都市では、1273年と1292年には既に交易が行われていました。,自営業を始める人は営業届を出さなければならない。
+expand-c1-02205,japanese,職業,営業；事業；業種
+expand-c1-02255,example_de,Renovierungen erfolgten 1730 und 1840.,Wegen Renovierung bleibt das Museum bis März geschlossen.
+expand-c1-02255,example_ja,1730年と1840年に改修が行われました。,改装のため、博物館は3月まで休館する。
+expand-c1-02255,japanese,化粧直し,改装；リフォーム
+expand-c1-02353,example_de,"Refik Koraltan (* 1890 in Divriği, Osmanisches Reich; † 17. Juni 1974 in Istanbul) war ein türkischer Bürokrat und Politiker.","Mit Bürokraten zu diskutieren, kostet viel Geduld."
+expand-c1-02353,example_ja,"レフィク・コルアルタン（Refik Koraltan, 1890年 - 1974年6月17日）は、トルコの官僚、政治家。",官僚と議論するには大変な忍耐が要る。
+expand-c1-02409,example_de,"The Nursery “Alice” (englisch nursery: Kinderzimmer) ist ein Kinderbuch von Lewis Carroll, das 1890 bei Macmillan Publishers erschien.","Das Kinderzimmer ist klein, aber hell."
+expand-c1-02409,example_ja,『アリス』はルイス・キャロル作の児童書で、1890年にマクミラン社から出版されました。,子ども部屋は狭いが明るい。
+expand-c1-02409,japanese,ナーサリー,子ども部屋
+expand-c1-02424,example_de,"Gundula Janowitz (* 2. August 1937 in Berlin) ist eine österreichische Opern-, Oratorien- und Konzertsängerin (lyrischer Sopran).",Das Gedicht hat einen sehr lyrischen Ton.
+expand-c1-02424,example_ja,グンドゥラ・ヤノヴィッツ（1937年8月2日、ベルリン生まれ）は、オーストリアのオペラ、オラトリオ、コンサート歌手（リリック・ソプラノ）である。,その詩はとても叙情的な調子を持っている。
+expand-c1-02564,example_de,bahnbrechende Entdeckung.,Die Erfindung des Buchdrucks war eine bahnbrechende Entwicklung.
+expand-c1-02564,example_ja,画期的な発見。,活版印刷の発明は画期的な出来事だった。
+expand-c1-02805,example_de,Talia Balsam (* 5. März 1959 in New York) ist eine US-amerikanische Schauspielerin.,Ein warmes Bad ist Balsam für die Seele.
+expand-c1-02805,example_ja,タリア・バルサム（1959年3月5日、ニューヨーク生まれ）はアメリカの女優である。,温かいお風呂は心の癒やしになる。
+expand-c1-02805,japanese,香油,香油；（比喩）癒やし
+expand-c1-03003,example_de,Am 5. November 1725 einigten sich die österreichische und die spanische Regierung auf militärische Absprachen für den Fall eines Krieges.,Nach Absprache mit Ihrem Arzt können Sie die Dosis ändern.
+expand-c1-03003,example_ja,1725年11月5日、オーストリアとスペインは開戦した場合の軍事協定を締結した。,医師と相談のうえで、服用量を変えることができます。
+expand-c1-03003,japanese,協定,取り決め；打ち合わせ
+expand-c1-03110,example_de,Am 16. März 1920 bestätigten Reichspräsident Friedrich Ebert und Reichskanzler Gustav Bauer die Vollmachten des Arbeiterrates in einem Telegramm: „Dem Arbeiterrat Minden wird die oberste Vollzugsgewalt übertragen.,Mit dieser Vollmacht kann meine Frau das Paket für mich abholen.
+expand-c1-03110,example_ja,1920年3月16日、フリードリヒ・エーベルト大統領とグスタフ・バウアー宰相は電報で労働者評議会の権限を確認した。「最高執行権限はミンデン労働者評議会に移譲される。」,この委任状があれば、妻が私の代わりに荷物を受け取れる。
+expand-c1-03131,example_de,Die Saitama Super Arena (jap.,Das Konzert findet in der größten Arena der Stadt statt.
+expand-c1-03131,example_ja,さいたまスーパーアリーナ（日本語）,コンサートは市内最大のアリーナで行われる。
+expand-c1-03213,example_de,"Meistens kann der Absender mit U. N. Owen abgekürzt werden, was man unknown (engl. „unbekannt“) aussprechen kann.","Wir können den Weg abkürzen, wenn wir durch den Park gehen."
+expand-c1-03213,example_ja,差出人は通常、U. N. Owenと略され、「アンノウン」と発音されます。,公園を通れば近道ができる。
+expand-c1-03213,japanese,端折る,短縮する；近道をする；略す
+expand-c2-00332,example_de,"Später hat die Zeitung eine Gegenerklärung veröffentlicht und ihre Entschuldigungen M. Lobanova entgegengebracht (1990, Nr. 5, S. 4).",Die Kollegen bringen ihr großes Vertrauen entgegen.
+expand-c2-00332,example_ja,その後、新聞は訂正記事を掲載し、M・ロバノワ氏に謝罪した（1990年、第5号、4ページ）。,同僚たちは彼女に大きな信頼を寄せている。
+expand-c2-00357,example_de,das Problem verschärfen.,Die steigenden Mieten verschärfen die Wohnungsnot.
+expand-c2-00357,example_ja,問題を悪化させる。,家賃の上昇が住宅不足を深刻にしている。
+expand-c2-00492,example_de,das Geld wegschmeißen.,"Das Brot ist noch gut, du musst es nicht wegschmeißen."
+expand-c2-00492,example_ja,お金を無駄にしている。,そのパンはまだ食べられるから、捨てなくていいよ。
+expand-c2-00526,example_de,"Das Ministerium für Gesundheit, Arbeit und Soziales hat auf seinen Internetseiten eine Karte mit den Häufungspunkten des neuartigen Coronavirus, wie es in Japan aufgetreten ist, veröffentlicht.",Die Öffnungszeiten finden Sie auf unserer Internetseite.
+expand-c2-00526,example_ja,厚生労働省は、日本国内における新型コロナウイルスの感染ホットスポットを示す地図をウェブサイトに掲載した。,営業時間は当社のウェブサイトでご確認いただけます。
+expand-c2-00600,example_de,Er empfand diese als zu schlampig (engl. too slutty).,"Seine Arbeit ist oft schlampig, deshalb muss ich alles noch einmal prüfen."
+expand-c2-00600,example_ja,彼は彼女たちがあまりにも尻軽だと感じた。,彼の仕事はいつもずさんなので、私が全部確認し直さなければならない。
+expand-c2-00600,japanese,だらしない,だらしない；ずさんな
+expand-c2-00602,example_de,ein Stellenangebot annehmen.,Ich habe ein interessantes Stellenangebot in der Zeitung gefunden.
+expand-c2-00602,example_ja,仕事のオファーを受け入れる。,新聞で面白そうな求人を見つけた。
+expand-c2-00780,example_de,einen Wutanfall bekommen.,Das Kind bekam im Supermarkt einen Wutanfall.
+expand-c2-00780,example_ja,癇癪を起こす。,その子はスーパーでかんしゃくを起こした。
+expand-c2-00780,japanese,かんしゃく玉,かんしゃく；激怒
+expand-c2-00911,example_de,geläufiger Begriff.,Der Begriff ist heute allgemein geläufig.
+expand-c2-00911,example_ja,一般的な用語。,その用語は今では広く知られている。
+expand-c2-00911,japanese,ありふれた,よく知られた；ありふれた；流暢な
+expand-c2-01242,example_de,1000 Euro für das Gerät? Das ist schon ein amtlicher Preis.,Für den Antrag brauchen Sie eine amtliche Bescheinigung.
+expand-c2-01242,example_ja,そのデバイスが1000ユーロ？それはかなり高額ですね。,申請には役所の証明書が必要です。
+expand-c2-01242,japanese,公然,公式の；役所の
+expand-c2-01245,example_de,mit offenem Mund anstarren.,"Hör auf, die Leute so anzustarren!"
+expand-c2-01245,example_ja,口をあんぐり開けて見つめる。,人をそんなにじろじろ見るのはやめなさい！
+expand-c2-01245,japanese,見つめる,じっと見つめる；じろじろ見る
+expand-c2-01547,example_de,unkontrollierter Wutausbruch.,Nach seinem Wutausbruch hat er sich bei allen entschuldigt.
+expand-c2-01547,example_ja,抑えきれない怒りの爆発。,怒りを爆発させたあと、彼は皆に謝った。
+expand-c2-01547,japanese,かんしゃく玉,怒りの爆発
+expand-c2-01556,example_de,angeregte Diskussion.,Nach dem Vortrag gab es eine angeregte Diskussion.
+expand-c2-01556,example_ja,活発な議論。,講演のあと、活発な議論が交わされた。
+expand-c2-01714,example_de,Derzeit ist die Thailänderin Supattra Sasupan (* 5. August 2000) im Guinness-Buch der Rekorde als das haarigste Mädchen der Welt aufgeführt.,Unser Nachbar ist Thailänder und kocht oft scharfe Gerichte.
+expand-c2-01714,example_ja,現在、タイ出身のスパトラ・サスパン（2000年8月5日生まれ）は、ギネス世界記録に世界で最も毛深い少女として登録されています。,隣の人はタイ人で、よく辛い料理を作る。
+expand-c2-01765,example_de,unter Androhung von ...,Der Mieter zahlte erst nach Androhung einer Klage.
+expand-c2-01765,example_ja,～の脅威にさらされて…,その借主は訴えると警告されてようやく支払った。
+expand-c2-01826,example_de,geltende Vorschriften.,Nach den geltenden Vorschriften ist das nicht erlaubt.
+expand-c2-01826,example_ja,適用される規制。,現行の規則では、それは認められていない。
+expand-c2-01826,japanese,有効,有効な；現行の
+expand-c2-02104,example_de,1889 wurde der Haupteingang nach Westen verlegt.,Wir treffen uns am Haupteingang des Bahnhofs.
+expand-c2-02104,example_ja,1889年、正面玄関は西側に移設された。,駅の正面入口で会いましょう。
+expand-c2-02104,japanese,中央口,正面入口
+expand-c2-02166,example_de,Eine Predigt am Neujahrstage 1746.,Am Neujahrstag sind fast alle Geschäfte geschlossen.
+expand-c2-02166,example_ja,1746年元旦の説教。,元日はほとんどの店が閉まっている。
+expand-c2-02247,example_de,Ingolf Turban (* 17. März 1964 in München) ist ein deutscher Violinist.,Der Mann mit dem Turban hat uns freundlich den Weg erklärt.
+expand-c2-02247,example_ja,インゴルフ・ターバン（1964年3月17日、ミュンヘン生まれ）はドイツのヴァイオリニストである。,ターバンを巻いた男性が親切に道を教えてくれた。
+expand-c2-02463,example_de,Abgerufen am 1. Mai 2015. „Überwältigend positives Feedback“.,"Danke für Ihr Feedback, wir werden es weitergeben."
+expand-c2-02463,example_ja,2015年5月1日取得。「圧倒的に好意的なフィードバック。」,フィードバックをありがとうございます。担当者に伝えます。
+expand-c2-02508,example_de,Anne Lauvergeon (* 2. August 1959 in Dijon) ist eine französische Geschäftsfrau.,Als Geschäftsfrau ist sie viel unterwegs.
+expand-c2-02508,example_ja,アンヌ・ローヴェルジョン（1959年8月2日、ディジョン生まれ）はフランスの実業家である。,ビジネスウーマンとして、彼女は出張が多い。
+expand-c2-02661,example_de,François Ozon (* 15. November 1967 in Paris) ist ein französischer Filmregisseur und Drehbuchautor.,Bei starker Sonne steigt die Ozonbelastung in den Städten.
+expand-c2-02661,example_ja,"フランソワ・オゾン（François Ozon, 1967年11月15日 - ）は、フランス・パリ出身の映画監督・脚本家である。",日差しが強いと、都市部のオゾン濃度が上がる。
+expand-c2-02667,example_de,"John Alexander Reina Newlands (* 26. November 1837 in London; † 29. Juli 1898 ebenda) war ein englischer Chemiker, der in den Jahren 1863 bis 1866 die ersten Versuche unternahm, ein Periodensystem der Elemente aufzustellen.",Im Chemieunterricht lernen wir das Periodensystem.
+expand-c2-02667,example_ja,ジョン・ニューランズ（John Alexander Reina Newlands：1837年11月26日-1898年7月29日)はイギリスの化学者で、1863年に初めて元素を原子量順に並べた周期表を作成し、1865年に「オクターブの法則」（8番目ごとに似た性質の元素が配置される。,化学の授業で周期表を学ぶ。
+expand-c2-02737,example_de,"Ich frage mich, ob ich ich mir im Selbststudium ein absolutes Gehör aneignen kann.","Ich frage mich, ob ich mir im Selbststudium ein absolutes Gehör aneignen kann."
+expand-c2-02737,example_ja,絶対音感は独学で学べるのだろうか。,絶対音感は独学で身につけられるのだろうか。
+expand-c2-02952,example_de,"Die kleine Raupe Nimmersatt (englischer Originaltitel The Very Hungry Caterpillar) ist ein Bilderbuch des US-Kinderbuchautors und -illustrators Eric Carle, das im Jahr 1969 erschien.",Abends lese ich meiner Tochter ein Bilderbuch vor.
+expand-c2-02952,example_ja,『はらぺこあおむし』は、アメリカの児童文学作家・イラストレーター、エリック・カールによる絵本で、1969年に出版されました。,夜は娘に絵本を読み聞かせる。
+expand-c2-03012,example_de,Das Wort Pentominium ist ein Kofferwort aus den Begriffen Penthouse und Condominium (engl. für Penthouse und Eigentumswohnung).,Sie haben sich eine Eigentumswohnung in Düsseldorf gekauft.
+expand-c2-03012,example_ja,ペントミニウムという言葉は、ペントハウスとコンドミニアムの合成語である。,彼らはデュッセルドルフに分譲マンションを買った。
+expand-c2-03137,example_de,"Ihr Logenheim, Lamprechtstraße 21 (heute Hausnummer 37), wurde am 3. November 1935 als Andreas-Bauriedl-Haus zum Sitz der NSDAP-Kreisleitung.",Auf dem Paket fehlt die Hausnummer.
+expand-c2-03137,example_ja,彼らの宿舎、ランプレヒト通り21番地（現在は37番地）は、1935年11月3日にナチス党地区指導部の本部となり、アンドレアス・バウリードル邸と改名された。,小包に番地が書かれていない。
+expand-c2-03433,example_de,mit einem selbstgefälligen Lächeln.,Er sah mich mit einem selbstgefälligen Lächeln an.
+expand-c2-03433,example_ja,得意げな笑みを浮かべて。,彼は得意げな笑みを浮かべて私を見た。
+expand-c2-03433,japanese,ニンマリ,得意げな；自己満足した
+expand-c2-03469,example_de,"Die Sprache im Nationalsozialismus enthielt häufig Superlative und hob die „Größe“ einzelner Personen und/oder ihrer Leistungen mit Worten wie „einmalig“, „einzig“, „gigantisch“, „historisch“, „total“, „ungeheuer“ usw. hervor.",Der Superlativ von „gut“ ist „am besten“.
+expand-c2-03469,example_ja,国家社会主義で使われた言葉には、しばしば最上級が用いられ、「唯一無二の」「類まれな」「巨大な」「歴史的な」「完全な」「怪物的な」といった言葉で、個人やその業績の「偉大さ」が強調された。,「gut」の最上級は「am besten」だ。
+expand-c2-03647,example_de,Der Namenlose (engl.: The Nameless One) leidet unter Amnesie.,Nach dem Unfall litt er an einer vorübergehenden Amnesie.
+expand-c2-03647,example_ja,名もなき者は記憶喪失を患っている。,事故のあと、彼は一時的な記憶喪失に陥った。
+expand-c2-03697,example_de,Robert Tewsley (* 1972 in Leicester) ist ein englischer Balletttänzer.,Ihr Sohn möchte Balletttänzer werden.
+expand-c2-03697,example_ja,ロバート・テューズリー（1972年レスター生まれ）はイギリスのバレエダンサーである。,彼女の息子はバレエダンサーになりたがっている。
+expand-c2-03897,example_de,S. 12f (mit Fußnote 7).,Die Quellen stehen in den Fußnoten.
+expand-c2-03897,example_ja,12ページ以降（脚注7参照）,出典は脚注に書いてある。
+expand-c2-04257,example_de,"Diese Verwendung des (neuen) Optativs Präteritum als Irrealis trat offenbar erst ein, nachdem das (urgermanische) Präteritum als einstiges Perfekt den indogermanischen Aorist verdrängt hatte (vgl. Euler 2009:184).",Im Präteritum heißt „ich gehe“ „ich ging“.
+expand-c2-04257,example_ja,この（新しい）希求法過去時制を非現実に使う方法は、明らかに、ゲルマン祖語の過去時制（かつては完了時制だった）が印欧語のアオリストに取って代わった後に起こったものである（Euler 2009:184を参照）。,過去形では「ich gehe」は「ich ging」になる。
+expand-c2-04306,example_de,Die Stadt wurde 1353 von Ibn Battuta anlässlich seiner Rückreise von Mali nach Marokko besucht.,Auf der Rückreise hatten wir zwei Stunden Verspätung.
+expand-c2-04306,example_ja,1353年、イブン・バットゥータはマリからモロッコへの帰路、この街を訪れた。,帰りは2時間遅れた。
+expand-c2-04461,example_de,Ein verwandtes Konzept ist das einer streng charakteristischen Untergruppe (engl. distinguished subgroup).,Die Teilnehmer wurden in drei Untergruppen aufgeteilt.
+expand-c2-04461,example_ja,関連する概念として、特別なサブグループという概念がある。,参加者は3つの小グループに分けられた。
+expand-c2-04461,japanese,亜群,下位グループ；（数学）部分群
+expand-c2-04658,example_de,"Dort wurden abgelehnte Asylbewerber und andere Ausländer, die zur Ausreise verpflichtet sind, untergebracht sowie irakische Flüchtlinge während der Teilnahme an dreimonatigen Sprachkursen.",Asylbewerber dürfen in den ersten Monaten oft nicht arbeiten.
+expand-c2-04658,example_ja,ここには拒絶された亡命希望者や外国人たちや、3ヶ月の語学研修を受けているイラク人難民が収容された。,難民申請者は最初の数か月、働けないことが多い。
+expand-c2-04658,japanese,亡命希望者,難民申請者；庇護申請者
+expand-c2-04805,example_de,Belgien Belgien – Belgien hat 220 (+132 als Option) Dingo 2 bestellt.,Der Dingo ist ein wild lebender Hund in Australien.
+expand-c2-04805,example_ja,ベルギー – ベルギーはDingo 2を220台（オプションで132台追加）発注した。,ディンゴはオーストラリアに野生で暮らす犬だ。
+expand-c2-04839,example_de,mit hoher Effektivität.,Die Effektivität der neuen Methode muss noch geprüft werden.
+expand-c2-04839,example_ja,非常に効果的だった。,新しい方法の効果はまだ検証が必要だ。
+expand-c2-04980,example_de,Stanisław Józef Srokowski (* 1872; † 1950) war ein polnischer Geograph und Diplomat.,"Geographen untersuchen, wie sich Landschaften verändern."
+expand-c2-04980,example_ja,スタニスワフ・スロコフスキ(ポーランド語: Stanisław Józef Srokowski、1872年 - 1950年) はポーランドの地理学者で外交官。,地理学者は景観がどのように変化するかを研究する。
+expand-c2-05278,example_de,Dieses Memorandum stellte sowohl die Grundlage der britischen Arbeit zum Bau einer Atombombe (the Tube Alloys project) als auch des Manhattan-Projekts in den USA dar.,Die beiden Länder haben ein Memorandum zur Zusammenarbeit unterzeichnet.
+expand-c2-05278,example_ja,この覚書は、イギリスの原子爆弾開発計画（チューブ・アロイズ計画）とアメリカのマンハッタン計画の両方の基礎となった。,両国は協力に関する覚書に署名した。
+expand-c2-05278,usage_note,語義を「控え」から用例に合わせて独自訳・校正。,外交や企業間の「覚書」（MoU）の意味で使われることが多い語です。
+expand-c2-05473,example_de,"Für spezielle Anwendungen wird auch Silizium auf dem isolierenden Substrat Saphir verwendet (engl.: Silicon on Sapphire, SOS).",Der Ring ist mit einem blauen Saphir besetzt.
+expand-c2-05473,example_ja,シリコンは特殊な用途にも使用されます。絶縁基板にはサファイア（シリコン・オン・サファイア、SOS）が使用されます。,その指輪には青いサファイアがはめ込まれている。
+expand-c2-05494,example_de,Für rechtshändige Schlagmänner (engl.,Im Ruderboot gibt der Schlagmann den Rhythmus vor.
+expand-c2-05494,example_ja,右利き打者向け（英語）。,ボートでは整調が漕ぐリズムを決める。
+expand-c2-05524,example_de,"Ronald Rawson Rawson (* 17. Juni 1892; † 30. März 1952) war ein britischer Boxer, der mit der Goldmedaille 1920 im Schwergewicht seinen größten Erfolg feiern konnte.",Er boxt im Schwergewicht.
+expand-c2-05524,example_ja,ロナルド・ローソン（1892年6月17日 - 1952年3月30日）は、イギリスのボクサーで、1920年のヘビー級で金メダルを獲得したことが最大の功績です。,彼はヘビー級で戦うボクサーだ。
+expand-c2-05653,example_de,Runner Runner ist ein US-amerikanischer Thriller aus dem Jahr 2013.,Gestern Abend haben wir einen spannenden Thriller gesehen.
+expand-c2-05653,example_ja,『ランナーランナー』（Runner Runner）は、2013年のアメリカ合衆国のクライムスリラー映画。,昨晩、ハラハラするスリラーを観た。
+expand-c2-05966,example_de,Das Baujahr scheint 1592 zu sein.,Welches Baujahr hat Ihr Auto?
+expand-c2-05966,example_ja,建設年は1592年と思われます。,あなたの車は何年式ですか？
+expand-c2-06053,example_de,unbefleckte Empfängnis.,Der Arzt berechnet den Geburtstermin ab dem Zeitpunkt der Empfängnis.
+expand-c2-06053,example_ja,無原罪懐胎。,医師は受胎の時期から出産予定日を計算する。
+expand-c2-06053,japanese,懐胎,受胎；懐胎
+expand-c2-06065,example_de,ergänzende Ausbildung.,Ergänzende Informationen finden Sie im Anhang.
+expand-c2-06065,example_ja,補足研修。,補足情報は添付資料をご覧ください。
+expand-c2-06093,example_de,Claus Peter Flor (* 16. März 1953 in Leipzig) ist ein deutscher Dirigent.,"Der Teppich hat einen dichten, weichen Flor."
+expand-c2-06093,example_ja,クラウス・ペーター・フロール（1953年3月16日、ライプツィヒ生まれ）はドイツの指揮者です。,そのじゅうたんは毛足が密でやわらかい。
+expand-c2-06093,japanese,パイル,パイル（毛足）；（花の）満開
+expand-c2-06232,example_de,1150 wurde auch Ostkilver in einem Kaufvertrag zwischen dem Osnabrücker Bischof und Graf von Tecklenburg erwähnt.,"Lesen Sie den Kaufvertrag genau, bevor Sie unterschreiben."
+expand-c2-06232,example_ja,オストキルヴァーは、1150年にオスナブリュック司教とテッケンブルク伯爵の間で交わされた売買契約書にも記載されている。,署名する前に売買契約書をよく読んでください。
+expand-c2-06284,example_de,Renan Luce (* 5. März 1980 in Paris) ist ein französischer Liedermacher.,Der Liedermacher singt vor allem über politische Themen.
+expand-c2-06284,example_ja,ルナン・リュース（Renan Luce、1980年3月5日 - ）は、フランスのシンガーソングライター。,そのシンガーソングライターは主に政治的なテーマを歌っている。
+expand-c2-06288,example_de,"Edward Scott Pruitt (* 9. Mai 1968 in Danville, Kentucky) ist ein US-amerikanischer Anwalt, Lobbyist und republikanischer Politiker aus dem Bundesstaat Oklahoma.","Lobbyisten versuchen, Einfluss auf neue Gesetze zu nehmen."
+expand-c2-06288,example_ja,エドワード・スコット・プルイット（1968年5月9日、ケンタッキー州ダンビル生まれ）は、オクラホマ州出身のアメリカ人弁護士、ロビイスト、共和党政治家です。,ロビイストは新しい法律に影響を与えようとする。
+expand-c2-06296,example_de,"Wilhelm XI. Palaiologos (italienisch Guglielmo XI. del Monferrato, * 10. August 1486; † 4. Oktober 1518 in Trino) war von 1494 bis 1518 der Markgraf von Montferrat.",Der Markgraf ließ im 18. Jahrhundert ein prächtiges Schloss bauen.
+expand-c2-06296,example_ja,"グリエルモ9世・デル・モンフェッラート（Guglielmo IX del Monferrato, 1486年8月10日 - 1518年10月4日）は、イタリアのモンフェッラート侯爵（在位1494年 - 1518年）。",その辺境伯は18世紀に壮麗な城を建てさせた。
+expand-c2-06296,japanese,侯爵,辺境伯
+expand-c2-06314,example_de,"Zu dieser Zeit lebte der wohl berühmteste Schwangauer, der Minnesänger Hiltbolt von Schwangau (* ca. 1190–1256).",Walther von der Vogelweide ist der bekannteste Minnesänger des Mittelalters.
+expand-c2-06314,example_ja,この時代にシュヴァンガウ家の最も有名な人物であるミンネゼンガーのヒルトポルト・フォン・シュヴァンガウ（1190年頃 - 1256年）が誕生した。,ヴァルター・フォン・デア・フォーゲルヴァイデは中世で最も有名なミンネゼンガーだ。
+expand-c2-06448,example_de,"Schelte John „Bobby“ Bus (* 1956) ist ein US-amerikanischer Astronom, der hauptsächlich Asteroiden und Kometen erforscht.",Für die Verspätung bekam er vom Chef eine ordentliche Schelte.
+expand-c2-06448,example_ja,ジョン・“ボビー”・バス（1956年生まれ）は、主に小惑星と彗星を研究するアメリカの天文学者である。,遅刻したことで、彼は上司からこっぴどく叱られた。
+expand-c2-06462,example_de,Hobo with a Shotgun (engl. für Landstreicher mit einer Schrotflinte) ist ein kanadischer Spielfilm aus dem Jahr 2011.,Der Jäger trug eine Schrotflinte über der Schulter.
+expand-c2-06462,example_ja,『ホーボー・ウィズ・ア・ショットガン』は2011年のカナダ映画である。,猟師は散弾銃を肩にかけていた。
+expand-c2-06585,example_de,UFO ist eine Abkürzung für unidentifiziertes/unbekanntes Flugobjekt (engl. unidentified flying object).,Über dem Flughafen wurde ein unidentifiziertes Flugobjekt gesichtet.
+expand-c2-06585,example_ja,UFOは未確認飛行物体の略です。,空港の上空で未確認飛行物体が目撃された。
+expand-c2-06597,example_de,"Asma Jilani Jahangir (Urdu: عاصمہ جہانگیر, translit. ʿĀṣimah Jahāṉgīr; * 27. Januar 1952; † 11. Februar 2018 in Lahore) war eine pakistanische Menschenrechtsaktivistin.",Urdu ist eine der Amtssprachen Pakistans.
+expand-c2-06597,example_ja,アスマ・ジラニ・ジャハンギール（Asma Jilani Jahangir; ウルドゥー語: عاصمہ جہانگیر‬‎; 1952年1月27日 - 2018年2月11日）は、パキスタンの弁護士、人権活動家。,ウルドゥー語はパキスタンの公用語の一つだ。
+expand-c2-06674,example_de,zaghafter Fortschritt.,Bei den Verhandlungen gibt es nur zaghafte Fortschritte.
+expand-c2-06674,example_ja,暫定的な進展。,交渉はおずおずとした進展しか見られない。
+expand-c2-06674,japanese,オドオド,ためらいがちな；おずおずとした
+expand-c2-06906,example_de,Wilhelm Biese (* 20. April 1822 in Rathenow; † 14. November 1902 in Berlin) war ein deutscher Klavierbauer und Fabrikant international exportierter Pianinos.,Der Fabrikant hat seine Firma an seinen Sohn übergeben.
+expand-c2-06906,example_ja,ヴィルヘルム・ビーゼ（Wilhelm Biese、1822年4月20日ラーテノウ（英語版）生、1902年11月14日ベルリン没）は、ドイツの国際的に輸出されたアップライトピアノ の製作者、製造業者であった。,その工場主は会社を息子に譲った。
+expand-c2-06906,japanese,業者,工場主；製造業者
+expand-c2-06924,example_de,"Franco Cesarini (* 18. April 1961 in Bellinzona, Tessin) ist ein Schweizer Komponist, Dirigent und Flötist.",Die Flötistin spielt im städtischen Orchester.
+expand-c2-06924,example_ja,"フランコ・チェザリーニ（Franco Cesarini, 1961年4月18日 - ）は、スイスの作曲家、指揮者、フルート奏者。",そのフルート奏者は市のオーケストラで演奏している。
+expand-c2-07056,example_de,"Javier Marías Franco (* 20. September 1951 in Madrid) ist ein spanischer Schriftsteller, Kolumnist und Übersetzer.",Der Kolumnist schreibt jede Woche über das Leben in Berlin.
+expand-c2-07056,example_ja,ハビエル・マリアス・フランコ（1951年9月20日、マドリード生まれ）は、スペインの作家、コラムニスト、翻訳家です。,そのコラムニストは毎週ベルリンの暮らしについて書いている。
+expand-c2-07057,example_de,Abgerufen am 6. Juni 2010. Kommunalwahlen am 05.,Bei der Kommunalwahl dürfen auch EU-Bürger wählen.
+expand-c2-07057,example_ja,2010年6月6日取得。5日に市議会選挙が行われました。,地方選挙ではEU市民も投票できる。
+expand-c2-07057,japanese,一般選挙,地方選挙；市町村議会選挙
+expand-c2-07087,example_ja,マル島は約480kmの海岸線を有している。,ガンビアの海岸線は約80キロメートルある。
+expand-c2-07105,example_de,"Siehe auch: Tour de France 2009/Fahrerfeld Auf der 13. Etappe verletzten zwei Jugendliche die beiden Fahrer Oscar Freire und Julian Dean, indem sie sie mit einem Luftgewehr beschossen.",Auf dem Jahrmarkt kann man mit einem Luftgewehr auf Blumen schießen.
+expand-c2-07105,example_ja,参照：ツール・ド・フランス2009／ペロトン。第13ステージで、2人の少年が空気銃で2人のサイクリスト、オスカー・フレイレとジュリアン・ディーンを撃ち、負傷させました。,移動遊園地では、空気銃で花を撃つ射的ができる。
+expand-c2-07164,example_de,Rumänien Rumänien 556 Stück frühere polnische PaK wurden der deutschen Wehrmacht abgekauft.,Im Museum steht eine alte Panzerabwehrkanone aus dem Zweiten Weltkrieg.
+expand-c2-07164,example_ja,ルーマニア：旧ポーランド軍の対戦車砲556門がドイツ国防軍から購入された。,博物館には第二次世界大戦時代の古い対戦車砲が展示されている。
+expand-c2-07262,example_de,"Er verdiente sich Spitznamen wie: NBA Live, Grim Reaper (engl. „Sensenmann“) oder auch The Aviator (engl. „der Flieger“).",Auf alten Bildern wird der Tod oft als Sensenmann dargestellt.
+expand-c2-07262,example_ja,彼はNBA Live、死神、飛行士といったニックネームで呼ばれている。,古い絵では、死はしばしば大鎌を持った死神として描かれる。
+expand-c2-07272,example_de,Elix Skipper (* 15. Dezember 1967 in Atlanta) ist ein amerikanischer Wrestler.,Der Skipper erklärte uns vor der Abfahrt die Regeln an Bord.
+expand-c2-07272,example_ja,エリックス・スキッパー（1967年12月15日、アトランタ生まれ）はアメリカのプロレスラーである。,出航前に艇長が船上での決まりを説明してくれた。
+expand-c2-07289,example_de,Egon Sharpe Pearson (* 11. August 1895 in Hampstead; † 12. Juni 1980 Midhurst) war ein britischer Statistiker.,Laut den Statistikern ist die Zahl der Geburten leicht gestiegen.
+expand-c2-07289,example_ja,"エゴン・シャープ・ピアソン （Egon Sharpe Pearson, 1895年8月11日ハムステッド - 1980年6月12日サセックス州ミッドハースト）はイギリスの数理統計学者。",統計学者によると、出生数はわずかに増加した。
+expand-c2-07387,example_de,Siehe auch Typen von Wasserkraftwerken.,Das Wasserkraftwerk liefert Strom für die ganze Region.
+expand-c2-07387,example_ja,水力発電所の種類も参照。,その水力発電所は地域全体に電力を供給している。
+expand-c2-07395,example_de,Die Weltausstellung Expo ’70 (jap.,Die nächste Weltausstellung findet in einem anderen Land statt.
+expand-c2-07395,example_ja,万国博覧会（1970年）,次の万国博覧会は別の国で開かれる。
+expand-c2-07556,example_de,"John Wood (* 1812 in Perth, Schottland; † 14. November 1871) war ein britischer Marineoffizier, Forschungsreisender, Geodät und Kartograph, der durch seine Erforschung Zentralasiens bekannt wurde.",Der Forschungsreisende berichtete von seiner Expedition in die Arktis.
+expand-c2-07556,example_ja,ジョン・ウッド（1812年スコットランド、パース生まれ、1871年11月14日没）は、イギリス海軍士官、探検家、測地学者、地図製作者であり、中央アジア探検で最もよく知られています。,その探検家は北極への遠征について報告した。
+expand-c2-07582,example_de,Werner Arber (* 3. Juni 1929 in Gränichen) ist ein Schweizer Mikrobiologe und Genetiker.,"Genetiker untersuchen, welche Krankheiten vererbt werden."
+expand-c2-07582,example_ja,"ヴェルナー・アーバー（Werner Arber, 1929年6月3日 - ）は、スイスの微生物学者、遺伝学者。",遺伝学者は、どの病気が遺伝するかを研究している。
+expand-c2-07657,example_de,"Als innere Konversion (engl. internal conversion, IC) wird in der Physik ein besonderer Fall der Radioaktivität bezeichnet.",Die Konversion ehemaliger Kasernen zu Wohngebieten dauert oft Jahre.
+expand-c2-07657,example_ja,物理学において、内部転換（IC）は放射能の特殊なケースを指します。,かつての兵舎を住宅地に転用するには、何年もかかることが多い。
+expand-c2-07686,example_de,"Samuel A. Mosberg (* 14. Juni 1896 in New York; † 30. August 1967 in Brooklyn) war ein US-amerikanischer Profiboxer in der Gewichtsklasse Leichtgewicht, der in den frühen 1920er Jahren seine größten Erfolge feierte.",Im Leichtgewicht gewann eine junge Boxerin die Goldmedaille.
+expand-c2-07686,example_ja,サミュエル・A・モスバーグ（1896年6月14日、ニューヨーク生まれ、1967年8月30日、ブルックリン没）は、1920年代初頭に最大の成功を収めたアメリカのプロライト級ボクサーでした。,ライト級では若い女性ボクサーが金メダルを獲得した。
+expand-c2-07761,example_de,Simon Pellaud (* 6. November 1992) ist ein Schweizer Radrennfahrer.,Der Radrennfahrer trainiert jeden Tag mehrere Stunden.
+expand-c2-07761,example_ja,シモン・ペロー（1992年11月6日生まれ）はスイスの自転車選手である。,その自転車競技選手は毎日数時間トレーニングしている。
+expand-c2-07761,japanese,競輪選手,自転車競技選手

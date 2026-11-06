@@ -822,8 +822,9 @@
         return;
       }
 
+      let payload = null;
       try {
-        const payload = await fetchCommunityPostsData();
+        payload = await fetchCommunityPostsData();
         const rows = dataSources.normalizePayload(payload);
         const posts = normalizeRows(rows);
         render(posts);
@@ -832,6 +833,20 @@
         if (!miniRoot.querySelector("[data-public-snapshot-item]") || !cardRoot.querySelector("[data-public-snapshot-item]")) {
           renderLoadError();
         }
+      }
+      refreshLiveCommunityPosts(payload);
+    }
+
+    // Posts are published on submission, but the static JSON only changes after
+    // the next sync. Like the board, Home then replaces the snapshot with the
+    // live list so a new post appears (and a hidden one disappears) right away.
+    async function refreshLiveCommunityPosts(staticPayload) {
+      if (typeof dataSources.fetchLiveCommunityPosts !== "function") return;
+      try {
+        const live = await dataSources.fetchLiveCommunityPosts(staticPayload);
+        render(normalizeRows(dataSources.normalizePayload(live)));
+      } catch (error) {
+        console.warn("Live community posts unavailable on Home; showing the published snapshot.", error);
       }
     }
 

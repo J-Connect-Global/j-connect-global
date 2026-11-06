@@ -44,7 +44,7 @@ Running the content build and layout application updates:
 - `/germany/ja/events/index.html`
 - `/germany/ja/learn-german/index.html`
 - `/germany/ja/index.html`
-- `/assets/js/search-index.js`
+- `/assets/data/search-index.json` (fetched by the search page only when a query is present)
 - `/sitemap.xml`
 
 Search and sitemap are governed by the static page registry plus the Living, Events, and Learn German article registries. Retired routes such as `/germany/ja/guides/` must stay out of search, sitemap, and emitted internal links.

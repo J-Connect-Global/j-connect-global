@@ -1,14 +1,15 @@
 {
   "api_version": "2026-07-13.1",
   "source": "master-gas:community",
-  "count": 6,
+  "count": 7,
   "groups": [
     {
       "field": "category1",
       "values": [
         "アルバイト",
         "質問",
-        "譲ります"
+        "譲ります",
+        "売ります"
       ]
     },
     {
@@ -24,6 +25,7 @@
       "field": "city",
       "values": [
         "-",
+        "ケルン・ボン周辺",
         "デュッセルドルフ周辺",
         "ドイツ国内全地域"
       ]
@@ -35,5 +37,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-22T21:52:59.296Z"
+  "generated_at": "2026-11-06T10:23:20.510Z"
 }

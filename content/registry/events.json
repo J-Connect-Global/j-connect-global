@@ -1546,7 +1546,7 @@
     "city": "Düsseldorf",
     "location": "Schützenplatz Düsseldorf-Eller",
     "event_date": "2026-09-10〜2026-09-26",
-    "official_url": "https://www.visitduesseldorf.de/event/duesseldorfer-oktoberfest-2026-eb91e15a4a",
+    "official_url": "https://www.visitduesseldorf.de/erleben/veranstaltungen",
     "official_sources": [
       {
         "title": "ミュンヘン公式：オクトーバーフェストの歴史",
@@ -1557,8 +1557,8 @@
         "url": "https://www.muenchen.de/en/events/oktoberfest/outfit-costumes-dresses-lederhosen"
       },
       {
-        "title": "Visit Düsseldorf：Düsseldorfer Oktoberfest 2026",
-        "url": "https://www.visitduesseldorf.de/event/duesseldorfer-oktoberfest-2026-eb91e15a4a"
+        "title": "Visit Düsseldorf：イベントカレンダー（2026年の開催ページは会期終了後に削除されました）",
+        "url": "https://www.visitduesseldorf.de/erleben/veranstaltungen"
       }
     ],
     "disclaimer_type": "event",
@@ -3001,7 +3001,7 @@
       },
       {
         "title": "消費者センター：追加保険料の値上げと特別解約権",
-        "url": "https://www.verbraucherzentrale.de/wissen/geld-versicherungen/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581"
+        "url": "https://www.verbraucherzentrale.de/wissen/gesundheit-pflege/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581"
       },
       {
         "title": "GKV-Spitzenverband：保険組合一覧と追加保険料率",
@@ -3752,7 +3752,7 @@
       },
       {
         "title": "連邦環境庁（UBA）：クリスマスツリーの選び方",
-        "url": "https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/haushalt-wohnen/weihnachtsbaum"
+        "url": "https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/oekologisch-zertifizierte-weihnachtsbaeume-aus-der"
       }
     ],
     "image": "/assets/img/events/christmas-tree-origin-germany.webp",
@@ -5290,11 +5290,11 @@
       },
       {
         "title": "TK：電子の就労不能証明（eAU）",
-        "url": "https://www.tk.de/firmenkunden/service/fachthemen/alles-wichtige-zur-eau/seit-2023-eau-fuer-arbeitgeber-verpflichtend-2102198"
+        "url": "https://www.tk.de/firmenkunden/versicherung/meldeverfahren-faq/datenaustausch-eau/seit-2023-eau-fuer-arbeitgeber-verpflichtend-2102198"
       },
       {
         "title": "TK：2026年の子どもの看病手当と診断書",
-        "url": "https://www.tk.de/firmenkunden/service/fachthemen/versicherung-fachthema/kinderkrankengeld-2025-und-2026-2160374"
+        "url": "https://www.tk.de/firmenkunden/versicherung/familie/kinderkrankengeld/kinderkrankengeld-aktuelle-regelungen-2160374"
       },
       {
         "title": "連邦政府：連立委員会の決定「景気回復と雇用のためのプログラム」（2026年7月2日、PDF）",
@@ -5443,7 +5443,7 @@
       },
       {
         "title": "消費者センター：2026年6月から撤回ボタン",
-        "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/widerrufsbutton-ab-juni-2026-onlinevertraege-einfacher-widerrufen-118449"
+        "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/widerrufsbutton-seit-juni-2026-onlinevertraege-einfacher-widerrufen-118449"
       },
       {
         "title": "民法 第355条（消費者の撤回の権利）",
@@ -5475,14 +5475,14 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-29",
+      "last_reviewed_at": "2026-11-06",
       "next_review_due": "2027-10-15"
     },
     "title": "11月のドイツはなぜ静か？｜万聖節・国民哀悼の日・死者の日曜日と、ダンスが禁止される「静かな祝日」",
     "category": "季節・文化",
     "summary": "11月のドイツには、亡くなった人を思う日が続きます。NRWでは11月1日の万聖節、戦争などの犠牲者を悼む国民哀悼の日、プロテスタントの死者の日曜日が「静かな祝日」とされ、ダンスのイベントや市場などが時間を区切って禁止されます。2026年の日付、NRWの決まり、墓地に灯るろうそくの意味を紹介します。",
     "published_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "last_verified": "2026-11-06",
     "tags": [
       "静かな祝日",
       "万聖節",
@@ -5494,7 +5494,7 @@
       "ドイツ雑学",
       "季節文化"
     ],
-    "updated_at": "2026-10-29",
+    "updated_at": "2026-11-06",
     "related_articles": [
       "germany-public-holidays-by-state",
       "germany-sunday-rest-shops-closed",
@@ -5503,16 +5503,8 @@
     "city": "NRW（ノルトライン＝ヴェストファーレン州）",
     "location": "",
     "event_date": "2026-11-01 万聖節／11-15 国民哀悼の日／11-22 死者の日曜日",
-    "official_url": "https://www.stadt-koeln.de/politik-und-verwaltung/presseservice/stille-feiertage-2",
+    "official_url": "https://www.duesseldorf.de/ordnungsamt/gewerbe/feiertage1",
     "official_sources": [
-      {
-        "title": "ケルン市：静かな祝日",
-        "url": "https://www.stadt-koeln.de/politik-und-verwaltung/presseservice/stille-feiertage-2"
-      },
-      {
-        "title": "ケルン市：11月の静かな祝日の禁止事項",
-        "url": "https://www.stadt-koeln.de/politik-und-verwaltung/presse/verbote-den-stillen-feiertagen-im-november-6"
-      },
       {
         "title": "デュッセルドルフ市：NRWの祝日の決まり",
         "url": "https://www.duesseldorf.de/ordnungsamt/gewerbe/feiertage1"

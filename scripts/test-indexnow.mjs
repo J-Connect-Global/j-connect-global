@@ -5,7 +5,7 @@ import { changedIndexableUrls, fileToUrl, readKey, sitemapUrls, SITE_ORIGIN } fr
 assert.equal(fileToUrl("germany/ja/living/anmeldung-guide/index.html"), `${SITE_ORIGIN}/germany/ja/living/anmeldung-guide/`);
 assert.equal(fileToUrl("germany/ja/index.html"), `${SITE_ORIGIN}/germany/ja/`);
 assert.equal(fileToUrl("content/living/anmeldung-guide.md"), null);
-assert.equal(fileToUrl("assets/js/search-index.js"), null);
+assert.equal(fileToUrl("assets/data/search-index.json"), null);
 
 const sitemap = sitemapUrls(readFileSync("sitemap.xml", "utf8"));
 assert.ok(sitemap.includes(`${SITE_ORIGIN}/germany/ja/`), "sitemap must list the Germany home");

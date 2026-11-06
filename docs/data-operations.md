@@ -5,7 +5,7 @@ This repository publishes a static GitHub Pages site. Generated HTML and JSON ar
 ## Source Of Truth
 
 - Editorial articles: `content/living/*.md`, `content/events/*.md`, `content/learn-german/*.md`, plus the matching `content/registry/*.json` files.
-- Generated article HTML, hub grids, Home article cards, crawler-first Jobs/Community list snapshots, `sitemap.xml`, and `assets/js/search-index.js`: output from `node scripts/build-content.mjs`.
+- Generated article HTML, hub grids, Home article cards, crawler-first Jobs/Community list snapshots, `sitemap.xml`, and `assets/data/search-index.json`: output from `node scripts/build-content.mjs`.
 - Shared Japanese header/footer, canonical social metadata, robots normalization, and registry page JSON-LD: output from `node scripts/apply-layout.mjs`.
 - Jobs: source spreadsheet or GAS -> scheduled/manual sync -> sanitized `assets/data/jobs/jobs.json` -> Home/list/detail UI.
 - Community: source spreadsheet or GAS -> scheduled/manual sync -> sanitized `assets/data/community/posts.json` -> Home/list/detail UI.

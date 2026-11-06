@@ -688,6 +688,33 @@ test("root 404 is a noindex, theme-aware recovery page", async ({ page }) => {
   await assertNoHorizontalOverflow(page);
 });
 
+test("site search loads its index only for a query and renders ranked results", async ({ page }) => {
+  const indexRequests = [];
+  page.on("request", (request) => {
+    if (new URL(request.url()).pathname === "/assets/data/search-index.json") indexRequests.push(request.url());
+  });
+
+  await openRoute(page, "/germany/ja/search/");
+  await expect(page.locator("#searchMeta")).toHaveText("カテゴリから探すか、キーワードで検索してください。");
+  await expect(page.locator("#searchResults .site-chip").first()).toBeVisible();
+  expect(indexRequests, "the category overview must not download the search index").toEqual([]);
+
+  await openRoute(page, "/germany/ja/search/?q=Elterngeld");
+  await expect(page.locator("#searchMeta")).toContainText("「Elterngeld」の検索結果:");
+  await expect(page.locator('#searchResults a.search-result-card[href="/germany/ja/living/elterngeld-guide-germany/"]')).toBeVisible();
+  await expect(page.locator("#searchInput")).toHaveValue("Elterngeld");
+  expect(indexRequests).toHaveLength(1);
+  await assertRouteReady(page);
+});
+
+test("site search explains a failed index download and keeps category links", async ({ page }) => {
+  await page.route("**/assets/data/search-index.json", (route) => route.fulfill({ status: 503, body: "" }));
+  await openRoute(page, "/germany/ja/search/?q=Elterngeld");
+  await expect(page.locator("#searchMeta")).toHaveText("「Elterngeld」を検索できませんでした。通信状況を確認して、再読み込みしてください。");
+  await expect(page.locator('#searchResults .site-chip[href="/germany/ja/living/"]')).toBeVisible();
+  await assertNoHorizontalOverflow(page);
+});
+
 test("Jobs empty fallback remains actionable when the public data is empty", async ({ page }) => {
   await page.route("**/assets/data/jobs/jobs.json", (route) => route.fulfill({
     contentType: "application/json",

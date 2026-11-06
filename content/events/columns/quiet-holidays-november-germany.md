@@ -6,10 +6,6 @@ category: "季節・文化"
 title: "11月のドイツはなぜ静か？｜万聖節・国民哀悼の日・死者の日曜日と、ダンスが禁止される「静かな祝日」"
 summary: "11月のドイツには、亡くなった人を思う日が続きます。NRWでは11月1日の万聖節、戦争などの犠牲者を悼む国民哀悼の日、プロテスタントの死者の日曜日が「静かな祝日」とされ、ダンスのイベントや市場などが時間を区切って禁止されます。2026年の日付、NRWの決まり、墓地に灯るろうそくの意味を紹介します。"
 official_sources:
-  - title: "ケルン市：静かな祝日"
-    url: "https://www.stadt-koeln.de/politik-und-verwaltung/presseservice/stille-feiertage-2"
-  - title: "ケルン市：11月の静かな祝日の禁止事項"
-    url: "https://www.stadt-koeln.de/politik-und-verwaltung/presse/verbote-den-stillen-feiertagen-im-november-6"
   - title: "デュッセルドルフ市：NRWの祝日の決まり"
     url: "https://www.duesseldorf.de/ordnungsamt/gewerbe/feiertage1"
   - title: "NRW州：日曜日と祝日に関する法律"
@@ -25,10 +21,10 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-29"
-updated_at: "2026-10-29"
-last_verified: "2026-10-29"
+updated_at: "2026-11-06"
+last_verified: "2026-11-06"
 canonical_url: "/germany/ja/events/columns/quiet-holidays-november-germany/"
-official_url: "https://www.stadt-koeln.de/politik-und-verwaltung/presseservice/stille-feiertage-2"
+official_url: "https://www.duesseldorf.de/ordnungsamt/gewerbe/feiertage1"
 image: "/assets/img/events/quiet-holidays-november-germany.webp"
 image_alt: "霧の11月の夕方、墓地に赤いろうそくの灯りが並ぶ様子を描いたイラスト"
 image_caption: "イラスト：J-Connect。11月の静かな祝日のテーマを表したもので、特定の墓地を描いたものではありません。"
@@ -43,7 +39,7 @@ image_credit: "Illustration / J-Connect"
 
 ## 11月の「静かな祝日」は3つ
 
-NRWの日曜日と祝日に関する法律では、11月の次の3つの日が「静かな祝日」とされています（[ケルン市](https://www.stadt-koeln.de/politik-und-verwaltung/presseservice/stille-feiertage-2)）。
+NRWの日曜日と祝日に関する法律では、11月の次の3つの日が「静かな祝日」とされています（[デュッセルドルフ市](https://www.duesseldorf.de/ordnungsamt/gewerbe/feiertage1)）。
 
 | 日 | 2026年の日付 | どんな日？ |
 | --- | --- | --- |
@@ -55,11 +51,11 @@ NRWの日曜日と祝日に関する法律では、11月の次の3つの日が�
 
 2026年の万聖節は日曜日にあたるため、平日の休みは増えません。万聖節が祝日なのは、NRW、バイエルン、バーデン＝ヴュルテンベルク、ラインラント＝プファルツ、ザールラントの5つの州です。州ごとの祝日の違いは「[ドイツの祝日は州ごとに違う？](/germany/ja/events/columns/germany-public-holidays-by-state/)」で紹介しています。
 
-![2026年11月のカレンダーに、11月1日の万聖節、11月15日の国民哀悼の日、11月22日の死者の日曜日、11月29日の待降節の始まりを示した図](/assets/images/events/quiet-holidays-november-2026-calendar.svg "図解：J-Connect。NRWの祝日の法律とケルン市の資料に基づく（2026年10月29日参照）。")
+![2026年11月のカレンダーに、11月1日の万聖節、11月15日の国民哀悼の日、11月22日の死者の日曜日、11月29日の待降節の始まりを示した図](/assets/images/events/quiet-holidays-november-2026-calendar.svg "図解：J-Connect。NRWの祝日の法律とデュッセルドルフ市の案内に基づく（2026年11月6日参照）。")
 
 ## 何が禁止される？ 何時まで？
 
-「静かな祝日」には、ふつうの日曜日の決まりに加えて、にぎやかな催しを控える決まりがあります。ケルン市の案内をもとに整理すると、次のとおりです（[ケルン市：11月の静かな祝日の禁止事項](https://www.stadt-koeln.de/politik-und-verwaltung/presse/verbote-den-stillen-feiertagen-im-november-6)）。
+「静かな祝日」には、ふつうの日曜日の決まりに加えて、にぎやかな催しを控える決まりがあります。デュッセルドルフ市の案内をもとに整理すると、次のとおりです（[デュッセルドルフ市：NRWの祝日の決まり](https://www.duesseldorf.de/ordnungsamt/gewerbe/feiertage1)）。
 
 **万聖節と死者の日曜日**
 - 朝5時から夕方18時まで、市場や商業的な展示会などは禁止
@@ -71,9 +67,9 @@ NRWの日曜日と祝日に関する法律では、11月の次の3つの日が�
 - 音楽や娯楽の催し（ディスコを含む）は18時まで制限
 - ダンスのイベントは18時まで禁止
 
-決められた時間を過ぎれば、こうした特別な制限はなくなります（[ケルン市：11月の静かな祝日の禁止事項](https://www.stadt-koeln.de/politik-und-verwaltung/presse/verbote-den-stillen-feiertagen-im-november-6)）。つまり、夜のコンサートやパーティーは、多くの場合、18時以降なら開けるということです。
+決められた時間を過ぎれば、こうした特別な制限はなくなります（[デュッセルドルフ市：NRWの祝日の決まり](https://www.duesseldorf.de/ordnungsamt/gewerbe/feiertage1)）。つまり、夜のコンサートやパーティーは、多くの場合、18時以降なら開けるということです。
 
-![万聖節と死者の日曜日は朝5時から18時まで市場や娯楽の催しが禁止、国民哀悼の日は市場やスポーツの催しが13時まで、音楽や娯楽の催しとダンスは18時まで禁止されることを時間の帯で示した図](/assets/images/events/quiet-holidays-time-rules.svg "図解：J-Connect。ケルン市の資料に基づく（2026年10月29日参照）。")
+![万聖節と死者の日曜日は朝5時から18時まで市場や娯楽の催しが禁止、国民哀悼の日は市場やスポーツの催しが13時まで、音楽や娯楽の催しとダンスは18時まで禁止されることを時間の帯で示した図](/assets/images/events/quiet-holidays-time-rules.svg "図解：J-Connect。デュッセルドルフ市の案内とNRWの祝日の法律に基づく（2026年11月6日参照）。")
 
 ## 暮らしの中で気づくこと
 
@@ -95,8 +91,6 @@ NRWの日曜日と祝日に関する法律では、11月の次の3つの日が�
 
 ## 参考情報（2026年10月29日参照）
 
-- [ケルン市：静かな祝日](https://www.stadt-koeln.de/politik-und-verwaltung/presseservice/stille-feiertage-2)
-- [ケルン市：11月の静かな祝日の禁止事項](https://www.stadt-koeln.de/politik-und-verwaltung/presse/verbote-den-stillen-feiertagen-im-november-6)
 - [デュッセルドルフ市：NRWの祝日の決まり](https://www.duesseldorf.de/ordnungsamt/gewerbe/feiertage1)
 - [NRW州：日曜日と祝日に関する法律](https://recht.nrw.de/lrgv/gesetz/01012000-bekanntmachung-der-neufassung-des-gesetzes-ueber-die-sonn-und-feiertage/)
 

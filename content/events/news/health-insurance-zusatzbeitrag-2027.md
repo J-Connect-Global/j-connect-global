@@ -17,7 +17,7 @@ official_sources:
   - title: "社会法典第5編 §242a（平均追加保険料率の告示）"
     url: "https://www.gesetze-im-internet.de/sgb_5/__242a.html"
   - title: "消費者センター：追加保険料の値上げと特別解約権"
-    url: "https://www.verbraucherzentrale.de/wissen/geld-versicherungen/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581"
+    url: "https://www.verbraucherzentrale.de/wissen/gesundheit-pflege/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581"
   - title: "GKV-Spitzenverband：保険組合一覧と追加保険料率"
     url: "https://www.gkv-spitzenverband.de/service/krankenkassenliste/krankenkassen.jsp"
 related_articles: ["health-insurance-guide", "germany-january-2027-changes", "tax-id-steuernummer-steuerklasse", "sugar-drink-tax-germany-2027", "pflegeversicherung-reform-2027"]
@@ -97,9 +97,9 @@ image_credit: "Illustration / J-Connect"
 
 ## 要注意：値上げのお知らせの手紙は、もう届かないかもしれない
 
-これまで保険組合は、追加保険料率を引き上げる場合、遅くとも1か月前までに加入者へ手紙で知らせ、特別解約権があることも伝える義務がありました。消費者センターによると、この通知義務はGKV保険料率安定化法によってなくなりました。2026年7月30日の施行以降は、手紙で個別に知らせる義務も、デジタルで知らせる一般的な義務もありません（[消費者センター](https://www.verbraucherzentrale.de/wissen/geld-versicherungen/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581)）。
+これまで保険組合は、追加保険料率を引き上げる場合、遅くとも1か月前までに加入者へ手紙で知らせ、特別解約権があることも伝える義務がありました。消費者センターによると、この通知義務はGKV保険料率安定化法によってなくなりました。2026年7月30日の施行以降は、手紙で個別に知らせる義務も、デジタルで知らせる一般的な義務もありません（[消費者センター](https://www.verbraucherzentrale.de/wissen/gesundheit-pflege/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581)）。
 
-アプリやデジタル会員誌で引き続き知らせるとしている組合もありますが、2027年1月の値上げは、**自分から確認しないと気づかない**可能性があります。ただし、値上げのときに乗り換えられる特別解約権そのものは残っています（[消費者センター](https://www.verbraucherzentrale.de/wissen/geld-versicherungen/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581)）。
+アプリやデジタル会員誌で引き続き知らせるとしている組合もありますが、2027年1月の値上げは、**自分から確認しないと気づかない**可能性があります。ただし、値上げのときに乗り換えられる特別解約権そのものは残っています（[消費者センター](https://www.verbraucherzentrale.de/wissen/gesundheit-pflege/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581)）。
 
 ## 値上げされたら使える「特別解約権」
 
@@ -108,7 +108,7 @@ image_credit: "Illustration / J-Connect"
 条文のポイントは次のとおりです。
 
 1. **期限**：値上げ後の率が最初に適用される**月の末日まで**に解約を申し出られる（第4項6文）。たとえば2027年1月1日から上がる場合、2027年1月31日が期限です。
-2. **退会の時期**：退会は、申し出た月の**翌々月の末日**です（第4項3文）。1月に申し出た場合は3月末で退会し、4月1日から新しい保険組合に移ります。それまでの間は、上がった率で保険料を払います（[消費者センター](https://www.verbraucherzentrale.de/wissen/geld-versicherungen/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581)）。
+2. **退会の時期**：退会は、申し出た月の**翌々月の末日**です（第4項3文）。1月に申し出た場合は3月末で退会し、4月1日から新しい保険組合に移ります。それまでの間は、上がった率で保険料を払います（[消費者センター](https://www.verbraucherzentrale.de/wissen/gesundheit-pflege/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581)）。
 3. **手続き**：別の保険組合に移る場合、新しい組合への加入申込みが元の組合への解約の代わりになります（第4項4文）。自分で元の組合に解約届を出す必要は、通常ありません。元の組合は、新しい組合に対して2週間以内に退会日を電子的に確認します（第2項）。
 
 また、すでに12か月以上加入している方は、値上げがなくても、同じ「翌々月の末日」のルールでいつでも乗り換えられます（第4項3文）。
@@ -176,7 +176,7 @@ image_credit: "Illustration / J-Connect"
 - [連邦保健省：GKV保険料率安定化法](https://www.bundesgesundheitsministerium.de/service/gesetze-und-verordnungen/detail/gkv-beitragssatzstabilisierungsgesetz)
 - [社会法典第5編 §175](https://www.gesetze-im-internet.de/sgb_5/__175.html)・[§242](https://www.gesetze-im-internet.de/sgb_5/__242.html)・[§242a](https://www.gesetze-im-internet.de/sgb_5/__242a.html)
 - [GKV-Spitzenverband：保険組合一覧](https://www.gkv-spitzenverband.de/service/krankenkassenliste/krankenkassen.jsp)
-- [消費者センター：Zusatzbeitrag der Krankenkasse: Sonderkündigung und Wechsel möglich（2026年8月19日更新）](https://www.verbraucherzentrale.de/wissen/geld-versicherungen/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581)
+- [消費者センター：Zusatzbeitrag der Krankenkasse: Sonderkündigung und Wechsel möglich（2026年8月19日更新）](https://www.verbraucherzentrale.de/wissen/gesundheit-pflege/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581)
 - [zm-online：GKV推計委員会、2026年・2027年の見通し](https://www.zm-online.de/news/detail/gkv-schaetzerkreis-legt-prognose-fuer-2026-und-2027-vor)
 - [Deutsche Handwerks Zeitung：Krankenkassen-Beiträge sollen 2027 stabil bleiben](https://www.deutsche-handwerks-zeitung.de/krankenkassen-beitraege-sollen-2027-stabil-bleiben-385096/)
 - [Apotheken Umschau：Zusatzbeitrag 2027 bleibt bei 2,9 Prozent – doch Kassen warnen](https://www.apotheken-umschau.de/gesundheitspolitik/zusatzbeitrag-2027-bleibt-bei-2-9-prozent-doch-kassen-warnen-1605019.html)

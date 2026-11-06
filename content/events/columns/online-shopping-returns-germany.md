@@ -13,7 +13,7 @@ official_sources:
   - title: "消費者センター：プライムデー、ブラックフライデー、サイバーマンデーのヒント"
     url: "https://www.verbraucherzentrale.de/wissen/digitale-welt/onlinehandel/prime-days-black-friday-cyber-monday-tipps-fuer-die-schnaeppchenjagd-37835"
   - title: "消費者センター：2026年6月から撤回ボタン"
-    url: "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/widerrufsbutton-ab-juni-2026-onlinevertraege-einfacher-widerrufen-118449"
+    url: "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/widerrufsbutton-seit-juni-2026-onlinevertraege-einfacher-widerrufen-118449"
   - title: "民法 第355条（消費者の撤回の権利）"
     url: "https://www.gesetze-im-internet.de/bgb/__355.html"
   - title: "民法 第312g条（撤回の権利の例外）"
@@ -55,7 +55,7 @@ image_credit: "Illustration / J-Connect"
 
 撤回するときは、ショップに**撤回することをはっきり伝える**必要があります。ショップのウェブサイトの返品手続き、メール、撤回の書式などを使います。物を送り返すだけでなく、撤回の意思を伝えた記録を残しておくと、後でもめたときの証拠になります。
 
-2026年6月19日からは、ネットで契約を結べるショップやサービスは、ウェブサイトに**撤回のためのボタン**（撤回の機能）を用意することが義務になりました。撤回の権利そのものは変わりませんが、手続きが分かりやすくなります（[消費者センター：撤回ボタン](https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/widerrufsbutton-ab-juni-2026-onlinevertraege-einfacher-widerrufen-118449)）。
+2026年6月19日からは、ネットで契約を結べるショップやサービスは、ウェブサイトに**撤回のためのボタン**（撤回の機能）を用意することが義務になりました。撤回の権利そのものは変わりませんが、手続きが分かりやすくなります（[消費者センター：撤回ボタン](https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/widerrufsbutton-seit-juni-2026-onlinevertraege-einfacher-widerrufen-118449)）。
 
 ![ネットで買った物は、受け取った日の翌日から14日以内に撤回をショップに伝え、撤回を伝えてから14日以内に物を送り返し、ショップは原則14日以内に返金することを示した流れの図](/assets/images/events/online-return-14-days.svg "図解：J-Connect。民法と消費者センターの資料に基づく（2026年10月29日参照）。")
 
@@ -105,7 +105,7 @@ image_credit: "Illustration / J-Connect"
 - [消費者センター：ネットでの撤回、ショップが応じないときは](https://www.verbraucherzentrale.de/wissen/digitale-welt/onlinehandel/widerruf-im-internet-was-tun-wenn-sich-der-onlineshop-quer-stellt-60076)
 - [消費者センター：元の箱で返す必要はある？](https://www.verbraucherzentrale.de/wissen/digitale-welt/onlinehandel/muss-ich-online-bestellte-ware-in-der-originalverpackung-zurueckschicken-28096)
 - [消費者センター：ブラックフライデーのヒント](https://www.verbraucherzentrale.de/wissen/digitale-welt/onlinehandel/prime-days-black-friday-cyber-monday-tipps-fuer-die-schnaeppchenjagd-37835)
-- [消費者センター：2026年6月から撤回ボタン](https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/widerrufsbutton-ab-juni-2026-onlinevertraege-einfacher-widerrufen-118449)
+- [消費者センター：2026年6月から撤回ボタン](https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/widerrufsbutton-seit-juni-2026-onlinevertraege-einfacher-widerrufen-118449)
 - [民法 第355条](https://www.gesetze-im-internet.de/bgb/__355.html)
 - [民法 第312g条](https://www.gesetze-im-internet.de/bgb/__312g.html)
 

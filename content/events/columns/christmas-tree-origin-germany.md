@@ -15,7 +15,7 @@ official_sources:
   - title: "連邦統計局：アドベントとクリスマス"
     url: "https://www.destatis.de/DE/Themen/Querschnitt/Weihnachten/Advent/_inhalt.html"
   - title: "連邦環境庁（UBA）：クリスマスツリーの選び方"
-    url: "https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/haushalt-wohnen/weihnachtsbaum"
+    url: "https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/oekologisch-zertifizierte-weihnachtsbaeume-aus-der"
 related_articles: ["advent-wreath-calendar-origin", "christmas-markets-duesseldorf", "germany-autumn-forest-walk", "germany-silvester-fireworks-rules", "three-kings-day-sternsinger"]
 city: "ドイツ全土"
 area: "ドイツ全土"
@@ -91,7 +91,7 @@ image_credit: "Illustration / J-Connect"
 
 ドイツでは、12月に入るとスーパーの駐車場や広場、ホームセンターなどに、ツリーの売り場が現れます。森の中の農園で、自分でツリーを切らせてくれるところもあります。
 
-連邦環境庁は、環境に配慮するなら、地域で育てられ、エコ認証を受けたツリーを選ぶよう勧めています（[連邦環境庁：クリスマスツリー](https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/haushalt-wohnen/weihnachtsbaum)）。遠くから運ばれてきたものより輸送の負担が少なく、農薬の使用も抑えられているためです。
+連邦環境庁は、環境に配慮するなら、地域で育てられ、エコ認証を受けたツリーを選ぶよう勧めています（[連邦環境庁：クリスマスツリー](https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/oekologisch-zertifizierte-weihnachtsbaeume-aus-der)）。遠くから運ばれてきたものより輸送の負担が少なく、農薬の使用も抑えられているためです。
 
 ほかにも、次のような点を知っておくと便利です。
 
@@ -108,6 +108,6 @@ image_credit: "Illustration / J-Connect"
 - [katholisch.de：もみの木の勝利](https://katholisch.de/artikel/7286-siegeszug-eines-nadelholzes)
 - [ドイツ森林保護協会（SDW）：クリスマスツリー](https://www.sdw.de/ueber-den-wald/waldwissen/weihnachtsbaum/)
 - [連邦統計局：アドベントとクリスマス](https://www.destatis.de/DE/Themen/Querschnitt/Weihnachten/Advent/_inhalt.html)
-- [連邦環境庁：クリスマスツリーの選び方](https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/haushalt-wohnen/weihnachtsbaum)
+- [連邦環境庁：クリスマスツリーの選び方](https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/oekologisch-zertifizierte-weihnachtsbaeume-aus-der)
 
 本記事は公開情報をもとにした文化紹介です。習慣の始まりには諸説あり、資料によって説明が異なる場合があります。

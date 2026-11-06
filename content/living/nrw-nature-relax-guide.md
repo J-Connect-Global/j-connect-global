@@ -26,7 +26,7 @@ official_sources:
     url: "https://www.nationalpark-eifel.de/en/arrival-accommodation/bus-train-or-car/"
   - title: "Naturpark Hohe Mark：公式サイト"
     url: "https://naturpark-hohe-mark.de/"
-  - title: "Externsteine：2026年見学案内"
+  - title: "Externsteine：見学案内"
     url: "https://www.externsteine-info.de/tickets-und-anreise/tickets/"
 ---
 

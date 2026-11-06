@@ -20,7 +20,7 @@ official_sources:
     url: "https://www.mittelrheinbahn.de/en/tickets/tickets"
   - title: "MittelrheinBahn：バリアフリー"
     url: "https://www.mittelrheinbahn.de/de/tickets/informationen-rund-ums-ticket/barrierefreies-reisen"
-  - title: "KD：2026年時刻表"
+  - title: "KD：時刻表"
     url: "https://www.k-d.com/downloads/"
   - title: "KD：低水位による運航変更"
     url: "https://www.k-d.com/en/2026/07/niedrigwasser/"

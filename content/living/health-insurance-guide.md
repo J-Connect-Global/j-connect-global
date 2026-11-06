@@ -67,7 +67,7 @@ official_sources:
 
 ### 2027年の予定値
 
-2027年は、加入義務の年収基準が**8万4,150ユーロ**に上がる予定です。2026年12月31日時点ですでに民間保険に入っていて加入義務がない人には、別に8万550ユーロの基準が設けられる予定です。少額雇用（ミニジョブ）の上限も、最低賃金の引き上げに合わせて月633ユーロになります。基準の数値は、2026年11月6日時点で閣議決定済み・連邦参議院の同意待ちです（[テクニカー保険組合の雇用主向け案内](https://www.tk.de/firmenkunden/versicherung/beitraege-faq-und-mehr/zahlen-und-grenzwerte/sv-rechengroessen-2027-2227000)、[2027年1月からの変更点](/germany/ja/events/news/germany-january-2027-changes/)）。
+2027年は、加入義務の年収基準が**8万4,150ユーロ**に上がる予定です。2026年12月31日時点ですでに民間保険に入っていて加入義務がない人には、別に8万550ユーロの基準が設けられる予定です。少額雇用（ミニジョブ）の上限も、最低賃金の引き上げに合わせて月633ユーロになります。基準の数値は、2026年11月6日時点で閣議決定済み・連邦参議院の同意待ちです（[テクニカー保険組合の雇用主向け案内](https://www.tk.de/firmenkunden/versicherung/jahreswechsel/jw-beitraee-und-rechengroessen/sv-rechengroessen-2027-2227000)、[2027年1月からの変更点](/germany/ja/events/news/germany-january-2027-changes/)）。
 
 ## 公的保険の保険料はどう決まるか
 

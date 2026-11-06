@@ -77,7 +77,7 @@ official_sources:
 - ドイツの病院で、保険会社が直接支払うしくみ（キャッシュレス）が使えるか
 - 個人の賠償責任（他人の物を壊したときなど）も含まれるか
 
-ドイツの会社で週に一定以上働き、社会保険の加入義務がある仕事に就いた場合は、ドイツの公的健康保険に入ることになります。働き方によって加入先が変わるので、仕事が決まったら雇用主に確認してください。保険のしくみは[ドイツの健康保険](/germany/ja/living/health-insurance-guide/)で説明しています。ドイツでは他人に損害を与えたときの賠償責任保険も広く使われています。[賠償責任保険と家財保険](/germany/ja/living/liability-household-insurance-germany/)も参考にしてください。
+ドイツの会社で週に一定以上働き、社会保険の加入義務がある仕事に就いた場合は、ドイツの公的健康保険に入ることになります。働き方によって加入先が変わるので、仕事が決まったら雇用主に確認してください。保険のしくみは[ドイツの健康保険](/germany/ja/living/health-insurance-guide/)で説明しています。ドイツでは他人に損害を与えたときの賠償責任保険も広く使われています。[ドイツの個人賠償責任保険と家財保険](/germany/ja/living/liability-household-insurance-germany/)も参考にしてください。
 
 ## ドイツに着いてからの手続き
 
@@ -85,7 +85,7 @@ official_sources:
 2. **住民登録をする**：入居後2週間以内に住民登録をします。手順は[ドイツの住民登録](/germany/ja/living/anmeldung-guide/)で説明しています。
 3. **ビザの期限内に滞在許可カードを受け取る**：日本で取ったビザの期間が1年より短い場合は、期限内に外国人局で電子滞在カードを申請します。ビザに書かれた期間と条件を確認してください。
 4. **税番号を受け取る**：住民登録の後、税番号（Steuer-ID）が郵送で届きます。働くときに雇用主へ伝えます。[税番号と税区分](/germany/ja/living/tax-id-steuernummer-steuerklasse/)を参考にしてください。
-5. **銀行口座と携帯電話**：給料の受け取りには口座が必要です。[ドイツの銀行口座](/germany/ja/living/bank-account-germany/)と[携帯電話・SIM](/germany/ja/living/mobile-phone-sim-germany/)にまとめています。
+5. **銀行口座と携帯電話**：給料の受け取りには口座が必要です。[ドイツの銀行口座開設](/germany/ja/living/bank-account-germany/)と[ドイツの携帯電話・SIMの選び方](/germany/ja/living/mobile-phone-sim-germany/)にまとめています。
 
 到着直後の1か月の全体像は[ドイツ生活の最初の30日](/germany/ja/living/germany-first-30-days/)で確認できます。
 

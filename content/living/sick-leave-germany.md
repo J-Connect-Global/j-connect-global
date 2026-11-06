@@ -71,7 +71,7 @@ official_sources:
 
 ### かかりつけ医がいない、言葉が不安なとき
 
-軽い病気でも、受診の予約が取りにくいことがあります。かかりつけ医の探し方や予約の取り方は[ドイツで病院を予約する方法](/germany/ja/living/doctor-appointment-germany/)、日本語で相談できる医師は[日本語が通じる医師](/germany/ja/living/japanese-speaking-doctors-germany/)にまとめています。夜間や休日は、全国共通の医療相談の電話番号116117で、当番の診療所を案内してもらえます。
+軽い病気でも、受診の予約が取りにくいことがあります。かかりつけ医の探し方や予約の取り方は[ドイツで医師を探して予約する方法](/germany/ja/living/doctor-appointment-germany/)、日本語で相談できる医師は[日本語で受診できる医療機関の探し方](/germany/ja/living/japanese-speaking-doctors-germany/)にまとめています。夜間や休日は、全国共通の医療相談の電話番号116117で、当番の診療所を案内してもらえます。
 
 症状の伝え方は、[病院で使うドイツ語](/germany/ja/learn-german/hospital-phrases/)を参考にしてください。
 
@@ -110,7 +110,7 @@ official_sources:
 - **手続き**：医師（多くは小児科）に、子どもの看病が必要だという証明を出してもらい、保険に申請します。会社には休むことをすぐに連絡します。
 - **会社の給料が出る場合**：労働契約や労働協約で、子どもの看病の日にも給料を払うと決めている会社もあります。その場合は、保険の手当より会社の給料が優先されます。
 
-子どもが保育園や学校を休むときのルールは、[保育園（Kita）とベビーシッター](/germany/ja/living/kita-u3-tagesmutter-guide/)も参考にしてください。
+子どもが保育園や学校を休むときのルールは、[ドイツのKita・U3申込み](/germany/ja/living/kita-u3-tagesmutter-guide/)も参考にしてください。
 
 ![子どもの看病のための休暇の日数の図。2026年は子ども1人15日・合計35日、2027年は法律が変わらなければ10日・合計25日に戻ることを示し、ひとり親は2倍であることを示す](/assets/images/living/seo/child-sick-days-2026-2027.svg "図解：J-Connect。根拠：社会法典第5編第45条。2027年の日数は2026年11月時点の法律によります。2026年11月6日確認。")
 
@@ -138,11 +138,11 @@ official_sources:
 
 ## 関連記事
 
-- [ドイツで病院を予約する方法](/germany/ja/living/doctor-appointment-germany/)
+- [ドイツで医師を探して予約する方法](/germany/ja/living/doctor-appointment-germany/)
 - [ドイツの健康保険](/germany/ja/living/health-insurance-guide/)
 - [ドイツの労働契約](/germany/ja/living/employment-contract-germany/)
-- [日本語が通じる医師](/germany/ja/living/japanese-speaking-doctors-germany/)
-- [保育園（Kita）とベビーシッター](/germany/ja/living/kita-u3-tagesmutter-guide/)
+- [日本語で受診できる医療機関の探し方](/germany/ja/living/japanese-speaking-doctors-germany/)
+- [ドイツのKita・U3申込み](/germany/ja/living/kita-u3-tagesmutter-guide/)
 
 ## 公式情報・参考ソース
 

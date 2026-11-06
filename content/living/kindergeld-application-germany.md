@@ -2,7 +2,7 @@
 id: "L086"
 title: "ドイツの児童手当（Kindergeld）の申請｜日本人がもらえる滞在許可、月259ユーロ、必要書類、6か月の遡及、日本に住む子どもの扱い"
 slug: "kindergeld-application-germany"
-category: "子育て・家族"
+category: "家族・子育て"
 summary: "ドイツに住む家族は、子ども1人につき月259ユーロ（2026年）の児童手当を受け取れます。日本国籍の親は、就労できる滞在許可などを持っていることが条件で、学生や求職のための滞在許可では対象外です。家族手当金庫への申請方法、税番号などの必要書類、申請が遅れたときの6か月の遡及、18歳以降の延長、日本に住む子どもの扱い、2027年からの申請なしの支給を整理します。"
 status: "published"
 published: true
@@ -97,7 +97,7 @@ EU以外の国籍の人が児童手当を受け取るには、ドイツに住所
 - **住民登録の証明**
 - **18歳以上の子ども**：在学証明書や訓練契約書
 
-ドイツで子どもが生まれたときの出生届や税番号の流れは、[ドイツで子どもが生まれたときの手続き](/germany/ja/living/birth-procedures-germany/)で説明しています。
+ドイツで子どもが生まれたときの出生届や税番号の流れは、[ドイツ出産の手続き完全ガイド](/germany/ja/living/birth-procedures-germany/)で説明しています。
 
 ![児童手当の申請の流れの図。住民登録と税番号の受け取り、家族手当金庫にオンラインで申請、必要書類を添付、決定の通知と児童手当番号、毎月の振り込みという順番と、遡及は6か月までという注意を示す](/assets/images/living/seo/kindergeld-application-steps.svg "図解：J-Connect。根拠：所得税法第66条・第67条・第70条。2026年11月6日確認。")
 
@@ -133,9 +133,9 @@ EU以外の国籍の人が児童手当を受け取るには、ドイツに住所
 
 日本の児童手当は、日本に住所がある子どもが対象です。ドイツに住民登録をして、日本の住民票を移している場合は、日本の児童手当は受け取れません。日本を出国するときに、市区町村で手続きをします。
 
-### 親育て手当（Elterngeld）とは別ですか？
+### 育児給付（Elterngeld）とは別ですか？
 
-別の制度です。親育て手当は、子どもが生まれた後、仕事を減らした親の収入を補う制度で、児童手当と両方受け取れます。[ドイツの親育て手当](/germany/ja/living/elterngeld-guide-germany/)で説明しています。
+別の制度です。育児給付は、子どもが生まれた後、仕事を減らした親の収入を補う制度で、児童手当と両方受け取れます。[ドイツの育児給付（Elterngeld）](/germany/ja/living/elterngeld-guide-germany/)で説明しています。
 
 ### 家族手当金庫に連絡するとき、日本語は使えますか？
 
@@ -144,8 +144,8 @@ EU以外の国籍の人が児童手当を受け取るには、ドイツに住所
 ## 関連記事
 
 - [児童手当の2027年の支給日](/germany/ja/living/kindergeld-auszahlungstermine-2027/)
-- [ドイツで子どもが生まれたときの手続き](/germany/ja/living/birth-procedures-germany/)
-- [ドイツの親育て手当](/germany/ja/living/elterngeld-guide-germany/)
+- [ドイツ出産の手続き完全ガイド](/germany/ja/living/birth-procedures-germany/)
+- [ドイツの育児給付（Elterngeld）](/germany/ja/living/elterngeld-guide-germany/)
 - [税番号と税区分](/germany/ja/living/tax-id-steuernummer-steuerklasse/)
 - [家族をドイツに呼び寄せるとき](/germany/ja/living/family-reunification-spouse-work-germany/)
 

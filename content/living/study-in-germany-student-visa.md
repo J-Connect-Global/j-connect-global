@@ -150,7 +150,7 @@ official_sources:
 
 - [ドイツのビザ・滞在許可の種類](/germany/ja/living/germany-visa-types-japanese/)
 - [ドイツの健康保険](/germany/ja/living/health-insurance-guide/)
-- [ドイツの銀行口座](/germany/ja/living/bank-account-germany/)
+- [ドイツの銀行口座開設](/germany/ja/living/bank-account-germany/)
 - [ミニジョブの上限額](/germany/ja/living/minijob-grenze-2027/)
 - [ドイツの賃貸・家探し](/germany/ja/living/rent-apartment-germany/)
 

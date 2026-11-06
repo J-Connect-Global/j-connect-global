@@ -14,7 +14,7 @@
   --portal3-shadow:0 8px 22px rgba(0,45,95,.10);
   --portal3-soft-shadow:0 3px 10px rgba(0,45,95,.08);
   --portal3-container:1160px;
-  --portal3-hero-image:url('/assets/images/hero/home-portal-hero.png');
+  --portal3-hero-image:url('/assets/images/hero/home-portal-hero.jpg');
   --portal3-surface:#ffffff;
   --portal3-surface-elevated:#ffffff;
   --portal3-chip-bg:#ffffff;
@@ -45,7 +45,7 @@
     --portal3-hero-image:image-set(
       url('/assets/images/hero/home-portal-hero-768w.avif') type('image/avif') 1x,
       url('/assets/images/hero/home-portal-hero-768w.webp') type('image/webp') 1x,
-      url('/assets/images/hero/home-portal-hero.png') type('image/png') 1x
+      url('/assets/images/hero/home-portal-hero.jpg') type('image/jpeg') 1x
     );
   }
 
@@ -62,7 +62,7 @@
       --portal3-hero-image:image-set(
         url('/assets/images/hero/home-portal-hero-480w.avif') type('image/avif') 1x,
         url('/assets/images/hero/home-portal-hero-480w.webp') type('image/webp') 1x,
-        url('/assets/images/hero/home-portal-hero.png') type('image/png') 1x
+        url('/assets/images/hero/home-portal-hero.jpg') type('image/jpeg') 1x
       );
     }
 
@@ -80,7 +80,7 @@
       --portal3-hero-image:image-set(
         url('/assets/images/hero/home-portal-hero-1440w.avif') type('image/avif') 1x,
         url('/assets/images/hero/home-portal-hero-1440w.webp') type('image/webp') 1x,
-        url('/assets/images/hero/home-portal-hero.png') type('image/png') 1x
+        url('/assets/images/hero/home-portal-hero.jpg') type('image/jpeg') 1x
       );
     }
 

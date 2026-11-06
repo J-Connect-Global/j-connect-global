@@ -123,7 +123,6 @@ const requiredPages = [
 ];
 
 const searchIndexCandidates = [
-  'assets/js/search-index.js',
   'assets/data/search-index.json',
 ];
 

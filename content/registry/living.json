@@ -574,7 +574,7 @@
         "url": "https://www.mittelrheinbahn.de/de/tickets/informationen-rund-ums-ticket/barrierefreies-reisen"
       },
       {
-        "title": "KD：2026年時刻表",
+        "title": "KD：時刻表",
         "url": "https://www.k-d.com/downloads/"
       },
       {
@@ -655,7 +655,7 @@
         "url": "https://naturpark-hohe-mark.de/"
       },
       {
-        "title": "Externsteine：2026年見学案内",
+        "title": "Externsteine：見学案内",
         "url": "https://www.externsteine-info.de/tickets-und-anreise/tickets/"
       }
     ],
@@ -777,7 +777,7 @@
         "url": "https://koelnerzoo.de/besuch"
       },
       {
-        "title": "Kölner Seilbahn：2026年運行案内",
+        "title": "Kölner Seilbahn：運行案内",
         "url": "https://www.koelner-seilbahn.de/fahrten.html"
       },
       {
@@ -1831,6 +1831,7 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/tax-id-steuernummer-steuerklasse/",
     "related_articles": [
+      "income-tax-return-germany",
       "germany-first-30-days",
       "anmeldung-guide",
       "bank-account-germany"
@@ -1896,6 +1897,7 @@
     "related_articles": [
       "birth-day-germany",
       "birth-procedures-germany",
+      "elterngeld-guide-germany",
       "stroller-buying-guide-germany",
       "kita-u3-tagesmutter-guide",
       "health-insurance-guide"
@@ -2207,8 +2209,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-11-05",
-    "last_verified": "2026-10-31",
+    "updated_at": "2026-11-06",
+    "last_verified": "2026-11-06",
     "tags": [
       "健康保険",
       "公的医療保険",
@@ -2256,7 +2258,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-31",
+      "last_reviewed_at": "2026-11-06",
       "next_review_due": "2027-01-15"
     },
     "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
@@ -2398,7 +2400,7 @@
     "category": "交通・車",
     "summary": "ドイツの鉄道を初めて使う人向けに、長距離列車と地域交通の違い、切符の選び方、駅表示の読み方、乗り換え、遅延時の考え方を整理します。",
     "published_at": "2026-08-03",
-    "last_verified": "2026-08-30",
+    "last_verified": "2026-11-06",
     "canonical_url": "/germany/ja/living/germany-train-travel-guide/",
     "tags": [
       "ドイツ鉄道",
@@ -2408,7 +2410,7 @@
       "切符",
       "遅延"
     ],
-    "updated_at": "2026-11-05",
+    "updated_at": "2026-11-06",
     "related_articles": [
       "cologne-city-guide",
       "duesseldorf-city-guide",
@@ -2442,8 +2444,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-30",
-      "next_review_due": "2026-11-30"
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-02-28"
     },
     "image_alt": "スーツケースを持ち長距離列車の横に立つ旅行者",
     "image": "/assets/img/living/germany-train-travel-guide.webp"
@@ -2476,6 +2478,7 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/residence-permit-renewal-germany/",
     "related_articles": [
+      "permanent-residence-germany",
       "anmeldung-guide",
       "germany-first-30-days",
       "moving-checklist-germany"
@@ -2763,9 +2766,10 @@
       "パスポート",
       "NRW"
     ],
-    "updated_at": "2026-11-05",
+    "updated_at": "2026-11-06",
     "related_articles": [
       "pregnancy-birth-germany",
+      "elterngeld-guide-germany",
       "birth-day-germany",
       "health-insurance-guide",
       "kita-u3-tagesmutter-guide",
@@ -4626,5 +4630,387 @@
     ],
     "image": "/assets/img/living/christmas-post-germany-to-japan-2026.webp",
     "image_alt": "クリスマスの飾りがある部屋で、段ボール箱にテープを貼り、カードを添えて日本へ送る準備をする様子のイラスト"
+  },
+  {
+    "id": "L074",
+    "slug": "income-tax-return-germany",
+    "url": "/germany/ja/living/income-tax-return-germany/",
+    "markdown_path": "/content/living/income-tax-return-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": true,
+    "home_order": 1,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "tax",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: EStG, AO; Verbraucherzentrale); human tax review pending",
+      "last_reviewed_at": "2026-11-05",
+      "next_review_due": "2027-03-01"
+    },
+    "canonical_url": "/germany/ja/living/income-tax-return-germany/",
+    "title": "ドイツの確定申告（Steuererklärung）入門｜会社員の義務・任意の見分け方、期限、ELSTERの流れ",
+    "category": "お金・税金",
+    "summary": "ドイツで働く会社員が確定申告を出す義務があるか、任意で出すと税金が戻りやすいのはどんな年かを、所得税法の条件に沿って整理します。2026年分の期限は2027年8月2日、任意申告は4年以内。通勤・在宅勤務の控除額、ELSTERの登録から税額決定通知の確認までの流れ、日本の収入がある年の注意点も説明します。",
+    "published_at": "2026-11-05",
+    "last_verified": "2026-11-05",
+    "tags": [
+      "確定申告",
+      "所得税",
+      "ELSTER",
+      "還付",
+      "会社員",
+      "通勤控除",
+      "在宅勤務",
+      "税金"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "tax-id-steuernummer-steuerklasse",
+      "minijob-grenze-2027",
+      "returning-to-japan-checklist",
+      "germany-first-30-days"
+    ],
+    "official_sources": [
+      {
+        "title": "所得税法第46条：給与所得者に申告義務が生じる条件",
+        "url": "https://www.gesetze-im-internet.de/estg/__46.html"
+      },
+      {
+        "title": "租税通則法第149条：申告書の提出期限",
+        "url": "https://www.gesetze-im-internet.de/ao_1977/__149.html"
+      },
+      {
+        "title": "租税通則法第108条：期限が土日・祝日に当たる場合",
+        "url": "https://www.gesetze-im-internet.de/ao_1977/__108.html"
+      },
+      {
+        "title": "租税通則法第152条：期限後の提出に対する加算金",
+        "url": "https://www.gesetze-im-internet.de/ao_1977/__152.html"
+      },
+      {
+        "title": "租税通則法第169条・第170条：課税を確定できる期間（任意申告の4年）",
+        "url": "https://www.gesetze-im-internet.de/ao_1977/__169.html"
+      },
+      {
+        "title": "租税通則法第355条：税額決定への異議申立ての期間",
+        "url": "https://www.gesetze-im-internet.de/ao_1977/__355.html"
+      },
+      {
+        "title": "所得税法第9条：通勤費の控除（1kmあたり0.38ユーロ）",
+        "url": "https://www.gesetze-im-internet.de/estg/__9.html"
+      },
+      {
+        "title": "所得税法第9a条：給与所得者の概算控除（1,230ユーロ）",
+        "url": "https://www.gesetze-im-internet.de/estg/__9a.html"
+      },
+      {
+        "title": "所得税法第4条第5項第6c号：在宅勤務の1日6ユーロの控除",
+        "url": "https://www.gesetze-im-internet.de/estg/__4.html"
+      },
+      {
+        "title": "所得税法第32b条：税率を決めるときだけ加える収入（累進の留保）",
+        "url": "https://www.gesetze-im-internet.de/estg/__32b.html"
+      },
+      {
+        "title": "所得税法第35a条：家事サービス・職人工事の税額控除",
+        "url": "https://www.gesetze-im-internet.de/estg/__35a.html"
+      },
+      {
+        "title": "ELSTER：ドイツ税務当局のオンライン申告ポータル",
+        "url": "https://www.elster.de/eportal/start"
+      },
+      {
+        "title": "消費者センター：確定申告は誰がいつ出すのか",
+        "url": "https://www.verbraucherzentrale.de/wissen/geld-versicherungen/sparen-und-anlegen/steuererklaerung-wer-sie-wann-beim-finanzamt-abgeben-muss-24899"
+      }
+    ],
+    "image": "/assets/img/living/income-tax-return-germany.webp",
+    "image_alt": "机の上に書類の束、電卓、ノートパソコン、領収書を並べ、1年分の税金を整理する様子のイラスト"
+  },
+  {
+    "id": "L075",
+    "slug": "permanent-residence-germany",
+    "url": "/germany/ja/living/permanent-residence-germany/",
+    "markdown_path": "/content/living/permanent-residence-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 45,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: AufenthG, AufenthV, BeschV, StAG); human immigration review pending",
+      "last_reviewed_at": "2026-11-05",
+      "next_review_due": "2027-05-01"
+    },
+    "canonical_url": "/germany/ja/living/permanent-residence-germany/",
+    "title": "ドイツの永住許可（Niederlassungserlaubnis）｜5年・3年・21か月の条件、日本人が確認したい点、失効の注意",
+    "category": "役所・滞在",
+    "summary": "ドイツの無期限の滞在許可（永住許可）は、一般的には5年・年金60か月・ドイツ語B1が目安ですが、専門人材は3年、EUブルーカードは最短21か月、ドイツ人の配偶者は3年の特例があります。日本国籍者向けの就労許可では特例が使えない場合があること、6か月以上の出国で失効する点、手数料113ユーロと申請の流れを、滞在法の条文に沿って整理します。",
+    "published_at": "2026-11-05",
+    "last_verified": "2026-11-05",
+    "tags": [
+      "永住許可",
+      "Niederlassungserlaubnis",
+      "滞在許可",
+      "外国人局",
+      "ブルーカード",
+      "ドイツ語B1",
+      "年金"
+    ],
+    "updated_at": "2026-11-05",
+    "related_articles": [
+      "residence-permit-renewal-germany",
+      "einbuergerung-germany-japanese",
+      "eu-blue-card-germany",
+      "japan-germany-social-security-pension",
+      "family-reunification-spouse-work-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "滞在法第9条：永住許可（一般の条件）",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__9.html"
+      },
+      {
+        "title": "滞在法第18c条：専門人材・EUブルーカード保持者の永住許可",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__18c.html"
+      },
+      {
+        "title": "滞在法第28条：ドイツ人の家族の滞在と永住許可",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__28.html"
+      },
+      {
+        "title": "滞在法第9a条：EU長期滞在許可",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__9a.html"
+      },
+      {
+        "title": "滞在法第51条：滞在許可の失効",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__51.html"
+      },
+      {
+        "title": "滞在法第2条：ドイツ語能力の段階（A1・A2・B1・B2）",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__2.html"
+      },
+      {
+        "title": "滞在法第19c条：資格によらない就労のための滞在許可",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__19c.html"
+      },
+      {
+        "title": "就労令第26条：日本国籍者などの就労",
+        "url": "https://www.gesetze-im-internet.de/beschv_2013/__26.html"
+      },
+      {
+        "title": "滞在令第44条：永住許可の手数料",
+        "url": "https://www.gesetze-im-internet.de/aufenthv/__44.html"
+      },
+      {
+        "title": "国籍法第10条：ドイツ国籍の取得（帰化）の条件",
+        "url": "https://www.gesetze-im-internet.de/stag/__10.html"
+      },
+      {
+        "title": "連邦政府の専門人材向けポータル：ビザと滞在",
+        "url": "https://www.make-it-in-germany.com/en/visa-residence"
+      },
+      {
+        "title": "デュッセルドルフ市：外国人局のお知らせと申請方法",
+        "url": "https://www.duesseldorf.de/auslaenderamt/aktuelles"
+      },
+      {
+        "title": "日本の国籍法（e-Gov法令検索）",
+        "url": "https://laws.e-gov.go.jp/law/325AC0000000147"
+      }
+    ],
+    "image": "/assets/img/living/permanent-residence-germany.webp",
+    "image_alt": "窓辺に植木鉢が並ぶ集合住宅の玄関前で、鍵と滞在カードを思わせる無地のカードが置かれた様子のイラスト"
+  },
+  {
+    "id": "L076",
+    "slug": "elterngeld-guide-germany",
+    "url": "/germany/ja/living/elterngeld-guide-germany/",
+    "markdown_path": "/content/living/elterngeld-guide-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 55,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "family_administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: BEEG, EStG); human review pending",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-02-01"
+    },
+    "canonical_url": "/germany/ja/living/elterngeld-guide-germany/",
+    "title": "ドイツの育児給付（Elterngeld）の計算と受け取り方｜手取りの65〜67％、ElterngeldPlus、パートナーボーナス、外国籍の条件",
+    "category": "家族・子育て",
+    "summary": "ドイツの育児給付は、出生前の手取りのおおむね65〜67％、月300〜1,800ユーロです。金額の計算方法、時短勤務と組み合わせるElterngeldPlus、両親が週24〜32時間働くパートナーボーナス、14か月の分け方、日本国籍の親の受給条件、給与税区分や確定申告との関係を、連邦両親手当・育児休業法の条文に沿って具体例で整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "Elterngeld",
+      "育児給付",
+      "ElterngeldPlus",
+      "育児休業",
+      "出産後の手続き",
+      "共働き",
+      "給付金"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "birth-procedures-germany",
+      "pregnancy-birth-germany",
+      "kindergeld-auszahlungstermine-2027",
+      "income-tax-return-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "連邦両親手当・育児休業法第1条：受給できる人、外国籍の条件、所得の上限",
+        "url": "https://www.gesetze-im-internet.de/beeg/__1.html"
+      },
+      {
+        "title": "連邦両親手当・育児休業法第2条：金額（65〜100％、300〜1,800ユーロ）",
+        "url": "https://www.gesetze-im-internet.de/beeg/__2.html"
+      },
+      {
+        "title": "連邦両親手当・育児休業法第2a条：きょうだい加算・多胎加算",
+        "url": "https://www.gesetze-im-internet.de/beeg/__2a.html"
+      },
+      {
+        "title": "連邦両親手当・育児休業法第2b条・第2c条：計算の対象期間と所得",
+        "url": "https://www.gesetze-im-internet.de/beeg/__2c.html"
+      },
+      {
+        "title": "連邦両親手当・育児休業法第3条：出産手当などとの調整",
+        "url": "https://www.gesetze-im-internet.de/beeg/__3.html"
+      },
+      {
+        "title": "連邦両親手当・育児休業法第4条：受給期間と同時受給",
+        "url": "https://www.gesetze-im-internet.de/beeg/__4.html"
+      },
+      {
+        "title": "連邦両親手当・育児休業法第4a条・第4b条：ElterngeldPlusとパートナーボーナス",
+        "url": "https://www.gesetze-im-internet.de/beeg/__4b.html"
+      },
+      {
+        "title": "連邦両親手当・育児休業法第7条：申請とさかのぼれる期間",
+        "url": "https://www.gesetze-im-internet.de/beeg/__7.html"
+      },
+      {
+        "title": "所得税法第46条：給付を受けた年の確定申告",
+        "url": "https://www.gesetze-im-internet.de/estg/__46.html"
+      },
+      {
+        "title": "連邦家族ポータル：育児給付の概要",
+        "url": "https://familienportal.de/familienportal/familienleistungen/elterngeld"
+      },
+      {
+        "title": "連邦家族ポータル：2024年4月以降の出生での変更点",
+        "url": "https://familienportal.de/familienportal/familienleistungen/elterngeld/faq/was-aendert-sich-fuer-geburten-ab-1-april-2024-beim-elterngeld-237122"
+      },
+      {
+        "title": "連邦家族ポータル：育児給付の申請方法",
+        "url": "https://familienportal.de/familienportal/familienleistungen/elterngeld/faq/wie-kann-ich-elterngeld-beantragen--124762"
+      },
+      {
+        "title": "NRW家族ポータル：育児給付の窓口とオンライン申請",
+        "url": "https://www.familienportal.nrw/de/elterngeld"
+      }
+    ],
+    "image": "/assets/img/living/elterngeld-guide-germany.webp",
+    "image_alt": "ベビーカーと小さな靴、カレンダー、電卓を置いた明るい部屋で、育児の期間とお金を計画する様子のイラスト"
+  },
+  {
+    "id": "L077",
+    "slug": "einbuergerung-germany-japanese",
+    "url": "/germany/ja/living/einbuergerung-germany-japanese/",
+    "markdown_path": "/content/living/einbuergerung-germany-japanese.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 46,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: StAG); Japanese Nationality Act and Family Register Act cited from e-Gov but not fetched from this environment; human legal review pending",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-05-01"
+    },
+    "canonical_url": "/germany/ja/living/einbuergerung-germany-japanese/",
+    "title": "ドイツ国籍の取得（Einbürgerung）と日本国籍｜5年の条件、B1・帰化テスト、日本国籍を失う仕組み、子どもの二重国籍",
+    "category": "役所・滞在",
+    "summary": "ドイツ国籍の取得は、原則5年の合法的な滞在、期限のない滞在権など、生計の自立、ドイツ語B1、帰化テストが条件です。一方、日本人が自分の意思でドイツ国籍を取ると日本国籍を失います。永住許可との違い、手数料255ユーロ、国籍喪失届、ドイツで生まれた子どもの国籍留保と国籍選択まで、両国の法律に沿って整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "ドイツ国籍",
+      "帰化",
+      "Einbürgerung",
+      "日本国籍",
+      "二重国籍",
+      "国籍留保",
+      "永住許可"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "permanent-residence-germany",
+      "residence-permit-renewal-germany",
+      "birth-procedures-germany",
+      "returning-to-japan-checklist"
+    ],
+    "official_sources": [
+      {
+        "title": "ドイツ国籍法第10条：帰化の条件（5年、B1、帰化テスト）",
+        "url": "https://www.gesetze-im-internet.de/stag/__10.html"
+      },
+      {
+        "title": "ドイツ国籍法第9条：ドイツ人の配偶者の帰化",
+        "url": "https://www.gesetze-im-internet.de/stag/__9.html"
+      },
+      {
+        "title": "ドイツ国籍法第12a条：考慮されない軽い処罰",
+        "url": "https://www.gesetze-im-internet.de/stag/__12a.html"
+      },
+      {
+        "title": "ドイツ国籍法第12b条：国外滞在と滞在期間",
+        "url": "https://www.gesetze-im-internet.de/stag/__12b.html"
+      },
+      {
+        "title": "ドイツ国籍法第4条：ドイツで生まれた子どもの国籍",
+        "url": "https://www.gesetze-im-internet.de/stag/__4.html"
+      },
+      {
+        "title": "ドイツ国籍法第38条：手数料",
+        "url": "https://www.gesetze-im-internet.de/stag/__38.html"
+      },
+      {
+        "title": "日本の国籍法（e-Gov法令検索）：第11条・第12条・第14条",
+        "url": "https://laws.e-gov.go.jp/law/325AC0000000147"
+      },
+      {
+        "title": "日本の戸籍法（e-Gov法令検索）：第103条・第104条",
+        "url": "https://laws.e-gov.go.jp/law/322AC0000000224"
+      },
+      {
+        "title": "在デュッセルドルフ日本国総領事館：出生届・国籍留保",
+        "url": "https://www.dus.emb-japan.go.jp/itpr_ja/konsular_koseki_04.html"
+      },
+      {
+        "title": "連邦政府の専門人材向けポータル：ビザと滞在",
+        "url": "https://www.make-it-in-germany.com/en/visa-residence"
+      }
+    ],
+    "image": "/assets/img/living/einbuergerung-germany-japanese.webp",
+    "image_alt": "二つの道が分かれる場所に立つ道しるべと、遠くに見えるドイツの街並みと日本の山並みを描いたイラスト"
   }
 ]

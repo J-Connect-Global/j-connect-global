@@ -2,8 +2,40 @@
   "api_version": "2026-07-13.1",
   "source": "master-gas:community",
   "endpoint": "canonicalMasterEndpoint?action=getPosts&bypassCache=true&includeClosed=false",
-  "count": 6,
+  "count": 7,
   "items": [
+    {
+      "id": "post_b8c9376c-91fb-462f-af36-dd15afae5748",
+      "post_id": "post_b8c9376c-91fb-462f-af36-dd15afae5748",
+      "slug": "1-1-ケルン-ボン周辺-ドイツ-post-b8c9376c-91fb-462f-af36-dd15afae5748",
+      "detail_url": "/germany/ja/community/posts/post_b8c9376c-91fb-462f-af36-dd15afae5748/",
+      "title": "=1+1",
+      "body": "test",
+      "summary": "",
+      "category1": "売ります",
+      "category2": "家具・家電",
+      "postType": "売ります",
+      "subcategory": "家具・家電",
+      "country": "ドイツ",
+      "region": "ドイツ",
+      "city": "ケルン・ボン周辺",
+      "price": "1",
+      "event_date": "",
+      "availability_date": "",
+      "tags": "",
+      "image_url": "",
+      "image_alt": "=1+1",
+      "image_urls": [],
+      "image_url_1": "",
+      "image_url_2": "",
+      "image_url_3": "",
+      "created_at": "2026-11-06T09:55:43.948Z",
+      "published_at": "2026-11-06T09:55:43.948Z",
+      "updated_at": "2026-11-06T09:55:43.948Z",
+      "expires_at": "",
+      "public_replies": [],
+      "status": "active"
+    },
     {
       "id": "post_6a3a2ebd-71fd-4209-898d-6ac5947b5842",
       "post_id": "post_6a3a2ebd-71fd-4209-898d-6ac5947b5842",
@@ -242,15 +274,15 @@
     }
   ],
   "validation": {
-    "source_count": 13,
-    "explicitly_active_count": 6,
-    "eligible_count": 6,
+    "source_count": 14,
+    "explicitly_active_count": 7,
+    "eligible_count": 7,
     "excluded_count": 7,
     "excluded_by_reason": {
       "lifecycle_or_status": 7
     },
     "excluded_safe_ids": {},
-    "generated_count": 6
+    "generated_count": 7
   },
-  "generated_at": "2026-10-22T21:52:59.296Z"
+  "generated_at": "2026-11-06T10:23:20.510Z"
 }

@@ -456,10 +456,18 @@ function rowToObject_(headers, row, rowNumber) {
   return output;
 }
 
+// Text that starts with =, +, - or @ is stored by Sheets as a formula.
+// A leading apostrophe keeps it literal; getValues() returns it without the
+// apostrophe, so readers see exactly the submitted text.
+function sheetSafeValue_(value) {
+  if (typeof value !== 'string') return value;
+  return /^[\s\uFEFF]*[=+@-]/.test(value) ? "'" + value : value;
+}
+
 function writeExistingFields_(context, rowNumber, updates) {
   Object.keys(updates).forEach((field) => {
     if (!Object.prototype.hasOwnProperty.call(context.indexes, field)) return;
-    context.sheet.getRange(rowNumber, context.indexes[field] + 1).setValue(updates[field]);
+    context.sheet.getRange(rowNumber, context.indexes[field] + 1).setValue(sheetSafeValue_(updates[field]));
   });
 }
 
@@ -589,6 +597,11 @@ function editablePostPayload_(post) {
   EDITABLE_POST_FIELDS.forEach((field) => {
     if (Object.prototype.hasOwnProperty.call(post, field)) payload[field] = cleanCell_(post[field]);
   });
+  // Keep the same URL sanitisation as the public payload for image fields.
+  ['image_url_1', 'image_url_2', 'image_url_3'].forEach((field) => {
+    if (Object.prototype.hasOwnProperty.call(payload, field)) payload[field] = safePublicUrl_(payload[field], true);
+  });
+  if (Object.prototype.hasOwnProperty.call(payload, 'images')) payload.images = safePublicImages_(payload.images);
   return payload;
 }
 
@@ -946,7 +959,7 @@ function createPost_(params) {
       publicPostUrl,
       imageData
     });
-    return value === undefined ? '' : value;
+    return value === undefined ? '' : sheetSafeValue_(value);
   });
 
   const saveLock = LockService.getScriptLock();
@@ -1171,6 +1184,22 @@ function createPostValue_(header, params, generated) {
   return undefined;
 }
 
+// Matches the post form: JPG / PNG / WebP, up to 5 MB each. The file
+// signature is checked as well, because the declared type comes from the client.
+const COMMUNITY_IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
+const COMMUNITY_IMAGE_MAX_BYTES = 5 * 1024 * 1024;
+
+function hasImageSignature_(bytes, mimeType) {
+  const b = (index) => (bytes[index] + 256) % 256;
+  if (mimeType === 'image/jpeg') return b(0) === 0xFF && b(1) === 0xD8 && b(2) === 0xFF;
+  if (mimeType === 'image/png') return b(0) === 0x89 && b(1) === 0x50 && b(2) === 0x4E && b(3) === 0x47;
+  if (mimeType === 'image/webp') {
+    return b(0) === 0x52 && b(1) === 0x49 && b(2) === 0x46 && b(3) === 0x46
+      && b(8) === 0x57 && b(9) === 0x45 && b(10) === 0x42 && b(11) === 0x50;
+  }
+  return false;
+}
+
 function saveImagesIfConfigured_(params, postId) {
   const folderId = PropertiesService.getScriptProperties().getProperty('COMMUNITY_IMAGE_FOLDER_ID');
   if (!folderId) return { urls: [], fileIds: [] };
@@ -1183,8 +1212,11 @@ function saveImagesIfConfigured_(params, postId) {
     if (!base64) continue;
     const match = base64.match(/^data:([^;]+);base64,(.+)$/);
     if (!match) continue;
+    const mimeType = String(match[1]).toLowerCase();
+    if (COMMUNITY_IMAGE_TYPES.indexOf(mimeType) === -1) continue;
     const bytes = Utilities.base64Decode(match[2]);
-    const blob = Utilities.newBlob(bytes, match[1], `${postId}-${i}-${name}`);
+    if (!bytes.length || bytes.length > COMMUNITY_IMAGE_MAX_BYTES || !hasImageSignature_(bytes, mimeType)) continue;
+    const blob = Utilities.newBlob(bytes, mimeType, `${postId}-${i}-${name}`);
     const file = folder.createFile(blob);
     file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
     fileIds.push(file.getId());
@@ -1209,6 +1241,20 @@ function verifyAccess_(params) {
   return Object.assign({ ok: true }, found);
 }
 
+// Owners may edit, close, reopen or delete only posts that are live or closed
+// by themselves. A post an administrator hid, rejected or held back must not
+// be restored or changed through the manage link.
+function ownerCanChangePost_(post) {
+  const status = normalizeStatus_(post.status);
+  const moderationStatus = String(cleanCell_(post.moderation_status || '')).trim().toLowerCase();
+  if (status !== 'active' && status !== 'closed') return false;
+  return ['hidden', 'deleted', 'rejected', 'spam', 'pending'].indexOf(moderationStatus) === -1;
+}
+
+function moderatedPostFailure_() {
+  return { ok: false, success: false, code: 'POST_LOCKED', error: 'この投稿は現在、管理用リンクから変更できません。お問い合わせからご連絡ください。' };
+}
+
 function genericAccessFailure_() {
   return { ok: false, success: false, error: '投稿ID、または管理用リンクを確認してください。' };
 }
@@ -1216,6 +1262,11 @@ function genericAccessFailure_() {
 function updatePost_(params) {
   const verified = verifyAccess_(params);
   if (!verified.ok) return genericAccessFailure_();
+  if (!ownerCanChangePost_(verified.post)) return moderatedPostFailure_();
+  // Title and body are required when posting; an edit must not blank them.
+  if (['title', 'body'].some((field) => Object.prototype.hasOwnProperty.call(params, field) && !String(params[field] || '').trim())) {
+    return safeFormFailure_('MISSING_REQUIRED_FIELD');
+  }
   const updates = {};
   const changed = [];
   EDITABLE_POST_FIELDS.forEach((field) => {
@@ -1250,6 +1301,7 @@ function updatePost_(params) {
 function setPostStatusWithAccess_(params, nextStatus) {
   const verified = verifyAccess_(params);
   if (!verified.ok) return genericAccessFailure_();
+  if (!ownerCanChangePost_(verified.post)) return moderatedPostFailure_();
   const now = nowIso_();
   const action = nextStatus === 'closed' ? 'closed' : nextStatus === 'hidden' ? 'deleted_by_user' : 'reopened';
   const updates = {
@@ -1762,7 +1814,15 @@ function sendCreateConfirmationEmail_(params, info) {
   if (!isJConnectValidEmail_(to)) return { sent: false, error: 'INVALID_RECIPIENT' };
   try {
     const title = info.title || 'J-Connect Global 掲示板投稿';
-    sendZohoEmail_(Object.assign(postConfirmationMail_(to, title, info.manageUrl, info.publicPostUrl), { throttle: true }));
+    // The external-send throttle counts in CacheService; hold the script lock
+    // so concurrent submissions cannot all pass the same remaining slot.
+    const lock = LockService.getScriptLock();
+    lock.waitLock(10000);
+    try {
+      sendZohoEmail_(Object.assign(postConfirmationMail_(to, title, info.manageUrl, info.publicPostUrl), { throttle: true }));
+    } finally {
+      if (lock.hasLock()) lock.releaseLock();
+    }
     return { sent: true };
   } catch (error) {
     // The poster's only copy of the manage link is this mail, so a failed or
@@ -2023,7 +2083,7 @@ function submitJobPosting_(params) {
 
     const now = nowIso_();
     const jobId = `job_${Utilities.getUuid()}`;
-    const row = context.headers.map((header) => jobSubmissionValue_(header, value, { jobId, now, submissionKey }));
+    const row = context.headers.map((header) => sheetSafeValue_(jobSubmissionValue_(header, value, { jobId, now, submissionKey })));
     context.sheet.appendRow(row);
     saved = {
       context,

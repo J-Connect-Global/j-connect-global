@@ -8,9 +8,9 @@ summary: "ドイツの鉄道を初めて使う人向けに、長距離列車と�
 status: "published"
 published: true
 published_at: "2026-08-03"
-updated_at: "2026-11-05"
-last_verified: "2026-08-30"
-next_review: "2026-11-30"
+updated_at: "2026-11-06"
+last_verified: "2026-11-06"
+next_review: "2027-02-28"
 canonical_url: "/germany/ja/living/germany-train-travel-guide/"
 image_alt: "スーツケースを持ち長距離列車の横に立つ旅行者"
 related_articles: ["cologne-city-guide", "duesseldorf-city-guide", "germany-first-30-days", "christmas-markets-duesseldorf", "deutsche-bahn-delays-why"]
@@ -76,9 +76,11 @@ ICEは高速列車、ICとECは都市間列車です。REやRBは地域の駅を
 
 ## 全国共通の地域交通定期券
 
-全国共通の地域交通定期券（正式名称 **Deutschlandticket**）は、ドイツ国内の地域列車、近郊列車、地下鉄、路面電車、バスで使える月額制の定期券です。2026年8月時点の公式価格は月63ユーロです。2027年1月からは月66.80ユーロへの値上げが決まっており、DBで購入した既存の契約は2026年11月30日までに新料金への同意が必要な場合があります。手順は「[Deutschlandticketは2027年66.80ユーロへ](/germany/ja/events/news/deutschlandticket-2027-price-consent/)」で確認できます。
+全国共通の地域交通定期券（正式名称 **Deutschlandticket**）は、ドイツ国内の地域列車、近郊列車、地下鉄、路面電車、バスで使える月額制の定期券です。2026年の料金は月63ユーロで、**2027年1月から月66.80ユーロ**に値上げされます。DBで契約している人は、2026年11月30日までに新料金への同意が必要な場合があります。手順は「[Deutschlandticketは2027年66.80ユーロへ](/germany/ja/events/news/deutschlandticket-2027-price-consent/)」で確認してください。
 
 重要なのは、原則としてICE、IC、ECなどの長距離列車には使えないことです。経路検索に高速列車が混ざった場合、その区間には別の切符が必要です。一部の例外区間もあるため、列車種別とアプリの有効券表示を確認します。
+
+また、ドイツ鉄道の時刻表は毎年12月に切り替わります。2027年の新ダイヤは**2026年12月13日**からで、NRWからベルリン方面は工事のため所要時間が延びる期間があります。年末年始に移動する人は、12月13日以降の列車を予約前に確認してください。詳しくは「[DBの2027年ダイヤ](/germany/ja/events/news/db-2027-timetable-family-ticket/)」にまとめています。
 
 この定期券は月単位の継続契約です。旅行の一日だけ買う切符ではないため、申し込み先の解約期限を確認してください。地域交通だけで遠くまで行けても、乗り換えが増え、遅延時の扱いが長距離切符と異なる点にも注意が必要です。
 

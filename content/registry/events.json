@@ -7337,8 +7337,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; human editorial review pending (Destatis checked 2026-11-05)",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
       "last_reviewed_at": "2026-11-05",
       "next_review_due": "2026-11-11"
     },
@@ -7398,8 +7398,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; human editorial review pending (BA and SGB III checked 2026-11-05)",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
       "last_reviewed_at": "2026-11-05",
       "next_review_due": "2026-11-30"
     },
@@ -7479,8 +7479,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; human editorial review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
       "last_reviewed_at": "2026-11-05",
       "next_review_due": "2026-11-10"
     },

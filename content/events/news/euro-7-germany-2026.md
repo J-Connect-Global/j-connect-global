@@ -28,8 +28,8 @@ official_sources:
     url: "https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge"
   - title: "EU規則2024/1257（Euro 7）：車両排出とバッテリー耐久性に関する型式認証規則"
     url: "https://eur-lex.europa.eu/eli/reg/2024/1257/oj"
-  - title: "EU規則2024/1257：2026年9月2日時点の統合版（EUR-Lex）"
-    url: "https://eur-lex.europa.eu/eli/reg/2024/1257/2026-09-02/eng/pdf"
+  - title: "EU規則2024/1257：2026年9月23日時点の統合版（EUR-Lex）"
+    url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02024R1257-20260923"
 disclaimer_type: "technical-news"
 source_type: "manual"
 ---

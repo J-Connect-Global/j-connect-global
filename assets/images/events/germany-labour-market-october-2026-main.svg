@@ -1,0 +1,23 @@
+<svg width="1200" height="620" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+<title id="title">ドイツの2026年10月登録失業者と失業率</title>
+<desc id="desc">登録失業者は295万5千人、登録失業率は6.3パーセント。季節調整後の失業者数は前月比4千人増加。</desc>
+<rect width="1200" height="620" rx="28" fill="#f4f6f8"/>
+<text x="72" y="86" font-size="34" font-weight="700" fill="#1f2937">ドイツの登録失業｜2026年10月</text>
+<g>
+<rect x="72" y="142" width="330" height="300" rx="22" fill="#ffffff" stroke="#d6dee5" stroke-width="2"/>
+<rect x="435" y="142" width="330" height="300" rx="22" fill="#ffffff" stroke="#d6dee5" stroke-width="2"/>
+<rect x="798" y="142" width="330" height="300" rx="22" fill="#ffffff" stroke="#d6dee5" stroke-width="2"/>
+</g>
+<g font-size="22" fill="#4b5563">
+<text x="112" y="204">登録失業者</text><text x="475" y="204">登録失業率</text><text x="838" y="204">季節調整後</text>
+</g>
+<g font-size="52" font-weight="700" fill="#28658a">
+<text x="112" y="294">295.5万</text><text x="475" y="294">6.3%</text><text x="838" y="294">+4,000</text>
+</g>
+<g font-size="19" fill="#374151">
+<text x="112" y="350">前月比 −4万人</text><text x="475" y="350">前月比 −0.1pt</text><text x="838" y="350">前月比の増加</text>
+<text x="112" y="390">前年同月比 +4.4万人</text><text x="475" y="390">前年同月比 +0.1pt</text><text x="838" y="390">季節要因を調整</text>
+</g>
+<text x="72" y="520" font-size="19" fill="#4b5563">前月比の減少だけでは回復と判断できません。季節調整後は4,000人増えています。</text>
+<text x="72" y="566" font-size="18" fill="#4b5563">出典：ドイツ連邦雇用庁、2026年10月30日公表</text>
+</svg>

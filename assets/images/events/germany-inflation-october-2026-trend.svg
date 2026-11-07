@@ -1,0 +1,24 @@
+<svg width="1200" height="720" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<title id="title">ドイツの物価上昇率、2026年7月から10月</title>
+<desc id="desc">前年同月比。10月は速報値。全体、食品とエネルギーを除く指数、エネルギーの上昇率を月別に比較する。</desc>
+<rect width="1200" height="720" rx="28" fill="#f4f6f8"/>
+<text x="72" y="86" font-size="34" font-weight="700" fill="#1f2937">ドイツの物価上昇率｜前年同月比</text>
+<text x="72" y="132" font-size="21" fill="#4b5563">2026年7〜10月。10月は連邦統計局の速報値。</text>
+<g font-size="20" fill="#374151">
+<text x="72" y="224">7月</text><text x="72" y="332">8月</text><text x="72" y="440">9月</text><text x="72" y="548">10月速報</text>
+</g>
+<g>
+<rect x="190" y="182" width="230" height="52" rx="10" fill="#28658a"/><rect x="190" y="290" width="238" height="52" rx="10" fill="#28658a"/><rect x="190" y="398" width="271" height="52" rx="10" fill="#28658a"/><rect x="190" y="506" width="230" height="52" rx="10" fill="#28658a"/>
+<rect x="480" y="182" width="197" height="52" rx="10" fill="#5d8b76"/><rect x="480" y="290" width="197" height="52" rx="10" fill="#5d8b76"/><rect x="480" y="398" width="197" height="52" rx="10" fill="#5d8b76"/><rect x="480" y="506" width="172" height="52" rx="10" fill="#5d8b76"/>
+<rect x="735" y="182" width="212" height="52" rx="10" fill="#d18b35"/><rect x="735" y="290" width="268" height="52" rx="10" fill="#d18b35"/><rect x="735" y="398" width="380" height="52" rx="10" fill="#d18b35"/><rect x="735" y="506" width="311" height="52" rx="10" fill="#d18b35"/>
+</g>
+<g font-size="19" font-weight="700" fill="#ffffff">
+<text x="205" y="216">全体 2.8%</text><text x="205" y="324">全体 2.9%</text><text x="205" y="432">全体 3.3%</text><text x="205" y="540">全体 2.8%</text>
+<text x="495" y="216">基調 2.4%</text><text x="495" y="324">基調 2.4%</text><text x="495" y="432">基調 2.4%</text><text x="495" y="540">基調 2.1%</text>
+<text x="750" y="216">エネルギー 8.3%</text><text x="750" y="324">エネルギー 10.5%</text><text x="750" y="432">エネルギー 14.9%</text><text x="750" y="540">エネルギー 12.2%</text>
+</g>
+<g font-size="18" fill="#374151">
+<text x="72" y="648">全体＝消費者物価指数　｜　基調＝食品・エネルギーを除く指数</text>
+<text x="72" y="682">出典：ドイツ連邦統計局（Destatis）、2026年10月30日公表</text>
+</g>
+</svg>

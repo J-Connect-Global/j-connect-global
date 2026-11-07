@@ -7320,5 +7320,220 @@
     "image_caption": "イラスト：J-Connect。車の購入をイメージしたもので、実際の車種や排出試験を示すものではありません。",
     "image_credit": "Illustration / J-Connect",
     "source_type": "manual"
+  },
+  {
+    "id": "N036",
+    "slug": "germany-inflation-october-2026",
+    "content_type": "news",
+    "url": "/germany/ja/events/news/germany-inflation-october-2026/",
+    "markdown_path": "/content/events/news/germany-inflation-october-2026.md",
+    "canonical_url": "/germany/ja/events/news/germany-inflation-october-2026/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 9999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; human editorial review pending (Destatis checked 2026-11-05)",
+      "last_reviewed_at": "2026-11-05",
+      "next_review_due": "2026-11-11"
+    },
+    "title": "ドイツの物価は2026年10月に2.8％上昇｜9月から鈍化、エネルギー高は続く",
+    "category": "お金・税金",
+    "summary": "ドイツ連邦統計局の10月速報では、消費者物価は前年同月比2.8％上昇、前月比0.2％低下。9月の3.3％から伸びは鈍化しましたが、エネルギーは前年比12.2％上昇しています。速報値の読み方と家計で確認すべき点を整理します。",
+    "published_at": "2026-11-07",
+    "updated_at": "2026-11-05",
+    "last_verified": "2026-11-05",
+    "tags": [
+      "物価",
+      "インフレ",
+      "家計",
+      "エネルギー",
+      "消費者物価",
+      "ドイツ生活"
+    ],
+    "related_articles": [
+      "germany-inflation-september-2026",
+      "germany-january-2027-changes"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026年10月統計・10月30日速報",
+    "official_url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_382_611.html",
+    "official_sources": [
+      {
+        "title": "連邦統計局：2026年10月の消費者物価・速報値（10月30日）",
+        "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_382_611.html"
+      },
+      {
+        "title": "連邦統計局：消費者物価指数とインフレ率",
+        "url": "https://www.destatis.de/DE/Themen/Wirtschaft/Preise/Verbraucherpreisindex/_inhalt.html"
+      },
+      {
+        "title": "連邦統計局：2026年9月の消費者物価・確定値（10月13日）",
+        "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_364_611.html"
+      }
+    ],
+    "image": "/assets/img/events/germany-inflation-october-2026.webp",
+    "image_url": "/assets/img/events/germany-inflation-october-2026.webp",
+    "image_alt": "机の上の買い物かごと、上がっていく棒グラフ、レシートを描いた、物価の上昇を表したイラスト"
+  },
+  {
+    "id": "N037",
+    "slug": "germany-labour-market-october-2026",
+    "content_type": "news",
+    "url": "/germany/ja/events/news/germany-labour-market-october-2026/",
+    "markdown_path": "/content/events/news/germany-labour-market-october-2026.md",
+    "canonical_url": "/germany/ja/events/news/germany-labour-market-october-2026/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 9999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; human editorial review pending (BA and SGB III checked 2026-11-05)",
+      "last_reviewed_at": "2026-11-05",
+      "next_review_due": "2026-11-30"
+    },
+    "title": "ドイツの失業率は2026年10月に6.3％｜登録失業者295.5万人、季節調整後は増加",
+    "category": "仕事",
+    "summary": "連邦雇用庁の2026年10月統計では、登録失業者は295万5,000人、失業率は6.3％でした。前月比4万人減でも、季節調整後は4,000人増、前年同月比では4万4,000人増です。求人と広義の雇用不足指標を分け、求職者が地域・職種の状況を確認する方法を整理します。",
+    "published_at": "2026-11-07",
+    "updated_at": "2026-11-05",
+    "last_verified": "2026-11-05",
+    "tags": [
+      "ドイツ雇用",
+      "失業率",
+      "転職",
+      "求人",
+      "求職",
+      "労働市場"
+    ],
+    "related_articles": [
+      "germany-labour-market-august-2026",
+      "unemployment-benefit-germany"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026年10月統計・10月30日公表",
+    "official_url": "https://www.arbeitsagentur.de/presse/2026-41-arbeitsmarkt-im-oktober-2026",
+    "official_sources": [
+      {
+        "title": "連邦雇用庁：2026年10月の労働市場（10月30日）",
+        "url": "https://www.arbeitsagentur.de/presse/2026-41-arbeitsmarkt-im-oktober-2026"
+      },
+      {
+        "title": "連邦雇用庁：2026年の失業者数・失業率",
+        "url": "https://www.arbeitsagentur.de/news/arbeitsmarkt"
+      },
+      {
+        "title": "連邦雇用庁：求人検索",
+        "url": "https://www.arbeitsagentur.de/jobsuche/"
+      },
+      {
+        "title": "連邦雇用庁：求職登録の期限と方法（2026年4月23日）",
+        "url": "https://www.arbeitsagentur.de/vor-ort/ingolstadt/presse/2026-14-zur-agentur-fur-arbeit-am-besten-online"
+      },
+      {
+        "title": "連邦雇用庁：求職登録と失業登録の違い（2026年8月19日）",
+        "url": "https://www.arbeitsagentur.de/vor-ort/stralsund/presse/2026-40-jetzt-schon-an-das-saisonende-denken"
+      },
+      {
+        "title": "連邦雇用庁：失業登録",
+        "url": "https://www.arbeitsagentur.de/arbeitslos-melden"
+      },
+      {
+        "title": "法令：社会法典第3編第38条（求職登録）",
+        "url": "https://www.gesetze-im-internet.de/sgb_3/__38.html"
+      },
+      {
+        "title": "法令：社会法典第3編第141条（失業登録）",
+        "url": "https://www.gesetze-im-internet.de/sgb_3/__141.html"
+      }
+    ],
+    "image": "/assets/img/events/germany-labour-market-october-2026.webp",
+    "image_url": "/assets/img/events/germany-labour-market-october-2026.webp",
+    "image_alt": "求人の紙が貼られた掲示板と、机の上のノートパソコンとかばんを描いた、仕事探しを表したイラスト"
+  },
+  {
+    "id": "N038",
+    "slug": "thg-quote-2026-deadline-november-15",
+    "content_type": "news",
+    "url": "/germany/ja/events/news/thg-quote-2026-deadline-november-15/",
+    "markdown_path": "/content/events/news/thg-quote-2026-deadline-november-15.md",
+    "canonical_url": "/germany/ja/events/news/thg-quote-2026-deadline-november-15/",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 9999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "news_explainer",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; human editorial review pending",
+      "last_reviewed_at": "2026-11-05",
+      "next_review_due": "2026-11-10"
+    },
+    "title": "ドイツのTHG-Quote 2026｜電気自動車の申告期限は11月15日（日）、休日扱いと手数料",
+    "category": "交通・車",
+    "summary": "ドイツで登録した純電気自動車の2026年分THG-Quoteは、非公開充電の定額推計について法令上の基準日が11月15日です。2026年は日曜日に当たるため、行政手続の一般的な期限延長規定が適用されるかを区別し、公共充電の翌年2月28日、環境庁手数料、仲介事業者の受付期限を整理します。",
+    "published_at": "2026-11-07",
+    "updated_at": "2026-11-05",
+    "last_verified": "2026-11-05",
+    "tags": [
+      "THG-Quote",
+      "電気自動車",
+      "EV",
+      "交通・車",
+      "申請期限",
+      "環境庁"
+    ],
+    "related_articles": [
+      "car-insurance-switch-november-2026",
+      "winter-tires-germany-2026"
+    ],
+    "city": "ドイツ全土",
+    "location": "",
+    "event_date": "2026年の申告期限・11月15日（日）",
+    "official_url": "https://www.umweltbundesamt.de/themen/verkehr/kraftstoffe-antriebe/vollzug-38-bimschv-anrechnung-von-strom-fuer",
+    "official_sources": [
+      {
+        "title": "環境庁：38番目の連邦排出規制令に基づく電気自動車の電力申告（2026年10月30日更新）",
+        "url": "https://www.umweltbundesamt.de/themen/verkehr/kraftstoffe-antriebe/vollzug-38-bimschv-anrechnung-von-strom-fuer"
+      },
+      {
+        "title": "環境庁：38番目の連邦排出規制令の申請・運用FAQ（2025年7月17日版）",
+        "url": "https://www.umweltbundesamt.de/system/files/medien/366/dokumente/2025-07-18_uba_faq_vollzug_38._bimschv_0.pdf"
+      },
+      {
+        "title": "法令：38番目の連邦排出規制令 第8条",
+        "url": "https://www.gesetze-im-internet.de/bimschv_38_2017/__8.html"
+      },
+      {
+        "title": "法令：38番目の連邦排出規制令 第7条",
+        "url": "https://www.gesetze-im-internet.de/bimschv_38_2017/__7.html"
+      },
+      {
+        "title": "法令：行政手続法 第31条（期限と期日）",
+        "url": "https://www.gesetze-im-internet.de/vwvfg/__31.html"
+      },
+      {
+        "title": "ADAC：2026年のTHG-Quoteと申請の仕組み（2026年6月24日）",
+        "url": "https://www.adac.de/rund-ums-fahrzeug/elektromobilitaet/elektroauto/thg-quote/"
+      }
+    ],
+    "image": "/assets/img/events/thg-quote-2026-deadline-november-15.webp",
+    "image_url": "/assets/img/events/thg-quote-2026-deadline-november-15.webp",
+    "image_alt": "充電スタンドにつながった電気自動車と、葉のマークが入った証書を描いたイラスト"
   }
 ]

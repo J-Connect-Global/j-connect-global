@@ -93,8 +93,8 @@ image_credit: "Leonhard Lenz / CC0 / Wikimedia Commons"
 
 ## 写真の出典
 
-- 主画像：[ベルリンのパン店が作るライ麦パン](https://commons.wikimedia.org/wiki/File:Rye_bread_Roggenbengel_2025-02-14_03.jpg) — Leonhard Lenz / [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en)。
-- 本文写真1：[ライ麦パンの一切れと気泡のある切り口](https://commons.wikimedia.org/wiki/File:Slice_of_rye_bread_Kartoffelkruste_2025-02-14_01.jpg) — Leonhard Lenz / [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en)。
+- 主画像：[ベルリンのパン店が作るライ麦パン](https://commons.wikimedia.org/wiki/File:Rye_bread_Roggenbengel_2025-02-14_03.jpg) — Leonhard Lenz / [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en)。
+- 本文写真1：[ライ麦パンの一切れと気泡のある切り口](https://commons.wikimedia.org/wiki/File:Slice_of_rye_bread_Kartoffelkruste_2025-02-14_01.jpg) — Leonhard Lenz / [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en)。
 - 本文写真2：[人形と鳥の形をした季節のパン](https://commons.wikimedia.org/wiki/File:20251111_181731_Stutenkerl_und_Klaush%C3%A4hnchen.jpg) — Ramsch / [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)。
 
 写真は各出典の条件に基づき、縦横比を保って縮小しWebP形式へ変換しています。

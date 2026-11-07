@@ -111,7 +111,7 @@ image_credit: "Illustration / J-Connect"
 - [爆発物法 第1施行令 第24条（自治体の追加規制）](https://www.gesetze-im-internet.de/sprengv_1/__24.html)
 - [連邦内務省：花火の取り扱い（よくある質問）](https://www.bmi.bund.de/SharedDocs/faqs/DE/themen/bevoelkerungsschutz/silvester/silvester.html)
 - [連邦環境庁：大晦日の花火による微小粒子状物質](https://www.umweltbundesamt.de/themen/luft/luftschadstoffe/feinstaub/feinstaub-durch-silvesterfeuerwerk)
-- [連邦環境庁：煙と音の少ない年越し](https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/uebergreifende-tipps/feuerwerk)
+- [連邦環境庁：煙と音の少ない年越し](https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/silvester-ohne-viel-schall-rauch-ins-neue-jahr)
 - [デュッセルドルフ市：旧市街の花火禁止（2025/26年）](https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/feuerwerksverbot-an-silvester-und-neujahr-2025-26-mehr-sicherheit-in-der-duesseldorfer-altstadt)
 - [ケルン市：爆竹禁止区域（2025/26年）](https://www.stadt-koeln.de/politik-und-verwaltung/presse/mitteilungen/28087/index.html)
 

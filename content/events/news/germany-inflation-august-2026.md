@@ -96,6 +96,6 @@ image_credit: "Andrea Lang / CC BY-SA 4.0 / Wikimedia Commons"
 
 - 主画像：[ハンブルクの食品スーパーの店内](https://commons.wikimedia.org/wiki/File:Edeka_in_der_Rindermarkthalle_2014.jpg) — Andrea Lang / [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)。
 - 本文写真1：[ベルリンのスーパーに並ぶ野菜](https://commons.wikimedia.org/wiki/File:%2820240906%29_Berlin_supermarket_05.jpg) — Roy Zuo / [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)。
-- 本文写真2：[レジに並べられた食品などの買い物](https://commons.wikimedia.org/wiki/File:Shopping_in_the_supermarket_with_multicultural_result.jpg) — Pittigrilli / [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en)。
+- 本文写真2：[レジに並べられた食品などの買い物](https://commons.wikimedia.org/wiki/File:Shopping_in_the_supermarket_with_multicultural_result.jpg) — Pittigrilli / [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en)。
 
 写真は各出典の条件に基づき、縦横比を保って縮小しWebP形式へ変換しています。

@@ -105,8 +105,10 @@ function cmParent_(id, existing) {
   if (!existing) return isPubliclyVisible_(found.post) ? found.post : null;
   // Closing a sale does not remove the participants' private conversation.
   const post = found.post;
-  if (['active', 'closed'].indexOf(String(post.status || '').trim()) === -1) return null;
-  if (['hidden', 'deleted', 'spam', 'rejected'].indexOf(String(post.moderation_status || '').trim()) !== -1) return null;
+  // Case-insensitive, matching isPubliclyVisible_, so hand-edited sheet values
+  // such as "Active" or "Hidden" are treated the same in both places.
+  if (['active', 'closed'].indexOf(String(post.status || '').trim().toLowerCase()) === -1) return null;
+  if (['hidden', 'deleted', 'spam', 'rejected'].indexOf(String(post.moderation_status || '').trim().toLowerCase()) !== -1) return null;
   if (['deleted', 'is_deleted', 'hidden', 'is_hidden'].some((key) => isTrueLifecycleFlag_(post[key]))) return null;
   if (post.deleted_at || post.hidden_at) return null;
   return post;

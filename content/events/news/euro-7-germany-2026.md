@@ -5,9 +5,9 @@ slug: "euro-7-germany-2026"
 category: "交通・車"
 tags: ["Euro 7", "排出基準", "新車", "車購入", "2026年11月", "電気自動車"]
 summary: "EUの新しい車両排出基準Euro 7について、2026年11月29日の新型式認証と、2027年11月29日からの不適合M1・N1新車の登録・販売・使用開始禁止を区別し、既存車への影響、ブレーキ・タイヤの摩耗粉、電動車のバッテリー耐久性を解説します。"
-status: "draft"
-published: false
-published_at: ""
+status: "published"
+published: true
+published_at: "2026-11-07"
 updated_at: "2026-11-07"
 last_verified: "2026-11-07"
 next_review: "2026-11-29"
@@ -18,11 +18,11 @@ location: "ドイツ全土"
 event_date: "2026-11-29 / 2027-11-29"
 official_url: "https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge"
 related_articles: ["buying-registering-car-germany", "winter-tires-germany-2026", "car-insurance-switch-november-2026"]
-image: "/assets/img/living/buying-registering-car-germany.webp"
+image: "/assets/img/events/euro-7-germany-2026.webp"
 image_url: "/assets/img/living/buying-registering-car-germany.webp"
-image_alt: "ドイツの道路を走る車と登録書類を描いたイラスト"
-image_caption: "イラスト：J-Connect。車の購入をイメージしたもので、実際の車種や排出試験を示すものではありません。"
-image_credit: "Illustration / J-Connect"
+image_alt: "街の道路を走る新しい車と、排出ガスを示すメーターと葉のマークを描いたイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。新しい排出ガス基準を表したもので、実在の車種や試験を描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 official_sources:
   - title: "ドイツ連邦環境庁：乗用車・軽商用車の排出基準（2026年8月13日更新）"
     url: "https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge"

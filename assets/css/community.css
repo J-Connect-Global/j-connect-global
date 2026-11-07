@@ -90,7 +90,7 @@
     .hero-insight-title{font-size:15px;font-weight:900;margin-top:4px;line-height:1.35}
     .hero-insight-meta{font-size:12px;color:#5c6975;font-weight:800;margin-top:4px}
     .hero-insight-actions{display:flex;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap}
-    .mini-link{border:1px solid var(--community-line);background:#fff;border-radius:999px;min-height:34px;padding:0 11px;display:inline-flex;align-items:center;justify-content:center;line-height:1;font-family:inherit;text-decoration:none;font-size:12px;font-weight:900;color:#34414d}
+
     .loading-lines{display:grid;gap:7px}
     .skeleton-text{display:block;height:12px;border-radius:999px;background:linear-gradient(90deg,#edf2f7 0%,#f8fafc 46%,#edf2f7 92%);background-size:220% 100%;animation:skeleton 1.15s linear infinite}
     .skeleton-text.title{height:18px;width:min(100%,260px)}
@@ -313,14 +313,13 @@
     .image-count{position:absolute;right:9px;bottom:9px;z-index:3;background:rgba(23,32,42,.78);color:#fff;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:900}
     .card-body{padding:11px 12px 10px;display:flex;flex-direction:column;gap:6px;min-width:0;flex:1}
     .card-top{display:flex;align-items:center;justify-content:flex-start;gap:7px;flex-wrap:wrap}
-    .category-badge,.subcategory-badge,.price-badge,.location-badge,.trust-badge,.date-badge{display:inline-flex;align-items:center;border-radius:6px;font-size:11px;font-weight:900;line-height:1;padding:6px 8px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .category-badge,.subcategory-badge,.price-badge,.trust-badge{display:inline-flex;align-items:center;border-radius:6px;font-size:11px;font-weight:900;line-height:1;padding:6px 8px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .category-badge{background:var(--community-navy);color:#fff}
     .category-badge.give{background:#0f6a3d}
     .category-badge.sell{background:#29466a}
     .subcategory-badge{background:var(--community-accent-soft);color:var(--community-navy)}
     .price-badge{background:#f8fbff;color:var(--community-navy);border:1px solid var(--community-line)}
-    .location-badge{background:#f8fafc;color:var(--community-navy);border:1px solid var(--community-line)}
-    .date-badge{background:#fff;color:#5c6b78;border:1px solid var(--community-line)}
+
     .status-badge{background:#eafaf1;color:#11643a;border:1px solid #bde9cd}
     .status-badge.is-closed{background:#f1f5f9;color:#475569;border-color:#cbd5e1}
     .closed-ribbon{
@@ -368,7 +367,7 @@
     .card-excerpt{color:#536170;font-size:13px;line-height:1.55;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;word-break:normal;overflow-wrap:anywhere}
     .community-post-meta{min-width:0}
     .community-post-meta .subcategory-badge{max-width:min(100%, 180px)}
-    .community-post-meta .location-badge{max-width:min(100%, 160px)}
+
     .trust-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
     .trust-badge{background:#f2f5f8;color:#536170}
     .trust-badge.urgent{background:#eef6ff;color:var(--community-navy);border:1px solid var(--community-line-strong)}
@@ -381,11 +380,9 @@
     .detail-open-link{display:inline-flex;align-items:center;justify-content:center;min-height:36px;border:1px solid var(--community-line-strong);border-radius:10px;background:#fff;color:#23303b;padding:0 11px;font-size:12px;font-weight:900;box-shadow:0 6px 14px rgba(25,39,52,.06)}
     .detail-open-link:hover{border-color:#aebdca;background:#f8fafc}
     .detail-open-link.is-disabled{pointer-events:none;opacity:.62;background:#f1f5f9;color:#64748b;border-color:#cbd5e1}
-    .detail-open-link.owner-link{color:#536170}
+
     .btn.is-disabled,.btn[aria-disabled="true"]{opacity:.62;cursor:not-allowed;pointer-events:none;filter:saturate(.75)}
-    .owner-panel{margin-top:16px;border:1px solid var(--community-line);border-radius:8px;background:#f8fbff;padding:12px;display:grid;gap:8px}
-    .owner-panel h3{margin:0;font-size:15px}
-    .owner-panel p{margin:0;color:var(--community-muted);font-size:13px;line-height:1.7}
+
     .management-shell{display:grid;gap:16px;margin-top:18px}
     .management-panel,.completion-panel{background:#fff;border:1px solid var(--community-line);border-radius:8px;box-shadow:0 10px 28px rgba(12,30,46,.08);padding:18px}
     .management-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
@@ -405,8 +402,7 @@
     .board-grid.grid-mode .card-actions{position:static;display:flex;justify-content:flex-end;padding:0 12px 12px}
     .board-grid.grid-mode .card-title{font-size:16px}
     .board-grid.grid-mode .card-excerpt{-webkit-line-clamp:3;line-clamp:3}
-    .board-grid.grid-mode .community-post-meta .subcategory-badge,
-    .board-grid.grid-mode .community-post-meta .location-badge{max-width:100%}
+    .board-grid.grid-mode .community-post-meta .subcategory-badge{max-width:100%}
 
     .skeleton{pointer-events:none}
     .skeleton .card-media,.skeleton-line{background:linear-gradient(90deg,#edf2f7 0%,#f8fafc 46%,#edf2f7 92%);background-size:220% 100%;animation:skeleton 1.15s linear infinite}
@@ -594,7 +590,6 @@
     :root[data-theme="dark"] .filter-bar,
     :root[data-theme="dark"] .card,
     :root[data-theme="dark"] .empty-state,
-    :root[data-theme="dark"] .owner-panel,
     :root[data-theme="dark"] .management-panel,
     :root[data-theme="dark"] .completion-panel,
     :root[data-theme="dark"] .modal-card,
@@ -646,7 +641,6 @@
     :root[data-theme="dark"] .card-excerpt,
     :root[data-theme="dark"] .detail-body,
     :root[data-theme="dark"] .fact-label,
-    :root[data-theme="dark"] .owner-panel p,
     :root[data-theme="dark"] .empty-state p,
     :root[data-theme="dark"] .safety-list li{
       color:var(--color-text-muted, #a8bad0);
@@ -671,7 +665,6 @@
     :root[data-theme="dark"] .chip-button,
     :root[data-theme="dark"] .btn-secondary,
     :root[data-theme="dark"] .btn-soft,
-    :root[data-theme="dark"] .mini-link,
     :root[data-theme="dark"] .search-clear,
     :root[data-theme="dark"] .view-segment,
     :root[data-theme="dark"] .view-button,
@@ -681,9 +674,7 @@
     :root[data-theme="dark"] .modal-close,
     :root[data-theme="dark"] .related-link,
     :root[data-theme="dark"] .fact,
-    :root[data-theme="dark"] .date-badge,
     :root[data-theme="dark"] .price-badge,
-    :root[data-theme="dark"] .location-badge,
     :root[data-theme="dark"] .trust-badge,
     :root[data-theme="dark"] .subcategory-badge{
       border-color:var(--color-border, #263a52);
@@ -695,7 +686,6 @@
     :root[data-theme="dark"] .chip-button:hover,
     :root[data-theme="dark"] .btn-secondary:hover,
     :root[data-theme="dark"] .btn-soft:hover,
-    :root[data-theme="dark"] .mini-link:hover,
     :root[data-theme="dark"] .view-button:hover,
     :root[data-theme="dark"] .detail-open-link:hover,
     :root[data-theme="dark"] .modal-close:hover,

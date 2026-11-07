@@ -475,11 +475,6 @@ body .site-header .header-language[open] .header-language-trigger::after{
   transform:rotate(180deg);
 }
 
-body .site-header .header-language-current{
-  color:var(--header-brand);
-  font-weight:800;
-}
-
 body .site-header .theme-toggle{
   display:inline-flex;
   align-items:center;
@@ -889,12 +884,6 @@ body.portal3-home .page-footer .footer-links a:hover{
 
   body .site-header .header-category-trigger span:first-child{
     max-width:52px;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
-
-  body .site-header .header-language-current{
-    max-width:38px;
     overflow:hidden;
     text-overflow:ellipsis;
   }

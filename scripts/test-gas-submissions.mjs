@@ -110,12 +110,14 @@ function createRuntime(sheets, sendEmail, options = {}) {
       DigestAlgorithm: { SHA_256: "sha256" },
       Charset: { UTF_8: "utf8" },
       getUuid: () => `00000000-0000-4000-8000-${String(++uuidCounter).padStart(12, "0")}`,
-      computeDigest: (_algorithm, input) => [...crypto.createHash("sha256").update(String(input), "utf8").digest()]
+      computeDigest: (_algorithm, input) => [...crypto.createHash("sha256").update(String(input), "utf8").digest()],
+      base64Decode: (value) => [...Buffer.from(String(value), "base64")].map((byte) => (byte > 127 ? byte - 256 : byte)),
+      newBlob: (bytes, type, name) => ({ bytes, type, name })
     },
     validateJConnectEmailConfiguration_: () => ({ adminEmail: "admin@example.com" }),
     isJConnectValidEmail_: (value) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(String(value || "")),
     sendZohoEmail_: sendEmail,
-    DriveApp: {},
+    DriveApp: options.driveApp || {},
     UrlFetchApp: {},
     ContentService: {}
   };
@@ -616,6 +618,74 @@ function testPublicationHealthAndAdministratorFeedback() {
   assert(!JSON.stringify(health).includes('synthetic-private-token') && !runtime.logs.join(' ').includes('synthetic-private-token'), 'Health inspection exposed its dispatch credential.');
 }
 
+function testOwnerActionsRespectModerationAndSheetFormulas() {
+  const community = new MockSheet("Community Posts", [
+    "post_id", "status", "moderation_status", "category1", "category2", "title", "body", "country", "region", "city",
+    "nickname", "price", "availability_date", "contact_email_private", "created_at", "updated_at",
+    "published_at", "manage_token_hash", "manage_url", "last_modified_at", "last_modified_action",
+    "closed_at", "deleted_at", "edit_history_json"
+  ]);
+  const { sandbox } = createRuntime([community], () => ({ sent: true }));
+  const created = sandbox.createPost_({
+    category1: "質問", category2: "生活", title: '=HYPERLINK("https://evil.example","Approve")',
+    body: "- 箇条書きで始まる本文", contact_email_private: "owner@example.com", website: ""
+  });
+  assert(created.ok, "Community post with formula-like text was rejected.");
+  const saved = rowObject(community);
+  assert(saved.title === "\'" + '=HYPERLINK("https://evil.example","Approve")', "Formula-like title was stored as a live Sheets formula.");
+  assert(saved.body === "\'- 箇条書きで始まる本文", "Text starting with '-' was not stored as literal text.");
+
+  const token = new URL(created.manage_url).searchParams.get("token");
+  const access = { post_id: created.post_id, token };
+  assert(sandbox.setPostStatusWithAccess_(access, "closed").ok, "Owner could not close their own post.");
+  assert(sandbox.setPostStatusWithAccess_(access, "active").ok, "Owner could not reopen their own closed post.");
+
+  const statusColumn = community.rows[0].indexOf("status");
+  community.rows[1][statusColumn] = "hidden";
+  const reopened = sandbox.setPostStatusWithAccess_(access, "active");
+  assert(!reopened.ok && reopened.code === "POST_LOCKED", "Owner reopened a post hidden by the administrator.");
+  assert(community.rows[1][statusColumn] === "hidden", "Administrator-hidden status was overwritten.");
+  const edited = sandbox.updatePost_(Object.assign({ title: "書き換え" }, access));
+  assert(!edited.ok && edited.code === "POST_LOCKED", "Owner edited a post hidden by the administrator.");
+
+  community.rows[1][statusColumn] = "active";
+  const blanked = sandbox.updatePost_(Object.assign({ title: "   " }, access));
+  assert(!blanked.ok, "An edit blanked the required title.");
+  community.rows[1][community.rows[0].indexOf("moderation_status")] = "rejected";
+  assert(sandbox.setPostStatusWithAccess_(access, "closed").code === "POST_LOCKED", "Owner changed a post rejected by moderation.");
+}
+
+function testCommunityImageUploadsAreRestricted() {
+  const created = [];
+  const driveApp = {
+    Access: { ANYONE_WITH_LINK: "anyone" },
+    Permission: { VIEW: "view" },
+    getFolderById: () => ({
+      createFile: (blob) => {
+        created.push(blob);
+        return { getId: () => `file-${created.length}`, setSharing: () => {} };
+      }
+    })
+  };
+  const { sandbox } = createRuntime([new MockSheet("Community Posts", ["post_id"])], () => ({ sent: true }), {
+    driveApp,
+    properties: { COMMUNITY_IMAGE_FOLDER_ID: "folder" }
+  });
+  const png = Buffer.from([0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A, 0, 0, 0, 0]).toString("base64");
+  const html = Buffer.from("<script>alert(1)</script>").toString("base64");
+  const fakePng = Buffer.from("not really an image").toString("base64");
+  const result = sandbox.saveImagesIfConfigured_({
+    image1_base64: `data:image/png;base64,${png}`,
+    image2_base64: `data:text/html;base64,${html}`,
+    image3_base64: `data:image/png;base64,${fakePng}`
+  }, "post_test");
+  assert(result.fileIds.length === 1 && created.length === 1, "Non-image or mislabeled uploads were stored.");
+  assert(created[0].type === "image/png", "Stored upload kept an unexpected MIME type.");
+  const oversized = Buffer.concat([Buffer.from([0xFF, 0xD8, 0xFF]), Buffer.alloc(5 * 1024 * 1024)]).toString("base64");
+  const large = sandbox.saveImagesIfConfigured_({ image1_base64: `data:image/jpeg;base64,${oversized}` }, "post_large");
+  assert(large.fileIds.length === 0, "Upload larger than 5 MB was stored.");
+}
+
 testSpreadsheetResolution();
 testBoundModerationSelection();
 testBerlinTimestamps();
@@ -628,4 +698,6 @@ testPublicationDispatchRetries();
 testLatePublicationNotificationRecovery();
 testApprovalCheckFairness();
 testPublicationHealthAndAdministratorFeedback();
+testOwnerActionsRespectModerationAndSheetFormulas();
+testCommunityImageUploadsAreRestricted();
 console.log("GAS submission tests passed.");

@@ -5,9 +5,9 @@ slug: "rundfunkbeitrag-meldedatenabgleich-2026"
 category: "住まい"
 tags: ["放送負担金", "住民登録", "2026年11月", "共同生活", "個人情報", "ドイツ行政"]
 summary: "2026年11月8日から始まるドイツの全国住民データ照合について、対象者、データ送信期間、同居人がすでに支払っている場合の回答方法を整理します。通知開始時期は公式ページ間で表記が異なるため、その差も明記します。"
-status: "draft"
-published: false
-published_at: ""
+status: "published"
+published: true
+published_at: "2026-11-07"
 updated_at: "2026-11-07"
 last_verified: "2026-11-07"
 next_review: "2026-11-09"
@@ -18,10 +18,10 @@ location: "ドイツ全土"
 event_date: "2026-11-08〜2026-12-08（データ送信期間）"
 official_url: "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026"
 related_articles: ["rundfunkbeitrag-guide", "anmeldung-guide", "moving-checklist-germany"]
-image: "/assets/images/living/anmeldung-preparation.webp"
+image: "/assets/img/events/rundfunkbeitrag-meldedatenabgleich-2026.webp"
 image_url: "/assets/images/living/anmeldung-preparation.webp"
-image_alt: "ドイツの住民登録に必要な書類を準備する様子を示すイラスト"
-image_caption: "住民登録情報と放送負担金の照合を説明するためのイメージです。"
+image_alt: "集合住宅の郵便受けの前の机に封筒が置かれ、横にテレビとラジオがある、放送負担金の通知を表したイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。放送負担金の通知を表したもので、実在の書類や機関を描いたものではありません。"
 official_sources:
   - title: "放送負担金事務局：2026年の全国住民データ照合開始に関する2026年11月5日付発表"
     url: "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026"
@@ -35,6 +35,7 @@ official_sources:
     url: "https://www.rundfunkbeitrag.de/kontostand"
 disclaimer_type: "administrative"
 source_type: "manual"
+image_credit: "AI-assisted vector illustration / J-Connect"
 ---
 
 # ドイツの放送負担金、2026年11月8日から全国データ照合｜手紙が届いたら

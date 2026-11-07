@@ -16,7 +16,7 @@ image: "/assets/img/living/permanent-residence-germany.webp"
 image_alt: "窓辺に植木鉢が並ぶ集合住宅の玄関前で、鍵と滞在カードを思わせる無地のカードが置かれた様子のイラスト"
 image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。ドイツに長く暮らすことを表したもので、実在の建物や公的書類を描いたものではありません。"
 image_credit: "AI-assisted vector illustration / J-Connect"
-related_articles: ["residence-permit-renewal-germany", "eu-blue-card-germany", "japan-germany-social-security-pension", "family-reunification-spouse-work-germany"]
+related_articles: ["residence-permit-renewal-germany", "einbuergerung-germany-japanese", "eu-blue-card-germany", "japan-germany-social-security-pension", "family-reunification-spouse-work-germany"]
 official_sources:
   - title: "滞在法第9条：永住許可（一般の条件）"
     url: "https://www.gesetze-im-internet.de/aufenthg_2004/__9.html"
@@ -182,7 +182,7 @@ official_sources:
 
 永住許可は、日本国籍のままドイツに期限なく住める許可です。ドイツ国籍の取得（帰化）は別の制度で、ドイツの国籍法では原則として5年の合法的な滞在や、期限のない滞在権を持っていることなどが条件です。
 
-日本の国籍法では、自分の意思で外国の国籍を取得すると、日本の国籍を失います（国籍法第11条第1項）。ドイツが二重国籍を認めるようになっても、日本側のこの扱いは変わりません。国籍の取得を考える場合は、日本の在外公館や専門家に必ず確認してください。
+日本の国籍法では、自分の意思で外国の国籍を取得すると、日本の国籍を失います（国籍法第11条第1項）。ドイツが二重国籍を認めるようになっても、日本側のこの扱いは変わりません。国籍の取得を考える場合は、日本の在外公館や専門家に必ず確認してください。条件や子どもの国籍の扱いは「[ドイツ国籍の取得（Einbürgerung）と日本国籍](/germany/ja/living/einbuergerung-germany-japanese/)」で詳しく説明しています。
 
 ## よくある質問
 

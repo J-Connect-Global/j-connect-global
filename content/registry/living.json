@@ -574,7 +574,7 @@
         "url": "https://www.mittelrheinbahn.de/de/tickets/informationen-rund-ums-ticket/barrierefreies-reisen"
       },
       {
-        "title": "KD：2026年時刻表",
+        "title": "KD：時刻表",
         "url": "https://www.k-d.com/downloads/"
       },
       {
@@ -655,7 +655,7 @@
         "url": "https://naturpark-hohe-mark.de/"
       },
       {
-        "title": "Externsteine：2026年見学案内",
+        "title": "Externsteine：見学案内",
         "url": "https://www.externsteine-info.de/tickets-und-anreise/tickets/"
       }
     ],
@@ -777,7 +777,7 @@
         "url": "https://koelnerzoo.de/besuch"
       },
       {
-        "title": "Kölner Seilbahn：2026年運行案内",
+        "title": "Kölner Seilbahn：運行案内",
         "url": "https://www.koelner-seilbahn.de/fahrten.html"
       },
       {
@@ -1563,14 +1563,14 @@
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
     "image_alt": "ドイツの新居で住居に関する書類を確認する日本人の住民",
     "category": "住まい",
-    "summary": "ドイツの放送負担金（Rundfunkbeitrag、旧GEZ）について、テレビの所有ではなく住戸単位で負担する理由、月18.36ユーロ・3か月ごとの支払い、同居・共同生活、引っ越し、免除申請の考え方を説明します。",
+    "summary": "ドイツの放送負担金（Rundfunkbeitrag、旧GEZ）について、テレビの所有ではなく住戸単位で負担する理由、月18.36ユーロ・3か月ごとの支払い、同居・共同生活、引っ越し、免除申請の考え方に加え、2026年11月8日開始の全国住民データ照合と通知への対応を説明します。",
     "url": "/germany/ja/living/rundfunkbeitrag-guide/",
     "markdown_path": "/content/living/rundfunkbeitrag-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-03-10",
-    "updated_at": "2026-10-31",
-    "last_verified": "2026-10-31",
+    "updated_at": "2026-11-07",
+    "last_verified": "2026-11-07",
     "tags": [
       "放送負担金",
       "引っ越し",
@@ -1585,6 +1585,7 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/rundfunkbeitrag-guide/",
     "related_articles": [
+      "rundfunkbeitrag-meldedatenabgleich-2026",
       "moving-checklist-germany",
       "germany-first-30-days",
       "anmeldung-guide"
@@ -1609,14 +1610,30 @@
       {
         "title": "公共放送の財政需要を算定する委員会（KEF）：2027年からの金額の勧告",
         "url": "https://kef-online.de/presse/detail/kef-empfiehlt-deutlich-geringere-anhebung-des-rundfunkbeitrags"
+      },
+      {
+        "title": "放送負担金事務局：全国住民データ照合の開始（2026年11月5日）",
+        "url": "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026"
+      },
+      {
+        "title": "放送負担金事務局：2026年の照合の質問と回答",
+        "url": "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/informationen/informationen-zum-meldedatenabgleich/fragen-und-antworten-zum-bundesweiten-meldedatenabgleich"
+      },
+      {
+        "title": "放送負担金事務局：照合の手紙が届いたら（2026年11月5日）",
+        "url": "https://www.rundfunkbeitrag.de/presse-und-aktuelles/servicethemen/ploetzlich-post-vom-beitragsservice-meldedatenabgleich-2026-das-muessen-sie-tun"
+      },
+      {
+        "title": "放送負担金州間協定第11条：住民登録データの照合",
+        "url": "https://www.gesetze-bayern.de/Content/Document/RBeitrStV-11"
       }
     ],
     "disclaimer_type": "administrative",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-31",
-      "next_review_due": "2027-01-15"
+      "last_reviewed_at": "2026-11-07",
+      "next_review_due": "2026-12-15"
     }
   },
   {
@@ -2209,8 +2226,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-10-31",
-    "last_verified": "2026-10-31",
+    "updated_at": "2026-11-06",
+    "last_verified": "2026-11-06",
     "tags": [
       "健康保険",
       "公的医療保険",
@@ -2258,7 +2275,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-31",
+      "last_reviewed_at": "2026-11-06",
       "next_review_due": "2027-01-15"
     },
     "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
@@ -2400,7 +2417,7 @@
     "category": "交通・車",
     "summary": "ドイツの鉄道を初めて使う人向けに、長距離列車と地域交通の違い、切符の選び方、駅表示の読み方、乗り換え、遅延時の考え方を整理します。",
     "published_at": "2026-08-03",
-    "last_verified": "2026-08-30",
+    "last_verified": "2026-11-06",
     "canonical_url": "/germany/ja/living/germany-train-travel-guide/",
     "tags": [
       "ドイツ鉄道",
@@ -2410,7 +2427,7 @@
       "切符",
       "遅延"
     ],
-    "updated_at": "2026-10-28",
+    "updated_at": "2026-11-07",
     "related_articles": [
       "cologne-city-guide",
       "duesseldorf-city-guide",
@@ -2436,6 +2453,10 @@
         "url": "https://int.bahn.de/en/offers/additional-services/travelling-with-children"
       },
       {
+        "title": "所得税法第3条第15号：会社の公共交通の補助は非課税",
+        "url": "https://www.gesetze-im-internet.de/estg/__3.html"
+      },
+      {
         "title": "ラインバーン：公共交通の案内",
         "url": "https://www.rheinbahn.de/"
       }
@@ -2444,8 +2465,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-30",
-      "next_review_due": "2026-11-30"
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-02-28"
     },
     "image_alt": "スーツケースを持ち長距離列車の横に立つ旅行者",
     "image": "/assets/img/living/germany-train-travel-guide.webp"
@@ -2766,7 +2787,7 @@
       "パスポート",
       "NRW"
     ],
-    "updated_at": "2026-10-27",
+    "updated_at": "2026-11-06",
     "related_articles": [
       "pregnancy-birth-germany",
       "elterngeld-guide-germany",
@@ -3043,8 +3064,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-20",
-    "updated_at": "2026-10-20",
-    "last_verified": "2026-10-20",
+    "updated_at": "2026-11-02",
+    "last_verified": "2026-11-02",
     "home_visible": false,
     "home_order": 6,
     "hub_visible": false,
@@ -3055,8 +3076,8 @@
     "review": {
       "status": "needs_review",
       "reviewed_by": "AI source verification; expert review pending",
-      "last_reviewed_at": "2026-10-20",
-      "next_review_due": "2027-10-01"
+      "last_reviewed_at": "2026-11-02",
+      "next_review_due": "2027-09-01"
     },
     "tags": [
       "冬タイヤ",
@@ -3078,6 +3099,10 @@
       {
         "title": "ドイツ車両登録規則第36条：冬タイヤ表示と最低溝深さ",
         "url": "https://www.gesetze-im-internet.de/stvzo_2012/__36.html"
+      },
+      {
+        "title": "道路交通規則第52条：M+Sタイヤの移行措置は2024年9月30日まで",
+        "url": "https://www.gesetze-im-internet.de/stvo_2013/__52.html"
       },
       {
         "title": "ADAC：冬タイヤ義務の解説（2026年10月8日更新）",
@@ -3423,14 +3448,14 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial (AI-assisted; official sources checked, no immigration-law review)",
-      "last_reviewed_at": "2026-11-01",
-      "next_review_due": "2026-11-15"
+      "last_reviewed_at": "2026-11-05",
+      "next_review_due": "2026-11-12"
     },
     "title": "ドイツ入国のEES・ETIASとは？2026年の日本人旅行者・在住者向けガイド",
     "category": "行政・滞在",
-    "summary": "EESは2026年4月10日に全面運用、ETIASは2026年11月1日時点で申請受付前（EU公式の運用開始見通しは2026年第4四半期）です。日本人の短期旅行者と、ドイツの滞在許可を持つ在住者で必要な対応を分けて説明します。",
+    "summary": "EESは2026年4月10日に全面運用。ETIASは2026年11月5日現在、EU公式ページで申請受付前です。公式トップページは2026年第4四半期の開始予定を示していますが、具体的な開始日は未公表です。日本人短期旅行者とドイツ在住者の対応を分けて説明します。",
     "published_at": "2026-11-01",
-    "last_verified": "2026-11-01",
+    "last_verified": "2026-11-05",
     "next_review": "2026-11-04",
     "canonical_url": "/germany/ja/living/ees-etias-germany-japan-travel-2026/",
     "tags": [
@@ -3442,7 +3467,7 @@
       "滞在許可",
       "2026年"
     ],
-    "updated_at": "2026-11-01",
+    "updated_at": "2026-11-05",
     "related_articles": [
       "residence-permit-renewal-germany",
       "germany-first-30-days",
@@ -3450,8 +3475,12 @@
     ],
     "official_sources": [
       {
-        "title": "EU公式：ETIASの現在の運用状況",
-        "url": "https://travel-europe.europa.eu/de/etias"
+        "title": "EU公式：ETIAS開始予定時期（2026年第4四半期）",
+        "url": "https://travel-europe.europa.eu/etias"
+      },
+      {
+        "title": "EU公式：ETIASの現在の運用状況（未稼働・申請受付前・具体的な開始日未公表）",
+        "url": "https://travel-europe.europa.eu/en/etias/about-etias"
       },
       {
         "title": "EU公式：ETIASの対象・有効期間・入国審査",
@@ -3487,14 +3516,14 @@
     "slug": "minijob-grenze-2027",
     "title": "ドイツのMinijob（ミニジョブ）2027｜月633ユーロの上限・勤務時間・税金と保険",
     "category": "仕事",
-    "summary": "2027年1月1日からのミニジョブの月収上限は、法定最低賃金と計算式から月633ユーロ。上限内の勤務時間、掛け持ち、税金・年金・健康保険の注意点を具体例で整理します。",
+    "summary": "2027年1月1日からのミニジョブの月収上限は月633ユーロ。上限の計算、例外的な超過が認められる条件、勤務時間、掛け持ち、税金・保険の注意点を具体例で整理します。",
     "url": "/germany/ja/living/minijob-grenze-2027/",
     "markdown_path": "/content/living/minijob-grenze-2027.md",
     "published": true,
     "status": "published",
     "published_at": "2026-10-28",
-    "updated_at": "2026-10-28",
-    "last_verified": "2026-10-28",
+    "updated_at": "2026-11-05",
+    "last_verified": "2026-11-05",
     "next_review": "2027-01-15",
     "home_visible": false,
     "home_order": 109,
@@ -3506,8 +3535,8 @@
     "review": {
       "status": "needs_review",
       "reviewed_by": "AI official-source verification; employment-law review pending",
-      "last_reviewed_at": "2026-10-28",
-      "next_review_due": "2027-01-15"
+      "last_reviewed_at": "2026-11-05",
+      "next_review_due": "2026-12-15"
     },
     "tags": [
       "Minijob",
@@ -3529,6 +3558,10 @@
       {
         "title": "連邦労働社会省：第5次最低賃金調整令",
         "url": "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/fuenfte-mindestlohnanpassungsverordnung-milov5.html"
+      },
+      {
+        "title": "ミニジョブ・センター：2027年の収入上限と最低賃金（2026年10月7日公開）",
+        "url": "https://magazin.minijob-zentrale.de/minijob-grenze-2027/"
       },
       {
         "title": "社会法典第4編第8条：軽微な雇用と収入上限の計算式",
@@ -4290,8 +4323,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-29",
-    "updated_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "updated_at": "2026-11-07",
+    "last_verified": "2026-11-07",
     "next_review": "2027-10-29",
     "home_visible": false,
     "home_order": 120,
@@ -4303,8 +4336,8 @@
     "review": {
       "status": "needs_review",
       "reviewed_by": "AI official-source verification; expert review pending",
-      "last_reviewed_at": "2026-10-29",
-      "next_review_due": "2027-10-29"
+      "last_reviewed_at": "2026-11-07",
+      "next_review_due": "2027-05-29"
     },
     "tags": [
       "車",
@@ -4314,6 +4347,7 @@
       "運転免許"
     ],
     "related_articles": [
+      "euro-7-germany-2026",
       "drivers-license-japan-germany",
       "car-insurance-switch-november-2026",
       "winter-tires-germany-2026"
@@ -4342,6 +4376,14 @@
       {
         "title": "ケルン市：車のオンライン登録",
         "url": "https://www.stadt-koeln.de/service/produkte/20020/index.html"
+      },
+      {
+        "title": "ドイツ連邦環境庁：乗用車・小型商用車の排出基準",
+        "url": "https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge"
+      },
+      {
+        "title": "EU規則2024/1257：Euro 7",
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1257/oj"
       }
     ],
     "image_alt": "街の道路を走る車と、ナンバープレート、書類を描いたイラスト",
@@ -4493,7 +4535,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-29",
-    "updated_at": "2026-10-29",
+    "updated_at": "2026-11-05",
     "last_verified": "2026-10-29",
     "next_review": "2027-01-15",
     "home_visible": false,
@@ -4530,6 +4572,10 @@
       {
         "title": "連邦経済エネルギー省：EUブルーカードのよくある質問（PDF）",
         "url": "https://www.make-it-in-germany.com/fileadmin/1_Rebrush_2022/b_Arbeitgeber/PDF-Dateien/BMWE_Fragen_und_Antworten_zur_Blauen_Karte_EU_DE.pdf"
+      },
+      {
+        "title": "連邦官報：2026年のEUブルーカード最低年収の告示（2025年12月18日）",
+        "url": "https://www.bundesanzeiger.de/pub/publication/REViP4bN6jVdpGxPaiQ/content/REViP4bN6jVdpGxPaiQ/BAnz%20AT%2018.12.2025%20B3.pdf"
       },
       {
         "title": "滞在法 第18g条（EUブルーカード）",
@@ -4662,7 +4708,7 @@
       "在宅勤務",
       "税金"
     ],
-    "updated_at": "2026-11-05",
+    "updated_at": "2026-11-06",
     "related_articles": [
       "tax-id-steuernummer-steuerklasse",
       "minijob-grenze-2027",
@@ -4763,6 +4809,7 @@
     "updated_at": "2026-11-05",
     "related_articles": [
       "residence-permit-renewal-germany",
+      "einbuergerung-germany-japanese",
       "eu-blue-card-germany",
       "japan-germany-social-security-pension",
       "family-reunification-spouse-work-germany"
@@ -4921,5 +4968,1416 @@
     ],
     "image": "/assets/img/living/elterngeld-guide-germany.webp",
     "image_alt": "ベビーカーと小さな靴、カレンダー、電卓を置いた明るい部屋で、育児の期間とお金を計画する様子のイラスト"
+  },
+  {
+    "id": "L077",
+    "slug": "einbuergerung-germany-japanese",
+    "url": "/germany/ja/living/einbuergerung-germany-japanese/",
+    "markdown_path": "/content/living/einbuergerung-germany-japanese.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 46,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: StAG); Japanese Nationality Act and Family Register Act cited from e-Gov but not fetched from this environment; human legal review pending",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-05-01"
+    },
+    "canonical_url": "/germany/ja/living/einbuergerung-germany-japanese/",
+    "title": "ドイツ国籍の取得（Einbürgerung）と日本国籍｜5年の条件、B1・帰化テスト、日本国籍を失う仕組み、子どもの二重国籍",
+    "category": "役所・滞在",
+    "summary": "ドイツ国籍の取得は、原則5年の合法的な滞在、期限のない滞在権など、生計の自立、ドイツ語B1、帰化テストが条件です。一方、日本人が自分の意思でドイツ国籍を取ると日本国籍を失います。永住許可との違い、手数料255ユーロ、国籍喪失届、ドイツで生まれた子どもの国籍留保と国籍選択まで、両国の法律に沿って整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "ドイツ国籍",
+      "帰化",
+      "Einbürgerung",
+      "日本国籍",
+      "二重国籍",
+      "国籍留保",
+      "永住許可"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "permanent-residence-germany",
+      "residence-permit-renewal-germany",
+      "birth-procedures-germany",
+      "returning-to-japan-checklist"
+    ],
+    "official_sources": [
+      {
+        "title": "ドイツ国籍法第10条：帰化の条件（5年、B1、帰化テスト）",
+        "url": "https://www.gesetze-im-internet.de/stag/__10.html"
+      },
+      {
+        "title": "ドイツ国籍法第9条：ドイツ人の配偶者の帰化",
+        "url": "https://www.gesetze-im-internet.de/stag/__9.html"
+      },
+      {
+        "title": "ドイツ国籍法第12a条：考慮されない軽い処罰",
+        "url": "https://www.gesetze-im-internet.de/stag/__12a.html"
+      },
+      {
+        "title": "ドイツ国籍法第12b条：国外滞在と滞在期間",
+        "url": "https://www.gesetze-im-internet.de/stag/__12b.html"
+      },
+      {
+        "title": "ドイツ国籍法第4条：ドイツで生まれた子どもの国籍",
+        "url": "https://www.gesetze-im-internet.de/stag/__4.html"
+      },
+      {
+        "title": "ドイツ国籍法第38条：手数料",
+        "url": "https://www.gesetze-im-internet.de/stag/__38.html"
+      },
+      {
+        "title": "日本の国籍法（e-Gov法令検索）：第11条・第12条・第14条",
+        "url": "https://laws.e-gov.go.jp/law/325AC0000000147"
+      },
+      {
+        "title": "日本の戸籍法（e-Gov法令検索）：第103条・第104条",
+        "url": "https://laws.e-gov.go.jp/law/322AC0000000224"
+      },
+      {
+        "title": "在デュッセルドルフ日本国総領事館：出生届・国籍留保",
+        "url": "https://www.dus.emb-japan.go.jp/itpr_ja/konsular_koseki_04.html"
+      },
+      {
+        "title": "連邦政府の専門人材向けポータル：ビザと滞在",
+        "url": "https://www.make-it-in-germany.com/en/visa-residence"
+      }
+    ],
+    "image": "/assets/img/living/einbuergerung-germany-japanese.webp",
+    "image_alt": "二つの道が分かれる場所に立つ道しるべと、遠くに見えるドイツの街並みと日本の山並みを描いたイラスト"
+  },
+  {
+    "id": "L078",
+    "slug": "germany-visa-types-japanese",
+    "url": "/germany/ja/living/germany-visa-types-japanese/",
+    "markdown_path": "/content/living/germany-visa-types-japanese.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 47,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; statutes and official sources checked)",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-05-01"
+    },
+    "canonical_url": "/germany/ja/living/germany-visa-types-japanese/",
+    "title": "ドイツのビザ・滞在許可の種類｜日本人がビザなしで入国して申請できるしくみと、目的別の選び方",
+    "category": "役所・滞在",
+    "summary": "日本国籍の人は、ビザなしでドイツに入国し、入国後90日以内に滞在許可を国内で申請できます。就労（専門人材・ブルーカード・日本国籍者向けの就労許可）、留学、語学学校、職業訓練、求職（チャンスカード）、ワーキングホリデー、家族、自営業まで、主な滞在許可の種類と条件、働ける範囲、手数料を滞在法の条文に沿って整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "ビザ",
+      "滞在許可",
+      "外国人局",
+      "就労ビザ",
+      "学生ビザ",
+      "日本人",
+      "Aufenthaltserlaubnis"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "residence-permit-renewal-germany",
+      "eu-blue-card-germany",
+      "permanent-residence-germany",
+      "family-reunification-spouse-work-germany",
+      "germany-first-30-days"
+    ],
+    "official_sources": [
+      {
+        "title": "滞在令第41条：日本国籍者などのビザなし入国と国内での申請",
+        "url": "https://www.gesetze-im-internet.de/aufenthv/__41.html"
+      },
+      {
+        "title": "滞在法第4条：滞在許可が必要であること",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__4.html"
+      },
+      {
+        "title": "滞在法第4a条：就労できる範囲",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__4a.html"
+      },
+      {
+        "title": "滞在法第16a条：職業訓練",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__16a.html"
+      },
+      {
+        "title": "滞在法第16b条：大学での留学",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__16b.html"
+      },
+      {
+        "title": "滞在法第16f条：語学学校",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__16f.html"
+      },
+      {
+        "title": "滞在法第18a条・第18b条：専門人材",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__18b.html"
+      },
+      {
+        "title": "滞在法第19c条：そのほかの就労",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__19c.html"
+      },
+      {
+        "title": "就労令第26条：日本国籍者などの就労",
+        "url": "https://www.gesetze-im-internet.de/beschv_2013/__26.html"
+      },
+      {
+        "title": "滞在法第20a条：チャンスカード（求職）",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__20a.html"
+      },
+      {
+        "title": "滞在法第21条：自営業",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__21.html"
+      },
+      {
+        "title": "滞在令第45条：滞在許可の手数料",
+        "url": "https://www.gesetze-im-internet.de/aufenthv/__45.html"
+      }
+    ],
+    "image": "/assets/img/living/germany-visa-types-japanese.webp",
+    "image_alt": "窓辺の机に、表紙の無地のパスポートと色違いの3枚のカード、マグカップが置かれ、横にスーツケースと観葉植物があるイラスト"
+  },
+  {
+    "id": "L079",
+    "slug": "chancenkarte-germany-japanese",
+    "url": "/germany/ja/living/chancenkarte-germany-japanese/",
+    "markdown_path": "/content/living/chancenkarte-germany-japanese.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 48,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; statutes and official sources checked)",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-05-01"
+    },
+    "canonical_url": "/germany/ja/living/chancenkarte-germany-japanese/",
+    "title": "ドイツのチャンスカード（求職ビザ）｜6点の点数制、生活費の証明、週20時間の就労、日本で申請する流れ",
+    "category": "役所・滞在",
+    "summary": "チャンスカードは、大学の学位や2年以上の職業資格を持つ人が、最長1年ドイツで仕事を探せる滞在許可です。ドイツ語A1または英語B2と、6点以上の点数（資格の認定、語学、職務経験、年齢など）が条件で、探している間は週20時間まで働けます。点数の計算、生活費の目安（月1,091ユーロ）、日本で申請する理由、仕事が見つかった後の切り替えを滞在法の条文に沿って整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "チャンスカード",
+      "Chancenkarte",
+      "求職ビザ",
+      "ドイツ就職",
+      "滞在許可",
+      "点数制",
+      "転職"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "germany-visa-types-japanese",
+      "eu-blue-card-germany",
+      "working-holiday-germany",
+      "residence-permit-renewal-germany",
+      "health-insurance-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "滞在法第20a条：チャンスカード",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__20a.html"
+      },
+      {
+        "title": "滞在法第20b条：チャンスカードの点数",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__20b.html"
+      },
+      {
+        "title": "滞在法の別表：点数表と最低6点",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/anlage.html"
+      },
+      {
+        "title": "滞在法第18条：専門人材（Fachkraft）の定義",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__18.html"
+      },
+      {
+        "title": "滞在法第2条：ドイツ語能力の段階",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__2.html"
+      },
+      {
+        "title": "滞在令第41条：日本国籍者などのビザなし入国",
+        "url": "https://www.gesetze-im-internet.de/aufenthv/__41.html"
+      },
+      {
+        "title": "連邦雇用エージェンシー：チャンスカード（2026年のニュースレター）",
+        "url": "https://www.arbeitsagentur.de/vor-ort/zav/working-and-living-in-germany/newsletter-iss/02-2026/chancenkarte"
+      }
+    ],
+    "image": "/assets/img/living/chancenkarte-germany-japanese.webp",
+    "image_alt": "窓の外に教会の塔と街並みが見える机に、ノートパソコンと書類、マグカップが置かれた、仕事探しを表したイラスト"
+  },
+  {
+    "id": "L080",
+    "slug": "working-holiday-germany",
+    "url": "/germany/ja/living/working-holiday-germany/",
+    "markdown_path": "/content/living/working-holiday-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 49,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; statutes and official sources checked)",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-03-01"
+    },
+    "canonical_url": "/germany/ja/living/working-holiday-germany/",
+    "title": "ドイツのワーキングホリデー｜18〜30歳の条件、資金の目安、保険、申請の流れ、到着後の手続きと仕事探し",
+    "category": "役所・滞在",
+    "summary": "日本とドイツのワーキングホリデー制度では、18歳以上31歳未満の日本人が最長1年、ドイツで休暇を過ごしながら働けます。在日ドイツ大使館・総領事館での申請に必要な書類、資金の目安、滞在中の健康保険、ドイツ到着後の住民登録や税番号、仕事の探し方、滞在後に就労や留学へ切り替える方法までを整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "ワーキングホリデー",
+      "ワーホリ",
+      "ドイツ",
+      "ビザ",
+      "滞在許可",
+      "アルバイト",
+      "海外旅行保険"
+    ],
+    "updated_at": "2026-11-07",
+    "related_articles": [
+      "germany-visa-types-japanese",
+      "germany-first-30-days",
+      "anmeldung-guide",
+      "tax-id-steuernummer-steuerklasse",
+      "chancenkarte-germany-japanese"
+    ],
+    "official_sources": [
+      {
+        "title": "在日ドイツ大使館：ワーキングホリデー・ビザ",
+        "url": "https://japan.diplo.de/ja-de/service/wh-957786"
+      },
+      {
+        "title": "在日ドイツ大使館：ワーキングホリデーの案内（PDF）",
+        "url": "https://japan.diplo.de/resource/blob/2780828/346c1dbe106108ce931b2e5c95f390fc/wh-info-data.pdf"
+      },
+      {
+        "title": "滞在令第41条：日本国籍者などのビザなし入国と国内での申請",
+        "url": "https://www.gesetze-im-internet.de/aufenthv/__41.html"
+      },
+      {
+        "title": "滞在法第4a条：就労できる範囲",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__4a.html"
+      },
+      {
+        "title": "就労令第26条：日本国籍者などの就労",
+        "url": "https://www.gesetze-im-internet.de/beschv_2013/__26.html"
+      },
+      {
+        "title": "最低賃金法第1条：最低賃金",
+        "url": "https://www.gesetze-im-internet.de/milog/__1.html"
+      },
+      {
+        "title": "社会法典第4編第8条：ミニジョブ",
+        "url": "https://www.gesetze-im-internet.de/sgb_4/__8.html"
+      }
+    ],
+    "image": "/assets/img/living/working-holiday-germany.webp",
+    "image_alt": "街並みを背に赤い列車が停まる駅のホームに、スーツケースとリュックが置かれたイラスト"
+  },
+  {
+    "id": "L081",
+    "slug": "study-in-germany-student-visa",
+    "url": "/germany/ja/living/study-in-germany-student-visa/",
+    "markdown_path": "/content/living/study-in-germany-student-visa.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 50,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; statutes and official sources checked)",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-03-01"
+    },
+    "canonical_url": "/germany/ja/living/study-in-germany-student-visa/",
+    "title": "ドイツの大学に留学する｜学費、入学資格、生活費の証明（月992ユーロ）、学生の滞在許可、働ける日数、卒業後の就職",
+    "category": "役所・滞在",
+    "summary": "ドイツの州立大学の多くは授業料が無料ですが、学期ごとの学生納付金や、一部の州・大学の留学生向け授業料があります。日本人が正規留学するときの入学資格と語学の条件、生活費の証明（2026年は月992ユーロ・年1万1,904ユーロ）、学生の健康保険、年140日分まで働ける新しい数え方、卒業後18か月の求職期間までを滞在法の条文に沿って整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "ドイツ留学",
+      "大学",
+      "学生ビザ",
+      "滞在許可",
+      "閉鎖口座",
+      "学費",
+      "アルバイト"
+    ],
+    "updated_at": "2026-11-07",
+    "related_articles": [
+      "germany-visa-types-japanese",
+      "health-insurance-guide",
+      "bank-account-germany",
+      "minijob-grenze-2027",
+      "rent-apartment-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "滞在法第16b条：大学での留学（働ける日数を含む）",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__16b.html"
+      },
+      {
+        "title": "滞在法第17条：大学の出願準備のための滞在",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__17.html"
+      },
+      {
+        "title": "滞在法第20条：卒業後の求職",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__20.html"
+      },
+      {
+        "title": "滞在令第41条：日本国籍者などのビザなし入国",
+        "url": "https://www.gesetze-im-internet.de/aufenthv/__41.html"
+      },
+      {
+        "title": "社会法典第5編第5条：学生の健康保険の加入義務",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__5.html"
+      },
+      {
+        "title": "社会法典第5編第245条：学生の保険料率",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__245.html"
+      },
+      {
+        "title": "滞在令第45条：滞在許可の手数料",
+        "url": "https://www.gesetze-im-internet.de/aufenthv/__45.html"
+      }
+    ],
+    "image": "/assets/img/living/study-in-germany-student-visa.webp",
+    "image_alt": "窓の外に古い大学の建物が見え、本棚の前の机に教科書とノートパソコン、メモが置かれたイラスト"
+  },
+  {
+    "id": "L082",
+    "slug": "ausbildung-germany-japanese",
+    "url": "/germany/ja/living/ausbildung-germany-japanese/",
+    "markdown_path": "/content/living/ausbildung-germany-japanese.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 51,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "employment",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; statutes and official sources checked)",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-05-01"
+    },
+    "canonical_url": "/germany/ja/living/ausbildung-germany-japanese/",
+    "title": "ドイツの職業訓練（Ausbildung）｜給料をもらいながら資格を取るしくみ、2027年の最低手当764ユーロ、日本人の滞在許可とドイツ語",
+    "category": "仕事・お金",
+    "summary": "ドイツの職業訓練は、会社で働きながら職業学校で学び、2〜3年半で国家資格を取るしくみです。訓練中は毎月の手当が支払われ、2027年に始める訓練の最低額は1年目764ユーロです。訓練先の探し方、日本人が使う職業訓練の滞在許可とドイツ語B1の条件、訓練中に週20時間まで働けること、修了後の就職と永住への道を整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "職業訓練",
+      "Ausbildung",
+      "アウスビルドゥング",
+      "滞在許可",
+      "ドイツ就職",
+      "資格",
+      "手当"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "germany-visa-types-japanese",
+      "employment-contract-germany",
+      "chancenkarte-germany-japanese",
+      "permanent-residence-germany",
+      "health-insurance-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "職業訓練法第17条：訓練手当と最低額",
+        "url": "https://www.gesetze-im-internet.de/bbig_2005/__17.html"
+      },
+      {
+        "title": "職業訓練法第11条：訓練契約に書く内容",
+        "url": "https://www.gesetze-im-internet.de/bbig_2005/__11.html"
+      },
+      {
+        "title": "職業訓練法第20条：試用期間",
+        "url": "https://www.gesetze-im-internet.de/bbig_2005/__20.html"
+      },
+      {
+        "title": "職業訓練法第22条：訓練契約の解約",
+        "url": "https://www.gesetze-im-internet.de/bbig_2005/__22.html"
+      },
+      {
+        "title": "滞在法第16a条：職業訓練の滞在許可",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__16a.html"
+      },
+      {
+        "title": "滞在法第17条：訓練先を探すための滞在",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__17.html"
+      },
+      {
+        "title": "滞在法第20条：修了後の求職",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__20.html"
+      },
+      {
+        "title": "滞在法第18a条：職業資格を持つ専門人材",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__18a.html"
+      }
+    ],
+    "image": "/assets/img/living/ausbildung-germany-japanese.webp",
+    "image_alt": "工具が掛かった壁の前の作業台に、料理人の帽子とエプロン、焼きたてのパン、工具が並ぶ、職業訓練を表したイラスト"
+  },
+  {
+    "id": "L083",
+    "slug": "sick-leave-germany",
+    "url": "/germany/ja/living/sick-leave-germany/",
+    "markdown_path": "/content/living/sick-leave-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 52,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "employment",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; statutes and official sources checked)",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-01-15"
+    },
+    "canonical_url": "/germany/ja/living/sick-leave-germany/",
+    "title": "ドイツで病気になって仕事を休むとき｜連絡と診断書、電子の病欠証明、6週間の給与、傷病手当金、子どもの看病休暇（2027年は10日に）",
+    "category": "仕事・お金",
+    "summary": "ドイツで病気のため仕事を休むときは、すぐに職場へ連絡し、4日目以降は医師の病欠証明が必要です。公的保険の人は証明が電子で会社に届きます。会社は最長6週間給与を払い続け、その後は健康保険から手取りの最大90%の傷病手当金が出ます。子どもの看病のための休暇は2026年は1人15日ですが、法律が変わらなければ2027年は10日に戻ります。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "病欠",
+      "病気休暇",
+      "診断書",
+      "傷病手当金",
+      "子どもの看病",
+      "給与",
+      "健康保険"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "doctor-appointment-germany",
+      "health-insurance-guide",
+      "employment-contract-germany",
+      "japanese-speaking-doctors-germany",
+      "kita-u3-tagesmutter-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "賃金継続支払法第3条：病気のときの給与（6週間）",
+        "url": "https://www.gesetze-im-internet.de/entgfg/__3.html"
+      },
+      {
+        "title": "賃金継続支払法第5条：連絡と病欠証明の義務",
+        "url": "https://www.gesetze-im-internet.de/entgfg/__5.html"
+      },
+      {
+        "title": "社会法典第5編第44条：傷病手当金",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__44.html"
+      },
+      {
+        "title": "社会法典第5編第47条：傷病手当金の額",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__47.html"
+      },
+      {
+        "title": "社会法典第5編第48条：傷病手当金の期間",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__48.html"
+      },
+      {
+        "title": "社会法典第5編第45条：子どもの看病のための傷病手当金",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__45.html"
+      },
+      {
+        "title": "連邦休暇法第9条：休暇中の病気",
+        "url": "https://www.gesetze-im-internet.de/burlg/__9.html"
+      }
+    ],
+    "image": "/assets/img/living/sick-leave-germany.webp",
+    "image_alt": "ベッドの横の小さな机に、湯気の立つマグカップと体温計、スマートフォンが置かれた、病気で休む日を表したイラスト"
+  },
+  {
+    "id": "L084",
+    "slug": "employment-contract-germany",
+    "url": "/germany/ja/living/employment-contract-germany/",
+    "markdown_path": "/content/living/employment-contract-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 53,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "employment",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; statutes and official sources checked)",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-05-01"
+    },
+    "canonical_url": "/germany/ja/living/employment-contract-germany/",
+    "title": "ドイツの労働契約で確認したいこと｜試用期間、解約の予告期間、有給休暇、労働時間と休憩、有期契約、解雇されたときの3週間",
+    "category": "仕事・お金",
+    "summary": "ドイツで働き始める前に、労働契約で確認したい項目を法律に沿って整理します。試用期間は最長6か月で予告は2週間、通常の予告期間は4週間、有給休暇は週5日勤務で最低20日、1日の労働時間は原則8時間、退職や解雇は紙に署名した書面でのみ有効です。有期契約の上限、解雇されたときに3週間以内に取るべき行動、退職時の勤務証明書までを日本人向けに説明します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "労働契約",
+      "試用期間",
+      "有給休暇",
+      "解約",
+      "解雇",
+      "労働時間",
+      "ドイツ就職"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "sick-leave-germany",
+      "tax-id-steuernummer-steuerklasse",
+      "unemployment-benefit-germany",
+      "minijob-grenze-2027",
+      "werkstudent-student-jobs-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "証明書法第2条：労働条件を書面で渡す義務",
+        "url": "https://www.gesetze-im-internet.de/nachwg/__2.html"
+      },
+      {
+        "title": "民法第622条：解約の予告期間と試用期間",
+        "url": "https://www.gesetze-im-internet.de/bgb/__622.html"
+      },
+      {
+        "title": "民法第623条：解約は書面でのみ有効",
+        "url": "https://www.gesetze-im-internet.de/bgb/__623.html"
+      },
+      {
+        "title": "連邦休暇法第3条：最低24日（週6日換算）の休暇",
+        "url": "https://www.gesetze-im-internet.de/burlg/__3.html"
+      },
+      {
+        "title": "連邦休暇法第4条・第5条・第7条：休暇の取得と繰り越し",
+        "url": "https://www.gesetze-im-internet.de/burlg/__7.html"
+      },
+      {
+        "title": "労働時間法第3条：1日の労働時間",
+        "url": "https://www.gesetze-im-internet.de/arbzg/__3.html"
+      },
+      {
+        "title": "労働時間法第4条：休憩",
+        "url": "https://www.gesetze-im-internet.de/arbzg/__4.html"
+      },
+      {
+        "title": "労働時間法第5条：勤務間の休息",
+        "url": "https://www.gesetze-im-internet.de/arbzg/__5.html"
+      },
+      {
+        "title": "解雇保護法第1条：社会的に正当でない解雇",
+        "url": "https://www.gesetze-im-internet.de/kschg/__1.html"
+      },
+      {
+        "title": "解雇保護法第4条：3週間以内の訴え",
+        "url": "https://www.gesetze-im-internet.de/kschg/__4.html"
+      },
+      {
+        "title": "解雇保護法第23条：適用される事業所の規模",
+        "url": "https://www.gesetze-im-internet.de/kschg/__23.html"
+      },
+      {
+        "title": "パートタイム・有期労働法第14条：有期契約",
+        "url": "https://www.gesetze-im-internet.de/tzbfg/__14.html"
+      },
+      {
+        "title": "営業法第109条：勤務証明書",
+        "url": "https://www.gesetze-im-internet.de/gewo/__109.html"
+      }
+    ],
+    "image": "/assets/img/living/employment-contract-germany.webp",
+    "image_alt": "木の机の上に契約書のような2枚の書類と万年筆、眼鏡、観葉植物が置かれたイラスト"
+  },
+  {
+    "id": "L085",
+    "slug": "werkstudent-student-jobs-germany",
+    "url": "/germany/ja/living/werkstudent-student-jobs-germany/",
+    "markdown_path": "/content/living/werkstudent-student-jobs-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 54,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "employment",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; statutes and official sources checked)",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-03-01"
+    },
+    "canonical_url": "/germany/ja/living/werkstudent-student-jobs-germany/",
+    "title": "ドイツの学生の働き方｜ワークスチューデント・ミニジョブ・インターンの違い、週20時間の目安、社会保険と税金、留学生の日数の上限",
+    "category": "仕事・お金",
+    "summary": "ドイツの大学生は、ワークスチューデント、ミニジョブ、インターンなどの形で働けます。講義期間中に週20時間までのワークスチューデントは健康保険・失業保険の保険料がかからず、年金の保険料だけを払います。それぞれの社会保険と税金の扱い、2026年の所得税の基礎控除1万2,348ユーロ、インターンの最低賃金、日本人留学生の年140日分の上限を整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "ワークスチューデント",
+      "Werkstudent",
+      "学生",
+      "アルバイト",
+      "ミニジョブ",
+      "インターン",
+      "社会保険"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "study-in-germany-student-visa",
+      "minijob-grenze-2027",
+      "employment-contract-germany",
+      "tax-id-steuernummer-steuerklasse",
+      "income-tax-return-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "社会法典第5編第6条：学生の健康保険の加入義務の免除",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__6.html"
+      },
+      {
+        "title": "社会法典第3編第27条：学生の失業保険の免除",
+        "url": "https://www.gesetze-im-internet.de/sgb_3/__27.html"
+      },
+      {
+        "title": "社会法典第4編第8条：ミニジョブ",
+        "url": "https://www.gesetze-im-internet.de/sgb_4/__8.html"
+      },
+      {
+        "title": "社会法典第4編第20条：収入の移行ゾーン（月2,000ユーロまで）",
+        "url": "https://www.gesetze-im-internet.de/sgb_4/__20.html"
+      },
+      {
+        "title": "所得税法第32a条：所得税の税率と基礎控除",
+        "url": "https://www.gesetze-im-internet.de/estg/__32a.html"
+      },
+      {
+        "title": "最低賃金法第22条：インターンへの最低賃金の適用",
+        "url": "https://www.gesetze-im-internet.de/milog/__22.html"
+      },
+      {
+        "title": "滞在法第16b条：留学生の働ける日数",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__16b.html"
+      }
+    ],
+    "image": "/assets/img/living/werkstudent-student-jobs-germany.webp",
+    "image_alt": "オフィスの机でノートパソコンが開かれ、横に大学の教科書とリュックが置かれた、学生の仕事を表したイラスト"
+  },
+  {
+    "id": "L086",
+    "slug": "kindergeld-application-germany",
+    "url": "/germany/ja/living/kindergeld-application-germany/",
+    "markdown_path": "/content/living/kindergeld-application-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 55,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "family_administrative",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; statutes and official sources checked)",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-01-15"
+    },
+    "canonical_url": "/germany/ja/living/kindergeld-application-germany/",
+    "title": "ドイツの児童手当（Kindergeld）の申請｜日本人がもらえる滞在許可、月259ユーロ、必要書類、6か月の遡及、日本に住む子どもの扱い",
+    "category": "家族・子育て",
+    "summary": "ドイツに住む家族は、子ども1人につき月259ユーロ（2026年）の児童手当を受け取れます。日本国籍の親は、就労できる滞在許可などを持っていることが条件です。留学や卒業後の求職の滞在許可は、働いていない場合などに対象外になり、最初のチャンスカードは対象外です。家族手当金庫への申請方法、税番号などの必要書類、申請が遅れたときの6か月の遡及、18歳以降の延長、日本に住む子どもの扱い、2027年からの申請なしの支給を整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "Kindergeld",
+      "児童手当",
+      "子育て",
+      "家族手当金庫",
+      "申請",
+      "滞在許可",
+      "税番号"
+    ],
+    "updated_at": "2026-11-07",
+    "related_articles": [
+      "kindergeld-auszahlungstermine-2027",
+      "birth-procedures-germany",
+      "elterngeld-guide-germany",
+      "tax-id-steuernummer-steuerklasse",
+      "family-reunification-spouse-work-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "所得税法第62条：児童手当を受け取れる人（外国人の条件）",
+        "url": "https://www.gesetze-im-internet.de/estg/__62.html"
+      },
+      {
+        "title": "所得税法第63条：対象となる子ども",
+        "url": "https://www.gesetze-im-internet.de/estg/__63.html"
+      },
+      {
+        "title": "所得税法第32条：18歳以降の子どもの扱い",
+        "url": "https://www.gesetze-im-internet.de/estg/__32.html"
+      },
+      {
+        "title": "所得税法第66条：児童手当の額",
+        "url": "https://www.gesetze-im-internet.de/estg/__66.html"
+      },
+      {
+        "title": "所得税法第67条：申請",
+        "url": "https://www.gesetze-im-internet.de/estg/__67.html"
+      },
+      {
+        "title": "所得税法第70条：支給と6か月の遡及",
+        "url": "https://www.gesetze-im-internet.de/estg/__70.html"
+      },
+      {
+        "title": "ドイツ連邦議会：申請なしの児童手当の可決（2026年7月9日）",
+        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw28-de-antragsloses-kindergeld-1192542"
+      },
+      {
+        "title": "ドイツ連邦議会：2027年・2028年の児童手当の額を含む法案",
+        "url": "https://www.bundestag.de/presse/hib/kurzmeldungen-1221672"
+      }
+    ],
+    "image": "/assets/img/living/kindergeld-application-germany.webp",
+    "image_alt": "机の上にノートパソコンと封筒、子どものおもちゃの積み木が置かれた、家族の手続きを表したイラスト"
+  },
+  {
+    "id": "L087",
+    "slug": "church-tax-germany",
+    "url": "/germany/ja/living/church-tax-germany/",
+    "markdown_path": "/content/living/church-tax-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 56,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "tax",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; statutes and official sources checked)",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-05-01"
+    },
+    "canonical_url": "/germany/ja/living/church-tax-germany/",
+    "title": "ドイツの教会税｜住民登録の宗教欄、税率8%・9%、日本で洗礼を受けた人の注意、離脱の手続きと費用",
+    "category": "お金・税金",
+    "summary": "ドイツでは、カトリックやプロテスタントなどの教会に属する人に、所得税の8%または9%の教会税がかかります。多くの日本人は対象外ですが、住民登録の宗教欄の書き方や、日本でキリスト教の洗礼を受けたことがある場合は注意が必要です。給与明細での確認方法、教会員でない配偶者の扱い、離脱の手続き（NRW州は区裁判所で30ユーロ）、確定申告での控除を整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "教会税",
+      "Kirchensteuer",
+      "住民登録",
+      "宗教",
+      "給与明細",
+      "税金",
+      "教会離脱"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "anmeldung-guide",
+      "tax-id-steuernummer-steuerklasse",
+      "income-tax-return-germany",
+      "employment-contract-germany",
+      "returning-to-japan-checklist"
+    ],
+    "official_sources": [
+      {
+        "title": "所得税法第51a条：教会税などの付加税の計算",
+        "url": "https://www.gesetze-im-internet.de/estg/__51a.html"
+      },
+      {
+        "title": "所得税法第10条：教会税の控除（特別支出）",
+        "url": "https://www.gesetze-im-internet.de/estg/__10.html"
+      },
+      {
+        "title": "連邦住民登録法第3条：登録される情報（宗教を含む）",
+        "url": "https://www.gesetze-im-internet.de/bmg/__3.html"
+      },
+      {
+        "title": "ノルトライン＝ヴェストファーレン州司法省：教会からの離脱",
+        "url": "https://www.justiz.nrw/node/1133"
+      }
+    ],
+    "image": "/assets/img/living/church-tax-germany.webp",
+    "image_alt": "時計のある教会の塔と街並みを背に、机の上に電卓と書類が置かれた、教会税を表したイラスト"
+  },
+  {
+    "id": "L089",
+    "slug": "bicycle-rules-germany",
+    "url": "/germany/ja/living/bicycle-rules-germany/",
+    "markdown_path": "/content/living/bicycle-rules-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 58,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "living",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; statutes and official sources checked)",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-05-01"
+    },
+    "canonical_url": "/germany/ja/living/bicycle-rules-germany/",
+    "title": "ドイツで自転車に乗るときのルール｜自転車道と歩道、ライトとベルの装備、信号無視60ユーロなどの過料、飲酒、子どもの自転車、電動自転車",
+    "category": "交通・車",
+    "summary": "ドイツでは自転車は車両として扱われ、自転車道の使い方、ライトやベル・2つのブレーキの装備、スマートフォンの使用禁止などのルールが法律で決まっています。信号無視60ユーロ（1秒以上の赤で100ユーロ）、運転中のスマートフォン55ユーロなど、国の過料一覧の金額、飲酒の基準、子どもが歩道を走れる年齢、電動アシスト自転車と時速45kmの電動自転車の違い、盗難対策までを日本人向けに整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "自転車",
+      "交通ルール",
+      "罰金",
+      "自転車道",
+      "電動自転車",
+      "子ども",
+      "盗難"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "germany-train-travel-guide",
+      "drivers-license-japan-germany",
+      "liability-household-insurance-germany",
+      "germany-first-30-days",
+      "winter-tires-germany-2026"
+    ],
+    "official_sources": [
+      {
+        "title": "道路交通規則第2条：自転車道と歩道、子どもの自転車",
+        "url": "https://www.gesetze-im-internet.de/stvo_2013/__2.html"
+      },
+      {
+        "title": "道路交通規則第5条：自転車を追い越すときの間隔",
+        "url": "https://www.gesetze-im-internet.de/stvo_2013/__5.html"
+      },
+      {
+        "title": "道路交通規則第23条：運転中の電子機器の使用",
+        "url": "https://www.gesetze-im-internet.de/stvo_2013/__23.html"
+      },
+      {
+        "title": "車両登録規則第67条：自転車のライトと反射板",
+        "url": "https://www.gesetze-im-internet.de/stvzo_2012/__67.html"
+      },
+      {
+        "title": "車両登録規則第64a条：自転車のベル",
+        "url": "https://www.gesetze-im-internet.de/stvzo_2012/__64a.html"
+      },
+      {
+        "title": "車両登録規則第65条：2つのブレーキ",
+        "url": "https://www.gesetze-im-internet.de/stvzo_2012/__65.html"
+      },
+      {
+        "title": "過料一覧規則の別表：違反ごとの金額",
+        "url": "https://www.gesetze-im-internet.de/bkatv_2013/anlage.html"
+      },
+      {
+        "title": "道路交通法第1条：電動アシスト自転車の定義",
+        "url": "https://www.gesetze-im-internet.de/stvg/__1.html"
+      },
+      {
+        "title": "刑法第316条：酒気を帯びた運転",
+        "url": "https://www.gesetze-im-internet.de/stgb/__316.html"
+      }
+    ],
+    "image": "/assets/img/living/bicycle-rules-germany.webp",
+    "image_alt": "赤く塗られた自転車道を、ライトをつけた自転車が走り、並木と石畳の歩道、街並みが見えるイラスト"
+  },
+  {
+    "id": "L091",
+    "slug": "leaving-japan-before-moving-germany",
+    "url": "/germany/ja/living/leaving-japan-before-moving-germany/",
+    "markdown_path": "/content/living/leaving-japan-before-moving-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 60,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; statutes and official sources checked)",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-05-01"
+    },
+    "canonical_url": "/germany/ja/living/leaving-japan-before-moving-germany/",
+    "title": "ドイツへ引っ越す前に日本でする手続き｜海外転出届、マイナンバーカードの継続利用、年金・健康保険・住民税、運転免許、在留届のチェックリスト",
+    "category": "役所・滞在",
+    "summary": "日本からドイツへ1年以上引っ越すときは、出国の14日前から海外転出届を出せます。マイナンバーカードを国外でも使い続けるための手続き、国民年金の任意加入、国民健康保険の脱退、1月1日の住所で決まる住民税と納税管理人、運転免許の更新と国外運転免許証、ドイツ到着後の在留届まで、出発の3か月前から到着後までにする手続きを時期別に整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "海外転出届",
+      "マイナンバーカード",
+      "国民年金",
+      "住民税",
+      "在留届",
+      "海外赴任",
+      "ドイツ移住"
+    ],
+    "updated_at": "2026-11-06",
+    "related_articles": [
+      "germany-first-30-days",
+      "germany-visa-types-japanese",
+      "drivers-license-japan-germany",
+      "japan-germany-social-security-pension",
+      "anmeldung-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "日本学生支援機構：海外留学の前にする役所の手続き",
+        "url": "https://ryugaku.jasso.go.jp/oversea_info/basic/simulation/yakusyo.html"
+      },
+      {
+        "title": "マイナンバーカード総合サイト：国外転出をする場合の手続き",
+        "url": "https://www.kojinbango-card.go.jp/faq_other9/"
+      },
+      {
+        "title": "滞在令第41条：日本国籍者のビザなし入国と国内での申請",
+        "url": "https://www.gesetze-im-internet.de/aufenthv/__41.html"
+      },
+      {
+        "title": "連邦住民登録法第17条：入居後2週間以内の住民登録",
+        "url": "https://www.gesetze-im-internet.de/bmg/__17.html"
+      }
+    ],
+    "image": "/assets/img/living/leaving-japan-before-moving-germany.webp",
+    "image_alt": "段ボール箱とスーツケースが並ぶ部屋に、メモと盆栽が置かれた、引っ越しの準備を表したイラスト"
+  },
+  {
+    "id": "L092",
+    "slug": "japanese-passport-consulate-germany",
+    "url": "/germany/ja/living/japanese-passport-consulate-germany/",
+    "markdown_path": "/content/living/japanese-passport-consulate-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 61,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; statutes and official sources checked)",
+      "last_reviewed_at": "2026-11-06",
+      "next_review_due": "2027-04-01"
+    },
+    "canonical_url": "/germany/ja/living/japanese-passport-consulate-germany/",
+    "title": "ドイツで日本のパスポートを更新する｜オンライン申請、2026年7月からの手数料引き下げと5年旅券の廃止、大使館・総領事館の管轄と証明書",
+    "category": "役所・滞在",
+    "summary": "ドイツに住む日本人は、住所を管轄する大使館・総領事館で日本のパスポートを更新できます。在留届をオンラインで出していれば、更新の申請もオンラインででき、受け取りだけ窓口に行きます。2026年7月からの手数料の引き下げと18歳以上の5年旅券の廃止、ベルリン・デュッセルドルフ・フランクフルト・ハンブルク・ミュンヘンの管轄、在留証明・署名証明・運転免許証の抜粋証明などの証明書を整理します。",
+    "published_at": "2026-11-06",
+    "last_verified": "2026-11-06",
+    "tags": [
+      "パスポート",
+      "旅券",
+      "総領事館",
+      "大使館",
+      "在留届",
+      "在留証明",
+      "署名証明"
+    ],
+    "updated_at": "2026-11-07",
+    "related_articles": [
+      "overseas-voting-japan",
+      "birth-procedures-germany",
+      "drivers-license-japan-germany",
+      "leaving-japan-before-moving-germany",
+      "returning-to-japan-checklist"
+    ],
+    "official_sources": [
+      {
+        "title": "在ドイツ日本国大使館：大使館・総領事館の管轄",
+        "url": "https://www.de.emb-japan.go.jp/itpr_ja/konsular_kankatsu.html"
+      },
+      {
+        "title": "在デュッセルドルフ日本国総領事館：パスポート（旅券）",
+        "url": "https://www.dus.emb-japan.go.jp/itpr_ja/k_passport.html"
+      },
+      {
+        "title": "政府広報オンライン：パスポートのオンライン申請と2026年7月からの手数料引き下げ",
+        "url": "https://www.gov-online.go.jp/article/202301/entry-7458.html"
+      },
+      {
+        "title": "在ドイツ日本国大使館：領事手数料（2026年度）",
+        "url": "https://www.de.emb-japan.go.jp/itpr_ja/konsular_tesuuryo.html"
+      },
+      {
+        "title": "外務省：パスポートの申請（よくある質問）",
+        "url": "https://www.mofa.go.jp/mofaj/toko/passport/pass_4.html"
+      },
+      {
+        "title": "滞在法第48条：パスポートを持つ義務",
+        "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__48.html"
+      }
+    ],
+    "image": "/assets/img/living/japanese-passport-consulate-germany.webp",
+    "image_alt": "旅行かばんの上に、表紙の無地のパスポートと航空券、ドイツの街並みの絵はがきが置かれたイラスト"
+  },
+  {
+    "id": "L093",
+    "slug": "germany-import-fees-japan-packages-2026",
+    "url": "/germany/ja/living/germany-import-fees-japan-packages-2026/",
+    "markdown_path": "/content/living/germany-import-fees-japan-packages-2026.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 9999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "tax",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
+      "last_reviewed_at": "2026-11-05",
+      "next_review_due": "2026-11-10"
+    },
+    "canonical_url": "/germany/ja/living/germany-import-fees-japan-packages-2026/",
+    "title": "日本からドイツに届く荷物の関税は？2026年11月の2ユーロ手数料と3ユーロ定額関税",
+    "category": "暮らし・買い物",
+    "summary": "2026年11月1日から、EU域外から消費者向けに発送される通販には、EU関税法上の「品目」ごとに2ユーロの取扱手数料が適用されています。荷物の本質的価値が150ユーロ以下の対象通販には3ユーロの定額関税も別途あり、輸入消費税や個人間ギフトとの違いを確認できます。",
+    "published_at": "2026-11-07",
+    "last_verified": "2026-11-05",
+    "tags": [
+      "日本からドイツ",
+      "個人輸入",
+      "関税",
+      "EU取扱手数料",
+      "輸入消費税",
+      "国際郵便",
+      "贈り物",
+      "2026年"
+    ],
+    "updated_at": "2026-11-07",
+    "related_articles": [
+      "christmas-post-germany-to-japan-2026",
+      "dhl-delivered-but-not-received"
+    ],
+    "official_sources": [
+      {
+        "title": "EU理事会：小口荷物へのEU措置（3ユーロ関税・2ユーロ取扱手数料）",
+        "url": "https://www.consilium.europa.eu/de/policies/eu-action-influx-of-small-parcels/"
+      },
+      {
+        "title": "欧州委員会DG TAXUD：3ユーロ関税・2ユーロ取扱手数料の技術ガイダンス（2026年10月5日版、法的拘束力なし）",
+        "url": "https://taxation-customs.ec.europa.eu/document/download/053e5b4e-f0be-4f20-9a23-3e3b659a6676_en?filename=Customs+Guidance+on+EUR+3+customs+duty.pdf"
+      },
+      {
+        "title": "EU理事会：3ユーロ定額関税の最終承認（2026年2月11日）",
+        "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/02/11/council-gives-final-green-light-to-new-customs-duty-rules-for-small-parcels/"
+      },
+      {
+        "title": "欧州委員会：EU税関改革と取扱手数料",
+        "url": "https://taxation-customs.ec.europa.eu/customs/eu-customs-reform_en"
+      },
+      {
+        "title": "EU規則2026/2108：第20条・取扱手数料",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R2108"
+      },
+      {
+        "title": "EU規則2026/382：150ユーロ以下の小口輸入に関する定額関税",
+        "url": "https://eur-lex.europa.eu/eli/reg/2026/382/oj/eng"
+      },
+      {
+        "title": "EU委任規則2026/2152：取扱手数料の金額",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R2152"
+      },
+      {
+        "title": "ドイツ税関：郵便・通販荷物と贈り物の案内",
+        "url": "https://www.zoll.de/SharedDocs/Downloads/DE/Publikation/Broschuere/Reise-Post/faltblatt_zoll_post_internethandel.pdf?__blob=publicationFile&v=4"
+      }
+    ],
+    "image": "/assets/img/living/germany-import-fees-japan-packages-2026.webp",
+    "image_alt": "日本からドイツへ届く段ボール箱と税関書類を示すイラスト"
+  },
+  {
+    "id": "L094",
+    "slug": "d-you-eudi-wallet-germany-2027",
+    "url": "/germany/ja/living/d-you-eudi-wallet-germany-2027/",
+    "markdown_path": "/content/living/d-you-eudi-wallet-germany-2027.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 9999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
+      "last_reviewed_at": "2026-11-05",
+      "next_review_due": "2026-11-20"
+    },
+    "canonical_url": "/germany/ja/living/d-you-eudi-wallet-germany-2027/",
+    "title": "ドイツのデジタル身分証「d-you」とは？2027年1月開始予定と日本人居住者の注意点",
+    "category": "役所・滞在",
+    "summary": "ドイツのEUデジタル身分証ウォレット「d-you」は2027年1月2日の開始が予定されています。連邦議会は2026年10月15日に関連法案を可決し、連邦参議院の第2次通過手続きは11月20日に予定されています。外国籍住民の本人確認方法と初期版の機能は未確定です。",
+    "published_at": "2026-11-07",
+    "last_verified": "2026-11-05",
+    "tags": [
+      "d-you",
+      "EUDI Wallet",
+      "デジタル身分証",
+      "行政手続",
+      "ドイツ",
+      "2027年",
+      "プライバシー"
+    ],
+    "updated_at": "2026-11-07",
+    "related_articles": [
+      "germany-january-2027-changes"
+    ],
+    "official_sources": [
+      {
+        "title": "連邦政府：デジタルブリーフケース「d-you」の開始計画",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/digitale-brieftasche-2431500"
+      },
+      {
+        "title": "連邦政府：d-youの2027年1月初旬開始、参加パートナー、無料・任意利用（現行案内）",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/digital-wallet-2452384"
+      },
+      {
+        "title": "ドイツ連邦議会：EUDI Wallet関連法案の可決と2027年1月2日の開始予定（2026年10月15日）",
+        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw42-de-digitale-identitaeten-gesetz-1223586"
+      },
+      {
+        "title": "ベルリン州政府：2026年11月20日の連邦参議院会議予定",
+        "url": "https://www.berlin.de/rbmskzl/politik/senatskanzlei/bundesangelegenheiten/der-bundesrat/vorschau-auf-die-bundesratssitzung-1616077.php"
+      },
+      {
+        "title": "欧州委員会：European Digital Identity Wallet",
+        "url": "https://digital-strategy.ec.europa.eu/en/factpages/european-digital-identity-wallet"
+      },
+      {
+        "title": "EU規則2024/1183：欧州デジタルIDの法的枠組み",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1183"
+      }
+    ],
+    "image": "/assets/img/living/d-you-eudi-wallet-germany-2027.webp",
+    "image_alt": "スマートフォンの画面にデジタル身分証と安全確認のマークを表示したイラスト"
+  },
+  {
+    "id": "L095",
+    "slug": "grundsicherung-buergergeld-germany-2026",
+    "url": "/germany/ja/living/grundsicherung-buergergeld-germany-2026/",
+    "markdown_path": "/content/living/grundsicherung-buergergeld-germany-2026.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 9999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/grundsicherung-buergergeld-germany-2026/",
+    "disclaimer_type": "employment",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
+      "last_reviewed_at": "2026-11-04",
+      "next_review_due": "2026-11-18"
+    },
+    "title": "ドイツの求職者向け基礎保障とは？旧Bürgergeldからの変更と申請方法【2026年】",
+    "category": "仕事",
+    "summary": "2026年7月1日から旧Bürgergeldは新しい求職者向け基礎保障へ移行しました。対象条件、失業手当との違い、Jobcenterでの申請、外国籍の人が確認すべき在留資格上の注意点を、連邦政府・連邦雇用エージェンシー・法律の一次情報で整理します。",
+    "published_at": "2026-11-07",
+    "updated_at": "2026-11-07",
+    "last_verified": "2026-11-04",
+    "tags": [
+      "Grundsicherungsgeld",
+      "Bürgergeld",
+      "失業",
+      "低所得",
+      "社会保障",
+      "Jobcenter",
+      "滞在許可",
+      "2026年"
+    ],
+    "related_articles": [
+      "unemployment-benefit-germany",
+      "wohngeld-reform-2027",
+      "residence-permit-renewal-germany",
+      "family-reunification-spouse-work-germany",
+      "wohngeld-antrag-germany-2026"
+    ],
+    "official_sources": [
+      {
+        "title": "連邦政府：新しい求職者向け基礎保障の概要（2026年7月1日から）",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/neue-grundsicherung-2399562"
+      },
+      {
+        "title": "連邦政府：社会扶助と新しい基礎保障のFAQ",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/sozialhilfe-und-grundsicherung-2253064"
+      },
+      {
+        "title": "連邦雇用エージェンシー：新制度のオンライン申請",
+        "url": "https://www.arbeitsagentur.de/grundsicherung/online-services-im-ueberblick"
+      },
+      {
+        "title": "連邦雇用エージェンシー：新制度の施行と既存受給者の扱い（2026年6月）",
+        "url": "https://www.arbeitsagentur.de/presse/2026-20-reform-der-grundsicherung-fuer-arbeitsuchende-tritt-am-1-juli-2026-in-kraft"
+      },
+      {
+        "title": "社会法典第2編 §7：対象者と給付除外",
+        "url": "https://www.gesetze-im-internet.de/sgb_2/__7.html"
+      },
+      {
+        "title": "社会法典第2編 §8：就労能力",
+        "url": "https://www.gesetze-im-internet.de/sgb_2/__8.html"
+      },
+      {
+        "title": "社会法典第2編 §9：困窮状態の判定",
+        "url": "https://www.gesetze-im-internet.de/sgb_2/__9.html"
+      },
+      {
+        "title": "社会法典第2編 §19：給付の内容",
+        "url": "https://www.gesetze-im-internet.de/sgb_2/__19.html"
+      },
+      {
+        "title": "社会法典第2編 §22：住居費と暖房費",
+        "url": "https://www.gesetze-im-internet.de/sgb_2/__22.html"
+      },
+      {
+        "title": "社会法典第2編 §37：申請と給付開始",
+        "url": "https://www.gesetze-im-internet.de/sgb_2/__37.html"
+      },
+      {
+        "title": "社会法典第2編 §31a：義務違反時の給付減額",
+        "url": "https://www.gesetze-im-internet.de/sgb_2/__31a.html"
+      }
+    ],
+    "image": "/assets/img/living/grundsicherung-buergergeld-germany-2026.webp",
+    "image_alt": "申請書と書類を机で確認する人、住居と書類フォルダーを描いたイラスト",
+    "image_caption": "求職者向け基礎保障の申請準備をイメージしたJ-Connectオリジナル図",
+    "image_credit": "J-Connect Global制作（2026年11月4日）"
+  },
+  {
+    "id": "L096",
+    "slug": "wohngeld-antrag-germany-2026",
+    "url": "/germany/ja/living/wohngeld-antrag-germany-2026/",
+    "markdown_path": "/content/living/wohngeld-antrag-germany-2026.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 9999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/wohngeld-antrag-germany-2026/",
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
+      "last_reviewed_at": "2026-11-04",
+      "next_review_due": "2026-11-18"
+    },
+    "title": "ドイツの住宅手当（Wohngeld）とは？対象・申請方法・必要書類【2026年】",
+    "category": "住まい",
+    "summary": "ドイツの住宅手当は、家賃または自己所有住宅の負担を支える給付です。世帯人数・収入・対象家賃・自治体の家賃区分で決まる仕組み、申請先、必要書類、申請月からの支給、求職者向け基礎保障との併用制限を2026年の現行ルールに沿って解説します。",
+    "published_at": "2026-11-07",
+    "updated_at": "2026-11-07",
+    "last_verified": "2026-11-04",
+    "tags": [
+      "Wohngeld",
+      "住宅手当",
+      "家賃",
+      "低所得",
+      "申請",
+      "住まい",
+      "Lastenzuschuss",
+      "Mietzuschuss"
+    ],
+    "related_articles": [
+      "grundsicherung-buergergeld-germany-2026",
+      "wohngeld-reform-2027",
+      "unemployment-benefit-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "連邦住宅・都市開発・建設省：住宅手当のよくある質問",
+        "url": "https://www.bmwsb.bund.de/SharedDocs/faqs/DE/buergerkom/wohngeld-plus/wohngeld-FAQ-artikel.html"
+      },
+      {
+        "title": "連邦住宅・都市開発・建設省：住宅手当計算機（2025年1月1日版）",
+        "url": "https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeldrechner/wohngeldrechner-2025_artikel.html"
+      },
+      {
+        "title": "連邦行政ポータル：住宅手当の申請先・家賃補助と持ち家向け補助",
+        "url": "https://verwaltung.bund.de/leistungsverzeichnis/DE/leistung/99107023037000/herausgeber/BY-24752/region/092725214138"
+      },
+      {
+        "title": "住宅手当法 §7：他の給付を受ける場合の除外",
+        "url": "https://www.gesetze-im-internet.de/wogg/__7.html"
+      },
+      {
+        "title": "住宅手当法 §22：申請が必要であること",
+        "url": "https://www.gesetze-im-internet.de/wogg/__22.html"
+      },
+      {
+        "title": "住宅手当法 §25：給付期間と開始月",
+        "url": "https://www.gesetze-im-internet.de/wogg/__25.html"
+      },
+      {
+        "title": "住宅手当法 §27：給付期間中の変更",
+        "url": "https://www.gesetze-im-internet.de/wogg/__27.html"
+      },
+      {
+        "title": "デュッセルドルフ市：住宅手当のオンライン申請と書類入手先（2026年5月28日）",
+        "url": "https://www2.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/mehr-service-vor-ort-wohnungsamt-erweitert-angebot"
+      }
+    ],
+    "image": "/assets/img/living/wohngeld-antrag-germany-2026.webp",
+    "image_alt": "住宅、賃貸契約書、電卓とコインを組み合わせた住宅手当のイラスト",
+    "image_caption": "住宅手当の申請と住宅費の確認をイメージしたJ-Connectオリジナル図",
+    "image_credit": "J-Connect Global制作（2026年11月4日）"
   }
 ]

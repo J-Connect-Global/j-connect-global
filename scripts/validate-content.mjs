@@ -1,6 +1,5 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
 import {
   frontMatterComparableFields,
@@ -515,7 +514,7 @@ function validateHome(datasets) {
 }
 
 function validateSearchIndex(allItems) {
-  const searchPath = 'assets/js/search-index.js';
+  const searchPath = 'assets/data/search-index.json';
   const searchIndex = readSearchIndex(searchPath);
   const urls = searchIndex.map((entry) => entry.url).filter(Boolean);
   validateNoDuplicateUrls(urls, searchPath);
@@ -565,13 +564,12 @@ function validateSitemap(allItems) {
 
 function readSearchIndex(searchPath) {
   try {
-    const sandbox = { window: {} };
-    vm.runInNewContext(readText(searchPath), sandbox, { filename: searchPath, timeout: 1000 });
-    if (!Array.isArray(sandbox.window.JCONNECT_SEARCH_INDEX)) {
-      problems.push(`${searchPath} must define window.JCONNECT_SEARCH_INDEX as an array.`);
+    const entries = JSON.parse(readText(searchPath));
+    if (!Array.isArray(entries)) {
+      problems.push(`${searchPath} must contain a JSON array.`);
       return [];
     }
-    return sandbox.window.JCONNECT_SEARCH_INDEX;
+    return entries;
   } catch (error) {
     problems.push(`Unable to parse ${searchPath}: ${error.message}`);
     return [];

@@ -351,7 +351,7 @@
             <input id="searchInput" type="search" name="q" autocomplete="off" placeholder="例: 仕事、医療、ラーメン" />
             <button class="site-button" type="submit">検索</button>
           </form>
-          <div class="search-meta" id="searchMeta"></div>
+          <div class="search-meta" id="searchMeta" role="status" aria-live="polite"></div>
         </div>
 
         <div class="search-results-panel" id="searchResults" aria-live="polite"></div>
@@ -400,9 +400,26 @@
   </footer>
   <!-- LAYOUT:ja-footer:end -->
 
-  <script src="/assets/js/search-index.js"></script>
   <script>
-    const searchIndex = Array.isArray(window.JCONNECT_SEARCH_INDEX) ? window.JCONNECT_SEARCH_INDEX : [];
+    // The index is fetched only when a query is present, so visiting the page
+    // without a query (category overview) downloads no index at all.
+    const SEARCH_INDEX_URL = "/assets/data/search-index.json";
+    let searchIndexPromise = null;
+    function loadSearchIndex() {
+      if (!searchIndexPromise) {
+        searchIndexPromise = fetch(SEARCH_INDEX_URL, { credentials: "same-origin" })
+          .then((response) => {
+            if (!response.ok) throw new Error(`Search index request failed (${response.status}).`);
+            return response.json();
+          })
+          .then((entries) => (Array.isArray(entries) ? entries : []))
+          .catch((error) => {
+            searchIndexPromise = null;
+            throw error;
+          });
+      }
+      return searchIndexPromise;
+    }
     const categoryLinks = [
       ["/germany/ja/living/", "生活・手続き"],
       ["/germany/ja/jobs/", "仕事・求人"],
@@ -481,7 +498,7 @@
       return score;
     }
 
-    function search(query) {
+    function search(searchIndex, query) {
       return searchIndex
         .map((item) => ({ item, score: scoreItem(item, query) }))
         .filter((entry) => entry.score > 0)
@@ -530,7 +547,17 @@
       `;
     }
 
-    function renderSearchPage() {
+    function renderLoadError(query) {
+      els.meta.textContent = `「${query}」を検索できませんでした。通信状況を確認して、再読み込みしてください。`;
+      els.results.innerHTML = `
+        <div class="empty-search">検索データを読み込めませんでした。カテゴリ一覧から探すこともできます。</div>
+        <div class="search-link-grid" aria-label="カテゴリ一覧">
+          ${categoryLinks.map(([href, label]) => `<a class="site-chip" href="${escapeHtml(href)}">${escapeHtml(label)}</a>`).join("")}
+        </div>
+      `;
+    }
+
+    async function renderSearchPage() {
       const params = new URLSearchParams(window.location.search);
       const query = (params.get("q") || "").trim();
       els.input.value = query;
@@ -540,7 +567,17 @@
         return;
       }
 
-      const results = search(query);
+      els.meta.textContent = `「${query}」を検索しています…`;
+      let searchIndex;
+      try {
+        searchIndex = await loadSearchIndex();
+      } catch (error) {
+        console.warn(error);
+        renderLoadError(query);
+        return;
+      }
+
+      const results = search(searchIndex, query);
       if (!results.length) {
         renderNoResults(query);
         return;

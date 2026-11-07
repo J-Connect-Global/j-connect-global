@@ -6,12 +6,20 @@ import {
   assertNoRuntimeDiagnostics,
   assertRouteReady,
   installRuntimeDiagnostics,
-  openDataRoute
+  openDataRoute,
+  stableTap
 } from "./support.mjs";
 
 const vocabulary = JSON.parse(await fs.readFile(new URL('../../assets/data/learn-german/flashcards/decks.json', import.meta.url), 'utf8'));
 const decksPath = "/assets/data/learn-german/flashcards/decks.json";
 const a1CardsPath = "/assets/data/learn-german/flashcards/cards-a1.json";
+
+// The site scrolls smoothly (html{scroll-behavior:smooth}) and the app calls
+// scrollIntoView() when it switches between setup and study. Under parallel
+// load a tap could land while that animation was still moving the page and hit
+// a neighbouring element instead of the target. Reduced motion makes those
+// scrolls instant, so taps always reach the element they were aimed at.
+test.use({ reducedMotion: "reduce" });
 
 async function installSpeechMock(page) {
   await page.addInitScript(() => {
@@ -70,7 +78,7 @@ test("mobile flashcard keeps progress, card, and primary controls readable at 36
   const actionsBox = await page.locator(".flashcards-setup-actions").boundingBox();
   expect(startBox.width).toBeGreaterThan(actionsBox.width * 0.95);
   await assertNoHorizontalOverflow(page);
-  await page.locator("#flashcardsStart").tap();
+  await stableTap(page.locator("#flashcardsStart"));
   await expect(page.locator("#flashcardsStudy")).toBeVisible();
   await expect(page.locator("#flashcardsPosition")).toHaveText("1 / 10");
   await expect(page.locator("#flashcardFlip")).toBeVisible();
@@ -80,17 +88,17 @@ test("mobile flashcard keeps progress, card, and primary controls readable at 36
   await expect(page.locator('[data-rating="again"]')).toBeEnabled();
   await expect(page.locator('[data-rating="unsure"]')).toBeEnabled();
   await expect(page.locator('[data-rating="known"]')).toBeEnabled();
-  await page.locator('[data-rating="unsure"]').tap();
+  await stableTap(page.locator('[data-rating="unsure"]'));
   await expect(page.locator("#flashcardsPosition")).toHaveText("2 / 10");
-  await page.locator("#flashcardFlip").tap();
+  await stableTap(page.locator("#flashcardFlip"));
   await expect(page.locator("#flashcardsSpeakExample")).toBeVisible();
   await expect(page.locator("#flashcardsSpeakExample")).toHaveCSS("width", "44px");
-  await page.locator("#flashcardsSpeakExample").tap();
+  await stableTap(page.locator("#flashcardsSpeakExample"));
   await expect(page.locator("#flashcardsSpeakExample")).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator('[data-rating="again"]')).toBeVisible();
   await expect(page.locator('[data-rating="unsure"]')).toBeVisible();
   await expect(page.locator('[data-rating="known"]')).toBeVisible();
-  await page.locator('[data-rating="known"]').tap();
+  await stableTap(page.locator('[data-rating="known"]'));
   await expect(page.locator("#flashcardsPosition")).toHaveText("3 / 10");
   await activateDarkMode(page);
   await assertNoHorizontalOverflow(page);
@@ -100,7 +108,7 @@ test("mobile flashcard keeps progress, card, and primary controls readable at 36
 
 test("C2 cards stay readable on narrow screens", async ({ page }, testInfo) => {
   await openDataRoute(page, '/germany/ja/learn-german/flashcards/?deck=c2-nuance-repertoire', [decksPath, '/assets/data/learn-german/flashcards/cards-c2.json']);
-  await page.locator("#flashcardsStart").click();
+  await stableTap(page.locator("#flashcardsStart"));
   await expect(page.locator("#flashcardBasisSummary")).toContainText("C2・");
   await assertNoHorizontalOverflow(page);
   await page.locator("#flashcardsStudy").scrollIntoViewIfNeeded();
@@ -111,15 +119,15 @@ test("C2 cards stay readable on narrow screens", async ({ page }, testInfo) => {
 test("word audio and the default-OFF switch fit touch screens without flipping the card", async ({ page }, testInfo) => {
   await installSpeechMock(page);
   await openDataRoute(page, '/germany/ja/learn-german/flashcards/?deck=a1-life-basics', [decksPath,a1CardsPath]);
-  await page.locator('#flashcardsStart').tap();
+  await stableTap(page.locator('#flashcardsStart'));
   const toggle=page.getByRole('switch',{name:'単語の自動読み上げ',exact:true});
   await expect(toggle).not.toBeChecked();
-  await page.locator('#flashcardsSpeak').tap();
+  await stableTap(page.locator('#flashcardsSpeak'));
   await expect(page.locator('#flashcardFlipControl')).toHaveAttribute('aria-pressed','false');
   await expect(page.locator('#flashcardsSpeak')).toHaveAttribute('aria-pressed','true');
   await toggle.check();
   await expect(page.locator('#flashcardsAutoSpeakStatus')).toHaveText('ON');
-  await page.locator('#flashcardsNext').tap();
+  await stableTap(page.locator('#flashcardsNext'));
   await expect(page.locator('#flashcardsPosition')).toHaveText('2 / 10');
   await expect(page.locator('#flashcardsSpeak')).toHaveAttribute('aria-pressed','true');
   await toggle.uncheck();

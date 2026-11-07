@@ -7173,15 +7173,15 @@
     "title": "ドイツの放送負担金、2026年11月8日から全国データ照合｜手紙が届いたら",
     "slug": "rundfunkbeitrag-meldedatenabgleich-2026",
     "category": "住まい",
-    "summary": "2026年11月8日から始まるドイツの全国住民データ照合について、対象者、データ送信期間、12月中旬からの通知、同居人がすでに支払っている場合の回答方法、未登録時の扱いを整理します。",
+    "summary": "2026年11月8日から始まるドイツの全国住民データ照合について、対象者、データ送信期間、同居人がすでに支払っている場合の回答方法を整理します。通知開始時期は公式ページ間で表記が異なるため、その差も明記します。",
     "url": "/germany/ja/events/news/rundfunkbeitrag-meldedatenabgleich-2026/",
     "markdown_path": "/content/events/news/rundfunkbeitrag-meldedatenabgleich-2026.md",
     "published": false,
     "status": "draft",
     "published_at": "",
-    "updated_at": "2026-11-06",
-    "last_verified": "2026-11-06",
-    "next_review": "2026-11-08",
+    "updated_at": "2026-11-07",
+    "last_verified": "2026-11-07",
+    "next_review": "2026-11-09",
     "tags": [
       "放送負担金",
       "住民登録",
@@ -7206,6 +7206,10 @@
         "url": "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/informationen/informationen-zum-meldedatenabgleich/fragen-und-antworten-zum-bundesweiten-meldedatenabgleich"
       },
       {
+        "title": "放送負担金事務局：照合の手紙が届いた場合の案内（2026年11月5日）",
+        "url": "https://www.rundfunkbeitrag.de/presse-und-aktuelles/servicethemen/ploetzlich-post-vom-beitragsservice-meldedatenabgleich-2026-das-muessen-sie-tun"
+      },
+      {
         "title": "バイエルン州法令データベース：放送負担金州間協定第11条（個人データの処理）",
         "url": "https://www.gesetze-bayern.de/Content/Document/RBeitrStV-11"
       },
@@ -7223,13 +7227,13 @@
     "review": {
       "status": "needs_review",
       "reviewed_by": "J-Connect editorial — automated source check completed; human editorial review pending",
-      "last_reviewed_at": "2026-11-06",
-      "next_review_due": "2026-11-08"
+      "last_reviewed_at": "2026-11-07",
+      "next_review_due": "2026-11-09"
     },
     "content_type": "news",
     "city": "ドイツ全土",
     "location": "ドイツ全土",
-    "event_date": "2026-11-08〜2026-12-14（通知開始予定）",
+    "event_date": "2026-11-08〜2026-12-08（データ送信期間）",
     "official_url": "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026",
     "image": "/assets/images/living/anmeldung-preparation.webp",
     "image_url": "/assets/images/living/anmeldung-preparation.webp",

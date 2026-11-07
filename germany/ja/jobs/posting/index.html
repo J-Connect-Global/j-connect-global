@@ -309,8 +309,9 @@
               </div>
 
               <div class="field">
-                <label for="apply_method">応募方法 / Application Method</label>
-                <input class="input js-preview" id="apply_method" name="apply_method" type="text" placeholder="メール応募 / Apply by email">
+                <label for="apply_method">応募方法 / Application Method <span class="required">*</span></label>
+                <input class="input js-preview" id="apply_method" name="apply_method" type="text" maxlength="240" placeholder="応募フォーム https://example.com/jobs から応募 / Apply via our careers page" aria-describedby="applyMethodHelp" required>
+                <div class="help" id="applyMethodHelp">応募フォームのURL、または応募手順を記入してください。メールアドレスはスパム対策のため掲載できません。 / Enter an application URL or instructions. Email addresses cannot be published.</div>
               </div>
 
               <div class="field full" data-limit-field="summary">
@@ -814,8 +815,23 @@ document.querySelectorAll('.js-preview').forEach(input => {
 
 updatePreview();
 
+const APPLY_METHOD_EMAIL_PATTERN = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i;
+const APPLY_METHOD_EMAIL_MESSAGE = '応募方法にメールアドレスは記載できません。応募フォームのURLや応募手順を記入してください。 / Email addresses cannot be published as an application method.';
+
+fields.applyMethod.addEventListener('input', function() {
+  fields.applyMethod.setCustomValidity('');
+});
+
 form.addEventListener('submit', async function(event) {
   event.preventDefault();
+
+  if (APPLY_METHOD_EMAIL_PATTERN.test(fields.applyMethod.value)) {
+    fields.applyMethod.setCustomValidity(APPLY_METHOD_EMAIL_MESSAGE);
+    fields.applyMethod.reportValidity();
+    statusBox.className = 'status-box show status-error';
+    statusBox.textContent = APPLY_METHOD_EMAIL_MESSAGE;
+    return;
+  }
 
   if (!validateLimits()) {
     statusBox.className = 'status-box show status-error';

@@ -91,3 +91,18 @@
 3. Android/iOS実機で音声再生・停止・自動読み上げOFFを確認する。
 4. PR #420/#422/#423/#430/#434の重複・一次情報・法務上の表現をレビューし、承認後に統合する。
 5. GSC Wizardの契約回復後、28日・3か月のクエリとページデータを取得し、次の更新優先度に反映する。
+
+
+## 6. 競合・検索意図・カニバリゼーション確認
+
+- **N039（2026年放送負担金データ照合）**：今回の検索結果で確認できたドイツ語競合（n-tv、teltarif、ComputerBase）は、11月8日の開始、12月中旬の通知、18.36ユーロ、無回答時の自動登録といったニュース要点が中心。J-ConnectのN039は、同居人がすでに支払っている場合の回答、未登録住戸の扱い、データ削除・遡及・免除、公式ページ間の通知開始時期の差を扱い、実務検索意図で差別化できる。一般解説の既存ページ `rundfunkbeitrag-guide` とは役割を分け、N039から既存ガイドへ内部リンクする。
+- **N040（Euro 7）**：ADAC・TÜV NORDは一般的な施行日と乗用車への影響を説明。UBAの概要は2027年の新車段階をM1中心に記載する一方、EU規則第10条第5項はM1・N1を対象とし、第10条第9項には小規模生産メーカー向け2030年7月1日の別日程がある。J-Connectは法令本文とUBA概要の差、M1/N1、小規模生産メーカー例外、既存車への影響を区別する。
+- **C033（聖マルティン祭）**：検索結果の一般的な祝祭解説は11月11日の文化的意味とランタン行列が中心。J-Connectの既存記事はNRWの自治体公式日程と参加前の確認事項を提供する。今回の更新は終了済み11月6日の行事を除き、11月7〜13日の情報へ更新した。独立した同内容の記事は作らない。
+- 今回の日本語検索結果では、N039/N040の個別制度を同じ深さで扱う日本語記事は確認できなかった。ただし検索結果に表示されなかったことを競合不在の証明とは扱わない。
+
+比較対象：
+- https://www.n-tv.de/ticker/Rundfunkanstalten-starten-bundesweiten-Meldeabgleich-kommende-Woche-id31498578.html
+- https://www.teltarif.de/rundfunkbeitrag-gez-beitragsservice-meldedatenabgleich-einwohnermeldeamt/news/107370.html
+- https://www.computerbase.de/news/wirtschaft/rundfunkbeitrag-beitragsservice-gleicht-meldedaten-ab-8-november-erneut-ab.100206/
+- https://www.adac.de/rund-ums-fahrzeug/autokatalog/abgasnormen/euro-7/
+- https://www.tuev-nord.de/de/wissen/ratgeber-und-tipps-mobilitaet/neue-regeln-fuer-autofahrer/

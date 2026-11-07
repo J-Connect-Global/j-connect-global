@@ -13,10 +13,17 @@ function assert(condition, message) {
 }
 
 class MockSheet {
-  constructor(name, headers) {
+  constructor(name, headers, options = {}) {
     this.name = name;
     this.rows = [headers.slice()];
     this.parent = null;
+    // Real Sheets rejects ranges past the grid; only enforced when a size is given.
+    this.maxColumns = options.maxColumns || Infinity;
+  }
+  getMaxColumns() { return this.maxColumns; }
+  insertColumnsAfter(column, count) {
+    assert(column === this.maxColumns && count > 0, "Columns were inserted at an unexpected position.");
+    this.maxColumns += count;
   }
   getName() { return this.name; }
   getParent() { return this.parent; }
@@ -26,6 +33,9 @@ class MockSheet {
   getActiveRange() { return { getRow: () => Math.max(2, this.rows.length) }; }
   appendRow(row) { this.rows.push(row.slice()); }
   getRange(row, column, rowCount = 1, columnCount = 1) {
+    if (column + columnCount - 1 > this.maxColumns) {
+      throw new Error("The coordinates of the range are outside the dimensions of the sheet.");
+    }
     return {
       setValues: (values) => {
         for (let r = 0; r < rowCount; r += 1) {
@@ -293,6 +303,24 @@ function testJobPersistenceIdempotencyAndThrottling() {
   const cacheKeys = [...runtime.cache.keys()];
   assert(cacheKeys.every((key) => /^jconnect_form_rate:[a-f0-9]{64}$/.test(key)), "Rate-limit cache key is not SHA-256-derived.");
   assert(cacheKeys.every((key) => !key.includes("person@example.com") && !key.includes("other@example.com")), "Raw email leaked into a rate-limit cache key.");
+}
+
+function testJobPostingGrowsFullWidthSheet() {
+  const now = Date.now();
+  const template = jobSheet();
+  // A sheet created from the header row alone has no spare columns for the
+  // management headers (job_id, status, submission_key, ...).
+  const jobs = new MockSheet("Jobs", template.rows[0], { maxColumns: template.rows[0].length });
+  const runtime = createRuntime([jobs], () => ({ sent: true }), { now, console: { warn: () => {}, log: () => {} } });
+  const result = runtime.sandbox.submitJobPosting_(validJobParams(now));
+  assert(result.ok && result.status === "pending", `Job submission failed on a full-width sheet: ${result.code} ${result.storage_code || ""}`);
+  assert(jobs.maxColumns >= jobs.rows[0].length, "Jobs sheet was not widened for management headers.");
+  assert(rowObject(jobs).submission_key, "Submission key was not stored on the widened sheet.");
+
+  const missing = createRuntime([], () => ({ sent: true }), { now, console: { warn: () => {}, log: () => {} } });
+  const failure = missing.sandbox.submitJobPosting_(validJobParams(now));
+  assert(!failure.ok && failure.code === "JOB_STORAGE_FAILED" && failure.storage_code === "JOBS_SHEET_NOT_FOUND",
+    "Missing Jobs sheet did not report a safe storage diagnostic code.");
 }
 
 function testCommunityAdminFailureIsolation() {
@@ -690,6 +718,7 @@ testSpreadsheetResolution();
 testBoundModerationSelection();
 testBerlinTimestamps();
 testJobPersistenceIdempotencyAndThrottling();
+testJobPostingGrowsFullWidthSheet();
 testCommunityAdminFailureIsolation();
 testCommunityPublicLifecycleAndCacheBypass();
 testCommunityInquiryPrivacyAndAbuseControls();

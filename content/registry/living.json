@@ -6050,8 +6050,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "tax",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; human customs/tax review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
       "last_reviewed_at": "2026-11-05",
       "next_review_due": "2026-11-10"
     },
@@ -6127,8 +6127,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; human administrative/privacy review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
       "last_reviewed_at": "2026-11-05",
       "next_review_due": "2026-11-20"
     },
@@ -6195,8 +6195,8 @@
     "canonical_url": "/germany/ja/living/grundsicherung-buergergeld-germany-2026/",
     "disclaimer_type": "employment",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; human social-benefits and immigration-law review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
       "last_reviewed_at": "2026-11-04",
       "next_review_due": "2026-11-18"
     },
@@ -6289,8 +6289,8 @@
     "canonical_url": "/germany/ja/living/wohngeld-antrag-germany-2026/",
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; human housing-benefits/administrative-law review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
       "last_reviewed_at": "2026-11-04",
       "next_review_due": "2026-11-18"
     },

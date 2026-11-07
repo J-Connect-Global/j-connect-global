@@ -1,7 +1,7 @@
 {
   "api_version": "2026-07-13.1",
   "source": "master-gas:community",
-  "count": 6,
+  "count": 7,
   "groups": [
     {
       "field": "category1",
@@ -14,6 +14,7 @@
     {
       "field": "category2",
       "values": [
+        "その他",
         "ビザ・滞在許可",
         "リモート",
         "家具・家電",
@@ -35,5 +36,5 @@
       ]
     }
   ],
-  "generated_at": "2026-11-06T12:51:51.929Z"
+  "generated_at": "2026-11-07T22:53:09.795Z"
 }

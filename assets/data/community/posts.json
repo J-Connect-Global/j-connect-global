@@ -2,8 +2,40 @@
   "api_version": "2026-07-13.1",
   "source": "master-gas:community",
   "endpoint": "canonicalMasterEndpoint?action=getPosts&bypassCache=true&includeClosed=false",
-  "count": 6,
+  "count": 7,
   "items": [
+    {
+      "id": "post_61853d2d-7545-4459-b666-eff428feb32b",
+      "post_id": "post_61853d2d-7545-4459-b666-eff428feb32b",
+      "slug": "現地在住の方へ-荷物の受け取り-日本への発送パートナー募集-ドイツ国内全地域-ドイツ-post-61853d2d-7545-4459-b666-eff428feb32b",
+      "detail_url": "/germany/ja/community/posts/post_61853d2d-7545-4459-b666-eff428feb32b/",
+      "title": "現地在住の方へ：荷物の受け取り・日本への発送パートナー募集",
+      "body": "日本でBUYMAの販売をしています。現地のECサイトで買い付けた商品をご自宅で受け取り、検品をして、購入されたお客様へ発送していただくお仕事です。\n\n【仕事内容】\n・取り扱いはスニーカーや衣類が中心です\n・商品はご自宅へ直送されます。お金の立て替えは一切ありません\n・届いた商品を開封・検品し、写真を撮って報告してください\n・こちらがデータでお渡しする配送ラベルを印刷して貼ってください\n・商品を1個ずつエアパッキンで梱包し、日本の購入者へ発送してください（集荷も可能なので、郵便局へ出向く必要がありません）\n・原則は1個ごとの個別発送ですが、同じ購入者の複数注文や、かなり小さいアイテム同士は、まとめて発送をお願いする場合があります\n・保管は不要です。検品したらそのまま発送してください\n・間違った商品が届いた場合は、返送をお願いすることがあります（返品ラベルはこちらで用意します。申し訳ございませんが、返送対応は無償でお願いすることとなります）\n\n【報酬】\n・報酬は1パッケージ発送完了につき1,500円です。商品の受け取りから、検品、梱包、発送作業までお願いします。\n・お支払いは月末締めでまとめてお支払いします（方法はご相談ください）\n\n【件数の目安】\n・開始直後は1日1〜2個程度から。軌道に乗れば増えていく見込みです\n\n【条件】\n・プリンターをお持ちの方（配送ラベルの印刷をお願いします）\n・連絡への返信を24時間以内にできる方\n・ご自宅で荷物の受け取りが可能な方\n・長期の不在が少ない方\n\nご応募・ご質問は、この掲示板の連絡機能からお願いします。",
+      "summary": "",
+      "category1": "アルバイト",
+      "category2": "その他",
+      "postType": "アルバイト",
+      "subcategory": "その他",
+      "country": "ドイツ",
+      "region": "ドイツ",
+      "city": "ドイツ国内全地域",
+      "price": "1パッケージ発送完了につき1,500円",
+      "event_date": "",
+      "availability_date": "2026-11-07T23:00:00.000Z",
+      "tags": "",
+      "image_url": "",
+      "image_alt": "現地在住の方へ：荷物の受け取り・日本への発送パートナー募集",
+      "image_urls": [],
+      "image_url_1": "",
+      "image_url_2": "",
+      "image_url_3": "",
+      "created_at": "2026-11-07T21:18:10.415Z",
+      "published_at": "2026-11-07T21:18:10.415Z",
+      "updated_at": "2026-11-07T21:18:10.415Z",
+      "expires_at": "",
+      "public_replies": [],
+      "status": "active"
+    },
     {
       "id": "post_6a3a2ebd-71fd-4209-898d-6ac5947b5842",
       "post_id": "post_6a3a2ebd-71fd-4209-898d-6ac5947b5842",
@@ -242,15 +274,15 @@
     }
   ],
   "validation": {
-    "source_count": 14,
-    "explicitly_active_count": 6,
-    "eligible_count": 6,
+    "source_count": 15,
+    "explicitly_active_count": 7,
+    "eligible_count": 7,
     "excluded_count": 8,
     "excluded_by_reason": {
       "lifecycle_or_status": 8
     },
     "excluded_safe_ids": {},
-    "generated_count": 6
+    "generated_count": 7
   },
-  "generated_at": "2026-11-06T12:51:51.929Z"
+  "generated_at": "2026-11-07T22:53:09.795Z"
 }

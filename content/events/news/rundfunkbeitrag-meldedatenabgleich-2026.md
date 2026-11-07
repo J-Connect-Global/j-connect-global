@@ -4,18 +4,18 @@ title: "ドイツの放送負担金、2026年11月8日から全国データ照�
 slug: "rundfunkbeitrag-meldedatenabgleich-2026"
 category: "住まい"
 tags: ["放送負担金", "住民登録", "2026年11月", "共同生活", "個人情報", "ドイツ行政"]
-summary: "2026年11月8日から始まるドイツの全国住民データ照合について、対象者、データ送信期間、12月中旬からの通知、同居人がすでに支払っている場合の回答方法、未登録時の扱いを整理します。"
+summary: "2026年11月8日から始まるドイツの全国住民データ照合について、対象者、データ送信期間、同居人がすでに支払っている場合の回答方法を整理します。通知開始時期は公式ページ間で表記が異なるため、その差も明記します。"
 status: "draft"
 published: false
 published_at: ""
-updated_at: "2026-11-06"
-last_verified: "2026-11-06"
-next_review: "2026-11-08"
+updated_at: "2026-11-07"
+last_verified: "2026-11-07"
+next_review: "2026-11-09"
 canonical_url: "/germany/ja/events/news/rundfunkbeitrag-meldedatenabgleich-2026/"
 content_type: "news"
 city: "ドイツ全土"
 location: "ドイツ全土"
-event_date: "2026-11-08〜2026-12-14（通知開始予定）"
+event_date: "2026-11-08〜2026-12-08（データ送信期間）"
 official_url: "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026"
 related_articles: ["rundfunkbeitrag-guide", "anmeldung-guide", "moving-checklist-germany"]
 image: "/assets/images/living/anmeldung-preparation.webp"
@@ -27,6 +27,8 @@ official_sources:
     url: "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026"
   - title: "放送負担金事務局：2026年全国住民データ照合の質問と回答（2026年11月時点）"
     url: "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/informationen/informationen-zum-meldedatenabgleich/fragen-und-antworten-zum-bundesweiten-meldedatenabgleich"
+  - title: "放送負担金事務局：照合の手紙が届いた場合の案内（2026年11月5日）"
+    url: "https://www.rundfunkbeitrag.de/presse-und-aktuelles/servicethemen/ploetzlich-post-vom-beitragsservice-meldedatenabgleich-2026-das-muessen-sie-tun"
   - title: "バイエルン州法令データベース：放送負担金州間協定第11条（個人データの処理）"
     url: "https://www.gesetze-bayern.de/Content/Document/RBeitrStV-11"
   - title: "放送負担金事務局：支払い状況のオンライン確認"
@@ -42,9 +44,9 @@ source_type: "manual"
 ## まず結論
 
 - 照合の基準日は **2026年11月8日** です。住民登録をしている成人全員について、自治体の情報と放送負担金事務局の登録情報が照合されます。
-- 手紙は全員に届くわけではありません。既存の支払い住戸に結び付けられない人へ、**2026年12月中旬から順次**送られる予定です。
+- 手紙は全員に届くわけではありません。既存の支払い住戸に結び付けられない人へ送られます。ただし、開始時期は公式発表・FAQの「12月14日ごろ」とサービス記事の「2027年1月」で表記が異なります。
 - 同じ住戸で家族や同居人がすでに支払っているなら、通常はその人の **支払者番号（Beitragsnummer）** を回答します。人数分の負担金を新たに払う制度ではありません。
-- 手紙を無視すると、事務局が自動的に登録し、支払いを求める場合があります。回答期限を確認してください。
+- 最初の通知に答えず、再通知後も回答しない場合、事務局が自動登録して支払いを求めることがあります。回答期限を確認してください。
 
 ## 2026年の照合日程
 
@@ -52,10 +54,10 @@ source_type: "manual"
 | --- | --- |
 | 2026年11月8日 | 全国照合の基準日。自治体が対象データを抽出 |
 | 11月9日〜12月8日（予定） | 約7,300万件のデータを段階的に事務局へ送信 |
-| 2026年12月14日ごろから | 既存の登録住戸に結び付けられない人へ、確認の手紙を順次発送 |
+| 2026年12月14日ごろ（発表・FAQ）／2027年1月（サービス記事） | 対象者へ確認書面を順次発送する予定。公式ページ間で開始時期の表記に差がある |
 | データ送信後、最長12か月 | 手紙の発送・照合を順次進める期間の目安 |
 
-発表日は **2026年11月5日**、照合の開始日は **2026年11月8日** です。通知の発送は一斉ではなく、12月中旬以降に順次行われます。照合開始日そのものは、全員に申請や問い合わせが必要になる日ではありません。手紙が届いていない人は、照合開始だけを理由に新規申請をする必要はありません。
+発表日は **2026年11月5日**、照合の開始日は **2026年11月8日** です。通知の開始時期については、同日のプレス発表と公式FAQが「2026年12月14日ごろ」とする一方、同日付のサービス解説記事は「2027年1月から」としており、公式ページ間で表記が一致していません（2026年11月7日確認）。実際の発送日を断定せず、届いた通知書の回答期限を優先してください。照合開始日そのものは、全員に申請や問い合わせが必要になる日ではありません。手紙が届いていない人は、照合開始だけを理由に新規申請をする必要はありません。
 
 ![ドイツの住居に関する書類を確認する様子](/assets/images/living/apartment-utility-setup-editorial-v1.webp "AI生成の編集イメージ。実在の住居、契約、利用者ではありません。")
 
@@ -71,14 +73,14 @@ source_type: "manual"
 
 1. **宛名・住所・回答期限を確認する。** 以前の住所や退去済みの住戸が記載されていないかも確認します。回答期限は個別の通知書に記載された日付を優先してください。
 2. **同じ住戸の支払い担当者を確認する。** 家族、配偶者、共同生活の相手がすでに支払っているなら、その人の支払者番号を確認します。
-3. **公式フォームまたは返信用紙で回答する。** 手紙に記載されたQRコードから公式フォームへ進むか、同封の回答用紙を返送します。公式フォームは無料です。
+3. **公式フォームまたは返信用紙で回答する。** 手紙に記載されたQRコードから公式フォームへ進むか、同封の回答用紙を返送します。オンラインフォームで回答する場合は、通知書に記載された10桁の照会番号（Aktenzeichen）も入力します。返信用紙には照会番号があらかじめ印字されているため、同居人の支払者番号を記入します。公式フォームは無料です。
 4. **回答した内容を保存する。** 送信完了画面、返信用紙の控え、支払者番号、送付日を記録しておきます。
 
 ![ドイツの行政書類を自宅で整理する様子](/assets/images/living/japanese-resident-paperwork-editorial-v1.webp "AI生成の編集イメージ。実在の通知書、個人情報、住民ではありません。")
 
 ### 同居人がすでに支払っている場合
 
-同じ住戸について家族や同居人が放送負担金を支払っているなら、通常はその人の支払者番号を回答すれば足ります。事務局が住戸の登録を確認すると、照合で送られた回答者本人のデータは速やかに削除されると説明されています。
+同じ住戸について家族や同居人が放送負担金を支払っているなら、その人の支払者番号を回答します。オンラインフォームでは、通知書に記載された10桁の照会番号も必要です。郵送の返信用紙には照会番号があらかじめ印字されているため、支払者番号を記入します。事務局が住戸の登録を確認すると、照合で送られた回答者本人のデータは速やかに削除されると説明されています。
 
 重要なのは、**一つの住戸につき一件**という原則です。手紙が届いたことだけを理由に、同じ住戸で二重に登録・支払いをしないでください。まず、現在の支払い担当者と番号を確認します。
 
@@ -90,7 +92,7 @@ source_type: "manual"
 
 ## 手紙を無視するとどうなるか
 
-回答がない場合、事務局は対象者を自動的に放送負担金へ登録し、支払いを求めることがあります。その後も連絡や支払いがなければ、未払い額の確定通知、督促、場合によっては強制徴収へ進む可能性があります。
+最初の通知に回答しない場合、事務局は再度確認の手紙を送ることがあります。再通知後も回答がなければ、自治体から受け取った入居日を基準に対象者を自動登録し、支払いを求めることがあります。その後も連絡や支払いがなければ、未払い額の確定通知、督促、場合によっては強制徴収へ進む可能性があります。
 
 住所や住戸の情報が違う、同居人がすでに支払っている、すでに転出しているなど、内容に誤りがある場合も、手紙を放置せず、通知書に記載された回答期限までに、根拠を示して訂正してください。
 
@@ -127,7 +129,8 @@ source_type: "manual"
 
 - [放送負担金事務局：2026年の全国住民データ照合に関する発表（2026年11月5日）](https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026)
 - [放送負担金事務局：2026年全国住民データ照合の質問と回答（2026年11月時点）](https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/informationen/informationen-zum-meldedatenabgleich/fragen-und-antworten-zum-bundesweiten-meldedatenabgleich)
+- [放送負担金事務局：照合の手紙が届いた場合の案内（2026年11月5日）](https://www.rundfunkbeitrag.de/presse-und-aktuelles/servicethemen/ploetzlich-post-vom-beitragsservice-meldedatenabgleich-2026-das-muessen-sie-tun)
 - [放送負担金州間協定第11条：個人データの処理（バイエルン州法令データベース）](https://www.gesetze-bayern.de/Content/Document/RBeitrStV-11)
 - [支払い状況の確認（公式）](https://www.rundfunkbeitrag.de/kontostand)
 
-確認日：2026年11月6日。通知の発送時期やオンライン手続きは変更される可能性があるため、実際に手紙が届いた場合は、記載された期限と公式サイトの最新案内を優先してください。
+確認日：2026年11月7日。通知の発送時期やオンライン手続きは変更される可能性があるため、実際に手紙が届いた場合は、記載された期限と公式サイトの最新案内を優先してください。

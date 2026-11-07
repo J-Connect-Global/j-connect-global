@@ -2805,6 +2805,26 @@
       {
         "title": "連邦保健省：公的医療保険と民間医療保険の切り替え条件",
         "url": "https://www.bundesgesundheitsministerium.de/themen/krankenversicherung/online-ratgeber-krankenversicherung/krankenversicherung/wechsel-zwischen-gkv-und-pkv"
+      },
+      {
+        "title": "連邦議会：2027年所得税改革法案の第1読会・11月4日専門家公聴会",
+        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw45-pa-finanzen-est-1225814"
+      },
+      {
+        "title": "連邦議会：所得税改革法案21/8235",
+        "url": "https://dserver.bundestag.de/btd/21/082/2108235.pdf"
+      },
+      {
+        "title": "連邦政府：所得税改革2027の政府案",
+        "url": "https://www.bundesregierung.de/breg-de/service/fragen-und-antworten/einkommensteuerreform-2027-2451192"
+      },
+      {
+        "title": "連邦財務省：所得税改革法案2027",
+        "url": "https://www.bundesfinanzministerium.de/Content/DE/Gesetzestexte/Gesetze_Gesetzesvorhaben/Abteilungen/Abteilung_IV/21_Legislaturperiode/2026-08-18-EStReformG-2027/0-Gesetz.html"
+      },
+      {
+        "title": "連邦議会資料管理システム：社会保険計算値令2027（BR-Drs 576/26）",
+        "url": "https://dip.bundestag.de/vorgang/verordnung-%C3%BCber-ma%C3%9Fgebende-rechengr%C3%B6%C3%9Fen-der-sozialversicherung-f%C3%BCr-2027-sozialversicherungsrechengr%C3%B6%C3%9Fen-verordnung-2027/340097"
       }
     ],
     "related_articles": [
@@ -2821,7 +2841,7 @@
     "area": "ドイツ全土",
     "location": "",
     "event_date": "2027年1月1日前後",
-    "next_review": "2026-12-01",
+    "next_review": "2026-11-14",
     "tags": [
       "ドイツ生活",
       "制度改正",
@@ -2835,8 +2855,8 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-21",
-    "updated_at": "2026-11-05",
-    "last_verified": "2026-10-21",
+    "updated_at": "2026-11-07",
+    "last_verified": "2026-11-07",
     "canonical_url": "/germany/ja/events/news/germany-january-2027-changes/",
     "official_url": "",
     "url": "/germany/ja/events/news/germany-january-2027-changes/",
@@ -2848,10 +2868,10 @@
     "sitemap_visible": true,
     "disclaimer_type": "news_explainer",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-21",
-      "next_review_due": "2026-12-01"
+      "status": "needs_review",
+      "reviewed_by": "AI-assisted update; human editorial review pending",
+      "last_reviewed_at": "2026-11-07",
+      "next_review_due": "2026-11-14"
     },
     "image": "/assets/img/events/germany-january-2027-changes.webp",
     "image_alt": "壁の1月のカレンダーと、机の上のノートパソコンと書類を描いたイラスト",
@@ -5759,15 +5779,15 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial (AI-assisted; official sources checked 2026-11-05)",
-      "last_reviewed_at": "2026-11-05",
+      "last_reviewed_at": "2026-11-07",
       "next_review_due": "2026-11-10"
     },
     "title": "ドイツの聖マルティン祭とは？｜11月11日のランタン行列と参加前の確認",
     "category": "季節・文化",
-    "summary": "聖マルティン祭は毎年11月11日。2026年のNRWでは11月6日から13日に地域ごとの行列が予定されています。自治体が公表した開催例から、一般参加できる行事の探し方、当日の流れ、子どものランタンの安全を確認できます。",
+    "summary": "聖マルティン祭は毎年11月11日。2026年11月7日現在、NRWでは11月7日から13日に地域ごとの行列が予定されています。自治体の最新日程、一般参加の確認方法、子どものランタンの安全を整理します。",
     "published_at": "2026-11-01",
-    "last_verified": "2026-11-05",
-    "updated_at": "2026-11-05",
+    "last_verified": "2026-11-07",
+    "updated_at": "2026-11-07",
     "next_review": "2026-11-10",
     "canonical_url": "/germany/ja/events/columns/st-martin-day-germany/",
     "tags": [
@@ -7161,5 +7181,144 @@
     "source_type": "manual",
     "image_caption": "AIの支援でコードから描画したイラスト（J-Connect）。ハンブルクのクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。",
     "image_credit": "AI-assisted vector illustration / J-Connect"
+  },
+  {
+    "id": "N039",
+    "title": "ドイツの放送負担金、2026年11月8日から全国データ照合｜手紙が届いたら",
+    "slug": "rundfunkbeitrag-meldedatenabgleich-2026",
+    "category": "住まい",
+    "summary": "2026年11月8日から始まるドイツの全国住民データ照合について、対象者、データ送信期間、同居人がすでに支払っている場合の回答方法を整理します。通知開始時期は公式ページ間で表記が異なるため、その差も明記します。",
+    "url": "/germany/ja/events/news/rundfunkbeitrag-meldedatenabgleich-2026/",
+    "markdown_path": "/content/events/news/rundfunkbeitrag-meldedatenabgleich-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-11-07",
+    "updated_at": "2026-11-07",
+    "last_verified": "2026-11-07",
+    "next_review": "2026-11-09",
+    "tags": [
+      "放送負担金",
+      "住民登録",
+      "2026年11月",
+      "共同生活",
+      "個人情報",
+      "ドイツ行政"
+    ],
+    "home_visible": false,
+    "home_order": 1000,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/news/rundfunkbeitrag-meldedatenabgleich-2026/",
+    "official_sources": [
+      {
+        "title": "放送負担金事務局：2026年の全国住民データ照合開始に関する2026年11月5日付発表",
+        "url": "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026"
+      },
+      {
+        "title": "放送負担金事務局：2026年全国住民データ照合の質問と回答（2026年11月時点）",
+        "url": "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/informationen/informationen-zum-meldedatenabgleich/fragen-und-antworten-zum-bundesweiten-meldedatenabgleich"
+      },
+      {
+        "title": "放送負担金事務局：照合の手紙が届いた場合の案内（2026年11月5日）",
+        "url": "https://www.rundfunkbeitrag.de/presse-und-aktuelles/servicethemen/ploetzlich-post-vom-beitragsservice-meldedatenabgleich-2026-das-muessen-sie-tun"
+      },
+      {
+        "title": "バイエルン州法令データベース：放送負担金州間協定第11条（個人データの処理）",
+        "url": "https://www.gesetze-bayern.de/Content/Document/RBeitrStV-11"
+      },
+      {
+        "title": "放送負担金事務局：支払い状況のオンライン確認",
+        "url": "https://www.rundfunkbeitrag.de/kontostand"
+      }
+    ],
+    "disclaimer_type": "administrative",
+    "related_articles": [
+      "rundfunkbeitrag-guide",
+      "anmeldung-guide",
+      "moving-checklist-germany"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
+      "last_reviewed_at": "2026-11-07",
+      "next_review_due": "2026-11-09"
+    },
+    "content_type": "news",
+    "city": "ドイツ全土",
+    "location": "ドイツ全土",
+    "event_date": "2026-11-08〜2026-12-08（データ送信期間）",
+    "official_url": "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026",
+    "image": "/assets/img/events/rundfunkbeitrag-meldedatenabgleich-2026.webp",
+    "image_url": "/assets/images/living/anmeldung-preparation.webp",
+    "image_alt": "集合住宅の郵便受けの前の机に封筒が置かれ、横にテレビとラジオがある、放送負担金の通知を表したイラスト",
+    "image_caption": "住民登録情報と放送負担金の照合を説明するためのイメージです。",
+    "source_type": "manual"
+  },
+  {
+    "id": "N040",
+    "title": "Euro 7は2026年11月29日から新しい車種の型式認証に適用｜ドイツで車を買う人向け",
+    "slug": "euro-7-germany-2026",
+    "category": "交通・車",
+    "summary": "EUの新しい車両排出基準Euro 7について、2026年11月29日の新型式認証と、2027年11月29日からの不適合M1・N1新車の登録・販売・使用開始禁止を区別し、既存車への影響、ブレーキ・タイヤの摩耗粉、電動車のバッテリー耐久性を解説します。",
+    "url": "/germany/ja/events/news/euro-7-germany-2026/",
+    "markdown_path": "/content/events/news/euro-7-germany-2026.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-11-07",
+    "updated_at": "2026-11-07",
+    "last_verified": "2026-11-07",
+    "next_review": "2026-11-29",
+    "tags": [
+      "Euro 7",
+      "排出基準",
+      "新車",
+      "車購入",
+      "2026年11月",
+      "電気自動車"
+    ],
+    "home_visible": false,
+    "home_order": 1000,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/events/news/euro-7-germany-2026/",
+    "official_sources": [
+      {
+        "title": "ドイツ連邦環境庁：乗用車・軽商用車の排出基準（2026年8月13日更新）",
+        "url": "https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge"
+      },
+      {
+        "title": "EU規則2024/1257（Euro 7）：車両排出とバッテリー耐久性に関する型式認証規則",
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1257/oj"
+      },
+      {
+        "title": "EU規則2024/1257：2026年9月23日時点の統合版（EUR-Lex）",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02024R1257-20260923"
+      }
+    ],
+    "disclaimer_type": "technical-news",
+    "related_articles": [
+      "buying-registering-car-germany",
+      "winter-tires-germany-2026",
+      "car-insurance-switch-november-2026"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
+      "last_reviewed_at": "2026-11-07",
+      "next_review_due": "2026-11-29"
+    },
+    "content_type": "news",
+    "city": "ドイツ全土",
+    "location": "ドイツ全土",
+    "event_date": "2026-11-29 / 2027-11-29",
+    "official_url": "https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge",
+    "image": "/assets/img/events/euro-7-germany-2026.webp",
+    "image_url": "/assets/img/living/buying-registering-car-germany.webp",
+    "image_alt": "街の道路を走る新しい車と、排出ガスを示すメーターと葉のマークを描いたイラスト",
+    "image_caption": "イラスト：J-Connect。車の購入をイメージしたもので、実際の車種や排出試験を示すものではありません。",
+    "image_credit": "Illustration / J-Connect",
+    "source_type": "manual"
   }
 ]

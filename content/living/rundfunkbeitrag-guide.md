@@ -4,16 +4,16 @@ title: "ドイツの放送負担金（Rundfunkbeitrag・旧GEZ）とは？金額
 slug: "rundfunkbeitrag-guide"
 category: "住まい"
 tags: ["放送負担金", "引っ越し", "共同生活", "学生寮", "公共放送"]
-summary: "ドイツの放送負担金（Rundfunkbeitrag、旧GEZ）について、テレビの所有ではなく住戸単位で負担する理由、月18.36ユーロ・3か月ごとの支払い、同居・共同生活、引っ越し、免除申請の考え方を説明します。"
+summary: "ドイツの放送負担金（Rundfunkbeitrag、旧GEZ）について、テレビの所有ではなく住戸単位で負担する理由、月18.36ユーロ・3か月ごとの支払い、同居・共同生活、引っ越し、免除申請の考え方に加え、2026年11月8日開始の全国住民データ照合と通知への対応を説明します。"
 status: "published"
 published: true
 published_at: "2026-03-10"
-updated_at: "2026-10-31"
-last_verified: "2026-10-31"
-next_review: "2027-01-15"
+updated_at: "2026-11-07"
+last_verified: "2026-11-07"
+next_review: "2026-12-15"
 canonical_url: "/germany/ja/living/rundfunkbeitrag-guide/"
 image_alt: "ドイツの新居で住居に関する書類を確認する日本人の住民"
-related_articles: ["moving-checklist-germany", "germany-first-30-days", "anmeldung-guide"]
+related_articles: ["rundfunkbeitrag-meldedatenabgleich-2026", "moving-checklist-germany", "germany-first-30-days", "anmeldung-guide"]
 official_sources:
   - title: "放送負担金公式サイト：市民向け案内"
     url: "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/informationen"
@@ -25,6 +25,14 @@ official_sources:
     url: "https://www.rundfunkbeitrag.de/presse-und-aktuelles/servicethemen/beitragsmythen-teil-1-ich-kann-den-rundfunkbeitrag-monatlich-zahlen-oder"
   - title: "公共放送の財政需要を算定する委員会（KEF）：2027年からの金額の勧告"
     url: "https://kef-online.de/presse/detail/kef-empfiehlt-deutlich-geringere-anhebung-des-rundfunkbeitrags"
+  - title: "放送負担金事務局：全国住民データ照合の開始（2026年11月5日）"
+    url: "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026"
+  - title: "放送負担金事務局：2026年の照合の質問と回答"
+    url: "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/informationen/informationen-zum-meldedatenabgleich/fragen-und-antworten-zum-bundesweiten-meldedatenabgleich"
+  - title: "放送負担金事務局：照合の手紙が届いたら（2026年11月5日）"
+    url: "https://www.rundfunkbeitrag.de/presse-und-aktuelles/servicethemen/ploetzlich-post-vom-beitragsservice-meldedatenabgleich-2026-das-muessen-sie-tun"
+  - title: "放送負担金州間協定第11条：住民登録データの照合"
+    url: "https://www.gesetze-bayern.de/Content/Document/RBeitrStV-11"
 ---
 
 # ドイツの放送負担金（Rundfunkbeitrag・旧GEZ）とは？金額・同居・引っ越し・免除の手続き
@@ -77,6 +85,18 @@ official_sources:
 
 ![ドイツの住居・行政書類を自宅で整理する日本人の住民](/assets/images/living/japanese-resident-paperwork-editorial-v1.webp "AI生成の編集イメージ。実在の通知書、個人情報、住民ではありません。")
 
+## 2026年11月の全国住民データ照合
+
+2026年11月8日を基準日として、自治体の住民登録情報と放送負担金事務局の登録情報を全国規模で照合します。対象はドイツに住民登録している18歳以上の人で、約7,300万件のデータが11月9日から12月8日まで段階的に送信される予定です。通知開始時期は、11月5日付のプレス発表と公式FAQが「12月14日ごろ」とする一方、同日付のサービス解説記事は「2027年1月から」としており、公式ページ間で差があります（2026年11月7日確認）。本文では発送日を断定せず、個別通知の回答期限を優先するよう案内します。
+
+同じ住戸で家族や同居人がすでに支払っている場合、その人の支払者番号を回答します。オンラインフォームでは通知書の10桁の照会番号（Aktenzeichen）も必要です。郵送の返信用紙には照会番号があらかじめ印字されているため、支払者番号を記入します。手紙が届いたことだけで、同じ住戸に二件目の負担金が発生するわけではありません。通知書に記載された期限と送信完了の記録を保存します。
+
+誰もその住戸の負担金を支払っていない場合は、入居日を基準に登録・請求される可能性があります。2026年の全国照合を通じた遡及登録は、公式FAQによると2024年1月1日より前にはさかのぼりません。免除・減額の要件を満たす場合は、証明書を添えて申請します。なお、照合開始日だけを理由に全員が先に申請する必要はなく、確認の手紙が届いた場合はその案内に従います。
+
+照合は法律に基づく手続きであり、自治体からのデータ送信自体には異議を申し立てられません。未確認データは法律上、最長12か月で削除されます。すでに登録済みの住戸に結び付いた人のデータは、照合後に速やかに削除されると事務局は説明しています。
+
+詳しい日程、手紙が届いた場合の回答方法、過去に回答済みでも再通知される可能性については、[2026年の全国住民データ照合ガイド](/germany/ja/events/news/rundfunkbeitrag-meldedatenabgleich-2026/)を参照してください。支払い状況は[公式の残高確認サービス](https://www.rundfunkbeitrag.de/kontostand)でも確認できます。
+
 ## 放置すると何が起きるか
 
 回答しないままにすると、住戸の状況にもとづいて登録や請求が進み、未払い分、督促、執行手続きへ発展する可能性があります。内容に誤りがある場合も、放置するのではなく、同居開始日や既存の登録番号など根拠を示して訂正します。
@@ -126,9 +146,25 @@ official_sources:
 
 住民登録の転出とあわせて、公式サイトから登録の解約を申請します。手続きが終わったことを示す確認は保存しておきます。
 
+### 2026年の照合で日本人も対象になりますか？
+
+ドイツに住民登録している18歳以上の人が対象です。公式FAQは国籍で対象を限定していないため、日本国籍の成人も対象に含まれます。
+
+### 同居人がすでに支払っているのに手紙が届いたら？
+
+同じ住戸の支払い担当者の支払者番号を確認し、公式フォームまたは返信用紙で回答します。手紙を無視せず、回答期限を守ってください。
+
+### 過去の照合で回答済みでも、再び手紙が届くことはありますか？
+
+あります。過去の照合後に一部の登録データが削除されている場合など、再び確認される可能性があると公式FAQは説明しています。今回の手紙にも回答してください。
+
 ## 公式情報
 
 - [放送負担金公式サイト：市民向け案内](https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/informationen)
 - [放送負担金公式サイト：英語案内](https://www.rundfunkbeitrag.de/welcome/english)
+- [放送負担金事務局：全国住民データ照合の開始（2026年11月5日）](https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026)
+- [放送負担金事務局：2026年の照合の質問と回答](https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/informationen/informationen-zum-meldedatenabgleich/fragen-und-antworten-zum-bundesweiten-meldedatenabgleich)
+- [放送負担金事務局：照合の手紙が届いたら（2026年11月5日）](https://www.rundfunkbeitrag.de/presse-und-aktuelles/servicethemen/ploetzlich-post-vom-beitragsservice-meldedatenabgleich-2026-das-muessen-sie-tun)
+- [放送負担金州間協定第11条：住民登録データの照合](https://www.gesetze-bayern.de/Content/Document/RBeitrStV-11)
 
 金額、免除要件、手続き画面は変わることがあります。実際の登録・変更・解約では公式サイトの最新案内を優先してください。

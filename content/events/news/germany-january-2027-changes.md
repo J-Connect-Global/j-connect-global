@@ -9,9 +9,9 @@ city: "ドイツ全土"
 location: ""
 event_date: "2027年1月1日前後"
 published_at: "2026-10-21"
-updated_at: "2026-11-05"
-last_verified: "2026-10-21"
-next_review: "2026-12-01"
+updated_at: "2026-11-07"
+last_verified: "2026-11-07"
+next_review: "2026-11-14"
 summary: "2027年1月からドイツで変わる制度を、在独日本人の生活に関わる項目に絞って整理。決定済みのものと、まだ法案段階のものを分けて解説します。"
 tags: ["ドイツ生活", "制度改正", "最低賃金", "ドイツチケット", "社会保険", "児童手当", "税金"]
 status: "published"
@@ -37,6 +37,16 @@ official_sources:
     url: "https://www.gesetze-im-internet.de/sgb_5/__223.html"
   - title: "連邦保健省：公的医療保険と民間医療保険の切り替え条件"
     url: "https://www.bundesgesundheitsministerium.de/themen/krankenversicherung/online-ratgeber-krankenversicherung/krankenversicherung/wechsel-zwischen-gkv-und-pkv"
+  - title: "連邦議会：2027年所得税改革法案の第1読会・11月4日専門家公聴会"
+    url: "https://www.bundestag.de/dokumente/textarchiv/2026/kw45-pa-finanzen-est-1225814"
+  - title: "連邦議会：所得税改革法案21/8235"
+    url: "https://dserver.bundestag.de/btd/21/082/2108235.pdf"
+  - title: "連邦政府：所得税改革2027の政府案"
+    url: "https://www.bundesregierung.de/breg-de/service/fragen-und-antworten/einkommensteuerreform-2027-2451192"
+  - title: "連邦財務省：所得税改革法案2027"
+    url: "https://www.bundesfinanzministerium.de/Content/DE/Gesetzestexte/Gesetze_Gesetzesvorhaben/Abteilungen/Abteilung_IV/21_Legislaturperiode/2026-08-18-EStReformG-2027/0-Gesetz.html"
+  - title: "連邦議会資料管理システム：社会保険計算値令2027（BR-Drs 576/26）"
+    url: "https://dip.bundestag.de/vorgang/verordnung-%C3%BCber-ma%C3%9Fgebende-rechengr%C3%B6%C3%9Fen-der-sozialversicherung-f%C3%BCr-2027-sozialversicherungsrechengr%C3%B6%C3%9Fen-verordnung-2027/340097"
 
 ---
 
@@ -48,7 +58,7 @@ official_sources:
 
 ## まず結論：決定済み／未確定の早見表
 
-![最低賃金・ミニジョブ・ドイツチケットは決定済み、社会保険の上限は同意待ち、児童手当と控除は政府案であることを示す図](/assets/images/events/january-2027-status-overview.svg "図解：J-Connect。本文の参考情報に基づく（2026年10月21日時点）。")
+![最低賃金・ミニジョブ・ドイツチケットは決定済み、社会保険の上限は同意待ち、児童手当と控除は政府案であることを示す図](/assets/images/events/january-2027-status-overview.svg "図解：J-Connect。本文の参考情報に基づく（2026年11月7日時点）。")
 
 | 項目 | 2026年 | 2027年 | 状況 |
 | --- | --- | --- | --- |
@@ -63,7 +73,7 @@ official_sources:
 | 所得税の基礎控除 Grundfreibetrag | 12,348ユーロ | 12,564ユーロ（案） | 政府案（未成立） |
 | 被用者概算控除 Arbeitnehmer-Pauschbetrag | 1,230ユーロ | 1,430ユーロ（案） | 政府案（未成立） |
 
-※社会保険の数値・審議状況は2026年11月2日に再確認しました。その他の項目は、各節に記載した確認日と公表元を参照してください。
+※主要な金額と審議状況は2026年11月7日に再確認しました。個別項目の確認日は各節に記載しています。
 
 以下、項目ごとに見ていきます。
 
@@ -102,7 +112,7 @@ official_sources:
 
 公的医療保険と介護保険の上限は、2027年に同じ額ではありません。公的医療保険の保険料算定上限は月6,375ユーロ（年76,500ユーロ）ですが、介護保険は別の法律上の基準を参照するため月6,075ユーロ（年72,900ユーロ）です。BMASが追加引き上げを説明しているのは公的医療保険の上限と一般加入義務上限であり、介護保険の上限と混同しないよう注意してください。
 
-![公的医療保険・介護保険・年金・失業保険の保険料算定上限と、公的医療保険の一般加入義務上限を2026年と2027年で比較した図](/assets/images/events/social-insurance-ceiling-2027.svg "図解：J-Connect。2027年の値は閣議決定済み・連邦参議院の同意待ち（2026年11月2日確認）。")
+![公的医療保険・介護保険・年金・失業保険の保険料算定上限と、公的医療保険の一般加入義務上限を2026年と2027年で比較した図](/assets/images/events/social-insurance-ceiling-2027.svg "図解：J-Connect。2027年の値は閣議決定済み・連邦参議院の同意待ち（2026年11月7日確認）。")
 
 | 項目 | 2026年 | 2027年（予定） |
 | --- | --- | --- |
@@ -113,7 +123,7 @@ official_sources:
 
 介護保険の上限は、社会介護保険法第55条第2項が公的医療保険法第6条第7項の基準を参照するため、一般加入義務上限とは別の数字になります。公的医療保険の保険料算定上限は公的医療保険法第223条第4項で別に定められ、2027年は月6,375ユーロです。
 
-2026年10月7日、連邦内閣は2027年の社会保険計算値令を閣議決定しました。2026年11月2日時点で、BMASの制度ページは連邦参議院（Bundesrat）の同意が必要と案内しており、正式な公布前です。施行予定日は2027年1月1日です。BMASによると、引き上げの影響を受けるのは従来の上限を超えていた人で、被保険者の大多数には変化がありません。
+2026年10月7日、連邦内閣は2027年の社会保険計算値令を閣議決定しました。2026年11月7日時点で、連邦参議院の同意と正式公布はまだ確認できていません。連邦議会の資料管理システムには、政府提出のBR-Drs 576/26（2026年10月7日付）が記録されています。BMASの制度ページは草案の説明を残しているため、10月7日付の閣議決定発表と区別して読み、正式公布までは「閣議決定済み・連邦参議院の同意待ち」と表示します。施行予定日は2027年1月1日です。
 
 ### 会社員として働く人が確認したいこと
 
@@ -122,14 +132,15 @@ official_sources:
 
 ## 5. 児童手当の支給額引き上げは「まだ案」／申請なし支給は導入決定
 
-2027年に向けた所得税改革（Einkommensteuerreform 2027）の政府案が、2026年9月に閣議決定されました。主な内容は次のとおりです。
+2027年に向けた所得税改革（Einkommensteuerreform 2027）の政府案は、2026年9月2日に閣議決定されました。連邦議会は10月8日に第1読会を行い、法案21/8235を財務委員会などへ付託しました。11月4日には財務委員会が専門家公聴会を開催しています。2026年11月7日時点で最終成立・公布は確認できず、以下の金額は法案の提案内容です。公聴会では、複数の専門家がインフレによる税負担増（冷たい累進課税）を十分に相殺できない可能性などを指摘しました。これは専門家の評価であり、法律の確定内容ではありません。主な内容は次のとおりです。
 
 - 児童手当（Kindergeld）：子ども1人あたり月259ユーロ → 267ユーロ（2028年に272ユーロ）
 - 基礎控除（Grundfreibetrag）：12,348ユーロ → 12,564ユーロ（2028年に12,900ユーロ）
 - 被用者概算控除（Arbeitnehmer-Pauschbetrag）：1,230ユーロ → 1,430ユーロ
 - 家事・修理などの手工業者費用控除（Handwerkerbonus）：控除率20%・上限1,200ユーロ → 15%・上限900ユーロに縮小
+- ミニジョブの雇用主側一律源泉税率：2%から5%へ引き上げる案。月収上限633ユーロとは別の論点で、従業員の手取りから単純に5%が差し引かれるという意味ではありません。
 
-この表の金額変更は、2026年10月27日時点で連邦議会・連邦参議院の最終承認を経ていない法案の内容です。金額や時期が変わる可能性があります。特に「Handwerkerbonus」は縮小方向の案なので、リフォームなどを予定している方は成立状況を見ながら支払時期を検討してください。
+この表の金額変更は、2026年11月7日時点で連邦議会・連邦参議院の最終承認を経ていない法案の内容です。金額や時期が変わる可能性があります。特に「Handwerkerbonus」は縮小方向の案なので、リフォームなどを予定している方は成立状況を見ながら支払時期を検討してください。
 
 これとは別に、Kindergeldを申請なしで支給する手続きの改正は、連邦議会が2026年7月9日に可決し、連邦参議院も9月25日に同意しました。政府の公式案内では2027年1月1日施行予定で、実際の自動支給は2027年3月頃に第2子以降、11月頃に第1子へ段階的に広げる見込みです。ただし、第1子の段階では国内居住、既知のIBAN、少なくとも親の一人の国内就労などの条件があり、情報が不足する場合は従来どおり申請が必要になることがあります。支給日・番号末尾別の日程・条件は[Kindergeld 2027年の支給日一覧](/germany/ja/living/kindergeld-auszahlungstermine-2027/)で確認してください。
 
@@ -147,7 +158,7 @@ official_sources:
 3. **医療保険の通知をチェック**：保険組合から届く2027年の追加保険料率のお知らせを見落とさない。
 4. **児童手当・税制は続報待ち**：政府案の段階なので、成立を確認してから家計の計画に組み込む。
 
-## 参考情報（初回確認：2026年10月21日／児童手当関連の更新：2026年10月27日／最低賃金・ミニジョブ詳細：2026年10月28日／社会保険の再確認：2026年11月2日）
+## 参考情報（初回確認：2026年10月21日／児童手当関連の更新：2026年10月27日／最低賃金・ミニジョブ詳細：2026年10月28日／社会保険・税制法案の再確認：2026年11月7日）
 
 - [連邦労働社会省：2027年の社会保険計算値を閣議決定（2026年10月7日）](https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2026/bundeskabinett-beschliesst-sozialversicherungsrechengroessen-2027.html)
 - [連邦労働社会省：社会保険計算値令2027の審議状況と数値](https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/sozialversicherungs-rechengroessenverordnung-2027.html)
@@ -157,7 +168,12 @@ official_sources:
 - [連邦保健省：公的医療保険と民間医療保険の切り替え条件](https://www.bundesgesundheitsministerium.de/themen/krankenversicherung/online-ratgeber-krankenversicherung/krankenversicherung/wechsel-zwischen-gkv-und-pkv)
 - [Deutsche Bahn：Deutschlandticketの契約変更FAQ](https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt)
 - [連邦政府：申請なし支給の導入時期・条件（連邦参議院の同意）](https://www.bundesregierung.de/breg-de/aktuelles/kindergeld-ohne-antrag-2412916)
-- [連邦議会：2027年所得税改革法案の審議状況](https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520)
+- [連邦議会：2027年所得税改革法案の審議状況（10月8日第1読会・11月4日公聴会）](https://www.bundestag.de/dokumente/textarchiv/2026/kw45-pa-finanzen-est-1225814)
+- [連邦議会：所得税改革法案21/8235](https://dserver.bundestag.de/btd/21/082/2108235.pdf)
+- [連邦政府：所得税改革2027の政府案（2026年9月2日）](https://www.bundesregierung.de/breg-de/service/fragen-und-antworten/einkommensteuerreform-2027-2451192)
+- [連邦財務省：所得税改革法案2027](https://www.bundesfinanzministerium.de/Content/DE/Gesetzestexte/Gesetze_Gesetzesvorhaben/Abteilungen/Abteilung_IV/21_Legislaturperiode/2026-08-18-EStReformG-2027/0-Gesetz.html)
+- [連邦議会資料管理システム：社会保険計算値令2027（BR-Drs 576/26）](https://dip.bundestag.de/vorgang/verordnung-%C3%BCber-ma%C3%9Fgebende-rechengr%C3%B6%C3%9Fen-der-sozialversicherung-f%C3%BCr-2027-sozialversicherungsrechengr%C3%B6%C3%9Fen-verordnung-2027/340097)
+- [連邦議会：2027年所得税改革法案の第1読会](https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520)
 - [連邦労働社会省：第5次最低賃金調整令](https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/fuenfte-mindestlohnanpassungsverordnung-milov5.html)
 - [社会法典第4編第8条：ミニジョブの収入上限の計算式](https://www.gesetze-im-internet.de/sgb_4/__8.html)
 - [ミニジョブ・センター：複数の仕事](https://www.minijob-zentrale.de/DE/die-minijobs/mehrere-jobs/mehrere-jobs_node.html)

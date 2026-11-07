@@ -1563,14 +1563,14 @@
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
     "image_alt": "ドイツの新居で住居に関する書類を確認する日本人の住民",
     "category": "住まい",
-    "summary": "ドイツの放送負担金（Rundfunkbeitrag、旧GEZ）について、テレビの所有ではなく住戸単位で負担する理由、月18.36ユーロ・3か月ごとの支払い、同居・共同生活、引っ越し、免除申請の考え方を説明します。",
+    "summary": "ドイツの放送負担金（Rundfunkbeitrag、旧GEZ）について、テレビの所有ではなく住戸単位で負担する理由、月18.36ユーロ・3か月ごとの支払い、同居・共同生活、引っ越し、免除申請の考え方に加え、2026年11月8日開始の全国住民データ照合と通知への対応を説明します。",
     "url": "/germany/ja/living/rundfunkbeitrag-guide/",
     "markdown_path": "/content/living/rundfunkbeitrag-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-03-10",
-    "updated_at": "2026-10-31",
-    "last_verified": "2026-10-31",
+    "updated_at": "2026-11-07",
+    "last_verified": "2026-11-07",
     "tags": [
       "放送負担金",
       "引っ越し",
@@ -1585,6 +1585,7 @@
     "sitemap_visible": true,
     "canonical_url": "/germany/ja/living/rundfunkbeitrag-guide/",
     "related_articles": [
+      "rundfunkbeitrag-meldedatenabgleich-2026",
       "moving-checklist-germany",
       "germany-first-30-days",
       "anmeldung-guide"
@@ -1609,14 +1610,30 @@
       {
         "title": "公共放送の財政需要を算定する委員会（KEF）：2027年からの金額の勧告",
         "url": "https://kef-online.de/presse/detail/kef-empfiehlt-deutlich-geringere-anhebung-des-rundfunkbeitrags"
+      },
+      {
+        "title": "放送負担金事務局：全国住民データ照合の開始（2026年11月5日）",
+        "url": "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026"
+      },
+      {
+        "title": "放送負担金事務局：2026年の照合の質問と回答",
+        "url": "https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/informationen/informationen-zum-meldedatenabgleich/fragen-und-antworten-zum-bundesweiten-meldedatenabgleich"
+      },
+      {
+        "title": "放送負担金事務局：照合の手紙が届いたら（2026年11月5日）",
+        "url": "https://www.rundfunkbeitrag.de/presse-und-aktuelles/servicethemen/ploetzlich-post-vom-beitragsservice-meldedatenabgleich-2026-das-muessen-sie-tun"
+      },
+      {
+        "title": "放送負担金州間協定第11条：住民登録データの照合",
+        "url": "https://www.gesetze-bayern.de/Content/Document/RBeitrStV-11"
       }
     ],
     "disclaimer_type": "administrative",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-31",
-      "next_review_due": "2027-01-15"
+      "last_reviewed_at": "2026-11-07",
+      "next_review_due": "2026-12-15"
     }
   },
   {
@@ -4306,8 +4323,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-29",
-    "updated_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "updated_at": "2026-11-07",
+    "last_verified": "2026-11-07",
     "next_review": "2027-10-29",
     "home_visible": false,
     "home_order": 120,
@@ -4319,8 +4336,8 @@
     "review": {
       "status": "needs_review",
       "reviewed_by": "AI official-source verification; expert review pending",
-      "last_reviewed_at": "2026-10-29",
-      "next_review_due": "2027-10-29"
+      "last_reviewed_at": "2026-11-07",
+      "next_review_due": "2027-05-29"
     },
     "tags": [
       "車",
@@ -4330,6 +4347,7 @@
       "運転免許"
     ],
     "related_articles": [
+      "euro-7-germany-2026",
       "drivers-license-japan-germany",
       "car-insurance-switch-november-2026",
       "winter-tires-germany-2026"
@@ -4358,6 +4376,14 @@
       {
         "title": "ケルン市：車のオンライン登録",
         "url": "https://www.stadt-koeln.de/service/produkte/20020/index.html"
+      },
+      {
+        "title": "ドイツ連邦環境庁：乗用車・小型商用車の排出基準",
+        "url": "https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge"
+      },
+      {
+        "title": "EU規則2024/1257：Euro 7",
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1257/oj"
       }
     ],
     "image_alt": "街の道路を走る車と、ナンバープレート、書類を描いたイラスト",

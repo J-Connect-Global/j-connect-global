@@ -106,3 +106,14 @@
 - https://www.computerbase.de/news/wirtschaft/rundfunkbeitrag-beitragsservice-gleicht-meldedaten-ab-8-november-erneut-ab.100206/
 - https://www.adac.de/rund-ums-fahrzeug/autokatalog/abgasnormen/euro-7/
 - https://www.tuev-nord.de/de/wissen/ratgeber-und-tipps-mobilitaet/neue-regeln-fuer-autofahrer/
+
+
+## 7. 既存記事N023「2027年1月からの変更」更新
+
+- 公開済みN023をPRブランチ上で更新し、更新日・確認日を2026年11月7日、次回確認日を11月14日に設定。
+- 2027年所得税改革法案は、2026年10月8日の第1読会後に財務委員会へ付託され、11月4日に専門家公聴会を実施。11月7日時点で最終成立・公布は確認できないため、Kindergeld・Grundfreibetrag・Handwerkerbonus等の変更は法案提案として明示。
+- 雇用主側ミニジョブ一律源泉税率2%→5%案を、月額上限633ユーロとは別の論点として追記。従業員本人の手取りから5%が直接差し引かれるという誤解を避ける。
+- 2027年社会保険計算値は10月7日の閣議決定と、連邦参議院の同意・正式公布前という状態を分けて記載。BR-Drs 576/26、BMASの制度ページ、閣議決定発表を参照。
+- 既存の2点のオリジナルSVG図解の日付表記を11月7日に更新。本文、公式情報一覧、レジストリ、検索インデックス、記事HTML、ドイツ語版トップのニュース日付、サイトマップ最終更新日を同期。
+- レジストリのレビュー状態は `needs_review` とし、AI-assisted update / human editorial review pending を明記。人による最終確認前にこの更新を本番へ公開しない。
+- 変更後のN023は既存URLを維持し、新規URLは作成していない。

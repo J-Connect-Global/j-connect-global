@@ -2057,7 +2057,7 @@ function submitJobPosting_(params) {
     visa_support: { max: 120 },
     start_date: { max: 120 },
     publish_date: { max: 120 },
-    apply_method: { max: 240 },
+    apply_method: { required: true, max: 240 },
     summary: { required: true, max: 1000 },
     job_details: { required: true, max: 6000 },
     requirements: { required: true, max: 4000 },
@@ -2069,6 +2069,10 @@ function submitJobPosting_(params) {
   });
   if (!fields.ok) return safeFormFailure_(fields.code);
   if (!isReasonableFormCompletion_(fields.values.form_started_at)) return safeFormFailure_('FORM_TIMING');
+  // The public job data drops application methods that contain an email
+  // address, and publication requires one, so reject it while the employer
+  // can still correct it.
+  if (PUBLIC_EMAIL_ADDRESS_PATTERN.test(fields.values.apply_method)) return safeFormFailure_('APPLY_METHOD_EMAIL');
 
   const value = fields.values;
   const submissionKey = sha256Hex_([
@@ -2327,7 +2331,8 @@ function safeFormFailure_(code) {
     RATE_LIMITED: '短時間に複数回送信されています。しばらくしてから再度お試しください。',
     ZOHO_AUTH_FAILED: '現在送信を受け付けられません。時間をおいて再度お試しください。',
     ZOHO_SEND_FAILED: '現在送信を受け付けられません。時間をおいて再度お試しください。',
-    JOB_STORAGE_FAILED: '求人掲載依頼を保存できませんでした。時間をおいて再度お試しください。'
+    JOB_STORAGE_FAILED: '求人掲載依頼を保存できませんでした。時間をおいて再度お試しください。',
+    APPLY_METHOD_EMAIL: '応募方法にメールアドレスは記載できません。応募フォームのURLや応募手順をご記入ください。'
   };
   return { ok: false, success: false, code, error: messages[code] || '送信を完了できませんでした。時間をおいて再度お試しください。' };
 }

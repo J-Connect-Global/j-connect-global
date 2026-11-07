@@ -312,6 +312,17 @@ function testJobPersistenceIdempotencyAndThrottling() {
   assert(cacheKeys.every((key) => !key.includes("person@example.com") && !key.includes("other@example.com")), "Raw email leaked into a rate-limit cache key.");
 }
 
+function testJobPostingRequiresPublishableApplicationMethod() {
+  const now = Date.now();
+  const jobs = jobSheet();
+  const runtime = createRuntime([jobs], () => ({ sent: true }), { now });
+  const missing = runtime.sandbox.submitJobPosting_(validJobParams(now, { apply_method: "  " }));
+  assert(!missing.ok && missing.code === "MISSING_REQUIRED_FIELD", "Job posting without an application method was accepted.");
+  const email = runtime.sandbox.submitJobPosting_(validJobParams(now, { apply_method: "recruit@example.com まで" }));
+  assert(!email.ok && email.code === "APPLY_METHOD_EMAIL", "Job posting with an email-only application method was accepted.");
+  assert(jobs.rows.length === 1, "Rejected job postings were stored.");
+}
+
 function testJobPostingGrowsFullWidthSheet() {
   const now = Date.now();
   const template = jobSheet();
@@ -726,6 +737,7 @@ testBoundModerationSelection();
 testBerlinTimestamps();
 testJobPersistenceIdempotencyAndThrottling();
 testJobPostingGrowsFullWidthSheet();
+testJobPostingRequiresPublishableApplicationMethod();
 testCommunityAdminFailureIsolation();
 testCommunityPublicLifecycleAndCacheBypass();
 testCommunityInquiryPrivacyAndAbuseControls();

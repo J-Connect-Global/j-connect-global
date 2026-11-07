@@ -5,7 +5,7 @@
  * server-only pepper; nothing that can reproduce it is stored in the workbook.
  * Links do not expire with time. Revoking access rotates the derivation input.
  */
-const CM_VERSION = '2026-10-23.1';
+const CM_VERSION = '2026-11-07.1';
 const CM_PATH = '/germany/ja/community/conversation/';
 const CM_HOUR = 60 * 60 * 1000;
 const CM_TABLES = {

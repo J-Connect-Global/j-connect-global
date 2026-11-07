@@ -8,7 +8,7 @@ summary: "ドイツの鉄道を初めて使う人向けに、長距離列車と�
 status: "published"
 published: true
 published_at: "2026-08-03"
-updated_at: "2026-11-06"
+updated_at: "2026-11-07"
 last_verified: "2026-11-06"
 next_review: "2027-02-28"
 canonical_url: "/germany/ja/living/germany-train-travel-guide/"
@@ -23,6 +23,8 @@ official_sources:
     url: "https://int.bahn.de/en/booking-information/passenger-rights"
   - title: "ドイツ鉄道：子どもと旅行する場合"
     url: "https://int.bahn.de/en/offers/additional-services/travelling-with-children"
+  - title: "所得税法第3条第15号：会社の公共交通の補助は非課税"
+    url: "https://www.gesetze-im-internet.de/estg/__3.html"
   - title: "ラインバーン：公共交通の案内"
     url: "https://www.rheinbahn.de/"
 image: "/assets/img/living/germany-train-travel-guide.webp"
@@ -83,6 +85,14 @@ ICEは高速列車、ICとECは都市間列車です。REやRBは地域の駅を
 また、ドイツ鉄道の時刻表は毎年12月に切り替わります。2027年の新ダイヤは**2026年12月13日**からで、NRWからベルリン方面は工事のため所要時間が延びる期間があります。年末年始に移動する人は、12月13日以降の列車を予約前に確認してください。詳しくは「[DBの2027年ダイヤ](/germany/ja/events/news/db-2027-timetable-family-ticket/)」にまとめています。
 
 この定期券は月単位の継続契約です。旅行の一日だけ買う切符ではないため、申し込み先の解約期限を確認してください。地域交通だけで遠くまで行けても、乗り換えが増え、遅延時の扱いが長距離切符と異なる点にも注意が必要です。
+
+申し込みと使い方で、あらかじめ知っておきたい点は次のとおりです。
+
+- **持ち方**：スマートフォンのアプリかICカードで持ちます。紙の切符はありません。記名式で、検札ではパスポートや滞在カードなどの身分証明書を求められることがあります。
+- **支払い**：多くの販売会社はドイツの銀行口座からの引き落としです。口座を開く前は、クレジットカードを使える販売会社を選びます。
+- **会社の補助**：勤め先が料金の一部を補助する職場向けの定期券があります。会社が通勤の公共交通の費用を補助する場合、その補助には所得税がかかりません（[所得税法第3条第15号](https://www.gesetze-im-internet.de/estg/__3.html)）。
+- **学生**：多くの大学では、学期ごとの交通券に全国共通の定期券が含まれているか、差額を払って切り替えられます。
+- **子ども・自転車**：子どもの料金や自転車を乗せる料金は、地域の交通連合ごとに決まっています。
 
 ## 駅表示の読み方
 

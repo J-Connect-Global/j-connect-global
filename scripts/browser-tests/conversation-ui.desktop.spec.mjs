@@ -133,7 +133,7 @@ test('a deleted or hidden original post explains that resend cannot restore the 
   await page.route('https://script.google.com/**',async route=>{
     const action=new URLSearchParams(route.request().postData()||'').get('action');
     const data=action==='communityMessagingStatus'
-      ? {ok:true,messaging_version:'2026-10-23.1',public_replies:true,private_conversations:true,persistent_links:true}
+      ? {ok:true,messaging_version:'2026-11-07.1',public_replies:true,private_conversations:true,persistent_links:true}
       : action==='communityUseAccess'
         ? {ok:false,code:'CLOSED',error:'元の投稿が削除・非公開になっています。'}
         : {ok:true};
@@ -154,7 +154,7 @@ test('a closed conversation response after access exchange also suppresses resen
   await page.route('https://script.google.com/**',async route=>{
     const action=new URLSearchParams(route.request().postData()||'').get('action');
     const data=action==='communityMessagingStatus'
-      ? {ok:true,messaging_version:'2026-10-23.1',public_replies:true,private_conversations:true,persistent_links:true}
+      ? {ok:true,messaging_version:'2026-11-07.1',public_replies:true,private_conversations:true,persistent_links:true}
       : action==='communityUseAccess'
         ? {ok:true,id:'conversation-ui',scope:'conversation',session}
         : action==='communityGetConversation'

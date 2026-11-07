@@ -50,7 +50,7 @@
 
 Script Propertiesの既存値は変更しません。旧Config.gsの重複ヘルパーを戻さないでください。`initializeCommunityMessaging` は既存の8つの非公開シートのヘッダー末尾に必要な列（2026-10-21は `Community Replies` と `Community Participants` の `access_revoked_at`）だけを追加し、番号と内部pepperを準備します。既存行の削除やテーブルの作り直しはしません。未確認・未承認の旧返信を自動で公開しません。
 
-**Deploy → Manage deployments → Edit → New version** で既存Webアプリを更新します。公開状態APIに `messaging_version:2026-10-23.1`、`inline_replies:true`、`instant_publish:true`、`persistent_links:true` があることを確認します。サイトと旧API、旧サイトと新APIのどちらの組み合わせでも会話は開けます（旧APIの間はリンクが1時間で失効します）。古いAPIの場合はフォームを停止し、旧メール転送へ戻しません。
+**Deploy → Manage deployments → Edit → New version** で既存Webアプリを更新します。公開状態APIに `messaging_version:2026-11-07.1`、`inline_replies:true`、`instant_publish:true`、`persistent_links:true` があることを確認します。サイトと旧API、旧サイトと新APIのどちらの組み合わせでも会話は開けます（旧APIの間はリンクが1時間で失効します）。古いAPIの場合はフォームを停止し、旧メール転送へ戻しません。
 
 非公開シートやScript Propertiesを公開JSONへ追加しません。静的同期は `CM_PUBLIC_DIRTY` を既存5分トリガーで処理し、通常の定期同期も維持します。公開詳細の既存noindex方針を維持し、会話ページには解析・シェアスクリプトを読み込みません。
 
@@ -71,3 +71,18 @@ Script Propertiesの既存値は変更しません。旧Config.gsの重複ヘル
 本番では最新APIの対応状態、元の公開投稿の取得、認証なしでの会話アクセス拒否、詳細ページのフォームを確認します。運営管理の2つのテスト受信箱での実配信・往復も確認対象ですが、許可なしに既存の投稿者へテスト通知を送りません。
 
 ロールバックではまずフォームを停止し、旧バージョンのGASとサイトに戻します。新規の `published` 返信と追加列は旧コードから見えない場合があるため、旧ヘッダー前提のコードをそのまま使わず互換性を確認してください。旧submitInquiryのメール転送は再有効化しません。
+
+
+## 2026年11月7日：Apps Scriptハードニング版の識別
+
+PR #432でmainに統合されたApps Scriptのハードニング（スプレッドシート式注入対策、管理者が非表示・却下した投稿の再編集防止、画像形式・容量・署名検証、確認メール送信のロック下スロットル）は、静的サイトの更新だけでは本番へ反映されません。Master Apps Scriptプロジェクトへ正式ソースを反映し、Webアプリの新バージョンをデプロイしてください。
+
+今回のソース識別子は `CM_VERSION=2026-11-07.1` です。公開ステータスAPIがこの値を返すまでは、ハードニング版が本番で動作しているとは扱いません。デプロイ後は次を確認します。
+
+1. `communityMessagingStatus` が `messaging_version=2026-11-07.1` と主要機能フラグを返す。
+2. `getPosts` が正常応答し、非公開データや削除済み投稿を返さない。
+3. `inspectCommunityPublicationSync()` で5分トリガーの登録状態、最終実行、失敗ログを確認する。
+4. トリガーがない場合に限り、Apps Scriptエディターから `installCommunityApprovalNotificationTrigger()` を実行する。通常メニューには表示されない。
+5. 専用テスト受信箱を用意してから、公開返信・非公開会話・招待リンク再送・通知メールをE2E確認する。実利用者へテスト通知を送らない。
+
+このバージョン番号はデプロイ識別用です。機能フラグがtrueであることだけでは、メール配送やトリガー実行の成功を証明しません。

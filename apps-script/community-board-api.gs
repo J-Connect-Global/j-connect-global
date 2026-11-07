@@ -1355,9 +1355,20 @@ function ensureHeaders_(context, requiredHeaders) {
     return true;
   });
   if (missing.length) {
-    context.sheet.getRange(context.headerRowNumber, context.headers.length + 1, 1, missing.length).setValues([missing]);
+    const firstNewColumn = context.headers.length + 1;
+    ensureSheetColumnCapacity_(context.sheet, firstNewColumn + missing.length - 1);
+    context.sheet.getRange(context.headerRowNumber, firstNewColumn, 1, missing.length).setValues([missing]);
   }
   return missing.length ? getSheetContextForSheet_(context.sheet, context.sheet.getName() === JOBS_SHEET_NAME ? 'job' : 'community') : context;
+}
+
+// Sheets rejects ranges beyond the grid ("outside the dimensions of the sheet"),
+// so a sheet whose header already fills every column must grow before new
+// management headers can be added.
+function ensureSheetColumnCapacity_(sheet, requiredColumns) {
+  if (typeof sheet.getMaxColumns !== 'function') return;
+  const maxColumns = sheet.getMaxColumns();
+  if (maxColumns < requiredColumns) sheet.insertColumnsAfter(maxColumns, requiredColumns - maxColumns);
 }
 
 function firstExistingHeader_(context, aliases) {
@@ -2067,9 +2078,9 @@ function submitJobPosting_(params) {
     value.form_started_at
   ].join('|'));
   const lock = LockService.getScriptLock();
-  lock.waitLock(10000);
   let saved;
   try {
+    lock.waitLock(10000);
     let context = getJobsSheetContext_();
     context = ensureHeaders_(context, jobManagementHeadersForContext_(context));
     validateJobStorageHeaders_(context);
@@ -2091,8 +2102,9 @@ function submitJobPosting_(params) {
       jobId
     };
   } catch (error) {
-    console.warn(`Job posting storage failed: ${safeJobStorageErrorCode_(error)}`);
-    return safeFormFailure_('JOB_STORAGE_FAILED');
+    const storageCode = safeJobStorageErrorCode_(error);
+    console.warn(`Job posting storage failed: ${storageCode} (${String(error && error.message || error)})`);
+    return Object.assign(safeFormFailure_('JOB_STORAGE_FAILED'), { storage_code: storageCode });
   } finally {
     if (lock.hasLock()) lock.releaseLock();
   }

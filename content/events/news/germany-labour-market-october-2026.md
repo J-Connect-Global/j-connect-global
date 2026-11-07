@@ -8,14 +8,14 @@ area: "ドイツ全土"
 city: "ドイツ全土"
 location: ""
 event_date: "2026年10月統計・10月30日公表"
-published_at: ""
+published_at: "2026-11-07"
 updated_at: "2026-11-05"
 last_verified: "2026-11-05"
 next_review: "2026-11-30"
 summary: "連邦雇用庁の2026年10月統計では、登録失業者は295万5,000人、失業率は6.3％でした。前月比4万人減でも、季節調整後は4,000人増、前年同月比では4万4,000人増です。求人と広義の雇用不足指標を分け、求職者が地域・職種の状況を確認する方法を整理します。"
 tags: ["ドイツ雇用", "失業率", "転職", "求人", "求職", "労働市場"]
-status: "draft"
-published: false
+status: "published"
+published: true
 source_type: "manual"
 canonical_url: "/germany/ja/events/news/germany-labour-market-october-2026/"
 official_url: "https://www.arbeitsagentur.de/presse/2026-41-arbeitsmarkt-im-oktober-2026"
@@ -37,6 +37,10 @@ official_sources:
     url: "https://www.gesetze-im-internet.de/sgb_3/__38.html"
   - title: "法令：社会法典第3編第141条（失業登録）"
     url: "https://www.gesetze-im-internet.de/sgb_3/__141.html"
+image: "/assets/img/events/germany-labour-market-october-2026.webp"
+image_alt: "求人の紙が貼られた掲示板と、机の上のノートパソコンとかばんを描いた、仕事探しを表したイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。雇用と仕事探しを表したもので、実在の求人や機関を描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 ---
 
 # ドイツの失業率は2026年10月に6.3％｜登録失業者295.5万人、季節調整後は増加

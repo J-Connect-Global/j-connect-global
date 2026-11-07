@@ -8,14 +8,14 @@ area: "ドイツ全土"
 city: "ドイツ全土"
 location: ""
 event_date: "2026年10月統計・10月30日速報"
-published_at: ""
+published_at: "2026-11-07"
 updated_at: "2026-11-05"
 last_verified: "2026-11-05"
 next_review: "2026-11-11"
 summary: "ドイツ連邦統計局の10月速報では、消費者物価は前年同月比2.8％上昇、前月比0.2％低下。9月の3.3％から伸びは鈍化しましたが、エネルギーは前年比12.2％上昇しています。速報値の読み方と家計で確認すべき点を整理します。"
 tags: ["物価", "インフレ", "家計", "エネルギー", "消費者物価", "ドイツ生活"]
-status: "draft"
-published: false
+status: "published"
+published: true
 source_type: "manual"
 canonical_url: "/germany/ja/events/news/germany-inflation-october-2026/"
 official_url: "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_382_611.html"
@@ -27,6 +27,10 @@ official_sources:
     url: "https://www.destatis.de/DE/Themen/Wirtschaft/Preise/Verbraucherpreisindex/_inhalt.html"
   - title: "連邦統計局：2026年9月の消費者物価・確定値（10月13日）"
     url: "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_364_611.html"
+image: "/assets/img/events/germany-inflation-october-2026.webp"
+image_alt: "机の上の買い物かごと、上がっていく棒グラフ、レシートを描いた、物価の上昇を表したイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。物価の動きを表したもので、実際の統計グラフではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 ---
 
 # ドイツの物価は2026年10月に2.8％上昇｜9月から鈍化、エネルギー高は続く

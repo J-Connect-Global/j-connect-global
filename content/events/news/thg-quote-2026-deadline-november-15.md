@@ -8,14 +8,14 @@ area: "ドイツ全土"
 city: "ドイツ全土"
 location: ""
 event_date: "2026年の申告期限・11月15日（日）"
-published_at: ""
+published_at: "2026-11-07"
 updated_at: "2026-11-05"
 last_verified: "2026-11-05"
 next_review: "2026-11-10"
 summary: "ドイツで登録した純電気自動車の2026年分THG-Quoteは、非公開充電の定額推計について法令上の基準日が11月15日です。2026年は日曜日に当たるため、行政手続の一般的な期限延長規定が適用されるかを区別し、公共充電の翌年2月28日、環境庁手数料、仲介事業者の受付期限を整理します。"
 tags: ["THG-Quote", "電気自動車", "EV", "交通・車", "申請期限", "環境庁"]
-status: "draft"
-published: false
+status: "published"
+published: true
 source_type: "manual"
 canonical_url: "/germany/ja/events/news/thg-quote-2026-deadline-november-15/"
 official_url: "https://www.umweltbundesamt.de/themen/verkehr/kraftstoffe-antriebe/vollzug-38-bimschv-anrechnung-von-strom-fuer"
@@ -33,6 +33,10 @@ official_sources:
     url: "https://www.gesetze-im-internet.de/vwvfg/__31.html"
   - title: "ADAC：2026年のTHG-Quoteと申請の仕組み（2026年6月24日）"
     url: "https://www.adac.de/rund-ums-fahrzeug/elektromobilitaet/elektroauto/thg-quote/"
+image: "/assets/img/events/thg-quote-2026-deadline-november-15.webp"
+image_alt: "充電スタンドにつながった電気自動車と、葉のマークが入った証書を描いたイラスト"
+image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。電気自動車と温室効果ガスの削減証書を表したもので、実在の車種や書類を描いたものではありません。"
+image_credit: "AI-assisted vector illustration / J-Connect"
 ---
 
 # ドイツのTHG-Quote 2026｜電気自動車の申告期限は11月15日（日）、休日扱いと手数料

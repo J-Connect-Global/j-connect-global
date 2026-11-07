@@ -1,11 +1,13 @@
 {
   "api_version": "2026-07-13.1",
   "source": "master-gas:jobs",
-  "count": 4,
+  "count": 10,
   "groups": [
     {
       "field": "region",
       "values": [
+        "Düsseldorf",
+        "test",
         "デュッセルドルフ",
         "ハンブルク",
         "フランクフルト"
@@ -14,6 +16,8 @@
     {
       "field": "city",
       "values": [
+        "Düsseldorf",
+        "test",
         "デュッセルドルフ",
         "ハンブルク",
         "フランクフルト"
@@ -31,7 +35,9 @@
       "field": "employment_type",
       "values": [
         "インターン",
-        "正社員"
+        "契約社員 / Contract",
+        "正社員",
+        "正社員 / Full-time"
       ]
     },
     {
@@ -43,5 +49,5 @@
       "values": []
     }
   ],
-  "generated_at": "2026-07-16T19:11:04.281Z"
+  "generated_at": "2026-11-07T16:44:38.357Z"
 }

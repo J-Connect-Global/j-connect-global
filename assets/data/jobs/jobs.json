@@ -2,8 +2,54 @@
   "api_version": "2026-07-13.1",
   "source": "master-gas:jobs",
   "endpoint": "canonicalMasterEndpoint?sheet=jobs&lang=ja&status=active",
-  "count": 9,
+  "count": 10,
   "items": [
+    {
+      "id": "job_049e76b9-ec50-4bf0-a078-7e9190cbcf63",
+      "job_id": "job_049e76b9-ec50-4bf0-a078-7e9190cbcf63",
+      "slug": "test-test-test-job-049e76b9-ec50-4bf0-a078-7e9190cbcf63",
+      "detail_url": "/germany/ja/jobs/job_049e76b9-ec50-4bf0-a078-7e9190cbcf63/",
+      "status": "active",
+      "priority": 999,
+      "company_name": "test",
+      "position_title": "test",
+      "employment_type": "正社員 / Full-time",
+      "city": "test",
+      "region": "test",
+      "location": "test",
+      "work_style": "",
+      "language": "",
+      "category": "",
+      "detail_category": "",
+      "tags": "",
+      "skills": "",
+      "salary_min_eur": 0,
+      "salary_max_eur": 0,
+      "salary_currency": "",
+      "salary_unit": "",
+      "salary_label": "",
+      "summary": "test",
+      "short_description": "test",
+      "job_details": "test",
+      "description": "test",
+      "requirements": "test",
+      "benefits": "",
+      "apply_url": "",
+      "application_url": "",
+      "apply_method": "testtest",
+      "company_url": "",
+      "source_url": "",
+      "source_name": "",
+      "visa_support": "なし / Not available",
+      "company_logo_url": "",
+      "logo_url": "",
+      "image_url": "",
+      "image_alt": "test",
+      "published_at": "",
+      "updated_at": "2026-11-07T16:41:45.852Z",
+      "created_at": "2026-11-07T16:41:45.852Z",
+      "expires_at": ""
+    },
     {
       "id": "job_3b117889-20d7-49c0-b4d7-46dc4183329c",
       "job_id": "job_3b117889-20d7-49c0-b4d7-46dc4183329c",
@@ -421,14 +467,14 @@
   ],
   "validation": {
     "source_count": 10,
-    "explicitly_active_count": 9,
-    "eligible_count": 9,
-    "excluded_count": 1,
+    "explicitly_active_count": 10,
+    "eligible_count": 10,
+    "excluded_count": 0,
     "excluded_by_reason": {
-      "status_not_active": 1
+      "status_not_active": 0
     },
     "excluded_safe_ids": {},
-    "generated_count": 9
+    "generated_count": 10
   },
-  "generated_at": "2026-11-07T16:42:54.531Z"
+  "generated_at": "2026-11-07T16:44:38.357Z"
 }

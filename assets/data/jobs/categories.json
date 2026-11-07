@@ -1,7 +1,7 @@
 {
   "api_version": "2026-07-13.1",
   "source": "master-gas:jobs",
-  "count": 9,
+  "count": 10,
   "groups": [
     {
       "field": "region",
@@ -49,5 +49,5 @@
       "values": []
     }
   ],
-  "generated_at": "2026-11-07T16:42:54.531Z"
+  "generated_at": "2026-11-07T16:44:38.357Z"
 }

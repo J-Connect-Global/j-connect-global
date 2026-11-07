@@ -7239,8 +7239,8 @@
       "moving-checklist-germany"
     ],
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "J-Connect editorial — automated source check completed; human editorial review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
       "last_reviewed_at": "2026-11-07",
       "next_review_due": "2026-11-09"
     },
@@ -7304,8 +7304,8 @@
       "car-insurance-switch-november-2026"
     ],
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "J-Connect editorial — automated source check completed; human editorial review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
       "last_reviewed_at": "2026-11-07",
       "next_review_due": "2026-11-29"
     },

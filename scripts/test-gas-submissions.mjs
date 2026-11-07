@@ -277,6 +277,13 @@ function testJobPersistenceIdempotencyAndThrottling() {
   assert(saved.contact_name === "担当者" && saved.contact_email === "person@example.com", "Private contact fields were not stored for review.");
   assert(saved.submission_key, "Submission key was not stored.");
   assert(emails.length === 2, "Administrator and applicant receipt emails were not sent.");
+  const receipt = emails.find((message) => message.to === "person@example.com");
+  assert(receipt && /求人掲載依頼を受け付けました/.test(receipt.subject), "Applicant receipt subject is incorrect.");
+  assert(receipt.html.includes(first.job_id) && receipt.html.includes("担当者 様") && receipt.html.includes("Example GmbH"),
+    "Applicant receipt is missing the reference, contact name or company.");
+
+  const escaped = sandbox.jobPostingReceiptEmail_(validJobParams(now, { company_name: "<b>Evil</b>", contact_name: "\"><script>x</script>" }), "job_x", "2026-11-07");
+  assert(!/<script>|<b>Evil/.test(escaped.html) && escaped.html.includes("&lt;b&gt;Evil"), "Applicant receipt did not escape submitted values.");
 
   const second = sandbox.submitJobPosting_(params);
   assert(second.ok && second.duplicate, "Repeated HTTP submission was not recognized as a duplicate.");

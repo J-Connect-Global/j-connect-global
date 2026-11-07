@@ -2118,11 +2118,7 @@ function submitJobPosting_(params) {
     console.warn(`Job administrator notification failed: ${safeEmailErrorCode_(error)}`);
   }
   try {
-    sendZohoEmail_({
-      to: value.contact_email,
-      subject: '[J-Connect Global] Job posting request received',
-      html: '<p>求人掲載のご相談を受け付けました。We have received your job posting request and will contact you after review.</p>'
-    });
+    sendZohoEmail_(jobPostingReceiptEmail_(value, saved.jobId, saved.job.created_at));
     applicantEmailSent = true;
   } catch (error) {
     console.warn(`Job applicant confirmation failed: ${safeEmailErrorCode_(error)}`);
@@ -2170,6 +2166,83 @@ function jobSubmissionValue_(header, value, generated) {
     if (JOB_INPUT_HEADER_ALIASES[field].indexOf(header) !== -1) return value[field] || '';
   }
   return '';
+}
+
+// Receipt sent to the employer who submitted the job posting form. Every
+// submitted value is escaped; the layout uses inline styles and tables so it
+// renders consistently in common mail clients.
+function jobPostingReceiptEmail_(value, jobId, submittedAt) {
+  const esc = escapeHtmlForEmail_;
+  const font = "font-family:'Helvetica Neue',Arial,'Hiragino Kaku Gothic ProN','Hiragino Sans',Meiryo,sans-serif;";
+  const postingUrl = `${COMMUNITY_SITE_ORIGIN}/germany/ja/jobs/posting/`;
+  const privacyUrl = `${COMMUNITY_SITE_ORIGIN}/germany/ja/privacy/`;
+  const contactEmail = 'contact@j-connect-global.com';
+  const summaryRows = [
+    ['受付番号 / Reference', jobId],
+    ['受付日時 / Submitted', receiptTimestampLabel_(submittedAt)],
+    ['会社名 / Company', value.company_name],
+    ['求人タイトル / Job title', value.position_title],
+    ['勤務地 / Location', value.city],
+    ['雇用形態 / Employment type', value.employment_type],
+    ['掲載希望開始日 / Preferred publishing date', value.publish_date]
+  ].filter((row) => String(row[1] || '').trim())
+    .map((row) => `<tr><td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;color:#6b7280;font-size:13px;width:42%;vertical-align:top;">${esc(row[0])}</td>`
+      + `<td style="padding:10px 12px;border-bottom:1px solid #e5e7eb;color:#111827;font-size:14px;vertical-align:top;word-break:break-word;">${esc(row[1])}</td></tr>`)
+    .join('');
+  const step = (number, title, text) => `<tr><td style="padding:0 12px 14px 0;vertical-align:top;width:28px;">`
+    + `<div style="width:24px;height:24px;line-height:24px;border-radius:12px;background:#1f3a5f;color:#ffffff;text-align:center;font-size:13px;font-weight:bold;">${number}</div></td>`
+    + `<td style="padding:0 0 14px 0;vertical-align:top;"><div style="font-size:14px;font-weight:bold;color:#111827;">${title}</div>`
+    + `<div style="font-size:13px;color:#4b5563;line-height:1.7;">${text}</div></td></tr>`;
+  const html = `<!doctype html><html lang="ja"><body style="margin:0;padding:0;background:#f3f4f6;">`
+    + `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f3f4f6;padding:24px 12px;${font}"><tr><td align="center">`
+    + `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid #e5e7eb;">`
+    + `<tr><td style="background:#1f3a5f;padding:20px 28px;color:#ffffff;">`
+    + `<div style="font-size:18px;font-weight:bold;letter-spacing:0.04em;">J-CONNECT GERMANY</div>`
+    + `<div style="font-size:12px;opacity:0.85;margin-top:2px;">J-Connect Global のドイツ向け生活ポータル</div></td></tr>`
+    + `<tr><td style="padding:28px;color:#111827;font-size:14px;line-height:1.8;">`
+    + `<p style="margin:0 0 4px;">${esc(value.company_name)}</p>`
+    + `<p style="margin:0 0 20px;">${esc(value.contact_name)} 様</p>`
+    + `<p style="margin:0 0 16px;">このたびは J-Connect Germany の求人掲載（無料掲載パイロット）にお申し込みいただき、誠にありがとうございます。以下の内容で求人掲載依頼を受け付けました。</p>`
+    + `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e5e7eb;border-radius:6px;border-collapse:separate;margin:0 0 24px;">${summaryRows}</table>`
+    + `<div style="font-size:15px;font-weight:bold;color:#1f3a5f;margin:0 0 12px;">今後の流れ</div>`
+    + `<table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 0 12px;">`
+    + step(1, '内容確認', '勤務条件、給与、勤務地、応募方法など、求職者に必要な情報を運営が確認します。')
+    + step(2, '確認のご連絡（必要な場合）', '記載内容について確認事項がある場合は、このメールアドレス宛てにご連絡します。')
+    + step(3, '掲載', '確認が完了した求人は、求人一覧と詳細ページに公開します。')
+    + `</table>`
+    + `<div style="background:#f9fafb;border-left:4px solid #1f3a5f;padding:14px 16px;margin:0 0 24px;font-size:13px;color:#374151;line-height:1.7;">`
+    + `<div style="margin-bottom:6px;"><strong>ご留意事項</strong></div>`
+    + `<div>・現在はサービス検証期間のため、掲載料は発生しません。今回のお申し込みが将来の有料サービスへ自動的に移行することはありません。</div>`
+    + `<div>・送信内容の確認後に掲載可否を判断するため、掲載をお約束するものではありません。</div>`
+    + `<div>・掲載後に募集条件や応募方法が変わった場合、または募集を終了する場合は、受付番号を添えてご連絡ください。</div>`
+    + `<div>・J-Connect Germany は求人情報の掲載場所を提供するものであり、職業紹介・採用代行または雇用契約の当事者ではありません。</div></div>`
+    + `<p style="margin:0 0 24px;">ご不明な点がございましたら、このメールにご返信いただくか、<a href="mailto:${contactEmail}" style="color:#1f3a5f;">${contactEmail}</a> までお問い合わせください。今後ともよろしくお願いいたします。</p>`
+    + `<hr style="border:none;border-top:1px solid #e5e7eb;margin:0 0 20px;">`
+    + `<div style="font-size:13px;color:#4b5563;line-height:1.7;">`
+    + `<p style="margin:0 0 10px;">Dear ${esc(value.contact_name)},</p>`
+    + `<p style="margin:0 0 10px;">Thank you for submitting a job posting to J-Connect Germany. We have received your request (reference: ${esc(jobId)}). Our team will review the details and contact you at this address if anything needs clarification. Once the review is complete, the job will be published on our job board.</p>`
+    + `<p style="margin:0;">Job postings are currently free during our pilot phase, and this request will not automatically convert into a paid service. Submission does not guarantee publication. J-Connect Germany provides a platform for publishing job information and is not a recruitment agency or a party to any employment contract.</p></div>`
+    + `</td></tr>`
+    + `<tr><td style="background:#f9fafb;padding:18px 28px;border-top:1px solid #e5e7eb;font-size:12px;color:#6b7280;line-height:1.7;">`
+    + `J-Connect Germany（J-Connect Global）<br>`
+    + `<a href="mailto:${contactEmail}" style="color:#6b7280;">${contactEmail}</a> ・ `
+    + `<a href="${postingUrl}" style="color:#6b7280;">求人掲載について</a> ・ `
+    + `<a href="${privacyUrl}" style="color:#6b7280;">プライバシーポリシー</a><br>`
+    + `このメールは求人掲載フォームから送信された内容に基づき、自動でお送りしています。`
+    + `</td></tr></table></td></tr></table></body></html>`;
+  return {
+    to: value.contact_email,
+    subject: '【J-Connect Germany】求人掲載依頼を受け付けました / Job posting request received',
+    html
+  };
+}
+
+// "2026-11-07T17:19:00.000+01:00" -> "2026/11/07 17:19（ドイツ時間 / CET）"
+function receiptTimestampLabel_(value) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(String(value || ''));
+  if (!match) return String(value || '');
+  const zone = /\+02:00$/.test(String(value)) ? 'CEST' : 'CET';
+  return `${match[1]}/${match[2]}/${match[3]} ${match[4]}:${match[5]}（ドイツ時間 / ${zone}）`;
 }
 
 function sendJobSubmissionAdminEmail_(context, job) {

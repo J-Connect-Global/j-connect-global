@@ -190,15 +190,15 @@
     }
   ],
   "validation": {
-    "source_count": 10,
+    "source_count": 4,
     "explicitly_active_count": 4,
     "eligible_count": 4,
-    "excluded_count": 6,
+    "excluded_count": 0,
     "excluded_by_reason": {
-      "status_not_active": 6
+      "status_not_active": 0
     },
     "excluded_safe_ids": {},
     "generated_count": 4
   },
-  "generated_at": "2026-11-07T16:49:07.778Z"
+  "generated_at": "2026-11-07T19:20:39.017Z"
 }

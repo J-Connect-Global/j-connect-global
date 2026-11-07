@@ -146,6 +146,24 @@ export async function waitForDataLoad(page) {
   }).toEqual({ hasLoadingText: false, visibleIndicators: 0 });
 }
 
+// Taps a locator only after web fonts have loaded and its position has stayed
+// the same for `quietMs`. Pages that render long lists after their first paint
+// keep shifting for a while; under parallel load a tap dispatched between two
+// layout changes can land on a neighbouring element instead of the target.
+export async function stableTap(locator, { quietMs = 300, timeout = 15000 } = {}) {
+  await locator.page().evaluate(() => document.fonts?.ready);
+  await expect(locator).toBeVisible({ timeout });
+  await expect.poll(async () => {
+    const before = await locator.boundingBox();
+    await locator.page().waitForTimeout(quietMs);
+    const after = await locator.boundingBox();
+    return Boolean(before && after
+      && before.x === after.x && before.y === after.y
+      && before.width === after.width && before.height === after.height);
+  }, { timeout, message: "element position did not settle before tapping" }).toBe(true);
+  await locator.tap();
+}
+
 export async function assertNoHorizontalOverflow(page) {
   const dimensions = await page.evaluate(() => {
     const root = document.documentElement;

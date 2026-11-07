@@ -418,12 +418,11 @@ async function writeGenerated(siteDir, relative, html, outputPaths) {
 }
 
 async function updateSearchIndex(siteDir, community, jobs) {
-  const file = path.join(siteDir, "assets", "js", "search-index.js");
+  const file = path.join(siteDir, "assets", "data", "search-index.json");
   const source = await readFile(file, "utf8");
-  const match = source.match(/window\.JCONNECT_SEARCH_INDEX\s*=\s*(\[[\s\S]*\]);?\s*$/);
-  if (!match) throw new Error("Copied search index has an unsupported format.");
   let entries;
-  try { entries = JSON.parse(match[1]); } catch (error) { throw new Error(`Copied search index is invalid: ${error.message}`); }
+  try { entries = JSON.parse(source); } catch (error) { throw new Error(`Copied search index is invalid: ${error.message}`); }
+  if (!Array.isArray(entries)) throw new Error("Copied search index has an unsupported format.");
   entries = entries.filter((entry) => {
     const url = text(entry.url);
     if (url.startsWith("/germany/ja/community/posts/")) return false;
@@ -436,8 +435,8 @@ async function updateSearchIndex(siteDir, community, jobs) {
   for (const job of jobs) {
     entries.push({ title: text(job.position_title), description: compact(job.summary || job.description || job.job_details, 240), url: job.detail_url, category: "仕事・求人", tags: [job.company_name, job.location || job.city || job.region, job.employment_type].map(text).filter(Boolean) });
   }
-  const serialized = JSON.stringify(entries, null, 2).replace(/</g, "\\u003c");
-  await writeFile(file, `window.JCONNECT_SEARCH_INDEX = ${serialized};\n`, "utf8");
+  const lines = entries.map((entry) => JSON.stringify(entry).replace(/</g, "\\u003c"));
+  await writeFile(file, `[\n${lines.join(",\n")}\n]\n`, "utf8");
 }
 
 function sitemapOutputPath(siteDir, url) {

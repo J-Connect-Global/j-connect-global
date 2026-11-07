@@ -735,6 +735,7 @@
     if (!text?.trim() || !speechSupported()) return;
     if (state.activeSpeechButton === button) {
       stopSpeech();
+      showToast("再生を停止しました。");
       return;
     }
     stopSpeech();
@@ -749,14 +750,22 @@
     const finish = () => {
       if (state.speechUtterance === utterance) resetSpeechState();
     };
-    utterance.onend = finish;
+    utterance.onend = () => {
+      const isCurrent = state.speechUtterance === utterance;
+      finish();
+      if (isCurrent) showToast("音声の再生が完了しました。");
+    };
     utterance.onerror = event => {
       const isCurrent = state.speechUtterance === utterance;
       finish();
-      if (isCurrent && !["canceled", "interrupted"].includes(event.error)) {
+      if (!isCurrent) return;
+      if (!["canceled", "interrupted"].includes(event.error)) {
         speechFailed();
+      } else {
+        showToast("再生を停止しました。");
       }
     };
+    showToast("音声再生を要求しました。");
     try {
       window.speechSynthesis.speak(utterance);
     } catch {

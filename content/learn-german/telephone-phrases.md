@@ -27,7 +27,7 @@ related_articles: ["appointment-phrase", "hospital-phrases", "work-email-phrases
 
 | 項目 | 例 |
 | --- | --- |
-| 名前 | Yoshi Nagamatsu |
+| 名前 | Taro Yamada |
 | 顧客・予約番号 | Kundennummer 123456 |
 | 用件 | 予約変更、請求確認、故障連絡 |
 | 希望する結果 | 新しい日程、メール回答、折り返し |
@@ -125,8 +125,8 @@ related_articles: ["appointment-phrase", "hospital-phrases", "work-email-phrases
 
 ### 名前を綴る
 
-> Mein Nachname ist Nagamatsu: N-A-G-A-M-A-T-S-U.
-> 姓はNagamatsuです。N-A-G-A-M-A-T-S-Uです。
+> Mein Nachname ist Yamada: Y-A-M-A-D-A.
+> 姓はYamadaです。Y-A-M-A-D-Aです。
 
 文字が聞き取りにくい場合：
 

@@ -169,8 +169,8 @@ test("mobile missing legacy Job detail is readable and excluded from indexing", 
 
 test("mobile legal disclosure remains readable in light and dark modes", async ({ page }) => {
   await openRoute(page, "/germany/ja/impressum/");
-  await expect(page.locator("main")).toContainText("Yoshihiro Nagamatsu");
-  await expect(page.locator("main")).toContainText("Am Rosenberg 9");
+  await expect(page.locator("main")).toContainText("J-Connect Global");
+  await expect(page.locator("main")).toContainText("contact@j-connect-global.com");
   await assertRouteReady(page);
   await activateDarkMode(page);
   await assertRouteReady(page);

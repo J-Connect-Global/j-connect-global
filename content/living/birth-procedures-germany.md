@@ -7,7 +7,7 @@ summary: "ドイツで出産する日本人・国際家庭向けに、出産前�
 status: "published"
 published: true
 published_at: "2026-10-12"
-updated_at: "2026-10-27"
+updated_at: "2026-11-06"
 last_verified: "2026-10-12"
 next_review: "2027-01-12"
 canonical_url: "/germany/ja/living/birth-procedures-germany/"
@@ -15,7 +15,7 @@ tags: ["出産手続き","出生届","出生証明書","育児給付","児童手
 image_url: "/assets/images/living/birth-procedures-germany.webp"
 image_alt: "赤ちゃんの衣類と靴下、書類を入れるフォルダーを机に並べた出産手続きのイメージ"
 image_caption: "AI生成のイメージ画像。実際の申請書類を示すものではありません。"
-related_articles: ["pregnancy-birth-germany","birth-day-germany","health-insurance-guide","kita-u3-tagesmutter-guide","kindergeld-auszahlungstermine-2027"]
+related_articles: ["pregnancy-birth-germany","elterngeld-guide-germany","birth-day-germany","health-insurance-guide","kita-u3-tagesmutter-guide","kindergeld-auszahlungstermine-2027"]
 official_sources:
   - title: "連邦家族ポータル：出生登録と出生証明書"
     url: "https://familienportal.de/familienportal/lebenslagen/schwangerschaft-geburt/anmeldung-standesamt"
@@ -316,7 +316,7 @@ TKでは出生後に家族加入を申請でき、条件を満たす場合の加
 
 ## 育児給付：休業計画を生後月に合わせて申請する
 
-育児給付（Elterngeld）は、子どもの養育による収入減少などを支える制度です。勤務先へ育休を通知するだけでは受給できず、子どもの居住地を担当する給付窓口へ、出生後に申請します。
+育児給付（Elterngeld）は、子どもの養育による収入減少などを支える制度です。勤務先へ育休を通知するだけでは受給できず、子どもの居住地を担当する給付窓口へ、出生後に申請します。金額の計算例やElterngeldPlus・パートナーボーナスの使い分けは「[ドイツの育児給付（Elterngeld）の計算と受け取り方](/germany/ja/living/elterngeld-guide-germany/)」で詳しく説明しています。
 
 ### 受給資格を先に確認する
 
@@ -356,7 +356,7 @@ BundIDのログイン方法によって、完全なペーパーレス申請に�
 
 ## 児童手当：育児給付とは別の申請をする
 
-児童手当（Kindergeld）は、親の育児休業を補う給付とは別制度です。2026年の支給額は、対象の子ども1人につき月259ユーロです。外国籍の親は滞在資格なども審査されるため、ドイツで生まれたことだけで受給が決まるわけではありません。
+児童手当（Kindergeld）は、親の育児休業を補う給付とは別制度です。2026年の支給額は、対象の子ども1人につき月259ユーロです。2027年から月267ユーロに上げる政府案がありますが、2026年11月6日時点では法律の成立前です（[2027年の支給日と法案の状況](/germany/ja/living/kindergeld-auszahlungstermine-2027/)）。外国籍の親は滞在資格なども審査されるため、ドイツで生まれたことだけで受給が決まるわけではありません。
 
 2027年は、支給日を確認するだけでなく、申請なし支給の段階導入にも注意してください。連邦議会は2026年7月9日に関連法案を可決し、連邦参議院も9月25日に同意しました。政府の公式案内では2027年1月1日施行予定で、実際の自動支給は2027年3月頃に第2子以降、11月頃に第1子へ段階的に広げる予定です。ただし、必要な口座情報や居住・就労条件などが確認できない家庭は、従来どおり申請が必要になる場合があります。支給日と支給額の改定は別の情報です。2027年の送金日は[Kindergeld 2027年の支給日一覧](/germany/ja/living/kindergeld-auszahlungstermine-2027/)で番号末尾別に確認できます。この制度の状況は2026年10月27日に政府公式案内で確認しました。
 

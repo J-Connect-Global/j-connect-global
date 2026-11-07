@@ -2359,9 +2359,14 @@ function sortForHub(items) {
   return [...items].sort((a, b) => compareDateDesc(a.published_at, b.published_at) || a.home_order - b.home_order);
 }
 
+// The search page fetches this JSON only when a query is present, so the
+// index no longer ships as a render-blocking script on every search visit.
+export const SEARCH_INDEX_PATH = 'assets/data/search-index.json';
+const LEGACY_SEARCH_INDEX_PATH = 'assets/js/search-index.js';
+
 function updateSearchIndex(allItems, pages) {
-  const searchPath = 'assets/js/search-index.js';
-  const current = readSearchIndex(searchPath);
+  const searchPath = SEARCH_INDEX_PATH;
+  const current = readSearchIndex();
   const pageEntries = pages
     .filter((page) => page.status === 'published' && page.search_visible === true)
     .map(pageToSearchEntry);
@@ -2401,7 +2406,15 @@ function updateSearchIndex(allItems, pages) {
     seen.add(entry.url);
   }
 
-  writeText(searchPath, `window.JCONNECT_SEARCH_INDEX = ${JSON.stringify(next, null, 2)};\n`);
+  writeText(searchPath, serializeSearchIndex(next));
+  const legacyPath = path.join(root, LEGACY_SEARCH_INDEX_PATH);
+  if (fs.existsSync(legacyPath)) fs.rmSync(legacyPath);
+}
+
+// One entry per line keeps the file compact while leaving reviewable diffs.
+export function serializeSearchIndex(entries) {
+  const lines = entries.map((entry) => JSON.stringify(entry).replace(/</g, '\\u003c'));
+  return `[\n${lines.join(',\n')}\n]\n`;
 }
 
 function pageToSearchEntry(page) {
@@ -2414,9 +2427,15 @@ function pageToSearchEntry(page) {
   };
 }
 
-function readSearchIndex(searchPath) {
+function readSearchIndex() {
+  if (fs.existsSync(path.join(root, SEARCH_INDEX_PATH))) {
+    const entries = JSON.parse(readText(SEARCH_INDEX_PATH));
+    return Array.isArray(entries) ? entries : [];
+  }
+  // One-time migration from the former script-based index.
+  if (!fs.existsSync(path.join(root, LEGACY_SEARCH_INDEX_PATH))) return [];
   const sandbox = { window: {} };
-  vm.runInNewContext(readText(searchPath), sandbox, { filename: searchPath, timeout: 1000 });
+  vm.runInNewContext(readText(LEGACY_SEARCH_INDEX_PATH), sandbox, { filename: LEGACY_SEARCH_INDEX_PATH, timeout: 1000 });
   return Array.isArray(sandbox.window.JCONNECT_SEARCH_INDEX) ? sandbox.window.JCONNECT_SEARCH_INDEX : [];
 }
 

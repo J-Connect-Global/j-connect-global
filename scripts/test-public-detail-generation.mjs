@@ -65,10 +65,10 @@ async function createFixture() {
   await writeFile(path.join(siteDir, "germany", "ja", "jobs", "index.html"), layout, "utf8");
   await writeFile(path.join(siteDir, "germany", "ja", "jobs", "guide", "index.html"), "<!doctype html><meta name=\"robots\" content=\"index, follow\"><h1>Guide</h1>", "utf8");
   await writeFile(path.join(siteDir, "index.html"), "<!doctype html><meta name=robots content='index, follow'><h1>Home</h1>", "utf8");
-  await mkdir(path.join(siteDir, "assets", "js"), { recursive: true });
+  await mkdir(path.join(siteDir, "assets", "data"), { recursive: true });
   await writeFile(
-    path.join(siteDir, "assets", "js", "search-index.js"),
-    'window.JCONNECT_SEARCH_INDEX = [{"title":"Guide","url":"/germany/ja/jobs/guide/"}];\n',
+    path.join(siteDir, "assets", "data", "search-index.json"),
+    '[\n{"title":"Guide","url":"/germany/ja/jobs/guide/"}\n]\n',
     "utf8"
   );
   await writeFile(
@@ -237,8 +237,10 @@ async function runFixtureTests() {
         "https://j-connect-global.com/germany/ja/jobs/job-safe/"
       ]
     );
-    const searchIndex = await readFile(path.join(siteDir, "assets", "js", "search-index.js"), "utf8");
-    assert.match(searchIndex, /"url": "\/germany\/ja\/jobs\/guide\/"/);
+    const searchIndex = JSON.parse(await readFile(path.join(siteDir, "assets", "data", "search-index.json"), "utf8"));
+    const searchUrls = searchIndex.map((entry) => entry.url);
+    assert.ok(searchUrls.includes("/germany/ja/jobs/guide/"), "static Jobs guide stays in the search index");
+    assert.ok(searchUrls.includes("/germany/ja/jobs/job-safe/"), "generated Jobs detail is added to the search index");
     assert.equal(sitemapEntry(entries, "https://j-connect-global.com/germany/ja/jobs/job-safe/")?.lastmod, "2026-07-11");
     assert.equal(sitemapEntry(entries, "https://j-connect-global.com/germany/ja/jobs/job-incomplete/")?.lastmod, "2026-07-11");
     assert.equal(sitemapEntry(entries, "https://j-connect-global.com/germany/ja/jobs/job-future/"), undefined);

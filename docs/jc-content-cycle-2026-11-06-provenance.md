@@ -230,3 +230,16 @@
 - N039の未公開ドラフト、イベントレジストリ、既存記事更新案、作業記録のみを更新対象とする。公開ページ、サイトマップ、canonical、hreflang、投稿・求人・フォーム、管理・プライバシー、学習語彙・分類、共通CSSは変更しない。
 - 既存記事 /germany/ja/living/rundfunkbeitrag-guide/ の本番HTMLは未更新。挿入案をDocsに残し、N039公開後に内部リンクを有効化する。
 - PR #434のL088（カビ）とL090（Deutschlandticket）は既存公開記事と検索意図が大きく重なるため、統合または検索意図の絞り込みが必要。PR #434はDraftのまま。
+
+
+### N023：2027年1月制度変更まとめ — 2026年11月7日再確認
+
+- 現行記事の更新日は2026年11月5日だが、front matter の last_verified は10月21日のまま。本文の社会保険欄は11月2日確認と記しているため、メタデータと本文の検証日が不一致。
+- 所得税改革法案は9月2日に閣議決定、10月8日に連邦議会第1読会・委員会付託、10月16日に連邦参議院第1回審議、11月4日に財務委員会の専門家公聴会。11月7日時点で最終成立・公布は確認できず、Kindergeld 267ユーロ、Grundfreibetrag 12,564ユーロ、被用者概算控除1,430ユーロ、Handwerkerleistungen控除縮小、Minijob一律源泉税率5%は引き続き法案上の提案。
+- 児童手当の申請なし支給の手続き改正は、月額増額案とは別の制度であることを明確化する。
+- 社会保険計算値令2027はBMASの実施状況ページで11月7日も「審議中／公布前」。現行記事の「同意待ち」を維持する。
+- 既存記事の更新案を docs/drafts/updates/germany-january-2027-changes-update-2026-11-07.md に作成。本番ファイル・生成HTML・検索インデックス・サイトマップは変更していない。
+- 公式情報：
+  - https://www.bundestag.de/dokumente/textarchiv/2026/kw45-pa-finanzen-est-1225814
+  - https://www.bundesregierung.de/breg-de/service/fragen-und-antworten/einkommensteuerreform-2027-2451192
+  - https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/sozialversicherungs-rechengroessenverordnung-2027.html

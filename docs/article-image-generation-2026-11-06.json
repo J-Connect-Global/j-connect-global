@@ -130,19 +130,6 @@
     "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted on 2026-11-06)"
   },
   {
-    "slug": "mold-ventilation-germany",
-    "section": "living",
-    "markdown": "content/living/mold-ventilation-germany.md",
-    "dest": "assets/img/living/mold-ventilation-germany.webp",
-    "alt": "雪の舞う冬の窓を大きく開けて換気する部屋に、暖房器具と湿度計、観葉植物があるイラスト",
-    "prompt": "Hand-coded flat vector illustration (no text, logos, flags, seals or real people).",
-    "caption": "AIの支援でコードから描画したイラスト（J-Connect）。冬の換気を表したもので、実在の住まいを描いたものではありません。",
-    "credit": "AI-assisted vector illustration / J-Connect",
-    "status": "generated",
-    "created": "2026-11-06",
-    "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted on 2026-11-06)"
-  },
-  {
     "slug": "bicycle-rules-germany",
     "section": "living",
     "markdown": "content/living/bicycle-rules-germany.md",
@@ -150,19 +137,6 @@
     "alt": "赤く塗られた自転車道を、ライトをつけた自転車が走り、並木と石畳の歩道、街並みが見えるイラスト",
     "prompt": "Hand-coded flat vector illustration (no text, logos, flags, seals or real people).",
     "caption": "AIの支援でコードから描画したイラスト（J-Connect）。自転車で街を走る場面を表したもので、実在の道路を描いたものではありません。",
-    "credit": "AI-assisted vector illustration / J-Connect",
-    "status": "generated",
-    "created": "2026-11-06",
-    "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted on 2026-11-06)"
-  },
-  {
-    "slug": "deutschlandticket-guide",
-    "section": "living",
-    "markdown": "content/living/deutschlandticket-guide.md",
-    "dest": "assets/img/living/deutschlandticket-guide.webp",
-    "alt": "駅のホームに赤い地域列車と黄色の路面電車が並び、手前にスマートフォンの画面の定期券が見えるイラスト",
-    "prompt": "Hand-coded flat vector illustration (no text, logos, flags, seals or real people).",
-    "caption": "AIの支援でコードから描画したイラスト（J-Connect）。地域の電車に乗る場面を表したもので、実在の駅や車両、アプリを描いたものではありません。",
     "credit": "AI-assisted vector illustration / J-Connect",
     "status": "generated",
     "created": "2026-11-06",

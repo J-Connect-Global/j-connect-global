@@ -2410,7 +2410,7 @@
       "切符",
       "遅延"
     ],
-    "updated_at": "2026-11-06",
+    "updated_at": "2026-11-07",
     "related_articles": [
       "cologne-city-guide",
       "duesseldorf-city-guide",
@@ -2434,6 +2434,10 @@
       {
         "title": "ドイツ鉄道：子どもと旅行する場合",
         "url": "https://int.bahn.de/en/offers/additional-services/travelling-with-children"
+      },
+      {
+        "title": "所得税法第3条第15号：会社の公共交通の補助は非課税",
+        "url": "https://www.gesetze-im-internet.de/estg/__3.html"
       },
       {
         "title": "ラインバーン：公共交通の案内",
@@ -5205,7 +5209,7 @@
     "canonical_url": "/germany/ja/living/working-holiday-germany/",
     "title": "ドイツのワーキングホリデー｜18〜30歳の条件、資金の目安、保険、申請の流れ、到着後の手続きと仕事探し",
     "category": "役所・滞在",
-    "summary": "日本とドイツのワーキングホリデー制度では、18〜30歳の日本人が最長1年、ドイツで休暇を過ごしながら働けます。在日ドイツ大使館・総領事館での申請に必要な書類、資金の目安、滞在中の健康保険、ドイツ到着後の住民登録や税番号、仕事の探し方、滞在後に就労や留学へ切り替える方法までを整理します。",
+    "summary": "日本とドイツのワーキングホリデー制度では、18歳以上31歳未満の日本人が最長1年、ドイツで休暇を過ごしながら働けます。在日ドイツ大使館・総領事館での申請に必要な書類、資金の目安、滞在中の健康保険、ドイツ到着後の住民登録や税番号、仕事の探し方、滞在後に就労や留学へ切り替える方法までを整理します。",
     "published_at": "2026-11-06",
     "last_verified": "2026-11-06",
     "tags": [
@@ -5217,7 +5221,7 @@
       "アルバイト",
       "海外旅行保険"
     ],
-    "updated_at": "2026-11-06",
+    "updated_at": "2026-11-07",
     "related_articles": [
       "germany-visa-types-japanese",
       "germany-first-30-days",
@@ -5226,6 +5230,10 @@
       "chancenkarte-germany-japanese"
     ],
     "official_sources": [
+      {
+        "title": "在日ドイツ大使館：ワーキングホリデー・ビザ",
+        "url": "https://japan.diplo.de/ja-de/service/wh-957786"
+      },
       {
         "title": "在日ドイツ大使館：ワーキングホリデーの案内（PDF）",
         "url": "https://japan.diplo.de/resource/blob/2780828/346c1dbe106108ce931b2e5c95f390fc/wh-info-data.pdf"
@@ -5288,7 +5296,7 @@
       "学費",
       "アルバイト"
     ],
-    "updated_at": "2026-11-06",
+    "updated_at": "2026-11-07",
     "related_articles": [
       "germany-visa-types-japanese",
       "health-insurance-guide",
@@ -5679,7 +5687,7 @@
     "canonical_url": "/germany/ja/living/kindergeld-application-germany/",
     "title": "ドイツの児童手当（Kindergeld）の申請｜日本人がもらえる滞在許可、月259ユーロ、必要書類、6か月の遡及、日本に住む子どもの扱い",
     "category": "家族・子育て",
-    "summary": "ドイツに住む家族は、子ども1人につき月259ユーロ（2026年）の児童手当を受け取れます。日本国籍の親は、就労できる滞在許可などを持っていることが条件で、学生や求職のための滞在許可では対象外です。家族手当金庫への申請方法、税番号などの必要書類、申請が遅れたときの6か月の遡及、18歳以降の延長、日本に住む子どもの扱い、2027年からの申請なしの支給を整理します。",
+    "summary": "ドイツに住む家族は、子ども1人につき月259ユーロ（2026年）の児童手当を受け取れます。日本国籍の親は、就労できる滞在許可などを持っていることが条件です。留学や卒業後の求職の滞在許可は、働いていない場合などに対象外になり、最初のチャンスカードは対象外です。家族手当金庫への申請方法、税番号などの必要書類、申請が遅れたときの6か月の遡及、18歳以降の延長、日本に住む子どもの扱い、2027年からの申請なしの支給を整理します。",
     "published_at": "2026-11-06",
     "last_verified": "2026-11-06",
     "tags": [
@@ -5691,7 +5699,7 @@
       "滞在許可",
       "税番号"
     ],
-    "updated_at": "2026-11-06",
+    "updated_at": "2026-11-07",
     "related_articles": [
       "kindergeld-auszahlungstermine-2027",
       "birth-procedures-germany",
@@ -5723,6 +5731,14 @@
       {
         "title": "所得税法第70条：支給と6か月の遡及",
         "url": "https://www.gesetze-im-internet.de/estg/__70.html"
+      },
+      {
+        "title": "ドイツ連邦議会：申請なしの児童手当の可決（2026年7月9日）",
+        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw28-de-antragsloses-kindergeld-1192542"
+      },
+      {
+        "title": "ドイツ連邦議会：2027年・2028年の児童手当の額を含む法案",
+        "url": "https://www.bundestag.de/presse/hib/kurzmeldungen-1221672"
       }
     ],
     "image": "/assets/img/living/kindergeld-application-germany.webp",
@@ -5790,77 +5806,6 @@
     ],
     "image": "/assets/img/living/church-tax-germany.webp",
     "image_alt": "時計のある教会の塔と街並みを背に、机の上に電卓と書類が置かれた、教会税を表したイラスト"
-  },
-  {
-    "id": "L088",
-    "slug": "mold-ventilation-germany",
-    "url": "/germany/ja/living/mold-ventilation-germany/",
-    "markdown_path": "/content/living/mold-ventilation-germany.md",
-    "published": true,
-    "status": "published",
-    "home_visible": false,
-    "home_order": 57,
-    "hub_visible": true,
-    "search_visible": true,
-    "sitemap_visible": true,
-    "disclaimer_type": "housing",
-    "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: BGB, StVO, StVZO, BKatV, StVG, StGB, RegG, EStG, BMG, AufenthG; umweltbundesamt.de); Japanese government and consulate pages cross-checked via search summaries, not fetched; human review pending",
-      "last_reviewed_at": "2026-11-06",
-      "next_review_due": "2027-09-01"
-    },
-    "canonical_url": "/germany/ja/living/mold-ventilation-germany/",
-    "title": "ドイツの冬のカビ対策｜窓を全開にする換気（1日数回5〜10分）、湿度50%の目安、暖房の温度、カビが出たときの大家への連絡",
-    "category": "住まい",
-    "summary": "ドイツの冬は、窓を閉め切って暖房をつけるため、窓まわりや壁にカビが出やすくなります。連邦環境庁がすすめる、窓を全開にして5〜10分換気する方法、断熱の弱い住まいでの湿度50%未満の目安、部屋ごとの暖房の温度、家具を壁から10cm離すことなどの予防策と、カビが出たときに自分で掃除できる範囲（0.5平方メートル未満）、大家への連絡と家賃の減額までを整理します。",
-    "published_at": "2026-11-06",
-    "last_verified": "2026-11-06",
-    "tags": [
-      "カビ",
-      "換気",
-      "結露",
-      "暖房",
-      "湿度",
-      "賃貸",
-      "冬"
-    ],
-    "updated_at": "2026-11-06",
-    "related_articles": [
-      "rent-apartment-germany",
-      "nebenkostenabrechnung-2025-deadline",
-      "electricity-internet-contracts-germany",
-      "liability-household-insurance-germany",
-      "moving-checklist-germany"
-    ],
-    "official_sources": [
-      {
-        "title": "連邦環境庁：暖房と室温、正しい換気",
-        "url": "https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/heizen-bauen/heizen-raumtemperatur"
-      },
-      {
-        "title": "連邦環境庁：住まいにカビが出たら",
-        "url": "https://www.umweltbundesamt.de/service/uba-fragen/was-tun-bei-schimmel-in-meiner-wohnung"
-      },
-      {
-        "title": "連邦環境庁：カビが出たときのよくある質問",
-        "url": "https://www.umweltbundesamt.de/themen/gesundheit/umwelteinfluesse-auf-den-menschen/schimmel/haeufige-fragen-bei-schimmelbefall"
-      },
-      {
-        "title": "連邦環境庁：カビの予防と除去の手引き",
-        "url": "https://www.umweltbundesamt.de/themen/gesundheit/umwelteinfluesse-auf-den-menschen/schimmel/aktueller-uba-schimmelleitfaden"
-      },
-      {
-        "title": "民法第536条：欠陥がある場合の家賃の減額",
-        "url": "https://www.gesetze-im-internet.de/bgb/__536.html"
-      },
-      {
-        "title": "民法第536c条：借主の欠陥の連絡義務",
-        "url": "https://www.gesetze-im-internet.de/bgb/__536c.html"
-      }
-    ],
-    "image": "/assets/img/living/mold-ventilation-germany.webp",
-    "image_alt": "雪の舞う冬の窓を大きく開けて換気する部屋に、暖房器具と湿度計、観葉植物があるイラスト"
   },
   {
     "id": "L089",
@@ -5944,69 +5889,6 @@
     ],
     "image": "/assets/img/living/bicycle-rules-germany.webp",
     "image_alt": "赤く塗られた自転車道を、ライトをつけた自転車が走り、並木と石畳の歩道、街並みが見えるイラスト"
-  },
-  {
-    "id": "L090",
-    "slug": "deutschlandticket-guide",
-    "url": "/germany/ja/living/deutschlandticket-guide/",
-    "markdown_path": "/content/living/deutschlandticket-guide.md",
-    "published": true,
-    "status": "published",
-    "home_visible": false,
-    "home_order": 59,
-    "hub_visible": true,
-    "search_visible": true,
-    "sitemap_visible": true,
-    "disclaimer_type": "living",
-    "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: BGB, StVO, StVZO, BKatV, StVG, StGB, RegG, EStG, BMG, AufenthG; umweltbundesamt.de); Japanese government and consulate pages cross-checked via search summaries, not fetched; human review pending",
-      "last_reviewed_at": "2026-11-06",
-      "next_review_due": "2027-01-15"
-    },
-    "canonical_url": "/germany/ja/living/deutschlandticket-guide/",
-    "title": "ドイツチケット（Deutschlandticket）の使い方｜2027年は月66.80ユーロ、使える電車と使えない電車、申し込みと解約、会社の補助",
-    "category": "交通・車",
-    "summary": "ドイツチケットは、ドイツ全国の地域列車、近郊列車、地下鉄、路面電車、バスに乗り放題の月額の定期券で、2027年1月から月66.80ユーロになります。ICEやICなどの長距離列車には使えないこと、申し込みと解約の流れ、スマートフォンかICカードで持つこと、会社の補助で安くなる職場向けの割引、学生や子どもの扱い、元が取れるかの目安を整理します。",
-    "published_at": "2026-11-06",
-    "last_verified": "2026-11-06",
-    "tags": [
-      "ドイツチケット",
-      "Deutschlandticket",
-      "定期券",
-      "電車",
-      "バス",
-      "通勤",
-      "2027年"
-    ],
-    "updated_at": "2026-11-06",
-    "related_articles": [
-      "germany-train-travel-guide",
-      "bicycle-rules-germany",
-      "germany-first-30-days",
-      "cologne-city-guide",
-      "duesseldorf-city-guide"
-    ],
-    "official_sources": [
-      {
-        "title": "地域化法第9条：ドイツチケット（デジタル、月ごとに解約できる定期券）",
-        "url": "https://www.gesetze-im-internet.de/regg/__9.html"
-      },
-      {
-        "title": "所得税法第3条第15号：会社の公共交通の補助は非課税",
-        "url": "https://www.gesetze-im-internet.de/estg/__3.html"
-      },
-      {
-        "title": "ドイツ鉄道（地域交通）：ドイツチケットの案内",
-        "url": "https://regional.bahn.de/tickets/Deutschlandticket"
-      },
-      {
-        "title": "ドイツ連邦議会：ドイツチケットの財源を2030年まで定める法律",
-        "url": "https://www.bundestag.de/dokumente/textarchiv/2025/kw45-de-regionalisierungsgesetz-1118560"
-      }
-    ],
-    "image": "/assets/img/living/deutschlandticket-guide.webp",
-    "image_alt": "駅のホームに赤い地域列車と黄色の路面電車が並び、手前にスマートフォンの画面の定期券が見えるイラスト"
   },
   {
     "id": "L091",
@@ -6105,7 +5987,7 @@
       "在留証明",
       "署名証明"
     ],
-    "updated_at": "2026-11-06",
+    "updated_at": "2026-11-07",
     "related_articles": [
       "overseas-voting-japan",
       "birth-procedures-germany",
@@ -6127,8 +6009,12 @@
         "url": "https://www.gov-online.go.jp/article/202301/entry-7458.html"
       },
       {
-        "title": "外務省：旅券法の改正（報道発表）",
-        "url": "https://www.mofa.go.jp/mofaj/press/release/pressit_000001_00797.html"
+        "title": "在ドイツ日本国大使館：領事手数料（2026年度）",
+        "url": "https://www.de.emb-japan.go.jp/itpr_ja/konsular_tesuuryo.html"
+      },
+      {
+        "title": "外務省：パスポートの申請（よくある質問）",
+        "url": "https://www.mofa.go.jp/mofaj/toko/passport/pass_4.html"
       },
       {
         "title": "滞在法第48条：パスポートを持つ義務",

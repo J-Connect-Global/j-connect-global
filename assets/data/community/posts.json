@@ -242,15 +242,15 @@
     }
   ],
   "validation": {
-    "source_count": 13,
+    "source_count": 14,
     "explicitly_active_count": 6,
     "eligible_count": 6,
-    "excluded_count": 7,
+    "excluded_count": 8,
     "excluded_by_reason": {
-      "lifecycle_or_status": 7
+      "lifecycle_or_status": 8
     },
     "excluded_safe_ids": {},
     "generated_count": 6
   },
-  "generated_at": "2026-10-22T21:52:59.296Z"
+  "generated_at": "2026-11-06T12:51:51.929Z"
 }

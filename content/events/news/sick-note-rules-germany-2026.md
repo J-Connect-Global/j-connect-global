@@ -11,9 +11,9 @@ official_sources:
   - title: "賃金継続支払法 第5条（病気の届け出と証明）"
     url: "https://www.gesetze-im-internet.de/entgfg/__5.html"
   - title: "TK：電子の就労不能証明（eAU）"
-    url: "https://www.tk.de/firmenkunden/service/fachthemen/alles-wichtige-zur-eau/seit-2023-eau-fuer-arbeitgeber-verpflichtend-2102198"
+    url: "https://www.tk.de/firmenkunden/versicherung/meldeverfahren-faq/datenaustausch-eau/seit-2023-eau-fuer-arbeitgeber-verpflichtend-2102198"
   - title: "TK：2026年の子どもの看病手当と診断書"
-    url: "https://www.tk.de/firmenkunden/service/fachthemen/versicherung-fachthema/kinderkrankengeld-2025-und-2026-2160374"
+    url: "https://www.tk.de/firmenkunden/versicherung/familie/kinderkrankengeld/kinderkrankengeld-aktuelle-regelungen-2160374"
   - title: "連邦政府：連立委員会の決定「景気回復と雇用のためのプログラム」（2026年7月2日、PDF）"
     url: "https://www.bundesregierung.de/resource/blob/992814/2445592/bc8e5e160d879f0bdd593121a96a45d2/2026-07-02-koaausschuss-data.pdf?download=1"
   - title: "保険医協会全国連合会（KBV）：電話での診断書の廃止方針への批判"
@@ -53,9 +53,9 @@ image_credit: "Illustration / J-Connect"
 
 ## 診断書は「電子」で保険組合へ
 
-2023年から、公的な健康保険に入っている人の診断書は、電子で扱われています（eAU）。医師が診断書のデータを保険組合に送り、会社はそのデータを保険組合から受け取ります。そのため、働く人が紙の診断書を会社に出す必要は、原則としてありません（[TK](https://www.tk.de/firmenkunden/service/fachthemen/alles-wichtige-zur-eau/seit-2023-eau-fuer-arbeitgeber-verpflichtend-2102198)）。
+2023年から、公的な健康保険に入っている人の診断書は、電子で扱われています（eAU）。医師が診断書のデータを保険組合に送り、会社はそのデータを保険組合から受け取ります。そのため、働く人が紙の診断書を会社に出す必要は、原則としてありません（[TK](https://www.tk.de/firmenkunden/versicherung/meldeverfahren-faq/datenaustausch-eau/seit-2023-eau-fuer-arbeitgeber-verpflichtend-2102198)）。
 
-ただし、**会社に休むことを知らせる義務は、そのまま残っています**（[TK](https://www.tk.de/firmenkunden/service/fachthemen/alles-wichtige-zur-eau/seit-2023-eau-fuer-arbeitgeber-verpflichtend-2102198)）。「医師が送ってくれるから」と連絡を忘れないようにしましょう。民間の医療保険に入っている人などは、紙の診断書が必要な場合があります。
+ただし、**会社に休むことを知らせる義務は、そのまま残っています**（[TK](https://www.tk.de/firmenkunden/versicherung/meldeverfahren-faq/datenaustausch-eau/seit-2023-eau-fuer-arbeitgeber-verpflichtend-2102198)）。「医師が送ってくれるから」と連絡を忘れないようにしましょう。民間の医療保険に入っている人などは、紙の診断書が必要な場合があります。
 
 ![病気で休む朝は、すぐに会社に連絡し、3日を超えて続く場合は遅くとも4日目までに医師の診断書が必要で、公的保険の人の診断書は医師から保険組合へ電子で送られることを示した図](/assets/images/events/sick-note-steps.svg "図解：J-Connect。賃金継続支払法とTKの資料に基づく（2026年10月29日参照）。")
 
@@ -73,7 +73,7 @@ image_credit: "Illustration / J-Connect"
 
 ## 子どもの看病で休むとき
 
-子どもが病気になり、看病のために仕事を休む場合は、公的な健康保険から「子どもの看病手当（Kinderkrankengeld）」が出ます。TKによると、2026年のルールは次のとおりです（[TK](https://www.tk.de/firmenkunden/service/fachthemen/versicherung-fachthema/kinderkrankengeld-2025-und-2026-2160374)）。
+子どもが病気になり、看病のために仕事を休む場合は、公的な健康保険から「子どもの看病手当（Kinderkrankengeld）」が出ます。TKによると、2026年のルールは次のとおりです（[TK](https://www.tk.de/firmenkunden/versicherung/familie/kinderkrankengeld/kinderkrankengeld-aktuelle-regelungen-2160374)）。
 
 | 対象 | 日数（1年あたり） |
 | --- | --- |
@@ -82,7 +82,7 @@ image_credit: "Illustration / J-Connect"
 | ひとり親の場合、子ども1人につき | 30日 |
 | ひとり親で子どもが複数いる場合の上限 | 70日 |
 
-対象になるのは、原則として**12歳未満**の子どもで、親と子どもが公的な健康保険に入っていることが条件です。手当は、失った手取りの給与の原則90％です（[TK](https://www.tk.de/firmenkunden/service/fachthemen/versicherung-fachthema/kinderkrankengeld-2025-und-2026-2160374)）。子どもの看病のための証明も、条件を満たせば電話でもらえることがあります。
+対象になるのは、原則として**12歳未満**の子どもで、親と子どもが公的な健康保険に入っていることが条件です。手当は、失った手取りの給与の原則90％です（[TK](https://www.tk.de/firmenkunden/versicherung/familie/kinderkrankengeld/kinderkrankengeld-aktuelle-regelungen-2160374)）。子どもの看病のための証明も、条件を満たせば電話でもらえることがあります。
 
 ![子どもの看病手当は、親1人につき子ども1人あたり年15日、子どもが複数なら上限35日、ひとり親は子ども1人あたり30日で上限70日、対象は原則12歳未満の子どもであることを示した図](/assets/images/events/child-sick-days-2026.svg "図解：J-Connect。TKの資料に基づく（2026年10月29日参照）。")
 
@@ -98,8 +98,8 @@ image_credit: "Illustration / J-Connect"
 
 - [連邦政府：電話での診断書](https://www.bundesregierung.de/breg-de/aktuelles/telefonische-krankschreibung-1800026)
 - [賃金継続支払法 第5条](https://www.gesetze-im-internet.de/entgfg/__5.html)
-- [TK：電子の就労不能証明（eAU）](https://www.tk.de/firmenkunden/service/fachthemen/alles-wichtige-zur-eau/seit-2023-eau-fuer-arbeitgeber-verpflichtend-2102198)
-- [TK：2026年の子どもの看病手当と診断書](https://www.tk.de/firmenkunden/service/fachthemen/versicherung-fachthema/kinderkrankengeld-2025-und-2026-2160374)
+- [TK：電子の就労不能証明（eAU）](https://www.tk.de/firmenkunden/versicherung/meldeverfahren-faq/datenaustausch-eau/seit-2023-eau-fuer-arbeitgeber-verpflichtend-2102198)
+- [TK：2026年の子どもの看病手当と診断書](https://www.tk.de/firmenkunden/versicherung/familie/kinderkrankengeld/kinderkrankengeld-aktuelle-regelungen-2160374)
 - [連邦政府：連立委員会の決定（2026年7月2日）](https://www.bundesregierung.de/resource/blob/992814/2445592/bc8e5e160d879f0bdd593121a96a45d2/2026-07-02-koaausschuss-data.pdf?download=1)
 - [KBV：電話での診断書の廃止方針への批判](https://www.kbv.de/praxis/tools-und-services/praxisnachrichten/2026/07-02/scharfe-kritik-an-geplanter-abschaffung-der-telefon-au)
 

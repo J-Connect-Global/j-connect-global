@@ -1,5 +1,5 @@
 ---
-id: "L077"
+id: "L096"
 title: "ドイツの住宅手当（Wohngeld）とは？対象・申請方法・必要書類【2026年】"
 slug: "wohngeld-antrag-germany-2026"
 category: "住まい"

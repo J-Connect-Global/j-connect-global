@@ -1,5 +1,5 @@
 ---
-id: "L076"
+id: "L095"
 title: "ドイツの求職者向け基礎保障とは？旧Bürgergeldからの変更と申請方法【2026年】"
 slug: "grundsicherung-buergergeld-germany-2026"
 category: "仕事"

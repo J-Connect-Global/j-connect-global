@@ -1,5 +1,5 @@
 ---
-id: "L074"
+id: "L093"
 title: "日本からドイツに届く荷物の関税は？2026年11月の2ユーロ手数料と3ユーロ定額関税"
 slug: "germany-import-fees-japan-packages-2026"
 category: "暮らし・買い物"

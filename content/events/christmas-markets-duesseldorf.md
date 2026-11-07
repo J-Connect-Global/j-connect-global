@@ -111,8 +111,8 @@ image_credit: "Kürschner / CC0 / Wikimedia Commons"
 開催日・営業時間・交通案内の確認日：2026年10月28日。
 ## 写真の出典
 
-- 主画像：[デュッセルドルフ市庁舎前のクリスマスマーケットの夜景](https://commons.wikimedia.org/wiki/File:D%C3%BCsseldorf%2C_Weihnachtsmarkt_vor_dem_Rathaus%2C_Dezember_2022.jpg) — Kürschner / [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en)。
+- 主画像：[デュッセルドルフ市庁舎前のクリスマスマーケットの夜景](https://commons.wikimedia.org/wiki/File:D%C3%BCsseldorf%2C_Weihnachtsmarkt_vor_dem_Rathaus%2C_Dezember_2022.jpg) — Kürschner / [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en)。
 - 本文写真1：[市庁舎を背景に準備が進むデュッセルドルフの屋台](https://commons.wikimedia.org/wiki/File:D%C3%BCsseldorf%2C_Weihnachtsmarkt_2018%2C_vor_dem_Rathaus_%281%29.jpg) — Kürschner / Public domain。
-- 本文写真2：[デュッセルドルフのクリスマスマーケットに飾られたツリー](https://commons.wikimedia.org/wiki/File:Weihnachtsmarkt_D%C3%BCsseldorf%2C_November_2025_%2806%29.jpg) — Kürschner / [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en)。
+- 本文写真2：[デュッセルドルフのクリスマスマーケットに飾られたツリー](https://commons.wikimedia.org/wiki/File:Weihnachtsmarkt_D%C3%BCsseldorf%2C_November_2025_%2806%29.jpg) — Kürschner / [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en)。
 
 写真は各出典の条件に基づき、縦横比を保って縮小しWebP形式へ変換しています。

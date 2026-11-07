@@ -63,10 +63,6 @@
   font-weight:800;
 }
 
-.hero-title .brand-word{
-  color:var(--brand);
-}
-
 .hero-desc{
   max-width:78ch;
   color:#485664;
@@ -120,31 +116,6 @@
   display:grid;
   gap:14px;
   align-content:center;
-}
-
-.info-panel{
-  background:rgba(255,255,255,.68);
-  border:1.5px solid rgba(205,215,226,.95);
-  border-radius:20px;
-  padding:18px;
-  backdrop-filter:blur(6px);
-}
-
-.info-panel h2{
-  font-size:16px;
-  margin-bottom:8px;
-}
-
-.info-panel p,
-.info-panel li{
-  color:#53606c;
-  font-size:14px;
-}
-
-.info-panel ul{
-  padding-left:20px;
-  display:grid;
-  gap:6px;
 }
 
 .section{
@@ -216,25 +187,6 @@
   padding:14px 16px;
   color:#6d4d14;
   font-size:14px;
-}
-
-.free-notice{
-  display:grid;
-  gap:8px;
-  border:2px solid #f0cf9d;
-  background:linear-gradient(135deg,#fff7dd,#ffffff);
-}
-
-.free-notice strong{
-  display:block;
-  font-size:21px;
-  color:var(--green);
-  font-weight:950;
-  line-height:1.35;
-}
-
-.free-notice span{
-  color:#6d4d14;
 }
 
 .posting-pilot-notice{
@@ -413,15 +365,6 @@
 
 .field.has-error .error-message{
   display:block;
-}
-
-.validation-note{
-  border:1px solid #dce4ee;
-  background:#fbfdff;
-  border-radius:16px;
-  padding:14px;
-  color:#53606c;
-  font-size:13px;
 }
 
 .status-box{
@@ -718,10 +661,6 @@ body{
   letter-spacing:0;
 }
 
-.hero-title .brand-word{
-  color:inherit;
-}
-
 .hero-desc,
 .section-desc,
 .panel p,
@@ -744,7 +683,6 @@ body{
   border-color:#cfe0f2;
 }
 
-.info-panel,
 .panel,
 .notice,
 .policy-card,
@@ -870,7 +808,6 @@ body{
 }
 
 :root[data-theme="dark"] .hero,
-:root[data-theme="dark"] .info-panel,
 :root[data-theme="dark"] .panel,
 :root[data-theme="dark"] .notice,
 :root[data-theme="dark"] .policy-card,
@@ -878,8 +815,7 @@ body{
 :root[data-theme="dark"] .job-preview-card,
 :root[data-theme="dark"] .status-box,
 :root[data-theme="dark"] .posting-flow-card,
-:root[data-theme="dark"] .preview-block-title,
-:root[data-theme="dark"] .validation-note{
+:root[data-theme="dark"] .preview-block-title{
   border-color:var(--color-border, #263a52);
   background:var(--surface-card-bg, #101f33);
   color:var(--surface-card-text, #e8f1fb);
@@ -938,8 +874,7 @@ body{
 :root[data-theme="dark"] .preview-label,
 :root[data-theme="dark"] .preview-block-title span,
 :root[data-theme="dark"] .help,
-:root[data-theme="dark"] .counter,
-:root[data-theme="dark"] .validation-note{
+:root[data-theme="dark"] .counter{
   color:var(--surface-card-muted, #526170);
 }
 
@@ -1024,7 +959,6 @@ body{
 :root[data-theme="dark"] body .hero,
 :root[data-theme="dark"] body .hero-main,
 :root[data-theme="dark"] body .hero-side,
-:root[data-theme="dark"] body .info-panel,
 :root[data-theme="dark"] body .panel,
 :root[data-theme="dark"] body .notice,
 :root[data-theme="dark"] body .policy-card,
@@ -1032,8 +966,7 @@ body{
 :root[data-theme="dark"] body .job-preview-card,
 :root[data-theme="dark"] body .status-box,
 :root[data-theme="dark"] body .posting-flow-card,
-:root[data-theme="dark"] body .preview-block-title,
-:root[data-theme="dark"] body .validation-note{
+:root[data-theme="dark"] body .preview-block-title{
   border-color:var(--color-border, #263a52);
   background:var(--surface-card-bg, #101f33);
   color:var(--surface-card-text, #e8f1fb);
@@ -1072,8 +1005,7 @@ body{
 :root[data-theme="dark"] body .preview-label,
 :root[data-theme="dark"] body .preview-block-title span,
 :root[data-theme="dark"] body .help,
-:root[data-theme="dark"] body .counter,
-:root[data-theme="dark"] body .validation-note{
+:root[data-theme="dark"] body .counter{
   color:var(--surface-card-muted, #526170);
 }
 

@@ -20,7 +20,7 @@ official_sources:
     url: "https://www.stadt-koeln.de/artikel/01841/index.html"
   - title: "Kölner Zoo：来園案内"
     url: "https://koelnerzoo.de/besuch"
-  - title: "Kölner Seilbahn：2026年運行案内"
+  - title: "Kölner Seilbahn：運行案内"
     url: "https://www.koelner-seilbahn.de/fahrten.html"
   - title: "Kölnisches Stadtmuseum：見学案内"
     url: "https://museenkoeln.de/portal/Die-neue-Dauerausstellung-ndash-KoeLN-NEU-ERZaeHLT"

@@ -1,5 +1,5 @@
 ---
-id: "L075"
+id: "L094"
 title: "ドイツのデジタル身分証「d-you」とは？2027年1月開始予定と日本人居住者の注意点"
 slug: "d-you-eudi-wallet-germany-2027"
 category: "役所・滞在"

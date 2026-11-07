@@ -183,3 +183,50 @@
 - ドイツ連邦環境庁の概要ページ（2026-08-13更新）は、2026-11-29の新型式についてM1/N1を記載する一方、2027-11-29の新車についてはM1を明記している。
 - これに対し、EU規則2024/1257の第10条第5項は2027-11-29の段階についてM1またはN1の新車を対象とし、同規則第21条も適用日を定めている。記事では拘束力のある法令本文を優先し、M1/N1と記載したうえで差異を注記した。
 - 一次情報：UBA https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge ／ EUR-Lex統合版 https://eur-lex.europa.eu/eli/reg/2024/1257/2026-09-02/eng/pdf
+
+
+## 2026年11月7日・追加調査と優先度1の再確認
+
+### 現行サイト・リポジトリの基準点
+
+- ドイツ現地確認日：2026年11月7日。
+- 候補リポジトリ名 NihonGatewayGermany/nihon-gateway-germany はGitHub上で現行の実体ではなく、GitHubのリポジトリ解決先は J-Connect-Global/j-connect-global（ID 1189966670、既定ブランチ main、管理・push権限あり）。
+- main の基点は 8a25e85f42c00989dae80c502b0fb373eb7ba152。README.md は存在しない。NotionのProject Instructionsは検索時にユーザー入力が必要となり取得できず、GSC Wizardのサイト一覧も接続・利用枠のエラーで取得できなかった。
+- 現行 sitemap.xml は198 URL。レジストリは生活ガイド72件、イベント・ニュース102件で、どちらも公開状態。直近のサイト更新は11月6日で、健康保険、鉄道、出生手続き、所得税、Elterngeld、帰化、11月の静かな祝日が更新されている。
+- GSCの直近28日・3か月のクエリ、表示回数、CTR、平均順位は取得できていない。推測値は使用していない。
+
+### 既存タスクの状態
+
+- PR #351（通知メールの平文URLで amp; が混入する問題）は2026年10月18日に本番Apps Script v33へ反映済み。PR記録には2つの運用テストアカウント間で送受信、通知、会話表示、返信まで確認した記録がある。現行公開API communityMessagingStatus は messaging_version=2026-10-23.1 と persistent_links、email_notifications、resend_token、message_read_status 等の有効フラグを返す。
+- PR #412（元投稿が削除・非公開のときに無効な再送案内を表示しない）はマージ済み。
+- PR #424（音声ボタンの要求中・完了・失敗表示）はマージ済み。ただし物理端末のスピーカーから音声が出ることは未確認。クラウド環境のテストはWeb Speech APIの状態表示を検証するもので、実機音声の代替ではない。
+- PR #406はDocs-onlyで閉じられており、別タスクとしてApps Scriptの5分トリガー状態、Zoho実メールE2E、実機音声、自治体の2026/27年花火禁止区域の再確認が残っている。今回はGoogleログイン済みApps Script管理セッションと安全なテスト受信箱がないため、トリガーの実稼働・実メール配送を確認できず、実メール送信もしていない。
+- PR #428は2026年11月6日に閉じられ、現在のGitHub状態は merged=true。前回記録の未マージ状態から変化している。学習語彙・分類データや共通CSSの変更を今回のコンテンツ作業で追加・修正・巻き戻しはしていない。
+- PR #420、#422、#423、#430、#434はオープンのDraft。#420/#422/#423は競合または専門レビューが残る。#430は今回の追加変更前のValidate contentが成功していた。#434は15件のレビュー待ちガイドが published=true・検索・サイトマップ表示になっていたため、2026年11月7日にDraftへ戻し、公開メタデータ不整合と重複リスクをPRコメントで指摘した。
+
+### N039：放送負担金の全国照合 — 2026年11月7日再確認
+
+- 11月5日付プレス発表と公式FAQは通知開始を「2026年12月14日ごろ」と説明する一方、同日付のサービス記事は「2027年1月から」としている。公式ページ間で表記が一致しないため、記事では両方を明示し、発送日を断定しない。
+- オンライン回答では通知書の10桁の照会番号と必要な支払者番号を入力する。返信用紙には照会番号が印字されているため、同居人の支払者番号を記入する。
+- 最初の通知後に再通知があり、それでも回答がなければ自動登録されると公式サービス記事が説明している。記事の表現をこの順序に合わせた。
+- 公式一次情報：
+  - https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026
+  - https://www.rundfunkbeitrag.de/buergerinnen-und-buerger/informationen/informationen-zum-meldedatenabgleich/fragen-und-antworten-zum-bundesweiten-meldedatenabgleich
+  - https://www.rundfunkbeitrag.de/presse-und-aktuelles/servicethemen/ploetzlich-post-vom-beitragsservice-meldedatenabgleich-2026-das-muessen-sie-tun
+  - https://www.gesetze-bayern.de/Content/Document/RBeitrStV-11
+- N039は引き続き published:false のドラフト。現行サイトのレジストリ、検索インデックス、サイトマップ、公開HTMLは変更していない。
+
+### C019：大晦日の花火 — 自治体ルールの再確認
+
+- 2026年11月7日時点で、デュッセルドルフ市・ケルン市の公式検索結果から確認できたのは2025/26年の禁止区域・規制であり、2026/27年の新しい禁止区域の告知は確認できなかった。
+- したがって、前年の規制を今年の確定ルールとして記載しない。記事の次回確認日（2026年12月10日）を維持し、12月上旬〜中旬に自治体の告示・一般命令を再確認する。
+- 一次情報の確認先：
+  - https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/feuerwerksverbot-an-silvester-und-neujahr-2025-26-mehr-sicherheit-in-der-duesseldorfer-altstadt
+  - https://www.stadt-koeln.de/politik-und-verwaltung/presse/mitteilungen/28087/index.html
+  - https://www.stadt-koeln.de/politik-und-verwaltung/bekanntmachungen/
+
+### 今回の差分・制約
+
+- N039の未公開ドラフト、イベントレジストリ、既存記事更新案、作業記録のみを更新対象とする。公開ページ、サイトマップ、canonical、hreflang、投稿・求人・フォーム、管理・プライバシー、学習語彙・分類、共通CSSは変更しない。
+- 既存記事 /germany/ja/living/rundfunkbeitrag-guide/ の本番HTMLは未更新。挿入案をDocsに残し、N039公開後に内部リンクを有効化する。
+- PR #434のL088（カビ）とL090（Deutschlandticket）は既存公開記事と検索意図が大きく重なるため、統合または検索意図の絞り込みが必要。PR #434はDraftのまま。

@@ -6035,5 +6035,323 @@
     ],
     "image": "/assets/img/living/japanese-passport-consulate-germany.webp",
     "image_alt": "旅行かばんの上に、表紙の無地のパスポートと航空券、ドイツの街並みの絵はがきが置かれたイラスト"
+  },
+  {
+    "id": "L093",
+    "slug": "germany-import-fees-japan-packages-2026",
+    "url": "/germany/ja/living/germany-import-fees-japan-packages-2026/",
+    "markdown_path": "/content/living/germany-import-fees-japan-packages-2026.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 9999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "tax",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; human customs/tax review pending",
+      "last_reviewed_at": "2026-11-05",
+      "next_review_due": "2026-11-10"
+    },
+    "canonical_url": "/germany/ja/living/germany-import-fees-japan-packages-2026/",
+    "title": "日本からドイツに届く荷物の関税は？2026年11月の2ユーロ手数料と3ユーロ定額関税",
+    "category": "暮らし・買い物",
+    "summary": "2026年11月1日から、EU域外から消費者向けに発送される通販には、EU関税法上の「品目」ごとに2ユーロの取扱手数料が適用されています。荷物の本質的価値が150ユーロ以下の対象通販には3ユーロの定額関税も別途あり、輸入消費税や個人間ギフトとの違いを確認できます。",
+    "published_at": "2026-11-07",
+    "last_verified": "2026-11-05",
+    "tags": [
+      "日本からドイツ",
+      "個人輸入",
+      "関税",
+      "EU取扱手数料",
+      "輸入消費税",
+      "国際郵便",
+      "贈り物",
+      "2026年"
+    ],
+    "updated_at": "2026-11-07",
+    "related_articles": [
+      "christmas-post-germany-to-japan-2026",
+      "dhl-delivered-but-not-received"
+    ],
+    "official_sources": [
+      {
+        "title": "EU理事会：小口荷物へのEU措置（3ユーロ関税・2ユーロ取扱手数料）",
+        "url": "https://www.consilium.europa.eu/de/policies/eu-action-influx-of-small-parcels/"
+      },
+      {
+        "title": "欧州委員会DG TAXUD：3ユーロ関税・2ユーロ取扱手数料の技術ガイダンス（2026年10月5日版、法的拘束力なし）",
+        "url": "https://taxation-customs.ec.europa.eu/document/download/053e5b4e-f0be-4f20-9a23-3e3b659a6676_en?filename=Customs+Guidance+on+EUR+3+customs+duty.pdf"
+      },
+      {
+        "title": "EU理事会：3ユーロ定額関税の最終承認（2026年2月11日）",
+        "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/02/11/council-gives-final-green-light-to-new-customs-duty-rules-for-small-parcels/"
+      },
+      {
+        "title": "欧州委員会：EU税関改革と取扱手数料",
+        "url": "https://taxation-customs.ec.europa.eu/customs/eu-customs-reform_en"
+      },
+      {
+        "title": "EU規則2026/2108：第20条・取扱手数料",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R2108"
+      },
+      {
+        "title": "EU規則2026/382：150ユーロ以下の小口輸入に関する定額関税",
+        "url": "https://eur-lex.europa.eu/eli/reg/2026/382/oj/eng"
+      },
+      {
+        "title": "EU委任規則2026/2152：取扱手数料の金額",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R2152"
+      },
+      {
+        "title": "ドイツ税関：郵便・通販荷物と贈り物の案内",
+        "url": "https://www.zoll.de/SharedDocs/Downloads/DE/Publikation/Broschuere/Reise-Post/faltblatt_zoll_post_internethandel.pdf?__blob=publicationFile&v=4"
+      }
+    ],
+    "image": "/assets/img/living/germany-import-fees-japan-packages-2026.webp",
+    "image_alt": "日本からドイツへ届く段ボール箱と税関書類を示すイラスト"
+  },
+  {
+    "id": "L094",
+    "slug": "d-you-eudi-wallet-germany-2027",
+    "url": "/germany/ja/living/d-you-eudi-wallet-germany-2027/",
+    "markdown_path": "/content/living/d-you-eudi-wallet-germany-2027.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 9999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; human administrative/privacy review pending",
+      "last_reviewed_at": "2026-11-05",
+      "next_review_due": "2026-11-20"
+    },
+    "canonical_url": "/germany/ja/living/d-you-eudi-wallet-germany-2027/",
+    "title": "ドイツのデジタル身分証「d-you」とは？2027年1月開始予定と日本人居住者の注意点",
+    "category": "役所・滞在",
+    "summary": "ドイツのEUデジタル身分証ウォレット「d-you」は2027年1月2日の開始が予定されています。連邦議会は2026年10月15日に関連法案を可決し、連邦参議院の第2次通過手続きは11月20日に予定されています。外国籍住民の本人確認方法と初期版の機能は未確定です。",
+    "published_at": "2026-11-07",
+    "last_verified": "2026-11-05",
+    "tags": [
+      "d-you",
+      "EUDI Wallet",
+      "デジタル身分証",
+      "行政手続",
+      "ドイツ",
+      "2027年",
+      "プライバシー"
+    ],
+    "updated_at": "2026-11-07",
+    "related_articles": [
+      "germany-january-2027-changes"
+    ],
+    "official_sources": [
+      {
+        "title": "連邦政府：デジタルブリーフケース「d-you」の開始計画",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/digitale-brieftasche-2431500"
+      },
+      {
+        "title": "連邦政府：d-youの2027年1月初旬開始、参加パートナー、無料・任意利用（現行案内）",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/digital-wallet-2452384"
+      },
+      {
+        "title": "ドイツ連邦議会：EUDI Wallet関連法案の可決と2027年1月2日の開始予定（2026年10月15日）",
+        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw42-de-digitale-identitaeten-gesetz-1223586"
+      },
+      {
+        "title": "ベルリン州政府：2026年11月20日の連邦参議院会議予定",
+        "url": "https://www.berlin.de/rbmskzl/politik/senatskanzlei/bundesangelegenheiten/der-bundesrat/vorschau-auf-die-bundesratssitzung-1616077.php"
+      },
+      {
+        "title": "欧州委員会：European Digital Identity Wallet",
+        "url": "https://digital-strategy.ec.europa.eu/en/factpages/european-digital-identity-wallet"
+      },
+      {
+        "title": "EU規則2024/1183：欧州デジタルIDの法的枠組み",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1183"
+      }
+    ],
+    "image": "/assets/img/living/d-you-eudi-wallet-germany-2027.webp",
+    "image_alt": "スマートフォンの画面にデジタル身分証と安全確認のマークを表示したイラスト"
+  },
+  {
+    "id": "L095",
+    "slug": "grundsicherung-buergergeld-germany-2026",
+    "url": "/germany/ja/living/grundsicherung-buergergeld-germany-2026/",
+    "markdown_path": "/content/living/grundsicherung-buergergeld-germany-2026.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 9999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/grundsicherung-buergergeld-germany-2026/",
+    "disclaimer_type": "employment",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; human social-benefits and immigration-law review pending",
+      "last_reviewed_at": "2026-11-04",
+      "next_review_due": "2026-11-18"
+    },
+    "title": "ドイツの求職者向け基礎保障とは？旧Bürgergeldからの変更と申請方法【2026年】",
+    "category": "仕事",
+    "summary": "2026年7月1日から旧Bürgergeldは新しい求職者向け基礎保障へ移行しました。対象条件、失業手当との違い、Jobcenterでの申請、外国籍の人が確認すべき在留資格上の注意点を、連邦政府・連邦雇用エージェンシー・法律の一次情報で整理します。",
+    "published_at": "2026-11-07",
+    "updated_at": "2026-11-07",
+    "last_verified": "2026-11-04",
+    "tags": [
+      "Grundsicherungsgeld",
+      "Bürgergeld",
+      "失業",
+      "低所得",
+      "社会保障",
+      "Jobcenter",
+      "滞在許可",
+      "2026年"
+    ],
+    "related_articles": [
+      "unemployment-benefit-germany",
+      "wohngeld-reform-2027",
+      "residence-permit-renewal-germany",
+      "family-reunification-spouse-work-germany",
+      "wohngeld-antrag-germany-2026"
+    ],
+    "official_sources": [
+      {
+        "title": "連邦政府：新しい求職者向け基礎保障の概要（2026年7月1日から）",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/neue-grundsicherung-2399562"
+      },
+      {
+        "title": "連邦政府：社会扶助と新しい基礎保障のFAQ",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/sozialhilfe-und-grundsicherung-2253064"
+      },
+      {
+        "title": "連邦雇用エージェンシー：新制度のオンライン申請",
+        "url": "https://www.arbeitsagentur.de/grundsicherung/online-services-im-ueberblick"
+      },
+      {
+        "title": "連邦雇用エージェンシー：新制度の施行と既存受給者の扱い（2026年6月）",
+        "url": "https://www.arbeitsagentur.de/presse/2026-20-reform-der-grundsicherung-fuer-arbeitsuchende-tritt-am-1-juli-2026-in-kraft"
+      },
+      {
+        "title": "社会法典第2編 §7：対象者と給付除外",
+        "url": "https://www.gesetze-im-internet.de/sgb_2/__7.html"
+      },
+      {
+        "title": "社会法典第2編 §8：就労能力",
+        "url": "https://www.gesetze-im-internet.de/sgb_2/__8.html"
+      },
+      {
+        "title": "社会法典第2編 §9：困窮状態の判定",
+        "url": "https://www.gesetze-im-internet.de/sgb_2/__9.html"
+      },
+      {
+        "title": "社会法典第2編 §19：給付の内容",
+        "url": "https://www.gesetze-im-internet.de/sgb_2/__19.html"
+      },
+      {
+        "title": "社会法典第2編 §22：住居費と暖房費",
+        "url": "https://www.gesetze-im-internet.de/sgb_2/__22.html"
+      },
+      {
+        "title": "社会法典第2編 §37：申請と給付開始",
+        "url": "https://www.gesetze-im-internet.de/sgb_2/__37.html"
+      },
+      {
+        "title": "社会法典第2編 §31a：義務違反時の給付減額",
+        "url": "https://www.gesetze-im-internet.de/sgb_2/__31a.html"
+      }
+    ],
+    "image": "/assets/img/living/grundsicherung-buergergeld-germany-2026.webp",
+    "image_alt": "申請書と書類を机で確認する人、住居と書類フォルダーを描いたイラスト",
+    "image_caption": "求職者向け基礎保障の申請準備をイメージしたJ-Connectオリジナル図",
+    "image_credit": "J-Connect Global制作（2026年11月4日）"
+  },
+  {
+    "id": "L096",
+    "slug": "wohngeld-antrag-germany-2026",
+    "url": "/germany/ja/living/wohngeld-antrag-germany-2026/",
+    "markdown_path": "/content/living/wohngeld-antrag-germany-2026.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 9999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/wohngeld-antrag-germany-2026/",
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; human housing-benefits/administrative-law review pending",
+      "last_reviewed_at": "2026-11-04",
+      "next_review_due": "2026-11-18"
+    },
+    "title": "ドイツの住宅手当（Wohngeld）とは？対象・申請方法・必要書類【2026年】",
+    "category": "住まい",
+    "summary": "ドイツの住宅手当は、家賃または自己所有住宅の負担を支える給付です。世帯人数・収入・対象家賃・自治体の家賃区分で決まる仕組み、申請先、必要書類、申請月からの支給、求職者向け基礎保障との併用制限を2026年の現行ルールに沿って解説します。",
+    "published_at": "2026-11-07",
+    "updated_at": "2026-11-07",
+    "last_verified": "2026-11-04",
+    "tags": [
+      "Wohngeld",
+      "住宅手当",
+      "家賃",
+      "低所得",
+      "申請",
+      "住まい",
+      "Lastenzuschuss",
+      "Mietzuschuss"
+    ],
+    "related_articles": [
+      "grundsicherung-buergergeld-germany-2026",
+      "wohngeld-reform-2027",
+      "unemployment-benefit-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "連邦住宅・都市開発・建設省：住宅手当のよくある質問",
+        "url": "https://www.bmwsb.bund.de/SharedDocs/faqs/DE/buergerkom/wohngeld-plus/wohngeld-FAQ-artikel.html"
+      },
+      {
+        "title": "連邦住宅・都市開発・建設省：住宅手当計算機（2025年1月1日版）",
+        "url": "https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeldrechner/wohngeldrechner-2025_artikel.html"
+      },
+      {
+        "title": "連邦行政ポータル：住宅手当の申請先・家賃補助と持ち家向け補助",
+        "url": "https://verwaltung.bund.de/leistungsverzeichnis/DE/leistung/99107023037000/herausgeber/BY-24752/region/092725214138"
+      },
+      {
+        "title": "住宅手当法 §7：他の給付を受ける場合の除外",
+        "url": "https://www.gesetze-im-internet.de/wogg/__7.html"
+      },
+      {
+        "title": "住宅手当法 §22：申請が必要であること",
+        "url": "https://www.gesetze-im-internet.de/wogg/__22.html"
+      },
+      {
+        "title": "住宅手当法 §25：給付期間と開始月",
+        "url": "https://www.gesetze-im-internet.de/wogg/__25.html"
+      },
+      {
+        "title": "住宅手当法 §27：給付期間中の変更",
+        "url": "https://www.gesetze-im-internet.de/wogg/__27.html"
+      },
+      {
+        "title": "デュッセルドルフ市：住宅手当のオンライン申請と書類入手先（2026年5月28日）",
+        "url": "https://www2.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/mehr-service-vor-ort-wohnungsamt-erweitert-angebot"
+      }
+    ],
+    "image": "/assets/img/living/wohngeld-antrag-germany-2026.webp",
+    "image_alt": "住宅、賃貸契約書、電卓とコインを組み合わせた住宅手当のイラスト",
+    "image_caption": "住宅手当の申請と住宅費の確認をイメージしたJ-Connectオリジナル図",
+    "image_credit": "J-Connect Global制作（2026年11月4日）"
   }
 ]

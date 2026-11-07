@@ -8,7 +8,7 @@ import { ROOT_REDIRECT_TARGET_PATH, ROOT_ROUTE } from './root-redirect-contract.
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE_ORIGIN = 'https://j-connect-global.com';
 const PAGE_REGISTRY_PATH = 'content/registry/pages.json';
-const SEARCH_INDEX_PATH = 'assets/js/search-index.js';
+const SEARCH_INDEX_PATH = 'assets/data/search-index.json';
 const SITEMAP_PATH = 'sitemap.xml';
 const contentRegistryPaths = [
   'content/registry/living.json',
@@ -810,16 +810,12 @@ function validateSearchItemsResolve(searchIndex) {
 
 function readSearchIndex() {
   try {
-    const sandbox = { window: {} };
-    vm.runInNewContext(fs.readFileSync(path.join(root, SEARCH_INDEX_PATH), 'utf8'), sandbox, {
-      filename: SEARCH_INDEX_PATH,
-      timeout: 1000
-    });
-    if (!Array.isArray(sandbox.window.JCONNECT_SEARCH_INDEX)) {
-      problems.push(`${SEARCH_INDEX_PATH} must define window.JCONNECT_SEARCH_INDEX as an array.`);
+    const entries = JSON.parse(fs.readFileSync(path.join(root, SEARCH_INDEX_PATH), 'utf8'));
+    if (!Array.isArray(entries)) {
+      problems.push(`${SEARCH_INDEX_PATH} must contain a JSON array.`);
       return [];
     }
-    return sandbox.window.JCONNECT_SEARCH_INDEX;
+    return entries;
   } catch (error) {
     problems.push(`Unable to parse ${SEARCH_INDEX_PATH}: ${error.message}`);
     return [];

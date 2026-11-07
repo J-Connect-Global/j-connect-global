@@ -7,16 +7,16 @@ summary: "ドイツで車を使うには、自動車保険に入って番号（e
 status: "published"
 published: true
 published_at: "2026-10-29"
-updated_at: "2026-10-29"
-last_verified: "2026-10-29"
-next_review: "2027-10-29"
+updated_at: "2026-11-07"
+last_verified: "2026-11-07"
+next_review: "2027-05-29"
 canonical_url: "/germany/ja/living/buying-registering-car-germany/"
 tags: ["車", "TÜV", "自動車保険", "登録", "運転免許"]
 image: "/assets/img/living/buying-registering-car-germany.webp"
 image_alt: "街の道路を走る車と、ナンバープレート、書類を描いたイラスト"
 image_caption: "イラスト：J-Connect。車の登録のテーマを表したもので、実際のナンバープレートや書類を描いたものではありません。"
 image_credit: "Illustration / J-Connect"
-related_articles: ["drivers-license-japan-germany", "car-insurance-switch-november-2026", "winter-tires-germany-2026"]
+related_articles: ["euro-7-germany-2026", "drivers-license-japan-germany", "car-insurance-switch-november-2026", "winter-tires-germany-2026"]
 official_sources:
   - title: "ADAC：車の登録と抹消のしかた"
     url: "https://www.adac.de/rund-ums-fahrzeug/auto-kaufen-verkaufen/kfz-zulassung/auto-anmelden-abmelden/"
@@ -30,6 +30,10 @@ official_sources:
     url: "https://service.duesseldorf.de/suche/-/egov-bis-detail/dienstleistung/282/show"
   - title: "ケルン市：車のオンライン登録"
     url: "https://www.stadt-koeln.de/service/produkte/20020/index.html"
+  - title: "ドイツ連邦環境庁：乗用車・小型商用車の排出基準"
+    url: "https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge"
+  - title: "EU規則2024/1257：Euro 7"
+    url: "https://eur-lex.europa.eu/eli/reg/2024/1257/oj"
 ---
 
 # ドイツで車を買う・登録する・TÜV｜保険の番号、登録に必要な書類、車検の間隔
@@ -89,6 +93,16 @@ ADACによると、乗用車の車検は、**新車は最初の登録から3年�
 
 ![乗用車の車検は新車が最初の登録から3年後、その後は2年ごとで、ナンバープレートのステッカーで次の年と月が分かり、期限から2か月を超えると細かい検査が必要になることを示した図](/assets/images/living/car-inspection-intervals.svg "図解：J-Connect。ADACの資料に基づく（2026年10月29日参照）。")
 
+## Euro 7の適用日程と新車購入への影響
+
+EUのEuro 7規則は、乗用車（M1）と小型商用車（N1）について、2026年11月29日から新しい車種の型式認証に適用されます。Euro 7に適合しないM1・N1の新車は、原則として2027年11月29日から登録・販売・使用開始が認められなくなります。小規模生産メーカーが製造するM1・N1車には、EU規則上2030年7月1日という別の日程があります。2026年11月29日に、販売店の在庫車やすでに登録されている車が一斉にEuro 7へ切り替わるわけではありません。
+
+Euro 7は排気管からの排出だけでなく、ブレーキ・タイヤの摩耗による粒子や、電動車の駆動用バッテリー耐久性も扱います。既存車をEuro 7に改造・再登録する義務が、この適用日程だけを理由に新たに生じるものではありません。
+
+2026年末から2027年に新車を買う場合は、販売店に「新しい車種の型式認証か、既存の型式認証か」「適用される排出基準は何か」を確認し、車両の適合証明書（CoC）や仕様書も確認してください。Euro 7のバッテリー耐久性基準は型式認証上の最低性能要件であり、個々の車の保証や実使用時の残存容量を約束するものではありません。日程と対象範囲の詳しい説明は、[Euro 7のドイツ向け解説](/germany/ja/events/news/euro-7-germany-2026/)にまとめています。
+
+適用日程、対象の車の種類、バッテリーの基準の詳しい説明は「[Euro 7は2026年11月29日から新しい車種の型式認証に適用](/germany/ja/events/news/euro-7-germany-2026/)」にまとめています。
+
 ## 自動車保険と自動車税
 
 - **自動車保険**：対人・対物の保険（Haftpflicht）は法律で義務です。車両の保険（Teilkasko・Vollkasko）は任意です。保険の乗り換えは「[車の保険を見直すなら11月30日まで](/germany/ja/events/news/car-insurance-switch-november-2026/)」を見てください。
@@ -98,7 +112,7 @@ ADACによると、乗用車の車検は、**新車は最初の登録から3年�
 
 車を売ったときや、日本に帰るときは、登録の抹消（Abmeldung）か、買った人への名義の変更が必要です。本帰国の手続きは「[ドイツから本帰国するときの手続き](/germany/ja/living/returning-to-japan-checklist/)」でまとめています。冬のタイヤのルールは「[ドイツの冬タイヤ義務2026](/germany/ja/living/winter-tires-germany-2026/)」を見てください。
 
-## 参考情報（2026年10月29日参照）
+## 参考情報（2026年11月7日参照）
 
 - [ADAC：車の登録と抹消のしかた](https://www.adac.de/rund-ums-fahrzeug/auto-kaufen-verkaufen/kfz-zulassung/auto-anmelden-abmelden/)
 - [ADAC：HUとAU（いわゆるTÜV）](https://www.adac.de/rund-ums-fahrzeug/reparatur-pflege-wartung/hu-und-au/hu-und-au/)
@@ -106,3 +120,5 @@ ADACによると、乗用車の車検は、**新車は最初の登録から3年�
 - [連邦自動車庁：インターネットでの車の登録（i-Kfz）](https://www.kba.de/DE/Themen/ZentraleRegister/Digitale_Fahrzeugzulassung/iKfz/ikfz_node.html)
 - [デュッセルドルフ市：新車の登録](https://service.duesseldorf.de/suche/-/egov-bis-detail/dienstleistung/282/show)
 - [ケルン市：車のオンライン登録](https://www.stadt-koeln.de/service/produkte/20020/index.html)
+- [ドイツ連邦環境庁：乗用車・小型商用車の排出基準](https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge)
+- [EU規則2024/1257：Euro 7](https://eur-lex.europa.eu/eli/reg/2024/1257/oj)

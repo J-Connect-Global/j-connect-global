@@ -225,6 +225,7 @@ test("crawler-first snapshots remain readable and canonical without JavaScript",
 });
 
 test("public JSON failures retain the generated snapshots", async ({ page }) => {
+  await page.route("https://script.google.com/**", (route) => route.abort());
   await page.route("**/assets/data/community/posts.json", (route) => route.abort());
   await page.route("**/assets/data/jobs/jobs.json", (route) => route.abort());
 
@@ -266,6 +267,35 @@ test("Jobs runtime does not restore an expired public-data record", async ({ pag
   await expect(page.locator('[data-id="expired-runtime-fixture"]')).toHaveCount(0);
 });
 
+test("Home shows a post published after the last static sync and drops a hidden one", async ({ page }) => {
+  await stubDriveImages(page);
+  const fresh = {
+    ...activeCommunityPosts[0],
+    id: "post_home-live-only",
+    post_id: "post_home-live-only",
+    title: "同期前にホームへ出る新しい投稿",
+    detail_url: undefined,
+    created_at: "2099-01-01T12:00:00Z",
+    published_at: "2099-01-01T12:00:00Z",
+    updated_at: "2099-01-01T12:00:00Z"
+  };
+  const hidden = activeCommunityPosts[0];
+  let liveReads = 0;
+  await page.route("https://script.google.com/**", (route) => {
+    liveReads += 1;
+    return route.fulfill({
+      json: { ok: true, items: [fresh, ...activeCommunityPosts.slice(1)] },
+      headers: { "Access-Control-Allow-Origin": "*" }
+    });
+  });
+  await openRoute(page, "/germany/ja/");
+  await expect(page.locator("#homeCommunityMini")).toContainText("同期前にホームへ出る新しい投稿");
+  await expect(page.locator("#homeCommunityCards")).toContainText("同期前にホームへ出る新しい投稿");
+  await expect(page.locator(`#homeCommunityCards a[data-post-id="${hidden.id || hidden.post_id}"]`)).toHaveCount(0);
+  expect(liveReads).toBeGreaterThan(0);
+  await assertRouteReady(page);
+});
+
 test("Home uses modern responsive hero and bounded Community thumbnail delivery", async ({ page }) => {
   const heroRequests = [];
   const driveRequests = [];
@@ -290,6 +320,10 @@ test("Home uses modern responsive hero and bounded Community thumbnail delivery"
   await page.route("**/assets/data/community/posts.json", (route) => route.fulfill({
     contentType: "application/json",
     body: JSON.stringify(homeFixture)
+  }));
+  await page.route("https://script.google.com/**", (route) => route.fulfill({
+    json: { ok: true, items: homeFixture.items },
+    headers: { "Access-Control-Allow-Origin": "*" }
   }));
   await openDataRoute(page, "/germany/ja/", [
     "/assets/data/community/posts.json",
@@ -685,6 +719,33 @@ test("root 404 is a noindex, theme-aware recovery page", async ({ page }) => {
   await activateDarkMode(page);
   await assertWcagTextContrast(page, ".not-found-page .site-hero h1", "root 404 heading in dark mode");
   await assertWcagTextContrast(page, ".not-found-page .not-found-links .site-chip", "root 404 navigation in dark mode");
+  await assertNoHorizontalOverflow(page);
+});
+
+test("site search loads its index only for a query and renders ranked results", async ({ page }) => {
+  const indexRequests = [];
+  page.on("request", (request) => {
+    if (new URL(request.url()).pathname === "/assets/data/search-index.json") indexRequests.push(request.url());
+  });
+
+  await openRoute(page, "/germany/ja/search/");
+  await expect(page.locator("#searchMeta")).toHaveText("カテゴリから探すか、キーワードで検索してください。");
+  await expect(page.locator("#searchResults .site-chip").first()).toBeVisible();
+  expect(indexRequests, "the category overview must not download the search index").toEqual([]);
+
+  await openRoute(page, "/germany/ja/search/?q=Elterngeld");
+  await expect(page.locator("#searchMeta")).toContainText("「Elterngeld」の検索結果:");
+  await expect(page.locator('#searchResults a.search-result-card[href="/germany/ja/living/elterngeld-guide-germany/"]')).toBeVisible();
+  await expect(page.locator("#searchInput")).toHaveValue("Elterngeld");
+  expect(indexRequests).toHaveLength(1);
+  await assertRouteReady(page);
+});
+
+test("site search explains a failed index download and keeps category links", async ({ page }) => {
+  await page.route("**/assets/data/search-index.json", (route) => route.fulfill({ status: 503, body: "" }));
+  await openRoute(page, "/germany/ja/search/?q=Elterngeld");
+  await expect(page.locator("#searchMeta")).toHaveText("「Elterngeld」を検索できませんでした。通信状況を確認して、再読み込みしてください。");
+  await expect(page.locator('#searchResults .site-chip[href="/germany/ja/living/"]')).toBeVisible();
   await assertNoHorizontalOverflow(page);
 });
 

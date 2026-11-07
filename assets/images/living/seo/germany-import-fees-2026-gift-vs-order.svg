@@ -1,0 +1,30 @@
+<svg width="1200" height="675" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">通販品と個人間ギフトの税関ルール</title>
+  <desc id="desc">日本からドイツへ届く荷物をオンライン購入と個人間の贈り物に分け、適用される手数料と免税条件を示す図。</desc>
+  <rect width="1200" height="675" rx="28" fill="#F5F1E8"/>
+  <text x="64" y="82" fill="#1F2933" font-size="38" font-weight="700" font-family="Arial,sans-serif">まず「通販」か「本当の贈り物」かを分ける</text>
+  <g transform="translate(64 145)">
+    <rect width="510" height="390" rx="24" fill="#FFFFFF" stroke="#C8D2D4" stroke-width="2"/>
+    <rect width="510" height="72" rx="24" fill="#47727A"/>
+    <text x="32" y="48" fill="#FFFFFF" font-size="30" font-weight="700" font-family="Arial,sans-serif">オンライン購入</text>
+    <text x="32" y="132" fill="#1F2933" font-size="26" font-weight="700" font-family="Arial,sans-serif">EU域外から消費者へ発送</text>
+    <text x="32" y="188" fill="#47727A" font-size="27" font-weight="700" font-family="Arial,sans-serif">2 € 取扱手数料</text>
+    <text x="32" y="226" fill="#52616B" font-size="22" font-family="Arial,sans-serif">税関上の品目ごと</text>
+    <text x="32" y="282" fill="#A46E34" font-size="27" font-weight="700" font-family="Arial,sans-serif">3 € 定額関税</text>
+    <text x="32" y="320" fill="#52616B" font-size="22" font-family="Arial,sans-serif">対象の150 €未満の通販のみ</text>
+    <text x="32" y="362" fill="#52616B" font-size="20" font-family="Arial,sans-serif">輸入消費税・配送会社手数料は別</text>
+  </g>
+  <g transform="translate(626 145)">
+    <rect width="510" height="390" rx="24" fill="#FFFFFF" stroke="#D9C6A7" stroke-width="2"/>
+    <rect width="510" height="72" rx="24" fill="#687A63"/>
+    <text x="32" y="48" fill="#FFFFFF" font-size="30" font-weight="700" font-family="Arial,sans-serif">個人間の贈り物</text>
+    <text x="32" y="132" fill="#1F2933" font-size="26" font-weight="700" font-family="Arial,sans-serif">個人から個人へ無償で送る</text>
+    <text x="32" y="188" fill="#687A63" font-size="27" font-weight="700" font-family="Arial,sans-serif">45 €以下なら免税の可能性</text>
+    <text x="32" y="226" fill="#52616B" font-size="22" font-family="Arial,sans-serif">たまに送る・非商業・個人使用</text>
+    <text x="32" y="282" fill="#1F2933" font-size="26" font-weight="700" font-family="Arial,sans-serif">通販向けの2 €・3 €は対象外</text>
+    <text x="32" y="320" fill="#52616B" font-size="22" font-family="Arial,sans-serif">45 €超や制限品は別ルール</text>
+    <text x="32" y="362" fill="#52616B" font-size="20" font-family="Arial,sans-serif">「ギフト」と書くだけでは免税にならない</text>
+  </g>
+  <rect x="64" y="575" width="1072" height="52" rx="14" fill="#E8E1D5"/>
+  <text x="88" y="609" fill="#1F2933" font-size="22" font-weight="700" font-family="Arial,sans-serif">判断の出発点：支払いのある通販か、無償の個人間ギフトかを確認する。</text>
+</svg>

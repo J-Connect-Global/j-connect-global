@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Euro 7の適用日程</title>
+<desc id="desc">2026年11月29日から新型式、2027年11月29日からすべての新車に適用される日程を示す図。</desc>
+<rect width="1200" height="675" rx="32" fill="#F5F3EE"/>
+<text x="72" y="82" font-family="sans-serif" font-size="36" font-weight="700" fill="#263445">Euro 7：新型式と新車の適用日程</text>
+<text x="72" y="126" font-family="sans-serif" font-size="20" fill="#56616C">乗用車（M1）・小型商用車（N1）</text>
+<line x1="178" y1="326" x2="1014" y2="326" stroke="#C6CDD2" stroke-width="12" stroke-linecap="round"/>
+<circle cx="290" cy="326" r="24" fill="#B77D48"/>
+<circle cx="850" cy="326" r="24" fill="#3D6C73"/>
+<rect x="90" y="180" width="400" height="108" rx="18" fill="#FFFFFF" stroke="#D8D5CC" stroke-width="2"/>
+<text x="120" y="222" font-family="sans-serif" font-size="28" font-weight="700" fill="#263445">2026年11月29日</text>
+<text x="120" y="260" font-family="sans-serif" font-size="21" fill="#56616C">新しい車種の型式認証</text>
+<rect x="650" y="364" width="450" height="116" rx="18" fill="#FFFFFF" stroke="#D8D5CC" stroke-width="2"/>
+<text x="680" y="408" font-family="sans-serif" font-size="28" font-weight="700" fill="#263445">2027年11月29日</text>
+<text x="680" y="448" font-family="sans-serif" font-size="21" fill="#56616C">すべての新車の登録・販売</text>
+<text x="90" y="550" font-family="sans-serif" font-size="21" fill="#263445">既存車の一斉改造を求める日程ではありません。</text>
+<text x="90" y="590" font-family="sans-serif" font-size="17" fill="#6B747C">出典：EU規則2024/1257 第10条・第21条、ドイツ連邦環境庁</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg width="1200" height="675" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">求職者向け基礎保障の確認ポイント</title>
+<desc id="desc">年齢と就労能力、世帯の収入と資産、在留資格と就労許可、申請先の4段階を整理した図。</desc>
+<rect width="1200" height="675" rx="28" fill="#F5F1E8"/>
+<text x="64" y="80" fill="#1F2933" font-size="40" font-weight="700" font-family="Arial,sans-serif">申請前に確認する4つのポイント</text>
+<g transform="translate(64 145)">
+<rect width="250" height="365" rx="24" fill="#FFFFFF" stroke="#C8D2D4" stroke-width="3"/>
+<circle cx="55" cy="60" r="34" fill="#47727A"/><text x="55" y="72" text-anchor="middle" fill="#FFFFFF" font-size="32" font-weight="700" font-family="Arial,sans-serif">1</text>
+<text x="30" y="135" fill="#1F2933" font-size="30" font-weight="700" font-family="Arial,sans-serif">年齢・就労能力</text>
+<text x="30" y="205" fill="#52616B" font-size="24" font-family="Arial,sans-serif">15歳以上</text>
+<text x="30" y="245" fill="#52616B" font-size="24" font-family="Arial,sans-serif">年金開始前</text>
+<text x="30" y="285" fill="#52616B" font-size="24" font-family="Arial,sans-serif">原則1日3時間以上</text>
+<text x="30" y="325" fill="#52616B" font-size="24" font-family="Arial,sans-serif">働けるか</text>
+</g>
+<g transform="translate(350 145)">
+<rect width="250" height="365" rx="24" fill="#FFFFFF" stroke="#D9C6A7" stroke-width="3"/>
+<circle cx="55" cy="60" r="34" fill="#C28B4B"/><text x="55" y="72" text-anchor="middle" fill="#FFFFFF" font-size="32" font-weight="700" font-family="Arial,sans-serif">2</text>
+<text x="30" y="135" fill="#1F2933" font-size="30" font-weight="700" font-family="Arial,sans-serif">家計の不足</text>
+<text x="30" y="205" fill="#52616B" font-size="24" font-family="Arial,sans-serif">世帯の収入</text>
+<text x="30" y="245" fill="#52616B" font-size="24" font-family="Arial,sans-serif">考慮される資産</text>
+<text x="30" y="285" fill="#52616B" font-size="24" font-family="Arial,sans-serif">住宅費などを</text>
+<text x="30" y="325" fill="#52616B" font-size="24" font-family="Arial,sans-serif">合わせて確認</text>
+</g>
+<g transform="translate(636 145)">
+<rect width="250" height="365" rx="24" fill="#FFFFFF" stroke="#C8D2D4" stroke-width="3"/>
+<circle cx="55" cy="60" r="34" fill="#687A63"/><text x="55" y="72" text-anchor="middle" fill="#FFFFFF" font-size="32" font-weight="700" font-family="Arial,sans-serif">3</text>
+<text x="30" y="135" fill="#1F2933" font-size="30" font-weight="700" font-family="Arial,sans-serif">在留資格</text>
+<text x="30" y="205" fill="#52616B" font-size="24" font-family="Arial,sans-serif">外国籍の人は</text>
+<text x="30" y="245" fill="#52616B" font-size="24" font-family="Arial,sans-serif">SGB II §7・§8</text>
+<text x="30" y="285" fill="#52616B" font-size="24" font-family="Arial,sans-serif">就労許可と</text>
+<text x="30" y="325" fill="#52616B" font-size="24" font-family="Arial,sans-serif">滞在目的を確認</text>
+</g>
+<g transform="translate(922 145)">
+<rect width="214" height="365" rx="24" fill="#47727A"/>
+<circle cx="55" cy="60" r="34" fill="#FFFFFF"/><text x="55" y="72" text-anchor="middle" fill="#47727A" font-size="32" font-weight="700" font-family="Arial,sans-serif">4</text>
+<text x="30" y="135" fill="#FFFFFF" font-size="30" font-weight="700" font-family="Arial,sans-serif">申請先</text>
+<text x="30" y="205" fill="#FFFFFF" font-size="24" font-family="Arial,sans-serif">原則として</text>
+<text x="30" y="245" fill="#FFFFFF" font-size="26" font-weight="700" font-family="Arial,sans-serif">Jobcenter</text>
+<text x="30" y="285" fill="#FFFFFF" font-size="23" font-family="Arial,sans-serif">地域の担当窓口</text>
+</g>
+<rect x="64" y="550" width="1072" height="70" rx="16" fill="#E8E1D5"/>
+<text x="88" y="594" fill="#1F2933" font-size="24" font-weight="700" font-family="Arial,sans-serif">年金年齢・長期の就労不能などは、社会扶助の別制度を確認。</text>
+</svg>

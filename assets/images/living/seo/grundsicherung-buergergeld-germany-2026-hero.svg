@@ -1,0 +1,26 @@
+<svg width="1200" height="675" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">求職者向け基礎保障の申請を準備する場面</title>
+<desc id="desc">机の上の申請書、書類フォルダー、ノートパソコンと、背景にある住居を描いたJ-Connectのオリジナルイラスト。</desc>
+<rect width="1200" height="675" rx="28" fill="#F5F1E8"/>
+<circle cx="940" cy="150" r="92" fill="#E8E1D5"/>
+<path d="M770 260 L950 120 L1130 260 V530 H770 Z" fill="#E7E3D8" stroke="#9AA9A4" stroke-width="8" stroke-linejoin="round"/>
+<rect x="905" y="355" width="92" height="175" rx="8" fill="#C8D2D4"/>
+<rect x="815" y="300" width="72" height="72" rx="8" fill="#FFFFFF" stroke="#9AA9A4" stroke-width="6"/>
+<rect x="1035" y="300" width="72" height="72" rx="8" fill="#FFFFFF" stroke="#9AA9A4" stroke-width="6"/>
+<path d="M130 520 H1070" stroke="#8A9B91" stroke-width="16" stroke-linecap="round"/>
+<path d="M200 520 L250 605 H880 L930 520" fill="#D9C6A7" opacity=".75"/>
+<rect x="250" y="345" width="520" height="175" rx="24" fill="#47727A"/>
+<rect x="285" y="370" width="205" height="125" rx="12" fill="#1F2933"/>
+<rect x="300" y="383" width="175" height="95" rx="6" fill="#E7F0ED"/>
+<path d="M335 410 H440 M335 435 H425 M335 460 H400" stroke="#47727A" stroke-width="9" stroke-linecap="round"/>
+<rect x="535" y="365" width="185" height="130" rx="14" fill="#FFFFFF" stroke="#C8D2D4" stroke-width="6"/>
+<path d="M570 400 H680 M570 430 H665 M570 460 H640" stroke="#9AA9A4" stroke-width="8" stroke-linecap="round"/>
+<circle cx="685" cy="382" r="26" fill="#687A63"/>
+<path d="M673 382 L682 391 L699 370" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M155 345 C155 295 196 260 245 260 C294 260 335 295 335 345" fill="#C28B4B"/>
+<circle cx="245" cy="222" r="56" fill="#D9A77A"/>
+<path d="M189 221 C190 155 298 145 301 222 C271 192 223 192 189 221" fill="#52616B"/>
+<path d="M150 347 C188 310 300 310 340 347 L375 520 H120 Z" fill="#687A63"/>
+<rect x="90" y="570" width="1020" height="26" rx="13" fill="#C8D2D4"/>
+<path d="M80 615 H1120" stroke="#D9C6A7" stroke-width="6" stroke-linecap="round"/>
+</svg>

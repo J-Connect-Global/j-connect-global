@@ -39,7 +39,7 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 
 ## 先に結論
 
-![2026年7月から10月の消費者物価、基調指数、エネルギーの前年比推移](/assets/img/events/germany-inflation-october-2026-trend.svg)
+![2026年7月から10月の消費者物価、基調指数、エネルギーの前年比推移](/assets/images/events/germany-inflation-october-2026-trend.svg)
 
 
 - 10月の消費者物価指数は前年同月比 **+2.8％**、前月比 **-0.2％**（いずれも速報値）。
@@ -70,7 +70,7 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 
 ## 家計では何を確認するか
 
-![2026年10月速報値の前年比と前月比、エネルギーと食品の比較](/assets/img/events/germany-inflation-october-2026-reading.svg)
+![2026年10月速報値の前年比と前月比、エネルギーと食品の比較](/assets/images/events/germany-inflation-october-2026-reading.svg)
 
 
 ### エネルギー費は全体の数字と分けて見る

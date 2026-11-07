@@ -1,0 +1,39 @@
+<svg width="1200" height="675" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">求職者向け基礎保障の申請資料チェックリスト</title>
+<desc id="desc">身分証、世帯構成、収入と資産、住居費、他の給付の5種類の資料を整理した図。</desc>
+<rect width="1200" height="675" rx="28" fill="#F5F1E8"/>
+<text x="64" y="80" fill="#1F2933" font-size="40" font-weight="700" font-family="Arial,sans-serif">申請前にそろえたい資料</text>
+<g transform="translate(64 145)">
+<rect width="330" height="170" rx="22" fill="#FFFFFF" stroke="#C8D2D4" stroke-width="3"/>
+<rect x="30" y="35" width="64" height="90" rx="10" fill="#47727A"/>
+<circle cx="62" cy="62" r="13" fill="#FFFFFF"/><path d="M42 100 Q62 78 82 100" fill="#FFFFFF"/>
+<text x="120" y="72" fill="#1F2933" font-size="30" font-weight="700" font-family="Arial,sans-serif">身分証・在留資格</text>
+<text x="120" y="115" fill="#52616B" font-size="23" font-family="Arial,sans-serif">パスポート、許可証など</text>
+</g>
+<g transform="translate(435 145)">
+<rect width="330" height="170" rx="22" fill="#FFFFFF" stroke="#D9C6A7" stroke-width="3"/>
+<circle cx="62" cy="78" r="38" fill="#C28B4B"/><circle cx="62" cy="65" r="12" fill="#FFFFFF"/><path d="M37 103 Q62 75 87 103" fill="#FFFFFF"/>
+<text x="120" y="72" fill="#1F2933" font-size="30" font-weight="700" font-family="Arial,sans-serif">世帯構成</text>
+<text x="120" y="115" fill="#52616B" font-size="23" font-family="Arial,sans-serif">同居人・パートナーなど</text>
+</g>
+<g transform="translate(806 145)">
+<rect width="330" height="170" rx="22" fill="#FFFFFF" stroke="#C8D2D4" stroke-width="3"/>
+<rect x="30" y="35" width="64" height="95" rx="8" fill="#687A63"/><path d="M45 58 H80 M45 80 H80 M45 102 H70" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+<text x="120" y="72" fill="#1F2933" font-size="30" font-weight="700" font-family="Arial,sans-serif">収入・資産</text>
+<text x="120" y="115" fill="#52616B" font-size="23" font-family="Arial,sans-serif">給与、給付、口座資料など</text>
+</g>
+<g transform="translate(250 350)">
+<rect width="330" height="170" rx="22" fill="#FFFFFF" stroke="#D9C6A7" stroke-width="3"/>
+<path d="M45 88 L82 55 L119 88 V135 H45 Z" fill="#E7E3D8" stroke="#47727A" stroke-width="7" stroke-linejoin="round"/>
+<text x="150" y="72" fill="#1F2933" font-size="30" font-weight="700" font-family="Arial,sans-serif">住居費</text>
+<text x="150" y="115" fill="#52616B" font-size="23" font-family="Arial,sans-serif">賃貸契約、家賃・暖房費</text>
+</g>
+<g transform="translate(620 350)">
+<rect width="330" height="170" rx="22" fill="#FFFFFF" stroke="#C8D2D4" stroke-width="3"/>
+<circle cx="80" cy="85" r="42" fill="#E8E1D5" stroke="#687A63" stroke-width="7"/>
+<path d="M60 85 L75 100 L103 68" fill="none" stroke="#687A63" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="150" y="72" fill="#1F2933" font-size="30" font-weight="700" font-family="Arial,sans-serif">他の給付</text>
+<text x="150" y="115" fill="#52616B" font-size="23" font-family="Arial,sans-serif">失業保険、年金、子ども手当</text>
+</g>
+<text x="64" y="600" fill="#52616B" font-size="22" font-family="Arial,sans-serif">必要書類と対象期間は個別に異なります。申請画面と担当Jobcenterの指示を優先してください。</text>
+</svg>

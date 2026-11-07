@@ -13,7 +13,7 @@ last_verified: "2026-08-30"
 next_review: "2026-11-30"
 canonical_url: "/germany/ja/living/residence-permit-renewal-germany/"
 image_alt: "ドイツの滞在許可に関する書類を自宅で整理する日本人の住民"
-related_articles: ["anmeldung-guide", "germany-first-30-days", "moving-checklist-germany"]
+related_articles: ["permanent-residence-germany", "anmeldung-guide", "germany-first-30-days", "moving-checklist-germany"]
 official_sources:
   - title: "ドイツ滞在令第41条：日本国籍者等の入国後申請"
     url: "https://www.gesetze-im-internet.de/aufenthv/__41.html"

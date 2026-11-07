@@ -15,7 +15,7 @@ tags: ["Düsseldorf", "オクトーバーフェスト", "バイエルン文化",
 status: "published"
 published: true
 canonical_url: "/germany/ja/events/duesseldorf-oktoberfest-2026-guide/"
-official_url: "https://www.visitduesseldorf.de/event/duesseldorfer-oktoberfest-2026-eb91e15a4a"
+official_url: "https://www.visitduesseldorf.de/erleben/veranstaltungen"
 image: "/assets/img/events/duesseldorf-oktoberfest-2026-guide.webp"
 image_alt: "秋の祭典テントで食事と音楽を楽しむ日本人とドイツ人の友人"
 image_caption: "AI生成の編集イメージ。実際の2026年会場・出演者・来場者を撮影または再現したものではありません。"
@@ -26,8 +26,8 @@ official_sources:
     url: "https://www.oktoberfest.de/en/magazine/tradition/the-history-of-oktoberfest"
   - title: "ミュンヘン市公式：民族衣装とオクトーバーフェスト"
     url: "https://www.muenchen.de/en/events/oktoberfest/outfit-costumes-dresses-lederhosen"
-  - title: "Visit Düsseldorf：Düsseldorfer Oktoberfest 2026"
-    url: "https://www.visitduesseldorf.de/event/duesseldorfer-oktoberfest-2026-eb91e15a4a"
+  - title: "Visit Düsseldorf：イベントカレンダー（2026年の開催ページは会期終了後に削除されました）"
+    url: "https://www.visitduesseldorf.de/erleben/veranstaltungen"
 ---
 
 # デュッセルドルフ・オクトーバーフェスト2026｜歴史・音楽・テント文化を楽しむ

@@ -7,7 +7,7 @@ summary: "EUブルーカードは、大学を卒業した人などが、一定�
 status: "published"
 published: true
 published_at: "2026-10-29"
-updated_at: "2026-10-29"
+updated_at: "2026-11-05"
 last_verified: "2026-10-29"
 next_review: "2027-01-15"
 canonical_url: "/germany/ja/living/eu-blue-card-germany/"
@@ -22,6 +22,8 @@ official_sources:
     url: "https://www.make-it-in-germany.com/pdf-blaue-karte-eu"
   - title: "連邦経済エネルギー省：EUブルーカードのよくある質問（PDF）"
     url: "https://www.make-it-in-germany.com/fileadmin/1_Rebrush_2022/b_Arbeitgeber/PDF-Dateien/BMWE_Fragen_und_Antworten_zur_Blauen_Karte_EU_DE.pdf"
+  - title: "連邦官報：2026年のEUブルーカード最低年収の告示（2025年12月18日）"
+    url: "https://www.bundesanzeiger.de/pub/publication/REViP4bN6jVdpGxPaiQ/content/REViP4bN6jVdpGxPaiQ/BAnz%20AT%2018.12.2025%20B3.pdf"
   - title: "滞在法 第18g条（EUブルーカード）"
     url: "https://www.gesetze-im-internet.de/aufenthg_2004/__18g.html"
   - title: "連邦移民難民庁（BAMF）：第三国の人への家族の呼び寄せ"
@@ -44,6 +46,14 @@ Make it in Germanyによると、2026年のEUブルーカードの年収（額�
 年収の条件は毎年変わります。年収が原則の条件を超える場合は、連邦雇用エージェンシーの同意が不要です（[連邦経済エネルギー省](https://www.make-it-in-germany.com/fileadmin/1_Rebrush_2022/b_Arbeitgeber/PDF-Dateien/BMWE_Fragen_und_Antworten_zur_Blauen_Karte_EU_DE.pdf)）。
 
 ![2026年のEUブルーカードの年収の条件は原則5万700ユーロ以上、人手が足りない職業と卒業から3年以内の人は4万5,934.20ユーロ以上で、条件は毎年変わることを示した図](/assets/images/living/blue-card-salary-2026.svg "図解：J-Connect。Make it in Germanyの資料に基づく（2026年10月29日参照）。")
+
+### 2027年の年収の条件はいつ決まる？
+
+2027年の金額は、2026年11月5日時点ではまだ公表されていません。2026年の金額は2025年12月18日に[連邦官報（Bundesanzeiger）](https://www.bundesanzeiger.de/pub/publication/REViP4bN6jVdpGxPaiQ/content/REViP4bN6jVdpGxPaiQ/BAnz%20AT%2018.12.2025%20B3.pdf)で告示されており、2027年分も年末に告示されるのが通例です。
+
+年収の条件は、年金保険の保険料算定上限（年額）の50%（人手が足りない職業などは45.3%）として計算されます。2026年の5万700ユーロと4万5,934.20ユーロも、この計算で求めた金額です。2027年の上限は年10万6,200ユーロとする政府案が閣議決定されており、この案どおりなら原則5万3,100ユーロ、人手が足りない職業などは4万8,108.60ユーロになります（J-Connectによる計算。正式な告示ではありません）。
+
+2027年1月以降に申請や更新をする人で、年収がこの境目に近い場合は、外国人局の予約前に告示された金額を確認してください。転職や昇給の交渉で年収を決めるときも、2027年の金額を前提に考えると安全です。
 
 ## 主な条件
 

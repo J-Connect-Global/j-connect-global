@@ -51,7 +51,7 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 - 2026年4月17日以降の申請には、環境庁の審査手数料が発生します。金額は審査負担に応じて94.60〜6,500ユーロの範囲です。申請を仲介事業者に任せる場合、手数料を誰が負担するか契約で確認してください。
 - 仲介事業者の受付期限は、法律上の期限より早い場合があります。11月15日まで待たず、利用する事業者の締切を先に確認してください。
 
-![2026年のTHG-Quote申告期限の違い](/assets/img/events/thg-quote-2026-deadline.svg)
+![2026年のTHG-Quote申告期限の違い](/assets/images/events/thg-quote-2026-deadline.svg)
 
 ## THG-Quoteとは
 
@@ -112,7 +112,7 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 
 ## 仲介事業者を利用する場合の手順
 
-![THG-Quoteを仲介事業者経由で申請する流れ](/assets/img/events/thg-quote-2026-process.svg)
+![THG-Quoteを仲介事業者経由で申請する流れ](/assets/images/events/thg-quote-2026-process.svg)
 
 一般的な流れは次のとおりです。事業者によって受付方法や必要情報は異なるため、申込み画面と契約条件を確認してください。
 

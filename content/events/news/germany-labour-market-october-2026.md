@@ -60,7 +60,7 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 
 登録失業者数は季節調整前の数字です。10月は秋の採用で前月より減りましたが、季節調整後は増えています。したがって「失業者が減った」という一つの数字だけで、労働市場が回復したとは判断できません。
 
-![2026年10月の登録失業者数、失業率、季節調整後の変化](/assets/img/events/germany-labour-market-october-2026-main.svg)
+![2026年10月の登録失業者数、失業率、季節調整後の変化](/assets/images/events/germany-labour-market-october-2026-main.svg)
 
 ## 失業者数と広い意味の未就業者数は違う
 
@@ -70,7 +70,7 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 
 ## 求人65万4,000件を、そのまま仕事の数と考えない
 
-![雇用庁の登録求人、広い未就業指標、求人指数の比較](/assets/img/events/germany-labour-market-october-2026-indicators.svg)
+![雇用庁の登録求人、広い未就業指標、求人指数の比較](/assets/images/events/germany-labour-market-october-2026-indicators.svg)
 
 
 10月に雇用庁へ登録されていた求人は65万4,000件でした。これは雇用庁に届け出られた求人の数であり、ドイツ国内に存在するすべての求人を示すものではありません。

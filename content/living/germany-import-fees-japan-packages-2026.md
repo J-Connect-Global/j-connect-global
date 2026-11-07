@@ -4,14 +4,14 @@ title: "日本からドイツに届く荷物の関税は？2026年11月の2ユ�
 slug: "germany-import-fees-japan-packages-2026"
 category: "暮らし・買い物"
 summary: "2026年11月1日から、EU域外から消費者向けに発送される通販には、EU関税法上の「品目」ごとに2ユーロの取扱手数料が適用されています。荷物の本質的価値が150ユーロ以下の対象通販には3ユーロの定額関税も別途あり、輸入消費税や個人間ギフトとの違いを確認できます。"
-status: "draft"
-published: false
-published_at: ""
-updated_at: "2026-11-05"
+status: "published"
+published: true
+published_at: "2026-11-07"
+updated_at: "2026-11-07"
 last_verified: "2026-11-05"
 next_review: "2026-11-10"
 canonical_url: "/germany/ja/living/germany-import-fees-japan-packages-2026/"
-image: "/assets/images/living/seo/germany-import-fees-japan-packages-2026-hero.svg"
+image: "/assets/img/living/germany-import-fees-japan-packages-2026.webp"
 image_alt: "日本からドイツへ届く段ボール箱と税関書類を示すイラスト"
 tags: ["日本からドイツ", "個人輸入", "関税", "EU取扱手数料", "輸入消費税", "国際郵便", "贈り物", "2026年"]
 related_articles: ["christmas-post-germany-to-japan-2026", "dhl-delivered-but-not-received"]

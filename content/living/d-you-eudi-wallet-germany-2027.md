@@ -4,14 +4,14 @@ title: "ドイツのデジタル身分証「d-you」とは？2027年1月開始�
 slug: "d-you-eudi-wallet-germany-2027"
 category: "役所・滞在"
 summary: "ドイツのEUデジタル身分証ウォレット「d-you」は2027年1月2日の開始が予定されています。連邦議会は2026年10月15日に関連法案を可決し、連邦参議院の第2次通過手続きは11月20日に予定されています。外国籍住民の本人確認方法と初期版の機能は未確定です。"
-status: "draft"
-published: false
-published_at: ""
-updated_at: "2026-11-05"
+status: "published"
+published: true
+published_at: "2026-11-07"
+updated_at: "2026-11-07"
 last_verified: "2026-11-05"
 next_review: "2026-11-20"
 canonical_url: "/germany/ja/living/d-you-eudi-wallet-germany-2027/"
-image: "/assets/images/living/seo/d-you-eudi-wallet-germany-2027-hero.svg"
+image: "/assets/img/living/d-you-eudi-wallet-germany-2027.webp"
 image_alt: "スマートフォンの画面にデジタル身分証と安全確認のマークを表示したイラスト"
 tags: ["d-you", "EUDI Wallet", "デジタル身分証", "行政手続", "ドイツ", "2027年", "プライバシー"]
 related_articles: ["germany-january-2027-changes"]

@@ -82,7 +82,7 @@ URLは変更せず、既存canonicalを維持します。
 - [連邦法令公報：健康保険料安定化法、2026年連邦法令公報第1部第228号](https://www.recht.bund.de/bgbl/1/2026/228/VO.html)
 - [連邦参議院：社会保険基準額政令案（BR-Drs. 576/26、2026年10月7日）](https://dipbt.bundestag.de/dip21/brd/2026/0576-26.pdf)
 - [ベルリン州政府：2026年11月20日の連邦参議院会議の議題見通し](https://www.berlin.de/rbmskzl/politik/senatskanzlei/bundesangelegenheiten/der-bundesrat/vorschau-auf-die-bundesratssitzung-1616077.php)
-- [社会法典第5編第6条（健康保険の加入義務）](https://www.gesetze-im-internet.de/sgb_5/__6.html)
+- [社会法典第5編第6条（健康保険の加入義務）](https://www.gesetze-im-internet.de/sgb_5/__6.html)：2026年改正の統合版への反映が未完了のため、§6(8)の80,550ユーロはBMASの表とBR-Drs. 576/26も併せて確認する。
 - [社会法典第5編第223条（保険料算定上限）](https://www.gesetze-im-internet.de/sgb_5/__223.html)
 
 > **注意：** この提案は編集用です。2027年の政令が連邦参議院で承認・公布される前に、予定額を確定値として表現しないでください。

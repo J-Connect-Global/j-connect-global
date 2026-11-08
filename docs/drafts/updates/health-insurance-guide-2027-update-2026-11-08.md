@@ -48,7 +48,7 @@ URLは変更せず、既存canonicalを維持します。
 
 2027年の予定額では、一般の加入義務ライン84,150ユーロが、健康保険・介護保険の保険料算定上限76,500ユーロより高くなっています。したがって、加入義務がある会社員でも、保険料の計算対象となる給与は月額6,375ユーロで頭打ちになります。民間保険への切替えが自動で起きるわけではなく、任意の公的保険に残る選択肢もあります。
 
-2027年の健康保険・介護保険の上限と一般の加入義務ラインには、通常の賃金上昇に伴う年次改定に加え、2026年に成立した健康保険料安定化法による月額300ユーロの追加引上げが反映されています。表の金額にさらに300ユーロを足すわけではありません。
+2027年の一般の加入義務ラインと健康保険・介護保険の保険料算定上限には、2026年に成立した健康保険料安定化法による年額3,600ユーロ（単純な月額換算で300ユーロ）の追加引上げが反映されています。一方、2026年末時点の対象者向け特例ライン80,550ユーロは、この追加引上げを受けない別の基準です。表の金額にさらに3,600ユーロを足すわけではありません。
 
 ### 2027年の平均追加保険料率
 
@@ -78,7 +78,7 @@ URLは変更せず、既存canonicalを維持します。
 - [連邦労働・社会省：2027年の社会保険基準額を内閣決定（2026年10月7日）](https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2026/bundeskabinett-beschliesst-sozialversicherungsrechengroessen-2027.html)
 - [ドイツ年金保険：2027年の保険料算定上限（2026年10月8日）](https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Meldungen/2026/261008-bundeskabinett-sv-rechengroessen-2027?nn=6a097dbcca84ce5471c18637)
 - [連邦保健省：2027年の平均追加保険料率2.9％（2026年10月30日）](https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/zusatzbeitragssatz-gkv-2027-festgelegt)
-- [連邦法令公報：健康保険料安定化法、2026年連邦法令公報第1部第228号](https://www.recht.bund.de/eli/bund/bgbl-1/2026/228)
+- [連邦法令公報：健康保険料安定化法、2026年連邦法令公報第1部第228号](https://www.recht.bund.de/bgbl/1/2026/228/VO.html)
 - [ベルリン州政府：2026年11月20日の連邦参議院会議の議題見通し（2026年10月30日）](https://www.berlin.de/rbmskzl/politik/senatskanzlei/bundesangelegenheiten/der-bundesrat/vorschau-auf-die-bundesratssitzung-1616077.php)
 - [社会法典第5編第6条（健康保険の加入義務）](https://www.gesetze-im-internet.de/sgb_5/__6.html)
 - [社会法典第5編第223条（保険料算定上限）](https://www.gesetze-im-internet.de/sgb_5/__223.html)

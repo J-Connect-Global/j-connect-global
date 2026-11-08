@@ -26,10 +26,12 @@
 
 ### 5分トリガー・掲示板・非公開会話
 
+- 2026年11月8日に本番の読み取り専用ステータスAPIを再取得した結果、`messaging_version=2026-11-07.1`、`public_replies=true`、`private_conversations=true`、`inline_replies=true`、`instant_publish=true`、`persistent_links=true`、`api_version=2026-07-13.1` を確認した。
+- mainの `apps-script/community-messaging.gs` の `CM_VERSION=2026-11-07.1` と本番応答が一致する。PR #432でmainに統合されたApps Scriptハードニング版は、本番へ反映済みと判断できる。
 - 現行コードで `processWaitingCommunityApprovalNotifications` は `processCommunityMessagingNotifications` を呼び出した後、承認通知を処理する互換ラッパーとして存在する。
-- `installCommunityApprovalNotificationTrigger` は5分間隔のトリガーを作成する保守関数として存在する。
-- ただし、本番Apps Scriptのトリガー一覧と最終実行時刻は、この実行環境から確認できない。実登録を断定しない。
-- 実確認にはApps Script管理者セッションで `inspectCommunityPublicationSync()` を実行する必要がある。Google Apps Script/Sheetsの認証済み接続は今回利用できなかった。
+- `installCommunityApprovalNotificationTrigger` は同じハンドラーの既存トリガーを削除してから5分間隔のトリガーを再作成する。管理者確認なしに再実行しない。
+- ただし、本番Apps Scriptのトリガー一覧と最終実行時刻は、この実行環境から確認できない。公開ステータスAPIはトリガー状態を返さないため、登録済みとは断定しない。
+- 実確認にはApps Script管理者セッションで `inspectCommunityPublicationSync()` を実行する必要がある。同関数は `notification_trigger_configured`、`last_dispatch_attempt_at`、`last_dispatch_at`、`last_dispatch_error` を安全な形式で返す。Google Apps Script/Sheetsの認証済み接続は今回利用できなかった。
 
 ### Zohoメールの実配送
 

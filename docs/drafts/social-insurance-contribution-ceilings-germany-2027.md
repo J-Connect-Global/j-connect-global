@@ -174,11 +174,11 @@
 ## 公式情報源
 
 - [連邦労働・社会省：2027年の社会保険基準額を内閣決定（2026年10月7日）](https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2026/bundeskabinett-beschliesst-sozialversicherungsrechengroessen-2027.html)
+- [連邦労働・社会省：2027年の社会保険基準額と連邦参議院の審議状況（最終公布前）](https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/sozialversicherungs-rechengroessenverordnung-2027.html)
 - [ドイツ年金保険：2027年の保険料算定上限（2026年10月8日）](https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Meldungen/2026/261008-bundeskabinett-sv-rechengroessen-2027)
 - [連邦参議院：社会保険基準額政令案（BR-Drs. 576/26、2026年10月7日）](https://dipbt.bundestag.de/dip21/brd/2026/0576-26.pdf)
 - [ベルリン州政府：2026年11月20日の連邦参議院会議の議題見通し](https://www.berlin.de/rbmskzl/politik/senatskanzlei/bundesangelegenheiten/der-bundesrat/vorschau-auf-die-bundesratssitzung-1616077.php)
 - [連邦保健省：2027年の平均追加保険料率を2.9％に決定（2026年10月30日）](https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/zusatzbeitragssatz-gkv-2027-festgelegt)
-- [連邦法令公報：GKV保険料安定化法、2026年連邦法令公報第1部第228号](https://www.recht.bund.de/bgbl/1/2026/228/VO.html)
 - [法令情報：社会法典第5編第6条（加入義務と加入義務ラインを超えた場合の時期）](https://www.gesetze-im-internet.de/sgb_5/__6.html)
 - [法令情報：社会法典第5編第223条（保険料算定上限）](https://www.gesetze-im-internet.de/sgb_5/__223.html)
 - [連邦保健省：GKV保険料安定化法の法案説明資料（新しい§6(8)の経過措置）](https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/3_Downloads/Gesetze_und_Verordnungen/GuV/G/GKV-Beitragssatzstabilisierungsgesetz_Kabinett.pdf)

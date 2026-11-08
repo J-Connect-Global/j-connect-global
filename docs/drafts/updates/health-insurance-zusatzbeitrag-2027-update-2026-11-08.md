@@ -2,9 +2,9 @@
 
 > 対象URL：`/germany/ja/events/news/health-insurance-zusatzbeitrag-2027/`  
 > 公開日：2026年10月26日  
-> 現行確認日：2026年10月26日  
+> 現行確認日：2026年11月8日（PRブランチで更新済み）  
 > 提案確認日：2026年11月8日  
-> 状態：公開前の編集提案。公開中の記事本文・メタデータはまだ変更していない。
+> 状態：PR #442のブランチに実装済み。未マージのため本番ページには未反映。
 
 ## 更新が必要な理由
 
@@ -84,3 +84,12 @@
 - [消費者センター：追加保険料の値上げと特別解約権](https://www.verbraucherzentrale.de/wissen/gesundheit-pflege/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581)
 
 > **注意：** この提案は編集用です。個々の保険者の2027年料率が未公表の段階で、平均2.9％を全加入者に適用される実際の料率として説明しないでください。
+
+
+## 実装状況（2026年11月8日）
+
+- content/events/news/health-insurance-zusatzbeitrag-2027.md と content/registry/events.json のN025を更新。
+- 10月14日の推計委員会の見込みと、10月30日の連邦保健省による正式決定を分離。2027年平均2.9％は決定済み、個別保険者の料率は別であることを明記。
+- 旧「11月1日までの告示待ち」説明を削除。保険者別料率は公式一覧で確認する導線を追加。
+- 出典が追跡しにくい2027年収支表と、更新時点が不明確な最低・最高料率の具体的な幅は削除。公式一次情報を中心に再構成。
+- event_dateは決定日2026-10-30、updated_at・last_verifiedは2026-11-08に更新。URLと公開日は維持。

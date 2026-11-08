@@ -56,7 +56,8 @@ URLは変更せず、既存canonicalを維持します。
 
 ## 内部リンク案
 
-- 新規草稿（公開前にURLを再確認）：`/germany/ja/living/social-insurance-contribution-ceilings-germany-2027/`
+- 新規草稿（公開前にURLを再確認）：`/germany/ja/living/social-insurance-contribution-ceilings-germany-2027/`。加入義務ラインと保険料算定上限の詳細は新規記事に集約し、この既存ガイドでは保険の選び方と加入手続きに集中する。
+- 2027年の追加保険料率：`/germany/ja/events/news/health-insurance-zusatzbeitrag-2027/`
 - 既存のミニジョブ記事：`/germany/ja/living/minijob-grenze-2027/`
 - 日独社会保障協定：`/germany/ja/living/japan-germany-social-security-pension/`
 - 学生の仕事と社会保険：`/germany/ja/living/werkstudent-student-jobs-germany/`
@@ -76,10 +77,11 @@ URLは変更せず、既存canonicalを維持します。
 ## 一次情報
 
 - [連邦労働・社会省：2027年の社会保険基準額を内閣決定（2026年10月7日）](https://www.bmas.de/DE/Service/Presse/Pressemitteilungen/2026/bundeskabinett-beschliesst-sozialversicherungsrechengroessen-2027.html)
-- [ドイツ年金保険：2027年の保険料算定上限（2026年10月8日）](https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Meldungen/2026/261008-bundeskabinett-sv-rechengroessen-2027?nn=6a097dbcca84ce5471c18637)
+- [ドイツ年金保険：2027年の保険料算定上限（2026年10月8日）](https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Meldungen/2026/261008-bundeskabinett-sv-rechengroessen-2027)
 - [連邦保健省：2027年の平均追加保険料率2.9％（2026年10月30日）](https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/zusatzbeitragssatz-gkv-2027-festgelegt)
 - [連邦法令公報：健康保険料安定化法、2026年連邦法令公報第1部第228号](https://www.recht.bund.de/bgbl/1/2026/228/VO.html)
-- [ベルリン州政府：2026年11月20日の連邦参議院会議の議題見通し（2026年10月30日）](https://www.berlin.de/rbmskzl/politik/senatskanzlei/bundesangelegenheiten/der-bundesrat/vorschau-auf-die-bundesratssitzung-1616077.php)
+- [連邦参議院：社会保険基準額政令案（BR-Drs. 576/26、2026年10月7日）](https://dipbt.bundestag.de/dip21/brd/2026/0576-26.pdf)
+- [ベルリン州政府：2026年11月20日の連邦参議院会議の議題見通し](https://www.berlin.de/rbmskzl/politik/senatskanzlei/bundesangelegenheiten/der-bundesrat/vorschau-auf-die-bundesratssitzung-1616077.php)
 - [社会法典第5編第6条（健康保険の加入義務）](https://www.gesetze-im-internet.de/sgb_5/__6.html)
 - [社会法典第5編第223条（保険料算定上限）](https://www.gesetze-im-internet.de/sgb_5/__223.html)
 

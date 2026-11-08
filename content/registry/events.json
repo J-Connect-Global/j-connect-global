@@ -2969,14 +2969,14 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-26",
+      "last_reviewed_at": "2026-11-08",
       "next_review_due": "2026-12-15"
     },
-    "title": "【2027年】ドイツの健康保険料は上がる？ 追加保険料率「平均2.9%据え置き」の意味と乗り換え方",
+    "title": "【2027年】ドイツの健康保険料は上がる？平均追加保険料率2.9％決定と乗り換え方",
     "category": "医療・健康",
-    "summary": "2027年の公的医療保険の追加保険料率は、計算上の平均が2.9%で据え置きの見通しです。ただし実際の率は加入先ごとに決まり、2026年7月からは値上げのお知らせの手紙も義務ではなくなりました。負担差の計算例、特別解約権、乗り換えの手順を整理します。",
+    "summary": "連邦保健省は2026年10月30日、2027年の公的医療保険の平均追加保険料率を2.9％に決定しました。ただし各保険組合の実際の料率は異なります。値上げ通知、特別解約権、手取りへの影響、乗り換え手順を整理します。",
     "published_at": "2026-10-26",
-    "last_verified": "2026-10-26",
+    "last_verified": "2026-11-08",
     "tags": [
       "健康保険",
       "公的医療保険",
@@ -2988,7 +2988,7 @@
       "ドイツ生活",
       "手取り"
     ],
-    "updated_at": "2026-10-26",
+    "updated_at": "2026-11-08",
     "related_articles": [
       "health-insurance-guide",
       "germany-january-2027-changes",
@@ -2998,35 +2998,39 @@
     ],
     "city": "ドイツ全土",
     "location": "",
-    "event_date": "2026-11-01までに2027年の平均追加保険料率を告示",
-    "official_url": "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/ergebnisse-gkv-schaetzerkreis-zusatzbeitragssatz",
+    "event_date": "2026-10-30（2027年の平均追加保険料率の決定日）",
+    "official_url": "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/zusatzbeitragssatz-gkv-2027-festgelegt",
     "official_sources": [
       {
-        "title": "連邦保健省：GKV推計委員会の結果「平均追加保険料率は安定」（2026年10月14日）",
+        "title": "連邦保健省：2027年の平均追加保険料率を2.9％に決定（2026年10月30日）",
+        "url": "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/zusatzbeitragssatz-gkv-2027-festgelegt"
+      },
+      {
+        "title": "連邦保健省：GKV推計委員会の結果（2026年10月14日）",
         "url": "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/ergebnisse-gkv-schaetzerkreis-zusatzbeitragssatz"
       },
       {
-        "title": "連邦保健省：公的医療保険の保険料（Beiträge）",
+        "title": "連邦保健省：公的医療保険の保険料",
         "url": "https://www.bundesgesundheitsministerium.de/beitraege"
       },
       {
-        "title": "連邦保健省：GKV保険料率安定化法（GKV-BStabG）",
-        "url": "https://www.bundesgesundheitsministerium.de/service/gesetze-und-verordnungen/detail/gkv-beitragssatzstabilisierungsgesetz"
+        "title": "連邦労働・社会省：2027年の社会保険基準額",
+        "url": "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/sozialversicherungs-rechengroessenverordnung-2027.html"
       },
       {
         "title": "社会法典第5編 §175（保険組合の選択・解約）",
         "url": "https://www.gesetze-im-internet.de/sgb_5/__175.html"
       },
       {
-        "title": "社会法典第5編 §242a（平均追加保険料率の告示）",
+        "title": "社会法典第5編 §242a（平均追加保険料率）",
         "url": "https://www.gesetze-im-internet.de/sgb_5/__242a.html"
       },
       {
-        "title": "消費者センター：追加保険料の値上げと特別解約権",
+        "title": "消費者センター：追加保険料の値上げと特別解約権（2026年8月19日更新）",
         "url": "https://www.verbraucherzentrale.de/wissen/gesundheit-pflege/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581"
       },
       {
-        "title": "GKV-Spitzenverband：保険組合一覧と追加保険料率",
+        "title": "GKV-Spitzenverband：保険組合一覧と個別追加保険料率",
         "url": "https://www.gkv-spitzenverband.de/service/krankenkassenliste/krankenkassen.jsp"
       }
     ],
@@ -7184,17 +7188,17 @@
   },
   {
     "id": "N039",
-    "title": "ドイツの放送負担金、2026年11月8日から全国データ照合｜手紙が届いたら",
+    "title": "ドイツの放送負担金、11月8日が全国データ照合の基準日｜手紙が届いたら",
     "slug": "rundfunkbeitrag-meldedatenabgleich-2026",
     "category": "住まい",
-    "summary": "2026年11月8日から始まるドイツの全国住民データ照合について、対象者、データ送信期間、同居人がすでに支払っている場合の回答方法を整理します。通知開始時期は公式ページ間で表記が異なるため、その差も明記します。",
+    "summary": "2026年11月8日はドイツ全国の住民データ照合の基準日です。自治体からのデータ送信は11月9日〜12月8日。対象者、手紙が届く理由、同居人がすでに支払っている場合の回答方法と、公式ページ間で異なる通知開始時期を整理します。",
     "url": "/germany/ja/events/news/rundfunkbeitrag-meldedatenabgleich-2026/",
     "markdown_path": "/content/events/news/rundfunkbeitrag-meldedatenabgleich-2026.md",
     "published": true,
     "status": "published",
     "published_at": "2026-11-07",
-    "updated_at": "2026-11-07",
-    "last_verified": "2026-11-07",
+    "updated_at": "2026-11-08",
+    "last_verified": "2026-11-08",
     "next_review": "2026-11-09",
     "tags": [
       "放送負担金",
@@ -7240,14 +7244,14 @@
     ],
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
-      "last_reviewed_at": "2026-11-07",
+      "reviewed_by": "J-Connect Global editorial (official sources rechecked 2026-11-08)",
+      "last_reviewed_at": "2026-11-08",
       "next_review_due": "2026-11-09"
     },
     "content_type": "news",
     "city": "ドイツ全土",
     "location": "ドイツ全土",
-    "event_date": "2026-11-08〜2026-12-08（データ送信期間）",
+    "event_date": "2026-11-08（照合の基準日）／2026-11-09〜2026-12-08（データ送信期間）",
     "official_url": "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026",
     "image": "/assets/img/events/rundfunkbeitrag-meldedatenabgleich-2026.webp",
     "image_url": "/assets/images/living/anmeldung-preparation.webp",

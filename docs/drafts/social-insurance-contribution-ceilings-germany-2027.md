@@ -24,7 +24,7 @@
 
 以下は連邦労働・社会省が2026年10月7日に公表した2027年の予定額です。月額は年額を12で割った参考値です。実際の判定は、給与の支給形態や継続的に見込まれる報酬などを踏まえて行われます。
 
-健康保険・介護保険の上限と加入義務ラインには、通常の賃金上昇に伴う年次改定に加え、2026年に成立した健康保険料安定化法による月額300ユーロの追加引上げが反映されています。この追加措置は2027年から適用される予定です。表の数値にさらに300ユーロを足すわけではありません。年次政令の最終承認と、すでに公布された法律の適用時期は分けて確認してください。
+一般の加入義務ラインと健康保険・介護保険の保険料算定上限には、2026年に成立した健康保険料安定化法による年額3,600ユーロ（単純な月額換算で300ユーロ）の追加引上げが反映されています。一方、2026年末時点の対象者向け特例ライン80,550ユーロは、この追加引上げを受けない別の基準です。表の数値にさらに3,600ユーロを足すわけではありません。法律はすでに公布されていますが、年次政令の最終承認は別途確認してください。
 
 | 基準 | 2027年の予定額（月額） | 2027年の予定額（年額） | 主な用途 |
 |---|---:|---:|---|
@@ -146,7 +146,7 @@
 - [ドイツ年金保険：2027年の保険料算定上限（2026年10月8日）](https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Meldungen/2026/261008-bundeskabinett-sv-rechengroessen-2027?nn=6a097dbcca84ce5471c18637)
 - [ベルリン州政府：2026年11月20日の連邦参議院会議の議題見通し（2026年10月30日）](https://www.berlin.de/rbmskzl/politik/senatskanzlei/bundesangelegenheiten/der-bundesrat/vorschau-auf-die-bundesratssitzung-1616077.php)
 - [連邦保健省：2027年の平均追加保険料率を2.9％に決定（2026年10月30日）](https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/zusatzbeitragssatz-gkv-2027-festgelegt)
-- [連邦法令公報：GKV保険料安定化法、2026年連邦法令公報第1部第228号](https://www.recht.bund.de/eli/bund/bgbl-1/2026/228)
+- [連邦法令公報：GKV保険料安定化法、2026年連邦法令公報第1部第228号](https://www.recht.bund.de/bgbl/1/2026/228/VO.html)
 - [法令情報：社会法典第5編第6条（健康保険の加入義務）](https://www.gesetze-im-internet.de/sgb_5/__6.html)
 - [法令情報：社会法典第5編第223条（保険料算定上限）](https://www.gesetze-im-internet.de/sgb_5/__223.html)
 

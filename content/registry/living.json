@@ -2217,17 +2217,17 @@
   },
   {
     "id": "L003",
-    "title": "ドイツの健康保険の選び方｜公的保険と民間保険、保険料率、2026年の基準、加入の流れ",
+    "title": "ドイツの健康保険の選び方｜公的保険と民間保険、保険料率、2027年の基準、加入の流れ",
     "slug": "health-insurance-guide",
     "category": "医療・健康",
-    "summary": "ドイツの健康保険を会社員・学生・家族など立場別に解説。公的保険と民間保険の違い、保険料率（14.6%＋追加保険料）、2026年の基準、加入証明の提出先、保険証が届く前の受診用証明まで整理します。",
+    "summary": "ドイツの健康保険を会社員・学生・家族など立場別に解説。公的保険と民間保険の違い、2026・2027年の加入義務ラインと保険料算定上限、追加保険料率、加入証明と保険証未着時の受診方法を整理します。",
     "url": "/germany/ja/living/health-insurance-guide/",
     "markdown_path": "/content/living/health-insurance-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-11-06",
-    "last_verified": "2026-11-06",
+    "updated_at": "2026-11-08",
+    "last_verified": "2026-11-08",
     "tags": [
       "健康保険",
       "公的医療保険",
@@ -2250,6 +2250,18 @@
       "epa-guide-germany"
     ],
     "official_sources": [
+      {
+        "title": "連邦労働・社会省：2027年の社会保険基準額と連邦参議院の審議状況",
+        "url": "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/sozialversicherungs-rechengroessenverordnung-2027.html"
+      },
+      {
+        "title": "ドイツ年金保険：2027年の保険料算定上限（2026年10月8日）",
+        "url": "https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Meldungen/2026/261008-bundeskabinett-sv-rechengroessen-2027"
+      },
+      {
+        "title": "連邦保健省：2027年の平均追加保険料率を2.9％に決定（2026年10月30日）",
+        "url": "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/zusatzbeitragssatz-gkv-2027-festgelegt"
+      },
       {
         "title": "連邦保健省：公的医療保険の加入者・2026年の基準",
         "url": "https://www.bundesgesundheitsministerium.de/gesetzlich-versicherte/seite"
@@ -2275,11 +2287,12 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-11-06",
-      "next_review_due": "2027-01-15"
+      "last_reviewed_at": "2026-11-08",
+      "next_review_due": "2026-11-21"
     },
     "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
-    "image_alt": "ドイツの診療所で保険と受診について受付に確認するイメージ"
+    "image_alt": "ドイツの診療所で保険と受診について受付に確認するイメージ",
+    "next_review": "2026-11-21"
   },
   {
     "id": "L031",

@@ -51,19 +51,11 @@ image_credit: "Illustration / J-Connect"
 
 ## 何が発表されたのか
 
-公的医療保険の財政を見通す「推計委員会（Schätzerkreis）」が2026年10月13日・14日に会合を開き、2027年の収支見通しをまとめました。連邦保健省（BMG）はこれを受け、10月14日に「平均追加保険料率は来年も安定する」と発表しています（[連邦保健省](https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/ergebnisse-gkv-schaetzerkreis-zusatzbeitragssatz)）。
+公的医療保険の財政を見通す推計委員会は、2026年10月14日に2027年の収支見通しを示しました。この段階で示された2.9％は、収支見通しに基づく平均追加保険料率の見込みでした。
 
-| 項目 | 2027年の見通し |
-| --- | --- |
-| 医療基金（Gesundheitsfonds）の収入 | 3,207億ユーロ（連邦補助131.5億ユーロを含む） |
-| 保険組合の支出 | 3,781億ユーロ（前年比約3%増） |
-| 計算上の平均追加保険料率 | 2.9%（2026年と同じ） |
+その後、連邦保健省は2026年10月30日、2027年の平均追加保険料率を**2.9％に決定**しました。2026年と同じ水準です。したがって、従来の「11月1日までの告示を待つ」「正式な決定は未確認」という説明は、現在は古くなっています（[連邦保健省：2026年10月30日付決定発表](https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/zusatzbeitragssatz-gkv-2027-festgelegt)）。
 
-数値は報道各社が伝えた推計委員会の結果によります（[zm-online](https://www.zm-online.de/news/detail/gkv-schaetzerkreis-legt-prognose-fuer-2026-und-2027-vor)、[Deutsche Handwerks Zeitung](https://www.deutsche-handwerks-zeitung.de/krankenkassen-beitraege-sollen-2027-stabil-bleiben-385096/)）。
-
-連邦保健省によると、据え置きの主な理由は、2026年7月に成立した「GKV保険料率安定化法（GKV-BStabG）」です。この法律は2027年の保険組合の支出を最大150億ユーロ抑える内容で、7月30日に施行されています（[連邦保健省：法律の経過](https://www.bundesgesundheitsministerium.de/service/gesetze-und-verordnungen/detail/gkv-beitragssatzstabilisierungsgesetz)）。
-
-なお、2.9%という数字は、法律上は連邦保健省が**11月1日までに連邦官報（Bundesanzeiger）で告示**して確定します（[SGB V §242a](https://www.gesetze-im-internet.de/sgb_5/__242a.html)）。10月26日時点で参照した範囲では、正式な告示はまだ確認できていません。
+ただし、決定された2.9％は全保険組合に一律適用される個別料率ではありません。各保険組合は、自らの財政状況に応じて実際の追加保険料率を決めます。2027年に加入先の料率が上がるか下がるかは、各組合の公式発表で確認してください。
 
 ## 「平均2.9%」と「自分の保険料」は別もの
 
@@ -78,7 +70,7 @@ image_credit: "Illustration / J-Connect"
 
 「平均2.9%」は、全保険組合の支出をまかなうのに計算上必要な率で、いわば目安です。各組合はこれと関係なく自分の率を決められ、年の途中で引き上げることもあります。2026年も計算上の平均は2.9％でしたが、実際の料率は保険組合ごとに異なります。特定時点の平均や最低・最高の数字だけで判断せず、加入先の最新料率を[全国組織の公式一覧](https://www.gkv-spitzenverband.de/service/krankenkassenliste/krankenkassen.jsp)で確認してください。
 
-公的医療保険の全国組織である GKV-Spitzenverband のオリバー・ブラット氏は、年明けの時点で法定の最低準備金を積み終えていない組合が残るとして、そうした組合では資金需要が高まりうると述べています（[Apotheken Umschau](https://www.apotheken-umschau.de/gesundheitspolitik/zusatzbeitrag-2027-bleibt-bei-2-9-prozent-doch-kassen-warnen-1605019.html)）。つまり**2027年に引き上げる組合も、引き下げる組合もありうる**というのが正確な理解です。
+つまり**2027年に引き上げる組合も、据え置く組合も、引き下げる組合もありえます**。平均値だけで自分の保険料を予測せず、加入先の公式発表を確認してください。
 
 ## 手取りへの影響：計算例
 
@@ -88,7 +80,6 @@ image_credit: "Illustration / J-Connect"
 | --- | --- | --- | --- |
 | 3,000ユーロ | 0.5ポイント | 7.50ユーロ | 90ユーロ |
 | 4,000ユーロ | 0.5ポイント | 10ユーロ | 120ユーロ |
-| 4,000ユーロ | 2.21ポイント（2.18%と4.39%の差） | 44.20ユーロ | 530.40ユーロ |
 | 6,375ユーロ以上 | 1.0ポイント | 31.88ユーロ | 382.50ユーロ |
 
 保険料は給与のうち「保険料算定上限」までにしか掛かりません。2027年の上限は月6,375ユーロに引き上げられる予定です（連邦参議院の同意待ち。詳しくは「[【2027年1月から】ドイツで何が変わる？](/germany/ja/events/news/germany-january-2027-changes/)」）。上限を超える給与の方は、6,375ユーロを基準に計算します。

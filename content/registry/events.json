@@ -6124,7 +6124,7 @@
     "url": "/germany/ja/events/cologne-museumsnacht-2026-guide/",
     "markdown_path": "/content/events/cologne-museumsnacht-2026-guide.md",
     "image_url": "/assets/img/events/cologne-museumsnacht-2026-guide.webp",
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 8,
     "hub_visible": true,
     "search_visible": true,

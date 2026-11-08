@@ -3006,12 +3006,16 @@
         "url": "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/zusatzbeitragssatz-gkv-2027-festgelegt"
       },
       {
-        "title": "連邦保健省：GKV推計委員会の結果（2026年10月14日）",
+        "title": "連邦保健省：GKV推計委員会の結果「平均追加保険料率は安定」（2026年10月14日）",
         "url": "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/ergebnisse-gkv-schaetzerkreis-zusatzbeitragssatz"
       },
       {
-        "title": "連邦保健省：公的医療保険の保険料",
+        "title": "連邦保健省：公的医療保険の保険料（Beiträge）",
         "url": "https://www.bundesgesundheitsministerium.de/beitraege"
+      },
+      {
+        "title": "連邦保健省：GKV保険料率安定化法（GKV-BStabG）",
+        "url": "https://www.bundesgesundheitsministerium.de/service/gesetze-und-verordnungen/detail/gkv-beitragssatzstabilisierungsgesetz"
       },
       {
         "title": "連邦労働・社会省：2027年の社会保険基準額",
@@ -3022,15 +3026,15 @@
         "url": "https://www.gesetze-im-internet.de/sgb_5/__175.html"
       },
       {
-        "title": "社会法典第5編 §242a（平均追加保険料率）",
+        "title": "社会法典第5編 §242a（平均追加保険料率の告示）",
         "url": "https://www.gesetze-im-internet.de/sgb_5/__242a.html"
       },
       {
-        "title": "消費者センター：追加保険料の値上げと特別解約権（2026年8月19日更新）",
+        "title": "消費者センター：追加保険料の値上げと特別解約権",
         "url": "https://www.verbraucherzentrale.de/wissen/gesundheit-pflege/krankenversicherung/zusatzbeitrag-der-krankenkasse-sonderkuendigung-und-wechsel-moeglich-10581"
       },
       {
-        "title": "GKV-Spitzenverband：保険組合一覧と個別追加保険料率",
+        "title": "GKV-Spitzenverband：保険組合一覧と追加保険料率",
         "url": "https://www.gkv-spitzenverband.de/service/krankenkassenliste/krankenkassen.jsp"
       }
     ],

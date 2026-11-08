@@ -178,3 +178,13 @@ PR #442： https://github.com/J-Connect-Global/j-connect-global/pull/442
 - 今回のコンテンツ変更後のPR #442 CIを確認し、生成済みHTML・sitemap・search indexの同期差分を解消する。
 - PR #443の生成済みトップページとイベントカード順をCIで検証する。
 - Apps Script本番デプロイ、5分トリガー、実メールE2E、実機音声は認証・テスト資源が揃うまで未完了として扱う。
+
+
+### 静的整合チェック（2026年11月8日 05時台）
+
+- PR #442現HEAD：164996ff013f6c146b86da14a1c0a61894a29268
+- L003/N025/N039のタイトル、概要、更新日、確認日、正規URL、公式出典リストは、それぞれ本文front matterとregistryで一致することを静的比較で確認。N025の次回確認日はfront matterのnext_reviewとregistryのreview.next_review_dueで一致。
+- 3記事の既存内部リンクはregistry上の公開済みslugに解決。旧N025の「11月1日告示待ち」、古い料率幅、L003の月603ユーロ混同表現は除去済み。
+- 新規L097はdocs/drafts内のみ。living/events registryに未登録で、公開URL・sitemap・canonical・hreflangは追加していない。
+- PR #442の生成済みHTML、検索インデックス、sitemapはまだ更新していない。最新HEADのCIは取得できず、マージ可能な状態とは扱わない。
+- PR #443のホームイベント欄を静的解析し、カードがE017（ART COLOGNE）→E020（コメルン）→E027（ケルン・カーニバル）の3件であること、画像クラスが順に img-japan-day / img-market / img-movie であること、終了済みE024がホーム欄にないことを確認。E024はイベント一覧・検索・sitemapには残る。CIは未確認。

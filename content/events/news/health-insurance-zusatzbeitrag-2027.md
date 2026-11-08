@@ -12,6 +12,8 @@ official_sources:
     url: "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/ergebnisse-gkv-schaetzerkreis-zusatzbeitragssatz"
   - title: "連邦保健省：公的医療保険の保険料（Beiträge）"
     url: "https://www.bundesgesundheitsministerium.de/beitraege"
+  - title: "連邦労働・社会省：2027年の社会保険基準額"
+    url: "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/sozialversicherungs-rechengroessenverordnung-2027.html"
   - title: "連邦保健省：GKV保険料率安定化法（GKV-BStabG）"
     url: "https://www.bundesgesundheitsministerium.de/service/gesetze-und-verordnungen/detail/gkv-beitragssatzstabilisierungsgesetz"
   - title: "社会法典第5編 §175（保険組合の選択・解約）"

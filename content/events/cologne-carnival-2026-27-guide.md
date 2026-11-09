@@ -12,6 +12,8 @@ official_sources:
     url: "https://www.stadt-koeln.de/leben-in-koeln/verkehr/verkehrskalender/stoerungen/10899/index.html"
   - title: "ケルン市：11月11日のツュルピッヒャー通り周辺の交通規制（2026年）"
     url: "https://www.stadt-koeln.de/leben-in-koeln/verkehr/verkehrskalender/stoerungen/10900/index.html"
+  - title: "ケルン市：11月11日の安全対策・ガラス禁止・入場制限（2026年11月2日発表）"
+    url: "https://www.stadt-koeln.de/politik-und-verwaltung/presseservice/sicher-feiern-am-1111-1"
   - title: "ケルン市：ガラス容器の持ち込み禁止に関する一般処分（2026年2月5日告示）"
     url: "https://www.stadt-koeln.de/mediaasset/content/bekanntmachungen/2026/2026.02.05_0018-01_av_karneval-2026_glasverbot.pdf"
   - title: "ケルン・カーニバル祭典委員会：11月11日のケルン"
@@ -36,14 +38,14 @@ related_articles: ["rhineland-carnival-11-11", "duesseldorf-carnival-2026-27-gui
 city: "ケルン"
 location: "旧市街（ホイマルクト、アルター・マルクト）、ツュルピッヒャー通り周辺、市中心部の行列ルートなど"
 event_date: "2026-11-11 シーズン開始／2027-02-04〜2027-02-10 街頭カーニバル"
-next_review: "2026-11-09"
+next_review: "2026-11-25"
 tags: ["カーニバル", "ケルン", "11月11日", "2026年11月", "2027年2月", "バラの月曜日", "NRW", "季節行事"]
 published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-31"
-updated_at: "2026-10-31"
-last_verified: "2026-10-31"
+updated_at: "2026-11-09"
+last_verified: "2026-11-09"
 canonical_url: "/germany/ja/events/cologne-carnival-2026-27-guide/"
 official_url: "https://koelnerkarneval.de/"
 image: "/assets/img/events/cologne-carnival-2026-27-guide.webp"
@@ -77,15 +79,17 @@ image_credit: "Illustration / J-Connect"
 
 ケルン市は、2026年11月11日にクルト・ハッケンベルク広場、アルター・マルクト、ホイマルクト、ドイツ橋の周辺に大勢の人が集まると見込み、朝6時ごろから22時ごろまで旧市街の道路や広場を順次通行止めにすると案内しています。混雑の状況によっては、市電がホイマルクト停留所やラートハウス停留所に止まらなくなるため、旧市街に向かう人には、ドーム／中央駅、ノイマルクト、ドイツ駅／メッセの各停留所を使うよう呼びかけています（[ケルン市：旧市街周辺の交通規制](https://www.stadt-koeln.de/leben-in-koeln/verkehr/verkehrskalender/stoerungen/10899/index.html)）。
 
-もう一つの中心が、大学に近いツュルピッヒャー通り周辺の学生街（地元の呼び名はKwartier Latäng）です。若い人が非常に多く集まる場所で、市は11月11日の朝6時ごろから深夜まで、周辺の道路を広く通行止めにします（[ケルン市：ツュルピッヒャー通り周辺の交通規制](https://www.stadt-koeln.de/leben-in-koeln/verkehr/verkehrskalender/stoerungen/10900/index.html)）。前年までは、入場口を限ったうえで人数を制限する形がとられてきました。子ども連れや、落ち着いて雰囲気を味わいたい人には、旧市街の催しや地域の小さな集まりのほうが向いています。
+もう一つの中心が、大学に近いツュルピッヒャー通り周辺の学生街（地元の呼び名はKwartier Latäng）です。若い人が非常に多く集まる場所で、市は11月11日の朝6時ごろから深夜まで、周辺の道路を広く通行止めにします（[ケルン市：ツュルピッヒャー通り周辺の交通規制](https://www.stadt-koeln.de/leben-in-koeln/verkehr/verkehrskalender/stoerungen/10900/index.html)）。2026年も入場口を絞って人数を制限し、中心の入口はツュルピッヒャー通りとツュルピッヒャー・ヴァルの角、ほかにローン通りとベートーヴェン通りの角、キフホイザー通りとバルバロッサ広場の付近に設けられます。混み過ぎた場合に備え、大学前の芝生広場が退避用の場所として用意されます（[ケルン市：11月11日の安全対策（2026年）](https://www.stadt-koeln.de/politik-und-verwaltung/presseservice/sicher-feiern-am-1111-1)）。
 
-![旧市街のホイマルクトやアルター・マルクト周辺は6時ごろから22時ごろまで通行止めで、ドーム／中央駅、ノイマルクト、ドイツ駅／メッセの停留所が勧められていること、ツュルピッヒャー通り周辺は深夜まで通行止めであること、大学そばの緑地では8時から22時までガラス容器が禁止されることを示す概略図](/assets/images/events/cologne-carnival-2026-27-11-11-hotspots.svg "図解：J-Connect。ケルン市の交通規制の案内と2026年2月5日の告示に基づく概略図（2026年10月31日参照）。")
+旧市街と学生街に加えて、最近は南部のクロートヴィヒ広場からセヴェリン門、ウビエリングにかけても人が集まるようになっており、市は2026年、この一帯の警備や仮設トイレを増やすとしています。子ども連れや、落ち着いて雰囲気を味わいたい人には、旧市街の催しや地域の小さな集まりのほうが向いています。
+
+![旧市街のホイマルクトやアルター・マルクト周辺は6時ごろから22時ごろまで通行止めで、ドーム／中央駅、ノイマルクト、ドイツ駅／メッセの停留所が勧められていること、ツュルピッヒャー通り周辺は深夜まで通行止めであること、大学そばの緑地では8時から22時までガラス容器が禁止されることを示す概略図](/assets/images/events/cologne-carnival-2026-27-11-11-hotspots.svg "図解：J-Connect。ケルン市の交通規制の案内、2026年2月5日の告示、11月2日の発表に基づく概略図（2026年11月9日参照）。")
 
 ### ガラス瓶の持ち込み禁止
 
 ケルン市は2026年2月5日付の告示で、2026年11月11日の8時から22時まで、大学そばの緑地（大学前の芝生広場や、アーヘン池のある広島・長崎公園など、内側の緑地帯の一部）でガラス容器の持ち込みと使用を禁止しています。告示は、この禁止がツュルピッヒャー通り周辺や旧市街ですでに行われているガラス禁止とは別のものだと説明しています（[ケルン市の告示](https://www.stadt-koeln.de/mediaasset/content/bekanntmachungen/2026/2026.02.05_0018-01_av_karneval-2026_glasverbot.pdf)）。
 
-旧市街とツュルピッヒャー通り周辺の2026年11月11日の具体的な時間は、2026年10月31日時点ではまだ市から発表されていません。2025年は両地区とも、11月11日の朝8時から翌朝8時まで、瓶やグラスを持ち込めませんでした。飲み物はペットボトルや缶にしておくと安心です。今年の内容は、直前の市の発表で確認してください。
+旧市街とツュルピッヒャー通り周辺でも、2026年11月11日の朝8時から翌朝8時まで、瓶やグラスなどのガラス容器を持ち込めません。学生街の入口では、瓶の中身をプラスチックの容器に移し替えることができます。南部のクロートヴィヒ広場周辺は禁止ではありませんが、市は8時から22時までガラスを控えるよう呼びかけています。学生街には、スピーカーや手押し車、折りたたみ椅子などの大きな荷物も持ち込めません（[ケルン市：11月11日の安全対策（2026年）](https://www.stadt-koeln.de/politik-und-verwaltung/presseservice/sicher-feiern-am-1111-1)）。飲み物はペットボトルや缶にしておくと安心です。
 
 ## 2月4日〜10日：街頭のカーニバル
 
@@ -161,11 +165,12 @@ image_credit: "Illustration / J-Connect"
 
 隣町デュッセルドルフのカーニバルは、掛け声も主役も違います。比べてみたい人は「[デュッセルドルフのカーニバル2026/27](/germany/ja/events/duesseldorf-carnival-2026-27-guide/)」も参考にしてください。
 
-## 参考情報（2026年10月31日参照）
+## 参考情報（2026年11月9日参照）
 
 - [ケルン市：カーニバルシーズンの日程](https://www.stadt-koeln.de/artikel/08212/index.html)
 - [ケルン市：11月11日の旧市街周辺の交通規制（2026年）](https://www.stadt-koeln.de/leben-in-koeln/verkehr/verkehrskalender/stoerungen/10899/index.html)
 - [ケルン市：11月11日のツュルピッヒャー通り周辺の交通規制（2026年）](https://www.stadt-koeln.de/leben-in-koeln/verkehr/verkehrskalender/stoerungen/10900/index.html)
+- [ケルン市：11月11日の安全対策・ガラス禁止・入場制限（2026年11月2日発表）](https://www.stadt-koeln.de/politik-und-verwaltung/presseservice/sicher-feiern-am-1111-1)
 - [ケルン市：ガラス容器の持ち込み禁止に関する一般処分（2026年2月5日告示）](https://www.stadt-koeln.de/mediaasset/content/bekanntmachungen/2026/2026.02.05_0018-01_av_karneval-2026_glasverbot.pdf)
 - [ケルン市：ケルンのカーニバルの歴史](https://www.stadt-koeln.de/artikel/05206/index.html)
 - [ケルン・カーニバル祭典委員会：11月11日のケルン](https://koelnerkarneval.de/elfterimelften)

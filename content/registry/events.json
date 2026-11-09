@@ -1729,7 +1729,7 @@
       "ギャラリー",
       "美術市場"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 2,
     "hub_visible": true,
     "search_visible": true,
@@ -2233,7 +2233,7 @@
     "url": "/germany/ja/events/kommern-saint-martin-2026-guide/",
     "markdown_path": "/content/events/kommern-saint-martin-2026-guide.md",
     "image_url": "/assets/img/events/kommern-saint-martin-2026-guide.webp",
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 3,
     "hub_visible": true,
     "search_visible": true,

@@ -165,7 +165,11 @@ export function validateImageBudget(report, budget) {
     const expectedFormat = expectedFormatByExtension.get(extension);
     if (image.bytes > budget.max_single_file_bytes) errors.push(`${image.path} exceeds per-file byte budget.`);
     if (expectedFormat && image.format !== expectedFormat) errors.push(`${image.path} is ${image.format}, but its extension requires ${expectedFormat}.`);
-    if (budget.required_format && image.path.startsWith("/assets/img/") && image.format !== budget.required_format) {
+    const socialSuffix = budget.social_preview?.suffix;
+    if (socialSuffix && image.path.endsWith(socialSuffix)) {
+      // Social preview copies (og:image) stay JPEG: Threads / Facebook do not reliably read WebP.
+      if (image.format !== budget.social_preview.format) errors.push(`${image.path} is ${image.format}, expected ${budget.social_preview.format} for a social preview image.`);
+    } else if (budget.required_format && image.path.startsWith("/assets/img/") && image.format !== budget.required_format) {
       errors.push(`${image.path} is ${image.format}, expected ${budget.required_format} in /assets/img/.`);
     }
     if (!Number.isInteger(image.width) || !Number.isInteger(image.height)) errors.push(`${image.path} has unreadable dimensions.`);

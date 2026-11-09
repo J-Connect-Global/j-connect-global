@@ -66,7 +66,7 @@
 ### 既存記事の改善提案3件
 
 1. **L046 出産手続きガイド**：2026年版の黄色い冊子、Z1〜Z6、eU-Heft、U2・U3予約を補足。L098が公開承認された後に内部リンクを追加する案。未公開記事へのリンクは現行本文へ追加していない。
-2. **N021 Deutschlandticket 2027**：連邦政府の2026年10月29日付説明を追加し、66.80ユーロへの全国価格変更と、DBの11月30日という事業者固有期限を区別する案。
+2. **N021 Deutschlandticket 2027**：連邦政府の2026年11月5日付FAQを追加し、66.80ユーロへの全国価格変更と、DBの11月30日という事業者固有期限を区別する案。
 3. **C033 聖マルティン祭**：2026年11月7日のイルヴェリッヒ行列は終了済みのため、今後の予定一覧から削除。11月9日現在の情報へ更新し、保育施設主催で一般公開が確認できない行事は公開イベントとして案内しない案。
 
 ### 既存記事の再検証のみ
@@ -97,7 +97,7 @@
 
 ### 予防接種・Kita入園
 
-- RKIの2026年版STIKOカレンダーを参照し、個々の接種日程は医師が接種歴と年齢に基づいて確認するよう案内。
+- RKIの2026年版STIKOカレンダーを参照。RSV流行期に生まれた新生児は、モノクローナル抗体による予防を出生後できるだけ早く、理想的には退院時またはU2で行うよう案内されている。個々の対象・製剤・時期は医師が確認する。
 - IfSG §34(10a)：Kitaへの初回入園時には、年齢に合った予防接種について医師の相談を受けた書面証明が必要。
 - IfSG §20(8)：対象施設に入る子どもは、1歳以上で少なくとも1回、2歳以上で少なくとも2回の麻疹ワクチン、または免疫の証明が必要。医学的禁忌の例外あり。
 - 予防接種相談の証明と麻疹証明を混同しない。
@@ -113,6 +113,7 @@
 - https://www.g-ba.de/beschluesse/7982/
 - https://www.g-ba.de/presse/pressemitteilungen-meldungen/1350/
 - https://www.rki.de/DE/Themen/Infektionskrankheiten/Impfen/Impfkalender/impfkalender-node.html
+- https://www.rki.de/DE/Aktuelles/Neuigkeiten-und-Presse/Meldungen-PM/Meldungen/2026-01-22_STIKO.html
 - https://www.gesetze-im-internet.de/ifsg/__20.html
 - https://www.gesetze-im-internet.de/ifsg/__34.html
 - https://www.infektionsschutz.de/themen/masernschutz/eltern-und-erziehungsberechtigte/

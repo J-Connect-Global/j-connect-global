@@ -1108,7 +1108,8 @@ function renderArticleMetaSpans(type, item) {
 
 function renderOpenGraphMeta(type, item, title, canonicalHref) {
   const crawlableImage = getCrawlableLocalImageUrl(item);
-  const imageUrl = crawlableImage || absoluteUrl(getArticleImageSrc(item, type));
+  const socialImage = crawlableImage ? null : getSocialImage(getArticleImageSrc(item, type));
+  const imageUrl = crawlableImage || absoluteUrl(socialImage.src);
   const tags = [
     ['property', 'og:type', 'article'],
     ['property', 'og:site_name', SITE_NAME],
@@ -1117,6 +1118,9 @@ function renderOpenGraphMeta(type, item, title, canonicalHref) {
     ['property', 'og:description', item.summary],
     ['property', 'og:url', canonicalHref],
     ['property', 'og:image', imageUrl],
+    ['property', 'og:image:type', socialImage?.type],
+    ['property', 'og:image:width', socialImage?.width],
+    ['property', 'og:image:height', socialImage?.height],
     ['property', 'og:image:alt', getArticleImageAlt(item)],
     ['name', 'twitter:card', 'summary_large_image'],
     ['name', 'twitter:title', title],
@@ -1219,6 +1223,19 @@ function renderStructuredData(type, item, title, canonicalHref) {
 
   return `<script type="application/ld+json">${escapeJsonForHtml(article)}</script>
 <script type="application/ld+json">${escapeJsonForHtml(breadcrumb)}</script>`;
+}
+
+// Threads / Facebook link previews do not reliably read WebP. When they cannot use
+// og:image they crop another image on the page (the wide header logo) instead, so
+// prefer the JPEG sibling made by scripts/generate-og-images.py.
+function getSocialImage(src) {
+  const value = String(src || '');
+  if (value.startsWith('/') && value.endsWith('.webp')) {
+    const jpg = value.replace(/\.webp$/, '-og.jpg');
+    const fullPath = path.join(root, trimLeadingSlash(jpg));
+    if (fs.existsSync(fullPath)) return { src: jpg, type: 'image/jpeg', width: '1200', height: '630' };
+  }
+  return { src: value };
 }
 
 function getCrawlableLocalImageUrl(item) {
@@ -1728,14 +1745,14 @@ ${indent(renderJaHreflang(canonicalHref), 2)}
   <meta property="og:title" content="${escapeAttribute(title)}">
   <meta property="og:description" content="${escapeAttribute(description)}">
   <meta property="og:url" content="${escapeAttribute(canonicalHref)}">
-  <meta property="og:image" content="${escapeAttribute(absoluteUrl(DEFAULT_IMAGE))}">
+  <meta property="og:image" content="${escapeAttribute(absoluteUrl(getSocialImage(DEFAULT_IMAGE).src))}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="${escapeAttribute(SITE_NAME)}">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeAttribute(title)}">
   <meta name="twitter:description" content="${escapeAttribute(description)}">
-  <meta name="twitter:image" content="${escapeAttribute(absoluteUrl(DEFAULT_IMAGE))}">
+  <meta name="twitter:image" content="${escapeAttribute(absoluteUrl(getSocialImage(DEFAULT_IMAGE).src))}">
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
   <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-performance-a11y-20260719">
@@ -2302,19 +2319,26 @@ function homeNewsItems(items, limit) {
     .map(({ item }) => item);
 }
 
-// Upcoming events first (nearest first), then undated, then past events (most recent first).
+// Current and upcoming events first (nearest start date first), then undated, then past events (most recent first).
 // The reference date is the newest content date, so the output stays deterministic.
 function compareHomeEventEntries(a, b, referenceDate = '') {
   const rank = (item) => {
+    const start = eventStartDate(item);
     const end = eventEndDate(item);
     if (!end) return [1, 0];
-    return end >= referenceDate ? [0, Date.parse(end)] : [2, -Date.parse(end)];
+    if (end >= referenceDate) return [0, Date.parse(start || end)];
+    return [2, -Date.parse(end)];
   };
   const [ra, va] = rank(a.item);
   const [rb, vb] = rank(b.item);
   if (ra !== rb) return ra - rb;
   if (va !== vb) return va - vb;
   return (a.item.home_order ?? Infinity) - (b.item.home_order ?? Infinity) || compareHomeItemEntries(a, b);
+}
+
+function eventStartDate(item) {
+  const dates = String(item.event_date || '').match(/20\d{2}-\d{2}-\d{2}/g);
+  return dates ? dates[0] : '';
 }
 
 function eventEndDate(item) {

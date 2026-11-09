@@ -7,7 +7,7 @@ import { SERVICE_NAME, SITE_ORIGIN } from "./site-identity.mjs";
 
 const ORIGIN = SITE_ORIGIN;
 const SITE_NAME = SERVICE_NAME;
-const DEFAULT_IMAGE = `${ORIGIN}/assets/img/placeholders/jconnect-default-card.webp`;
+const DEFAULT_IMAGE = `${ORIGIN}/assets/img/placeholders/jconnect-default-card-og.jpg`;
 const GENERATED_MARKER = "data-generated-public-detail";
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 

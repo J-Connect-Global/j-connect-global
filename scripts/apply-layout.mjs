@@ -284,6 +284,9 @@ function ensureStaticSocialMeta(html, url, page) {
     'og:description',
     'og:url',
     'og:image',
+    'og:image:type',
+    'og:image:width',
+    'og:image:height',
     'og:type',
     'og:site_name',
     'og:locale',
@@ -493,7 +496,7 @@ function pageSocialMeta(html, url, page) {
     title,
     description,
     url: canonical,
-    image: absoluteUrl(page.og_image || page.image || DEFAULT_SOCIAL_IMAGE),
+    ...socialImage(page.og_image || page.image || DEFAULT_SOCIAL_IMAGE),
     type: page.type === 'article' ? 'article' : 'website'
   };
 }
@@ -504,6 +507,9 @@ function renderSocialMeta(meta, spaces) {
     ['property', 'og:description', meta.description],
     ['property', 'og:url', meta.url],
     ['property', 'og:image', meta.image],
+    ['property', 'og:image:type', meta.imageType],
+    ['property', 'og:image:width', meta.imageWidth],
+    ['property', 'og:image:height', meta.imageHeight],
     ['property', 'og:type', meta.type],
     ['property', 'og:site_name', SERVICE_NAME],
     ['property', 'og:locale', 'ja_JP'],
@@ -514,6 +520,7 @@ function renderSocialMeta(meta, spaces) {
   ];
 
   return tags
+    .filter(([, , content]) => content)
     .map(([attr, key, content]) => `${' '.repeat(spaces)}<meta ${attr}="${key}" content="${escapeAttribute(content)}">`)
     .join('\n');
 }
@@ -633,6 +640,20 @@ function normalizeUrl(value) {
   const url = String(value || '').trim();
   if (!url || url === '/') return url || '';
   return url.endsWith('/') ? url : `${url}/`;
+}
+
+// Threads / Facebook link previews do not reliably read WebP, so prefer the JPEG
+// sibling made by scripts/generate-og-images.py when one exists.
+function socialImage(src) {
+  const value = String(src || '');
+  const local = value.startsWith(SITE_ORIGIN) ? value.slice(SITE_ORIGIN.length) : value;
+  if (local.startsWith('/') && local.endsWith('.webp')) {
+    const jpg = local.replace(/\.webp$/, '-og.jpg');
+    if (fs.existsSync(path.join(root, jpg.slice(1)))) {
+      return { image: absoluteUrl(jpg), imageType: 'image/jpeg', imageWidth: '1200', imageHeight: '630' };
+    }
+  }
+  return { image: absoluteUrl(value) };
 }
 
 function absoluteUrl(url) {

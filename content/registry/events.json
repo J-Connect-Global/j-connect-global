@@ -1729,7 +1729,7 @@
       "ギャラリー",
       "美術市場"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 2,
     "hub_visible": true,
     "search_visible": true,
@@ -2233,7 +2233,7 @@
     "url": "/germany/ja/events/kommern-saint-martin-2026-guide/",
     "markdown_path": "/content/events/kommern-saint-martin-2026-guide.md",
     "image_url": "/assets/img/events/kommern-saint-martin-2026-guide.webp",
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 3,
     "hub_visible": true,
     "search_visible": true,
@@ -2969,14 +2969,14 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-11-08",
+      "last_reviewed_at": "2026-11-09",
       "next_review_due": "2026-12-15"
     },
     "title": "【2027年】ドイツの健康保険料は上がる？平均追加保険料率2.9％決定と乗り換え方",
     "category": "医療・健康",
     "summary": "連邦保健省は2026年10月30日、2027年の公的医療保険の平均追加保険料率を2.9％に決定しました。ただし各保険組合の実際の料率は異なります。値上げ通知、特別解約権、手取りへの影響、乗り換え手順を整理します。",
     "published_at": "2026-10-26",
-    "last_verified": "2026-11-08",
+    "last_verified": "2026-11-09",
     "tags": [
       "健康保険",
       "公的医療保険",
@@ -2988,7 +2988,7 @@
       "ドイツ生活",
       "手取り"
     ],
-    "updated_at": "2026-11-08",
+    "updated_at": "2026-11-09",
     "related_articles": [
       "health-insurance-guide",
       "germany-january-2027-changes",
@@ -6132,7 +6132,7 @@
     "url": "/germany/ja/events/cologne-museumsnacht-2026-guide/",
     "markdown_path": "/content/events/cologne-museumsnacht-2026-guide.md",
     "image_url": "/assets/img/events/cologne-museumsnacht-2026-guide.webp",
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 8,
     "hub_visible": true,
     "search_visible": true,
@@ -7201,9 +7201,9 @@
     "published": true,
     "status": "published",
     "published_at": "2026-11-07",
-    "updated_at": "2026-11-08",
-    "last_verified": "2026-11-08",
-    "next_review": "2026-11-09",
+    "updated_at": "2026-11-09",
+    "last_verified": "2026-11-09",
+    "next_review": "2026-11-16",
     "tags": [
       "放送負担金",
       "住民登録",
@@ -7248,9 +7248,9 @@
     ],
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial (official sources rechecked 2026-11-08)",
-      "last_reviewed_at": "2026-11-08",
-      "next_review_due": "2026-11-09"
+      "reviewed_by": "J-Connect Global editorial (official sources rechecked 2026-11-09)",
+      "last_reviewed_at": "2026-11-09",
+      "next_review_due": "2026-11-16"
     },
     "content_type": "news",
     "city": "ドイツ全土",

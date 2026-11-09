@@ -2226,8 +2226,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-11-08",
-    "last_verified": "2026-11-08",
+    "updated_at": "2026-11-09",
+    "last_verified": "2026-11-09",
     "tags": [
       "健康保険",
       "公的医療保険",
@@ -2287,7 +2287,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-11-08",
+      "last_reviewed_at": "2026-11-09",
       "next_review_due": "2026-11-21"
     },
     "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",

@@ -2319,26 +2319,19 @@ function homeNewsItems(items, limit) {
     .map(({ item }) => item);
 }
 
-// Current and upcoming events first (nearest start date first), then undated, then past events (most recent first).
+// Upcoming events first (nearest first), then undated, then past events (most recent first).
 // The reference date is the newest content date, so the output stays deterministic.
 function compareHomeEventEntries(a, b, referenceDate = '') {
   const rank = (item) => {
-    const start = eventStartDate(item);
     const end = eventEndDate(item);
     if (!end) return [1, 0];
-    if (end >= referenceDate) return [0, Date.parse(start || end)];
-    return [2, -Date.parse(end)];
+    return end >= referenceDate ? [0, Date.parse(end)] : [2, -Date.parse(end)];
   };
   const [ra, va] = rank(a.item);
   const [rb, vb] = rank(b.item);
   if (ra !== rb) return ra - rb;
   if (va !== vb) return va - vb;
   return (a.item.home_order ?? Infinity) - (b.item.home_order ?? Infinity) || compareHomeItemEntries(a, b);
-}
-
-function eventStartDate(item) {
-  const dates = String(item.event_date || '').match(/20\d{2}-\d{2}-\d{2}/g);
-  return dates ? dates[0] : '';
 }
 
 function eventEndDate(item) {

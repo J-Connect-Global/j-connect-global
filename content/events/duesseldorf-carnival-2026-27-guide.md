@@ -32,14 +32,14 @@ related_articles: ["rhineland-carnival-11-11", "cologne-carnival-2026-27-guide",
 city: "デュッセルドルフ"
 location: "市庁舎前のマルクト広場、旧市街、ケーニヒスアレー、市中心部の行列ルートなど"
 event_date: "2026-11-11 ホッペディッツの目覚め／2027-02-04〜2027-02-10 街頭カーニバル"
-next_review: "2026-11-09"
+next_review: "2026-11-25"
 tags: ["カーニバル", "デュッセルドルフ", "11月11日", "2026年11月", "2027年2月", "バラの月曜日", "NRW", "季節行事"]
 published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-31"
 updated_at: "2026-10-31"
-last_verified: "2026-10-31"
+last_verified: "2026-11-09"
 canonical_url: "/germany/ja/events/duesseldorf-carnival-2026-27-guide/"
 official_url: "https://www.helau.cc/de/pages/veranstaltungen-3"
 image: "/assets/img/events/duesseldorf-carnival-2026-27-guide.webp"

@@ -5483,7 +5483,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; statutes and official sources checked)",
-      "last_reviewed_at": "2026-11-06",
+      "last_reviewed_at": "2026-11-10",
       "next_review_due": "2027-01-15"
     },
     "canonical_url": "/germany/ja/living/sick-leave-germany/",
@@ -5491,7 +5491,7 @@
     "category": "仕事・お金",
     "summary": "ドイツで病気のため仕事を休むときは、すぐに職場へ連絡し、4日目以降は医師の病欠証明が必要です。公的保険の人は証明が電子で会社に届きます。会社は最長6週間給与を払い続け、その後は健康保険から手取りの最大90%の傷病手当金が出ます。子どもの看病のための休暇は2026年は1人15日ですが、法律が変わらなければ2027年は10日に戻ります。",
     "published_at": "2026-11-06",
-    "last_verified": "2026-11-06",
+    "last_verified": "2026-11-10",
     "tags": [
       "病欠",
       "病気休暇",
@@ -5501,7 +5501,7 @@
       "給与",
       "健康保険"
     ],
-    "updated_at": "2026-11-06",
+    "updated_at": "2026-11-10",
     "related_articles": [
       "doctor-appointment-germany",
       "health-insurance-guide",
@@ -5537,6 +5537,10 @@
       {
         "title": "連邦休暇法第9条：休暇中の病気",
         "url": "https://www.gesetze-im-internet.de/burlg/__9.html"
+      },
+      {
+        "title": "連邦保健省：子どもの看病休暇・看病傷病手当金のFAQ（2026年2月10日）",
+        "url": "https://www.bundesgesundheitsministerium.de/fragen-und-antworten-zu-kinderkrankentagen-und-kinderkrankengeld"
       }
     ],
     "image": "/assets/img/living/sick-leave-germany.webp",

@@ -6,6 +6,7 @@ import {
   frontMatterRequiredFields,
   parseFrontMatter
 } from './sync-content-frontmatter.mjs';
+import { getHomeEventBadge, getHomeEventDateInfo } from './home-event-dates.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE_ORIGIN = 'https://j-connect-global.com';
@@ -116,6 +117,7 @@ function main() {
   validateSitemap(allItems);
   validateRelatedArticles(allItems);
   validateWildBirdCards();
+  validateHomeEventDateLogic();
 
   if (problems.length) {
     console.error(`Content validation failed with ${problems.length} issue(s):`);
@@ -303,6 +305,40 @@ function validateFrontMatterConsistency(item, label) {
     if (normalizedMetadataValue(frontMatter.next_review) !== normalizedMetadataValue(item.review?.next_review_due)) {
       problems.push(`${label} registry/front matter mismatch for next_review.`);
     }
+  }
+}
+
+
+function validateHomeEventDateLogic() {
+  const seasonalCarnival = {
+    event_date: '2026-11-11 ホッペディッツの目覚め／2027-02-04〜2027-02-10 街頭カーニバル'
+  };
+  const cases = [
+    { name: 'first date in a multi-date season', item: seasonalCarnival, referenceDate: '2026-11-10', date: '2026-11-11', ongoing: false, past: false },
+    { name: 'next date after the first event has passed', item: seasonalCarnival, referenceDate: '2026-11-12', date: '2027-02-04', ongoing: false, past: false },
+    { name: 'current date inside a multi-day event', item: { event_date: '2027-02-04〜2027-02-10' }, referenceDate: '2027-02-06', date: '2027-02-06', ongoing: true, past: false },
+    { name: 'last date after a multi-day event has ended', item: { event_date: '2027-02-04〜2027-02-10' }, referenceDate: '2027-02-11', date: '2027-02-10', ongoing: false, past: true }
+  ];
+
+  for (const testCase of cases) {
+    const actual = getHomeEventDateInfo(testCase.item, testCase.referenceDate);
+    if (actual.date !== testCase.date || actual.ongoing !== testCase.ongoing || actual.past !== testCase.past) {
+      problems.push(`Home event date logic failed for ${testCase.name}: expected ${JSON.stringify({ date: testCase.date, ongoing: testCase.ongoing, past: testCase.past })}, got ${JSON.stringify(actual)}.`);
+    }
+  }
+
+  const previewEvent = {
+    event_date: '2026-11-27〜2026-12-06',
+    home_badge_date: '2026-11-27',
+    home_badge_label: 'プレビューデー'
+  };
+  const previewBadge = getHomeEventBadge(previewEvent, '2026-11-10');
+  if (previewBadge.top !== 'プレビューデー' || previewBadge.main !== '11/27') {
+    problems.push(`Home event preview-day badge is incorrect: ${JSON.stringify(previewBadge)}.`);
+  }
+  const ongoingBadge = getHomeEventBadge(previewEvent, '2026-11-28');
+  if (ongoingBadge.top !== '開催中' || ongoingBadge.main !== '11/28') {
+    problems.push(`Home event ongoing badge is incorrect: ${JSON.stringify(ongoingBadge)}.`);
   }
 }
 
@@ -649,13 +685,12 @@ function homeItems(items, limit, eventOrder = false, referenceDate = '') {
     .map(({ item }) => item);
 }
 
-// Mirrors build-content.mjs: upcoming events first, then undated, then past events.
+// Mirrors build-content.mjs: use the next scheduled date for multi-date events.
 function compareHomeEventEntries(a, b, referenceDate) {
   const rank = (item) => {
-    const dates = String(item.event_date || '').match(/20\d{2}-\d{2}-\d{2}/g);
-    const end = dates ? dates[dates.length - 1] : '';
-    if (!end) return [1, 0];
-    return end >= referenceDate ? [0, Date.parse(end)] : [2, -Date.parse(end)];
+    const next = getHomeEventDateInfo(item, referenceDate).date;
+    if (!next) return [1, 0];
+    return next >= referenceDate ? [0, Date.parse(next)] : [2, -Date.parse(next)];
   };
   const [ra, va] = rank(a.item);
   const [rb, vb] = rank(b.item);

@@ -1729,7 +1729,7 @@
       "ギャラリー",
       "美術市場"
     ],
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 2,
     "hub_visible": true,
     "search_visible": true,
@@ -2233,7 +2233,7 @@
     "url": "/germany/ja/events/kommern-saint-martin-2026-guide/",
     "markdown_path": "/content/events/kommern-saint-martin-2026-guide.md",
     "image_url": "/assets/img/events/kommern-saint-martin-2026-guide.webp",
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 3,
     "hub_visible": true,
     "search_visible": true,
@@ -6124,7 +6124,7 @@
     "url": "/germany/ja/events/cologne-museumsnacht-2026-guide/",
     "markdown_path": "/content/events/cologne-museumsnacht-2026-guide.md",
     "image_url": "/assets/img/events/cologne-museumsnacht-2026-guide.webp",
-    "home_visible": true,
+    "home_visible": false,
     "home_order": 8,
     "hub_visible": true,
     "search_visible": true,
@@ -6210,7 +6210,9 @@
       "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-30",
       "next_review_due": "2026-11-26"
-    }
+    },
+    "home_badge_date": "2026-11-27",
+    "home_badge_label": "プレビューデー"
   },
   {
     "slug": "boot-duesseldorf-2027-guide",

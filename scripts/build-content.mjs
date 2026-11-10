@@ -13,6 +13,7 @@ import {
 } from './site-identity.mjs';
 import { renderPublicListSnapshots } from './render-public-list-snapshots.mjs';
 import { loadArticlePhotoCredits } from './article-photo-credits.mjs';
+import { getHomeEventBadge, getHomeEventDateInfo } from './home-event-dates.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const articlePhotoCredits = loadArticlePhotoCredits(root);
@@ -2154,7 +2155,7 @@ function updateHome(datasets) {
     .join('\n\n');
   const newsList = renderHomeNewsList(homeNewsItems(datasets.events, 3));
   const homeEventReferenceDate = latestContentDate(Object.values(datasets).flat());
-  const eventCards = homeItems(datasets.events, contentTypes.events.homeLimit, (item) => !['news', 'column'].includes(item.content_type), (a, b) => compareHomeEventEntries(a, b, homeEventReferenceDate)).map(renderHomeEventCard).join('\n\n');
+  const eventCards = homeItems(datasets.events, contentTypes.events.homeLimit, (item) => !['news', 'column'].includes(item.content_type), (a, b) => compareHomeEventEntries(a, b, homeEventReferenceDate)).map((item, index) => renderHomeEventCard(item, index, homeEventReferenceDate)).join('\n\n');
   const learnGermanContent = homeItems(datasets['learn-german'], contentTypes['learn-german'].homeLimit).map(renderHomeLearnGermanCard).join('\n\n');
   const homeArticleItemsByUrl = new Map(Object.values(datasets).flatMap((items) => items).map((item) => [item.url, item]));
 
@@ -2220,9 +2221,9 @@ function renderHomeLatestDigestCard({ item, section, sourceLabel, thumbClass }) 
 </a>`;
 }
 
-function renderHomeEventCard(item, index) {
+function renderHomeEventCard(item, index, referenceDate) {
   const imageClasses = ['img-japan-day', 'img-market', 'img-movie'];
-  const badge = eventBadge(item);
+  const badge = getHomeEventBadge(item, referenceDate);
 
   return `<a class="portal3-event-card" href="${escapeAttribute(item.url)}">
   <span class="event-date"><b>${escapeHtml(badge.top)}</b><strong>${escapeHtml(badge.main)}</strong><small>${escapeHtml(badge.sub)}</small></span>
@@ -2319,24 +2320,20 @@ function homeNewsItems(items, limit) {
     .map(({ item }) => item);
 }
 
-// Upcoming events first (nearest first), then undated, then past events (most recent first).
-// The reference date is the newest content date, so the output stays deterministic.
+// Upcoming events are ordered by their next scheduled date. For multi-date
+// events, an upcoming standalone date or the next range is used rather than
+// the final date in the season.
 function compareHomeEventEntries(a, b, referenceDate = '') {
   const rank = (item) => {
-    const end = eventEndDate(item);
-    if (!end) return [1, 0];
-    return end >= referenceDate ? [0, Date.parse(end)] : [2, -Date.parse(end)];
+    const next = getHomeEventDateInfo(item, referenceDate).date;
+    if (!next) return [1, 0];
+    return next >= referenceDate ? [0, Date.parse(next)] : [2, -Date.parse(next)];
   };
   const [ra, va] = rank(a.item);
   const [rb, vb] = rank(b.item);
   if (ra !== rb) return ra - rb;
   if (va !== vb) return va - vb;
   return (a.item.home_order ?? Infinity) - (b.item.home_order ?? Infinity) || compareHomeItemEntries(a, b);
-}
-
-function eventEndDate(item) {
-  const dates = String(item.event_date || '').match(/20\d{2}-\d{2}-\d{2}/g);
-  return dates ? dates[dates.length - 1] : '';
 }
 
 function latestContentDate(items) {

@@ -109,6 +109,7 @@ All three article registries use the shared fields below:
 - `official_sources`
 - `disclaimer_type`
 - `related_articles`
+- Optional event Home badge fields: `home_badge_date` and `home_badge_label` for a clearly distinguished preview day or opening date.
 - `review`
 
 Events also use `city`, `location`, the event date field, and `official_url`.
@@ -167,7 +168,8 @@ Optional hub card images can be added to Living, Events, and Learn German regist
 Use `home_visible` and `home_order` in the registry:
 
 - `home_visible: true` allows the article to be considered for Home preview cards.
-- Event preview cards use `home_order` ascending, then the newest editorial date (`updated_at` or `published_at`). Mark ended events `home_visible: false` during the editorial cycle; dates are not automatically inferred from the free-text event date field.
+- Event preview cards are ordered by the next scheduled date parsed from `event_date`; for a multi-date event, the next upcoming standalone date or range is used, and an event currently within a date range is labelled as ongoing. `home_order` is the tie-breaker for equal dates. Mark ended events `home_visible: false` during the editorial cycle. The reference date is the newest editorial content date so generated output remains deterministic.
+- For a one-day preview or opening date that differs from the main event period, use the optional `home_badge_date` and `home_badge_label` registry fields. The custom label applies only to that exact date; an event within its main date range is labelled as ongoing.
 - Other Home previews and the news list use the newest editorial date, with registry position as the tie-breaker. The news list selects published news independently of `home_visible`.
 - Home uses the current compact preview layout for Living, Events, and Learn German.
 

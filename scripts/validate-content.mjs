@@ -685,13 +685,12 @@ function homeItems(items, limit, eventOrder = false, referenceDate = '') {
     .map(({ item }) => item);
 }
 
-// Mirrors build-content.mjs: upcoming events first, then undated, then past events.
+// Mirrors build-content.mjs: use the next scheduled date for multi-date events.
 function compareHomeEventEntries(a, b, referenceDate) {
   const rank = (item) => {
-    const dates = String(item.event_date || '').match(/20\d{2}-\d{2}-\d{2}/g);
-    const end = dates ? dates[dates.length - 1] : '';
-    if (!end) return [1, 0];
-    return end >= referenceDate ? [0, Date.parse(end)] : [2, -Date.parse(end)];
+    const next = getHomeEventDateInfo(item, referenceDate).date;
+    if (!next) return [1, 0];
+    return next >= referenceDate ? [0, Date.parse(next)] : [2, -Date.parse(next)];
   };
   const [ra, va] = rank(a.item);
   const [rb, vb] = rank(b.item);

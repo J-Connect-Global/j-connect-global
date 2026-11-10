@@ -35,8 +35,8 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-26"
-updated_at: "2026-11-09"
-last_verified: "2026-11-09"
+updated_at: "2026-11-10"
+last_verified: "2026-11-10"
 canonical_url: "/germany/ja/events/news/health-insurance-zusatzbeitrag-2027/"
 official_url: "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/zusatzbeitragssatz-gkv-2027-festgelegt"
 image: "/assets/img/events/health-insurance-zusatzbeitrag-2027.webp"
@@ -49,7 +49,7 @@ image_credit: "Illustration / J-Connect"
 
 ドイツの公的医療保険（GKV）について、連邦保健省は2026年10月30日、2027年の平均追加保険料率を2.9％に正式決定しました。これは2026年と同じ水準ですが、全ての保険組合が2.9％を請求するわけではありません。実際の追加保険料率は加入先ごとに決まるため、自分の給与から引かれる金額は変わる可能性があります。
 
-この記事は、ドイツで公的医療保険に加入して働く方、その家族、これから加入する方に向けたものです。決定済みの平均値と保険組合別の料率の違い、手取りへの影響、値上げ時の特別解約権と乗り換え手順を整理します（2026年11月9日確認）。
+この記事は、ドイツで公的医療保険に加入して働く方、その家族、これから加入する方に向けたものです。決定済みの平均値と保険組合別の料率の違い、手取りへの影響、値上げ時の特別解約権と乗り換え手順を整理します（2026年11月10日確認）。
 
 ## 何が発表されたのか
 
@@ -66,7 +66,7 @@ image_credit: "Illustration / J-Connect"
 - **一般保険料率 14.6%**：法律で全国一律。
 - **追加保険料率**：保険組合ごとに、それぞれの財政状況に応じて決める。
 
-![一般保険料率14.6%に保険組合ごとの追加保険料率を足したものが保険料率になり、通常は雇用主と本人が半分ずつ負担することを示す図](/assets/images/events/gkv-contribution-structure-2027.svg "図解：J-Connect。連邦保健省の解説に基づく（2026年11月9日時点）。")
+![一般保険料率14.6%に保険組合ごとの追加保険料率を足したものが保険料率になり、通常は雇用主と本人が半分ずつ負担することを示す図](/assets/images/events/gkv-contribution-structure-2027.svg "図解：J-Connect。連邦保健省の解説に基づく（2026年11月10日時点）。")
 
 会社員の場合、14.6%も追加保険料も、雇用主と本人が半分ずつ負担します（[連邦保健省](https://www.bundesgesundheitsministerium.de/beitraege)）。年金受給者は年金保険機関が半分を負担します。
 
@@ -129,7 +129,7 @@ image_credit: "Illustration / J-Connect"
 
 ## いつ、どこで確認すればいい？
 
-各保険組合の2027年の率は、例年12月ごろから年末にかけて発表されます。中には、すでに据え置きを表明した組合や、引き下げを検討していると報じられた組合もありますが、大半はまだ決まっていません（10月26日時点）。
+2027年の個別料率は各保険組合がそれぞれ決定します。2026年11月10日時点で、GKV-Spitzenverbandの公式一覧は「現在有効な追加保険料率」を掲載しており、2027年1月からの予定値を一覧だけで確定することはできません。2027年の料率を公表した組合があっても、加入先の公式通知・会員向け案内で確認してください。平均値2.9％は、すべての加入者に適用される一律の料率ではありません。
 
 - **公式の一覧**：GKV-Spitzenverband の[保険組合一覧](https://www.gkv-spitzenverband.de/service/krankenkassenliste/krankenkassen.jsp)で、全組合の現在の追加保険料率を比べられます。表示されるのはその日時点で有効な率です。
 - **加入先のウェブサイトやアプリ**：手紙での通知義務はなくなったため、年末に自分で一度チェックします。
@@ -164,7 +164,7 @@ image_credit: "Illustration / J-Connect"
 
 今回の追加保険料率は公的医療保険の話で、民間医療保険の保険料には直接関係しません。民間保険の保険料改定は、契約先からの通知で確認してください。
 
-## 参考情報（2026年11月9日確認）
+## 参考情報（2026年11月10日確認）
 
 - [連邦保健省：2027年の平均追加保険料率を2.9％に決定（2026年10月30日）](https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/zusatzbeitragssatz-gkv-2027-festgelegt)
 - [連邦保健省：GKV推計委員会の結果（2026年10月14日）](https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/ergebnisse-gkv-schaetzerkreis-zusatzbeitragssatz)

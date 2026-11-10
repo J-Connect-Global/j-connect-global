@@ -4838,15 +4838,15 @@
     "disclaimer_type": "news_explainer",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-29",
-      "next_review_due": "2026-12-15"
+      "reviewed_by": "J-Connect Global editorial (official bill status and statutory ceiling checked)",
+      "last_reviewed_at": "2026-11-10",
+      "next_review_due": "2026-11-21"
     },
     "title": "ドイツの介護保険が改革へ｜子どものいない人は2027年から上乗せ0.9％、扶養の配偶者にも負担案",
     "category": "医療・健康",
     "summary": "ドイツ政府は、公的介護保険の財政を立て直すための改革法案（介護再編法）を閣議決定しました。保険料率3.6％は据え置く一方、子どものいない人の上乗せを2027年1月から0.6％から0.9％へ引き上げ、2028年からは扶養に入っている配偶者の分にも上乗せを求める案です。手取りへの影響の計算例と、今後の流れを整理します。",
     "published_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "last_verified": "2026-11-10",
     "tags": [
       "介護保険",
       "社会保険",
@@ -4858,7 +4858,7 @@
       "手取り",
       "ドイツ生活"
     ],
-    "updated_at": "2026-10-29",
+    "updated_at": "2026-11-10",
     "related_articles": [
       "health-insurance-zusatzbeitrag-2027",
       "germany-january-2027-changes",
@@ -4866,7 +4866,7 @@
     ],
     "city": "ドイツ全土",
     "location": "",
-    "event_date": "2027-01-01 施行予定（連邦議会の議決が必要）",
+    "event_date": "2027-01-01（法案成立時の予定）",
     "official_url": "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/kabinett-beschliesst-pflegeneuordnungsgesetz",
     "official_sources": [
       {
@@ -4886,8 +4886,16 @@
         "url": "https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/3_Downloads/Gesetze_und_Verordnungen/GuV/P/Kabinett-GE_Pflegeneuordnungsgesetz_PNOG.pdf"
       },
       {
-        "title": "連邦議会：介護保険の再編を審議（2026年11月5日）",
+        "title": "連邦議会：介護再編法案21/8869の提出（2026年11月2日）",
+        "url": "https://www.bundestag.de/presse/hib/kurzmeldungen-1230676"
+      },
+      {
+        "title": "連邦議会：介護再編法案の第1読会（2026年11月5日）",
         "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw45-de-pflegeneuordnungsgesetz-1225076"
+      },
+      {
+        "title": "社会法典第11編第55条：介護保険の保険料算定上限",
+        "url": "https://www.gesetze-im-internet.de/sgb_11/__55.html"
       }
     ],
     "image": "/assets/img/events/pflegeversicherung-reform-2027.webp",

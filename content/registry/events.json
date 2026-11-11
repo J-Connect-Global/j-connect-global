@@ -2586,7 +2586,7 @@
     "content_type": "news",
     "category": "交通・車",
     "title": "Deutschlandticketは2027年66.80ユーロへ｜DB利用者は11月30日までに確認",
-    "summary": "Deutschlandticketは2027年1月から月66.80ユーロへ。DBの既存契約は11月30日までの回答が必要です。同意後は撤回できませんが通常の解約は可能。学生向け定期券の例外も整理します。",
+    "summary": "2027年1月から66.80ユーロ。DBの既存契約は注文日と契約者で11月30日の同意要否が変わり、全額会社負担のJobticketや学生定期券には別扱いがあります。DB以外の期限は各社の案内を確認します。",
     "official_sources": [
       {
         "title": "Deutsche Bahn：Deutschlandticketの契約変更FAQ（回答期限・撤回・48時間の反映）",
@@ -2595,15 +2595,19 @@
       {
         "title": "Deutsche Bahn：Deutschlandticket全般・Deutschland-SemesterticketのFAQ",
         "url": "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket"
+      },
+      {
+        "title": "連邦政府：Deutschlandticketの質問と回答（2026年11月5日公表・全国の価格調整と同意）",
+        "url": "https://www.bundesregierung.de/breg-de/bundesregierung/bundeskanzleramt/deutschlandticket-2134074"
+      },
+      {
+        "title": "Deutsche Bahn：Jobticketの契約変更FAQ（2027年価格・会社全額負担の例外）",
+        "url": "https://www.bahn.de/faq/gk/angebot/zeitkarten/deutschland-ticket/kuendigung"
       }
     ],
     "related_articles": [
       "db-2027-timetable-family-ticket",
-      "germany-train-travel-guide",
-      "cologne-antwerp-direct-ice-2026",
-      "sugar-drink-tax-germany-2027",
-      "pflegeversicherung-reform-2027",
-      "wohngeld-reform-2027"
+      "germany-train-travel-guide"
     ],
     "city": "ドイツ全土",
     "area": "ドイツ全土",
@@ -2624,8 +2628,8 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-19",
-    "updated_at": "2026-11-01",
-    "last_verified": "2026-11-01",
+    "updated_at": "2026-11-11",
+    "last_verified": "2026-11-11",
     "canonical_url": "/germany/ja/events/news/deutschlandticket-2027-price-consent/",
     "official_url": "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt",
     "url": "/germany/ja/events/news/deutschlandticket-2027-price-consent/",
@@ -2639,8 +2643,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-11-01",
-      "next_review_due": "2026-11-15"
+      "last_reviewed_at": "2026-11-11",
+      "next_review_due": "2026-11-18"
     },
     "image": "/assets/images/living/german-regional-train-editorial-v1.webp",
     "image_alt": "地域列車のホームで公式アプリを確認する旅行者の編集イメージ",
@@ -7503,15 +7507,15 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
-      "last_reviewed_at": "2026-11-05",
-      "next_review_due": "2026-11-10"
+      "last_reviewed_at": "2026-11-11",
+      "next_review_due": "2026-11-14"
     },
     "title": "ドイツのTHG-Quote 2026｜電気自動車の申告期限は11月15日（日）、休日扱いと手数料",
     "category": "交通・車",
     "summary": "ドイツで登録した純電気自動車の2026年分THG-Quoteは、非公開充電の定額推計について法令上の基準日が11月15日です。2026年は日曜日に当たるため、行政手続の一般的な期限延長規定が適用されるかを区別し、公共充電の翌年2月28日、環境庁手数料、仲介事業者の受付期限を整理します。",
     "published_at": "2026-11-07",
-    "updated_at": "2026-11-05",
-    "last_verified": "2026-11-05",
+    "updated_at": "2026-11-11",
+    "last_verified": "2026-11-11",
     "tags": [
       "THG-Quote",
       "電気自動車",
@@ -7530,7 +7534,7 @@
     "official_url": "https://www.umweltbundesamt.de/themen/verkehr/kraftstoffe-antriebe/vollzug-38-bimschv-anrechnung-von-strom-fuer",
     "official_sources": [
       {
-        "title": "環境庁：38番目の連邦排出規制令に基づく電気自動車の電力申告（2026年10月30日更新）",
+        "title": "環境庁：38番目の連邦排出規制令に基づく電気自動車の電力申告（2026年11月6日更新）",
         "url": "https://www.umweltbundesamt.de/themen/verkehr/kraftstoffe-antriebe/vollzug-38-bimschv-anrechnung-von-strom-fuer"
       },
       {

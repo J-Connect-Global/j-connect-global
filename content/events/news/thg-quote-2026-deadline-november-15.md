@@ -9,9 +9,9 @@ city: "ドイツ全土"
 location: ""
 event_date: "2026年の申告期限・11月15日（日）"
 published_at: "2026-11-07"
-updated_at: "2026-11-05"
-last_verified: "2026-11-05"
-next_review: "2026-11-10"
+updated_at: "2026-11-11"
+last_verified: "2026-11-11"
+next_review: "2026-11-14"
 summary: "ドイツで登録した純電気自動車の2026年分THG-Quoteは、非公開充電の定額推計について法令上の基準日が11月15日です。2026年は日曜日に当たるため、行政手続の一般的な期限延長規定が適用されるかを区別し、公共充電の翌年2月28日、環境庁手数料、仲介事業者の受付期限を整理します。"
 tags: ["THG-Quote", "電気自動車", "EV", "交通・車", "申請期限", "環境庁"]
 status: "published"
@@ -21,7 +21,7 @@ canonical_url: "/germany/ja/events/news/thg-quote-2026-deadline-november-15/"
 official_url: "https://www.umweltbundesamt.de/themen/verkehr/kraftstoffe-antriebe/vollzug-38-bimschv-anrechnung-von-strom-fuer"
 related_articles: ["car-insurance-switch-november-2026", "winter-tires-germany-2026"]
 official_sources:
-  - title: "環境庁：38番目の連邦排出規制令に基づく電気自動車の電力申告（2026年10月30日更新）"
+  - title: "環境庁：38番目の連邦排出規制令に基づく電気自動車の電力申告（2026年11月6日更新）"
     url: "https://www.umweltbundesamt.de/themen/verkehr/kraftstoffe-antriebe/vollzug-38-bimschv-anrechnung-von-strom-fuer"
   - title: "環境庁：38番目の連邦排出規制令の申請・運用FAQ（2025年7月17日版）"
     url: "https://www.umweltbundesamt.de/system/files/medien/366/dokumente/2025-07-18_uba_faq_vollzug_38._bimschv_0.pdf"
@@ -106,7 +106,7 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 
 ## 環境庁へ直接申請する場合
 
-環境庁の2026年10月30日更新ページによると、申請は現在、書式自由で電子メール（38bimschv@uba.de）により提出できます。デジタル申請システムはまだ利用できません。2026年の義務年度については、2026年8月10日以降に提出された申請を処理中と案内されています。
+環境庁の2026年11月6日更新ページによると、申請は現在、書式自由で電子メール（38bimschv@uba.de）により提出できます。デジタル申請システムはまだ利用できません。2026年の義務年度については、2026年9月9日以降に提出された申請を処理中と案内されています。
 
 直接申請する場合は、最新の環境庁FAQと提出様式を確認し、送信した申請書類と受付番号を保存してください。環境庁が発行するのは電力量と削減量の証明であり、対価の支払いではありません。証明書を買い取る義務対象事業者との契約は別に必要です。
 
@@ -155,4 +155,4 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 - [法令：行政手続法 第31条（期限と期日）](https://www.gesetze-im-internet.de/vwvfg/__31.html)
 - [ADAC：2026年のTHG-Quoteと申請の仕組み（2026年6月24日）](https://www.adac.de/rund-ums-fahrzeug/elektromobilitaet/elektroauto/thg-quote/)
 
-<small>確認日：2026年11月5日。申請期限、審査手数料、事業者の受付状況は変更される可能性があります。申込み前に環境庁と利用する事業者の最新案内を確認してください。税務上の扱いは個別の状況により異なる場合があります。</small>
+<small>確認日：2026年11月11日。申請期限、審査手数料、事業者の受付状況は変更される可能性があります。申込み前に環境庁と利用する事業者の最新案内を確認してください。税務上の扱いは個別の状況により異なる場合があります。</small>

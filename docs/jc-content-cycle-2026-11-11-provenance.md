@@ -146,3 +146,5 @@ URL：/germany/ja/living/germany-train-travel-guide/
 - 税関・VATの法的説明を含むため、registry review.statusをneeds_reviewへ変更。人間の編集確認が終わるまでPR #442はDraftのまま維持。
 - 一次情報：https://www.consilium.europa.eu/de/press/press-releases/2026/11/09/taxation-council-approves-further-vat-simplification-rules-for-online-sales/（公開日2026-11-09、次の手続きは欧州議会への諮問後の理事会正式採択）。
 - 本番サイトは変更していない。PRブランチでの生成物整合性・CI再実行はこのコミット後に確認する。
+
+- CI run 42958287948 completed the content build but failed the generated-file consistency check. The build output identified expected registry source ordering, generated heading slug normalization (Latin "VAT" to "vat"), the generated updated-date line, and mobile TOC count. These generated-output differences were corrected in this follow-up commit; a fresh CI run is required.

@@ -90,7 +90,7 @@ URL：/germany/ja/living/germany-train-travel-guide/
 - 11月30日までのN021のDB契約・Jobticket手続きに変更がないか再確認。
 - 11月19日開始のデュッセルドルフ・クリスマスマーケット記事の公式日程、休業日、交通情報を再検証。
 
-## 2026-11-11 04:xx CET — follow-up verification
+## 2026-11-11 — follow-up verification
 
 ### Existing J-Connect implementation
 
@@ -128,3 +128,12 @@ URL：/germany/ja/living/germany-train-travel-guide/
 3. Keep L098 unpublished until a qualified medical review and image-rights confirmation are documented.
 4. Recheck L097 after the Bundesrat meeting on 2026-11-20 and official promulgation.
 5. Review E004 on 2026-11-18 for the newly confirmed 2026 market layout and programme.
+
+
+## Final CI confirmation — 2026-11-11
+
+- Latest tested content head before this documentation-only note: `6c66522d81d4a30662c2585265b4c629913a2d7c`.
+- GitHub Actions run `42954776691` completed successfully. The generated content build, generated-file consistency check, deterministic validation contract, and browser runtime smoke tests all passed.
+- Browser runtime result: **144 passed in 3.5 minutes** across desktop, mobile, and tablet Chromium.
+- The conversation UI tests stub the Apps Script endpoint with deterministic browser fixtures. They validate interface behavior and error handling, not live private-message delivery or live Zoho email delivery. The `ZOHO_SEND_FAILED` / `EMAIL_DELIVERY_FAILED` log messages occurred in the test fixture path and are not evidence of a production send attempt.
+- The PR remains Draft and unmerged. No production content was published.

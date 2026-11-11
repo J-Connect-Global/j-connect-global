@@ -148,7 +148,7 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 
 ## 公式情報・参考ソース
 
-- [環境庁：38番目の連邦排出規制令に基づく電気自動車の電力申告（2026年10月30日更新）](https://www.umweltbundesamt.de/themen/verkehr/kraftstoffe-antriebe/vollzug-38-bimschv-anrechnung-von-strom-fuer)
+- [環境庁：38番目の連邦排出規制令に基づく電気自動車の電力申告（2026年11月6日更新）](https://www.umweltbundesamt.de/themen/verkehr/kraftstoffe-antriebe/vollzug-38-bimschv-anrechnung-von-strom-fuer)
 - [環境庁：38番目の連邦排出規制令の申請・運用FAQ（2025年7月17日版）](https://www.umweltbundesamt.de/system/files/medien/366/dokumente/2025-07-18_uba_faq_vollzug_38._bimschv_0.pdf)
 - [法令：38番目の連邦排出規制令 第8条](https://www.gesetze-im-internet.de/bimschv_38_2017/__8.html)
 - [法令：38番目の連邦排出規制令 第7条](https://www.gesetze-im-internet.de/bimschv_38_2017/__7.html)

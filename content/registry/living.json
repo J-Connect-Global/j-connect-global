@@ -2284,27 +2284,27 @@
         "url": "https://gesund.bund.de/wie-verwalte-ich-meine-epa"
       },
       {
-        "title": "社会法典第11編 §55（介護保険の保険料算定上限）",
-        "url": "https://www.gesetze-im-internet.de/sgb_11/__55.html"
-      },
-      {
-        "title": "社会法典第5編 §6（年間賃金基準）",
-        "url": "https://www.gesetze-im-internet.de/sgb_5/__6.html"
+        "title": "連邦議会：介護保険改革案の第1読会（2026年11月5日）",
+        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw45-de-pflegeneuordnungsgesetz-1225076"
       },
       {
         "title": "連邦保健省：介護保険改革案（PNOG）",
         "url": "https://www.bundesgesundheitsministerium.de/service/gesetze-und-verordnungen/guv-21-lp/pnog"
       },
       {
-        "title": "連邦議会：介護保険改革案の第1読会（2026年11月5日）",
-        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw45-de-pflegeneuordnungsgesetz-1225076"
+        "title": "社会法典第5編 §6（年間賃金基準）",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__6.html"
+      },
+      {
+        "title": "社会法典第11編 §55（介護保険の保険料算定上限）",
+        "url": "https://www.gesetze-im-internet.de/sgb_11/__55.html"
       }
     ],
     "disclaimer_type": "medical_insurance",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-11-09",
+      "last_reviewed_at": "2026-11-10",
       "next_review_due": "2026-11-21"
     },
     "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
@@ -5552,12 +5552,12 @@
         "url": "https://www.gesetze-im-internet.de/sgb_5/__45.html"
       },
       {
-        "title": "連邦休暇法第9条：休暇中の病気",
-        "url": "https://www.gesetze-im-internet.de/burlg/__9.html"
-      },
-      {
         "title": "連邦保健省：子どもの看病休暇・看病傷病手当金のFAQ（2026年2月10日）",
         "url": "https://www.bundesgesundheitsministerium.de/fragen-und-antworten-zu-kinderkrankentagen-und-kinderkrankengeld"
+      },
+      {
+        "title": "連邦休暇法第9条：休暇中の病気",
+        "url": "https://www.gesetze-im-internet.de/burlg/__9.html"
       }
     ],
     "image": "/assets/img/living/sick-leave-germany.webp",

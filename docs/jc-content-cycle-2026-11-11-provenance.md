@@ -89,3 +89,42 @@ URL：/germany/ja/living/germany-train-travel-guide/
 - 11月15日直前にN038のUBAページ・FAQ・法令を再確認。期限後は記事の「申告できるか」を過去形にし、翌年分の案内へ切り替える。
 - 11月30日までのN021のDB契約・Jobticket手続きに変更がないか再確認。
 - 11月19日開始のデュッセルドルフ・クリスマスマーケット記事の公式日程、休業日、交通情報を再検証。
+
+## 2026-11-11 04:xx CET — follow-up verification
+
+### Existing J-Connect implementation
+
+- The public, read-only Apps Script status endpoint was queried successfully. It reports `api_version: 2026-07-13.1`, `messaging_version: 2026-11-07.1`, and enabled flags for public replies, private conversations, inline replies, instant publication, and persistent links.
+- The public `getPosts` endpoint returned `ok=true`, 7 active public posts from 15 source rows. The returned public post objects contained no keys matching email, phone, token, password, private, or contact. This is a read-only public-feed check, not a private-message end-to-end test.
+- The Apps Script editor-only `inspectCommunityPublicationSync()` function remains unexecuted because no authenticated Apps Script editor session is available. Therefore the 5-minute notification trigger's existence, handler, and last-run time remain unverified. Do not run `installCommunityApprovalNotificationTrigger()` blindly: it removes and recreates the same handler's trigger.
+- `testZohoEmailConfiguration_()` was not run. The documented function sends a real message to the configured administrator recipient; no dedicated test mailbox was established, so a live send would not be a safe test.
+- Physical device audio output remains unverified. The repository's browser runtime tests do cover word/example playback, explicit audio opt-in, and automatic word speech defaulting OFF.
+
+### Content and generated-output validation
+
+- The live Japanese sitemap contains 220 URLs. The only open PR found is #442; no open repository issues were returned. The candidate repository `NihonGatewayGermany/nihon-gateway-germany` was not independently resolved; the active repository used for this work is `J-Connect-Global/j-connect-global`.
+- Commit `58d0015db97285a28b519d1bc49073cabc096f27` synchronized sitemap `lastmod` values for the updated train guide, Deutschlandticket article, and THG-Quote article.
+- CI run `42953496530` completed successfully on that commit: generated content build, generated-file consistency check, deterministic validation, and 144 desktop/mobile/tablet Chromium runtime tests all passed.
+- A source-list date mismatch in N038 was then corrected from 2026-10-30 to 2026-11-06 in both the Markdown source and generated HTML. The UBA page itself says it was last updated on 2026-11-06. L097's editorial verification date was refreshed from 2026-11-10 to 2026-11-11. These follow-up commits require a new CI run before the PR can be considered validated.
+- PR #442 remains Draft. No production merge or publication was performed.
+
+### Primary-source rechecks
+
+- Deutschlandticket N021: DB's current FAQ confirms the regular price of 66.80 EUR from 2027-01-01; DB Jobticket maximum 63.46 EUR before the individual employer subsidy; the no-consent exception where the employer fully pays and retains the framework agreement; the 2026-11-30 response deadline for affected existing DB contracts; and the separate treatment of Semestertickets. Sources: https://www.bahn.de/faq/pk/angebot and https://www.bahn.de/faq/pk/angebot/pendler
+- THG-Quote N038: UBA's page, last updated 2026-11-06, distinguishes the non-public charging estimate for a registered battery EV (15 November of the obligation year) from metered public charging (28 February of the following year). Section 8 of the 38th BImSchV confirms both dates. UBA's page lists the 2026 fee range of 94.60–6,500 EUR for applications from 2026-04-17. The Sunday extension question is deliberately not asserted as settled. Sources: https://www.umweltbundesamt.de/themen/verkehr/kraftstoffe-antriebe/vollzug-38-bimschv-anrechnung-von-strom-fuer ; https://www.gesetze-im-internet.de/bimschv_38_2017/__8.html ; https://www.gesetze-im-internet.de/vwvfg/__31.html
+- Social insurance draft L097: BMAS still shows the 2027 ordinance as not yet promulgated and awaiting Bundesrat consent. The Berlin state government's preview for the 2026-11-20 Bundesrat meeting lists BR-Drs. 576/26. L097 remains an unpublished draft pending the meeting and subsequent promulgation check. Sources: https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/sozialversicherungs-rechengroessenverordnung-2027.html ; https://www.berlin.de/rbmskzl/politik/senatskanzlei/bundesangelegenheiten/der-bundesrat/vorschau-auf-die-bundesratssitzung-1616077.php
+- Christmas post L073: DHL's current consumer page confirms outside-Europe parcel deadline 2026-11-26, outside-Europe letters/postcards 2026-11-25, and outside-Europe Express 2026-12-18; international online-franked items may be deposited 1–2 days later. The existing article's deadlines remain consistent; no unnecessary duplicate update was made. Source: https://www.dhl.de/de/privatkunden/kampagnenseiten/weihnachten.html
+- Düsseldorf Christmas market E004: Visit Düsseldorf confirms 2026-11-19 to 2026-12-30, regular hours, special hours on 2026-12-24 and 2026-12-26, and closures on 2026-11-22 and 2026-12-25. D.LIVE's 2026-10-28 article adds six themed markets, the new Altstadt market on Flinger Straße/Marktplatz, cycle-route detours, and a children's programme including a Santa post office. E004 was last verified 2026-10-28 and is scheduled for review on 2026-11-18; these details are a candidate for that review, not yet changed. Sources: https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf ; https://www.d-live.de/artikel/das-ist-der-duesseldorfer-weihnachtsmarkt-2026
+
+### Access and analytics limitations
+
+- GSC Wizard returned `payment_required / subscription_required`; no Search Console property or performance metrics could be retrieved. No impressions, CTR, position, or query values are reported.
+- No authenticated browser profile was available for the Apps Script editor or production admin surfaces. Public website retrieval and GitHub Actions browser tests were used instead.
+
+### Next checks
+
+1. Wait for CI on the current PR head after the N038 generated-page and L097 draft commits.
+2. Verify the Apps Script 5-minute trigger and last execution from an authenticated editor session; do not reinstall it without inspecting current triggers.
+3. Keep L098 unpublished until a qualified medical review and image-rights confirmation are documented.
+4. Recheck L097 after the Bundesrat meeting on 2026-11-20 and official promulgation.
+5. Review E004 on 2026-11-18 for the newly confirmed 2026 market layout and programme.

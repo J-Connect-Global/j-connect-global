@@ -137,3 +137,12 @@ URL：/germany/ja/living/germany-train-travel-guide/
 - Browser runtime result: **144 passed in 3.5 minutes** across desktop, mobile, and tablet Chromium.
 - The conversation UI tests stub the Apps Script endpoint with deterministic browser fixtures. They validate interface behavior and error handling, not live private-message delivery or live Zoho email delivery. The `ZOHO_SEND_FAILED` / `EMAIL_DELIVERY_FAILED` log messages occurred in the test fixture path and are not evidence of a production send attempt.
 - The PR remains Draft and unmerged. No production content was published.
+
+### Additional content verification — L093 (2026-11-11)
+
+- 2026-11-09のEU理事会プレスリリースを確認。IOSSの利用対象を価値にかかわらず拡大し、EU域外事業者がEU内の保税倉庫に置く商品も対象とする合意、および2028-07-01からEU域外オンラインプラットフォームを全価値の商品についてVAT上のみなし供給者とする予定を確認。
+- ただし、同日の合意は欧州議会への諮問・理事会の正式採択前。記事では「現行法」ではなく「理事会合意・2028年適用予定」と明記し、2026年の2ユーロ取扱手数料・3ユーロ暫定関税とは別制度として説明。
+- 既存記事L093の本文・一次情報・更新日を改訂。新規URL・画像は追加していない。Markdown、living registry、生成HTML、Livingハブカードの確認日、sitemap、Article JSON-LD citation/dateModifiedを同期。
+- 税関・VATの法的説明を含むため、registry review.statusをneeds_reviewへ変更。人間の編集確認が終わるまでPR #442はDraftのまま維持。
+- 一次情報：https://www.consilium.europa.eu/de/press/press-releases/2026/11/09/taxation-council-approves-further-vat-simplification-rules-for-online-sales/（公開日2026-11-09、次の手続きは欧州議会への諮問後の理事会正式採択）。
+- 本番サイトは変更していない。PRブランチでの生成物整合性・CI再実行はこのコミット後に確認する。

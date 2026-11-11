@@ -6119,17 +6119,17 @@
     "sitemap_visible": true,
     "disclaimer_type": "tax",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
-      "last_reviewed_at": "2026-11-05",
-      "next_review_due": "2026-11-10"
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (Council of the EU); human editorial review pending",
+      "last_reviewed_at": "2026-11-11",
+      "next_review_due": "2026-12-15"
     },
     "canonical_url": "/germany/ja/living/germany-import-fees-japan-packages-2026/",
     "title": "日本からドイツに届く荷物の関税は？2026年11月の2ユーロ手数料と3ユーロ定額関税",
     "category": "暮らし・買い物",
     "summary": "2026年11月1日から、EU域外から消費者向けに発送される通販には、EU関税法上の「品目」ごとに2ユーロの取扱手数料が適用されています。荷物の本質的価値が150ユーロ以下の対象通販には3ユーロの定額関税も別途あり、輸入消費税や個人間ギフトとの違いを確認できます。",
     "published_at": "2026-11-07",
-    "last_verified": "2026-11-05",
+    "last_verified": "2026-11-11",
     "tags": [
       "日本からドイツ",
       "個人輸入",
@@ -6140,7 +6140,7 @@
       "贈り物",
       "2026年"
     ],
-    "updated_at": "2026-11-07",
+    "updated_at": "2026-11-11",
     "related_articles": [
       "christmas-post-germany-to-japan-2026",
       "dhl-delivered-but-not-received"
@@ -6177,6 +6177,10 @@
       {
         "title": "ドイツ税関：郵便・通販荷物と贈り物の案内",
         "url": "https://www.zoll.de/SharedDocs/Downloads/DE/Publikation/Broschuere/Reise-Post/faltblatt_zoll_post_internethandel.pdf?__blob=publicationFile&v=4"
+      },
+      {
+        "title": "EU理事会：オンライン販売のVAT徴収簡素化に合意（2026年11月9日、正式採択前）",
+        "url": "https://www.consilium.europa.eu/de/press/press-releases/2026/11/09/taxation-council-approves-further-vat-simplification-rules-for-online-sales/"
       }
     ],
     "image": "/assets/img/living/germany-import-fees-japan-packages-2026.webp",

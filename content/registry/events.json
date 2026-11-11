@@ -6226,7 +6226,9 @@
       "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-10-30",
       "next_review_due": "2026-11-26"
-    }
+    },
+    "home_badge_date": "2026-11-27",
+    "home_badge_label": "プレビューデー"
   },
   {
     "slug": "boot-duesseldorf-2027-guide",
@@ -6318,8 +6320,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-31",
-      "next_review_due": "2026-11-09"
+      "last_reviewed_at": "2026-11-09",
+      "next_review_due": "2026-11-25"
     },
     "related_articles": [
       "rhineland-carnival-11-11",
@@ -6341,6 +6343,10 @@
       {
         "title": "ケルン市：11月11日のツュルピッヒャー通り周辺の交通規制（2026年）",
         "url": "https://www.stadt-koeln.de/leben-in-koeln/verkehr/verkehrskalender/stoerungen/10900/index.html"
+      },
+      {
+        "title": "ケルン市：11月11日の安全対策・ガラス禁止・入場制限（2026年11月2日発表）",
+        "url": "https://www.stadt-koeln.de/politik-und-verwaltung/presseservice/sicher-feiern-am-1111-1"
       },
       {
         "title": "ケルン市：ガラス容器の持ち込み禁止に関する一般処分（2026年2月5日告示）",
@@ -6387,7 +6393,7 @@
     "category": "季節行事",
     "summary": "ケルンのカーニバル2026/27年シーズンを、11月11日（水）の開幕から2027年2月4日〜10日の街頭カーニバルまで案内。今季のモットーと三人組、女性のカーニバルの日の「ヤンとグリート」の劇、日曜の学校・地区の行列、バラの月曜日の大行列、ガラス瓶の持ち込み禁止区域と混雑する場所を公式情報から整理します。",
     "published_at": "2026-10-31",
-    "last_verified": "2026-10-31",
+    "last_verified": "2026-11-09",
     "tags": [
       "カーニバル",
       "ケルン",
@@ -6398,7 +6404,7 @@
       "NRW",
       "季節行事"
     ],
-    "updated_at": "2026-10-31",
+    "updated_at": "2026-11-09",
     "city": "ケルン",
     "location": "旧市街（ホイマルクト、アルター・マルクト）、ツュルピッヒャー通り周辺、市中心部の行列ルートなど",
     "event_date": "2026-11-11 シーズン開始／2027-02-04〜2027-02-10 街頭カーニバル",
@@ -6425,8 +6431,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-31",
-      "next_review_due": "2026-11-09"
+      "last_reviewed_at": "2026-11-09",
+      "next_review_due": "2026-11-25"
     },
     "related_articles": [
       "rhineland-carnival-11-11",
@@ -6486,7 +6492,7 @@
     "category": "季節行事",
     "summary": "デュッセルドルフのカーニバル2026/27年シーズンを、11月11日（水）のホッペディッツの目覚めから、2027年2月4日の女性のカーニバルの日、7日のケー通りの仮装散歩、8日のバラの月曜日の行列まで案内。今季のモットーと王子・ヴェネツィアの二人組、風刺の山車、旧市街のガラス瓶禁止を公式情報から整理します。",
     "published_at": "2026-10-31",
-    "last_verified": "2026-10-31",
+    "last_verified": "2026-11-09",
     "tags": [
       "カーニバル",
       "デュッセルドルフ",

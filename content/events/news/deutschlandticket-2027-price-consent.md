@@ -4,25 +4,29 @@ id: "N021"
 content_type: "news"
 category: "交通・車"
 title: "Deutschlandticketは2027年66.80ユーロへ｜DB利用者は11月30日までに確認"
-summary: "Deutschlandticketは2027年1月から月66.80ユーロへ。DBの既存契約は11月30日までの回答が必要です。同意後は撤回できませんが通常の解約は可能。学生向け定期券の例外も整理します。"
+summary: "2027年1月から66.80ユーロ。DBの既存契約は注文日と契約者で11月30日の同意要否が変わり、全額会社負担のJobticketや学生定期券には別扱いがあります。DB以外の期限は各社の案内を確認します。"
 official_sources:
   - title: "Deutsche Bahn：Deutschlandticketの契約変更FAQ（回答期限・撤回・48時間の反映）"
     url: "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
   - title: "Deutsche Bahn：Deutschlandticket全般・Deutschland-SemesterticketのFAQ"
     url: "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket"
-related_articles: ["db-2027-timetable-family-ticket", "germany-train-travel-guide", "cologne-antwerp-direct-ice-2026", "sugar-drink-tax-germany-2027", "pflegeversicherung-reform-2027", "wohngeld-reform-2027"]
+  - title: "連邦政府：Deutschlandticketの質問と回答（2026年11月5日公表・全国の価格調整と同意）"
+    url: "https://www.bundesregierung.de/breg-de/bundesregierung/bundeskanzleramt/deutschlandticket-2134074"
+  - title: "Deutsche Bahn：Jobticketの契約変更FAQ（2027年価格・会社全額負担の例外）"
+    url: "https://www.bahn.de/faq/gk/angebot/zeitkarten/deutschland-ticket/kuendigung"
+related_articles: ["db-2027-timetable-family-ticket", "germany-train-travel-guide"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""
 event_date: "2027年1月1日から新料金"
-next_review: "2026-11-15"
+next_review: "2026-11-18"
 tags: ["Deutschlandticket", "公共交通", "定期券", "値上げ", "Deutsche Bahn", "2027年", "Deutschland-Semesterticket", "学生"]
 published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-19"
-updated_at: "2026-11-01"
-last_verified: "2026-11-01"
+updated_at: "2026-11-11"
+last_verified: "2026-11-11"
 canonical_url: "/germany/ja/events/news/deutschlandticket-2027-price-consent/"
 official_url: "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
 image: "/assets/images/living/german-regional-train-editorial-v1.webp"
@@ -33,7 +37,7 @@ image_credit: "AI-generated editorial image / J-Connect"
 
 # Deutschlandticketは2027年66.80ユーロへ｜DB利用者は11月30日までに確認
 
-Deutschlandticketの月額は、2027年1月1日から66.80ユーロになります。2026年の63ユーロから月3.80ユーロの上昇です。特にDeutsche Bahn（DB）から既存の定期券を買っている人は、値段だけでなく、11月30日までに継続への同意が必要かを確認してください。
+Deutschlandticketの月額は、2027年1月1日から66.80ユーロになります。連邦政府は、既存契約の多くは新料金へ自動調整される一方、一部では利用者の同意が必要で、その場合は交通事業者が対象者に連絡すると説明しています。11月30日の期限はDBの対象契約に関するもので、DB以外の購入先にはそのまま当てはまりません。この記事では、DBの個人契約・職場向け契約・学生向け定期券の違いを整理します。
 
 ## 何が変わる？
 
@@ -44,9 +48,14 @@ Deutschlandticketの月額は、2027年1月1日から66.80ユーロになりま�
 | 新しい月額 | 66.80ユーロ |
 | 適用開始 | 2027年1月1日 |
 | 2026年との差 | 月3.80ユーロ増 |
-| DBの既存契約の回答期限 | 2026年11月30日 |
+| DBの既存個人契約（2026年10月14日までの注文） | 2026年11月30日までに契約者本人が回答 |
+| DBの新規契約（2026年10月15日以降の注文） | 別途同意は不要 |
+| DBのJobticket | 原則11月30日までに回答。会社が月額を全額負担し、DBとの枠組み契約を維持する場合は同意不要 |
+| 学生向け定期券 | 2026/27年冬学期と2027年夏学期は価格変更の影響なし、個別同意不要 |
 
-DBは、自社名義で販売したDeutschlandticketについて、新料金と追加の運送条件への能動的な同意を求めています。AboportalまたはDB Navigatorで「Vertragsänderung zustimmen」を開き、継続か拒否を選びます。
+連邦政府の2026年11月5日公表FAQは、価格改定への対応は販売事業者によって異なり、多くの契約は自動調整される一方、一部では同意が必要で、その場合は交通事業者が対象者に連絡すると説明しています。したがって、11月30日を全国共通の期限と考えないでください。
+
+DBで2026年10月14日までに注文した既存の個人契約については、DBの契約変更FAQが新料金と追加条件への能動的な同意を求めています。AboportalまたはDB Navigatorで「Vertragsänderung zustimmen」を開き、継続か拒否を選びます。
 
 ここで重要なのは、操作する人です。利用者本人ではなく、定期券を注文した契約者だけが同意できます。親が子どもの分を注文した場合や、家族の一人がまとめて契約した場合は、注文者のアカウントを確認します。
 
@@ -62,9 +71,15 @@ DBは、期限までに同意しない、または継続を拒否した契約を
 
 ## DB以外で買った人は購入先を確認
 
-今回の11月30日という手続きは、DBが販売した契約についての案内です。Rheinbahn、KVB、VRR内の別事業者などから購入している場合は、その事業者のメール、アプリ、契約者ページに従ってください。DBの画面に契約が見えないからといって、定期券が無効という意味ではありません。
+連邦政府の説明は全国共通の価格改定に関するものですが、具体的な同意方法や締切は販売事業者の契約条件によります。Rheinbahn、KVB、VRR内の別事業者などから購入した人は、DBの11月30日を流用せず、実際の販売元のメール、アプリ、契約者ページを確認してください。連邦政府は、同意が必要な場合は交通事業者が対象者に連絡すると説明していますが、連絡がないことだけを根拠に自動継続を断定せず、購入先の契約画面も確認します。
 
 まずカード明細や契約メールで販売事業者を確認し、次にその事業者からの料金改定通知を読みます。迷惑メールフォルダと、契約者アカウントの登録メールアドレスも見直すと、期限を見落としにくくなります。
+
+## DBのJobticketは会社の負担割合で扱いが変わる
+
+DBの職場向け定期券（Jobticket）も、通常の個人契約と同じだと考えないでください。DBの法人向けFAQによると、2027年1月1日からのJobticketの月額は最大63.46ユーロで、ここから勤務先ごとの補助額が差し引かれます。63.46ユーロは従業員の固定負担額ではありません。
+
+既存のJobticketを新料金・追加条件で継続する場合、原則として2026年11月30日までに回答が必要です。ただし、勤務先が月額を全額負担し、DBとの枠組み契約を維持する場合、従業員本人の同意は不要で、契約は継続するとDBは案内しています。2026年10月15日以降に注文したJobticketも、注文時に新条件が示されているため、別途同意は不要です。会社の補助割合や契約維持の予定が分からない場合は、人事・給与担当者に確認してください。
 
 ## 大学のDeutschland-Semesterticketは別扱い
 
@@ -80,11 +95,12 @@ DBは、期限までに同意しない、または継続を拒否した契約を
 
 ただし、長距離列車や一部の交通機関はDeutschlandticketの対象外です。値上げ後も自分の移動で得かを考える時は、通勤・通学の地域定期、利用頻度、勤務先や自治体の補助を一緒に比較してください。
 
-## 今すぐ確認する三点
+## 今すぐ確認する四点
 
-1. 誰が、どの交通事業者から契約したか
-2. DB契約なら、注文者が11月30日までに回答したか
-3. 2027年1月の初乗車前に、アプリ上で有効な券が表示されているか
+1. 契約メールやカード明細で、実際にチケットを販売した事業者を確認する
+2. DBの個人契約なら、2026年10月14日までの注文か、15日以降の注文かを確認し、前者は契約者本人が11月30日までに回答する
+3. DBのJobticketなら、勤務先の補助額と、会社がDBとの枠組み契約を維持するかを人事・給与担当者に確認する
+4. 学生向け定期券や他社販売の券は、大学・学生自治会・販売事業者の案内を確認する
 
-料金と手続きは別の問題です。「値上げを知っていた」だけでは、DBの既存契約が自動で続かない場合があります。公式FAQで自分の契約に当てはまる項目を確認し、必要なら期限前に操作してください。
+料金改定そのものは全国共通ですが、同意の要否と締切は契約によって異なります。DBの対象となる既存契約は、期限までに回答しないと2026年12月31日付で終了するため、契約者本人が手続きを確認してください。他社の締切をDBの11月30日から推測しないでください。
 

@@ -3960,9 +3960,9 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-29",
-    "updated_at": "2026-10-29",
-    "last_verified": "2026-10-29",
-    "next_review": "2027-08-01",
+    "updated_at": "2026-11-12",
+    "last_verified": "2026-11-12",
+    "next_review": "2026-11-16",
     "home_visible": false,
     "home_order": 115,
     "hub_visible": true,
@@ -3974,7 +3974,7 @@
       "status": "needs_review",
       "reviewed_by": "AI official-source verification; expert review pending",
       "last_reviewed_at": "2026-10-29",
-      "next_review_due": "2027-08-01"
+      "next_review_due": "2026-11-16"
     },
     "tags": [
       "学校",
@@ -4005,6 +4005,18 @@
       {
         "title": "NRW州学校省：小学校のAからZ",
         "url": "https://www.schulministerium.nrw/die-grundschule-von-bis-z"
+      },
+      {
+        "title": "NRW州サービス案内：小学校の登録期限（前年11月15日）",
+        "url": "https://meineverwaltung.nrw/leistung/99088003034001"
+      },
+      {
+        "title": "デュッセルドルフ市：2027/28年度の小学校入学登録日程（2026年9月22日公表）",
+        "url": "https://www2.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/anmeldetermine-an-grundschulen-fuer-schulanfaengerinnen-und-schulanfanger-zum-schuljahr-2027-2028"
+      },
+      {
+        "title": "ケルン市：2027年入学前の重要日程",
+        "url": "https://www.stadt-koeln.de/mediaasset/content/pdf40/Regionale-Bildungslandschaft/einschulung-fahrplan-termine.pdf"
       },
       {
         "title": "海外子女教育振興財団：在外教育施設とは",
@@ -6385,7 +6397,7 @@
     "slug": "nrw-primary-school-enrollment-2027-2028",
     "title": "NRWの小学校入学2027/28｜対象年齢・申込期限・デュッセルドルフとケルンの手続き",
     "category": "家族・子育て",
-    "summary": "NRW州で2027/28年度に小学校へ入る子どもの対象年齢、就学義務、申込時期を整理。デュッセルドルフの10月6〜8日の日程、11月15日の案内上の期限、ケルンの登録スケジュール、必要書類と締切を逃した場合の連絡先を確認できます。",
+    "summary": "NRW州で2027/28年度に小学校へ入る子どもの対象年齢と就学義務、州全体の11月15日登録期限を解説。デュッセルドルフの10月6〜8日の指定受付と、ケルンの登録スケジュール、必要書類、期限を逃した場合の連絡先を確認できます。",
     "url": "/germany/ja/living/nrw-primary-school-enrollment-2027-2028/",
     "markdown_path": "/content/living/nrw-primary-school-enrollment-2027-2028.md",
     "published": false,
@@ -6393,7 +6405,7 @@
     "published_at": "",
     "updated_at": "2026-11-12",
     "last_verified": "2026-11-12",
-    "next_review": "2026-11-14",
+    "next_review": "2026-11-16",
     "home_visible": false,
     "home_order": 999,
     "hub_visible": false,
@@ -6405,7 +6417,7 @@
       "status": "needs_review",
       "reviewed_by": "AI official-source verification; editorial review pending",
       "last_reviewed_at": "2026-11-12",
-      "next_review_due": "2026-11-14"
+      "next_review_due": "2026-11-16"
     },
     "tags": [
       "小学校",
@@ -6428,8 +6440,16 @@
         "url": "https://recht.nrw.de/lrgv/gesetz/01082026-schulgesetz-nrw-schulg/"
       },
       {
+        "title": "NRW州サービス案内：小学校の登録期限（翌年の就学対象は前年11月15日まで）",
+        "url": "https://meineverwaltung.nrw/leistung/99088003034001"
+      },
+      {
+        "title": "第18次学校法改正（2026年7月21日公布）と第36条の経過措置",
+        "url": "https://recht.nrw.de/gvnrw/2026-s547/"
+      },
+      {
         "title": "デュッセルドルフ市：2027/28年度の小学校入学登録日程（2026年9月22日公表）",
-        "url": "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/anmeldetermine-an-grundschulen-fuer-schulanfaengerinnen-und-schulanfaenger-zum-schuljahr-2027-2028"
+        "url": "https://www2.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/anmeldetermine-an-grundschulen-fuer-schulanfaengerinnen-und-schulanfanger-zum-schuljahr-2027-2028"
       },
       {
         "title": "デュッセルドルフ市：小学校への移行と登録期限",

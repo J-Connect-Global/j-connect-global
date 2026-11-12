@@ -12,7 +12,7 @@ last_verified: "2026-11-12"
 next_review: "2026-11-14"
 canonical_url: "/germany/ja/living/nrw-primary-school-enrollment-2027-2028/"
 tags: ["小学校", "入学", "就学義務", "NRW", "2027/28", "子育て"]
-image_url: ""
+image: ""
 image_alt: ""
 image_caption: ""
 image_credit: ""

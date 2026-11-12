@@ -21,7 +21,7 @@ official_sources:
   - title: "NRW州学校法（2026年8月1日施行版）第34〜36条"
     url: "https://recht.nrw.de/lrgv/gesetz/01082026-schulgesetz-nrw-schulg/"
   - title: "デュッセルドルフ市：2027/28年度の小学校入学登録日程（2026年9月22日公表）"
-    url: "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/anmeldetermine-an-grundschulen-fuer-schulanfaengerinnen-und-schulanfänger-zum-schuljahr-2027-2028"
+    url: "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/anmeldetermine-an-grundschulen-fuer-schulanfaengerinnen-und-schulanfaenger-zum-schuljahr-2027-2028"
   - title: "デュッセルドルフ市：小学校への移行と登録期限"
     url: "https://www.duesseldorf.de/schulen/anmeldeverfahren/uebergang-in-die-grundschule"
   - title: "デュッセルドルフ市：入学手続きFAQ"
@@ -35,7 +35,7 @@ disclaimer_type: "family_administrative"
 
 # NRWの小学校入学2027/28｜対象年齢・申込期限・デュッセルドルフとケルンの手続き
 
-ノルトライン＝ヴェストファーレン州（NRW）では、2027年8月に小学校へ入る子どもの対象年齢と、入学前の登録時期が法律と自治体の案内で決まっています。2027/28年度の原則対象は、2020年10月1日から2021年9月30日までに生まれた子どもです。ここでは、デュッセルドルフとケルンの公式日程を分け、2026年11月12日時点で何を確認し、期限が近い家庭はどう動けばよいかを整理します。
+ノルトライン＝ヴェストファーレン州（NRW）では、2027/28年度に小学校へ入る子どもの対象年齢と、入学前の登録時期が法律と自治体の案内で決まっています。2027/28年度の原則対象は、2020年10月1日から2021年9月30日までに生まれた子どもです。ここでは、デュッセルドルフとケルンの公式日程を分け、2026年11月12日時点で何を確認し、期限が近い家庭はどう動けばよいかを整理します。
 
 ## まず確認：2027/28年度の対象になる子ども
 
@@ -128,7 +128,7 @@ NRW州学校法第36条では、小学校への登録時に、学校が子ども
 
 入学前の学校医による検査は、学校への登録とは別の手続きです。ケルン市の案内では2027年1〜5月に検査を行う予定です。デュッセルドルフ市は登録後に健康局から案内を送るとしており、検査日が夏休み近くになる場合もあります。案内が届かない場合は、自治体の健康局に確認してください。
 
-放課後の全日保育（Ganztag）は、学校への入学手続きと申込方法が異なる場合があります。NRW州の制度とデュッセルドルフの時間帯別モデルは、[NRWで小学1年生の全日保育が権利に]( /germany/ja/events/news/ganztag-primary-school-nrw-2026/ )で確認できます。学校選び全体は[ドイツで子どもの学校をどう選ぶ？](/germany/ja/living/schools-germany-japanese-families/)、休暇の日程は[NRWの学校休暇2026/27年度](/germany/ja/living/nrw-school-holidays-2026-2027/)も参考になります。
+放課後の全日保育（Ganztag）は、学校への入学手続きと申込方法が異なる場合があります。NRW州の制度とデュッセルドルフの時間帯別モデルは、[NRWで小学1年生の全日保育が権利に](/germany/ja/events/news/ganztag-primary-school-nrw-2026/)で確認できます。学校選び全体は[ドイツで子どもの学校をどう選ぶ？](/germany/ja/living/schools-germany-japanese-families/)、休暇の日程は[NRWの学校休暇2026/27年度](/germany/ja/living/nrw-school-holidays-2026-2027/)も参考になります。
 
 ## よくある質問
 

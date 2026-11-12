@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+<title id="t">NRWの2027/28年度小学校入学対象</title>
+<desc id="d">2020年10月1日から2021年9月30日生まれの子どもは原則として2027年8月1日から就学義務が始まる。2021年10月1日以降に生まれた子どもは、2027/28年度の早期入学を申請できる場合があり、学校長が就学準備を判断する。</desc>
+<rect width="1200" height="675" rx="28" fill="#eef5fb"/>
+<g font-family="Noto Sans CJK JP, Noto Sans JP, sans-serif">
+<text x="60" y="88" font-size="40" font-weight="700" fill="#153452">2027/28年度の小学校入学対象</text>
+<text x="60" y="135" font-size="23" fill="#405a71">基準日は「2027年9月30日までに6歳になるか」です</text>
+<rect x="60" y="180" width="1080" height="145" rx="18" fill="#ffffff"/>
+<rect x="60" y="180" width="16" height="145" rx="8" fill="#2d6a9f"/>
+<text x="100" y="225" font-size="22" fill="#405a71">原則対象となる生年月日</text>
+<text x="100" y="278" font-size="38" font-weight="700" fill="#2d6a9f">2020年10月1日 〜 2021年9月30日</text>
+<text x="100" y="308" font-size="19" fill="#29465f">2027年8月1日から就学義務が始まります</text>
+<rect x="60" y="350" width="520" height="185" rx="18" fill="#ffffff"/>
+<rect x="60" y="350" width="14" height="185" rx="7" fill="#b77a2a"/>
+<text x="96" y="397" font-size="22" font-weight="700" fill="#8a5a00">2021年10月1日以降に生まれた子</text>
+<text x="96" y="440" font-size="21" fill="#29465f">2027/28年度の早期入学を</text>
+<text x="96" y="472" font-size="21" fill="#29465f">申請できる場合があります</text>
+<text x="96" y="510" font-size="18" fill="#5b7086">学校長が就学準備を確認します</text>
+<rect x="610" y="350" width="530" height="185" rx="18" fill="#ffffff"/>
+<rect x="610" y="350" width="14" height="185" rx="7" fill="#6f879a"/>
+<text x="646" y="397" font-size="22" font-weight="700" fill="#405a71">2020年9月30日以前に生まれた子</text>
+<text x="646" y="440" font-size="21" fill="#29465f">原則として2026/27年度以前の</text>
+<text x="646" y="472" font-size="21" fill="#29465f">就学対象です</text>
+<text x="646" y="510" font-size="18" fill="#5b7086">延期など個別事情は学校へ確認</text>
+<text x="60" y="615" font-size="18" fill="#5b7086">根拠：NRW州学校法 §35（2026年8月1日施行版）</text>
+<text x="60" y="648" font-size="16" fill="#6b7e8e">図解：J-Connect｜2026年11月12日確認</text>
+</g>
+</svg>

@@ -6379,5 +6379,78 @@
     "image_alt": "住宅、賃貸契約書、電卓とコインを組み合わせた住宅手当のイラスト",
     "image_caption": "住宅手当の申請と住宅費の確認をイメージしたJ-Connectオリジナル図",
     "image_credit": "J-Connect Global制作（2026年11月4日）"
+  },
+  {
+    "id": "L099",
+    "slug": "nrw-primary-school-enrollment-2027-2028",
+    "title": "NRWの小学校入学2027/28｜対象年齢・申込期限・デュッセルドルフとケルンの手続き",
+    "category": "家族・子育て",
+    "summary": "NRW州で2027年に小学校へ入る子どもの対象年齢、就学義務、申込時期を整理。デュッセルドルフの10月6〜8日の日程、11月15日の案内上の期限、ケルンの登録スケジュール、必要書類と締切を逃した場合の連絡先を確認できます。",
+    "url": "/germany/ja/living/nrw-primary-school-enrollment-2027-2028/",
+    "markdown_path": "/content/living/nrw-primary-school-enrollment-2027-2028.md",
+    "published": false,
+    "status": "draft",
+    "published_at": "",
+    "updated_at": "2026-11-12",
+    "last_verified": "2026-11-12",
+    "next_review": "2026-11-14",
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "canonical_url": "/germany/ja/living/nrw-primary-school-enrollment-2027-2028/",
+    "disclaimer_type": "family_administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; editorial review pending",
+      "last_reviewed_at": "2026-11-12",
+      "next_review_due": "2026-11-14"
+    },
+    "tags": [
+      "小学校",
+      "入学",
+      "就学義務",
+      "NRW",
+      "2027/28",
+      "子育て"
+    ],
+    "related_articles": [
+      "schools-germany-japanese-families",
+      "nrw-school-holidays-2026-2027",
+      "ganztag-primary-school-nrw-2026",
+      "kita-u3-tagesmutter-guide",
+      "german-school-grades-1-to-6"
+    ],
+    "official_sources": [
+      {
+        "title": "NRW州学校法（2026年8月1日施行版）第34〜36条",
+        "url": "https://recht.nrw.de/lrgv/gesetz/01082026-schulgesetz-nrw-schulg/"
+      },
+      {
+        "title": "デュッセルドルフ市：2027/28年度の小学校入学登録日程（2026年9月22日公表）",
+        "url": "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/anmeldetermine-an-grundschulen-fuer-schulanfaengerinnen-und-schulanfaenger-zum-schuljahr-2027-2028"
+      },
+      {
+        "title": "デュッセルドルフ市：小学校への移行と登録期限",
+        "url": "https://www.duesseldorf.de/schulen/anmeldeverfahren/uebergang-in-die-grundschule"
+      },
+      {
+        "title": "デュッセルドルフ市：入学手続きFAQ",
+        "url": "https://www.duesseldorf.de/schulen/anmeldeverfahren/uebergang-in-die-grundschule/faqs-zur-einschulung"
+      },
+      {
+        "title": "ケルン市：入学前の重要日程",
+        "url": "https://www.stadt-koeln.de/mediaasset/content/pdf40/Regionale-Bildungslandschaft/einschulung-fahrplan-termine.pdf"
+      },
+      {
+        "title": "ケルン市：小学校入学手続き・必要書類・問い合わせ先（現行ページは2026/27年度表示）",
+        "url": "https://www.stadt-koeln.de/service/produkte/00082/index.html"
+      }
+    ],
+    "image_alt": "",
+    "image_caption": "",
+    "image_credit": "",
+    "image": ""
   }
 ]

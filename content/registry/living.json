@@ -2217,17 +2217,17 @@
   },
   {
     "id": "L003",
-    "title": "ドイツの健康保険の選び方｜公的保険と民間保険、保険料率、2026年の基準、加入の流れ",
+    "title": "ドイツの健康保険の選び方｜公的保険と民間保険、保険料率、2027年の基準、加入の流れ",
     "slug": "health-insurance-guide",
     "category": "医療・健康",
-    "summary": "ドイツの健康保険を会社員・学生・家族など立場別に解説。公的保険と民間保険の違い、保険料率（14.6%＋追加保険料）、2026年の基準、加入証明の提出先、保険証が届く前の受診用証明まで整理します。",
+    "summary": "ドイツの健康保険を会社員・学生・家族など立場別に解説。公的保険と民間保険の違い、2026・2027年の加入義務ラインと保険料算定上限、追加保険料率、加入証明と保険証未着時の受診方法を整理します。",
     "url": "/germany/ja/living/health-insurance-guide/",
     "markdown_path": "/content/living/health-insurance-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-11-06",
-    "last_verified": "2026-11-06",
+    "updated_at": "2026-11-10",
+    "last_verified": "2026-11-10",
     "tags": [
       "健康保険",
       "公的医療保険",
@@ -2247,12 +2247,25 @@
       "doctor-appointment-germany",
       "residence-permit-renewal-germany",
       "pregnancy-birth-germany",
-      "epa-guide-germany"
+      "epa-guide-germany",
+      "pflegeversicherung-reform-2027"
     ],
     "official_sources": [
       {
         "title": "連邦保健省：公的医療保険の加入者・2026年の基準",
         "url": "https://www.bundesgesundheitsministerium.de/gesetzlich-versicherte/seite"
+      },
+      {
+        "title": "連邦労働・社会省：2027年の社会保険基準額と連邦参議院の審議状況",
+        "url": "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/sozialversicherungs-rechengroessenverordnung-2027.html"
+      },
+      {
+        "title": "ドイツ年金保険：2027年の保険料算定上限（2026年10月8日）",
+        "url": "https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Meldungen/2026/261008-bundeskabinett-sv-rechengroessen-2027"
+      },
+      {
+        "title": "連邦保健省：2027年の平均追加保険料率を2.9％に決定（2026年10月30日）",
+        "url": "https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/zusatzbeitragssatz-gkv-2027-festgelegt"
       },
       {
         "title": "連邦保健省：公的保険と民間保険の変更",
@@ -2269,17 +2282,34 @@
       {
         "title": "連邦健康情報ポータル：ePAの管理とアクセス",
         "url": "https://gesund.bund.de/wie-verwalte-ich-meine-epa"
+      },
+      {
+        "title": "連邦議会：介護保険改革案の第1読会（2026年11月5日）",
+        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw45-de-pflegeneuordnungsgesetz-1225076"
+      },
+      {
+        "title": "連邦保健省：介護保険改革案（PNOG）",
+        "url": "https://www.bundesgesundheitsministerium.de/service/gesetze-und-verordnungen/guv-21-lp/pnog"
+      },
+      {
+        "title": "社会法典第5編 §6（年間賃金基準）",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__6.html"
+      },
+      {
+        "title": "社会法典第11編 §55（介護保険の保険料算定上限）",
+        "url": "https://www.gesetze-im-internet.de/sgb_11/__55.html"
       }
     ],
     "disclaimer_type": "medical_insurance",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-11-06",
-      "next_review_due": "2027-01-15"
+      "last_reviewed_at": "2026-11-10",
+      "next_review_due": "2026-11-21"
     },
     "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
-    "image_alt": "ドイツの診療所で保険と受診について受付に確認するイメージ"
+    "image_alt": "ドイツの診療所で保険と受診について受付に確認するイメージ",
+    "next_review": "2026-11-21"
   },
   {
     "id": "L031",
@@ -2417,7 +2447,7 @@
     "category": "交通・車",
     "summary": "ドイツの鉄道を初めて使う人向けに、長距離列車と地域交通の違い、切符の選び方、駅表示の読み方、乗り換え、遅延時の考え方を整理します。",
     "published_at": "2026-08-03",
-    "last_verified": "2026-11-06",
+    "last_verified": "2026-11-11",
     "canonical_url": "/germany/ja/living/germany-train-travel-guide/",
     "tags": [
       "ドイツ鉄道",
@@ -2427,13 +2457,14 @@
       "切符",
       "遅延"
     ],
-    "updated_at": "2026-11-07",
+    "updated_at": "2026-11-11",
     "related_articles": [
       "cologne-city-guide",
       "duesseldorf-city-guide",
       "germany-first-30-days",
       "christmas-markets-duesseldorf",
-      "deutsche-bahn-delays-why"
+      "deutsche-bahn-delays-why",
+      "deutschlandticket-2027-price-consent"
     ],
     "official_sources": [
       {
@@ -2443,6 +2474,14 @@
       {
         "title": "ドイツ鉄道：全国共通の地域交通定期券",
         "url": "https://int.bahn.de/en/offers/regional/deutschland-ticket"
+      },
+      {
+        "title": "連邦政府：Deutschlandticketの質問と回答（2026年11月5日公表）",
+        "url": "https://www.bundesregierung.de/breg-de/bundesregierung/bundeskanzleramt/deutschlandticket-2134074"
+      },
+      {
+        "title": "ドイツ鉄道：Deutschlandticketの契約変更FAQ",
+        "url": "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
       },
       {
         "title": "ドイツ鉄道：旅客の権利",
@@ -2465,7 +2504,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-11-06",
+      "last_reviewed_at": "2026-11-11",
       "next_review_due": "2027-02-28"
     },
     "image_alt": "スーツケースを持ち長距離列車の横に立つ旅行者",
@@ -5470,7 +5509,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; statutes and official sources checked)",
-      "last_reviewed_at": "2026-11-06",
+      "last_reviewed_at": "2026-11-10",
       "next_review_due": "2027-01-15"
     },
     "canonical_url": "/germany/ja/living/sick-leave-germany/",
@@ -5478,7 +5517,7 @@
     "category": "仕事・お金",
     "summary": "ドイツで病気のため仕事を休むときは、すぐに職場へ連絡し、4日目以降は医師の病欠証明が必要です。公的保険の人は証明が電子で会社に届きます。会社は最長6週間給与を払い続け、その後は健康保険から手取りの最大90%の傷病手当金が出ます。子どもの看病のための休暇は2026年は1人15日ですが、法律が変わらなければ2027年は10日に戻ります。",
     "published_at": "2026-11-06",
-    "last_verified": "2026-11-06",
+    "last_verified": "2026-11-10",
     "tags": [
       "病欠",
       "病気休暇",
@@ -5488,7 +5527,7 @@
       "給与",
       "健康保険"
     ],
-    "updated_at": "2026-11-06",
+    "updated_at": "2026-11-10",
     "related_articles": [
       "doctor-appointment-germany",
       "health-insurance-guide",
@@ -5520,6 +5559,10 @@
       {
         "title": "社会法典第5編第45条：子どもの看病のための傷病手当金",
         "url": "https://www.gesetze-im-internet.de/sgb_5/__45.html"
+      },
+      {
+        "title": "連邦保健省：子どもの看病休暇・看病傷病手当金のFAQ（2026年2月10日）",
+        "url": "https://www.bundesgesundheitsministerium.de/fragen-und-antworten-zu-kinderkrankentagen-und-kinderkrankengeld"
       },
       {
         "title": "連邦休暇法第9条：休暇中の病気",
@@ -6076,17 +6119,17 @@
     "sitemap_visible": true,
     "disclaimer_type": "tax",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
-      "last_reviewed_at": "2026-11-05",
-      "next_review_due": "2026-11-10"
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification (Council of the EU); human editorial review pending",
+      "last_reviewed_at": "2026-11-11",
+      "next_review_due": "2026-12-15"
     },
     "canonical_url": "/germany/ja/living/germany-import-fees-japan-packages-2026/",
     "title": "日本からドイツに届く荷物の関税は？2026年11月の2ユーロ手数料と3ユーロ定額関税",
     "category": "暮らし・買い物",
     "summary": "2026年11月1日から、EU域外から消費者向けに発送される通販には、EU関税法上の「品目」ごとに2ユーロの取扱手数料が適用されています。荷物の本質的価値が150ユーロ以下の対象通販には3ユーロの定額関税も別途あり、輸入消費税や個人間ギフトとの違いを確認できます。",
     "published_at": "2026-11-07",
-    "last_verified": "2026-11-05",
+    "last_verified": "2026-11-11",
     "tags": [
       "日本からドイツ",
       "個人輸入",
@@ -6097,7 +6140,7 @@
       "贈り物",
       "2026年"
     ],
-    "updated_at": "2026-11-07",
+    "updated_at": "2026-11-11",
     "related_articles": [
       "christmas-post-germany-to-japan-2026",
       "dhl-delivered-but-not-received"
@@ -6106,6 +6149,10 @@
       {
         "title": "EU理事会：小口荷物へのEU措置（3ユーロ関税・2ユーロ取扱手数料）",
         "url": "https://www.consilium.europa.eu/de/policies/eu-action-influx-of-small-parcels/"
+      },
+      {
+        "title": "EU理事会：オンライン販売のVAT徴収簡素化に合意（2026年11月9日、正式採択前）",
+        "url": "https://www.consilium.europa.eu/de/press/press-releases/2026/11/09/taxation-council-approves-further-vat-simplification-rules-for-online-sales/"
       },
       {
         "title": "欧州委員会DG TAXUD：3ユーロ関税・2ユーロ取扱手数料の技術ガイダンス（2026年10月5日版、法的拘束力なし）",

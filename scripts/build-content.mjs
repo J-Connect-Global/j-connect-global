@@ -1010,7 +1010,8 @@ function renderInline(value, context) {
 
   text = escapeHtml(text);
   text = text.replace(/\[([^\]]+)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g, (_, label, href) => {
-    const normalized = normalizeHref(href, context);
+    // The full inline text was HTML-escaped above; decode its ampersand entities before escaping the href attribute once.
+    const normalized = normalizeHref(href.replaceAll('&amp;', '&'), context);
     if (normalized === '#') return label;
     const token = `\u0000LINK${linkTokens.length}\u0000`;
     linkTokens.push(`<a href="${escapeAttribute(normalized)}">${label}</a>`);

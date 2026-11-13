@@ -1712,8 +1712,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-03-10",
-    "updated_at": "2026-10-17",
-    "last_verified": "2026-10-17",
+    "updated_at": "2026-11-13",
+    "last_verified": "2026-11-13",
     "tags": [
       "信用情報",
       "SCHUFA",
@@ -1749,14 +1749,22 @@
       {
         "title": "データ保護監督当局：賃貸応募者の情報取得（2026年版）",
         "url": "https://datenschutz.hessen.de/sites/datenschutz.hessen.de/files/2026-06/oh_einholung_von_selbstauskuenften_mietinteressenten_01_2026.pdf"
+      },
+      {
+        "title": "連邦官報：EU消費者信用指令の国内法化法（2026年5月18日公布、BGBl. 2026 I Nr. 139）",
+        "url": "https://recht.bund.de/bgbl/1/2026/139/VO.html"
+      },
+      {
+        "title": "連邦政府：信用契約における消費者保護の強化（2026年5月19日）",
+        "url": "https://www.bundesregierung.de/breg-de/schwerpunkte/wirksam-regieren/schutz-kreditvertraege-2382528"
       }
     ],
     "disclaimer_type": "finance_contract",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-17",
-      "next_review_due": "2027-01-17"
+      "status": "needs_review",
+      "reviewed_by": "AI source verification; legal review pending",
+      "last_reviewed_at": "2026-11-13",
+      "next_review_due": "2026-11-20"
     },
     "image_alt": "ドイツの賃貸応募に使う信用証明と自己確認用データの違いを示す図"
   },
@@ -6480,5 +6488,62 @@
     "image_caption": "",
     "image_credit": "",
     "image": ""
+  },
+  {
+    "id": "L100",
+    "slug": "consumer-credit-bnpl-germany-2026",
+    "url": "/germany/ja/living/consumer-credit-bnpl-germany-2026/",
+    "markdown_path": "/content/living/consumer-credit-bnpl-germany-2026.md",
+    "published": false,
+    "status": "draft",
+    "home_visible": false,
+    "home_order": 9999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "disclaimer_type": "consumer_contract",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI source verification; legal review pending",
+      "last_reviewed_at": "2026-11-13",
+      "next_review_due": "2026-11-20"
+    },
+    "canonical_url": "/germany/ja/living/consumer-credit-bnpl-germany-2026/",
+    "title": "ドイツの後払い・分割払いはどう変わる？2026年11月20日からの新ルール",
+    "category": "お金・税金",
+    "summary": "2026年11月20日から広がるドイツの消費者信用保護を解説。200ユーロ未満の小口ローン、短期・無利息の融資、後払い・分割払いの対象範囲と例外、契約前の確認点を整理します。",
+    "published_at": "",
+    "updated_at": "2026-11-13",
+    "last_verified": "2026-11-13",
+    "tags": [
+      "後払い",
+      "分割払い",
+      "消費者ローン",
+      "BNPL",
+      "小口融資",
+      "SCHUFA",
+      "消費者保護",
+      "2026年"
+    ],
+    "related_articles": [
+      "schufa-guide",
+      "bank-account-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "連邦官報：EU消費者信用指令の国内法化法（2026年5月18日公布、BGBl. 2026 I Nr. 139）",
+        "url": "https://recht.bund.de/bgbl/1/2026/139/VO.html"
+      },
+      {
+        "title": "連邦政府：信用契約における消費者保護の強化（2026年5月19日）",
+        "url": "https://www.bundesregierung.de/breg-de/schwerpunkte/wirksam-regieren/schutz-kreditvertraege-2382528"
+      },
+      {
+        "title": "EU指令2023/2225：消費者信用契約",
+        "url": "https://eur-lex.europa.eu/eli/dir/2023/2225/oj"
+      }
+    ],
+    "image": "",
+    "image_alt": ""
   }
 ]

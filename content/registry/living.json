@@ -6392,19 +6392,19 @@
     "image_caption": "住宅手当の申請と住宅費の確認をイメージしたJ-Connectオリジナル図",
     "image_credit": "J-Connect Global制作（2026年11月4日）"
   },
-  {
+    {
     "id": "L099",
     "slug": "nrw-primary-school-enrollment-2027-2028",
     "title": "NRWの小学校入学2027/28｜対象年齢・申込期限・デュッセルドルフとケルンの手続き",
     "category": "家族・子育て",
-    "summary": "NRW州で2027/28年度に小学校へ入る子どもの対象年齢と就学義務、州全体の11月15日登録期限を解説。デュッセルドルフの10月6〜8日の指定受付と、ケルンの登録スケジュール、必要書類、期限を逃した場合の連絡先を確認できます。",
+    "summary": "NRW州で2027/28年度に小学校へ入る子どもの対象年齢と就学義務、2026年11月15日（日）の州全体の登録期限を解説。デュッセルドルフの10月6〜8日の指定受付、ケルンの登録スケジュール、2029/30年度以降の期限変更、必要書類を確認できます。",
     "url": "/germany/ja/living/nrw-primary-school-enrollment-2027-2028/",
     "markdown_path": "/content/living/nrw-primary-school-enrollment-2027-2028.md",
     "published": false,
     "status": "draft",
     "published_at": "",
-    "updated_at": "2026-11-12",
-    "last_verified": "2026-11-12",
+    "updated_at": "2026-11-13",
+    "last_verified": "2026-11-13",
     "next_review": "2026-11-16",
     "home_visible": false,
     "home_order": 999,
@@ -6416,7 +6416,7 @@
     "review": {
       "status": "needs_review",
       "reviewed_by": "AI official-source verification; editorial review pending",
-      "last_reviewed_at": "2026-11-12",
+      "last_reviewed_at": "2026-11-13",
       "next_review_due": "2026-11-16"
     },
     "tags": [
@@ -6448,8 +6448,16 @@
         "url": "https://recht.nrw.de/gvnrw/2026-s547/"
       },
       {
+        "title": "NRW州：小学校教育規則の第3次改正（2026年9月24日公布、2027年8月1日施行）",
+        "url": "https://recht.nrw.de/gvnrw/2026-s668/"
+      },
+      {
+        "title": "NRW州学校法（2025年8月1日〜2026年7月31日版）第36条（経過措置の旧規定）",
+        "url": "https://recht.nrw.de/lrgv/gesetz/01082025-schulgesetz-fuer-das-land-nordrhein-westfalen-schulgesetz-nrw-schulg/"
+      },
+      {
         "title": "デュッセルドルフ市：2027/28年度の小学校入学登録日程（2026年9月22日公表）",
-        "url": "https://www2.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/anmeldetermine-an-grundschulen-fuer-schulanfaengerinnen-und-schulanfanger-zum-schuljahr-2027-2028"
+        "url": "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/anmeldetermine-an-grundschulen-fuer-schulanfaengerinnen-und-schulanfanger-zum-schuljahr-2027-2028"
       },
       {
         "title": "デュッセルドルフ市：小学校への移行と登録期限",

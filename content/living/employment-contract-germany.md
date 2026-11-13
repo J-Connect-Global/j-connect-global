@@ -7,7 +7,7 @@ summary: "ドイツで働き始める前に、労働契約で確認したい項�
 status: "published"
 published: true
 published_at: "2026-11-06"
-updated_at: "2026-11-06"
+updated_at: "2026-11-13"
 last_verified: "2026-11-06"
 next_review: "2027-05-01"
 canonical_url: "/germany/ja/living/employment-contract-germany/"
@@ -44,6 +44,10 @@ official_sources:
     url: "https://www.gesetze-im-internet.de/tzbfg/__14.html"
   - title: "営業法第109条：勤務証明書"
     url: "https://www.gesetze-im-internet.de/gewo/__109.html"
+  - title: "第5次最低賃金調整令：2026年13.90ユーロ、2027年14.60ユーロ"
+    url: "https://www.gesetze-im-internet.de/milov5/BJNR10C0A0025.html"
+  - title: "最低賃金法第2条・第3条：支払時期と最低賃金請求権の放棄禁止"
+    url: "https://www.gesetze-im-internet.de/milog/BJNR134810014.html"
 ---
 
 # ドイツの労働契約で確認したいこと｜試用期間、解約の予告期間、有給休暇、労働時間と休憩、有期契約、解雇されたときの3週間
@@ -119,8 +123,11 @@ official_sources:
 
 - 給与は、多くの場合**年収（総支給額）**で提示され、月払いです。ここから所得税、連帯付加税、教会税（教会員の場合）、年金・失業・健康・介護の社会保険料が差し引かれます。
 - 13か月目の給与（クリスマス手当）、休暇手当、賞与があるかも契約で確認します。
-- 最低賃金は2026年が時給13.90ユーロ、2027年が14.60ユーロです。
-- 給与明細の税区分が正しいかは、[税番号と税区分](/germany/ja/living/tax-id-steuernummer-steuerklasse/)で確認できます。教会税がかかっている場合は、[ドイツの教会税](/germany/ja/living/church-tax-germany/)も参考にしてください。
+- 法定最低賃金は2026年1月1日から時給13.90ユーロ、2027年1月1日から14.60ユーロ（いずれも税・社会保険料を引く前の総支給額）です。
+- 月給制でも、契約上の時間だけでなく実際の労働時間と照らして時給換算します。週40時間を52週で平均した場合、2027年の月額換算は約2,531ユーロ（14.60×40×52÷12）です。これは平均値であり、月ごとの勤務時間や賃金項目によって確認額は変わります。
+- 最低賃金を下回る合意や、最低賃金を請求しないという契約条項は原則として無効です。給与明細と勤務時間の記録を保管してください。
+- 最低賃金の支払日は、契約上の支払日があればその日、別の合意がない場合でも原則として労働した月の翌月の最終銀行営業日までです。書面で合意した労働時間口座などには別の条件があります（最低賃金法第2条）。
+- 月給の時給換算や賃金項目の扱いは、連邦労働社会省の[最低賃金計算ツール](https://www.bmas.de/DE/Arbeit/Arbeitsrecht/Mindestlohn/Mindestlohnrechner/mindestlohnrechner.html)で確認できます。給与明細の税区分は[税番号と税区分](/germany/ja/living/tax-id-steuernummer-steuerklasse/)、教会税は[ドイツの教会税](/germany/ja/living/church-tax-germany/)も参考にしてください。
 
 ## 有期契約
 

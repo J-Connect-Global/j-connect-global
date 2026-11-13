@@ -3522,7 +3522,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-28",
-    "updated_at": "2026-11-05",
+    "updated_at": "2026-11-13",
     "last_verified": "2026-11-05",
     "next_review": "2027-01-15",
     "home_visible": false,
@@ -3552,7 +3552,9 @@
       "tax-id-steuernummer-steuerklasse",
       "germany-first-30-days",
       "sugar-drink-tax-germany-2027",
-      "pflegeversicherung-reform-2027"
+      "pflegeversicherung-reform-2027",
+      "employment-contract-germany",
+      "werkstudent-student-jobs-germany"
     ],
     "official_sources": [
       {
@@ -5543,10 +5545,10 @@
     "sitemap_visible": true,
     "disclaimer_type": "employment",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; statutes and official sources checked)",
-      "last_reviewed_at": "2026-11-06",
-      "next_review_due": "2027-05-01"
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; updated wage section awaiting employment-law review",
+      "last_reviewed_at": "2026-11-13",
+      "next_review_due": "2027-01-01"
     },
     "canonical_url": "/germany/ja/living/employment-contract-germany/",
     "title": "ドイツの労働契約で確認したいこと｜試用期間、解約の予告期間、有給休暇、労働時間と休憩、有期契約、解雇されたときの3週間",
@@ -5563,7 +5565,7 @@
       "労働時間",
       "ドイツ就職"
     ],
-    "updated_at": "2026-11-06",
+    "updated_at": "2026-11-13",
     "related_articles": [
       "sick-leave-germany",
       "tax-id-steuernummer-steuerklasse",
@@ -5642,10 +5644,10 @@
     "sitemap_visible": true,
     "disclaimer_type": "employment",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; statutes and official sources checked)",
-      "last_reviewed_at": "2026-11-06",
-      "next_review_due": "2027-03-01"
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; updated wage section awaiting employment-law review",
+      "last_reviewed_at": "2026-11-13",
+      "next_review_due": "2027-01-01"
     },
     "canonical_url": "/germany/ja/living/werkstudent-student-jobs-germany/",
     "title": "ドイツの学生の働き方｜ワークスチューデント・ミニジョブ・インターンの違い、週20時間の目安、社会保険と税金、留学生の日数の上限",
@@ -5662,7 +5664,7 @@
       "インターン",
       "社会保険"
     ],
-    "updated_at": "2026-11-06",
+    "updated_at": "2026-11-13",
     "related_articles": [
       "study-in-germany-student-visa",
       "minijob-grenze-2027",
@@ -6379,5 +6381,88 @@
     "image_alt": "住宅、賃貸契約書、電卓とコインを組み合わせた住宅手当のイラスト",
     "image_caption": "住宅手当の申請と住宅費の確認をイメージしたJ-Connectオリジナル図",
     "image_credit": "J-Connect Global制作（2026年11月4日）"
+  },
+  {
+    "id": "L100",
+    "slug": "germany-minimum-wage-2027",
+    "title": "ドイツの最低賃金2027｜時給14.60ユーロの対象者・例外・給与明細の確認方法",
+    "category": "仕事・お金",
+    "summary": "2027年1月1日からドイツの一般法定最低賃金は時給14.60ユーロ（総支給額）。日本人の会社員、パート、学生、ミニジョブに関係する対象範囲、インターン等の例外、月給換算、給与不足に気づいたときの確認手順を一次情報で整理します。",
+    "url": "/germany/ja/living/germany-minimum-wage-2027/",
+    "markdown_path": "/content/living/germany-minimum-wage-2027.md",
+    "published": false,
+    "status": "draft",
+    "published_at": "",
+    "updated_at": "2026-11-13",
+    "last_verified": "2026-11-13",
+    "next_review": "2027-01-15",
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "canonical_url": "/germany/ja/living/germany-minimum-wage-2027/",
+    "disclaimer_type": "employment",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; employment-law review pending",
+      "last_reviewed_at": "2026-11-13",
+      "next_review_due": "2027-01-15"
+    },
+    "tags": [
+      "最低賃金",
+      "時給",
+      "2027年",
+      "ドイツ就職",
+      "アルバイト",
+      "給与明細",
+      "労働者の権利"
+    ],
+    "related_articles": [
+      "minijob-grenze-2027",
+      "employment-contract-germany",
+      "werkstudent-student-jobs-germany",
+      "ausbildung-germany-japanese",
+      "germany-january-2027-changes"
+    ],
+    "official_sources": [
+      {
+        "title": "第5次最低賃金調整令（2025年11月5日公布）",
+        "url": "https://www.gesetze-im-internet.de/milov5/BJNR10C0A0025.html"
+      },
+      {
+        "title": "最低賃金法（2026年5月12日改正を反映した現行法）",
+        "url": "https://www.gesetze-im-internet.de/milog/BJNR134810014.html"
+      },
+      {
+        "title": "連邦労働社会省：法定最低賃金の概要",
+        "url": "https://www.bmas.de/DE/Arbeit/Arbeitsrecht/Mindestlohn/Informationen-zum-Mindestlohn/informationen-zum-mindestlohn-deutsch.html"
+      },
+      {
+        "title": "連邦労働社会省：最低賃金計算ツール",
+        "url": "https://www.bmas.de/DE/Arbeit/Arbeitsrecht/Mindestlohn/Mindestlohnrechner/mindestlohnrechner.html"
+      },
+      {
+        "title": "連邦労働社会省：労働時間の記録義務",
+        "url": "https://www.bmas.de/DE/Arbeit/Arbeitsrecht/Mindestlohn/Dokumentationspflicht/dokumentationspflicht-art.html"
+      },
+      {
+        "title": "連邦労働社会省：業種別の賃金下限",
+        "url": "https://www.bmas.de/DE/Arbeit/Arbeitsrecht/Mindestlohn/Branchenmindestlohn/Branchenmindestlohn-art.html"
+      },
+      {
+        "title": "連邦政府：法定最低賃金のよくある質問",
+        "url": "https://www.bundesregierung.de/breg-de/aktuelles/mindestlohn-faq-1688186"
+      },
+      {
+        "title": "ミニジョブ・センター：最低賃金とミニジョブ",
+        "url": "https://www.minijob-zentrale.de/DE/die-minijobs/arbeitsrechte-im-minijob/mindestlohn/mindestlohn_node.html"
+      }
+    ],
+    "image": "/assets/images/living/germany-minimum-wage-2027.svg",
+    "image_url": "/assets/images/living/germany-minimum-wage-2027.svg",
+    "image_alt": "2026年は時給13.90ユーロ、2027年1月1日から14.60ユーロとなるドイツの法定最低賃金を示す図",
+    "image_caption": "J-Connect作成の図解。法定最低賃金の適用日と総支給額を示し、実際の給与明細ではありません。",
+    "image_credit": "Illustration / J-Connect"
   }
 ]

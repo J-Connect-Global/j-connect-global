@@ -7,7 +7,7 @@ summary: "ドイツの大学生は、ワークスチューデント、ミニジ�
 status: "published"
 published: true
 published_at: "2026-11-06"
-updated_at: "2026-11-06"
+updated_at: "2026-11-13"
 last_verified: "2026-11-06"
 next_review: "2027-03-01"
 canonical_url: "/germany/ja/living/werkstudent-student-jobs-germany/"
@@ -30,6 +30,8 @@ official_sources:
     url: "https://www.gesetze-im-internet.de/estg/__32a.html"
   - title: "最低賃金法第22条：インターンへの最低賃金の適用"
     url: "https://www.gesetze-im-internet.de/milog/__22.html"
+  - title: "第5次最低賃金調整令：2026年13.90ユーロ、2027年14.60ユーロ"
+    url: "https://www.gesetze-im-internet.de/milov5/BJNR10C0A0025.html"
   - title: "滞在法第16b条：留学生の働ける日数"
     url: "https://www.gesetze-im-internet.de/aufenthg_2004/__16b.html"
 ---
@@ -99,7 +101,7 @@ official_sources:
 - 学業と並行して行う**3か月まで**の任意のインターン（同じ会社で以前にインターンをしていない場合）
 - 進路を決めるための**3か月まで**のインターン
 
-3か月を超える任意のインターンには、最初の日から最低賃金（2026年は時給13.90ユーロ）が適用されます。
+例外に当たらない任意のインターンには、原則として初日から最低賃金が適用されます。時給は2026年が13.90ユーロ、2027年1月1日から14.60ユーロです。ワークスチューデントやミニジョブなど、雇用されて働く学生も原則として対象です。対象者と例外の条件は[連邦労働社会省の最低賃金案内](https://www.bmas.de/DE/Arbeit/Arbeitsrecht/Mindestlohn/Informationen-zum-Mindestlohn/informationen-zum-mindestlohn-deutsch.html)と最低賃金法第22条で確認してください。労働契約や給与明細の見方は[ドイツの労働契約](/germany/ja/living/employment-contract-germany/)も参考になります。
 
 ### 社会保険の扱い
 

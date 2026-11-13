@@ -7,7 +7,7 @@ summary: "2027年1月1日からのミニジョブの月収上限は月633ユー�
 status: "published"
 published: true
 published_at: "2026-10-28"
-updated_at: "2026-11-05"
+updated_at: "2026-11-13"
 last_verified: "2026-11-05"
 next_review: "2026-12-15"
 canonical_url: "/germany/ja/living/minijob-grenze-2027/"
@@ -16,7 +16,7 @@ image: "/assets/img/living/minijob-grenze-2027.webp"
 image_alt: "小さなカフェのカウンターで働く人と、コーヒーマシンを描いたイラスト"
 image_caption: "イラスト：J-Connect。ミニジョブのテーマを表したもので、特定の職場や給与明細を描いたものではありません。"
 image_credit: "Illustration / J-Connect"
-related_articles: ["germany-january-2027-changes", "tax-id-steuernummer-steuerklasse", "germany-first-30-days", "sugar-drink-tax-germany-2027", "pflegeversicherung-reform-2027"]
+related_articles: ["germany-january-2027-changes", "tax-id-steuernummer-steuerklasse", "germany-first-30-days", "sugar-drink-tax-germany-2027", "pflegeversicherung-reform-2027", "employment-contract-germany", "werkstudent-student-jobs-germany"]
 official_sources:
   - title: "連邦労働社会省：第5次最低賃金調整令"
     url: "https://www.bmas.de/DE/Service/Gesetze-und-Gesetzesvorhaben/fuenfte-mindestlohnanpassungsverordnung-milov5.html"
@@ -38,7 +38,7 @@ official_sources:
 
 # ドイツのMinijob（ミニジョブ）2027｜月633ユーロの上限・勤務時間・税金と保険
 
-ドイツで短時間の仕事や副業をする人に向けて、2027年1月1日からのミニジョブの収入上限、働ける時間、掛け持ち、税金と社会保険の扱いを整理します。結論は、法定最低賃金が時給14.60ユーロになるため、収入上限は計算上、月633ユーロです。ただし、この金額は「必ず非課税になる枠」でも「何時間でも働ける枠」でもありません。
+ドイツで短時間の仕事や副業をする人に向けて、2027年1月1日からのミニジョブの収入上限、働ける時間、掛け持ち、税金と社会保険の扱いを整理します。結論は、法定最低賃金が時給14.60ユーロになるため、収入上限は計算上、月633ユーロです。ただし、この金額は「必ず非課税になる枠」でも「何時間でも働ける枠」でもありません。雇用契約の給与・残業・最低賃金の基本は[ドイツの労働契約](/germany/ja/living/employment-contract-germany/)、学生が働く場合の社会保険や滞在許可との関係は[ドイツの学生の働き方](/germany/ja/living/werkstudent-student-jobs-germany/)も確認してください。
 
 ## まず数字を確認
 

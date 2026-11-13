@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">ドイツの法定最低賃金 2026年から2027年</title>
+<desc id="desc">2026年1月1日から時給13.90ユーロ、2027年1月1日から時給14.60ユーロ。いずれも税や社会保険料を引く前の総支給額。</desc>
+<rect width="1200" height="675" rx="32" fill="#f2f5f3"/>
+<rect x="64" y="64" width="1072" height="547" rx="28" fill="#ffffff" stroke="#d7e1dc" stroke-width="3"/>
+<text x="104" y="132" font-size="34" font-weight="700" fill="#24463a">ドイツの法定最低賃金</text>
+<text x="104" y="180" font-size="22" fill="#5b6b64">税・社会保険料を引く前の総支給額／1時間</text>
+<rect x="104" y="232" width="444" height="278" rx="22" fill="#edf2ef"/>
+<rect x="652" y="232" width="444" height="278" rx="22" fill="#e4f0ea"/>
+<text x="144" y="292" font-size="25" font-weight="700" fill="#43574e">2026年1月1日から</text>
+<text x="144" y="410" font-size="86" font-weight="700" fill="#24463a">13.90 €</text>
+<text x="144" y="466" font-size="23" fill="#5b6b64">時給・総支給額</text>
+<text x="692" y="292" font-size="25" font-weight="700" fill="#24463a">2027年1月1日から</text>
+<text x="692" y="410" font-size="86" font-weight="700" fill="#1d6b4c">14.60 €</text>
+<text x="692" y="466" font-size="23" fill="#4c685b">時給・総支給額</text>
+<path d="M548 370 H642 M624 350 L644 370 L624 390" fill="none" stroke="#7a9689" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="104" y="564" font-size="19" fill="#65756d">根拠：第5次最低賃金調整令（2025年11月5日公布）</text>
+</svg>

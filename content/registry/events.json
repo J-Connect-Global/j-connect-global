@@ -51,10 +51,10 @@
   },
   {
     "id": "E004",
-    "title": "デュッセルドルフのクリスマスマーケット2026｜日程・営業時間・休業日と会場の選び方",
+    "title": "デュッセルドルフのクリスマスマーケット2026｜冬の広場を楽しむ文化案内",
     "slug": "christmas-markets-duesseldorf",
     "category": "季節行事",
-    "summary": "デュッセルドルフのクリスマスマーケット2026は11月19日〜12月30日。通常営業時間に加え、11月22日・12月25日の休業、12月24日・26日の特別時間、公共交通と空港P+Rの確認先を整理します。",
+    "summary": "2026年11月19日〜12月30日のデュッセルドルフ・クリスマスマーケットを案内。通常営業時間に加え、11月22日・12月25日の休業、12月24日・26日の特別時間、公共交通と空港P+Rの確認先を整理します。",
     "url": "/germany/ja/events/christmas-markets-duesseldorf/",
     "markdown_path": "/content/events/christmas-markets-duesseldorf.md",
     "published": true,
@@ -7123,7 +7123,7 @@
     },
     "published": true,
     "status": "published",
-    "title": "ハンブルクのクリスマスマーケット2026｜日程・営業時間・空飛ぶサンタと会場の選び方",
+    "title": "ハンブルクのクリスマスマーケット2026｜市庁舎の空を飛ぶサンタと、湖に浮かぶ光のツリー",
     "category": "季節行事",
     "summary": "2026年のハンブルクのクリスマスマーケットを、市庁舎前の歴史的な市、湖畔のユングフェルンシュティーク、ザンクト・パウリの大人の市から案内。11月23日〜12月23日の市庁舎前の市と1日3回の空飛ぶサンタ、11月18日開幕の湖畔の市など、2026年の日程と営業時間を整理します。",
     "published_at": "2026-11-01",
@@ -7346,14 +7346,14 @@
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
       "last_reviewed_at": "2026-11-05",
-      "next_review_due": "2026-11-11"
+      "next_review_due": "2026-12-11"
     },
-    "title": "ドイツの物価は2026年10月に2.8％上昇｜9月から鈍化、エネルギー高は続く",
+    "title": "ドイツの物価は2026年10月に2.8％上昇｜確報で確認、9月から鈍化",
     "category": "お金・税金",
-    "summary": "ドイツ連邦統計局の10月速報では、消費者物価は前年同月比2.8％上昇、前月比0.2％低下。9月の3.3％から伸びは鈍化しましたが、エネルギーは前年比12.2％上昇しています。速報値の読み方と家計で確認すべき点を整理します。",
+    "summary": "連邦統計局が2026年11月11日に公表した10月の確報では、消費者物価は前年比2.8％上昇、前月比0.2％低下。9月の3.3％から鈍化し、エネルギーは前年比12.2％上昇、食品・エネルギーを除く指数は2.1％でした。家計で確認すべき点を整理します。",
     "published_at": "2026-11-07",
-    "updated_at": "2026-11-05",
-    "last_verified": "2026-11-05",
+    "updated_at": "2026-11-12",
+    "last_verified": "2026-11-12",
     "tags": [
       "物価",
       "インフレ",
@@ -7368,9 +7368,13 @@
     ],
     "city": "ドイツ全土",
     "location": "",
-    "event_date": "2026年10月統計・10月30日速報",
-    "official_url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_382_611.html",
+    "event_date": "2026年10月統計・2026年11月11日確報",
+    "official_url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/11/PD26_392_611.html",
     "official_sources": [
+      {
+        "title": "連邦統計局：2026年10月の消費者物価・確報値（11月11日）",
+        "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/11/PD26_392_611.html"
+      },
       {
         "title": "連邦統計局：2026年10月の消費者物価・速報値（10月30日）",
         "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_382_611.html"

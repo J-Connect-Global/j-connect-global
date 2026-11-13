@@ -3,9 +3,9 @@
 <desc id="desc">前年同月比。10月は速報値。全体、食品とエネルギーを除く指数、エネルギーの上昇率を月別に比較する。</desc>
 <rect width="1200" height="720" rx="28" fill="#f4f6f8"/>
 <text x="72" y="86" font-size="34" font-weight="700" fill="#1f2937">ドイツの物価上昇率｜前年同月比</text>
-<text x="72" y="132" font-size="21" fill="#4b5563">2026年7〜10月。10月は連邦統計局の速報値。</text>
+<text x="72" y="132" font-size="21" fill="#4b5563">2026年7〜10月。10月は連邦統計局の確報値。</text>
 <g font-size="20" fill="#374151">
-<text x="72" y="224">7月</text><text x="72" y="332">8月</text><text x="72" y="440">9月</text><text x="72" y="548">10月速報</text>
+<text x="72" y="224">7月</text><text x="72" y="332">8月</text><text x="72" y="440">9月</text><text x="72" y="548">10月確報</text>
 </g>
 <g>
 <rect x="190" y="182" width="230" height="52" rx="10" fill="#28658a"/><rect x="190" y="290" width="238" height="52" rx="10" fill="#28658a"/><rect x="190" y="398" width="271" height="52" rx="10" fill="#28658a"/><rect x="190" y="506" width="230" height="52" rx="10" fill="#28658a"/>
@@ -19,6 +19,6 @@
 </g>
 <g font-size="18" fill="#374151">
 <text x="72" y="648">全体＝消費者物価指数　｜　基調＝食品・エネルギーを除く指数</text>
-<text x="72" y="682">出典：ドイツ連邦統計局（Destatis）、2026年10月30日公表</text>
+<text x="72" y="682">出典：ドイツ連邦統計局（Destatis）、2026年11月11日公表</text>
 </g>
 </svg>

@@ -77,6 +77,8 @@
 ### School enrollment
 
 - NRW School Act, version effective 2026-08-01 (especially §§34–36): https://recht.nrw.de/lrgv/gesetz/01082026-schulgesetz-nrw-schulg/
+- NRW School Act, version effective 2025-08-01 through 2026-07-31 (old §36(3) wording used by the transition): https://recht.nrw.de/lrgv/gesetz/01082025-schulgesetz-fuer-das-land-nordrhein-westfalen-schulgesetz-nrw-schulg/
+- Third amendment to the NRW Primary School Training Regulation, published 2026-09-24 and effective 2027-08-01 (15 March deadline for later cohorts; transition keeps 15 November before 2029-08-01): https://recht.nrw.de/gvnrw/2026-s668/
 - Düsseldorf 2027/28 registration announcement, published 2026-09-22: https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/anmeldetermine-an-grundschulen-fuer-schulanfaengerinnen-und-schulanfaenger-zum-schuljahr-2027-2028
 - Düsseldorf general enrollment guidance and 15 November deadline: https://www.duesseldorf.de/schulen/anmeldeverfahren/uebergang-in-die-grundschule
 - Düsseldorf enrollment FAQ, including individual appointments after the announced dates: https://www.duesseldorf.de/schulen/anmeldeverfahren/uebergang-in-die-grundschule/faqs-zur-einschulung
@@ -91,7 +93,7 @@
 
 ## SEO, analytics, and implementation status
 
-- No public URL was created or changed. No canonical, hreflang, sitemap, search index, hub card, image, or production site file was changed.
+- No new public URL was created. L099 remains unpublished and excluded from all public visibility flags. PR #447 includes regenerated HTML for existing public pages, updated search index and hub/event pages, image assets, a news-feed snapshot, and sitemap metadata. The live site has not changed because PR #447 remains Draft and unmerged. The sitemap remains 220 URLs; no URL was added, and canonical/hreflang rules were not changed.
 - The new L099 draft is excluded from all public visibility flags. No incomplete English or German locale was added.
 - No user-post, job, contact-form, admin, privacy, or German-learning dataset code was changed.
 - GSC Wizard returned `payment_required / subscription_required`; no 28-day or 3-month query/page metrics were available. No impressions, CTR, or average-position figures are reported.
@@ -105,3 +107,29 @@
 3. Perform a physical speaker/audio test for flashcards in a supported browser.
 4. Recheck Düsseldorf and Cologne 2026/27 fireworks notices in early December.
 5. Review L099 and, if approved, publish it with a short internal-link update to L064. After 2026-11-15, revise the article's immediate-action wording to explain late registration and municipal follow-up.
+## Run 11 follow-up — 2026-11-13
+
+### Priority 1: existing system and PR status
+
+- Rechecked the public read-only Apps Script status endpoint: `messaging_version=2026-11-07.1`; public replies, private conversations, inline replies, instant publishing, and persistent links remain enabled.
+- The public posts endpoint still returns 7 active posts and no private email, phone, token, or password fields. One reply text, “Test 3 to 1”, appears on an existing public post and looks like a possible test artifact. It was not deleted because it is public user-generated content and ownership/intent were not confirmed.
+- The 5-minute Apps Script trigger and last execution time remain inaccessible without an authenticated Apps Script editor session. No trigger was deleted, recreated, or redeployed.
+- Zoho real-email E2E still has no dedicated safe test mailbox. No live-user or production-admin test email was sent.
+- Flashcard dataset files remain present under `assets/data/learn-german/flashcards/`; no vocabulary or classification file was changed. Actual browser playback and physical speaker output remain unverified. The browser automation attempt could not start because the TinyFish browser wallet was insufficient; no UI controls were clicked or submitted.
+- PR #442 current head `ad0e5a4163ea252596d4c018aef613ee00b93e1c` has a successful Validate content run #1939, including generated-content build, sync check, deterministic validation, and Chromium runtime smoke tests. GitHub currently marks the PR `mergeable=false`; it remains Draft and is not merged. Its 87-file compare and outstanding legal/medical review gates remain.
+- GSC Wizard still returns `payment_required / subscription_required`; no 28-day or 3-month Search Console metrics were obtained.
+- The Notion project instructions remain inaccessible in this non-interactive run.
+
+### Priority 2: new legal source and L099 update
+
+- The NRW Third Ordinance amending the Primary School Training Regulation was published on **2026-09-24** and enters into force on **2027-08-01**. It sets a general registration deadline of **15 March of the previous year**, but retains **15 November** for children whose compulsory schooling begins before **2029-08-01**. Therefore the 2027/28 cohort still uses **2026-11-15**; the 2029/30 cohort is the first affected by the March deadline.
+- The same regulation says the standardized language test and new mandatory school pre-course rules do not apply to children who become schoolpflichtig before 2029-08-01. The 18th School Act amendment's §36(6) transition also preserves the prior §36(3) sentence 2 where its conditions are met. The article now distinguishes the school’s language/basic-learning assessment from the new mandatory course and cites both the new regulation and the historical School Act version.
+- L099 front matter and registry now show `updated_at=2026-11-13`, `last_verified=2026-11-13`, and 10 official sources. It remains `published=false`, `status=draft`, and excluded from home, hub, search, and sitemap.
+- PR #447 branch latest commit after the L099 and registry updates: `74302212c0b2cb5d2019c68ebf4128370d5c1c42`. CI for this latest head is pending at the time of this note.
+- The original PR #447 body understated its diff. It contains generated public-page outputs, search-index and sitemap metadata, image assets, and a news-feed snapshot in addition to the L099 draft and existing content refresh. No new public URL is added; the live site remains unchanged until the draft PR is approved and merged.
+
+### Fresh event-source finding for the next cycle
+
+- Hamburg's official St. Petri market page now lists **2026-11-18 to 2026-12-23**, daily 11:00–21:00, closed 2026-11-22: https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/weihnachtsmarkt-petrikirche-301062
+- Hamburg's official Fleetinsel page now lists **2026-11-23 to 2026-12-23**, but its current opening-hours widget does not provide a reliable daily schedule: https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/weihnachtsmarkt-auf-der-fleetinsel-301114
+- The existing Hamburg 2026 guide still says these dates were not yet available as of 2026-11-01. Update that public article before the first market opens on 2026-11-18, regenerate its HTML/registry/hub/sitemap, and keep the Jungfernstieg discrepancy visible (city overview through 2026-12-29 vs individual page through 2026-12-23).

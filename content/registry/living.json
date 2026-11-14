@@ -6682,5 +6682,55 @@
     ],
     "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
     "image_alt": "ドイツの診療所の受付で予約を確認するイメージ"
+  },
+  {
+    "id": "L115",
+    "slug": "newborn-items-checklist-germany",
+    "url": "/germany/ja/living/newborn-items-checklist-germany/",
+    "markdown_path": "/content/living/newborn-items-checklist-germany.md",
+    "published": false,
+    "status": "draft",
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "disclaimer_type": "living",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; editorial review pending",
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2027-02-14"
+    },
+    "title": "ドイツ語の商品名つき・新生児用品チェックリスト｜dm・Rossmannで探すときの売り場の言葉【2026年】",
+    "category": "家族・子育て",
+    "summary": "ドイツで出産する家庭向けに、新生児用品をおむつ替え・授乳・お風呂と体調・衣類と移動の4つに分け、ドラッグストアのdmやRossmannで探せるドイツ語の商品名と並べました。退院時に車で帰るなら乳児用チャイルドシートが必要なことなど、買い忘れやすい点もまとめます。",
+    "published_at": "",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
+    "next_review": "2027-05-14",
+    "canonical_url": "/germany/ja/living/newborn-items-checklist-germany/",
+    "tags": [
+      "出産準備",
+      "新生児",
+      "ベビー用品",
+      "dm",
+      "Rossmann",
+      "チェックリスト",
+      "買い物"
+    ],
+    "related_articles": [
+      "stroller-buying-guide-germany",
+      "pregnancy-birth-germany",
+      "birth-day-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "道路交通規則第21条第1a項：子どもの乗車時のチャイルドシート",
+        "url": "https://www.gesetze-im-internet.de/stvo_2013/__21.html"
+      }
+    ],
+    "image_url": "/assets/images/living/birth-procedures-germany.webp",
+    "image_alt": "赤ちゃんの衣類と靴下を机に並べたイメージ"
   }
 ]

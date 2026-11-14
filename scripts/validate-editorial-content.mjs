@@ -250,7 +250,9 @@ function validateArticleStandard(relative, body, standard) {
 function validatePrivacyScreen(relative, markdown) {
   // Names are checked in link targets too; numbers only in visible text, so
   // URLs with long digit runs are not mistaken for phone numbers.
-  const visibleText = String(markdown).replace(/\]\([^)]*\)/g, "]");
+  const visibleText = stripFrontmatter(markdown)
+    .replace(/\]\([^)]*\)/g, "]")
+    .replace(/https?:\/\/\S+/g, " ");
   for (const [index, [pattern, label]] of PRIVACY_PATTERNS.entries()) {
     const target = index < 4 ? String(markdown) : visibleText;
     if (pattern.test(target)) fail(relative, `公開方針: ${label}が含まれています (${pattern})`);

@@ -234,6 +234,30 @@
     ]
   },
   {
+    "id": "page-living-route-residence",
+    "title": "滞在許可・永住・帰化を考える人",
+    "url": "/germany/ja/living/routes/residence/",
+    "type": "utility",
+    "pillar": "living",
+    "status": "published",
+    "canonical_url": "/germany/ja/living/routes/residence/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "ビザの種類と滞在許可の申請・更新、ブルーカード、家族の呼び寄せ、永住許可、ドイツ国籍の取得を、滞在の段階ごとに案内します。",
+    "tags": [
+      "生活",
+      "滞在許可",
+      "永住",
+      "帰化"
+    ]
+  },
+  {
     "id": "page-living-route-return",
     "title": "日本に帰る準備をする人（本帰国）",
     "url": "/germany/ja/living/routes/return/",

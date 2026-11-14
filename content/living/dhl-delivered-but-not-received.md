@@ -7,8 +7,9 @@ summary: "DHL Paketで配達済みなのに荷物がない場合の確認順序�
 status: "published"
 published: true
 published_at: "2026-10-19"
-updated_at: "2026-10-20"
-last_verified: "2026-10-19"
+updated_at: "2026-11-14"
+last_verified: "2026-11-14"
+article_standard: "2026-11"
 next_review: "2027-01-19"
 canonical_url: "/germany/ja/living/dhl-delivered-but-not-received/"
 tags: ["DHL", "配達済み", "届かない", "通販", "未配達", "複数個口"]
@@ -33,7 +34,25 @@ official_sources:
 
 DHLの追跡に「配達済み」と出ても、自分の手元に荷物がないことがあります。ドイツで通販を利用する人に向けて、受取人や返送履歴の確認から、販売店・DHLへの連絡までを整理します。この記事はドイツのDHL Paketを中心とした案内で、DHL Expressや他の配送会社の荷物は、それぞれの追跡・窓口を使ってください。
 
-## 最初の5分で確認すること
+## まず結論
+
+- 何を：追跡の詳細で「誰に届いたか（Zugestellt an）」と返送の履歴を見て、隣人・郵便受け・置き配場所を探す。見つからなければ、通販の販売店に未着を連絡する。
+- いつまでに：中身の不足や破損は、配達から**7日以内**にDHLへ申告する。「輸送中」のまま**5営業日**を超えて変わらなければ、調査（Nachforschung）を頼める（どちらもDHLの案内、2026年11月14日確認）。
+- どこで：通販の荷物は、まず販売店（差出人）へ。DHLも、受取人にはまず差出人への相談を勧めている。
+- 費用：確認と問い合わせに費用はかからない。返金や再送の条件は販売店ごとに違う。
+
+## あなたはどのケース？
+
+| あなたの状況 | 違うところ | 先にすること |
+| --- | --- | --- |
+| 通販で買った | 調査を頼めるのは主に差出人（販売店）。受取人は販売店に連絡する | 注文番号と追跡番号をそろえて販売店へ |
+| 個人から送られた | 差出人の発送控えと内容品の資料が調査に必要 | 差出人に連絡して調査を頼んでもらう |
+| 知らない隣人の名前が出る | 隣人が持って来るまで少し待つよう、DHLは案内している | 同じ建物の表札を確認し、メモを残す |
+| 返送開始（Rücksendung eingeleitet）の履歴がある | 「配達済み」は差出人への返送完了かもしれない | 販売店に返送を受け取ったか確認 |
+| 複数の箱のうち一部だけ届いた | 注文全体の「配達済み」は全部の箱の到着を意味しない | 箱ごとの追跡番号を照合 |
+| 「輸送中」のまま止まっている | 配達済みとは別の手順。5営業日を超えたら調査を頼める | 下の「輸送中のまま更新されない」へ |
+
+## 手順：最初の5分で確認すること
 
 1. **注文番号ではなく追跡番号**で、DHL公式の追跡を開く。
 2. 最後の1行だけでなく、配達先・受取人・返送を含む履歴を見る。
@@ -111,6 +130,44 @@ DHLは、オンラインショップの注文が届かない場合、まず差�
 
 この5営業日の目安を、配達済みなのに見つからない荷物へ一律に当てはめる必要はありません。また、DHLは通常のカスタマーサービスから輸送を早めたり、配達担当者や配送拠点に直接電話で取り次いだりすることはできないと案内しています。急ぎの場合は販売店に必要な日付を伝え、再送を含めて可能な対応を確認します。
 
+## 落とし穴
+
+- 最後の1行だけ見る：返送の履歴や受取人の欄を見ずに「配達済み」と判断すると、差出人に戻った荷物を探し続けることになる。
+- 注文番号で追跡する：DHLの追跡には追跡番号（Sendungsnummer）を使う。注文番号では出てこない。
+- 破損・不足の申告が遅れる：中身の不足や破損は配達から7日以内。箱や梱包材を捨てずに写真を撮る。
+- 調査依頼を返金の約束と思う：調査は荷物の所在を調べる手続き。返金・再送は販売店の条件による。
+- 追跡番号や住所を公開の場に貼る：掲示板やSNSに追跡番号・住所を載せない。
+
+## そのまま使えるドイツ語
+
+| 場面 | ドイツ語 | 日本語 |
+| --- | --- | --- |
+| 隣人に聞く | Entschuldigung, hat DHL bei Ihnen ein Paket für mich abgegeben? Mein Name ist [Name]. | すみません、DHLが私宛ての荷物をお宅に預けていませんか。〇〇といいます。 |
+| 隣人へのメモ | Liebe Nachbarn, laut DHL wurde ein Paket für [Name] bei Ihnen abgegeben. Bitte klingeln Sie bei mir (Wohnung [Nr.]). Danke! | ご近所の皆さまへ。DHLによると、〇〇宛ての荷物がお宅に届いたそうです。〇号室のベルを鳴らしてください。ありがとうございます。 |
+| 電話で最初に | Guten Tag, meine Sendung ist als zugestellt markiert, aber ich habe sie nicht erhalten. Die Sendungsnummer ist [Nummer]. | こんにちは、荷物が配達済みになっていますが、受け取っていません。追跡番号は〇〇です。 |
+
+販売店への未着の連絡：
+
+> 件名：Bestellung [Bestellnummer] – Paket als zugestellt markiert, aber nicht erhalten
+> Sehr geehrte Damen und Herren,
+> laut DHL-Sendungsverfolgung wurde meine Bestellung [Bestellnummer] (Sendungsnummer [Nummer]) am [Datum] zugestellt. Ich habe das Paket jedoch nicht erhalten. Ich habe bei meinen Nachbarn, im Briefkasten und am Ablageort nachgesehen.
+> Bitte leiten Sie eine Nachforschung bei DHL ein und teilen Sie mir mit, ob Sie die Ware erneut senden oder den Kaufpreis erstatten können.
+> Mit freundlichen Grüßen
+> [Name]
+
+和訳：件名「注文〇〇：配達済みになっているが受け取っていない」。DHLの追跡では、注文〇〇（追跡番号〇〇）は〇日に配達済みです。しかし、荷物を受け取っていません。隣人、郵便受け、置き配場所を確認しました。DHLへの調査を依頼し、再送か返金ができるか教えてください。
+
+## 在住者の実例
+
+この記事には、まだJ-Connect編集部や読者の実例を載せていません。荷物が見つかるまでの日数や、販売店の対応の体験を集めて追記します。
+
 ## 問い合わせ前の確認メモ
 
 連絡を一度で進めやすくするため、追跡画面、注文情報、確認した場所、連絡履歴を一つにまとめます。「受け取っていない箱の番号はどれか」「誰に何を依頼したか」「次の回答はいつか」が分かる状態を目指してください。追跡番号や住所を公開掲示板へそのまま貼る必要はありません。
+
+## 公式情報・参考ソース
+
+- [DHL：配達済みだが受け取っていない場合・内容品の不足（7日以内の申告）](https://www.dhl.de/de/privatkunden/hilfe-kundenservice/empfangen/zustellung/paket-geliefert.html)（2026年11月14日確認）
+- [DHL：追跡の問題と調査依頼（5営業日）](https://www.dhl.de/de/privatkunden/hilfe-kundenservice/sendungsverfolgung/probleme-loesungen.html)（2026年11月14日確認）
+- [DHL：未配達の場合](https://www.dhl.de/de/privatkunden/hilfe-kundenservice/empfangen/zustellung/paket-nicht-geliefert.html)（2026年10月19日確認）
+- [消費者センター：発送した荷物の紛失・調査依頼](https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/worauf-sie-achten-sollten-wenn-sie-ein-paket-verschicken-12323)（2026年10月19日確認）

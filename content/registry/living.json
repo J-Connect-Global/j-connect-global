@@ -3002,14 +3002,14 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "AI editorial official-source verification",
-      "last_reviewed_at": "2026-10-19",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-01-19"
     },
     "title": "DHLが配達済みなのに届かない（ドイツ）｜最初の5分で見る場所と問い合わせ先",
     "category": "暮らし・買い物",
     "summary": "DHL Paketで配達済みなのに荷物がない場合の確認順序を解説。追跡の受取人・返送履歴、隣人・置き配・ロッカー、販売店への連絡、複数個口の一部未着、遅延との違いを整理します。",
     "published_at": "2026-10-19",
-    "last_verified": "2026-10-19",
+    "last_verified": "2026-11-14",
     "canonical_url": "/germany/ja/living/dhl-delivered-but-not-received/",
     "tags": [
       "DHL",
@@ -3019,7 +3019,7 @@
       "未配達",
       "複数個口"
     ],
-    "updated_at": "2026-10-20",
+    "updated_at": "2026-11-14",
     "related_articles": [
       "dhl-packstation-guide",
       "germany-first-30-days",

@@ -8,16 +8,35 @@ summary: "ドイツで出産する日本人家庭向けに、妊娠が分かっ�
 status: "published"
 published: true
 published_at: "2026-06-12"
-updated_at: "2026-10-17"
-last_verified: "2026-08-31"
-next_review: "2026-11-30"
+updated_at: "2026-11-14"
+last_verified: "2026-11-14"
+next_review: "2027-02-14"
+article_standard: "2026-11"
 canonical_url: "/germany/ja/living/pregnancy-birth-germany/"
+official_sources:
+  - title: "母性保護法第3条：産前6週・産後8週の保護期間"
+    url: "https://www.gesetze-im-internet.de/muschg_2018/__3.html"
+  - title: "社会法典第5編第24i条：出産手当（1日最大13ユーロ）"
+    url: "https://www.gesetze-im-internet.de/sgb_5/__24i.html"
+  - title: "育児給付・育児休業法第16条：育休の通知期限"
+    url: "https://www.gesetze-im-internet.de/beeg/__16.html"
+  - title: "育児給付・育児休業法第1条：育児給付の受給資格と所得上限"
+    url: "https://www.gesetze-im-internet.de/beeg/__1.html"
+  - title: "連邦共同委員会（G-BA）：予防接種指針"
+    url: "https://www.g-ba.de/richtlinien/60/"
 related_articles: ["birth-day-germany","birth-procedures-germany","elterngeld-guide-germany","stroller-buying-guide-germany","kita-u3-tagesmutter-guide","health-insurance-guide"]
 ---
 
 # ドイツで妊娠・出産する日本人へ｜病院選び・産休・出生届を時期順に
 
-この記事は、ドイツで妊娠・出産を迎える日本人家庭が、妊娠判明から産後までの全体像を理解するためのガイドです。婦人科、助産師、出産施設、健康保険、職場、ドイツと日本の出生届がそれぞれ何を担うかを説明します。母体と赤ちゃんの安全を中心に、家族が必要な時期に必要な相手へつながるために使ってください。
+この記事は、ドイツで妊娠・出産を迎える日本人家庭が、妊娠判明から産後までの全体像を理解するためのガイドです。婦人科、助産師、出産施設、健康保険、職場、ドイツと日本の出生届がそれぞれ何を担うかを説明します。母体と赤ちゃんの安全を中心に、家族が必要な時期に必要な相手へつながるために使ってください。2026年にデュッセルドルフ近郊で出産準備をしたJ-Connect編集部メンバーの記録（出産予定日の証明の提出、家族の予防接種、日本語の両親学級）も、実例として載せています。
+
+## まず結論
+
+- 何を：妊娠が分かったら婦人科を予約し、助産師、出産する病院を順に決める。出産予定日の証明（Muster 3）が出たら、健康保険者と勤務先に出す。
+- いつまでに：産前の保護期間は出産予定日の**6週間前**から、産後は**8週間**（母性保護法第3条）。育児休業は始める**7週間前**までに勤務先へ書面で通知する。赤ちゃんと同居する家族の百日咳の予防接種は、出産の**4週間前**までが目安。
+- どこで：婦人科（妊婦健診）、助産師（妊娠中と産後）、出産施設、健康保険者、勤務先。家族の予防接種はかかりつけ医（Hausarzt）。
+- 費用：公的保険に本人として加入している会社員は、保護期間中に保険者から1日最大13ユーロの出産手当を受け、手取りとの差を勤務先が補う（社会法典第5編第24i条）。
 
 ## 今の時期から、次にすることを選ぶ
 
@@ -28,6 +47,26 @@ related_articles: ["birth-day-germany","birth-procedures-germany","elterngeld-gu
 | 陣痛・破水から出産当日 | 連絡先、医療者の指示、付き添いの役割 | [出産当日ガイド](/germany/ja/living/birth-day-germany/) |
 | 出生直後から | 退院後の健診、出生証明書、子の保険、給付、日本の出生届 | [出産後の手続きガイド](/germany/ja/living/birth-procedures-germany/) |
 | 保育と復職を考えたら | 開始希望日、必要時間、自治体への申込み | [保育園・U3申込みガイド](/germany/ja/living/kita-u3-tagesmutter-guide/) |
+
+## あなたはどのケース？
+
+| あなたの状況 | 違うところ | 確認すること |
+| --- | --- | --- |
+| 公的保険に本人として加入する会社員 | 出産手当は保険者から、差額は勤務先から | 出産予定日の証明を保険者と勤務先の両方に出す |
+| 家族加入・民間保険・自営業・ミニジョブ | 出産手当の仕組みが違う。自営業は所得保障が自動で付かないことがある | 加入先に、産前産後の所得保障を妊娠初期に確認 |
+| 駐在（日本の社会保険を継続） | ドイツの出産手当ではなく、日本側の制度の対象になる場合がある | 勤務先の人事と日本の健康保険組合に確認 |
+| 配偶者が外国籍 | 出生届で、配偶者の国の書類の原本・翻訳・認証が要る | [ドイツ出産の手続き完全ガイド](/germany/ja/living/birth-procedures-germany/)の国際結婚の項目 |
+| 日本語で出産準備をしたい | 日本語の両親学級は数が少なく、中止になることもある | ドイツ語の講座やオンラインの日本語講座も候補にしておく |
+
+## 手順
+
+1. 妊娠が分かったら：婦人科を予約し、妊婦健診の記録（Mutterpass）を受け取る。健康保険の範囲を確認する。
+2. 妊娠初期〜中期：産後に来てもらう助産師を探す。都市部では早く埋まるため、妊娠が分かったら探し始める。
+3. 妊娠中期：出産する病院を選び、必要なら事前登録する。勤務先に妊娠と予定日を伝える。
+4. 出産予定日の証明が出たら：婦人科や助産師が出す出産予定日の証明（Muster 3）を、健康保険者へ出産手当の申請として出し、勤務先にも写しを出す。
+5. 出産の4週間前まで：赤ちゃんと暮らす家族で、最後の百日咳の予防接種から10年以上たっている人は、かかりつけ医で接種する（G-BAの予防接種指針）。
+6. 出産前：両親学級、出産時の持ち物、退院時のチャイルドシート、親の書類（出生届用）を準備する。
+7. 出産後：出生届、子の健康保険、育児給付、児童手当、日本の出生届（3か月以内）を家族で分担して進める。
 
 医療と書類の担当を分け、各記事は必要な段階で開いてください。[家族・子育ての案内ページ](/germany/ja/living/routes/family/)からも時期別に選べます。
 
@@ -159,19 +198,63 @@ related_articles: ["birth-day-germany","birth-procedures-germany","elterngeld-gu
 
 保育先をすぐ決める必要はありませんが、復職予定がある家庭は、居住自治体の申込時期だけ妊娠中に確認しておきましょう。施設保育と家庭的保育の違い、子どもの慣らし方は[ドイツの保育先探し](/germany/ja/living/kita-u3-tagesmutter-guide/)で説明しています。
 
-医療や子育てで使うドイツ語は本文に混ぜず、[子育てで使うドイツ語](/germany/ja/learn-german/parenting-phrases/)に分けています。
+このあとの「そのまま使えるドイツ語」に、助産師探しと予防接種の予約で使う文を載せています。ほかの場面の言い回しは[子育てで使うドイツ語](/germany/ja/learn-german/parenting-phrases/)にまとめています。
+
+## 落とし穴
+
+- 助産師を探し始めるのが遅い：産後の訪問をしてくれる助産師は、地域によって早く埋まる。妊娠が分かったら探し始める。
+- 出産予定日の証明を片方にしか出さない：出産手当は保険者、差額の補てんは勤務先が払う。証明は両方に必要になる。
+- 家族の予防接種をどこで受けるか分からない：父親など家族の接種は婦人科ではなく、自分のかかりつけ医で受ける。百日咳は出産の4週間前までが目安なので、予約が遅れると間に合わない。
+- 日本語の講座だけに頼る：日本語の両親学級は参加者が集まらず中止になることがある。早めに申し込み、代わりの講座も決めておく。
+- 日本国籍の留保を忘れる：子が出生で外国籍も得る場合、日本の出生届で3か月以内に留保しないと日本国籍を失う。
+
+## そのまま使えるドイツ語
+
+| 場面 | ドイツ語 | 日本語 |
+| --- | --- | --- |
+| かかりつけ医で接種を予約する | Guten Tag, meine Frau ist schwanger. Ich möchte mich gegen Keuchhusten und Grippe impfen lassen. Kann ich einen Termin bekommen? | こんにちは、妻が妊娠しています。百日咳とインフルエンザの予防接種を受けたいです。予約できますか。 |
+| 保険者に証明を送る | Anbei sende ich Ihnen das Zeugnis über den mutmaßlichen Tag der Entbindung für den Antrag auf Mutterschaftsgeld. | 出産手当の申請のため、出産予定日の証明を添付します。 |
+| 両親学級を聞く | Gibt es noch freie Plätze im Geburtsvorbereitungskurs für Paare? | カップル向けの出産準備クラスに、まだ空きはありますか。 |
+
+助産師への問い合わせメール：
+
+> 件名：Anfrage Wochenbettbetreuung – ET [Datum]
+> Sehr geehrte Frau [Name],
+> ich bin in der [Zahl]. Schwangerschaftswoche, der errechnete Geburtstermin ist der [Datum]. Wir wohnen in [Stadtteil/PLZ].
+> Hätten Sie Kapazität für die Wochenbettbetreuung nach der Geburt? Ich spreche Japanisch und etwas Deutsch/Englisch.
+> Mit freundlichen Grüßen
+> [Name]
+
+和訳：件名「産後ケアの問い合わせ（出産予定日〇月〇日）」。妊娠〇週で、出産予定日は〇月〇日です。〇〇（地区・郵便番号）に住んでいます。出産後の産褥期のケアをお願いできる余裕はありますか。日本語と、少しドイツ語・英語を話します。
+
+## 在住者の実例
+
+J-Connect編集部メンバーの実例（2026年、デュッセルドルフ近郊）。
+
+| したこと | 結果・回答 |
+| --- | --- |
+| 出産予定日の証明（Muster 3） | 婦人科で受け取り、保険者に出産手当の申請として提出した |
+| 家族の予防接種 | 出産前に、父親が百日咳とインフルエンザの予防接種をかかりつけ医（Hausarzt）で受けた |
+| 日本語の両親学級 | 申し込んだ日本語の出産準備コースが中止になった |
+
+G-BAの予防接種指針（2026年10月29日施行版）では、新生児と同居する家族の百日咳の接種が明記されています。インフルエンザは妊婦本人への接種が明記されている一方、新生児の家族は明記されていないため、保険でカバーされるかは保険者や医師に確認してください。
 
 ## まとめ
 
 ドイツの妊娠・出産では、婦人科、助産師、出産施設が異なる役割を持ち、医療、仕事、行政の手続きが並行します。妊娠初期に三者への入口を作り、出産前に職場と所得保障を整理し、産後はドイツと日本の出生届を家族で分担するのが全体の流れです。制度を完璧に覚えるより、体調の変化を相談できる相手と、期限のある届出を見失わない仕組みを持つことが大切です。
 
-## 公式情報
+## 公式情報・参考ソース
 
-- [ドイツ連邦家族ポータル：産前産後の保護](https://familienportal.de/familienportal/familienleistungen/mutterschutz)
-- [ドイツ連邦家族ポータル：出産手当](https://familienportal.de/familienportal/familienleistungen/mutterschaftsleistungen)
-- [ドイツ連邦家族ポータル：育児休業の通知](https://familienportal.de/familienportal/familienleistungen/elternzeit/faq/wann-und-wie-muss-ich-elternzeit-beantragen--124810)
-- [ドイツ連邦家族ポータル：育児給付の申請](https://familienportal.de/familienportal/familienleistungen/elterngeld/faq/wie-kann-ich-elterngeld-beantragen--124762)
-- [ドイツ連邦家族ポータル：出生登録](https://familienportal.de/familienportal/lebenslagen/schwangerschaft-geburt/anmeldung-standesamt)
-- [在ドイツ日本国大使館：出生届](https://www.de.emb-japan.go.jp/itpr_ja/konsular_koseki04.html)
-- [BIÖG：U2健診と退院後の予約](https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u2-untersuchung/)
-- [BIÖG：U3健診](https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u3-untersuchung/)
+- [母性保護法第3条：産前6週・産後8週の保護期間](https://www.gesetze-im-internet.de/muschg_2018/__3.html)（2026年11月14日確認）
+- [社会法典第5編第24i条：出産手当、1日最大13ユーロ、出産予定日の証明](https://www.gesetze-im-internet.de/sgb_5/__24i.html)（2026年11月14日確認）
+- [育児給付・育児休業法第16条：育休は7週間前・13週間前までに書面で通知](https://www.gesetze-im-internet.de/beeg/__16.html)（2026年11月14日確認）
+- [育児給付・育児休業法第1条第8項：課税所得17万5,000ユーロ超は対象外](https://www.gesetze-im-internet.de/beeg/__1.html)（2026年11月14日確認）
+- [G-BA 予防接種指針（2026年10月29日施行）](https://www.g-ba.de/richtlinien/60/)：妊婦の百日咳・インフルエンザ、新生児の家族の百日咳（2026年11月14日確認）
+- [連邦家族ポータル：産前産後の保護](https://familienportal.de/familienportal/familienleistungen/mutterschutz)（2026年11月14日はこの環境から開けず未確認）
+- [ドイツ連邦家族ポータル：出産手当](https://familienportal.de/familienportal/familienleistungen/mutterschaftsleistungen)（2026年11月14日はこの環境から開けず未確認）
+- [ドイツ連邦家族ポータル：育児休業の通知](https://familienportal.de/familienportal/familienleistungen/elternzeit/faq/wann-und-wie-muss-ich-elternzeit-beantragen--124810)（2026年11月14日はこの環境から開けず未確認）
+- [ドイツ連邦家族ポータル：育児給付の申請](https://familienportal.de/familienportal/familienleistungen/elterngeld/faq/wie-kann-ich-elterngeld-beantragen--124762)（2026年11月14日はこの環境から開けず未確認）
+- [ドイツ連邦家族ポータル：出生登録](https://familienportal.de/familienportal/lebenslagen/schwangerschaft-geburt/anmeldung-standesamt)（2026年11月14日はこの環境から開けず未確認）
+- [在ドイツ日本国大使館：出生届](https://www.de.emb-japan.go.jp/itpr_ja/konsular_koseki04.html)（2026年11月14日はこの環境から開けず未確認）
+- [BIÖG：U2健診と退院後の予約](https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u2-untersuchung/)（2026年11月14日はこの環境から開けず未確認）
+- [BIÖG：U3健診](https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u3-untersuchung/)（2026年11月14日はこの環境から開けず未確認）

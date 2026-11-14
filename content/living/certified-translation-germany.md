@@ -38,7 +38,7 @@ official_sources:
 - どこで：州の司法当局の検索サイトで、言語と地域から翻訳者を探す。NRW州では、翻訳者の認定は上級地方裁判所（OLG）の長が行う。
 - 費用と期間：料金は翻訳者ごとに違う。2〜3人に見積もりを頼み、納期とスキャン受付の可否もあわせて比べる。
 
-![机の上で書類とパスポートを確認するイメージ](/assets/images/living/japanese-resident-paperwork-editorial-v1.webp "AI生成の編集イメージ。実在の人物・書類を示すものではありません。")
+![翻訳者の資格、原本かコピーか、認証の要否の3点を、翻訳を頼む前に提出先へ確認することを示した図](/assets/images/living/certified-translation-questions.svg "翻訳を頼む前に、提出先へ聞く3つのこと")
 
 ## あなたはどのケース？
 

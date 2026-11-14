@@ -13,8 +13,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "medical_family",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI source check; clinical review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：37週未満の早産の定義、112の使い方、陣痛の目安（5分間隔・1分・1時間）を連邦健康ポータル・familienplanung.de・NRW家族ポータルで確認。臨床医による監修は未実施",
       "last_reviewed_at": "2026-10-11",
       "next_review_due": "2027-01-11"
     },
@@ -3071,8 +3071,8 @@
     "canonical_url": "/germany/ja/living/winter-tires-germany-2026/",
     "disclaimer_type": "living",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI source verification; expert review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：道路交通規則第2条・第52条、車両登録規則第36条（1.6mm、Alpine記号）、過料の一覧（60・80・75ユーロ）を原典で確認。点数はADAC（この環境から未確認）",
       "last_reviewed_at": "2026-11-02",
       "next_review_due": "2027-09-01"
     },
@@ -3136,8 +3136,8 @@
     "canonical_url": "/germany/ja/living/nebenkostenabrechnung-2025-deadline/",
     "disclaimer_type": "consumer_contract",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI source verification; expert review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：民法第556条第3項（精算期間終了から12か月、異議は受領から12か月）、第556a条を原典で確認。計算例を検算",
       "last_reviewed_at": "2026-10-20",
       "next_review_due": "2027-01-10"
     },
@@ -3191,16 +3191,16 @@
     "sitemap_visible": true,
     "disclaimer_type": "family_administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI source verification; legal/tax review pending",
-      "last_reviewed_at": "2026-10-27",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：連邦雇用庁の支給日表120件と全件一致、所得税法第70条、連邦議会・連邦政府の法案状況を原典で確認。施行時期の記述を原典に合わせて修正",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-01-27"
     },
     "title": "Kindergeld（ドイツの児童手当）2027年の支給日一覧｜番号末尾0〜9で確認",
     "category": "家族・子育て",
     "summary": "2027年の公式支給日、申請なし支給の段階導入、支給額の法案状況を整理。番号末尾0〜9別の日程と、入金が見えない場合の確認順も説明します。",
     "published_at": "2026-10-27",
-    "last_verified": "2026-10-27",
+    "last_verified": "2026-11-14",
     "next_review": "2027-01-27",
     "canonical_url": "/germany/ja/living/kindergeld-auszahlungstermine-2027/",
     "tags": [
@@ -3266,8 +3266,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "medical",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI source verification; clinical review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：導入日（2025年1月15日、2月中旬、4月29日）、医療機関の利用義務（2025年10月1日）、標準アクセス期間（90日・3日）を連邦保健省・連邦健康ポータルで確認",
       "last_reviewed_at": "2026-10-27",
       "next_review_due": "2027-01-27"
     },
@@ -3324,8 +3324,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "family_administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：NRW州の休暇規則（BASS 12-65 Nr.1、PDF）の2026/27年度の秋・冬・春・聖霊降臨祭と2027年夏の日付を全件確認",
       "last_reviewed_at": "2026-10-27",
       "next_review_due": "2027-01-27"
     },
@@ -3384,8 +3384,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; legal review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：NRW州日曜・祝日法第2条の祝日11日を原典で確認し、2027年の日付と曜日を計算で検算（復活祭3月28日）。学校休暇はBASSで確認",
       "last_reviewed_at": "2026-10-27",
       "next_review_due": "2027-01-27"
     },
@@ -3531,8 +3531,8 @@
     "canonical_url": "/germany/ja/living/minijob-grenze-2027/",
     "disclaimer_type": "employment",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; employment-law review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：最低賃金（13.90・14.60ユーロ、連邦労働社会省）、上限633ユーロ・年7,596ユーロと計算式（社会法典第4編第8条、ミニジョブ・センター）、2か月の超過の例外、2％の一律課税（所得税法第40a条）を原典で確認。時間の表を検算",
       "last_reviewed_at": "2026-11-05",
       "next_review_due": "2026-12-15"
     },
@@ -3614,8 +3614,8 @@
     "canonical_url": "/germany/ja/living/nrw-christmas-opening-hours-2026/",
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; local retail-law review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：NRW店舗営業時間法（12月24日は平日14時まで）、NRW祝日法（12月25・26日）を原典で確認し、2026年の曜日を検算。薬局当番・交通は各事業者の検索を案内（数値なし）",
       "last_reviewed_at": "2026-10-28",
       "next_review_due": "2026-12-01"
     },

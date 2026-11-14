@@ -1,10 +1,10 @@
 ---
 id: "L008"
-title: "ドイツで妊娠・出産｜医療、仕事、出生届の全体ガイド"
+title: "ドイツで妊娠・出産する日本人へ｜病院選び・産休・出生届を時期順に"
 slug: "pregnancy-birth-germany"
 category: "家族・子育て"
 tags: ["妊娠","出産","医療","助産師","産前産後保護","育児給付","出生届"]
-summary: "ドイツで妊娠・出産する日本人家庭向けに、婦人科、助産師、出産施設、健康保険、職場、出生届、育児給付、日本側の手続きを一つの流れで解説します。"
+summary: "ドイツで出産する日本人家庭向けに、妊娠が分かってから出産後までを時期順に整理。婦人科と助産師の探し方、出産施設、産前産後の休業と手当、ドイツと日本の出生届、育児給付をつなげて解説します。"
 status: "published"
 published: true
 published_at: "2026-06-12"
@@ -15,7 +15,7 @@ canonical_url: "/germany/ja/living/pregnancy-birth-germany/"
 related_articles: ["birth-day-germany","birth-procedures-germany","elterngeld-guide-germany","stroller-buying-guide-germany","kita-u3-tagesmutter-guide","health-insurance-guide"]
 ---
 
-# ドイツで妊娠・出産｜医療、仕事、出生届の全体ガイド
+# ドイツで妊娠・出産する日本人へ｜病院選び・産休・出生届を時期順に
 
 この記事は、ドイツで妊娠・出産を迎える日本人家庭が、妊娠判明から産後までの全体像を理解するためのガイドです。婦人科、助産師、出産施設、健康保険、職場、ドイツと日本の出生届がそれぞれ何を担うかを説明します。母体と赤ちゃんの安全を中心に、家族が必要な時期に必要な相手へつながるために使ってください。
 

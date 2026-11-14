@@ -1,10 +1,10 @@
 ---
 id: "L005"
-title: "SCHUFAの取得方法｜賃貸用証明・無料データ・新スコア"
+title: "SCHUFAの取り方｜賃貸に出す証明と無料データの違い・履歴がないとき"
 slug: "schufa-guide"
 category: "住まい"
 tags: ["信用情報", "SCHUFA", "賃貸", "個人情報", "家探し"]
-summary: "SCHUFAの取得方法と書類の選び方を日本語で解説。賃貸提出用の信用証明、無料データコピー、無料アカウント、2026年の新スコア、履歴がない場合の代替資料を整理します。"
+summary: "SCHUFAの書類は目的で選びます。家主に出す有料の信用証明、無料のデータコピー、無料アカウントの違いと取り方、ドイツに来たばかりで履歴がないときの代わりの資料を日本語で整理します。"
 status: "published"
 published: true
 published_at: "2026-03-10"
@@ -25,7 +25,7 @@ official_sources:
     url: "https://datenschutz.hessen.de/sites/datenschutz.hessen.de/files/2026-06/oh_einholung_von_selbstauskuenften_mietinteressenten_01_2026.pdf"
 ---
 
-# SCHUFAの取得方法｜賃貸用証明・無料データ・新スコア
+# SCHUFAの取り方｜賃貸に出す証明と無料データの違い・履歴がないとき
 
 ドイツで部屋を借りたり、後払い・クレジットを申し込んだりすると、信用情報の確認を求められることがあります。この記事は、ドイツへ来たばかりの人が、どの書類を誰へ渡すのかを混同せず、必要以上の個人情報を開示しないための案内です。読み終えると、賃貸提出用の証明と、自分の登録内容を確認する無料データの違いが分かります。
 

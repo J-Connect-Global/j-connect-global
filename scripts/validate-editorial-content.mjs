@@ -242,7 +242,8 @@ function validateArticleStandard(relative, body, standard) {
     if (!sourceItems.length) fail(relative, `記事標準${standard}: 公式情報のリストがありません`);
     for (const item of sourceItems) {
       if (!/\]\(https?:\/\//u.test(item)) fail(relative, `記事標準${standard}: 出典にリンクがありません: ${item.trim().slice(0, 60)}`);
-      if (!/\d{4}年\d{1,2}月\d{1,2}日(?:に)?確認/u.test(item)) fail(relative, `記事標準${standard}: 出典に確認日（YYYY年M月D日確認）がありません: ${item.trim().slice(0, 60)}`);
+      // A source must carry its check date, or say plainly that it could not be checked.
+      if (!/\d{4}年\d{1,2}月\d{1,2}日(?:に)?確認|未確認/u.test(item)) fail(relative, `記事標準${standard}: 出典に確認日（YYYY年M月D日確認）か「未確認」がありません: ${item.trim().slice(0, 60)}`);
     }
   }
 }

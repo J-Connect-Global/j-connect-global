@@ -2772,7 +2772,7 @@
       "パスポート",
       "NRW"
     ],
-    "updated_at": "2026-11-06",
+    "updated_at": "2026-11-14",
     "related_articles": [
       "pregnancy-birth-germany",
       "elterngeld-guide-germany",
@@ -6365,5 +6365,138 @@
     "image_alt": "住宅、賃貸契約書、電卓とコインを組み合わせた住宅手当のイラスト",
     "image_caption": "住宅手当の申請と住宅費の確認をイメージしたJ-Connectオリジナル図",
     "image_credit": "J-Connect Global制作（2026年11月4日）"
+  },
+  {
+    "id": "L110",
+    "slug": "birth-registration-foreign-spouse-germany",
+    "url": "/germany/ja/living/birth-registration-foreign-spouse-germany/",
+    "markdown_path": "/content/living/birth-registration-foreign-spouse-germany.md",
+    "published": false,
+    "status": "draft",
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "disclaimer_type": "family_administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; editorial review pending",
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2027-02-14"
+    },
+    "title": "外国籍の配偶者がいる場合の出生届（ドイツ）｜必要書類・認定翻訳・アポスティーユの要否【2026年 編集部の記録】",
+    "category": "家族・子育て",
+    "summary": "配偶者が外国籍の家庭がドイツで出生届を出すときの準備を、2026年に編集部が戸籍登録所と約10往復したやり取りをもとに整理。外国の証明は原本、翻訳は裁判所認定の翻訳者、アポスティーユの要否は書類ごとに確認、日本側は3か月以内の出生届と国籍留保が必要です。",
+    "published_at": "",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
+    "next_review": "2027-02-14",
+    "canonical_url": "/germany/ja/living/birth-registration-foreign-spouse-germany/",
+    "tags": [
+      "出生届",
+      "国際結婚",
+      "外国籍の配偶者",
+      "認定翻訳",
+      "アポスティーユ",
+      "国籍留保",
+      "出産"
+    ],
+    "related_articles": [
+      "birth-procedures-germany",
+      "certified-translation-germany",
+      "pregnancy-birth-germany",
+      "kita-u3-tagesmutter-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "戸籍法（Personenstandsgesetz）第18〜20条：出生の届出",
+        "url": "https://www.gesetze-im-internet.de/pstg/__18.html"
+      },
+      {
+        "title": "戸籍法施行令（Personenstandsverordnung）第33条：出生届の添付書類",
+        "url": "https://www.gesetze-im-internet.de/pstv/__33.html"
+      },
+      {
+        "title": "戸籍法施行令第2条：外国語の書類の翻訳",
+        "url": "https://www.gesetze-im-internet.de/pstv/__2.html"
+      },
+      {
+        "title": "国籍法（StAG）第4条：出生によるドイツ国籍の取得",
+        "url": "https://www.gesetze-im-internet.de/stag/__4.html"
+      },
+      {
+        "title": "NRW州司法：通訳・翻訳者の認定と検索",
+        "url": "https://www.justiz.nrw/Gerichte_Behoerden/anschriften/dolmetscher__u_uebersetzer"
+      },
+      {
+        "title": "在デュッセルドルフ日本国総領事館：出生届",
+        "url": "https://www.dus.emb-japan.go.jp/itpr_ja/konsular_koseki_04.html"
+      }
+    ],
+    "image_url": "/assets/images/living/birth-procedures-germany.webp",
+    "image_alt": "赤ちゃんの衣類と靴下、書類を入れるフォルダーを机に並べた出産手続きのイメージ"
+  },
+  {
+    "id": "L111",
+    "slug": "certified-translation-germany",
+    "url": "/germany/ja/living/certified-translation-germany/",
+    "markdown_path": "/content/living/certified-translation-germany.md",
+    "published": false,
+    "status": "draft",
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; editorial review pending",
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2027-02-14"
+    },
+    "title": "ドイツで認定翻訳（beglaubigte Übersetzung）を頼む｜翻訳者の探し方・見積もり依頼のメール文例【2026年 編集部の記録】",
+    "category": "役所・滞在",
+    "summary": "出生届や住民登録、滞在許可で外国語の書類を出すとき、ドイツでは裁判所に認定された翻訳者の訳を求められることがあります。翻訳者の探し方、見積もりで聞くこと、そのまま使えるドイツ語の依頼メールを、2026年に編集部が複数の翻訳者に依頼した記録をもとに整理します。",
+    "published_at": "",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
+    "next_review": "2027-05-14",
+    "canonical_url": "/germany/ja/living/certified-translation-germany/",
+    "tags": [
+      "認定翻訳",
+      "翻訳",
+      "公的書類",
+      "出生届",
+      "アポスティーユ",
+      "手続き"
+    ],
+    "related_articles": [
+      "birth-registration-foreign-spouse-germany",
+      "birth-procedures-germany",
+      "anmeldung-guide",
+      "residence-permit-renewal-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "民事訴訟法第142条第3項：認定翻訳者の翻訳と証明文",
+        "url": "https://www.gesetze-im-internet.de/zpo/__142.html"
+      },
+      {
+        "title": "戸籍法施行令第2条：戸籍登録所に出す外国語書類の翻訳",
+        "url": "https://www.gesetze-im-internet.de/pstv/__2.html"
+      },
+      {
+        "title": "NRW州司法：通訳・翻訳者",
+        "url": "https://www.justiz.nrw/Gerichte_Behoerden/anschriften/dolmetscher__u_uebersetzer"
+      },
+      {
+        "title": "州司法当局の通訳・翻訳者データベース",
+        "url": "https://www.justiz-dolmetscher.de/"
+      }
+    ],
+    "image_url": "/assets/images/living/japanese-resident-paperwork-editorial-v1.webp",
+    "image_alt": "机の上で書類とパスポートを確認するイメージ"
   }
 ]

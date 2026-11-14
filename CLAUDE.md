@@ -1,4 +1,4 @@
-大事な判断の前は、必ず advisor に相談して
+大事な判断の前は、必ず advisor に相談して（advisor は `/advisor fable` で設定したもの）
 返答は日本語で書く
 ユーザー本人のマシンは Windows。本人が手元で実行するコマンドは bash ではなく PowerShell 向けに書く（cmd では `mkdir -p` や `~` が使えない）
 日本語を含むファイルの書き込みは UTF-8（BOM なし）で行う

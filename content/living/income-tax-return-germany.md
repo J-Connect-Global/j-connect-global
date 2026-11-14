@@ -7,7 +7,8 @@ summary: "ドイツで働く会社員が確定申告を出す義務があるか�
 status: "published"
 published: true
 published_at: "2026-11-05"
-updated_at: "2026-11-06"
+updated_at: "2026-11-14"
+article_standard: "2026-11"
 last_verified: "2026-11-05"
 next_review: "2027-03-01"
 canonical_url: "/germany/ja/living/income-tax-return-germany/"
@@ -62,6 +63,16 @@ official_sources:
 給与だけの会社員の多くは「任意」です。それでも出す人が多いのは、毎月の天引きは「1年間同じ給与で働く」前提の概算なので、実際の事情を申告すると払いすぎた分が戻ることが多いからです。一方、申告の結果、追加で納税することになる場合もあります。
 
 ![2026年分の確定申告の時間軸。2027年1月から提出でき、義務の申告は2027年8月2日、税理士などに依頼した場合は2028年2月29日、任意の申告は2030年12月31日が期限であることを示す図](/assets/images/living/seo/tax-return-deadlines-2026.svg "図解：J-Connect。根拠：租税通則法第108条・第149条・第169条・第170条。2026年11月5日確認。")
+
+## あなたはどのケース？
+
+| あなたの状況 | 申告 | 気をつけること |
+| --- | --- | --- |
+| 給与だけの単身の会社員 | 多くは任意 | 通勤や在宅勤務の控除で戻ることが多い。4年以内なら後からでも出せる |
+| 夫婦で税区分3と5、または係数付きの4 | 義務 | 毎年2026年分なら2027年8月2日まで |
+| 育児給付・失業手当などを年410ユーロ超受けた | 義務 | 給付は非課税でも税率が上がり、追加の納税が出ることがある |
+| ドイツに来た年・日本に帰る年 | 日本の収入次第で義務 | 累進の留保。税理士への相談が安全 |
+| 申告で追加の納税が出た | — | 翌年から年4回の前払い（Vorauszahlung）を求められることがある。収入が減る年は調整を申請できる |
 
 ## 申告の義務があるのはどんな人？
 
@@ -129,7 +140,7 @@ official_sources:
 
 控除は「税金そのもの」ではなく「税金を計算する前の収入」から差し引くものが多いため、戻る金額は控除額×自分の税率になります。家事サービスと職人工事は例外で、税額から直接差し引かれます。どちらも請求書と銀行振込の記録が必要で、現金払いは対象外です。
 
-## ELSTERで出す流れ
+## 手順：ELSTERで出す流れ
 
 ドイツの税務当局は、無料のオンライン申告ポータル「ELSTER（エルスター）」を用意しています。紙の申告書も使えますが、給与以外の事業収入などがある人は、原則としてオンライン提出が義務です。
 
@@ -174,6 +185,43 @@ official_sources:
 
 2027年1月から提出できますが、勤務先の給与データや保険会社のデータが税務当局に届くのは、多くが2月末ごろです。データを読み込む場合は、3月以降に入力を始めると手間が減ります。
 
+## 落とし穴
+
+- 義務なのに任意だと思う：夫婦の税区分3・5の組み合わせや、育児給付・失業手当があった年は義務になる。期限を過ぎると加算金の対象（租税通則法第152条）。
+- ELSTERの登録を期限直前に始める：登録の確認コードが郵送で届くまで1〜2週間かかることがある。
+- 読み込んだデータを確かめない：勤務先や保険会社から読み込んだ数字を、手元の給与と税の証明書と照らし合わせる。
+- 通知の後半を読まない：税額決定通知には、翌年以降の前払いの額が書かれていることがある。異議は通知から1か月以内。
+- 収入が減った年に前払いを放っておく：育休や退職で収入が下がるなら、前払いの調整（引き下げ）を申請できる。申請しないと払いすぎになり、戻るのは翌年の申告の後。
+
+## そのまま使えるドイツ語
+
+| 場面 | ドイツ語 | 日本語 |
+| --- | --- | --- |
+| 勤務先に証明書を頼む | Könnten Sie mir bitte meine Lohnsteuerbescheinigung für [Jahr] schicken? | 〇年の給与と税の証明書を送っていただけますか。 |
+| 税務署に電話で | Guten Tag, ich habe eine Frage zu meinem Steuerbescheid für [Jahr]. Meine Steuernummer ist [Nummer]. | こんにちは、〇年の税額決定通知について質問があります。税番号は〇〇です。 |
+| 前払いの調整を頼む | Ich beantrage die Herabsetzung der Vorauszahlungen, da mein Einkommen wegen Elternzeit sinkt. | 育児休業で収入が減るため、前払いの引き下げを申請します。 |
+
+税額決定通知への異議（ELSTERの異議フォームや手紙）：
+
+> 件名：Einspruch gegen den Einkommensteuerbescheid [Jahr] vom [Datum], Steuernummer [Nummer]
+> Sehr geehrte Damen und Herren,
+> hiermit lege ich Einspruch gegen den oben genannten Bescheid ein.
+> Begründung: Die Werbungskosten für [z. B. Arbeitsmittel] in Höhe von [Betrag] Euro wurden nicht berücksichtigt. Belege füge ich bei.
+> Mit freundlichen Grüßen
+> [Name]
+
+和訳：件名「〇年の所得税の税額決定通知（〇日付、税番号〇〇）への異議」。上記の通知に異議を申し立てます。理由：〔例：仕事の道具〕の必要経費〇ユーロが認められていません。領収書を添付します。
+
+## 在住者の実例
+
+J-Connect編集部メンバーの実例（2026年、デュッセルドルフ近郊）。
+
+| したこと | 結果 |
+| --- | --- |
+| 所得税の前払いの調整 | ELSTERから、前払いの調整を申請した |
+
+前払いのしくみと申請の手順は、編集部の記録をもとに別の記事で詳しく準備しています。
+
 ## 関連記事
 
 - [ドイツの税務識別番号・税務署番号・給与税区分の違い](/germany/ja/living/tax-id-steuernummer-steuerklasse/)
@@ -183,18 +231,18 @@ official_sources:
 
 ## 公式情報・参考ソース
 
-- [所得税法第46条：給与所得者に申告義務が生じる条件](https://www.gesetze-im-internet.de/estg/__46.html)
-- [租税通則法第149条：申告書の提出期限](https://www.gesetze-im-internet.de/ao_1977/__149.html)
-- [租税通則法第108条：期限が土日・祝日に当たる場合](https://www.gesetze-im-internet.de/ao_1977/__108.html)
-- [租税通則法第152条：期限後の提出に対する加算金](https://www.gesetze-im-internet.de/ao_1977/__152.html)
-- [租税通則法第169条：課税を確定できる期間](https://www.gesetze-im-internet.de/ao_1977/__169.html)
-- [租税通則法第355条：異議申立ての期間](https://www.gesetze-im-internet.de/ao_1977/__355.html)
-- [所得税法第9条：通勤費の控除](https://www.gesetze-im-internet.de/estg/__9.html)
-- [所得税法第9a条：給与所得者の概算控除](https://www.gesetze-im-internet.de/estg/__9a.html)
-- [所得税法第4条：在宅勤務の控除（第5項第6c号）](https://www.gesetze-im-internet.de/estg/__4.html)
-- [所得税法第32b条：累進の留保](https://www.gesetze-im-internet.de/estg/__32b.html)
-- [所得税法第35a条：家事サービス・職人工事の税額控除](https://www.gesetze-im-internet.de/estg/__35a.html)
-- [ELSTER：オンライン申告ポータル](https://www.elster.de/eportal/start)
-- [消費者センター：確定申告は誰がいつ出すのか](https://www.verbraucherzentrale.de/wissen/geld-versicherungen/sparen-und-anlegen/steuererklaerung-wer-sie-wann-beim-finanzamt-abgeben-muss-24899)
+- [所得税法第46条：給与所得者に申告義務が生じる条件](https://www.gesetze-im-internet.de/estg/__46.html)（2026年11月5日確認）
+- [租税通則法第149条：申告書の提出期限](https://www.gesetze-im-internet.de/ao_1977/__149.html)（2026年11月5日確認）
+- [租税通則法第108条：期限が土日・祝日に当たる場合](https://www.gesetze-im-internet.de/ao_1977/__108.html)（2026年11月5日確認）
+- [租税通則法第152条：期限後の提出に対する加算金](https://www.gesetze-im-internet.de/ao_1977/__152.html)（2026年11月5日確認）
+- [租税通則法第169条：課税を確定できる期間](https://www.gesetze-im-internet.de/ao_1977/__169.html)（2026年11月5日確認）
+- [租税通則法第355条：異議申立ての期間](https://www.gesetze-im-internet.de/ao_1977/__355.html)（2026年11月5日確認）
+- [所得税法第9条：通勤費の控除](https://www.gesetze-im-internet.de/estg/__9.html)（2026年11月5日確認）
+- [所得税法第9a条：給与所得者の概算控除](https://www.gesetze-im-internet.de/estg/__9a.html)（2026年11月5日確認）
+- [所得税法第4条：在宅勤務の控除（第5項第6c号）](https://www.gesetze-im-internet.de/estg/__4.html)（2026年11月5日確認）
+- [所得税法第32b条：累進の留保](https://www.gesetze-im-internet.de/estg/__32b.html)（2026年11月5日確認）
+- [所得税法第35a条：家事サービス・職人工事の税額控除](https://www.gesetze-im-internet.de/estg/__35a.html)（2026年11月5日確認）
+- [ELSTER：オンライン申告ポータル](https://www.elster.de/eportal/start)（2026年11月5日確認）
+- [消費者センター：確定申告は誰がいつ出すのか](https://www.verbraucherzentrale.de/wissen/geld-versicherungen/sparen-und-anlegen/steuererklaerung-wer-sie-wann-beim-finanzamt-abgeben-muss-24899)（2026年11月5日確認）
 
 **参照日：2026年11月5日。** 金額・期限は2026年分の法律に基づきます。税制は毎年のように改正されるため、申告前に最新の情報を確認してください。この記事は一般的な情報で、個別の税務相談ではありません。

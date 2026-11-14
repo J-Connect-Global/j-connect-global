@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d"><title id="t">前払い税の納期は年4回</title><desc id="d">所得税の前払いの納期が3月10日、6月10日、9月10日、12月10日の年4回であること、年400ユーロ以上かつ1回100ユーロ以上の場合に決まることを示した図</desc><rect width="1200" height="675" rx="28" fill="#eef5fb"/><g font-family="Noto Sans CJK JP, Noto Sans JP, sans-serif">
+<text x="60" y="90" font-size="40" font-weight="700" fill="#153452">前払い税の納期は年4回</text>
+<text x="60" y="135" font-size="24" fill="#3c5a78">毎年同じ日。土日・祝日の場合の扱いは通知で確認します</text>
+<rect x="60" y="190" width="255" height="400" rx="18" fill="#ffffff" stroke="#9cb9d6" stroke-width="2"/>
+<circle cx="100" cy="238" r="24" fill="#1f5f99"/><text x="100" y="247" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text x="80" y="302" font-size="22" font-weight="700" fill="#153452">3月10日</text>
+<text x="80" y="370" font-size="20" fill="#2b4560">1〜3月分。前の年</text>
+<text x="80" y="400" font-size="20" fill="#2b4560">の申告の結果をもと</text>
+<text x="80" y="430" font-size="20" fill="#2b4560">に決まった額を払う</text>
+<rect x="335" y="190" width="255" height="400" rx="18" fill="#ffffff" stroke="#9cb9d6" stroke-width="2"/>
+<circle cx="375" cy="238" r="24" fill="#1f5f99"/><text x="375" y="247" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<text x="355" y="302" font-size="22" font-weight="700" fill="#153452">6月10日</text>
+<text x="355" y="370" font-size="20" fill="#2b4560">4〜6月分。収入が</text>
+<text x="355" y="400" font-size="20" fill="#2b4560">変わったら、この前</text>
+<text x="355" y="430" font-size="20" fill="#2b4560">に調整を申請してお</text>
+<text x="355" y="460" font-size="20" fill="#2b4560">く</text>
+<rect x="610" y="190" width="255" height="400" rx="18" fill="#ffffff" stroke="#9cb9d6" stroke-width="2"/>
+<circle cx="650" cy="238" r="24" fill="#1f5f99"/><text x="650" y="247" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+<text x="630" y="302" font-size="22" font-weight="700" fill="#153452">9月10日</text>
+<text x="630" y="370" font-size="20" fill="#2b4560">7〜9月分。増額さ</text>
+<text x="630" y="400" font-size="20" fill="#2b4560">れた分は、通知から</text>
+<text x="630" y="430" font-size="20" fill="#2b4560">1か月以内に払う</text>
+<rect x="885" y="190" width="255" height="400" rx="18" fill="#ffffff" stroke="#9cb9d6" stroke-width="2"/>
+<circle cx="925" cy="238" r="24" fill="#1f5f99"/><text x="925" y="247" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+<text x="905" y="302" font-size="22" font-weight="700" fill="#153452">12月10日</text>
+<text x="905" y="370" font-size="20" fill="#2b4560">10〜12月分。前</text>
+<text x="905" y="400" font-size="20" fill="#2b4560">払いが決まるのは年</text>
+<text x="905" y="430" font-size="20" fill="#2b4560">400ユーロ以上、</text>
+<text x="905" y="460" font-size="20" fill="#2b4560">1回100ユーロ以</text>
+<text x="905" y="490" font-size="20" fill="#2b4560">上のとき</text>
+<text x="60" y="645" font-size="20" fill="#3c5a78">図解：J-Connect編集部。根拠：所得税法第37条第1項・第5項（2026年11月14日確認）。</text></g></svg>

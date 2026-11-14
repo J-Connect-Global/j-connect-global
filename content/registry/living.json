@@ -1894,8 +1894,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-10-17",
-    "last_verified": "2026-08-31",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "tags": [
       "妊娠",
       "出産",
@@ -1921,20 +1921,32 @@
     ],
     "official_sources": [
       {
-        "title": "Familienportal - Mutterschaftsleistungen",
-        "url": "https://familienportal.de/familienportal/familienleistungen/mutterschaftsleistungen"
+        "title": "母性保護法第3条：産前6週・産後8週の保護期間",
+        "url": "https://www.gesetze-im-internet.de/muschg_2018/__3.html"
       },
       {
-        "title": "Familienportal - Elterngeld",
-        "url": "https://familienportal.de/familienportal/familienleistungen/elterngeld"
+        "title": "社会法典第5編第24i条：出産手当（1日最大13ユーロ）",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__24i.html"
+      },
+      {
+        "title": "育児給付・育児休業法第16条：育休の通知期限",
+        "url": "https://www.gesetze-im-internet.de/beeg/__16.html"
+      },
+      {
+        "title": "育児給付・育児休業法第1条：育児給付の受給資格と所得上限",
+        "url": "https://www.gesetze-im-internet.de/beeg/__1.html"
+      },
+      {
+        "title": "連邦共同委員会（G-BA）：予防接種指針",
+        "url": "https://www.g-ba.de/richtlinien/60/"
       }
     ],
     "disclaimer_type": "medical_family",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-31",
-      "next_review_due": "2026-11-30"
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2027-02-14"
     }
   },
   {
@@ -6498,5 +6510,177 @@
     ],
     "image_url": "/assets/images/living/japanese-resident-paperwork-editorial-v1.webp",
     "image_alt": "机の上で書類とパスポートを確認するイメージ"
+  },
+  {
+    "id": "L112",
+    "slug": "income-tax-prepayment-germany",
+    "url": "/germany/ja/living/income-tax-prepayment-germany/",
+    "markdown_path": "/content/living/income-tax-prepayment-germany.md",
+    "published": false,
+    "status": "draft",
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "disclaimer_type": "tax",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; editorial review pending",
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2027-02-14"
+    },
+    "title": "会社員に前払い税（Vorauszahlung）の通知が来たら｜年4回の納期とELSTERで調整を申請する手順【2026年】",
+    "category": "お金・税金",
+    "summary": "給与から税金が引かれている会社員でも、確定申告で追加の納税が出ると、税務署から所得税の前払い（Vorauszahlung）を求められることがあります。3月・6月・9月・12月の各10日の納期、収入が減ったときにELSTERで調整を申請する流れ、そのまま使えるドイツ語を、2026年に編集部が申請した記録とともに整理します。",
+    "published_at": "",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
+    "next_review": "2027-05-14",
+    "canonical_url": "/germany/ja/living/income-tax-prepayment-germany/",
+    "tags": [
+      "税金",
+      "前払い",
+      "Vorauszahlung",
+      "ELSTER",
+      "確定申告",
+      "会社員"
+    ],
+    "related_articles": [
+      "income-tax-return-germany",
+      "tax-id-steuernummer-steuerklasse",
+      "elterngeld-guide-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "所得税法第37条：所得税の前払い",
+        "url": "https://www.gesetze-im-internet.de/estg/__37.html"
+      },
+      {
+        "title": "所得税法第46条：会社員の確定申告が必要な場合",
+        "url": "https://www.gesetze-im-internet.de/estg/__46.html"
+      },
+      {
+        "title": "所得税法第32b条：累進の留保（出産手当・育児給付など）",
+        "url": "https://www.gesetze-im-internet.de/estg/__32b.html"
+      },
+      {
+        "title": "ELSTER（税務オンライン申請）",
+        "url": "https://www.elster.de/"
+      }
+    ],
+    "image_url": "/assets/images/living/japanese-resident-paperwork-editorial-v1.webp",
+    "image_alt": "机の上で税務書類を確認するイメージ"
+  },
+  {
+    "id": "L113",
+    "slug": "dental-supplementary-insurance-germany",
+    "url": "/germany/ja/living/dental-supplementary-insurance-germany/",
+    "markdown_path": "/content/living/dental-supplementary-insurance-germany.md",
+    "published": false,
+    "status": "draft",
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "disclaimer_type": "medical_insurance",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; editorial review pending",
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2027-02-14"
+    },
+    "title": "ドイツの歯科補助保険で「契約前の治療」と言われたら｜不払いの理由の読み方と異議申立ての書き方【2026年 編集部の記録】",
+    "category": "医療・健康",
+    "summary": "公的保険を補う歯科補助保険（Zahnzusatzversicherung）は、契約前に始まった治療や勧められた治療を補償しないのが一般的です。2026年に編集部が「契約前の治療」を理由に不払いとされ、異議を申し立てた記録をもとに、加入前の注意点、通知の読み方、そのまま使えるドイツ語の異議文を整理します。",
+    "published_at": "",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
+    "next_review": "2027-05-14",
+    "canonical_url": "/germany/ja/living/dental-supplementary-insurance-germany/",
+    "tags": [
+      "歯医者",
+      "歯科補助保険",
+      "保険",
+      "不払い",
+      "異議申立て",
+      "医療"
+    ],
+    "related_articles": [
+      "dentist-germany-guide",
+      "health-insurance-guide",
+      "liability-household-insurance-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "保険契約法第197条：民間医療保険の待機期間の上限",
+        "url": "https://www.gesetze-im-internet.de/vvg_2008/__197.html"
+      },
+      {
+        "title": "保険契約法第19条：契約前の告知義務",
+        "url": "https://www.gesetze-im-internet.de/vvg_2008/__19.html"
+      },
+      {
+        "title": "民間医療・介護保険オンブズマン",
+        "url": "https://www.pkv-ombudsmann.de/"
+      }
+    ],
+    "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
+    "image_alt": "ドイツの診療所の受付で確認するイメージ"
+  },
+  {
+    "id": "L114",
+    "slug": "family-vaccination-before-birth-germany",
+    "url": "/germany/ja/living/family-vaccination-before-birth-germany/",
+    "markdown_path": "/content/living/family-vaccination-before-birth-germany.md",
+    "published": false,
+    "status": "draft",
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "disclaimer_type": "medical_family",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; editorial review pending",
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2027-02-14"
+    },
+    "title": "出産前に家族が受ける予防接種（ドイツ）｜父親はかかりつけ医で、百日咳は出産4週間前までに【2026年 編集部の記録】",
+    "category": "家族・子育て",
+    "summary": "生まれたばかりの赤ちゃんは百日咳にかかると重くなりやすく、ドイツでは同居する家族も出産の4週間前までに接種することが公的保険の予防接種指針に書かれています。父親はどこで受けるのか、何を受けるのか、予約のドイツ語を、2026年に編集部の父親がかかりつけ医で接種した記録とともに整理します。",
+    "published_at": "",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
+    "next_review": "2027-05-14",
+    "canonical_url": "/germany/ja/living/family-vaccination-before-birth-germany/",
+    "tags": [
+      "予防接種",
+      "百日咳",
+      "インフルエンザ",
+      "はしか",
+      "出産",
+      "かかりつけ医",
+      "父親"
+    ],
+    "related_articles": [
+      "pregnancy-birth-germany",
+      "doctor-appointment-germany",
+      "birth-procedures-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "連邦共同委員会（G-BA）：予防接種指針（2026年10月29日施行）",
+        "url": "https://www.g-ba.de/richtlinien/60/"
+      },
+      {
+        "title": "社会法典第5編第20i条：予防接種の給付",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__20i.html"
+      }
+    ],
+    "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
+    "image_alt": "ドイツの診療所の受付で予約を確認するイメージ"
   }
 ]

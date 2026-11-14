@@ -6513,8 +6513,8 @@
     "category": "お金・税金",
     "summary": "2026年11月20日から広がるドイツの消費者信用保護を解説。200ユーロ未満の小口ローン、短期・無利息の融資、後払い・分割払いの対象範囲と例外、契約前の確認点を整理します。",
     "published_at": "",
-    "updated_at": "2026-11-13",
-    "last_verified": "2026-11-13",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "tags": [
       "後払い",
       "分割払い",
@@ -6541,6 +6541,18 @@
       {
         "title": "EU指令2023/2225：消費者信用契約",
         "url": "https://eur-lex.europa.eu/eli/dir/2023/2225/oj"
+      },
+      {
+        "title": "ドイツ民法典第495条：消費者信用契約の撤回権",
+        "url": "https://www.gesetze-im-internet.de/bgb/__495.html"
+      },
+      {
+        "title": "ドイツ民法典第514条：無利息貸付の撤回権",
+        "url": "https://www.gesetze-im-internet.de/bgb/__514.html"
+      },
+      {
+        "title": "ドイツ民法典第355条：撤回期間の一般規定",
+        "url": "https://www.gesetze-im-internet.de/bgb/__355.html"
       }
     ],
     "image": "",

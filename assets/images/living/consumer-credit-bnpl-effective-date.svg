@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+<title id="t">2026年11月20日の消費者信用ルール施行時系列</title>
+<desc id="d">2026年5月18日の法律公布、11月19日までの旧ルール、11月20日からの新しい消費者信用規定の適用開始、既存契約の経過措置を示す時系列図。</desc>
+<rect width="1200" height="675" rx="28" fill="#eef5fb"/>
+<g font-family="Noto Sans CJK JP, Noto Sans JP, sans-serif">
+<text x="60" y="82" font-size="40" font-weight="700" fill="#153452">消費者信用の新ルール：いつから何が変わる？</text>
+<text x="60" y="126" font-size="22" fill="#405a71">法律は公布済み。主な消費者信用規定は2026年11月20日に適用開始</text>
+<line x1="145" y1="235" x2="1055" y2="235" stroke="#9bb2c5" stroke-width="8" stroke-linecap="round"/>
+<circle cx="180" cy="235" r="18" fill="#2d6a9f"/>
+<circle cx="600" cy="235" r="18" fill="#b77a2a"/>
+<circle cx="1020" cy="235" r="18" fill="#4f8a72"/>
+<rect x="60" y="165" width="300" height="210" rx="18" fill="#ffffff"/>
+<text x="90" y="208" font-size="21" font-weight="700" fill="#245b87">2026年5月18日</text>
+<text x="90" y="260" font-size="27" font-weight="700" fill="#153452">法律公布</text>
+<text x="90" y="300" font-size="18" fill="#405a71">連邦官報 2026 I Nr. 139</text>
+<text x="90" y="333" font-size="17" fill="#5b7086">公布日と適用開始日は別です</text>
+<rect x="450" y="165" width="300" height="210" rx="18" fill="#ffffff"/>
+<text x="480" y="208" font-size="21" font-weight="700" fill="#8a5a00">2026年11月19日まで</text>
+<text x="480" y="260" font-size="27" font-weight="700" fill="#153452">旧ルール</text>
+<text x="480" y="300" font-size="18" fill="#405a71">従来の金額・期間などの</text>
+<text x="480" y="328" font-size="18" fill="#405a71">適用除外が残る期間</text>
+<rect x="840" y="165" width="300" height="210" rx="18" fill="#ffffff"/>
+<text x="870" y="208" font-size="21" font-weight="700" fill="#2f7058">2026年11月20日から</text>
+<text x="870" y="260" font-size="27" font-weight="700" fill="#153452">新ルール</text>
+<text x="870" y="300" font-size="18" fill="#405a71">主な消費者信用規定が</text>
+<text x="870" y="328" font-size="18" fill="#405a71">適用されます</text>
+<rect x="60" y="410" width="520" height="170" rx="18" fill="#ffffff"/>
+<rect x="60" y="410" width="14" height="170" rx="7" fill="#4f8a72"/>
+<text x="96" y="455" font-size="23" font-weight="700" fill="#2f7058">11月20日以降に結ぶ対象契約</text>
+<text x="96" y="495" font-size="18" fill="#405a71">小口・短期・無利息の融資や、</text>
+<text x="96" y="523" font-size="18" fill="#405a71">後払い・分割払いの一部も対象に</text>
+<text x="96" y="552" font-size="17" fill="#5b7086">事前情報・返済能力審査などの保護が拡大</text>
+<rect x="620" y="410" width="520" height="170" rx="18" fill="#ffffff"/>
+<rect x="620" y="410" width="14" height="170" rx="7" fill="#b77a2a"/>
+<text x="656" y="455" font-size="23" font-weight="700" fill="#8a5a00">11月20日より前の既存契約</text>
+<text x="656" y="495" font-size="18" fill="#405a71">原則として旧法が継続します</text>
+<text x="656" y="523" font-size="18" fill="#405a71">ただし、無期限の信用契約などは</text>
+<text x="656" y="552" font-size="17" fill="#5b7086">一部の新規定が適用される例外があります</text>
+<text x="60" y="620" font-size="18" fill="#405a71">この改正は借金の免除や審査通過の保証ではありません。契約日・契約類型・提供者を確認してください。</text>
+<text x="60" y="648" font-size="16" fill="#6b7e8e">図解：J-Connect｜BGBl. 2026 I Nr. 139・EU指令（2023/2225）をもとに作成｜2026年11月14日確認</text>
+</g>
+</svg>

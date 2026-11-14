@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+<title id="t">給与税控除額を申請して給与明細に反映する手順</title>
+<desc id="d">対象費用を整理し、法定基準を確認して、ELSTERまたは紙で税務署へ申請する。承認後に電子給与税情報へ登録され、勤務先が取得して給与税の天引きに反映する。</desc>
+<rect width="1200" height="675" rx="28" fill="#eef5fb"/>
+<g font-family="Noto Sans CJK JP, Noto Sans JP, sans-serif">
+<text x="60" y="80" font-size="40" font-weight="700" fill="#153452">申請から給与明細への反映まで</text>
+<text x="60" y="124" font-size="22" fill="#405a71">申請しただけでは完了しません。税務署の登録と勤務先の取得を確認します</text>
+<rect x="60" y="180" width="300" height="145" rx="18" fill="#ffffff"/>
+<text x="90" y="225" font-size="23" font-weight="700" fill="#245b87">① 費用を整理</text>
+<text x="90" y="267" font-size="18" fill="#405a71">通勤・仕事道具・研修・</text>
+<text x="90" y="295" font-size="18" fill="#405a71">特別支出などを見積もる</text>
+<path d="M370 252 H410" stroke="#6c879d" stroke-width="5" stroke-linecap="round"/>
+<path d="M400 240 L414 252 L400 264" fill="none" stroke="#6c879d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="425" y="180" width="300" height="145" rx="18" fill="#ffffff"/>
+<text x="455" y="225" font-size="23" font-weight="700" fill="#8a5a00">② 基準を確認</text>
+<text x="455" y="267" font-size="18" fill="#405a71">対象費用・600ユーロ基準・</text>
+<text x="455" y="295" font-size="18" fill="#405a71">自動適用の控除を確認</text>
+<path d="M735 252 H775" stroke="#6c879d" stroke-width="5" stroke-linecap="round"/>
+<path d="M765 240 L779 252 L765 264" fill="none" stroke="#6c879d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="790" y="180" width="350" height="145" rx="18" fill="#ffffff"/>
+<text x="820" y="225" font-size="23" font-weight="700" fill="#2f7058">③ 税務署へ申請</text>
+<text x="820" y="267" font-size="18" fill="#405a71">ELSTERまたは紙の申請書で</text>
+<text x="820" y="295" font-size="18" fill="#405a71">住所を管轄する税務署へ提出</text>
+<path d="M965 335 V385" stroke="#6c879d" stroke-width="5" stroke-linecap="round"/>
+<path d="M953 375 L965 389 L977 375" fill="none" stroke="#6c879d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="790" y="405" width="350" height="145" rx="18" fill="#ffffff"/>
+<text x="820" y="450" font-size="23" font-weight="700" fill="#245b87">④ 電子情報に登録</text>
+<text x="820" y="492" font-size="18" fill="#405a71">税務署が控除額を登録し、</text>
+<text x="820" y="520" font-size="18" fill="#405a71">勤務先が電子的に取得</text>
+<path d="M775 477 H735" stroke="#6c879d" stroke-width="5" stroke-linecap="round"/>
+<path d="M745 465 L731 477 L745 489" fill="none" stroke="#6c879d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="425" y="405" width="300" height="145" rx="18" fill="#ffffff"/>
+<text x="455" y="450" font-size="23" font-weight="700" fill="#2f7058">⑤ 給与明細を確認</text>
+<text x="455" y="492" font-size="18" fill="#405a71">給与税の天引きに反映したか</text>
+<text x="455" y="520" font-size="18" fill="#405a71">控除額と対象年を確認</text>
+<path d="M410 477 H370" stroke="#6c879d" stroke-width="5" stroke-linecap="round"/>
+<path d="M380 465 L366 477 L380 489" fill="none" stroke="#6c879d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="60" y="405" width="300" height="145" rx="18" fill="#ffffff"/>
+<text x="90" y="450" font-size="23" font-weight="700" fill="#a24e37">⑥ 年間税額を精算</text>
+<text x="90" y="492" font-size="18" fill="#405a71">必要な場合は確定申告で</text>
+<text x="90" y="520" font-size="18" fill="#405a71">実際の所得税額を確認</text>
+<text x="60" y="625" font-size="18" fill="#405a71">控除額の登録は、確定申告の代わりではありません。申告義務の有無も確認してください。</text>
+<text x="60" y="650" font-size="16" fill="#6b7e8e">図解：J-Connect｜所得税法第39a条・第46条をもとに作成｜2026年11月14日確認</text>
+</g>
+</svg>

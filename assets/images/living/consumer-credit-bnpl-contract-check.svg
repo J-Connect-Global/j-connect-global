@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+<title id="t">後払い・分割払いの契約を見分ける確認図</title>
+<desc id="d">支払猶予をする主体、販売店自身が猶予する場合の条件、後払い型カードの条件を確認し、消費者信用の規定が適用される可能性を判断するための図。</desc>
+<rect width="1200" height="675" rx="28" fill="#eef5fb"/>
+<g font-family="Noto Sans CJK JP, Noto Sans JP, sans-serif">
+<text x="60" y="82" font-size="40" font-weight="700" fill="#153452">後払い・分割払いの契約を見分ける</text>
+<text x="60" y="126" font-size="22" fill="#405a71">広告名ではなく「誰が猶予するか」「期限」「費用」を確認します</text>
+<rect x="50" y="165" width="340" height="390" rx="20" fill="#ffffff"/>
+<rect x="50" y="165" width="340" height="16" rx="8" fill="#2d6a9f"/>
+<text x="82" y="220" font-size="25" font-weight="700" fill="#153452">① 誰が猶予する？</text>
+<rect x="78" y="250" width="284" height="112" rx="14" fill="#e8f2fa"/>
+<text x="100" y="290" font-size="22" font-weight="700" fill="#245b87">販売店自身</text>
+<text x="100" y="326" font-size="18" fill="#405a71">自社で支払期限を延ばす</text>
+<rect x="78" y="385" width="284" height="132" rx="14" fill="#f4f0e8"/>
+<text x="100" y="425" font-size="22" font-weight="700" fill="#8a5a00">第三者</text>
+<text x="100" y="460" font-size="18" fill="#5d5548">金融・決済事業者が</text>
+<text x="100" y="488" font-size="18" fill="#5d5548">立替えや信用供与をする</text>
+<path d="M405 360 H440" stroke="#6c879d" stroke-width="5" stroke-linecap="round"/>
+<path d="M430 348 L444 360 L430 372" fill="none" stroke="#6c879d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="455" y="165" width="340" height="390" rx="20" fill="#ffffff"/>
+<rect x="455" y="165" width="340" height="16" rx="8" fill="#b77a2a"/>
+<text x="487" y="220" font-size="25" font-weight="700" fill="#153452">② 例外の条件は？</text>
+<text x="487" y="270" font-size="20" font-weight="700" fill="#8a5a00">販売店自身の猶予</text>
+<text x="487" y="305" font-size="18" fill="#405a71">無利息・無手数料で全額を</text>
+<text x="487" y="333" font-size="18" fill="#405a71">短期間に支払うか確認</text>
+<text x="487" y="370" font-size="17" fill="#5b7086">原則50日以内。中小企業ではない</text>
+<text x="487" y="397" font-size="17" fill="#5b7086">大規模オンライン事業者は14日以内</text>
+<line x1="487" y1="420" x2="763" y2="420" stroke="#d7e2ea" stroke-width="2"/>
+<text x="487" y="458" font-size="20" font-weight="700" fill="#245b87">後払い型カード</text>
+<text x="487" y="492" font-size="17" fill="#405a71">40日以内・利息なし・限定費用・</text>
+<text x="487" y="520" font-size="17" fill="#405a71">銀行・決済機関の提供などを確認</text>
+<path d="M810 360 H845" stroke="#6c879d" stroke-width="5" stroke-linecap="round"/>
+<path d="M835 348 L849 360 L835 372" fill="none" stroke="#6c879d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="860" y="165" width="290" height="390" rx="20" fill="#ffffff"/>
+<rect x="860" y="165" width="290" height="16" rx="8" fill="#4f8a72"/>
+<text x="892" y="220" font-size="25" font-weight="700" fill="#153452">③ 判断の目安</text>
+<rect x="890" y="252" width="230" height="112" rx="14" fill="#e8f3ed"/>
+<text x="910" y="292" font-size="21" font-weight="700" fill="#2f7058">条件を満たす</text>
+<text x="910" y="326" font-size="18" fill="#405a71">適用除外の可能性</text>
+<rect x="890" y="385" width="230" height="132" rx="14" fill="#f7ece8"/>
+<text x="910" y="425" font-size="21" font-weight="700" fill="#a24e37">条件を外れる</text>
+<text x="910" y="460" font-size="18" fill="#5b504d">消費者信用の規定に</text>
+<text x="910" y="488" font-size="18" fill="#5b504d">該当する可能性</text>
+<text x="60" y="605" font-size="18" fill="#405a71">最終判断には契約書、資金の流れ、支払期限、利息・手数料を合わせて確認します。</text>
+<text x="60" y="642" font-size="16" fill="#6b7e8e">図解：J-Connect｜EU指令（2023/2225）第2条の例外規定をもとに作成｜2026年11月14日確認</text>
+</g>
+</svg>

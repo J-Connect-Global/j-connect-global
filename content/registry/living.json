@@ -1712,8 +1712,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-03-10",
-    "updated_at": "2026-10-17",
-    "last_verified": "2026-10-17",
+    "updated_at": "2026-11-13",
+    "last_verified": "2026-11-13",
     "tags": [
       "信用情報",
       "SCHUFA",
@@ -1749,14 +1749,22 @@
       {
         "title": "データ保護監督当局：賃貸応募者の情報取得（2026年版）",
         "url": "https://datenschutz.hessen.de/sites/datenschutz.hessen.de/files/2026-06/oh_einholung_von_selbstauskuenften_mietinteressenten_01_2026.pdf"
+      },
+      {
+        "title": "連邦官報：EU消費者信用指令の国内法化法（2026年5月18日公布、BGBl. 2026 I Nr. 139）",
+        "url": "https://recht.bund.de/bgbl/1/2026/139/VO.html"
+      },
+      {
+        "title": "連邦政府：信用契約における消費者保護の強化（2026年5月19日）",
+        "url": "https://www.bundesregierung.de/breg-de/schwerpunkte/wirksam-regieren/schutz-kreditvertraege-2382528"
       }
     ],
     "disclaimer_type": "finance_contract",
     "review": {
-      "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-17",
-      "next_review_due": "2027-01-17"
+      "status": "needs_review",
+      "reviewed_by": "AI source verification; legal review pending",
+      "last_reviewed_at": "2026-11-13",
+      "next_review_due": "2026-11-20"
     },
     "image_alt": "ドイツの賃貸応募に使う信用証明と自己確認用データの違いを示す図"
   },
@@ -3960,9 +3968,9 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-29",
-    "updated_at": "2026-10-29",
-    "last_verified": "2026-10-29",
-    "next_review": "2027-08-01",
+    "updated_at": "2026-11-12",
+    "last_verified": "2026-11-12",
+    "next_review": "2026-11-16",
     "home_visible": false,
     "home_order": 115,
     "hub_visible": true,
@@ -3973,8 +3981,8 @@
     "review": {
       "status": "needs_review",
       "reviewed_by": "AI official-source verification; expert review pending",
-      "last_reviewed_at": "2026-10-29",
-      "next_review_due": "2027-08-01"
+      "last_reviewed_at": "2026-11-12",
+      "next_review_due": "2026-11-16"
     },
     "tags": [
       "学校",
@@ -4005,6 +4013,18 @@
       {
         "title": "NRW州学校省：小学校のAからZ",
         "url": "https://www.schulministerium.nrw/die-grundschule-von-bis-z"
+      },
+      {
+        "title": "NRW州サービス案内：小学校の登録期限（前年11月15日）",
+        "url": "https://meineverwaltung.nrw/leistung/99088003034001"
+      },
+      {
+        "title": "デュッセルドルフ市：2027/28年度の小学校入学登録日程（2026年9月22日公表）",
+        "url": "https://www2.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/anmeldetermine-an-grundschulen-fuer-schulanfaengerinnen-und-schulanfanger-zum-schuljahr-2027-2028"
+      },
+      {
+        "title": "ケルン市：2027年入学前の重要日程",
+        "url": "https://www.stadt-koeln.de/mediaasset/content/pdf40/Regionale-Bildungslandschaft/einschulung-fahrplan-termine.pdf"
       },
       {
         "title": "海外子女教育振興財団：在外教育施設とは",
@@ -6379,5 +6399,249 @@
     "image_alt": "住宅、賃貸契約書、電卓とコインを組み合わせた住宅手当のイラスト",
     "image_caption": "住宅手当の申請と住宅費の確認をイメージしたJ-Connectオリジナル図",
     "image_credit": "J-Connect Global制作（2026年11月4日）"
+  },
+  {
+    "id": "L099",
+    "slug": "nrw-primary-school-enrollment-2027-2028",
+    "title": "NRWの小学校入学2027/28｜対象年齢・申込期限・デュッセルドルフとケルンの手続き",
+    "category": "家族・子育て",
+    "summary": "NRW州で2027/28年度に小学校へ入る子どもの対象年齢と就学義務、2026年11月15日（日）の州全体の登録期限を解説。デュッセルドルフの10月6〜8日の指定受付、ケルンの登録スケジュール、2029/30年度以降の期限変更、必要書類を確認できます。",
+    "url": "/germany/ja/living/nrw-primary-school-enrollment-2027-2028/",
+    "markdown_path": "/content/living/nrw-primary-school-enrollment-2027-2028.md",
+    "published": false,
+    "status": "draft",
+    "published_at": "",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
+    "next_review": "2026-11-16",
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "canonical_url": "/germany/ja/living/nrw-primary-school-enrollment-2027-2028/",
+    "disclaimer_type": "family_administrative",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; editorial review pending",
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2026-11-16"
+    },
+    "tags": [
+      "小学校",
+      "入学",
+      "就学義務",
+      "NRW",
+      "2027/28",
+      "子育て"
+    ],
+    "related_articles": [
+      "schools-germany-japanese-families",
+      "nrw-school-holidays-2026-2027",
+      "ganztag-primary-school-nrw-2026",
+      "kita-u3-tagesmutter-guide",
+      "german-school-grades-1-to-6"
+    ],
+    "official_sources": [
+      {
+        "title": "NRW州学校法（2026年8月1日施行版）第34〜36条",
+        "url": "https://recht.nrw.de/lrgv/gesetz/01082026-schulgesetz-nrw-schulg/"
+      },
+      {
+        "title": "NRW州サービス案内：小学校の登録期限（翌年の就学対象は前年11月15日まで）",
+        "url": "https://meineverwaltung.nrw/leistung/99088003034001"
+      },
+      {
+        "title": "第18次学校法改正（2026年7月21日公布）と第36条の経過措置",
+        "url": "https://recht.nrw.de/gvnrw/2026-s547/"
+      },
+      {
+        "title": "NRW州：小学校教育規則の第3次改正（2026年9月24日公布、2027年8月1日施行）",
+        "url": "https://recht.nrw.de/gvnrw/2026-s668/"
+      },
+      {
+        "title": "NRW州学校法（2025年8月1日〜2026年7月31日版）第36条（経過措置の旧規定）",
+        "url": "https://recht.nrw.de/lrgv/gesetz/01082025-schulgesetz-fuer-das-land-nordrhein-westfalen-schulgesetz-nrw-schulg/"
+      },
+      {
+        "title": "デュッセルドルフ市：2027/28年度の小学校入学登録日程（2026年9月22日公表）",
+        "url": "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/anmeldetermine-an-grundschulen-fuer-schulanfaengerinnen-und-schulanfanger-zum-schuljahr-2027-2028"
+      },
+      {
+        "title": "デュッセルドルフ市：小学校への移行と登録期限",
+        "url": "https://www.duesseldorf.de/schulen/anmeldeverfahren/uebergang-in-die-grundschule"
+      },
+      {
+        "title": "デュッセルドルフ市：入学手続きFAQ",
+        "url": "https://www.duesseldorf.de/schulen/anmeldeverfahren/uebergang-in-die-grundschule/faqs-zur-einschulung"
+      },
+      {
+        "title": "ケルン市：入学前の重要日程",
+        "url": "https://www.stadt-koeln.de/mediaasset/content/pdf40/Regionale-Bildungslandschaft/einschulung-fahrplan-termine.pdf"
+      },
+      {
+        "title": "ケルン市：小学校入学手続き・必要書類・問い合わせ先（現行ページは2026/27年度表示）",
+        "url": "https://www.stadt-koeln.de/service/produkte/00082/index.html"
+      },
+      {
+        "title": "デュッセルドルフ市：2027/28年度の小学校入学日程（2025年9月25日版。木曜の日付に年表記の不整合）",
+        "url": "https://www.duesseldorf.de/schulen/aktuell/news-detailseite/newsdetail/anmeldetermine-an-grundschulen-2027-2028"
+      }
+    ],
+    "image_alt": "",
+    "image_caption": "",
+    "image_credit": "",
+    "image": ""
+  },
+  {
+    "id": "L100",
+    "slug": "consumer-credit-bnpl-germany-2026",
+    "url": "/germany/ja/living/consumer-credit-bnpl-germany-2026/",
+    "markdown_path": "/content/living/consumer-credit-bnpl-germany-2026.md",
+    "published": false,
+    "status": "draft",
+    "home_visible": false,
+    "home_order": 9999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "disclaimer_type": "consumer_contract",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI source verification; legal review pending",
+      "last_reviewed_at": "2026-11-13",
+      "next_review_due": "2026-11-20"
+    },
+    "canonical_url": "/germany/ja/living/consumer-credit-bnpl-germany-2026/",
+    "title": "ドイツの後払い・分割払いはどう変わる？2026年11月20日からの新ルール",
+    "category": "お金・税金",
+    "summary": "2026年11月20日から広がるドイツの消費者信用保護を解説。200ユーロ未満の小口ローン、短期・無利息の融資、後払い・分割払いの対象範囲と例外、契約前の確認点を整理します。",
+    "published_at": "",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
+    "tags": [
+      "後払い",
+      "分割払い",
+      "消費者ローン",
+      "BNPL",
+      "小口融資",
+      "SCHUFA",
+      "消費者保護",
+      "2026年"
+    ],
+    "related_articles": [
+      "schufa-guide",
+      "bank-account-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "連邦官報：EU消費者信用指令の国内法化法（2026年5月18日公布、BGBl. 2026 I Nr. 139）",
+        "url": "https://recht.bund.de/bgbl/1/2026/139/VO.html"
+      },
+      {
+        "title": "連邦政府：信用契約における消費者保護の強化（2026年5月19日）",
+        "url": "https://www.bundesregierung.de/breg-de/schwerpunkte/wirksam-regieren/schutz-kreditvertraege-2382528"
+      },
+      {
+        "title": "EU指令2023/2225：消費者信用契約",
+        "url": "https://eur-lex.europa.eu/eli/dir/2023/2225/oj"
+      },
+      {
+        "title": "ドイツ民法典第495条：消費者信用契約の撤回権",
+        "url": "https://www.gesetze-im-internet.de/bgb/__495.html"
+      },
+      {
+        "title": "ドイツ民法典第514条：無利息貸付の撤回権",
+        "url": "https://www.gesetze-im-internet.de/bgb/__514.html"
+      },
+      {
+        "title": "ドイツ民法典第355条：撤回期間の一般規定",
+        "url": "https://www.gesetze-im-internet.de/bgb/__355.html"
+      }
+    ],
+    "image": "",
+    "image_alt": ""
+  },
+  {
+    "id": "L101",
+    "slug": "lohnsteuer-freibetrag-antrag-2027",
+    "title": "ドイツの給与税控除額（Freibetrag）申請｜2026年分は11月30日まで",
+    "category": "お金・税金",
+    "summary": "通勤費や仕事の経費などを給与税の控除額として登録する方法を解説。2026年分の申請期限は11月30日、2027年分は2026年11月1日から受付中です。年末の申請が過去の給与にさかのぼらない点、600ユーロ基準、ELSTERでの手順、確定申告義務との関係も整理します。",
+    "url": "/germany/ja/living/lohnsteuer-freibetrag-antrag-2027/",
+    "markdown_path": "/content/living/lohnsteuer-freibetrag-antrag-2027.md",
+    "published": false,
+    "status": "draft",
+    "published_at": "",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
+    "next_review": "2026-11-30",
+    "home_visible": false,
+    "home_order": 9999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "canonical_url": "/germany/ja/living/lohnsteuer-freibetrag-antrag-2027/",
+    "disclaimer_type": "tax",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; human tax review pending",
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2026-11-30"
+    },
+    "tags": [
+      "給与税",
+      "Freibetrag",
+      "Lohnsteuer-Ermäßigung",
+      "ELSTER",
+      "税金",
+      "2026年",
+      "2027年",
+      "通勤費",
+      "確定申告"
+    ],
+    "related_articles": [
+      "income-tax-return-germany",
+      "tax-id-steuernummer-steuerklasse",
+      "minijob-grenze-2027"
+    ],
+    "official_sources": [
+      {
+        "title": "所得税法第39a条：給与税の控除額と申請期限",
+        "url": "https://www.gesetze-im-internet.de/estg/__39a.html"
+      },
+      {
+        "title": "所得税法第46条：給与税控除額の登録後に確定申告義務が生じる条件",
+        "url": "https://www.gesetze-im-internet.de/estg/__46.html"
+      },
+      {
+        "title": "ELSTER：給与税控除額の申請フォーム",
+        "url": "https://www.portal.elster.de/eportal/formulare-leistungen/alleformulare/elevermaessigungelstam"
+      },
+      {
+        "title": "ヘッセン州税務当局：2027年分の申請開始日と2年間の有効期間",
+        "url": "https://finanzamt.hessen.de/node/2105"
+      },
+      {
+        "title": "連邦財務省：2026年版所得税実務手引き・第39a条",
+        "url": "https://ao.bundesfinanzministerium.de/lsth/2026/A-Einkommensteuergesetz/VI-Steuererhebung-36-47/2-Steuerabzug-vom-Arbeitslohn-Lohnsteuer-38-42g/Paragraf-39a/inhalt.html"
+      },
+      {
+        "title": "連邦議会：2027年所得税改革案の第1読会（2026年10月8日）",
+        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520"
+      },
+      {
+        "title": "連邦財務省：2027年所得税改革案（2026年9月2日）",
+        "url": "https://www.bundesfinanzministerium.de/Content/DE/Gesetzestexte/Gesetze_Gesetzesvorhaben/Abteilungen/Abteilung_IV/21_Legislaturperiode/2026-08-18-EStReformG-2027/0-Gesetz.html"
+      },
+      {
+        "title": "連邦議会：2027年所得税改革案の公聴会（2026年11月4日）",
+        "url": "https://www.bundestag.de/ausschuesse/a07_finanzen/wp21_a07_Anhoerungen/1225284-1225284"
+      }
+    ],
+    "image": "",
+    "image_alt": "",
+    "image_caption": "",
+    "image_credit": ""
   }
 ]

@@ -30,6 +30,8 @@ official_sources:
     url: "https://ao.bundesfinanzministerium.de/lsth/2026/A-Einkommensteuergesetz/VI-Steuererhebung-36-47/2-Steuerabzug-vom-Arbeitslohn-Lohnsteuer-38-42g/Paragraf-39a/inhalt.html"
   - title: "連邦議会：2027年所得税改革案の第1読会（2026年10月8日）"
     url: "https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520"
+  - title: "連邦議会：2027年所得税改革案の公聴会（2026年11月4日）"
+    url: "https://www.bundestag.de/ausschuesse/a07_finanzen/wp21_a07_Anhoerungen/1225284-1225284"
   - title: "連邦財務省：2027年所得税改革案（2026年9月2日）"
     url: "https://www.bundesfinanzministerium.de/Content/DE/Gesetzestexte/Gesetze_Gesetzesvorhaben/Abteilungen/Abteilung_IV/21_Legislaturperiode/2026-08-18-EStReformG-2027/0-Gesetz.html"
 disclaimer_type: "tax"
@@ -107,7 +109,7 @@ disclaimer_type: "tax"
 
 ## 2027年の税制改正案に注意
 
-連邦政府は2026年9月2日、2027年所得税改革案を閣議決定しました。案には、給与所得者向け概算控除額を年1,230ユーロから1,430ユーロへ引き上げる内容が含まれています。連邦議会では2026年10月8日に第1読会が行われ、委員会に付託されました。
+連邦政府は2026年9月2日、2027年所得税改革案を閣議決定しました。案には、給与所得者向け概算控除額を年1,230ユーロから1,430ユーロへ引き上げる内容が含まれています。連邦議会では2026年10月8日に第1読会が行われ、委員会に付託されました。11月4日には財務委員会の公聴会が開かれ、専門家からはインフレによる税負担増への対応が不十分との指摘も出ています。審議中の案であり、現行法に反映された額ではありません。
 
 2026年11月14日時点では、引き上げは成立済みの制度ではありません。2027年分の申請を行う人は、最終的な法律と税務当局の案内を確認してから、対象経費を計算してください。
 

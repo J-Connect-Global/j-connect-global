@@ -4251,8 +4251,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-29",
-    "updated_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "next_review": "2027-04-30",
     "home_visible": false,
     "home_order": 119,
@@ -4264,7 +4264,7 @@
     "review": {
       "status": "needs_review",
       "reviewed_by": "AI official-source verification; clinical review pending",
-      "last_reviewed_at": "2026-10-29",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-04-30"
     },
     "tags": [

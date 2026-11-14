@@ -6411,8 +6411,8 @@
     "published": false,
     "status": "draft",
     "published_at": "",
-    "updated_at": "2026-11-13",
-    "last_verified": "2026-11-13",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "next_review": "2026-11-16",
     "home_visible": false,
     "home_order": 999,
@@ -6424,7 +6424,7 @@
     "review": {
       "status": "needs_review",
       "reviewed_by": "AI official-source verification; editorial review pending",
-      "last_reviewed_at": "2026-11-13",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2026-11-16"
     },
     "tags": [
@@ -6482,6 +6482,10 @@
       {
         "title": "ケルン市：小学校入学手続き・必要書類・問い合わせ先（現行ページは2026/27年度表示）",
         "url": "https://www.stadt-koeln.de/service/produkte/00082/index.html"
+      },
+      {
+        "title": "デュッセルドルフ市：2027/28年度の小学校入学日程（2025年9月25日版。木曜の日付に年表記の不整合）",
+        "url": "https://www.duesseldorf.de/schulen/aktuell/news-detailseite/newsdetail/anmeldetermine-an-grundschulen-2027-2028"
       }
     ],
     "image_alt": "",
@@ -6629,6 +6633,10 @@
       {
         "title": "連邦財務省：2027年所得税改革案（2026年9月2日）",
         "url": "https://www.bundesfinanzministerium.de/Content/DE/Gesetzestexte/Gesetze_Gesetzesvorhaben/Abteilungen/Abteilung_IV/21_Legislaturperiode/2026-08-18-EStReformG-2027/0-Gesetz.html"
+      },
+      {
+        "title": "連邦議会：2027年所得税改革案の公聴会（2026年11月4日）",
+        "url": "https://www.bundestag.de/ausschuesse/a07_finanzen/wp21_a07_Anhoerungen/1225284-1225284"
       }
     ],
     "image": "",

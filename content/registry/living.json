@@ -6557,5 +6557,83 @@
     ],
     "image": "",
     "image_alt": ""
+  },
+  {
+    "id": "L101",
+    "slug": "lohnsteuer-freibetrag-antrag-2027",
+    "title": "ドイツの給与税控除額（Freibetrag）申請｜2026年分は11月30日まで",
+    "category": "お金・税金",
+    "summary": "通勤費や仕事の経費などを給与税の控除額として登録する方法を解説。2026年分の申請期限は11月30日、2027年分は2026年11月1日から受付中です。年末の申請が過去の給与にさかのぼらない点、600ユーロ基準、ELSTERでの手順、確定申告義務との関係も整理します。",
+    "url": "/germany/ja/living/lohnsteuer-freibetrag-antrag-2027/",
+    "markdown_path": "/content/living/lohnsteuer-freibetrag-antrag-2027.md",
+    "published": false,
+    "status": "draft",
+    "published_at": "",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
+    "next_review": "2026-11-30",
+    "home_visible": false,
+    "home_order": 9999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "canonical_url": "/germany/ja/living/lohnsteuer-freibetrag-antrag-2027/",
+    "disclaimer_type": "tax",
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "AI official-source verification; human tax review pending",
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2026-11-30"
+    },
+    "tags": [
+      "給与税",
+      "Freibetrag",
+      "Lohnsteuer-Ermäßigung",
+      "ELSTER",
+      "税金",
+      "2026年",
+      "2027年",
+      "通勤費",
+      "確定申告"
+    ],
+    "related_articles": [
+      "income-tax-return-germany",
+      "tax-id-steuernummer-steuerklasse",
+      "minijob-grenze-2027"
+    ],
+    "official_sources": [
+      {
+        "title": "所得税法第39a条：給与税の控除額と申請期限",
+        "url": "https://www.gesetze-im-internet.de/estg/__39a.html"
+      },
+      {
+        "title": "所得税法第46条：給与税控除額の登録後に確定申告義務が生じる条件",
+        "url": "https://www.gesetze-im-internet.de/estg/__46.html"
+      },
+      {
+        "title": "ELSTER：給与税控除額の申請フォーム",
+        "url": "https://www.portal.elster.de/eportal/formulare-leistungen/alleformulare/elevermaessigungelstam"
+      },
+      {
+        "title": "ヘッセン州税務当局：2027年分の申請開始日と2年間の有効期間",
+        "url": "https://finanzamt.hessen.de/node/2105"
+      },
+      {
+        "title": "連邦財務省：2026年版所得税実務手引き・第39a条",
+        "url": "https://ao.bundesfinanzministerium.de/lsth/2026/A-Einkommensteuergesetz/VI-Steuererhebung-36-47/2-Steuerabzug-vom-Arbeitslohn-Lohnsteuer-38-42g/Paragraf-39a/inhalt.html"
+      },
+      {
+        "title": "連邦議会：2027年所得税改革案の第1読会（2026年10月8日）",
+        "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-einkommensteuerreform-1217520"
+      },
+      {
+        "title": "連邦財務省：2027年所得税改革案（2026年9月2日）",
+        "url": "https://www.bundesfinanzministerium.de/Content/DE/Gesetzestexte/Gesetze_Gesetzesvorhaben/Abteilungen/Abteilung_IV/21_Legislaturperiode/2026-08-18-EStReformG-2027/0-Gesetz.html"
+      }
+    ],
+    "image": "",
+    "image_alt": "",
+    "image_caption": "",
+    "image_credit": ""
   }
 ]

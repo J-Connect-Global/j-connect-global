@@ -2108,8 +2108,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-10-31",
-    "last_verified": "2026-10-31",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "tags": [
       "住民登録",
       "入居証明",
@@ -2164,7 +2164,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-31",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-01-31"
     }
   },

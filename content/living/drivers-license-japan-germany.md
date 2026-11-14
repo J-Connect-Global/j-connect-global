@@ -7,8 +7,8 @@ summary: "日本の運転免許は、ドイツで試験を受けずにドイツ�
 status: "published"
 published: true
 published_at: "2026-10-29"
-updated_at: "2026-10-29"
-last_verified: "2026-10-29"
+updated_at: "2026-11-14"
+last_verified: "2026-11-14"
 next_review: "2027-10-29"
 canonical_url: "/germany/ja/living/drivers-license-japan-germany/"
 tags: ["運転免許", "免許", "車", "切り替え", "一時帰国"]
@@ -88,8 +88,11 @@ official_sources:
 | 6か月以内 | 手続きをすれば、もとの免許に近い形で再び受け取れる |
 | 6か月を超えて3年以内 | 帰国した日から**1か月以内**に手続きすれば、学科試験と技能試験が免除される |
 | 3年を超える | 失効の手続きはできない（新しく免許を取り直す） |
+| 期間を問わない（ドイツなど外国の免許を持っている場合） | 外国の免許を取った後、その国に3か月以上滞在していれば、学科試験と技能試験が免除される（取れる免許の種類は外国の免許と同等） |
 
-（出典：[警視庁](https://www.keishicho.metro.tokyo.lg.jp/menkyo/koshin/shikko/shikko05.html)、[外務省](https://www.mofa.go.jp/mofaj/toko/kaigai/licence/index.html)）
+（出典：[警察庁：海外滞在者の運転免許証の更新等に係る特例](https://www.npa.go.jp/bureau/traffic/menkyo/syuuseimatome.pdf)（道路交通法第97条の2、2026年11月14日確認）、[警視庁](https://www.keishicho.metro.tokyo.lg.jp/menkyo/koshin/shikko/shikko05.html)、[外務省](https://www.mofa.go.jp/mofaj/toko/kaigai/licence/index.html)）
+
+**ドイツの免許に切り替えた人は、日本の免許の失効から3年を過ぎても、ドイツの免許をもとに試験免除で日本の免許を取り直せます。** 切り替えでドイツの免許を持っている人は、帰国前にドイツの免許の有効期限も確認しておきましょう。
 
 手続きには、海外にいたことを示す書類が必要です。パスポートの出入国のスタンプ、搭乗券、航空券の控えなどを捨てずに保管しておきましょう。細かい扱いは都道府県によって違うので、手続きの前に、住む地域の運転免許センターに確認してください。
 

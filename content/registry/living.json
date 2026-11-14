@@ -3683,8 +3683,8 @@
     "canonical_url": "/germany/ja/living/returning-to-japan-checklist/",
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：民法第573c条（3か月・3営業日目）、住民登録法第17条（転出2週間以内・1週間前から）、民法第309条第9号（自動更新後は1か月で解約）、年金の払い戻しの24か月（年金保険の法令解説）、放送負担金の抹消、住民基本台帳法の14日、国民健康保険の14日を原典で確認",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-04-30"
     },
@@ -3750,8 +3750,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-29",
-    "updated_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "next_review": "2027-10-29",
     "home_visible": false,
     "home_order": 112,
@@ -3761,9 +3761,9 @@
     "canonical_url": "/germany/ja/living/liability-household-insurance-germany/",
     "disclaimer_type": "consumer_contract",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; legal review pending",
-      "last_reviewed_at": "2026-10-29",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：補償額1,000万ユーロ以上の推奨、自己負担なしの推奨、家財の650ユーロ/平方メートルの目安を消費者センターで確認、民法第823条を確認。確認できない保険料の相場（年50〜80ユーロ）を削除",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-10-29"
     },
     "tags": [
@@ -3827,8 +3827,8 @@
     "canonical_url": "/germany/ja/living/mobile-phone-sim-germany/",
     "disclaimer_type": "consumer_contract",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; legal review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：電気通信法第56条（最初の期間は最長24か月、12か月以下のプランの提示義務、更新後は1か月で解約）、第172条（プリペイドの本人確認）、連邦ネットワーク庁の案内を確認。本人確認義務の開始時期（2017年7月）は原典で未確認",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-29"
     },
@@ -3898,8 +3898,8 @@
     "canonical_url": "/germany/ja/living/unemployment-benefit-germany/",
     "disclaimer_type": "employment",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; employment-law review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：受給条件（30か月中12か月、週15時間、短期の6か月）、給付率60％・67％（社会法典第3編第149条）、受給期間の表（第147条第2項）、求職の届出は3か月前、届出遅れの1週間・自己都合の最長12週間の支給停止を連邦雇用庁と条文で確認。計算例を検算",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-29"
     },
@@ -3958,8 +3958,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-29",
-    "updated_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "next_review": "2027-08-01",
     "home_visible": false,
     "home_order": 115,
@@ -3969,9 +3969,9 @@
     "canonical_url": "/germany/ja/living/schools-germany-japanese-families/",
     "disclaimer_type": "family_administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
-      "last_reviewed_at": "2026-10-29",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：小学校は1〜4年（NRW学校法第11条）、前年11月15日までの申込み（AO-GS第1条）、中等教育の学校の種類と進学の推薦をNRW州学校省で確認。開けない学校省のページの出典をAO-GSに差し替え。日本人学校・補習校の記述は数値なし",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-08-01"
     },
     "tags": [
@@ -4001,8 +4001,8 @@
         "url": "https://schulministerium.nrw/eltern/Schule-in-NRW/Schulwechsel_nach_NRW"
       },
       {
-        "title": "NRW州学校省：小学校のAからZ",
-        "url": "https://www.schulministerium.nrw/die-grundschule-von-bis-z"
+        "title": "NRW州 小学校規則（AO-GS）第1条：前年11月15日までの申込み",
+        "url": "https://bass.schule.nrw/Inhalt/6181.htm"
       },
       {
         "title": "海外子女教育振興財団：在外教育施設とは",
@@ -4029,8 +4029,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-29",
-    "updated_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "next_review": "2027-10-29",
     "home_visible": false,
     "home_order": 116,
@@ -4040,9 +4040,9 @@
     "canonical_url": "/germany/ja/living/drivers-license-japan-germany/",
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
-      "last_reviewed_at": "2026-10-29",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：運転免許規則第29条（6か月）、別表11（日本はすべての車種で試験なし）、警察庁資料（3年以内・帰国後1か月以内の試験免除）を確認。外国免許を持つ人は失効期間を問わず試験免除になる点（道路交通法第97条の2第3項）を追記。図の説明は旧のまま（要更新）",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-10-29"
     },
     "tags": [
@@ -4123,7 +4123,7 @@
     "disclaimer_type": "finance",
     "review": {
       "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：協定発効2000年2月・通算、ドイツの受給資格5年、払い戻しの24か月を日本年金機構・ドイツ年金保険で確認。日本国籍者の任意加入権（60か月）の根拠は協定本文で未確認のため needs_review のまま",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-29"
     },
@@ -4196,8 +4196,8 @@
     "canonical_url": "/germany/ja/living/japanese-speaking-doctors-germany/",
     "disclaimer_type": "medical",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; clinical review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：112と116117の使い分けを連邦健康ポータル・116117で確認。外務省・在外公館の医療機関の案内はこの環境から接続を拒否され未確認（数値なし）",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-04-30"
     },
@@ -4333,7 +4333,7 @@
     "disclaimer_type": "administrative",
     "review": {
       "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：車検の間隔（新車36か月・以後24か月、車両登録規則付表VIII）、i-Kfzの仮登録14日（連邦自動車庁）、eVB（デュッセルドルフ市）を確認。期限超過2か月の追加検査（ADAC）とEuro 7の日程（EUR-Lex）は未確認のため needs_review のまま",
       "last_reviewed_at": "2026-11-07",
       "next_review_due": "2027-05-29"
     },
@@ -4411,8 +4411,8 @@
     "canonical_url": "/germany/ja/living/overseas-voting-japan/",
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：在外選挙人名簿の2つの申請方法、3か月以上の居住で登録、出国前申請の期間、3つの投票方法を総務省で確認。外務省のページはこの環境から未確認",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-29"
     },

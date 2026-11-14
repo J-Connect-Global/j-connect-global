@@ -7,8 +7,8 @@ summary: "ドイツの公立の学校は、小学校（Grundschule）が4年間�
 status: "published"
 published: true
 published_at: "2026-10-29"
-updated_at: "2026-10-29"
-last_verified: "2026-10-29"
+updated_at: "2026-11-14"
+last_verified: "2026-11-14"
 next_review: "2027-08-01"
 canonical_url: "/germany/ja/living/schools-germany-japanese-families/"
 tags: ["学校", "日本人学校", "補習校", "子育て", "NRW"]
@@ -24,8 +24,8 @@ official_sources:
     url: "https://www.schulministerium.nrw/grundschulempfehlung-und-uebergang-die-weiterfuehrenden-schulen"
   - title: "NRW州学校省：NRWへの引っ越し（転校）"
     url: "https://schulministerium.nrw/eltern/Schule-in-NRW/Schulwechsel_nach_NRW"
-  - title: "NRW州学校省：小学校のAからZ"
-    url: "https://www.schulministerium.nrw/die-grundschule-von-bis-z"
+  - title: "NRW州 小学校規則（AO-GS）第1条：前年11月15日までの申込み"
+    url: "https://bass.schule.nrw/Inhalt/6181.htm"
   - title: "海外子女教育振興財団：在外教育施設とは"
     url: "https://www.joes.or.jp/zaigai/detail"
   - title: "在デュッセルドルフ日本国総領事館：子女教育（教科書の配付など）"
@@ -61,7 +61,7 @@ official_sources:
 
 ### 小学校（Grundschule）は4年間
 
-NRW州の小学校は1年生から4年生までです。小学校の申し込みは、入学する年の前の年の11月15日までに行います（[NRW州学校省：小学校のAからZ](https://www.schulministerium.nrw/die-grundschule-von-bis-z)）。小学校の最初の2年間は、数字の成績を付けない決まりがあります。成績のしくみは「[ドイツの学校は「成績1」が一番いい？](/germany/ja/events/columns/german-school-grades-1-to-6/)」で紹介しています。
+NRW州の小学校は1年生から4年生までです。小学校の申し込みは、入学する年の前の年の11月15日までに行います（[NRW州 小学校規則（AO-GS）第1条](https://bass.schule.nrw/Inhalt/6181.htm)、2026年11月14日確認）。小学校の最初の2年間は、数字の成績を付けない決まりがあります。成績のしくみは「[ドイツの学校は「成績1」が一番いい？](/germany/ja/events/columns/german-school-grades-1-to-6/)」で紹介しています。
 
 ### 5年生から、学校の種類が分かれる
 
@@ -90,6 +90,6 @@ NRW州の小学校は1年生から4年生までです。小学校の申し込み
 - [NRW州学校省：学校の種類](https://www.schulministerium.nrw/schule-bildung/schulorganisation/schulformen)
 - [NRW州学校省：小学校の推薦と、上の学校への進学](https://www.schulministerium.nrw/grundschulempfehlung-und-uebergang-die-weiterfuehrenden-schulen)
 - [NRW州学校省：NRWへの引っ越し](https://schulministerium.nrw/eltern/Schule-in-NRW/Schulwechsel_nach_NRW)
-- [NRW州学校省：小学校のAからZ](https://www.schulministerium.nrw/die-grundschule-von-bis-z)
+- [NRW州 小学校規則（AO-GS）第1条](https://bass.schule.nrw/Inhalt/6181.htm)
 - [海外子女教育振興財団：在外教育施設とは](https://www.joes.or.jp/zaigai/detail)
 - [在デュッセルドルフ日本国総領事館：子女教育](https://www.dus.emb-japan.go.jp/itpr_ja/jkonsular_schulbuch.html)

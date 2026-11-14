@@ -1167,6 +1167,7 @@ body > .page-footer{
 :root[data-theme="dark"] body .listing-detail-item,
 :root[data-theme="dark"] body .article-body blockquote,
 :root[data-theme="dark"] body .article-disclaimer,
+:root[data-theme="dark"] body .article-experience-invite,
 :root[data-theme="dark"] body .article-ai-notice,
 :root[data-theme="dark"] body .article-sidebar-facts div,
 :root[data-theme="dark"] body .reset-btn{

@@ -8,8 +8,9 @@ summary: "ドイツの銀行口座開設を日本語で解説。必要書類、G
 status: "published"
 published: true
 published_at: "2026-06-12"
-updated_at: "2026-10-17"
-last_verified: "2026-10-17"
+updated_at: "2026-11-14"
+article_standard: "2026-11"
+last_verified: "2026-11-14"
 next_review: "2027-04-17"
 canonical_url: "/germany/ja/living/bank-account-germany/"
 related_articles: ["germany-first-30-days", "schufa-guide", "anmeldung-guide", "tax-id-steuernummer-steuerklasse", "liability-household-insurance-germany", "mobile-phone-sim-germany"]
@@ -37,6 +38,17 @@ official_sources:
 5. 口座開設後は少額でログイン、振込、カード、ATMを試し、給与や家賃の登録を順番に移す。
 
 「無料」「英語対応」「アプリだけで開設」といった一つの条件だけで決めないでください。無料には入金条件が付くことがあり、日本のパスポートをオンライン本人確認で受け付けるかも、銀行と確認方法によって変わります。
+
+## あなたはどのケース？
+
+銀行は大きく3つのタイプに分かれます。料金と本人確認の条件は銀行と時期で変わるため、名前は例として挙げ、条件は[BaFinの公的な口座比較](https://kontenvergleich.bafin.de/)と各行の最新の料金表で確認してください。
+
+| あなたの使い方 | 合いやすいタイプ | 例 | 確認すること |
+| --- | --- | --- | --- |
+| 窓口で相談したい、現金をよく使う | 支店型（地域の銀行・大手銀行） | Sparkasse、Volksbank、Deutsche Bank、Commerzbank、Postbank | 口座維持費、自行ATMの多さ、予約の取り方 |
+| ほぼカード払い、窓口は不要 | オンライン銀行（ダイレクトバンク） | DKB、ING、comdirect | 無料の条件（毎月の入金額など）、現金の入金方法 |
+| スマホだけで早く開きたい | スマホ銀行 | N26 など | 日本のパスポートでのオンライン本人確認、IBANの国 |
+| 通常の口座を断られた | 基本口座（Basiskonto） | 一般の口座を扱う銀行はすべて対象 | 申請から10営業日以内に提示される権利（決済口座法第31条） |
 
 ## 口座開設に必要になりやすい書類
 
@@ -90,7 +102,7 @@ official_sources:
 
 特定の銀行名を先に決めるより、生活圏のATM、対応言語、本人確認、現金入金、端末紛失時の復旧という順に候補を減らす方が失敗を避けやすくなります。
 
-## 「無料口座」で見落としやすい費用
+## 落とし穴：「無料口座」で見落としやすい費用
 
 無料と表示された口座でも、毎月一定額の入金、学生などの年齢条件、オンライン利用といった条件が付く場合があります。申し込む前に、銀行が公開する料金表を保存しておくと、後から条件を確認できます。
 
@@ -154,7 +166,7 @@ EU域内に合法的に滞在し、ドイツで利用できる支払い口座を
 
 この保護は銀行預金のためのもので、株式、投資信託、暗号資産の値下がりを補う制度ではありません。大きな資金を置く場合は、[ドイツ連邦銀行の預金保護解説](https://www.bundesbank.de/en/tasks/financial-supervision/individual-aspects/deposit-protection-622748)で範囲を確認してください。
 
-## 渡独直後の現実的な順番
+## 手順：渡独直後の現実的な順番
 
 1. 郵便を受け取れる住居と郵便受けの表示を整える
 2. 住民登録を行い、発行された書類を保管する
@@ -186,7 +198,7 @@ EU域内に合法的に滞在し、ドイツで利用できる支払い口座を
 
 ### 銀行でのドイツ語が不安です
 
-この記事では制度と選び方を日本語で説明しています。窓口や問い合わせで使う短い表現は、[銀行口座のドイツ語](/germany/ja/learn-german/bank-account-phrases/)に分けて掲載しています。
+このあとの「そのまま使えるドイツ語」に、窓口とメールで使う文を載せています。ほかの言い回しは[銀行口座のドイツ語](/germany/ja/learn-german/bank-account-phrases/)にもあります。
 
 ### ドイツ以外のEU口座を給与や引き落としに使えますか
 
@@ -205,13 +217,38 @@ SEPAの対象口座なら、IBANの国だけを理由に送金・引き落とし
 - 実際に預金を預かる銀行と預金保護制度
 - 解約方法と残高・定期振込の移し方
 
+## そのまま使えるドイツ語
+
+| 場面 | ドイツ語 | 日本語 |
+| --- | --- | --- |
+| 窓口で最初に | Guten Tag, ich möchte ein Girokonto eröffnen. Ich bin neu in Deutschland. | こんにちは、普通口座を開きたいです。ドイツに来たばかりです。 |
+| 費用を聞く | Welche monatlichen Kosten fallen an, und unter welchen Bedingungen ist das Konto kostenlos? | 毎月の費用はいくらですか。どんな条件なら無料になりますか。 |
+| 書類がそろわないとき | Meine Steuer-ID habe ich noch nicht erhalten. Kann ich sie später nachreichen? | 税務識別番号がまだ届いていません。後から出してもいいですか。 |
+
+通常の口座を断られたときの、基本口座の申請（書面）：
+
+> 件名：Antrag auf Abschluss eines Basiskontovertrags
+> Sehr geehrte Damen und Herren,
+> hiermit beantrage ich den Abschluss eines Basiskontovertrags gemäß § 31 Zahlungskontengesetz. Ich halte mich rechtmäßig in Deutschland auf und habe bei Ihnen kein anderes Zahlungskonto.
+> Bitte bestätigen Sie mir den Eingang dieses Antrags.
+> Mit freundlichen Grüßen
+> [Name], geb. [Datum], [Adresse]
+
+和訳：件名「基本口座の契約の申請」。決済口座法第31条に基づき、基本口座の契約を申請します。私はドイツに合法的に滞在しており、貴行にほかの決済口座を持っていません。この申請を受け付けたことを確認してください。
+
+## 在住者の実例
+
+この記事には、まだJ-Connect編集部や読者の実例を載せていません。申し込みから口座が使えるまでの日数や、本人確認で聞かれたことの体験を集めて追記します。
+
 ## まとめ
 
 ドイツの銀行口座は、銀行名や広告の無料表示よりも、自分の暮らしに必要な機能で選びます。必要書類、本人確認、現金、カード、問い合わせ、郵便の受取まで比較し、BaFinの公的比較と銀行の最新料金表を併用してください。通常口座を開けない場合にもBasiskontoという制度があるため、申請と拒否理由を記録しながら次の選択肢へ進みます。
 
-## 公式情報
+## 公式情報・参考ソース
 
-- [ドイツ連邦金融監督庁（BaFin）：銀行口座の公的比較](https://kontenvergleich.bafin.de/)
-- [ドイツ連邦金融監督庁（BaFin）：基本口座](https://www.bafin.de/DE/Verbraucher/Bank/Produkte/Basiskonto/basiskonto_node.html)
-- [ドイツ連邦銀行：預金保護](https://www.bundesbank.de/en/tasks/financial-supervision/individual-aspects/deposit-protection-622748)
-- [欧州委員会：IBAN discrimination](https://finance.ec.europa.eu/consumer-finance-and-payments/payment-services/payment-services/iban-discrimination_en)
+- [決済口座法第31条：基本口座を開く権利と10営業日以内の提示](https://www.gesetze-im-internet.de/zkg/__31.html)（2026年11月14日確認）
+- [預金保護法第8条：預金保護の上限10万ユーロ](https://www.gesetze-im-internet.de/einsig/__8.html)（2026年11月14日確認）
+- [ドイツ連邦金融監督庁（BaFin）：銀行口座の公的比較](https://kontenvergleich.bafin.de/)（2026年11月14日はこの環境から開けず未確認）
+- [ドイツ連邦金融監督庁（BaFin）：基本口座](https://www.bafin.de/DE/Verbraucher/Bank/Produkte/Basiskonto/basiskonto_node.html)（2026年11月14日はこの環境から開けず未確認）
+- [ドイツ連邦銀行：預金保護](https://www.bundesbank.de/en/tasks/financial-supervision/individual-aspects/deposit-protection-622748)（2026年11月14日はこの環境から開けず未確認）
+- [欧州委員会：IBAN discrimination](https://finance.ec.europa.eu/consumer-finance-and-payments/payment-services/payment-services/iban-discrimination_en)（2026年11月14日はこの環境から開けず未確認）

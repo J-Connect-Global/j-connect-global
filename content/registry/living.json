@@ -13,8 +13,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "medical_family",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI source check; clinical review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：37週未満の早産の定義、112の使い方、陣痛の目安（5分間隔・1分・1時間）を連邦健康ポータル・familienplanung.de・NRW家族ポータルで確認。臨床医による監修は未実施",
       "last_reviewed_at": "2026-10-11",
       "next_review_due": "2027-01-11"
     },
@@ -258,7 +258,7 @@
   },
   {
     "id": "T001",
-    "title": "デュッセルドルフ観光｜日本人街・旧市街・ライン川を歩く",
+    "title": "デュッセルドルフ観光ガイド｜日本人街・ケーニヒスアレー・旧市街・ライン川の歩き方",
     "slug": "duesseldorf-city-guide",
     "category": "観光",
     "summary": "デュッセルドルフを日本人街、ケーニヒスアレー、旧市街、ライン川という異なる都市文化から紹介。在住者にも旅行者にも役立つ街歩きガイドです。",
@@ -1558,7 +1558,7 @@
   },
   {
     "id": "L011",
-    "title": "ドイツの放送負担金（Rundfunkbeitrag・旧GEZ）とは？金額・同居・引っ越し・免除の手続き",
+    "title": "ドイツの放送負担金（旧GEZ）｜月18.36ユーロ・同居は1住戸1件・免除と引っ越し",
     "slug": "rundfunkbeitrag-guide",
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
     "image_alt": "ドイツの新居で住居に関する書類を確認する日本人の住民",
@@ -1703,10 +1703,10 @@
   },
   {
     "id": "L005",
-    "title": "SCHUFAの取得方法｜賃貸用証明・無料データ・新スコア",
+    "title": "SCHUFAの取り方｜賃貸に出す証明と無料データの違い・履歴がないとき",
     "slug": "schufa-guide",
     "category": "住まい",
-    "summary": "SCHUFAの取得方法と書類の選び方を日本語で解説。賃貸提出用の信用証明、無料データコピー、無料アカウント、2026年の新スコア、履歴がない場合の代替資料を整理します。",
+    "summary": "SCHUFAの書類は目的で選びます。家主に出す有料の信用証明、無料のデータコピー、無料アカウントの違いと取り方、ドイツに来たばかりで履歴がないときの代わりの資料を日本語で整理します。",
     "url": "/germany/ja/living/schufa-guide/",
     "markdown_path": "/content/living/schufa-guide.md",
     "published": true,
@@ -1771,8 +1771,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-10-17",
-    "last_verified": "2026-10-17",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "tags": [
       "銀行口座",
       "口座開設",
@@ -1817,13 +1817,13 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-17",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-04-17"
     }
   },
   {
     "id": "L007",
-    "title": "ドイツの税務識別番号・税務署番号・給与税区分の違い",
+    "title": "ドイツの税務IDが届かないとき｜税務署番号・給与税区分との違いと勤務先に伝えること",
     "slug": "tax-id-steuernummer-steuerklasse",
     "category": "お金・税金",
     "summary": "ドイツの税務ID・税務署番号・給与税区分の違いを整理。税務IDが届かないときの住所確認、公式の再通知手続き、初回給与計算前に勤務先へ伝えることを解説します。",
@@ -1885,17 +1885,17 @@
   },
   {
     "id": "L008",
-    "title": "ドイツで妊娠・出産｜医療、仕事、出生届の全体ガイド",
+    "title": "ドイツで妊娠・出産する日本人へ｜病院選び・産休・出生届を時期順に",
     "slug": "pregnancy-birth-germany",
     "category": "家族・子育て",
-    "summary": "ドイツで妊娠・出産する日本人家庭向けに、婦人科、助産師、出産施設、健康保険、職場、出生届、育児給付、日本側の手続きを一つの流れで解説します。",
+    "summary": "ドイツで出産する日本人家庭向けに、妊娠が分かってから出産後までを時期順に整理。婦人科と助産師の探し方、出産施設、産前産後の休業と手当、ドイツと日本の出生届、育児給付をつなげて解説します。",
     "url": "/germany/ja/living/pregnancy-birth-germany/",
     "markdown_path": "/content/living/pregnancy-birth-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-10-17",
-    "last_verified": "2026-08-31",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "tags": [
       "妊娠",
       "出産",
@@ -1921,42 +1921,55 @@
     ],
     "official_sources": [
       {
-        "title": "Familienportal - Mutterschaftsleistungen",
-        "url": "https://familienportal.de/familienportal/familienleistungen/mutterschaftsleistungen"
+        "title": "母性保護法第3条：産前6週・産後8週の保護期間",
+        "url": "https://www.gesetze-im-internet.de/muschg_2018/__3.html"
       },
       {
-        "title": "Familienportal - Elterngeld",
-        "url": "https://familienportal.de/familienportal/familienleistungen/elterngeld"
+        "title": "社会法典第5編第24i条：出産手当（1日最大13ユーロ）",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__24i.html"
+      },
+      {
+        "title": "育児給付・育児休業法第16条：育休の通知期限",
+        "url": "https://www.gesetze-im-internet.de/beeg/__16.html"
+      },
+      {
+        "title": "育児給付・育児休業法第1条：育児給付の受給資格と所得上限",
+        "url": "https://www.gesetze-im-internet.de/beeg/__1.html"
+      },
+      {
+        "title": "連邦共同委員会（G-BA）：予防接種指針",
+        "url": "https://www.g-ba.de/richtlinien/60/"
       }
     ],
     "disclaimer_type": "medical_family",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-31",
-      "next_review_due": "2026-11-30"
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2027-02-14"
     }
   },
   {
     "id": "L009",
-    "title": "ドイツのKita・U3申込み｜NRWの保育先・必要書類",
+    "title": "NRWでKitaと保育ママを探す｜8月入園が基本・1歳台の枠は少ない【2026年 編集部の照会記録】",
     "slug": "kita-u3-tagesmutter-guide",
     "category": "家族・子育て",
-    "summary": "ドイツの保育施設と家庭的保育の違い、NRWの原則6か月前の需要申告、デュッセルドルフ・Erkrathの申込み、必要情報・書類、入園決定と費用確認を整理します。",
+    "summary": "NRWのKitaは8月1日入園が基本で、1歳台の枠は多くありません。2026年に編集部がデュッセルドルフ近郊の自治体と園に照会した回答をもとに、出生後の登録、保育ママとの並行探し、6か月前の需要申告、そのまま使えるドイツ語の問い合わせ文を整理します。",
     "url": "/germany/ja/living/kita-u3-tagesmutter-guide/",
     "markdown_path": "/content/living/kita-u3-tagesmutter-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-10-27",
-    "last_verified": "2026-08-31",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "tags": [
       "保育施設",
+      "Kita",
       "3歳未満保育",
+      "保育ママ",
       "家庭的保育",
       "NRW",
       "デュッセルドルフ",
-      "Erkrath",
       "保育申込み"
     ],
     "home_visible": true,
@@ -1968,8 +1981,8 @@
     "related_articles": [
       "pregnancy-birth-germany",
       "birth-procedures-germany",
-      "moving-checklist-germany",
-      "nrw-school-holidays-2026-2027"
+      "nrw-school-holidays-2026-2027",
+      "moving-checklist-germany"
     ],
     "official_sources": [
       {
@@ -1977,48 +1990,32 @@
         "url": "https://www.gesetze-im-internet.de/sgb_8/__24.html"
       },
       {
-        "title": "NRW州保育法：2026年8月施行版・第5条の需要申告",
+        "title": "NRW州保育法（KiBiz）：保育年度と第5条の需要申告",
         "url": "https://recht.nrw.de/lrgv/gesetz/01082026-gesetz-zur-fruehen-bildung-und-foerderung-von-kindern-kinderbildungsgesetz/"
       },
       {
-        "title": "デュッセルドルフ市：Kita-Navigatorと入園手順",
+        "title": "デュッセルドルフ市：Kita-Navigatorと枠の配分の流れ",
         "url": "https://www.duesseldorf.de/familie/kinderbetreuung/kita-navigator"
       },
       {
-        "title": "デュッセルドルフ市：家庭的保育の需要申告",
+        "title": "デュッセルドルフ市：家庭的保育（Kindertagespflege）",
         "url": "https://www.duesseldorf.de/familie/kinderbetreuung/kindertagespflege"
       },
       {
-        "title": "デュッセルドルフ市：1歳未満の利用要件の証明",
-        "url": "https://www.duesseldorf.de/fileadmin/Amt51/Familie/Kita-Navigator/nachweis_u1_platzberechtigung.pdf"
-      },
-      {
-        "title": "NRW家族ポータル・Erkrath市青少年局：保育園の登録",
-        "url": "https://www.guterstart.nrw.de/fhiangebot/details/id/135490"
-      },
-      {
-        "title": "Erkrath市公式保育ポータル：家庭的保育の申請",
-        "url": "https://mykitavm.trinuts.de/mykitavm/erkrath/institution/detail/1192/"
-      },
-      {
-        "title": "デュッセルドルフ市：現行の保育料と料金表",
+        "title": "デュッセルドルフ市：保育料（2027年7月まで）",
         "url": "https://www.duesseldorf.de/familie/kinderbetreuung/elternbeitrag"
       },
       {
-        "title": "デュッセルドルフ市：2027年8月以降の保育料案内",
+        "title": "デュッセルドルフ市：保育料（2027年8月から）",
         "url": "https://www.duesseldorf.de/familie/kinderbetreuung/elternbeitrag-2027"
-      },
-      {
-        "title": "NRW州学校省：学校休暇規則（BASS）",
-        "url": "https://bass.schule.nrw/191.htm"
       }
     ],
     "disclaimer_type": "family_administrative",
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-08-31",
-      "next_review_due": "2026-11-30"
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2027-02-14"
     },
     "image_url": "/assets/images/living/childcare-first-visit-editorial-v1.webp",
     "image_alt": "保育施設を家族で訪れ、保育者と子どもの様子を確認するイメージ"
@@ -2100,19 +2097,19 @@
   },
   {
     "id": "L001",
-    "title": "ドイツの住民登録（Anmeldung）のやり方｜期限・必要書類・予約・登録後の流れ",
+    "title": "ドイツの住民登録（Anmeldung）｜入居後2週間の期限・必要書類・予約が取れないとき",
     "slug": "anmeldung-guide",
     "image_url": "/assets/images/living/japanese-resident-paperwork-editorial-v1.webp",
     "image_alt": "ドイツの住民登録に必要な書類を自宅で準備する日本人の住民",
     "category": "役所・滞在",
-    "summary": "ドイツの住民登録（Anmeldung）を、入居後2週間の期限、入居証明など必要書類の取得先・提出先、予約の取り方、費用、期限に遅れた場合、登録後の税務IDまで整理します。",
+    "summary": "住民登録は実際の入居日から2週間以内。パスポート、入居証明、申請書の取得先と出し方、予約が取れないときの動き方、期限に遅れた場合、登録後に届く税務IDまで日本語で整理します。",
     "url": "/germany/ja/living/anmeldung-guide/",
     "markdown_path": "/content/living/anmeldung-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-10-31",
-    "last_verified": "2026-10-31",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "tags": [
       "住民登録",
       "入居証明",
@@ -2167,7 +2164,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-31",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-01-31"
     }
   },
@@ -2217,7 +2214,7 @@
   },
   {
     "id": "L003",
-    "title": "ドイツの健康保険の選び方｜公的保険と民間保険、保険料率、2026年の基準、加入の流れ",
+    "title": "ドイツの健康保険の選び方｜公的と民間の違い・保険料率14.6%＋追加・加入の流れ",
     "slug": "health-insurance-guide",
     "category": "医療・健康",
     "summary": "ドイツの健康保険を会社員・学生・家族など立場別に解説。公的保険と民間保険の違い、保険料率（14.6%＋追加保険料）、2026年の基準、加入証明の提出先、保険証が届く前の受診用証明まで整理します。",
@@ -2549,7 +2546,7 @@
   },
   {
     "id": "L035",
-    "title": "ドイツで医師を探して予約する方法｜かかりつけ医・専門医・116117・112",
+    "title": "ドイツで医師の予約を取る方法｜かかりつけ医の探し方・夜間は116117・救急は112",
     "slug": "doctor-appointment-germany",
     "category": "医療・健康",
     "summary": "ドイツで体調を崩したときの相談先を、かかりつけ医、専門医、時間外診療、救急に分け、医師探しから受診後まで日本語で整理します。",
@@ -2714,6 +2711,7 @@
       "デュッセルドルフ"
     ],
     "related_articles": [
+      "newborn-items-checklist-germany",
       "pregnancy-birth-germany",
       "birth-day-germany",
       "germany-train-travel-guide",
@@ -2787,7 +2785,7 @@
       "パスポート",
       "NRW"
     ],
-    "updated_at": "2026-11-06",
+    "updated_at": "2026-11-14",
     "related_articles": [
       "pregnancy-birth-germany",
       "elterngeld-guide-germany",
@@ -3005,14 +3003,14 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "AI editorial official-source verification",
-      "last_reviewed_at": "2026-10-19",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-01-19"
     },
-    "title": "ドイツのDHLが配達済みなのに届かない｜確認場所・問い合わせ・複数個口",
+    "title": "DHLが配達済みなのに届かない（ドイツ）｜最初の5分で見る場所と問い合わせ先",
     "category": "暮らし・買い物",
     "summary": "DHL Paketで配達済みなのに荷物がない場合の確認順序を解説。追跡の受取人・返送履歴、隣人・置き配・ロッカー、販売店への連絡、複数個口の一部未着、遅延との違いを整理します。",
     "published_at": "2026-10-19",
-    "last_verified": "2026-10-19",
+    "last_verified": "2026-11-14",
     "canonical_url": "/germany/ja/living/dhl-delivered-but-not-received/",
     "tags": [
       "DHL",
@@ -3022,7 +3020,7 @@
       "未配達",
       "複数個口"
     ],
-    "updated_at": "2026-10-20",
+    "updated_at": "2026-11-14",
     "related_articles": [
       "dhl-packstation-guide",
       "germany-first-30-days",
@@ -3074,8 +3072,8 @@
     "canonical_url": "/germany/ja/living/winter-tires-germany-2026/",
     "disclaimer_type": "living",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI source verification; expert review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：道路交通規則第2条・第52条、車両登録規則第36条（1.6mm、Alpine記号）、過料の一覧（60・80・75ユーロ）を原典で確認。点数はADAC（この環境から未確認）",
       "last_reviewed_at": "2026-11-02",
       "next_review_due": "2027-09-01"
     },
@@ -3139,8 +3137,8 @@
     "canonical_url": "/germany/ja/living/nebenkostenabrechnung-2025-deadline/",
     "disclaimer_type": "consumer_contract",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI source verification; expert review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：民法第556条第3項（精算期間終了から12か月、異議は受領から12か月）、第556a条を原典で確認。計算例を検算",
       "last_reviewed_at": "2026-10-20",
       "next_review_due": "2027-01-10"
     },
@@ -3194,16 +3192,16 @@
     "sitemap_visible": true,
     "disclaimer_type": "family_administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI source verification; legal/tax review pending",
-      "last_reviewed_at": "2026-10-27",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：連邦雇用庁の支給日表120件と全件一致、所得税法第70条、連邦議会・連邦政府の法案状況を原典で確認。施行時期の記述を原典に合わせて修正",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-01-27"
     },
     "title": "Kindergeld（ドイツの児童手当）2027年の支給日一覧｜番号末尾0〜9で確認",
     "category": "家族・子育て",
     "summary": "2027年の公式支給日、申請なし支給の段階導入、支給額の法案状況を整理。番号末尾0〜9別の日程と、入金が見えない場合の確認順も説明します。",
     "published_at": "2026-10-27",
-    "last_verified": "2026-10-27",
+    "last_verified": "2026-11-14",
     "next_review": "2027-01-27",
     "canonical_url": "/germany/ja/living/kindergeld-auszahlungstermine-2027/",
     "tags": [
@@ -3213,7 +3211,7 @@
       "2027年",
       "出産後の手続き"
     ],
-    "updated_at": "2026-10-27",
+    "updated_at": "2026-11-14",
     "related_articles": [
       "birth-procedures-germany",
       "pregnancy-birth-germany",
@@ -3269,8 +3267,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "medical",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI source verification; clinical review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：導入日（2025年1月15日、2月中旬、4月29日）、医療機関の利用義務（2025年10月1日）、標準アクセス期間（90日・3日）を連邦保健省・連邦健康ポータルで確認",
       "last_reviewed_at": "2026-10-27",
       "next_review_due": "2027-01-27"
     },
@@ -3327,8 +3325,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "family_administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：NRW州の休暇規則（BASS 12-65 Nr.1、PDF）の2026/27年度の秋・冬・春・聖霊降臨祭と2027年夏の日付を全件確認",
       "last_reviewed_at": "2026-10-27",
       "next_review_due": "2027-01-27"
     },
@@ -3387,8 +3385,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; legal review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：NRW州日曜・祝日法第2条の祝日11日を原典で確認し、2027年の日付と曜日を計算で検算（復活祭3月28日）。学校休暇はBASSで確認",
       "last_reviewed_at": "2026-10-27",
       "next_review_due": "2027-01-27"
     },
@@ -3410,6 +3408,7 @@
     "updated_at": "2026-10-27",
     "related_articles": [
       "nrw-school-holidays-2026-2027",
+      "germany-public-holidays-by-state",
       "kita-u3-tagesmutter-guide",
       "duesseldorf-family-trip"
     ],
@@ -3533,8 +3532,8 @@
     "canonical_url": "/germany/ja/living/minijob-grenze-2027/",
     "disclaimer_type": "employment",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; employment-law review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：最低賃金（13.90・14.60ユーロ、連邦労働社会省）、上限633ユーロ・年7,596ユーロと計算式（社会法典第4編第8条、ミニジョブ・センター）、2か月の超過の例外、2％の一律課税（所得税法第40a条）を原典で確認。時間の表を検算",
       "last_reviewed_at": "2026-11-05",
       "next_review_due": "2026-12-15"
     },
@@ -3616,8 +3615,8 @@
     "canonical_url": "/germany/ja/living/nrw-christmas-opening-hours-2026/",
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; local retail-law review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：NRW店舗営業時間法（12月24日は平日14時まで）、NRW祝日法（12月25・26日）を原典で確認し、2026年の曜日を検算。薬局当番・交通は各事業者の検索を案内（数値なし）",
       "last_reviewed_at": "2026-10-28",
       "next_review_due": "2026-12-01"
     },
@@ -3685,8 +3684,8 @@
     "canonical_url": "/germany/ja/living/returning-to-japan-checklist/",
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：民法第573c条（3か月・3営業日目）、住民登録法第17条（転出2週間以内・1週間前から）、民法第309条第9号（自動更新後は1か月で解約）、年金の払い戻しの24か月（年金保険の法令解説）、放送負担金の抹消、住民基本台帳法の14日、国民健康保険の14日を原典で確認",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-04-30"
     },
@@ -3752,8 +3751,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-29",
-    "updated_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "next_review": "2027-10-29",
     "home_visible": false,
     "home_order": 112,
@@ -3763,9 +3762,9 @@
     "canonical_url": "/germany/ja/living/liability-household-insurance-germany/",
     "disclaimer_type": "consumer_contract",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; legal review pending",
-      "last_reviewed_at": "2026-10-29",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：補償額1,000万ユーロ以上の推奨、自己負担なしの推奨、家財の650ユーロ/平方メートルの目安を消費者センターで確認、民法第823条を確認。確認できない保険料の相場（年50〜80ユーロ）を削除",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-10-29"
     },
     "tags": [
@@ -3829,8 +3828,8 @@
     "canonical_url": "/germany/ja/living/mobile-phone-sim-germany/",
     "disclaimer_type": "consumer_contract",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; legal review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：電気通信法第56条（最初の期間は最長24か月、12か月以下のプランの提示義務、更新後は1か月で解約）、第172条（プリペイドの本人確認）、連邦ネットワーク庁の案内を確認。本人確認義務の開始時期（2017年7月）は原典で未確認",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-29"
     },
@@ -3900,8 +3899,8 @@
     "canonical_url": "/germany/ja/living/unemployment-benefit-germany/",
     "disclaimer_type": "employment",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; employment-law review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：受給条件（30か月中12か月、週15時間、短期の6か月）、給付率60％・67％（社会法典第3編第149条）、受給期間の表（第147条第2項）、求職の届出は3か月前、届出遅れの1週間・自己都合の最長12週間の支給停止を連邦雇用庁と条文で確認。計算例を検算",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-29"
     },
@@ -3960,8 +3959,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-29",
-    "updated_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "next_review": "2027-08-01",
     "home_visible": false,
     "home_order": 115,
@@ -3971,9 +3970,9 @@
     "canonical_url": "/germany/ja/living/schools-germany-japanese-families/",
     "disclaimer_type": "family_administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
-      "last_reviewed_at": "2026-10-29",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：小学校は1〜4年（NRW学校法第11条）、前年11月15日までの申込み（AO-GS第1条）、中等教育の学校の種類と進学の推薦をNRW州学校省で確認。開けない学校省のページの出典をAO-GSに差し替え。日本人学校・補習校の記述は数値なし",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-08-01"
     },
     "tags": [
@@ -4003,8 +4002,8 @@
         "url": "https://schulministerium.nrw/eltern/Schule-in-NRW/Schulwechsel_nach_NRW"
       },
       {
-        "title": "NRW州学校省：小学校のAからZ",
-        "url": "https://www.schulministerium.nrw/die-grundschule-von-bis-z"
+        "title": "NRW州 小学校規則（AO-GS）第1条：前年11月15日までの申込み",
+        "url": "https://bass.schule.nrw/Inhalt/6181.htm"
       },
       {
         "title": "海外子女教育振興財団：在外教育施設とは",
@@ -4031,8 +4030,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-29",
-    "updated_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "next_review": "2027-10-29",
     "home_visible": false,
     "home_order": 116,
@@ -4042,9 +4041,9 @@
     "canonical_url": "/germany/ja/living/drivers-license-japan-germany/",
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
-      "last_reviewed_at": "2026-10-29",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：運転免許規則第29条（6か月）、別表11（日本はすべての車種で試験なし）、警察庁資料（3年以内・帰国後1か月以内の試験免除）を確認。外国免許を持つ人は失効期間を問わず試験免除になる点（道路交通法第97条の2第3項）を追記。図の説明は旧のまま（要更新）",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-10-29"
     },
     "tags": [
@@ -4113,8 +4112,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-29",
-    "updated_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "next_review": "2027-10-29",
     "home_visible": false,
     "home_order": 117,
@@ -4124,9 +4123,9 @@
     "canonical_url": "/germany/ja/living/japan-germany-social-security-pension/",
     "disclaimer_type": "finance",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
-      "last_reviewed_at": "2026-10-29",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：協定発効・通算、受給資格5年、払い戻しの24か月、日本在住の日本国籍者は60か月で任意加入権（払い戻し不可）、協定国での加入義務が払い戻しを妨げる場合、受給年齢での払い戻しをドイツ年金保険の日本向け資料で確認し追記",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-10-29"
     },
     "tags": [
@@ -4198,8 +4197,8 @@
     "canonical_url": "/germany/ja/living/japanese-speaking-doctors-germany/",
     "disclaimer_type": "medical",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; clinical review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：112と116117の使い分けを連邦健康ポータル・116117で確認。外務省・在外公館の医療機関の案内はこの環境から接続を拒否され未確認（数値なし）",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-04-30"
     },
@@ -4253,8 +4252,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-29",
-    "updated_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "next_review": "2027-04-30",
     "home_visible": false,
     "home_order": 119,
@@ -4264,9 +4263,9 @@
     "canonical_url": "/germany/ja/living/dentist-germany-guide/",
     "disclaimer_type": "medical_insurance",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; clinical review pending",
-      "last_reviewed_at": "2026-10-29",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：大人の健診年2回・歯石除去年1回・歯周病検査2年に1回、PZRの補助1回20〜100ユーロ、かぶせ物の補助60/70/75％を消費者センターと社会法典第5編第55条で確認",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-04-30"
     },
     "tags": [
@@ -4323,8 +4322,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-29",
-    "updated_at": "2026-11-07",
-    "last_verified": "2026-11-07",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
     "next_review": "2027-10-29",
     "home_visible": false,
     "home_order": 120,
@@ -4334,9 +4333,9 @@
     "canonical_url": "/germany/ja/living/buying-registering-car-germany/",
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
-      "last_reviewed_at": "2026-11-07",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：車検36/24か月（車両登録規則付表VIII）、期限超過の過料（BKatV 186.2）、i-Kfzの14日、eVB、Euro 7の日程（連邦環境庁）を確認。期限超過時の追加検査はADACの案内として明記（原典未確認）",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-05-29"
     },
     "tags": [
@@ -4413,8 +4412,8 @@
     "canonical_url": "/germany/ja/living/overseas-voting-japan/",
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：在外選挙人名簿の2つの申請方法、3か月以上の居住で登録、出国前申請の期間、3つの投票方法を総務省で確認。外務省のページはこの環境から未確認",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-29"
     },
@@ -4479,8 +4478,8 @@
     "canonical_url": "/germany/ja/living/family-reunification-spouse-work-germany/",
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：滞在法第30条第1項（ビザなしで長期滞在できる国籍は入国前のドイツ語証明が不要）、第4a条（就労）、BAMFの配偶者呼び寄せの資料を確認",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-29"
     },
@@ -4546,8 +4545,8 @@
     "canonical_url": "/germany/ja/living/eu-blue-card-germany/",
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：2026年の年収の条件5万700ユーロ・4万5,934.20ユーロ（連邦官報2025年12月18日）、滞在法第18g条、連邦経済省のQ&Aを確認",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-01-15"
     },
@@ -4605,8 +4604,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "living",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification (Deutsche Post, DHL, Zoll); human review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：日本向けの国際小包（ゾーン7）・手紙の料金、オンライン払いは1〜2日遅くてもよい点、税関申告をDHL・ドイツポスト・税関で確認。日本向けの締切日（11月25・26日、12月18日）はページの表示が動的で再確認できず、2026年11月1日の確認による",
       "last_reviewed_at": "2026-11-01",
       "next_review_due": "2026-12-19"
     },
@@ -4687,9 +4686,9 @@
     "sitemap_visible": true,
     "disclaimer_type": "tax",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: EStG, AO; Verbraucherzentrale); human tax review pending",
-      "last_reviewed_at": "2026-11-05",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：申告義務の条件（所得税法第46条）、通勤控除1kmあたり0.38ユーロ（第9条）、概算控除1,230ユーロ（第9a条）、家事サービス20％・最大4,000ユーロと職人工事最大1,200ユーロ（第35a条）、保育費80％・最大4,800ユーロ（第10条）、累進の留保（第32b条）を確認。原典で確認できない2027年の政府案の金額を削除",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-03-01"
     },
     "canonical_url": "/germany/ja/living/income-tax-return-germany/",
@@ -4697,7 +4696,7 @@
     "category": "お金・税金",
     "summary": "ドイツで働く会社員が確定申告を出す義務があるか、任意で出すと税金が戻りやすいのはどんな年かを、所得税法の条件に沿って整理します。2026年分の期限は2027年8月2日、任意申告は4年以内。通勤・在宅勤務の控除額、ELSTERの登録から税額決定通知の確認までの流れ、日本の収入がある年の注意点も説明します。",
     "published_at": "2026-11-05",
-    "last_verified": "2026-11-05",
+    "last_verified": "2026-11-14",
     "tags": [
       "確定申告",
       "所得税",
@@ -4708,7 +4707,7 @@
       "在宅勤務",
       "税金"
     ],
-    "updated_at": "2026-11-06",
+    "updated_at": "2026-11-14",
     "related_articles": [
       "tax-id-steuernummer-steuerklasse",
       "minijob-grenze-2027",
@@ -4786,8 +4785,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: AufenthG, AufenthV, BeschV, StAG); human immigration review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：滞在法第9条（5年・年金60か月・B1）、第18c条（3年/2年・36/24か月、ブルーカード27か月）、第51条（6か月の出国で失効、15年の特例）、滞在令第44条（手数料113・124ユーロ）を原典で確認",
       "last_reviewed_at": "2026-11-05",
       "next_review_due": "2027-05-01"
     },
@@ -4806,7 +4805,7 @@
       "ドイツ語B1",
       "年金"
     ],
-    "updated_at": "2026-11-05",
+    "updated_at": "2026-11-14",
     "related_articles": [
       "residence-permit-renewal-germany",
       "einbuergerung-germany-japanese",
@@ -4885,8 +4884,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "family_administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: BEEG, EStG); human review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：給付率67％と1,000・1,200ユーロの境目、0.1ポイント/2ユーロ、上限1,800・下限300ユーロ、計算上の上限2,770ユーロ（育児給付法第2条）、きょうだい加算10％・最低75ユーロ（第2a条）、受給期間14・32生後月（第4条）、所得上限17万5,000ユーロ（第1条第8項）を確認。計算例をすべて検算",
       "last_reviewed_at": "2026-11-06",
       "next_review_due": "2027-02-01"
     },
@@ -4983,8 +4982,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: StAG); Japanese Nationality Act and Family Register Act cited from e-Gov but not fetched from this environment; human legal review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：日本の国籍法第11条第1項・第14条（18歳前なら20歳まで）、戸籍法第103条（国外は3か月以内）をe-Govで、国籍法（StAG）第38条の手数料255ユーロ、滞在令第44条の113ユーロを確認。在外公館のページは未確認（接続拒否）",
       "last_reviewed_at": "2026-11-06",
       "next_review_due": "2027-05-01"
     },
@@ -5723,7 +5722,7 @@
       "next_review_due": "2027-01-15"
     },
     "canonical_url": "/germany/ja/living/kindergeld-application-germany/",
-    "title": "ドイツの児童手当（Kindergeld）の申請｜日本人がもらえる滞在許可、月259ユーロ、必要書類、6か月の遡及、日本に住む子どもの扱い",
+    "title": "ドイツの児童手当（Kindergeld）の申請｜月259ユーロ・必要書類・6か月の遡及・日本人の条件",
     "category": "家族・子育て",
     "summary": "ドイツに住む家族は、子ども1人につき月259ユーロ（2026年）の児童手当を受け取れます。日本国籍の親は、就労できる滞在許可などを持っていることが条件です。留学や卒業後の求職の滞在許可は、働いていない場合などに対象外になり、最初のチャンスカードは対象外です。家族手当金庫への申請方法、税番号などの必要書類、申請が遅れたときの6か月の遡及、18歳以降の延長、日本に住む子どもの扱い、2027年からの申請なしの支給を整理します。",
     "published_at": "2026-11-06",
@@ -6379,5 +6378,360 @@
     "image_alt": "住宅、賃貸契約書、電卓とコインを組み合わせた住宅手当のイラスト",
     "image_caption": "住宅手当の申請と住宅費の確認をイメージしたJ-Connectオリジナル図",
     "image_credit": "J-Connect Global制作（2026年11月4日）"
+  },
+  {
+    "id": "L110",
+    "slug": "birth-registration-foreign-spouse-germany",
+    "url": "/germany/ja/living/birth-registration-foreign-spouse-germany/",
+    "markdown_path": "/content/living/birth-registration-foreign-spouse-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "family_administrative",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：法令・公的機関の原典で確認。未確認の点は記事内に明記",
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2027-02-14"
+    },
+    "title": "外国籍の配偶者がいる場合の出生届（ドイツ）｜必要書類・認定翻訳・アポスティーユの要否【2026年 編集部の記録】",
+    "category": "家族・子育て",
+    "summary": "配偶者が外国籍の家庭がドイツで出生届を出すときの準備を、2026年に編集部が戸籍登録所と約10往復したやり取りをもとに整理。外国の証明は原本、翻訳は裁判所認定の翻訳者、アポスティーユの要否は書類ごとに確認、日本側は3か月以内の出生届と国籍留保が必要です。",
+    "published_at": "2026-11-14",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
+    "next_review": "2027-02-14",
+    "canonical_url": "/germany/ja/living/birth-registration-foreign-spouse-germany/",
+    "tags": [
+      "出生届",
+      "国際結婚",
+      "外国籍の配偶者",
+      "認定翻訳",
+      "アポスティーユ",
+      "国籍留保",
+      "出産"
+    ],
+    "related_articles": [
+      "birth-procedures-germany",
+      "certified-translation-germany",
+      "pregnancy-birth-germany",
+      "kita-u3-tagesmutter-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "戸籍法（Personenstandsgesetz）第18〜20条：出生の届出",
+        "url": "https://www.gesetze-im-internet.de/pstg/__18.html"
+      },
+      {
+        "title": "戸籍法施行令（Personenstandsverordnung）第33条：出生届の添付書類",
+        "url": "https://www.gesetze-im-internet.de/pstv/__33.html"
+      },
+      {
+        "title": "戸籍法施行令第2条：外国語の書類の翻訳",
+        "url": "https://www.gesetze-im-internet.de/pstv/__2.html"
+      },
+      {
+        "title": "国籍法（StAG）第4条：出生によるドイツ国籍の取得",
+        "url": "https://www.gesetze-im-internet.de/stag/__4.html"
+      },
+      {
+        "title": "NRW州司法：通訳・翻訳者の認定と検索",
+        "url": "https://www.justiz.nrw/Gerichte_Behoerden/anschriften/dolmetscher__u_uebersetzer"
+      },
+      {
+        "title": "在デュッセルドルフ日本国総領事館：出生届",
+        "url": "https://www.dus.emb-japan.go.jp/itpr_ja/konsular_koseki_04.html"
+      }
+    ],
+    "image_url": "/assets/images/living/birth-procedures-germany.webp",
+    "image_alt": "赤ちゃんの衣類と靴下、書類を入れるフォルダーを机に並べた出産手続きのイメージ"
+  },
+  {
+    "id": "L111",
+    "slug": "certified-translation-germany",
+    "url": "/germany/ja/living/certified-translation-germany/",
+    "markdown_path": "/content/living/certified-translation-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：法令・公的機関の原典で確認。未確認の点は記事内に明記",
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2027-05-14"
+    },
+    "title": "ドイツで認定翻訳（beglaubigte Übersetzung）を頼む｜翻訳者の探し方・見積もり依頼のメール文例【2026年 編集部の記録】",
+    "category": "役所・滞在",
+    "summary": "出生届や住民登録、滞在許可で外国語の書類を出すとき、ドイツでは裁判所に認定された翻訳者の訳を求められることがあります。翻訳者の探し方、見積もりで聞くこと、そのまま使えるドイツ語の依頼メールを、2026年に編集部が複数の翻訳者に依頼した記録をもとに整理します。",
+    "published_at": "2026-11-14",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
+    "next_review": "2027-05-14",
+    "canonical_url": "/germany/ja/living/certified-translation-germany/",
+    "tags": [
+      "認定翻訳",
+      "翻訳",
+      "公的書類",
+      "出生届",
+      "アポスティーユ",
+      "手続き"
+    ],
+    "related_articles": [
+      "birth-registration-foreign-spouse-germany",
+      "birth-procedures-germany",
+      "anmeldung-guide",
+      "residence-permit-renewal-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "民事訴訟法第142条第3項：認定翻訳者の翻訳と証明文",
+        "url": "https://www.gesetze-im-internet.de/zpo/__142.html"
+      },
+      {
+        "title": "戸籍法施行令第2条：戸籍登録所に出す外国語書類の翻訳",
+        "url": "https://www.gesetze-im-internet.de/pstv/__2.html"
+      },
+      {
+        "title": "NRW州司法：通訳・翻訳者",
+        "url": "https://www.justiz.nrw/Gerichte_Behoerden/anschriften/dolmetscher__u_uebersetzer"
+      },
+      {
+        "title": "州司法当局の通訳・翻訳者データベース",
+        "url": "https://www.justiz-dolmetscher.de/"
+      }
+    ],
+    "image_url": "/assets/images/living/japanese-resident-paperwork-editorial-v1.webp",
+    "image_alt": "机の上で書類とパスポートを確認するイメージ"
+  },
+  {
+    "id": "L112",
+    "slug": "income-tax-prepayment-germany",
+    "url": "/germany/ja/living/income-tax-prepayment-germany/",
+    "markdown_path": "/content/living/income-tax-prepayment-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "tax",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：法令・公的機関の原典で確認。未確認の点は記事内に明記",
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2027-05-14"
+    },
+    "title": "会社員に前払い税（Vorauszahlung）の通知が来たら｜年4回の納期とELSTERで調整を申請する手順【2026年】",
+    "category": "お金・税金",
+    "summary": "給与から税金が引かれている会社員でも、確定申告で追加の納税が出ると、税務署から所得税の前払い（Vorauszahlung）を求められることがあります。3月・6月・9月・12月の各10日の納期、収入が減ったときにELSTERで調整を申請する流れ、そのまま使えるドイツ語を、2026年に編集部が申請した記録とともに整理します。",
+    "published_at": "2026-11-14",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
+    "next_review": "2027-05-14",
+    "canonical_url": "/germany/ja/living/income-tax-prepayment-germany/",
+    "tags": [
+      "税金",
+      "前払い",
+      "Vorauszahlung",
+      "ELSTER",
+      "確定申告",
+      "会社員"
+    ],
+    "related_articles": [
+      "income-tax-return-germany",
+      "tax-id-steuernummer-steuerklasse",
+      "elterngeld-guide-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "所得税法第37条：所得税の前払い",
+        "url": "https://www.gesetze-im-internet.de/estg/__37.html"
+      },
+      {
+        "title": "所得税法第46条：会社員の確定申告が必要な場合",
+        "url": "https://www.gesetze-im-internet.de/estg/__46.html"
+      },
+      {
+        "title": "所得税法第32b条：累進の留保（出産手当・育児給付など）",
+        "url": "https://www.gesetze-im-internet.de/estg/__32b.html"
+      },
+      {
+        "title": "ELSTER（税務オンライン申請）",
+        "url": "https://www.elster.de/"
+      }
+    ],
+    "image_url": "/assets/images/living/japanese-resident-paperwork-editorial-v1.webp",
+    "image_alt": "机の上で税務書類を確認するイメージ"
+  },
+  {
+    "id": "L113",
+    "slug": "dental-supplementary-insurance-germany",
+    "url": "/germany/ja/living/dental-supplementary-insurance-germany/",
+    "markdown_path": "/content/living/dental-supplementary-insurance-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "medical_insurance",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：法令・公的機関の原典で確認。未確認の点は記事内に明記",
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2027-05-14"
+    },
+    "title": "ドイツの歯科補助保険で「契約前の治療」と言われたら｜不払いの理由の読み方と異議申立ての書き方【2026年 編集部の記録】",
+    "category": "医療・健康",
+    "summary": "公的保険を補う歯科補助保険（Zahnzusatzversicherung）は、契約前に始まった治療や勧められた治療を補償しないのが一般的です。2026年に編集部が「契約前の治療」を理由に不払いとされ、異議を申し立てた記録をもとに、加入前の注意点、通知の読み方、そのまま使えるドイツ語の異議文を整理します。",
+    "published_at": "2026-11-14",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
+    "next_review": "2027-05-14",
+    "canonical_url": "/germany/ja/living/dental-supplementary-insurance-germany/",
+    "tags": [
+      "歯医者",
+      "歯科補助保険",
+      "保険",
+      "不払い",
+      "異議申立て",
+      "医療"
+    ],
+    "related_articles": [
+      "dentist-germany-guide",
+      "health-insurance-guide",
+      "liability-household-insurance-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "保険契約法第197条：民間医療保険の待機期間の上限",
+        "url": "https://www.gesetze-im-internet.de/vvg_2008/__197.html"
+      },
+      {
+        "title": "保険契約法第19条：契約前の告知義務",
+        "url": "https://www.gesetze-im-internet.de/vvg_2008/__19.html"
+      },
+      {
+        "title": "民間医療・介護保険オンブズマン",
+        "url": "https://www.pkv-ombudsmann.de/"
+      }
+    ],
+    "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
+    "image_alt": "ドイツの診療所の受付で確認するイメージ"
+  },
+  {
+    "id": "L114",
+    "slug": "family-vaccination-before-birth-germany",
+    "url": "/germany/ja/living/family-vaccination-before-birth-germany/",
+    "markdown_path": "/content/living/family-vaccination-before-birth-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "medical_family",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：法令・公的機関の原典で確認。未確認の点は記事内に明記",
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2027-05-14"
+    },
+    "title": "出産前に家族が受ける予防接種（ドイツ）｜父親はかかりつけ医で、百日咳は出産4週間前までに【2026年 編集部の記録】",
+    "category": "家族・子育て",
+    "summary": "生まれたばかりの赤ちゃんは百日咳にかかると重くなりやすく、ドイツでは同居する家族も出産の4週間前までに接種することが公的保険の予防接種指針に書かれています。父親はどこで受けるのか、何を受けるのか、予約のドイツ語を、2026年に編集部の父親がかかりつけ医で接種した記録とともに整理します。",
+    "published_at": "2026-11-14",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
+    "next_review": "2027-05-14",
+    "canonical_url": "/germany/ja/living/family-vaccination-before-birth-germany/",
+    "tags": [
+      "予防接種",
+      "百日咳",
+      "インフルエンザ",
+      "はしか",
+      "出産",
+      "かかりつけ医",
+      "父親"
+    ],
+    "related_articles": [
+      "pregnancy-birth-germany",
+      "doctor-appointment-germany",
+      "birth-procedures-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "連邦共同委員会（G-BA）：予防接種指針（2026年10月29日施行）",
+        "url": "https://www.g-ba.de/richtlinien/60/"
+      },
+      {
+        "title": "社会法典第5編第20i条：予防接種の給付",
+        "url": "https://www.gesetze-im-internet.de/sgb_5/__20i.html"
+      }
+    ],
+    "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
+    "image_alt": "ドイツの診療所の受付で予約を確認するイメージ"
+  },
+  {
+    "id": "L115",
+    "slug": "newborn-items-checklist-germany",
+    "url": "/germany/ja/living/newborn-items-checklist-germany/",
+    "markdown_path": "/content/living/newborn-items-checklist-germany.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "living",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：法令・公的機関の原典で確認。未確認の点は記事内に明記",
+      "last_reviewed_at": "2026-11-14",
+      "next_review_due": "2027-05-14"
+    },
+    "title": "ドイツ語の商品名つき・新生児用品チェックリスト｜dm・Rossmannで探すときの売り場の言葉【2026年】",
+    "category": "家族・子育て",
+    "summary": "ドイツで出産する家庭向けに、新生児用品をおむつ替え・授乳・お風呂と体調・衣類と移動の4つに分け、ドラッグストアのdmやRossmannで探せるドイツ語の商品名と並べました。退院時に車で帰るなら乳児用チャイルドシートが必要なことなど、買い忘れやすい点もまとめます。",
+    "published_at": "2026-11-14",
+    "updated_at": "2026-11-14",
+    "last_verified": "2026-11-14",
+    "next_review": "2027-05-14",
+    "canonical_url": "/germany/ja/living/newborn-items-checklist-germany/",
+    "tags": [
+      "出産準備",
+      "新生児",
+      "ベビー用品",
+      "dm",
+      "Rossmann",
+      "チェックリスト",
+      "買い物"
+    ],
+    "related_articles": [
+      "stroller-buying-guide-germany",
+      "pregnancy-birth-germany",
+      "birth-day-germany"
+    ],
+    "official_sources": [
+      {
+        "title": "道路交通規則第21条第1a項：子どもの乗車時のチャイルドシート",
+        "url": "https://www.gesetze-im-internet.de/stvo_2013/__21.html"
+      }
+    ],
+    "image_url": "/assets/images/living/birth-procedures-germany.webp",
+    "image_alt": "赤ちゃんの衣類と靴下を机に並べたイメージ"
   }
 ]

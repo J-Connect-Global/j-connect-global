@@ -45,6 +45,7 @@ Generated public pages, hub cards, Home preview cards, sitemap entries, and sear
 - Open with two to four sentences explaining the topic, who needs it, and the decision or task the article makes clearer.
 - Write for an ordinary resident first. Separate genuine legal or administrative requirements from optional efficiency tips, and do not let edge cases bury the main route.
 - Use Japanese first. Show an official German term once only when readers need the spelling for a form, sign, search, or institution; then continue in Japanese.
-- Move German phrase practice and full German correspondence examples to Learn German, and link there from the relevant step.
+- Articles without `article_standard`: move German phrase practice and full German correspondence examples to Learn German, and link there from the relevant step.
+- Articles with `article_standard: "2026-11"`: keep the short German lines and mail templates the reader needs at the office in the article itself, with a Japanese translation. See `/docs/article-standard-2026-11.md`.
 
 See `/docs/content-production-workflow.md` for the shared Living and Events workflow.

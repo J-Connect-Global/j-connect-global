@@ -7,8 +7,8 @@ summary: "ドイツでは、他人にけがをさせたり物を壊したりし�
 status: "published"
 published: true
 published_at: "2026-10-29"
-updated_at: "2026-10-29"
-last_verified: "2026-10-29"
+updated_at: "2026-11-14"
+last_verified: "2026-11-14"
 next_review: "2027-10-29"
 canonical_url: "/germany/ja/living/liability-household-insurance-germany/"
 tags: ["保険", "個人賠償責任保険", "家財保険", "賃貸", "初渡独"]
@@ -40,7 +40,7 @@ official_sources:
 
 | 保険 | 必要度 | 目安 |
 | --- | --- | --- |
-| 個人賠償責任保険（Privathaftpflicht） | ほぼ全員に必要 | 補償額は少なくとも1,000万ユーロ。年50〜80ユーロ程度の契約もある |
+| 個人賠償責任保険（Privathaftpflicht） | ほぼ全員に必要 | 補償額は少なくとも1,000万ユーロ。保険料は補償範囲と家族構成で変わる |
 | 家財保険（Hausrat） | 家具や電化製品が多い人 | 家財の実際の価値に合わせて補償額を決める |
 | 自動車保険（Kfz-Haftpflicht） | 車を持つ人は法律で義務 | [車の保険の記事](/germany/ja/events/news/car-insurance-switch-november-2026/)を参照 |
 

@@ -7,8 +7,8 @@ summary: "ドイツで車を使うには、自動車保険に入って番号（e
 status: "published"
 published: true
 published_at: "2026-10-29"
-updated_at: "2026-11-07"
-last_verified: "2026-11-07"
+updated_at: "2026-11-14"
+last_verified: "2026-11-14"
 next_review: "2027-05-29"
 canonical_url: "/germany/ja/living/buying-registering-car-germany/"
 tags: ["車", "TÜV", "自動車保険", "登録", "運転免許"]
@@ -89,7 +89,7 @@ ADACによると、車を登録するときに必要な主なものは次のと�
 
 ADACによると、乗用車の車検は、**新車は最初の登録から3年後**、その後は**2年ごと**です（[ADAC](https://www.adac.de/rund-ums-fahrzeug/reparatur-pflege-wartung/hu-und-au/hu-und-au/)）。
 
-期限を過ぎると、罰金がかかることがあります。期限から2か月を超えると、通常より細かい検査が必要になり、費用が高くなります（[ADAC：期限を過ぎたとき](https://www.adac.de/rund-ums-fahrzeug/reparatur-pflege-wartung/hu-und-au/hu-ueberzogen-oder-durchgefallen/)）。
+期限を過ぎると、過料がかかります。乗用車の場合、期限から2か月以内は過料の対象外で、2〜4か月の超過で15ユーロ、4〜8か月で25ユーロ、8か月を超えると60ユーロです（[過料の一覧（BKatV）付表 番号186.2](https://www.gesetze-im-internet.de/bkatv_2013/anlage.html)、2026年11月14日確認）。ADACは、期限を2か月以上過ぎると追加の検査が必要になり費用が上がると案内しています（検査の指針の原典は未確認）。
 
 ![乗用車の車検は新車が最初の登録から3年後、その後は2年ごとで、ナンバープレートのステッカーで次の年と月が分かり、期限から2か月を超えると細かい検査が必要になることを示した図](/assets/images/living/car-inspection-intervals.svg "図解：J-Connect。ADACの資料に基づく（2026年10月29日参照）。")
 
@@ -120,5 +120,5 @@ Euro 7は排気管からの排出だけでなく、ブレーキ・タイヤの�
 - [連邦自動車庁：インターネットでの車の登録（i-Kfz）](https://www.kba.de/DE/Themen/ZentraleRegister/Digitale_Fahrzeugzulassung/iKfz/ikfz_node.html)
 - [デュッセルドルフ市：新車の登録](https://service.duesseldorf.de/suche/-/egov-bis-detail/dienstleistung/282/show)
 - [ケルン市：車のオンライン登録](https://www.stadt-koeln.de/service/produkte/20020/index.html)
-- [ドイツ連邦環境庁：乗用車・小型商用車の排出基準](https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge)
+- [ドイツ連邦環境庁：乗用車・小型商用車の排出基準](https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge)（Euro 7は2026年11月29日に新しい車種、2027年11月29日から乗用車の新規登録に適用。2026年11月14日確認）
 - [EU規則2024/1257：Euro 7](https://eur-lex.europa.eu/eli/reg/2024/1257/oj)

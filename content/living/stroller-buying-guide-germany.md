@@ -15,7 +15,7 @@ tags: ["ベビーカー","出産準備","5点セット","チャイルドシー�
 image_url: "/assets/images/living/stroller-germany-thumbnail.webp"
 image_caption: "AI生成のイメージ画像。実在する製品や使用実績を示すものではありません。"
 image_alt: "緑豊かなドイツの公園の小道に置かれたベージュのベビーカー"
-related_articles: ["pregnancy-birth-germany","birth-day-germany","germany-train-travel-guide","kita-u3-tagesmutter-guide"]
+related_articles: ["newborn-items-checklist-germany", "pregnancy-birth-germany","birth-day-germany","germany-train-travel-guide","kita-u3-tagesmutter-guide"]
 official_sources:
   - title: "BIÖG：ベビーカーの安全チェックリスト"
     url: "https://www.kindergesundheit-info.de/fileadmin/user_upload/kindergesundheit-info.de/Download/Unfallverhuetung/Checklisten_Kindersicherheit/Checkliste-Kinderwagen_BIOEG_kindergesundheit-info.pdf"

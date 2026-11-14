@@ -20,7 +20,7 @@ official_sources:
     url: "https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/weihnachtsmarkt-auf-der-fleetinsel-301114"
   - title: "ハンブルク市：ハンブルガー・ドーム（冬のドーム2026）"
     url: "https://www.hamburg.de/freizeit/dom"
-related_articles: ["hamburg-weekend-trip", "berlin-christmas-markets-2026-guide", "gluehwein-christmas-market-guide", "saint-nicholas-day-germany", "christmas-markets-duesseldorf", "germany-train-travel-guide"]
+related_articles: ["christmas-post-germany-to-japan-2026", "hamburg-weekend-trip", "berlin-christmas-markets-2026-guide", "gluehwein-christmas-market-guide", "saint-nicholas-day-germany", "christmas-markets-duesseldorf", "germany-train-travel-guide"]
 city: "ハンブルク"
 location: "市庁舎前広場、ユングフェルンシュティーク、ザンクト・パウリのシュピールブーデン広場ほか"
 event_date: "2026-11-18〜2026-12-23"

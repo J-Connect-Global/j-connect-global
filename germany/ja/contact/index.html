@@ -474,6 +474,7 @@ textarea:focus{
                 <option>広告・提携のご相談</option>
                 <option>求人掲載のご相談</option>
                 <option>不具合報告</option>
+                <option value="体験談の投稿">体験談の投稿（記事への掲載）</option>
                 <option>その他</option>
               </select>
             </div>
@@ -581,6 +582,20 @@ textarea:focus{
     const GAS_URL = window.JCONNECT_DATA_SOURCES.directoryDataEndpoint;
     const formStartedAt = document.getElementById('formStartedAt');
     formStartedAt.value = String(Date.now());
+
+    // Article pages link here with ?type=experience&page=<article URL>.
+    (function prefillExperience() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('type') !== 'experience') return;
+      const typeSelect = document.getElementById('type');
+      typeSelect.value = '体験談の投稿';
+      const page = params.get('page') || '';
+      if (/^https:\/\/j-connect-global\.com\//.test(page)) document.getElementById('page_url').value = page;
+      const subject = document.getElementById('subject');
+      if (!subject.value) subject.value = '手続きの体験';
+      const message = document.getElementById('message');
+      if (!message.value) message.value = '地域（例：デュッセルドルフ近郊）：\n時期（例：2026年10月）：\n何を聞いたか・何をしたか：\n何と回答されたか・どうなったか：\nかかった日数：\n記事に載せてよいか（はい／いいえ）：';
+    })();
 
     form.addEventListener('submit', async function(event) {
       event.preventDefault();

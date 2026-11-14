@@ -7,7 +7,8 @@ summary: "ドイツの無期限の滞在許可（永住許可）は、一般的�
 status: "published"
 published: true
 published_at: "2026-11-05"
-updated_at: "2026-11-05"
+updated_at: "2026-11-14"
+article_standard: "2026-11"
 last_verified: "2026-11-05"
 next_review: "2027-05-01"
 canonical_url: "/germany/ja/living/permanent-residence-germany/"
@@ -66,7 +67,7 @@ official_sources:
 
 ![永住許可までの5つのルートを比べた図。一般は5年・年金60か月・B1、専門人材は3年・36か月・B1、EUブルーカードは27か月でA1または21か月でB1、ドイツ人の配偶者は3年・B1](/assets/images/living/seo/permanent-residence-routes.svg "図解：J-Connect。根拠：滞在法第9条・第18c条・第28条。代表的なルートのみで、すべてではありません。2026年11月5日確認。")
 
-## 日本人が最初に確認したい「カードの条文」
+## あなたはどのケース？｜カードの条文で変わる
 
 専門人材の3年ルートは、滞在法第18a条・第18b条・第18d条・第18g条のいずれかに基づく滞在許可を持っている人が対象です。ところが、日本国籍者は、就労令第26条の「日本など特定の国の国籍者はどんな仕事にも就労許可を出せる」という規定を使い、**滞在法第19c条**の滞在許可で働いていることがよくあります。
 
@@ -74,11 +75,13 @@ official_sources:
 
 まず、電子滞在カード（eAT）の裏面や補足の紙に書かれた「§」で始まる条文番号を確認してください。
 
-- **§ 18a・18b・18d**：専門人材のルート（3年）を検討できます
-- **§ 18g**：EUブルーカードのルート（21か月または27か月）を検討できます
-- **§ 19c**：一般のルート（5年）が基本です
-- **§ 28**：ドイツ人の家族のルート（3年）を検討できます
-- **§ 30**などの家族の呼び寄せ：一般のルートが基本です。専門人材の配偶者には別の特例があります（下記）
+| カードの条文 | 検討できるルート | 備考 |
+| --- | --- | --- |
+| § 18a・18b・18d | 専門人材（3年。ドイツで修了した人は2年） | 年金36か月（同24か月）、B1 |
+| § 18g | EUブルーカード（21か月または27か月） | B1なら21か月、A1なら27か月 |
+| § 19c | 一般（5年） | 日本国籍者に多い。仕事が専門的でも原則5年 |
+| § 28 | ドイツ人の家族（3年） | B1 |
+| § 30など家族の呼び寄せ | 一般（5年）が基本 | 専門人材の配偶者には特例（下記） |
 
 途中で許可の種類が変わった人は、どの期間が数えられるかの判断が複雑になります。申請前に外国人局へ確認してください。ブルーカードへの切り替えを考えている人は、[ドイツのEUブルーカードとは](/germany/ja/living/eu-blue-card-germany/)も参考になります。
 
@@ -167,7 +170,7 @@ official_sources:
 
 ![永住許可の準備チェックリスト図。カードの条文番号、年金の加入月数、ドイツ語と社会の知識の証明、収入と住居の書類を確認し、取得後は6か月以上の出国に注意することを示す](/assets/images/living/seo/permanent-residence-checklist.svg "図解：J-Connect。根拠：滞在法第9条・第18c条・第51条。必要書類は外国人局により異なります。2026年11月5日確認。")
 
-## 申請の流れと費用
+## 手順：申請の流れと費用
 
 1. **管轄の外国人局を確認する**：住民登録をしている市や郡の外国人局が担当です。デュッセルドルフ市など多くの自治体では、オンラインの申請フォームや予約システムを使います。
 2. **書類をそろえる**：一般的には、パスポート、現在の電子滞在カード、生体認証用の写真、雇用契約書と直近の給与明細、年金の加入記録、ドイツ語の証明、社会の基礎知識の証明、賃貸契約書、健康保険の加入証明などです。自治体ごとにリストが公開されているので、必ず最新版を使います。
@@ -198,9 +201,38 @@ official_sources:
 
 1回あたり6か月までで、滞在許可が失効していなければ、原則として期間に含まれます。長期の帰国があった人は、出入国の記録を整理しておきましょう。
 
-## 外国人局での会話が不安なら
+## 落とし穴
 
-予約の取り方や窓口での伝え方は、[外国人局で使うドイツ語](/germany/ja/learn-german/auslaenderbehoerde-residence-phrases/)にまとめています。
+- カードの条文を見ずに3年ルートを狙う：日本国籍者に多い§19cの許可では、専門人材の3年ルートやブルーカードのルートは原則使えない。
+- 夫婦の一方だけがドイツ語を準備する：ドイツ語と社会の知識の条件は、夫婦それぞれに必要。
+- 年金の加入月数を数えていない：一般は60か月、専門人材は36か月。年金の加入記録を取り寄せて確認する。
+- 期限切れぎりぎりに申請する：今の滞在許可の期限内に申請を出しておかないと、審査中の扱いで困る。
+- 取得後に6か月以上ドイツを離れる：永住許可でも失効する。出産・介護などで長く離れるなら、出国前に外国人局へ相談する。
+
+## そのまま使えるドイツ語
+
+| 場面 | ドイツ語 | 日本語 |
+| --- | --- | --- |
+| 条文を確認する | Auf welcher Rechtsgrundlage beruht mein aktueller Aufenthaltstitel? | 今の私の滞在許可は、どの条文に基づいていますか。 |
+| 必要書類を聞く | Welche Unterlagen benötige ich für den Antrag auf eine Niederlassungserlaubnis? | 永住許可の申請には、どの書類が必要ですか。 |
+| 長期の出国を相談する | Ich muss für voraussichtlich [Monate] Monate nach Japan. Kann die Frist nach § 51 verlängert werden? | 〇か月ほど日本に行く必要があります。第51条の期限を延ばしてもらえますか。 |
+
+外国人局への申請の問い合わせ（メール）：
+
+> 件名：Antrag auf Niederlassungserlaubnis – [Name], geb. [Datum]
+> Sehr geehrte Damen und Herren,
+> mein Aufenthaltstitel nach § [Nummer] AufenthG ist gültig bis zum [Datum]. Ich möchte eine Niederlassungserlaubnis beantragen und erfülle nach meiner Einschätzung die Voraussetzungen (u. a. [Monate] Monate Rentenbeiträge, Deutschkenntnisse B1).
+> Bitte teilen Sie mir mit, wie ich einen Termin erhalte und welche Unterlagen ich einreichen soll.
+> Mit freundlichen Grüßen
+> [Name]
+
+和訳：件名「永住許可の申請（氏名・生年月日）」。私の滞在許可（滞在法第〇条）は〇日まで有効です。永住許可を申請したく、条件（年金〇か月、ドイツ語B1など）を満たしていると考えています。予約の取り方と、提出する書類を教えてください。
+
+予約の取り方や窓口での伝え方は、[外国人局で使うドイツ語](/germany/ja/learn-german/auslaenderbehoerde-residence-phrases/)にもまとめています。
+
+## 在住者の実例
+
+この記事には、まだJ-Connect編集部や読者の実例を載せていません。申請から受け取りまでの日数や、外国人局で聞かれたことの体験を集めて追記します。
 
 ## 関連記事
 
@@ -212,18 +244,18 @@ official_sources:
 
 ## 公式情報・参考ソース
 
-- [滞在法第9条：永住許可（一般の条件）](https://www.gesetze-im-internet.de/aufenthg_2004/__9.html)
-- [滞在法第18c条：専門人材・EUブルーカード保持者の永住許可](https://www.gesetze-im-internet.de/aufenthg_2004/__18c.html)
-- [滞在法第28条：ドイツ人の家族](https://www.gesetze-im-internet.de/aufenthg_2004/__28.html)
-- [滞在法第9a条：EU長期滞在許可](https://www.gesetze-im-internet.de/aufenthg_2004/__9a.html)
-- [滞在法第51条：滞在許可の失効](https://www.gesetze-im-internet.de/aufenthg_2004/__51.html)
-- [滞在法第2条：ドイツ語能力の段階](https://www.gesetze-im-internet.de/aufenthg_2004/__2.html)
-- [滞在法第19c条：資格によらない就労](https://www.gesetze-im-internet.de/aufenthg_2004/__19c.html)
-- [就労令第26条：日本国籍者などの就労](https://www.gesetze-im-internet.de/beschv_2013/__26.html)
-- [滞在令第44条：永住許可の手数料](https://www.gesetze-im-internet.de/aufenthv/__44.html)
-- [ドイツ国籍法第10条：帰化の条件](https://www.gesetze-im-internet.de/stag/__10.html)
-- [連邦政府の専門人材向けポータル：ビザと滞在](https://www.make-it-in-germany.com/en/visa-residence)
-- [デュッセルドルフ市：外国人局のお知らせ](https://www.duesseldorf.de/auslaenderamt/aktuelles)
-- [日本の国籍法（e-Gov法令検索）](https://laws.e-gov.go.jp/law/325AC0000000147)
+- [滞在法第9条：永住許可（一般の条件）](https://www.gesetze-im-internet.de/aufenthg_2004/__9.html)（2026年11月14日確認）
+- [滞在法第18c条：専門人材・EUブルーカード保持者の永住許可](https://www.gesetze-im-internet.de/aufenthg_2004/__18c.html)（2026年11月14日確認）
+- [滞在法第28条：ドイツ人の家族](https://www.gesetze-im-internet.de/aufenthg_2004/__28.html)（2026年11月5日確認）
+- [滞在法第9a条：EU長期滞在許可](https://www.gesetze-im-internet.de/aufenthg_2004/__9a.html)（2026年11月5日確認）
+- [滞在法第51条：滞在許可の失効](https://www.gesetze-im-internet.de/aufenthg_2004/__51.html)（2026年11月5日確認）
+- [滞在法第2条：ドイツ語能力の段階](https://www.gesetze-im-internet.de/aufenthg_2004/__2.html)（2026年11月5日確認）
+- [滞在法第19c条：資格によらない就労](https://www.gesetze-im-internet.de/aufenthg_2004/__19c.html)（2026年11月5日確認）
+- [就労令第26条：日本国籍者などの就労](https://www.gesetze-im-internet.de/beschv_2013/__26.html)（2026年11月5日確認）
+- [滞在令第44条：永住許可の手数料](https://www.gesetze-im-internet.de/aufenthv/__44.html)（2026年11月5日確認）
+- [ドイツ国籍法第10条：帰化の条件](https://www.gesetze-im-internet.de/stag/__10.html)（2026年11月5日確認）
+- [連邦政府の専門人材向けポータル：ビザと滞在](https://www.make-it-in-germany.com/en/visa-residence)（2026年11月5日確認）
+- [デュッセルドルフ市：外国人局のお知らせ](https://www.duesseldorf.de/auslaenderamt/aktuelles)（2026年11月5日確認）
+- [日本の国籍法（e-Gov法令検索）](https://laws.e-gov.go.jp/law/325AC0000000147)（2026年11月5日確認）
 
 **参照日：2026年11月5日。** 滞在に関する法律は改正が続いており、運用も外国人局ごとに異なります。この記事は一般的な情報で、個別の法的助言ではありません。申請前に必ず管轄の外国人局の最新の案内を確認し、複雑な事情がある場合は専門の弁護士などに相談してください。

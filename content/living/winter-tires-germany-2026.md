@@ -114,7 +114,8 @@ ADACの2026年10月8日付解説では、冬季路面で不適合タイヤを使
 - [道路交通規則第2条3a項（冬季路面での運転）](https://www.gesetze-im-internet.de/stvo_2013/__2.html)
 - [車両登録規則第36条（冬タイヤの定義・溝の深さ）](https://www.gesetze-im-internet.de/stvzo_2012/__36.html)
 - [道路交通規則第52条（M+Sタイヤの移行措置は2024年9月30日まで）](https://www.gesetze-im-internet.de/stvo_2013/__52.html)
+- [過料の一覧（BKatV）付表：番号5a・5a.1（60ユーロ・80ユーロ）、保有者の75ユーロ](https://www.gesetze-im-internet.de/bkatv_2013/anlage.html)（2026年11月14日確認）
 - [ADAC：ドイツの冬タイヤ義務（2026年10月8日更新）](https://www.adac.de/rund-ums-fahrzeug/ausstattung-technik-zubehoer/reifen/sicherheit/winterreifenpflicht-deutschland/)
 - [ADAC：オールシーズンタイヤの冬季利用](https://www.adac.de/rund-ums-fahrzeug/ausstattung-technik-zubehoer/reifen/sicherheit/ganzjahresreifen-im-winter/)
 
-**参照日：2026年11月2日。** 本記事は一般的な乗用車の利用者向けです。特殊車両・一輪車両等には例外があり、個別の事故・保険・行政処分については専門家または当局へ確認してください。
+**参照日：2026年11月2日（法令と過料の額は2026年11月14日に再確認）。** 本記事は一般的な乗用車の利用者向けです。特殊車両・一輪車両等には例外があり、個別の事故・保険・行政処分については専門家または当局へ確認してください。

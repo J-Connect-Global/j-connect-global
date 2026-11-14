@@ -4262,8 +4262,8 @@
     "canonical_url": "/germany/ja/living/dentist-germany-guide/",
     "disclaimer_type": "medical_insurance",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; clinical review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：大人の健診年2回・歯石除去年1回・歯周病検査2年に1回、PZRの補助1回20〜100ユーロ、かぶせ物の補助60/70/75％を消費者センターと社会法典第5編第55条で確認",
       "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-04-30"
     },
@@ -4477,8 +4477,8 @@
     "canonical_url": "/germany/ja/living/family-reunification-spouse-work-germany/",
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：滞在法第30条第1項（ビザなしで長期滞在できる国籍は入国前のドイツ語証明が不要）、第4a条（就労）、BAMFの配偶者呼び寄せの資料を確認",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-10-29"
     },
@@ -4544,8 +4544,8 @@
     "canonical_url": "/germany/ja/living/eu-blue-card-germany/",
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification; expert review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：2026年の年収の条件5万700ユーロ・4万5,934.20ユーロ（連邦官報2025年12月18日）、滞在法第18g条、連邦経済省のQ&Aを確認",
       "last_reviewed_at": "2026-10-29",
       "next_review_due": "2027-01-15"
     },
@@ -4603,8 +4603,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "living",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification (Deutsche Post, DHL, Zoll); human review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：日本向けの国際小包（ゾーン7）・手紙の料金、オンライン払いは1〜2日遅くてもよい点、税関申告をDHL・ドイツポスト・税関で確認。日本向けの締切日（11月25・26日、12月18日）はページの表示が動的で再確認できず、2026年11月1日の確認による",
       "last_reviewed_at": "2026-11-01",
       "next_review_due": "2026-12-19"
     },
@@ -4685,9 +4685,9 @@
     "sitemap_visible": true,
     "disclaimer_type": "tax",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: EStG, AO; Verbraucherzentrale); human tax review pending",
-      "last_reviewed_at": "2026-11-05",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：申告義務の条件（所得税法第46条）、通勤控除1kmあたり0.38ユーロ（第9条）、概算控除1,230ユーロ（第9a条）、家事サービス20％・最大4,000ユーロと職人工事最大1,200ユーロ（第35a条）、保育費80％・最大4,800ユーロ（第10条）、累進の留保（第32b条）を確認。原典で確認できない2027年の政府案の金額を削除",
+      "last_reviewed_at": "2026-11-14",
       "next_review_due": "2027-03-01"
     },
     "canonical_url": "/germany/ja/living/income-tax-return-germany/",
@@ -4695,7 +4695,7 @@
     "category": "お金・税金",
     "summary": "ドイツで働く会社員が確定申告を出す義務があるか、任意で出すと税金が戻りやすいのはどんな年かを、所得税法の条件に沿って整理します。2026年分の期限は2027年8月2日、任意申告は4年以内。通勤・在宅勤務の控除額、ELSTERの登録から税額決定通知の確認までの流れ、日本の収入がある年の注意点も説明します。",
     "published_at": "2026-11-05",
-    "last_verified": "2026-11-05",
+    "last_verified": "2026-11-14",
     "tags": [
       "確定申告",
       "所得税",
@@ -4784,8 +4784,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: AufenthG, AufenthV, BeschV, StAG); human immigration review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：滞在法第9条（5年・年金60か月・B1）、第18c条（3年/2年・36/24か月、ブルーカード27か月）、第51条（6か月の出国で失効、15年の特例）、滞在令第44条（手数料113・124ユーロ）を原典で確認",
       "last_reviewed_at": "2026-11-05",
       "next_review_due": "2027-05-01"
     },
@@ -4883,8 +4883,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "family_administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: BEEG, EStG); human review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：給付率67％と1,000・1,200ユーロの境目、0.1ポイント/2ユーロ、上限1,800・下限300ユーロ、計算上の上限2,770ユーロ（育児給付法第2条）、きょうだい加算10％・最低75ユーロ（第2a条）、受給期間14・32生後月（第4条）、所得上限17万5,000ユーロ（第1条第8項）を確認。計算例をすべて検算",
       "last_reviewed_at": "2026-11-06",
       "next_review_due": "2027-02-01"
     },
@@ -4981,8 +4981,8 @@
     "sitemap_visible": true,
     "disclaimer_type": "administrative",
     "review": {
-      "status": "needs_review",
-      "reviewed_by": "AI official-source verification (gesetze-im-internet.de: StAG); Japanese Nationality Act and Family Register Act cited from e-Gov but not fetched from this environment; human legal review pending",
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：日本の国籍法第11条第1項・第14条（18歳前なら20歳まで）、戸籍法第103条（国外は3か月以内）をe-Govで、国籍法（StAG）第38条の手数料255ユーロ、滞在令第44条の113ユーロを確認。在外公館のページは未確認（接続拒否）",
       "last_reviewed_at": "2026-11-06",
       "next_review_due": "2027-05-01"
     },

@@ -21,7 +21,7 @@ canonical_url: "/germany/ja/events/news/thg-quote-2026-deadline-november-15/"
 official_url: "https://www.umweltbundesamt.de/themen/verkehr/kraftstoffe-antriebe/vollzug-38-bimschv-anrechnung-von-strom-fuer"
 related_articles: ["car-insurance-switch-november-2026", "winter-tires-germany-2026"]
 official_sources:
-  - title: "環境庁：38番目の連邦排出規制令に基づく電気自動車の電力申告（2026年11月6日更新）"
+  - title: "環境庁：38番目の連邦排出規制令に基づく電気自動車の電力申告（2026年11月13日更新）"
     url: "https://www.umweltbundesamt.de/themen/verkehr/kraftstoffe-antriebe/vollzug-38-bimschv-anrechnung-von-strom-fuer"
   - title: "環境庁：38番目の連邦排出規制令の申請・運用FAQ（2025年7月17日版）"
     url: "https://www.umweltbundesamt.de/system/files/medien/366/dokumente/2025-07-18_uba_faq_vollzug_38._bimschv_0.pdf"
@@ -106,7 +106,7 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 
 ## 環境庁へ直接申請する場合
 
-環境庁の2026年11月6日更新ページによると、申請は現在、書式自由で電子メール（38bimschv@uba.de）により提出できます。デジタル申請システムはまだ利用できません。2026年の義務年度については、2026年9月9日以降に提出された申請を処理中と案内されています。
+環境庁の2026年11月13日更新ページによると、申請は現在、書式自由で電子メール（38bimschv@uba.de）により提出できます。デジタル申請システムはまだ利用できません。2026年の義務年度については、2026年9月9日以降に提出された申請を処理中と案内されています。
 
 直接申請する場合は、最新の環境庁FAQと提出様式を確認し、送信した申請書類と受付番号を保存してください。環境庁が発行するのは電力量と削減量の証明であり、対価の支払いではありません。証明書を買い取る義務対象事業者との契約は別に必要です。
 
@@ -148,7 +148,7 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 
 ## 公式情報・参考ソース
 
-- [環境庁：38番目の連邦排出規制令に基づく電気自動車の電力申告（2026年11月6日更新）](https://www.umweltbundesamt.de/themen/verkehr/kraftstoffe-antriebe/vollzug-38-bimschv-anrechnung-von-strom-fuer)
+- [環境庁：38番目の連邦排出規制令に基づく電気自動車の電力申告（2026年11月13日更新）](https://www.umweltbundesamt.de/themen/verkehr/kraftstoffe-antriebe/vollzug-38-bimschv-anrechnung-von-strom-fuer)
 - [環境庁：38番目の連邦排出規制令の申請・運用FAQ（2025年7月17日版）](https://www.umweltbundesamt.de/system/files/medien/366/dokumente/2025-07-18_uba_faq_vollzug_38._bimschv_0.pdf)
 - [法令：38番目の連邦排出規制令 第8条](https://www.gesetze-im-internet.de/bimschv_38_2017/__8.html)
 - [法令：38番目の連邦排出規制令 第7条](https://www.gesetze-im-internet.de/bimschv_38_2017/__7.html)

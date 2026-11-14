@@ -343,6 +343,7 @@ function normalizeItem(type, item, index) {
     image_src: imageSrc,
     image_alt: imageAlt,
     image_caption: firstNonEmpty(frontmatter.image_caption, item.image_caption, item.imageCaption),
+    article_standard: firstNonEmpty(frontmatter.article_standard, item.article_standard),
     image_credit: firstNonEmpty(frontmatter.image_credit, item.image_credit, item.imageCredit),
     review: normalizeReview(item)
   };
@@ -431,6 +432,7 @@ ${indent(renderArticleToc(toc), 8)}
         <div class="article-body">
 ${indent(articleBodyHtml, 10)}
 ${indent(renderArticleBackLink(item, config), 10)}
+${indent(renderExperienceInvite(type, item), 10)}
 ${indent(renderDisclaimer(item), 10)}
         </div>
       </article>
@@ -1247,6 +1249,19 @@ function getCrawlableLocalImageUrl(item) {
   const fullPath = path.join(root, rel);
   if (!fs.existsSync(fullPath) || !fs.statSync(fullPath).isFile()) return '';
   return absoluteUrl(src);
+}
+
+// Articles written to the 2026-11 standard ask readers for their own records
+// (plan chapter 6, "読者の体験を集める"). The contact form is prefilled.
+function renderExperienceInvite(type, item) {
+  if (type !== 'living' || !item.article_standard) return '';
+  const pageUrl = absoluteUrl(item.canonical_url || item.url);
+  const href = `/germany/ja/contact/?type=experience&page=${encodeURIComponent(pageUrl)}`;
+  return `<aside class="article-experience-invite" aria-label="体験談の募集">
+  <p class="article-experience-invite__title">この手続きの体験を教えてください</p>
+  <p>地域（例：デュッセルドルフ近郊）と時期、何を聞き、何と回答され、何日かかったかだけで十分です。編集部が事実を確認し、個人が分からない形で記事に追加します。お名前とメールアドレスは確認の連絡にだけ使い、掲載しません。</p>
+  <p><a class="jc-button" href="${escapeAttribute(href)}">体験を送る</a></p>
+</aside>`;
 }
 
 function renderDisclaimer(item) {

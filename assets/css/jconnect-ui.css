@@ -3239,6 +3239,24 @@
     text-underline-offset:2px;
   }
 
+  .article-experience-invite{
+    margin-top:32px;
+    padding:18px;
+    border:1px solid var(--jc-line);
+    border-radius:var(--jc-radius-md);
+    background:var(--jc-soft-2);
+    line-height:1.7;
+  }
+
+  .article-experience-invite__title{
+    margin:0 0 6px;
+    font-weight:700;
+  }
+
+  .article-experience-invite p:last-child{
+    margin-bottom:0;
+  }
+
   .article-disclaimer{
     margin-top:32px;
     padding:15px;

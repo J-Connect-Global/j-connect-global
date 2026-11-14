@@ -3,8 +3,8 @@ slug: "germany-public-holidays-by-state"
 id: "C012"
 content_type: "column"
 category: "季節・文化"
-title: "ドイツの祝日は州ごとに違う？｜国が決めた祝日は1日だけ、NRWの2027年の祝日一覧つき"
-summary: "ドイツで国の法律が決めている祝日は10月3日の「ドイツ統一の日」だけ。ほかの祝日はすべて州が決めています。11月1日の万聖節がNRWでは休みなのに隣の州では平日、という違いの理由と、州ごとの珍しい祝日、NRWの2027年の祝日一覧を紹介します。"
+title: "ドイツの祝日は州ごとに違う？｜国が決めた祝日は1日だけの理由と、州ごとの珍しい祝日"
+summary: "ドイツで国の法律が決めている祝日は10月3日の「ドイツ統一の日」だけ。ほかの祝日はすべて州が決めています。11月1日の万聖節がNRWでは休みなのに隣の州では平日、という違いの理由と、州ごとの珍しい祝日を紹介します。NRWの2027年の日付は生活ガイドの一覧にまとめています。"
 official_sources:
   - title: "連邦内務省：国の祝日"
     url: "https://www.bmi.bund.de/DE/themen/verfassung/staatliche-symbole/nationale-feiertage/nationale-feiertage-node.html"
@@ -18,7 +18,7 @@ official_sources:
     url: "https://www.revosax.sachsen.de/vorschrift_gesamt/3997/26160.pdf"
   - title: "ケルン大司教区：2026年と2027年の移動祝日"
     url: "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Katholische-bewegliche-Feiertage-und-Hochfeste/"
-related_articles: ["germany-sunday-rest-shops-closed", "rhineland-carnival-11-11", "christmas-markets-duesseldorf", "quiet-holidays-november-germany"]
+related_articles: ["nrw-public-holidays-2027", "germany-sunday-rest-shops-closed", "rhineland-carnival-11-11", "christmas-markets-duesseldorf", "quiet-holidays-november-germany"]
 city: "ドイツ全土"
 area: "ドイツ全土"
 location: ""
@@ -29,7 +29,7 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-27"
-updated_at: "2026-10-27"
+updated_at: "2026-11-14"
 last_verified: "2026-10-27"
 canonical_url: "/germany/ja/events/columns/germany-public-holidays-by-state/"
 official_url: "https://www.bmi.bund.de/DE/themen/verfassung/staatliche-symbole/nationale-feiertage/nationale-feiertage-node.html"
@@ -39,7 +39,7 @@ image_caption: "イラスト：J-Connect。祝日のテーマを表したもの�
 image_credit: "Illustration / J-Connect"
 ---
 
-# ドイツの祝日は州ごとに違う？｜国が決めた祝日は1日だけ、NRWの2027年の祝日一覧つき
+# ドイツの祝日は州ごとに違う？｜国が決めた祝日は1日だけの理由と、州ごとの珍しい祝日
 
 11月1日、デュッセルドルフのお店はすべて閉まっているのに、同じ日にベルリンに住む友人は普通に仕事をしている。ドイツで暮らしていると、こんな「祝日のずれ」に出会うことがあります。
 
@@ -79,27 +79,11 @@ image_credit: "Illustration / J-Connect"
 - **テューリンゲン州：世界子どもの日（9月20日）**：子どもの権利を考える日として、州の祝日になっています（[テューリンゲン州 祝日法](https://landesrecht.thueringen.de/jportal/?aiz=true&max=true&psml=bsthueprod.psml&quelle=jlink&query=FeiertG+TH)）。
 - **アウクスブルク市：平和祭（8月8日）**：バイエルン州のアウクスブルク市だけの祝日で、宗教の違いを越えた平和を記念する日です。「州」ではなく「市」だけの祝日という、とても珍しい例です。
 
-## NRWの祝日：2027年の一覧
+## NRWの祝日は年11日
 
-NRW州の日曜・祝日法が定める祝日は、次の11日です（[NRW州 日曜・祝日法](https://recht.nrw.de/lrgv/gesetz/01012000-bekanntmachung-der-neufassung-des-gesetzes-ueber-die-sonn-und-feiertage/)）。復活祭に合わせて動く祝日の2027年の日付は、ケルン大司教区の一覧で確かめています（[ケルン大司教区](https://www.erzbistum-koeln.de/presse_und_medien/magazin/Katholische-bewegliche-Feiertage-und-Hochfeste/)）。
+NRW州の日曜・祝日法が定める祝日は、元日、聖金曜日、復活祭の翌月曜日、メーデー、キリスト昇天祭、聖霊降臨祭の翌月曜日、聖体祭、ドイツ統一の日、万聖節、クリスマスとその翌日の11日です（[NRW州 日曜・祝日法](https://recht.nrw.de/lrgv/gesetz/01012000-bekanntmachung-der-neufassung-des-gesetzes-ueber-die-sonn-und-feiertage/)）。聖体祭と万聖節があるのは、カトリックの信者が多い地域の歴史によるものです。
 
-| 祝日 | 2027年の日付 |
-| --- | --- |
-| 元日 | 1月1日（金） |
-| 聖金曜日 | 3月26日（金） |
-| 復活祭の翌月曜日 | 3月29日（月） |
-| メーデー | 5月1日（土） |
-| キリスト昇天祭 | 5月6日（木） |
-| 聖霊降臨祭の翌月曜日 | 5月17日（月） |
-| 聖体祭 | 5月27日（木） |
-| ドイツ統一の日 | 10月3日（日） |
-| 万聖節 | 11月1日（月） |
-| クリスマス | 12月25日（土） |
-| クリスマス第2日 | 12月26日（日） |
-
-2027年の復活祭は3月28日で、比較的早い年です。そのため、キリスト昇天祭と聖体祭がどちらも5月の木曜日にあたります。木曜日が祝日だと、金曜日に休みを取って4連休にする「橋渡しの日（Brückentag）」を作る人も多く、5月は旅行の計画が立てやすい月になりそうです。
-
-一方で、2027年はメーデー、ドイツ統一の日、クリスマスの2日間が土曜日か日曜日にあたります。ドイツには、日本のように祝日が日曜日と重なったら翌日を休みにする「振替休日」の仕組みがありません。休みが少なく感じる年かもしれません。
+ドイツには、祝日が日曜日と重なったら翌日を休みにする「振替休日」の仕組みがありません。2027年の日付、曜日、連休の作り方、学校休暇との違いは「[NRWの祝日2027年一覧](/germany/ja/living/nrw-public-holidays-2027/)」にまとめています。
 
 ![NRW州の2027年の祝日11日をカレンダー形式で並べ、土日と重なる日と木曜日の祝日を色分けした図](/assets/images/events/nrw-public-holidays-2027.svg "図解：J-Connect。NRW州日曜・祝日法とケルン大司教区の移動祝日の一覧に基づく（2026年10月27日参照）。")
 

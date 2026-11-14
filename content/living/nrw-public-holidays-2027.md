@@ -15,7 +15,7 @@ tags: ["NRW","祝日","2027年","連休","休暇計画","学校休暇"]
 image_url: "/assets/img/living/nrw-nature-relax-guide.webp"
 image_alt: "NRW州の公園や自然の中で休暇を過ごすイメージ"
 image_caption: "AI生成の編集イメージ。特定の場所や実際の休日を記録した写真ではありません。"
-related_articles: ["nrw-school-holidays-2026-2027","kita-u3-tagesmutter-guide","duesseldorf-family-trip"]
+related_articles: ["nrw-school-holidays-2026-2027","germany-public-holidays-by-state","kita-u3-tagesmutter-guide","duesseldorf-family-trip"]
 official_sources:
   - title: "NRW州：日曜・祝日に関する法律"
     url: "https://recht.nrw.de/lrgv/gesetz/01012000-bekanntmachung-der-neufassung-des-gesetzes-ueber-die-sonn-und-feiertage/"

@@ -4,9 +4,9 @@ title: "会社員に前払い税（Vorauszahlung）の通知が来たら｜年4�
 slug: "income-tax-prepayment-germany"
 category: "お金・税金"
 summary: "給与から税金が引かれている会社員でも、確定申告で追加の納税が出ると、税務署から所得税の前払い（Vorauszahlung）を求められることがあります。3月・6月・9月・12月の各10日の納期、収入が減ったときにELSTERで調整を申請する流れ、そのまま使えるドイツ語を、2026年に編集部が申請した記録とともに整理します。"
-status: "draft"
-published: false
-published_at: ""
+status: "published"
+published: true
+published_at: "2026-11-14"
 updated_at: "2026-11-14"
 last_verified: "2026-11-14"
 next_review: "2027-05-14"

@@ -4,9 +4,9 @@ title: "ドイツ語の商品名つき・新生児用品チェックリスト｜
 slug: "newborn-items-checklist-germany"
 category: "家族・子育て"
 summary: "ドイツで出産する家庭向けに、新生児用品をおむつ替え・授乳・お風呂と体調・衣類と移動の4つに分け、ドラッグストアのdmやRossmannで探せるドイツ語の商品名と並べました。退院時に車で帰るなら乳児用チャイルドシートが必要なことなど、買い忘れやすい点もまとめます。"
-status: "draft"
-published: false
-published_at: ""
+status: "published"
+published: true
+published_at: "2026-11-14"
 updated_at: "2026-11-14"
 last_verified: "2026-11-14"
 next_review: "2027-05-14"

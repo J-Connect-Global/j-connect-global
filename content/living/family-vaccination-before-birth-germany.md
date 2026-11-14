@@ -4,9 +4,9 @@ title: "出産前に家族が受ける予防接種（ドイツ）｜父親はか
 slug: "family-vaccination-before-birth-germany"
 category: "家族・子育て"
 summary: "生まれたばかりの赤ちゃんは百日咳にかかると重くなりやすく、ドイツでは同居する家族も出産の4週間前までに接種することが公的保険の予防接種指針に書かれています。父親はどこで受けるのか、何を受けるのか、予約のドイツ語を、2026年に編集部の父親がかかりつけ医で接種した記録とともに整理します。"
-status: "draft"
-published: false
-published_at: ""
+status: "published"
+published: true
+published_at: "2026-11-14"
 updated_at: "2026-11-14"
 last_verified: "2026-11-14"
 next_review: "2027-05-14"

@@ -4,9 +4,9 @@ title: "ドイツの歯科補助保険で「契約前の治療」と言われた
 slug: "dental-supplementary-insurance-germany"
 category: "医療・健康"
 summary: "公的保険を補う歯科補助保険（Zahnzusatzversicherung）は、契約前に始まった治療や勧められた治療を補償しないのが一般的です。2026年に編集部が「契約前の治療」を理由に不払いとされ、異議を申し立てた記録をもとに、加入前の注意点、通知の読み方、そのまま使えるドイツ語の異議文を整理します。"
-status: "draft"
-published: false
-published_at: ""
+status: "published"
+published: true
+published_at: "2026-11-14"
 updated_at: "2026-11-14"
 last_verified: "2026-11-14"
 next_review: "2027-05-14"

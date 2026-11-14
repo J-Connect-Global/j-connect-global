@@ -4,9 +4,9 @@ title: "ドイツで認定翻訳（beglaubigte Übersetzung）を頼む｜翻訳
 slug: "certified-translation-germany"
 category: "役所・滞在"
 summary: "出生届や住民登録、滞在許可で外国語の書類を出すとき、ドイツでは裁判所に認定された翻訳者の訳を求められることがあります。翻訳者の探し方、見積もりで聞くこと、そのまま使えるドイツ語の依頼メールを、2026年に編集部が複数の翻訳者に依頼した記録をもとに整理します。"
-status: "draft"
-published: false
-published_at: ""
+status: "published"
+published: true
+published_at: "2026-11-14"
 updated_at: "2026-11-14"
 last_verified: "2026-11-14"
 next_review: "2027-05-14"

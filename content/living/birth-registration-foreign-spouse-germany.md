@@ -4,9 +4,9 @@ title: "外国籍の配偶者がいる場合の出生届（ドイツ）｜必要
 slug: "birth-registration-foreign-spouse-germany"
 category: "家族・子育て"
 summary: "配偶者が外国籍の家庭がドイツで出生届を出すときの準備を、2026年に編集部が戸籍登録所と約10往復したやり取りをもとに整理。外国の証明は原本、翻訳は裁判所認定の翻訳者、アポスティーユの要否は書類ごとに確認、日本側は3か月以内の出生届と国籍留保が必要です。"
-status: "draft"
-published: false
-published_at: ""
+status: "published"
+published: true
+published_at: "2026-11-14"
 updated_at: "2026-11-14"
 last_verified: "2026-11-14"
 next_review: "2027-02-14"

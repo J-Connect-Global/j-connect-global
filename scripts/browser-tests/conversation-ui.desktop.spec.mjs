@@ -84,7 +84,7 @@ test('automatic updates preserve the reading position and draft, announce new it
   await page.getByRole('button',{name:'会話を更新',exact:true}).click();
   await expect(page.getByRole('button',{name:'会話を更新',exact:true})).toBeEnabled();
   await expect(page.locator('#privateMessages')).toContainText('以前の履歴');
-  await expect(page.locator('#privateMessages .cm-message')).toHaveCount(14);
+  await expect(page.locator('#privateMessages .cm-entry')).toHaveCount(14);
 });
 
 test('a late update cannot reopen a conversation after closing this device',async({page})=>{

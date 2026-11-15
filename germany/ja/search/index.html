@@ -407,7 +407,17 @@
     // The index is fetched only when a query is present, so visiting the page
     // without a query (category overview) downloads no index at all.
     const SEARCH_INDEX_URL = "/assets/data/search-index.json";
+    const SEARCH_SYNONYMS_URL = "/assets/data/search-synonyms.json";
     let searchIndexPromise = null;
+    let synonymGroups = [];
+    // Synonyms are optional: if the file fails to load, search still works.
+    const synonymsPromise = fetch(SEARCH_SYNONYMS_URL, { credentials: "same-origin" })
+      .then((response) => (response.ok ? response.json() : { groups: [] }))
+      .then((data) => {
+        synonymGroups = (Array.isArray(data && data.groups) ? data.groups : [])
+          .map((group) => group.map((term) => normalizeText(term)).filter(Boolean));
+      })
+      .catch(() => { synonymGroups = []; });
     function loadSearchIndex() {
       if (!searchIndexPromise) {
         searchIndexPromise = fetch(SEARCH_INDEX_URL, { credentials: "same-origin" })
@@ -465,8 +475,21 @@
         item.description,
         item.category,
         item.url,
-        ...(Array.isArray(item.tags) ? item.tags : [])
+        ...(Array.isArray(item.tags) ? item.tags : []),
+        ...(Array.isArray(item.headings) ? item.headings : [])
       ].join(" "));
+    }
+
+    // Returns the other words that mean the same as the given term
+    // (e.g. 受信料 → 放送負担金, rundfunkbeitrag).
+    function synonymsFor(term) {
+      const extra = new Set();
+      for (const group of synonymGroups) {
+        if (group.some((word) => word === term || (term.length >= 2 && word.length >= 2 && (term.includes(word) || word.includes(term))))) {
+          group.forEach((word) => { if (word !== term) extra.add(word); });
+        }
+      }
+      return [...extra];
     }
 
     function scoreItem(item, query) {
@@ -477,6 +500,7 @@
       const category = normalizeText(item.category);
       const url = normalizeText(item.url);
       const tags = normalizeText((item.tags || []).join(" "));
+      const headings = normalizeText((item.headings || []).join(" "));
       const allText = itemText(item);
       let score = 0;
 
@@ -487,15 +511,25 @@
       if (tags.includes(normalizedQuery)) score += 20;
       if (description.includes(normalizedQuery)) score += 14;
       if (url.includes(normalizedQuery)) score += 8;
+      if (headings.includes(normalizedQuery)) score += 10;
 
       for (const token of tokens) {
-        if (!allText.includes(token)) continue;
-        score += 4;
-        if (title.includes(token)) score += 22;
-        if (category.includes(token)) score += 12;
-        if (tags.includes(token)) score += 10;
-        if (description.includes(token)) score += 6;
-        if (url.includes(token)) score += 3;
+        // A token matches directly, or through a word that means the same.
+        const variants = [token, ...synonymsFor(token)];
+        let best = 0;
+        variants.forEach((word, index) => {
+          if (!allText.includes(word)) return;
+          let s = 4;
+          if (title.includes(word)) s += 22;
+          if (category.includes(word)) s += 12;
+          if (tags.includes(word)) s += 10;
+          if (headings.includes(word)) s += 6;
+          if (description.includes(word)) s += 6;
+          if (url.includes(word)) s += 3;
+          if (index > 0) s = Math.round(s * 0.8);
+          best = Math.max(best, s);
+        });
+        score += best;
       }
 
       return score;
@@ -573,7 +607,7 @@
       els.meta.textContent = `「${query}」を検索しています…`;
       let searchIndex;
       try {
-        searchIndex = await loadSearchIndex();
+        [searchIndex] = await Promise.all([loadSearchIndex(), synonymsPromise]);
       } catch (error) {
         console.warn(error);
         renderLoadError(query);

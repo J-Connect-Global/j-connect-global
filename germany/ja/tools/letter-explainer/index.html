@@ -358,6 +358,14 @@ textarea:focus{
 .le-prose{margin:0;line-height:1.85;white-space:pre-wrap}
 .le-card-warn{background:#fffaf0;border-color:#f1dfb5}
 .le-card-warn h3{border-left-color:#e0a800}
+.le-feedback{background:#f3f8ff;border-color:#c9dcf3}
+.le-feedback-lead{margin:0 0 12px;line-height:1.7}
+.le-feedback-buttons{display:flex;gap:10px;flex-wrap:wrap}
+.le-fb-btn{border:1px solid #9fc0e6;background:#fff;color:#0b3a6e;border-radius:999px;padding:10px 18px;font-weight:700;cursor:pointer}
+.le-fb-btn[aria-pressed="true"]{background:#0067c9;border-color:#0067c9;color:#fff}
+.le-feedback-form{margin-top:14px;display:grid;gap:12px}
+.le-feedback-form textarea{min-height:110px}
+.le-feedback-form textarea.le-fb-small{min-height:70px}
 .le-disclaimer{margin:16px 0 0;font-size:12.5px;color:#5c6b7a;line-height:1.7}
 @media (max-width:760px){.le-grid{grid-template-columns:1fr}.le-ai-panel{padding:16px}.le-ai-head .le-badge{margin-left:0}}
 .le-badge{display:inline-block;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700;margin-bottom:10px}
@@ -560,6 +568,32 @@ textarea:focus{
           <pre class="le-reply" id="resReplyJa"></pre>
         </div>
         <div class="le-card le-card-warn" id="resCautionWrap"><h3>注意点・確認が必要なこと</h3><p class="le-prose" id="resCaution"></p></div>
+        <div class="le-card le-feedback" id="resFeedback">
+          <h3>この解説は役に立ちましたか？</h3>
+          <p class="le-feedback-lead">「本当はこれが知りたかった」という声をもとに、AIの解説を改善しています。ひと言でも大歓迎です。</p>
+          <div class="le-feedback-buttons">
+            <button type="button" class="le-fb-btn" data-rating="good">役に立った</button>
+            <button type="button" class="le-fb-btn" data-rating="bad">物足りなかった</button>
+          </div>
+          <form id="feedbackForm" class="le-feedback-form" hidden novalidate>
+            <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
+            <div class="field full">
+              <label for="fbWanted" id="fbWantedLabel">本当はどんな情報が欲しかったですか？</label>
+              <textarea id="fbWanted" maxlength="3000" placeholder="例：振込先の口座番号がどこに書いてあるか知りたかった／返信の書き方をもっと詳しく知りたかった"></textarea>
+            </div>
+            <div class="field full">
+              <label for="fbComment">その他のご意見（任意）</label>
+              <textarea id="fbComment" maxlength="3000" class="le-fb-small" placeholder="分かりにくかった点、間違っていた点など"></textarea>
+            </div>
+            <div class="field full">
+              <label for="fbEmail">返信が欲しい場合のメールアドレス（任意・受付確認メールが届きます）</label>
+              <input class="input" id="fbEmail" type="email" maxlength="254" placeholder="example@email.com">
+            </div>
+            <label class="le-consent"><input type="checkbox" id="fbIncludeResult"><span>改善のため、上のAIの解説内容も一緒に送る（手紙の画像や本文は送られません）</span></label>
+            <button class="submit" id="fbSubmit" type="submit">フィードバックを送る</button>
+            <div class="status-box" id="fbStatus" aria-live="polite"></div>
+          </form>
+        </div>
         <p class="le-disclaimer">この解説はAIが自動で作成したもので、正確性・完全性を保証するものではありません。解説をもとにした判断の結果について、運営者は責任を負いません（法令上責任を免れない場合を除きます）。法律・税務の判断が必要な場合は、専門家や発行元に相談してください。</p>
       </div>
     </section>
@@ -731,6 +765,13 @@ textarea:focus{
     }
 
     function render(r) {
+      lastResult = r;
+      fbRating = '';
+      fbForm.hidden = true;
+      fbForm.reset();
+      fbStatus.className = 'status-box';
+      fbStatus.textContent = '';
+      document.querySelectorAll('.le-fb-btn').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
       var labels = { high: '緊急度：高（早めに対応）', medium: '緊急度：中', low: '緊急度：低' };
       var badge = document.getElementById('resUrgency');
       badge.className = 'le-badge ' + r.urgency;
@@ -779,6 +820,91 @@ textarea:focus{
         resultBox.focus({ preventScroll: true });
       }, 150);
     }
+
+    var lastResult = null;
+    var fbRating = '';
+    var fbForm = document.getElementById('feedbackForm');
+    var FEEDBACK_ENDPOINT = (window.JCONNECT_DATA_SOURCES || {}).directoryDataEndpoint || '';
+    var fbStartedAt = Date.now();
+    var fbStatus = document.getElementById('fbStatus');
+    document.querySelectorAll('.le-fb-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        fbRating = btn.getAttribute('data-rating');
+        document.querySelectorAll('.le-fb-btn').forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+        document.getElementById('fbWantedLabel').textContent = fbRating === 'good'
+          ? 'さらに知りたかったことがあれば教えてください（任意）'
+          : '本当はどんな情報が欲しかったですか？';
+        fbForm.hidden = false;
+        fbStartedAt = Date.now();
+        fbStatus.className = 'status-box';
+        fbStatus.textContent = '';
+        document.getElementById('fbWanted').focus();
+      });
+    });
+
+    fbForm.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      var wanted = document.getElementById('fbWanted').value.trim();
+      var comment = document.getElementById('fbComment').value.trim();
+      if (fbRating === 'bad' && !wanted && !comment) {
+        fbStatus.className = 'status-box show status-error';
+        fbStatus.textContent = '「本当はどんな情報が欲しかったか」を書いてください。';
+        return;
+      }
+      // 既存のお問い合わせ窓口（運営者にメールで届く）へ送る。手紙の画像・本文は送らない。
+      var email = document.getElementById('fbEmail').value.trim();
+      var ratingLabel = fbRating === 'good' ? '役に立った' : '物足りなかった';
+      var parts = [
+        '評価: ' + ratingLabel,
+        '書類の種類: ' + ((lastResult && lastResult.document_type) || '（不明）'),
+        '',
+        '■ 本当は欲しかった情報',
+        wanted || '（記入なし）',
+        '',
+        '■ その他のコメント',
+        comment || '（記入なし）',
+        '',
+        '■ 返信先: ' + (email || '希望なし')
+      ];
+      if (document.getElementById('fbIncludeResult').checked && lastResult) {
+        parts.push('', '■ AIの解説（利用者が添付に同意）', JSON.stringify(lastResult, null, 1));
+      }
+      var message = parts.join('\n');
+      if (message.length > 5900) message = message.slice(0, 5880) + '\n…（省略）';
+      var data = new FormData();
+      data.append('action', 'submitContact');
+      data.append('website', fbForm.website.value);
+      data.append('form_started_at', String(fbStartedAt));
+      data.append('name', '手紙AI解説の利用者');
+      data.append('email', email || 'contact@j-connect-global.com');
+      data.append('inquiry_type', '手紙AI解説へのフィードバック');
+      data.append('subject', '手紙AI解説フィードバック（' + ratingLabel + '）');
+      data.append('page_url', 'https://j-connect-global.com/germany/ja/tools/letter-explainer/');
+      data.append('message', message);
+      var btn = document.getElementById('fbSubmit');
+      btn.disabled = true;
+      btn.textContent = '送信中…';
+      try {
+        var response = await fetch(FEEDBACK_ENDPOINT, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+        var payload = await response.json().catch(function () { return {}; });
+        if (payload.ok) {
+          fbForm.reset();
+          fbForm.hidden = true;
+          fbStatus.className = 'status-box show status-success';
+          fbStatus.textContent = 'フィードバックを送りました。ありがとうございます。今後の改善に使わせていただきます。';
+          fbForm.parentElement.appendChild(fbStatus);
+        } else {
+          fbStatus.className = 'status-box show status-error';
+          fbStatus.textContent = payload.error || '送信できませんでした。時間をおいて再度お試しください。';
+        }
+      } catch (error) {
+        fbStatus.className = 'status-box show status-error';
+        fbStatus.textContent = '通信エラーが発生しました。時間をおいて再度お試しください。';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'フィードバックを送る';
+      }
+    });
 
     document.getElementById('copyReply').addEventListener('click', function () {
       var text = document.getElementById('resReplyDe').textContent;

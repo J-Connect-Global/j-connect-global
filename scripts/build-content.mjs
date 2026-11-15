@@ -2442,6 +2442,7 @@ function updateSearchIndex(allItems, pages) {
       description: item.summary,
       url: item.url,
       category: contentTypes[item.type].label,
+      headings: extractSearchHeadings(item.markdown),
       tags: item.type === 'learn-german'
         ? uniqueArray([
           ...item.tags,
@@ -2480,6 +2481,20 @@ function updateSearchIndex(allItems, pages) {
 export function serializeSearchIndex(entries) {
   const lines = entries.map((entry) => JSON.stringify(entry).replace(/</g, '\\u003c'));
   return `[\n${lines.join(',\n')}\n]\n`;
+}
+
+// Article section headings (## / ###) give the site search more words to
+// match than the title and summary alone, without shipping full article text.
+function extractSearchHeadings(markdown) {
+  if (!markdown) return [];
+  const headings = [];
+  for (const line of stripFrontMatter(markdown).replace(/\r\n/g, '\n').split('\n')) {
+    const match = line.trim().match(/^#{2,3}\s+(.+)$/);
+    if (!match) continue;
+    const text = stripInlineMarkdown(match[1]).trim();
+    if (text && text !== '関連記事' && !headings.includes(text)) headings.push(text);
+  }
+  return headings.slice(0, 40);
 }
 
 function pageToSearchEntry(page) {

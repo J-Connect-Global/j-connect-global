@@ -2,18 +2,19 @@
  * J-Connect「ドイツの手紙AI解説」API（独立した Apps Script プロジェクト）
  *
  * 掲示板API（apps-script/community-board-api.gs）とは別プロジェクトとしてデプロイする。
- * - 受け取った画像・PDF・テキストを Anthropic Messages API に渡し、日本語の解説を JSON で返す。
+ * - 受け取った画像・PDF・テキストを OpenAI API（Chat Completions）に渡し、日本語の解説を JSON で返す。
  * - 送信内容はどこにも保存しない（シート・Drive・ログに本文を書かない）。
  * - 費用の暴走を防ぐため、1日あたり・10分あたりの全体上限を設ける。
  *
  * スクリプト プロパティ（プロジェクトの設定 → スクリプト プロパティ）:
- *   ANTHROPIC_API_KEY  必須。Anthropic Console で発行した API キー
- *   LETTER_MODEL       任意。既定 claude-sonnet-5-5（安くするなら claude-haiku-5-5）
+ *   OPENAI_API_KEY     必須。platform.openai.com で発行した API キー
+ *   LETTER_MODEL       任意。既定 gpt-6-luna
+ *   REASONING_EFFORT   任意。既定 low（none / low / medium / high）
  *   DAILY_LIMIT        任意。1日の全体上限（既定 60）
  *   BURST_LIMIT        任意。10分あたりの全体上限（既定 10）
  */
 
-const LE_DEFAULT_MODEL = 'claude-sonnet-5-5';
+const LE_DEFAULT_MODEL = 'gpt-6-luna';
 const LE_MAX_BASE64_CHARS = 7 * 1024 * 1024; // 約5MBのファイル相当
 const LE_MAX_TEXT_CHARS = 12000;
 const LE_ALLOWED_MEDIA = ['image/jpeg', 'image/png', 'image/webp', 'application/pdf'];
@@ -76,7 +77,7 @@ function doPost(e) {
     const quota = leConsumeQuota_();
     if (!quota.ok) return leJson_({ ok: false, code: 'BUSY', error: quota.error });
 
-    const result = leCallClaude_(apiKey, content.blocks);
+    const result = leCallOpenAI_(apiKey, content.blocks);
     return leJson_(result);
   } catch (error) {
     // 本文は絶対にログへ出さない。エラーの種類だけ残す
@@ -112,9 +113,10 @@ function leBuildContent_(params) {
     if (LE_ALLOWED_MEDIA.indexOf(mediaType) === -1) return { error: 'JPEG / PNG / WebP 画像か PDF を選んでください。' };
     if (!data) return { error: 'ファイルが読み込めませんでした。' };
     if (data.length > LE_MAX_BASE64_CHARS) return { error: 'ファイルが大きすぎます（約5MBまで）。' };
+    const dataUrl = 'data:' + mediaType + ';base64,' + data;
     const fileBlock = mediaType === 'application/pdf'
-      ? { type: 'document', source: { type: 'base64', media_type: mediaType, data: data } }
-      : { type: 'image', source: { type: 'base64', media_type: mediaType, data: data } };
+      ? { type: 'file', file: { filename: 'letter.pdf', file_data: dataUrl } }
+      : { type: 'image_url', image_url: { url: dataUrl, detail: 'high' } };
     return { blocks: [fileBlock, { type: 'text', text: instruction }] };
   }
 
@@ -122,7 +124,7 @@ function leBuildContent_(params) {
 }
 
 function leApiKey_() {
-  return String(PropertiesService.getScriptProperties().getProperty('ANTHROPIC_API_KEY') || '').trim();
+  return String(PropertiesService.getScriptProperties().getProperty('OPENAI_API_KEY') || '').trim();
 }
 
 function leConsumeQuota_() {
@@ -150,33 +152,42 @@ function leConsumeQuota_() {
   }
 }
 
-function leCallClaude_(apiKey, blocks) {
-  const model = String(PropertiesService.getScriptProperties().getProperty('LETTER_MODEL') || LE_DEFAULT_MODEL).trim();
-  const response = UrlFetchApp.fetch('https://api.anthropic.com/v1/messages', {
+function leCallOpenAI_(apiKey, blocks) {
+  const props = PropertiesService.getScriptProperties();
+  const model = String(props.getProperty('LETTER_MODEL') || LE_DEFAULT_MODEL).trim();
+  const effort = String(props.getProperty('REASONING_EFFORT') || 'low').trim();
+  const body = {
+    model: model,
+    max_completion_tokens: 6000,
+    response_format: { type: 'json_object' },
+    messages: [
+      { role: 'system', content: LE_SYSTEM_PROMPT },
+      { role: 'user', content: blocks }
+    ]
+  };
+  if (effort && effort !== 'default') body.reasoning_effort = effort;
+
+  const response = UrlFetchApp.fetch('https://api.openai.com/v1/chat/completions', {
     method: 'post',
     contentType: 'application/json',
     muteHttpExceptions: true,
-    headers: {
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01'
-    },
-    payload: JSON.stringify({
-      model: model,
-      max_tokens: 2000,
-      system: LE_SYSTEM_PROMPT,
-      messages: [{ role: 'user', content: blocks }]
-    })
+    headers: { Authorization: 'Bearer ' + apiKey },
+    payload: JSON.stringify(body)
   });
 
   const status = response.getResponseCode();
   if (status !== 200) {
-    console.error('letter-explainer upstream status ' + status);
-    if (status === 429 || status === 529) return { ok: false, code: 'BUSY', error: 'AIが混み合っています。少し待ってからお試しください。' };
+    // 本文（手紙の内容）は出さず、エラーの種類だけ残す
+    let errType = '';
+    try { errType = JSON.parse(response.getContentText()).error.type || ''; } catch (err) { /* 無視 */ }
+    console.error('letter-explainer upstream status ' + status + ' ' + errType);
+    if (status === 429) return { ok: false, code: 'BUSY', error: 'AIが混み合っています。少し待ってからお試しください。' };
     return { ok: false, code: 'UPSTREAM', error: '解析できませんでした。時間をおいて再度お試しください。' };
   }
 
-  const body = JSON.parse(response.getContentText());
-  const text = (body.content || []).filter(function (b) { return b.type === 'text'; }).map(function (b) { return b.text; }).join('');
+  const json = JSON.parse(response.getContentText());
+  const choice = (json.choices || [])[0] || {};
+  const text = String((choice.message && choice.message.content) || '');
   const parsed = leParseJson_(text);
   if (!parsed) return { ok: false, code: 'PARSE', error: 'うまく読み取れませんでした。もう少し鮮明な写真でお試しください。' };
   return { ok: true, result: leSanitize_(parsed) };

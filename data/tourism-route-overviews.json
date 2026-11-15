@@ -2135,6 +2135,118 @@
         "height": 960
       },
       "caption": "ワルシャワRoyal Routeと公共交通区間の概略図（縮尺不同）。地理参照：© OpenStreetMap contributors。"
+    },
+    {
+      "slug": "bad-wildungen-weekend-trip",
+      "title": "バート・ヴィルドゥンゲン中心部の基本ルート",
+      "alt": "Bad Wildungen駅から旧市街と市教会、Brunnenallee、Wandelhalleと療養公園を巡る観光案内図",
+      "asset": "/assets/images/living/bad-wildungen-weekend-trip-guide-map-v2.webp",
+      "asset_dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "nodes": [
+        {
+          "id": "bahnhof",
+          "label": "Bad Wildungen駅",
+          "note": "到着・荷物",
+          "x": 565.5,
+          "y": 165.8,
+          "latitude": 51.1196071,
+          "longitude": 9.1364632,
+          "source": "https://www.openstreetmap.org/node/3986945668"
+        },
+        {
+          "id": "altstadt",
+          "label": "旧市街・市教会",
+          "note": "祭壇画を見る",
+          "x": 451.2,
+          "y": 165.4,
+          "latitude": 51.1196314,
+          "longitude": 9.1233824,
+          "source": "https://www.openstreetmap.org/relation/17931608"
+        },
+        {
+          "id": "brunnenallee",
+          "label": "Brunnenallee",
+          "note": "保養地への並木道",
+          "x": 368.7,
+          "y": 214.8,
+          "latitude": 51.1160774,
+          "longitude": 9.113942,
+          "source": "https://www.openstreetmap.org/way/26218601"
+        },
+        {
+          "id": "wandelhalle",
+          "label": "Wandelhalle・療養公園",
+          "note": "鉱泉を飲み比べ",
+          "x": 254.5,
+          "y": 271.0,
+          "latitude": 51.1120363,
+          "longitude": 9.1008775,
+          "source": "https://www.openstreetmap.org/way/29130962"
+        },
+        {
+          "id": "schloss",
+          "label": "Schloss Friedrichstein",
+          "note": "二日目の選択肢",
+          "x": 489.9,
+          "y": 100.0,
+          "optional": true,
+          "latitude": 51.1243371,
+          "longitude": 9.1278105,
+          "source": "https://www.openstreetmap.org/way/194295345"
+        },
+        {
+          "id": "helenen",
+          "label": "Helenenquelle",
+          "note": "森への分岐",
+          "x": 371.6,
+          "y": 440.0,
+          "optional": true,
+          "latitude": 51.0998782,
+          "longitude": 9.1142745,
+          "source": "https://www.openstreetmap.org/node/6703096880"
+        }
+      ],
+      "edges": [
+        [
+          "bahnhof",
+          "altstadt"
+        ],
+        [
+          "altstadt",
+          "brunnenallee"
+        ],
+        [
+          "brunnenallee",
+          "wandelhalle"
+        ]
+      ],
+      "optionalEdges": [
+        [
+          "altstadt",
+          "schloss"
+        ],
+        [
+          "wandelhalle",
+          "helenen"
+        ]
+      ],
+      "illustration": {
+        "asset": "/assets/images/living/bad-wildungen-weekend-trip-guide-map-v2.webp",
+        "generated_at": "2026-11-15",
+        "style": "programmatic watercolor-style schematic guide map",
+        "role": "north-up bilingual schematic guide map; markers projected from OpenStreetMap coordinates, background shapes schematic, no street geometry or route lines"
+      },
+      "geography": {
+        "verified_at": "2026-11-15",
+        "orientation": "north-up",
+        "source": "https://www.openstreetmap.org/copyright",
+        "geocoder": "https://nominatim.org/release-docs/latest/api/Search/",
+        "note": "OpenStreetMapの地点データ（Nominatim）から緯度経度を北が上の図へ投影してマーカーを配置。背景の公園・旧市街・森・線路の向きは模式表現で、道路形状や縮尺の資料ではない。"
+      },
+      "caption": "バート・ヴィルドゥンゲン中心部の概略図（縮尺不同）。地点の位置はOpenStreetMapで確認し、背景の公園・旧市街・森は模式的に描いています。地理参照：© OpenStreetMap contributors。"
     }
   ]
 }

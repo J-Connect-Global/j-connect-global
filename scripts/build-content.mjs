@@ -430,7 +430,7 @@ ${indent(renderArticleAiNotice(), 10)}
 
 ${indent(primaryHeroMedia, 8)}
 ${indent(renderArticleToc(toc), 8)}
-        <div class="article-body">
+${(() => { const cta = renderLetterToolCta(type, item); return cta ? `${indent(cta, 8)}\n` : ''; })()}        <div class="article-body">
 ${indent(articleBodyHtml, 10)}
 ${indent(renderArticleBackLink(item, config), 10)}
 ${indent(renderExperienceInvite(type, item), 10)}
@@ -1250,6 +1250,41 @@ function getCrawlableLocalImageUrl(item) {
   const fullPath = path.join(root, rel);
   if (!fs.existsSync(fullPath) || !fs.statSync(fullPath).isFile()) return '';
   return absoluteUrl(src);
+}
+
+// Articles about procedures that usually arrive as German letters point
+// readers to the AI letter helper tool. Keep the slug list short and relevant.
+const LETTER_TOOL_CTA_SLUGS = new Set([
+  'rundfunkbeitrag-guide',
+  'tax-id-steuernummer-steuerklasse',
+  'income-tax-return-germany',
+  'income-tax-prepayment-germany',
+  'church-tax-germany',
+  'residence-permit-renewal-germany',
+  'permanent-residence-germany',
+  'eu-blue-card-germany',
+  'health-insurance-guide',
+  'kindergeld-application-germany',
+  'elterngeld-guide-germany',
+  'anmeldung-guide',
+  'nebenkostenabrechnung-2025-deadline',
+  'rent-apartment-germany',
+  'schufa-guide',
+  'kita-u3-tagesmutter-guide'
+]);
+
+function renderLetterToolCta(type, item) {
+  if (type !== 'living' || !LETTER_TOOL_CTA_SLUGS.has(item.slug)) return '';
+  return `<aside class="letter-tool-cta" aria-label="手紙AI解説ツールの案内">
+  <div class="letter-tool-cta__icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+  </div>
+  <div class="letter-tool-cta__text">
+    <p class="letter-tool-cta__title">役所や会社から手紙が届いたら</p>
+    <p class="letter-tool-cta__desc">写真を撮るだけで、AIが「何の手紙か・いつまでに何をするか」を日本語で整理します。無料・登録不要。</p>
+  </div>
+  <a class="letter-tool-cta__button" href="/germany/ja/tools/letter-explainer/">手紙をAIで解説する</a>
+</aside>`;
 }
 
 // Articles written to the 2026-11 standard ask readers for their own records

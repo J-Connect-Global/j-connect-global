@@ -1136,5 +1136,143 @@
       "翻訳",
       "手続き"
     ]
+  },
+  {
+    "id": "page-tools",
+    "title": "ドイツ生活のAIツール",
+    "url": "/germany/ja/tools/",
+    "type": "utility",
+    "pillar": "living",
+    "status": "published",
+    "canonical_url": "/germany/ja/tools/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "在独日本人向けの無料AIツール集（手紙解説・質問・文面作成・手続きナビ・申請書・会話練習）。",
+    "tags": [
+      "AI",
+      "ツール"
+    ]
+  },
+  {
+    "id": "page-tools-ask",
+    "title": "J-Connect AIに質問",
+    "url": "/germany/ja/tools/ask/",
+    "type": "utility",
+    "pillar": "living",
+    "status": "published",
+    "canonical_url": "/germany/ja/tools/ask/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "ドイツ生活の疑問に、J-Connectの記事をもとにAIが回答します。",
+    "tags": [
+      "AI",
+      "質問",
+      "Q&A"
+    ]
+  },
+  {
+    "id": "page-tools-write",
+    "title": "ドイツ語の手紙・メール作成",
+    "url": "/germany/ja/tools/write/",
+    "type": "utility",
+    "pillar": "living",
+    "status": "published",
+    "canonical_url": "/germany/ja/tools/write/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "日本語で書いた用件から、ドイツ語の手紙・メールをAIが作成します。",
+    "tags": [
+      "AI",
+      "手紙",
+      "メール",
+      "ドイツ語"
+    ]
+  },
+  {
+    "id": "page-tools-navi",
+    "title": "手続きナビ",
+    "url": "/germany/ja/tools/navi/",
+    "type": "utility",
+    "pillar": "living",
+    "status": "published",
+    "canonical_url": "/germany/ja/tools/navi/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "状況に合わせた手続きのチェックリストをAIが作成します。",
+    "tags": [
+      "AI",
+      "手続き",
+      "チェックリスト"
+    ]
+  },
+  {
+    "id": "page-tools-form-helper",
+    "title": "申請書の記入アシスタント",
+    "url": "/germany/ja/tools/form-helper/",
+    "type": "utility",
+    "pillar": "living",
+    "status": "published",
+    "canonical_url": "/germany/ja/tools/form-helper/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "ドイツ語の申請書の各欄の書き方をAIが日本語で説明します。",
+    "tags": [
+      "AI",
+      "申請書",
+      "書き方"
+    ]
+  },
+  {
+    "id": "page-tools-conversation",
+    "title": "ドイツ語の会話練習",
+    "url": "/germany/ja/tools/conversation/",
+    "type": "utility",
+    "pillar": "living",
+    "status": "published",
+    "canonical_url": "/germany/ja/tools/conversation/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "電話や窓口の場面のドイツ語をAIを相手に練習できます。",
+    "tags": [
+      "AI",
+      "会話",
+      "ドイツ語"
+    ]
   }
 ]

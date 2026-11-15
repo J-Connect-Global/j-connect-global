@@ -1,0 +1,61 @@
+name: Check official sources
+
+# 記事が参照している公式ページの変化を週1回チェックし、
+# 見直しが必要そうなものがあれば Issue で知らせる（記事は自動では書き換えない）。
+on:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: check-official-sources
+  cancel-in-progress: false
+
+jobs:
+  check:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Restore previous snapshot
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/official-sources.json
+          key: official-sources-${{ github.run_id }}
+          restore-keys: official-sources-
+
+      - name: Check official sources
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node scripts/check-official-sources.mjs --state .cache/official-sources.json --report official-sources-report.md
+
+      - name: Save snapshot
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/official-sources.json
+          key: official-sources-${{ github.run_id }}
+
+      - name: Open an issue when something needs review
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -f official-sources-report.md ]; then
+            title="$(head -n 1 official-sources-report.md)"
+            tail -n +3 official-sources-report.md > body.md
+            gh issue create --repo "${{ github.repository }}" --title "$title" --body-file body.md
+          else
+            echo "Nothing to report."
+          fi

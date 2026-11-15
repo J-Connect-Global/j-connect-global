@@ -1,0 +1,106 @@
+/* J-Connect AIツール共通スタイル（ツールページ専用） */
+.jcai-main [hidden]{display:none!important}
+.jcai-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:start}
+.jcai-panel{background:#fff;border:1px solid #dbe6f3;border-radius:24px;padding:26px;box-shadow:0 10px 24px rgba(30,58,95,.07)}
+.jcai-panel h2{margin:0 0 12px;font-size:24px;color:#0b3a6e}
+.jcai-form{display:grid;gap:14px}
+.jcai-form label{font-size:14px;font-weight:700;color:#0b3a6e}
+.jcai-form .field{display:flex;flex-direction:column;gap:6px}
+.jcai-form textarea{min-height:130px}
+.jcai-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.jcai-check{display:flex;gap:8px;align-items:flex-start;font-weight:400!important;font-size:14px;color:#1f2d3d!important}
+.jcai-check input{margin-top:4px}
+.jcai-chips{display:flex;flex-wrap:wrap;gap:8px}
+.jcai-chip{border:1px solid #9fc0e6;background:#fff;color:#0b3a6e;border-radius:999px;padding:8px 14px;font-size:14px;font-weight:700;cursor:pointer}
+.jcai-chip[aria-pressed="true"]{background:#0067c9;border-color:#0067c9;color:#fff}
+.jcai-note{font-size:13px;color:#4f5f70;line-height:1.7;margin:0}
+
+.jcai-result{margin-top:22px;scroll-margin-top:96px}
+.jcai-result.is-entering .jcai-ai-panel{opacity:0;transform:translateY(16px)}
+.jcai-ai-panel{transition:opacity .6s ease,transform .6s ease;background:linear-gradient(180deg,#eef5ff 0%,#f6f9fe 100%);border:1px solid #cfe0f5;border-radius:24px;padding:24px;box-shadow:0 10px 24px rgba(30,58,95,.07)}
+.jcai-ai-head{display:flex;align-items:center;gap:14px;margin-bottom:14px;flex-wrap:wrap}
+.jcai-avatar{flex:0 0 auto;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#0067c9;color:#fff}
+.jcai-ai-label{margin:0;font-weight:800;color:#0b3a6e;font-size:18px}
+.jcai-ai-sub{margin:2px 0 0;font-size:13px;color:#4f5f70}
+.jcai-card{background:#fff;border:1px solid #dde8f5;border-radius:16px;padding:18px 20px;margin-top:14px}
+.jcai-card h3{margin:0 0 10px;font-size:18px;color:#0b3a6e;padding-left:10px;border-left:4px solid #0067c9}
+.jcai-card-warn{background:#fffaf0;border-color:#f1dfb5}
+.jcai-card-warn h3{border-left-color:#e0a800}
+.jcai-prose p{margin:0 0 8px;line-height:1.85}
+.jcai-prose .jcai-prose-h{margin:14px 0 6px;font-size:16px;color:#0b3a6e}
+.jcai-prose .jcai-prose-li{padding-left:1.2em;text-indent:-1.2em}
+.jcai-prose .jcai-prose-li::before{content:"・"}
+.jcai-list{margin:0;padding-left:20px;line-height:1.8}
+.jcai-list li+li{margin-top:6px}
+.jcai-dl{display:grid;grid-template-columns:minmax(140px,auto) 1fr;gap:6px 14px;margin:0}
+.jcai-dl dt{font-weight:700}
+.jcai-dl dd{margin:0}
+.jcai-pre{white-space:pre-wrap;background:#f4f8fc;border:1px solid #dbe6f3;border-radius:12px;padding:14px;font-family:inherit;font-size:15px;line-height:1.75;margin:0 0 10px}
+.jcai-btn-sub{border:1px solid #9fc0e6;background:#fff;border-radius:10px;padding:8px 14px;cursor:pointer;color:#0b3a6e;font-weight:700}
+.jcai-links{display:flex;flex-direction:column;gap:6px}
+.jcai-links a{font-weight:700}
+.jcai-disclaimer{margin:16px 0 0;font-size:12.5px;color:#5c6b7a;line-height:1.7}
+
+.jcai-steps{list-style:none;margin:0;padding:0}
+.jcai-steps li{position:relative;padding:0 0 14px 34px}
+.jcai-steps li::before{content:"";position:absolute;left:6px;top:6px;width:14px;height:14px;border-radius:4px;border:2px solid #0067c9;background:#fff}
+.jcai-steps strong{display:block;color:#0b3a6e}
+.jcai-steps .jcai-deadline{display:inline-block;margin-top:4px;font-size:13px;background:#fff4dc;color:#7a5200;border-radius:999px;padding:2px 10px}
+
+.jcai-chat{display:flex;flex-direction:column;gap:12px}
+.jcai-msg{max-width:88%;border-radius:18px;padding:12px 16px;line-height:1.75}
+.jcai-msg-user{align-self:flex-end;background:#0067c9;color:#fff;border-bottom-right-radius:6px}
+.jcai-msg-ai{align-self:flex-start;background:#fff;border:1px solid #dde8f5;border-bottom-left-radius:6px}
+.jcai-msg-ai .jcai-msg-meta{font-size:12.5px;color:#4f5f70;margin-top:8px}
+.jcai-typing{align-self:flex-start;color:#4f5f70;font-size:14px}
+
+.jcai-feedback{background:#f3f8ff;border:1px solid #c9dcf3;border-radius:16px;padding:18px 20px;margin-top:14px}
+.jcai-feedback h3{margin:0 0 8px;font-size:17px;color:#0b3a6e}
+.jcai-feedback-lead{margin:0 0 12px;line-height:1.7}
+.jcai-feedback-buttons{display:flex;gap:10px;flex-wrap:wrap}
+.jcai-fb-btn{border:1px solid #9fc0e6;background:#fff;color:#0b3a6e;border-radius:999px;padding:10px 18px;font-weight:700;cursor:pointer}
+.jcai-fb-btn[aria-pressed="true"]{background:#0067c9;border-color:#0067c9;color:#fff}
+.jcai-feedback-form{margin-top:14px;display:grid;gap:10px}
+.jcai-feedback-form label{font-size:14px;font-weight:700}
+.jcai-feedback-form textarea{min-height:100px}
+
+.jcai-hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.jcai-hub-card{display:flex;flex-direction:column;gap:8px;background:#fff;border:1px solid #dbe6f3;border-radius:20px;padding:20px;text-decoration:none!important;color:inherit;box-shadow:0 6px 16px rgba(30,58,95,.06);transition:transform .15s ease,box-shadow .15s ease}
+.jcai-hub-card:hover,.jcai-hub-card:focus-visible{transform:translateY(-2px);box-shadow:0 12px 24px rgba(30,58,95,.12)}
+.jcai-hub-card .jcai-avatar{width:44px;height:44px}
+.jcai-hub-card strong{font-size:18px;color:#0b3a6e}
+.jcai-hub-card span{line-height:1.7;color:#34414d}
+
+@media (max-width:900px){.jcai-hero{grid-template-columns:1fr}.jcai-hub-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.jcai-row{grid-template-columns:1fr}.jcai-hub-grid{grid-template-columns:1fr}.jcai-ai-panel{padding:16px}.jcai-msg{max-width:100%}}
+
+:root[data-theme="dark"] .jcai-panel,
+:root[data-theme="dark"] .jcai-card,
+:root[data-theme="dark"] .jcai-msg-ai,
+:root[data-theme="dark"] .jcai-hub-card{background:#132235;border-color:#2a3f58;color:#e6edf5}
+:root[data-theme="dark"] .jcai-ai-panel,
+:root[data-theme="dark"] .jcai-feedback{background:#0f1d2e;border-color:#2a3f58;color:#e6edf5}
+:root[data-theme="dark"] .jcai-card h3,
+:root[data-theme="dark"] .jcai-panel h2,
+:root[data-theme="dark"] .jcai-ai-label,
+:root[data-theme="dark"] .jcai-hub-card strong,
+:root[data-theme="dark"] .jcai-steps strong,
+:root[data-theme="dark"] .jcai-feedback h3,
+:root[data-theme="dark"] .jcai-form label,
+:root[data-theme="dark"] .jcai-prose .jcai-prose-h{color:#cfe3ff}
+:root[data-theme="dark"] .jcai-hub-card span,
+:root[data-theme="dark"] .jcai-ai-sub,
+:root[data-theme="dark"] .jcai-note,
+:root[data-theme="dark"] .jcai-disclaimer,
+:root[data-theme="dark"] .jcai-msg-ai .jcai-msg-meta{color:#b8c6d6}
+:root[data-theme="dark"] .jcai-check{color:#e6edf5!important}
+:root[data-theme="dark"] .jcai-pre{background:#0b1726;border-color:#2a3f58;color:#e6edf5}
+:root[data-theme="dark"] .jcai-card-warn{background:#2a2410;border-color:#5a4a1a}
+:root[data-theme="dark"] .jcai-chip,
+:root[data-theme="dark"] .jcai-fb-btn,
+:root[data-theme="dark"] .jcai-btn-sub{background:#132235;color:#cfe3ff;border-color:#3d5a7d}
+:root[data-theme="dark"] .jcai-chip[aria-pressed="true"],
+:root[data-theme="dark"] .jcai-fb-btn[aria-pressed="true"]{background:#9fd0ff;color:#0b1b2e;border-color:#9fd0ff}
+:root[data-theme="dark"] .jcai-msg-user,
+:root[data-theme="dark"] .jcai-avatar{background:#9fd0ff;color:#0b1b2e}
+:root[data-theme="dark"] .jcai-steps .jcai-deadline{background:#3a2f10;color:#ffe2a0}

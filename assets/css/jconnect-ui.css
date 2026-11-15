@@ -1442,6 +1442,35 @@
     outline:0;
   }
 
+  /* Hub links: cards with an arrow; two columns on wider screens so short
+     link text does not leave the right half of each row empty. */
+  .living-related-list a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    min-height:48px;
+    padding:12px 14px;
+  }
+
+  .living-related-list a::after{
+    content:"→";
+    flex:0 0 auto;
+    color:var(--jc-blue);
+    font-weight:700;
+  }
+
+  @media (min-width: 760px){
+    .living-related-list{
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:10px;
+    }
+
+    .living-related-list a:only-child{
+      grid-column:1 / -1;
+    }
+  }
+
   .learn-filter-helper{
     margin:0 0 14px;
     padding:12px 14px;

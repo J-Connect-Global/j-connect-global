@@ -8,9 +8,9 @@ summary: "ドイツの銀行口座開設を日本語で解説。必要書類、G
 status: "published"
 published: true
 published_at: "2026-06-12"
-updated_at: "2026-11-14"
+updated_at: "2026-11-15"
 article_standard: "2026-11"
-last_verified: "2026-11-14"
+last_verified: "2026-11-15"
 next_review: "2027-04-17"
 canonical_url: "/germany/ja/living/bank-account-germany/"
 related_articles: ["germany-first-30-days", "schufa-guide", "anmeldung-guide", "tax-id-steuernummer-steuerklasse", "liability-household-insurance-germany", "mobile-phone-sim-germany"]
@@ -248,7 +248,7 @@ SEPAの対象口座なら、IBANの国だけを理由に送金・引き落とし
 
 - [決済口座法第31条：基本口座を開く権利と10営業日以内の提示](https://www.gesetze-im-internet.de/zkg/__31.html)（2026年11月14日確認）
 - [預金保護法第8条：預金保護の上限10万ユーロ](https://www.gesetze-im-internet.de/einsig/__8.html)（2026年11月14日確認）
-- [ドイツ連邦金融監督庁（BaFin）：銀行口座の公的比較](https://kontenvergleich.bafin.de/)（2026年11月14日はこの環境から開けず未確認）
-- [ドイツ連邦金融監督庁（BaFin）：基本口座](https://www.bafin.de/DE/Verbraucher/Bank/Produkte/Basiskonto/basiskonto_node.html)（2026年11月14日はこの環境から開けず未確認）
-- [ドイツ連邦銀行：預金保護](https://www.bundesbank.de/en/tasks/financial-supervision/individual-aspects/deposit-protection-622748)（2026年11月14日はこの環境から開けず未確認）
-- [欧州委員会：IBAN discrimination](https://finance.ec.europa.eu/consumer-finance-and-payments/payment-services/payment-services/iban-discrimination_en)（2026年11月14日はこの環境から開けず未確認）
+- [ドイツ連邦金融監督庁（BaFin）：銀行口座の公的比較](https://kontenvergleich.bafin.de/)：口座維持費と当座貸越などを比較できる。月額0ユーロでも、ほかの手数料がかかることがある（2026年11月15日確認）
+- [ドイツ連邦金融監督庁（BaFin）：基本口座](https://www.bafin.de/DE/Verbraucher/Bank/Produkte/Basiskonto/basiskonto_node.html)：銀行は勝手に断れない。基本口座として申請したことが分かる形で申し込む（2026年11月15日確認）
+- [ドイツ連邦銀行：預金保護](https://www.bundesbank.de/en/tasks/financial-supervision/individual-aspects/deposit-protection-622748)：一人・一銀行あたり10万ユーロまで（2026年11月15日確認）
+- [欧州委員会：IBAN discrimination](https://finance.ec.europa.eu/consumer-finance-and-payments/payment-services/payment-services/iban-discrimination_en)：ほかのEU加盟国の口座だという理由でSEPA送金や引き落としができない問題。拒否された国の監督当局に苦情を出せる（2026年11月15日確認）

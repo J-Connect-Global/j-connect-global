@@ -254,7 +254,7 @@ G-BAの予防接種指針（2026年10月29日施行版）では、新生児と�
 - [ドイツ連邦家族ポータル：出産手当](https://familienportal.de/familienportal/familienleistungen/mutterschaftsleistungen)：1日の手取りが13ユーロを超える分は勤務先が補う（2026年11月15日確認）
 - [ドイツ連邦家族ポータル：育児休業の通知](https://familienportal.de/familienportal/familienleistungen/elternzeit/faq/wann-und-wie-muss-ich-elternzeit-beantragen--124810)：3歳前は7週間前、3〜8歳は13週間前まで。テキスト形式（署名のない手紙やメール）で通知できる（2026年11月15日確認）
 - [ドイツ連邦家族ポータル：育児給付の申請](https://familienportal.de/familienportal/familienleistungen/elterngeld/faq/wie-kann-ich-elterngeld-beantragen--124762)：申請は出生後。さかのぼって支払われるのは最大3生活月（2026年11月15日確認）
-- [ドイツ連邦家族ポータル：出生登録](https://familienportal.de/familienportal/lebenslagen/schwangerschaft-geburt/anmeldung-standesamt)（2026年11月14日はこの環境から開けず未確認）
+- [ドイツ連邦家族ポータル：出生登録](https://familienportal.de/familienportal/lebenslagen/schwangerschaft-geburt/anmeldung-standesamt)：病院や出産施設で生まれた場合は、施設が戸籍登録所に通知し、出生の証明を送る（2026年11月15日確認）
 - [在ドイツ日本国大使館：出生届](https://www.de.emb-japan.go.jp/itpr_ja/konsular_koseki04.html)（2026年11月14日はこの環境から開けず未確認）
 - [BIÖG：U2健診](https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u2-untersuchung/)：生後3〜10日（2026年11月15日確認）
 - [BIÖG：U3健診](https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u3-untersuchung/)：生後4〜5週。多くは小児科の診療所で受ける最初の健診（2026年11月15日確認）

@@ -4,7 +4,7 @@ id: "C033"
 content_type: "column"
 category: "季節・文化"
 title: "ドイツの聖マルティン祭とは？｜11月11日のランタン行列と参加前の確認"
-summary: "聖マルティン祭は毎年11月11日。2026年11月7日現在、NRWでは11月7日から13日に地域ごとの行列が予定されています。自治体の最新日程、一般参加の確認方法、子どものランタンの安全を整理します。"
+summary: "聖マルティン祭は毎年11月11日。2026年のNRWの行列は11月13日までに終わりました。行列の日程の探し方、一般参加の確認方法、子どものランタンの安全を、2026年の開催例とともに整理します。"
 official_sources:
   - title: "ケルン大司教区：聖マルティン祭の由来と習慣"
     url: "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Sankt-Martin-Braeuche-zum-Martinsfest-mit-Laternen-Liedern-und-Gaensen/"
@@ -21,14 +21,14 @@ city: "ドイツ全土（2026年の開催例はNRW）"
 area: "ドイツ全土"
 location: ""
 event_date: "2026-11-11 Martinstag"
-next_review: "2026-11-10"
+next_review: "2027-10-15"
 tags: ["聖マルティン祭", "ランタン行列", "Martinstag", "11月", "ドイツ文化", "2026年", "NRW"]
 published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-11-01"
-updated_at: "2026-11-07"
-last_verified: "2026-11-07"
+updated_at: "2026-11-15"
+last_verified: "2026-11-15"
 canonical_url: "/germany/ja/events/columns/st-martin-day-germany/"
 official_url: "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Sankt-Martin-Braeuche-zum-Martinsfest-mit-Laternen-Liedern-und-Gaensen/"
 image: "/assets/img/events/st-martin-day-germany.webp"
@@ -43,7 +43,7 @@ image_credit: "Illustration / J-Connect"
 
 ## 2026年の開催例：記念日と行列の日は同じとは限らない
 
-聖マルティン祭の日付は毎年11月11日です。一方、行列は学校・保育施設・教会・地域団体などが個別に日程を決めるため、必ずしも11月11日の夜に行われるわけではありません。2026年11月7日現在、NRWでは11月7日から13日に複数の行列が自治体から公表されています。すでに終了した11月3日〜6日の行事は、これから参加する人向けの一覧から除外しています。
+聖マルティン祭の日付は毎年11月11日です。一方、行列は学校・保育施設・教会・地域団体などが個別に日程を決めるため、必ずしも11月11日の夜に行われるわけではありません。**2026年の行列は、下の表の地域ではすべて終わりました（2026年11月15日確認）。** 表は2026年の記録として残しています。2026年は、自治体の一覧が10月中旬から11月上旬に公表され、行列は11月1日から13日まで地域ごとに分かれて行われました。翌年の日程は、自治体や主催者の案内で確認してください。
 
 ![2026年の聖マルティン祭は11月11日だが、地域のランタン行列は前後の日に開かれることを示す図](/assets/images/events/st-martin-day-germany-timeline.svg "図解：J-Connect作成。自治体の2026年発表に基づく。")
 
@@ -55,7 +55,7 @@ image_credit: "Illustration / J-Connect"
 | メーアブッシュ市・ランク＝ラトゥム地区（地域団体） | 11月11日（水）18:00 | 市の一覧にルートと集合先が掲載されています。一般参加の可否は主催者に確認してください |
 | メーアブッシュ市・オスターラート地区（聖マルティン委員会） | 11月12日（木）17:30 | 市の一覧に集合・ルートが掲載されています。外部参加の可否は主催者に確認してください |
 | メーアブッシュ市・ニエルスト地区（聖マルティン委員会） | 11月13日（金）17:30 | 市の一覧に集合・ルートが掲載されています。外部参加の可否は主催者に確認してください |
-| メーアブッシュ市・オスターラート地区（聖マルティン委員会） | 11月13日（金）17:30 | 市の一覧に集合・ルートが掲載されています。外部参加の可否は主催者に確認してください |
+| メーアブッシュ市・オスターラート地区の旧村（聖マルティン委員会） | 11月13日（金）17:30 | 市の一覧に集合・ルートが掲載されています。外部参加の可否は主催者に確認してください |
 
 上記はNRWの一部地域の例で、全国の行事一覧ではありません。自治体の一覧に載っていても、幼稚園や保育施設が主催する行事は関係者向けの場合があります。集合場所、コース、開始時刻、一般参加の可否、雨天時の扱いは主催者の最新案内を確認してください。
 
@@ -115,7 +115,7 @@ image_credit: "Illustration / J-Connect"
 - [Düsseldorf市：2026年11月10日の旧市街行列](https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/sankt-martin-reitet-wieder-durch-die-stadt-12)
 - [Bergkamen消防署：聖マルティン祭の安全](https://www.feuerwehr-bergkamen.de/buergerinformationen/verhalten-im-notfall/sicherheitstipps-zum-martinstag/)
 
-開催情報は更新される場合があります。記事の確認日は2026年11月7日です。参加前に主催者の最新案内を確認してください。
+開催情報は更新される場合があります。表の日程は2026年11月7日に確認したもので、2026年の行列は終了しています。参加前に主催者の最新案内を確認してください。
 
 ## 関連記事
 

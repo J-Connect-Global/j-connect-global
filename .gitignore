@@ -3,3 +3,5 @@ playwright-report/
 test-results/
 _site/
 artifacts/
+.cache/
+official-sources-report.md

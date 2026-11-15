@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script data-jconnect-theme-init>
+  (function () {
+    try {
+      var saved = localStorage.getItem('jconnect-theme');
+      var theme = saved === 'dark' || saved === 'light'
+        ? saved
+        : 'light';
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+    } catch (error) {
+      document.documentElement.dataset.theme = 'light';
+      document.documentElement.style.colorScheme = 'light';
+    }
+  })();
+  </script>
+<script src="/assets/js/site-identity.js"></script>
+<title>ドイツ生活のAIツール（無料）｜手紙解説・質問・文面作成・手続きナビ | J-Connect Germany</title>
+  <meta name="description" content="ドイツ語の手紙の解説、生活の疑問への回答、ドイツ語の手紙・メール作成、手続きナビ、申請書の書き方、会話練習。在独日本人向けの無料AIツール集。" />
+  <meta name="theme-color" content="#f7f3ee" />
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://j-connect-global.com/germany/ja/tools/" />
+  <link rel="alternate" hreflang="ja" href="https://j-connect-global.com/germany/ja/tools/">
+  <link rel="alternate" hreflang="x-default" href="https://j-connect-global.com/germany/ja/tools/">
+  <meta property="og:title" content="ドイツ生活のAIツール（無料）｜手紙解説・質問・文面作成・手続きナビ | J-Connect Germany">
+  <meta property="og:description" content="ドイツ語の手紙の解説、生活の疑問への回答、ドイツ語の手紙・メール作成、手続きナビ、申請書の書き方、会話練習。在独日本人向けの無料AIツール集。">
+  <meta property="og:url" content="https://j-connect-global.com/germany/ja/tools/">
+  <meta property="og:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card-og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="J-Connect Germany">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ドイツ生活のAIツール（無料）｜手紙解説・質問・文面作成・手続きナビ | J-Connect Germany">
+  <meta name="twitter:description" content="ドイツ語の手紙の解説、生活の疑問への回答、ドイツ語の手紙・メール作成、手続きナビ、申請書の書き方、会話練習。在独日本人向けの無料AIツール集。">
+  <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card-og.jpg">
+  <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
+
+
+<link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-performance-a11y-20260719">
+<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
+  <link rel="stylesheet" href="/assets/css/social-share.css">
+  <link rel="stylesheet" href="/assets/css/jc-ai-tools.css">
+<style>
+/* Page-specific styles. Shared site styles live in the common site stylesheet. */
+:root{
+  --red:#e8002d;
+  --orange:#0067c9;
+  --yellow:#8eb6e5;
+  --teal:#00b4a6;
+  --blue:#2f6df5;
+  --purple:#7c3aed;
+  --accent-blue:#0067c9;
+  --cream:#f4f8fc;
+  --paper:#ffffff;
+  --ink:#1a1014;
+  --muted:#6b5e68;
+  --border:#ede5e0;
+  --card:#ffffff;
+  --shadow:0 10px 30px rgba(26,16,20,.08);
+  --radius-xl:10px;
+  --radius-lg:9px;
+  --radius-md:16px;
+  --max:1180px;
+}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:26px 18px 60px}
+
+.hero,.content{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}
+
+.hero-main,.hero-side,.panel{
+      background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
+      border:1px solid var(--border);border-radius:var(--radius-xl);box-shadow:var(--shadow)
+    }
+
+.hero-main,.hero-side,.panel{padding:28px}
+
+.eyebrow{
+      display:inline-flex;align-items:center;padding:8px 14px;border-radius:999px;background:#fff;
+      border:1px solid var(--border);font-size:13px;color:var(--muted);margin-bottom:18px
+    }
+
+h1{font-size:clamp(34px,5vw,56px);line-height:1.08;letter-spacing:-.03em;margin:0 0 16px}
+
+.lead{font-size:18px;color:#433841}
+
+.quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
+
+.mini{background:#fff;border:1px solid var(--border);border-radius:18px;padding:16px}
+
+.form-wrap{margin-top:24px}
+
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+.field{display:flex;flex-direction:column;gap:8px}
+
+.field.full{grid-column:1/-1}
+
+label{font-size:14px;font-weight:700}
+
+.input,select,textarea{
+      width:100%;padding:14px 15px;border-radius:16px;border:1px solid var(--border);
+      background:#fff;font:inherit;color:var(--ink)
+    }
+
+textarea{min-height:180px;resize:vertical}
+
+.submit{
+      margin-top:16px;display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;
+      border:none;border-radius:999px;background:linear-gradient(90deg,var(--red),var(--orange));
+      color:#fff;font-weight:800;font:inherit;cursor:pointer
+    }
+
+.submit[disabled]{opacity:.7;cursor:not-allowed}
+
+.panel h2{margin:0 0 12px;font-size:28px}
+
+.panel h3{margin:20px 0 8px;font-size:20px}
+
+.panel p,.panel li{color:#314f70}
+
+.list{padding-left:20px;margin:0}
+
+.note{font-size:13px;color:var(--muted)}
+
+.status-box{
+      display:none;
+      margin-top:16px;
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-size:14px
+    }
+
+.status-box.show{display:block}
+
+.status-success{border-color:#cfe9d8;background:#f4fbf6;color:#1d5c33}
+
+.status-error{border-color:#f3d0d6;background:#f8fbff;color:#9d2235}
+
+.footer{max-width:var(--max);margin:0 auto 32px;padding:0 18px}
+
+@media (max-width:960px){
+.hero,.content,.form-grid,.quick-grid{grid-template-columns:1fr}
+}
+
+/* PR3 static/support polish: align support pages with the Community visual system. */
+.wrap{max-width:1120px;padding:24px 16px 56px}
+
+.hero,
+.content{gap:16px}
+
+.hero-main,
+.hero-side,
+.panel,
+.mini{
+  background:rgba(255,255,255,.94);
+  border-color:var(--line);
+  border-radius:9px;
+  box-shadow:0 8px 18px rgba(30,58,95,.06);
+}
+
+.hero-main{box-shadow:0 10px 24px rgba(30,58,95,.07)}
+
+.eyebrow{
+  color:var(--site-navy);
+  border-color:var(--line);
+  background:var(--site-blue-soft);
+  font-weight:900;
+}
+
+h1,
+.panel h2,
+.panel h3,
+.hero-side h2,
+.mini strong,
+label{color:var(--site-navy);letter-spacing:0}
+
+.lead,
+.panel p,
+.panel li,
+.mini{line-height:1.8;color:#34414d}
+
+.input,
+select,
+textarea{
+  border-color:var(--line);
+  border-radius:14px;
+  color:var(--text);
+}
+
+.input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--site-navy);
+  outline:none;
+  box-shadow:var(--site-focus-ring);
+}
+
+.submit{
+  min-height:44px;
+  background:var(--site-navy);
+  box-shadow:0 10px 22px rgba(30,58,95,.18);
+}
+
+:root[data-theme="dark"] .hero-main,
+:root[data-theme="dark"] .hero-side,
+:root[data-theme="dark"] .panel,
+:root[data-theme="dark"] .mini{
+  border-color:var(--color-border, #263a52);
+  background:var(--surface-card-bg, #101f33);
+  color:var(--surface-card-text, #e8f1fb);
+  box-shadow:var(--shadow, 0 16px 36px rgba(0,0,0,.24));
+}
+
+:root[data-theme="dark"] .eyebrow{
+  border-color:var(--color-border, #263a52);
+  background:var(--color-primary-soft, rgba(69,151,232,.16));
+  color:var(--color-primary, #67b7ff);
+}
+
+:root[data-theme="dark"] h1,
+:root[data-theme="dark"] .panel h2,
+:root[data-theme="dark"] .panel h3,
+:root[data-theme="dark"] .hero-side h2,
+:root[data-theme="dark"] .mini strong,
+:root[data-theme="dark"] label{
+  color:var(--surface-card-heading, #07315f);
+}
+
+:root[data-theme="dark"] .lead,
+:root[data-theme="dark"] .panel p,
+:root[data-theme="dark"] .panel li,
+:root[data-theme="dark"] .mini,
+:root[data-theme="dark"] .note{
+  color:var(--surface-card-muted, #526170);
+}
+
+:root[data-theme="dark"] .input,
+:root[data-theme="dark"] select,
+:root[data-theme="dark"] textarea{
+  border-color:var(--color-border, #263a52);
+  background:var(--color-input-bg, #0f1d30);
+  color:var(--color-input-text, #e8f1fb);
+}
+
+:root[data-theme="dark"] .input::placeholder,
+:root[data-theme="dark"] textarea::placeholder{
+  color:var(--color-text-muted, #a8bad0);
+}
+
+:root[data-theme="dark"] .submit{
+  border:1px solid var(--color-primary, #67b7ff);
+  background:var(--color-primary, #67b7ff);
+  color:#061321;
+  box-shadow:none;
+}
+
+:root[data-theme="dark"] .submit:hover,
+:root[data-theme="dark"] .submit:focus-visible{
+  background:#9ccdff;
+  color:#061321;
+}
+
+:root[data-theme="dark"] .submit[disabled]{
+  border-color:var(--color-border, #263a52);
+  background:#0b1626;
+  color:#71859d;
+  opacity:1;
+}
+
+:root[data-theme="dark"] .status-box{
+  border-color:var(--color-border, #263a52);
+  background:var(--color-chip-bg, #0f1d30);
+  color:var(--surface-card-text, #e8f1fb);
+}
+
+:root[data-theme="dark"] .status-success{
+  border-color:rgba(98,218,146,.38);
+  background:rgba(22,96,61,.24);
+  color:#a9f0c5;
+}
+
+:root[data-theme="dark"] .status-error{
+  border-color:rgba(255,141,154,.42);
+  background:rgba(97,31,43,.35);
+  color:#ffc7cf;
+}
+
+:root[data-theme="dark"] body .hero-main,
+:root[data-theme="dark"] body .hero-side,
+:root[data-theme="dark"] body .panel,
+:root[data-theme="dark"] body .mini{
+  border-color:var(--color-border, #263a52);
+  background:var(--surface-card-bg, #101f33);
+  color:var(--surface-card-text, #e8f1fb);
+}
+
+:root[data-theme="dark"] body h1,
+:root[data-theme="dark"] body .panel h2,
+:root[data-theme="dark"] body .panel h3,
+:root[data-theme="dark"] body .hero-side h2,
+:root[data-theme="dark"] body .mini strong,
+:root[data-theme="dark"] body label{
+  color:var(--surface-card-heading, #07315f);
+}
+
+:root[data-theme="dark"] body .lead,
+:root[data-theme="dark"] body .panel p,
+:root[data-theme="dark"] body .panel li,
+:root[data-theme="dark"] body .mini,
+:root[data-theme="dark"] body .note{
+  color:var(--surface-card-muted, #526170);
+}
+
+@media (max-width:640px){
+  .wrap{padding:18px 12px 44px}
+  .hero-main,.hero-side,.panel{border-radius:18px;padding:18px}
+  h1{font-size:clamp(28px,9vw,36px)}
+  .lead{font-size:15px}
+  .hero-side h2,.panel h2{font-size:22px}
+}
+.le-result[hidden],#letterForm [hidden],#letterResult [hidden]{display:none!important}
+.le-mode{border:0;padding:0;margin:0 0 14px;display:flex;gap:16px;flex-wrap:wrap}
+.le-mode legend{font-size:14px;font-weight:700;margin-bottom:8px}
+.le-radio,.le-consent{font-weight:400;display:flex;gap:8px;align-items:flex-start}
+.le-consent{font-size:14px;margin:14px 0}
+#fileField,#textField{margin-bottom:14px}
+.le-result{margin-top:22px;scroll-margin-top:96px}
+.le-result.is-entering .le-ai-panel{opacity:0;transform:translateY(16px)}
+.le-ai-panel{transition:opacity .6s ease,transform .6s ease;background:linear-gradient(180deg,#eef5ff 0%,#f6f9fe 100%);border:1px solid #cfe0f5;border-radius:24px;padding:24px;box-shadow:0 10px 24px rgba(30,58,95,.07)}
+.le-ai-head{display:flex;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap}
+.le-ai-avatar{flex:0 0 auto;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#0067c9;color:#fff}
+.le-ai-label{margin:0;font-weight:800;color:#0b3a6e;font-size:18px}
+.le-ai-sub{margin:2px 0 0;font-size:13px;color:#4f5f70}
+.le-ai-head .le-badge{margin:0 0 0 auto}
+.le-card{background:#fff;border:1px solid #dde8f5;border-radius:16px;padding:18px 20px;margin-top:14px}
+.le-card h3{margin:0 0 10px;font-size:18px;color:#0b3a6e;padding-left:10px;border-left:4px solid #0067c9}
+.le-card-main h2{margin:0 0 6px;font-size:clamp(22px,3vw,30px);color:#0b3a6e}
+.le-sender{margin:0 0 10px;font-size:13px;color:#4f5f70}
+.le-summary{margin:0;font-size:17px;line-height:1.8;color:#1f2d3d}
+.le-urgency-reason{margin:10px 0 0;font-size:14px;color:#4f5f70}
+.le-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.le-grid .le-card{margin-top:14px}
+.le-list{margin:0;padding-left:20px;line-height:1.8}
+.le-list li+li{margin-top:6px}
+.le-steps{margin:0;padding:0;list-style:none;counter-reset:step}
+.le-steps li{position:relative;padding:0 0 12px 40px;counter-increment:step;line-height:1.7}
+.le-steps li::before{content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:#0067c9;color:#fff;font-weight:700;display:grid;place-items:center;font-size:14px}
+.le-steps strong{display:block;color:#0b3a6e}
+.le-prose{margin:0;line-height:1.85;white-space:pre-wrap}
+.le-card-warn{background:#fffaf0;border-color:#f1dfb5}
+.le-card-warn h3{border-left-color:#e0a800}
+.le-feedback{background:#f3f8ff;border-color:#c9dcf3}
+.le-feedback-lead{margin:0 0 12px;line-height:1.7}
+.le-feedback-buttons{display:flex;gap:10px;flex-wrap:wrap}
+.le-fb-btn{border:1px solid #9fc0e6;background:#fff;color:#0b3a6e;border-radius:999px;padding:10px 18px;font-weight:700;cursor:pointer}
+.le-fb-btn[aria-pressed="true"]{background:#0067c9;border-color:#0067c9;color:#fff}
+.le-feedback-form{margin-top:14px;display:grid;gap:12px}
+.le-feedback-form textarea{min-height:110px}
+.le-feedback-form textarea.le-fb-small{min-height:70px}
+.le-disclaimer{margin:16px 0 0;font-size:12.5px;color:#5c6b7a;line-height:1.7}
+@media (max-width:760px){.le-grid{grid-template-columns:1fr}.le-ai-panel{padding:16px}.le-ai-head .le-badge{margin-left:0}}
+.le-badge{display:inline-block;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700;margin-bottom:10px}
+.le-badge.high{background:#fde8eb;color:#9d2235}
+.le-badge.medium{background:#fff4dc;color:#7a5200}
+.le-badge.low{background:#e7f5ec;color:#1d5c33}
+.le-terms{display:grid;grid-template-columns:minmax(120px,auto) 1fr;gap:6px 14px;margin:0}
+.le-terms dt{font-weight:700}
+.le-terms dd{margin:0}
+.le-reply{white-space:pre-wrap;background:#f4f8fc;border:1px solid var(--border);border-radius:12px;padding:14px;font-family:inherit;font-size:15px;line-height:1.7}
+.le-copy{border:1px solid var(--border);background:#fff;border-radius:10px;padding:8px 14px;cursor:pointer}
+.le-caution{border-left:4px solid #e0a800;padding-left:14px;margin-top:16px}
+</style>
+<script>
+(function () {
+  var segments = location.pathname.split('/').filter(Boolean);
+  if (segments.length && /\.html$/i.test(segments[segments.length - 1])) segments.pop();
+
+  var localeIndex = -1;
+  for (var i = 0; i < segments.length; i++) {
+    if (segments[i] === 'ja' || segments[i] === 'de') { localeIndex = i; break; }
+  }
+
+  var depth = localeIndex >= 0 ? (segments.length - localeIndex) : Math.max(segments.length - 1, 0);
+  var prefix = depth === 0 ? './' : '../'.repeat(depth);
+
+  var css = document.createElement('link');
+  css.rel = 'stylesheet';
+  css.href = '/assets/css/cookie-consent.css';
+  document.head.appendChild(css);
+
+  var js = document.createElement('script');
+  js.src = '/assets/js/cookie-consent.js';
+  js.defer = true;
+  document.head.appendChild(js);
+})();
+</script>
+
+  <script type="application/ld+json" data-jconnect-managed="page-structured-data">{"@context":"https://schema.org","@type":"WebPage","name":"ドイツ生活のAIツール","description":"在独日本人向けの無料AIツール集（手紙解説・質問・文面作成・手続きナビ・申請書・会話練習）。","inLanguage":"ja","url":"https://j-connect-global.com/germany/ja/tools/","isPartOf":{"@type":"WebSite","@id":"https://j-connect-global.com/#website","name":"J-Connect Global","url":"https://j-connect-global.com/"},"publisher":{"@type":"Organization","@id":"https://j-connect-global.com/#organization","name":"J-Connect Global","url":"https://j-connect-global.com/"}}</script>
+  <script type="application/ld+json" data-jconnect-managed="page-structured-data">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://j-connect-global.com/germany/ja/"},{"@type":"ListItem","position":2,"name":"生活・手続き","item":"https://j-connect-global.com/germany/ja/living/"},{"@type":"ListItem","position":3,"name":"ドイツ生活のAIツール","item":"https://j-connect-global.com/germany/ja/tools/"}]}</script>
+</head>
+<body>
+<!-- LAYOUT:ja-header:start -->
+<a class="jc-skip-link" href="#main-content">本文へ移動</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
+      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany（J-Connect Global）" width="720" height="174">
+      <span class="brand-copy">
+        <span class="brand-title">J-CONNECT GERMANY</span>
+        <span class="brand-sub">J-Connect Global のドイツ向け生活ポータル</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <nav class="header-nav" aria-label="主要ナビゲーション">
+        <a href="/germany/ja/">ホーム</a>
+        <a href="/germany/ja/about/">このサイトについて</a>
+      </nav>
+      <details class="header-category header-category-menu" aria-label="カテゴリ選択">
+        <summary class="header-category-trigger" aria-haspopup="true">
+          <span>カテゴリ</span>
+          <span class="header-category-chevron" aria-hidden="true">▼</span>
+        </summary>
+        <div class="category-dropdown">
+          <a href="/germany/ja/community/">交流・掲示板</a>
+          <a href="/germany/ja/living/" class="active" aria-current="page">生活・手続き</a>
+          <a href="/germany/ja/jobs/">仕事・求人</a>
+          <a href="/germany/ja/events/">ニュース・イベント</a>
+          <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+        </div>
+      </details>
+      <form class="header-search" action="/germany/ja/search/" method="get" role="search">
+        <label class="search-box" aria-label="サイト内検索">
+          <span class="search-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="M16 16l4.5 4.5"></path>
+            </svg>
+          </span>
+          <input type="search" name="q" placeholder="検索">
+        </label>
+        <button class="search-btn" type="submit" aria-label="検索">
+          <span class="search-btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="M16 16l4.5 4.5"></path>
+            </svg>
+          </span>
+        </button>
+      </form>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="ダークモードに切り替え">
+        <span class="theme-toggle-track" aria-hidden="true">
+          <span class="theme-toggle-icon theme-toggle-sun">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"></path>
+            </svg>
+          </span>
+          <span class="theme-toggle-icon theme-toggle-moon">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M20.4 14.6A7.7 7.7 0 0 1 9.4 3.6 8.9 8.9 0 1 0 20.4 14.6Z"></path>
+            </svg>
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+<!-- LAYOUT:ja-header:end -->
+
+  <main id="main-content" tabindex="-1" class="wrap jcai-main">
+    <section class="jcai-panel">
+      <div class="eyebrow">AI Tools</div>
+      <h1>ドイツ生活のAIツール</h1>
+      <p class="lead">ドイツ語の手紙、申請書、手続き、会話など、在独日本人がつまずきやすい場面をAIが日本語で手助けします。すべて無料・登録不要です。</p>
+      <div class="jcai-hub-grid"><a class="jcai-hub-card" href="/germany/ja/tools/letter-explainer/"><div class="jcai-avatar"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 4v4"/><circle cx="12" cy="3.5" r="1"/><circle cx="9" cy="13.5" r="1.3" fill="currentColor"/><circle cx="15" cy="13.5" r="1.3" fill="currentColor"/><path d="M2 12v3M22 12v3"/></svg></div><strong>ドイツの手紙AI解説</strong><span>役所や会社から届いた手紙を、写真で撮るだけで日本語で解説。期限・やること・返信文まで。</span></a><a class="jcai-hub-card" href="/germany/ja/tools/ask/"><div class="jcai-avatar"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 4v4"/><circle cx="12" cy="3.5" r="1"/><circle cx="9" cy="13.5" r="1.3" fill="currentColor"/><circle cx="15" cy="13.5" r="1.3" fill="currentColor"/><path d="M2 12v3M22 12v3"/></svg></div><strong>J-Connect AIに質問</strong><span>ドイツ生活の疑問を質問すると、J-Connectの記事をもとに根拠つきで回答。</span></a><a class="jcai-hub-card" href="/germany/ja/tools/write/"><div class="jcai-avatar"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 4v4"/><circle cx="12" cy="3.5" r="1"/><circle cx="9" cy="13.5" r="1.3" fill="currentColor"/><circle cx="15" cy="13.5" r="1.3" fill="currentColor"/><path d="M2 12v3M22 12v3"/></svg></div><strong>手紙・メール作成</strong><span>伝えたいことを日本語で書くと、丁寧なドイツ語の手紙・メールに。日本語訳つき。</span></a><a class="jcai-hub-card" href="/germany/ja/tools/navi/"><div class="jcai-avatar"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 4v4"/><circle cx="12" cy="3.5" r="1"/><circle cx="9" cy="13.5" r="1.3" fill="currentColor"/><circle cx="15" cy="13.5" r="1.3" fill="currentColor"/><path d="M2 12v3M22 12v3"/></svg></div><strong>手続きナビ</strong><span>来独・引っ越し・出産・本帰国など、状況に合わせた手続きのチェックリストを作成。</span></a><a class="jcai-hub-card" href="/germany/ja/tools/form-helper/"><div class="jcai-avatar"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 4v4"/><circle cx="12" cy="3.5" r="1"/><circle cx="9" cy="13.5" r="1.3" fill="currentColor"/><circle cx="15" cy="13.5" r="1.3" fill="currentColor"/><path d="M2 12v3M22 12v3"/></svg></div><strong>申請書の記入アシスタント</strong><span>ドイツ語の申請書の各欄の意味と書き方、記入例を日本語で説明。</span></a><a class="jcai-hub-card" href="/germany/ja/tools/conversation/"><div class="jcai-avatar"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 4v4"/><circle cx="12" cy="3.5" r="1"/><circle cx="9" cy="13.5" r="1.3" fill="currentColor"/><circle cx="15" cy="13.5" r="1.3" fill="currentColor"/><path d="M2 12v3M22 12v3"/></svg></div><strong>ドイツ語の会話練習</strong><span>医者・役所・大家さんなどの場面で、AIを相手に会話を練習。添削つき。</span></a></div>
+      <p class="jcai-note" style="margin-top:18px">AIの回答は参考情報です。大事な手続きは公式窓口で確認してください。入力内容は回答の作成のためだけに OpenAI の API に送られ、J-Connect では保存しません（<a href="/germany/ja/privacy/#p5">プライバシーポリシー</a>）。</p>
+    </section>
+  </main>
+  <!-- LAYOUT:ja-footer:start -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany（J-Connect Global）" width="900" height="217" loading="lazy" decoding="async">
+        <div class="footer-copy">
+          <div class="footer-title">J-CONNECT GERMANY</div>
+          <div class="footer-sub">J-Connect Global のドイツ向け生活ポータル</div>
+          <div class="footer-relationship">J-Connect Germany は、J-Connect Global のドイツ向けポータルです。</div>
+          <div class="footer-meta">© 2026 J-Connect Global</div>
+        </div>
+      </div>
+      <div class="footer-links" aria-label="フッターサイトマップ">
+        <div class="footer-group">
+          <div class="footer-heading">サイト</div>
+          <a href="/germany/ja/">ホーム</a>
+          <a href="/germany/ja/about/">このサイトについて</a>
+          <a href="/germany/ja/living/">ガイド</a>
+        </div>
+        <div class="footer-group">
+          <div class="footer-heading">主要カテゴリ</div>
+          <a href="/germany/ja/community/">交流・掲示板</a>
+          <a href="/germany/ja/living/">生活・手続き</a>
+          <a href="/germany/ja/jobs/">仕事・求人</a>
+          <a href="/germany/ja/events/">ニュース・イベント</a>
+          <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+        </div>
+        <div class="footer-group">
+          <div class="footer-heading">サポート・運営情報</div>
+          <a href="/germany/ja/jobs/posting/">求人掲載について</a>
+          <a href="/germany/ja/contact/">お問い合わせ</a>
+          <a href="mailto:contact@j-connect-global.com">contact@j-connect-global.com</a>
+          <a href="/germany/ja/terms/">利用規約</a>
+          <a href="/germany/ja/privacy/">プライバシー</a>
+          <a href="/germany/ja/impressum/">運営者情報</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- LAYOUT:ja-footer:end -->
+
+  <script src="/assets/js/data-sources.js"></script>
+  <script src="/assets/js/jc-ai-tools.js"></script>
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/social-share.js"></script>
+</body>
+</html>

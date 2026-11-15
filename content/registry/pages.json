@@ -956,28 +956,6 @@
     ]
   },
   {
-    "id": "page-editorial-policy",
-    "title": "編集方針",
-    "url": "/germany/ja/about/editorial-policy/",
-    "type": "utility",
-    "pillar": "utility",
-    "status": "published",
-    "canonical_url": "/germany/ja/about/editorial-policy/",
-    "nav_visible": false,
-    "footer_visible": false,
-    "search_visible": true,
-    "sitemap_visible": true,
-    "legacy": false,
-    "redirect_target": "",
-    "layout": "legal",
-    "hero_type": "utility",
-    "description": "J-Connect Germany の生活ガイドを誰が書き、何で確かめ、誤りをどう直すか。一次情報の確認、編集部の実例の書き方、個人情報の扱い、訂正の方針を説明します。",
-    "tags": [
-      "編集方針",
-      "運営方針"
-    ]
-  },
-  {
     "id": "page-contact",
     "title": "お問い合わせ",
     "url": "/germany/ja/contact/",

@@ -1,0 +1,125 @@
+/* J-Connect AIチャット（全ページ右下） */
+.jcw{--jcw-navy:#0b3a6e;--jcw-blue:#004f98;--jcw-ink:#1d2b3a;--jcw-muted:#4f5f70;--jcw-line:#d6e3f2;--jcw-soft:#f2f7fd;--jcw-bg:#fff;
+  position:fixed;right:20px;bottom:20px;z-index:9000;font-family:inherit;color:var(--jcw-ink);line-height:1.6}
+.jcw *{box-sizing:border-box}
+.jcw [hidden]{display:none!important}
+.jcw-ico{display:inline-flex;align-items:center;justify-content:center;line-height:0}
+.jcw-ico svg{display:block}
+
+/* 右下のロボットボタン */
+.jcw-launcher{position:relative;display:flex;align-items:center;justify-content:center;width:64px;height:64px;margin-left:auto;border:0;border-radius:50%;cursor:pointer;
+  background:linear-gradient(145deg,#1769c4,var(--jcw-navy));color:#fff;box-shadow:0 10px 26px rgba(11,58,110,.35),0 2px 6px rgba(11,58,110,.25);transition:transform .18s ease,box-shadow .18s ease}
+.jcw-launcher:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 14px 30px rgba(11,58,110,.42)}
+.jcw-launcher:focus-visible{outline:3px solid #ffb703;outline-offset:3px}
+.jcw-launcher .jcw-ico{width:38px;height:38px}
+.jcw-launcher-dot{position:absolute;top:6px;right:6px;width:13px;height:13px;border-radius:50%;background:#22c55e;border:2px solid #fff}
+.jcw.is-open .jcw-launcher-dot{display:none}
+
+/* スマホの小さな吹き出し */
+.jcw-teaser{position:absolute;right:0;bottom:76px;display:flex;align-items:flex-start;gap:4px;width:min(290px,calc(100vw - 40px));background:var(--jcw-bg);border:1px solid var(--jcw-line);border-radius:16px 16px 4px 16px;box-shadow:0 12px 28px rgba(11,58,110,.2);padding:4px;animation:jcwPop .25s ease}
+.jcw-teaser-open{flex:1;display:flex;flex-direction:column;gap:2px;text-align:left;background:none;border:0;padding:10px 6px 10px 12px;color:var(--jcw-ink);cursor:pointer;font:inherit}
+.jcw-teaser-open strong{font-size:15px;color:var(--jcw-navy)}
+.jcw-teaser-open span{font-size:13px;color:var(--jcw-muted)}
+.jcw-teaser-close{flex:none;width:32px;height:32px;border:0;background:none;color:var(--jcw-muted);font-size:22px;line-height:1;border-radius:8px;cursor:pointer}
+.jcw-teaser-close:hover{background:var(--jcw-soft)}
+
+/* チャット画面 */
+.jcw-panel{position:absolute;right:0;bottom:80px;display:flex;flex-direction:column;width:400px;height:min(620px,calc(100vh - 120px));background:var(--jcw-bg);border:1px solid var(--jcw-line);border-radius:20px;
+  box-shadow:0 24px 60px rgba(11,58,110,.28),0 4px 14px rgba(11,58,110,.12);overflow:hidden;animation:jcwPop .25s ease;transform-origin:bottom right}
+@keyframes jcwPop{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.jcw-panel,.jcw-teaser{animation:none}.jcw-launcher{transition:none}}
+
+.jcw-head{display:flex;align-items:center;gap:10px;padding:12px 12px 12px 14px;background:linear-gradient(135deg,#0d4a8c,var(--jcw-navy));color:#fff}
+.jcw-avatar{flex:none;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.16)}
+.jcw-avatar .jcw-ico{width:26px;height:26px}
+.jcw-title{flex:1;min-width:0;display:flex;flex-direction:column}
+.jcw-title strong{font-size:15px;line-height:1.3}
+.jcw-title span{font-size:11.5px;opacity:.92;line-height:1.35}
+.jcw-head-btns{display:flex;align-items:center;gap:2px}
+.jcw-head-link{display:inline-flex;align-items:center;gap:5px;padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.16);color:#fff!important;font-size:12px;font-weight:700;text-decoration:none!important;white-space:nowrap}
+.jcw-head-link:hover{background:rgba(255,255,255,.26)}
+.jcw-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:0;border-radius:10px;background:none;color:#fff;cursor:pointer}
+.jcw-icon-btn:hover{background:rgba(255,255,255,.18)}
+.jcw-head a:focus-visible,.jcw-icon-btn:focus-visible{outline:2px solid #ffb703;outline-offset:1px}
+
+.jcw-body{flex:1;overflow-y:auto;padding:16px 14px 8px;background:var(--jcw-soft);scroll-behavior:smooth;overscroll-behavior:contain}
+.jcw-row{display:flex;gap:8px;margin:0 0 12px}
+.jcw-row-user{justify-content:flex-end}
+.jcw-mini-av{flex:none;display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#dbe9fa;color:var(--jcw-navy);margin-top:2px}
+.jcw-mini-av .jcw-ico{width:20px;height:20px}
+.jcw-msg{max-width:86%;border-radius:16px;padding:10px 13px;font-size:14.5px;word-break:break-word}
+.jcw-msg p{margin:0 0 6px}
+.jcw-msg p:last-child{margin-bottom:0}
+.jcw-msg-ai{background:#fff;border:1px solid var(--jcw-line);border-top-left-radius:4px}
+.jcw-msg-user{background:var(--jcw-blue);color:#fff;border-top-right-radius:4px;white-space:pre-wrap}
+.jcw-hello{font-weight:800;color:var(--jcw-navy)}
+.jcw-h{font-weight:800;color:var(--jcw-navy);margin-top:8px!important}
+.jcw-li{position:relative;padding-left:14px}
+.jcw-li::before{content:"";position:absolute;left:3px;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--jcw-blue)}
+.jcw-note{font-size:12.5px;color:#8a4b00;margin-top:8px!important}
+
+.jcw-tools-btn{display:flex;align-items:center;justify-content:center;gap:7px;margin:10px 0 8px;padding:10px 12px;border-radius:12px;background:var(--jcw-blue);color:#fff!important;font-weight:800;font-size:14px;text-decoration:none!important}
+.jcw-tools-btn:hover{background:var(--jcw-navy)}
+.jcw-tools{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.jcw-tool{display:flex;align-items:center;gap:6px;padding:7px 9px;border:1px solid var(--jcw-line);border-radius:10px;background:var(--jcw-soft);color:var(--jcw-navy)!important;font-size:12.5px;font-weight:700;text-decoration:none!important}
+.jcw-tool:hover{background:#e4effc}
+.jcw-tool-ico{font-size:15px;line-height:1}
+
+.jcw-chips{display:flex;flex-wrap:wrap;gap:6px;margin:-2px 0 14px 38px}
+.jcw-chip{border:1px solid #b9d2ef;background:#fff;color:var(--jcw-navy);border-radius:999px;padding:6px 11px;font:inherit;font-size:13px;font-weight:700;line-height:1.4;cursor:pointer;text-align:left}
+.jcw-chip:hover{background:#e9f2fd;border-color:var(--jcw-blue)}
+.jcw-chip:focus-visible,.jcw-copy:focus-visible,.jcw-send:focus-visible,.jcw-teaser button:focus-visible{outline:2px solid var(--jcw-blue);outline-offset:2px}
+
+.jcw-sources{margin-top:10px;padding-top:8px;border-top:1px dashed var(--jcw-line);display:flex;flex-direction:column;gap:3px}
+.jcw-sources-h{font-size:12px;font-weight:800;color:var(--jcw-muted);margin:0 0 2px!important}
+.jcw-sources a{font-size:13px;color:var(--jcw-blue);text-decoration:underline;line-height:1.45}
+.jcw-toolcard{display:flex;align-items:center;gap:10px;margin-top:10px;padding:9px 11px;border-radius:12px;background:#eef5ff;border:1px solid #c9dcf3;text-decoration:none!important;color:var(--jcw-navy)!important}
+.jcw-toolcard .jcw-tool-ico{font-size:20px}
+.jcw-toolcard strong{display:block;font-size:13.5px}
+.jcw-toolcard span span{font-size:12px;color:var(--jcw-muted)}
+.jcw-copy{margin-top:8px;border:1px solid var(--jcw-line);background:#fff;color:var(--jcw-muted);border-radius:8px;padding:3px 9px;font:inherit;font-size:12px;cursor:pointer}
+
+.jcw-typing .jcw-msg{display:flex;gap:5px;align-items:center;padding:14px 16px}
+.jcw-dot{width:7px;height:7px;border-radius:50%;background:#8aa9cc;animation:jcwBlink 1.2s infinite ease-in-out}
+.jcw-dot:nth-child(2){animation-delay:.18s}.jcw-dot:nth-child(3){animation-delay:.36s}
+@keyframes jcwBlink{0%,80%,100%{opacity:.3;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+
+.jcw-form{display:flex;align-items:flex-end;gap:8px;padding:10px 12px 6px;background:var(--jcw-bg);border-top:1px solid var(--jcw-line)}
+.jcw-input{flex:1;min-height:46px;max-height:132px;resize:none;border:1.5px solid #c3d6ec;border-radius:14px;padding:11px 13px;font:inherit;font-size:15px;line-height:1.5;color:var(--jcw-ink);background:#fff}
+.jcw-input:focus{outline:none;border-color:var(--jcw-blue);box-shadow:0 0 0 3px rgba(0,79,152,.15)}
+.jcw-send{flex:none;display:flex;align-items:center;justify-content:center;width:46px;height:46px;border:0;border-radius:14px;background:var(--jcw-blue);color:#fff;cursor:pointer}
+.jcw-send:hover{background:var(--jcw-navy)}
+.jcw-send:disabled{opacity:.55;cursor:wait}
+.jcw-quota{margin:0;padding:0 14px;font-size:12px;color:#8a4b00;background:var(--jcw-bg)}
+.jcw-foot{margin:0;padding:4px 14px 10px;font-size:11px;line-height:1.5;color:var(--jcw-muted);background:var(--jcw-bg)}
+.jcw-foot a{color:var(--jcw-blue);text-decoration:underline}
+
+/* スマホ：下からのシート表示 */
+@media (max-width:767px){
+  .jcw{right:14px;bottom:14px}
+  .jcw-launcher{width:58px;height:58px}
+  .jcw-launcher .jcw-ico{width:34px;height:34px}
+  .jcw.is-open{left:0;right:0;bottom:0}
+  .jcw.is-open .jcw-launcher{display:none}
+  .jcw-panel{position:fixed;left:0;right:0;bottom:0;width:auto;height:min(82vh,680px);height:min(82dvh,680px);border-radius:20px 20px 0 0;padding-bottom:env(safe-area-inset-bottom)}
+  .jcw-title span{display:none}
+  .jcw-head-link span{display:none}
+  .jcw-head-link{padding:8px}
+  .jcw-input{font-size:16px}
+}
+
+/* ダークモード */
+:root[data-theme="dark"] .jcw{--jcw-ink:#e6edf5;--jcw-muted:#b8c6d6;--jcw-line:#2f4560;--jcw-soft:#0f1b2a;--jcw-bg:#132235}
+:root[data-theme="dark"] .jcw-msg-ai,:root[data-theme="dark"] .jcw-teaser,:root[data-theme="dark"] .jcw-chip,:root[data-theme="dark"] .jcw-copy,:root[data-theme="dark"] .jcw-input{background:#16273c;color:var(--jcw-ink)}
+:root[data-theme="dark"] .jcw-hello,:root[data-theme="dark"] .jcw-h,:root[data-theme="dark"] .jcw-teaser-open strong{color:#9fcbff}
+:root[data-theme="dark"] .jcw-chip,:root[data-theme="dark"] .jcw-tool,:root[data-theme="dark"] .jcw-toolcard{color:#cfe3ff!important;border-color:#3d5a7d}
+:root[data-theme="dark"] .jcw-tool,:root[data-theme="dark"] .jcw-toolcard{background:#1a2f48}
+:root[data-theme="dark"] .jcw-chip:hover,:root[data-theme="dark"] .jcw-tool:hover{background:#21395a}
+:root[data-theme="dark"] .jcw-mini-av{background:#21395a;color:#cfe3ff}
+:root[data-theme="dark"] .jcw-sources a,:root[data-theme="dark"] .jcw-foot a{color:#9fcbff}
+:root[data-theme="dark"] .jcw-note,:root[data-theme="dark"] .jcw-quota{color:#ffcf8a}
+:root[data-theme="dark"] .jcw-input{border-color:#3d5a7d}
+
+@media print{.jcw{display:none!important}}
+body.jcai-printing .jcw{display:none!important}
+.jcw-consent-btn{width:100%;border:0;cursor:pointer;font:inherit;font-weight:800}

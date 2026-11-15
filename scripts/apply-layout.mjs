@@ -17,6 +17,7 @@ const DEFAULT_SOCIAL_IMAGE = '/assets/img/placeholders/jconnect-default-card.web
 const SOCIAL_SHARE_CSS = '/assets/css/social-share.css';
 const SOCIAL_SHARE_JS = '/assets/js/social-share.js';
 const SITE_IDENTITY_JS = '/assets/js/site-identity.js';
+const CHAT_WIDGET_JS = '/assets/js/jc-chat-widget.js?v=20261115e';
 
 function main() {
   writeBrowserSiteIdentity();
@@ -61,6 +62,7 @@ function applyCanonicalLayout(html, url, page) {
   next = ensureMainContentTarget(next);
   next = ensureMainScript(next);
   next = isHomeRoute ? removeHomePerformanceDependencies(next) : ensureSocialShareScript(next);
+  next = ensureChatWidgetScript(next);
   return next;
 }
 
@@ -200,6 +202,15 @@ function ensureSocialShareScript(html) {
   if (html.includes('id="conversationStatus"')) return html;
   if (/<script\b[^>]*src=["']\/assets\/js\/social-share\.js(?:\?[^"']*)?["'][^>]*>/i.test(html)) return html;
   return html.replace(/(\s*)<\/body>/i, `\n<script src="${SOCIAL_SHARE_JS}"></script>$1</body>`);
+}
+
+// 全ページ右下のAIチャット（読み込みは defer、表示はページの読み込み完了後）
+function ensureChatWidgetScript(html) {
+  if (html.includes('id="conversationStatus"')) return html;
+  const pattern = /<script\b[^>]*src=["']\/assets\/js\/jc-chat-widget\.js(?:\?[^"']*)?["'][^>]*>\s*<\/script>/i;
+  const tag = `<script src="${CHAT_WIDGET_JS}" defer></script>`;
+  if (pattern.test(html)) return html.replace(pattern, tag);
+  return html.replace(/(\s*)<\/body>/i, `\n${tag}$1</body>`);
 }
 
 function removeHomePerformanceDependencies(html) {

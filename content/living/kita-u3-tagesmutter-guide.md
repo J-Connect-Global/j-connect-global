@@ -8,8 +8,8 @@ summary: "NRWのKitaは8月1日入園が基本で、1歳台の枠は多くあり
 status: "published"
 published: true
 published_at: "2026-06-12"
-updated_at: "2026-11-14"
-last_verified: "2026-11-14"
+updated_at: "2026-11-15"
+last_verified: "2026-11-15"
 next_review: "2027-02-14"
 canonical_url: "/germany/ja/living/kita-u3-tagesmutter-guide/"
 article_standard: "2026-11"
@@ -134,7 +134,7 @@ J-Connect編集部メンバーの実例（2026年10月、デュッセルドル�
 ## 公式情報・参考ソース
 
 - [連邦社会法第8編第24条：保育を利用する権利](https://www.gesetze-im-internet.de/sgb_8/__24.html)（2026年11月14日確認）
-- [NRW州保育法（KiBiz）](https://recht.nrw.de/lrgv/gesetz/01082026-gesetz-zur-fruehen-bildung-und-foerderung-von-kindern-kinderbildungsgesetz/)：保育年度は8月1日〜7月31日、6か月前の需要申告（第5条）。2019年公布の条文で2026年11月14日確認。2026年8月施行版の原典はこの日に開けず未確認
+- [NRW州保育法（KiBiz）](https://recht.nrw.de/lrgv/gesetz/01082026-gesetz-zur-fruehen-bildung-und-foerderung-von-kindern-kinderbildungsgesetz/)：保育年度は8月1日〜7月31日（第1条第3項）、利用の6か月前までに書面または電子で青少年局へ需要を申告（第5条第1項）。2026年7月21日の改正を反映した現行版で確認（2026年11月15日確認）
 - [デュッセルドルフ市：Kita-Navigator](https://www.duesseldorf.de/familie/kinderbetreuung/kita-navigator)（最大15園、1月配分開始、14日以内の承諾、7月30日の再登録。2026年11月14日確認）
 - [デュッセルドルフ市：家庭的保育](https://www.duesseldorf.de/familie/kinderbetreuung/kindertagespflege)（2026年11月14日確認）
 - [デュッセルドルフ市：保育料（2027年7月まで）](https://www.duesseldorf.de/familie/kinderbetreuung/elternbeitrag)（2026年11月14日確認）

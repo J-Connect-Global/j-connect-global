@@ -8,8 +8,8 @@ summary: "ドイツで出産する日本人家庭向けに、妊娠が分かっ�
 status: "published"
 published: true
 published_at: "2026-06-12"
-updated_at: "2026-11-14"
-last_verified: "2026-11-14"
+updated_at: "2026-11-15"
+last_verified: "2026-11-15"
 next_review: "2027-02-14"
 article_standard: "2026-11"
 canonical_url: "/germany/ja/living/pregnancy-birth-germany/"
@@ -34,7 +34,7 @@ related_articles: ["birth-day-germany","birth-procedures-germany","elterngeld-gu
 ## まず結論
 
 - 何を：妊娠が分かったら婦人科を予約し、助産師、出産する病院を順に決める。出産予定日の証明（Muster 3）が出たら、健康保険者と勤務先に出す。
-- いつまでに：産前の保護期間は出産予定日の**6週間前**から、産後は**8週間**（母性保護法第3条）。育児休業は始める**7週間前**までに勤務先へ書面で通知する。赤ちゃんと同居する家族の百日咳の予防接種は、出産の**4週間前**までが目安。
+- いつまでに：産前の保護期間は出産予定日の**6週間前**から、産後は**8週間**（母性保護法第3条）。育児休業は始める**7週間前**までに勤務先へ通知する。手紙のほか、メールなどのテキスト形式でもよい。赤ちゃんと同居する家族の百日咳の予防接種は、出産の**4週間前**までが目安。
 - どこで：婦人科（妊婦健診）、助産師（妊娠中と産後）、出産施設、健康保険者、勤務先。家族の予防接種はかかりつけ医（Hausarzt）。
 - 費用：公的保険に本人として加入している会社員は、保護期間中に保険者から1日最大13ユーロの出産手当を受け、手取りとの差を勤務先が補う（社会法典第5編第24i条）。
 
@@ -247,14 +247,14 @@ G-BAの予防接種指針（2026年10月29日施行版）では、新生児と�
 
 - [母性保護法第3条：産前6週・産後8週の保護期間](https://www.gesetze-im-internet.de/muschg_2018/__3.html)（2026年11月14日確認）
 - [社会法典第5編第24i条：出産手当、1日最大13ユーロ、出産予定日の証明](https://www.gesetze-im-internet.de/sgb_5/__24i.html)（2026年11月14日確認）
-- [育児給付・育児休業法第16条：育休は7週間前・13週間前までに書面で通知](https://www.gesetze-im-internet.de/beeg/__16.html)（2026年11月14日確認）
+- [育児給付・育児休業法第16条：育休は7週間前・13週間前までに通知](https://www.gesetze-im-internet.de/beeg/__16.html)（2026年11月14日確認）
 - [育児給付・育児休業法第1条第8項：課税所得17万5,000ユーロ超は対象外](https://www.gesetze-im-internet.de/beeg/__1.html)（2026年11月14日確認）
 - [G-BA 予防接種指針（2026年10月29日施行）](https://www.g-ba.de/richtlinien/60/)：妊婦の百日咳・インフルエンザ、新生児の家族の百日咳（2026年11月14日確認）
-- [連邦家族ポータル：産前産後の保護](https://familienportal.de/familienportal/familienleistungen/mutterschutz)（2026年11月14日はこの環境から開けず未確認）
-- [ドイツ連邦家族ポータル：出産手当](https://familienportal.de/familienportal/familienleistungen/mutterschaftsleistungen)（2026年11月14日はこの環境から開けず未確認）
-- [ドイツ連邦家族ポータル：育児休業の通知](https://familienportal.de/familienportal/familienleistungen/elternzeit/faq/wann-und-wie-muss-ich-elternzeit-beantragen--124810)（2026年11月14日はこの環境から開けず未確認）
-- [ドイツ連邦家族ポータル：育児給付の申請](https://familienportal.de/familienportal/familienleistungen/elterngeld/faq/wie-kann-ich-elterngeld-beantragen--124762)（2026年11月14日はこの環境から開けず未確認）
-- [ドイツ連邦家族ポータル：出生登録](https://familienportal.de/familienportal/lebenslagen/schwangerschaft-geburt/anmeldung-standesamt)（2026年11月14日はこの環境から開けず未確認）
+- [連邦家族ポータル：産前産後の保護](https://familienportal.de/familienportal/familienleistungen/mutterschutz)：産後8週間（多胎・早産などは12週間）（2026年11月15日確認）
+- [ドイツ連邦家族ポータル：出産手当](https://familienportal.de/familienportal/familienleistungen/mutterschaftsleistungen)：1日の手取りが13ユーロを超える分は勤務先が補う（2026年11月15日確認）
+- [ドイツ連邦家族ポータル：育児休業の通知](https://familienportal.de/familienportal/familienleistungen/elternzeit/faq/wann-und-wie-muss-ich-elternzeit-beantragen--124810)：3歳前は7週間前、3〜8歳は13週間前まで。テキスト形式（署名のない手紙やメール）で通知できる（2026年11月15日確認）
+- [ドイツ連邦家族ポータル：育児給付の申請](https://familienportal.de/familienportal/familienleistungen/elterngeld/faq/wie-kann-ich-elterngeld-beantragen--124762)：申請は出生後。さかのぼって支払われるのは最大3生活月（2026年11月15日確認）
+- [ドイツ連邦家族ポータル：出生登録](https://familienportal.de/familienportal/lebenslagen/schwangerschaft-geburt/anmeldung-standesamt)：病院や出産施設で生まれた場合は、施設が戸籍登録所に通知し、出生の証明を送る（2026年11月15日確認）
 - [在ドイツ日本国大使館：出生届](https://www.de.emb-japan.go.jp/itpr_ja/konsular_koseki04.html)（2026年11月14日はこの環境から開けず未確認）
-- [BIÖG：U2健診と退院後の予約](https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u2-untersuchung/)（2026年11月14日はこの環境から開けず未確認）
-- [BIÖG：U3健診](https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u3-untersuchung/)（2026年11月14日はこの環境から開けず未確認）
+- [BIÖG：U2健診](https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u2-untersuchung/)：生後3〜10日（2026年11月15日確認）
+- [BIÖG：U3健診](https://www.kindergesundheit-info.de/themen/frueherkennung-u1-u9-und-j1/untersuchungen-u1-bis-u9/u3-untersuchung/)：生後4〜5週。多くは小児科の診療所で受ける最初の健診（2026年11月15日確認）

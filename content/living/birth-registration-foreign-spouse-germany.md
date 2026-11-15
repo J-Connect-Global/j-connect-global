@@ -7,8 +7,8 @@ summary: "配偶者が外国籍の家庭がドイツで出生届を出すとき�
 status: "published"
 published: true
 published_at: "2026-11-14"
-updated_at: "2026-11-14"
-last_verified: "2026-11-14"
+updated_at: "2026-11-15"
+last_verified: "2026-11-15"
 next_review: "2027-02-14"
 canonical_url: "/germany/ja/living/birth-registration-foreign-spouse-germany/"
 article_standard: "2026-11"
@@ -135,6 +135,6 @@ J-Connect編集部メンバーの実例（2026年、デュッセルドルフ近�
 - [戸籍法施行令第33条：出生届の添付書類](https://www.gesetze-im-internet.de/pstv/__33.html)（2026年11月14日確認）
 - [戸籍法施行令第2条：外国語の書類のドイツ語訳](https://www.gesetze-im-internet.de/pstv/__2.html)（2026年11月14日確認）
 - [国籍法第4条：出生によるドイツ国籍の取得](https://www.gesetze-im-internet.de/stag/__4.html)（2026年11月14日確認）
-- [NRW州司法：通訳・翻訳者](https://www.justiz.nrw/Gerichte_Behoerden/anschriften/dolmetscher__u_uebersetzer)：翻訳者の認定は上級地方裁判所長が行う。2026年11月14日に検索結果で確認（原典は未確認）
+- [NRW州司法：通訳・翻訳者](https://www.justiz.nrw/Gerichte_Behoerden/anschriften/dolmetscher__u_uebersetzer)：NRW州では、翻訳者の認定（Ermächtigung）の申請と問い合わせは州内の上級地方裁判所が受け付ける。根拠はNRW州司法法第33〜39条と裁判所通訳者法（2026年11月15日確認）
 - [国籍法第12条・戸籍法第104条（e-Gov法令検索）](https://laws.e-gov.go.jp/law/322AC0000000224)：国籍留保は出生の日から3か月以内に出生届とともに（2026年11月14日確認）
 - [在デュッセルドルフ日本国総領事館：出生届](https://www.dus.emb-japan.go.jp/itpr_ja/konsular_koseki_04.html)：必要書類（この環境から接続を拒否され未確認）

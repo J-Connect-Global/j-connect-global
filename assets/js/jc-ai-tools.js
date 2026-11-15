@@ -60,7 +60,7 @@
         fetch('/assets/data/search-synonyms.json').then(function (r) { return r.ok ? r.json() : { groups: [] }; }).catch(function () { return { groups: [] }; })
       ]).then(function (res) {
         return {
-          items: (Array.isArray(res[0]) ? res[0] : []).filter(function (i) { return /^\/germany\/ja\/(living|learn-german|events)\//.test(i.url || ''); }),
+          items: (Array.isArray(res[0]) ? res[0] : []).filter(function (i) { return /^\/germany\/ja\/(living|learn-german|events)\/./.test(i.url || ''); }),
           groups: ((res[1] && res[1].groups) || []).map(function (g) { return g.map(normalize); })
         };
       }).catch(function () { indexPromise = null; return { items: [], groups: [] }; });
@@ -88,11 +88,12 @@
     });
     return terms.concat(extra).filter(function (t, i, a) { return a.indexOf(t) === i; }).slice(0, 40);
   }
-  async function searchArticles(query, limit) {
+  async function searchArticles(query, limit, prefix) {
     var data = await loadIndex();
     var terms = termsFor(query);
     if (!terms.length) return [];
-    return data.items.map(function (item) {
+    var pool = prefix ? data.items.filter(function (i) { return prefix.test(i.url || ''); }) : data.items;
+    return pool.map(function (item) {
       var title = normalize(item.title);
       var text = normalize([item.title, item.description, (item.tags || []).join(' '), (item.headings || []).join(' ')].join(' '));
       var score = 0;
@@ -260,10 +261,167 @@
     });
   }
 
+
+  // ---------- Enter で送信（Shift+Enter は改行。日本語変換中は送らない） ----------
+  function enterToSend(textarea, form) {
+    textarea.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' || e.shiftKey || e.isComposing || e.keyCode === 229) return;
+      e.preventDefault();
+      if (form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event('submit', { cancelable: true }));
+    });
+  }
+
+  // ---------- 関連するJ-Connectの記事 ----------
+  async function related(container, query, opts) {
+    opts = opts || {};
+    container.textContent = '';
+    var found = await searchArticles(query, (opts.limit || 4) + (opts.exclude ? opts.exclude.length : 0), opts.prefix);
+    var exclude = opts.exclude || [];
+    found = found.filter(function (a) { return exclude.indexOf(a.url) === -1; }).slice(0, opts.limit || 4);
+    var extra = opts.extra || [];
+    if (!found.length && !extra.length) return;
+    var card = el('div', { class: 'jcai-card jcai-related' });
+    card.appendChild(el('h3', null, opts.title || '関連するJ-Connectの記事'));
+    var list = el('div', { class: 'jcai-related-list' });
+    found.concat(extra).forEach(function (a) {
+      var link = el('a', { href: a.url, class: 'jcai-related-item' });
+      link.appendChild(el('strong', null, a.title));
+      if (a.description) link.appendChild(el('span', null, String(a.description).slice(0, 80) + (String(a.description).length > 80 ? '…' : '')));
+      list.appendChild(link);
+    });
+    card.appendChild(list);
+    container.appendChild(card);
+  }
+
+  // ---------- 結果の保存・共有（PDF・Word・テキスト・メール） ----------
+  function cleanClone(root) {
+    var clone = root.cloneNode(true);
+    clone.querySelectorAll('.jcai-noprint, button, form, script, [hidden]').forEach(function (n) { n.remove(); });
+    return clone;
+  }
+  function stamp() { var d = new Date(); return d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0'); }
+  function download(name, type, content) {
+    var blob = new Blob([content], { type: type });
+    var url = URL.createObjectURL(blob);
+    var a = el('a', { href: url, download: name });
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+  }
+  function toolbar(container, getRoot, title) {
+    var bar = el('div', { class: 'jcai-toolbar jcai-noprint', role: 'group', 'aria-label': '結果の保存と共有' });
+    var box = el('div', { class: 'status-box', 'aria-live': 'polite' });
+    function btn(label, fn) { var b = el('button', { type: 'button', class: 'jcai-tool-btn' }, label); b.addEventListener('click', fn); bar.appendChild(b); }
+    btn('PDFで保存', function () {
+      var root = getRoot();
+      root.classList.add('jcai-print-target');
+      document.body.classList.add('jcai-printing');
+      var done = function () { document.body.classList.remove('jcai-printing'); root.classList.remove('jcai-print-target'); window.removeEventListener('afterprint', done); };
+      window.addEventListener('afterprint', done);
+      window.print();
+      setTimeout(done, 60000);
+    });
+    btn('Wordで保存', function () {
+      var clone = cleanClone(getRoot());
+      var html = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"><title>' + title + '</title>'
+        + '<style>body{font-family:"Yu Gothic","Meiryo",sans-serif;line-height:1.7}h2,h3{color:#0b3a6e}pre{white-space:pre-wrap;font-family:inherit;border:1px solid #ccc;padding:8px}</style></head><body>'
+        + '<h1>' + title + '</h1>' + clone.innerHTML + '<p style="color:#666;font-size:9pt">J-Connect AIツール（' + window.location.href.split('?')[0] + '）でAIが作成した参考情報です。</p></body></html>';
+      download(title + '-' + stamp() + '.doc', 'application/msword', '﻿' + html);
+    });
+    btn('テキストで保存', function () {
+      var text = (cleanClone(getRoot()).innerText || '').trim();
+      download(title + '-' + stamp() + '.txt', 'text/plain;charset=utf-8', '﻿' + text + '\n\n' + window.location.href.split('?')[0] + '\n');
+    });
+    btn('コピー', function () {
+      var root = getRoot();
+      var text = (root.innerText || '').trim();
+      var clone = cleanClone(root);
+      document.body.appendChild(clone); clone.style.position = 'fixed'; clone.style.left = '-9999px';
+      text = (clone.innerText || text).trim(); clone.remove();
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(function () { status(box, 'success', '結果をコピーしました。'); });
+    });
+    btn('メールで送る', function () {
+      var clone = cleanClone(getRoot());
+      document.body.appendChild(clone); clone.style.position = 'fixed'; clone.style.left = '-9999px';
+      var text = (clone.innerText || '').trim(); clone.remove();
+      if (text.length > 1600) text = text.slice(0, 1600) + '\n…（続きは保存したファイルをご覧ください）';
+      window.location.href = 'mailto:?subject=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(text + '\n\n' + window.location.href.split('?')[0]);
+    });
+    container.appendChild(bar);
+    container.appendChild(el('p', { class: 'jcai-note jcai-noprint', style: 'margin-top:6px' }, '共有するときは、名前・住所・番号などの個人情報が含まれていないか確認してください。'));
+    container.appendChild(box);
+  }
+
+  // ---------- 結果への追加の質問（チャット） ----------
+  function followUp(container, toolName, getContext, placeholder) {
+    var wrap = el('div', { class: 'jcai-card jcai-followup' });
+    wrap.appendChild(el('h3', null, 'この結果について、さらに質問する'));
+    wrap.appendChild(el('p', { class: 'jcai-note' }, '例：「もっと丁寧にして」「この期限を過ぎたらどうなる？」「必要な書類をもう少し詳しく」など。Enterで送信、Shift+Enterで改行。'));
+    var log = el('div', { class: 'jcai-chat', 'aria-live': 'polite' });
+    var form = el('form', { class: 'jcai-followup-form jcai-noprint', novalidate: 'novalidate' });
+    var input = el('textarea', { maxlength: '1500', placeholder: placeholder || 'ここに追加の質問を書いてください' });
+    var send = el('button', { type: 'submit', class: 'submit' }, '送信');
+    var box = el('div', { class: 'status-box', 'aria-live': 'polite' });
+    form.appendChild(input); form.appendChild(send);
+    wrap.appendChild(log); wrap.appendChild(form); wrap.appendChild(box);
+    container.appendChild(wrap);
+    var history = [];
+    enterToSend(input, form);
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var q = input.value.trim();
+      if (q.length < 2) { status(box, 'error', '質問を書いてください。'); return; }
+      status(box, '', '');
+      log.appendChild(el('div', { class: 'jcai-msg jcai-msg-user' }, q));
+      input.value = '';
+      var typing = el('div', { class: 'jcai-typing' }, '回答を作っています…');
+      log.appendChild(typing);
+      send.disabled = true;
+      var res = await post('followup', { tool: toolName, context: JSON.stringify(getContext()).slice(0, 12000), history: history.slice(-8), question: q });
+      typing.remove();
+      send.disabled = false;
+      if (!res.ok) { status(box, 'error', res.error || '回答を作れませんでした。'); return; }
+      var b = el('div', { class: 'jcai-msg jcai-msg-ai' });
+      var prose = el('div', { class: 'jcai-prose' });
+      renderProse(prose, res.result.answer);
+      b.appendChild(prose);
+      if (res.result.german_text) {
+        var pre = el('pre', { class: 'jcai-pre', lang: 'de' }, res.result.german_text);
+        var copyBtn = el('button', { type: 'button', class: 'jcai-btn-sub jcai-noprint' }, 'ドイツ語をコピー');
+        copyBtn.addEventListener('click', function () { copy(res.result.german_text, box); });
+        b.appendChild(pre); b.appendChild(copyBtn);
+      }
+      log.appendChild(b);
+      history.push({ role: 'user', text: q }, { role: 'assistant', text: (res.result.answer + '\n' + res.result.german_text).slice(0, 1500) });
+    });
+    return { reset: function () { history = []; log.textContent = ''; input.value = ''; status(box, '', ''); } };
+  }
+
+  // ---------- ドイツ語の読み上げ（端末の音声合成を使う。追加費用なし） ----------
+  var ttsSupported = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+  function speak(text) {
+    if (!ttsSupported || !text) return;
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'de-DE';
+    u.rate = 0.92;
+    var voice = window.speechSynthesis.getVoices().filter(function (v) { return /^de(-|_|$)/i.test(v.lang); })[0];
+    if (voice) u.voice = voice;
+    window.speechSynthesis.speak(u);
+  }
+  function speakButton(text) {
+    var b = el('button', { type: 'button', class: 'jcai-speak jcai-noprint', 'aria-label': 'ドイツ語を再生', title: 'ドイツ語を再生' });
+    b.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>';
+    if (!ttsSupported) b.hidden = true;
+    b.addEventListener('click', function () { speak(text); });
+    return b;
+  }
+
   window.JCAI = {
     ready: Boolean(ENDPOINT),
     el: el, status: status, post: post, copy: copy, reveal: reveal,
     searchArticles: searchArticles, articleText: articleText, loadIndex: loadIndex,
-    fileFields: fileFields, feedback: feedback, renderProse: renderProse
+    fileFields: fileFields, feedback: feedback, renderProse: renderProse,
+    enterToSend: enterToSend, related: related, toolbar: toolbar, followUp: followUp,
+    speak: speak, speakButton: speakButton, ttsSupported: ttsSupported
   };
 })(window, document);

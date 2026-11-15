@@ -47,6 +47,7 @@
   <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-performance-a11y-20260719">
 <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
   <link rel="stylesheet" href="/assets/css/social-share.css">
+  <link rel="stylesheet" href="/assets/css/jc-ai-tools.css">
 <style>
 /* Page-specific styles. Shared site styles live in the common site stylesheet. */
 :root{
@@ -328,6 +329,17 @@ textarea:focus{
   .hero-side h2,.panel h2{font-size:22px}
 }
 .le-result[hidden],#letterForm [hidden],#letterResult [hidden]{display:none!important}
+/* 1カラム・大きめの入力欄 */
+.hero,.content{display:block!important}
+.hero-main{margin-bottom:18px}
+.hero-main h1{font-size:clamp(28px,4vw,40px)!important;line-height:1.25}
+.quick-grid{grid-template-columns:repeat(4,1fr)!important}
+.content .panel+.panel{margin-top:16px}
+#letterForm textarea{min-height:220px;font-size:17px;line-height:1.75;padding:16px 18px;border-radius:16px}
+#letterForm .input{min-height:52px;font-size:16px}
+#letterForm .submit{min-height:56px;font-size:17px;width:100%}
+.hero-side{padding:28px 30px}
+@media (max-width:760px){.quick-grid{grid-template-columns:1fr 1fr!important}}
 .le-mode{border:0;padding:0;margin:0 0 14px;display:flex;gap:16px;flex-wrap:wrap}
 .le-mode legend{font-size:14px;font-weight:700;margin-bottom:8px}
 .le-radio,.le-consent{font-weight:400;display:flex;gap:8px;align-items:flex-start}
@@ -484,6 +496,7 @@ textarea:focus{
         <p class="lead">
           役所、税務署、保険、銀行、大家さん、Kita から届いたドイツ語の手紙。写真を撮るか本文を貼り付けると、AIが「何の手紙か」「いつまでに何をすればいいか」を日本語で整理します。返信が必要なら、ドイツ語の返信文の下書きも作ります。
         </p>
+        <div data-social-share="auto" style="margin:0 0 12px"></div>
         <div class="quick-grid">
           <div class="mini"><strong>1. 撮る・貼る</strong><br>手紙の写真、PDF、または本文のテキスト。</div>
           <div class="mini"><strong>2. AIが整理</strong><br>要点・期限・金額・やること・用語を日本語で。</div>
@@ -568,6 +581,7 @@ textarea:focus{
           <pre class="le-reply" id="resReplyJa"></pre>
         </div>
         <div class="le-card le-card-warn" id="resCautionWrap"><h3>注意点・確認が必要なこと</h3><p class="le-prose" id="resCaution"></p></div>
+        <div id="leExtras"></div>
         <div class="le-card le-feedback" id="resFeedback">
           <h3>この解説は役に立ちましたか？</h3>
           <p class="le-feedback-lead">「本当はこれが知りたかった」という声をもとに、AIの解説を改善しています。ひと言でも大歓迎です。</p>
@@ -680,6 +694,7 @@ textarea:focus{
   <!-- LAYOUT:ja-footer:end -->
 
   <script src="/assets/js/data-sources.js"></script>
+  <script src="/assets/js/jc-ai-tools.js"></script>
   <script>
   (function () {
     var ENDPOINT = (window.JCONNECT_DATA_SOURCES || {}).letterExplainerEndpoint || '';
@@ -811,6 +826,13 @@ textarea:focus{
       setText('resReplyJa', r.reply_draft_ja);
       setText('resCaution', r.caution, 'resCautionWrap');
 
+      if (window.JCAI) {
+        var ex = document.getElementById('leExtras'); ex.textContent = '';
+        JCAI.toolbar(ex, function () { return document.querySelector('#letterResult .le-ai-panel'); }, '手紙の解説');
+        var rel = document.createElement('div'); ex.appendChild(rel);
+        JCAI.related(rel, (r.document_type || '') + ' ' + (r.sender || '') + ' ' + (r.summary || '').slice(0, 120), { limit: 4 });
+        JCAI.followUp(ex, 'ドイツの手紙AI解説', function () { return r; }, '例：期限を過ぎたらどうなる？／返信をもっと丁寧にして／何を準備すればいい？');
+      }
       resultBox.classList.add('is-entering');
       resultBox.hidden = false;
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;

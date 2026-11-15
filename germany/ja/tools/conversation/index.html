@@ -478,15 +478,15 @@ textarea:focus{
 <!-- LAYOUT:ja-header:end -->
 
   <main id="main-content" tabindex="-1" class="wrap jcai-main">
-    <section class="jcai-hero">
-      <div class="hero-main">
-        <div class="eyebrow">AI Conversation Practice</div>
-        <h1>電話や窓口のドイツ語を、AIを相手に練習</h1>
-        <p class="lead">医者の予約、役所の窓口、大家さんへの連絡など、よくある場面でAIが相手役になります。あなたのドイツ語をやさしく直し、次に言える文も提案します。</p>
-        <div class="quick-grid"><div class="mini"><strong>1. 場面を選ぶ</strong><br>医者・役所・大家など。</div><div class="mini"><strong>2. ドイツ語で返す</strong><br>AIが相手役で返事。</div><div class="mini"><strong>3. 添削つき</strong><br>自然な言い方を提案。</div><div class="mini"><strong>無料・登録不要</strong><br>会話は保存しません。</div></div>
-      </div>
-      <aside class="jcai-panel">
-        <h2>場面を選ぶ</h2>
+    <section class="jcai-head">
+      <div class="eyebrow">AI Conversation Practice</div>
+      <h1>電話や窓口のドイツ語を、AIを相手に練習</h1>
+      <p class="lead">医者の予約、役所の窓口、大家さんへの連絡など、よくある場面でAIが相手役になります。あなたのドイツ語をやさしく直し、次に言える文も提案します。</p>
+      <ol class="jcai-flow"><li><strong>1. 場面を選ぶ</strong>医者・役所・大家など。</li><li><strong>2. ドイツ語で返す</strong>AIが相手役で返事。</li><li><strong>3. 添削つき</strong>自然な言い方を提案。</li><li><strong>無料・登録不要</strong>会話は保存しません。</li></ol>
+      <div data-social-share="auto" style="margin-top:12px"></div>
+    </section>
+    <section class="jcai-panel jcai-form-panel">
+      <h2>場面を選ぶ</h2>
         <form class="jcai-form" id="cvForm" novalidate>
           <div class="field"><label>練習する場面</label><div class="jcai-chips" id="scenarios"><button type="button" class="jcai-chip" aria-pressed="false">医者の予約を電話で取る</button><button type="button" class="jcai-chip" aria-pressed="false">役所（Bürgeramt）の窓口で住民登録</button><button type="button" class="jcai-chip" aria-pressed="false">大家さんに修理をお願いする</button><button type="button" class="jcai-chip" aria-pressed="false">銀行で口座を開く</button><button type="button" class="jcai-chip" aria-pressed="false">郵便局で荷物を受け取る</button><button type="button" class="jcai-chip" aria-pressed="false">レストランを電話で予約する</button><button type="button" class="jcai-chip" aria-pressed="false">Kitaの先生と子どもの様子を話す</button><button type="button" class="jcai-chip" aria-pressed="false">職場で上司に休みを相談する</button></div></div>
           <div class="field"><label for="level">レベル</label>
@@ -495,7 +495,6 @@ textarea:focus{
           <button class="submit" id="cvStart" type="submit">練習を始める</button>
           <div class="status-box" id="cvStatus" aria-live="polite"></div>
         </form>
-      </aside>
     </section>
 
     <section class="jcai-result" id="cvResult" hidden tabindex="-1">
@@ -504,19 +503,33 @@ textarea:focus{
           <div class="jcai-avatar"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 4v4"/><circle cx="12" cy="3.5" r="1"/><circle cx="9" cy="13.5" r="1.3" fill="currentColor"/><circle cx="15" cy="13.5" r="1.3" fill="currentColor"/><path d="M2 12v3M22 12v3"/></svg></div>
           <div><p class="jcai-ai-label">会話練習</p><p class="jcai-ai-sub">AIが相手役です。下の欄にドイツ語で返事を書いてください。</p></div>
         </div>
+        <p class="jcai-noprint" style="margin:0 0 10px"><label class="jcai-toggle"><input type="checkbox" id="cvAutoVoice" checked> 音声あり（AIの返事を自動で読み上げる）</label> <span class="jcai-note" id="cvVoiceNote"></span></p>
         <div class="jcai-chat" id="cvLog" aria-live="polite"></div>
         <form class="jcai-form" id="cvReply" novalidate style="margin-top:14px">
-          <div class="field"><label for="cvInput">あなたの返事（ドイツ語）</label>
+          <div class="field"><label for="cvInput">あなたの返事（ドイツ語・Enterで送信／Shift+Enterで改行）</label>
             <textarea id="cvInput" maxlength="500" style="min-height:80px" placeholder="例：Guten Tag, ich möchte einen Termin vereinbaren."></textarea></div>
           <div class="jcai-chips" id="cvSuggest"></div>
           <button class="submit" id="cvSend" type="submit">送る</button>
           <div class="status-box" id="cvReplyStatus" aria-live="polite"></div>
         </form>
+        <div id="cvRelated"></div>
         <div id="cvFeedback"></div>
         <p class="jcai-disclaimer">AIの返事と添削は自動で作成したもので、正確性を保証するものではありません。</p>
       </div>
     </section>
-    <section class="content" style="margin-top:22px">
+    <section class="jcai-info">
+      <div class="panel">
+        <h2>ほかのAIツール</h2>
+        <div class="jcai-tool-links">
+          <a href="/germany/ja/tools/">AIツール一覧</a>
+          <a href="/germany/ja/tools/letter-explainer/">手紙AI解説</a>
+          <a href="/germany/ja/tools/ask/">AIに質問</a>
+          <a href="/germany/ja/tools/write/">手紙・メール作成</a>
+          <a href="/germany/ja/tools/navi/">手続きナビ</a>
+          <a href="/germany/ja/tools/form-helper/">申請書の書き方</a>
+          <a href="/germany/ja/tools/conversation/">会話練習</a>
+        </div>
+      </div>
       <div class="panel">
         <h2>利用上の注意</h2>
         <ul class="list">
@@ -524,18 +537,6 @@ textarea:focus{
           <li>名前・住所・口座番号などの個人情報は入力しないでください。入力内容は回答の作成のためだけに OpenAI の API に送られ、J-Connect では保存しません。</li>
           <li><strong>免責：</strong>回答の正確性・完全性・最新性は保証しません。回答をもとに行った判断や手続きの結果について、運営者は責任を負いません（法令上責任を免れない場合を除きます）。</li>
           <li>利用が集中した場合は、1日の上限に達して使えないことがあります。</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h2>ほかのAIツール</h2>
-        <ul class="list">
-          <li><a href="/germany/ja/tools/">AIツール一覧</a></li>
-          <li><a href="/germany/ja/tools/letter-explainer/">ドイツの手紙AI解説</a></li>
-          <li><a href="/germany/ja/tools/ask/">J-Connect AIに質問</a></li>
-          <li><a href="/germany/ja/tools/write/">ドイツ語の手紙・メール作成</a></li>
-          <li><a href="/germany/ja/tools/navi/">手続きナビ</a></li>
-          <li><a href="/germany/ja/tools/form-helper/">申請書の記入アシスタント</a></li>
-          <li><a href="/germany/ja/tools/conversation/">ドイツ語の会話練習</a></li>
         </ul>
         <p class="note">Last updated: 2026-11-15</p>
       </div>
@@ -599,10 +600,26 @@ textarea:focus{
     document.querySelectorAll('#scenarios .jcai-chip').forEach(function (c) { c.addEventListener('click', function () {
       document.querySelectorAll('#scenarios .jcai-chip').forEach(function (x) { x.setAttribute('aria-pressed', String(x === c)); });
     }); });
+    if (!JCAI.ttsSupported) document.getElementById('cvVoiceNote').textContent = 'お使いのブラウザは音声の読み上げに対応していません。';
+    function deLine(text, strongPrefix) {
+      var line = JCAI.el('div', { class: 'jcai-de-line' });
+      line.appendChild(JCAI.el('span', { lang: 'de', style: 'font-weight:700' }, (strongPrefix || '') + text));
+      line.appendChild(JCAI.speakButton(text));
+      return line;
+    }
     function addAi(r) {
       var b = JCAI.el('div', { class: 'jcai-msg jcai-msg-ai' });
-      b.appendChild(JCAI.el('div', { lang: 'de', style: 'font-weight:700' }, r.reply_de));
+      b.appendChild(deLine(r.reply_de));
       b.appendChild(JCAI.el('div', { class: 'jcai-msg-meta' }, r.reply_ja));
+      log.appendChild(b);
+      if (document.getElementById('cvAutoVoice').checked) JCAI.speak(r.reply_de);
+    }
+    function addUser(text) {
+      var b = JCAI.el('div', { class: 'jcai-msg jcai-msg-user' });
+      var line = JCAI.el('div', { class: 'jcai-de-line' });
+      line.appendChild(JCAI.el('span', { lang: 'de' }, text));
+      line.appendChild(JCAI.speakButton(text));
+      b.appendChild(line);
       log.appendChild(b);
     }
     function addFeedback(r) {
@@ -610,15 +627,17 @@ textarea:focus{
       var c = JCAI.el('div', { class: 'jcai-card jcai-card-warn', style: 'margin:0' });
       c.appendChild(JCAI.el('strong', null, 'アドバイス'));
       if (r.feedback_ja) c.appendChild(JCAI.el('p', { style: 'margin:6px 0 0;line-height:1.7' }, r.feedback_ja));
-      if (r.corrected_de) c.appendChild(JCAI.el('p', { lang: 'de', style: 'margin:6px 0 0;font-weight:700' }, '自然な言い方：' + r.corrected_de));
+      if (r.corrected_de) { var cl = deLine(r.corrected_de, '自然な言い方：'); cl.style.marginTop = '6px'; c.appendChild(cl); }
       log.appendChild(c);
     }
     function suggest(r) {
       var wrap = document.getElementById('cvSuggest'); wrap.textContent = '';
       (r.suggestions || []).forEach(function (s) {
+        var row = JCAI.el('span', { class: 'jcai-suggest' });
         var chip = JCAI.el('button', { type: 'button', class: 'jcai-chip', title: s.ja }, s.de + '（' + s.ja + '）');
         chip.addEventListener('click', function () { input.value = s.de; input.focus(); });
-        wrap.appendChild(chip);
+        row.appendChild(chip); row.appendChild(JCAI.speakButton(s.de));
+        wrap.appendChild(row);
       });
     }
     async function turn(userText) {
@@ -641,15 +660,17 @@ textarea:focus{
       btn.disabled = false; btn.textContent = 'もう一度はじめから';
       if (!res.ok) { JCAI.status(box, 'error', res.error || '開始できませんでした。'); return; }
       addAi(res.result); suggest(res.result);
+      JCAI.related(document.getElementById('cvRelated'), scenario + ' ドイツ語 フレーズ', { prefix: /^\/germany\/ja\/learn-german\//, limit: 4, title: 'あわせて学びたいドイツ語のページ', extra: [{ title: 'ドイツ語・学びのトップ', url: '/germany/ja/learn-german/', description: 'フレーズ、単語カード、学習ガイドなど' }] });
       JCAI.reveal(result);
     });
+    JCAI.enterToSend(input, replyForm);
     replyForm.addEventListener('submit', async function (e) {
       e.preventDefault();
       var text = input.value.trim();
       if (!text) { JCAI.status(rbox, 'error', 'ドイツ語で返事を書いてください。'); return; }
       if (turns >= 12) { JCAI.status(rbox, 'error', '1回の練習は12往復までです。「もう一度はじめから」で新しく始めてください。'); return; }
       turns++;
-      log.appendChild(JCAI.el('div', { class: 'jcai-msg jcai-msg-user', lang: 'de' }, text));
+      addUser(text);
       input.value = '';
       var send = document.getElementById('cvSend'); send.disabled = true; send.textContent = '返事を待っています…';
       JCAI.status(rbox, '', '');

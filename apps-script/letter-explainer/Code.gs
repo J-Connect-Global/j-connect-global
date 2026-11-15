@@ -429,6 +429,37 @@ const LE_TOOLS = {
     }
   },
 
+  // 6. 各ツールの結果に対する追加の質問（チャット形式）
+  followup: {
+    maxTokens: 6000,
+    system: [
+      'あなたは、ドイツ在住の日本人向けのAIツール（J-Connect）が直前に出した結果について、ユーザーの追加の質問に答えるアシスタントです。',
+      '「直前の結果」と「これまでの会話」をふまえて、日本語で具体的に答えます。結果に書かれていないことは一般的な知識で補い、その場合はそう分かるように書きます。',
+      'ドイツ語の文面の書き直し（もっと丁寧に、短く、別の用件を足す など）を頼まれたら、書き直したドイツ語の全文を german_text に入れ、answer にはその説明と日本語訳を書きます。',
+      '元の手紙や申請書の画像は手元にありません。結果に書かれていない書類の細部を聞かれたら、原本で確認するよう案内します。',
+      '答えは、見出し（■）と箇条書き（・）を使って読みやすく、200〜700字程度で書きます。',
+      LE_COMMON_RULES,
+      '{',
+      '  "answer": "回答本文（日本語）",',
+      '  "german_text": "書き直したドイツ語の全文（頼まれた場合だけ。なければ空文字）"',
+      '}'
+    ].join('\n'),
+    build: function (params) {
+      const question = leStr_(params.question, 1500).trim();
+      if (question.length < 2) return { error: '質問を書いてください。' };
+      const history = leParseList_(params.history, 10).map(function (h) {
+        return (h.role === 'assistant' ? 'AI: ' : 'ユーザー: ') + leStr_(h.text, 1500);
+      });
+      const text = 'ツール: ' + leStr_(params.tool, 60) + '\n\n<直前の結果>\n' + leStr_(params.context, 12000) + '\n</直前の結果>\n\n'
+        + (history.length ? '<これまでの会話>\n' + history.join('\n') + '\n</これまでの会話>\n\n' : '')
+        + '<追加の質問>\n' + question + '\n</追加の質問>';
+      return { blocks: leText_(text) };
+    },
+    sanitize: function (r) {
+      return { answer: leStr_(r.answer, 6000), german_text: leStr_(r.german_text, 6000) };
+    }
+  },
+
   // 5. 電話・窓口の会話練習（ロールプレイ）
   roleplay: {
     maxTokens: 3000,

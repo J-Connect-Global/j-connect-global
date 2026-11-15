@@ -42,7 +42,7 @@ const articles = fs.readdirSync(livingDir)
   .filter((article) => article.meta.category === '観光');
 
 assert(articles.length === routeData.routes.length, `Tourism content (${articles.length}) and route data (${routeData.routes.length}) must match`);
-assert(articles.length === 20, `The reviewed baseline contains 20 tourism articles; found ${articles.length}`);
+assert(articles.length === 21, `The reviewed baseline contains 21 tourism articles; found ${articles.length}`);
 
 const registrySlugs = new Set(livingRegistry.filter((item) => item.category === '観光').map((item) => item.slug));
 const contentSlugs = new Set(articles.map((article) => article.meta.slug));
@@ -50,10 +50,10 @@ assertSameSet(contentSlugs, registrySlugs, 'tourism content and living registry'
 assertSameSet(contentSlugs, routeSlugs, 'tourism content and route data');
 
 const travelHubExpectations = new Map([
-  ['area', 20],
-  ['weekend', 15],
+  ['area', 21],
+  ['weekend', 16],
   ['family', 3],
-  ['relax', 2]
+  ['relax', 3]
 ]);
 const sitemap = read('sitemap.xml');
 for (const [slug, expectedCards] of travelHubExpectations) {

@@ -100,7 +100,7 @@ const travelHubConfigs = [
     lead: 'NRWの近場からドイツ国内、近隣国まで、公開中の観光ガイドを地域名から比較できます。まず移動時間ではなく、現地で確保できる時間と同行者の歩行負担を決めてください。',
     decisions: [
       ['NRWの近場', 'デュッセルドルフ、ケルン、アーヘンは日帰り候補。帰路時刻から逆算します。'],
-      ['ドイツ国内の1泊', 'ブレーメン、ハンブルク、ベルリン、ミュンヘンは一地区に絞ると崩れにくくなります。'],
+      ['ドイツ国内の1泊', 'ブレーメン、ハンブルク、ベルリン、ミュンヘン、保養地のバート・ヴィルドゥンゲンは一地区に絞ると崩れにくくなります。'],
       ['近隣国', '国境書類、現地交通、予約施設を一つずつ公式情報で確認します。']
     ]
   },
@@ -113,7 +113,8 @@ const travelHubConfigs = [
       'hamburg-weekend-trip', 'berlin-weekend-trip', 'munich-weekend-trip',
       'amsterdam-weekend-trip', 'brussels-weekend-trip', 'strasbourg-weekend-trip',
       'paris-weekend-trip', 'london-weekend-trip', 'copenhagen-weekend-trip',
-      'prague-weekend-trip', 'krakow-weekend-trip', 'warsaw-weekend-trip'
+      'prague-weekend-trip', 'krakow-weekend-trip', 'warsaw-weekend-trip',
+      'bad-wildungen-weekend-trip'
     ],
     decisions: [
       ['日帰り', 'アーヘンやライン川など、往復検索後も現地で6時間前後を確保できる近場に絞ります。'],
@@ -136,7 +137,7 @@ const travelHubConfigs = [
     slug: 'relax',
     title: 'リラックス・自然',
     lead: '自然の外出は、景色だけでなく路面、日陰、トイレ、途中短縮、雨後の状態で選びます。公共交通で戻れる地点を先に決め、歩行距離を現地で伸ばせる計画にします。',
-    articleSlugs: ['rhine-river-relax-guide', 'nrw-nature-relax-guide'],
+    articleSlugs: ['rhine-river-relax-guide', 'nrw-nature-relax-guide', 'bad-wildungen-weekend-trip'],
     decisions: [
       ['川沿い', '風、増水、船の季節運航を確認し、鉄道で短縮できる区間を残します。'],
       ['公園・森・湖', '路面、日陰、トイレ、遊泳可否を施設ごとの公式情報で照合します。'],

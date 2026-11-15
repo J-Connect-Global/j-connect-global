@@ -1557,6 +1557,79 @@
     }
   },
   {
+    "id": "T021",
+    "title": "バート・ヴィルドゥンゲン1泊2日｜ヨーロッパ最大級の療養公園と鉱泉の町を歩く",
+    "slug": "bad-wildungen-weekend-trip",
+    "category": "観光",
+    "summary": "北ヘッセンの保養地バート・ヴィルドゥンゲンを、丘の上の旧市街、1403年の祭壇画、鉱泉と飲泉ホール、50ヘクタールの療養公園から読む1泊2日ガイド。中世の町が保養地へ変わった道筋を歩いてたどります。",
+    "url": "/germany/ja/living/bad-wildungen-weekend-trip/",
+    "markdown_path": "/content/living/bad-wildungen-weekend-trip.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-11-15",
+    "updated_at": "2026-11-15",
+    "last_verified": "2026-11-15",
+    "tags": [
+      "バート・ヴィルドゥンゲン",
+      "週末旅行",
+      "温泉・保養地",
+      "ヘッセン"
+    ],
+    "home_visible": false,
+    "home_order": 220,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/bad-wildungen-weekend-trip/",
+    "related_articles": [
+      "aachen-day-trip",
+      "rhine-river-relax-guide",
+      "nrw-nature-relax-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "Staatsbad Bad Wildungen（公式観光・保養案内）",
+        "url": "https://www.bad-wildungen.de/"
+      },
+      {
+        "title": "Bad Wildungen 町案内パンフレット（旧市街の歴史・鉱泉・ゲストカード）",
+        "url": "https://www.edersee.com/fileadmin/Mediendatenbank_Edersee/Mediendatenbank_Edersee_Marketing/PDFs/Flyer/ImageB_BW_09___2024_fin_LR.pdf"
+      },
+      {
+        "title": "Kurpark Bad Wildungen パンフレット（面積・延長・散策路）",
+        "url": "https://www.edersee.com/fileadmin/Mediendatenbank_Edersee/Mediendatenbank_Edersee_Marketing/PDFs/Flyer/Kurpark-Flyer0222fin.pdf"
+      },
+      {
+        "title": "Hessen Kassel Heritage - Schloss Friedrichstein",
+        "url": "https://www.heritage-kassel.de/en/locations/schloss-friedrichstein"
+      },
+      {
+        "title": "Deutsche Digitale Bibliothek - Wildunger Altar, 1403",
+        "url": "https://www.deutsche-digitale-bibliothek.de/item/DXIBY7BJJIAGMOOGTX6VG6Y2BGSNCWOH"
+      },
+      {
+        "title": "Nationalpark Kellerwald-Edersee",
+        "url": "https://www.nationalpark-kellerwald-edersee.de/"
+      },
+      {
+        "title": "Schneewittchendorf Bergfreiheit パンフレット",
+        "url": "https://www.edersee.com/fileadmin/Mediendatenbank_Edersee/Mediendatenbank_Edersee_Marketing/PDFs/Flyer/Schneewittchen-Flyer_032024_fin_LR.pdf"
+      },
+      {
+        "title": "bahnhof.de - Bad Wildungen 発着時刻",
+        "url": "https://www.bahnhof.de/bad-wildungen/fahrplan"
+      }
+    ],
+    "disclaimer_type": "tourism",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect Global editorial",
+      "last_reviewed_at": "2026-11-15",
+      "next_review_due": "2027-03-15"
+    },
+    "image_alt": "丘の上の木組みの旧市街と教会の塔、隣の丘の城館、手前の療養公園と回廊を描いたイラスト"
+  },
+  {
     "id": "L011",
     "title": "ドイツの放送負担金（旧GEZ）｜月18.36ユーロ・同居は1住戸1件・免除と引っ越し",
     "slug": "rundfunkbeitrag-guide",

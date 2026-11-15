@@ -7,8 +7,8 @@ const dataPath = path.join(root, 'data', 'tourism-route-overviews.json');
 const outputDir = path.join(root, 'assets', 'images', 'living', 'routes');
 const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 
-if (!Array.isArray(data.routes) || data.routes.length !== 20) {
-  throw new Error(`Expected 20 tourism routes, found ${data.routes?.length ?? 0}`);
+if (!Array.isArray(data.routes) || data.routes.length !== 21) {
+  throw new Error(`Expected 21 tourism routes, found ${data.routes?.length ?? 0}`);
 }
 
 const slugs = new Set();

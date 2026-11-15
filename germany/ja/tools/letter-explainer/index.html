@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script data-jconnect-theme-init>
+  (function () {
+    try {
+      var saved = localStorage.getItem('jconnect-theme');
+      var theme = saved === 'dark' || saved === 'light'
+        ? saved
+        : 'light';
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+    } catch (error) {
+      document.documentElement.dataset.theme = 'light';
+      document.documentElement.style.colorScheme = 'light';
+    }
+  })();
+  </script>
+<script src="/assets/js/site-identity.js"></script>
+<title>ドイツの手紙をAIが日本語で解説（無料） | J-Connect Germany</title>
+  <meta name="description" content="役所・税務署・保険・大家から届いたドイツ語の手紙を、写真やPDFからAIが日本語で解説。期限・金額・やること・返信文の下書きまで整理します。無料・登録不要。" />
+  <meta name="theme-color" content="#f7f3ee" />
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://j-connect-global.com/germany/ja/tools/letter-explainer/" />
+  <link rel="alternate" hreflang="ja" href="https://j-connect-global.com/germany/ja/tools/letter-explainer/">
+  <link rel="alternate" hreflang="x-default" href="https://j-connect-global.com/germany/ja/tools/letter-explainer/">
+  <meta property="og:title" content="ドイツの手紙をAIが日本語で解説（無料） | J-Connect Germany">
+  <meta property="og:description" content="役所・税務署・保険・大家から届いたドイツ語の手紙を、写真やPDFからAIが日本語で解説。期限・金額・やること・返信文の下書きまで整理します。無料・登録不要。">
+  <meta property="og:url" content="https://j-connect-global.com/germany/ja/tools/letter-explainer/">
+  <meta property="og:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card-og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="J-Connect Germany">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ドイツの手紙をAIが日本語で解説（無料） | J-Connect Germany">
+  <meta name="twitter:description" content="役所・税務署・保険・大家から届いたドイツ語の手紙を、写真やPDFからAIが日本語で解説。期限・金額・やること・返信文の下書きまで整理します。無料・登録不要。">
+  <meta name="twitter:image" content="https://j-connect-global.com/assets/img/placeholders/jconnect-default-card-og.jpg">
+  <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
+
+
+<link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-performance-a11y-20260719">
+<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
+  <link rel="stylesheet" href="/assets/css/social-share.css">
+<style>
+/* Page-specific styles. Shared site styles live in the common site stylesheet. */
+:root{
+  --red:#e8002d;
+  --orange:#0067c9;
+  --yellow:#8eb6e5;
+  --teal:#00b4a6;
+  --blue:#2f6df5;
+  --purple:#7c3aed;
+  --accent-blue:#0067c9;
+  --cream:#f4f8fc;
+  --paper:#ffffff;
+  --ink:#1a1014;
+  --muted:#6b5e68;
+  --border:#ede5e0;
+  --card:#ffffff;
+  --shadow:0 10px 30px rgba(26,16,20,.08);
+  --radius-xl:10px;
+  --radius-lg:9px;
+  --radius-md:16px;
+  --max:1180px;
+}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:26px 18px 60px}
+
+.hero,.content{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}
+
+.hero-main,.hero-side,.panel{
+      background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
+      border:1px solid var(--border);border-radius:var(--radius-xl);box-shadow:var(--shadow)
+    }
+
+.hero-main,.hero-side,.panel{padding:28px}
+
+.eyebrow{
+      display:inline-flex;align-items:center;padding:8px 14px;border-radius:999px;background:#fff;
+      border:1px solid var(--border);font-size:13px;color:var(--muted);margin-bottom:18px
+    }
+
+h1{font-size:clamp(34px,5vw,56px);line-height:1.08;letter-spacing:-.03em;margin:0 0 16px}
+
+.lead{font-size:18px;color:#433841}
+
+.quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
+
+.mini{background:#fff;border:1px solid var(--border);border-radius:18px;padding:16px}
+
+.form-wrap{margin-top:24px}
+
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+.field{display:flex;flex-direction:column;gap:8px}
+
+.field.full{grid-column:1/-1}
+
+label{font-size:14px;font-weight:700}
+
+.input,select,textarea{
+      width:100%;padding:14px 15px;border-radius:16px;border:1px solid var(--border);
+      background:#fff;font:inherit;color:var(--ink)
+    }
+
+textarea{min-height:180px;resize:vertical}
+
+.submit{
+      margin-top:16px;display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;
+      border:none;border-radius:999px;background:linear-gradient(90deg,var(--red),var(--orange));
+      color:#fff;font-weight:800;font:inherit;cursor:pointer
+    }
+
+.submit[disabled]{opacity:.7;cursor:not-allowed}
+
+.panel h2{margin:0 0 12px;font-size:28px}
+
+.panel h3{margin:20px 0 8px;font-size:20px}
+
+.panel p,.panel li{color:#314f70}
+
+.list{padding-left:20px;margin:0}
+
+.note{font-size:13px;color:var(--muted)}
+
+.status-box{
+      display:none;
+      margin-top:16px;
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-size:14px
+    }
+
+.status-box.show{display:block}
+
+.status-success{border-color:#cfe9d8;background:#f4fbf6;color:#1d5c33}
+
+.status-error{border-color:#f3d0d6;background:#f8fbff;color:#9d2235}
+
+.footer{max-width:var(--max);margin:0 auto 32px;padding:0 18px}
+
+@media (max-width:960px){
+.hero,.content,.form-grid,.quick-grid{grid-template-columns:1fr}
+}
+
+/* PR3 static/support polish: align support pages with the Community visual system. */
+.wrap{max-width:1120px;padding:24px 16px 56px}
+
+.hero,
+.content{gap:16px}
+
+.hero-main,
+.hero-side,
+.panel,
+.mini{
+  background:rgba(255,255,255,.94);
+  border-color:var(--line);
+  border-radius:9px;
+  box-shadow:0 8px 18px rgba(30,58,95,.06);
+}
+
+.hero-main{box-shadow:0 10px 24px rgba(30,58,95,.07)}
+
+.eyebrow{
+  color:var(--site-navy);
+  border-color:var(--line);
+  background:var(--site-blue-soft);
+  font-weight:900;
+}
+
+h1,
+.panel h2,
+.panel h3,
+.hero-side h2,
+.mini strong,
+label{color:var(--site-navy);letter-spacing:0}
+
+.lead,
+.panel p,
+.panel li,
+.mini{line-height:1.8;color:#34414d}
+
+.input,
+select,
+textarea{
+  border-color:var(--line);
+  border-radius:14px;
+  color:var(--text);
+}
+
+.input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--site-navy);
+  outline:none;
+  box-shadow:var(--site-focus-ring);
+}
+
+.submit{
+  min-height:44px;
+  background:var(--site-navy);
+  box-shadow:0 10px 22px rgba(30,58,95,.18);
+}
+
+:root[data-theme="dark"] .hero-main,
+:root[data-theme="dark"] .hero-side,
+:root[data-theme="dark"] .panel,
+:root[data-theme="dark"] .mini{
+  border-color:var(--color-border, #263a52);
+  background:var(--surface-card-bg, #101f33);
+  color:var(--surface-card-text, #e8f1fb);
+  box-shadow:var(--shadow, 0 16px 36px rgba(0,0,0,.24));
+}
+
+:root[data-theme="dark"] .eyebrow{
+  border-color:var(--color-border, #263a52);
+  background:var(--color-primary-soft, rgba(69,151,232,.16));
+  color:var(--color-primary, #67b7ff);
+}
+
+:root[data-theme="dark"] h1,
+:root[data-theme="dark"] .panel h2,
+:root[data-theme="dark"] .panel h3,
+:root[data-theme="dark"] .hero-side h2,
+:root[data-theme="dark"] .mini strong,
+:root[data-theme="dark"] label{
+  color:var(--surface-card-heading, #07315f);
+}
+
+:root[data-theme="dark"] .lead,
+:root[data-theme="dark"] .panel p,
+:root[data-theme="dark"] .panel li,
+:root[data-theme="dark"] .mini,
+:root[data-theme="dark"] .note{
+  color:var(--surface-card-muted, #526170);
+}
+
+:root[data-theme="dark"] .input,
+:root[data-theme="dark"] select,
+:root[data-theme="dark"] textarea{
+  border-color:var(--color-border, #263a52);
+  background:var(--color-input-bg, #0f1d30);
+  color:var(--color-input-text, #e8f1fb);
+}
+
+:root[data-theme="dark"] .input::placeholder,
+:root[data-theme="dark"] textarea::placeholder{
+  color:var(--color-text-muted, #a8bad0);
+}
+
+:root[data-theme="dark"] .submit{
+  border:1px solid var(--color-primary, #67b7ff);
+  background:var(--color-primary, #67b7ff);
+  color:#061321;
+  box-shadow:none;
+}
+
+:root[data-theme="dark"] .submit:hover,
+:root[data-theme="dark"] .submit:focus-visible{
+  background:#9ccdff;
+  color:#061321;
+}
+
+:root[data-theme="dark"] .submit[disabled]{
+  border-color:var(--color-border, #263a52);
+  background:#0b1626;
+  color:#71859d;
+  opacity:1;
+}
+
+:root[data-theme="dark"] .status-box{
+  border-color:var(--color-border, #263a52);
+  background:var(--color-chip-bg, #0f1d30);
+  color:var(--surface-card-text, #e8f1fb);
+}
+
+:root[data-theme="dark"] .status-success{
+  border-color:rgba(98,218,146,.38);
+  background:rgba(22,96,61,.24);
+  color:#a9f0c5;
+}
+
+:root[data-theme="dark"] .status-error{
+  border-color:rgba(255,141,154,.42);
+  background:rgba(97,31,43,.35);
+  color:#ffc7cf;
+}
+
+:root[data-theme="dark"] body .hero-main,
+:root[data-theme="dark"] body .hero-side,
+:root[data-theme="dark"] body .panel,
+:root[data-theme="dark"] body .mini{
+  border-color:var(--color-border, #263a52);
+  background:var(--surface-card-bg, #101f33);
+  color:var(--surface-card-text, #e8f1fb);
+}
+
+:root[data-theme="dark"] body h1,
+:root[data-theme="dark"] body .panel h2,
+:root[data-theme="dark"] body .panel h3,
+:root[data-theme="dark"] body .hero-side h2,
+:root[data-theme="dark"] body .mini strong,
+:root[data-theme="dark"] body label{
+  color:var(--surface-card-heading, #07315f);
+}
+
+:root[data-theme="dark"] body .lead,
+:root[data-theme="dark"] body .panel p,
+:root[data-theme="dark"] body .panel li,
+:root[data-theme="dark"] body .mini,
+:root[data-theme="dark"] body .note{
+  color:var(--surface-card-muted, #526170);
+}
+
+@media (max-width:640px){
+  .wrap{padding:18px 12px 44px}
+  .hero-main,.hero-side,.panel{border-radius:18px;padding:18px}
+  h1{font-size:clamp(28px,9vw,36px)}
+  .lead{font-size:15px}
+  .hero-side h2,.panel h2{font-size:22px}
+}
+.le-mode{border:0;padding:0;margin:0 0 14px;display:flex;gap:16px;flex-wrap:wrap}
+.le-mode legend{font-size:14px;font-weight:700;margin-bottom:8px}
+.le-radio,.le-consent{font-weight:400;display:flex;gap:8px;align-items:flex-start}
+.le-consent{font-size:14px;margin:14px 0}
+#fileField,#textField{margin-bottom:14px}
+.le-result{margin-top:22px}
+.le-result .panel{max-width:860px}
+.le-badge{display:inline-block;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700;margin-bottom:10px}
+.le-badge.high{background:#fde8eb;color:#9d2235}
+.le-badge.medium{background:#fff4dc;color:#7a5200}
+.le-badge.low{background:#e7f5ec;color:#1d5c33}
+.le-terms{display:grid;grid-template-columns:minmax(120px,auto) 1fr;gap:6px 14px;margin:0}
+.le-terms dt{font-weight:700}
+.le-terms dd{margin:0}
+.le-reply{white-space:pre-wrap;background:#f4f8fc;border:1px solid var(--border);border-radius:12px;padding:14px;font-family:inherit;font-size:15px;line-height:1.7}
+.le-copy{border:1px solid var(--border);background:#fff;border-radius:10px;padding:8px 14px;cursor:pointer}
+.le-caution{border-left:4px solid #e0a800;padding-left:14px;margin-top:16px}
+</style>
+<script>
+(function () {
+  var segments = location.pathname.split('/').filter(Boolean);
+  if (segments.length && /\.html$/i.test(segments[segments.length - 1])) segments.pop();
+
+  var localeIndex = -1;
+  for (var i = 0; i < segments.length; i++) {
+    if (segments[i] === 'ja' || segments[i] === 'de') { localeIndex = i; break; }
+  }
+
+  var depth = localeIndex >= 0 ? (segments.length - localeIndex) : Math.max(segments.length - 1, 0);
+  var prefix = depth === 0 ? './' : '../'.repeat(depth);
+
+  var css = document.createElement('link');
+  css.rel = 'stylesheet';
+  css.href = '/assets/css/cookie-consent.css';
+  document.head.appendChild(css);
+
+  var js = document.createElement('script');
+  js.src = '/assets/js/cookie-consent.js';
+  js.defer = true;
+  document.head.appendChild(js);
+})();
+</script>
+
+  <script type="application/ld+json" data-jconnect-managed="page-structured-data">{"@context":"https://schema.org","@type":"WebPage","name":"ドイツの手紙AI解説","description":"役所・税務署・保険などから届いたドイツ語の手紙を、写真やPDFからAIが日本語で解説するツールです。","inLanguage":"ja","url":"https://j-connect-global.com/germany/ja/tools/letter-explainer/","isPartOf":{"@type":"WebSite","@id":"https://j-connect-global.com/#website","name":"J-Connect Global","url":"https://j-connect-global.com/"},"publisher":{"@type":"Organization","@id":"https://j-connect-global.com/#organization","name":"J-Connect Global","url":"https://j-connect-global.com/"}}</script>
+  <script type="application/ld+json" data-jconnect-managed="page-structured-data">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://j-connect-global.com/germany/ja/"},{"@type":"ListItem","position":2,"name":"生活・手続き","item":"https://j-connect-global.com/germany/ja/living/"},{"@type":"ListItem","position":3,"name":"ドイツの手紙AI解説","item":"https://j-connect-global.com/germany/ja/tools/letter-explainer/"}]}</script>
+</head>
+<body>
+<!-- LAYOUT:ja-header:start -->
+<a class="jc-skip-link" href="#main-content">本文へ移動</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
+      <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany（J-Connect Global）" width="720" height="174">
+      <span class="brand-copy">
+        <span class="brand-title">J-CONNECT GERMANY</span>
+        <span class="brand-sub">J-Connect Global のドイツ向け生活ポータル</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <nav class="header-nav" aria-label="主要ナビゲーション">
+        <a href="/germany/ja/">ホーム</a>
+        <a href="/germany/ja/about/">このサイトについて</a>
+      </nav>
+      <details class="header-category header-category-menu" aria-label="カテゴリ選択">
+        <summary class="header-category-trigger" aria-haspopup="true">
+          <span>カテゴリ</span>
+          <span class="header-category-chevron" aria-hidden="true">▼</span>
+        </summary>
+        <div class="category-dropdown">
+          <a href="/germany/ja/community/">交流・掲示板</a>
+          <a href="/germany/ja/living/" class="active" aria-current="page">生活・手続き</a>
+          <a href="/germany/ja/jobs/">仕事・求人</a>
+          <a href="/germany/ja/events/">ニュース・イベント</a>
+          <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+        </div>
+      </details>
+      <form class="header-search" action="/germany/ja/search/" method="get" role="search">
+        <label class="search-box" aria-label="サイト内検索">
+          <span class="search-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="M16 16l4.5 4.5"></path>
+            </svg>
+          </span>
+          <input type="search" name="q" placeholder="検索">
+        </label>
+        <button class="search-btn" type="submit" aria-label="検索">
+          <span class="search-btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <circle cx="11" cy="11" r="6.5"></circle>
+              <path d="M16 16l4.5 4.5"></path>
+            </svg>
+          </span>
+        </button>
+      </form>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="ダークモードに切り替え">
+        <span class="theme-toggle-track" aria-hidden="true">
+          <span class="theme-toggle-icon theme-toggle-sun">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"></path>
+            </svg>
+          </span>
+          <span class="theme-toggle-icon theme-toggle-moon">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M20.4 14.6A7.7 7.7 0 0 1 9.4 3.6 8.9 8.9 0 1 0 20.4 14.6Z"></path>
+            </svg>
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+<!-- LAYOUT:ja-header:end -->
+
+  <main id="main-content" tabindex="-1" class="wrap">
+    <section class="hero">
+      <div class="hero-main">
+        <div class="eyebrow">AI Letter Helper</div>
+        <h1>ドイツの手紙・役所の書類をAIが日本語で解説</h1>
+        <p class="lead">
+          役所、税務署、保険、銀行、大家さん、Kita から届いたドイツ語の手紙。写真を撮るか本文を貼り付けると、AIが「何の手紙か」「いつまでに何をすればいいか」を日本語で整理します。返信が必要なら、ドイツ語の返信文の下書きも作ります。
+        </p>
+        <div class="quick-grid">
+          <div class="mini"><strong>1. 撮る・貼る</strong><br>手紙の写真、PDF、または本文のテキスト。</div>
+          <div class="mini"><strong>2. AIが整理</strong><br>要点・期限・金額・やること・用語を日本語で。</div>
+          <div class="mini"><strong>3. 返信の下書き</strong><br>必要な場合はドイツ語の返信文と日本語訳。</div>
+          <div class="mini"><strong>無料・保存しない</strong><br>送信内容は当サイトに保存しません。</div>
+        </div>
+      </div>
+
+      <aside class="hero-side">
+        <h2 style="margin-top:0;font-size:28px">手紙を解説する</h2>
+        <form class="form-wrap" id="letterForm" novalidate>
+          <input type="hidden" name="form_started_at" id="formStartedAt">
+          <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
+
+          <fieldset class="le-mode">
+            <legend>送り方</legend>
+            <label class="le-radio"><input type="radio" name="mode" value="file" checked> 写真・PDF</label>
+            <label class="le-radio"><input type="radio" name="mode" value="text"> 本文を貼り付け</label>
+          </fieldset>
+
+          <div class="field full" id="fileField">
+            <label for="letterFile">手紙の写真またはPDF（約5MBまで）</label>
+            <input class="input" id="letterFile" type="file" accept="image/jpeg,image/png,image/webp,application/pdf">
+            <p class="note">名前・住所・口座番号などは、ペンや画像編集で隠してから撮ると安心です。手紙全体が写るよう、明るい場所でまっすぐ撮ってください。</p>
+          </div>
+
+          <div class="field full" id="textField" hidden>
+            <label for="letterText">手紙の本文（ドイツ語）</label>
+            <textarea id="letterText" maxlength="12000" placeholder="ここにドイツ語の本文を貼り付けてください。名前・住所は削除してかまいません。"></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="letterNote">補足（任意）</label>
+            <input class="input" id="letterNote" type="text" maxlength="500" placeholder="例：先月引っ越しました／2枚目もあります">
+          </div>
+
+          <label class="le-consent"><input type="checkbox" id="letterConsent"> 送信した内容が解説の作成のためだけに AI 事業者（Anthropic、米国）へ送られることに同意します（<a href="/germany/ja/privacy/#p5">詳細</a>）。</label>
+
+          <button class="submit" id="submitButton" type="submit">AIで解説する</button>
+          <div class="status-box" id="formStatus" aria-live="polite"></div>
+        </form>
+      </aside>
+    </section>
+
+    <section class="le-result" id="letterResult" hidden aria-live="polite">
+      <div class="panel">
+        <div class="le-badge" id="resUrgency"></div>
+        <h2 id="resType"></h2>
+        <p class="note" id="resSender"></p>
+        <p id="resSummary"></p>
+        <p class="note" id="resUrgencyReason"></p>
+        <div id="resDeadlinesWrap"><h3>期限</h3><ul class="list" id="resDeadlines"></ul></div>
+        <div id="resAmountsWrap"><h3>金額</h3><ul class="list" id="resAmounts"></ul></div>
+        <div id="resActionsWrap"><h3>やること</h3><ol class="list" id="resActions"></ol></div>
+        <div id="resDocsWrap"><h3>準備するもの</h3><ul class="list" id="resDocs"></ul></div>
+        <div id="resTermsWrap"><h3>重要なドイツ語</h3><dl class="le-terms" id="resTerms"></dl></div>
+        <div id="resReplyWrap">
+          <h3>返信文の下書き（ドイツ語）</h3>
+          <pre class="le-reply" id="resReplyDe"></pre>
+          <button type="button" class="le-copy" id="copyReply">ドイツ語をコピー</button>
+          <h3>日本語訳</h3>
+          <pre class="le-reply" id="resReplyJa"></pre>
+        </div>
+        <div id="resCautionWrap" class="le-caution"><h3>注意点</h3><p id="resCaution"></p></div>
+        <p class="note">AIによる自動の解説です。誤りが含まれることがあります。期限・金額は必ず原本で確認し、法律・税務の判断が必要な場合は専門家や発行元に相談してください。</p>
+      </div>
+    </section>
+
+    <section class="content" style="margin-top:22px">
+      <div class="panel">
+        <h2>こんな手紙に使えます</h2>
+        <ul class="list">
+          <li>住民登録・滞在許可に関する役所（Bürgeramt、Ausländerbehörde）からの案内</li>
+          <li>税務署（Finanzamt）の通知、税額決定（Steuerbescheid）、税番号の案内</li>
+          <li>公共放送受信料（Rundfunkbeitrag）の請求・登録案内</li>
+          <li>健康保険（Krankenkasse）、年金、Kindergeld・Elterngeld の書類</li>
+          <li>大家・管理会社の Nebenkostenabrechnung（光熱費等の精算）</li>
+          <li>Kita・学校からのお知らせ、銀行・携帯会社からの通知</li>
+        </ul>
+        <h3>関連ガイド</h3>
+        <ul class="list">
+          <li><a href="/germany/ja/living/rundfunkbeitrag-guide/">Rundfunkbeitrag（受信料）のガイド</a></li>
+          <li><a href="/germany/ja/living/tax-id-steuernummer-steuerklasse/">税番号・Steuernummer・税クラス</a></li>
+          <li><a href="/germany/ja/living/residence-permit-renewal-germany/">滞在許可の更新</a></li>
+          <li><a href="/germany/ja/living/kindergeld-application-germany/">Kindergeld の申請</a></li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2>利用上の注意</h2>
+        <ul class="list">
+          <li>このツールは内容の理解を助けるものです。法律相談・税務相談ではありません。</li>
+          <li>督促（Mahnung）、裁判所、罰金（Bußgeld）、異議申し立ての期限がある手紙は、早めに発行元・専門家・消費者センター（Verbraucherzentrale）に相談してください。</li>
+          <li>送信内容は解説の作成のためだけに Anthropic の API に送られ、J-Connect のサーバーやスプレッドシートには保存しません。</li>
+          <li>利用が集中した場合は、1日の上限に達して使えないことがあります。</li>
+        </ul>
+        <h3>よくある質問</h3>
+        <p><strong>無料ですか？</strong><br>はい、無料です。登録も不要です。</p>
+        <p><strong>手書きの手紙も読めますか？</strong><br>はっきり写っていれば読めることが多いですが、印刷された書類のほうが正確です。</p>
+        <p><strong>複数ページの手紙は？</strong><br>PDFにまとめるか、1ページずつ送ってください。</p>
+        <p class="note">Last updated: 2026-11-15</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- LAYOUT:ja-footer:start -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany（J-Connect Global）" width="900" height="217" loading="lazy" decoding="async">
+        <div class="footer-copy">
+          <div class="footer-title">J-CONNECT GERMANY</div>
+          <div class="footer-sub">J-Connect Global のドイツ向け生活ポータル</div>
+          <div class="footer-relationship">J-Connect Germany は、J-Connect Global のドイツ向けポータルです。</div>
+          <div class="footer-meta">© 2026 J-Connect Global</div>
+        </div>
+      </div>
+      <div class="footer-links" aria-label="フッターサイトマップ">
+        <div class="footer-group">
+          <div class="footer-heading">サイト</div>
+          <a href="/germany/ja/">ホーム</a>
+          <a href="/germany/ja/about/">このサイトについて</a>
+          <a href="/germany/ja/living/">ガイド</a>
+        </div>
+        <div class="footer-group">
+          <div class="footer-heading">主要カテゴリ</div>
+          <a href="/germany/ja/community/">交流・掲示板</a>
+          <a href="/germany/ja/living/">生活・手続き</a>
+          <a href="/germany/ja/jobs/">仕事・求人</a>
+          <a href="/germany/ja/events/">ニュース・イベント</a>
+          <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+        </div>
+        <div class="footer-group">
+          <div class="footer-heading">サポート・運営情報</div>
+          <a href="/germany/ja/jobs/posting/">求人掲載について</a>
+          <a href="/germany/ja/contact/">お問い合わせ</a>
+          <a href="mailto:contact@j-connect-global.com">contact@j-connect-global.com</a>
+          <a href="/germany/ja/terms/">利用規約</a>
+          <a href="/germany/ja/privacy/">プライバシー</a>
+          <a href="/germany/ja/impressum/">運営者情報</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- LAYOUT:ja-footer:end -->
+
+  <script src="/assets/js/data-sources.js"></script>
+  <script>
+  (function () {
+    var ENDPOINT = (window.JCONNECT_DATA_SOURCES || {}).letterExplainerEndpoint || '';
+    var form = document.getElementById('letterForm');
+    var statusBox = document.getElementById('formStatus');
+    var submitButton = document.getElementById('submitButton');
+    var fileInput = document.getElementById('letterFile');
+    var textInput = document.getElementById('letterText');
+    var resultBox = document.getElementById('letterResult');
+    var startedAt = document.getElementById('formStartedAt');
+    startedAt.value = String(Date.now());
+
+    function mode() { return form.querySelector('input[name="mode"]:checked').value; }
+    form.querySelectorAll('input[name="mode"]').forEach(function (r) {
+      r.addEventListener('change', function () {
+        document.getElementById('fileField').hidden = mode() !== 'file';
+        document.getElementById('textField').hidden = mode() !== 'text';
+      });
+    });
+
+    function showStatus(kind, message) {
+      statusBox.className = 'status-box show status-' + kind;
+      statusBox.textContent = message;
+    }
+
+    if (!ENDPOINT) {
+      showStatus('error', 'この機能は現在準備中です。公開まで少しお待ちください。');
+      submitButton.disabled = true;
+    }
+
+    // 画像は端末内で縮小して JPEG に変換する（容量を減らし、位置情報などの EXIF も落とす）
+    function imageToJpegBase64(file) {
+      return new Promise(function (resolve, reject) {
+        var url = URL.createObjectURL(file);
+        var img = new Image();
+        img.onload = function () {
+          var max = 2000;
+          var scale = Math.min(1, max / Math.max(img.width, img.height));
+          var canvas = document.createElement('canvas');
+          canvas.width = Math.round(img.width * scale);
+          canvas.height = Math.round(img.height * scale);
+          canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+          URL.revokeObjectURL(url);
+          resolve(canvas.toDataURL('image/jpeg', 0.85).split(',')[1]);
+        };
+        img.onerror = function () { URL.revokeObjectURL(url); reject(new Error('image')); };
+        img.src = url;
+      });
+    }
+
+    function fileToBase64(file) {
+      return new Promise(function (resolve, reject) {
+        var reader = new FileReader();
+        reader.onload = function () { resolve(String(reader.result).split(',')[1]); };
+        reader.onerror = function () { reject(new Error('read')); };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function fillList(id, items, render) {
+      var el = document.getElementById(id);
+      el.textContent = '';
+      (items || []).forEach(function (item) {
+        var li = document.createElement('li');
+        li.textContent = render(item);
+        el.appendChild(li);
+      });
+      el.parentElement.hidden = !(items && items.length);
+    }
+
+    function render(r) {
+      var labels = { high: '緊急度：高（早めに対応）', medium: '緊急度：中', low: '緊急度：低' };
+      var badge = document.getElementById('resUrgency');
+      badge.className = 'le-badge ' + r.urgency;
+      badge.textContent = labels[r.urgency] || '';
+      document.getElementById('resType').textContent = r.document_type || '解説結果';
+      document.getElementById('resSender').textContent = r.sender ? '差出人：' + r.sender : '';
+      document.getElementById('resSummary').textContent = r.summary || '';
+      document.getElementById('resUrgencyReason').textContent = r.urgency_reason || '';
+      fillList('resDeadlines', r.deadlines, function (d) { return d.date + '：' + d.what; });
+      fillList('resAmounts', r.amounts, function (a) { return a.amount + '：' + a.what; });
+      fillList('resActions', r.actions, function (a) { return a; });
+      fillList('resDocs', r.documents_needed, function (a) { return a; });
+
+      var terms = document.getElementById('resTerms');
+      terms.textContent = '';
+      (r.key_terms || []).forEach(function (t) {
+        var dt = document.createElement('dt'); dt.textContent = t.de;
+        var dd = document.createElement('dd'); dd.textContent = t.ja;
+        terms.appendChild(dt); terms.appendChild(dd);
+      });
+      document.getElementById('resTermsWrap').hidden = !(r.key_terms && r.key_terms.length);
+
+      var hasReply = r.reply_needed && r.reply_draft_de;
+      document.getElementById('resReplyWrap').hidden = !hasReply;
+      document.getElementById('resReplyDe').textContent = r.reply_draft_de || '';
+      document.getElementById('resReplyJa').textContent = r.reply_draft_ja || '';
+      document.getElementById('resCautionWrap').hidden = !r.caution;
+      document.getElementById('resCaution').textContent = r.caution || '';
+
+      resultBox.hidden = false;
+      resultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    document.getElementById('copyReply').addEventListener('click', function () {
+      var text = document.getElementById('resReplyDe').textContent;
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(function () { showStatus('success', '返信文をコピーしました。'); });
+    });
+
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      if (!ENDPOINT) return;
+      if (!document.getElementById('letterConsent').checked) {
+        showStatus('error', '送信内容の取り扱いに同意してください。');
+        return;
+      }
+
+      var data = new FormData();
+      data.append('form_started_at', startedAt.value);
+      data.append('website', form.website.value);
+      data.append('consent', 'yes');
+      data.append('note', document.getElementById('letterNote').value);
+      data.append('mode', mode());
+
+      try {
+        if (mode() === 'file') {
+          var file = fileInput.files[0];
+          if (!file) { showStatus('error', 'ファイルを選んでください。'); return; }
+          if (file.type === 'application/pdf') {
+            if (file.size > 5 * 1024 * 1024) { showStatus('error', 'PDFが大きすぎます（約5MBまで）。'); return; }
+            data.append('media_type', 'application/pdf');
+            data.append('data', await fileToBase64(file));
+          } else if (/^image\//.test(file.type)) {
+            data.append('media_type', 'image/jpeg');
+            data.append('data', await imageToJpegBase64(file));
+          } else {
+            showStatus('error', 'JPEG / PNG / WebP 画像か PDF を選んでください。');
+            return;
+          }
+        } else {
+          var text = textInput.value.trim();
+          if (text.length < 20) { showStatus('error', '本文をもう少し長く貼り付けてください。'); return; }
+          data.append('text', text);
+        }
+      } catch (error) {
+        showStatus('error', 'ファイルを読み込めませんでした。別の形式でお試しください。');
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = '解析中…（20〜40秒）';
+      showStatus('success', 'AIが手紙を読んでいます。このままお待ちください。');
+
+      try {
+        var response = await fetch(ENDPOINT, { method: 'POST', body: data });
+        var payload = await response.json().catch(function () { return {}; });
+        if (payload.ok && payload.result) {
+          statusBox.className = 'status-box';
+          statusBox.textContent = '';
+          render(payload.result);
+        } else {
+          showStatus('error', payload.error || '解析できませんでした。時間をおいて再度お試しください。');
+        }
+      } catch (error) {
+        showStatus('error', '通信エラーが発生しました。時間をおいて再度お試しください。');
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'AIで解説する';
+        startedAt.value = String(Date.now());
+      }
+    });
+  })();
+  </script>
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/social-share.js"></script>
+</body>
+</html>

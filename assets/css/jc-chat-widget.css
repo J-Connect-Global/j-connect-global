@@ -103,8 +103,7 @@
   .jcw.is-open .jcw-launcher{display:none}
   .jcw-panel{position:fixed;left:0;right:0;bottom:0;width:auto;height:min(82vh,680px);height:min(82dvh,680px);border-radius:20px 20px 0 0;padding-bottom:env(safe-area-inset-bottom)}
   .jcw-title span{display:none}
-  .jcw-head-link span{display:none}
-  .jcw-head-link{padding:8px}
+  .jcw-head-link{padding:7px 10px}
   .jcw-input{font-size:16px}
 }
 

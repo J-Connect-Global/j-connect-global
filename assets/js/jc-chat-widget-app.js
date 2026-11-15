@@ -10,7 +10,7 @@
   if (window.__jcChatWidget) return;
   window.__jcChatWidget = true;
 
-  var VERSION = '20261115f';
+  var VERSION = '20261116a';
   var STATE_KEY = 'jcChatWidgetState';   // 'open' | 'min'
   var LOG_KEY = 'jcChatWidgetLog';
   var QUOTA_KEY = 'jcChatWidgetQuota';
@@ -245,6 +245,10 @@
     return null;
   }
 
+  // AIから利用者への質問（「〜お持ちですか？」など）は、押して送る候補として不自然なので出さない
+  var ASKS_USER = /あなた|お持ちですか|受けていますか|ご存じですか|ご存知ですか|されていますか|されましたか|予定ですか|何年ですか/;
+  function userFollowUps(list) { return (list || []).filter(function (q) { return q && !ASKS_USER.test(String(q).trim()); }); }
+
   function renderAi(m) {
     var r = aiRow();
     var prose = el('div', { class: 'jcw-prose' });
@@ -275,9 +279,10 @@
       r.bubble.appendChild(copy);
     }
     body.appendChild(r.row);
-    if (m.follow && m.follow.length) {
+    var follow = userFollowUps(m.follow);
+    if (follow.length) {
       var chips = el('div', { class: 'jcw-chips' });
-      m.follow.slice(0, 3).forEach(function (q) {
+      follow.slice(0, 3).forEach(function (q) {
         var c = el('button', { type: 'button', class: 'jcw-chip' }, q);
         c.addEventListener('click', function () { ask(q); });
         chips.appendChild(c);

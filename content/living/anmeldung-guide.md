@@ -8,8 +8,8 @@ summary: "住民登録は実際の入居日から2週間以内。パスポート
 status: "published"
 published: true
 published_at: "2026-06-07"
-updated_at: "2026-11-14"
-last_verified: "2026-11-14"
+updated_at: "2026-11-15"
+last_verified: "2026-11-15"
 article_standard: "2026-11"
 next_review: "2027-01-31"
 canonical_url: "/germany/ja/living/anmeldung-guide/"
@@ -222,7 +222,7 @@ official_sources:
 - [連邦住民登録法第19条：家主などの入居証明](https://www.gesetze-im-internet.de/bmg/__19.html)（2026年11月14日確認）
 - [連邦住民登録法第54条：過料](https://www.gesetze-im-internet.de/bmg/__54.html)（2026年11月14日確認）
 - [デュッセルドルフ市：住民登録の義務と無料の登録確認書](https://www.duesseldorf.de/einwohnerangelegenheiten/meldeangelegenheiten/informationen-zur-meldepflicht)（2026年10月31日確認）
-- [連邦行政ポータル：住民登録](https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99115005104001)（2026年11月14日はこの環境から開けず未確認）
-- [連邦行政ポータル：入居証明](https://verwaltung.bund.de/leistungsverzeichnis/DE/leistung/99115008000000)（2026年11月14日はこの環境から開けず未確認）
+- [連邦行政ポータル：住民登録](https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99115005104001)：住まいに入居したら登録が必要。前の住所での転出届は不要。詳しい案内は地域を選ぶと表示される（2026年11月15日確認）
+- [連邦行政ポータル：入居証明](https://verwaltung.bund.de/leistungsverzeichnis/DE/leistung/99115008000000)：詳しい案内は地域を選ぶと表示される形式で、この環境からは本文を読めず未確認
 
 受付方法と必要書類は自治体で異なります。実際の登録では、居住地の市・自治体が出す最新案内を優先してください。

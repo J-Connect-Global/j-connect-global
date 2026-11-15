@@ -7,8 +7,8 @@ summary: "給与から税金が引かれている会社員でも、確定申告�
 status: "published"
 published: true
 published_at: "2026-11-14"
-updated_at: "2026-11-14"
-last_verified: "2026-11-14"
+updated_at: "2026-11-15"
+last_verified: "2026-11-15"
 next_review: "2027-05-14"
 canonical_url: "/germany/ja/living/income-tax-prepayment-germany/"
 article_standard: "2026-11"
@@ -56,8 +56,8 @@ official_sources:
 
 1. 通知を読む：前払いの通知に、各納期の額、対象の年、根拠になった申告の年が書いてある。自動引き落とし（SEPA）を登録していなければ、期日までに振り込む。
 2. 収入の見込みを整理する：その年の給与、給付、給与以外の収入、控除を見込みで書き出す。育休や時短で収入が減るなら、その期間と額。
-3. ELSTERにログインする：ELSTERのアカウント（証明書ファイルなど）でログインする。アカウントがない場合、登録の手続きに郵送の手順があり数日かかる（未確認：2026年11月14日にELSTERのページをこの環境から開けなかった）。
-4. 調整を申請する：ELSTERの申請フォームの一覧から、前払いの調整（Anpassung der Vorauszahlungen）の申請を選び、対象の年、見込みの所得、理由を書いて送る。
+3. ELSTERにログインする：ELSTERのアカウントでログインする。ログインには、登録時に決めたパスワードと、保存した証明書ファイルの両方が必要。アカウントがない場合は先に登録する。登録にかかる日数は未確認。
+4. 調整を申請する：ELSTERの「フォームとサービス」の一覧から「Antrag auf Anpassung von Vorauszahlungen」（前払いの調整の申請）を選び、対象の年、見込みの所得、理由を書いて送る。
 5. 結果を待つ：税務署が認めると、新しい前払いの通知が届く。届くまでは、すでに決まった前払いは払う。
 6. 翌年の申告で精算する：実際の税と払った前払いの差は、次の確定申告で精算される。
 
@@ -109,4 +109,5 @@ J-Connect編集部メンバーの実例（2026年、デュッセルドルフ近�
 - [所得税法第37条：前払いの納期、見直しの期間、最低額](https://www.gesetze-im-internet.de/estg/__37.html)（2026年11月14日確認）
 - [所得税法第46条：会社員の申告が必要な場合（410ユーロ、税区分の組み合わせ）](https://www.gesetze-im-internet.de/estg/__46.html)（2026年11月14日確認）
 - [所得税法第32b条：累進の留保](https://www.gesetze-im-internet.de/estg/__32b.html)（2026年11月14日確認）
-- [ELSTER](https://www.elster.de/)：申請フォームの名前と登録手順は、2026年11月14日にこの環境から開けず未確認
+- [ELSTER：フォームの一覧](https://www.elster.de/eportal/formulare-leistungen/alleformulare)：「Antrag auf Anpassung von Vorauszahlungen」（2026年11月15日確認）
+- [ELSTER：やさしいドイツ語の案内](https://www.elster.de/elsterweb/infoseite/leichte_sprache)：ログインにパスワードと証明書ファイルの両方が必要（2026年11月15日確認）。登録にかかる日数は未確認

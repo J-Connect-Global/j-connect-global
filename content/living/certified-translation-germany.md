@@ -7,8 +7,8 @@ summary: "出生届や住民登録、滞在許可で外国語の書類を出す�
 status: "published"
 published: true
 published_at: "2026-11-14"
-updated_at: "2026-11-14"
-last_verified: "2026-11-14"
+updated_at: "2026-11-15"
+last_verified: "2026-11-15"
 next_review: "2027-05-14"
 canonical_url: "/germany/ja/living/certified-translation-germany/"
 article_standard: "2026-11"
@@ -35,7 +35,7 @@ official_sources:
 
 - 何を：提出先が求める条件（翻訳者の資格、原本かコピーか、認証の要否）を確かめてから、州の裁判所に認定された翻訳者に頼む。
 - いつまでに：翻訳は原本がそろってから始まる。出生届のように期限が短い手続き（出生から**1週間以内**）は、出産前に翻訳まで済ませる。
-- どこで：州の司法当局の検索サイトで、言語と地域から翻訳者を探す。NRW州では、翻訳者の認定は上級地方裁判所（OLG）の長が行う。
+- どこで：州の司法当局の検索サイトで、言語と地域から翻訳者を探す。NRW州では、翻訳者の認定の申請は州内の上級地方裁判所（OLG）が受け付ける。
 - 費用と期間：料金は翻訳者ごとに違う。2〜3人に見積もりを頼み、納期とスキャン受付の可否もあわせて比べる。
 
 ![翻訳者の資格、原本かコピーか、認証の要否の3点を、翻訳を頼む前に提出先へ確認することを示した図](/assets/images/living/certified-translation-questions.svg "翻訳を頼む前に、提出先へ聞く3つのこと")
@@ -111,5 +111,5 @@ J-Connect編集部メンバーの実例（2026年、デュッセルドルフ近�
 
 - [民事訴訟法第142条第3項：認定翻訳者の翻訳と証明文](https://www.gesetze-im-internet.de/zpo/__142.html)（2026年11月14日確認）
 - [戸籍法施行令第2条：外国語の書類の翻訳](https://www.gesetze-im-internet.de/pstv/__2.html)（2026年11月14日確認）
-- [NRW州司法：通訳・翻訳者](https://www.justiz.nrw/Gerichte_Behoerden/anschriften/dolmetscher__u_uebersetzer)：認定はOLGの長が行う。2026年11月14日に検索結果で確認（原典は未確認）
-- [州司法当局の通訳・翻訳者データベース](https://www.justiz-dolmetscher.de/)：2026年11月14日に検索結果で存在を確認（原典は未確認）
+- [NRW州司法：通訳・翻訳者](https://www.justiz.nrw/Gerichte_Behoerden/anschriften/dolmetscher__u_uebersetzer)：NRW州では、翻訳者の認定（Ermächtigung）の申請と問い合わせは州内の上級地方裁判所が受け付ける。根拠はNRW州司法法第33〜39条と裁判所通訳者法（2026年11月15日確認）
+- [州司法当局の通訳・翻訳者データベース](https://www.justiz-dolmetscher.de/)：全国の認定翻訳者を、名前・地域・言語で検索できる（2026年11月15日確認）

@@ -1260,7 +1260,7 @@ function renderExperienceInvite(type, item) {
   const href = `/germany/ja/contact/?type=experience&page=${encodeURIComponent(pageUrl)}`;
   return `<aside class="article-experience-invite" aria-label="体験談の募集">
   <p class="article-experience-invite__title">この手続きの体験を教えてください</p>
-  <p>地域（例：デュッセルドルフ近郊）と時期、何を聞き、何と回答され、何日かかったかだけで十分です。編集部が事実を確認し、個人が分からない形で記事に追加します。お名前とメールアドレスは確認の連絡にだけ使い、掲載しません。</p>
+  <p>地域（例：デュッセルドルフ近郊）と時期、何を聞き、何と回答され、何日かかったかだけで十分です。編集部が事実を確認し、個人が分からない形で記事に追加します。お名前とメールアドレスは確認の連絡にだけ使い、掲載しません。掲載の基準は<a href="/germany/ja/about/editorial-policy/">編集方針</a>に書いています。</p>
   <p><a class="jc-button" href="${escapeAttribute(href)}">体験を送る</a></p>
 </aside>`;
 }

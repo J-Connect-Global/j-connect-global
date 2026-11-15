@@ -7,8 +7,8 @@ summary: "公的保険を補う歯科補助保険（Zahnzusatzversicherung）は
 status: "published"
 published: true
 published_at: "2026-11-14"
-updated_at: "2026-11-14"
-last_verified: "2026-11-14"
+updated_at: "2026-11-15"
+last_verified: "2026-11-15"
 next_review: "2027-05-14"
 canonical_url: "/germany/ja/living/dental-supplementary-insurance-germany/"
 article_standard: "2026-11"
@@ -54,7 +54,7 @@ official_sources:
 3. 日付をそろえる：契約日、歯医者で症状を初めて相談した日、診断日、治療計画（Heil- und Kostenplan）の日付、治療日を時系列に並べる。歯医者に、診療記録の該当日を確認してもらう。
 4. 異議を書面で出す：保険会社の判断のどこが約款のどの条文と合わないかを、日付を添えて書く。返答の期限（例：4週間）を書き、送った日と方法を記録する。
 5. 回答を待つ：再審査の結果が書面で届く。
-6. 納得できないとき：民間医療・介護保険のオンブズマンに相談する。費用はかからない（未確認：2026年11月14日にオンブズマンのページをこの環境から開けなかった）。
+6. 納得できないとき：民間医療・介護保険のオンブズマンに相談する。費用はかからない。
 
 ![公的保険で受けられる歯の健診とクリーニングの範囲を示した図](/assets/images/living/dentist-insurance-coverage.svg "公的保険でカバーされる範囲。補助保険はこの外側を補う。")
 
@@ -106,4 +106,4 @@ J-Connect編集部メンバーの実例（2026年、デュッセルドルフ近�
 
 - [保険契約法第197条：待機期間は一般3か月、歯の治療は8か月まで](https://www.gesetze-im-internet.de/vvg_2008/__197.html)（2026年11月14日確認）
 - [保険契約法第19条：契約前の告知義務](https://www.gesetze-im-internet.de/vvg_2008/__19.html)（2026年11月14日確認）
-- [民間医療・介護保険オンブズマン](https://www.pkv-ombudsmann.de/)：2026年11月14日にこの環境から開けず未確認
+- [民間医療・介護保険オンブズマン](https://www.pkv-ombudsmann.de/)：民間の医療・介護保険の紛争を、中立の立場で無料で調停する（2026年11月15日確認）

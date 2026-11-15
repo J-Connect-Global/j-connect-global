@@ -3,6 +3,8 @@
     "https://script.google.com/macros/s/AKfycbxwP2QkpK0-k4_WPgJ5zaHSC_I0vqytH-n3xbb62NS0XHtQVdSTyXBT2r_lyBuQcuM/exec";
   const directoryDataEndpoint = masterDataEndpoint;
   const communityDataEndpoint = masterDataEndpoint;
+  // 「ドイツの手紙AI解説」用の独立 Apps Script。デプロイ後に /exec の URL を入れる（空なら準備中表示）
+  const letterExplainerEndpoint = "";
 
   const directorySheets = Object.freeze({
     eat: "eat",
@@ -82,6 +84,7 @@
     directorySheets,
     staticData,
     communityDataEndpoint,
+    letterExplainerEndpoint,
     buildDirectoryUrl(params) {
       return buildUrl(directoryDataEndpoint, params);
     },

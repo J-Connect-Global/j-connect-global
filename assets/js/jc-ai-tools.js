@@ -416,6 +416,42 @@
     return b;
   }
 
+  // ---------- ページの共有ボタン（ツールページ用） ----------
+  function shareBar(container) {
+    var url = (document.querySelector('link[rel="canonical"]') || {}).href || window.location.href.split('?')[0];
+    var title = (document.querySelector('h1') || {}).textContent || document.title;
+    var text = title.trim() + '｜J-Connect の無料AIツール';
+    var u = encodeURIComponent(url), t = encodeURIComponent(text);
+    var bar = el('div', { class: 'jcai-share jcai-noprint', role: 'group', 'aria-label': 'このツールを共有' });
+    bar.appendChild(el('span', { class: 'jcai-share-label' }, 'このツールを共有：'));
+    var services = [
+      ['X', 'https://twitter.com/intent/tweet?text=' + t + '&url=' + u],
+      ['Facebook', 'https://www.facebook.com/sharer/sharer.php?u=' + u],
+      ['LINE', 'https://social-plugins.line.me/lineit/share?url=' + u],
+      ['WhatsApp', 'https://wa.me/?text=' + encodeURIComponent(text + ' ' + url)],
+      ['メール', 'mailto:?subject=' + t + '&body=' + encodeURIComponent(text + '\n' + url)]
+    ];
+    services.forEach(function (sv) {
+      var a = el('a', { class: 'jcai-share-btn', href: sv[1], target: sv[0] === 'メール' ? '_self' : '_blank', rel: 'noopener noreferrer' }, sv[0]);
+      bar.appendChild(a);
+    });
+    var copyBtn = el('button', { type: 'button', class: 'jcai-share-btn' }, 'リンクをコピー');
+    copyBtn.addEventListener('click', function () {
+      if (navigator.clipboard) navigator.clipboard.writeText(url).then(function () { copyBtn.textContent = 'コピーしました'; setTimeout(function () { copyBtn.textContent = 'リンクをコピー'; }, 2000); });
+    });
+    bar.appendChild(copyBtn);
+    if (navigator.share) {
+      var nativeBtn = el('button', { type: 'button', class: 'jcai-share-btn' }, 'その他のアプリ');
+      nativeBtn.addEventListener('click', function () { navigator.share({ title: text, url: url }).catch(function () {}); });
+      bar.appendChild(nativeBtn);
+    }
+    container.appendChild(bar);
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('[data-jcai-share]').forEach(function (n) { shareBar(n); });
+  });
+  if (document.readyState !== 'loading') document.querySelectorAll('[data-jcai-share]').forEach(function (n) { if (!n.childElementCount) shareBar(n); });
+
   window.JCAI = {
     ready: Boolean(ENDPOINT),
     el: el, status: status, post: post, copy: copy, reveal: reveal,

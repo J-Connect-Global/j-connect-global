@@ -469,7 +469,8 @@ function renderSitemap(entries) {
 const staticJobsPublicPaths = new Set([
   "/germany/ja/jobs/",
   "/germany/ja/jobs/posting/",
-  "/germany/ja/jobs/guide/"
+  "/germany/ja/jobs/guide/",
+  "/germany/ja/jobs/for-employers/"
 ]);
 
 function isGeneratedDetailSitemapEntry(url) {

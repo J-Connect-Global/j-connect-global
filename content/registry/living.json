@@ -1894,8 +1894,8 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-11-14",
-    "last_verified": "2026-11-14",
+    "updated_at": "2026-11-15",
+    "last_verified": "2026-11-15",
     "tags": [
       "妊娠",
       "出産",
@@ -1945,7 +1945,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-11-14",
+      "last_reviewed_at": "2026-11-15",
       "next_review_due": "2027-02-14"
     }
   },
@@ -6528,15 +6528,15 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：法令・公的機関の原典で確認。未確認の点は記事内に明記",
-      "last_reviewed_at": "2026-11-14",
+      "last_reviewed_at": "2026-11-15",
       "next_review_due": "2027-05-14"
     },
     "title": "会社員に前払い税（Vorauszahlung）の通知が来たら｜年4回の納期とELSTERで調整を申請する手順【2026年】",
     "category": "お金・税金",
     "summary": "給与から税金が引かれている会社員でも、確定申告で追加の納税が出ると、税務署から所得税の前払い（Vorauszahlung）を求められることがあります。3月・6月・9月・12月の各10日の納期、収入が減ったときにELSTERで調整を申請する流れ、そのまま使えるドイツ語を、2026年に編集部が申請した記録とともに整理します。",
     "published_at": "2026-11-14",
-    "updated_at": "2026-11-14",
-    "last_verified": "2026-11-14",
+    "updated_at": "2026-11-15",
+    "last_verified": "2026-11-15",
     "next_review": "2027-05-14",
     "canonical_url": "/germany/ja/living/income-tax-prepayment-germany/",
     "tags": [
@@ -6646,15 +6646,15 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：法令・公的機関の原典で確認。未確認の点は記事内に明記",
-      "last_reviewed_at": "2026-11-14",
+      "last_reviewed_at": "2026-11-15",
       "next_review_due": "2027-05-14"
     },
     "title": "出産前に家族が受ける予防接種（ドイツ）｜父親はかかりつけ医で、百日咳は出産4週間前までに【2026年 編集部の記録】",
     "category": "家族・子育て",
     "summary": "生まれたばかりの赤ちゃんは百日咳にかかると重くなりやすく、ドイツでは同居する家族も出産の4週間前までに接種することが公的保険の予防接種指針に書かれています。父親はどこで受けるのか、何を受けるのか、予約のドイツ語を、2026年に編集部の父親がかかりつけ医で接種した記録とともに整理します。",
     "published_at": "2026-11-14",
-    "updated_at": "2026-11-14",
-    "last_verified": "2026-11-14",
+    "updated_at": "2026-11-15",
+    "last_verified": "2026-11-15",
     "next_review": "2027-05-14",
     "canonical_url": "/germany/ja/living/family-vaccination-before-birth-germany/",
     "tags": [

@@ -7,8 +7,8 @@ summary: "生まれたばかりの赤ちゃんは百日咳にかかると重く�
 status: "published"
 published: true
 published_at: "2026-11-14"
-updated_at: "2026-11-14"
-last_verified: "2026-11-14"
+updated_at: "2026-11-15"
+last_verified: "2026-11-15"
 next_review: "2027-05-14"
 canonical_url: "/germany/ja/living/family-vaccination-before-birth-germany/"
 article_standard: "2026-11"
@@ -103,4 +103,4 @@ J-Connect編集部メンバーの実例（2026年、デュッセルドルフ近�
 
 - [G-BA 予防接種指針（2026年10月29日施行）](https://www.g-ba.de/richtlinien/60/)：百日咳（妊婦、同居の家族・世話をする人）、インフルエンザ（妊婦、持病のある人の同居家族）、はしか（1970年以降生まれの大人）（2026年11月14日確認）
 - [社会法典第5編第20i条：予防接種の給付](https://www.gesetze-im-internet.de/sgb_5/__20i.html)（2026年11月14日確認）
-- [ロベルト・コッホ研究所：予防接種委員会（STIKO）](https://www.rki.de/DE/Themen/Infektionskrankheiten/Impfen/STIKO/stiko_node.html)：推奨の原典は2026年11月14日にこの環境から開けず未確認
+- [ロベルト・コッホ研究所：百日咳の予防接種のQ&A](https://www.rki.de/SharedDocs/FAQs/DE/Impfen/Pertussis/FAQ-Liste_Pertussis_Impfen.html)：同居の家族と世話をする人は、過去10年に接種していなければ、できれば出産の4週間前までに接種。妊婦は妊娠後期（第3三半期）のできるだけ早い時期に（2026年11月15日確認）

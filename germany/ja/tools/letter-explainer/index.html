@@ -333,8 +333,33 @@ textarea:focus{
 .le-radio,.le-consent{font-weight:400;display:flex;gap:8px;align-items:flex-start}
 .le-consent{font-size:14px;margin:14px 0}
 #fileField,#textField{margin-bottom:14px}
-.le-result{margin-top:22px}
-.le-result .panel{max-width:860px}
+.le-result{margin-top:22px;scroll-margin-top:96px}
+.le-result.is-entering .le-ai-panel{opacity:0;transform:translateY(16px)}
+.le-ai-panel{transition:opacity .6s ease,transform .6s ease;background:linear-gradient(180deg,#eef5ff 0%,#f6f9fe 100%);border:1px solid #cfe0f5;border-radius:24px;padding:24px;box-shadow:0 10px 24px rgba(30,58,95,.07)}
+.le-ai-head{display:flex;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap}
+.le-ai-avatar{flex:0 0 auto;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#0067c9;color:#fff}
+.le-ai-label{margin:0;font-weight:800;color:#0b3a6e;font-size:18px}
+.le-ai-sub{margin:2px 0 0;font-size:13px;color:#4f5f70}
+.le-ai-head .le-badge{margin:0 0 0 auto}
+.le-card{background:#fff;border:1px solid #dde8f5;border-radius:16px;padding:18px 20px;margin-top:14px}
+.le-card h3{margin:0 0 10px;font-size:18px;color:#0b3a6e;padding-left:10px;border-left:4px solid #0067c9}
+.le-card-main h2{margin:0 0 6px;font-size:clamp(22px,3vw,30px);color:#0b3a6e}
+.le-sender{margin:0 0 10px;font-size:13px;color:#4f5f70}
+.le-summary{margin:0;font-size:17px;line-height:1.8;color:#1f2d3d}
+.le-urgency-reason{margin:10px 0 0;font-size:14px;color:#4f5f70}
+.le-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.le-grid .le-card{margin-top:14px}
+.le-list{margin:0;padding-left:20px;line-height:1.8}
+.le-list li+li{margin-top:6px}
+.le-steps{margin:0;padding:0;list-style:none;counter-reset:step}
+.le-steps li{position:relative;padding:0 0 12px 40px;counter-increment:step;line-height:1.7}
+.le-steps li::before{content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:#0067c9;color:#fff;font-weight:700;display:grid;place-items:center;font-size:14px}
+.le-steps strong{display:block;color:#0b3a6e}
+.le-prose{margin:0;line-height:1.85;white-space:pre-wrap}
+.le-card-warn{background:#fffaf0;border-color:#f1dfb5}
+.le-card-warn h3{border-left-color:#e0a800}
+.le-disclaimer{margin:16px 0 0;font-size:12.5px;color:#5c6b7a;line-height:1.7}
+@media (max-width:760px){.le-grid{grid-template-columns:1fr}.le-ai-panel{padding:16px}.le-ai-head .le-badge{margin-left:0}}
 .le-badge{display:inline-block;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700;margin-bottom:10px}
 .le-badge.high{background:#fde8eb;color:#9d2235}
 .le-badge.medium{background:#fff4dc;color:#7a5200}
@@ -474,7 +499,7 @@ textarea:focus{
           <div class="field full" id="fileField">
             <label for="letterFile">手紙の写真またはPDF（約5MBまで）</label>
             <input class="input" id="letterFile" type="file" accept="image/jpeg,image/png,image/webp,application/pdf">
-            <p class="note">名前・住所・口座番号などは、ペンや画像編集で隠してから撮ると安心です。手紙全体が写るよう、明るい場所でまっすぐ撮ってください。</p>
+            <p class="note">念のため、名前・住所・口座番号などは、ペンや画像編集で隠してから撮ると安心です。手紙全体が写るよう、明るい場所でまっすぐ撮ってください。</p>
           </div>
 
           <div class="field full" id="textField" hidden>
@@ -487,7 +512,7 @@ textarea:focus{
             <input class="input" id="letterNote" type="text" maxlength="500" placeholder="例：先月引っ越しました／2枚目もあります">
           </div>
 
-          <label class="le-consent"><input type="checkbox" id="letterConsent"> 送信した内容が解説の作成のためだけに AI 事業者（OpenAI、米国）へ送られることに同意します（<a href="/germany/ja/privacy/#p5">詳細</a>）。</label>
+          <label class="le-consent"><input type="checkbox" id="letterConsent"><span>送信した内容が解説の作成のためだけに AI 事業者（OpenAI、米国）へ送られること、および下の「利用上の注意」に同意します（<a href="/germany/ja/privacy/#p5">プライバシーポリシー</a>）。</span></label>
 
           <button class="submit" id="submitButton" type="submit">AIで解説する</button>
           <div class="status-box" id="formStatus" aria-live="polite"></div>
@@ -495,27 +520,47 @@ textarea:focus{
       </aside>
     </section>
 
-    <section class="le-result" id="letterResult" hidden aria-live="polite">
-      <div class="panel">
-        <div class="le-badge" id="resUrgency"></div>
-        <h2 id="resType"></h2>
-        <p class="note" id="resSender"></p>
-        <p id="resSummary"></p>
-        <p class="note" id="resUrgencyReason"></p>
-        <div id="resDeadlinesWrap"><h3>期限</h3><ul class="list" id="resDeadlines"></ul></div>
-        <div id="resAmountsWrap"><h3>金額</h3><ul class="list" id="resAmounts"></ul></div>
-        <div id="resActionsWrap"><h3>やること</h3><ol class="list" id="resActions"></ol></div>
-        <div id="resDocsWrap"><h3>準備するもの</h3><ul class="list" id="resDocs"></ul></div>
-        <div id="resTermsWrap"><h3>重要なドイツ語</h3><dl class="le-terms" id="resTerms"></dl></div>
-        <div id="resReplyWrap">
+    <section class="le-result" id="letterResult" hidden aria-live="polite" tabindex="-1">
+      <div class="le-ai-panel">
+        <div class="le-ai-head">
+          <div class="le-ai-avatar" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 4v4"/><circle cx="12" cy="3.5" r="1"/><circle cx="9" cy="13.5" r="1.3" fill="currentColor"/><circle cx="15" cy="13.5" r="1.3" fill="currentColor"/><path d="M2 12v3M22 12v3"/></svg>
+          </div>
+          <div>
+            <p class="le-ai-label">AIによる解説</p>
+            <p class="le-ai-sub">自動で作成した参考情報です。期限・金額は必ず原本で確認してください。</p>
+          </div>
+          <div class="le-badge" id="resUrgency"></div>
+        </div>
+
+        <div class="le-card le-card-main">
+          <h2 id="resType"></h2>
+          <p class="le-sender" id="resSender"></p>
+          <p class="le-summary" id="resSummary"></p>
+          <p class="le-urgency-reason" id="resUrgencyReason"></p>
+        </div>
+
+        <div class="le-grid">
+          <div class="le-card" id="resDeadlinesWrap"><h3>期限</h3><ul class="le-list" id="resDeadlines"></ul></div>
+          <div class="le-card" id="resAmountsWrap"><h3>金額</h3><ul class="le-list" id="resAmounts"></ul></div>
+        </div>
+
+        <div class="le-card" id="resActionsWrap"><h3>やること（手順）</h3><ol class="le-steps" id="resActions"></ol></div>
+        <div class="le-card" id="resDetailsWrap"><h3>手紙に書かれている内容</h3><p class="le-prose" id="resDetails"></p></div>
+        <div class="le-card" id="resFactsWrap"><h3>読み取れた主な情報</h3><dl class="le-terms" id="resFacts"></dl></div>
+        <div class="le-card" id="resBackgroundWrap"><h3>この手紙の背景（一般的な説明）</h3><p class="le-prose" id="resBackground"></p></div>
+        <div class="le-card" id="resDocsWrap"><h3>準備するもの</h3><ul class="le-list" id="resDocs"></ul></div>
+        <div class="le-card le-card-warn" id="resIgnoredWrap"><h3>対応しないとどうなるか</h3><p class="le-prose" id="resIgnored"></p></div>
+        <div class="le-card" id="resTermsWrap"><h3>重要なドイツ語</h3><dl class="le-terms" id="resTerms"></dl></div>
+        <div class="le-card" id="resReplyWrap">
           <h3>返信文の下書き（ドイツ語）</h3>
           <pre class="le-reply" id="resReplyDe"></pre>
           <button type="button" class="le-copy" id="copyReply">ドイツ語をコピー</button>
           <h3>日本語訳</h3>
           <pre class="le-reply" id="resReplyJa"></pre>
         </div>
-        <div id="resCautionWrap" class="le-caution"><h3>注意点</h3><p id="resCaution"></p></div>
-        <p class="note">AIによる自動の解説です。誤りが含まれることがあります。期限・金額は必ず原本で確認し、法律・税務の判断が必要な場合は専門家や発行元に相談してください。</p>
+        <div class="le-card le-card-warn" id="resCautionWrap"><h3>注意点・確認が必要なこと</h3><p class="le-prose" id="resCaution"></p></div>
+        <p class="le-disclaimer">この解説はAIが自動で作成したもので、正確性・完全性を保証するものではありません。解説をもとにした判断の結果について、運営者は責任を負いません（法令上責任を免れない場合を除きます）。法律・税務の判断が必要な場合は、専門家や発行元に相談してください。</p>
       </div>
     </section>
 
@@ -544,8 +589,9 @@ textarea:focus{
         <ul class="list">
           <li>このツールは内容の理解を助けるものです。法律相談・税務相談ではありません。</li>
           <li>督促（Mahnung）、裁判所、罰金（Bußgeld）、異議申し立ての期限がある手紙は、早めに発行元・専門家・消費者センター（Verbraucherzentrale）に相談してください。</li>
-          <li>送信内容は解説の作成のためだけに OpenAI の API に送られ、J-Connect のサーバーやスプレッドシートには保存しません。</li>
+          <li>送信内容は解説の作成のためだけに OpenAI の API に送られ、J-Connect では保存しません。</li>
           <li>利用が集中した場合は、1日の上限に達して使えないことがあります。</li>
+          <li><strong>免責：</strong>解説はAIが自動で作成したもので、内容の正確性・完全性・最新性を保証するものではありません。解説をもとに行った判断や手続きの結果、生じた損害・不利益について、運営者は責任を負いません（法令上責任を免れない場合を除きます）。期限・金額・手続きは、必ず原本と発行元で確認してください。</li>
         </ul>
         <h3>よくある質問</h3>
         <p><strong>無料ですか？</strong><br>はい、無料です。登録も不要です。</p>
@@ -668,38 +714,70 @@ textarea:focus{
       el.parentElement.hidden = !(items && items.length);
     }
 
+    function setText(id, text, wrapId) {
+      document.getElementById(id).textContent = text || '';
+      if (wrapId) document.getElementById(wrapId).hidden = !text;
+    }
+
+    function fillDl(id, items, keyA, keyB, wrapId) {
+      var dl = document.getElementById(id);
+      dl.textContent = '';
+      (items || []).forEach(function (t) {
+        var dt = document.createElement('dt'); dt.textContent = t[keyA];
+        var dd = document.createElement('dd'); dd.textContent = t[keyB];
+        dl.appendChild(dt); dl.appendChild(dd);
+      });
+      document.getElementById(wrapId).hidden = !(items && items.length);
+    }
+
     function render(r) {
       var labels = { high: '緊急度：高（早めに対応）', medium: '緊急度：中', low: '緊急度：低' };
       var badge = document.getElementById('resUrgency');
       badge.className = 'le-badge ' + r.urgency;
       badge.textContent = labels[r.urgency] || '';
-      document.getElementById('resType').textContent = r.document_type || '解説結果';
-      document.getElementById('resSender').textContent = r.sender ? '差出人：' + r.sender : '';
-      document.getElementById('resSummary').textContent = r.summary || '';
-      document.getElementById('resUrgencyReason').textContent = r.urgency_reason || '';
+      setText('resType', r.document_type || '解説結果');
+      setText('resSender', r.sender ? '差出人：' + r.sender : '');
+      setText('resSummary', r.summary);
+      setText('resUrgencyReason', r.urgency_reason);
       fillList('resDeadlines', r.deadlines, function (d) { return d.date + '：' + d.what; });
       fillList('resAmounts', r.amounts, function (a) { return a.amount + '：' + a.what; });
-      fillList('resActions', r.actions, function (a) { return a; });
-      fillList('resDocs', r.documents_needed, function (a) { return a; });
+      document.getElementById('resDeadlinesWrap').parentElement.hidden = !((r.deadlines || []).length || (r.amounts || []).length);
 
-      var terms = document.getElementById('resTerms');
-      terms.textContent = '';
-      (r.key_terms || []).forEach(function (t) {
-        var dt = document.createElement('dt'); dt.textContent = t.de;
-        var dd = document.createElement('dd'); dd.textContent = t.ja;
-        terms.appendChild(dt); terms.appendChild(dd);
+      var steps = document.getElementById('resActions');
+      steps.textContent = '';
+      (r.actions || []).forEach(function (a) {
+        var li = document.createElement('li');
+        var title = document.createElement('strong');
+        title.textContent = typeof a === 'string' ? a : a.title;
+        li.appendChild(title);
+        if (a && a.detail) li.appendChild(document.createTextNode(a.detail));
+        steps.appendChild(li);
       });
-      document.getElementById('resTermsWrap').hidden = !(r.key_terms && r.key_terms.length);
+      document.getElementById('resActionsWrap').hidden = !(r.actions && r.actions.length);
+
+      setText('resDetails', r.details, 'resDetailsWrap');
+      fillDl('resFacts', r.key_facts, 'label', 'value', 'resFactsWrap');
+      setText('resBackground', r.background, 'resBackgroundWrap');
+      fillList('resDocs', r.documents_needed, function (a) { return a; });
+      setText('resIgnored', r.if_ignored, 'resIgnoredWrap');
+      fillDl('resTerms', r.key_terms, 'de', 'ja', 'resTermsWrap');
 
       var hasReply = r.reply_needed && r.reply_draft_de;
       document.getElementById('resReplyWrap').hidden = !hasReply;
-      document.getElementById('resReplyDe').textContent = r.reply_draft_de || '';
-      document.getElementById('resReplyJa').textContent = r.reply_draft_ja || '';
-      document.getElementById('resCautionWrap').hidden = !r.caution;
-      document.getElementById('resCaution').textContent = r.caution || '';
+      setText('resReplyDe', r.reply_draft_de);
+      setText('resReplyJa', r.reply_draft_ja);
+      setText('resCaution', r.caution, 'resCautionWrap');
 
+      resultBox.classList.add('is-entering');
       resultBox.hidden = false;
-      resultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { resultBox.classList.remove('is-entering'); });
+      });
+      setTimeout(function () {
+        resultBox.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+        resultBox.focus({ preventScroll: true });
+      }, 150);
     }
 
     document.getElementById('copyReply').addEventListener('click', function () {

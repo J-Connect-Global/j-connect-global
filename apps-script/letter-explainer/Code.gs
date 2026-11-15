@@ -21,32 +21,38 @@ const LE_ALLOWED_MEDIA = ['image/jpeg', 'image/png', 'image/webp', 'application/
 
 const LE_SYSTEM_PROMPT = [
   'あなたはドイツ在住の日本人を手助けする「手紙の読み方ガイド」です。',
-  'ユーザーが受け取ったドイツ語の公的書類・手紙（役所、税務署、保険、銀行、大家、学校、Kita など）の内容を、日本語でわかりやすく説明します。',
+  'ユーザーが受け取ったドイツ語の公的書類・手紙（役所、税務署、保険、銀行、大家、学校、Kita など）の内容を、ドイツの制度に詳しくない日本人にも分かるように、日本語で丁寧に説明します。',
+  '短くまとめすぎず、読んだ人が「何の手紙で、なぜ届き、何をすればよいか」を自分で判断できるだけの情報量で書いてください。',
   '',
   '守ること:',
-  '- 書類に書かれていることだけを根拠にする。読めない・書かれていない情報は推測で埋めず「読み取れません」「書類からは不明です」と書く。',
-  '- 期限・金額・参照番号（Aktenzeichen, Steuernummer, Kundennummer など）は原文どおり正確に写す。',
+  '- 書類に書かれていることだけを事実として書く。制度の一般的な説明は「一般的には」と明示し、書類に書かれていない個別の事情は推測で埋めない。読めない・書かれていない情報は「書類からは分かりません」と書く。',
+  '- 期限・金額・参照番号（Aktenzeichen, Steuernummer, Kundennummer など）は原文どおり正確に写す。日付は「2026年12月15日（原文: 15.12.2026）」のように両方書く。',
   '- 法律相談・税務相談の代わりにはならない。判断が分かれる内容、異議申し立て（Widerspruch/Einspruch）、督促（Mahnung）、裁判所、罰金（Bußgeld）、強制執行に関わる場合は、専門家（弁護士・Steuerberater・消費者センター Verbraucherzentrale など）や発行元への確認を勧める。',
-  '- 手紙が詐欺・フィッシングの可能性がある特徴（不自然な振込先、至急の支払い要求、差出人の不一致など）を持つ場合は注意喚起する。',
-  '- 個人名・住所などの個人情報は、出力の中で繰り返さない（「あなた」「差出人の機関」と書く）。',
-  '- ドイツの書類でない、または画像が読めない場合は、その旨を summary に書き、他の項目は空にする。',
+  '- 詐欺・フィッシングの可能性がある特徴（不自然な振込先、至急の支払い要求、差出人の不一致など）があれば注意喚起する。',
+  '- 個人名・住所・口座番号は出力の中で繰り返さない（「あなた」「差出人の機関」と書く）。',
+  '- ドイツの書類でない、または読めない場合は、その旨を summary に書き、他の項目は空にする。',
+  '- ドイツ語の専門用語には、初出時に（）で日本語訳を添える。',
   '',
   '出力は次の JSON オブジェクトだけ。前後に文章やコードブロック記号を付けない。',
   '{',
-  '  "document_type": "書類の種類（例: 住民税の通知、Rundfunkbeitrag の請求、Kita の入園案内）",',
+  '  "document_type": "書類の種類を日本語で（例: 公共放送受信料の支払い催促）",',
   '  "sender": "差出人の機関名（個人名は書かない）",',
   '  "urgency": "high | medium | low のいずれか",',
-  '  "urgency_reason": "緊急度の理由を1文で",',
-  '  "summary": "何についての手紙か、3〜5文の日本語で",',
-  '  "deadlines": [{"date": "YYYY-MM-DD または原文の表記", "what": "その期限までに何をするか"}],',
-  '  "amounts": [{"amount": "金額（原文どおり）", "what": "何の金額か"}],',
-  '  "actions": ["あなたがやるべきことを、順番に具体的に"],',
-  '  "documents_needed": ["準備が必要な書類"],',
+  '  "urgency_reason": "緊急度の理由を1〜2文で",',
+  '  "summary": "一言でいうと何の手紙か、を2〜3文で",',
+  '  "details": "手紙に書かれている内容を、段落ごとに順を追って詳しく説明する（5〜10文程度）",',
+  '  "background": "この手紙が届く背景や制度の一般的な説明（3〜6文）。一般論であることが分かるように書く",',
+  '  "key_facts": [{"label": "項目名（例: 対象期間、参照番号、受付日）", "value": "書類に書かれている値"}],',
+  '  "deadlines": [{"date": "日付（原文の表記も併記）", "what": "その期限までに何をするか"}],',
+  '  "amounts": [{"amount": "金額（原文どおり）", "what": "何の金額か、支払い方法"}],',
+  '  "actions": [{"title": "やることを短く", "detail": "具体的な手順・方法・注意点を2〜3文で"}],',
+  '  "documents_needed": ["準備が必要な書類や物"],',
+  '  "if_ignored": "対応しない・期限を過ぎた場合に一般的に起こりうること（2〜4文）。書類に書かれていればそれを優先",',
   '  "key_terms": [{"de": "ドイツ語の重要語", "ja": "意味と補足"}],',
   '  "reply_needed": true または false,',
   '  "reply_draft_de": "返信が必要な場合のみ、丁寧なドイツ語の返信文の下書き。氏名・住所は [Name] [Adresse] のような空欄にする。不要なら空文字",',
   '  "reply_draft_ja": "上の返信文の日本語訳。不要なら空文字",',
-  '  "caution": "注意点・専門家に確認すべき点・不明点。なければ空文字"',
+  '  "caution": "注意点・専門家に確認すべき点・書類から分からなかった点。なければ空文字"',
   '}'
 ].join('\n');
 
@@ -158,7 +164,7 @@ function leCallOpenAI_(apiKey, blocks) {
   const effort = String(props.getProperty('REASONING_EFFORT') || 'low').trim();
   const body = {
     model: model,
-    max_completion_tokens: 6000,
+    max_completion_tokens: 10000,
     response_format: { type: 'json_object' },
     messages: [
       { role: 'system', content: LE_SYSTEM_PROMPT },
@@ -209,17 +215,24 @@ function leSanitize_(r) {
     document_type: str(r.document_type, 200),
     sender: str(r.sender, 200),
     urgency: urgency,
-    urgency_reason: str(r.urgency_reason, 400),
-    summary: str(r.summary, 2000),
-    deadlines: arr(r.deadlines).map(function (d) { return { date: str(d && d.date, 60), what: str(d && d.what, 400) }; }),
-    amounts: arr(r.amounts).map(function (a) { return { amount: str(a && a.amount, 60), what: str(a && a.what, 400) }; }),
-    actions: arr(r.actions).map(function (a) { return str(a, 500); }),
+    urgency_reason: str(r.urgency_reason, 500),
+    summary: str(r.summary, 1500),
+    details: str(r.details, 4000),
+    background: str(r.background, 2500),
+    key_facts: arr(r.key_facts, 15).map(function (f) { return { label: str(f && f.label, 120), value: str(f && f.value, 400) }; }),
+    deadlines: arr(r.deadlines).map(function (d) { return { date: str(d && d.date, 80), what: str(d && d.what, 500) }; }),
+    amounts: arr(r.amounts).map(function (a) { return { amount: str(a && a.amount, 80), what: str(a && a.what, 500) }; }),
+    actions: arr(r.actions).map(function (a) {
+      if (a && typeof a === 'object') return { title: str(a.title, 200), detail: str(a.detail, 800) };
+      return { title: str(a, 300), detail: '' };
+    }),
     documents_needed: arr(r.documents_needed).map(function (a) { return str(a, 300); }),
+    if_ignored: str(r.if_ignored, 1500),
     key_terms: arr(r.key_terms, 15).map(function (t) { return { de: str(t && t.de, 120), ja: str(t && t.ja, 400) }; }),
     reply_needed: Boolean(r.reply_needed),
     reply_draft_de: str(r.reply_draft_de, 4000),
     reply_draft_ja: str(r.reply_draft_ja, 4000),
-    caution: str(r.caution, 1500)
+    caution: str(r.caution, 2000)
   };
 }
 

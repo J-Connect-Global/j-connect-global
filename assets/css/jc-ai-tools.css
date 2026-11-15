@@ -151,3 +151,10 @@
 :root[data-theme="dark"] .jcai-toggle{color:#cfe3ff}
 :root[data-theme="dark"] .jcai-related-item{background:#0f1d2e;border-color:#2a3f58}
 :root[data-theme="dark"] .jcai-related-item span{color:#b8c6d6}
+
+.jcai-share{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.jcai-share-label{font-size:13px;font-weight:700;color:#4f5f70}
+.jcai-share-btn{display:inline-block;border:1px solid #c9dcf3;background:#fff;color:#0b3a6e;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700;text-decoration:none!important;cursor:pointer}
+.jcai-share-btn:hover{background:#eef5ff}
+:root[data-theme="dark"] .jcai-share-btn{background:#132235;border-color:#3d5a7d;color:#cfe3ff}
+:root[data-theme="dark"] .jcai-share-label{color:#b8c6d6}

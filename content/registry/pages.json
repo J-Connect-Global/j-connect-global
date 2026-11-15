@@ -663,6 +663,31 @@
     ]
   },
   {
+    "id": "page-jobs-for-employers",
+    "title": "日本人を採用するときの滞在許可と手続き｜採用担当者向け",
+    "url": "/germany/ja/jobs/for-employers/",
+    "type": "utility",
+    "pillar": "jobs",
+    "status": "published",
+    "canonical_url": "/germany/ja/jobs/for-employers/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "ドイツの会社が日本国籍の人を採用するときの滞在許可の種類、連邦雇用庁の同意、採用から入社までの流れを、条文とあわせて整理した採用担当者向けのページです。",
+    "lastmod": "2026-11-15",
+    "tags": [
+      "採用",
+      "滞在許可",
+      "採用担当者",
+      "日本人採用"
+    ]
+  },
+  {
     "id": "page-job-sales-assistant-japanese-duesseldorf",
     "title": "営業アシスタント（日本語対応）",
     "url": "/germany/ja/jobs/sales-assistant-japanese-duesseldorf/",

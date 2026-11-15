@@ -1273,17 +1273,60 @@ const LETTER_TOOL_CTA_SLUGS = new Set([
   'kita-u3-tagesmutter-guide'
 ]);
 
+// Life-event articles point to the procedure navi; every other living article
+// points to the article-based AI Q&A, so each article shows exactly one AI card.
+const NAVI_TOOL_CTA_SLUGS = new Set([
+  'germany-first-30-days',
+  'pregnancy-birth-germany',
+  'birth-procedures-germany',
+  'birth-day-germany',
+  'birth-registration-foreign-spouse-germany',
+  'kindergeld-auszahlungstermine-2027',
+  'returning-to-japan-checklist',
+  'leaving-japan-before-moving-germany',
+  'moving-checklist-germany'
+]);
+
+const AI_TOOL_CTAS = {
+  letter: {
+    label: '手紙AI解説ツールの案内',
+    title: '役所や会社から手紙が届いたら',
+    desc: '写真を撮るだけで、AIが「何の手紙か・いつまでに何をするか」を日本語で整理します。無料・登録不要。',
+    button: '手紙をAIで解説する',
+    href: '/germany/ja/tools/letter-explainer/',
+    icon: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>'
+  },
+  navi: {
+    label: '手続きナビの案内',
+    title: '自分に必要な手続きを、チェックリストに',
+    desc: '状況を選ぶだけで、AIが時期ごとの手続きと期限の目安をまとめます。関連記事へのリンク付き。無料・登録不要。',
+    button: '手続きナビを使う',
+    href: '/germany/ja/tools/navi/',
+    icon: '<path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/>'
+  },
+  ask: {
+    label: 'J-Connect AIへの質問の案内',
+    title: 'この記事で分からないことは、AIに質問',
+    desc: 'J-Connectの記事をもとに、AIが日本語で答えます。根拠の記事リンク付き。無料・登録不要。',
+    button: 'AIに質問する',
+    href: '/germany/ja/tools/ask/',
+    icon: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5"/><path d="M12 16h.01"/>'
+  }
+};
+
 function renderLetterToolCta(type, item) {
-  if (type !== 'living' || !LETTER_TOOL_CTA_SLUGS.has(item.slug)) return '';
-  return `<aside class="letter-tool-cta" aria-label="手紙AI解説ツールの案内">
+  if (type !== 'living') return '';
+  const kind = LETTER_TOOL_CTA_SLUGS.has(item.slug) ? 'letter' : (NAVI_TOOL_CTA_SLUGS.has(item.slug) ? 'navi' : 'ask');
+  const cta = AI_TOOL_CTAS[kind];
+  return `<aside class="letter-tool-cta" aria-label="${cta.label}">
   <div class="letter-tool-cta__icon" aria-hidden="true">
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${cta.icon}</svg>
   </div>
   <div class="letter-tool-cta__text">
-    <p class="letter-tool-cta__title">役所や会社から手紙が届いたら</p>
-    <p class="letter-tool-cta__desc">写真を撮るだけで、AIが「何の手紙か・いつまでに何をするか」を日本語で整理します。無料・登録不要。</p>
+    <p class="letter-tool-cta__title">${cta.title}</p>
+    <p class="letter-tool-cta__desc">${cta.desc}</p>
   </div>
-  <a class="letter-tool-cta__button" href="/germany/ja/tools/letter-explainer/">手紙をAIで解説する</a>
+  <a class="letter-tool-cta__button" href="${cta.href}">${cta.button}</a>
 </aside>`;
 }
 

@@ -1086,5 +1086,30 @@
       "掲示板",
       "非公開会話"
     ]
+  },
+  {
+    "id": "page-tools-letter-explainer",
+    "title": "ドイツの手紙AI解説",
+    "url": "/germany/ja/tools/letter-explainer/",
+    "type": "utility",
+    "pillar": "living",
+    "status": "published",
+    "canonical_url": "/germany/ja/tools/letter-explainer/",
+    "nav_visible": false,
+    "footer_visible": false,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "legacy": false,
+    "redirect_target": "",
+    "layout": "utility",
+    "hero_type": "utility",
+    "description": "役所・税務署・保険などから届いたドイツ語の手紙を、写真やPDFからAIが日本語で解説するツールです。",
+    "tags": [
+      "手紙",
+      "役所",
+      "AI",
+      "翻訳",
+      "手続き"
+    ]
   }
 ]

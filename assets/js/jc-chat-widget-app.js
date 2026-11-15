@@ -10,7 +10,7 @@
   if (window.__jcChatWidget) return;
   window.__jcChatWidget = true;
 
-  var VERSION = '20261115d';
+  var VERSION = '20261115e';
   var STATE_KEY = 'jcChatWidgetState';   // 'open' | 'min'
   var LOG_KEY = 'jcChatWidgetLog';
   var QUOTA_KEY = 'jcChatWidgetQuota';
@@ -427,6 +427,8 @@
     var wide = window.matchMedia && window.matchMedia('(min-width: 768px)').matches;
     if (state === 'open') { setOpen(true, false); return; }
     if (state === 'min') return;
+    // 操作ボタンが多いページ（暗記カード・AIツール・投稿フォームなど）では自動で開かない
+    if (/\/learn-german\/flashcards\/|\/tools\/.|\/community\/(post|contact|report|manage|delete|complete)|\/contact\//.test(location.pathname)) return;
     // 初めての訪問：Cookieの案内が閉じられてから表示する
     var tries = 0;
     (function waitBanner() {

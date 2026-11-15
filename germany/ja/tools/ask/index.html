@@ -478,18 +478,18 @@ textarea:focus{
 <!-- LAYOUT:ja-header:end -->
 
   <main id="main-content" tabindex="-1" class="wrap jcai-main">
-    <section class="jcai-hero">
-      <div class="hero-main">
-        <div class="eyebrow">AI Q&amp;A</div>
-        <h1>ドイツ生活の疑問を、J-Connect AIに質問</h1>
-        <p class="lead">ドイツでの手続きや制度について日本語で質問すると、AIがJ-Connectの記事を探して、その内容をもとに答えます。答えの根拠になった記事へのリンクも表示します。</p>
-        <div class="quick-grid"><div class="mini"><strong>1. 質問する</strong><br>普段の言葉でOK。</div><div class="mini"><strong>2. 記事を探す</strong><br>関連する記事をAIが読みます。</div><div class="mini"><strong>3. 根拠つきで回答</strong><br>元の記事へのリンク付き。</div><div class="mini"><strong>無料・登録不要</strong><br>入力内容は保存しません。</div></div>
-      </div>
-      <aside class="jcai-panel">
-        <h2>AIに質問する</h2>
+    <section class="jcai-head">
+      <div class="eyebrow">AI Q&amp;A</div>
+      <h1>ドイツ生活の疑問を、J-Connect AIに質問</h1>
+      <p class="lead">ドイツでの手続きや制度について日本語で質問すると、AIがJ-Connectの記事を探して、その内容をもとに答えます。答えの根拠になった記事へのリンクも表示します。</p>
+      <ol class="jcai-flow"><li><strong>1. 質問する</strong>普段の言葉でOK。</li><li><strong>2. 記事を探す</strong>関連する記事をAIが読みます。</li><li><strong>3. 根拠つきで回答</strong>元の記事へのリンク付き。</li><li><strong>無料・登録不要</strong>入力内容は保存しません。</li></ol>
+      <div data-social-share="auto" style="margin-top:12px"></div>
+    </section>
+    <section class="jcai-panel jcai-form-panel">
+      <h2>AIに質問する</h2>
         <form class="jcai-form" id="askForm" novalidate>
           <div class="field">
-            <label for="question">知りたいこと</label>
+            <label for="question">知りたいこと（Enterで送信・Shift+Enterで改行）</label>
             <textarea id="question" maxlength="1500" placeholder="例：Kitaの申込みはいつまでにすればいい？／引っ越したら何の手続きが必要？"></textarea>
           </div>
           <div class="jcai-chips" id="askExamples">
@@ -502,7 +502,6 @@ textarea:focus{
           <button class="submit" id="askSubmit" type="submit">AIに聞く</button>
           <div class="status-box" id="askStatus" aria-live="polite"></div>
         </form>
-      </aside>
     </section>
 
     <section class="jcai-result" id="askResult" hidden tabindex="-1">
@@ -512,11 +511,24 @@ textarea:focus{
           <div><p class="jcai-ai-label">J-Connect AIの回答</p><p class="jcai-ai-sub">記事をもとにした参考情報です。大事な手続きは公式窓口でも確認してください。</p></div>
         </div>
         <div class="jcai-chat" id="chatLog" aria-live="polite"></div>
+        <div id="askRelated"></div>
         <div id="askFeedback"></div>
         <p class="jcai-disclaimer">回答はAIが自動で作成したもので、正確性・完全性を保証するものではありません。回答をもとにした判断の結果について、運営者は責任を負いません（法令上責任を免れない場合を除きます）。</p>
       </div>
     </section>
-    <section class="content" style="margin-top:22px">
+    <section class="jcai-info">
+      <div class="panel">
+        <h2>ほかのAIツール</h2>
+        <div class="jcai-tool-links">
+          <a href="/germany/ja/tools/">AIツール一覧</a>
+          <a href="/germany/ja/tools/letter-explainer/">手紙AI解説</a>
+          <a href="/germany/ja/tools/ask/">AIに質問</a>
+          <a href="/germany/ja/tools/write/">手紙・メール作成</a>
+          <a href="/germany/ja/tools/navi/">手続きナビ</a>
+          <a href="/germany/ja/tools/form-helper/">申請書の書き方</a>
+          <a href="/germany/ja/tools/conversation/">会話練習</a>
+        </div>
+      </div>
       <div class="panel">
         <h2>利用上の注意</h2>
         <ul class="list">
@@ -524,18 +536,6 @@ textarea:focus{
           <li>名前・住所・口座番号などの個人情報は入力しないでください。入力内容は回答の作成のためだけに OpenAI の API に送られ、J-Connect では保存しません。</li>
           <li><strong>免責：</strong>回答の正確性・完全性・最新性は保証しません。回答をもとに行った判断や手続きの結果について、運営者は責任を負いません（法令上責任を免れない場合を除きます）。</li>
           <li>利用が集中した場合は、1日の上限に達して使えないことがあります。</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h2>ほかのAIツール</h2>
-        <ul class="list">
-          <li><a href="/germany/ja/tools/">AIツール一覧</a></li>
-          <li><a href="/germany/ja/tools/letter-explainer/">ドイツの手紙AI解説</a></li>
-          <li><a href="/germany/ja/tools/ask/">J-Connect AIに質問</a></li>
-          <li><a href="/germany/ja/tools/write/">ドイツ語の手紙・メール作成</a></li>
-          <li><a href="/germany/ja/tools/navi/">手続きナビ</a></li>
-          <li><a href="/germany/ja/tools/form-helper/">申請書の記入アシスタント</a></li>
-          <li><a href="/germany/ja/tools/conversation/">ドイツ語の会話練習</a></li>
         </ul>
         <p class="note">Last updated: 2026-11-15</p>
       </div>
@@ -595,6 +595,9 @@ textarea:focus{
     var history = [];
     var last = null;
     var fb = JCAI.feedback(document.getElementById('askFeedback'), 'J-Connect AIに質問', function () { return last; });
+    var toolbarHost = JCAI.el('div');
+    document.getElementById('askFeedback').parentNode.insertBefore(toolbarHost, document.getElementById('askRelated'));
+    JCAI.toolbar(toolbarHost, function () { return document.querySelector('#askResult .jcai-ai-panel'); }, 'J-Connect AIへの質問と回答');
     if (!JCAI.ready) { JCAI.status(box, 'error', 'この機能は現在準備中です。'); btn.disabled = true; }
     document.querySelectorAll('#askExamples .jcai-chip').forEach(function (c) { c.addEventListener('click', function () { q.value = c.textContent; q.focus(); }); });
 
@@ -640,6 +643,7 @@ textarea:focus{
         log.appendChild(b);
         history.push({ role: 'user', text: question }, { role: 'assistant', text: r.answer.slice(0, 1200) });
         last = { question: question, answer: r.answer, sources: links };
+        JCAI.related(document.getElementById('askRelated'), question + ' ' + r.answer.slice(0, 200), { exclude: links.map(function (l) { return l.url; }), limit: 4, title: 'あわせて読みたいJ-Connectの記事' });
         fb.reset();
         q.value = '';
       } finally {
@@ -648,6 +652,7 @@ textarea:focus{
       }
     }
     form.addEventListener('submit', function (e) { e.preventDefault(); ask(q.value); });
+    JCAI.enterToSend(q, form);
   })();
   </script>
 <script src="/assets/js/common.js"></script>

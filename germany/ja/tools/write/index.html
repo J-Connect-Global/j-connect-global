@@ -478,15 +478,15 @@ textarea:focus{
 <!-- LAYOUT:ja-header:end -->
 
   <main id="main-content" tabindex="-1" class="wrap jcai-main">
-    <section class="jcai-hero">
-      <div class="hero-main">
-        <div class="eyebrow">AI Writer</div>
-        <h1>伝えたいことを日本語で書けば、ドイツ語の手紙・メールに</h1>
-        <p class="lead">役所、大家さん、勤務先、Kita、契約している会社などへの連絡を、日本語で書くだけでAIが丁寧なドイツ語の文面にします。日本語訳と、送る前の注意点も付けます。</p>
-        <div class="quick-grid"><div class="mini"><strong>1. 相手を選ぶ</strong><br>役所・大家・会社など。</div><div class="mini"><strong>2. 用件を書く</strong><br>日本語のメモでOK。</div><div class="mini"><strong>3. 文面が完成</strong><br>件名・本文・日本語訳。</div><div class="mini"><strong>無料・登録不要</strong><br>入力内容は保存しません。</div></div>
-      </div>
-      <aside class="jcai-panel">
-        <h2>文面を作る</h2>
+    <section class="jcai-head">
+      <div class="eyebrow">AI Writer</div>
+      <h1>伝えたいことを日本語で書けば、ドイツ語の手紙・メールに</h1>
+      <p class="lead">役所、大家さん、勤務先、Kita、契約している会社などへの連絡を、日本語で書くだけでAIが丁寧なドイツ語の文面にします。日本語訳と、送る前の注意点も付けます。</p>
+      <ol class="jcai-flow"><li><strong>1. 相手を選ぶ</strong>役所・大家・会社など。</li><li><strong>2. 用件を書く</strong>日本語のメモでOK。</li><li><strong>3. 文面が完成</strong>件名・本文・日本語訳。</li><li><strong>無料・登録不要</strong>入力内容は保存しません。</li></ol>
+      <div data-social-share="auto" style="margin-top:12px"></div>
+    </section>
+    <section class="jcai-panel jcai-form-panel">
+      <h2>文面を作る</h2>
         <form class="jcai-form" id="writeForm" novalidate>
           <div class="jcai-row">
             <div class="field"><label for="recipient">送る相手</label>
@@ -509,7 +509,6 @@ textarea:focus{
           <button class="submit" id="writeSubmit" type="submit">ドイツ語の文面を作る</button>
           <div class="status-box" id="writeStatus" aria-live="polite"></div>
         </form>
-      </aside>
     </section>
 
     <section class="jcai-result" id="writeResult" hidden tabindex="-1">
@@ -523,12 +522,25 @@ textarea:focus{
         <div class="jcai-card"><h3>日本語訳</h3><pre class="jcai-pre" id="wBodyJa"></pre></div>
         <div class="jcai-card jcai-card-warn" id="wNotesWrap"><h3>送る前の注意点</h3><ul class="jcai-list" id="wNotes"></ul></div>
         <div class="jcai-card" id="wPhrasesWrap"><h3>文面で使った大事な表現</h3><dl class="jcai-dl" id="wPhrases"></dl></div>
+        <div id="writeFeedbackExtras"></div>
         <div id="writeFeedback"></div>
         <div class="status-box" id="copyStatus" aria-live="polite"></div>
         <p class="jcai-disclaimer">文面はAIが自動で作成したもので、正確性を保証するものではありません。解約など法的な効果がある連絡は、期限や送り方を相手先の案内で確認してください。運営者は文面の利用の結果について責任を負いません（法令上責任を免れない場合を除きます）。</p>
       </div>
     </section>
-    <section class="content" style="margin-top:22px">
+    <section class="jcai-info">
+      <div class="panel">
+        <h2>ほかのAIツール</h2>
+        <div class="jcai-tool-links">
+          <a href="/germany/ja/tools/">AIツール一覧</a>
+          <a href="/germany/ja/tools/letter-explainer/">手紙AI解説</a>
+          <a href="/germany/ja/tools/ask/">AIに質問</a>
+          <a href="/germany/ja/tools/write/">手紙・メール作成</a>
+          <a href="/germany/ja/tools/navi/">手続きナビ</a>
+          <a href="/germany/ja/tools/form-helper/">申請書の書き方</a>
+          <a href="/germany/ja/tools/conversation/">会話練習</a>
+        </div>
+      </div>
       <div class="panel">
         <h2>利用上の注意</h2>
         <ul class="list">
@@ -536,18 +548,6 @@ textarea:focus{
           <li>名前・住所・口座番号などの個人情報は入力しないでください。入力内容は回答の作成のためだけに OpenAI の API に送られ、J-Connect では保存しません。</li>
           <li><strong>免責：</strong>回答の正確性・完全性・最新性は保証しません。回答をもとに行った判断や手続きの結果について、運営者は責任を負いません（法令上責任を免れない場合を除きます）。</li>
           <li>利用が集中した場合は、1日の上限に達して使えないことがあります。</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h2>ほかのAIツール</h2>
-        <ul class="list">
-          <li><a href="/germany/ja/tools/">AIツール一覧</a></li>
-          <li><a href="/germany/ja/tools/letter-explainer/">ドイツの手紙AI解説</a></li>
-          <li><a href="/germany/ja/tools/ask/">J-Connect AIに質問</a></li>
-          <li><a href="/germany/ja/tools/write/">ドイツ語の手紙・メール作成</a></li>
-          <li><a href="/germany/ja/tools/navi/">手続きナビ</a></li>
-          <li><a href="/germany/ja/tools/form-helper/">申請書の記入アシスタント</a></li>
-          <li><a href="/germany/ja/tools/conversation/">ドイツ語の会話練習</a></li>
         </ul>
         <p class="note">Last updated: 2026-11-15</p>
       </div>
@@ -630,6 +630,11 @@ textarea:focus{
       document.getElementById('wPhrasesWrap').hidden = !(r.key_phrases || []).length;
       last = { input: input, result: r };
       fb.reset();
+      var ex = document.getElementById('writeFeedbackExtras'); ex.textContent = '';
+      JCAI.toolbar(ex, function () { return document.querySelector('#writeResult .jcai-ai-panel'); }, 'ドイツ語の文面');
+      var rel = JCAI.el('div'); ex.appendChild(rel);
+      JCAI.related(rel, input.purpose + ' ' + input.recipient, { limit: 4 });
+      JCAI.followUp(ex, 'ドイツ語の手紙・メール作成', function () { return last; });
       JCAI.reveal(result);
     });
   })();

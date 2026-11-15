@@ -1,12 +1,21 @@
 /* J-Connect AIツール共通スタイル（ツールページ専用） */
 .jcai-main [hidden]{display:none!important}
-.jcai-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:start}
+
+.jcai-head{margin:6px 0 18px}
+.jcai-head h1{font-size:clamp(28px,4vw,40px);line-height:1.25;margin:6px 0 10px;color:#0b3a6e;letter-spacing:0}
+.jcai-head .lead{font-size:17px;line-height:1.85;margin:0}
+.jcai-flow{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:14px 0 0;padding:0}
+.jcai-flow li{background:#fff;border:1px solid #dbe6f3;border-radius:999px;padding:7px 14px;font-size:14px;color:#34414d}
+.jcai-flow li strong{color:#0b3a6e;margin-right:4px}
 .jcai-panel{background:#fff;border:1px solid #dbe6f3;border-radius:24px;padding:26px;box-shadow:0 10px 24px rgba(30,58,95,.07)}
 .jcai-panel h2{margin:0 0 12px;font-size:24px;color:#0b3a6e}
 .jcai-form{display:grid;gap:14px}
 .jcai-form label{font-size:14px;font-weight:700;color:#0b3a6e}
 .jcai-form .field{display:flex;flex-direction:column;gap:6px}
-.jcai-form textarea{min-height:130px}
+.jcai-form textarea{min-height:220px;font-size:17px;line-height:1.75;padding:16px 18px;border-radius:16px}
+.jcai-form .input,.jcai-form select{min-height:52px;font-size:16px;padding:10px 14px;border-radius:12px}
+.jcai-form .submit{min-height:56px;font-size:17px}
+.jcai-form-panel{padding:28px 30px}
 .jcai-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .jcai-check{display:flex;gap:8px;align-items:flex-start;font-weight:400!important;font-size:14px;color:#1f2d3d!important}
 .jcai-check input{margin-top:4px}
@@ -104,3 +113,41 @@
 :root[data-theme="dark"] .jcai-msg-user,
 :root[data-theme="dark"] .jcai-avatar{background:#9fd0ff;color:#0b1b2e}
 :root[data-theme="dark"] .jcai-steps .jcai-deadline{background:#3a2f10;color:#ffe2a0}
+
+.jcai-info{display:grid;gap:16px;margin-top:22px}
+.jcai-info .panel ul{margin:0}
+.jcai-tool-links{display:flex;flex-wrap:wrap;gap:8px}
+.jcai-tool-links a{display:inline-block;border:1px solid #9fc0e6;border-radius:999px;padding:8px 14px;font-weight:700;text-decoration:none;color:#0b3a6e;background:#fff}
+.jcai-related-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.jcai-related-item{display:flex;flex-direction:column;gap:4px;padding:12px 14px;border:1px solid #dde8f5;border-radius:12px;text-decoration:none!important;background:#f8fbff}
+.jcai-related-item strong{color:#0b3a6e;font-size:15px}
+.jcai-related-item span{font-size:13px;color:#4f5f70;line-height:1.6}
+.jcai-toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.jcai-tool-btn{border:1px solid #9fc0e6;background:#fff;color:#0b3a6e;border-radius:10px;padding:9px 14px;font-weight:700;cursor:pointer}
+.jcai-tool-btn:hover{background:#eef5ff}
+.jcai-followup-form{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:12px;align-items:end}
+.jcai-followup-form textarea{min-height:90px;font-size:16px;line-height:1.7;padding:12px 14px;border-radius:14px;width:100%}
+.jcai-followup-form .submit{min-width:110px;min-height:52px}
+.jcai-speak{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid #9fc0e6;background:#fff;color:#0067c9;cursor:pointer;vertical-align:middle;margin-left:6px;flex:0 0 auto}
+.jcai-speak:hover{background:#eef5ff}
+.jcai-de-line{display:flex;align-items:center;gap:6px;justify-content:space-between}
+.jcai-toggle{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:#0b3a6e;cursor:pointer}
+.jcai-suggest{display:flex;align-items:center;gap:4px}
+@media (max-width:640px){.jcai-related-list{grid-template-columns:1fr}.jcai-followup-form{grid-template-columns:1fr}.jcai-form-panel{padding:18px}}
+@media print{
+  body.jcai-printing *{visibility:hidden!important}
+  body.jcai-printing .jcai-print-target,body.jcai-printing .jcai-print-target *{visibility:visible!important}
+  body.jcai-printing .jcai-print-target{position:absolute;left:0;top:0;width:100%}
+  body.jcai-printing .jcai-noprint{display:none!important}
+  .jcai-ai-panel{box-shadow:none!important;background:#fff!important}
+}
+:root[data-theme="dark"] .jcai-flow li,
+:root[data-theme="dark"] .jcai-tool-links a,
+:root[data-theme="dark"] .jcai-tool-btn,
+:root[data-theme="dark"] .jcai-speak{background:#132235;border-color:#3d5a7d;color:#cfe3ff}
+:root[data-theme="dark"] .jcai-head h1,
+:root[data-theme="dark"] .jcai-related-item strong,
+:root[data-theme="dark"] .jcai-flow li strong,
+:root[data-theme="dark"] .jcai-toggle{color:#cfe3ff}
+:root[data-theme="dark"] .jcai-related-item{background:#0f1d2e;border-color:#2a3f58}
+:root[data-theme="dark"] .jcai-related-item span{color:#b8c6d6}

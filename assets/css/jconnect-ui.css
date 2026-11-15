@@ -3348,6 +3348,11 @@
     box-shadow:var(--jc-shadow-hover, var(--jc-shadow));
   }
 
+  :root[data-theme="dark"] body .letter-tool-cta__button,
+  :root[data-theme="dark"] body .letter-tool-cta__icon{
+    color:#0b1b2e !important;
+  }
+
   @media (max-width:640px){
     .letter-tool-cta{
       flex-wrap:wrap;

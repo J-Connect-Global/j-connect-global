@@ -10,7 +10,7 @@
   if (window.__jcChatWidget) return;
   window.__jcChatWidget = true;
 
-  var VERSION = '20261115e';
+  var VERSION = '20261115f';
   var STATE_KEY = 'jcChatWidgetState';   // 'open' | 'min'
   var LOG_KEY = 'jcChatWidgetLog';
   var QUOTA_KEY = 'jcChatWidgetQuota';
@@ -129,8 +129,8 @@
     var head = el('div', { class: 'jcw-head' });
     var av = el('span', { class: 'jcw-avatar' }); av.appendChild(svg(ROBOT));
     var ttl = el('div', { class: 'jcw-title' });
-    ttl.appendChild(el('strong', null, 'J-Connect AIアシスタント'));
-    ttl.appendChild(el('span', null, 'ドイツ生活の質問に、サイトの記事をもとに回答'));
+    ttl.appendChild(el('strong', null, 'J-Connect AI'));
+    ttl.appendChild(el('span', null, 'ドイツ生活の質問に回答'));
     var hb = el('div', { class: 'jcw-head-btns' });
     var toolsLink = el('a', { class: 'jcw-head-link', href: TOOLS_URL });
     toolsLink.appendChild(svg(GRID)); toolsLink.appendChild(el('span', null, 'AIツール一覧'));
@@ -146,7 +146,7 @@
     body = el('div', { class: 'jcw-body', 'aria-live': 'polite' });
 
     form = el('form', { class: 'jcw-form' });
-    input = el('textarea', { class: 'jcw-input', rows: '1', maxlength: '1000', placeholder: '質問を入力（Enterで送信、Shift+Enterで改行）', 'aria-label': 'AIへの質問' });
+    input = el('textarea', { class: 'jcw-input', rows: '1', maxlength: '1000', placeholder: '質問を入力（Enterで送信）', 'aria-label': 'AIへの質問' });
     sendBtn = el('button', { type: 'submit', class: 'jcw-send', 'aria-label': '送信' });
     sendBtn.appendChild(svg(SEND));
     form.appendChild(input); form.appendChild(sendBtn);
@@ -181,7 +181,7 @@
     launcher.setAttribute('aria-label', open ? 'AIチャットを最小化する' : 'AIチャットを開く');
     if (byUser) lsSet(STATE_KEY, open ? 'open' : 'min');
     if (open) {
-      scrollDown();
+      if (log.length) scrollDown(); else body.scrollTop = 0; // 会話がないときは、あいさつから見せる
       if (byUser) setTimeout(function () { input.focus(); }, 60); // 自動で開いたときはフォーカスを奪わない
     }
   }

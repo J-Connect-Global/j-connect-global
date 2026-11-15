@@ -4,7 +4,8 @@
   const directoryDataEndpoint = masterDataEndpoint;
   const communityDataEndpoint = masterDataEndpoint;
   // 「ドイツの手紙AI解説」用の独立 Apps Script。デプロイ後に /exec の URL を入れる（空なら準備中表示）
-  const letterExplainerEndpoint = "";
+  const letterExplainerEndpoint =
+    "https://script.google.com/macros/s/AKfycbx_12IQiTTZ2qUWPDIJWm3mv9GRtEZBSruQDkao8OQK1cn6PfvJrqEQFYCAd--9e2FP/exec";
 
   const directorySheets = Object.freeze({
     eat: "eat",

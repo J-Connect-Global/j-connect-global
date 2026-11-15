@@ -6411,8 +6411,8 @@
     "published": false,
     "status": "draft",
     "published_at": "",
-    "updated_at": "2026-11-14",
-    "last_verified": "2026-11-14",
+    "updated_at": "2026-11-15",
+    "last_verified": "2026-11-15",
     "next_review": "2026-11-16",
     "home_visible": false,
     "home_order": 999,
@@ -6424,7 +6424,7 @@
     "review": {
       "status": "needs_review",
       "reviewed_by": "AI official-source verification; editorial review pending",
-      "last_reviewed_at": "2026-11-14",
+      "last_reviewed_at": "2026-11-15",
       "next_review_due": "2026-11-16"
     },
     "tags": [
@@ -6450,6 +6450,14 @@
       {
         "title": "NRW州サービス案内：小学校の登録期限（翌年の就学対象は前年11月15日まで）",
         "url": "https://meineverwaltung.nrw/leistung/99088003034001"
+      },
+      {
+        "title": "NRW州：小学校教育規則（AO-GS）2025年8月1日〜2027年7月31日適用版 §1",
+        "url": "https://recht.nrw.de/lrgv/rechtsverordnung/01082025-ausbildungsordnung-grundschule-ao-gs/"
+      },
+      {
+        "title": "NRW州：小学校教育規則（AO-GS）2027年8月1日適用版 §1（経過措置を含む）",
+        "url": "https://recht.nrw.de/lrgv/rechtsverordnung/01082027-ausbildungsordnung-grundschule-ao-gs/"
       },
       {
         "title": "第18次学校法改正（2026年7月21日公布）と第36条の経過措置",

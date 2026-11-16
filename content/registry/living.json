@@ -6516,8 +6516,8 @@
     "disclaimer_type": "consumer_contract",
     "review": {
       "status": "needs_review",
-      "reviewed_by": "AI source verification; legal review pending",
-      "last_reviewed_at": "2026-11-13",
+      "reviewed_by": "AI source verification 2026-11-16; legal review pending",
+      "last_reviewed_at": "2026-11-16",
       "next_review_due": "2026-11-20"
     },
     "canonical_url": "/germany/ja/living/consumer-credit-bnpl-germany-2026/",
@@ -6525,8 +6525,8 @@
     "category": "お金・税金",
     "summary": "2026年11月20日から広がるドイツの消費者信用保護を解説。200ユーロ未満の小口ローン、短期・無利息の融資、後払い・分割払いの対象範囲と例外、契約前の確認点を整理します。",
     "published_at": "",
-    "updated_at": "2026-11-14",
-    "last_verified": "2026-11-14",
+    "updated_at": "2026-11-16",
+    "last_verified": "2026-11-16",
     "tags": [
       "後払い",
       "分割払い",
@@ -6545,6 +6545,10 @@
       {
         "title": "連邦官報：EU消費者信用指令の国内法化法（2026年5月18日公布、BGBl. 2026 I Nr. 139）",
         "url": "https://recht.bund.de/bgbl/1/2026/139/VO.html"
+      },
+      {
+        "title": "連邦議会：消費者信用契約法案の委員会勧告・報告（Drucksache 21/5381、2026年4月15日）",
+        "url": "https://dserver.bundestag.de/btd/21/053/2105381.pdf"
       },
       {
         "title": "連邦政府：信用契約における消費者保護の強化（2026年5月19日）",
@@ -6581,8 +6585,8 @@
     "published": false,
     "status": "draft",
     "published_at": "",
-    "updated_at": "2026-11-15",
-    "last_verified": "2026-11-15",
+    "updated_at": "2026-11-16",
+    "last_verified": "2026-11-16",
     "next_review": "2026-11-30",
     "home_visible": false,
     "home_order": 9999,
@@ -6593,8 +6597,8 @@
     "disclaimer_type": "tax",
     "review": {
       "status": "needs_review",
-      "reviewed_by": "AI official-source verification; human tax review pending",
-      "last_reviewed_at": "2026-11-15",
+      "reviewed_by": "AI official-source verification 2026-11-16; human tax review pending",
+      "last_reviewed_at": "2026-11-16",
       "next_review_due": "2026-11-30"
     },
     "tags": [
@@ -6629,6 +6633,10 @@
       {
         "title": "ヘッセン州税務当局：2027年分の申請開始日と2年間の有効期間",
         "url": "https://finanzamt.hessen.de/node/2105"
+      },
+      {
+        "title": "連邦議会：2027年所得税改革法案（Drucksache 21/8235、2026年9月28日）",
+        "url": "https://dserver.bundestag.de/btd/21/082/2108235.pdf"
       },
       {
         "title": "連邦財務省：2026年版所得税実務手引き・第39a条",

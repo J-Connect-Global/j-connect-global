@@ -2170,7 +2170,7 @@
   },
   {
     "id": "L001",
-    "title": "ドイツの住民登録（Anmeldung）｜2週間の一般則と3か月の例外・必要書類",
+    "title": "ドイツの住民登録（Anmeldung）｜入居後2週間の期限・必要書類・予約が取れないとき",
     "slug": "anmeldung-guide",
     "image_url": "/assets/images/living/japanese-resident-paperwork-editorial-v1.webp",
     "image_alt": "ドイツの住民登録に必要な書類を自宅で準備する日本人の住民",
@@ -2188,9 +2188,7 @@
       "入居証明",
       "市民窓口",
       "初渡独",
-      "引っ越し",
-      "短期滞在",
-      "3か月の例外"
+      "引っ越し"
     ],
     "home_visible": true,
     "home_order": 80,

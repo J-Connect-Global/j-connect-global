@@ -21,6 +21,8 @@ official_sources:
     url: "https://www.gesetze-im-internet.de/bmg/__17.html"
   - title: "連邦住民登録法第27条：国外居住者などの登録義務の例外"
     url: "https://www.gesetze-im-internet.de/bmg/__27.html"
+  - title: "連邦行政ポータル：国外居住者の3か月以内・超の滞在における登録義務"
+    url: "https://verwaltung.bund.de/leistungsverzeichnis/DE/lagen/1050000/sublagen/1050200/rechte-und-pflichten/102837924"
   - title: "連邦行政ポータル：住民登録"
     url: "https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99115005104001"
   - title: "連邦行政ポータル：入居証明"

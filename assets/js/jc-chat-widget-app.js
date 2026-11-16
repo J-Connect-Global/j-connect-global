@@ -10,7 +10,7 @@
   if (window.__jcChatWidget) return;
   window.__jcChatWidget = true;
 
-  var VERSION = '20261116b';
+  var VERSION = '20261116c';
   var STATE_KEY = 'jcChatWidgetState';   // 'open' | 'min'
   var LOG_KEY = 'jcChatWidgetLog';
   var QUOTA_KEY = 'jcChatWidgetQuota';
@@ -39,8 +39,23 @@
   function lsSet(k, v) { try { window.localStorage.setItem(k, v); } catch (e) { /* noop */ } }
   function ssGet(k) { try { return window.sessionStorage.getItem(k); } catch (e) { return null; } }
   function ssSet(k, v) { try { window.sessionStorage.setItem(k, v); } catch (e) { /* noop */ } }
-  function loadLog() { try { var a = JSON.parse(ssGet(LOG_KEY) || '[]'); return Array.isArray(a) ? a.slice(-24) : []; } catch (e) { return []; } }
-  function saveLog() { ssSet(LOG_KEY, JSON.stringify(log.slice(-24))); }
+  // 会話はブラウザ内に24時間だけ残す（別タブ・ほかのページでも続きから。リセットで消える）
+  var LOG_TTL = 24 * 60 * 60 * 1000;
+  var PENDING_KEY = 'jcChatWidgetPending';
+  function loadLog() {
+    try {
+      var o = JSON.parse(lsGet(LOG_KEY) || 'null');
+      if (!o || !Array.isArray(o.m) || Date.now() - (o.t || 0) > LOG_TTL) {
+        // 以前の版はタブ内（sessionStorage）に保存していた
+        var old = JSON.parse(ssGet(LOG_KEY) || '[]');
+        return Array.isArray(old) ? old.slice(-24) : [];
+      }
+      return o.m.slice(-24);
+    } catch (e) { return []; }
+  }
+  function saveLog() { lsSet(LOG_KEY, JSON.stringify({ t: Date.now(), m: log.slice(-24) })); }
+  function getPending() { try { var p = JSON.parse(lsGet(PENDING_KEY) || 'null'); return p && Date.now() - p.t < 5 * 60 * 1000 ? p : null; } catch (e) { return null; } }
+  function setPending(q) { if (q) lsSet(PENDING_KEY, JSON.stringify({ q: q, t: Date.now() })); else { try { window.localStorage.removeItem(PENDING_KEY); } catch (e) { /* noop */ } } }
   function today() { var d = new Date(); return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); }
   function quotaLeft() {
     var q = {}; try { q = JSON.parse(lsGet(QUOTA_KEY) || '{}'); } catch (e) { q = {}; }
@@ -174,6 +189,8 @@
   function autosize() { input.style.height = 'auto'; input.style.height = Math.min(input.scrollHeight, 132) + 'px'; }
 
   function setOpen(open, byUser) {
+    // ページを移って開き直すときはアニメーションなしで、ずっと開いていたように見せる
+    root.classList.toggle('jcw-restore', open && !byUser);
     panel.hidden = !open;
     teaser.hidden = true;
     root.classList.toggle('is-open', open);
@@ -305,7 +322,7 @@
   }
 
   function resetChat() {
-    log = []; history = []; saveLog(); renderAll(); input.focus();
+    log = []; history = []; setPending(null); saveLog(); try { window.sessionStorage.removeItem(LOG_KEY); } catch (e) { /* noop */ } renderAll(); input.focus();
   }
 
   function push(m) { log.push(m); saveLog(); }
@@ -374,6 +391,7 @@
     }
 
     busy = true; sendBtn.disabled = true;
+    setPending(q); // 回答を待つ間にページを移っても、移った先で続きを作れるように
     var typing = typingRow();
     var result = null, found = [];
     try {
@@ -397,6 +415,8 @@
     } catch (e) {
       result = { ok: false, error: '読み込みに失敗しました。ページを再読み込みしてお試しください。' };
     }
+    if (leaving) return; // ページを移る途中で通信が切れた：移った先で作り直す
+    setPending(null);
     typing.remove();
     busy = false; sendBtn.disabled = false;
     var m;
@@ -429,15 +449,31 @@
     return s.display !== 'none' && s.visibility !== 'hidden' && b.getClientRects().length > 0;
   }
 
+  var leaving = false;
+  window.addEventListener('pagehide', function () { leaving = true; });
+  window.addEventListener('pageshow', function (e) { if (e.persisted) leaving = false; });
+
+  // 前のページで回答を待っている途中だった質問を、このページで作り直す
+  function resumePending() {
+    var p = getPending();
+    if (!p) return false;
+    var lastMsg = log[log.length - 1];
+    if (!lastMsg || lastMsg.role !== 'user' || lastMsg.text !== p.q) { setPending(null); return false; }
+    setOpen(true, false);
+    sendToAi(p.q);
+    return true;
+  }
+
   function start() {
     if (document.getElementById('jcChatWidget')) return;
     build();
     var state = lsGet(STATE_KEY);
     var wide = window.matchMedia && window.matchMedia('(min-width: 768px)').matches;
+    if (resumePending()) return;
     if (state === 'open') { setOpen(true, false); return; }
     if (state === 'min') return;
     // 操作ボタンが多いページ（暗記カード・AIツール・投稿フォームなど）では自動で開かない
-    if (/\/learn-german\/flashcards\/|\/tools\/.|\/community\/(post|contact|report|manage|delete|complete)|\/contact\//.test(location.pathname)) return;
+    if (/\/learn-german\/flashcards\/|\/tools\/.|\/community\/(post|contact|report|manage|delete|complete)\/?$|\/contact\//.test(location.pathname)) return;
     // 初めての訪問：Cookieの案内が閉じられてから表示する
     var tries = 0;
     (function waitBanner() {

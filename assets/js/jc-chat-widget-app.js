@@ -10,8 +10,9 @@
   if (window.__jcChatWidget) return;
   window.__jcChatWidget = true;
 
-  var VERSION = '20261116d';
+  var VERSION = '20261116m';
   var STATE_KEY = 'jcChatWidgetState';   // 'open' | 'min'
+  var TEASER_KEY = 'jcChatWidgetTeaserShown'; // スマホの吹き出しを出したら '1'
   var LOG_KEY = 'jcChatWidgetLog';
   var QUOTA_KEY = 'jcChatWidgetQuota';
   var CONSENT_KEY = 'jcChatWidgetConsent';
@@ -479,8 +480,12 @@
     (function waitBanner() {
       if (cookieBannerVisible() && tries++ < 120) { setTimeout(waitBanner, 800); return; }
       if (lsGet(STATE_KEY)) return;
-      if (wide) setOpen(true, false);
-      else teaser.hidden = false; // スマホは画面をふさがない小さな吹き出しだけ
+      if (wide) { setOpen(true, false); return; }
+      // スマホは小さな吹き出しを最初の1回だけ出し、しばらくしたら自動で消す
+      if (lsGet(TEASER_KEY)) return;
+      lsSet(TEASER_KEY, '1');
+      teaser.hidden = false;
+      setTimeout(function () { teaser.hidden = true; }, 8000);
     })();
   }
 

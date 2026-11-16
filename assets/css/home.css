@@ -2094,3 +2094,45 @@ body.portal3-home > .page-footer{
     min-width:min(100%, 132px);
   }
 }
+
+/* ===== スマホ：最初の画面に情報を多く出し、縦に長くなりすぎないようにする ===== */
+@media (max-width:720px){
+  .portal3-hero-inner{padding:20px 0 18px}
+  .portal3-hero h1{font-size:24px;line-height:1.35}
+  .portal3-hero p{font-size:14px;line-height:1.6}
+
+  /* 6つの入口は2列にして、1画面に収める */
+  .portal3-quick{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+  .portal3-quick a{min-width:0;height:48px;padding:0 10px;font-size:14px;justify-content:flex-start;gap:8px;white-space:nowrap}
+
+  /* 5つの見出しへのリンクは横にすべらせる。説明文は省いて高さを抑える */
+  .portal3-ribbon{scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .portal3-ribbon::-webkit-scrollbar{display:none}
+  .portal3-ribbon a{min-width:150px;height:54px;scroll-snap-align:start}
+  .portal3-ribbon strong{font-size:15px}
+  .portal3-ribbon span{display:none}
+
+  /* 下の「①交流・掲示板」「③仕事・求人」と同じ内容のため、スマホでは上の一覧を出さない */
+  .portal3-top-grid > .portal3-panel:nth-child(1),
+  .portal3-top-grid > .portal3-panel:nth-child(3){display:none}
+
+  /* 記事・投稿のカードは、写真を左に小さく置く横長にする */
+  .portal3-card-row,.portal3-job-row{gap:8px;grid-auto-rows:auto;align-items:start}
+  .portal3-card{display:grid;grid-template-columns:96px minmax(0,1fr);grid-template-rows:auto auto;align-content:start;column-gap:12px;row-gap:4px;min-height:0;padding:8px;height:auto}
+  .portal3-card-img{grid-row:1 / span 2;width:96px;height:72px;align-self:start}
+  .portal3-card strong,
+  .portal3-community .portal3-card strong{min-height:0;font-size:15px;line-height:1.4;-webkit-line-clamp:3;line-clamp:3;align-self:start}
+  .portal3-card small{font-size:12px}
+  .portal3-card .portal3-card-badges{inset:4px}
+  .portal3-card .portal3-card-badges em{max-width:100%;font-size:10px;padding:2px 6px}
+  .portal3-card .portal3-card-badges b{display:none}
+
+  /* 求人カードは、アイコンを左に置いて情報を詰める */
+  .portal3-job-card{display:grid;grid-template-columns:38px minmax(0,1fr);column-gap:12px;row-gap:2px;min-height:0;height:auto;padding:12px}
+  .portal3-job-card .portal3-job-icon{grid-row:1 / span 4;margin:0}
+  .portal3-job-card > :not(.portal3-job-icon){grid-column:2}
+  .portal3-job-card strong{font-size:15px}
+  .portal3-job-card small{font-size:12px}
+  .portal3-job-card b{margin-top:4px;font-size:14px;line-height:1.45}
+  .portal3-job-card em{justify-self:start;margin-top:4px}
+}

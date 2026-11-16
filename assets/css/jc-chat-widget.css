@@ -97,15 +97,21 @@
 
 /* スマホ：下からのシート表示 */
 @media (max-width:767px){
-  .jcw{right:14px;bottom:14px}
-  .jcw-launcher{width:58px;height:58px}
-  .jcw-launcher .jcw-ico{width:34px;height:34px}
+  .jcw{right:12px;bottom:calc(12px + env(safe-area-inset-bottom))}
+  .jcw-launcher{width:52px;height:52px}
+  .jcw-launcher .jcw-ico{width:30px;height:30px}
+  .jcw-launcher-dot{top:3px;right:3px;width:11px;height:11px}
+  .jcw-teaser{bottom:62px}
   .jcw.is-open{left:0;right:0;bottom:0}
   .jcw.is-open .jcw-launcher{display:none}
   .jcw-panel{position:fixed;left:0;right:0;bottom:0;width:auto;height:min(82vh,680px);height:min(82dvh,680px);border-radius:20px 20px 0 0;padding-bottom:env(safe-area-inset-bottom)}
   .jcw-title span{display:none}
   .jcw-head-link{padding:7px 10px}
   .jcw-input{font-size:16px}
+}
+/* 掲示板など、画面下に固定の操作ボタンがあるページでは、その上に出す */
+@media (max-width:860px){
+  body:has(.mobile-action-bar) .jcw:not(.is-open){bottom:calc(78px + env(safe-area-inset-bottom))}
 }
 
 /* ダークモード */

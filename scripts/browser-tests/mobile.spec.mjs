@@ -45,9 +45,14 @@ test("mobile Home has no overflow and can activate dark mode", async ({ page }) 
   await activateDarkMode(page);
   await expect.poll(() => heroRequests.length, { message: "dark mode must request its dark hero" }).toBe(2);
   expect(heroRequests[1]).toMatch(new RegExp(`home-portal-hero-dark-${heroWidth}w\\.(?:avif|webp)$`));
+  // On phones the top "掲示板トピック" and "求人ピックアップ" panels repeat sections ① and ③, so they are hidden there.
+  const phone = (page.viewportSize()?.width || 360) <= 720;
+  for (const duplicate of [".portal3-top-grid .portal3-panel:nth-child(1)", ".portal3-top-grid .portal3-panel:nth-child(3)"]) {
+    if (phone) await expect(page.locator(duplicate)).toBeHidden();
+    else await expect(page.locator(`${duplicate} h2`)).toBeVisible();
+  }
   for (const section of [
     ".portal3-top-grid .portal3-panel:nth-child(2)",
-    ".portal3-top-grid .portal3-panel:nth-child(3)",
     "#community",
     "#living",
     "#jobs",
@@ -179,4 +184,47 @@ test("mobile legal disclosure remains readable in light and dark modes", async (
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await expect(page.locator("main h1")).toHaveText("プライバシーポリシー");
   await assertRouteReady(page);
+});
+
+test("phone filters start collapsed, keep keyword search open and report selections", async ({ page }) => {
+  test.skip((page.viewportSize()?.width || 360) >= 760, "phone layout only");
+  await openRoute(page, "/germany/ja/events/");
+  const toggle = page.locator(".news-events-filter-pane .jc-filter-toggle").first();
+  await expect(toggle).toHaveAttribute("aria-expanded", "false");
+  await expect(page.locator("#newsSearch")).toBeVisible();
+  await expect(page.locator("#newsCategoryFilter")).toBeHidden();
+  await toggle.click();
+  await expect(toggle).toHaveAttribute("aria-expanded", "true");
+  await page.locator("#newsCategoryFilter").selectOption({ index: 1 });
+  await toggle.click();
+  await expect(toggle).toContainText("1件を選択中");
+  await expect(page.locator("#newsCategoryFilter")).toBeHidden();
+  await assertNoHorizontalOverflow(page);
+});
+
+test("phone article lists start as compact lists and reveal more in steps", async ({ page }) => {
+  test.skip((page.viewportSize()?.width || 360) >= 760, "phone layout only");
+  await openRoute(page, "/germany/ja/living/");
+  const grid = page.locator(".living-column-grid");
+  await expect(grid).toHaveClass(/is-list-view/);
+  const visibleCards = grid.locator(":scope > [data-living-card]:visible");
+  await expect(visibleCards).toHaveCount(12);
+  const more = page.locator(".living-column-grid + .jc-show-more");
+  await expect(more).toContainText("もっと見る");
+  await more.click();
+  await expect(visibleCards).toHaveCount(24);
+  await assertNoHorizontalOverflow(page);
+});
+
+test("phone Community filters wrap instead of stacking one option per line", async ({ page }) => {
+  test.skip((page.viewportSize()?.width || 360) >= 760, "phone layout only");
+  await openDataRoute(page, "/germany/ja/community/", "/assets/data/community/posts.json");
+  const toggle = page.locator("aside.filter-bar .jc-filter-toggle");
+  await expect(toggle).toHaveAttribute("aria-expanded", "false");
+  await toggle.click();
+  const chips = page.locator("#statusRail .chip-button");
+  const first = await chips.nth(0).boundingBox();
+  const second = await chips.nth(1).boundingBox();
+  expect(Math.abs(first.y - second.y)).toBeLessThan(4);
+  await assertNoHorizontalOverflow(page);
 });

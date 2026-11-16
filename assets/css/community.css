@@ -573,6 +573,32 @@
       .detail-thumb-button{flex-basis:68px}
     }
 
+
+    /* スマホ：絞り込みの選択肢は折り返して横に並べ、絞り込み欄は画面に貼りつけない */
+    @media (max-width:860px){
+      .filter-bar{position:static}
+      .filter-rail,.subcategory-rail{display:flex;flex-wrap:wrap;gap:8px}
+      .filter-bar .chip-button,.filter-rail .chip-button,.subcategory-rail .chip-button{width:auto;flex:0 1 auto;justify-content:center;border-radius:999px;min-height:40px;padding:8px 14px;font-size:14px}
+      .filter-panel-heading .chip-button{min-height:40px}
+      .chip-skeleton{width:96px}
+      .select{height:44px}
+      .filter-label{font-size:13px}
+      .filter-panel-heading h2{white-space:nowrap}
+      .community-toggle-line{min-height:44px;display:flex;align-items:center;gap:8px}
+      .community-toggle-line input{width:20px;height:20px}
+      /* リスト表示：写真は左に小さく、写真のない投稿は文字だけにして、1画面に多く並べる */
+      .board-grid:not(.grid-mode) .card-link{flex-direction:row;align-items:stretch;min-height:0;padding:0}
+      .board-grid:not(.grid-mode) .card-media{flex:0 0 96px;width:96px;min-height:96px;aspect-ratio:auto}
+      .board-grid:not(.grid-mode) .card.no-image .card-media,
+      .board-grid:not(.grid-mode) .card[data-photo-count="0"] .card-media{display:none}
+      .board-grid:not(.grid-mode) .card-body{padding:10px 48px 10px 12px;gap:4px}
+      .board-grid:not(.grid-mode) .card-title{font-size:15px;line-height:1.4}
+      .board-grid:not(.grid-mode) .card-excerpt{-webkit-line-clamp:2;line-clamp:2}
+      .board-grid:not(.grid-mode) .card-actions{display:none}
+      .board-grid:not(.grid-mode) .save-button{top:8px;right:8px}
+      .save-button{width:40px;height:40px}
+    }
+
     /* Dark theme polish for community listing, filters, and detail modal. */
     :root[data-theme="dark"] body{
       background:

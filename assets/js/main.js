@@ -560,3 +560,142 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+// スマホでは、長い絞り込み欄をたたんで一覧を先に見せる。キーワード欄は出したままにする。
+(function () {
+  if (!window.matchMedia) return;
+  var mobile = window.matchMedia('(max-width: 759px)');
+  var selector = '.filters.panel, .filters > .filter-panel, aside.filter-bar, .news-events-filter-pane';
+  var panels = [];
+  var counter = 0;
+
+  function isHead(node) {
+    return /^H[2-4]$/.test(node.tagName) || node.matches('.panel-title-row, .filter-panel-heading');
+  }
+
+  function keepsOpen(node) {
+    return isHead(node) || node.classList.contains('jc-filter-toggle') ||
+      Boolean(node.querySelector('input[type="search"], input[type="text"]')) || node.matches('input[type="search"], input[type="text"]');
+  }
+
+  function activeCount(panel) {
+    var count = 0;
+    panel.querySelectorAll('select').forEach(function (select) { if (select.selectedIndex > 0) count += 1; });
+    panel.querySelectorAll('input[type="checkbox"]:checked').forEach(function () { count += 1; });
+    panel.querySelectorAll('.active, .is-active, [aria-pressed="true"]').forEach(function (chip) {
+      if (chip.matches('.reset-btn, .reset-button, .jc-filter-toggle') || !chip.parentElement) return;
+      if (chip.parentElement.firstElementChild !== chip) count += 1;
+    });
+    return count;
+  }
+
+  function label(entry) {
+    var count = activeCount(entry.panel);
+    var open = !entry.panel.classList.contains('jc-filter-collapsed');
+    entry.toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    entry.toggle.textContent = open ? '絞り込み条件を閉じる' : '絞り込み条件を開く' + (count ? '（' + count + '件を選択中）' : '');
+  }
+
+  function setup(panel) {
+    var children = Array.prototype.slice.call(panel.children);
+    if (!children.some(function (child) { return !keepsOpen(child); })) return;
+    if (!panel.id) panel.id = 'jcFilterPanel' + (++counter);
+    var toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'jc-filter-toggle';
+    toggle.setAttribute('aria-controls', panel.id);
+    var head = children.filter(isHead)[0];
+    if (head) head.insertAdjacentElement('afterend', toggle); else panel.insertBefore(toggle, panel.firstChild);
+    var entry = { panel: panel, toggle: toggle };
+    toggle.addEventListener('click', function () {
+      panel.classList.toggle('jc-filter-collapsed');
+      label(entry);
+    });
+    ['click', 'change'].forEach(function (type) {
+      panel.addEventListener(type, function (event) {
+        if (event.target === toggle) return;
+        window.setTimeout(function () { label(entry); }, 0);
+      });
+    });
+    panels.push(entry);
+  }
+
+  function apply() {
+    panels.forEach(function (entry) {
+      entry.toggle.hidden = !mobile.matches;
+      entry.panel.classList.toggle('jc-filter-collapsed', mobile.matches);
+      entry.panel.classList.add('jc-filter-collapsible');
+      label(entry);
+    });
+  }
+
+  function init() {
+    document.querySelectorAll(selector).forEach(setup);
+    apply();
+    if (mobile.addEventListener) mobile.addEventListener('change', apply); else if (mobile.addListener) mobile.addListener(apply);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+
+  // 一覧の表示切替がある画面では、スマホは写真の小さいリスト表示から始める。
+  window.addEventListener('load', function () {
+    if (!mobile.matches) return;
+    document.querySelectorAll('[data-view-mode="list"], [data-living-view="list"]').forEach(function (button) {
+      var active = button.classList.contains('is-active') || button.classList.contains('active') || button.getAttribute('aria-pressed') === 'true';
+      if (!active && !button.disabled) button.click();
+    });
+  });
+})();
+
+// スマホでは長い記事一覧を最初の12件だけ出し、「もっと見る」で12件ずつ足す。
+// 絞り込みや並べ替えで一覧が変わったら、また12件から数え直す。
+(function () {
+  if (!window.matchMedia || !window.MutationObserver) return;
+  var mobile = window.matchMedia('(max-width: 759px)');
+  var STEP = 12;
+
+  function setupList(list) {
+    var shown = STEP;
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'jc-show-more';
+    button.hidden = true;
+    list.insertAdjacentElement('afterend', button);
+
+    function items() {
+      return Array.prototype.filter.call(list.children, function (child) {
+        return child.matches('article, [data-news-card], [data-living-card]');
+      });
+    }
+
+    function apply() {
+      var all = items();
+      var eligible = all.filter(function (item) { return !item.hidden; });
+      var limit = mobile.matches ? shown : Infinity;
+      all.forEach(function (item) { item.classList.remove('jc-more-hidden'); });
+      eligible.forEach(function (item, index) { if (index >= limit) item.classList.add('jc-more-hidden'); });
+      var rest = eligible.length - Math.min(limit, eligible.length);
+      button.hidden = rest <= 0;
+      button.textContent = 'もっと見る（残り' + rest + '件）';
+    }
+
+    button.addEventListener('click', function () {
+      var firstNew = items().filter(function (item) { return !item.hidden; })[shown];
+      shown += STEP;
+      apply();
+      if (firstNew && firstNew.querySelector('a[href]')) firstNew.querySelector('a[href]').focus({ preventScroll: true });
+    });
+    new MutationObserver(function (mutations) {
+      var changed = mutations.some(function (m) { return m.type === 'childList' ? m.target === list : m.target.parentElement === list; });
+      if (changed) { shown = STEP; apply(); }
+    }).observe(list, { childList: true, subtree: true, attributes: true, attributeFilter: ['hidden'] });
+    if (mobile.addEventListener) mobile.addEventListener('change', apply); else if (mobile.addListener) mobile.addListener(apply);
+    apply();
+  }
+
+  function init() {
+    document.querySelectorAll('.news-events-grid, .living-column-grid').forEach(setupList);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();

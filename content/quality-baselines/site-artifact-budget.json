@@ -18,12 +18,12 @@
       "html_bytes": 340000,
       "css_bytes": 210000,
       "js_bytes": 140000,
-      "shell_bytes": 535000
+      "shell_bytes": 545000
     },
     "article": {
       "html_bytes": 140000,
       "css_bytes": 190000,
-      "js_bytes": 112000,
+      "js_bytes": 120000,
       "shell_bytes": 400000
     },
     "directory": {

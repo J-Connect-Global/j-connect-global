@@ -6403,17 +6403,17 @@
   {
     "id": "L099",
     "slug": "nrw-primary-school-enrollment-2027-2028",
-    "title": "NRWの小学校入学2027/28｜対象年齢・申込期限・デュッセルドルフとケルンの手続き",
+    "title": "NRWの小学校入学2027/28｜対象年齢・申込期限・期限後の連絡先",
     "category": "家族・子育て",
-    "summary": "NRW州で2027/28年度に小学校へ入る子どもの対象年齢と就学義務、2026年11月15日（日）の州全体の登録期限を解説。デュッセルドルフの10月6〜8日の指定受付、ケルンの登録スケジュール、2029/30年度以降の期限変更、必要書類を確認できます。",
+    "summary": "NRW州で2027/28年度に小学校へ入る子どもの対象年齢と就学義務、2026年11月15日に終了した登録期限を解説。未登録の場合の連絡先、デュッセルドルフ・ケルンの手続き、必要書類を確認できます。",
     "url": "/germany/ja/living/nrw-primary-school-enrollment-2027-2028/",
     "markdown_path": "/content/living/nrw-primary-school-enrollment-2027-2028.md",
     "published": false,
     "status": "draft",
     "published_at": "",
-    "updated_at": "2026-11-15",
-    "last_verified": "2026-11-15",
-    "next_review": "2026-11-16",
+    "updated_at": "2026-11-16",
+    "last_verified": "2026-11-16",
+    "next_review": "2026-11-20",
     "home_visible": false,
     "home_order": 999,
     "hub_visible": false,
@@ -6423,9 +6423,9 @@
     "disclaimer_type": "family_administrative",
     "review": {
       "status": "needs_review",
-      "reviewed_by": "AI official-source verification; editorial review pending",
-      "last_reviewed_at": "2026-11-15",
-      "next_review_due": "2026-11-16"
+      "reviewed_by": "J-Connect編集部（AIによる一次情報再確認 2026-11-16）。期限後の連絡手順とNRW州サービス案内の過料手続き記載を反映。自治体実務・法的表現の人間レビュー待ち。",
+      "last_reviewed_at": "2026-11-16",
+      "next_review_due": "2026-11-20"
     },
     "tags": [
       "小学校",

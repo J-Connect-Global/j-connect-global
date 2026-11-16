@@ -65,3 +65,19 @@ Verify each message is visibly sent from `contact@j-connect-global.com`, the Com
 Only retire the previous hosted-form account after the production deployment, successful test messages, and browser submission tests have been verified. Keep the provider configuration available until that evidence is recorded, then remove it according to the account's retention and billing policy.
 
 For the account-free conversation setup and moderation flow, see [Community messaging](community-messaging.md).
+
+## 8. Inbox mirror to a private mailbox (optional)
+
+`zoho-inbox-mirror.gs` copies every new mail in the contact@ Inbox (form notifications, direct inquiries, replies) to a private mailbox every 5 minutes. The private address is stored only in Script Properties and never in this repository.
+
+1. In the Zoho API Console Self Client, generate a code (10 minutes) with scope `ZohoMail.messages.CREATE,ZohoMail.messages.READ`. Make sure `ZOHO_CLIENT_ID` / `ZOHO_CLIENT_SECRET` belong to that Self Client, put the code in the Script Property `ZOHO_AUTH_CODE`, and run `exchangeZohoAuthCode()`. It stores the new `ZOHO_REFRESH_TOKEN` and deletes the code.
+2. Add Script Properties:
+
+| Property | Value |
+| --- | --- |
+| `JCONNECT_MIRROR_EMAIL` | The private mailbox (not on the j-connect-global.com domain) |
+| `ZOHO_INBOX_FOLDER_ID` | Zoho folder ID of the contact@ Inbox |
+
+3. Add `zoho-inbox-mirror.gs` to the Apps Script project, run `testInboxMirror()` once (sends a copy of the newest Inbox mail), then run `installInboxMirror()` once.
+
+Copies are sent from contact@ with no Reply-To, so replying to a copy only returns to contact@. Real replies are sent from Zoho. Copies share the outgoing rate limit with receipts, so at most 3 are sent per run; the rest follow on later runs. Stop with `uninstallInboxMirror()`.

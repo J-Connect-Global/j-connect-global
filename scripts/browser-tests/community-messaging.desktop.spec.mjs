@@ -113,7 +113,7 @@ test('email link opens directly, can be reopened and reused in another browser; 
   }
   expect(sent).toBe(2);
   await page.reload();await expect(page.locator('#conversationPanel')).toBeVisible();expect(exchanges).toBe(1);
-  await expect(page.locator('#privateMessages .cm-message')).toHaveCount(3);
+  await expect(page.locator('#privateMessages .cm-entry')).toHaveCount(3);
   // Reopening the same email link later, and in a separate browser, still works.
   await page.goto('about:blank');await page.goto(link);await expect(page.locator('#conversationPanel')).toBeVisible();expect(exchanges).toBe(2);
   const other=await browser.newContext({baseURL:test.info().project.use.baseURL});const second=await other.newPage();await mock(second,handler);

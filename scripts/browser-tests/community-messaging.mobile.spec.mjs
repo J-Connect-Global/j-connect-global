@@ -22,8 +22,11 @@ test('private conversation keeps long text, timestamps and send feedback usable 
     if(action==='communitySendMessage')messages.push({id:'new-message',nickname:'自分',body:values.get('body'),mine:true,created_at:'2026-10-18T15:20:00Z'});
     await route.fulfill({json:data});
   });
+  // Brave hides cookie-banner class names such as .cm-message by default (EasyList Cookie); the history must stay visible.
+  await page.addInitScript(()=>document.addEventListener('DOMContentLoaded',()=>{const style=document.createElement('style');style.textContent='.cm-message{display:none!important}';document.head.append(style);}));
   await page.goto('/germany/ja/community/conversation/?kind=conversation&id=conversation-mobile-ui#access='+'a'.repeat(64));
-  await expect(page.locator('#privateMessages .cm-message')).toHaveCount(6);
+  await expect(page.locator('#privateMessages .cm-entry')).toHaveCount(6);
+  await expect(page.locator('#privateMessages .cm-entry').first()).toBeVisible();
   await expect(page.locator('#privateMessages time').first()).toContainText('17:18（ベルリン時間）');
   await assertNoHorizontalOverflow(page);
   await page.getByLabel('メッセージ（相手だけに表示）',{exact:true}).fill('スマホからの返信確認です。');

@@ -10,7 +10,7 @@
   if (window.__jcChatWidget) return;
   window.__jcChatWidget = true;
 
-  var VERSION = '20261116c';
+  var VERSION = '20261116d';
   var STATE_KEY = 'jcChatWidgetState';   // 'open' | 'min'
   var LOG_KEY = 'jcChatWidgetLog';
   var QUOTA_KEY = 'jcChatWidgetQuota';
@@ -95,7 +95,7 @@
     if (window.JCAI) return Promise.resolve(window.JCAI);
     if (!jcaiPromise) {
       jcaiPromise = (window.JCONNECT_DATA_SOURCES ? Promise.resolve() : loadScript('/assets/js/data-sources.js'))
-        .then(function () { return window.JCAI ? null : loadScript('/assets/js/jc-ai-tools.js?v=20261116b'); })
+        .then(function () { return window.JCAI ? null : loadScript('/assets/js/jc-ai-tools.js?v=20261116d'); })
         .then(function () { return window.JCAI; })
         .catch(function () { jcaiPromise = null; return null; });
     }

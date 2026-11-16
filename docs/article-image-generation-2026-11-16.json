@@ -1,0 +1,28 @@
+[
+  {
+    "slug": "germany-manners-mistakes-japanese",
+    "section": "living",
+    "markdown": "content/living/germany-manners-mistakes-japanese.md",
+    "dest": "assets/img/living/germany-manners-mistakes-japanese.webp",
+    "alt": "カフェの会計とチップの場面を表したイラスト",
+    "prompt": "Hand-coded flat vector illustration (no text, logos, flags, seals or real people).",
+    "caption": "AIの支援でコードから描画したイラスト（J-Connect）。チップの場面のイメージで、実在の店舗や人物を描いたものではありません。",
+    "credit": "AI-assisted vector illustration / J-Connect",
+    "status": "generated",
+    "created": "2026-11-16",
+    "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted on 2026-11-16)"
+  },
+  {
+    "slug": "germany-heating-ventilation-mold-guide",
+    "section": "living",
+    "markdown": "content/living/germany-heating-ventilation-mold-guide.md",
+    "dest": "assets/img/living/germany-heating-ventilation-mold-guide.webp",
+    "alt": "冬の朝、窓を全開にした部屋の、暖房のつまみが付いたラジエーターを描いたイラスト",
+    "prompt": "Hand-coded flat vector illustration (no text, logos, flags, seals or real people).",
+    "caption": "AIの支援でコードから描画したイラスト（J-Connect）。暖房と換気の場面のイメージで、実在の住居を描いたものではありません。",
+    "credit": "AI-assisted vector illustration / J-Connect",
+    "status": "generated",
+    "created": "2026-11-16",
+    "tool": "Hand-coded SVG drawn by an AI coding assistant, rendered with Chromium (Gemini image quota exhausted on 2026-11-16)"
+  }
+]

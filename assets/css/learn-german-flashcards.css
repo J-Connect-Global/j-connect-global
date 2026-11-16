@@ -1545,3 +1545,19 @@
   .flashcards-auto-speech strong { margin-left: auto; }
   .flashcard__example .flashcard__example-de-row { font-size: 16px; }
 }
+
+/* スマホ：ページ内の4つの見出しリンクは1行にして、画面上部をふさぐ高さを減らす */
+@media (max-width: 759px) {
+  .learn-mobile-page-nav {
+    top: 66px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2px;
+    padding: 4px;
+  }
+
+  .learn-mobile-page-nav a {
+    min-height: 40px;
+    padding: 4px 2px;
+    font-size: 12px;
+  }
+}

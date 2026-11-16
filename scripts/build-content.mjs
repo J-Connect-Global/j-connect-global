@@ -405,7 +405,7 @@ ${indent(renderJaHreflang(canonicalHref), 2)}
 ${indent(ogMeta, 2)}
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-performance-a11y-20260719">
+  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=mobile-20261116">
   <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <link rel="stylesheet" href="/assets/css/social-share.css">
@@ -1850,7 +1850,7 @@ ${indent(renderJaHreflang(canonicalHref), 2)}
   <meta name="twitter:image" content="${escapeAttribute(absoluteUrl(getSocialImage(DEFAULT_IMAGE).src))}">
   <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=portal8-performance-a11y-20260719">
+  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=mobile-20261116">
   <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <script src="/assets/js/cookie-consent.js" defer></script>

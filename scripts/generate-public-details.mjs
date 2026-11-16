@@ -209,7 +209,7 @@ ${footer}
 <script src="/assets/js/cookie-consent.js" defer></script>
 <script src="/assets/js/public-detail-pages.js" defer></script>
 ${kind === "community" ? '<script src="/assets/js/data-sources.js"></script><script src="/assets/js/community-messaging.js" defer></script>' : ""}
-<script src="/assets/js/jc-chat-widget.js?v=20261116d" defer></script>
+<script src="/assets/js/jc-chat-widget.js?v=20261116m" defer></script>
 </body>
 </html>
 `;

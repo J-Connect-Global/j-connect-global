@@ -17,7 +17,7 @@ const DEFAULT_SOCIAL_IMAGE = '/assets/img/placeholders/jconnect-default-card.web
 const SOCIAL_SHARE_CSS = '/assets/css/social-share.css';
 const SOCIAL_SHARE_JS = '/assets/js/social-share.js';
 const SITE_IDENTITY_JS = '/assets/js/site-identity.js';
-const CHAT_WIDGET_JS = '/assets/js/jc-chat-widget.js?v=20261116d';
+const CHAT_WIDGET_JS = '/assets/js/jc-chat-widget.js?v=20261116m';
 
 function main() {
   writeBrowserSiteIdentity();
@@ -142,7 +142,7 @@ function ensureThemeInitScript(html) {
 }
 
 function ensureHeaderFooterStylesheet(html) {
-  const stylesheetHref = '/assets/css/ja-header-footer.css?v=portal8-performance-a11y-20260719';
+  const stylesheetHref = '/assets/css/ja-header-footer.css?v=mobile-20261116';
   const stylesheetLink = `  <link rel="stylesheet" href="${stylesheetHref}">`;
 
   // Remove any existing ja-header-footer.css link first, regardless of position/version.

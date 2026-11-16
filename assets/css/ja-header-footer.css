@@ -915,3 +915,19 @@ body.portal3-home .page-footer .footer-links a:hover{
     gap:18px;
   }
 }
+
+/* スマホ：ヘッダーのボタンとフッターのリンクを、指で押しやすい大きさにする */
+@media (max-width:780px){
+  body .site-header .header-category-trigger{min-height:40px;padding:0 10px}
+  body .site-header .header-search .search-btn{width:40px;min-width:40px;height:40px;min-height:40px;flex-basis:40px}
+  body .site-header .theme-toggle{position:relative;height:36px}
+  body .site-header .theme-toggle::before{content:"";position:absolute;inset:-4px 0}
+  .page-footer .footer-links a,
+  body.portal3-home .page-footer .footer-links a{display:block;padding:7px 0;font-size:14px}
+  .footer-group{gap:0}
+  .footer-heading{margin-bottom:2px}
+}
+@media (max-width:520px){
+  .page-footer .footer-links{grid-template-columns:repeat(2, minmax(0, 1fr));gap:18px 16px}
+  .page-footer .footer-links .footer-group:last-child{grid-column:1 / -1}
+}

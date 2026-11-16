@@ -1273,3 +1273,62 @@ body > .page-footer{
       var(--color-bg);
   }
 }
+
+/* ===== スマホの使いやすさ（全ページ共通） ===== */
+/* main.js がスマホで付ける「絞り込み条件を開く」ボタンと、たたんだ状態 */
+.jc-filter-toggle{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-height:44px;
+  margin:8px 0 4px;
+  padding:8px 14px;
+  border:1px solid #b9cde4;
+  border-radius:10px;
+  background:#eef5fd;
+  color:#0b3a6e;
+  font:inherit;
+  font-size:15px;
+  font-weight:800;
+  cursor:pointer;
+}
+.jc-filter-toggle::after{content:"▼";margin-left:8px;font-size:11px}
+.jc-filter-toggle[aria-expanded="true"]::after{content:"▲"}
+.jc-filter-toggle[hidden]{display:none!important}
+.jc-filter-collapsed > :not(.jc-filter-toggle):not(.jc-filter-keep):not(h2):not(h3):not(h4):not(.panel-title-row):not(.filter-panel-heading):not(:has(input[type="search"], input[type="text"])):not(input[type="search"]):not(input[type="text"]){
+  display:none!important;
+}
+:root[data-theme="dark"] .jc-filter-toggle{background:#13253d;border-color:#2c4a6d;color:#dbe9fb}
+
+@media (max-width:759px){
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  /* iPhone の Safari は 16px 未満の入力欄を拡大表示してしまうため、入力欄は 16px にする */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="color"]),
+  select,
+  textarea{font-size:16px!important}
+  /* たたまれている間は、上に貼りつく絞り込み欄にしない */
+  .jc-filter-collapsed{position:static!important;max-height:none!important}
+}
+
+/* main.js がスマホの長い一覧で使う「もっと見る」 */
+.jc-more-hidden{display:none!important}
+.jc-show-more{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-height:48px;
+  margin:12px 0 4px;
+  padding:10px 16px;
+  border:1px solid #0b3a6e;
+  border-radius:12px;
+  background:#fff;
+  color:#0b3a6e;
+  font:inherit;
+  font-size:15px;
+  font-weight:800;
+  cursor:pointer;
+}
+.jc-show-more[hidden]{display:none!important}
+:root[data-theme="dark"] .jc-show-more{background:#13253d;border-color:#7fb0e8;color:#dbe9fb}

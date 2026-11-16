@@ -453,3 +453,13 @@ button{cursor:pointer}
   border-color:var(--color-border, #263a52);
   background:#ffffff;
 }
+
+/* スマホ：絞り込みの選択肢は1行1個に並べず、折り返して横に並べる */
+@media (max-width:759px){
+  .filter-chip-group{display:flex;flex-wrap:wrap;gap:8px}
+  .filter-chip{flex:0 1 auto;min-height:40px;padding:8px 14px;border-radius:999px;font-size:14px}
+  .reset-btn{min-height:40px;padding:0 14px;font-size:14px}
+  .label{font-size:13px}
+  .view-btn{min-height:40px}
+  .save-button{min-width:40px;min-height:40px}
+}

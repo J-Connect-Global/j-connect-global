@@ -13,7 +13,7 @@ J-Connect編集部｜2026年11月16日確認
 
 ## 到着〜2週間
 
-- [ ] **住民登録が必要か、いつまでに届け出るかを確認する。** 一般則は入居後2週間以内（連邦住民登録法 §17(1)）ですが、国外居住者でドイツ国内に未登録の人には、3か月の滞在に関する特則（同法 §27(2)）があります。短期滞在を含め、滞在期間・住居形態に応じて自治体へ確認してください。長期移住で判断に迷う場合は、予約が取れなくても期限前に窓口へ連絡し、問い合わせ・申請の記録を残します。→ [住民登録の手順](https://j-connect-global.com/germany/ja/living/anmeldung-guide/)
+- [ ] **住民登録が必要か、いつまでに届け出るかを確認する。** 一般則は入居後2週間以内（連邦住民登録法 §17(1)）です。国外に通常居住し、ドイツ国内で未登録の人は、①入居時点で3か月を超える滞在が決まっている場合は入居後2週間以内、②当初は3か月以内の予定で後から延長した場合は、3か月経過後2週間以内に登録します。3か月以内で滞在を終える場合は一般的な住民登録義務はありません。すでにドイツ国内で登録済みの人の国内転居は、通常2週間以内です。→ [住民登録の手順](https://j-connect-global.com/germany/ja/living/anmeldung-guide/)
 - [ ] 郵便受け・インターホンに、郵便が届く氏名を表示する。税務IDや保険・銀行からの手紙を受け取れるようにする。
 - [ ] 健康保険の加入先・開始日を確認し、勤務先から求められた証明を提出する。→ [健康保険の選び方](https://j-connect-global.com/germany/ja/living/health-insurance-guide/)
 - [ ] 住民登録の情報を基に税務IDが郵送される。すでにドイツで税務IDを取得したことがある人は、同じ番号を使う。未着なら住所・氏名表示を確認し、連邦中央税務庁の再通知手続きを調べる。→ [税務ID・税務署番号・給与税区分](https://j-connect-global.com/germany/ja/living/tax-id-steuernummer-steuerklasse/)
@@ -48,6 +48,7 @@ J-Connect編集部｜2026年11月16日確認
 
 - [連邦住民登録法 §17（住民登録の一般則）](https://www.gesetze-im-internet.de/bmg/__17.html)
 - [連邦住民登録法 §27（短期滞在等の例外）](https://www.gesetze-im-internet.de/bmg/__27.html)
+- [連邦行政ポータル：国外居住者の3か月以内・超の滞在における登録義務](https://verwaltung.bund.de/leistungsverzeichnis/DE/lagen/1050000/sublagen/1050200/rechte-und-pflichten/102837924)
 - [外務省：在留届FAQ・たびレジ](https://www.ezairyu.mofa.go.jp/RRnet/faq.html)
 - [連邦中央税務庁：税務ID](https://bzst.de/DE/Service/LeichteSprache/steuerid/steuerid.html)
 - [運転免許規則 Anlage 11（日本の免許）](https://www.gesetze-im-internet.de/fev_2010/anlage_11.html)

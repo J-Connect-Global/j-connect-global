@@ -17,7 +17,7 @@ const DEFAULT_SOCIAL_IMAGE = '/assets/img/placeholders/jconnect-default-card.web
 const SOCIAL_SHARE_CSS = '/assets/css/social-share.css';
 const SOCIAL_SHARE_JS = '/assets/js/social-share.js';
 const SITE_IDENTITY_JS = '/assets/js/site-identity.js';
-const CHAT_WIDGET_JS = '/assets/js/jc-chat-widget.js?v=20261116a';
+const CHAT_WIDGET_JS = '/assets/js/jc-chat-widget.js?v=20261116b';
 
 function main() {
   writeBrowserSiteIdentity();

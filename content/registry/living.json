@@ -2170,25 +2170,27 @@
   },
   {
     "id": "L001",
-    "title": "ドイツの住民登録（Anmeldung）｜入居後2週間の期限・必要書類・予約が取れないとき",
+    "title": "ドイツの住民登録（Anmeldung）｜2週間の一般則と3か月の例外・必要書類",
     "slug": "anmeldung-guide",
     "image_url": "/assets/images/living/japanese-resident-paperwork-editorial-v1.webp",
     "image_alt": "ドイツの住民登録に必要な書類を自宅で準備する日本人の住民",
     "category": "役所・滞在",
-    "summary": "住民登録は実際の入居日から2週間以内。パスポート、入居証明、申請書の取得先と出し方、予約が取れないときの動き方、期限に遅れた場合、登録後に届く税務IDまで日本語で整理します。",
+    "summary": "ドイツの住民登録は一般則として入居後2週間以内ですが、国外居住者でドイツ国内に未登録の人には連邦住民登録法第27条第2項の3か月特則があります。国内転居と初めての渡独を分け、必要書類、入居証明、予約が取れないときの対応を整理します。",
     "url": "/germany/ja/living/anmeldung-guide/",
     "markdown_path": "/content/living/anmeldung-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-11-15",
-    "last_verified": "2026-11-15",
+    "updated_at": "2026-11-16",
+    "last_verified": "2026-11-16",
     "tags": [
       "住民登録",
       "入居証明",
       "市民窓口",
       "初渡独",
-      "引っ越し"
+      "引っ越し",
+      "短期滞在",
+      "3か月の例外"
     ],
     "home_visible": true,
     "home_order": 80,
@@ -2207,6 +2209,10 @@
       {
         "title": "連邦住民登録法第17条：登録と転出",
         "url": "https://www.gesetze-im-internet.de/bmg/__17.html"
+      },
+      {
+        "title": "連邦住民登録法第27条：国外居住者などの登録義務の例外",
+        "url": "https://www.gesetze-im-internet.de/bmg/__27.html"
       },
       {
         "title": "連邦行政ポータル：住民登録",
@@ -2237,8 +2243,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-11-15",
-      "next_review_due": "2027-01-31"
+      "last_reviewed_at": "2026-11-16",
+      "next_review_due": "2027-02-16"
     }
   },
   {

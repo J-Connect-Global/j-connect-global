@@ -4,7 +4,7 @@
 - 記事ID：N038
 - 確認日：2026-11-11（Europe/Berlin）
 - 状態：2026-11-11にMarkdown本文と確認メタデータをPRブランチで更新。生成HTML・registry・hub・search index・sitemapはCIビルド差分の反映待ち。本番main・公開サイトは未変更。
-- 優先度：高（法令上の基準日まで4日）
+- 優先度：高（法令上の基準日2026-11-15経過。日曜の翌営業日扱いは未確認）
 
 ## 今回確認した一次情報
 
@@ -66,3 +66,19 @@ N038は期限直前のため更新価値が高い。現時点では調査・編�
 - https://www.umweltbundesamt.de/system/files/medien/366/dokumente/2025-07-18_uba_faq_vollzug_38._bimschv_0.pdf
 - https://www.gesetze-im-internet.de/bimschv_38_2017/__8.html
 - https://www.gesetze-im-internet.de/vwvfg/__31.html
+
+
+## 2026-11-16 期限後の再確認
+
+- 38番目の連邦排出規制令第8条とUBA FAQ Q6は、非公開充電の定額推計（第7条）の基準日を当該年11月15日、公共充電設備の計測値（第6条）を翌年2月28日と区別しています。FAQ Q7は、過年度分の申告はできず、法定期限内に限ると説明しています。
+- 2026年11月15日は日曜日でした。行政手続法第31条第3項の一般的な翌営業日規定が今回の申告期限に適用されるかについて、2026年11月16日時点でUBAの個別説明は確認できていません。**「11月16日まで確実に提出できる」とも「日曜なので期限延長は一切ない」とも断定しないでください。**
+- UBAの概要ページは2026年11月13日更新で、2026年の義務年度について2026年9月29日以降に届いた申請を処理中と案内しています。これは期限延長を認めた案内ではありません。デジタル申請システムは引き続き利用できず、書式自由のメール申請を案内しています。
+- まだ申告していない読者向けには「第7条の法定日付は11月15日。日曜日の翌営業日扱いはUBAに個別確認。2月28日は公共充電設備の運営者向けで、自家用車の定額推計に流用しない」と案内してください。仲介事業者の独自受付期限も別に確認する必要があります。
+- 過年度分の申告はできないというFAQの説明があるため、2026年分を逃した人に2027年の申請で2026年分を取り戻せると書かないでください。
+- 2026年11月16日時点で、公開mainのN038は未更新のままです。PR #442には2026年11月15日確認の詳細な更新案がありますが、PRはmainから69コミット遅れ、生成HTML等の差分も残るため、現状のままマージしないでください。
+
+一次情報（再確認）：
+- UBA概要ページ（2026-11-13更新）：https://www.umweltbundesamt.de/themen/verkehr/kraftstoffe-antriebe/vollzug-38-bimschv-anrechnung-von-strom-fuer
+- UBA FAQ Q6・Q7（2025-07-17版）：https://www.umweltbundesamt.de/system/files/medien/366/dokumente/2025-07-18_uba_faq_vollzug_38._bimschv_0.pdf
+- 38. BImSchV §8：https://www.gesetze-im-internet.de/bimschv_38_2017/__8.html
+- Verwaltungsverfahrensgesetz §31：https://www.gesetze-im-internet.de/vwvfg/__31.html

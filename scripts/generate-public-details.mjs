@@ -198,7 +198,7 @@ function documentShell({ head, header, footer, kind, body }) {
   <link rel="stylesheet" href="/assets/css/jconnect-ui.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <link rel="stylesheet" href="/assets/css/public-detail-pages.css">
-  ${kind === "community" ? '<link rel="stylesheet" href="/assets/css/community-messaging.css">' : ""}
+  ${kind === "community" ? '<link rel="stylesheet" href="/assets/css/community-messaging.css?v=20261115">' : ""}
   <script src="/assets/js/site-identity.js"></script>
 </head>
 <body>

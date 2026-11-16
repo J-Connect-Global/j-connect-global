@@ -55,7 +55,7 @@
     history = next;
     const fragment = document.createDocumentFragment();
     history.forEach((message) => {
-      const card = node('article', undefined, 'cm-message' + (message.mine ? ' cm-message--mine' : ''));
+      const card = node('article', undefined, 'cm-entry' + (message.mine ? ' cm-entry--mine' : ''));
       card.append(node('h3', message.nickname + (message.mine ? '（あなた）' : '')));
       const dateLabel = formatTime(message.created_at); if (dateLabel) { const label = node('time', dateLabel); label.dateTime = message.created_at; card.append(label); }
       card.append(node('p', message.deleted ? 'このメッセージは削除されました。' : message.body, 'cm-body'));

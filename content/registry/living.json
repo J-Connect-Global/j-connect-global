@@ -6932,5 +6932,57 @@
     ],
     "image": "/assets/img/living/germany-heating-ventilation-mold-guide.webp",
     "image_alt": "冬の朝、窓を全開にした部屋の、暖房のつまみが付いたラジエーターを描いたイラスト"
+  },
+  {
+    "id": "L118",
+    "title": "デュッセルドルフ赴任ガイド｜渡独前から到着後・本帰国まで、やることと読む記事の順番",
+    "slug": "duesseldorf-relocation-guide",
+    "category": "役所・滞在",
+    "summary": "デュッセルドルフへの赴任が決まった人向けの入口ガイド。渡独前、到着直後、最初の1か月、生活が落ち着いてからの順に、やることと読むべき記事をまとめました。単身・家族帯同の違い、日本語で相談できる先、ドイツ語の手紙が届いたときのAIツールも案内します。",
+    "url": "/germany/ja/living/duesseldorf-relocation-guide/",
+    "markdown_path": "/content/living/duesseldorf-relocation-guide.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-11-16",
+    "updated_at": "2026-11-16",
+    "last_verified": "2026-11-16",
+    "tags": [
+      "デュッセルドルフ",
+      "赴任",
+      "駐在",
+      "初渡独",
+      "住民登録",
+      "健康保険",
+      "日本語で受診",
+      "本帰国"
+    ],
+    "home_visible": false,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/duesseldorf-relocation-guide/",
+    "related_articles": [
+      "germany-first-30-days",
+      "anmeldung-guide",
+      "health-insurance-guide",
+      "bank-account-germany",
+      "tax-id-steuernummer-steuerklasse",
+      "japanese-speaking-doctors-germany",
+      "germany-waste-sorting-guide",
+      "duesseldorf-city-guide",
+      "returning-to-japan-checklist"
+    ],
+    "official_sources": [],
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI作成。既存記事への案内のみで、新しい制度情報は含まない）",
+      "last_reviewed_at": "2026-11-16",
+      "next_review_due": "2027-02-16"
+    },
+    "image": "/assets/images/living/first-month-checklist.webp",
+    "image_alt": "住居、住民登録、保険、銀行、通信、交通に使うものを順に並べた机",
+    "image_url": "/assets/images/living/first-month-checklist.webp",
+    "home_order": 999
   }
 ]

@@ -21,6 +21,7 @@
 ## 生活・手続きガイド（主要）
 
 - [生活・手続きの入口](https://j-connect-global.com/germany/ja/living/): 目的別（着いたばかり・住まい・家族・医療・お金・本帰国など）
+- [デュッセルドルフ赴任ガイド](https://j-connect-global.com/germany/ja/living/duesseldorf-relocation-guide/): 渡独前から到着後・本帰国まで、やることと読む記事の順番
 - [着いたばかりの人向けルート](https://j-connect-global.com/germany/ja/living/routes/new-arrival/)
 - [住民登録（Anmeldung）ガイド](https://j-connect-global.com/germany/ja/living/anmeldung-guide/)
 - [ドイツの銀行口座](https://j-connect-global.com/germany/ja/living/bank-account-germany/)

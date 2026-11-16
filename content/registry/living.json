@@ -1716,14 +1716,14 @@
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
     "image_alt": "明るい住居の机に置かれた鍵、間取り図、ノートパソコン",
     "category": "住まい",
-    "summary": "ドイツの賃貸・家探しを日本語で解説。応募書類の取得先と提出時期、家賃の内訳、内見、契約、敷金の上限・分割払い、詐欺対策、入居後の手続きをまとめます。",
+    "summary": "ドイツの賃貸・家探しを日本語で解説。敷金は基礎家賃の最大3か月分、解約は原則3か月前。応募書類、家賃の内訳、内見、契約、詐欺対策、入居時の記録、退去時の落とし穴と、編集部メンバーの実例（有料プランで200件以上応募）、そのまま使えるドイツ語の文面まで整理します。",
     "url": "/germany/ja/living/rent-apartment-germany/",
     "markdown_path": "/content/living/rent-apartment-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-10-17",
-    "last_verified": "2026-10-17",
+    "updated_at": "2026-11-16",
+    "last_verified": "2026-11-16",
     "tags": [
       "賃貸",
       "家探し",
@@ -1770,8 +1770,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-17",
-      "next_review_due": "2027-01-17"
+      "last_reviewed_at": "2026-11-16",
+      "next_review_due": "2027-02-16"
     }
   },
   {
@@ -6932,5 +6932,57 @@
     ],
     "image": "/assets/img/living/germany-heating-ventilation-mold-guide.webp",
     "image_alt": "冬の朝、窓を全開にした部屋の、暖房のつまみが付いたラジエーターを描いたイラスト"
+  },
+  {
+    "id": "L118",
+    "title": "デュッセルドルフ赴任ガイド｜渡独前から到着後・本帰国まで、やることと読む記事の順番",
+    "slug": "duesseldorf-relocation-guide",
+    "category": "役所・滞在",
+    "summary": "デュッセルドルフへの赴任が決まった人向けの入口ガイド。渡独前、到着直後、最初の1か月、生活が落ち着いてからの順に、やることと読むべき記事をまとめました。単身・家族帯同の違い、日本語で相談できる先、ドイツ語の手紙が届いたときのAIツールも案内します。",
+    "url": "/germany/ja/living/duesseldorf-relocation-guide/",
+    "markdown_path": "/content/living/duesseldorf-relocation-guide.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-11-16",
+    "updated_at": "2026-11-16",
+    "last_verified": "2026-11-16",
+    "tags": [
+      "デュッセルドルフ",
+      "赴任",
+      "駐在",
+      "初渡独",
+      "住民登録",
+      "健康保険",
+      "日本語で受診",
+      "本帰国"
+    ],
+    "home_visible": false,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/duesseldorf-relocation-guide/",
+    "related_articles": [
+      "germany-first-30-days",
+      "anmeldung-guide",
+      "health-insurance-guide",
+      "bank-account-germany",
+      "tax-id-steuernummer-steuerklasse",
+      "japanese-speaking-doctors-germany",
+      "germany-waste-sorting-guide",
+      "duesseldorf-city-guide",
+      "returning-to-japan-checklist"
+    ],
+    "official_sources": [],
+    "disclaimer_type": "administrative",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI作成。既存記事への案内のみで、新しい制度情報は含まない）",
+      "last_reviewed_at": "2026-11-16",
+      "next_review_due": "2027-02-16"
+    },
+    "image": "/assets/images/living/first-month-checklist.webp",
+    "image_alt": "住居、住民登録、保険、銀行、通信、交通に使うものを順に並べた机",
+    "image_url": "/assets/images/living/first-month-checklist.webp",
+    "home_order": 999
   }
 ]

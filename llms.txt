@@ -1,0 +1,38 @@
+# J-Connect Germany（J-Connect Global）
+
+> ドイツ在住の日本人向けの日本語ポータル。生活・手続きガイド、ドイツ語の手紙を日本語で解説する無料AIツール、掲示板（売ります・譲ります・質問・部屋探し）、求人、ニュース・イベント、ドイツ語学習を提供しています。運営は「J-Connect編集部」。
+
+## このサイトの特徴
+
+- ドイツ語の手紙の写真を日本語で解説するAIツールを、登録不要・無料で提供しています（期限・やること・返信文のたたき台まで）。
+- 記事の多くは生成AIで作成し、公式情報との照合に努めています。税金・滞在許可・期限のある手続きなど大切な判断の前は、公式窓口や専門家にも確認してください。
+- デュッセルドルフ（在留日本人が多い都市）を含む、ドイツ各地の生活情報を扱います。
+
+## 無料のAIツール（登録不要）
+
+- [ツール一覧](https://j-connect-global.com/germany/ja/tools/): ドイツ生活のAIツール
+- [ドイツの手紙AI解説](https://j-connect-global.com/germany/ja/tools/letter-explainer/): 役所・会社からの手紙を写真で日本語に解説
+- [J-Connect AIに質問](https://j-connect-global.com/germany/ja/tools/ask/): サイトの記事をもとに根拠つきで回答
+- [手紙・メール作成](https://j-connect-global.com/germany/ja/tools/write/): 日本語で書くと丁寧なドイツ語の文面に
+- [手続きナビ](https://j-connect-global.com/germany/ja/tools/navi/): 状況別の手続きチェックリスト
+- [申請書の記入アシスタント](https://j-connect-global.com/germany/ja/tools/form-helper/): 申請書の各欄の意味と記入例
+- [ドイツ語の会話練習](https://j-connect-global.com/germany/ja/tools/conversation/): 医者・役所・大家さんなどの場面練習
+
+## 生活・手続きガイド（主要）
+
+- [生活・手続きの入口](https://j-connect-global.com/germany/ja/living/): 目的別（着いたばかり・住まい・家族・医療・お金・本帰国など）
+- [着いたばかりの人向けルート](https://j-connect-global.com/germany/ja/living/routes/new-arrival/)
+- [住民登録（Anmeldung）ガイド](https://j-connect-global.com/germany/ja/living/anmeldung-guide/)
+- [ドイツの銀行口座](https://j-connect-global.com/germany/ja/living/bank-account-germany/)
+- [ドイツで医者にかかる](https://j-connect-global.com/germany/ja/living/doctor-appointment-germany/)
+- [デュッセルドルフの街ガイド](https://j-connect-global.com/germany/ja/living/duesseldorf-city-guide/)
+
+## その他
+
+- [掲示板（Community）](https://j-connect-global.com/germany/ja/community/)
+- [求人](https://j-connect-global.com/germany/ja/jobs/)
+- [ニュース](https://j-connect-global.com/germany/ja/news/)
+- [ドイツ語学習](https://j-connect-global.com/germany/ja/learn-german/)
+- [このサイトについて](https://j-connect-global.com/germany/ja/about/)
+- [運営者情報](https://j-connect-global.com/germany/ja/impressum/)
+- [サイトマップ](https://j-connect-global.com/sitemap.xml)

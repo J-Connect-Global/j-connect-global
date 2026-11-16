@@ -7,7 +7,7 @@ import { generatePublicDetails } from "./generate-public-details.mjs";
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourceDirectories = ["assets", "germany", "de", "en", "ja"];
 const sourceFiles = [
-  "index.html", "404.html", "robots.txt", "sitemap.xml", "CNAME", "favicon.ico",
+  "index.html", "404.html", "robots.txt", "llms.txt", "sitemap.xml", "CNAME", "favicon.ico",
   "site.webmanifest", "manifest.json", "browserconfig.xml", "indexnow-key.txt"
 ];
 const rootImagePattern = /\.(?:webp|png|jpe?g|svg)$/i;

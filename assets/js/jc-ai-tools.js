@@ -77,45 +77,80 @@
     return out;
   }
   // 日本語は空白で区切られないので、2〜4文字の部分文字列も手がかりにする
-  // ひらがなだけの短い切れ端（「いし」「しい」など）は無関係な語に当たりやすいので、同義語にあるものだけ使う
+  // 質問を語と、2〜4文字の切れ端に分ける（日本語は空白で区切られないため）。
+  // 切れ端は質問のどの位置かを覚えておき、重なる切れ端は記事ごとに一番よいものだけ数える。
+  // ひらがなだけの切れ端（「いし」「しい」など）は無関係な語に当たりやすいので、同義語にあるものだけ使う。
   function termsFor(query, groups) {
     var q = normalize(query);
-    var terms = q.split(/[\s　、。,.!?？！「」（）()・]+/).filter(function (t) { return t.length >= 2; });
     var known = {};
     (groups || []).forEach(function (g) { g.forEach(function (w) { known[w] = true; }); });
-    var extra = [];
-    terms.forEach(function (t) {
+    var out = [];
+    var seen = {};
+    var tokens = q.split(/[\s　、。,.!?？！「」（）()・]+/).filter(function (t) { return t.length >= 2; });
+    tokens.forEach(function (t, ti) {
+      function add(w, start) {
+        var key = ti + ':' + start + ':' + w;
+        if (seen[key]) return; seen[key] = true;
+        out.push({ w: w, tok: ti, start: start, end: start + w.length });
+      }
+      add(t, 0);
       if (/^[぀-ヿ一-鿿]+$/.test(t) && t.length > 4) {
         for (var n = 4; n >= 2; n--) for (var i = 0; i + n <= t.length; i++) {
           var piece = t.slice(i, i + n);
           if (/^[぀-ゟー]+$/.test(piece) && !known[piece]) continue;
-          extra.push(piece);
+          add(piece, i);
         }
       }
     });
-    return terms.concat(extra).filter(function (t, i, a) { return a.indexOf(t) === i; }).slice(0, 40);
+    return out.slice(0, 60);
   }
   async function searchArticles(query, limit, prefix) {
     var data = await loadIndex();
     var terms = termsFor(query, data.groups);
     if (!terms.length) return [];
     var pool = prefix ? data.items.filter(function (i) { return prefix.test(i.url || ''); }) : data.items;
-    return pool.map(function (item) {
-      var title = normalize(item.title);
-      var text = normalize([item.title, item.description, (item.tags || []).join(' '), (item.headings || []).join(' ')].join(' '));
-      var score = 0;
-      terms.forEach(function (term) {
+    var docs = pool.map(function (item) {
+      return {
+        item: item,
+        title: normalize(item.title),
+        text: normalize([item.title, item.description, (item.tags || []).join(' '), (item.headings || []).join(' ')].join(' '))
+      };
+    });
+    var n = docs.length || 1;
+    // 語ごとに「何本の記事に出てくるか」を数え、珍しい語ほど重く、どこにでも出る語（「ドイツ」など）は数えない
+    terms.forEach(function (t) {
+      t.variants = variantsFor(t.w, data.groups);
+      var df = 0;
+      docs.forEach(function (d) { if (t.variants.some(function (w) { return d.text.indexOf(w) !== -1; })) df++; });
+      var idf = Math.log((n + 1) / (df + 1)) / Math.log(n + 1);
+      t.weight = df / n > 0.25 ? 0 : idf * idf;
+      // ひらがなを含む切れ端（「気をつけ」など）は文の言い回しであることが多いので軽く数える
+      if (t.start !== undefined && t.w.length < 5 && /[぀-ゟ]/.test(t.w)) t.weight *= 0.35;
+    });
+    terms = terms.filter(function (t) { return t.weight > 0; });
+    if (!terms.length) return [];
+    return docs.map(function (d) {
+      var hits = [];
+      terms.forEach(function (t) {
         var best = 0;
-        variantsFor(term, data.groups).forEach(function (w, idx) {
-          if (text.indexOf(w) === -1) return;
-          var s = (title.indexOf(w) !== -1 ? 10 : 4) * Math.min(w.length, 6) / 3;
+        t.variants.forEach(function (w, idx) {
+          if (d.text.indexOf(w) === -1) return;
+          var s = (d.title.indexOf(w) !== -1 ? 10 : 4) * Math.min(w.length, 6) / 3;
           if (idx > 0) s *= 0.8;
           best = Math.max(best, s);
         });
-        score += best;
+        if (best) hits.push({ t: t, s: best * t.weight });
       });
-      return { item: item, score: score };
-    }).filter(function (x) { return x.score > 4; })
+      // 質問の同じ部分に重なる切れ端は、一番点の高いものだけ数える
+      hits.sort(function (a, b) { return b.s - a.s; });
+      var used = [], score = 0;
+      hits.forEach(function (h) {
+        var overlap = used.some(function (u) { return u.tok === h.t.tok && h.t.start < u.end && u.start < h.t.end; });
+        if (overlap) return;
+        used.push(h.t); score += h.s;
+      });
+      return { item: d.item, score: score };
+    }).filter(function (x) { return x.score > 1.2; })
       .sort(function (a, b) { return b.score - a.score; })
       // 一番よく合う記事の半分に届かないものは、関係が薄いとみなして外す
       .filter(function (x, i, arr) { return x.score >= arr[0].score * 0.5; })

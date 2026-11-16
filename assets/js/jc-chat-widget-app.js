@@ -10,7 +10,7 @@
   if (window.__jcChatWidget) return;
   window.__jcChatWidget = true;
 
-  var VERSION = '20261116a';
+  var VERSION = '20261116b';
   var STATE_KEY = 'jcChatWidgetState';   // 'open' | 'min'
   var LOG_KEY = 'jcChatWidgetLog';
   var QUOTA_KEY = 'jcChatWidgetQuota';
@@ -80,7 +80,7 @@
     if (window.JCAI) return Promise.resolve(window.JCAI);
     if (!jcaiPromise) {
       jcaiPromise = (window.JCONNECT_DATA_SOURCES ? Promise.resolve() : loadScript('/assets/js/data-sources.js'))
-        .then(function () { return window.JCAI ? null : loadScript('/assets/js/jc-ai-tools.js?v=20261115c'); })
+        .then(function () { return window.JCAI ? null : loadScript('/assets/js/jc-ai-tools.js?v=20261116b'); })
         .then(function () { return window.JCAI; })
         .catch(function () { jcaiPromise = null; return null; });
     }
@@ -382,8 +382,12 @@
       var sources = [];
       var aboutPage = /このページ|この記事/.test(q) && isArticlePage();
       if (aboutPage) sources.push({ title: pageTitle(), url: location.pathname, text: pageText() });
-      var recent = history.slice(-2).map(function (h) { return h.role === 'user' ? h.text : ''; }).join(' ');
-      found = await J.searchArticles(q + ' ' + recent, aboutPage ? 2 : 3);
+      // 記事は今の質問だけで探す。「それは？」のような短い・指示語だけの質問のときに限り、直前の質問で補う
+      found = await J.searchArticles(q, aboutPage ? 2 : 3);
+      var lastUser = history.filter(function (h) { return h.role === 'user'; }).pop();
+      if (!found.length && lastUser && (q.length < 10 || /^(それ|これ|あれ|その|この|あの|じゃあ|では)/.test(q))) {
+        found = await J.searchArticles(lastUser.text + ' ' + q, aboutPage ? 2 : 3);
+      }
       found = found.filter(function (f) { return f.url !== location.pathname; });
       for (var i = 0; i < found.length; i++) {
         sources.push({ title: found[i].title, url: found[i].url, text: await J.articleText(found[i].url, aboutPage ? 3000 : 6000) });

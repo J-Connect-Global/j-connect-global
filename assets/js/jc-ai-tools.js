@@ -77,20 +77,27 @@
     return out;
   }
   // 日本語は空白で区切られないので、2〜4文字の部分文字列も手がかりにする
-  function termsFor(query) {
+  // ひらがなだけの短い切れ端（「いし」「しい」など）は無関係な語に当たりやすいので、同義語にあるものだけ使う
+  function termsFor(query, groups) {
     var q = normalize(query);
     var terms = q.split(/[\s　、。,.!?？！「」（）()・]+/).filter(function (t) { return t.length >= 2; });
+    var known = {};
+    (groups || []).forEach(function (g) { g.forEach(function (w) { known[w] = true; }); });
     var extra = [];
     terms.forEach(function (t) {
       if (/^[぀-ヿ一-鿿]+$/.test(t) && t.length > 4) {
-        for (var n = 4; n >= 2; n--) for (var i = 0; i + n <= t.length; i++) extra.push(t.slice(i, i + n));
+        for (var n = 4; n >= 2; n--) for (var i = 0; i + n <= t.length; i++) {
+          var piece = t.slice(i, i + n);
+          if (/^[぀-ゟー]+$/.test(piece) && !known[piece]) continue;
+          extra.push(piece);
+        }
       }
     });
     return terms.concat(extra).filter(function (t, i, a) { return a.indexOf(t) === i; }).slice(0, 40);
   }
   async function searchArticles(query, limit, prefix) {
     var data = await loadIndex();
-    var terms = termsFor(query);
+    var terms = termsFor(query, data.groups);
     if (!terms.length) return [];
     var pool = prefix ? data.items.filter(function (i) { return prefix.test(i.url || ''); }) : data.items;
     return pool.map(function (item) {
@@ -110,6 +117,8 @@
       return { item: item, score: score };
     }).filter(function (x) { return x.score > 4; })
       .sort(function (a, b) { return b.score - a.score; })
+      // 一番よく合う記事の半分に届かないものは、関係が薄いとみなして外す
+      .filter(function (x, i, arr) { return x.score >= arr[0].score * 0.5; })
       .slice(0, limit || 5)
       .map(function (x) { return x.item; });
   }

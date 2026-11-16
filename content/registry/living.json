@@ -1716,14 +1716,14 @@
     "image_url": "/assets/img/placeholders/jconnect-default-card.webp",
     "image_alt": "明るい住居の机に置かれた鍵、間取り図、ノートパソコン",
     "category": "住まい",
-    "summary": "ドイツの賃貸・家探しを日本語で解説。応募書類の取得先と提出時期、家賃の内訳、内見、契約、敷金の上限・分割払い、詐欺対策、入居後の手続きをまとめます。",
+    "summary": "ドイツの賃貸・家探しを日本語で解説。敷金は基礎家賃の最大3か月分、解約は原則3か月前。応募書類、家賃の内訳、内見、契約、詐欺対策、入居時の記録、退去時の落とし穴と、編集部メンバーの実例（有料プランで200件以上応募）、そのまま使えるドイツ語の文面まで整理します。",
     "url": "/germany/ja/living/rent-apartment-germany/",
     "markdown_path": "/content/living/rent-apartment-germany.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-10-17",
-    "last_verified": "2026-10-17",
+    "updated_at": "2026-11-16",
+    "last_verified": "2026-11-16",
     "tags": [
       "賃貸",
       "家探し",
@@ -1770,8 +1770,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-17",
-      "next_review_due": "2027-01-17"
+      "last_reviewed_at": "2026-11-16",
+      "next_review_due": "2027-02-16"
     }
   },
   {

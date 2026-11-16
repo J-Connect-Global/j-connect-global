@@ -6806,5 +6806,131 @@
     ],
     "image_url": "/assets/images/living/birth-procedures-germany.webp",
     "image_alt": "赤ちゃんの衣類と靴下を机に並べたイメージ"
+  },
+  {
+    "id": "L116",
+    "slug": "germany-manners-mistakes-japanese",
+    "url": "/germany/ja/living/germany-manners-mistakes-japanese/",
+    "markdown_path": "/content/living/germany-manners-mistakes-japanese.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "living",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-16：法令・公的機関の原典で確認。習慣の部分と責任の所在は記事内に未確認・編集部の整理と明記",
+      "last_reviewed_at": "2026-11-16",
+      "next_review_due": "2027-05-16"
+    },
+    "title": "ドイツで日本人がやりがちな「知らずに失礼」8選｜チップ・あいさつ・日曜の音・自転車レーン【2026年】",
+    "category": "暮らし・買い物",
+    "summary": "ドイツ生活で日本人がうっかりやりがちな8つの場面を、チップ、お店でのあいさつ、日曜や夜の音、自転車レーン、遅刻の連絡などに分けて整理。法律で決まっていること、地域や建物ごとの決まり、ただの習慣を見分けるコツも紹介します。",
+    "published_at": "2026-11-16",
+    "last_verified": "2026-11-16",
+    "canonical_url": "/germany/ja/living/germany-manners-mistakes-japanese/",
+    "tags": [
+      "マナー",
+      "チップ",
+      "日曜",
+      "騒音",
+      "自転車",
+      "あいさつ",
+      "生活立ち上げ",
+      "文化の違い"
+    ],
+    "updated_at": "2026-11-16",
+    "related_articles": [
+      "germany-first-30-days",
+      "bicycle-rules-germany",
+      "rent-apartment-germany",
+      "germany-waste-sorting-guide"
+    ],
+    "official_sources": [
+      {
+        "title": "価格表示規則2条：総額（税・その他の価格要素を含む価格）の定義",
+        "url": "https://www.gesetze-im-internet.de/pangv_2022/__2.html"
+      },
+      {
+        "title": "NRW州公害防止法9条：夜間の静穏（22時から6時）",
+        "url": "https://recht.nrw.de/lrgv/gesetz/16032024-gesetz-zum-schutz-vor-luftverunreinigungen-geraeuschen-und-aehnlichen/"
+      },
+      {
+        "title": "機器・機械騒音規制令（32. BImSchV）7条：住宅地での屋外使用の時間制限",
+        "url": "https://www.gesetze-im-internet.de/bimschv_32/__7.html"
+      },
+      {
+        "title": "機器・機械騒音規制令（32. BImSchV）付属書：対象となる機械の一覧",
+        "url": "https://www.gesetze-im-internet.de/bimschv_32/anhang.html"
+      },
+      {
+        "title": "道路交通規則25条：歩行者は歩道を通る",
+        "url": "https://www.gesetze-im-internet.de/stvo_2013/__25.html"
+      }
+    ],
+    "image": "/assets/img/living/germany-manners-mistakes-japanese.webp",
+    "image_alt": "カフェの会計とチップの場面を表したイラスト"
+  },
+  {
+    "id": "L117",
+    "slug": "germany-heating-ventilation-mold-guide",
+    "url": "/germany/ja/living/germany-heating-ventilation-mold-guide/",
+    "markdown_path": "/content/living/germany-heating-ventilation-mold-guide.md",
+    "published": true,
+    "status": "published",
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "disclaimer_type": "living",
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-16：法令・公的機関の原典で確認。習慣の部分と責任の所在は記事内に未確認・編集部の整理と明記",
+      "last_reviewed_at": "2026-11-16",
+      "next_review_due": "2027-03-16"
+    },
+    "title": "ドイツの冬の暖房と換気｜サーモスタットの目盛り・窓の開け方・カビと光熱費を防ぐ基本【2026年】",
+    "category": "住まい",
+    "summary": "ドイツの冬に、暖房の目盛りと室温の対応、窓を全開にして短時間で換気するやり方、カビを防ぐ湿度の目安を整理。窓を傾けたままにする、留守中に暖房を切るといったよくある失敗と、カビを見つけたときの大家への連絡の流れも紹介します。",
+    "published_at": "2026-11-16",
+    "last_verified": "2026-11-16",
+    "canonical_url": "/germany/ja/living/germany-heating-ventilation-mold-guide/",
+    "tags": [
+      "暖房",
+      "換気",
+      "カビ",
+      "結露",
+      "光熱費",
+      "賃貸",
+      "冬",
+      "サーモスタット"
+    ],
+    "updated_at": "2026-11-16",
+    "related_articles": [
+      "rent-apartment-germany",
+      "electricity-internet-contracts-germany",
+      "nebenkostenabrechnung-2025-deadline",
+      "landlord-housing-email-phrases"
+    ],
+    "official_sources": [
+      {
+        "title": "連邦環境庁：正しい暖房と換気で光熱費とカビを抑える",
+        "url": "https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/heizen-bauen/heizen-raumtemperatur"
+      },
+      {
+        "title": "連邦環境庁：カビ（健康への影響と原因）",
+        "url": "https://www.umweltbundesamt.de/themen/gesundheit/umwelteinfluesse-auf-den-menschen/schimmel"
+      },
+      {
+        "title": "消費者センター：暖房費を節約する10のヒント（サーモスタットの目盛り・換気）",
+        "url": "https://www.verbraucherzentrale.de/node/13892"
+      }
+    ],
+    "image": "/assets/img/living/germany-heating-ventilation-mold-guide.webp",
+    "image_alt": "冬の朝、窓を全開にした部屋の、暖房のつまみが付いたラジエーターを描いたイラスト"
   }
 ]

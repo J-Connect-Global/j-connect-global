@@ -278,6 +278,14 @@
       m.sources.slice(0, 4).forEach(function (s) { box.appendChild(el('a', { href: localLink(s.url) }, s.title || s.url)); });
       r.bubble.appendChild(box);
     }
+    if (m.web && m.web.length) {
+      var wbox = el('div', { class: 'jcw-sources' });
+      wbox.appendChild(el('p', { class: 'jcw-sources-h' }, 'Web検索で参照したページ（外部サイト）'));
+      m.web.slice(0, 5).forEach(function (w) {
+        if (/^https:\/\//.test(w.url)) wbox.appendChild(el('a', { href: w.url, target: '_blank', rel: 'noopener noreferrer' }, w.title || w.url));
+      });
+      r.bubble.appendChild(wbox);
+    }
     if (m.low) r.bubble.appendChild(el('p', { class: 'jcw-note' }, '※ J-Connectの記事では十分に確認できなかった内容を含みます。公式窓口でも確認してください。'));
     if (m.tool) {
       var t = TOOLS.filter(function (x) { return x.url === m.tool; })[0];
@@ -430,6 +438,7 @@
       m = {
         role: 'ai', text: r.answer || '', basis: !!basis,
         sources: basis ? r.sources : found.map(function (f) { return { title: f.title, url: f.url }; }),
+        web: r.web_sources || [],
         follow: r.follow_ups || [], low: r.confidence === 'low', tool: tool ? tool.url : null
       };
       history.push({ role: 'user', text: q }, { role: 'assistant', text: String(m.text).slice(0, 1200) });

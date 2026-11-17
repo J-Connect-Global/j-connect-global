@@ -16,6 +16,7 @@
  *   OPENAI_API_KEY     必須。platform.openai.com で発行した API キー
  *   LETTER_MODEL       任意。既定 gpt-6-luna
  *   REASONING_EFFORT   任意。既定 low（none / low / medium / high）
+ *   WEB_SEARCH         任意。既定 on。chat だけ Web 検索つきで答える。止めるときは off
  *   DAILY_LIMIT        任意。1日の全体上限（全ツール合計、既定 200）
  *   BURST_LIMIT        任意。10分あたりの全体上限（全ツール合計、既定 20）
  */
@@ -93,9 +94,18 @@ function doPost(e) {
     const quota = leConsumeQuota_();
     if (!quota.ok) return leJson_({ ok: false, code: 'BUSY', error: quota.error });
 
-    const result = tool
-      ? leCallModel_(apiKey, tool.system, content.blocks, tool.sanitize, tool.maxTokens || 6000)
-      : leCallOpenAI_(apiKey, content.blocks);
+    let result;
+    if (tool && tool.webSearch && leWebSearchOn_()) {
+      // Web検索つき。失敗したら検索なしの通常回答に切り替える
+      result = leCallWithSearch_(apiKey, tool.system, content.blocks, tool.sanitize, tool.maxTokens || 6000);
+      if (!result.ok && result.code !== 'BUSY') {
+        result = leCallModel_(apiKey, tool.system, content.blocks, tool.sanitize, tool.maxTokens || 6000);
+      }
+    } else if (tool) {
+      result = leCallModel_(apiKey, tool.system, content.blocks, tool.sanitize, tool.maxTokens || 6000);
+    } else {
+      result = leCallOpenAI_(apiKey, content.blocks);
+    }
     return leJson_(result);
   } catch (error) {
     // 本文は絶対にログへ出さない。エラーの種類だけ残す
@@ -215,6 +225,70 @@ function leCallModel_(apiKey, systemPrompt, blocks, sanitize, maxTokens) {
   return { ok: true, result: sanitize(parsed) };
 }
 
+// スクリプト プロパティ WEB_SEARCH が 'off' のときだけ検索を止める（既定はオン）
+function leWebSearchOn_() {
+  return String(PropertiesService.getScriptProperties().getProperty('WEB_SEARCH') || 'on').trim().toLowerCase() !== 'off';
+}
+
+// OpenAI Responses API の web_search ツールで、最新情報を調べてから答える（chat 専用）
+function leCallWithSearch_(apiKey, systemPrompt, blocks, sanitize, maxTokens) {
+  const props = PropertiesService.getScriptProperties();
+  const model = String(props.getProperty('LETTER_MODEL') || LE_DEFAULT_MODEL).trim();
+  let effort = String(props.getProperty('REASONING_EFFORT') || 'low').trim();
+  if (effort === 'none' || effort === 'minimal' || effort === 'default') effort = 'low'; // 検索には推論が必要
+  const userText = blocks.map(function (b) { return b && b.text ? b.text : ''; }).join('\n');
+  const body = {
+    model: model,
+    instructions: systemPrompt + '\n\n最新の情報（天気・営業時間・料金・イベント・ニュースなど）が必要な質問では、Web検索で調べてから答えてください。検索結果の出典は公式サイトなど信頼できるものを優先します。',
+    input: userText,
+    max_output_tokens: maxTokens,
+    tools: [{ type: 'web_search', user_location: { type: 'approximate', country: 'DE' } }],
+    reasoning: { effort: effort }
+  };
+
+  const response = UrlFetchApp.fetch('https://api.openai.com/v1/responses', {
+    method: 'post',
+    contentType: 'application/json',
+    muteHttpExceptions: true,
+    headers: { Authorization: 'Bearer ' + apiKey },
+    payload: JSON.stringify(body)
+  });
+  const status = response.getResponseCode();
+  if (status !== 200) {
+    let errType = '';
+    try { errType = JSON.parse(response.getContentText()).error.type || ''; } catch (err) { /* 無視 */ }
+    console.error('letter-explainer search status ' + status + ' ' + errType);
+    if (status === 429) return { ok: false, code: 'BUSY', error: 'AIが混み合っています。少し待ってからお試しください。' };
+    return { ok: false, code: 'UPSTREAM', error: '解析できませんでした。時間をおいて再度お試しください。' };
+  }
+
+  const json = JSON.parse(response.getContentText());
+  let text = '';
+  const web = [];
+  (json.output || []).forEach(function (item) {
+    if (item.type !== 'message') return;
+    (item.content || []).forEach(function (c) {
+      if (c.type !== 'output_text') return;
+      text += String(c.text || '');
+      (c.annotations || []).forEach(function (a) {
+        if (a.type === 'url_citation' && /^https:\/\//.test(String(a.url || ''))) web.push({ title: a.title, url: a.url });
+      });
+    });
+  });
+  const parsed = leParseJson_(text);
+  if (!parsed) return { ok: false, code: 'PARSE', error: 'うまく読み取れませんでした。' };
+  const out = sanitize(parsed);
+  // 検索で実際に使われた Web ページ（重複を除いて最大5件）
+  const seen = {};
+  out.web_sources = web.filter(function (w) {
+    const u = String(w.url).split('#')[0];
+    if (seen[u]) return false;
+    seen[u] = true;
+    return true;
+  }).slice(0, 5).map(function (w) { return { title: leStr_(w.title, 200), url: leStr_(String(w.url).split('?utm_')[0], 500) }; });
+  return { ok: true, result: out };
+}
+
 function leParseJson_(text) {
   const start = text.indexOf('{');
   const end = text.lastIndexOf('}');
@@ -280,11 +354,17 @@ const LE_TOOLS = {
   // 1. 記事をもとに答えるQ&A。ブラウザ側でサイト内検索をして関連記事の本文を送ってくる。
   chat: {
     maxTokens: 6000,
+    webSearch: true,
     system: [
       'あなたはドイツ在住の日本人向け情報サイト「J-Connect Germany」の案内係です。',
       'ユーザーの質問に、渡された「参考記事」の内容をもとに日本語で答えます。',
       '参考記事に書かれていることを優先し、答えの根拠にした記事の URL を sources に入れます。',
-      '参考記事に答えがない場合は、一般的な知識で答えられる範囲だけ答え、その旨を明記し、公式窓口を案内します。',
+      '参考記事に答えがない場合でも、答えを断ったり「記事がないので答えられません」と言ったりしません。ドイツでの生活・手続き・お出かけ・旅行・買い物・食事・天気や季節・文化・ドイツ語など、ドイツに関わる質問には、一般的なAIアシスタントのように、知っている知識を使って具体的に答えます。',
+      '具体的な場所・店・施設・おすすめコース・持ち物・マナーなども、知っている範囲で名前を挙げて提案します（「探し方」だけを返して終わりにしない）。都市名が分からないときは、まず代表的な例で答え、地域を教えてもらえれば絞れると添えます。',
+      '参考記事がない話題を答える場合は「記事がないため…」と前置きせず、そのまま答えます。',
+      '当日の天気・営業時間・料金・イベントなど最新の情報が必要なときは、Web検索ができる場合は検索して答えます。検索結果から確認できたことだけを書き、確認できなかった点は断定せず「公式サイトで最新情報を確認」と一言添えます。',
+      '手続き・ビザ・税金・保険・法律・お金に関わる内容は、記事に書かれていない場合のみ一般論として答え、公式窓口での確認を勧めます。',
+      'confidence は、手続き・法律・お金など正確さが必要な内容が記事で裏付けられていないときだけ low にします。お出かけ・生活の提案・文化・ドイツ語などの一般的な話題は medium か high にします。',
       '答えは、結論→理由・条件→やること の順で、見出し（■）と箇条書き（・）を使って読みやすく書きます。',
       '答えるために利用者の状況（期間・国籍・家族構成など）が必要な場合は、follow_ups ではなく answer の中で「〜の場合は…、〜の場合は…」と場合分けして答えるか、確認してほしい点として書きます。',
       LE_COMMON_RULES,

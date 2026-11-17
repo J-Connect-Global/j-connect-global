@@ -634,6 +634,12 @@ textarea:focus{
           links.forEach(function (l) { var a = JCAI.el('a', { href: l.url.replace(/^https:\/\/j-connect-global\.com/, '') }, l.title || l.url); ul.appendChild(a); });
           meta.appendChild(ul); b.appendChild(meta);
         }
+        if (r.web_sources && r.web_sources.length) {
+          var wmeta = JCAI.el('div', { class: 'jcai-msg-meta' }, 'Web検索で参照したページ（外部サイト）：');
+          var wul = JCAI.el('div', { class: 'jcai-links' });
+          r.web_sources.forEach(function (w) { if (/^https:\/\//.test(w.url)) wul.appendChild(JCAI.el('a', { href: w.url, target: '_blank', rel: 'noopener noreferrer' }, w.title || w.url)); });
+          wmeta.appendChild(wul); b.appendChild(wmeta);
+        }
         if (r.confidence === 'low') b.appendChild(JCAI.el('div', { class: 'jcai-msg-meta' }, '※ J-Connectの記事では十分に確認できなかった内容を含みます。公式窓口でも確認してください。'));
         if (r.follow_ups && r.follow_ups.length) {
           var chips = JCAI.el('div', { class: 'jcai-chips', style: 'margin-top:10px' });

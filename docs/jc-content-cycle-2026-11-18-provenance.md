@@ -29,7 +29,7 @@
 ### 更新対象1：C027 — 雪かき・凍結対策
 
 変更内容：
-- NRW州法第4条と市町村条例の関係を明確化
+- NRW州法第1条第2項・第4条の関係を精密化。第4条は歩道清掃の移管を認め、冬季管理は別途規定する仕組みであることを明記
 - デュッセルドルフ（歩道幅1m）、ケルン・エルクラート（1.5m）の現行ルールを比較
 - エルクラート市の2026年1月版条例と道路一覧を追加。歩道と車道の担当を区別
 - 借主の当番義務は賃貸契約の明確な条項を確認する構成に変更
@@ -55,12 +55,14 @@
 
 ## 一次情報・確認日
 
-- NRW州道路清掃法 §4：<https://recht.nrw.de/system/files/BH/4246-1689.htm>（2026-11-18確認）
+- NRW州道路清掃法 §1・§4：<https://recht.nrw.de/system/files/BH/4246-1689.htm>（2026-11-18確認。§4だけで冬季管理の義務が自動移管されるとは記載せず、市条例で別途確認）
 - エルクラート市条例（2026年1月版PDF）：<https://www.erkrath.de/system/files/2026-01/66.3-Satzung%20Stra%C3%9Fenreinigung%20und%20Stra%C3%9Fenreinigungsgeb%C3%BChren.pdf>（2026-11-18確認。改正履歴の最新項目は2025-12-18、2026-01-01施行）
 - デュッセルドルフ市：<https://www.duesseldorf.de/umweltamt/umwelt-und-verbraucherthemen-von-a-z/strassenreinigung/winterdienst>（2026-11-18確認）
 - ケルン市：<https://www.stadt-koeln.de/artikel/06397/index.html>（2026-11-18確認）
 - ケルン市条例（2025-12-17版）：<https://www.stadt-koeln.de/mediaasset/content/satzungen/strassenreinigungssatzung_20251217.pdf>（2026-11-18確認）
 - 連邦通常裁判所・報道発表187/2025：<https://www.bundesgerichtshof.de/SharedDocs/Pressemitteilungen/DE/2025/2025187.html>（発表2025-10-15、対象判決2025-08-06）
+- ドイツ民法典 §535：<https://www.gesetze-im-internet.de/bgb/__535.html>
+- ドイツ民法典 §278：<https://www.gesetze-im-internet.de/bgb/__278.html>
 - ドイツ借家人連盟：<https://mieterbund.de/aktuelles/meldungen/winterdienst-bei-eis-und-schnee/>（2026-01-07公開、2026-11-18確認）
 - Deutsche Post・2026年クリスマス締切：<https://www.deutschepost.de/de/w/weihnachtspost.html>（2026-11-18確認）
 - DHL・2026年クリスマス締切：<https://www.dhl.de/de/privatkunden/kampagnenseiten/weihnachten.html>（2026-11-18確認）

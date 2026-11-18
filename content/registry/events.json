@@ -5349,7 +5349,7 @@
     "disclaimer_type": "editorial_column",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect編集部（AI照合）2026-11-18：NRW州法、エルクラート市2026年1月版条例、デュッセルドルフ・ケルンの公式案内、BGH VIII ZR 250/23、借家人連盟の説明を照合。公道の歩道と敷地内の共用通路を区別",
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-18：NRW州法第1条第2項・第4条、エルクラート市2026年1月版条例、デュッセルドルフ・ケルンの公式案内、BGH VIII ZR 250/23、借家人連盟の説明を照合。冬季管理が州法第4条だけで自動的に移管されるとは書かず、市条例で別途確認する構成に修正",
       "last_reviewed_at": "2026-11-18",
       "next_review_due": "2027-02-18"
     },
@@ -5385,7 +5385,7 @@
     "official_url": "https://www.erkrath.de/system/files/2026-01/66.3-Satzung%20Stra%C3%9Fenreinigung%20und%20Stra%C3%9Fenreinigungsgeb%C3%BChren.pdf",
     "official_sources": [
       {
-        "title": "NRW州：道路清掃法 §4（市町村による清掃義務の移管）",
+        "title": "NRW州：道路清掃法 §1・§4（冬季管理の定義、歩道清掃の移管と別規定）",
         "url": "https://recht.nrw.de/system/files/BH/4246-1689.htm"
       },
       {
@@ -5419,6 +5419,10 @@
       {
         "title": "ドイツ借家人連盟：雪と氷のときの冬の雪かき（2026年1月7日）",
         "url": "https://mieterbund.de/aktuelles/meldungen/winterdienst-bei-eis-und-schnee/"
+      },
+      {
+        "title": "ドイツ民法典 §278：履行補助者の責任",
+        "url": "https://www.gesetze-im-internet.de/bgb/__278.html"
       }
     ],
     "image": "/assets/img/events/snow-ice-clearing-duty-germany.webp",

@@ -26,7 +26,6 @@ const STANDARD_SECTIONS = [
   { key: "steps", heading: /^手順/u, label: "手順" },
   { key: "pitfalls", heading: /^落とし穴/u, label: "落とし穴" },
   { key: "german", heading: /^そのまま使えるドイツ語/u, label: "そのまま使えるドイツ語" },
-  { key: "cases_real", heading: /^在住者の実例/u, label: "在住者の実例" },
   { key: "sources", heading: /^公式情報/u, label: "公式情報・参考ソース" }
 ];
 
@@ -234,8 +233,11 @@ function validateArticleStandard(relative, body, standard) {
       fail(relative, `記事標準${standard}: ドイツ語の文例には和訳を併記してください`);
     }
   }
-  if (found.cases_real !== undefined && !/(?:編集部|読者|在住者)/u.test(found.cases_real)) {
-    fail(relative, `記事標準${standard}: 在住者の実例には、誰の実例か（編集部・読者）を書いてください`);
+  // A personal case study is optional. Never force authors to invent or
+  // disclose an anecdote merely to satisfy the article template.
+  const realCaseSection = sections.find((entry) => /^在住者の実例/u.test(entry.heading));
+  if (realCaseSection && !/(?:編集部|読者|在住者)/u.test(realCaseSection.lines.join("\n"))) {
+    fail(relative, `記事標準${standard}: 実例を掲載する場合は、誰の記録か（編集部・読者）を明記してください`);
   }
   if (found.sources !== undefined) {
     const sourceItems = found.sources.split(/\r?\n/).filter((line) => /^\s*[-*]\s+\S/.test(line));

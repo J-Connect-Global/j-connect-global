@@ -6467,16 +6467,16 @@
     "disclaimer_type": "family_administrative",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：法令・公的機関の原典で確認。未確認の点は記事内に明記",
-      "last_reviewed_at": "2026-11-15",
-      "next_review_due": "2027-02-14"
+      "reviewed_by": "J-Connect編集部（編集整理）2026-11-16：個人事例の記述を削除し、一般的な手順・確認項目へ再構成。未確認の法令・制度の断定は避け、原典の確認先を明記。",
+      "last_reviewed_at": "2026-11-16",
+      "next_review_due": "2027-02-16"
     },
-    "title": "外国籍の配偶者がいる場合の出生届（ドイツ）｜必要書類・認定翻訳・アポスティーユの要否【2026年 編集部の記録】",
+    "title": "外国籍の配偶者がいる場合の出生届（ドイツ）｜必要書類・認定翻訳・アポスティーユの要否【2026年版】",
     "category": "家族・子育て",
-    "summary": "配偶者が外国籍の家庭がドイツで出生届を出すときの準備を、2026年に編集部が戸籍登録所と約10往復したやり取りをもとに整理。外国の証明は原本、翻訳は裁判所認定の翻訳者、アポスティーユの要否は書類ごとに確認、日本側は3か月以内の出生届と国籍留保が必要です。",
+    "summary": "配偶者が外国籍の家庭がドイツで出生届を出すときの準備を、書類の原本・翻訳者の資格・アポスティーユの要否に分けて整理します。出生地の戸籍登録所へ事前確認する項目、日本側の出生届と国籍留保の期限も解説します。",
     "published_at": "2026-11-14",
-    "updated_at": "2026-11-15",
-    "last_verified": "2026-11-15",
+    "updated_at": "2026-11-16",
+    "last_verified": "2026-11-16",
     "next_review": "2027-02-14",
     "canonical_url": "/germany/ja/living/birth-registration-foreign-spouse-germany/",
     "tags": [
@@ -6538,16 +6538,16 @@
     "disclaimer_type": "administrative",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：法令・公的機関の原典で確認。未確認の点は記事内に明記",
-      "last_reviewed_at": "2026-11-15",
-      "next_review_due": "2027-05-14"
+      "reviewed_by": "J-Connect編集部（編集整理）2026-11-16：個人事例の記述を削除し、一般的な手順・確認項目へ再構成。未確認の法令・制度の断定は避け、原典の確認先を明記。",
+      "last_reviewed_at": "2026-11-16",
+      "next_review_due": "2027-02-16"
     },
-    "title": "ドイツで認定翻訳（beglaubigte Übersetzung）を頼む｜翻訳者の探し方・見積もり依頼のメール文例【2026年 編集部の記録】",
+    "title": "ドイツで認定翻訳（beglaubigte Übersetzung）を頼む｜翻訳者の探し方・見積もり依頼のメール文例【2026年版】",
     "category": "役所・滞在",
-    "summary": "出生届や住民登録、滞在許可で外国語の書類を出すとき、ドイツでは裁判所に認定された翻訳者の訳を求められることがあります。翻訳者の探し方、見積もりで聞くこと、そのまま使えるドイツ語の依頼メールを、2026年に編集部が複数の翻訳者に依頼した記録をもとに整理します。",
+    "summary": "出生届や住民登録、滞在許可で外国語の書類を出すときに求められる認定翻訳について、州の公的検索サイト、見積もりで確認する項目、依頼メールの文例を整理します。提出先が求める資格や書式を確認する手順も解説します。",
     "published_at": "2026-11-14",
-    "updated_at": "2026-11-15",
-    "last_verified": "2026-11-15",
+    "updated_at": "2026-11-16",
+    "last_verified": "2026-11-16",
     "next_review": "2027-05-14",
     "canonical_url": "/germany/ja/living/certified-translation-germany/",
     "tags": [
@@ -6600,16 +6600,16 @@
     "disclaimer_type": "tax",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：法令・公的機関の原典で確認。未確認の点は記事内に明記",
-      "last_reviewed_at": "2026-11-15",
-      "next_review_due": "2027-05-14"
+      "reviewed_by": "J-Connect編集部（編集整理）2026-11-16：個人事例の記述を削除し、一般的な手順・確認項目へ再構成。未確認の法令・制度の断定は避け、原典の確認先を明記。",
+      "last_reviewed_at": "2026-11-16",
+      "next_review_due": "2027-02-16"
     },
     "title": "会社員に前払い税（Vorauszahlung）の通知が来たら｜年4回の納期とELSTERで調整を申請する手順【2026年】",
     "category": "お金・税金",
-    "summary": "給与から税金が引かれている会社員でも、確定申告で追加の納税が出ると、税務署から所得税の前払い（Vorauszahlung）を求められることがあります。3月・6月・9月・12月の各10日の納期、収入が減ったときにELSTERで調整を申請する流れ、そのまま使えるドイツ語を、2026年に編集部が申請した記録とともに整理します。",
+    "summary": "給与から税金が引かれている会社員でも、確定申告で追加の納税が出ると、税務署から所得税の前払い（Vorauszahlung）を求められることがあります。3月・6月・9月・12月の納期、収入が減ったときにELSTERで調整を申請する流れ、そのまま使えるドイツ語を整理します。",
     "published_at": "2026-11-14",
-    "updated_at": "2026-11-15",
-    "last_verified": "2026-11-15",
+    "updated_at": "2026-11-16",
+    "last_verified": "2026-11-16",
     "next_review": "2027-05-14",
     "canonical_url": "/germany/ja/living/income-tax-prepayment-germany/",
     "tags": [
@@ -6661,16 +6661,16 @@
     "disclaimer_type": "medical_insurance",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：法令・公的機関の原典で確認。未確認の点は記事内に明記",
-      "last_reviewed_at": "2026-11-15",
-      "next_review_due": "2027-05-14"
+      "reviewed_by": "J-Connect編集部（編集整理）2026-11-16：個人事例の記述を削除し、一般的な手順・確認項目へ再構成。未確認の法令・制度の断定は避け、原典の確認先を明記。",
+      "last_reviewed_at": "2026-11-16",
+      "next_review_due": "2027-02-16"
     },
-    "title": "ドイツの歯科補助保険で「契約前の治療」と言われたら｜不払いの理由の読み方と異議申立ての書き方【2026年 編集部の記録】",
+    "title": "ドイツの歯科補助保険で「契約前の治療」と言われたら｜不払いの理由の読み方と異議申立ての書き方【2026年版】",
     "category": "医療・健康",
-    "summary": "公的保険を補う歯科補助保険（Zahnzusatzversicherung）は、契約前に始まった治療や勧められた治療を補償しないのが一般的です。2026年に編集部が「契約前の治療」を理由に不払いとされ、異議を申し立てた記録をもとに、加入前の注意点、通知の読み方、そのまま使えるドイツ語の異議文を整理します。",
+    "summary": "公的保険を補う歯科補助保険（Zahnzusatzversicherung）は、契約前に始まった治療や勧められた治療を補償しない場合があります。加入前に確認する質問、支払拒否通知の読み方、根拠を整理して異議を申し立てる手順を解説します。",
     "published_at": "2026-11-14",
-    "updated_at": "2026-11-15",
-    "last_verified": "2026-11-15",
+    "updated_at": "2026-11-16",
+    "last_verified": "2026-11-16",
     "next_review": "2027-05-14",
     "canonical_url": "/germany/ja/living/dental-supplementary-insurance-germany/",
     "tags": [
@@ -6718,16 +6718,16 @@
     "disclaimer_type": "medical_family",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：法令・公的機関の原典で確認。未確認の点は記事内に明記",
-      "last_reviewed_at": "2026-11-15",
-      "next_review_due": "2027-05-14"
+      "reviewed_by": "J-Connect編集部（編集整理）2026-11-16：個人事例の記述を削除し、一般的な手順・確認項目へ再構成。未確認の法令・制度の断定は避け、原典の確認先を明記。",
+      "last_reviewed_at": "2026-11-16",
+      "next_review_due": "2027-02-16"
     },
-    "title": "出産前に家族が受ける予防接種（ドイツ）｜父親はかかりつけ医で、百日咳は出産4週間前までに【2026年 編集部の記録】",
+    "title": "出産前に家族が受ける予防接種（ドイツ）｜百日咳・インフルエンザの対象と接種時期【2026年版】",
     "category": "家族・子育て",
-    "summary": "生まれたばかりの赤ちゃんは百日咳にかかると重くなりやすく、ドイツでは同居する家族も出産の4週間前までに接種することが公的保険の予防接種指針に書かれています。父親はどこで受けるのか、何を受けるのか、予約のドイツ語を、2026年に編集部の父親がかかりつけ医で接種した記録とともに整理します。",
+    "summary": "妊婦本人の百日咳接種と、同居家族・世話をする人の追加接種を分けて整理します。過去10年の接種歴、できれば出産4週間前までという目安、インフルエンザなどの対象・時期、医師への確認方法を紹介します。",
     "published_at": "2026-11-14",
-    "updated_at": "2026-11-15",
-    "last_verified": "2026-11-15",
+    "updated_at": "2026-11-16",
+    "last_verified": "2026-11-16",
     "next_review": "2027-05-14",
     "canonical_url": "/germany/ja/living/family-vaccination-before-birth-germany/",
     "tags": [
@@ -6737,7 +6737,7 @@
       "はしか",
       "出産",
       "かかりつけ医",
-      "父親"
+      "同居家族"
     ],
     "related_articles": [
       "pregnancy-birth-germany",
@@ -6752,6 +6752,10 @@
       {
         "title": "社会法典第5編第20i条：予防接種の給付",
         "url": "https://www.gesetze-im-internet.de/sgb_5/__20i.html"
+      },
+      {
+        "title": "ロベルト・コッホ研究所：百日咳予防接種FAQ（近い接触者・出産4週間前の目安）",
+        "url": "https://www.rki.de/SharedDocs/FAQs/DE/Impfen/Pertussis/FAQ-Liste_Pertussis_Impfen.html"
       }
     ],
     "image_url": "/assets/images/living/german-clinic-reception-editorial-v1.webp",

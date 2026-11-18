@@ -1,1 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d"><title id="t">雪かきは誰の役目</title><desc id="d">歩道の雪かきは原則として建物の持ち主の役目で、賃貸契約で決まっていれば借りている人の役目、大きな集合住宅では管理会社や清掃業者が行い費用は共益費に含まれることを示した図</desc><rect width="1200" height="675" rx="28" fill="#eef5fb"/><g font-family="Noto Sans CJK JP, Noto Sans JP, sans-serif"><text x="60" y="95" font-size="40" font-weight="700" fill="#153452" text-anchor="start">家の前の歩道の雪かき、誰の役目？</text><text x="60" y="145" font-size="24" fill="#405a71" text-anchor="start">ケルン市・デュッセルドルフ市の場合</text><rect x="60" y="180" width="530" height="190" rx="16" fill="white"/><rect x="60" y="180" width="12" height="190" rx="6" fill="#2d6a9f"/><text x="96" y="228" font-size="24" font-weight="700" fill="#2d6a9f" text-anchor="start">原則：建物の持ち主</text><text x="96" y="268" font-size="20" fill="#29465f" text-anchor="start">町の条例で決まっている</text><text x="96" y="298" font-size="20" fill="#29465f" text-anchor="start">最終的な責任は持ち主に残る</text><rect x="610" y="180" width="530" height="190" rx="16" fill="white"/><rect x="610" y="180" width="12" height="190" rx="6" fill="#c9952a"/><text x="646" y="228" font-size="24" font-weight="700" fill="#c9952a" text-anchor="start">賃貸契約で決まっていれば</text><text x="646" y="268" font-size="20" fill="#29465f" text-anchor="start">借りている人の役目になる</text><text x="646" y="298" font-size="20" fill="#29465f" text-anchor="start">（建物の決まりだけでは不十分とも）</text><rect x="60" y="390" width="530" height="190" rx="16" fill="white"/><rect x="60" y="390" width="12" height="190" rx="6" fill="#2f8a64"/><text x="96" y="438" font-size="24" font-weight="700" fill="#2f8a64" text-anchor="start">大きな集合住宅</text><text x="96" y="478" font-size="20" fill="#29465f" text-anchor="start">管理会社や清掃業者が担当</text><text x="96" y="508" font-size="20" fill="#29465f" text-anchor="start">費用は共益費（Nebenkosten）に</text><rect x="610" y="390" width="530" height="190" rx="16" fill="white"/><rect x="610" y="390" width="12" height="190" rx="6" fill="#8a5aa8"/><text x="646" y="438" font-size="24" font-weight="700" fill="#8a5aa8" text-anchor="start">まず確認</text><text x="646" y="478" font-size="20" fill="#29465f" text-anchor="start">賃貸契約書と管理会社の案内</text><text x="646" y="508" font-size="20" fill="#29465f" text-anchor="start">分からなければ家主に聞く</text><text x="60" y="645" font-size="18" fill="#5b7086" text-anchor="start">出典：ケルン市、デュッセルドルフ市、ドイツ借家人連盟（2026年10月29日参照）</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+<title id="t">雪かきの担当を場所と契約で確認</title>
+<desc id="d">公道の歩道は市町村条例、賃貸住宅の当番は明確な契約条項、建物敷地内の共用通路は貸主の契約上の義務と2025年の連邦通常裁判所判決を確認することを示した図</desc>
+<rect width="1200" height="675" rx="28" fill="#eef5fb"/>
+<g font-family="Noto Sans CJK JP, Noto Sans JP, sans-serif">
+<text x="60" y="82" font-size="38" font-weight="700" fill="#153452">雪かきの担当は「場所」と「契約」で変わる</text>
+<text x="60" y="128" font-size="22" fill="#405a71">公道の歩道・敷地内の通路・賃貸契約を分けて確認</text>
+<rect x="60" y="166" width="520" height="188" rx="18" fill="#ffffff"/>
+<rect x="60" y="166" width="12" height="188" rx="6" fill="#2d6a9f"/>
+<text x="94" y="211" font-size="25" font-weight="700" fill="#2d6a9f">公道の歩道</text>
+<text x="94" y="253" font-size="21" fill="#29465f">市町村の条例で担当を確認</text>
+<text x="94" y="286" font-size="19" fill="#29465f">NRW州では所有者へ移管できる</text>
+<text x="94" y="319" font-size="18" fill="#5b7086">道路一覧も確認</text>
+<rect x="620" y="166" width="520" height="188" rx="18" fill="#ffffff"/>
+<rect x="620" y="166" width="12" height="188" rx="6" fill="#c9952a"/>
+<text x="654" y="211" font-size="25" font-weight="700" fill="#a16f12">賃貸住宅の当番</text>
+<text x="654" y="253" font-size="21" fill="#29465f">賃貸契約に明確な条項が必要</text>
+<text x="654" y="286" font-size="19" fill="#29465f">建物の決まりだけでは不足との</text>
+<text x="654" y="316" font-size="19" fill="#29465f">借家人連盟の案内</text>
+<rect x="60" y="376" width="520" height="188" rx="18" fill="#ffffff"/>
+<rect x="60" y="376" width="12" height="188" rx="6" fill="#2f8a64"/>
+<text x="94" y="421" font-size="25" font-weight="700" fill="#2f8a64">敷地内の共用通路</text>
+<text x="94" y="463" font-size="21" fill="#29465f">BGH 2025年判決を確認</text>
+<text x="94" y="496" font-size="19" fill="#29465f">貸主の義務が残る場合がある</text>
+<text x="94" y="527" font-size="18" fill="#5b7086">公道の歩道とは別の問題</text>
+<rect x="620" y="376" width="520" height="188" rx="18" fill="#ffffff"/>
+<rect x="620" y="376" width="12" height="188" rx="6" fill="#8a5aa8"/>
+<text x="654" y="421" font-size="25" font-weight="700" fill="#8a5aa8">冬が来る前に</text>
+<text x="654" y="463" font-size="21" fill="#29465f">市の条例・道路一覧・賃貸契約</text>
+<text x="654" y="496" font-size="19" fill="#29465f">道具・滑り止め・交代方法を確認</text>
+<text x="60" y="632" font-size="17" fill="#5b7086">出典：NRW州法、BGH報道発表187/2025、ドイツ借家人連盟（2026年11月18日確認）</text>
+</g></svg>

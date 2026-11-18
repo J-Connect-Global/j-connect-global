@@ -5349,15 +5349,15 @@
     "disclaimer_type": "editorial_column",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-29",
-      "next_review_due": "2027-10-15"
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-18：NRW州法、エルクラート市2026年1月版条例、デュッセルドルフ・ケルンの公式案内、BGH VIII ZR 250/23、借家人連盟の説明を照合。公道の歩道と敷地内の共用通路を区別",
+      "last_reviewed_at": "2026-11-18",
+      "next_review_due": "2027-02-18"
     },
     "title": "雪の朝、家の前の歩道は誰が掃除する？｜ドイツの「雪かき・凍結対策の義務」と時間のルール",
     "category": "住まい",
-    "summary": "ドイツでは、雪や氷で歩道が滑りやすくなったとき、家の前の歩道を掃除して滑り止めをまくのは、原則として建物の持ち主の役目です。賃貸契約で借りる人に任されている場合もあります。ケルンとデュッセルドルフの決まりを例に、何時までに、どのくらいの幅を、何を使って掃除するのか、借りている人が確認したいことを整理します。",
+    "summary": "ドイツの雪かき義務は全国一律ではなく、自治体の条例と賃貸契約で変わります。デュッセルドルフ（幅1m）、ケルン・エルクラート（幅1.5m）の時間・塩のルール、借主に当番を任せる条件、2025年の連邦通常裁判所判決を日本語で整理します。",
     "published_at": "2026-10-29",
-    "last_verified": "2026-10-29",
+    "last_verified": "2026-11-18",
     "tags": [
       "雪かき",
       "冬",
@@ -5367,23 +5367,33 @@
       "住まい",
       "ケルン",
       "デュッセルドルフ",
+      "エルクラート",
+      "NRW",
       "ドイツ生活"
     ],
-    "updated_at": "2026-10-29",
+    "updated_at": "2026-11-18",
     "related_articles": [
       "rent-apartment-germany",
       "winter-tires-germany-2026",
       "germany-winter-mold-ventilation",
-      "europe-heatwave-basic-checks",
+      "germany-heating-ventilation-mold-guide",
       "germany-rent-law-reform-furnished-2026"
     ],
-    "city": "NRW（ケルン・デュッセルドルフ）",
+    "city": "NRW（デュッセルドルフ・ケルン・エルクラート）",
     "location": "",
     "event_date": "暮らしのコラム（冬）",
-    "official_url": "https://www.duesseldorf.de/umweltamt/umwelt-und-verbraucherthemen-von-a-z/strassenreinigung/winterdienst",
+    "official_url": "https://www.erkrath.de/system/files/2026-01/66.3-Satzung%20Stra%C3%9Fenreinigung%20und%20Stra%C3%9Fenreinigungsgeb%C3%BChren.pdf",
     "official_sources": [
       {
-        "title": "デュッセルドルフ市：冬の歩道の雪かき（Winterdienst）",
+        "title": "NRW州：道路清掃法 §4（市町村による清掃義務の移管）",
+        "url": "https://recht.nrw.de/system/files/BH/4246-1689.htm"
+      },
+      {
+        "title": "エルクラート市：道路清掃・道路清掃料金条例（2026年1月版PDF）",
+        "url": "https://www.erkrath.de/system/files/2026-01/66.3-Satzung%20Stra%C3%9Fenreinigung%20und%20Stra%C3%9Fenreinigungsgeb%C3%BChren.pdf"
+      },
+      {
+        "title": "デュッセルドルフ市：冬の歩道の雪かき",
         "url": "https://www.duesseldorf.de/umweltamt/umwelt-und-verbraucherthemen-von-a-z/strassenreinigung/winterdienst"
       },
       {
@@ -5391,20 +5401,30 @@
         "url": "https://www.duesseldorf.de/fileadmin/Amt19/umweltamt/strassenreinigung/winterdienst/infoblattzumwinterdienst.pdf"
       },
       {
-        "title": "ケルン市：冬の雪かき（Winterdienst）",
+        "title": "ケルン市：冬の雪かき",
         "url": "https://www.stadt-koeln.de/artikel/06397/index.html"
       },
       {
-        "title": "ケルン市：道路の清掃に関する条例（PDF）",
+        "title": "ケルン市：道路の清掃に関する条例（2025年12月17日版PDF）",
         "url": "https://www.stadt-koeln.de/mediaasset/content/satzungen/strassenreinigungssatzung_20251217.pdf"
       },
       {
-        "title": "ドイツ借家人連盟：雪と氷のときの冬の雪かき",
+        "title": "連邦通常裁判所：冬季サービスをめぐる賃貸人の責任（報道発表187/2025）",
+        "url": "https://www.bundesgerichtshof.de/SharedDocs/Pressemitteilungen/DE/2025/2025187.html"
+      },
+      {
+        "title": "ドイツ民法典 §535：賃貸人の基本的な義務",
+        "url": "https://www.gesetze-im-internet.de/bgb/__535.html"
+      },
+      {
+        "title": "ドイツ借家人連盟：雪と氷のときの冬の雪かき（2026年1月7日）",
         "url": "https://mieterbund.de/aktuelles/meldungen/winterdienst-bei-eis-und-schnee/"
       }
     ],
     "image": "/assets/img/events/snow-ice-clearing-duty-germany.webp",
-    "image_alt": "朝早く、集合住宅の前の歩道の雪をスコップで片付ける人を描いたイラスト"
+    "image_alt": "朝早く、集合住宅の前の歩道の雪をスコップで片付ける人を描いたイラスト",
+    "area": "NRW",
+    "next_review": "2027-02-18"
   },
   {
     "slug": "online-shopping-returns-germany",

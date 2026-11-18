@@ -4678,19 +4678,21 @@
     "disclaimer_type": "living",
     "review": {
       "status": "reviewed",
-      "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：日本向けの国際小包（ゾーン7）・手紙の料金、オンライン払いは1〜2日遅くてもよい点、税関申告をDHL・ドイツポスト・税関で確認。日本向けの締切日（11月25・26日、12月18日）はページの表示が動的で再確認できず、2026年11月1日の確認による",
-      "last_reviewed_at": "2026-11-01",
-      "next_review_due": "2026-12-19"
+      "reviewed_by": "J-Connect編集部（AI照合）2026-11-18：Deutsche Postのクリスマス締切、国際書留の2026年UPUルール、DHLの日本向けゾーン7料金、国際手紙料金を再確認",
+      "last_reviewed_at": "2026-11-18",
+      "next_review_due": "2026-11-27"
     },
     "canonical_url": "/germany/ja/living/christmas-post-germany-to-japan-2026/",
     "title": "ドイツから日本へクリスマス・年末の荷物と手紙を送る2026｜締切・料金・税関書類・送れない物",
     "category": "暮らし・買い物",
-    "summary": "2026年にドイツから日本へクリスマスの荷物や手紙を送るなら、Deutsche Post・DHLの公式締切は手紙・はがきが11月25日、小包が11月26日、Expressが12月18日です。日本向けの料金、税関申告書CN22/CN23の書き方、電池・香水・肉製品など送れない物を整理します。",
+    "summary": "2026年のドイツから日本への公式締切は手紙・はがき11月25日、小包11月26日、Express12月18日。2026年1月から国際書留は書類専用になり、商品は送れません。日本向け料金、税関申告書、送れない物を整理します。",
     "published_at": "2026-11-01",
-    "last_verified": "2026-11-01",
+    "last_verified": "2026-11-18",
     "tags": [
       "日本へ荷物",
       "国際郵便",
+      "国際書留",
+      "UPU",
       "DHL",
       "Deutsche Post",
       "クリスマス",
@@ -4698,7 +4700,7 @@
       "税関",
       "2026年"
     ],
-    "updated_at": "2026-11-01",
+    "updated_at": "2026-11-18",
     "related_articles": [
       "dhl-packstation-guide",
       "dhl-delivered-but-not-received",
@@ -4708,6 +4710,10 @@
       {
         "title": "Deutsche Post：2026年クリスマスの最終差出日（国内・国際）",
         "url": "https://www.deutschepost.de/de/w/weihnachtspost.html"
+      },
+      {
+        "title": "Deutsche Post：2026年1月からの国際書留ルール（UPU）",
+        "url": "https://www.deutschepost.de/de/hilfe-kundenservice/post-international/zollinformation/neuerungen.html"
       },
       {
         "title": "DHL：2026年クリスマスの最終差出日と梱包の注意",
@@ -4743,7 +4749,8 @@
       }
     ],
     "image": "/assets/img/living/christmas-post-germany-to-japan-2026.webp",
-    "image_alt": "クリスマスの飾りがある部屋で、段ボール箱にテープを貼り、カードを添えて日本へ送る準備をする様子のイラスト"
+    "image_alt": "クリスマスの飾りがある部屋で、段ボール箱にテープを貼り、カードを添えて日本へ送る準備をする様子のイラスト",
+    "next_review": "2026-11-27"
   },
   {
     "id": "L074",

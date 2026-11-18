@@ -3,15 +3,15 @@ id: "L073"
 title: "ドイツから日本へクリスマス・年末の荷物と手紙を送る2026｜締切・料金・税関書類・送れない物"
 slug: "christmas-post-germany-to-japan-2026"
 category: "暮らし・買い物"
-summary: "2026年にドイツから日本へクリスマスの荷物や手紙を送るなら、Deutsche Post・DHLの公式締切は手紙・はがきが11月25日、小包が11月26日、Expressが12月18日です。日本向けの料金、税関申告書CN22/CN23の書き方、電池・香水・肉製品など送れない物を整理します。"
+summary: "2026年のドイツから日本への公式締切は手紙・はがき11月25日、小包11月26日、Express12月18日。2026年1月から国際書留は書類専用になり、商品は送れません。日本向け料金、税関申告書、送れない物を整理します。"
 status: "published"
 published: true
 published_at: "2026-11-01"
-updated_at: "2026-11-01"
-last_verified: "2026-11-01"
-next_review: "2026-12-19"
+updated_at: "2026-11-18"
+last_verified: "2026-11-18"
+next_review: "2026-11-27"
 canonical_url: "/germany/ja/living/christmas-post-germany-to-japan-2026/"
-tags: ["日本へ荷物", "国際郵便", "DHL", "Deutsche Post", "クリスマス", "年末年始", "税関", "2026年"]
+tags: ["日本へ荷物", "国際郵便", "国際書留", "UPU", "DHL", "Deutsche Post", "クリスマス", "年末年始", "税関", "2026年"]
 image: "/assets/img/living/christmas-post-germany-to-japan-2026.webp"
 image_alt: "クリスマスの飾りがある部屋で、段ボール箱にテープを貼り、カードを添えて日本へ送る準備をする様子のイラスト"
 image_caption: "イラスト：J-Connect。日本へ贈り物を送る準備を表したもので、特定の人物・店舗・郵便物を描いたものではありません。"
@@ -20,6 +20,8 @@ related_articles: ["dhl-packstation-guide", "dhl-delivered-but-not-received", "n
 official_sources:
   - title: "Deutsche Post：2026年クリスマスの最終差出日（国内・国際）"
     url: "https://www.deutschepost.de/de/w/weihnachtspost.html"
+  - title: "Deutsche Post：2026年1月からの国際書留ルール（UPU）"
+    url: "https://www.deutschepost.de/de/hilfe-kundenservice/post-international/zollinformation/neuerungen.html"
   - title: "DHL：2026年クリスマスの最終差出日と梱包の注意"
     url: "https://www.dhl.de/de/privatkunden/kampagnenseiten/weihnachten.html"
   - title: "DHL：国際小包の料金表（ゾーン別）"
@@ -56,18 +58,19 @@ DHLは、国際小包をオンラインで送料支払いした場合、電子�
 
 **日本の元日に届けたい年賀状・お年賀について、Deutsche Post・DHLは別の締切を公表していません。** 年始に届けたい物も、クリスマスの締切を目安に早めに出すのが安全です。
 
-根拠：[Deutsche Postのクリスマス案内](https://www.deutschepost.de/de/w/weihnachtspost.html)、[DHLのクリスマス案内](https://www.dhl.de/de/privatkunden/kampagnenseiten/weihnachten.html)（いずれも2026年11月1日確認）。
+根拠：[Deutsche Postのクリスマス案内](https://www.deutschepost.de/de/w/weihnachtspost.html)、[DHLのクリスマス案内](https://www.dhl.de/de/privatkunden/kampagnenseiten/weihnachten.html)（2026年11月18日確認）。
 
-![ドイツから日本へ、手紙・はがきは11月25日、小包は11月26日、Expressは12月18日が2026年の最終差出日であることを示したカレンダー図](/assets/images/living/seo/japan-post-deadlines-2026.svg "図解：J-Connect。根拠：Deutsche Post・DHLの2026年クリスマス最終差出日（ヨーロッパ以外あて）。2026年11月1日確認。")
+![ドイツから日本へ、手紙・はがきは11月25日、小包は11月26日、Expressは12月18日が2026年の最終差出日であることを示したカレンダー図](/assets/images/living/seo/japan-post-deadlines-2026.svg "図解：J-Connect。根拠：Deutsche Post・DHLの2026年クリスマス最終差出日（ヨーロッパ以外あて）。2026年11月18日確認。")
 
 ## 何で送る？日本向けの方法と料金
 
-日本はDHLの国際小包料金で「ゾーン7（アジア・アフリカ）」に入ります。2026年11月1日時点の個人向け料金は次のとおりです。
+日本はDHLの国際小包料金で「ゾーン7（アジア・アフリカ）」に入ります。2026年11月18日時点の個人向け料金は次のとおりです。
 
 | 方法 | サイズ・重さ | 料金（オンライン／窓口） | 追跡・補償 |
 | --- | --- | --- | --- |
-| 国際はがき・手紙（標準） | はがき、または20gまでの封書 | 1.25ユーロ | なし（書留のオプションあり） |
-| 国際手紙（大型） | 500gまで、厚さ2cmまで | 3.30ユーロ | なし（書留のオプションあり） |
+| 国際はがき・手紙（標準） | はがき、または20gまでの封書 | 1.25ユーロ | なし（書類に限り書留のオプションあり） |
+| 国際手紙（コンパクト） | 50gまで、厚さ1cmまで | 1.80ユーロ | なし（書類に限り書留のオプションあり） |
+| 国際手紙（大型） | 500gまで、厚さ2cmまで | 3.30ユーロ | なし（書類に限り書留のオプションあり） |
 | Päckchen XS | 2kgまで、35×25×3cmまで | 14.99ユーロ（オンラインのみ） | なし（追跡・補償はPaketのみ） |
 | Päckchen M | 2kgまで、3辺合計90cm・1辺60cmまで | 21.49ユーロ／22.99ユーロ | なし（追跡・補償はPaketのみ） |
 | Paket（2kgまで） | 60×30×15cmまで | 25.49ユーロ（オンラインのみ） | 追跡・500ユーロまでの補償付き |
@@ -78,11 +81,17 @@ DHLは、国際小包をオンラインで送料支払いした場合、電子�
 
 DHLは、追跡と補償を付けたいなら**Paket（DHL Paket International）を選ぶ**よう案内しています。DHLが海外での調査や紛失・破損時の補償に対応するのは、この商品だけです。中身が500ユーロを超える場合は、追加補償を付けられます（補償額1,000ユーロまでで14ユーロ、以降1,000ユーロごとに14ユーロ加算、最大5,000ユーロ）。急ぐ場合のExpressは、書類0.5kgまででもオンライン74.60ユーロからと高額です。
 
-根拠：[DHLの国際料金表](https://www.dhl.de/de/privatkunden/pakete-versenden/weltweit-versenden/preise-international.html)、[DHLの国際小包のサイズとオプション](https://www.dhl.de/de/privatkunden/pakete-versenden/weltweit-versenden/paket-und-paeckchen.html)、[Deutsche Postの国際手紙料金](https://www.deutschepost.de/de/b/briefe-ins-ausland/brief-postkarte-international.html)。料金は変わることがあるため、送料を払う画面で最終確認してください。
+根拠：[DHLの国際料金表（日本はゾーン7）](https://www.dhl.de/de/privatkunden/pakete-versenden/weltweit-versenden/preise-international.html)、[DHLの国際小包のサイズとオプション](https://www.dhl.de/de/privatkunden/pakete-versenden/weltweit-versenden/paket-und-paeckchen.html)、[Deutsche Postの国際手紙料金](https://www.deutschepost.de/de/b/briefe-ins-ausland/brief-postkarte-international.html)。料金は変わることがあるため、送料を払う画面で最終確認してください。
+
+### 2026年1月から、国際書留は書類専用
+
+2026年1月1日から、万国郵便連合（UPU）の国際ルールにより、国際書留（Registered）は書類を入れる郵便物に限られます。商品や贈り物を国際書留で送ることはできません。Deutsche Postは、商品を国際書留で差し出すと、海外の郵便事業者や輸入時に受け付けられず、差出人へ返送される場合があると案内しています。
+
+この変更は国際書留についてのルールです。ドイツ国内の書留と混同しないでください。小さな贈り物でも、中身が商品ならPäckchenまたはPaketを選びます。
 
 ### どれを選ぶか迷ったら
 
-- **カードや写真だけ**：国際はがき・手紙。届いたか確認したい場合は書留を付けます。
+- **書類やカードだけ**：国際はがき・手紙。配達状況の確認を付けたい場合は、書類に限り国際書留を検討できます。商品・贈り物は入れないでください。
 - **2kgまでの軽い贈り物で、追跡は不要**：Päckchen。紛失しても補償はない前提で選びます。
 - **お菓子・衣類などの贈り物を確実に届けたい**：Paket。追跡番号を日本の家族に伝えておくと安心です。
 - **締切を過ぎてしまった**：Express。料金と所要日数を見て判断します。
@@ -111,7 +120,7 @@ DHLは、住所や税関情報が不完全・誤りの場合、**有料で返送
 
 日本側で関税や消費税がかかるかどうかは、日本の税関の基準で決まります。この記事では日本側の免税額などは扱っていないため、高価な物を送る場合は、事前に日本の税関の案内を確認してください。
 
-![日本向けの小包を出す前に、送れない物の確認、梱包、国際用の料金、完全な住所、税関申告書CN22/CN23の5点を確認するチェックリスト図](/assets/images/living/seo/japan-parcel-checklist.svg "図解：J-Connect。根拠：DHLの海外発送チェックリスト・税関情報、ドイツ税関の案内。2026年11月1日確認。")
+![日本向けの小包を出す前に、送れない物の確認、梱包、国際用の料金、完全な住所、税関申告書CN22/CN23の5点を確認するチェックリスト図](/assets/images/living/seo/japan-parcel-checklist.svg "図解：J-Connect。根拠：DHLの海外発送チェックリスト・税関情報、ドイツ税関の案内。2026年11月18日確認。")
 
 ## 送れない物：電池・香水・スプレー・肉製品に注意
 
@@ -171,17 +180,6 @@ DHLのクリスマス案内では、次の点を勧めています。
 - [ドイツのDHLが配達済みなのに届かない｜確認場所・問い合わせ・複数個口](/germany/ja/living/dhl-delivered-but-not-received/)
 - [NRWのクリスマス2026｜スーパー・薬局・公共交通の営業日チェック](/germany/ja/living/nrw-christmas-opening-hours-2026/)
 
-## 公式情報・参考ソース
+## 確認日と注意
 
-- [Deutsche Post：2026年クリスマスの最終差出日](https://www.deutschepost.de/de/w/weihnachtspost.html)
-- [DHL：2026年クリスマスの最終差出日と梱包の注意](https://www.dhl.de/de/privatkunden/kampagnenseiten/weihnachten.html)
-- [DHL：国際小包の料金表](https://www.dhl.de/de/privatkunden/pakete-versenden/weltweit-versenden/preise-international.html)
-- [DHL：国際小包・Päckchenのサイズとオプション](https://www.dhl.de/de/privatkunden/pakete-versenden/weltweit-versenden/paket-und-paeckchen.html)
-- [DHL：海外発送の5項目チェックリスト](https://www.dhl.de/de/privatkunden/pakete-versenden/weltweit-versenden/checkliste-auslandsversand.html)
-- [DHL：個人向け税関情報](https://www.dhl.de/de/toolbar/footer/informationen/zollinformationen.html)
-- [DHL：送付可能な中身（高額品）](https://www.dhl.de/de/toolbar/footer/informationen/zulaessigeinhalte.html)
-- [DHL：国別の禁止・制限品リスト（英語PDF、2026年9月版）](https://www.dhl.de/dam/jcr:ed5cc88c-38f1-4ac9-9c6e-7b460f050eb7/list-of-prohibited-articles.pdf)
-- [Deutsche Post：国際郵便の手紙・はがき料金](https://www.deutschepost.de/de/b/briefe-ins-ausland/brief-postkarte-international.html)
-- [ドイツ税関：EU域外への郵便物の手続き](https://www.zoll.de/DE/Privatpersonen/Postsendungen-Internetbestellungen/Sendungen-in-einen-Nicht-EU-Staat/Verfahren/verfahren_node.html)
-
-**参照日：2026年11月1日。** 締切・料金・規制は変更されることがあります。送る前に、Deutsche Post・DHLの最新の案内と、日本の税関・検疫の情報を確認してください。
+2026年11月18日にDeutsche Postのクリスマス締切、国際書留の2026年ルール、DHLの日本向け料金表、国際手紙料金を確認しました。締切・料金・規制は変更されるため、差し出す直前に公式ページと日本の税関・検疫情報を再確認してください。

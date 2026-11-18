@@ -15,7 +15,9 @@
  * スクリプト プロパティ（プロジェクトの設定 → スクリプト プロパティ）:
  *   OPENAI_API_KEY     必須。platform.openai.com で発行した API キー
  *   LETTER_MODEL       任意。既定 gpt-6-luna
- *   REASONING_EFFORT   任意。既定 low（none / low / medium / high）
+ *   REASONING_EFFORT   任意。既定 low（none / low / medium / high）。chat・compose・navi・followup・roleplay に使う
+ *   HEAVY_EFFORT       任意。既定 high。手紙解説・formhelp（書類を読み込むツール）に使う。
+ *                      出力が上限で途切れた場合は、1段階下げて自動で1回だけやり直す
  *   WEB_SEARCH         任意。既定 on。chat だけ Web 検索つきで答える。止めるときは off
  *   DAILY_LIMIT        任意。1日の全体上限（全ツール合計、既定 200）
  *   BURST_LIMIT        任意。10分あたりの全体上限（全ツール合計、既定 20）
@@ -30,9 +32,13 @@ const LE_SYSTEM_PROMPT = [
   'あなたはドイツ在住の日本人を手助けする「手紙の読み方ガイド」です。',
   'ユーザーが受け取ったドイツ語の公的書類・手紙（役所、税務署、保険、銀行、大家、学校、Kita など）の内容を、ドイツの制度に詳しくない日本人にも分かるように、日本語で丁寧に説明します。',
   '短くまとめすぎず、読んだ人が「何の手紙で、なぜ届き、何をすればよいか」を自分で判断できるだけの情報量で書いてください。',
+  'ドイツの制度に詳しい友人に相談したときのように、書類の要約だけで終わらせず、「結局どうすればいいか」「どの選択肢をどんな人が検討すべきか」まで判断材料を示してください。',
   '',
   '守ること:',
-  '- 書類に書かれていることだけを事実として書く。制度の一般的な説明は「一般的には」と明示し、書類に書かれていない個別の事情は推測で埋めない。読めない・書かれていない情報は「書類からは分かりません」と書く。',
+  '- 書類に書かれている事実と、あなたの説明・推定をはっきり区別する。一般論や推定は「一般的には」「〜と考えられます」と書き、断定しない。',
+  '- 書類に直接書かれていなくても、書類の情報から計算・推定できることは示す（例: 金額の差額や増減率、「受領から1か月以内」のような期限の目安日。目安日は書類の日付を起点にし、実際には受け取った日から数えることを添える）。「書類からは分かりません」だけで終わらせず、分からない点はどう確認すればよいかも書く。',
+  '- 解約・異議申し立て・変更などの選択肢が書かれている場合は、その選択肢を使うと何が違うのか（通常の方法と比べた意味）と、どんな人が検討すべきかを書く。',
+  '- 文章は日本語で書き、ドイツ語以外の外国語（ロシア語・英語など）の単語を混ぜない。ドイツ語の用語は原文のつづりのまま使う。',
   '- 期限・金額・参照番号（Aktenzeichen, Steuernummer, Kundennummer など）は原文どおり正確に写す。日付は「2026年12月15日（原文: 15.12.2026）」のように両方書く。',
   '- 法律相談・税務相談の代わりにはならない。判断が分かれる内容、異議申し立て（Widerspruch/Einspruch）、督促（Mahnung）、裁判所、罰金（Bußgeld）、強制執行に関わる場合は、専門家（弁護士・Steuerberater・消費者センター Verbraucherzentrale など）や発行元への確認を勧める。',
   '- 詐欺・フィッシングの可能性がある特徴（不自然な振込先、至急の支払い要求、差出人の不一致など）があれば注意喚起する。',
@@ -102,7 +108,7 @@ function doPost(e) {
         result = leCallModel_(apiKey, tool.system, content.blocks, tool.sanitize, tool.maxTokens || 6000);
       }
     } else if (tool) {
-      result = leCallModel_(apiKey, tool.system, content.blocks, tool.sanitize, tool.maxTokens || 6000);
+      result = leCallModel_(apiKey, tool.system, content.blocks, tool.sanitize, tool.maxTokens || 6000, tool.heavy === true);
     } else {
       result = leCallOpenAI_(apiKey, content.blocks);
     }
@@ -181,13 +187,36 @@ function leConsumeQuota_() {
 }
 
 function leCallOpenAI_(apiKey, blocks) {
-  return leCallModel_(apiKey, LE_SYSTEM_PROMPT, blocks, leSanitize_, 10000);
+  return leCallModel_(apiKey, LE_SYSTEM_PROMPT, blocks, leSanitize_, 25000, true);
 }
 
-function leCallModel_(apiKey, systemPrompt, blocks, sanitize, maxTokens) {
+// 推論の強さ。書類を読み込むツール（heavy）は HEAVY_EFFORT、それ以外は REASONING_EFFORT
+function leEffort_(heavy) {
+  const props = PropertiesService.getScriptProperties();
+  if (heavy) return String(props.getProperty('HEAVY_EFFORT') || 'high').trim();
+  return String(props.getProperty('REASONING_EFFORT') || 'low').trim();
+}
+
+// 出力が上限で途切れたとき（推論にトークンを使い切ったとき）に1段階下げてやり直すための対応表
+const LE_EFFORT_FALLBACK = { xhigh: 'high', high: 'medium', medium: 'low' };
+
+function leCallModel_(apiKey, systemPrompt, blocks, sanitize, maxTokens, heavy) {
+  const effort = leEffort_(heavy);
+  let result = leCallModelOnce_(apiKey, systemPrompt, blocks, sanitize, maxTokens, effort);
+  const lower = LE_EFFORT_FALLBACK[effort];
+  if (!result.ok && result.code === 'LENGTH' && lower) {
+    console.warn('letter-explainer output hit token limit at effort ' + effort + '; retrying with ' + lower);
+    result = leCallModelOnce_(apiKey, systemPrompt, blocks, sanitize, maxTokens, lower);
+  }
+  if (!result.ok && result.code === 'LENGTH') {
+    return { ok: false, code: 'PARSE', error: '回答が長くなりすぎて作成できませんでした。ページ数を分けるか、時間をおいて再度お試しください。' };
+  }
+  return result;
+}
+
+function leCallModelOnce_(apiKey, systemPrompt, blocks, sanitize, maxTokens, effort) {
   const props = PropertiesService.getScriptProperties();
   const model = String(props.getProperty('LETTER_MODEL') || LE_DEFAULT_MODEL).trim();
-  const effort = String(props.getProperty('REASONING_EFFORT') || 'low').trim();
   const body = {
     model: model,
     max_completion_tokens: maxTokens || 6000,
@@ -220,6 +249,7 @@ function leCallModel_(apiKey, systemPrompt, blocks, sanitize, maxTokens) {
   const json = JSON.parse(response.getContentText());
   const choice = (json.choices || [])[0] || {};
   const text = String((choice.message && choice.message.content) || '');
+  if (choice.finish_reason === 'length') return { ok: false, code: 'LENGTH' };
   const parsed = leParseJson_(text);
   if (!parsed) return { ok: false, code: 'PARSE', error: 'うまく読み取れませんでした。もう少し鮮明な写真でお試しください。' };
   return { ok: true, result: sanitize(parsed) };
@@ -243,7 +273,8 @@ function leCallWithSearch_(apiKey, systemPrompt, blocks, sanitize, maxTokens) {
     input: userText,
     max_output_tokens: maxTokens,
     tools: [{ type: 'web_search', user_location: { type: 'approximate', country: 'DE' } }],
-    reasoning: { effort: effort }
+    reasoning: { effort: effort },
+    store: false // 1回ごとに完結するので、OpenAI側に会話の状態を保存させない
   };
 
   const response = UrlFetchApp.fetch('https://api.openai.com/v1/responses', {
@@ -475,7 +506,8 @@ const LE_TOOLS = {
 
   // 4. 申請書の記入アシスタント（写真・PDF・テキスト）
   formhelp: {
-    maxTokens: 9000,
+    heavy: true, // 書類を読み込むので推論を強くする（HEAVY_EFFORT）
+    maxTokens: 20000,
     system: [
       'あなたはドイツの申請書（Antrag/Formular）の記入を手伝うアシスタントです。',
       '渡された申請書（画像・PDF・テキスト）について、各欄が何を求めているか、何を書けばよいかを日本語で説明します。',

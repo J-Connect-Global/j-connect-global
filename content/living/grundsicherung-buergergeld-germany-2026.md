@@ -38,8 +38,20 @@ official_sources:
     url: "https://www.gesetze-im-internet.de/sgb_2/__22.html"
   - title: "社会法典第2編 §37：申請と給付開始"
     url: "https://www.gesetze-im-internet.de/sgb_2/__37.html"
+  - title: "社会法典第2編 §3a：就労仲介の優先"
+    url: "https://www.gesetze-im-internet.de/sgb_2/__3a.html"
+  - title: "社会法典第2編 §10：就労の相当性と子どもの保育"
+    url: "https://www.gesetze-im-internet.de/sgb_2/__10.html"
+  - title: "社会法典第2編 §12：年齢別の資産控除"
+    url: "https://www.gesetze-im-internet.de/sgb_2/__12.html"
   - title: "社会法典第2編 §31a：義務違反時の給付減額"
     url: "https://www.gesetze-im-internet.de/sgb_2/__31a.html"
+  - title: "社会法典第2編 §31b：減額の開始と期間"
+    url: "https://www.gesetze-im-internet.de/sgb_2/__31b.html"
+  - title: "社会法典第2編 §32：面談の繰り返し欠席"
+    url: "https://www.gesetze-im-internet.de/sgb_2/__32.html"
+  - title: "社会法典第2編 §7b：連絡可能性"
+    url: "https://www.gesetze-im-internet.de/sgb_2/__7b.html"
 ---
 
 # ドイツの求職者向け基礎保障とは？旧Bürgergeldからの変更と申請方法【2026年】

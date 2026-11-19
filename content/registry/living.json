@@ -6302,15 +6302,15 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
-      "last_reviewed_at": "2026-11-04",
-      "next_review_due": "2026-11-18"
+      "last_reviewed_at": "2026-11-19",
+      "next_review_due": "2026-12-10"
     },
     "title": "ドイツの求職者向け基礎保障とは？旧Bürgergeldからの変更と申請方法【2026年】",
     "category": "仕事",
-    "summary": "2026年7月1日から旧Bürgergeldは新しい求職者向け基礎保障へ移行しました。対象条件、失業手当との違い、Jobcenterでの申請、外国籍の人が確認すべき在留資格上の注意点を、連邦政府・連邦雇用エージェンシー・法律の一次情報で整理します。",
+    "summary": "2026年7月1日に始まった新しい求職者向け基礎保障（旧Bürgergeld）を解説。就労仲介の優先、30％の給付減額、年齢別の資産控除、住居費の上限、子どもの保育と就労、外国籍の人の確認事項、申請手順を公式法令で整理します。",
     "published_at": "2026-11-07",
-    "updated_at": "2026-11-07",
-    "last_verified": "2026-11-04",
+    "updated_at": "2026-11-19",
+    "last_verified": "2026-11-19",
     "tags": [
       "Grundsicherungsgeld",
       "Bürgergeld",
@@ -6396,15 +6396,15 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
-      "last_reviewed_at": "2026-11-04",
-      "next_review_due": "2026-11-18"
+      "last_reviewed_at": "2026-11-19",
+      "next_review_due": "2026-12-10"
     },
     "title": "ドイツの住宅手当（Wohngeld）とは？対象・申請方法・必要書類【2026年】",
     "category": "住まい",
-    "summary": "ドイツの住宅手当は、家賃または自己所有住宅の負担を支える給付です。世帯人数・収入・対象家賃・自治体の家賃区分で決まる仕組み、申請先、必要書類、申請月からの支給、求職者向け基礎保障との併用制限を2026年の現行ルールに沿って解説します。",
+    "summary": "ドイツの住宅手当（Wohngeld）の対象、計算方法、申請先と必要書類を2026年の現行法で解説。2027年の改正案は11月19日現在、連邦議会の委員会審議中で未成立です。現行制度と法案の違いを分けて説明します。",
     "published_at": "2026-11-07",
-    "updated_at": "2026-11-07",
-    "last_verified": "2026-11-04",
+    "updated_at": "2026-11-19",
+    "last_verified": "2026-11-19",
     "tags": [
       "Wohngeld",
       "住宅手当",

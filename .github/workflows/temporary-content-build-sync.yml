@@ -1,0 +1,63 @@
+name: Temporary winter tyre content build sync
+
+on:
+  push:
+    branches:
+      - content/winter-tires-refresh-20261120
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build generated files
+        run: npm run build
+
+      - name: Run deterministic validation
+        run: npm run validate
+
+      - name: Verify build changed only expected generated outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          allowed_re='^(assets/data/search-index\.json|content/registry/living\.json|germany/ja/index\.html|germany/ja/living/index\.html|germany/ja/living/winter-tires-germany-2026/index\.html|sitemap\.xml)$'
+          git status --porcelain | sed -E 's/^...//' | while IFS= read -r path; do
+            [[ -z "$path" ]] && continue
+            if [[ ! "$path" =~ $allowed_re ]]; then
+              echo "Unexpected build output: $path"
+              exit 1
+            fi
+          done
+
+      - name: Remove temporary workflow and commit generated outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/temporary-content-build-sync.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No generated files changed."
+            exit 0
+          fi
+          git commit -m "build: sync winter tyre guide artifacts"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

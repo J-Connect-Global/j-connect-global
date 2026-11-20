@@ -5946,14 +5946,14 @@
     "content_type": "event",
     "category": "季節行事",
     "title": "アーヘン・クリスマスマーケット2026｜カール大帝の都で、プリンテンの香りに包まれる",
-    "summary": "2026年11月20日〜12月23日のアーヘン・クリスマスマーケットを案内。大聖堂と市庁舎に挟まれた広場の歴史、名物の焼き菓子プリンテン、国境の街らしいにぎわいと、11月22日・12月12日・23日の特別時間を整理します。",
+    "summary": "2026年11月20日〜12月23日のアーヘン・クリスマスマーケットを案内。大聖堂と市庁舎の間の歴史、名物プリンテン、120超の屋台、入場無料・バリアフリー・ベビーカー対応、P+R（最大5人で往復5ユーロ）と特別営業時間を整理します。",
     "official_sources": [
       {
         "title": "アーヘン観光局：アーヘン・クリスマスマーケット",
         "url": "https://www.aachen-tourismus.de/aachen-entdecken/details/event/aachener-weihnachtsmarkt/"
       },
       {
-        "title": "アーヘン市：2026年の開催案内",
+        "title": "アーヘン市：2026年の開催案内、特別営業時間、P+R駐車場（2026年11月19日確認）",
         "url": "https://www.aachen.de/kalender/2026/q4/weihnachten/2026-11-20-aachener-weihnachtsmarkt/"
       },
       {
@@ -5995,8 +5995,8 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-30",
-    "updated_at": "2026-10-30",
-    "last_verified": "2026-10-30",
+    "updated_at": "2026-11-19",
+    "last_verified": "2026-11-19",
     "canonical_url": "/germany/ja/events/aachen-christmas-market-2026-guide/",
     "official_url": "https://www.aachen-tourismus.de/aachen-entdecken/details/event/aachener-weihnachtsmarkt/",
     "image": "/assets/img/events/aachen-christmas-market-2026-guide.webp",
@@ -6015,8 +6015,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-30",
-      "next_review_due": "2026-11-19"
+      "last_reviewed_at": "2026-11-19",
+      "next_review_due": "2026-11-26"
     }
   },
   {
@@ -6965,16 +6965,16 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-11-01",
-      "next_review_due": "2026-11-19"
+      "last_reviewed_at": "2026-11-19",
+      "next_review_due": "2026-11-26"
     },
     "published": true,
     "status": "published",
     "title": "ミュンヘンのクリスマスマーケット2026｜市庁舎のツリーと、聖ペーター教会前のクリッペ市",
     "category": "季節行事",
-    "summary": "2026年11月20日〜12月24日のミュンヘン・マリエン広場のクリスマスマーケットを案内。14世紀にさかのぼる市の歴史、毎年違う村から贈られる大きなツリー、1757年から続く降誕の人形の市、12月13日のクランプスの行列、宮殿や中世風の市まで、2026年の日程と営業時間を整理します。",
+    "summary": "2026年11月20日〜12月24日のミュンヘン・マリエン広場の市を案内。138の屋台、11月20日17時のツリー点灯、11月22日の休業、11月27日・12月12日の夜間延長、12月13日のクランプス行列と市内移動を整理します。",
     "published_at": "2026-11-01",
-    "last_verified": "2026-11-01",
+    "last_verified": "2026-11-19",
     "canonical_url": "/germany/ja/events/munich-christmas-markets-2026-guide/",
     "tags": [
       "クリスマスマーケット",
@@ -6984,7 +6984,7 @@
       "2026年12月",
       "アドベント"
     ],
-    "updated_at": "2026-11-01",
+    "updated_at": "2026-11-19",
     "related_articles": [
       "munich-weekend-trip",
       "nuremberg-christkindlesmarkt-2026-guide",
@@ -6999,6 +6999,26 @@
     "event_date": "2026-11-20〜2026-12-24",
     "official_url": "https://www.muenchen.de/veranstaltungen/muenchner-christkindlmarkt-marienplatz",
     "official_sources": [
+      {
+        "title": "ミュンヘン市：2026年11月18日付・マリエン広場のクリスマスマーケット（138屋台、開幕・催し）",
+        "url": "https://ru.muenchen.de/2026/222/Der-Muenchner-Christkindlmarkt-2026-127097"
+      },
+      {
+        "title": "主催者：2026年の営業時間、休業日、アクセス、ショッピングナイト",
+        "url": "https://www.christkindlmarkt-muenchen.de/informationen/muenchner-christkindlmarkt-2026-oeffnungszeiten-und-anreise"
+      },
+      {
+        "title": "主催者：MVGクリスマストラム2026の運行情報",
+        "url": "https://www.christkindlmarkt-muenchen.de/attraktionen/christkindltram"
+      },
+      {
+        "title": "主催者：マリエン広場のツリー2026（高さ・点灯時間）",
+        "url": "https://www.christkindlmarkt-muenchen.de/attraktionen/christbaum"
+      },
+      {
+        "title": "主催者：子ども向け工作教室2026",
+        "url": "https://www.christkindlmarkt-muenchen.de/himmelswerkstatt"
+      },
       {
         "title": "ミュンヘン市：マリエン広場のクリスマスマーケット2026",
         "url": "https://www.muenchen.de/veranstaltungen/muenchner-christkindlmarkt-marienplatz"

@@ -133,15 +133,21 @@
   }
 
   function getSalaryLabel(job) {
+    const periods = { HOUR: "時給", DAY: "日給", WEEK: "週給", MONTH: "月給", YEAR: "年収" };
+    const period = periods[clean(job?.salary_unit).toUpperCase()];
     const suppliedLabel = clean(job?.salary_label);
-    if (suppliedLabel) return suppliedLabel;
+    if (suppliedLabel) {
+      const hasPeriod = Boolean(period) || /(時給|日給|週給|月給|年収|hour|day|week|month|year|stunde|tag|woche|monat|jahr)/i.test(suppliedLabel);
+      if (/\d/.test(suppliedLabel) && !hasPeriod && !/支給期間/.test(suppliedLabel)) {
+        return `${suppliedLabel}（支給期間は各求人で確認）`;
+      }
+      return suppliedLabel;
+    }
 
     const minimum = Number(job?.salary_min_eur);
     const maximum = Number(job?.salary_max_eur);
     if (!(minimum > 0) && !(maximum > 0)) return "";
 
-    const periods = { HOUR: "時給", DAY: "日給", WEEK: "週給", MONTH: "月給", YEAR: "年収" };
-    const period = periods[clean(job?.salary_unit).toUpperCase()];
     const currency = /^[A-Z]{3}$/.test(clean(job?.salary_currency).toUpperCase()) ? clean(job.salary_currency).toUpperCase() : "EUR";
     const amount = minimum > 0 && maximum > 0
       ? `${minimum.toLocaleString()}–${maximum.toLocaleString()} ${currency}`

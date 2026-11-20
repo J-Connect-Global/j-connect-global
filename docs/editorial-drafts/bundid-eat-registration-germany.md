@@ -25,9 +25,11 @@ official_sources:
     url: "https://id.bund.de/de/faq"
   - title: "AusweisApp：オンライン本人確認に必要なもの"
     url: "https://www.ausweisapp.bund.de/das-brauchen-sie"
+  - title: "AusweisApp：PIN・PUK・ロック解除のFAQ"
+    url: "https://www.ausweisapp.bund.de/faq-fuer-nutzende"
   - title: "Bundesportal：eATのオンライン本人確認機能"
     url: "https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99010006012000/herausgeber/RP-13125384/region/073140000000"
-  - title: "Bundesportal：オンライン本人確認のPIN再設定"
+  - title: "Bundesportal：オンライン本人確認のPIN再設定（メクレンブルク＝フォアポンメルン州の手続き例）"
     url: "https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99008004011001/herausgeber/MV-106338988/region/130000000000"
 review:
   status: "draft"
@@ -96,6 +98,10 @@ eATを申請したときに受け取るPIN案内には、通常、最初に使�
 
 オンライン本人確認のたびに入力するのは、**自分で設定した6桁のPIN**です。一時PINをそのままBundIDのログインに入力しても使えません。
 
+### 3回間違えるとPINがロックされる
+
+PINを3回連続で間違えると、オンライン本人確認機能がロックされます。PIN案内に記載された**10桁のPUK（ロック解除番号）**があれば、AusweisAppでロックを解除できます。PUKは一度だけ発行され、再発行されないため、PIN案内と一緒に安全に保管してください。PUKが手元にない場合は、担当窓口に相談します。AusweisAppのサポート窓口は新しいPINを発行できません。
+
 ## eATでBundIDを登録する手順
 
 ### 1. AusweisAppをインストールする
@@ -142,10 +148,10 @@ AusweisAppの画面で、どの情報をどのサービス提供者に渡すの�
 | Fiktionsbescheinigungだけを持っている | それをeATの代わりの電子IDとして使えるとは考えず、申請先の代替ログインを確認 |
 | 5桁の一時PINがある | AusweisAppで6桁のPINに変更 |
 | 6桁PINを忘れた | 管轄の外国人局などに再設定方法を確認 |
-| PINがロックされた | PUKの有無を確認し、担当窓口へ相談。何度も入力を試さない |
+| 3回の誤入力でPINがロックされた | PIN案内にある10桁PUKで解除。PUKがない場合は担当窓口へ相談し、繰り返し試さない |
 | eATを紛失した | 管轄窓口またはオンライン本人確認の停止窓口に連絡。停止方法は公式案内で確認 |
 
-Bundesportalの案内では、PINを忘れた場合やロックされた場合、担当窓口で新しいPINを設定する手続きが示されています。手続き方法や窓口は州・自治体によって異なるため、住んでいる地域の外国人局に確認してください。
+AusweisAppのFAQによると、PINは3回の誤入力でロックされ、10桁のPUKで解除できます。PUKを紛失した場合や6桁PINを忘れた場合は、担当の身分証窓口で新しいPINを設定する必要があります。eATの場合は所管の外国人局に確認してください。下のBundesportalリンクはメクレンブルク＝フォアポンメルン州の手続き例であり、全国共通の窓口案内ではありません。
 
 ## よくある間違い
 
@@ -172,8 +178,9 @@ eATがない場合でも基本登録などを利用できることはありま�
 - [BundID：オンライン身分証を使ったアカウント登録](https://id.bund.de/de/registration/eID)
 - [BundID：よくある質問](https://id.bund.de/de/faq)
 - [AusweisApp：必要なもの・PIN・NFCの確認](https://www.ausweisapp.bund.de/das-brauchen-sie)
+- [AusweisApp：PIN・PUK・ロック解除のFAQ](https://www.ausweisapp.bund.de/faq-fuer-nutzende)
 - [AusweisApp：公式ダウンロード](https://www.ausweisapp.bund.de/download/)
 - [Bundesportal：電子滞在許可証（eAT）](https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99010006012000/herausgeber/RP-13125384/region/073140000000)
-- [Bundesportal：オンライン本人確認のPIN再設定](https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99008004011001/herausgeber/MV-106338988/region/130000000000)
+- [Bundesportal：オンライン本人確認のPIN再設定（メクレンブルク＝フォアポンメルン州の手続き例）](https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99008004011001/herausgeber/MV-106338988/region/130000000000)
 
 確認日：2026年11月20日。BundIDの登録方法、eATの対象、PIN・NFCの要件を公式サイトで確認しました。利用できる行政サービス、必要な本人確認レベル、窓口でのPIN再設定方法は、申請先の最新案内を優先してください。

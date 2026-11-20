@@ -30,6 +30,7 @@ const steps = [
   ["Public data quality baseline", "scripts/report-public-data-quality.mjs", "--check-baseline", ...summaryArgs],
   ["Image asset budget", "scripts/image-asset-budget.mjs", "--check", ...summaryArgs],
   ["GAS submissions", "scripts/test-gas-submissions.mjs"],
+  ["Letter explainer cost controls", "scripts/test-letter-explainer-cost-controls.mjs"],
   ["Community messaging", "scripts/test-community-messaging.mjs"],
   ["Content registry and output", "scripts/validate-content.mjs"],
   ["Editorial freshness", "scripts/report-content-freshness.mjs", ...summaryArgs],

@@ -16,9 +16,9 @@
  *   OPENAI_API_KEY     必須。platform.openai.com で発行した API キー
  *   LETTER_MODEL       任意。既定 gpt-6-luna
  *   REASONING_EFFORT   任意。既定 low（none / low / medium / high）。chat・compose・navi・followup・roleplay に使う
- *   HEAVY_EFFORT       任意。既定 high。手紙解説・formhelp（書類を読み込むツール）に使う。
+ *   HEAVY_EFFORT       任意。既定 medium。手紙解説・formhelp（書類を読み込むツール）に使う。
  *                      出力が上限で途切れた場合は、1段階下げて自動で1回だけやり直す
- *   WEB_SEARCH         任意。既定 on。chat だけ Web 検索つきで答える。止めるときは off
+ *   WEB_SEARCH         任意。既定 off。chat だけ Web 検索つきで答える。止めるときは off
  *   DAILY_LIMIT        任意。1日の全体上限（全ツール合計、既定 200）
  *   BURST_LIMIT        任意。10分あたりの全体上限（全ツール合計、既定 20）
  */
@@ -193,7 +193,7 @@ function leCallOpenAI_(apiKey, blocks) {
 // 推論の強さ。書類を読み込むツール（heavy）は HEAVY_EFFORT、それ以外は REASONING_EFFORT
 function leEffort_(heavy) {
   const props = PropertiesService.getScriptProperties();
-  if (heavy) return String(props.getProperty('HEAVY_EFFORT') || 'high').trim();
+  if (heavy) return String(props.getProperty('HEAVY_EFFORT') || 'medium').trim();
   return String(props.getProperty('REASONING_EFFORT') || 'low').trim();
 }
 
@@ -255,9 +255,9 @@ function leCallModelOnce_(apiKey, systemPrompt, blocks, sanitize, maxTokens, eff
   return { ok: true, result: sanitize(parsed) };
 }
 
-// スクリプト プロパティ WEB_SEARCH が 'off' のときだけ検索を止める（既定はオン）
+// スクリプト プロパティ WEB_SEARCH が 'on' のときだけ検索を有効化する（既定はオフ）
 function leWebSearchOn_() {
-  return String(PropertiesService.getScriptProperties().getProperty('WEB_SEARCH') || 'on').trim().toLowerCase() !== 'off';
+  return String(PropertiesService.getScriptProperties().getProperty('WEB_SEARCH') || 'off').trim().toLowerCase() === 'on';
 }
 
 // OpenAI Responses API の web_search ツールで、最新情報を調べてから答える（chat 専用）

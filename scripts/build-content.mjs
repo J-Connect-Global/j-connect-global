@@ -378,7 +378,7 @@ function writeArticlePage(type, item, allItems) {
 
 function renderArticlePage(type, item, bodyHtml, allItems) {
   const config = contentTypes[type];
-  const title = `${item.meta_title || item.title} | ${config.label} | ${SITE_NAME}`;
+  const title = `${item.meta_title || item.title} | ${SITE_NAME}`;
   const canonicalHref = absoluteUrl(item.canonical_url);
   const metaBlock = renderArticleMetaSpans(type, item);
   const ogMeta = renderOpenGraphMeta(type, item, title, canonicalHref);

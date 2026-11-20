@@ -799,7 +799,11 @@ function validateSearchItemsResolve(searchIndex) {
       if (!String(item[key] || '').trim()) problems.push(`${label} missing ${key}.`);
     }
     if (!Array.isArray(item.tags) || item.tags.length === 0) problems.push(`${label} missing tags.`);
-    if (String(item.url || '').startsWith('/germany/ja/') && !localTargetExists(urlToTargetPath(item.url))) {
+    // Community and Jobs detail pages are generated into the Pages artifact from the public snapshots.
+    // They are valid search targets even though their per-record HTML is not committed to this repository.
+    if (String(item.url || '').startsWith('/germany/ja/')
+        && !generatedPublicDetailUrls.has(normalizeUrl(item.url))
+        && !localTargetExists(urlToTargetPath(item.url))) {
       problems.push(`${label} URL does not resolve: ${item.url}`);
     }
     if (String(item.url || '').includes('/germany/ja/guides/')) {

@@ -1,5 +1,5 @@
 ---
-id: "L117"
+id: "L119"
 title: "ドイツのBundIDとは？日本人がeATで登録する方法・PINとAusweisApp"
 slug: "bundid-eat-registration-germany"
 category: "役所・滞在"

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">債権回収の確認フロー</title><desc id="desc">請求の確認、費用の内訳、対応の選択を三つのカードで示すオリジナル図解</desc>
+<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f4f3ec"/><stop offset="1" stop-color="#e8eee8"/></linearGradient><filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#354e49" flood-opacity=".16"/></filter></defs>
+<rect width="1600" height="900" fill="url(#bg)"/><circle cx="150" cy="130" r="150" fill="#d8e5dd" opacity=".6"/><circle cx="1440" cy="760" r="190" fill="#eadfce" opacity=".6"/>
+<g filter="url(#sh)">
+<g transform="translate(120 245)"><rect width="360" height="410" rx="32" fill="#fffdf8"/><circle cx="180" cy="135" r="82" fill="#dbe9e1"/><path d="M125 110h110v110H125z" fill="#fff" stroke="#759487" stroke-width="12"/><path d="M145 145h70M145 175h70" stroke="#c4a072" stroke-width="12" stroke-linecap="round"/><path d="M145 205h45" stroke="#759487" stroke-width="12" stroke-linecap="round"/><path d="M95 300h170" stroke="#c6d6cc" stroke-width="14" stroke-linecap="round"/></g>
+<g transform="translate(620 245)"><rect width="360" height="410" rx="32" fill="#fffdf8"/><circle cx="180" cy="135" r="82" fill="#f0e5d7"/><circle cx="180" cy="135" r="50" fill="none" stroke="#c29a6d" stroke-width="15"/><path d="M180 98v38l30 20" fill="none" stroke="#759487" stroke-width="14" stroke-linecap="round"/><path d="M95 300h170" stroke="#d8c7ae" stroke-width="14" stroke-linecap="round"/></g>
+<g transform="translate(1120 245)"><rect width="360" height="410" rx="32" fill="#fffdf8"/><circle cx="180" cy="135" r="82" fill="#dbe9e1"/><path d="M135 145l32 32 65-80" fill="none" stroke="#6d9283" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/><path d="M95 300h170" stroke="#c6d6cc" stroke-width="14" stroke-linecap="round"/></g>
+</g>
+<path d="M480 450h140M980 450h140" stroke="#8ba79a" stroke-width="16" stroke-linecap="round"/><path d="M585 415l35 35-35 35M1085 415l35 35-35 35" fill="none" stroke="#8ba79a" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

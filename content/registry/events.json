@@ -7252,17 +7252,17 @@
   },
   {
     "id": "N039",
-    "title": "ドイツの放送負担金、2026年11月8日から全国データ照合｜手紙が届いたら",
+    "title": "ドイツの放送負担金2026｜住民データ照合・12月中旬からの確認書面",
     "slug": "rundfunkbeitrag-meldedatenabgleich-2026",
     "category": "住まい",
-    "summary": "2026年11月8日から始まるドイツの全国住民データ照合について、対象者、データ送信期間、同居人がすでに支払っている場合の回答方法を整理します。通知開始時期は公式ページ間で表記が異なるため、その差も明記します。",
+    "summary": "住民データ照合の基準日は2026年11月8日、データ送信は11月9日〜12月8日予定。確認書面は12月14日ごろから順次発送予定です。同居人がすでに支払っている場合の回答方法を案内します。",
     "url": "/germany/ja/events/news/rundfunkbeitrag-meldedatenabgleich-2026/",
     "markdown_path": "/content/events/news/rundfunkbeitrag-meldedatenabgleich-2026.md",
     "published": true,
     "status": "published",
     "published_at": "2026-11-07",
-    "updated_at": "2026-11-07",
-    "last_verified": "2026-11-07",
+    "updated_at": "2026-11-21",
+    "last_verified": "2026-11-21",
     "next_review": "2026-11-09",
     "tags": [
       "放送負担金",
@@ -7309,13 +7309,13 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial (owner approval 2026-11-07; official sources checked)",
-      "last_reviewed_at": "2026-11-07",
-      "next_review_due": "2026-11-09"
+      "last_reviewed_at": "2026-11-21",
+      "next_review_due": "2026-12-14"
     },
     "content_type": "news",
     "city": "ドイツ全土",
     "location": "ドイツ全土",
-    "event_date": "2026-11-08〜2026-12-08（データ送信期間）",
+    "event_date": "2026-11-08（基準日）／2026-11-09〜2026-12-08（データ送信予定）",
     "official_url": "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026",
     "image": "/assets/img/events/rundfunkbeitrag-meldedatenabgleich-2026.webp",
     "image_url": "/assets/images/living/anmeldung-preparation.webp",

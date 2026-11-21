@@ -51,17 +51,17 @@
   },
   {
     "id": "E004",
-    "title": "デュッセルドルフのクリスマスマーケット2026｜日程・営業時間・休業日と会場の選び方",
+    "title": "デュッセルドルフ クリスマスマーケット2026｜11月19日〜12月30日・営業時間・休業日",
     "slug": "christmas-markets-duesseldorf",
     "category": "季節行事",
-    "summary": "デュッセルドルフのクリスマスマーケット2026は11月19日〜12月30日。通常営業時間に加え、11月22日・12月25日の休業、12月24日・26日の特別時間、公共交通と空港P+Rの確認先を整理します。",
+    "summary": "2026年は11月19日〜12月30日。11月22日と12月25日は休業。通常11時開場、市庁舎前・旧市街・ケーニヒスアレーの会場選びと最寄り駅、12月24・26日の特別営業時間を案内します。",
     "url": "/germany/ja/events/christmas-markets-duesseldorf/",
     "markdown_path": "/content/events/christmas-markets-duesseldorf.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-12",
-    "updated_at": "2026-10-28",
-    "last_verified": "2026-10-28",
+    "updated_at": "2026-11-21",
+    "last_verified": "2026-11-21",
     "tags": [
       "クリスマスマーケット",
       "デュッセルドルフ",
@@ -107,8 +107,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-28",
-      "next_review_due": "2026-11-18"
+      "last_reviewed_at": "2026-11-21",
+      "next_review_due": "2026-11-28"
     },
     "content_type": "event",
     "next_review": "2026-11-18",
@@ -5871,8 +5871,8 @@
     "id": "E021",
     "content_type": "event",
     "category": "季節行事",
-    "title": "ケルンのクリスマスマーケット2026｜大聖堂の下で、広場ごとに違う冬の物語",
-    "summary": "2026年のケルンのクリスマスマーケットを、大聖堂前・天使の市場・旧市街の小人伝説から案内。11月16日に始まる大聖堂前の日程と営業時間、11月22日の休業、各会場の雰囲気の違いを整理します。",
+    "title": "ケルン クリスマスマーケット2026｜日程・営業時間・大聖堂前と旧市街",
+    "summary": "大聖堂前と天使の市場は11月16日〜12月23日、11月22日は休業。旧市街は11月23日開幕、ホイマルクトは2027年1月10日まで。会場別の日程・営業時間・最寄り駅を紹介します。",
     "official_sources": [
       {
         "title": "大聖堂前のクリスマスマーケット：営業時間・休業日",
@@ -5893,6 +5893,10 @@
       {
         "title": "koeln.de：旧市街のクリスマスマーケット2026",
         "url": "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-altstadt/"
+      },
+      {
+        "title": "旧市街の主催者：開催時間とアクセス",
+        "url": "https://www.heinzels-wintermaerchen.de/zeiten-anfahrt/"
       }
     ],
     "related_articles": [
@@ -5920,8 +5924,8 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-30",
-    "updated_at": "2026-10-30",
-    "last_verified": "2026-10-30",
+    "updated_at": "2026-11-21",
+    "last_verified": "2026-11-21",
     "canonical_url": "/germany/ja/events/cologne-christmas-markets-2026-guide/",
     "official_url": "https://www.koelnerweihnachtsmarkt.com/de/",
     "image": "/assets/img/events/cologne-christmas-markets-2026-guide.webp",
@@ -5940,8 +5944,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-30",
-      "next_review_due": "2026-11-15"
+      "last_reviewed_at": "2026-11-21",
+      "next_review_due": "2026-11-28"
     }
   },
   {
@@ -7668,7 +7672,7 @@
       "germany-pfand-return-guide"
     ],
     "review": {
-      "status": "source-verified-draft",
+      "status": "reviewed",
       "reviewed_by": "J-Connect編集部（2026-11-21、デュッセルドルフ市・AWISTA・キャンペーン公式案内を照合）",
       "last_reviewed_at": "2026-11-21",
       "next_review_due": "2026-11-24"

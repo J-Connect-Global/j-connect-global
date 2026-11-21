@@ -3,8 +3,8 @@ slug: "christmas-markets-duesseldorf"
 id: "E004"
 content_type: "event"
 category: "季節行事"
-title: "デュッセルドルフのクリスマスマーケット2026｜日程・営業時間・休業日と会場の選び方"
-summary: "デュッセルドルフのクリスマスマーケット2026は11月19日〜12月30日。通常営業時間に加え、11月22日・12月25日の休業、12月24日・26日の特別時間、公共交通と空港P+Rの確認先を整理します。"
+title: "デュッセルドルフ クリスマスマーケット2026｜11月19日〜12月30日・営業時間・休業日"
+summary: "2026年は11月19日〜12月30日。11月22日と12月25日は休業。通常11時開場、市庁舎前・旧市街・ケーニヒスアレーの会場選びと最寄り駅、12月24・26日の特別営業時間を案内します。"
 official_sources:
   - title: "デュッセルドルフ観光局：2026年の会場・日程・営業時間・アクセス"
     url: "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
@@ -16,14 +16,14 @@ related_articles: ["christmas-post-germany-to-japan-2026", "kommern-saint-martin
 city: "デュッセルドルフ"
 location: "旧市街・中心部の広場と通り"
 event_date: "2026-11-19〜2026-12-30"
-next_review: "2026-11-18"
+next_review: "2026-11-28"
 published_at: "2026-06-12"
 tags: ["クリスマスマーケット", "デュッセルドルフ", "2026年11月", "2026年12月", "アドベント", "冬"]
 published: true
 status: "published"
 source_type: "manual"
-updated_at: "2026-10-28"
-last_verified: "2026-10-28"
+updated_at: "2026-11-21"
+last_verified: "2026-11-21"
 canonical_url: "/germany/ja/events/christmas-markets-duesseldorf/"
 official_url: "https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf"
 image: "/assets/img/events/christmas-markets-duesseldorf.webp"
@@ -32,11 +32,13 @@ image_caption: "2022年12月、市庁舎前。2026年の会場配置や装飾を
 image_credit: "Kürschner / CC0 / Wikimedia Commons"
 ---
 
-# デュッセルドルフのクリスマスマーケット2026｜日程・営業時間・休業日と会場の選び方
+# デュッセルドルフ クリスマスマーケット2026｜11月19日〜12月30日・営業時間・休業日
 
 2026年のデュッセルドルフ・クリスマスマーケットの期間は、11月19日から12月30日までです。初めてドイツの冬を迎える人や、家族・来客と出かけたい人に向け、旧市街の灯り、温かい飲み物、工芸品を通して、この季節の過ごし方を紹介します。会場を数多く回るより、自分に合う街の表情を見つけられるよう、エリアの違いと休業日も整理しました。
 
 **2026年の要点**：期間は11月19日（木）〜12月30日（水）。営業時間は日曜〜木曜が11:00〜20:00、金曜・土曜が11:00〜21:00です。11月22日（日）と12月25日（金）は休業、12月24日は15:00まで、12月26日は14:00からです。詳しくは[日程・営業時間の表](#2026年の日程-営業時間-アクセス)を見てください。
+
+最寄り駅は Heinrich-Heine-Allee（ハインリヒ・ハイネ・アレー）。市庁舎前から旧市街、川沿い、ケーニヒスアレー方面へ徒歩で回れます。日程と通常営業時間は[観光局の公式FAQ](https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf/faq)と公式案内で2026年11月21日に再確認しました。個別会場・出店者の時間は当日の案内も確認してください。
 
 ## クリスマスの「当日」までを楽しむ文化
 
@@ -110,7 +112,7 @@ image_credit: "Kürschner / CC0 / Wikimedia Commons"
 
 車で市内中心部へ入る場合は、特にアドベント期間の週末に駐車場が混雑する可能性があります。観光局は駐車場の空き状況や交通情報を事前に確認するよう案内しています。会場を回る順番、帰りの交通、特別営業時間は、[公式のイベント案内](https://www.visitduesseldorf.de/erleben/veranstaltungen/weihnachten-in-duesseldorf)を基準にしてください。
 
-開催日・営業時間・交通案内の確認日：2026年10月28日。
+開催日・営業時間・交通案内の確認日：2026年11月21日。
 ## 写真の出典
 
 - 主画像：[デュッセルドルフ市庁舎前のクリスマスマーケットの夜景](https://commons.wikimedia.org/wiki/File:D%C3%BCsseldorf%2C_Weihnachtsmarkt_vor_dem_Rathaus%2C_Dezember_2022.jpg) — Kürschner / [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en)。

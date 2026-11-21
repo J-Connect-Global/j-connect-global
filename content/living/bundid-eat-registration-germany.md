@@ -214,12 +214,13 @@ eATがない場合でも基本登録などを利用できることはありま�
 
 ## 公式情報・参考ソース
 
-- [BundID：オンライン身分証を使ったアカウント登録](https://id.bund.de/de/registration/eID)
-- [BundID：よくある質問](https://id.bund.de/de/faq)
-- [AusweisApp：必要なもの・PIN・NFCの確認](https://www.ausweisapp.bund.de/das-brauchen-sie)
-- [AusweisApp：PIN・PUK・ロック解除のFAQ](https://www.ausweisapp.bund.de/faq-fuer-nutzende)
-- [AusweisApp：公式ダウンロード](https://www.ausweisapp.bund.de/download/)
-- [Bundesportal：電子滞在許可証（eAT）](https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99010006012000/herausgeber/RP-13125384/region/073140000000)
-- [Bundesportal：オンライン本人確認のPIN再設定（メクレンブルク＝フォアポンメルン州の手続き例）](https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99008004011001/herausgeber/MV-106338988/region/130000000000)
+- [BundID：オンライン身分証を使ったアカウント登録](https://id.bund.de/de/registration/eIDm)（2026年11月21日確認）
+- [BundID：よくある質問](https://id.bund.de/de/faq)（2026年11月21日確認）
+- [AusweisApp：オンライン本人確認に必要なもの](https://www.ausweisapp.bund.de/das-brauchen-sie)（2026年11月21日確認）
+- [AusweisApp：PIN・PUK・ロック解除のFAQ](https://www.ausweisapp.bund.de/faq-fuer-nutzende)（2026年11月21日確認）
+- [AusweisApp：PIN再設定とサポート窓口](https://www.ausweisapp.bund.de/hilfe-und-support)（2026年11月21日確認）
+- [AusweisApp：公式ダウンロード](https://www.ausweisapp.bund.de/download/)（2026年11月21日確認）
+- [Bundesportal：電子滞在許可証（eAT）のオンライン本人確認](https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99010006012000/herausgeber/RP-13125384/region/073140000000)（2026年11月21日確認）
+- [Bundesportal：オンライン本人確認のPIN再設定（メクレンブルク＝フォアポンメルン州の手続き例）](https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99008004011001/herausgeber/MV-106338988/region/130000000000)（2026年11月21日確認）
 
-確認日：2026年11月20日。BundIDの登録方法、eATの対象、PIN・NFCの要件を公式サイトで確認しました。利用できる行政サービス、必要な本人確認レベル、窓口でのPIN再設定方法は、申請先の最新案内を優先してください。
+確認日：2026年11月21日。BundIDの本人確認レベル、eATの対象、PIN・PUK・NFCの要件を公式サイトで再確認しました。利用できる行政サービス、必要な本人確認レベル、窓口でのPIN再設定方法は、申請先と管轄当局の最新案内を優先してください。

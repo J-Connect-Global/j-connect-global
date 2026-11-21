@@ -25,6 +25,9 @@
 - RDG §10：https://www.gesetze-im-internet.de/rdg/__10.html
 - RDG §13a：https://www.gesetze-im-internet.de/rdg/__13a.html
 - RDG §13e：https://www.gesetze-im-internet.de/rdg/__13e.html
+- BGB §286：https://www.gesetze-im-internet.de/bgb/__286.html
+- BfJ Rechtsdienstleistungsregister：https://bundesjustizamt.de/DE/Themen/ZentraleRegister/Rechtsdienstleistungsregister/Rechtsdienstleistungsregister_node.html
+- Verbraucherzentrale Inkasso-Check：https://www.verbraucherzentrale.de/inkasso-check-start
 - Verbraucherzentrale Inkasso guide (2025-03-19): https://www.verbraucherzentrale.de/wissen/geld-versicherungen/kredit-schulden-insolvenz/inkasso-so-erkennen-sie-unserioese-forderungen-10871
 - Verbraucherzentrale Musterbrief (2025-04-14): https://www.verbraucherzentrale.de/musterbriefe-und-tools/geld-versicherungen/musterbrief-zur-abwehr-unberechtigter-forderungen-gegenueber-inkassobueros-2502
 - Verbraucherzentrale Mahnverfahren guide (2026-07-31): https://www.verbraucherzentrale.de/wissen/geld-versicherungen/kredit-schulden-insolvenz/gerichtliches-mahnverfahren-was-tun-bei-einem-mahnbescheid-10851

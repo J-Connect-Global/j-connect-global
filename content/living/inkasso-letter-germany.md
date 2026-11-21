@@ -31,8 +31,14 @@ official_sources:
     url: "https://www.verbraucherzentrale.de/musterbriefe-und-tools/geld-versicherungen/musterbrief-zur-abwehr-unberechtigter-forderungen-gegenueber-inkassobueros-2502"
   - title: "消費者センター：SMSによる債権回収請求への注意"
     url: "https://www.verbraucherzentrale.de/wissen/geld-versicherungen/kredit-schulden-insolvenz/inkassoforderungen-per-sms-oft-unserioes-13286"
-  - title: "連邦法務庁の債権回収サービス登録簿"
+  - title: "連邦法務庁：債権回収サービス登録簿・監督・苦情窓口"
+    url: "https://bundesjustizamt.de/DE/Themen/ZentraleRegister/Rechtsdienstleistungsregister/Rechtsdienstleistungsregister_node.html"
+  - title: "債権回収サービス登録簿の検索"
     url: "https://www.rechtsdienstleistungsregister.de/"
+  - title: "民法第286条：債務者の支払遅延"
+    url: "https://www.gesetze-im-internet.de/bgb/__286.html"
+  - title: "消費者センター：無料Inkasso-Check（2026年2月13日）"
+    url: "https://www.verbraucherzentrale.de/inkasso-check-start"
 review:
   status: "legal-review-pending"
   reviewed_by: "J-Connect編集部（2026-11-21、RDGと消費者センターの一次情報を照合。法律専門家レビュー待ち）"
@@ -71,7 +77,7 @@ disclaimer_type: "consumer_contract"
 
 ### 1. 差出人と元の請求元を確認する
 
-手紙に書かれた会社名だけで判断せず、次を確認します。
+手紙に書かれた会社名だけで判断せず、次を確認します。債権回収会社は、元の会社の代理人として回収する場合と、債権そのものを買い取って現在の債権者になる場合があります。元の債権者と、現在誰が請求権を持っているのかを分けて確認してください。
 
 - 債権回収会社の正式名称と住所
 - 誰の依頼で回収しているのか（元の債権者）
@@ -86,7 +92,7 @@ disclaimer_type: "consumer_contract"
 
 「Inkasso」を含む名称を使う債権回収サービスは、原則として連邦法務庁の登録制度の対象です。会社名と登録範囲を[債権回収サービス登録簿](https://www.rechtsdienstleistungsregister.de/)で確認してください。
 
-ただし、弁護士も債権回収を扱うことがあり、弁護士は通常の債権回収会社とは別に弁護士会の制度で確認します。登録簿に見当たらないという理由だけで、直ちに詐欺と断定しないでください。
+連邦法務庁は2025年1月1日から登録簿の管理、登録の変更・削除、債権回収サービスに対する監督と苦情対応を担当しています。登録されていない事業者が債権回収サービスを名乗る場合は、連邦法務庁の案内に従って確認・相談できます。ただし、弁護士も債権回収を扱うことがあり、弁護士は通常の債権回収会社とは別に弁護士会の制度で確認します。登録簿に見当たらないという理由だけで、差出人が弁護士事務所である場合まで直ちに詐欺と断定しないでください。
 
 手紙に記載された銀行口座や電話番号だけを使うのも避けます。元の債権者の公式サイトや、以前から使っている連絡先から独立して確認してください。
 
@@ -114,11 +120,11 @@ disclaimer_type: "consumer_contract"
 
 契約が分からない、すでに支払った、請求額が違う場合は、電話だけで済ませず、メールまたは書面で内容を残します。法務サービス法第13a条第2項に基づき、元の債権が誰に発生したのか、契約の場合は成立の主要な事情を追加で尋ねることができます。
 
-必要に応じて、委任・債権譲渡などの権限を示す資料を求めることもできます。ただし、全ての初回通知に必ず原本の委任状が添付されていなければ無効、という単純なルールではありません。まずは法定の情報提供が足りているかを確認します。
+必要に応じて、委任・債権譲渡などの権限を示す資料を求めることもできます。消費者センターも原本の委任状または債権譲渡書類を求める方法を紹介しています。ただし、全ての初回通知に必ず原本の委任状が添付されていなければ無効、という単純なルールではありません。まずは法定の情報提供が足りているかを確認します。
 
 ### 6. 分割払い・債務承認に署名する前に確認する
 
-一括で払えない場合、分割払いを提案されることがあります。署名する前に、分割手数料、総支払額、利息、債務を認める条項、将来の異議申立てへの影響を確認してください。
+一括で払えない場合、分割払いを提案されることがあります。署名する前に、分割手数料、総支払額、利息、債務を認める条項、給与や保険金などの債権譲渡、将来の異議申立てへの影響を確認してください。
 
 法務サービス法第13a条第4項は、債務承認によって、契約が存在しない、すでに支払った、時効になっているといった既存の反論を主張しにくくなる可能性について、事業者に事前説明を求めています。内容を理解できない書類には署名しないでください。
 
@@ -126,7 +132,8 @@ disclaimer_type: "consumer_contract"
 
 - **「48時間以内」と書かれているだけで裁判所の期限だと思う：** それは通常、相手方が設定した支払期限です。裁判所の2週間の異議期限とは別ですが、元の支払期日や遅延の有無は確認が必要です。
 - **元の請求額と回収費用をまとめて払う：** 回収費用の内訳や利息計算を確認せず、合計額だけで判断しないでください。
-- **分割払いの書類にすぐ署名する：** 債務承認や追加費用を含むことがあります。署名後に争うのが難しくなる場合があります。
+- **分割払いの書類にすぐ署名する：** 債務承認、追加費用、給与などの債権譲渡を含むことがあります。署名後に争うのが難しくなる場合があります。
+- **元の請求額と追加費用のどちらを争うか混同する：** 元の請求額を認め、追加費用だけを争う場合は、争っていない元の請求額を放置しないでください。請求全体に心当たりがない場合は、安易な一部支払いをせず、先に相談します。
 - **SMSやメールの口座にすぐ振り込む：** 実在する会社名を悪用するケースもあります。登録・住所・口座情報を独立した連絡先で照合してください。
 - **弁護士と債権回収会社の登録制度を混同する：** 弁護士は通常の債権回収会社とは別の制度で確認します。
 - **裁判所の書類も普通の督促状だと思う：** 「Mahnbescheid」や「Vollstreckungsbescheid」と書かれた裁判所の書類は別手続きです。通常のInkassoレターと同じ対応をしないでください。
@@ -158,6 +165,9 @@ disclaimer_type: "consumer_contract"
 - [消費者センター：不当な債権回収請求の見分け方（2025年3月19日）](https://www.verbraucherzentrale.de/wissen/geld-versicherungen/kredit-schulden-insolvenz/inkasso-so-erkennen-sie-unserioese-forderungen-10871)（2026年11月21日確認）
 - [消費者センター：不当な請求に対する文例（2025年4月14日）](https://www.verbraucherzentrale.de/musterbriefe-und-tools/geld-versicherungen/musterbrief-zur-abwehr-unberechtigter-forderungen-gegenueber-inkassobueros-2502)（2026年11月21日確認）
 - [消費者センター：SMSによる債権回収請求への注意（2026年1月27日）](https://www.verbraucherzentrale.de/wissen/geld-versicherungen/kredit-schulden-insolvenz/inkassoforderungen-per-sms-oft-unserioes-13286)（2026年11月21日確認）
-- [連邦法務庁の債権回収サービス登録簿](https://www.rechtsdienstleistungsregister.de/)（URL確認、検索画面はアクセス制限で取得できず・2026年11月21日）
+- [連邦法務庁：債権回収サービス登録簿・監督・苦情窓口](https://bundesjustizamt.de/DE/Themen/ZentraleRegister/Rechtsdienstleistungsregister/Rechtsdienstleistungsregister_node.html)（2026年11月21日確認）
+- [債権回収サービス登録簿の検索](https://www.rechtsdienstleistungsregister.de/)（2026年11月21日確認）
+- [民法第286条：債務者の支払遅延](https://www.gesetze-im-internet.de/bgb/__286.html)（2026年11月21日確認）
+- [消費者センター：無料Inkasso-Check（2026年2月13日）](https://www.verbraucherzentrale.de/inkasso-check-start)（2026年11月21日確認）
 
 本記事は一般的な情報であり、個別の法的助言ではありません。請求額が大きい、時効や債務承認が問題になる、支払不能が続く場合は、消費者センターや弁護士に個別相談してください。

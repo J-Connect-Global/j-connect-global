@@ -220,7 +220,7 @@ eATがない場合でも基本登録などを利用できることはありま�
 - [AusweisApp：PIN・PUK・ロック解除のFAQ](https://www.ausweisapp.bund.de/faq-fuer-nutzende)（2026年11月21日確認）
 - [AusweisApp：PIN再設定とサポート窓口](https://www.ausweisapp.bund.de/hilfe-und-support)（2026年11月21日確認）
 - [AusweisApp：公式ダウンロード](https://www.ausweisapp.bund.de/download/)（2026年11月21日確認）
-- [Bundesportal：電子滞在許可証（eAT）のオンライン本人確認](https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99010006012000/herausgeber/RP-13125384/region/073140000000)（2026年11月21日確認）
+- [Bundesportal：電子滞在許可証（eAT）のオンライン本人確認（地域情報の掲載例）](https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99010006012000/herausgeber/RP-13125384/region/073140000000)（2026年11月21日確認）
 - [Bundesportal：オンライン本人確認のPIN再設定（メクレンブルク＝フォアポンメルン州の手続き例）](https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99008004011001/herausgeber/MV-106338988/region/130000000000)（2026年11月21日確認）
 
 確認日：2026年11月21日。BundIDの本人確認レベル、eATの対象、PIN・PUK・NFCの要件を公式サイトで再確認しました。利用できる行政サービス、必要な本人確認レベル、窓口でのPIN再設定方法は、申請先と管轄当局の最新案内を優先してください。

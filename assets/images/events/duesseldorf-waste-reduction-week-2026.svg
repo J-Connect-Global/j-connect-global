@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">デュッセルドルフのごみ削減週間</title>
+  <desc id="desc">本、修理工具、再利用の循環を示す矢印を描いたオリジナル図解</desc>
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#e6efec"/><stop offset="1" stop-color="#f6eee0"/></linearGradient>
+    <linearGradient id="book" x2="0" y2="1"><stop stop-color="#f9faf7"/><stop offset="1" stop-color="#d8e2dc"/></linearGradient>
+    <linearGradient id="tool" x2="1" y2="1"><stop stop-color="#7a9a91"/><stop offset="1" stop-color="#486e6d"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="15" flood-color="#334c4b" flood-opacity=".18"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="250" cy="170" r="180" fill="#d2e0d9" opacity=".55"/>
+  <circle cx="1360" cy="730" r="220" fill="#e9ddc9" opacity=".6"/>
+  <path d="M0 690C360 630 660 720 940 690S1350 650 1600 700V900H0Z" fill="#cbd9d0" opacity=".55"/>
+  <g transform="translate(270 275)" filter="url(#shadow)">
+    <path d="M0 0Q120 -48 238 8V390Q118 330 0 380Z" fill="url(#book)" stroke="#66827a" stroke-width="12"/>
+    <path d="M238 8Q360 -48 478 0V380Q360 330 238 390Z" fill="#fdfcf8" stroke="#66827a" stroke-width="12"/>
+    <path d="M238 8V390" stroke="#8ba39a" stroke-width="10"/>
+    <path d="M44 76Q125 50 190 82M44 132Q125 106 190 138M44 188Q125 162 190 194M286 82Q350 50 430 76M286 138Q350 106 430 132M286 194Q350 162 430 188" fill="none" stroke="#b3c5bc" stroke-width="9" stroke-linecap="round"/>
+    <path d="M70 270Q135 240 190 260M286 260Q350 240 410 270" fill="none" stroke="#d3a66d" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(880 250)" filter="url(#shadow)">
+    <path d="M50 350L305 95" stroke="#415d61" stroke-width="42" stroke-linecap="round"/>
+    <path d="M32 368L88 424" stroke="#d2a66f" stroke-width="48" stroke-linecap="round"/>
+    <path d="M305 95L360 40L398 78L343 133Z" fill="#758f87"/>
+    <path d="M420 330L575 175" stroke="#455d62" stroke-width="34" stroke-linecap="round"/>
+    <path d="M400 350L452 402" stroke="#c89d68" stroke-width="42" stroke-linecap="round"/>
+    <path d="M575 175L630 120L660 150L605 205Z" fill="#7e9a90"/>
+    <path d="M185 455C215 410 275 395 320 415" fill="none" stroke="#6b8c81" stroke-width="18" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(1100 175)" fill="none" stroke="#6b968b" stroke-width="34" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)">
+    <path d="M-20 110C70 5 210 20 270 105"/>
+    <path d="M220 40L275 108L190 118"/>
+    <path d="M265 300C170 400 30 380 -30 295"/>
+    <path d="M25 365L-30 295L55 280"/>
+    <path d="M-80 250C-135 145 -85 35 15 -5"/>
+    <path d="M-5 75L15 -5L75 45"/>
+  </g>
+  <g transform="translate(110 700)" opacity=".7">
+    <path d="M0 0H280" stroke="#8ea69a" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="40" cy="-35" r="18" fill="#a2b9a7"/><circle cx="115" cy="-35" r="18" fill="#c9a477"/><circle cx="190" cy="-35" r="18" fill="#77978e"/>
+  </g>
+</svg>

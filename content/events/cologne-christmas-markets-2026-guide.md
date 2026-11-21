@@ -3,8 +3,8 @@ slug: "cologne-christmas-markets-2026-guide"
 id: "E021"
 content_type: "event"
 category: "季節行事"
-title: "ケルンのクリスマスマーケット2026｜大聖堂の下で、広場ごとに違う冬の物語"
-summary: "2026年のケルンのクリスマスマーケットを、大聖堂前・天使の市場・旧市街の小人伝説から案内。11月16日に始まる大聖堂前の日程と営業時間、11月22日の休業、各会場の雰囲気の違いを整理します。"
+title: "ケルン クリスマスマーケット2026｜日程・営業時間・大聖堂前と旧市街"
+summary: "大聖堂前と天使の市場は11月16日〜12月23日、11月22日は休業。旧市街は11月23日開幕、ホイマルクトは2027年1月10日まで。会場別の日程・営業時間・最寄り駅を紹介します。"
 official_sources:
   - title: "大聖堂前のクリスマスマーケット：営業時間・休業日"
     url: "https://www.koelnerweihnachtsmarkt.com/de/faq-items/zu-welchen-uhrzeiten-ist-der-weihnachtsmarkt-am-koelner-dom-geoeffnet/"
@@ -16,18 +16,20 @@ official_sources:
     url: "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-neumarkt/"
   - title: "koeln.de：旧市街のクリスマスマーケット2026"
     url: "https://www.koeln.de/weihnachten/weihnachtsmaerkte-koeln/weihnachtsmarkt-altstadt/"
+  - title: "旧市街の主催者：開催時間とアクセス"
+    url: "https://www.heinzels-wintermaerchen.de/zeiten-anfahrt/"
 related_articles: ["christmas-post-germany-to-japan-2026", "christmas-markets-duesseldorf", "aachen-christmas-market-2026-guide", "gluehwein-christmas-market-guide", "cologne-cathedral-632-years", "nrw-christmas-opening-hours-2026", "nuremberg-christkindlesmarkt-2026-guide"]
 city: "ケルン"
 location: "大聖堂前のロンカリ広場、ノイマルクト、旧市街ほか"
 event_date: "2026-11-16〜2026-12-23"
-next_review: "2026-11-15"
+next_review: "2026-11-28"
 tags: ["クリスマスマーケット", "ケルン", "2026年11月", "2026年12月", "アドベント", "冬"]
 published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-30"
-updated_at: "2026-10-30"
-last_verified: "2026-10-30"
+updated_at: "2026-11-21"
+last_verified: "2026-11-21"
 canonical_url: "/germany/ja/events/cologne-christmas-markets-2026-guide/"
 official_url: "https://www.koelnerweihnachtsmarkt.com/de/"
 image: "/assets/img/events/cologne-christmas-markets-2026-guide.webp"
@@ -36,7 +38,9 @@ image_caption: "イラスト：J-Connect。大聖堂前のクリスマスマー�
 image_credit: "Illustration / J-Connect"
 ---
 
-# ケルンのクリスマスマーケット2026｜大聖堂の下で、広場ごとに違う冬の物語
+# ケルン クリスマスマーケット2026｜日程・営業時間・大聖堂前と旧市街
+
+**2026年の日程早見：** 大聖堂前・ノイマルクトは11月16日〜12月23日（11月22日休業）。旧市街のアルター・マルクトは11月23日〜12月23日、ホイマルクトは11月23日〜2027年1月10日（12月24・25日休業）です。中央駅から大聖堂前へ徒歩でアクセスできます。主催者・観光案内を2026年11月21日に再確認しました。
 
 ケルンでは11月中旬から、大聖堂前をはじめ街のあちこちの広場にクリスマスマーケットが立ちます。初めてドイツの冬を迎える人や、NRW州内から日帰りで出かけたい家族・友人向けに、主な会場がそれぞれどんな物語や雰囲気を持っているのかを紹介します。2026年の大聖堂前の日程と営業時間、11月22日の休業日も整理しました。
 
@@ -76,7 +80,8 @@ image_credit: "Illustration / J-Connect"
 | --- | --- | --- |
 | 大聖堂前（ロンカリ広場） | 2026年11月16日（月）〜12月23日（水） | 日〜水11〜21時、木・金11〜22時、土10〜22時。11月22日は休業 |
 | 天使の市場（ノイマルクト） | 2026年11月16日（月）〜12月23日（水） | 日〜木11〜21時、金・土11〜22時。11月22日は休業 |
-| 旧市街（アルター・マルクト、ホイマルクト） | 2026年11月23日開始予定 | 会場により終了日が異なるため主催者の案内で確認 |
+| 旧市街（アルター・マルクト） | 11月23日〜12月23日 | 毎日11〜22時 |
+| 旧市街（ホイマルクト） | 11月23日〜2027年1月10日 | 11〜22時、12月26日以降は主催者の営業時間ページで確認。12月24・25日休業 |
 
 ![大聖堂前と天使の市場は2026年11月16日から12月23日まで（11月22日は休業）、旧市街の市は11月23日開始予定で、スケートリンクのある会場は2027年1月10日まで続く予定であることを示す図](/assets/images/events/cologne-christmas-markets-2026-periods.svg "図解：J-Connect。主催者、ケルン観光局、koeln.deの案内に基づく（2026年10月30日参照）。")
 

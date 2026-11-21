@@ -23,6 +23,8 @@ official_sources:
     url: "https://www.gesetze-im-internet.de/zpo/__692.html"
   - title: "民事訴訟法第694条：督促状への異議"
     url: "https://www.gesetze-im-internet.de/zpo/__694.html"
+  - title: "民事訴訟法第696条：異議後の通常訴訟への移行"
+    url: "https://www.gesetze-im-internet.de/zpo/__696.html"
   - title: "民事訴訟法第699条：執行命令"
     url: "https://www.gesetze-im-internet.de/zpo/__699.html"
   - title: "民事訴訟法第700条：執行命令への異議"

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">資源を大切にする暮らし</title>
+  <desc id="desc">再利用できる買い物袋、修理する道具、図書館の本を描いたオリジナルの編集図解。</desc>
+  <rect width="1600" height="900" fill="#f2f5ec"/>
+  <circle cx="800" cy="450" r="345" fill="#e4ebd8"/>
+  <path d="M390 450C390 222 576 90 800 90S1210 222 1210 450 1024 810 800 810 390 678 390 450Z" fill="none" stroke="#90a78b" stroke-width="22" stroke-dasharray="40 22"/>
+  <g transform="translate(220 315)">
+    <rect x="-35" y="-55" width="330" height="335" rx="36" fill="#fff" stroke="#466b52" stroke-width="8"/>
+    <path d="M32 90h196l-18 155H50z" fill="#c3d5a9" stroke="#466b52" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M86 90V57a44 44 0 0 1 88 0v33" fill="none" stroke="#466b52" stroke-width="12" stroke-linecap="round"/>
+    <path d="M130 138c-41 32-12 61 0 78 12-17 41-46 0-78z" fill="#466b52"/>
+  </g>
+  <g transform="translate(665 315)">
+    <rect x="-35" y="-55" width="330" height="335" rx="36" fill="#fff" stroke="#466b52" stroke-width="8"/>
+    <path d="M76 225l106-140a54 54 0 0 1 45-70l-30 42 22 31 45-14a54 54 0 0 1-65 49L100 252z" fill="#e5af67" stroke="#765339" stroke-width="10" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(1110 315)">
+    <rect x="-35" y="-55" width="330" height="335" rx="36" fill="#fff" stroke="#466b52" stroke-width="8"/>
+    <rect x="26" y="32" width="62" height="208" rx="8" fill="#93adc0" stroke="#456270" stroke-width="8"/>
+    <rect x="98" y="56" width="68" height="184" rx="8" fill="#c3d5a9" stroke="#466b52" stroke-width="8"/>
+    <rect x="180" y="53" width="54" height="187" rx="8" fill="#e5af67" stroke="#765339" stroke-width="8" transform="rotate(-8 207 146)"/>
+    <path d="M16 246h236" stroke="#456270" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <path d="M540 430l55 25-55 25M985 430l55 25-55 25" fill="none" stroke="#466b52" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -2175,14 +2175,14 @@
     "image_url": "/assets/images/living/japanese-resident-paperwork-editorial-v1.webp",
     "image_alt": "ドイツの住民登録に必要な書類を自宅で準備する日本人の住民",
     "category": "役所・滞在",
-    "summary": "住民登録は実際の入居日から2週間以内。パスポート、入居証明、申請書の取得先と出し方、予約が取れないときの動き方、期限に遅れた場合、登録後に届く税務IDまで日本語で整理します。",
+    "summary": "ドイツの住民登録は一般則として入居後2週間以内です。国外に通常居住しドイツ国内で未登録の人は、入居時点で3か月を超える滞在が決まっているか、滞在中に延長したかで期限が異なります。必要書類、入居証明、予約が取れないときの対応を整理します。",
     "url": "/germany/ja/living/anmeldung-guide/",
     "markdown_path": "/content/living/anmeldung-guide.md",
     "published": true,
     "status": "published",
     "published_at": "2026-06-07",
-    "updated_at": "2026-11-15",
-    "last_verified": "2026-11-15",
+    "updated_at": "2026-11-16",
+    "last_verified": "2026-11-16",
     "tags": [
       "住民登録",
       "入居証明",
@@ -2207,6 +2207,14 @@
       {
         "title": "連邦住民登録法第17条：登録と転出",
         "url": "https://www.gesetze-im-internet.de/bmg/__17.html"
+      },
+      {
+        "title": "連邦住民登録法第27条：国外居住者などの登録義務の例外",
+        "url": "https://www.gesetze-im-internet.de/bmg/__27.html"
+      },
+      {
+        "title": "連邦行政ポータル：国外居住者の3か月以内・超の滞在における登録義務",
+        "url": "https://verwaltung.bund.de/leistungsverzeichnis/DE/lagen/1050000/sublagen/1050200/rechte-und-pflichten/102837924"
       },
       {
         "title": "連邦行政ポータル：住民登録",
@@ -2237,8 +2245,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-11-15",
-      "next_review_due": "2027-01-31"
+      "last_reviewed_at": "2026-11-16",
+      "next_review_due": "2027-02-16"
     }
   },
   {
@@ -3129,14 +3137,14 @@
     "slug": "winter-tires-germany-2026",
     "title": "ドイツの冬タイヤ義務2026｜交換時期・雪マーク・オールシーズンタイヤ",
     "category": "交通・車",
-    "summary": "ドイツの冬タイヤは日付ではなく路面状況で義務が決まります。2026年のAlpineマーク、M+Sのみのタイヤ、オールシーズンタイヤ、溝の深さ、罰金、レンタカーを確認します。",
+    "summary": "ドイツの冬タイヤ義務は日付ではなく路面状況で決まります。Alpineマーク、例外車両、罰金・点数、レンタカーと事故時の保険を2026年11月20日時点の法令・公式情報で確認します。",
     "url": "/germany/ja/living/winter-tires-germany-2026/",
     "markdown_path": "/content/living/winter-tires-germany-2026.md",
     "published": true,
     "status": "published",
     "published_at": "2026-10-20",
-    "updated_at": "2026-11-02",
-    "last_verified": "2026-11-02",
+    "updated_at": "2026-11-20",
+    "last_verified": "2026-11-20",
     "home_visible": false,
     "home_order": 6,
     "hub_visible": false,
@@ -3147,7 +3155,7 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect編集部（AI照合）2026-11-14：道路交通規則第2条・第52条、車両登録規則第36条（1.6mm、Alpine記号）、過料の一覧（60・80・75ユーロ）を原典で確認。点数はADAC（この環境から未確認）",
-      "last_reviewed_at": "2026-11-02",
+      "last_reviewed_at": "2026-11-20",
       "next_review_due": "2027-09-01"
     },
     "tags": [
@@ -3182,6 +3190,18 @@
       {
         "title": "ADAC：オールシーズンタイヤの冬季利用",
         "url": "https://www.adac.de/rund-ums-fahrzeug/ausstattung-technik-zubehoer/reifen/sicherheit/ganzjahresreifen-im-winter/"
+      },
+      {
+        "title": "過料規則（BKatV）付表：冬タイヤ違反の反則金",
+        "url": "https://www.gesetze-im-internet.de/bkatv_2013/anlage.html"
+      },
+      {
+        "title": "運転免許規則（FeV）付表13：冬タイヤ違反の点数",
+        "url": "https://www.gesetze-im-internet.de/fev_2010/anlage_13.html"
+      },
+      {
+        "title": "GDV：冬タイヤ未装着と保険の扱い（2026年11月19日更新）",
+        "url": "https://www.gdv.de/gdv/medien/medieninformationen/winterreifen-wer-bei-schnee-und-eis-mit-sommerreifen-faehrt-riskiert-seinen-versicherungsschutz-219808"
       }
     ],
     "image_url": "/assets/img/living/winter-tires-germany-2026.webp",

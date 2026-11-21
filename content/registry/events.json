@@ -5950,14 +5950,14 @@
     "content_type": "event",
     "category": "季節行事",
     "title": "アーヘン・クリスマスマーケット2026｜カール大帝の都で、プリンテンの香りに包まれる",
-    "summary": "2026年11月20日〜12月23日のアーヘン・クリスマスマーケットを案内。大聖堂と市庁舎に挟まれた広場の歴史、名物の焼き菓子プリンテン、国境の街らしいにぎわいと、11月22日・12月12日・23日の特別時間を整理します。",
+    "summary": "2026年11月20日〜12月23日のアーヘン・クリスマスマーケットを案内。大聖堂と市庁舎の間の歴史、名物プリンテン、120超の屋台、入場無料・バリアフリー・ベビーカー対応、P+R（最大5人で往復5ユーロ）と特別営業時間を整理します。",
     "official_sources": [
       {
         "title": "アーヘン観光局：アーヘン・クリスマスマーケット",
         "url": "https://www.aachen-tourismus.de/aachen-entdecken/details/event/aachener-weihnachtsmarkt/"
       },
       {
-        "title": "アーヘン市：2026年の開催案内",
+        "title": "アーヘン市：2026年の開催案内、特別営業時間、P+R駐車場（2026年11月21日確認）",
         "url": "https://www.aachen.de/kalender/2026/q4/weihnachten/2026-11-20-aachener-weihnachtsmarkt/"
       },
       {
@@ -5999,8 +5999,8 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-30",
-    "updated_at": "2026-10-30",
-    "last_verified": "2026-10-30",
+    "updated_at": "2026-11-21",
+    "last_verified": "2026-11-21",
     "canonical_url": "/germany/ja/events/aachen-christmas-market-2026-guide/",
     "official_url": "https://www.aachen-tourismus.de/aachen-entdecken/details/event/aachener-weihnachtsmarkt/",
     "image": "/assets/img/events/aachen-christmas-market-2026-guide.webp",
@@ -6019,8 +6019,8 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-10-30",
-      "next_review_due": "2026-11-19"
+      "last_reviewed_at": "2026-11-21",
+      "next_review_due": "2026-11-26"
     }
   },
   {
@@ -6969,16 +6969,16 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-11-01",
-      "next_review_due": "2026-11-19"
+      "last_reviewed_at": "2026-11-21",
+      "next_review_due": "2026-11-26"
     },
     "published": true,
     "status": "published",
     "title": "ミュンヘンのクリスマスマーケット2026｜市庁舎のツリーと、聖ペーター教会前のクリッペ市",
     "category": "季節行事",
-    "summary": "2026年11月20日〜12月24日のミュンヘン・マリエン広場のクリスマスマーケットを案内。14世紀にさかのぼる市の歴史、毎年違う村から贈られる大きなツリー、1757年から続く降誕の人形の市、12月13日のクランプスの行列、宮殿や中世風の市まで、2026年の日程と営業時間を整理します。",
+    "summary": "2026年11月20日〜12月24日のミュンヘン・マリエン広場の市を案内。138の屋台、11月20日17時のツリー点灯、11月22日の休業、11月27日・12月12日の夜間延長、12月13日のクランプス行列と市内移動を整理します。",
     "published_at": "2026-11-01",
-    "last_verified": "2026-11-01",
+    "last_verified": "2026-11-21",
     "canonical_url": "/germany/ja/events/munich-christmas-markets-2026-guide/",
     "tags": [
       "クリスマスマーケット",
@@ -6988,7 +6988,7 @@
       "2026年12月",
       "アドベント"
     ],
-    "updated_at": "2026-11-01",
+    "updated_at": "2026-11-21",
     "related_articles": [
       "munich-weekend-trip",
       "nuremberg-christkindlesmarkt-2026-guide",
@@ -7003,6 +7003,26 @@
     "event_date": "2026-11-20〜2026-12-24",
     "official_url": "https://www.muenchen.de/veranstaltungen/muenchner-christkindlmarkt-marienplatz",
     "official_sources": [
+      {
+        "title": "ミュンヘン市：2026年11月18日付・マリエン広場のクリスマスマーケット（138屋台、開幕・催し）",
+        "url": "https://ru.muenchen.de/2026/222/Der-Muenchner-Christkindlmarkt-2026-127097"
+      },
+      {
+        "title": "主催者：2026年の営業時間、休業日、アクセス、ショッピングナイト",
+        "url": "https://www.christkindlmarkt-muenchen.de/informationen/muenchner-christkindlmarkt-2026-oeffnungszeiten-und-anreise"
+      },
+      {
+        "title": "主催者：MVGクリスマストラム2026の運行情報",
+        "url": "https://www.christkindlmarkt-muenchen.de/attraktionen/christkindltram"
+      },
+      {
+        "title": "主催者：マリエン広場のツリー2026（高さ・点灯時間）",
+        "url": "https://www.christkindlmarkt-muenchen.de/attraktionen/christbaum"
+      },
+      {
+        "title": "主催者：子ども向け工作教室2026",
+        "url": "https://www.christkindlmarkt-muenchen.de/himmelswerkstatt"
+      },
       {
         "title": "ミュンヘン市：マリエン広場のクリスマスマーケット2026",
         "url": "https://www.muenchen.de/veranstaltungen/muenchner-christkindlmarkt-marienplatz"
@@ -7584,9 +7604,9 @@
     "summary": "2026年11月19〜30日にデュッセルドルフで行われるごみ削減週間の催しを、日付・会場・参加条件で整理。Südparkの体験ブース、プラスチック削減の講演、リサイクルクイズ、KAP1のRepair Caféと図書館展示を紹介します。",
     "url": "/germany/ja/events/duesseldorf-european-week-waste-reduction-2026/",
     "markdown_path": "/content/events/duesseldorf-european-week-waste-reduction-2026.md",
-    "published": false,
-    "status": "draft",
-    "published_at": "",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-11-21",
     "updated_at": "2026-11-21",
     "last_verified": "2026-11-21",
     "tags": [
@@ -7599,15 +7619,40 @@
     ],
     "home_visible": false,
     "home_order": 999,
-    "hub_visible": false,
-    "search_visible": false,
-    "sitemap_visible": false,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
     "canonical_url": "/germany/ja/events/duesseldorf-european-week-waste-reduction-2026/",
     "city": "デュッセルドルフ",
     "location": "Südpark、zentrum plus、AWO Adventsmarkt、KAP1、Bilk地区図書館",
     "event_date": "2026-11-19〜2026-11-30",
-    "official_url": "https://www2.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/europaeische-woche-der-abfallvermeidung-vom-19-bis-zum-30-november",
-    "official_sources": [],
+    "official_url": "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/europaeische-woche-der-abfallvermeidung-vom-19-bis-zum-30-november",
+    "official_sources": [
+      {
+        "title": "デュッセルドルフ市：欧州ごみ削減週間の市内プログラム（2026年11月12日）",
+        "url": "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/europaeische-woche-der-abfallvermeidung-vom-19-bis-zum-30-november"
+      },
+      {
+        "title": "AWISTA Kommunal：欧州ごみ削減週間のイベント案内（2026年11月16日）",
+        "url": "https://www.awista-kommunal.de/aktuelles/europaeische-woche-der-abfallvermeidung-aktionen-der-abfallberatung"
+      },
+      {
+        "title": "欧州ごみ削減週間：2026年キャンペーン案内",
+        "url": "https://www.awista-kommunal.de/ewav2026"
+      },
+      {
+        "title": "欧州ごみ削減週間：GarageLab Repair Caféの開催情報",
+        "url": "https://wochederabfallvermeidung.de/aktion/impulsvortrag-im-repair-cafe-garagelab-im-kap-1/"
+      },
+      {
+        "title": "デュッセルドルフ市：Repair Caféと資源保護の地域活動",
+        "url": "https://www.duesseldorf.de/umweltamt/umwelt-und-verbraucherthemen-von-a-z/abfall/initiativen"
+      },
+      {
+        "title": "デュッセルドルフ市：中央図書館・市立図書館",
+        "url": "https://www.duesseldorf.de/stadtbuechereien"
+      }
+    ],
     "disclaimer_type": "event",
     "related_articles": [
       "germany-waste-sorting-guide",
@@ -7620,8 +7665,9 @@
       "last_reviewed_at": "2026-11-21",
       "next_review_due": "2026-11-24"
     },
-    "image": "/assets/images/events/duesseldorf-waste-reduction-week-2026.svg",
-    "image_alt": "本、修理工具、再利用を表す循環矢印を組み合わせた、ごみ削減週間のオリジナル図解",
+    "image": "/assets/images/events/duesseldorf-waste-reduction-week-2026-hero.webp",
+    "image_url": "/assets/images/events/duesseldorf-waste-reduction-week-2026-hero.webp",
+    "image_alt": "買い物袋、修理道具、図書館の本で資源を大切にする暮らしを示す図解",
     "content_type": "event"
   }
 ]

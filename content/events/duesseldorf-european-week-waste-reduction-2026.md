@@ -7,25 +7,25 @@ category: "地域イベント"
 city: "デュッセルドルフ"
 location: "Südpark、zentrum plus、AWO Adventsmarkt、KAP1、Bilk地区図書館"
 event_date: "2026-11-19〜2026-11-30"
-published_at: ""
+published_at: "2026-11-21"
 updated_at: "2026-11-21"
 last_verified: "2026-11-21"
 next_review: "2026-11-24"
 summary: "2026年11月19〜30日にデュッセルドルフで行われるごみ削減週間の催しを、日付・会場・参加条件で整理。Südparkの体験ブース、プラスチック削減の講演、リサイクルクイズ、KAP1のRepair Caféと図書館展示を紹介します。"
 tags: ["デュッセルドルフ", "ごみ削減", "欧州ごみ削減週間", "Repair Café", "リユース", "2026年11月"]
-status: "draft"
-published: false
+status: "published"
+published: true
 canonical_url: "/germany/ja/events/duesseldorf-european-week-waste-reduction-2026/"
-official_url: "https://www2.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/europaeische-woche-der-abfallvermeidung-vom-19-bis-zum-30-november"
+official_url: "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/europaeische-woche-der-abfallvermeidung-vom-19-bis-zum-30-november"
 source_type: "manual"
-image: "/assets/images/events/duesseldorf-waste-reduction-week-2026.svg"
-image_alt: "本、修理工具、再利用を表す循環矢印を組み合わせた、ごみ削減週間のオリジナル図解"
+image: "/assets/images/events/duesseldorf-waste-reduction-week-2026-hero.webp"
+image_alt: "買い物袋、修理道具、図書館の本で資源を大切にする暮らしを示す図解"
 image_caption: "J-Connectのオリジナル図解。実際の会場や展示を再現したものではありません。"
 image_credit: "Original vector illustration / J-Connect"
 related_articles: ["germany-waste-sorting-guide", "duesseldorf-city-guide", "germany-pfand-return-guide"]
 official_sources:
   - title: "デュッセルドルフ市：欧州ごみ削減週間の市内プログラム（2026年11月12日）"
-    url: "https://www2.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/europaeische-woche-der-abfallvermeidung-vom-19-bis-zum-30-november"
+    url: "https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/europaeische-woche-der-abfallvermeidung-vom-19-bis-zum-30-november"
   - title: "AWISTA Kommunal：欧州ごみ削減週間のイベント案内（2026年11月16日）"
     url: "https://www.awista-kommunal.de/aktuelles/europaeische-woche-der-abfallvermeidung-aktionen-der-abfallberatung"
   - title: "欧州ごみ削減週間：2026年キャンペーン案内"
@@ -37,7 +37,7 @@ official_sources:
   - title: "デュッセルドルフ市：中央図書館・市立図書館"
     url: "https://www.duesseldorf.de/stadtbuechereien"
 review:
-  status: "source-verified-draft"
+  status: "reviewed"
   reviewed_by: "J-Connect編集部（2026-11-21、デュッセルドルフ市・AWISTA・キャンペーン公式案内を照合）"
   last_reviewed_at: "2026-11-21"
   next_review_due: "2026-11-24"
@@ -46,7 +46,7 @@ disclaimer_type: "event"
 
 # デュッセルドルフの欧州ごみ削減週間2026｜日程・会場・Repair Café・図書館展示
 
-デュッセルドルフでは2026年11月19日から30日まで、市内独自のプログラムとして欧州ごみ削減週間に合わせた催しが続きます。国際キャンペーンの期間である11月21〜29日より3日長く、Südparkの体験ブース、プラスチック削減の講演、リサイクルクイズ、Repair Café、図書館展示が予定されています。この記事では、これから参加できる日程と会場、無料・予約不要などの条件を整理します。
+デュッセルドルフでは2026年11月19日から30日まで、市内独自のプログラムとして欧州ごみ削減週間に合わせた催しが続きます。国際キャンペーンの期間である11月21〜29日より3日長く、Südparkの体験ブース、プラスチック削減の講演、リサイクルクイズ、Repair Café、図書館展示が予定されています。この記事では、11月21日以降の日程と会場、無料・予約不要などの条件を整理します。
 
 ![本、修理工具、再利用の循環を描いたオリジナル図解](/assets/images/events/duesseldorf-waste-reduction-week-2026.svg "J-Connectのオリジナル図解。実際の会場や展示を再現したものではありません。")
 
@@ -58,7 +58,7 @@ disclaimer_type: "event"
 
 市の発表には、すでに終了した11月19日の料理イベントとPFAS講演も含まれています。以下では、11月21日以降に参加できる催しと、期間中に見られる展示に絞りました。
 
-## これから参加できる催し
+## 11月21日以降の催し
 
 | 日付・時間 | 内容 | 会場 | 参加条件 |
 | --- | --- | --- | --- |
@@ -72,7 +72,7 @@ disclaimer_type: "event"
 
 11月21日は、SüdparkのVHS-Biogartenで、持続可能な消費を分かりやすく示す「持続可能性のピラミッド」が紹介されます。クイズや短いアンケートも予定されており、買い物のときに何を選ぶと資源を守れるのかを考える機会です。
 
-開催時間は12〜16時です。市の案内には個別の参加費や予約条件、会場の詳しい入口までは記載されていないため、出発前に公式案内を確認してください。
+開催時間は12〜16時です。11月21日のこの催しは16時に終了する予定です。終了後は11月24日以降の催しをご覧ください。市の案内には個別の参加費や予約条件、会場の詳しい入口までは記載されていないため、出発前に公式案内を確認してください。
 
 ## 11月24日：日常生活でプラスチックを減らす講演
 
@@ -124,7 +124,7 @@ disclaimer_type: "event"
 
 ## 公式情報・参考ソース
 
-- [デュッセルドルフ市：欧州ごみ削減週間の市内プログラム（2026年11月12日）](https://www2.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/europaeische-woche-der-abfallvermeidung-vom-19-bis-zum-30-november)（2026年11月21日確認）
+- [デュッセルドルフ市：欧州ごみ削減週間の市内プログラム（2026年11月12日）](https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/europaeische-woche-der-abfallvermeidung-vom-19-bis-zum-30-november)（2026年11月21日確認）
 - [AWISTA Kommunal：欧州ごみ削減週間のイベント案内（2026年11月16日）](https://www.awista-kommunal.de/aktuelles/europaeische-woche-der-abfallvermeidung-aktionen-der-abfallberatung)（2026年11月21日確認）
 - [AWISTA Kommunal：2026年キャンペーン案内](https://www.awista-kommunal.de/ewav2026)（2026年11月21日確認）
 - [欧州ごみ削減週間：KAP1のRepair Caféと講演](https://wochederabfallvermeidung.de/aktion/impulsvortrag-im-repair-cafe-garagelab-im-kap-1/)（2026年11月21日確認）

@@ -14,6 +14,8 @@ official_sources:
     url: "https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/weihnachtsmarkt-jungfernstieg-301080"
   - title: "ハンブルク市：ザンクト・パウリのクリスマスマーケット"
     url: "https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/santa-pauli-weihnachtsmarkt-307258"
+  - title: "ハンブルク市：Winterdeckと11月22日のサンタ・パウリ特別営業時間"
+    url: "https://www.hamburg.de/freizeit/jahreszeiten/winter/winterdeck-305620"
   - title: "ハンブルク市：聖ペトリ教会のクリスマスマーケット"
     url: "https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/weihnachtsmarkt-petrikirche-301062"
   - title: "ハンブルク市：フレートインゼルのクリスマスマーケット"
@@ -23,15 +25,15 @@ official_sources:
 related_articles: ["christmas-post-germany-to-japan-2026", "hamburg-weekend-trip", "berlin-christmas-markets-2026-guide", "gluehwein-christmas-market-guide", "saint-nicholas-day-germany", "christmas-markets-duesseldorf", "germany-train-travel-guide"]
 city: "ハンブルク"
 location: "市庁舎前広場、ユングフェルンシュティーク、ザンクト・パウリのシュピールブーデン広場ほか"
-event_date: "2026-11-18〜2026-12-23"
-next_review: "2026-11-17"
+event_date: "2026-11-09〜2026-12-23"
+next_review: "2026-12-24"
 tags: ["クリスマスマーケット", "ハンブルク", "北ドイツ", "2026年11月", "2026年12月", "アドベント"]
 published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-11-01"
-updated_at: "2026-11-01"
-last_verified: "2026-11-01"
+updated_at: "2026-11-21"
+last_verified: "2026-11-21"
 canonical_url: "/germany/ja/events/hamburg-christmas-markets-2026-guide/"
 official_url: "https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/weihnachtsmarkt-rathausmarkt-301092"
 image: "/assets/img/events/hamburg-christmas-markets-2026-guide.webp"
@@ -43,6 +45,8 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 # ハンブルクのクリスマスマーケット2026｜日程・営業時間・空飛ぶサンタと会場の選び方
 
 港町ハンブルクでは、アドベントの時期に20を超えるクリスマスマーケットが開かれます。中心となる市庁舎前の市は2026年11月23日（月）から12月23日（水）まで、湖に面したユングフェルンシュティークの市はひと足早く11月18日（水）に開幕します。北ドイツで暮らす人や、年末に港町を訪れたい人に向けて、主な市がどんな物語や雰囲気を持っているのかを紹介し、2026年の日程と営業時間をまとめました。
+
+**11月22日（日）に訪れる方へ：** ユングフェルンシュティークと聖ペトリ教会前の市は休業です。[市の特別営業時間案内](https://www.hamburg.de/freizeit/jahreszeiten/winter/winterdeck-305620)によると、サンタ・パウリは17時から開場予定。市庁舎前とフレートインゼルは翌23日に開幕します。出発前に各会場の公式案内を確認してください（2026年11月21日確認）。
 
 ## 市庁舎の前で「商売より芸術を」
 
@@ -72,13 +76,13 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 
 歓楽街ザンクト・パウリのシュピールブーデン広場では、「サンタ・パウリ」と名付けられた市が開かれます。ハンブルク市は、伝統的なクリスマスと、この地区らしいにぎやかな夜の文化を組み合わせた市と紹介しています。毎日入れ替わるライブ音楽のほか、木〜土曜の夜には舞台でストリップショーが行われるため、大人向けの市と考えたほうがよいでしょう。[ハンブルク市の案内](https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/santa-pauli-weihnachtsmarkt-307258)
 
-白衣の店員が迎える「グリューワイン薬局」では、白や赤のワインにシナモンやクローブ、八角などのエキスをスポイトで加え、自分だけのグリューワインを作れます。グリューワインそのものについては[グリューワインのコラム](/germany/ja/events/columns/gluehwein-christmas-market-guide/)で紹介しています。2026年の舞台のプログラムは、11月1日時点でまだ発表されていません。
+白衣の店員が迎える「グリューワイン薬局」では、白や赤のワインにシナモンやクローブ、八角などのエキスをスポイトで加え、自分だけのグリューワインを作れます。2026年は毎日ライブ音楽があり、ショーは木曜21時30分・22時30分、金曜と土曜は21時30分・22時30分・23時30分に始まります。出演者と日別の予定は[市の公式案内](https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/santa-pauli-weihnachtsmarkt-307258)をご確認ください。グリューワインそのものについては[グリューワインのコラム](/germany/ja/events/columns/gluehwein-christmas-market-guide/)で紹介しています。
 
 ## 教会の前と、運河のほとりの小さな市
 
 市の中心部には、ほかにも性格の違う市があります。ハンブルクに現存する最も古い教会である聖ペトリ教会の前では、本物のもみの木に囲まれた家族的な雰囲気の市が開かれ、おもちゃや工芸品が並びます。アルスター湖とエルベ川の間の運河沿いに立つフレートインゼルの市は、運河と港に近い海の街らしい雰囲気で、屋根のある場所もあります。
 
-ただし、この二つの市の2026年の日程は、11月1日時点のハンブルク市の案内ではまだ確認できません。訪れる前に[聖ペトリ教会の市](https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/weihnachtsmarkt-petrikirche-301062)と[フレートインゼルの市](https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/weihnachtsmarkt-auf-der-fleetinsel-301114)の案内を確認してください。
+聖ペトリ教会前の市は11月18日〜12月23日。市の案内本文では毎日11〜21時、飲食は23時まで、11月22日は休業です。フレートインゼルは11月23日〜12月23日、月〜木・日曜は12〜21時、金・土曜は12〜22時です。聖ペトリ教会のページ下部の自動営業時間欄は本文と一致しないため、訪問当日は[聖ペトリ教会の市](https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/weihnachtsmarkt-petrikirche-301062)と[フレートインゼルの市](https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/weihnachtsmarkt-auf-der-fleetinsel-301114)の最新案内を確認してください。
 
 なお、11月6日から12月6日まではハイリゲンガイストフェルトで、北ドイツ最大の民衆祭とされる移動遊園地「ハンブルガー・ドーム」の冬の開催があります。クリスマスマーケットではありませんが、同じ時期の楽しみとして知っておくと便利です。[ハンブルク市の案内](https://www.hamburg.de/freizeit/dom)
 
@@ -88,8 +92,9 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 | --- | --- | --- |
 | 市庁舎前の歴史的クリスマスマーケット | 2026年11月23日（月）〜12月23日（水） | 毎日11〜21時。空飛ぶサンタは毎日16時・18時・20時 |
 | ユングフェルンシュティーク | 2026年11月18日（水）〜12月23日（水） | 月〜木・日11〜21時、金・土11〜22時。11月22日は休業 |
-| サンタ・パウリ（シュピールブーデン広場） | 2026年11月9日（月）〜12月23日（水） | 月〜水16〜23時、木16〜24時、金16〜翌1時、土13〜翌1時、日13〜23時 |
-| 聖ペトリ教会、フレートインゼル | 2026年の日程は未掲載（11月1日時点） | ハンブルク市の案内で確認 |
+| サンタ・パウリ（シュピールブーデン広場） | 2026年11月9日（月）〜12月23日（水） | 月〜水16〜23時、木16〜24時、金16〜翌1時、土13〜翌1時、日13〜23時。11月22日は17時から |
+| 聖ペトリ教会 | 2026年11月18日（水）〜12月23日（水） | 毎日11〜21時、飲食は23時まで。11月22日は休業 |
+| フレートインゼル | 2026年11月23日（月）〜12月23日（水） | 月〜木・日12〜21時、金・土12〜22時 |
 
 ユングフェルンシュティークの市は、ハンブルク市の市場一覧では「12月29日まで」とも記載されています。個別の案内（12月23日まで）と異なるため、12月24日以降に訪れたい場合は直前に確認してください。
 

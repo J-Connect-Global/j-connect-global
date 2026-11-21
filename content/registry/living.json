@@ -7079,5 +7079,49 @@
     },
     "image": "/assets/images/living/mahnbescheid-germany-deadline.svg",
     "image_alt": "裁判所からの督促状を表す封筒と14日を示すカレンダーの図"
+  },
+  {
+    "id": "L121",
+    "title": "ドイツのBundIDとは？日本人が電子滞在許可証（eAT）で登録する方法・PINと本人確認レベル",
+    "slug": "bundid-eat-registration-germany",
+    "category": "役所・滞在",
+    "summary": "ドイツの行政オンライン申請に使うBundIDを解説。日本人など非EU居住者が電子滞在許可証（eAT）で登録する条件、6桁PIN、NFC、本人確認レベル、Fiktionsbescheinigungやゲストログインの制限を整理します。",
+    "url": "/germany/ja/living/bundid-eat-registration-germany/",
+    "markdown_path": "/content/living/bundid-eat-registration-germany.md",
+    "published": false,
+    "status": "draft",
+    "published_at": "",
+    "updated_at": "2026-11-21",
+    "last_verified": "2026-11-21",
+    "tags": [
+      "BundID",
+      "電子滞在許可証",
+      "eAT",
+      "AusweisApp",
+      "オンライン本人確認",
+      "行政手続き",
+      "デジタル行政"
+    ],
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "canonical_url": "/germany/ja/living/bundid-eat-registration-germany/",
+    "official_sources": [],
+    "disclaimer_type": "administrative-guide",
+    "related_articles": [
+      "anmeldung-guide",
+      "einbuergerung-germany-japanese",
+      "japanese-passport-consulate-germany"
+    ],
+    "review": {
+      "status": "source-verified-draft",
+      "reviewed_by": "J-Connect編集部（2026-11-21、BundID・AusweisApp・Bundesportalの公式情報を再確認）",
+      "last_reviewed_at": "2026-11-21",
+      "next_review_due": "2027-03-21"
+    },
+    "image": "/assets/images/living/bundid-eat-registration-germany.svg",
+    "image_alt": "スマートフォンと電子滞在許可証のカードをNFCで読み取り、行政サービスへ本人確認する仕組みを示す図"
   }
 ]

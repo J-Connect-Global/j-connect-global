@@ -8,17 +8,21 @@ summary: "ドイツの鉄道を初めて使う人向けに、長距離列車と�
 status: "published"
 published: true
 published_at: "2026-08-03"
-updated_at: "2026-11-07"
-last_verified: "2026-11-06"
+updated_at: "2026-11-21"
+last_verified: "2026-11-21"
 next_review: "2027-02-28"
 canonical_url: "/germany/ja/living/germany-train-travel-guide/"
 image_alt: "スーツケースを持ち長距離列車の横に立つ旅行者"
-related_articles: ["cologne-city-guide", "duesseldorf-city-guide", "germany-first-30-days", "christmas-markets-duesseldorf", "deutsche-bahn-delays-why"]
+related_articles: ["cologne-city-guide", "duesseldorf-city-guide", "germany-first-30-days", "christmas-markets-duesseldorf", "deutsche-bahn-delays-why", "deutschlandticket-2027-price-consent"]
 official_sources:
   - title: "ドイツ鉄道：公式アプリ"
     url: "https://int.bahn.de/en/booking-information/db-navigator"
   - title: "ドイツ鉄道：全国共通の地域交通定期券"
     url: "https://int.bahn.de/en/offers/regional/deutschland-ticket"
+  - title: "連邦政府：Deutschlandticketの質問と回答"
+    url: "https://www.bundesregierung.de/breg-de/bundesregierung/bundeskanzleramt/deutschlandticket-2134074"
+  - title: "ドイツ鉄道：Deutschlandticketの契約変更FAQ"
+    url: "https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt"
   - title: "ドイツ鉄道：旅客の権利"
     url: "https://int.bahn.de/en/booking-information/passenger-rights"
   - title: "ドイツ鉄道：子どもと旅行する場合"
@@ -78,7 +82,7 @@ ICEは高速列車、ICとECは都市間列車です。REやRBは地域の駅を
 
 ## 全国共通の地域交通定期券
 
-全国共通の地域交通定期券（正式名称 **Deutschlandticket**）は、ドイツ国内の地域列車、近郊列車、地下鉄、路面電車、バスで使える月額制の定期券です。2026年の料金は月63ユーロで、**2027年1月から月66.80ユーロ**に値上げされます。DBで契約している人は、2026年11月30日までに新料金への同意が必要な場合があります。手順は「[Deutschlandticketは2027年66.80ユーロへ](/germany/ja/events/news/deutschlandticket-2027-price-consent/)」で確認してください。
+全国共通の地域交通定期券（正式名称 **Deutschlandticket**）は、ドイツ国内の地域列車、近郊列車、地下鉄、路面電車、バスで使える月額制の定期券です。2026年の料金は月63ユーロで、**2027年1月から月66.80ユーロ**に値上げされます。連邦政府のFAQによると、既存契約の多くは自動で新料金に調整されますが、同意が必要な場合は契約先の事業者が対象者に連絡します。DBの対象契約では11月30日までに契約者本人が回答する必要があります。DBで10月15日以降に注文した契約は追加の同意が不要です。期限は全交通事業者共通ではなく、Jobticket・学生向け定期券も別の扱いがあるため、契約先の案内を確認してください（2026年11月21日、[DB公式FAQ](https://www.bahn.de/faq/pk/angebot/regionale-angebote/deutschland-ticket/vertragsaenderungen-dt)確認）。手順は「[Deutschlandticketは2027年66.80ユーロへ](/germany/ja/events/news/deutschlandticket-2027-price-consent/)」で確認してください。
 
 重要なのは、原則としてICE、IC、ECなどの長距離列車には使えないことです。経路検索に高速列車が混ざった場合、その区間には別の切符が必要です。一部の例外区間もあるため、列車種別とアプリの有効券表示を確認します。
 

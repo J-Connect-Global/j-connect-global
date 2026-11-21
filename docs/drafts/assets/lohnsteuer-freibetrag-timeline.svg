@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+<title id="t">2026年分と2027年分の給与税控除額申請期間</title>
+<desc id="d">2026年分は2026年11月30日が申請期限で、年末の申請は残りの給与計算期間に配分される。2027年分は2026年11月1日から申請でき、2027年11月30日まで受け付ける。</desc>
+<rect width="1200" height="675" rx="28" fill="#eef5fb"/>
+<g font-family="Noto Sans CJK JP, Noto Sans JP, sans-serif">
+<text x="60" y="80" font-size="40" font-weight="700" fill="#153452">給与税控除額の申請期限は、対象年ごとに違う</text>
+<text x="60" y="124" font-size="22" fill="#405a71">2026年分の最終期限と、2027年分の受付期間を分けて確認</text>
+<rect x="60" y="170" width="1080" height="190" rx="22" fill="#ffffff"/>
+<rect x="60" y="170" width="18" height="190" rx="9" fill="#b77a2a"/>
+<text x="100" y="220" font-size="24" font-weight="700" fill="#8a5a00">2026年分</text>
+<text x="100" y="270" font-size="30" font-weight="700" fill="#153452">2026年11月30日が最終期限</text>
+<text x="100" y="315" font-size="19" fill="#405a71">11月の申請は、原則として申請後に残る給与計算期間へ配分。1〜11月分に自動でさかのぼりません。</text>
+<rect x="60" y="390" width="1080" height="190" rx="22" fill="#ffffff"/>
+<rect x="60" y="390" width="18" height="190" rx="9" fill="#4f8a72"/>
+<text x="100" y="440" font-size="24" font-weight="700" fill="#2f7058">2027年分</text>
+<text x="100" y="490" font-size="30" font-weight="700" fill="#153452">2026年11月1日〜2027年11月30日</text>
+<text x="100" y="535" font-size="19" fill="#405a71">2027年分は受付中。条件が続く場合、2027年と2028年の2年間を希望できることがあります。</text>
+<text x="60" y="625" font-size="18" fill="#405a71">期限を過ぎても、対象費用を翌年の確定申告で申告できる可能性があります。</text>
+<text x="60" y="650" font-size="16" fill="#6b7e8e">図解：J-Connect｜所得税法第39a条・各州税務当局の案内をもとに作成｜2026年11月14日確認</text>
+</g>
+</svg>

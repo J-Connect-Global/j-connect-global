@@ -6995,5 +6995,89 @@
     "image_alt": "住居、住民登録、保険、銀行、通信、交通に使うものを順に並べた机",
     "image_url": "/assets/images/living/first-month-checklist.webp",
     "home_order": 999
+  },
+  {
+    "id": "L119",
+    "title": "ドイツでInkasso（債権回収）の手紙が来たら｜払う前の確認と対応手順",
+    "slug": "inkasso-letter-germany",
+    "category": "お金・契約",
+    "summary": "ドイツで債権回収会社から請求書が届いたときに、元の債権・請求元・利息・回収費用を確認する手順を解説。登録確認、書面での情報請求、分割払いに署名する前の注意点、裁判所の督促状との違いを整理します。",
+    "url": "/germany/ja/living/inkasso-letter-germany/",
+    "markdown_path": "/content/living/inkasso-letter-germany.md",
+    "published": false,
+    "status": "draft",
+    "published_at": "",
+    "updated_at": "2026-11-21",
+    "last_verified": "2026-11-21",
+    "tags": [
+      "Inkasso",
+      "債権回収",
+      "督促状",
+      "消費者契約",
+      "請求書",
+      "ドイツ生活"
+    ],
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "canonical_url": "/germany/ja/living/inkasso-letter-germany/",
+    "official_sources": [],
+    "disclaimer_type": "consumer_contract",
+    "related_articles": [
+      "mahnbescheid-germany",
+      "schufa-guide"
+    ],
+    "review": {
+      "status": "legal-review-pending",
+      "reviewed_by": "J-Connect編集部（2026-11-21、法令・消費者センターの一次情報を照合。法律専門家レビュー待ち）",
+      "last_reviewed_at": "2026-11-21",
+      "next_review_due": "2027-01-21"
+    },
+    "image": "/assets/images/living/inkasso-letter-germany-checklist.svg",
+    "image_alt": "債権回収の手紙、虫眼鏡、確認項目を表すチェックマークを組み合わせた図"
+  },
+  {
+    "id": "L120",
+    "title": "ドイツで裁判所から督促状（Mahnbescheid）が届いたら｜2週間の異議申立てとその後",
+    "slug": "mahnbescheid-germany",
+    "category": "お金・契約",
+    "summary": "ドイツの裁判所から督促状が届いたときに、請求の確認、2週間の異議、部分的な異議、執行命令への対応を解説。裁判所は請求の正しさを事前に審査しないため、期限を逃さないための手順をまとめます。",
+    "url": "/germany/ja/living/mahnbescheid-germany/",
+    "markdown_path": "/content/living/mahnbescheid-germany.md",
+    "published": false,
+    "status": "draft",
+    "published_at": "",
+    "updated_at": "2026-11-21",
+    "last_verified": "2026-11-21",
+    "tags": [
+      "Mahnbescheid",
+      "督促状",
+      "Widerspruch",
+      "裁判所",
+      "債権回収",
+      "ドイツ生活"
+    ],
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "canonical_url": "/germany/ja/living/mahnbescheid-germany/",
+    "official_sources": [],
+    "disclaimer_type": "consumer_contract",
+    "related_articles": [
+      "inkasso-letter-germany",
+      "schufa-guide"
+    ],
+    "review": {
+      "status": "legal-review-pending",
+      "reviewed_by": "J-Connect編集部（2026-11-21、法令・消費者センターの一次情報を照合。法律専門家レビュー待ち）",
+      "last_reviewed_at": "2026-11-21",
+      "next_review_due": "2027-01-21"
+    },
+    "image": "/assets/images/living/mahnbescheid-germany-deadline.svg",
+    "image_alt": "裁判所からの督促状を表す封筒と14日を示すカレンダーの図"
   }
 ]

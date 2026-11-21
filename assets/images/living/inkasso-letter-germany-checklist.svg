@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">債権回収の手紙を確認する</title><desc id="desc">封筒、請求書、虫眼鏡、確認マークを組み合わせたオリジナル図解</desc>
+<defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f2f4ee"/><stop offset="1" stop-color="#e7eee8"/></linearGradient><filter id="sh" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#314d48" flood-opacity=".18"/></filter></defs>
+<rect width="1600" height="900" fill="url(#bg)"/><circle cx="250" cy="170" r="180" fill="#d4e4dc" opacity=".65"/><circle cx="1370" cy="730" r="230" fill="#eee0cf" opacity=".65"/>
+<g filter="url(#sh)" transform="translate(250 210)"><rect x="0" y="0" width="650" height="470" rx="28" fill="#fffdf8" stroke="#78958a" stroke-width="14"/><path d="M12 25L325 270L638 25" fill="none" stroke="#9bb2a7" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 445L230 250M638 445L420 250" fill="none" stroke="#d7e1d9" stroke-width="15"/><rect x="115" y="305" width="420" height="22" rx="11" fill="#d9e3dd"/><rect x="115" y="355" width="330" height="22" rx="11" fill="#e7d8c5"/></g>
+<g transform="translate(910 210)" filter="url(#sh)"><circle cx="230" cy="210" r="170" fill="#d7e5dd" stroke="#6f9184" stroke-width="24"/><circle cx="230" cy="210" r="105" fill="#fdfcf8"/><path d="M350 335L525 510" stroke="#6f9184" stroke-width="52" stroke-linecap="round"/><path d="M175 215l42 42 85-100" fill="none" stroke="#c49b6a" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(125 710)" fill="#8ca99a"><circle cx="0" cy="0" r="20"/><circle cx="70" cy="0" r="20" fill="#c6a174"/><circle cx="140" cy="0" r="20" fill="#6f9184"/></g>
+</svg>

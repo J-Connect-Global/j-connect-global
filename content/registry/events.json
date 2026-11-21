@@ -7575,5 +7575,53 @@
     "image": "/assets/img/events/thg-quote-2026-deadline-november-15.webp",
     "image_url": "/assets/img/events/thg-quote-2026-deadline-november-15.webp",
     "image_alt": "充電スタンドにつながった電気自動車と、葉のマークが入った証書を描いたイラスト"
+  },
+  {
+    "id": "E038",
+    "title": "デュッセルドルフの欧州ごみ削減週間2026｜日程・会場・Repair Café・図書館展示",
+    "slug": "duesseldorf-european-week-waste-reduction-2026",
+    "category": "地域イベント",
+    "summary": "2026年11月19〜30日にデュッセルドルフで行われるごみ削減週間の催しを、日付・会場・参加条件で整理。Südparkの体験ブース、プラスチック削減の講演、リサイクルクイズ、KAP1のRepair Caféと図書館展示を紹介します。",
+    "url": "/germany/ja/events/duesseldorf-european-week-waste-reduction-2026/",
+    "markdown_path": "/content/events/duesseldorf-european-week-waste-reduction-2026.md",
+    "published": false,
+    "status": "draft",
+    "published_at": "",
+    "updated_at": "2026-11-21",
+    "last_verified": "2026-11-21",
+    "tags": [
+      "デュッセルドルフ",
+      "ごみ削減",
+      "欧州ごみ削減週間",
+      "Repair Café",
+      "リユース",
+      "2026年11月"
+    ],
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "canonical_url": "/germany/ja/events/duesseldorf-european-week-waste-reduction-2026/",
+    "city": "デュッセルドルフ",
+    "location": "Südpark、zentrum plus、AWO Adventsmarkt、KAP1、Bilk地区図書館",
+    "event_date": "2026-11-19〜2026-11-30",
+    "official_url": "https://www2.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/europaeische-woche-der-abfallvermeidung-vom-19-bis-zum-30-november",
+    "official_sources": [],
+    "disclaimer_type": "event",
+    "related_articles": [
+      "germany-waste-sorting-guide",
+      "duesseldorf-city-guide",
+      "germany-pfand-return-guide"
+    ],
+    "review": {
+      "status": "source-verified-draft",
+      "reviewed_by": "J-Connect編集部（2026-11-21、デュッセルドルフ市・AWISTA・キャンペーン公式案内を照合）",
+      "last_reviewed_at": "2026-11-21",
+      "next_review_due": "2026-11-24"
+    },
+    "image": "/assets/images/events/duesseldorf-waste-reduction-week-2026.svg",
+    "image_alt": "本、修理工具、再利用を表す循環矢印を組み合わせた、ごみ削減週間のオリジナル図解",
+    "content_type": "event"
   }
 ]

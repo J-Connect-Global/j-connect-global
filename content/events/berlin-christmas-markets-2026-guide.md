@@ -3,7 +3,7 @@ slug: "berlin-christmas-markets-2026-guide"
 id: "E036"
 content_type: "event"
 category: "季節行事"
-title: "ベルリンのクリスマスマーケット2026｜広場ごとに歴史が違う、首都の冬の市"
+title: "ベルリン クリスマスマーケット2026｜日程・営業時間・入場料と5会場"
 summary: "2026年のベルリンのクリスマスマーケットを、ジャンダルメンマルクトの白いテントの市、シャルロッテンブルク宮殿前、赤の市庁舎、記念教会の広場、北欧風のルチア市から案内。11月23日に始まる主な市の日程、営業時間、入場料と、それぞれの場所が持つ歴史を整理します。"
 official_sources:
   - title: "ベルリン観光局：ベルリンのクリスマスマーケット2026"
@@ -16,6 +16,8 @@ official_sources:
     url: "https://www.visitberlin.de/de/weihnachtsmarkt-berliner-weihnachtszeit-berlin"
   - title: "ベルリン市：記念教会前のクリスマスマーケット2026"
     url: "https://www.berlin.de/en/christmas-markets/3240274-3230598-christmas-market-at-kaiser-wilhelm-memor.en.html"
+  - title: "記念教会前の主催者：2026年の開催日と営業時間"
+    url: "https://schaustellerverband-berlin.de/weihnachtsmarkt-berlin.html"
   - title: "ベルリン市：ブライトシャイト広場の追悼の場「金色の亀裂」"
     url: "https://www.berlin.de/en/attractions-and-sights/4999992-3104052-golden-crack-memorial-victims-terrorist-.en.html"
   - title: "ベルリン市：クルトゥーアブラウエライのルチア・クリスマスマーケット"
@@ -26,14 +28,14 @@ related_articles: ["berlin-weekend-trip", "dresden-striezelmarkt-2026-guide", "b
 city: "ベルリン"
 location: "ジャンダルメンマルクト、シャルロッテンブルク宮殿前、赤の市庁舎前、ブライトシャイト広場、クルトゥーアブラウエライほか"
 event_date: "2026-11-13〜2027-01-03"
-next_review: "2026-11-12"
+next_review: "2026-11-28"
 tags: ["クリスマスマーケット", "ベルリン", "2026年11月", "2026年12月", "アドベント", "冬"]
 published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-11-01"
-updated_at: "2026-11-01"
-last_verified: "2026-11-01"
+updated_at: "2026-11-21"
+last_verified: "2026-11-21"
 canonical_url: "/germany/ja/events/berlin-christmas-markets-2026-guide/"
 official_url: "https://www.visitberlin.de/de/weihnachtsmaerkte-berlin"
 image: "/assets/img/events/berlin-christmas-markets-2026-guide.webp"
@@ -42,7 +44,9 @@ image_caption: "AIの支援でコードから描画したイラスト（J-Connec
 image_credit: "AI-assisted vector illustration / J-Connect"
 ---
 
-# ベルリンのクリスマスマーケット2026｜広場ごとに歴史が違う、首都の冬の市
+# ベルリン クリスマスマーケット2026｜日程・営業時間・入場料と5会場
+
+**11月22日の注意：** 記念教会前の市は休業します。主要4会場は11月23日から開幕。記念教会前の終了日は主催者によると2027年1月1日で、市・観光案内の1月3日と異なるため主催者の案内を優先してください。
 
 ベルリンでは毎年、街のあちこちで大小さまざまなクリスマスマーケットが開かれます。ベルリン観光局によると、本格的なシーズンは死者の日曜日（2026年は11月22日）の後に始まり、主な市の多くが11月23日（月）に開幕します。ベルリンに住む人や年末に首都を訪れる人に向けて、代表的な五つの市を、それぞれの場所が持つ歴史や雰囲気とともに紹介し、2026年の日程、営業時間、入場料を整理しました。
 
@@ -76,7 +80,7 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 
 ## 記念教会の広場：にぎわいと、追悼の場
 
-ベルリン西部の繁華街にあるブライトシャイト広場の市では、カイザー・ヴィルヘルム記念教会を囲むように100を超える屋台が並びます。教会の古い建物は戦争で壊れたまま保存され、今は戦争の記憶を伝える場所になっています。2026年は11月13日から2027年1月3日までと、ほかの市より早く始まり、長く続きます。[ベルリン市の案内](https://www.berlin.de/en/christmas-markets/3240274-3230598-christmas-market-at-kaiser-wilhelm-memor.en.html)
+ベルリン西部の繁華街にあるブライトシャイト広場の市では、カイザー・ヴィルヘルム記念教会を囲むように100前後の屋台が並びます。教会の古い建物は戦争で壊れたまま保存され、今は戦争の記憶を伝える場所になっています。主催者の案内では2026年11月13日から2027年1月1日までです。[主催者の開催情報](https://schaustellerverband-berlin.de/weihnachtsmarkt-berlin.html)
 
 この広場では2016年12月19日、クリスマスマーケットを狙ったテロ事件が起き、13人が亡くなりました。教会前の階段から広場へと、金色の合金で満たされた亀裂が走っており、1年後の2017年12月19日に追悼の場として公開されました。階段の前面には「2016年12月19日のテロ事件の犠牲者を追悼して。すべての人の平和な共存のために」という言葉が刻まれています。[ベルリン市の案内](https://www.berlin.de/en/attractions-and-sights/4999992-3104052-golden-crack-memorial-victims-terrorist-.en.html)
 
@@ -95,12 +99,12 @@ image_credit: "AI-assisted vector illustration / J-Connect"
 | ジャンダルメンマルクト | 2026年11月23日（月）〜12月31日（木） | 日〜木11〜22時、金・土11〜23時、12月24日12〜18時 | 2ユーロ（12歳未満無料。月〜金11〜14時は無料、12月24〜26日・31日を除く） |
 | シャルロッテンブルク宮殿前 | 2026年11月23日（月）〜12月27日（日） | 月〜木13〜22時、金〜日12〜22時、12月25・26日12〜22時。12月24日は休業 | 無料 |
 | 赤の市庁舎前 | 2026年11月23日（月）〜2027年1月3日（日） | 月〜金12〜22時、土日11〜22時、1月3日11〜20時。12月24日は休業 | 無料（スケートリンクは有料） |
-| 記念教会前（ブライトシャイト広場） | 2026年11月13日（金）〜2027年1月3日（日） | 公式の案内に営業時間の記載なし（2026年11月1日時点） | — |
+| 記念教会前（ブライトシャイト広場） | 2026年11月13日（金）〜2027年1月1日（金） | 通常12〜21時、金・土11〜22時。11月15・22日は休業。12月24日11〜14時、25・26日13〜22時、31日11〜20時、1月1日13〜18時 | 無料 |
 | ルチア市（クルトゥーアブラウエライ） | 2026年11月23日（月）〜12月22日（火） | 月〜金15〜22時、土日13〜22時 | 無料 |
 
-![ベルリンの主な五つの市の2026年の期間を横棒で比較した図。記念教会前は11月13日から、ほかは11月23日から始まり、ルチア市は12月22日、シャルロッテンブルクは12月27日、ジャンダルメンマルクトは12月31日、赤の市庁舎と記念教会前は1月3日まで](/assets/images/events/berlin-christmas-markets-2026-periods.svg "図解：J-Connect。ベルリン観光局、ベルリン市、ルチア市主催者の案内に基づく（2026年11月1日参照）。")
+![ベルリンの主な五つの市の期間比較。記念教会前は11月13日から1月1日まで、ほかは11月23日から始まり、ルチア市は12月22日、シャルロッテンブルクは12月27日、ジャンダルメンマルクトは12月31日、赤の市庁舎は1月3日まで](/assets/images/events/berlin-christmas-markets-2026-periods.svg "図解：J-Connect。ベルリン観光局と各主催者の案内に基づく（2026年11月21日参照）。")
 
-記念教会前の市の営業時間は、ベルリン市の案内にはまだ掲載されていません。訪れる前に[ベルリン市の案内ページ](https://www.berlin.de/en/christmas-markets/3240274-3230598-christmas-market-at-kaiser-wilhelm-memor.en.html)で最新情報を確認してください。
+主要5会場の開催期間・営業時間を2026年11月21日に再確認しました。記念教会前はベルリン市の案内と主催者の終了日が異なるため、訪れる前に[主催者の案内](https://schaustellerverband-berlin.de/weihnachtsmarkt-berlin.html)で最新情報を確認してください。
 
 ほかにも、旧市街の路地に屋台が並ぶシュパンダウの市（11月23日〜12月22日）、フンボルト・フォーラム前の冬の市（11月18日〜2027年1月3日）、アドベントの週末だけ開かれるダーレムの農場の市など、地区ごとに個性のある市があります。一覧は[ベルリン観光局のページ](https://www.visitberlin.de/de/weihnachtsmaerkte-berlin)で確認できます。ベルリンの街歩きや宿泊エリアは[ベルリン週末旅行ガイド](/germany/ja/living/berlin-weekend-trip/)で紹介しています。
 

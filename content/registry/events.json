@@ -6783,14 +6783,14 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-11-01",
-      "next_review_due": "2026-11-12"
+      "last_reviewed_at": "2026-11-21",
+      "next_review_due": "2026-11-28"
     },
     "title": "デュッセルドルフ・ケルンから日帰りで行くクリスマスマーケット2026｜モンシャウ、ミュンスター、メローデ城、ファルケンブルフの洞窟、マーストリヒト",
     "category": "季節行事",
     "summary": "大都市の市とは違う冬を探す人へ。木組みの小さな町モンシャウ、6つの市が並ぶミュンスター、水城を舞台にしたメローデ城、オランダ・ファルケンブルフの洞窟の市、マーストリヒトの広場を、2026年の公式日程・時間とともに紹介します。",
     "published_at": "2026-11-01",
-    "last_verified": "2026-11-01",
+    "last_verified": "2026-11-21",
     "tags": [
       "クリスマスマーケット",
       "日帰り旅行",
@@ -6800,7 +6800,7 @@
       "2026年12月",
       "アドベント"
     ],
-    "updated_at": "2026-11-01",
+    "updated_at": "2026-11-21",
     "related_articles": [
       "aachen-christmas-market-2026-guide",
       "cologne-christmas-markets-2026-guide",
@@ -7086,16 +7086,16 @@
     "review": {
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
-      "last_reviewed_at": "2026-11-01",
-      "next_review_due": "2026-11-12"
+      "last_reviewed_at": "2026-11-21",
+      "next_review_due": "2026-11-28"
     },
     "published": true,
     "status": "published",
-    "title": "ベルリンのクリスマスマーケット2026｜広場ごとに歴史が違う、首都の冬の市",
+    "title": "ベルリン クリスマスマーケット2026｜日程・営業時間・入場料と5会場",
     "category": "季節行事",
     "summary": "2026年のベルリンのクリスマスマーケットを、ジャンダルメンマルクトの白いテントの市、シャルロッテンブルク宮殿前、赤の市庁舎、記念教会の広場、北欧風のルチア市から案内。11月23日に始まる主な市の日程、営業時間、入場料と、それぞれの場所が持つ歴史を整理します。",
     "published_at": "2026-11-01",
-    "last_verified": "2026-11-01",
+    "last_verified": "2026-11-21",
     "canonical_url": "/germany/ja/events/berlin-christmas-markets-2026-guide/",
     "tags": [
       "クリスマスマーケット",
@@ -7105,7 +7105,7 @@
       "アドベント",
       "冬"
     ],
-    "updated_at": "2026-11-01",
+    "updated_at": "2026-11-21",
     "related_articles": [
       "berlin-weekend-trip",
       "dresden-striezelmarkt-2026-guide",
@@ -7139,6 +7139,10 @@
       {
         "title": "ベルリン市：記念教会前のクリスマスマーケット2026",
         "url": "https://www.berlin.de/en/christmas-markets/3240274-3230598-christmas-market-at-kaiser-wilhelm-memor.en.html"
+      },
+      {
+        "title": "記念教会前の主催者：2026年の開催日と営業時間",
+        "url": "https://schaustellerverband-berlin.de/weihnachtsmarkt-berlin.html"
       },
       {
         "title": "ベルリン市：ブライトシャイト広場の追悼の場「金色の亀裂」",

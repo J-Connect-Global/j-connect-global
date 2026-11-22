@@ -4,13 +4,15 @@
   "scope": "J-Connect Global last-month cover refresh",
   "counts": {
     "published_last_month": 114,
-    "described_as_illustration": 103,
-    "prepared_locally": 8,
-    "unprepared_illustrations": 95,
-    "manual_check": 11,
-    "mismatched_image_url": 2
+    "originally_described_as_illustration": 103,
+    "committed_to_draft_pr_in_window": 9,
+    "committed_to_draft_pr_prior_day": 1,
+    "remaining_illustration_descriptions_needing_photo_review": 94,
+    "manual_check_existing_image": 11,
+    "mismatched_image_url": 0
   },
   "notes": [
+    "2026-11-22: 10 cover articles (9 inside the requested 2026-10-22 to 11-22 window, 1 published 2026-10-21) now have all four resized/OG assets plus synchronized article metadata in draft PR #518. 3 covers are credited archival Wikimedia Commons photos, 7 are disclosed photoreal AI editorial images. Main/production remains unchanged.",
     "The first nine image files were recovered and optimized into an external ZIP in the ChatGPT conversation; they have NOT been uploaded to GitHub or deployed.",
     "Flagging illustration uses alt text only; false positives/negatives require visual checks before replacement.",
     "Preserve good licensed photographs and useful in-article charts; do not duplicate hero image in body.",
@@ -25,10 +27,10 @@
       "markdown": "/content/events/news/euro-7-germany-2026.md",
       "canonical": "/germany/ja/events/news/euro-7-germany-2026/",
       "currently_configured_image": "/assets/img/events/euro-7-germany-2026.webp",
-      "image_url_mismatch": true,
-      "alt": "街の道路を走る新しい車と、排出ガスを示すメーターと葉のマークを描いたイラスト",
-      "status": "ready_package_not_in_git",
-      "priority": "P0"
+      "image_url_mismatch": false,
+      "alt": "ドイツの自動車販売店で新車の特徴を相談する二人のAI生成イメージ",
+      "status": "committed_to_draft_pr_518",
+      "priority": "P0_completed"
     },
     {
       "slug": "rundfunkbeitrag-meldedatenabgleich-2026",
@@ -38,10 +40,10 @@
       "markdown": "/content/events/news/rundfunkbeitrag-meldedatenabgleich-2026.md",
       "canonical": "/germany/ja/events/news/rundfunkbeitrag-meldedatenabgleich-2026/",
       "currently_configured_image": "/assets/img/events/rundfunkbeitrag-meldedatenabgleich-2026.webp",
-      "image_url_mismatch": true,
-      "alt": "集合住宅の郵便受けの前の机に封筒が置かれ、横にテレビとラジオがある、放送負担金の通知を表したイラスト",
-      "status": "ready_package_not_in_git",
-      "priority": "P0"
+      "image_url_mismatch": false,
+      "alt": "ドイツの自宅に届いた行政通知を読んで確認する人のAI生成イメージ",
+      "status": "committed_to_draft_pr_518",
+      "priority": "P0_completed"
     },
     {
       "slug": "christmas-new-year-greetings",
@@ -50,11 +52,11 @@
       "registry": "content/registry/learn-german.json",
       "markdown": "/content/learn-german/christmas-new-year-greetings.md",
       "canonical": "/germany/ja/learn-german/christmas-new-year-greetings/",
-      "currently_configured_image": null,
+      "currently_configured_image": "/assets/img/learn-german/christmas-new-year-greetings.webp",
       "image_url_mismatch": false,
-      "alt": "もみの枝と星形のクッキー、ろうそくの横に、封筒とクリスマスカードを置いた机のイラスト",
-      "status": "ready_package_not_in_git",
-      "priority": "P0"
+      "alt": "クリスマスの飾りがある机でドイツ語のグリーティングカードを書く人のAI生成イメージ",
+      "status": "committed_to_draft_pr_518",
+      "priority": "P0_completed"
     },
     {
       "slug": "berlin-christmas-markets-2026-guide",
@@ -65,9 +67,9 @@
       "canonical": "/germany/ja/events/berlin-christmas-markets-2026-guide/",
       "currently_configured_image": "/assets/img/events/berlin-christmas-markets-2026-guide.webp",
       "image_url_mismatch": false,
-      "alt": "二つの丸屋根の建物と柱の並ぶ建物を背に、内側から光る白いテントの屋台が並ぶ夜の広場を描いたイラスト",
-      "status": "ready_package_not_in_git",
-      "priority": "P0"
+      "alt": "2016年撮影のベルリン・ジャンダルメンマルクトのクリスマスマーケットの実写真",
+      "status": "committed_to_draft_pr_518",
+      "priority": "P0_completed"
     },
     {
       "slug": "christmas-post-germany-to-japan-2026",
@@ -78,9 +80,9 @@
       "canonical": "/germany/ja/living/christmas-post-germany-to-japan-2026/",
       "currently_configured_image": "/assets/img/living/christmas-post-germany-to-japan-2026.webp",
       "image_url_mismatch": false,
-      "alt": "クリスマスの飾りがある部屋で、段ボール箱にテープを貼り、カードを添えて日本へ送る準備をする様子のイラスト",
-      "status": "ready_package_not_in_git",
-      "priority": "P0"
+      "alt": "ドイツの郵便窓口でクリスマス前に日本宛ての荷物を準備する人のAI生成イメージ",
+      "status": "committed_to_draft_pr_518",
+      "priority": "P0_completed"
     },
     {
       "slug": "nrw-christmas-market-day-trips-2026",
@@ -91,9 +93,9 @@
       "canonical": "/germany/ja/events/nrw-christmas-market-day-trips-2026/",
       "currently_configured_image": "/assets/img/events/nrw-christmas-market-day-trips-2026.webp",
       "image_url_mismatch": false,
-      "alt": "木組みの家が並ぶ谷あいの町と、灯りのともる石の洞窟の入り口、遠くの城のシルエットを冬の夕暮れに描いたイラスト",
-      "status": "ready_package_not_in_git",
-      "priority": "P0"
+      "alt": "2013年12月に撮影されたモンシャウの冬の街並みの写真",
+      "status": "committed_to_draft_pr_518",
+      "priority": "P0_completed"
     },
     {
       "slug": "cologne-carnival-2026-27-guide",
@@ -104,9 +106,9 @@
       "canonical": "/germany/ja/events/cologne-carnival-2026-27-guide/",
       "currently_configured_image": "/assets/img/events/cologne-carnival-2026-27-guide.webp",
       "image_url_mismatch": false,
-      "alt": "パレードの山車から投げられたお菓子と小さな花束に、沿道の人々が手を伸ばす様子を描いたイラスト",
-      "status": "ready_package_not_in_git",
-      "priority": "P0"
+      "alt": "ケルン大聖堂の近くで華やかな衣装を着てカーニバルを祝う人々のAI生成イメージ",
+      "status": "committed_to_draft_pr_518",
+      "priority": "P0_completed"
     },
     {
       "slug": "cologne-christmas-markets-2026-guide",
@@ -117,9 +119,9 @@
       "canonical": "/germany/ja/events/cologne-christmas-markets-2026-guide/",
       "currently_configured_image": "/assets/img/events/cologne-christmas-markets-2026-guide.webp",
       "image_url_mismatch": false,
-      "alt": "夜の大聖堂を背に、ツリーから屋台の上へ光の天蓋が広がるクリスマスマーケットを描いたイラスト",
-      "status": "ready_package_not_in_git",
-      "priority": "P0"
+      "alt": "2011年撮影のケルン大聖堂前クリスマスマーケットの実写真",
+      "status": "committed_to_draft_pr_518",
+      "priority": "P0_completed"
     },
     {
       "slug": "dresden-striezelmarkt-2026-guide",
@@ -299,9 +301,9 @@
       "canonical": "/germany/ja/living/nrw-christmas-opening-hours-2026/",
       "currently_configured_image": "/assets/img/living/nrw-christmas-opening-hours-2026.webp",
       "image_url_mismatch": false,
-      "alt": "クリスマスの飾りがあるスーパーの入り口と、買い物袋を持つ人を描いたイラスト",
-      "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "alt": "クリスマスの飾りがあるドイツの食料品店と冬の街並みのAI生成イメージ",
+      "status": "committed_to_draft_pr_518",
+      "priority": "P0_completed"
     },
     {
       "slug": "advent-wreath-calendar-origin",
@@ -1499,5 +1501,7 @@
       "status": "requires_photographic_cover_review",
       "priority": "P3"
     }
-  ]
+  ],
+  "updated_at": "2026-11-22",
+  "status": "working_draft_10_covers_committed_no_main_merge"
 }

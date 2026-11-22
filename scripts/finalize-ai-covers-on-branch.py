@@ -10,7 +10,8 @@ ENTRIES={
  "christmas-new-year-greetings":("learn-german","content/learn-german/christmas-new-year-greetings.md","クリスマスの飾りがある机でドイツ語のグリーティングカードを書く人のAI生成イメージ","AI生成の編集イメージ。実在の人物やカードを撮影したものではありません。"),
  "germany-january-2027-changes":("events","content/events/news/germany-january-2027-changes.md","ドイツの制度変更を調べるためカレンダーと書類とユーロ紙幣を整理した机のAI生成イメージ","AI生成の編集イメージ。公式の制度書類や金額を示すものではありません。"),
  "rundfunkbeitrag-meldedatenabgleich-2026":("events","content/events/news/rundfunkbeitrag-meldedatenabgleich-2026.md","ドイツの自宅に届いた行政通知を読んで確認する人のAI生成イメージ","AI生成の編集イメージ。実際の放送負担金事務局の通知書を再現したものではありません。"),
- "euro-7-germany-2026":("events","content/events/news/euro-7-germany-2026.md","ドイツの自動車販売店で新車の特徴を相談する二人のAI生成イメージ","AI生成の編集イメージ。特定の車種のEuro 7適合や認証を示すものではありません。")
+ "euro-7-germany-2026":("events","content/events/news/euro-7-germany-2026.md","ドイツの自動車販売店で新車の特徴を相談する二人のAI生成イメージ","AI生成の編集イメージ。特定の車種のEuro 7適合や認証を示すものではありません。"),
+ "nrw-christmas-opening-hours-2026":("living","content/living/nrw-christmas-opening-hours-2026.md","クリスマスの飾りがあるドイツの食料品店と冬の街並みのAI生成イメージ","AI生成の編集イメージ。実在の店舗、営業時間、2026年の営業状況を示すものではありません。")
 }
 def head_update(raw, values, slug):
     m=re.match(r"\A---\r?\n(.*?)\r?\n---\r?\n",raw,re.S)

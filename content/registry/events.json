@@ -5924,14 +5924,14 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-30",
-    "updated_at": "2026-11-21",
+    "updated_at": "2026-11-22",
     "last_verified": "2026-11-21",
     "canonical_url": "/germany/ja/events/cologne-christmas-markets-2026-guide/",
     "official_url": "https://www.koelnerweihnachtsmarkt.com/de/",
     "image": "/assets/img/events/cologne-christmas-markets-2026-guide.webp",
-    "image_alt": "夜の大聖堂を背に、ツリーから屋台の上へ光の天蓋が広がるクリスマスマーケットを描いたイラスト",
-    "image_caption": "イラスト：J-Connect。大聖堂前のクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。",
-    "image_credit": "Illustration / J-Connect",
+    "image_alt": "2011年撮影のケルン大聖堂前クリスマスマーケットの実写真",
+    "image_caption": "2011年撮影の過去の会場風景。2026年の会場配置・屋台状況を示すものではありません。",
+    "image_credit": "Wikimedia Commons / Franz Gerd Frank / CC BY-SA 4.0",
     "url": "/germany/ja/events/cologne-christmas-markets-2026-guide/",
     "markdown_path": "/content/events/cologne-christmas-markets-2026-guide.md",
     "image_url": "/assets/img/events/cologne-christmas-markets-2026-guide.webp",
@@ -6800,7 +6800,7 @@
       "2026年12月",
       "アドベント"
     ],
-    "updated_at": "2026-11-21",
+    "updated_at": "2026-11-22",
     "related_articles": [
       "aachen-christmas-market-2026-guide",
       "cologne-christmas-markets-2026-guide",
@@ -6869,7 +6869,9 @@
       }
     ],
     "image": "/assets/img/events/nrw-christmas-market-day-trips-2026.webp",
-    "image_alt": "木組みの家が並ぶ谷あいの町と、灯りのともる石の洞窟の入り口、遠くの城のシルエットを冬の夕暮れに描いたイラスト"
+    "image_alt": "2013年12月に撮影されたモンシャウの冬の街並みの写真",
+    "image_caption": "2013年12月のモンシャウの写真。日帰り候補の1地点で、2026年の全会場を撮影したものではありません。",
+    "image_credit": "Wikimedia Commons / L.1951a / CC BY-SA 3.0"
   },
   {
     "slug": "nrw-ice-rinks-winter-2026-27",
@@ -7105,7 +7107,7 @@
       "アドベント",
       "冬"
     ],
-    "updated_at": "2026-11-21",
+    "updated_at": "2026-11-22",
     "related_articles": [
       "berlin-weekend-trip",
       "dresden-striezelmarkt-2026-guide",
@@ -7158,11 +7160,11 @@
       }
     ],
     "image": "/assets/img/events/berlin-christmas-markets-2026-guide.webp",
-    "image_alt": "二つの丸屋根の建物と柱の並ぶ建物を背に、内側から光る白いテントの屋台が並ぶ夜の広場を描いたイラスト",
+    "image_alt": "2016年撮影のベルリン・ジャンダルメンマルクトのクリスマスマーケットの実写真",
     "next_review": "2026-11-12",
     "source_type": "manual",
-    "image_caption": "AIの支援でコードから描画したイラスト（J-Connect）。ベルリンのクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。",
-    "image_credit": "AI-assisted vector illustration / J-Connect"
+    "image_caption": "2016年撮影の過去の会場風景。2026年の会場配置・料金・出店内容は本文をご確認ください。",
+    "image_credit": "Wikimedia Commons / Sergey Galyonkin / CC BY-SA 2.0"
   },
   {
     "slug": "hamburg-christmas-markets-2026-guide",

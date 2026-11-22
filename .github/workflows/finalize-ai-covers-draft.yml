@@ -10,6 +10,7 @@ on:
       - assets/img/events/germany-january-2027-changes.webp
       - assets/img/events/rundfunkbeitrag-meldedatenabgleich-2026.webp
       - assets/img/events/euro-7-germany-2026.webp
+      - assets/img/living/nrw-christmas-opening-hours-2026.webp
 
 permissions:
   contents: write

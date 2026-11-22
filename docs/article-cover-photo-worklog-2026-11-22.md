@@ -1,4 +1,48 @@
-# 2026-11-22 記事カバー画像の更新引き継ぎ
+# 記事カバー画像更新 — 2026-11-22 実行記録（更新版）
+
+## 現在のGitHub反映状況
+
+- Draft PR: https://github.com/J-Connect-Global/j-connect-global/pull/518
+- 直近1か月（2026-10-22〜11-22）の公開記事: **114件**。元のaltテキストでイラスト／図解と説明されていた記事: **103件**（画像内容の実測ではなくメタデータ判定）。
+- **9記事（対象期間内）を更新し、追加で前日2026-10-21公開の1記事も更新**。合計**10記事、40画像ファイル**（1200×675 WebP、768w WebP、480w WebP、1200×630 OG JPEG）。
+- 内訳: **Wikimedia Commons実写真3記事**、**AI生成の写真調イメージ7記事**。実写真は過去の撮影年を表示。AI画像には編集イメージである旨と、実在の写真・資料ではない旨を明記。
+- 本文中の必要な図表、タイムライン、手順図は削除せず保持。記事・registry・OG・サムネイルを同期。
+- 残り: **94記事**が旧イラスト表記のまま優先レビュー対象、**11記事**は既存画像の目視確認対象。元の2件の image/image_url 不一致は今回の範囲で解消。
+- **main / 本番へのマージや公開はしていない**。本PRは引き続きドラフト。
+
+## 変更した10記事
+
+| タイプ | 記事のslug |
+|---|---|
+| 実写真（Wikimedia Commons・撮影年明記） | cologne-christmas-markets-2026-guide |
+| 実写真（Wikimedia Commons・撮影年明記） | berlin-christmas-markets-2026-guide |
+| 実写真（Wikimedia Commons・撮影年明記） | nrw-christmas-market-day-trips-2026 |
+| AI生成 | christmas-post-germany-to-japan-2026 |
+| AI生成 | cologne-carnival-2026-27-guide |
+| AI生成 | christmas-new-year-greetings |
+| AI生成 | germany-january-2027-changes |
+| AI生成 | rundfunkbeitrag-meldedatenabgleich-2026 |
+| AI生成 | euro-7-germany-2026 |
+| AI生成 | nrw-christmas-opening-hours-2026 |
+
+## テストと出典
+
+- Commons実写真3件: GitHub Actions [45072423397](https://github.com/J-Connect-Global/j-connect-global/actions/runs/45072423397) — **success**。出典・ライセンスは `content/article-photo-credits.json` に保存。
+- AI生成6件: GitHub Actions [45072897859](https://github.com/J-Connect-Global/j-connect-global/actions/runs/45072897859) / [45073042789](https://github.com/J-Connect-Global/j-connect-global/actions/runs/45073042789) — **success**。
+- AI生成1件追加: GitHub Actions [45073486253](https://github.com/J-Connect-Global/j-connect-global/actions/runs/45073486253) — **success**。
+- 各画像追加の直後に生成HTML未同期状態を検出した一時的なCI失敗がある。上記の自動処理は各バッチで `npm run build` と `npm run validate` の成功後にコミットしている。最終PRヘッドの通常CI検証も確認すること。
+- `docs/article-cover-photo-audit-2026-11-22.json` が全114記事の優先度・進捗台帳の正本。
+
+## 残りの進め方
+
+1. 残り94記事から季節性と流入規模を考慮して優先順位を決め、記事の主題に合う画像を個別に作成・選定する。
+2. 実写真は作者・オリジナルURL・ライセンス・改変履歴を登録し、撮影年を示す。実在の2026年の行事写真と誤認させない。
+3. AI生成画像は一枚ずつ内容と自然さを確認し、再利用・重複を避ける。横長WebPとOG JPEG、縮小版を揃える。
+4. 記事frontmatterとregistryを同期し、本文図解は維持。ビルドとvalidatorで検証する。
+5. PRに蓄積し、mainへのマージと本番公開は明示承認と最終QAの後に行う。
+
+---
+# 過去の作業メモ（更新前の記録）
 
 ## 現状と対象
 

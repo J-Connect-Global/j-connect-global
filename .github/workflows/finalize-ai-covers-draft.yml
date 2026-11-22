@@ -1,0 +1,64 @@
+name: Finalize recovered AI covers on draft PR branch
+on:
+  push:
+    branches:
+      - codex/article-photo-refresh-2026-11-22
+    paths:
+      - assets/img/living/christmas-post-germany-to-japan-2026.webp
+      - assets/img/events/cologne-carnival-2026-27-guide.webp
+      - assets/img/learn-german/christmas-new-year-greetings.webp
+      - assets/img/events/germany-january-2027-changes.webp
+      - assets/img/events/rundfunkbeitrag-meldedatenabgleich-2026.webp
+      - assets/img/events/euro-7-germany-2026.webp
+
+permissions:
+  contents: write
+
+jobs:
+  finalize-covers:
+    if: github.ref == 'refs/heads/codex/article-photo-refresh-2026-11-22'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout dedicated draft branch including preceding commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          persist-credentials: true
+
+      - name: Install image tool
+        run: python3 -m pip install --user 'Pillow>=11,<13'
+
+      - name: Generate responsive images and synchronized metadata
+        run: python3 scripts/finalize-ai-covers-on-branch.py
+
+      - name: Setup Node 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install pinned dependencies
+        run: npm ci
+
+      - name: Build all generated pages
+        run: npm run build
+
+      - name: Validate content and photo metadata
+        run: npm run validate
+
+      - name: Commit verified generated output to draft branch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -u assets/img/ content/ germany/ja/
+          git add assets/img/events/*-480w.webp assets/img/events/*-768w.webp assets/img/events/*-og.jpg
+          git add assets/img/living/*-480w.webp assets/img/living/*-768w.webp assets/img/living/*-og.jpg
+          git add assets/img/learn-german/*-480w.webp assets/img/learn-german/*-768w.webp assets/img/learn-german/*-og.jpg
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          git diff --cached --stat
+          git commit -m "photos: publish recovered AI covers in draft branch with responsive metadata"
+          git push origin "HEAD:refs/heads/codex/article-photo-refresh-2026-11-22"

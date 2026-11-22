@@ -7,15 +7,15 @@ summary: "2026年のドイツから日本への公式締切は手紙・はがき
 status: "published"
 published: true
 published_at: "2026-11-01"
-updated_at: "2026-11-18"
+updated_at: "2026-11-22"
 last_verified: "2026-11-18"
 next_review: "2026-11-27"
 canonical_url: "/germany/ja/living/christmas-post-germany-to-japan-2026/"
 tags: ["日本へ荷物", "国際郵便", "国際書留", "UPU", "DHL", "Deutsche Post", "クリスマス", "年末年始", "税関", "2026年"]
 image: "/assets/img/living/christmas-post-germany-to-japan-2026.webp"
-image_alt: "クリスマスの飾りがある部屋で、段ボール箱にテープを貼り、カードを添えて日本へ送る準備をする様子のイラスト"
-image_caption: "イラスト：J-Connect。日本へ贈り物を送る準備を表したもので、特定の人物・店舗・郵便物を描いたものではありません。"
-image_credit: "Illustration / J-Connect"
+image_alt: "ドイツの郵便窓口でクリスマス前に日本宛ての荷物を準備する人のAI生成イメージ"
+image_caption: "AI生成の編集イメージ。実在の郵便局、人物、配送書類を撮影したものではありません。"
+image_credit: "AI-generated editorial image / J-Connect Global"
 related_articles: ["dhl-packstation-guide", "dhl-delivered-but-not-received", "nrw-christmas-opening-hours-2026"]
 official_sources:
   - title: "Deutsche Post：2026年クリスマスの最終差出日（国内・国際）"

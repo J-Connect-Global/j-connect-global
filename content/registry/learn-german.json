@@ -1234,7 +1234,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-11-05",
-    "updated_at": "2026-11-05",
+    "updated_at": "2026-11-22",
     "last_verified": "2026-11-05",
     "tags": ["クリスマス", "年末年始", "あいさつ", "カード", "メール", "A1", "A2"],
     "home_visible": true,
@@ -1258,6 +1258,9 @@
       "last_reviewed_at": "2026-11-05",
       "next_review_due": "2027-11-01"
     },
-    "image_alt": "もみの枝と星形のクッキー、ろうそくの横に、封筒とクリスマスカードを置いた机のイラスト"
+    "image_alt": "クリスマスの飾りがある机でドイツ語のグリーティングカードを書く人のAI生成イメージ",
+    "image": "/assets/img/learn-german/christmas-new-year-greetings.webp",
+    "image_caption": "AI生成の編集イメージ。実在の人物やカードを撮影したものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect Global"
   }
 ]

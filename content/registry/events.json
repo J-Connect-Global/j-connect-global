@@ -2860,7 +2860,7 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-21",
-    "updated_at": "2026-11-07",
+    "updated_at": "2026-11-22",
     "last_verified": "2026-11-07",
     "canonical_url": "/germany/ja/events/news/germany-january-2027-changes/",
     "official_url": "",
@@ -2879,9 +2879,9 @@
       "next_review_due": "2026-11-14"
     },
     "image": "/assets/img/events/germany-january-2027-changes.webp",
-    "image_alt": "壁の1月のカレンダーと、机の上のノートパソコンと書類を描いたイラスト",
-    "image_caption": "イラスト：J-Connect。制度変更のテーマを表したもので、公式資料を再現していません。",
-    "image_credit": "Illustration / J-Connect",
+    "image_alt": "ドイツの制度変更を調べるためカレンダーと書類とユーロ紙幣を整理した机のAI生成イメージ",
+    "image_caption": "AI生成の編集イメージ。公式の制度書類や金額を示すものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect Global",
     "image_url": "/assets/img/events/germany-january-2027-changes.webp"
   },
   {
@@ -6425,13 +6425,15 @@
       "NRW",
       "季節行事"
     ],
-    "updated_at": "2026-11-09",
+    "updated_at": "2026-11-22",
     "city": "ケルン",
     "location": "旧市街（ホイマルクト、アルター・マルクト）、ツュルピッヒャー通り周辺、市中心部の行列ルートなど",
     "event_date": "2026-11-11 シーズン開始／2027-02-04〜2027-02-10 街頭カーニバル",
     "official_url": "https://koelnerkarneval.de/",
     "image": "/assets/img/events/cologne-carnival-2026-27-guide.webp",
-    "image_alt": "パレードの山車から投げられたお菓子と小さな花束に、沿道の人々が手を伸ばす様子を描いたイラスト"
+    "image_alt": "ケルン大聖堂の近くで華やかな衣装を着てカーニバルを祝う人々のAI生成イメージ",
+    "image_caption": "AI生成の編集イメージ。実際の2026/27年のパレードや参加者の記録写真ではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect Global"
   },
   {
     "slug": "duesseldorf-carnival-2026-27-guide",
@@ -7267,7 +7269,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-11-07",
-    "updated_at": "2026-11-21",
+    "updated_at": "2026-11-22",
     "last_verified": "2026-11-21",
     "next_review": "2026-11-09",
     "tags": [
@@ -7324,10 +7326,11 @@
     "event_date": "2026-11-08（基準日）／2026-11-09〜2026-12-08（データ送信予定）",
     "official_url": "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026",
     "image": "/assets/img/events/rundfunkbeitrag-meldedatenabgleich-2026.webp",
-    "image_url": "/assets/images/living/anmeldung-preparation.webp",
-    "image_alt": "集合住宅の郵便受けの前の机に封筒が置かれ、横にテレビとラジオがある、放送負担金の通知を表したイラスト",
-    "image_caption": "住民登録情報と放送負担金の照合を説明するためのイメージです。",
-    "source_type": "manual"
+    "image_url": "/assets/img/events/rundfunkbeitrag-meldedatenabgleich-2026.webp",
+    "image_alt": "ドイツの自宅に届いた行政通知を読んで確認する人のAI生成イメージ",
+    "image_caption": "AI生成の編集イメージ。実際の放送負担金事務局の通知書を再現したものではありません。",
+    "source_type": "manual",
+    "image_credit": "AI-generated editorial image / J-Connect Global"
   },
   {
     "id": "N040",

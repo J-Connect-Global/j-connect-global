@@ -8,7 +8,7 @@ summary: "EUの新しい車両排出基準Euro 7について、2026年11月29日
 status: "published"
 published: true
 published_at: "2026-11-07"
-updated_at: "2026-11-07"
+updated_at: "2026-11-22"
 last_verified: "2026-11-07"
 next_review: "2026-11-29"
 canonical_url: "/germany/ja/events/news/euro-7-germany-2026/"
@@ -19,10 +19,10 @@ event_date: "2026-11-29 / 2027-11-29"
 official_url: "https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge"
 related_articles: ["buying-registering-car-germany", "winter-tires-germany-2026", "car-insurance-switch-november-2026"]
 image: "/assets/img/events/euro-7-germany-2026.webp"
-image_url: "/assets/img/living/buying-registering-car-germany.webp"
-image_alt: "街の道路を走る新しい車と、排出ガスを示すメーターと葉のマークを描いたイラスト"
-image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。新しい排出ガス基準を表したもので、実在の車種や試験を描いたものではありません。"
-image_credit: "AI-assisted vector illustration / J-Connect"
+image_url: "/assets/img/events/euro-7-germany-2026.webp"
+image_alt: "ドイツの自動車販売店で新車の特徴を相談する二人のAI生成イメージ"
+image_caption: "AI生成の編集イメージ。特定の車種のEuro 7適合や認証を示すものではありません。"
+image_credit: "AI-generated editorial image / J-Connect Global"
 official_sources:
   - title: "ドイツ連邦環境庁：乗用車・軽商用車の排出基準（2026年8月13日更新）"
     url: "https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge"

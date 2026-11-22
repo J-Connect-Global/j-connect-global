@@ -7340,7 +7340,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-11-07",
-    "updated_at": "2026-11-07",
+    "updated_at": "2026-11-22",
     "last_verified": "2026-11-07",
     "next_review": "2026-11-29",
     "tags": [
@@ -7389,10 +7389,10 @@
     "event_date": "2026-11-29 / 2027-11-29",
     "official_url": "https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge",
     "image": "/assets/img/events/euro-7-germany-2026.webp",
-    "image_url": "/assets/img/living/buying-registering-car-germany.webp",
-    "image_alt": "街の道路を走る新しい車と、排出ガスを示すメーターと葉のマークを描いたイラスト",
-    "image_caption": "イラスト：J-Connect。車の購入をイメージしたもので、実際の車種や排出試験を示すものではありません。",
-    "image_credit": "Illustration / J-Connect",
+    "image_url": "/assets/img/events/euro-7-germany-2026.webp",
+    "image_alt": "ドイツの自動車販売店で新車の特徴を相談する二人のAI生成イメージ",
+    "image_caption": "AI生成の編集イメージ。特定の車種のEuro 7適合や認証を示すものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect Global",
     "source_type": "manual"
   },
   {

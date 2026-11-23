@@ -40,3 +40,5 @@ jobs:
           git push origin "HEAD:refs/heads/codex/article-cover-seasonal-wave2-20261123"
 
 # Retry only the missing Aachen cover using Amel's landscape Commons photograph.
+
+# Retry after fixing false-positive ongoing-event badge validation.

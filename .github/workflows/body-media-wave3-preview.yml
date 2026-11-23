@@ -52,3 +52,5 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -m "qa: render three Japanese inline infographics for pixel inspection"
           git push origin "HEAD:refs/heads/codex/article-body-media-wave3-20261123"
+
+# Re-render after correcting Dresden illustration overlap with header.

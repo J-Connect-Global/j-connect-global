@@ -1,1 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="t d"><title id="t">冬の湿度と室温の目安</title><desc id="d">湿度40〜60%、居間は20℃程度まで、台所18℃、寝室17℃、部屋どうしの温度差は5℃以内という冬の目安をまとめた図</desc><rect width="1200" height="675" rx="28" fill="#eef5fb"/><g font-family="Noto Sans CJK JP, Noto Sans JP, sans-serif"><text x="60" y="95" font-size="40" font-weight="700" fill="#153452" text-anchor="start">冬の住まい：湿度と室温の目安</text><text x="60" y="145" font-size="24" fill="#405a71" text-anchor="start">温湿度計で「見える化」するのが第一歩</text><rect x="60" y="190" width="400" height="400" rx="20" fill="white"/><rect x="60" y="190" width="400" height="66" rx="20" fill="#2d6a9f"/><rect x="60" y="236" width="400" height="20" fill="#2d6a9f"/><text x="260" y="235" font-size="28" font-weight="700" fill="white" text-anchor="middle">湿度</text><text x="260" y="360" font-size="58" font-weight="700" fill="#2d6a9f" text-anchor="middle">40〜60%</text><text x="260" y="430" font-size="22" fill="#29465f" text-anchor="middle">断熱の弱い住まいは</text><text x="260" y="465" font-size="22" fill="#29465f" text-anchor="middle">冬は50%未満が目安</text><text x="260" y="530" font-size="20" fill="#5b7086" text-anchor="middle">70〜80%が壁際で続くと</text><text x="260" y="560" font-size="20" fill="#5b7086" text-anchor="middle">カビが育ちやすい</text><rect x="490" y="190" width="650" height="88" rx="16" fill="white"/><rect x="490" y="190" width="14" height="88" rx="7" fill="#c9952a"/><text x="530" y="246" font-size="28" font-weight="700" fill="#153452" text-anchor="start">居間</text><text x="1110" y="246" font-size="30" font-weight="700" fill="#c9952a" text-anchor="end">20℃程度まで</text><rect x="490" y="292" width="650" height="88" rx="16" fill="white"/><rect x="490" y="292" width="14" height="88" rx="7" fill="#c9952a"/><text x="530" y="348" font-size="28" font-weight="700" fill="#153452" text-anchor="start">台所</text><text x="1110" y="348" font-size="30" font-weight="700" fill="#c9952a" text-anchor="end">18℃</text><rect x="490" y="394" width="650" height="88" rx="16" fill="white"/><rect x="490" y="394" width="14" height="88" rx="7" fill="#c9952a"/><text x="530" y="450" font-size="28" font-weight="700" fill="#153452" text-anchor="start">寝室</text><text x="1110" y="450" font-size="30" font-weight="700" fill="#c9952a" text-anchor="end">17℃（16〜18℃以上）</text><rect x="490" y="496" width="650" height="88" rx="16" fill="white"/><rect x="490" y="496" width="14" height="88" rx="7" fill="#2f8a64"/><text x="530" y="552" font-size="28" font-weight="700" fill="#153452" text-anchor="start">部屋の温度差</text><text x="1110" y="552" font-size="30" font-weight="700" fill="#2f8a64" text-anchor="end">5℃以内</text><text x="60" y="640" font-size="18" fill="#5b7086" text-anchor="start">図解：J-Connect。連邦環境庁・消費者センターの目安に基づく（2026年10月26日参照）。</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">冬の湿度と室温：温湿度計で管理する5つの目安</title><desc id="desc">室内湿度40〜60パーセント、断熱の弱い家では冬に50パーセント未満、居間は20度程度、台所18度、寝室17度、部屋間温度差5度以内の推奨目安を視覚化。個別の建物条件により異なる。</desc>
+<defs>
+ <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eef7f7"/><stop offset="1" stop-color="#e4edf5"/></linearGradient>
+ <linearGradient id="gauge" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#508bb3"/><stop offset=".5" stop-color="#50b59e"/><stop offset="1" stop-color="#bbd5a5"/></linearGradient>
+ <filter id="sh"><feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#203f57" flood-opacity=".11"/></filter>
+</defs>
+<rect width="1200" height="675" fill="url(#sky)"/><rect x="18" y="18" width="1164" height="639" rx="25" fill="none" stroke="#bacfd5" stroke-width="2"/>
+<g font-family="'Noto Sans CJK JP','Noto Sans JP',sans-serif">
+ <text x="60" y="82" font-size="44" font-weight="800" fill="#1f4353">冬の住まい、数字で整える</text>
+ <text x="62" y="126" font-size="23" fill="#557381">湿度・室温を温湿度計で確認。カビと結露を防ぐための目安</text>
+ <g filter="url(#sh)"><rect x="48" y="165" width="445" height="431" rx="24" fill="#ffffff"/><rect x="520" y="165" width="310" height="198" rx="22" fill="#ffffff"/><rect x="844" y="165" width="310" height="198" rx="22" fill="#ffffff"/><rect x="520" y="378" width="310" height="218" rx="22" fill="#ffffff"/><rect x="844" y="378" width="310" height="218" rx="22" fill="#ffffff"/></g>
+ <text x="78" y="211" font-size="25" font-weight="800" fill="#244f5e">室内湿度</text>
+ <circle cx="272" cy="374" r="120" fill="#f6fbfc" stroke="#d6e5e9" stroke-width="21"/>
+ <circle cx="272" cy="374" r="120" fill="none" stroke="url(#gauge)" stroke-width="21" stroke-linecap="round" stroke-dasharray="376 760" transform="rotate(180 272 374)"/>
+ <circle cx="272" cy="374" r="91" fill="#fff" stroke="#e8f0f1" stroke-width="2"/>
+ <text x="272" y="360" font-size="57" font-weight="800" text-anchor="middle" fill="#287d87">40〜60</text>
+ <text x="272" y="397" font-size="29" font-weight="700" text-anchor="middle" fill="#287d87">%</text>
+ <text x="272" y="423" font-size="16" text-anchor="middle" fill="#657a7e">おおむね適正範囲</text>
+ <path d="M130 503 H412" stroke="#e2edef" stroke-width="2"/>
+ <text x="272" y="529" font-size="19" font-weight="700" text-anchor="middle" fill="#345566">断熱が弱い住宅の冬</text>
+ <text x="272" y="561" font-size="25" font-weight="800" text-anchor="middle" fill="#b17a34">50%未満を意識</text>
+ <!-- room cards: color-coded thermometers -->
+ <rect x="542" y="187" width="68" height="68" rx="17" fill="#fff2e8"/>
+ <path d="M578 202 V239" stroke="#c67449" stroke-width="9" stroke-linecap="round"/><circle cx="578" cy="241" r="13" fill="#e5a06e" stroke="#c67449" stroke-width="4"/>
+ <text x="628" y="215" font-size="24" font-weight="700" fill="#586a6f">居間</text>
+ <text x="628" y="268" font-size="41" font-weight="800" fill="#b9683a">20℃</text>
+ <text x="543" y="320" font-size="19" fill="#617782">快適さと省エネを両立</text>
+ <rect x="866" y="187" width="68" height="68" rx="17" fill="#f3efdf"/>
+ <path d="M901 202 V239" stroke="#a3844b" stroke-width="9" stroke-linecap="round"/><circle cx="901" cy="241" r="13" fill="#cfab67" stroke="#a3844b" stroke-width="4"/>
+ <text x="951" y="215" font-size="24" font-weight="700" fill="#586a6f">台所</text>
+ <text x="951" y="268" font-size="41" font-weight="800" fill="#9b793c">18℃</text>
+ <text x="866" y="320" font-size="19" fill="#617782">料理後は短時間換気</text>
+ <rect x="542" y="399" width="68" height="68" rx="17" fill="#e9f1f8"/>
+ <path d="M578 414 V452" stroke="#4a83a6" stroke-width="9" stroke-linecap="round"/><circle cx="578" cy="455" r="13" fill="#8db9d2" stroke="#4a83a6" stroke-width="4"/>
+ <text x="628" y="428" font-size="24" font-weight="700" fill="#586a6f">寝室</text>
+ <text x="628" y="483" font-size="41" font-weight="800" fill="#3d7b9f">17℃</text>
+ <text x="542" y="527" font-size="18" fill="#617782">16〜18℃未満へ</text><text x="542" y="552" font-size="18" fill="#617782">冷やしすぎない</text>
+ <rect x="866" y="399" width="68" height="68" rx="17" fill="#e8f2ec"/>
+ <path d="M877 457 L891 438 L903 447 L924 416" fill="none" stroke="#4d9876" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+ <text x="951" y="428" font-size="24" font-weight="700" fill="#586a6f">部屋の温度差</text>
+ <text x="951" y="483" font-size="41" font-weight="800" fill="#408569">5℃以内</text>
+ <text x="866" y="527" font-size="18" fill="#617782">部屋間で冷気と湿気が</text><text x="866" y="552" font-size="18" fill="#617782">移動しすぎないように</text>
+ <text x="59" y="640" font-size="17" fill="#56707a">出典：ドイツ連邦環境庁・消費者センターの2026年確認資料。住宅の断熱と状況で目安は異なります。</text>
+</g>
+</svg>

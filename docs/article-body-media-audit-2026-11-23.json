@@ -16,9 +16,9 @@
       "2": 111,
       "3": 2
     },
-    "visually_reviewed_and_redesigned_inline_references": 3,
-    "pending_visual_review_inline_references": 225,
-    "body_media_assets_redesigned": 3,
+    "visually_reviewed_and_redesigned_inline_references": 6,
+    "pending_visual_review_inline_references": 222,
+    "body_media_assets_redesigned": 6,
     "off_topic_inline_image_references_removed": 1
   },
   "reused_inline_assets": [
@@ -125,8 +125,11 @@
           "caption": "図解：J-Connect。連邦環境庁と消費者センターの目安に基づく（2026年10月26日参照）。",
           "line": 73,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P1"
+          "quality_status": "redesigned_and_visual_review_passed",
+          "priority": "P1",
+          "reviewed_at": "2026-11-23",
+          "review_method": "CairoSVG 1200x675, Noto CJK rendered preview manually inspected",
+          "visual_notes": "Better hierarchy and illustration; numerical facts and source caption unchanged; archival/editorial diagram, not a documentary image."
         },
         {
           "src": "/assets/images/events/stosslueften-vs-kipplueften.svg",
@@ -134,8 +137,11 @@
           "caption": "図解：J-Connect。連邦環境庁の換気の解説に基づく。",
           "line": 91,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P1"
+          "quality_status": "redesigned_and_visual_review_passed",
+          "priority": "P1",
+          "reviewed_at": "2026-11-23",
+          "review_method": "CairoSVG 1200x675, Noto CJK rendered preview manually inspected",
+          "visual_notes": "Better hierarchy and illustration; numerical facts and source caption unchanged; archival/editorial diagram, not a documentary image."
         }
       ]
     },
@@ -1885,8 +1891,11 @@
           "caption": "図解：J-Connect。イメージを表したもので、実際の認証シールや会場を再現していません。",
           "line": 78,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "redesigned_and_visual_review_passed",
+          "priority": "P3",
+          "reviewed_at": "2026-11-23",
+          "review_method": "CairoSVG 1200x675, Noto CJK rendered preview manually inspected",
+          "visual_notes": "Better hierarchy and illustration; numerical facts and source caption unchanged; archival/editorial diagram, not a documentary image."
         }
       ]
     },
@@ -3138,5 +3147,6 @@
     "Images now open their native files in a new tab through accessible keyboard/touch links (the new renderer applies to all local body images).",
     "Keep diagrams that communicate laws, finances, route, dates, or procedural information, but improve graphic quality and mobile legibility when necessary. Do not replace fact-bearing figures with decorative photos.",
     "Three body-asset reuse groups need context review; reuse alone does not prove a defect."
-  ]
+  ],
+  "last_wave": "wave3_dresden_winter_20261123"
 }

@@ -2,7 +2,7 @@
 <title id="graphicTitle">アドベントカレンダーの歴史：家庭の工夫から現代の24の扉へ</title><desc id="graphicDesc">19世紀の家庭のチョークの線、1851年の本に記録された絵、1908年ゲアハルト・ラングの印刷カレンダー、1940年の会社閉鎖、現代のカレンダーの5段階を示した図解。1902年や1904年にも印刷カレンダーの記録があるため最初の印刷版は断定しない。</desc>
 <defs><linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fcf9f1"/><stop offset="1" stop-color="#eee5d4"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#6a5439" flood-opacity=".10"/></filter></defs>
 <rect width="1200" height="675" fill="url(#paper)"/><rect x="20" y="18" width="1160" height="636" rx="26" fill="none" stroke="#ccbb9e" stroke-width="2"/>
-<g font-family="Noto Sans JP, Noto Sans CJK JP, Yu Gothic, sans-serif">
+<g font-family="Noto Sans CJK JP, sans-serif">
 <text x="600" y="80" font-size="43" font-weight="800" text-anchor="middle" fill="#244435">アドベントカレンダーの歩み</text>
 <text x="600" y="124" font-size="21" text-anchor="middle" fill="#6e6659">家庭の小さな工夫が、毎日1つずつ開く冬の楽しみへ</text>
 <line x1="111" y1="168" x2="1093" y2="168" stroke="#b99765" stroke-width="4" stroke-linecap="round"/>

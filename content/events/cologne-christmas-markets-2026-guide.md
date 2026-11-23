@@ -28,14 +28,14 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-30"
-updated_at: "2026-11-21"
+updated_at: "2026-11-22"
 last_verified: "2026-11-21"
 canonical_url: "/germany/ja/events/cologne-christmas-markets-2026-guide/"
 official_url: "https://www.koelnerweihnachtsmarkt.com/de/"
 image: "/assets/img/events/cologne-christmas-markets-2026-guide.webp"
-image_alt: "夜の大聖堂を背に、ツリーから屋台の上へ光の天蓋が広がるクリスマスマーケットを描いたイラスト"
-image_caption: "イラスト：J-Connect。大聖堂前のクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。"
-image_credit: "Illustration / J-Connect"
+image_alt: "2011年撮影のケルン大聖堂前クリスマスマーケットの実写真"
+image_caption: "2011年撮影の過去の会場風景。2026年の会場配置・屋台状況を示すものではありません。"
+image_credit: "Wikimedia Commons / Franz Gerd Frank / CC BY-SA 4.0"
 ---
 
 # ケルン クリスマスマーケット2026｜日程・営業時間・大聖堂前と旧市街

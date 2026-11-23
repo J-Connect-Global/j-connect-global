@@ -44,14 +44,14 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-31"
-updated_at: "2026-11-09"
+updated_at: "2026-11-22"
 last_verified: "2026-11-09"
 canonical_url: "/germany/ja/events/cologne-carnival-2026-27-guide/"
 official_url: "https://koelnerkarneval.de/"
 image: "/assets/img/events/cologne-carnival-2026-27-guide.webp"
-image_alt: "パレードの山車から投げられたお菓子と小さな花束に、沿道の人々が手を伸ばす様子を描いたイラスト"
-image_caption: "イラスト：J-Connect。カーニバルの行列の雰囲気を表したもので、実在の人物・山車・催しを再現していません。"
-image_credit: "Illustration / J-Connect"
+image_alt: "ケルン大聖堂の近くで華やかな衣装を着てカーニバルを祝う人々のAI生成イメージ"
+image_caption: "AI生成の編集イメージ。実際の2026/27年のパレードや参加者の記録写真ではありません。"
+image_credit: "AI-generated editorial image / J-Connect Global"
 ---
 
 # ケルンのカーニバル2026/27｜11月11日の開幕から、バラの月曜日の行列まで

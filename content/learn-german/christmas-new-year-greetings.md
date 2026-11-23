@@ -7,14 +7,15 @@ summary: "Frohe Weihnachten、Guten Rutsch、Frohes neues Jahrをいつまで使
 status: "published"
 published: true
 published_at: "2026-11-05"
-updated_at: "2026-11-05"
+updated_at: "2026-11-22"
 last_verified: "2026-11-05"
 tags: ["クリスマス", "年末年始", "あいさつ", "カード", "メール", "A1", "A2"]
 canonical_url: "/germany/ja/learn-german/christmas-new-year-greetings/"
-image_alt: "もみの枝と星形のクッキー、ろうそくの横に、封筒とクリスマスカードを置いた机のイラスト"
-image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。季節のカードを書く場面を表したもので、実在のカードや商品を描いたものではありません。"
-image_credit: "AI-assisted vector illustration / J-Connect"
+image_alt: "クリスマスの飾りがある机でドイツ語のグリーティングカードを書く人のAI生成イメージ"
+image_caption: "AI生成の編集イメージ。実在の人物やカードを撮影したものではありません。"
+image_credit: "AI-generated editorial image / J-Connect Global"
 related_articles: ["work-email-phrases", "workplace-conversation-phrases", "kita-school-inquiry-phrases", "landlord-housing-email-phrases"]
+image: "/assets/img/learn-german/christmas-new-year-greetings.webp"
 ---
 
 # クリスマス・年末年始のドイツ語あいさつ｜カード・メール・職場で使う言い方と返し方

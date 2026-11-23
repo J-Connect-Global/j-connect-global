@@ -545,6 +545,45 @@
         "/assets/img/living/germany-bread-guide/abendbrot-480w.webp",
         "/assets/img/living/germany-bread-guide/abendbrot-768w.webp"
       ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Weihnachtsmarkt_am_K%C3%B6lner_Dom.jpg",
+      "author": "Franz Gerd Frank",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "横長トリミング・縮小・WebP/JPEG変換（改変版を元画像と同じCC BY-SAライセンスで公開）",
+      "files": [
+        "/assets/img/events/cologne-christmas-markets-2026-guide.webp",
+        "/assets/img/events/cologne-christmas-markets-2026-guide-768w.webp",
+        "/assets/img/events/cologne-christmas-markets-2026-guide-480w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2016-11-22_Christmas_market_on_Gendarmenmarkt%2C_Berlin.jpg",
+      "author": "Sergey Galyonkin",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "modifications": "横長トリミング・縮小・WebP/JPEG変換（改変版を元画像と同じCC BY-SAライセンスで公開）",
+      "files": [
+        "/assets/img/events/berlin-christmas-markets-2026-guide.webp",
+        "/assets/img/events/berlin-christmas-markets-2026-guide-768w.webp",
+        "/assets/img/events/berlin-christmas-markets-2026-guide-480w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Monschau%2C_Dezember_2013%2C_020.jpg",
+      "author": "L.1951a",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "modifications": "横長トリミング・縮小・WebP/JPEG変換（改変版を元画像と同じCC BY-SAライセンスで公開）",
+      "files": [
+        "/assets/img/events/nrw-christmas-market-day-trips-2026.webp",
+        "/assets/img/events/nrw-christmas-market-day-trips-2026-768w.webp",
+        "/assets/img/events/nrw-christmas-market-day-trips-2026-480w.webp"
+      ]
     }
   ]
 }

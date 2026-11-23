@@ -42,14 +42,14 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-11-01"
-updated_at: "2026-11-21"
+updated_at: "2026-11-22"
 last_verified: "2026-11-21"
 canonical_url: "/germany/ja/events/nrw-christmas-market-day-trips-2026/"
 official_url: ""
 image: "/assets/img/events/nrw-christmas-market-day-trips-2026.webp"
-image_alt: "木組みの家が並ぶ谷あいの町と、灯りのともる石の洞窟の入り口、遠くの城のシルエットを冬の夕暮れに描いたイラスト"
-image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。日帰りで訪れるクリスマスマーケットのテーマを表したもので、実際の町並みや会場を再現していません。"
-image_credit: "AI-assisted vector illustration / J-Connect"
+image_alt: "2013年12月に撮影されたモンシャウの冬の街並みの写真"
+image_caption: "2013年12月のモンシャウの写真。日帰り候補の1地点で、2026年の全会場を撮影したものではありません。"
+image_credit: "Wikimedia Commons / L.1951a / CC BY-SA 3.0"
 ---
 
 # デュッセルドルフ・ケルンから日帰りで行くクリスマスマーケット2026｜モンシャウ、ミュンスター、メローデ城、ファルケンブルフの洞窟、マーストリヒト

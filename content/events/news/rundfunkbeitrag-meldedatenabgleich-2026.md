@@ -8,7 +8,7 @@ summary: "住民データ照合の基準日は2026年11月8日、データ送信
 status: "published"
 published: true
 published_at: "2026-11-07"
-updated_at: "2026-11-21"
+updated_at: "2026-11-22"
 last_verified: "2026-11-21"
 next_review: "2026-12-14"
 canonical_url: "/germany/ja/events/news/rundfunkbeitrag-meldedatenabgleich-2026/"
@@ -19,9 +19,9 @@ event_date: "2026-11-08（基準日）／2026-11-09〜2026-12-08（データ送�
 official_url: "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026"
 related_articles: ["rundfunkbeitrag-guide", "anmeldung-guide", "moving-checklist-germany"]
 image: "/assets/img/events/rundfunkbeitrag-meldedatenabgleich-2026.webp"
-image_url: "/assets/images/living/anmeldung-preparation.webp"
-image_alt: "集合住宅の郵便受けの前の机に封筒が置かれ、横にテレビとラジオがある、放送負担金の通知を表したイラスト"
-image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。放送負担金の通知を表したもので、実在の書類や機関を描いたものではありません。"
+image_url: "/assets/img/events/rundfunkbeitrag-meldedatenabgleich-2026.webp"
+image_alt: "ドイツの自宅に届いた行政通知を読んで確認する人のAI生成イメージ"
+image_caption: "AI生成の編集イメージ。実際の放送負担金事務局の通知書を再現したものではありません。"
 official_sources:
   - title: "放送負担金事務局：2026年の全国住民データ照合開始に関する2026年11月5日付発表"
     url: "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026"
@@ -35,7 +35,7 @@ official_sources:
     url: "https://www.rundfunkbeitrag.de/kontostand"
 disclaimer_type: "administrative"
 source_type: "manual"
-image_credit: "AI-assisted vector illustration / J-Connect"
+image_credit: "AI-generated editorial image / J-Connect Global"
 ---
 
 # ドイツの放送負担金2026｜住民データ照合・12月中旬からの確認書面

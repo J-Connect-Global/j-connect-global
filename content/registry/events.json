@@ -2860,7 +2860,7 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-21",
-    "updated_at": "2026-11-07",
+    "updated_at": "2026-11-22",
     "last_verified": "2026-11-07",
     "canonical_url": "/germany/ja/events/news/germany-january-2027-changes/",
     "official_url": "",
@@ -2879,9 +2879,9 @@
       "next_review_due": "2026-11-14"
     },
     "image": "/assets/img/events/germany-january-2027-changes.webp",
-    "image_alt": "壁の1月のカレンダーと、机の上のノートパソコンと書類を描いたイラスト",
-    "image_caption": "イラスト：J-Connect。制度変更のテーマを表したもので、公式資料を再現していません。",
-    "image_credit": "Illustration / J-Connect",
+    "image_alt": "ドイツの制度変更を調べるためカレンダーと書類とユーロ紙幣を整理した机のAI生成イメージ",
+    "image_caption": "AI生成の編集イメージ。公式の制度書類や金額を示すものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect Global",
     "image_url": "/assets/img/events/germany-january-2027-changes.webp"
   },
   {
@@ -5924,14 +5924,14 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-30",
-    "updated_at": "2026-11-21",
+    "updated_at": "2026-11-22",
     "last_verified": "2026-11-21",
     "canonical_url": "/germany/ja/events/cologne-christmas-markets-2026-guide/",
     "official_url": "https://www.koelnerweihnachtsmarkt.com/de/",
     "image": "/assets/img/events/cologne-christmas-markets-2026-guide.webp",
-    "image_alt": "夜の大聖堂を背に、ツリーから屋台の上へ光の天蓋が広がるクリスマスマーケットを描いたイラスト",
-    "image_caption": "イラスト：J-Connect。大聖堂前のクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。",
-    "image_credit": "Illustration / J-Connect",
+    "image_alt": "2011年撮影のケルン大聖堂前クリスマスマーケットの実写真",
+    "image_caption": "2011年撮影の過去の会場風景。2026年の会場配置・屋台状況を示すものではありません。",
+    "image_credit": "Wikimedia Commons / Franz Gerd Frank / CC BY-SA 4.0",
     "url": "/germany/ja/events/cologne-christmas-markets-2026-guide/",
     "markdown_path": "/content/events/cologne-christmas-markets-2026-guide.md",
     "image_url": "/assets/img/events/cologne-christmas-markets-2026-guide.webp",
@@ -6425,13 +6425,15 @@
       "NRW",
       "季節行事"
     ],
-    "updated_at": "2026-11-09",
+    "updated_at": "2026-11-22",
     "city": "ケルン",
     "location": "旧市街（ホイマルクト、アルター・マルクト）、ツュルピッヒャー通り周辺、市中心部の行列ルートなど",
     "event_date": "2026-11-11 シーズン開始／2027-02-04〜2027-02-10 街頭カーニバル",
     "official_url": "https://koelnerkarneval.de/",
     "image": "/assets/img/events/cologne-carnival-2026-27-guide.webp",
-    "image_alt": "パレードの山車から投げられたお菓子と小さな花束に、沿道の人々が手を伸ばす様子を描いたイラスト"
+    "image_alt": "ケルン大聖堂の近くで華やかな衣装を着てカーニバルを祝う人々のAI生成イメージ",
+    "image_caption": "AI生成の編集イメージ。実際の2026/27年のパレードや参加者の記録写真ではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect Global"
   },
   {
     "slug": "duesseldorf-carnival-2026-27-guide",
@@ -6800,7 +6802,7 @@
       "2026年12月",
       "アドベント"
     ],
-    "updated_at": "2026-11-21",
+    "updated_at": "2026-11-22",
     "related_articles": [
       "aachen-christmas-market-2026-guide",
       "cologne-christmas-markets-2026-guide",
@@ -6869,7 +6871,9 @@
       }
     ],
     "image": "/assets/img/events/nrw-christmas-market-day-trips-2026.webp",
-    "image_alt": "木組みの家が並ぶ谷あいの町と、灯りのともる石の洞窟の入り口、遠くの城のシルエットを冬の夕暮れに描いたイラスト"
+    "image_alt": "2013年12月に撮影されたモンシャウの冬の街並みの写真",
+    "image_caption": "2013年12月のモンシャウの写真。日帰り候補の1地点で、2026年の全会場を撮影したものではありません。",
+    "image_credit": "Wikimedia Commons / L.1951a / CC BY-SA 3.0"
   },
   {
     "slug": "nrw-ice-rinks-winter-2026-27",
@@ -7105,7 +7109,7 @@
       "アドベント",
       "冬"
     ],
-    "updated_at": "2026-11-21",
+    "updated_at": "2026-11-22",
     "related_articles": [
       "berlin-weekend-trip",
       "dresden-striezelmarkt-2026-guide",
@@ -7158,11 +7162,11 @@
       }
     ],
     "image": "/assets/img/events/berlin-christmas-markets-2026-guide.webp",
-    "image_alt": "二つの丸屋根の建物と柱の並ぶ建物を背に、内側から光る白いテントの屋台が並ぶ夜の広場を描いたイラスト",
+    "image_alt": "2016年撮影のベルリン・ジャンダルメンマルクトのクリスマスマーケットの実写真",
     "next_review": "2026-11-12",
     "source_type": "manual",
-    "image_caption": "AIの支援でコードから描画したイラスト（J-Connect）。ベルリンのクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。",
-    "image_credit": "AI-assisted vector illustration / J-Connect"
+    "image_caption": "2016年撮影の過去の会場風景。2026年の会場配置・料金・出店内容は本文をご確認ください。",
+    "image_credit": "Wikimedia Commons / Sergey Galyonkin / CC BY-SA 2.0"
   },
   {
     "slug": "hamburg-christmas-markets-2026-guide",
@@ -7265,7 +7269,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-11-07",
-    "updated_at": "2026-11-21",
+    "updated_at": "2026-11-22",
     "last_verified": "2026-11-21",
     "next_review": "2026-11-09",
     "tags": [
@@ -7322,10 +7326,11 @@
     "event_date": "2026-11-08（基準日）／2026-11-09〜2026-12-08（データ送信予定）",
     "official_url": "https://www.rundfunkbeitrag.de/presse-und-aktuelles/presse/beitragsservice-startet-bundesweiten-meldedatenabgleich-2026",
     "image": "/assets/img/events/rundfunkbeitrag-meldedatenabgleich-2026.webp",
-    "image_url": "/assets/images/living/anmeldung-preparation.webp",
-    "image_alt": "集合住宅の郵便受けの前の机に封筒が置かれ、横にテレビとラジオがある、放送負担金の通知を表したイラスト",
-    "image_caption": "住民登録情報と放送負担金の照合を説明するためのイメージです。",
-    "source_type": "manual"
+    "image_url": "/assets/img/events/rundfunkbeitrag-meldedatenabgleich-2026.webp",
+    "image_alt": "ドイツの自宅に届いた行政通知を読んで確認する人のAI生成イメージ",
+    "image_caption": "AI生成の編集イメージ。実際の放送負担金事務局の通知書を再現したものではありません。",
+    "source_type": "manual",
+    "image_credit": "AI-generated editorial image / J-Connect Global"
   },
   {
     "id": "N040",
@@ -7338,7 +7343,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-11-07",
-    "updated_at": "2026-11-07",
+    "updated_at": "2026-11-22",
     "last_verified": "2026-11-07",
     "next_review": "2026-11-29",
     "tags": [
@@ -7387,10 +7392,10 @@
     "event_date": "2026-11-29 / 2027-11-29",
     "official_url": "https://www.umweltbundesamt.de/themen/verkehr/emissionsstandards/pkw-leichte-nutzfahrzeuge",
     "image": "/assets/img/events/euro-7-germany-2026.webp",
-    "image_url": "/assets/img/living/buying-registering-car-germany.webp",
-    "image_alt": "街の道路を走る新しい車と、排出ガスを示すメーターと葉のマークを描いたイラスト",
-    "image_caption": "イラスト：J-Connect。車の購入をイメージしたもので、実際の車種や排出試験を示すものではありません。",
-    "image_credit": "Illustration / J-Connect",
+    "image_url": "/assets/img/events/euro-7-germany-2026.webp",
+    "image_alt": "ドイツの自動車販売店で新車の特徴を相談する二人のAI生成イメージ",
+    "image_caption": "AI生成の編集イメージ。特定の車種のEuro 7適合や認証を示すものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect Global",
     "source_type": "manual"
   },
   {

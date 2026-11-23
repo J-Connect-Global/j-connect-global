@@ -7,15 +7,15 @@ summary: "2026年12月24〜27日のノルトライン＝ヴェストファーレ
 status: "published"
 published: true
 published_at: "2026-10-28"
-updated_at: "2026-10-28"
+updated_at: "2026-11-22"
 last_verified: "2026-10-28"
 next_review: "2026-12-01"
 canonical_url: "/germany/ja/living/nrw-christmas-opening-hours-2026/"
 tags: ["NRW", "クリスマス", "営業時間", "スーパー", "薬局", "公共交通", "2026年"]
 image: "/assets/img/living/nrw-christmas-opening-hours-2026.webp"
-image_alt: "クリスマスの飾りがあるスーパーの入り口と、買い物袋を持つ人を描いたイラスト"
-image_caption: "イラスト：J-Connect。クリスマス時期の買い物のテーマを表したもので、特定の店舗を描いたものではありません。"
-image_credit: "Illustration / J-Connect"
+image_alt: "クリスマスの飾りがあるドイツの食料品店と冬の街並みのAI生成イメージ"
+image_caption: "AI生成の編集イメージ。実在の店舗、営業時間、2026年の営業状況を示すものではありません。"
+image_credit: "AI-generated editorial image / J-Connect Global"
 related_articles: ["germany-sunday-rest-shops-closed", "nrw-public-holidays-2027", "christmas-markets-duesseldorf"]
 official_sources:
   - title: "NRW州：店舗営業時間法（LÖG NRW）"

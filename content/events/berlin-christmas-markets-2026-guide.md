@@ -34,14 +34,14 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-11-01"
-updated_at: "2026-11-21"
+updated_at: "2026-11-22"
 last_verified: "2026-11-21"
 canonical_url: "/germany/ja/events/berlin-christmas-markets-2026-guide/"
 official_url: "https://www.visitberlin.de/de/weihnachtsmaerkte-berlin"
 image: "/assets/img/events/berlin-christmas-markets-2026-guide.webp"
-image_alt: "二つの丸屋根の建物と柱の並ぶ建物を背に、内側から光る白いテントの屋台が並ぶ夜の広場を描いたイラスト"
-image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。ベルリンのクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。"
-image_credit: "AI-assisted vector illustration / J-Connect"
+image_alt: "2016年撮影のベルリン・ジャンダルメンマルクトのクリスマスマーケットの実写真"
+image_caption: "2016年撮影の過去の会場風景。2026年の会場配置・料金・出店内容は本文をご確認ください。"
+image_credit: "Wikimedia Commons / Sergey Galyonkin / CC BY-SA 2.0"
 ---
 
 # ベルリン クリスマスマーケット2026｜日程・営業時間・入場料と5会場

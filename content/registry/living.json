@@ -3706,7 +3706,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-10-28",
-    "updated_at": "2026-10-28",
+    "updated_at": "2026-11-22",
     "last_verified": "2026-10-28",
     "next_review": "2026-12-01",
     "home_visible": false,
@@ -3759,9 +3759,9 @@
       }
     ],
     "image_url": "/assets/img/living/nrw-christmas-opening-hours-2026.webp",
-    "image_alt": "クリスマスの飾りがあるスーパーの入り口と、買い物袋を持つ人を描いたイラスト",
-    "image_caption": "J-Connect作成の模式図。実際の店舗や交通機関の運行状況を示すものではありません。",
-    "image_credit": "Illustration / J-Connect",
+    "image_alt": "クリスマスの飾りがあるドイツの食料品店と冬の街並みのAI生成イメージ",
+    "image_caption": "AI生成の編集イメージ。実在の店舗、営業時間、2026年の営業状況を示すものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect Global",
     "image": "/assets/img/living/nrw-christmas-opening-hours-2026.webp"
   },
   {
@@ -4729,7 +4729,7 @@
       "税関",
       "2026年"
     ],
-    "updated_at": "2026-11-18",
+    "updated_at": "2026-11-22",
     "related_articles": [
       "dhl-packstation-guide",
       "dhl-delivered-but-not-received",
@@ -4778,8 +4778,10 @@
       }
     ],
     "image": "/assets/img/living/christmas-post-germany-to-japan-2026.webp",
-    "image_alt": "クリスマスの飾りがある部屋で、段ボール箱にテープを貼り、カードを添えて日本へ送る準備をする様子のイラスト",
-    "next_review": "2026-11-27"
+    "image_alt": "ドイツの郵便窓口でクリスマス前に日本宛ての荷物を準備する人のAI生成イメージ",
+    "next_review": "2026-11-27",
+    "image_caption": "AI生成の編集イメージ。実在の郵便局、人物、配送書類を撮影したものではありません。",
+    "image_credit": "AI-generated editorial image / J-Connect Global"
   },
   {
     "id": "L074",

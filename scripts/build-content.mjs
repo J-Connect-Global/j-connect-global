@@ -633,8 +633,13 @@ html.push(`<h${level}${classAttribute} id="${escapeAttribute(headingId)}">${rend
       const [, alt, src, title] = image;
       const normalizedSrc = normalizeHref(src, context);
       const photoCredit = renderArticlePhotoCredit(normalizedSrc);
+      const renderedImage = renderInlineArticleImage(normalizedSrc, stripInlineMarkdown(alt).trim());
+      const isLocalImage = normalizedSrc.startsWith('/assets/images/') || normalizedSrc.startsWith('/assets/img/');
+      const zoomLink = isLocalImage && ['.svg', '.webp', '.png', '.jpg', '.jpeg'].some((ext) => normalizedSrc.toLowerCase().endsWith(ext))
+        ? `<a class="article-inline-image-zoom" href="${escapeAttribute(normalizedSrc)}" target="_blank" rel="noopener noreferrer" aria-label="画像を原寸で表示（新しいタブ）" title="画像を原寸で開く">${renderedImage}</a>`
+        : renderedImage;
       html.push(`<figure class="article-inline-figure">
-  ${renderInlineArticleImage(normalizedSrc, stripInlineMarkdown(alt).trim())}
+  ${zoomLink}
 ${title || photoCredit ? `  <figcaption>${title ? escapeHtml(title) : ''}${photoCredit}</figcaption>` : ''}
 </figure>`);
       index += 1;

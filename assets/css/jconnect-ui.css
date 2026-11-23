@@ -2569,6 +2569,54 @@
     height:auto;
   }
 
+  /* Inline diagrams remain sharp SVGs; full-size source opens for small labels on mobile. */
+  .article-inline-figure .article-inline-image-zoom{
+    position:relative;
+    display:block;
+    overflow:hidden;
+    width:100%;
+    border:1px solid var(--jc-line);
+    border-radius:var(--jc-radius-md);
+    background:var(--jc-soft);
+    cursor:zoom-in;
+    text-decoration:none;
+  }
+
+  .article-inline-figure .article-inline-image-zoom:focus-visible{
+    outline:3px solid var(--jc-blue);
+    outline-offset:3px;
+  }
+
+  .article-inline-figure .article-inline-image-zoom::after{
+    content:"画像を拡大";
+    position:absolute;
+    right:11px;
+    bottom:11px;
+    padding:5px 9px;
+    border-radius:999px;
+    background:rgba(18,37,52,.86);
+    color:#fff;
+    font-size:12px;
+    font-weight:700;
+    line-height:1.4;
+    pointer-events:none;
+    opacity:0;
+    transition:opacity .18s ease;
+  }
+
+  .article-inline-figure .article-inline-image-zoom:is(:hover,:focus-visible)::after{
+    opacity:1;
+  }
+
+  @media (max-width:760px){
+    .article-inline-figure .article-inline-image-zoom::after{opacity:1;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .article-inline-figure .article-inline-image-zoom::after{transition:none;}
+  }
+
+
   .article-hero-frame .article-hero-image{
     min-height:100%;
     object-fit:cover;

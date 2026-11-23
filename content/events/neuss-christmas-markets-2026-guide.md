@@ -7,21 +7,21 @@ category: "季節行事"
 city: "ノイス"
 location: "ミュンスター広場、アム・コンヴェント、フライトホーフ、ノイス北部、競馬場公園"
 event_date: "2026-11-14〜2027-01-06"
-published_at: ""
+published_at: "2026-11-23"
 updated_at: "2026-11-23"
 last_verified: "2026-11-23"
 next_review: "2026-11-27"
 summary: "ノイスの2026年冬の5つのマーケットを公式日程で比較。11月29日の一日限定アドベント市、12月の週末開催、1月6日まで続く会場、営業時間と日曜営業を案内します。"
 tags: ["ノイス", "クリスマスマーケット", "2026年11月", "2026年12月", "アドベント", "NRW"]
-status: "draft"
-published: false
+status: "published"
+published: true
 canonical_url: "/germany/ja/events/neuss-christmas-markets-2026-guide/"
 official_url: "https://www.neuss.de/news/2026/11/17/neusser-weihnachtsmaerkte-2026"
 source_type: "manual"
-image: "/assets/images/events/neuss-advent-markets-2026.svg"
-image_alt: "ノイスの5会場と開催期間を抽象的な屋台と日付で示すオリジナル図解"
-image_caption: "J-Connectオリジナル図解。実際の会場の外観を再現したものではありません。"
-image_credit: "Original vector illustration / J-Connect"
+image: "/assets/img/events/neuss-christmas-markets-2026-guide.webp"
+image_alt: "雪の降る夕暮れ、木製の屋台とイルミネーションを楽しむ家族を描いたノイスのクリスマスマーケットのAI生成イメージ"
+image_caption: "AI生成イメージ。実際のノイスの会場写真や正確な建物・配置を再現したものではありません。"
+image_credit: "AI-generated image / J-Connect Global"
 related_articles: ["christmas-markets-duesseldorf", "nrw-christmas-opening-hours-2026", "christmas-post-germany-to-japan-2026"]
 official_sources:
   - title: "ノイス市：Neusser Weihnachtsmärkte 2026（2026年11月17日）"
@@ -31,9 +31,9 @@ official_sources:
   - title: "ライン・ノイス郡：郡内のクリスマスマーケット"
     url: "https://www.rhein-kreis-neuss.de/de/freizeit-kultur/weihnachten-im-rhein-kreis-neuss/"
 review:
-  status: "needs_review"
-  reviewed_by: ""
-  last_reviewed_at: ""
+  status: "reviewed"
+  reviewed_by: "J-Connect編集部（2026-11-23、ノイス市・ノイスマーケティング・ライン・ノイス郡の公式案内を照合）"
+  last_reviewed_at: "2026-11-23"
   next_review_due: "2026-11-27"
 disclaimer_type: "event"
 ---
@@ -41,8 +41,6 @@ disclaimer_type: "event"
 # ノイスのクリスマスマーケット2026｜5会場の日程・営業時間と11月29日の催し
 
 デュッセルドルフの隣町ノイスでは、2026年11月から年明けまで、開催日も雰囲気も異なる複数のクリスマスマーケットが開かれます。毎日開く中心街の市、11月29日だけの催し、週末限定の会場を混同しないよう、ノイス市が11月17日に発表した5会場の日時を比較しました。日本語で訪問日を決めたい人向けに、終了日、日曜の営業時間、子ども連れでの確認事項を整理します。
-
-![ノイスの冬の5会場をイメージしたオリジナル図解](/assets/images/events/neuss-advent-markets-2026.svg "実際の建物や配置を再現したものではありません。")
 
 ## まず結論：11月29日だけの催しと年明けまでの会場を区別
 
@@ -57,6 +55,8 @@ disclaimer_type: "event"
 | 競馬場公園の「レンバーン・ヴァイナハト」 | 12月5・6日、12・13日、19・20日 | 土11〜23時、日11〜20時 |
 
 *出典：ノイス市の2026年11月17日付[公式一覧](https://www.neuss.de/news/2026/11/17/neusser-weihnachtsmaerkte-2026)。2026年11月23日確認。*
+
+![ノイスの5会場を抽象的な屋台と冬の夜で示す編集部作成の図解](/assets/images/events/neuss-advent-markets-2026.svg "編集部作成の概念図。実際の会場の外観や位置関係を再現したものではありません。")
 
 ## どの会場を選ぶ？
 

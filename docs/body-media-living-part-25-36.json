@@ -1,0 +1,278 @@
+[
+  {
+    "slug": "elterngeld-guide-germany",
+    "title": "ドイツの育児給付（Elterngeld）の計算と受け取り方｜手取りの65〜67％、ElterngeldPlus、パートナーボーナス、外国籍の条件",
+    "published_at": "2026-11-06",
+    "markdown_path": "/content/living/elterngeld-guide-germany.md",
+    "hero": "/assets/img/living/elterngeld-guide-germany.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/seo/elterngeld-rate-chart.svg",
+        "alt": "出生前の手取りと育児給付の割合を示すグラフ。手取り1,000ユーロ未満は最大100％まで上がり、1,000〜1,200ユーロは67％、1,240ユーロ以上は65％で、月額は300ユーロから1,800ユーロの範囲になる",
+        "caption": "図解：J-Connect。根拠：連邦両親手当・育児休業法第2条。金額は法律の計算方法による概算で、実際の決定額とは異なる場合があります。2026年11月6日確認。",
+        "line": 94,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/seo/elterngeld-plan-example.svg",
+        "alt": "14か月の分け方の例を示す図。母親は生後1〜2か月が出産手当、3〜10か月が基本給付、父親は生後2か月目に1か月重ねて基本給付を受け、生後11〜14か月は両親とも週24〜32時間働いてパートナーボーナスを受ける計画",
+        "caption": "図解：J-Connect。計画の一例で、各家庭の収入や勤務先の事情によって最適な分け方は異なります。根拠：連邦両親手当・育児休業法第4条・第4b条。2026年11月6日確認。",
+        "line": 119,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "einbuergerung-germany-japanese",
+    "title": "ドイツ国籍の取得（Einbürgerung）と日本国籍｜5年の条件、B1・帰化テスト、日本国籍を失う仕組み、子どもの二重国籍",
+    "published_at": "2026-11-06",
+    "markdown_path": "/content/living/einbuergerung-germany-japanese.md",
+    "hero": "/assets/img/living/einbuergerung-germany-japanese.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/seo/einbuergerung-vs-permanent-residence.svg",
+        "alt": "ドイツ国籍の取得と永住許可を比べた図。国籍の取得は日本国籍を失うが選挙権とEU内の自由な移動がある。永住許可は日本国籍を保てるが、6か月を超える出国で失効することがある",
+        "caption": "図解：J-Connect。根拠：ドイツ国籍法第10条・第38条、滞在法第9条・第51条、日本の国籍法第11条。2026年11月6日確認。",
+        "line": 62,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/seo/child-nationality-germany-japan.svg",
+        "alt": "ドイツで生まれた子どもの国籍の流れ。親が5年以上合法的に住み期限のない滞在権を持つと子どもはドイツ国籍を取得し、3か月以内の国籍留保で日本国籍を保てる。その後は日本の法律で国籍の選択が必要になる",
+        "caption": "図解：J-Connect。根拠：ドイツ国籍法第4条、日本の国籍法第12条・第14条、戸籍法第104条。2026年11月6日確認。",
+        "line": 140,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "germany-visa-types-japanese",
+    "title": "ドイツのビザ・滞在許可の種類｜日本人がビザなしで入国して申請できるしくみと、目的別の選び方",
+    "published_at": "2026-11-06",
+    "markdown_path": "/content/living/germany-visa-types-japanese.md",
+    "hero": "/assets/img/living/germany-visa-types-japanese.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/seo/germany-visa-types-overview.svg",
+        "alt": "ドイツの主な滞在許可を目的別に整理した図。就労、学ぶ、仕事を探す、家族、自営業の5つに分け、それぞれの代表的な許可と働ける範囲を示す",
+        "caption": "図解：J-Connect。根拠：滞在法第16a条〜第21条、滞在令第41条。主な種類のみで、すべてではありません。2026年11月6日確認。",
+        "line": 70,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/seo/germany-visa-free-entry-steps.svg",
+        "alt": "ビザなしで入国して滞在許可を取る流れの図。入国、住民登録、健康保険、90日以内の申請、電子滞在カードの受け取りの5段階と、ICTカードとチャンスカードは例外であることを示す",
+        "caption": "図解：J-Connect。根拠：滞在令第41条・第45条、滞在法第20a条。2026年11月6日確認。",
+        "line": 83,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "chancenkarte-germany-japanese",
+    "title": "ドイツのチャンスカード（求職ビザ）｜6点の点数制、生活費の証明、週20時間の就労、日本で申請する流れ",
+    "published_at": "2026-11-06",
+    "markdown_path": "/content/living/chancenkarte-germany-japanese.md",
+    "hero": "/assets/img/living/chancenkarte-germany-japanese.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/seo/chancenkarte-points.svg",
+        "alt": "チャンスカードの点数表の図。資格の部分的な認定4点、ドイツ語B2が3点・B1が2点・A2が1点、職務経験5年3点・2年2点、35歳以下2点などを示し、合計6点以上で条件を満たす",
+        "caption": "図解：J-Connect。根拠：滞在法第20b条と別表。2026年11月6日確認。",
+        "line": 49,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/seo/chancenkarte-flow.svg",
+        "alt": "チャンスカードの流れの図。日本で申請、ドイツで仕事を探す（週20時間まで働ける）、仕事が見つかったら専門人材・ブルーカードなどに切り替え、見つからなければ期限内に出国、という流れを示す",
+        "caption": "図解：J-Connect。根拠：滞在法第20a条。2026年11月6日確認。",
+        "line": 123,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "working-holiday-germany",
+    "title": "ドイツのワーキングホリデー｜18〜30歳の条件、資金の目安、保険、申請の流れ、到着後の手続きと仕事探し",
+    "published_at": "2026-11-06",
+    "markdown_path": "/content/living/working-holiday-germany.md",
+    "hero": "/assets/img/living/working-holiday-germany.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/seo/working-holiday-germany-timeline.svg",
+        "alt": "ドイツのワーキングホリデーの準備の流れの図。大使館の予約の確認、資金と保険の準備、出発の3か月前から2週間前までの申請、ドイツ到着後に住民登録と税番号、仕事探しという順番を示す",
+        "caption": "図解：J-Connect。根拠：在日ドイツ大使館の案内、滞在令第41条。申請の時期は目安です。2026年11月6日確認。",
+        "line": 52,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/seo/working-holiday-germany-work-checks.svg",
+        "alt": "ワーキングホリデー中に働くときの確認点の図。最低賃金、ミニジョブの上限、書面の雇用契約、給与明細と税金、健康保険の5つを並べる",
+        "caption": "図解：J-Connect。根拠：最低賃金法、社会法典第4編第8条。金額は2026年11月時点。2026年11月6日確認。",
+        "line": 110,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "study-in-germany-student-visa",
+    "title": "ドイツの大学に留学する｜学費、入学資格、生活費の証明（月992ユーロ）、学生の滞在許可、働ける日数、卒業後の就職",
+    "published_at": "2026-11-06",
+    "markdown_path": "/content/living/study-in-germany-student-visa.md",
+    "hero": "/assets/img/living/study-in-germany-student-visa.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/seo/study-in-germany-costs.svg",
+        "alt": "ドイツ留学の費用の内訳の図。授業料は多くの州立大学で無料、学期ごとの学生納付金、生活費の証明は月992ユーロ、学生の健康保険などを示す",
+        "caption": "図解：J-Connect。根拠：滞在法第16b条、社会法典第5編。金額は2026年の目安です。2026年11月6日確認。",
+        "line": 49,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/seo/student-work-days-germany.svg",
+        "alt": "学生のアルバイトの日数の数え方の図。年140日分が上限で、4時間以内の日は半日、講義期間中の週20時間までの週と休み期間の週は2.5日として数え、大学内の学生アルバイトは数えないことを示す",
+        "caption": "図解：J-Connect。根拠：滞在法第16b条第3項。2026年11月6日確認。",
+        "line": 117,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "ausbildung-germany-japanese",
+    "title": "ドイツの職業訓練（Ausbildung）｜給料をもらいながら資格を取るしくみ、2027年の最低手当764ユーロ、日本人の滞在許可とドイツ語",
+    "published_at": "2026-11-06",
+    "markdown_path": "/content/living/ausbildung-germany-japanese.md",
+    "hero": "/assets/img/living/ausbildung-germany-japanese.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/seo/ausbildung-dual-system.svg",
+        "alt": "職業訓練のしくみの図。訓練先の会社で週3〜4日働き、職業学校で週1〜2日学び、修了試験で国家資格を取るという流れと、毎月の手当を示す",
+        "caption": "図解：J-Connect。根拠：職業訓練法。週の配分は職業や地域で異なります。2026年11月6日確認。",
+        "line": 51,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/seo/ausbildung-path.svg",
+        "alt": "職業訓練の流れの図。ドイツ語B1を準備、訓練先に応募して契約、職業訓練の滞在許可を申請、2〜3年半の訓練、修了試験、就職して専門人材の滞在許可に切り替える流れを示す",
+        "caption": "図解：J-Connect。根拠：滞在法第16a条・第17条・第18a条・第20条。2026年11月6日確認。",
+        "line": 117,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "sick-leave-germany",
+    "title": "ドイツで病気になって仕事を休むとき｜連絡と診断書、電子の病欠証明、6週間の給与、傷病手当金、子どもの看病休暇（2027年は10日に）",
+    "published_at": "2026-11-06",
+    "markdown_path": "/content/living/sick-leave-germany.md",
+    "hero": "/assets/img/living/sick-leave-germany.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/seo/sick-leave-germany-flow.svg",
+        "alt": "病気で休むときの流れの図。朝に職場へ連絡、3日を超えるなら医師の受診、電子の病欠証明、6週間までは会社が給与を支払い、その後は傷病手当金、という順番を示す",
+        "caption": "図解：J-Connect。根拠：賃金継続支払法第3条・第5条、社会法典第5編第44条・第47条。2026年11月6日確認。",
+        "line": 50,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/seo/child-sick-days-2026-2027.svg",
+        "alt": "子どもの看病のための休暇の日数の図。2026年は子ども1人15日・合計35日、2027年は法律が変わらなければ10日・合計25日に戻ることを示し、ひとり親は2倍であることを示す",
+        "caption": "図解：J-Connect。根拠：社会法典第5編第45条。2027年の日数は2026年11月時点の法律によります。2026年11月6日確認。",
+        "line": 115,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "employment-contract-germany",
+    "title": "ドイツの労働契約で確認したいこと｜試用期間、解約の予告期間、有給休暇、労働時間と休憩、有期契約、解雇されたときの3週間",
+    "published_at": "2026-11-06",
+    "markdown_path": "/content/living/employment-contract-germany.md",
+    "hero": "/assets/img/living/employment-contract-germany.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/seo/employment-contract-checklist.svg",
+        "alt": "労働契約で確認したい8項目の図。試用期間、予告期間、有給休暇、労働時間、給与と残業、有期か無期か、勤務地と仕事、労働協約を並べ、法律の最低ラインを示す",
+        "caption": "図解：J-Connect。根拠：民法第622条、連邦休暇法、労働時間法、証明書法。2026年11月6日確認。",
+        "line": 66,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/seo/dismissal-first-steps-germany.svg",
+        "alt": "解雇されたときの流れの図。解雇の書面を受け取る、3週間以内に労働裁判所へ訴えるか検討、3日以内に雇用エージェンシーへ届け出、滞在許可の確認、勤務証明書を請求、という順番を示す",
+        "caption": "図解：J-Connect。根拠：解雇保護法第1条・第4条・第23条、民法第623条、営業法第109条。2026年11月6日確認。",
+        "line": 139,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "werkstudent-student-jobs-germany",
+    "title": "ドイツの学生の働き方｜ワークスチューデント・ミニジョブ・インターンの違い、週20時間の目安、社会保険と税金、留学生の日数の上限",
+    "published_at": "2026-11-06",
+    "markdown_path": "/content/living/werkstudent-student-jobs-germany.md",
+    "hero": "/assets/img/living/werkstudent-student-jobs-germany.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/seo/student-jobs-germany-comparison.svg",
+        "alt": "学生の働き方の比較図。ワークスチューデント、ミニジョブ、必修インターン、任意インターンの4つについて、時間・収入の目安、社会保険、最低賃金の扱いを並べる",
+        "caption": "図解：J-Connect。根拠：社会法典第3編・第4編・第5編、最低賃金法第22条。金額は2026年11月時点。2026年11月6日確認。",
+        "line": 52,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/seo/werkstudent-20-hour-rule.svg",
+        "alt": "ワークスチューデントが週20時間の目安を守るための図。講義期間中は週20時間まで、休み期間は超えてもよいが年26週まで、留学生は年140日分の上限も守る、という3つのルールを示す",
+        "caption": "図解：J-Connect。根拠：社会法典第5編第6条、社会保険の実務上の目安、滞在法第16b条。2026年11月6日確認。",
+        "line": 122,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "kindergeld-application-germany",
+    "title": "ドイツの児童手当（Kindergeld）の申請｜月259ユーロ・必要書類・6か月の遡及・日本人の条件",
+    "published_at": "2026-11-06",
+    "markdown_path": "/content/living/kindergeld-application-germany.md",
+    "hero": "/assets/img/living/kindergeld-application-germany.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/seo/kindergeld-residence-permits.svg",
+        "alt": "日本国籍の親が児童手当を受け取れる滞在許可の図。永住許可、EUブルーカード、就労できる滞在許可、家族の滞在許可で就労できるものは対象、留学と卒業後の求職の滞在許可は働いているかで決まり、最初のチャンスカードは対象外であることを示す",
+        "caption": "図解：J-Connect。根拠：所得税法第62条第2項。主な種類のみです。2026年11月6日確認。",
+        "line": 53,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/seo/kindergeld-application-steps.svg",
+        "alt": "児童手当の申請の流れの図。住民登録と税番号の受け取り、家族手当金庫にオンラインで申請、必要書類を添付、決定の通知と児童手当番号、毎月の振り込みという順番と、遡及は6か月までという注意を示す",
+        "caption": "図解：J-Connect。根拠：所得税法第66条・第67条・第70条。2026年11月6日確認。",
+        "line": 116,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "church-tax-germany",
+    "title": "ドイツの教会税｜住民登録の宗教欄、税率8%・9%、日本で洗礼を受けた人の注意、離脱の手続きと費用",
+    "published_at": "2026-11-06",
+    "markdown_path": "/content/living/church-tax-germany.md",
+    "hero": "/assets/img/living/church-tax-germany.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/seo/church-tax-who-pays.svg",
+        "alt": "教会税がかかるかどうかの判断の図。住民登録の宗教欄にカトリックやプロテスタントと登録されると給与から教会税、仏教・無宗教などは対象外、間違いがあれば住民登録の窓口と税務署に訂正を求める流れを示す",
+        "caption": "図解：J-Connect。根拠：所得税法第51a条、連邦住民登録法第3条。2026年11月6日確認。",
+        "line": 43,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/seo/church-tax-leaving-steps.svg",
+        "alt": "教会から離脱する手続きの図。州ごとの届け出先を確認、本人が窓口で届け出、手数料を払う、離脱の証明を受け取る、給与明細から教会税が消えたか確認、という流れを示す",
+        "caption": "図解：J-Connect。根拠：ノルトライン＝ヴェストファーレン州司法省の案内、所得税法第51a条。届け出先と費用は州により異なります。2026年11月6日確認。",
+        "line": 100,
+        "position": 3
+      }
+    ]
+  }
+]

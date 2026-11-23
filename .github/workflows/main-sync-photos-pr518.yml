@@ -1,0 +1,36 @@
+name: Finish main synchronization for PR 518
+on:
+  push:
+    branches:
+      - codex/article-photo-refresh-2026-11-22
+    paths:
+      - docs/article-cover-main-sync-2026-11-23.md
+permissions:
+  contents: write
+jobs:
+  sync-generated-content:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: npm run build
+      - run: npm run validate
+      - name: Commit generated pages after validation
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -u
+          if git diff --cached --quiet; then
+            echo "Generated files unchanged"
+            exit 0
+          fi
+          git diff --cached --stat
+          git commit -m "build: synchronize Neuss article with 10 updated cover pages"
+          git push origin "HEAD:refs/heads/codex/article-photo-refresh-2026-11-22"

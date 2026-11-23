@@ -1,0 +1,193 @@
+[
+  {
+    "slug": "health-insurance-zusatzbeitrag-2027",
+    "title": "【2027年】ドイツの健康保険料は上がる？ 追加保険料率「平均2.9%据え置き」の意味と乗り換え方",
+    "published_at": "2026-10-26",
+    "markdown_path": "/content/events/news/health-insurance-zusatzbeitrag-2027.md",
+    "hero": "/assets/img/events/health-insurance-zusatzbeitrag-2027.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/gkv-contribution-structure-2027.svg",
+        "alt": "一般保険料率14.6%に保険組合ごとの追加保険料率を足したものが保険料率になり、通常は雇用主と本人が半分ずつ負担することを示す図",
+        "caption": "図解：J-Connect。連邦保健省の解説に基づく（2026年10月26日時点）。",
+        "line": 73,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/gkv-zusatzbeitrag-cost-example-2027.svg",
+        "alt": "月給4,000ユーロの場合に追加保険料率が0.5ポイント違うと本人負担が月10ユーロ、年120ユーロ変わることを示す図",
+        "caption": "図解：J-Connect。本文の計算例を図にしたもの。",
+        "line": 94,
+        "position": 3
+      },
+      {
+        "src": "/assets/images/events/gkv-special-termination-timeline-2027.svg",
+        "alt": "特別解約権のタイムライン。1月1日に値上げ、1月31日までに新しい保険組合へ申込み、3月31日に退会、4月1日から新しい保険組合へ移る流れを示す図",
+        "caption": "図解：J-Connect。SGB V §175第4項に基づく例（値上げが1月1日の場合）。",
+        "line": 116,
+        "position": 4
+      }
+    ]
+  },
+  {
+    "slug": "germany-winter-mold-ventilation",
+    "title": "ドイツの冬のカビ・結露対策｜換気・暖房・湿度の目安と、カビが出たときの対処",
+    "published_at": "2026-10-26",
+    "markdown_path": "/content/events/columns/germany-winter-mold-ventilation.md",
+    "hero": "/assets/img/events/germany-winter-mold-ventilation.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/winter-humidity-temperature-guide.svg",
+        "alt": "湿度40〜60%、居間20℃、台所18℃、寝室17℃、部屋の温度差5℃以内という冬の目安をまとめた図",
+        "caption": "図解：J-Connect。連邦環境庁と消費者センターの目安に基づく（2026年10月26日参照）。",
+        "line": 73,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/stosslueften-vs-kipplueften.svg",
+        "alt": "窓を傾けて長時間開ける方法と、全開で5分換気する方法を比べ、全開で短く換気する方が結露と暖房費を抑えられることを示す図",
+        "caption": "図解：J-Connect。連邦環境庁の換気の解説に基づく。",
+        "line": 91,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "germany-sunday-rest-shops-closed",
+    "title": "ドイツの日曜日はなぜこんなに静か？｜お店が閉まる理由と、日曜に開いている場所",
+    "published_at": "2026-10-26",
+    "markdown_path": "/content/events/columns/germany-sunday-rest-shops-closed.md",
+    "hero": "/assets/img/events/germany-sunday-rest-shops-closed.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/germany-sunday-rest-layers.svg",
+        "alt": "基本法、州の閉店法、市が決める日曜営業日、労働時間法と騒音のルールが重なって日曜日の静けさをつくっていることを示す図",
+        "caption": "図解：J-Connect。基本法、NRW州閉店法、労働時間法、機械騒音防止令に基づく（2026年10月26日参照）。",
+        "line": 58,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/germany-sunday-open-shops-nrw.svg",
+        "alt": "NRW州で日曜日に開いているお店の種類と時間、日曜営業日の上限をまとめた図",
+        "caption": "図解：J-Connect。NRW州閉店法とケルン商工会議所の解説に基づく（2026年10月26日参照）。",
+        "line": 108,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "germany-autobahn-speed-limit",
+    "title": "アウトバーンは本当に速度無制限？｜「推奨130km/h」の意味と、最初のアウトバーンがケルンにあった話",
+    "published_at": "2026-10-26",
+    "markdown_path": "/content/events/columns/germany-autobahn-speed-limit.md",
+    "hero": "/assets/img/events/germany-autobahn-speed-limit.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/autobahn-speed-limit-share.svg",
+        "alt": "アウトバーンのうち速度制限のない区間が約70.4%、常設・可変の制限がある区間が約3割であることを示す図",
+        "caption": "図解：J-Connect。連邦道路研究所（BASt）2015年の調査に基づく（工事区間を除く）。",
+        "line": 76,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/autobahn-history-timeline.svg",
+        "alt": "1932年のケルン〜ボン自動車道路の開通、1978年の推奨速度令、2015年の調査、2026年の国会採決までの流れを示す年表",
+        "caption": "図解：J-Connect。LVRアーカイブ、推奨速度令、BASt、連邦議会の資料に基づく（2026年10月26日参照）。",
+        "line": 123,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "german-beer-purity-law",
+    "title": "ドイツの「ビール純粋令」とは？｜1516年の決まりと、ケルシュ・アルトまで広がる今のビール",
+    "published_at": "2026-10-26",
+    "markdown_path": "/content/events/columns/german-beer-purity-law.md",
+    "hero": "/assets/img/events/german-beer-purity-law.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/beer-purity-law-ingredients.svg",
+        "alt": "1516年のビール純粋令の材料（大麦・ホップ・水）と、今の法律での下面発酵ビール・上面発酵ビールの材料を比べた図",
+        "caption": "図解：J-Connect。インゴルシュタット市、ドイツ醸造者連盟、連邦議会調査局、LGLの資料に基づく（2026年10月26日参照）。",
+        "line": 89,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/beer-purity-law-timeline.svg",
+        "alt": "1516年のビール純粋令から、1906年の全国化、1987年の欧州司法裁判所判決、2025年の販売量と醸造所数までの年表",
+        "caption": "図解：J-Connect。ドイツ醸造者連盟、欧州司法裁判所、連邦統計局の資料に基づく（2026年10月26日参照）。",
+        "line": 122,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "rhineland-carnival-11-11",
+    "title": "なぜカーニバルは11月11日11時11分に始まる？｜ケルンとデュッセルドルフの「第5の季節」",
+    "published_at": "2026-10-26",
+    "markdown_path": "/content/events/columns/rhineland-carnival-11-11.md",
+    "hero": "/assets/img/events/rhineland-carnival-11-11.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/carnival-season-2026-27-calendar.svg",
+        "alt": "11月11日のシーズン開始、11月12日から1月6日までのお休み、1月のシーズン再開、2月の女性のカーニバルの日、バラの月曜日、灰の水曜日までの流れを示す図",
+        "caption": "図解：J-Connect。LVR地域研究所とケルン市の資料に基づく（2026年10月26日参照）。",
+        "line": 70,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/alaaf-helau-region-map.svg",
+        "alt": "ケルン周辺の「アラーフ」の地域を、デュッセルドルフ、下ライン地方、ルール地方の「ヘラウ」の地域が囲んでいる様子を示した概略図",
+        "caption": "図解：J-Connect。LVR地域研究所の解説に基づく概略図で、正確な境界を示すものではありません。",
+        "line": 102,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "germany-tap-water-drinkable",
+    "title": "ドイツの水道水はそのまま飲める？｜「硬水」の正体と、古い建物で気をつけたいこと",
+    "published_at": "2026-10-27",
+    "markdown_path": "/content/events/columns/germany-tap-water-drinkable.md",
+    "hero": "/assets/img/events/germany-tap-water-drinkable.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/water-hardness-scale.svg",
+        "alt": "水の硬さの3つの区分（軟らかい・中くらい・硬い）と、デュッセルドルフ約14°dH、ケルン15.6〜18.1°dHの位置を示した図",
+        "caption": "図解：J-Connect。洗剤法第9条、デュッセルドルフ都市公社、ラインエネルギーの資料に基づく（2026年10月27日参照）。",
+        "line": 89,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/tap-water-safe-habits.svg",
+        "alt": "朝いちばんや旅行の後は、水が冷たくなるまで流してから飲む。古い建物では鉛管の有無を大家さんに確認する、という手順を示した図",
+        "caption": "図解：J-Connect。連邦環境庁と消費者センターの資料に基づく（2026年10月27日参照）。",
+        "line": 120,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "germany-public-holidays-by-state",
+    "title": "ドイツの祝日は州ごとに違う？｜国が決めた祝日は1日だけの理由と、州ごとの珍しい祝日",
+    "published_at": "2026-10-27",
+    "markdown_path": "/content/events/columns/germany-public-holidays-by-state.md",
+    "hero": "/assets/img/events/germany-public-holidays-by-state.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/germany-holidays-state-differences.svg",
+        "alt": "10月31日の宗教改革記念日と11月1日の万聖節、6月の聖体祭が、州によって祝日かどうかが違うことを示した図",
+        "caption": "図解：J-Connect。各州の祝日法と連邦内務省の資料に基づく概略図（2026年10月27日参照）。",
+        "line": 71,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/nrw-public-holidays-2027.svg",
+        "alt": "NRW州の2027年の祝日11日をカレンダー形式で並べ、土日と重なる日と木曜日の祝日を色分けした図",
+        "caption": "図解：J-Connect。NRW州日曜・祝日法とケルン大司教区の移動祝日の一覧に基づく（2026年10月27日参照）。",
+        "line": 88,
+        "position": 3
+      }
+    ]
+  }
+]

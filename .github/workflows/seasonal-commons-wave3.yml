@@ -41,3 +41,5 @@ jobs:
           git diff --cached --stat
           git commit -m "photos: add five licensed, documented seasonal cover photos"
           git push origin "HEAD:refs/heads/codex/article-cover-seasonal-wave3-20261123"
+
+# Retry with article paths resolved from registry metadata.

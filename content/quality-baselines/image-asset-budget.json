@@ -1,9 +1,12 @@
 {
-  "max_total_bytes": 58000000,
+  "max_total_bytes": 59000000,
   "max_single_file_bytes": 750000,
   "max_files_over_one_mebibyte": 0,
   "max_width": 1440,
   "max_width_overrides": {},
   "required_format": "WEBP",
-  "social_preview": { "suffix": "-og.jpg", "format": "JPEG" }
+  "social_preview": {
+    "suffix": "-og.jpg",
+    "format": "JPEG"
+  }
 }

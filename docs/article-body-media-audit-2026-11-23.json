@@ -18,7 +18,10 @@
       "3": 3,
       "4": 0,
       "5": 0
-    }
+    },
+    "visually_reviewed_and_redesigned_inline_references": 2,
+    "pending_visual_review_inline_references": 227,
+    "body_media_assets_redesigned": 2
   },
   "reused_inline_assets": [
     {
@@ -56,14 +59,18 @@
           "alt": "1516年のビール純粋令の材料（大麦・ホップ・水）と、今の法律での下面発酵ビール・上面発酵ビールの材料を比べた図",
           "caption": "図解：J-Connect。インゴルシュタット市、ドイツ醸造者連盟、連邦議会調査局、LGLの資料に基づく（2026年10月26日参照）。",
           "line": 89,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/beer-purity-law-timeline.svg",
           "alt": "1516年のビール純粋令から、1906年の全国化、1987年の欧州司法裁判所判決、2025年の販売量と醸造所数までの年表",
           "caption": "図解：J-Connect。ドイツ醸造者連盟、欧州司法裁判所、連邦統計局の資料に基づく（2026年10月26日参照）。",
           "line": 122,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -79,14 +86,18 @@
           "alt": "アウトバーンのうち速度制限のない区間が約70.4%、常設・可変の制限がある区間が約3割であることを示す図",
           "caption": "図解：J-Connect。連邦道路研究所（BASt）2015年の調査に基づく（工事区間を除く）。",
           "line": 76,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/autobahn-history-timeline.svg",
           "alt": "1932年のケルン〜ボン自動車道路の開通、1978年の推奨速度令、2015年の調査、2026年の国会採決までの流れを示す年表",
           "caption": "図解：J-Connect。LVRアーカイブ、推奨速度令、BASt、連邦議会の資料に基づく（2026年10月26日参照）。",
           "line": 123,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -102,14 +113,18 @@
           "alt": "基本法、州の閉店法、市が決める日曜営業日、労働時間法と騒音のルールが重なって日曜日の静けさをつくっていることを示す図",
           "caption": "図解：J-Connect。基本法、NRW州閉店法、労働時間法、機械騒音防止令に基づく（2026年10月26日参照）。",
           "line": 58,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/germany-sunday-open-shops-nrw.svg",
           "alt": "NRW州で日曜日に開いているお店の種類と時間、日曜営業日の上限をまとめた図",
           "caption": "図解：J-Connect。NRW州閉店法とケルン商工会議所の解説に基づく（2026年10月26日参照）。",
           "line": 108,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -125,14 +140,18 @@
           "alt": "湿度40〜60%、居間20℃、台所18℃、寝室17℃、部屋の温度差5℃以内という冬の目安をまとめた図",
           "caption": "図解：J-Connect。連邦環境庁と消費者センターの目安に基づく（2026年10月26日参照）。",
           "line": 73,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/stosslueften-vs-kipplueften.svg",
           "alt": "窓を傾けて長時間開ける方法と、全開で5分換気する方法を比べ、全開で短く換気する方が結露と暖房費を抑えられることを示す図",
           "caption": "図解：J-Connect。連邦環境庁の換気の解説に基づく。",
           "line": 91,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -148,21 +167,27 @@
           "alt": "一般保険料率14.6%に保険組合ごとの追加保険料率を足したものが保険料率になり、通常は雇用主と本人が半分ずつ負担することを示す図",
           "caption": "図解：J-Connect。連邦保健省の解説に基づく（2026年10月26日時点）。",
           "line": 73,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/gkv-zusatzbeitrag-cost-example-2027.svg",
           "alt": "月給4,000ユーロの場合に追加保険料率が0.5ポイント違うと本人負担が月10ユーロ、年120ユーロ変わることを示す図",
           "caption": "図解：J-Connect。本文の計算例を図にしたもの。",
           "line": 94,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/gkv-special-termination-timeline-2027.svg",
           "alt": "特別解約権のタイムライン。1月1日に値上げ、1月31日までに新しい保険組合へ申込み、3月31日に退会、4月1日から新しい保険組合へ移る流れを示す図",
           "caption": "図解：J-Connect。SGB V §175第4項に基づく例（値上げが1月1日の場合）。",
           "line": 116,
-          "position": 4
+          "position": 4,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -178,14 +203,18 @@
           "alt": "11月11日のシーズン開始、11月12日から1月6日までのお休み、1月のシーズン再開、2月の女性のカーニバルの日、バラの月曜日、灰の水曜日までの流れを示す図",
           "caption": "図解：J-Connect。LVR地域研究所とケルン市の資料に基づく（2026年10月26日参照）。",
           "line": 70,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/alaaf-helau-region-map.svg",
           "alt": "ケルン周辺の「アラーフ」の地域を、デュッセルドルフ、下ライン地方、ルール地方の「ヘラウ」の地域が囲んでいる様子を示した概略図",
           "caption": "図解：J-Connect。LVR地域研究所の解説に基づく概略図で、正確な境界を示すものではありません。",
           "line": 102,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -201,14 +230,20 @@
           "alt": "1839年のヴィヒェルンの車輪のクランツ（日曜日は白い大きなろうそく、平日は赤い小さなろうそく）と、今の4本のろうそくのクランツを比べた図",
           "caption": "図解：J-Connect。katholisch.de、EKD、ラウエス・ハウスの資料に基づく（2026年10月27日参照）。",
           "line": 74,
-          "position": 2
+          "position": 2,
+          "quality_status": "redesigned_previewed_in_context",
+          "assessed_at": "2026-11-23",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/advent-calendar-history.svg",
           "alt": "19世紀のチョークの線や壁の絵、1908年の印刷のカレンダー、今の扉付きカレンダーへと変わってきた流れを示す年表",
           "caption": "図解：J-Connect。katholisch.de、EKDの資料に基づく（2026年10月27日参照）。",
           "line": 94,
-          "position": 3
+          "position": 3,
+          "quality_status": "redesigned_previewed_in_context",
+          "assessed_at": "2026-11-23",
+          "priority": "P1"
         }
       ]
     },
@@ -224,14 +259,18 @@
           "alt": "中世の楽園の劇、1605年のシュトラスブルクの記録、17世紀の教会の批判、三十年戦争後の広がり、19世紀のろうそくの普及までを示した年表",
           "caption": "図解：J-Connect。katholisch.deの資料に基づく（2026年10月27日参照）。",
           "line": 78,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/christmas-tree-germany-numbers.svg",
           "alt": "ドイツで毎年飾られるクリスマスツリー約2,300万〜2,500万本、ノルドマンもみの割合約75〜80%、2024年の輸入180万本（デンマーク産83%）、国内の栽培農家3,310軒を示した図",
           "caption": "図解：J-Connect。ドイツ森林保護協会と連邦統計局の資料に基づく（2026年10月27日参照）。",
           "line": 88,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -247,14 +286,18 @@
           "alt": "2025年の長距離列車の定時率60.1%、地域の列車88.7%を比べ、定時の基準が予定から6分未満であることを示した図",
           "caption": "図解：J-Connect。ドイツ鉄道の2025年決算と年次報告書に基づく（2026年10月27日参照）。",
           "line": 67,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/db-passenger-rights-refund.svg",
           "alt": "目的地への到着が60分以上遅れたら運賃の25%、120分以上なら50%が戻り、4ユーロ未満は払われないことを示した図",
           "caption": "図解：J-Connect。ドイツ鉄道、連邦交通省、連邦鉄道庁の資料に基づく（2026年10月27日参照）。",
           "line": 114,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -270,14 +313,18 @@
           "alt": "文書の非表示は原則すべての医療機関に適用され、施設単位のアクセス拒否はその施設がePA全体を見られなくする違いを示す図",
           "caption": "文書単位と施設単位では、アクセス制限の範囲が異なります。",
           "line": 65,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/epa-no-app-path.svg",
           "alt": "ePAアプリを使わない人が、健康保険者のオンブズ窓口に相談してアクセス設定や履歴を確認する流れを示す図",
           "caption": "アプリを使わなくてもアクセス管理を相談できます。保険者やオンブズ窓口は診療記録の内容を閲覧できません。",
           "line": 73,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -293,14 +340,18 @@
           "alt": "ドイツ南西部に集まる13のワイン産地のうち、ラインヘッセン、プファルツ、モーゼル、ミッテルライン、アールの位置と面積を示した概略図",
           "caption": "図解：J-Connect。ドイツワイン協会の資料に基づく概略図で、正確な位置や境界を示すものではありません。",
           "line": 66,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/german-wine-label-guide.svg",
           "alt": "プレディカートの6段階をぶどうの熟し方の順に並べ、甘さはラベルのトロッケン・ハルプトロッケン・リープリッヒ・ズースで判断することを示した図",
           "caption": "図解：J-Connect。ドイツワイン協会とワイン法の資料に基づく（2026年10月27日参照）。",
           "line": 110,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -316,14 +367,18 @@
           "alt": "2023年と2025年の支払い件数の割合を比べ、現金が51%から45%に下がり、モバイル決済が6%から10%に増えたことを示す図",
           "caption": "図解：J-Connect。ドイツ連邦銀行「ドイツの支払い行動」2023年・2025年に基づく（2026年10月27日参照）。",
           "line": 67,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/germany-cash-reasons.svg",
           "alt": "現金が選ばれる理由として、支出の把握、プライバシー、停電や障害への強さ、子どものお金の学び、習慣の5つを示した図",
           "caption": "図解：J-Connect。ドイツ連邦銀行の調査（2023年・2025年）と月報（2025年4月）に基づく（2026年10月27日参照）。",
           "line": 87,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -339,14 +394,18 @@
           "alt": "10月31日の宗教改革記念日と11月1日の万聖節、6月の聖体祭が、州によって祝日かどうかが違うことを示した図",
           "caption": "図解：J-Connect。各州の祝日法と連邦内務省の資料に基づく概略図（2026年10月27日参照）。",
           "line": 71,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/nrw-public-holidays-2027.svg",
           "alt": "NRW州の2027年の祝日11日をカレンダー形式で並べ、土日と重なる日と木曜日の祝日を色分けした図",
           "caption": "図解：J-Connect。NRW州日曜・祝日法とケルン大司教区の移動祝日の一覧に基づく（2026年10月27日参照）。",
           "line": 88,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -362,14 +421,18 @@
           "alt": "水の硬さの3つの区分（軟らかい・中くらい・硬い）と、デュッセルドルフ約14°dH、ケルン15.6〜18.1°dHの位置を示した図",
           "caption": "図解：J-Connect。洗剤法第9条、デュッセルドルフ都市公社、ラインエネルギーの資料に基づく（2026年10月27日参照）。",
           "line": 89,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/tap-water-safe-habits.svg",
           "alt": "朝いちばんや旅行の後は、水が冷たくなるまで流してから飲む。古い建物では鉛管の有無を大家さんに確認する、という手順を示した図",
           "caption": "図解：J-Connect。連邦環境庁と消費者センターの資料に基づく（2026年10月27日参照）。",
           "line": 120,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -385,21 +448,29 @@
           "alt": "Kindergeld番号末尾と対象月から公式支給日を確認し、入金が見えない場合に口座と家族給付窓口の連絡を順番に確認する3ステップ図",
           "caption": "公式支給日表の使い方。支給日と支給額は別に確認します。",
           "line": 66,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/kindergeld-antragslos-2027-rollout.svg",
           "alt": "2027年の申請なし支給は第2子以降と第1子で段階的に始まる予定を示す図",
           "caption": "申請なし支給は段階導入で、条件を満たさない家庭には従来の案内・申請が必要になる場合があります。",
           "line": 92,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/birth-procedures-offices.svg",
           "alt": "出生地の戸籍登録所、子の居住地の窓口、保険者と勤務先、日本公館が担当する手続きを整理した図",
           "caption": "出生後の手続きは窓口が異なります。2027年の申請なし支給は条件付きで、対象外の場合は申請が必要です。",
           "line": 96,
-          "position": 4
+          "position": 4,
+          "quality_status": "pending_per_asset_visual_review",
+          "reuse_in_articles": 2,
+          "review_note": "Shared diagram, verify content/context before replacing",
+          "priority": "P3"
         }
       ]
     },
@@ -415,14 +486,18 @@
           "alt": "2027年5月の木曜祝日、翌金曜の休暇、土日をつないだ4連休の案内図",
           "caption": "木曜祝日と翌金曜の休暇申請で4連休にする計画例。休暇の承認は勤務先の規則によります。",
           "line": 32,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/nrw-public-holidays-2027-weekend-overlaps.svg",
           "alt": "2027年に週末と重なる4つの祝日を示す案内図",
           "caption": "メーデー、ドイツ統一の日、クリスマスの祝日は週末と重なります。自動振替を前提にせず勤務先の規則を確認してください。",
           "line": 67,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -438,14 +513,18 @@
           "alt": "NRWの学校休暇に州共通の日程と学校ごとの移動休日があることを示す図",
           "caption": "州共通カレンダーに加えて、学校から配布される年間予定表も確認してください。",
           "line": 53,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/nrw-school-kita-closures.svg",
           "alt": "学校休暇とKitaの休園日は別の予定表で確認する必要があることを示す比較図",
           "caption": "勤務先への休暇申請前に、学校と保育施設の両方の日程を確認します。",
           "line": 61,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -461,14 +540,18 @@
           "alt": "最低賃金14.60ユーロと法定計算式から月633ユーロを導く計算図",
           "caption": "J-Connect作成の計算図。数値は本文の公式情報と法定式から算出。",
           "line": 51,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/minijob-insurance-checklist.svg",
           "alt": "税金の書類、年金保険を表す盾、健康保険を表す十字の3つのアイコン図",
           "caption": "J-Connect作成の模式図。加入や税額を保証するものではありません。",
           "line": 109,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -484,14 +567,18 @@
           "alt": "12月24日から27日までの営業日を確認するカレンダー図",
           "caption": "J-Connect作成のカレンダー図。実際の営業時間は各店舗の案内で確認してください。",
           "line": 46,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/living/seo/nrw-christmas-checklist-2026.svg",
           "alt": "買い物、薬局の緊急当番、公共交通の確認先をまとめたチェックリスト図",
           "caption": "J-Connect作成の模式図。実際の営業状況や運行情報は公式案内を確認してください。",
           "line": 73,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -507,14 +594,18 @@
           "alt": "年間の積み立て額のうち最初の360ユーロには50％、360ユーロから1,800ユーロまでには25％の補助が付き、合計で最大540ユーロになることを示した図",
           "caption": "図解：J-Connect。連邦財務省の資料に基づく（2026年10月29日参照）。",
           "line": 75,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/altersvorsorgedepot-timeline.svg",
           "alt": "2026年3月の連邦議会の可決、5月8日の連邦参議院の承認、2027年1月1日の新制度の開始と、既存のリースター契約は継続でき新規契約は2027年から不可という流れを示した図",
           "caption": "図解：J-Connect。連邦議会、連邦財務省、ドイツ年金保険の資料に基づく（2026年10月29日参照）。",
           "line": 91,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -530,14 +621,18 @@
           "alt": "1961年8月13日の建設開始、全長約155km（街の中約43km、西ベルリンの周り約112km）、1989年11月9日の開放、1990年10月3日のドイツ統一までを示した年表",
           "caption": "図解：J-Connect。ベルリンの壁財団と連邦政治教育センターの資料に基づく（2026年10月29日参照）。",
           "line": 64,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/berlin-wall-structure.svg",
           "alt": "壁は1枚ではなく、東側から内側の壁、見張りの塔、照明と監視の通路、車止め、西ベルリンに面したコンクリートの壁が何重にも並んでいた構造を示した断面の概略図",
           "caption": "図解：J-Connect。ベルリンの壁の構造を簡略化して示した概略図で、場所によって構造は異なります。",
           "line": 90,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -553,14 +648,18 @@
           "alt": "車を選び、自動車保険に申し込んでeVBの番号を受け取り、市の登録窓口で登録してナンバープレートを付け、自動車税は口座から引き落とされるという5つの手順を示した図",
           "caption": "図解：J-Connect。ADACとデュッセルドルフ市の資料に基づく（2026年10月29日参照）。",
           "line": 62,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/car-inspection-intervals.svg",
           "alt": "乗用車の車検は新車が最初の登録から3年後、その後は2年ごとで、ナンバープレートのステッカーで次の年と月が分かり、期限から2か月を超えると細かい検査が必要になることを示した図",
           "caption": "図解：J-Connect。ADACの資料に基づく（2026年10月29日参照）。",
           "line": 94,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -576,14 +675,18 @@
           "alt": "2022年3月1日以降に結んだ契約は、最長2年の最初の期間の後、1か月前の通知でいつでも解約でき、2022年2月までの古い契約は自動で最長1年延長され、解約の通知は最長3か月前までという違いを示した図",
           "caption": "図解：J-Connect。消費者センターと連邦司法・消費者保護省の資料に基づく（2026年10月29日参照）。",
           "line": 58,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/contract-cancel-steps.svg",
           "alt": "契約の解約は、契約を結んだ日と最初の期間を確認し、解約ボタンか文書で通知し、できるだけ早い日付での解約と書き、会社からの確認を保存するという4つの手順を示した図",
           "caption": "図解：J-Connect。消費者センターの資料に基づく（2026年10月29日参照）。",
           "line": 85,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -599,14 +702,18 @@
           "alt": "保険の1年が1月1日に始まる契約は、11月30日までに解約の通知が保険会社に届いている必要があり、2026年の11月30日は月曜日、値上げの通知を受け取った場合は受け取ってから1か月以内に特別な解約ができることを示した図",
           "caption": "図解：J-Connect。消費者センターとADACの資料に基づく（2026年10月29日参照）。",
           "line": 54,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/car-insurance-switch-steps.svg",
           "alt": "自動車保険の乗り換えは、今の契約を確認し、見積もりを比べ、新しい保険の契約が決まってから、古い保険を文書で解約するという4つの手順を示した図",
           "caption": "図解：J-Connect。ADACの資料に基づく（2026年10月29日参照）。",
           "line": 76,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -622,14 +729,18 @@
           "alt": "1164年の聖遺物の到着、1248年の礎石、16世紀初めの工事中断と塔の上のクレーン、1842年の工事再開、1880年の完成、1996年の世界遺産登録までを示した年表",
           "caption": "図解：J-Connect。ケルン大聖堂とドイツ・ユネスコ委員会の資料に基づく（2026年10月29日参照）。",
           "line": 74,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/cologne-cathedral-heights.svg",
           "alt": "南の塔は工事が止まったとき約58メートル、完成時の2本の塔は157メートル超で、1880年当時世界一高い建物だったことを比べた図",
           "caption": "図解：J-Connect。ケルン大聖堂の資料に基づく（2026年10月29日参照）。",
           "line": 88,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -645,14 +756,20 @@
           "alt": "公的保険では大人の歯の健診が年2回、歯石の除去が年1回、歯周病の検査が2年に1回受けられ、専門のクリーニングは原則自費で保険組合によって補助があることを示した図",
           "caption": "図解：J-Connect。消費者センターの資料に基づく（2026年10月29日参照）。",
           "line": 72,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "reuse_in_articles": 2,
+          "review_note": "Shared diagram, verify content/context before replacing",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/dentist-bonusheft.svg",
           "alt": "かぶせ物や入れ歯などの補助は標準的な治療の費用の60％が基本で、5年続けて健診を受けていれば70％、10年続けていれば75％になることを示した図",
           "caption": "図解：J-Connect。消費者センターの資料に基づく（2026年10月29日参照）。",
           "line": 82,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -668,14 +785,18 @@
           "alt": "日本の免許でドイツを運転できるのは住み始めてから6か月までで、その間に日本の免許のドイツ語訳を用意し、市の窓口で試験なしでドイツの免許に切り替え、数週間後に受け取るという流れを示した図",
           "caption": "図解：J-Connect。運転免許規則、ケルン市、在外公館の資料に基づく（2026年10月29日参照）。",
           "line": 68,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/japanese-license-expiry.svg",
           "alt": "日本の免許の期限が切れてから6か月以内なら手続きで再び受け取れ、6か月を超えて3年以内なら帰国から1か月以内の手続きで試験が免除され、3年を超えると取り直しになるが、ドイツなど外国の免許があれば期間を問わず試験が免除されることを示した図",
           "caption": "図解：J-Connect。警察庁の資料（道路交通法第97条の2）に基づく（2026年11月14日確認）。",
           "line": 99,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -691,14 +812,18 @@
           "alt": "2026年のEUブルーカードの年収の条件は原則5万700ユーロ以上、人手が足りない職業と卒業から3年以内の人は4万5,934.20ユーロ以上で、条件は毎年変わることを示した図",
           "caption": "図解：J-Connect。Make it in Germanyの資料に基づく（2026年10月29日参照）。",
           "line": 48,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/blue-card-conditions.svg",
           "alt": "EUブルーカードの主な条件は、ドイツの大学と同等と認められる学歴、学歴に合った専門職の仕事、2026年は原則5万700ユーロ以上の年収、ドイツの会社との雇用契約の4つであることを示した図",
           "caption": "図解：J-Connect。Make it in Germanyと滞在法の資料に基づく（2026年10月29日参照）。",
           "line": 69,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -714,14 +839,18 @@
           "alt": "日本国籍の配偶者や子どもは、ビザなしでドイツに入国し、住民登録をしてから外国人局で家族の呼び寄せの滞在許可を申請でき、配偶者は入国前のドイツ語の証明が原則不要であることを示した流れの図",
           "caption": "図解：J-Connect。連邦移民難民庁とMake it in Germanyの資料に基づく（2026年10月29日参照）。",
           "line": 44,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/family-reunification-documents.svg",
           "alt": "家族の滞在許可の申請では、家族側はパスポートと写真、住民登録の証明、婚姻証明書や出生証明書、健康保険の証明、呼び寄せる人側は滞在許可、収入の証明、賃貸契約書などがよく求められ、外国人局によって違うことを示した図",
           "caption": "図解：J-Connect。連邦移民難民庁とMake it in Germanyの資料に基づく（2026年10月29日参照）。",
           "line": 58,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -737,14 +866,18 @@
           "alt": "新型コロナワクチンの毎年の接種を標準とする年齢が60歳以上から75歳以上に変わり、持病のある人や介護施設の入居者などは引き続き対象、インフルエンザは60歳以上に毎年秋の接種が勧められていることを示した図",
           "caption": "図解：J-Connect。RKIの資料に基づく（2026年10月29日参照）。",
           "line": 57,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/vaccination-2026-27-cost.svg",
           "alt": "STIKOが勧めている人のワクチンは公的健康保険が負担し、勧告の対象外の健康な60歳未満のインフルエンザワクチンは保険組合ごとの判断になることを示した図",
           "caption": "図解：J-Connect。infektionsschutz.deの資料に基づく（2026年10月29日参照）。",
           "line": 80,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -760,14 +893,18 @@
           "alt": "1は「とてもよい」から6は「不十分」まで6段階の成績を並べ、4までが合格ライン、5と6は求められることにこたえていない成績であることを示した図",
           "caption": "図解：J-Connect。NRW州学校法第48条に基づく（2026年10月29日参照）。",
           "line": 67,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/german-school-grades-points.svg",
           "alt": "1〜6の成績と、ギムナジウム上級段階の0〜15点の対応を示し、プラス・ちょうど・マイナスがそれぞれの点数にあたることを示した図",
           "caption": "図解：J-Connect。KMKの協定に基づく（2026年10月29日参照）。",
           "line": 102,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -783,14 +920,18 @@
           "alt": "2026年7月2.8％、8月2.9％、9月3.3％と物価上昇率が高まり、9月はエネルギー14.9％、食品0.4％、サービス2.7％、コア2.4％だったことを示した図",
           "caption": "図解：J-Connect。連邦統計局の発表に基づく（2026年10月29日参照）。",
           "line": 63,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/fuel-tax-cut-october-2026.svg",
           "alt": "2026年10月1日から12月31日まで、ガソリンと軽油のエネルギー税が1リットルあたり14.04セント下がり、付加価値税を含めると約17セントの軽減になることを示した図",
           "caption": "図解：J-Connect。連邦政府と連邦議会の資料に基づく（2026年10月29日参照）。",
           "line": 93,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -806,14 +947,18 @@
           "alt": "19世紀初めの貧しい人のための庭、約200年前のカッペルンの最初の団体、1864年のライプツィヒのシュレーバー協会、1983年の連邦市民農園法、今の約86万7,000の庭までを示した年表",
           "caption": "図解：J-Connect。ドイツ市民農園連盟とライプツィヒ市の資料に基づく（2026年10月29日参照）。",
           "line": 68,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/kleingarten-rules.svg",
           "alt": "小屋は屋根のあるテラスを含めて24平方メートルまで、住むことはできない。庭は3分の1が畑、3分の1が休む場所、3分の1が小屋や通路という目安を示した図",
           "caption": "図解：J-Connect。連邦市民農園法とドイツ市民農園連盟の資料に基づく（2026年10月29日参照）。",
           "line": 88,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -829,14 +974,18 @@
           "alt": "家具付き物件は家具代を分けて書き、すべての家具がそろった物件は家賃の10％が目安、短期賃貸は原則6か月まで、インデックス賃料は物価上昇3％を超えた分は半分だけ反映という改正案の4つの柱を示した図",
           "caption": "図解：J-Connect。連邦司法・消費者保護省の資料に基づく（2026年10月29日参照）。",
           "line": 61,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/indexmiete-cap-example.svg",
           "alt": "物価が1年で5％上がった場合、3％までは全部、3％を超えた2％は半分の1％だけ反映され、家賃の値上げは合計4％までになるという計算例を示した図",
           "caption": "図解：J-Connect。連邦司法・消費者保護省の資料に基づく計算例（2026年10月29日参照）。",
           "line": 85,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -852,14 +1001,18 @@
           "alt": "カテゴリー2の花火は12月29日から31日の3日間だけ販売、打ち上げは12月31日と1月1日の2日間だけ、購入と使用は18歳以上という決まりをカレンダー形式で示した図",
           "caption": "図解：J-Connect。爆発物法第1施行令と連邦内務省の資料に基づく（2026年11月1日参照）。",
           "line": 64,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/silvester-fireworks-air.svg",
           "alt": "花火による微小粒子状物質は毎年約2,050トン、そのうち約75%が大晦日の夜に集中し、ドイツ全体のPM10の1%近くにあたることを示した図",
           "caption": "図解：J-Connect。連邦環境庁の資料に基づく（2026年11月1日参照）。",
           "line": 89,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -875,14 +1028,18 @@
           "alt": "グリューワインの条件として、赤・白・ロゼワインだけから作る、主にシナモンとクローブで香りをつける、アルコール7%以上、水を加えないの4つを示した図",
           "caption": "図解：J-Connect。EU規則第251/2014号と第2026/471号に基づく（2026年10月29日参照）。",
           "line": 65,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/gluehwein-label-sugar-kids.svg",
           "alt": "グリューワインには材料の一覧を書く義務がないこと、糖分は100ミリリットルあたり7.5〜9.5グラムの例があること、子どもには0.0%表示の飲み物を選ぶことを示した図",
           "caption": "図解：J-Connect。消費者センター（Lebensmittelklarheit）の資料に基づく（2026年10月29日参照）。",
           "line": 85,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -898,14 +1055,18 @@
           "alt": "日本の会社から5年以内の予定で派遣される人は適用証明書で日本の年金だけに入り、現地採用の人はドイツの年金に入り、両国の加入期間は年金を受け取る資格の判断で合わせて数えられることを示した図",
           "caption": "図解：J-Connect。日本年金機構と在外公館の資料に基づく（2026年10月29日参照）。",
           "line": 59,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/pension-refund-decision.svg",
           "alt": "ドイツの年金の払い戻しは、外国に住み任意加入の権利がない人が保険の義務がなくなってから24か月後に申請でき、日本国籍の人はドイツで60か月以上払うと対象外で、払い戻すと加入期間がなくなることを示した図",
           "caption": "図解：J-Connect。ドイツ年金保険の資料に基づく（2026年10月29日参照）。",
           "line": 91,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -921,14 +1082,20 @@
           "alt": "日本語で受診できる医療機関は、外務省「世界の医療事情」、在外公館の案内、116117の医師検索の言語の絞り込みの3つの方法で探し、受診前に電話で日本語の対応と予約を確かめることを示した図",
           "caption": "図解：J-Connect。外務省、在外公館、116117の資料に基づく（2026年10月29日参照）。",
           "line": 49,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/doctor-visit-preparation.svg",
           "alt": "日本語で受診できないときに備えて、症状のメモ、薬とアレルギーの一覧、健康保険証、付き添いの人を用意し、緊急時は112、夜間や休日で命の危険がないときは116117に連絡することを示した図",
           "caption": "図解：J-Connect。外務省と連邦保健省の資料に基づく（2026年10月29日参照）。",
           "line": 82,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "reuse_in_articles": 2,
+          "review_note": "Shared diagram, verify content/context before replacing",
+          "priority": "P3"
         }
       ]
     },
@@ -944,14 +1111,18 @@
           "alt": "解約の期間は原則4週間で月の15日か月末付け、試用期間中は2週間、会社から解約する場合は勤めた年数に応じて2年で1か月から20年で7か月まで長くなることを示した図",
           "caption": "図解：J-Connect。民法第622条に基づく（2026年10月29日参照）。",
           "line": 74,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/job-leaving-deadlines.svg",
           "alt": "退職の通知は紙に手書きで署名した書面で出す必要があり、解雇に納得できない場合は通知を受け取ってから3週間以内に労働裁判所に訴え、次の仕事が決まっていない場合は仕事が終わる3か月前、または分かってから3日以内に職業安定所へ届け出ることを示した図",
           "caption": "図解：J-Connect。民法、解雇保護法、連邦雇用エージェンシーの資料に基づく（2026年10月29日参照）。",
           "line": 105,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -967,14 +1138,18 @@
           "alt": "個人賠償責任保険はほぼ全員に必要で補償額は少なくとも1,000万ユーロ、家財保険は家財の価値が高い人に必要、自動車保険は車を持つ人の義務であることを3段階で示した図",
           "caption": "図解：J-Connect。消費者センターとStiftung Warentestの資料に基づく（2026年10月29日参照）。",
           "line": 47,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/insurance-claim-steps.svg",
           "alt": "事故が起きたときは、写真を撮る、相手の名前と連絡先を控える、保険会社に連絡する、修理の見積もりや領収書を保存する、という4つの手順を示した図",
           "caption": "図解：J-Connect。消費者センターの資料などに基づく（2026年10月29日参照）。",
           "line": 100,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -990,14 +1165,18 @@
           "alt": "プリペイドは先払いで身分証があれば使え、契約プランは口座引き落としで最初の期間は最長24か月、その後は1か月前の通知で解約できるという違いを示した図",
           "caption": "図解：J-Connect。電気通信法と消費者センターの資料に基づく（2026年10月29日参照）。",
           "line": 48,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/mobile-plan-checkpoints.svg",
           "alt": "スマホのプランを選ぶときは、電波のつながりやすさ、データ量、EUでの利用、日本への通話、eSIM、日本の電話番号のSMS認証を確認することを示した図",
           "caption": "図解：J-Connect。消費者センターと連邦ネットワーク庁の資料に基づく（2026年10月29日参照）。",
           "line": 74,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1013,14 +1192,18 @@
           "alt": "ネットで買った物は、受け取った日の翌日から14日以内に撤回をショップに伝え、撤回を伝えてから14日以内に物を送り返し、ショップは原則14日以内に返金することを示した流れの図",
           "caption": "図解：J-Connect。民法と消費者センターの資料に基づく（2026年10月29日参照）。",
           "line": 60,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/online-return-exceptions.svg",
           "alt": "撤回できない物の例として、注文に合わせて作った物、すぐに傷む食品や花、封を開けた衛生用品、封を開けたCDやソフト、新聞や雑誌を挙げ、お店で直接買った物には原則として撤回の権利がないことを示した図",
           "caption": "図解：J-Connect。民法第312g条に基づく（2026年10月29日参照）。",
           "line": 90,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1036,14 +1219,18 @@
           "alt": "在外選挙人名簿の登録は、日本を出る前に市区町村で申請する出国時申請と、ドイツに来てから在外公館で申請する在外公館申請の2つがあり、登録されると在外選挙人証が届き、それを使って投票することを示した図",
           "caption": "図解：J-Connect。総務省と外務省の資料に基づく（2026年10月29日参照）。",
           "line": 48,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/overseas-voting-methods.svg",
           "alt": "在外選挙の投票方法は、在外公館の会場で投票する在外公館投票、投票用紙を請求して郵便で送り返す郵便投票、一時帰国中に日本で投票する日本国内での投票の3つで、どれも在外選挙人証が必要であることを示した図",
           "caption": "図解：J-Connect。総務省の資料に基づく（2026年10月29日参照）。",
           "line": 64,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1059,14 +1246,18 @@
           "alt": "介護保険料率3.6％は据え置き、子どものいない人の上乗せは2027年から0.6％から0.9％へ、扶養の配偶者の分の上乗せ0.52％は2028年からという改革案の流れを示した図",
           "caption": "図解：J-Connect。連邦保健省の資料に基づく（2026年10月29日参照）。",
           "line": 61,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/pflegeversicherung-spouse-surcharge.svg",
           "alt": "扶養に入っている配偶者がいる場合、2028年から加入者の保険料に0.52％の上乗せがかかる案と、子どもがいる場合や配偶者が家族を介護している場合などの例外を示した図",
           "caption": "図解：J-Connect。連邦保健省のよくある質問に基づく（2026年10月29日参照）。",
           "line": 94,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1082,14 +1273,18 @@
           "alt": "2026年11月のカレンダーに、11月1日の万聖節、11月15日の国民哀悼の日、11月22日の死者の日曜日、11月29日の待降節の始まりを示した図",
           "caption": "図解：J-Connect。NRWの祝日の法律とデュッセルドルフ市の案内に基づく（2026年11月6日参照）。",
           "line": 54,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/quiet-holidays-time-rules.svg",
           "alt": "万聖節と死者の日曜日は朝5時から18時まで市場や娯楽の催しが禁止、国民哀悼の日は市場やスポーツの催しが13時まで、音楽や娯楽の催しとダンスは18時まで禁止されることを時間の帯で示した図",
           "caption": "図解：J-Connect。デュッセルドルフ市の案内とNRWの祝日の法律に基づく（2026年11月6日参照）。",
           "line": 72,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1105,14 +1300,18 @@
           "alt": "本帰国の手続きを、3か月前の住まいの解約通知、1〜2か月前の契約の解約、出発前後2週間の住民登録の抹消、帰国後14日以内の転入届・国民年金・国民健康保険、帰国後しばらくしてからの税金と口座の順に並べた時期別の図",
           "caption": "図解：J-Connect。連邦住民登録法、民法、日本年金機構などの資料に基づく（2026年10月29日参照）。",
           "line": 55,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/returning-to-japan-two-sides.svg",
           "alt": "本帰国の手続きを、ドイツ側の住民登録の抹消、放送負担金、健康保険、銀行、年金、税金と、日本側の帰国届、転入届、国民年金、国民健康保険に分けて、手続きの先と期限を示した図",
           "caption": "図解：J-Connect。外務省、日本年金機構、厚生労働省などの資料に基づく（2026年10月29日参照）。",
           "line": 120,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1128,14 +1327,18 @@
           "alt": "1956年の最盛期（生産1億2,460万トン、炭鉱で働く人約48万5,000人）、1958年の危機の始まり、1970年の約19万人、1986年のツォルフェアアインの閉山、2001年の世界遺産登録、2018年の最後の炭鉱の閉山までを示した年表",
           "caption": "図解：J-Connect。連邦政治教育センター、LWL、ツォルフェアアイン、ルール地域連合の資料に基づく（2026年10月29日参照）。",
           "line": 68,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/zollverein-facts.svg",
           "alt": "ツォルフェアアイン炭鉱の操業期間1851〜1986年、第12立坑の操業開始1932年、世界遺産登録2001年12月14日、年間約150万人の来場者を示した図",
           "caption": "図解：J-Connect。ドイツ・ユネスコ委員会とツォルフェアアインの資料に基づく（2026年10月29日参照）。",
           "line": 90,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1151,14 +1354,18 @@
           "alt": "12月5日の夜に靴を置き、6日の朝にお菓子が入っている流れと、ニコラウスの伝説（3つの金の玉、船乗りの守護聖人）を示した図",
           "caption": "図解：J-Connect。katholisch.deとケルン大司教区の資料に基づく（2026年10月29日参照）。",
           "line": 70,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/weckmann-rhineland.svg",
           "alt": "ヴェックマンはレーズンの目と陶器のパイプが付いた人の形のパンで、地域によってシュトゥーテンケールなどと呼ばれ、もとは司教ニコラウスの姿を表していたことを示した図",
           "caption": "図解：J-Connect。LVR（ラインラント地域連合）の資料に基づく（2026年10月29日参照）。",
           "line": 88,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1174,14 +1381,18 @@
           "alt": "現地校はドイツ語で授業料無料、日本人学校は日本語で日本の学校と同じ内容、補習授業校は現地校に通いながら日本語で学ぶ、インターナショナルスクールは主に英語という4つの選び方を比べた図",
           "caption": "図解：J-Connect。NRW州学校省と海外子女教育振興財団の資料に基づく（2026年10月29日参照）。",
           "line": 50,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/nrw-school-structure.svg",
           "alt": "NRWの現地校は、小学校が1年生から4年生、5年生から10年生はハウプトシューレ、レアルシューレ、ギムナジウム、総合制学校、中等学校に分かれ、アビトゥーアは主にギムナジウムと総合制学校で目指すことを示した図",
           "caption": "図解：J-Connect。NRW州学校省の資料に基づく（2026年10月29日参照）。",
           "line": 72,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1197,14 +1408,18 @@
           "alt": "病気で休む朝は、すぐに会社に連絡し、3日を超えて続く場合は遅くとも4日目までに医師の診断書が必要で、公的保険の人の診断書は医師から保険組合へ電子で送られることを示した図",
           "caption": "図解：J-Connect。賃金継続支払法とTKの資料に基づく（2026年10月29日参照）。",
           "line": 60,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/child-sick-days-2026.svg",
           "alt": "子どもの看病手当は、親1人につき子ども1人あたり年15日、子どもが複数なら上限35日、ひとり親は子ども1人あたり30日で上限70日、対象は原則12歳未満の子どもであることを示した図",
           "caption": "図解：J-Connect。TKの資料に基づく（2026年10月29日参照）。",
           "line": 87,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1220,14 +1435,18 @@
           "alt": "公道の歩道、建物敷地内の共用通路、賃貸契約による当番の違いを示した図",
           "caption": "図解：J-Connect。NRW州法、連邦通常裁判所の判決、ドイツ借家人連盟の資料をもとに作成（2026年11月18日確認）。",
           "line": 85,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/snow-clearing-rules.svg",
           "alt": "デュッセルドルフ、ケルン、エルクラートの歩道幅・作業時間・塩の扱いを比較した図",
           "caption": "図解：J-Connect。各市の公式案内とエルクラート市の2026年1月版条例に基づく（2026年11月18日確認）。",
           "line": 120,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1243,14 +1462,18 @@
           "alt": "100ミリリットルあたり砂糖5グラム未満は課税なし、5〜8グラム未満は1リットル26セント、8グラム以上は1リットル32セントという2段階の税額を示した図",
           "caption": "図解：J-Connect。連邦財務省の発表に基づく（2026年10月29日参照）。",
           "line": 59,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/sugar-drink-tax-scope.svg",
           "alt": "砂糖入り飲料税の対象になる炭酸飲料、アイスティー、エナジードリンク、シロップなどと、対象外の甘味料入り飲料、牛乳や植物性ミルク、果汁100％ジュースを分けて示した図",
           "caption": "図解：J-Connect。連邦財務省の発表に基づく（2026年10月29日参照）。",
           "line": 80,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1266,14 +1489,18 @@
           "alt": "自分から出す確定申告は4年以内が期限で、2022年分は2026年12月31日、2023年分は2027年12月31日、2024年分は2028年12月31日、2025年分は2029年12月31日までという早見表",
           "caption": "図解：J-Connect。NRW州財務行政とELSTERの資料に基づく（2026年11月1日参照）。",
           "line": 62,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/tax-refund-voluntary-vs-mandatory.svg",
           "alt": "給与だけの会社員の多くは任意申告だが、夫婦双方が給与を受け取り一方に税区分V・VIまたはIVの係数方式が適用された場合などは申告義務となり、別の期限になることを示した図",
           "caption": "図解：J-Connect。ELSTER、所得税法第46条、NRW州財務行政などの資料に基づく（2026年11月1日参照）。",
           "line": 96,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1289,14 +1516,18 @@
           "alt": "ドアの上に書かれる「20*C+M+B+27」の読み方として、前後の数字が西暦2027年、C+M+Bは「キリストがこの家を祝福しますように」の頭文字、または三賢王の名前の頭文字であることを示した図",
           "caption": "図解：J-Connect。katholisch.deの資料に基づく（2026年10月29日参照）。",
           "line": 74,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/sternsinger-facts-2027.svg",
           "alt": "シュテルンジンガーの活動期間は12月27日から1月の第3金曜日まで、2026年の募金は約4,717万ユーロ、1959年からの合計は14億ユーロ超、2027年のテーマは「よい食事、強い子どもたち」であることを示した図",
           "caption": "図解：J-Connect。シュテルンジンガー（子ども宣教会）とドイツ・ユネスコ委員会の資料に基づく（2026年10月29日参照）。",
           "line": 84,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1312,14 +1543,18 @@
           "alt": "失業手当の条件として30か月のうち12か月以上の加入、金額は手取りの60％で子どもがいれば67％、期間は50歳未満で6か月から12か月、50歳以上は最長24か月であることを示した図",
           "caption": "図解：J-Connect。社会法典第3編と連邦雇用エージェンシーの資料に基づく（2026年10月29日参照）。",
           "line": 70,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/unemployment-benefit-steps.svg",
           "alt": "仕事が終わることが分かったら、3か月前までに求職者として届け出て、遅くとも失業の初日に失業の届け出をし、自分から辞めた場合は最長12週間止められることがあるという流れを示した図",
           "caption": "図解：J-Connect。連邦雇用エージェンシーの資料に基づく（2026年10月29日参照）。",
           "line": 85,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1335,14 +1570,18 @@
           "alt": "休暇はその年の12月31日までに取るのが原則で、会社の事情や病気などの特別な理由がある場合だけ翌年3月31日まで持ち越せ、会社が休暇を取るよう促して消えることを知らせていなければ休暇は消えないことを示した図",
           "caption": "図解：J-Connect。連邦休暇法と連邦労働裁判所の判決に基づく（2026年10月29日参照）。",
           "line": 60,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/vacation-sick-and-leaving.svg",
           "alt": "退職などで仕事が終わり休暇を取れなかった場合は残った休暇がお金で支払われ、休暇中に病気になって医師の診断書がある日は休暇として数えないことを示した図",
           "caption": "図解：J-Connect。連邦休暇法に基づく（2026年10月29日参照）。",
           "line": 84,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1358,14 +1597,18 @@
           "alt": "住宅手当の改正案として、2027年の定期的な引き上げの見送り、暖房費の分の半減、計算式の変更、手続きの簡素化の4点と、国の支出が2027年に約11.56億ユーロ、2028年に約14.86億ユーロ減る見込みを示した図",
           "caption": "図解：J-Connect。連邦議会の資料に基づく（2026年10月29日参照）。",
           "line": 67,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/wohngeld-reform-timeline.svg",
           "alt": "2026年10月の連邦議会での第1読会、その後の委員会での審議と議決、連邦参議院の同意を経て、2027年1月1日の施行を目指すという今後の流れを示した図",
           "caption": "図解：J-Connect。連邦議会の資料に基づく（2026年10月29日参照）。",
           "line": 88,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1381,14 +1624,18 @@
           "alt": "かつての王の広間である市庁舎と、宮廷礼拝堂である大聖堂の間に、宮殿の中庭だったカッチュホーフがあり、マルクト広場や大聖堂周辺とともに屋台が並ぶことを示す模式図",
           "caption": "図解：J-Connect。アーヘン観光局の解説に基づく模式図で、縮尺や実際の形とは異なります（2026年10月30日参照）。",
           "line": 49,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/aachen-christmas-market-2026-hours.svg",
           "alt": "通常は毎日11時から21時、11月22日は18時から、12月12日は22時まで、最終日の12月23日は20時までであることを示す図",
           "caption": "図解：J-Connect。アーヘン市、アーヘン観光局、主催団体MACの案内に基づく（2026年11月21日参照）。",
           "line": 80,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -1404,14 +1651,18 @@
           "alt": "モーターボート、帆船、大型ヨット、ダイビング、サーフィン、カヌーなど、ホールごとに分かれた主な分野と楽しみ方を示した図",
           "caption": "図解：J-Connect。主催者の案内に基づく（2026年10月30日参照）。ホールの割り当ては年によって変わります。",
           "line": 61,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/boot-duesseldorf-2027-tickets.svg",
           "alt": "1日券23ユーロ、割引16ユーロ、平日14時から18時の午後券13ユーロ、子どもの無料の条件を比べ、平日午後と週末の過ごし方の違いを示した図",
           "caption": "図解：J-Connect。主催者の入場券の案内に基づく（2026年10月30日参照）。",
           "line": 78,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1427,14 +1678,18 @@
           "alt": "大聖堂前は大聖堂を見上げる広場で大きなツリーと光の天蓋、舞台の催しがある。天使の市場はノイマルクト広場で星の灯りと手仕事の品。旧市街は小人の伝説がテーマで、ホイマルクトにスケートリンクがあることを示す図",
           "caption": "図解：J-Connect。主催者、ケルン観光局、koeln.deの案内に基づく（2026年10月30日参照）。",
           "line": 53,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/cologne-christmas-markets-2026-periods.svg",
           "alt": "大聖堂前と天使の市場は2026年11月16日から12月23日まで（11月22日は休業）、旧市街の市は11月23日開始予定で、スケートリンクのある会場は2027年1月10日まで続く予定であることを示す図",
           "caption": "図解：J-Connect。主催者、ケルン観光局、koeln.deの案内に基づく（2026年10月30日参照）。",
           "line": 86,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -1450,14 +1705,18 @@
           "alt": "現代美術、街の歴史、世界の文化、20世紀の記憶、気軽に楽しむ館の5つに参加施設を分け、組み合わせ方の例を示した図",
           "caption": "図解：J-Connect。ミュージアムナイト公式サイトのプログラムに基づく（2026年10月30日参照）。参加施設と催しは変わることがあります。",
           "line": 65,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/cologne-museumsnacht-2026-evening.svg",
           "alt": "18時から1館目、移動をはさんで20時から2館目、21時半ごろに休憩、22時過ぎから3館目、23時半以降は帰りの交通に余裕を持たせるという時間配分の例を示した図",
           "caption": "図解：J-Connect。時間配分は一例です。各館の催しの時間は公式サイトのプログラムで確認してください。",
           "line": 73,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1473,14 +1732,18 @@
           "alt": "2026年の会場構成として、第1・第2ホールが旧車、第3・5・6・7ホールが性能を高めた車と改造・ライフスタイル、第8ホールがモータースポーツであることを示した図",
           "caption": "図解：J-Connect。主催者の2026年の発表に基づく（2026年10月30日参照）。ホールの割り当ては変わることがあります。",
           "line": 63,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/essen-motor-show-2026-calendar.svg",
           "alt": "平日は10時から18時、プレビューデーと土日は9時から18時であることを、2026年11月27日から12月6日までのカレンダーで示した図",
           "caption": "図解：J-Connect。主催者の案内に基づく（2026年10月30日参照）。",
           "line": 80,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1496,14 +1759,18 @@
           "alt": "1530年ごろの宗教改革後の贈り物の習慣の変化、1678年の最古の記録、1898年の移転と1933年の中央広場への復帰、1969年からのクリストキントの選出、2026年11月27日の開幕、2028年の350周年を並べた年表",
           "caption": "図解：J-Connect。ニュルンベルク市と公式サイトの資料に基づく（2026年10月30日参照）。",
           "line": 65,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/nuremberg-christkindlesmarkt-specialties.svg",
           "alt": "スパイスとナッツの焼き菓子レープクーヘン、小さなパンに3本挟む細い焼きソーセージ、干しプラムとナッツで作る人形の3つの名物を紹介する図",
           "caption": "図解：J-Connect。名物のイメージを表したもので、特定の店や商品を再現していません。",
           "line": 77,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -1519,14 +1786,18 @@
           "alt": "旧市街のホイマルクトやアルター・マルクト周辺は6時ごろから22時ごろまで通行止めで、ドーム／中央駅、ノイマルクト、ドイツ駅／メッセの停留所が勧められていること、ツュルピッヒャー通り周辺は深夜まで通行止めであること、大学そばの緑地では8時から22時までガラス容器が禁止されることを示す概略図",
           "caption": "図解：J-Connect。ケルン市の交通規制の案内、2026年2月5日の告示、11月2日の発表に基づく概略図（2026年11月9日参照）。",
           "line": 86,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/cologne-carnival-2026-27-street-week.svg",
           "alt": "2027年2月4日の女性のカーニバルの日のヤンとグリートの劇、6日夜の幽霊の行列、7日の学校と地区の行列、8日のバラの月曜日の大行列、9日のすみれの火曜日、10日の灰の水曜日までの流れを示す図",
           "caption": "図解：J-Connect。ケルン市とケルン・カーニバル祭典委員会の案内に基づく（2026年10月31日参照）。",
           "line": 109,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -1542,14 +1813,18 @@
           "alt": "11月11日にマスタードの壺から目覚めたホッペディッツが演説で市政を皮肉り、2月の街頭カーニバルを経て、灰の水曜日の「お葬式」で眠りにつく1年の流れを示す循環図",
           "caption": "図解：J-Connect。デュッセルドルフ・カーニバル委員会、デュッセルドルフ観光局、デュッセルドルフ市の案内に基づく（2026年10月31日参照）。",
           "line": 77,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/duesseldorf-carnival-2026-27-season.svg",
           "alt": "2026年11月11日のホッペディッツの目覚めから、13日の王子とヴェネツィアの式典、14日の子どものホッペディッツの目覚め、1月7日のテレビ中継のシッツング、2027年2月4日から10日までの街頭カーニバルの催しを示す図",
           "caption": "図解：J-Connect。デュッセルドルフ・カーニバル委員会の催し案内に基づく（2026年10月31日参照）。",
           "line": 94,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -1565,14 +1840,18 @@
           "alt": "ジャンダルメンマルクトは白いテントと舞台で入場料あり、シャルロッテンブルク宮殿前は2007年からの宮殿の市、赤の市庁舎前は観覧車とスケートリンク、記念教会前は100を超える屋台と追悼の場、ルチア市は北欧風の市であることを示す図",
           "caption": "図解：J-Connect。ベルリン観光局、ベルリン市、ルチア市主催者の案内に基づく（2026年11月1日参照）。",
           "line": 59,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/berlin-christmas-markets-2026-periods.svg",
           "alt": "ベルリンの主な五つの市の期間比較。記念教会前は11月13日から1月1日まで、ほかは11月23日から始まり、ルチア市は12月22日、シャルロッテンブルクは12月27日、ジャンダルメンマルクトは12月31日、赤の市庁舎は1月3日まで",
           "caption": "図解：J-Connect。ベルリン観光局と各主催者の案内に基づく（2026年11月21日参照）。",
           "line": 105,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -1588,14 +1867,18 @@
           "alt": "ドイツから日本へ、手紙・はがきは11月25日、小包は11月26日、Expressは12月18日が2026年の最終差出日であることを示したカレンダー図",
           "caption": "図解：J-Connect。根拠：Deutsche Post・DHLの2026年クリスマス最終差出日（ヨーロッパ以外あて）。2026年11月18日確認。",
           "line": 63,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/living/seo/japan-parcel-checklist.svg",
           "alt": "日本向けの小包を出す前に、送れない物の確認、梱包、国際用の料金、完全な住所、税関申告書CN22/CN23の5点を確認するチェックリスト図",
           "caption": "図解：J-Connect。根拠：DHLの海外発送チェックリスト・税関情報、ドイツ税関の案内。2026年11月18日確認。",
           "line": 123,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -1611,14 +1894,18 @@
           "alt": "1434年の市の始まり、1474年のシュトレンの最初の記録、1491年のバターの使用許可、1994年に始まったシュトレン祭り、1999年のピラミッドのギネス認定、EUの地理的表示保護（現在）、2026年の第592回の開催を並べた年表",
           "caption": "図解：J-Connect。ドレスデン市、公式サイト、シュトレン保護協会の資料に基づく（2026年10月31日参照）。",
           "line": 61,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/dresden-striezelmarkt-symbols.svg",
           "alt": "金色の認証シールが目印のドレスデンのシュトレン、高さ約14.6メートルの多段の木のピラミッド、12月5日のシュトレン祭りの三つを紹介する図",
           "caption": "図解：J-Connect。イメージを表したもので、実際の認証シールや会場を再現していません。",
           "line": 78,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1634,14 +1921,18 @@
           "alt": "EESは国境で出入国を電子記録する仕組み、ETIASは出発前の渡航認証であることを比較した図",
           "caption": "",
           "line": 54,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/ees-entry-border-flow.svg",
           "alt": "シェンゲン圏外から最初に入るEES参加国の外部国境で本人確認と電子記録が行われる流れ",
           "caption": "",
           "line": 60,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1657,14 +1948,18 @@
           "alt": "1393年の最初の記録、地元の商人だけが出店した時代、19世紀に広まったクリスマスツリー、1838年の焼き菓子ベートマンヒェンの言い伝え、19世紀後半まで続いたおもちゃの買い物、2026年11月23日の開幕を並べた年表",
           "caption": "図解：J-Connect。フランクフルト市と観光局の資料に基づく（2026年10月31日参照）。",
           "line": 47,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/frankfurt-christmas-market-specialties.svg",
           "alt": "アーモンドを三つ貼ったマジパン菓子ベートマンヒェン、干しプラムとクルミの人形、旧ニコライ教会の塔から響く金管の演奏の三つを紹介する図",
           "caption": "図解：J-Connect。名物のイメージを表したもので、特定の店や商品を再現していません。",
           "line": 66,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -1680,14 +1975,18 @@
           "alt": "市庁舎前の市は空飛ぶサンタとおもちゃ通り、ユングフェルンシュティークは白いテントと湖のツリーと1899年の観覧車、ザンクト・パウリは歓楽街の大人向けの市であることを示す図",
           "caption": "図解：J-Connect。ハンブルク市の案内に基づく（2026年11月1日参照）。",
           "line": 59,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/hamburg-christmas-markets-2026-periods.svg",
           "alt": "ハンブルクの主な市と冬のドームの2026年の期間を横棒で比較した図。サンタ・パウリは11月9日から、ユングフェルンシュティークは11月18日から、市庁舎前は11月23日から、いずれも12月23日まで。冬のドームは11月6日から12月6日まで",
           "caption": "図解：J-Connect。ハンブルク市の案内に基づく（2026年11月1日参照）。",
           "line": 101,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -1703,14 +2002,18 @@
           "alt": "マリエン広場の市は14世紀にさかのぼり1972年から市庁舎前で開催、ツリーは1977年から毎年違う自治体が寄贈し2026年はザウアーラッハ、クリッペ市は1757年から、クランプスの行列は12月13日であることを示す図",
           "caption": "図解：J-Connect。ミュンヘン市の案内に基づく（2026年11月21日参照）。",
           "line": 69,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/munich-christmas-markets-2026-periods.svg",
           "alt": "ミュンヘンの主な7つの市の2026年の期間を横棒で比較した図。レジデンツは11月16日から、マリエン広場は11月20日から12月24日まで、11月22日は休業",
           "caption": "図解：J-Connect。ミュンヘン市の案内に基づく（2026年11月21日参照）。",
           "line": 124,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -1726,21 +2029,27 @@
           "alt": "モンシャウ、ミュンスター、メローデ城、ファルケンブルフの洞窟の市、マーストリヒトの2026年の開催期間を、11月から1月初めまでの帯で並べた図。モンシャウは4つの週末だけ、ファルケンブルフは最も長く続く",
           "caption": "図解：J-Connect。各公式サイトの2026年の案内に基づく（2026年11月1日参照）。",
           "line": 73,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/valkenburg-cave-christmas-market-cross-section.svg",
           "alt": "石灰岩の洞窟の通路に屋台が並ぶ様子と、地上の町、城跡の位置関係を表した断面のイメージ図。2つの洞窟の市は町の中心から歩いて行ける",
           "caption": "図解：J-Connect。クリスマスの町ファルケンブルフ公式サイトの説明に基づくイメージで、実際の洞窟の形や縮尺とは異なります。",
           "line": 136,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/nrw-christmas-day-trips-2026-character.svg",
           "alt": "5つの行き先を「町並み」「歴史」「子ども向け」「雨の日」「スケート・観覧車」の観点で比べた図。洞窟の市は雨の日と子ども向けに、ミュンスターとモンシャウは町並みに、メローデ城は歴史と子ども向けに、マーストリヒトはスケートと観覧車に強い",
           "caption": "図解：J-Connect。各公式サイトの説明をもとにJ-Connect編集部が整理したもので、優劣を示すものではありません。",
           "line": 171,
-          "position": 4
+          "position": 4,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -1756,14 +2065,18 @@
           "alt": "ケルン旧市街のリンクが2026年11月23日から2027年1月10日まで、エッセン・ツォルフェアアインのリンクが12月5日から1月6日まで開くことと、NRW州のクリスマス休暇（12月23日〜1月6日）の重なりを示す図。12月24日・25日はどちらも休み",
           "caption": "図解：J-Connect。各リンクの公式サイトと、NRW州の学校休暇の案内に基づく（2026年11月1日参照）。",
           "line": 53,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/nrw-ice-rinks-2026-27-family-costs.svg",
           "alt": "ケルン旧市街とツォルフェアアインのリンクについて、大人・子ども・家族券・貸し靴の料金と、子ども向けの工夫（月曜の子どもの日、補助用のペンギン）を並べて比べた図",
           "caption": "図解：J-Connect。各リンクの公式サイトの2026/27年料金に基づく（2026年11月1日参照）。手数料や割引の条件は公式サイトで確認してください。",
           "line": 102,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -1779,14 +2092,18 @@
           "alt": "2026年の聖マルティン祭は11月11日だが、地域のランタン行列は前後の日に開かれることを示す図",
           "caption": "図解：J-Connect作成。自治体の2026年発表に基づく。",
           "line": 48,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/st-martin-day-germany-checklist.svg",
           "alt": "初めてランタン行列に参加する前に確認したい5項目を示す図",
           "caption": "図解：J-Connect作成。参加前の確認事項を整理したものです。",
           "line": 77,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1802,14 +2119,18 @@
           "alt": "1507年の屋台使用料の権利、その後に生まれたクリスマス前の火曜から土曜の幼子キリストの市、1692年の最初の記録、現在の約250の屋台と年間350万〜400万人の来場、2026年11月25日の開幕を並べた年表",
           "caption": "図解：J-Connect。公式サイトの資料に基づく（2026年10月31日参照）。",
           "line": 51,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/stuttgart-christmas-market-highlights.svg",
           "alt": "屋台の屋根に載る手づくりの冬景色、旧宮殿の中庭で行われる開幕式、蒸気機関車に乗れる子どものメルヘンランドの三つの見どころを紹介する図",
           "caption": "図解：J-Connect。見どころのイメージを表したもので、実際の屋台や建物を再現していません。",
           "line": 68,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -1833,14 +2154,18 @@
           "alt": "2026年分の確定申告の時間軸。2027年1月から提出でき、義務の申告は2027年8月2日、税理士などに依頼した場合は2028年2月29日、任意の申告は2030年12月31日が期限であることを示す図",
           "caption": "図解：J-Connect。根拠：租税通則法第108条・第149条・第169条・第170条。2026年11月5日確認。",
           "line": 65,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/tax-return-mandatory-or-voluntary.svg",
           "alt": "申告が必要か判断する流れ図。夫婦の税区分が3と5などの組み合わせか、給与以外の収入や給付が410ユーロを超えたか、複数の勤務先があったかを順に確認し、どれにも当たらなければ任意の申告になることを示す",
           "caption": "図解：J-Connect。所得税法第46条第2項の代表的な条件を簡略化したもので、すべての条件を網羅していません。2026年11月5日確認。",
           "line": 97,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1856,14 +2181,18 @@
           "alt": "永住許可までの5つのルートを比べた図。一般は5年・年金60か月・B1、専門人材は3年・36か月・B1、EUブルーカードは27か月でA1または21か月でB1、ドイツ人の配偶者は3年・B1",
           "caption": "図解：J-Connect。根拠：滞在法第9条・第18c条・第28条。代表的なルートのみで、すべてではありません。2026年11月5日確認。",
           "line": 68,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/permanent-residence-checklist.svg",
           "alt": "永住許可の準備チェックリスト図。カードの条文番号、年金の加入月数、ドイツ語と社会の知識の証明、収入と住居の書類を確認し、取得後は6か月以上の出国に注意することを示す",
           "caption": "図解：J-Connect。根拠：滞在法第9条・第18c条・第51条。必要書類は外国人局により異なります。2026年11月5日確認。",
           "line": 171,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1879,14 +2208,18 @@
           "alt": "職業訓練のしくみの図。訓練先の会社で週3〜4日働き、職業学校で週1〜2日学び、修了試験で国家資格を取るという流れと、毎月の手当を示す",
           "caption": "図解：J-Connect。根拠：職業訓練法。週の配分は職業や地域で異なります。2026年11月6日確認。",
           "line": 51,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/ausbildung-path.svg",
           "alt": "職業訓練の流れの図。ドイツ語B1を準備、訓練先に応募して契約、職業訓練の滞在許可を申請、2〜3年半の訓練、修了試験、就職して専門人材の滞在許可に切り替える流れを示す",
           "caption": "図解：J-Connect。根拠：滞在法第16a条・第17条・第18a条・第20条。2026年11月6日確認。",
           "line": 117,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1902,14 +2235,18 @@
           "alt": "ドイツで自転車に乗るときの過料の例の図。信号無視60ユーロ、1秒以上の赤信号で100ユーロ、運転中のスマートフォン55ユーロ、歩道の走行25〜55ユーロ、ライトの不備20ユーロ、ベルの不備15ユーロを示す",
           "caption": "図解：J-Connect。根拠：過料一覧規則の別表（2026年11月時点）。危険を生じさせた場合などは増額されます。2026年11月6日確認。",
           "line": 53,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/bicycle-equipment-germany.svg",
           "alt": "ドイツの自転車に必要な装備の図。前の白いライトと反射板、後ろの赤いライトと反射板、ペダルと側面の反射板、ベル、2つの独立したブレーキを並べ、違反は20ユーロ・ベルは15ユーロであることを示す",
           "caption": "図解：J-Connect。根拠：車両登録規則第64a条・第65条・第67条、過料一覧規則の別表。2026年11月6日確認。",
           "line": 133,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1925,14 +2262,18 @@
           "alt": "チャンスカードの点数表の図。資格の部分的な認定4点、ドイツ語B2が3点・B1が2点・A2が1点、職務経験5年3点・2年2点、35歳以下2点などを示し、合計6点以上で条件を満たす",
           "caption": "図解：J-Connect。根拠：滞在法第20b条と別表。2026年11月6日確認。",
           "line": 49,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/chancenkarte-flow.svg",
           "alt": "チャンスカードの流れの図。日本で申請、ドイツで仕事を探す（週20時間まで働ける）、仕事が見つかったら専門人材・ブルーカードなどに切り替え、見つからなければ期限内に出国、という流れを示す",
           "caption": "図解：J-Connect。根拠：滞在法第20a条。2026年11月6日確認。",
           "line": 123,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1948,14 +2289,18 @@
           "alt": "教会税がかかるかどうかの判断の図。住民登録の宗教欄にカトリックやプロテスタントと登録されると給与から教会税、仏教・無宗教などは対象外、間違いがあれば住民登録の窓口と税務署に訂正を求める流れを示す",
           "caption": "図解：J-Connect。根拠：所得税法第51a条、連邦住民登録法第3条。2026年11月6日確認。",
           "line": 43,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/church-tax-leaving-steps.svg",
           "alt": "教会から離脱する手続きの図。州ごとの届け出先を確認、本人が窓口で届け出、手数料を払う、離脱の証明を受け取る、給与明細から教会税が消えたか確認、という流れを示す",
           "caption": "図解：J-Connect。根拠：ノルトライン＝ヴェストファーレン州司法省の案内、所得税法第51a条。届け出先と費用は州により異なります。2026年11月6日確認。",
           "line": 100,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1971,14 +2316,18 @@
           "alt": "ドイツ国籍の取得と永住許可を比べた図。国籍の取得は日本国籍を失うが選挙権とEU内の自由な移動がある。永住許可は日本国籍を保てるが、6か月を超える出国で失効することがある",
           "caption": "図解：J-Connect。根拠：ドイツ国籍法第10条・第38条、滞在法第9条・第51条、日本の国籍法第11条。2026年11月6日確認。",
           "line": 62,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/child-nationality-germany-japan.svg",
           "alt": "ドイツで生まれた子どもの国籍の流れ。親が5年以上合法的に住み期限のない滞在権を持つと子どもはドイツ国籍を取得し、3か月以内の国籍留保で日本国籍を保てる。その後は日本の法律で国籍の選択が必要になる",
           "caption": "図解：J-Connect。根拠：ドイツ国籍法第4条、日本の国籍法第12条・第14条、戸籍法第104条。2026年11月6日確認。",
           "line": 140,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -1994,14 +2343,18 @@
           "alt": "出生前の手取りと育児給付の割合を示すグラフ。手取り1,000ユーロ未満は最大100％まで上がり、1,000〜1,200ユーロは67％、1,240ユーロ以上は65％で、月額は300ユーロから1,800ユーロの範囲になる",
           "caption": "図解：J-Connect。根拠：連邦両親手当・育児休業法第2条。金額は法律の計算方法による概算で、実際の決定額とは異なる場合があります。2026年11月6日確認。",
           "line": 94,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/elterngeld-plan-example.svg",
           "alt": "14か月の分け方の例を示す図。母親は生後1〜2か月が出産手当、3〜10か月が基本給付、父親は生後2か月目に1か月重ねて基本給付を受け、生後11〜14か月は両親とも週24〜32時間働いてパートナーボーナスを受ける計画",
           "caption": "図解：J-Connect。計画の一例で、各家庭の収入や勤務先の事情によって最適な分け方は異なります。根拠：連邦両親手当・育児休業法第4条・第4b条。2026年11月6日確認。",
           "line": 119,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2017,14 +2370,18 @@
           "alt": "労働契約で確認したい8項目の図。試用期間、予告期間、有給休暇、労働時間、給与と残業、有期か無期か、勤務地と仕事、労働協約を並べ、法律の最低ラインを示す",
           "caption": "図解：J-Connect。根拠：民法第622条、連邦休暇法、労働時間法、証明書法。2026年11月6日確認。",
           "line": 66,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/dismissal-first-steps-germany.svg",
           "alt": "解雇されたときの流れの図。解雇の書面を受け取る、3週間以内に労働裁判所へ訴えるか検討、3日以内に雇用エージェンシーへ届け出、滞在許可の確認、勤務証明書を請求、という順番を示す",
           "caption": "図解：J-Connect。根拠：解雇保護法第1条・第4条・第23条、民法第623条、営業法第109条。2026年11月6日確認。",
           "line": 139,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2040,14 +2397,18 @@
           "alt": "ドイツの主な滞在許可を目的別に整理した図。就労、学ぶ、仕事を探す、家族、自営業の5つに分け、それぞれの代表的な許可と働ける範囲を示す",
           "caption": "図解：J-Connect。根拠：滞在法第16a条〜第21条、滞在令第41条。主な種類のみで、すべてではありません。2026年11月6日確認。",
           "line": 70,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/germany-visa-free-entry-steps.svg",
           "alt": "ビザなしで入国して滞在許可を取る流れの図。入国、住民登録、健康保険、90日以内の申請、電子滞在カードの受け取りの5段階と、ICTカードとチャンスカードは例外であることを示す",
           "caption": "図解：J-Connect。根拠：滞在令第41条・第45条、滞在法第20a条。2026年11月6日確認。",
           "line": 83,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2063,14 +2424,18 @@
           "alt": "ドイツでのパスポート更新の流れの図。在留届をオンラインで提出、オンラインで切替申請、交付の連絡を待つ、本人が窓口で受け取り、外国人局で滞在許可の情報を新しいパスポートに移す、という順番を示す",
           "caption": "図解：J-Connect。根拠：在デュッセルドルフ総領事館・政府広報オンラインの案内。手続きは公館により異なることがあります。2026年11月6日確認。",
           "line": 47,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/consulate-certificates-germany.svg",
           "alt": "ドイツの日本大使館・総領事館でよく使う証明書の図。在留証明、署名証明、運転免許証の抜粋証明、戸籍の届け出と、それぞれを使う場面を示す",
           "caption": "図解：J-Connect。根拠：在ドイツ日本国大使館・総領事館の案内。手数料と必要書類は公館で確認してください。2026年11月6日確認。",
           "line": 109,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2086,14 +2451,18 @@
           "alt": "日本国籍の親が児童手当を受け取れる滞在許可の図。永住許可、EUブルーカード、就労できる滞在許可、家族の滞在許可で就労できるものは対象、留学と卒業後の求職の滞在許可は働いているかで決まり、最初のチャンスカードは対象外であることを示す",
           "caption": "図解：J-Connect。根拠：所得税法第62条第2項。主な種類のみです。2026年11月6日確認。",
           "line": 53,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/kindergeld-application-steps.svg",
           "alt": "児童手当の申請の流れの図。住民登録と税番号の受け取り、家族手当金庫にオンラインで申請、必要書類を添付、決定の通知と児童手当番号、毎月の振り込みという順番と、遡及は6か月までという注意を示す",
           "caption": "図解：J-Connect。根拠：所得税法第66条・第67条・第70条。2026年11月6日確認。",
           "line": 116,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2109,14 +2478,18 @@
           "alt": "ドイツへ引っ越す前の手続きのタイムラインの図。3か月前に滞在許可・パスポート・運転免許、1〜2か月前に年金・保険・税金・銀行、14日前から海外転出届とマイナンバーカード、出国後に住民登録と在留届を示す",
           "caption": "図解：J-Connect。根拠：日本学生支援機構・マイナンバーカード総合サイトの案内。手続きは自治体や勤め先で異なります。2026年11月6日確認。",
           "line": 46,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/leaving-japan-what-changes.svg",
           "alt": "ドイツへ引っ越すときに日本で扱いが変わるものの図。国民年金は任意加入を選べる、国民健康保険は脱退、住民税は1月1日の住所で決まり納税管理人を届け出る、マイナンバーカードは前日までに継続利用の手続き、運転免許は出国前に更新を検討、ということを示す",
           "caption": "図解：J-Connect。根拠：日本学生支援機構・マイナンバーカード総合サイトの案内。2026年11月6日確認。",
           "line": 134,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2132,14 +2505,18 @@
           "alt": "病気で休むときの流れの図。朝に職場へ連絡、3日を超えるなら医師の受診、電子の病欠証明、6週間までは会社が給与を支払い、その後は傷病手当金、という順番を示す",
           "caption": "図解：J-Connect。根拠：賃金継続支払法第3条・第5条、社会法典第5編第44条・第47条。2026年11月6日確認。",
           "line": 50,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/child-sick-days-2026-2027.svg",
           "alt": "子どもの看病のための休暇の日数の図。2026年は子ども1人15日・合計35日、2027年は法律が変わらなければ10日・合計25日に戻ることを示し、ひとり親は2倍であることを示す",
           "caption": "図解：J-Connect。根拠：社会法典第5編第45条。2027年の日数は2026年11月時点の法律によります。2026年11月6日確認。",
           "line": 115,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2155,14 +2532,18 @@
           "alt": "ドイツ留学の費用の内訳の図。授業料は多くの州立大学で無料、学期ごとの学生納付金、生活費の証明は月992ユーロ、学生の健康保険などを示す",
           "caption": "図解：J-Connect。根拠：滞在法第16b条、社会法典第5編。金額は2026年の目安です。2026年11月6日確認。",
           "line": 49,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/student-work-days-germany.svg",
           "alt": "学生のアルバイトの日数の数え方の図。年140日分が上限で、4時間以内の日は半日、講義期間中の週20時間までの週と休み期間の週は2.5日として数え、大学内の学生アルバイトは数えないことを示す",
           "caption": "図解：J-Connect。根拠：滞在法第16b条第3項。2026年11月6日確認。",
           "line": 117,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2178,14 +2559,18 @@
           "alt": "学生の働き方の比較図。ワークスチューデント、ミニジョブ、必修インターン、任意インターンの4つについて、時間・収入の目安、社会保険、最低賃金の扱いを並べる",
           "caption": "図解：J-Connect。根拠：社会法典第3編・第4編・第5編、最低賃金法第22条。金額は2026年11月時点。2026年11月6日確認。",
           "line": 52,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/werkstudent-20-hour-rule.svg",
           "alt": "ワークスチューデントが週20時間の目安を守るための図。講義期間中は週20時間まで、休み期間は超えてもよいが年26週まで、留学生は年140日分の上限も守る、という3つのルールを示す",
           "caption": "図解：J-Connect。根拠：社会法典第5編第6条、社会保険の実務上の目安、滞在法第16b条。2026年11月6日確認。",
           "line": 122,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2201,14 +2586,18 @@
           "alt": "ドイツのワーキングホリデーの準備の流れの図。大使館の予約の確認、資金と保険の準備、出発の3か月前から2週間前までの申請、ドイツ到着後に住民登録と税番号、仕事探しという順番を示す",
           "caption": "図解：J-Connect。根拠：在日ドイツ大使館の案内、滞在令第41条。申請の時期は目安です。2026年11月6日確認。",
           "line": 52,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/working-holiday-germany-work-checks.svg",
           "alt": "ワーキングホリデー中に働くときの確認点の図。最低賃金、ミニジョブの上限、書面の雇用契約、給与明細と税金、健康保険の5つを並べる",
           "caption": "図解：J-Connect。根拠：最低賃金法、社会法典第4編第8条。金額は2026年11月時点。2026年11月6日確認。",
           "line": 110,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2224,14 +2613,18 @@
           "alt": "連邦議会可決、連邦参議院審議予定、2027年1月の開始目標を示す時系列図",
           "caption": "図解：J-Connect作成。連邦議会と連邦参議院の公表資料に基づく。2026年11月5日確認。",
           "line": 37,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/d-you-eudi-wallet-2027-resident-checklist.svg",
           "alt": "日本人居住者がd-youの開始前に確認する対象範囲、登録書類、準備事項を示す図",
           "caption": "図解：J-Connect作成。EU規則とドイツ政府の公表情報に基づく。2026年11月4日確認。",
           "line": 83,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2247,14 +2640,18 @@
           "alt": "Euro 7の新型式認証と新車登録の適用日程",
           "caption": "図解：J-Connect。EU規則2024/1257の適用日程を整理したオリジナル図。",
           "line": 52,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/euro-7-germany-2026-scope.svg",
           "alt": "Euro 7が対象とする排気管、ブレーキ・タイヤ、バッテリーの分野",
           "caption": "図解：J-Connect。Euro 7の主な対象を整理したオリジナル図。",
           "line": 68,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2270,14 +2667,18 @@
           "alt": "2ユーロのEU取扱手数料、3ユーロの定額関税、輸入消費税と配送会社手数料の違いを比較した図",
           "caption": "図解：J-Connect作成。EU理事会とEU規則に基づく独自整理。2026年11月5日確認。",
           "line": 41,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/germany-import-fees-2026-gift-vs-order.svg",
           "alt": "通販品と個人間ギフトで適用される税関ルールを分けた図",
           "caption": "図解：J-Connect作成。ドイツ税関とEU規則に基づく独自整理。2026年11月5日確認。",
           "line": 100,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2293,14 +2694,18 @@
           "alt": "2026年7月から10月の消費者物価、基調指数、エネルギーの前年比推移",
           "caption": "",
           "line": 44,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/germany-inflation-october-2026-reading.svg",
           "alt": "2026年10月訂正後確報値の前年比と前月比、エネルギーと食品の比較",
           "caption": "",
           "line": 75,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2316,14 +2721,18 @@
           "alt": "2026年10月の登録失業者数、失業率、季節調整後の変化",
           "caption": "",
           "line": 63,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         },
         {
           "src": "/assets/images/events/germany-labour-market-october-2026-indicators.svg",
           "alt": "雇用庁の登録求人、広い未就業指標、求人指数の比較",
           "caption": "",
           "line": 73,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P1"
         }
       ]
     },
@@ -2339,14 +2748,18 @@
           "alt": "求職者向け基礎保障の確認ポイント：年齢・就労能力、家計、在留資格、申請先の4段階",
           "caption": "図解：J-Connect作成。SGB IIと連邦政府の案内に基づく確認フロー。2026年11月4日確認。",
           "line": 49,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/grundsicherung-buergergeld-2026-application-checklist.svg",
           "alt": "求職者向け基礎保障の申請資料チェックリスト：身分証、世帯、収入・資産、住居費、他の給付",
           "caption": "図解：J-Connect作成。連邦雇用エージェンシーの申請案内に基づく整理。2026年11月4日確認。",
           "line": 123,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2362,14 +2775,18 @@
           "alt": "ドイツの住居に関する書類を確認する様子",
           "caption": "AI生成の編集イメージ。実在の住居、契約、利用者ではありません。",
           "line": 63,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/japanese-resident-paperwork-editorial-v1.webp",
           "alt": "ドイツの行政書類を自宅で整理する様子",
           "caption": "AI生成の編集イメージ。実在の通知書、個人情報、住民ではありません。",
           "line": 80,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2385,14 +2802,18 @@
           "alt": "2026年のTHG-Quote申告期限の違い",
           "caption": "",
           "line": 54,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/thg-quote-2026-process.svg",
           "alt": "THG-Quoteを仲介事業者経由で申請する流れ",
           "caption": "",
           "line": 115,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2408,14 +2829,18 @@
           "alt": "住宅手当の計算要素：世帯人数、世帯収入、認定対象の住宅費、自治体の家賃区分",
           "caption": "図解：J-Connect作成。連邦住宅省の計算機と住宅手当法に基づく独自整理。2026年11月4日確認。",
           "line": 50,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/wohngeld-antrag-2026-application-steps.svg",
           "alt": "住宅手当の申請5ステップ：窓口確認、概算、書類準備、申請、通知管理",
           "caption": "図解：J-Connect作成。連邦行政ポータルと住宅手当法に基づく独自整理。2026年11月4日確認。",
           "line": 121,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2431,14 +2856,20 @@
           "alt": "出生地の戸籍登録所、子の居住地の窓口、保険者と勤務先、日本公館が担当する手続きを整理した図",
           "caption": "出生登録は出生地の戸籍登録所、日本の出生届は日本の在外公館と、窓口が分かれます。",
           "line": 45,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "reuse_in_articles": 2,
+          "review_note": "Shared diagram, verify content/context before replacing",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/birth-procedures-timeline-ja-v2.webp",
           "alt": "ドイツ出産の出産手当、出生証明書、子の保険、国籍と滞在許可、育児給付、児童手当、日本の出生届とパスポートについて、時期・書類・取得先・提出先を示す日本語図",
           "caption": "出生前後の主な手続き。出生証明書を受け取ってから、保険・手当・日本の出生届が続きます。",
           "line": 68,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2454,14 +2885,18 @@
           "alt": "翻訳者の資格、原本かコピーか、認証の要否の3点を、翻訳を頼む前に提出先へ確認することを示した図",
           "caption": "翻訳を頼む前に、提出先へ聞く3つのこと",
           "line": 41,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/certified-translation-steps.svg",
           "alt": "原本をそろえる、認定翻訳者を探す、見積もりを比べる、翻訳と証明文を受け取る、提出するという5つの段階を並べた図",
           "caption": "認定翻訳を頼む流れ。提出先の条件を先に確認します。",
           "line": 62,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2477,14 +2912,20 @@
           "alt": "不払いの通知を読む、約款を読む、日付を並べる、書面で異議を出す、次の相談先へという流れの図",
           "caption": "「契約前の治療」で不払いと言われたときの流れ",
           "line": 39,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/dentist-insurance-coverage.svg",
           "alt": "公的保険で受けられる歯の健診とクリーニングの範囲を示した図",
           "caption": "公的保険でカバーされる範囲。補助保険はこの外側を補う。",
           "line": 59,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "reuse_in_articles": 2,
+          "review_note": "Shared diagram, verify content/context before replacing",
+          "priority": "P3"
         }
       ]
     },
@@ -2500,14 +2941,20 @@
           "alt": "妊婦、同居の家族、1970年以降生まれの大人、家族のインフルエンザについて、指針に書かれた接種と時期を示した図",
           "caption": "出産前に確認したい家族の予防接種（2026年10月29日施行の指針）",
           "line": 39,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/doctor-visit-preparation.svg",
           "alt": "受診の準備として、症状のメモ、薬とアレルギーの一覧、健康保険証などを用意することを示した図",
           "caption": "受診の前に、保険証と接種の記録をそろえる",
           "line": 59,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "reuse_in_articles": 2,
+          "review_note": "Shared diagram, verify content/context before replacing",
+          "priority": "P3"
         }
       ]
     },
@@ -2523,14 +2970,18 @@
           "alt": "確定申告で追加の納税が出る、税務署が前払いの通知を出す、年4回払う、収入が変わったら調整を申請する、翌年の申告で精算するという流れの図",
           "caption": "前払い税の流れ。根拠は所得税法第37条。",
           "line": 41,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/tax-prepayment-dates.svg",
           "alt": "所得税の前払いの納期が3月10日、6月10日、9月10日、12月10日の年4回であることを示した図",
           "caption": "前払いの納期は年4回。",
           "line": 53,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2546,14 +2997,18 @@
           "alt": "おむつ替え、授乳、お風呂と体調、衣類と移動の4つに分けて新生児用品をドイツ語の名前と並べた図",
           "caption": "新生児用品をドイツ語の名前と一緒に4つに分ける",
           "line": 35,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/stroller-purchase-checks.svg",
           "alt": "ベビーカーとチャイルドシートを買う前に確認する点を示した図",
           "caption": "大きな物は、車や住まいに合うかを確かめてから買う",
           "line": 80,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2569,14 +3024,18 @@
           "alt": "Bad Wildungen駅から旧市街と市教会、Brunnenallee、Wandelhalleと療養公園を巡る観光案内図",
           "caption": "バート・ヴィルドゥンゲン中心部の概略図（縮尺不同）。地点の位置はOpenStreetMapで確認し、背景の公園・旧市街・森は模式的に描いています。地理参照：© OpenStreetMap contributors。",
           "line": 43,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/bad-wildungen-town-history-timeline-v1.webp",
           "alt": "1242年の都市権から1959年の新しい井戸まで、バート・ヴィルドゥンゲンが城壁都市から保養地へ変わった流れを示す年表",
           "caption": "城壁都市の時代から保養地の時代までの主な出来事。J-Connect編集部作成の年表図。年代は町の案内資料と美術史資料に基づき、19世紀の項目は時期の目安です。",
           "line": 69,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2592,14 +3051,18 @@
           "alt": "住民登録の書類、予約、鍵、郵便物を準備する様子",
           "caption": "AI生成イラスト：住民登録前に準備する書類と生活用品。実在の申請書、予約画面、個人情報ではありません。",
           "line": 34,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/first-30-days-dependency.svg",
           "alt": "住所、住民登録、税務識別番号、保険、勤務先へつながる手続きの関係",
           "caption": "手続きは住所と保険を起点に、必要なものを並行して進めます。",
           "line": 79,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2615,14 +3078,18 @@
           "alt": "暖房のつまみの数字と室温の対応を示した図。1が約12度、2が約16度、3が約20度、4が約24度、5が約28度で、数字は温まる速さではなく目標の室温を表している",
           "caption": "図解：J-Connect編集部。根拠：消費者センターの案内。機器によって差があるため、実際の室温は温度計で確認してください。",
           "line": 58,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/ventilation-steps.svg",
           "alt": "換気の手順を示した図。暖房のつまみを止め、窓を全開にして冬は5〜10分、向かい合う窓を開けて風を通し、閉めたら暖房を戻す流れ",
           "caption": "図解：J-Connect編集部。根拠：連邦環境庁の案内。冬の時間は目安です。",
           "line": 69,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2638,14 +3105,18 @@
           "alt": "ルールの強さは3段階。法律、建物や地域の決まり、ただの習慣の順に、守らなかったときの影響が変わることを示した図",
           "caption": "図解：J-Connect編集部。法令は末尾の公式情報で確認。習慣の部分は編集部の整理で、公的な基準ではありません。",
           "line": 41,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/living/seo/manners-tip-example.svg",
           "alt": "チップの渡し方の例。請求額に少し足した金額を、会計の場で店員に直接伝えて払う流れを示した図",
           "caption": "図解：J-Connect編集部。金額は説明用の例で、決まりではありません。",
           "line": 49,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     },
@@ -2661,16 +3132,27 @@
           "alt": "本、修理工具、再利用の循環を描いたオリジナル図解",
           "caption": "J-Connectのオリジナル図解。実際の会場や展示を再現したものではありません。",
           "line": 51,
-          "position": 2
+          "position": 2,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         },
         {
           "src": "/assets/images/events/duesseldorf-waste-reduction-week-2026-schedule.svg",
           "alt": "11月21日から28日までの主な催しを日付順に並べたオリジナル図解",
           "caption": "参加できる催しの日付を示すJ-Connectのオリジナル図解。",
           "line": 53,
-          "position": 3
+          "position": 3,
+          "quality_status": "pending_per_asset_visual_review",
+          "priority": "P3"
         }
       ]
     }
+  ],
+  "quality_notes": [
+    "Initial scan is an exhaustive Markdown-image inventory, not an assertion that 227 remaining images are low quality.",
+    "Two SVG assets in advent-wreath-calendar-origin were redesigned to preserve historical content, re-rendered to 1200x675 PNG for QA with Japanese fonts, and visually checked for clipping and overlap.",
+    "Images now open their native files in a new tab through accessible keyboard/touch links (the new renderer applies to all local body images).",
+    "Keep diagrams that communicate laws, finances, route, dates, or procedural information, but improve graphic quality and mobile legibility when necessary. Do not replace fact-bearing figures with decorative photos.",
+    "Three body-asset reuse groups need context review; reuse alone does not prove a defect."
   ]
 }

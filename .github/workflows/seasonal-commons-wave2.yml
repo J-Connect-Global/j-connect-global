@@ -38,3 +38,5 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -m "photos: add documented historical Christmas market photos for seven guides"
           git push origin "HEAD:refs/heads/codex/article-cover-seasonal-wave2-20261123"
+
+# Retry only the missing Aachen cover using Amel's landscape Commons photograph.

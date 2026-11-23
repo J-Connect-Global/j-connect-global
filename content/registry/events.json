@@ -3606,7 +3606,7 @@
       "季節文化",
       "ハンブルク"
     ],
-    "updated_at": "2026-10-27",
+    "updated_at": "2026-11-23",
     "related_articles": [
       "christmas-markets-duesseldorf",
       "rhineland-carnival-11-11",
@@ -3646,7 +3646,9 @@
       }
     ],
     "image": "/assets/img/events/advent-wreath-calendar-origin.webp",
-    "image_alt": "1本目のろうそくが灯るアドベントリースと、後ろのアドベントカレンダーを描いたイラスト"
+    "image_alt": "2011年撮影のアドベントリースの実写真",
+    "image_caption": "2011年撮影のアドベントリースの写真。起源の説明に添える参考写真で、歴史資料そのものではありません。",
+    "image_credit": "Wikimedia Commons / Eugenio Hansen, OFS / CC BY-SA 3.0"
   },
   {
     "slug": "germany-cash-payment-habits",
@@ -3749,7 +3751,7 @@
       "季節文化",
       "冬"
     ],
-    "updated_at": "2026-10-27",
+    "updated_at": "2026-11-23",
     "related_articles": [
       "advent-wreath-calendar-origin",
       "christmas-markets-duesseldorf",
@@ -3784,7 +3786,9 @@
       }
     ],
     "image": "/assets/img/events/christmas-tree-origin-germany.webp",
-    "image_alt": "わらの星やりんごで飾られたクリスマスツリーと、暖かい居間を描いたイラスト"
+    "image_alt": "2014年撮影のケムニッツのクリスマスツリーの装飾の実写真",
+    "image_caption": "2014年に撮影されたケムニッツのクリスマスツリー装飾。クリスマスツリーの起源を記録した歴史写真ではありません。",
+    "image_credit": "Wikimedia Commons / Kora27 / CC BY-SA 4.0"
   },
   {
     "slug": "deutsche-bahn-delays-why",
@@ -4047,7 +4051,7 @@
       "デュッセルドルフ",
       "ケルン"
     ],
-    "updated_at": "2026-11-01",
+    "updated_at": "2026-11-23",
     "related_articles": [
       "germany-public-holidays-by-state",
       "nrw-christmas-opening-hours-2026",
@@ -4093,8 +4097,10 @@
       }
     ],
     "image": "/assets/img/events/germany-silvester-fireworks-rules.webp",
-    "image_alt": "大みそかの夜、ドイツの街の上空に上がる花火を描いたイラスト",
-    "next_review": "2026-12-10"
+    "image_alt": "2009年撮影のフランクフルトの大晦日の花火の実写真",
+    "next_review": "2026-12-10",
+    "image_caption": "2009年1月1日撮影のフランクフルトの花火。2026年末の実際の規制・禁止区域を示す画像ではありません。",
+    "image_credit": "Wikimedia Commons / Thomas Wolf / www.foto-tw.de / CC BY-SA 3.0"
   },
   {
     "slug": "gluehwein-christmas-market-guide",
@@ -4131,7 +4137,7 @@
       "食文化",
       "冬"
     ],
-    "updated_at": "2026-10-29",
+    "updated_at": "2026-11-23",
     "related_articles": [
       "christmas-markets-duesseldorf",
       "german-wine-regions-guide",
@@ -4164,7 +4170,9 @@
       }
     ],
     "image": "/assets/img/events/gluehwein-christmas-market-guide.webp",
-    "image_alt": "クリスマスマーケットで湯気の立つグリューワインのマグを持つ手を描いたイラスト"
+    "image_alt": "2015年撮影のオスナブリュックのクリスマスマーケットのグリューワインの実写真",
+    "image_caption": "2015年にオスナブリュックのクリスマスマーケットで撮影されたグリューワイン。一般的な飲み方の参考写真です。",
+    "image_credit": "Wikimedia Commons / Basotxerri / CC BY-SA 4.0"
   },
   {
     "slug": "saint-nicholas-day-germany",
@@ -6526,13 +6534,15 @@
       "NRW",
       "季節行事"
     ],
-    "updated_at": "2026-10-31",
+    "updated_at": "2026-11-23",
     "city": "デュッセルドルフ",
     "location": "市庁舎前のマルクト広場、旧市街、ケーニヒスアレー、市中心部の行列ルートなど",
     "event_date": "2026-11-11 ホッペディッツの目覚め／2027-02-04〜2027-02-10 街頭カーニバル",
     "official_url": "https://www.helau.cc/de/pages/veranstaltungen-3",
     "image": "/assets/img/events/duesseldorf-carnival-2026-27-guide.webp",
-    "image_alt": "大きなマスタードの壺から、道化の帽子をかぶった人形が伸びをしながら目を覚ます様子を描いたイラスト"
+    "image_alt": "2015年撮影のデュッセルドルフ・ケーニヒスアレーの子どもカーニバルの実写真",
+    "image_caption": "2015年撮影のデュッセルドルフの子どもカーニバル。2026/27年の行事や山車を撮影したものではありません。",
+    "image_credit": "Wikimedia Commons / Solches / CC BY-SA 4.0"
   },
   {
     "slug": "frankfurt-christmas-market-2026-guide",

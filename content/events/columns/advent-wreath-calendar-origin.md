@@ -29,14 +29,14 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-27"
-updated_at: "2026-10-27"
+updated_at: "2026-11-23"
 last_verified: "2026-10-27"
 canonical_url: "/germany/ja/events/columns/advent-wreath-calendar-origin/"
 official_url: "https://katholisch.de/artikel/15632-der-erfinder-des-adventskranzes"
 image: "/assets/img/events/advent-wreath-calendar-origin.webp"
-image_alt: "1本目のろうそくが灯るアドベントリースと、後ろのアドベントカレンダーを描いたイラスト"
-image_caption: "イラスト：J-Connect。アドベントの習慣のテーマを表したもので、特定の家庭や施設を再現していません。"
-image_credit: "Illustration / J-Connect"
+image_alt: "2011年撮影のアドベントリースの実写真"
+image_caption: "2011年撮影のアドベントリースの写真。起源の説明に添える参考写真で、歴史資料そのものではありません。"
+image_credit: "Wikimedia Commons / Eugenio Hansen, OFS / CC BY-SA 3.0"
 ---
 
 # アドベントクランツとアドベントカレンダーはドイツ生まれ？｜ろうそく4本と24の扉の物語

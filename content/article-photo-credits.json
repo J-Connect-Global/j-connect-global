@@ -584,6 +584,84 @@
         "/assets/img/events/nrw-christmas-market-day-trips-2026-768w.webp",
         "/assets/img/events/nrw-christmas-market-day-trips-2026-480w.webp"
       ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dresden%2C_Striezelmarkt_--_2023_--_9362.jpg",
+      "author": "Dietmar Rabich",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "横長トリミング・縮小・WebP/JPEG変換（変更した画像を元画像のライセンス条件に従い公開）",
+      "files": [
+        "/assets/img/events/dresden-striezelmarkt-2026-guide.webp",
+        "/assets/img/events/dresden-striezelmarkt-2026-guide-768w.webp",
+        "/assets/img/events/dresden-striezelmarkt-2026-guide-480w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Christmas_market%2C_Frankfurt_am_Main_(LRM_20241212_205503-2).jpg",
+      "author": "Matti Blume",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "横長トリミング・縮小・WebP/JPEG変換（変更した画像を元画像のライセンス条件に従い公開）",
+      "files": [
+        "/assets/img/events/frankfurt-christmas-market-2026-guide.webp",
+        "/assets/img/events/frankfurt-christmas-market-2026-guide-768w.webp",
+        "/assets/img/events/frankfurt-christmas-market-2026-guide-480w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hamburg_Rathausmarkt%2C_Weihnachtsmarkt.jpg",
+      "author": "TH:Korr",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "modifications": "横長トリミング・縮小・WebP/JPEG変換（変更した画像を元画像のライセンス条件に従い公開）",
+      "files": [
+        "/assets/img/events/hamburg-christmas-markets-2026-guide.webp",
+        "/assets/img/events/hamburg-christmas-markets-2026-guide-768w.webp",
+        "/assets/img/events/hamburg-christmas-markets-2026-guide-480w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:M%C3%BCnchen_Marienplatz_Weihnachtsmarkt_2013.jpg",
+      "author": "Usien",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "modifications": "横長トリミング・縮小・WebP/JPEG変換（変更した画像を元画像のライセンス条件に従い公開）",
+      "files": [
+        "/assets/img/events/munich-christmas-markets-2026-guide.webp",
+        "/assets/img/events/munich-christmas-markets-2026-guide-768w.webp",
+        "/assets/img/events/munich-christmas-markets-2026-guide-480w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Weihnachtsmarkt_Stuttgart_-_Flickr_-_HeinzDS.jpg",
+      "author": "Heinz Bunse",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "modifications": "横長トリミング・縮小・WebP/JPEG変換（変更した画像を元画像のライセンス条件に従い公開）",
+      "files": [
+        "/assets/img/events/stuttgart-christmas-market-2026-guide.webp",
+        "/assets/img/events/stuttgart-christmas-market-2026-guide-768w.webp",
+        "/assets/img/events/stuttgart-christmas-market-2026-guide-480w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Christkindlesmarkt_2023_N%C3%BCrnberg_001.jpg",
+      "author": "DALIBRI",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "横長トリミング・縮小・WebP/JPEG変換（変更した画像を元画像のライセンス条件に従い公開）",
+      "files": [
+        "/assets/img/events/nuremberg-christkindlesmarkt-2026-guide.webp",
+        "/assets/img/events/nuremberg-christkindlesmarkt-2026-guide-768w.webp",
+        "/assets/img/events/nuremberg-christkindlesmarkt-2026-guide-480w.webp"
+      ]
     }
   ]
 }

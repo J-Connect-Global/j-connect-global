@@ -30,14 +30,14 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-11-01"
-updated_at: "2026-11-01"
+updated_at: "2026-11-23"
 last_verified: "2026-11-01"
 canonical_url: "/germany/ja/events/dresden-striezelmarkt-2026-guide/"
 official_url: "https://striezelmarkt.dresden.de/de/"
 image: "/assets/img/events/dresden-striezelmarkt-2026-guide.webp"
-image_alt: "粉砂糖をかけた大きなシュトレンと、ろうそくが灯る多段の木のピラミッドが並ぶ冬の広場を描いたイラスト"
-image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。ドレスデンのシュトリーツェルマルクトのテーマを表したもので、実際の建物や会場配置を再現していません。"
-image_credit: "AI-assisted vector illustration / J-Connect"
+image_alt: "2023年撮影のドレスデンのシュトリーツェルマルクトの実写真"
+image_caption: "2023年に撮影されたドレスデンの過去の会場風景。2026年の出店状況を示すものではありません。"
+image_credit: "Wikimedia Commons / Dietmar Rabich / CC BY-SA 4.0"
 ---
 
 # ドレスデンのシュトリーツェルマルクト2026｜シュトレンの名を持つ、1434年からのクリスマス市

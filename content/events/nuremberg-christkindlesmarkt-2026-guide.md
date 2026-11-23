@@ -26,14 +26,14 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-30"
-updated_at: "2026-10-30"
+updated_at: "2026-11-23"
 last_verified: "2026-10-30"
 canonical_url: "/germany/ja/events/nuremberg-christkindlesmarkt-2026-guide/"
 official_url: "https://www.christkindlesmarkt.de/"
 image: "/assets/img/events/nuremberg-christkindlesmarkt-2026-guide.webp"
-image_alt: "階段状の破風の教会と木組みの家々の前に、赤と白の縞の屋根の屋台が並ぶ夜の広場を描いたイラスト"
-image_caption: "イラスト：J-Connect。ニュルンベルクのクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。"
-image_credit: "Illustration / J-Connect"
+image_alt: "2023年撮影のニュルンベルクのクリストキントレスマルクトの実写真"
+image_caption: "2023年撮影のニュルンベルクの過去の会場風景。2026年の出店状況を再現したものではありません。"
+image_credit: "Wikimedia Commons / DALIBRI / CC BY-SA 4.0"
 ---
 
 # ニュルンベルクのクリスマスマーケット2026｜クリストキントの言葉で始まる、旧市街の4週間

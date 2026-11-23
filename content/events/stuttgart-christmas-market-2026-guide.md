@@ -26,14 +26,14 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-11-01"
-updated_at: "2026-11-01"
+updated_at: "2026-11-23"
 last_verified: "2026-11-01"
 canonical_url: "/germany/ja/events/stuttgart-christmas-market-2026-guide/"
 official_url: "https://www.stuttgarter-weihnachtsmarkt.de/"
 image: "/assets/img/events/stuttgart-christmas-market-2026-guide.webp"
-image_alt: "城のシルエットを背に、雪の家並みや人形、星、塔の飾りを屋根に載せた木の屋台が並ぶ夜の市を描いたイラスト"
-image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。シュトゥットガルトのクリスマスマーケットのテーマを表したもので、実際の屋台や建物を再現していません。"
-image_credit: "AI-assisted vector illustration / J-Connect"
+image_alt: "2023年撮影のシュトゥットガルトのクリスマスマーケットの実写真"
+image_caption: "2023年12月撮影のシュトゥットガルトの過去の会場風景。2026年の会場状況ではありません。"
+image_credit: "Wikimedia Commons / Heinz Bunse / CC BY-SA 2.0"
 ---
 
 # シュトゥットガルトのクリスマスマーケット2026｜屋根の上の小さな冬景色を見上げる市

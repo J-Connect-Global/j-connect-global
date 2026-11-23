@@ -16,9 +16,9 @@
       "2": 111,
       "3": 2
     },
-    "visually_reviewed_and_redesigned_inline_references": 6,
-    "pending_visual_review_inline_references": 222,
-    "body_media_assets_redesigned": 6,
+    "visually_reviewed_and_redesigned_inline_references": 8,
+    "pending_visual_review_inline_references": 220,
+    "body_media_assets_redesigned": 8,
     "off_topic_inline_image_references_removed": 1
   },
   "reused_inline_assets": [
@@ -1828,8 +1828,11 @@
           "caption": "図解：J-Connect。ベルリン観光局、ベルリン市、ルチア市主催者の案内に基づく（2026年11月1日参照）。",
           "line": 59,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P1"
+          "quality_status": "redesigned_and_visual_review_passed",
+          "priority": "P1",
+          "reviewed_at": "2026-11-23",
+          "review_method": "CairoSVG 1200×675 Japanese Noto CJK PNG visually inspected",
+          "visual_notes": "Five venues redrawn as distinct editorial schematics; date range chart redesigned and closure notch label overlap corrected; original source facts retained."
         },
         {
           "src": "/assets/images/events/berlin-christmas-markets-2026-periods.svg",
@@ -1837,8 +1840,11 @@
           "caption": "図解：J-Connect。ベルリン観光局と各主催者の案内に基づく（2026年11月21日参照）。",
           "line": 105,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P1"
+          "quality_status": "redesigned_and_visual_review_passed",
+          "priority": "P1",
+          "reviewed_at": "2026-11-23",
+          "review_method": "CairoSVG 1200×675 Japanese Noto CJK PNG visually inspected",
+          "visual_notes": "Five venues redrawn as distinct editorial schematics; date range chart redesigned and closure notch label overlap corrected; original source facts retained."
         }
       ]
     },
@@ -3148,5 +3154,5 @@
     "Keep diagrams that communicate laws, finances, route, dates, or procedural information, but improve graphic quality and mobile legibility when necessary. Do not replace fact-bearing figures with decorative photos.",
     "Three body-asset reuse groups need context review; reuse alone does not prove a defect."
   ],
-  "last_wave": "wave3_dresden_winter_20261123"
+  "last_wave": "wave4_berlin_markets_20261123"
 }

@@ -1,0 +1,278 @@
+[
+  {
+    "slug": "advent-wreath-calendar-origin",
+    "title": "アドベントクランツとアドベントカレンダーはドイツ生まれ？｜ろうそく4本と24の扉の物語",
+    "published_at": "2026-10-27",
+    "markdown_path": "/content/events/columns/advent-wreath-calendar-origin.md",
+    "hero": "/assets/img/events/advent-wreath-calendar-origin.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/advent-wreath-then-now.svg",
+        "alt": "1839年のヴィヒェルンの車輪のクランツ（日曜日は白い大きなろうそく、平日は赤い小さなろうそく）と、今の4本のろうそくのクランツを比べた図",
+        "caption": "図解：J-Connect。katholisch.de、EKD、ラウエス・ハウスの資料に基づく（2026年10月27日参照）。",
+        "line": 74,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/advent-calendar-history.svg",
+        "alt": "19世紀のチョークの線や壁の絵、1908年の印刷のカレンダー、今の扉付きカレンダーへと変わってきた流れを示す年表",
+        "caption": "図解：J-Connect。katholisch.de、EKDの資料に基づく（2026年10月27日参照）。",
+        "line": 94,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "germany-cash-payment-habits",
+    "title": "ドイツ人はなぜ現金が好き？｜ドイツ連邦銀行の調査で見る、支払いの「今」",
+    "published_at": "2026-10-27",
+    "markdown_path": "/content/events/columns/germany-cash-payment-habits.md",
+    "hero": "/assets/img/events/germany-cash-payment-habits.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/germany-payment-shares-2023-2025.svg",
+        "alt": "2023年と2025年の支払い件数の割合を比べ、現金が51%から45%に下がり、モバイル決済が6%から10%に増えたことを示す図",
+        "caption": "図解：J-Connect。ドイツ連邦銀行「ドイツの支払い行動」2023年・2025年に基づく（2026年10月27日参照）。",
+        "line": 67,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/germany-cash-reasons.svg",
+        "alt": "現金が選ばれる理由として、支出の把握、プライバシー、停電や障害への強さ、子どものお金の学び、習慣の5つを示した図",
+        "caption": "図解：J-Connect。ドイツ連邦銀行の調査（2023年・2025年）と月報（2025年4月）に基づく（2026年10月27日参照）。",
+        "line": 87,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "christmas-tree-origin-germany",
+    "title": "クリスマスツリーはドイツから広まった？｜リンゴを飾った「楽園の木」と、年に2,000万本以上の今",
+    "published_at": "2026-10-27",
+    "markdown_path": "/content/events/columns/christmas-tree-origin-germany.md",
+    "hero": "/assets/img/events/christmas-tree-origin-germany.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/christmas-tree-history-timeline.svg",
+        "alt": "中世の楽園の劇、1605年のシュトラスブルクの記録、17世紀の教会の批判、三十年戦争後の広がり、19世紀のろうそくの普及までを示した年表",
+        "caption": "図解：J-Connect。katholisch.deの資料に基づく（2026年10月27日参照）。",
+        "line": 78,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/christmas-tree-germany-numbers.svg",
+        "alt": "ドイツで毎年飾られるクリスマスツリー約2,300万〜2,500万本、ノルドマンもみの割合約75〜80%、2024年の輸入180万本（デンマーク産83%）、国内の栽培農家3,310軒を示した図",
+        "caption": "図解：J-Connect。ドイツ森林保護協会と連邦統計局の資料に基づく（2026年10月27日参照）。",
+        "line": 88,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "deutsche-bahn-delays-why",
+    "title": "ドイツの鉄道はなぜ遅れる？｜長距離列車の定時率60%の意味と、遅れたときにお金が戻るしくみ",
+    "published_at": "2026-10-27",
+    "markdown_path": "/content/events/columns/deutsche-bahn-delays-why.md",
+    "hero": "/assets/img/events/deutsche-bahn-delays-why.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/db-punctuality-2025.svg",
+        "alt": "2025年の長距離列車の定時率60.1%、地域の列車88.7%を比べ、定時の基準が予定から6分未満であることを示した図",
+        "caption": "図解：J-Connect。ドイツ鉄道の2025年決算と年次報告書に基づく（2026年10月27日参照）。",
+        "line": 67,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/db-passenger-rights-refund.svg",
+        "alt": "目的地への到着が60分以上遅れたら運賃の25%、120分以上なら50%が戻り、4ユーロ未満は払われないことを示した図",
+        "caption": "図解：J-Connect。ドイツ鉄道、連邦交通省、連邦鉄道庁の資料に基づく（2026年10月27日参照）。",
+        "line": 114,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "german-wine-regions-guide",
+    "title": "ドイツワインは「白」の国？｜13の産地、リースリング、ラベルの「カビネット」「シュペートレーゼ」の読み方",
+    "published_at": "2026-10-27",
+    "markdown_path": "/content/events/columns/german-wine-regions-guide.md",
+    "hero": "/assets/img/events/german-wine-regions-guide.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/german-wine-regions-map.svg",
+        "alt": "ドイツ南西部に集まる13のワイン産地のうち、ラインヘッセン、プファルツ、モーゼル、ミッテルライン、アールの位置と面積を示した概略図",
+        "caption": "図解：J-Connect。ドイツワイン協会の資料に基づく概略図で、正確な位置や境界を示すものではありません。",
+        "line": 66,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/german-wine-label-guide.svg",
+        "alt": "プレディカートの6段階をぶどうの熟し方の順に並べ、甘さはラベルのトロッケン・ハルプトロッケン・リープリッヒ・ズースで判断することを示した図",
+        "caption": "図解：J-Connect。ドイツワイン協会とワイン法の資料に基づく（2026年10月27日参照）。",
+        "line": 110,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "germany-kleingarten-schrebergarten",
+    "title": "ドイツの「クラインガルテン」とは？｜線路沿いに並ぶ小さな庭と、法律で決まった小屋の大きさ",
+    "published_at": "2026-10-29",
+    "markdown_path": "/content/events/columns/germany-kleingarten-schrebergarten.md",
+    "hero": "/assets/img/events/germany-kleingarten-schrebergarten.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/kleingarten-history-timeline.svg",
+        "alt": "19世紀初めの貧しい人のための庭、約200年前のカッペルンの最初の団体、1864年のライプツィヒのシュレーバー協会、1983年の連邦市民農園法、今の約86万7,000の庭までを示した年表",
+        "caption": "図解：J-Connect。ドイツ市民農園連盟とライプツィヒ市の資料に基づく（2026年10月29日参照）。",
+        "line": 68,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/kleingarten-rules.svg",
+        "alt": "小屋は屋根のあるテラスを含めて24平方メートルまで、住むことはできない。庭は3分の1が畑、3分の1が休む場所、3分の1が小屋や通路という目安を示した図",
+        "caption": "図解：J-Connect。連邦市民農園法とドイツ市民農園連盟の資料に基づく（2026年10月29日参照）。",
+        "line": 88,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "germany-silvester-fireworks-rules",
+    "title": "ドイツの大晦日はなぜ花火だらけ？｜販売期間・使用日・禁止区域のルール",
+    "published_at": "2026-10-29",
+    "markdown_path": "/content/events/columns/germany-silvester-fireworks-rules.md",
+    "hero": "/assets/img/events/germany-silvester-fireworks-rules.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/silvester-fireworks-calendar.svg",
+        "alt": "カテゴリー2の花火は12月29日から31日の3日間だけ販売、打ち上げは12月31日と1月1日の2日間だけ、購入と使用は18歳以上という決まりをカレンダー形式で示した図",
+        "caption": "図解：J-Connect。爆発物法第1施行令と連邦内務省の資料に基づく（2026年11月1日参照）。",
+        "line": 64,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/silvester-fireworks-air.svg",
+        "alt": "花火による微小粒子状物質は毎年約2,050トン、そのうち約75%が大晦日の夜に集中し、ドイツ全体のPM10の1%近くにあたることを示した図",
+        "caption": "図解：J-Connect。連邦環境庁の資料に基づく（2026年11月1日参照）。",
+        "line": 89,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "gluehwein-christmas-market-guide",
+    "title": "クリスマスマーケットのグリューワインとは？｜EUの法律で決まった「定義」と、ラベルに材料が書かれない理由",
+    "published_at": "2026-10-29",
+    "markdown_path": "/content/events/columns/gluehwein-christmas-market-guide.md",
+    "hero": "/assets/img/events/gluehwein-christmas-market-guide.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/gluehwein-eu-definition.svg",
+        "alt": "グリューワインの条件として、赤・白・ロゼワインだけから作る、主にシナモンとクローブで香りをつける、アルコール7%以上、水を加えないの4つを示した図",
+        "caption": "図解：J-Connect。EU規則第251/2014号と第2026/471号に基づく（2026年10月29日参照）。",
+        "line": 65,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/gluehwein-label-sugar-kids.svg",
+        "alt": "グリューワインには材料の一覧を書く義務がないこと、糖分は100ミリリットルあたり7.5〜9.5グラムの例があること、子どもには0.0%表示の飲み物を選ぶことを示した図",
+        "caption": "図解：J-Connect。消費者センター（Lebensmittelklarheit）の資料に基づく（2026年10月29日参照）。",
+        "line": 85,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "saint-nicholas-day-germany",
+    "title": "聖ニコラウスの日とは？｜12月6日の朝、靴にお菓子が入っている理由と、ラインラントの「ヴェックマン」",
+    "published_at": "2026-10-29",
+    "markdown_path": "/content/events/columns/saint-nicholas-day-germany.md",
+    "hero": "/assets/img/events/saint-nicholas-day-germany.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/saint-nicholas-day-overview.svg",
+        "alt": "12月5日の夜に靴を置き、6日の朝にお菓子が入っている流れと、ニコラウスの伝説（3つの金の玉、船乗りの守護聖人）を示した図",
+        "caption": "図解：J-Connect。katholisch.deとケルン大司教区の資料に基づく（2026年10月29日参照）。",
+        "line": 70,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/weckmann-rhineland.svg",
+        "alt": "ヴェックマンはレーズンの目と陶器のパイプが付いた人の形のパンで、地域によってシュトゥーテンケールなどと呼ばれ、もとは司教ニコラウスの姿を表していたことを示した図",
+        "caption": "図解：J-Connect。LVR（ラインラント地域連合）の資料に基づく（2026年10月29日参照）。",
+        "line": 88,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "cologne-cathedral-632-years",
+    "title": "ケルン大聖堂は完成までに632年かかった？｜300年以上止まった工事と、塔の上に残ったクレーン",
+    "published_at": "2026-10-29",
+    "markdown_path": "/content/events/columns/cologne-cathedral-632-years.md",
+    "hero": "/assets/img/events/cologne-cathedral-632-years.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/cologne-cathedral-timeline.svg",
+        "alt": "1164年の聖遺物の到着、1248年の礎石、16世紀初めの工事中断と塔の上のクレーン、1842年の工事再開、1880年の完成、1996年の世界遺産登録までを示した年表",
+        "caption": "図解：J-Connect。ケルン大聖堂とドイツ・ユネスコ委員会の資料に基づく（2026年10月29日参照）。",
+        "line": 74,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/cologne-cathedral-heights.svg",
+        "alt": "南の塔は工事が止まったとき約58メートル、完成時の2本の塔は157メートル超で、1880年当時世界一高い建物だったことを比べた図",
+        "caption": "図解：J-Connect。ケルン大聖堂の資料に基づく（2026年10月29日参照）。",
+        "line": 88,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "ruhr-coal-mining-history",
+    "title": "ルール地方は炭鉱の街だった？｜2018年に閉じた最後の炭鉱と、世界遺産ツォルフェアアインの今",
+    "published_at": "2026-10-29",
+    "markdown_path": "/content/events/columns/ruhr-coal-mining-history.md",
+    "hero": "/assets/img/events/ruhr-coal-mining-history.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/ruhr-coal-timeline.svg",
+        "alt": "1956年の最盛期（生産1億2,460万トン、炭鉱で働く人約48万5,000人）、1958年の危機の始まり、1970年の約19万人、1986年のツォルフェアアインの閉山、2001年の世界遺産登録、2018年の最後の炭鉱の閉山までを示した年表",
+        "caption": "図解：J-Connect。連邦政治教育センター、LWL、ツォルフェアアイン、ルール地域連合の資料に基づく（2026年10月29日参照）。",
+        "line": 68,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/zollverein-facts.svg",
+        "alt": "ツォルフェアアイン炭鉱の操業期間1851〜1986年、第12立坑の操業開始1932年、世界遺産登録2001年12月14日、年間約150万人の来場者を示した図",
+        "caption": "図解：J-Connect。ドイツ・ユネスコ委員会とツォルフェアアインの資料に基づく（2026年10月29日参照）。",
+        "line": 90,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "three-kings-day-sternsinger",
+    "title": "ドアに書かれた「20*C+M+B+27」とは？｜1月6日の三賢王の日と、家々を回る子どもたち「シュテルンジンガー」",
+    "published_at": "2026-10-29",
+    "markdown_path": "/content/events/columns/three-kings-day-sternsinger.md",
+    "hero": "/assets/img/events/three-kings-day-sternsinger.webp",
+    "media": [
+      {
+        "src": "/assets/images/events/sternsinger-cmb-meaning.svg",
+        "alt": "ドアの上に書かれる「20*C+M+B+27」の読み方として、前後の数字が西暦2027年、C+M+Bは「キリストがこの家を祝福しますように」の頭文字、または三賢王の名前の頭文字であることを示した図",
+        "caption": "図解：J-Connect。katholisch.deの資料に基づく（2026年10月29日参照）。",
+        "line": 74,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/events/sternsinger-facts-2027.svg",
+        "alt": "シュテルンジンガーの活動期間は12月27日から1月の第3金曜日まで、2026年の募金は約4,717万ユーロ、1959年からの合計は14億ユーロ超、2027年のテーマは「よい食事、強い子どもたち」であることを示した図",
+        "caption": "図解：J-Connect。シュテルンジンガー（子ども宣教会）とドイツ・ユネスコ委員会の資料に基づく（2026年10月29日参照）。",
+        "line": 84,
+        "position": 3
+      }
+    ]
+  }
+]

@@ -1,0 +1,285 @@
+[
+  {
+    "slug": "bad-wildungen-weekend-trip",
+    "title": "バート・ヴィルドゥンゲン1泊2日｜ヨーロッパ最大級の療養公園と鉱泉の町を歩く",
+    "published_at": "2026-11-15",
+    "markdown_path": "/content/living/bad-wildungen-weekend-trip.md",
+    "hero": null,
+    "media": [
+      {
+        "src": "/assets/images/living/bad-wildungen-weekend-trip-guide-map-v2.webp",
+        "alt": "Bad Wildungen駅から旧市街と市教会、Brunnenallee、Wandelhalleと療養公園を巡る観光案内図",
+        "caption": "バート・ヴィルドゥンゲン中心部の概略図（縮尺不同）。地点の位置はOpenStreetMapで確認し、背景の公園・旧市街・森は模式的に描いています。地理参照：© OpenStreetMap contributors。",
+        "line": 43,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/bad-wildungen-town-history-timeline-v1.webp",
+        "alt": "1242年の都市権から1959年の新しい井戸まで、バート・ヴィルドゥンゲンが城壁都市から保養地へ変わった流れを示す年表",
+        "caption": "城壁都市の時代から保養地の時代までの主な出来事。J-Connect編集部作成の年表図。年代は町の案内資料と美術史資料に基づき、19世紀の項目は時期の目安です。",
+        "line": 69,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "kindergeld-auszahlungstermine-2027",
+    "title": "Kindergeld（ドイツの児童手当）2027年の支給日一覧｜番号末尾0〜9で確認",
+    "published_at": "2026-10-27",
+    "markdown_path": "/content/living/kindergeld-auszahlungstermine-2027.md",
+    "hero": "/assets/images/living/birth-procedures-germany.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/kindergeld-payment-checklist-2027.svg",
+        "alt": "Kindergeld番号末尾と対象月から公式支給日を確認し、入金が見えない場合に口座と家族給付窓口の連絡を順番に確認する3ステップ図",
+        "caption": "公式支給日表の使い方。支給日と支給額は別に確認します。",
+        "line": 66,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/kindergeld-antragslos-2027-rollout.svg",
+        "alt": "2027年の申請なし支給は第2子以降と第1子で段階的に始まる予定を示す図",
+        "caption": "申請なし支給は段階導入で、条件を満たさない家庭には従来の案内・申請が必要になる場合があります。",
+        "line": 92,
+        "position": 3
+      },
+      {
+        "src": "/assets/images/living/birth-procedures-offices.svg",
+        "alt": "出生地の戸籍登録所、子の居住地の窓口、保険者と勤務先、日本公館が担当する手続きを整理した図",
+        "caption": "出生後の手続きは窓口が異なります。2027年の申請なし支給は条件付きで、対象外の場合は申請が必要です。",
+        "line": 96,
+        "position": 4
+      }
+    ]
+  },
+  {
+    "slug": "epa-guide-germany",
+    "title": "ドイツの電子患者記録（ePA）入門｜閲覧権限・非表示・アプリ管理",
+    "published_at": "2026-10-27",
+    "markdown_path": "/content/living/epa-guide-germany.md",
+    "hero": "/assets/images/living/health-insurance-path.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/epa-access-controls.svg",
+        "alt": "文書の非表示は原則すべての医療機関に適用され、施設単位のアクセス拒否はその施設がePA全体を見られなくする違いを示す図",
+        "caption": "文書単位と施設単位では、アクセス制限の範囲が異なります。",
+        "line": 65,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/epa-no-app-path.svg",
+        "alt": "ePAアプリを使わない人が、健康保険者のオンブズ窓口に相談してアクセス設定や履歴を確認する流れを示す図",
+        "caption": "アプリを使わなくてもアクセス管理を相談できます。保険者やオンブズ窓口は診療記録の内容を閲覧できません。",
+        "line": 73,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "nrw-school-holidays-2026-2027",
+    "title": "NRWの学校休暇2026/27年度｜2027年の春・夏・年末年始",
+    "published_at": "2026-10-27",
+    "markdown_path": "/content/living/nrw-school-holidays-2026-2027.md",
+    "hero": "/assets/images/living/childcare-play-editorial-v2.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/nrw-school-holidays-movable-days.svg",
+        "alt": "NRWの学校休暇に州共通の日程と学校ごとの移動休日があることを示す図",
+        "caption": "州共通カレンダーに加えて、学校から配布される年間予定表も確認してください。",
+        "line": 53,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/nrw-school-kita-closures.svg",
+        "alt": "学校休暇とKitaの休園日は別の予定表で確認する必要があることを示す比較図",
+        "caption": "勤務先への休暇申請前に、学校と保育施設の両方の日程を確認します。",
+        "line": 61,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "nrw-public-holidays-2027",
+    "title": "NRWの祝日2027年一覧｜連休・ブリッジデー・学校休暇との違い",
+    "published_at": "2026-10-27",
+    "markdown_path": "/content/living/nrw-public-holidays-2027.md",
+    "hero": "/assets/img/living/nrw-nature-relax-guide.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/nrw-public-holidays-2027-bridge-days.svg",
+        "alt": "2027年5月の木曜祝日、翌金曜の休暇、土日をつないだ4連休の案内図",
+        "caption": "木曜祝日と翌金曜の休暇申請で4連休にする計画例。休暇の承認は勤務先の規則によります。",
+        "line": 32,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/nrw-public-holidays-2027-weekend-overlaps.svg",
+        "alt": "2027年に週末と重なる4つの祝日を示す案内図",
+        "caption": "メーデー、ドイツ統一の日、クリスマスの祝日は週末と重なります。自動振替を前提にせず勤務先の規則を確認してください。",
+        "line": 67,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "ees-etias-germany-japan-travel-2026",
+    "title": "ドイツ入国のEES・ETIASとは？2026年の日本人旅行者・在住者向けガイド",
+    "published_at": "2026-11-01",
+    "markdown_path": "/content/living/ees-etias-germany-japan-travel-2026.md",
+    "hero": "/assets/img/living/ees-etias-germany-japan-travel-2026.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/ees-etias-system-comparison.svg",
+        "alt": "EESは国境で出入国を電子記録する仕組み、ETIASは出発前の渡航認証であることを比較した図",
+        "caption": "",
+        "line": 54,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/ees-entry-border-flow.svg",
+        "alt": "シェンゲン圏外から最初に入るEES参加国の外部国境で本人確認と電子記録が行われる流れ",
+        "caption": "",
+        "line": 60,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "minijob-grenze-2027",
+    "title": "ドイツのMinijob（ミニジョブ）2027｜月633ユーロの上限・勤務時間・税金と保険",
+    "published_at": "2026-10-28",
+    "markdown_path": "/content/living/minijob-grenze-2027.md",
+    "hero": "/assets/img/living/minijob-grenze-2027.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/seo/minijob-limit-formula.svg",
+        "alt": "最低賃金14.60ユーロと法定計算式から月633ユーロを導く計算図",
+        "caption": "J-Connect作成の計算図。数値は本文の公式情報と法定式から算出。",
+        "line": 51,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/seo/minijob-insurance-checklist.svg",
+        "alt": "税金の書類、年金保険を表す盾、健康保険を表す十字の3つのアイコン図",
+        "caption": "J-Connect作成の模式図。加入や税額を保証するものではありません。",
+        "line": 109,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "nrw-christmas-opening-hours-2026",
+    "title": "NRWのクリスマス2026｜スーパー・薬局・公共交通の営業日チェック",
+    "published_at": "2026-10-28",
+    "markdown_path": "/content/living/nrw-christmas-opening-hours-2026.md",
+    "hero": "/assets/img/living/nrw-christmas-opening-hours-2026.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/seo/nrw-christmas-calendar-2026.svg",
+        "alt": "12月24日から27日までの営業日を確認するカレンダー図",
+        "caption": "J-Connect作成のカレンダー図。実際の営業時間は各店舗の案内で確認してください。",
+        "line": 46,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/seo/nrw-christmas-checklist-2026.svg",
+        "alt": "買い物、薬局の緊急当番、公共交通の確認先をまとめたチェックリスト図",
+        "caption": "J-Connect作成の模式図。実際の営業状況や運行情報は公式案内を確認してください。",
+        "line": 73,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "returning-to-japan-checklist",
+    "title": "ドイツから本帰国するときの手続き｜3か月前から帰国後まで、やることを時期順に",
+    "published_at": "2026-10-29",
+    "markdown_path": "/content/living/returning-to-japan-checklist.md",
+    "hero": "/assets/img/living/returning-to-japan-checklist.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/returning-to-japan-timeline.svg",
+        "alt": "本帰国の手続きを、3か月前の住まいの解約通知、1〜2か月前の契約の解約、出発前後2週間の住民登録の抹消、帰国後14日以内の転入届・国民年金・国民健康保険、帰国後しばらくしてからの税金と口座の順に並べた時期別の図",
+        "caption": "図解：J-Connect。連邦住民登録法、民法、日本年金機構などの資料に基づく（2026年10月29日参照）。",
+        "line": 55,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/returning-to-japan-two-sides.svg",
+        "alt": "本帰国の手続きを、ドイツ側の住民登録の抹消、放送負担金、健康保険、銀行、年金、税金と、日本側の帰国届、転入届、国民年金、国民健康保険に分けて、手続きの先と期限を示した図",
+        "caption": "図解：J-Connect。外務省、日本年金機構、厚生労働省などの資料に基づく（2026年10月29日参照）。",
+        "line": 120,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "liability-household-insurance-germany",
+    "title": "ドイツの個人賠償責任保険と家財保険｜入るべき理由・補償額の目安・選び方",
+    "published_at": "2026-10-29",
+    "markdown_path": "/content/living/liability-household-insurance-germany.md",
+    "hero": "/assets/img/living/liability-household-insurance-germany.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/insurance-priority.svg",
+        "alt": "個人賠償責任保険はほぼ全員に必要で補償額は少なくとも1,000万ユーロ、家財保険は家財の価値が高い人に必要、自動車保険は車を持つ人の義務であることを3段階で示した図",
+        "caption": "図解：J-Connect。消費者センターとStiftung Warentestの資料に基づく（2026年10月29日参照）。",
+        "line": 47,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/insurance-claim-steps.svg",
+        "alt": "事故が起きたときは、写真を撮る、相手の名前と連絡先を控える、保険会社に連絡する、修理の見積もりや領収書を保存する、という4つの手順を示した図",
+        "caption": "図解：J-Connect。消費者センターの資料などに基づく（2026年10月29日参照）。",
+        "line": 100,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "mobile-phone-sim-germany",
+    "title": "ドイツの携帯電話・SIMの選び方｜プリペイドと契約プラン、本人確認、解約のルール",
+    "published_at": "2026-10-29",
+    "markdown_path": "/content/living/mobile-phone-sim-germany.md",
+    "hero": "/assets/img/living/mobile-phone-sim-germany.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/mobile-prepaid-vs-contract.svg",
+        "alt": "プリペイドは先払いで身分証があれば使え、契約プランは口座引き落としで最初の期間は最長24か月、その後は1か月前の通知で解約できるという違いを示した図",
+        "caption": "図解：J-Connect。電気通信法と消費者センターの資料に基づく（2026年10月29日参照）。",
+        "line": 48,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/mobile-plan-checkpoints.svg",
+        "alt": "スマホのプランを選ぶときは、電波のつながりやすさ、データ量、EUでの利用、日本への通話、eSIM、日本の電話番号のSMS認証を確認することを示した図",
+        "caption": "図解：J-Connect。消費者センターと連邦ネットワーク庁の資料に基づく（2026年10月29日参照）。",
+        "line": 74,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "unemployment-benefit-germany",
+    "title": "ドイツの失業手当（Arbeitslosengeld）｜もらえる条件・金額・期間と、仕事が終わる前の届け出",
+    "published_at": "2026-10-29",
+    "markdown_path": "/content/living/unemployment-benefit-germany.md",
+    "hero": "/assets/img/living/unemployment-benefit-germany.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/unemployment-benefit-overview.svg",
+        "alt": "失業手当の条件として30か月のうち12か月以上の加入、金額は手取りの60％で子どもがいれば67％、期間は50歳未満で6か月から12か月、50歳以上は最長24か月であることを示した図",
+        "caption": "図解：J-Connect。社会法典第3編と連邦雇用エージェンシーの資料に基づく（2026年10月29日参照）。",
+        "line": 70,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/unemployment-benefit-steps.svg",
+        "alt": "仕事が終わることが分かったら、3か月前までに求職者として届け出て、遅くとも失業の初日に失業の届け出をし、自分から辞めた場合は最長12週間止められることがあるという流れを示した図",
+        "caption": "図解：J-Connect。連邦雇用エージェンシーの資料に基づく（2026年10月29日参照）。",
+        "line": 85,
+        "position": 3
+      }
+    ]
+  }
+]

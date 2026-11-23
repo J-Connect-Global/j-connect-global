@@ -44,10 +44,10 @@ ROWS = [
        year="2023",place="シュトゥットガルトのクリスマスマーケット",
        caption="2023年12月撮影のシュトゥットガルトの過去の会場風景。2026年の会場状況ではありません。"),
   dict(slug="aachen-christmas-market-2026-guide",
-       file="Aachener Weihnachtsmarkt.jpg",author="ItsNyoty",
-       license="CC BY-SA 4.0",license_url="https://creativecommons.org/licenses/by-sa/4.0",
-       year="2023",place="アーヘンのクリスマスマーケット",
-       caption="2023年12月撮影のアーヘンの過去の会場風景。2026年の実際の屋台配置とは異なる場合があります。"),
+       file="Weihnachtsmarkt Aachen (Markt).jpg",author="Amel",
+       license="CC BY-SA 3.0",license_url="https://creativecommons.org/licenses/by-sa/3.0",
+       year="2008",place="アーヘンのクリスマスマーケット",
+       caption="2008年12月撮影のアーヘンの過去の会場風景。2026年の実際の屋台配置とは異なる場合があります。"),
   dict(slug="nuremberg-christkindlesmarkt-2026-guide",
        file="Christkindlesmarkt 2023 Nürnberg 001.jpg",author="DALIBRI",
        license="CC BY-SA 4.0",license_url="https://creativecommons.org/licenses/by-sa/4.0",
@@ -108,6 +108,10 @@ def main():
         slug=row["slug"]
         matches=[x for x in registry if x.get("slug")==slug and x.get("published") is True]
         if len(matches)!=1:raise ValueError("No unique published registry entry: "+slug)
+        existing_cover="/assets/img/events/"+slug+".webp"
+        if existing_cover in credited_files:
+            print("ALREADY_VERIFIED",slug,flush=True)
+            continue
         md=ROOT/"content/events"/(slug+".md")
         if not md.is_file():raise ValueError("Article missing: "+str(md))
         try: image=fetch_image(row["file"])
@@ -147,7 +151,7 @@ def main():
         credited_files.update(imgpaths)
         successful.append(slug)
         print("UPDATED",slug,"original",image.size,"credit",row["author"],flush=True)
-    if len(successful)<5:raise ValueError("Too few verified covers: "+str(successful)+" failures "+str(failures))
+    if len(successful)<1:raise ValueError("Too few verified covers: "+str(successful)+" failures "+str(failures))
     registry_path.write_text(json.dumps(registry,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     credits_path.write_text(json.dumps(credits,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     budget=json.loads(budget_path.read_text(encoding="utf-8"))

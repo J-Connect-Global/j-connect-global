@@ -12,11 +12,11 @@
     "mismatched_image_url": 0
   },
   "notes": [
-    "2026-11-22: 10 cover articles (9 inside the requested 2026-10-22 to 11-22 window, 1 published 2026-10-21) now have all four resized/OG assets plus synchronized article metadata in draft PR #518. 3 covers are credited archival Wikimedia Commons photos, 7 are disclosed photoreal AI editorial images. Main/production remains unchanged.",
-    "The first nine image files were recovered and optimized into an external ZIP in the ChatGPT conversation; they have NOT been uploaded to GitHub or deployed.",
-    "Flagging illustration uses alt text only; false positives/negatives require visual checks before replacement.",
-    "Preserve good licensed photographs and useful in-article charts; do not duplicate hero image in body.",
-    "Externally sourced images need author/license/original file attribution; AI-created imagery must be labeled as synthetic, never a real event photograph."
+    "2026-11-23: 10 article covers (9 within 2026-10-22 to 2026-11-22, plus one 2026-10-21) are committed as 1200px WebP, 768w/480w WebP and OG JPEG. Real licensed archival photos: 3; disclosed AI-generated editorial images: 7.",
+    "On 2026-11-23, branch incorporated newly published Neuss market article and images from main. Rebuilt pages and content registry on branch. Final PR checks and production publication are tracked separately.",
+    "Remaining 94 previously described illustrated covers are candidates for visual/editorial review; 11 more covers require manual review. These are metadata-based counts, not a finding that every remaining image is unsuitable.",
+    "Preserve accurate existing licensed photos and meaningful in-article explanatory diagrams. Do not reuse unrelated photos across unrelated topics.",
+    "Externally sourced photos require original file URL, author, license, modification log and historical capture context. AI-generated imagery must be transparently labeled as an editorial illustration, not a documentary photograph."
   ],
   "entries": [
     {

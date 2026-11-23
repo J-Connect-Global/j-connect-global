@@ -1,0 +1,94 @@
+[
+  {
+    "slug": "newborn-items-checklist-germany",
+    "title": "ドイツ語の商品名つき・新生児用品チェックリスト｜dm・Rossmannで探すときの売り場の言葉【2026年】",
+    "published_at": "2026-11-14",
+    "markdown_path": "/content/living/newborn-items-checklist-germany.md",
+    "hero": "/assets/images/living/birth-procedures-germany.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/newborn-items-four-groups.svg",
+        "alt": "おむつ替え、授乳、お風呂と体調、衣類と移動の4つに分けて新生児用品をドイツ語の名前と並べた図",
+        "caption": "新生児用品をドイツ語の名前と一緒に4つに分ける",
+        "line": 35,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/stroller-purchase-checks.svg",
+        "alt": "ベビーカーとチャイルドシートを買う前に確認する点を示した図",
+        "caption": "大きな物は、車や住まいに合うかを確かめてから買う",
+        "line": 80,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "germany-manners-mistakes-japanese",
+    "title": "ドイツで日本人がやりがちな「知らずに失礼」8選｜チップ・あいさつ・日曜の音・自転車レーン【2026年】",
+    "published_at": "2026-11-16",
+    "markdown_path": "/content/living/germany-manners-mistakes-japanese.md",
+    "hero": "/assets/img/living/germany-manners-mistakes-japanese.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/seo/manners-three-layers.svg",
+        "alt": "ルールの強さは3段階。法律、建物や地域の決まり、ただの習慣の順に、守らなかったときの影響が変わることを示した図",
+        "caption": "図解：J-Connect編集部。法令は末尾の公式情報で確認。習慣の部分は編集部の整理で、公的な基準ではありません。",
+        "line": 41,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/seo/manners-tip-example.svg",
+        "alt": "チップの渡し方の例。請求額に少し足した金額を、会計の場で店員に直接伝えて払う流れを示した図",
+        "caption": "図解：J-Connect編集部。金額は説明用の例で、決まりではありません。",
+        "line": 49,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "germany-heating-ventilation-mold-guide",
+    "title": "ドイツの冬の暖房と換気｜サーモスタットの目盛り・窓の開け方・カビと光熱費を防ぐ基本【2026年】",
+    "published_at": "2026-11-16",
+    "markdown_path": "/content/living/germany-heating-ventilation-mold-guide.md",
+    "hero": "/assets/img/living/germany-heating-ventilation-mold-guide.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/seo/heating-thermostat-scale.svg",
+        "alt": "暖房のつまみの数字と室温の対応を示した図。1が約12度、2が約16度、3が約20度、4が約24度、5が約28度で、数字は温まる速さではなく目標の室温を表している",
+        "caption": "図解：J-Connect編集部。根拠：消費者センターの案内。機器によって差があるため、実際の室温は温度計で確認してください。",
+        "line": 58,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/seo/ventilation-steps.svg",
+        "alt": "換気の手順を示した図。暖房のつまみを止め、窓を全開にして冬は5〜10分、向かい合う窓を開けて風を通し、閉めたら暖房を戻す流れ",
+        "caption": "図解：J-Connect編集部。根拠：連邦環境庁の案内。冬の時間は目安です。",
+        "line": 69,
+        "position": 3
+      }
+    ]
+  },
+  {
+    "slug": "duesseldorf-relocation-guide",
+    "title": "デュッセルドルフ赴任ガイド｜渡独前から到着後・本帰国まで、やることと読む記事の順番",
+    "published_at": "2026-11-16",
+    "markdown_path": "/content/living/duesseldorf-relocation-guide.md",
+    "hero": "/assets/images/living/first-month-checklist.webp",
+    "media": [
+      {
+        "src": "/assets/images/living/anmeldung-preparation.webp",
+        "alt": "住民登録の書類、予約、鍵、郵便物を準備する様子",
+        "caption": "AI生成イラスト：住民登録前に準備する書類と生活用品。実在の申請書、予約画面、個人情報ではありません。",
+        "line": 34,
+        "position": 2
+      },
+      {
+        "src": "/assets/images/living/first-30-days-dependency.svg",
+        "alt": "住所、住民登録、税務識別番号、保険、勤務先へつながる手続きの関係",
+        "caption": "手続きは住所と保険を起点に、必要なものを並行して進めます。",
+        "line": 79,
+        "position": 3
+      }
+    ]
+  }
+]

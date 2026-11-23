@@ -22,14 +22,14 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-11-01"
-updated_at: "2026-11-01"
+updated_at: "2026-11-23"
 last_verified: "2026-11-01"
 canonical_url: "/germany/ja/events/frankfurt-christmas-market-2026-guide/"
 official_url: "https://www.visitfrankfurt.travel/erleben/feste-und-veranstaltungen/frankfurter-weihnachtsmarkt"
 image: "/assets/img/events/frankfurt-christmas-market-2026-guide.webp"
-image_alt: "三角屋根が連なる木組みの家並みの前で、大きなツリーと屋台の灯りがともる夜の広場を描いたイラスト"
-image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。フランクフルトのクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。"
-image_credit: "AI-assisted vector illustration / J-Connect"
+image_alt: "2024年撮影のフランクフルトのクリスマスマーケットの実写真"
+image_caption: "2024年に撮影されたフランクフルトの会場風景。2026年の日程・営業時間は本文でご確認ください。"
+image_credit: "Wikimedia Commons / Matti Blume / CC BY-SA 4.0"
 ---
 
 # フランクフルトのクリスマスマーケット2026｜日程・営業時間と名物ベートマンヒェン

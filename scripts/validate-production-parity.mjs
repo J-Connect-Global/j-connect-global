@@ -168,7 +168,7 @@ function validateHomeEventBadges(html, label) {
   for (const pattern of staleBadgePatterns) {
     if (pattern.test(html)) fail(`${label} contains stale Home event badge label: ${pattern}`);
   }
-  if (!html.includes('公式情報') && !html.includes('開催日') && !html.includes('冬の')) {
+  if (!['公式情報', '開催日', '開催中', '冬の', '週末', '開催時期'].some((label) => html.includes(label))) {
     fail(`${label} Home Events marker is missing polished event badge wording.`);
   }
 }

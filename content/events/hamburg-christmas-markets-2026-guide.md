@@ -32,14 +32,14 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-11-01"
-updated_at: "2026-11-21"
+updated_at: "2026-11-23"
 last_verified: "2026-11-21"
 canonical_url: "/germany/ja/events/hamburg-christmas-markets-2026-guide/"
 official_url: "https://www.hamburg.de/tourismus/weihnachten-hamburg/weihnachtsmarkt-hamburg/weihnachtsmarkt-rathausmarkt-301092"
 image: "/assets/img/events/hamburg-christmas-markets-2026-guide.webp"
-image_alt: "緑の屋根の高い塔がある市庁舎を背に木の屋台が並び、夜空をトナカイのそりが渡り、湖の上に光の円すい形のツリーが浮かぶ様子を描いたイラスト"
-image_caption: "AIの支援でコードから描画したイラスト（J-Connect）。ハンブルクのクリスマスマーケットのテーマを表したもので、実際の建物や会場配置を再現していません。"
-image_credit: "AI-assisted vector illustration / J-Connect"
+image_alt: "2010年撮影のハンブルク市庁舎前クリスマスマーケットの実写真"
+image_caption: "2010年に撮影されたハンブルク市庁舎前の過去の風景。2026年の会場配置や出店内容ではありません。"
+image_credit: "Wikimedia Commons / TH:Korr / CC BY 3.0"
 ---
 
 # ハンブルクのクリスマスマーケット2026｜日程・営業時間・空飛ぶサンタと会場の選び方

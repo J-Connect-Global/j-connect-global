@@ -26,14 +26,14 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-30"
-updated_at: "2026-11-21"
+updated_at: "2026-11-23"
 last_verified: "2026-11-21"
 canonical_url: "/germany/ja/events/aachen-christmas-market-2026-guide/"
 official_url: "https://www.aachen-tourismus.de/aachen-entdecken/details/event/aachener-weihnachtsmarkt/"
 image: "/assets/img/events/aachen-christmas-market-2026-guide.webp"
-image_alt: "石造りの市庁舎の前で、焼き菓子プリンテンを並べた屋台に灯りがともる冬の夕暮れを描いたイラスト"
-image_caption: "イラスト：J-Connect。アーヘンのクリスマスマーケットのテーマを表したもので、実際の建物や屋台を再現していません。"
-image_credit: "Illustration / J-Connect"
+image_alt: "2008年撮影のアーヘンのクリスマスマーケットの実写真"
+image_caption: "2008年12月撮影のアーヘンの過去の会場風景。2026年の実際の屋台配置とは異なる場合があります。"
+image_credit: "Wikimedia Commons / Amel / CC BY-SA 3.0"
 ---
 
 # アーヘン・クリスマスマーケット2026｜カール大帝の都で、プリンテンの香りに包まれる

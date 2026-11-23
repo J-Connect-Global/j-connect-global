@@ -5,18 +5,20 @@
   "counts": {
     "published_last_month": 114,
     "originally_described_as_illustration": 103,
-    "committed_to_draft_pr_in_window": 9,
+    "committed_to_draft_pr_in_window": 16,
     "committed_to_draft_pr_prior_day": 1,
-    "remaining_illustration_descriptions_needing_photo_review": 94,
+    "remaining_illustration_descriptions_needing_photo_review": 87,
     "manual_check_existing_image": 11,
-    "mismatched_image_url": 0
+    "mismatched_image_url": 0,
+    "wave2_completed_in_window": 7
   },
   "notes": [
+    "2026-11-23 wave 2: seven additional seasonal 2026 market articles now have credited historical Wikimedia Commons covers, responsive WebP and OG JPEG; photographed 2008–2024. Source/copyright attributes checked. Await final PR CI and main publication.",
     "2026-11-23: 10 article covers (9 within 2026-10-22 to 2026-11-22, plus one 2026-10-21) are committed as 1200px WebP, 768w/480w WebP and OG JPEG. Real licensed archival photos: 3; disclosed AI-generated editorial images: 7.",
     "On 2026-11-23, branch incorporated newly published Neuss market article and images from main. Rebuilt pages and content registry on branch. Final PR checks and production publication are tracked separately.",
-    "Remaining 94 previously described illustrated covers are candidates for visual/editorial review; 11 more covers require manual review. These are metadata-based counts, not a finding that every remaining image is unsuitable.",
     "Preserve accurate existing licensed photos and meaningful in-article explanatory diagrams. Do not reuse unrelated photos across unrelated topics.",
-    "Externally sourced photos require original file URL, author, license, modification log and historical capture context. AI-generated imagery must be transparently labeled as an editorial illustration, not a documentary photograph."
+    "Externally sourced photos require original file URL, author, license, modification log and historical capture context. AI-generated imagery must be transparently labeled as an editorial illustration, not a documentary photograph.",
+    "As of this wave, 87 previously illustrated in-window articles remain candidates for manual assessment; 11 further photo checks remain. A good original photograph need not be replaced."
   ],
   "entries": [
     {
@@ -133,8 +135,10 @@
       "currently_configured_image": "/assets/img/events/dresden-striezelmarkt-2026-guide.webp",
       "image_url_mismatch": false,
       "alt": "粉砂糖をかけた大きなシュトレンと、ろうそくが灯る多段の木のピラミッドが並ぶ冬の広場を描いたイラスト",
-      "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "status": "committed_to_wave2_draft",
+      "priority": "P0_completed",
+      "image_source_type": "Wikimedia Commons archival photograph",
+      "credited": true
     },
     {
       "slug": "frankfurt-christmas-market-2026-guide",
@@ -146,8 +150,10 @@
       "currently_configured_image": "/assets/img/events/frankfurt-christmas-market-2026-guide.webp",
       "image_url_mismatch": false,
       "alt": "三角屋根が連なる木組みの家並みの前で、大きなツリーと屋台の灯りがともる夜の広場を描いたイラスト",
-      "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "status": "committed_to_wave2_draft",
+      "priority": "P0_completed",
+      "image_source_type": "Wikimedia Commons archival photograph",
+      "credited": true
     },
     {
       "slug": "hamburg-christmas-markets-2026-guide",
@@ -159,8 +165,10 @@
       "currently_configured_image": "/assets/img/events/hamburg-christmas-markets-2026-guide.webp",
       "image_url_mismatch": false,
       "alt": "緑の屋根の高い塔がある市庁舎を背に木の屋台が並び、夜空をトナカイのそりが渡り、湖の上に光の円すい形のツリーが浮かぶ様子を描いたイラスト",
-      "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "status": "committed_to_wave2_draft",
+      "priority": "P0_completed",
+      "image_source_type": "Wikimedia Commons archival photograph",
+      "credited": true
     },
     {
       "slug": "munich-christmas-markets-2026-guide",
@@ -172,8 +180,10 @@
       "currently_configured_image": "/assets/img/events/munich-christmas-markets-2026-guide.webp",
       "image_url_mismatch": false,
       "alt": "尖塔のある市庁舎を背に、大きなツリーと木の屋台が並び、手前の屋台に小さな降誕の人形と馬小屋が飾られた夜の広場を描いたイラスト",
-      "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "status": "committed_to_wave2_draft",
+      "priority": "P0_completed",
+      "image_source_type": "Wikimedia Commons archival photograph",
+      "credited": true
     },
     {
       "slug": "nrw-ice-rinks-winter-2026-27",
@@ -211,8 +221,10 @@
       "currently_configured_image": "/assets/img/events/stuttgart-christmas-market-2026-guide.webp",
       "image_url_mismatch": false,
       "alt": "城のシルエットを背に、雪の家並みや人形、星、塔の飾りを屋根に載せた木の屋台が並ぶ夜の市を描いたイラスト",
-      "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "status": "committed_to_wave2_draft",
+      "priority": "P0_completed",
+      "image_source_type": "Wikimedia Commons archival photograph",
+      "credited": true
     },
     {
       "slug": "duesseldorf-carnival-2026-27-guide",
@@ -237,8 +249,10 @@
       "currently_configured_image": "/assets/img/events/aachen-christmas-market-2026-guide.webp",
       "image_url_mismatch": false,
       "alt": "石造りの市庁舎の前で、焼き菓子プリンテンを並べた屋台に灯りがともる冬の夕暮れを描いたイラスト",
-      "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "status": "committed_to_wave2_draft",
+      "priority": "P0_completed",
+      "image_source_type": "Wikimedia Commons archival photograph",
+      "credited": true
     },
     {
       "slug": "nuremberg-christkindlesmarkt-2026-guide",
@@ -250,8 +264,10 @@
       "currently_configured_image": "/assets/img/events/nuremberg-christkindlesmarkt-2026-guide.webp",
       "image_url_mismatch": false,
       "alt": "階段状の破風の教会と木組みの家々の前に、赤と白の縞の屋根の屋台が並ぶ夜の広場を描いたイラスト",
-      "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "status": "committed_to_wave2_draft",
+      "priority": "P0_completed",
+      "image_source_type": "Wikimedia Commons archival photograph",
+      "credited": true
     },
     {
       "slug": "germany-silvester-fireworks-rules",

@@ -5,39 +5,23 @@
   "counts": {
     "articles": 114,
     "with_body_media": 113,
-    "inline_figure_references": 229,
-    "svg": 223,
+    "inline_figure_references": 228,
+    "svg": 222,
     "webp": 6,
     "other": 0,
-    "unique_assets": 226,
-    "shared_assets": 3,
+    "unique_assets": 227,
+    "shared_assets": 1,
     "body_image_count_hist": {
       "0": 1,
-      "1": 0,
-      "2": 110,
-      "3": 3,
-      "4": 0,
-      "5": 0
+      "2": 111,
+      "3": 2
     },
-    "visually_reviewed_and_redesigned_inline_references": 2,
-    "pending_visual_review_inline_references": 227,
-    "body_media_assets_redesigned": 2
+    "visually_reviewed_and_redesigned_inline_references": 3,
+    "pending_visual_review_inline_references": 225,
+    "body_media_assets_redesigned": 3,
+    "off_topic_inline_image_references_removed": 1
   },
   "reused_inline_assets": [
-    {
-      "src": "/assets/images/living/birth-procedures-offices.svg",
-      "articles": [
-        "kindergeld-auszahlungstermine-2027",
-        "birth-registration-foreign-spouse-germany"
-      ]
-    },
-    {
-      "src": "/assets/images/living/doctor-visit-preparation.svg",
-      "articles": [
-        "japanese-speaking-doctors-germany",
-        "family-vaccination-before-birth-germany"
-      ]
-    },
     {
       "src": "/assets/images/living/dentist-insurance-coverage.svg",
       "articles": [
@@ -460,17 +444,14 @@
           "position": 3,
           "quality_status": "pending_per_asset_visual_review",
           "priority": "P3"
-        },
+        }
+      ],
+      "media_count": 2,
+      "removed_media": [
         {
-          "src": "/assets/images/living/birth-procedures-offices.svg",
-          "alt": "出生地の戸籍登録所、子の居住地の窓口、保険者と勤務先、日本公館が担当する手続きを整理した図",
-          "caption": "出生後の手続きは窓口が異なります。2027年の申請なし支給は条件付きで、対象外の場合は申請が必要です。",
-          "line": 96,
-          "position": 4,
-          "quality_status": "pending_per_asset_visual_review",
-          "reuse_in_articles": 2,
-          "review_note": "Shared diagram, verify content/context before replacing",
-          "priority": "P3"
+          "path": "/assets/images/living/birth-procedures-offices.svg",
+          "reason": "Off-topic shared birth-office illustration; body text already covers administrative qualification and another chart covers phased rollout.",
+          "date": "2026-11-23"
         }
       ]
     },
@@ -2946,17 +2927,19 @@
           "priority": "P3"
         },
         {
-          "src": "/assets/images/living/doctor-visit-preparation.svg",
-          "alt": "受診の準備として、症状のメモ、薬とアレルギーの一覧、健康保険証などを用意することを示した図",
-          "caption": "受診の前に、保険証と接種の記録をそろえる",
+          "src": "/assets/images/living/family-vaccination-preparation.svg",
+          "alt": "接種歴の確認、かかりつけ医への相談、保険証・接種記録の持参、Impfpassへの記録を示す4ステップ図",
+          "caption": "図解：J-Connect。接種の対象と時期は個別に医師・STIKOの指針を確認してください。",
           "line": 59,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "redesigned_previewed_in_context",
           "reuse_in_articles": 2,
           "review_note": "Shared diagram, verify content/context before replacing",
-          "priority": "P3"
+          "priority": "P3",
+          "assessed_at": "2026-11-23"
         }
-      ]
+      ],
+      "media_count": 2
     },
     {
       "slug": "income-tax-prepayment-germany",
@@ -3149,6 +3132,7 @@
     }
   ],
   "quality_notes": [
+    "Wave2: replaced generic doctor visit diagram used for vaccination article with relevant four-step vector figure; removed unrelated birth-registration-office figure from Kindergeld calendar article. The remaining user guide charts and factual text were retained.",
     "Initial scan is an exhaustive Markdown-image inventory, not an assertion that 227 remaining images are low quality.",
     "Two SVG assets in advent-wreath-calendar-origin were redesigned to preserve historical content, re-rendered to 1200x675 PNG for QA with Japanese fonts, and visually checked for clipping and overlap.",
     "Images now open their native files in a new tab through accessible keyboard/touch links (the new renderer applies to all local body images).",

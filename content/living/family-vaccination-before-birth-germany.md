@@ -56,7 +56,7 @@ official_sources:
 4. 記録してもらう：接種後、予防接種手帳（Impfpass）に記入してもらう。手帳がなければ、その場で作ってもらえるか聞く。
 5. 出産の4週間前までに終える：免疫がつくまでに時間がかかるため、出産予定日から逆算して予約する。
 
-![受診の準備として、症状のメモ、薬とアレルギーの一覧、健康保険証などを用意することを示した図](/assets/images/living/doctor-visit-preparation.svg "受診の前に、保険証と接種の記録をそろえる")
+![接種歴の確認、かかりつけ医への相談、保険証・接種記録の持参、Impfpassへの記録を示す4ステップ図](/assets/images/living/family-vaccination-preparation.svg "図解：J-Connect。接種の対象と時期は個別に医師・STIKOの指針を確認してください。")
 
 ## 落とし穴
 

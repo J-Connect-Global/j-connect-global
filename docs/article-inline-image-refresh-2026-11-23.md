@@ -3,15 +3,15 @@
 ## 対象
 2026-10-22〜2026-11-22の公開記事114本（Events 61／Living 52／Learn German 1）。前回監査の参考値は本文画像229点（SVG 223、WebP 6）。今回の作業では全画像をまだ目視確認していない。
 
-## 今回更新した本文図解（6点）
+## 今回更新した本文図解（4点）
 | 記事 | ファイル | 主な改善 |
 | --- | --- | --- |
-| アドベントクランツとカレンダー | advent-wreath-then-now.svg | 1839年の車輪式と現代の4本式を比較。ろうそくの本数は年によって異なることを明示 |
-| 同上 | advent-calendar-history.svg | 19世紀・1851年・1908年・現在の4段階を再構成し、初出年代の諸説を注記 |
 | グリューワイン | gluehwein-eu-definition.svg | EU規則の4条件を整理し、ワインの種類・例外に言及 |
 | 同上 | gluehwein-label-sugar-kids.svg | 材料表示、糖分の調査例、子ども向け0.0%飲料を区分 |
 | クリスマスツリーの歴史 | christmas-tree-history-timeline.svg | 5つの時代を再構成し、歴史上の不確実性を保持 |
 | デュッセルドルフのカーニバル | duesseldorf-carnival-hoppeditz-year.svg | 目覚め・風刺・街頭祭典・灰の水曜日の循環を再設計 |
+
+注：アドベントの記事2点（advent-wreath-then-now.svg、advent-calendar-history.svg）は並行作業によりmain上で既に改善済み。今回のPRではその新しい版を優先し、上書きしない。
 
 すべてJ-Connect Globalが制作した編集図解。ドキュメンタリー写真・実際の2026年イベントの撮影記録ではない。Markdown、既存URL、出典リンクを変更せず、参照先SVGを更新。
 

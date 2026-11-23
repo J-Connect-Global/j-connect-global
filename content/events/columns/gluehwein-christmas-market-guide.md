@@ -27,14 +27,14 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-29"
-updated_at: "2026-10-29"
+updated_at: "2026-11-23"
 last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/columns/gluehwein-christmas-market-guide/"
 official_url: "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32014R0251"
 image: "/assets/img/events/gluehwein-christmas-market-guide.webp"
-image_alt: "クリスマスマーケットで湯気の立つグリューワインのマグを持つ手を描いたイラスト"
-image_caption: "イラスト：J-Connect。グリューワインのテーマを表したもので、特定のマーケットや商品を再現していません。"
-image_credit: "Illustration / J-Connect"
+image_alt: "2015年撮影のオスナブリュックのクリスマスマーケットのグリューワインの実写真"
+image_caption: "2015年にオスナブリュックのクリスマスマーケットで撮影されたグリューワイン。一般的な飲み方の参考写真です。"
+image_credit: "Wikimedia Commons / Basotxerri / CC BY-SA 4.0"
 ---
 
 # クリスマスマーケットのグリューワインとは？｜EUの法律で決まった「定義」と、ラベルに材料が書かれない理由

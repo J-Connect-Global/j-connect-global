@@ -675,6 +675,71 @@
         "/assets/img/events/aachen-christmas-market-2026-guide-768w.webp",
         "/assets/img/events/aachen-christmas-market-2026-guide-480w.webp"
       ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Advent_wreath_01.jpg",
+      "author": "Eugenio Hansen, OFS",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "modifications": "横長トリミング・縮小・WebP/JPEG変換（変更した画像を元画像のライセンス条件に従い公開）",
+      "files": [
+        "/assets/img/events/advent-wreath-calendar-origin.webp",
+        "/assets/img/events/advent-wreath-calendar-origin-768w.webp",
+        "/assets/img/events/advent-wreath-calendar-origin-480w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gl%C3%BChwein_Weinnachtsmarkt_OS.JPG",
+      "author": "Basotxerri",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "横長トリミング・縮小・WebP/JPEG変換（変更した画像を元画像のライセンス条件に従い公開）",
+      "files": [
+        "/assets/img/events/gluehwein-christmas-market-guide.webp",
+        "/assets/img/events/gluehwein-christmas-market-guide-768w.webp",
+        "/assets/img/events/gluehwein-christmas-market-guide-480w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Silvester_Frankfurt.jpg",
+      "author": "Thomas Wolf / www.foto-tw.de",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "modifications": "横長トリミング・縮小・WebP/JPEG変換（変更した画像を元画像のライセンス条件に従い公開）",
+      "files": [
+        "/assets/img/events/germany-silvester-fireworks-rules.webp",
+        "/assets/img/events/germany-silvester-fireworks-rules-768w.webp",
+        "/assets/img/events/germany-silvester-fireworks-rules-480w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Duesseldorf-kinderkarneval.jpg",
+      "author": "Solches",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "横長トリミング・縮小・WebP/JPEG変換（変更した画像を元画像のライセンス条件に従い公開）",
+      "files": [
+        "/assets/img/events/duesseldorf-carnival-2026-27-guide.webp",
+        "/assets/img/events/duesseldorf-carnival-2026-27-guide-768w.webp",
+        "/assets/img/events/duesseldorf-carnival-2026-27-guide-480w.webp"
+      ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Weihnachtsbaum._IMG_8111WI.jpg",
+      "author": "Kora27",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "横長トリミング・縮小・WebP/JPEG変換（変更した画像を元画像のライセンス条件に従い公開）",
+      "files": [
+        "/assets/img/events/christmas-tree-origin-germany.webp",
+        "/assets/img/events/christmas-tree-origin-germany-768w.webp",
+        "/assets/img/events/christmas-tree-origin-germany-480w.webp"
+      ]
     }
   ]
 }

@@ -33,14 +33,14 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-29"
-updated_at: "2026-11-01"
+updated_at: "2026-11-23"
 last_verified: "2026-11-01"
 canonical_url: "/germany/ja/events/columns/germany-silvester-fireworks-rules/"
 official_url: "https://www.bmi.bund.de/SharedDocs/faqs/DE/themen/bevoelkerungsschutz/silvester/silvester.html"
 image: "/assets/img/events/germany-silvester-fireworks-rules.webp"
-image_alt: "大みそかの夜、ドイツの街の上空に上がる花火を描いたイラスト"
-image_caption: "イラスト：J-Connect。大晦日の花火のテーマを表したもので、特定の街や催しを再現していません。"
-image_credit: "Illustration / J-Connect"
+image_alt: "2009年撮影のフランクフルトの大晦日の花火の実写真"
+image_caption: "2009年1月1日撮影のフランクフルトの花火。2026年末の実際の規制・禁止区域を示す画像ではありません。"
+image_credit: "Wikimedia Commons / Thomas Wolf / www.foto-tw.de / CC BY-SA 3.0"
 ---
 
 # ドイツの大晦日はなぜ花火だらけ？｜販売期間・使用日・禁止区域のルール

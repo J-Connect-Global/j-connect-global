@@ -38,14 +38,14 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-31"
-updated_at: "2026-10-31"
+updated_at: "2026-11-23"
 last_verified: "2026-11-09"
 canonical_url: "/germany/ja/events/duesseldorf-carnival-2026-27-guide/"
 official_url: "https://www.helau.cc/de/pages/veranstaltungen-3"
 image: "/assets/img/events/duesseldorf-carnival-2026-27-guide.webp"
-image_alt: "大きなマスタードの壺から、道化の帽子をかぶった人形が伸びをしながら目を覚ます様子を描いたイラスト"
-image_caption: "イラスト：J-Connect。ホッペディッツの目覚めをテーマにしたもので、実際の人形・衣装・会場を再現していません。"
-image_credit: "Illustration / J-Connect"
+image_alt: "2015年撮影のデュッセルドルフ・ケーニヒスアレーの子どもカーニバルの実写真"
+image_caption: "2015年撮影のデュッセルドルフの子どもカーニバル。2026/27年の行事や山車を撮影したものではありません。"
+image_credit: "Wikimedia Commons / Solches / CC BY-SA 4.0"
 ---
 
 # デュッセルドルフのカーニバル2026/27｜ホッペディッツの目覚めから、風刺の山車が進むバラの月曜日まで

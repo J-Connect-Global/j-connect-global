@@ -27,14 +27,14 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-27"
-updated_at: "2026-10-27"
+updated_at: "2026-11-23"
 last_verified: "2026-10-27"
 canonical_url: "/germany/ja/events/columns/christmas-tree-origin-germany/"
 official_url: "https://katholisch.de/artikel/317-weihnachtsbaum"
 image: "/assets/img/events/christmas-tree-origin-germany.webp"
-image_alt: "わらの星やりんごで飾られたクリスマスツリーと、暖かい居間を描いたイラスト"
-image_caption: "イラスト：J-Connect。昔のクリスマスツリーのテーマを表したもので、特定の家庭や時代を再現していません。"
-image_credit: "Illustration / J-Connect"
+image_alt: "2014年撮影のケムニッツのクリスマスツリーの装飾の実写真"
+image_caption: "2014年に撮影されたケムニッツのクリスマスツリー装飾。クリスマスツリーの起源を記録した歴史写真ではありません。"
+image_credit: "Wikimedia Commons / Kora27 / CC BY-SA 4.0"
 ---
 
 # クリスマスツリーはドイツから広まった？｜リンゴを飾った「楽園の木」と、年に2,000万本以上の今

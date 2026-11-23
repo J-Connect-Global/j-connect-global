@@ -41,6 +41,18 @@ jobs:
       - name: Run deterministic validation contract
         run: npm run validate
 
+      - name: Inventory published in-body article images
+        run: node scripts/audit-inline-images.mjs --out "${{ runner.temp }}/inline-image-inventory.json"
+
+      - name: Save in-body image inventory
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: inline-image-inventory
+          path: ${{ runner.temp }}/inline-image-inventory.json
+          if-no-files-found: ignore
+          retention-days: 7
+
       - name: Install Chromium for runtime smoke tests
         run: npx playwright install --with-deps chromium
 

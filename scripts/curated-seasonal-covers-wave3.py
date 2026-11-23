@@ -98,7 +98,7 @@ def main():
         slug=row["slug"]
         matches=[x for x in registry if x.get("slug")==slug and x.get("published") is True]
         if len(matches)!=1:raise ValueError("No unique published registry entry: "+slug)
-        md=ROOT/"content/events"/(slug+".md")
+        md=ROOT/str(matches[0].get("markdown_path") or ("content/events/"+slug+".md")).lstrip("/")
         if not md.is_file():raise ValueError("Article missing: "+str(md))
         try: image=fetch_image(row["file"])
         except Exception as error:

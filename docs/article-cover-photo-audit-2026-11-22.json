@@ -5,14 +5,20 @@
   "counts": {
     "published_last_month": 114,
     "originally_described_as_illustration": 103,
-    "committed_to_draft_pr_in_window": 16,
+    "committed_to_draft_pr_in_window": 21,
     "committed_to_draft_pr_prior_day": 1,
-    "remaining_illustration_descriptions_needing_photo_review": 87,
-    "manual_check_existing_image": 11,
+    "remaining_illustration_descriptions_needing_photo_review": 82,
+    "manual_check_existing_image": 0,
     "mismatched_image_url": 0,
-    "wave2_completed_in_window": 7
+    "wave2_completed_in_window": 7,
+    "wave3_completed_in_window": 5,
+    "manual_visual_reviewed": 11,
+    "manual_unique_replacements_needed": 8,
+    "manual_visually_acceptable_provenance_pending": 3,
+    "remaining_total_in_window_unresolved": 93
   },
   "notes": [
+    "2026-11-23 wave3 adds five source-verified archival covers. Previously illustrated candidates: 82 remain. All 11 pre-existing non-illustration cover candidates visually reviewed: 8 need unique, topic-relevant replacements and 3 are visually acceptable but still require provenance/disclosure checks.",
     "2026-11-23 wave 2: seven additional seasonal 2026 market articles now have credited historical Wikimedia Commons covers, responsive WebP and OG JPEG; photographed 2008–2024. Source/copyright attributes checked. Await final PR CI and main publication.",
     "2026-11-23: 10 article covers (9 within 2026-10-22 to 2026-11-22, plus one 2026-10-21) are committed as 1200px WebP, 768w/480w WebP and OG JPEG. Real licensed archival photos: 3; disclosed AI-generated editorial images: 7.",
     "On 2026-11-23, branch incorporated newly published Neuss market article and images from main. Rebuilt pages and content registry on branch. Final PR checks and production publication are tracked separately.",
@@ -236,8 +242,10 @@
       "currently_configured_image": "/assets/img/events/duesseldorf-carnival-2026-27-guide.webp",
       "image_url_mismatch": false,
       "alt": "大きなマスタードの壺から、道化の帽子をかぶった人形が伸びをしながら目を覚ます様子を描いたイラスト",
-      "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "status": "committed_to_wave3_draft",
+      "priority": "P0_completed",
+      "credited": true,
+      "image_source_type": "Wikimedia Commons historical photo"
     },
     {
       "slug": "aachen-christmas-market-2026-guide",
@@ -279,8 +287,10 @@
       "currently_configured_image": "/assets/img/events/germany-silvester-fireworks-rules.webp",
       "image_url_mismatch": false,
       "alt": "大みそかの夜、ドイツの街の上空に上がる花火を描いたイラスト",
-      "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "status": "committed_to_wave3_draft",
+      "priority": "P0_completed",
+      "credited": true,
+      "image_source_type": "Wikimedia Commons historical photo"
     },
     {
       "slug": "gluehwein-christmas-market-guide",
@@ -292,8 +302,10 @@
       "currently_configured_image": "/assets/img/events/gluehwein-christmas-market-guide.webp",
       "image_url_mismatch": false,
       "alt": "クリスマスマーケットで湯気の立つグリューワインのマグを持つ手を描いたイラスト",
-      "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "status": "committed_to_wave3_draft",
+      "priority": "P0_completed",
+      "credited": true,
+      "image_source_type": "Wikimedia Commons historical photo"
     },
     {
       "slug": "unused-vacation-days-germany",
@@ -331,8 +343,10 @@
       "currently_configured_image": "/assets/img/events/advent-wreath-calendar-origin.webp",
       "image_url_mismatch": false,
       "alt": "1本目のろうそくが灯るアドベントリースと、後ろのアドベントカレンダーを描いたイラスト",
-      "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "status": "committed_to_wave3_draft",
+      "priority": "P0_completed",
+      "credited": true,
+      "image_source_type": "Wikimedia Commons historical photo"
     },
     {
       "slug": "christmas-tree-origin-germany",
@@ -344,8 +358,10 @@
       "currently_configured_image": "/assets/img/events/christmas-tree-origin-germany.webp",
       "image_url_mismatch": false,
       "alt": "わらの星やりんごで飾られたクリスマスツリーと、暖かい居間を描いたイラスト",
-      "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "status": "committed_to_wave3_draft",
+      "priority": "P0_completed",
+      "credited": true,
+      "image_source_type": "Wikimedia Commons historical photo"
     },
     {
       "slug": "nrw-school-holidays-2026-2027",
@@ -357,8 +373,13 @@
       "currently_configured_image": "/assets/images/living/childcare-play-editorial-v2.webp",
       "image_url_mismatch": false,
       "alt": "明るい保育室で子どもと保育者が積み木をする様子",
-      "status": "manual_check_existing_image",
-      "priority": "P1"
+      "status": "requires_unique_cover_replacement",
+      "priority": "P1",
+      "visual_review": {
+        "date": "2026-11-23",
+        "result": "replace",
+        "note": "Preschool playroom photo does not specifically depict school holidays."
+      }
     },
     {
       "slug": "germany-winter-mold-ventilation",
@@ -409,8 +430,13 @@
       "currently_configured_image": "/assets/images/living/first-month-checklist.webp",
       "image_url_mismatch": false,
       "alt": "住居、住民登録、保険、銀行、通信、交通に使うものを順に並べた机",
-      "status": "manual_check_existing_image",
-      "priority": "P2"
+      "status": "requires_unique_cover_replacement",
+      "priority": "P2",
+      "visual_review": {
+        "date": "2026-11-23",
+        "result": "replace",
+        "note": "Stylized icons and generic checklist, not an engaging locality-specific documentary cover."
+      }
     },
     {
       "slug": "germany-heating-ventilation-mold-guide",
@@ -461,8 +487,13 @@
       "currently_configured_image": "/assets/images/living/birth-procedures-germany.webp",
       "image_url_mismatch": false,
       "alt": "赤ちゃんの衣類と靴下、書類を入れるフォルダーを机に並べた出産手続きのイメージ",
-      "status": "manual_check_existing_image",
-      "priority": "P2"
+      "status": "visual_review_keep_pending_provenance",
+      "priority": "P2",
+      "visual_review": {
+        "date": "2026-11-23",
+        "result": "visually_acceptable_pending_provenance",
+        "note": "Baby clothes and document folder visually match the guide, but origin and disclosure must be checked; same hero is shared with other guides."
+      }
     },
     {
       "slug": "certified-translation-germany",
@@ -474,8 +505,13 @@
       "currently_configured_image": "/assets/images/living/japanese-resident-paperwork-editorial-v1.webp",
       "image_url_mismatch": false,
       "alt": "机の上で書類とパスポートを確認するイメージ",
-      "status": "manual_check_existing_image",
-      "priority": "P2"
+      "status": "visual_review_keep_pending_provenance",
+      "priority": "P2",
+      "visual_review": {
+        "date": "2026-11-23",
+        "result": "visually_acceptable_pending_provenance",
+        "note": "Photoreal desk paperwork image fits document-review context; source/provenance disclosure still requires confirmation."
+      }
     },
     {
       "slug": "dental-supplementary-insurance-germany",
@@ -487,8 +523,13 @@
       "currently_configured_image": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
       "image_url_mismatch": false,
       "alt": "ドイツの診療所の受付で確認するイメージ",
-      "status": "manual_check_existing_image",
-      "priority": "P2"
+      "status": "requires_unique_cover_replacement",
+      "priority": "P2",
+      "visual_review": {
+        "date": "2026-11-23",
+        "result": "replace",
+        "note": "Generic medical reception image does not depict dental treatment or dental insurance."
+      }
     },
     {
       "slug": "family-vaccination-before-birth-germany",
@@ -500,8 +541,13 @@
       "currently_configured_image": "/assets/images/living/german-clinic-reception-editorial-v1.webp",
       "image_url_mismatch": false,
       "alt": "ドイツの診療所の受付で予約を確認するイメージ",
-      "status": "manual_check_existing_image",
-      "priority": "P2"
+      "status": "requires_unique_cover_replacement",
+      "priority": "P2",
+      "visual_review": {
+        "date": "2026-11-23",
+        "result": "replace",
+        "note": "Reuses generic reception image with no vaccination or pregnancy context."
+      }
     },
     {
       "slug": "income-tax-prepayment-germany",
@@ -513,8 +559,13 @@
       "currently_configured_image": "/assets/images/living/japanese-resident-paperwork-editorial-v1.webp",
       "image_url_mismatch": false,
       "alt": "机の上で税務書類を確認するイメージ",
-      "status": "manual_check_existing_image",
-      "priority": "P2"
+      "status": "requires_unique_cover_replacement",
+      "priority": "P2",
+      "visual_review": {
+        "date": "2026-11-23",
+        "result": "replace",
+        "note": "Shares generic paperwork image with unrelated certified-translation guide; lacks tax context."
+      }
     },
     {
       "slug": "newborn-items-checklist-germany",
@@ -526,8 +577,13 @@
       "currently_configured_image": "/assets/images/living/birth-procedures-germany.webp",
       "image_url_mismatch": false,
       "alt": "赤ちゃんの衣類と靴下を机に並べたイメージ",
-      "status": "manual_check_existing_image",
-      "priority": "P2"
+      "status": "requires_unique_cover_replacement",
+      "priority": "P2",
+      "visual_review": {
+        "date": "2026-11-23",
+        "result": "replace",
+        "note": "Reuses birth-registration image instead of baby shopping supplies."
+      }
     },
     {
       "slug": "d-you-eudi-wallet-germany-2027",
@@ -1384,8 +1440,13 @@
       "currently_configured_image": "/assets/images/living/health-insurance-path.webp",
       "image_url_mismatch": false,
       "alt": "保険証、医療書類、予約カレンダー、スマートフォン、聴診器を机に準備した様子",
-      "status": "manual_check_existing_image",
-      "priority": "P3"
+      "status": "requires_unique_cover_replacement",
+      "priority": "P3",
+      "visual_review": {
+        "date": "2026-11-23",
+        "result": "replace",
+        "note": "Stylized generic health-insurance illustration does not demonstrate digital health record."
+      }
     },
     {
       "slug": "german-wine-regions-guide",
@@ -1449,8 +1510,13 @@
       "currently_configured_image": "/assets/images/living/birth-procedures-germany.webp",
       "image_url_mismatch": false,
       "alt": "赤ちゃんの衣類と靴下、書類を入れるフォルダーを机に並べた出産手続きのイメージ",
-      "status": "manual_check_existing_image",
-      "priority": "P3"
+      "status": "requires_unique_cover_replacement",
+      "priority": "P3",
+      "visual_review": {
+        "date": "2026-11-23",
+        "result": "replace",
+        "note": "Reuses birth-registration image instead of child-benefit payment dates or calendar."
+      }
     },
     {
       "slug": "nrw-public-holidays-2027",
@@ -1462,8 +1528,13 @@
       "currently_configured_image": "/assets/img/living/nrw-nature-relax-guide.webp",
       "image_url_mismatch": false,
       "alt": "NRW州の公園や自然の中で休暇を過ごすイメージ",
-      "status": "manual_check_existing_image",
-      "priority": "P3"
+      "status": "visual_review_keep_pending_provenance",
+      "priority": "P3",
+      "visual_review": {
+        "date": "2026-11-23",
+        "result": "visually_acceptable_pending_provenance",
+        "note": "Attractive scenic photo; do not assert it depicts a specific NRW location without verification. Provenance/disclosure outstanding."
+      }
     },
     {
       "slug": "german-beer-purity-law",

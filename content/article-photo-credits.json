@@ -662,6 +662,19 @@
         "/assets/img/events/nuremberg-christkindlesmarkt-2026-guide-768w.webp",
         "/assets/img/events/nuremberg-christkindlesmarkt-2026-guide-480w.webp"
       ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Weihnachtsmarkt_Aachen_(Markt).jpg",
+      "author": "Amel",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "modifications": "横長トリミング・縮小・WebP/JPEG変換（変更した画像を元画像のライセンス条件に従い公開）",
+      "files": [
+        "/assets/img/events/aachen-christmas-market-2026-guide.webp",
+        "/assets/img/events/aachen-christmas-market-2026-guide-768w.webp",
+        "/assets/img/events/aachen-christmas-market-2026-guide-480w.webp"
+      ]
     }
   ]
 }

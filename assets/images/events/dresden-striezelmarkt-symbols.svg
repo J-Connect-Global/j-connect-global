@@ -21,7 +21,6 @@
  <rect x="816" y="200" width="315" height="43" rx="12" fill="#eadcd1"/>
  <text x="227" y="231" font-size="23" font-weight="800" text-anchor="middle" fill="#4b513d">01　焼き菓子</text>
  <text x="600" y="231" font-size="23" font-weight="800" text-anchor="middle" fill="#365348">02　伝統工芸</text>
- <text x="973" y="231" font-size="23" font-weight="800" text-anchor="middle" fill="#66452f"/>
  <text x="973" y="231" font-size="23" font-weight="800" text-anchor="middle" fill="#66452f">03　冬の祭典</text>
  <!-- Dresden stollen, dusted loaf and cut slice -->
  <ellipse cx="224" cy="442" rx="133" ry="18" fill="#cbb9a4" opacity=".27"/>
@@ -32,6 +31,7 @@
  <g fill="#8c452d"><circle cx="188" cy="392" r="7"/><circle cx="220" cy="385" r="5"/><circle cx="252" cy="404" r="6"/><circle cx="235" cy="416" r="4"/></g>
  <circle cx="327" cy="300" r="30" fill="#c69a36" stroke="#fff0b3" stroke-width="5"/><path d="M313 300L324 311L343 287" stroke="#fff8d6" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
  <!-- Erzgebirge rotating-tier pyramid -->
+ <g transform="translate(0 100) scale(1 .76)">
  <ellipse cx="600" cy="444" rx="124" ry="17" fill="#a6b4a7" opacity=".24"/>
  <path d="M600 275 V447" stroke="#814b2e" stroke-width="12" stroke-linecap="round"/>
  <g stroke="#8b5931" stroke-width="4" fill="url(#wood)">
@@ -46,6 +46,7 @@
  <g stroke="#efe0ad" stroke-width="3" fill="none"><path d="M591 331L600 320L611 331"/><path d="M566 396L581 384L596 396"/><path d="M634 396L646 384L661 396"/></g>
  <g fill="#d9b14e"><circle cx="538" cy="349" r="7"/><circle cx="664" cy="349" r="7"/><circle cx="516" cy="415" r="7"/><circle cx="684" cy="415" r="7"/></g>
  <path d="M600 233 L600 217" stroke="#c69a36" stroke-width="5"/><circle cx="600" cy="210" r="8" fill="#c69a36"/>
+ </g>
  <!-- Festival processional stollen float -->
  <ellipse cx="973" cy="443" rx="134" ry="17" fill="#b9a89b" opacity=".25"/>
  <path d="M850 392 H1097 V432 H850Z" fill="#8b4936" stroke="#60392f" stroke-width="4"/>

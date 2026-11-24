@@ -65,7 +65,7 @@ disclaimer_type: "event"
 
 ![CE・GS・IP表示の役割を比較した図](/assets/images/events/christmas-lights-labels-2026.svg "認証マークそのものの模写ではなく、意味を比較した図解")
 
-消費者センターは屋外用の電飾にIP44、IP54、IP64などの表示例を挙げています。ただし、**「IP44ならどんな屋外環境でも安全」という意味ではありません。** 雨へのさらされ方、接続部、電源アダプターを含め、製品説明書の条件に従ってください。
+VDEは屋外用の電飾に少なくともIP44（防まつ形）の保護等級が必要だと説明しています。ただし、**「IP44ならどんな屋外環境でも安全」という意味ではありません。** 雨へのさらされ方、接続部、電源アダプターを含め、製品説明書の条件に従ってください。
 
 ## 買う前・飾る前のチェックリスト
 
@@ -80,7 +80,7 @@ disclaimer_type: "event"
 
 アドベントリースの枝は日がたつほど乾燥し、燃えやすくなります。ろうそくを使う場合は、不燃性の台に固定し、周囲の飾りや家具から十分離してください。子どもやペットの手が届く位置には置かず、点火中は大人がその場を離れないことが重要です。
 
-ドイツ消防協会は、本物の火を使う家庭に適切な消火手段を準備するよう勧めています。一方、ノルトライン＝ヴェストファーレン州の消防団体は、クリスマスツリーには**本物のろうそくを避け、電気式の電飾を使う**よう推奨しています。安全性を優先するならLED式のキャンドルが実用的です。
+ドイツ消防協会は、本物の火を使う家庭に適切な消火手段を準備するよう勧めています。一方、ミュンスター市消防局は、クリスマスツリーでは**本物のろうそくを避け、電気式の電飾を使う**よう推奨しています。安全性を優先するならLED式のキャンドルが実用的です。
 
 ## もし火が出たら：消火より避難を優先
 
@@ -105,6 +105,6 @@ disclaimer_type: "event"
 - [ドイツ消防協会：安全なクリスマスのための10項目](https://www.feuerwehrverband.de/zehn-tipps-des-deutschen-feuerwehrverbandes-fuer-ein-sicheres-weihnachtsfest/)（2025年12月17日発表、**2026年11月24日確認**）
 - [ドイツ消費者センター：LED電飾と安全表示](https://www.verbraucherzentrale.de/wissen/energie/strom-sparen/energiesparende-lichterketten-leds-sind-die-beste-wahl-10902)（2025年8月26日更新、**2026年11月24日確認**）
 - [VDE：クリスマス照明の安全性](https://www.vde.com/topics-de/verbraucherschutz/weihnachtsbeleuchtung)（**2026年11月24日確認**）
-- [NRW消防団体：アドベント・クリスマスの火災予防](https://www.feuerwehrverband.nrw/fileadmin/Downloads/Verband/Themen/Vorbeugender%20Brand-%20und%20Gefahrenschutz/2020-11-24_VB_Adventszeit_Weihnachten_Silvester.pdf)（**2026年11月24日確認**）
+- [ミュンスター市消防局：クリスマスの防火対策](https://www.stadt-muenster.de/feuerwehr/berufsfeuerwehr/vorbeugender-brandschutz/tipps-fuer-ein-sicheres-weihnachtsfest)（**2026年11月24日確認**）
 
 *最終確認：2026年11月24日。この記事は一般的な防火・製品選択情報です。個々の製品の使用条件はメーカーの説明書に従ってください。*

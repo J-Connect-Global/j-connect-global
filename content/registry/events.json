@@ -7762,5 +7762,67 @@
     "image_url": "/assets/img/events/neuss-christmas-markets-2026-guide.webp",
     "image_alt": "雪の降る夕暮れ、木製の屋台とイルミネーションを楽しむ家族を描いたノイスのクリスマスマーケットのAI生成イメージ",
     "content_type": "event"
+  },
+  {
+    "id": "E040",
+    "title": "ドイツのクリスマス電飾・ろうそく安全ガイド｜GS・CE・IP表示と火災予防",
+    "slug": "christmas-lights-candles-safety-germany",
+    "image_url": "/assets/images/events/christmas-lights-safety-check-2026.svg",
+    "image_alt": "冬の飾りの安全点検を示す編集部作成の図解",
+    "category": "季節行事",
+    "summary": "ドイツの冬の電飾とろうそくの安全な使い方。GS・CE・IP表示、屋外用ライト、火災予防と112への通報を公式情報から解説。",
+    "url": "/germany/ja/events/christmas-lights-candles-safety-germany/",
+    "markdown_path": "/content/events/christmas-lights-candles-safety-germany.md",
+    "published": false,
+    "status": "draft",
+    "published_at": "",
+    "updated_at": "2026-11-24",
+    "last_verified": "2026-11-24",
+    "tags": [
+      "クリスマス",
+      "電飾",
+      "ろうそく",
+      "火災予防",
+      "安全表示"
+    ],
+    "home_visible": false,
+    "hub_visible": false,
+    "search_visible": false,
+    "sitemap_visible": false,
+    "canonical_url": "/germany/ja/events/christmas-lights-candles-safety-germany/",
+    "city": "ドイツ全国",
+    "location": "家庭・ベランダ・庭",
+    "event_date": "2026-11-24〜2027-01-06",
+    "official_url": "https://www.feuerwehrverband.de/zehn-tipps-des-deutschen-feuerwehrverbandes-fuer-ein-sicheres-weihnachtsfest/",
+    "official_sources": [
+      {
+        "title": "ドイツ消防協会：クリスマスの安全対策",
+        "url": "https://www.feuerwehrverband.de/zehn-tipps-des-deutschen-feuerwehrverbandes-fuer-ein-sicheres-weihnachtsfest/"
+      },
+      {
+        "title": "消費者センター：電飾と安全表示",
+        "url": "https://www.verbraucherzentrale.de/wissen/energie/strom-sparen/energiesparende-lichterketten-leds-sind-die-beste-wahl-10902"
+      },
+      {
+        "title": "VDE：クリスマス照明の安全性",
+        "url": "https://www.vde.com/topics-de/verbraucherschutz/weihnachtsbeleuchtung"
+      }
+    ],
+    "disclaimer_type": "event",
+    "related_articles": [
+      "christmas-tree-origin-germany",
+      "advent-wreath-calendar-origin",
+      "germany-silvester-fireworks-rules"
+    ],
+    "review": {
+      "status": "needs_review",
+      "reviewed_by": "",
+      "last_reviewed_at": "",
+      "next_review_due": "2026-12-15"
+    },
+    "image": "/assets/images/events/christmas-lights-safety-check-2026.svg",
+    "image_caption": "編集部作成の安全点検図。実際の事故現場を示す写真ではありません。",
+    "image_credit": "J-Connect編集部",
+    "content_type": "event"
   }
 ]

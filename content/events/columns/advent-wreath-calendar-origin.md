@@ -4,7 +4,7 @@ id: "C013"
 content_type: "column"
 category: "季節・文化"
 title: "アドベントクランツとアドベントカレンダーはドイツ生まれ？｜ろうそく4本と24の扉の物語"
-summary: "クリスマス前の4週間、ドイツの家庭や街を彩るアドベントクランツとアドベントカレンダー。どちらもドイツで生まれた習慣です。1839年にハンブルクで生まれたろうそくの輪、母親の手作りから始まった印刷のカレンダー、2026年のアドベントの日程を紹介します。"
+summary: "クリスマス前の4週間、ドイツの家庭や街を彩るアドベントクランツとアドベントカレンダー。どちらもドイツで生まれた習慣です。1839年にハンブルクで生まれたろうそくの輪、20世紀初頭に登場した印刷のカレンダー、2026年のアドベントの日程を紹介します。"
 official_sources:
   - title: "カトリック教会ポータル（katholisch.de）：アドベントクランツを考えた人"
     url: "https://katholisch.de/artikel/15632-der-erfinder-des-adventskranzes"
@@ -29,7 +29,7 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-27"
-updated_at: "2026-11-23"
+updated_at: "2026-11-25"
 last_verified: "2026-10-27"
 canonical_url: "/germany/ja/events/columns/advent-wreath-calendar-origin/"
 official_url: "https://katholisch.de/artikel/15632-der-erfinder-des-adventskranzes"
@@ -85,7 +85,7 @@ image_credit: "Wikimedia Commons / Eugenio Hansen, OFS / CC BY-SA 3.0"
 
 印刷されたアドベントカレンダーを広めた人として知られるのが、ミュンヘンの印刷業者ゲアハルト・ラングです。
 
-カトリック教会のポータルサイトによると、ラングが子どものころ、母親は24の小さな仕切りのある厚紙の箱を作り、毎日1つずつお菓子を入れてくれました。大人になったラングはこの思い出をもとに、1908年に印刷のアドベントカレンダーを売り出しました。24のマス目がある台紙と、切り抜いて貼る24枚の絵がセットになったもので、まだ「扉」はありませんでした。ラングの会社は1940年に閉じるまで、アドベントカレンダーを作り続けたそうです（[katholisch.de](https://katholisch.de/artikel/42099-die-geschichte-des-adventskalenders)・[EKD](https://www.ekd.de/news_081128_adventskalender.htm)）。
+カトリック教会のポータルサイトによると、ミュンヘンの出版社ライヒホルト＆ラングは1908年に印刷のアドベントカレンダーを売り出しました。24のマス目がある台紙と、切り抜いて貼る24枚の絵がセットになったもので、まだ「扉」はありませんでした。ラングの会社は1940年に閉じるまで、アドベントカレンダーを作り続けたそうです（[katholisch.de](https://katholisch.de/artikel/42099-die-geschichte-des-adventskalenders)・[EKD](https://www.ekd.de/news_081128_adventskalender.htm)）。
 
 ただし、1902年や1904年にも印刷のカレンダーがあったという記録もあり、「最初の1枚」がどれかについては、資料によって説明が分かれています（[EKD](https://www.ekd.de/news_081128_adventskalender.htm)）。
 

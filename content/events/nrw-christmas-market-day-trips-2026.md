@@ -42,7 +42,7 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-11-01"
-updated_at: "2026-11-22"
+updated_at: "2026-11-25"
 last_verified: "2026-11-21"
 canonical_url: "/germany/ja/events/nrw-christmas-market-day-trips-2026/"
 official_url: ""
@@ -146,9 +146,9 @@ NRW州北部のミュンスターは、旧市街の中に性格の違う6つの�
 
 料金はオンライン購入の場合で、別に手数料がかかります。ヘメーンテ洞窟は窓口で買うと大人1ユーロ、子ども0.50ユーロ高くなります。どちらも車いすで入ることができ、犬は入れません。公式サイトはオンラインでの事前購入を勧めています。[ヘメーンテ洞窟](https://www.kerststadvalkenburg.nl/te-doen/kerstmarkt-gemeentegrot/)、[フルウェーレン洞窟](https://www.kerststadvalkenburg.nl/te-doen/kerstmarkt-fluweelengrot/)
 
-夜には、光で飾った山車とダンサーが旧市街を進む「クリスマスパレード」もあります。2026年は土曜19時30分開始が11月14日・21日・28日、12月12日・19日、水曜19時開始が12月9日・16日・23日・30日です。12月5日と26日はありません。[パレードの案内](https://www.kerststadvalkenburg.nl/te-doen/christmas-parade/)
+夜には、光で飾った山車とダンサーが旧市街を進む「クリスマスパレード」もあります。2026年の土曜開催は11月14日・21日・28日、12月12日・19日、水曜開催は12月9日・16日・23日・30日です。開始時刻は最新の公式プログラムで確認してください。12月5日と26日はありません。[パレードの案内](https://www.kerststadvalkenburg.nl/te-doen/christmas-parade/)
 
-公式サイトによると、ファルケンブルフの駅は町の中心から歩ける距離にあり、アーヘン中央駅からヘールレン経由の地域列車でつながっています。週末は特に混むため、主催者はできるだけ平日に、公共交通で来るよう呼びかけています。[アクセス案内](https://www.kerststadvalkenburg.nl/bereikbaarheid/)
+公式サイトによると、ファルケンブルフの駅は町の中心から歩ける距離にあり、アーヘン中央駅からヘールレン経由の地域列車でつながっています。週末は特に混むため、主催者はできるだけ平日に、公共交通で来るよう呼びかけています。[アクセス案内](https://www.kerststadvalkenburg.nl/bereikbaarheid/)。**交通情報（2026年11月25日確認）：11月28〜30日と12月5・6日は工事に伴い、ファルケンブルフ、ヘールレン、シッタルト間で代行バスが運行される予定です。** 所要時間に余裕を持ち、出発前に公式交通案内で最新の運行状況を確認してください。
 
 ## マーストリヒト（オランダ）｜聖セルファース聖堂の前で、スケートと観覧車
 

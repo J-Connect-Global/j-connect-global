@@ -32,8 +32,8 @@ official_sources:
     url: "https://www.vde.com/topics-de/verbraucherschutz/weihnachtsbeleuchtung"
 review:
   status: "needs_review"
-  reviewed_by: ""
-  last_reviewed_at: ""
+  reviewed_by: "J-Connect編集部（公開前確認・追加レビュー待ち）"
+  last_reviewed_at: "2026-11-25"
   next_review_due: "2026-12-15"
 disclaimer_type: "event"
 ---

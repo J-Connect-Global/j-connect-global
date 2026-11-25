@@ -39,4 +39,5 @@
     <path d="M0 0H280" stroke="#8ea69a" stroke-width="10" stroke-linecap="round"/>
     <circle cx="40" cy="-35" r="18" fill="#a2b9a7"/><circle cx="115" cy="-35" r="18" fill="#c9a477"/><circle cx="190" cy="-35" r="18" fill="#77978e"/>
   </g>
+<g font-family="Noto Sans CJK JP,Noto Sans JP,sans-serif" fill="#28483F" text-anchor="middle"><text x="800" y="120" font-size="56" font-weight="700">資源を大切に、意識して選ぶ</text><text x="510" y="750" font-size="42" font-weight="700">学ぶ・選ぶ</text><text x="1210" y="750" font-size="42" font-weight="700">直す・再利用する</text></g>
 </svg>

@@ -1,0 +1,44 @@
+name: Temporary licensed cover preparation (do not merge)
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+permissions:
+  contents: read
+jobs:
+  prepare:
+    if: github.head_ref == 'chat/diagnostic-cover-bad-wildungen-20261125'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Download and prepare public licensed photograph
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/jc-cover"
+          cd "$RUNNER_TEMP/jc-cover"
+          curl --fail --location --max-time 30 --user-agent 'J-Connect Global editorial (https://j-connect-global.com/)' 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Bad_Wildungen%2C_KB_-_Dr-Marc-Turm_-_Altstadt%2C_Schloss_Friedrichstein_v_S.jpg' -o source.jpg
+          python3 -m pip install --quiet Pillow
+          python3 - <<'PY'
+          from PIL import Image,ImageOps
+          import hashlib,base64
+          im=Image.open('source.jpg')
+          im.load()
+          assert im.size == (4608,2592), im.size
+          print('SOURCE_SHA256='+hashlib.sha256(open('source.jpg','rb').read()).hexdigest())
+          im=ImageOps.exif_transpose(im).convert('RGB')
+          for name,sz,q in [('hero.webp',(1200,675),78),('hero-768w.webp',(768,432),76),('hero-480w.webp',(480,270),75),('hero-og.jpg',(1200,630),80)]:
+              img=ImageOps.fit(im,sz,method=Image.Resampling.LANCZOS)
+              img.save(name,quality=q,optimize=True)
+              b=open(name,'rb').read()
+              assert len(b)<750000
+              print('JC_FILE '+name+' '+str(len(b))+' '+hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest())
+              s=base64.b64encode(b).decode()
+              for i in range(0,len(s),512): print('JC_B64 '+name+' '+s[i:i+512])
+          PY
+      - name: Save image evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: bad-wildungen-licensed-cover
+          path: ${{ runner.temp }}/jc-cover/
+          retention-days: 3
+          if-no-files-found: error

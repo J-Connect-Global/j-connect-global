@@ -740,6 +740,20 @@
         "/assets/img/events/christmas-tree-origin-germany-768w.webp",
         "/assets/img/events/christmas-tree-origin-germany-480w.webp"
       ]
+    },
+    {
+      "source_name": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bad_Wildungen,_KB_-_Dr-Marc-Turm_-_Altstadt,_Schloss_Friedrichstein_v_S.jpg",
+      "author": "Flodur63",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "modifications": "縮小・WebP/JPEG変換、OG用横長トリミング（改変版を元画像と同じCC BY-SAライセンスで公開）",
+      "files": [
+        "/assets/img/living/bad-wildungen-weekend-trip.webp",
+        "/assets/img/living/bad-wildungen-weekend-trip-768w.webp",
+        "/assets/img/living/bad-wildungen-weekend-trip-480w.webp",
+        "/assets/img/living/bad-wildungen-weekend-trip-og.jpg"
+      ]
     }
   ]
 }

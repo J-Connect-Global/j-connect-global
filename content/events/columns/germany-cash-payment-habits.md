@@ -9,9 +9,9 @@ official_sources:
   - title: "ドイツ連邦銀行：2025年の支払い行動（プレスリリース）"
     url: "https://www.bundesbank.de/de/presse/pressemitteilungen/zahlungsverhalten-in-deutschland-2025-964736"
   - title: "ドイツ連邦銀行：ドイツの支払い行動 2025（報告書）"
-    url: "https://www.bundesbank.de/resource/blob/997848/1b30fa6978e2f05229d91beceeaf78cc/472B63F073F071307366337C94F8C870/zahlungsverhalten-in-deutschland-2025-data.pdf"
+    url: "https://www.bundesbank.de/de/publikationen/berichte/studien/zahlungsverhalten-in-deutschland-2025-997848"
   - title: "ドイツ連邦銀行：ドイツの支払い行動 2023"
-    url: "https://www.bundesbank.de/de/presse/pressenotizen/zahlungsverhalten-in-deutschland-2023-934828"
+    url: "https://www.bundesbank.de/de/presse/pressemitteilungen/zahlungsverhalten-in-deutschland-2023-934828"
   - title: "ドイツ連邦銀行：ドイツ社会の中の現金（月報 2025年4月）"
     url: "https://publikationen.bundesbank.de/publikationen-de/berichte-studien/monatsberichte/bargeld-in-der-deutschen-gesellschaft-ein-aktuelles-meinungsbild-954600"
 related_articles: ["bank-account-germany", "germany-sunday-rest-shops-closed", "christmas-markets-duesseldorf", "online-shopping-returns-germany"]
@@ -25,7 +25,7 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-27"
-updated_at: "2026-10-27"
+updated_at: "2026-11-25"
 last_verified: "2026-10-27"
 canonical_url: "/germany/ja/events/columns/germany-cash-payment-habits/"
 official_url: "https://www.bundesbank.de/de/presse/pressemitteilungen/zahlungsverhalten-in-deutschland-2025-964736"
@@ -47,7 +47,7 @@ image_credit: "Illustration / J-Connect"
 
 2025年の調査によると、記録された買い物のうち**55%が現金以外の方法**で支払われました。現金が使われたのは**45%**で、初めて現金を使わない支払いの方が多くなりました（[ドイツ連邦銀行 2025年](https://www.bundesbank.de/de/presse/pressemitteilungen/zahlungsverhalten-in-deutschland-2025-964736)）。
 
-2023年の調査では、現金の割合は51%でした（[ドイツ連邦銀行 2023年](https://www.bundesbank.de/de/presse/pressenotizen/zahlungsverhalten-in-deutschland-2023-934828)）。わずか2年で、5ポイント以上下がったことになります。
+2023年の調査では、現金の割合は51%でした（[ドイツ連邦銀行 2023年](https://www.bundesbank.de/de/presse/pressemitteilungen/zahlungsverhalten-in-deutschland-2023-934828)）。2年間で6パーセントポイント下がったことになります。
 
 それでも、支払い方法を一つずつ比べると、現金は今も**件数で最もよく使われる方法**です（[ドイツ連邦銀行 2025年](https://www.bundesbank.de/de/presse/pressemitteilungen/zahlungsverhalten-in-deutschland-2025-964736)）。
 
@@ -68,21 +68,21 @@ image_credit: "Illustration / J-Connect"
 
 ## スマートフォン決済が、変化を引っぱっている
 
-この2年間の変化を引っぱっているのは、スマートフォンなどを使ったモバイル決済です。ドイツ連邦銀行によると、モバイル決済の割合は2023年の6%から、2025年には10%に増えました（[ドイツ連邦銀行 2025年](https://www.bundesbank.de/de/presse/pressemitteilungen/zahlungsverhalten-in-deutschland-2025-964736)）。2021年から2023年にかけても、2%から6%へと3倍に増えています（[ドイツ連邦銀行 2023年](https://www.bundesbank.de/de/presse/pressenotizen/zahlungsverhalten-in-deutschland-2023-934828)）。
+この2年間の変化を引っぱっているのは、スマートフォンなどを使ったモバイル決済です。ドイツ連邦銀行によると、モバイル決済の割合は2023年の6%から、2025年には10%に増えました（[ドイツ連邦銀行 2025年](https://www.bundesbank.de/de/presse/pressemitteilungen/zahlungsverhalten-in-deutschland-2025-964736)）。2021年から2023年にかけても、2%から6%へと3倍に増えています（[ドイツ連邦銀行 2023年](https://www.bundesbank.de/de/presse/pressemitteilungen/zahlungsverhalten-in-deutschland-2023-934828)）。
 
-お店の側でも、カードが使える場所は増えています。2023年の調査では、お店のレジで現金が使えたのは支払いの94%、現金以外で払えたのは81%で、現金以外で払える割合は2021年から20ポイント増えていました（[ドイツ連邦銀行 2023年](https://www.bundesbank.de/de/presse/pressenotizen/zahlungsverhalten-in-deutschland-2023-934828)）。
+お店の側でも、キャッシュレス決済が可能な場面は増えています。2025年調査の対面での買い物では、現金で支払えた割合は94%、現金以外で支払えた割合は86%でした。後者は2023年より5パーセントポイント増えています。一方、約4人に1人が、直近1か月に希望どおりキャッシュレスで支払えなかった経験を報告しています（[ドイツ連邦銀行 2025年](https://www.bundesbank.de/de/presse/pressemitteilungen/zahlungsverhalten-in-deutschland-2025-964736)）。
 
 ## それでも現金が選ばれる理由
 
-では、なぜドイツの人たちは現金を大切にするのでしょうか。ドイツ連邦銀行の調査からは、いくつかの理由が見えてきます。
+では、なぜドイツの人たちは現金を大切にするのでしょうか。2025年調査では、回答者の80%が今後も現金払いができることを重要だと考えています。ドイツ連邦銀行の調査からは、いくつかの理由が見えてきます。
 
 - **使いすぎを防げる**：2023年の調査では、41%の人が「支出を把握しやすい」ことを現金の良さに挙げました（[ドイツ連邦銀行 2023年 報告書](https://www.bundesbank.de/resource/blob/934826/cf30c0491030c0c6eab3d341d1990e12/mL/zahlungsverhalten-in-deutschland-2023-data.pdf)）。財布の中身が減るのが目に見えるので、使いすぎに気づきやすいのです。
 - **プライバシーが守られる**：同じ調査で、63%の人がプライバシーの保護を現金の良さとして挙げています（[ドイツ連邦銀行 2023年 報告書](https://www.bundesbank.de/resource/blob/934826/cf30c0491030c0c6eab3d341d1990e12/mL/zahlungsverhalten-in-deutschland-2023-data.pdf)）。何を、いつ、どこで買ったかの記録が残らないことを大切にする人は、ドイツでは少なくありません。
 - **停電やシステム障害にも強い**：2025年4月のドイツ連邦銀行の月報では、停電やサイバー攻撃のときでも使えることが、現金の大切な役割として最も多く挙げられました（[ドイツ連邦銀行 月報](https://publikationen.bundesbank.de/publikationen-de/berichte-studien/monatsberichte/bargeld-in-der-deutschen-gesellschaft-ein-aktuelles-meinungsbild-954600)）。
 - **子どもがお金の使い方を学べる**：同じ月報では、子どもが現金を通してお金の扱い方を学べることも、現金の良さとして挙げられています（[ドイツ連邦銀行 月報](https://publikationen.bundesbank.de/publikationen-de/berichte-studien/monatsberichte/bargeld-in-der-deutschen-gesellschaft-ein-aktuelles-meinungsbild-954600)）。
-- **習慣**：スマートフォンの決済アプリを持っていても現金で払う人の多くは、「いつもそうしているから」という理由でした（[ドイツ連邦銀行 2025年 報告書](https://www.bundesbank.de/resource/blob/997848/1b30fa6978e2f05229d91beceeaf78cc/472B63F073F071307366337C94F8C870/zahlungsverhalten-in-deutschland-2025-data.pdf)）。
+- **習慣**：スマートフォンの決済アプリを持っていても現金で払う人の多くは、「いつもそうしているから」という理由でした（[ドイツ連邦銀行 2025年 報告書](https://www.bundesbank.de/de/publikationen/berichte/studien/zahlungsverhalten-in-deutschland-2025-997848)）。
 
-ただし、「現金がいちばん好き」という人が多数派というわけでもありません。2023年の調査で、現金を最も好きな支払い方法に挙げた人は28%でした（[ドイツ連邦銀行 2023年](https://www.bundesbank.de/de/presse/pressenotizen/zahlungsverhalten-in-deutschland-2023-934828)）。多くの人は、場面によって使い分けているのです。
+ただし、「現金がいちばん好き」という人が多数派というわけでもありません。2023年の調査で、現金を最も好きな支払い方法に挙げた人は28%でした（[ドイツ連邦銀行 2023年](https://www.bundesbank.de/de/presse/pressemitteilungen/zahlungsverhalten-in-deutschland-2023-934828)）。多くの人は、場面によって使い分けているのです。
 
 ![現金が選ばれる理由として、支出の把握、プライバシー、停電や障害への強さ、子どものお金の学び、習慣の5つを示した図](/assets/images/events/germany-cash-reasons.svg "図解：J-Connect。ドイツ連邦銀行の調査（2023年・2025年）と月報（2025年4月）に基づく（2026年10月27日参照）。")
 
@@ -111,8 +111,8 @@ ATMは、使う銀行によって手数料がかかることがあります。�
 ## 参考情報（2026年10月27日参照）
 
 - [ドイツ連邦銀行：2025年の支払い行動（プレスリリース）](https://www.bundesbank.de/de/presse/pressemitteilungen/zahlungsverhalten-in-deutschland-2025-964736)
-- [ドイツ連邦銀行：ドイツの支払い行動 2025（報告書）](https://www.bundesbank.de/resource/blob/997848/1b30fa6978e2f05229d91beceeaf78cc/472B63F073F071307366337C94F8C870/zahlungsverhalten-in-deutschland-2025-data.pdf)
-- [ドイツ連邦銀行：ドイツの支払い行動 2023](https://www.bundesbank.de/de/presse/pressenotizen/zahlungsverhalten-in-deutschland-2023-934828)
+- [ドイツ連邦銀行：ドイツの支払い行動 2025（報告書）](https://www.bundesbank.de/de/publikationen/berichte/studien/zahlungsverhalten-in-deutschland-2025-997848)
+- [ドイツ連邦銀行：ドイツの支払い行動 2023](https://www.bundesbank.de/de/presse/pressemitteilungen/zahlungsverhalten-in-deutschland-2023-934828)
 - [ドイツ連邦銀行：ドイツの支払い行動 2023（報告書）](https://www.bundesbank.de/resource/blob/934826/cf30c0491030c0c6eab3d341d1990e12/mL/zahlungsverhalten-in-deutschland-2023-data.pdf)
 - [ドイツ連邦銀行：ドイツ社会の中の現金（月報 2025年4月）](https://publikationen.bundesbank.de/publikationen-de/berichte-studien/monatsberichte/bargeld-in-der-deutschen-gesellschaft-ein-aktuelles-meinungsbild-954600)
 

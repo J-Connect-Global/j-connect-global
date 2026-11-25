@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
   <title id="title">ミニジョブで確認する税金・年金・健康保険</title>
-  <desc id="desc">税金の書類、年金を表す盾、健康保険を表す十字の3つのアイコン。</desc>
+  <desc id="desc">税金、年金保険、健康保険の確認項目を表した3つのアイコン。</desc>
   <rect width="1200" height="675" fill="#F4F1E8"/>
   <g transform="translate(100 125)">
     <rect width="280" height="410" rx="30" fill="#FFFFFF" stroke="#19364E" stroke-width="9"/>
@@ -24,4 +24,5 @@
     <rect x="70" y="177" width="140" height="46" rx="8" fill="#B85C4A"/>
     <path d="M80 335 H200" stroke="#D8B1AA" stroke-width="14" stroke-linecap="round"/>
   </g>
+  <g font-family="Noto Sans CJK JP,Noto Sans JP,sans-serif" text-anchor="middle" fill="#19364E" font-weight="700"><text x="600" y="80" font-size="40">ミニジョブで確認する3つの項目</text><text x="240" y="599" font-size="34">税金</text><text x="600" y="599" font-size="34">年金保険</text><text x="960" y="599" font-size="34">健康保険</text></g>
 </svg>

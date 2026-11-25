@@ -3689,7 +3689,7 @@
       "買い物",
       "支払い"
     ],
-    "updated_at": "2026-10-27",
+    "updated_at": "2026-11-25",
     "related_articles": [
       "bank-account-germany",
       "germany-sunday-rest-shops-closed",
@@ -3707,11 +3707,11 @@
       },
       {
         "title": "ドイツ連邦銀行：ドイツの支払い行動 2025（報告書）",
-        "url": "https://www.bundesbank.de/resource/blob/997848/1b30fa6978e2f05229d91beceeaf78cc/472B63F073F071307366337C94F8C870/zahlungsverhalten-in-deutschland-2025-data.pdf"
+        "url": "https://www.bundesbank.de/de/publikationen/berichte/studien/zahlungsverhalten-in-deutschland-2025-997848"
       },
       {
         "title": "ドイツ連邦銀行：ドイツの支払い行動 2023",
-        "url": "https://www.bundesbank.de/de/presse/pressenotizen/zahlungsverhalten-in-deutschland-2023-934828"
+        "url": "https://www.bundesbank.de/de/presse/pressemitteilungen/zahlungsverhalten-in-deutschland-2023-934828"
       },
       {
         "title": "ドイツ連邦銀行：ドイツ社会の中の現金（月報 2025年4月）",
@@ -6310,7 +6310,7 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-30",
-    "updated_at": "2026-10-30",
+    "updated_at": "2026-11-25",
     "last_verified": "2026-10-30",
     "canonical_url": "/germany/ja/events/boot-duesseldorf-2027-guide/",
     "official_url": "https://www.boot.de/",
@@ -6675,7 +6675,11 @@
         "url": "https://www.stuttgarter-weihnachtsmarkt.de/"
       },
       {
-        "title": "公式サイト：営業時間・開幕日の案内",
+        "title": "公式サイト：開幕式の案内",
+        "url": "https://www.stuttgarter-weihnachtsmarkt.de/en/general/official-opening-ceremony"
+      },
+      {
+        "title": "公式サイト：営業時間・案内所",
         "url": "https://www.stuttgarter-weihnachtsmarkt.de/en/service"
       },
       {

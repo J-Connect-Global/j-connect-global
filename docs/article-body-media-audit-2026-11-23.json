@@ -16,12 +16,12 @@
       "2": 111,
       "3": 2
     },
-    "visually_reviewed_and_redesigned_inline_references": 16,
+    "visually_reviewed_and_redesigned_inline_references": 18,
     "pending_visual_review_inline_references": 0,
     "body_media_assets_redesigned": 18,
     "off_topic_inline_image_references_removed": 1,
     "visually_reviewed_retained_inline_references": 27,
-    "visually_reviewed_redesign_pending": 2,
+    "visually_reviewed_redesign_pending": 0,
     "visually_screened_no_obvious_render_failure_inline_references": 176,
     "visually_screened_followup_needed_inline_references": 7
   },
@@ -2767,13 +2767,13 @@
           "caption": "図解：J-Connect。ハンブルク市の案内に基づく（2026年11月1日参照）。",
           "line": 59,
           "position": 2,
-          "quality_status": "visually_reviewed_priority_redesign_needed",
+          "quality_status": "redesigned_and_visual_review_passed",
           "priority": "P1",
           "redesign_draft": {
             "date": "2026-11-25",
             "branch": "chat/p1-seasonal-svg-redesign-20261125",
-            "status": "visual_review_layout_refined_pending_rerender",
-            "checks": "Chromium exact asset at 600px and 360px, manually inspected; small secondary text at phone width; article text/alt retained. Layout defect corrected; rerender needed.",
+            "status": "visual_review_passed_desktop_mobile_preview",
+            "checks": "Chromium exact asset at 600px and 360px, manually inspected; small secondary text at phone width; article text/alt retained. Layout defect corrected; rerender needed. Re-rendered corrected exact Git blob in local Chromium at 600px and 360px; overlap resolved, manually inspected. Secondary text small at phone width; article text remains available.",
             "evidence_run": 45704843207
           }
         },
@@ -2844,13 +2844,13 @@
           "caption": "図解：J-Connect。クリスマスの町ファルケンブルフ公式サイトの説明に基づくイメージで、実際の洞窟の形や縮尺とは異なります。",
           "line": 136,
           "position": 3,
-          "quality_status": "visually_reviewed_priority_redesign_needed",
+          "quality_status": "redesigned_and_visual_review_passed",
           "priority": "P1",
           "redesign_draft": {
             "date": "2026-11-25",
             "branch": "chat/p1-seasonal-svg-redesign-20261125",
-            "status": "visual_review_layout_refined_pending_rerender",
-            "checks": "Chromium exact asset at 600px and 360px, manually inspected; small secondary text at phone width; article text/alt retained. Layout defect corrected; rerender needed.",
+            "status": "visual_review_passed_desktop_mobile_preview",
+            "checks": "Chromium exact asset at 600px and 360px, manually inspected; small secondary text at phone width; article text/alt retained. Layout defect corrected; rerender needed. Re-rendered corrected exact Git blob in local Chromium at 600px and 360px; overlap resolved, manually inspected. Secondary text small at phone width; article text remains available.",
             "evidence_run": 45704843207
           }
         },

@@ -7,7 +7,7 @@ summary: "2026年のドイツから日本への公式締切は手紙・はがき
 status: "published"
 published: true
 published_at: "2026-11-01"
-updated_at: "2026-11-22"
+updated_at: "2026-11-25"
 last_verified: "2026-11-18"
 next_review: "2026-11-27"
 canonical_url: "/germany/ja/living/christmas-post-germany-to-japan-2026/"
@@ -56,9 +56,11 @@ Deutsche PostとDHLは、2026年のクリスマスに間に合わせるための
 
 DHLは、国際小包をオンラインで送料支払いした場合、電子データで手続きが早く進むため**1〜2日遅く出しても間に合う**としています。窓口料金より最大3ユーロ安くなる点も案内されています。ただし、これは「この日までに出せば届きやすい」という目安で、配達日の保証ではありません。Expressの所要日数は、差出地と届け先の郵便番号によって変わり、税関手続きでも前後します。
 
+通常の締切に間に合わなかった場合は、DHLの最新のオンライン受付条件やExpressの差出窓口・締め時刻を確認してください。年末の到着を保証するものではないので、必要に応じて送り先にも到着が遅れる可能性を伝えておくと安心です。
+
 **日本の元日に届けたい年賀状・お年賀について、Deutsche Post・DHLは別の締切を公表していません。** 年始に届けたい物も、クリスマスの締切を目安に早めに出すのが安全です。
 
-根拠：[Deutsche Postのクリスマス案内](https://www.deutschepost.de/de/w/weihnachtspost.html)、[DHLのクリスマス案内](https://www.dhl.de/de/privatkunden/kampagnenseiten/weihnachten.html)（2026年11月18日確認）。
+根拠：[Deutsche Postのクリスマス案内](https://www.deutschepost.de/de/w/weihnachtspost.html)、[DHLのクリスマス案内](https://www.dhl.de/de/privatkunden/kampagnenseiten/weihnachten.html)（2026年11月25日確認）。
 
 ![ドイツから日本へ、手紙・はがきは11月25日、小包は11月26日、Expressは12月18日が2026年の最終差出日であることを示したカレンダー図](/assets/images/living/seo/japan-post-deadlines-2026.svg "図解：J-Connect。根拠：Deutsche Post・DHLの2026年クリスマス最終差出日（ヨーロッパ以外あて）。2026年11月18日確認。")
 

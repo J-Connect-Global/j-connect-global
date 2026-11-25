@@ -16,11 +16,12 @@
       "2": 111,
       "3": 2
     },
-    "visually_reviewed_and_redesigned_inline_references": 9,
-    "pending_visual_review_inline_references": 216,
-    "body_media_assets_redesigned": 9,
+    "visually_reviewed_and_redesigned_inline_references": 11,
+    "pending_visual_review_inline_references": 183,
+    "body_media_assets_redesigned": 11,
     "off_topic_inline_image_references_removed": 1,
-    "visually_reviewed_retained_inline_references": 3
+    "visually_reviewed_retained_inline_references": 27,
+    "visually_reviewed_redesign_pending": 7
   },
   "reused_inline_assets": [
     {
@@ -251,7 +252,7 @@
           "caption": "図解：J-Connect。katholisch.deの資料に基づく（2026年10月27日参照）。",
           "line": 78,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         },
         {
@@ -260,7 +261,7 @@
           "caption": "図解：J-Connect。ドイツ森林保護協会と連邦統計局の資料に基づく（2026年10月27日参照）。",
           "line": 88,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         }
       ]
@@ -556,7 +557,7 @@
           "caption": "J-Connect作成のカレンダー図。実際の営業時間は各店舗の案内で確認してください。",
           "line": 46,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "redesigned_and_visual_review_passed",
           "priority": "P1"
         },
         {
@@ -565,7 +566,7 @@
           "caption": "J-Connect作成の模式図。実際の営業状況や運行情報は公式案内を確認してください。",
           "line": 73,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "redesigned_and_visual_review_passed",
           "priority": "P1"
         }
       ]
@@ -990,7 +991,7 @@
           "caption": "図解：J-Connect。爆発物法第1施行令と連邦内務省の資料に基づく（2026年11月1日参照）。",
           "line": 64,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         },
         {
@@ -999,7 +1000,7 @@
           "caption": "図解：J-Connect。連邦環境庁の資料に基づく（2026年11月1日参照）。",
           "line": 89,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         }
       ]
@@ -1017,7 +1018,7 @@
           "caption": "図解：J-Connect。EU規則第251/2014号と第2026/471号に基づく（2026年10月29日参照）。",
           "line": 65,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         },
         {
@@ -1026,7 +1027,7 @@
           "caption": "図解：J-Connect。消費者センター（Lebensmittelklarheit）の資料に基づく（2026年10月29日参照）。",
           "line": 85,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         }
       ]
@@ -1613,7 +1614,7 @@
           "caption": "図解：J-Connect。アーヘン観光局の解説に基づく模式図で、縮尺や実際の形とは異なります（2026年10月30日参照）。",
           "line": 49,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         },
         {
@@ -1622,7 +1623,7 @@
           "caption": "図解：J-Connect。アーヘン市、アーヘン観光局、主催団体MACの案内に基づく（2026年11月21日参照）。",
           "line": 80,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         }
       ]
@@ -1667,7 +1668,7 @@
           "caption": "図解：J-Connect。主催者、ケルン観光局、koeln.deの案内に基づく（2026年10月30日参照）。",
           "line": 53,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_priority_redesign_needed",
           "priority": "P1"
         },
         {
@@ -1676,7 +1677,7 @@
           "caption": "図解：J-Connect。主催者、ケルン観光局、koeln.deの案内に基づく（2026年10月30日参照）。",
           "line": 86,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         }
       ]
@@ -1748,7 +1749,7 @@
           "caption": "図解：J-Connect。ニュルンベルク市と公式サイトの資料に基づく（2026年10月30日参照）。",
           "line": 65,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         },
         {
@@ -1757,7 +1758,7 @@
           "caption": "図解：J-Connect。名物のイメージを表したもので、特定の店や商品を再現していません。",
           "line": 77,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_priority_redesign_needed",
           "priority": "P1"
         }
       ]
@@ -1775,7 +1776,7 @@
           "caption": "図解：J-Connect。ケルン市の交通規制の案内、2026年2月5日の告示、11月2日の発表に基づく概略図（2026年11月9日参照）。",
           "line": 86,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         },
         {
@@ -1784,7 +1785,7 @@
           "caption": "図解：J-Connect。ケルン市とケルン・カーニバル祭典委員会の案内に基づく（2026年10月31日参照）。",
           "line": 109,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         }
       ]
@@ -1802,7 +1803,7 @@
           "caption": "図解：J-Connect。デュッセルドルフ・カーニバル委員会、デュッセルドルフ観光局、デュッセルドルフ市の案内に基づく（2026年10月31日参照）。",
           "line": 77,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         },
         {
@@ -1811,7 +1812,7 @@
           "caption": "図解：J-Connect。デュッセルドルフ・カーニバル委員会の催し案内に基づく（2026年10月31日参照）。",
           "line": 94,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         }
       ]
@@ -1862,7 +1863,7 @@
           "caption": "図解：J-Connect。根拠：Deutsche Post・DHLの2026年クリスマス最終差出日（ヨーロッパ以外あて）。2026年11月18日確認。",
           "line": 63,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         },
         {
@@ -1871,7 +1872,7 @@
           "caption": "図解：J-Connect。根拠：DHLの海外発送チェックリスト・税関情報、ドイツ税関の案内。2026年11月18日確認。",
           "line": 123,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         }
       ]
@@ -1946,7 +1947,7 @@
           "caption": "図解：J-Connect。フランクフルト市と観光局の資料に基づく（2026年10月31日参照）。",
           "line": 47,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         },
         {
@@ -1955,7 +1956,7 @@
           "caption": "図解：J-Connect。名物のイメージを表したもので、特定の店や商品を再現していません。",
           "line": 66,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_priority_redesign_needed",
           "priority": "P1"
         }
       ]
@@ -1973,7 +1974,7 @@
           "caption": "図解：J-Connect。ハンブルク市の案内に基づく（2026年11月1日参照）。",
           "line": 59,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_priority_redesign_needed",
           "priority": "P1"
         },
         {
@@ -1982,7 +1983,7 @@
           "caption": "図解：J-Connect。ハンブルク市の案内に基づく（2026年11月1日参照）。",
           "line": 101,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         }
       ]
@@ -2000,7 +2001,7 @@
           "caption": "図解：J-Connect。ミュンヘン市の案内に基づく（2026年11月21日参照）。",
           "line": 69,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_priority_redesign_needed",
           "priority": "P1"
         },
         {
@@ -2009,7 +2010,7 @@
           "caption": "図解：J-Connect。ミュンヘン市の案内に基づく（2026年11月21日参照）。",
           "line": 124,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         }
       ]
@@ -2027,7 +2028,7 @@
           "caption": "図解：J-Connect。各公式サイトの2026年の案内に基づく（2026年11月1日参照）。",
           "line": 73,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         },
         {
@@ -2036,7 +2037,7 @@
           "caption": "図解：J-Connect。クリスマスの町ファルケンブルフ公式サイトの説明に基づくイメージで、実際の洞窟の形や縮尺とは異なります。",
           "line": 136,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_priority_redesign_needed",
           "priority": "P1"
         },
         {
@@ -2045,7 +2046,7 @@
           "caption": "図解：J-Connect。各公式サイトの説明をもとにJ-Connect編集部が整理したもので、優劣を示すものではありません。",
           "line": 171,
           "position": 4,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         }
       ]
@@ -2117,7 +2118,7 @@
           "caption": "図解：J-Connect。公式サイトの資料に基づく（2026年10月31日参照）。",
           "line": 51,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         },
         {
@@ -2126,7 +2127,7 @@
           "caption": "図解：J-Connect。見どころのイメージを表したもので、実際の屋台や建物を再現していません。",
           "line": 68,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_priority_redesign_needed",
           "priority": "P1"
         }
       ]
@@ -2719,7 +2720,7 @@
           "caption": "",
           "line": 63,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         },
         {
@@ -2728,7 +2729,7 @@
           "caption": "",
           "line": 73,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         }
       ]

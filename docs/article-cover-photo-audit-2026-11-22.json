@@ -18,7 +18,8 @@
     "remaining_total_in_window_unresolved": 90,
     "wave4_ready_pending_ci": 3,
     "visual_screening_20261125": 89,
-    "missing_configured_cover_20261125": 1
+    "missing_configured_cover_20261125": 1,
+    "wave5_committed_pending_CI": 1
   },
   "notes": [
     "2026-11-23 wave3 adds five source-verified archival covers. Previously illustrated candidates: 82 remain. All 11 pre-existing non-illustration cover candidates visually reviewed: 8 need unique, topic-relevant replacements and 3 are visually acceptable but still require provenance/disclosure checks.",
@@ -29,7 +30,9 @@
     "Externally sourced photos require original file URL, author, license, modification log and historical capture context. AI-generated imagery must be transparently labeled as an editorial illustration, not a documentary photograph.",
     "As of this wave, 87 previously illustrated in-window articles remain candidates for manual assessment; 11 further photo checks remain. A good original photograph need not be replaced.",
     "Wave 4: three AI-generated photo-style covers with explicit disclosure; publication pending CI. Counts represent work prepared, not live deployment.",
-    "2026-11-25: manually inspected 89 exact cover assets; one configured path null (Bad Wildungen), needs repair. 79 illustration candidates include the null path, 8 replacement candidates, 3 acceptable but provenance pending. Duplicate hashes confirmed for three clusters: birth/newborn/Kindergeld calendar, certified translation/tax prepayment, dental supplementary insurance/family vaccination. Not yet replaced; no count inflation. Evidence: Actions run 45704843207."
+    "2026-11-25: manually inspected 89 exact cover assets; one configured path null (Bad Wildungen), needs repair. 79 illustration candidates include the null path, 8 replacement candidates, 3 acceptable but provenance pending. Duplicate hashes confirmed for three clusters: birth/newborn/Kindergeld calendar, certified translation/tax prepayment, dental supplementary insurance/family vaccination. Not yet replaced; no count inflation. Evidence: Actions run 45704843207.",
+    "Wave5 Bad Wildungen missing cover repaired with original licensed 2017 photograph; source and 4 image hashes verified. CI and publication pending; unresolved count retained until merge.",
+    "Wave5 optimized derivative set from 330726 to 171244 bytes; no image-budget increase. Rebased on main after #538."
   ],
   "entries": [
     {
@@ -518,16 +521,54 @@
       "registry": "content/registry/living.json",
       "markdown": "/content/living/bad-wildungen-weekend-trip.md",
       "canonical": "/germany/ja/living/bad-wildungen-weekend-trip/",
-      "currently_configured_image": null,
+      "currently_configured_image": "/assets/img/living/bad-wildungen-weekend-trip.webp",
       "image_url_mismatch": false,
-      "alt": "丘の上の木組みの旧市街と教会の塔、隣の丘の城館、手前の療養公園と回廊を描いたイラスト",
-      "status": "requires_photographic_cover_review",
+      "alt": "南側から眺めたバート・ヴィルドゥンゲンの旧市街とフリードリヒシュタイン城（2017年撮影）",
+      "status": "licensed_photo_committed_pending_CI",
       "priority": "P2",
       "visual_screening": {
         "date": "2026-11-25",
         "method": "Manual contact-sheet inspection of exact repository assets",
         "source_run": 45704843207,
         "result": "no_configured_cover_path_needs_repair"
+      },
+      "photo_refresh": {
+        "date": "2026-11-25",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bad_Wildungen,_KB_-_Dr-Marc-Turm_-_Altstadt,_Schloss_Friedrichstein_v_S.jpg",
+        "author": "Flodur63",
+        "license": "CC BY-SA 4.0",
+        "capture_date": "2017-08-03",
+        "source_sha256": "d1ad67aa48074745be49932e5c603977d9791010ca27d2e9140ae0e81f973706",
+        "files": [
+          {
+            "path": "assets/img/living/bad-wildungen-weekend-trip.webp",
+            "blob_sha": "6023d5cff07b5bb501c8b103e4273cccb6d18231"
+          },
+          {
+            "path": "assets/img/living/bad-wildungen-weekend-trip-768w.webp",
+            "blob_sha": "68aafbaf54ea12215250157c3d866d24fbeb6115"
+          },
+          {
+            "path": "assets/img/living/bad-wildungen-weekend-trip-480w.webp",
+            "blob_sha": "4256e27741752bf849d1e807bea74da9c77acb96"
+          },
+          {
+            "path": "assets/img/living/bad-wildungen-weekend-trip-og.jpg",
+            "blob_sha": "da9e881f155b2e32c1ed399af6ffdd5ddda1ca95"
+          },
+          {
+            "path": "content/living/bad-wildungen-weekend-trip.md",
+            "blob_sha": "1b5a28ef415170da20f6afbff085d5406a2e8414"
+          },
+          {
+            "path": "content/article-photo-credits.json",
+            "blob_sha": "b3a83bd8aa0d3f24a28a7a69319ce2e16b277557"
+          }
+        ],
+        "source_run": 45710904417,
+        "visual_status": "Optimized hero and OG inspected; 171244 bytes total, source SHA unchanged; CI/publication pending",
+        "optimization_run": 45711604444,
+        "optimized_total_bytes": 171244
       }
     },
     {

@@ -8,7 +8,9 @@ summary: "2026年11月25日〜12月23日のシュトゥットガルト・クリ�
 official_sources:
   - title: "シュトゥットガルト・クリスマスマーケット公式サイト（2026年の日程）"
     url: "https://www.stuttgarter-weihnachtsmarkt.de/"
-  - title: "公式サイト：営業時間・開幕日の案内"
+  - title: "公式サイト：開幕式の案内"
+    url: "https://www.stuttgarter-weihnachtsmarkt.de/en/general/official-opening-ceremony"
+  - title: "公式サイト：営業時間・案内所"
     url: "https://www.stuttgarter-weihnachtsmarkt.de/en/service"
   - title: "公式サイト：市の歴史"
     url: "https://www.stuttgarter-weihnachtsmarkt.de/en/general/history"
@@ -61,7 +63,7 @@ image_credit: "Wikimedia Commons / Heinz Bunse / CC BY-SA 2.0"
 
 市の舞台は、街の中心にある旧宮殿のまわりです。シラー広場、マルクト広場、シュロス広場に約250の屋台が並び、旧宮殿、新宮殿、シュティフト教会、王の建物（ケーニヒスバウ）といった歴史的な建物が市を囲みます。カール広場では、骨董品や時計、アクセサリーを扱う市も開かれます。
 
-2026年の開幕日は11月25日（水）です。この日は屋台が17時から営業し、18時から旧宮殿の中庭で開幕式が行われます。石造りの中庭に音楽が響き、4週間の市が始まる瞬間を見届けられます。[公式サイトの案内](https://www.stuttgarter-weihnachtsmarkt.de/en/service)
+2026年の開幕日は11月25日（水）です。この日は屋台が17時から営業し、18時から旧宮殿の中庭で開幕式が行われます。石造りの中庭に音楽が響き、4週間の市が始まる瞬間を見届けられます。[開幕式の公式案内](https://www.stuttgarter-weihnachtsmarkt.de/en/general/official-opening-ceremony)
 
 子ども連れなら、昔ながらのメリーゴーラウンドや、子どもが乗れる本物の小さな蒸気機関車がある「子どものメルヘンランド」も楽しみの一つです。工作などに参加できる催しも用意されています。
 
@@ -77,6 +79,8 @@ image_credit: "Wikimedia Commons / Heinz Bunse / CC BY-SA 2.0"
 | 開幕日（11月25日） | 屋台は17時から、18時から旧宮殿の中庭で開幕式 |
 | 主な会場 | シラー広場、マルクト広場、シュロス広場、カール広場 |
 | 入場 | 無料 |
+
+案内所は旧宮殿のシラー広場側入口とケーニヒ通りのグリューワイン・ピラミッド付近の2か所に設置される予定です。営業時間は通常の市と同じです。[公式案内](https://www.stuttgarter-weihnachtsmarkt.de/en/service)（2026年11月25日確認）。
 
 日程と営業時間は公式サイトの2026年の案内に基づきます。公式サイトの一部のページには前年の情報が残っている場合があるため、訪れる直前に[トップページ](https://www.stuttgarter-weihnachtsmarkt.de/)で最新情報を確認してください。
 

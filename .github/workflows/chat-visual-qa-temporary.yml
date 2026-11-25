@@ -1,0 +1,56 @@
+name: Chat visual QA (temporary branch only)
+on:
+  push:
+    branches:
+      - chat/diagnostic-visual-qa-20261125
+permissions:
+  contents: read
+jobs:
+  visual-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: sudo apt-get update -qq && sudo apt-get install -y fonts-noto-cjk
+      - name: Render exact repository assets
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {chromium} from 'playwright';
+          import path from 'node:path';
+          const audit = JSON.parse(fs.readFileSync('docs/article-body-media-audit-2026-11-23.json','utf8'));
+          const items = audit.articles.flatMap(a=>a.media.map(m=>({...m,slug:a.slug})));
+          const selected = items.filter(m=>m.redesign_draft);
+          if(selected.length!==7) throw new Error('Expected seven redesigned assets');
+          const browser = await chromium.launch({headless:true});
+          const page = await browser.newPage({viewport:{width:1280,height:900},deviceScaleFactor:1});
+          const esc = s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
+          const data = m => 'data:'+(m.src.endsWith('.svg')?'image/svg+xml':'image/webp')+';base64,'+fs.readFileSync(m.src.replace(/^\//,'')).toString('base64');
+          const report = [];
+          for(const m of selected) {
+            await page.setContent('<html><body style="margin:0;background:#fff"><img style="width:1200px;height:auto;display:block" src="'+data(m)+'"></body></html>');
+            await page.locator('img').evaluate(img=>img.decode());
+            const d=await page.locator('img').evaluate(img=>({naturalWidth:img.naturalWidth,naturalHeight:img.naturalHeight}));
+            if(!d.naturalWidth||!d.naturalHeight)throw new Error(m.src+' decode failed');
+            report.push({...d,src:m.src});
+          }
+          for(const [label,width] of [['desktop',600],['mobile',360]]) {
+            for(let i=0;i<selected.length;i+=2) {
+              const chunk=selected.slice(i,i+2);
+              await page.setViewportSize({width:width+24,height:900});
+              const h='<html><body style="margin:12px;background:white;font-family:sans-serif">'+chunk.map(m=>'<section style="margin:0 0 10px"><p style="font-size:12px;margin:3px 0">'+esc(m.slug)+'</p><img style="display:block;width:'+width+'px;height:auto" src="'+data(m)+'"></section>').join('')+'</body></html>';
+              await page.setContent(h);
+              await page.locator('img').evaluateAll(xs=>Promise.all(xs.map(x=>x.decode())));
+              const jpeg=await page.screenshot({type:'jpeg',quality:88,fullPage:true});
+              const s=jpeg.toString('base64');
+              for(let j=0;j<s.length;j+=5000) console.log('VISUAL_QA_'+label+'_'+i+'_'+j+'='+s.slice(j,j+5000));
+            }
+          }
+          console.log('VISUAL_QA_REPORT='+JSON.stringify(report));
+          await browser.close();
+          NODE

@@ -1583,7 +1583,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-11-15",
-    "updated_at": "2026-11-15",
+    "updated_at": "2026-11-25",
     "last_verified": "2026-11-15",
     "tags": [
       "バート・ヴィルドゥンゲン",
@@ -1643,7 +1643,8 @@
       "last_reviewed_at": "2026-11-15",
       "next_review_due": "2027-03-15"
     },
-    "image_alt": "丘の上の木組みの旧市街と教会の塔、隣の丘の城館、手前の療養公園と回廊を描いたイラスト"
+    "image_alt": "南側から眺めたバート・ヴィルドゥンゲンの旧市街とフリードリヒシュタイン城（2017年撮影）",
+    "image": "/assets/img/living/bad-wildungen-weekend-trip.webp"
   },
   {
     "id": "L011",

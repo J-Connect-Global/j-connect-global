@@ -16,7 +16,9 @@
     "manual_unique_replacements_needed": 8,
     "manual_visually_acceptable_provenance_pending": 3,
     "remaining_total_in_window_unresolved": 90,
-    "wave4_ready_pending_ci": 3
+    "wave4_ready_pending_ci": 3,
+    "visual_screening_20261125": 89,
+    "missing_configured_cover_20261125": 1
   },
   "notes": [
     "2026-11-23 wave3 adds five source-verified archival covers. Previously illustrated candidates: 82 remain. All 11 pre-existing non-illustration cover candidates visually reviewed: 8 need unique, topic-relevant replacements and 3 are visually acceptable but still require provenance/disclosure checks.",
@@ -26,7 +28,8 @@
     "Preserve accurate existing licensed photos and meaningful in-article explanatory diagrams. Do not reuse unrelated photos across unrelated topics.",
     "Externally sourced photos require original file URL, author, license, modification log and historical capture context. AI-generated imagery must be transparently labeled as an editorial illustration, not a documentary photograph.",
     "As of this wave, 87 previously illustrated in-window articles remain candidates for manual assessment; 11 further photo checks remain. A good original photograph need not be replaced.",
-    "Wave 4: three AI-generated photo-style covers with explicit disclosure; publication pending CI. Counts represent work prepared, not live deployment."
+    "Wave 4: three AI-generated photo-style covers with explicit disclosure; publication pending CI. Counts represent work prepared, not live deployment.",
+    "2026-11-25: manually inspected 89 exact cover assets; one configured path null (Bad Wildungen), needs repair. 79 illustration candidates include the null path, 8 replacement candidates, 3 acceptable but provenance pending. Duplicate hashes confirmed for three clusters: birth/newborn/Kindergeld calendar, certified translation/tax prepayment, dental supplementary insurance/family vaccination. Not yet replaced; no count inflation. Evidence: Actions run 45704843207."
   ],
   "entries": [
     {
@@ -217,7 +220,13 @@
       "image_url_mismatch": false,
       "alt": "夜の街並みに、丸・星・月の形の色とりどりの紙ランタンが棒の先で灯っている様子を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "priority": "P1",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "stuttgart-christmas-market-2026-guide",
@@ -320,7 +329,13 @@
       "image_url_mismatch": false,
       "alt": "玄関に置かれたスーツケースと冬のコート、12月の休暇の出発前を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "priority": "P1",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "nrw-christmas-opening-hours-2026",
@@ -381,6 +396,12 @@
         "date": "2026-11-23",
         "result": "replace",
         "note": "Preschool playroom photo does not specifically depict school holidays."
+      },
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "shared_or_unsuitable_photo_replacement_needed"
       }
     },
     {
@@ -420,7 +441,13 @@
       "image_url_mismatch": false,
       "alt": "買い物袋、修理道具、図書館の本で資源を大切にする暮らしを示す図解",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "duesseldorf-relocation-guide",
@@ -438,6 +465,12 @@
         "date": "2026-11-23",
         "result": "replace",
         "note": "Stylized icons and generic checklist, not an engaging locality-specific documentary cover."
+      },
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "shared_or_unsuitable_photo_replacement_needed"
       }
     },
     {
@@ -451,7 +484,13 @@
       "image_url_mismatch": false,
       "alt": "冬の朝、窓を全開にした部屋の、暖房のつまみが付いたラジエーターを描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "germany-manners-mistakes-japanese",
@@ -464,7 +503,13 @@
       "image_url_mismatch": false,
       "alt": "カフェの会計とチップの場面を表したイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "bad-wildungen-weekend-trip",
@@ -477,7 +522,13 @@
       "image_url_mismatch": false,
       "alt": "丘の上の木組みの旧市街と教会の塔、隣の丘の城館、手前の療養公園と回廊を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "no_configured_cover_path_needs_repair"
+      }
     },
     {
       "slug": "birth-registration-foreign-spouse-germany",
@@ -495,6 +546,12 @@
         "date": "2026-11-23",
         "result": "visually_acceptable_pending_provenance",
         "note": "Baby clothes and document folder visually match the guide, but origin and disclosure must be checked; same hero is shared with other guides."
+      },
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "acceptable_photo_provenance_needed"
       }
     },
     {
@@ -513,6 +570,12 @@
         "date": "2026-11-23",
         "result": "visually_acceptable_pending_provenance",
         "note": "Photoreal desk paperwork image fits document-review context; source/provenance disclosure still requires confirmation."
+      },
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "acceptable_photo_provenance_needed"
       }
     },
     {
@@ -531,6 +594,12 @@
         "date": "2026-11-23",
         "result": "replace",
         "note": "Generic medical reception image does not depict dental treatment or dental insurance."
+      },
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "shared_or_unsuitable_photo_replacement_needed"
       }
     },
     {
@@ -549,6 +618,12 @@
         "date": "2026-11-23",
         "result": "replace",
         "note": "Reuses generic reception image with no vaccination or pregnancy context."
+      },
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "shared_or_unsuitable_photo_replacement_needed"
       }
     },
     {
@@ -567,6 +642,12 @@
         "date": "2026-11-23",
         "result": "replace",
         "note": "Shares generic paperwork image with unrelated certified-translation guide; lacks tax context."
+      },
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "shared_or_unsuitable_photo_replacement_needed"
       }
     },
     {
@@ -585,6 +666,12 @@
         "date": "2026-11-23",
         "result": "replace",
         "note": "Reuses birth-registration image instead of baby shopping supplies."
+      },
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "shared_or_unsuitable_photo_replacement_needed"
       }
     },
     {
@@ -598,7 +685,13 @@
       "image_url_mismatch": false,
       "alt": "スマートフォンの画面にデジタル身分証と安全確認のマークを表示したイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "germany-import-fees-japan-packages-2026",
@@ -611,7 +704,13 @@
       "image_url_mismatch": false,
       "alt": "日本からドイツへ届く段ボール箱と税関書類を示すイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "germany-inflation-october-2026",
@@ -624,7 +723,13 @@
       "image_url_mismatch": false,
       "alt": "机の上の買い物かごと、上がっていく棒グラフ、レシートを描いた、物価の上昇を表したイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "germany-labour-market-october-2026",
@@ -637,7 +742,13 @@
       "image_url_mismatch": false,
       "alt": "求人の紙が貼られた掲示板と、机の上のノートパソコンとかばんを描いた、仕事探しを表したイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "grundsicherung-buergergeld-germany-2026",
@@ -650,7 +761,13 @@
       "image_url_mismatch": false,
       "alt": "申請書と書類を机で確認する人、住居と書類フォルダーを描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "thg-quote-2026-deadline-november-15",
@@ -663,7 +780,13 @@
       "image_url_mismatch": false,
       "alt": "充電スタンドにつながった電気自動車と、葉のマークが入った証書を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "wohngeld-antrag-germany-2026",
@@ -676,7 +799,13 @@
       "image_url_mismatch": false,
       "alt": "住宅、賃貸契約書、電卓とコインを組み合わせた住宅手当のイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "ausbildung-germany-japanese",
@@ -689,7 +818,13 @@
       "image_url_mismatch": false,
       "alt": "工具が掛かった壁の前の作業台に、料理人の帽子とエプロン、焼きたてのパン、工具が並ぶ、職業訓練を表したイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "bicycle-rules-germany",
@@ -702,7 +837,13 @@
       "image_url_mismatch": false,
       "alt": "赤く塗られた自転車道を、ライトをつけた自転車が走り、並木と石畳の歩道、街並みが見えるイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "chancenkarte-germany-japanese",
@@ -715,7 +856,13 @@
       "image_url_mismatch": false,
       "alt": "窓の外に教会の塔と街並みが見える机に、ノートパソコンと書類、マグカップが置かれた、仕事探しを表したイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "church-tax-germany",
@@ -728,7 +875,13 @@
       "image_url_mismatch": false,
       "alt": "時計のある教会の塔と街並みを背に、机の上に電卓と書類が置かれた、教会税を表したイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "einbuergerung-germany-japanese",
@@ -741,7 +894,13 @@
       "image_url_mismatch": false,
       "alt": "二つの道が分かれる場所に立つ道しるべと、遠くに見えるドイツの街並みと日本の山並みを描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "elterngeld-guide-germany",
@@ -754,7 +913,13 @@
       "image_url_mismatch": false,
       "alt": "ベビーカーと小さな靴、カレンダー、電卓を置いた明るい部屋で、育児の期間とお金を計画する様子のイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "employment-contract-germany",
@@ -767,7 +932,13 @@
       "image_url_mismatch": false,
       "alt": "木の机の上に契約書のような2枚の書類と万年筆、眼鏡、観葉植物が置かれたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "germany-visa-types-japanese",
@@ -780,7 +951,13 @@
       "image_url_mismatch": false,
       "alt": "窓辺の机に、表紙の無地のパスポートと色違いの3枚のカード、マグカップが置かれ、横にスーツケースと観葉植物があるイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "japanese-passport-consulate-germany",
@@ -793,7 +970,13 @@
       "image_url_mismatch": false,
       "alt": "旅行かばんの上に、表紙の無地のパスポートと航空券、ドイツの街並みの絵はがきが置かれたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "kindergeld-application-germany",
@@ -806,7 +989,13 @@
       "image_url_mismatch": false,
       "alt": "机の上にノートパソコンと封筒、子どものおもちゃの積み木が置かれた、家族の手続きを表したイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "leaving-japan-before-moving-germany",
@@ -819,7 +1008,13 @@
       "image_url_mismatch": false,
       "alt": "段ボール箱とスーツケースが並ぶ部屋に、メモと盆栽が置かれた、引っ越しの準備を表したイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "sick-leave-germany",
@@ -832,7 +1027,13 @@
       "image_url_mismatch": false,
       "alt": "ベッドの横の小さな机に、湯気の立つマグカップと体温計、スマートフォンが置かれた、病気で休む日を表したイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "study-in-germany-student-visa",
@@ -845,7 +1046,13 @@
       "image_url_mismatch": false,
       "alt": "窓の外に古い大学の建物が見え、本棚の前の机に教科書とノートパソコン、メモが置かれたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "werkstudent-student-jobs-germany",
@@ -858,7 +1065,13 @@
       "image_url_mismatch": false,
       "alt": "オフィスの机でノートパソコンが開かれ、横に大学の教科書とリュックが置かれた、学生の仕事を表したイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "working-holiday-germany",
@@ -871,7 +1084,13 @@
       "image_url_mismatch": false,
       "alt": "街並みを背に赤い列車が停まる駅のホームに、スーツケースとリュックが置かれたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "income-tax-return-germany",
@@ -884,7 +1103,13 @@
       "image_url_mismatch": false,
       "alt": "机の上に書類の束、電卓、ノートパソコン、領収書を並べ、1年分の税金を整理する様子のイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "permanent-residence-germany",
@@ -897,7 +1122,13 @@
       "image_url_mismatch": false,
       "alt": "窓辺に植木鉢が並ぶ集合住宅の玄関前で、鍵と滞在カードを思わせる無地のカードが置かれた様子のイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "ees-etias-germany-japan-travel-2026",
@@ -910,7 +1141,13 @@
       "image_url_mismatch": false,
       "alt": "パスポートと搭乗券、指紋とカメラの読み取り機がある入国審査のブース、飛び立つ飛行機を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P2"
+      "priority": "P2",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "boot-duesseldorf-2027-guide",
@@ -923,7 +1160,13 @@
       "image_url_mismatch": false,
       "alt": "見本市の大きなホールに白いヨットが並び、天井から色とりどりの旗が下がる様子を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "cologne-museumsnacht-2026-guide",
@@ -936,7 +1179,13 @@
       "image_url_mismatch": false,
       "alt": "夜の美術館の展示室で、明かりに照らされた絵画と彫刻を眺める人々を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "essen-motor-show-2026-guide",
@@ -949,7 +1198,13 @@
       "image_url_mismatch": false,
       "alt": "見本市のホールでスポットライトを浴びるスポーツカーと、それを囲む来場者を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "altersvorsorgedepot-2027",
@@ -962,7 +1217,13 @@
       "image_url_mismatch": false,
       "alt": "台所のテーブルで、右肩上がりのグラフが表示されたタブレットを操作する手元を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "berlin-wall-history",
@@ -975,7 +1236,13 @@
       "image_url_mismatch": false,
       "alt": "記念の場所に残る灰色のコンクリートの壁と、地面に続く2列の石畳を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "buying-registering-car-germany",
@@ -988,7 +1255,13 @@
       "image_url_mismatch": false,
       "alt": "街の道路を走る車と、ナンバープレート、書類を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "cancel-contracts-germany",
@@ -1001,7 +1274,13 @@
       "image_url_mismatch": false,
       "alt": "ソファでスマートフォンを操作する人と、横に置かれたジムのバッグを描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "car-insurance-switch-november-2026",
@@ -1014,7 +1293,13 @@
       "image_url_mismatch": false,
       "alt": "11月の住宅街に止められた車と、書類を持って歩く人を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "cologne-cathedral-632-years",
@@ -1027,7 +1312,13 @@
       "image_url_mismatch": false,
       "alt": "夕暮れのライン川のほとりにそびえるゴシック様式の大聖堂の2本の尖塔を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "dentist-germany-guide",
@@ -1040,7 +1331,13 @@
       "image_url_mismatch": false,
       "alt": "歯科の診察台とライト、歯ブラシと歯の模型を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "drivers-license-japan-germany",
@@ -1053,7 +1350,13 @@
       "image_url_mismatch": false,
       "alt": "机の上に置いた2枚の運転免許証と地図、車のキーを描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "eu-blue-card-germany",
@@ -1066,7 +1369,13 @@
       "image_url_mismatch": false,
       "alt": "青いカードとパスポート、ドイツの街並みのシルエットを描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "family-reunification-spouse-work-germany",
@@ -1079,7 +1388,13 @@
       "image_url_mismatch": false,
       "alt": "空港の到着ロビーで、スーツケースを持った家族が抱き合う様子を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "flu-covid-vaccination-2026-27",
@@ -1092,7 +1407,13 @@
       "image_url_mismatch": false,
       "alt": "診察室で大人の腕にワクチンを接種する医師の手元を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "german-school-grades-1-to-6",
@@ -1105,7 +1426,13 @@
       "image_url_mismatch": false,
       "alt": "子どもの学習机のノートを、親が指さしている手元を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "germany-inflation-september-2026",
@@ -1118,7 +1445,13 @@
       "image_url_mismatch": false,
       "alt": "スーパーのレジで野菜と卵の入ったかごと、レシートを持つ手を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "germany-kleingarten-schrebergarten",
@@ -1131,7 +1464,13 @@
       "image_url_mismatch": false,
       "alt": "小さな木の小屋と野菜の畑がある、ドイツの市民農園の区画を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "germany-rent-law-reform-furnished-2026",
@@ -1144,7 +1483,13 @@
       "image_url_mismatch": false,
       "alt": "家具がそろった明るい賃貸アパートの居間と、テーブルの上の鍵を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "japan-germany-social-security-pension",
@@ -1157,7 +1502,13 @@
       "image_url_mismatch": false,
       "alt": "積み上げた硬貨と、日本とドイツを点線で結ぶマーク、書類を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "japanese-speaking-doctors-germany",
@@ -1170,7 +1521,13 @@
       "image_url_mismatch": false,
       "alt": "診察室で医師と患者が向かい合い、吹き出しの中に日本語の文字を思わせる記号が描かれたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "job-notice-period-germany",
@@ -1183,7 +1540,13 @@
       "image_url_mismatch": false,
       "alt": "机で手紙に万年筆で署名する人と、私物を入れた段ボール箱を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "liability-household-insurance-germany",
@@ -1196,7 +1559,13 @@
       "image_url_mismatch": false,
       "alt": "リビングのソファの前で花びんが倒れて水がこぼれ、緑の盾のマークが部屋を守る様子を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "mobile-phone-sim-germany",
@@ -1209,7 +1578,13 @@
       "image_url_mismatch": false,
       "alt": "机の上のスマートフォンとSIMカード、電波のマークを描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "online-shopping-returns-germany",
@@ -1222,7 +1597,13 @@
       "image_url_mismatch": false,
       "alt": "机の上の返品用の段ボール箱と、スマートフォン、返品を表す矢印を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "overseas-voting-japan",
@@ -1235,7 +1616,13 @@
       "image_url_mismatch": false,
       "alt": "投票箱と投票用紙、封筒と郵便のマークを描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "pflegeversicherung-reform-2027",
@@ -1248,7 +1635,13 @@
       "image_url_mismatch": false,
       "alt": "ひじ掛け椅子に座る高齢者の手を、介護をする人がそっと握る様子を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "quiet-holidays-november-germany",
@@ -1261,7 +1654,13 @@
       "image_url_mismatch": false,
       "alt": "霧の11月の夕方、墓地に赤いろうそくの灯りが並ぶ様子を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "returning-to-japan-checklist",
@@ -1274,7 +1673,13 @@
       "image_url_mismatch": false,
       "alt": "積み上げた段ボール箱とスーツケース、窓の外を飛ぶ飛行機を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "ruhr-coal-mining-history",
@@ -1287,7 +1692,13 @@
       "image_url_mismatch": false,
       "alt": "夕日に照らされたルール地方の旧炭鉱の立坑やぐらを描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "saint-nicholas-day-germany",
@@ -1300,7 +1711,13 @@
       "image_url_mismatch": false,
       "alt": "玄関に置かれたブーツに、みかんやくるみ、チョコレートが入っている様子を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "schools-germany-japanese-families",
@@ -1313,7 +1730,13 @@
       "image_url_mismatch": false,
       "alt": "ドイツの校舎の前を、かばんを背負った子どもたちと大人が歩く様子を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "sick-note-rules-germany-2026",
@@ -1326,7 +1749,13 @@
       "image_url_mismatch": false,
       "alt": "ベッドで休む人と、枕元の体温計とお茶を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "snow-ice-clearing-duty-germany",
@@ -1339,7 +1768,13 @@
       "image_url_mismatch": false,
       "alt": "朝早く、集合住宅の前の歩道の雪をスコップで片付ける人を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "sugar-drink-tax-germany-2027",
@@ -1352,7 +1787,13 @@
       "image_url_mismatch": false,
       "alt": "スーパーの冷蔵棚に並ぶ色とりどりの清涼飲料と、手前の水のボトルを描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "tax-refund-2022-deadline-december-2026",
@@ -1365,7 +1806,13 @@
       "image_url_mismatch": false,
       "alt": "ノートパソコンと電卓、領収書が並ぶ自宅の机を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "three-kings-day-sternsinger",
@@ -1378,7 +1825,13 @@
       "image_url_mismatch": false,
       "alt": "冠をかぶり星の棒を持った3人の子どもが、雪の残る家のドアの前に立つ様子を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "unemployment-benefit-germany",
@@ -1391,7 +1844,13 @@
       "image_url_mismatch": false,
       "alt": "机の上のノートパソコンとカレンダー、書類とマグカップを描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "wohngeld-reform-2027",
@@ -1404,7 +1863,13 @@
       "image_url_mismatch": false,
       "alt": "秋の夕方、窓に明かりが灯るドイツの集合住宅を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "minijob-grenze-2027",
@@ -1417,7 +1882,13 @@
       "image_url_mismatch": false,
       "alt": "小さなカフェのカウンターで働く人と、コーヒーマシンを描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "deutsche-bahn-delays-why",
@@ -1430,7 +1901,13 @@
       "image_url_mismatch": false,
       "alt": "曇りの日、ホームに到着する赤い列車と、荷物を持って待つ乗客を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "epa-guide-germany",
@@ -1448,6 +1925,12 @@
         "date": "2026-11-23",
         "result": "replace",
         "note": "Stylized generic health-insurance illustration does not demonstrate digital health record."
+      },
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "shared_or_unsuitable_photo_replacement_needed"
       }
     },
     {
@@ -1461,7 +1944,13 @@
       "image_url_mismatch": false,
       "alt": "秋の日差しに照らされた、川沿いの急斜面のぶどう畑を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "germany-cash-payment-habits",
@@ -1474,7 +1963,13 @@
       "image_url_mismatch": false,
       "alt": "パン屋のカウンターで、ユーロの硬貨と紙幣で支払う手元を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "germany-public-holidays-by-state",
@@ -1487,7 +1982,13 @@
       "image_url_mismatch": false,
       "alt": "祝日の朝、お店が閉まった静かな旧市街の広場を歩く家族を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "germany-tap-water-drinkable",
@@ -1500,7 +2001,13 @@
       "image_url_mismatch": false,
       "alt": "台所の蛇口から、グラスに注がれる透明な水道水を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "kindergeld-auszahlungstermine-2027",
@@ -1518,6 +2025,12 @@
         "date": "2026-11-23",
         "result": "replace",
         "note": "Reuses birth-registration image instead of child-benefit payment dates or calendar."
+      },
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "shared_or_unsuitable_photo_replacement_needed"
       }
     },
     {
@@ -1536,6 +2049,12 @@
         "date": "2026-11-23",
         "result": "visually_acceptable_pending_provenance",
         "note": "Attractive scenic photo; do not assert it depicts a specific NRW location without verification. Provenance/disclosure outstanding."
+      },
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "acceptable_photo_provenance_needed"
       }
     },
     {
@@ -1549,7 +2068,13 @@
       "image_url_mismatch": false,
       "alt": "木のテーブルの上のビールのグラスと、大麦とホップを描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "germany-autobahn-speed-limit",
@@ -1562,7 +2087,13 @@
       "image_url_mismatch": false,
       "alt": "緑の田園地帯を通るアウトバーンと、走る車を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "germany-sunday-rest-shops-closed",
@@ -1575,7 +2106,13 @@
       "image_url_mismatch": false,
       "alt": "日曜の朝、お店が閉まった静かな歩行者天国を歩く人を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     },
     {
       "slug": "health-insurance-zusatzbeitrag-2027",
@@ -1588,7 +2125,13 @@
       "image_url_mismatch": false,
       "alt": "台所のテーブルで手紙を見比べ、電卓で計算する人を描いたイラスト",
       "status": "requires_photographic_cover_review",
-      "priority": "P3"
+      "priority": "P3",
+      "visual_screening": {
+        "date": "2026-11-25",
+        "method": "Manual contact-sheet inspection of exact repository assets",
+        "source_run": 45704843207,
+        "result": "illustration_replacement_candidate"
+      }
     }
   ],
   "updated_at": "2026-11-25",

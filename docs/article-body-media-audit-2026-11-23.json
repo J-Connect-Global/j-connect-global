@@ -16,12 +16,14 @@
       "2": 111,
       "3": 2
     },
-    "visually_reviewed_and_redesigned_inline_references": 11,
-    "pending_visual_review_inline_references": 183,
-    "body_media_assets_redesigned": 11,
+    "visually_reviewed_and_redesigned_inline_references": 18,
+    "pending_visual_review_inline_references": 0,
+    "body_media_assets_redesigned": 18,
     "off_topic_inline_image_references_removed": 1,
     "visually_reviewed_retained_inline_references": 27,
-    "visually_reviewed_redesign_pending": 7
+    "visually_reviewed_redesign_pending": 0,
+    "visually_screened_no_obvious_render_failure_inline_references": 176,
+    "visually_screened_followup_needed_inline_references": 7
   },
   "reused_inline_assets": [
     {
@@ -46,8 +48,15 @@
           "caption": "図解：J-Connect。インゴルシュタット市、ドイツ醸造者連盟、連邦議会調査局、LGLの資料に基づく（2026年10月26日参照）。",
           "line": 89,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_followup_needed",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "followup_needed",
+            "note": "Right column title crowds edge; reduce/wrap header"
+          }
         },
         {
           "src": "/assets/images/events/beer-purity-law-timeline.svg",
@@ -55,8 +64,15 @@
           "caption": "図解：J-Connect。ドイツ醸造者連盟、欧州司法裁判所、連邦統計局の資料に基づく（2026年10月26日参照）。",
           "line": 122,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -73,8 +89,15 @@
           "caption": "図解：J-Connect。連邦道路研究所（BASt）2015年の調査に基づく（工事区間を除く）。",
           "line": 76,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/autobahn-history-timeline.svg",
@@ -82,8 +105,15 @@
           "caption": "図解：J-Connect。LVRアーカイブ、推奨速度令、BASt、連邦議会の資料に基づく（2026年10月26日参照）。",
           "line": 123,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -100,8 +130,15 @@
           "caption": "図解：J-Connect。基本法、NRW州閉店法、労働時間法、機械騒音防止令に基づく（2026年10月26日参照）。",
           "line": 58,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/germany-sunday-open-shops-nrw.svg",
@@ -109,8 +146,15 @@
           "caption": "図解：J-Connect。NRW州閉店法とケルン商工会議所の解説に基づく（2026年10月26日参照）。",
           "line": 108,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -160,8 +204,15 @@
           "caption": "図解：J-Connect。連邦保健省の解説に基づく（2026年10月26日時点）。",
           "line": 73,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/gkv-zusatzbeitrag-cost-example-2027.svg",
@@ -169,8 +220,15 @@
           "caption": "図解：J-Connect。本文の計算例を図にしたもの。",
           "line": 94,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/gkv-special-termination-timeline-2027.svg",
@@ -178,8 +236,15 @@
           "caption": "図解：J-Connect。SGB V §175第4項に基づく例（値上げが1月1日の場合）。",
           "line": 116,
           "position": 4,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -279,8 +344,15 @@
           "caption": "図解：J-Connect。ドイツ鉄道の2025年決算と年次報告書に基づく（2026年10月27日参照）。",
           "line": 67,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/db-passenger-rights-refund.svg",
@@ -288,8 +360,15 @@
           "caption": "図解：J-Connect。ドイツ鉄道、連邦交通省、連邦鉄道庁の資料に基づく（2026年10月27日参照）。",
           "line": 114,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -306,8 +385,15 @@
           "caption": "文書単位と施設単位では、アクセス制限の範囲が異なります。",
           "line": 65,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/epa-no-app-path.svg",
@@ -315,8 +401,15 @@
           "caption": "アプリを使わなくてもアクセス管理を相談できます。保険者やオンブズ窓口は診療記録の内容を閲覧できません。",
           "line": 73,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -333,8 +426,15 @@
           "caption": "図解：J-Connect。ドイツワイン協会の資料に基づく概略図で、正確な位置や境界を示すものではありません。",
           "line": 66,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/german-wine-label-guide.svg",
@@ -342,8 +442,15 @@
           "caption": "図解：J-Connect。ドイツワイン協会とワイン法の資料に基づく（2026年10月27日参照）。",
           "line": 110,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -360,8 +467,15 @@
           "caption": "図解：J-Connect。ドイツ連邦銀行「ドイツの支払い行動」2023年・2025年に基づく（2026年10月27日参照）。",
           "line": 67,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/germany-cash-reasons.svg",
@@ -369,8 +483,15 @@
           "caption": "図解：J-Connect。ドイツ連邦銀行の調査（2023年・2025年）と月報（2025年4月）に基づく（2026年10月27日参照）。",
           "line": 87,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -387,8 +508,15 @@
           "caption": "図解：J-Connect。各州の祝日法と連邦内務省の資料に基づく概略図（2026年10月27日参照）。",
           "line": 71,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/nrw-public-holidays-2027.svg",
@@ -396,8 +524,15 @@
           "caption": "図解：J-Connect。NRW州日曜・祝日法とケルン大司教区の移動祝日の一覧に基づく（2026年10月27日参照）。",
           "line": 88,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -414,8 +549,15 @@
           "caption": "図解：J-Connect。洗剤法第9条、デュッセルドルフ都市公社、ラインエネルギーの資料に基づく（2026年10月27日参照）。",
           "line": 89,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/tap-water-safe-habits.svg",
@@ -423,8 +565,15 @@
           "caption": "図解：J-Connect。連邦環境庁と消費者センターの資料に基づく（2026年10月27日参照）。",
           "line": 120,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -441,8 +590,15 @@
           "caption": "公式支給日表の使い方。支給日と支給額は別に確認します。",
           "line": 66,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/kindergeld-antragslos-2027-rollout.svg",
@@ -450,8 +606,15 @@
           "caption": "申請なし支給は段階導入で、条件を満たさない家庭には従来の案内・申請が必要になる場合があります。",
           "line": 92,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ],
       "media_count": 2,
@@ -476,8 +639,15 @@
           "caption": "木曜祝日と翌金曜の休暇申請で4連休にする計画例。休暇の承認は勤務先の規則によります。",
           "line": 32,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/nrw-public-holidays-2027-weekend-overlaps.svg",
@@ -485,8 +655,15 @@
           "caption": "メーデー、ドイツ統一の日、クリスマスの祝日は週末と重なります。自動振替を前提にせず勤務先の規則を確認してください。",
           "line": 67,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -503,8 +680,15 @@
           "caption": "州共通カレンダーに加えて、学校から配布される年間予定表も確認してください。",
           "line": 53,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/nrw-school-kita-closures.svg",
@@ -512,8 +696,15 @@
           "caption": "勤務先への休暇申請前に、学校と保育施設の両方の日程を確認します。",
           "line": 61,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -530,8 +721,15 @@
           "caption": "J-Connect作成の計算図。数値は本文の公式情報と法定式から算出。",
           "line": 51,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/minijob-insurance-checklist.svg",
@@ -539,8 +737,15 @@
           "caption": "J-Connect作成の模式図。加入や税額を保証するものではありません。",
           "line": 109,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_followup_needed",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "followup_needed",
+            "note": "Icon-only generic graphic; add explicit topic labels or replace with useful diagram"
+          }
         }
       ]
     },
@@ -584,8 +789,15 @@
           "caption": "図解：J-Connect。連邦財務省の資料に基づく（2026年10月29日参照）。",
           "line": 75,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/altersvorsorgedepot-timeline.svg",
@@ -593,8 +805,15 @@
           "caption": "図解：J-Connect。連邦議会、連邦財務省、ドイツ年金保険の資料に基づく（2026年10月29日参照）。",
           "line": 91,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -611,8 +830,15 @@
           "caption": "図解：J-Connect。ベルリンの壁財団と連邦政治教育センターの資料に基づく（2026年10月29日参照）。",
           "line": 64,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/berlin-wall-structure.svg",
@@ -620,8 +846,15 @@
           "caption": "図解：J-Connect。ベルリンの壁の構造を簡略化して示した概略図で、場所によって構造は異なります。",
           "line": 90,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -638,8 +871,15 @@
           "caption": "図解：J-Connect。ADACとデュッセルドルフ市の資料に基づく（2026年10月29日参照）。",
           "line": 62,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/car-inspection-intervals.svg",
@@ -647,8 +887,15 @@
           "caption": "図解：J-Connect。ADACの資料に基づく（2026年10月29日参照）。",
           "line": 94,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -665,8 +912,15 @@
           "caption": "図解：J-Connect。消費者センターと連邦司法・消費者保護省の資料に基づく（2026年10月29日参照）。",
           "line": 58,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/contract-cancel-steps.svg",
@@ -674,8 +928,15 @@
           "caption": "図解：J-Connect。消費者センターの資料に基づく（2026年10月29日参照）。",
           "line": 85,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -692,8 +953,15 @@
           "caption": "図解：J-Connect。消費者センターとADACの資料に基づく（2026年10月29日参照）。",
           "line": 54,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/car-insurance-switch-steps.svg",
@@ -701,8 +969,15 @@
           "caption": "図解：J-Connect。ADACの資料に基づく（2026年10月29日参照）。",
           "line": 76,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -719,8 +994,15 @@
           "caption": "図解：J-Connect。ケルン大聖堂とドイツ・ユネスコ委員会の資料に基づく（2026年10月29日参照）。",
           "line": 74,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/cologne-cathedral-heights.svg",
@@ -728,8 +1010,15 @@
           "caption": "図解：J-Connect。ケルン大聖堂の資料に基づく（2026年10月29日参照）。",
           "line": 88,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -746,10 +1035,17 @@
           "caption": "図解：J-Connect。消費者センターの資料に基づく（2026年10月29日参照）。",
           "line": 72,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_screened_no_obvious_render_failure",
           "reuse_in_articles": 2,
           "review_note": "Shared diagram, verify content/context before replacing",
-          "priority": "P3"
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/dentist-bonusheft.svg",
@@ -757,8 +1053,15 @@
           "caption": "図解：J-Connect。消費者センターの資料に基づく（2026年10月29日参照）。",
           "line": 82,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -775,8 +1078,15 @@
           "caption": "図解：J-Connect。運転免許規則、ケルン市、在外公館の資料に基づく（2026年10月29日参照）。",
           "line": 68,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/japanese-license-expiry.svg",
@@ -784,8 +1094,15 @@
           "caption": "図解：J-Connect。警察庁の資料（道路交通法第97条の2）に基づく（2026年11月14日確認）。",
           "line": 99,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -802,8 +1119,15 @@
           "caption": "図解：J-Connect。Make it in Germanyの資料に基づく（2026年10月29日参照）。",
           "line": 48,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/blue-card-conditions.svg",
@@ -811,8 +1135,15 @@
           "caption": "図解：J-Connect。Make it in Germanyと滞在法の資料に基づく（2026年10月29日参照）。",
           "line": 69,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -829,8 +1160,15 @@
           "caption": "図解：J-Connect。連邦移民難民庁とMake it in Germanyの資料に基づく（2026年10月29日参照）。",
           "line": 44,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/family-reunification-documents.svg",
@@ -838,8 +1176,15 @@
           "caption": "図解：J-Connect。連邦移民難民庁とMake it in Germanyの資料に基づく（2026年10月29日参照）。",
           "line": 58,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -856,8 +1201,15 @@
           "caption": "図解：J-Connect。RKIの資料に基づく（2026年10月29日参照）。",
           "line": 57,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/vaccination-2026-27-cost.svg",
@@ -865,8 +1217,15 @@
           "caption": "図解：J-Connect。infektionsschutz.deの資料に基づく（2026年10月29日参照）。",
           "line": 80,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -883,8 +1242,15 @@
           "caption": "図解：J-Connect。NRW州学校法第48条に基づく（2026年10月29日参照）。",
           "line": 67,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/german-school-grades-points.svg",
@@ -892,8 +1258,15 @@
           "caption": "図解：J-Connect。KMKの協定に基づく（2026年10月29日参照）。",
           "line": 102,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -910,8 +1283,15 @@
           "caption": "図解：J-Connect。連邦統計局の発表に基づく（2026年10月29日参照）。",
           "line": 63,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/fuel-tax-cut-october-2026.svg",
@@ -919,8 +1299,15 @@
           "caption": "図解：J-Connect。連邦政府と連邦議会の資料に基づく（2026年10月29日参照）。",
           "line": 93,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -937,8 +1324,15 @@
           "caption": "図解：J-Connect。ドイツ市民農園連盟とライプツィヒ市の資料に基づく（2026年10月29日参照）。",
           "line": 68,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/kleingarten-rules.svg",
@@ -946,8 +1340,15 @@
           "caption": "図解：J-Connect。連邦市民農園法とドイツ市民農園連盟の資料に基づく（2026年10月29日参照）。",
           "line": 88,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -964,8 +1365,15 @@
           "caption": "図解：J-Connect。連邦司法・消費者保護省の資料に基づく（2026年10月29日参照）。",
           "line": 61,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/indexmiete-cap-example.svg",
@@ -973,8 +1381,15 @@
           "caption": "図解：J-Connect。連邦司法・消費者保護省の資料に基づく計算例（2026年10月29日参照）。",
           "line": 85,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1045,8 +1460,15 @@
           "caption": "図解：J-Connect。日本年金機構と在外公館の資料に基づく（2026年10月29日参照）。",
           "line": 59,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/pension-refund-decision.svg",
@@ -1054,8 +1476,15 @@
           "caption": "図解：J-Connect。ドイツ年金保険の資料に基づく（2026年10月29日参照）。",
           "line": 91,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1072,8 +1501,15 @@
           "caption": "図解：J-Connect。外務省、在外公館、116117の資料に基づく（2026年10月29日参照）。",
           "line": 49,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/doctor-visit-preparation.svg",
@@ -1081,10 +1517,17 @@
           "caption": "図解：J-Connect。外務省と連邦保健省の資料に基づく（2026年10月29日参照）。",
           "line": 82,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_screened_no_obvious_render_failure",
           "reuse_in_articles": 2,
           "review_note": "Shared diagram, verify content/context before replacing",
-          "priority": "P3"
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1101,8 +1544,15 @@
           "caption": "図解：J-Connect。民法第622条に基づく（2026年10月29日参照）。",
           "line": 74,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/job-leaving-deadlines.svg",
@@ -1110,8 +1560,15 @@
           "caption": "図解：J-Connect。民法、解雇保護法、連邦雇用エージェンシーの資料に基づく（2026年10月29日参照）。",
           "line": 105,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1128,8 +1585,15 @@
           "caption": "図解：J-Connect。消費者センターとStiftung Warentestの資料に基づく（2026年10月29日参照）。",
           "line": 47,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/insurance-claim-steps.svg",
@@ -1137,8 +1601,15 @@
           "caption": "図解：J-Connect。消費者センターの資料などに基づく（2026年10月29日参照）。",
           "line": 100,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1155,8 +1626,15 @@
           "caption": "図解：J-Connect。電気通信法と消費者センターの資料に基づく（2026年10月29日参照）。",
           "line": 48,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/mobile-plan-checkpoints.svg",
@@ -1164,8 +1642,15 @@
           "caption": "図解：J-Connect。消費者センターと連邦ネットワーク庁の資料に基づく（2026年10月29日参照）。",
           "line": 74,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1182,8 +1667,15 @@
           "caption": "図解：J-Connect。民法と消費者センターの資料に基づく（2026年10月29日参照）。",
           "line": 60,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/online-return-exceptions.svg",
@@ -1191,8 +1683,15 @@
           "caption": "図解：J-Connect。民法第312g条に基づく（2026年10月29日参照）。",
           "line": 90,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1209,8 +1708,15 @@
           "caption": "図解：J-Connect。総務省と外務省の資料に基づく（2026年10月29日参照）。",
           "line": 48,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/overseas-voting-methods.svg",
@@ -1218,8 +1724,15 @@
           "caption": "図解：J-Connect。総務省の資料に基づく（2026年10月29日参照）。",
           "line": 64,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1236,8 +1749,15 @@
           "caption": "図解：J-Connect。連邦保健省の資料に基づく（2026年10月29日参照）。",
           "line": 61,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/pflegeversicherung-spouse-surcharge.svg",
@@ -1245,8 +1765,15 @@
           "caption": "図解：J-Connect。連邦保健省のよくある質問に基づく（2026年10月29日参照）。",
           "line": 94,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1263,8 +1790,15 @@
           "caption": "図解：J-Connect。NRWの祝日の法律とデュッセルドルフ市の案内に基づく（2026年11月6日参照）。",
           "line": 54,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/quiet-holidays-time-rules.svg",
@@ -1272,8 +1806,15 @@
           "caption": "図解：J-Connect。デュッセルドルフ市の案内とNRWの祝日の法律に基づく（2026年11月6日参照）。",
           "line": 72,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1290,8 +1831,15 @@
           "caption": "図解：J-Connect。連邦住民登録法、民法、日本年金機構などの資料に基づく（2026年10月29日参照）。",
           "line": 55,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/returning-to-japan-two-sides.svg",
@@ -1299,8 +1847,15 @@
           "caption": "図解：J-Connect。外務省、日本年金機構、厚生労働省などの資料に基づく（2026年10月29日参照）。",
           "line": 120,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1317,8 +1872,15 @@
           "caption": "図解：J-Connect。連邦政治教育センター、LWL、ツォルフェアアイン、ルール地域連合の資料に基づく（2026年10月29日参照）。",
           "line": 68,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/zollverein-facts.svg",
@@ -1326,8 +1888,15 @@
           "caption": "図解：J-Connect。ドイツ・ユネスコ委員会とツォルフェアアインの資料に基づく（2026年10月29日参照）。",
           "line": 90,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1344,8 +1913,15 @@
           "caption": "図解：J-Connect。katholisch.deとケルン大司教区の資料に基づく（2026年10月29日参照）。",
           "line": 70,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/weckmann-rhineland.svg",
@@ -1353,8 +1929,15 @@
           "caption": "図解：J-Connect。LVR（ラインラント地域連合）の資料に基づく（2026年10月29日参照）。",
           "line": 88,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1371,8 +1954,15 @@
           "caption": "図解：J-Connect。NRW州学校省と海外子女教育振興財団の資料に基づく（2026年10月29日参照）。",
           "line": 50,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/nrw-school-structure.svg",
@@ -1380,8 +1970,15 @@
           "caption": "図解：J-Connect。NRW州学校省の資料に基づく（2026年10月29日参照）。",
           "line": 72,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1398,8 +1995,15 @@
           "caption": "図解：J-Connect。賃金継続支払法とTKの資料に基づく（2026年10月29日参照）。",
           "line": 60,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/child-sick-days-2026.svg",
@@ -1407,8 +2011,15 @@
           "caption": "図解：J-Connect。TKの資料に基づく（2026年10月29日参照）。",
           "line": 87,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1425,8 +2036,15 @@
           "caption": "図解：J-Connect。NRW州法、連邦通常裁判所の判決、ドイツ借家人連盟の資料をもとに作成（2026年11月18日確認）。",
           "line": 85,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/snow-clearing-rules.svg",
@@ -1434,8 +2052,15 @@
           "caption": "図解：J-Connect。各市の公式案内とエルクラート市の2026年1月版条例に基づく（2026年11月18日確認）。",
           "line": 120,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1452,8 +2077,15 @@
           "caption": "図解：J-Connect。連邦財務省の発表に基づく（2026年10月29日参照）。",
           "line": 59,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/sugar-drink-tax-scope.svg",
@@ -1461,8 +2093,15 @@
           "caption": "図解：J-Connect。連邦財務省の発表に基づく（2026年10月29日参照）。",
           "line": 80,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1479,8 +2118,15 @@
           "caption": "図解：J-Connect。NRW州財務行政とELSTERの資料に基づく（2026年11月1日参照）。",
           "line": 62,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/tax-refund-voluntary-vs-mandatory.svg",
@@ -1488,8 +2134,15 @@
           "caption": "図解：J-Connect。ELSTER、所得税法第46条、NRW州財務行政などの資料に基づく（2026年11月1日参照）。",
           "line": 96,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1506,8 +2159,15 @@
           "caption": "図解：J-Connect。katholisch.deの資料に基づく（2026年10月29日参照）。",
           "line": 74,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/sternsinger-facts-2027.svg",
@@ -1515,8 +2175,15 @@
           "caption": "図解：J-Connect。シュテルンジンガー（子ども宣教会）とドイツ・ユネスコ委員会の資料に基づく（2026年10月29日参照）。",
           "line": 84,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1533,8 +2200,15 @@
           "caption": "図解：J-Connect。社会法典第3編と連邦雇用エージェンシーの資料に基づく（2026年10月29日参照）。",
           "line": 70,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/unemployment-benefit-steps.svg",
@@ -1542,8 +2216,15 @@
           "caption": "図解：J-Connect。連邦雇用エージェンシーの資料に基づく（2026年10月29日参照）。",
           "line": 85,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1560,8 +2241,15 @@
           "caption": "図解：J-Connect。連邦休暇法と連邦労働裁判所の判決に基づく（2026年10月29日参照）。",
           "line": 60,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/vacation-sick-and-leaving.svg",
@@ -1569,8 +2257,15 @@
           "caption": "図解：J-Connect。連邦休暇法に基づく（2026年10月29日参照）。",
           "line": 84,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1587,8 +2282,15 @@
           "caption": "図解：J-Connect。連邦議会の資料に基づく（2026年10月29日参照）。",
           "line": 67,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/wohngeld-reform-timeline.svg",
@@ -1596,8 +2298,15 @@
           "caption": "図解：J-Connect。連邦議会の資料に基づく（2026年10月29日参照）。",
           "line": 88,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1641,8 +2350,15 @@
           "caption": "図解：J-Connect。主催者の案内に基づく（2026年10月30日参照）。ホールの割り当ては年によって変わります。",
           "line": 61,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/boot-duesseldorf-2027-tickets.svg",
@@ -1650,8 +2366,15 @@
           "caption": "図解：J-Connect。主催者の入場券の案内に基づく（2026年10月30日参照）。",
           "line": 78,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1668,8 +2391,15 @@
           "caption": "図解：J-Connect。主催者、ケルン観光局、koeln.deの案内に基づく（2026年10月30日参照）。",
           "line": 53,
           "position": 2,
-          "quality_status": "visually_reviewed_priority_redesign_needed",
-          "priority": "P1"
+          "quality_status": "redesigned_and_visual_review_passed",
+          "priority": "P1",
+          "redesign_draft": {
+            "date": "2026-11-25",
+            "branch": "chat/p1-seasonal-svg-redesign-20261125",
+            "status": "visual_review_passed_desktop_mobile_preview",
+            "checks": "Chromium exact asset at 600px and 360px, manually inspected; small secondary text at phone width; article text/alt retained. No obvious clipping or overlapping text.",
+            "evidence_run": 45704843207
+          }
         },
         {
           "src": "/assets/images/events/cologne-christmas-markets-2026-periods.svg",
@@ -1695,8 +2425,15 @@
           "caption": "図解：J-Connect。ミュージアムナイト公式サイトのプログラムに基づく（2026年10月30日参照）。参加施設と催しは変わることがあります。",
           "line": 65,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/cologne-museumsnacht-2026-evening.svg",
@@ -1704,8 +2441,15 @@
           "caption": "図解：J-Connect。時間配分は一例です。各館の催しの時間は公式サイトのプログラムで確認してください。",
           "line": 73,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1722,8 +2466,15 @@
           "caption": "図解：J-Connect。主催者の2026年の発表に基づく（2026年10月30日参照）。ホールの割り当ては変わることがあります。",
           "line": 63,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/essen-motor-show-2026-calendar.svg",
@@ -1731,8 +2482,15 @@
           "caption": "図解：J-Connect。主催者の案内に基づく（2026年10月30日参照）。",
           "line": 80,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1758,8 +2516,15 @@
           "caption": "図解：J-Connect。名物のイメージを表したもので、特定の店や商品を再現していません。",
           "line": 77,
           "position": 3,
-          "quality_status": "visually_reviewed_priority_redesign_needed",
-          "priority": "P1"
+          "quality_status": "redesigned_and_visual_review_passed",
+          "priority": "P1",
+          "redesign_draft": {
+            "date": "2026-11-25",
+            "branch": "chat/p1-seasonal-svg-redesign-20261125",
+            "status": "visual_review_passed_desktop_mobile_preview",
+            "checks": "Chromium exact asset at 600px and 360px, manually inspected; small secondary text at phone width; article text/alt retained. No obvious clipping or overlapping text.",
+            "evidence_run": 45704843207
+          }
         }
       ]
     },
@@ -1890,8 +2655,15 @@
           "caption": "図解：J-Connect。ドレスデン市、公式サイト、シュトレン保護協会の資料に基づく（2026年10月31日参照）。",
           "line": 61,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/dresden-striezelmarkt-symbols.svg",
@@ -1920,8 +2692,15 @@
           "caption": "",
           "line": 54,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/ees-entry-border-flow.svg",
@@ -1929,8 +2708,15 @@
           "caption": "",
           "line": 60,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -1956,8 +2742,15 @@
           "caption": "図解：J-Connect。名物のイメージを表したもので、特定の店や商品を再現していません。",
           "line": 66,
           "position": 3,
-          "quality_status": "visually_reviewed_priority_redesign_needed",
-          "priority": "P1"
+          "quality_status": "redesigned_and_visual_review_passed",
+          "priority": "P1",
+          "redesign_draft": {
+            "date": "2026-11-25",
+            "branch": "chat/p1-seasonal-svg-redesign-20261125",
+            "status": "visual_review_passed_desktop_mobile_preview",
+            "checks": "Chromium exact asset at 600px and 360px, manually inspected; small secondary text at phone width; article text/alt retained. No obvious clipping or overlapping text.",
+            "evidence_run": 45704843207
+          }
         }
       ]
     },
@@ -1974,8 +2767,15 @@
           "caption": "図解：J-Connect。ハンブルク市の案内に基づく（2026年11月1日参照）。",
           "line": 59,
           "position": 2,
-          "quality_status": "visually_reviewed_priority_redesign_needed",
-          "priority": "P1"
+          "quality_status": "redesigned_and_visual_review_passed",
+          "priority": "P1",
+          "redesign_draft": {
+            "date": "2026-11-25",
+            "branch": "chat/p1-seasonal-svg-redesign-20261125",
+            "status": "visual_review_passed_desktop_mobile_preview",
+            "checks": "Chromium exact asset at 600px and 360px, manually inspected; small secondary text at phone width; article text/alt retained. Layout defect corrected; rerender needed. Re-rendered corrected exact Git blob in local Chromium at 600px and 360px; overlap resolved, manually inspected. Secondary text small at phone width; article text remains available.",
+            "evidence_run": 45704843207
+          }
         },
         {
           "src": "/assets/images/events/hamburg-christmas-markets-2026-periods.svg",
@@ -2001,8 +2801,15 @@
           "caption": "図解：J-Connect。ミュンヘン市の案内に基づく（2026年11月21日参照）。",
           "line": 69,
           "position": 2,
-          "quality_status": "visually_reviewed_priority_redesign_needed",
-          "priority": "P1"
+          "quality_status": "redesigned_and_visual_review_passed",
+          "priority": "P1",
+          "redesign_draft": {
+            "date": "2026-11-25",
+            "branch": "chat/p1-seasonal-svg-redesign-20261125",
+            "status": "visual_review_passed_desktop_mobile_preview",
+            "checks": "Chromium exact asset at 600px and 360px, manually inspected; small secondary text at phone width; article text/alt retained. No obvious clipping or overlapping text.",
+            "evidence_run": 45704843207
+          }
         },
         {
           "src": "/assets/images/events/munich-christmas-markets-2026-periods.svg",
@@ -2037,8 +2844,15 @@
           "caption": "図解：J-Connect。クリスマスの町ファルケンブルフ公式サイトの説明に基づくイメージで、実際の洞窟の形や縮尺とは異なります。",
           "line": 136,
           "position": 3,
-          "quality_status": "visually_reviewed_priority_redesign_needed",
-          "priority": "P1"
+          "quality_status": "redesigned_and_visual_review_passed",
+          "priority": "P1",
+          "redesign_draft": {
+            "date": "2026-11-25",
+            "branch": "chat/p1-seasonal-svg-redesign-20261125",
+            "status": "visual_review_passed_desktop_mobile_preview",
+            "checks": "Chromium exact asset at 600px and 360px, manually inspected; small secondary text at phone width; article text/alt retained. Layout defect corrected; rerender needed. Re-rendered corrected exact Git blob in local Chromium at 600px and 360px; overlap resolved, manually inspected. Secondary text small at phone width; article text remains available.",
+            "evidence_run": 45704843207
+          }
         },
         {
           "src": "/assets/images/events/nrw-christmas-day-trips-2026-character.svg",
@@ -2091,8 +2905,15 @@
           "caption": "図解：J-Connect作成。自治体の2026年発表に基づく。",
           "line": 48,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/st-martin-day-germany-checklist.svg",
@@ -2100,8 +2921,15 @@
           "caption": "図解：J-Connect作成。参加前の確認事項を整理したものです。",
           "line": 77,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2127,8 +2955,15 @@
           "caption": "図解：J-Connect。見どころのイメージを表したもので、実際の屋台や建物を再現していません。",
           "line": 68,
           "position": 3,
-          "quality_status": "visually_reviewed_priority_redesign_needed",
-          "priority": "P1"
+          "quality_status": "redesigned_and_visual_review_passed",
+          "priority": "P1",
+          "redesign_draft": {
+            "date": "2026-11-25",
+            "branch": "chat/p1-seasonal-svg-redesign-20261125",
+            "status": "visual_review_passed_desktop_mobile_preview",
+            "checks": "Chromium exact asset at 600px and 360px, manually inspected; small secondary text at phone width; article text/alt retained. No obvious clipping or overlapping text.",
+            "evidence_run": 45704843207
+          }
         }
       ]
     },
@@ -2153,8 +2988,15 @@
           "caption": "図解：J-Connect。根拠：租税通則法第108条・第149条・第169条・第170条。2026年11月5日確認。",
           "line": 65,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/tax-return-mandatory-or-voluntary.svg",
@@ -2162,8 +3004,15 @@
           "caption": "図解：J-Connect。所得税法第46条第2項の代表的な条件を簡略化したもので、すべての条件を網羅していません。2026年11月5日確認。",
           "line": 97,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2180,8 +3029,15 @@
           "caption": "図解：J-Connect。根拠：滞在法第9条・第18c条・第28条。代表的なルートのみで、すべてではありません。2026年11月5日確認。",
           "line": 68,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/permanent-residence-checklist.svg",
@@ -2189,8 +3045,15 @@
           "caption": "図解：J-Connect。根拠：滞在法第9条・第18c条・第51条。必要書類は外国人局により異なります。2026年11月5日確認。",
           "line": 171,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2207,8 +3070,15 @@
           "caption": "図解：J-Connect。根拠：職業訓練法。週の配分は職業や地域で異なります。2026年11月6日確認。",
           "line": 51,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/ausbildung-path.svg",
@@ -2216,8 +3086,15 @@
           "caption": "図解：J-Connect。根拠：滞在法第16a条・第17条・第18a条・第20条。2026年11月6日確認。",
           "line": 117,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2234,8 +3111,15 @@
           "caption": "図解：J-Connect。根拠：過料一覧規則の別表（2026年11月時点）。危険を生じさせた場合などは増額されます。2026年11月6日確認。",
           "line": 53,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/bicycle-equipment-germany.svg",
@@ -2243,8 +3127,15 @@
           "caption": "図解：J-Connect。根拠：車両登録規則第64a条・第65条・第67条、過料一覧規則の別表。2026年11月6日確認。",
           "line": 133,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2261,8 +3152,15 @@
           "caption": "図解：J-Connect。根拠：滞在法第20b条と別表。2026年11月6日確認。",
           "line": 49,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/chancenkarte-flow.svg",
@@ -2270,8 +3168,15 @@
           "caption": "図解：J-Connect。根拠：滞在法第20a条。2026年11月6日確認。",
           "line": 123,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2288,8 +3193,15 @@
           "caption": "図解：J-Connect。根拠：所得税法第51a条、連邦住民登録法第3条。2026年11月6日確認。",
           "line": 43,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/church-tax-leaving-steps.svg",
@@ -2297,8 +3209,15 @@
           "caption": "図解：J-Connect。根拠：ノルトライン＝ヴェストファーレン州司法省の案内、所得税法第51a条。届け出先と費用は州により異なります。2026年11月6日確認。",
           "line": 100,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2315,8 +3234,15 @@
           "caption": "図解：J-Connect。根拠：ドイツ国籍法第10条・第38条、滞在法第9条・第51条、日本の国籍法第11条。2026年11月6日確認。",
           "line": 62,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/child-nationality-germany-japan.svg",
@@ -2324,8 +3250,15 @@
           "caption": "図解：J-Connect。根拠：ドイツ国籍法第4条、日本の国籍法第12条・第14条、戸籍法第104条。2026年11月6日確認。",
           "line": 140,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2342,8 +3275,15 @@
           "caption": "図解：J-Connect。根拠：連邦両親手当・育児休業法第2条。金額は法律の計算方法による概算で、実際の決定額とは異なる場合があります。2026年11月6日確認。",
           "line": 94,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/elterngeld-plan-example.svg",
@@ -2351,8 +3291,15 @@
           "caption": "図解：J-Connect。計画の一例で、各家庭の収入や勤務先の事情によって最適な分け方は異なります。根拠：連邦両親手当・育児休業法第4条・第4b条。2026年11月6日確認。",
           "line": 119,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2369,8 +3316,15 @@
           "caption": "図解：J-Connect。根拠：民法第622条、連邦休暇法、労働時間法、証明書法。2026年11月6日確認。",
           "line": 66,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/dismissal-first-steps-germany.svg",
@@ -2378,8 +3332,15 @@
           "caption": "図解：J-Connect。根拠：解雇保護法第1条・第4条・第23条、民法第623条、営業法第109条。2026年11月6日確認。",
           "line": 139,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2396,8 +3357,15 @@
           "caption": "図解：J-Connect。根拠：滞在法第16a条〜第21条、滞在令第41条。主な種類のみで、すべてではありません。2026年11月6日確認。",
           "line": 70,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/germany-visa-free-entry-steps.svg",
@@ -2405,8 +3373,15 @@
           "caption": "図解：J-Connect。根拠：滞在令第41条・第45条、滞在法第20a条。2026年11月6日確認。",
           "line": 83,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2423,8 +3398,15 @@
           "caption": "図解：J-Connect。根拠：在デュッセルドルフ総領事館・政府広報オンラインの案内。手続きは公館により異なることがあります。2026年11月6日確認。",
           "line": 47,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/consulate-certificates-germany.svg",
@@ -2432,8 +3414,15 @@
           "caption": "図解：J-Connect。根拠：在ドイツ日本国大使館・総領事館の案内。手数料と必要書類は公館で確認してください。2026年11月6日確認。",
           "line": 109,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2450,8 +3439,15 @@
           "caption": "図解：J-Connect。根拠：所得税法第62条第2項。主な種類のみです。2026年11月6日確認。",
           "line": 53,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/kindergeld-application-steps.svg",
@@ -2459,8 +3455,15 @@
           "caption": "図解：J-Connect。根拠：所得税法第66条・第67条・第70条。2026年11月6日確認。",
           "line": 116,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2477,8 +3480,15 @@
           "caption": "図解：J-Connect。根拠：日本学生支援機構・マイナンバーカード総合サイトの案内。手続きは自治体や勤め先で異なります。2026年11月6日確認。",
           "line": 46,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/leaving-japan-what-changes.svg",
@@ -2486,8 +3496,15 @@
           "caption": "図解：J-Connect。根拠：日本学生支援機構・マイナンバーカード総合サイトの案内。2026年11月6日確認。",
           "line": 134,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2504,8 +3521,15 @@
           "caption": "図解：J-Connect。根拠：賃金継続支払法第3条・第5条、社会法典第5編第44条・第47条。2026年11月6日確認。",
           "line": 50,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/child-sick-days-2026-2027.svg",
@@ -2513,8 +3537,15 @@
           "caption": "図解：J-Connect。根拠：社会法典第5編第45条。2027年の日数は2026年11月時点の法律によります。2026年11月6日確認。",
           "line": 115,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2531,8 +3562,15 @@
           "caption": "図解：J-Connect。根拠：滞在法第16b条、社会法典第5編。金額は2026年の目安です。2026年11月6日確認。",
           "line": 49,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/student-work-days-germany.svg",
@@ -2540,8 +3578,15 @@
           "caption": "図解：J-Connect。根拠：滞在法第16b条第3項。2026年11月6日確認。",
           "line": 117,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2558,8 +3603,15 @@
           "caption": "図解：J-Connect。根拠：社会法典第3編・第4編・第5編、最低賃金法第22条。金額は2026年11月時点。2026年11月6日確認。",
           "line": 52,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/werkstudent-20-hour-rule.svg",
@@ -2567,8 +3619,15 @@
           "caption": "図解：J-Connect。根拠：社会法典第5編第6条、社会保険の実務上の目安、滞在法第16b条。2026年11月6日確認。",
           "line": 122,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2585,8 +3644,15 @@
           "caption": "図解：J-Connect。根拠：在日ドイツ大使館の案内、滞在令第41条。申請の時期は目安です。2026年11月6日確認。",
           "line": 52,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/working-holiday-germany-work-checks.svg",
@@ -2594,8 +3660,15 @@
           "caption": "図解：J-Connect。根拠：最低賃金法、社会法典第4編第8条。金額は2026年11月時点。2026年11月6日確認。",
           "line": 110,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2612,8 +3685,15 @@
           "caption": "図解：J-Connect作成。連邦議会と連邦参議院の公表資料に基づく。2026年11月5日確認。",
           "line": 37,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_followup_needed",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "followup_needed",
+            "note": "Top timeline label overlaps explanatory text; reflow"
+          }
         },
         {
           "src": "/assets/images/living/seo/d-you-eudi-wallet-2027-resident-checklist.svg",
@@ -2621,8 +3701,15 @@
           "caption": "図解：J-Connect作成。EU規則とドイツ政府の公表情報に基づく。2026年11月4日確認。",
           "line": 83,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2639,8 +3726,15 @@
           "caption": "図解：J-Connect。EU規則2024/1257の適用日程を整理したオリジナル図。",
           "line": 52,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/euro-7-germany-2026-scope.svg",
@@ -2648,8 +3742,15 @@
           "caption": "図解：J-Connect。Euro 7の主な対象を整理したオリジナル図。",
           "line": 68,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2666,8 +3767,15 @@
           "caption": "図解：J-Connect作成。EU理事会とEU規則に基づく独自整理。2026年11月5日確認。",
           "line": 41,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/germany-import-fees-2026-gift-vs-order.svg",
@@ -2675,8 +3783,15 @@
           "caption": "図解：J-Connect作成。ドイツ税関とEU規則に基づく独自整理。2026年11月5日確認。",
           "line": 100,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2693,8 +3808,15 @@
           "caption": "",
           "line": 44,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/germany-inflation-october-2026-reading.svg",
@@ -2702,8 +3824,15 @@
           "caption": "",
           "line": 75,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2747,8 +3876,15 @@
           "caption": "図解：J-Connect作成。SGB IIと連邦政府の案内に基づく確認フロー。2026年11月4日確認。",
           "line": 49,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/grundsicherung-buergergeld-2026-application-checklist.svg",
@@ -2756,8 +3892,15 @@
           "caption": "図解：J-Connect作成。連邦雇用エージェンシーの申請案内に基づく整理。2026年11月4日確認。",
           "line": 123,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_followup_needed",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "followup_needed",
+            "note": "Icon cards: some secondary text exceeds card; wrap and adjust"
+          }
         }
       ]
     },
@@ -2774,8 +3917,15 @@
           "caption": "AI生成の編集イメージ。実在の住居、契約、利用者ではありません。",
           "line": 63,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/japanese-resident-paperwork-editorial-v1.webp",
@@ -2783,8 +3933,15 @@
           "caption": "AI生成の編集イメージ。実在の通知書、個人情報、住民ではありません。",
           "line": 80,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2801,8 +3958,15 @@
           "caption": "",
           "line": 54,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/events/thg-quote-2026-process.svg",
@@ -2810,8 +3974,15 @@
           "caption": "",
           "line": 115,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2828,8 +3999,15 @@
           "caption": "図解：J-Connect作成。連邦住宅省の計算機と住宅手当法に基づく独自整理。2026年11月4日確認。",
           "line": 50,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/wohngeld-antrag-2026-application-steps.svg",
@@ -2837,8 +4015,15 @@
           "caption": "図解：J-Connect作成。連邦行政ポータルと住宅手当法に基づく独自整理。2026年11月4日確認。",
           "line": 121,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2855,10 +4040,17 @@
           "caption": "出生登録は出生地の戸籍登録所、日本の出生届は日本の在外公館と、窓口が分かれます。",
           "line": 45,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_screened_no_obvious_render_failure",
           "reuse_in_articles": 2,
           "review_note": "Shared diagram, verify content/context before replacing",
-          "priority": "P3"
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/birth-procedures-timeline-ja-v2.webp",
@@ -2866,8 +4058,15 @@
           "caption": "出生前後の主な手続き。出生証明書を受け取ってから、保険・手当・日本の出生届が続きます。",
           "line": 68,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_followup_needed",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "followup_needed",
+            "note": "Very dense portrait birth infographic; supply readable text and/or enlarged accessible version; check provenance"
+          }
         }
       ]
     },
@@ -2884,8 +4083,15 @@
           "caption": "翻訳を頼む前に、提出先へ聞く3つのこと",
           "line": 41,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/certified-translation-steps.svg",
@@ -2893,8 +4099,15 @@
           "caption": "認定翻訳を頼む流れ。提出先の条件を先に確認します。",
           "line": 62,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2911,8 +4124,15 @@
           "caption": "「契約前の治療」で不払いと言われたときの流れ",
           "line": 39,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/dentist-insurance-coverage.svg",
@@ -2920,10 +4140,17 @@
           "caption": "公的保険でカバーされる範囲。補助保険はこの外側を補う。",
           "line": 59,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_screened_no_obvious_render_failure",
           "reuse_in_articles": 2,
           "review_note": "Shared diagram, verify content/context before replacing",
-          "priority": "P3"
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2940,8 +4167,15 @@
           "caption": "出産前に確認したい家族の予防接種（2026年10月29日施行の指針）",
           "line": 39,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/family-vaccination-preparation.svg",
@@ -2971,8 +4205,15 @@
           "caption": "前払い税の流れ。根拠は所得税法第37条。",
           "line": 41,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/tax-prepayment-dates.svg",
@@ -2980,8 +4221,15 @@
           "caption": "前払いの納期は年4回。",
           "line": 53,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -2998,8 +4246,15 @@
           "caption": "新生児用品をドイツ語の名前と一緒に4つに分ける",
           "line": 35,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/stroller-purchase-checks.svg",
@@ -3007,8 +4262,15 @@
           "caption": "大きな物は、車や住まいに合うかを確かめてから買う",
           "line": 80,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -3025,8 +4287,15 @@
           "caption": "バート・ヴィルドゥンゲン中心部の概略図（縮尺不同）。地点の位置はOpenStreetMapで確認し、背景の公園・旧市街・森は模式的に描いています。地理参照：© OpenStreetMap contributors。",
           "line": 43,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/bad-wildungen-town-history-timeline-v1.webp",
@@ -3034,8 +4303,15 @@
           "caption": "城壁都市の時代から保養地の時代までの主な出来事。J-Connect編集部作成の年表図。年代は町の案内資料と美術史資料に基づき、19世紀の項目は時期の目安です。",
           "line": 69,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -3052,8 +4328,15 @@
           "caption": "AI生成イラスト：住民登録前に準備する書類と生活用品。実在の申請書、予約画面、個人情報ではありません。",
           "line": 34,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/first-30-days-dependency.svg",
@@ -3061,8 +4344,15 @@
           "caption": "手続きは住所と保険を起点に、必要なものを並行して進めます。",
           "line": 79,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -3079,8 +4369,15 @@
           "caption": "図解：J-Connect編集部。根拠：消費者センターの案内。機器によって差があるため、実際の室温は温度計で確認してください。",
           "line": 58,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/ventilation-steps.svg",
@@ -3088,8 +4385,15 @@
           "caption": "図解：J-Connect編集部。根拠：連邦環境庁の案内。冬の時間は目安です。",
           "line": 69,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -3106,8 +4410,15 @@
           "caption": "図解：J-Connect編集部。法令は末尾の公式情報で確認。習慣の部分は編集部の整理で、公的な基準ではありません。",
           "line": 41,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         },
         {
           "src": "/assets/images/living/seo/manners-tip-example.svg",
@@ -3115,8 +4426,15 @@
           "caption": "図解：J-Connect編集部。金額は説明用の例で、決まりではありません。",
           "line": 49,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_no_obvious_render_failure",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "no_obvious_render_failure",
+            "note": "Rendered, legible at preview scale; no obvious clipping. Not a factual, license, or mobile accessibility sign-off."
+          }
         }
       ]
     },
@@ -3133,8 +4451,15 @@
           "caption": "J-Connectのオリジナル図解。実際の会場や展示を再現したものではありません。",
           "line": 51,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_followup_needed",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "followup_needed",
+            "note": "Generic decorative illustration; assess whether a specific explanatory graphic is more useful"
+          }
         },
         {
           "src": "/assets/images/events/duesseldorf-waste-reduction-week-2026-schedule.svg",
@@ -3142,8 +4467,15 @@
           "caption": "参加できる催しの日付を示すJ-Connectのオリジナル図解。",
           "line": 53,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
-          "priority": "P3"
+          "quality_status": "visually_screened_followup_needed",
+          "priority": "P3",
+          "visual_screening": {
+            "date": "2026-11-25",
+            "method": "Chromium rendering of exact repository asset, 490px contact sheet, manual visual screening",
+            "source_run": 45704843207,
+            "result": "followup_needed",
+            "note": "Dates without event labels; add meaningful program labels or remove redundant graphic"
+          }
         }
       ]
     }
@@ -3154,7 +4486,9 @@
     "Two SVG assets in advent-wreath-calendar-origin were redesigned to preserve historical content, re-rendered to 1200x675 PNG for QA with Japanese fonts, and visually checked for clipping and overlap.",
     "Images now open their native files in a new tab through accessible keyboard/touch links (the new renderer applies to all local body images).",
     "Keep diagrams that communicate laws, finances, route, dates, or procedural information, but improve graphic quality and mobile legibility when necessary. Do not replace fact-bearing figures with decorative photos.",
-    "Three body-asset reuse groups need context review; reuse alone does not prove a defect."
+    "Three body-asset reuse groups need context review; reuse alone does not prove a defect.",
+    "2026-11-25 Chat draft: seven P1 SVGs redesigned in-place on a branch. Existing visible labels, facts, captions and alt text retained. XML element nesting and unchanged text checked; rendered QA, CI and publication remain pending. Existing review statuses and aggregate counts intentionally unchanged until rendered review passes.",
+    "2026-11-25: all 183 previously unreviewed assets visually screened from exact rendered files. 7 require visual/content-utility follow-up. Visual review is not factual or legal approval. 5 priority redesigns passed desktop/mobile preview; 2 corrected after preview and need re-render. Evidence: workflow 45704843207 artifact 15063214119."
   ],
-  "last_wave": "wave4_berlin_markets_20261123"
+  "last_wave": "2026-11-25 Chat chromium visual screening 183 + 7 redesigned"
 }

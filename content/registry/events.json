@@ -3598,7 +3598,7 @@
     },
     "title": "アドベントクランツとアドベントカレンダーはドイツ生まれ？｜ろうそく4本と24の扉の物語",
     "category": "季節・文化",
-    "summary": "クリスマス前の4週間、ドイツの家庭や街を彩るアドベントクランツとアドベントカレンダー。どちらもドイツで生まれた習慣です。1839年にハンブルクで生まれたろうそくの輪、母親の手作りから始まった印刷のカレンダー、2026年のアドベントの日程を紹介します。",
+    "summary": "クリスマス前の4週間、ドイツの家庭や街を彩るアドベントクランツとアドベントカレンダー。どちらもドイツで生まれた習慣です。1839年にハンブルクで生まれたろうそくの輪、20世紀初頭に登場した印刷のカレンダー、2026年のアドベントの日程を紹介します。",
     "published_at": "2026-10-27",
     "last_verified": "2026-10-27",
     "tags": [
@@ -3610,7 +3610,7 @@
       "季節文化",
       "ハンブルク"
     ],
-    "updated_at": "2026-11-23",
+    "updated_at": "2026-11-25",
     "related_articles": [
       "christmas-markets-duesseldorf",
       "rhineland-carnival-11-11",
@@ -3755,7 +3755,7 @@
       "季節文化",
       "冬"
     ],
-    "updated_at": "2026-11-23",
+    "updated_at": "2026-11-25",
     "related_articles": [
       "advent-wreath-calendar-origin",
       "christmas-markets-duesseldorf",
@@ -6091,7 +6091,7 @@
     "status": "published",
     "source_type": "manual",
     "published_at": "2026-10-30",
-    "updated_at": "2026-11-23",
+    "updated_at": "2026-11-25",
     "last_verified": "2026-10-30",
     "canonical_url": "/germany/ja/events/nuremberg-christkindlesmarkt-2026-guide/",
     "official_url": "https://www.christkindlesmarkt.de/",
@@ -6564,7 +6564,7 @@
       "status": "reviewed",
       "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-11-01",
-      "next_review_due": "2026-11-22"
+      "next_review_due": "2026-12-23"
     },
     "published": true,
     "title": "フランクフルトのクリスマスマーケット2026｜日程・営業時間と名物ベートマンヒェン",
@@ -6582,7 +6582,7 @@
       "2026年12月",
       "アドベント"
     ],
-    "updated_at": "2026-11-23",
+    "updated_at": "2026-11-25",
     "related_articles": [
       "gluehwein-christmas-market-guide",
       "christmas-tree-origin-germany",
@@ -6600,6 +6600,10 @@
       {
         "title": "フランクフルト観光局：フランクフルト・クリスマスマーケット（2026年の日程・営業時間・プログラム）",
         "url": "https://www.visitfrankfurt.travel/erleben/feste-und-veranstaltungen/frankfurter-weihnachtsmarkt"
+      },
+      {
+        "title": "フランクフルト観光局：2026年プレス発表（屋台数・開幕プログラム）",
+        "url": "https://www.visitfrankfurt.travel/presse/pressemeldungen/details/frankfurter-weihnachtsmarkt-2026"
       },
       {
         "title": "フランクフルト観光局：クリスマスマーケットのプレス発表（1393年からの記録）",
@@ -6651,7 +6655,7 @@
       "2026年12月",
       "アドベント"
     ],
-    "updated_at": "2026-11-23",
+    "updated_at": "2026-11-25",
     "related_articles": [
       "gluehwein-christmas-market-guide",
       "christmas-tree-origin-germany",
@@ -6816,7 +6820,7 @@
       "2026年12月",
       "アドベント"
     ],
-    "updated_at": "2026-11-22",
+    "updated_at": "2026-11-25",
     "related_articles": [
       "aachen-christmas-market-2026-guide",
       "cologne-christmas-markets-2026-guide",

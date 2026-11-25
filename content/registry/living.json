@@ -85,7 +85,7 @@
     },
     "title": "ドイツのゴミ分別｜デュッセルドルフの捨て方・収集日・よくある間違い",
     "category": "暮らし・買い物",
-    "summary": "ドイツのごみ分別を日本語の早見表で確認。デュッセルドルフの黄色い資源容器の地域ルール、紙・生ごみ・ガラスの間違いやすい品目、収集日と公式検索の使い方を案内します。",
+    "summary": "ドイツのごみ分別を日本語の早見表で確認。デュッセルドルフの収集日、リサイクルセンター、粗大ごみの予約と2026年の持ち込み料金を案内します。",
     "published_at": "2026-09-28",
     "last_verified": "2026-09-28",
     "canonical_url": "/germany/ja/living/germany-waste-sorting-guide/",
@@ -97,7 +97,7 @@
       "引っ越し",
       "生活立ち上げ"
     ],
-    "updated_at": "2026-10-20",
+    "updated_at": "2026-11-25",
     "related_articles": [
       "germany-pfand-return-guide",
       "moving-checklist-germany",
@@ -127,6 +127,22 @@
       {
         "title": "AWISTA Kommunal：生ごみにプラスチックを入れない",
         "url": "https://www.awista-kommunal.de/wirfuerbio"
+      },
+      {
+        "title": "デュッセルドルフ市：リサイクルセンター",
+        "url": "https://www.duesseldorf.de/umweltamt/umwelt-und-verbraucherthemen-von-a-z/abfall/recyclinghoefe/"
+      },
+      {
+        "title": "デュッセルドルフ市：粗大ごみ",
+        "url": "https://www.duesseldorf.de/umweltamt/umwelt-und-verbraucherthemen-von-a-z/abfall/sperrmuell"
+      },
+      {
+        "title": "AWISTA Kommunal：2026年の持ち込み料金",
+        "url": "https://www.awista-kommunal.de/gebuehren"
+      },
+      {
+        "title": "AWISTA Kommunal：生ごみ容器の回収頻度",
+        "url": "https://www.awista-kommunal.de/privathaushalte/biotonne"
       }
     ],
     "image": "/assets/img/living/germany-waste-sorting-guide.webp",

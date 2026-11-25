@@ -3,12 +3,12 @@ id: "L042"
 title: "ドイツのゴミ分別｜デュッセルドルフの捨て方・収集日・よくある間違い"
 slug: "germany-waste-sorting-guide"
 category: "暮らし・買い物"
-summary: "ドイツのごみ分別を日本語の早見表で確認。デュッセルドルフの黄色い資源容器の地域ルール、紙・生ごみ・ガラスの間違いやすい品目、収集日と公式検索の使い方を案内します。"
+summary: "ドイツのごみ分別を日本語の早見表で確認。デュッセルドルフの収集日、リサイクルセンター、粗大ごみの予約と2026年の持ち込み料金を案内します。"
 tags: ["ごみ分別", "デュッセルドルフ", "NRW", "リサイクル", "引っ越し", "生活立ち上げ"]
 published: true
 status: "published"
 published_at: "2026-09-28"
-updated_at: "2026-10-20"
+updated_at: "2026-11-25"
 last_verified: "2026-09-28"
 next_review: "2027-03-28"
 canonical_url: "/germany/ja/living/germany-waste-sorting-guide/"
@@ -29,6 +29,14 @@ official_sources:
     url: "https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/altglas-richtig-trennen-entsorgen"
   - title: "AWISTA Kommunal：生ごみにプラスチックを入れない"
     url: "https://www.awista-kommunal.de/wirfuerbio"
+  - title: "デュッセルドルフ市：リサイクルセンター"
+    url: "https://www.duesseldorf.de/umweltamt/umwelt-und-verbraucherthemen-von-a-z/abfall/recyclinghoefe/"
+  - title: "デュッセルドルフ市：粗大ごみ"
+    url: "https://www.duesseldorf.de/umweltamt/umwelt-und-verbraucherthemen-von-a-z/abfall/sperrmuell"
+  - title: "AWISTA Kommunal：2026年の持ち込み料金"
+    url: "https://www.awista-kommunal.de/gebuehren"
+  - title: "AWISTA Kommunal：生ごみ容器の回収頻度"
+    url: "https://www.awista-kommunal.de/privathaushalte/biotonne"
 ---
 
 # ドイツのゴミ分別｜デュッセルドルフの捨て方・収集日・よくある間違い
@@ -94,6 +102,26 @@ official_sources:
 
 同じ市内でも回収方法が異なる地区があります。隣の建物の容器が外に出ていることだけで、自宅の予定を判断しないようにしましょう。引っ越し全体の段取りは[退去・入居のチェックリスト](/germany/ja/living/moving-checklist-germany/)にまとめています。
 
+## リサイクルセンターへ持ち込む方法
+
+市内には家庭ごみ向けの持ち込み施設が3か所あります。市内居住者であることを証明できる身分証明書を持参してください。
+
+| 施設 | 住所 |
+|---|---|
+| Flingern | Flinger Broich 15 |
+| Garath | Frankfurter Straße 253 |
+| Lohausen | Niederrheinstraße 229 |
+
+3施設とも基本営業時間は月〜土曜の8:00〜18:00、最終入場は17:45です。12月24日・31日とローゼンモンタークは休業です。受付品目は施設ごとに異なり、Lohausenの有害廃棄物受付は金曜と毎月第3土曜に限られます。[市の施設案内](https://www.duesseldorf.de/umweltamt/umwelt-und-verbraucherthemen-von-a-z/abfall/recyclinghoefe/)を確認してください。
+
+Flingernで一般ごみや粗大ごみを直接持ち込む場合、2026年の料金は300リットルまで15ユーロ、500リットルまで25ユーロです。カード・現金払いが可能です。Garathでは一般ごみ・粗大ごみを受け付けていません。[料金表](https://www.awista-kommunal.de/gebuehren)と施設別受付一覧を確認してから向かいましょう。
+
+## 粗大ごみの回収は事前予約
+
+家具や大型家電は[市の粗大ごみ案内](https://www.duesseldorf.de/umweltamt/umwelt-und-verbraucherthemen-von-a-z/abfall/sperrmuell)から回収予約を行い、回収品を個別に申告します。木製家具や大型家電はその他の粗大ごみから分けて置きます。直接持ち込む場合とは料金・条件が異なるので、予約時に確認してください。
+
+また、生ごみ容器は冬季（12月〜2月）は隔週、それ以外の月は原則週1回の回収です。住所ごとの日程は収集カレンダーで確認し、生分解性のものを含めプラスチック袋は入れないでください。[AWISTAの生ごみ容器案内](https://www.awista-kommunal.de/privathaushalte/biotonne)（2026年11月25日確認）。
+
 ## 日本から来たばかりなら、家で三つを決める
 
 最初から大きな分別棚を買う必要はありません。日々出る紙・包装・一般ごみの置き場を決め、生ごみは自宅の回収方法に合わせます。そのうえで、返却する飲料容器と、捨てる空き瓶を別の袋にすると混同しにくくなります。
@@ -116,4 +144,4 @@ official_sources:
 
 ## 参照日と図の出典
 
-上記の公式案内は2026年9月28日時点の内容を参照しています。図は公式写真の転載ではなく、J-Connectが説明用に作成したものです。料金・回収日・個別品目の扱いは、居住地の最新案内を優先してください。
+基本の分別案内は2026年9月28日時点、持ち込み施設・粗大ごみ・2026年料金と生ごみ回収頻度は2026年11月25日に公式情報を確認しました。図は公式写真の転載ではなく、J-Connectが説明用に作成したものです。料金・回収日・個別品目の扱いは、居住地の最新案内を優先してください。

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script data-jconnect-theme-init>
+  (function () {
+    try {
+      var saved = localStorage.getItem('jconnect-theme');
+      var theme = saved === 'dark' || saved === 'light'
+        ? saved
+        : 'light';
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+    } catch (error) {
+      document.documentElement.dataset.theme = 'light';
+      document.documentElement.style.colorScheme = 'light';
+    }
+  })();
+  </script>
+<script src="/assets/js/site-identity.js"></script>
+  <title>ドイツのBundIDとは？日本人が電子滞在許可証（eAT）で登録する方法・PINと本人確認レベル | J-Connect Germany</title>
+  <meta name="description" content="ドイツの行政オンライン申請に使うBundIDを解説。日本人など非EU居住者が電子滞在許可証（eAT）で登録する条件、6桁PIN、NFC、本人確認レベル、Fiktionsbescheinigungやゲストログインの制限を整理します。">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://j-connect-global.com/germany/ja/living/bundid-eat-registration-germany/">
+  <link rel="alternate" hreflang="ja" href="https://j-connect-global.com/germany/ja/living/bundid-eat-registration-germany/">
+  <link rel="alternate" hreflang="x-default" href="https://j-connect-global.com/germany/ja/living/bundid-eat-registration-germany/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="J-Connect Germany">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="ドイツのBundIDとは？日本人が電子滞在許可証（eAT）で登録する方法・PINと本人確認レベル | J-Connect Germany">
+  <meta property="og:description" content="ドイツの行政オンライン申請に使うBundIDを解説。日本人など非EU居住者が電子滞在許可証（eAT）で登録する条件、6桁PIN、NFC、本人確認レベル、Fiktionsbescheinigungやゲストログインの制限を整理します。">
+  <meta property="og:url" content="https://j-connect-global.com/germany/ja/living/bundid-eat-registration-germany/">
+  <meta property="og:image" content="https://j-connect-global.com/assets/img/living/bundid-eat-registration-germany-og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="スマートフォンと身分証明書を使ってオンライン本人確認を準備する様子">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ドイツのBundIDとは？日本人が電子滞在許可証（eAT）で登録する方法・PINと本人確認レベル | J-Connect Germany">
+  <meta name="twitter:description" content="ドイツの行政オンライン申請に使うBundIDを解説。日本人など非EU居住者が電子滞在許可証（eAT）で登録する条件、6桁PIN、NFC、本人確認レベル、Fiktionsbescheinigungやゲストログインの制限を整理します。">
+  <meta name="twitter:image" content="https://j-connect-global.com/assets/img/living/bundid-eat-registration-germany-og.jpg">
+  <meta name="twitter:image:alt" content="スマートフォンと身分証明書を使ってオンライン本人確認を準備する様子">
+  <meta property="article:section" content="生活・手続き">
+  <meta property="article:published_time" content="2026-11-25">
+  <meta property="article:modified_time" content="2026-11-25">
+  <meta property="article:tag" content="BundID">
+  <meta property="article:tag" content="電子滞在許可証">
+  <meta property="article:tag" content="eAT">
+  <meta property="article:tag" content="AusweisApp">
+  <meta property="article:tag" content="オンライン本人確認">
+  <meta property="article:tag" content="行政手続き">
+  <meta property="article:tag" content="デジタル行政">
+  <link rel="icon" type="image/png" href="/assets/images/brand/favicon.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/ja-header-footer.css?v=mobile-20261116">
+<link rel="stylesheet" href="/assets/css/jconnect-ui.css">
+  <link rel="stylesheet" href="/assets/css/cookie-consent.css">
+  <link rel="stylesheet" href="/assets/css/social-share.css">
+<script src="/assets/js/cookie-consent.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ドイツのBundIDとは？日本人が電子滞在許可証（eAT）で登録する方法・PINと本人確認レベル","description":"ドイツの行政オンライン申請に使うBundIDを解説。日本人など非EU居住者が電子滞在許可証（eAT）で登録する条件、6桁PIN、NFC、本人確認レベル、Fiktionsbescheinigungやゲストログインの制限を整理します。","inLanguage":"ja","url":"https://j-connect-global.com/germany/ja/living/bundid-eat-registration-germany/","image":"https://j-connect-global.com/assets/img/living/bundid-eat-registration-germany.webp","mainEntityOfPage":"https://j-connect-global.com/germany/ja/living/bundid-eat-registration-germany/","datePublished":"2026-11-25","dateModified":"2026-11-25","articleSection":"生活・手続き","keywords":["BundID","電子滞在許可証","eAT","AusweisApp","オンライン本人確認","行政手続き","デジタル行政"],"author":{"@type":"Organization","name":"J-Connect Germany"},"publisher":{"@type":"Organization","@id":"https://j-connect-global.com/#organization","name":"J-Connect Global","url":"https://j-connect-global.com/","logo":{"@type":"ImageObject","url":"https://j-connect-global.com/assets/images/brand/favicon.png"}},"isPartOf":{"@type":"WebSite","@id":"https://j-connect-global.com/#website","name":"J-Connect Global","url":"https://j-connect-global.com/"},"citation":["https://id.bund.de/de/registration/eIDm","https://id.bund.de/de/faq","https://www.ausweisapp.bund.de/das-brauchen-sie","https://www.ausweisapp.bund.de/faq-fuer-nutzende","https://www.ausweisapp.bund.de/hilfe-und-support","https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99010006012000/herausgeber/RP-13125384/region/073140000000","https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99008004011001/herausgeber/MV-106338988/region/130000000000"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://j-connect-global.com/germany/ja/"},{"@type":"ListItem","position":2,"name":"生活・手続き","item":"https://j-connect-global.com/germany/ja/living/"},{"@type":"ListItem","position":3,"name":"ドイツのBundIDとは？日本人が電子滞在許可証（eAT）で登録する方法・PINと本人確認レベル","item":"https://j-connect-global.com/germany/ja/living/bundid-eat-registration-germany/"}]}</script>
+</head>
+<body>
+  <!-- LAYOUT:ja-header:start -->
+  <a class="jc-skip-link" href="#main-content">本文へ移動</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/germany/ja/" aria-label="J-Connect Germany ホーム">
+        <img class="brand-logo" src="/assets/images/brand/logo_header.png" alt="J-Connect Germany（J-Connect Global）" width="720" height="174">
+        <span class="brand-copy">
+          <span class="brand-title">J-CONNECT GERMANY</span>
+          <span class="brand-sub">J-Connect Global のドイツ向け生活ポータル</span>
+        </span>
+      </a>
+      <div class="header-actions">
+        <nav class="header-nav" aria-label="主要ナビゲーション">
+          <a href="/germany/ja/">ホーム</a>
+          <a href="/germany/ja/about/">このサイトについて</a>
+        </nav>
+        <details class="header-category header-category-menu" aria-label="カテゴリ選択">
+          <summary class="header-category-trigger" aria-haspopup="true">
+            <span>カテゴリ</span>
+            <span class="header-category-chevron" aria-hidden="true">▼</span>
+          </summary>
+          <div class="category-dropdown">
+            <a href="/germany/ja/community/">交流・掲示板</a>
+            <a href="/germany/ja/living/" class="active" aria-current="page">生活・手続き</a>
+            <a href="/germany/ja/jobs/">仕事・求人</a>
+            <a href="/germany/ja/events/">ニュース・イベント</a>
+            <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+          </div>
+        </details>
+        <form class="header-search" action="/germany/ja/search/" method="get" role="search">
+          <label class="search-box" aria-label="サイト内検索">
+            <span class="search-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <circle cx="11" cy="11" r="6.5"></circle>
+                <path d="M16 16l4.5 4.5"></path>
+              </svg>
+            </span>
+            <input type="search" name="q" placeholder="検索">
+          </label>
+          <button class="search-btn" type="submit" aria-label="検索">
+            <span class="search-btn-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <circle cx="11" cy="11" r="6.5"></circle>
+                <path d="M16 16l4.5 4.5"></path>
+              </svg>
+            </span>
+          </button>
+        </form>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="ダークモードに切り替え">
+          <span class="theme-toggle-track" aria-hidden="true">
+            <span class="theme-toggle-icon theme-toggle-sun">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"></path>
+              </svg>
+            </span>
+            <span class="theme-toggle-icon theme-toggle-moon">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M20.4 14.6A7.7 7.7 0 0 1 9.4 3.6 8.9 8.9 0 1 0 20.4 14.6Z"></path>
+              </svg>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- LAYOUT:ja-header:end -->
+  <main id="main-content" tabindex="-1" class="container article-main">
+    <div class="article-layout">
+      <article class="article-content-shell">
+        <header class="article-header">
+          <span class="article-kicker">役所・滞在</span>
+          <h1 class="article-title">ドイツのBundIDとは？日本人が電子滞在許可証（eAT）で登録する方法・PINと本人確認レベル</h1>
+          <p class="article-summary">ドイツの行政オンライン申請に使うBundIDを解説。日本人など非EU居住者が電子滞在許可証（eAT）で登録する条件、6桁PIN、NFC、本人確認レベル、Fiktionsbescheinigungやゲストログインの制限を整理します。</p>
+          <div class="article-meta">
+            <span class="article-chip">BundID</span>
+          <span class="article-chip">電子滞在許可証</span>
+          <span class="article-chip">eAT</span>
+          <span class="article-chip">AusweisApp</span>
+          <span class="article-chip">オンライン本人確認</span>
+          <span class="article-chip">行政手続き</span>
+          <span class="article-chip">デジタル行政</span>
+            <span class="article-freshness">
+              <time class="article-date article-date--published" datetime="2026-11-25">公開: 2026-11-25</time>
+            </span>
+          </div>
+          <p class="article-ai-notice">
+            この記事は生成AIを使って作成しています。編集者も公式情報との照合に努めていますが、誤りや古い情報が残っている場合があります。その際はご容赦ください。手続きや契約など大切な判断の前には、公式窓口でもご確認ください。誤りに気づいたら<a href="/germany/ja/contact/">お問い合わせ</a>からお知らせください。（<a href="/germany/ja/about/#ai-policy">生成AIの利用について</a>）
+          </p>
+        </header>
+
+        <figure class="article-hero-media">
+          <div class="article-hero-frame">
+            <img src="/assets/img/living/bundid-eat-registration-germany.webp" alt="スマートフォンと身分証明書を使ってオンライン本人確認を準備する様子" class="article-hero-image" width="1200" height="675" srcset="/assets/img/living/bundid-eat-registration-germany-480w.webp 480w, /assets/img/living/bundid-eat-registration-germany-768w.webp 768w, /assets/img/living/bundid-eat-registration-germany.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), min(960px, 100vw - 64px)" loading="eager" decoding="async" data-fallback-src="/assets/img/placeholders/jconnect-default-card.webp" onerror="if(this.dataset.fallbackSrc&amp;&amp;this.getAttribute(&#039;src&#039;)!==this.dataset.fallbackSrc){this.onerror=null;this.src=this.dataset.fallbackSrc;this.classList.add(&#039;is-fallback-image&#039;);}">
+          </div>
+          <figcaption class="article-image-caption">AI生成の編集イメージ。実際の身分証や行政ポータル画面を撮影したものではありません。 / Credit: J-Connect編集部（AI生成画像）</figcaption>
+        </figure>
+        <details class="article-mobile-toc">
+          <summary>目次（15項目）</summary>
+          <nav aria-label="モバイル記事内目次">
+            <a href="#まず結論">まず結論</a>
+            <a href="#あなたはどのケース">あなたはどのケース？</a>
+            <a href="#bundidでできること">BundIDでできること</a>
+            <a href="#日本人など非eu居住者は電子滞在許可証-eat-を使える">日本人など非EU居住者は電子滞在許可証（eAT）を使える</a>
+            <a href="#登録方法の違い">登録方法の違い</a>
+            <a href="#電子滞在許可証-eat-で登録する前に準備するもの">電子滞在許可証（eAT）で登録する前に準備するもの</a>
+            <a href="#手順">手順</a>
+            <a href="#登録後にオンライン申請で使う方法">登録後にオンライン申請で使う方法</a>
+            <a href="#eatがない-pinが分からないときの対処">eATがない・PINが分からないときの対処</a>
+            <a href="#落とし穴">落とし穴</a>
+            <a href="#費用と所要期間">費用と所要期間</a>
+            <a href="#セキュリティ上の注意">セキュリティ上の注意</a>
+            <a href="#そのまま使えるドイツ語">そのまま使えるドイツ語</a>
+            <a href="#まとめ">まとめ</a>
+            <a href="#公式情報-参考ソース">公式情報・参考ソース</a>
+          </nav>
+        </details>
+        <aside class="letter-tool-cta" aria-label="J-Connect AIへの質問の案内">
+          <div class="letter-tool-cta__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5"/><path d="M12 16h.01"/></svg>
+          </div>
+          <div class="letter-tool-cta__text">
+            <p class="letter-tool-cta__title">この記事で分からないことは、AIに質問</p>
+            <p class="letter-tool-cta__desc">J-Connectの記事をもとに、AIが日本語で答えます。根拠の記事リンク付き。無料・登録不要。</p>
+          </div>
+          <a class="letter-tool-cta__button" href="/germany/ja/tools/ask/">AIに質問する</a>
+        </aside>
+        <div class="article-body">
+          <p>BundIDは、ドイツの行政オンライン申請で本人確認や役所からの連絡受信に使う共通アカウントです。日本人などEU域外の外国籍でも、電子滞在許可証（eAT）のオンライン本人確認機能が有効なら、高い本人確認レベルで登録できます。この記事では、登録方法、必要なPINとスマートフォン、eATがない場合の選択肢、利用時の注意点を順番に説明します。</p>
+          <h2 id="まず結論">まず結論</h2>
+          <ul>
+            <li><strong>eATがあり、オンライン本人確認機能が有効で、6桁PINを使える：</strong> オンライン身分証を選んで高い本人確認レベルで登録できます。</li>
+            <li><strong>eATはあるがPINが分からない：</strong> 5桁の一時PINが残っているか確認し、なければ担当窓口で新しいPINを設定します。3回連続で間違えるとロックされるため、推測入力を続けないでください。</li>
+            <li><strong>Fiktionsbescheinigungだけを持っている：</strong> それだけでeATと同じオンライン本人確認ができるとは限りません。申請先が認める基本登録、ELSTER、ゲストログインを確認します。</li>
+            <li><strong>ユーザー名・パスワードだけで登録した：</strong> 基本レベルで使える一方、全ての行政通知を開けるとは限りません。高い本人確認が必要な手続きにはオンライン身分証が必要です。</li>
+          </ul>
+          <h2 id="あなたはどのケース">あなたはどのケース？</h2>
+          <div class="jc-table-region">
+            <p class="jc-table-scroll-hint" id="bundid-eat-registration-germany-table-1-scroll-hint">この表は横にスクロールできます。表にフォーカスした後、左右の矢印キーでも内容を確認できます。</p>
+            <div class="jc-table-wrap" role="region" aria-label="記事内の情報表（横スクロール可能）" aria-describedby="bundid-eat-registration-germany-table-1-scroll-hint" tabindex="0">
+              <table class="jc-info-table" role="table">
+                <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">状況</th><th role="columnheader" scope="col">使える可能性がある方法</th><th role="columnheader" scope="col">注意点</th></tr></thead>
+                <tbody role="rowgroup">
+                  <tr role="row"><td role="cell" data-label="状況">有効なeATと6桁PINがある</td><td role="cell" data-label="使える可能性がある方法">オンライン身分証</td><td role="cell" data-label="注意点">高い本人確認レベル。対応サービスでは全ての通知を開けます</td></tr>
+                  <tr role="row"><td role="cell" data-label="状況">eATはあるが5桁の一時PINだけ</td><td role="cell" data-label="使える可能性がある方法">AusweisAppで6桁PINへ変更</td><td role="cell" data-label="注意点">初回のPIN変更が必要</td></tr>
+                  <tr role="row"><td role="cell" data-label="状況">eATはあるがPINを忘れた・ロックされた</td><td role="cell" data-label="使える可能性がある方法">担当する身分証窓口へ相談</td><td role="cell" data-label="注意点">eATのPIN再設定は管轄の外国人局などに確認</td></tr>
+                  <tr role="row"><td role="cell" data-label="状況">Fiktionsbescheinigungだけ</td><td role="cell" data-label="使える可能性がある方法">基本登録、ELSTER、ゲストログインなど</td><td role="cell" data-label="注意点">申請先が認める方法に限る。ゲストログインにはBundID受信箱がない</td></tr>
+                  <tr role="row"><td role="cell" data-label="状況">eATがまだ届いていない</td><td role="cell" data-label="使える可能性がある方法">基本登録またはELSTER</td><td role="cell" data-label="注意点">高い本人確認を求める申請は完了できない場合がある</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <figure class="article-inline-figure">
+            <a class="article-inline-image-zoom" href="/assets/images/living/bundid-eat-registration-germany.svg" target="_blank" rel="noopener noreferrer" aria-label="画像を原寸で表示（新しいタブ）" title="画像を原寸で開く"><img src="/assets/images/living/bundid-eat-registration-germany.svg" alt="スマートフォンと電子滞在許可証のカードをNFCで読み取り、行政サービスへ本人確認する仕組み" width="1200" height="675" loading="lazy" decoding="async"></a>
+            <figcaption>J-Connectのオリジナル図解。実際の身分証や行政画面を再現したものではありません。</figcaption>
+          </figure>
+          <figure class="article-inline-figure">
+            <a class="article-inline-image-zoom" href="/assets/images/living/bundid-eat-registration-germany-flow.svg" target="_blank" rel="noopener noreferrer" aria-label="画像を原寸で表示（新しいタブ）" title="画像を原寸で開く"><img src="/assets/images/living/bundid-eat-registration-germany-flow.svg" alt="電子滞在許可証、6桁PIN、NFC端末、BundIDアカウントの4段階を示す図" width="1200" height="675" loading="lazy" decoding="async"></a>
+            <figcaption>登録前に確認する4つの要素を示すJ-Connectのオリジナル図解。</figcaption>
+          </figure>
+          <h2 id="bundidでできること">BundIDでできること</h2>
+          <p>BundIDは、行政手続きごとに別々のログイン情報を作る負担を減らすためのアカウントです。対応するオンライン申請で本人確認に使えるほか、登録情報を申請フォームに反映したり、役所からの連絡や決定通知を受け取ったりできます。</p>
+          <p>主な機能は次のとおりです。</p>
+          <ul>
+            <li>対応する国・州・自治体のオンライン申請で本人確認する</li>
+            <li>氏名や住所など、登録済みの情報を申請フォームに反映する</li>
+            <li>BundIDの受信箱で役所からのメッセージや通知を受け取る</li>
+            <li>追加書類の提出や、役所からの質問への返信をオンラインで行う（対応する手続きの場合）</li>
+          </ul>
+          <p>ただし、<strong>すべての役所やオンラインサービスがBundIDに対応しているわけではありません</strong>。申請先のポータルが指定するログイン方法と本人確認レベルを確認してください。</p>
+          <h2 id="日本人など非eu居住者は電子滞在許可証-eat-を使える">日本人など非EU居住者は電子滞在許可証（eAT）を使える</h2>
+          <p>日本国籍の人がドイツで取得する電子滞在許可証（eAT）は、オンライン本人確認に対応するカードです。ただし、カードを持っているだけでは不十分で、カードのオンライン本人確認機能が有効になっており、本人が設定した6桁のPINを使える必要があります。</p>
+          <p>BundIDの登録画面では、ドイツの身分証を持たない人向けに、電子滞在許可証とEU・EEA市民向けの電子IDカードが選択肢として案内されています。日本人などEU域外の人は、通常、自分のeATが対象になるかを確認します。</p>
+          <h3 id="fiktionsbescheinigungだけの場合">Fiktionsbescheinigungだけの場合</h3>
+          <p>Fiktionsbescheinigung（滞在資格の継続を証明する書類）は、電子滞在許可証（eAT）のカード型電子身分証ではありません。BundIDのオンライン身分証の案内にあるのはeATとEU市民向けの電子IDカードで、Fiktionsbescheinigungは本人確認用の身分証として掲載されていません。そのため、<strong>FiktionsbescheinigungだけでeATと同じ高い本人確認を使えるとは考えないでください</strong>。</p>
+          <p>eATがまだ届いていない場合でも、ユーザー名とパスワードによる基本登録、ELSTER、または対象サービスが認めるゲストログインを使えることがあります。ただし、必要な本人確認レベルを満たせない申請や、受信箱の一部の通知を読めない場合があります。BundIDの説明では、ゲストログインではBundIDの受信箱は作られず、申請に関する公式連絡は郵送になります。ゲスト利用を認めるかどうかは、申請先のサービスが決めます。</p>
+          <h2 id="登録方法の違い">登録方法の違い</h2>
+          <p>BundIDでは、登録・ログインに使う方法によって本人確認の強さが異なります。</p>
+          <div class="jc-table-region">
+            <p class="jc-table-scroll-hint" id="bundid-eat-registration-germany-table-2-scroll-hint">この表は横にスクロールできます。表にフォーカスした後、左右の矢印キーでも内容を確認できます。</p>
+            <div class="jc-table-wrap" role="region" aria-label="記事内の情報表（横スクロール可能）" aria-describedby="bundid-eat-registration-germany-table-2-scroll-hint" tabindex="0">
+              <table class="jc-info-table" role="table">
+                <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">方法</th><th role="columnheader" scope="col">本人確認レベル</th><th role="columnheader" scope="col">主な用途・制限</th></tr></thead>
+                <tbody role="rowgroup">
+                  <tr role="row"><td role="cell" data-label="方法">ユーザー名・パスワード</td><td role="cell" data-label="本人確認レベル">基本</td><td role="cell" data-label="主な用途・制限">アカウント管理や基本レベルの通知。すべての申請や通知に使えるわけではない</td></tr>
+                  <tr role="row"><td role="cell" data-label="方法">ELSTERのログイン</td><td role="cell" data-label="本人確認レベル">実質的</td><td role="cell" data-label="主な用途・制限">対応する行政サービスで利用。高い本人確認が必要な手続きには足りない場合がある</td></tr>
+                  <tr role="row"><td role="cell" data-label="方法">オンライン身分証（eATなど）</td><td role="cell" data-label="本人確認レベル">高い</td><td role="cell" data-label="主な用途・制限">高い本人確認が必要な申請にも使える。受信箱の通知を幅広く確認できる</td></tr>
+                  <tr role="row"><td role="cell" data-label="方法">EU Identity</td><td role="cell" data-label="本人確認レベル">提供国・サービスによる</td><td role="cell" data-label="主な用途・制限">対応するEUの電子IDを持つ人向け</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p>BundIDは、オンライン身分証による登録を推奨しています。ユーザー名・パスワードだけでログインすると、セキュリティ上の理由で一部の通知や決定書を開けないことがあります。申請を完了するだけでなく、役所からの連絡をオンラインで受け取りたい場合は、利用できるならeATのオンライン本人確認を登録しておく方が便利です。</p>
+          <h2 id="電子滞在許可証-eat-で登録する前に準備するもの">電子滞在許可証（eAT）で登録する前に準備するもの</h2>
+          <p>必要なものは次の4点です。</p>
+          <ol>
+            <li><strong>電子滞在許可証（eAT）</strong>：カード本体を用意します。</li>
+            <li><strong>有効なオンライン本人確認機能</strong>：機能が無効になっていないことを確認します。</li>
+            <li><strong>自分で設定した6桁のPIN</strong>：5桁の一時PINとは異なります。</li>
+            <li><strong>AusweisAppと読み取り機器</strong>：NFC対応スマートフォン、または対応するUSBカードリーダーが必要です。</li>
+          </ol>
+          <h3 id="5桁の一時pinと6桁のpinは違う">5桁の一時PINと6桁のPINは違う</h3>
+          <p>eATを申請したときに受け取るPIN案内には、通常、最初に使う5桁の一時PINが記載されています。初回利用時はAusweisAppのPIN変更機能で一時PINを使い、自分で決めた6桁のPINに変更します。</p>
+          <p>オンライン本人確認のたびに入力するのは、<strong>自分で設定した6桁のPIN</strong>です。一時PINをそのままBundIDのログインに入力しても使えません。</p>
+          <h3 id="3回間違えるとpinがロックされる">3回間違えるとPINがロックされる</h3>
+          <p>PINを3回連続で間違えると、オンライン本人確認機能がロックされます。2回誤ると、3回目の入力前にカードに記載されたCANの入力を求められることがあります。PIN案内に記載された<strong>10桁のPUK（ロック解除番号）</strong>があれば、AusweisAppでロックを解除できます。PUKは新しいPINを設定しても再発行されないため、PIN案内と一緒に安全に保管してください。PUKが手元にない場合は、担当窓口に相談します。AusweisAppのサポート窓口は新しいPINを発行できません。</p>
+          <h2 id="手順">手順</h2>
+          <h3 id="1-本人確認アプリをインストールする">1. 本人確認アプリをインストールする</h3>
+          <p>公式サイトからスマートフォン、パソコン、タブレットに対応するAusweisAppを入れます。スマートフォンだけで利用する場合は、NFCに対応しているか確認してください。ノートPCなどNFCのない端末で使う場合は、NFC対応スマートフォンをカードリーダーとして連携できます。両方の端末にAusweisAppを入れ、同じWi-Fiに接続してからアプリの案内に従います。</p>
+          <ul>
+            <li><a href="https://www.ausweisapp.bund.de/download/">AusweisApp公式ダウンロード</a></li>
+          </ul>
+          <h3 id="2-eatの機能と端末を確認する">2. eATの機能と端末を確認する</h3>
+          <p>AusweisAppの「端末と身分証を確認する」機能を使い、eATのオンライン本人確認機能が有効か、スマートフォンがカードを読み取れるかを確認します。</p>
+          <p>機能が無効の場合は、管轄の外国人局に問い合わせてください。eATの発行時に本人確認が未完了だった場合など、オンライン機能が無効で発行されるケースもあります。</p>
+          <h3 id="3-6桁のpinを設定する">3. 6桁のPINを設定する</h3>
+          <p>5桁の一時PINがある場合は、AusweisAppのPIN変更機能で自分の6桁PINに変更します。すでに6桁PINを設定済みなら、そのPINを使います。</p>
+          <p>PINを忘れた場合は、何度も推測して入力しないでください。新しいPINの設定は、eATの場合は管轄の外国人局など、担当する身分証明窓口に確認します。</p>
+          <h3 id="4-bundidで-オンライン身分証-を選ぶ">4. BundIDで「オンライン身分証」を選ぶ</h3>
+          <p>BundID公式サイトのアカウント作成画面を開き、オンライン身分証（Online-Ausweis）による登録を選択します。eATもこの登録方法の対象です。ブラウザのシークレットモードは使わず、画面の案内に従ってAusweisAppを起動し、eATをスマートフォンのNFC部分にかざします。</p>
+          <h3 id="5-読み取り内容を確認して登録する">5. 読み取り内容を確認して登録する</h3>
+          <p>AusweisAppの画面で、どの情報をどのサービス提供者に渡すのかを確認します。表示された情報を確認してから6桁PINを入力し、データ送信を承認します。登録画面に戻ったら、案内に従って情報を補足し、メールアドレスを確認してアカウント作成を完了します。</p>
+          <h2 id="登録後にオンライン申請で使う方法">登録後にオンライン申請で使う方法</h2>
+          <ol>
+            <li>利用したい行政サービスの公式ポータルを開きます。</li>
+            <li>ログイン方法にBundIDがあれば選択します。</li>
+            <li>登録した本人確認方法（eATのオンライン身分証など）でログインします。</li>
+            <li>申請フォームに表示される氏名・住所などを確認します。</li>
+            <li>申請を送信した後は、BundIDの受信箱に追加質問や通知が届いていないか確認します。</li>
+          </ol>
+          <p>オンライン申請の途中でBundIDを追加するよう求められた場合は、画面に表示された本人確認レベルを確認してください。ユーザー名・パスワードで進められない場合は、より高い本人確認が必要な手続きの可能性があります。</p>
+          <h2 id="eatがない-pinが分からないときの対処">eATがない・PINが分からないときの対処</h2>
+          <div class="jc-table-region">
+            <p class="jc-table-scroll-hint" id="bundid-eat-registration-germany-table-3-scroll-hint">この表は横にスクロールできます。表にフォーカスした後、左右の矢印キーでも内容を確認できます。</p>
+            <div class="jc-table-wrap" role="region" aria-label="記事内の情報表（横スクロール可能）" aria-describedby="bundid-eat-registration-germany-table-3-scroll-hint" tabindex="0">
+              <table class="jc-info-table" role="table">
+                <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">状況</th><th role="columnheader" scope="col">次にすること</th></tr></thead>
+                <tbody role="rowgroup">
+                  <tr role="row"><td role="cell" data-label="状況">eATがまだ届いていない</td><td role="cell" data-label="次にすること">基本登録やELSTERなど、申請先が認める方法を確認。高い本人確認が必要な申請は後日になる場合がある</td></tr>
+                  <tr role="row"><td role="cell" data-label="状況">Fiktionsbescheinigungだけを持っている</td><td role="cell" data-label="次にすること">それをeATの代わりの電子IDとして使えるとは考えず、申請先の代替ログインを確認</td></tr>
+                  <tr role="row"><td role="cell" data-label="状況">5桁の一時PINがある</td><td role="cell" data-label="次にすること">AusweisAppで6桁のPINに変更</td></tr>
+                  <tr role="row"><td role="cell" data-label="状況">6桁PINを忘れた</td><td role="cell" data-label="次にすること">管轄の外国人局などに再設定方法を確認</td></tr>
+                  <tr role="row"><td role="cell" data-label="状況">3回の誤入力でPINがロックされた</td><td role="cell" data-label="次にすること">PIN案内にある10桁PUKで解除。PUKがない場合は担当窓口へ相談し、繰り返し試さない</td></tr>
+                  <tr role="row"><td role="cell" data-label="状況">eATを紛失した</td><td role="cell" data-label="次にすること">管轄窓口またはオンライン本人確認の停止窓口に連絡。停止方法は公式案内で確認</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p>AusweisAppのFAQによると、PINは3回の誤入力でロックされ、10桁のPUKで解除できます。PUKを紛失した場合や6桁PINを忘れた場合は、担当の身分証窓口で新しいPINを設定する必要があります。eATの場合は所管の外国人局に確認してください。下のBundesportalリンクはメクレンブルク＝フォアポンメルン州の手続き例であり、全国共通の窓口案内ではありません。</p>
+          <h2 id="落とし穴">落とし穴</h2>
+          <ul>
+            <li><strong>5桁の一時PINを使い続ける：</strong> オンライン本人確認で使うのは自分で設定した6桁PINです。</li>
+            <li><strong>eATを持っていれば必ず使えると思う：</strong> オンライン本人確認機能が有効か確認が必要です。</li>
+            <li><strong>ユーザー名・パスワードで全ての通知を読めると思う：</strong> 基本レベルのログインでは、一部の通知を開けない場合があります。</li>
+            <li><strong>全ての自治体サービスがBundIDに対応していると思う：</strong> 対応状況と必要な本人確認レベルは申請先ごとに確認します。</li>
+            <li><strong>BundIDを滞在許可証と混同する：</strong> BundIDはオンライン行政サービス用のアカウントであり、滞在許可そのものではありません。</li>
+          </ul>
+          <h2 id="費用と所要期間">費用と所要期間</h2>
+          <p>BundIDのアカウント作成とAusweisAppのダウンロードに料金はかかりません。eATのオンライン本人確認機能が有効で、6桁PINと対応端末がそろっていれば、登録はオンラインで進められます。</p>
+          <p>一方、PINの再設定やオンライン本人確認機能の有効化が必要な場合は、管轄の窓口での手続きや予約が必要になることがあります。窓口手数料や予約状況は自治体・手続きによって異なるため、全国一律の費用や所要日数としては案内できません。訪問前に所管の外国人局へ確認してください。</p>
+          <h2 id="セキュリティ上の注意">セキュリティ上の注意</h2>
+          <p>AusweisAppでは、本人確認の前にサービス提供者の権限証明書を確認でき、どの情報が読み取られ、誰に送られるかを表示します。身分証の読み取りを求められたら、送信先とデータ項目を確認してから承認してください。</p>
+          <p>PINはメール、電話、一般の問い合わせフォームで他人に伝えないでください。BundIDやAusweisAppを装ったリンクからPINを入力せず、公式ドメインを直接開くことを推奨します。</p>
+          <h2 id="そのまま使えるドイツ語">そのまま使えるドイツ語</h2>
+          <p>外国人局などにPINやオンライン本人確認機能について問い合わせるときの表現です。</p>
+          <div class="jc-table-region">
+            <p class="jc-table-scroll-hint" id="bundid-eat-registration-germany-table-4-scroll-hint">この表は横にスクロールできます。表にフォーカスした後、左右の矢印キーでも内容を確認できます。</p>
+            <div class="jc-table-wrap" role="region" aria-label="記事内の情報表（横スクロール可能）" aria-describedby="bundid-eat-registration-germany-table-4-scroll-hint" tabindex="0">
+              <table class="jc-info-table" role="table">
+                <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">ドイツ語</th><th role="columnheader" scope="col">日本語の意味</th></tr></thead>
+                <tbody role="rowgroup">
+                  <tr role="row"><td role="cell" data-label="ドイツ語">Meine Online-Ausweisfunktion ist nicht aktiviert.</td><td role="cell" data-label="日本語の意味">私のオンライン本人確認機能が有効になっていません。</td></tr>
+                  <tr role="row"><td role="cell" data-label="ドイツ語">Können Sie mir bitte sagen, wie ich sie aktivieren lassen kann?</td><td role="cell" data-label="日本語の意味">有効にする方法を教えていただけますか。</td></tr>
+                  <tr role="row"><td role="cell" data-label="ドイツ語">Ich habe meine sechsstellige PIN vergessen. Wie kann ich eine neue PIN erhalten?</td><td role="cell" data-label="日本語の意味">6桁のPINを忘れました。新しいPINを取得するにはどうすればよいですか。</td></tr>
+                  <tr role="row"><td role="cell" data-label="ドイツ語">Meine PIN ist gesperrt. Ich habe den PUK nicht mehr.</td><td role="cell" data-label="日本語の意味">PINがロックされ、PUKも手元にありません。</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <h2 id="まとめ">まとめ</h2>
+          <p>BundIDは、対応する行政手続きをオンラインで進め、役所からの通知を受け取るための共通アカウントです。日本人など非EU居住者は、オンライン本人確認機能が有効なeATと6桁PIN、AusweisApp、NFC対応端末があれば、高い本人確認レベルで利用できます。</p>
+          <p>eATがない場合でも基本登録などを利用できることはありますが、全ての申請や通知に対応できるとは限りません。最初に利用したい行政サービスが求める本人確認レベルを確認し、それに合った登録方法を選びましょう。</p>
+          <h2 id="公式情報-参考ソース">公式情報・参考ソース</h2>
+          <ul>
+            <li><a href="https://id.bund.de/de/registration/eIDm">BundID：オンライン身分証を使ったアカウント登録</a>（2026年11月25日確認）</li>
+            <li><a href="https://id.bund.de/de/faq">BundID：よくある質問</a>（2026年11月25日確認）</li>
+            <li><a href="https://www.ausweisapp.bund.de/das-brauchen-sie">AusweisApp：オンライン本人確認に必要なもの</a>（2026年11月25日確認）</li>
+            <li><a href="https://www.ausweisapp.bund.de/faq-fuer-nutzende">AusweisApp：PIN・PUK・ロック解除のFAQ</a>（2026年11月25日確認）</li>
+            <li><a href="https://www.ausweisapp.bund.de/hilfe-und-support">AusweisApp：PIN再設定とサポート窓口</a>（2026年11月25日確認）</li>
+            <li><a href="https://www.ausweisapp.bund.de/download/">AusweisApp：公式ダウンロード</a>（2026年11月25日確認）</li>
+            <li><a href="https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99010006012000/herausgeber/RP-13125384/region/073140000000">Bundesportal：電子滞在許可証（eAT）のオンライン本人確認（地域情報の掲載例）</a>（2026年11月25日確認）</li>
+            <li><a href="https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99008004011001/herausgeber/MV-106338988/region/130000000000">Bundesportal：オンライン本人確認のPIN再設定（メクレンブルク＝フォアポンメルン州の手続き例）</a>（2026年11月25日確認）</li>
+          </ul>
+          <p>BundIDの本人確認レベル、eATの対象、PIN・PUK・NFCの要件は2026年11月25日に公式サイトで再確認しました。利用できる行政サービス、必要な本人確認レベル、窓口でのPIN再設定方法は、申請先と管轄当局の最新案内を優先してください。</p>
+          <p><a class="article-back-link" href="/germany/ja/living/">生活・手続き一覧へ戻る</a></p>
+          <aside class="article-experience-invite" aria-label="体験談の募集">
+            <p class="article-experience-invite__title">この手続きの体験を教えてください</p>
+            <p>地域（例：デュッセルドルフ近郊）と時期、何を聞き、何と回答され、何日かかったかだけで十分です。いただいた体験は、個人が分からない形で記事に追加することがあります。お名前とメールアドレスは連絡にだけ使い、掲載しません。</p>
+            <p><a class="jc-button" href="/germany/ja/contact/?type=experience&amp;page=https%3A%2F%2Fj-connect-global.com%2Fgermany%2Fja%2Fliving%2Fbundid-eat-registration-germany%2F">体験を送る</a></p>
+          </aside>
+          <div class="article-disclaimer">
+            本記事は一般情報です。行政・税務・医療・保険などの条件は自治体、滞在資格、雇用状況、家族構成、申請時期により異なる場合があります。必ず公式窓口や専門家の最新情報を確認してください。
+          </div>
+        </div>
+      </article>
+      <aside class="article-sidebar" aria-label="記事補助情報">
+        <section class="article-sidebar-card article-sidebar-toc">
+          <h2>目次</h2>
+          <nav class="article-sidebar-toc-list" aria-label="記事内目次">
+            <a href="#まず結論">まず結論</a>
+            <a href="#あなたはどのケース">あなたはどのケース？</a>
+            <a href="#bundidでできること">BundIDでできること</a>
+            <a href="#日本人など非eu居住者は電子滞在許可証-eat-を使える">日本人など非EU居住者は電子滞在許可証（eAT）を使える</a>
+            <a href="#登録方法の違い">登録方法の違い</a>
+            <a href="#電子滞在許可証-eat-で登録する前に準備するもの">電子滞在許可証（eAT）で登録する前に準備するもの</a>
+            <a href="#手順">手順</a>
+            <a href="#登録後にオンライン申請で使う方法">登録後にオンライン申請で使う方法</a>
+            <a href="#eatがない-pinが分からないときの対処">eATがない・PINが分からないときの対処</a>
+            <a href="#落とし穴">落とし穴</a>
+            <a href="#費用と所要期間">費用と所要期間</a>
+            <a href="#セキュリティ上の注意">セキュリティ上の注意</a>
+            <a href="#そのまま使えるドイツ語">そのまま使えるドイツ語</a>
+            <a href="#まとめ">まとめ</a>
+            <a href="#公式情報-参考ソース">公式情報・参考ソース</a>
+          </nav>
+        </section>
+        <section class="article-sidebar-card">
+          <h2>記事情報</h2>
+          <dl class="article-sidebar-facts">
+            <div>
+              <dt>カテゴリ</dt>
+              <dd>役所・滞在</dd>
+            </div>
+          </dl>
+        </section>
+      </aside>
+    </div>
+    <section class="related-section official-source-section">
+      <h3>公式情報・参考ソース</h3>
+      <ul>
+        <li><a href="https://id.bund.de/de/registration/eIDm">BundID：オンライン本人確認を使ったアカウント登録</a></li>
+        <li><a href="https://id.bund.de/de/faq">BundID：よくある質問</a></li>
+        <li><a href="https://www.ausweisapp.bund.de/das-brauchen-sie">AusweisApp：オンライン本人確認に必要なもの</a></li>
+        <li><a href="https://www.ausweisapp.bund.de/faq-fuer-nutzende">AusweisApp：PIN・PUK・ロック解除のFAQ</a></li>
+        <li><a href="https://www.ausweisapp.bund.de/hilfe-und-support">AusweisApp：PIN再設定とサポート窓口</a></li>
+        <li><a href="https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99010006012000/herausgeber/RP-13125384/region/073140000000">Bundesportal：eATのオンライン本人確認機能</a></li>
+        <li><a href="https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99008004011001/herausgeber/MV-106338988/region/130000000000">Bundesportal：オンライン本人確認のPIN再設定（メクレンブルク＝フォアポンメルン州の手続き例）</a></li>
+      </ul>
+    </section>
+    <section class="related-section">
+      <h3>関連記事</h3>
+      <ul>
+        <li><a href="/germany/ja/living/anmeldung-guide/">ドイツの住民登録（Anmeldung）｜入居後2週間の期限・必要書類・予約が取れないとき</a></li>
+        <li><a href="/germany/ja/living/residence-permit-renewal-germany/">ドイツの滞在許可を申請・更新する方法｜期限、必要書類、審査中の証明（Fiktionsbescheinigung）</a></li>
+        <li><a href="/germany/ja/living/einbuergerung-germany-japanese/">ドイツ国籍の取得（Einbürgerung）と日本国籍｜5年の条件、B1・帰化テスト、日本国籍を失う仕組み、子どもの二重国籍</a></li>
+        <li><a href="/germany/ja/living/japanese-passport-consulate-germany/">ドイツで日本のパスポートを更新する｜オンライン申請、2026年7月からの手数料引き下げと5年旅券の廃止、大使館・総領事館の管轄と証明書</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- LAYOUT:ja-footer:start -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <img class="footer-logo" src="/assets/images/brand/logo_footer.png" alt="J-Connect Germany（J-Connect Global）" width="900" height="217" loading="lazy" decoding="async">
+        <div class="footer-copy">
+          <div class="footer-title">J-CONNECT GERMANY</div>
+          <div class="footer-sub">J-Connect Global のドイツ向け生活ポータル</div>
+          <div class="footer-relationship">J-Connect Germany は、J-Connect Global のドイツ向けポータルです。</div>
+          <div class="footer-meta">© 2026 J-Connect Global</div>
+        </div>
+      </div>
+      <div class="footer-links" aria-label="フッターサイトマップ">
+        <div class="footer-group">
+          <div class="footer-heading">サイト</div>
+          <a href="/germany/ja/">ホーム</a>
+          <a href="/germany/ja/about/">このサイトについて</a>
+          <a href="/germany/ja/living/">ガイド</a>
+        </div>
+        <div class="footer-group">
+          <div class="footer-heading">主要カテゴリ</div>
+          <a href="/germany/ja/community/">交流・掲示板</a>
+          <a href="/germany/ja/living/">生活・手続き</a>
+          <a href="/germany/ja/jobs/">仕事・求人</a>
+          <a href="/germany/ja/events/">ニュース・イベント</a>
+          <a href="/germany/ja/learn-german/">ドイツ語・学び</a>
+        </div>
+        <div class="footer-group">
+          <div class="footer-heading">サポート・運営情報</div>
+          <a href="/germany/ja/jobs/posting/">求人掲載について</a>
+          <a href="/germany/ja/contact/">お問い合わせ</a>
+          <a href="mailto:contact@j-connect-global.com">contact@j-connect-global.com</a>
+          <a href="/germany/ja/terms/">利用規約</a>
+          <a href="/germany/ja/privacy/">プライバシー</a>
+          <a href="/germany/ja/impressum/">運営者情報</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- LAYOUT:ja-footer:end -->
+  <script src="/assets/js/common.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/social-share.js"></script>
+<script src="/assets/js/jc-chat-widget.js?v=20261116m" defer></script>
+</body>
+</html>

@@ -1930,17 +1930,13 @@ function renderHubCard(type, item) {
 }
 
 function renderLivingHubCard(item) {
-  const searchText = [
-    item.title,
-    item.summary,
-    item.category,
-    ...item.tags
-  ].join(' ');
+  // The client already indexes title, summary, category and tags separately.
+  // Avoid storing an identical concatenation in every card.
   const reviewDate = item.review?.last_reviewed_at || item.last_verified || '';
   const media = renderCardMedia(item, 'living');
   const mediaClass = media ? ' card--has-media' : '';
 
-  return `<article class="jc-article-card living-hub-card living-column-card${mediaClass}" data-living-card data-url="${escapeAttribute(item.url)}" data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-search="${escapeAttribute(searchText)}" data-published="${escapeAttribute(item.published_at || '')}" data-reviewed="${escapeAttribute(reviewDate)}" data-updated="${escapeAttribute(item.updated_at || '')}">
+  return `<article class="jc-article-card living-hub-card living-column-card${mediaClass}" data-living-card data-url="${escapeAttribute(item.url)}" data-title="${escapeAttribute(item.title)}" data-summary="${escapeAttribute(item.summary)}" data-category="${escapeAttribute(item.category || '')}" data-tags="${escapeAttribute(item.tags.join(' '))}" data-published="${escapeAttribute(item.published_at || '')}" data-reviewed="${escapeAttribute(reviewDate)}" data-updated="${escapeAttribute(item.updated_at || '')}">
   <button class="living-column-save" type="button" data-living-save aria-pressed="false" aria-label="${escapeAttribute(`保存: ${item.title}`)}">☆</button>
 ${media ? indent(media, 2) : ''}
   <div class="jc-card-meta">

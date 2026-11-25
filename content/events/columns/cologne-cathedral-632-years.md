@@ -14,8 +14,8 @@ official_sources:
     url: "https://www.unesco.de/staette/koelner-dom/"
   - title: "ユネスコ世界遺産センター：ケルン大聖堂"
     url: "https://whc.unesco.org/en/list/292/"
-  - title: "ケルン大聖堂：東方三博士の巡礼"
-    url: "https://www.koelner-dom.de/dreikoenigswallfahrt"
+  - title: "ケルン大聖堂：東方三博士の聖櫃（歴史・美術史解説）"
+    url: "https://www.koelner-dom.de/kunstwerke/dreikoenigenschrein"
 related_articles: ["cologne-city-guide", "cologne-family-trip", "rhineland-carnival-11-11", "berlin-wall-history"]
 city: "ケルン"
 area: "ケルン"
@@ -27,7 +27,7 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-29"
-updated_at: "2026-10-29"
+updated_at: "2026-11-25"
 last_verified: "2026-10-29"
 canonical_url: "/germany/ja/events/columns/cologne-cathedral-632-years/"
 official_url: "https://www.koelner-dom.de/erleben/geschichte"
@@ -47,7 +47,7 @@ image_credit: "Illustration / J-Connect"
 
 ケルン大聖堂によると、今の大聖堂の礎石が置かれたのは、**1248年8月15日**です。大司教コンラート・フォン・ホーホシュターデンが、フランスで生まれたばかりの最新の建築様式、ゴシック様式の大聖堂を建て始めました（[ケルン大聖堂：歴史](https://www.koelner-dom.de/erleben/geschichte)）。
 
-なぜこれほど大きな大聖堂が必要だったのでしょうか。その理由の一つが、「東方三博士（三賢王）」の聖遺物です。ケルン大聖堂によると、東方三博士の遺骨とされるものは、1164年にイタリアのミラノからケルンに運ばれました。これを納めるために作られた金の聖櫃は、中世の聖遺物の箱として最大のものとされています（[ケルン大聖堂：東方三博士の巡礼](https://www.koelner-dom.de/dreikoenigswallfahrt)）。ヨーロッパ中から訪れる巡礼者を迎えるため、それにふさわしい大聖堂が求められたのです。
+なぜこれほど大きな大聖堂が必要だったのでしょうか。その理由の一つが、「東方三博士（三賢王）」の聖遺物です。ケルン大聖堂によると、東方三博士の遺骨とされるものは、1164年にイタリアのミラノからケルンに運ばれました。これを納めるために作られた金の聖櫃は、中世の聖遺物の箱として最大のものとされています（[ケルン大聖堂：東方三博士の聖櫃](https://www.koelner-dom.de/kunstwerke/dreikoenigenschrein)）。ヨーロッパ中から訪れる巡礼者を迎えるため、それにふさわしい大聖堂が求められたのです。
 
 ## 300年以上止まった工事
 
@@ -100,7 +100,7 @@ image_credit: "Illustration / J-Connect"
 
 - [ケルン大聖堂：歴史](https://www.koelner-dom.de/erleben/geschichte)
 - [ケルン大聖堂：ケルン大聖堂工房の歴史](https://www.koelner-dom.de/fileadmin/media/PDF/newsroom/Geschichte_der_Koelner_Dombauhuette.pdf)
-- [ケルン大聖堂：東方三博士の巡礼](https://www.koelner-dom.de/dreikoenigswallfahrt)
+- [ケルン大聖堂：東方三博士の聖櫃](https://www.koelner-dom.de/kunstwerke/dreikoenigenschrein)
 - [ドイツ・ユネスコ委員会：ケルン大聖堂](https://www.unesco.de/staette/koelner-dom/)
 - [ユネスコ世界遺産センター：ケルン大聖堂](https://whc.unesco.org/en/list/292/)
 

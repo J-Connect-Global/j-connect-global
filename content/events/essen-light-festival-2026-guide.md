@@ -6,8 +6,10 @@ category: "芸術・文化"
 title: "エッセン光の祭典2026｜いつもの街が夜の美術館になる10日間"
 summary: "2026年10月2〜11日、エッセン中心街が光の展示空間へ。建物と映像の重なり、写真では伝わらない時間、子どもと楽しむ見方を紹介し、開催時間も整理します。"
 official_sources:
-  - title: "ルール観光局：エッセン光の祭典2026"
-    url: "https://www.ruhr-tourismus.de/event/essen-light-festival-2026/"
+  - title: "エッセン市：エッセン光の祭典2026開催案内"
+    url: "https://essen.de/meldungen/pressemeldung_1605407.de.html"
+  - title: "エッセン市：第11回光の祭典の開催結果"
+    url: "https://essen.de/meldungen/pressemeldung_1606645.de.html"
 related_articles: ["spiel-essen-2026-guide", "frankfurt-book-fair-2026-guide", "germany-autumn-forest-walk"]
 city: "エッセン"
 location: "エッセン中心街"
@@ -18,10 +20,10 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-09-18"
-updated_at: "2026-10-19"
+updated_at: "2026-11-25"
 last_verified: "2026-10-19"
 canonical_url: "/germany/ja/events/essen-light-festival-2026-guide/"
-official_url: "https://www.ruhr-tourismus.de/event/essen-light-festival-2026/"
+official_url: "https://essen.de/meldungen/pressemeldung_1605407.de.html"
 image: "/assets/img/events/essen-light-festival-2026-guide.webp"
 image_alt: "エッセンの街路を彩るシャンデリア型の光の作品"
 image_caption: "2018年のエッセン光の祭典。2026年の作品構成を示す写真ではありません。"
@@ -30,13 +32,15 @@ image_credit: "Wiki05 / CC BY-SA 4.0 / Wikimedia Commons"
 
 # エッセン光の祭典2026｜いつもの街が夜の美術館になる10日間
 
+**2026年の開催は終了しました。** エッセン市の10月12日付の発表では、10月2〜11日に中心街のHOLYルートで13の光の作品・投影などが展示されました。[開催結果](https://essen.de/meldungen/pressemeldung_1606645.de.html)
+
 10月2〜11日、エッセンの中心街に光の作品が現れ、建物や広場が夜だけの展示空間へ変わります。美術館では少し構えてしまう人にも、街歩きや写真が好きな人にも楽しみやすい「エッセン・ライト・フェスティバル」です。光の派手さだけで終わらない見方と、この街で開かれる意味、2026年の開催情報を紹介します。
 
 ## 光の作品は、街の何を変えるのか
 
 建物の壁へ映像を投影すると、窓や柱は単なる背景ではなく、作品の線やリズムになります。広場に光る立体が置かれれば、人が立ち止まる場所や歩く向きが変わります。昼には通り抜けていた道が、夜は「見るための場所」になる。その変化を自分の足で経験できるのが、この祭典の面白さです。
 
-2026年の地域観光局の案内では、投影作品、来場者の動きなどに反応する展示、音と光の体験を中心街で展開するとしています。美術の専門用語を知らなくても、壁の凹凸と映像がどう重なるか、同じ作品が近くと遠くでどう違うかに目を向ければ、鑑賞の入口になります。[2026年の開催案内](https://www.ruhr-tourismus.de/event/essen-light-festival-2026/)
+2026年のエッセン市の案内では、投影作品、来場者の動きなどに反応する展示、音と光の体験を中心街で展開するとしています。美術の専門用語を知らなくても、壁の凹凸と映像がどう重なるか、同じ作品が近くと遠くでどう違うかに目を向ければ、鑑賞の入口になります。[2026年の開催案内](https://essen.de/meldungen/pressemeldung_1605407.de.html)
 
 ![エッセンの通りに浮かぶ巨大な月の作品](/assets/images/events/october2026-light-4.webp "2018年の展示「Museum of the Moon」。街の建物と作品の大きさを見比べられます。")
 
@@ -76,7 +80,7 @@ image_credit: "Wiki05 / CC BY-SA 4.0 / Wikimedia Commons"
 | 見られるもの | 光のアート、映像投影、音や参加性を伴う展示 |
 | 当年の作品・経路 | 主催者の会場案内で確認 |
 
-地域観光局が示す住所は中心街の案内地点です。一つの建物に全作品が集まるイベントではありません。訪れる日は、公式の作品地図で見たい場所を把握すると、催しの広がりをつかみやすくなります。
+会場は中心街に点在していました。一つの建物に全作品が集まるイベントではありません。訪れる日は、公式の作品地図で見たい場所を把握すると、催しの広がりをつかみやすくなります。
 
 10月の同じエッセンでは、22〜25日に[ボードゲーム見本市](/germany/ja/events/spiel-essen-2026-guide/)も開かれます。光を眺める街歩きと、テーブルを囲んで遊ぶ催しでは、同じ都市の人の集まり方がまったく違います。秋の行き先を選ぶ際には、どちらの時間を味わいたいかから考えてみてください。
 

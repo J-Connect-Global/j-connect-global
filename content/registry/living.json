@@ -7042,5 +7042,82 @@
     "image_alt": "住居、住民登録、保険、銀行、通信、交通に使うものを順に並べた机",
     "image_url": "/assets/images/living/first-month-checklist.webp",
     "home_order": 999
+  },
+  {
+    "id": "L121",
+    "title": "ドイツのBundIDとは？日本人が電子滞在許可証（eAT）で登録する方法・PINと本人確認レベル",
+    "slug": "bundid-eat-registration-germany",
+    "category": "役所・滞在",
+    "summary": "ドイツの行政オンライン申請に使うBundIDを解説。日本人など非EU居住者が電子滞在許可証（eAT）で登録する条件、6桁PIN、NFC、本人確認レベル、Fiktionsbescheinigungやゲストログインの制限を整理します。",
+    "url": "/germany/ja/living/bundid-eat-registration-germany/",
+    "markdown_path": "/content/living/bundid-eat-registration-germany.md",
+    "published": true,
+    "status": "published",
+    "published_at": "2026-11-25",
+    "updated_at": "2026-11-25",
+    "last_verified": "2026-11-25",
+    "tags": [
+      "BundID",
+      "電子滞在許可証",
+      "eAT",
+      "AusweisApp",
+      "オンライン本人確認",
+      "行政手続き",
+      "デジタル行政"
+    ],
+    "home_visible": false,
+    "home_order": 999,
+    "hub_visible": true,
+    "search_visible": true,
+    "sitemap_visible": true,
+    "canonical_url": "/germany/ja/living/bundid-eat-registration-germany/",
+    "official_sources": [
+      {
+        "title": "BundID：オンライン本人確認を使ったアカウント登録",
+        "url": "https://id.bund.de/de/registration/eIDm"
+      },
+      {
+        "title": "BundID：よくある質問",
+        "url": "https://id.bund.de/de/faq"
+      },
+      {
+        "title": "AusweisApp：オンライン本人確認に必要なもの",
+        "url": "https://www.ausweisapp.bund.de/das-brauchen-sie"
+      },
+      {
+        "title": "AusweisApp：PIN・PUK・ロック解除のFAQ",
+        "url": "https://www.ausweisapp.bund.de/faq-fuer-nutzende"
+      },
+      {
+        "title": "AusweisApp：PIN再設定とサポート窓口",
+        "url": "https://www.ausweisapp.bund.de/hilfe-und-support"
+      },
+      {
+        "title": "Bundesportal：eATのオンライン本人確認機能",
+        "url": "https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99010006012000/herausgeber/RP-13125384/region/073140000000"
+      },
+      {
+        "title": "Bundesportal：オンライン本人確認のPIN再設定（メクレンブルク＝フォアポンメルン州の手続き例）",
+        "url": "https://verwaltung.bund.de/leistungsverzeichnis/de/leistung/99008004011001/herausgeber/MV-106338988/region/130000000000"
+      }
+    ],
+    "disclaimer_type": "administrative-guide",
+    "related_articles": [
+      "anmeldung-guide",
+      "residence-permit-renewal-germany",
+      "einbuergerung-germany-japanese",
+      "japanese-passport-consulate-germany"
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewed_by": "J-Connect編集部（BundID公式登録画面・FAQ、AusweisApp、Bundesportalを照合）",
+      "last_reviewed_at": "2026-11-25",
+      "next_review_due": "2027-03-21"
+    },
+    "image": "/assets/img/living/bundid-eat-registration-germany.webp",
+    "image_alt": "スマートフォンと身分証明書を使ってオンライン本人確認を準備する様子",
+    "image_url": "/assets/img/living/bundid-eat-registration-germany.webp",
+    "image_caption": "AI生成の編集イメージ。実際の身分証や行政ポータル画面を撮影したものではありません。",
+    "image_credit": "J-Connect編集部（AI生成画像）"
   }
 ]

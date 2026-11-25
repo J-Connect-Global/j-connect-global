@@ -1669,7 +1669,13 @@
           "line": 53,
           "position": 2,
           "quality_status": "visually_reviewed_priority_redesign_needed",
-          "priority": "P1"
+          "priority": "P1",
+          "redesign_draft": {
+            "date": "2026-11-25",
+            "branch": "chat/p1-seasonal-svg-redesign-20261125",
+            "status": "svg_source_updated_pending_render_and_editorial_QA",
+            "checks": "Original visible text retained; SVG element nesting and changed blob verified. Actual rendered image and mobile readability not yet verified."
+          }
         },
         {
           "src": "/assets/images/events/cologne-christmas-markets-2026-periods.svg",
@@ -1759,7 +1765,13 @@
           "line": 77,
           "position": 3,
           "quality_status": "visually_reviewed_priority_redesign_needed",
-          "priority": "P1"
+          "priority": "P1",
+          "redesign_draft": {
+            "date": "2026-11-25",
+            "branch": "chat/p1-seasonal-svg-redesign-20261125",
+            "status": "svg_source_updated_pending_render_and_editorial_QA",
+            "checks": "Original visible text retained; SVG element nesting and changed blob verified. Actual rendered image and mobile readability not yet verified."
+          }
         }
       ]
     },
@@ -1957,7 +1969,13 @@
           "line": 66,
           "position": 3,
           "quality_status": "visually_reviewed_priority_redesign_needed",
-          "priority": "P1"
+          "priority": "P1",
+          "redesign_draft": {
+            "date": "2026-11-25",
+            "branch": "chat/p1-seasonal-svg-redesign-20261125",
+            "status": "svg_source_updated_pending_render_and_editorial_QA",
+            "checks": "Original visible text retained; SVG element nesting and changed blob verified. Actual rendered image and mobile readability not yet verified."
+          }
         }
       ]
     },
@@ -1975,7 +1993,13 @@
           "line": 59,
           "position": 2,
           "quality_status": "visually_reviewed_priority_redesign_needed",
-          "priority": "P1"
+          "priority": "P1",
+          "redesign_draft": {
+            "date": "2026-11-25",
+            "branch": "chat/p1-seasonal-svg-redesign-20261125",
+            "status": "svg_source_updated_pending_render_and_editorial_QA",
+            "checks": "Original visible text retained; SVG element nesting and changed blob verified. Actual rendered image and mobile readability not yet verified."
+          }
         },
         {
           "src": "/assets/images/events/hamburg-christmas-markets-2026-periods.svg",
@@ -2002,7 +2026,13 @@
           "line": 69,
           "position": 2,
           "quality_status": "visually_reviewed_priority_redesign_needed",
-          "priority": "P1"
+          "priority": "P1",
+          "redesign_draft": {
+            "date": "2026-11-25",
+            "branch": "chat/p1-seasonal-svg-redesign-20261125",
+            "status": "svg_source_updated_pending_render_and_editorial_QA",
+            "checks": "Original visible text retained; SVG element nesting and changed blob verified. Actual rendered image and mobile readability not yet verified."
+          }
         },
         {
           "src": "/assets/images/events/munich-christmas-markets-2026-periods.svg",
@@ -2038,7 +2068,13 @@
           "line": 136,
           "position": 3,
           "quality_status": "visually_reviewed_priority_redesign_needed",
-          "priority": "P1"
+          "priority": "P1",
+          "redesign_draft": {
+            "date": "2026-11-25",
+            "branch": "chat/p1-seasonal-svg-redesign-20261125",
+            "status": "svg_source_updated_pending_render_and_editorial_QA",
+            "checks": "Original visible text retained; SVG element nesting and changed blob verified. Actual rendered image and mobile readability not yet verified."
+          }
         },
         {
           "src": "/assets/images/events/nrw-christmas-day-trips-2026-character.svg",
@@ -2128,7 +2164,13 @@
           "line": 68,
           "position": 3,
           "quality_status": "visually_reviewed_priority_redesign_needed",
-          "priority": "P1"
+          "priority": "P1",
+          "redesign_draft": {
+            "date": "2026-11-25",
+            "branch": "chat/p1-seasonal-svg-redesign-20261125",
+            "status": "svg_source_updated_pending_render_and_editorial_QA",
+            "checks": "Original visible text retained; SVG element nesting and changed blob verified. Actual rendered image and mobile readability not yet verified."
+          }
         }
       ]
     },
@@ -3154,7 +3196,8 @@
     "Two SVG assets in advent-wreath-calendar-origin were redesigned to preserve historical content, re-rendered to 1200x675 PNG for QA with Japanese fonts, and visually checked for clipping and overlap.",
     "Images now open their native files in a new tab through accessible keyboard/touch links (the new renderer applies to all local body images).",
     "Keep diagrams that communicate laws, finances, route, dates, or procedural information, but improve graphic quality and mobile legibility when necessary. Do not replace fact-bearing figures with decorative photos.",
-    "Three body-asset reuse groups need context review; reuse alone does not prove a defect."
+    "Three body-asset reuse groups need context review; reuse alone does not prove a defect.",
+    "2026-11-25 Chat draft: seven P1 SVGs redesigned in-place on a branch. Existing visible labels, facts, captions and alt text retained. XML element nesting and unchanged text checked; rendered QA, CI and publication remain pending. Existing review statuses and aggregate counts intentionally unchanged until rendered review passes."
   ],
   "last_wave": "wave4_berlin_markets_20261123"
 }

@@ -27,7 +27,7 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-27"
-updated_at: "2026-11-23"
+updated_at: "2026-11-25"
 last_verified: "2026-10-27"
 canonical_url: "/germany/ja/events/columns/christmas-tree-origin-germany/"
 official_url: "https://katholisch.de/artikel/317-weihnachtsbaum"
@@ -55,7 +55,7 @@ image_credit: "Wikimedia Commons / Kora27 / CC BY-SA 4.0"
 
 クリスマスツリーについての古い記録として知られるのが、今はフランスの都市になっているシュトラスブルク（ストラスブール）のものです。当時、この街はドイツ語圏の一部でした。
 
-カトリック教会のポータルサイトによると、神学者のマンフレート・ベッカー＝フベルティは、シュトラスブルクで最初のクリスマスツリーが飾られたのを1605年としています。まだろうそくは付いていませんでした（[katholisch.de：もみの木の勝利](https://katholisch.de/artikel/7286-siegeszug-eines-nadelholzes)）。1539年にシュトラスブルクの大聖堂にツリーが立てられたという記録を挙げる説明もあり、「最初の1本」については、資料によって説明が分かれています（[katholisch.de：もみの木の勝利](https://katholisch.de/artikel/7286-siegeszug-eines-nadelholzes)）。
+ドイツの科学広報プロジェクト「Wissenschaftsjahr 2022」の解説によると、1605年のシュトラスブルクの記録には、クリスマスに室内にモミの木を立て、紙の飾りやリンゴなどを吊るした習慣が記されています（[Wissenschaftsjahr：クリスマスツリーの伝統はどこから？](https://www.wissenschaftsjahr.de/2022/fragen/antworten/detailansicht/woher-kommt-die-tradition-mit-dem-weihnachtsbaum.html)）。これは最初の1本を確定するものではありません。1539年にシュトラスブルクの大聖堂にツリーが立てられたという記録を挙げる説明もあり、「最初の1本」については、資料によって説明が分かれています（[katholisch.de：もみの木の勝利](https://katholisch.de/artikel/7286-siegeszug-eines-nadelholzes)）。
 
 ストラスブールは、今でもクリスマスマーケットで有名な街です。週末旅行のガイドは「[ストラスブール週末旅行](/germany/ja/living/strasbourg-weekend-trip/)」で紹介しています。
 

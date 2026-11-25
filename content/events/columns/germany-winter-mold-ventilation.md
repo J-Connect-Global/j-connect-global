@@ -34,9 +34,9 @@ last_verified: "2026-10-26"
 canonical_url: "/germany/ja/events/columns/germany-winter-mold-ventilation/"
 official_url: "https://www.umweltbundesamt.de/themen/gesundheit/umwelteinfluesse-auf-den-menschen/schimmel/wie-luefte-ich-richtig-tipps-tricks-zur"
 image: "/assets/img/events/germany-winter-mold-ventilation.webp"
-image_alt: "冬の朝、部屋の窓を大きく開けて換気する人を描いたイラスト"
-image_caption: "イラスト：J-Connect。冬の換気のテーマを表したもので、特定の住宅を再現していません。"
-image_credit: "Illustration / J-Connect"
+image_alt: "冬の朝、暖房器具の上の窓を大きく開けて換気する人と湿度計"
+image_caption: "AI生成の編集イメージ。実際の人物・住宅を撮影したものではありません。"
+image_credit: "J-Connect編集部（AI生成画像）"
 ---
 
 # ドイツの冬のカビ・結露対策｜換気・暖房・湿度の目安と、カビが出たときの対処

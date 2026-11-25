@@ -16,10 +16,11 @@
       "2": 111,
       "3": 2
     },
-    "visually_reviewed_and_redesigned_inline_references": 8,
-    "pending_visual_review_inline_references": 220,
-    "body_media_assets_redesigned": 8,
-    "off_topic_inline_image_references_removed": 1
+    "visually_reviewed_and_redesigned_inline_references": 9,
+    "pending_visual_review_inline_references": 216,
+    "body_media_assets_redesigned": 9,
+    "off_topic_inline_image_references_removed": 1,
+    "visually_reviewed_retained_inline_references": 3
   },
   "reused_inline_assets": [
     {
@@ -194,7 +195,7 @@
           "caption": "図解：J-Connect。LVR地域研究所とケルン市の資料に基づく（2026年10月26日参照）。",
           "line": 70,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         },
         {
@@ -203,7 +204,7 @@
           "caption": "図解：J-Connect。LVR地域研究所の解説に基づく概略図で、正確な境界を示すものではありません。",
           "line": 102,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         }
       ]
@@ -2058,11 +2059,11 @@
       "media": [
         {
           "src": "/assets/images/events/nrw-ice-rinks-2026-27-seasons.svg",
-          "alt": "ケルン旧市街のリンクが2026年11月23日から2027年1月10日まで、エッセン・ツォルフェアアインのリンクが12月5日から1月6日まで開くことと、NRW州のクリスマス休暇（12月23日〜1月6日）の重なりを示す図。12月24日・25日はどちらも休み",
+          "alt": "デュッセルドルフ、ケルン、エッセンの開催期間と冬休みの重なりを示す図",
           "caption": "図解：J-Connect。各リンクの公式サイトと、NRW州の学校休暇の案内に基づく（2026年11月1日参照）。",
           "line": 53,
           "position": 2,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "redesigned_and_visual_review_passed",
           "priority": "P1"
         },
         {
@@ -2071,7 +2072,7 @@
           "caption": "図解：J-Connect。各リンクの公式サイトの2026/27年料金に基づく（2026年11月1日参照）。手数料や割引の条件は公式サイトで確認してください。",
           "line": 102,
           "position": 3,
-          "quality_status": "pending_per_asset_visual_review",
+          "quality_status": "visually_reviewed_acceptable_existing_content",
           "priority": "P1"
         }
       ]

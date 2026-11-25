@@ -34,9 +34,9 @@ last_verified: "2026-10-26"
 canonical_url: "/germany/ja/events/columns/rhineland-carnival-11-11/"
 official_url: "https://www.stadt-koeln.de/artikel/08212/index.html"
 image: "/assets/img/events/rhineland-carnival-11-11.webp"
-image_alt: "カラフルな仮装をした人々でにぎわう、ラインラントの旧市街の通りを描いたイラスト"
-image_caption: "イラスト：J-Connect。カーニバルの始まりのテーマを表したもので、特定の催しを再現していません。"
-image_credit: "Illustration / J-Connect"
+image_alt: "ラインラントの旧市街で赤や金の仮装をしてカーニバルを楽しむ人々"
+image_caption: "AI生成の編集イメージ。実際の人物・場所・催しを撮影したものではありません。"
+image_credit: "J-Connect編集部（AI生成画像）"
 ---
 
 # なぜカーニバルは11月11日11時11分に始まる？｜ケルンとデュッセルドルフの「第5の季節」

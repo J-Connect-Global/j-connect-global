@@ -1,13 +1,13 @@
 ---
 id: "L048"
-title: "DHLが配達済みなのに届かない（ドイツ）｜最初の5分で見る場所と問い合わせ先"
+title: "ドイツでDHLの荷物が届かない｜配達済み・追跡が止まった時の問い合わせ先"
 slug: "dhl-delivered-but-not-received"
 category: "暮らし・買い物"
 summary: "DHL Paketで配達済みなのに荷物がない場合の確認順序を解説。追跡の受取人・返送履歴、隣人・置き配・ロッカー、販売店への連絡、複数個口の一部未着、遅延との違いを整理します。"
 status: "published"
 published: true
 published_at: "2026-10-19"
-updated_at: "2026-11-14"
+updated_at: "2026-11-25"
 last_verified: "2026-11-14"
 article_standard: "2026-11"
 next_review: "2027-01-19"
@@ -30,7 +30,7 @@ official_sources:
     url: "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/worauf-sie-achten-sollten-wenn-sie-ein-paket-verschicken-12323"
 ---
 
-# DHLが配達済みなのに届かない（ドイツ）｜最初の5分で見る場所と問い合わせ先
+# ドイツでDHLの荷物が届かない｜配達済み・追跡が止まった時の問い合わせ先
 
 DHLの追跡に「配達済み」と出ても、自分の手元に荷物がないことがあります。ドイツで通販を利用する人に向けて、受取人や返送履歴の確認から、販売店・DHLへの連絡までを整理します。この記事はドイツのDHL Paketを中心とした案内で、DHL Expressや他の配送会社の荷物は、それぞれの追跡・窓口を使ってください。
 

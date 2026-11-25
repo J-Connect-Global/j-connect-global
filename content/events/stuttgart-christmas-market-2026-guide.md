@@ -26,7 +26,7 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-11-01"
-updated_at: "2026-11-23"
+updated_at: "2026-11-25"
 last_verified: "2026-11-01"
 canonical_url: "/germany/ja/events/stuttgart-christmas-market-2026-guide/"
 official_url: "https://www.stuttgarter-weihnachtsmarkt.de/"
@@ -46,9 +46,9 @@ image_credit: "Wikimedia Commons / Heinz Bunse / CC BY-SA 2.0"
 
 公式サイトは、この市を300年以上の伝統を持つ、ドイツでも指折りの古いクリスマスマーケットの一つだと紹介しています。時代とともに屋台の品ぞろえは広がりましたが、木のおもちゃやクリッペ（キリスト降誕の飾り）の人形、手工芸品など、昔ながらの品は今も並んでいます。
 
-現在は毎年350万〜400万人が訪れる大きな市に成長し、約1,500人が直接・間接に市の運営に関わっています。[公式サイトの数字で見る紹介](https://www.stuttgarter-weihnachtsmarkt.de/en/general/interesting-facts/)
+現在は毎年数百万人が訪れる大きな市に成長し、約1,500人が直接・間接に市の運営に関わっています。[公式サイトの数字で見る紹介](https://www.stuttgarter-weihnachtsmarkt.de/en/general/interesting-facts/)
 
-![1507年の屋台使用料の権利、その後に生まれたクリスマス前の火曜から土曜の幼子キリストの市、1692年の最初の記録、現在の約250の屋台と年間350万〜400万人の来場、2026年11月25日の開幕を並べた年表](/assets/images/events/stuttgart-christmas-market-history.svg "図解：J-Connect。公式サイトの資料に基づく（2026年10月31日参照）。")
+![1507年の屋台使用料の権利、その後に生まれたクリスマス前の火曜から土曜の幼子キリストの市、1692年の最初の記録、現在の約250の屋台と年間数百万人の来場、2026年11月25日の開幕を並べた年表](/assets/images/events/stuttgart-christmas-market-history.svg "図解：J-Connect。公式サイトの資料に基づく（2026年10月31日参照）。")
 
 
 ## 主役は、屋台の屋根

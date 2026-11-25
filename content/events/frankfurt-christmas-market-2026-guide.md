@@ -8,6 +8,8 @@ summary: "2026年11月23日〜12月22日のフランクフルト・クリスマ�
 official_sources:
   - title: "フランクフルト観光局：フランクフルト・クリスマスマーケット（2026年の日程・営業時間・プログラム）"
     url: "https://www.visitfrankfurt.travel/erleben/feste-und-veranstaltungen/frankfurter-weihnachtsmarkt"
+  - title: "フランクフルト観光局：2026年プレス発表（屋台数・開幕プログラム）"
+    url: "https://www.visitfrankfurt.travel/presse/pressemeldungen/details/frankfurter-weihnachtsmarkt-2026"
   - title: "フランクフルト観光局：クリスマスマーケットのプレス発表（1393年からの記録）"
     url: "https://www.visitfrankfurt.travel/presse/pressemeldungen/details/frankfurter-weihnachtsmarkt-2024"
   - title: "フランクフルト市統計局：クリスマスの歴史と習慣（ベートマンヒェンの由来）"
@@ -16,13 +18,13 @@ related_articles: ["gluehwein-christmas-market-guide", "christmas-tree-origin-ge
 city: "フランクフルト"
 location: "旧市庁舎前のレーマーベルク広場、パウルス広場、ハウプトヴァッヘ周辺、マイン川沿いほか"
 event_date: "2026-11-23〜2026-12-22"
-next_review: "2026-11-22"
+next_review: "2026-12-23"
 tags: ["クリスマスマーケット", "フランクフルト", "ヘッセン", "2026年11月", "2026年12月", "アドベント"]
 published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-11-01"
-updated_at: "2026-11-23"
+updated_at: "2026-11-25"
 last_verified: "2026-11-01"
 canonical_url: "/germany/ja/events/frankfurt-christmas-market-2026-guide/"
 official_url: "https://www.visitfrankfurt.travel/erleben/feste-und-veranstaltungen/frankfurter-weihnachtsmarkt"
@@ -51,9 +53,9 @@ image_credit: "Wikimedia Commons / Matti Blume / CC BY-SA 4.0"
 
 市の中心は、旧市庁舎「レーマー」と、三角屋根の木組みの家並みに囲まれたレーマーベルク広場です。広場には毎年大きなクリスマスツリーが立ち、開幕の夕方に初めて明かりがともります。
 
-屋台は広場の中だけでなく、北の繁華街ハウプトヴァッヘやロスマルクト広場から、パウルス教会の前のパウルス広場、レーマーベルク広場を通り、マイン川沿いまで続きます。観光局は230を超える飾りつけの凝った屋台が並ぶと案内しています。川沿いには子ども向けのエリアもあり、街の中心を北から南へ歩きながら、場所ごとに違う雰囲気を楽しめます。[フランクフルト観光局の案内](https://www.visitfrankfurt.travel/erleben/feste-und-veranstaltungen/frankfurter-weihnachtsmarkt)
+屋台は広場の中だけでなく、北の繁華街ハウプトヴァッヘやロスマルクト広場から、パウルス教会の前のパウルス広場、レーマーベルク広場を通り、マイン川沿いまで続きます。観光局の2026年プレス発表では約250の屋台が案内されています。マイン川沿いの子ども向けエリアは2025年に初開催され、2026年は規模を拡大し、工作や遊具、船上プログラムが予定されています。街の中心を北から南へ歩きながら、場所ごとに違う雰囲気を楽しめます。[フランクフルト観光局の案内](https://www.visitfrankfurt.travel/erleben/feste-und-veranstaltungen/frankfurter-weihnachtsmarkt)
 
-レーマーベルク広場に面した旧ニコライ教会では、塔の上から金管楽器の奏者がクリスマスの曲を吹く習慣があります。2026年の公式プログラムでは、開幕日と、その後の毎週水曜・土曜の18時から演奏が予定されています。冷えた空気の中、広場の上から響く音を聞きながらグリューワインを手にする時間は、この市ならではの体験です。グリューワインの決まりごとは[グリューワインのコラム](/germany/ja/events/columns/gluehwein-christmas-market-guide/)で紹介しています。
+レーマーベルク広場に面した旧ニコライ教会では、塔の上から金管楽器の奏者がクリスマスの曲を吹く習慣があります。2026年の開幕日の演奏は、観光局の開幕プログラムでは18時15分から。その後の毎週水曜・土曜は18時からと案内されています。冷えた空気の中、広場の上から響く音を聞きながらグリューワインを手にする時間は、この市ならではの体験です。グリューワインの決まりごとは[グリューワインのコラム](/germany/ja/events/columns/gluehwein-christmas-market-guide/)で紹介しています。
 
 ## 名物は、銀行家の名前がついた焼き菓子
 
@@ -91,3 +93,5 @@ image_credit: "Wikimedia Commons / Matti Blume / CC BY-SA 4.0"
 ## 商人の街が守ってきた、冬の楽しみ
 
 フランクフルトのクリスマスマーケットは、地元の職人と家族のための市として始まり、600年以上かけて街を代表する冬の風景になりました。塔の上から響く金管の音、銀行家の名がついた焼き菓子、求愛の人形の物語。一つひとつに、この街で暮らしてきた人々の冬の記憶が重なっています。
+
+**2026年11月25日追記：** 開催期間・通常営業時間・屋台数・開幕日の演奏時刻を[観光局の2026年プレス発表](https://www.visitfrankfurt.travel/presse/pressemeldungen/details/frankfurter-weihnachtsmarkt-2026)で照合しました。通常の水曜・土曜の演奏は18時からです。

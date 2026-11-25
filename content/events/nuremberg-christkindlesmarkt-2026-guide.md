@@ -26,7 +26,7 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-30"
-updated_at: "2026-11-23"
+updated_at: "2026-11-25"
 last_verified: "2026-10-30"
 canonical_url: "/germany/ja/events/nuremberg-christkindlesmarkt-2026-guide/"
 official_url: "https://www.christkindlesmarkt.de/"
@@ -93,7 +93,7 @@ image_credit: "Wikimedia Commons / DALIBRI / CC BY-SA 4.0"
 | 場所 | 旧市街の中央広場（ハウプトマルクト） |
 | 子どものクリスマス市 | 2026年11月27日〜12月30日（時間は別に設定） |
 
-開幕日の営業終了時刻は、市の案内によって記載が異なります。開幕日に長く滞在する予定なら、直前に公式サイトで確認してください。
+主催者の[公式営業時間](https://www.christkindlesmarkt.de/)では、11月27日の開幕日は10〜22時、通常日は10〜21時、12月24日は10〜14時です（2026年11月25日確認）。
 
 ニュルンベルク中央駅から中央広場までは、旧市街を抜けて徒歩15分ほどです。NRW州からは長距離列車で数時間かかるため、日帰りより1泊以上の旅行として計画するのが現実的です。週末の混雑期はホテルが早く埋まるので、宿は早めに押さえておくと安心です。列車の選び方は[ドイツの鉄道旅行ガイド](/germany/ja/living/germany-train-travel-guide/)、バイエルン州の旅は[ミュンヘン週末旅行ガイド](/germany/ja/living/munich-weekend-trip/)も参考にしてください。
 

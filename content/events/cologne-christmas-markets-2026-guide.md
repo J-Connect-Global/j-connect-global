@@ -28,7 +28,7 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-30"
-updated_at: "2026-11-22"
+updated_at: "2026-11-25"
 last_verified: "2026-11-21"
 canonical_url: "/germany/ja/events/cologne-christmas-markets-2026-guide/"
 official_url: "https://www.koelnerweihnachtsmarkt.com/de/"
@@ -81,7 +81,7 @@ image_credit: "Wikimedia Commons / Franz Gerd Frank / CC BY-SA 4.0"
 | 大聖堂前（ロンカリ広場） | 2026年11月16日（月）〜12月23日（水） | 日〜水11〜21時、木・金11〜22時、土10〜22時。11月22日は休業 |
 | 天使の市場（ノイマルクト） | 2026年11月16日（月）〜12月23日（水） | 日〜木11〜21時、金・土11〜22時。11月22日は休業 |
 | 旧市街（アルター・マルクト） | 11月23日〜12月23日 | 毎日11〜22時 |
-| 旧市街（ホイマルクト） | 11月23日〜2027年1月10日 | 11〜22時、12月26日以降は主催者の営業時間ページで確認。12月24・25日休業 |
+| 旧市街（ホイマルクト） | 11月23日〜2027年1月10日 | 11〜22時、12月31日以降は11〜21時。12月24・25日休業（2026年11月25日確認） |
 
 ![大聖堂前と天使の市場は2026年11月16日から12月23日まで（11月22日は休業）、旧市街の市は11月23日開始予定で、スケートリンクのある会場は2027年1月10日まで続く予定であることを示す図](/assets/images/events/cologne-christmas-markets-2026-periods.svg "図解：J-Connect。主催者、ケルン観光局、koeln.deの案内に基づく（2026年10月30日参照）。")
 

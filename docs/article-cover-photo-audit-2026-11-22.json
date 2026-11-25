@@ -7,7 +7,7 @@
     "originally_described_as_illustration": 103,
     "committed_to_draft_pr_in_window": 21,
     "committed_to_draft_pr_prior_day": 1,
-    "remaining_illustration_descriptions_needing_photo_review": 82,
+    "remaining_illustration_descriptions_needing_photo_review": 79,
     "manual_check_existing_image": 0,
     "mismatched_image_url": 0,
     "wave2_completed_in_window": 7,
@@ -15,7 +15,8 @@
     "manual_visual_reviewed": 11,
     "manual_unique_replacements_needed": 8,
     "manual_visually_acceptable_provenance_pending": 3,
-    "remaining_total_in_window_unresolved": 93
+    "remaining_total_in_window_unresolved": 90,
+    "wave4_ready_pending_ci": 3
   },
   "notes": [
     "2026-11-23 wave3 adds five source-verified archival covers. Previously illustrated candidates: 82 remain. All 11 pre-existing non-illustration cover candidates visually reviewed: 8 need unique, topic-relevant replacements and 3 are visually acceptable but still require provenance/disclosure checks.",
@@ -24,7 +25,8 @@
     "On 2026-11-23, branch incorporated newly published Neuss market article and images from main. Rebuilt pages and content registry on branch. Final PR checks and production publication are tracked separately.",
     "Preserve accurate existing licensed photos and meaningful in-article explanatory diagrams. Do not reuse unrelated photos across unrelated topics.",
     "Externally sourced photos require original file URL, author, license, modification log and historical capture context. AI-generated imagery must be transparently labeled as an editorial illustration, not a documentary photograph.",
-    "As of this wave, 87 previously illustrated in-window articles remain candidates for manual assessment; 11 further photo checks remain. A good original photograph need not be replaced."
+    "As of this wave, 87 previously illustrated in-window articles remain candidates for manual assessment; 11 further photo checks remain. A good original photograph need not be replaced.",
+    "Wave 4: three AI-generated photo-style covers with explicit disclosure; publication pending CI. Counts represent work prepared, not live deployment."
   ],
   "entries": [
     {
@@ -200,9 +202,9 @@
       "canonical": "/germany/ja/events/nrw-ice-rinks-winter-2026-27/",
       "currently_configured_image": "/assets/img/events/nrw-ice-rinks-winter-2026-27.webp",
       "image_url_mismatch": false,
-      "alt": "夜の工場の煙突と炉のシルエットを背に、親子が光に照らされた細長いスケートリンクを滑る様子を描いたイラスト",
-      "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "alt": "冬の街の屋外スケートリンクで家族が滑る様子",
+      "status": "wave4_ai_photo_ready_pending_ci",
+      "priority": "P1_completed_pending_ci"
     },
     {
       "slug": "st-martin-day-germany",
@@ -390,9 +392,9 @@
       "canonical": "/germany/ja/events/columns/germany-winter-mold-ventilation/",
       "currently_configured_image": "/assets/img/events/germany-winter-mold-ventilation.webp",
       "image_url_mismatch": false,
-      "alt": "冬の朝、部屋の窓を大きく開けて換気する人を描いたイラスト",
-      "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "alt": "冬の朝、暖房器具の上の窓を大きく開けて換気する人と湿度計",
+      "status": "wave4_ai_photo_ready_pending_ci",
+      "priority": "P1_completed_pending_ci"
     },
     {
       "slug": "rhineland-carnival-11-11",
@@ -403,9 +405,9 @@
       "canonical": "/germany/ja/events/columns/rhineland-carnival-11-11/",
       "currently_configured_image": "/assets/img/events/rhineland-carnival-11-11.webp",
       "image_url_mismatch": false,
-      "alt": "カラフルな仮装をした人々でにぎわう、ラインラントの旧市街の通りを描いたイラスト",
-      "status": "requires_photographic_cover_review",
-      "priority": "P1"
+      "alt": "ラインラントの旧市街で赤や金の仮装をしてカーニバルを楽しむ人々",
+      "status": "wave4_ai_photo_ready_pending_ci",
+      "priority": "P1_completed_pending_ci"
     },
     {
       "slug": "duesseldorf-european-week-waste-reduction-2026",
@@ -1589,6 +1591,6 @@
       "priority": "P3"
     }
   ],
-  "updated_at": "2026-11-22",
+  "updated_at": "2026-11-25",
   "status": "working_draft_10_covers_committed_no_main_merge"
 }

@@ -16,15 +16,15 @@
       "2": 111,
       "3": 2
     },
-    "visually_reviewed_and_redesigned_inline_references": 24,
+    "visually_reviewed_and_redesigned_inline_references": 25,
     "pending_visual_review_inline_references": 0,
-    "body_media_assets_redesigned": 24,
+    "body_media_assets_redesigned": 25,
     "off_topic_inline_image_references_removed": 1,
     "visually_reviewed_retained_inline_references": 27,
     "visually_reviewed_redesign_pending": 0,
     "visually_screened_no_obvious_render_failure_inline_references": 176,
-    "visually_screened_followup_needed_inline_references": 1,
-    "followup_replaced_with_accessible_html_table": 0
+    "visually_screened_followup_needed_inline_references": 0,
+    "followup_replaced_with_accessible_html_table": 1
   },
   "reused_inline_assets": [
     {
@@ -4087,7 +4087,7 @@
           "caption": "出生前後の主な手続き。出生証明書を受け取ってから、保険・手当・日本の出生届が続きます。",
           "line": 68,
           "position": 3,
-          "quality_status": "redesign_draft_pending_render",
+          "quality_status": "redesigned_and_visual_review_passed",
           "priority": "P3",
           "visual_screening": {
             "date": "2026-11-25",
@@ -4097,10 +4097,12 @@
             "note": "Very dense portrait birth infographic; supply readable text and/or enlarged accessible version; check provenance"
           },
           "followup_resolution": {
-            "status": "new_svg_and_accessible_table_pending_render_and_CI",
+            "status": "new_svg_and_accessible_table_visual_passed_pending_CI",
             "new_src": "/assets/images/living/birth-registration-foreign-spouse-checklist.svg",
-            "note": "CI requires two body images; retain readable table and add a concise original SVG. Shared old image remains elsewhere; no provenance claim."
-          }
+            "blob_sha": "3b7ca5e52cd553078d0f2afbd2a63efc1a832dbe",
+            "note": "Exact SHA verified; Chromium desktop 600px and mobile 360px manually inspected, no clipped text. Shared old image remains in other article. No specialist approval implied."
+          },
+          "reviewed_at": "2026-11-25"
         }
       ]
     },
@@ -4539,5 +4541,5 @@
     "2026-11-25: all 183 previously unreviewed assets visually screened from exact rendered files. 7 require visual/content-utility follow-up. Visual review is not factual or legal approval. 5 priority redesigns passed desktop/mobile preview; 2 corrected after preview and need re-render. Evidence: workflow 45704843207 artifact 15063214119.",
     "2026-11-25 followup: six exact Git-blob SVGs visually inspected at 600 and 360 pixels. Birth graphic embedded reference replaced with accessible HTML table in foreign-spouse article; original asset retained for other usage. Inventory original counts remain historical snapshot. Publication subject to CI."
   ],
-  "last_wave": "2026-11-25 six rendered SVGs; birth overview SVG + table pending exact visual QA"
+  "last_wave": "2026-11-25 all seven followups visual passed; birth overview and accessible table"
 }

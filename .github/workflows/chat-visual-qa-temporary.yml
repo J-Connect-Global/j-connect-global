@@ -3,10 +3,13 @@ on:
   push:
     branches:
       - chat/diagnostic-visual-qa-20261125
+  pull_request:
+    types: [opened, synchronize, reopened]
 permissions:
   contents: read
 jobs:
   visual-qa:
+    if: github.event_name == 'push' || github.head_ref == 'chat/diagnostic-visual-qa-20261125'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -39,6 +42,26 @@ jobs:
             if(!d.naturalWidth||!d.naturalHeight)throw new Error(m.src+' decode failed');
             report.push({...d,src:m.src});
           }
+          fs.mkdirSync(process.env.RUNNER_TEMP+'/jconnect-visual-qa',{recursive:true});
+          const out=process.env.RUNNER_TEMP+'/jconnect-visual-qa';
+          for(const m of items) {
+            const source=m.src.replace(/^\//,'');
+            if(!fs.existsSync(source))continue;
+            const dest=path.join(out,source);
+            fs.mkdirSync(path.dirname(dest),{recursive:true});
+            fs.copyFileSync(source,dest);
+          }
+          const cover=JSON.parse(fs.readFileSync('docs/article-cover-photo-audit-2026-11-22.json','utf8'));
+          fs.writeFileSync(out+'/body-audit.json',JSON.stringify(audit,null,2));
+          fs.writeFileSync(out+'/cover-audit.json',JSON.stringify(cover,null,2));
+          for(const a of audit.articles) {
+            for(const source of [a.hero,a.markdown_path].filter(Boolean).map(x=>x.replace(/^\//,''))) {
+              if(!fs.existsSync(source))continue;
+              const dest=path.join(out,source);
+              fs.mkdirSync(path.dirname(dest),{recursive:true});
+              fs.copyFileSync(source,dest);
+            }
+          }
           for(const [label,width] of [['desktop',600],['mobile',360]]) {
             for(let i=0;i<selected.length;i+=2) {
               const chunk=selected.slice(i,i+2);
@@ -47,10 +70,17 @@ jobs:
               await page.setContent(h);
               await page.locator('img').evaluateAll(xs=>Promise.all(xs.map(x=>x.decode())));
               const jpeg=await page.screenshot({type:'jpeg',quality:88,fullPage:true});
-              const s=jpeg.toString('base64');
-              for(let j=0;j<s.length;j+=5000) console.log('VISUAL_QA_'+label+'_'+i+'_'+j+'='+s.slice(j,j+5000));
+              fs.writeFileSync(out+'/'+label+'-'+i+'.jpg',jpeg);
             }
           }
           console.log('VISUAL_QA_REPORT='+JSON.stringify(report));
           await browser.close();
           NODE
+      - name: Save visual QA and source asset snapshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chat-visual-qa-assets
+          path: ${{ runner.temp }}/jconnect-visual-qa
+          retention-days: 3
+          if-no-files-found: error

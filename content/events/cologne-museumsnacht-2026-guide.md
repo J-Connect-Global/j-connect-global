@@ -12,8 +12,8 @@ official_sources:
     url: "https://koelner-museumsnacht.de/programm/"
   - title: "ケルン市：ケルン・ミュージアムナイト2026"
     url: "https://www.stadt-koeln.de/leben-in-koeln/veranstaltungen/daten/41384/index.html"
-  - title: "アート・ケルン：ミュージアムナイトとの連携"
-    url: "https://www.artcologne.com/for-visitors/events/museumsnacht/"
+  - title: "ミュージアムナイト公式FAQ：アート・ケルンとの券の連携"
+    url: "https://koelner-museumsnacht.de/faqs/"
 related_articles: ["art-cologne-2026-guide", "cologne-christmas-markets-2026-guide", "cologne-east-asian-art-museum-2026", "cologne-cathedral-632-years"]
 city: "ケルン"
 location: "市内の美術館・博物館と臨時会場"
@@ -24,7 +24,7 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-10-30"
-updated_at: "2026-10-30"
+updated_at: "2026-11-25"
 last_verified: "2026-10-30"
 canonical_url: "/germany/ja/events/cologne-museumsnacht-2026-guide/"
 official_url: "https://koelner-museumsnacht.de/"
@@ -35,6 +35,8 @@ image_credit: "Illustration / J-Connect"
 ---
 
 # ケルン・ミュージアムナイト2026｜1枚の券で、夜の美術館と街をめぐる
+
+**2026年の開催は終了しました。以下は当年の記録です。**
 
 2026年11月7日（土）の夜、ケルンの美術館や博物館が18時から翌1時まで開く「ケルン・ミュージアムナイト」が開かれます。ふだん美術館に行く時間が取れない人や、ドイツ語の解説に自信がなくても街の文化に触れてみたい人に向けて、この夜ならではの楽しみ方と、共通券で回れる施設の違いを紹介します。券の値段や移動手段も整理しました。
 
@@ -48,7 +50,7 @@ image_credit: "Illustration / J-Connect"
 
 2026年のミュージアムナイトは、主催者が「新しいコンセプト」で戻ってくると紹介しています。公式サイトでは、市内の主要な美術館・博物館12館に加え、約20か所の臨時会場（ポップアップ会場）が参加するとしています。ケルン市の案内では11館と最大25か所としており、数は案内によって少し異なります。[公式サイト](https://koelner-museumsnacht.de/)
 
-同じ週末には、世界で最も歴史のある現代美術見本市の一つ「アート・ケルン」も開かれます。アート・ケルンは自らを「13番目の美術館」としてミュージアムナイトに参加し、どちらかの有効な入場券があれば、もう一方の券を無料で受け取れる仕組みです。[アート・ケルンの案内](https://www.artcologne.com/for-visitors/events/museumsnacht/) 見本市の楽しみ方は[アート・ケルン2026の記事](/germany/ja/events/art-cologne-2026-guide/)で紹介しています。
+同じ週末には、世界で最も歴史のある現代美術見本市の一つ「アート・ケルン」も開かれます。主催者のFAQによると、両催しの有効な券を持つ人は、11月7日に指定窓口で別の無料入場券を受け取れる仕組みでした。ミュージアムナイト券でアート・ケルンを訪れる場合は、見本市南入口のCounter 1で16〜19時に交換する必要がありました。直接入場はできませんでした。[主催者のFAQ](https://koelner-museumsnacht.de/faqs/) 見本市の楽しみ方は[アート・ケルン2026の記事](/germany/ja/events/art-cologne-2026-guide/)で紹介しています。
 
 ## 性格の違う館を組み合わせる
 
@@ -66,7 +68,7 @@ image_credit: "Illustration / J-Connect"
 
 ## 移動も含めて、夜の街を楽しむ
 
-会場は市内に散らばっているため、主催者は市内の交通会社による臨時のシャトルバスを用意し、ノイマルクト、ライン川沿いのラインアウハーフェン、ライン川東岸のドイツ地区（Deutz）、ポル地区（Poll）を結びます。入場券には、ケルン周辺の交通連合の区域内で公共交通を使う乗車券も含まれると案内されています。
+会場は市内に散らばっているため、主催者は市内の交通会社による臨時のシャトルバスを用意し、ノイマルクト、ライン川沿いのラインアウハーフェン、ライン川東岸のドイツ地区（Deutz）、ポル地区（Poll）を結びます。入場券には、ケルン周辺の交通連合VRSの乗車券も含まれ、11月7日14時から翌日10時まで有効でした。利用前に乗車券の本人情報を登録する必要がありました。[主催者のFAQ](https://koelner-museumsnacht.de/faqs/)
 
 全部を回ろうとすると、移動と行列で終わってしまいます。見たい館を2〜3か所に絞り、残りは歩きながら気になった場所に入る、くらいの計画が楽しみやすいでしょう。夜遅くまで開いているとはいえ、人気の館は早い時間ほど混み合う傾向があります。
 

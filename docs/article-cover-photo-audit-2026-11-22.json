@@ -15,11 +15,12 @@
     "manual_visual_reviewed": 11,
     "manual_unique_replacements_needed": 8,
     "manual_visually_acceptable_provenance_pending": 3,
-    "remaining_total_in_window_unresolved": 90,
+    "remaining_total_in_window_unresolved": 89,
     "wave4_ready_pending_ci": 3,
     "visual_screening_20261125": 89,
-    "missing_configured_cover_20261125": 1,
-    "wave5_committed_pending_CI": 1
+    "missing_configured_cover_20261125": 0,
+    "wave5_committed_pending_CI": 0,
+    "wave5_merged": 1
   },
   "notes": [
     "2026-11-23 wave3 adds five source-verified archival covers. Previously illustrated candidates: 82 remain. All 11 pre-existing non-illustration cover candidates visually reviewed: 8 need unique, topic-relevant replacements and 3 are visually acceptable but still require provenance/disclosure checks.",
@@ -32,7 +33,8 @@
     "Wave 4: three AI-generated photo-style covers with explicit disclosure; publication pending CI. Counts represent work prepared, not live deployment.",
     "2026-11-25: manually inspected 89 exact cover assets; one configured path null (Bad Wildungen), needs repair. 79 illustration candidates include the null path, 8 replacement candidates, 3 acceptable but provenance pending. Duplicate hashes confirmed for three clusters: birth/newborn/Kindergeld calendar, certified translation/tax prepayment, dental supplementary insurance/family vaccination. Not yet replaced; no count inflation. Evidence: Actions run 45704843207.",
     "Wave5 Bad Wildungen missing cover repaired with original licensed 2017 photograph; source and 4 image hashes verified. CI and publication pending; unresolved count retained until merge.",
-    "Wave5 optimized derivative set from 330726 to 171244 bytes; no image-budget increase. Rebased on main after #538."
+    "Wave5 optimized derivative set from 330726 to 171244 bytes; no image-budget increase. Rebased on main after #538.",
+    "Wave5 #540 exact-head CI passed; merged 2e8444415132dea0ec8a2cb3b7ec2149b708b327. One cover resolved, live verification separate."
   ],
   "entries": [
     {
@@ -524,8 +526,8 @@
       "currently_configured_image": "/assets/img/living/bad-wildungen-weekend-trip.webp",
       "image_url_mismatch": false,
       "alt": "南側から眺めたバート・ヴィルドゥンゲンの旧市街とフリードリヒシュタイン城（2017年撮影）",
-      "status": "licensed_photo_committed_pending_CI",
-      "priority": "P2",
+      "status": "licensed_photo_merged",
+      "priority": "P2_completed",
       "visual_screening": {
         "date": "2026-11-25",
         "method": "Manual contact-sheet inspection of exact repository assets",
@@ -555,20 +557,14 @@
           {
             "path": "assets/img/living/bad-wildungen-weekend-trip-og.jpg",
             "blob_sha": "da9e881f155b2e32c1ed399af6ffdd5ddda1ca95"
-          },
-          {
-            "path": "content/living/bad-wildungen-weekend-trip.md",
-            "blob_sha": "1b5a28ef415170da20f6afbff085d5406a2e8414"
-          },
-          {
-            "path": "content/article-photo-credits.json",
-            "blob_sha": "b3a83bd8aa0d3f24a28a7a69319ce2e16b277557"
           }
         ],
         "source_run": 45710904417,
-        "visual_status": "Optimized hero and OG inspected; 171244 bytes total, source SHA unchanged; CI/publication pending",
+        "visual_status": "Exact-head CI and browser smoke passed; merged to main, production verification separate",
         "optimization_run": 45711604444,
-        "optimized_total_bytes": 171244
+        "optimized_total_bytes": 171244,
+        "merge_commit": "2e8444415132dea0ec8a2cb3b7ec2149b708b327",
+        "ci_run": 45712007317
       }
     },
     {

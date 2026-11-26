@@ -3,8 +3,8 @@ slug: "frankfurt-christmas-market-2026-guide"
 id: "E030"
 content_type: "event"
 category: "季節行事"
-title: "フランクフルトのクリスマスマーケット2026｜日程・営業時間と名物ベートマンヒェン"
-summary: "2026年11月23日〜12月22日のフランクフルト・クリスマスマーケットを案内。1393年から続く市の歴史、名物の焼き菓子ベートマンヒェンとプラム人形、営業時間を紹介します。"
+title: "フランクフルト クリスマスマーケット2026｜11月23日〜12月22日・営業時間・会場"
+summary: "2026年11月23日〜12月22日、月〜土曜10〜21時・日曜11〜21時、入場無料。レーマーベルク広場など主な会場、約250の屋台、名物ベートマンヒェン、子ども向けエリアを紹介します。"
 official_sources:
   - title: "フランクフルト観光局：フランクフルト・クリスマスマーケット（2026年の日程・営業時間・プログラム）"
     url: "https://www.visitfrankfurt.travel/erleben/feste-und-veranstaltungen/frankfurter-weihnachtsmarkt"
@@ -24,7 +24,7 @@ published: true
 status: "published"
 source_type: "manual"
 published_at: "2026-11-01"
-updated_at: "2026-11-25"
+updated_at: "2026-11-26"
 last_verified: "2026-11-01"
 canonical_url: "/germany/ja/events/frankfurt-christmas-market-2026-guide/"
 official_url: "https://www.visitfrankfurt.travel/erleben/feste-und-veranstaltungen/frankfurter-weihnachtsmarkt"
@@ -34,9 +34,11 @@ image_caption: "2024年に撮影されたフランクフルトの会場風景。
 image_credit: "Wikimedia Commons / Matti Blume / CC BY-SA 4.0"
 ---
 
-# フランクフルトのクリスマスマーケット2026｜日程・営業時間と名物ベートマンヒェン
+# フランクフルト クリスマスマーケット2026｜11月23日〜12月22日・営業時間・会場
 
 ヘッセン州フランクフルトのクリスマスマーケットは、1393年までさかのぼる記録を持つ、ドイツでも指折りの古い冬の市です。2026年は11月23日（月）から12月22日（火）まで、旧市庁舎「レーマー」の前の広場を中心に開かれます。空港や中央駅を使う機会の多い人、週末に少し足を延ばして本場のマーケットを見たい人に向けて、市の歴史と名物、2026年の日程と営業時間を紹介します。
+
+**2026年の開催情報**：11月23日（月）〜12月22日（火）、月〜土曜10:00〜21:00・日曜11:00〜21:00。入場無料です。中心会場はレーマーベルク広場。詳しくは本文の「2026年の開催情報」をご覧ください。時間は当日の公式案内も確認してください。
 
 ## 金融の街に残る、600年以上の市の記憶
 

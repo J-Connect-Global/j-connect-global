@@ -12,8 +12,8 @@ official_sources:
     url: "https://www.sternsinger.de/presse/pressemitteilungen/detail/sternsingerinnen-und-sternsinger-feiern-in-muenster-die-eroeffnung-ihrer-aktion-dreikoenigssingen-2027/"
   - title: "シュテルンジンガー：2026年の募金結果"
     url: "https://www.sternsinger.de/sternsingen/sammelergebnis-2026/"
-  - title: "カトリック教会ポータル（katholisch.de）：C+M+B"
-    url: "https://katholisch.de/lexikon/897-cmb"
+  - title: "Kindermissionswerk Die Sternsinger：FAQ"
+    url: "https://www.sternsinger.de/sternsingen/faq/"
   - title: "カトリック教会ポータル（katholisch.de）：家の祝福の歴史"
     url: "https://katholisch.de/artikel/42843-aelter-als-die-sternsinger-die-geschichte-der-haussegnung"
   - title: "ドイツ・ユネスコ委員会：シュテルンジンゲン（無形文化遺産）"
@@ -67,7 +67,7 @@ image_credit: "Illustration / J-Connect"
 
 子どもたちがドアの上に書いていく「20*C+M+B+27」。真ん中の「C+M+B」には、2つの読み方があります。
 
-カトリック教会のポータルサイトによると、今の一般的な解釈は、ラテン語の祈りの言葉「**Christus mansionem benedicat**（キリストがこの家を祝福しますように）」の頭文字です。一方で、昔は三賢王の名前、**カスパール（Caspar）、メルヒオール（Melchior）、バルタザール（Balthasar）**の頭文字と考えられていました（[katholisch.de：C+M+B](https://katholisch.de/lexikon/897-cmb)）。
+主催団体の公式FAQによると、現在の解釈は、ラテン語の祈りの言葉「**Christus mansionem benedicat**（キリストがこの家を祝福しますように）」の頭文字です。一方で、昔は三賢王の名前、**カスパール（Caspar）、メルヒオール（Melchior）、バルタザール（Balthasar）**の頭文字と考えられていました（[Die Sternsinger：FAQ](https://www.sternsinger.de/sternsingen/faq/)）。
 
 前と後ろの数字は、その年の西暦です。2027年なら、前に「20」、後ろに「27」と書きます。「+」の印は、キリストの十字架を表すとされます（[katholisch.de：家の祝福の歴史](https://katholisch.de/artikel/42843-aelter-als-die-sternsinger-die-geschichte-der-haussegnung)）。このしるしは、1年間その家を守る祝福として、次の年まで消さずに残しておく家庭が多いようです。
 
@@ -105,7 +105,7 @@ image_credit: "Illustration / J-Connect"
 - [シュテルンジンガー：2026年の募金結果](https://www.sternsinger.de/sternsingen/sammelergebnis-2026/)
 - [シュテルンジンガー：シュテルンジンゲンは無形文化遺産](https://www.sternsinger.de/nachrichten/sternsingen-ist-immaterielles-kulturerbe/)
 - [ドイツ・ユネスコ委員会：シュテルンジンゲン](https://www.unesco.de/staette/sternsingen/)
-- [katholisch.de：C+M+B](https://katholisch.de/lexikon/897-cmb)
+- [Die Sternsinger：FAQ](https://www.sternsinger.de/sternsingen/faq/)
 - [katholisch.de：家の祝福の歴史](https://katholisch.de/artikel/42843-aelter-als-die-sternsinger-die-geschichte-der-haussegnung)
 - [ケルン大聖堂：東方三博士の巡礼](https://www.koelner-dom.de/dreikoenigswallfahrt)
 

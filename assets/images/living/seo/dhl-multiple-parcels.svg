@@ -1,1 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img"><title>一つの注文でも、箱は別々</title><rect width="1200" height="675" fill="#F4F3ED"/><g font-family="Noto Sans CJK JP, Noto Sans JP, sans-serif"><text x="48" y="50" font-size="23" fill="#146859">J-CONNECT  /  暮らしのメモ</text><text x="48" y="128" font-size="48" fill="#173B48">一つの注文でも、箱は別々</text><text x="48" y="178" font-size="27" fill="#52666C">注文番号と、箱ごとの追跡番号を分けて記録する</text><rect x="48" y="209" width="1104" height="126" rx="18" fill="#FFFFFF"/><rect x="48" y="209" width="12" height="126" rx="18" fill="#146859"/><text x="81" y="264" font-size="38" fill="#173B48">注文番号：注文A</text><text x="81" y="312" font-size="33" fill="#52666C">発送メールで箱の数と追跡番号を確認</text><rect x="48" y="351" width="1104" height="126" rx="18" fill="#FFFFFF"/><rect x="48" y="351" width="12" height="126" rx="18" fill="#146859"/><text x="81" y="406" font-size="38" fill="#173B48">1箱目：追跡番号X → 受取済み</text><text x="81" y="454" font-size="33" fill="#52666C">届いたラベルと番号を照合する</text><rect x="48" y="493" width="1104" height="126" rx="18" fill="#FFFFFF"/><rect x="48" y="493" width="12" height="126" rx="18" fill="#146859"/><text x="81" y="548" font-size="38" fill="#173B48">2箱目：追跡番号Y → 未着</text><text x="81" y="596" font-size="33" fill="#52666C">この箱の番号と未着状況を販売店へ伝える</text><text x="48" y="660" font-size="20" fill="#52666C">図解：J-Connect  |  2026-10-19</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="940" viewBox="0 0 720 940" role="img" aria-labelledby="parcels-title parcels-desc">
+<title id="parcels-title">一つの注文でも、箱は別々</title>
+<desc id="parcels-desc">実在する注文・追跡番号ではない模式図。注文Aの発送メールで箱の数と追跡番号を確認する。1箱目は追跡番号X、受取済み。届いたラベルと番号を照合する。2箱目は追跡番号Y、未着。この箱の番号と未着状況を販売店へ伝える。注文番号と箱ごとの追跡番号を分けて記録する。</desc>
+<rect width="720" height="940" rx="24" fill="#f4f3ed"/>
+<g font-family="Noto Sans CJK JP, Noto Sans JP, sans-serif">
+<text x="40" y="45" font-size="20" fill="#146859" >J-CONNECT / 暮らしのメモ</text>
+<text x="40" y="102" font-size="34" fill="#173b48" font-weight="700">一つの注文でも、箱は別々</text>
+<text x="40" y="146" font-size="24" fill="#52666c" >注文番号と、箱ごとの追跡番号を分けて記録する</text>
+<rect x="32" y="180" width="656" height="184" rx="18" fill="#fff" stroke="#b6c6ce"/>
+<text x="56" y="241" font-size="32" fill="#173b48" font-weight="700">注文番号：注文A</text>
+<text x="56" y="306" font-size="28" fill="#40545b" >発送メールで箱の数と追跡番号を確認</text>
+<path d="M48 364v382m0-265h16m-16 237h16" fill="none" stroke="#9bafb7" stroke-width="3"/>
+<rect x="64" y="396" width="624" height="190" rx="18" fill="#fff" stroke="#86b2a4"/>
+<text x="88" y="456" font-size="30" fill="#173b48" font-weight="700">1箱目：追跡番号X</text>
+<rect x="506" y="421" width="150" height="48" rx="24" fill="#e3f2eb" stroke="#e3f2eb"/>
+<text x="581" y="454" font-size="27" fill="#146859" text-anchor="middle" font-weight="700">受取済み</text>
+<text x="88" y="516" font-size="28" fill="#40545b" >届いたラベルと番号を照合する</text>
+<rect x="64" y="620" width="624" height="224" rx="18" fill="#fff" stroke="#bfaa7c"/>
+<text x="88" y="680" font-size="30" fill="#173b48" font-weight="700">2箱目：追跡番号Y</text>
+<rect x="506" y="645" width="150" height="48" rx="24" fill="#fff1d2" stroke="#fff1d2"/>
+<text x="581" y="678" font-size="27" fill="#684e11" text-anchor="middle" font-weight="700">未着</text>
+<text x="88" y="740" font-size="28" fill="#40545b" >この箱の番号と未着状況を</text>
+<text x="88" y="786" font-size="28" fill="#40545b" >販売店へ伝える</text>
+<text x="40" y="902" font-size="24" fill="#52666c" >図解：J-Connect | 2026-10-19</text>
+</g>
+</svg>

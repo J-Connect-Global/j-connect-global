@@ -7,11 +7,16 @@ summary: "ドイツ語の電話で、名乗る、用件を伝える、担当者�
 status: "published"
 published: true
 published_at: "2026-06-20"
-updated_at: "2026-08-01"
+updated_at: "2026-11-27"
 last_verified: "2026-08-01"
 tags: ["電話", "予約", "聞き返し", "留守番電話", "A1", "A2"]
 canonical_url: "/germany/ja/learn-german/telephone-phrases/"
-image_alt: "ドイツ語の電話に備えて名前、用件、電話番号、希望日時をノートに書いた様子"
+image_alt: "電話で予約の相談をしながらノートにメモを取り、机にカレンダーを置いた人物の編集イラスト"
+image_caption: "AI生成の編集イラスト。実在の人物・通話・予約を記録したものではありません。"
+image_credit: "J-Connect Global"
+official_sources:
+  - title: "DIN：都市名を使う綴り用語表と任意の利用（2026年11月27日確認）"
+    url: "https://www.din.de/de/din-und-seine-partner/presse/mitteilungen/von-aachen-bis-zwickau-867074"
 related_articles: ["appointment-phrase", "hospital-phrases", "work-email-phrases", "auslaenderbehoerde-residence-phrases"]
 ---
 
@@ -63,7 +68,7 @@ related_articles: ["appointment-phrase", "hospital-phrases", "work-email-phrases
 | 初めて電話 | Ich rufe zum ersten Mal bei Ihnen an. | 初めてお電話します。 |
 | 折り返し | Ich rufe zurück. Sie hatten mich angerufen. | 折り返しです。先ほどお電話をいただきました。 |
 | 着信理由 | Worum geht es? | どのようなご用件ですか。 |
-| 相手確認 | Spreche ich mit Frau/Herrn [氏名]? | [氏名]さんでしょうか。 |
+| 相手確認 | Spreche ich mit Frau [姓]? / Spreche ich mit Herrn [姓]? | [姓]さんでしょうか。 |
 
 電話を受けた側が、会社名や診療所名の後に名字だけを速く言うことがあります。聞き取れなければ、すぐに確認します。
 
@@ -130,10 +135,10 @@ related_articles: ["appointment-phrase", "hospital-phrases", "work-email-phrases
 
 文字が聞き取りにくい場合：
 
-> N wie Nordpol, A wie Aachen ...
-> NはNordpolのN、AはAachenのA…
+> A wie Aachen, S wie Salzwedel ...
+> AはAachenのA、SはSalzwedelのS…
 
-決まった綴り用語を完全に暗記する必要はありません。相手に通じる身近な単語を使い、最後に綴りを復唱してもらいます。
+DINが2022年に公開した仕事・行政向けの綴り用語表では、都市名を使います。利用は任意なので、表を完全に暗記する必要はありません。相手に通じる単語を使い、最後に綴りを復唱してもらいます（[DINの説明、2026年11月27日確認](https://www.din.de/de/din-und-seine-partner/presse/mitteilungen/von-aachen-bis-zwickau-867074)）。
 
 ### 電話番号を区切る
 
@@ -245,31 +250,47 @@ related_articles: ["appointment-phrase", "hospital-phrases", "work-email-phrases
 
 ## 会話例：予約を変更する
 
-**Ich:** Guten Tag. Mein Name ist Tanaka. Ich rufe wegen meines Termins am 6. August an.
+以下は学習用の架空の会話です。氏名・生年月日・日時は自分の情報に置き換えてください。
 
-**Praxis:** Wie lautet Ihr Geburtsdatum?
+**私:** Guten Tag. Mein Name ist Tanaka. Ich rufe wegen meines Termins am 6. August an.
+こんにちは。田中と申します。8月6日の予約の件で電話しています。
 
-**Ich:** Der 12. Mai 1993. Ich muss den Termin leider verschieben.
+**診療所:** Wie lautet Ihr Geburtsdatum?
+生年月日を教えていただけますか。
 
-**Praxis:** Wir hätten am 10. August um 9:20 Uhr etwas frei.
+**私:** Der 12. Mai 1993. Ich muss den Termin leider verschieben.
+1993年5月12日です。申し訳ありませんが、予約を変更しなければなりません。
 
-**Ich:** Also Montag, den 10. August, um 9:20 Uhr. Ist das richtig?
+**診療所:** Wir hätten am 10. August um 9:20 Uhr etwas frei.
+8月10日9時20分でしたら空きがあります。
 
-**Praxis:** Ja.
+**私:** Also Montag, den 10. August, um 9:20 Uhr. Ist das richtig?
+では、8月10日月曜日の9時20分ですね。合っていますか。
 
-**Ich:** Vielen Dank. Muss ich etwas mitbringen?
+**診療所:** Ja.
+はい。
+
+**私:** Vielen Dank. Muss ich etwas mitbringen?
+ありがとうございます。何か持参するものはありますか。
 
 ## 会話例：担当者が不在
 
-**Ich:** Könnten Sie mich bitte mit Herrn Weber verbinden?
+こちらも学習用の架空の会話です。電話番号は実際に連絡を受けられる番号に置き換えます。
 
-**Zentrale:** Herr Weber ist heute nicht im Haus.
+**私:** Könnten Sie mich bitte mit Herrn Weber verbinden?
+Weberさんにつないでいただけますか。
 
-**Ich:** Könnten Sie ihn um einen Rückruf bitten?
+**受付:** Herr Weber ist heute nicht im Haus.
+Weberは本日不在です。
 
-**Zentrale:** Gern. Wie lautet Ihre Telefonnummer?
+**私:** Könnten Sie ihn um einen Rückruf bitten?
+折り返し電話するよう、お伝えいただけますか。
 
-**Ich:** 0176 – 123 – 45 – 67. Könnten Sie die Nummer bitte wiederholen?
+**受付:** Gern. Wie lautet Ihre Telefonnummer?
+承知しました。お電話番号を教えていただけますか。
+
+**私:** Meine Telefonnummer ist [番号]. Könnten Sie die Nummer bitte wiederholen?
+私の電話番号は[番号]です。番号を復唱していただけますか。
 
 ## よくある失敗
 

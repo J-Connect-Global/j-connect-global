@@ -408,7 +408,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-20",
-    "updated_at": "2026-08-01",
+    "updated_at": "2026-11-27",
     "last_verified": "2026-08-01",
     "tags": ["電話", "予約", "聞き返し", "留守番電話", "A1", "A2"],
     "home_visible": false,
@@ -422,7 +422,12 @@
     "level": ["A1"],
     "skill": ["speaking", "listening"],
     "duration": ["5min"],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "DIN：都市名を使う綴り用語表と任意の利用（2026年11月27日確認）",
+        "url": "https://www.din.de/de/din-und-seine-partner/presse/mitteilungen/von-aachen-bis-zwickau-867074"
+      }
+    ],
     "disclaimer_type": "language_learning",
     "related_articles": ["appointment-phrase", "hospital-phrases", "work-email-phrases", "auslaenderbehoerde-residence-phrases"],
     "related_living_guides": ["anmeldung-guide", "health-insurance-guide", "bank-account-germany"],
@@ -432,7 +437,7 @@
       "last_reviewed_at": "2026-08-01",
       "next_review_due": "2026-12-20"
     },
-    "image_alt": "ドイツ語の電話に備えて名前、用件、電話番号、希望日時をノートに書いた様子"
+    "image_alt": "電話で予約の相談をしながらノートにメモを取り、机にカレンダーを置いた人物の編集イラスト"
   },
   {
     "id": "G012",
@@ -446,7 +451,7 @@
     "published": true,
     "status": "published",
     "published_at": "2026-06-20",
-    "updated_at": "2026-06-20",
+    "updated_at": "2026-11-27",
     "last_verified": "2026-06-20",
     "tags": ["職場", "会議", "A2"],
     "home_visible": false,
@@ -460,7 +465,12 @@
     "level": ["A2", "B1"],
     "skill": ["speaking", "listening"],
     "duration": ["15min"],
-    "official_sources": [],
+    "official_sources": [
+      {
+        "title": "Goethe-Institut：職場の呼びかけ du / Sie の練習（2026年11月27日確認）",
+        "url": "https://www.goethe.de/de/spr/ueb/daa/all/ds0/ds1.html"
+      }
+    ],
     "disclaimer_type": "business_language",
     "related_articles": ["work-email-phrases", "telephone-phrases", "appointment-phrase"],
     "related_living_guides": ["tax-id-steuernummer-steuerklasse", "bank-account-germany"],
@@ -469,7 +479,8 @@
       "reviewed_by": "J-Connect Global editorial",
       "last_reviewed_at": "2026-06-20",
       "next_review_due": "2026-12-20"
-    }
+    },
+    "image_alt": "同僚3人がノートとパソコンを置いたテーブルを囲み、仕事の内容を確認する編集イラスト"
   },
   {
     "id": "G013",

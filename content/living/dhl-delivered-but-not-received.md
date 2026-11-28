@@ -7,7 +7,7 @@ summary: "DHL Paketで配達済みなのに荷物がない場合の確認順序�
 status: "published"
 published: true
 published_at: "2026-10-19"
-updated_at: "2026-11-25"
+updated_at: "2026-11-27"
 last_verified: "2026-11-14"
 article_standard: "2026-11"
 next_review: "2027-01-19"

@@ -1,71 +1,72 @@
-# Propuesta IA — revisión editorial de llamadas y conversación laboral
+# AI提案 — 電話・職場会話の記事と画像の編集レビュー
 
-Fecha: 2026-11-27. Estado: lote preparado para revisión y CI. Seguimiento: Issue #544 y Pull Request asociado.
+作業日：2026年11月27日。報告の日本語化：2026年11月28日。
+対象：Issue #544、PR #545。公開状況はPRとデプロイ履歴で確認する。
 
-## Base y coordinación
+## 基点と重複作業の確認
 
-- Referencia: `main` en `34a9e0f1476df4e5c01839dd0b0a528910f0a074`.
-- Rama de trabajo: `malu/learn-german-editorial-20261127`.
-- Se leyeron `AGENTS.md`, los estándares de artículos y revisión, y los flujos vigentes de contenido, Living, Events e imágenes.
-- Se revisaron los cuatro PR abiertos: #543 (fuente de Sternsinger), #542 (Frankfurt, Múnich y compras en alemán), #505 (Inkasso, Mahnbescheid y BundID) y #495 (Aachen, Múnich y prestaciones). También se consultó el Issue #522 de fuentes oficiales.
-- Ninguno de esos PR modifica los dos Markdown elegidos. Los archivos generados compartidos, como el registro de Learn German, el índice de búsqueda, la portada y el sitemap, pueden necesitar regeneración al actualizar la rama antes de abrir el PR.
+- 基点：main `34a9e0f1476df4e5c01839dd0b0a528910f0a074`。
+- 作業ブランチ：`malu/learn-german-editorial-20261127`。
+- AGENTS.md、記事標準、一次情報レビュー基準、コンテンツ制作・Living・Events・画像の各ワークフローを確認した。
+- PR #543（Sternsingerの出典）、#542（フランクフルト・ミュンヘン・買い物のドイツ語）、#505（債権回収・BundID）、#495（アーヘン・ミュンヘン・給付）とIssue #522を確認。今回の2本のMarkdownは、これらのPRの編集対象と重複しない。
+- レジストリ、検索インデックス、ホーム、サイトマップなどの共通生成物は、他PRの先行マージ時に再生成が必要になる場合がある。
 
-## Cambios propuestos
+## 変更内容
 
-| Artículo | Mejora |
+| 対象 | 改善 |
 | --- | --- |
-| G011 — `telephone-phrases` | Traducción japonesa de los dos diálogos, identificación explícita de los ejemplos ficticios, separación de las formas `Frau` y `Herrn`, y ejemplo de deletreo coherente con la tabla de ciudades de DIN. Se explica que su uso es voluntario. |
-| G012 — `workplace-conversation-phrases` | Explicación práctica de `Sie` y `du`, preguntas sobre trabajo, plazos y prioridades, diálogo con fecha menos ambigua, traducción japonesa del diálogo y del correo, y traducción más precisa de `Danke für Ihre Geduld`. |
-| Ambas portadas | Sustitución de escenas con texto pequeño por ilustraciones claras de una llamada y una conversación laboral. Textos alternativos específicos, aviso visible de generación con IA, variantes WebP de 1200/768/480 píxeles y vista social JPEG. No representan personas ni reuniones reales. |
-| Interior de G012 | Diagrama SVG original y accesible de las tres preguntas: contenido del trabajo, plazo y prioridad. El texto equivalente permanece en la tabla del artículo. |
-| Archivos generados | Markdown sincronizado con el registro, páginas de artículos y hub, índice de búsqueda y sitemap. Las etiquetas de eventos de la portada avanzan automáticamente al 27 de noviembre por la nueva fecha editorial. |
+| G011 電話のフレーズ | 2つの会話例に和訳を追加し、架空の学習例と明記。Frau／Herrnの形を分け、DINの都市名による綴り用語の例と任意利用の説明を追加。 |
+| G012 職場会話 | Sie／duの使い分け、作業内容・期限・優先順位の確認表現を追加。会話とメールに和訳を付け、日程を明確化し、Danke für Ihre Geduldの訳を修正。 |
+| 主画像2点 | 小さい文字を含む旧画像を、電話・職場会話が縮小表示でも分かる編集イラストへ置換。代替テキストと直下のAI開示を追加。WebPは1200／768／480px、SNS用はJPEG。実際の人物・会議・通話の記録ではない。 |
+| G012本文図解 | 作業内容・期限・優先順位の3つの質問を示す独自SVGを追加。title／descと同等の本文テキストを備える。 |
+| 生成物 | Markdownとレジストリ、記事・ハブHTML、検索インデックス、サイトマップを同期。ホームの開催中イベントの日付は編集基準日により11月27日へ自動更新。 |
 
-Se conservaron IDs, slugs, URLs, títulos, fechas de publicación y valores previos de `last_verified`. La fecha `updated_at` cambia por la edición; no representa una nueva verificación integral ni una revisión humana nativa.
+ID、slug、URL、タイトル、公開日、従来のlast_verifiedは保持。updated_atは編集日を表し、全内容の再検証や人間の母語話者による校閲済みを意味しない。
 
-No se encontraron artículos en español en los registros ni rutas de contenido en español. La edición editorial activa es japonesa; inglés y alemán tienen páginas de espera. No se creó una nueva edición ni se publicaron traducciones sin un flujo acordado. Se verificó acceso al registro de Search Console para priorizar los lotes siguientes; no se publican sus métricas privadas en el repositorio ni se atribuye a estos cambios una mejora de tráfico medida. Los cambios de CTR del PR #542 se evitan.
+スペイン語の記事・公開ルートは現在のレジストリに見当たらない。編集対象は日本語版で、英語・ドイツ語は準備中ページ。今回、新言語版は追加していない。Search Consoleの記録へのアクセスは確認したが、非公開の計測値はリポジトリへ掲載せず、この変更による流入増加も主張しない。PR #542のCTR改善対象は変更しない。
 
-## Fuentes y enlaces
+## 出典とリンク
 
-Fuentes abiertas y consultadas el 2026-11-27:
+2026年11月27日に以下を開いて確認した。
 
-- [DIN — Von Aachen bis Zwickau](https://www.din.de/de/din-und-seine-partner/presse/mitteilungen/von-aachen-bis-zwickau-867074): publicación de la tabla de ciudades, ejemplos Aachen y Salzwedel y carácter voluntario. Respuesta HTTP 200 en comprobación directa.
-- [Goethe-Institut — Auf der Arbeit: Du oder Sie?](https://www.goethe.de/de/spr/ueb/daa/all/ds0/ds1.html): recurso didáctico del proveedor para practicar el trato en el trabajo. Respuesta HTTP 200. Las frases añadidas son ejemplos editoriales originales; no se atribuyen al Goethe-Institut.
+- [DIN — Von Aachen bis Zwickau](https://www.din.de/de/din-und-seine-partner/presse/mitteilungen/von-aachen-bis-zwickau-867074)：都市名による綴り用語表、Aachen・Salzwedelの例、利用が任意であること。直接取得でもHTTP 200。
+- [Goethe-Institut — Auf der Arbeit: Du oder Sie?](https://www.goethe.de/de/spr/ueb/daa/all/ds0/ds1.html)：職場での呼びかけの練習教材。HTTP 200。追加した例文は編集部の独自例で、同機関の原文とは表示しない。
 
-Las seis rutas internas únicas enlazadas desde los dos Markdown tienen un `index.html` existente. No se identificaron enlaces rotos en este lote. Esto no constituye una auditoría de todos los enlaces externos del sitio.
+両Markdownの内部リンク6種類は対応するindex.htmlが存在する。この範囲にリンク切れは見つからなかった。全サイトの外部リンク監査を完了したという意味ではない。
 
-## Comprobaciones
+## 検証結果
 
-- `npm ci --ignore-scripts --no-audit --no-fund`: correcto.
-- Generación y validación de la base antes de editar: correctas, sin diferencias generadas.
-- `npm run build`: correcto tras los cambios.
-- `npm run validate`: 38 grupos de comprobaciones estáticas correctos. Incluyen sincronización, contenido, imágenes y créditos, accesibilidad estructural, enlaces/rutas, SEO y artefacto generado.
-- Resultado SEO del artefacto: 312 HTML y 243 URLs en el sitemap comprobados.
-- `node scripts/check-content-metadata-regression.mjs --base-ref origin/main`: correcto.
-- `git diff --check`: correcto.
-- `npm run validate:all`: la generación y las 38 comprobaciones estáticas pasan; su configuración de navegador predeterminada no puede arrancar porque la descarga de Chromium devuelve HTTP 403. No se presenta este comando exacto como aprobado.
-- Se ejecutó la misma suite de Playwright con una configuración temporal fuera del repositorio que cambia únicamente el ejecutable y sus opciones de lanzamiento, la ruta absoluta de pruebas y el número de trabajadores. Chromium 158.0.8127.0 se obtuvo mediante el paquete de registro `@sparticuz/chromium` 158.0.0. Resultado: **147 pruebas aprobadas y 3 omitidas por la suite, sin fallos, en 4,9 minutos**. Se conservaron los mismos proyectos de escritorio, móvil y tableta y sus tamaños. No se cambió la configuración ni las dependencias del proyecto.
-- Revisión adicional de los dos artículos a 1440 y 360 píxeles: sin desbordamiento horizontal, imágenes visibles cargadas y sin infracciones automáticas WCAG A/AA detectadas por axe. Se generaron capturas y se inspeccionó la legibilidad del diagrama móvil. La revisión automática no sustituye una auditoría humana completa.
-- `node scripts/image-asset-budget.mjs --check`: correcto después de optimizar las exportaciones. Los dos archivos WebP principales pesan menos de 56 KB cada uno. El presupuesto original del repositorio se conserva.
-- SVG: XML válido, `title`, `desc` y texto equivalente en el artículo.
+- npm ci --ignore-scripts --no-audit --no-fund：成功。
+- 編集前のビルド・検証：成功し、生成物の差分なし。
+- npm run build、npm run validate：成功。静的検証38群には同期、編集品質、画像・クレジット、構造的アクセシビリティ、ルート、SEO、生成アーティファクトを含む。
+- SEO検証：312 HTML、サイトマップ243 URLを確認。
+- node scripts/check-content-metadata-regression.mjs --base-ref origin/main、git diff --check：成功。
+- ローカルのnpm run validate:allはビルドと静的検証を通過したが、標準Chromiumの取得がHTTP 403となったため、このコマンド全体を成功とはしていない。
+- リポジトリ外の一時設定で同じPlaywrightスイートを実行。@sparticuz/chromium 158.0.0によるChromium 158.0.8127.0で、147件成功、スイート定義による3件スキップ、失敗なし（4.9分）。実行ファイル・起動引数・絶対パス・ワーカー数のみを変更し、各画面サイズとプロジェクト設定は保持。プロジェクトの依存関係は変更していない。
+- 2記事を1440px／360pxで確認。横方向のはみ出し、表示画像の読み込み失敗、axeによるWCAG A／AAの自動検出違反なし。本文図解のモバイル表示も目視確認。これは人手による完全なアクセシビリティ監査ではない。
+- 画像予算チェック：成功。主WebPは各56KB未満。既存予算は変更していない。
+- SVG：XML構文、title、desc、同等の本文情報を確認。
+- リモートのGitツリーは検証したローカルツリーと一致：1e01843df39cdde9be9485661f29fd529de9d86e（報告翻訳前）。
+- GitHub Actionsの標準Chromiumを含むValidate content実行46080207017は、コミット3211f7aab954849ad32c12324e441a50f5d8616aで成功。報告翻訳後のコミットもCIを確認する。
 
-## Flujo de cierre
+## マージ・公開前の確認
 
-1. Conexión oficial de GitHub verificada, con lectura y escritura sobre el repositorio. La publicación de la rama usa esta conexión y no requiere credenciales en el chat ni una sesión CLI adicional.
-2. Actualizar desde el `main` más reciente y volver a comprobar PR e Issues para evitar duplicados. Resolver las diferencias compartidas mediante regeneración.
-3. Confirmar la CI de la rama con el navegador estándar de CI.
-4. Abrir un PR en borrador, revisar el diff final y respetar cualquier regla de protección antes de la fusión. La revisión lingüística nativa adicional es recomendable; no se presenta esta revisión asistida como una certificación humana.
-5. Tras una fusión autorizada, verificar el despliegue existente, su SHA y las páginas afectadas en producción.
+1. GitHub公式接続の読み書きを確認済み。チャットでの認証情報共有や追加のCLI認証は不要。
+2. 最新mainとPR／Issueを再確認し、共通生成物の差分があれば再生成する。
+3. 最終コミットのCIとレビュー内容を確認する。
+4. Protect mainが定める外部承認1件を満たす。追加の母語話者校閲は推奨するが、このAI支援レビューを人間による認証とは表示しない。
+5. 承認後にマージした場合、既存のデプロイとそのSHA、対象ページ・画像を本番で確認する。
 
-No se modificaron infraestructura, credenciales, permisos ni automatizaciones de despliegue. No se llamaron APIs de IA externas de pago ni se enviaron mensajes externos al seguimiento autorizado del proyecto. Las ilustraciones se produjeron con la generación de imágenes integrada en ChatGPT, usando únicamente las portadas del proyecto como referencias. La CI y el despliegue se tramitan mediante los workflows existentes.
+インフラ、認証情報、権限、デプロイワークフローは変更していない。有料の外部画像APIは使っていない。連絡は承認されたプロジェクトのIssue／PR内の記録に限定する。
 
-## Procedencia de las imágenes y especificaciones
+## 画像の由来と生成仕様
 
-Los archivos WebP/JPEG sustituyen portadas del propio proyecto. No se descargaron fotografías ajenas. La generación integrada de ChatGPT produjo ilustraciones originales que se exportaron sin cambios semánticos a los tamaños de distribución; el SVG se escribió como gráfico editable, con texto exacto.
+プロジェクト自身の旧主画像を参考に、ChatGPT内蔵の画像生成で独自の編集イラストを作成。外部の写真は取得していない。意味内容を変更せず配信用の各サイズへ書き出し、本文SVGは正確なテキストを含む編集可能な図として作成した。以下は再現・追跡用の生成プロンプト原文を保持する。
 
-Prompt de la portada laboral:
+### 職場会話の主画像
 
 > Use case: style-transfer. Edit target: the supplied J-Connect workplace conversation cover. Create a replacement 16:9 editorial cover illustration about colleagues communicating at work in German. Preserve the subject of three adult colleagues having a calm, collaborative conversation around an office table, but simplify the entire composition for a small mobile article thumbnail: make the three people and their gestures large and central, show a single open notebook and a laptop on the table, and a quiet light office background. Use a polished contemporary editorial illustration style with natural human proportions, refined flat color and subtle paper texture, restrained navy, teal and warm neutral tones. Make it unmistakably an illustration, not a documentary photograph. Remove all writing, labels, charts, glyphs, letters, slogans, logos and decorative diagrams from the original. No on-image text, no watermark. Keep every important person and gesture inside the central 75 percent so responsive cropping preserves the subject. Wide landscape 16:9.
 
-Prompt de la portada de llamadas:
+### 電話の主画像
 
 > Use case: style-transfer. Edit target: the supplied telephone-language article cover. Create a replacement 16:9 editorial illustration about making a telephone appointment in German. Keep the subject of preparing for a phone conversation at a desk, but replace the busy written notes and fabricated phone UI with a clean, memorable illustrated scene: an adult seated at a simple light desk holds a smartphone to their ear and makes a brief note with a pen, with one small blank appointment calendar nearby. Make the person, phone and writing hand the large central visual subject so it remains clear at a 240px thumbnail. Polished contemporary editorial illustration with natural human proportions, subtle paper texture, navy, teal and warm neutral tones matching the workplace conversation illustration from this project. Unmistakably illustrated rather than photographic. No letters, numbers, writing, logos, slogans, watermarks, readable screens or documentary claims. No anatomy errors or duplicate objects. Keep critical elements within the central 75 percent of the wide landscape 16:9 composition.
